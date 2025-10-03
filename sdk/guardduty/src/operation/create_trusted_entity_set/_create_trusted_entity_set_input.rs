@@ -11,7 +11,7 @@ pub struct CreateTrustedEntitySetInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The format of the file that contains the trusted entity set.</p>
     pub format: ::std::option::Option<crate::types::TrustedEntitySetFormat>,
-    /// <p>The URI of the file that contains the trusted entity set.</p>
+    /// <p>The URI of the file that contains the threat entity set. The format of the <code>Location</code> URL must be a valid Amazon S3 URL format. Invalid URL formats will result in an error, regardless of whether you activate the entity set or not. For more information about format of the location URLs, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty-lists-create-activate.html">Format of location URL under Step 2: Adding trusted or threat intelligence data</a> in the <i>Amazon GuardDuty User Guide</i>.</p>
     pub location: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID that owns the Amazon S3 bucket specified in the <b>location</b> parameter.</p>
     pub expected_bucket_owner: ::std::option::Option<::std::string::String>,
@@ -37,7 +37,7 @@ impl CreateTrustedEntitySetInput {
     pub fn format(&self) -> ::std::option::Option<&crate::types::TrustedEntitySetFormat> {
         self.format.as_ref()
     }
-    /// <p>The URI of the file that contains the trusted entity set.</p>
+    /// <p>The URI of the file that contains the threat entity set. The format of the <code>Location</code> URL must be a valid Amazon S3 URL format. Invalid URL formats will result in an error, regardless of whether you activate the entity set or not. For more information about format of the location URLs, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty-lists-create-activate.html">Format of location URL under Step 2: Adding trusted or threat intelligence data</a> in the <i>Amazon GuardDuty User Guide</i>.</p>
     pub fn location(&self) -> ::std::option::Option<&str> {
         self.location.as_deref()
     }
@@ -130,18 +130,18 @@ impl CreateTrustedEntitySetInputBuilder {
     pub fn get_format(&self) -> &::std::option::Option<crate::types::TrustedEntitySetFormat> {
         &self.format
     }
-    /// <p>The URI of the file that contains the trusted entity set.</p>
+    /// <p>The URI of the file that contains the threat entity set. The format of the <code>Location</code> URL must be a valid Amazon S3 URL format. Invalid URL formats will result in an error, regardless of whether you activate the entity set or not. For more information about format of the location URLs, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty-lists-create-activate.html">Format of location URL under Step 2: Adding trusted or threat intelligence data</a> in the <i>Amazon GuardDuty User Guide</i>.</p>
     /// This field is required.
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The URI of the file that contains the trusted entity set.</p>
+    /// <p>The URI of the file that contains the threat entity set. The format of the <code>Location</code> URL must be a valid Amazon S3 URL format. Invalid URL formats will result in an error, regardless of whether you activate the entity set or not. For more information about format of the location URLs, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty-lists-create-activate.html">Format of location URL under Step 2: Adding trusted or threat intelligence data</a> in the <i>Amazon GuardDuty User Guide</i>.</p>
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location = input;
         self
     }
-    /// <p>The URI of the file that contains the trusted entity set.</p>
+    /// <p>The URI of the file that contains the threat entity set. The format of the <code>Location</code> URL must be a valid Amazon S3 URL format. Invalid URL formats will result in an error, regardless of whether you activate the entity set or not. For more information about format of the location URLs, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty-lists-create-activate.html">Format of location URL under Step 2: Adding trusted or threat intelligence data</a> in the <i>Amazon GuardDuty User Guide</i>.</p>
     pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
         &self.location
     }

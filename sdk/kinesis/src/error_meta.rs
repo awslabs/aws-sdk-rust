@@ -1081,17 +1081,17 @@ impl From<crate::operation::subscribe_to_shard::SubscribeToShardError> for Error
     fn from(err: crate::operation::subscribe_to_shard::SubscribeToShardError) -> Self {
         match err {
             crate::operation::subscribe_to_shard::SubscribeToShardError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::subscribe_to_shard::SubscribeToShardError::KmsNotFoundException(inner) => Error::KmsNotFoundException(inner),
-            crate::operation::subscribe_to_shard::SubscribeToShardError::KmsOptInRequired(inner) => Error::KmsOptInRequired(inner),
+            crate::operation::subscribe_to_shard::SubscribeToShardError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::operation::subscribe_to_shard::SubscribeToShardError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::subscribe_to_shard::SubscribeToShardError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
             crate::operation::subscribe_to_shard::SubscribeToShardError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::subscribe_to_shard::SubscribeToShardError::KmsDisabledException(inner) => Error::KmsDisabledException(inner),
-            crate::operation::subscribe_to_shard::SubscribeToShardError::KmsAccessDeniedException(inner) => Error::KmsAccessDeniedException(inner),
-            crate::operation::subscribe_to_shard::SubscribeToShardError::InternalFailureException(inner) => Error::InternalFailureException(inner),
-            crate::operation::subscribe_to_shard::SubscribeToShardError::KmsThrottlingException(inner) => Error::KmsThrottlingException(inner),
-            crate::operation::subscribe_to_shard::SubscribeToShardError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
-            crate::operation::subscribe_to_shard::SubscribeToShardError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
             crate::operation::subscribe_to_shard::SubscribeToShardError::KmsInvalidStateException(inner) => Error::KmsInvalidStateException(inner),
-            crate::operation::subscribe_to_shard::SubscribeToShardError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::subscribe_to_shard::SubscribeToShardError::KmsAccessDeniedException(inner) => Error::KmsAccessDeniedException(inner),
+            crate::operation::subscribe_to_shard::SubscribeToShardError::KmsNotFoundException(inner) => Error::KmsNotFoundException(inner),
+            crate::operation::subscribe_to_shard::SubscribeToShardError::KmsOptInRequired(inner) => Error::KmsOptInRequired(inner),
+            crate::operation::subscribe_to_shard::SubscribeToShardError::KmsThrottlingException(inner) => Error::KmsThrottlingException(inner),
+            crate::operation::subscribe_to_shard::SubscribeToShardError::InternalFailureException(inner) => Error::InternalFailureException(inner),
             crate::operation::subscribe_to_shard::SubscribeToShardError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }

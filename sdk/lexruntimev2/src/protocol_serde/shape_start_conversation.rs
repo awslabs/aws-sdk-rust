@@ -56,6 +56,20 @@ pub fn de_start_conversation_http_error(
             };
             tmp
         }),
+        "InternalServerException" => crate::operation::start_conversation::StartConversationError::InternalServerException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
+                output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::start_conversation::StartConversationError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::internal_server_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::start_conversation::StartConversationError::unhandled)?
+            };
+            tmp
+        }),
         "ThrottlingException" => crate::operation::start_conversation::StartConversationError::ThrottlingException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -65,20 +79,6 @@ pub fn de_start_conversation_http_error(
                     .map_err(crate::operation::start_conversation::StartConversationError::unhandled)?;
                 let output = output.meta(generic);
                 crate::serde_util::throttling_exception_correct_errors(output)
-                    .build()
-                    .map_err(crate::operation::start_conversation::StartConversationError::unhandled)?
-            };
-            tmp
-        }),
-        "ResourceNotFoundException" => crate::operation::start_conversation::StartConversationError::ResourceNotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
-                output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
-                    .map_err(crate::operation::start_conversation::StartConversationError::unhandled)?;
-                let output = output.meta(generic);
-                crate::serde_util::resource_not_found_exception_correct_errors(output)
                     .build()
                     .map_err(crate::operation::start_conversation::StartConversationError::unhandled)?
             };
@@ -98,6 +98,20 @@ pub fn de_start_conversation_http_error(
             };
             tmp
         }),
+        "ResourceNotFoundException" => crate::operation::start_conversation::StartConversationError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::start_conversation::StartConversationError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::resource_not_found_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::start_conversation::StartConversationError::unhandled)?
+            };
+            tmp
+        }),
         "ConflictException" => crate::operation::start_conversation::StartConversationError::ConflictException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -107,20 +121,6 @@ pub fn de_start_conversation_http_error(
                     .map_err(crate::operation::start_conversation::StartConversationError::unhandled)?;
                 let output = output.meta(generic);
                 crate::serde_util::conflict_exception_correct_errors(output)
-                    .build()
-                    .map_err(crate::operation::start_conversation::StartConversationError::unhandled)?
-            };
-            tmp
-        }),
-        "BadGatewayException" => crate::operation::start_conversation::StartConversationError::BadGatewayException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::BadGatewayExceptionBuilder::default();
-                output = crate::protocol_serde::shape_bad_gateway_exception::de_bad_gateway_exception_json_err(_response_body, output)
-                    .map_err(crate::operation::start_conversation::StartConversationError::unhandled)?;
-                let output = output.meta(generic);
-                crate::serde_util::bad_gateway_exception_correct_errors(output)
                     .build()
                     .map_err(crate::operation::start_conversation::StartConversationError::unhandled)?
             };
@@ -140,15 +140,15 @@ pub fn de_start_conversation_http_error(
             };
             tmp
         }),
-        "InternalServerException" => crate::operation::start_conversation::StartConversationError::InternalServerException({
+        "BadGatewayException" => crate::operation::start_conversation::StartConversationError::BadGatewayException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
-                output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output)
+                let mut output = crate::types::error::builders::BadGatewayExceptionBuilder::default();
+                output = crate::protocol_serde::shape_bad_gateway_exception::de_bad_gateway_exception_json_err(_response_body, output)
                     .map_err(crate::operation::start_conversation::StartConversationError::unhandled)?;
                 let output = output.meta(generic);
-                crate::serde_util::internal_server_exception_correct_errors(output)
+                crate::serde_util::bad_gateway_exception_correct_errors(output)
                     .build()
                     .map_err(crate::operation::start_conversation::StartConversationError::unhandled)?
             };

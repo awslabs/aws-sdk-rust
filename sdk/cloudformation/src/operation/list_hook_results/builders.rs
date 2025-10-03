@@ -22,7 +22,7 @@ impl crate::operation::list_hook_results::builders::ListHookResultsInputBuilder 
 }
 /// Fluent builder constructing a request to `ListHookResults`.
 ///
-/// <p>Returns summaries of invoked Hooks. For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/hooks-userguide/hooks-view-invocations.html">View CloudFormation Hooks invocations</a> in the <i>CloudFormation Hooks User Guide</i>.</p>
+/// <p>Returns summaries of invoked Hooks. For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/hooks-userguide/hooks-view-invocations.html">View invocation summaries for CloudFormation Hooks</a> in the <i>CloudFormation Hooks User Guide</i>.</p>
 /// <p>This operation supports the following parameter combinations:</p>
 /// <ul>
 /// <li>

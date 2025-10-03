@@ -31,7 +31,7 @@ async fn example() {
 
 ## Getting Started
 
-_Examples are available for many services and operations, check out the [examples folder in GitHub][Usage examples]._
+_Examples are available for many services and operations, check out the [Usage examples]._
 
 The SDK provides one crate per AWS service. You must add [Tokio] as a dependency within your Rust project to execute asynchronous code. To add aws-sdk-config to your project, add the following to your Cargo.toml file where VERSION is the version of the SDK you want to use:
 
@@ -58,13 +58,12 @@ Suggestions for additional sections or improvements for the guide are welcome. P
 
 This project is licensed under the Apache-2.0 License.
 
-[examples folder in GitHub]: https://github.com/awslabs/aws-sdk-rust/tree/main/examples
 [Tokio]: https://crates.io/crates/tokio
 [Guide]: https://github.com/awslabs/aws-sdk-rust/blob/main/Guide.md
 [GitHub discussions]: https://github.com/awslabs/aws-sdk-rust/discussions
 [GitHub issues]: https://github.com/awslabs/aws-sdk-rust/issues/new/choose
 [Generated Docs]: https://awslabs.github.io/aws-sdk-rust/
-[Usage examples]: https://github.com/awslabs/aws-sdk-rust/tree/main/examples
+[Usage examples]: https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/rustv1
 
 <!-- anchor_start:footer -->
 This crate is part of the [AWS SDK for Rust](https://awslabs.github.io/aws-sdk-rust/) and the [smithy-rs](https://github.com/smithy-lang/smithy-rs) code generator.

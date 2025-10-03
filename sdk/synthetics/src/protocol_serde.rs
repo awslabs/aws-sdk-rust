@@ -199,6 +199,8 @@ pub(crate) mod shape_vpc_config_output;
 
 pub(crate) mod shape_base_screenshots;
 
+pub(crate) mod shape_blueprint_types;
+
 pub(crate) mod shape_canary_dry_run_config_output;
 
 pub(crate) mod shape_canary_run_status;

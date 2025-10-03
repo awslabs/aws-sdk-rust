@@ -69,6 +69,7 @@ impl ResolveDns for HickoryDnsResolver {
     }
 }
 
+/// Builder for [HickoryDnsResolver]
 pub struct HickoryDnsResolverBuilder {
     nameservers: Option<Nameservers>,
     timeout: Option<Duration>,
@@ -121,6 +122,7 @@ impl HickoryDnsResolverBuilder {
         self
     }
 
+    /// Build a [HickoryDnsResolver]
     pub fn build(self) -> HickoryDnsResolver {
         let mut builder = if let Some(nameservers) = self.nameservers {
             let nameserver_config =

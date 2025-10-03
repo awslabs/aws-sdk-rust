@@ -40,42 +40,27 @@ pub fn de_optimize_prompt_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ValidationException" => crate::operation::optimize_prompt::OptimizePromptError::ValidationException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
-                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
-                    .map_err(crate::operation::optimize_prompt::OptimizePromptError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InternalServerException" => crate::operation::optimize_prompt::OptimizePromptError::InternalServerException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
-                output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output)
-                    .map_err(crate::operation::optimize_prompt::OptimizePromptError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
         "AccessDeniedException" => crate::operation::optimize_prompt::OptimizePromptError::AccessDeniedException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
                 output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::optimize_prompt::OptimizePromptError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "BadGatewayException" => crate::operation::optimize_prompt::OptimizePromptError::BadGatewayException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::BadGatewayExceptionBuilder::default();
+                output = crate::protocol_serde::shape_bad_gateway_exception::de_bad_gateway_exception_json_err(_response_body, output)
                     .map_err(crate::operation::optimize_prompt::OptimizePromptError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -100,6 +85,21 @@ pub fn de_optimize_prompt_http_error(
             }
             tmp
         }),
+        "InternalServerException" => crate::operation::optimize_prompt::OptimizePromptError::InternalServerException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
+                output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::optimize_prompt::OptimizePromptError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "ThrottlingException" => crate::operation::optimize_prompt::OptimizePromptError::ThrottlingException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -115,12 +115,12 @@ pub fn de_optimize_prompt_http_error(
             }
             tmp
         }),
-        "BadGatewayException" => crate::operation::optimize_prompt::OptimizePromptError::BadGatewayException({
+        "ValidationException" => crate::operation::optimize_prompt::OptimizePromptError::ValidationException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::BadGatewayExceptionBuilder::default();
-                output = crate::protocol_serde::shape_bad_gateway_exception::de_bad_gateway_exception_json_err(_response_body, output)
+                let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
+                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
                     .map_err(crate::operation::optimize_prompt::OptimizePromptError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()

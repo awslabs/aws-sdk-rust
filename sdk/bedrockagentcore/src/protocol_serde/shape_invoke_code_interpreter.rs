@@ -53,35 +53,6 @@ pub fn de_invoke_code_interpreter_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ValidationException" => crate::operation::invoke_code_interpreter::InvokeCodeInterpreterError::ValidationException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
-                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
-                    .map_err(crate::operation::invoke_code_interpreter::InvokeCodeInterpreterError::unhandled)?;
-                let output = output.meta(generic);
-                crate::serde_util::validation_exception_correct_errors(output)
-                    .build()
-                    .map_err(crate::operation::invoke_code_interpreter::InvokeCodeInterpreterError::unhandled)?
-            };
-            tmp
-        }),
-        "ResourceNotFoundException" => crate::operation::invoke_code_interpreter::InvokeCodeInterpreterError::ResourceNotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
-                output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
-                    .map_err(crate::operation::invoke_code_interpreter::InvokeCodeInterpreterError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
         "AccessDeniedException" => crate::operation::invoke_code_interpreter::InvokeCodeInterpreterError::AccessDeniedException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -89,24 +60,6 @@ pub fn de_invoke_code_interpreter_http_error(
                 let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
                 output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
                     .map_err(crate::operation::invoke_code_interpreter::InvokeCodeInterpreterError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ServiceQuotaExceededException" => crate::operation::invoke_code_interpreter::InvokeCodeInterpreterError::ServiceQuotaExceededException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ServiceQuotaExceededExceptionBuilder::default();
-                output = crate::protocol_serde::shape_service_quota_exceeded_exception::de_service_quota_exceeded_exception_json_err(
-                    _response_body,
-                    output,
-                )
-                .map_err(crate::operation::invoke_code_interpreter::InvokeCodeInterpreterError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -145,6 +98,39 @@ pub fn de_invoke_code_interpreter_http_error(
             }
             tmp
         }),
+        "ResourceNotFoundException" => crate::operation::invoke_code_interpreter::InvokeCodeInterpreterError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::invoke_code_interpreter::InvokeCodeInterpreterError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServiceQuotaExceededException" => crate::operation::invoke_code_interpreter::InvokeCodeInterpreterError::ServiceQuotaExceededException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ServiceQuotaExceededExceptionBuilder::default();
+                output = crate::protocol_serde::shape_service_quota_exceeded_exception::de_service_quota_exceeded_exception_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::invoke_code_interpreter::InvokeCodeInterpreterError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "ThrottlingException" => crate::operation::invoke_code_interpreter::InvokeCodeInterpreterError::ThrottlingException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -158,6 +144,20 @@ pub fn de_invoke_code_interpreter_http_error(
             if tmp.message.is_none() {
                 tmp.message = _error_message;
             }
+            tmp
+        }),
+        "ValidationException" => crate::operation::invoke_code_interpreter::InvokeCodeInterpreterError::ValidationException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
+                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::invoke_code_interpreter::InvokeCodeInterpreterError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::validation_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::invoke_code_interpreter::InvokeCodeInterpreterError::unhandled)?
+            };
             tmp
         }),
         _ => crate::operation::invoke_code_interpreter::InvokeCodeInterpreterError::generic(generic),

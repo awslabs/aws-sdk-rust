@@ -21,7 +21,12 @@ pub struct CanaryCodeInput {
     /// <p>For large canary scripts, we recommend that you use an Amazon S3 location instead of inputting it directly with this parameter.</p>
     pub zip_file: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>The entry point to use for the source code when running the canary. For canaries that use the <code>syn-python-selenium-1.0</code> runtime or a <code>syn-nodejs.puppeteer</code> runtime earlier than <code>syn-nodejs.puppeteer-3.4</code>, the handler must be specified as <code> <i>fileName</i>.handler</code>. For <code>syn-python-selenium-1.1</code>, <code>syn-nodejs.puppeteer-3.4</code>, and later runtimes, the handler can be specified as <code> <i>fileName</i>.<i>functionName</i> </code>, or you can specify a folder where canary scripts reside as <code> <i>folder</i>/<i>fileName</i>.<i>functionName</i> </code>.</p>
+    /// <p>This field is required when you don't specify <code>BlueprintTypes</code> and is not allowed when you specify <code>BlueprintTypes</code>.</p>
     pub handler: ::std::string::String,
+    /// <p><code>BlueprintTypes</code> is a list of templates that enable simplified canary creation. You can create canaries for common monitoring scenarios by providing only a JSON configuration file instead of writing custom scripts. The only supported value is <code>multi-checks</code>.</p>
+    /// <p>Multi-checks monitors HTTP/DNS/SSL/TCP endpoints with built-in authentication schemes (Basic, API Key, OAuth, SigV4) and assertion capabilities. When you specify <code>BlueprintTypes</code>, the Handler field cannot be specified since the blueprint provides a pre-defined entry point.</p>
+    /// <p><code>BlueprintTypes</code> is supported only on canaries for syn-nodejs-3.0 runtime or later.</p>
+    pub blueprint_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of dependencies that should be used for running this canary. Specify the dependencies as a key-value pair, where the key is the type of dependency and the value is the dependency reference.</p>
     pub dependencies: ::std::option::Option<::std::vec::Vec<crate::types::Dependency>>,
 }
@@ -44,9 +49,18 @@ impl CanaryCodeInput {
         self.zip_file.as_ref()
     }
     /// <p>The entry point to use for the source code when running the canary. For canaries that use the <code>syn-python-selenium-1.0</code> runtime or a <code>syn-nodejs.puppeteer</code> runtime earlier than <code>syn-nodejs.puppeteer-3.4</code>, the handler must be specified as <code> <i>fileName</i>.handler</code>. For <code>syn-python-selenium-1.1</code>, <code>syn-nodejs.puppeteer-3.4</code>, and later runtimes, the handler can be specified as <code> <i>fileName</i>.<i>functionName</i> </code>, or you can specify a folder where canary scripts reside as <code> <i>folder</i>/<i>fileName</i>.<i>functionName</i> </code>.</p>
+    /// <p>This field is required when you don't specify <code>BlueprintTypes</code> and is not allowed when you specify <code>BlueprintTypes</code>.</p>
     pub fn handler(&self) -> &str {
         use std::ops::Deref;
         self.handler.deref()
+    }
+    /// <p><code>BlueprintTypes</code> is a list of templates that enable simplified canary creation. You can create canaries for common monitoring scenarios by providing only a JSON configuration file instead of writing custom scripts. The only supported value is <code>multi-checks</code>.</p>
+    /// <p>Multi-checks monitors HTTP/DNS/SSL/TCP endpoints with built-in authentication schemes (Basic, API Key, OAuth, SigV4) and assertion capabilities. When you specify <code>BlueprintTypes</code>, the Handler field cannot be specified since the blueprint provides a pre-defined entry point.</p>
+    /// <p><code>BlueprintTypes</code> is supported only on canaries for syn-nodejs-3.0 runtime or later.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.blueprint_types.is_none()`.
+    pub fn blueprint_types(&self) -> &[::std::string::String] {
+        self.blueprint_types.as_deref().unwrap_or_default()
     }
     /// <p>A list of dependencies that should be used for running this canary. Specify the dependencies as a key-value pair, where the key is the type of dependency and the value is the dependency reference.</p>
     ///
@@ -71,6 +85,7 @@ pub struct CanaryCodeInputBuilder {
     pub(crate) s3_version: ::std::option::Option<::std::string::String>,
     pub(crate) zip_file: ::std::option::Option<::aws_smithy_types::Blob>,
     pub(crate) handler: ::std::option::Option<::std::string::String>,
+    pub(crate) blueprint_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) dependencies: ::std::option::Option<::std::vec::Vec<crate::types::Dependency>>,
 }
 impl CanaryCodeInputBuilder {
@@ -134,19 +149,47 @@ impl CanaryCodeInputBuilder {
         &self.zip_file
     }
     /// <p>The entry point to use for the source code when running the canary. For canaries that use the <code>syn-python-selenium-1.0</code> runtime or a <code>syn-nodejs.puppeteer</code> runtime earlier than <code>syn-nodejs.puppeteer-3.4</code>, the handler must be specified as <code> <i>fileName</i>.handler</code>. For <code>syn-python-selenium-1.1</code>, <code>syn-nodejs.puppeteer-3.4</code>, and later runtimes, the handler can be specified as <code> <i>fileName</i>.<i>functionName</i> </code>, or you can specify a folder where canary scripts reside as <code> <i>folder</i>/<i>fileName</i>.<i>functionName</i> </code>.</p>
-    /// This field is required.
+    /// <p>This field is required when you don't specify <code>BlueprintTypes</code> and is not allowed when you specify <code>BlueprintTypes</code>.</p>
     pub fn handler(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.handler = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The entry point to use for the source code when running the canary. For canaries that use the <code>syn-python-selenium-1.0</code> runtime or a <code>syn-nodejs.puppeteer</code> runtime earlier than <code>syn-nodejs.puppeteer-3.4</code>, the handler must be specified as <code> <i>fileName</i>.handler</code>. For <code>syn-python-selenium-1.1</code>, <code>syn-nodejs.puppeteer-3.4</code>, and later runtimes, the handler can be specified as <code> <i>fileName</i>.<i>functionName</i> </code>, or you can specify a folder where canary scripts reside as <code> <i>folder</i>/<i>fileName</i>.<i>functionName</i> </code>.</p>
+    /// <p>This field is required when you don't specify <code>BlueprintTypes</code> and is not allowed when you specify <code>BlueprintTypes</code>.</p>
     pub fn set_handler(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.handler = input;
         self
     }
     /// <p>The entry point to use for the source code when running the canary. For canaries that use the <code>syn-python-selenium-1.0</code> runtime or a <code>syn-nodejs.puppeteer</code> runtime earlier than <code>syn-nodejs.puppeteer-3.4</code>, the handler must be specified as <code> <i>fileName</i>.handler</code>. For <code>syn-python-selenium-1.1</code>, <code>syn-nodejs.puppeteer-3.4</code>, and later runtimes, the handler can be specified as <code> <i>fileName</i>.<i>functionName</i> </code>, or you can specify a folder where canary scripts reside as <code> <i>folder</i>/<i>fileName</i>.<i>functionName</i> </code>.</p>
+    /// <p>This field is required when you don't specify <code>BlueprintTypes</code> and is not allowed when you specify <code>BlueprintTypes</code>.</p>
     pub fn get_handler(&self) -> &::std::option::Option<::std::string::String> {
         &self.handler
+    }
+    /// Appends an item to `blueprint_types`.
+    ///
+    /// To override the contents of this collection use [`set_blueprint_types`](Self::set_blueprint_types).
+    ///
+    /// <p><code>BlueprintTypes</code> is a list of templates that enable simplified canary creation. You can create canaries for common monitoring scenarios by providing only a JSON configuration file instead of writing custom scripts. The only supported value is <code>multi-checks</code>.</p>
+    /// <p>Multi-checks monitors HTTP/DNS/SSL/TCP endpoints with built-in authentication schemes (Basic, API Key, OAuth, SigV4) and assertion capabilities. When you specify <code>BlueprintTypes</code>, the Handler field cannot be specified since the blueprint provides a pre-defined entry point.</p>
+    /// <p><code>BlueprintTypes</code> is supported only on canaries for syn-nodejs-3.0 runtime or later.</p>
+    pub fn blueprint_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.blueprint_types.unwrap_or_default();
+        v.push(input.into());
+        self.blueprint_types = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p><code>BlueprintTypes</code> is a list of templates that enable simplified canary creation. You can create canaries for common monitoring scenarios by providing only a JSON configuration file instead of writing custom scripts. The only supported value is <code>multi-checks</code>.</p>
+    /// <p>Multi-checks monitors HTTP/DNS/SSL/TCP endpoints with built-in authentication schemes (Basic, API Key, OAuth, SigV4) and assertion capabilities. When you specify <code>BlueprintTypes</code>, the Handler field cannot be specified since the blueprint provides a pre-defined entry point.</p>
+    /// <p><code>BlueprintTypes</code> is supported only on canaries for syn-nodejs-3.0 runtime or later.</p>
+    pub fn set_blueprint_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.blueprint_types = input;
+        self
+    }
+    /// <p><code>BlueprintTypes</code> is a list of templates that enable simplified canary creation. You can create canaries for common monitoring scenarios by providing only a JSON configuration file instead of writing custom scripts. The only supported value is <code>multi-checks</code>.</p>
+    /// <p>Multi-checks monitors HTTP/DNS/SSL/TCP endpoints with built-in authentication schemes (Basic, API Key, OAuth, SigV4) and assertion capabilities. When you specify <code>BlueprintTypes</code>, the Handler field cannot be specified since the blueprint provides a pre-defined entry point.</p>
+    /// <p><code>BlueprintTypes</code> is supported only on canaries for syn-nodejs-3.0 runtime or later.</p>
+    pub fn get_blueprint_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.blueprint_types
     }
     /// Appends an item to `dependencies`.
     ///
@@ -169,21 +212,15 @@ impl CanaryCodeInputBuilder {
         &self.dependencies
     }
     /// Consumes the builder and constructs a [`CanaryCodeInput`](crate::types::CanaryCodeInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`handler`](crate::types::builders::CanaryCodeInputBuilder::handler)
-    pub fn build(self) -> ::std::result::Result<crate::types::CanaryCodeInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CanaryCodeInput {
+    pub fn build(self) -> crate::types::CanaryCodeInput {
+        crate::types::CanaryCodeInput {
             s3_bucket: self.s3_bucket,
             s3_key: self.s3_key,
             s3_version: self.s3_version,
             zip_file: self.zip_file,
-            handler: self.handler.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "handler",
-                    "handler was not specified but it is required when building CanaryCodeInput",
-                )
-            })?,
+            handler: self.handler.unwrap_or_default(),
+            blueprint_types: self.blueprint_types,
             dependencies: self.dependencies,
-        })
+        }
     }
 }

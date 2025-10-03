@@ -89,6 +89,16 @@ pub(crate) fn reflens_list_templates_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_search_all_related_items_output_output_next_token(
+    input: &crate::operation::search_all_related_items::SearchAllRelatedItemsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_search_cases_output_output_next_token(
     input: &crate::operation::search_cases::SearchCasesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -113,6 +123,13 @@ pub(crate) fn lens_list_case_rules_output_output_case_rules(
     input: crate::operation::list_case_rules::ListCaseRulesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::CaseRuleSummary>> {
     let input = input.case_rules;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_search_all_related_items_output_output_related_items(
+    input: crate::operation::search_all_related_items::SearchAllRelatedItemsOutput,
+) -> ::std::option::Option<::std::vec::Vec<::std::option::Option<crate::types::SearchAllRelatedItemsResponseItem>>> {
+    let input = input.related_items;
     ::std::option::Option::Some(input)
 }
 

@@ -18,17 +18,17 @@ tracing-fluent-assertions = "0.3.0"
 [dev-dependencies.aws-config]
 path = "../../sdk/aws-config"
 features = ["test-util", "behavior-version-latest"]
-version = "1.8.6"
+version = "1.8.7"
 
 [dev-dependencies.aws-sdk-dynamodb]
 path = "../../sdk/dynamodb"
 features = ["test-util", "behavior-version-latest"]
-version = "1.93.0"
+version = "1.94.0"
 
 [dev-dependencies.aws-sdk-s3]
 path = "../../sdk/s3"
 features = ["test-util", "behavior-version-latest"]
-version = "1.106.0"
+version = "1.107.0"
 
 [dev-dependencies.aws-smithy-observability]
 path = "../../sdk/aws-smithy-observability"

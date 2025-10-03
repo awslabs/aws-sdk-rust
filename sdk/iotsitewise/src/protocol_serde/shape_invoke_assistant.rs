@@ -47,18 +47,19 @@ pub fn de_invoke_assistant_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidRequestException" => crate::operation::invoke_assistant::InvokeAssistantError::InvalidRequestException({
+        "AccessDeniedException" => crate::operation::invoke_assistant::InvokeAssistantError::AccessDeniedException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::InvalidRequestExceptionBuilder::default();
-                output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(_response_body, output)
+                let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
+                output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
                     .map_err(crate::operation::invoke_assistant::InvokeAssistantError::unhandled)?;
                 let output = output.meta(generic);
-                crate::serde_util::invalid_request_exception_correct_errors(output)
-                    .build()
-                    .map_err(crate::operation::invoke_assistant::InvokeAssistantError::unhandled)?
+                output.build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ConflictingOperationException" => crate::operation::invoke_assistant::InvokeAssistantError::ConflictingOperationException({
@@ -71,34 +72,6 @@ pub fn de_invoke_assistant_http_error(
                         .map_err(crate::operation::invoke_assistant::InvokeAssistantError::unhandled)?;
                 let output = output.meta(generic);
                 crate::serde_util::conflicting_operation_exception_correct_errors(output)
-                    .build()
-                    .map_err(crate::operation::invoke_assistant::InvokeAssistantError::unhandled)?
-            };
-            tmp
-        }),
-        "LimitExceededException" => crate::operation::invoke_assistant::InvokeAssistantError::LimitExceededException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::LimitExceededExceptionBuilder::default();
-                output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(_response_body, output)
-                    .map_err(crate::operation::invoke_assistant::InvokeAssistantError::unhandled)?;
-                let output = output.meta(generic);
-                crate::serde_util::limit_exceeded_exception_correct_errors(output)
-                    .build()
-                    .map_err(crate::operation::invoke_assistant::InvokeAssistantError::unhandled)?
-            };
-            tmp
-        }),
-        "ThrottlingException" => crate::operation::invoke_assistant::InvokeAssistantError::ThrottlingException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
-                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
-                    .map_err(crate::operation::invoke_assistant::InvokeAssistantError::unhandled)?;
-                let output = output.meta(generic);
-                crate::serde_util::throttling_exception_correct_errors(output)
                     .build()
                     .map_err(crate::operation::invoke_assistant::InvokeAssistantError::unhandled)?
             };
@@ -118,19 +91,32 @@ pub fn de_invoke_assistant_http_error(
             };
             tmp
         }),
-        "AccessDeniedException" => crate::operation::invoke_assistant::InvokeAssistantError::AccessDeniedException({
+        "InvalidRequestException" => crate::operation::invoke_assistant::InvokeAssistantError::InvalidRequestException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
-                output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
+                let mut output = crate::types::error::builders::InvalidRequestExceptionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(_response_body, output)
                     .map_err(crate::operation::invoke_assistant::InvokeAssistantError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::invalid_request_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::invoke_assistant::InvokeAssistantError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+            tmp
+        }),
+        "LimitExceededException" => crate::operation::invoke_assistant::InvokeAssistantError::LimitExceededException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::LimitExceededExceptionBuilder::default();
+                output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::invoke_assistant::InvokeAssistantError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::limit_exceeded_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::invoke_assistant::InvokeAssistantError::unhandled)?
+            };
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::invoke_assistant::InvokeAssistantError::ResourceNotFoundException({
@@ -142,6 +128,20 @@ pub fn de_invoke_assistant_http_error(
                     .map_err(crate::operation::invoke_assistant::InvokeAssistantError::unhandled)?;
                 let output = output.meta(generic);
                 crate::serde_util::resource_not_found_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::invoke_assistant::InvokeAssistantError::unhandled)?
+            };
+            tmp
+        }),
+        "ThrottlingException" => crate::operation::invoke_assistant::InvokeAssistantError::ThrottlingException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::invoke_assistant::InvokeAssistantError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::throttling_exception_correct_errors(output)
                     .build()
                     .map_err(crate::operation::invoke_assistant::InvokeAssistantError::unhandled)?
             };

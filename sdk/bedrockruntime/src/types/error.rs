@@ -13,13 +13,13 @@ pub use crate::types::error::_access_denied_exception::AccessDeniedException;
 
 pub use crate::types::error::_service_quota_exceeded_exception::ServiceQuotaExceededException;
 
-pub use crate::types::error::_model_error_exception::ModelErrorException;
-
-pub use crate::types::error::_model_not_ready_exception::ModelNotReadyException;
+pub use crate::types::error::_model_timeout_exception::ModelTimeoutException;
 
 pub use crate::types::error::_model_stream_error_exception::ModelStreamErrorException;
 
-pub use crate::types::error::_model_timeout_exception::ModelTimeoutException;
+pub use crate::types::error::_model_not_ready_exception::ModelNotReadyException;
+
+pub use crate::types::error::_model_error_exception::ModelErrorException;
 
 /// Error type for the `ResponseStreamError` operation.
 #[non_exhaustive]

@@ -218,43 +218,12 @@ pub fn de_start_stream_transcription_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ServiceUnavailableException" => crate::operation::start_stream_transcription::StartStreamTranscriptionError::ServiceUnavailableException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
-                output =
-                    crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output)
-                        .map_err(crate::operation::start_stream_transcription::StartStreamTranscriptionError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
         "BadRequestException" => crate::operation::start_stream_transcription::StartStreamTranscriptionError::BadRequestException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::BadRequestExceptionBuilder::default();
                 output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(_response_body, output)
-                    .map_err(crate::operation::start_stream_transcription::StartStreamTranscriptionError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InternalFailureException" => crate::operation::start_stream_transcription::StartStreamTranscriptionError::InternalFailureException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::InternalFailureExceptionBuilder::default();
-                output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(_response_body, output)
                     .map_err(crate::operation::start_stream_transcription::StartStreamTranscriptionError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -279,6 +248,21 @@ pub fn de_start_stream_transcription_http_error(
             }
             tmp
         }),
+        "InternalFailureException" => crate::operation::start_stream_transcription::StartStreamTranscriptionError::InternalFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InternalFailureExceptionBuilder::default();
+                output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::start_stream_transcription::StartStreamTranscriptionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "LimitExceededException" => crate::operation::start_stream_transcription::StartStreamTranscriptionError::LimitExceededException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -286,6 +270,22 @@ pub fn de_start_stream_transcription_http_error(
                 let mut output = crate::types::error::builders::LimitExceededExceptionBuilder::default();
                 output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(_response_body, output)
                     .map_err(crate::operation::start_stream_transcription::StartStreamTranscriptionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServiceUnavailableException" => crate::operation::start_stream_transcription::StartStreamTranscriptionError::ServiceUnavailableException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::start_stream_transcription::StartStreamTranscriptionError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };

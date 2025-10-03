@@ -5,7 +5,7 @@ pub fn ser_object_encryption_filter(
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     let mut scope_writer = writer.finish();
     match input {
-        crate::types::ObjectEncryptionFilter::Sses3(inner) => {
+        crate::types::ObjectEncryptionFilter::Sses3(_inner) => {
             scope_writer.start_el("SSE-S3").finish();
         }
         crate::types::ObjectEncryptionFilter::Ssekms(inner) => {
@@ -16,10 +16,10 @@ pub fn ser_object_encryption_filter(
             let inner_writer = scope_writer.start_el("DSSE-KMS");
             crate::protocol_serde::shape_dssekms_filter::ser_dssekms_filter(inner, inner_writer)?
         }
-        crate::types::ObjectEncryptionFilter::Ssec(inner) => {
+        crate::types::ObjectEncryptionFilter::Ssec(_inner) => {
             scope_writer.start_el("SSE-C").finish();
         }
-        crate::types::ObjectEncryptionFilter::Notsse(inner) => {
+        crate::types::ObjectEncryptionFilter::Notsse(_inner) => {
             scope_writer.start_el("NOT-SSE").finish();
         }
         crate::types::ObjectEncryptionFilter::Unknown => {

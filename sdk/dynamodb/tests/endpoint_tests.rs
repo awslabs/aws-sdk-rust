@@ -3222,8 +3222,8 @@ async fn operation_input_test_list_tables_72() {
     let req = rcvr.expect_request();
     let uri = req.uri().to_string();
     assert!(
-        uri.starts_with("https://dynamodb.us-east-1.api.aws"),
-        "expected URI to start with `https://dynamodb.us-east-1.api.aws` but it was `{}`",
+        uri.starts_with("https://111111111111.ddb.us-east-1.api.aws"),
+        "expected URI to start with `https://111111111111.ddb.us-east-1.api.aws` but it was `{}`",
         uri
     );
 }
@@ -3476,8 +3476,8 @@ async fn operation_input_test_describe_table_78() {
     let req = rcvr.expect_request();
     let uri = req.uri().to_string();
     assert!(
-        uri.starts_with("https://dynamodb.us-east-1.api.aws"),
-        "expected URI to start with `https://dynamodb.us-east-1.api.aws` but it was `{}`",
+        uri.starts_with("https://222222222222.ddb.us-east-1.api.aws"),
+        "expected URI to start with `https://222222222222.ddb.us-east-1.api.aws` but it was `{}`",
         uri
     );
 }
@@ -3758,8 +3758,8 @@ async fn operation_input_test_batch_get_item_84() {
     let req = rcvr.expect_request();
     let uri = req.uri().to_string();
     assert!(
-        uri.starts_with("https://dynamodb.us-east-1.api.aws"),
-        "expected URI to start with `https://dynamodb.us-east-1.api.aws` but it was `{}`",
+        uri.starts_with("https://333333333333.ddb.us-east-1.api.aws"),
+        "expected URI to start with `https://333333333333.ddb.us-east-1.api.aws` but it was `{}`",
         uri
     );
 }
@@ -3917,12 +3917,13 @@ async fn operation_input_test_list_tables_88() {
     };
     let client = aws_sdk_dynamodb::Client::from_conf(conf);
     let _result = dbg!(client.list_tables().send().await);
-    rcvr.expect_no_request();
-    let error = _result.expect_err("expected error: Invalid Configuration: AccountIdEndpointMode is required and DualStack is enabled, but DualStack account endpoints are not supported [{UseFIPS=false, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=required, Region=us-east-1}]");
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
     assert!(
-                                            format!("{:?}", error).contains("Invalid Configuration: AccountIdEndpointMode is required and DualStack is enabled, but DualStack account endpoints are not supported"),
-                                            "expected error to contain `Invalid Configuration: AccountIdEndpointMode is required and DualStack is enabled, but DualStack account endpoints are not supported` but it was {:?}", error
-                                        );
+        uri.starts_with("https://111111111111.ddb.us-east-1.api.aws"),
+        "expected URI to start with `https://111111111111.ddb.us-east-1.api.aws` but it was `{}`",
+        uri
+    );
 }
 
 #[::tokio::test]
@@ -4168,12 +4169,13 @@ async fn operation_input_test_describe_table_94() {
             .send()
             .await
     );
-    rcvr.expect_no_request();
-    let error = _result.expect_err("expected error: Invalid Configuration: AccountIdEndpointMode is required and DualStack is enabled, but DualStack account endpoints are not supported [{UseFIPS=false, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=required, Region=us-east-1}]");
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
     assert!(
-                                            format!("{:?}", error).contains("Invalid Configuration: AccountIdEndpointMode is required and DualStack is enabled, but DualStack account endpoints are not supported"),
-                                            "expected error to contain `Invalid Configuration: AccountIdEndpointMode is required and DualStack is enabled, but DualStack account endpoints are not supported` but it was {:?}", error
-                                        );
+        uri.starts_with("https://222222222222.ddb.us-east-1.api.aws"),
+        "expected URI to start with `https://222222222222.ddb.us-east-1.api.aws` but it was `{}`",
+        uri
+    );
 }
 
 #[::tokio::test]
@@ -4447,12 +4449,13 @@ async fn operation_input_test_batch_get_item_100() {
             .send()
             .await
     );
-    rcvr.expect_no_request();
-    let error = _result.expect_err("expected error: Invalid Configuration: AccountIdEndpointMode is required and DualStack is enabled, but DualStack account endpoints are not supported [{UseFIPS=false, UseDualStack=true, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=us-east-1}]");
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
     assert!(
-                                            format!("{:?}", error).contains("Invalid Configuration: AccountIdEndpointMode is required and DualStack is enabled, but DualStack account endpoints are not supported"),
-                                            "expected error to contain `Invalid Configuration: AccountIdEndpointMode is required and DualStack is enabled, but DualStack account endpoints are not supported` but it was {:?}", error
-                                        );
+        uri.starts_with("https://333333333333.ddb.us-east-1.api.aws"),
+        "expected URI to start with `https://333333333333.ddb.us-east-1.api.aws` but it was `{}`",
+        uri
+    );
 }
 
 #[::tokio::test]

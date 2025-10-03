@@ -40,21 +40,6 @@ pub fn de_converse_stream_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ModelTimeoutException" => crate::operation::converse_stream::ConverseStreamError::ModelTimeoutException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ModelTimeoutExceptionBuilder::default();
-                output = crate::protocol_serde::shape_model_timeout_exception::de_model_timeout_exception_json_err(_response_body, output)
-                    .map_err(crate::operation::converse_stream::ConverseStreamError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
         "AccessDeniedException" => crate::operation::converse_stream::ConverseStreamError::AccessDeniedException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -70,12 +55,12 @@ pub fn de_converse_stream_http_error(
             }
             tmp
         }),
-        "ResourceNotFoundException" => crate::operation::converse_stream::ConverseStreamError::ResourceNotFoundException({
+        "InternalServerException" => crate::operation::converse_stream::ConverseStreamError::InternalServerException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
-                output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
+                let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
+                output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output)
                     .map_err(crate::operation::converse_stream::ConverseStreamError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -85,12 +70,57 @@ pub fn de_converse_stream_http_error(
             }
             tmp
         }),
-        "ThrottlingException" => crate::operation::converse_stream::ConverseStreamError::ThrottlingException({
+        "ModelErrorException" => crate::operation::converse_stream::ConverseStreamError::ModelErrorException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
-                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
+                let mut output = crate::types::error::builders::ModelErrorExceptionBuilder::default();
+                output = crate::protocol_serde::shape_model_error_exception::de_model_error_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::converse_stream::ConverseStreamError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ModelNotReadyException" => crate::operation::converse_stream::ConverseStreamError::ModelNotReadyException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ModelNotReadyExceptionBuilder::default();
+                output = crate::protocol_serde::shape_model_not_ready_exception::de_model_not_ready_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::converse_stream::ConverseStreamError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ModelTimeoutException" => crate::operation::converse_stream::ConverseStreamError::ModelTimeoutException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ModelTimeoutExceptionBuilder::default();
+                output = crate::protocol_serde::shape_model_timeout_exception::de_model_timeout_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::converse_stream::ConverseStreamError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ResourceNotFoundException" => crate::operation::converse_stream::ConverseStreamError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
                     .map_err(crate::operation::converse_stream::ConverseStreamError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -116,27 +146,12 @@ pub fn de_converse_stream_http_error(
             }
             tmp
         }),
-        "InternalServerException" => crate::operation::converse_stream::ConverseStreamError::InternalServerException({
+        "ThrottlingException" => crate::operation::converse_stream::ConverseStreamError::ThrottlingException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
-                output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output)
-                    .map_err(crate::operation::converse_stream::ConverseStreamError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ModelStreamErrorException" => crate::operation::converse_stream::ConverseStreamError::ModelStreamErrorException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ModelStreamErrorExceptionBuilder::default();
-                output = crate::protocol_serde::shape_model_stream_error_exception::de_model_stream_error_exception_json_err(_response_body, output)
+                let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
                     .map_err(crate::operation::converse_stream::ConverseStreamError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -161,27 +176,12 @@ pub fn de_converse_stream_http_error(
             }
             tmp
         }),
-        "ModelNotReadyException" => crate::operation::converse_stream::ConverseStreamError::ModelNotReadyException({
+        "ModelStreamErrorException" => crate::operation::converse_stream::ConverseStreamError::ModelStreamErrorException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ModelNotReadyExceptionBuilder::default();
-                output = crate::protocol_serde::shape_model_not_ready_exception::de_model_not_ready_exception_json_err(_response_body, output)
-                    .map_err(crate::operation::converse_stream::ConverseStreamError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ModelErrorException" => crate::operation::converse_stream::ConverseStreamError::ModelErrorException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ModelErrorExceptionBuilder::default();
-                output = crate::protocol_serde::shape_model_error_exception::de_model_error_exception_json_err(_response_body, output)
+                let mut output = crate::types::error::builders::ModelStreamErrorExceptionBuilder::default();
+                output = crate::protocol_serde::shape_model_stream_error_exception::de_model_stream_error_exception_json_err(_response_body, output)
                     .map_err(crate::operation::converse_stream::ConverseStreamError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()

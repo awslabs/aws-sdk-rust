@@ -1316,6 +1316,7 @@ impl ServiceRuntimePlugin {
         runtime_components.push_interceptor(::aws_runtime::user_agent::UserAgentInterceptor::new());
         runtime_components.push_interceptor(::aws_runtime::invocation_id::InvocationIdInterceptor::new());
         runtime_components.push_interceptor(::aws_runtime::recursion_detection::RecursionDetectionInterceptor::new());
+        runtime_components.push_interceptor(crate::account_id_endpoint::AccountIdEndpointFeatureTrackerInterceptor);
         runtime_components.push_auth_scheme(::aws_smithy_runtime_api::client::auth::SharedAuthScheme::new(
             ::aws_runtime::auth::sigv4::SigV4AuthScheme::new(),
         ));

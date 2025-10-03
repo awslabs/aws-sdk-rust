@@ -556,21 +556,21 @@ where
 impl From<crate::operation::invoke_code_interpreter::InvokeCodeInterpreterError> for Error {
     fn from(err: crate::operation::invoke_code_interpreter::InvokeCodeInterpreterError) -> Self {
         match err {
-            crate::operation::invoke_code_interpreter::InvokeCodeInterpreterError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::operation::invoke_code_interpreter::InvokeCodeInterpreterError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
             crate::operation::invoke_code_interpreter::InvokeCodeInterpreterError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
-            }
-            crate::operation::invoke_code_interpreter::InvokeCodeInterpreterError::ServiceQuotaExceededException(inner) => {
-                Error::ServiceQuotaExceededException(inner)
             }
             crate::operation::invoke_code_interpreter::InvokeCodeInterpreterError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::invoke_code_interpreter::InvokeCodeInterpreterError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
+            crate::operation::invoke_code_interpreter::InvokeCodeInterpreterError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::invoke_code_interpreter::InvokeCodeInterpreterError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
             crate::operation::invoke_code_interpreter::InvokeCodeInterpreterError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::invoke_code_interpreter::InvokeCodeInterpreterError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::invoke_code_interpreter::InvokeCodeInterpreterError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }

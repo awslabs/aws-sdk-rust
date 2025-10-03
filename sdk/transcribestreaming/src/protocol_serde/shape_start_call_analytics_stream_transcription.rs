@@ -212,17 +212,15 @@ pub fn de_start_call_analytics_stream_transcription_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ServiceUnavailableException" => {
-            crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError::ServiceUnavailableException({
+        "BadRequestException" => {
+            crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
-                    output =
-                        crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output)
-                            .map_err(
-                                crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError::unhandled,
-                            )?;
+                    let mut output = crate::types::error::builders::BadRequestExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(_response_body, output).map_err(
+                        crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError::unhandled,
+                    )?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -232,13 +230,13 @@ pub fn de_start_call_analytics_stream_transcription_http_error(
                 tmp
             })
         }
-        "BadRequestException" => {
-            crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError::BadRequestException({
+        "ConflictException" => {
+            crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError::ConflictException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::BadRequestExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(_response_body, output).map_err(
+                    let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output).map_err(
                         crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError::unhandled,
                     )?;
                     let output = output.meta(generic);
@@ -269,24 +267,6 @@ pub fn de_start_call_analytics_stream_transcription_http_error(
                 tmp
             })
         }
-        "ConflictException" => {
-            crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError::ConflictException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output).map_err(
-                        crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError::unhandled,
-                    )?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
         "LimitExceededException" => {
             crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError::LimitExceededException({
                 #[allow(unused_mut)]
@@ -297,6 +277,26 @@ pub fn de_start_call_analytics_stream_transcription_http_error(
                         .map_err(
                             crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError::unhandled,
                         )?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError::ServiceUnavailableException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
+                    output =
+                        crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output)
+                            .map_err(
+                                crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError::unhandled,
+                            )?;
                     let output = output.meta(generic);
                     output.build()
                 };

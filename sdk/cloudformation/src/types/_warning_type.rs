@@ -13,6 +13,7 @@
 /// # let warningtype = unimplemented!();
 /// match warningtype {
 ///     WarningType::ExcludedProperties => { /* ... */ },
+///     WarningType::ExcludedResources => { /* ... */ },
 ///     WarningType::MutuallyExclusiveProperties => { /* ... */ },
 ///     WarningType::MutuallyExclusiveTypes => { /* ... */ },
 ///     WarningType::UnsupportedProperties => { /* ... */ },
@@ -47,6 +48,8 @@ pub enum WarningType {
     #[allow(missing_docs)] // documentation missing in model
     ExcludedProperties,
     #[allow(missing_docs)] // documentation missing in model
+    ExcludedResources,
+    #[allow(missing_docs)] // documentation missing in model
     MutuallyExclusiveProperties,
     #[allow(missing_docs)] // documentation missing in model
     MutuallyExclusiveTypes,
@@ -60,6 +63,7 @@ impl ::std::convert::From<&str> for WarningType {
     fn from(s: &str) -> Self {
         match s {
             "EXCLUDED_PROPERTIES" => WarningType::ExcludedProperties,
+            "EXCLUDED_RESOURCES" => WarningType::ExcludedResources,
             "MUTUALLY_EXCLUSIVE_PROPERTIES" => WarningType::MutuallyExclusiveProperties,
             "MUTUALLY_EXCLUSIVE_TYPES" => WarningType::MutuallyExclusiveTypes,
             "UNSUPPORTED_PROPERTIES" => WarningType::UnsupportedProperties,
@@ -79,6 +83,7 @@ impl WarningType {
     pub fn as_str(&self) -> &str {
         match self {
             WarningType::ExcludedProperties => "EXCLUDED_PROPERTIES",
+            WarningType::ExcludedResources => "EXCLUDED_RESOURCES",
             WarningType::MutuallyExclusiveProperties => "MUTUALLY_EXCLUSIVE_PROPERTIES",
             WarningType::MutuallyExclusiveTypes => "MUTUALLY_EXCLUSIVE_TYPES",
             WarningType::UnsupportedProperties => "UNSUPPORTED_PROPERTIES",
@@ -89,6 +94,7 @@ impl WarningType {
     pub const fn values() -> &'static [&'static str] {
         &[
             "EXCLUDED_PROPERTIES",
+            "EXCLUDED_RESOURCES",
             "MUTUALLY_EXCLUSIVE_PROPERTIES",
             "MUTUALLY_EXCLUSIVE_TYPES",
             "UNSUPPORTED_PROPERTIES",
@@ -116,6 +122,7 @@ impl ::std::fmt::Display for WarningType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             WarningType::ExcludedProperties => write!(f, "EXCLUDED_PROPERTIES"),
+            WarningType::ExcludedResources => write!(f, "EXCLUDED_RESOURCES"),
             WarningType::MutuallyExclusiveProperties => write!(f, "MUTUALLY_EXCLUSIVE_PROPERTIES"),
             WarningType::MutuallyExclusiveTypes => write!(f, "MUTUALLY_EXCLUSIVE_TYPES"),
             WarningType::UnsupportedProperties => write!(f, "UNSUPPORTED_PROPERTIES"),

@@ -396,10 +396,18 @@ impl From<Credentials> for Identity {
 
         builder.set_expiration(expiry);
 
-        if let Some(features) = val.get_property::<Vec<AwsCredentialFeature>>().cloned() {
+        let features = val.get_property::<Vec<AwsCredentialFeature>>().cloned();
+        let has_account_id = val.account_id().is_some();
+
+        if features.is_some() || has_account_id {
             let mut layer = Layer::new("IdentityResolutionFeatureIdTracking");
-            for feat in features {
-                layer.store_append(feat);
+            if let Some(features) = features {
+                for feat in features {
+                    layer.store_append(feat);
+                }
+            }
+            if has_account_id {
+                layer.store_append(AwsCredentialFeature::ResolvedAccountId);
             }
             builder.set_property(layer.freeze());
         }
@@ -412,9 +420,6 @@ impl From<Credentials> for Identity {
 mod test {
     use crate::Credentials;
     use std::time::{Duration, UNIX_EPOCH};
-
-    #[cfg(feature = "test-util")]
-    use crate::credential_feature::AwsCredentialFeature;
 
     #[test]
     fn debug_impl() {
@@ -451,7 +456,7 @@ mod test {
         #[derive(Clone, Debug)]
         struct Foo;
         let mut creds1 = Credentials::for_tests_with_session_token();
-        creds1.set_property(AwsCredentialFeature::CredentialsCode);
+        creds1.set_property(crate::credential_feature::AwsCredentialFeature::CredentialsCode);
 
         let mut creds2 = Credentials::for_tests_with_session_token();
         creds2.set_property(Foo);
@@ -462,6 +467,7 @@ mod test {
     #[cfg(feature = "test-util")]
     #[test]
     fn identity_inherits_feature_properties() {
+        use crate::credential_feature::AwsCredentialFeature;
         use aws_smithy_runtime_api::client::identity::Identity;
         use aws_smithy_types::config_bag::FrozenLayer;
 
@@ -484,5 +490,29 @@ mod test {
         // The props get reversed when being popped out of the StoreAppend
         feature_props.reverse();
         assert_eq!(maybe_props, feature_props)
+    }
+
+    #[cfg(feature = "test-util")]
+    #[test]
+    fn from_credentials_adds_resolved_account_id_feature() {
+        use crate::credential_feature::AwsCredentialFeature;
+        use aws_smithy_runtime_api::client::identity::Identity;
+        use aws_smithy_types::config_bag::FrozenLayer;
+
+        let creds = Credentials::builder()
+            .access_key_id("test")
+            .secret_access_key("test")
+            .account_id("123456789012")
+            .provider_name("test")
+            .build();
+
+        let identity = Identity::from(creds);
+
+        let layer = identity.property::<FrozenLayer>().unwrap();
+        let features = layer
+            .load::<AwsCredentialFeature>()
+            .cloned()
+            .collect::<Vec<_>>();
+        assert!(features.contains(&AwsCredentialFeature::ResolvedAccountId));
     }
 }

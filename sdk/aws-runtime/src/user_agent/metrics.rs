@@ -216,6 +216,9 @@ impl ProvideBusinessMetric for AwsSdkFeature {
     fn provide_business_metric(&self) -> Option<BusinessMetric> {
         use AwsSdkFeature::*;
         match self {
+            AccountIdModePreferred => Some(BusinessMetric::AccountIdModePreferred),
+            AccountIdModeDisabled => Some(BusinessMetric::AccountIdModeDisabled),
+            AccountIdModeRequired => Some(BusinessMetric::AccountIdModeRequired),
             S3Transfer => Some(BusinessMetric::S3Transfer),
             SsoLoginDevice => Some(BusinessMetric::SsoLoginDevice),
             SsoLoginAuth => Some(BusinessMetric::SsoLoginAuth),
@@ -227,6 +230,7 @@ impl ProvideBusinessMetric for AwsCredentialFeature {
     fn provide_business_metric(&self) -> Option<BusinessMetric> {
         use AwsCredentialFeature::*;
         match self {
+            ResolvedAccountId => Some(BusinessMetric::ResolvedAccountId),
             CredentialsCode => Some(BusinessMetric::CredentialsCode),
             CredentialsEnvVars => Some(BusinessMetric::CredentialsEnvVars),
             CredentialsEnvVarsStsWebIdToken => {

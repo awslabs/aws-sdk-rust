@@ -62,21 +62,6 @@ pub fn de_invoke_model_with_response_stream_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ModelTimeoutException" => crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamError::ModelTimeoutException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ModelTimeoutExceptionBuilder::default();
-                output = crate::protocol_serde::shape_model_timeout_exception::de_model_timeout_exception_json_err(_response_body, output)
-                    .map_err(crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
         "AccessDeniedException" => crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamError::AccessDeniedException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -92,15 +77,14 @@ pub fn de_invoke_model_with_response_stream_http_error(
             }
             tmp
         }),
-        "ResourceNotFoundException" => {
-            crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamError::ResourceNotFoundException({
+        "InternalServerException" => {
+            crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamError::InternalServerException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
-                    output =
-                        crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
-                            .map_err(crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamError::unhandled)?;
+                    let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -110,12 +94,12 @@ pub fn de_invoke_model_with_response_stream_http_error(
                 tmp
             })
         }
-        "ThrottlingException" => crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamError::ThrottlingException({
+        "ModelErrorException" => crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamError::ModelErrorException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
-                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
+                let mut output = crate::types::error::builders::ModelErrorExceptionBuilder::default();
+                output = crate::protocol_serde::shape_model_error_exception::de_model_error_exception_json_err(_response_body, output)
                     .map_err(crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -125,31 +109,13 @@ pub fn de_invoke_model_with_response_stream_http_error(
             }
             tmp
         }),
-        "ServiceUnavailableException" => {
-            crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamError::ServiceUnavailableException({
+        "ModelNotReadyException" => {
+            crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamError::ModelNotReadyException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
-                    output =
-                        crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output)
-                            .map_err(crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "InternalServerException" => {
-            crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamError::InternalServerException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output)
+                    let mut output = crate::types::error::builders::ModelNotReadyExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_model_not_ready_exception::de_model_not_ready_exception_json_err(_response_body, output)
                         .map_err(crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
@@ -178,12 +144,12 @@ pub fn de_invoke_model_with_response_stream_http_error(
                 tmp
             })
         }
-        "ValidationException" => crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamError::ValidationException({
+        "ModelTimeoutException" => crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamError::ModelTimeoutException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
-                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
+                let mut output = crate::types::error::builders::ModelTimeoutExceptionBuilder::default();
+                output = crate::protocol_serde::shape_model_timeout_exception::de_model_timeout_exception_json_err(_response_body, output)
                     .map_err(crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -193,14 +159,15 @@ pub fn de_invoke_model_with_response_stream_http_error(
             }
             tmp
         }),
-        "ModelNotReadyException" => {
-            crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamError::ModelNotReadyException({
+        "ResourceNotFoundException" => {
+            crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamError::ResourceNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ModelNotReadyExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_model_not_ready_exception::de_model_not_ready_exception_json_err(_response_body, output)
-                        .map_err(crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamError::unhandled)?;
+                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                    output =
+                        crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
+                            .map_err(crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -210,21 +177,6 @@ pub fn de_invoke_model_with_response_stream_http_error(
                 tmp
             })
         }
-        "ModelErrorException" => crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamError::ModelErrorException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ModelErrorExceptionBuilder::default();
-                output = crate::protocol_serde::shape_model_error_exception::de_model_error_exception_json_err(_response_body, output)
-                    .map_err(crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
         "ServiceQuotaExceededException" => {
             crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamError::ServiceQuotaExceededException({
                 #[allow(unused_mut)]
@@ -245,6 +197,54 @@ pub fn de_invoke_model_with_response_stream_http_error(
                 tmp
             })
         }
+        "ServiceUnavailableException" => {
+            crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamError::ServiceUnavailableException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
+                    output =
+                        crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output)
+                            .map_err(crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ThrottlingException" => crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamError::ThrottlingException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ValidationException" => crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamError::ValidationException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
+                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamError::generic(generic),
     })
 }

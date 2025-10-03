@@ -87,6 +87,8 @@ pub(crate) mod shape_list_templates;
 
 pub(crate) mod shape_put_case_event_configuration;
 
+pub(crate) mod shape_search_all_related_items;
+
 pub(crate) mod shape_search_cases;
 
 pub(crate) mod shape_search_related_items;
@@ -148,6 +150,8 @@ pub(crate) mod shape_list_cases_for_contact_input;
 pub(crate) mod shape_put_case_event_configuration_input;
 
 pub(crate) mod shape_resource_not_found_exception;
+
+pub(crate) mod shape_search_all_related_items_input;
 
 pub(crate) mod shape_search_cases_input;
 
@@ -223,6 +227,10 @@ pub(crate) mod shape_required_field;
 
 pub(crate) mod shape_required_field_list;
 
+pub(crate) mod shape_search_all_related_items_response_item_list;
+
+pub(crate) mod shape_search_all_related_items_sort;
+
 pub(crate) mod shape_search_cases_response_item_list;
 
 pub(crate) mod shape_search_related_items_response_item_list;
@@ -290,6 +298,8 @@ pub(crate) mod shape_get_field_response;
 pub(crate) mod shape_layout_summary;
 
 pub(crate) mod shape_required_case_rule;
+
+pub(crate) mod shape_search_all_related_items_response_item;
 
 pub(crate) mod shape_search_cases_response_item;
 

@@ -28,6 +28,9 @@ where
                                     .transpose()?,
                             );
                         }
+                        "BlueprintTypes" => {
+                            builder = builder.set_blueprint_types(crate::protocol_serde::shape_blueprint_types::de_blueprint_types(tokens)?);
+                        }
                         "Dependencies" => {
                             builder = builder.set_dependencies(crate::protocol_serde::shape_dependencies::de_dependencies(tokens)?);
                         }

@@ -15,7 +15,7 @@ pub struct ActivateTypeInput {
     /// <p>The name of the extension.</p>
     /// <p>Conditional: You must specify <code>PublicTypeArn</code>, or <code>TypeName</code>, <code>Type</code>, and <code>PublisherId</code>.</p>
     pub type_name: ::std::option::Option<::std::string::String>,
-    /// <p>An alias to assign to the public extension, in this account and Region. If you specify an alias for the extension, CloudFormation treats the alias as the extension type name within this account and Region. You must use the alias to refer to the extension in your templates, API calls, and CloudFormation console.</p>
+    /// <p>An alias to assign to the public extension in this account and Region. If you specify an alias for the extension, CloudFormation treats the alias as the extension type name within this account and Region. You must use the alias to refer to the extension in your templates, API calls, and CloudFormation console.</p>
     /// <p>An extension alias must be unique within a given account and Region. You can activate the same public resource multiple times in the same account and Region, using different type name aliases.</p>
     pub type_name_alias: ::std::option::Option<::std::string::String>,
     /// <p>Whether to automatically update the extension in this account and Region when a new <i>minor</i> version is published by the extension publisher. Major versions released by the publisher must be manually updated.</p>
@@ -58,7 +58,7 @@ impl ActivateTypeInput {
     pub fn type_name(&self) -> ::std::option::Option<&str> {
         self.type_name.as_deref()
     }
-    /// <p>An alias to assign to the public extension, in this account and Region. If you specify an alias for the extension, CloudFormation treats the alias as the extension type name within this account and Region. You must use the alias to refer to the extension in your templates, API calls, and CloudFormation console.</p>
+    /// <p>An alias to assign to the public extension in this account and Region. If you specify an alias for the extension, CloudFormation treats the alias as the extension type name within this account and Region. You must use the alias to refer to the extension in your templates, API calls, and CloudFormation console.</p>
     /// <p>An extension alias must be unique within a given account and Region. You can activate the same public resource multiple times in the same account and Region, using different type name aliases.</p>
     pub fn type_name_alias(&self) -> ::std::option::Option<&str> {
         self.type_name_alias.as_deref()
@@ -183,19 +183,19 @@ impl ActivateTypeInputBuilder {
     pub fn get_type_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.type_name
     }
-    /// <p>An alias to assign to the public extension, in this account and Region. If you specify an alias for the extension, CloudFormation treats the alias as the extension type name within this account and Region. You must use the alias to refer to the extension in your templates, API calls, and CloudFormation console.</p>
+    /// <p>An alias to assign to the public extension in this account and Region. If you specify an alias for the extension, CloudFormation treats the alias as the extension type name within this account and Region. You must use the alias to refer to the extension in your templates, API calls, and CloudFormation console.</p>
     /// <p>An extension alias must be unique within a given account and Region. You can activate the same public resource multiple times in the same account and Region, using different type name aliases.</p>
     pub fn type_name_alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.type_name_alias = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An alias to assign to the public extension, in this account and Region. If you specify an alias for the extension, CloudFormation treats the alias as the extension type name within this account and Region. You must use the alias to refer to the extension in your templates, API calls, and CloudFormation console.</p>
+    /// <p>An alias to assign to the public extension in this account and Region. If you specify an alias for the extension, CloudFormation treats the alias as the extension type name within this account and Region. You must use the alias to refer to the extension in your templates, API calls, and CloudFormation console.</p>
     /// <p>An extension alias must be unique within a given account and Region. You can activate the same public resource multiple times in the same account and Region, using different type name aliases.</p>
     pub fn set_type_name_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.type_name_alias = input;
         self
     }
-    /// <p>An alias to assign to the public extension, in this account and Region. If you specify an alias for the extension, CloudFormation treats the alias as the extension type name within this account and Region. You must use the alias to refer to the extension in your templates, API calls, and CloudFormation console.</p>
+    /// <p>An alias to assign to the public extension in this account and Region. If you specify an alias for the extension, CloudFormation treats the alias as the extension type name within this account and Region. You must use the alias to refer to the extension in your templates, API calls, and CloudFormation console.</p>
     /// <p>An extension alias must be unique within a given account and Region. You can activate the same public resource multiple times in the same account and Region, using different type name aliases.</p>
     pub fn get_type_name_alias(&self) -> &::std::option::Option<::std::string::String> {
         &self.type_name_alias

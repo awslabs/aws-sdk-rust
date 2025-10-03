@@ -289,16 +289,16 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for StartCallAnal
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum StartCallAnalyticsStreamTranscriptionError {
-    /// <p>The service is currently unavailable. Try your request later.</p>
-    ServiceUnavailableException(crate::types::error::ServiceUnavailableException),
     /// <p>One or more arguments to the <code>StartStreamTranscription</code>, <code>StartMedicalStreamTranscription</code>, or <code>StartCallAnalyticsStreamTranscription</code> operation was not valid. For example, <code>MediaEncoding</code> or <code>LanguageCode</code> used unsupported values. Check the specified parameters and try your request again.</p>
     BadRequestException(crate::types::error::BadRequestException),
-    /// <p>A problem occurred while processing the audio. Amazon Transcribe terminated processing.</p>
-    InternalFailureException(crate::types::error::InternalFailureException),
     /// <p>A new stream started with the same session ID. The current stream has been terminated.</p>
     ConflictException(crate::types::error::ConflictException),
+    /// <p>A problem occurred while processing the audio. Amazon Transcribe terminated processing.</p>
+    InternalFailureException(crate::types::error::InternalFailureException),
     /// <p>Your client has exceeded one of the Amazon Transcribe limits. This is typically the audio length limit. Break your audio stream into smaller chunks and try your request again.</p>
     LimitExceededException(crate::types::error::LimitExceededException),
+    /// <p>The service is currently unavailable. Try your request later.</p>
+    ServiceUnavailableException(crate::types::error::ServiceUnavailableException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
@@ -332,43 +332,43 @@ impl StartCallAnalyticsStreamTranscriptionError {
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
-            Self::ServiceUnavailableException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::BadRequestException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
-            Self::InternalFailureException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ConflictException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InternalFailureException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::LimitExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ServiceUnavailableException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
-    }
-    /// Returns `true` if the error kind is `StartCallAnalyticsStreamTranscriptionError::ServiceUnavailableException`.
-    pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(self, Self::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `StartCallAnalyticsStreamTranscriptionError::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(self, Self::BadRequestException(_))
     }
-    /// Returns `true` if the error kind is `StartCallAnalyticsStreamTranscriptionError::InternalFailureException`.
-    pub fn is_internal_failure_exception(&self) -> bool {
-        matches!(self, Self::InternalFailureException(_))
-    }
     /// Returns `true` if the error kind is `StartCallAnalyticsStreamTranscriptionError::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(self, Self::ConflictException(_))
+    }
+    /// Returns `true` if the error kind is `StartCallAnalyticsStreamTranscriptionError::InternalFailureException`.
+    pub fn is_internal_failure_exception(&self) -> bool {
+        matches!(self, Self::InternalFailureException(_))
     }
     /// Returns `true` if the error kind is `StartCallAnalyticsStreamTranscriptionError::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(self, Self::LimitExceededException(_))
     }
+    /// Returns `true` if the error kind is `StartCallAnalyticsStreamTranscriptionError::ServiceUnavailableException`.
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(self, Self::ServiceUnavailableException(_))
+    }
 }
 impl ::std::error::Error for StartCallAnalyticsStreamTranscriptionError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
-            Self::ServiceUnavailableException(_inner) => ::std::option::Option::Some(_inner),
             Self::BadRequestException(_inner) => ::std::option::Option::Some(_inner),
-            Self::InternalFailureException(_inner) => ::std::option::Option::Some(_inner),
             Self::ConflictException(_inner) => ::std::option::Option::Some(_inner),
+            Self::InternalFailureException(_inner) => ::std::option::Option::Some(_inner),
             Self::LimitExceededException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ServiceUnavailableException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
     }
@@ -376,11 +376,11 @@ impl ::std::error::Error for StartCallAnalyticsStreamTranscriptionError {
 impl ::std::fmt::Display for StartCallAnalyticsStreamTranscriptionError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
-            Self::ServiceUnavailableException(_inner) => _inner.fmt(f),
             Self::BadRequestException(_inner) => _inner.fmt(f),
-            Self::InternalFailureException(_inner) => _inner.fmt(f),
             Self::ConflictException(_inner) => _inner.fmt(f),
+            Self::InternalFailureException(_inner) => _inner.fmt(f),
             Self::LimitExceededException(_inner) => _inner.fmt(f),
+            Self::ServiceUnavailableException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
                     write!(f, "unhandled error ({code})")
@@ -402,11 +402,11 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for StartCallAnalyticsStreamTra
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for StartCallAnalyticsStreamTranscriptionError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
-            Self::ServiceUnavailableException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::BadRequestException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::InternalFailureException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ConflictException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InternalFailureException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::LimitExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ServiceUnavailableException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }
     }

@@ -297,8 +297,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for InvokeEndpoin
 pub enum InvokeEndpointWithResponseStreamError {
     /// <p>An internal failure occurred.</p>
     InternalFailure(crate::types::error::InternalFailure),
-    /// <p>Inspect your request and try again.</p>
-    ValidationError(crate::types::error::ValidationError),
+    /// <p>The stream processing failed because of an unknown error, exception or failure. Try your request again.</p>
+    InternalStreamFailure(crate::types::error::InternalStreamFailure),
     /// <p>Model (owned by the customer in the container) returned 4xx or 5xx error code.</p>
     ModelError(crate::types::error::ModelError),
     /// <p>An error occurred while streaming the response body. This error can have the following error codes:</p>
@@ -317,10 +317,10 @@ pub enum InvokeEndpointWithResponseStreamError {
     /// </dd>
     /// </dl>
     ModelStreamError(crate::types::error::ModelStreamError),
-    /// <p>The stream processing failed because of an unknown error, exception or failure. Try your request again.</p>
-    InternalStreamFailure(crate::types::error::InternalStreamFailure),
     /// <p>The service is unavailable. Try your call again.</p>
     ServiceUnavailable(crate::types::error::ServiceUnavailable),
+    /// <p>Inspect your request and try again.</p>
+    ValidationError(crate::types::error::ValidationError),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
@@ -355,11 +355,11 @@ impl InvokeEndpointWithResponseStreamError {
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::InternalFailure(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
-            Self::ValidationError(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InternalStreamFailure(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ModelError(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ModelStreamError(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
-            Self::InternalStreamFailure(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ServiceUnavailable(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ValidationError(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
     }
@@ -367,9 +367,9 @@ impl InvokeEndpointWithResponseStreamError {
     pub fn is_internal_failure(&self) -> bool {
         matches!(self, Self::InternalFailure(_))
     }
-    /// Returns `true` if the error kind is `InvokeEndpointWithResponseStreamError::ValidationError`.
-    pub fn is_validation_error(&self) -> bool {
-        matches!(self, Self::ValidationError(_))
+    /// Returns `true` if the error kind is `InvokeEndpointWithResponseStreamError::InternalStreamFailure`.
+    pub fn is_internal_stream_failure(&self) -> bool {
+        matches!(self, Self::InternalStreamFailure(_))
     }
     /// Returns `true` if the error kind is `InvokeEndpointWithResponseStreamError::ModelError`.
     pub fn is_model_error(&self) -> bool {
@@ -379,24 +379,24 @@ impl InvokeEndpointWithResponseStreamError {
     pub fn is_model_stream_error(&self) -> bool {
         matches!(self, Self::ModelStreamError(_))
     }
-    /// Returns `true` if the error kind is `InvokeEndpointWithResponseStreamError::InternalStreamFailure`.
-    pub fn is_internal_stream_failure(&self) -> bool {
-        matches!(self, Self::InternalStreamFailure(_))
-    }
     /// Returns `true` if the error kind is `InvokeEndpointWithResponseStreamError::ServiceUnavailable`.
     pub fn is_service_unavailable(&self) -> bool {
         matches!(self, Self::ServiceUnavailable(_))
+    }
+    /// Returns `true` if the error kind is `InvokeEndpointWithResponseStreamError::ValidationError`.
+    pub fn is_validation_error(&self) -> bool {
+        matches!(self, Self::ValidationError(_))
     }
 }
 impl ::std::error::Error for InvokeEndpointWithResponseStreamError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Self::InternalFailure(_inner) => ::std::option::Option::Some(_inner),
-            Self::ValidationError(_inner) => ::std::option::Option::Some(_inner),
+            Self::InternalStreamFailure(_inner) => ::std::option::Option::Some(_inner),
             Self::ModelError(_inner) => ::std::option::Option::Some(_inner),
             Self::ModelStreamError(_inner) => ::std::option::Option::Some(_inner),
-            Self::InternalStreamFailure(_inner) => ::std::option::Option::Some(_inner),
             Self::ServiceUnavailable(_inner) => ::std::option::Option::Some(_inner),
+            Self::ValidationError(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
     }
@@ -405,11 +405,11 @@ impl ::std::fmt::Display for InvokeEndpointWithResponseStreamError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
             Self::InternalFailure(_inner) => _inner.fmt(f),
-            Self::ValidationError(_inner) => _inner.fmt(f),
+            Self::InternalStreamFailure(_inner) => _inner.fmt(f),
             Self::ModelError(_inner) => _inner.fmt(f),
             Self::ModelStreamError(_inner) => _inner.fmt(f),
-            Self::InternalStreamFailure(_inner) => _inner.fmt(f),
             Self::ServiceUnavailable(_inner) => _inner.fmt(f),
+            Self::ValidationError(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
                     write!(f, "unhandled error ({code})")
@@ -432,11 +432,11 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for InvokeEndpoin
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::InternalFailure(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::ValidationError(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InternalStreamFailure(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ModelError(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ModelStreamError(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::InternalStreamFailure(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ServiceUnavailable(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ValidationError(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }
     }

@@ -30,6 +30,41 @@ pub(super) fn resolve_endpoint(
     let resource_arn_list = &_params.resource_arn_list;
     #[allow(unused_variables)]
     if let Some(endpoint) = endpoint {
+        #[allow(unused_variables)]
+        if let Some(region) = region {
+            #[allow(unused_variables)]
+            if let Some(partition_result) = partition_resolver.resolve_partition(region.as_ref() as &str, _diagnostic_collector) {
+                if (*use_fips) == (true) {
+                    return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                        "Invalid Configuration: FIPS and custom endpoint are not supported".to_string(),
+                    ));
+                }
+                if (*use_dual_stack) == (true) {
+                    return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                        "Invalid Configuration: Dualstack and custom endpoint are not supported".to_string(),
+                    ));
+                }
+                if (endpoint.as_ref() as &str)
+                    == (&{
+                        let mut out = String::new();
+                        out.push_str("https://dynamodb.");
+                        #[allow(clippy::needless_borrow)]
+                        out.push_str(&region.as_ref() as &str);
+                        out.push('.');
+                        #[allow(clippy::needless_borrow)]
+                        out.push_str(&partition_result.dual_stack_dns_suffix());
+                        out
+                    })
+                {
+                    return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message("Endpoint override is not supported for dual-stack endpoints. Please enable dual-stack functionality by enabling the configuration. For more details, see: https://docs.aws.amazon.com/sdkref/latest/guide/feature-endpoints.html"
+.to_string()));
+                }
+                return Ok(::aws_smithy_types::endpoint::Endpoint::builder().url(endpoint.to_owned()).build());
+            }
+        }
+    }
+    #[allow(unused_variables)]
+    if let Some(endpoint) = endpoint {
         if (*use_fips) == (true) {
             return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
                 "Invalid Configuration: FIPS and custom endpoint are not supported".to_string(),
@@ -152,9 +187,141 @@ pub(super) fn resolve_endpoint(
                 if (partition_result.supports_dual_stack()) == (true) {
                     #[allow(unused_variables)]
                     if let Some(account_id_endpoint_mode) = account_id_endpoint_mode {
+                        if !((account_id_endpoint_mode.as_ref() as &str) == ("disabled")) {
+                            if (partition_result.name()) == ("aws") {
+                                if !((*use_fips) == (true)) {
+                                    #[allow(unused_variables)]
+                                    if let Some(resource_arn) = resource_arn {
+                                        #[allow(unused_variables)]
+                                        if let Some(parsed_arn) =
+                                            crate::endpoint_lib::arn::parse_arn(resource_arn.as_ref() as &str, _diagnostic_collector)
+                                        {
+                                            if (parsed_arn.service()) == ("dynamodb") {
+                                                if crate::endpoint_lib::host::is_valid_host_label(parsed_arn.region(), false, _diagnostic_collector) {
+                                                    if (parsed_arn.region()) == (region.as_ref() as &str) {
+                                                        if crate::endpoint_lib::host::is_valid_host_label(
+                                                            parsed_arn.account_id(),
+                                                            false,
+                                                            _diagnostic_collector,
+                                                        ) {
+                                                            return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
+                                                                .url({
+                                                                    let mut out = String::new();
+                                                                    out.push_str("https://");
+                                                                    #[allow(clippy::needless_borrow)]
+                                                                    out.push_str(&parsed_arn.account_id());
+                                                                    out.push_str(".ddb.");
+                                                                    #[allow(clippy::needless_borrow)]
+                                                                    out.push_str(&region.as_ref() as &str);
+                                                                    out.push('.');
+                                                                    #[allow(clippy::needless_borrow)]
+                                                                    out.push_str(&partition_result.dual_stack_dns_suffix());
+                                                                    out
+                                                                })
+                                                                .build());
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    #[allow(unused_variables)]
+                    if let Some(account_id_endpoint_mode) = account_id_endpoint_mode {
+                        if !((account_id_endpoint_mode.as_ref() as &str) == ("disabled")) {
+                            if (partition_result.name()) == ("aws") {
+                                if !((*use_fips) == (true)) {
+                                    #[allow(unused_variables)]
+                                    if let Some(resource_arn_list) = resource_arn_list {
+                                        #[allow(unused_variables)]
+                                        if let Some(first_arn) = resource_arn_list.first().cloned() {
+                                            #[allow(unused_variables)]
+                                            if let Some(parsed_arn) =
+                                                crate::endpoint_lib::arn::parse_arn(first_arn.as_ref() as &str, _diagnostic_collector)
+                                            {
+                                                if (parsed_arn.service()) == ("dynamodb") {
+                                                    if crate::endpoint_lib::host::is_valid_host_label(
+                                                        parsed_arn.region(),
+                                                        false,
+                                                        _diagnostic_collector,
+                                                    ) {
+                                                        if (parsed_arn.region()) == (region.as_ref() as &str) {
+                                                            if crate::endpoint_lib::host::is_valid_host_label(
+                                                                parsed_arn.account_id(),
+                                                                false,
+                                                                _diagnostic_collector,
+                                                            ) {
+                                                                return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
+                                                                    .url({
+                                                                        let mut out = String::new();
+                                                                        out.push_str("https://");
+                                                                        #[allow(clippy::needless_borrow)]
+                                                                        out.push_str(&parsed_arn.account_id());
+                                                                        out.push_str(".ddb.");
+                                                                        #[allow(clippy::needless_borrow)]
+                                                                        out.push_str(&region.as_ref() as &str);
+                                                                        out.push('.');
+                                                                        #[allow(clippy::needless_borrow)]
+                                                                        out.push_str(&partition_result.dual_stack_dns_suffix());
+                                                                        out
+                                                                    })
+                                                                    .build());
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    #[allow(unused_variables)]
+                    if let Some(account_id_endpoint_mode) = account_id_endpoint_mode {
+                        if !((account_id_endpoint_mode.as_ref() as &str) == ("disabled")) {
+                            if (partition_result.name()) == ("aws") {
+                                if !((*use_fips) == (true)) {
+                                    #[allow(unused_variables)]
+                                    if let Some(account_id) = account_id {
+                                        if crate::endpoint_lib::host::is_valid_host_label(account_id.as_ref() as &str, false, _diagnostic_collector) {
+                                            return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
+                                                .url({
+                                                    let mut out = String::new();
+                                                    out.push_str("https://");
+                                                    #[allow(clippy::needless_borrow)]
+                                                    out.push_str(&account_id.as_ref() as &str);
+                                                    out.push_str(".ddb.");
+                                                    #[allow(clippy::needless_borrow)]
+                                                    out.push_str(&region.as_ref() as &str);
+                                                    out.push('.');
+                                                    #[allow(clippy::needless_borrow)]
+                                                    out.push_str(&partition_result.dual_stack_dns_suffix());
+                                                    out
+                                                })
+                                                .build());
+                                        }
+                                        return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                                            "Credentials-sourced account ID parameter is invalid".to_string(),
+                                        ));
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    #[allow(unused_variables)]
+                    if let Some(account_id_endpoint_mode) = account_id_endpoint_mode {
                         if (account_id_endpoint_mode.as_ref() as &str) == ("required") {
                             if !((*use_fips) == (true)) {
-                                return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message("Invalid Configuration: AccountIdEndpointMode is required and DualStack is enabled, but DualStack account endpoints are not supported"
+                                if (partition_result.name()) == ("aws") {
+                                    return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                                        "AccountIdEndpointMode is required but no AccountID was provided or able to be loaded".to_string(),
+                                    ));
+                                }
+                                return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message("Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition"
 .to_string()));
                             }
                             return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message("Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported"
@@ -183,13 +350,54 @@ pub(super) fn resolve_endpoint(
                 if !((account_id_endpoint_mode.as_ref() as &str) == ("disabled")) {
                     if (partition_result.name()) == ("aws") {
                         if !((*use_fips) == (true)) {
-                            if !((*use_dual_stack) == (true)) {
+                            #[allow(unused_variables)]
+                            if let Some(resource_arn) = resource_arn {
                                 #[allow(unused_variables)]
-                                if let Some(resource_arn) = resource_arn {
+                                if let Some(parsed_arn) = crate::endpoint_lib::arn::parse_arn(resource_arn.as_ref() as &str, _diagnostic_collector) {
+                                    if (parsed_arn.service()) == ("dynamodb") {
+                                        if crate::endpoint_lib::host::is_valid_host_label(parsed_arn.region(), false, _diagnostic_collector) {
+                                            if (parsed_arn.region()) == (region.as_ref() as &str) {
+                                                if crate::endpoint_lib::host::is_valid_host_label(
+                                                    parsed_arn.account_id(),
+                                                    false,
+                                                    _diagnostic_collector,
+                                                ) {
+                                                    return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
+                                                        .url({
+                                                            let mut out = String::new();
+                                                            out.push_str("https://");
+                                                            #[allow(clippy::needless_borrow)]
+                                                            out.push_str(&parsed_arn.account_id());
+                                                            out.push_str(".ddb.");
+                                                            #[allow(clippy::needless_borrow)]
+                                                            out.push_str(&region.as_ref() as &str);
+                                                            out.push('.');
+                                                            #[allow(clippy::needless_borrow)]
+                                                            out.push_str(&partition_result.dns_suffix());
+                                                            out
+                                                        })
+                                                        .build());
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            #[allow(unused_variables)]
+            if let Some(account_id_endpoint_mode) = account_id_endpoint_mode {
+                if !((account_id_endpoint_mode.as_ref() as &str) == ("disabled")) {
+                    if (partition_result.name()) == ("aws") {
+                        if !((*use_fips) == (true)) {
+                            #[allow(unused_variables)]
+                            if let Some(resource_arn_list) = resource_arn_list {
+                                #[allow(unused_variables)]
+                                if let Some(first_arn) = resource_arn_list.first().cloned() {
                                     #[allow(unused_variables)]
-                                    if let Some(parsed_arn) =
-                                        crate::endpoint_lib::arn::parse_arn(resource_arn.as_ref() as &str, _diagnostic_collector)
-                                    {
+                                    if let Some(parsed_arn) = crate::endpoint_lib::arn::parse_arn(first_arn.as_ref() as &str, _diagnostic_collector) {
                                         if (parsed_arn.service()) == ("dynamodb") {
                                             if crate::endpoint_lib::host::is_valid_host_label(parsed_arn.region(), false, _diagnostic_collector) {
                                                 if (parsed_arn.region()) == (region.as_ref() as &str) {
@@ -229,79 +437,28 @@ pub(super) fn resolve_endpoint(
                 if !((account_id_endpoint_mode.as_ref() as &str) == ("disabled")) {
                     if (partition_result.name()) == ("aws") {
                         if !((*use_fips) == (true)) {
-                            if !((*use_dual_stack) == (true)) {
-                                #[allow(unused_variables)]
-                                if let Some(resource_arn_list) = resource_arn_list {
-                                    #[allow(unused_variables)]
-                                    if let Some(first_arn) = resource_arn_list.first().cloned() {
-                                        #[allow(unused_variables)]
-                                        if let Some(parsed_arn) =
-                                            crate::endpoint_lib::arn::parse_arn(first_arn.as_ref() as &str, _diagnostic_collector)
-                                        {
-                                            if (parsed_arn.service()) == ("dynamodb") {
-                                                if crate::endpoint_lib::host::is_valid_host_label(parsed_arn.region(), false, _diagnostic_collector) {
-                                                    if (parsed_arn.region()) == (region.as_ref() as &str) {
-                                                        if crate::endpoint_lib::host::is_valid_host_label(
-                                                            parsed_arn.account_id(),
-                                                            false,
-                                                            _diagnostic_collector,
-                                                        ) {
-                                                            return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
-                                                                .url({
-                                                                    let mut out = String::new();
-                                                                    out.push_str("https://");
-                                                                    #[allow(clippy::needless_borrow)]
-                                                                    out.push_str(&parsed_arn.account_id());
-                                                                    out.push_str(".ddb.");
-                                                                    #[allow(clippy::needless_borrow)]
-                                                                    out.push_str(&region.as_ref() as &str);
-                                                                    out.push('.');
-                                                                    #[allow(clippy::needless_borrow)]
-                                                                    out.push_str(&partition_result.dns_suffix());
-                                                                    out
-                                                                })
-                                                                .build());
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
+                            #[allow(unused_variables)]
+                            if let Some(account_id) = account_id {
+                                if crate::endpoint_lib::host::is_valid_host_label(account_id.as_ref() as &str, false, _diagnostic_collector) {
+                                    return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
+                                        .url({
+                                            let mut out = String::new();
+                                            out.push_str("https://");
+                                            #[allow(clippy::needless_borrow)]
+                                            out.push_str(&account_id.as_ref() as &str);
+                                            out.push_str(".ddb.");
+                                            #[allow(clippy::needless_borrow)]
+                                            out.push_str(&region.as_ref() as &str);
+                                            out.push('.');
+                                            #[allow(clippy::needless_borrow)]
+                                            out.push_str(&partition_result.dns_suffix());
+                                            out
+                                        })
+                                        .build());
                                 }
-                            }
-                        }
-                    }
-                }
-            }
-            #[allow(unused_variables)]
-            if let Some(account_id_endpoint_mode) = account_id_endpoint_mode {
-                if !((account_id_endpoint_mode.as_ref() as &str) == ("disabled")) {
-                    if (partition_result.name()) == ("aws") {
-                        if !((*use_fips) == (true)) {
-                            if !((*use_dual_stack) == (true)) {
-                                #[allow(unused_variables)]
-                                if let Some(account_id) = account_id {
-                                    if crate::endpoint_lib::host::is_valid_host_label(account_id.as_ref() as &str, false, _diagnostic_collector) {
-                                        return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
-                                            .url({
-                                                let mut out = String::new();
-                                                out.push_str("https://");
-                                                #[allow(clippy::needless_borrow)]
-                                                out.push_str(&account_id.as_ref() as &str);
-                                                out.push_str(".ddb.");
-                                                #[allow(clippy::needless_borrow)]
-                                                out.push_str(&region.as_ref() as &str);
-                                                out.push('.');
-                                                #[allow(clippy::needless_borrow)]
-                                                out.push_str(&partition_result.dns_suffix());
-                                                out
-                                            })
-                                            .build());
-                                    }
-                                    return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
-                                        "Credentials-sourced account ID parameter is invalid".to_string(),
-                                    ));
-                                }
+                                return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                                    "Credentials-sourced account ID parameter is invalid".to_string(),
+                                ));
                             }
                         }
                     }
@@ -311,19 +468,15 @@ pub(super) fn resolve_endpoint(
             if let Some(account_id_endpoint_mode) = account_id_endpoint_mode {
                 if (account_id_endpoint_mode.as_ref() as &str) == ("required") {
                     if !((*use_fips) == (true)) {
-                        if !((*use_dual_stack) == (true)) {
-                            if (partition_result.name()) == ("aws") {
-                                return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
-                                    "AccountIdEndpointMode is required but no AccountID was provided or able to be loaded".to_string(),
-                                ));
-                            }
+                        if (partition_result.name()) == ("aws") {
                             return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
-                                "Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition"
-                                    .to_string(),
+                                "AccountIdEndpointMode is required but no AccountID was provided or able to be loaded".to_string(),
                             ));
                         }
-                        return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message("Invalid Configuration: AccountIdEndpointMode is required and DualStack is enabled, but DualStack account endpoints are not supported"
-.to_string()));
+                        return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                            "Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition"
+                                .to_string(),
+                        ));
                     }
                     return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
                         "Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported"

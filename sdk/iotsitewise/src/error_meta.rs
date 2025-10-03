@@ -2187,15 +2187,15 @@ where
 impl From<crate::operation::invoke_assistant::InvokeAssistantError> for Error {
     fn from(err: crate::operation::invoke_assistant::InvokeAssistantError) -> Self {
         match err {
-            crate::operation::invoke_assistant::InvokeAssistantError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::invoke_assistant::InvokeAssistantError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::invoke_assistant::InvokeAssistantError::ConflictingOperationException(inner) => {
                 Error::ConflictingOperationException(inner)
             }
-            crate::operation::invoke_assistant::InvokeAssistantError::LimitExceededException(inner) => Error::LimitExceededException(inner),
-            crate::operation::invoke_assistant::InvokeAssistantError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::invoke_assistant::InvokeAssistantError::InternalFailureException(inner) => Error::InternalFailureException(inner),
-            crate::operation::invoke_assistant::InvokeAssistantError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::invoke_assistant::InvokeAssistantError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::invoke_assistant::InvokeAssistantError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::invoke_assistant::InvokeAssistantError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::invoke_assistant::InvokeAssistantError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::invoke_assistant::InvokeAssistantError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }

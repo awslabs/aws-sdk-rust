@@ -332,6 +332,15 @@ pub(crate) fn list_templates_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn search_all_related_items_output_output_correct_errors(
+    mut builder: crate::operation::search_all_related_items::builders::SearchAllRelatedItemsOutputBuilder,
+) -> crate::operation::search_all_related_items::builders::SearchAllRelatedItemsOutputBuilder {
+    if builder.related_items.is_none() {
+        builder.related_items = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn search_cases_output_output_correct_errors(
     mut builder: crate::operation::search_cases::builders::SearchCasesOutputBuilder,
 ) -> crate::operation::search_cases::builders::SearchCasesOutputBuilder {
@@ -556,6 +565,27 @@ pub(crate) fn required_field_correct_errors(
 ) -> crate::types::builders::RequiredFieldBuilder {
     if builder.field_id.is_none() {
         builder.field_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn search_all_related_items_response_item_correct_errors(
+    mut builder: crate::types::builders::SearchAllRelatedItemsResponseItemBuilder,
+) -> crate::types::builders::SearchAllRelatedItemsResponseItemBuilder {
+    if builder.related_item_id.is_none() {
+        builder.related_item_id = Some(Default::default())
+    }
+    if builder.case_id.is_none() {
+        builder.case_id = Some(Default::default())
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::RelatedItemType>().ok()
+    }
+    if builder.association_time.is_none() {
+        builder.association_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.content.is_none() {
+        builder.content = Some(crate::types::RelatedItemContent::Unknown)
     }
     builder
 }

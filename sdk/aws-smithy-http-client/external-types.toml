@@ -15,10 +15,12 @@ allowed_external_types = [
     "bytes::bytes::Bytes",
     "serde::ser::Serialize",
     "serde::de::Deserialize",
+    "serde_core::de::Deserialize",
+    "serde_core::ser::Serialize",
     "hyper::client::connect::dns::Name",
     "http::request::Request",
     "http::response::Response",
-    "http::uri::Uri",
     "tokio::net::tcp::stream::TcpStream",
     "hyper_util::rt::tokio::TokioIo",
+
 ]

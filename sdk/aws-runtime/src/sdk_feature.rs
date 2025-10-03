@@ -12,6 +12,12 @@ use aws_smithy_types::config_bag::{Storable, StoreAppend};
 #[non_exhaustive]
 #[derive(Clone, Debug, Eq, PartialEq)]
 pub enum AwsSdkFeature {
+    /// An operation called with account ID mode set to preferred
+    AccountIdModePreferred,
+    /// An operation called with account ID mode set to disabled
+    AccountIdModeDisabled,
+    /// An operation called with account ID mode set to required
+    AccountIdModeRequired,
     /// Indicates that an operation was called by the S3 Transfer Manager
     S3Transfer,
     /// Calling an SSO-OIDC operation as part of the SSO login flow, when using the OAuth2.0 device code grant

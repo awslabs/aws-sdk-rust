@@ -1,5 +1,5 @@
 # AWS SDK for Rust
-The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-config](https://crates.io/crates/aws-config) ([docs](https://docs.rs/aws-config)), a crate implementing configuration loading such as credential providers. For usage documentation see the [Developer Guide](https://docs.aws.amazon.com/sdk-for-rust/latest/dg/welcome.html).
+The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-config](https://crates.io/crates/aws-config) ([docs](https://docs.rs/aws-config)), a crate implementing configuration loading such as credential providers. For usage documentation see the [Developer Guide](https://docs.aws.amazon.com/sdk-for-rust/latest/dg/welcome.html). For code examples refer to the [Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/rustv1).
 ## AWS Services
 
 | Service | Package |

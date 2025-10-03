@@ -10,7 +10,7 @@
 //! Built-in DNS resolver implementations for smithy-rs clients.
 
 #[cfg(all(feature = "hickory-dns", not(target_family = "wasm")))]
-mod hickory;
+pub mod hickory;
 
 #[cfg(all(feature = "hickory-dns", not(target_family = "wasm")))]
 pub use hickory::HickoryDnsResolver;

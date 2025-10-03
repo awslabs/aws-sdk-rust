@@ -8,7 +8,7 @@ With Amazon Connect Cases, your agents can track and manage customer issues that
 ## Getting Started
 
 > Examples are available for many services and operations, check out the
-> [examples folder in GitHub](https://github.com/awslabs/aws-sdk-rust/tree/main/examples).
+> [usage examples](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/rustv1).
 
 The SDK provides one crate per AWS service. You must add [Tokio](https://crates.io/crates/tokio)
 as a dependency within your Rust project to execute asynchronous code. To add `aws-sdk-connectcases` to
@@ -17,7 +17,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-aws-sdk-connectcases = "1.92.0"
+aws-sdk-connectcases = "1.93.0"
 tokio = { version = "1", features = ["full"] }
 ```
 
@@ -51,7 +51,7 @@ additional sections for the guide by opening an issue and describing what you ar
 * [GitHub discussions](https://github.com/awslabs/aws-sdk-rust/discussions) - For ideas, RFCs & general questions
 * [GitHub issues](https://github.com/awslabs/aws-sdk-rust/issues/new/choose) - For bug reports & feature requests
 * [Generated Docs (latest version)](https://awslabs.github.io/aws-sdk-rust/)
-* [Usage examples](https://github.com/awslabs/aws-sdk-rust/tree/main/examples)
+* [Usage examples](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/rustv1)
 
 ## License
 

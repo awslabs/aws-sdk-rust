@@ -138,30 +138,27 @@ pub fn de_start_medical_stream_transcription_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ServiceUnavailableException" => {
-            crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::ServiceUnavailableException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
-                    output =
-                        crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output)
-                            .map_err(crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
         "BadRequestException" => crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::BadRequestException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::BadRequestExceptionBuilder::default();
                 output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ConflictException" => crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::ConflictException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
+                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output)
                     .map_err(crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -188,21 +185,6 @@ pub fn de_start_medical_stream_transcription_http_error(
                 tmp
             })
         }
-        "ConflictException" => crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::ConflictException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
-                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output)
-                    .map_err(crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
         "LimitExceededException" => {
             crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::LimitExceededException({
                 #[allow(unused_mut)]
@@ -211,6 +193,24 @@ pub fn de_start_medical_stream_transcription_http_error(
                     let mut output = crate::types::error::builders::LimitExceededExceptionBuilder::default();
                     output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(_response_body, output)
                         .map_err(crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::ServiceUnavailableException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
+                    output =
+                        crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output)
+                            .map_err(crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };

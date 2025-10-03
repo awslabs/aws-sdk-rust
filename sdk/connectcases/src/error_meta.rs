@@ -973,6 +973,40 @@ impl From<crate::operation::put_case_event_configuration::PutCaseEventConfigurat
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::search_all_related_items::SearchAllRelatedItemsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::search_all_related_items::SearchAllRelatedItemsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::search_all_related_items::SearchAllRelatedItemsError> for Error {
+    fn from(err: crate::operation::search_all_related_items::SearchAllRelatedItemsError) -> Self {
+        match err {
+            crate::operation::search_all_related_items::SearchAllRelatedItemsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::search_all_related_items::SearchAllRelatedItemsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::search_all_related_items::SearchAllRelatedItemsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::search_all_related_items::SearchAllRelatedItemsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::search_all_related_items::SearchAllRelatedItemsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::search_all_related_items::SearchAllRelatedItemsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::search_cases::SearchCasesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

@@ -22,10 +22,12 @@ impl crate::operation::set_type_configuration::builders::SetTypeConfigurationInp
 }
 /// Fluent builder constructing a request to `SetTypeConfiguration`.
 ///
-/// <p>Specifies the configuration data for a registered CloudFormation extension, in the given account and Region.</p>
-/// <p>To view the current configuration data for an extension, refer to the <code>ConfigurationSchema</code> element of <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-set-configuration.html">Edit configuration data for extensions in your account</a> in the <i>CloudFormation User Guide</i>.</p><important>
-/// <p>It's strongly recommended that you use dynamic references to restrict sensitive configuration definitions, such as third-party credentials. For more details on dynamic references, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/dynamic-references.html">Specify values stored in other services using dynamic references</a> in the <i>CloudFormation User Guide</i>.</p>
+/// <p>Specifies the configuration data for a CloudFormation extension, such as a resource or Hook, in the given account and Region.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-set-configuration.html">Edit configuration data for extensions in your account</a> in the <i>CloudFormation User Guide</i>.</p>
+/// <p>To view the current configuration data for an extension, refer to the <code>ConfigurationSchema</code> element of <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>.</p><important>
+/// <p>It's strongly recommended that you use dynamic references to restrict sensitive configuration definitions, such as third-party credentials. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/dynamic-references.html">Specify values stored in other services using dynamic references</a> in the <i>CloudFormation User Guide</i>.</p>
 /// </important>
+/// <p>For more information about setting the configuration data for resource types, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-model.html#resource-type-howto-configuration">Defining the account-level configuration of an extension</a> in the <i>CloudFormation Command Line Interface (CLI) User Guide</i>. For more information about setting the configuration data for Hooks, see the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/hooks-userguide/what-is-cloudformation-hooks.html">CloudFormation Hooks User Guide</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SetTypeConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -111,40 +113,40 @@ impl SetTypeConfigurationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) for the extension, in this account and Region.</p>
+    /// <p>The Amazon Resource Name (ARN) for the extension in this account and Region.</p>
     /// <p>For public extensions, this will be the ARN assigned when you call the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a> API operation in this account and Region. For private extensions, this will be the ARN assigned when you call the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a> API operation in this account and Region.</p>
     /// <p>Do not include the extension versions suffix at the end of the ARN. You can set the configuration for an extension, but not for a specific extension version.</p>
     pub fn type_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.type_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) for the extension, in this account and Region.</p>
+    /// <p>The Amazon Resource Name (ARN) for the extension in this account and Region.</p>
     /// <p>For public extensions, this will be the ARN assigned when you call the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a> API operation in this account and Region. For private extensions, this will be the ARN assigned when you call the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a> API operation in this account and Region.</p>
     /// <p>Do not include the extension versions suffix at the end of the ARN. You can set the configuration for an extension, but not for a specific extension version.</p>
     pub fn set_type_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_type_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) for the extension, in this account and Region.</p>
+    /// <p>The Amazon Resource Name (ARN) for the extension in this account and Region.</p>
     /// <p>For public extensions, this will be the ARN assigned when you call the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a> API operation in this account and Region. For private extensions, this will be the ARN assigned when you call the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a> API operation in this account and Region.</p>
     /// <p>Do not include the extension versions suffix at the end of the ARN. You can set the configuration for an extension, but not for a specific extension version.</p>
     pub fn get_type_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_type_arn()
     }
-    /// <p>The configuration data for the extension, in this account and Region.</p>
-    /// <p>The configuration data must be formatted as JSON, and validate against the schema returned in the <code>ConfigurationSchema</code> response element of <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>. For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-model.html#resource-type-howto-configuration">Defining the account-level configuration of an extension</a> in the <i>CloudFormation Command Line Interface (CLI) User Guide</i>.</p>
+    /// <p>The configuration data for the extension in this account and Region.</p>
+    /// <p>The configuration data must be formatted as JSON and validate against the extension's schema returned in the <code>Schema</code> response element of <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>.</p>
     pub fn configuration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.configuration(input.into());
         self
     }
-    /// <p>The configuration data for the extension, in this account and Region.</p>
-    /// <p>The configuration data must be formatted as JSON, and validate against the schema returned in the <code>ConfigurationSchema</code> response element of <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>. For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-model.html#resource-type-howto-configuration">Defining the account-level configuration of an extension</a> in the <i>CloudFormation Command Line Interface (CLI) User Guide</i>.</p>
+    /// <p>The configuration data for the extension in this account and Region.</p>
+    /// <p>The configuration data must be formatted as JSON and validate against the extension's schema returned in the <code>Schema</code> response element of <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>.</p>
     pub fn set_configuration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_configuration(input);
         self
     }
-    /// <p>The configuration data for the extension, in this account and Region.</p>
-    /// <p>The configuration data must be formatted as JSON, and validate against the schema returned in the <code>ConfigurationSchema</code> response element of <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>. For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-model.html#resource-type-howto-configuration">Defining the account-level configuration of an extension</a> in the <i>CloudFormation Command Line Interface (CLI) User Guide</i>.</p>
+    /// <p>The configuration data for the extension in this account and Region.</p>
+    /// <p>The configuration data must be formatted as JSON and validate against the extension's schema returned in the <code>Schema</code> response element of <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>.</p>
     pub fn get_configuration(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_configuration()
     }

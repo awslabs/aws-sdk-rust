@@ -165,16 +165,16 @@ where
 impl From<crate::operation::converse_stream::ConverseStreamError> for Error {
     fn from(err: crate::operation::converse_stream::ConverseStreamError) -> Self {
         match err {
-            crate::operation::converse_stream::ConverseStreamError::ModelTimeoutException(inner) => Error::ModelTimeoutException(inner),
             crate::operation::converse_stream::ConverseStreamError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::converse_stream::ConverseStreamError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::converse_stream::ConverseStreamError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::converse_stream::ConverseStreamError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::operation::converse_stream::ConverseStreamError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::converse_stream::ConverseStreamError::ModelStreamErrorException(inner) => Error::ModelStreamErrorException(inner),
-            crate::operation::converse_stream::ConverseStreamError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::operation::converse_stream::ConverseStreamError::ModelNotReadyException(inner) => Error::ModelNotReadyException(inner),
             crate::operation::converse_stream::ConverseStreamError::ModelErrorException(inner) => Error::ModelErrorException(inner),
+            crate::operation::converse_stream::ConverseStreamError::ModelNotReadyException(inner) => Error::ModelNotReadyException(inner),
+            crate::operation::converse_stream::ConverseStreamError::ModelTimeoutException(inner) => Error::ModelTimeoutException(inner),
+            crate::operation::converse_stream::ConverseStreamError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::converse_stream::ConverseStreamError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::converse_stream::ConverseStreamError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::converse_stream::ConverseStreamError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::converse_stream::ConverseStreamError::ModelStreamErrorException(inner) => Error::ModelStreamErrorException(inner),
             crate::operation::converse_stream::ConverseStreamError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -290,39 +290,39 @@ where
 impl From<crate::operation::invoke_model_with_bidirectional_stream::InvokeModelWithBidirectionalStreamError> for Error {
     fn from(err: crate::operation::invoke_model_with_bidirectional_stream::InvokeModelWithBidirectionalStreamError) -> Self {
         match err {
-            crate::operation::invoke_model_with_bidirectional_stream::InvokeModelWithBidirectionalStreamError::ModelTimeoutException(inner) => {
-                Error::ModelTimeoutException(inner)
-            }
             crate::operation::invoke_model_with_bidirectional_stream::InvokeModelWithBidirectionalStreamError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
-            }
-            crate::operation::invoke_model_with_bidirectional_stream::InvokeModelWithBidirectionalStreamError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::invoke_model_with_bidirectional_stream::InvokeModelWithBidirectionalStreamError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::operation::invoke_model_with_bidirectional_stream::InvokeModelWithBidirectionalStreamError::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
             }
             crate::operation::invoke_model_with_bidirectional_stream::InvokeModelWithBidirectionalStreamError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
-            crate::operation::invoke_model_with_bidirectional_stream::InvokeModelWithBidirectionalStreamError::ModelStreamErrorException(inner) => {
-                Error::ModelStreamErrorException(inner)
-            }
-            crate::operation::invoke_model_with_bidirectional_stream::InvokeModelWithBidirectionalStreamError::ValidationException(inner) => {
-                Error::ValidationException(inner)
+            crate::operation::invoke_model_with_bidirectional_stream::InvokeModelWithBidirectionalStreamError::ModelErrorException(inner) => {
+                Error::ModelErrorException(inner)
             }
             crate::operation::invoke_model_with_bidirectional_stream::InvokeModelWithBidirectionalStreamError::ModelNotReadyException(inner) => {
                 Error::ModelNotReadyException(inner)
             }
-            crate::operation::invoke_model_with_bidirectional_stream::InvokeModelWithBidirectionalStreamError::ModelErrorException(inner) => {
-                Error::ModelErrorException(inner)
+            crate::operation::invoke_model_with_bidirectional_stream::InvokeModelWithBidirectionalStreamError::ModelStreamErrorException(inner) => {
+                Error::ModelStreamErrorException(inner)
+            }
+            crate::operation::invoke_model_with_bidirectional_stream::InvokeModelWithBidirectionalStreamError::ModelTimeoutException(inner) => {
+                Error::ModelTimeoutException(inner)
+            }
+            crate::operation::invoke_model_with_bidirectional_stream::InvokeModelWithBidirectionalStreamError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
             }
             crate::operation::invoke_model_with_bidirectional_stream::InvokeModelWithBidirectionalStreamError::ServiceQuotaExceededException(
                 inner,
             ) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::invoke_model_with_bidirectional_stream::InvokeModelWithBidirectionalStreamError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::invoke_model_with_bidirectional_stream::InvokeModelWithBidirectionalStreamError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::invoke_model_with_bidirectional_stream::InvokeModelWithBidirectionalStreamError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
             crate::operation::invoke_model_with_bidirectional_stream::InvokeModelWithBidirectionalStreamError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
@@ -357,38 +357,38 @@ where
 impl From<crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamError> for Error {
     fn from(err: crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamError) -> Self {
         match err {
-            crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamError::ModelTimeoutException(inner) => {
-                Error::ModelTimeoutException(inner)
-            }
             crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
-            }
-            crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamError::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
             }
             crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
-            crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamError::ModelStreamErrorException(inner) => {
-                Error::ModelStreamErrorException(inner)
-            }
-            crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamError::ValidationException(inner) => {
-                Error::ValidationException(inner)
+            crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamError::ModelErrorException(inner) => {
+                Error::ModelErrorException(inner)
             }
             crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamError::ModelNotReadyException(inner) => {
                 Error::ModelNotReadyException(inner)
             }
-            crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamError::ModelErrorException(inner) => {
-                Error::ModelErrorException(inner)
+            crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamError::ModelStreamErrorException(inner) => {
+                Error::ModelStreamErrorException(inner)
+            }
+            crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamError::ModelTimeoutException(inner) => {
+                Error::ModelTimeoutException(inner)
+            }
+            crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
             }
             crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamError::ServiceQuotaExceededException(inner) => {
                 Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamError::ValidationException(inner) => {
+                Error::ValidationException(inner)
             }
             crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamError::Unhandled(inner) => Error::Unhandled(inner),
         }

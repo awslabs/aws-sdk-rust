@@ -97,6 +97,9 @@ pub mod list_templates;
 /// Types for the `PutCaseEventConfiguration` operation.
 pub mod put_case_event_configuration;
 
+/// Types for the `SearchAllRelatedItems` operation.
+pub mod search_all_related_items;
+
 /// Types for the `SearchCases` operation.
 pub mod search_cases;
 

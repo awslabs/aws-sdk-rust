@@ -32,7 +32,7 @@ pub(crate) enum MockResponse<O, E> {
 
 /// A function that matches requests.
 type MatchFn = Arc<dyn Fn(&Input) -> bool + Send + Sync>;
-type ServeFn = Arc<dyn Fn(usize) -> Option<MockResponse<Output, Error>> + Send + Sync>;
+type ServeFn = Arc<dyn Fn(usize, &Input) -> Option<MockResponse<Output, Error>> + Send + Sync>;
 
 /// A rule for matching requests and providing mock responses.
 ///
@@ -67,9 +67,10 @@ impl fmt::Debug for Rule {
 
 impl Rule {
     /// Creates a new rule with the given matcher, response handler, and max responses.
+    #[allow(clippy::type_complexity)]
     pub(crate) fn new<O, E>(
         matcher: MatchFn,
-        response_handler: Arc<dyn Fn(usize) -> Option<MockResponse<O, E>> + Send + Sync>,
+        response_handler: Arc<dyn Fn(usize, &Input) -> Option<MockResponse<O, E>> + Send + Sync>,
         max_responses: usize,
         is_simple: bool,
     ) -> Self
@@ -79,9 +80,9 @@ impl Rule {
     {
         Rule {
             matcher,
-            response_handler: Arc::new(move |idx: usize| {
+            response_handler: Arc::new(move |idx: usize, input: &Input| {
                 if idx < max_responses {
-                    response_handler(idx).map(|resp| match resp {
+                    response_handler(idx, input).map(|resp| match resp {
                         MockResponse::Output(o) => MockResponse::Output(Output::erase(o)),
                         MockResponse::Error(e) => MockResponse::Error(Error::erase(e)),
                         MockResponse::Http(http_resp) => MockResponse::Http(http_resp),
@@ -102,9 +103,9 @@ impl Rule {
     }
 
     /// Gets the next response.
-    pub(crate) fn next_response(&self) -> Option<MockResponse<Output, Error>> {
+    pub(crate) fn next_response(&self, input: &Input) -> Option<MockResponse<Output, Error>> {
         let idx = self.call_count.fetch_add(1, Ordering::SeqCst);
-        (self.response_handler)(idx)
+        (self.response_handler)(idx, input)
     }
 
     /// Returns the number of times this rule has been called.
@@ -227,9 +228,31 @@ where
     {
         self.sequence().http_response(response_fn).build_simple()
     }
+
+    /// Creates a rule that computes an output based on the input.
+    ///
+    /// This allows generating responses based on the input request.
+    ///
+    /// # Examples
+    ///
+    /// ```rust,ignore
+    /// let rule = mock!(Client::get_object)
+    ///     .compute_output(|req| {
+    ///         GetObjectOutput::builder()
+    ///             .body(ByteStream::from_static(format!("content for {}", req.key().unwrap_or("unknown")).as_bytes()))
+    ///             .build()
+    ///     })
+    ///     .build();
+    /// ```
+    pub fn then_compute_output<F>(self, compute_fn: F) -> Rule
+    where
+        F: Fn(&I) -> O + Send + Sync + 'static,
+    {
+        self.sequence().compute_output(compute_fn).build_simple()
+    }
 }
 
-type SequenceGeneratorFn<O, E> = Arc<dyn Fn() -> MockResponse<O, E> + Send + Sync>;
+type SequenceGeneratorFn<O, E> = Arc<dyn Fn(&Input) -> MockResponse<O, E> + Send + Sync>;
 
 /// A builder for creating response sequences
 pub struct ResponseSequenceBuilder<I, O, E> {
@@ -281,7 +304,7 @@ where
     where
         F: Fn() -> O + Send + Sync + 'static,
     {
-        let generator = Arc::new(move || MockResponse::Output(output_fn()));
+        let generator = Arc::new(move |_input: &Input| MockResponse::Output(output_fn()));
         self.generators.push((generator, 1));
         self
     }
@@ -291,7 +314,7 @@ where
     where
         F: Fn() -> E + Send + Sync + 'static,
     {
-        let generator = Arc::new(move || MockResponse::Error(error_fn()));
+        let generator = Arc::new(move |_input: &Input| MockResponse::Error(error_fn()));
         self.generators.push((generator, 1));
         self
     }
@@ -301,10 +324,10 @@ where
         let status_code = StatusCode::try_from(status).unwrap();
 
         let generator: SequenceGeneratorFn<O, E> = match body {
-            Some(body) => Arc::new(move || {
+            Some(body) => Arc::new(move |_input: &Input| {
                 MockResponse::Http(HttpResponse::new(status_code, SdkBody::from(body.clone())))
             }),
-            None => Arc::new(move || {
+            None => Arc::new(move |_input: &Input| {
                 MockResponse::Http(HttpResponse::new(status_code, SdkBody::empty()))
             }),
         };
@@ -318,7 +341,26 @@ where
     where
         F: Fn() -> HttpResponse + Send + Sync + 'static,
     {
-        let generator = Arc::new(move || MockResponse::Http(response_fn()));
+        let generator = Arc::new(move |_input: &Input| MockResponse::Http(response_fn()));
+        self.generators.push((generator, 1));
+        self
+    }
+
+    /// Add a computed output response to the sequence.  Note that this is not `pub`
+    /// because creating computed output rules off of sequenced rules doesn't work,
+    /// as we can't preserve the input across retries.  So we only expose `compute_output`
+    /// on unsequenced rules above.
+    fn compute_output<F>(mut self, compute_fn: F) -> Self
+    where
+        F: Fn(&I) -> O + Send + Sync + 'static,
+    {
+        let generator = Arc::new(move |input: &Input| {
+            if let Some(typed_input) = input.downcast_ref::<I>() {
+                MockResponse::Output(compute_fn(typed_input))
+            } else {
+                panic!("Input type mismatch in compute_output")
+            }
+        });
         self.generators.push((generator, 1));
         self
     }
@@ -415,12 +457,12 @@ where
 
         Rule::new(
             self.input_filter,
-            Arc::new(move |idx| {
+            Arc::new(move |idx, input| {
                 // find which generator to use
                 let mut current_idx = idx;
                 for (generator, repeat_count) in &generators {
                     if current_idx < *repeat_count {
-                        return Some(generator());
+                        return Some(generator(input));
                     }
                     current_idx -= repeat_count;
                 }

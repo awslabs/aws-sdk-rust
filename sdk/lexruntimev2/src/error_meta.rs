@@ -234,13 +234,13 @@ impl From<crate::operation::start_conversation::StartConversationError> for Erro
     fn from(err: crate::operation::start_conversation::StartConversationError) -> Self {
         match err {
             crate::operation::start_conversation::StartConversationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::start_conversation::StartConversationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::start_conversation::StartConversationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::start_conversation::StartConversationError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::operation::start_conversation::StartConversationError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::operation::start_conversation::StartConversationError::BadGatewayException(inner) => Error::BadGatewayException(inner),
-            crate::operation::start_conversation::StartConversationError::DependencyFailedException(inner) => Error::DependencyFailedException(inner),
             crate::operation::start_conversation::StartConversationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::start_conversation::StartConversationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::start_conversation::StartConversationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::start_conversation::StartConversationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::start_conversation::StartConversationError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::start_conversation::StartConversationError::DependencyFailedException(inner) => Error::DependencyFailedException(inner),
+            crate::operation::start_conversation::StartConversationError::BadGatewayException(inner) => Error::BadGatewayException(inner),
             crate::operation::start_conversation::StartConversationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }

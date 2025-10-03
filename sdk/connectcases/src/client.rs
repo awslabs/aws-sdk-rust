@@ -227,6 +227,8 @@ mod list_templates;
 
 mod put_case_event_configuration;
 
+mod search_all_related_items;
+
 mod search_cases;
 
 mod search_related_items;

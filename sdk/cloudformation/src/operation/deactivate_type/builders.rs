@@ -23,7 +23,7 @@ impl crate::operation::deactivate_type::builders::DeactivateTypeInputBuilder {
 /// Fluent builder constructing a request to `DeactivateType`.
 ///
 /// <p>Deactivates a public third-party extension, such as a resource or module, or a CloudFormation Hook when you no longer use it.</p>
-/// <p>Deactivating an extension deletes the configuration details that are associated with it. To temporary disable a CloudFormation Hook instead, you can use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a>.</p>
+/// <p>Deactivating an extension deletes the configuration details that are associated with it. To temporarily disable a CloudFormation Hook instead, you can use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a>.</p>
 /// <p>Once deactivated, an extension can't be used in any CloudFormation operation. This includes stack update operations where the stack template includes the extension, even if no updates are being made to the extension. In addition, deactivated extensions aren't automatically updated if a new version of the extension is released.</p>
 /// <p>To see which extensions are currently activated, use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListTypes.html">ListTypes</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -111,19 +111,19 @@ impl DeactivateTypeFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The type name of the extension, in this account and Region. If you specified a type name alias when enabling the extension, use the type name alias.</p>
+    /// <p>The type name of the extension in this account and Region. If you specified a type name alias when enabling the extension, use the type name alias.</p>
     /// <p>Conditional: You must specify either <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
     pub fn type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.type_name(input.into());
         self
     }
-    /// <p>The type name of the extension, in this account and Region. If you specified a type name alias when enabling the extension, use the type name alias.</p>
+    /// <p>The type name of the extension in this account and Region. If you specified a type name alias when enabling the extension, use the type name alias.</p>
     /// <p>Conditional: You must specify either <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
     pub fn set_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_type_name(input);
         self
     }
-    /// <p>The type name of the extension, in this account and Region. If you specified a type name alias when enabling the extension, use the type name alias.</p>
+    /// <p>The type name of the extension in this account and Region. If you specified a type name alias when enabling the extension, use the type name alias.</p>
     /// <p>Conditional: You must specify either <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
     pub fn get_type_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_type_name()
@@ -145,19 +145,19 @@ impl DeactivateTypeFluentBuilder {
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ThirdPartyType> {
         self.inner.get_type()
     }
-    /// <p>The Amazon Resource Name (ARN) for the extension, in this account and Region.</p>
+    /// <p>The Amazon Resource Name (ARN) for the extension in this account and Region.</p>
     /// <p>Conditional: You must specify either <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) for the extension, in this account and Region.</p>
+    /// <p>The Amazon Resource Name (ARN) for the extension in this account and Region.</p>
     /// <p>Conditional: You must specify either <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) for the extension, in this account and Region.</p>
+    /// <p>The Amazon Resource Name (ARN) for the extension in this account and Region.</p>
     /// <p>Conditional: You must specify either <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_arn()

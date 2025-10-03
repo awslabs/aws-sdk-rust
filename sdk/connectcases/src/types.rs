@@ -39,6 +39,64 @@ pub use crate::types::_field_option_error::FieldOptionError;
 
 pub use crate::types::_field_summary::FieldSummary;
 
+pub use crate::types::_search_all_related_items_response_item::SearchAllRelatedItemsResponseItem;
+
+pub use crate::types::_user_union::UserUnion;
+
+pub use crate::types::_related_item_content::RelatedItemContent;
+
+pub use crate::types::_custom_content::CustomContent;
+
+pub use crate::types::_field_value::FieldValue;
+
+pub use crate::types::_field_value_union::FieldValueUnion;
+
+pub use crate::types::_empty_field_value::EmptyFieldValue;
+
+pub use crate::types::_connect_case_content::ConnectCaseContent;
+
+pub use crate::types::_sla_content::SlaContent;
+
+pub use crate::types::_sla_configuration::SlaConfiguration;
+
+pub use crate::types::_sla_status::SlaStatus;
+
+pub use crate::types::_sla_type::SlaType;
+
+pub use crate::types::_file_content::FileContent;
+
+pub use crate::types::_comment_content::CommentContent;
+
+pub use crate::types::_comment_body_text_type::CommentBodyTextType;
+
+pub use crate::types::_contact_content::ContactContent;
+
+pub use crate::types::_related_item_type::RelatedItemType;
+
+pub use crate::types::_search_all_related_items_sort::SearchAllRelatedItemsSort;
+
+pub use crate::types::_order::Order;
+
+pub use crate::types::_search_all_related_items_sort_property::SearchAllRelatedItemsSortProperty;
+
+pub use crate::types::_related_item_type_filter::RelatedItemTypeFilter;
+
+pub use crate::types::_custom_filter::CustomFilter;
+
+pub use crate::types::_custom_fields_filter::CustomFieldsFilter;
+
+pub use crate::types::_field_filter::FieldFilter;
+
+pub use crate::types::_connect_case_filter::ConnectCaseFilter;
+
+pub use crate::types::_sla_filter::SlaFilter;
+
+pub use crate::types::_file_filter::FileFilter;
+
+pub use crate::types::_comment_filter::CommentFilter;
+
+pub use crate::types::_contact_filter::ContactFilter;
+
 pub use crate::types::_event_bridge_configuration::EventBridgeConfiguration;
 
 pub use crate::types::_event_included_data::EventIncludedData;
@@ -77,19 +135,9 @@ pub use crate::types::_rule_type::RuleType;
 
 pub use crate::types::_search_cases_response_item::SearchCasesResponseItem;
 
-pub use crate::types::_field_value::FieldValue;
-
-pub use crate::types::_field_value_union::FieldValueUnion;
-
-pub use crate::types::_empty_field_value::EmptyFieldValue;
-
 pub use crate::types::_sort::Sort;
 
-pub use crate::types::_order::Order;
-
 pub use crate::types::_case_filter::CaseFilter;
-
-pub use crate::types::_field_filter::FieldFilter;
 
 pub use crate::types::_case_summary::CaseSummary;
 
@@ -97,13 +145,9 @@ pub use crate::types::_audit_event::AuditEvent;
 
 pub use crate::types::_audit_event_performed_by::AuditEventPerformedBy;
 
-pub use crate::types::_user_union::UserUnion;
-
 pub use crate::types::_audit_event_field::AuditEventField;
 
 pub use crate::types::_audit_event_field_value_union::AuditEventFieldValueUnion;
-
-pub use crate::types::_related_item_type::RelatedItemType;
 
 pub use crate::types::_audit_event_type::AuditEventType;
 
@@ -117,47 +161,9 @@ pub use crate::types::_sla_input_content::SlaInputContent;
 
 pub use crate::types::_sla_input_configuration::SlaInputConfiguration;
 
-pub use crate::types::_sla_type::SlaType;
-
-pub use crate::types::_file_content::FileContent;
-
-pub use crate::types::_comment_content::CommentContent;
-
-pub use crate::types::_comment_body_text_type::CommentBodyTextType;
-
 pub use crate::types::_contact::Contact;
 
 pub use crate::types::_search_related_items_response_item::SearchRelatedItemsResponseItem;
-
-pub use crate::types::_related_item_content::RelatedItemContent;
-
-pub use crate::types::_custom_content::CustomContent;
-
-pub use crate::types::_connect_case_content::ConnectCaseContent;
-
-pub use crate::types::_sla_content::SlaContent;
-
-pub use crate::types::_sla_configuration::SlaConfiguration;
-
-pub use crate::types::_sla_status::SlaStatus;
-
-pub use crate::types::_contact_content::ContactContent;
-
-pub use crate::types::_related_item_type_filter::RelatedItemTypeFilter;
-
-pub use crate::types::_custom_filter::CustomFilter;
-
-pub use crate::types::_custom_fields_filter::CustomFieldsFilter;
-
-pub use crate::types::_connect_case_filter::ConnectCaseFilter;
-
-pub use crate::types::_sla_filter::SlaFilter;
-
-pub use crate::types::_file_filter::FileFilter;
-
-pub use crate::types::_comment_filter::CommentFilter;
-
-pub use crate::types::_contact_filter::ContactFilter;
 
 mod _audit_event;
 
@@ -288,6 +294,12 @@ mod _required_case_rule;
 mod _required_field;
 
 mod _rule_type;
+
+mod _search_all_related_items_response_item;
+
+mod _search_all_related_items_sort;
+
+mod _search_all_related_items_sort_property;
 
 mod _search_cases_response_item;
 

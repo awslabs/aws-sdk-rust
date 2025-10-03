@@ -83,6 +83,15 @@ let http_rule = mock!(Client::get_object)
         StatusCode::try_from(503).unwrap(),
         SdkBody::from("service unavailable")
     ));
+
+// Return a computed output based on the input
+let compute_rule = mock!(Client::get_object)
+    .then_compute_output(|req| {
+        let key = req.key().unwrap_or("unknown");
+        GetObjectOutput::builder()
+            .body(ByteStream::from_static(format!("content for {}", key).as_bytes()))
+            .build()
+    });
 ```
 
 ### Response Sequences

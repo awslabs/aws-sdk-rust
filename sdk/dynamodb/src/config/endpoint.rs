@@ -2586,8 +2586,8 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
@@ -2620,8 +2620,8 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
@@ -2655,8 +2655,8 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
@@ -2690,8 +2690,8 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
@@ -2725,8 +2725,8 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
@@ -2760,8 +2760,8 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
@@ -2795,8 +2795,8 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
@@ -2828,8 +2828,8 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
@@ -2915,8 +2915,8 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
@@ -2948,8 +2948,8 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
@@ -2981,8 +2981,8 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
@@ -3014,8 +3014,8 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
@@ -3101,8 +3101,8 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
@@ -3135,8 +3135,8 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
@@ -3167,8 +3167,8 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
@@ -3254,8 +3254,8 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
@@ -3288,8 +3288,8 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
@@ -3323,8 +3323,8 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
@@ -3358,8 +3358,8 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
@@ -3393,8 +3393,8 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
@@ -3428,8 +3428,8 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
@@ -3463,8 +3463,8 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
@@ -3496,8 +3496,8 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
@@ -3583,8 +3583,8 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
@@ -3616,8 +3616,8 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
@@ -3649,8 +3649,8 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
@@ -3682,8 +3682,8 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
@@ -3769,8 +3769,8 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
@@ -3803,8 +3803,8 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
@@ -3835,8 +3835,8 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
@@ -3922,8 +3922,8 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
@@ -3956,8 +3956,8 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
@@ -3991,8 +3991,8 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
@@ -4026,8 +4026,8 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
@@ -4061,8 +4061,8 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
@@ -4096,8 +4096,8 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
@@ -4131,8 +4131,8 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
@@ -4164,8 +4164,8 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
@@ -4251,8 +4251,8 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
@@ -4284,8 +4284,8 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
@@ -4317,8 +4317,8 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
@@ -4350,8 +4350,8 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
@@ -4437,8 +4437,8 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
@@ -4471,8 +4471,8 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
@@ -4503,8 +4503,8 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
@@ -4571,11 +4571,11 @@ mod test {
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://dynamodb.us-east-1.api.aws");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://111111111111.ddb.us-east-1.api.aws");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://dynamodb.us-east-1.api.aws")
+                .url("https://111111111111.ddb.us-east-1.api.aws")
                 .build()
         );
     }
@@ -4819,11 +4819,11 @@ mod test {
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://dynamodb.us-east-1.api.aws");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://222222222222.ddb.us-east-1.api.aws");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://dynamodb.us-east-1.api.aws")
+                .url("https://222222222222.ddb.us-east-1.api.aws")
                 .build()
         );
     }
@@ -4973,11 +4973,11 @@ mod test {
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://dynamodb.us-east-1.api.aws");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://333333333333.ddb.us-east-1.api.aws");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://dynamodb.us-east-1.api.aws")
+                .url("https://333333333333.ddb.us-east-1.api.aws")
                 .build()
         );
     }
@@ -5101,11 +5101,13 @@ mod test {
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err("expected error: Invalid Configuration: AccountIdEndpointMode is required and DualStack is enabled, but DualStack account endpoints are not supported [{UseFIPS=false, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=required, Region=us-east-1}]");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://111111111111.ddb.us-east-1.api.aws");
         assert_eq!(
-            format!("{}", error),
-            "Invalid Configuration: AccountIdEndpointMode is required and DualStack is enabled, but DualStack account endpoints are not supported"
-        )
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://111111111111.ddb.us-east-1.api.aws")
+                .build()
+        );
     }
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=required, Region=us-east-1}
@@ -5343,11 +5345,13 @@ mod test {
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err("expected error: Invalid Configuration: AccountIdEndpointMode is required and DualStack is enabled, but DualStack account endpoints are not supported [{UseFIPS=false, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=required, Region=us-east-1}]");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://222222222222.ddb.us-east-1.api.aws");
         assert_eq!(
-            format!("{}", error),
-            "Invalid Configuration: AccountIdEndpointMode is required and DualStack is enabled, but DualStack account endpoints are not supported"
-        )
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://222222222222.ddb.us-east-1.api.aws")
+                .build()
+        );
     }
 
     /// {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=required, Region=us-east-1}
@@ -5485,11 +5489,13 @@ mod test {
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err("expected error: Invalid Configuration: AccountIdEndpointMode is required and DualStack is enabled, but DualStack account endpoints are not supported [{UseFIPS=false, UseDualStack=true, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=us-east-1}]");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://333333333333.ddb.us-east-1.api.aws");
         assert_eq!(
-            format!("{}", error),
-            "Invalid Configuration: AccountIdEndpointMode is required and DualStack is enabled, but DualStack account endpoints are not supported"
-        )
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://333333333333.ddb.us-east-1.api.aws")
+                .build()
+        );
     }
 
     /// {UseFIPS=false, UseDualStack=false, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=us-east-1}
@@ -5609,10 +5615,10 @@ mod test {
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err("expected error: Invalid Configuration: AccountIdEndpointMode is required and DualStack is enabled, but DualStack account endpoints are not supported [{UseFIPS=false, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=required, Region=cn-north-1}]");
+        let error = endpoint.expect_err("expected error: Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition [{UseFIPS=false, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=required, Region=cn-north-1}]");
         assert_eq!(
             format!("{}", error),
-            "Invalid Configuration: AccountIdEndpointMode is required and DualStack is enabled, but DualStack account endpoints are not supported"
+            "Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition"
         )
     }
 
@@ -5840,10 +5846,10 @@ mod test {
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err("expected error: Invalid Configuration: AccountIdEndpointMode is required and DualStack is enabled, but DualStack account endpoints are not supported [{UseFIPS=false, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=required, Region=cn-north-1}]");
+        let error = endpoint.expect_err("expected error: Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition [{UseFIPS=false, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=required, Region=cn-north-1}]");
         assert_eq!(
             format!("{}", error),
-            "Invalid Configuration: AccountIdEndpointMode is required and DualStack is enabled, but DualStack account endpoints are not supported"
+            "Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition"
         )
     }
 
@@ -5980,10 +5986,10 @@ mod test {
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err("expected error: Invalid Configuration: AccountIdEndpointMode is required and DualStack is enabled, but DualStack account endpoints are not supported [{UseFIPS=false, UseDualStack=true, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=cn-north-1}]");
+        let error = endpoint.expect_err("expected error: Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition [{UseFIPS=false, UseDualStack=true, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=cn-north-1}]");
         assert_eq!(
             format!("{}", error),
-            "Invalid Configuration: AccountIdEndpointMode is required and DualStack is enabled, but DualStack account endpoints are not supported"
+            "Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition"
         )
     }
 
@@ -7125,9 +7131,31 @@ mod test {
         );
     }
 
-    /// {UseFIPS=true, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=us-iso-east-1}
+    /// {UseFIPS=true, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=us-iso-east-1}
     #[test]
     fn test_316() {
+        let params = crate::config::endpoint::Params::builder()
+            .use_fips(true)
+            .use_dual_stack(true)
+            .account_id("111111111111".to_string())
+            .account_id_endpoint_mode("preferred".to_string())
+            .region("us-iso-east-1".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://dynamodb-fips.us-iso-east-1.api.aws.ic.gov");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://dynamodb-fips.us-iso-east-1.api.aws.ic.gov")
+                .build()
+        );
+    }
+
+    /// {UseFIPS=true, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=us-iso-east-1}
+    #[test]
+    fn test_317() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(true)
             .use_dual_stack(false)
@@ -7147,9 +7175,31 @@ mod test {
         );
     }
 
+    /// {UseFIPS=false, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=us-iso-east-1}
+    #[test]
+    fn test_318() {
+        let params = crate::config::endpoint::Params::builder()
+            .use_fips(false)
+            .use_dual_stack(true)
+            .account_id("111111111111".to_string())
+            .account_id_endpoint_mode("preferred".to_string())
+            .region("us-iso-east-1".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://dynamodb.us-iso-east-1.api.aws.ic.gov");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://dynamodb.us-iso-east-1.api.aws.ic.gov")
+                .build()
+        );
+    }
+
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=us-iso-east-1}
     #[test]
-    fn test_317() {
+    fn test_319() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -7171,7 +7221,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-iso-east-1}
     #[test]
-    fn test_318() {
+    fn test_320() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -7194,7 +7244,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-iso-east-1}
     #[test]
-    fn test_319() {
+    fn test_321() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -7218,7 +7268,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-iso-east-1}
     #[test]
-    fn test_320() {
+    fn test_322() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -7242,7 +7292,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-iso-east-1}
     #[test]
-    fn test_321() {
+    fn test_323() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -7266,7 +7316,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-west-2:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-iso-east-1}
     #[test]
-    fn test_322() {
+    fn test_324() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -7290,7 +7340,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, ResourceArnList=[arn:aws:s3:us-east-1:333333333333:stream/testStream], AccountIdEndpointMode=preferred, Region=us-iso-east-1}
     #[test]
-    fn test_323() {
+    fn test_325() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -7314,7 +7364,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=, AccountIdEndpointMode=preferred, Region=us-iso-east-1}
     #[test]
-    fn test_324() {
+    fn test_326() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -7334,9 +7384,31 @@ mod test {
         );
     }
 
+    /// {UseFIPS=true, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-iso-east-1}
+    #[test]
+    fn test_327() {
+        let params = crate::config::endpoint::Params::builder()
+            .use_fips(true)
+            .use_dual_stack(true)
+            .resource_arn("arn:aws:dynamodb:us-east-1:222222222222:table/table_name".to_string())
+            .account_id_endpoint_mode("preferred".to_string())
+            .region("us-iso-east-1".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://dynamodb-fips.us-iso-east-1.api.aws.ic.gov");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://dynamodb-fips.us-iso-east-1.api.aws.ic.gov")
+                .build()
+        );
+    }
+
     /// {UseFIPS=true, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-iso-east-1}
     #[test]
-    fn test_325() {
+    fn test_328() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(true)
             .use_dual_stack(false)
@@ -7356,9 +7428,31 @@ mod test {
         );
     }
 
+    /// {UseFIPS=false, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-iso-east-1}
+    #[test]
+    fn test_329() {
+        let params = crate::config::endpoint::Params::builder()
+            .use_fips(false)
+            .use_dual_stack(true)
+            .resource_arn("arn:aws:dynamodb:us-east-1:222222222222:table/table_name".to_string())
+            .account_id_endpoint_mode("preferred".to_string())
+            .region("us-iso-east-1".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://dynamodb.us-iso-east-1.api.aws.ic.gov");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://dynamodb.us-iso-east-1.api.aws.ic.gov")
+                .build()
+        );
+    }
+
     /// {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-iso-east-1}
     #[test]
-    fn test_326() {
+    fn test_330() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -7380,7 +7474,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-iso-east-1}
     #[test]
-    fn test_327() {
+    fn test_331() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -7402,7 +7496,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, AccountIdEndpointMode=preferred, Region=us-iso-east-1}
     #[test]
-    fn test_328() {
+    fn test_332() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -7424,7 +7518,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, ResourceArn=, AccountIdEndpointMode=preferred, Region=us-iso-east-1}
     #[test]
-    fn test_329() {
+    fn test_333() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -7444,9 +7538,31 @@ mod test {
         );
     }
 
+    /// {UseFIPS=true, UseDualStack=true, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-iso-east-1}
+    #[test]
+    fn test_334() {
+        let params = crate::config::endpoint::Params::builder()
+            .use_fips(true)
+            .use_dual_stack(true)
+            .resource_arn_list(vec!["arn:aws:dynamodb:us-east-1:333333333333:table/table_name".to_string().into()])
+            .account_id_endpoint_mode("preferred".to_string())
+            .region("us-iso-east-1".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://dynamodb-fips.us-iso-east-1.api.aws.ic.gov");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://dynamodb-fips.us-iso-east-1.api.aws.ic.gov")
+                .build()
+        );
+    }
+
     /// {UseFIPS=true, UseDualStack=false, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-iso-east-1}
     #[test]
-    fn test_330() {
+    fn test_335() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(true)
             .use_dual_stack(false)
@@ -7466,9 +7582,31 @@ mod test {
         );
     }
 
+    /// {UseFIPS=false, UseDualStack=true, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-iso-east-1}
+    #[test]
+    fn test_336() {
+        let params = crate::config::endpoint::Params::builder()
+            .use_fips(false)
+            .use_dual_stack(true)
+            .resource_arn_list(vec!["arn:aws:dynamodb:us-east-1:333333333333:table/table_name".to_string().into()])
+            .account_id_endpoint_mode("preferred".to_string())
+            .region("us-iso-east-1".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://dynamodb.us-iso-east-1.api.aws.ic.gov");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://dynamodb.us-iso-east-1.api.aws.ic.gov")
+                .build()
+        );
+    }
+
     /// {UseFIPS=false, UseDualStack=false, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-iso-east-1}
     #[test]
-    fn test_331() {
+    fn test_337() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -7490,7 +7628,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-iso-east-1}
     #[test]
-    fn test_332() {
+    fn test_338() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -7513,7 +7651,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountIdEndpointMode=preferred, Region=us-iso-east-1}
     #[test]
-    fn test_333() {
+    fn test_339() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -7534,7 +7672,7 @@ mod test {
 
     /// {UseFIPS=true, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=us-gov-east-1}
     #[test]
-    fn test_334() {
+    fn test_340() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(true)
             .use_dual_stack(true)
@@ -7556,7 +7694,7 @@ mod test {
 
     /// {UseFIPS=true, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=us-gov-east-1}
     #[test]
-    fn test_335() {
+    fn test_341() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(true)
             .use_dual_stack(false)
@@ -7578,7 +7716,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=us-gov-east-1}
     #[test]
-    fn test_336() {
+    fn test_342() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(true)
@@ -7600,7 +7738,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=us-gov-east-1}
     #[test]
-    fn test_337() {
+    fn test_343() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -7622,7 +7760,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-gov-east-1}
     #[test]
-    fn test_338() {
+    fn test_344() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -7645,7 +7783,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-gov-east-1}
     #[test]
-    fn test_339() {
+    fn test_345() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -7669,7 +7807,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-gov-east-1}
     #[test]
-    fn test_340() {
+    fn test_346() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -7693,7 +7831,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-gov-east-1}
     #[test]
-    fn test_341() {
+    fn test_347() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -7717,7 +7855,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-west-2:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-gov-east-1}
     #[test]
-    fn test_342() {
+    fn test_348() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -7741,7 +7879,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, ResourceArnList=[arn:aws:s3:us-east-1:333333333333:stream/testStream], AccountIdEndpointMode=preferred, Region=us-gov-east-1}
     #[test]
-    fn test_343() {
+    fn test_349() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -7765,7 +7903,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=, AccountIdEndpointMode=preferred, Region=us-gov-east-1}
     #[test]
-    fn test_344() {
+    fn test_350() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -7787,7 +7925,7 @@ mod test {
 
     /// {UseFIPS=true, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-gov-east-1}
     #[test]
-    fn test_345() {
+    fn test_351() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(true)
             .use_dual_stack(true)
@@ -7809,7 +7947,7 @@ mod test {
 
     /// {UseFIPS=true, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-gov-east-1}
     #[test]
-    fn test_346() {
+    fn test_352() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(true)
             .use_dual_stack(false)
@@ -7831,7 +7969,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-gov-east-1}
     #[test]
-    fn test_347() {
+    fn test_353() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(true)
@@ -7853,7 +7991,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-gov-east-1}
     #[test]
-    fn test_348() {
+    fn test_354() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -7875,7 +8013,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-gov-east-1}
     #[test]
-    fn test_349() {
+    fn test_355() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -7897,7 +8035,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, AccountIdEndpointMode=preferred, Region=us-gov-east-1}
     #[test]
-    fn test_350() {
+    fn test_356() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -7919,7 +8057,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, ResourceArn=, AccountIdEndpointMode=preferred, Region=us-gov-east-1}
     #[test]
-    fn test_351() {
+    fn test_357() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -7941,7 +8079,7 @@ mod test {
 
     /// {UseFIPS=true, UseDualStack=true, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-gov-east-1}
     #[test]
-    fn test_352() {
+    fn test_358() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(true)
             .use_dual_stack(true)
@@ -7963,7 +8101,7 @@ mod test {
 
     /// {UseFIPS=true, UseDualStack=false, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-gov-east-1}
     #[test]
-    fn test_353() {
+    fn test_359() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(true)
             .use_dual_stack(false)
@@ -7985,7 +8123,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=true, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-gov-east-1}
     #[test]
-    fn test_354() {
+    fn test_360() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(true)
@@ -8007,7 +8145,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-gov-east-1}
     #[test]
-    fn test_355() {
+    fn test_361() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -8029,7 +8167,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-gov-east-1}
     #[test]
-    fn test_356() {
+    fn test_362() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -8052,7 +8190,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountIdEndpointMode=preferred, Region=us-gov-east-1}
     #[test]
-    fn test_357() {
+    fn test_363() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -8069,6 +8207,114 @@ mod test {
                 .url("https://dynamodb.us-gov-east-1.amazonaws.com")
                 .build()
         );
+    }
+
+    /// {Endpoint=https://dynamodb.us-west-2.api.aws, Region=us-west-2}
+    #[test]
+    fn test_364() {
+        let params = crate::config::endpoint::Params::builder()
+            .endpoint("https://dynamodb.us-west-2.api.aws".to_string())
+            .region("us-west-2".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let error = endpoint.expect_err("expected error: Endpoint override is not supported for dual-stack endpoints. Please enable dual-stack functionality by enabling the configuration. For more details, see: https://docs.aws.amazon.com/sdkref/latest/guide/feature-endpoints.html [{Endpoint=https://dynamodb.us-west-2.api.aws, Region=us-west-2}]");
+        assert_eq!(format!("{}", error), "Endpoint override is not supported for dual-stack endpoints. Please enable dual-stack functionality by enabling the configuration. For more details, see: https://docs.aws.amazon.com/sdkref/latest/guide/feature-endpoints.html")
+    }
+
+    /// {Endpoint=https://dynamodb.cn-north-1.api.amazonwebservices.com.cn, Region=cn-north-1}
+    #[test]
+    fn test_365() {
+        let params = crate::config::endpoint::Params::builder()
+            .endpoint("https://dynamodb.cn-north-1.api.amazonwebservices.com.cn".to_string())
+            .region("cn-north-1".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let error = endpoint.expect_err("expected error: Endpoint override is not supported for dual-stack endpoints. Please enable dual-stack functionality by enabling the configuration. For more details, see: https://docs.aws.amazon.com/sdkref/latest/guide/feature-endpoints.html [{Endpoint=https://dynamodb.cn-north-1.api.amazonwebservices.com.cn, Region=cn-north-1}]");
+        assert_eq!(format!("{}", error), "Endpoint override is not supported for dual-stack endpoints. Please enable dual-stack functionality by enabling the configuration. For more details, see: https://docs.aws.amazon.com/sdkref/latest/guide/feature-endpoints.html")
+    }
+
+    /// {Endpoint=https://dynamodb.us-gov-east-1.api.aws, Region=us-gov-east-1}
+    #[test]
+    fn test_366() {
+        let params = crate::config::endpoint::Params::builder()
+            .endpoint("https://dynamodb.us-gov-east-1.api.aws".to_string())
+            .region("us-gov-east-1".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let error = endpoint.expect_err("expected error: Endpoint override is not supported for dual-stack endpoints. Please enable dual-stack functionality by enabling the configuration. For more details, see: https://docs.aws.amazon.com/sdkref/latest/guide/feature-endpoints.html [{Endpoint=https://dynamodb.us-gov-east-1.api.aws, Region=us-gov-east-1}]");
+        assert_eq!(format!("{}", error), "Endpoint override is not supported for dual-stack endpoints. Please enable dual-stack functionality by enabling the configuration. For more details, see: https://docs.aws.amazon.com/sdkref/latest/guide/feature-endpoints.html")
+    }
+
+    /// {Endpoint=https://dynamodb.us-east-1.api.aws, Region=us-east-1}
+    #[test]
+    fn test_367() {
+        let params = crate::config::endpoint::Params::builder()
+            .endpoint("https://dynamodb.us-east-1.api.aws".to_string())
+            .region("us-east-1".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let error = endpoint.expect_err("expected error: Endpoint override is not supported for dual-stack endpoints. Please enable dual-stack functionality by enabling the configuration. For more details, see: https://docs.aws.amazon.com/sdkref/latest/guide/feature-endpoints.html [{Endpoint=https://dynamodb.us-east-1.api.aws, Region=us-east-1}]");
+        assert_eq!(format!("{}", error), "Endpoint override is not supported for dual-stack endpoints. Please enable dual-stack functionality by enabling the configuration. For more details, see: https://docs.aws.amazon.com/sdkref/latest/guide/feature-endpoints.html")
+    }
+
+    /// {Endpoint=https://111111111111.ddb.us-east-1.api.aws, Region=us-east-1}
+    #[test]
+    fn test_368() {
+        let params = crate::config::endpoint::Params::builder()
+            .endpoint("https://111111111111.ddb.us-east-1.api.aws".to_string())
+            .region("us-east-1".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://111111111111.ddb.us-east-1.api.aws");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://111111111111.ddb.us-east-1.api.aws")
+                .build()
+        );
+    }
+
+    /// {Endpoint=https://vpce-1a2b3c4d-5e6f.dynamodb.us-east-1.vpce.api.aws, Region=us-east-1}
+    #[test]
+    fn test_369() {
+        let params = crate::config::endpoint::Params::builder()
+            .endpoint("https://vpce-1a2b3c4d-5e6f.dynamodb.us-east-1.vpce.api.aws".to_string())
+            .region("us-east-1".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://vpce-1a2b3c4d-5e6f.dynamodb.us-east-1.vpce.api.aws");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://vpce-1a2b3c4d-5e6f.dynamodb.us-east-1.vpce.api.aws")
+                .build()
+        );
+    }
+
+    /// {Endpoint=https://dynamodb.eu-west-1.api.aws, Region=eu-west-1}
+    #[test]
+    fn test_370() {
+        let params = crate::config::endpoint::Params::builder()
+            .endpoint("https://dynamodb.eu-west-1.api.aws".to_string())
+            .region("eu-west-1".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let error = endpoint.expect_err("expected error: Endpoint override is not supported for dual-stack endpoints. Please enable dual-stack functionality by enabling the configuration. For more details, see: https://docs.aws.amazon.com/sdkref/latest/guide/feature-endpoints.html [{Endpoint=https://dynamodb.eu-west-1.api.aws, Region=eu-west-1}]");
+        assert_eq!(format!("{}", error), "Endpoint override is not supported for dual-stack endpoints. Please enable dual-stack functionality by enabling the configuration. For more details, see: https://docs.aws.amazon.com/sdkref/latest/guide/feature-endpoints.html")
     }
 }
 

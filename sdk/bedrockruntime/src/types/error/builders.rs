@@ -13,12 +13,12 @@ pub use crate::types::error::_access_denied_exception::AccessDeniedExceptionBuil
 
 pub use crate::types::error::_service_quota_exceeded_exception::ServiceQuotaExceededExceptionBuilder;
 
-pub use crate::types::error::_model_error_exception::ModelErrorExceptionBuilder;
-
-pub use crate::types::error::_model_not_ready_exception::ModelNotReadyExceptionBuilder;
+pub use crate::types::error::_model_timeout_exception::ModelTimeoutExceptionBuilder;
 
 pub use crate::types::error::_model_stream_error_exception::ModelStreamErrorExceptionBuilder;
 
-pub use crate::types::error::_model_timeout_exception::ModelTimeoutExceptionBuilder;
+pub use crate::types::error::_model_not_ready_exception::ModelNotReadyExceptionBuilder;
+
+pub use crate::types::error::_model_error_exception::ModelErrorExceptionBuilder;
 
 pub use crate::types::error::_conflict_exception::ConflictExceptionBuilder;

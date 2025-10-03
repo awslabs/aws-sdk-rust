@@ -55,12 +55,12 @@ pub fn de_subscribe_to_shard_http_error(
             }
             tmp
         }),
-        "KMSNotFoundException" => crate::operation::subscribe_to_shard::SubscribeToShardError::KmsNotFoundException({
+        "InvalidArgumentException" => crate::operation::subscribe_to_shard::SubscribeToShardError::InvalidArgumentException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::KmsNotFoundExceptionBuilder::default();
-                output = crate::protocol_serde::shape_kms_not_found_exception::de_kms_not_found_exception_json_err(_response_body, output)
+                let mut output = crate::types::error::builders::InvalidArgumentExceptionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_argument_exception::de_invalid_argument_exception_json_err(_response_body, output)
                     .map_err(crate::operation::subscribe_to_shard::SubscribeToShardError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -70,12 +70,27 @@ pub fn de_subscribe_to_shard_http_error(
             }
             tmp
         }),
-        "KMSOptInRequired" => crate::operation::subscribe_to_shard::SubscribeToShardError::KmsOptInRequired({
+        "LimitExceededException" => crate::operation::subscribe_to_shard::SubscribeToShardError::LimitExceededException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::KmsOptInRequiredBuilder::default();
-                output = crate::protocol_serde::shape_kms_opt_in_required::de_kms_opt_in_required_json_err(_response_body, output)
+                let mut output = crate::types::error::builders::LimitExceededExceptionBuilder::default();
+                output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::subscribe_to_shard::SubscribeToShardError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ResourceInUseException" => crate::operation::subscribe_to_shard::SubscribeToShardError::ResourceInUseException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ResourceInUseExceptionBuilder::default();
+                output = crate::protocol_serde::shape_resource_in_use_exception::de_resource_in_use_exception_json_err(_response_body, output)
                     .map_err(crate::operation::subscribe_to_shard::SubscribeToShardError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -115,6 +130,21 @@ pub fn de_subscribe_to_shard_http_error(
             }
             tmp
         }),
+        "KMSInvalidStateException" => crate::operation::subscribe_to_shard::SubscribeToShardError::KmsInvalidStateException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::KmsInvalidStateExceptionBuilder::default();
+                output = crate::protocol_serde::shape_kms_invalid_state_exception::de_kms_invalid_state_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::subscribe_to_shard::SubscribeToShardError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "KMSAccessDeniedException" => crate::operation::subscribe_to_shard::SubscribeToShardError::KmsAccessDeniedException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -130,12 +160,27 @@ pub fn de_subscribe_to_shard_http_error(
             }
             tmp
         }),
-        "InternalFailureException" => crate::operation::subscribe_to_shard::SubscribeToShardError::InternalFailureException({
+        "KMSNotFoundException" => crate::operation::subscribe_to_shard::SubscribeToShardError::KmsNotFoundException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::InternalFailureExceptionBuilder::default();
-                output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(_response_body, output)
+                let mut output = crate::types::error::builders::KmsNotFoundExceptionBuilder::default();
+                output = crate::protocol_serde::shape_kms_not_found_exception::de_kms_not_found_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::subscribe_to_shard::SubscribeToShardError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "KMSOptInRequired" => crate::operation::subscribe_to_shard::SubscribeToShardError::KmsOptInRequired({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::KmsOptInRequiredBuilder::default();
+                output = crate::protocol_serde::shape_kms_opt_in_required::de_kms_opt_in_required_json_err(_response_body, output)
                     .map_err(crate::operation::subscribe_to_shard::SubscribeToShardError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -160,57 +205,12 @@ pub fn de_subscribe_to_shard_http_error(
             }
             tmp
         }),
-        "InvalidArgumentException" => crate::operation::subscribe_to_shard::SubscribeToShardError::InvalidArgumentException({
+        "InternalFailureException" => crate::operation::subscribe_to_shard::SubscribeToShardError::InternalFailureException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::InvalidArgumentExceptionBuilder::default();
-                output = crate::protocol_serde::shape_invalid_argument_exception::de_invalid_argument_exception_json_err(_response_body, output)
-                    .map_err(crate::operation::subscribe_to_shard::SubscribeToShardError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ResourceInUseException" => crate::operation::subscribe_to_shard::SubscribeToShardError::ResourceInUseException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ResourceInUseExceptionBuilder::default();
-                output = crate::protocol_serde::shape_resource_in_use_exception::de_resource_in_use_exception_json_err(_response_body, output)
-                    .map_err(crate::operation::subscribe_to_shard::SubscribeToShardError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "KMSInvalidStateException" => crate::operation::subscribe_to_shard::SubscribeToShardError::KmsInvalidStateException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::KmsInvalidStateExceptionBuilder::default();
-                output = crate::protocol_serde::shape_kms_invalid_state_exception::de_kms_invalid_state_exception_json_err(_response_body, output)
-                    .map_err(crate::operation::subscribe_to_shard::SubscribeToShardError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "LimitExceededException" => crate::operation::subscribe_to_shard::SubscribeToShardError::LimitExceededException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::LimitExceededExceptionBuilder::default();
-                output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(_response_body, output)
+                let mut output = crate::types::error::builders::InternalFailureExceptionBuilder::default();
+                output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(_response_body, output)
                     .map_err(crate::operation::subscribe_to_shard::SubscribeToShardError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()

@@ -37,7 +37,7 @@ pub struct DescribeTypeOutput {
     /// <p>The description of the extension.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The schema that defines the extension.</p>
-    /// <p>For more information about extension schemas, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">Resource type schema</a> in the <i>CloudFormation Command Line Interface (CLI) User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">Resource type schema</a> in the <i>CloudFormation Command Line Interface (CLI) User Guide</i> and the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/hooks-userguide/what-is-cloudformation-hooks.html">CloudFormation Hooks User Guide</a>.</p>
     pub schema: ::std::option::Option<::std::string::String>,
     /// <p>For resource type extensions, the provisioning behavior of the resource type. CloudFormation determines the provisioning type during registration, based on the types of handlers in the schema handler package submitted.</p>
     /// <p>Valid values include:</p>
@@ -99,7 +99,7 @@ pub struct DescribeTypeOutput {
     /// <p>When the specified private extension version was registered or activated in your account.</p>
     pub time_created: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A JSON string that represent the current configuration data for the extension in this account and Region.</p>
-    /// <p>To set the configuration data for an extension, use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-set-configuration.html">Edit configuration data for extensions in your account</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>To set the configuration data for an extension, use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a>.</p>
     pub configuration_schema: ::std::option::Option<::std::string::String>,
     /// <p>The publisher ID of the extension publisher.</p>
     /// <p>This applies only to public third-party extensions. For private registered extensions, and extensions provided by Amazon Web Services, CloudFormation returns <code>null</code>.</p>
@@ -173,7 +173,7 @@ impl DescribeTypeOutput {
         self.description.as_deref()
     }
     /// <p>The schema that defines the extension.</p>
-    /// <p>For more information about extension schemas, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">Resource type schema</a> in the <i>CloudFormation Command Line Interface (CLI) User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">Resource type schema</a> in the <i>CloudFormation Command Line Interface (CLI) User Guide</i> and the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/hooks-userguide/what-is-cloudformation-hooks.html">CloudFormation Hooks User Guide</a>.</p>
     pub fn schema(&self) -> ::std::option::Option<&str> {
         self.schema.as_deref()
     }
@@ -259,7 +259,7 @@ impl DescribeTypeOutput {
         self.time_created.as_ref()
     }
     /// <p>A JSON string that represent the current configuration data for the extension in this account and Region.</p>
-    /// <p>To set the configuration data for an extension, use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-set-configuration.html">Edit configuration data for extensions in your account</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>To set the configuration data for an extension, use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a>.</p>
     pub fn configuration_schema(&self) -> ::std::option::Option<&str> {
         self.configuration_schema.as_deref()
     }
@@ -507,19 +507,19 @@ impl DescribeTypeOutputBuilder {
         &self.description
     }
     /// <p>The schema that defines the extension.</p>
-    /// <p>For more information about extension schemas, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">Resource type schema</a> in the <i>CloudFormation Command Line Interface (CLI) User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">Resource type schema</a> in the <i>CloudFormation Command Line Interface (CLI) User Guide</i> and the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/hooks-userguide/what-is-cloudformation-hooks.html">CloudFormation Hooks User Guide</a>.</p>
     pub fn schema(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The schema that defines the extension.</p>
-    /// <p>For more information about extension schemas, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">Resource type schema</a> in the <i>CloudFormation Command Line Interface (CLI) User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">Resource type schema</a> in the <i>CloudFormation Command Line Interface (CLI) User Guide</i> and the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/hooks-userguide/what-is-cloudformation-hooks.html">CloudFormation Hooks User Guide</a>.</p>
     pub fn set_schema(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schema = input;
         self
     }
     /// <p>The schema that defines the extension.</p>
-    /// <p>For more information about extension schemas, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">Resource type schema</a> in the <i>CloudFormation Command Line Interface (CLI) User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">Resource type schema</a> in the <i>CloudFormation Command Line Interface (CLI) User Guide</i> and the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/hooks-userguide/what-is-cloudformation-hooks.html">CloudFormation Hooks User Guide</a>.</p>
     pub fn get_schema(&self) -> &::std::option::Option<::std::string::String> {
         &self.schema
     }
@@ -787,19 +787,19 @@ impl DescribeTypeOutputBuilder {
         &self.time_created
     }
     /// <p>A JSON string that represent the current configuration data for the extension in this account and Region.</p>
-    /// <p>To set the configuration data for an extension, use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-set-configuration.html">Edit configuration data for extensions in your account</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>To set the configuration data for an extension, use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a>.</p>
     pub fn configuration_schema(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_schema = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A JSON string that represent the current configuration data for the extension in this account and Region.</p>
-    /// <p>To set the configuration data for an extension, use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-set-configuration.html">Edit configuration data for extensions in your account</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>To set the configuration data for an extension, use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a>.</p>
     pub fn set_configuration_schema(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configuration_schema = input;
         self
     }
     /// <p>A JSON string that represent the current configuration data for the extension in this account and Region.</p>
-    /// <p>To set the configuration data for an extension, use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-set-configuration.html">Edit configuration data for extensions in your account</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>To set the configuration data for an extension, use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a>.</p>
     pub fn get_configuration_schema(&self) -> &::std::option::Option<::std::string::String> {
         &self.configuration_schema
     }

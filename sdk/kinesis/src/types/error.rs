@@ -11,19 +11,19 @@ pub use crate::types::error::_validation_exception::ValidationException;
 
 pub use crate::types::error::_access_denied_exception::AccessDeniedException;
 
-pub use crate::types::error::_kms_invalid_state_exception::KmsInvalidStateException;
-
-pub use crate::types::error::_kms_throttling_exception::KmsThrottlingException;
-
 pub use crate::types::error::_internal_failure_exception::InternalFailureException;
 
-pub use crate::types::error::_kms_access_denied_exception::KmsAccessDeniedException;
-
-pub use crate::types::error::_kms_disabled_exception::KmsDisabledException;
+pub use crate::types::error::_kms_throttling_exception::KmsThrottlingException;
 
 pub use crate::types::error::_kms_opt_in_required::KmsOptInRequired;
 
 pub use crate::types::error::_kms_not_found_exception::KmsNotFoundException;
+
+pub use crate::types::error::_kms_access_denied_exception::KmsAccessDeniedException;
+
+pub use crate::types::error::_kms_invalid_state_exception::KmsInvalidStateException;
+
+pub use crate::types::error::_kms_disabled_exception::KmsDisabledException;
 
 /// Error type for the `SubscribeToShardEventStreamError` operation.
 #[non_exhaustive]

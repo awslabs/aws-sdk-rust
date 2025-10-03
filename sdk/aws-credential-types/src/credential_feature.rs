@@ -9,6 +9,8 @@ use aws_smithy_types::config_bag::{Storable, StoreAppend};
 #[non_exhaustive]
 #[derive(Clone, Debug, Eq, PartialEq)]
 pub enum AwsCredentialFeature {
+    /// An operation where credential resolution resolved an account ID
+    ResolvedAccountId,
     /// An operation called using credentials resolved from code, cli parameters, session object, or client instance
     CredentialsCode,
     /// An operation called using credentials resolved from environment variables

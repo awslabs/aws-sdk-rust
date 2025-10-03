@@ -2,8 +2,8 @@
 resolver = "2"
 exclude = [
     "tests/telemetry",
-    "tests/webassembly",
-    "tests/no-default-features"
+    "tests/no-default-features",
+    "tests/webassembly"
 ]
 members = [
     "sdk/accessanalyzer",
@@ -42,28 +42,20 @@ members = [
     "sdk/autoscalingplans",
     "sdk/aws-config",
     "sdk/aws-credential-types",
-    "sdk/aws-endpoint",
-    "sdk/aws-http",
-    "sdk/aws-hyper",
     "sdk/aws-runtime",
     "sdk/aws-runtime-api",
-    "sdk/aws-sig-auth",
     "sdk/aws-sigv4",
     "sdk/aws-smithy-async",
     "sdk/aws-smithy-cbor",
     "sdk/aws-smithy-checksums",
-    "sdk/aws-smithy-client",
     "sdk/aws-smithy-compression",
     "sdk/aws-smithy-dns",
     "sdk/aws-smithy-eventstream",
     "sdk/aws-smithy-experimental",
     "sdk/aws-smithy-http",
-    "sdk/aws-smithy-http-auth",
     "sdk/aws-smithy-http-client",
-    "sdk/aws-smithy-http-tower",
     "sdk/aws-smithy-json",
     "sdk/aws-smithy-mocks",
-    "sdk/aws-smithy-mocks-experimental",
     "sdk/aws-smithy-observability",
     "sdk/aws-smithy-observability-otel",
     "sdk/aws-smithy-protocol-test",

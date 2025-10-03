@@ -24,6 +24,7 @@ impl crate::operation::describe_type::builders::DescribeTypeInputBuilder {
 ///
 /// <p>Returns detailed information about an extension from the CloudFormation registry in your current account and Region.</p>
 /// <p>If you specify a <code>VersionId</code>, <code>DescribeType</code> returns information about that specific extension version. Otherwise, it returns information about the default extension version.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-set-configuration.html">Edit configuration data for extensions in your account</a> in the <i>CloudFormation User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeTypeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

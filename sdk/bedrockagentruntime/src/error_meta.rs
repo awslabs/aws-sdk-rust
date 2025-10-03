@@ -425,16 +425,16 @@ where
 impl From<crate::operation::invoke_agent::InvokeAgentError> for Error {
     fn from(err: crate::operation::invoke_agent::InvokeAgentError) -> Self {
         match err {
-            crate::operation::invoke_agent::InvokeAgentError::ModelNotReadyException(inner) => Error::ModelNotReadyException(inner),
-            crate::operation::invoke_agent::InvokeAgentError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::operation::invoke_agent::InvokeAgentError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::invoke_agent::InvokeAgentError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::invoke_agent::InvokeAgentError::DependencyFailedException(inner) => Error::DependencyFailedException(inner),
-            crate::operation::invoke_agent::InvokeAgentError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::invoke_agent::InvokeAgentError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::invoke_agent::InvokeAgentError::BadGatewayException(inner) => Error::BadGatewayException(inner),
             crate::operation::invoke_agent::InvokeAgentError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::invoke_agent::InvokeAgentError::DependencyFailedException(inner) => Error::DependencyFailedException(inner),
+            crate::operation::invoke_agent::InvokeAgentError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::invoke_agent::InvokeAgentError::ModelNotReadyException(inner) => Error::ModelNotReadyException(inner),
+            crate::operation::invoke_agent::InvokeAgentError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::invoke_agent::InvokeAgentError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::invoke_agent::InvokeAgentError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::invoke_agent::InvokeAgentError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::invoke_agent::InvokeAgentError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -456,15 +456,15 @@ where
 impl From<crate::operation::invoke_flow::InvokeFlowError> for Error {
     fn from(err: crate::operation::invoke_flow::InvokeFlowError) -> Self {
         match err {
-            crate::operation::invoke_flow::InvokeFlowError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::operation::invoke_flow::InvokeFlowError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::invoke_flow::InvokeFlowError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::invoke_flow::InvokeFlowError::DependencyFailedException(inner) => Error::DependencyFailedException(inner),
-            crate::operation::invoke_flow::InvokeFlowError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::invoke_flow::InvokeFlowError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::invoke_flow::InvokeFlowError::BadGatewayException(inner) => Error::BadGatewayException(inner),
             crate::operation::invoke_flow::InvokeFlowError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::invoke_flow::InvokeFlowError::DependencyFailedException(inner) => Error::DependencyFailedException(inner),
+            crate::operation::invoke_flow::InvokeFlowError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::invoke_flow::InvokeFlowError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::invoke_flow::InvokeFlowError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::invoke_flow::InvokeFlowError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::invoke_flow::InvokeFlowError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::invoke_flow::InvokeFlowError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -486,21 +486,21 @@ where
 impl From<crate::operation::invoke_inline_agent::InvokeInlineAgentError> for Error {
     fn from(err: crate::operation::invoke_inline_agent::InvokeInlineAgentError) -> Self {
         match err {
-            crate::operation::invoke_inline_agent::InvokeInlineAgentError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::operation::invoke_inline_agent::InvokeInlineAgentError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::invoke_inline_agent::InvokeInlineAgentError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::invoke_inline_agent::InvokeInlineAgentError::BadGatewayException(inner) => Error::BadGatewayException(inner),
+            crate::operation::invoke_inline_agent::InvokeInlineAgentError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::invoke_inline_agent::InvokeInlineAgentError::DependencyFailedException(inner) => {
                 Error::DependencyFailedException(inner)
             }
+            crate::operation::invoke_inline_agent::InvokeInlineAgentError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::invoke_inline_agent::InvokeInlineAgentError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
-            crate::operation::invoke_inline_agent::InvokeInlineAgentError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::invoke_inline_agent::InvokeInlineAgentError::BadGatewayException(inner) => Error::BadGatewayException(inner),
-            crate::operation::invoke_inline_agent::InvokeInlineAgentError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::invoke_inline_agent::InvokeInlineAgentError::ServiceQuotaExceededException(inner) => {
                 Error::ServiceQuotaExceededException(inner)
             }
+            crate::operation::invoke_inline_agent::InvokeInlineAgentError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::invoke_inline_agent::InvokeInlineAgentError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::invoke_inline_agent::InvokeInlineAgentError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -700,12 +700,12 @@ where
 impl From<crate::operation::optimize_prompt::OptimizePromptError> for Error {
     fn from(err: crate::operation::optimize_prompt::OptimizePromptError) -> Self {
         match err {
-            crate::operation::optimize_prompt::OptimizePromptError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::operation::optimize_prompt::OptimizePromptError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::optimize_prompt::OptimizePromptError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::optimize_prompt::OptimizePromptError::DependencyFailedException(inner) => Error::DependencyFailedException(inner),
-            crate::operation::optimize_prompt::OptimizePromptError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::optimize_prompt::OptimizePromptError::BadGatewayException(inner) => Error::BadGatewayException(inner),
+            crate::operation::optimize_prompt::OptimizePromptError::DependencyFailedException(inner) => Error::DependencyFailedException(inner),
+            crate::operation::optimize_prompt::OptimizePromptError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::optimize_prompt::OptimizePromptError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::optimize_prompt::OptimizePromptError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::optimize_prompt::OptimizePromptError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -860,23 +860,8 @@ where
 impl From<crate::operation::retrieve_and_generate_stream::RetrieveAndGenerateStreamError> for Error {
     fn from(err: crate::operation::retrieve_and_generate_stream::RetrieveAndGenerateStreamError) -> Self {
         match err {
-            crate::operation::retrieve_and_generate_stream::RetrieveAndGenerateStreamError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::operation::retrieve_and_generate_stream::RetrieveAndGenerateStreamError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
             crate::operation::retrieve_and_generate_stream::RetrieveAndGenerateStreamError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
-            }
-            crate::operation::retrieve_and_generate_stream::RetrieveAndGenerateStreamError::DependencyFailedException(inner) => {
-                Error::DependencyFailedException(inner)
-            }
-            crate::operation::retrieve_and_generate_stream::RetrieveAndGenerateStreamError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::retrieve_and_generate_stream::RetrieveAndGenerateStreamError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
             }
             crate::operation::retrieve_and_generate_stream::RetrieveAndGenerateStreamError::BadGatewayException(inner) => {
                 Error::BadGatewayException(inner)
@@ -884,8 +869,23 @@ impl From<crate::operation::retrieve_and_generate_stream::RetrieveAndGenerateStr
             crate::operation::retrieve_and_generate_stream::RetrieveAndGenerateStreamError::ConflictException(inner) => {
                 Error::ConflictException(inner)
             }
+            crate::operation::retrieve_and_generate_stream::RetrieveAndGenerateStreamError::DependencyFailedException(inner) => {
+                Error::DependencyFailedException(inner)
+            }
+            crate::operation::retrieve_and_generate_stream::RetrieveAndGenerateStreamError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::retrieve_and_generate_stream::RetrieveAndGenerateStreamError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::retrieve_and_generate_stream::RetrieveAndGenerateStreamError::ServiceQuotaExceededException(inner) => {
                 Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::retrieve_and_generate_stream::RetrieveAndGenerateStreamError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::retrieve_and_generate_stream::RetrieveAndGenerateStreamError::ValidationException(inner) => {
+                Error::ValidationException(inner)
             }
             crate::operation::retrieve_and_generate_stream::RetrieveAndGenerateStreamError::Unhandled(inner) => Error::Unhandled(inner),
         }

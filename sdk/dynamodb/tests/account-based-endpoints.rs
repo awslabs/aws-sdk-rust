@@ -5,6 +5,7 @@
 
 use aws_config::Region;
 use aws_credential_types::Credentials;
+use aws_runtime::user_agent::test_util::assert_ua_contains_metric_values;
 use aws_sdk_dynamodb::{
     config::Builder,
     error::{DisplayErrorContext, SdkError},
@@ -53,40 +54,48 @@ async fn call_operation(
 
 #[tokio::test]
 async fn basic_positive_cases() {
-    let test_cases: &[(fn(Builder) -> Builder, &str, &str)] = &[
+    let test_cases: &[(fn(Builder) -> Builder, &str, &str, &[&'static str])] = &[
         (
             std::convert::identity,
             "arn:aws:dynamodb:us-east-1:333333333333:table/table_name",
             "https://333333333333.ddb.us-east-1.amazonaws.com/",
+            &["P", "T"],
         ),
         (
             std::convert::identity,
             "table_name", // doesn't specify ARN for the table name
             "https://123456789012.ddb.us-east-1.amazonaws.com/", // the account ID should come from credentials
+            &["P", "T"],
         ),
         (
             |b: Builder| b.credentials_provider(Credentials::for_tests()), // credentials do not provide an account ID
             "arn:aws:dynamodb:us-east-1:333333333333:table/table_name",
             "https://333333333333.ddb.us-east-1.amazonaws.com/",
+            &["P"],
         ),
         (
             |b: Builder| b.account_id_endpoint_mode(AccountIdEndpointMode::Preferred), // sets the default mode `Preferred` explicitly
             "arn:aws:dynamodb:us-east-1:333333333333:table/table_name",
             "https://333333333333.ddb.us-east-1.amazonaws.com/",
+            &["P", "T"],
         ),
         (
             |b: Builder| b.account_id_endpoint_mode(AccountIdEndpointMode::Disabled),
             "arn:aws:dynamodb:us-east-1:333333333333:table/table_name",
             "https://dynamodb.us-east-1.amazonaws.com/",
+            &["Q", "T"],
         ),
         (
             |b: Builder| b.account_id_endpoint_mode(AccountIdEndpointMode::Required),
             "arn:aws:dynamodb:us-east-1:333333333333:table/table_name",
             "https://333333333333.ddb.us-east-1.amazonaws.com/",
+            &["R", "T"],
         ),
     ];
 
-    for (i, (update_builder, table_name, expected_uri)) in test_cases.into_iter().enumerate() {
+    for (i, (update_builder, table_name, expected_uri, expected_metrics)) in
+        test_cases.into_iter().enumerate()
+    {
         let (client, rx) = test_client(*update_builder);
         let _ = call_operation(client, table_name).await;
         let req = rx.expect_request();
@@ -95,6 +104,10 @@ async fn basic_positive_cases() {
             req.uri(),
             "on the {i}th test case where table name is `{table_name}`"
         );
+
+        // Test User-Agent metrics for account ID tracking
+        let user_agent = req.headers().get("x-amz-user-agent").unwrap();
+        assert_ua_contains_metric_values(user_agent, expected_metrics);
     }
 }
 

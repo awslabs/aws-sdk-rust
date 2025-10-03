@@ -9,7 +9,7 @@ use aws_smithy_runtime_api::box_error::BoxError;
 use aws_smithy_runtime_api::client::http::SharedHttpClient;
 use aws_smithy_runtime_api::client::interceptors::context::{
     BeforeSerializationInterceptorContextMut, BeforeTransmitInterceptorContextMut, Error,
-    FinalizerInterceptorContextMut, Output,
+    FinalizerInterceptorContextMut, Input, Output,
 };
 use aws_smithy_runtime_api::client::interceptors::Intercept;
 use aws_smithy_runtime_api::client::orchestrator::{HttpResponse, OrchestratorError};
@@ -132,7 +132,7 @@ impl Intercept for MockResponseInterceptor {
                     }
 
                     // Rule matches and is not exhausted, get the response
-                    if let Some(response) = rule.next_response() {
+                    if let Some(response) = rule.next_response(input) {
                         matching_rule = Some(rule.clone());
                         matching_response = Some(response);
                     } else {
@@ -154,7 +154,7 @@ impl Intercept for MockResponseInterceptor {
                     }
 
                     if (rule.matcher)(input) {
-                        if let Some(response) = rule.next_response() {
+                        if let Some(response) = rule.next_response(input) {
                             matching_rule = Some(rule.clone());
                             matching_response = Some(response);
                             break;
@@ -198,7 +198,10 @@ impl Intercept for MockResponseInterceptor {
         if active_response.is_none() {
             // in the case of retries we try to get the next response if it has been consumed
             if let Some(active_rule) = cfg.load::<ActiveRule>() {
-                let next_resp = active_rule.0.next_response();
+                // During retries, input is not available in modify_before_transmit.
+                // For HTTP status responses that don't use the input, we can use a dummy input.
+                let dummy_input = Input::doesnt_matter();
+                let next_resp = active_rule.0.next_response(&dummy_input);
                 active_response = next_resp;
             }
         }
@@ -442,6 +445,43 @@ mod tests {
 
         // Verify the rule was used the expected number of times (all 4 responses: 2 errors + 1 success)
         assert_eq!(rule.num_calls(), 3);
+    }
+
+    #[tokio::test]
+    async fn test_compute_output() {
+        // Create a rule that computes its responses based off of input data
+        let rule = create_rule_builder()
+            .match_requests(|input| input.bucket == "test-bucket" && input.key == "test-key")
+            .then_compute_output(|input| TestOutput {
+                content: format!("{}.{}", input.bucket, input.key),
+            });
+
+        // Create an interceptor with the rule
+        let interceptor = MockResponseInterceptor::new()
+            .rule_mode(RuleMode::Sequential)
+            .with_rule(&rule);
+
+        let operation = create_test_operation(interceptor, true);
+
+        let result = operation
+            .invoke(TestInput::new("test-bucket", "test-key"))
+            .await;
+
+        // Should succeed with the output derived from input
+        assert!(
+            result.is_ok(),
+            "Expected success but got error: {:?}",
+            result.err()
+        );
+        assert_eq!(
+            result.unwrap(),
+            TestOutput {
+                content: "test-bucket.test-key".to_string()
+            }
+        );
+
+        // Verify the rule was used once, no retries
+        assert_eq!(rule.num_calls(), 1);
     }
 
     #[should_panic(

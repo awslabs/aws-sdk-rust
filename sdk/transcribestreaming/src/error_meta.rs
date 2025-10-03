@@ -126,21 +126,21 @@ where
 impl From<crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError> for Error {
     fn from(err: crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError) -> Self {
         match err {
-            crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError::ServiceUnavailableException(
-                inner,
-            ) => Error::ServiceUnavailableException(inner),
             crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
+            }
+            crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError::ConflictException(inner) => {
+                Error::ConflictException(inner)
             }
             crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError::InternalFailureException(
                 inner,
             ) => Error::InternalFailureException(inner),
-            crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
             crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError::LimitExceededException(
                 inner,
             ) => Error::LimitExceededException(inner),
+            crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError::ServiceUnavailableException(
+                inner,
+            ) => Error::ServiceUnavailableException(inner),
             crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
@@ -167,18 +167,18 @@ where
 impl From<crate::operation::start_medical_scribe_stream::StartMedicalScribeStreamError> for Error {
     fn from(err: crate::operation::start_medical_scribe_stream::StartMedicalScribeStreamError) -> Self {
         match err {
-            crate::operation::start_medical_scribe_stream::StartMedicalScribeStreamError::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
             crate::operation::start_medical_scribe_stream::StartMedicalScribeStreamError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
+            crate::operation::start_medical_scribe_stream::StartMedicalScribeStreamError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::start_medical_scribe_stream::StartMedicalScribeStreamError::InternalFailureException(inner) => {
                 Error::InternalFailureException(inner)
             }
-            crate::operation::start_medical_scribe_stream::StartMedicalScribeStreamError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::start_medical_scribe_stream::StartMedicalScribeStreamError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
+            }
+            crate::operation::start_medical_scribe_stream::StartMedicalScribeStreamError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
             }
             crate::operation::start_medical_scribe_stream::StartMedicalScribeStreamError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -212,20 +212,20 @@ where
 impl From<crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError> for Error {
     fn from(err: crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError) -> Self {
         match err {
-            crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
             crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
-            }
-            crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
             }
             crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::ConflictException(inner) => {
                 Error::ConflictException(inner)
             }
+            crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
             crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
+            }
+            crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
             }
             crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -251,18 +251,18 @@ where
 impl From<crate::operation::start_stream_transcription::StartStreamTranscriptionError> for Error {
     fn from(err: crate::operation::start_stream_transcription::StartStreamTranscriptionError) -> Self {
         match err {
-            crate::operation::start_stream_transcription::StartStreamTranscriptionError::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
             crate::operation::start_stream_transcription::StartStreamTranscriptionError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
+            crate::operation::start_stream_transcription::StartStreamTranscriptionError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::start_stream_transcription::StartStreamTranscriptionError::InternalFailureException(inner) => {
                 Error::InternalFailureException(inner)
             }
-            crate::operation::start_stream_transcription::StartStreamTranscriptionError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::start_stream_transcription::StartStreamTranscriptionError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
+            }
+            crate::operation::start_stream_transcription::StartStreamTranscriptionError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
             }
             crate::operation::start_stream_transcription::StartStreamTranscriptionError::Unhandled(inner) => Error::Unhandled(inner),
         }

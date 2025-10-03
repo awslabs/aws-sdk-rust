@@ -168,8 +168,8 @@ impl From<crate::operation::invoke_endpoint_with_response_stream::InvokeEndpoint
             crate::operation::invoke_endpoint_with_response_stream::InvokeEndpointWithResponseStreamError::InternalFailure(inner) => {
                 Error::InternalFailure(inner)
             }
-            crate::operation::invoke_endpoint_with_response_stream::InvokeEndpointWithResponseStreamError::ValidationError(inner) => {
-                Error::ValidationError(inner)
+            crate::operation::invoke_endpoint_with_response_stream::InvokeEndpointWithResponseStreamError::InternalStreamFailure(inner) => {
+                Error::InternalStreamFailure(inner)
             }
             crate::operation::invoke_endpoint_with_response_stream::InvokeEndpointWithResponseStreamError::ModelError(inner) => {
                 Error::ModelError(inner)
@@ -177,11 +177,11 @@ impl From<crate::operation::invoke_endpoint_with_response_stream::InvokeEndpoint
             crate::operation::invoke_endpoint_with_response_stream::InvokeEndpointWithResponseStreamError::ModelStreamError(inner) => {
                 Error::ModelStreamError(inner)
             }
-            crate::operation::invoke_endpoint_with_response_stream::InvokeEndpointWithResponseStreamError::InternalStreamFailure(inner) => {
-                Error::InternalStreamFailure(inner)
-            }
             crate::operation::invoke_endpoint_with_response_stream::InvokeEndpointWithResponseStreamError::ServiceUnavailable(inner) => {
                 Error::ServiceUnavailable(inner)
+            }
+            crate::operation::invoke_endpoint_with_response_stream::InvokeEndpointWithResponseStreamError::ValidationError(inner) => {
+                Error::ValidationError(inner)
             }
             crate::operation::invoke_endpoint_with_response_stream::InvokeEndpointWithResponseStreamError::Unhandled(inner) => {
                 Error::Unhandled(inner)
