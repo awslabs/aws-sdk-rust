@@ -165,6 +165,10 @@ pub(crate) fn de_get_backup_plan(
                         ::aws_smithy_types::date_time::Format::EpochSeconds,
                     )?);
                 }
+                "ScheduledRunsPreview" => {
+                    builder =
+                        builder.set_scheduled_runs_preview(crate::protocol_serde::shape_scheduled_runs_preview::de_scheduled_runs_preview(tokens)?);
+                }
                 "VersionId" => {
                     builder = builder.set_version_id(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

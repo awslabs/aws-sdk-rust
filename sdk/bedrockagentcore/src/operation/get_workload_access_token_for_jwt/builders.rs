@@ -22,7 +22,7 @@ impl crate::operation::get_workload_access_token_for_jwt::builders::GetWorkloadA
 }
 /// Fluent builder constructing a request to `GetWorkloadAccessTokenForJWT`.
 ///
-/// <p>Obtains an Workload access token for agentic workloads acting on behalf of user with JWT token</p>
+/// <p>Obtains a workload access token for agentic workloads acting on behalf of a user, using a JWT token.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetWorkloadAccessTokenForJWTFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl GetWorkloadAccessTokenForJWTFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>Unique identifier for the registered agent</p>
+    /// <p>The unique identifier for the registered workload.</p>
     pub fn workload_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.workload_name(input.into());
         self
     }
-    /// <p>Unique identifier for the registered agent</p>
+    /// <p>The unique identifier for the registered workload.</p>
     pub fn set_workload_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_workload_name(input);
         self
     }
-    /// <p>Unique identifier for the registered agent</p>
+    /// <p>The unique identifier for the registered workload.</p>
     pub fn get_workload_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_workload_name()
     }
-    /// <p>OAuth2 token issued by the user's identity provider</p>
+    /// <p>The OAuth 2.0 token issued by the user's identity provider.</p>
     pub fn user_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_token(input.into());
         self
     }
-    /// <p>OAuth2 token issued by the user's identity provider</p>
+    /// <p>The OAuth 2.0 token issued by the user's identity provider.</p>
     pub fn set_user_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_token(input);
         self
     }
-    /// <p>OAuth2 token issued by the user's identity provider</p>
+    /// <p>The OAuth 2.0 token issued by the user's identity provider.</p>
     pub fn get_user_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_user_token()
     }

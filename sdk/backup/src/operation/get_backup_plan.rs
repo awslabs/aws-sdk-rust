@@ -207,6 +207,11 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetBackupPla
                         query.push_kv("versionId", &::aws_smithy_http::query::fmt_string(inner_2));
                     }
                 }
+                if let ::std::option::Option::Some(inner_3) = &_input.max_scheduled_runs_preview {
+                    {
+                        query.push_kv("MaxScheduledRunsPreview", ::aws_smithy_types::primitive::Encoder::from(*inner_3).encode());
+                    }
+                }
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

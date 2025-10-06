@@ -261,19 +261,19 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateParamet
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum CreateParameterGroupError {
-    /// <p></p>
+    /// <p>The specified parameter combination is not valid.</p>
     InvalidParameterCombinationException(crate::types::error::InvalidParameterCombinationException),
-    /// <p></p>
+    /// <p>The parameter group is not in a valid state for the requested operation.</p>
     InvalidParameterGroupStateFault(crate::types::error::InvalidParameterGroupStateFault),
-    /// <p></p>
+    /// <p>The specified parameter value is not valid.</p>
     InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
-    /// <p></p>
+    /// <p>A parameter group with the specified name already exists.</p>
     ParameterGroupAlreadyExistsFault(crate::types::error::ParameterGroupAlreadyExistsFault),
-    /// <p></p>
+    /// <p>The request cannot be processed because it would exceed the maximum number of parameter groups allowed.</p>
     ParameterGroupQuotaExceededFault(crate::types::error::ParameterGroupQuotaExceededFault),
-    /// <p></p>
+    /// <p>The required service-linked role was not found.</p>
     ServiceLinkedRoleNotFoundFault(crate::types::error::ServiceLinkedRoleNotFoundFault),
-    /// <p></p>
+    /// <p>The request cannot be processed because it would exceed the maximum number of tags allowed per resource.</p>
     TagQuotaPerResourceExceeded(crate::types::error::TagQuotaPerResourceExceeded),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

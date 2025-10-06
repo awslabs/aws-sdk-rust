@@ -267,9 +267,9 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for PurchaseReser
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum PurchaseReservedNodesOfferingError {
-    /// <p></p>
+    /// <p>The specified parameter combination is not valid.</p>
     InvalidParameterCombinationException(crate::types::error::InvalidParameterCombinationException),
-    /// <p></p>
+    /// <p>The specified parameter value is not valid.</p>
     InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
     /// <p>You already have a reservation with the given identifier.</p>
     ReservedNodeAlreadyExistsFault(crate::types::error::ReservedNodeAlreadyExistsFault),
@@ -277,9 +277,9 @@ pub enum PurchaseReservedNodesOfferingError {
     ReservedNodeQuotaExceededFault(crate::types::error::ReservedNodeQuotaExceededFault),
     /// <p>The requested node offering does not exist.</p>
     ReservedNodesOfferingNotFoundFault(crate::types::error::ReservedNodesOfferingNotFoundFault),
-    /// <p></p>
+    /// <p>The required service-linked role was not found.</p>
     ServiceLinkedRoleNotFoundFault(crate::types::error::ServiceLinkedRoleNotFoundFault),
-    /// <p></p>
+    /// <p>The request cannot be processed because it would exceed the maximum number of tags allowed per resource.</p>
     TagQuotaPerResourceExceeded(crate::types::error::TagQuotaPerResourceExceeded),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

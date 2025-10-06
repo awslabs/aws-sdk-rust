@@ -315,4 +315,23 @@ impl CreateFlowFluentBuilder {
     pub fn get_ndi_config(&self) -> &::std::option::Option<crate::types::NdiConfig> {
         self.inner.get_ndi_config()
     }
+    ///
+    /// Adds a key-value pair to `FlowTags`.
+    ///
+    /// To override the contents of this collection use [`set_flow_tags`](Self::set_flow_tags).
+    ///
+    /// <p>The key-value pairs that can be used to tag and organize the flow.</p>
+    pub fn flow_tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.flow_tags(k.into(), v.into());
+        self
+    }
+    /// <p>The key-value pairs that can be used to tag and organize the flow.</p>
+    pub fn set_flow_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.inner = self.inner.set_flow_tags(input);
+        self
+    }
+    /// <p>The key-value pairs that can be used to tag and organize the flow.</p>
+    pub fn get_flow_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.inner.get_flow_tags()
+    }
 }

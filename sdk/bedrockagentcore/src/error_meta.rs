@@ -88,6 +88,126 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_create_memory_records::BatchCreateMemoryRecordsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_create_memory_records::BatchCreateMemoryRecordsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::batch_create_memory_records::BatchCreateMemoryRecordsError> for Error {
+    fn from(err: crate::operation::batch_create_memory_records::BatchCreateMemoryRecordsError) -> Self {
+        match err {
+            crate::operation::batch_create_memory_records::BatchCreateMemoryRecordsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::batch_create_memory_records::BatchCreateMemoryRecordsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::batch_create_memory_records::BatchCreateMemoryRecordsError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::batch_create_memory_records::BatchCreateMemoryRecordsError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::batch_create_memory_records::BatchCreateMemoryRecordsError::ThrottledException(inner) => {
+                Error::ThrottledException(inner)
+            }
+            crate::operation::batch_create_memory_records::BatchCreateMemoryRecordsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::batch_create_memory_records::BatchCreateMemoryRecordsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_delete_memory_records::BatchDeleteMemoryRecordsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_delete_memory_records::BatchDeleteMemoryRecordsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::batch_delete_memory_records::BatchDeleteMemoryRecordsError> for Error {
+    fn from(err: crate::operation::batch_delete_memory_records::BatchDeleteMemoryRecordsError) -> Self {
+        match err {
+            crate::operation::batch_delete_memory_records::BatchDeleteMemoryRecordsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::batch_delete_memory_records::BatchDeleteMemoryRecordsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::batch_delete_memory_records::BatchDeleteMemoryRecordsError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::batch_delete_memory_records::BatchDeleteMemoryRecordsError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::batch_delete_memory_records::BatchDeleteMemoryRecordsError::ThrottledException(inner) => {
+                Error::ThrottledException(inner)
+            }
+            crate::operation::batch_delete_memory_records::BatchDeleteMemoryRecordsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::batch_delete_memory_records::BatchDeleteMemoryRecordsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_update_memory_records::BatchUpdateMemoryRecordsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_update_memory_records::BatchUpdateMemoryRecordsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::batch_update_memory_records::BatchUpdateMemoryRecordsError> for Error {
+    fn from(err: crate::operation::batch_update_memory_records::BatchUpdateMemoryRecordsError) -> Self {
+        match err {
+            crate::operation::batch_update_memory_records::BatchUpdateMemoryRecordsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::batch_update_memory_records::BatchUpdateMemoryRecordsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::batch_update_memory_records::BatchUpdateMemoryRecordsError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::batch_update_memory_records::BatchUpdateMemoryRecordsError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::batch_update_memory_records::BatchUpdateMemoryRecordsError::ThrottledException(inner) => {
+                Error::ThrottledException(inner)
+            }
+            crate::operation::batch_update_memory_records::BatchUpdateMemoryRecordsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::batch_update_memory_records::BatchUpdateMemoryRecordsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_event::CreateEventError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -173,6 +293,34 @@ impl From<crate::operation::delete_memory_record::DeleteMemoryRecordError> for E
             crate::operation::delete_memory_record::DeleteMemoryRecordError::ThrottledException(inner) => Error::ThrottledException(inner),
             crate::operation::delete_memory_record::DeleteMemoryRecordError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_memory_record::DeleteMemoryRecordError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_agent_card::GetAgentCardError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_agent_card::GetAgentCardError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_agent_card::GetAgentCardError> for Error {
+    fn from(err: crate::operation::get_agent_card::GetAgentCardError) -> Self {
+        match err {
+            crate::operation::get_agent_card::GetAgentCardError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_agent_card::GetAgentCardError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_agent_card::GetAgentCardError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_agent_card::GetAgentCardError::RuntimeClientError(inner) => Error::RuntimeClientError(inner),
+            crate::operation::get_agent_card::GetAgentCardError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::get_agent_card::GetAgentCardError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_agent_card::GetAgentCardError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_agent_card::GetAgentCardError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -959,6 +1107,40 @@ impl From<crate::operation::stop_code_interpreter_session::StopCodeInterpreterSe
                 Error::ValidationException(inner)
             }
             crate::operation::stop_code_interpreter_session::StopCodeInterpreterSessionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_runtime_session::StopRuntimeSessionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_runtime_session::StopRuntimeSessionError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::stop_runtime_session::StopRuntimeSessionError> for Error {
+    fn from(err: crate::operation::stop_runtime_session::StopRuntimeSessionError) -> Self {
+        match err {
+            crate::operation::stop_runtime_session::StopRuntimeSessionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::stop_runtime_session::StopRuntimeSessionError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::stop_runtime_session::StopRuntimeSessionError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::stop_runtime_session::StopRuntimeSessionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::stop_runtime_session::StopRuntimeSessionError::RuntimeClientError(inner) => Error::RuntimeClientError(inner),
+            crate::operation::stop_runtime_session::StopRuntimeSessionError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::stop_runtime_session::StopRuntimeSessionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::stop_runtime_session::StopRuntimeSessionError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::stop_runtime_session::StopRuntimeSessionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::stop_runtime_session::StopRuntimeSessionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

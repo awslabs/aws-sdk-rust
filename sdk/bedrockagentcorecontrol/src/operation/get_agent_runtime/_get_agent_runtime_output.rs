@@ -5,12 +5,8 @@
 pub struct GetAgentRuntimeOutput {
     /// <p>The Amazon Resource Name (ARN) of the AgentCore Runtime.</p>
     pub agent_runtime_arn: ::std::string::String,
-    /// <p>The workload identity details for the AgentCore Runtime.</p>
-    pub workload_identity_details: ::std::option::Option<crate::types::WorkloadIdentityDetails>,
     /// <p>The name of the AgentCore Runtime.</p>
     pub agent_runtime_name: ::std::string::String,
-    /// <p>The description of the AgentCore Runtime.</p>
-    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the AgentCore Runtime.</p>
     pub agent_runtime_id: ::std::string::String,
     /// <p>The version of the AgentCore Runtime.</p>
@@ -21,10 +17,18 @@ pub struct GetAgentRuntimeOutput {
     pub last_updated_at: ::aws_smithy_types::DateTime,
     /// <p>The IAM role ARN that provides permissions for the AgentCore Runtime.</p>
     pub role_arn: ::std::string::String,
-    /// <p>The artifact of the AgentCore Runtime.</p>
-    pub agent_runtime_artifact: ::std::option::Option<crate::types::AgentRuntimeArtifact>,
     /// <p>The network configuration for the AgentCore Runtime.</p>
     pub network_configuration: ::std::option::Option<crate::types::NetworkConfiguration>,
+    /// <p>The current status of the AgentCore Runtime.</p>
+    pub status: crate::types::AgentRuntimeStatus,
+    /// <p>The life cycle configuration for the AgentCore Runtime.</p>
+    pub lifecycle_configuration: ::std::option::Option<crate::types::LifecycleConfiguration>,
+    /// <p>The description of the AgentCore Runtime.</p>
+    pub description: ::std::option::Option<::std::string::String>,
+    /// <p>The workload identity details for the AgentCore Runtime.</p>
+    pub workload_identity_details: ::std::option::Option<crate::types::WorkloadIdentityDetails>,
+    /// <p>The artifact of the AgentCore Runtime.</p>
+    pub agent_runtime_artifact: ::std::option::Option<crate::types::AgentRuntimeArtifact>,
     /// <p>The protocol configuration for an agent runtime. This structure defines how the agent runtime communicates with clients.</p>
     pub protocol_configuration: ::std::option::Option<crate::types::ProtocolConfiguration>,
     /// <p>Environment variables set in the AgentCore Runtime environment.</p>
@@ -33,8 +37,6 @@ pub struct GetAgentRuntimeOutput {
     pub authorizer_configuration: ::std::option::Option<crate::types::AuthorizerConfiguration>,
     /// <p>Configuration for HTTP request headers that will be passed through to the runtime.</p>
     pub request_header_configuration: ::std::option::Option<crate::types::RequestHeaderConfiguration>,
-    /// <p>The current status of the AgentCore Runtime.</p>
-    pub status: crate::types::AgentRuntimeStatus,
     _request_id: Option<String>,
 }
 impl GetAgentRuntimeOutput {
@@ -43,18 +45,10 @@ impl GetAgentRuntimeOutput {
         use std::ops::Deref;
         self.agent_runtime_arn.deref()
     }
-    /// <p>The workload identity details for the AgentCore Runtime.</p>
-    pub fn workload_identity_details(&self) -> ::std::option::Option<&crate::types::WorkloadIdentityDetails> {
-        self.workload_identity_details.as_ref()
-    }
     /// <p>The name of the AgentCore Runtime.</p>
     pub fn agent_runtime_name(&self) -> &str {
         use std::ops::Deref;
         self.agent_runtime_name.deref()
-    }
-    /// <p>The description of the AgentCore Runtime.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
-        self.description.as_deref()
     }
     /// <p>The unique identifier of the AgentCore Runtime.</p>
     pub fn agent_runtime_id(&self) -> &str {
@@ -79,13 +73,29 @@ impl GetAgentRuntimeOutput {
         use std::ops::Deref;
         self.role_arn.deref()
     }
-    /// <p>The artifact of the AgentCore Runtime.</p>
-    pub fn agent_runtime_artifact(&self) -> ::std::option::Option<&crate::types::AgentRuntimeArtifact> {
-        self.agent_runtime_artifact.as_ref()
-    }
     /// <p>The network configuration for the AgentCore Runtime.</p>
     pub fn network_configuration(&self) -> ::std::option::Option<&crate::types::NetworkConfiguration> {
         self.network_configuration.as_ref()
+    }
+    /// <p>The current status of the AgentCore Runtime.</p>
+    pub fn status(&self) -> &crate::types::AgentRuntimeStatus {
+        &self.status
+    }
+    /// <p>The life cycle configuration for the AgentCore Runtime.</p>
+    pub fn lifecycle_configuration(&self) -> ::std::option::Option<&crate::types::LifecycleConfiguration> {
+        self.lifecycle_configuration.as_ref()
+    }
+    /// <p>The description of the AgentCore Runtime.</p>
+    pub fn description(&self) -> ::std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The workload identity details for the AgentCore Runtime.</p>
+    pub fn workload_identity_details(&self) -> ::std::option::Option<&crate::types::WorkloadIdentityDetails> {
+        self.workload_identity_details.as_ref()
+    }
+    /// <p>The artifact of the AgentCore Runtime.</p>
+    pub fn agent_runtime_artifact(&self) -> ::std::option::Option<&crate::types::AgentRuntimeArtifact> {
+        self.agent_runtime_artifact.as_ref()
     }
     /// <p>The protocol configuration for an agent runtime. This structure defines how the agent runtime communicates with clients.</p>
     pub fn protocol_configuration(&self) -> ::std::option::Option<&crate::types::ProtocolConfiguration> {
@@ -103,30 +113,27 @@ impl GetAgentRuntimeOutput {
     pub fn request_header_configuration(&self) -> ::std::option::Option<&crate::types::RequestHeaderConfiguration> {
         self.request_header_configuration.as_ref()
     }
-    /// <p>The current status of the AgentCore Runtime.</p>
-    pub fn status(&self) -> &crate::types::AgentRuntimeStatus {
-        &self.status
-    }
 }
 impl ::std::fmt::Debug for GetAgentRuntimeOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GetAgentRuntimeOutput");
         formatter.field("agent_runtime_arn", &self.agent_runtime_arn);
-        formatter.field("workload_identity_details", &self.workload_identity_details);
         formatter.field("agent_runtime_name", &self.agent_runtime_name);
-        formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("agent_runtime_id", &self.agent_runtime_id);
         formatter.field("agent_runtime_version", &self.agent_runtime_version);
         formatter.field("created_at", &self.created_at);
         formatter.field("last_updated_at", &self.last_updated_at);
         formatter.field("role_arn", &self.role_arn);
-        formatter.field("agent_runtime_artifact", &self.agent_runtime_artifact);
         formatter.field("network_configuration", &self.network_configuration);
+        formatter.field("status", &self.status);
+        formatter.field("lifecycle_configuration", &self.lifecycle_configuration);
+        formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field("workload_identity_details", &self.workload_identity_details);
+        formatter.field("agent_runtime_artifact", &self.agent_runtime_artifact);
         formatter.field("protocol_configuration", &self.protocol_configuration);
         formatter.field("environment_variables", &"*** Sensitive Data Redacted ***");
         formatter.field("authorizer_configuration", &self.authorizer_configuration);
         formatter.field("request_header_configuration", &self.request_header_configuration);
-        formatter.field("status", &self.status);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -148,21 +155,22 @@ impl GetAgentRuntimeOutput {
 #[non_exhaustive]
 pub struct GetAgentRuntimeOutputBuilder {
     pub(crate) agent_runtime_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) workload_identity_details: ::std::option::Option<crate::types::WorkloadIdentityDetails>,
     pub(crate) agent_runtime_name: ::std::option::Option<::std::string::String>,
-    pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) agent_runtime_id: ::std::option::Option<::std::string::String>,
     pub(crate) agent_runtime_version: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) agent_runtime_artifact: ::std::option::Option<crate::types::AgentRuntimeArtifact>,
     pub(crate) network_configuration: ::std::option::Option<crate::types::NetworkConfiguration>,
+    pub(crate) status: ::std::option::Option<crate::types::AgentRuntimeStatus>,
+    pub(crate) lifecycle_configuration: ::std::option::Option<crate::types::LifecycleConfiguration>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) workload_identity_details: ::std::option::Option<crate::types::WorkloadIdentityDetails>,
+    pub(crate) agent_runtime_artifact: ::std::option::Option<crate::types::AgentRuntimeArtifact>,
     pub(crate) protocol_configuration: ::std::option::Option<crate::types::ProtocolConfiguration>,
     pub(crate) environment_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) authorizer_configuration: ::std::option::Option<crate::types::AuthorizerConfiguration>,
     pub(crate) request_header_configuration: ::std::option::Option<crate::types::RequestHeaderConfiguration>,
-    pub(crate) status: ::std::option::Option<crate::types::AgentRuntimeStatus>,
     _request_id: Option<String>,
 }
 impl GetAgentRuntimeOutputBuilder {
@@ -181,20 +189,6 @@ impl GetAgentRuntimeOutputBuilder {
     pub fn get_agent_runtime_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.agent_runtime_arn
     }
-    /// <p>The workload identity details for the AgentCore Runtime.</p>
-    pub fn workload_identity_details(mut self, input: crate::types::WorkloadIdentityDetails) -> Self {
-        self.workload_identity_details = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The workload identity details for the AgentCore Runtime.</p>
-    pub fn set_workload_identity_details(mut self, input: ::std::option::Option<crate::types::WorkloadIdentityDetails>) -> Self {
-        self.workload_identity_details = input;
-        self
-    }
-    /// <p>The workload identity details for the AgentCore Runtime.</p>
-    pub fn get_workload_identity_details(&self) -> &::std::option::Option<crate::types::WorkloadIdentityDetails> {
-        &self.workload_identity_details
-    }
     /// <p>The name of the AgentCore Runtime.</p>
     /// This field is required.
     pub fn agent_runtime_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -209,20 +203,6 @@ impl GetAgentRuntimeOutputBuilder {
     /// <p>The name of the AgentCore Runtime.</p>
     pub fn get_agent_runtime_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.agent_runtime_name
-    }
-    /// <p>The description of the AgentCore Runtime.</p>
-    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.description = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The description of the AgentCore Runtime.</p>
-    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
-    }
-    /// <p>The description of the AgentCore Runtime.</p>
-    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
-        &self.description
     }
     /// <p>The unique identifier of the AgentCore Runtime.</p>
     /// This field is required.
@@ -299,20 +279,6 @@ impl GetAgentRuntimeOutputBuilder {
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }
-    /// <p>The artifact of the AgentCore Runtime.</p>
-    pub fn agent_runtime_artifact(mut self, input: crate::types::AgentRuntimeArtifact) -> Self {
-        self.agent_runtime_artifact = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The artifact of the AgentCore Runtime.</p>
-    pub fn set_agent_runtime_artifact(mut self, input: ::std::option::Option<crate::types::AgentRuntimeArtifact>) -> Self {
-        self.agent_runtime_artifact = input;
-        self
-    }
-    /// <p>The artifact of the AgentCore Runtime.</p>
-    pub fn get_agent_runtime_artifact(&self) -> &::std::option::Option<crate::types::AgentRuntimeArtifact> {
-        &self.agent_runtime_artifact
-    }
     /// <p>The network configuration for the AgentCore Runtime.</p>
     /// This field is required.
     pub fn network_configuration(mut self, input: crate::types::NetworkConfiguration) -> Self {
@@ -327,6 +293,78 @@ impl GetAgentRuntimeOutputBuilder {
     /// <p>The network configuration for the AgentCore Runtime.</p>
     pub fn get_network_configuration(&self) -> &::std::option::Option<crate::types::NetworkConfiguration> {
         &self.network_configuration
+    }
+    /// <p>The current status of the AgentCore Runtime.</p>
+    /// This field is required.
+    pub fn status(mut self, input: crate::types::AgentRuntimeStatus) -> Self {
+        self.status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The current status of the AgentCore Runtime.</p>
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::AgentRuntimeStatus>) -> Self {
+        self.status = input;
+        self
+    }
+    /// <p>The current status of the AgentCore Runtime.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::AgentRuntimeStatus> {
+        &self.status
+    }
+    /// <p>The life cycle configuration for the AgentCore Runtime.</p>
+    /// This field is required.
+    pub fn lifecycle_configuration(mut self, input: crate::types::LifecycleConfiguration) -> Self {
+        self.lifecycle_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The life cycle configuration for the AgentCore Runtime.</p>
+    pub fn set_lifecycle_configuration(mut self, input: ::std::option::Option<crate::types::LifecycleConfiguration>) -> Self {
+        self.lifecycle_configuration = input;
+        self
+    }
+    /// <p>The life cycle configuration for the AgentCore Runtime.</p>
+    pub fn get_lifecycle_configuration(&self) -> &::std::option::Option<crate::types::LifecycleConfiguration> {
+        &self.lifecycle_configuration
+    }
+    /// <p>The description of the AgentCore Runtime.</p>
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The description of the AgentCore Runtime.</p>
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.description = input;
+        self
+    }
+    /// <p>The description of the AgentCore Runtime.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
+    /// <p>The workload identity details for the AgentCore Runtime.</p>
+    pub fn workload_identity_details(mut self, input: crate::types::WorkloadIdentityDetails) -> Self {
+        self.workload_identity_details = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The workload identity details for the AgentCore Runtime.</p>
+    pub fn set_workload_identity_details(mut self, input: ::std::option::Option<crate::types::WorkloadIdentityDetails>) -> Self {
+        self.workload_identity_details = input;
+        self
+    }
+    /// <p>The workload identity details for the AgentCore Runtime.</p>
+    pub fn get_workload_identity_details(&self) -> &::std::option::Option<crate::types::WorkloadIdentityDetails> {
+        &self.workload_identity_details
+    }
+    /// <p>The artifact of the AgentCore Runtime.</p>
+    pub fn agent_runtime_artifact(mut self, input: crate::types::AgentRuntimeArtifact) -> Self {
+        self.agent_runtime_artifact = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The artifact of the AgentCore Runtime.</p>
+    pub fn set_agent_runtime_artifact(mut self, input: ::std::option::Option<crate::types::AgentRuntimeArtifact>) -> Self {
+        self.agent_runtime_artifact = input;
+        self
+    }
+    /// <p>The artifact of the AgentCore Runtime.</p>
+    pub fn get_agent_runtime_artifact(&self) -> &::std::option::Option<crate::types::AgentRuntimeArtifact> {
+        &self.agent_runtime_artifact
     }
     /// <p>The protocol configuration for an agent runtime. This structure defines how the agent runtime communicates with clients.</p>
     pub fn protocol_configuration(mut self, input: crate::types::ProtocolConfiguration) -> Self {
@@ -397,21 +435,6 @@ impl GetAgentRuntimeOutputBuilder {
     pub fn get_request_header_configuration(&self) -> &::std::option::Option<crate::types::RequestHeaderConfiguration> {
         &self.request_header_configuration
     }
-    /// <p>The current status of the AgentCore Runtime.</p>
-    /// This field is required.
-    pub fn status(mut self, input: crate::types::AgentRuntimeStatus) -> Self {
-        self.status = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The current status of the AgentCore Runtime.</p>
-    pub fn set_status(mut self, input: ::std::option::Option<crate::types::AgentRuntimeStatus>) -> Self {
-        self.status = input;
-        self
-    }
-    /// <p>The current status of the AgentCore Runtime.</p>
-    pub fn get_status(&self) -> &::std::option::Option<crate::types::AgentRuntimeStatus> {
-        &self.status
-    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -441,14 +464,12 @@ impl GetAgentRuntimeOutputBuilder {
                     "agent_runtime_arn was not specified but it is required when building GetAgentRuntimeOutput",
                 )
             })?,
-            workload_identity_details: self.workload_identity_details,
             agent_runtime_name: self.agent_runtime_name.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "agent_runtime_name",
                     "agent_runtime_name was not specified but it is required when building GetAgentRuntimeOutput",
                 )
             })?,
-            description: self.description,
             agent_runtime_id: self.agent_runtime_id.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "agent_runtime_id",
@@ -479,18 +500,21 @@ impl GetAgentRuntimeOutputBuilder {
                     "role_arn was not specified but it is required when building GetAgentRuntimeOutput",
                 )
             })?,
-            agent_runtime_artifact: self.agent_runtime_artifact,
             network_configuration: self.network_configuration,
-            protocol_configuration: self.protocol_configuration,
-            environment_variables: self.environment_variables,
-            authorizer_configuration: self.authorizer_configuration,
-            request_header_configuration: self.request_header_configuration,
             status: self.status.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building GetAgentRuntimeOutput",
                 )
             })?,
+            lifecycle_configuration: self.lifecycle_configuration,
+            description: self.description,
+            workload_identity_details: self.workload_identity_details,
+            agent_runtime_artifact: self.agent_runtime_artifact,
+            protocol_configuration: self.protocol_configuration,
+            environment_variables: self.environment_variables,
+            authorizer_configuration: self.authorizer_configuration,
+            request_header_configuration: self.request_header_configuration,
             _request_id: self._request_id,
         })
     }
@@ -499,21 +523,22 @@ impl ::std::fmt::Debug for GetAgentRuntimeOutputBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GetAgentRuntimeOutputBuilder");
         formatter.field("agent_runtime_arn", &self.agent_runtime_arn);
-        formatter.field("workload_identity_details", &self.workload_identity_details);
         formatter.field("agent_runtime_name", &self.agent_runtime_name);
-        formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("agent_runtime_id", &self.agent_runtime_id);
         formatter.field("agent_runtime_version", &self.agent_runtime_version);
         formatter.field("created_at", &self.created_at);
         formatter.field("last_updated_at", &self.last_updated_at);
         formatter.field("role_arn", &self.role_arn);
-        formatter.field("agent_runtime_artifact", &self.agent_runtime_artifact);
         formatter.field("network_configuration", &self.network_configuration);
+        formatter.field("status", &self.status);
+        formatter.field("lifecycle_configuration", &self.lifecycle_configuration);
+        formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field("workload_identity_details", &self.workload_identity_details);
+        formatter.field("agent_runtime_artifact", &self.agent_runtime_artifact);
         formatter.field("protocol_configuration", &self.protocol_configuration);
         formatter.field("environment_variables", &"*** Sensitive Data Redacted ***");
         formatter.field("authorizer_configuration", &self.authorizer_configuration);
         formatter.field("request_header_configuration", &self.request_header_configuration);
-        formatter.field("status", &self.status);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

@@ -23,11 +23,19 @@ pub fn parse_http_error_metadata(
     crate::json_errors::parse_error_metadata(response_body, response_headers)
 }
 
+pub(crate) mod shape_batch_create_memory_records;
+
+pub(crate) mod shape_batch_delete_memory_records;
+
+pub(crate) mod shape_batch_update_memory_records;
+
 pub(crate) mod shape_create_event;
 
 pub(crate) mod shape_delete_event;
 
 pub(crate) mod shape_delete_memory_record;
+
+pub(crate) mod shape_get_agent_card;
 
 pub(crate) mod shape_get_browser_session;
 
@@ -75,6 +83,8 @@ pub(crate) mod shape_stop_browser_session;
 
 pub(crate) mod shape_stop_code_interpreter_session;
 
+pub(crate) mod shape_stop_runtime_session;
+
 pub(crate) mod shape_update_browser_stream;
 
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
@@ -87,9 +97,17 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
 
 pub(crate) mod shape_access_denied_exception;
 
+pub(crate) mod shape_batch_create_memory_records_input;
+
+pub(crate) mod shape_batch_delete_memory_records_input;
+
+pub(crate) mod shape_batch_update_memory_records_input;
+
 pub(crate) mod shape_conflict_exception;
 
 pub(crate) mod shape_create_event_input;
+
+pub(crate) mod shape_get_agent_card_output;
 
 pub(crate) mod shape_get_resource_api_key_input;
 
@@ -141,6 +159,10 @@ pub(crate) mod shape_stop_browser_session_input;
 
 pub(crate) mod shape_stop_code_interpreter_session_input;
 
+pub(crate) mod shape_stop_runtime_session_input;
+
+pub(crate) mod shape_stop_runtime_session_output;
+
 pub(crate) mod shape_throttled_exception;
 
 pub(crate) mod shape_throttling_exception;
@@ -159,6 +181,8 @@ pub fn parse_event_stream_error_metadata(
 
 pub(crate) mod shape_actor_summary_list;
 
+pub(crate) mod shape_agent_card;
+
 pub(crate) mod shape_branch;
 
 pub(crate) mod shape_browser_session_stream;
@@ -175,7 +199,17 @@ pub(crate) mod shape_filter_input;
 
 pub(crate) mod shape_memory_record;
 
+pub(crate) mod shape_memory_record_create_input;
+
+pub(crate) mod shape_memory_record_delete_input;
+
 pub(crate) mod shape_memory_record_summary_list;
+
+pub(crate) mod shape_memory_record_update_input;
+
+pub(crate) mod shape_memory_records_output_list;
+
+pub(crate) mod shape_metadata_value;
 
 pub(crate) mod shape_payload_type;
 
@@ -207,13 +241,19 @@ pub(crate) mod shape_code_interpreter_session_summary;
 
 pub(crate) mod shape_conversational;
 
+pub(crate) mod shape_event_metadata_filter_expression;
+
 pub(crate) mod shape_input_content_block;
 
 pub(crate) mod shape_live_view_stream;
 
 pub(crate) mod shape_memory_content;
 
+pub(crate) mod shape_memory_record_output;
+
 pub(crate) mod shape_memory_record_summary;
+
+pub(crate) mod shape_metadata_map;
 
 pub(crate) mod shape_namespaces_list;
 
@@ -224,6 +264,10 @@ pub(crate) mod shape_session_summary;
 pub(crate) mod shape_validation_exception_field;
 
 pub(crate) mod shape_content;
+
+pub(crate) mod shape_left_expression;
+
+pub(crate) mod shape_right_expression;
 
 pub(crate) mod shape_content_block_list;
 

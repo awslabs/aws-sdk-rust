@@ -125,6 +125,8 @@ pub use crate::types::_api_key_credential_provider_item::ApiKeyCredentialProvide
 
 pub use crate::types::_agent_runtime::AgentRuntimeBuilder;
 
+pub use crate::types::_lifecycle_configuration::LifecycleConfigurationBuilder;
+
 pub use crate::types::_protocol_configuration::ProtocolConfigurationBuilder;
 
 pub use crate::types::_network_configuration::NetworkConfigurationBuilder;

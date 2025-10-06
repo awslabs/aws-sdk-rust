@@ -261,17 +261,17 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateMultiRe
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum CreateMultiRegionClusterError {
-    /// <p></p>
+    /// <p>The request cannot be processed because it would exceed the maximum number of clusters allowed for this customer.</p>
     ClusterQuotaForCustomerExceededFault(crate::types::error::ClusterQuotaForCustomerExceededFault),
-    /// <p></p>
+    /// <p>The specified parameter combination is not valid.</p>
     InvalidParameterCombinationException(crate::types::error::InvalidParameterCombinationException),
-    /// <p></p>
+    /// <p>The specified parameter value is not valid.</p>
     InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
     /// <p>A multi-Region cluster with the specified name already exists.</p>
     MultiRegionClusterAlreadyExistsFault(crate::types::error::MultiRegionClusterAlreadyExistsFault),
     /// <p>The specified multi-Region parameter group does not exist.</p>
     MultiRegionParameterGroupNotFoundFault(crate::types::error::MultiRegionParameterGroupNotFoundFault),
-    /// <p></p>
+    /// <p>The request cannot be processed because it would exceed the maximum number of tags allowed per resource.</p>
     TagQuotaPerResourceExceeded(crate::types::error::TagQuotaPerResourceExceeded),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

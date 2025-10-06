@@ -65,6 +65,10 @@ pub(crate) mod shape_describe_events;
 
 pub(crate) mod shape_describe_multi_region_clusters;
 
+pub(crate) mod shape_describe_multi_region_parameter_groups;
+
+pub(crate) mod shape_describe_multi_region_parameters;
+
 pub(crate) mod shape_describe_parameter_groups;
 
 pub(crate) mod shape_describe_parameters;
@@ -174,6 +178,10 @@ pub(crate) mod shape_describe_engine_versions_input;
 pub(crate) mod shape_describe_events_input;
 
 pub(crate) mod shape_describe_multi_region_clusters_input;
+
+pub(crate) mod shape_describe_multi_region_parameter_groups_input;
+
+pub(crate) mod shape_describe_multi_region_parameters_input;
 
 pub(crate) mod shape_describe_parameter_groups_input;
 
@@ -337,6 +345,10 @@ pub(crate) mod shape_multi_region_cluster;
 
 pub(crate) mod shape_multi_region_cluster_list;
 
+pub(crate) mod shape_multi_region_parameter_group_list;
+
+pub(crate) mod shape_multi_region_parameters_list;
+
 pub(crate) mod shape_node_type_list;
 
 pub(crate) mod shape_parameter_group;
@@ -396,6 +408,10 @@ pub(crate) mod shape_endpoint;
 pub(crate) mod shape_engine_version_info;
 
 pub(crate) mod shape_event;
+
+pub(crate) mod shape_multi_region_parameter;
+
+pub(crate) mod shape_multi_region_parameter_group;
 
 pub(crate) mod shape_network_type_list;
 

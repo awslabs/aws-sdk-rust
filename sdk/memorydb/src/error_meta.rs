@@ -3,53 +3,53 @@
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum Error {
-    /// <p></p>
+    /// <p>An ACL with the specified name already exists.</p>
     AclAlreadyExistsFault(crate::types::error::AclAlreadyExistsFault),
-    /// <p></p>
+    /// <p>The specified ACL does not exist.</p>
     AclNotFoundFault(crate::types::error::AclNotFoundFault),
-    /// <p></p>
+    /// <p>The request cannot be processed because it would exceed the maximum number of ACLs allowed.</p>
     AclQuotaExceededFault(crate::types::error::AclQuotaExceededFault),
-    /// <p></p>
+    /// <p>The customer has exceeded the maximum number of API requests allowed per time period.</p>
     ApiCallRateForCustomerExceededFault(crate::types::error::ApiCallRateForCustomerExceededFault),
-    /// <p></p>
+    /// <p>A cluster with the specified name already exists.</p>
     ClusterAlreadyExistsFault(crate::types::error::ClusterAlreadyExistsFault),
-    /// <p></p>
+    /// <p>The specified cluster does not exist.</p>
     ClusterNotFoundFault(crate::types::error::ClusterNotFoundFault),
-    /// <p></p>
+    /// <p>The request cannot be processed because it would exceed the maximum number of clusters allowed for this customer.</p>
     ClusterQuotaForCustomerExceededFault(crate::types::error::ClusterQuotaForCustomerExceededFault),
-    /// <p></p>
+    /// <p>A default user is required and must be specified.</p>
     DefaultUserRequired(crate::types::error::DefaultUserRequired),
-    /// <p></p>
+    /// <p>A user with the specified name already exists.</p>
     DuplicateUserNameFault(crate::types::error::DuplicateUserNameFault),
-    /// <p></p>
+    /// <p>The cluster does not have sufficient capacity to perform the requested operation.</p>
     InsufficientClusterCapacityFault(crate::types::error::InsufficientClusterCapacityFault),
-    /// <p></p>
+    /// <p>The ACL is not in a valid state for the requested operation.</p>
     InvalidAclStateFault(crate::types::error::InvalidAclStateFault),
-    /// <p></p>
+    /// <p>The specified Amazon Resource Name (ARN) is not valid.</p>
     InvalidArnFault(crate::types::error::InvalidArnFault),
-    /// <p></p>
+    /// <p>The cluster is not in a valid state for the requested operation.</p>
     InvalidClusterStateFault(crate::types::error::InvalidClusterStateFault),
-    /// <p></p>
+    /// <p>The provided credentials are not valid.</p>
     InvalidCredentialsException(crate::types::error::InvalidCredentialsException),
-    /// <p></p>
+    /// <p>The specified KMS key is not valid or accessible.</p>
     InvalidKmsKeyFault(crate::types::error::InvalidKmsKeyFault),
     /// <p>The requested operation cannot be performed on the multi-Region cluster in its current state.</p>
     InvalidMultiRegionClusterStateFault(crate::types::error::InvalidMultiRegionClusterStateFault),
-    /// <p></p>
+    /// <p>The node is not in a valid state for the requested operation.</p>
     InvalidNodeStateFault(crate::types::error::InvalidNodeStateFault),
-    /// <p></p>
+    /// <p>The specified parameter combination is not valid.</p>
     InvalidParameterCombinationException(crate::types::error::InvalidParameterCombinationException),
-    /// <p></p>
+    /// <p>The parameter group is not in a valid state for the requested operation.</p>
     InvalidParameterGroupStateFault(crate::types::error::InvalidParameterGroupStateFault),
-    /// <p></p>
+    /// <p>The specified parameter value is not valid.</p>
     InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
-    /// <p></p>
+    /// <p>The snapshot is not in a valid state for the requested operation.</p>
     InvalidSnapshotStateFault(crate::types::error::InvalidSnapshotStateFault),
-    /// <p></p>
+    /// <p>The specified subnet is not valid.</p>
     InvalidSubnet(crate::types::error::InvalidSubnet),
-    /// <p></p>
+    /// <p>The user is not in a valid state for the requested operation.</p>
     InvalidUserStateFault(crate::types::error::InvalidUserStateFault),
-    /// <p></p>
+    /// <p>The VPC network is not in a valid state for the requested operation.</p>
     InvalidVpcNetworkStateFault(crate::types::error::InvalidVpcNetworkStateFault),
     /// <p>A multi-Region cluster with the specified name already exists.</p>
     MultiRegionClusterAlreadyExistsFault(crate::types::error::MultiRegionClusterAlreadyExistsFault),
@@ -57,17 +57,17 @@ pub enum Error {
     MultiRegionClusterNotFoundFault(crate::types::error::MultiRegionClusterNotFoundFault),
     /// <p>The specified multi-Region parameter group does not exist.</p>
     MultiRegionParameterGroupNotFoundFault(crate::types::error::MultiRegionParameterGroupNotFoundFault),
-    /// <p></p>
+    /// <p>The requested operation would result in no changes.</p>
     NoOperationFault(crate::types::error::NoOperationFault),
-    /// <p></p>
+    /// <p>The request cannot be processed because it would exceed the maximum number of nodes allowed for this cluster.</p>
     NodeQuotaForClusterExceededFault(crate::types::error::NodeQuotaForClusterExceededFault),
-    /// <p></p>
+    /// <p>The request cannot be processed because it would exceed the maximum number of nodes allowed for this customer.</p>
     NodeQuotaForCustomerExceededFault(crate::types::error::NodeQuotaForCustomerExceededFault),
-    /// <p></p>
+    /// <p>A parameter group with the specified name already exists.</p>
     ParameterGroupAlreadyExistsFault(crate::types::error::ParameterGroupAlreadyExistsFault),
-    /// <p></p>
+    /// <p>The specified parameter group does not exist.</p>
     ParameterGroupNotFoundFault(crate::types::error::ParameterGroupNotFoundFault),
-    /// <p></p>
+    /// <p>The request cannot be processed because it would exceed the maximum number of parameter groups allowed.</p>
     ParameterGroupQuotaExceededFault(crate::types::error::ParameterGroupQuotaExceededFault),
     /// <p>You already have a reservation with the given identifier.</p>
     ReservedNodeAlreadyExistsFault(crate::types::error::ReservedNodeAlreadyExistsFault),
@@ -77,45 +77,45 @@ pub enum Error {
     ReservedNodeQuotaExceededFault(crate::types::error::ReservedNodeQuotaExceededFault),
     /// <p>The requested node offering does not exist.</p>
     ReservedNodesOfferingNotFoundFault(crate::types::error::ReservedNodesOfferingNotFoundFault),
-    /// <p></p>
+    /// <p>The required service-linked role was not found.</p>
     ServiceLinkedRoleNotFoundFault(crate::types::error::ServiceLinkedRoleNotFoundFault),
-    /// <p></p>
+    /// <p>The specified service update does not exist.</p>
     ServiceUpdateNotFoundFault(crate::types::error::ServiceUpdateNotFoundFault),
-    /// <p></p>
+    /// <p>The specified shard does not exist.</p>
     ShardNotFoundFault(crate::types::error::ShardNotFoundFault),
-    /// <p></p>
+    /// <p>The request cannot be processed because it would exceed the maximum number of shards allowed per cluster.</p>
     ShardsPerClusterQuotaExceededFault(crate::types::error::ShardsPerClusterQuotaExceededFault),
-    /// <p></p>
+    /// <p>A snapshot with the specified name already exists.</p>
     SnapshotAlreadyExistsFault(crate::types::error::SnapshotAlreadyExistsFault),
-    /// <p></p>
+    /// <p>The specified snapshot does not exist.</p>
     SnapshotNotFoundFault(crate::types::error::SnapshotNotFoundFault),
-    /// <p></p>
+    /// <p>The request cannot be processed because it would exceed the maximum number of snapshots allowed.</p>
     SnapshotQuotaExceededFault(crate::types::error::SnapshotQuotaExceededFault),
-    /// <p></p>
+    /// <p>A subnet group with the specified name already exists.</p>
     SubnetGroupAlreadyExistsFault(crate::types::error::SubnetGroupAlreadyExistsFault),
-    /// <p></p>
+    /// <p>The subnet group is currently in use and cannot be deleted.</p>
     SubnetGroupInUseFault(crate::types::error::SubnetGroupInUseFault),
-    /// <p></p>
+    /// <p>The specified subnet group does not exist.</p>
     SubnetGroupNotFoundFault(crate::types::error::SubnetGroupNotFoundFault),
-    /// <p></p>
+    /// <p>The request cannot be processed because it would exceed the maximum number of subnet groups allowed.</p>
     SubnetGroupQuotaExceededFault(crate::types::error::SubnetGroupQuotaExceededFault),
-    /// <p></p>
+    /// <p>The subnet is currently in use and cannot be deleted.</p>
     SubnetInUse(crate::types::error::SubnetInUse),
-    /// <p></p>
+    /// <p>The specified subnet is not allowed for this operation.</p>
     SubnetNotAllowedFault(crate::types::error::SubnetNotAllowedFault),
-    /// <p></p>
+    /// <p>The request cannot be processed because it would exceed the maximum number of subnets allowed.</p>
     SubnetQuotaExceededFault(crate::types::error::SubnetQuotaExceededFault),
-    /// <p></p>
+    /// <p>The specified tag does not exist.</p>
     TagNotFoundFault(crate::types::error::TagNotFoundFault),
-    /// <p></p>
+    /// <p>The request cannot be processed because it would exceed the maximum number of tags allowed per resource.</p>
     TagQuotaPerResourceExceeded(crate::types::error::TagQuotaPerResourceExceeded),
-    /// <p></p>
+    /// <p>Test failover is not available for this cluster configuration.</p>
     TestFailoverNotAvailableFault(crate::types::error::TestFailoverNotAvailableFault),
-    /// <p></p>
+    /// <p>A user with the specified name already exists.</p>
     UserAlreadyExistsFault(crate::types::error::UserAlreadyExistsFault),
-    /// <p></p>
+    /// <p>The specified user does not exist.</p>
     UserNotFoundFault(crate::types::error::UserNotFoundFault),
-    /// <p></p>
+    /// <p>The request cannot be processed because it would exceed the maximum number of users allowed.</p>
     UserQuotaExceededFault(crate::types::error::UserQuotaExceededFault),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
@@ -960,6 +960,83 @@ impl From<crate::operation::describe_multi_region_clusters::DescribeMultiRegionC
                 Error::MultiRegionClusterNotFoundFault(inner)
             }
             crate::operation::describe_multi_region_clusters::DescribeMultiRegionClustersError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_multi_region_parameter_groups::DescribeMultiRegionParameterGroupsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_multi_region_parameter_groups::DescribeMultiRegionParameterGroupsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_multi_region_parameter_groups::DescribeMultiRegionParameterGroupsError> for Error {
+    fn from(err: crate::operation::describe_multi_region_parameter_groups::DescribeMultiRegionParameterGroupsError) -> Self {
+        match err {
+            crate::operation::describe_multi_region_parameter_groups::DescribeMultiRegionParameterGroupsError::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
+            crate::operation::describe_multi_region_parameter_groups::DescribeMultiRegionParameterGroupsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::describe_multi_region_parameter_groups::DescribeMultiRegionParameterGroupsError::MultiRegionParameterGroupNotFoundFault(inner) => Error::MultiRegionParameterGroupNotFoundFault(inner),
+            crate::operation::describe_multi_region_parameter_groups::DescribeMultiRegionParameterGroupsError::ServiceLinkedRoleNotFoundFault(inner) => Error::ServiceLinkedRoleNotFoundFault(inner),
+            crate::operation::describe_multi_region_parameter_groups::DescribeMultiRegionParameterGroupsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_multi_region_parameters::DescribeMultiRegionParametersError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_multi_region_parameters::DescribeMultiRegionParametersError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_multi_region_parameters::DescribeMultiRegionParametersError> for Error {
+    fn from(err: crate::operation::describe_multi_region_parameters::DescribeMultiRegionParametersError) -> Self {
+        match err {
+            crate::operation::describe_multi_region_parameters::DescribeMultiRegionParametersError::InvalidParameterCombinationException(inner) => {
+                Error::InvalidParameterCombinationException(inner)
+            }
+            crate::operation::describe_multi_region_parameters::DescribeMultiRegionParametersError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::describe_multi_region_parameters::DescribeMultiRegionParametersError::MultiRegionParameterGroupNotFoundFault(inner) => {
+                Error::MultiRegionParameterGroupNotFoundFault(inner)
+            }
+            crate::operation::describe_multi_region_parameters::DescribeMultiRegionParametersError::ServiceLinkedRoleNotFoundFault(inner) => {
+                Error::ServiceLinkedRoleNotFoundFault(inner)
+            }
+            crate::operation::describe_multi_region_parameters::DescribeMultiRegionParametersError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

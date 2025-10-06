@@ -156,6 +156,49 @@ impl From<crate::operation::create_index::CreateIndexError> for Error {
         }
     }
 }
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_resource_explorer_setup::CreateResourceExplorerSetupError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_resource_explorer_setup::CreateResourceExplorerSetupError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_resource_explorer_setup::CreateResourceExplorerSetupError> for Error {
+    fn from(err: crate::operation::create_resource_explorer_setup::CreateResourceExplorerSetupError) -> Self {
+        match err {
+            crate::operation::create_resource_explorer_setup::CreateResourceExplorerSetupError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_resource_explorer_setup::CreateResourceExplorerSetupError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::create_resource_explorer_setup::CreateResourceExplorerSetupError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_resource_explorer_setup::CreateResourceExplorerSetupError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::create_resource_explorer_setup::CreateResourceExplorerSetupError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::create_resource_explorer_setup::CreateResourceExplorerSetupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_view::CreateViewError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -207,6 +250,49 @@ impl From<crate::operation::delete_index::DeleteIndexError> for Error {
             crate::operation::delete_index::DeleteIndexError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::delete_index::DeleteIndexError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_index::DeleteIndexError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_resource_explorer_setup::DeleteResourceExplorerSetupError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_resource_explorer_setup::DeleteResourceExplorerSetupError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_resource_explorer_setup::DeleteResourceExplorerSetupError> for Error {
+    fn from(err: crate::operation::delete_resource_explorer_setup::DeleteResourceExplorerSetupError) -> Self {
+        match err {
+            crate::operation::delete_resource_explorer_setup::DeleteResourceExplorerSetupError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_resource_explorer_setup::DeleteResourceExplorerSetupError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::delete_resource_explorer_setup::DeleteResourceExplorerSetupError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_resource_explorer_setup::DeleteResourceExplorerSetupError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::delete_resource_explorer_setup::DeleteResourceExplorerSetupError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::delete_resource_explorer_setup::DeleteResourceExplorerSetupError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -401,6 +487,97 @@ impl From<crate::operation::get_managed_view::GetManagedViewError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_resource_explorer_setup::GetResourceExplorerSetupError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_resource_explorer_setup::GetResourceExplorerSetupError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_resource_explorer_setup::GetResourceExplorerSetupError> for Error {
+    fn from(err: crate::operation::get_resource_explorer_setup::GetResourceExplorerSetupError) -> Self {
+        match err {
+            crate::operation::get_resource_explorer_setup::GetResourceExplorerSetupError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_resource_explorer_setup::GetResourceExplorerSetupError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_resource_explorer_setup::GetResourceExplorerSetupError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_resource_explorer_setup::GetResourceExplorerSetupError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_resource_explorer_setup::GetResourceExplorerSetupError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_resource_explorer_setup::GetResourceExplorerSetupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_service_index::GetServiceIndexError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_service_index::GetServiceIndexError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_service_index::GetServiceIndexError> for Error {
+    fn from(err: crate::operation::get_service_index::GetServiceIndexError) -> Self {
+        match err {
+            crate::operation::get_service_index::GetServiceIndexError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_service_index::GetServiceIndexError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_service_index::GetServiceIndexError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_service_index::GetServiceIndexError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_service_index::GetServiceIndexError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_service_index::GetServiceIndexError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_service_view::GetServiceViewError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_service_view::GetServiceViewError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_service_view::GetServiceViewError> for Error {
+    fn from(err: crate::operation::get_service_view::GetServiceViewError) -> Self {
+        match err {
+            crate::operation::get_service_view::GetServiceViewError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_service_view::GetServiceViewError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_service_view::GetServiceViewError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_service_view::GetServiceViewError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_service_view::GetServiceViewError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_service_view::GetServiceViewError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_view::GetViewError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -534,6 +711,97 @@ impl From<crate::operation::list_resources::ListResourcesError> for Error {
             crate::operation::list_resources::ListResourcesError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::list_resources::ListResourcesError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_resources::ListResourcesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_service_indexes::ListServiceIndexesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_service_indexes::ListServiceIndexesError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_service_indexes::ListServiceIndexesError> for Error {
+    fn from(err: crate::operation::list_service_indexes::ListServiceIndexesError) -> Self {
+        match err {
+            crate::operation::list_service_indexes::ListServiceIndexesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_service_indexes::ListServiceIndexesError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_service_indexes::ListServiceIndexesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_service_indexes::ListServiceIndexesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_service_indexes::ListServiceIndexesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_service_views::ListServiceViewsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_service_views::ListServiceViewsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_service_views::ListServiceViewsError> for Error {
+    fn from(err: crate::operation::list_service_views::ListServiceViewsError) -> Self {
+        match err {
+            crate::operation::list_service_views::ListServiceViewsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_service_views::ListServiceViewsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_service_views::ListServiceViewsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_service_views::ListServiceViewsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_service_views::ListServiceViewsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_streaming_access_for_services::ListStreamingAccessForServicesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_streaming_access_for_services::ListStreamingAccessForServicesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_streaming_access_for_services::ListStreamingAccessForServicesError> for Error {
+    fn from(err: crate::operation::list_streaming_access_for_services::ListStreamingAccessForServicesError) -> Self {
+        match err {
+            crate::operation::list_streaming_access_for_services::ListStreamingAccessForServicesError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_streaming_access_for_services::ListStreamingAccessForServicesError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_streaming_access_for_services::ListStreamingAccessForServicesError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_streaming_access_for_services::ListStreamingAccessForServicesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

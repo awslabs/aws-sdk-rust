@@ -44,6 +44,8 @@ pub struct SetSourceRequest {
     pub whitelist_cidr: ::std::option::Option<::std::string::String>,
     /// <p>The source configuration for cloud flows receiving a stream from a bridge.</p>
     pub gateway_bridge_source: ::std::option::Option<crate::types::SetGatewayBridgeSourceRequest>,
+    /// <p>The key-value pairs that can be used to tag and organize the source.</p>
+    pub source_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl SetSourceRequest {
     /// <p>The type of encryption that is used on the content ingested from this source. Allowable encryption types: static-key.</p>
@@ -126,6 +128,10 @@ impl SetSourceRequest {
     pub fn gateway_bridge_source(&self) -> ::std::option::Option<&crate::types::SetGatewayBridgeSourceRequest> {
         self.gateway_bridge_source.as_ref()
     }
+    /// <p>The key-value pairs that can be used to tag and organize the source.</p>
+    pub fn source_tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.source_tags.as_ref()
+    }
 }
 impl SetSourceRequest {
     /// Creates a new builder-style object to manufacture [`SetSourceRequest`](crate::types::SetSourceRequest).
@@ -157,6 +163,7 @@ pub struct SetSourceRequestBuilder {
     pub(crate) vpc_interface_name: ::std::option::Option<::std::string::String>,
     pub(crate) whitelist_cidr: ::std::option::Option<::std::string::String>,
     pub(crate) gateway_bridge_source: ::std::option::Option<crate::types::SetGatewayBridgeSourceRequest>,
+    pub(crate) source_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl SetSourceRequestBuilder {
     /// <p>The type of encryption that is used on the content ingested from this source. Allowable encryption types: static-key.</p>
@@ -442,6 +449,29 @@ impl SetSourceRequestBuilder {
     pub fn get_gateway_bridge_source(&self) -> &::std::option::Option<crate::types::SetGatewayBridgeSourceRequest> {
         &self.gateway_bridge_source
     }
+    /// Adds a key-value pair to `source_tags`.
+    ///
+    /// To override the contents of this collection use [`set_source_tags`](Self::set_source_tags).
+    ///
+    /// <p>The key-value pairs that can be used to tag and organize the source.</p>
+    pub fn source_tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut hash_map = self.source_tags.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.source_tags = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>The key-value pairs that can be used to tag and organize the source.</p>
+    pub fn set_source_tags(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    ) -> Self {
+        self.source_tags = input;
+        self
+    }
+    /// <p>The key-value pairs that can be used to tag and organize the source.</p>
+    pub fn get_source_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.source_tags
+    }
     /// Consumes the builder and constructs a [`SetSourceRequest`](crate::types::SetSourceRequest).
     pub fn build(self) -> crate::types::SetSourceRequest {
         crate::types::SetSourceRequest {
@@ -464,6 +494,7 @@ impl SetSourceRequestBuilder {
             vpc_interface_name: self.vpc_interface_name,
             whitelist_cidr: self.whitelist_cidr,
             gateway_bridge_source: self.gateway_bridge_source,
+            source_tags: self.source_tags,
         }
     }
 }

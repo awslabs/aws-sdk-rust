@@ -136,4 +136,18 @@ impl GetBackupPlanFluentBuilder {
     pub fn get_version_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_version_id()
     }
+    /// <p>Number of future scheduled backup runs to preview. When set to 0 (default), no scheduled runs preview is included in the response. Valid range is 0-10.</p>
+    pub fn max_scheduled_runs_preview(mut self, input: i32) -> Self {
+        self.inner = self.inner.max_scheduled_runs_preview(input);
+        self
+    }
+    /// <p>Number of future scheduled backup runs to preview. When set to 0 (default), no scheduled runs preview is included in the response. Valid range is 0-10.</p>
+    pub fn set_max_scheduled_runs_preview(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.inner = self.inner.set_max_scheduled_runs_preview(input);
+        self
+    }
+    /// <p>Number of future scheduled backup runs to preview. When set to 0 (default), no scheduled runs preview is included in the response. Valid range is 0-10.</p>
+    pub fn get_max_scheduled_runs_preview(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_scheduled_runs_preview()
+    }
 }

@@ -15,11 +15,21 @@ pub use crate::types::_conversational::ConversationalBuilder;
 
 pub use crate::types::_filter_input::FilterInputBuilder;
 
+pub use crate::types::_event_metadata_filter_expression::EventMetadataFilterExpressionBuilder;
+
 pub use crate::types::_branch_filter::BranchFilterBuilder;
 
 pub use crate::types::_actor_summary::ActorSummaryBuilder;
 
 pub use crate::types::_memory_record::MemoryRecordBuilder;
+
+pub use crate::types::_memory_record_output::MemoryRecordOutputBuilder;
+
+pub use crate::types::_memory_record_update_input::MemoryRecordUpdateInputBuilder;
+
+pub use crate::types::_memory_record_delete_input::MemoryRecordDeleteInputBuilder;
+
+pub use crate::types::_memory_record_create_input::MemoryRecordCreateInputBuilder;
 
 pub use crate::types::_code_interpreter_session_summary::CodeInterpreterSessionSummaryBuilder;
 

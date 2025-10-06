@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetWorkloadAccessTokenForJwtInput {
-    /// <p>Unique identifier for the registered agent</p>
+    /// <p>The unique identifier for the registered workload.</p>
     pub workload_name: ::std::option::Option<::std::string::String>,
-    /// <p>OAuth2 token issued by the user's identity provider</p>
+    /// <p>The OAuth 2.0 token issued by the user's identity provider.</p>
     pub user_token: ::std::option::Option<::std::string::String>,
 }
 impl GetWorkloadAccessTokenForJwtInput {
-    /// <p>Unique identifier for the registered agent</p>
+    /// <p>The unique identifier for the registered workload.</p>
     pub fn workload_name(&self) -> ::std::option::Option<&str> {
         self.workload_name.as_deref()
     }
-    /// <p>OAuth2 token issued by the user's identity provider</p>
+    /// <p>The OAuth 2.0 token issued by the user's identity provider.</p>
     pub fn user_token(&self) -> ::std::option::Option<&str> {
         self.user_token.as_deref()
     }
@@ -41,33 +41,33 @@ pub struct GetWorkloadAccessTokenForJwtInputBuilder {
     pub(crate) user_token: ::std::option::Option<::std::string::String>,
 }
 impl GetWorkloadAccessTokenForJwtInputBuilder {
-    /// <p>Unique identifier for the registered agent</p>
+    /// <p>The unique identifier for the registered workload.</p>
     /// This field is required.
     pub fn workload_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workload_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Unique identifier for the registered agent</p>
+    /// <p>The unique identifier for the registered workload.</p>
     pub fn set_workload_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workload_name = input;
         self
     }
-    /// <p>Unique identifier for the registered agent</p>
+    /// <p>The unique identifier for the registered workload.</p>
     pub fn get_workload_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.workload_name
     }
-    /// <p>OAuth2 token issued by the user's identity provider</p>
+    /// <p>The OAuth 2.0 token issued by the user's identity provider.</p>
     /// This field is required.
     pub fn user_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>OAuth2 token issued by the user's identity provider</p>
+    /// <p>The OAuth 2.0 token issued by the user's identity provider.</p>
     pub fn set_user_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_token = input;
         self
     }
-    /// <p>OAuth2 token issued by the user's identity provider</p>
+    /// <p>The OAuth 2.0 token issued by the user's identity provider.</p>
     pub fn get_user_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_token
     }

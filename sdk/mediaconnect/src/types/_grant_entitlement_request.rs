@@ -16,6 +16,8 @@ pub struct GrantEntitlementRequest {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account IDs that you want to share your content with. The receiving accounts (subscribers) will be allowed to create their own flows using your content as the source.</p>
     pub subscribers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The key-value pairs that can be used to tag and organize the entitlement.</p>
+    pub entitlement_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl GrantEntitlementRequest {
     /// <p>Percentage from 0-100 of the data transfer cost to be billed to the subscriber.</p>
@@ -44,6 +46,10 @@ impl GrantEntitlementRequest {
     pub fn subscribers(&self) -> &[::std::string::String] {
         self.subscribers.as_deref().unwrap_or_default()
     }
+    /// <p>The key-value pairs that can be used to tag and organize the entitlement.</p>
+    pub fn entitlement_tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.entitlement_tags.as_ref()
+    }
 }
 impl GrantEntitlementRequest {
     /// Creates a new builder-style object to manufacture [`GrantEntitlementRequest`](crate::types::GrantEntitlementRequest).
@@ -62,6 +68,7 @@ pub struct GrantEntitlementRequestBuilder {
     pub(crate) entitlement_status: ::std::option::Option<crate::types::EntitlementStatus>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) subscribers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) entitlement_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl GrantEntitlementRequestBuilder {
     /// <p>Percentage from 0-100 of the data transfer cost to be billed to the subscriber.</p>
@@ -154,6 +161,33 @@ impl GrantEntitlementRequestBuilder {
     pub fn get_subscribers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.subscribers
     }
+    /// Adds a key-value pair to `entitlement_tags`.
+    ///
+    /// To override the contents of this collection use [`set_entitlement_tags`](Self::set_entitlement_tags).
+    ///
+    /// <p>The key-value pairs that can be used to tag and organize the entitlement.</p>
+    pub fn entitlement_tags(
+        mut self,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        let mut hash_map = self.entitlement_tags.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.entitlement_tags = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>The key-value pairs that can be used to tag and organize the entitlement.</p>
+    pub fn set_entitlement_tags(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    ) -> Self {
+        self.entitlement_tags = input;
+        self
+    }
+    /// <p>The key-value pairs that can be used to tag and organize the entitlement.</p>
+    pub fn get_entitlement_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.entitlement_tags
+    }
     /// Consumes the builder and constructs a [`GrantEntitlementRequest`](crate::types::GrantEntitlementRequest).
     pub fn build(self) -> crate::types::GrantEntitlementRequest {
         crate::types::GrantEntitlementRequest {
@@ -163,6 +197,7 @@ impl GrantEntitlementRequestBuilder {
             entitlement_status: self.entitlement_status,
             name: self.name,
             subscribers: self.subscribers,
+            entitlement_tags: self.entitlement_tags,
         }
     }
 }

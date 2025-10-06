@@ -213,4 +213,26 @@ impl CreateEventFluentBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
+    ///
+    /// Adds a key-value pair to `metadata`.
+    ///
+    /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
+    ///
+    /// <p>The key-value metadata to attach to the event.</p>
+    pub fn metadata(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::MetadataValue) -> Self {
+        self.inner = self.inner.metadata(k.into(), v);
+        self
+    }
+    /// <p>The key-value metadata to attach to the event.</p>
+    pub fn set_metadata(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MetadataValue>>,
+    ) -> Self {
+        self.inner = self.inner.set_metadata(input);
+        self
+    }
+    /// <p>The key-value metadata to attach to the event.</p>
+    pub fn get_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MetadataValue>> {
+        self.inner.get_metadata()
+    }
 }

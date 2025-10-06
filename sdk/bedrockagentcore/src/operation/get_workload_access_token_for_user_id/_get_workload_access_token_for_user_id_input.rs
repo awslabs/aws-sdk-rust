@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetWorkloadAccessTokenForUserIdInput {
-    /// <p>The name of the worklaod you want to get the access token of.</p>
+    /// <p>The name of the workload from which you want to retrieve the access token.</p>
     pub workload_name: ::std::option::Option<::std::string::String>,
-    /// <p>The user id of the user you are retrieving the access token for.</p>
+    /// <p>The ID of the user for whom you are retrieving the access token.</p>
     pub user_id: ::std::option::Option<::std::string::String>,
 }
 impl GetWorkloadAccessTokenForUserIdInput {
-    /// <p>The name of the worklaod you want to get the access token of.</p>
+    /// <p>The name of the workload from which you want to retrieve the access token.</p>
     pub fn workload_name(&self) -> ::std::option::Option<&str> {
         self.workload_name.as_deref()
     }
-    /// <p>The user id of the user you are retrieving the access token for.</p>
+    /// <p>The ID of the user for whom you are retrieving the access token.</p>
     pub fn user_id(&self) -> ::std::option::Option<&str> {
         self.user_id.as_deref()
     }
@@ -33,33 +33,33 @@ pub struct GetWorkloadAccessTokenForUserIdInputBuilder {
     pub(crate) user_id: ::std::option::Option<::std::string::String>,
 }
 impl GetWorkloadAccessTokenForUserIdInputBuilder {
-    /// <p>The name of the worklaod you want to get the access token of.</p>
+    /// <p>The name of the workload from which you want to retrieve the access token.</p>
     /// This field is required.
     pub fn workload_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workload_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the worklaod you want to get the access token of.</p>
+    /// <p>The name of the workload from which you want to retrieve the access token.</p>
     pub fn set_workload_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workload_name = input;
         self
     }
-    /// <p>The name of the worklaod you want to get the access token of.</p>
+    /// <p>The name of the workload from which you want to retrieve the access token.</p>
     pub fn get_workload_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.workload_name
     }
-    /// <p>The user id of the user you are retrieving the access token for.</p>
+    /// <p>The ID of the user for whom you are retrieving the access token.</p>
     /// This field is required.
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The user id of the user you are retrieving the access token for.</p>
+    /// <p>The ID of the user for whom you are retrieving the access token.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_id = input;
         self
     }
-    /// <p>The user id of the user you are retrieving the access token for.</p>
+    /// <p>The ID of the user for whom you are retrieving the access token.</p>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_id
     }

@@ -145,6 +145,10 @@ pub use crate::types::_backup_plan::BackupPlan;
 
 pub use crate::types::_backup_rule::BackupRule;
 
+pub use crate::types::_scheduled_plan_execution_member::ScheduledPlanExecutionMember;
+
+pub use crate::types::_rule_execution_type::RuleExecutionType;
+
 pub use crate::types::_storage_class::StorageClass;
 
 pub use crate::types::_latest_mpa_approval_team_update::LatestMpaApprovalTeamUpdate;
@@ -304,6 +308,10 @@ mod _restore_testing_selection_for_list;
 mod _restore_testing_selection_for_update;
 
 mod _restore_validation_status;
+
+mod _rule_execution_type;
+
+mod _scheduled_plan_execution_member;
 
 mod _storage_class;
 

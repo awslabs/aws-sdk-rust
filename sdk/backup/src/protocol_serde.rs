@@ -421,6 +421,8 @@ pub(crate) mod shape_restore_testing_selection_for_update;
 
 pub(crate) mod shape_restore_testing_selections;
 
+pub(crate) mod shape_scheduled_runs_preview;
+
 pub(crate) mod shape_string_map;
 
 pub(crate) mod shape_tags;
@@ -492,6 +494,8 @@ pub(crate) mod shape_restore_testing_plan_for_list;
 pub(crate) mod shape_restore_testing_recovery_point_selection;
 
 pub(crate) mod shape_restore_testing_selection_for_list;
+
+pub(crate) mod shape_scheduled_plan_execution_member;
 
 pub(crate) mod shape_sensitive_string_map;
 

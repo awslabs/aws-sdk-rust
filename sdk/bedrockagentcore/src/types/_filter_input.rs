@@ -6,11 +6,19 @@
 pub struct FilterInput {
     /// <p>The branch filter criteria to apply when listing events.</p>
     pub branch: ::std::option::Option<crate::types::BranchFilter>,
+    /// <p>Event metadata filter criteria to apply when retrieving events.</p>
+    pub event_metadata: ::std::option::Option<::std::vec::Vec<crate::types::EventMetadataFilterExpression>>,
 }
 impl FilterInput {
     /// <p>The branch filter criteria to apply when listing events.</p>
     pub fn branch(&self) -> ::std::option::Option<&crate::types::BranchFilter> {
         self.branch.as_ref()
+    }
+    /// <p>Event metadata filter criteria to apply when retrieving events.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_metadata.is_none()`.
+    pub fn event_metadata(&self) -> &[crate::types::EventMetadataFilterExpression] {
+        self.event_metadata.as_deref().unwrap_or_default()
     }
 }
 impl FilterInput {
@@ -25,6 +33,7 @@ impl FilterInput {
 #[non_exhaustive]
 pub struct FilterInputBuilder {
     pub(crate) branch: ::std::option::Option<crate::types::BranchFilter>,
+    pub(crate) event_metadata: ::std::option::Option<::std::vec::Vec<crate::types::EventMetadataFilterExpression>>,
 }
 impl FilterInputBuilder {
     /// <p>The branch filter criteria to apply when listing events.</p>
@@ -41,8 +50,31 @@ impl FilterInputBuilder {
     pub fn get_branch(&self) -> &::std::option::Option<crate::types::BranchFilter> {
         &self.branch
     }
+    /// Appends an item to `event_metadata`.
+    ///
+    /// To override the contents of this collection use [`set_event_metadata`](Self::set_event_metadata).
+    ///
+    /// <p>Event metadata filter criteria to apply when retrieving events.</p>
+    pub fn event_metadata(mut self, input: crate::types::EventMetadataFilterExpression) -> Self {
+        let mut v = self.event_metadata.unwrap_or_default();
+        v.push(input);
+        self.event_metadata = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Event metadata filter criteria to apply when retrieving events.</p>
+    pub fn set_event_metadata(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EventMetadataFilterExpression>>) -> Self {
+        self.event_metadata = input;
+        self
+    }
+    /// <p>Event metadata filter criteria to apply when retrieving events.</p>
+    pub fn get_event_metadata(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EventMetadataFilterExpression>> {
+        &self.event_metadata
+    }
     /// Consumes the builder and constructs a [`FilterInput`](crate::types::FilterInput).
     pub fn build(self) -> crate::types::FilterInput {
-        crate::types::FilterInput { branch: self.branch }
+        crate::types::FilterInput {
+            branch: self.branch,
+            event_metadata: self.event_metadata,
+        }
     }
 }

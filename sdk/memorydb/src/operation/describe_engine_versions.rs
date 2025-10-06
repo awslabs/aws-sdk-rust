@@ -261,11 +261,11 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DescribeEngin
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum DescribeEngineVersionsError {
-    /// <p></p>
+    /// <p>The specified parameter combination is not valid.</p>
     InvalidParameterCombinationException(crate::types::error::InvalidParameterCombinationException),
-    /// <p></p>
+    /// <p>The specified parameter value is not valid.</p>
     InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
-    /// <p></p>
+    /// <p>The required service-linked role was not found.</p>
     ServiceLinkedRoleNotFoundFault(crate::types::error::ServiceLinkedRoleNotFoundFault),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

@@ -17,6 +17,8 @@ pub struct CreateEventInput {
     pub branch: ::std::option::Option<crate::types::Branch>,
     /// <p>A unique, case-sensitive identifier to ensure that the operation completes no more than one time. If this token matches a previous request, AgentCore ignores the request, but does not return an error.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
+    /// <p>The key-value metadata to attach to the event.</p>
+    pub metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MetadataValue>>,
 }
 impl CreateEventInput {
     /// <p>The identifier of the AgentCore Memory resource in which to create the event.</p>
@@ -49,6 +51,10 @@ impl CreateEventInput {
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
+    /// <p>The key-value metadata to attach to the event.</p>
+    pub fn metadata(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::MetadataValue>> {
+        self.metadata.as_ref()
+    }
 }
 impl CreateEventInput {
     /// Creates a new builder-style object to manufacture [`CreateEventInput`](crate::operation::create_event::CreateEventInput).
@@ -68,6 +74,7 @@ pub struct CreateEventInputBuilder {
     pub(crate) payload: ::std::option::Option<::std::vec::Vec<crate::types::PayloadType>>,
     pub(crate) branch: ::std::option::Option<crate::types::Branch>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
+    pub(crate) metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MetadataValue>>,
 }
 impl CreateEventInputBuilder {
     /// <p>The identifier of the AgentCore Memory resource in which to create the event.</p>
@@ -177,6 +184,29 @@ impl CreateEventInputBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
+    /// Adds a key-value pair to `metadata`.
+    ///
+    /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
+    ///
+    /// <p>The key-value metadata to attach to the event.</p>
+    pub fn metadata(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::MetadataValue) -> Self {
+        let mut hash_map = self.metadata.unwrap_or_default();
+        hash_map.insert(k.into(), v);
+        self.metadata = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>The key-value metadata to attach to the event.</p>
+    pub fn set_metadata(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MetadataValue>>,
+    ) -> Self {
+        self.metadata = input;
+        self
+    }
+    /// <p>The key-value metadata to attach to the event.</p>
+    pub fn get_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MetadataValue>> {
+        &self.metadata
+    }
     /// Consumes the builder and constructs a [`CreateEventInput`](crate::operation::create_event::CreateEventInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_event::CreateEventInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_event::CreateEventInput {
@@ -187,6 +217,7 @@ impl CreateEventInputBuilder {
             payload: self.payload,
             branch: self.branch,
             client_token: self.client_token,
+            metadata: self.metadata,
         })
     }
 }

@@ -3,49 +3,49 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetResourceOauth2TokenInput {
-    /// <p>The identity token of the workload you want to retrive the Oauth2 Token of.</p>
+    /// <p>The identity token of the workload from which you want to retrieve the OAuth2 token.</p>
     pub workload_identity_token: ::std::option::Option<::std::string::String>,
-    /// <p>Reference to the credential provider</p>
+    /// <p>The name of the resource's credential provider.</p>
     pub resource_credential_provider_name: ::std::option::Option<::std::string::String>,
-    /// <p>The OAuth scopes requested</p>
+    /// <p>The OAuth scopes being requested.</p>
     pub scopes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The type of flow to be performed</p>
+    /// <p>The type of flow to be performed.</p>
     pub oauth2_flow: ::std::option::Option<crate::types::Oauth2FlowType>,
-    /// <p>Callback url to redirect after token retrieval completes. Should be one of the provideded urls during WorkloadIdentity creation</p>
+    /// <p>The callback URL to redirect to after the OAuth 2.0 token retrieval is complete. This URL must be one of the provided URLs configured for the workload identity.</p>
     pub resource_oauth2_return_url: ::std::option::Option<::std::string::String>,
-    /// <p>If true, always initiate a new 3LO flow</p>
+    /// <p>Indicates whether to always initiate a new three-legged OAuth (3LO) flow, regardless of any existing session.</p>
     pub force_authentication: ::std::option::Option<bool>,
-    /// <p>Gives the ability to send extra/custom parameters to the resource credentials provider during the authorization process. Standard OAuth2 flow parameters will not be overriden.</p>
+    /// <p>A map of custom parameters to include in the authorization request to the resource credential provider. These parameters are in addition to the standard OAuth 2.0 flow parameters, and will not override them.</p>
     pub custom_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl GetResourceOauth2TokenInput {
-    /// <p>The identity token of the workload you want to retrive the Oauth2 Token of.</p>
+    /// <p>The identity token of the workload from which you want to retrieve the OAuth2 token.</p>
     pub fn workload_identity_token(&self) -> ::std::option::Option<&str> {
         self.workload_identity_token.as_deref()
     }
-    /// <p>Reference to the credential provider</p>
+    /// <p>The name of the resource's credential provider.</p>
     pub fn resource_credential_provider_name(&self) -> ::std::option::Option<&str> {
         self.resource_credential_provider_name.as_deref()
     }
-    /// <p>The OAuth scopes requested</p>
+    /// <p>The OAuth scopes being requested.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.scopes.is_none()`.
     pub fn scopes(&self) -> &[::std::string::String] {
         self.scopes.as_deref().unwrap_or_default()
     }
-    /// <p>The type of flow to be performed</p>
+    /// <p>The type of flow to be performed.</p>
     pub fn oauth2_flow(&self) -> ::std::option::Option<&crate::types::Oauth2FlowType> {
         self.oauth2_flow.as_ref()
     }
-    /// <p>Callback url to redirect after token retrieval completes. Should be one of the provideded urls during WorkloadIdentity creation</p>
+    /// <p>The callback URL to redirect to after the OAuth 2.0 token retrieval is complete. This URL must be one of the provided URLs configured for the workload identity.</p>
     pub fn resource_oauth2_return_url(&self) -> ::std::option::Option<&str> {
         self.resource_oauth2_return_url.as_deref()
     }
-    /// <p>If true, always initiate a new 3LO flow</p>
+    /// <p>Indicates whether to always initiate a new three-legged OAuth (3LO) flow, regardless of any existing session.</p>
     pub fn force_authentication(&self) -> ::std::option::Option<bool> {
         self.force_authentication
     }
-    /// <p>Gives the ability to send extra/custom parameters to the resource credentials provider during the authorization process. Standard OAuth2 flow parameters will not be overriden.</p>
+    /// <p>A map of custom parameters to include in the authorization request to the resource credential provider. These parameters are in addition to the standard OAuth 2.0 flow parameters, and will not override them.</p>
     pub fn custom_parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.custom_parameters.as_ref()
     }
@@ -83,33 +83,33 @@ pub struct GetResourceOauth2TokenInputBuilder {
     pub(crate) custom_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl GetResourceOauth2TokenInputBuilder {
-    /// <p>The identity token of the workload you want to retrive the Oauth2 Token of.</p>
+    /// <p>The identity token of the workload from which you want to retrieve the OAuth2 token.</p>
     /// This field is required.
     pub fn workload_identity_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workload_identity_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identity token of the workload you want to retrive the Oauth2 Token of.</p>
+    /// <p>The identity token of the workload from which you want to retrieve the OAuth2 token.</p>
     pub fn set_workload_identity_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workload_identity_token = input;
         self
     }
-    /// <p>The identity token of the workload you want to retrive the Oauth2 Token of.</p>
+    /// <p>The identity token of the workload from which you want to retrieve the OAuth2 token.</p>
     pub fn get_workload_identity_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.workload_identity_token
     }
-    /// <p>Reference to the credential provider</p>
+    /// <p>The name of the resource's credential provider.</p>
     /// This field is required.
     pub fn resource_credential_provider_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_credential_provider_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Reference to the credential provider</p>
+    /// <p>The name of the resource's credential provider.</p>
     pub fn set_resource_credential_provider_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_credential_provider_name = input;
         self
     }
-    /// <p>Reference to the credential provider</p>
+    /// <p>The name of the resource's credential provider.</p>
     pub fn get_resource_credential_provider_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_credential_provider_name
     }
@@ -117,62 +117,62 @@ impl GetResourceOauth2TokenInputBuilder {
     ///
     /// To override the contents of this collection use [`set_scopes`](Self::set_scopes).
     ///
-    /// <p>The OAuth scopes requested</p>
+    /// <p>The OAuth scopes being requested.</p>
     pub fn scopes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.scopes.unwrap_or_default();
         v.push(input.into());
         self.scopes = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The OAuth scopes requested</p>
+    /// <p>The OAuth scopes being requested.</p>
     pub fn set_scopes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.scopes = input;
         self
     }
-    /// <p>The OAuth scopes requested</p>
+    /// <p>The OAuth scopes being requested.</p>
     pub fn get_scopes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.scopes
     }
-    /// <p>The type of flow to be performed</p>
+    /// <p>The type of flow to be performed.</p>
     /// This field is required.
     pub fn oauth2_flow(mut self, input: crate::types::Oauth2FlowType) -> Self {
         self.oauth2_flow = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of flow to be performed</p>
+    /// <p>The type of flow to be performed.</p>
     pub fn set_oauth2_flow(mut self, input: ::std::option::Option<crate::types::Oauth2FlowType>) -> Self {
         self.oauth2_flow = input;
         self
     }
-    /// <p>The type of flow to be performed</p>
+    /// <p>The type of flow to be performed.</p>
     pub fn get_oauth2_flow(&self) -> &::std::option::Option<crate::types::Oauth2FlowType> {
         &self.oauth2_flow
     }
-    /// <p>Callback url to redirect after token retrieval completes. Should be one of the provideded urls during WorkloadIdentity creation</p>
+    /// <p>The callback URL to redirect to after the OAuth 2.0 token retrieval is complete. This URL must be one of the provided URLs configured for the workload identity.</p>
     pub fn resource_oauth2_return_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_oauth2_return_url = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Callback url to redirect after token retrieval completes. Should be one of the provideded urls during WorkloadIdentity creation</p>
+    /// <p>The callback URL to redirect to after the OAuth 2.0 token retrieval is complete. This URL must be one of the provided URLs configured for the workload identity.</p>
     pub fn set_resource_oauth2_return_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_oauth2_return_url = input;
         self
     }
-    /// <p>Callback url to redirect after token retrieval completes. Should be one of the provideded urls during WorkloadIdentity creation</p>
+    /// <p>The callback URL to redirect to after the OAuth 2.0 token retrieval is complete. This URL must be one of the provided URLs configured for the workload identity.</p>
     pub fn get_resource_oauth2_return_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_oauth2_return_url
     }
-    /// <p>If true, always initiate a new 3LO flow</p>
+    /// <p>Indicates whether to always initiate a new three-legged OAuth (3LO) flow, regardless of any existing session.</p>
     pub fn force_authentication(mut self, input: bool) -> Self {
         self.force_authentication = ::std::option::Option::Some(input);
         self
     }
-    /// <p>If true, always initiate a new 3LO flow</p>
+    /// <p>Indicates whether to always initiate a new three-legged OAuth (3LO) flow, regardless of any existing session.</p>
     pub fn set_force_authentication(mut self, input: ::std::option::Option<bool>) -> Self {
         self.force_authentication = input;
         self
     }
-    /// <p>If true, always initiate a new 3LO flow</p>
+    /// <p>Indicates whether to always initiate a new three-legged OAuth (3LO) flow, regardless of any existing session.</p>
     pub fn get_force_authentication(&self) -> &::std::option::Option<bool> {
         &self.force_authentication
     }
@@ -180,7 +180,7 @@ impl GetResourceOauth2TokenInputBuilder {
     ///
     /// To override the contents of this collection use [`set_custom_parameters`](Self::set_custom_parameters).
     ///
-    /// <p>Gives the ability to send extra/custom parameters to the resource credentials provider during the authorization process. Standard OAuth2 flow parameters will not be overriden.</p>
+    /// <p>A map of custom parameters to include in the authorization request to the resource credential provider. These parameters are in addition to the standard OAuth 2.0 flow parameters, and will not override them.</p>
     pub fn custom_parameters(
         mut self,
         k: impl ::std::convert::Into<::std::string::String>,
@@ -191,7 +191,7 @@ impl GetResourceOauth2TokenInputBuilder {
         self.custom_parameters = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>Gives the ability to send extra/custom parameters to the resource credentials provider during the authorization process. Standard OAuth2 flow parameters will not be overriden.</p>
+    /// <p>A map of custom parameters to include in the authorization request to the resource credential provider. These parameters are in addition to the standard OAuth 2.0 flow parameters, and will not override them.</p>
     pub fn set_custom_parameters(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -199,7 +199,7 @@ impl GetResourceOauth2TokenInputBuilder {
         self.custom_parameters = input;
         self
     }
-    /// <p>Gives the ability to send extra/custom parameters to the resource credentials provider during the authorization process. Standard OAuth2 flow parameters will not be overriden.</p>
+    /// <p>A map of custom parameters to include in the authorization request to the resource credential provider. These parameters are in addition to the standard OAuth 2.0 flow parameters, and will not override them.</p>
     pub fn get_custom_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.custom_parameters
     }

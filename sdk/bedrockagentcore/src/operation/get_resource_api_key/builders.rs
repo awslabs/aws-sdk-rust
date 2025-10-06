@@ -22,7 +22,7 @@ impl crate::operation::get_resource_api_key::builders::GetResourceApiKeyInputBui
 }
 /// Fluent builder constructing a request to `GetResourceApiKey`.
 ///
-/// <p>Retrieves an API Key associated with an API Key Credential Provider</p>
+/// <p>Retrieves the API key associated with an API key credential provider.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetResourceApiKeyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl GetResourceApiKeyFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The identity token of the workload you want to get the API Key of.</p>
+    /// <p>The identity token of the workload from which you want to retrieve the API key.</p>
     pub fn workload_identity_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.workload_identity_token(input.into());
         self
     }
-    /// <p>The identity token of the workload you want to get the API Key of.</p>
+    /// <p>The identity token of the workload from which you want to retrieve the API key.</p>
     pub fn set_workload_identity_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_workload_identity_token(input);
         self
     }
-    /// <p>The identity token of the workload you want to get the API Key of.</p>
+    /// <p>The identity token of the workload from which you want to retrieve the API key.</p>
     pub fn get_workload_identity_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_workload_identity_token()
     }
-    /// <p>The credential provider name of the resource you are retrieving the API Key of.</p>
+    /// <p>The credential provider name for the resource from which you are retrieving the API key.</p>
     pub fn resource_credential_provider_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_credential_provider_name(input.into());
         self
     }
-    /// <p>The credential provider name of the resource you are retrieving the API Key of.</p>
+    /// <p>The credential provider name for the resource from which you are retrieving the API key.</p>
     pub fn set_resource_credential_provider_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_credential_provider_name(input);
         self
     }
-    /// <p>The credential provider name of the resource you are retrieving the API Key of.</p>
+    /// <p>The credential provider name for the resource from which you are retrieving the API key.</p>
     pub fn get_resource_credential_provider_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_credential_provider_name()
     }

@@ -14,6 +14,8 @@ pub struct VpcInterfaceRequest {
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The subnet IDs that you want to use for your VPC interface. A range of IP addresses in your VPC. When you create your VPC, you specify a range of IPv4 addresses for the VPC in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16. This is the primary CIDR block for your VPC. When you create a subnet for your VPC, you specify the CIDR block for the subnet, which is a subset of the VPC CIDR block. The subnets that you use across all VPC interfaces on the flow must be in the same Availability Zone as the flow.</p>
     pub subnet_id: ::std::option::Option<::std::string::String>,
+    /// <p>The key-value pairs that can be used to tag and organize the VPC network interface.</p>
+    pub vpc_interface_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl VpcInterfaceRequest {
     /// <p>The name for the VPC interface. This name must be unique within the flow.</p>
@@ -38,6 +40,10 @@ impl VpcInterfaceRequest {
     pub fn subnet_id(&self) -> ::std::option::Option<&str> {
         self.subnet_id.as_deref()
     }
+    /// <p>The key-value pairs that can be used to tag and organize the VPC network interface.</p>
+    pub fn vpc_interface_tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.vpc_interface_tags.as_ref()
+    }
 }
 impl VpcInterfaceRequest {
     /// Creates a new builder-style object to manufacture [`VpcInterfaceRequest`](crate::types::VpcInterfaceRequest).
@@ -55,6 +61,7 @@ pub struct VpcInterfaceRequestBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) subnet_id: ::std::option::Option<::std::string::String>,
+    pub(crate) vpc_interface_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl VpcInterfaceRequestBuilder {
     /// <p>The name for the VPC interface. This name must be unique within the flow.</p>
@@ -136,6 +143,33 @@ impl VpcInterfaceRequestBuilder {
     pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.subnet_id
     }
+    /// Adds a key-value pair to `vpc_interface_tags`.
+    ///
+    /// To override the contents of this collection use [`set_vpc_interface_tags`](Self::set_vpc_interface_tags).
+    ///
+    /// <p>The key-value pairs that can be used to tag and organize the VPC network interface.</p>
+    pub fn vpc_interface_tags(
+        mut self,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        let mut hash_map = self.vpc_interface_tags.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.vpc_interface_tags = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>The key-value pairs that can be used to tag and organize the VPC network interface.</p>
+    pub fn set_vpc_interface_tags(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    ) -> Self {
+        self.vpc_interface_tags = input;
+        self
+    }
+    /// <p>The key-value pairs that can be used to tag and organize the VPC network interface.</p>
+    pub fn get_vpc_interface_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.vpc_interface_tags
+    }
     /// Consumes the builder and constructs a [`VpcInterfaceRequest`](crate::types::VpcInterfaceRequest).
     pub fn build(self) -> crate::types::VpcInterfaceRequest {
         crate::types::VpcInterfaceRequest {
@@ -144,6 +178,7 @@ impl VpcInterfaceRequestBuilder {
             role_arn: self.role_arn,
             security_group_ids: self.security_group_ids,
             subnet_id: self.subnet_id,
+            vpc_interface_tags: self.vpc_interface_tags,
         }
     }
 }

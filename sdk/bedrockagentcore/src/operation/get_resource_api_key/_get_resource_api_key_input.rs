@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetResourceApiKeyInput {
-    /// <p>The identity token of the workload you want to get the API Key of.</p>
+    /// <p>The identity token of the workload from which you want to retrieve the API key.</p>
     pub workload_identity_token: ::std::option::Option<::std::string::String>,
-    /// <p>The credential provider name of the resource you are retrieving the API Key of.</p>
+    /// <p>The credential provider name for the resource from which you are retrieving the API key.</p>
     pub resource_credential_provider_name: ::std::option::Option<::std::string::String>,
 }
 impl GetResourceApiKeyInput {
-    /// <p>The identity token of the workload you want to get the API Key of.</p>
+    /// <p>The identity token of the workload from which you want to retrieve the API key.</p>
     pub fn workload_identity_token(&self) -> ::std::option::Option<&str> {
         self.workload_identity_token.as_deref()
     }
-    /// <p>The credential provider name of the resource you are retrieving the API Key of.</p>
+    /// <p>The credential provider name for the resource from which you are retrieving the API key.</p>
     pub fn resource_credential_provider_name(&self) -> ::std::option::Option<&str> {
         self.resource_credential_provider_name.as_deref()
     }
@@ -41,33 +41,33 @@ pub struct GetResourceApiKeyInputBuilder {
     pub(crate) resource_credential_provider_name: ::std::option::Option<::std::string::String>,
 }
 impl GetResourceApiKeyInputBuilder {
-    /// <p>The identity token of the workload you want to get the API Key of.</p>
+    /// <p>The identity token of the workload from which you want to retrieve the API key.</p>
     /// This field is required.
     pub fn workload_identity_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workload_identity_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identity token of the workload you want to get the API Key of.</p>
+    /// <p>The identity token of the workload from which you want to retrieve the API key.</p>
     pub fn set_workload_identity_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workload_identity_token = input;
         self
     }
-    /// <p>The identity token of the workload you want to get the API Key of.</p>
+    /// <p>The identity token of the workload from which you want to retrieve the API key.</p>
     pub fn get_workload_identity_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.workload_identity_token
     }
-    /// <p>The credential provider name of the resource you are retrieving the API Key of.</p>
+    /// <p>The credential provider name for the resource from which you are retrieving the API key.</p>
     /// This field is required.
     pub fn resource_credential_provider_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_credential_provider_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The credential provider name of the resource you are retrieving the API Key of.</p>
+    /// <p>The credential provider name for the resource from which you are retrieving the API key.</p>
     pub fn set_resource_credential_provider_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_credential_provider_name = input;
         self
     }
-    /// <p>The credential provider name of the resource you are retrieving the API Key of.</p>
+    /// <p>The credential provider name for the resource from which you are retrieving the API key.</p>
     pub fn get_resource_credential_provider_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_credential_provider_name
     }

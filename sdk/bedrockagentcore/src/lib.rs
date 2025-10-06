@@ -33,7 +33,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-bedrockagentcore = "1.10.0"
+//! aws-sdk-bedrockagentcore = "1.11.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -150,13 +150,13 @@ pub use config::Config;
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`CreateEvent`](crate::operation::create_event) operation has
-/// a [`Client::create_event`], function which returns a builder for that operation.
+/// For example, the [`BatchCreateMemoryRecords`](crate::operation::batch_create_memory_records) operation has
+/// a [`Client::batch_create_memory_records`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.create_event()
+/// let result = client.batch_create_memory_records()
 ///     .memory_id("example")
 ///     .send()
 ///     .await;

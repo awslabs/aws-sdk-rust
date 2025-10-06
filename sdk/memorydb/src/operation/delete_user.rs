@@ -254,11 +254,11 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DeleteUserEnd
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum DeleteUserError {
-    /// <p></p>
+    /// <p>The specified parameter value is not valid.</p>
     InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
-    /// <p></p>
+    /// <p>The user is not in a valid state for the requested operation.</p>
     InvalidUserStateFault(crate::types::error::InvalidUserStateFault),
-    /// <p></p>
+    /// <p>The specified user does not exist.</p>
     UserNotFoundFault(crate::types::error::UserNotFoundFault),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

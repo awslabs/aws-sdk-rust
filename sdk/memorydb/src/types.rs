@@ -87,6 +87,10 @@ pub use crate::types::_reserved_nodes_offering::ReservedNodesOffering;
 
 pub use crate::types::_parameter::Parameter;
 
+pub use crate::types::_multi_region_parameter::MultiRegionParameter;
+
+pub use crate::types::_multi_region_parameter_group::MultiRegionParameterGroup;
+
 pub use crate::types::_event::Event;
 
 pub use crate::types::_source_type::SourceType;
@@ -134,6 +138,10 @@ mod _input_authentication_type;
 mod _ip_discovery;
 
 mod _multi_region_cluster;
+
+mod _multi_region_parameter;
+
+mod _multi_region_parameter_group;
 
 mod _network_type;
 

@@ -259,6 +259,8 @@ pub(crate) mod shape_gateway_summaries;
 
 pub(crate) mod shape_kms_configuration;
 
+pub(crate) mod shape_lifecycle_configuration;
+
 pub(crate) mod shape_memory;
 
 pub(crate) mod shape_memory_strategy_input;

@@ -142,6 +142,8 @@ mod batch_get_view;
 
 mod create_index;
 
+mod create_resource_explorer_setup;
+
 mod create_view;
 
 /// Operation customization and supporting types.
@@ -173,6 +175,8 @@ pub mod customize;
 
 mod delete_index;
 
+mod delete_resource_explorer_setup;
+
 mod delete_view;
 
 mod disassociate_default_view;
@@ -185,6 +189,12 @@ mod get_index;
 
 mod get_managed_view;
 
+mod get_resource_explorer_setup;
+
+mod get_service_index;
+
+mod get_service_view;
+
 mod get_view;
 
 mod list_indexes;
@@ -194,6 +204,12 @@ mod list_indexes_for_members;
 mod list_managed_views;
 
 mod list_resources;
+
+mod list_service_indexes;
+
+mod list_service_views;
+
+mod list_streaming_access_for_services;
 
 mod list_supported_resource_types;
 

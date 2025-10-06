@@ -29,9 +29,13 @@ pub(crate) mod shape_batch_get_view;
 
 pub(crate) mod shape_create_index;
 
+pub(crate) mod shape_create_resource_explorer_setup;
+
 pub(crate) mod shape_create_view;
 
 pub(crate) mod shape_delete_index;
+
+pub(crate) mod shape_delete_resource_explorer_setup;
 
 pub(crate) mod shape_delete_view;
 
@@ -45,6 +49,12 @@ pub(crate) mod shape_get_index;
 
 pub(crate) mod shape_get_managed_view;
 
+pub(crate) mod shape_get_resource_explorer_setup;
+
+pub(crate) mod shape_get_service_index;
+
+pub(crate) mod shape_get_service_view;
+
 pub(crate) mod shape_get_view;
 
 pub(crate) mod shape_list_indexes;
@@ -54,6 +64,12 @@ pub(crate) mod shape_list_indexes_for_members;
 pub(crate) mod shape_list_managed_views;
 
 pub(crate) mod shape_list_resources;
+
+pub(crate) mod shape_list_service_indexes;
+
+pub(crate) mod shape_list_service_views;
+
+pub(crate) mod shape_list_streaming_access_for_services;
 
 pub(crate) mod shape_list_supported_resource_types;
 
@@ -89,13 +105,21 @@ pub(crate) mod shape_conflict_exception;
 
 pub(crate) mod shape_create_index_input;
 
+pub(crate) mod shape_create_resource_explorer_setup_input;
+
 pub(crate) mod shape_create_view_input;
 
 pub(crate) mod shape_delete_index_input;
 
+pub(crate) mod shape_delete_resource_explorer_setup_input;
+
 pub(crate) mod shape_delete_view_input;
 
 pub(crate) mod shape_get_managed_view_input;
+
+pub(crate) mod shape_get_resource_explorer_setup_input;
+
+pub(crate) mod shape_get_service_view_input;
 
 pub(crate) mod shape_get_view_input;
 
@@ -108,6 +132,12 @@ pub(crate) mod shape_list_indexes_input;
 pub(crate) mod shape_list_managed_views_input;
 
 pub(crate) mod shape_list_resources_input;
+
+pub(crate) mod shape_list_service_indexes_input;
+
+pub(crate) mod shape_list_service_views_input;
+
+pub(crate) mod shape_list_streaming_access_for_services_input;
 
 pub(crate) mod shape_list_supported_resource_types_input;
 
@@ -147,6 +177,8 @@ pub(crate) mod shape_org_configuration;
 
 pub(crate) mod shape_region_list;
 
+pub(crate) mod shape_region_status_list;
+
 pub(crate) mod shape_resource_count;
 
 pub(crate) mod shape_resource_list;
@@ -154,6 +186,12 @@ pub(crate) mod shape_resource_list;
 pub(crate) mod shape_resource_type_list;
 
 pub(crate) mod shape_search_filter;
+
+pub(crate) mod shape_service_view;
+
+pub(crate) mod shape_service_view_arn_list;
+
+pub(crate) mod shape_streaming_access_details_list;
 
 pub(crate) mod shape_tag_map;
 
@@ -173,12 +211,22 @@ pub(crate) mod shape_index;
 
 pub(crate) mod shape_member_index;
 
+pub(crate) mod shape_region_status;
+
 pub(crate) mod shape_resource;
+
+pub(crate) mod shape_streaming_access_details;
 
 pub(crate) mod shape_supported_resource_type;
 
 pub(crate) mod shape_validation_exception_field;
 
+pub(crate) mod shape_index_status;
+
 pub(crate) mod shape_resource_property_list;
+
+pub(crate) mod shape_view_status;
+
+pub(crate) mod shape_error_details;
 
 pub(crate) mod shape_resource_property;

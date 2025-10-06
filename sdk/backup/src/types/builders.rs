@@ -105,6 +105,8 @@ pub use crate::types::_backup_plan::BackupPlanBuilder;
 
 pub use crate::types::_backup_rule::BackupRuleBuilder;
 
+pub use crate::types::_scheduled_plan_execution_member::ScheduledPlanExecutionMemberBuilder;
+
 pub use crate::types::_latest_mpa_approval_team_update::LatestMpaApprovalTeamUpdateBuilder;
 
 pub use crate::types::_restore_testing_selection_for_create::RestoreTestingSelectionForCreateBuilder;

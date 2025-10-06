@@ -69,6 +69,10 @@ pub use crate::types::_reserved_nodes_offering::ReservedNodesOfferingBuilder;
 
 pub use crate::types::_parameter::ParameterBuilder;
 
+pub use crate::types::_multi_region_parameter::MultiRegionParameterBuilder;
+
+pub use crate::types::_multi_region_parameter_group::MultiRegionParameterGroupBuilder;
+
 pub use crate::types::_event::EventBuilder;
 
 pub use crate::types::_engine_version_info::EngineVersionInfoBuilder;

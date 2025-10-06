@@ -17,7 +17,19 @@ pub use crate::types::_resource_property::ResourcePropertyBuilder;
 
 pub use crate::types::_supported_resource_type::SupportedResourceTypeBuilder;
 
+pub use crate::types::_streaming_access_details::StreamingAccessDetailsBuilder;
+
 pub use crate::types::_member_index::MemberIndexBuilder;
+
+pub use crate::types::_service_view::ServiceViewBuilder;
+
+pub use crate::types::_region_status::RegionStatusBuilder;
+
+pub use crate::types::_view_status::ViewStatusBuilder;
+
+pub use crate::types::_error_details::ErrorDetailsBuilder;
+
+pub use crate::types::_index_status::IndexStatusBuilder;
 
 pub use crate::types::_managed_view::ManagedViewBuilder;
 

@@ -2119,6 +2119,8 @@ pub(crate) mod shape_key_schema_element_list;
 
 pub(crate) mod shape_kinesis_streaming_source_options;
 
+pub(crate) mod shape_labels;
+
 pub(crate) mod shape_list_of_string;
 
 pub(crate) mod shape_location_string_list;

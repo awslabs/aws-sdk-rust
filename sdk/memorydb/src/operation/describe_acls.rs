@@ -256,9 +256,9 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DescribeACLsE
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum DescribeACLsError {
-    /// <p></p>
+    /// <p>The specified ACL does not exist.</p>
     AclNotFoundFault(crate::types::error::AclNotFoundFault),
-    /// <p></p>
+    /// <p>The specified parameter combination is not valid.</p>
     InvalidParameterCombinationException(crate::types::error::InvalidParameterCombinationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

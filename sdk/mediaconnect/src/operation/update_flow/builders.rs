@@ -178,4 +178,18 @@ impl UpdateFlowFluentBuilder {
     pub fn get_ndi_config(&self) -> &::std::option::Option<crate::types::NdiConfig> {
         self.inner.get_ndi_config()
     }
+    /// <p>Determines the processing capacity and feature set of the flow.</p>
+    pub fn flow_size(mut self, input: crate::types::FlowSize) -> Self {
+        self.inner = self.inner.flow_size(input);
+        self
+    }
+    /// <p>Determines the processing capacity and feature set of the flow.</p>
+    pub fn set_flow_size(mut self, input: ::std::option::Option<crate::types::FlowSize>) -> Self {
+        self.inner = self.inner.set_flow_size(input);
+        self
+    }
+    /// <p>Determines the processing capacity and feature set of the flow.</p>
+    pub fn get_flow_size(&self) -> &::std::option::Option<crate::types::FlowSize> {
+        self.inner.get_flow_size()
+    }
 }

@@ -22,7 +22,7 @@ impl crate::operation::get_workload_access_token::builders::GetWorkloadAccessTok
 }
 /// Fluent builder constructing a request to `GetWorkloadAccessToken`.
 ///
-/// <p>Obtains an Workload access token for agentic workloads not acting on behalf of user.</p>
+/// <p>Obtains a workload access token for agentic workloads not acting on behalf of a user.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetWorkloadAccessTokenFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl GetWorkloadAccessTokenFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>Unique identifier for the registered agent</p>
+    /// <p>The unique identifier for the registered workload.</p>
     pub fn workload_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.workload_name(input.into());
         self
     }
-    /// <p>Unique identifier for the registered agent</p>
+    /// <p>The unique identifier for the registered workload.</p>
     pub fn set_workload_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_workload_name(input);
         self
     }
-    /// <p>Unique identifier for the registered agent</p>
+    /// <p>The unique identifier for the registered workload.</p>
     pub fn get_workload_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_workload_name()
     }

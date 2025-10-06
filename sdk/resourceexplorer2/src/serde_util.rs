@@ -17,6 +17,15 @@ pub(crate) fn conflict_exception_correct_errors(
     builder
 }
 
+pub(crate) fn create_resource_explorer_setup_output_output_correct_errors(
+    mut builder: crate::operation::create_resource_explorer_setup::builders::CreateResourceExplorerSetupOutputBuilder,
+) -> crate::operation::create_resource_explorer_setup::builders::CreateResourceExplorerSetupOutputBuilder {
+    if builder.task_id.is_none() {
+        builder.task_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn service_quota_exceeded_exception_correct_errors(
     mut builder: crate::types::error::builders::ServiceQuotaExceededExceptionBuilder,
 ) -> crate::types::error::builders::ServiceQuotaExceededExceptionBuilder {
@@ -28,6 +37,43 @@ pub(crate) fn service_quota_exceeded_exception_correct_errors(
     }
     if builder.value.is_none() {
         builder.value = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn delete_resource_explorer_setup_output_output_correct_errors(
+    mut builder: crate::operation::delete_resource_explorer_setup::builders::DeleteResourceExplorerSetupOutputBuilder,
+) -> crate::operation::delete_resource_explorer_setup::builders::DeleteResourceExplorerSetupOutputBuilder {
+    if builder.task_id.is_none() {
+        builder.task_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn get_service_view_output_output_correct_errors(
+    mut builder: crate::operation::get_service_view::builders::GetServiceViewOutputBuilder,
+) -> crate::operation::get_service_view::builders::GetServiceViewOutputBuilder {
+    if builder.view.is_none() {
+        builder.view = {
+            let builder = crate::types::builders::ServiceViewBuilder::default();
+            crate::serde_util::service_view_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn list_streaming_access_for_services_output_output_correct_errors(
+    mut builder: crate::operation::list_streaming_access_for_services::builders::ListStreamingAccessForServicesOutputBuilder,
+) -> crate::operation::list_streaming_access_for_services::builders::ListStreamingAccessForServicesOutputBuilder {
+    if builder.streaming_access_for_services.is_none() {
+        builder.streaming_access_for_services = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn service_view_correct_errors(mut builder: crate::types::builders::ServiceViewBuilder) -> crate::types::builders::ServiceViewBuilder {
+    if builder.service_view_arn.is_none() {
+        builder.service_view_arn = Some(Default::default())
     }
     builder
 }
@@ -56,6 +102,18 @@ pub(crate) fn batch_get_view_error_correct_errors(
 pub(crate) fn search_filter_correct_errors(mut builder: crate::types::builders::SearchFilterBuilder) -> crate::types::builders::SearchFilterBuilder {
     if builder.filter_string.is_none() {
         builder.filter_string = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn streaming_access_details_correct_errors(
+    mut builder: crate::types::builders::StreamingAccessDetailsBuilder,
+) -> crate::types::builders::StreamingAccessDetailsBuilder {
+    if builder.service_principal.is_none() {
+        builder.service_principal = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }

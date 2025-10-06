@@ -254,17 +254,17 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateUserEnd
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum CreateUserError {
-    /// <p></p>
+    /// <p>A user with the specified name already exists.</p>
     DuplicateUserNameFault(crate::types::error::DuplicateUserNameFault),
-    /// <p></p>
+    /// <p>The specified parameter combination is not valid.</p>
     InvalidParameterCombinationException(crate::types::error::InvalidParameterCombinationException),
-    /// <p></p>
+    /// <p>The specified parameter value is not valid.</p>
     InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
-    /// <p></p>
+    /// <p>The request cannot be processed because it would exceed the maximum number of tags allowed per resource.</p>
     TagQuotaPerResourceExceeded(crate::types::error::TagQuotaPerResourceExceeded),
-    /// <p></p>
+    /// <p>A user with the specified name already exists.</p>
     UserAlreadyExistsFault(crate::types::error::UserAlreadyExistsFault),
-    /// <p></p>
+    /// <p>The request cannot be processed because it would exceed the maximum number of users allowed.</p>
     UserQuotaExceededFault(crate::types::error::UserQuotaExceededFault),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetWorkloadAccessTokenForUserIdOutput {
-    /// <p>The workload access token of the named workload.</p>
+    /// <p>The access token for the specified workload.</p>
     pub workload_access_token: ::std::string::String,
     _request_id: Option<String>,
 }
 impl GetWorkloadAccessTokenForUserIdOutput {
-    /// <p>The workload access token of the named workload.</p>
+    /// <p>The access token for the specified workload.</p>
     pub fn workload_access_token(&self) -> &str {
         use std::ops::Deref;
         self.workload_access_token.deref()
@@ -42,18 +42,18 @@ pub struct GetWorkloadAccessTokenForUserIdOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetWorkloadAccessTokenForUserIdOutputBuilder {
-    /// <p>The workload access token of the named workload.</p>
+    /// <p>The access token for the specified workload.</p>
     /// This field is required.
     pub fn workload_access_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workload_access_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The workload access token of the named workload.</p>
+    /// <p>The access token for the specified workload.</p>
     pub fn set_workload_access_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workload_access_token = input;
         self
     }
-    /// <p>The workload access token of the named workload.</p>
+    /// <p>The access token for the specified workload.</p>
     pub fn get_workload_access_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.workload_access_token
     }

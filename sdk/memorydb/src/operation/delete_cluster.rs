@@ -256,17 +256,17 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DeleteCluster
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum DeleteClusterError {
-    /// <p></p>
+    /// <p>The specified cluster does not exist.</p>
     ClusterNotFoundFault(crate::types::error::ClusterNotFoundFault),
-    /// <p></p>
+    /// <p>The cluster is not in a valid state for the requested operation.</p>
     InvalidClusterStateFault(crate::types::error::InvalidClusterStateFault),
-    /// <p></p>
+    /// <p>The specified parameter combination is not valid.</p>
     InvalidParameterCombinationException(crate::types::error::InvalidParameterCombinationException),
-    /// <p></p>
+    /// <p>The specified parameter value is not valid.</p>
     InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
-    /// <p></p>
+    /// <p>The required service-linked role was not found.</p>
     ServiceLinkedRoleNotFoundFault(crate::types::error::ServiceLinkedRoleNotFoundFault),
-    /// <p></p>
+    /// <p>A snapshot with the specified name already exists.</p>
     SnapshotAlreadyExistsFault(crate::types::error::SnapshotAlreadyExistsFault),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

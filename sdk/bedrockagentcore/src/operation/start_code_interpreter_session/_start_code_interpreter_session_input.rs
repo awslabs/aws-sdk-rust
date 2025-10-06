@@ -7,7 +7,7 @@ pub struct StartCodeInterpreterSessionInput {
     pub code_interpreter_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The name of the code interpreter session. This name helps you identify and manage the session. The name does not need to be unique.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The time in seconds after which the session automatically terminates if there is no activity. The default value is 3600 seconds (1 hour). The minimum allowed value is 60 seconds, and the maximum allowed value is 28800 seconds (8 hours).</p>
+    /// <p>The time in seconds after which the session automatically terminates if there is no activity. The default value is 900 seconds (15 minutes). The minimum allowed value is 60 seconds, and the maximum allowed value is 28800 seconds (8 hours).</p>
     pub session_timeout_seconds: ::std::option::Option<i32>,
     /// <p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error. This parameter helps prevent the creation of duplicate sessions if there are temporary network issues.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
@@ -21,7 +21,7 @@ impl StartCodeInterpreterSessionInput {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The time in seconds after which the session automatically terminates if there is no activity. The default value is 3600 seconds (1 hour). The minimum allowed value is 60 seconds, and the maximum allowed value is 28800 seconds (8 hours).</p>
+    /// <p>The time in seconds after which the session automatically terminates if there is no activity. The default value is 900 seconds (15 minutes). The minimum allowed value is 60 seconds, and the maximum allowed value is 28800 seconds (8 hours).</p>
     pub fn session_timeout_seconds(&self) -> ::std::option::Option<i32> {
         self.session_timeout_seconds
     }
@@ -76,17 +76,17 @@ impl StartCodeInterpreterSessionInputBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The time in seconds after which the session automatically terminates if there is no activity. The default value is 3600 seconds (1 hour). The minimum allowed value is 60 seconds, and the maximum allowed value is 28800 seconds (8 hours).</p>
+    /// <p>The time in seconds after which the session automatically terminates if there is no activity. The default value is 900 seconds (15 minutes). The minimum allowed value is 60 seconds, and the maximum allowed value is 28800 seconds (8 hours).</p>
     pub fn session_timeout_seconds(mut self, input: i32) -> Self {
         self.session_timeout_seconds = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time in seconds after which the session automatically terminates if there is no activity. The default value is 3600 seconds (1 hour). The minimum allowed value is 60 seconds, and the maximum allowed value is 28800 seconds (8 hours).</p>
+    /// <p>The time in seconds after which the session automatically terminates if there is no activity. The default value is 900 seconds (15 minutes). The minimum allowed value is 60 seconds, and the maximum allowed value is 28800 seconds (8 hours).</p>
     pub fn set_session_timeout_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.session_timeout_seconds = input;
         self
     }
-    /// <p>The time in seconds after which the session automatically terminates if there is no activity. The default value is 3600 seconds (1 hour). The minimum allowed value is 60 seconds, and the maximum allowed value is 28800 seconds (8 hours).</p>
+    /// <p>The time in seconds after which the session automatically terminates if there is no activity. The default value is 900 seconds (15 minutes). The minimum allowed value is 60 seconds, and the maximum allowed value is 28800 seconds (8 hours).</p>
     pub fn get_session_timeout_seconds(&self) -> &::std::option::Option<i32> {
         &self.session_timeout_seconds
     }

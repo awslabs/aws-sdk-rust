@@ -22,7 +22,7 @@ impl crate::operation::get_workload_access_token_for_user_id::builders::GetWorkl
 }
 /// Fluent builder constructing a request to `GetWorkloadAccessTokenForUserId`.
 ///
-/// <p>Obtains an Workload access token for agentic workloads acting on behalf of user with User Id.</p>
+/// <p>Obtains a workload access token for agentic workloads acting on behalf of a user, using the user's ID.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetWorkloadAccessTokenForUserIdFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl GetWorkloadAccessTokenForUserIdFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the worklaod you want to get the access token of.</p>
+    /// <p>The name of the workload from which you want to retrieve the access token.</p>
     pub fn workload_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.workload_name(input.into());
         self
     }
-    /// <p>The name of the worklaod you want to get the access token of.</p>
+    /// <p>The name of the workload from which you want to retrieve the access token.</p>
     pub fn set_workload_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_workload_name(input);
         self
     }
-    /// <p>The name of the worklaod you want to get the access token of.</p>
+    /// <p>The name of the workload from which you want to retrieve the access token.</p>
     pub fn get_workload_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_workload_name()
     }
-    /// <p>The user id of the user you are retrieving the access token for.</p>
+    /// <p>The ID of the user for whom you are retrieving the access token.</p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_id(input.into());
         self
     }
-    /// <p>The user id of the user you are retrieving the access token for.</p>
+    /// <p>The ID of the user for whom you are retrieving the access token.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_id(input);
         self
     }
-    /// <p>The user id of the user you are retrieving the access token for.</p>
+    /// <p>The ID of the user for whom you are retrieving the access token.</p>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_user_id()
     }

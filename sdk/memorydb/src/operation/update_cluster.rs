@@ -256,37 +256,37 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UpdateCluster
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum UpdateClusterError {
-    /// <p></p>
+    /// <p>The specified ACL does not exist.</p>
     AclNotFoundFault(crate::types::error::AclNotFoundFault),
-    /// <p></p>
+    /// <p>The specified cluster does not exist.</p>
     ClusterNotFoundFault(crate::types::error::ClusterNotFoundFault),
-    /// <p></p>
+    /// <p>The request cannot be processed because it would exceed the maximum number of clusters allowed for this customer.</p>
     ClusterQuotaForCustomerExceededFault(crate::types::error::ClusterQuotaForCustomerExceededFault),
-    /// <p></p>
+    /// <p>The ACL is not in a valid state for the requested operation.</p>
     InvalidAclStateFault(crate::types::error::InvalidAclStateFault),
-    /// <p></p>
+    /// <p>The cluster is not in a valid state for the requested operation.</p>
     InvalidClusterStateFault(crate::types::error::InvalidClusterStateFault),
-    /// <p></p>
+    /// <p>The specified KMS key is not valid or accessible.</p>
     InvalidKmsKeyFault(crate::types::error::InvalidKmsKeyFault),
-    /// <p></p>
+    /// <p>The node is not in a valid state for the requested operation.</p>
     InvalidNodeStateFault(crate::types::error::InvalidNodeStateFault),
-    /// <p></p>
+    /// <p>The specified parameter combination is not valid.</p>
     InvalidParameterCombinationException(crate::types::error::InvalidParameterCombinationException),
-    /// <p></p>
+    /// <p>The specified parameter value is not valid.</p>
     InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
-    /// <p></p>
+    /// <p>The VPC network is not in a valid state for the requested operation.</p>
     InvalidVpcNetworkStateFault(crate::types::error::InvalidVpcNetworkStateFault),
-    /// <p></p>
+    /// <p>The request cannot be processed because it would exceed the maximum number of nodes allowed for this cluster.</p>
     NodeQuotaForClusterExceededFault(crate::types::error::NodeQuotaForClusterExceededFault),
-    /// <p></p>
+    /// <p>The request cannot be processed because it would exceed the maximum number of nodes allowed for this customer.</p>
     NodeQuotaForCustomerExceededFault(crate::types::error::NodeQuotaForCustomerExceededFault),
-    /// <p></p>
+    /// <p>The requested operation would result in no changes.</p>
     NoOperationFault(crate::types::error::NoOperationFault),
-    /// <p></p>
+    /// <p>The specified parameter group does not exist.</p>
     ParameterGroupNotFoundFault(crate::types::error::ParameterGroupNotFoundFault),
-    /// <p></p>
+    /// <p>The required service-linked role was not found.</p>
     ServiceLinkedRoleNotFoundFault(crate::types::error::ServiceLinkedRoleNotFoundFault),
-    /// <p></p>
+    /// <p>The request cannot be processed because it would exceed the maximum number of shards allowed per cluster.</p>
     ShardsPerClusterQuotaExceededFault(crate::types::error::ShardsPerClusterQuotaExceededFault),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

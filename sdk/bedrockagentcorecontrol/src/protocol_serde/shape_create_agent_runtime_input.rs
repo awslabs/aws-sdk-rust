@@ -34,36 +34,42 @@ pub fn ser_create_agent_runtime_input_input(
         }
         object_9.finish();
     }
-    if let Some(var_12) = &input.network_configuration {
+    if let Some(var_12) = &input.lifecycle_configuration {
         #[allow(unused_mut)]
-        let mut object_13 = object.key("networkConfiguration").start_object();
-        crate::protocol_serde::shape_network_configuration::ser_network_configuration(&mut object_13, var_12)?;
+        let mut object_13 = object.key("lifecycleConfiguration").start_object();
+        crate::protocol_serde::shape_lifecycle_configuration::ser_lifecycle_configuration(&mut object_13, var_12)?;
         object_13.finish();
     }
-    if let Some(var_14) = &input.protocol_configuration {
+    if let Some(var_14) = &input.network_configuration {
         #[allow(unused_mut)]
-        let mut object_15 = object.key("protocolConfiguration").start_object();
-        crate::protocol_serde::shape_protocol_configuration::ser_protocol_configuration(&mut object_15, var_14)?;
+        let mut object_15 = object.key("networkConfiguration").start_object();
+        crate::protocol_serde::shape_network_configuration::ser_network_configuration(&mut object_15, var_14)?;
         object_15.finish();
     }
-    if let Some(var_16) = &input.request_header_configuration {
+    if let Some(var_16) = &input.protocol_configuration {
         #[allow(unused_mut)]
-        let mut object_17 = object.key("requestHeaderConfiguration").start_object();
-        crate::protocol_serde::shape_request_header_configuration::ser_request_header_configuration(&mut object_17, var_16)?;
+        let mut object_17 = object.key("protocolConfiguration").start_object();
+        crate::protocol_serde::shape_protocol_configuration::ser_protocol_configuration(&mut object_17, var_16)?;
         object_17.finish();
     }
-    if let Some(var_18) = &input.role_arn {
-        object.key("roleArn").string(var_18.as_str());
-    }
-    if let Some(var_19) = &input.tags {
+    if let Some(var_18) = &input.request_header_configuration {
         #[allow(unused_mut)]
-        let mut object_20 = object.key("tags").start_object();
-        for (key_21, value_22) in var_19 {
+        let mut object_19 = object.key("requestHeaderConfiguration").start_object();
+        crate::protocol_serde::shape_request_header_configuration::ser_request_header_configuration(&mut object_19, var_18)?;
+        object_19.finish();
+    }
+    if let Some(var_20) = &input.role_arn {
+        object.key("roleArn").string(var_20.as_str());
+    }
+    if let Some(var_21) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_22 = object.key("tags").start_object();
+        for (key_23, value_24) in var_21 {
             {
-                object_20.key(key_21.as_str()).string(value_22.as_str());
+                object_22.key(key_23.as_str()).string(value_24.as_str());
             }
         }
-        object_20.finish();
+        object_22.finish();
     }
     Ok(())
 }

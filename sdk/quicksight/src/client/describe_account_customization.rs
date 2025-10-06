@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`arn(Option<String>)`](crate::operation::describe_account_customization::DescribeAccountCustomizationOutput::arn): <p>The Amazon Resource Name (ARN) of the customization that's associated with this Amazon Web Services account.</p>
     ///   - [`aws_account_id(Option<String>)`](crate::operation::describe_account_customization::DescribeAccountCustomizationOutput::aws_account_id): <p>The ID for the Amazon Web Services account that you're describing.</p>
     ///   - [`namespace(Option<String>)`](crate::operation::describe_account_customization::DescribeAccountCustomizationOutput::namespace): <p>The QuickSight namespace that you're describing.</p>
-    ///   - [`account_customization(Option<AccountCustomization>)`](crate::operation::describe_account_customization::DescribeAccountCustomizationOutput::account_customization): <p>The QuickSight customizations that exist in the current Amazon Web Services Region.</p>
+    ///   - [`account_customization(Option<AccountCustomization>)`](crate::operation::describe_account_customization::DescribeAccountCustomizationOutput::account_customization): <p>The QuickSight customizations that exist.</p>
     ///   - [`request_id(Option<String>)`](crate::operation::describe_account_customization::DescribeAccountCustomizationOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`status(i32)`](crate::operation::describe_account_customization::DescribeAccountCustomizationOutput::status): <p>The HTTP status of the request.</p>
     /// - On failure, responds with [`SdkError<DescribeAccountCustomizationError>`](crate::operation::describe_account_customization::DescribeAccountCustomizationError)

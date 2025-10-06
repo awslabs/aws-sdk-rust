@@ -7,6 +7,8 @@ pub struct GetBackupPlanInput {
     pub backup_plan_id: ::std::option::Option<::std::string::String>,
     /// <p>Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. Version IDs cannot be edited.</p>
     pub version_id: ::std::option::Option<::std::string::String>,
+    /// <p>Number of future scheduled backup runs to preview. When set to 0 (default), no scheduled runs preview is included in the response. Valid range is 0-10.</p>
+    pub max_scheduled_runs_preview: ::std::option::Option<i32>,
 }
 impl GetBackupPlanInput {
     /// <p>Uniquely identifies a backup plan.</p>
@@ -16,6 +18,10 @@ impl GetBackupPlanInput {
     /// <p>Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. Version IDs cannot be edited.</p>
     pub fn version_id(&self) -> ::std::option::Option<&str> {
         self.version_id.as_deref()
+    }
+    /// <p>Number of future scheduled backup runs to preview. When set to 0 (default), no scheduled runs preview is included in the response. Valid range is 0-10.</p>
+    pub fn max_scheduled_runs_preview(&self) -> ::std::option::Option<i32> {
+        self.max_scheduled_runs_preview
     }
 }
 impl GetBackupPlanInput {
@@ -31,6 +37,7 @@ impl GetBackupPlanInput {
 pub struct GetBackupPlanInputBuilder {
     pub(crate) backup_plan_id: ::std::option::Option<::std::string::String>,
     pub(crate) version_id: ::std::option::Option<::std::string::String>,
+    pub(crate) max_scheduled_runs_preview: ::std::option::Option<i32>,
 }
 impl GetBackupPlanInputBuilder {
     /// <p>Uniquely identifies a backup plan.</p>
@@ -62,6 +69,20 @@ impl GetBackupPlanInputBuilder {
     pub fn get_version_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.version_id
     }
+    /// <p>Number of future scheduled backup runs to preview. When set to 0 (default), no scheduled runs preview is included in the response. Valid range is 0-10.</p>
+    pub fn max_scheduled_runs_preview(mut self, input: i32) -> Self {
+        self.max_scheduled_runs_preview = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Number of future scheduled backup runs to preview. When set to 0 (default), no scheduled runs preview is included in the response. Valid range is 0-10.</p>
+    pub fn set_max_scheduled_runs_preview(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.max_scheduled_runs_preview = input;
+        self
+    }
+    /// <p>Number of future scheduled backup runs to preview. When set to 0 (default), no scheduled runs preview is included in the response. Valid range is 0-10.</p>
+    pub fn get_max_scheduled_runs_preview(&self) -> &::std::option::Option<i32> {
+        &self.max_scheduled_runs_preview
+    }
     /// Consumes the builder and constructs a [`GetBackupPlanInput`](crate::operation::get_backup_plan::GetBackupPlanInput).
     pub fn build(
         self,
@@ -69,6 +90,7 @@ impl GetBackupPlanInputBuilder {
         ::std::result::Result::Ok(crate::operation::get_backup_plan::GetBackupPlanInput {
             backup_plan_id: self.backup_plan_id,
             version_id: self.version_id,
+            max_scheduled_runs_preview: self.max_scheduled_runs_preview,
         })
     }
 }

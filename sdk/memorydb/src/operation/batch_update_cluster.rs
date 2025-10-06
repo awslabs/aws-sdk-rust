@@ -260,9 +260,9 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for BatchUpdateCl
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum BatchUpdateClusterError {
-    /// <p></p>
+    /// <p>The specified parameter value is not valid.</p>
     InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
-    /// <p></p>
+    /// <p>The specified service update does not exist.</p>
     ServiceUpdateNotFoundFault(crate::types::error::ServiceUpdateNotFoundFault),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

@@ -254,11 +254,11 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DeleteACLEndp
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum DeleteACLError {
-    /// <p></p>
+    /// <p>The specified ACL does not exist.</p>
     AclNotFoundFault(crate::types::error::AclNotFoundFault),
-    /// <p></p>
+    /// <p>The ACL is not in a valid state for the requested operation.</p>
     InvalidAclStateFault(crate::types::error::InvalidAclStateFault),
-    /// <p></p>
+    /// <p>The specified parameter value is not valid.</p>
     InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

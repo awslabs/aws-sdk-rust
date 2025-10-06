@@ -36,5 +36,15 @@ pub fn ser_create_memory_input_input(
     if let Some(var_10) = &input.name {
         object.key("name").string(var_10.as_str());
     }
+    if let Some(var_11) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_12 = object.key("tags").start_object();
+        for (key_13, value_14) in var_11 {
+            {
+                object_12.key(key_13.as_str()).string(value_14.as_str());
+            }
+        }
+        object_12.finish();
+    }
     Ok(())
 }

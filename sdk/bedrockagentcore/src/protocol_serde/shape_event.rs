@@ -54,6 +54,9 @@ where
                         "branch" => {
                             builder = builder.set_branch(crate::protocol_serde::shape_branch::de_branch(tokens)?);
                         }
+                        "metadata" => {
+                            builder = builder.set_metadata(crate::protocol_serde::shape_metadata_map::de_metadata_map(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

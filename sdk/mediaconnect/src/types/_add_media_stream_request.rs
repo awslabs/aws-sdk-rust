@@ -18,6 +18,8 @@ pub struct AddMediaStreamRequest {
     pub media_stream_type: ::std::option::Option<crate::types::MediaStreamType>,
     /// <p>The resolution of the video.</p>
     pub video_format: ::std::option::Option<::std::string::String>,
+    /// <p>The key-value pairs that can be used to tag and organize the media stream.</p>
+    pub media_stream_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl AddMediaStreamRequest {
     /// <p>The attributes that you want to assign to the new media stream.</p>
@@ -48,6 +50,10 @@ impl AddMediaStreamRequest {
     pub fn video_format(&self) -> ::std::option::Option<&str> {
         self.video_format.as_deref()
     }
+    /// <p>The key-value pairs that can be used to tag and organize the media stream.</p>
+    pub fn media_stream_tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.media_stream_tags.as_ref()
+    }
 }
 impl AddMediaStreamRequest {
     /// Creates a new builder-style object to manufacture [`AddMediaStreamRequest`](crate::types::AddMediaStreamRequest).
@@ -67,6 +73,7 @@ pub struct AddMediaStreamRequestBuilder {
     pub(crate) media_stream_name: ::std::option::Option<::std::string::String>,
     pub(crate) media_stream_type: ::std::option::Option<crate::types::MediaStreamType>,
     pub(crate) video_format: ::std::option::Option<::std::string::String>,
+    pub(crate) media_stream_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl AddMediaStreamRequestBuilder {
     /// <p>The attributes that you want to assign to the new media stream.</p>
@@ -170,6 +177,33 @@ impl AddMediaStreamRequestBuilder {
     pub fn get_video_format(&self) -> &::std::option::Option<::std::string::String> {
         &self.video_format
     }
+    /// Adds a key-value pair to `media_stream_tags`.
+    ///
+    /// To override the contents of this collection use [`set_media_stream_tags`](Self::set_media_stream_tags).
+    ///
+    /// <p>The key-value pairs that can be used to tag and organize the media stream.</p>
+    pub fn media_stream_tags(
+        mut self,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        let mut hash_map = self.media_stream_tags.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.media_stream_tags = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>The key-value pairs that can be used to tag and organize the media stream.</p>
+    pub fn set_media_stream_tags(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    ) -> Self {
+        self.media_stream_tags = input;
+        self
+    }
+    /// <p>The key-value pairs that can be used to tag and organize the media stream.</p>
+    pub fn get_media_stream_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.media_stream_tags
+    }
     /// Consumes the builder and constructs a [`AddMediaStreamRequest`](crate::types::AddMediaStreamRequest).
     pub fn build(self) -> crate::types::AddMediaStreamRequest {
         crate::types::AddMediaStreamRequest {
@@ -180,6 +214,7 @@ impl AddMediaStreamRequestBuilder {
             media_stream_name: self.media_stream_name,
             media_stream_type: self.media_stream_type,
             video_format: self.video_format,
+            media_stream_tags: self.media_stream_tags,
         }
     }
 }

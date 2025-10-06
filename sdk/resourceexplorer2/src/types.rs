@@ -21,7 +21,21 @@ pub use crate::types::_resource_property::ResourceProperty;
 
 pub use crate::types::_supported_resource_type::SupportedResourceType;
 
+pub use crate::types::_streaming_access_details::StreamingAccessDetails;
+
 pub use crate::types::_member_index::MemberIndex;
+
+pub use crate::types::_service_view::ServiceView;
+
+pub use crate::types::_region_status::RegionStatus;
+
+pub use crate::types::_view_status::ViewStatus;
+
+pub use crate::types::_error_details::ErrorDetails;
+
+pub use crate::types::_operation_status::OperationStatus;
+
+pub use crate::types::_index_status::IndexStatus;
 
 pub use crate::types::_managed_view::ManagedView;
 
@@ -35,11 +49,15 @@ mod _aws_service_access_status;
 
 mod _batch_get_view_error;
 
+mod _error_details;
+
 mod _included_property;
 
 mod _index;
 
 mod _index_state;
+
+mod _index_status;
 
 mod _index_type;
 
@@ -47,7 +65,11 @@ mod _managed_view;
 
 mod _member_index;
 
+mod _operation_status;
+
 mod _org_configuration;
+
+mod _region_status;
 
 mod _resource;
 
@@ -57,11 +79,17 @@ mod _resource_property;
 
 mod _search_filter;
 
+mod _service_view;
+
+mod _streaming_access_details;
+
 mod _supported_resource_type;
 
 mod _validation_exception_field;
 
 mod _view;
+
+mod _view_status;
 
 /// Builders
 pub mod builders;

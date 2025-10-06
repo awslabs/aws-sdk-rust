@@ -256,41 +256,41 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateCluster
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum CreateClusterError {
-    /// <p></p>
+    /// <p>The specified ACL does not exist.</p>
     AclNotFoundFault(crate::types::error::AclNotFoundFault),
-    /// <p></p>
+    /// <p>A cluster with the specified name already exists.</p>
     ClusterAlreadyExistsFault(crate::types::error::ClusterAlreadyExistsFault),
-    /// <p></p>
+    /// <p>The request cannot be processed because it would exceed the maximum number of clusters allowed for this customer.</p>
     ClusterQuotaForCustomerExceededFault(crate::types::error::ClusterQuotaForCustomerExceededFault),
-    /// <p></p>
+    /// <p>The cluster does not have sufficient capacity to perform the requested operation.</p>
     InsufficientClusterCapacityFault(crate::types::error::InsufficientClusterCapacityFault),
-    /// <p></p>
+    /// <p>The ACL is not in a valid state for the requested operation.</p>
     InvalidAclStateFault(crate::types::error::InvalidAclStateFault),
-    /// <p></p>
+    /// <p>The provided credentials are not valid.</p>
     InvalidCredentialsException(crate::types::error::InvalidCredentialsException),
     /// <p>The requested operation cannot be performed on the multi-Region cluster in its current state.</p>
     InvalidMultiRegionClusterStateFault(crate::types::error::InvalidMultiRegionClusterStateFault),
-    /// <p></p>
+    /// <p>The specified parameter combination is not valid.</p>
     InvalidParameterCombinationException(crate::types::error::InvalidParameterCombinationException),
-    /// <p></p>
+    /// <p>The specified parameter value is not valid.</p>
     InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
-    /// <p></p>
+    /// <p>The VPC network is not in a valid state for the requested operation.</p>
     InvalidVpcNetworkStateFault(crate::types::error::InvalidVpcNetworkStateFault),
     /// <p>The specified multi-Region cluster does not exist.</p>
     MultiRegionClusterNotFoundFault(crate::types::error::MultiRegionClusterNotFoundFault),
-    /// <p></p>
+    /// <p>The request cannot be processed because it would exceed the maximum number of nodes allowed for this cluster.</p>
     NodeQuotaForClusterExceededFault(crate::types::error::NodeQuotaForClusterExceededFault),
-    /// <p></p>
+    /// <p>The request cannot be processed because it would exceed the maximum number of nodes allowed for this customer.</p>
     NodeQuotaForCustomerExceededFault(crate::types::error::NodeQuotaForCustomerExceededFault),
-    /// <p></p>
+    /// <p>The specified parameter group does not exist.</p>
     ParameterGroupNotFoundFault(crate::types::error::ParameterGroupNotFoundFault),
-    /// <p></p>
+    /// <p>The required service-linked role was not found.</p>
     ServiceLinkedRoleNotFoundFault(crate::types::error::ServiceLinkedRoleNotFoundFault),
-    /// <p></p>
+    /// <p>The request cannot be processed because it would exceed the maximum number of shards allowed per cluster.</p>
     ShardsPerClusterQuotaExceededFault(crate::types::error::ShardsPerClusterQuotaExceededFault),
-    /// <p></p>
+    /// <p>The specified subnet group does not exist.</p>
     SubnetGroupNotFoundFault(crate::types::error::SubnetGroupNotFoundFault),
-    /// <p></p>
+    /// <p>The request cannot be processed because it would exceed the maximum number of tags allowed per resource.</p>
     TagQuotaPerResourceExceeded(crate::types::error::TagQuotaPerResourceExceeded),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

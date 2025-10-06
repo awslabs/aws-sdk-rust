@@ -24,5 +24,15 @@ pub fn ser_vpc_interface_request(
     if let Some(var_7) = &input.subnet_id {
         object.key("subnetId").string(var_7.as_str());
     }
+    if let Some(var_8) = &input.vpc_interface_tags {
+        #[allow(unused_mut)]
+        let mut object_9 = object.key("vpcInterfaceTags").start_object();
+        for (key_10, value_11) in var_8 {
+            {
+                object_9.key(key_10.as_str()).string(value_11.as_str());
+            }
+        }
+        object_9.finish();
+    }
     Ok(())
 }

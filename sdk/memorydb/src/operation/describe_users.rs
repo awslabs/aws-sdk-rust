@@ -256,9 +256,9 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DescribeUsers
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum DescribeUsersError {
-    /// <p></p>
+    /// <p>The specified parameter combination is not valid.</p>
     InvalidParameterCombinationException(crate::types::error::InvalidParameterCombinationException),
-    /// <p></p>
+    /// <p>The specified user does not exist.</p>
     UserNotFoundFault(crate::types::error::UserNotFoundFault),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

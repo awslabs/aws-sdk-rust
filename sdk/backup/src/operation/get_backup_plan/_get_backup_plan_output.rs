@@ -21,6 +21,8 @@ pub struct GetBackupPlanOutput {
     pub last_execution_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Contains a list of <code>BackupOptions</code> for each resource type. The list is populated only if the advanced option is set for the backup plan.</p>
     pub advanced_backup_settings: ::std::option::Option<::std::vec::Vec<crate::types::AdvancedBackupSetting>>,
+    /// <p>List of upcoming scheduled backup runs. Only included when <code>MaxScheduledRunsPreview</code> parameter is greater than 0. Contains up to 10 future backup executions with their scheduled times, execution types, and associated rule IDs.</p>
+    pub scheduled_runs_preview: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledPlanExecutionMember>>,
     _request_id: Option<String>,
 }
 impl GetBackupPlanOutput {
@@ -62,6 +64,12 @@ impl GetBackupPlanOutput {
     pub fn advanced_backup_settings(&self) -> &[crate::types::AdvancedBackupSetting] {
         self.advanced_backup_settings.as_deref().unwrap_or_default()
     }
+    /// <p>List of upcoming scheduled backup runs. Only included when <code>MaxScheduledRunsPreview</code> parameter is greater than 0. Contains up to 10 future backup executions with their scheduled times, execution types, and associated rule IDs.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.scheduled_runs_preview.is_none()`.
+    pub fn scheduled_runs_preview(&self) -> &[crate::types::ScheduledPlanExecutionMember] {
+        self.scheduled_runs_preview.as_deref().unwrap_or_default()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetBackupPlanOutput {
     fn request_id(&self) -> Option<&str> {
@@ -88,6 +96,7 @@ pub struct GetBackupPlanOutputBuilder {
     pub(crate) deletion_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_execution_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) advanced_backup_settings: ::std::option::Option<::std::vec::Vec<crate::types::AdvancedBackupSetting>>,
+    pub(crate) scheduled_runs_preview: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledPlanExecutionMember>>,
     _request_id: Option<String>,
 }
 impl GetBackupPlanOutputBuilder {
@@ -223,6 +232,26 @@ impl GetBackupPlanOutputBuilder {
     pub fn get_advanced_backup_settings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AdvancedBackupSetting>> {
         &self.advanced_backup_settings
     }
+    /// Appends an item to `scheduled_runs_preview`.
+    ///
+    /// To override the contents of this collection use [`set_scheduled_runs_preview`](Self::set_scheduled_runs_preview).
+    ///
+    /// <p>List of upcoming scheduled backup runs. Only included when <code>MaxScheduledRunsPreview</code> parameter is greater than 0. Contains up to 10 future backup executions with their scheduled times, execution types, and associated rule IDs.</p>
+    pub fn scheduled_runs_preview(mut self, input: crate::types::ScheduledPlanExecutionMember) -> Self {
+        let mut v = self.scheduled_runs_preview.unwrap_or_default();
+        v.push(input);
+        self.scheduled_runs_preview = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>List of upcoming scheduled backup runs. Only included when <code>MaxScheduledRunsPreview</code> parameter is greater than 0. Contains up to 10 future backup executions with their scheduled times, execution types, and associated rule IDs.</p>
+    pub fn set_scheduled_runs_preview(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledPlanExecutionMember>>) -> Self {
+        self.scheduled_runs_preview = input;
+        self
+    }
+    /// <p>List of upcoming scheduled backup runs. Only included when <code>MaxScheduledRunsPreview</code> parameter is greater than 0. Contains up to 10 future backup executions with their scheduled times, execution types, and associated rule IDs.</p>
+    pub fn get_scheduled_runs_preview(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ScheduledPlanExecutionMember>> {
+        &self.scheduled_runs_preview
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -244,6 +273,7 @@ impl GetBackupPlanOutputBuilder {
             deletion_date: self.deletion_date,
             last_execution_date: self.last_execution_date,
             advanced_backup_settings: self.advanced_backup_settings,
+            scheduled_runs_preview: self.scheduled_runs_preview,
             _request_id: self._request_id,
         }
     }

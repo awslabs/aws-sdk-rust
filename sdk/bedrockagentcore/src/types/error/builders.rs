@@ -19,6 +19,6 @@ pub use crate::types::error::_internal_server_exception::InternalServerException
 
 pub use crate::types::error::_conflict_exception::ConflictExceptionBuilder;
 
-pub use crate::types::error::_runtime_client_error::RuntimeClientErrorBuilder;
-
 pub use crate::types::error::_unauthorized_exception::UnauthorizedExceptionBuilder;
+
+pub use crate::types::error::_runtime_client_error::RuntimeClientErrorBuilder;

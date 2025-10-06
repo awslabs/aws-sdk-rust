@@ -13,6 +13,8 @@ pub use crate::types::_session_summary::SessionSummary;
 
 pub use crate::types::_event::Event;
 
+pub use crate::types::_metadata_value::MetadataValue;
+
 pub use crate::types::_branch::Branch;
 
 pub use crate::types::_payload_type::PayloadType;
@@ -25,11 +27,29 @@ pub use crate::types::_content::Content;
 
 pub use crate::types::_filter_input::FilterInput;
 
+pub use crate::types::_event_metadata_filter_expression::EventMetadataFilterExpression;
+
+pub use crate::types::_right_expression::RightExpression;
+
+pub use crate::types::_operator_type::OperatorType;
+
+pub use crate::types::_left_expression::LeftExpression;
+
 pub use crate::types::_branch_filter::BranchFilter;
 
 pub use crate::types::_actor_summary::ActorSummary;
 
 pub use crate::types::_memory_record::MemoryRecord;
+
+pub use crate::types::_memory_record_output::MemoryRecordOutput;
+
+pub use crate::types::_memory_record_status::MemoryRecordStatus;
+
+pub use crate::types::_memory_record_update_input::MemoryRecordUpdateInput;
+
+pub use crate::types::_memory_record_delete_input::MemoryRecordDeleteInput;
+
+pub use crate::types::_memory_record_create_input::MemoryRecordCreateInput;
 
 pub use crate::types::_code_interpreter_session_summary::CodeInterpreterSessionSummary;
 
@@ -115,9 +135,13 @@ mod _conversational;
 
 mod _event;
 
+mod _event_metadata_filter_expression;
+
 mod _filter_input;
 
 mod _input_content_block;
+
+mod _left_expression;
 
 mod _live_view_stream;
 
@@ -125,9 +149,23 @@ mod _memory_content;
 
 mod _memory_record;
 
+mod _memory_record_create_input;
+
+mod _memory_record_delete_input;
+
+mod _memory_record_output;
+
+mod _memory_record_status;
+
 mod _memory_record_summary;
 
+mod _memory_record_update_input;
+
+mod _metadata_value;
+
 mod _oauth2_flow_type;
+
+mod _operator_type;
 
 mod _payload_type;
 
@@ -136,6 +174,8 @@ mod _programming_language;
 mod _resource_content;
 
 mod _resource_content_type;
+
+mod _right_expression;
 
 mod _role;
 

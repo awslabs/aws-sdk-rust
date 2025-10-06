@@ -99,5 +99,15 @@ pub fn ser_set_source_request(
         crate::protocol_serde::shape_set_gateway_bridge_source_request::ser_set_gateway_bridge_source_request(&mut object_24, var_23)?;
         object_24.finish();
     }
+    if let Some(var_25) = &input.source_tags {
+        #[allow(unused_mut)]
+        let mut object_26 = object.key("sourceTags").start_object();
+        for (key_27, value_28) in var_25 {
+            {
+                object_26.key(key_27.as_str()).string(value_28.as_str());
+            }
+        }
+        object_26.finish();
+    }
     Ok(())
 }

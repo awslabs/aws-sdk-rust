@@ -59,13 +59,13 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`CreateEvent`](crate::operation::create_event) operation has
-/// a [`Client::create_event`], function which returns a builder for that operation.
+/// For example, the [`BatchCreateMemoryRecords`](crate::operation::batch_create_memory_records) operation has
+/// a [`Client::batch_create_memory_records`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.create_event()
+/// let result = client.batch_create_memory_records()
 ///     .memory_id("example")
 ///     .send()
 ///     .await;
@@ -136,6 +136,12 @@ impl Client {
     }
 }
 
+mod batch_create_memory_records;
+
+mod batch_delete_memory_records;
+
+mod batch_update_memory_records;
+
 mod create_event;
 
 /// Operation customization and supporting types.
@@ -149,7 +155,7 @@ mod create_event;
 /// # let client: aws_sdk_bedrockagentcore::Client = unimplemented!();
 /// use ::http::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.create_event()
+/// let result = client.batch_create_memory_records()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
@@ -168,6 +174,8 @@ pub mod customize;
 mod delete_event;
 
 mod delete_memory_record;
+
+mod get_agent_card;
 
 mod get_browser_session;
 
@@ -212,5 +220,7 @@ mod start_code_interpreter_session;
 mod stop_browser_session;
 
 mod stop_code_interpreter_session;
+
+mod stop_runtime_session;
 
 mod update_browser_stream;

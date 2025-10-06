@@ -42,6 +42,8 @@ pub struct AddOutputRequest {
     pub ndi_speed_hq_quality: ::std::option::Option<i32>,
     /// <p>A suffix for the names of the NDI sources that the flow creates. If a custom name isn't specified, MediaConnect uses the output name.</p>
     pub ndi_program_name: ::std::option::Option<::std::string::String>,
+    /// <p>The key-value pairs that can be used to tag and organize the output.</p>
+    pub output_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl AddOutputRequest {
     /// <p>The range of IP addresses that should be allowed to initiate output requests to this flow. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.</p>
@@ -122,6 +124,10 @@ impl AddOutputRequest {
     pub fn ndi_program_name(&self) -> ::std::option::Option<&str> {
         self.ndi_program_name.as_deref()
     }
+    /// <p>The key-value pairs that can be used to tag and organize the output.</p>
+    pub fn output_tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.output_tags.as_ref()
+    }
 }
 impl AddOutputRequest {
     /// Creates a new builder-style object to manufacture [`AddOutputRequest`](crate::types::AddOutputRequest).
@@ -152,6 +158,7 @@ pub struct AddOutputRequestBuilder {
     pub(crate) output_status: ::std::option::Option<crate::types::OutputStatus>,
     pub(crate) ndi_speed_hq_quality: ::std::option::Option<i32>,
     pub(crate) ndi_program_name: ::std::option::Option<::std::string::String>,
+    pub(crate) output_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl AddOutputRequestBuilder {
     /// Appends an item to `cidr_allow_list`.
@@ -300,7 +307,6 @@ impl AddOutputRequestBuilder {
     /// <p>The protocol to use for the output.</p><note>
     /// <p>Elemental MediaConnect no longer supports the Fujitsu QoS protocol. This reference is maintained for legacy purposes only.</p>
     /// </note>
-    /// This field is required.
     pub fn protocol(mut self, input: crate::types::Protocol) -> Self {
         self.protocol = ::std::option::Option::Some(input);
         self
@@ -430,6 +436,29 @@ impl AddOutputRequestBuilder {
     pub fn get_ndi_program_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.ndi_program_name
     }
+    /// Adds a key-value pair to `output_tags`.
+    ///
+    /// To override the contents of this collection use [`set_output_tags`](Self::set_output_tags).
+    ///
+    /// <p>The key-value pairs that can be used to tag and organize the output.</p>
+    pub fn output_tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut hash_map = self.output_tags.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.output_tags = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>The key-value pairs that can be used to tag and organize the output.</p>
+    pub fn set_output_tags(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    ) -> Self {
+        self.output_tags = input;
+        self
+    }
+    /// <p>The key-value pairs that can be used to tag and organize the output.</p>
+    pub fn get_output_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.output_tags
+    }
     /// Consumes the builder and constructs a [`AddOutputRequest`](crate::types::AddOutputRequest).
     pub fn build(self) -> crate::types::AddOutputRequest {
         crate::types::AddOutputRequest {
@@ -451,6 +480,7 @@ impl AddOutputRequestBuilder {
             output_status: self.output_status,
             ndi_speed_hq_quality: self.ndi_speed_hq_quality,
             ndi_program_name: self.ndi_program_name,
+            output_tags: self.output_tags,
         }
     }
 }

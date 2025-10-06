@@ -122,20 +122,6 @@ impl UpdateAgentRuntimeFluentBuilder {
     pub fn get_agent_runtime_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agent_runtime_id()
     }
-    /// <p>The updated description of the AgentCore Runtime.</p>
-    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.description(input.into());
-        self
-    }
-    /// <p>The updated description of the AgentCore Runtime.</p>
-    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_description(input);
-        self
-    }
-    /// <p>The updated description of the AgentCore Runtime.</p>
-    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_description()
-    }
     /// <p>The updated artifact of the AgentCore Runtime.</p>
     pub fn agent_runtime_artifact(mut self, input: crate::types::AgentRuntimeArtifact) -> Self {
         self.inner = self.inner.agent_runtime_artifact(input);
@@ -178,59 +164,19 @@ impl UpdateAgentRuntimeFluentBuilder {
     pub fn get_network_configuration(&self) -> &::std::option::Option<crate::types::NetworkConfiguration> {
         self.inner.get_network_configuration()
     }
-    /// <p>The protocol configuration for an agent runtime. This structure defines how the agent runtime communicates with clients.</p>
-    pub fn protocol_configuration(mut self, input: crate::types::ProtocolConfiguration) -> Self {
-        self.inner = self.inner.protocol_configuration(input);
+    /// <p>The updated description of the AgentCore Runtime.</p>
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.description(input.into());
         self
     }
-    /// <p>The protocol configuration for an agent runtime. This structure defines how the agent runtime communicates with clients.</p>
-    pub fn set_protocol_configuration(mut self, input: ::std::option::Option<crate::types::ProtocolConfiguration>) -> Self {
-        self.inner = self.inner.set_protocol_configuration(input);
+    /// <p>The updated description of the AgentCore Runtime.</p>
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_description(input);
         self
     }
-    /// <p>The protocol configuration for an agent runtime. This structure defines how the agent runtime communicates with clients.</p>
-    pub fn get_protocol_configuration(&self) -> &::std::option::Option<crate::types::ProtocolConfiguration> {
-        self.inner.get_protocol_configuration()
-    }
-    /// <p>A unique, case-sensitive identifier to ensure idempotency of the request.</p>
-    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.client_token(input.into());
-        self
-    }
-    /// <p>A unique, case-sensitive identifier to ensure idempotency of the request.</p>
-    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_client_token(input);
-        self
-    }
-    /// <p>A unique, case-sensitive identifier to ensure idempotency of the request.</p>
-    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_client_token()
-    }
-    ///
-    /// Adds a key-value pair to `environmentVariables`.
-    ///
-    /// To override the contents of this collection use [`set_environment_variables`](Self::set_environment_variables).
-    ///
-    /// <p>Updated environment variables to set in the AgentCore Runtime environment.</p>
-    pub fn environment_variables(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
-        self.inner = self.inner.environment_variables(k.into(), v.into());
-        self
-    }
-    /// <p>Updated environment variables to set in the AgentCore Runtime environment.</p>
-    pub fn set_environment_variables(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.inner = self.inner.set_environment_variables(input);
-        self
-    }
-    /// <p>Updated environment variables to set in the AgentCore Runtime environment.</p>
-    pub fn get_environment_variables(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
-        self.inner.get_environment_variables()
+    /// <p>The updated description of the AgentCore Runtime.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>The updated authorizer configuration for the AgentCore Runtime.</p>
     pub fn authorizer_configuration(mut self, input: crate::types::AuthorizerConfiguration) -> Self {
@@ -259,5 +205,73 @@ impl UpdateAgentRuntimeFluentBuilder {
     /// <p>The updated configuration for HTTP request headers that will be passed through to the runtime.</p>
     pub fn get_request_header_configuration(&self) -> &::std::option::Option<crate::types::RequestHeaderConfiguration> {
         self.inner.get_request_header_configuration()
+    }
+    /// <p>The protocol configuration for an agent runtime. This structure defines how the agent runtime communicates with clients.</p>
+    pub fn protocol_configuration(mut self, input: crate::types::ProtocolConfiguration) -> Self {
+        self.inner = self.inner.protocol_configuration(input);
+        self
+    }
+    /// <p>The protocol configuration for an agent runtime. This structure defines how the agent runtime communicates with clients.</p>
+    pub fn set_protocol_configuration(mut self, input: ::std::option::Option<crate::types::ProtocolConfiguration>) -> Self {
+        self.inner = self.inner.set_protocol_configuration(input);
+        self
+    }
+    /// <p>The protocol configuration for an agent runtime. This structure defines how the agent runtime communicates with clients.</p>
+    pub fn get_protocol_configuration(&self) -> &::std::option::Option<crate::types::ProtocolConfiguration> {
+        self.inner.get_protocol_configuration()
+    }
+    /// <p>The updated life cycle configuration for the AgentCore Runtime.</p>
+    pub fn lifecycle_configuration(mut self, input: crate::types::LifecycleConfiguration) -> Self {
+        self.inner = self.inner.lifecycle_configuration(input);
+        self
+    }
+    /// <p>The updated life cycle configuration for the AgentCore Runtime.</p>
+    pub fn set_lifecycle_configuration(mut self, input: ::std::option::Option<crate::types::LifecycleConfiguration>) -> Self {
+        self.inner = self.inner.set_lifecycle_configuration(input);
+        self
+    }
+    /// <p>The updated life cycle configuration for the AgentCore Runtime.</p>
+    pub fn get_lifecycle_configuration(&self) -> &::std::option::Option<crate::types::LifecycleConfiguration> {
+        self.inner.get_lifecycle_configuration()
+    }
+    ///
+    /// Adds a key-value pair to `environmentVariables`.
+    ///
+    /// To override the contents of this collection use [`set_environment_variables`](Self::set_environment_variables).
+    ///
+    /// <p>Updated environment variables to set in the AgentCore Runtime environment.</p>
+    pub fn environment_variables(
+        mut self,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.inner = self.inner.environment_variables(k.into(), v.into());
+        self
+    }
+    /// <p>Updated environment variables to set in the AgentCore Runtime environment.</p>
+    pub fn set_environment_variables(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    ) -> Self {
+        self.inner = self.inner.set_environment_variables(input);
+        self
+    }
+    /// <p>Updated environment variables to set in the AgentCore Runtime environment.</p>
+    pub fn get_environment_variables(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.inner.get_environment_variables()
+    }
+    /// <p>A unique, case-sensitive identifier to ensure idempotency of the request.</p>
+    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.client_token(input.into());
+        self
+    }
+    /// <p>A unique, case-sensitive identifier to ensure idempotency of the request.</p>
+    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_client_token(input);
+        self
+    }
+    /// <p>A unique, case-sensitive identifier to ensure idempotency of the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

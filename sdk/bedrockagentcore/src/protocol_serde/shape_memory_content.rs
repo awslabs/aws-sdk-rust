@@ -62,3 +62,18 @@ where
     }
     Ok(variant)
 }
+
+pub fn ser_memory_content(
+    object_4: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
+    input: &crate::types::MemoryContent,
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    match input {
+        crate::types::MemoryContent::Text(inner) => {
+            object_4.key("text").string(inner.as_str());
+        }
+        crate::types::MemoryContent::Unknown => {
+            return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant("MemoryContent"))
+        }
+    }
+    Ok(())
+}

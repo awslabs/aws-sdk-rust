@@ -256,21 +256,21 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for FailoverShard
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum FailoverShardError {
-    /// <p></p>
+    /// <p>The customer has exceeded the maximum number of API requests allowed per time period.</p>
     ApiCallRateForCustomerExceededFault(crate::types::error::ApiCallRateForCustomerExceededFault),
-    /// <p></p>
+    /// <p>The specified cluster does not exist.</p>
     ClusterNotFoundFault(crate::types::error::ClusterNotFoundFault),
-    /// <p></p>
+    /// <p>The cluster is not in a valid state for the requested operation.</p>
     InvalidClusterStateFault(crate::types::error::InvalidClusterStateFault),
-    /// <p></p>
+    /// <p>The specified KMS key is not valid or accessible.</p>
     InvalidKmsKeyFault(crate::types::error::InvalidKmsKeyFault),
-    /// <p></p>
+    /// <p>The specified parameter combination is not valid.</p>
     InvalidParameterCombinationException(crate::types::error::InvalidParameterCombinationException),
-    /// <p></p>
+    /// <p>The specified parameter value is not valid.</p>
     InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
-    /// <p></p>
+    /// <p>The specified shard does not exist.</p>
     ShardNotFoundFault(crate::types::error::ShardNotFoundFault),
-    /// <p></p>
+    /// <p>Test failover is not available for this cluster configuration.</p>
     TestFailoverNotAvailableFault(crate::types::error::TestFailoverNotAvailableFault),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

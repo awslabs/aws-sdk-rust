@@ -254,19 +254,19 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateACLEndp
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum CreateACLError {
-    /// <p></p>
+    /// <p>An ACL with the specified name already exists.</p>
     AclAlreadyExistsFault(crate::types::error::AclAlreadyExistsFault),
-    /// <p></p>
+    /// <p>The request cannot be processed because it would exceed the maximum number of ACLs allowed.</p>
     AclQuotaExceededFault(crate::types::error::AclQuotaExceededFault),
-    /// <p></p>
+    /// <p>A default user is required and must be specified.</p>
     DefaultUserRequired(crate::types::error::DefaultUserRequired),
-    /// <p></p>
+    /// <p>A user with the specified name already exists.</p>
     DuplicateUserNameFault(crate::types::error::DuplicateUserNameFault),
-    /// <p></p>
+    /// <p>The specified parameter value is not valid.</p>
     InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
-    /// <p></p>
+    /// <p>The request cannot be processed because it would exceed the maximum number of tags allowed per resource.</p>
     TagQuotaPerResourceExceeded(crate::types::error::TagQuotaPerResourceExceeded),
-    /// <p></p>
+    /// <p>The specified user does not exist.</p>
     UserNotFoundFault(crate::types::error::UserNotFoundFault),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

@@ -5,24 +5,26 @@
 pub struct CreateAgentRuntimeInput {
     /// <p>The name of the AgentCore Runtime.</p>
     pub agent_runtime_name: ::std::option::Option<::std::string::String>,
-    /// <p>The description of the AgentCore Runtime.</p>
-    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The artifact of the AgentCore Runtime.</p>
     pub agent_runtime_artifact: ::std::option::Option<crate::types::AgentRuntimeArtifact>,
     /// <p>The IAM role ARN that provides permissions for the AgentCore Runtime.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The network configuration for the AgentCore Runtime.</p>
     pub network_configuration: ::std::option::Option<crate::types::NetworkConfiguration>,
-    /// <p>The protocol configuration for an agent runtime. This structure defines how the agent runtime communicates with clients.</p>
-    pub protocol_configuration: ::std::option::Option<crate::types::ProtocolConfiguration>,
     /// <p>A unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
-    /// <p>Environment variables to set in the AgentCore Runtime environment.</p>
-    pub environment_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The description of the AgentCore Runtime.</p>
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The authorizer configuration for the AgentCore Runtime.</p>
     pub authorizer_configuration: ::std::option::Option<crate::types::AuthorizerConfiguration>,
     /// <p>Configuration for HTTP request headers that will be passed through to the runtime.</p>
     pub request_header_configuration: ::std::option::Option<crate::types::RequestHeaderConfiguration>,
+    /// <p>The protocol configuration for an agent runtime. This structure defines how the agent runtime communicates with clients.</p>
+    pub protocol_configuration: ::std::option::Option<crate::types::ProtocolConfiguration>,
+    /// <p>The life cycle configuration for the AgentCore Runtime.</p>
+    pub lifecycle_configuration: ::std::option::Option<crate::types::LifecycleConfiguration>,
+    /// <p>Environment variables to set in the AgentCore Runtime environment.</p>
+    pub environment_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A map of tag keys and values to assign to the agent runtime. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -30,10 +32,6 @@ impl CreateAgentRuntimeInput {
     /// <p>The name of the AgentCore Runtime.</p>
     pub fn agent_runtime_name(&self) -> ::std::option::Option<&str> {
         self.agent_runtime_name.as_deref()
-    }
-    /// <p>The description of the AgentCore Runtime.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
-        self.description.as_deref()
     }
     /// <p>The artifact of the AgentCore Runtime.</p>
     pub fn agent_runtime_artifact(&self) -> ::std::option::Option<&crate::types::AgentRuntimeArtifact> {
@@ -47,17 +45,13 @@ impl CreateAgentRuntimeInput {
     pub fn network_configuration(&self) -> ::std::option::Option<&crate::types::NetworkConfiguration> {
         self.network_configuration.as_ref()
     }
-    /// <p>The protocol configuration for an agent runtime. This structure defines how the agent runtime communicates with clients.</p>
-    pub fn protocol_configuration(&self) -> ::std::option::Option<&crate::types::ProtocolConfiguration> {
-        self.protocol_configuration.as_ref()
-    }
     /// <p>A unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>Environment variables to set in the AgentCore Runtime environment.</p>
-    pub fn environment_variables(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
-        self.environment_variables.as_ref()
+    /// <p>The description of the AgentCore Runtime.</p>
+    pub fn description(&self) -> ::std::option::Option<&str> {
+        self.description.as_deref()
     }
     /// <p>The authorizer configuration for the AgentCore Runtime.</p>
     pub fn authorizer_configuration(&self) -> ::std::option::Option<&crate::types::AuthorizerConfiguration> {
@@ -66,6 +60,18 @@ impl CreateAgentRuntimeInput {
     /// <p>Configuration for HTTP request headers that will be passed through to the runtime.</p>
     pub fn request_header_configuration(&self) -> ::std::option::Option<&crate::types::RequestHeaderConfiguration> {
         self.request_header_configuration.as_ref()
+    }
+    /// <p>The protocol configuration for an agent runtime. This structure defines how the agent runtime communicates with clients.</p>
+    pub fn protocol_configuration(&self) -> ::std::option::Option<&crate::types::ProtocolConfiguration> {
+        self.protocol_configuration.as_ref()
+    }
+    /// <p>The life cycle configuration for the AgentCore Runtime.</p>
+    pub fn lifecycle_configuration(&self) -> ::std::option::Option<&crate::types::LifecycleConfiguration> {
+        self.lifecycle_configuration.as_ref()
+    }
+    /// <p>Environment variables to set in the AgentCore Runtime environment.</p>
+    pub fn environment_variables(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.environment_variables.as_ref()
     }
     /// <p>A map of tag keys and values to assign to the agent runtime. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -76,15 +82,16 @@ impl ::std::fmt::Debug for CreateAgentRuntimeInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateAgentRuntimeInput");
         formatter.field("agent_runtime_name", &self.agent_runtime_name);
-        formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("agent_runtime_artifact", &self.agent_runtime_artifact);
         formatter.field("role_arn", &self.role_arn);
         formatter.field("network_configuration", &self.network_configuration);
-        formatter.field("protocol_configuration", &self.protocol_configuration);
         formatter.field("client_token", &self.client_token);
-        formatter.field("environment_variables", &"*** Sensitive Data Redacted ***");
+        formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("authorizer_configuration", &self.authorizer_configuration);
         formatter.field("request_header_configuration", &self.request_header_configuration);
+        formatter.field("protocol_configuration", &self.protocol_configuration);
+        formatter.field("lifecycle_configuration", &self.lifecycle_configuration);
+        formatter.field("environment_variables", &"*** Sensitive Data Redacted ***");
         formatter.field("tags", &self.tags);
         formatter.finish()
     }
@@ -101,15 +108,16 @@ impl CreateAgentRuntimeInput {
 #[non_exhaustive]
 pub struct CreateAgentRuntimeInputBuilder {
     pub(crate) agent_runtime_name: ::std::option::Option<::std::string::String>,
-    pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) agent_runtime_artifact: ::std::option::Option<crate::types::AgentRuntimeArtifact>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) network_configuration: ::std::option::Option<crate::types::NetworkConfiguration>,
-    pub(crate) protocol_configuration: ::std::option::Option<crate::types::ProtocolConfiguration>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
-    pub(crate) environment_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) authorizer_configuration: ::std::option::Option<crate::types::AuthorizerConfiguration>,
     pub(crate) request_header_configuration: ::std::option::Option<crate::types::RequestHeaderConfiguration>,
+    pub(crate) protocol_configuration: ::std::option::Option<crate::types::ProtocolConfiguration>,
+    pub(crate) lifecycle_configuration: ::std::option::Option<crate::types::LifecycleConfiguration>,
+    pub(crate) environment_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateAgentRuntimeInputBuilder {
@@ -127,20 +135,6 @@ impl CreateAgentRuntimeInputBuilder {
     /// <p>The name of the AgentCore Runtime.</p>
     pub fn get_agent_runtime_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.agent_runtime_name
-    }
-    /// <p>The description of the AgentCore Runtime.</p>
-    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.description = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The description of the AgentCore Runtime.</p>
-    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
-    }
-    /// <p>The description of the AgentCore Runtime.</p>
-    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
-        &self.description
     }
     /// <p>The artifact of the AgentCore Runtime.</p>
     /// This field is required.
@@ -187,20 +181,6 @@ impl CreateAgentRuntimeInputBuilder {
     pub fn get_network_configuration(&self) -> &::std::option::Option<crate::types::NetworkConfiguration> {
         &self.network_configuration
     }
-    /// <p>The protocol configuration for an agent runtime. This structure defines how the agent runtime communicates with clients.</p>
-    pub fn protocol_configuration(mut self, input: crate::types::ProtocolConfiguration) -> Self {
-        self.protocol_configuration = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The protocol configuration for an agent runtime. This structure defines how the agent runtime communicates with clients.</p>
-    pub fn set_protocol_configuration(mut self, input: ::std::option::Option<crate::types::ProtocolConfiguration>) -> Self {
-        self.protocol_configuration = input;
-        self
-    }
-    /// <p>The protocol configuration for an agent runtime. This structure defines how the agent runtime communicates with clients.</p>
-    pub fn get_protocol_configuration(&self) -> &::std::option::Option<crate::types::ProtocolConfiguration> {
-        &self.protocol_configuration
-    }
     /// <p>A unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -215,32 +195,19 @@ impl CreateAgentRuntimeInputBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
-    /// Adds a key-value pair to `environment_variables`.
-    ///
-    /// To override the contents of this collection use [`set_environment_variables`](Self::set_environment_variables).
-    ///
-    /// <p>Environment variables to set in the AgentCore Runtime environment.</p>
-    pub fn environment_variables(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
-        let mut hash_map = self.environment_variables.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.environment_variables = ::std::option::Option::Some(hash_map);
+    /// <p>The description of the AgentCore Runtime.</p>
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Environment variables to set in the AgentCore Runtime environment.</p>
-    pub fn set_environment_variables(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.environment_variables = input;
+    /// <p>The description of the AgentCore Runtime.</p>
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.description = input;
         self
     }
-    /// <p>Environment variables to set in the AgentCore Runtime environment.</p>
-    pub fn get_environment_variables(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
-        &self.environment_variables
+    /// <p>The description of the AgentCore Runtime.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The authorizer configuration for the AgentCore Runtime.</p>
     pub fn authorizer_configuration(mut self, input: crate::types::AuthorizerConfiguration) -> Self {
@@ -270,6 +237,61 @@ impl CreateAgentRuntimeInputBuilder {
     pub fn get_request_header_configuration(&self) -> &::std::option::Option<crate::types::RequestHeaderConfiguration> {
         &self.request_header_configuration
     }
+    /// <p>The protocol configuration for an agent runtime. This structure defines how the agent runtime communicates with clients.</p>
+    pub fn protocol_configuration(mut self, input: crate::types::ProtocolConfiguration) -> Self {
+        self.protocol_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The protocol configuration for an agent runtime. This structure defines how the agent runtime communicates with clients.</p>
+    pub fn set_protocol_configuration(mut self, input: ::std::option::Option<crate::types::ProtocolConfiguration>) -> Self {
+        self.protocol_configuration = input;
+        self
+    }
+    /// <p>The protocol configuration for an agent runtime. This structure defines how the agent runtime communicates with clients.</p>
+    pub fn get_protocol_configuration(&self) -> &::std::option::Option<crate::types::ProtocolConfiguration> {
+        &self.protocol_configuration
+    }
+    /// <p>The life cycle configuration for the AgentCore Runtime.</p>
+    pub fn lifecycle_configuration(mut self, input: crate::types::LifecycleConfiguration) -> Self {
+        self.lifecycle_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The life cycle configuration for the AgentCore Runtime.</p>
+    pub fn set_lifecycle_configuration(mut self, input: ::std::option::Option<crate::types::LifecycleConfiguration>) -> Self {
+        self.lifecycle_configuration = input;
+        self
+    }
+    /// <p>The life cycle configuration for the AgentCore Runtime.</p>
+    pub fn get_lifecycle_configuration(&self) -> &::std::option::Option<crate::types::LifecycleConfiguration> {
+        &self.lifecycle_configuration
+    }
+    /// Adds a key-value pair to `environment_variables`.
+    ///
+    /// To override the contents of this collection use [`set_environment_variables`](Self::set_environment_variables).
+    ///
+    /// <p>Environment variables to set in the AgentCore Runtime environment.</p>
+    pub fn environment_variables(
+        mut self,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        let mut hash_map = self.environment_variables.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.environment_variables = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>Environment variables to set in the AgentCore Runtime environment.</p>
+    pub fn set_environment_variables(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    ) -> Self {
+        self.environment_variables = input;
+        self
+    }
+    /// <p>Environment variables to set in the AgentCore Runtime environment.</p>
+    pub fn get_environment_variables(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.environment_variables
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -297,15 +319,16 @@ impl CreateAgentRuntimeInputBuilder {
     {
         ::std::result::Result::Ok(crate::operation::create_agent_runtime::CreateAgentRuntimeInput {
             agent_runtime_name: self.agent_runtime_name,
-            description: self.description,
             agent_runtime_artifact: self.agent_runtime_artifact,
             role_arn: self.role_arn,
             network_configuration: self.network_configuration,
-            protocol_configuration: self.protocol_configuration,
             client_token: self.client_token,
-            environment_variables: self.environment_variables,
+            description: self.description,
             authorizer_configuration: self.authorizer_configuration,
             request_header_configuration: self.request_header_configuration,
+            protocol_configuration: self.protocol_configuration,
+            lifecycle_configuration: self.lifecycle_configuration,
+            environment_variables: self.environment_variables,
             tags: self.tags,
         })
     }
@@ -314,15 +337,16 @@ impl ::std::fmt::Debug for CreateAgentRuntimeInputBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateAgentRuntimeInputBuilder");
         formatter.field("agent_runtime_name", &self.agent_runtime_name);
-        formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("agent_runtime_artifact", &self.agent_runtime_artifact);
         formatter.field("role_arn", &self.role_arn);
         formatter.field("network_configuration", &self.network_configuration);
-        formatter.field("protocol_configuration", &self.protocol_configuration);
         formatter.field("client_token", &self.client_token);
-        formatter.field("environment_variables", &"*** Sensitive Data Redacted ***");
+        formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("authorizer_configuration", &self.authorizer_configuration);
         formatter.field("request_header_configuration", &self.request_header_configuration);
+        formatter.field("protocol_configuration", &self.protocol_configuration);
+        formatter.field("lifecycle_configuration", &self.lifecycle_configuration);
+        formatter.field("environment_variables", &"*** Sensitive Data Redacted ***");
         formatter.field("tags", &self.tags);
         formatter.finish()
     }

@@ -250,27 +250,27 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListTagsEndpo
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum ListTagsError {
-    /// <p></p>
+    /// <p>The specified ACL does not exist.</p>
     AclNotFoundFault(crate::types::error::AclNotFoundFault),
-    /// <p></p>
+    /// <p>The specified cluster does not exist.</p>
     ClusterNotFoundFault(crate::types::error::ClusterNotFoundFault),
-    /// <p></p>
+    /// <p>The specified Amazon Resource Name (ARN) is not valid.</p>
     InvalidArnFault(crate::types::error::InvalidArnFault),
-    /// <p></p>
+    /// <p>The cluster is not in a valid state for the requested operation.</p>
     InvalidClusterStateFault(crate::types::error::InvalidClusterStateFault),
     /// <p>The specified multi-Region cluster does not exist.</p>
     MultiRegionClusterNotFoundFault(crate::types::error::MultiRegionClusterNotFoundFault),
     /// <p>The specified multi-Region parameter group does not exist.</p>
     MultiRegionParameterGroupNotFoundFault(crate::types::error::MultiRegionParameterGroupNotFoundFault),
-    /// <p></p>
+    /// <p>The specified parameter group does not exist.</p>
     ParameterGroupNotFoundFault(crate::types::error::ParameterGroupNotFoundFault),
-    /// <p></p>
+    /// <p>The required service-linked role was not found.</p>
     ServiceLinkedRoleNotFoundFault(crate::types::error::ServiceLinkedRoleNotFoundFault),
-    /// <p></p>
+    /// <p>The specified snapshot does not exist.</p>
     SnapshotNotFoundFault(crate::types::error::SnapshotNotFoundFault),
-    /// <p></p>
+    /// <p>The specified subnet group does not exist.</p>
     SubnetGroupNotFoundFault(crate::types::error::SubnetGroupNotFoundFault),
-    /// <p></p>
+    /// <p>The specified user does not exist.</p>
     UserNotFoundFault(crate::types::error::UserNotFoundFault),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

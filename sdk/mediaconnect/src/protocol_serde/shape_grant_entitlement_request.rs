@@ -33,5 +33,15 @@ pub fn ser_grant_entitlement_request(
         }
         array_8.finish();
     }
+    if let Some(var_10) = &input.entitlement_tags {
+        #[allow(unused_mut)]
+        let mut object_11 = object.key("entitlementTags").start_object();
+        for (key_12, value_13) in var_10 {
+            {
+                object_11.key(key_12.as_str()).string(value_13.as_str());
+            }
+        }
+        object_11.finish();
+    }
     Ok(())
 }

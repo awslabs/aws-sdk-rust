@@ -332,6 +332,12 @@ pub(crate) fn get_agent_runtime_output_output_correct_errors(
     if builder.status.is_none() {
         builder.status = "no value was set".parse::<crate::types::AgentRuntimeStatus>().ok()
     }
+    if builder.lifecycle_configuration.is_none() {
+        builder.lifecycle_configuration = {
+            let builder = crate::types::builders::LifecycleConfigurationBuilder::default();
+            Some(builder.build())
+        }
+    }
     builder
 }
 

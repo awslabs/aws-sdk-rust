@@ -10,11 +10,17 @@ pub mod batch_get_view;
 /// Types for the `CreateIndex` operation.
 pub mod create_index;
 
+/// Types for the `CreateResourceExplorerSetup` operation.
+pub mod create_resource_explorer_setup;
+
 /// Types for the `CreateView` operation.
 pub mod create_view;
 
 /// Types for the `DeleteIndex` operation.
 pub mod delete_index;
+
+/// Types for the `DeleteResourceExplorerSetup` operation.
+pub mod delete_resource_explorer_setup;
 
 /// Types for the `DeleteView` operation.
 pub mod delete_view;
@@ -34,6 +40,15 @@ pub mod get_index;
 /// Types for the `GetManagedView` operation.
 pub mod get_managed_view;
 
+/// Types for the `GetResourceExplorerSetup` operation.
+pub mod get_resource_explorer_setup;
+
+/// Types for the `GetServiceIndex` operation.
+pub mod get_service_index;
+
+/// Types for the `GetServiceView` operation.
+pub mod get_service_view;
+
 /// Types for the `GetView` operation.
 pub mod get_view;
 
@@ -48,6 +63,15 @@ pub mod list_managed_views;
 
 /// Types for the `ListResources` operation.
 pub mod list_resources;
+
+/// Types for the `ListServiceIndexes` operation.
+pub mod list_service_indexes;
+
+/// Types for the `ListServiceViews` operation.
+pub mod list_service_views;
+
+/// Types for the `ListStreamingAccessForServices` operation.
+pub mod list_streaming_access_for_services;
 
 /// Types for the `ListSupportedResourceTypes` operation.
 pub mod list_supported_resource_types;

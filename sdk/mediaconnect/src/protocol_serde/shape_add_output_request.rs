@@ -99,5 +99,15 @@ pub fn ser_add_output_request(
     if let Some(var_25) = &input.ndi_program_name {
         object.key("ndiProgramName").string(var_25.as_str());
     }
+    if let Some(var_26) = &input.output_tags {
+        #[allow(unused_mut)]
+        let mut object_27 = object.key("outputTags").start_object();
+        for (key_28, value_29) in var_26 {
+            {
+                object_27.key(key_28.as_str()).string(value_29.as_str());
+            }
+        }
+        object_27.finish();
+    }
     Ok(())
 }

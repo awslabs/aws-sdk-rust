@@ -29,6 +29,8 @@ pub struct CreateFlowInput {
     pub flow_size: ::std::option::Option<crate::types::FlowSize>,
     /// <p>Specifies the configuration settings for NDI outputs. Required when the flow includes NDI outputs.</p>
     pub ndi_config: ::std::option::Option<crate::types::NdiConfig>,
+    /// <p>The key-value pairs that can be used to tag and organize the flow.</p>
+    pub flow_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateFlowInput {
     /// <p>The Availability Zone that you want to create the flow in. These options are limited to the Availability Zones within the current Amazon Web Services Region.</p>
@@ -93,6 +95,10 @@ impl CreateFlowInput {
     pub fn ndi_config(&self) -> ::std::option::Option<&crate::types::NdiConfig> {
         self.ndi_config.as_ref()
     }
+    /// <p>The key-value pairs that can be used to tag and organize the flow.</p>
+    pub fn flow_tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.flow_tags.as_ref()
+    }
 }
 impl CreateFlowInput {
     /// Creates a new builder-style object to manufacture [`CreateFlowInput`](crate::operation::create_flow::CreateFlowInput).
@@ -118,6 +124,7 @@ pub struct CreateFlowInputBuilder {
     pub(crate) source_monitoring_config: ::std::option::Option<crate::types::MonitoringConfig>,
     pub(crate) flow_size: ::std::option::Option<crate::types::FlowSize>,
     pub(crate) ndi_config: ::std::option::Option<crate::types::NdiConfig>,
+    pub(crate) flow_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateFlowInputBuilder {
     /// <p>The Availability Zone that you want to create the flow in. These options are limited to the Availability Zones within the current Amazon Web Services Region.</p>
@@ -333,6 +340,26 @@ impl CreateFlowInputBuilder {
     pub fn get_ndi_config(&self) -> &::std::option::Option<crate::types::NdiConfig> {
         &self.ndi_config
     }
+    /// Adds a key-value pair to `flow_tags`.
+    ///
+    /// To override the contents of this collection use [`set_flow_tags`](Self::set_flow_tags).
+    ///
+    /// <p>The key-value pairs that can be used to tag and organize the flow.</p>
+    pub fn flow_tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut hash_map = self.flow_tags.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.flow_tags = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>The key-value pairs that can be used to tag and organize the flow.</p>
+    pub fn set_flow_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.flow_tags = input;
+        self
+    }
+    /// <p>The key-value pairs that can be used to tag and organize the flow.</p>
+    pub fn get_flow_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.flow_tags
+    }
     /// Consumes the builder and constructs a [`CreateFlowInput`](crate::operation::create_flow::CreateFlowInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_flow::CreateFlowInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_flow::CreateFlowInput {
@@ -349,6 +376,7 @@ impl CreateFlowInputBuilder {
             source_monitoring_config: self.source_monitoring_config,
             flow_size: self.flow_size,
             ndi_config: self.ndi_config,
+            flow_tags: self.flow_tags,
         })
     }
 }

@@ -64,6 +64,12 @@ pub mod describe_events;
 /// Types for the `DescribeMultiRegionClusters` operation.
 pub mod describe_multi_region_clusters;
 
+/// Types for the `DescribeMultiRegionParameterGroups` operation.
+pub mod describe_multi_region_parameter_groups;
+
+/// Types for the `DescribeMultiRegionParameters` operation.
+pub mod describe_multi_region_parameters;
+
 /// Types for the `DescribeParameterGroups` operation.
 pub mod describe_parameter_groups;
 

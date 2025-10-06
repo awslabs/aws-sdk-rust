@@ -33,5 +33,15 @@ pub fn ser_add_media_stream_request(
     if let Some(var_8) = &input.video_format {
         object.key("videoFormat").string(var_8.as_str());
     }
+    if let Some(var_9) = &input.media_stream_tags {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("mediaStreamTags").start_object();
+        for (key_11, value_12) in var_9 {
+            {
+                object_10.key(key_11.as_str()).string(value_12.as_str());
+            }
+        }
+        object_10.finish();
+    }
     Ok(())
 }

@@ -259,11 +259,11 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DeleteSubnetG
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum DeleteSubnetGroupError {
-    /// <p></p>
+    /// <p>The required service-linked role was not found.</p>
     ServiceLinkedRoleNotFoundFault(crate::types::error::ServiceLinkedRoleNotFoundFault),
-    /// <p></p>
+    /// <p>The subnet group is currently in use and cannot be deleted.</p>
     SubnetGroupInUseFault(crate::types::error::SubnetGroupInUseFault),
-    /// <p></p>
+    /// <p>The specified subnet group does not exist.</p>
     SubnetGroupNotFoundFault(crate::types::error::SubnetGroupNotFoundFault),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

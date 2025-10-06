@@ -18,6 +18,8 @@ pub struct Event {
     pub payload: ::std::vec::Vec<crate::types::PayloadType>,
     /// <p>The branch information for the event.</p>
     pub branch: ::std::option::Option<crate::types::Branch>,
+    /// <p>Metadata associated with an event.</p>
+    pub metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MetadataValue>>,
 }
 impl Event {
     /// <p>The identifier of the AgentCore Memory resource containing the event.</p>
@@ -53,6 +55,10 @@ impl Event {
     pub fn branch(&self) -> ::std::option::Option<&crate::types::Branch> {
         self.branch.as_ref()
     }
+    /// <p>Metadata associated with an event.</p>
+    pub fn metadata(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::MetadataValue>> {
+        self.metadata.as_ref()
+    }
 }
 impl Event {
     /// Creates a new builder-style object to manufacture [`Event`](crate::types::Event).
@@ -72,6 +78,7 @@ pub struct EventBuilder {
     pub(crate) event_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) payload: ::std::option::Option<::std::vec::Vec<crate::types::PayloadType>>,
     pub(crate) branch: ::std::option::Option<crate::types::Branch>,
+    pub(crate) metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MetadataValue>>,
 }
 impl EventBuilder {
     /// <p>The identifier of the AgentCore Memory resource containing the event.</p>
@@ -183,6 +190,29 @@ impl EventBuilder {
     pub fn get_branch(&self) -> &::std::option::Option<crate::types::Branch> {
         &self.branch
     }
+    /// Adds a key-value pair to `metadata`.
+    ///
+    /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
+    ///
+    /// <p>Metadata associated with an event.</p>
+    pub fn metadata(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::MetadataValue) -> Self {
+        let mut hash_map = self.metadata.unwrap_or_default();
+        hash_map.insert(k.into(), v);
+        self.metadata = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>Metadata associated with an event.</p>
+    pub fn set_metadata(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MetadataValue>>,
+    ) -> Self {
+        self.metadata = input;
+        self
+    }
+    /// <p>Metadata associated with an event.</p>
+    pub fn get_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MetadataValue>> {
+        &self.metadata
+    }
     /// Consumes the builder and constructs a [`Event`](crate::types::Event).
     /// This method will fail if any of the following fields are not set:
     /// - [`memory_id`](crate::types::builders::EventBuilder::memory_id)
@@ -230,6 +260,7 @@ impl EventBuilder {
                 )
             })?,
             branch: self.branch,
+            metadata: self.metadata,
         })
     }
 }

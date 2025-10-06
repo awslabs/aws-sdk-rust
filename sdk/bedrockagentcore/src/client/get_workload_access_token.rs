@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetWorkloadAccessToken`](crate::operation::get_workload_access_token::builders::GetWorkloadAccessTokenFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`workload_name(impl Into<String>)`](crate::operation::get_workload_access_token::builders::GetWorkloadAccessTokenFluentBuilder::workload_name) / [`set_workload_name(Option<String>)`](crate::operation::get_workload_access_token::builders::GetWorkloadAccessTokenFluentBuilder::set_workload_name):<br>required: **true**<br><p>Unique identifier for the registered agent</p><br>
+    ///   - [`workload_name(impl Into<String>)`](crate::operation::get_workload_access_token::builders::GetWorkloadAccessTokenFluentBuilder::workload_name) / [`set_workload_name(Option<String>)`](crate::operation::get_workload_access_token::builders::GetWorkloadAccessTokenFluentBuilder::set_workload_name):<br>required: **true**<br><p>The unique identifier for the registered workload.</p><br>
     /// - On success, responds with [`GetWorkloadAccessTokenOutput`](crate::operation::get_workload_access_token::GetWorkloadAccessTokenOutput) with field(s):
-    ///   - [`workload_access_token(String)`](crate::operation::get_workload_access_token::GetWorkloadAccessTokenOutput::workload_access_token): <p>Opaque token representing both agent and user identity</p>
+    ///   - [`workload_access_token(String)`](crate::operation::get_workload_access_token::GetWorkloadAccessTokenOutput::workload_access_token): <p>An opaque token representing the identity of both the workload and the user.</p>
     /// - On failure, responds with [`SdkError<GetWorkloadAccessTokenError>`](crate::operation::get_workload_access_token::GetWorkloadAccessTokenError)
     pub fn get_workload_access_token(&self) -> crate::operation::get_workload_access_token::builders::GetWorkloadAccessTokenFluentBuilder {
         crate::operation::get_workload_access_token::builders::GetWorkloadAccessTokenFluentBuilder::new(self.handle.clone())

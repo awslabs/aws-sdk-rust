@@ -259,19 +259,19 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateSubnetG
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum CreateSubnetGroupError {
-    /// <p></p>
+    /// <p>The specified subnet is not valid.</p>
     InvalidSubnet(crate::types::error::InvalidSubnet),
-    /// <p></p>
+    /// <p>The required service-linked role was not found.</p>
     ServiceLinkedRoleNotFoundFault(crate::types::error::ServiceLinkedRoleNotFoundFault),
-    /// <p></p>
+    /// <p>A subnet group with the specified name already exists.</p>
     SubnetGroupAlreadyExistsFault(crate::types::error::SubnetGroupAlreadyExistsFault),
-    /// <p></p>
+    /// <p>The request cannot be processed because it would exceed the maximum number of subnet groups allowed.</p>
     SubnetGroupQuotaExceededFault(crate::types::error::SubnetGroupQuotaExceededFault),
-    /// <p></p>
+    /// <p>The specified subnet is not allowed for this operation.</p>
     SubnetNotAllowedFault(crate::types::error::SubnetNotAllowedFault),
-    /// <p></p>
+    /// <p>The request cannot be processed because it would exceed the maximum number of subnets allowed.</p>
     SubnetQuotaExceededFault(crate::types::error::SubnetQuotaExceededFault),
-    /// <p></p>
+    /// <p>The request cannot be processed because it would exceed the maximum number of tags allowed per resource.</p>
     TagQuotaPerResourceExceeded(crate::types::error::TagQuotaPerResourceExceeded),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

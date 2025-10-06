@@ -256,21 +256,21 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CopySnapshotE
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum CopySnapshotError {
-    /// <p></p>
+    /// <p>The specified parameter combination is not valid.</p>
     InvalidParameterCombinationException(crate::types::error::InvalidParameterCombinationException),
-    /// <p></p>
+    /// <p>The specified parameter value is not valid.</p>
     InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
-    /// <p></p>
+    /// <p>The snapshot is not in a valid state for the requested operation.</p>
     InvalidSnapshotStateFault(crate::types::error::InvalidSnapshotStateFault),
-    /// <p></p>
+    /// <p>The required service-linked role was not found.</p>
     ServiceLinkedRoleNotFoundFault(crate::types::error::ServiceLinkedRoleNotFoundFault),
-    /// <p></p>
+    /// <p>A snapshot with the specified name already exists.</p>
     SnapshotAlreadyExistsFault(crate::types::error::SnapshotAlreadyExistsFault),
-    /// <p></p>
+    /// <p>The specified snapshot does not exist.</p>
     SnapshotNotFoundFault(crate::types::error::SnapshotNotFoundFault),
-    /// <p></p>
+    /// <p>The request cannot be processed because it would exceed the maximum number of snapshots allowed.</p>
     SnapshotQuotaExceededFault(crate::types::error::SnapshotQuotaExceededFault),
-    /// <p></p>
+    /// <p>The request cannot be processed because it would exceed the maximum number of tags allowed per resource.</p>
     TagQuotaPerResourceExceeded(crate::types::error::TagQuotaPerResourceExceeded),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

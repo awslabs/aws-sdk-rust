@@ -19,6 +19,8 @@ pub use crate::types::error::_internal_server_exception::InternalServerException
 
 pub use crate::types::error::_conflict_exception::ConflictException;
 
+pub use crate::types::error::_unauthorized_exception::UnauthorizedException;
+
 pub use crate::types::error::_runtime_client_error::RuntimeClientError;
 
 /// Error type for the `CodeInterpreterStreamOutputError` operation.
@@ -183,8 +185,6 @@ impl ::aws_types::request_id::RequestId for crate::types::error::CodeInterpreter
         self.meta().request_id()
     }
 }
-
-pub use crate::types::error::_unauthorized_exception::UnauthorizedException;
 
 mod _access_denied_exception;
 

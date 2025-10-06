@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetResourceApiKeyOutput {
-    /// <p>The API Key associated with the resource requested.</p>
+    /// <p>The API key associated with the resource requested.</p>
     pub api_key: ::std::string::String,
     _request_id: Option<String>,
 }
 impl GetResourceApiKeyOutput {
-    /// <p>The API Key associated with the resource requested.</p>
+    /// <p>The API key associated with the resource requested.</p>
     pub fn api_key(&self) -> &str {
         use std::ops::Deref;
         self.api_key.deref()
@@ -42,18 +42,18 @@ pub struct GetResourceApiKeyOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetResourceApiKeyOutputBuilder {
-    /// <p>The API Key associated with the resource requested.</p>
+    /// <p>The API key associated with the resource requested.</p>
     /// This field is required.
     pub fn api_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_key = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The API Key associated with the resource requested.</p>
+    /// <p>The API key associated with the resource requested.</p>
     pub fn set_api_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.api_key = input;
         self
     }
-    /// <p>The API Key associated with the resource requested.</p>
+    /// <p>The API key associated with the resource requested.</p>
     pub fn get_api_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.api_key
     }

@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeGlobalSettingsOutput {
-    /// <p>The status of the flag <code>isCrossAccountBackupEnabled</code>.</p>
+    /// <p>The status of the flags <code>isCrossAccountBackupEnabled</code> and <code>isMpaEnabled</code> ('Mpa' refers to multi-party approval).</p>
     pub global_settings: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The date and time that the flag <code>isCrossAccountBackupEnabled</code> was last updated. This update is in Unix format and Coordinated Universal Time (UTC). The value of <code>LastUpdateTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub last_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
 impl DescribeGlobalSettingsOutput {
-    /// <p>The status of the flag <code>isCrossAccountBackupEnabled</code>.</p>
+    /// <p>The status of the flags <code>isCrossAccountBackupEnabled</code> and <code>isMpaEnabled</code> ('Mpa' refers to multi-party approval).</p>
     pub fn global_settings(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.global_settings.as_ref()
     }
@@ -44,7 +44,7 @@ impl DescribeGlobalSettingsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_global_settings`](Self::set_global_settings).
     ///
-    /// <p>The status of the flag <code>isCrossAccountBackupEnabled</code>.</p>
+    /// <p>The status of the flags <code>isCrossAccountBackupEnabled</code> and <code>isMpaEnabled</code> ('Mpa' refers to multi-party approval).</p>
     pub fn global_settings(
         mut self,
         k: impl ::std::convert::Into<::std::string::String>,
@@ -55,7 +55,7 @@ impl DescribeGlobalSettingsOutputBuilder {
         self.global_settings = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>The status of the flag <code>isCrossAccountBackupEnabled</code>.</p>
+    /// <p>The status of the flags <code>isCrossAccountBackupEnabled</code> and <code>isMpaEnabled</code> ('Mpa' refers to multi-party approval).</p>
     pub fn set_global_settings(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -63,7 +63,7 @@ impl DescribeGlobalSettingsOutputBuilder {
         self.global_settings = input;
         self
     }
-    /// <p>The status of the flag <code>isCrossAccountBackupEnabled</code>.</p>
+    /// <p>The status of the flags <code>isCrossAccountBackupEnabled</code> and <code>isMpaEnabled</code> ('Mpa' refers to multi-party approval).</p>
     pub fn get_global_settings(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.global_settings
     }

@@ -207,11 +207,13 @@ pub use crate::types::_agent_runtime::AgentRuntime;
 
 pub use crate::types::_agent_runtime_status::AgentRuntimeStatus;
 
-pub use crate::types::_request_header_configuration::RequestHeaderConfiguration;
+pub use crate::types::_lifecycle_configuration::LifecycleConfiguration;
 
 pub use crate::types::_protocol_configuration::ProtocolConfiguration;
 
 pub use crate::types::_server_protocol::ServerProtocol;
+
+pub use crate::types::_request_header_configuration::RequestHeaderConfiguration;
 
 pub use crate::types::_network_configuration::NetworkConfiguration;
 
@@ -322,6 +324,8 @@ mod _google_oauth2_provider_config_output;
 mod _key_type;
 
 mod _kms_configuration;
+
+mod _lifecycle_configuration;
 
 mod _mcp_gateway_configuration;
 

@@ -24,6 +24,7 @@ impl crate::operation::start_copy_job::builders::StartCopyJobInputBuilder {
 ///
 /// <p>Starts a job to create a one-time copy of the specified resource.</p>
 /// <p>Does not support continuous backups.</p>
+/// <p>See <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/recov-point-create-a-copy.html#backup-copy-retry">Copy job retry</a> for information on how Backup retries copy job operations.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartCopyJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

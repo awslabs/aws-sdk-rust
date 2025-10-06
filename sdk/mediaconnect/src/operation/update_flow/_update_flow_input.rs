@@ -13,6 +13,8 @@ pub struct UpdateFlowInput {
     pub source_monitoring_config: ::std::option::Option<crate::types::MonitoringConfig>,
     /// <p>Specifies the configuration settings for NDI outputs. Required when the flow includes NDI outputs.</p>
     pub ndi_config: ::std::option::Option<crate::types::NdiConfig>,
+    /// <p>Determines the processing capacity and feature set of the flow.</p>
+    pub flow_size: ::std::option::Option<crate::types::FlowSize>,
 }
 impl UpdateFlowInput {
     /// <p>The Amazon Resource Name (ARN) of the flow that you want to update.</p>
@@ -35,6 +37,10 @@ impl UpdateFlowInput {
     pub fn ndi_config(&self) -> ::std::option::Option<&crate::types::NdiConfig> {
         self.ndi_config.as_ref()
     }
+    /// <p>Determines the processing capacity and feature set of the flow.</p>
+    pub fn flow_size(&self) -> ::std::option::Option<&crate::types::FlowSize> {
+        self.flow_size.as_ref()
+    }
 }
 impl UpdateFlowInput {
     /// Creates a new builder-style object to manufacture [`UpdateFlowInput`](crate::operation::update_flow::UpdateFlowInput).
@@ -52,6 +58,7 @@ pub struct UpdateFlowInputBuilder {
     pub(crate) maintenance: ::std::option::Option<crate::types::UpdateMaintenance>,
     pub(crate) source_monitoring_config: ::std::option::Option<crate::types::MonitoringConfig>,
     pub(crate) ndi_config: ::std::option::Option<crate::types::NdiConfig>,
+    pub(crate) flow_size: ::std::option::Option<crate::types::FlowSize>,
 }
 impl UpdateFlowInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the flow that you want to update.</p>
@@ -125,6 +132,20 @@ impl UpdateFlowInputBuilder {
     pub fn get_ndi_config(&self) -> &::std::option::Option<crate::types::NdiConfig> {
         &self.ndi_config
     }
+    /// <p>Determines the processing capacity and feature set of the flow.</p>
+    pub fn flow_size(mut self, input: crate::types::FlowSize) -> Self {
+        self.flow_size = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Determines the processing capacity and feature set of the flow.</p>
+    pub fn set_flow_size(mut self, input: ::std::option::Option<crate::types::FlowSize>) -> Self {
+        self.flow_size = input;
+        self
+    }
+    /// <p>Determines the processing capacity and feature set of the flow.</p>
+    pub fn get_flow_size(&self) -> &::std::option::Option<crate::types::FlowSize> {
+        &self.flow_size
+    }
     /// Consumes the builder and constructs a [`UpdateFlowInput`](crate::operation::update_flow::UpdateFlowInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_flow::UpdateFlowInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_flow::UpdateFlowInput {
@@ -133,6 +154,7 @@ impl UpdateFlowInputBuilder {
             maintenance: self.maintenance,
             source_monitoring_config: self.source_monitoring_config,
             ndi_config: self.ndi_config,
+            flow_size: self.flow_size,
         })
     }
 }

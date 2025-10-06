@@ -205,6 +205,10 @@ mod describe_events;
 
 mod describe_multi_region_clusters;
 
+mod describe_multi_region_parameter_groups;
+
+mod describe_multi_region_parameters;
+
 mod describe_parameter_groups;
 
 mod describe_parameters;

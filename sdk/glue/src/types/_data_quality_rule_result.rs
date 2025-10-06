@@ -18,6 +18,8 @@ pub struct DataQualityRuleResult {
     pub evaluated_rule: ::std::option::Option<::std::string::String>,
     /// <p>A map containing metrics associated with the evaluation of the rule based on row-level results.</p>
     pub rule_metrics: ::std::option::Option<::std::collections::HashMap<::std::string::String, f64>>,
+    /// <p>A map containing labels assigned to the data quality rule.</p>
+    pub labels: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl DataQualityRuleResult {
     /// <p>The name of the data quality rule.</p>
@@ -48,6 +50,10 @@ impl DataQualityRuleResult {
     pub fn rule_metrics(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, f64>> {
         self.rule_metrics.as_ref()
     }
+    /// <p>A map containing labels assigned to the data quality rule.</p>
+    pub fn labels(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.labels.as_ref()
+    }
 }
 impl ::std::fmt::Debug for DataQualityRuleResult {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -59,6 +65,7 @@ impl ::std::fmt::Debug for DataQualityRuleResult {
         formatter.field("evaluated_metrics", &"*** Sensitive Data Redacted ***");
         formatter.field("evaluated_rule", &"*** Sensitive Data Redacted ***");
         formatter.field("rule_metrics", &"*** Sensitive Data Redacted ***");
+        formatter.field("labels", &self.labels);
         formatter.finish()
     }
 }
@@ -80,6 +87,7 @@ pub struct DataQualityRuleResultBuilder {
     pub(crate) evaluated_metrics: ::std::option::Option<::std::collections::HashMap<::std::string::String, f64>>,
     pub(crate) evaluated_rule: ::std::option::Option<::std::string::String>,
     pub(crate) rule_metrics: ::std::option::Option<::std::collections::HashMap<::std::string::String, f64>>,
+    pub(crate) labels: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl DataQualityRuleResultBuilder {
     /// <p>The name of the data quality rule.</p>
@@ -192,6 +200,26 @@ impl DataQualityRuleResultBuilder {
     pub fn get_rule_metrics(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, f64>> {
         &self.rule_metrics
     }
+    /// Adds a key-value pair to `labels`.
+    ///
+    /// To override the contents of this collection use [`set_labels`](Self::set_labels).
+    ///
+    /// <p>A map containing labels assigned to the data quality rule.</p>
+    pub fn labels(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut hash_map = self.labels.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.labels = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>A map containing labels assigned to the data quality rule.</p>
+    pub fn set_labels(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.labels = input;
+        self
+    }
+    /// <p>A map containing labels assigned to the data quality rule.</p>
+    pub fn get_labels(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.labels
+    }
     /// Consumes the builder and constructs a [`DataQualityRuleResult`](crate::types::DataQualityRuleResult).
     pub fn build(self) -> crate::types::DataQualityRuleResult {
         crate::types::DataQualityRuleResult {
@@ -202,6 +230,7 @@ impl DataQualityRuleResultBuilder {
             evaluated_metrics: self.evaluated_metrics,
             evaluated_rule: self.evaluated_rule,
             rule_metrics: self.rule_metrics,
+            labels: self.labels,
         }
     }
 }
@@ -215,6 +244,7 @@ impl ::std::fmt::Debug for DataQualityRuleResultBuilder {
         formatter.field("evaluated_metrics", &"*** Sensitive Data Redacted ***");
         formatter.field("evaluated_rule", &"*** Sensitive Data Redacted ***");
         formatter.field("rule_metrics", &"*** Sensitive Data Redacted ***");
+        formatter.field("labels", &self.labels);
         formatter.finish()
     }
 }

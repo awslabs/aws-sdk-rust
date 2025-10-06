@@ -263,9 +263,9 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UpdateMultiRe
 pub enum UpdateMultiRegionClusterError {
     /// <p>The requested operation cannot be performed on the multi-Region cluster in its current state.</p>
     InvalidMultiRegionClusterStateFault(crate::types::error::InvalidMultiRegionClusterStateFault),
-    /// <p></p>
+    /// <p>The specified parameter combination is not valid.</p>
     InvalidParameterCombinationException(crate::types::error::InvalidParameterCombinationException),
-    /// <p></p>
+    /// <p>The specified parameter value is not valid.</p>
     InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
     /// <p>The specified multi-Region cluster does not exist.</p>
     MultiRegionClusterNotFoundFault(crate::types::error::MultiRegionClusterNotFoundFault),

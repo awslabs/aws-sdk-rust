@@ -3,18 +3,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetResourceOauth2TokenOutput {
-    /// <p>The URL for the authorization process, provided if the Access token requires user Authorization.</p>
+    /// <p>The URL to initiate the authorization process, provided when the access token requires user authorization.</p>
     pub authorization_url: ::std::option::Option<::std::string::String>,
-    /// <p>OAuth2 token ready for use</p>
+    /// <p>The OAuth 2.0 access token to use.</p>
     pub access_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetResourceOauth2TokenOutput {
-    /// <p>The URL for the authorization process, provided if the Access token requires user Authorization.</p>
+    /// <p>The URL to initiate the authorization process, provided when the access token requires user authorization.</p>
     pub fn authorization_url(&self) -> ::std::option::Option<&str> {
         self.authorization_url.as_deref()
     }
-    /// <p>OAuth2 token ready for use</p>
+    /// <p>The OAuth 2.0 access token to use.</p>
     pub fn access_token(&self) -> ::std::option::Option<&str> {
         self.access_token.as_deref()
     }
@@ -49,31 +49,31 @@ pub struct GetResourceOauth2TokenOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetResourceOauth2TokenOutputBuilder {
-    /// <p>The URL for the authorization process, provided if the Access token requires user Authorization.</p>
+    /// <p>The URL to initiate the authorization process, provided when the access token requires user authorization.</p>
     pub fn authorization_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authorization_url = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The URL for the authorization process, provided if the Access token requires user Authorization.</p>
+    /// <p>The URL to initiate the authorization process, provided when the access token requires user authorization.</p>
     pub fn set_authorization_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.authorization_url = input;
         self
     }
-    /// <p>The URL for the authorization process, provided if the Access token requires user Authorization.</p>
+    /// <p>The URL to initiate the authorization process, provided when the access token requires user authorization.</p>
     pub fn get_authorization_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.authorization_url
     }
-    /// <p>OAuth2 token ready for use</p>
+    /// <p>The OAuth 2.0 access token to use.</p>
     pub fn access_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>OAuth2 token ready for use</p>
+    /// <p>The OAuth 2.0 access token to use.</p>
     pub fn set_access_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.access_token = input;
         self
     }
-    /// <p>OAuth2 token ready for use</p>
+    /// <p>The OAuth 2.0 access token to use.</p>
     pub fn get_access_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.access_token
     }

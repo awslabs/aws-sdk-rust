@@ -17,6 +17,8 @@ pub struct CreateMemoryInput {
     pub event_expiry_duration: ::std::option::Option<i32>,
     /// <p>The memory strategies to use for this memory. Strategies define how information is extracted, processed, and consolidated.</p>
     pub memory_strategies: ::std::option::Option<::std::vec::Vec<crate::types::MemoryStrategyInput>>,
+    /// <p>A map of tag keys and values to assign to an AgentCore Memory. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.</p>
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateMemoryInput {
     /// <p>A unique, case-sensitive identifier to ensure that the operation completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request but does not return an error.</p>
@@ -49,6 +51,10 @@ impl CreateMemoryInput {
     pub fn memory_strategies(&self) -> &[crate::types::MemoryStrategyInput] {
         self.memory_strategies.as_deref().unwrap_or_default()
     }
+    /// <p>A map of tag keys and values to assign to an AgentCore Memory. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.</p>
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.tags.as_ref()
+    }
 }
 impl ::std::fmt::Debug for CreateMemoryInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -60,6 +66,7 @@ impl ::std::fmt::Debug for CreateMemoryInput {
         formatter.field("memory_execution_role_arn", &self.memory_execution_role_arn);
         formatter.field("event_expiry_duration", &self.event_expiry_duration);
         formatter.field("memory_strategies", &self.memory_strategies);
+        formatter.field("tags", &self.tags);
         formatter.finish()
     }
 }
@@ -81,6 +88,7 @@ pub struct CreateMemoryInputBuilder {
     pub(crate) memory_execution_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) event_expiry_duration: ::std::option::Option<i32>,
     pub(crate) memory_strategies: ::std::option::Option<::std::vec::Vec<crate::types::MemoryStrategyInput>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateMemoryInputBuilder {
     /// <p>A unique, case-sensitive identifier to ensure that the operation completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request but does not return an error.</p>
@@ -189,6 +197,26 @@ impl CreateMemoryInputBuilder {
     pub fn get_memory_strategies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MemoryStrategyInput>> {
         &self.memory_strategies
     }
+    /// Adds a key-value pair to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>A map of tag keys and values to assign to an AgentCore Memory. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.</p>
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut hash_map = self.tags.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.tags = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>A map of tag keys and values to assign to an AgentCore Memory. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// <p>A map of tag keys and values to assign to an AgentCore Memory. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.tags
+    }
     /// Consumes the builder and constructs a [`CreateMemoryInput`](crate::operation::create_memory::CreateMemoryInput).
     pub fn build(
         self,
@@ -201,6 +229,7 @@ impl CreateMemoryInputBuilder {
             memory_execution_role_arn: self.memory_execution_role_arn,
             event_expiry_duration: self.event_expiry_duration,
             memory_strategies: self.memory_strategies,
+            tags: self.tags,
         })
     }
 }
@@ -214,6 +243,7 @@ impl ::std::fmt::Debug for CreateMemoryInputBuilder {
         formatter.field("memory_execution_role_arn", &self.memory_execution_role_arn);
         formatter.field("event_expiry_duration", &self.event_expiry_duration);
         formatter.field("memory_strategies", &self.memory_strategies);
+        formatter.field("tags", &self.tags);
         formatter.finish()
     }
 }

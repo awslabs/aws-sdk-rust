@@ -188,6 +188,10 @@ pub(crate) fn de_get_agent_runtime(
                         ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
                     )?);
                 }
+                "lifecycleConfiguration" => {
+                    builder = builder
+                        .set_lifecycle_configuration(crate::protocol_serde::shape_lifecycle_configuration::de_lifecycle_configuration(tokens)?);
+                }
                 "networkConfiguration" => {
                     builder =
                         builder.set_network_configuration(crate::protocol_serde::shape_network_configuration::de_network_configuration(tokens)?);

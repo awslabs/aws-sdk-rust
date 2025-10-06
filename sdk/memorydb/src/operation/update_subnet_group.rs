@@ -259,17 +259,17 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UpdateSubnetG
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum UpdateSubnetGroupError {
-    /// <p></p>
+    /// <p>The specified subnet is not valid.</p>
     InvalidSubnet(crate::types::error::InvalidSubnet),
-    /// <p></p>
+    /// <p>The required service-linked role was not found.</p>
     ServiceLinkedRoleNotFoundFault(crate::types::error::ServiceLinkedRoleNotFoundFault),
-    /// <p></p>
+    /// <p>The specified subnet group does not exist.</p>
     SubnetGroupNotFoundFault(crate::types::error::SubnetGroupNotFoundFault),
-    /// <p></p>
+    /// <p>The subnet is currently in use and cannot be deleted.</p>
     SubnetInUse(crate::types::error::SubnetInUse),
-    /// <p></p>
+    /// <p>The specified subnet is not allowed for this operation.</p>
     SubnetNotAllowedFault(crate::types::error::SubnetNotAllowedFault),
-    /// <p></p>
+    /// <p>The request cannot be processed because it would exceed the maximum number of subnets allowed.</p>
     SubnetQuotaExceededFault(crate::types::error::SubnetQuotaExceededFault),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

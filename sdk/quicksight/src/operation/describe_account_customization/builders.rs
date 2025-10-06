@@ -22,13 +22,13 @@ impl crate::operation::describe_account_customization::builders::DescribeAccount
 }
 /// Fluent builder constructing a request to `DescribeAccountCustomization`.
 ///
-/// <p>Describes the customizations associated with the provided Amazon Web Services account and Amazon QuickSight namespace in an Amazon Web Services Region. The QuickSight console evaluates which customizations to apply by running this API operation with the <code>Resolved</code> flag included.</p>
+/// <p>Describes the customizations associated with the provided Amazon Web Services account and Amazon QuickSight namespace. The QuickSight console evaluates which customizations to apply by running this API operation with the <code>Resolved</code> flag included.</p>
 /// <p>To determine what customizations display when you run this command, it can help to visualize the relationship of the entities involved.</p>
 /// <ul>
 /// <li>
 /// <p><code>Amazon Web Services account</code> - The Amazon Web Services account exists at the top of the hierarchy. It has the potential to use all of the Amazon Web Services Regions and Amazon Web Services Services. When you subscribe to QuickSight, you choose one Amazon Web Services Region to use as your home Region. That's where your free SPICE capacity is located. You can use QuickSight in any supported Amazon Web Services Region.</p></li>
 /// <li>
-/// <p><code>Amazon Web Services Region</code> - In each Amazon Web Services Region where you sign in to QuickSight at least once, QuickSight acts as a separate instance of the same service. If you have a user directory, it resides in us-east-1, which is the US East (N. Virginia). Generally speaking, these users have access to QuickSight in any Amazon Web Services Region, unless they are constrained to a namespace.</p>
+/// <p><code>Amazon Web Services Region</code> - You can sign in to QuickSight in any Amazon Web Services Region. If you have a user directory, it resides in us-east-1, which is US East (N. Virginia). Generally speaking, these users have access to QuickSight in any Amazon Web Services Region, unless they are constrained to a namespace.</p>
 /// <p>To run the command in a different Amazon Web Services Region, you change your Region settings. If you're using the CLI, you can use one of the following options:</p>
 /// <ul>
 /// <li>
@@ -41,7 +41,7 @@ impl crate::operation::describe_account_customization::builders::DescribeAccount
 /// <li>
 /// <p><code>Namespace</code> - A QuickSight namespace is a partition that contains users and assets (data sources, datasets, dashboards, and so on). To access assets that are in a specific namespace, users and groups must also be part of the same namespace. People who share a namespace are completely isolated from users and assets in other namespaces, even if they are in the same Amazon Web Services account and Amazon Web Services Region.</p></li>
 /// <li>
-/// <p><code>Applied customizations</code> - Within an Amazon Web Services Region, a set of QuickSight customizations can apply to an Amazon Web Services account or to a namespace. Settings that you apply to a namespace override settings that you apply to an Amazon Web Services account. All settings are isolated to a single Amazon Web Services Region. To apply them in other Amazon Web Services Regions, run the <code>CreateAccountCustomization</code> command in each Amazon Web Services Region where you want to apply the same customizations.</p></li>
+/// <p><code>Applied customizations</code> - QuickSight customizations can apply to an Amazon Web Services account or to a namespace. Settings that you apply to a namespace override settings that you apply to an Amazon Web Services account.</p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeAccountCustomizationFluentBuilder {
