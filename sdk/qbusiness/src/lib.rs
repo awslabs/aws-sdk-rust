@@ -18,7 +18,7 @@
 #![allow(rustdoc::invalid_html_tags)]
 #![forbid(unsafe_code)]
 #![warn(missing_docs)]
-#![cfg_attr(docsrs, feature(doc_auto_cfg))]
+#![cfg_attr(docsrs, feature(doc_cfg))]
 //! This is the _Amazon Q Business_ API Reference. Amazon Q Business is a fully managed, generative-AI powered enterprise chat assistant that you can deploy within your organization. Amazon Q Business enhances employee productivity by supporting key tasks such as question-answering, knowledge discovery, writing email messages, summarizing text, drafting document outlines, and brainstorming ideas. Users ask questions of Amazon Q Business and get answers that are presented in a conversational manner. For an introduction to the service, see the [_Amazon Q Business User Guide_](https://docs.aws.amazon.com/amazonq/latest/business-use-dg/what-is.html).
 //!
 //! For an overview of the Amazon Q Business APIs, see [Overview of Amazon Q Business API operations](https://docs.aws.amazon.com/amazonq/latest/business-use-dg/api-ref.html#api-overview).
@@ -42,7 +42,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-qbusiness = "1.100.0"
+//! aws-sdk-qbusiness = "1.101.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

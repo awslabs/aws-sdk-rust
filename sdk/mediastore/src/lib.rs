@@ -18,7 +18,7 @@
 #![allow(rustdoc::invalid_html_tags)]
 #![forbid(unsafe_code)]
 #![warn(missing_docs)]
-#![cfg_attr(docsrs, feature(doc_auto_cfg))]
+#![cfg_attr(docsrs, feature(doc_cfg))]
 //! An AWS Elemental MediaStore container is a namespace that holds folders and objects. You use a container endpoint to create, read, and delete objects.
 //!
 //! ## Getting Started
@@ -33,7 +33,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-mediastore = "1.85.0"
+//! aws-sdk-mediastore = "1.86.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

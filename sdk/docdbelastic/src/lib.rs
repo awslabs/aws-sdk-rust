@@ -18,7 +18,7 @@
 #![allow(rustdoc::invalid_html_tags)]
 #![forbid(unsafe_code)]
 #![warn(missing_docs)]
-#![cfg_attr(docsrs, feature(doc_auto_cfg))]
+#![cfg_attr(docsrs, feature(doc_cfg))]
 //! Amazon DocumentDB elastic-clusters support workloads with millions of reads/writes per second and petabytes of storage capacity. Amazon DocumentDB elastic clusters also simplify how developers interact with Amazon DocumentDB elastic-clusters by eliminating the need to choose, manage or upgrade instances.
 //!
 //! Amazon DocumentDB elastic-clusters were created to:
@@ -38,7 +38,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-docdbelastic = "1.87.0"
+//! aws-sdk-docdbelastic = "1.88.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

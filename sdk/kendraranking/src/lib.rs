@@ -18,7 +18,7 @@
 #![allow(rustdoc::invalid_html_tags)]
 #![forbid(unsafe_code)]
 #![warn(missing_docs)]
-#![cfg_attr(docsrs, feature(doc_auto_cfg))]
+#![cfg_attr(docsrs, feature(doc_cfg))]
 //! Amazon Kendra Intelligent Ranking uses Amazon Kendra semantic search capabilities to intelligently re-rank a search service's results.
 //!
 //! ## Getting Started
@@ -33,7 +33,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-kendraranking = "1.84.0"
+//! aws-sdk-kendraranking = "1.85.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

@@ -18,7 +18,7 @@
 #![allow(rustdoc::invalid_html_tags)]
 #![forbid(unsafe_code)]
 #![warn(missing_docs)]
-#![cfg_attr(docsrs, feature(doc_auto_cfg))]
+#![cfg_attr(docsrs, feature(doc_cfg))]
 //! License Manager makes it easier to manage licenses from software vendors across multiple Amazon Web Services accounts and on-premises servers.
 //!
 //! ## Getting Started
@@ -33,7 +33,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-licensemanager = "1.87.0"
+//! aws-sdk-licensemanager = "1.88.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

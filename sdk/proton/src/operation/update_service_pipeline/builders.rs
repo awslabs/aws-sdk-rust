@@ -46,6 +46,7 @@ impl crate::operation::update_service_pipeline::builders::UpdateServicePipelineI
 /// <p>In this mode, the service pipeline is deployed and updated with the published, recommended (latest) major and minor version of the current template by default. You can specify a different major version that's higher than the major version in use and a minor version.</p>
 /// </dd>
 /// </dl>
+#[deprecated(note = "AWS Proton is not accepting new customers.", since = "10/07/2025")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateServicePipelineFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

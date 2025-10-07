@@ -9,6 +9,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteEnvironmentTemplateVersionOutput`](crate::operation::delete_environment_template_version::DeleteEnvironmentTemplateVersionOutput) with field(s):
     ///   - [`environment_template_version(Option<EnvironmentTemplateVersion>)`](crate::operation::delete_environment_template_version::DeleteEnvironmentTemplateVersionOutput::environment_template_version): <p>The detailed data of the environment template version being deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteEnvironmentTemplateVersionError>`](crate::operation::delete_environment_template_version::DeleteEnvironmentTemplateVersionError)
+    #[deprecated(note = "AWS Proton is not accepting new customers.", since = "10/07/2025")]
     pub fn delete_environment_template_version(
         &self,
     ) -> crate::operation::delete_environment_template_version::builders::DeleteEnvironmentTemplateVersionFluentBuilder {

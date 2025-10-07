@@ -32,6 +32,7 @@ impl crate::operation::cancel_service_instance_deployment::builders::CancelServi
 /// <li>
 /// <p>If the current <code>UpdateServiceInstance</code> action succeeds before the cancellation attempt starts, the resulting deployment state is <code>SUCCEEDED</code> and the cancellation attempt has no effect.</p></li>
 /// </ul>
+#[deprecated(note = "AWS Proton is not accepting new customers.", since = "10/07/2025")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CancelServiceInstanceDeploymentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

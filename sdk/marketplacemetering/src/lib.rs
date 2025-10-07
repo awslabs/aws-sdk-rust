@@ -18,7 +18,7 @@
 #![allow(rustdoc::invalid_html_tags)]
 #![forbid(unsafe_code)]
 #![warn(missing_docs)]
-#![cfg_attr(docsrs, feature(doc_auto_cfg))]
+#![cfg_attr(docsrs, feature(doc_cfg))]
 //! This reference provides descriptions of the low-level Marketplace Metering Service API.
 //!
 //! Amazon Web Services Marketplace sellers can use this API to submit usage data for custom usage dimensions.
@@ -75,7 +75,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-marketplacemetering = "1.87.0"
+//! aws-sdk-marketplacemetering = "1.88.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

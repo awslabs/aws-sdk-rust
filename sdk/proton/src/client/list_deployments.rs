@@ -14,6 +14,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_deployments::ListDeploymentsOutput::next_token): <p>A token that indicates the location of the next deployment in the array of deployment, after the current requested list of deployment.</p>
     ///   - [`deployments(Vec::<DeploymentSummary>)`](crate::operation::list_deployments::ListDeploymentsOutput::deployments): <p>An array of deployment with summary data.</p>
     /// - On failure, responds with [`SdkError<ListDeploymentsError>`](crate::operation::list_deployments::ListDeploymentsError)
+    #[deprecated(note = "AWS Proton is not accepting new customers.", since = "10/07/2025")]
     pub fn list_deployments(&self) -> crate::operation::list_deployments::builders::ListDeploymentsFluentBuilder {
         crate::operation::list_deployments::builders::ListDeploymentsFluentBuilder::new(self.handle.clone())
     }

@@ -18,7 +18,7 @@
 #![allow(rustdoc::invalid_html_tags)]
 #![forbid(unsafe_code)]
 #![warn(missing_docs)]
-#![cfg_attr(docsrs, feature(doc_auto_cfg))]
+#![cfg_attr(docsrs, feature(doc_cfg))]
 //! With the Amazon Location Routes API you can calculate routes and estimate travel time based on up-to-date road network and live traffic information.
 //!
 //! Calculate optimal travel routes and estimate travel times using up-to-date road network and traffic data. Key features include:
@@ -40,7 +40,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-georoutes = "1.39.0"
+//! aws-sdk-georoutes = "1.40.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

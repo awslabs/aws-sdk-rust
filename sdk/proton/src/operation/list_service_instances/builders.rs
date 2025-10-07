@@ -23,6 +23,7 @@ impl crate::operation::list_service_instances::builders::ListServiceInstancesInp
 /// Fluent builder constructing a request to `ListServiceInstances`.
 ///
 /// <p>List service instances with summary data. This action lists service instances of all services in the Amazon Web Services account.</p>
+#[deprecated(note = "AWS Proton is not accepting new customers.", since = "10/07/2025")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListServiceInstancesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

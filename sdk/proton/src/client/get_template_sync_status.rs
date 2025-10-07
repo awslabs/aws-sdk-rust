@@ -11,6 +11,7 @@ impl super::Client {
     ///   - [`latest_successful_sync(Option<ResourceSyncAttempt>)`](crate::operation::get_template_sync_status::GetTemplateSyncStatusOutput::latest_successful_sync): <p>The details of the last successful sync that's returned by Proton.</p>
     ///   - [`desired_state(Option<Revision>)`](crate::operation::get_template_sync_status::GetTemplateSyncStatusOutput::desired_state): <p>The template sync desired state that's returned by Proton.</p>
     /// - On failure, responds with [`SdkError<GetTemplateSyncStatusError>`](crate::operation::get_template_sync_status::GetTemplateSyncStatusError)
+    #[deprecated(note = "AWS Proton is not accepting new customers.", since = "10/07/2025")]
     pub fn get_template_sync_status(&self) -> crate::operation::get_template_sync_status::builders::GetTemplateSyncStatusFluentBuilder {
         crate::operation::get_template_sync_status::builders::GetTemplateSyncStatusFluentBuilder::new(self.handle.clone())
     }

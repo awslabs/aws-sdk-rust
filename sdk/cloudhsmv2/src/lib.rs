@@ -18,7 +18,7 @@
 #![allow(rustdoc::invalid_html_tags)]
 #![forbid(unsafe_code)]
 #![warn(missing_docs)]
-#![cfg_attr(docsrs, feature(doc_auto_cfg))]
+#![cfg_attr(docsrs, feature(doc_cfg))]
 //! For more information about CloudHSM, see [CloudHSM](http://aws.amazon.com/cloudhsm/) and the [CloudHSM User Guide](https://docs.aws.amazon.com/cloudhsm/latest/userguide/).
 //!
 //! ## Getting Started
@@ -33,7 +33,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-cloudhsmv2 = "1.88.0"
+//! aws-sdk-cloudhsmv2 = "1.89.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

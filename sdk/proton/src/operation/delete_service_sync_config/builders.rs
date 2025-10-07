@@ -23,6 +23,7 @@ impl crate::operation::delete_service_sync_config::builders::DeleteServiceSyncCo
 /// Fluent builder constructing a request to `DeleteServiceSyncConfig`.
 ///
 /// <p>Delete the Proton Ops file.</p>
+#[deprecated(note = "AWS Proton is not accepting new customers.", since = "10/07/2025")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteServiceSyncConfigFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

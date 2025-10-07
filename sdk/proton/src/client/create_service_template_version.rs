@@ -14,6 +14,7 @@ impl super::Client {
     /// - On success, responds with [`CreateServiceTemplateVersionOutput`](crate::operation::create_service_template_version::CreateServiceTemplateVersionOutput) with field(s):
     ///   - [`service_template_version(Option<ServiceTemplateVersion>)`](crate::operation::create_service_template_version::CreateServiceTemplateVersionOutput::service_template_version): <p>The service template version summary of detail data that's returned by Proton.</p>
     /// - On failure, responds with [`SdkError<CreateServiceTemplateVersionError>`](crate::operation::create_service_template_version::CreateServiceTemplateVersionError)
+    #[deprecated(note = "AWS Proton is not accepting new customers.", since = "10/07/2025")]
     pub fn create_service_template_version(
         &self,
     ) -> crate::operation::create_service_template_version::builders::CreateServiceTemplateVersionFluentBuilder {

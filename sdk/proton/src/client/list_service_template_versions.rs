@@ -12,6 +12,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_service_template_versions::ListServiceTemplateVersionsOutput::next_token): <p>A token that indicates the location of the next major or minor version in the array of major or minor versions of a service template, after the current requested list of service major or minor versions.</p>
     ///   - [`template_versions(Vec::<ServiceTemplateVersionSummary>)`](crate::operation::list_service_template_versions::ListServiceTemplateVersionsOutput::template_versions): <p>An array of major or minor versions of a service template with detail data.</p>
     /// - On failure, responds with [`SdkError<ListServiceTemplateVersionsError>`](crate::operation::list_service_template_versions::ListServiceTemplateVersionsError)
+    #[deprecated(note = "AWS Proton is not accepting new customers.", since = "10/07/2025")]
     pub fn list_service_template_versions(
         &self,
     ) -> crate::operation::list_service_template_versions::builders::ListServiceTemplateVersionsFluentBuilder {

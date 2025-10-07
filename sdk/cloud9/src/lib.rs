@@ -18,7 +18,7 @@
 #![allow(rustdoc::invalid_html_tags)]
 #![forbid(unsafe_code)]
 #![warn(missing_docs)]
-#![cfg_attr(docsrs, feature(doc_auto_cfg))]
+#![cfg_attr(docsrs, feature(doc_cfg))]
 //! Cloud9 is a collection of tools that you can use to code, build, run, test, debug, and release software in the cloud.
 //!
 //! For more information about Cloud9, see the [Cloud9 User Guide](https://docs.aws.amazon.com/cloud9/latest/user-guide).
@@ -52,7 +52,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-cloud9 = "1.86.0"
+//! aws-sdk-cloud9 = "1.87.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

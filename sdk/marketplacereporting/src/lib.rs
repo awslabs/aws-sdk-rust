@@ -18,7 +18,7 @@
 #![allow(rustdoc::invalid_html_tags)]
 #![forbid(unsafe_code)]
 #![warn(missing_docs)]
-#![cfg_attr(docsrs, feature(doc_auto_cfg))]
+#![cfg_attr(docsrs, feature(doc_cfg))]
 //! The Amazon Web Services Marketplace GetBuyerDashboard API enables you to get a procurement insights dashboard programmatically. The API gets the agreement and cost analysis dashboards with data for all of the Amazon Web Services accounts in your Amazon Web Services Organization.
 //!
 //! To use the Amazon Web Services Marketplace Reporting API, you must complete the following prerequisites:
@@ -40,7 +40,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-marketplacereporting = "1.41.0"
+//! aws-sdk-marketplacereporting = "1.42.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

@@ -7,6 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetEnvironmentOutput`](crate::operation::get_environment::GetEnvironmentOutput) with field(s):
     ///   - [`environment(Option<Environment>)`](crate::operation::get_environment::GetEnvironmentOutput::environment): <p>The detailed data of the requested environment.</p>
     /// - On failure, responds with [`SdkError<GetEnvironmentError>`](crate::operation::get_environment::GetEnvironmentError)
+    #[deprecated(note = "AWS Proton is not accepting new customers.", since = "10/07/2025")]
     pub fn get_environment(&self) -> crate::operation::get_environment::builders::GetEnvironmentFluentBuilder {
         crate::operation::get_environment::builders::GetEnvironmentFluentBuilder::new(self.handle.clone())
     }

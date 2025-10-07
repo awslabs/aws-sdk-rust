@@ -13,6 +13,7 @@ impl super::Client {
     /// - On success, responds with [`CreateEnvironmentAccountConnectionOutput`](crate::operation::create_environment_account_connection::CreateEnvironmentAccountConnectionOutput) with field(s):
     ///   - [`environment_account_connection(Option<EnvironmentAccountConnection>)`](crate::operation::create_environment_account_connection::CreateEnvironmentAccountConnectionOutput::environment_account_connection): <p>The environment account connection detail data that's returned by Proton.</p>
     /// - On failure, responds with [`SdkError<CreateEnvironmentAccountConnectionError>`](crate::operation::create_environment_account_connection::CreateEnvironmentAccountConnectionError)
+    #[deprecated(note = "AWS Proton is not accepting new customers.", since = "10/07/2025")]
     pub fn create_environment_account_connection(
         &self,
     ) -> crate::operation::create_environment_account_connection::builders::CreateEnvironmentAccountConnectionFluentBuilder {

@@ -18,7 +18,7 @@
 #![allow(rustdoc::invalid_html_tags)]
 #![forbid(unsafe_code)]
 #![warn(missing_docs)]
-#![cfg_attr(docsrs, feature(doc_auto_cfg))]
+#![cfg_attr(docsrs, feature(doc_cfg))]
 //! The _AWS Chatbot API Reference_ provides descriptions, API request parameters, and the XML response for each of the AWS Chatbot API actions.
 //!
 //! AWS Chatbot APIs are currently available in the following Regions:
@@ -41,7 +41,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-chatbot = "1.75.0"
+//! aws-sdk-chatbot = "1.76.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

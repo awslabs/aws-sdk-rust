@@ -23,6 +23,7 @@ impl crate::operation::create_environment_template_version::builders::CreateEnvi
 /// Fluent builder constructing a request to `CreateEnvironmentTemplateVersion`.
 ///
 /// <p>Create a new major or minor version of an environment template. A major version of an environment template is a version that <i>isn't</i> backwards compatible. A minor version of an environment template is a version that's backwards compatible within its major version.</p>
+#[deprecated(note = "AWS Proton is not accepting new customers.", since = "10/07/2025")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateEnvironmentTemplateVersionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

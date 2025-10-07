@@ -11,6 +11,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_environment_outputs::ListEnvironmentOutputsOutput::next_token): <p>A token that indicates the location of the next environment output in the array of environment outputs, after the current requested list of environment outputs.</p>
     ///   - [`outputs(Vec::<Output>)`](crate::operation::list_environment_outputs::ListEnvironmentOutputsOutput::outputs): <p>An array of environment outputs with detail data.</p>
     /// - On failure, responds with [`SdkError<ListEnvironmentOutputsError>`](crate::operation::list_environment_outputs::ListEnvironmentOutputsError)
+    #[deprecated(note = "AWS Proton is not accepting new customers.", since = "10/07/2025")]
     pub fn list_environment_outputs(&self) -> crate::operation::list_environment_outputs::builders::ListEnvironmentOutputsFluentBuilder {
         crate::operation::list_environment_outputs::builders::ListEnvironmentOutputsFluentBuilder::new(self.handle.clone())
     }

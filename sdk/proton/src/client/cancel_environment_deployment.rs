@@ -7,6 +7,7 @@ impl super::Client {
     /// - On success, responds with [`CancelEnvironmentDeploymentOutput`](crate::operation::cancel_environment_deployment::CancelEnvironmentDeploymentOutput) with field(s):
     ///   - [`environment(Option<Environment>)`](crate::operation::cancel_environment_deployment::CancelEnvironmentDeploymentOutput::environment): <p>The environment summary data that's returned by Proton.</p>
     /// - On failure, responds with [`SdkError<CancelEnvironmentDeploymentError>`](crate::operation::cancel_environment_deployment::CancelEnvironmentDeploymentError)
+    #[deprecated(note = "AWS Proton is not accepting new customers.", since = "10/07/2025")]
     pub fn cancel_environment_deployment(
         &self,
     ) -> crate::operation::cancel_environment_deployment::builders::CancelEnvironmentDeploymentFluentBuilder {

@@ -8,6 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetRepositoryOutput`](crate::operation::get_repository::GetRepositoryOutput) with field(s):
     ///   - [`repository(Option<Repository>)`](crate::operation::get_repository::GetRepositoryOutput::repository): <p>The repository link's detail data that's returned by Proton.</p>
     /// - On failure, responds with [`SdkError<GetRepositoryError>`](crate::operation::get_repository::GetRepositoryError)
+    #[deprecated(note = "AWS Proton is not accepting new customers.", since = "10/07/2025")]
     pub fn get_repository(&self) -> crate::operation::get_repository::builders::GetRepositoryFluentBuilder {
         crate::operation::get_repository::builders::GetRepositoryFluentBuilder::new(self.handle.clone())
     }

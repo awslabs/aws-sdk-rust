@@ -23,6 +23,7 @@ impl crate::operation::get_service_template_version::builders::GetServiceTemplat
 /// Fluent builder constructing a request to `GetServiceTemplateVersion`.
 ///
 /// <p>Get detailed data for a major or minor version of a service template.</p>
+#[deprecated(note = "AWS Proton is not accepting new customers.", since = "10/07/2025")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetServiceTemplateVersionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

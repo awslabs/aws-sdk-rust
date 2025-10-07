@@ -6,6 +6,7 @@ impl super::Client {
     /// - On success, responds with [`GetAccountSettingsOutput`](crate::operation::get_account_settings::GetAccountSettingsOutput) with field(s):
     ///   - [`account_settings(Option<AccountSettings>)`](crate::operation::get_account_settings::GetAccountSettingsOutput::account_settings): <p>The Proton pipeline service role detail data that's returned by Proton.</p>
     /// - On failure, responds with [`SdkError<GetAccountSettingsError>`](crate::operation::get_account_settings::GetAccountSettingsError)
+    #[deprecated(note = "AWS Proton is not accepting new customers.", since = "10/07/2025")]
     pub fn get_account_settings(&self) -> crate::operation::get_account_settings::builders::GetAccountSettingsFluentBuilder {
         crate::operation::get_account_settings::builders::GetAccountSettingsFluentBuilder::new(self.handle.clone())
     }

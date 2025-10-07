@@ -24,6 +24,7 @@ impl crate::operation::cancel_component_deployment::builders::CancelComponentDep
 ///
 /// <p>Attempts to cancel a component deployment (for a component that is in the <code>IN_PROGRESS</code> deployment status).</p>
 /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
+#[deprecated(note = "AWS Proton is not accepting new customers.", since = "10/07/2025")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CancelComponentDeploymentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

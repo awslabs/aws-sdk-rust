@@ -23,6 +23,7 @@ impl crate::operation::get_environment_template_version::builders::GetEnvironmen
 /// Fluent builder constructing a request to `GetEnvironmentTemplateVersion`.
 ///
 /// <p>Get detailed data for a major or minor version of an environment template.</p>
+#[deprecated(note = "AWS Proton is not accepting new customers.", since = "10/07/2025")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetEnvironmentTemplateVersionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

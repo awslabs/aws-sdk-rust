@@ -24,6 +24,7 @@ impl crate::operation::create_environment_account_connection::builders::CreateEn
 ///
 /// <p>Create an environment account connection in an environment account so that environment infrastructure resources can be provisioned in the environment account from a management account.</p>
 /// <p>An environment account connection is a secure bi-directional connection between a <i>management account</i> and an <i>environment account</i> that maintains authorization and permissions. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-env-account-connections.html">Environment account connections</a> in the <i>Proton User guide</i>.</p>
+#[deprecated(note = "AWS Proton is not accepting new customers.", since = "10/07/2025")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateEnvironmentAccountConnectionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

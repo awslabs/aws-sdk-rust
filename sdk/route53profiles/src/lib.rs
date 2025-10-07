@@ -18,7 +18,7 @@
 #![allow(rustdoc::invalid_html_tags)]
 #![forbid(unsafe_code)]
 #![warn(missing_docs)]
-#![cfg_attr(docsrs, feature(doc_auto_cfg))]
+#![cfg_attr(docsrs, feature(doc_cfg))]
 //! With Amazon Route 53 Profiles you can share Route 53 configurations with VPCs and AWS accounts
 //!
 //! ## Getting Started
@@ -33,7 +33,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-route53profiles = "1.64.0"
+//! aws-sdk-route53profiles = "1.65.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

@@ -7,6 +7,7 @@ impl super::Client {
     /// - On success, responds with [`RejectEnvironmentAccountConnectionOutput`](crate::operation::reject_environment_account_connection::RejectEnvironmentAccountConnectionOutput) with field(s):
     ///   - [`environment_account_connection(Option<EnvironmentAccountConnection>)`](crate::operation::reject_environment_account_connection::RejectEnvironmentAccountConnectionOutput::environment_account_connection): <p>The environment connection account detail data that's returned by Proton.</p>
     /// - On failure, responds with [`SdkError<RejectEnvironmentAccountConnectionError>`](crate::operation::reject_environment_account_connection::RejectEnvironmentAccountConnectionError)
+    #[deprecated(note = "AWS Proton is not accepting new customers.", since = "10/07/2025")]
     pub fn reject_environment_account_connection(
         &self,
     ) -> crate::operation::reject_environment_account_connection::builders::RejectEnvironmentAccountConnectionFluentBuilder {

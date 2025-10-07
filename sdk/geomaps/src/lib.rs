@@ -18,7 +18,7 @@
 #![allow(rustdoc::invalid_html_tags)]
 #![forbid(unsafe_code)]
 #![warn(missing_docs)]
-#![cfg_attr(docsrs, feature(doc_auto_cfg))]
+#![cfg_attr(docsrs, feature(doc_cfg))]
 //! Integrate high-quality base map data into your applications using [MapLibre](https://maplibre.org). Capabilities include:
 //!   - Access to comprehensive base map data, allowing you to tailor the map display to your specific needs.
 //!   - Multiple pre-designed map styles suited for various application types, such as navigation, logistics, or data visualization.
@@ -40,7 +40,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-geomaps = "1.39.0"
+//! aws-sdk-geomaps = "1.40.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

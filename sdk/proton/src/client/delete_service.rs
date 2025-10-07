@@ -7,6 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteServiceOutput`](crate::operation::delete_service::DeleteServiceOutput) with field(s):
     ///   - [`service(Option<Service>)`](crate::operation::delete_service::DeleteServiceOutput::service): <p>The detailed data of the service being deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteServiceError>`](crate::operation::delete_service::DeleteServiceError)
+    #[deprecated(note = "AWS Proton is not accepting new customers.", since = "10/07/2025")]
     pub fn delete_service(&self) -> crate::operation::delete_service::builders::DeleteServiceFluentBuilder {
         crate::operation::delete_service::builders::DeleteServiceFluentBuilder::new(self.handle.clone())
     }

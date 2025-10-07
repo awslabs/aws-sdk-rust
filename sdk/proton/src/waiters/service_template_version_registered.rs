@@ -11,6 +11,7 @@
 /// [`Waiters`](crate::client::Waiters) trait and calling the methods
 /// prefixed with `wait_until`.
 ///
+#[deprecated(note = "AWS Proton is not accepting new customers.", since = "10/07/2025")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ServiceTemplateVersionRegisteredFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

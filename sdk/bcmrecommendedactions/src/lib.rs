@@ -18,7 +18,7 @@
 #![allow(rustdoc::invalid_html_tags)]
 #![forbid(unsafe_code)]
 #![warn(missing_docs)]
-#![cfg_attr(docsrs, feature(doc_auto_cfg))]
+#![cfg_attr(docsrs, feature(doc_cfg))]
 //! You can use the Billing and Cost Management Recommended Actions API to programmatically query your best practices and recommendations to optimize your costs.
 //!
 //! The Billing and Cost Management Recommended Actions API provides the following endpoint:
@@ -36,7 +36,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-bcmrecommendedactions = "1.3.0"
+//! aws-sdk-bcmrecommendedactions = "1.4.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

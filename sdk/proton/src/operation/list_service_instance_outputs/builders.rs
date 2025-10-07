@@ -23,6 +23,7 @@ impl crate::operation::list_service_instance_outputs::builders::ListServiceInsta
 /// Fluent builder constructing a request to `ListServiceInstanceOutputs`.
 ///
 /// <p>Get a list service of instance Infrastructure as Code (IaC) outputs.</p>
+#[deprecated(note = "AWS Proton is not accepting new customers.", since = "10/07/2025")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListServiceInstanceOutputsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

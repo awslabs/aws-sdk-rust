@@ -7,6 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteServiceSyncConfigOutput`](crate::operation::delete_service_sync_config::DeleteServiceSyncConfigOutput) with field(s):
     ///   - [`service_sync_config(Option<ServiceSyncConfig>)`](crate::operation::delete_service_sync_config::DeleteServiceSyncConfigOutput::service_sync_config): <p>The detailed data for the service sync config.</p>
     /// - On failure, responds with [`SdkError<DeleteServiceSyncConfigError>`](crate::operation::delete_service_sync_config::DeleteServiceSyncConfigError)
+    #[deprecated(note = "AWS Proton is not accepting new customers.", since = "10/07/2025")]
     pub fn delete_service_sync_config(&self) -> crate::operation::delete_service_sync_config::builders::DeleteServiceSyncConfigFluentBuilder {
         crate::operation::delete_service_sync_config::builders::DeleteServiceSyncConfigFluentBuilder::new(self.handle.clone())
     }

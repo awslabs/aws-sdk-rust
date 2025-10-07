@@ -23,6 +23,7 @@ impl crate::operation::get_service_sync_blocker_summary::builders::GetServiceSyn
 /// Fluent builder constructing a request to `GetServiceSyncBlockerSummary`.
 ///
 /// <p>Get detailed data for the service sync blocker summary.</p>
+#[deprecated(note = "AWS Proton is not accepting new customers.", since = "10/07/2025")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetServiceSyncBlockerSummaryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -25,6 +25,7 @@ impl crate::operation::delete_environment_account_connection::builders::DeleteEn
 /// <p>In an environment account, delete an environment account connection.</p>
 /// <p>After you delete an environment account connection that’s in use by an Proton environment, Proton <i>can’t</i> manage the environment infrastructure resources until a new environment account connection is accepted for the environment account and associated environment. You're responsible for cleaning up provisioned resources that remain without an environment connection.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-env-account-connections.html">Environment account connections</a> in the <i>Proton User guide</i>.</p>
+#[deprecated(note = "AWS Proton is not accepting new customers.", since = "10/07/2025")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteEnvironmentAccountConnectionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

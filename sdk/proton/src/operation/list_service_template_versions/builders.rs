@@ -23,6 +23,7 @@ impl crate::operation::list_service_template_versions::builders::ListServiceTemp
 /// Fluent builder constructing a request to `ListServiceTemplateVersions`.
 ///
 /// <p>List major or minor versions of a service template with detail data.</p>
+#[deprecated(note = "AWS Proton is not accepting new customers.", since = "10/07/2025")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListServiceTemplateVersionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

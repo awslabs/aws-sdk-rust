@@ -18,7 +18,7 @@
 #![allow(rustdoc::invalid_html_tags)]
 #![forbid(unsafe_code)]
 #![warn(missing_docs)]
-#![cfg_attr(docsrs, feature(doc_auto_cfg))]
+#![cfg_attr(docsrs, feature(doc_cfg))]
 //! IoT Secure Tunneling creates remote connections to devices deployed in the field.
 //!
 //! For more information about how IoT Secure Tunneling works, see [IoT Secure Tunneling](https://docs.aws.amazon.com/iot/latest/developerguide/secure-tunneling.html).
@@ -35,7 +35,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-iotsecuretunneling = "1.86.0"
+//! aws-sdk-iotsecuretunneling = "1.87.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

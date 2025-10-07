@@ -23,6 +23,7 @@ impl crate::operation::delete_environment_template::builders::DeleteEnvironmentT
 /// Fluent builder constructing a request to `DeleteEnvironmentTemplate`.
 ///
 /// <p>If no other major or minor versions of an environment template exist, delete the environment template.</p>
+#[deprecated(note = "AWS Proton is not accepting new customers.", since = "10/07/2025")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteEnvironmentTemplateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

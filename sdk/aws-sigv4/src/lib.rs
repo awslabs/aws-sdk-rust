@@ -4,7 +4,7 @@
  */
 
 /* Automatically managed default lints */
-#![cfg_attr(docsrs, feature(doc_auto_cfg))]
+#![cfg_attr(docsrs, feature(doc_cfg))]
 /* End of automatically managed default lints */
 //! Provides functions for calculating Sigv4 signing keys, signatures, and
 //! optional utilities for signing HTTP requests and Event Stream messages.

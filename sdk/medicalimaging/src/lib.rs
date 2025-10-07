@@ -18,7 +18,7 @@
 #![allow(rustdoc::invalid_html_tags)]
 #![forbid(unsafe_code)]
 #![warn(missing_docs)]
-#![cfg_attr(docsrs, feature(doc_auto_cfg))]
+#![cfg_attr(docsrs, feature(doc_cfg))]
 //! This is the _AWS HealthImaging API Reference_. For an introduction to the service, see [What is AWS HealthImaging?](https://docs.aws.amazon.com/healthimaging/latest/devguide/what-is.html) in the _AWS HealthImaging Developer Guide_.
 //!
 //! ## Getting Started
@@ -33,7 +33,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-medicalimaging = "1.90.0"
+//! aws-sdk-medicalimaging = "1.91.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

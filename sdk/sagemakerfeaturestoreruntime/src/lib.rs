@@ -18,7 +18,7 @@
 #![allow(rustdoc::invalid_html_tags)]
 #![forbid(unsafe_code)]
 #![warn(missing_docs)]
-#![cfg_attr(docsrs, feature(doc_auto_cfg))]
+#![cfg_attr(docsrs, feature(doc_cfg))]
 //! Contains all data plane API operations and data types for the Amazon SageMaker Feature Store. Use this API to put, delete, and retrieve (get) features from a feature store.
 //!
 //! Use the following operations to configure your OnlineStore and OfflineStore features, and to create and manage feature groups:
@@ -39,7 +39,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-sagemakerfeaturestoreruntime = "1.86.0"
+//! aws-sdk-sagemakerfeaturestoreruntime = "1.87.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

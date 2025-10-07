@@ -18,7 +18,7 @@
 #![allow(rustdoc::invalid_html_tags)]
 #![forbid(unsafe_code)]
 #![warn(missing_docs)]
-#![cfg_attr(docsrs, feature(doc_auto_cfg))]
+#![cfg_attr(docsrs, feature(doc_cfg))]
 //! With License Manager, you can discover and track your commercial Linux subscriptions on running Amazon EC2 instances.
 //!
 //! ## Getting Started
@@ -33,7 +33,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-licensemanagerlinuxsubscriptions = "1.86.0"
+//! aws-sdk-licensemanagerlinuxsubscriptions = "1.87.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

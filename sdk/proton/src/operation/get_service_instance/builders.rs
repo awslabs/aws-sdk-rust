@@ -23,6 +23,7 @@ impl crate::operation::get_service_instance::builders::GetServiceInstanceInputBu
 /// Fluent builder constructing a request to `GetServiceInstance`.
 ///
 /// <p>Get detailed data for a service instance. A service instance is an instantiation of service template and it runs in a specific environment.</p>
+#[deprecated(note = "AWS Proton is not accepting new customers.", since = "10/07/2025")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetServiceInstanceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -9,6 +9,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateServiceOutput`](crate::operation::update_service::UpdateServiceOutput) with field(s):
     ///   - [`service(Option<Service>)`](crate::operation::update_service::UpdateServiceOutput::service): <p>The service detail data that's returned by Proton.</p>
     /// - On failure, responds with [`SdkError<UpdateServiceError>`](crate::operation::update_service::UpdateServiceError)
+    #[deprecated(note = "AWS Proton is not accepting new customers.", since = "10/07/2025")]
     pub fn update_service(&self) -> crate::operation::update_service::builders::UpdateServiceFluentBuilder {
         crate::operation::update_service::builders::UpdateServiceFluentBuilder::new(self.handle.clone())
     }

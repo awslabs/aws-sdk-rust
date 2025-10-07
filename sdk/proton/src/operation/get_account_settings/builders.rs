@@ -23,6 +23,7 @@ impl crate::operation::get_account_settings::builders::GetAccountSettingsInputBu
 /// Fluent builder constructing a request to `GetAccountSettings`.
 ///
 /// <p>Get detail data for Proton account-wide settings.</p>
+#[deprecated(note = "AWS Proton is not accepting new customers.", since = "10/07/2025")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetAccountSettingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

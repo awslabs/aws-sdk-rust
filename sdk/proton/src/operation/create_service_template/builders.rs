@@ -23,6 +23,7 @@ impl crate::operation::create_service_template::builders::CreateServiceTemplateI
 /// Fluent builder constructing a request to `CreateServiceTemplate`.
 ///
 /// <p>Create a service template. The administrator creates a service template to define standardized infrastructure and an optional CI/CD service pipeline. Developers, in turn, select the service template from Proton. If the selected service template includes a service pipeline definition, they provide a link to their source code repository. Proton then deploys and manages the infrastructure defined by the selected service template. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-templates.html">Proton templates</a> in the <i>Proton User Guide</i>.</p>
+#[deprecated(note = "AWS Proton is not accepting new customers.", since = "10/07/2025")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateServiceTemplateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

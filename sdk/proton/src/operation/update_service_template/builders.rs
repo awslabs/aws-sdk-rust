@@ -23,6 +23,7 @@ impl crate::operation::update_service_template::builders::UpdateServiceTemplateI
 /// Fluent builder constructing a request to `UpdateServiceTemplate`.
 ///
 /// <p>Update a service template.</p>
+#[deprecated(note = "AWS Proton is not accepting new customers.", since = "10/07/2025")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateServiceTemplateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

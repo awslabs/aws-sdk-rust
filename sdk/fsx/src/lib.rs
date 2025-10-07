@@ -18,7 +18,7 @@
 #![allow(rustdoc::invalid_html_tags)]
 #![forbid(unsafe_code)]
 #![warn(missing_docs)]
-#![cfg_attr(docsrs, feature(doc_auto_cfg))]
+#![cfg_attr(docsrs, feature(doc_cfg))]
 //! Amazon FSx is a fully managed service that makes it easy for storage and application administrators to launch and use shared file storage.
 //!
 //! ## Getting Started
@@ -33,7 +33,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-fsx = "1.96.0"
+//! aws-sdk-fsx = "1.97.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

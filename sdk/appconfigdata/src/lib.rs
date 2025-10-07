@@ -18,7 +18,7 @@
 #![allow(rustdoc::invalid_html_tags)]
 #![forbid(unsafe_code)]
 #![warn(missing_docs)]
-#![cfg_attr(docsrs, feature(doc_auto_cfg))]
+#![cfg_attr(docsrs, feature(doc_cfg))]
 //! AppConfig Data provides the data plane APIs your application uses to retrieve configuration data. Here's how it works:
 //!
 //! Your application retrieves configuration data by first establishing a configuration session using the AppConfig Data StartConfigurationSession API action. Your session's client then makes periodic calls to GetLatestConfiguration to check for and retrieve the latest data available.
@@ -52,7 +52,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-appconfigdata = "1.85.0"
+//! aws-sdk-appconfigdata = "1.86.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

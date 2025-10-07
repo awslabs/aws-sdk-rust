@@ -11,6 +11,7 @@ impl super::Client {
     ///   - [`tags(Vec::<Tag>)`](crate::operation::list_tags_for_resource::ListTagsForResourceOutput::tags): <p>A list of resource tags with detail data.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_tags_for_resource::ListTagsForResourceOutput::next_token): <p>A token that indicates the location of the next resource tag in the array of resource tags, after the current requested list of resource tags.</p>
     /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::operation::list_tags_for_resource::ListTagsForResourceError)
+    #[deprecated(note = "AWS Proton is not accepting new customers.", since = "10/07/2025")]
     pub fn list_tags_for_resource(&self) -> crate::operation::list_tags_for_resource::builders::ListTagsForResourceFluentBuilder {
         crate::operation::list_tags_for_resource::builders::ListTagsForResourceFluentBuilder::new(self.handle.clone())
     }

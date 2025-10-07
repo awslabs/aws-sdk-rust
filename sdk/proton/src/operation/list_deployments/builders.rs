@@ -23,6 +23,7 @@ impl crate::operation::list_deployments::builders::ListDeploymentsInputBuilder {
 /// Fluent builder constructing a request to `ListDeployments`.
 ///
 /// <p>List deployments. You can filter the result list by environment, service, or a single service instance.</p>
+#[deprecated(note = "AWS Proton is not accepting new customers.", since = "10/07/2025")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListDeploymentsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

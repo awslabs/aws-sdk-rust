@@ -18,7 +18,7 @@
 #![allow(rustdoc::invalid_html_tags)]
 #![forbid(unsafe_code)]
 #![warn(missing_docs)]
-#![cfg_attr(docsrs, feature(doc_auto_cfg))]
+#![cfg_attr(docsrs, feature(doc_cfg))]
 //! Describes the API operations for creating, managing, fine-turning, and evaluating Amazon Bedrock models.
 //!
 //! ## Getting Started
@@ -33,7 +33,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-bedrock = "1.116.0"
+//! aws-sdk-bedrock = "1.117.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

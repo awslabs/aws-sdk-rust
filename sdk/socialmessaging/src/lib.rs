@@ -18,7 +18,7 @@
 #![allow(rustdoc::invalid_html_tags)]
 #![forbid(unsafe_code)]
 #![warn(missing_docs)]
-#![cfg_attr(docsrs, feature(doc_auto_cfg))]
+#![cfg_attr(docsrs, feature(doc_cfg))]
 //! _Amazon Web Services End User Messaging Social_, also referred to as Social messaging, is a messaging service that enables application developers to incorporate WhatsApp into their existing workflows. The _Amazon Web Services End User Messaging Social API_ provides information about the _Amazon Web Services End User Messaging Social API_ resources, including supported HTTP methods, parameters, and schemas.
 //!
 //! The _Amazon Web Services End User Messaging Social API_ provides programmatic access to options that are unique to the WhatsApp Business Platform.
@@ -43,7 +43,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-socialmessaging = "1.40.0"
+//! aws-sdk-socialmessaging = "1.41.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

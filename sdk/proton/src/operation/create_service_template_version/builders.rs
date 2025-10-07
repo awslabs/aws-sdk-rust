@@ -23,6 +23,7 @@ impl crate::operation::create_service_template_version::builders::CreateServiceT
 /// Fluent builder constructing a request to `CreateServiceTemplateVersion`.
 ///
 /// <p>Create a new major or minor version of a service template. A major version of a service template is a version that <i>isn't</i> backward compatible. A minor version of a service template is a version that's backward compatible within its major version.</p>
+#[deprecated(note = "AWS Proton is not accepting new customers.", since = "10/07/2025")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateServiceTemplateVersionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

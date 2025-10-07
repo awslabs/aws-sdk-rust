@@ -23,6 +23,7 @@ impl crate::operation::get_service_sync_config::builders::GetServiceSyncConfigIn
 /// Fluent builder constructing a request to `GetServiceSyncConfig`.
 ///
 /// <p>Get detailed information for the service sync configuration.</p>
+#[deprecated(note = "AWS Proton is not accepting new customers.", since = "10/07/2025")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetServiceSyncConfigFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

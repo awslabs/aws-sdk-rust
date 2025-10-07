@@ -18,7 +18,7 @@
 #![allow(rustdoc::invalid_html_tags)]
 #![forbid(unsafe_code)]
 #![warn(missing_docs)]
-#![cfg_attr(docsrs, feature(doc_auto_cfg))]
+#![cfg_attr(docsrs, feature(doc_cfg))]
 //! __Most of these APIs are no longer supported and will not be updated.__ We recommend using the latest versions in the [Amazon Chime SDK API reference](https://docs.aws.amazon.com/chime-sdk/latest/APIReference/welcome.html), in the Amazon Chime SDK.
 //!
 //! Using the latest versions requires migrating to dedicated namespaces. For more information, refer to [Migrating from the Amazon Chime namespace](https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html) in the _Amazon Chime SDK Developer Guide_.
@@ -54,7 +54,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-chime = "1.86.0"
+//! aws-sdk-chime = "1.87.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

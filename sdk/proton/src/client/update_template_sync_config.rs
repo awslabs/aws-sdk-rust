@@ -12,6 +12,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateTemplateSyncConfigOutput`](crate::operation::update_template_sync_config::UpdateTemplateSyncConfigOutput) with field(s):
     ///   - [`template_sync_config(Option<TemplateSyncConfig>)`](crate::operation::update_template_sync_config::UpdateTemplateSyncConfigOutput::template_sync_config): <p>The template sync configuration detail data that's returned by Proton.</p>
     /// - On failure, responds with [`SdkError<UpdateTemplateSyncConfigError>`](crate::operation::update_template_sync_config::UpdateTemplateSyncConfigError)
+    #[deprecated(note = "AWS Proton is not accepting new customers.", since = "10/07/2025")]
     pub fn update_template_sync_config(&self) -> crate::operation::update_template_sync_config::builders::UpdateTemplateSyncConfigFluentBuilder {
         crate::operation::update_template_sync_config::builders::UpdateTemplateSyncConfigFluentBuilder::new(self.handle.clone())
     }

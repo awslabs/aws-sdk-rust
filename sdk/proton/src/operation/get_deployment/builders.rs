@@ -23,6 +23,7 @@ impl crate::operation::get_deployment::builders::GetDeploymentInputBuilder {
 /// Fluent builder constructing a request to `GetDeployment`.
 ///
 /// <p>Get detailed data for a deployment.</p>
+#[deprecated(note = "AWS Proton is not accepting new customers.", since = "10/07/2025")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetDeploymentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

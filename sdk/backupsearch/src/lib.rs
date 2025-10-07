@@ -18,7 +18,7 @@
 #![allow(rustdoc::invalid_html_tags)]
 #![forbid(unsafe_code)]
 #![warn(missing_docs)]
-#![cfg_attr(docsrs, feature(doc_auto_cfg))]
+#![cfg_attr(docsrs, feature(doc_cfg))]
 //! Backup Search is the recovery point and item level search for Backup.
 //!
 //! For additional information, see:
@@ -37,7 +37,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-backupsearch = "1.34.0"
+//! aws-sdk-backupsearch = "1.35.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

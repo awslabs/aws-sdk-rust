@@ -23,6 +23,7 @@ impl crate::operation::get_service_instance_sync_status::builders::GetServiceIns
 /// Fluent builder constructing a request to `GetServiceInstanceSyncStatus`.
 ///
 /// <p>Get the status of the synced service instance.</p>
+#[deprecated(note = "AWS Proton is not accepting new customers.", since = "10/07/2025")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetServiceInstanceSyncStatusFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

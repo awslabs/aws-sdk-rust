@@ -4,7 +4,7 @@
  */
 
 /* Automatically managed default lints */
-#![cfg_attr(docsrs, feature(doc_auto_cfg))]
+#![cfg_attr(docsrs, feature(doc_cfg))]
 /* End of automatically managed default lints */
 #![warn(
     missing_docs,
@@ -25,7 +25,6 @@
 //! | `event-stream` | Provides Sender/Receiver implementations for Event Stream codegen. |
 
 #![allow(clippy::derive_partial_eq_without_eq)]
-#![cfg_attr(docsrs, feature(doc_cfg))]
 
 pub mod endpoint;
 // Marked as `doc(hidden)` because a type in the module is used both by this crate and by the code

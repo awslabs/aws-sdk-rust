@@ -23,6 +23,7 @@ impl crate::operation::delete_repository::builders::DeleteRepositoryInputBuilder
 /// Fluent builder constructing a request to `DeleteRepository`.
 ///
 /// <p>De-register and unlink your repository.</p>
+#[deprecated(note = "AWS Proton is not accepting new customers.", since = "10/07/2025")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteRepositoryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

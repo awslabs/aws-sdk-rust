@@ -10,6 +10,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_service_templates::ListServiceTemplatesOutput::next_token): <p>A token that indicates the location of the next service template in the array of service templates, after the current requested list of service templates.</p>
     ///   - [`templates(Vec::<ServiceTemplateSummary>)`](crate::operation::list_service_templates::ListServiceTemplatesOutput::templates): <p>An array of service templates with detail data.</p>
     /// - On failure, responds with [`SdkError<ListServiceTemplatesError>`](crate::operation::list_service_templates::ListServiceTemplatesError)
+    #[deprecated(note = "AWS Proton is not accepting new customers.", since = "10/07/2025")]
     pub fn list_service_templates(&self) -> crate::operation::list_service_templates::builders::ListServiceTemplatesFluentBuilder {
         crate::operation::list_service_templates::builders::ListServiceTemplatesFluentBuilder::new(self.handle.clone())
     }

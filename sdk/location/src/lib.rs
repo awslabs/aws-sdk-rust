@@ -18,7 +18,7 @@
 #![allow(rustdoc::invalid_html_tags)]
 #![forbid(unsafe_code)]
 #![warn(missing_docs)]
-#![cfg_attr(docsrs, feature(doc_auto_cfg))]
+#![cfg_attr(docsrs, feature(doc_cfg))]
 //! "Suite of geospatial services including Maps, Places, Routes, Tracking, and Geofencing"
 //!
 //! ## Getting Started
@@ -33,7 +33,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-location = "1.90.0"
+//! aws-sdk-location = "1.91.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

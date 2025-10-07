@@ -12,6 +12,7 @@ impl super::Client {
     /// - On success, responds with [`CreateEnvironmentTemplateOutput`](crate::operation::create_environment_template::CreateEnvironmentTemplateOutput) with field(s):
     ///   - [`environment_template(Option<EnvironmentTemplate>)`](crate::operation::create_environment_template::CreateEnvironmentTemplateOutput::environment_template): <p>The environment template detail data that's returned by Proton.</p>
     /// - On failure, responds with [`SdkError<CreateEnvironmentTemplateError>`](crate::operation::create_environment_template::CreateEnvironmentTemplateError)
+    #[deprecated(note = "AWS Proton is not accepting new customers.", since = "10/07/2025")]
     pub fn create_environment_template(&self) -> crate::operation::create_environment_template::builders::CreateEnvironmentTemplateFluentBuilder {
         crate::operation::create_environment_template::builders::CreateEnvironmentTemplateFluentBuilder::new(self.handle.clone())
     }

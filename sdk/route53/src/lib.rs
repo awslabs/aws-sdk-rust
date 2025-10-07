@@ -18,7 +18,7 @@
 #![allow(rustdoc::invalid_html_tags)]
 #![forbid(unsafe_code)]
 #![warn(missing_docs)]
-#![cfg_attr(docsrs, feature(doc_auto_cfg))]
+#![cfg_attr(docsrs, feature(doc_cfg))]
 //! Amazon Route 53 is a highly available and scalable Domain Name System (DNS) web service.
 //!
 //! You can use Route 53 to:
@@ -38,7 +38,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-route53 = "1.96.0"
+//! aws-sdk-route53 = "1.97.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
