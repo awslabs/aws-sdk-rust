@@ -8,6 +8,8 @@ pub struct ActiveDirectorySettings {
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of domain IPv4 addresses that are used for the Active Directory.</p>
     pub domain_ipv4_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>A list of domain IPv6 addresses that are used for the Active Directory.</p>
+    pub domain_ipv6_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Points to the <code>CredentialsProvider</code> resource that contains information about the credential provider for user administration.</p>
     pub domain_credentials_provider: ::std::option::Option<crate::types::CredentialsProvider>,
     /// <p>The <code>DomainNetworkSettings</code> resource contains an array of subnets that apply for the Active Directory.</p>
@@ -23,6 +25,12 @@ impl ActiveDirectorySettings {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.domain_ipv4_list.is_none()`.
     pub fn domain_ipv4_list(&self) -> &[::std::string::String] {
         self.domain_ipv4_list.as_deref().unwrap_or_default()
+    }
+    /// <p>A list of domain IPv6 addresses that are used for the Active Directory.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.domain_ipv6_list.is_none()`.
+    pub fn domain_ipv6_list(&self) -> &[::std::string::String] {
+        self.domain_ipv6_list.as_deref().unwrap_or_default()
     }
     /// <p>Points to the <code>CredentialsProvider</code> resource that contains information about the credential provider for user administration.</p>
     pub fn domain_credentials_provider(&self) -> ::std::option::Option<&crate::types::CredentialsProvider> {
@@ -46,6 +54,7 @@ impl ActiveDirectorySettings {
 pub struct ActiveDirectorySettingsBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) domain_ipv4_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) domain_ipv6_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) domain_credentials_provider: ::std::option::Option<crate::types::CredentialsProvider>,
     pub(crate) domain_network_settings: ::std::option::Option<crate::types::DomainNetworkSettings>,
 }
@@ -84,6 +93,26 @@ impl ActiveDirectorySettingsBuilder {
     pub fn get_domain_ipv4_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.domain_ipv4_list
     }
+    /// Appends an item to `domain_ipv6_list`.
+    ///
+    /// To override the contents of this collection use [`set_domain_ipv6_list`](Self::set_domain_ipv6_list).
+    ///
+    /// <p>A list of domain IPv6 addresses that are used for the Active Directory.</p>
+    pub fn domain_ipv6_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.domain_ipv6_list.unwrap_or_default();
+        v.push(input.into());
+        self.domain_ipv6_list = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of domain IPv6 addresses that are used for the Active Directory.</p>
+    pub fn set_domain_ipv6_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.domain_ipv6_list = input;
+        self
+    }
+    /// <p>A list of domain IPv6 addresses that are used for the Active Directory.</p>
+    pub fn get_domain_ipv6_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.domain_ipv6_list
+    }
     /// <p>Points to the <code>CredentialsProvider</code> resource that contains information about the credential provider for user administration.</p>
     pub fn domain_credentials_provider(mut self, input: crate::types::CredentialsProvider) -> Self {
         self.domain_credentials_provider = ::std::option::Option::Some(input);
@@ -117,6 +146,7 @@ impl ActiveDirectorySettingsBuilder {
         crate::types::ActiveDirectorySettings {
             domain_name: self.domain_name,
             domain_ipv4_list: self.domain_ipv4_list,
+            domain_ipv6_list: self.domain_ipv6_list,
             domain_credentials_provider: self.domain_credentials_provider,
             domain_network_settings: self.domain_network_settings,
         }

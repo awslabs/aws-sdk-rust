@@ -79,6 +79,8 @@ pub(crate) mod shape_start_capacity_task;
 
 pub(crate) mod shape_start_connection;
 
+pub(crate) mod shape_start_outpost_decommission;
+
 pub(crate) mod shape_tag_resource;
 
 pub(crate) mod shape_untag_resource;
@@ -119,6 +121,8 @@ pub(crate) mod shape_start_capacity_task_input;
 
 pub(crate) mod shape_start_connection_input;
 
+pub(crate) mod shape_start_outpost_decommission_input;
+
 pub(crate) mod shape_tag_resource_input;
 
 pub(crate) mod shape_update_outpost_input;
@@ -138,6 +142,8 @@ pub(crate) mod shape_asset_instance_list;
 pub(crate) mod shape_asset_list_definition;
 
 pub(crate) mod shape_blocking_instances_list;
+
+pub(crate) mod shape_blocking_resource_type_list;
 
 pub(crate) mod shape_capacity_task_failure;
 

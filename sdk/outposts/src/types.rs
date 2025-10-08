@@ -31,6 +31,10 @@ pub use crate::types::_outpost::Outpost;
 
 pub use crate::types::_supported_hardware_type::SupportedHardwareType;
 
+pub use crate::types::_blocking_resource_type::BlockingResourceType;
+
+pub use crate::types::_decommission_request_status::DecommissionRequestStatus;
+
 pub use crate::types::_task_action_on_blocking_instances::TaskActionOnBlockingInstances;
 
 pub use crate::types::_capacity_task_failure::CapacityTaskFailure;
@@ -129,6 +133,8 @@ mod _aws_service_name;
 
 mod _blocking_instance;
 
+mod _blocking_resource_type;
+
 mod _capacity_task_failure;
 
 mod _capacity_task_failure_type;
@@ -148,6 +154,8 @@ mod _compute_asset_state;
 mod _compute_attributes;
 
 mod _connection_details;
+
+mod _decommission_request_status;
 
 mod _ec2_capacity;
 

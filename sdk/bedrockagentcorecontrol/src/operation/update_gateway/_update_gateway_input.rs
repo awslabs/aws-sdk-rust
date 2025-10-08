@@ -221,7 +221,6 @@ impl UpdateGatewayInputBuilder {
         &self.authorizer_type
     }
     /// <p>The updated authorizer configuration for the gateway.</p>
-    /// This field is required.
     pub fn authorizer_configuration(mut self, input: crate::types::AuthorizerConfiguration) -> Self {
         self.authorizer_configuration = ::std::option::Option::Some(input);
         self

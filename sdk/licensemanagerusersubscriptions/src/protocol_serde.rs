@@ -165,4 +165,6 @@ pub(crate) mod shape_domain_network_settings;
 
 pub(crate) mod shape_ipv4_list;
 
+pub(crate) mod shape_ipv6_list;
+
 pub(crate) mod shape_secrets_manager_credentials_provider;
