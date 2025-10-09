@@ -23,7 +23,7 @@ impl crate::operation::create_theme::builders::CreateThemeInputBuilder {
 /// Fluent builder constructing a request to `CreateTheme`.
 ///
 /// <p>Creates a theme.</p>
-/// <p>A <i>theme</i> is set of configuration options for color and layout. Themes apply to analyses and dashboards. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/themes-in-quicksight.html">Using Themes in Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+/// <p>A <i>theme</i> is set of configuration options for color and layout. Themes apply to analyses and dashboards. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/themes-in-quicksight.html">Using Themes in Amazon Quick Sight</a> in the <i>Amazon Quick Sight User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateThemeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -151,17 +151,17 @@ impl CreateThemeFluentBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p>The ID of the theme that a custom theme will inherit from. All themes inherit from one of the starting themes defined by Amazon QuickSight. For a list of the starting themes, use <code>ListThemes</code> or choose <b>Themes</b> from within an analysis.</p>
+    /// <p>The ID of the theme that a custom theme will inherit from. All themes inherit from one of the starting themes defined by Amazon Quick Sight. For a list of the starting themes, use <code>ListThemes</code> or choose <b>Themes</b> from within an analysis.</p>
     pub fn base_theme_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.base_theme_id(input.into());
         self
     }
-    /// <p>The ID of the theme that a custom theme will inherit from. All themes inherit from one of the starting themes defined by Amazon QuickSight. For a list of the starting themes, use <code>ListThemes</code> or choose <b>Themes</b> from within an analysis.</p>
+    /// <p>The ID of the theme that a custom theme will inherit from. All themes inherit from one of the starting themes defined by Amazon Quick Sight. For a list of the starting themes, use <code>ListThemes</code> or choose <b>Themes</b> from within an analysis.</p>
     pub fn set_base_theme_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_base_theme_id(input);
         self
     }
-    /// <p>The ID of the theme that a custom theme will inherit from. All themes inherit from one of the starting themes defined by Amazon QuickSight. For a list of the starting themes, use <code>ListThemes</code> or choose <b>Themes</b> from within an analysis.</p>
+    /// <p>The ID of the theme that a custom theme will inherit from. All themes inherit from one of the starting themes defined by Amazon Quick Sight. For a list of the starting themes, use <code>ListThemes</code> or choose <b>Themes</b> from within an analysis.</p>
     pub fn get_base_theme_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_base_theme_id()
     }

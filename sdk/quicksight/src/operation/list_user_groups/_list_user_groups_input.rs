@@ -3,9 +3,9 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListUserGroupsInput {
-    /// <p>The Amazon QuickSight user name that you want to list group memberships for.</p>
+    /// <p>The Amazon Quick Sight user name that you want to list group memberships for.</p>
     pub user_name: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Web Services account ID that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
+    /// <p>The Amazon Web Services account ID that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon Quick Sight account.</p>
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
     pub namespace: ::std::option::Option<::std::string::String>,
@@ -15,11 +15,11 @@ pub struct ListUserGroupsInput {
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListUserGroupsInput {
-    /// <p>The Amazon QuickSight user name that you want to list group memberships for.</p>
+    /// <p>The Amazon Quick Sight user name that you want to list group memberships for.</p>
     pub fn user_name(&self) -> ::std::option::Option<&str> {
         self.user_name.as_deref()
     }
-    /// <p>The Amazon Web Services account ID that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
+    /// <p>The Amazon Web Services account ID that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon Quick Sight account.</p>
     pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
@@ -54,33 +54,33 @@ pub struct ListUserGroupsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
 }
 impl ListUserGroupsInputBuilder {
-    /// <p>The Amazon QuickSight user name that you want to list group memberships for.</p>
+    /// <p>The Amazon Quick Sight user name that you want to list group memberships for.</p>
     /// This field is required.
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon QuickSight user name that you want to list group memberships for.</p>
+    /// <p>The Amazon Quick Sight user name that you want to list group memberships for.</p>
     pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_name = input;
         self
     }
-    /// <p>The Amazon QuickSight user name that you want to list group memberships for.</p>
+    /// <p>The Amazon Quick Sight user name that you want to list group memberships for.</p>
     pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_name
     }
-    /// <p>The Amazon Web Services account ID that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
+    /// <p>The Amazon Web Services account ID that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon Quick Sight account.</p>
     /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Web Services account ID that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
+    /// <p>The Amazon Web Services account ID that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon Quick Sight account.</p>
     pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
-    /// <p>The Amazon Web Services account ID that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
+    /// <p>The Amazon Web Services account ID that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon Quick Sight account.</p>
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.aws_account_id
     }

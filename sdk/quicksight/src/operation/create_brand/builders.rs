@@ -22,7 +22,7 @@ impl crate::operation::create_brand::builders::CreateBrandInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateBrand`.
 ///
-/// <p>Creates an QuickSight brand.</p>
+/// <p>Creates an Quick Sight brand.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateBrandFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

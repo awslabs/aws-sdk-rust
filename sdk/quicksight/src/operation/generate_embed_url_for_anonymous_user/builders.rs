@@ -147,17 +147,17 @@ impl GenerateEmbedUrlForAnonymousUserFluentBuilder {
     pub fn get_session_lifetime_in_minutes(&self) -> &::std::option::Option<i64> {
         self.inner.get_session_lifetime_in_minutes()
     }
-    /// <p>The QuickSight namespace that the anonymous user virtually belongs to. If you are not using an Amazon QuickSight custom namespace, set this to <code>default</code>.</p>
+    /// <p>The Amazon Quick Sight namespace that the anonymous user virtually belongs to. If you are not using an Amazon QuickSight custom namespace, set this to <code>default</code>.</p>
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.namespace(input.into());
         self
     }
-    /// <p>The QuickSight namespace that the anonymous user virtually belongs to. If you are not using an Amazon QuickSight custom namespace, set this to <code>default</code>.</p>
+    /// <p>The Amazon Quick Sight namespace that the anonymous user virtually belongs to. If you are not using an Amazon QuickSight custom namespace, set this to <code>default</code>.</p>
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_namespace(input);
         self
     }
-    /// <p>The QuickSight namespace that the anonymous user virtually belongs to. If you are not using an Amazon QuickSight custom namespace, set this to <code>default</code>.</p>
+    /// <p>The Amazon Quick Sight namespace that the anonymous user virtually belongs to. If you are not using an Amazon QuickSight custom namespace, set this to <code>default</code>.</p>
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_namespace()
     }
@@ -167,19 +167,19 @@ impl GenerateEmbedUrlForAnonymousUserFluentBuilder {
     /// To override the contents of this collection use [`set_session_tags`](Self::set_session_tags).
     ///
     /// <p>The session tags used for row-level security. Before you use this parameter, make sure that you have configured the relevant datasets using the <code>DataSet$RowLevelPermissionTagConfiguration</code> parameter so that session tags can be used to provide row-level security.</p>
-    /// <p>These are not the tags used for the Amazon Web Services resource tagging feature. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-rls-tags.html">Using Row-Level Security (RLS) with Tags</a>in the <i>Amazon QuickSight User Guide</i>.</p>
+    /// <p>These are not the tags used for the Amazon Web Services resource tagging feature. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-rls-tags.html">Using Row-Level Security (RLS) with Tags</a>in the <i>Amazon Quick Sight User Guide</i>.</p>
     pub fn session_tags(mut self, input: crate::types::SessionTag) -> Self {
         self.inner = self.inner.session_tags(input);
         self
     }
     /// <p>The session tags used for row-level security. Before you use this parameter, make sure that you have configured the relevant datasets using the <code>DataSet$RowLevelPermissionTagConfiguration</code> parameter so that session tags can be used to provide row-level security.</p>
-    /// <p>These are not the tags used for the Amazon Web Services resource tagging feature. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-rls-tags.html">Using Row-Level Security (RLS) with Tags</a>in the <i>Amazon QuickSight User Guide</i>.</p>
+    /// <p>These are not the tags used for the Amazon Web Services resource tagging feature. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-rls-tags.html">Using Row-Level Security (RLS) with Tags</a>in the <i>Amazon Quick Sight User Guide</i>.</p>
     pub fn set_session_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SessionTag>>) -> Self {
         self.inner = self.inner.set_session_tags(input);
         self
     }
     /// <p>The session tags used for row-level security. Before you use this parameter, make sure that you have configured the relevant datasets using the <code>DataSet$RowLevelPermissionTagConfiguration</code> parameter so that session tags can be used to provide row-level security.</p>
-    /// <p>These are not the tags used for the Amazon Web Services resource tagging feature. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-rls-tags.html">Using Row-Level Security (RLS) with Tags</a>in the <i>Amazon QuickSight User Guide</i>.</p>
+    /// <p>These are not the tags used for the Amazon Web Services resource tagging feature. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-rls-tags.html">Using Row-Level Security (RLS) with Tags</a>in the <i>Amazon Quick Sight User Guide</i>.</p>
     pub fn get_session_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SessionTag>> {
         self.inner.get_session_tags()
     }
@@ -188,7 +188,7 @@ impl GenerateEmbedUrlForAnonymousUserFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_authorized_resource_arns`](Self::set_authorized_resource_arns).
     ///
-    /// <p>The Amazon Resource Names (ARNs) for the QuickSight resources that the user is authorized to access during the lifetime of the session.</p>
+    /// <p>The Amazon Resource Names (ARNs) for the Quick Sight resources that the user is authorized to access during the lifetime of the session.</p>
     /// <p>If you choose <code>Dashboard</code> embedding experience, pass the list of dashboard ARNs in the account that you want the user to be able to view.</p>
     /// <p>If you want to make changes to the theme of your embedded content, pass a list of theme ARNs that the anonymous users need access to.</p>
     /// <p>Currently, you can pass up to 25 theme ARNs in each API call.</p>
@@ -196,7 +196,7 @@ impl GenerateEmbedUrlForAnonymousUserFluentBuilder {
         self.inner = self.inner.authorized_resource_arns(input.into());
         self
     }
-    /// <p>The Amazon Resource Names (ARNs) for the QuickSight resources that the user is authorized to access during the lifetime of the session.</p>
+    /// <p>The Amazon Resource Names (ARNs) for the Quick Sight resources that the user is authorized to access during the lifetime of the session.</p>
     /// <p>If you choose <code>Dashboard</code> embedding experience, pass the list of dashboard ARNs in the account that you want the user to be able to view.</p>
     /// <p>If you want to make changes to the theme of your embedded content, pass a list of theme ARNs that the anonymous users need access to.</p>
     /// <p>Currently, you can pass up to 25 theme ARNs in each API call.</p>
@@ -204,7 +204,7 @@ impl GenerateEmbedUrlForAnonymousUserFluentBuilder {
         self.inner = self.inner.set_authorized_resource_arns(input);
         self
     }
-    /// <p>The Amazon Resource Names (ARNs) for the QuickSight resources that the user is authorized to access during the lifetime of the session.</p>
+    /// <p>The Amazon Resource Names (ARNs) for the Quick Sight resources that the user is authorized to access during the lifetime of the session.</p>
     /// <p>If you choose <code>Dashboard</code> embedding experience, pass the list of dashboard ARNs in the account that you want the user to be able to view.</p>
     /// <p>If you want to make changes to the theme of your embedded content, pass a list of theme ARNs that the anonymous users need access to.</p>
     /// <p>Currently, you can pass up to 25 theme ARNs in each API call.</p>
@@ -230,19 +230,19 @@ impl GenerateEmbedUrlForAnonymousUserFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_allowed_domains`](Self::set_allowed_domains).
     ///
-    /// <p>The domains that you want to add to the allow list for access to the generated URL that is then embedded. This optional parameter overrides the static domains that are configured in the Manage QuickSight menu in the QuickSight console. Instead, it allows only the domains that you include in this parameter. You can list up to three domains or subdomains in each API call.</p>
+    /// <p>The domains that you want to add to the allow list for access to the generated URL that is then embedded. This optional parameter overrides the static domains that are configured in the Manage Quick Sight menu in the Amazon Quick Sight console. Instead, it allows only the domains that you include in this parameter. You can list up to three domains or subdomains in each API call.</p>
     /// <p>To include all subdomains under a specific domain to the allow list, use <code>*</code>. For example, <code>https://*.sapp.amazon.com</code> includes all subdomains under <code>https://sapp.amazon.com</code>.</p>
     pub fn allowed_domains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.allowed_domains(input.into());
         self
     }
-    /// <p>The domains that you want to add to the allow list for access to the generated URL that is then embedded. This optional parameter overrides the static domains that are configured in the Manage QuickSight menu in the QuickSight console. Instead, it allows only the domains that you include in this parameter. You can list up to three domains or subdomains in each API call.</p>
+    /// <p>The domains that you want to add to the allow list for access to the generated URL that is then embedded. This optional parameter overrides the static domains that are configured in the Manage Quick Sight menu in the Amazon Quick Sight console. Instead, it allows only the domains that you include in this parameter. You can list up to three domains or subdomains in each API call.</p>
     /// <p>To include all subdomains under a specific domain to the allow list, use <code>*</code>. For example, <code>https://*.sapp.amazon.com</code> includes all subdomains under <code>https://sapp.amazon.com</code>.</p>
     pub fn set_allowed_domains(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_allowed_domains(input);
         self
     }
-    /// <p>The domains that you want to add to the allow list for access to the generated URL that is then embedded. This optional parameter overrides the static domains that are configured in the Manage QuickSight menu in the QuickSight console. Instead, it allows only the domains that you include in this parameter. You can list up to three domains or subdomains in each API call.</p>
+    /// <p>The domains that you want to add to the allow list for access to the generated URL that is then embedded. This optional parameter overrides the static domains that are configured in the Manage Quick Sight menu in the Amazon Quick Sight console. Instead, it allows only the domains that you include in this parameter. You can list up to three domains or subdomains in each API call.</p>
     /// <p>To include all subdomains under a specific domain to the allow list, use <code>*</code>. For example, <code>https://*.sapp.amazon.com</code> includes all subdomains under <code>https://sapp.amazon.com</code>.</p>
     pub fn get_allowed_domains(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_allowed_domains()

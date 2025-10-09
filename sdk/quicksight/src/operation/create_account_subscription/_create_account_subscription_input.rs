@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAccountSubscriptionInput {
-    /// <p>The edition of QuickSight that you want your account to have. Currently, you can choose from <code>ENTERPRISE</code> or <code>ENTERPRISE_AND_Q</code>.</p>
+    /// <p>The edition of Amazon Quick Sight that you want your account to have. Currently, you can choose from <code>ENTERPRISE</code> or <code>ENTERPRISE_AND_Q</code>.</p>
     /// <p>If you choose <code>ENTERPRISE_AND_Q</code>, the following parameters are required:</p>
     /// <ul>
     /// <li>
@@ -16,53 +16,53 @@ pub struct CreateAccountSubscriptionInput {
     /// <p><code>ContactNumber</code></p></li>
     /// </ul>
     pub edition: ::std::option::Option<crate::types::Edition>,
-    /// <p>The method that you want to use to authenticate your QuickSight account.</p>
+    /// <p>The method that you want to use to authenticate your Quick Sight account.</p>
     /// <p>If you choose <code>ACTIVE_DIRECTORY</code>, provide an <code>ActiveDirectoryName</code> and an <code>AdminGroup</code> associated with your Active Directory.</p>
     /// <p>If you choose <code>IAM_IDENTITY_CENTER</code>, provide an <code>AdminGroup</code> associated with your IAM Identity Center account.</p>
     pub authentication_method: ::std::option::Option<crate::types::AuthenticationMethodOption>,
-    /// <p>The Amazon Web Services account ID of the account that you're using to create your QuickSight account.</p>
+    /// <p>The Amazon Web Services account ID of the account that you're using to create your Quick Sight account.</p>
     pub aws_account_id: ::std::option::Option<::std::string::String>,
-    /// <p>The name of your QuickSight account. This name is unique over all of Amazon Web Services, and it appears only when users sign in. You can't change <code>AccountName</code> value after the QuickSight account is created.</p>
+    /// <p>The name of your Amazon Quick Sight account. This name is unique over all of Amazon Web Services, and it appears only when users sign in. You can't change <code>AccountName</code> value after the Amazon Quick Sight account is created.</p>
     pub account_name: ::std::option::Option<::std::string::String>,
-    /// <p>The email address that you want QuickSight to send notifications to regarding your QuickSight account or QuickSight subscription.</p>
+    /// <p>The email address that you want Quick Sight to send notifications to regarding your Quick Sight account or Quick Sight subscription.</p>
     pub notification_email: ::std::option::Option<::std::string::String>,
-    /// <p>The name of your Active Directory. This field is required if <code>ACTIVE_DIRECTORY</code> is the selected authentication method of the new QuickSight account.</p>
+    /// <p>The name of your Active Directory. This field is required if <code>ACTIVE_DIRECTORY</code> is the selected authentication method of the new Quick Sight account.</p>
     pub active_directory_name: ::std::option::Option<::std::string::String>,
-    /// <p>The realm of the Active Directory that is associated with your QuickSight account. This field is required if <code>ACTIVE_DIRECTORY</code> is the selected authentication method of the new QuickSight account.</p>
+    /// <p>The realm of the Active Directory that is associated with your Quick Sight account. This field is required if <code>ACTIVE_DIRECTORY</code> is the selected authentication method of the new Quick Sight account.</p>
     pub realm: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of the Active Directory that is associated with your QuickSight account.</p>
+    /// <p>The ID of the Active Directory that is associated with your Quick Sight account.</p>
     pub directory_id: ::std::option::Option<::std::string::String>,
-    /// <p>The admin group associated with your Active Directory or IAM Identity Center account. Either this field or the <code>AdminProGroup</code> field is required if <code>ACTIVE_DIRECTORY</code> or <code>IAM_IDENTITY_CENTER</code> is the selected authentication method of the new QuickSight account.</p>
-    /// <p>For more information about using IAM Identity Center in QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using IAM Identity Center with QuickSight Enterprise Edition</a> in the QuickSight User Guide. For more information about using Active Directory in QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with QuickSight Enterprise Edition</a> in the QuickSight User Guide.</p>
+    /// <p>The admin group associated with your Active Directory or IAM Identity Center account. Either this field or the <code>AdminProGroup</code> field is required if <code>ACTIVE_DIRECTORY</code> or <code>IAM_IDENTITY_CENTER</code> is the selected authentication method of the new Quick Sight account.</p>
+    /// <p>For more information about using IAM Identity Center in Amazon Quick Sight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using IAM Identity Center with Amazon Quick Sight Enterprise Edition</a> in the Amazon Quick Sight User Guide. For more information about using Active Directory in Amazon Quick Sight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with Amazon Quick Sight Enterprise Edition</a> in the Amazon Quick Sight User Guide.</p>
     pub admin_group: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The author group associated with your Active Directory or IAM Identity Center account.</p>
-    /// <p>For more information about using IAM Identity Center in QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using IAM Identity Center with QuickSight Enterprise Edition</a> in the QuickSight User Guide. For more information about using Active Directory in QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with QuickSight Enterprise Edition</a> in the QuickSight User Guide.</p>
+    /// <p>For more information about using IAM Identity Center in Amazon Quick Sight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using IAM Identity Center with Amazon Quick Sight Enterprise Edition</a> in the Amazon Quick Sight User Guide. For more information about using Active Directory in Amazon Quick Sight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with Amazon Quick Sight Enterprise Edition</a> in the Amazon Quick Sight User Guide.</p>
     pub author_group: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The reader group associated with your Active Directory or IAM Identity Center account.</p>
-    /// <p>For more information about using IAM Identity Center in QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using IAM Identity Center with QuickSight Enterprise Edition</a> in the QuickSight User Guide. For more information about using Active Directory in QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with QuickSight Enterprise Edition</a> in the QuickSight User Guide.</p>
+    /// <p>For more information about using IAM Identity Center in Amazon Quick Sight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using IAM Identity Center with Amazon Quick Sight Enterprise Edition</a> in the Amazon Quick Sight User Guide. For more information about using Active Directory in Amazon Quick Sight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with Amazon Quick Sight Enterprise Edition</a> in the Amazon Quick Sight User Guide.</p>
     pub reader_group: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The admin pro group associated with your Active Directory or IAM Identity Center account. Either this field or the <code>AdminGroup</code> field is required if <code>ACTIVE_DIRECTORY</code> or <code>IAM_IDENTITY_CENTER</code> is the selected authentication method of the new QuickSight account.</p>
-    /// <p>For more information about using IAM Identity Center in QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using IAM Identity Center with QuickSight Enterprise Edition</a> in the QuickSight User Guide. For more information about using Active Directory in QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with QuickSight Enterprise Edition</a> in the QuickSight User Guide.</p>
+    /// <p>The admin pro group associated with your Active Directory or IAM Identity Center account. Either this field or the <code>AdminGroup</code> field is required if <code>ACTIVE_DIRECTORY</code> or <code>IAM_IDENTITY_CENTER</code> is the selected authentication method of the new Quick Sight account.</p>
+    /// <p>For more information about using IAM Identity Center in Amazon Quick Sight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using IAM Identity Center with Amazon Quick Sight Enterprise Edition</a> in the Amazon Quick Sight User Guide. For more information about using Active Directory in Amazon Quick Sight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with Amazon Quick Sight Enterprise Edition</a> in the Amazon Quick Sight User Guide.</p>
     pub admin_pro_group: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The author pro group associated with your Active Directory or IAM Identity Center account.</p>
-    /// <p>For more information about using IAM Identity Center in QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using IAM Identity Center with QuickSight Enterprise Edition</a> in the QuickSight User Guide. For more information about using Active Directory in QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with QuickSight Enterprise Edition</a> in the QuickSight User Guide.</p>
+    /// <p>For more information about using IAM Identity Center in Amazon Quick Sight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using IAM Identity Center with Amazon Quick Sight Enterprise Edition</a> in the Amazon Quick Sight User Guide. For more information about using Active Directory in Amazon Quick Sight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with Amazon Quick Sight Enterprise Edition</a> in the Amazon Quick Sight User Guide.</p>
     pub author_pro_group: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The reader pro group associated with your Active Directory or IAM Identity Center account.</p>
-    /// <p>For more information about using IAM Identity Center in QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using IAM Identity Center with QuickSight Enterprise Edition</a> in the QuickSight User Guide. For more information about using Active Directory in QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with QuickSight Enterprise Edition</a> in the QuickSight User Guide.</p>
+    /// <p>For more information about using IAM Identity Center in Amazon Quick Sight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using IAM Identity Center with Amazon Quick Sight Enterprise Edition</a> in the Amazon Quick Sight User Guide. For more information about using Active Directory in Amazon Quick Sight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with Amazon Quick Sight Enterprise Edition</a> in the Amazon Quick Sight User Guide.</p>
     pub reader_pro_group: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The first name of the author of the QuickSight account to use for future communications. This field is required if <code>ENTERPPRISE_AND_Q</code> is the selected edition of the new QuickSight account.</p>
+    /// <p>The first name of the author of the Amazon Quick Sight account to use for future communications. This field is required if <code>ENTERPPRISE_AND_Q</code> is the selected edition of the new Amazon Quick Sight account.</p>
     pub first_name: ::std::option::Option<::std::string::String>,
-    /// <p>The last name of the author of the QuickSight account to use for future communications. This field is required if <code>ENTERPPRISE_AND_Q</code> is the selected edition of the new QuickSight account.</p>
+    /// <p>The last name of the author of the Amazon Quick Sight account to use for future communications. This field is required if <code>ENTERPPRISE_AND_Q</code> is the selected edition of the new Amazon Quick Sight account.</p>
     pub last_name: ::std::option::Option<::std::string::String>,
-    /// <p>The email address of the author of the QuickSight account to use for future communications. This field is required if <code>ENTERPPRISE_AND_Q</code> is the selected edition of the new QuickSight account.</p>
+    /// <p>The email address of the author of the Amazon Quick Sight account to use for future communications. This field is required if <code>ENTERPPRISE_AND_Q</code> is the selected edition of the new Amazon Quick Sight account.</p>
     pub email_address: ::std::option::Option<::std::string::String>,
-    /// <p>A 10-digit phone number for the author of the QuickSight account to use for future communications. This field is required if <code>ENTERPPRISE_AND_Q</code> is the selected edition of the new QuickSight account.</p>
+    /// <p>A 10-digit phone number for the author of the Amazon Quick Sight account to use for future communications. This field is required if <code>ENTERPPRISE_AND_Q</code> is the selected edition of the new Amazon Quick Sight account.</p>
     pub contact_number: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the IAM Identity Center instance.</p>
     pub iam_identity_center_instance_arn: ::std::option::Option<::std::string::String>,
 }
 impl CreateAccountSubscriptionInput {
-    /// <p>The edition of QuickSight that you want your account to have. Currently, you can choose from <code>ENTERPRISE</code> or <code>ENTERPRISE_AND_Q</code>.</p>
+    /// <p>The edition of Amazon Quick Sight that you want your account to have. Currently, you can choose from <code>ENTERPRISE</code> or <code>ENTERPRISE_AND_Q</code>.</p>
     /// <p>If you choose <code>ENTERPRISE_AND_Q</code>, the following parameters are required:</p>
     /// <ul>
     /// <li>
@@ -77,91 +77,91 @@ impl CreateAccountSubscriptionInput {
     pub fn edition(&self) -> ::std::option::Option<&crate::types::Edition> {
         self.edition.as_ref()
     }
-    /// <p>The method that you want to use to authenticate your QuickSight account.</p>
+    /// <p>The method that you want to use to authenticate your Quick Sight account.</p>
     /// <p>If you choose <code>ACTIVE_DIRECTORY</code>, provide an <code>ActiveDirectoryName</code> and an <code>AdminGroup</code> associated with your Active Directory.</p>
     /// <p>If you choose <code>IAM_IDENTITY_CENTER</code>, provide an <code>AdminGroup</code> associated with your IAM Identity Center account.</p>
     pub fn authentication_method(&self) -> ::std::option::Option<&crate::types::AuthenticationMethodOption> {
         self.authentication_method.as_ref()
     }
-    /// <p>The Amazon Web Services account ID of the account that you're using to create your QuickSight account.</p>
+    /// <p>The Amazon Web Services account ID of the account that you're using to create your Quick Sight account.</p>
     pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
-    /// <p>The name of your QuickSight account. This name is unique over all of Amazon Web Services, and it appears only when users sign in. You can't change <code>AccountName</code> value after the QuickSight account is created.</p>
+    /// <p>The name of your Amazon Quick Sight account. This name is unique over all of Amazon Web Services, and it appears only when users sign in. You can't change <code>AccountName</code> value after the Amazon Quick Sight account is created.</p>
     pub fn account_name(&self) -> ::std::option::Option<&str> {
         self.account_name.as_deref()
     }
-    /// <p>The email address that you want QuickSight to send notifications to regarding your QuickSight account or QuickSight subscription.</p>
+    /// <p>The email address that you want Quick Sight to send notifications to regarding your Quick Sight account or Quick Sight subscription.</p>
     pub fn notification_email(&self) -> ::std::option::Option<&str> {
         self.notification_email.as_deref()
     }
-    /// <p>The name of your Active Directory. This field is required if <code>ACTIVE_DIRECTORY</code> is the selected authentication method of the new QuickSight account.</p>
+    /// <p>The name of your Active Directory. This field is required if <code>ACTIVE_DIRECTORY</code> is the selected authentication method of the new Quick Sight account.</p>
     pub fn active_directory_name(&self) -> ::std::option::Option<&str> {
         self.active_directory_name.as_deref()
     }
-    /// <p>The realm of the Active Directory that is associated with your QuickSight account. This field is required if <code>ACTIVE_DIRECTORY</code> is the selected authentication method of the new QuickSight account.</p>
+    /// <p>The realm of the Active Directory that is associated with your Quick Sight account. This field is required if <code>ACTIVE_DIRECTORY</code> is the selected authentication method of the new Quick Sight account.</p>
     pub fn realm(&self) -> ::std::option::Option<&str> {
         self.realm.as_deref()
     }
-    /// <p>The ID of the Active Directory that is associated with your QuickSight account.</p>
+    /// <p>The ID of the Active Directory that is associated with your Quick Sight account.</p>
     pub fn directory_id(&self) -> ::std::option::Option<&str> {
         self.directory_id.as_deref()
     }
-    /// <p>The admin group associated with your Active Directory or IAM Identity Center account. Either this field or the <code>AdminProGroup</code> field is required if <code>ACTIVE_DIRECTORY</code> or <code>IAM_IDENTITY_CENTER</code> is the selected authentication method of the new QuickSight account.</p>
-    /// <p>For more information about using IAM Identity Center in QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using IAM Identity Center with QuickSight Enterprise Edition</a> in the QuickSight User Guide. For more information about using Active Directory in QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with QuickSight Enterprise Edition</a> in the QuickSight User Guide.</p>
+    /// <p>The admin group associated with your Active Directory or IAM Identity Center account. Either this field or the <code>AdminProGroup</code> field is required if <code>ACTIVE_DIRECTORY</code> or <code>IAM_IDENTITY_CENTER</code> is the selected authentication method of the new Quick Sight account.</p>
+    /// <p>For more information about using IAM Identity Center in Amazon Quick Sight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using IAM Identity Center with Amazon Quick Sight Enterprise Edition</a> in the Amazon Quick Sight User Guide. For more information about using Active Directory in Amazon Quick Sight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with Amazon Quick Sight Enterprise Edition</a> in the Amazon Quick Sight User Guide.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.admin_group.is_none()`.
     pub fn admin_group(&self) -> &[::std::string::String] {
         self.admin_group.as_deref().unwrap_or_default()
     }
     /// <p>The author group associated with your Active Directory or IAM Identity Center account.</p>
-    /// <p>For more information about using IAM Identity Center in QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using IAM Identity Center with QuickSight Enterprise Edition</a> in the QuickSight User Guide. For more information about using Active Directory in QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with QuickSight Enterprise Edition</a> in the QuickSight User Guide.</p>
+    /// <p>For more information about using IAM Identity Center in Amazon Quick Sight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using IAM Identity Center with Amazon Quick Sight Enterprise Edition</a> in the Amazon Quick Sight User Guide. For more information about using Active Directory in Amazon Quick Sight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with Amazon Quick Sight Enterprise Edition</a> in the Amazon Quick Sight User Guide.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.author_group.is_none()`.
     pub fn author_group(&self) -> &[::std::string::String] {
         self.author_group.as_deref().unwrap_or_default()
     }
     /// <p>The reader group associated with your Active Directory or IAM Identity Center account.</p>
-    /// <p>For more information about using IAM Identity Center in QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using IAM Identity Center with QuickSight Enterprise Edition</a> in the QuickSight User Guide. For more information about using Active Directory in QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with QuickSight Enterprise Edition</a> in the QuickSight User Guide.</p>
+    /// <p>For more information about using IAM Identity Center in Amazon Quick Sight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using IAM Identity Center with Amazon Quick Sight Enterprise Edition</a> in the Amazon Quick Sight User Guide. For more information about using Active Directory in Amazon Quick Sight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with Amazon Quick Sight Enterprise Edition</a> in the Amazon Quick Sight User Guide.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reader_group.is_none()`.
     pub fn reader_group(&self) -> &[::std::string::String] {
         self.reader_group.as_deref().unwrap_or_default()
     }
-    /// <p>The admin pro group associated with your Active Directory or IAM Identity Center account. Either this field or the <code>AdminGroup</code> field is required if <code>ACTIVE_DIRECTORY</code> or <code>IAM_IDENTITY_CENTER</code> is the selected authentication method of the new QuickSight account.</p>
-    /// <p>For more information about using IAM Identity Center in QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using IAM Identity Center with QuickSight Enterprise Edition</a> in the QuickSight User Guide. For more information about using Active Directory in QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with QuickSight Enterprise Edition</a> in the QuickSight User Guide.</p>
+    /// <p>The admin pro group associated with your Active Directory or IAM Identity Center account. Either this field or the <code>AdminGroup</code> field is required if <code>ACTIVE_DIRECTORY</code> or <code>IAM_IDENTITY_CENTER</code> is the selected authentication method of the new Quick Sight account.</p>
+    /// <p>For more information about using IAM Identity Center in Amazon Quick Sight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using IAM Identity Center with Amazon Quick Sight Enterprise Edition</a> in the Amazon Quick Sight User Guide. For more information about using Active Directory in Amazon Quick Sight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with Amazon Quick Sight Enterprise Edition</a> in the Amazon Quick Sight User Guide.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.admin_pro_group.is_none()`.
     pub fn admin_pro_group(&self) -> &[::std::string::String] {
         self.admin_pro_group.as_deref().unwrap_or_default()
     }
     /// <p>The author pro group associated with your Active Directory or IAM Identity Center account.</p>
-    /// <p>For more information about using IAM Identity Center in QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using IAM Identity Center with QuickSight Enterprise Edition</a> in the QuickSight User Guide. For more information about using Active Directory in QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with QuickSight Enterprise Edition</a> in the QuickSight User Guide.</p>
+    /// <p>For more information about using IAM Identity Center in Amazon Quick Sight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using IAM Identity Center with Amazon Quick Sight Enterprise Edition</a> in the Amazon Quick Sight User Guide. For more information about using Active Directory in Amazon Quick Sight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with Amazon Quick Sight Enterprise Edition</a> in the Amazon Quick Sight User Guide.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.author_pro_group.is_none()`.
     pub fn author_pro_group(&self) -> &[::std::string::String] {
         self.author_pro_group.as_deref().unwrap_or_default()
     }
     /// <p>The reader pro group associated with your Active Directory or IAM Identity Center account.</p>
-    /// <p>For more information about using IAM Identity Center in QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using IAM Identity Center with QuickSight Enterprise Edition</a> in the QuickSight User Guide. For more information about using Active Directory in QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with QuickSight Enterprise Edition</a> in the QuickSight User Guide.</p>
+    /// <p>For more information about using IAM Identity Center in Amazon Quick Sight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using IAM Identity Center with Amazon Quick Sight Enterprise Edition</a> in the Amazon Quick Sight User Guide. For more information about using Active Directory in Amazon Quick Sight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with Amazon Quick Sight Enterprise Edition</a> in the Amazon Quick Sight User Guide.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reader_pro_group.is_none()`.
     pub fn reader_pro_group(&self) -> &[::std::string::String] {
         self.reader_pro_group.as_deref().unwrap_or_default()
     }
-    /// <p>The first name of the author of the QuickSight account to use for future communications. This field is required if <code>ENTERPPRISE_AND_Q</code> is the selected edition of the new QuickSight account.</p>
+    /// <p>The first name of the author of the Amazon Quick Sight account to use for future communications. This field is required if <code>ENTERPPRISE_AND_Q</code> is the selected edition of the new Amazon Quick Sight account.</p>
     pub fn first_name(&self) -> ::std::option::Option<&str> {
         self.first_name.as_deref()
     }
-    /// <p>The last name of the author of the QuickSight account to use for future communications. This field is required if <code>ENTERPPRISE_AND_Q</code> is the selected edition of the new QuickSight account.</p>
+    /// <p>The last name of the author of the Amazon Quick Sight account to use for future communications. This field is required if <code>ENTERPPRISE_AND_Q</code> is the selected edition of the new Amazon Quick Sight account.</p>
     pub fn last_name(&self) -> ::std::option::Option<&str> {
         self.last_name.as_deref()
     }
-    /// <p>The email address of the author of the QuickSight account to use for future communications. This field is required if <code>ENTERPPRISE_AND_Q</code> is the selected edition of the new QuickSight account.</p>
+    /// <p>The email address of the author of the Amazon Quick Sight account to use for future communications. This field is required if <code>ENTERPPRISE_AND_Q</code> is the selected edition of the new Amazon Quick Sight account.</p>
     pub fn email_address(&self) -> ::std::option::Option<&str> {
         self.email_address.as_deref()
     }
-    /// <p>A 10-digit phone number for the author of the QuickSight account to use for future communications. This field is required if <code>ENTERPPRISE_AND_Q</code> is the selected edition of the new QuickSight account.</p>
+    /// <p>A 10-digit phone number for the author of the Amazon Quick Sight account to use for future communications. This field is required if <code>ENTERPPRISE_AND_Q</code> is the selected edition of the new Amazon Quick Sight account.</p>
     pub fn contact_number(&self) -> ::std::option::Option<&str> {
         self.contact_number.as_deref()
     }
@@ -202,7 +202,7 @@ pub struct CreateAccountSubscriptionInputBuilder {
     pub(crate) iam_identity_center_instance_arn: ::std::option::Option<::std::string::String>,
 }
 impl CreateAccountSubscriptionInputBuilder {
-    /// <p>The edition of QuickSight that you want your account to have. Currently, you can choose from <code>ENTERPRISE</code> or <code>ENTERPRISE_AND_Q</code>.</p>
+    /// <p>The edition of Amazon Quick Sight that you want your account to have. Currently, you can choose from <code>ENTERPRISE</code> or <code>ENTERPRISE_AND_Q</code>.</p>
     /// <p>If you choose <code>ENTERPRISE_AND_Q</code>, the following parameters are required:</p>
     /// <ul>
     /// <li>
@@ -218,7 +218,7 @@ impl CreateAccountSubscriptionInputBuilder {
         self.edition = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The edition of QuickSight that you want your account to have. Currently, you can choose from <code>ENTERPRISE</code> or <code>ENTERPRISE_AND_Q</code>.</p>
+    /// <p>The edition of Amazon Quick Sight that you want your account to have. Currently, you can choose from <code>ENTERPRISE</code> or <code>ENTERPRISE_AND_Q</code>.</p>
     /// <p>If you choose <code>ENTERPRISE_AND_Q</code>, the following parameters are required:</p>
     /// <ul>
     /// <li>
@@ -234,7 +234,7 @@ impl CreateAccountSubscriptionInputBuilder {
         self.edition = input;
         self
     }
-    /// <p>The edition of QuickSight that you want your account to have. Currently, you can choose from <code>ENTERPRISE</code> or <code>ENTERPRISE_AND_Q</code>.</p>
+    /// <p>The edition of Amazon Quick Sight that you want your account to have. Currently, you can choose from <code>ENTERPRISE</code> or <code>ENTERPRISE_AND_Q</code>.</p>
     /// <p>If you choose <code>ENTERPRISE_AND_Q</code>, the following parameters are required:</p>
     /// <ul>
     /// <li>
@@ -249,7 +249,7 @@ impl CreateAccountSubscriptionInputBuilder {
     pub fn get_edition(&self) -> &::std::option::Option<crate::types::Edition> {
         &self.edition
     }
-    /// <p>The method that you want to use to authenticate your QuickSight account.</p>
+    /// <p>The method that you want to use to authenticate your Quick Sight account.</p>
     /// <p>If you choose <code>ACTIVE_DIRECTORY</code>, provide an <code>ActiveDirectoryName</code> and an <code>AdminGroup</code> associated with your Active Directory.</p>
     /// <p>If you choose <code>IAM_IDENTITY_CENTER</code>, provide an <code>AdminGroup</code> associated with your IAM Identity Center account.</p>
     /// This field is required.
@@ -257,103 +257,103 @@ impl CreateAccountSubscriptionInputBuilder {
         self.authentication_method = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The method that you want to use to authenticate your QuickSight account.</p>
+    /// <p>The method that you want to use to authenticate your Quick Sight account.</p>
     /// <p>If you choose <code>ACTIVE_DIRECTORY</code>, provide an <code>ActiveDirectoryName</code> and an <code>AdminGroup</code> associated with your Active Directory.</p>
     /// <p>If you choose <code>IAM_IDENTITY_CENTER</code>, provide an <code>AdminGroup</code> associated with your IAM Identity Center account.</p>
     pub fn set_authentication_method(mut self, input: ::std::option::Option<crate::types::AuthenticationMethodOption>) -> Self {
         self.authentication_method = input;
         self
     }
-    /// <p>The method that you want to use to authenticate your QuickSight account.</p>
+    /// <p>The method that you want to use to authenticate your Quick Sight account.</p>
     /// <p>If you choose <code>ACTIVE_DIRECTORY</code>, provide an <code>ActiveDirectoryName</code> and an <code>AdminGroup</code> associated with your Active Directory.</p>
     /// <p>If you choose <code>IAM_IDENTITY_CENTER</code>, provide an <code>AdminGroup</code> associated with your IAM Identity Center account.</p>
     pub fn get_authentication_method(&self) -> &::std::option::Option<crate::types::AuthenticationMethodOption> {
         &self.authentication_method
     }
-    /// <p>The Amazon Web Services account ID of the account that you're using to create your QuickSight account.</p>
+    /// <p>The Amazon Web Services account ID of the account that you're using to create your Quick Sight account.</p>
     /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Web Services account ID of the account that you're using to create your QuickSight account.</p>
+    /// <p>The Amazon Web Services account ID of the account that you're using to create your Quick Sight account.</p>
     pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
-    /// <p>The Amazon Web Services account ID of the account that you're using to create your QuickSight account.</p>
+    /// <p>The Amazon Web Services account ID of the account that you're using to create your Quick Sight account.</p>
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.aws_account_id
     }
-    /// <p>The name of your QuickSight account. This name is unique over all of Amazon Web Services, and it appears only when users sign in. You can't change <code>AccountName</code> value after the QuickSight account is created.</p>
+    /// <p>The name of your Amazon Quick Sight account. This name is unique over all of Amazon Web Services, and it appears only when users sign in. You can't change <code>AccountName</code> value after the Amazon Quick Sight account is created.</p>
     /// This field is required.
     pub fn account_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of your QuickSight account. This name is unique over all of Amazon Web Services, and it appears only when users sign in. You can't change <code>AccountName</code> value after the QuickSight account is created.</p>
+    /// <p>The name of your Amazon Quick Sight account. This name is unique over all of Amazon Web Services, and it appears only when users sign in. You can't change <code>AccountName</code> value after the Amazon Quick Sight account is created.</p>
     pub fn set_account_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_name = input;
         self
     }
-    /// <p>The name of your QuickSight account. This name is unique over all of Amazon Web Services, and it appears only when users sign in. You can't change <code>AccountName</code> value after the QuickSight account is created.</p>
+    /// <p>The name of your Amazon Quick Sight account. This name is unique over all of Amazon Web Services, and it appears only when users sign in. You can't change <code>AccountName</code> value after the Amazon Quick Sight account is created.</p>
     pub fn get_account_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_name
     }
-    /// <p>The email address that you want QuickSight to send notifications to regarding your QuickSight account or QuickSight subscription.</p>
+    /// <p>The email address that you want Quick Sight to send notifications to regarding your Quick Sight account or Quick Sight subscription.</p>
     /// This field is required.
     pub fn notification_email(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notification_email = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The email address that you want QuickSight to send notifications to regarding your QuickSight account or QuickSight subscription.</p>
+    /// <p>The email address that you want Quick Sight to send notifications to regarding your Quick Sight account or Quick Sight subscription.</p>
     pub fn set_notification_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.notification_email = input;
         self
     }
-    /// <p>The email address that you want QuickSight to send notifications to regarding your QuickSight account or QuickSight subscription.</p>
+    /// <p>The email address that you want Quick Sight to send notifications to regarding your Quick Sight account or Quick Sight subscription.</p>
     pub fn get_notification_email(&self) -> &::std::option::Option<::std::string::String> {
         &self.notification_email
     }
-    /// <p>The name of your Active Directory. This field is required if <code>ACTIVE_DIRECTORY</code> is the selected authentication method of the new QuickSight account.</p>
+    /// <p>The name of your Active Directory. This field is required if <code>ACTIVE_DIRECTORY</code> is the selected authentication method of the new Quick Sight account.</p>
     pub fn active_directory_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.active_directory_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of your Active Directory. This field is required if <code>ACTIVE_DIRECTORY</code> is the selected authentication method of the new QuickSight account.</p>
+    /// <p>The name of your Active Directory. This field is required if <code>ACTIVE_DIRECTORY</code> is the selected authentication method of the new Quick Sight account.</p>
     pub fn set_active_directory_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.active_directory_name = input;
         self
     }
-    /// <p>The name of your Active Directory. This field is required if <code>ACTIVE_DIRECTORY</code> is the selected authentication method of the new QuickSight account.</p>
+    /// <p>The name of your Active Directory. This field is required if <code>ACTIVE_DIRECTORY</code> is the selected authentication method of the new Quick Sight account.</p>
     pub fn get_active_directory_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.active_directory_name
     }
-    /// <p>The realm of the Active Directory that is associated with your QuickSight account. This field is required if <code>ACTIVE_DIRECTORY</code> is the selected authentication method of the new QuickSight account.</p>
+    /// <p>The realm of the Active Directory that is associated with your Quick Sight account. This field is required if <code>ACTIVE_DIRECTORY</code> is the selected authentication method of the new Quick Sight account.</p>
     pub fn realm(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.realm = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The realm of the Active Directory that is associated with your QuickSight account. This field is required if <code>ACTIVE_DIRECTORY</code> is the selected authentication method of the new QuickSight account.</p>
+    /// <p>The realm of the Active Directory that is associated with your Quick Sight account. This field is required if <code>ACTIVE_DIRECTORY</code> is the selected authentication method of the new Quick Sight account.</p>
     pub fn set_realm(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.realm = input;
         self
     }
-    /// <p>The realm of the Active Directory that is associated with your QuickSight account. This field is required if <code>ACTIVE_DIRECTORY</code> is the selected authentication method of the new QuickSight account.</p>
+    /// <p>The realm of the Active Directory that is associated with your Quick Sight account. This field is required if <code>ACTIVE_DIRECTORY</code> is the selected authentication method of the new Quick Sight account.</p>
     pub fn get_realm(&self) -> &::std::option::Option<::std::string::String> {
         &self.realm
     }
-    /// <p>The ID of the Active Directory that is associated with your QuickSight account.</p>
+    /// <p>The ID of the Active Directory that is associated with your Quick Sight account.</p>
     pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the Active Directory that is associated with your QuickSight account.</p>
+    /// <p>The ID of the Active Directory that is associated with your Quick Sight account.</p>
     pub fn set_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.directory_id = input;
         self
     }
-    /// <p>The ID of the Active Directory that is associated with your QuickSight account.</p>
+    /// <p>The ID of the Active Directory that is associated with your Quick Sight account.</p>
     pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.directory_id
     }
@@ -361,22 +361,22 @@ impl CreateAccountSubscriptionInputBuilder {
     ///
     /// To override the contents of this collection use [`set_admin_group`](Self::set_admin_group).
     ///
-    /// <p>The admin group associated with your Active Directory or IAM Identity Center account. Either this field or the <code>AdminProGroup</code> field is required if <code>ACTIVE_DIRECTORY</code> or <code>IAM_IDENTITY_CENTER</code> is the selected authentication method of the new QuickSight account.</p>
-    /// <p>For more information about using IAM Identity Center in QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using IAM Identity Center with QuickSight Enterprise Edition</a> in the QuickSight User Guide. For more information about using Active Directory in QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with QuickSight Enterprise Edition</a> in the QuickSight User Guide.</p>
+    /// <p>The admin group associated with your Active Directory or IAM Identity Center account. Either this field or the <code>AdminProGroup</code> field is required if <code>ACTIVE_DIRECTORY</code> or <code>IAM_IDENTITY_CENTER</code> is the selected authentication method of the new Quick Sight account.</p>
+    /// <p>For more information about using IAM Identity Center in Amazon Quick Sight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using IAM Identity Center with Amazon Quick Sight Enterprise Edition</a> in the Amazon Quick Sight User Guide. For more information about using Active Directory in Amazon Quick Sight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with Amazon Quick Sight Enterprise Edition</a> in the Amazon Quick Sight User Guide.</p>
     pub fn admin_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.admin_group.unwrap_or_default();
         v.push(input.into());
         self.admin_group = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The admin group associated with your Active Directory or IAM Identity Center account. Either this field or the <code>AdminProGroup</code> field is required if <code>ACTIVE_DIRECTORY</code> or <code>IAM_IDENTITY_CENTER</code> is the selected authentication method of the new QuickSight account.</p>
-    /// <p>For more information about using IAM Identity Center in QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using IAM Identity Center with QuickSight Enterprise Edition</a> in the QuickSight User Guide. For more information about using Active Directory in QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with QuickSight Enterprise Edition</a> in the QuickSight User Guide.</p>
+    /// <p>The admin group associated with your Active Directory or IAM Identity Center account. Either this field or the <code>AdminProGroup</code> field is required if <code>ACTIVE_DIRECTORY</code> or <code>IAM_IDENTITY_CENTER</code> is the selected authentication method of the new Quick Sight account.</p>
+    /// <p>For more information about using IAM Identity Center in Amazon Quick Sight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using IAM Identity Center with Amazon Quick Sight Enterprise Edition</a> in the Amazon Quick Sight User Guide. For more information about using Active Directory in Amazon Quick Sight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with Amazon Quick Sight Enterprise Edition</a> in the Amazon Quick Sight User Guide.</p>
     pub fn set_admin_group(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.admin_group = input;
         self
     }
-    /// <p>The admin group associated with your Active Directory or IAM Identity Center account. Either this field or the <code>AdminProGroup</code> field is required if <code>ACTIVE_DIRECTORY</code> or <code>IAM_IDENTITY_CENTER</code> is the selected authentication method of the new QuickSight account.</p>
-    /// <p>For more information about using IAM Identity Center in QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using IAM Identity Center with QuickSight Enterprise Edition</a> in the QuickSight User Guide. For more information about using Active Directory in QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with QuickSight Enterprise Edition</a> in the QuickSight User Guide.</p>
+    /// <p>The admin group associated with your Active Directory or IAM Identity Center account. Either this field or the <code>AdminProGroup</code> field is required if <code>ACTIVE_DIRECTORY</code> or <code>IAM_IDENTITY_CENTER</code> is the selected authentication method of the new Quick Sight account.</p>
+    /// <p>For more information about using IAM Identity Center in Amazon Quick Sight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using IAM Identity Center with Amazon Quick Sight Enterprise Edition</a> in the Amazon Quick Sight User Guide. For more information about using Active Directory in Amazon Quick Sight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with Amazon Quick Sight Enterprise Edition</a> in the Amazon Quick Sight User Guide.</p>
     pub fn get_admin_group(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.admin_group
     }
@@ -385,7 +385,7 @@ impl CreateAccountSubscriptionInputBuilder {
     /// To override the contents of this collection use [`set_author_group`](Self::set_author_group).
     ///
     /// <p>The author group associated with your Active Directory or IAM Identity Center account.</p>
-    /// <p>For more information about using IAM Identity Center in QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using IAM Identity Center with QuickSight Enterprise Edition</a> in the QuickSight User Guide. For more information about using Active Directory in QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with QuickSight Enterprise Edition</a> in the QuickSight User Guide.</p>
+    /// <p>For more information about using IAM Identity Center in Amazon Quick Sight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using IAM Identity Center with Amazon Quick Sight Enterprise Edition</a> in the Amazon Quick Sight User Guide. For more information about using Active Directory in Amazon Quick Sight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with Amazon Quick Sight Enterprise Edition</a> in the Amazon Quick Sight User Guide.</p>
     pub fn author_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.author_group.unwrap_or_default();
         v.push(input.into());
@@ -393,13 +393,13 @@ impl CreateAccountSubscriptionInputBuilder {
         self
     }
     /// <p>The author group associated with your Active Directory or IAM Identity Center account.</p>
-    /// <p>For more information about using IAM Identity Center in QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using IAM Identity Center with QuickSight Enterprise Edition</a> in the QuickSight User Guide. For more information about using Active Directory in QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with QuickSight Enterprise Edition</a> in the QuickSight User Guide.</p>
+    /// <p>For more information about using IAM Identity Center in Amazon Quick Sight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using IAM Identity Center with Amazon Quick Sight Enterprise Edition</a> in the Amazon Quick Sight User Guide. For more information about using Active Directory in Amazon Quick Sight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with Amazon Quick Sight Enterprise Edition</a> in the Amazon Quick Sight User Guide.</p>
     pub fn set_author_group(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.author_group = input;
         self
     }
     /// <p>The author group associated with your Active Directory or IAM Identity Center account.</p>
-    /// <p>For more information about using IAM Identity Center in QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using IAM Identity Center with QuickSight Enterprise Edition</a> in the QuickSight User Guide. For more information about using Active Directory in QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with QuickSight Enterprise Edition</a> in the QuickSight User Guide.</p>
+    /// <p>For more information about using IAM Identity Center in Amazon Quick Sight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using IAM Identity Center with Amazon Quick Sight Enterprise Edition</a> in the Amazon Quick Sight User Guide. For more information about using Active Directory in Amazon Quick Sight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with Amazon Quick Sight Enterprise Edition</a> in the Amazon Quick Sight User Guide.</p>
     pub fn get_author_group(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.author_group
     }
@@ -408,7 +408,7 @@ impl CreateAccountSubscriptionInputBuilder {
     /// To override the contents of this collection use [`set_reader_group`](Self::set_reader_group).
     ///
     /// <p>The reader group associated with your Active Directory or IAM Identity Center account.</p>
-    /// <p>For more information about using IAM Identity Center in QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using IAM Identity Center with QuickSight Enterprise Edition</a> in the QuickSight User Guide. For more information about using Active Directory in QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with QuickSight Enterprise Edition</a> in the QuickSight User Guide.</p>
+    /// <p>For more information about using IAM Identity Center in Amazon Quick Sight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using IAM Identity Center with Amazon Quick Sight Enterprise Edition</a> in the Amazon Quick Sight User Guide. For more information about using Active Directory in Amazon Quick Sight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with Amazon Quick Sight Enterprise Edition</a> in the Amazon Quick Sight User Guide.</p>
     pub fn reader_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.reader_group.unwrap_or_default();
         v.push(input.into());
@@ -416,13 +416,13 @@ impl CreateAccountSubscriptionInputBuilder {
         self
     }
     /// <p>The reader group associated with your Active Directory or IAM Identity Center account.</p>
-    /// <p>For more information about using IAM Identity Center in QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using IAM Identity Center with QuickSight Enterprise Edition</a> in the QuickSight User Guide. For more information about using Active Directory in QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with QuickSight Enterprise Edition</a> in the QuickSight User Guide.</p>
+    /// <p>For more information about using IAM Identity Center in Amazon Quick Sight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using IAM Identity Center with Amazon Quick Sight Enterprise Edition</a> in the Amazon Quick Sight User Guide. For more information about using Active Directory in Amazon Quick Sight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with Amazon Quick Sight Enterprise Edition</a> in the Amazon Quick Sight User Guide.</p>
     pub fn set_reader_group(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.reader_group = input;
         self
     }
     /// <p>The reader group associated with your Active Directory or IAM Identity Center account.</p>
-    /// <p>For more information about using IAM Identity Center in QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using IAM Identity Center with QuickSight Enterprise Edition</a> in the QuickSight User Guide. For more information about using Active Directory in QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with QuickSight Enterprise Edition</a> in the QuickSight User Guide.</p>
+    /// <p>For more information about using IAM Identity Center in Amazon Quick Sight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using IAM Identity Center with Amazon Quick Sight Enterprise Edition</a> in the Amazon Quick Sight User Guide. For more information about using Active Directory in Amazon Quick Sight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with Amazon Quick Sight Enterprise Edition</a> in the Amazon Quick Sight User Guide.</p>
     pub fn get_reader_group(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.reader_group
     }
@@ -430,22 +430,22 @@ impl CreateAccountSubscriptionInputBuilder {
     ///
     /// To override the contents of this collection use [`set_admin_pro_group`](Self::set_admin_pro_group).
     ///
-    /// <p>The admin pro group associated with your Active Directory or IAM Identity Center account. Either this field or the <code>AdminGroup</code> field is required if <code>ACTIVE_DIRECTORY</code> or <code>IAM_IDENTITY_CENTER</code> is the selected authentication method of the new QuickSight account.</p>
-    /// <p>For more information about using IAM Identity Center in QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using IAM Identity Center with QuickSight Enterprise Edition</a> in the QuickSight User Guide. For more information about using Active Directory in QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with QuickSight Enterprise Edition</a> in the QuickSight User Guide.</p>
+    /// <p>The admin pro group associated with your Active Directory or IAM Identity Center account. Either this field or the <code>AdminGroup</code> field is required if <code>ACTIVE_DIRECTORY</code> or <code>IAM_IDENTITY_CENTER</code> is the selected authentication method of the new Quick Sight account.</p>
+    /// <p>For more information about using IAM Identity Center in Amazon Quick Sight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using IAM Identity Center with Amazon Quick Sight Enterprise Edition</a> in the Amazon Quick Sight User Guide. For more information about using Active Directory in Amazon Quick Sight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with Amazon Quick Sight Enterprise Edition</a> in the Amazon Quick Sight User Guide.</p>
     pub fn admin_pro_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.admin_pro_group.unwrap_or_default();
         v.push(input.into());
         self.admin_pro_group = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The admin pro group associated with your Active Directory or IAM Identity Center account. Either this field or the <code>AdminGroup</code> field is required if <code>ACTIVE_DIRECTORY</code> or <code>IAM_IDENTITY_CENTER</code> is the selected authentication method of the new QuickSight account.</p>
-    /// <p>For more information about using IAM Identity Center in QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using IAM Identity Center with QuickSight Enterprise Edition</a> in the QuickSight User Guide. For more information about using Active Directory in QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with QuickSight Enterprise Edition</a> in the QuickSight User Guide.</p>
+    /// <p>The admin pro group associated with your Active Directory or IAM Identity Center account. Either this field or the <code>AdminGroup</code> field is required if <code>ACTIVE_DIRECTORY</code> or <code>IAM_IDENTITY_CENTER</code> is the selected authentication method of the new Quick Sight account.</p>
+    /// <p>For more information about using IAM Identity Center in Amazon Quick Sight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using IAM Identity Center with Amazon Quick Sight Enterprise Edition</a> in the Amazon Quick Sight User Guide. For more information about using Active Directory in Amazon Quick Sight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with Amazon Quick Sight Enterprise Edition</a> in the Amazon Quick Sight User Guide.</p>
     pub fn set_admin_pro_group(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.admin_pro_group = input;
         self
     }
-    /// <p>The admin pro group associated with your Active Directory or IAM Identity Center account. Either this field or the <code>AdminGroup</code> field is required if <code>ACTIVE_DIRECTORY</code> or <code>IAM_IDENTITY_CENTER</code> is the selected authentication method of the new QuickSight account.</p>
-    /// <p>For more information about using IAM Identity Center in QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using IAM Identity Center with QuickSight Enterprise Edition</a> in the QuickSight User Guide. For more information about using Active Directory in QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with QuickSight Enterprise Edition</a> in the QuickSight User Guide.</p>
+    /// <p>The admin pro group associated with your Active Directory or IAM Identity Center account. Either this field or the <code>AdminGroup</code> field is required if <code>ACTIVE_DIRECTORY</code> or <code>IAM_IDENTITY_CENTER</code> is the selected authentication method of the new Quick Sight account.</p>
+    /// <p>For more information about using IAM Identity Center in Amazon Quick Sight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using IAM Identity Center with Amazon Quick Sight Enterprise Edition</a> in the Amazon Quick Sight User Guide. For more information about using Active Directory in Amazon Quick Sight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with Amazon Quick Sight Enterprise Edition</a> in the Amazon Quick Sight User Guide.</p>
     pub fn get_admin_pro_group(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.admin_pro_group
     }
@@ -454,7 +454,7 @@ impl CreateAccountSubscriptionInputBuilder {
     /// To override the contents of this collection use [`set_author_pro_group`](Self::set_author_pro_group).
     ///
     /// <p>The author pro group associated with your Active Directory or IAM Identity Center account.</p>
-    /// <p>For more information about using IAM Identity Center in QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using IAM Identity Center with QuickSight Enterprise Edition</a> in the QuickSight User Guide. For more information about using Active Directory in QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with QuickSight Enterprise Edition</a> in the QuickSight User Guide.</p>
+    /// <p>For more information about using IAM Identity Center in Amazon Quick Sight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using IAM Identity Center with Amazon Quick Sight Enterprise Edition</a> in the Amazon Quick Sight User Guide. For more information about using Active Directory in Amazon Quick Sight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with Amazon Quick Sight Enterprise Edition</a> in the Amazon Quick Sight User Guide.</p>
     pub fn author_pro_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.author_pro_group.unwrap_or_default();
         v.push(input.into());
@@ -462,13 +462,13 @@ impl CreateAccountSubscriptionInputBuilder {
         self
     }
     /// <p>The author pro group associated with your Active Directory or IAM Identity Center account.</p>
-    /// <p>For more information about using IAM Identity Center in QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using IAM Identity Center with QuickSight Enterprise Edition</a> in the QuickSight User Guide. For more information about using Active Directory in QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with QuickSight Enterprise Edition</a> in the QuickSight User Guide.</p>
+    /// <p>For more information about using IAM Identity Center in Amazon Quick Sight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using IAM Identity Center with Amazon Quick Sight Enterprise Edition</a> in the Amazon Quick Sight User Guide. For more information about using Active Directory in Amazon Quick Sight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with Amazon Quick Sight Enterprise Edition</a> in the Amazon Quick Sight User Guide.</p>
     pub fn set_author_pro_group(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.author_pro_group = input;
         self
     }
     /// <p>The author pro group associated with your Active Directory or IAM Identity Center account.</p>
-    /// <p>For more information about using IAM Identity Center in QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using IAM Identity Center with QuickSight Enterprise Edition</a> in the QuickSight User Guide. For more information about using Active Directory in QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with QuickSight Enterprise Edition</a> in the QuickSight User Guide.</p>
+    /// <p>For more information about using IAM Identity Center in Amazon Quick Sight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using IAM Identity Center with Amazon Quick Sight Enterprise Edition</a> in the Amazon Quick Sight User Guide. For more information about using Active Directory in Amazon Quick Sight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with Amazon Quick Sight Enterprise Edition</a> in the Amazon Quick Sight User Guide.</p>
     pub fn get_author_pro_group(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.author_pro_group
     }
@@ -477,7 +477,7 @@ impl CreateAccountSubscriptionInputBuilder {
     /// To override the contents of this collection use [`set_reader_pro_group`](Self::set_reader_pro_group).
     ///
     /// <p>The reader pro group associated with your Active Directory or IAM Identity Center account.</p>
-    /// <p>For more information about using IAM Identity Center in QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using IAM Identity Center with QuickSight Enterprise Edition</a> in the QuickSight User Guide. For more information about using Active Directory in QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with QuickSight Enterprise Edition</a> in the QuickSight User Guide.</p>
+    /// <p>For more information about using IAM Identity Center in Amazon Quick Sight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using IAM Identity Center with Amazon Quick Sight Enterprise Edition</a> in the Amazon Quick Sight User Guide. For more information about using Active Directory in Amazon Quick Sight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with Amazon Quick Sight Enterprise Edition</a> in the Amazon Quick Sight User Guide.</p>
     pub fn reader_pro_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.reader_pro_group.unwrap_or_default();
         v.push(input.into());
@@ -485,69 +485,69 @@ impl CreateAccountSubscriptionInputBuilder {
         self
     }
     /// <p>The reader pro group associated with your Active Directory or IAM Identity Center account.</p>
-    /// <p>For more information about using IAM Identity Center in QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using IAM Identity Center with QuickSight Enterprise Edition</a> in the QuickSight User Guide. For more information about using Active Directory in QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with QuickSight Enterprise Edition</a> in the QuickSight User Guide.</p>
+    /// <p>For more information about using IAM Identity Center in Amazon Quick Sight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using IAM Identity Center with Amazon Quick Sight Enterprise Edition</a> in the Amazon Quick Sight User Guide. For more information about using Active Directory in Amazon Quick Sight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with Amazon Quick Sight Enterprise Edition</a> in the Amazon Quick Sight User Guide.</p>
     pub fn set_reader_pro_group(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.reader_pro_group = input;
         self
     }
     /// <p>The reader pro group associated with your Active Directory or IAM Identity Center account.</p>
-    /// <p>For more information about using IAM Identity Center in QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using IAM Identity Center with QuickSight Enterprise Edition</a> in the QuickSight User Guide. For more information about using Active Directory in QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with QuickSight Enterprise Edition</a> in the QuickSight User Guide.</p>
+    /// <p>For more information about using IAM Identity Center in Amazon Quick Sight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using IAM Identity Center with Amazon Quick Sight Enterprise Edition</a> in the Amazon Quick Sight User Guide. For more information about using Active Directory in Amazon Quick Sight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with Amazon Quick Sight Enterprise Edition</a> in the Amazon Quick Sight User Guide.</p>
     pub fn get_reader_pro_group(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.reader_pro_group
     }
-    /// <p>The first name of the author of the QuickSight account to use for future communications. This field is required if <code>ENTERPPRISE_AND_Q</code> is the selected edition of the new QuickSight account.</p>
+    /// <p>The first name of the author of the Amazon Quick Sight account to use for future communications. This field is required if <code>ENTERPPRISE_AND_Q</code> is the selected edition of the new Amazon Quick Sight account.</p>
     pub fn first_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.first_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The first name of the author of the QuickSight account to use for future communications. This field is required if <code>ENTERPPRISE_AND_Q</code> is the selected edition of the new QuickSight account.</p>
+    /// <p>The first name of the author of the Amazon Quick Sight account to use for future communications. This field is required if <code>ENTERPPRISE_AND_Q</code> is the selected edition of the new Amazon Quick Sight account.</p>
     pub fn set_first_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.first_name = input;
         self
     }
-    /// <p>The first name of the author of the QuickSight account to use for future communications. This field is required if <code>ENTERPPRISE_AND_Q</code> is the selected edition of the new QuickSight account.</p>
+    /// <p>The first name of the author of the Amazon Quick Sight account to use for future communications. This field is required if <code>ENTERPPRISE_AND_Q</code> is the selected edition of the new Amazon Quick Sight account.</p>
     pub fn get_first_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.first_name
     }
-    /// <p>The last name of the author of the QuickSight account to use for future communications. This field is required if <code>ENTERPPRISE_AND_Q</code> is the selected edition of the new QuickSight account.</p>
+    /// <p>The last name of the author of the Amazon Quick Sight account to use for future communications. This field is required if <code>ENTERPPRISE_AND_Q</code> is the selected edition of the new Amazon Quick Sight account.</p>
     pub fn last_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The last name of the author of the QuickSight account to use for future communications. This field is required if <code>ENTERPPRISE_AND_Q</code> is the selected edition of the new QuickSight account.</p>
+    /// <p>The last name of the author of the Amazon Quick Sight account to use for future communications. This field is required if <code>ENTERPPRISE_AND_Q</code> is the selected edition of the new Amazon Quick Sight account.</p>
     pub fn set_last_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_name = input;
         self
     }
-    /// <p>The last name of the author of the QuickSight account to use for future communications. This field is required if <code>ENTERPPRISE_AND_Q</code> is the selected edition of the new QuickSight account.</p>
+    /// <p>The last name of the author of the Amazon Quick Sight account to use for future communications. This field is required if <code>ENTERPPRISE_AND_Q</code> is the selected edition of the new Amazon Quick Sight account.</p>
     pub fn get_last_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.last_name
     }
-    /// <p>The email address of the author of the QuickSight account to use for future communications. This field is required if <code>ENTERPPRISE_AND_Q</code> is the selected edition of the new QuickSight account.</p>
+    /// <p>The email address of the author of the Amazon Quick Sight account to use for future communications. This field is required if <code>ENTERPPRISE_AND_Q</code> is the selected edition of the new Amazon Quick Sight account.</p>
     pub fn email_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email_address = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The email address of the author of the QuickSight account to use for future communications. This field is required if <code>ENTERPPRISE_AND_Q</code> is the selected edition of the new QuickSight account.</p>
+    /// <p>The email address of the author of the Amazon Quick Sight account to use for future communications. This field is required if <code>ENTERPPRISE_AND_Q</code> is the selected edition of the new Amazon Quick Sight account.</p>
     pub fn set_email_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.email_address = input;
         self
     }
-    /// <p>The email address of the author of the QuickSight account to use for future communications. This field is required if <code>ENTERPPRISE_AND_Q</code> is the selected edition of the new QuickSight account.</p>
+    /// <p>The email address of the author of the Amazon Quick Sight account to use for future communications. This field is required if <code>ENTERPPRISE_AND_Q</code> is the selected edition of the new Amazon Quick Sight account.</p>
     pub fn get_email_address(&self) -> &::std::option::Option<::std::string::String> {
         &self.email_address
     }
-    /// <p>A 10-digit phone number for the author of the QuickSight account to use for future communications. This field is required if <code>ENTERPPRISE_AND_Q</code> is the selected edition of the new QuickSight account.</p>
+    /// <p>A 10-digit phone number for the author of the Amazon Quick Sight account to use for future communications. This field is required if <code>ENTERPPRISE_AND_Q</code> is the selected edition of the new Amazon Quick Sight account.</p>
     pub fn contact_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_number = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A 10-digit phone number for the author of the QuickSight account to use for future communications. This field is required if <code>ENTERPPRISE_AND_Q</code> is the selected edition of the new QuickSight account.</p>
+    /// <p>A 10-digit phone number for the author of the Amazon Quick Sight account to use for future communications. This field is required if <code>ENTERPPRISE_AND_Q</code> is the selected edition of the new Amazon Quick Sight account.</p>
     pub fn set_contact_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.contact_number = input;
         self
     }
-    /// <p>A 10-digit phone number for the author of the QuickSight account to use for future communications. This field is required if <code>ENTERPPRISE_AND_Q</code> is the selected edition of the new QuickSight account.</p>
+    /// <p>A 10-digit phone number for the author of the Amazon Quick Sight account to use for future communications. This field is required if <code>ENTERPPRISE_AND_Q</code> is the selected edition of the new Amazon Quick Sight account.</p>
     pub fn get_contact_number(&self) -> &::std::option::Option<::std::string::String> {
         &self.contact_number
     }

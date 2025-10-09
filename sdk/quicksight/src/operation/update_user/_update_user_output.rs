@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateUserOutput {
-    /// <p>The Amazon QuickSight user.</p>
+    /// <p>The Amazon Quick Sight user.</p>
     pub user: ::std::option::Option<crate::types::User>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: ::std::option::Option<::std::string::String>,
@@ -12,7 +12,7 @@ pub struct UpdateUserOutput {
     _request_id: Option<String>,
 }
 impl UpdateUserOutput {
-    /// <p>The Amazon QuickSight user.</p>
+    /// <p>The Amazon Quick Sight user.</p>
     pub fn user(&self) -> ::std::option::Option<&crate::types::User> {
         self.user.as_ref()
     }
@@ -47,17 +47,17 @@ pub struct UpdateUserOutputBuilder {
     _request_id: Option<String>,
 }
 impl UpdateUserOutputBuilder {
-    /// <p>The Amazon QuickSight user.</p>
+    /// <p>The Amazon Quick Sight user.</p>
     pub fn user(mut self, input: crate::types::User) -> Self {
         self.user = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Amazon QuickSight user.</p>
+    /// <p>The Amazon Quick Sight user.</p>
     pub fn set_user(mut self, input: ::std::option::Option<crate::types::User>) -> Self {
         self.user = input;
         self
     }
-    /// <p>The Amazon QuickSight user.</p>
+    /// <p>The Amazon Quick Sight user.</p>
     pub fn get_user(&self) -> &::std::option::Option<crate::types::User> {
         &self.user
     }

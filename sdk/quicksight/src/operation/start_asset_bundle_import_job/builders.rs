@@ -23,7 +23,7 @@ impl crate::operation::start_asset_bundle_import_job::builders::StartAssetBundle
 /// Fluent builder constructing a request to `StartAssetBundleImportJob`.
 ///
 /// <p>Starts an Asset Bundle import job.</p>
-/// <p>An Asset Bundle import job imports specified QuickSight assets into an QuickSight account. You can also choose to import a naming prefix and specified configuration overrides. The assets that are contained in the bundle file that you provide are used to create or update a new or existing asset in your QuickSight account. Each QuickSight account can run up to 5 import jobs concurrently.</p>
+/// <p>An Asset Bundle import job imports specified Amazon Quick Sight assets into an Amazon Quick Sight account. You can also choose to import a naming prefix and specified configuration overrides. The assets that are contained in the bundle file that you provide are used to create or update a new or existing asset in your Amazon Quick Sight account. Each Amazon Quick Sight account can run up to 5 import jobs concurrently.</p>
 /// <p>The API caller must have the necessary <code>"create"</code>, <code>"describe"</code>, and <code>"update"</code> permissions in their IAM role to access each resource type that is contained in the bundle file before the resources can be imported.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartAssetBundleImportJobFluentBuilder {
@@ -168,21 +168,21 @@ impl StartAssetBundleImportJobFluentBuilder {
     }
     /// <p>The failure action for the import job.</p>
     /// <p>If you choose <code>ROLLBACK</code>, failed import jobs will attempt to undo any asset changes caused by the failed job.</p>
-    /// <p>If you choose <code>DO_NOTHING</code>, failed import jobs will not attempt to roll back any asset changes caused by the failed job, possibly keeping the QuickSight account in an inconsistent state.</p>
+    /// <p>If you choose <code>DO_NOTHING</code>, failed import jobs will not attempt to roll back any asset changes caused by the failed job, possibly keeping the Amazon Quick Sight account in an inconsistent state.</p>
     pub fn failure_action(mut self, input: crate::types::AssetBundleImportFailureAction) -> Self {
         self.inner = self.inner.failure_action(input);
         self
     }
     /// <p>The failure action for the import job.</p>
     /// <p>If you choose <code>ROLLBACK</code>, failed import jobs will attempt to undo any asset changes caused by the failed job.</p>
-    /// <p>If you choose <code>DO_NOTHING</code>, failed import jobs will not attempt to roll back any asset changes caused by the failed job, possibly keeping the QuickSight account in an inconsistent state.</p>
+    /// <p>If you choose <code>DO_NOTHING</code>, failed import jobs will not attempt to roll back any asset changes caused by the failed job, possibly keeping the Amazon Quick Sight account in an inconsistent state.</p>
     pub fn set_failure_action(mut self, input: ::std::option::Option<crate::types::AssetBundleImportFailureAction>) -> Self {
         self.inner = self.inner.set_failure_action(input);
         self
     }
     /// <p>The failure action for the import job.</p>
     /// <p>If you choose <code>ROLLBACK</code>, failed import jobs will attempt to undo any asset changes caused by the failed job.</p>
-    /// <p>If you choose <code>DO_NOTHING</code>, failed import jobs will not attempt to roll back any asset changes caused by the failed job, possibly keeping the QuickSight account in an inconsistent state.</p>
+    /// <p>If you choose <code>DO_NOTHING</code>, failed import jobs will not attempt to roll back any asset changes caused by the failed job, possibly keeping the Amazon Quick Sight account in an inconsistent state.</p>
     pub fn get_failure_action(&self) -> &::std::option::Option<crate::types::AssetBundleImportFailureAction> {
         self.inner.get_failure_action()
     }

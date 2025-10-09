@@ -22,8 +22,8 @@ impl crate::operation::generate_embed_url_for_registered_user_with_identity::bui
 }
 /// Fluent builder constructing a request to `GenerateEmbedUrlForRegisteredUserWithIdentity`.
 ///
-/// <p>Generates an embed URL that you can use to embed an QuickSight experience in your website. This action can be used for any type of user that is registered in an QuickSight account that uses IAM Identity Center for authentication. This API requires <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/trustedidentitypropagation-overview.html#types-identity-enhanced-iam-role-sessions">identity-enhanced IAM Role sessions</a> for the authenticated user that the API call is being made for.</p>
-/// <p>This API uses <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/trustedidentitypropagation.html">trusted identity propagation</a> to ensure that an end user is authenticated and receives the embed URL that is specific to that user. The IAM Identity Center application that the user has logged into needs to have <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/trustedidentitypropagation-using-customermanagedapps-specify-trusted-apps.html">trusted Identity Propagation enabled for QuickSight</a> with the scope value set to <code>quicksight:read</code>. Before you use this action, make sure that you have configured the relevant QuickSight resource and permissions.</p>
+/// <p>Generates an embed URL that you can use to embed an Amazon Quick Sight experience in your website. This action can be used for any type of user that is registered in an Amazon Quick Sight account that uses IAM Identity Center for authentication. This API requires <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/trustedidentitypropagation-overview.html#types-identity-enhanced-iam-role-sessions">identity-enhanced IAM Role sessions</a> for the authenticated user that the API call is being made for.</p>
+/// <p>This API uses <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/trustedidentitypropagation.html">trusted identity propagation</a> to ensure that an end user is authenticated and receives the embed URL that is specific to that user. The IAM Identity Center application that the user has logged into needs to have <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/trustedidentitypropagation-using-customermanagedapps-specify-trusted-apps.html">trusted Identity Propagation enabled for Amazon Quick Sight</a> with the scope value set to <code>quicksight:read</code>. Before you use this action, make sure that you have configured the relevant Amazon Quick Sight resource and permissions.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GenerateEmbedUrlForRegisteredUserWithIdentityFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -145,14 +145,14 @@ impl GenerateEmbedUrlForRegisteredUserWithIdentityFluentBuilder {
     pub fn get_session_lifetime_in_minutes(&self) -> &::std::option::Option<i64> {
         self.inner.get_session_lifetime_in_minutes()
     }
-    /// <p>The type of experience you want to embed. For registered users, you can embed QuickSight dashboards or the QuickSight console.</p><note>
+    /// <p>The type of experience you want to embed. For registered users, you can embed QuickSight dashboards or the Amazon Quick Sight console.</p><note>
     /// <p>Exactly one of the experience configurations is required. You can choose <code>Dashboard</code> or <code>QuickSightConsole</code>. You cannot choose more than one experience configuration.</p>
     /// </note>
     pub fn experience_configuration(mut self, input: crate::types::RegisteredUserEmbeddingExperienceConfiguration) -> Self {
         self.inner = self.inner.experience_configuration(input);
         self
     }
-    /// <p>The type of experience you want to embed. For registered users, you can embed QuickSight dashboards or the QuickSight console.</p><note>
+    /// <p>The type of experience you want to embed. For registered users, you can embed QuickSight dashboards or the Amazon Quick Sight console.</p><note>
     /// <p>Exactly one of the experience configurations is required. You can choose <code>Dashboard</code> or <code>QuickSightConsole</code>. You cannot choose more than one experience configuration.</p>
     /// </note>
     pub fn set_experience_configuration(
@@ -162,7 +162,7 @@ impl GenerateEmbedUrlForRegisteredUserWithIdentityFluentBuilder {
         self.inner = self.inner.set_experience_configuration(input);
         self
     }
-    /// <p>The type of experience you want to embed. For registered users, you can embed QuickSight dashboards or the QuickSight console.</p><note>
+    /// <p>The type of experience you want to embed. For registered users, you can embed QuickSight dashboards or the Amazon Quick Sight console.</p><note>
     /// <p>Exactly one of the experience configurations is required. You can choose <code>Dashboard</code> or <code>QuickSightConsole</code>. You cannot choose more than one experience configuration.</p>
     /// </note>
     pub fn get_experience_configuration(&self) -> &::std::option::Option<crate::types::RegisteredUserEmbeddingExperienceConfiguration> {

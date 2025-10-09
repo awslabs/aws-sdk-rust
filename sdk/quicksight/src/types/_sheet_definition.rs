@@ -13,10 +13,10 @@ pub struct SheetDefinition {
     /// <p>The name of the sheet. This name is displayed on the sheet's tab in the QuickSight console.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The list of parameter controls that are on a sheet.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/parameters-controls.html">Using a Control with a Parameter in Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/parameters-controls.html">Using a Control with a Parameter in Amazon Quick Sight</a> in the <i>Amazon Quick Suite User Guide</i>.</p>
     pub parameter_controls: ::std::option::Option<::std::vec::Vec<crate::types::ParameterControl>>,
     /// <p>The list of filter controls that are on a sheet.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/filter-controls.html">Adding filter controls to analysis sheets</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/filter-controls.html">Adding filter controls to analysis sheets</a> in the <i>Amazon Quick Suite User Guide</i>.</p>
     pub filter_controls: ::std::option::Option<::std::vec::Vec<crate::types::FilterControl>>,
     /// <p>A list of the visuals that are on a sheet. Visual placement is determined by the layout of the sheet.</p>
     pub visuals: ::std::option::Option<::std::vec::Vec<crate::types::Visual>>,
@@ -25,7 +25,7 @@ pub struct SheetDefinition {
     /// <p>A list of images on a sheet.</p>
     pub images: ::std::option::Option<::std::vec::Vec<crate::types::SheetImage>>,
     /// <p>Layouts define how the components of a sheet are arranged.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/types-of-layout.html">Types of layout</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/types-of-layout.html">Types of layout</a> in the <i>Amazon Quick Suite User Guide</i>.</p>
     pub layouts: ::std::option::Option<::std::vec::Vec<crate::types::Layout>>,
     /// <p>The control layouts of the sheet.</p>
     pub sheet_control_layouts: ::std::option::Option<::std::vec::Vec<crate::types::SheetControlLayout>>,
@@ -59,14 +59,14 @@ impl SheetDefinition {
         self.name.as_deref()
     }
     /// <p>The list of parameter controls that are on a sheet.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/parameters-controls.html">Using a Control with a Parameter in Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/parameters-controls.html">Using a Control with a Parameter in Amazon Quick Sight</a> in the <i>Amazon Quick Suite User Guide</i>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameter_controls.is_none()`.
     pub fn parameter_controls(&self) -> &[crate::types::ParameterControl] {
         self.parameter_controls.as_deref().unwrap_or_default()
     }
     /// <p>The list of filter controls that are on a sheet.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/filter-controls.html">Adding filter controls to analysis sheets</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/filter-controls.html">Adding filter controls to analysis sheets</a> in the <i>Amazon Quick Suite User Guide</i>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filter_controls.is_none()`.
     pub fn filter_controls(&self) -> &[crate::types::FilterControl] {
@@ -91,7 +91,7 @@ impl SheetDefinition {
         self.images.as_deref().unwrap_or_default()
     }
     /// <p>Layouts define how the components of a sheet are arranged.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/types-of-layout.html">Types of layout</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/types-of-layout.html">Types of layout</a> in the <i>Amazon Quick Suite User Guide</i>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.layouts.is_none()`.
     pub fn layouts(&self) -> &[crate::types::Layout] {
@@ -206,7 +206,7 @@ impl SheetDefinitionBuilder {
     /// To override the contents of this collection use [`set_parameter_controls`](Self::set_parameter_controls).
     ///
     /// <p>The list of parameter controls that are on a sheet.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/parameters-controls.html">Using a Control with a Parameter in Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/parameters-controls.html">Using a Control with a Parameter in Amazon Quick Sight</a> in the <i>Amazon Quick Suite User Guide</i>.</p>
     pub fn parameter_controls(mut self, input: crate::types::ParameterControl) -> Self {
         let mut v = self.parameter_controls.unwrap_or_default();
         v.push(input);
@@ -214,13 +214,13 @@ impl SheetDefinitionBuilder {
         self
     }
     /// <p>The list of parameter controls that are on a sheet.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/parameters-controls.html">Using a Control with a Parameter in Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/parameters-controls.html">Using a Control with a Parameter in Amazon Quick Sight</a> in the <i>Amazon Quick Suite User Guide</i>.</p>
     pub fn set_parameter_controls(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ParameterControl>>) -> Self {
         self.parameter_controls = input;
         self
     }
     /// <p>The list of parameter controls that are on a sheet.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/parameters-controls.html">Using a Control with a Parameter in Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/parameters-controls.html">Using a Control with a Parameter in Amazon Quick Sight</a> in the <i>Amazon Quick Suite User Guide</i>.</p>
     pub fn get_parameter_controls(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterControl>> {
         &self.parameter_controls
     }
@@ -229,7 +229,7 @@ impl SheetDefinitionBuilder {
     /// To override the contents of this collection use [`set_filter_controls`](Self::set_filter_controls).
     ///
     /// <p>The list of filter controls that are on a sheet.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/filter-controls.html">Adding filter controls to analysis sheets</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/filter-controls.html">Adding filter controls to analysis sheets</a> in the <i>Amazon Quick Suite User Guide</i>.</p>
     pub fn filter_controls(mut self, input: crate::types::FilterControl) -> Self {
         let mut v = self.filter_controls.unwrap_or_default();
         v.push(input);
@@ -237,13 +237,13 @@ impl SheetDefinitionBuilder {
         self
     }
     /// <p>The list of filter controls that are on a sheet.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/filter-controls.html">Adding filter controls to analysis sheets</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/filter-controls.html">Adding filter controls to analysis sheets</a> in the <i>Amazon Quick Suite User Guide</i>.</p>
     pub fn set_filter_controls(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FilterControl>>) -> Self {
         self.filter_controls = input;
         self
     }
     /// <p>The list of filter controls that are on a sheet.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/filter-controls.html">Adding filter controls to analysis sheets</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/filter-controls.html">Adding filter controls to analysis sheets</a> in the <i>Amazon Quick Suite User Guide</i>.</p>
     pub fn get_filter_controls(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FilterControl>> {
         &self.filter_controls
     }
@@ -312,7 +312,7 @@ impl SheetDefinitionBuilder {
     /// To override the contents of this collection use [`set_layouts`](Self::set_layouts).
     ///
     /// <p>Layouts define how the components of a sheet are arranged.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/types-of-layout.html">Types of layout</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/types-of-layout.html">Types of layout</a> in the <i>Amazon Quick Suite User Guide</i>.</p>
     pub fn layouts(mut self, input: crate::types::Layout) -> Self {
         let mut v = self.layouts.unwrap_or_default();
         v.push(input);
@@ -320,13 +320,13 @@ impl SheetDefinitionBuilder {
         self
     }
     /// <p>Layouts define how the components of a sheet are arranged.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/types-of-layout.html">Types of layout</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/types-of-layout.html">Types of layout</a> in the <i>Amazon Quick Suite User Guide</i>.</p>
     pub fn set_layouts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Layout>>) -> Self {
         self.layouts = input;
         self
     }
     /// <p>Layouts define how the components of a sheet are arranged.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/types-of-layout.html">Types of layout</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/types-of-layout.html">Types of layout</a> in the <i>Amazon Quick Suite User Guide</i>.</p>
     pub fn get_layouts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Layout>> {
         &self.layouts
     }

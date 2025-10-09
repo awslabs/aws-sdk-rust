@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteNamespaceInput {
-    /// <p>The ID for the Amazon Web Services account that you want to delete the QuickSight namespace from.</p>
+    /// <p>The ID for the Amazon Web Services account that you want to delete the Quick Sight namespace from.</p>
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The namespace that you want to delete.</p>
     pub namespace: ::std::option::Option<::std::string::String>,
 }
 impl DeleteNamespaceInput {
-    /// <p>The ID for the Amazon Web Services account that you want to delete the QuickSight namespace from.</p>
+    /// <p>The ID for the Amazon Web Services account that you want to delete the Quick Sight namespace from.</p>
     pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
@@ -33,18 +33,18 @@ pub struct DeleteNamespaceInputBuilder {
     pub(crate) namespace: ::std::option::Option<::std::string::String>,
 }
 impl DeleteNamespaceInputBuilder {
-    /// <p>The ID for the Amazon Web Services account that you want to delete the QuickSight namespace from.</p>
+    /// <p>The ID for the Amazon Web Services account that you want to delete the Quick Sight namespace from.</p>
     /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID for the Amazon Web Services account that you want to delete the QuickSight namespace from.</p>
+    /// <p>The ID for the Amazon Web Services account that you want to delete the Quick Sight namespace from.</p>
     pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
-    /// <p>The ID for the Amazon Web Services account that you want to delete the QuickSight namespace from.</p>
+    /// <p>The ID for the Amazon Web Services account that you want to delete the Quick Sight namespace from.</p>
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.aws_account_id
     }

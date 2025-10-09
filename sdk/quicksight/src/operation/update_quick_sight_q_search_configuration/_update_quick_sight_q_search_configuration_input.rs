@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateQuickSightQSearchConfigurationInput {
-    /// <p>The ID of the Amazon Web Services account that contains the QuickSight Q Search configuration that you want to update.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the Quick Sight Q Search configuration that you want to update.</p>
     pub aws_account_id: ::std::option::Option<::std::string::String>,
-    /// <p>The status of the QuickSight Q Search configuration that the user wants to update.</p>
+    /// <p>The status of the Quick Sight Q Search configuration that the user wants to update.</p>
     pub q_search_status: ::std::option::Option<crate::types::QSearchStatus>,
 }
 impl UpdateQuickSightQSearchConfigurationInput {
-    /// <p>The ID of the Amazon Web Services account that contains the QuickSight Q Search configuration that you want to update.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the Quick Sight Q Search configuration that you want to update.</p>
     pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
-    /// <p>The status of the QuickSight Q Search configuration that the user wants to update.</p>
+    /// <p>The status of the Quick Sight Q Search configuration that the user wants to update.</p>
     pub fn q_search_status(&self) -> ::std::option::Option<&crate::types::QSearchStatus> {
         self.q_search_status.as_ref()
     }
@@ -33,33 +33,33 @@ pub struct UpdateQuickSightQSearchConfigurationInputBuilder {
     pub(crate) q_search_status: ::std::option::Option<crate::types::QSearchStatus>,
 }
 impl UpdateQuickSightQSearchConfigurationInputBuilder {
-    /// <p>The ID of the Amazon Web Services account that contains the QuickSight Q Search configuration that you want to update.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the Quick Sight Q Search configuration that you want to update.</p>
     /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the Amazon Web Services account that contains the QuickSight Q Search configuration that you want to update.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the Quick Sight Q Search configuration that you want to update.</p>
     pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
-    /// <p>The ID of the Amazon Web Services account that contains the QuickSight Q Search configuration that you want to update.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the Quick Sight Q Search configuration that you want to update.</p>
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.aws_account_id
     }
-    /// <p>The status of the QuickSight Q Search configuration that the user wants to update.</p>
+    /// <p>The status of the Quick Sight Q Search configuration that the user wants to update.</p>
     /// This field is required.
     pub fn q_search_status(mut self, input: crate::types::QSearchStatus) -> Self {
         self.q_search_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of the QuickSight Q Search configuration that the user wants to update.</p>
+    /// <p>The status of the Quick Sight Q Search configuration that the user wants to update.</p>
     pub fn set_q_search_status(mut self, input: ::std::option::Option<crate::types::QSearchStatus>) -> Self {
         self.q_search_status = input;
         self
     }
-    /// <p>The status of the QuickSight Q Search configuration that the user wants to update.</p>
+    /// <p>The status of the Quick Sight Q Search configuration that the user wants to update.</p>
     pub fn get_q_search_status(&self) -> &::std::option::Option<crate::types::QSearchStatus> {
         &self.q_search_status
     }

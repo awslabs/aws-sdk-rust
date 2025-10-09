@@ -8,11 +8,11 @@ pub struct AssetBundleImportJobDataSourceOverrideParameters {
     pub data_source_id: ::std::string::String,
     /// <p>A new name for the data source.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The parameters that Amazon QuickSight uses to connect to your underlying data source. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null.</p>
+    /// <p>The parameters that Quick Sight uses to connect to your underlying data source. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null.</p>
     pub data_source_parameters: ::std::option::Option<crate::types::DataSourceParameters>,
     /// <p>VPC connection properties.</p>
     pub vpc_connection_properties: ::std::option::Option<crate::types::VpcConnectionProperties>,
-    /// <p>Secure Socket Layer (SSL) properties that apply when QuickSight connects to your underlying data source.</p>
+    /// <p>Secure Socket Layer (SSL) properties that apply when Quick Sight connects to your underlying data source.</p>
     pub ssl_properties: ::std::option::Option<crate::types::SslProperties>,
     /// <p>An optional structure that provides the credentials to be used to create the imported data source.</p>
     pub credentials: ::std::option::Option<crate::types::AssetBundleImportJobDataSourceCredentials>,
@@ -27,7 +27,7 @@ impl AssetBundleImportJobDataSourceOverrideParameters {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The parameters that Amazon QuickSight uses to connect to your underlying data source. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null.</p>
+    /// <p>The parameters that Quick Sight uses to connect to your underlying data source. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null.</p>
     pub fn data_source_parameters(&self) -> ::std::option::Option<&crate::types::DataSourceParameters> {
         self.data_source_parameters.as_ref()
     }
@@ -35,7 +35,7 @@ impl AssetBundleImportJobDataSourceOverrideParameters {
     pub fn vpc_connection_properties(&self) -> ::std::option::Option<&crate::types::VpcConnectionProperties> {
         self.vpc_connection_properties.as_ref()
     }
-    /// <p>Secure Socket Layer (SSL) properties that apply when QuickSight connects to your underlying data source.</p>
+    /// <p>Secure Socket Layer (SSL) properties that apply when Quick Sight connects to your underlying data source.</p>
     pub fn ssl_properties(&self) -> ::std::option::Option<&crate::types::SslProperties> {
         self.ssl_properties.as_ref()
     }
@@ -92,17 +92,17 @@ impl AssetBundleImportJobDataSourceOverrideParametersBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The parameters that Amazon QuickSight uses to connect to your underlying data source. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null.</p>
+    /// <p>The parameters that Quick Sight uses to connect to your underlying data source. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null.</p>
     pub fn data_source_parameters(mut self, input: crate::types::DataSourceParameters) -> Self {
         self.data_source_parameters = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The parameters that Amazon QuickSight uses to connect to your underlying data source. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null.</p>
+    /// <p>The parameters that Quick Sight uses to connect to your underlying data source. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null.</p>
     pub fn set_data_source_parameters(mut self, input: ::std::option::Option<crate::types::DataSourceParameters>) -> Self {
         self.data_source_parameters = input;
         self
     }
-    /// <p>The parameters that Amazon QuickSight uses to connect to your underlying data source. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null.</p>
+    /// <p>The parameters that Quick Sight uses to connect to your underlying data source. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null.</p>
     pub fn get_data_source_parameters(&self) -> &::std::option::Option<crate::types::DataSourceParameters> {
         &self.data_source_parameters
     }
@@ -120,17 +120,17 @@ impl AssetBundleImportJobDataSourceOverrideParametersBuilder {
     pub fn get_vpc_connection_properties(&self) -> &::std::option::Option<crate::types::VpcConnectionProperties> {
         &self.vpc_connection_properties
     }
-    /// <p>Secure Socket Layer (SSL) properties that apply when QuickSight connects to your underlying data source.</p>
+    /// <p>Secure Socket Layer (SSL) properties that apply when Quick Sight connects to your underlying data source.</p>
     pub fn ssl_properties(mut self, input: crate::types::SslProperties) -> Self {
         self.ssl_properties = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Secure Socket Layer (SSL) properties that apply when QuickSight connects to your underlying data source.</p>
+    /// <p>Secure Socket Layer (SSL) properties that apply when Quick Sight connects to your underlying data source.</p>
     pub fn set_ssl_properties(mut self, input: ::std::option::Option<crate::types::SslProperties>) -> Self {
         self.ssl_properties = input;
         self
     }
-    /// <p>Secure Socket Layer (SSL) properties that apply when QuickSight connects to your underlying data source.</p>
+    /// <p>Secure Socket Layer (SSL) properties that apply when Quick Sight connects to your underlying data source.</p>
     pub fn get_ssl_properties(&self) -> &::std::option::Option<crate::types::SslProperties> {
         &self.ssl_properties
     }

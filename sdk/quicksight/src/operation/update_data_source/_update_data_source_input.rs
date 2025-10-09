@@ -9,13 +9,13 @@ pub struct UpdateDataSourceInput {
     pub data_source_id: ::std::option::Option<::std::string::String>,
     /// <p>A display name for the data source.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The parameters that QuickSight uses to connect to your underlying source.</p>
+    /// <p>The parameters that Amazon Quick Sight uses to connect to your underlying source.</p>
     pub data_source_parameters: ::std::option::Option<crate::types::DataSourceParameters>,
-    /// <p>The credentials that QuickSight that uses to connect to your underlying source. Currently, only credentials based on user name and password are supported.</p>
+    /// <p>The credentials that Amazon Quick Sight that uses to connect to your underlying source. Currently, only credentials based on user name and password are supported.</p>
     pub credentials: ::std::option::Option<crate::types::DataSourceCredentials>,
-    /// <p>Use this parameter only when you want QuickSight to use a VPC connection when connecting to your underlying source.</p>
+    /// <p>Use this parameter only when you want Amazon Quick Sight to use a VPC connection when connecting to your underlying source.</p>
     pub vpc_connection_properties: ::std::option::Option<crate::types::VpcConnectionProperties>,
-    /// <p>Secure Socket Layer (SSL) properties that apply when QuickSight connects to your underlying source.</p>
+    /// <p>Secure Socket Layer (SSL) properties that apply when Amazon Quick Sight connects to your underlying source.</p>
     pub ssl_properties: ::std::option::Option<crate::types::SslProperties>,
 }
 impl UpdateDataSourceInput {
@@ -31,19 +31,19 @@ impl UpdateDataSourceInput {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The parameters that QuickSight uses to connect to your underlying source.</p>
+    /// <p>The parameters that Amazon Quick Sight uses to connect to your underlying source.</p>
     pub fn data_source_parameters(&self) -> ::std::option::Option<&crate::types::DataSourceParameters> {
         self.data_source_parameters.as_ref()
     }
-    /// <p>The credentials that QuickSight that uses to connect to your underlying source. Currently, only credentials based on user name and password are supported.</p>
+    /// <p>The credentials that Amazon Quick Sight that uses to connect to your underlying source. Currently, only credentials based on user name and password are supported.</p>
     pub fn credentials(&self) -> ::std::option::Option<&crate::types::DataSourceCredentials> {
         self.credentials.as_ref()
     }
-    /// <p>Use this parameter only when you want QuickSight to use a VPC connection when connecting to your underlying source.</p>
+    /// <p>Use this parameter only when you want Amazon Quick Sight to use a VPC connection when connecting to your underlying source.</p>
     pub fn vpc_connection_properties(&self) -> ::std::option::Option<&crate::types::VpcConnectionProperties> {
         self.vpc_connection_properties.as_ref()
     }
-    /// <p>Secure Socket Layer (SSL) properties that apply when QuickSight connects to your underlying source.</p>
+    /// <p>Secure Socket Layer (SSL) properties that apply when Amazon Quick Sight connects to your underlying source.</p>
     pub fn ssl_properties(&self) -> ::std::option::Option<&crate::types::SslProperties> {
         self.ssl_properties.as_ref()
     }
@@ -126,59 +126,59 @@ impl UpdateDataSourceInputBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The parameters that QuickSight uses to connect to your underlying source.</p>
+    /// <p>The parameters that Amazon Quick Sight uses to connect to your underlying source.</p>
     pub fn data_source_parameters(mut self, input: crate::types::DataSourceParameters) -> Self {
         self.data_source_parameters = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The parameters that QuickSight uses to connect to your underlying source.</p>
+    /// <p>The parameters that Amazon Quick Sight uses to connect to your underlying source.</p>
     pub fn set_data_source_parameters(mut self, input: ::std::option::Option<crate::types::DataSourceParameters>) -> Self {
         self.data_source_parameters = input;
         self
     }
-    /// <p>The parameters that QuickSight uses to connect to your underlying source.</p>
+    /// <p>The parameters that Amazon Quick Sight uses to connect to your underlying source.</p>
     pub fn get_data_source_parameters(&self) -> &::std::option::Option<crate::types::DataSourceParameters> {
         &self.data_source_parameters
     }
-    /// <p>The credentials that QuickSight that uses to connect to your underlying source. Currently, only credentials based on user name and password are supported.</p>
+    /// <p>The credentials that Amazon Quick Sight that uses to connect to your underlying source. Currently, only credentials based on user name and password are supported.</p>
     pub fn credentials(mut self, input: crate::types::DataSourceCredentials) -> Self {
         self.credentials = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The credentials that QuickSight that uses to connect to your underlying source. Currently, only credentials based on user name and password are supported.</p>
+    /// <p>The credentials that Amazon Quick Sight that uses to connect to your underlying source. Currently, only credentials based on user name and password are supported.</p>
     pub fn set_credentials(mut self, input: ::std::option::Option<crate::types::DataSourceCredentials>) -> Self {
         self.credentials = input;
         self
     }
-    /// <p>The credentials that QuickSight that uses to connect to your underlying source. Currently, only credentials based on user name and password are supported.</p>
+    /// <p>The credentials that Amazon Quick Sight that uses to connect to your underlying source. Currently, only credentials based on user name and password are supported.</p>
     pub fn get_credentials(&self) -> &::std::option::Option<crate::types::DataSourceCredentials> {
         &self.credentials
     }
-    /// <p>Use this parameter only when you want QuickSight to use a VPC connection when connecting to your underlying source.</p>
+    /// <p>Use this parameter only when you want Amazon Quick Sight to use a VPC connection when connecting to your underlying source.</p>
     pub fn vpc_connection_properties(mut self, input: crate::types::VpcConnectionProperties) -> Self {
         self.vpc_connection_properties = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Use this parameter only when you want QuickSight to use a VPC connection when connecting to your underlying source.</p>
+    /// <p>Use this parameter only when you want Amazon Quick Sight to use a VPC connection when connecting to your underlying source.</p>
     pub fn set_vpc_connection_properties(mut self, input: ::std::option::Option<crate::types::VpcConnectionProperties>) -> Self {
         self.vpc_connection_properties = input;
         self
     }
-    /// <p>Use this parameter only when you want QuickSight to use a VPC connection when connecting to your underlying source.</p>
+    /// <p>Use this parameter only when you want Amazon Quick Sight to use a VPC connection when connecting to your underlying source.</p>
     pub fn get_vpc_connection_properties(&self) -> &::std::option::Option<crate::types::VpcConnectionProperties> {
         &self.vpc_connection_properties
     }
-    /// <p>Secure Socket Layer (SSL) properties that apply when QuickSight connects to your underlying source.</p>
+    /// <p>Secure Socket Layer (SSL) properties that apply when Amazon Quick Sight connects to your underlying source.</p>
     pub fn ssl_properties(mut self, input: crate::types::SslProperties) -> Self {
         self.ssl_properties = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Secure Socket Layer (SSL) properties that apply when QuickSight connects to your underlying source.</p>
+    /// <p>Secure Socket Layer (SSL) properties that apply when Amazon Quick Sight connects to your underlying source.</p>
     pub fn set_ssl_properties(mut self, input: ::std::option::Option<crate::types::SslProperties>) -> Self {
         self.ssl_properties = input;
         self
     }
-    /// <p>Secure Socket Layer (SSL) properties that apply when QuickSight connects to your underlying source.</p>
+    /// <p>Secure Socket Layer (SSL) properties that apply when Amazon Quick Sight connects to your underlying source.</p>
     pub fn get_ssl_properties(&self) -> &::std::option::Option<crate::types::SslProperties> {
         &self.ssl_properties
     }

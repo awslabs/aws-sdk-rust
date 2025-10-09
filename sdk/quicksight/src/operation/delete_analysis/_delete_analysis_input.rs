@@ -7,7 +7,7 @@ pub struct DeleteAnalysisInput {
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the analysis that you're deleting.</p>
     pub analysis_id: ::std::option::Option<::std::string::String>,
-    /// <p>A value that specifies the number of days that QuickSight waits before it deletes the analysis. You can't use this parameter with the <code>ForceDeleteWithoutRecovery</code> option in the same API call. The default value is 30.</p>
+    /// <p>A value that specifies the number of days that Amazon Quick Sight waits before it deletes the analysis. You can't use this parameter with the <code>ForceDeleteWithoutRecovery</code> option in the same API call. The default value is 30.</p>
     pub recovery_window_in_days: ::std::option::Option<i64>,
     /// <p>This option defaults to the value <code>NoForceDeleteWithoutRecovery</code>. To immediately delete the analysis, add the <code>ForceDeleteWithoutRecovery</code> option. You can't restore an analysis after it's deleted.</p>
     pub force_delete_without_recovery: ::std::option::Option<bool>,
@@ -21,7 +21,7 @@ impl DeleteAnalysisInput {
     pub fn analysis_id(&self) -> ::std::option::Option<&str> {
         self.analysis_id.as_deref()
     }
-    /// <p>A value that specifies the number of days that QuickSight waits before it deletes the analysis. You can't use this parameter with the <code>ForceDeleteWithoutRecovery</code> option in the same API call. The default value is 30.</p>
+    /// <p>A value that specifies the number of days that Amazon Quick Sight waits before it deletes the analysis. You can't use this parameter with the <code>ForceDeleteWithoutRecovery</code> option in the same API call. The default value is 30.</p>
     pub fn recovery_window_in_days(&self) -> ::std::option::Option<i64> {
         self.recovery_window_in_days
     }
@@ -77,17 +77,17 @@ impl DeleteAnalysisInputBuilder {
     pub fn get_analysis_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.analysis_id
     }
-    /// <p>A value that specifies the number of days that QuickSight waits before it deletes the analysis. You can't use this parameter with the <code>ForceDeleteWithoutRecovery</code> option in the same API call. The default value is 30.</p>
+    /// <p>A value that specifies the number of days that Amazon Quick Sight waits before it deletes the analysis. You can't use this parameter with the <code>ForceDeleteWithoutRecovery</code> option in the same API call. The default value is 30.</p>
     pub fn recovery_window_in_days(mut self, input: i64) -> Self {
         self.recovery_window_in_days = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A value that specifies the number of days that QuickSight waits before it deletes the analysis. You can't use this parameter with the <code>ForceDeleteWithoutRecovery</code> option in the same API call. The default value is 30.</p>
+    /// <p>A value that specifies the number of days that Amazon Quick Sight waits before it deletes the analysis. You can't use this parameter with the <code>ForceDeleteWithoutRecovery</code> option in the same API call. The default value is 30.</p>
     pub fn set_recovery_window_in_days(mut self, input: ::std::option::Option<i64>) -> Self {
         self.recovery_window_in_days = input;
         self
     }
-    /// <p>A value that specifies the number of days that QuickSight waits before it deletes the analysis. You can't use this parameter with the <code>ForceDeleteWithoutRecovery</code> option in the same API call. The default value is 30.</p>
+    /// <p>A value that specifies the number of days that Amazon Quick Sight waits before it deletes the analysis. You can't use this parameter with the <code>ForceDeleteWithoutRecovery</code> option in the same API call. The default value is 30.</p>
     pub fn get_recovery_window_in_days(&self) -> &::std::option::Option<i64> {
         &self.recovery_window_in_days
     }

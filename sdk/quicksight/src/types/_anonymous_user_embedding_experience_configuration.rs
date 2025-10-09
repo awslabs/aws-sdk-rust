@@ -4,9 +4,9 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnonymousUserEmbeddingExperienceConfiguration {
-    /// <p>The type of embedding experience. In this case, QuickSight dashboards.</p>
+    /// <p>The type of embedding experience. In this case, Amazon Quick Sight dashboards.</p>
     pub dashboard: ::std::option::Option<crate::types::AnonymousUserDashboardEmbeddingConfiguration>,
-    /// <p>The type of embedding experience. In this case, QuickSight visuals.</p>
+    /// <p>The type of embedding experience. In this case, Amazon Quick Sight visuals.</p>
     pub dashboard_visual: ::std::option::Option<crate::types::AnonymousUserDashboardVisualEmbeddingConfiguration>,
     /// <p>The Q search bar that you want to use for anonymous user embedding.</p>
     pub q_search_bar: ::std::option::Option<crate::types::AnonymousUserQSearchBarEmbeddingConfiguration>,
@@ -14,11 +14,11 @@ pub struct AnonymousUserEmbeddingExperienceConfiguration {
     pub generative_qn_a: ::std::option::Option<crate::types::AnonymousUserGenerativeQnAEmbeddingConfiguration>,
 }
 impl AnonymousUserEmbeddingExperienceConfiguration {
-    /// <p>The type of embedding experience. In this case, QuickSight dashboards.</p>
+    /// <p>The type of embedding experience. In this case, Amazon Quick Sight dashboards.</p>
     pub fn dashboard(&self) -> ::std::option::Option<&crate::types::AnonymousUserDashboardEmbeddingConfiguration> {
         self.dashboard.as_ref()
     }
-    /// <p>The type of embedding experience. In this case, QuickSight visuals.</p>
+    /// <p>The type of embedding experience. In this case, Amazon Quick Sight visuals.</p>
     pub fn dashboard_visual(&self) -> ::std::option::Option<&crate::types::AnonymousUserDashboardVisualEmbeddingConfiguration> {
         self.dashboard_visual.as_ref()
     }
@@ -48,31 +48,31 @@ pub struct AnonymousUserEmbeddingExperienceConfigurationBuilder {
     pub(crate) generative_qn_a: ::std::option::Option<crate::types::AnonymousUserGenerativeQnAEmbeddingConfiguration>,
 }
 impl AnonymousUserEmbeddingExperienceConfigurationBuilder {
-    /// <p>The type of embedding experience. In this case, QuickSight dashboards.</p>
+    /// <p>The type of embedding experience. In this case, Amazon Quick Sight dashboards.</p>
     pub fn dashboard(mut self, input: crate::types::AnonymousUserDashboardEmbeddingConfiguration) -> Self {
         self.dashboard = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of embedding experience. In this case, QuickSight dashboards.</p>
+    /// <p>The type of embedding experience. In this case, Amazon Quick Sight dashboards.</p>
     pub fn set_dashboard(mut self, input: ::std::option::Option<crate::types::AnonymousUserDashboardEmbeddingConfiguration>) -> Self {
         self.dashboard = input;
         self
     }
-    /// <p>The type of embedding experience. In this case, QuickSight dashboards.</p>
+    /// <p>The type of embedding experience. In this case, Amazon Quick Sight dashboards.</p>
     pub fn get_dashboard(&self) -> &::std::option::Option<crate::types::AnonymousUserDashboardEmbeddingConfiguration> {
         &self.dashboard
     }
-    /// <p>The type of embedding experience. In this case, QuickSight visuals.</p>
+    /// <p>The type of embedding experience. In this case, Amazon Quick Sight visuals.</p>
     pub fn dashboard_visual(mut self, input: crate::types::AnonymousUserDashboardVisualEmbeddingConfiguration) -> Self {
         self.dashboard_visual = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of embedding experience. In this case, QuickSight visuals.</p>
+    /// <p>The type of embedding experience. In this case, Amazon Quick Sight visuals.</p>
     pub fn set_dashboard_visual(mut self, input: ::std::option::Option<crate::types::AnonymousUserDashboardVisualEmbeddingConfiguration>) -> Self {
         self.dashboard_visual = input;
         self
     }
-    /// <p>The type of embedding experience. In this case, QuickSight visuals.</p>
+    /// <p>The type of embedding experience. In this case, Amazon Quick Sight visuals.</p>
     pub fn get_dashboard_visual(&self) -> &::std::option::Option<crate::types::AnonymousUserDashboardVisualEmbeddingConfiguration> {
         &self.dashboard_visual
     }

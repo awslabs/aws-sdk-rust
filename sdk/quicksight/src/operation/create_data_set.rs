@@ -265,7 +265,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateDataSet
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum CreateDataSetError {
-    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct credentials.</p>
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon Quick Sight service, that your policies have the correct permissions, and that you are using the correct credentials.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>Updating or deleting a resource can cause an inconsistent state.</p>
     ConflictException(crate::types::error::ConflictException),
@@ -281,7 +281,7 @@ pub enum CreateDataSetError {
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
-    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
+    /// <p>This error indicates that you are calling an operation on an Amazon Quick Suite subscription where the edition doesn't include support for that operation. Amazon Quick Suite currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::types::error::UnsupportedUserEditionException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

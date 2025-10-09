@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAccountSubscriptionInput {
-    /// <p>The Amazon Web Services account ID associated with your QuickSight account.</p>
+    /// <p>The Amazon Web Services account ID associated with your Quick Sight account.</p>
     pub aws_account_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeAccountSubscriptionInput {
-    /// <p>The Amazon Web Services account ID associated with your QuickSight account.</p>
+    /// <p>The Amazon Web Services account ID associated with your Quick Sight account.</p>
     pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct DescribeAccountSubscriptionInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeAccountSubscriptionInputBuilder {
-    /// <p>The Amazon Web Services account ID associated with your QuickSight account.</p>
+    /// <p>The Amazon Web Services account ID associated with your Quick Sight account.</p>
     /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Web Services account ID associated with your QuickSight account.</p>
+    /// <p>The Amazon Web Services account ID associated with your Quick Sight account.</p>
     pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
-    /// <p>The Amazon Web Services account ID associated with your QuickSight account.</p>
+    /// <p>The Amazon Web Services account ID associated with your Quick Sight account.</p>
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.aws_account_id
     }

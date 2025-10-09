@@ -10,6 +10,8 @@ pub struct DataSourceCredentials {
     pub copy_source_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the secret associated with the data source in Amazon Secrets Manager.</p>
     pub secret_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The credentials for connecting through a web proxy server.</p>
+    pub web_proxy_credentials: ::std::option::Option<crate::types::WebProxyCredentials>,
 }
 impl DataSourceCredentials {
     /// <p>Credential pair. For more information, see <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CredentialPair.html">CredentialPair</a> </code>.</p>
@@ -24,6 +26,10 @@ impl DataSourceCredentials {
     pub fn secret_arn(&self) -> ::std::option::Option<&str> {
         self.secret_arn.as_deref()
     }
+    /// <p>The credentials for connecting through a web proxy server.</p>
+    pub fn web_proxy_credentials(&self) -> ::std::option::Option<&crate::types::WebProxyCredentials> {
+        self.web_proxy_credentials.as_ref()
+    }
 }
 impl ::std::fmt::Debug for DataSourceCredentials {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -31,6 +37,7 @@ impl ::std::fmt::Debug for DataSourceCredentials {
         formatter.field("credential_pair", &"*** Sensitive Data Redacted ***");
         formatter.field("copy_source_arn", &"*** Sensitive Data Redacted ***");
         formatter.field("secret_arn", &"*** Sensitive Data Redacted ***");
+        formatter.field("web_proxy_credentials", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -48,6 +55,7 @@ pub struct DataSourceCredentialsBuilder {
     pub(crate) credential_pair: ::std::option::Option<crate::types::CredentialPair>,
     pub(crate) copy_source_arn: ::std::option::Option<::std::string::String>,
     pub(crate) secret_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) web_proxy_credentials: ::std::option::Option<crate::types::WebProxyCredentials>,
 }
 impl DataSourceCredentialsBuilder {
     /// <p>Credential pair. For more information, see <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CredentialPair.html">CredentialPair</a> </code>.</p>
@@ -92,12 +100,27 @@ impl DataSourceCredentialsBuilder {
     pub fn get_secret_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.secret_arn
     }
+    /// <p>The credentials for connecting through a web proxy server.</p>
+    pub fn web_proxy_credentials(mut self, input: crate::types::WebProxyCredentials) -> Self {
+        self.web_proxy_credentials = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The credentials for connecting through a web proxy server.</p>
+    pub fn set_web_proxy_credentials(mut self, input: ::std::option::Option<crate::types::WebProxyCredentials>) -> Self {
+        self.web_proxy_credentials = input;
+        self
+    }
+    /// <p>The credentials for connecting through a web proxy server.</p>
+    pub fn get_web_proxy_credentials(&self) -> &::std::option::Option<crate::types::WebProxyCredentials> {
+        &self.web_proxy_credentials
+    }
     /// Consumes the builder and constructs a [`DataSourceCredentials`](crate::types::DataSourceCredentials).
     pub fn build(self) -> crate::types::DataSourceCredentials {
         crate::types::DataSourceCredentials {
             credential_pair: self.credential_pair,
             copy_source_arn: self.copy_source_arn,
             secret_arn: self.secret_arn,
+            web_proxy_credentials: self.web_proxy_credentials,
         }
     }
 }
@@ -107,6 +130,7 @@ impl ::std::fmt::Debug for DataSourceCredentialsBuilder {
         formatter.field("credential_pair", &"*** Sensitive Data Redacted ***");
         formatter.field("copy_source_arn", &"*** Sensitive Data Redacted ***");
         formatter.field("secret_arn", &"*** Sensitive Data Redacted ***");
+        formatter.field("web_proxy_credentials", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

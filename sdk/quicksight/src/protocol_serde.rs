@@ -33,6 +33,8 @@ pub(crate) mod shape_create_account_customization;
 
 pub(crate) mod shape_create_account_subscription;
 
+pub(crate) mod shape_create_action_connector;
+
 pub(crate) mod shape_create_analysis;
 
 pub(crate) mod shape_create_brand;
@@ -82,6 +84,8 @@ pub(crate) mod shape_delete_account_custom_permission;
 pub(crate) mod shape_delete_account_customization;
 
 pub(crate) mod shape_delete_account_subscription;
+
+pub(crate) mod shape_delete_action_connector;
 
 pub(crate) mod shape_delete_analysis;
 
@@ -148,6 +152,10 @@ pub(crate) mod shape_describe_account_customization;
 pub(crate) mod shape_describe_account_settings;
 
 pub(crate) mod shape_describe_account_subscription;
+
+pub(crate) mod shape_describe_action_connector;
+
+pub(crate) mod shape_describe_action_connector_permissions;
 
 pub(crate) mod shape_describe_analysis;
 
@@ -253,7 +261,13 @@ pub(crate) mod shape_generate_embed_url_for_registered_user_with_identity;
 
 pub(crate) mod shape_get_dashboard_embed_url;
 
+pub(crate) mod shape_get_flow_metadata;
+
+pub(crate) mod shape_get_flow_permissions;
+
 pub(crate) mod shape_get_session_embed_url;
+
+pub(crate) mod shape_list_action_connectors;
 
 pub(crate) mod shape_list_analyses;
 
@@ -272,6 +286,8 @@ pub(crate) mod shape_list_dashboards;
 pub(crate) mod shape_list_data_sets;
 
 pub(crate) mod shape_list_data_sources;
+
+pub(crate) mod shape_list_flows;
 
 pub(crate) mod shape_list_folder_members;
 
@@ -331,6 +347,8 @@ pub(crate) mod shape_register_user;
 
 pub(crate) mod shape_restore_analysis;
 
+pub(crate) mod shape_search_action_connectors;
+
 pub(crate) mod shape_search_analyses;
 
 pub(crate) mod shape_search_dashboards;
@@ -338,6 +356,8 @@ pub(crate) mod shape_search_dashboards;
 pub(crate) mod shape_search_data_sets;
 
 pub(crate) mod shape_search_data_sources;
+
+pub(crate) mod shape_search_flows;
 
 pub(crate) mod shape_search_folders;
 
@@ -362,6 +382,10 @@ pub(crate) mod shape_update_account_custom_permission;
 pub(crate) mod shape_update_account_customization;
 
 pub(crate) mod shape_update_account_settings;
+
+pub(crate) mod shape_update_action_connector;
+
+pub(crate) mod shape_update_action_connector_permissions;
 
 pub(crate) mod shape_update_analysis;
 
@@ -396,6 +420,8 @@ pub(crate) mod shape_update_data_source;
 pub(crate) mod shape_update_data_source_permissions;
 
 pub(crate) mod shape_update_default_q_business_application;
+
+pub(crate) mod shape_update_flow_permissions;
 
 pub(crate) mod shape_update_folder;
 
@@ -468,6 +494,8 @@ pub(crate) mod shape_conflict_exception;
 pub(crate) mod shape_create_account_customization_input;
 
 pub(crate) mod shape_create_account_subscription_input;
+
+pub(crate) mod shape_create_action_connector_input;
 
 pub(crate) mod shape_create_analysis_input;
 
@@ -547,6 +575,8 @@ pub(crate) mod shape_resource_not_found_exception;
 
 pub(crate) mod shape_resource_unavailable_exception;
 
+pub(crate) mod shape_search_action_connectors_input;
+
 pub(crate) mod shape_search_analyses_input;
 
 pub(crate) mod shape_search_dashboards_input;
@@ -554,6 +584,8 @@ pub(crate) mod shape_search_dashboards_input;
 pub(crate) mod shape_search_data_sets_input;
 
 pub(crate) mod shape_search_data_sources_input;
+
+pub(crate) mod shape_search_flows_input;
 
 pub(crate) mod shape_search_folders_input;
 
@@ -582,6 +614,10 @@ pub(crate) mod shape_update_account_custom_permission_input;
 pub(crate) mod shape_update_account_customization_input;
 
 pub(crate) mod shape_update_account_settings_input;
+
+pub(crate) mod shape_update_action_connector_input;
+
+pub(crate) mod shape_update_action_connector_permissions_input;
 
 pub(crate) mod shape_update_analysis_input;
 
@@ -612,6 +648,8 @@ pub(crate) mod shape_update_data_source_input;
 pub(crate) mod shape_update_data_source_permissions_input;
 
 pub(crate) mod shape_update_default_q_business_application_input;
+
+pub(crate) mod shape_update_flow_permissions_input;
 
 pub(crate) mod shape_update_folder_input;
 
@@ -669,6 +707,12 @@ pub(crate) mod shape_account_info;
 
 pub(crate) mod shape_account_settings;
 
+pub(crate) mod shape_action_connector;
+
+pub(crate) mod shape_action_connector_search_filter;
+
+pub(crate) mod shape_action_connector_summary_list;
+
 pub(crate) mod shape_active_iam_policy_assignment_list;
 
 pub(crate) mod shape_analysis;
@@ -714,6 +758,8 @@ pub(crate) mod shape_asset_bundle_import_source;
 pub(crate) mod shape_asset_bundle_import_source_description;
 
 pub(crate) mod shape_asset_bundle_resource_arns;
+
+pub(crate) mod shape_auth_config;
 
 pub(crate) mod shape_authorized_targets_by_services;
 
@@ -781,6 +827,8 @@ pub(crate) mod shape_failed_key_registration_entries;
 
 pub(crate) mod shape_field_folder;
 
+pub(crate) mod shape_flow_summary_list;
+
 pub(crate) mod shape_folder;
 
 pub(crate) mod shape_folder_arn_list;
@@ -837,6 +885,10 @@ pub(crate) mod shape_parameters;
 
 pub(crate) mod shape_performance_configuration;
 
+pub(crate) mod shape_permission;
+
+pub(crate) mod shape_permissions_list;
+
 pub(crate) mod shape_physical_table;
 
 pub(crate) mod shape_q_data_key;
@@ -860,6 +912,8 @@ pub(crate) mod shape_resource_permission_list;
 pub(crate) mod shape_row_level_permission_data_set;
 
 pub(crate) mod shape_row_level_permission_tag_configuration;
+
+pub(crate) mod shape_search_flows_filter;
 
 pub(crate) mod shape_session_tag;
 
@@ -944,6 +998,12 @@ pub(crate) mod shape_vpc_connection_summary_list;
 pub(crate) mod shape_vpc_endpoint_id_restriction_rule_map;
 
 pub(crate) mod shape_vpc_id_restriction_rule_map;
+
+pub(crate) mod shape_action_connector_error;
+
+pub(crate) mod shape_action_connector_summary;
+
+pub(crate) mod shape_action_id_list;
 
 pub(crate) mod shape_active_iam_policy_assignment;
 
@@ -1113,6 +1173,8 @@ pub(crate) mod shape_aurora_parameters;
 
 pub(crate) mod shape_aurora_postgre_sql_parameters;
 
+pub(crate) mod shape_authentication_metadata;
+
 pub(crate) mod shape_authorized_targets_by_service;
 
 pub(crate) mod shape_aws_iot_analytics_parameters;
@@ -1132,6 +1194,8 @@ pub(crate) mod shape_column_configuration_list;
 pub(crate) mod shape_column_group_list;
 
 pub(crate) mod shape_column_level_permission_rule_list;
+
+pub(crate) mod shape_confluence_parameters;
 
 pub(crate) mod shape_credential_pair;
 
@@ -1219,6 +1283,8 @@ pub(crate) mod shape_filter_group;
 
 pub(crate) mod shape_filter_group_list;
 
+pub(crate) mod shape_flow_summary;
+
 pub(crate) mod shape_folder_summary;
 
 pub(crate) mod shape_generated_answer_result;
@@ -1273,11 +1339,17 @@ pub(crate) mod shape_postgre_sql_parameters;
 
 pub(crate) mod shape_presto_parameters;
 
+pub(crate) mod shape_q_business_parameters;
+
 pub(crate) mod shape_query_execution_options;
 
 pub(crate) mod shape_queue_info;
 
+pub(crate) mod shape_quick_suite_actions_option;
+
 pub(crate) mod shape_rds_parameters;
+
+pub(crate) mod shape_read_auth_config;
 
 pub(crate) mod shape_redshift_parameters;
 
@@ -1302,6 +1374,8 @@ pub(crate) mod shape_relational_table;
 pub(crate) mod shape_row_info;
 
 pub(crate) mod shape_row_level_permission_tag_rule;
+
+pub(crate) mod shape_s3_knowledge_base_parameters;
 
 pub(crate) mod shape_s3_parameters;
 
@@ -1407,11 +1481,19 @@ pub(crate) mod shape_visual_menu_option;
 
 pub(crate) mod shape_vpc_connection_summary;
 
+pub(crate) mod shape_web_crawler_parameters;
+
+pub(crate) mod shape_web_proxy_credentials;
+
 pub(crate) mod shape_action_list;
+
+pub(crate) mod shape_actions_list;
 
 pub(crate) mod shape_anonymous_user_dashboard_feature_configurations;
 
 pub(crate) mod shape_anonymous_user_snapshot_job_result;
+
+pub(crate) mod shape_api_key_connection_metadata;
 
 pub(crate) mod shape_asset_bundle_import_job_data_source_credentials;
 
@@ -1419,7 +1501,11 @@ pub(crate) mod shape_asset_bundle_resource_link_sharing_configuration;
 
 pub(crate) mod shape_asset_bundle_resource_permissions;
 
+pub(crate) mod shape_authorization_code_grant_metadata;
+
 pub(crate) mod shape_authorized_targets_list;
+
+pub(crate) mod shape_basic_auth_connection_metadata;
 
 pub(crate) mod shape_brand_color_palette;
 
@@ -1427,11 +1513,15 @@ pub(crate) mod shape_brand_element_style;
 
 pub(crate) mod shape_cast_column_type_operation;
 
+pub(crate) mod shape_client_credentials_grant_metadata;
+
 pub(crate) mod shape_colors_configuration;
 
 pub(crate) mod shape_column_group_schema;
 
 pub(crate) mod shape_column_identifier;
+
+pub(crate) mod shape_contextual_accent_palette;
 
 pub(crate) mod shape_create_columns_operation;
 
@@ -1473,6 +1563,8 @@ pub(crate) mod shape_font;
 
 pub(crate) mod shape_format_configuration;
 
+pub(crate) mod shape_iam_connection_metadata;
+
 pub(crate) mod shape_identity_center_configuration;
 
 pub(crate) mod shape_image_static_file;
@@ -1499,6 +1591,8 @@ pub(crate) mod shape_manifest_file_location;
 
 pub(crate) mod shape_network_interface;
 
+pub(crate) mod shape_none_connection_metadata;
+
 pub(crate) mod shape_o_auth_parameters;
 
 pub(crate) mod shape_output_column;
@@ -1508,6 +1602,8 @@ pub(crate) mod shape_override_dataset_parameter_operation;
 pub(crate) mod shape_parameter_control;
 
 pub(crate) mod shape_project_operation;
+
+pub(crate) mod shape_read_authentication_metadata;
 
 pub(crate) mod shape_redshift_iam_parameters;
 
@@ -1621,6 +1717,8 @@ pub(crate) mod shape_asset_bundle_import_job_data_source_credential_pair;
 
 pub(crate) mod shape_asset_bundle_restrictive_resource_id_list;
 
+pub(crate) mod shape_authorization_code_grant_credentials_details;
+
 pub(crate) mod shape_bar_chart_visual;
 
 pub(crate) mod shape_bookmarks_configurations;
@@ -1634,6 +1732,8 @@ pub(crate) mod shape_calculated_column;
 pub(crate) mod shape_category_filter;
 
 pub(crate) mod shape_cell_value_synonym;
+
+pub(crate) mod shape_client_credentials_details;
 
 pub(crate) mod shape_column_group_column_schema;
 
@@ -1795,6 +1895,18 @@ pub(crate) mod shape_principal_list;
 
 pub(crate) mod shape_radar_chart_visual;
 
+pub(crate) mod shape_read_api_key_connection_metadata;
+
+pub(crate) mod shape_read_authorization_code_grant_metadata;
+
+pub(crate) mod shape_read_basic_auth_connection_metadata;
+
+pub(crate) mod shape_read_client_credentials_grant_metadata;
+
+pub(crate) mod shape_read_iam_connection_metadata;
+
+pub(crate) mod shape_read_none_connection_metadata;
+
 pub(crate) mod shape_recent_snapshots_configurations;
 
 pub(crate) mod shape_relative_dates_filter;
@@ -1919,6 +2031,8 @@ pub(crate) mod shape_anchor_date_configuration;
 
 pub(crate) mod shape_asset_bundle_principal_list;
 
+pub(crate) mod shape_authorization_code_grant_details;
+
 pub(crate) mod shape_bar_chart_configuration;
 
 pub(crate) mod shape_box_plot_chart_configuration;
@@ -1926,6 +2040,8 @@ pub(crate) mod shape_box_plot_chart_configuration;
 pub(crate) mod shape_cascading_control_configuration;
 
 pub(crate) mod shape_category_filter_configuration;
+
+pub(crate) mod shape_client_credentials_grant_details;
 
 pub(crate) mod shape_collective_constant_entry;
 
@@ -2044,6 +2160,10 @@ pub(crate) mod shape_pivot_table_configuration;
 pub(crate) mod shape_plugin_visual_configuration;
 
 pub(crate) mod shape_radar_chart_configuration;
+
+pub(crate) mod shape_read_authorization_code_grant_credentials_details;
+
+pub(crate) mod shape_read_client_credentials_details;
 
 pub(crate) mod shape_relative_date_time_control_display_options;
 
@@ -2318,6 +2438,10 @@ pub(crate) mod shape_radar_chart_series_settings;
 pub(crate) mod shape_radar_chart_sort_configuration;
 
 pub(crate) mod shape_range_constant;
+
+pub(crate) mod shape_read_authorization_code_grant_details;
+
+pub(crate) mod shape_read_client_credentials_grant_details;
 
 pub(crate) mod shape_reference_line;
 

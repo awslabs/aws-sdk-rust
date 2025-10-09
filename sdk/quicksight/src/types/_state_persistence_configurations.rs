@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StatePersistenceConfigurations {
-    /// <p>Determines if a QuickSight dashboard's state persistence settings are turned on or off.</p>
+    /// <p>Determines if a Quick Sight dashboard's state persistence settings are turned on or off.</p>
     pub enabled: bool,
 }
 impl StatePersistenceConfigurations {
-    /// <p>Determines if a QuickSight dashboard's state persistence settings are turned on or off.</p>
+    /// <p>Determines if a Quick Sight dashboard's state persistence settings are turned on or off.</p>
     pub fn enabled(&self) -> bool {
         self.enabled
     }
@@ -27,18 +27,18 @@ pub struct StatePersistenceConfigurationsBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
 }
 impl StatePersistenceConfigurationsBuilder {
-    /// <p>Determines if a QuickSight dashboard's state persistence settings are turned on or off.</p>
+    /// <p>Determines if a Quick Sight dashboard's state persistence settings are turned on or off.</p>
     /// This field is required.
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Determines if a QuickSight dashboard's state persistence settings are turned on or off.</p>
+    /// <p>Determines if a Quick Sight dashboard's state persistence settings are turned on or off.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
     }
-    /// <p>Determines if a QuickSight dashboard's state persistence settings are turned on or off.</p>
+    /// <p>Determines if a Quick Sight dashboard's state persistence settings are turned on or off.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
         &self.enabled
     }

@@ -290,7 +290,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UpdateCustomP
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum UpdateCustomPermissionsError {
-    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct credentials.</p>
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon Quick Sight service, that your policies have the correct permissions, and that you are using the correct credentials.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>Updating or deleting a resource can cause an inconsistent state.</p>
     ConflictException(crate::types::error::ConflictException),

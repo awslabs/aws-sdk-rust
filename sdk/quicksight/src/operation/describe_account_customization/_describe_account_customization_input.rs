@@ -3,23 +3,23 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAccountCustomizationInput {
-    /// <p>The ID for the Amazon Web Services account that you want to describe QuickSight customizations for.</p>
+    /// <p>The ID for the Amazon Web Services account that you want to describe Quick Sight customizations for.</p>
     pub aws_account_id: ::std::option::Option<::std::string::String>,
-    /// <p>The QuickSight namespace that you want to describe QuickSight customizations for.</p>
+    /// <p>The Quick Sight namespace that you want to describe Quick Sight customizations for.</p>
     pub namespace: ::std::option::Option<::std::string::String>,
-    /// <p>The <code>Resolved</code> flag works with the other parameters to determine which view of QuickSight customizations is returned. You can add this flag to your command to use the same view that QuickSight uses to identify which customizations to apply to the console. Omit this flag, or set it to <code>no-resolved</code>, to reveal customizations that are configured at different levels.</p>
+    /// <p>The <code>Resolved</code> flag works with the other parameters to determine which view of Quick Sight customizations is returned. You can add this flag to your command to use the same view that Quick Sight uses to identify which customizations to apply to the console. Omit this flag, or set it to <code>no-resolved</code>, to reveal customizations that are configured at different levels.</p>
     pub resolved: ::std::option::Option<bool>,
 }
 impl DescribeAccountCustomizationInput {
-    /// <p>The ID for the Amazon Web Services account that you want to describe QuickSight customizations for.</p>
+    /// <p>The ID for the Amazon Web Services account that you want to describe Quick Sight customizations for.</p>
     pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
-    /// <p>The QuickSight namespace that you want to describe QuickSight customizations for.</p>
+    /// <p>The Quick Sight namespace that you want to describe Quick Sight customizations for.</p>
     pub fn namespace(&self) -> ::std::option::Option<&str> {
         self.namespace.as_deref()
     }
-    /// <p>The <code>Resolved</code> flag works with the other parameters to determine which view of QuickSight customizations is returned. You can add this flag to your command to use the same view that QuickSight uses to identify which customizations to apply to the console. Omit this flag, or set it to <code>no-resolved</code>, to reveal customizations that are configured at different levels.</p>
+    /// <p>The <code>Resolved</code> flag works with the other parameters to determine which view of Quick Sight customizations is returned. You can add this flag to your command to use the same view that Quick Sight uses to identify which customizations to apply to the console. Omit this flag, or set it to <code>no-resolved</code>, to reveal customizations that are configured at different levels.</p>
     pub fn resolved(&self) -> ::std::option::Option<bool> {
         self.resolved
     }
@@ -40,46 +40,46 @@ pub struct DescribeAccountCustomizationInputBuilder {
     pub(crate) resolved: ::std::option::Option<bool>,
 }
 impl DescribeAccountCustomizationInputBuilder {
-    /// <p>The ID for the Amazon Web Services account that you want to describe QuickSight customizations for.</p>
+    /// <p>The ID for the Amazon Web Services account that you want to describe Quick Sight customizations for.</p>
     /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID for the Amazon Web Services account that you want to describe QuickSight customizations for.</p>
+    /// <p>The ID for the Amazon Web Services account that you want to describe Quick Sight customizations for.</p>
     pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
-    /// <p>The ID for the Amazon Web Services account that you want to describe QuickSight customizations for.</p>
+    /// <p>The ID for the Amazon Web Services account that you want to describe Quick Sight customizations for.</p>
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.aws_account_id
     }
-    /// <p>The QuickSight namespace that you want to describe QuickSight customizations for.</p>
+    /// <p>The Quick Sight namespace that you want to describe Quick Sight customizations for.</p>
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The QuickSight namespace that you want to describe QuickSight customizations for.</p>
+    /// <p>The Quick Sight namespace that you want to describe Quick Sight customizations for.</p>
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.namespace = input;
         self
     }
-    /// <p>The QuickSight namespace that you want to describe QuickSight customizations for.</p>
+    /// <p>The Quick Sight namespace that you want to describe Quick Sight customizations for.</p>
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
         &self.namespace
     }
-    /// <p>The <code>Resolved</code> flag works with the other parameters to determine which view of QuickSight customizations is returned. You can add this flag to your command to use the same view that QuickSight uses to identify which customizations to apply to the console. Omit this flag, or set it to <code>no-resolved</code>, to reveal customizations that are configured at different levels.</p>
+    /// <p>The <code>Resolved</code> flag works with the other parameters to determine which view of Quick Sight customizations is returned. You can add this flag to your command to use the same view that Quick Sight uses to identify which customizations to apply to the console. Omit this flag, or set it to <code>no-resolved</code>, to reveal customizations that are configured at different levels.</p>
     pub fn resolved(mut self, input: bool) -> Self {
         self.resolved = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The <code>Resolved</code> flag works with the other parameters to determine which view of QuickSight customizations is returned. You can add this flag to your command to use the same view that QuickSight uses to identify which customizations to apply to the console. Omit this flag, or set it to <code>no-resolved</code>, to reveal customizations that are configured at different levels.</p>
+    /// <p>The <code>Resolved</code> flag works with the other parameters to determine which view of Quick Sight customizations is returned. You can add this flag to your command to use the same view that Quick Sight uses to identify which customizations to apply to the console. Omit this flag, or set it to <code>no-resolved</code>, to reveal customizations that are configured at different levels.</p>
     pub fn set_resolved(mut self, input: ::std::option::Option<bool>) -> Self {
         self.resolved = input;
         self
     }
-    /// <p>The <code>Resolved</code> flag works with the other parameters to determine which view of QuickSight customizations is returned. You can add this flag to your command to use the same view that QuickSight uses to identify which customizations to apply to the console. Omit this flag, or set it to <code>no-resolved</code>, to reveal customizations that are configured at different levels.</p>
+    /// <p>The <code>Resolved</code> flag works with the other parameters to determine which view of Quick Sight customizations is returned. You can add this flag to your command to use the same view that Quick Sight uses to identify which customizations to apply to the console. Omit this flag, or set it to <code>no-resolved</code>, to reveal customizations that are configured at different levels.</p>
     pub fn get_resolved(&self) -> &::std::option::Option<bool> {
         &self.resolved
     }

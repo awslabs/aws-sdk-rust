@@ -22,7 +22,7 @@ impl crate::operation::create_analysis::builders::CreateAnalysisInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateAnalysis`.
 ///
-/// <p>Creates an analysis in Amazon QuickSight. Analyses can be created either from a template or from an <code>AnalysisDefinition</code>.</p>
+/// <p>Creates an analysis in Amazon Quick Sight. Analyses can be created either from a template or from an <code>AnalysisDefinition</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateAnalysisFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -136,17 +136,17 @@ impl CreateAnalysisFluentBuilder {
     pub fn get_analysis_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_analysis_id()
     }
-    /// <p>A descriptive name for the analysis that you're creating. This name displays for the analysis in the QuickSight console.</p>
+    /// <p>A descriptive name for the analysis that you're creating. This name displays for the analysis in the Amazon Quick Sight console.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p>A descriptive name for the analysis that you're creating. This name displays for the analysis in the QuickSight console.</p>
+    /// <p>A descriptive name for the analysis that you're creating. This name displays for the analysis in the Amazon Quick Sight console.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>A descriptive name for the analysis that you're creating. This name displays for the analysis in the QuickSight console.</p>
+    /// <p>A descriptive name for the analysis that you're creating. This name displays for the analysis in the Amazon Quick Sight console.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
@@ -203,17 +203,17 @@ impl CreateAnalysisFluentBuilder {
     pub fn get_source_entity(&self) -> &::std::option::Option<crate::types::AnalysisSourceEntity> {
         self.inner.get_source_entity()
     }
-    /// <p>The ARN for the theme to apply to the analysis that you're creating. To see the theme in the QuickSight console, make sure that you have access to it.</p>
+    /// <p>The ARN for the theme to apply to the analysis that you're creating. To see the theme in the Amazon Quick Sight console, make sure that you have access to it.</p>
     pub fn theme_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.theme_arn(input.into());
         self
     }
-    /// <p>The ARN for the theme to apply to the analysis that you're creating. To see the theme in the QuickSight console, make sure that you have access to it.</p>
+    /// <p>The ARN for the theme to apply to the analysis that you're creating. To see the theme in the Amazon Quick Sight console, make sure that you have access to it.</p>
     pub fn set_theme_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_theme_arn(input);
         self
     }
-    /// <p>The ARN for the theme to apply to the analysis that you're creating. To see the theme in the QuickSight console, make sure that you have access to it.</p>
+    /// <p>The ARN for the theme to apply to the analysis that you're creating. To see the theme in the Amazon Quick Sight console, make sure that you have access to it.</p>
     pub fn get_theme_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_theme_arn()
     }
@@ -275,17 +275,17 @@ impl CreateAnalysisFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_folder_arns`](Self::set_folder_arns).
     ///
-    /// <p>When you create the analysis, QuickSight adds the analysis to these folders.</p>
+    /// <p>When you create the analysis, Amazon Quick Sight adds the analysis to these folders.</p>
     pub fn folder_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.folder_arns(input.into());
         self
     }
-    /// <p>When you create the analysis, QuickSight adds the analysis to these folders.</p>
+    /// <p>When you create the analysis, Amazon Quick Sight adds the analysis to these folders.</p>
     pub fn set_folder_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_folder_arns(input);
         self
     }
-    /// <p>When you create the analysis, QuickSight adds the analysis to these folders.</p>
+    /// <p>When you create the analysis, Amazon Quick Sight adds the analysis to these folders.</p>
     pub fn get_folder_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_folder_arns()
     }

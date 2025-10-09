@@ -5,11 +5,11 @@
 pub struct UpdateAccountCustomizationOutput {
     /// <p>The Amazon Resource Name (ARN) for the updated customization for this Amazon Web Services account.</p>
     pub arn: ::std::option::Option<::std::string::String>,
-    /// <p>The ID for the Amazon Web Services account that you want to update QuickSight customizations for.</p>
+    /// <p>The ID for the Amazon Web Services account that you want to update Quick Sight customizations for.</p>
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The namespace associated with the customization that you're updating.</p>
     pub namespace: ::std::option::Option<::std::string::String>,
-    /// <p>The QuickSight customizations you're updating.</p>
+    /// <p>The Quick Sight customizations you're updating.</p>
     pub account_customization: ::std::option::Option<crate::types::AccountCustomization>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: ::std::option::Option<::std::string::String>,
@@ -22,7 +22,7 @@ impl UpdateAccountCustomizationOutput {
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The ID for the Amazon Web Services account that you want to update QuickSight customizations for.</p>
+    /// <p>The ID for the Amazon Web Services account that you want to update Quick Sight customizations for.</p>
     pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
@@ -30,7 +30,7 @@ impl UpdateAccountCustomizationOutput {
     pub fn namespace(&self) -> ::std::option::Option<&str> {
         self.namespace.as_deref()
     }
-    /// <p>The QuickSight customizations you're updating.</p>
+    /// <p>The Quick Sight customizations you're updating.</p>
     pub fn account_customization(&self) -> ::std::option::Option<&crate::types::AccountCustomization> {
         self.account_customization.as_ref()
     }
@@ -82,17 +82,17 @@ impl UpdateAccountCustomizationOutputBuilder {
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
-    /// <p>The ID for the Amazon Web Services account that you want to update QuickSight customizations for.</p>
+    /// <p>The ID for the Amazon Web Services account that you want to update Quick Sight customizations for.</p>
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID for the Amazon Web Services account that you want to update QuickSight customizations for.</p>
+    /// <p>The ID for the Amazon Web Services account that you want to update Quick Sight customizations for.</p>
     pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
-    /// <p>The ID for the Amazon Web Services account that you want to update QuickSight customizations for.</p>
+    /// <p>The ID for the Amazon Web Services account that you want to update Quick Sight customizations for.</p>
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.aws_account_id
     }
@@ -110,17 +110,17 @@ impl UpdateAccountCustomizationOutputBuilder {
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
         &self.namespace
     }
-    /// <p>The QuickSight customizations you're updating.</p>
+    /// <p>The Quick Sight customizations you're updating.</p>
     pub fn account_customization(mut self, input: crate::types::AccountCustomization) -> Self {
         self.account_customization = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The QuickSight customizations you're updating.</p>
+    /// <p>The Quick Sight customizations you're updating.</p>
     pub fn set_account_customization(mut self, input: ::std::option::Option<crate::types::AccountCustomization>) -> Self {
         self.account_customization = input;
         self
     }
-    /// <p>The QuickSight customizations you're updating.</p>
+    /// <p>The Quick Sight customizations you're updating.</p>
     pub fn get_account_customization(&self) -> &::std::option::Option<crate::types::AccountCustomization> {
         &self.account_customization
     }

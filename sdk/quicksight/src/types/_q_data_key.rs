@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QDataKey {
-    /// <p>The ARN of the KMS key that is registered to a QuickSight account for encryption and decryption use as a <code>QDataKey</code>.</p>
+    /// <p>The ARN of the KMS key that is registered to a Quick Sight account for encryption and decryption use as a <code>QDataKey</code>.</p>
     pub q_data_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of <code>QDataKey</code>.</p>
     pub q_data_key_type: ::std::option::Option<crate::types::QDataKeyType>,
 }
 impl QDataKey {
-    /// <p>The ARN of the KMS key that is registered to a QuickSight account for encryption and decryption use as a <code>QDataKey</code>.</p>
+    /// <p>The ARN of the KMS key that is registered to a Quick Sight account for encryption and decryption use as a <code>QDataKey</code>.</p>
     pub fn q_data_key_arn(&self) -> ::std::option::Option<&str> {
         self.q_data_key_arn.as_deref()
     }
@@ -34,17 +34,17 @@ pub struct QDataKeyBuilder {
     pub(crate) q_data_key_type: ::std::option::Option<crate::types::QDataKeyType>,
 }
 impl QDataKeyBuilder {
-    /// <p>The ARN of the KMS key that is registered to a QuickSight account for encryption and decryption use as a <code>QDataKey</code>.</p>
+    /// <p>The ARN of the KMS key that is registered to a Quick Sight account for encryption and decryption use as a <code>QDataKey</code>.</p>
     pub fn q_data_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.q_data_key_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the KMS key that is registered to a QuickSight account for encryption and decryption use as a <code>QDataKey</code>.</p>
+    /// <p>The ARN of the KMS key that is registered to a Quick Sight account for encryption and decryption use as a <code>QDataKey</code>.</p>
     pub fn set_q_data_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.q_data_key_arn = input;
         self
     }
-    /// <p>The ARN of the KMS key that is registered to a QuickSight account for encryption and decryption use as a <code>QDataKey</code>.</p>
+    /// <p>The ARN of the KMS key that is registered to a Quick Sight account for encryption and decryption use as a <code>QDataKey</code>.</p>
     pub fn get_q_data_key_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.q_data_key_arn
     }

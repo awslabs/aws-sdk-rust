@@ -166,6 +166,7 @@ impl From<crate::operation::associate_web_acl::AssociateWebACLError> for Error {
             crate::operation::associate_web_acl::AssociateWebACLError::WafInvalidParameterException(inner) => {
                 Error::WafInvalidParameterException(inner)
             }
+            crate::operation::associate_web_acl::AssociateWebACLError::WafLimitsExceededException(inner) => Error::WafLimitsExceededException(inner),
             crate::operation::associate_web_acl::AssociateWebACLError::WafNonexistentItemException(inner) => {
                 Error::WafNonexistentItemException(inner)
             }

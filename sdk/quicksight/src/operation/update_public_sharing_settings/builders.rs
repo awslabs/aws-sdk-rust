@@ -23,18 +23,18 @@ impl crate::operation::update_public_sharing_settings::builders::UpdatePublicSha
 /// Fluent builder constructing a request to `UpdatePublicSharingSettings`.
 ///
 /// <important>
-/// <p>This API controls public sharing settings for your entire QuickSight account, affecting data security and access. When you enable public sharing:</p>
+/// <p>This API controls public sharing settings for your entire Quick Sight account, affecting data security and access. When you enable public sharing:</p>
 /// <ul>
 /// <li>
 /// <p>Dashboards can be shared publicly</p></li>
 /// <li>
-/// <p>This setting affects your entire Amazon Web Services account and all QuickSight users</p></li>
+/// <p>This setting affects your entire Amazon Web Services account and all Quick Sight users</p></li>
 /// </ul>
 /// <p><b>Before proceeding:</b> Ensure you understand the security implications and have proper IAM permissions configured.</p>
 /// </important>
-/// <p>Use the <code>UpdatePublicSharingSettings</code> operation to turn on or turn off the public sharing settings of an QuickSight dashboard.</p>
-/// <p>To use this operation, turn on session capacity pricing for your QuickSight account.</p>
-/// <p>Before you can turn on public sharing on your account, make sure to give public sharing permissions to an administrative user in the Identity and Access Management (IAM) console. For more information on using IAM with QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/security_iam_service-with-iam.html">Using QuickSight with IAM</a> in the <i>QuickSight User Guide</i>.</p>
+/// <p>Use the <code>UpdatePublicSharingSettings</code> operation to turn on or turn off the public sharing settings of an Amazon Quick Sight dashboard.</p>
+/// <p>To use this operation, turn on session capacity pricing for your Amazon Quick Sight account.</p>
+/// <p>Before you can turn on public sharing on your account, make sure to give public sharing permissions to an administrative user in the Identity and Access Management (IAM) console. For more information on using IAM with Amazon Quick Sight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/security_iam_service-with-iam.html">Using QuickSight with IAM</a> in the <i>Amazon Quick Sight User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdatePublicSharingSettingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -120,17 +120,17 @@ impl UpdatePublicSharingSettingsFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The Amazon Web Services account ID associated with your QuickSight subscription.</p>
+    /// <p>The Amazon Web Services account ID associated with your Amazon Quick Sight subscription.</p>
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
-    /// <p>The Amazon Web Services account ID associated with your QuickSight subscription.</p>
+    /// <p>The Amazon Web Services account ID associated with your Amazon Quick Sight subscription.</p>
     pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
-    /// <p>The Amazon Web Services account ID associated with your QuickSight subscription.</p>
+    /// <p>The Amazon Web Services account ID associated with your Amazon Quick Sight subscription.</p>
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_aws_account_id()
     }

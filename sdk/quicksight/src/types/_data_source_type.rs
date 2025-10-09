@@ -20,20 +20,26 @@
 ///     DataSourceType::AuroraPostgresql => { /* ... */ },
 ///     DataSourceType::AwsIotAnalytics => { /* ... */ },
 ///     DataSourceType::Bigquery => { /* ... */ },
+///     DataSourceType::Confluence => { /* ... */ },
 ///     DataSourceType::Databricks => { /* ... */ },
 ///     DataSourceType::Exasol => { /* ... */ },
 ///     DataSourceType::Github => { /* ... */ },
 ///     DataSourceType::Googlesheets => { /* ... */ },
+///     DataSourceType::GoogleDrive => { /* ... */ },
 ///     DataSourceType::Jira => { /* ... */ },
 ///     DataSourceType::Mariadb => { /* ... */ },
 ///     DataSourceType::Mysql => { /* ... */ },
+///     DataSourceType::OneDrive => { /* ... */ },
 ///     DataSourceType::Oracle => { /* ... */ },
 ///     DataSourceType::Postgresql => { /* ... */ },
 ///     DataSourceType::Presto => { /* ... */ },
+///     DataSourceType::Qbusiness => { /* ... */ },
 ///     DataSourceType::Redshift => { /* ... */ },
 ///     DataSourceType::S3 => { /* ... */ },
+///     DataSourceType::S3KnowledgeBase => { /* ... */ },
 ///     DataSourceType::Salesforce => { /* ... */ },
 ///     DataSourceType::Servicenow => { /* ... */ },
+///     DataSourceType::Sharepoint => { /* ... */ },
 ///     DataSourceType::Snowflake => { /* ... */ },
 ///     DataSourceType::Spark => { /* ... */ },
 ///     DataSourceType::Sqlserver => { /* ... */ },
@@ -42,6 +48,7 @@
 ///     DataSourceType::Timestream => { /* ... */ },
 ///     DataSourceType::Trino => { /* ... */ },
 ///     DataSourceType::Twitter => { /* ... */ },
+///     DataSourceType::WebCrawler => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -87,6 +94,8 @@ pub enum DataSourceType {
     #[allow(missing_docs)] // documentation missing in model
     Bigquery,
     #[allow(missing_docs)] // documentation missing in model
+    Confluence,
+    #[allow(missing_docs)] // documentation missing in model
     Databricks,
     #[allow(missing_docs)] // documentation missing in model
     Exasol,
@@ -95,11 +104,15 @@ pub enum DataSourceType {
     #[allow(missing_docs)] // documentation missing in model
     Googlesheets,
     #[allow(missing_docs)] // documentation missing in model
+    GoogleDrive,
+    #[allow(missing_docs)] // documentation missing in model
     Jira,
     #[allow(missing_docs)] // documentation missing in model
     Mariadb,
     #[allow(missing_docs)] // documentation missing in model
     Mysql,
+    #[allow(missing_docs)] // documentation missing in model
+    OneDrive,
     #[allow(missing_docs)] // documentation missing in model
     Oracle,
     #[allow(missing_docs)] // documentation missing in model
@@ -107,13 +120,19 @@ pub enum DataSourceType {
     #[allow(missing_docs)] // documentation missing in model
     Presto,
     #[allow(missing_docs)] // documentation missing in model
+    Qbusiness,
+    #[allow(missing_docs)] // documentation missing in model
     Redshift,
     #[allow(missing_docs)] // documentation missing in model
     S3,
     #[allow(missing_docs)] // documentation missing in model
+    S3KnowledgeBase,
+    #[allow(missing_docs)] // documentation missing in model
     Salesforce,
     #[allow(missing_docs)] // documentation missing in model
     Servicenow,
+    #[allow(missing_docs)] // documentation missing in model
+    Sharepoint,
     #[allow(missing_docs)] // documentation missing in model
     Snowflake,
     #[allow(missing_docs)] // documentation missing in model
@@ -130,6 +149,8 @@ pub enum DataSourceType {
     Trino,
     #[allow(missing_docs)] // documentation missing in model
     Twitter,
+    #[allow(missing_docs)] // documentation missing in model
+    WebCrawler,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -145,20 +166,26 @@ impl ::std::convert::From<&str> for DataSourceType {
             "AURORA_POSTGRESQL" => DataSourceType::AuroraPostgresql,
             "AWS_IOT_ANALYTICS" => DataSourceType::AwsIotAnalytics,
             "BIGQUERY" => DataSourceType::Bigquery,
+            "CONFLUENCE" => DataSourceType::Confluence,
             "DATABRICKS" => DataSourceType::Databricks,
             "EXASOL" => DataSourceType::Exasol,
             "GITHUB" => DataSourceType::Github,
             "GOOGLESHEETS" => DataSourceType::Googlesheets,
+            "GOOGLE_DRIVE" => DataSourceType::GoogleDrive,
             "JIRA" => DataSourceType::Jira,
             "MARIADB" => DataSourceType::Mariadb,
             "MYSQL" => DataSourceType::Mysql,
+            "ONE_DRIVE" => DataSourceType::OneDrive,
             "ORACLE" => DataSourceType::Oracle,
             "POSTGRESQL" => DataSourceType::Postgresql,
             "PRESTO" => DataSourceType::Presto,
+            "QBUSINESS" => DataSourceType::Qbusiness,
             "REDSHIFT" => DataSourceType::Redshift,
             "S3" => DataSourceType::S3,
+            "S3_KNOWLEDGE_BASE" => DataSourceType::S3KnowledgeBase,
             "SALESFORCE" => DataSourceType::Salesforce,
             "SERVICENOW" => DataSourceType::Servicenow,
+            "SHAREPOINT" => DataSourceType::Sharepoint,
             "SNOWFLAKE" => DataSourceType::Snowflake,
             "SPARK" => DataSourceType::Spark,
             "SQLSERVER" => DataSourceType::Sqlserver,
@@ -167,6 +194,7 @@ impl ::std::convert::From<&str> for DataSourceType {
             "TIMESTREAM" => DataSourceType::Timestream,
             "TRINO" => DataSourceType::Trino,
             "TWITTER" => DataSourceType::Twitter,
+            "WEB_CRAWLER" => DataSourceType::WebCrawler,
             other => DataSourceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -190,20 +218,26 @@ impl DataSourceType {
             DataSourceType::AuroraPostgresql => "AURORA_POSTGRESQL",
             DataSourceType::AwsIotAnalytics => "AWS_IOT_ANALYTICS",
             DataSourceType::Bigquery => "BIGQUERY",
+            DataSourceType::Confluence => "CONFLUENCE",
             DataSourceType::Databricks => "DATABRICKS",
             DataSourceType::Exasol => "EXASOL",
             DataSourceType::Github => "GITHUB",
             DataSourceType::Googlesheets => "GOOGLESHEETS",
+            DataSourceType::GoogleDrive => "GOOGLE_DRIVE",
             DataSourceType::Jira => "JIRA",
             DataSourceType::Mariadb => "MARIADB",
             DataSourceType::Mysql => "MYSQL",
+            DataSourceType::OneDrive => "ONE_DRIVE",
             DataSourceType::Oracle => "ORACLE",
             DataSourceType::Postgresql => "POSTGRESQL",
             DataSourceType::Presto => "PRESTO",
+            DataSourceType::Qbusiness => "QBUSINESS",
             DataSourceType::Redshift => "REDSHIFT",
             DataSourceType::S3 => "S3",
+            DataSourceType::S3KnowledgeBase => "S3_KNOWLEDGE_BASE",
             DataSourceType::Salesforce => "SALESFORCE",
             DataSourceType::Servicenow => "SERVICENOW",
+            DataSourceType::Sharepoint => "SHAREPOINT",
             DataSourceType::Snowflake => "SNOWFLAKE",
             DataSourceType::Spark => "SPARK",
             DataSourceType::Sqlserver => "SQLSERVER",
@@ -212,6 +246,7 @@ impl DataSourceType {
             DataSourceType::Timestream => "TIMESTREAM",
             DataSourceType::Trino => "TRINO",
             DataSourceType::Twitter => "TWITTER",
+            DataSourceType::WebCrawler => "WEB_CRAWLER",
             DataSourceType::Unknown(value) => value.as_str(),
         }
     }
@@ -226,20 +261,26 @@ impl DataSourceType {
             "AURORA_POSTGRESQL",
             "AWS_IOT_ANALYTICS",
             "BIGQUERY",
+            "CONFLUENCE",
             "DATABRICKS",
             "EXASOL",
             "GITHUB",
             "GOOGLESHEETS",
+            "GOOGLE_DRIVE",
             "JIRA",
             "MARIADB",
             "MYSQL",
+            "ONE_DRIVE",
             "ORACLE",
             "POSTGRESQL",
             "PRESTO",
+            "QBUSINESS",
             "REDSHIFT",
             "S3",
+            "S3_KNOWLEDGE_BASE",
             "SALESFORCE",
             "SERVICENOW",
+            "SHAREPOINT",
             "SNOWFLAKE",
             "SPARK",
             "SQLSERVER",
@@ -248,6 +289,7 @@ impl DataSourceType {
             "TIMESTREAM",
             "TRINO",
             "TWITTER",
+            "WEB_CRAWLER",
         ]
     }
 }
@@ -279,20 +321,26 @@ impl ::std::fmt::Display for DataSourceType {
             DataSourceType::AuroraPostgresql => write!(f, "AURORA_POSTGRESQL"),
             DataSourceType::AwsIotAnalytics => write!(f, "AWS_IOT_ANALYTICS"),
             DataSourceType::Bigquery => write!(f, "BIGQUERY"),
+            DataSourceType::Confluence => write!(f, "CONFLUENCE"),
             DataSourceType::Databricks => write!(f, "DATABRICKS"),
             DataSourceType::Exasol => write!(f, "EXASOL"),
             DataSourceType::Github => write!(f, "GITHUB"),
             DataSourceType::Googlesheets => write!(f, "GOOGLESHEETS"),
+            DataSourceType::GoogleDrive => write!(f, "GOOGLE_DRIVE"),
             DataSourceType::Jira => write!(f, "JIRA"),
             DataSourceType::Mariadb => write!(f, "MARIADB"),
             DataSourceType::Mysql => write!(f, "MYSQL"),
+            DataSourceType::OneDrive => write!(f, "ONE_DRIVE"),
             DataSourceType::Oracle => write!(f, "ORACLE"),
             DataSourceType::Postgresql => write!(f, "POSTGRESQL"),
             DataSourceType::Presto => write!(f, "PRESTO"),
+            DataSourceType::Qbusiness => write!(f, "QBUSINESS"),
             DataSourceType::Redshift => write!(f, "REDSHIFT"),
             DataSourceType::S3 => write!(f, "S3"),
+            DataSourceType::S3KnowledgeBase => write!(f, "S3_KNOWLEDGE_BASE"),
             DataSourceType::Salesforce => write!(f, "SALESFORCE"),
             DataSourceType::Servicenow => write!(f, "SERVICENOW"),
+            DataSourceType::Sharepoint => write!(f, "SHAREPOINT"),
             DataSourceType::Snowflake => write!(f, "SNOWFLAKE"),
             DataSourceType::Spark => write!(f, "SPARK"),
             DataSourceType::Sqlserver => write!(f, "SQLSERVER"),
@@ -301,6 +349,7 @@ impl ::std::fmt::Display for DataSourceType {
             DataSourceType::Timestream => write!(f, "TIMESTREAM"),
             DataSourceType::Trino => write!(f, "TRINO"),
             DataSourceType::Twitter => write!(f, "TWITTER"),
+            DataSourceType::WebCrawler => write!(f, "WEB_CRAWLER"),
             DataSourceType::Unknown(value) => write!(f, "{}", value),
         }
     }

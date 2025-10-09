@@ -22,13 +22,13 @@ impl crate::operation::describe_account_customization::builders::DescribeAccount
 }
 /// Fluent builder constructing a request to `DescribeAccountCustomization`.
 ///
-/// <p>Describes the customizations associated with the provided Amazon Web Services account and Amazon QuickSight namespace. The QuickSight console evaluates which customizations to apply by running this API operation with the <code>Resolved</code> flag included.</p>
+/// <p>Describes the customizations associated with the provided Amazon Web Services account and Amazon Quick Sight namespace. The Quick Sight console evaluates which customizations to apply by running this API operation with the <code>Resolved</code> flag included.</p>
 /// <p>To determine what customizations display when you run this command, it can help to visualize the relationship of the entities involved.</p>
 /// <ul>
 /// <li>
-/// <p><code>Amazon Web Services account</code> - The Amazon Web Services account exists at the top of the hierarchy. It has the potential to use all of the Amazon Web Services Regions and Amazon Web Services Services. When you subscribe to QuickSight, you choose one Amazon Web Services Region to use as your home Region. That's where your free SPICE capacity is located. You can use QuickSight in any supported Amazon Web Services Region.</p></li>
+/// <p><code>Amazon Web Services account</code> - The Amazon Web Services account exists at the top of the hierarchy. It has the potential to use all of the Amazon Web Services Regions and Amazon Web Services Services. When you subscribe to Quick Sight, you choose one Amazon Web Services Region to use as your home Region. That's where your free SPICE capacity is located. You can use Quick Sight in any supported Amazon Web Services Region.</p></li>
 /// <li>
-/// <p><code>Amazon Web Services Region</code> - You can sign in to QuickSight in any Amazon Web Services Region. If you have a user directory, it resides in us-east-1, which is US East (N. Virginia). Generally speaking, these users have access to QuickSight in any Amazon Web Services Region, unless they are constrained to a namespace.</p>
+/// <p><code>Amazon Web Services Region</code> - You can sign in to Quick Sight in any Amazon Web Services Region. If you have a user directory, it resides in us-east-1, which is US East (N. Virginia). Generally speaking, these users have access to Quick Sight in any Amazon Web Services Region, unless they are constrained to a namespace.</p>
 /// <p>To run the command in a different Amazon Web Services Region, you change your Region settings. If you're using the CLI, you can use one of the following options:</p>
 /// <ul>
 /// <li>
@@ -39,9 +39,9 @@ impl crate::operation::describe_account_customization::builders::DescribeAccount
 /// <p>Run <code>aws configure</code> to change your default Amazon Web Services Region. Use Enter to key the same settings for your keys. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html">Configuring the CLI</a>.</p></li>
 /// </ul></li>
 /// <li>
-/// <p><code>Namespace</code> - A QuickSight namespace is a partition that contains users and assets (data sources, datasets, dashboards, and so on). To access assets that are in a specific namespace, users and groups must also be part of the same namespace. People who share a namespace are completely isolated from users and assets in other namespaces, even if they are in the same Amazon Web Services account and Amazon Web Services Region.</p></li>
+/// <p><code>Namespace</code> - A Quick Sight namespace is a partition that contains users and assets (data sources, datasets, dashboards, and so on). To access assets that are in a specific namespace, users and groups must also be part of the same namespace. People who share a namespace are completely isolated from users and assets in other namespaces, even if they are in the same Amazon Web Services account and Amazon Web Services Region.</p></li>
 /// <li>
-/// <p><code>Applied customizations</code> - QuickSight customizations can apply to an Amazon Web Services account or to a namespace. Settings that you apply to a namespace override settings that you apply to an Amazon Web Services account.</p></li>
+/// <p><code>Applied customizations</code> - Quick Sight customizations can apply to an Amazon Web Services account or to a namespace. Settings that you apply to a namespace override settings that you apply to an Amazon Web Services account.</p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeAccountCustomizationFluentBuilder {
@@ -128,45 +128,45 @@ impl DescribeAccountCustomizationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ID for the Amazon Web Services account that you want to describe QuickSight customizations for.</p>
+    /// <p>The ID for the Amazon Web Services account that you want to describe Quick Sight customizations for.</p>
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
-    /// <p>The ID for the Amazon Web Services account that you want to describe QuickSight customizations for.</p>
+    /// <p>The ID for the Amazon Web Services account that you want to describe Quick Sight customizations for.</p>
     pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
-    /// <p>The ID for the Amazon Web Services account that you want to describe QuickSight customizations for.</p>
+    /// <p>The ID for the Amazon Web Services account that you want to describe Quick Sight customizations for.</p>
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_aws_account_id()
     }
-    /// <p>The QuickSight namespace that you want to describe QuickSight customizations for.</p>
+    /// <p>The Quick Sight namespace that you want to describe Quick Sight customizations for.</p>
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.namespace(input.into());
         self
     }
-    /// <p>The QuickSight namespace that you want to describe QuickSight customizations for.</p>
+    /// <p>The Quick Sight namespace that you want to describe Quick Sight customizations for.</p>
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_namespace(input);
         self
     }
-    /// <p>The QuickSight namespace that you want to describe QuickSight customizations for.</p>
+    /// <p>The Quick Sight namespace that you want to describe Quick Sight customizations for.</p>
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_namespace()
     }
-    /// <p>The <code>Resolved</code> flag works with the other parameters to determine which view of QuickSight customizations is returned. You can add this flag to your command to use the same view that QuickSight uses to identify which customizations to apply to the console. Omit this flag, or set it to <code>no-resolved</code>, to reveal customizations that are configured at different levels.</p>
+    /// <p>The <code>Resolved</code> flag works with the other parameters to determine which view of Quick Sight customizations is returned. You can add this flag to your command to use the same view that Quick Sight uses to identify which customizations to apply to the console. Omit this flag, or set it to <code>no-resolved</code>, to reveal customizations that are configured at different levels.</p>
     pub fn resolved(mut self, input: bool) -> Self {
         self.inner = self.inner.resolved(input);
         self
     }
-    /// <p>The <code>Resolved</code> flag works with the other parameters to determine which view of QuickSight customizations is returned. You can add this flag to your command to use the same view that QuickSight uses to identify which customizations to apply to the console. Omit this flag, or set it to <code>no-resolved</code>, to reveal customizations that are configured at different levels.</p>
+    /// <p>The <code>Resolved</code> flag works with the other parameters to determine which view of Quick Sight customizations is returned. You can add this flag to your command to use the same view that Quick Sight uses to identify which customizations to apply to the console. Omit this flag, or set it to <code>no-resolved</code>, to reveal customizations that are configured at different levels.</p>
     pub fn set_resolved(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_resolved(input);
         self
     }
-    /// <p>The <code>Resolved</code> flag works with the other parameters to determine which view of QuickSight customizations is returned. You can add this flag to your command to use the same view that QuickSight uses to identify which customizations to apply to the console. Omit this flag, or set it to <code>no-resolved</code>, to reveal customizations that are configured at different levels.</p>
+    /// <p>The <code>Resolved</code> flag works with the other parameters to determine which view of Quick Sight customizations is returned. You can add this flag to your command to use the same view that Quick Sight uses to identify which customizations to apply to the console. Omit this flag, or set it to <code>no-resolved</code>, to reveal customizations that are configured at different levels.</p>
     pub fn get_resolved(&self) -> &::std::option::Option<bool> {
         self.inner.get_resolved()
     }

@@ -7,7 +7,7 @@ pub struct CreateThemeAliasInput {
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>An ID for the theme alias.</p>
     pub theme_id: ::std::option::Option<::std::string::String>,
-    /// <p>The name that you want to give to the theme alias that you are creating. The alias name can't begin with a <code>$</code>. Alias names that start with <code>$</code> are reserved by Amazon QuickSight.</p>
+    /// <p>The name that you want to give to the theme alias that you are creating. The alias name can't begin with a <code>$</code>. Alias names that start with <code>$</code> are reserved by Amazon Quick Sight.</p>
     pub alias_name: ::std::option::Option<::std::string::String>,
     /// <p>The version number of the theme.</p>
     pub theme_version_number: ::std::option::Option<i64>,
@@ -21,7 +21,7 @@ impl CreateThemeAliasInput {
     pub fn theme_id(&self) -> ::std::option::Option<&str> {
         self.theme_id.as_deref()
     }
-    /// <p>The name that you want to give to the theme alias that you are creating. The alias name can't begin with a <code>$</code>. Alias names that start with <code>$</code> are reserved by Amazon QuickSight.</p>
+    /// <p>The name that you want to give to the theme alias that you are creating. The alias name can't begin with a <code>$</code>. Alias names that start with <code>$</code> are reserved by Amazon Quick Sight.</p>
     pub fn alias_name(&self) -> ::std::option::Option<&str> {
         self.alias_name.as_deref()
     }
@@ -77,18 +77,18 @@ impl CreateThemeAliasInputBuilder {
     pub fn get_theme_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.theme_id
     }
-    /// <p>The name that you want to give to the theme alias that you are creating. The alias name can't begin with a <code>$</code>. Alias names that start with <code>$</code> are reserved by Amazon QuickSight.</p>
+    /// <p>The name that you want to give to the theme alias that you are creating. The alias name can't begin with a <code>$</code>. Alias names that start with <code>$</code> are reserved by Amazon Quick Sight.</p>
     /// This field is required.
     pub fn alias_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alias_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name that you want to give to the theme alias that you are creating. The alias name can't begin with a <code>$</code>. Alias names that start with <code>$</code> are reserved by Amazon QuickSight.</p>
+    /// <p>The name that you want to give to the theme alias that you are creating. The alias name can't begin with a <code>$</code>. Alias names that start with <code>$</code> are reserved by Amazon Quick Sight.</p>
     pub fn set_alias_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.alias_name = input;
         self
     }
-    /// <p>The name that you want to give to the theme alias that you are creating. The alias name can't begin with a <code>$</code>. Alias names that start with <code>$</code> are reserved by Amazon QuickSight.</p>
+    /// <p>The name that you want to give to the theme alias that you are creating. The alias name can't begin with a <code>$</code>. Alias names that start with <code>$</code> are reserved by Amazon Quick Sight.</p>
     pub fn get_alias_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.alias_name
     }

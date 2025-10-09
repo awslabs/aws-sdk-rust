@@ -7,7 +7,7 @@ pub struct DescribeDefaultQBusinessApplicationOutput {
     pub request_id: ::std::option::Option<::std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
-    /// <p>The ID of the Amazon Q Business application that is linked to the QuickSight account.</p>
+    /// <p>The ID of the Amazon Q Business application that is linked to the Quick Sight account.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -20,7 +20,7 @@ impl DescribeDefaultQBusinessApplicationOutput {
     pub fn status(&self) -> i32 {
         self.status
     }
-    /// <p>The ID of the Amazon Q Business application that is linked to the QuickSight account.</p>
+    /// <p>The ID of the Amazon Q Business application that is linked to the Quick Sight account.</p>
     pub fn application_id(&self) -> ::std::option::Option<&str> {
         self.application_id.as_deref()
     }
@@ -75,17 +75,17 @@ impl DescribeDefaultQBusinessApplicationOutputBuilder {
     pub fn get_status(&self) -> &::std::option::Option<i32> {
         &self.status
     }
-    /// <p>The ID of the Amazon Q Business application that is linked to the QuickSight account.</p>
+    /// <p>The ID of the Amazon Q Business application that is linked to the Quick Sight account.</p>
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the Amazon Q Business application that is linked to the QuickSight account.</p>
+    /// <p>The ID of the Amazon Q Business application that is linked to the Quick Sight account.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
-    /// <p>The ID of the Amazon Q Business application that is linked to the QuickSight account.</p>
+    /// <p>The ID of the Amazon Q Business application that is linked to the Quick Sight account.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_id
     }

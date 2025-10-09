@@ -3,26 +3,26 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAccountCustomizationInput {
-    /// <p>The ID for the Amazon Web Services account that you want to customize QuickSight for.</p>
+    /// <p>The ID for the Amazon Web Services account that you want to customize Quick Sight for.</p>
     pub aws_account_id: ::std::option::Option<::std::string::String>,
-    /// <p>The QuickSight namespace that you want to add customizations to.</p>
+    /// <p>The Quick Sight namespace that you want to add customizations to.</p>
     pub namespace: ::std::option::Option<::std::string::String>,
-    /// <p>The QuickSight customizations you're adding. You can add these to an Amazon Web Services account and a QuickSight namespace.</p>
+    /// <p>The Quick Sight customizations you're adding. You can add these to an Amazon Web Services account and a QuickSight namespace.</p>
     /// <p>For example, you can add a default theme by setting <code>AccountCustomization</code> to the midnight theme: <code>"AccountCustomization": { "DefaultTheme": "arn:aws:quicksight::aws:theme/MIDNIGHT" }</code>. Or, you can add a custom theme by specifying <code>"AccountCustomization": { "DefaultTheme": "arn:aws:quicksight:us-west-2:111122223333:theme/bdb844d0-0fe9-4d9d-b520-0fe602d93639" }</code>.</p>
     pub account_customization: ::std::option::Option<crate::types::AccountCustomization>,
     /// <p>A list of the tags that you want to attach to this resource.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateAccountCustomizationInput {
-    /// <p>The ID for the Amazon Web Services account that you want to customize QuickSight for.</p>
+    /// <p>The ID for the Amazon Web Services account that you want to customize Quick Sight for.</p>
     pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
-    /// <p>The QuickSight namespace that you want to add customizations to.</p>
+    /// <p>The Quick Sight namespace that you want to add customizations to.</p>
     pub fn namespace(&self) -> ::std::option::Option<&str> {
         self.namespace.as_deref()
     }
-    /// <p>The QuickSight customizations you're adding. You can add these to an Amazon Web Services account and a QuickSight namespace.</p>
+    /// <p>The Quick Sight customizations you're adding. You can add these to an Amazon Web Services account and a QuickSight namespace.</p>
     /// <p>For example, you can add a default theme by setting <code>AccountCustomization</code> to the midnight theme: <code>"AccountCustomization": { "DefaultTheme": "arn:aws:quicksight::aws:theme/MIDNIGHT" }</code>. Or, you can add a custom theme by specifying <code>"AccountCustomization": { "DefaultTheme": "arn:aws:quicksight:us-west-2:111122223333:theme/bdb844d0-0fe9-4d9d-b520-0fe602d93639" }</code>.</p>
     pub fn account_customization(&self) -> ::std::option::Option<&crate::types::AccountCustomization> {
         self.account_customization.as_ref()
@@ -51,49 +51,49 @@ pub struct CreateAccountCustomizationInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateAccountCustomizationInputBuilder {
-    /// <p>The ID for the Amazon Web Services account that you want to customize QuickSight for.</p>
+    /// <p>The ID for the Amazon Web Services account that you want to customize Quick Sight for.</p>
     /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID for the Amazon Web Services account that you want to customize QuickSight for.</p>
+    /// <p>The ID for the Amazon Web Services account that you want to customize Quick Sight for.</p>
     pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
-    /// <p>The ID for the Amazon Web Services account that you want to customize QuickSight for.</p>
+    /// <p>The ID for the Amazon Web Services account that you want to customize Quick Sight for.</p>
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.aws_account_id
     }
-    /// <p>The QuickSight namespace that you want to add customizations to.</p>
+    /// <p>The Quick Sight namespace that you want to add customizations to.</p>
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The QuickSight namespace that you want to add customizations to.</p>
+    /// <p>The Quick Sight namespace that you want to add customizations to.</p>
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.namespace = input;
         self
     }
-    /// <p>The QuickSight namespace that you want to add customizations to.</p>
+    /// <p>The Quick Sight namespace that you want to add customizations to.</p>
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
         &self.namespace
     }
-    /// <p>The QuickSight customizations you're adding. You can add these to an Amazon Web Services account and a QuickSight namespace.</p>
+    /// <p>The Quick Sight customizations you're adding. You can add these to an Amazon Web Services account and a QuickSight namespace.</p>
     /// <p>For example, you can add a default theme by setting <code>AccountCustomization</code> to the midnight theme: <code>"AccountCustomization": { "DefaultTheme": "arn:aws:quicksight::aws:theme/MIDNIGHT" }</code>. Or, you can add a custom theme by specifying <code>"AccountCustomization": { "DefaultTheme": "arn:aws:quicksight:us-west-2:111122223333:theme/bdb844d0-0fe9-4d9d-b520-0fe602d93639" }</code>.</p>
     /// This field is required.
     pub fn account_customization(mut self, input: crate::types::AccountCustomization) -> Self {
         self.account_customization = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The QuickSight customizations you're adding. You can add these to an Amazon Web Services account and a QuickSight namespace.</p>
+    /// <p>The Quick Sight customizations you're adding. You can add these to an Amazon Web Services account and a QuickSight namespace.</p>
     /// <p>For example, you can add a default theme by setting <code>AccountCustomization</code> to the midnight theme: <code>"AccountCustomization": { "DefaultTheme": "arn:aws:quicksight::aws:theme/MIDNIGHT" }</code>. Or, you can add a custom theme by specifying <code>"AccountCustomization": { "DefaultTheme": "arn:aws:quicksight:us-west-2:111122223333:theme/bdb844d0-0fe9-4d9d-b520-0fe602d93639" }</code>.</p>
     pub fn set_account_customization(mut self, input: ::std::option::Option<crate::types::AccountCustomization>) -> Self {
         self.account_customization = input;
         self
     }
-    /// <p>The QuickSight customizations you're adding. You can add these to an Amazon Web Services account and a QuickSight namespace.</p>
+    /// <p>The Quick Sight customizations you're adding. You can add these to an Amazon Web Services account and a QuickSight namespace.</p>
     /// <p>For example, you can add a default theme by setting <code>AccountCustomization</code> to the midnight theme: <code>"AccountCustomization": { "DefaultTheme": "arn:aws:quicksight::aws:theme/MIDNIGHT" }</code>. Or, you can add a custom theme by specifying <code>"AccountCustomization": { "DefaultTheme": "arn:aws:quicksight:us-west-2:111122223333:theme/bdb844d0-0fe9-4d9d-b520-0fe602d93639" }</code>.</p>
     pub fn get_account_customization(&self) -> &::std::option::Option<crate::types::AccountCustomization> {
         &self.account_customization

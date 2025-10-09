@@ -22,7 +22,7 @@ impl crate::operation::update_spice_capacity_configuration::builders::UpdateSpic
 }
 /// Fluent builder constructing a request to `UpdateSPICECapacityConfiguration`.
 ///
-/// <p>Updates the SPICE capacity configuration for a QuickSight account.</p>
+/// <p>Updates the SPICE capacity configuration for a Quick Sight account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateSPICECapacityConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

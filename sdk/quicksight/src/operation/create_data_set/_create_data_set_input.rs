@@ -15,7 +15,7 @@ pub struct CreateDataSetInput {
     pub logical_table_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::LogicalTable>>,
     /// <p>Indicates whether you want to import the data into SPICE.</p>
     pub import_mode: ::std::option::Option<crate::types::DataSetImportMode>,
-    /// <p>Groupings of columns that work together in certain QuickSight features. Currently, only geospatial hierarchy is supported.</p>
+    /// <p>Groupings of columns that work together in certain Amazon Quick Sight features. Currently, only geospatial hierarchy is supported.</p>
     pub column_groups: ::std::option::Option<::std::vec::Vec<crate::types::ColumnGroup>>,
     /// <p>The folder that contains fields and nested subfolders for your dataset.</p>
     pub field_folders: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FieldFolder>>,
@@ -33,7 +33,7 @@ pub struct CreateDataSetInput {
     pub data_set_usage_configuration: ::std::option::Option<crate::types::DataSetUsageConfiguration>,
     /// <p>The parameter declarations of the dataset.</p>
     pub dataset_parameters: ::std::option::Option<::std::vec::Vec<crate::types::DatasetParameter>>,
-    /// <p>When you create the dataset, QuickSight adds the dataset to these folders.</p>
+    /// <p>When you create the dataset, Amazon Quick Sight adds the dataset to these folders.</p>
     pub folder_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The configuration for the performance optimization of the dataset that contains a <code>UniqueKey</code> configuration.</p>
     pub performance_configuration: ::std::option::Option<crate::types::PerformanceConfiguration>,
@@ -65,7 +65,7 @@ impl CreateDataSetInput {
     pub fn import_mode(&self) -> ::std::option::Option<&crate::types::DataSetImportMode> {
         self.import_mode.as_ref()
     }
-    /// <p>Groupings of columns that work together in certain QuickSight features. Currently, only geospatial hierarchy is supported.</p>
+    /// <p>Groupings of columns that work together in certain Amazon Quick Sight features. Currently, only geospatial hierarchy is supported.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.column_groups.is_none()`.
     pub fn column_groups(&self) -> &[crate::types::ColumnGroup] {
@@ -111,7 +111,7 @@ impl CreateDataSetInput {
     pub fn dataset_parameters(&self) -> &[crate::types::DatasetParameter] {
         self.dataset_parameters.as_deref().unwrap_or_default()
     }
-    /// <p>When you create the dataset, QuickSight adds the dataset to these folders.</p>
+    /// <p>When you create the dataset, Amazon Quick Sight adds the dataset to these folders.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.folder_arns.is_none()`.
     pub fn folder_arns(&self) -> &[::std::string::String] {
@@ -267,19 +267,19 @@ impl CreateDataSetInputBuilder {
     ///
     /// To override the contents of this collection use [`set_column_groups`](Self::set_column_groups).
     ///
-    /// <p>Groupings of columns that work together in certain QuickSight features. Currently, only geospatial hierarchy is supported.</p>
+    /// <p>Groupings of columns that work together in certain Amazon Quick Sight features. Currently, only geospatial hierarchy is supported.</p>
     pub fn column_groups(mut self, input: crate::types::ColumnGroup) -> Self {
         let mut v = self.column_groups.unwrap_or_default();
         v.push(input);
         self.column_groups = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Groupings of columns that work together in certain QuickSight features. Currently, only geospatial hierarchy is supported.</p>
+    /// <p>Groupings of columns that work together in certain Amazon Quick Sight features. Currently, only geospatial hierarchy is supported.</p>
     pub fn set_column_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ColumnGroup>>) -> Self {
         self.column_groups = input;
         self
     }
-    /// <p>Groupings of columns that work together in certain QuickSight features. Currently, only geospatial hierarchy is supported.</p>
+    /// <p>Groupings of columns that work together in certain Amazon Quick Sight features. Currently, only geospatial hierarchy is supported.</p>
     pub fn get_column_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnGroup>> {
         &self.column_groups
     }
@@ -438,19 +438,19 @@ impl CreateDataSetInputBuilder {
     ///
     /// To override the contents of this collection use [`set_folder_arns`](Self::set_folder_arns).
     ///
-    /// <p>When you create the dataset, QuickSight adds the dataset to these folders.</p>
+    /// <p>When you create the dataset, Amazon Quick Sight adds the dataset to these folders.</p>
     pub fn folder_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.folder_arns.unwrap_or_default();
         v.push(input.into());
         self.folder_arns = ::std::option::Option::Some(v);
         self
     }
-    /// <p>When you create the dataset, QuickSight adds the dataset to these folders.</p>
+    /// <p>When you create the dataset, Amazon Quick Sight adds the dataset to these folders.</p>
     pub fn set_folder_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.folder_arns = input;
         self
     }
-    /// <p>When you create the dataset, QuickSight adds the dataset to these folders.</p>
+    /// <p>When you create the dataset, Amazon Quick Sight adds the dataset to these folders.</p>
     pub fn get_folder_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.folder_arns
     }

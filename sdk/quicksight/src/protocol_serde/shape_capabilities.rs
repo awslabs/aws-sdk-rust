@@ -78,6 +78,42 @@ pub fn ser_capabilities(
     if let Some(var_25) = &input.analysis {
         object.key("Analysis").string(var_25.as_str());
     }
+    if let Some(var_26) = &input.automate {
+        object.key("Automate").string(var_26.as_str());
+    }
+    if let Some(var_27) = &input.flow {
+        object.key("Flow").string(var_27.as_str());
+    }
+    if let Some(var_28) = &input.publish_without_approval {
+        object.key("PublishWithoutApproval").string(var_28.as_str());
+    }
+    if let Some(var_29) = &input.use_bedrock_models {
+        object.key("UseBedrockModels").string(var_29.as_str());
+    }
+    if let Some(var_30) = &input.perform_flow_ui_task {
+        object.key("PerformFlowUiTask").string(var_30.as_str());
+    }
+    if let Some(var_31) = &input.use_agent_web_search {
+        object.key("UseAgentWebSearch").string(var_31.as_str());
+    }
+    if let Some(var_32) = &input.knowledge_base {
+        object.key("KnowledgeBase").string(var_32.as_str());
+    }
+    if let Some(var_33) = &input.action {
+        object.key("Action").string(var_33.as_str());
+    }
+    if let Some(var_34) = &input.space {
+        object.key("Space").string(var_34.as_str());
+    }
+    if let Some(var_35) = &input.chat_agent {
+        object.key("ChatAgent").string(var_35.as_str());
+    }
+    if let Some(var_36) = &input.create_chat_agents {
+        object.key("CreateChatAgents").string(var_36.as_str());
+    }
+    if let Some(var_37) = &input.research {
+        object.key("Research").string(var_37.as_str());
+    }
     Ok(())
 }
 
@@ -266,6 +302,90 @@ where
                         }
                         "Analysis" => {
                             builder = builder.set_analysis(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "Automate" => {
+                            builder = builder.set_automate(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "Flow" => {
+                            builder = builder.set_flow(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "PublishWithoutApproval" => {
+                            builder = builder.set_publish_without_approval(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "UseBedrockModels" => {
+                            builder = builder.set_use_bedrock_models(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "PerformFlowUiTask" => {
+                            builder = builder.set_perform_flow_ui_task(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "UseAgentWebSearch" => {
+                            builder = builder.set_use_agent_web_search(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "KnowledgeBase" => {
+                            builder = builder.set_knowledge_base(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "Action" => {
+                            builder = builder.set_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "Space" => {
+                            builder = builder.set_space(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ChatAgent" => {
+                            builder = builder.set_chat_agent(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CreateChatAgents" => {
+                            builder = builder.set_create_chat_agents(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "Research" => {
+                            builder = builder.set_research(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
                                     .transpose()?,

@@ -10,7 +10,7 @@ pub struct CastColumnTypeOperation {
     pub new_column_type: crate::types::ColumnDataType,
     /// <p>The sub data type of the new column. Sub types are only available for decimal columns that are part of a SPICE dataset.</p>
     pub sub_type: ::std::option::Option<crate::types::ColumnDataSubType>,
-    /// <p>When casting a column from string to datetime type, you can supply a string in a format supported by Amazon QuickSight to denote the source data format.</p>
+    /// <p>When casting a column from string to datetime type, you can supply a string in a format supported by Quick Sight to denote the source data format.</p>
     pub format: ::std::option::Option<::std::string::String>,
 }
 impl CastColumnTypeOperation {
@@ -27,7 +27,7 @@ impl CastColumnTypeOperation {
     pub fn sub_type(&self) -> ::std::option::Option<&crate::types::ColumnDataSubType> {
         self.sub_type.as_ref()
     }
-    /// <p>When casting a column from string to datetime type, you can supply a string in a format supported by Amazon QuickSight to denote the source data format.</p>
+    /// <p>When casting a column from string to datetime type, you can supply a string in a format supported by Quick Sight to denote the source data format.</p>
     pub fn format(&self) -> ::std::option::Option<&str> {
         self.format.as_deref()
     }
@@ -93,17 +93,17 @@ impl CastColumnTypeOperationBuilder {
     pub fn get_sub_type(&self) -> &::std::option::Option<crate::types::ColumnDataSubType> {
         &self.sub_type
     }
-    /// <p>When casting a column from string to datetime type, you can supply a string in a format supported by Amazon QuickSight to denote the source data format.</p>
+    /// <p>When casting a column from string to datetime type, you can supply a string in a format supported by Quick Sight to denote the source data format.</p>
     pub fn format(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.format = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>When casting a column from string to datetime type, you can supply a string in a format supported by Amazon QuickSight to denote the source data format.</p>
+    /// <p>When casting a column from string to datetime type, you can supply a string in a format supported by Quick Sight to denote the source data format.</p>
     pub fn set_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.format = input;
         self
     }
-    /// <p>When casting a column from string to datetime type, you can supply a string in a format supported by Amazon QuickSight to denote the source data format.</p>
+    /// <p>When casting a column from string to datetime type, you can supply a string in a format supported by Quick Sight to denote the source data format.</p>
     pub fn get_format(&self) -> &::std::option::Option<::std::string::String> {
         &self.format
     }

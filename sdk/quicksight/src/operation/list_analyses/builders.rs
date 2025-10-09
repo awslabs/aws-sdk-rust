@@ -22,7 +22,7 @@ impl crate::operation::list_analyses::builders::ListAnalysesInputBuilder {
 }
 /// Fluent builder constructing a request to `ListAnalyses`.
 ///
-/// <p>Lists Amazon QuickSight analyses that exist in the specified Amazon Web Services account.</p>
+/// <p>Lists Amazon Quick Sight analyses that exist in the specified Amazon Web Services account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListAnalysesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

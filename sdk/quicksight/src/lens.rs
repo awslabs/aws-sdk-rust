@@ -19,6 +19,16 @@ pub(crate) fn reflens_describe_folder_resolved_permissions_output_output_next_to
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_action_connectors_output_output_next_token(
+    input: &crate::operation::list_action_connectors::ListActionConnectorsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_analyses_output_output_next_token(
     input: &crate::operation::list_analyses::ListAnalysesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -101,6 +111,16 @@ pub(crate) fn reflens_list_data_sets_output_output_next_token(
 
 pub(crate) fn reflens_list_data_sources_output_output_next_token(
     input: &crate::operation::list_data_sources::ListDataSourcesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_flows_output_output_next_token(
+    input: &crate::operation::list_flows::ListFlowsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -299,6 +319,16 @@ pub(crate) fn reflens_list_vpc_connections_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_search_action_connectors_output_output_next_token(
+    input: &crate::operation::search_action_connectors::SearchActionConnectorsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_search_analyses_output_output_next_token(
     input: &crate::operation::search_analyses::SearchAnalysesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -331,6 +361,16 @@ pub(crate) fn reflens_search_data_sets_output_output_next_token(
 
 pub(crate) fn reflens_search_data_sources_output_output_next_token(
     input: &crate::operation::search_data_sources::SearchDataSourcesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_search_flows_output_output_next_token(
+    input: &crate::operation::search_flows::SearchFlowsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -380,6 +420,13 @@ pub(crate) fn lens_describe_folder_resolved_permissions_output_output_permission
     input: crate::operation::describe_folder_resolved_permissions::DescribeFolderResolvedPermissionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
     let input = input.permissions?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_action_connectors_output_output_action_connector_summaries(
+    input: crate::operation::list_action_connectors::ListActionConnectorsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ActionConnectorSummary>> {
+    let input = input.action_connector_summaries;
     ::std::option::Option::Some(input)
 }
 
@@ -443,6 +490,13 @@ pub(crate) fn lens_list_data_sources_output_output_data_sources(
     input: crate::operation::list_data_sources::ListDataSourcesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DataSource>> {
     let input = input.data_sources?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_flows_output_output_flow_summary_list(
+    input: crate::operation::list_flows::ListFlowsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::FlowSummary>> {
+    let input = input.flow_summary_list?;
     ::std::option::Option::Some(input)
 }
 
@@ -565,6 +619,13 @@ pub(crate) fn lens_list_users_output_output_user_list(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_search_action_connectors_output_output_action_connector_summaries(
+    input: crate::operation::search_action_connectors::SearchActionConnectorsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ActionConnectorSummary>> {
+    let input = input.action_connector_summaries?;
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_search_analyses_output_output_analysis_summary_list(
     input: crate::operation::search_analyses::SearchAnalysesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AnalysisSummary>> {
@@ -590,6 +651,13 @@ pub(crate) fn lens_search_data_sources_output_output_data_source_summaries(
     input: crate::operation::search_data_sources::SearchDataSourcesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DataSourceSummary>> {
     let input = input.data_source_summaries?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_search_flows_output_output_flow_summary_list(
+    input: crate::operation::search_flows::SearchFlowsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::FlowSummary>> {
+    let input = input.flow_summary_list;
     ::std::option::Option::Some(input)
 }
 

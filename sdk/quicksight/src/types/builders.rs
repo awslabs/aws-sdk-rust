@@ -1217,13 +1217,23 @@ pub use crate::types::_registered_customer_managed_key::RegisteredCustomerManage
 
 pub use crate::types::_group::GroupBuilder;
 
+pub use crate::types::_permission::PermissionBuilder;
+
 pub use crate::types::_ssl_properties::SslPropertiesBuilder;
 
 pub use crate::types::_vpc_connection_properties::VpcConnectionPropertiesBuilder;
 
 pub use crate::types::_data_source_credentials::DataSourceCredentialsBuilder;
 
+pub use crate::types::_web_proxy_credentials::WebProxyCredentialsBuilder;
+
 pub use crate::types::_credential_pair::CredentialPairBuilder;
+
+pub use crate::types::_q_business_parameters::QBusinessParametersBuilder;
+
+pub use crate::types::_confluence_parameters::ConfluenceParametersBuilder;
+
+pub use crate::types::_web_crawler_parameters::WebCrawlerParametersBuilder;
 
 pub use crate::types::_custom_connection_parameters::CustomConnectionParametersBuilder;
 
@@ -1254,6 +1264,8 @@ pub use crate::types::_spark_parameters::SparkParametersBuilder;
 pub use crate::types::_snowflake_parameters::SnowflakeParametersBuilder;
 
 pub use crate::types::_service_now_parameters::ServiceNowParametersBuilder;
+
+pub use crate::types::_s3_knowledge_base_parameters::S3KnowledgeBaseParametersBuilder;
 
 pub use crate::types::_s3_parameters::S3ParametersBuilder;
 
@@ -1381,6 +1393,8 @@ pub use crate::types::_data_stories_sharing_option::DataStoriesSharingOptionBuil
 
 pub use crate::types::_executive_summary_option::ExecutiveSummaryOptionBuilder;
 
+pub use crate::types::_quick_suite_actions_option::QuickSuiteActionsOptionBuilder;
+
 pub use crate::types::_data_qa_enabled_option::DataQaEnabledOptionBuilder;
 
 pub use crate::types::_data_point_tooltip_option::DataPointTooltipOptionBuilder;
@@ -1439,6 +1453,8 @@ pub use crate::types::_navbar_style::NavbarStyleBuilder;
 
 pub use crate::types::_palette::PaletteBuilder;
 
+pub use crate::types::_contextual_accent_palette::ContextualAccentPaletteBuilder;
+
 pub use crate::types::_brand_color_palette::BrandColorPaletteBuilder;
 
 pub use crate::types::_brand_detail::BrandDetailBuilder;
@@ -1456,6 +1472,24 @@ pub use crate::types::_analysis_definition::AnalysisDefinitionBuilder;
 pub use crate::types::_analysis_source_entity::AnalysisSourceEntityBuilder;
 
 pub use crate::types::_analysis_source_template::AnalysisSourceTemplateBuilder;
+
+pub use crate::types::_auth_config::AuthConfigBuilder;
+
+pub use crate::types::_iam_connection_metadata::IamConnectionMetadataBuilder;
+
+pub use crate::types::_none_connection_metadata::NoneConnectionMetadataBuilder;
+
+pub use crate::types::_api_key_connection_metadata::ApiKeyConnectionMetadataBuilder;
+
+pub use crate::types::_basic_auth_connection_metadata::BasicAuthConnectionMetadataBuilder;
+
+pub use crate::types::_client_credentials_grant_metadata::ClientCredentialsGrantMetadataBuilder;
+
+pub use crate::types::_client_credentials_grant_details::ClientCredentialsGrantDetailsBuilder;
+
+pub use crate::types::_authorization_code_grant_metadata::AuthorizationCodeGrantMetadataBuilder;
+
+pub use crate::types::_authorization_code_grant_details::AuthorizationCodeGrantDetailsBuilder;
 
 pub use crate::types::_account_customization::AccountCustomizationBuilder;
 
@@ -1587,6 +1621,10 @@ pub use crate::types::_folder_summary::FolderSummaryBuilder;
 
 pub use crate::types::_folder_search_filter::FolderSearchFilterBuilder;
 
+pub use crate::types::_flow_summary::FlowSummaryBuilder;
+
+pub use crate::types::_search_flows_filter::SearchFlowsFilterBuilder;
+
 pub use crate::types::_data_source_summary::DataSourceSummaryBuilder;
 
 pub use crate::types::_data_source_search_filter::DataSourceSearchFilterBuilder;
@@ -1602,6 +1640,12 @@ pub use crate::types::_dashboard_search_filter::DashboardSearchFilterBuilder;
 pub use crate::types::_analysis_summary::AnalysisSummaryBuilder;
 
 pub use crate::types::_analysis_search_filter::AnalysisSearchFilterBuilder;
+
+pub use crate::types::_action_connector_summary::ActionConnectorSummaryBuilder;
+
+pub use crate::types::_action_connector_error::ActionConnectorErrorBuilder;
+
+pub use crate::types::_action_connector_search_filter::ActionConnectorSearchFilterBuilder;
 
 pub use crate::types::_qa_result::QaResultBuilder;
 
@@ -1822,6 +1866,26 @@ pub use crate::types::_asset_bundle_export_job_error::AssetBundleExportJobErrorB
 pub use crate::types::_analysis_error::AnalysisErrorBuilder;
 
 pub use crate::types::_analysis::AnalysisBuilder;
+
+pub use crate::types::_action_connector::ActionConnectorBuilder;
+
+pub use crate::types::_read_auth_config::ReadAuthConfigBuilder;
+
+pub use crate::types::_read_iam_connection_metadata::ReadIamConnectionMetadataBuilder;
+
+pub use crate::types::_read_none_connection_metadata::ReadNoneConnectionMetadataBuilder;
+
+pub use crate::types::_read_api_key_connection_metadata::ReadApiKeyConnectionMetadataBuilder;
+
+pub use crate::types::_read_basic_auth_connection_metadata::ReadBasicAuthConnectionMetadataBuilder;
+
+pub use crate::types::_read_client_credentials_grant_metadata::ReadClientCredentialsGrantMetadataBuilder;
+
+pub use crate::types::_read_client_credentials_grant_details::ReadClientCredentialsGrantDetailsBuilder;
+
+pub use crate::types::_read_authorization_code_grant_metadata::ReadAuthorizationCodeGrantMetadataBuilder;
+
+pub use crate::types::_read_authorization_code_grant_details::ReadAuthorizationCodeGrantDetailsBuilder;
 
 pub use crate::types::_account_info::AccountInfoBuilder;
 

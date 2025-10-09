@@ -16,6 +16,9 @@ pub mod create_account_customization;
 /// Types for the `CreateAccountSubscription` operation.
 pub mod create_account_subscription;
 
+/// Types for the `CreateActionConnector` operation.
+pub mod create_action_connector;
+
 /// Types for the `CreateAnalysis` operation.
 pub mod create_analysis;
 
@@ -90,6 +93,9 @@ pub mod delete_account_customization;
 
 /// Types for the `DeleteAccountSubscription` operation.
 pub mod delete_account_subscription;
+
+/// Types for the `DeleteActionConnector` operation.
+pub mod delete_action_connector;
 
 /// Types for the `DeleteAnalysis` operation.
 pub mod delete_analysis;
@@ -189,6 +195,12 @@ pub mod describe_account_settings;
 
 /// Types for the `DescribeAccountSubscription` operation.
 pub mod describe_account_subscription;
+
+/// Types for the `DescribeActionConnector` operation.
+pub mod describe_action_connector;
+
+/// Types for the `DescribeActionConnectorPermissions` operation.
+pub mod describe_action_connector_permissions;
 
 /// Types for the `DescribeAnalysis` operation.
 pub mod describe_analysis;
@@ -346,8 +358,17 @@ pub mod generate_embed_url_for_registered_user_with_identity;
 /// Types for the `GetDashboardEmbedUrl` operation.
 pub mod get_dashboard_embed_url;
 
+/// Types for the `GetFlowMetadata` operation.
+pub mod get_flow_metadata;
+
+/// Types for the `GetFlowPermissions` operation.
+pub mod get_flow_permissions;
+
 /// Types for the `GetSessionEmbedUrl` operation.
 pub mod get_session_embed_url;
+
+/// Types for the `ListActionConnectors` operation.
+pub mod list_action_connectors;
 
 /// Types for the `ListAnalyses` operation.
 pub mod list_analyses;
@@ -375,6 +396,9 @@ pub mod list_data_sets;
 
 /// Types for the `ListDataSources` operation.
 pub mod list_data_sources;
+
+/// Types for the `ListFlows` operation.
+pub mod list_flows;
 
 /// Types for the `ListFolderMembers` operation.
 pub mod list_folder_members;
@@ -463,6 +487,9 @@ pub mod register_user;
 /// Types for the `RestoreAnalysis` operation.
 pub mod restore_analysis;
 
+/// Types for the `SearchActionConnectors` operation.
+pub mod search_action_connectors;
+
 /// Types for the `SearchAnalyses` operation.
 pub mod search_analyses;
 
@@ -474,6 +501,9 @@ pub mod search_data_sets;
 
 /// Types for the `SearchDataSources` operation.
 pub mod search_data_sources;
+
+/// Types for the `SearchFlows` operation.
+pub mod search_flows;
 
 /// Types for the `SearchFolders` operation.
 pub mod search_folders;
@@ -510,6 +540,12 @@ pub mod update_account_customization;
 
 /// Types for the `UpdateAccountSettings` operation.
 pub mod update_account_settings;
+
+/// Types for the `UpdateActionConnector` operation.
+pub mod update_action_connector;
+
+/// Types for the `UpdateActionConnectorPermissions` operation.
+pub mod update_action_connector_permissions;
 
 /// Types for the `UpdateAnalysis` operation.
 pub mod update_analysis;
@@ -561,6 +597,9 @@ pub mod update_data_source_permissions;
 
 /// Types for the `UpdateDefaultQBusinessApplication` operation.
 pub mod update_default_q_business_application;
+
+/// Types for the `UpdateFlowPermissions` operation.
+pub mod update_flow_permissions;
 
 /// Types for the `UpdateFolder` operation.
 pub mod update_folder;

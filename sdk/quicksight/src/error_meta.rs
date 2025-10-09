@@ -3,15 +3,15 @@
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum Error {
-    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct credentials.</p>
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon Quick Sight service, that your policies have the correct permissions, and that you are using the correct credentials.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>A resource is already in a state that indicates an operation is happening that must complete before a new update can be applied.</p>
     ConcurrentUpdatingException(crate::types::error::ConcurrentUpdatingException),
     /// <p>Updating or deleting a resource can cause an inconsistent state.</p>
     ConflictException(crate::types::error::ConflictException),
-    /// <p>The customer managed key that is registered to your QuickSight account is unavailable.</p>
+    /// <p>The customer managed key that is registered to your Amazon Quick Sight account is unavailable.</p>
     CustomerManagedKeyUnavailableException(crate::types::error::CustomerManagedKeyUnavailableException),
-    /// <p>The domain specified isn't on the allow list. All domains for embedded dashboards must be added to the approved list by an Amazon QuickSight admin.</p>
+    /// <p>The domain specified isn't on the allow list. All domains for embedded dashboards must be added to the approved list by an Amazon Quick Suite admin.</p>
     DomainNotWhitelistedException(crate::types::error::DomainNotWhitelistedException),
     /// <p>The identity type specified isn't supported. Supported identity types include <code>IAM</code> and <code>QUICKSIGHT</code>.</p>
     IdentityTypeNotSupportedException(crate::types::error::IdentityTypeNotSupportedException),
@@ -41,10 +41,10 @@ pub enum Error {
     SessionLifetimeInMinutesInvalidException(crate::types::error::SessionLifetimeInMinutesInvalidException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
-    /// <p>This error indicates that you are calling an embedding operation in Amazon QuickSight without the required pricing plan on your Amazon Web Services account. Before you can use embedding for anonymous users, a QuickSight administrator needs to add capacity pricing to QuickSight. You can do this on the <b>Manage QuickSight</b> page.</p>
+    /// <p>This error indicates that you are calling an embedding operation in Amazon Quick Sight without the required pricing plan on your Amazon Web Services account. Before you can use embedding for anonymous users, a Quick Suite administrator needs to add capacity pricing to Quick Sight. You can do this on the <b>Manage Quick Suite</b> page.</p>
     /// <p>After capacity pricing is added, you can use the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GetDashboardEmbedUrl.html">GetDashboardEmbedUrl</a> </code> API operation with the <code>--identity-type ANONYMOUS</code> option.</p>
     UnsupportedPricingPlanException(crate::types::error::UnsupportedPricingPlanException),
-    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
+    /// <p>This error indicates that you are calling an operation on an Amazon Quick Suite subscription where the edition doesn't include support for that operation. Amazon Quick Suite currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::types::error::UnsupportedUserEditionException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
@@ -347,6 +347,43 @@ impl From<crate::operation::create_account_subscription::CreateAccountSubscripti
                 Error::ThrottlingException(inner)
             }
             crate::operation::create_account_subscription::CreateAccountSubscriptionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_action_connector::CreateActionConnectorError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_action_connector::CreateActionConnectorError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_action_connector::CreateActionConnectorError> for Error {
+    fn from(err: crate::operation::create_action_connector::CreateActionConnectorError) -> Self {
+        match err {
+            crate::operation::create_action_connector::CreateActionConnectorError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_action_connector::CreateActionConnectorError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_action_connector::CreateActionConnectorError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::operation::create_action_connector::CreateActionConnectorError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::create_action_connector::CreateActionConnectorError::ResourceExistsException(inner) => {
+                Error::ResourceExistsException(inner)
+            }
+            crate::operation::create_action_connector::CreateActionConnectorError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_action_connector::CreateActionConnectorError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1288,6 +1325,42 @@ impl From<crate::operation::delete_account_subscription::DeleteAccountSubscripti
                 Error::ThrottlingException(inner)
             }
             crate::operation::delete_account_subscription::DeleteAccountSubscriptionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_action_connector::DeleteActionConnectorError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_action_connector::DeleteActionConnectorError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_action_connector::DeleteActionConnectorError> for Error {
+    fn from(err: crate::operation::delete_action_connector::DeleteActionConnectorError) -> Self {
+        match err {
+            crate::operation::delete_action_connector::DeleteActionConnectorError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_action_connector::DeleteActionConnectorError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::operation::delete_action_connector::DeleteActionConnectorError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::delete_action_connector::DeleteActionConnectorError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_action_connector::DeleteActionConnectorError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_action_connector::DeleteActionConnectorError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2539,6 +2612,94 @@ impl From<crate::operation::describe_account_subscription::DescribeAccountSubscr
                 Error::ThrottlingException(inner)
             }
             crate::operation::describe_account_subscription::DescribeAccountSubscriptionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_action_connector::DescribeActionConnectorError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_action_connector::DescribeActionConnectorError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_action_connector::DescribeActionConnectorError> for Error {
+    fn from(err: crate::operation::describe_action_connector::DescribeActionConnectorError) -> Self {
+        match err {
+            crate::operation::describe_action_connector::DescribeActionConnectorError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::describe_action_connector::DescribeActionConnectorError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::operation::describe_action_connector::DescribeActionConnectorError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::describe_action_connector::DescribeActionConnectorError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_action_connector::DescribeActionConnectorError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::describe_action_connector::DescribeActionConnectorError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_action_connector_permissions::DescribeActionConnectorPermissionsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_action_connector_permissions::DescribeActionConnectorPermissionsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_action_connector_permissions::DescribeActionConnectorPermissionsError> for Error {
+    fn from(err: crate::operation::describe_action_connector_permissions::DescribeActionConnectorPermissionsError) -> Self {
+        match err {
+            crate::operation::describe_action_connector_permissions::DescribeActionConnectorPermissionsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::describe_action_connector_permissions::DescribeActionConnectorPermissionsError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::operation::describe_action_connector_permissions::DescribeActionConnectorPermissionsError::InvalidParameterValueException(
+                inner,
+            ) => Error::InvalidParameterValueException(inner),
+            crate::operation::describe_action_connector_permissions::DescribeActionConnectorPermissionsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_action_connector_permissions::DescribeActionConnectorPermissionsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::describe_action_connector_permissions::DescribeActionConnectorPermissionsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -4623,6 +4784,62 @@ impl From<crate::operation::get_dashboard_embed_url::GetDashboardEmbedUrlError> 
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_flow_metadata::GetFlowMetadataError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_flow_metadata::GetFlowMetadataError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_flow_metadata::GetFlowMetadataError> for Error {
+    fn from(err: crate::operation::get_flow_metadata::GetFlowMetadataError) -> Self {
+        match err {
+            crate::operation::get_flow_metadata::GetFlowMetadataError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_flow_metadata::GetFlowMetadataError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::get_flow_metadata::GetFlowMetadataError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::get_flow_metadata::GetFlowMetadataError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_flow_metadata::GetFlowMetadataError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_flow_permissions::GetFlowPermissionsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_flow_permissions::GetFlowPermissionsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_flow_permissions::GetFlowPermissionsError> for Error {
+    fn from(err: crate::operation::get_flow_permissions::GetFlowPermissionsError) -> Self {
+        match err {
+            crate::operation::get_flow_permissions::GetFlowPermissionsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_flow_permissions::GetFlowPermissionsError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::operation::get_flow_permissions::GetFlowPermissionsError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::get_flow_permissions::GetFlowPermissionsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_flow_permissions::GetFlowPermissionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_session_embed_url::GetSessionEmbedUrlError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -4662,6 +4879,38 @@ impl From<crate::operation::get_session_embed_url::GetSessionEmbedUrlError> for 
                 Error::UnsupportedUserEditionException(inner)
             }
             crate::operation::get_session_embed_url::GetSessionEmbedUrlError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_action_connectors::ListActionConnectorsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_action_connectors::ListActionConnectorsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_action_connectors::ListActionConnectorsError> for Error {
+    fn from(err: crate::operation::list_action_connectors::ListActionConnectorsError) -> Self {
+        match err {
+            crate::operation::list_action_connectors::ListActionConnectorsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_action_connectors::ListActionConnectorsError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::operation::list_action_connectors::ListActionConnectorsError::InvalidNextTokenException(inner) => {
+                Error::InvalidNextTokenException(inner)
+            }
+            crate::operation::list_action_connectors::ListActionConnectorsError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::list_action_connectors::ListActionConnectorsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_action_connectors::ListActionConnectorsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -4956,6 +5205,31 @@ impl From<crate::operation::list_data_sources::ListDataSourcesError> for Error {
             }
             crate::operation::list_data_sources::ListDataSourcesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_data_sources::ListDataSourcesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_flows::ListFlowsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_flows::ListFlowsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_flows::ListFlowsError> for Error {
+    fn from(err: crate::operation::list_flows::ListFlowsError) -> Self {
+        match err {
+            crate::operation::list_flows::ListFlowsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_flows::ListFlowsError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::list_flows::ListFlowsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::list_flows::ListFlowsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_flows::ListFlowsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -5997,6 +6271,39 @@ impl From<crate::operation::restore_analysis::RestoreAnalysisError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::search_action_connectors::SearchActionConnectorsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::search_action_connectors::SearchActionConnectorsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::search_action_connectors::SearchActionConnectorsError> for Error {
+    fn from(err: crate::operation::search_action_connectors::SearchActionConnectorsError) -> Self {
+        match err {
+            crate::operation::search_action_connectors::SearchActionConnectorsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::search_action_connectors::SearchActionConnectorsError::InvalidNextTokenException(inner) => {
+                Error::InvalidNextTokenException(inner)
+            }
+            crate::operation::search_action_connectors::SearchActionConnectorsError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::search_action_connectors::SearchActionConnectorsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::search_action_connectors::SearchActionConnectorsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::search_analyses::SearchAnalysesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -6118,6 +6425,31 @@ impl From<crate::operation::search_data_sources::SearchDataSourcesError> for Err
             }
             crate::operation::search_data_sources::SearchDataSourcesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::search_data_sources::SearchDataSourcesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::search_flows::SearchFlowsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::search_flows::SearchFlowsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::search_flows::SearchFlowsError> for Error {
+    fn from(err: crate::operation::search_flows::SearchFlowsError) -> Self {
+        match err {
+            crate::operation::search_flows::SearchFlowsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::search_flows::SearchFlowsError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::search_flows::SearchFlowsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::search_flows::SearchFlowsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::search_flows::SearchFlowsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -6588,6 +6920,99 @@ impl From<crate::operation::update_account_settings::UpdateAccountSettingsError>
             }
             crate::operation::update_account_settings::UpdateAccountSettingsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_account_settings::UpdateAccountSettingsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_action_connector::UpdateActionConnectorError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_action_connector::UpdateActionConnectorError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_action_connector::UpdateActionConnectorError> for Error {
+    fn from(err: crate::operation::update_action_connector::UpdateActionConnectorError) -> Self {
+        match err {
+            crate::operation::update_action_connector::UpdateActionConnectorError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_action_connector::UpdateActionConnectorError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_action_connector::UpdateActionConnectorError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::operation::update_action_connector::UpdateActionConnectorError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::update_action_connector::UpdateActionConnectorError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_action_connector::UpdateActionConnectorError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_action_connector::UpdateActionConnectorError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_action_connector_permissions::UpdateActionConnectorPermissionsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_action_connector_permissions::UpdateActionConnectorPermissionsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_action_connector_permissions::UpdateActionConnectorPermissionsError> for Error {
+    fn from(err: crate::operation::update_action_connector_permissions::UpdateActionConnectorPermissionsError) -> Self {
+        match err {
+            crate::operation::update_action_connector_permissions::UpdateActionConnectorPermissionsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_action_connector_permissions::UpdateActionConnectorPermissionsError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::update_action_connector_permissions::UpdateActionConnectorPermissionsError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::operation::update_action_connector_permissions::UpdateActionConnectorPermissionsError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::update_action_connector_permissions::UpdateActionConnectorPermissionsError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::update_action_connector_permissions::UpdateActionConnectorPermissionsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_action_connector_permissions::UpdateActionConnectorPermissionsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_action_connector_permissions::UpdateActionConnectorPermissionsError::UnsupportedUserEditionException(inner) => {
+                Error::UnsupportedUserEditionException(inner)
+            }
+            crate::operation::update_action_connector_permissions::UpdateActionConnectorPermissionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -7276,6 +7701,39 @@ impl From<crate::operation::update_default_q_business_application::UpdateDefault
             crate::operation::update_default_q_business_application::UpdateDefaultQBusinessApplicationError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_flow_permissions::UpdateFlowPermissionsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_flow_permissions::UpdateFlowPermissionsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_flow_permissions::UpdateFlowPermissionsError> for Error {
+    fn from(err: crate::operation::update_flow_permissions::UpdateFlowPermissionsError) -> Self {
+        match err {
+            crate::operation::update_flow_permissions::UpdateFlowPermissionsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_flow_permissions::UpdateFlowPermissionsError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::operation::update_flow_permissions::UpdateFlowPermissionsError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::update_flow_permissions::UpdateFlowPermissionsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_flow_permissions::UpdateFlowPermissionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

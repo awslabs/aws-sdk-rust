@@ -7,9 +7,9 @@ pub struct DescribeAccountCustomizationOutput {
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID for the Amazon Web Services account that you're describing.</p>
     pub aws_account_id: ::std::option::Option<::std::string::String>,
-    /// <p>The QuickSight namespace that you're describing.</p>
+    /// <p>The Quick Sight namespace that you're describing.</p>
     pub namespace: ::std::option::Option<::std::string::String>,
-    /// <p>The QuickSight customizations that exist.</p>
+    /// <p>The Quick Sight customizations that exist.</p>
     pub account_customization: ::std::option::Option<crate::types::AccountCustomization>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: ::std::option::Option<::std::string::String>,
@@ -26,11 +26,11 @@ impl DescribeAccountCustomizationOutput {
     pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
-    /// <p>The QuickSight namespace that you're describing.</p>
+    /// <p>The Quick Sight namespace that you're describing.</p>
     pub fn namespace(&self) -> ::std::option::Option<&str> {
         self.namespace.as_deref()
     }
-    /// <p>The QuickSight customizations that exist.</p>
+    /// <p>The Quick Sight customizations that exist.</p>
     pub fn account_customization(&self) -> ::std::option::Option<&crate::types::AccountCustomization> {
         self.account_customization.as_ref()
     }
@@ -96,31 +96,31 @@ impl DescribeAccountCustomizationOutputBuilder {
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.aws_account_id
     }
-    /// <p>The QuickSight namespace that you're describing.</p>
+    /// <p>The Quick Sight namespace that you're describing.</p>
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The QuickSight namespace that you're describing.</p>
+    /// <p>The Quick Sight namespace that you're describing.</p>
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.namespace = input;
         self
     }
-    /// <p>The QuickSight namespace that you're describing.</p>
+    /// <p>The Quick Sight namespace that you're describing.</p>
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
         &self.namespace
     }
-    /// <p>The QuickSight customizations that exist.</p>
+    /// <p>The Quick Sight customizations that exist.</p>
     pub fn account_customization(mut self, input: crate::types::AccountCustomization) -> Self {
         self.account_customization = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The QuickSight customizations that exist.</p>
+    /// <p>The Quick Sight customizations that exist.</p>
     pub fn set_account_customization(mut self, input: ::std::option::Option<crate::types::AccountCustomization>) -> Self {
         self.account_customization = input;
         self
     }
-    /// <p>The QuickSight customizations that exist.</p>
+    /// <p>The Quick Sight customizations that exist.</p>
     pub fn get_account_customization(&self) -> &::std::option::Option<crate::types::AccountCustomization> {
         &self.account_customization
     }

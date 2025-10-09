@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeGroupMembershipOutput {
-    /// <p>A member of an Amazon QuickSight group. Currently, group members must be users. Groups can't be members of another group. .</p>
+    /// <p>A member of an Quick Sight group. Currently, group members must be users. Groups can't be members of another group. .</p>
     pub group_member: ::std::option::Option<crate::types::GroupMember>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: ::std::option::Option<::std::string::String>,
@@ -12,7 +12,7 @@ pub struct DescribeGroupMembershipOutput {
     _request_id: Option<String>,
 }
 impl DescribeGroupMembershipOutput {
-    /// <p>A member of an Amazon QuickSight group. Currently, group members must be users. Groups can't be members of another group. .</p>
+    /// <p>A member of an Quick Sight group. Currently, group members must be users. Groups can't be members of another group. .</p>
     pub fn group_member(&self) -> ::std::option::Option<&crate::types::GroupMember> {
         self.group_member.as_ref()
     }
@@ -47,17 +47,17 @@ pub struct DescribeGroupMembershipOutputBuilder {
     _request_id: Option<String>,
 }
 impl DescribeGroupMembershipOutputBuilder {
-    /// <p>A member of an Amazon QuickSight group. Currently, group members must be users. Groups can't be members of another group. .</p>
+    /// <p>A member of an Quick Sight group. Currently, group members must be users. Groups can't be members of another group. .</p>
     pub fn group_member(mut self, input: crate::types::GroupMember) -> Self {
         self.group_member = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A member of an Amazon QuickSight group. Currently, group members must be users. Groups can't be members of another group. .</p>
+    /// <p>A member of an Quick Sight group. Currently, group members must be users. Groups can't be members of another group. .</p>
     pub fn set_group_member(mut self, input: ::std::option::Option<crate::types::GroupMember>) -> Self {
         self.group_member = input;
         self
     }
-    /// <p>A member of an Amazon QuickSight group. Currently, group members must be users. Groups can't be members of another group. .</p>
+    /// <p>A member of an Quick Sight group. Currently, group members must be users. Groups can't be members of another group. .</p>
     pub fn get_group_member(&self) -> &::std::option::Option<crate::types::GroupMember> {
         &self.group_member
     }

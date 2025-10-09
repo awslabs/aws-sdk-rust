@@ -64,6 +64,22 @@ pub fn de_associate_web_acl_http_error(
             }
             tmp
         }),
+        "WAFLimitsExceededException" => crate::operation::associate_web_acl::AssociateWebACLError::WafLimitsExceededException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::WafLimitsExceededExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_waf_limits_exceeded_exception::de_waf_limits_exceeded_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::associate_web_acl::AssociateWebACLError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "WAFNonexistentItemException" => crate::operation::associate_web_acl::AssociateWebACLError::WafNonexistentItemException({
             #[allow(unused_mut)]
             let mut tmp = {

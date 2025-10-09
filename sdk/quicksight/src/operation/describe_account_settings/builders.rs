@@ -22,7 +22,7 @@ impl crate::operation::describe_account_settings::builders::DescribeAccountSetti
 }
 /// Fluent builder constructing a request to `DescribeAccountSettings`.
 ///
-/// <p>Describes the settings that were used when your QuickSight subscription was first created in this Amazon Web Services account.</p>
+/// <p>Describes the settings that were used when your Quick Sight subscription was first created in this Amazon Web Services account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeAccountSettingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

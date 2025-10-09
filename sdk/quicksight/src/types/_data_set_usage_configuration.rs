@@ -6,7 +6,7 @@
 pub struct DataSetUsageConfiguration {
     /// <p>An option that controls whether a child dataset of a direct query can use this dataset as a source.</p>
     pub disable_use_as_direct_query_source: bool,
-    /// <p>An option that controls whether a child dataset that's stored in QuickSight can use this dataset as a source.</p>
+    /// <p>An option that controls whether a child dataset that's stored in Quick Sight can use this dataset as a source.</p>
     pub disable_use_as_imported_source: bool,
 }
 impl DataSetUsageConfiguration {
@@ -14,7 +14,7 @@ impl DataSetUsageConfiguration {
     pub fn disable_use_as_direct_query_source(&self) -> bool {
         self.disable_use_as_direct_query_source
     }
-    /// <p>An option that controls whether a child dataset that's stored in QuickSight can use this dataset as a source.</p>
+    /// <p>An option that controls whether a child dataset that's stored in Quick Sight can use this dataset as a source.</p>
     pub fn disable_use_as_imported_source(&self) -> bool {
         self.disable_use_as_imported_source
     }
@@ -48,17 +48,17 @@ impl DataSetUsageConfigurationBuilder {
     pub fn get_disable_use_as_direct_query_source(&self) -> &::std::option::Option<bool> {
         &self.disable_use_as_direct_query_source
     }
-    /// <p>An option that controls whether a child dataset that's stored in QuickSight can use this dataset as a source.</p>
+    /// <p>An option that controls whether a child dataset that's stored in Quick Sight can use this dataset as a source.</p>
     pub fn disable_use_as_imported_source(mut self, input: bool) -> Self {
         self.disable_use_as_imported_source = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An option that controls whether a child dataset that's stored in QuickSight can use this dataset as a source.</p>
+    /// <p>An option that controls whether a child dataset that's stored in Quick Sight can use this dataset as a source.</p>
     pub fn set_disable_use_as_imported_source(mut self, input: ::std::option::Option<bool>) -> Self {
         self.disable_use_as_imported_source = input;
         self
     }
-    /// <p>An option that controls whether a child dataset that's stored in QuickSight can use this dataset as a source.</p>
+    /// <p>An option that controls whether a child dataset that's stored in Quick Sight can use this dataset as a source.</p>
     pub fn get_disable_use_as_imported_source(&self) -> &::std::option::Option<bool> {
         &self.disable_use_as_imported_source
     }

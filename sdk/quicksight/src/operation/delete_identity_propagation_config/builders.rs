@@ -22,8 +22,8 @@ impl crate::operation::delete_identity_propagation_config::builders::DeleteIdent
 }
 /// Fluent builder constructing a request to `DeleteIdentityPropagationConfig`.
 ///
-/// <p>Deletes all access scopes and authorized targets that are associated with a service from the QuickSight IAM Identity Center application.</p>
-/// <p>This operation is only supported for QuickSight accounts that use IAM Identity Center.</p>
+/// <p>Deletes all access scopes and authorized targets that are associated with a service from the Quick Sight IAM Identity Center application.</p>
+/// <p>This operation is only supported for Quick Sight accounts that use IAM Identity Center.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteIdentityPropagationConfigFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

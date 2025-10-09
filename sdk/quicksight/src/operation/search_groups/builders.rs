@@ -22,7 +22,7 @@ impl crate::operation::search_groups::builders::SearchGroupsInputBuilder {
 }
 /// Fluent builder constructing a request to `SearchGroups`.
 ///
-/// <p>Use the <code>SearchGroups</code> operation to search groups in a specified QuickSight namespace using the supplied filters.</p>
+/// <p>Use the <code>SearchGroups</code> operation to search groups in a specified Quick Sight namespace using the supplied filters.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SearchGroupsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,17 +114,17 @@ impl SearchGroupsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::search_groups::paginator::SearchGroupsPaginator {
         crate::operation::search_groups::paginator::SearchGroupsPaginator::new(self.handle, self.inner)
     }
-    /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
+    /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon Quick Sight account.</p>
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
-    /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
+    /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon Quick Sight account.</p>
     pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
-    /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
+    /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon Quick Sight account.</p>
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_aws_account_id()
     }

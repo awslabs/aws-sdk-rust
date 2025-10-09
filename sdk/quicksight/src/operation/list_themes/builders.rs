@@ -161,9 +161,9 @@ impl ListThemesFluentBuilder {
     /// <li>
     /// <p><code>ALL (default)</code>- Display all existing themes.</p></li>
     /// <li>
-    /// <p><code>CUSTOM</code> - Display only the themes created by people using Amazon QuickSight.</p></li>
+    /// <p><code>CUSTOM</code> - Display only the themes created by people using Amazon Quick Sight.</p></li>
     /// <li>
-    /// <p><code>QUICKSIGHT</code> - Display only the starting themes defined by QuickSight.</p></li>
+    /// <p><code>QUICKSIGHT</code> - Display only the starting themes defined by Quick Sight.</p></li>
     /// </ul>
     pub fn r#type(mut self, input: crate::types::ThemeType) -> Self {
         self.inner = self.inner.r#type(input);
@@ -174,9 +174,9 @@ impl ListThemesFluentBuilder {
     /// <li>
     /// <p><code>ALL (default)</code>- Display all existing themes.</p></li>
     /// <li>
-    /// <p><code>CUSTOM</code> - Display only the themes created by people using Amazon QuickSight.</p></li>
+    /// <p><code>CUSTOM</code> - Display only the themes created by people using Amazon Quick Sight.</p></li>
     /// <li>
-    /// <p><code>QUICKSIGHT</code> - Display only the starting themes defined by QuickSight.</p></li>
+    /// <p><code>QUICKSIGHT</code> - Display only the starting themes defined by Quick Sight.</p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ThemeType>) -> Self {
         self.inner = self.inner.set_type(input);
@@ -187,9 +187,9 @@ impl ListThemesFluentBuilder {
     /// <li>
     /// <p><code>ALL (default)</code>- Display all existing themes.</p></li>
     /// <li>
-    /// <p><code>CUSTOM</code> - Display only the themes created by people using Amazon QuickSight.</p></li>
+    /// <p><code>CUSTOM</code> - Display only the themes created by people using Amazon Quick Sight.</p></li>
     /// <li>
-    /// <p><code>QUICKSIGHT</code> - Display only the starting themes defined by QuickSight.</p></li>
+    /// <p><code>QUICKSIGHT</code> - Display only the starting themes defined by Quick Sight.</p></li>
     /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ThemeType> {
         self.inner.get_type()

@@ -22,7 +22,7 @@ impl crate::operation::list_brands::builders::ListBrandsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListBrands`.
 ///
-/// <p>Lists all brands in an QuickSight account.</p>
+/// <p>Lists all brands in an Quick Sight account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListBrandsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

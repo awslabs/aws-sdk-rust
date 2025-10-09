@@ -6,7 +6,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Filter {
     /// <p>A <code>CategoryFilter</code> filters text values.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/add-a-text-filter-data-prep.html">Adding text filters</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/add-a-text-filter-data-prep.html">Adding text filters</a> in the <i>Amazon Quick Suite User Guide</i>.</p>
     pub category_filter: ::std::option::Option<crate::types::CategoryFilter>,
     /// <p>A <code>NumericRangeFilter</code> filters numeric values that are either inside or outside a given numeric range.</p>
     pub numeric_range_filter: ::std::option::Option<crate::types::NumericRangeFilter>,
@@ -25,7 +25,7 @@ pub struct Filter {
 }
 impl Filter {
     /// <p>A <code>CategoryFilter</code> filters text values.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/add-a-text-filter-data-prep.html">Adding text filters</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/add-a-text-filter-data-prep.html">Adding text filters</a> in the <i>Amazon Quick Suite User Guide</i>.</p>
     pub fn category_filter(&self) -> ::std::option::Option<&crate::types::CategoryFilter> {
         self.category_filter.as_ref()
     }
@@ -80,19 +80,19 @@ pub struct FilterBuilder {
 }
 impl FilterBuilder {
     /// <p>A <code>CategoryFilter</code> filters text values.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/add-a-text-filter-data-prep.html">Adding text filters</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/add-a-text-filter-data-prep.html">Adding text filters</a> in the <i>Amazon Quick Suite User Guide</i>.</p>
     pub fn category_filter(mut self, input: crate::types::CategoryFilter) -> Self {
         self.category_filter = ::std::option::Option::Some(input);
         self
     }
     /// <p>A <code>CategoryFilter</code> filters text values.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/add-a-text-filter-data-prep.html">Adding text filters</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/add-a-text-filter-data-prep.html">Adding text filters</a> in the <i>Amazon Quick Suite User Guide</i>.</p>
     pub fn set_category_filter(mut self, input: ::std::option::Option<crate::types::CategoryFilter>) -> Self {
         self.category_filter = input;
         self
     }
     /// <p>A <code>CategoryFilter</code> filters text values.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/add-a-text-filter-data-prep.html">Adding text filters</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/add-a-text-filter-data-prep.html">Adding text filters</a> in the <i>Amazon Quick Suite User Guide</i>.</p>
     pub fn get_category_filter(&self) -> &::std::option::Option<crate::types::CategoryFilter> {
         &self.category_filter
     }
