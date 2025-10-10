@@ -6,6 +6,8 @@
 pub enum McpTargetConfiguration {
     /// <p>The Lambda configuration for the Model Context Protocol target. This configuration defines how the gateway uses a Lambda function to communicate with the target.</p>
     Lambda(crate::types::McpLambdaTargetConfiguration),
+    /// <p>The MCP server specified as the gateway target.</p>
+    McpServer(crate::types::McpServerTargetConfiguration),
     /// <p>The OpenAPI schema for the Model Context Protocol target. This schema defines the API structure of the target.</p>
     OpenApiSchema(crate::types::ApiSchemaConfiguration),
     /// <p>The Smithy model for the Model Context Protocol target. This model defines the API structure of the target using the Smithy specification.</p>
@@ -33,6 +35,19 @@ impl McpTargetConfiguration {
     /// Returns true if this is a [`Lambda`](crate::types::McpTargetConfiguration::Lambda).
     pub fn is_lambda(&self) -> bool {
         self.as_lambda().is_ok()
+    }
+    /// Tries to convert the enum instance into [`McpServer`](crate::types::McpTargetConfiguration::McpServer), extracting the inner [`McpServerTargetConfiguration`](crate::types::McpServerTargetConfiguration).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_mcp_server(&self) -> ::std::result::Result<&crate::types::McpServerTargetConfiguration, &Self> {
+        if let McpTargetConfiguration::McpServer(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`McpServer`](crate::types::McpTargetConfiguration::McpServer).
+    pub fn is_mcp_server(&self) -> bool {
+        self.as_mcp_server().is_ok()
     }
     /// Tries to convert the enum instance into [`OpenApiSchema`](crate::types::McpTargetConfiguration::OpenApiSchema), extracting the inner [`ApiSchemaConfiguration`](crate::types::ApiSchemaConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.

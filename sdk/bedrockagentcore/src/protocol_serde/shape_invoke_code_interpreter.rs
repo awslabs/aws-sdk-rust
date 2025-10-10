@@ -179,6 +179,28 @@ pub fn ser_invoke_code_interpreter_headers(
         })?;
         builder = builder.header("x-amzn-code-interpreter-session-id", header_value);
     }
+    if let ::std::option::Option::Some(inner_3) = &input.trace_id {
+        let formatted_4 = inner_3.as_str();
+        let header_value = formatted_4;
+        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+            ::aws_smithy_types::error::operation::BuildError::invalid_field(
+                "trace_id",
+                format!("`{}` cannot be used as a header value: {}", &header_value, err),
+            )
+        })?;
+        builder = builder.header("X-Amzn-Trace-Id", header_value);
+    }
+    if let ::std::option::Option::Some(inner_5) = &input.trace_parent {
+        let formatted_6 = inner_5.as_str();
+        let header_value = formatted_6;
+        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+            ::aws_smithy_types::error::operation::BuildError::invalid_field(
+                "trace_parent",
+                format!("`{}` cannot be used as a header value: {}", &header_value, err),
+            )
+        })?;
+        builder = builder.header("traceparent", header_value);
+    }
     Ok(builder)
 }
 

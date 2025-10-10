@@ -297,4 +297,18 @@ impl AddPermissionFluentBuilder {
     pub fn get_function_url_auth_type(&self) -> &::std::option::Option<crate::types::FunctionUrlAuthType> {
         self.inner.get_function_url_auth_type()
     }
+    /// <p>Restricts the <code>lambda:InvokeFunction</code> action to calls coming from a function URL. When set to <code>true</code>, this prevents the principal from invoking the function by any means other than the function URL. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Security and auth model for Lambda function URLs</a>.</p>
+    pub fn invoked_via_function_url(mut self, input: bool) -> Self {
+        self.inner = self.inner.invoked_via_function_url(input);
+        self
+    }
+    /// <p>Restricts the <code>lambda:InvokeFunction</code> action to calls coming from a function URL. When set to <code>true</code>, this prevents the principal from invoking the function by any means other than the function URL. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Security and auth model for Lambda function URLs</a>.</p>
+    pub fn set_invoked_via_function_url(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_invoked_via_function_url(input);
+        self
+    }
+    /// <p>Restricts the <code>lambda:InvokeFunction</code> action to calls coming from a function URL. When set to <code>true</code>, this prevents the principal from invoking the function by any means other than the function URL. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Security and auth model for Lambda function URLs</a>.</p>
+    pub fn get_invoked_via_function_url(&self) -> &::std::option::Option<bool> {
+        self.inner.get_invoked_via_function_url()
+    }
 }

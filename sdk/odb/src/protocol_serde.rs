@@ -103,6 +103,8 @@ pub(crate) mod shape_update_cloud_exadata_infrastructure;
 
 pub(crate) mod shape_update_odb_network;
 
+pub(crate) mod shape_update_odb_peering_connection;
+
 pub(crate) mod shape_accept_marketplace_registration_input;
 
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
@@ -199,6 +201,8 @@ pub(crate) mod shape_update_cloud_exadata_infrastructure_input;
 
 pub(crate) mod shape_update_odb_network_input;
 
+pub(crate) mod shape_update_odb_peering_connection_input;
+
 pub(crate) mod shape_validation_exception;
 
 pub(crate) mod shape_autonomous_virtual_machine_list;
@@ -284,6 +288,8 @@ pub(crate) mod shape_oci_dns_forwarding_config_list;
 pub(crate) mod shape_odb_network_summary;
 
 pub(crate) mod shape_odb_peering_connection_summary;
+
+pub(crate) mod shape_peered_cidr_list;
 
 pub(crate) mod shape_sensitive_string_list;
 

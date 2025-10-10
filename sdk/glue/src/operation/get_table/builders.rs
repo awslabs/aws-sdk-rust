@@ -169,6 +169,20 @@ impl GetTableFluentBuilder {
     pub fn get_query_as_of_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_query_as_of_time()
     }
+    /// <p>A structure containing the Lake Formation <a href="https://docs.aws.amazon.com/glue/latest/webapi/API_AuditContext.html">audit context</a>.</p>
+    pub fn audit_context(mut self, input: crate::types::AuditContext) -> Self {
+        self.inner = self.inner.audit_context(input);
+        self
+    }
+    /// <p>A structure containing the Lake Formation <a href="https://docs.aws.amazon.com/glue/latest/webapi/API_AuditContext.html">audit context</a>.</p>
+    pub fn set_audit_context(mut self, input: ::std::option::Option<crate::types::AuditContext>) -> Self {
+        self.inner = self.inner.set_audit_context(input);
+        self
+    }
+    /// <p>A structure containing the Lake Formation <a href="https://docs.aws.amazon.com/glue/latest/webapi/API_AuditContext.html">audit context</a>.</p>
+    pub fn get_audit_context(&self) -> &::std::option::Option<crate::types::AuditContext> {
+        self.inner.get_audit_context()
+    }
     /// <p>Specifies whether to include status details related to a request to create or update an Glue Data Catalog view.</p>
     pub fn include_status_details(mut self, input: bool) -> Self {
         self.inner = self.inner.include_status_details(input);

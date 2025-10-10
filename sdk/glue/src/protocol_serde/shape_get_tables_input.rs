@@ -29,17 +29,23 @@ pub fn ser_get_tables_input_input(
             .key("QueryAsOfTime")
             .date_time(var_7, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    if let Some(var_8) = &input.include_status_details {
-        object.key("IncludeStatusDetails").boolean(*var_8);
+    if let Some(var_8) = &input.audit_context {
+        #[allow(unused_mut)]
+        let mut object_9 = object.key("AuditContext").start_object();
+        crate::protocol_serde::shape_audit_context::ser_audit_context(&mut object_9, var_8)?;
+        object_9.finish();
     }
-    if let Some(var_9) = &input.attributes_to_get {
-        let mut array_10 = object.key("AttributesToGet").start_array();
-        for item_11 in var_9 {
+    if let Some(var_10) = &input.include_status_details {
+        object.key("IncludeStatusDetails").boolean(*var_10);
+    }
+    if let Some(var_11) = &input.attributes_to_get {
+        let mut array_12 = object.key("AttributesToGet").start_array();
+        for item_13 in var_11 {
             {
-                array_10.value().string(item_11.as_str());
+                array_12.value().string(item_13.as_str());
             }
         }
-        array_10.finish();
+        array_12.finish();
     }
     Ok(())
 }

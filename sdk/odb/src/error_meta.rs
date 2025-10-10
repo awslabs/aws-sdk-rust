@@ -1428,6 +1428,48 @@ impl From<crate::operation::update_odb_network::UpdateOdbNetworkError> for Error
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_odb_peering_connection::UpdateOdbPeeringConnectionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_odb_peering_connection::UpdateOdbPeeringConnectionError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_odb_peering_connection::UpdateOdbPeeringConnectionError> for Error {
+    fn from(err: crate::operation::update_odb_peering_connection::UpdateOdbPeeringConnectionError) -> Self {
+        match err {
+            crate::operation::update_odb_peering_connection::UpdateOdbPeeringConnectionError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_odb_peering_connection::UpdateOdbPeeringConnectionError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::update_odb_peering_connection::UpdateOdbPeeringConnectionError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_odb_peering_connection::UpdateOdbPeeringConnectionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_odb_peering_connection::UpdateOdbPeeringConnectionError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_odb_peering_connection::UpdateOdbPeeringConnectionError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::update_odb_peering_connection::UpdateOdbPeeringConnectionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl ::std::error::Error for Error {
     fn source(&self) -> std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {

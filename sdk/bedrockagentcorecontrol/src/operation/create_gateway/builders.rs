@@ -23,7 +23,7 @@ impl crate::operation::create_gateway::builders::CreateGatewayInputBuilder {
 /// Fluent builder constructing a request to `CreateGateway`.
 ///
 /// <p>Creates a gateway for Amazon Bedrock Agent. A gateway serves as an integration point between your agent and external services.</p>
-/// <p>To create a gateway, you must specify a name, protocol type, and IAM role. The role grants the gateway permission to access Amazon Web Services services and resources.</p>
+/// <p>If you specify <code>CUSTOM_JWT</code> as the <code>authorizerType</code>, you must provide an <code>authorizerConfiguration</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateGatewayFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -137,17 +137,17 @@ impl CreateGatewayFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
-    /// <p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
+    /// <p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If you don't specify this field, a value is randomly generated for you. If this token matches a previous request, the service ignores the request, but doesn't return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
-    /// <p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
+    /// <p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If you don't specify this field, a value is randomly generated for you. If this token matches a previous request, the service ignores the request, but doesn't return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
-    /// <p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
+    /// <p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If you don't specify this field, a value is randomly generated for you. If this token matches a previous request, the service ignores the request, but doesn't return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
@@ -194,30 +194,48 @@ impl CreateGatewayFluentBuilder {
         self.inner.get_protocol_configuration()
     }
     /// <p>The type of authorizer to use for the gateway.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CUSTOM_JWT</code> - Authorize with a bearer token.</p></li>
+    /// <li>
+    /// <p><code>AWS_IAM</code> - Authorize with your Amazon Web Services IAM credentials.</p></li>
+    /// </ul>
     pub fn authorizer_type(mut self, input: crate::types::AuthorizerType) -> Self {
         self.inner = self.inner.authorizer_type(input);
         self
     }
     /// <p>The type of authorizer to use for the gateway.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CUSTOM_JWT</code> - Authorize with a bearer token.</p></li>
+    /// <li>
+    /// <p><code>AWS_IAM</code> - Authorize with your Amazon Web Services IAM credentials.</p></li>
+    /// </ul>
     pub fn set_authorizer_type(mut self, input: ::std::option::Option<crate::types::AuthorizerType>) -> Self {
         self.inner = self.inner.set_authorizer_type(input);
         self
     }
     /// <p>The type of authorizer to use for the gateway.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CUSTOM_JWT</code> - Authorize with a bearer token.</p></li>
+    /// <li>
+    /// <p><code>AWS_IAM</code> - Authorize with your Amazon Web Services IAM credentials.</p></li>
+    /// </ul>
     pub fn get_authorizer_type(&self) -> &::std::option::Option<crate::types::AuthorizerType> {
         self.inner.get_authorizer_type()
     }
-    /// <p>The authorizer configuration for the gateway.</p>
+    /// <p>The authorizer configuration for the gateway. Required if <code>authorizerType</code> is <code>CUSTOM_JWT</code>.</p>
     pub fn authorizer_configuration(mut self, input: crate::types::AuthorizerConfiguration) -> Self {
         self.inner = self.inner.authorizer_configuration(input);
         self
     }
-    /// <p>The authorizer configuration for the gateway.</p>
+    /// <p>The authorizer configuration for the gateway. Required if <code>authorizerType</code> is <code>CUSTOM_JWT</code>.</p>
     pub fn set_authorizer_configuration(mut self, input: ::std::option::Option<crate::types::AuthorizerConfiguration>) -> Self {
         self.inner = self.inner.set_authorizer_configuration(input);
         self
     }
-    /// <p>The authorizer configuration for the gateway.</p>
+    /// <p>The authorizer configuration for the gateway. Required if <code>authorizerType</code> is <code>CUSTOM_JWT</code>.</p>
     pub fn get_authorizer_configuration(&self) -> &::std::option::Option<crate::types::AuthorizerConfiguration> {
         self.inner.get_authorizer_configuration()
     }

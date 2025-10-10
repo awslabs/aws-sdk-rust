@@ -152,6 +152,12 @@ pub(crate) fn de_get_gateway_target(
                             .transpose()?,
                     );
                 }
+                "lastSynchronizedAt" => {
+                    builder = builder.set_last_synchronized_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                        tokens.next(),
+                        ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
+                    )?);
+                }
                 "name" => {
                     builder = builder.set_name(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

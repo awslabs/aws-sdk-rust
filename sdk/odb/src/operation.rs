@@ -120,3 +120,6 @@ pub mod update_cloud_exadata_infrastructure;
 
 /// Types for the `UpdateOdbNetwork` operation.
 pub mod update_odb_network;
+
+/// Types for the `UpdateOdbPeeringConnection` operation.
+pub mod update_odb_peering_connection;

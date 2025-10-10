@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum CustomConfigurationInput {
+    /// <p>The self managed configuration for a custom memory strategy.</p>
+    SelfManagedConfiguration(crate::types::SelfManagedConfigurationInput),
     /// <p>The semantic override configuration for a custom memory strategy.</p>
     SemanticOverride(crate::types::SemanticOverrideConfigurationInput),
     /// <p>The summary override configuration for a custom memory strategy.</p>
@@ -21,6 +23,19 @@ pub enum CustomConfigurationInput {
     Unknown,
 }
 impl CustomConfigurationInput {
+    /// Tries to convert the enum instance into [`SelfManagedConfiguration`](crate::types::CustomConfigurationInput::SelfManagedConfiguration), extracting the inner [`SelfManagedConfigurationInput`](crate::types::SelfManagedConfigurationInput).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_self_managed_configuration(&self) -> ::std::result::Result<&crate::types::SelfManagedConfigurationInput, &Self> {
+        if let CustomConfigurationInput::SelfManagedConfiguration(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`SelfManagedConfiguration`](crate::types::CustomConfigurationInput::SelfManagedConfiguration).
+    pub fn is_self_managed_configuration(&self) -> bool {
+        self.as_self_managed_configuration().is_ok()
+    }
     /// Tries to convert the enum instance into [`SemanticOverride`](crate::types::CustomConfigurationInput::SemanticOverride), extracting the inner [`SemanticOverrideConfigurationInput`](crate::types::SemanticOverrideConfigurationInput).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_semantic_override(&self) -> ::std::result::Result<&crate::types::SemanticOverrideConfigurationInput, &Self> {

@@ -16,6 +16,8 @@
 ///     TargetStatus::Deleting => { /* ... */ },
 ///     TargetStatus::Failed => { /* ... */ },
 ///     TargetStatus::Ready => { /* ... */ },
+///     TargetStatus::SynchronizeUnsuccessful => { /* ... */ },
+///     TargetStatus::Synchronizing => { /* ... */ },
 ///     TargetStatus::UpdateUnsuccessful => { /* ... */ },
 ///     TargetStatus::Updating => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -55,6 +57,10 @@ pub enum TargetStatus {
     #[allow(missing_docs)] // documentation missing in model
     Ready,
     #[allow(missing_docs)] // documentation missing in model
+    SynchronizeUnsuccessful,
+    #[allow(missing_docs)] // documentation missing in model
+    Synchronizing,
+    #[allow(missing_docs)] // documentation missing in model
     UpdateUnsuccessful,
     #[allow(missing_docs)] // documentation missing in model
     Updating,
@@ -69,6 +75,8 @@ impl ::std::convert::From<&str> for TargetStatus {
             "DELETING" => TargetStatus::Deleting,
             "FAILED" => TargetStatus::Failed,
             "READY" => TargetStatus::Ready,
+            "SYNCHRONIZE_UNSUCCESSFUL" => TargetStatus::SynchronizeUnsuccessful,
+            "SYNCHRONIZING" => TargetStatus::Synchronizing,
             "UPDATE_UNSUCCESSFUL" => TargetStatus::UpdateUnsuccessful,
             "UPDATING" => TargetStatus::Updating,
             other => TargetStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -90,6 +98,8 @@ impl TargetStatus {
             TargetStatus::Deleting => "DELETING",
             TargetStatus::Failed => "FAILED",
             TargetStatus::Ready => "READY",
+            TargetStatus::SynchronizeUnsuccessful => "SYNCHRONIZE_UNSUCCESSFUL",
+            TargetStatus::Synchronizing => "SYNCHRONIZING",
             TargetStatus::UpdateUnsuccessful => "UPDATE_UNSUCCESSFUL",
             TargetStatus::Updating => "UPDATING",
             TargetStatus::Unknown(value) => value.as_str(),
@@ -97,7 +107,16 @@ impl TargetStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CREATING", "DELETING", "FAILED", "READY", "UPDATE_UNSUCCESSFUL", "UPDATING"]
+        &[
+            "CREATING",
+            "DELETING",
+            "FAILED",
+            "READY",
+            "SYNCHRONIZE_UNSUCCESSFUL",
+            "SYNCHRONIZING",
+            "UPDATE_UNSUCCESSFUL",
+            "UPDATING",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for TargetStatus {
@@ -124,6 +143,8 @@ impl ::std::fmt::Display for TargetStatus {
             TargetStatus::Deleting => write!(f, "DELETING"),
             TargetStatus::Failed => write!(f, "FAILED"),
             TargetStatus::Ready => write!(f, "READY"),
+            TargetStatus::SynchronizeUnsuccessful => write!(f, "SYNCHRONIZE_UNSUCCESSFUL"),
+            TargetStatus::Synchronizing => write!(f, "SYNCHRONIZING"),
             TargetStatus::UpdateUnsuccessful => write!(f, "UPDATE_UNSUCCESSFUL"),
             TargetStatus::Updating => write!(f, "UPDATING"),
             TargetStatus::Unknown(value) => write!(f, "{}", value),

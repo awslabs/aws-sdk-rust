@@ -13,6 +13,8 @@ pub struct GetTableInput {
     pub transaction_id: ::std::option::Option<::std::string::String>,
     /// <p>The time as of when to read the table contents. If not set, the most recent transaction commit time will be used. Cannot be specified along with <code>TransactionId</code>.</p>
     pub query_as_of_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>A structure containing the Lake Formation <a href="https://docs.aws.amazon.com/glue/latest/webapi/API_AuditContext.html">audit context</a>.</p>
+    pub audit_context: ::std::option::Option<crate::types::AuditContext>,
     /// <p>Specifies whether to include status details related to a request to create or update an Glue Data Catalog view.</p>
     pub include_status_details: ::std::option::Option<bool>,
 }
@@ -37,6 +39,10 @@ impl GetTableInput {
     pub fn query_as_of_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.query_as_of_time.as_ref()
     }
+    /// <p>A structure containing the Lake Formation <a href="https://docs.aws.amazon.com/glue/latest/webapi/API_AuditContext.html">audit context</a>.</p>
+    pub fn audit_context(&self) -> ::std::option::Option<&crate::types::AuditContext> {
+        self.audit_context.as_ref()
+    }
     /// <p>Specifies whether to include status details related to a request to create or update an Glue Data Catalog view.</p>
     pub fn include_status_details(&self) -> ::std::option::Option<bool> {
         self.include_status_details
@@ -58,6 +64,7 @@ pub struct GetTableInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) transaction_id: ::std::option::Option<::std::string::String>,
     pub(crate) query_as_of_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) audit_context: ::std::option::Option<crate::types::AuditContext>,
     pub(crate) include_status_details: ::std::option::Option<bool>,
 }
 impl GetTableInputBuilder {
@@ -133,6 +140,20 @@ impl GetTableInputBuilder {
     pub fn get_query_as_of_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.query_as_of_time
     }
+    /// <p>A structure containing the Lake Formation <a href="https://docs.aws.amazon.com/glue/latest/webapi/API_AuditContext.html">audit context</a>.</p>
+    pub fn audit_context(mut self, input: crate::types::AuditContext) -> Self {
+        self.audit_context = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A structure containing the Lake Formation <a href="https://docs.aws.amazon.com/glue/latest/webapi/API_AuditContext.html">audit context</a>.</p>
+    pub fn set_audit_context(mut self, input: ::std::option::Option<crate::types::AuditContext>) -> Self {
+        self.audit_context = input;
+        self
+    }
+    /// <p>A structure containing the Lake Formation <a href="https://docs.aws.amazon.com/glue/latest/webapi/API_AuditContext.html">audit context</a>.</p>
+    pub fn get_audit_context(&self) -> &::std::option::Option<crate::types::AuditContext> {
+        &self.audit_context
+    }
     /// <p>Specifies whether to include status details related to a request to create or update an Glue Data Catalog view.</p>
     pub fn include_status_details(mut self, input: bool) -> Self {
         self.include_status_details = ::std::option::Option::Some(input);
@@ -155,6 +176,7 @@ impl GetTableInputBuilder {
             name: self.name,
             transaction_id: self.transaction_id,
             query_as_of_time: self.query_as_of_time,
+            audit_context: self.audit_context,
             include_status_details: self.include_status_details,
         })
     }

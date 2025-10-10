@@ -9,6 +9,8 @@ pub struct CreateOdbPeeringConnectionInput {
     pub peer_network_id: ::std::option::Option<::std::string::String>,
     /// <p>The display name for the ODB peering connection.</p>
     pub display_name: ::std::option::Option<::std::string::String>,
+    /// <p>A list of CIDR blocks to add to the peering connection. These CIDR blocks define the IP address ranges that can communicate through the peering connection.</p>
+    pub peer_network_cidrs_to_be_added: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The client token for the ODB peering connection request.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -31,6 +33,12 @@ impl CreateOdbPeeringConnectionInput {
     /// <p>The display name for the ODB peering connection.</p>
     pub fn display_name(&self) -> ::std::option::Option<&str> {
         self.display_name.as_deref()
+    }
+    /// <p>A list of CIDR blocks to add to the peering connection. These CIDR blocks define the IP address ranges that can communicate through the peering connection.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.peer_network_cidrs_to_be_added.is_none()`.
+    pub fn peer_network_cidrs_to_be_added(&self) -> &[::std::string::String] {
+        self.peer_network_cidrs_to_be_added.as_deref().unwrap_or_default()
     }
     /// <p>The client token for the ODB peering connection request.</p>
     /// <p>Constraints:</p>
@@ -60,6 +68,7 @@ pub struct CreateOdbPeeringConnectionInputBuilder {
     pub(crate) odb_network_id: ::std::option::Option<::std::string::String>,
     pub(crate) peer_network_id: ::std::option::Option<::std::string::String>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
+    pub(crate) peer_network_cidrs_to_be_added: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -107,6 +116,26 @@ impl CreateOdbPeeringConnectionInputBuilder {
     /// <p>The display name for the ODB peering connection.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.display_name
+    }
+    /// Appends an item to `peer_network_cidrs_to_be_added`.
+    ///
+    /// To override the contents of this collection use [`set_peer_network_cidrs_to_be_added`](Self::set_peer_network_cidrs_to_be_added).
+    ///
+    /// <p>A list of CIDR blocks to add to the peering connection. These CIDR blocks define the IP address ranges that can communicate through the peering connection.</p>
+    pub fn peer_network_cidrs_to_be_added(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.peer_network_cidrs_to_be_added.unwrap_or_default();
+        v.push(input.into());
+        self.peer_network_cidrs_to_be_added = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of CIDR blocks to add to the peering connection. These CIDR blocks define the IP address ranges that can communicate through the peering connection.</p>
+    pub fn set_peer_network_cidrs_to_be_added(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.peer_network_cidrs_to_be_added = input;
+        self
+    }
+    /// <p>A list of CIDR blocks to add to the peering connection. These CIDR blocks define the IP address ranges that can communicate through the peering connection.</p>
+    pub fn get_peer_network_cidrs_to_be_added(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.peer_network_cidrs_to_be_added
     }
     /// <p>The client token for the ODB peering connection request.</p>
     /// <p>Constraints:</p>
@@ -168,6 +197,7 @@ impl CreateOdbPeeringConnectionInputBuilder {
             odb_network_id: self.odb_network_id,
             peer_network_id: self.peer_network_id,
             display_name: self.display_name,
+            peer_network_cidrs_to_be_added: self.peer_network_cidrs_to_be_added,
             client_token: self.client_token,
             tags: self.tags,
         })

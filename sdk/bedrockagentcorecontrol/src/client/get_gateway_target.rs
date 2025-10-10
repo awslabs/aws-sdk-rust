@@ -16,6 +16,7 @@ impl super::Client {
     ///   - [`description(Option<String>)`](crate::operation::get_gateway_target::GetGatewayTargetOutput::description): <p>The description of the gateway target.</p>
     ///   - [`target_configuration(Option<TargetConfiguration>)`](crate::operation::get_gateway_target::GetGatewayTargetOutput::target_configuration): <p>The configuration for a gateway target. This structure defines how the gateway connects to and interacts with the target endpoint.</p>
     ///   - [`credential_provider_configurations(Vec::<CredentialProviderConfiguration>)`](crate::operation::get_gateway_target::GetGatewayTargetOutput::credential_provider_configurations): <p>The credential provider configurations for the gateway target.</p>
+    ///   - [`last_synchronized_at(Option<DateTime>)`](crate::operation::get_gateway_target::GetGatewayTargetOutput::last_synchronized_at): <p>The last synchronization of the target.</p>
     /// - On failure, responds with [`SdkError<GetGatewayTargetError>`](crate::operation::get_gateway_target::GetGatewayTargetError)
     pub fn get_gateway_target(&self) -> crate::operation::get_gateway_target::builders::GetGatewayTargetFluentBuilder {
         crate::operation::get_gateway_target::builders::GetGatewayTargetFluentBuilder::new(self.handle.clone())

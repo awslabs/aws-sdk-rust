@@ -280,6 +280,8 @@ mod list_workload_identities;
 
 mod set_token_vault_cmk;
 
+mod synchronize_gateway_targets;
+
 mod tag_resource;
 
 mod untag_resource;

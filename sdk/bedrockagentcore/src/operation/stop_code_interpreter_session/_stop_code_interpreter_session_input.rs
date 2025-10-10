@@ -3,6 +3,10 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopCodeInterpreterSessionInput {
+    /// <p>The trace identifier for request tracking.</p>
+    pub trace_id: ::std::option::Option<::std::string::String>,
+    /// <p>The parent trace information for distributed tracing.</p>
+    pub trace_parent: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the code interpreter associated with the session.</p>
     pub code_interpreter_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the code interpreter session to stop.</p>
@@ -11,6 +15,14 @@ pub struct StopCodeInterpreterSessionInput {
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl StopCodeInterpreterSessionInput {
+    /// <p>The trace identifier for request tracking.</p>
+    pub fn trace_id(&self) -> ::std::option::Option<&str> {
+        self.trace_id.as_deref()
+    }
+    /// <p>The parent trace information for distributed tracing.</p>
+    pub fn trace_parent(&self) -> ::std::option::Option<&str> {
+        self.trace_parent.as_deref()
+    }
     /// <p>The unique identifier of the code interpreter associated with the session.</p>
     pub fn code_interpreter_identifier(&self) -> ::std::option::Option<&str> {
         self.code_interpreter_identifier.as_deref()
@@ -35,11 +47,41 @@ impl StopCodeInterpreterSessionInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct StopCodeInterpreterSessionInputBuilder {
+    pub(crate) trace_id: ::std::option::Option<::std::string::String>,
+    pub(crate) trace_parent: ::std::option::Option<::std::string::String>,
     pub(crate) code_interpreter_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) session_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl StopCodeInterpreterSessionInputBuilder {
+    /// <p>The trace identifier for request tracking.</p>
+    pub fn trace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.trace_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The trace identifier for request tracking.</p>
+    pub fn set_trace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.trace_id = input;
+        self
+    }
+    /// <p>The trace identifier for request tracking.</p>
+    pub fn get_trace_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.trace_id
+    }
+    /// <p>The parent trace information for distributed tracing.</p>
+    pub fn trace_parent(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.trace_parent = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The parent trace information for distributed tracing.</p>
+    pub fn set_trace_parent(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.trace_parent = input;
+        self
+    }
+    /// <p>The parent trace information for distributed tracing.</p>
+    pub fn get_trace_parent(&self) -> &::std::option::Option<::std::string::String> {
+        &self.trace_parent
+    }
     /// <p>The unique identifier of the code interpreter associated with the session.</p>
     /// This field is required.
     pub fn code_interpreter_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -92,6 +134,8 @@ impl StopCodeInterpreterSessionInputBuilder {
         ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::stop_code_interpreter_session::StopCodeInterpreterSessionInput {
+            trace_id: self.trace_id,
+            trace_parent: self.trace_parent,
             code_interpreter_identifier: self.code_interpreter_identifier,
             session_id: self.session_id,
             client_token: self.client_token,

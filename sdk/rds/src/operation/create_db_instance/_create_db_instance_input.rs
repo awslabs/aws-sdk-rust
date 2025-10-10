@@ -579,12 +579,23 @@ pub struct CreateDbInstanceInput {
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
     pub nchar_character_set_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the DB instance is publicly accessible.</p>
-    /// <p>When the DB instance is publicly accessible and you connect from outside of the DB instance's virtual private cloud (VPC), its domain name system (DNS) endpoint resolves to the public IP address. When you connect from within the same VPC as the DB instance, the endpoint resolves to the private IP address. Access to the DB instance is controlled by its security group settings.</p>
+    /// <p>When the DB instance is publicly accessible and you connect from outside of the DB instance's virtual private cloud (VPC), its Domain Name System (DNS) endpoint resolves to the public IP address. When you connect from within the same VPC as the DB instance, the endpoint resolves to the private IP address. Access to the DB instance is ultimately controlled by the security group it uses. That public access is not permitted if the security group assigned to the DB instance doesn't permit it.</p>
     /// <p>When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a private IP address.</p>
-    /// <p>The default behavior when <code>PubliclyAccessible</code> is not specified depends on whether a <code>DBSubnetGroup</code> is specified.</p>
-    /// <p>If <code>DBSubnetGroup</code> isn't specified, <code>PubliclyAccessible</code> defaults to <code>false</code> for Aurora instances and <code>true</code> for non-Aurora instances.</p>
-    /// <p>If <code>DBSubnetGroup</code> is specified, <code>PubliclyAccessible</code> defaults to <code>false</code> unless the value of <code>DBSubnetGroup</code> is <code>default</code>, in which case <code>PubliclyAccessible</code> defaults to <code>true</code>.</p>
-    /// <p>If <code>PubliclyAccessible</code> is true and the VPC that the <code>DBSubnetGroup</code> is in doesn't have an internet gateway attached to it, Amazon RDS returns an error.</p>
+    /// <p>Default: The default behavior varies depending on whether <code>DBSubnetGroupName</code> is specified.</p>
+    /// <p>If <code>DBSubnetGroupName</code> isn't specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If the default VPC in the target Region doesn’t have an internet gateway attached to it, the DB instance is private.</p></li>
+    /// <li>
+    /// <p>If the default VPC in the target Region has an internet gateway attached to it, the DB instance is public.</p></li>
+    /// </ul>
+    /// <p>If <code>DBSubnetGroupName</code> is specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If the subnets are part of a VPC that doesn’t have an internet gateway attached to it, the DB instance is private.</p></li>
+    /// <li>
+    /// <p>If the subnets are part of a VPC that has an internet gateway attached to it, the DB instance is public.</p></li>
+    /// </ul>
     pub publicly_accessible: ::std::option::Option<bool>,
     /// <p>Tags to assign to the DB instance.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -1473,12 +1484,23 @@ impl CreateDbInstanceInput {
         self.nchar_character_set_name.as_deref()
     }
     /// <p>Specifies whether the DB instance is publicly accessible.</p>
-    /// <p>When the DB instance is publicly accessible and you connect from outside of the DB instance's virtual private cloud (VPC), its domain name system (DNS) endpoint resolves to the public IP address. When you connect from within the same VPC as the DB instance, the endpoint resolves to the private IP address. Access to the DB instance is controlled by its security group settings.</p>
+    /// <p>When the DB instance is publicly accessible and you connect from outside of the DB instance's virtual private cloud (VPC), its Domain Name System (DNS) endpoint resolves to the public IP address. When you connect from within the same VPC as the DB instance, the endpoint resolves to the private IP address. Access to the DB instance is ultimately controlled by the security group it uses. That public access is not permitted if the security group assigned to the DB instance doesn't permit it.</p>
     /// <p>When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a private IP address.</p>
-    /// <p>The default behavior when <code>PubliclyAccessible</code> is not specified depends on whether a <code>DBSubnetGroup</code> is specified.</p>
-    /// <p>If <code>DBSubnetGroup</code> isn't specified, <code>PubliclyAccessible</code> defaults to <code>false</code> for Aurora instances and <code>true</code> for non-Aurora instances.</p>
-    /// <p>If <code>DBSubnetGroup</code> is specified, <code>PubliclyAccessible</code> defaults to <code>false</code> unless the value of <code>DBSubnetGroup</code> is <code>default</code>, in which case <code>PubliclyAccessible</code> defaults to <code>true</code>.</p>
-    /// <p>If <code>PubliclyAccessible</code> is true and the VPC that the <code>DBSubnetGroup</code> is in doesn't have an internet gateway attached to it, Amazon RDS returns an error.</p>
+    /// <p>Default: The default behavior varies depending on whether <code>DBSubnetGroupName</code> is specified.</p>
+    /// <p>If <code>DBSubnetGroupName</code> isn't specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If the default VPC in the target Region doesn’t have an internet gateway attached to it, the DB instance is private.</p></li>
+    /// <li>
+    /// <p>If the default VPC in the target Region has an internet gateway attached to it, the DB instance is public.</p></li>
+    /// </ul>
+    /// <p>If <code>DBSubnetGroupName</code> is specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If the subnets are part of a VPC that doesn’t have an internet gateway attached to it, the DB instance is private.</p></li>
+    /// <li>
+    /// <p>If the subnets are part of a VPC that has an internet gateway attached to it, the DB instance is public.</p></li>
+    /// </ul>
     pub fn publicly_accessible(&self) -> ::std::option::Option<bool> {
         self.publicly_accessible
     }
@@ -3912,34 +3934,67 @@ impl CreateDbInstanceInputBuilder {
         &self.nchar_character_set_name
     }
     /// <p>Specifies whether the DB instance is publicly accessible.</p>
-    /// <p>When the DB instance is publicly accessible and you connect from outside of the DB instance's virtual private cloud (VPC), its domain name system (DNS) endpoint resolves to the public IP address. When you connect from within the same VPC as the DB instance, the endpoint resolves to the private IP address. Access to the DB instance is controlled by its security group settings.</p>
+    /// <p>When the DB instance is publicly accessible and you connect from outside of the DB instance's virtual private cloud (VPC), its Domain Name System (DNS) endpoint resolves to the public IP address. When you connect from within the same VPC as the DB instance, the endpoint resolves to the private IP address. Access to the DB instance is ultimately controlled by the security group it uses. That public access is not permitted if the security group assigned to the DB instance doesn't permit it.</p>
     /// <p>When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a private IP address.</p>
-    /// <p>The default behavior when <code>PubliclyAccessible</code> is not specified depends on whether a <code>DBSubnetGroup</code> is specified.</p>
-    /// <p>If <code>DBSubnetGroup</code> isn't specified, <code>PubliclyAccessible</code> defaults to <code>false</code> for Aurora instances and <code>true</code> for non-Aurora instances.</p>
-    /// <p>If <code>DBSubnetGroup</code> is specified, <code>PubliclyAccessible</code> defaults to <code>false</code> unless the value of <code>DBSubnetGroup</code> is <code>default</code>, in which case <code>PubliclyAccessible</code> defaults to <code>true</code>.</p>
-    /// <p>If <code>PubliclyAccessible</code> is true and the VPC that the <code>DBSubnetGroup</code> is in doesn't have an internet gateway attached to it, Amazon RDS returns an error.</p>
+    /// <p>Default: The default behavior varies depending on whether <code>DBSubnetGroupName</code> is specified.</p>
+    /// <p>If <code>DBSubnetGroupName</code> isn't specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If the default VPC in the target Region doesn’t have an internet gateway attached to it, the DB instance is private.</p></li>
+    /// <li>
+    /// <p>If the default VPC in the target Region has an internet gateway attached to it, the DB instance is public.</p></li>
+    /// </ul>
+    /// <p>If <code>DBSubnetGroupName</code> is specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If the subnets are part of a VPC that doesn’t have an internet gateway attached to it, the DB instance is private.</p></li>
+    /// <li>
+    /// <p>If the subnets are part of a VPC that has an internet gateway attached to it, the DB instance is public.</p></li>
+    /// </ul>
     pub fn publicly_accessible(mut self, input: bool) -> Self {
         self.publicly_accessible = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether the DB instance is publicly accessible.</p>
-    /// <p>When the DB instance is publicly accessible and you connect from outside of the DB instance's virtual private cloud (VPC), its domain name system (DNS) endpoint resolves to the public IP address. When you connect from within the same VPC as the DB instance, the endpoint resolves to the private IP address. Access to the DB instance is controlled by its security group settings.</p>
+    /// <p>When the DB instance is publicly accessible and you connect from outside of the DB instance's virtual private cloud (VPC), its Domain Name System (DNS) endpoint resolves to the public IP address. When you connect from within the same VPC as the DB instance, the endpoint resolves to the private IP address. Access to the DB instance is ultimately controlled by the security group it uses. That public access is not permitted if the security group assigned to the DB instance doesn't permit it.</p>
     /// <p>When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a private IP address.</p>
-    /// <p>The default behavior when <code>PubliclyAccessible</code> is not specified depends on whether a <code>DBSubnetGroup</code> is specified.</p>
-    /// <p>If <code>DBSubnetGroup</code> isn't specified, <code>PubliclyAccessible</code> defaults to <code>false</code> for Aurora instances and <code>true</code> for non-Aurora instances.</p>
-    /// <p>If <code>DBSubnetGroup</code> is specified, <code>PubliclyAccessible</code> defaults to <code>false</code> unless the value of <code>DBSubnetGroup</code> is <code>default</code>, in which case <code>PubliclyAccessible</code> defaults to <code>true</code>.</p>
-    /// <p>If <code>PubliclyAccessible</code> is true and the VPC that the <code>DBSubnetGroup</code> is in doesn't have an internet gateway attached to it, Amazon RDS returns an error.</p>
+    /// <p>Default: The default behavior varies depending on whether <code>DBSubnetGroupName</code> is specified.</p>
+    /// <p>If <code>DBSubnetGroupName</code> isn't specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If the default VPC in the target Region doesn’t have an internet gateway attached to it, the DB instance is private.</p></li>
+    /// <li>
+    /// <p>If the default VPC in the target Region has an internet gateway attached to it, the DB instance is public.</p></li>
+    /// </ul>
+    /// <p>If <code>DBSubnetGroupName</code> is specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If the subnets are part of a VPC that doesn’t have an internet gateway attached to it, the DB instance is private.</p></li>
+    /// <li>
+    /// <p>If the subnets are part of a VPC that has an internet gateway attached to it, the DB instance is public.</p></li>
+    /// </ul>
     pub fn set_publicly_accessible(mut self, input: ::std::option::Option<bool>) -> Self {
         self.publicly_accessible = input;
         self
     }
     /// <p>Specifies whether the DB instance is publicly accessible.</p>
-    /// <p>When the DB instance is publicly accessible and you connect from outside of the DB instance's virtual private cloud (VPC), its domain name system (DNS) endpoint resolves to the public IP address. When you connect from within the same VPC as the DB instance, the endpoint resolves to the private IP address. Access to the DB instance is controlled by its security group settings.</p>
+    /// <p>When the DB instance is publicly accessible and you connect from outside of the DB instance's virtual private cloud (VPC), its Domain Name System (DNS) endpoint resolves to the public IP address. When you connect from within the same VPC as the DB instance, the endpoint resolves to the private IP address. Access to the DB instance is ultimately controlled by the security group it uses. That public access is not permitted if the security group assigned to the DB instance doesn't permit it.</p>
     /// <p>When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a private IP address.</p>
-    /// <p>The default behavior when <code>PubliclyAccessible</code> is not specified depends on whether a <code>DBSubnetGroup</code> is specified.</p>
-    /// <p>If <code>DBSubnetGroup</code> isn't specified, <code>PubliclyAccessible</code> defaults to <code>false</code> for Aurora instances and <code>true</code> for non-Aurora instances.</p>
-    /// <p>If <code>DBSubnetGroup</code> is specified, <code>PubliclyAccessible</code> defaults to <code>false</code> unless the value of <code>DBSubnetGroup</code> is <code>default</code>, in which case <code>PubliclyAccessible</code> defaults to <code>true</code>.</p>
-    /// <p>If <code>PubliclyAccessible</code> is true and the VPC that the <code>DBSubnetGroup</code> is in doesn't have an internet gateway attached to it, Amazon RDS returns an error.</p>
+    /// <p>Default: The default behavior varies depending on whether <code>DBSubnetGroupName</code> is specified.</p>
+    /// <p>If <code>DBSubnetGroupName</code> isn't specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If the default VPC in the target Region doesn’t have an internet gateway attached to it, the DB instance is private.</p></li>
+    /// <li>
+    /// <p>If the default VPC in the target Region has an internet gateway attached to it, the DB instance is public.</p></li>
+    /// </ul>
+    /// <p>If <code>DBSubnetGroupName</code> is specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If the subnets are part of a VPC that doesn’t have an internet gateway attached to it, the DB instance is private.</p></li>
+    /// <li>
+    /// <p>If the subnets are part of a VPC that has an internet gateway attached to it, the DB instance is public.</p></li>
+    /// </ul>
     pub fn get_publicly_accessible(&self) -> &::std::option::Option<bool> {
         &self.publicly_accessible
     }

@@ -133,6 +133,9 @@ pub mod list_workload_identities;
 /// Types for the `SetTokenVaultCMK` operation.
 pub mod set_token_vault_cmk;
 
+/// Types for the `SynchronizeGatewayTargets` operation.
+pub mod synchronize_gateway_targets;
+
 /// Types for the `TagResource` operation.
 pub mod tag_resource;
 

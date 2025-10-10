@@ -23,6 +23,8 @@ pub struct GetGatewayTargetOutput {
     pub target_configuration: ::std::option::Option<crate::types::TargetConfiguration>,
     /// <p>The credential provider configurations for the gateway target.</p>
     pub credential_provider_configurations: ::std::vec::Vec<crate::types::CredentialProviderConfiguration>,
+    /// <p>The last synchronization of the target.</p>
+    pub last_synchronized_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
 impl GetGatewayTargetOutput {
@@ -72,6 +74,10 @@ impl GetGatewayTargetOutput {
         use std::ops::Deref;
         self.credential_provider_configurations.deref()
     }
+    /// <p>The last synchronization of the target.</p>
+    pub fn last_synchronized_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.last_synchronized_at.as_ref()
+    }
 }
 impl ::std::fmt::Debug for GetGatewayTargetOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -86,6 +92,7 @@ impl ::std::fmt::Debug for GetGatewayTargetOutput {
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("target_configuration", &self.target_configuration);
         formatter.field("credential_provider_configurations", &self.credential_provider_configurations);
+        formatter.field("last_synchronized_at", &self.last_synchronized_at);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -116,6 +123,7 @@ pub struct GetGatewayTargetOutputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) target_configuration: ::std::option::Option<crate::types::TargetConfiguration>,
     pub(crate) credential_provider_configurations: ::std::option::Option<::std::vec::Vec<crate::types::CredentialProviderConfiguration>>,
+    pub(crate) last_synchronized_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
 impl GetGatewayTargetOutputBuilder {
@@ -281,6 +289,20 @@ impl GetGatewayTargetOutputBuilder {
     pub fn get_credential_provider_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CredentialProviderConfiguration>> {
         &self.credential_provider_configurations
     }
+    /// <p>The last synchronization of the target.</p>
+    pub fn last_synchronized_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_synchronized_at = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The last synchronization of the target.</p>
+    pub fn set_last_synchronized_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_synchronized_at = input;
+        self
+    }
+    /// <p>The last synchronization of the target.</p>
+    pub fn get_last_synchronized_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_synchronized_at
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -348,6 +370,7 @@ impl GetGatewayTargetOutputBuilder {
                     "credential_provider_configurations was not specified but it is required when building GetGatewayTargetOutput",
                 )
             })?,
+            last_synchronized_at: self.last_synchronized_at,
             _request_id: self._request_id,
         })
     }
@@ -365,6 +388,7 @@ impl ::std::fmt::Debug for GetGatewayTargetOutputBuilder {
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("target_configuration", &self.target_configuration);
         formatter.field("credential_provider_configurations", &self.credential_provider_configurations);
+        formatter.field("last_synchronized_at", &self.last_synchronized_at);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

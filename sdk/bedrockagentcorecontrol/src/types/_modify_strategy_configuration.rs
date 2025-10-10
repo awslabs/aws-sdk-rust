@@ -8,6 +8,8 @@ pub struct ModifyStrategyConfiguration {
     pub extraction: ::std::option::Option<crate::types::ModifyExtractionConfiguration>,
     /// <p>The updated consolidation configuration.</p>
     pub consolidation: ::std::option::Option<crate::types::ModifyConsolidationConfiguration>,
+    /// <p>The updated self-managed configuration.</p>
+    pub self_managed_configuration: ::std::option::Option<crate::types::ModifySelfManagedConfiguration>,
 }
 impl ModifyStrategyConfiguration {
     /// <p>The updated extraction configuration.</p>
@@ -17,6 +19,10 @@ impl ModifyStrategyConfiguration {
     /// <p>The updated consolidation configuration.</p>
     pub fn consolidation(&self) -> ::std::option::Option<&crate::types::ModifyConsolidationConfiguration> {
         self.consolidation.as_ref()
+    }
+    /// <p>The updated self-managed configuration.</p>
+    pub fn self_managed_configuration(&self) -> ::std::option::Option<&crate::types::ModifySelfManagedConfiguration> {
+        self.self_managed_configuration.as_ref()
     }
 }
 impl ModifyStrategyConfiguration {
@@ -32,6 +38,7 @@ impl ModifyStrategyConfiguration {
 pub struct ModifyStrategyConfigurationBuilder {
     pub(crate) extraction: ::std::option::Option<crate::types::ModifyExtractionConfiguration>,
     pub(crate) consolidation: ::std::option::Option<crate::types::ModifyConsolidationConfiguration>,
+    pub(crate) self_managed_configuration: ::std::option::Option<crate::types::ModifySelfManagedConfiguration>,
 }
 impl ModifyStrategyConfigurationBuilder {
     /// <p>The updated extraction configuration.</p>
@@ -62,11 +69,26 @@ impl ModifyStrategyConfigurationBuilder {
     pub fn get_consolidation(&self) -> &::std::option::Option<crate::types::ModifyConsolidationConfiguration> {
         &self.consolidation
     }
+    /// <p>The updated self-managed configuration.</p>
+    pub fn self_managed_configuration(mut self, input: crate::types::ModifySelfManagedConfiguration) -> Self {
+        self.self_managed_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The updated self-managed configuration.</p>
+    pub fn set_self_managed_configuration(mut self, input: ::std::option::Option<crate::types::ModifySelfManagedConfiguration>) -> Self {
+        self.self_managed_configuration = input;
+        self
+    }
+    /// <p>The updated self-managed configuration.</p>
+    pub fn get_self_managed_configuration(&self) -> &::std::option::Option<crate::types::ModifySelfManagedConfiguration> {
+        &self.self_managed_configuration
+    }
     /// Consumes the builder and constructs a [`ModifyStrategyConfiguration`](crate::types::ModifyStrategyConfiguration).
     pub fn build(self) -> crate::types::ModifyStrategyConfiguration {
         crate::types::ModifyStrategyConfiguration {
             extraction: self.extraction,
             consolidation: self.consolidation,
+            self_managed_configuration: self.self_managed_configuration,
         }
     }
 }

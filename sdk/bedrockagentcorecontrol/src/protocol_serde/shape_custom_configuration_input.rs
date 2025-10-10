@@ -25,6 +25,12 @@ pub fn ser_custom_configuration_input(
             )?;
             object_3.finish();
         }
+        crate::types::CustomConfigurationInput::SelfManagedConfiguration(inner) => {
+            #[allow(unused_mut)]
+            let mut object_4 = object_6.key("selfManagedConfiguration").start_object();
+            crate::protocol_serde::shape_self_managed_configuration_input::ser_self_managed_configuration_input(&mut object_4, inner)?;
+            object_4.finish();
+        }
         crate::types::CustomConfigurationInput::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "CustomConfigurationInput",

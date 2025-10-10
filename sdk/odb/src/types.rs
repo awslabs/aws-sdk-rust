@@ -3,9 +3,9 @@ pub use crate::types::_validation_exception_field::ValidationExceptionField;
 
 pub use crate::types::_validation_exception_reason::ValidationExceptionReason;
 
-pub use crate::types::_odb_peering_connection::OdbPeeringConnection;
-
 pub use crate::types::_resource_status::ResourceStatus;
+
+pub use crate::types::_odb_peering_connection::OdbPeeringConnection;
 
 pub use crate::types::_odb_peering_connection_summary::OdbPeeringConnectionSummary;
 

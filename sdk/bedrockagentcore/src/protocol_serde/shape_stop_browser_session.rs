@@ -152,6 +152,35 @@ pub fn de_stop_browser_session_http_response(
     })
 }
 
+pub fn ser_stop_browser_session_headers(
+    input: &crate::operation::stop_browser_session::StopBrowserSessionInput,
+    mut builder: ::http::request::Builder,
+) -> std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
+    if let ::std::option::Option::Some(inner_1) = &input.trace_id {
+        let formatted_2 = inner_1.as_str();
+        let header_value = formatted_2;
+        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+            ::aws_smithy_types::error::operation::BuildError::invalid_field(
+                "trace_id",
+                format!("`{}` cannot be used as a header value: {}", &header_value, err),
+            )
+        })?;
+        builder = builder.header("X-Amzn-Trace-Id", header_value);
+    }
+    if let ::std::option::Option::Some(inner_3) = &input.trace_parent {
+        let formatted_4 = inner_3.as_str();
+        let header_value = formatted_4;
+        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+            ::aws_smithy_types::error::operation::BuildError::invalid_field(
+                "trace_parent",
+                format!("`{}` cannot be used as a header value: {}", &header_value, err),
+            )
+        })?;
+        builder = builder.header("traceparent", header_value);
+    }
+    Ok(builder)
+}
+
 pub fn ser_stop_browser_session_input(
     input: &crate::operation::stop_browser_session::StopBrowserSessionInput,
 ) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {

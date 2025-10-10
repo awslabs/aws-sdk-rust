@@ -22,7 +22,7 @@ impl crate::operation::create_odb_peering_connection::builders::CreateOdbPeering
 }
 /// Fluent builder constructing a request to `CreateOdbPeeringConnection`.
 ///
-/// <p>Creates a peering connection between an ODB network and either another ODB network or a customer-owned VPC.</p>
+/// <p>Creates a peering connection between an ODB network and a VPC.</p>
 /// <p>A peering connection enables private connectivity between the networks for application-tier communication.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateOdbPeeringConnectionFluentBuilder {
@@ -150,6 +150,25 @@ impl CreateOdbPeeringConnectionFluentBuilder {
     /// <p>The display name for the ODB peering connection.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_display_name()
+    }
+    ///
+    /// Appends an item to `peerNetworkCidrsToBeAdded`.
+    ///
+    /// To override the contents of this collection use [`set_peer_network_cidrs_to_be_added`](Self::set_peer_network_cidrs_to_be_added).
+    ///
+    /// <p>A list of CIDR blocks to add to the peering connection. These CIDR blocks define the IP address ranges that can communicate through the peering connection.</p>
+    pub fn peer_network_cidrs_to_be_added(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.peer_network_cidrs_to_be_added(input.into());
+        self
+    }
+    /// <p>A list of CIDR blocks to add to the peering connection. These CIDR blocks define the IP address ranges that can communicate through the peering connection.</p>
+    pub fn set_peer_network_cidrs_to_be_added(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_peer_network_cidrs_to_be_added(input);
+        self
+    }
+    /// <p>A list of CIDR blocks to add to the peering connection. These CIDR blocks define the IP address ranges that can communicate through the peering connection.</p>
+    pub fn get_peer_network_cidrs_to_be_added(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_peer_network_cidrs_to_be_added()
     }
     /// <p>The client token for the ODB peering connection request.</p>
     /// <p>Constraints:</p>
