@@ -8,6 +8,8 @@ pub struct MicrosoftOauth2ProviderConfigInput {
     pub client_id: ::std::string::String,
     /// <p>The client secret for the Microsoft OAuth2 provider.</p>
     pub client_secret: ::std::string::String,
+    /// <p>The Microsoft Entra ID (formerly Azure AD) tenant ID for your organization. This identifies the specific tenant within Microsoft's identity platform where your application is registered.</p>
+    pub tenant_id: ::std::option::Option<::std::string::String>,
 }
 impl MicrosoftOauth2ProviderConfigInput {
     /// <p>The client ID for the Microsoft OAuth2 provider.</p>
@@ -20,12 +22,17 @@ impl MicrosoftOauth2ProviderConfigInput {
         use std::ops::Deref;
         self.client_secret.deref()
     }
+    /// <p>The Microsoft Entra ID (formerly Azure AD) tenant ID for your organization. This identifies the specific tenant within Microsoft's identity platform where your application is registered.</p>
+    pub fn tenant_id(&self) -> ::std::option::Option<&str> {
+        self.tenant_id.as_deref()
+    }
 }
 impl ::std::fmt::Debug for MicrosoftOauth2ProviderConfigInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("MicrosoftOauth2ProviderConfigInput");
         formatter.field("client_id", &self.client_id);
         formatter.field("client_secret", &"*** Sensitive Data Redacted ***");
+        formatter.field("tenant_id", &self.tenant_id);
         formatter.finish()
     }
 }
@@ -42,6 +49,7 @@ impl MicrosoftOauth2ProviderConfigInput {
 pub struct MicrosoftOauth2ProviderConfigInputBuilder {
     pub(crate) client_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_secret: ::std::option::Option<::std::string::String>,
+    pub(crate) tenant_id: ::std::option::Option<::std::string::String>,
 }
 impl MicrosoftOauth2ProviderConfigInputBuilder {
     /// <p>The client ID for the Microsoft OAuth2 provider.</p>
@@ -74,6 +82,20 @@ impl MicrosoftOauth2ProviderConfigInputBuilder {
     pub fn get_client_secret(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_secret
     }
+    /// <p>The Microsoft Entra ID (formerly Azure AD) tenant ID for your organization. This identifies the specific tenant within Microsoft's identity platform where your application is registered.</p>
+    pub fn tenant_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.tenant_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Microsoft Entra ID (formerly Azure AD) tenant ID for your organization. This identifies the specific tenant within Microsoft's identity platform where your application is registered.</p>
+    pub fn set_tenant_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.tenant_id = input;
+        self
+    }
+    /// <p>The Microsoft Entra ID (formerly Azure AD) tenant ID for your organization. This identifies the specific tenant within Microsoft's identity platform where your application is registered.</p>
+    pub fn get_tenant_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tenant_id
+    }
     /// Consumes the builder and constructs a [`MicrosoftOauth2ProviderConfigInput`](crate::types::MicrosoftOauth2ProviderConfigInput).
     /// This method will fail if any of the following fields are not set:
     /// - [`client_id`](crate::types::builders::MicrosoftOauth2ProviderConfigInputBuilder::client_id)
@@ -92,6 +114,7 @@ impl MicrosoftOauth2ProviderConfigInputBuilder {
                     "client_secret was not specified but it is required when building MicrosoftOauth2ProviderConfigInput",
                 )
             })?,
+            tenant_id: self.tenant_id,
         })
     }
 }
@@ -100,6 +123,7 @@ impl ::std::fmt::Debug for MicrosoftOauth2ProviderConfigInputBuilder {
         let mut formatter = f.debug_struct("MicrosoftOauth2ProviderConfigInputBuilder");
         formatter.field("client_id", &self.client_id);
         formatter.field("client_secret", &"*** Sensitive Data Redacted ***");
+        formatter.field("tenant_id", &self.tenant_id);
         formatter.finish()
     }
 }

@@ -10,6 +10,9 @@ pub mod batch_delete_memory_records;
 /// Types for the `BatchUpdateMemoryRecords` operation.
 pub mod batch_update_memory_records;
 
+/// Types for the `CompleteResourceTokenAuth` operation.
+pub mod complete_resource_token_auth;
+
 /// Types for the `CreateEvent` operation.
 pub mod create_event;
 

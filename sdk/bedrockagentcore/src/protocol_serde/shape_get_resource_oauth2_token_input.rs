@@ -13,29 +13,35 @@ pub fn ser_get_resource_oauth2_token_input_input(
         }
         object_2.finish();
     }
-    if let Some(var_5) = &input.force_authentication {
-        object.key("forceAuthentication").boolean(*var_5);
+    if let Some(var_5) = &input.custom_state {
+        object.key("customState").string(var_5.as_str());
     }
-    if let Some(var_6) = &input.oauth2_flow {
-        object.key("oauth2Flow").string(var_6.as_str());
+    if let Some(var_6) = &input.force_authentication {
+        object.key("forceAuthentication").boolean(*var_6);
     }
-    if let Some(var_7) = &input.resource_credential_provider_name {
-        object.key("resourceCredentialProviderName").string(var_7.as_str());
+    if let Some(var_7) = &input.oauth2_flow {
+        object.key("oauth2Flow").string(var_7.as_str());
     }
-    if let Some(var_8) = &input.resource_oauth2_return_url {
-        object.key("resourceOauth2ReturnUrl").string(var_8.as_str());
+    if let Some(var_8) = &input.resource_credential_provider_name {
+        object.key("resourceCredentialProviderName").string(var_8.as_str());
     }
-    if let Some(var_9) = &input.scopes {
-        let mut array_10 = object.key("scopes").start_array();
-        for item_11 in var_9 {
+    if let Some(var_9) = &input.resource_oauth2_return_url {
+        object.key("resourceOauth2ReturnUrl").string(var_9.as_str());
+    }
+    if let Some(var_10) = &input.scopes {
+        let mut array_11 = object.key("scopes").start_array();
+        for item_12 in var_10 {
             {
-                array_10.value().string(item_11.as_str());
+                array_11.value().string(item_12.as_str());
             }
         }
-        array_10.finish();
+        array_11.finish();
     }
-    if let Some(var_12) = &input.workload_identity_token {
-        object.key("workloadIdentityToken").string(var_12.as_str());
+    if let Some(var_13) = &input.session_uri {
+        object.key("sessionUri").string(var_13.as_str());
+    }
+    if let Some(var_14) = &input.workload_identity_token {
+        object.key("workloadIdentityToken").string(var_14.as_str());
     }
     Ok(())
 }

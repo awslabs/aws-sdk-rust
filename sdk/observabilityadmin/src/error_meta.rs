@@ -359,6 +359,46 @@ impl From<crate::operation::get_centralization_rule_for_organization::GetCentral
     }
 }
 impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_telemetry_enrichment_status::GetTelemetryEnrichmentStatusError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_telemetry_enrichment_status::GetTelemetryEnrichmentStatusError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_telemetry_enrichment_status::GetTelemetryEnrichmentStatusError> for Error {
+    fn from(err: crate::operation::get_telemetry_enrichment_status::GetTelemetryEnrichmentStatusError) -> Self {
+        match err {
+            crate::operation::get_telemetry_enrichment_status::GetTelemetryEnrichmentStatusError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_telemetry_enrichment_status::GetTelemetryEnrichmentStatusError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_telemetry_enrichment_status::GetTelemetryEnrichmentStatusError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_telemetry_enrichment_status::GetTelemetryEnrichmentStatusError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::get_telemetry_enrichment_status::GetTelemetryEnrichmentStatusError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
     From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_telemetry_evaluation_status::GetTelemetryEvaluationStatusError, R>>
     for Error
 where
@@ -734,6 +774,40 @@ impl From<crate::operation::list_telemetry_rules_for_organization::ListTelemetry
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_telemetry_enrichment::StartTelemetryEnrichmentError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_telemetry_enrichment::StartTelemetryEnrichmentError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_telemetry_enrichment::StartTelemetryEnrichmentError> for Error {
+    fn from(err: crate::operation::start_telemetry_enrichment::StartTelemetryEnrichmentError) -> Self {
+        match err {
+            crate::operation::start_telemetry_enrichment::StartTelemetryEnrichmentError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::start_telemetry_enrichment::StartTelemetryEnrichmentError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::start_telemetry_enrichment::StartTelemetryEnrichmentError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::start_telemetry_enrichment::StartTelemetryEnrichmentError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::start_telemetry_enrichment::StartTelemetryEnrichmentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_telemetry_evaluation::StartTelemetryEvaluationError, R>>
     for Error
 where
@@ -813,6 +887,40 @@ impl From<crate::operation::start_telemetry_evaluation_for_organization::StartTe
             crate::operation::start_telemetry_evaluation_for_organization::StartTelemetryEvaluationForOrganizationError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_telemetry_enrichment::StopTelemetryEnrichmentError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_telemetry_enrichment::StopTelemetryEnrichmentError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::stop_telemetry_enrichment::StopTelemetryEnrichmentError> for Error {
+    fn from(err: crate::operation::stop_telemetry_enrichment::StopTelemetryEnrichmentError) -> Self {
+        match err {
+            crate::operation::stop_telemetry_enrichment::StopTelemetryEnrichmentError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::stop_telemetry_enrichment::StopTelemetryEnrichmentError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::stop_telemetry_enrichment::StopTelemetryEnrichmentError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::stop_telemetry_enrichment::StopTelemetryEnrichmentError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::stop_telemetry_enrichment::StopTelemetryEnrichmentError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

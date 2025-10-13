@@ -1049,6 +1049,15 @@ pub(crate) fn api_key_credential_provider_item_correct_errors(
     builder
 }
 
+pub(crate) fn atlassian_oauth2_provider_config_output_correct_errors(
+    mut builder: crate::types::builders::AtlassianOauth2ProviderConfigOutputBuilder,
+) -> crate::types::builders::AtlassianOauth2ProviderConfigOutputBuilder {
+    if builder.oauth_discovery.is_none() {
+        builder.oauth_discovery = Some(crate::types::Oauth2Discovery::Unknown)
+    }
+    builder
+}
+
 pub(crate) fn browser_summary_correct_errors(
     mut builder: crate::types::builders::BrowserSummaryBuilder,
 ) -> crate::types::builders::BrowserSummaryBuilder {
@@ -1190,6 +1199,24 @@ pub(crate) fn github_oauth2_provider_config_output_correct_errors(
 pub(crate) fn google_oauth2_provider_config_output_correct_errors(
     mut builder: crate::types::builders::GoogleOauth2ProviderConfigOutputBuilder,
 ) -> crate::types::builders::GoogleOauth2ProviderConfigOutputBuilder {
+    if builder.oauth_discovery.is_none() {
+        builder.oauth_discovery = Some(crate::types::Oauth2Discovery::Unknown)
+    }
+    builder
+}
+
+pub(crate) fn included_oauth2_provider_config_output_correct_errors(
+    mut builder: crate::types::builders::IncludedOauth2ProviderConfigOutputBuilder,
+) -> crate::types::builders::IncludedOauth2ProviderConfigOutputBuilder {
+    if builder.oauth_discovery.is_none() {
+        builder.oauth_discovery = Some(crate::types::Oauth2Discovery::Unknown)
+    }
+    builder
+}
+
+pub(crate) fn linkedin_oauth2_provider_config_output_correct_errors(
+    mut builder: crate::types::builders::LinkedinOauth2ProviderConfigOutputBuilder,
+) -> crate::types::builders::LinkedinOauth2ProviderConfigOutputBuilder {
     if builder.oauth_discovery.is_none() {
         builder.oauth_discovery = Some(crate::types::Oauth2Discovery::Unknown)
     }

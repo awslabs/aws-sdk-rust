@@ -11,11 +11,17 @@ pub use crate::types::_credential_provider_vendor_type::CredentialProviderVendor
 
 pub use crate::types::_oauth2_provider_config_output::Oauth2ProviderConfigOutput;
 
-pub use crate::types::_microsoft_oauth2_provider_config_output::MicrosoftOauth2ProviderConfigOutput;
+pub use crate::types::_included_oauth2_provider_config_output::IncludedOauth2ProviderConfigOutput;
 
 pub use crate::types::_oauth2_discovery::Oauth2Discovery;
 
 pub use crate::types::_oauth2_authorization_server_metadata::Oauth2AuthorizationServerMetadata;
+
+pub use crate::types::_linkedin_oauth2_provider_config_output::LinkedinOauth2ProviderConfigOutput;
+
+pub use crate::types::_atlassian_oauth2_provider_config_output::AtlassianOauth2ProviderConfigOutput;
+
+pub use crate::types::_microsoft_oauth2_provider_config_output::MicrosoftOauth2ProviderConfigOutput;
 
 pub use crate::types::_salesforce_oauth2_provider_config_output::SalesforceOauth2ProviderConfigOutput;
 
@@ -30,6 +36,12 @@ pub use crate::types::_custom_oauth2_provider_config_output::CustomOauth2Provide
 pub use crate::types::_secret::Secret;
 
 pub use crate::types::_oauth2_provider_config_input::Oauth2ProviderConfigInput;
+
+pub use crate::types::_included_oauth2_provider_config_input::IncludedOauth2ProviderConfigInput;
+
+pub use crate::types::_linkedin_oauth2_provider_config_input::LinkedinOauth2ProviderConfigInput;
+
+pub use crate::types::_atlassian_oauth2_provider_config_input::AtlassianOauth2ProviderConfigInput;
 
 pub use crate::types::_microsoft_oauth2_provider_config_input::MicrosoftOauth2ProviderConfigInput;
 
@@ -279,6 +291,10 @@ mod _api_key_credential_provider_item;
 
 mod _api_schema_configuration;
 
+mod _atlassian_oauth2_provider_config_input;
+
+mod _atlassian_oauth2_provider_config_output;
+
 mod _authorizer_configuration;
 
 mod _authorizer_type;
@@ -355,6 +371,10 @@ mod _google_oauth2_provider_config_input;
 
 mod _google_oauth2_provider_config_output;
 
+mod _included_oauth2_provider_config_input;
+
+mod _included_oauth2_provider_config_output;
+
 mod _invocation_configuration;
 
 mod _invocation_configuration_input;
@@ -364,6 +384,10 @@ mod _key_type;
 mod _kms_configuration;
 
 mod _lifecycle_configuration;
+
+mod _linkedin_oauth2_provider_config_input;
+
+mod _linkedin_oauth2_provider_config_output;
 
 mod _mcp_gateway_configuration;
 

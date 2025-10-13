@@ -5,9 +5,15 @@ pub use crate::types::_workload_identity_type::WorkloadIdentityTypeBuilder;
 
 pub use crate::types::_oauth2_credential_provider_item::Oauth2CredentialProviderItemBuilder;
 
-pub use crate::types::_microsoft_oauth2_provider_config_output::MicrosoftOauth2ProviderConfigOutputBuilder;
+pub use crate::types::_included_oauth2_provider_config_output::IncludedOauth2ProviderConfigOutputBuilder;
 
 pub use crate::types::_oauth2_authorization_server_metadata::Oauth2AuthorizationServerMetadataBuilder;
+
+pub use crate::types::_linkedin_oauth2_provider_config_output::LinkedinOauth2ProviderConfigOutputBuilder;
+
+pub use crate::types::_atlassian_oauth2_provider_config_output::AtlassianOauth2ProviderConfigOutputBuilder;
+
+pub use crate::types::_microsoft_oauth2_provider_config_output::MicrosoftOauth2ProviderConfigOutputBuilder;
 
 pub use crate::types::_salesforce_oauth2_provider_config_output::SalesforceOauth2ProviderConfigOutputBuilder;
 
@@ -20,6 +26,12 @@ pub use crate::types::_google_oauth2_provider_config_output::GoogleOauth2Provide
 pub use crate::types::_custom_oauth2_provider_config_output::CustomOauth2ProviderConfigOutputBuilder;
 
 pub use crate::types::_secret::SecretBuilder;
+
+pub use crate::types::_included_oauth2_provider_config_input::IncludedOauth2ProviderConfigInputBuilder;
+
+pub use crate::types::_linkedin_oauth2_provider_config_input::LinkedinOauth2ProviderConfigInputBuilder;
+
+pub use crate::types::_atlassian_oauth2_provider_config_input::AtlassianOauth2ProviderConfigInputBuilder;
 
 pub use crate::types::_microsoft_oauth2_provider_config_input::MicrosoftOauth2ProviderConfigInputBuilder;
 

@@ -9,5 +9,8 @@ pub fn ser_microsoft_oauth2_provider_config_input(
     {
         object.key("clientSecret").string(input.client_secret.as_str());
     }
+    if let Some(var_1) = &input.tenant_id {
+        object.key("tenantId").string(var_1.as_str());
+    }
     Ok(())
 }

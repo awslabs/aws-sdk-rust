@@ -9,6 +9,8 @@ pub struct CreateOauth2CredentialProviderInput {
     pub credential_provider_vendor: ::std::option::Option<crate::types::CredentialProviderVendorType>,
     /// <p>The configuration settings for the OAuth2 provider, including client ID, client secret, and other vendor-specific settings.</p>
     pub oauth2_provider_config_input: ::std::option::Option<crate::types::Oauth2ProviderConfigInput>,
+    /// <p>A map of tag keys and values to assign to the OAuth2 credential provider. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.</p>
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateOauth2CredentialProviderInput {
     /// <p>The name of the OAuth2 credential provider. The name must be unique within your account.</p>
@@ -22,6 +24,10 @@ impl CreateOauth2CredentialProviderInput {
     /// <p>The configuration settings for the OAuth2 provider, including client ID, client secret, and other vendor-specific settings.</p>
     pub fn oauth2_provider_config_input(&self) -> ::std::option::Option<&crate::types::Oauth2ProviderConfigInput> {
         self.oauth2_provider_config_input.as_ref()
+    }
+    /// <p>A map of tag keys and values to assign to the OAuth2 credential provider. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.</p>
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.tags.as_ref()
     }
 }
 impl CreateOauth2CredentialProviderInput {
@@ -38,6 +44,7 @@ pub struct CreateOauth2CredentialProviderInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) credential_provider_vendor: ::std::option::Option<crate::types::CredentialProviderVendorType>,
     pub(crate) oauth2_provider_config_input: ::std::option::Option<crate::types::Oauth2ProviderConfigInput>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateOauth2CredentialProviderInputBuilder {
     /// <p>The name of the OAuth2 credential provider. The name must be unique within your account.</p>
@@ -85,6 +92,26 @@ impl CreateOauth2CredentialProviderInputBuilder {
     pub fn get_oauth2_provider_config_input(&self) -> &::std::option::Option<crate::types::Oauth2ProviderConfigInput> {
         &self.oauth2_provider_config_input
     }
+    /// Adds a key-value pair to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>A map of tag keys and values to assign to the OAuth2 credential provider. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.</p>
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut hash_map = self.tags.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.tags = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>A map of tag keys and values to assign to the OAuth2 credential provider. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// <p>A map of tag keys and values to assign to the OAuth2 credential provider. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.tags
+    }
     /// Consumes the builder and constructs a [`CreateOauth2CredentialProviderInput`](crate::operation::create_oauth2_credential_provider::CreateOauth2CredentialProviderInput).
     pub fn build(
         self,
@@ -96,6 +123,7 @@ impl CreateOauth2CredentialProviderInputBuilder {
             name: self.name,
             credential_provider_vendor: self.credential_provider_vendor,
             oauth2_provider_config_input: self.oauth2_provider_config_input,
+            tags: self.tags,
         })
     }
 }

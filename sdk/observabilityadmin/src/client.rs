@@ -177,6 +177,8 @@ mod delete_telemetry_rule_for_organization;
 
 mod get_centralization_rule_for_organization;
 
+mod get_telemetry_enrichment_status;
+
 mod get_telemetry_evaluation_status;
 
 mod get_telemetry_evaluation_status_for_organization;
@@ -197,9 +199,13 @@ mod list_telemetry_rules;
 
 mod list_telemetry_rules_for_organization;
 
+mod start_telemetry_enrichment;
+
 mod start_telemetry_evaluation;
 
 mod start_telemetry_evaluation_for_organization;
+
+mod stop_telemetry_enrichment;
 
 mod stop_telemetry_evaluation;
 

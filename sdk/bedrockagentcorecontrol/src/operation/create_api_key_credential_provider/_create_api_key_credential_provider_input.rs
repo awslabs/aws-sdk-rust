@@ -7,6 +7,8 @@ pub struct CreateApiKeyCredentialProviderInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The API key to use for authentication. This value is encrypted and stored securely.</p>
     pub api_key: ::std::option::Option<::std::string::String>,
+    /// <p>A map of tag keys and values to assign to the API key credential provider. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.</p>
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateApiKeyCredentialProviderInput {
     /// <p>The name of the API key credential provider. The name must be unique within your account.</p>
@@ -17,12 +19,17 @@ impl CreateApiKeyCredentialProviderInput {
     pub fn api_key(&self) -> ::std::option::Option<&str> {
         self.api_key.as_deref()
     }
+    /// <p>A map of tag keys and values to assign to the API key credential provider. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.</p>
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.tags.as_ref()
+    }
 }
 impl ::std::fmt::Debug for CreateApiKeyCredentialProviderInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateApiKeyCredentialProviderInput");
         formatter.field("name", &self.name);
         formatter.field("api_key", &"*** Sensitive Data Redacted ***");
+        formatter.field("tags", &self.tags);
         formatter.finish()
     }
 }
@@ -39,6 +46,7 @@ impl CreateApiKeyCredentialProviderInput {
 pub struct CreateApiKeyCredentialProviderInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) api_key: ::std::option::Option<::std::string::String>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateApiKeyCredentialProviderInputBuilder {
     /// <p>The name of the API key credential provider. The name must be unique within your account.</p>
@@ -71,6 +79,26 @@ impl CreateApiKeyCredentialProviderInputBuilder {
     pub fn get_api_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.api_key
     }
+    /// Adds a key-value pair to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>A map of tag keys and values to assign to the API key credential provider. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.</p>
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut hash_map = self.tags.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.tags = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>A map of tag keys and values to assign to the API key credential provider. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// <p>A map of tag keys and values to assign to the API key credential provider. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.tags
+    }
     /// Consumes the builder and constructs a [`CreateApiKeyCredentialProviderInput`](crate::operation::create_api_key_credential_provider::CreateApiKeyCredentialProviderInput).
     pub fn build(
         self,
@@ -82,6 +110,7 @@ impl CreateApiKeyCredentialProviderInputBuilder {
             crate::operation::create_api_key_credential_provider::CreateApiKeyCredentialProviderInput {
                 name: self.name,
                 api_key: self.api_key,
+                tags: self.tags,
             },
         )
     }
@@ -91,6 +120,7 @@ impl ::std::fmt::Debug for CreateApiKeyCredentialProviderInputBuilder {
         let mut formatter = f.debug_struct("CreateApiKeyCredentialProviderInputBuilder");
         formatter.field("name", &self.name);
         formatter.field("api_key", &"*** Sensitive Data Redacted ***");
+        formatter.field("tags", &self.tags);
         formatter.finish()
     }
 }

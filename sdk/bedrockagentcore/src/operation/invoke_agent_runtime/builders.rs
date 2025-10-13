@@ -281,6 +281,20 @@ impl InvokeAgentRuntimeFluentBuilder {
     pub fn get_qualifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_qualifier()
     }
+    /// <p>The identifier of the Amazon Web Services account for the agent runtime resource.</p>
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.account_id(input.into());
+        self
+    }
+    /// <p>The identifier of the Amazon Web Services account for the agent runtime resource.</p>
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_account_id(input);
+        self
+    }
+    /// <p>The identifier of the Amazon Web Services account for the agent runtime resource.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_account_id()
+    }
     /// <p>The input data to send to the agent runtime. The format of this data depends on the specific agent configuration and must match the specified content type. For most agents, this is a JSON object containing the user's request.</p>
     pub fn payload(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.inner = self.inner.payload(input);

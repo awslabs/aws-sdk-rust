@@ -8,6 +8,8 @@ impl super::Client {
     ///   - [`client_token(impl Into<String>)`](crate::operation::delete_agent_runtime_endpoint::builders::DeleteAgentRuntimeEndpointFluentBuilder::client_token) / [`set_client_token(Option<String>)`](crate::operation::delete_agent_runtime_endpoint::builders::DeleteAgentRuntimeEndpointFluentBuilder::set_client_token):<br>required: **false**<br><p>A unique, case-sensitive identifier to ensure idempotency of the request.</p><br>
     /// - On success, responds with [`DeleteAgentRuntimeEndpointOutput`](crate::operation::delete_agent_runtime_endpoint::DeleteAgentRuntimeEndpointOutput) with field(s):
     ///   - [`status(AgentRuntimeEndpointStatus)`](crate::operation::delete_agent_runtime_endpoint::DeleteAgentRuntimeEndpointOutput::status): <p>The current status of the AgentCore Runtime endpoint deletion.</p>
+    ///   - [`agent_runtime_id(Option<String>)`](crate::operation::delete_agent_runtime_endpoint::DeleteAgentRuntimeEndpointOutput::agent_runtime_id): <p>The unique identifier of the AgentCore Runtime.</p>
+    ///   - [`endpoint_name(Option<String>)`](crate::operation::delete_agent_runtime_endpoint::DeleteAgentRuntimeEndpointOutput::endpoint_name): <p>The name of the AgentCore Runtime endpoint.</p>
     /// - On failure, responds with [`SdkError<DeleteAgentRuntimeEndpointError>`](crate::operation::delete_agent_runtime_endpoint::DeleteAgentRuntimeEndpointError)
     pub fn delete_agent_runtime_endpoint(
         &self,

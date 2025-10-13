@@ -313,6 +313,10 @@ pub(crate) mod shape_agent_runtime_endpoint;
 
 pub(crate) mod shape_api_key_credential_provider_item;
 
+pub(crate) mod shape_atlassian_oauth2_provider_config_input;
+
+pub(crate) mod shape_atlassian_oauth2_provider_config_output;
+
 pub(crate) mod shape_browser_summary;
 
 pub(crate) mod shape_code_interpreter_summary;
@@ -342,6 +346,14 @@ pub(crate) mod shape_github_oauth2_provider_config_output;
 pub(crate) mod shape_google_oauth2_provider_config_input;
 
 pub(crate) mod shape_google_oauth2_provider_config_output;
+
+pub(crate) mod shape_included_oauth2_provider_config_input;
+
+pub(crate) mod shape_included_oauth2_provider_config_output;
+
+pub(crate) mod shape_linkedin_oauth2_provider_config_input;
+
+pub(crate) mod shape_linkedin_oauth2_provider_config_output;
 
 pub(crate) mod shape_mcp_gateway_configuration;
 
@@ -462,6 +474,8 @@ pub(crate) mod shape_semantic_override_consolidation_configuration_input;
 pub(crate) mod shape_semantic_override_extraction_configuration_input;
 
 pub(crate) mod shape_summary_override_consolidation_configuration_input;
+
+pub(crate) mod shape_token_endpoint_auth_methods_type;
 
 pub(crate) mod shape_tool_definition;
 

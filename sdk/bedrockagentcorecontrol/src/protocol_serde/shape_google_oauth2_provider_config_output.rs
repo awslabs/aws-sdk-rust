@@ -17,6 +17,13 @@ where
                         "oauthDiscovery" => {
                             builder = builder.set_oauth_discovery(crate::protocol_serde::shape_oauth2_discovery::de_oauth2_discovery(tokens)?);
                         }
+                        "clientId" => {
+                            builder = builder.set_client_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

@@ -142,6 +142,8 @@ mod batch_delete_memory_records;
 
 mod batch_update_memory_records;
 
+mod complete_resource_token_auth;
+
 mod create_event;
 
 /// Operation customization and supporting types.

@@ -12,12 +12,31 @@
 /// ```text
 /// # let credentialprovidervendortype = unimplemented!();
 /// match credentialprovidervendortype {
+///     CredentialProviderVendorType::AtlassianOauth2 => { /* ... */ },
+///     CredentialProviderVendorType::Auth0Oauth2 => { /* ... */ },
+///     CredentialProviderVendorType::CognitoOauth2 => { /* ... */ },
 ///     CredentialProviderVendorType::CustomOauth2 => { /* ... */ },
+///     CredentialProviderVendorType::CyberArkOauth2 => { /* ... */ },
+///     CredentialProviderVendorType::DropboxOauth2 => { /* ... */ },
+///     CredentialProviderVendorType::FacebookOauth2 => { /* ... */ },
+///     CredentialProviderVendorType::FusionAuthOauth2 => { /* ... */ },
 ///     CredentialProviderVendorType::GithubOauth2 => { /* ... */ },
 ///     CredentialProviderVendorType::GoogleOauth2 => { /* ... */ },
+///     CredentialProviderVendorType::HubspotOauth2 => { /* ... */ },
+///     CredentialProviderVendorType::LinkedinOauth2 => { /* ... */ },
 ///     CredentialProviderVendorType::MicrosoftOauth2 => { /* ... */ },
+///     CredentialProviderVendorType::NotionOauth2 => { /* ... */ },
+///     CredentialProviderVendorType::OktaOauth2 => { /* ... */ },
+///     CredentialProviderVendorType::OneLoginOauth2 => { /* ... */ },
+///     CredentialProviderVendorType::PingOneOauth2 => { /* ... */ },
+///     CredentialProviderVendorType::RedditOauth2 => { /* ... */ },
 ///     CredentialProviderVendorType::SalesforceOauth2 => { /* ... */ },
 ///     CredentialProviderVendorType::SlackOauth2 => { /* ... */ },
+///     CredentialProviderVendorType::SpotifyOauth2 => { /* ... */ },
+///     CredentialProviderVendorType::TwitchOauth2 => { /* ... */ },
+///     CredentialProviderVendorType::XOauth2 => { /* ... */ },
+///     CredentialProviderVendorType::YandexOauth2 => { /* ... */ },
+///     CredentialProviderVendorType::ZoomOauth2 => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -47,17 +66,55 @@
 )]
 pub enum CredentialProviderVendorType {
     #[allow(missing_docs)] // documentation missing in model
+    AtlassianOauth2,
+    #[allow(missing_docs)] // documentation missing in model
+    Auth0Oauth2,
+    #[allow(missing_docs)] // documentation missing in model
+    CognitoOauth2,
+    #[allow(missing_docs)] // documentation missing in model
     CustomOauth2,
+    #[allow(missing_docs)] // documentation missing in model
+    CyberArkOauth2,
+    #[allow(missing_docs)] // documentation missing in model
+    DropboxOauth2,
+    #[allow(missing_docs)] // documentation missing in model
+    FacebookOauth2,
+    #[allow(missing_docs)] // documentation missing in model
+    FusionAuthOauth2,
     #[allow(missing_docs)] // documentation missing in model
     GithubOauth2,
     #[allow(missing_docs)] // documentation missing in model
     GoogleOauth2,
     #[allow(missing_docs)] // documentation missing in model
+    HubspotOauth2,
+    #[allow(missing_docs)] // documentation missing in model
+    LinkedinOauth2,
+    #[allow(missing_docs)] // documentation missing in model
     MicrosoftOauth2,
+    #[allow(missing_docs)] // documentation missing in model
+    NotionOauth2,
+    #[allow(missing_docs)] // documentation missing in model
+    OktaOauth2,
+    #[allow(missing_docs)] // documentation missing in model
+    OneLoginOauth2,
+    #[allow(missing_docs)] // documentation missing in model
+    PingOneOauth2,
+    #[allow(missing_docs)] // documentation missing in model
+    RedditOauth2,
     #[allow(missing_docs)] // documentation missing in model
     SalesforceOauth2,
     #[allow(missing_docs)] // documentation missing in model
     SlackOauth2,
+    #[allow(missing_docs)] // documentation missing in model
+    SpotifyOauth2,
+    #[allow(missing_docs)] // documentation missing in model
+    TwitchOauth2,
+    #[allow(missing_docs)] // documentation missing in model
+    XOauth2,
+    #[allow(missing_docs)] // documentation missing in model
+    YandexOauth2,
+    #[allow(missing_docs)] // documentation missing in model
+    ZoomOauth2,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -65,12 +122,31 @@ pub enum CredentialProviderVendorType {
 impl ::std::convert::From<&str> for CredentialProviderVendorType {
     fn from(s: &str) -> Self {
         match s {
+            "AtlassianOauth2" => CredentialProviderVendorType::AtlassianOauth2,
+            "Auth0Oauth2" => CredentialProviderVendorType::Auth0Oauth2,
+            "CognitoOauth2" => CredentialProviderVendorType::CognitoOauth2,
             "CustomOauth2" => CredentialProviderVendorType::CustomOauth2,
+            "CyberArkOauth2" => CredentialProviderVendorType::CyberArkOauth2,
+            "DropboxOauth2" => CredentialProviderVendorType::DropboxOauth2,
+            "FacebookOauth2" => CredentialProviderVendorType::FacebookOauth2,
+            "FusionAuthOauth2" => CredentialProviderVendorType::FusionAuthOauth2,
             "GithubOauth2" => CredentialProviderVendorType::GithubOauth2,
             "GoogleOauth2" => CredentialProviderVendorType::GoogleOauth2,
+            "HubspotOauth2" => CredentialProviderVendorType::HubspotOauth2,
+            "LinkedinOauth2" => CredentialProviderVendorType::LinkedinOauth2,
             "MicrosoftOauth2" => CredentialProviderVendorType::MicrosoftOauth2,
+            "NotionOauth2" => CredentialProviderVendorType::NotionOauth2,
+            "OktaOauth2" => CredentialProviderVendorType::OktaOauth2,
+            "OneLoginOauth2" => CredentialProviderVendorType::OneLoginOauth2,
+            "PingOneOauth2" => CredentialProviderVendorType::PingOneOauth2,
+            "RedditOauth2" => CredentialProviderVendorType::RedditOauth2,
             "SalesforceOauth2" => CredentialProviderVendorType::SalesforceOauth2,
             "SlackOauth2" => CredentialProviderVendorType::SlackOauth2,
+            "SpotifyOauth2" => CredentialProviderVendorType::SpotifyOauth2,
+            "TwitchOauth2" => CredentialProviderVendorType::TwitchOauth2,
+            "XOauth2" => CredentialProviderVendorType::XOauth2,
+            "YandexOauth2" => CredentialProviderVendorType::YandexOauth2,
+            "ZoomOauth2" => CredentialProviderVendorType::ZoomOauth2,
             other => CredentialProviderVendorType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -86,24 +162,62 @@ impl CredentialProviderVendorType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            CredentialProviderVendorType::AtlassianOauth2 => "AtlassianOauth2",
+            CredentialProviderVendorType::Auth0Oauth2 => "Auth0Oauth2",
+            CredentialProviderVendorType::CognitoOauth2 => "CognitoOauth2",
             CredentialProviderVendorType::CustomOauth2 => "CustomOauth2",
+            CredentialProviderVendorType::CyberArkOauth2 => "CyberArkOauth2",
+            CredentialProviderVendorType::DropboxOauth2 => "DropboxOauth2",
+            CredentialProviderVendorType::FacebookOauth2 => "FacebookOauth2",
+            CredentialProviderVendorType::FusionAuthOauth2 => "FusionAuthOauth2",
             CredentialProviderVendorType::GithubOauth2 => "GithubOauth2",
             CredentialProviderVendorType::GoogleOauth2 => "GoogleOauth2",
+            CredentialProviderVendorType::HubspotOauth2 => "HubspotOauth2",
+            CredentialProviderVendorType::LinkedinOauth2 => "LinkedinOauth2",
             CredentialProviderVendorType::MicrosoftOauth2 => "MicrosoftOauth2",
+            CredentialProviderVendorType::NotionOauth2 => "NotionOauth2",
+            CredentialProviderVendorType::OktaOauth2 => "OktaOauth2",
+            CredentialProviderVendorType::OneLoginOauth2 => "OneLoginOauth2",
+            CredentialProviderVendorType::PingOneOauth2 => "PingOneOauth2",
+            CredentialProviderVendorType::RedditOauth2 => "RedditOauth2",
             CredentialProviderVendorType::SalesforceOauth2 => "SalesforceOauth2",
             CredentialProviderVendorType::SlackOauth2 => "SlackOauth2",
+            CredentialProviderVendorType::SpotifyOauth2 => "SpotifyOauth2",
+            CredentialProviderVendorType::TwitchOauth2 => "TwitchOauth2",
+            CredentialProviderVendorType::XOauth2 => "XOauth2",
+            CredentialProviderVendorType::YandexOauth2 => "YandexOauth2",
+            CredentialProviderVendorType::ZoomOauth2 => "ZoomOauth2",
             CredentialProviderVendorType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "AtlassianOauth2",
+            "Auth0Oauth2",
+            "CognitoOauth2",
             "CustomOauth2",
+            "CyberArkOauth2",
+            "DropboxOauth2",
+            "FacebookOauth2",
+            "FusionAuthOauth2",
             "GithubOauth2",
             "GoogleOauth2",
+            "HubspotOauth2",
+            "LinkedinOauth2",
             "MicrosoftOauth2",
+            "NotionOauth2",
+            "OktaOauth2",
+            "OneLoginOauth2",
+            "PingOneOauth2",
+            "RedditOauth2",
             "SalesforceOauth2",
             "SlackOauth2",
+            "SpotifyOauth2",
+            "TwitchOauth2",
+            "XOauth2",
+            "YandexOauth2",
+            "ZoomOauth2",
         ]
     }
 }
@@ -127,12 +241,31 @@ impl CredentialProviderVendorType {
 impl ::std::fmt::Display for CredentialProviderVendorType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            CredentialProviderVendorType::AtlassianOauth2 => write!(f, "AtlassianOauth2"),
+            CredentialProviderVendorType::Auth0Oauth2 => write!(f, "Auth0Oauth2"),
+            CredentialProviderVendorType::CognitoOauth2 => write!(f, "CognitoOauth2"),
             CredentialProviderVendorType::CustomOauth2 => write!(f, "CustomOauth2"),
+            CredentialProviderVendorType::CyberArkOauth2 => write!(f, "CyberArkOauth2"),
+            CredentialProviderVendorType::DropboxOauth2 => write!(f, "DropboxOauth2"),
+            CredentialProviderVendorType::FacebookOauth2 => write!(f, "FacebookOauth2"),
+            CredentialProviderVendorType::FusionAuthOauth2 => write!(f, "FusionAuthOauth2"),
             CredentialProviderVendorType::GithubOauth2 => write!(f, "GithubOauth2"),
             CredentialProviderVendorType::GoogleOauth2 => write!(f, "GoogleOauth2"),
+            CredentialProviderVendorType::HubspotOauth2 => write!(f, "HubspotOauth2"),
+            CredentialProviderVendorType::LinkedinOauth2 => write!(f, "LinkedinOauth2"),
             CredentialProviderVendorType::MicrosoftOauth2 => write!(f, "MicrosoftOauth2"),
+            CredentialProviderVendorType::NotionOauth2 => write!(f, "NotionOauth2"),
+            CredentialProviderVendorType::OktaOauth2 => write!(f, "OktaOauth2"),
+            CredentialProviderVendorType::OneLoginOauth2 => write!(f, "OneLoginOauth2"),
+            CredentialProviderVendorType::PingOneOauth2 => write!(f, "PingOneOauth2"),
+            CredentialProviderVendorType::RedditOauth2 => write!(f, "RedditOauth2"),
             CredentialProviderVendorType::SalesforceOauth2 => write!(f, "SalesforceOauth2"),
             CredentialProviderVendorType::SlackOauth2 => write!(f, "SlackOauth2"),
+            CredentialProviderVendorType::SpotifyOauth2 => write!(f, "SpotifyOauth2"),
+            CredentialProviderVendorType::TwitchOauth2 => write!(f, "TwitchOauth2"),
+            CredentialProviderVendorType::XOauth2 => write!(f, "XOauth2"),
+            CredentialProviderVendorType::YandexOauth2 => write!(f, "YandexOauth2"),
+            CredentialProviderVendorType::ZoomOauth2 => write!(f, "ZoomOauth2"),
             CredentialProviderVendorType::Unknown(value) => write!(f, "{}", value),
         }
     }

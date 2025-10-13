@@ -4,12 +4,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum Oauth2ProviderConfigInput {
+    /// <p>Configuration settings for Atlassian OAuth2 provider integration.</p>
+    AtlassianOauth2ProviderConfig(crate::types::AtlassianOauth2ProviderConfigInput),
     /// <p>The configuration for a custom OAuth2 provider.</p>
     CustomOauth2ProviderConfig(crate::types::CustomOauth2ProviderConfigInput),
     /// <p>The configuration for a GitHub OAuth2 provider.</p>
     GithubOauth2ProviderConfig(crate::types::GithubOauth2ProviderConfigInput),
     /// <p>The configuration for a Google OAuth2 provider.</p>
     GoogleOauth2ProviderConfig(crate::types::GoogleOauth2ProviderConfigInput),
+    /// <p>The configuration for a non-custom OAuth2 provider. This includes settings for supported OAuth2 providers that have built-in integration support.</p>
+    IncludedOauth2ProviderConfig(crate::types::IncludedOauth2ProviderConfigInput),
+    /// <p>Configuration settings for LinkedIn OAuth2 provider integration.</p>
+    LinkedinOauth2ProviderConfig(crate::types::LinkedinOauth2ProviderConfigInput),
     /// <p>The configuration for a Microsoft OAuth2 provider.</p>
     MicrosoftOauth2ProviderConfig(crate::types::MicrosoftOauth2ProviderConfigInput),
     /// <p>The configuration for a Salesforce OAuth2 provider.</p>
@@ -27,6 +33,19 @@ pub enum Oauth2ProviderConfigInput {
     Unknown,
 }
 impl Oauth2ProviderConfigInput {
+    /// Tries to convert the enum instance into [`AtlassianOauth2ProviderConfig`](crate::types::Oauth2ProviderConfigInput::AtlassianOauth2ProviderConfig), extracting the inner [`AtlassianOauth2ProviderConfigInput`](crate::types::AtlassianOauth2ProviderConfigInput).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_atlassian_oauth2_provider_config(&self) -> ::std::result::Result<&crate::types::AtlassianOauth2ProviderConfigInput, &Self> {
+        if let Oauth2ProviderConfigInput::AtlassianOauth2ProviderConfig(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`AtlassianOauth2ProviderConfig`](crate::types::Oauth2ProviderConfigInput::AtlassianOauth2ProviderConfig).
+    pub fn is_atlassian_oauth2_provider_config(&self) -> bool {
+        self.as_atlassian_oauth2_provider_config().is_ok()
+    }
     /// Tries to convert the enum instance into [`CustomOauth2ProviderConfig`](crate::types::Oauth2ProviderConfigInput::CustomOauth2ProviderConfig), extracting the inner [`CustomOauth2ProviderConfigInput`](crate::types::CustomOauth2ProviderConfigInput).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_custom_oauth2_provider_config(&self) -> ::std::result::Result<&crate::types::CustomOauth2ProviderConfigInput, &Self> {
@@ -65,6 +84,32 @@ impl Oauth2ProviderConfigInput {
     /// Returns true if this is a [`GoogleOauth2ProviderConfig`](crate::types::Oauth2ProviderConfigInput::GoogleOauth2ProviderConfig).
     pub fn is_google_oauth2_provider_config(&self) -> bool {
         self.as_google_oauth2_provider_config().is_ok()
+    }
+    /// Tries to convert the enum instance into [`IncludedOauth2ProviderConfig`](crate::types::Oauth2ProviderConfigInput::IncludedOauth2ProviderConfig), extracting the inner [`IncludedOauth2ProviderConfigInput`](crate::types::IncludedOauth2ProviderConfigInput).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_included_oauth2_provider_config(&self) -> ::std::result::Result<&crate::types::IncludedOauth2ProviderConfigInput, &Self> {
+        if let Oauth2ProviderConfigInput::IncludedOauth2ProviderConfig(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`IncludedOauth2ProviderConfig`](crate::types::Oauth2ProviderConfigInput::IncludedOauth2ProviderConfig).
+    pub fn is_included_oauth2_provider_config(&self) -> bool {
+        self.as_included_oauth2_provider_config().is_ok()
+    }
+    /// Tries to convert the enum instance into [`LinkedinOauth2ProviderConfig`](crate::types::Oauth2ProviderConfigInput::LinkedinOauth2ProviderConfig), extracting the inner [`LinkedinOauth2ProviderConfigInput`](crate::types::LinkedinOauth2ProviderConfigInput).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_linkedin_oauth2_provider_config(&self) -> ::std::result::Result<&crate::types::LinkedinOauth2ProviderConfigInput, &Self> {
+        if let Oauth2ProviderConfigInput::LinkedinOauth2ProviderConfig(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`LinkedinOauth2ProviderConfig`](crate::types::Oauth2ProviderConfigInput::LinkedinOauth2ProviderConfig).
+    pub fn is_linkedin_oauth2_provider_config(&self) -> bool {
+        self.as_linkedin_oauth2_provider_config().is_ok()
     }
     /// Tries to convert the enum instance into [`MicrosoftOauth2ProviderConfig`](crate::types::Oauth2ProviderConfigInput::MicrosoftOauth2ProviderConfig), extracting the inner [`MicrosoftOauth2ProviderConfigInput`](crate::types::MicrosoftOauth2ProviderConfigInput).
     /// Returns `Err(&Self)` if it can't be converted.

@@ -31,6 +31,8 @@ pub use crate::types::_source_logs_configuration::SourceLogsConfiguration;
 
 pub use crate::types::_encrypted_log_group_strategy::EncryptedLogGroupStrategy;
 
+pub use crate::types::_telemetry_enrichment_status::TelemetryEnrichmentStatus;
+
 pub use crate::types::_telemetry_rule_summary::TelemetryRuleSummary;
 
 pub use crate::types::_telemetry_configuration::TelemetryConfiguration;
@@ -80,6 +82,8 @@ mod _status;
 mod _telemetry_configuration;
 
 mod _telemetry_destination_configuration;
+
+mod _telemetry_enrichment_status;
 
 mod _telemetry_rule;
 

@@ -174,6 +174,20 @@ pub(crate) fn de_get_resource_oauth2_token(
                             .transpose()?,
                     );
                 }
+                "sessionStatus" => {
+                    builder = builder.set_session_status(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::SessionStatus::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
+                "sessionUri" => {
+                    builder = builder.set_session_uri(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

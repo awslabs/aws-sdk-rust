@@ -12,6 +12,8 @@ pub struct Oauth2AuthorizationServerMetadata {
     pub token_endpoint: ::std::string::String,
     /// <p>The supported response types for the OAuth2 authorization server.</p>
     pub response_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The authentication methods supported by the token endpoint. This specifies how clients can authenticate when requesting tokens from the authorization server.</p>
+    pub token_endpoint_auth_methods: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl Oauth2AuthorizationServerMetadata {
     /// <p>The issuer URL for the OAuth2 authorization server.</p>
@@ -35,6 +37,12 @@ impl Oauth2AuthorizationServerMetadata {
     pub fn response_types(&self) -> &[::std::string::String] {
         self.response_types.as_deref().unwrap_or_default()
     }
+    /// <p>The authentication methods supported by the token endpoint. This specifies how clients can authenticate when requesting tokens from the authorization server.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.token_endpoint_auth_methods.is_none()`.
+    pub fn token_endpoint_auth_methods(&self) -> &[::std::string::String] {
+        self.token_endpoint_auth_methods.as_deref().unwrap_or_default()
+    }
 }
 impl Oauth2AuthorizationServerMetadata {
     /// Creates a new builder-style object to manufacture [`Oauth2AuthorizationServerMetadata`](crate::types::Oauth2AuthorizationServerMetadata).
@@ -51,6 +59,7 @@ pub struct Oauth2AuthorizationServerMetadataBuilder {
     pub(crate) authorization_endpoint: ::std::option::Option<::std::string::String>,
     pub(crate) token_endpoint: ::std::option::Option<::std::string::String>,
     pub(crate) response_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) token_endpoint_auth_methods: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl Oauth2AuthorizationServerMetadataBuilder {
     /// <p>The issuer URL for the OAuth2 authorization server.</p>
@@ -118,6 +127,26 @@ impl Oauth2AuthorizationServerMetadataBuilder {
     pub fn get_response_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.response_types
     }
+    /// Appends an item to `token_endpoint_auth_methods`.
+    ///
+    /// To override the contents of this collection use [`set_token_endpoint_auth_methods`](Self::set_token_endpoint_auth_methods).
+    ///
+    /// <p>The authentication methods supported by the token endpoint. This specifies how clients can authenticate when requesting tokens from the authorization server.</p>
+    pub fn token_endpoint_auth_methods(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.token_endpoint_auth_methods.unwrap_or_default();
+        v.push(input.into());
+        self.token_endpoint_auth_methods = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The authentication methods supported by the token endpoint. This specifies how clients can authenticate when requesting tokens from the authorization server.</p>
+    pub fn set_token_endpoint_auth_methods(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.token_endpoint_auth_methods = input;
+        self
+    }
+    /// <p>The authentication methods supported by the token endpoint. This specifies how clients can authenticate when requesting tokens from the authorization server.</p>
+    pub fn get_token_endpoint_auth_methods(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.token_endpoint_auth_methods
+    }
     /// Consumes the builder and constructs a [`Oauth2AuthorizationServerMetadata`](crate::types::Oauth2AuthorizationServerMetadata).
     /// This method will fail if any of the following fields are not set:
     /// - [`issuer`](crate::types::builders::Oauth2AuthorizationServerMetadataBuilder::issuer)
@@ -144,6 +173,7 @@ impl Oauth2AuthorizationServerMetadataBuilder {
                 )
             })?,
             response_types: self.response_types,
+            token_endpoint_auth_methods: self.token_endpoint_auth_methods,
         })
     }
 }

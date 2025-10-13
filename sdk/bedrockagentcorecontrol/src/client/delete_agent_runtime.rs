@@ -6,6 +6,7 @@ impl super::Client {
     ///   - [`agent_runtime_id(impl Into<String>)`](crate::operation::delete_agent_runtime::builders::DeleteAgentRuntimeFluentBuilder::agent_runtime_id) / [`set_agent_runtime_id(Option<String>)`](crate::operation::delete_agent_runtime::builders::DeleteAgentRuntimeFluentBuilder::set_agent_runtime_id):<br>required: **true**<br><p>The unique identifier of the AgentCore Runtime to delete.</p><br>
     /// - On success, responds with [`DeleteAgentRuntimeOutput`](crate::operation::delete_agent_runtime::DeleteAgentRuntimeOutput) with field(s):
     ///   - [`status(AgentRuntimeStatus)`](crate::operation::delete_agent_runtime::DeleteAgentRuntimeOutput::status): <p>The current status of the AgentCore Runtime deletion.</p>
+    ///   - [`agent_runtime_id(Option<String>)`](crate::operation::delete_agent_runtime::DeleteAgentRuntimeOutput::agent_runtime_id): <p>The unique identifier of the AgentCore Runtime.</p>
     /// - On failure, responds with [`SdkError<DeleteAgentRuntimeError>`](crate::operation::delete_agent_runtime::DeleteAgentRuntimeError)
     pub fn delete_agent_runtime(&self) -> crate::operation::delete_agent_runtime::builders::DeleteAgentRuntimeFluentBuilder {
         crate::operation::delete_agent_runtime::builders::DeleteAgentRuntimeFluentBuilder::new(self.handle.clone())

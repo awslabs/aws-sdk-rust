@@ -169,6 +169,20 @@ impl GetResourceOauth2TokenFluentBuilder {
     pub fn get_oauth2_flow(&self) -> &::std::option::Option<crate::types::Oauth2FlowType> {
         self.inner.get_oauth2_flow()
     }
+    /// <p>Unique identifier for the user's authentication session for retrieving OAuth2 tokens. This ID tracks the authorization flow state across multiple requests and responses during the OAuth2 authentication process.</p>
+    pub fn session_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.session_uri(input.into());
+        self
+    }
+    /// <p>Unique identifier for the user's authentication session for retrieving OAuth2 tokens. This ID tracks the authorization flow state across multiple requests and responses during the OAuth2 authentication process.</p>
+    pub fn set_session_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_session_uri(input);
+        self
+    }
+    /// <p>Unique identifier for the user's authentication session for retrieving OAuth2 tokens. This ID tracks the authorization flow state across multiple requests and responses during the OAuth2 authentication process.</p>
+    pub fn get_session_uri(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_session_uri()
+    }
     /// <p>The callback URL to redirect to after the OAuth 2.0 token retrieval is complete. This URL must be one of the provided URLs configured for the workload identity.</p>
     pub fn resource_oauth2_return_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_oauth2_return_url(input.into());
@@ -222,5 +236,19 @@ impl GetResourceOauth2TokenFluentBuilder {
     /// <p>A map of custom parameters to include in the authorization request to the resource credential provider. These parameters are in addition to the standard OAuth 2.0 flow parameters, and will not override them.</p>
     pub fn get_custom_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_custom_parameters()
+    }
+    /// <p>An opaque string that will be sent back to the callback URL provided in resourceOauth2ReturnUrl. This state should be used to protect the callback URL of your application against CSRF attacks by ensuring the response corresponds to the original request.</p>
+    pub fn custom_state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.custom_state(input.into());
+        self
+    }
+    /// <p>An opaque string that will be sent back to the callback URL provided in resourceOauth2ReturnUrl. This state should be used to protect the callback URL of your application against CSRF attacks by ensuring the response corresponds to the original request.</p>
+    pub fn set_custom_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_custom_state(input);
+        self
+    }
+    /// <p>An opaque string that will be sent back to the callback URL provided in resourceOauth2ReturnUrl. This state should be used to protect the callback URL of your application against CSRF attacks by ensuring the response corresponds to the original request.</p>
+    pub fn get_custom_state(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_custom_state()
     }
 }
