@@ -28,6 +28,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "BackupPlanName" => {
+                            builder = builder.set_backup_plan_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "BackupPlanVersion" => {
                             builder = builder.set_backup_plan_version(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -37,6 +44,27 @@ where
                         }
                         "BackupRuleId" => {
                             builder = builder.set_backup_rule_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "BackupRuleName" => {
+                            builder = builder.set_backup_rule_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "BackupRuleCron" => {
+                            builder = builder.set_backup_rule_cron(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "BackupRuleTimezone" => {
+                            builder = builder.set_backup_rule_timezone(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,

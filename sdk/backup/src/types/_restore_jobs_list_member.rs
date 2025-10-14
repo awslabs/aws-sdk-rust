@@ -10,6 +10,10 @@ pub struct RestoreJobsListMember {
     pub restore_job_id: ::std::option::Option<::std::string::String>,
     /// <p>An ARN that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
     pub recovery_point_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the original resource that was backed up. This provides context about what resource is being restored.</p>
+    pub source_resource_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the backup vault containing the recovery point being restored. This helps identify vault access policies and permissions.</p>
+    pub backup_vault_arn: ::std::option::Option<::std::string::String>,
     /// <p>The date and time a restore job is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time a job to restore a recovery point is completed, in Unix format and Coordinated Universal Time (UTC). The value of <code>CompletionDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
@@ -55,6 +59,14 @@ impl RestoreJobsListMember {
     /// <p>An ARN that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
     pub fn recovery_point_arn(&self) -> ::std::option::Option<&str> {
         self.recovery_point_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the original resource that was backed up. This provides context about what resource is being restored.</p>
+    pub fn source_resource_arn(&self) -> ::std::option::Option<&str> {
+        self.source_resource_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the backup vault containing the recovery point being restored. This helps identify vault access policies and permissions.</p>
+    pub fn backup_vault_arn(&self) -> ::std::option::Option<&str> {
+        self.backup_vault_arn.as_deref()
     }
     /// <p>The date and time a restore job is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub fn creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -135,6 +147,8 @@ pub struct RestoreJobsListMemberBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) restore_job_id: ::std::option::Option<::std::string::String>,
     pub(crate) recovery_point_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) source_resource_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) backup_vault_arn: ::std::option::Option<::std::string::String>,
     pub(crate) creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) completion_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) status: ::std::option::Option<crate::types::RestoreJobStatus>,
@@ -194,6 +208,34 @@ impl RestoreJobsListMemberBuilder {
     /// <p>An ARN that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
     pub fn get_recovery_point_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.recovery_point_arn
+    }
+    /// <p>The Amazon Resource Name (ARN) of the original resource that was backed up. This provides context about what resource is being restored.</p>
+    pub fn source_resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.source_resource_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the original resource that was backed up. This provides context about what resource is being restored.</p>
+    pub fn set_source_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.source_resource_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the original resource that was backed up. This provides context about what resource is being restored.</p>
+    pub fn get_source_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_resource_arn
+    }
+    /// <p>The Amazon Resource Name (ARN) of the backup vault containing the recovery point being restored. This helps identify vault access policies and permissions.</p>
+    pub fn backup_vault_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.backup_vault_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the backup vault containing the recovery point being restored. This helps identify vault access policies and permissions.</p>
+    pub fn set_backup_vault_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.backup_vault_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the backup vault containing the recovery point being restored. This helps identify vault access policies and permissions.</p>
+    pub fn get_backup_vault_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.backup_vault_arn
     }
     /// <p>The date and time a restore job is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -425,6 +467,8 @@ impl RestoreJobsListMemberBuilder {
             account_id: self.account_id,
             restore_job_id: self.restore_job_id,
             recovery_point_arn: self.recovery_point_arn,
+            source_resource_arn: self.source_resource_arn,
+            backup_vault_arn: self.backup_vault_arn,
             creation_date: self.creation_date,
             completion_date: self.completion_date,
             status: self.status,

@@ -181,6 +181,9 @@ pub mod copy_image;
 /// Types for the `CopySnapshot` operation.
 pub mod copy_snapshot;
 
+/// Types for the `CopyVolumes` operation.
+pub mod copy_volumes;
+
 /// Types for the `CreateCapacityReservation` operation.
 pub mod create_capacity_reservation;
 

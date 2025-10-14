@@ -891,6 +891,8 @@ pub use crate::types::_contact::Contact;
 
 pub use crate::types::_contact_details::ContactDetails;
 
+pub use crate::types::_task_template_info_v2::TaskTemplateInfoV2;
+
 pub use crate::types::_contact_evaluation::ContactEvaluation;
 
 pub use crate::types::_status::Status;
@@ -1846,6 +1848,8 @@ mod _task_template_field;
 mod _task_template_field_identifier;
 
 mod _task_template_field_type;
+
+mod _task_template_info_v2;
 
 mod _task_template_metadata;
 

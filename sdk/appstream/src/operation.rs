@@ -13,6 +13,9 @@ pub mod associate_application_to_entitlement;
 /// Types for the `AssociateFleet` operation.
 pub mod associate_fleet;
 
+/// Types for the `AssociateSoftwareToImageBuilder` operation.
+pub mod associate_software_to_image_builder;
+
 /// Types for the `BatchAssociateUserStack` operation.
 pub mod batch_associate_user_stack;
 
@@ -115,6 +118,9 @@ pub mod describe_app_block_builders;
 /// Types for the `DescribeAppBlocks` operation.
 pub mod describe_app_blocks;
 
+/// Types for the `DescribeAppLicenseUsage` operation.
+pub mod describe_app_license_usage;
+
 /// Types for the `DescribeApplicationFleetAssociations` operation.
 pub mod describe_application_fleet_associations;
 
@@ -141,6 +147,9 @@ pub mod describe_images;
 
 /// Types for the `DescribeSessions` operation.
 pub mod describe_sessions;
+
+/// Types for the `DescribeSoftwareAssociations` operation.
+pub mod describe_software_associations;
 
 /// Types for the `DescribeStacks` operation.
 pub mod describe_stacks;
@@ -172,6 +181,9 @@ pub mod disassociate_application_from_entitlement;
 /// Types for the `DisassociateFleet` operation.
 pub mod disassociate_fleet;
 
+/// Types for the `DisassociateSoftwareFromImageBuilder` operation.
+pub mod disassociate_software_from_image_builder;
+
 /// Types for the `EnableUser` operation.
 pub mod enable_user;
 
@@ -198,6 +210,9 @@ pub mod start_fleet;
 
 /// Types for the `StartImageBuilder` operation.
 pub mod start_image_builder;
+
+/// Types for the `StartSoftwareDeploymentToImageBuilder` operation.
+pub mod start_software_deployment_to_image_builder;
 
 /// Types for the `StopAppBlockBuilder` operation.
 pub mod stop_app_block_builder;

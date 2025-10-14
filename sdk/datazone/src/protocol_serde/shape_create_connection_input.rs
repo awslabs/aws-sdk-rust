@@ -15,17 +15,23 @@ pub fn ser_create_connection_input_input(
     if let Some(var_4) = &input.description {
         object.key("description").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.environment_identifier {
-        object.key("environmentIdentifier").string(var_5.as_str());
+    if let Some(var_5) = &input.enable_trusted_identity_propagation {
+        object.key("enableTrustedIdentityPropagation").boolean(*var_5);
     }
-    if let Some(var_6) = &input.name {
-        object.key("name").string(var_6.as_str());
+    if let Some(var_6) = &input.environment_identifier {
+        object.key("environmentIdentifier").string(var_6.as_str());
     }
-    if let Some(var_7) = &input.props {
+    if let Some(var_7) = &input.name {
+        object.key("name").string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.props {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("props").start_object();
-        crate::protocol_serde::shape_connection_properties_input::ser_connection_properties_input(&mut object_8, var_7)?;
-        object_8.finish();
+        let mut object_9 = object.key("props").start_object();
+        crate::protocol_serde::shape_connection_properties_input::ser_connection_properties_input(&mut object_9, var_8)?;
+        object_9.finish();
+    }
+    if let Some(var_10) = &input.scope {
+        object.key("scope").string(var_10.as_str());
     }
     Ok(())
 }

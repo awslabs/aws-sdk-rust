@@ -23,7 +23,9 @@ pub struct UpdateServerInput {
     /// <p>The certificate must be a valid SSL/TLS X.509 version 3 certificate with FQDN or IP address specified and information about the issuer.</p>
     /// </note>
     pub certificate: ::std::option::Option<::std::string::String>,
-    /// <p>The protocol settings that are configured for your server.</p>
+    /// <p>The protocol settings that are configured for your server.</p><note>
+    /// <p>Avoid placing Network Load Balancers (NLBs) or NAT gateways in front of Transfer Family servers, as this increases costs and can cause performance issues, including reduced connection limits for FTPS. For more details, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/infrastructure-security.html#nlb-considerations"> Avoid placing NLBs and NATs in front of Transfer Family</a>.</p>
+    /// </note>
     /// <ul>
     /// <li>
     /// <p>To indicate passive mode (for FTP and FTPS protocols), use the <code>PassiveIp</code> parameter. Enter a single dotted-quad IPv4 address, such as the external IP address of a firewall, router, or load balancer.</p></li>
@@ -159,7 +161,9 @@ impl UpdateServerInput {
     pub fn certificate(&self) -> ::std::option::Option<&str> {
         self.certificate.as_deref()
     }
-    /// <p>The protocol settings that are configured for your server.</p>
+    /// <p>The protocol settings that are configured for your server.</p><note>
+    /// <p>Avoid placing Network Load Balancers (NLBs) or NAT gateways in front of Transfer Family servers, as this increases costs and can cause performance issues, including reduced connection limits for FTPS. For more details, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/infrastructure-security.html#nlb-considerations"> Avoid placing NLBs and NATs in front of Transfer Family</a>.</p>
+    /// </note>
     /// <ul>
     /// <li>
     /// <p>To indicate passive mode (for FTP and FTPS protocols), use the <code>PassiveIp</code> parameter. Enter a single dotted-quad IPv4 address, such as the external IP address of a firewall, router, or load balancer.</p></li>
@@ -429,7 +433,9 @@ impl UpdateServerInputBuilder {
     pub fn get_certificate(&self) -> &::std::option::Option<::std::string::String> {
         &self.certificate
     }
-    /// <p>The protocol settings that are configured for your server.</p>
+    /// <p>The protocol settings that are configured for your server.</p><note>
+    /// <p>Avoid placing Network Load Balancers (NLBs) or NAT gateways in front of Transfer Family servers, as this increases costs and can cause performance issues, including reduced connection limits for FTPS. For more details, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/infrastructure-security.html#nlb-considerations"> Avoid placing NLBs and NATs in front of Transfer Family</a>.</p>
+    /// </note>
     /// <ul>
     /// <li>
     /// <p>To indicate passive mode (for FTP and FTPS protocols), use the <code>PassiveIp</code> parameter. Enter a single dotted-quad IPv4 address, such as the external IP address of a firewall, router, or load balancer.</p></li>
@@ -444,7 +450,9 @@ impl UpdateServerInputBuilder {
         self.protocol_details = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The protocol settings that are configured for your server.</p>
+    /// <p>The protocol settings that are configured for your server.</p><note>
+    /// <p>Avoid placing Network Load Balancers (NLBs) or NAT gateways in front of Transfer Family servers, as this increases costs and can cause performance issues, including reduced connection limits for FTPS. For more details, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/infrastructure-security.html#nlb-considerations"> Avoid placing NLBs and NATs in front of Transfer Family</a>.</p>
+    /// </note>
     /// <ul>
     /// <li>
     /// <p>To indicate passive mode (for FTP and FTPS protocols), use the <code>PassiveIp</code> parameter. Enter a single dotted-quad IPv4 address, such as the external IP address of a firewall, router, or load balancer.</p></li>
@@ -459,7 +467,9 @@ impl UpdateServerInputBuilder {
         self.protocol_details = input;
         self
     }
-    /// <p>The protocol settings that are configured for your server.</p>
+    /// <p>The protocol settings that are configured for your server.</p><note>
+    /// <p>Avoid placing Network Load Balancers (NLBs) or NAT gateways in front of Transfer Family servers, as this increases costs and can cause performance issues, including reduced connection limits for FTPS. For more details, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/infrastructure-security.html#nlb-considerations"> Avoid placing NLBs and NATs in front of Transfer Family</a>.</p>
+    /// </note>
     /// <ul>
     /// <li>
     /// <p>To indicate passive mode (for FTP and FTPS protocols), use the <code>PassiveIp</code> parameter. Enter a single dotted-quad IPv4 address, such as the external IP address of a firewall, router, or load balancer.</p></li>

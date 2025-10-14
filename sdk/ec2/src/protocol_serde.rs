@@ -263,6 +263,10 @@ pub(crate) mod shape_copy_snapshot;
 
 pub(crate) mod shape_copy_snapshot_input;
 
+pub(crate) mod shape_copy_volumes;
+
+pub(crate) mod shape_copy_volumes_input;
+
 pub(crate) mod shape_create_capacity_reservation;
 
 pub(crate) mod shape_create_capacity_reservation_by_splitting;

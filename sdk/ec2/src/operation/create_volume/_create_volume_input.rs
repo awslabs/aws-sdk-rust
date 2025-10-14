@@ -12,18 +12,18 @@ pub struct CreateVolumeInput {
     /// <p>Indicates whether the volume should be encrypted. The effect of setting the encryption state to <code>true</code> depends on the volume origin (new or from a snapshot), starting encryption state, ownership, and whether encryption by default is enabled. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/work-with-ebs-encr.html#encryption-by-default">Encryption by default</a> in the <i>Amazon EBS User Guide</i>.</p>
     /// <p>Encrypted Amazon EBS volumes must be attached to instances that support Amazon EBS encryption. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption-requirements.html#ebs-encryption_supported_instances">Supported instance types</a>.</p>
     pub encrypted: ::std::option::Option<bool>,
-    /// <p>The number of I/O operations per second (IOPS). For <code>gp3</code>, <code>io1</code>, and <code>io2</code> volumes, this represents the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents the baseline performance of the volume and the rate at which the volume accumulates I/O credits for bursting.</p>
-    /// <p>The following are the supported values for each volume type:</p>
+    /// <p>The number of I/O operations per second (IOPS) to provision for the volume. Required for <code>io1</code> and <code>io2</code> volumes. Optional for <code>gp3</code> volumes. Omit for all other volume types.</p>
+    /// <p>Valid ranges:</p>
     /// <ul>
     /// <li>
-    /// <p><code>gp3</code>: 3,000 - 80,000 IOPS</p></li>
+    /// <p>gp3: <code>3,000 </code>(<i>default</i>)<code> - 80,000</code> IOPS</p></li>
     /// <li>
-    /// <p><code>io1</code>: 100 - 64,000 IOPS</p></li>
+    /// <p>io1: <code>100 - 64,000</code> IOPS</p></li>
     /// <li>
-    /// <p><code>io2</code>: 100 - 256,000 IOPS</p></li>
-    /// </ul>
-    /// <p>For <code>io2</code> volumes, you can achieve up to 256,000 IOPS on <a href="https://docs.aws.amazon.com/ec2/latest/instancetypes/ec2-nitro-instances.html">instances built on the Nitro System</a>. On other instances, you can achieve performance up to 32,000 IOPS.</p>
-    /// <p>This parameter is required for <code>io1</code> and <code>io2</code> volumes. The default for <code>gp3</code> volumes is 3,000 IOPS. This parameter is not supported for <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or <code>standard</code> volumes.</p>
+    /// <p>io2: <code>100 - 256,000</code> IOPS</p></li>
+    /// </ul><note>
+    /// <p><a href="https://docs.aws.amazon.com/ec2/latest/instancetypes/ec2-nitro-instances.html"> Instances built on the Nitro System</a> can support up to 256,000 IOPS. Other instances can support up to 32,000 IOPS.</p>
+    /// </note>
     pub iops: ::std::option::Option<i32>,
     /// <p>The identifier of the KMS key to use for Amazon EBS encryption. If this parameter is not specified, your KMS key for Amazon EBS is used. If <code>KmsKeyId</code> is specified, the encrypted state must be <code>true</code>.</p>
     /// <p>You can specify the KMS key using any of the following:</p>
@@ -42,21 +42,21 @@ pub struct CreateVolumeInput {
     /// <p>The Amazon Resource Name (ARN) of the Outpost on which to create the volume.</p>
     /// <p>If you intend to use a volume with an instance running on an outpost, then you must create the volume on the same outpost as the instance. You can't use a volume created in an Amazon Web Services Region with an instance on an Amazon Web Services outpost, or the other way around.</p>
     pub outpost_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The size of the volume, in GiBs. You must specify either a snapshot ID or a volume size. If you specify a snapshot, the default is the snapshot size. You can specify a volume size that is equal to or larger than the snapshot size.</p>
-    /// <p>The following are the supported volumes sizes for each volume type:</p>
+    /// <p>The size of the volume, in GiBs. You must specify either a snapshot ID or a volume size. If you specify a snapshot, the default is the snapshot size, and you can specify a volume size that is equal to or larger than the snapshot size.</p>
+    /// <p>Valid sizes:</p>
     /// <ul>
     /// <li>
-    /// <p><code>gp2</code>: 1 - 16,384 GiB</p></li>
+    /// <p>gp2: <code>1 - 16,384</code> GiB</p></li>
     /// <li>
-    /// <p><code>gp3</code>: 1 - 65,536 GiB</p></li>
+    /// <p>gp3: <code>1 - 65,536</code> GiB</p></li>
     /// <li>
-    /// <p><code>io1</code>: 4 - 16,384 GiB</p></li>
+    /// <p>io1: <code>4 - 16,384</code> GiB</p></li>
     /// <li>
-    /// <p><code>io2</code>: 4 - 65,536 GiB</p></li>
+    /// <p>io2: <code>4 - 65,536</code> GiB</p></li>
     /// <li>
-    /// <p><code>st1</code> and <code>sc1</code>: 125 - 16,384 GiB</p></li>
+    /// <p>st1 and sc1: <code>125 - 16,384</code> GiB</p></li>
     /// <li>
-    /// <p><code>standard</code>: 1 - 1024 GiB</p></li>
+    /// <p>standard: <code>1 - 1024</code> GiB</p></li>
     /// </ul>
     pub size: ::std::option::Option<i32>,
     /// <p>The snapshot from which to create the volume. You must specify either a snapshot ID or a volume size.</p>
@@ -83,9 +83,8 @@ pub struct CreateVolumeInput {
     pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     /// <p>Indicates whether to enable Amazon EBS Multi-Attach. If you enable Multi-Attach, you can attach the volume to up to 16 <a href="https://docs.aws.amazon.com/ec2/latest/instancetypes/ec2-nitro-instances.html">Instances built on the Nitro System</a> in the same Availability Zone. This parameter is supported with <code>io1</code> and <code>io2</code> volumes only. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volumes-multi.html"> Amazon EBS Multi-Attach</a> in the <i>Amazon EBS User Guide</i>.</p>
     pub multi_attach_enabled: ::std::option::Option<bool>,
-    /// <p>The throughput to provision for a volume, with a maximum of 2,000 MiB/s.</p>
-    /// <p>This parameter is valid only for <code>gp3</code> volumes.</p>
-    /// <p>Valid Range: Minimum value of 125. Maximum value of 2,000.</p>
+    /// <p>The throughput to provision for the volume, in MiB/s. Supported for <code>gp3</code> volumes only. Omit for all other volume types.</p>
+    /// <p>Valid Range: <code>125 - 2000</code> MiB/s</p>
     pub throughput: ::std::option::Option<i32>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html">Ensure Idempotency</a>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
@@ -123,18 +122,18 @@ impl CreateVolumeInput {
     pub fn encrypted(&self) -> ::std::option::Option<bool> {
         self.encrypted
     }
-    /// <p>The number of I/O operations per second (IOPS). For <code>gp3</code>, <code>io1</code>, and <code>io2</code> volumes, this represents the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents the baseline performance of the volume and the rate at which the volume accumulates I/O credits for bursting.</p>
-    /// <p>The following are the supported values for each volume type:</p>
+    /// <p>The number of I/O operations per second (IOPS) to provision for the volume. Required for <code>io1</code> and <code>io2</code> volumes. Optional for <code>gp3</code> volumes. Omit for all other volume types.</p>
+    /// <p>Valid ranges:</p>
     /// <ul>
     /// <li>
-    /// <p><code>gp3</code>: 3,000 - 80,000 IOPS</p></li>
+    /// <p>gp3: <code>3,000 </code>(<i>default</i>)<code> - 80,000</code> IOPS</p></li>
     /// <li>
-    /// <p><code>io1</code>: 100 - 64,000 IOPS</p></li>
+    /// <p>io1: <code>100 - 64,000</code> IOPS</p></li>
     /// <li>
-    /// <p><code>io2</code>: 100 - 256,000 IOPS</p></li>
-    /// </ul>
-    /// <p>For <code>io2</code> volumes, you can achieve up to 256,000 IOPS on <a href="https://docs.aws.amazon.com/ec2/latest/instancetypes/ec2-nitro-instances.html">instances built on the Nitro System</a>. On other instances, you can achieve performance up to 32,000 IOPS.</p>
-    /// <p>This parameter is required for <code>io1</code> and <code>io2</code> volumes. The default for <code>gp3</code> volumes is 3,000 IOPS. This parameter is not supported for <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or <code>standard</code> volumes.</p>
+    /// <p>io2: <code>100 - 256,000</code> IOPS</p></li>
+    /// </ul><note>
+    /// <p><a href="https://docs.aws.amazon.com/ec2/latest/instancetypes/ec2-nitro-instances.html"> Instances built on the Nitro System</a> can support up to 256,000 IOPS. Other instances can support up to 32,000 IOPS.</p>
+    /// </note>
     pub fn iops(&self) -> ::std::option::Option<i32> {
         self.iops
     }
@@ -159,21 +158,21 @@ impl CreateVolumeInput {
     pub fn outpost_arn(&self) -> ::std::option::Option<&str> {
         self.outpost_arn.as_deref()
     }
-    /// <p>The size of the volume, in GiBs. You must specify either a snapshot ID or a volume size. If you specify a snapshot, the default is the snapshot size. You can specify a volume size that is equal to or larger than the snapshot size.</p>
-    /// <p>The following are the supported volumes sizes for each volume type:</p>
+    /// <p>The size of the volume, in GiBs. You must specify either a snapshot ID or a volume size. If you specify a snapshot, the default is the snapshot size, and you can specify a volume size that is equal to or larger than the snapshot size.</p>
+    /// <p>Valid sizes:</p>
     /// <ul>
     /// <li>
-    /// <p><code>gp2</code>: 1 - 16,384 GiB</p></li>
+    /// <p>gp2: <code>1 - 16,384</code> GiB</p></li>
     /// <li>
-    /// <p><code>gp3</code>: 1 - 65,536 GiB</p></li>
+    /// <p>gp3: <code>1 - 65,536</code> GiB</p></li>
     /// <li>
-    /// <p><code>io1</code>: 4 - 16,384 GiB</p></li>
+    /// <p>io1: <code>4 - 16,384</code> GiB</p></li>
     /// <li>
-    /// <p><code>io2</code>: 4 - 65,536 GiB</p></li>
+    /// <p>io2: <code>4 - 65,536</code> GiB</p></li>
     /// <li>
-    /// <p><code>st1</code> and <code>sc1</code>: 125 - 16,384 GiB</p></li>
+    /// <p>st1 and sc1: <code>125 - 16,384</code> GiB</p></li>
     /// <li>
-    /// <p><code>standard</code>: 1 - 1024 GiB</p></li>
+    /// <p>standard: <code>1 - 1024</code> GiB</p></li>
     /// </ul>
     pub fn size(&self) -> ::std::option::Option<i32> {
         self.size
@@ -212,9 +211,8 @@ impl CreateVolumeInput {
     pub fn multi_attach_enabled(&self) -> ::std::option::Option<bool> {
         self.multi_attach_enabled
     }
-    /// <p>The throughput to provision for a volume, with a maximum of 2,000 MiB/s.</p>
-    /// <p>This parameter is valid only for <code>gp3</code> volumes.</p>
-    /// <p>Valid Range: Minimum value of 125. Maximum value of 2,000.</p>
+    /// <p>The throughput to provision for the volume, in MiB/s. Supported for <code>gp3</code> volumes only. Omit for all other volume types.</p>
+    /// <p>Valid Range: <code>125 - 2000</code> MiB/s</p>
     pub fn throughput(&self) -> ::std::option::Option<i32> {
         self.throughput
     }
@@ -326,50 +324,50 @@ impl CreateVolumeInputBuilder {
     pub fn get_encrypted(&self) -> &::std::option::Option<bool> {
         &self.encrypted
     }
-    /// <p>The number of I/O operations per second (IOPS). For <code>gp3</code>, <code>io1</code>, and <code>io2</code> volumes, this represents the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents the baseline performance of the volume and the rate at which the volume accumulates I/O credits for bursting.</p>
-    /// <p>The following are the supported values for each volume type:</p>
+    /// <p>The number of I/O operations per second (IOPS) to provision for the volume. Required for <code>io1</code> and <code>io2</code> volumes. Optional for <code>gp3</code> volumes. Omit for all other volume types.</p>
+    /// <p>Valid ranges:</p>
     /// <ul>
     /// <li>
-    /// <p><code>gp3</code>: 3,000 - 80,000 IOPS</p></li>
+    /// <p>gp3: <code>3,000 </code>(<i>default</i>)<code> - 80,000</code> IOPS</p></li>
     /// <li>
-    /// <p><code>io1</code>: 100 - 64,000 IOPS</p></li>
+    /// <p>io1: <code>100 - 64,000</code> IOPS</p></li>
     /// <li>
-    /// <p><code>io2</code>: 100 - 256,000 IOPS</p></li>
-    /// </ul>
-    /// <p>For <code>io2</code> volumes, you can achieve up to 256,000 IOPS on <a href="https://docs.aws.amazon.com/ec2/latest/instancetypes/ec2-nitro-instances.html">instances built on the Nitro System</a>. On other instances, you can achieve performance up to 32,000 IOPS.</p>
-    /// <p>This parameter is required for <code>io1</code> and <code>io2</code> volumes. The default for <code>gp3</code> volumes is 3,000 IOPS. This parameter is not supported for <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or <code>standard</code> volumes.</p>
+    /// <p>io2: <code>100 - 256,000</code> IOPS</p></li>
+    /// </ul><note>
+    /// <p><a href="https://docs.aws.amazon.com/ec2/latest/instancetypes/ec2-nitro-instances.html"> Instances built on the Nitro System</a> can support up to 256,000 IOPS. Other instances can support up to 32,000 IOPS.</p>
+    /// </note>
     pub fn iops(mut self, input: i32) -> Self {
         self.iops = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of I/O operations per second (IOPS). For <code>gp3</code>, <code>io1</code>, and <code>io2</code> volumes, this represents the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents the baseline performance of the volume and the rate at which the volume accumulates I/O credits for bursting.</p>
-    /// <p>The following are the supported values for each volume type:</p>
+    /// <p>The number of I/O operations per second (IOPS) to provision for the volume. Required for <code>io1</code> and <code>io2</code> volumes. Optional for <code>gp3</code> volumes. Omit for all other volume types.</p>
+    /// <p>Valid ranges:</p>
     /// <ul>
     /// <li>
-    /// <p><code>gp3</code>: 3,000 - 80,000 IOPS</p></li>
+    /// <p>gp3: <code>3,000 </code>(<i>default</i>)<code> - 80,000</code> IOPS</p></li>
     /// <li>
-    /// <p><code>io1</code>: 100 - 64,000 IOPS</p></li>
+    /// <p>io1: <code>100 - 64,000</code> IOPS</p></li>
     /// <li>
-    /// <p><code>io2</code>: 100 - 256,000 IOPS</p></li>
-    /// </ul>
-    /// <p>For <code>io2</code> volumes, you can achieve up to 256,000 IOPS on <a href="https://docs.aws.amazon.com/ec2/latest/instancetypes/ec2-nitro-instances.html">instances built on the Nitro System</a>. On other instances, you can achieve performance up to 32,000 IOPS.</p>
-    /// <p>This parameter is required for <code>io1</code> and <code>io2</code> volumes. The default for <code>gp3</code> volumes is 3,000 IOPS. This parameter is not supported for <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or <code>standard</code> volumes.</p>
+    /// <p>io2: <code>100 - 256,000</code> IOPS</p></li>
+    /// </ul><note>
+    /// <p><a href="https://docs.aws.amazon.com/ec2/latest/instancetypes/ec2-nitro-instances.html"> Instances built on the Nitro System</a> can support up to 256,000 IOPS. Other instances can support up to 32,000 IOPS.</p>
+    /// </note>
     pub fn set_iops(mut self, input: ::std::option::Option<i32>) -> Self {
         self.iops = input;
         self
     }
-    /// <p>The number of I/O operations per second (IOPS). For <code>gp3</code>, <code>io1</code>, and <code>io2</code> volumes, this represents the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents the baseline performance of the volume and the rate at which the volume accumulates I/O credits for bursting.</p>
-    /// <p>The following are the supported values for each volume type:</p>
+    /// <p>The number of I/O operations per second (IOPS) to provision for the volume. Required for <code>io1</code> and <code>io2</code> volumes. Optional for <code>gp3</code> volumes. Omit for all other volume types.</p>
+    /// <p>Valid ranges:</p>
     /// <ul>
     /// <li>
-    /// <p><code>gp3</code>: 3,000 - 80,000 IOPS</p></li>
+    /// <p>gp3: <code>3,000 </code>(<i>default</i>)<code> - 80,000</code> IOPS</p></li>
     /// <li>
-    /// <p><code>io1</code>: 100 - 64,000 IOPS</p></li>
+    /// <p>io1: <code>100 - 64,000</code> IOPS</p></li>
     /// <li>
-    /// <p><code>io2</code>: 100 - 256,000 IOPS</p></li>
-    /// </ul>
-    /// <p>For <code>io2</code> volumes, you can achieve up to 256,000 IOPS on <a href="https://docs.aws.amazon.com/ec2/latest/instancetypes/ec2-nitro-instances.html">instances built on the Nitro System</a>. On other instances, you can achieve performance up to 32,000 IOPS.</p>
-    /// <p>This parameter is required for <code>io1</code> and <code>io2</code> volumes. The default for <code>gp3</code> volumes is 3,000 IOPS. This parameter is not supported for <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or <code>standard</code> volumes.</p>
+    /// <p>io2: <code>100 - 256,000</code> IOPS</p></li>
+    /// </ul><note>
+    /// <p><a href="https://docs.aws.amazon.com/ec2/latest/instancetypes/ec2-nitro-instances.html"> Instances built on the Nitro System</a> can support up to 256,000 IOPS. Other instances can support up to 32,000 IOPS.</p>
+    /// </note>
     pub fn get_iops(&self) -> &::std::option::Option<i32> {
         &self.iops
     }
@@ -440,61 +438,61 @@ impl CreateVolumeInputBuilder {
     pub fn get_outpost_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.outpost_arn
     }
-    /// <p>The size of the volume, in GiBs. You must specify either a snapshot ID or a volume size. If you specify a snapshot, the default is the snapshot size. You can specify a volume size that is equal to or larger than the snapshot size.</p>
-    /// <p>The following are the supported volumes sizes for each volume type:</p>
+    /// <p>The size of the volume, in GiBs. You must specify either a snapshot ID or a volume size. If you specify a snapshot, the default is the snapshot size, and you can specify a volume size that is equal to or larger than the snapshot size.</p>
+    /// <p>Valid sizes:</p>
     /// <ul>
     /// <li>
-    /// <p><code>gp2</code>: 1 - 16,384 GiB</p></li>
+    /// <p>gp2: <code>1 - 16,384</code> GiB</p></li>
     /// <li>
-    /// <p><code>gp3</code>: 1 - 65,536 GiB</p></li>
+    /// <p>gp3: <code>1 - 65,536</code> GiB</p></li>
     /// <li>
-    /// <p><code>io1</code>: 4 - 16,384 GiB</p></li>
+    /// <p>io1: <code>4 - 16,384</code> GiB</p></li>
     /// <li>
-    /// <p><code>io2</code>: 4 - 65,536 GiB</p></li>
+    /// <p>io2: <code>4 - 65,536</code> GiB</p></li>
     /// <li>
-    /// <p><code>st1</code> and <code>sc1</code>: 125 - 16,384 GiB</p></li>
+    /// <p>st1 and sc1: <code>125 - 16,384</code> GiB</p></li>
     /// <li>
-    /// <p><code>standard</code>: 1 - 1024 GiB</p></li>
+    /// <p>standard: <code>1 - 1024</code> GiB</p></li>
     /// </ul>
     pub fn size(mut self, input: i32) -> Self {
         self.size = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The size of the volume, in GiBs. You must specify either a snapshot ID or a volume size. If you specify a snapshot, the default is the snapshot size. You can specify a volume size that is equal to or larger than the snapshot size.</p>
-    /// <p>The following are the supported volumes sizes for each volume type:</p>
+    /// <p>The size of the volume, in GiBs. You must specify either a snapshot ID or a volume size. If you specify a snapshot, the default is the snapshot size, and you can specify a volume size that is equal to or larger than the snapshot size.</p>
+    /// <p>Valid sizes:</p>
     /// <ul>
     /// <li>
-    /// <p><code>gp2</code>: 1 - 16,384 GiB</p></li>
+    /// <p>gp2: <code>1 - 16,384</code> GiB</p></li>
     /// <li>
-    /// <p><code>gp3</code>: 1 - 65,536 GiB</p></li>
+    /// <p>gp3: <code>1 - 65,536</code> GiB</p></li>
     /// <li>
-    /// <p><code>io1</code>: 4 - 16,384 GiB</p></li>
+    /// <p>io1: <code>4 - 16,384</code> GiB</p></li>
     /// <li>
-    /// <p><code>io2</code>: 4 - 65,536 GiB</p></li>
+    /// <p>io2: <code>4 - 65,536</code> GiB</p></li>
     /// <li>
-    /// <p><code>st1</code> and <code>sc1</code>: 125 - 16,384 GiB</p></li>
+    /// <p>st1 and sc1: <code>125 - 16,384</code> GiB</p></li>
     /// <li>
-    /// <p><code>standard</code>: 1 - 1024 GiB</p></li>
+    /// <p>standard: <code>1 - 1024</code> GiB</p></li>
     /// </ul>
     pub fn set_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.size = input;
         self
     }
-    /// <p>The size of the volume, in GiBs. You must specify either a snapshot ID or a volume size. If you specify a snapshot, the default is the snapshot size. You can specify a volume size that is equal to or larger than the snapshot size.</p>
-    /// <p>The following are the supported volumes sizes for each volume type:</p>
+    /// <p>The size of the volume, in GiBs. You must specify either a snapshot ID or a volume size. If you specify a snapshot, the default is the snapshot size, and you can specify a volume size that is equal to or larger than the snapshot size.</p>
+    /// <p>Valid sizes:</p>
     /// <ul>
     /// <li>
-    /// <p><code>gp2</code>: 1 - 16,384 GiB</p></li>
+    /// <p>gp2: <code>1 - 16,384</code> GiB</p></li>
     /// <li>
-    /// <p><code>gp3</code>: 1 - 65,536 GiB</p></li>
+    /// <p>gp3: <code>1 - 65,536</code> GiB</p></li>
     /// <li>
-    /// <p><code>io1</code>: 4 - 16,384 GiB</p></li>
+    /// <p>io1: <code>4 - 16,384</code> GiB</p></li>
     /// <li>
-    /// <p><code>io2</code>: 4 - 65,536 GiB</p></li>
+    /// <p>io2: <code>4 - 65,536</code> GiB</p></li>
     /// <li>
-    /// <p><code>st1</code> and <code>sc1</code>: 125 - 16,384 GiB</p></li>
+    /// <p>st1 and sc1: <code>125 - 16,384</code> GiB</p></li>
     /// <li>
-    /// <p><code>standard</code>: 1 - 1024 GiB</p></li>
+    /// <p>standard: <code>1 - 1024</code> GiB</p></li>
     /// </ul>
     pub fn get_size(&self) -> &::std::option::Option<i32> {
         &self.size
@@ -609,23 +607,20 @@ impl CreateVolumeInputBuilder {
     pub fn get_multi_attach_enabled(&self) -> &::std::option::Option<bool> {
         &self.multi_attach_enabled
     }
-    /// <p>The throughput to provision for a volume, with a maximum of 2,000 MiB/s.</p>
-    /// <p>This parameter is valid only for <code>gp3</code> volumes.</p>
-    /// <p>Valid Range: Minimum value of 125. Maximum value of 2,000.</p>
+    /// <p>The throughput to provision for the volume, in MiB/s. Supported for <code>gp3</code> volumes only. Omit for all other volume types.</p>
+    /// <p>Valid Range: <code>125 - 2000</code> MiB/s</p>
     pub fn throughput(mut self, input: i32) -> Self {
         self.throughput = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The throughput to provision for a volume, with a maximum of 2,000 MiB/s.</p>
-    /// <p>This parameter is valid only for <code>gp3</code> volumes.</p>
-    /// <p>Valid Range: Minimum value of 125. Maximum value of 2,000.</p>
+    /// <p>The throughput to provision for the volume, in MiB/s. Supported for <code>gp3</code> volumes only. Omit for all other volume types.</p>
+    /// <p>Valid Range: <code>125 - 2000</code> MiB/s</p>
     pub fn set_throughput(mut self, input: ::std::option::Option<i32>) -> Self {
         self.throughput = input;
         self
     }
-    /// <p>The throughput to provision for a volume, with a maximum of 2,000 MiB/s.</p>
-    /// <p>This parameter is valid only for <code>gp3</code> volumes.</p>
-    /// <p>Valid Range: Minimum value of 125. Maximum value of 2,000.</p>
+    /// <p>The throughput to provision for the volume, in MiB/s. Supported for <code>gp3</code> volumes only. Omit for all other volume types.</p>
+    /// <p>Valid Range: <code>125 - 2000</code> MiB/s</p>
     pub fn get_throughput(&self) -> &::std::option::Option<i32> {
         &self.throughput
     }

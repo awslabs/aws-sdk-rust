@@ -128,6 +128,33 @@ pub(crate) fn stack_correct_errors(mut builder: crate::types::builders::StackBui
     builder
 }
 
+pub(crate) fn admin_app_license_usage_record_correct_errors(
+    mut builder: crate::types::builders::AdminAppLicenseUsageRecordBuilder,
+) -> crate::types::builders::AdminAppLicenseUsageRecordBuilder {
+    if builder.user_arn.is_none() {
+        builder.user_arn = Some(Default::default())
+    }
+    if builder.billing_period.is_none() {
+        builder.billing_period = Some(Default::default())
+    }
+    if builder.owner_aws_account_id.is_none() {
+        builder.owner_aws_account_id = Some(Default::default())
+    }
+    if builder.subscription_first_used_date.is_none() {
+        builder.subscription_first_used_date = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.subscription_last_used_date.is_none() {
+        builder.subscription_last_used_date = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.license_type.is_none() {
+        builder.license_type = Some(Default::default())
+    }
+    if builder.user_id.is_none() {
+        builder.user_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn compute_capacity_status_correct_errors(
     mut builder: crate::types::builders::ComputeCapacityStatusBuilder,
 ) -> crate::types::builders::ComputeCapacityStatusBuilder {

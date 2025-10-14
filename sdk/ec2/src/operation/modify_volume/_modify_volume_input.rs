@@ -37,8 +37,9 @@ pub struct ModifyVolumeInput {
     /// <p><code>io1</code>: 100 - 64,000 IOPS</p></li>
     /// <li>
     /// <p><code>io2</code>: 100 - 256,000 IOPS</p></li>
-    /// </ul>
-    /// <p>For <code>io2</code> volumes, you can achieve up to 256,000 IOPS on <a href="https://docs.aws.amazon.com/ec2/latest/instancetypes/ec2-nitro-instances.html">instances built on the Nitro System</a>. On other instances, you can achieve performance up to 32,000 IOPS.</p>
+    /// </ul><note>
+    /// <p><a href="https://docs.aws.amazon.com/ec2/latest/instancetypes/ec2-nitro-instances.html"> Instances built on the Nitro System</a> can support up to 256,000 IOPS. Other instances can support up to 32,000 IOPS.</p>
+    /// </note>
     /// <p>Default: The existing value is retained if you keep the same volume type. If you change the volume type to <code>io1</code>, <code>io2</code>, or <code>gp3</code>, the default is 3,000.</p>
     pub iops: ::std::option::Option<i32>,
     /// <p>The target throughput of the volume, in MiB/s. This parameter is valid only for <code>gp3</code> volumes. The maximum value is 2,000.</p>
@@ -91,8 +92,9 @@ impl ModifyVolumeInput {
     /// <p><code>io1</code>: 100 - 64,000 IOPS</p></li>
     /// <li>
     /// <p><code>io2</code>: 100 - 256,000 IOPS</p></li>
-    /// </ul>
-    /// <p>For <code>io2</code> volumes, you can achieve up to 256,000 IOPS on <a href="https://docs.aws.amazon.com/ec2/latest/instancetypes/ec2-nitro-instances.html">instances built on the Nitro System</a>. On other instances, you can achieve performance up to 32,000 IOPS.</p>
+    /// </ul><note>
+    /// <p><a href="https://docs.aws.amazon.com/ec2/latest/instancetypes/ec2-nitro-instances.html"> Instances built on the Nitro System</a> can support up to 256,000 IOPS. Other instances can support up to 32,000 IOPS.</p>
+    /// </note>
     /// <p>Default: The existing value is retained if you keep the same volume type. If you change the volume type to <code>io1</code>, <code>io2</code>, or <code>gp3</code>, the default is 3,000.</p>
     pub fn iops(&self) -> ::std::option::Option<i32> {
         self.iops
@@ -245,8 +247,9 @@ impl ModifyVolumeInputBuilder {
     /// <p><code>io1</code>: 100 - 64,000 IOPS</p></li>
     /// <li>
     /// <p><code>io2</code>: 100 - 256,000 IOPS</p></li>
-    /// </ul>
-    /// <p>For <code>io2</code> volumes, you can achieve up to 256,000 IOPS on <a href="https://docs.aws.amazon.com/ec2/latest/instancetypes/ec2-nitro-instances.html">instances built on the Nitro System</a>. On other instances, you can achieve performance up to 32,000 IOPS.</p>
+    /// </ul><note>
+    /// <p><a href="https://docs.aws.amazon.com/ec2/latest/instancetypes/ec2-nitro-instances.html"> Instances built on the Nitro System</a> can support up to 256,000 IOPS. Other instances can support up to 32,000 IOPS.</p>
+    /// </note>
     /// <p>Default: The existing value is retained if you keep the same volume type. If you change the volume type to <code>io1</code>, <code>io2</code>, or <code>gp3</code>, the default is 3,000.</p>
     pub fn iops(mut self, input: i32) -> Self {
         self.iops = ::std::option::Option::Some(input);
@@ -261,8 +264,9 @@ impl ModifyVolumeInputBuilder {
     /// <p><code>io1</code>: 100 - 64,000 IOPS</p></li>
     /// <li>
     /// <p><code>io2</code>: 100 - 256,000 IOPS</p></li>
-    /// </ul>
-    /// <p>For <code>io2</code> volumes, you can achieve up to 256,000 IOPS on <a href="https://docs.aws.amazon.com/ec2/latest/instancetypes/ec2-nitro-instances.html">instances built on the Nitro System</a>. On other instances, you can achieve performance up to 32,000 IOPS.</p>
+    /// </ul><note>
+    /// <p><a href="https://docs.aws.amazon.com/ec2/latest/instancetypes/ec2-nitro-instances.html"> Instances built on the Nitro System</a> can support up to 256,000 IOPS. Other instances can support up to 32,000 IOPS.</p>
+    /// </note>
     /// <p>Default: The existing value is retained if you keep the same volume type. If you change the volume type to <code>io1</code>, <code>io2</code>, or <code>gp3</code>, the default is 3,000.</p>
     pub fn set_iops(mut self, input: ::std::option::Option<i32>) -> Self {
         self.iops = input;
@@ -277,8 +281,9 @@ impl ModifyVolumeInputBuilder {
     /// <p><code>io1</code>: 100 - 64,000 IOPS</p></li>
     /// <li>
     /// <p><code>io2</code>: 100 - 256,000 IOPS</p></li>
-    /// </ul>
-    /// <p>For <code>io2</code> volumes, you can achieve up to 256,000 IOPS on <a href="https://docs.aws.amazon.com/ec2/latest/instancetypes/ec2-nitro-instances.html">instances built on the Nitro System</a>. On other instances, you can achieve performance up to 32,000 IOPS.</p>
+    /// </ul><note>
+    /// <p><a href="https://docs.aws.amazon.com/ec2/latest/instancetypes/ec2-nitro-instances.html"> Instances built on the Nitro System</a> can support up to 256,000 IOPS. Other instances can support up to 32,000 IOPS.</p>
+    /// </note>
     /// <p>Default: The existing value is retained if you keep the same volume type. If you change the volume type to <code>io1</code>, <code>io2</code>, or <code>gp3</code>, the default is 3,000.</p>
     pub fn get_iops(&self) -> &::std::option::Option<i32> {
         &self.iops

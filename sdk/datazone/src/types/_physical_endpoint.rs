@@ -10,6 +10,8 @@ pub struct PhysicalEndpoint {
     pub glue_connection_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Glue connection.</p>
     pub glue_connection: ::std::option::Option<crate::types::GlueConnection>,
+    /// <p>Specified whether trusted identity propagation for the connection is enabled.</p>
+    pub enable_trusted_identity_propagation: ::std::option::Option<bool>,
     /// <p>The host in the physical endpoints of a connection.</p>
     pub host: ::std::option::Option<::std::string::String>,
     /// <p>The port in the physical endpoints of a connection.</p>
@@ -31,6 +33,10 @@ impl PhysicalEndpoint {
     /// <p>The Amazon Web Services Glue connection.</p>
     pub fn glue_connection(&self) -> ::std::option::Option<&crate::types::GlueConnection> {
         self.glue_connection.as_ref()
+    }
+    /// <p>Specified whether trusted identity propagation for the connection is enabled.</p>
+    pub fn enable_trusted_identity_propagation(&self) -> ::std::option::Option<bool> {
+        self.enable_trusted_identity_propagation
     }
     /// <p>The host in the physical endpoints of a connection.</p>
     pub fn host(&self) -> ::std::option::Option<&str> {
@@ -63,6 +69,7 @@ pub struct PhysicalEndpointBuilder {
     pub(crate) aws_location: ::std::option::Option<crate::types::AwsLocation>,
     pub(crate) glue_connection_name: ::std::option::Option<::std::string::String>,
     pub(crate) glue_connection: ::std::option::Option<crate::types::GlueConnection>,
+    pub(crate) enable_trusted_identity_propagation: ::std::option::Option<bool>,
     pub(crate) host: ::std::option::Option<::std::string::String>,
     pub(crate) port: ::std::option::Option<i32>,
     pub(crate) protocol: ::std::option::Option<crate::types::Protocol>,
@@ -110,6 +117,20 @@ impl PhysicalEndpointBuilder {
     /// <p>The Amazon Web Services Glue connection.</p>
     pub fn get_glue_connection(&self) -> &::std::option::Option<crate::types::GlueConnection> {
         &self.glue_connection
+    }
+    /// <p>Specified whether trusted identity propagation for the connection is enabled.</p>
+    pub fn enable_trusted_identity_propagation(mut self, input: bool) -> Self {
+        self.enable_trusted_identity_propagation = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specified whether trusted identity propagation for the connection is enabled.</p>
+    pub fn set_enable_trusted_identity_propagation(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.enable_trusted_identity_propagation = input;
+        self
+    }
+    /// <p>Specified whether trusted identity propagation for the connection is enabled.</p>
+    pub fn get_enable_trusted_identity_propagation(&self) -> &::std::option::Option<bool> {
+        &self.enable_trusted_identity_propagation
     }
     /// <p>The host in the physical endpoints of a connection.</p>
     pub fn host(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -173,6 +194,7 @@ impl PhysicalEndpointBuilder {
             aws_location: self.aws_location,
             glue_connection_name: self.glue_connection_name,
             glue_connection: self.glue_connection,
+            enable_trusted_identity_propagation: self.enable_trusted_identity_propagation,
             host: self.host,
             port: self.port,
             protocol: self.protocol,

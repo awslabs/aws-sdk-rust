@@ -335,6 +335,8 @@ pub(crate) mod shape_update_web_app_input;
 
 pub(crate) mod shape_as2_connector_config;
 
+pub(crate) mod shape_connector_egress_config;
+
 pub(crate) mod shape_connector_file_transfer_results;
 
 pub(crate) mod shape_custom_directories_type;
@@ -409,6 +411,8 @@ pub(crate) mod shape_tag;
 
 pub(crate) mod shape_tags;
 
+pub(crate) mod shape_update_connector_egress_config;
+
 pub(crate) mod shape_update_web_app_identity_provider_details;
 
 pub(crate) mod shape_web_app_identity_provider_details;
@@ -423,6 +427,8 @@ pub(crate) mod shape_certificate_ids;
 
 pub(crate) mod shape_connector_file_transfer_result;
 
+pub(crate) mod shape_connector_vpc_lattice_egress_config;
+
 pub(crate) mod shape_copy_step_details;
 
 pub(crate) mod shape_custom_step_details;
@@ -430,6 +436,8 @@ pub(crate) mod shape_custom_step_details;
 pub(crate) mod shape_decrypt_step_details;
 
 pub(crate) mod shape_delete_step_details;
+
+pub(crate) mod shape_described_connector_egress_config;
 
 pub(crate) mod shape_described_web_app_identity_provider_details;
 
@@ -481,6 +489,8 @@ pub(crate) mod shape_structured_log_destinations;
 
 pub(crate) mod shape_tag_step_details;
 
+pub(crate) mod shape_update_connector_vpc_lattice_egress_config;
+
 pub(crate) mod shape_update_web_app_identity_center_config;
 
 pub(crate) mod shape_workflow_detail;
@@ -490,6 +500,8 @@ pub(crate) mod shape_workflow_steps;
 pub(crate) mod shape_address_allocation_ids;
 
 pub(crate) mod shape_as2_transports;
+
+pub(crate) mod shape_described_connector_vpc_lattice_egress_config;
 
 pub(crate) mod shape_described_identity_center_config;
 

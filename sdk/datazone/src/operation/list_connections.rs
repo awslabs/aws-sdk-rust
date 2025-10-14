@@ -236,20 +236,19 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListConnecti
                         query.push_kv("environmentIdentifier", &::aws_smithy_http::query::fmt_string(inner_7));
                     }
                 }
-                let inner_8 = &_input.project_identifier;
-                let inner_8 = inner_8.as_ref().ok_or_else(|| {
-                    ::aws_smithy_types::error::operation::BuildError::missing_field("project_identifier", "cannot be empty or unset")
-                })?;
-                if inner_8.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
-                        "project_identifier",
-                        "cannot be empty or unset",
-                    ));
+                if let ::std::option::Option::Some(inner_8) = &_input.project_identifier {
+                    {
+                        query.push_kv("projectIdentifier", &::aws_smithy_http::query::fmt_string(inner_8));
+                    }
                 }
-                query.push_kv("projectIdentifier", &::aws_smithy_http::query::fmt_string(inner_8));
                 if let ::std::option::Option::Some(inner_9) = &_input.r#type {
                     {
                         query.push_kv("type", &::aws_smithy_http::query::fmt_string(inner_9));
+                    }
+                }
+                if let ::std::option::Option::Some(inner_10) = &_input.scope {
+                    {
+                        query.push_kv("scope", &::aws_smithy_http::query::fmt_string(inner_10));
                     }
                 }
                 ::std::result::Result::Ok(())

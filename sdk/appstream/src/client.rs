@@ -178,6 +178,8 @@ mod associate_application_to_entitlement;
 
 mod associate_fleet;
 
+mod associate_software_to_image_builder;
+
 mod batch_associate_user_stack;
 
 mod batch_disassociate_user_stack;
@@ -273,6 +275,8 @@ mod describe_app_block_builders;
 
 mod describe_app_blocks;
 
+mod describe_app_license_usage;
+
 mod describe_application_fleet_associations;
 
 mod describe_applications;
@@ -290,6 +294,8 @@ mod describe_image_permissions;
 mod describe_images;
 
 mod describe_sessions;
+
+mod describe_software_associations;
 
 mod describe_stacks;
 
@@ -311,6 +317,8 @@ mod disassociate_application_from_entitlement;
 
 mod disassociate_fleet;
 
+mod disassociate_software_from_image_builder;
+
 mod enable_user;
 
 mod expire_session;
@@ -328,6 +336,8 @@ mod start_app_block_builder;
 mod start_fleet;
 
 mod start_image_builder;
+
+mod start_software_deployment_to_image_builder;
 
 mod stop_app_block_builder;
 

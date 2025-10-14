@@ -14,6 +14,7 @@
 /// match initializationtype {
 ///     InitializationType::Default => { /* ... */ },
 ///     InitializationType::ProvisionedRate => { /* ... */ },
+///     InitializationType::VolumeCopy => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -46,6 +47,8 @@ pub enum InitializationType {
     Default,
     #[allow(missing_docs)] // documentation missing in model
     ProvisionedRate,
+    #[allow(missing_docs)] // documentation missing in model
+    VolumeCopy,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -55,6 +58,7 @@ impl ::std::convert::From<&str> for InitializationType {
         match s {
             "default" => InitializationType::Default,
             "provisioned-rate" => InitializationType::ProvisionedRate,
+            "volume-copy" => InitializationType::VolumeCopy,
             other => InitializationType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -72,12 +76,13 @@ impl InitializationType {
         match self {
             InitializationType::Default => "default",
             InitializationType::ProvisionedRate => "provisioned-rate",
+            InitializationType::VolumeCopy => "volume-copy",
             InitializationType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["default", "provisioned-rate"]
+        &["default", "provisioned-rate", "volume-copy"]
     }
 }
 impl ::std::convert::AsRef<str> for InitializationType {
@@ -102,6 +107,7 @@ impl ::std::fmt::Display for InitializationType {
         match self {
             InitializationType::Default => write!(f, "default"),
             InitializationType::ProvisionedRate => write!(f, "provisioned-rate"),
+            InitializationType::VolumeCopy => write!(f, "volume-copy"),
             InitializationType::Unknown(value) => write!(f, "{}", value),
         }
     }

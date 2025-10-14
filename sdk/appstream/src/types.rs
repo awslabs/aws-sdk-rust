@@ -127,6 +127,12 @@ pub use crate::types::_usage_report_execution_error_code::UsageReportExecutionEr
 
 pub use crate::types::_usage_report_schedule::UsageReportSchedule;
 
+pub use crate::types::_software_associations::SoftwareAssociations;
+
+pub use crate::types::_error_details::ErrorDetails;
+
+pub use crate::types::_software_deployment_status::SoftwareDeploymentStatus;
+
 pub use crate::types::_session::Session;
 
 pub use crate::types::_session_connection_state::SessionConnectionState;
@@ -149,11 +155,11 @@ pub use crate::types::_image_state::ImageState;
 
 pub use crate::types::_shared_image_permissions::SharedImagePermissions;
 
+pub use crate::types::_admin_app_license_usage_record::AdminAppLicenseUsageRecord;
+
 pub use crate::types::_application_fleet_association::ApplicationFleetAssociation;
 
 pub use crate::types::_app_block::AppBlock;
-
-pub use crate::types::_error_details::ErrorDetails;
 
 pub use crate::types::_app_block_state::AppBlockState;
 
@@ -174,6 +180,8 @@ mod _access_endpoint;
 mod _access_endpoint_type;
 
 mod _action;
+
+mod _admin_app_license_usage_record;
 
 mod _app_block;
 
@@ -292,6 +300,10 @@ mod _session_connection_state;
 mod _session_state;
 
 mod _shared_image_permissions;
+
+mod _software_associations;
+
+mod _software_deployment_status;
 
 mod _stack;
 

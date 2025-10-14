@@ -6,6 +6,7 @@ pub struct UpdateConnectorInput {
     /// <p>The unique identifier for the connector.</p>
     pub connector_id: ::std::option::Option<::std::string::String>,
     /// <p>The URL of the partner's AS2 or SFTP endpoint.</p>
+    /// <p>When creating AS2 connectors or service-managed SFTP connectors (connectors without egress configuration), you must provide a URL to specify the remote server endpoint. For VPC Lattice type connectors, the URL must be null.</p>
     pub url: ::std::option::Option<::std::string::String>,
     /// <p>A structure that contains the parameters for an AS2 connector object.</p>
     pub as2_config: ::std::option::Option<crate::types::As2ConnectorConfig>,
@@ -22,6 +23,8 @@ pub struct UpdateConnectorInput {
     pub sftp_config: ::std::option::Option<crate::types::SftpConnectorConfig>,
     /// <p>Specifies the name of the security policy for the connector.</p>
     pub security_policy_name: ::std::option::Option<::std::string::String>,
+    /// <p>Updates the egress configuration for the connector, allowing you to modify how traffic is routed from the connector to the SFTP server. Changes to VPC configuration may require connector restart.</p>
+    pub egress_config: ::std::option::Option<crate::types::UpdateConnectorEgressConfig>,
 }
 impl UpdateConnectorInput {
     /// <p>The unique identifier for the connector.</p>
@@ -29,6 +32,7 @@ impl UpdateConnectorInput {
         self.connector_id.as_deref()
     }
     /// <p>The URL of the partner's AS2 or SFTP endpoint.</p>
+    /// <p>When creating AS2 connectors or service-managed SFTP connectors (connectors without egress configuration), you must provide a URL to specify the remote server endpoint. For VPC Lattice type connectors, the URL must be null.</p>
     pub fn url(&self) -> ::std::option::Option<&str> {
         self.url.as_deref()
     }
@@ -57,6 +61,10 @@ impl UpdateConnectorInput {
     pub fn security_policy_name(&self) -> ::std::option::Option<&str> {
         self.security_policy_name.as_deref()
     }
+    /// <p>Updates the egress configuration for the connector, allowing you to modify how traffic is routed from the connector to the SFTP server. Changes to VPC configuration may require connector restart.</p>
+    pub fn egress_config(&self) -> ::std::option::Option<&crate::types::UpdateConnectorEgressConfig> {
+        self.egress_config.as_ref()
+    }
 }
 impl UpdateConnectorInput {
     /// Creates a new builder-style object to manufacture [`UpdateConnectorInput`](crate::operation::update_connector::UpdateConnectorInput).
@@ -76,6 +84,7 @@ pub struct UpdateConnectorInputBuilder {
     pub(crate) logging_role: ::std::option::Option<::std::string::String>,
     pub(crate) sftp_config: ::std::option::Option<crate::types::SftpConnectorConfig>,
     pub(crate) security_policy_name: ::std::option::Option<::std::string::String>,
+    pub(crate) egress_config: ::std::option::Option<crate::types::UpdateConnectorEgressConfig>,
 }
 impl UpdateConnectorInputBuilder {
     /// <p>The unique identifier for the connector.</p>
@@ -94,16 +103,19 @@ impl UpdateConnectorInputBuilder {
         &self.connector_id
     }
     /// <p>The URL of the partner's AS2 or SFTP endpoint.</p>
+    /// <p>When creating AS2 connectors or service-managed SFTP connectors (connectors without egress configuration), you must provide a URL to specify the remote server endpoint. For VPC Lattice type connectors, the URL must be null.</p>
     pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL of the partner's AS2 or SFTP endpoint.</p>
+    /// <p>When creating AS2 connectors or service-managed SFTP connectors (connectors without egress configuration), you must provide a URL to specify the remote server endpoint. For VPC Lattice type connectors, the URL must be null.</p>
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.url = input;
         self
     }
     /// <p>The URL of the partner's AS2 or SFTP endpoint.</p>
+    /// <p>When creating AS2 connectors or service-managed SFTP connectors (connectors without egress configuration), you must provide a URL to specify the remote server endpoint. For VPC Lattice type connectors, the URL must be null.</p>
     pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.url
     }
@@ -192,6 +204,20 @@ impl UpdateConnectorInputBuilder {
     pub fn get_security_policy_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.security_policy_name
     }
+    /// <p>Updates the egress configuration for the connector, allowing you to modify how traffic is routed from the connector to the SFTP server. Changes to VPC configuration may require connector restart.</p>
+    pub fn egress_config(mut self, input: crate::types::UpdateConnectorEgressConfig) -> Self {
+        self.egress_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Updates the egress configuration for the connector, allowing you to modify how traffic is routed from the connector to the SFTP server. Changes to VPC configuration may require connector restart.</p>
+    pub fn set_egress_config(mut self, input: ::std::option::Option<crate::types::UpdateConnectorEgressConfig>) -> Self {
+        self.egress_config = input;
+        self
+    }
+    /// <p>Updates the egress configuration for the connector, allowing you to modify how traffic is routed from the connector to the SFTP server. Changes to VPC configuration may require connector restart.</p>
+    pub fn get_egress_config(&self) -> &::std::option::Option<crate::types::UpdateConnectorEgressConfig> {
+        &self.egress_config
+    }
     /// Consumes the builder and constructs a [`UpdateConnectorInput`](crate::operation::update_connector::UpdateConnectorInput).
     pub fn build(
         self,
@@ -204,6 +230,7 @@ impl UpdateConnectorInputBuilder {
             logging_role: self.logging_role,
             sftp_config: self.sftp_config,
             security_policy_name: self.security_policy_name,
+            egress_config: self.egress_config,
         })
     }
 }

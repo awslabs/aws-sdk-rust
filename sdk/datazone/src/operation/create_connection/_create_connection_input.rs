@@ -17,6 +17,10 @@ pub struct CreateConnectionInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The connection props.</p>
     pub props: ::std::option::Option<crate::types::ConnectionPropertiesInput>,
+    /// <p>Specifies whether the trusted identity propagation is enabled.</p>
+    pub enable_trusted_identity_propagation: ::std::option::Option<bool>,
+    /// <p>The scope of the connection.</p>
+    pub scope: ::std::option::Option<crate::types::ConnectionScope>,
 }
 impl CreateConnectionInput {
     /// <p>The location where the connection is created.</p>
@@ -47,6 +51,14 @@ impl CreateConnectionInput {
     pub fn props(&self) -> ::std::option::Option<&crate::types::ConnectionPropertiesInput> {
         self.props.as_ref()
     }
+    /// <p>Specifies whether the trusted identity propagation is enabled.</p>
+    pub fn enable_trusted_identity_propagation(&self) -> ::std::option::Option<bool> {
+        self.enable_trusted_identity_propagation
+    }
+    /// <p>The scope of the connection.</p>
+    pub fn scope(&self) -> ::std::option::Option<&crate::types::ConnectionScope> {
+        self.scope.as_ref()
+    }
 }
 impl ::std::fmt::Debug for CreateConnectionInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -58,6 +70,8 @@ impl ::std::fmt::Debug for CreateConnectionInput {
         formatter.field("environment_identifier", &self.environment_identifier);
         formatter.field("name", &self.name);
         formatter.field("props", &self.props);
+        formatter.field("enable_trusted_identity_propagation", &self.enable_trusted_identity_propagation);
+        formatter.field("scope", &self.scope);
         formatter.finish()
     }
 }
@@ -79,6 +93,8 @@ pub struct CreateConnectionInputBuilder {
     pub(crate) environment_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) props: ::std::option::Option<crate::types::ConnectionPropertiesInput>,
+    pub(crate) enable_trusted_identity_propagation: ::std::option::Option<bool>,
+    pub(crate) scope: ::std::option::Option<crate::types::ConnectionScope>,
 }
 impl CreateConnectionInputBuilder {
     /// <p>The location where the connection is created.</p>
@@ -139,7 +155,6 @@ impl CreateConnectionInputBuilder {
         &self.domain_identifier
     }
     /// <p>The ID of the environment where the connection is created.</p>
-    /// This field is required.
     pub fn environment_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_identifier = ::std::option::Option::Some(input.into());
         self
@@ -182,6 +197,34 @@ impl CreateConnectionInputBuilder {
     pub fn get_props(&self) -> &::std::option::Option<crate::types::ConnectionPropertiesInput> {
         &self.props
     }
+    /// <p>Specifies whether the trusted identity propagation is enabled.</p>
+    pub fn enable_trusted_identity_propagation(mut self, input: bool) -> Self {
+        self.enable_trusted_identity_propagation = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether the trusted identity propagation is enabled.</p>
+    pub fn set_enable_trusted_identity_propagation(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.enable_trusted_identity_propagation = input;
+        self
+    }
+    /// <p>Specifies whether the trusted identity propagation is enabled.</p>
+    pub fn get_enable_trusted_identity_propagation(&self) -> &::std::option::Option<bool> {
+        &self.enable_trusted_identity_propagation
+    }
+    /// <p>The scope of the connection.</p>
+    pub fn scope(mut self, input: crate::types::ConnectionScope) -> Self {
+        self.scope = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The scope of the connection.</p>
+    pub fn set_scope(mut self, input: ::std::option::Option<crate::types::ConnectionScope>) -> Self {
+        self.scope = input;
+        self
+    }
+    /// <p>The scope of the connection.</p>
+    pub fn get_scope(&self) -> &::std::option::Option<crate::types::ConnectionScope> {
+        &self.scope
+    }
     /// Consumes the builder and constructs a [`CreateConnectionInput`](crate::operation::create_connection::CreateConnectionInput).
     pub fn build(
         self,
@@ -194,6 +237,8 @@ impl CreateConnectionInputBuilder {
             environment_identifier: self.environment_identifier,
             name: self.name,
             props: self.props,
+            enable_trusted_identity_propagation: self.enable_trusted_identity_propagation,
+            scope: self.scope,
         })
     }
 }
@@ -207,6 +252,8 @@ impl ::std::fmt::Debug for CreateConnectionInputBuilder {
         formatter.field("environment_identifier", &self.environment_identifier);
         formatter.field("name", &self.name);
         formatter.field("props", &self.props);
+        formatter.field("enable_trusted_identity_propagation", &self.enable_trusted_identity_propagation);
+        formatter.field("scope", &self.scope);
         formatter.finish()
     }
 }

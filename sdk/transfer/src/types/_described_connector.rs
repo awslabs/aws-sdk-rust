@@ -9,6 +9,7 @@ pub struct DescribedConnector {
     /// <p>The unique identifier for the connector.</p>
     pub connector_id: ::std::option::Option<::std::string::String>,
     /// <p>The URL of the partner's AS2 or SFTP endpoint.</p>
+    /// <p>When creating AS2 connectors or service-managed SFTP connectors (connectors without egress configuration), you must provide a URL to specify the remote server endpoint. For VPC Lattice type connectors, the URL must be null.</p>
     pub url: ::std::option::Option<::std::string::String>,
     /// <p>A structure that contains the parameters for an AS2 connector object.</p>
     pub as2_config: ::std::option::Option<crate::types::As2ConnectorConfig>,
@@ -29,6 +30,15 @@ pub struct DescribedConnector {
     pub service_managed_egress_ip_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The text name of the security policy for the specified connector.</p>
     pub security_policy_name: ::std::option::Option<::std::string::String>,
+    /// <p>Current egress configuration of the connector, showing how traffic is routed to the SFTP server. Contains VPC Lattice settings when using VPC_LATTICE egress type.</p>
+    /// <p>When using the VPC_LATTICE egress type, Transfer Family uses a managed Service Network to simplify the resource sharing process.</p>
+    pub egress_config: ::std::option::Option<crate::types::DescribedConnectorEgressConfig>,
+    /// <p>Type of egress configuration for the connector. SERVICE_MANAGED uses Transfer Family managed NAT gateways, while VPC_LATTICE routes traffic through customer VPCs using VPC Lattice.</p>
+    pub egress_type: crate::types::ConnectorEgressType,
+    /// <p>Error message providing details when the connector is in ERRORED status. Contains information to help troubleshoot connector creation or operation failures.</p>
+    pub error_message: ::std::option::Option<::std::string::String>,
+    /// <p>Current status of the connector. PENDING indicates creation/update in progress, ACTIVE means ready for operations, and ERRORED indicates a failure requiring attention.</p>
+    pub status: crate::types::ConnectorStatus,
 }
 impl DescribedConnector {
     /// <p>The unique Amazon Resource Name (ARN) for the connector.</p>
@@ -41,6 +51,7 @@ impl DescribedConnector {
         self.connector_id.as_deref()
     }
     /// <p>The URL of the partner's AS2 or SFTP endpoint.</p>
+    /// <p>When creating AS2 connectors or service-managed SFTP connectors (connectors without egress configuration), you must provide a URL to specify the remote server endpoint. For VPC Lattice type connectors, the URL must be null.</p>
     pub fn url(&self) -> ::std::option::Option<&str> {
         self.url.as_deref()
     }
@@ -81,6 +92,23 @@ impl DescribedConnector {
     pub fn security_policy_name(&self) -> ::std::option::Option<&str> {
         self.security_policy_name.as_deref()
     }
+    /// <p>Current egress configuration of the connector, showing how traffic is routed to the SFTP server. Contains VPC Lattice settings when using VPC_LATTICE egress type.</p>
+    /// <p>When using the VPC_LATTICE egress type, Transfer Family uses a managed Service Network to simplify the resource sharing process.</p>
+    pub fn egress_config(&self) -> ::std::option::Option<&crate::types::DescribedConnectorEgressConfig> {
+        self.egress_config.as_ref()
+    }
+    /// <p>Type of egress configuration for the connector. SERVICE_MANAGED uses Transfer Family managed NAT gateways, while VPC_LATTICE routes traffic through customer VPCs using VPC Lattice.</p>
+    pub fn egress_type(&self) -> &crate::types::ConnectorEgressType {
+        &self.egress_type
+    }
+    /// <p>Error message providing details when the connector is in ERRORED status. Contains information to help troubleshoot connector creation or operation failures.</p>
+    pub fn error_message(&self) -> ::std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
+    /// <p>Current status of the connector. PENDING indicates creation/update in progress, ACTIVE means ready for operations, and ERRORED indicates a failure requiring attention.</p>
+    pub fn status(&self) -> &crate::types::ConnectorStatus {
+        &self.status
+    }
 }
 impl DescribedConnector {
     /// Creates a new builder-style object to manufacture [`DescribedConnector`](crate::types::DescribedConnector).
@@ -103,6 +131,10 @@ pub struct DescribedConnectorBuilder {
     pub(crate) sftp_config: ::std::option::Option<crate::types::SftpConnectorConfig>,
     pub(crate) service_managed_egress_ip_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) security_policy_name: ::std::option::Option<::std::string::String>,
+    pub(crate) egress_config: ::std::option::Option<crate::types::DescribedConnectorEgressConfig>,
+    pub(crate) egress_type: ::std::option::Option<crate::types::ConnectorEgressType>,
+    pub(crate) error_message: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::ConnectorStatus>,
 }
 impl DescribedConnectorBuilder {
     /// <p>The unique Amazon Resource Name (ARN) for the connector.</p>
@@ -135,16 +167,19 @@ impl DescribedConnectorBuilder {
         &self.connector_id
     }
     /// <p>The URL of the partner's AS2 or SFTP endpoint.</p>
+    /// <p>When creating AS2 connectors or service-managed SFTP connectors (connectors without egress configuration), you must provide a URL to specify the remote server endpoint. For VPC Lattice type connectors, the URL must be null.</p>
     pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL of the partner's AS2 or SFTP endpoint.</p>
+    /// <p>When creating AS2 connectors or service-managed SFTP connectors (connectors without egress configuration), you must provide a URL to specify the remote server endpoint. For VPC Lattice type connectors, the URL must be null.</p>
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.url = input;
         self
     }
     /// <p>The URL of the partner's AS2 or SFTP endpoint.</p>
+    /// <p>When creating AS2 connectors or service-managed SFTP connectors (connectors without egress configuration), you must provide a URL to specify the remote server endpoint. For VPC Lattice type connectors, the URL must be null.</p>
     pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.url
     }
@@ -273,6 +308,67 @@ impl DescribedConnectorBuilder {
     pub fn get_security_policy_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.security_policy_name
     }
+    /// <p>Current egress configuration of the connector, showing how traffic is routed to the SFTP server. Contains VPC Lattice settings when using VPC_LATTICE egress type.</p>
+    /// <p>When using the VPC_LATTICE egress type, Transfer Family uses a managed Service Network to simplify the resource sharing process.</p>
+    pub fn egress_config(mut self, input: crate::types::DescribedConnectorEgressConfig) -> Self {
+        self.egress_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Current egress configuration of the connector, showing how traffic is routed to the SFTP server. Contains VPC Lattice settings when using VPC_LATTICE egress type.</p>
+    /// <p>When using the VPC_LATTICE egress type, Transfer Family uses a managed Service Network to simplify the resource sharing process.</p>
+    pub fn set_egress_config(mut self, input: ::std::option::Option<crate::types::DescribedConnectorEgressConfig>) -> Self {
+        self.egress_config = input;
+        self
+    }
+    /// <p>Current egress configuration of the connector, showing how traffic is routed to the SFTP server. Contains VPC Lattice settings when using VPC_LATTICE egress type.</p>
+    /// <p>When using the VPC_LATTICE egress type, Transfer Family uses a managed Service Network to simplify the resource sharing process.</p>
+    pub fn get_egress_config(&self) -> &::std::option::Option<crate::types::DescribedConnectorEgressConfig> {
+        &self.egress_config
+    }
+    /// <p>Type of egress configuration for the connector. SERVICE_MANAGED uses Transfer Family managed NAT gateways, while VPC_LATTICE routes traffic through customer VPCs using VPC Lattice.</p>
+    /// This field is required.
+    pub fn egress_type(mut self, input: crate::types::ConnectorEgressType) -> Self {
+        self.egress_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Type of egress configuration for the connector. SERVICE_MANAGED uses Transfer Family managed NAT gateways, while VPC_LATTICE routes traffic through customer VPCs using VPC Lattice.</p>
+    pub fn set_egress_type(mut self, input: ::std::option::Option<crate::types::ConnectorEgressType>) -> Self {
+        self.egress_type = input;
+        self
+    }
+    /// <p>Type of egress configuration for the connector. SERVICE_MANAGED uses Transfer Family managed NAT gateways, while VPC_LATTICE routes traffic through customer VPCs using VPC Lattice.</p>
+    pub fn get_egress_type(&self) -> &::std::option::Option<crate::types::ConnectorEgressType> {
+        &self.egress_type
+    }
+    /// <p>Error message providing details when the connector is in ERRORED status. Contains information to help troubleshoot connector creation or operation failures.</p>
+    pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.error_message = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Error message providing details when the connector is in ERRORED status. Contains information to help troubleshoot connector creation or operation failures.</p>
+    pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.error_message = input;
+        self
+    }
+    /// <p>Error message providing details when the connector is in ERRORED status. Contains information to help troubleshoot connector creation or operation failures.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
+    }
+    /// <p>Current status of the connector. PENDING indicates creation/update in progress, ACTIVE means ready for operations, and ERRORED indicates a failure requiring attention.</p>
+    /// This field is required.
+    pub fn status(mut self, input: crate::types::ConnectorStatus) -> Self {
+        self.status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Current status of the connector. PENDING indicates creation/update in progress, ACTIVE means ready for operations, and ERRORED indicates a failure requiring attention.</p>
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ConnectorStatus>) -> Self {
+        self.status = input;
+        self
+    }
+    /// <p>Current status of the connector. PENDING indicates creation/update in progress, ACTIVE means ready for operations, and ERRORED indicates a failure requiring attention.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ConnectorStatus> {
+        &self.status
+    }
     /// Consumes the builder and constructs a [`DescribedConnector`](crate::types::DescribedConnector).
     /// This method will fail if any of the following fields are not set:
     /// - [`arn`](crate::types::builders::DescribedConnectorBuilder::arn)
@@ -293,6 +389,18 @@ impl DescribedConnectorBuilder {
             sftp_config: self.sftp_config,
             service_managed_egress_ip_addresses: self.service_managed_egress_ip_addresses,
             security_policy_name: self.security_policy_name,
+            egress_config: self.egress_config,
+            egress_type: self.egress_type.unwrap_or(
+                "SERVICE_MANAGED"
+                    .parse::<crate::types::ConnectorEgressType>()
+                    .expect("static value validated to member"),
+            ),
+            error_message: self.error_message,
+            status: self.status.unwrap_or(
+                "ACTIVE"
+                    .parse::<crate::types::ConnectorStatus>()
+                    .expect("static value validated to member"),
+            ),
         })
     }
 }

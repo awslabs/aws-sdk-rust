@@ -153,6 +153,13 @@ pub(crate) fn de_describe_restore_job(
                             .transpose()?,
                     );
                 }
+                "BackupVaultArn" => {
+                    builder = builder.set_backup_vault_arn(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "CompletionDate" => {
                     builder = builder.set_completion_date(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                         tokens.next(),
@@ -232,6 +239,13 @@ pub(crate) fn de_describe_restore_job(
                 }
                 "RestoreJobId" => {
                     builder = builder.set_restore_job_id(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "SourceResourceArn" => {
+                    builder = builder.set_source_resource_arn(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,

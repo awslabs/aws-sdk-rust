@@ -279,9 +279,13 @@ pub use crate::types::_environment_status::EnvironmentStatus;
 
 pub use crate::types::_resource::Resource;
 
+pub use crate::types::_connection_scope::ConnectionScope;
+
 pub use crate::types::_connection_type::ConnectionType;
 
 pub use crate::types::_connection_properties_output::ConnectionPropertiesOutput;
+
+pub use crate::types::_amazon_q_properties_output::AmazonQPropertiesOutput;
 
 pub use crate::types::_s3_properties_output::S3PropertiesOutput;
 
@@ -346,6 +350,8 @@ pub use crate::types::_physical_connection_requirements::PhysicalConnectionRequi
 pub use crate::types::_aws_location::AwsLocation;
 
 pub use crate::types::_connection_properties_patch::ConnectionPropertiesPatch;
+
+pub use crate::types::_amazon_q_properties_patch::AmazonQPropertiesPatch;
 
 pub use crate::types::_s3_properties_patch::S3PropertiesPatch;
 
@@ -699,6 +705,8 @@ pub use crate::types::_entity_type::EntityType;
 
 pub use crate::types::_connection_properties_input::ConnectionPropertiesInput;
 
+pub use crate::types::_amazon_q_properties_input::AmazonQPropertiesInput;
+
 pub use crate::types::_s3_properties_input::S3PropertiesInput;
 
 pub use crate::types::_spark_glue_properties_input::SparkGluePropertiesInput;
@@ -756,6 +764,12 @@ mod _aggregation_output_item;
 mod _all_domain_units_grant_filter;
 
 mod _all_users_grant_filter;
+
+mod _amazon_q_properties_input;
+
+mod _amazon_q_properties_output;
+
+mod _amazon_q_properties_patch;
 
 mod _asset_filter_configuration;
 
@@ -834,6 +848,8 @@ mod _connection_properties_input;
 mod _connection_properties_output;
 
 mod _connection_properties_patch;
+
+mod _connection_scope;
 
 mod _connection_status;
 

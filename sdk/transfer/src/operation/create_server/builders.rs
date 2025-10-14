@@ -462,7 +462,9 @@ impl CreateServerFluentBuilder {
     pub fn get_protocols(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Protocol>> {
         self.inner.get_protocols()
     }
-    /// <p>The protocol settings that are configured for your server.</p>
+    /// <p>The protocol settings that are configured for your server.</p><note>
+    /// <p>Avoid placing Network Load Balancers (NLBs) or NAT gateways in front of Transfer Family servers, as this increases costs and can cause performance issues, including reduced connection limits for FTPS. For more details, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/infrastructure-security.html#nlb-considerations"> Avoid placing NLBs and NATs in front of Transfer Family</a>.</p>
+    /// </note>
     /// <ul>
     /// <li>
     /// <p>To indicate passive mode (for FTP and FTPS protocols), use the <code>PassiveIp</code> parameter. Enter a single dotted-quad IPv4 address, such as the external IP address of a firewall, router, or load balancer.</p></li>
@@ -477,7 +479,9 @@ impl CreateServerFluentBuilder {
         self.inner = self.inner.protocol_details(input);
         self
     }
-    /// <p>The protocol settings that are configured for your server.</p>
+    /// <p>The protocol settings that are configured for your server.</p><note>
+    /// <p>Avoid placing Network Load Balancers (NLBs) or NAT gateways in front of Transfer Family servers, as this increases costs and can cause performance issues, including reduced connection limits for FTPS. For more details, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/infrastructure-security.html#nlb-considerations"> Avoid placing NLBs and NATs in front of Transfer Family</a>.</p>
+    /// </note>
     /// <ul>
     /// <li>
     /// <p>To indicate passive mode (for FTP and FTPS protocols), use the <code>PassiveIp</code> parameter. Enter a single dotted-quad IPv4 address, such as the external IP address of a firewall, router, or load balancer.</p></li>
@@ -492,7 +496,9 @@ impl CreateServerFluentBuilder {
         self.inner = self.inner.set_protocol_details(input);
         self
     }
-    /// <p>The protocol settings that are configured for your server.</p>
+    /// <p>The protocol settings that are configured for your server.</p><note>
+    /// <p>Avoid placing Network Load Balancers (NLBs) or NAT gateways in front of Transfer Family servers, as this increases costs and can cause performance issues, including reduced connection limits for FTPS. For more details, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/infrastructure-security.html#nlb-considerations"> Avoid placing NLBs and NATs in front of Transfer Family</a>.</p>
+    /// </note>
     /// <ul>
     /// <li>
     /// <p>To indicate passive mode (for FTP and FTPS protocols), use the <code>PassiveIp</code> parameter. Enter a single dotted-quad IPv4 address, such as the external IP address of a firewall, router, or load balancer.</p></li>

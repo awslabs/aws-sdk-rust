@@ -1609,6 +1609,27 @@ impl From<crate::operation::copy_snapshot::CopySnapshotError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::copy_volumes::CopyVolumesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::copy_volumes::CopyVolumesError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::copy_volumes::CopyVolumesError> for Error {
+    fn from(err: crate::operation::copy_volumes::CopyVolumesError) -> Self {
+        match err {
+            crate::operation::copy_volumes::CopyVolumesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_capacity_reservation::CreateCapacityReservationError, R>>
     for Error
 where

@@ -641,6 +641,8 @@ pub use crate::types::_contact::ContactBuilder;
 
 pub use crate::types::_contact_details::ContactDetailsBuilder;
 
+pub use crate::types::_task_template_info_v2::TaskTemplateInfoV2Builder;
+
 pub use crate::types::_contact_evaluation::ContactEvaluationBuilder;
 
 pub use crate::types::_recording_info::RecordingInfoBuilder;

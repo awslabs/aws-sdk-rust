@@ -69,6 +69,10 @@ pub use crate::types::_usage_report_subscription::UsageReportSubscriptionBuilder
 
 pub use crate::types::_last_report_generation_execution_error::LastReportGenerationExecutionErrorBuilder;
 
+pub use crate::types::_software_associations::SoftwareAssociationsBuilder;
+
+pub use crate::types::_error_details::ErrorDetailsBuilder;
+
 pub use crate::types::_session::SessionBuilder;
 
 pub use crate::types::_image::ImageBuilder;
@@ -77,11 +81,11 @@ pub use crate::types::_image_state_change_reason::ImageStateChangeReasonBuilder;
 
 pub use crate::types::_shared_image_permissions::SharedImagePermissionsBuilder;
 
+pub use crate::types::_admin_app_license_usage_record::AdminAppLicenseUsageRecordBuilder;
+
 pub use crate::types::_application_fleet_association::ApplicationFleetAssociationBuilder;
 
 pub use crate::types::_app_block::AppBlockBuilder;
-
-pub use crate::types::_error_details::ErrorDetailsBuilder;
 
 pub use crate::types::_script_details::ScriptDetailsBuilder;
 

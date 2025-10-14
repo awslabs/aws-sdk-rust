@@ -30,5 +30,11 @@ pub fn ser_update_connector_input_input(
     if let Some(var_9) = &input.security_policy_name {
         object.key("SecurityPolicyName").string(var_9.as_str());
     }
+    if let Some(var_10) = &input.egress_config {
+        #[allow(unused_mut)]
+        let mut object_11 = object.key("EgressConfig").start_object();
+        crate::protocol_serde::shape_update_connector_egress_config::ser_update_connector_egress_config(&mut object_11, var_10)?;
+        object_11.finish();
+    }
     Ok(())
 }

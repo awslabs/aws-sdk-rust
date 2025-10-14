@@ -2206,6 +2206,15 @@ pub(crate) fn account_info_correct_errors(mut builder: crate::types::builders::A
     builder
 }
 
+pub(crate) fn amazon_q_properties_output_correct_errors(
+    mut builder: crate::types::builders::AmazonQPropertiesOutputBuilder,
+) -> crate::types::builders::AmazonQPropertiesOutputBuilder {
+    if builder.is_enabled.is_none() {
+        builder.is_enabled = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn asset_filter_summary_correct_errors(
     mut builder: crate::types::builders::AssetFilterSummaryBuilder,
 ) -> crate::types::builders::AssetFilterSummaryBuilder {

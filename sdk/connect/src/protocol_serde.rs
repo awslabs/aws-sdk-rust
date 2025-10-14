@@ -1703,6 +1703,8 @@ pub(crate) mod shape_task_template_default_field_value_list;
 
 pub(crate) mod shape_task_template_field_identifier;
 
+pub(crate) mod shape_task_template_info_v2;
+
 pub(crate) mod shape_task_template_metadata;
 
 pub(crate) mod shape_templated_message_config;

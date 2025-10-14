@@ -487,6 +487,8 @@ mod copy_image;
 
 mod copy_snapshot;
 
+mod copy_volumes;
+
 mod create_capacity_reservation;
 
 mod create_capacity_reservation_by_splitting;

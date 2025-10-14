@@ -12,6 +12,7 @@
 /// ```text
 /// # let connectiontype = unimplemented!();
 /// match connectiontype {
+///     ConnectionType::AmazonQ => { /* ... */ },
 ///     ConnectionType::Athena => { /* ... */ },
 ///     ConnectionType::Bigquery => { /* ... */ },
 ///     ConnectionType::Databricks => { /* ... */ },
@@ -61,6 +62,8 @@
 )]
 pub enum ConnectionType {
     #[allow(missing_docs)] // documentation missing in model
+    AmazonQ,
+    #[allow(missing_docs)] // documentation missing in model
     Athena,
     #[allow(missing_docs)] // documentation missing in model
     Bigquery,
@@ -107,6 +110,7 @@ pub enum ConnectionType {
 impl ::std::convert::From<&str> for ConnectionType {
     fn from(s: &str) -> Self {
         match s {
+            "AMAZON_Q" => ConnectionType::AmazonQ,
             "ATHENA" => ConnectionType::Athena,
             "BIGQUERY" => ConnectionType::Bigquery,
             "DATABRICKS" => ConnectionType::Databricks,
@@ -142,6 +146,7 @@ impl ConnectionType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ConnectionType::AmazonQ => "AMAZON_Q",
             ConnectionType::Athena => "ATHENA",
             ConnectionType::Bigquery => "BIGQUERY",
             ConnectionType::Databricks => "DATABRICKS",
@@ -168,6 +173,7 @@ impl ConnectionType {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "AMAZON_Q",
             "ATHENA",
             "BIGQUERY",
             "DATABRICKS",
@@ -211,6 +217,7 @@ impl ConnectionType {
 impl ::std::fmt::Display for ConnectionType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            ConnectionType::AmazonQ => write!(f, "AMAZON_Q"),
             ConnectionType::Athena => write!(f, "ATHENA"),
             ConnectionType::Bigquery => write!(f, "BIGQUERY"),
             ConnectionType::Databricks => write!(f, "DATABRICKS"),

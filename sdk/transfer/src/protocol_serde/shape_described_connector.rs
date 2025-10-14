@@ -70,6 +70,32 @@ where
                                     .transpose()?,
                             );
                         }
+                        "EgressConfig" => {
+                            builder = builder.set_egress_config(
+                                crate::protocol_serde::shape_described_connector_egress_config::de_described_connector_egress_config(tokens)?,
+                            );
+                        }
+                        "EgressType" => {
+                            builder = builder.set_egress_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ConnectorEgressType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ErrorMessage" => {
+                            builder = builder.set_error_message(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "Status" => {
+                            builder = builder.set_status(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ConnectorStatus::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

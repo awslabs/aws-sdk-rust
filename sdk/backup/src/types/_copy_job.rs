@@ -14,8 +14,19 @@ pub struct CopyJob {
     pub source_recovery_point_arn: ::std::option::Option<::std::string::String>,
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a destination copy vault; for example, <code>arn:aws:backup:us-east-1:123456789012:backup-vault:aBackupVault</code>.</p>
     pub destination_backup_vault_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The type of destination backup vault where the copied recovery point is stored. Valid values are <code>BACKUP_VAULT</code> for standard backup vaults and <code>LOGICALLY_AIR_GAPPED_BACKUP_VAULT</code> for logically air-gapped vaults.</p>
+    pub destination_vault_type: ::std::option::Option<::std::string::String>,
+    /// <p>The lock state of the destination backup vault. For logically air-gapped vaults, this indicates whether the vault is locked in compliance mode. Valid values include <code>LOCKED</code> and <code>UNLOCKED</code>.</p>
+    pub destination_vault_lock_state: ::std::option::Option<::std::string::String>,
     /// <p>An ARN that uniquely identifies a destination recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
     pub destination_recovery_point_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the copied backup in the destination vault. This can be a customer-managed key or an Amazon Web Services managed key.</p>
+    pub destination_encryption_key_arn: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies the time period, in days, before a recovery point transitions to cold storage or is deleted.</p>
+    /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, on the console, the retention setting must be 90 days greater than the transition to cold after days setting. The transition to cold after days setting can't be changed after a backup has been transitioned to cold.</p>
+    /// <p>Resource types that can transition to cold storage are listed in the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/backup-feature-availability.html#features-by-resource">Feature availability by resource</a> table. Backup ignores this expression for other resource types.</p>
+    /// <p>To remove the existing lifecycle and retention periods and keep your recovery points indefinitely, specify -1 for <code>MoveToColdStorageAfterDays</code> and <code>DeleteAfterDays</code>.</p>
+    pub destination_recovery_point_lifecycle: ::std::option::Option<crate::types::Lifecycle>,
     /// <p>The Amazon Web Services resource to be copied; for example, an Amazon Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS) database.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The date and time a copy job is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
@@ -73,9 +84,28 @@ impl CopyJob {
     pub fn destination_backup_vault_arn(&self) -> ::std::option::Option<&str> {
         self.destination_backup_vault_arn.as_deref()
     }
+    /// <p>The type of destination backup vault where the copied recovery point is stored. Valid values are <code>BACKUP_VAULT</code> for standard backup vaults and <code>LOGICALLY_AIR_GAPPED_BACKUP_VAULT</code> for logically air-gapped vaults.</p>
+    pub fn destination_vault_type(&self) -> ::std::option::Option<&str> {
+        self.destination_vault_type.as_deref()
+    }
+    /// <p>The lock state of the destination backup vault. For logically air-gapped vaults, this indicates whether the vault is locked in compliance mode. Valid values include <code>LOCKED</code> and <code>UNLOCKED</code>.</p>
+    pub fn destination_vault_lock_state(&self) -> ::std::option::Option<&str> {
+        self.destination_vault_lock_state.as_deref()
+    }
     /// <p>An ARN that uniquely identifies a destination recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
     pub fn destination_recovery_point_arn(&self) -> ::std::option::Option<&str> {
         self.destination_recovery_point_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the copied backup in the destination vault. This can be a customer-managed key or an Amazon Web Services managed key.</p>
+    pub fn destination_encryption_key_arn(&self) -> ::std::option::Option<&str> {
+        self.destination_encryption_key_arn.as_deref()
+    }
+    /// <p>Specifies the time period, in days, before a recovery point transitions to cold storage or is deleted.</p>
+    /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, on the console, the retention setting must be 90 days greater than the transition to cold after days setting. The transition to cold after days setting can't be changed after a backup has been transitioned to cold.</p>
+    /// <p>Resource types that can transition to cold storage are listed in the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/backup-feature-availability.html#features-by-resource">Feature availability by resource</a> table. Backup ignores this expression for other resource types.</p>
+    /// <p>To remove the existing lifecycle and retention periods and keep your recovery points indefinitely, specify -1 for <code>MoveToColdStorageAfterDays</code> and <code>DeleteAfterDays</code>.</p>
+    pub fn destination_recovery_point_lifecycle(&self) -> ::std::option::Option<&crate::types::Lifecycle> {
+        self.destination_recovery_point_lifecycle.as_ref()
     }
     /// <p>The Amazon Web Services resource to be copied; for example, an Amazon Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS) database.</p>
     pub fn resource_arn(&self) -> ::std::option::Option<&str> {
@@ -161,7 +191,11 @@ pub struct CopyJobBuilder {
     pub(crate) source_backup_vault_arn: ::std::option::Option<::std::string::String>,
     pub(crate) source_recovery_point_arn: ::std::option::Option<::std::string::String>,
     pub(crate) destination_backup_vault_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) destination_vault_type: ::std::option::Option<::std::string::String>,
+    pub(crate) destination_vault_lock_state: ::std::option::Option<::std::string::String>,
     pub(crate) destination_recovery_point_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) destination_encryption_key_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) destination_recovery_point_lifecycle: ::std::option::Option<crate::types::Lifecycle>,
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) completion_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -250,6 +284,34 @@ impl CopyJobBuilder {
     pub fn get_destination_backup_vault_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.destination_backup_vault_arn
     }
+    /// <p>The type of destination backup vault where the copied recovery point is stored. Valid values are <code>BACKUP_VAULT</code> for standard backup vaults and <code>LOGICALLY_AIR_GAPPED_BACKUP_VAULT</code> for logically air-gapped vaults.</p>
+    pub fn destination_vault_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.destination_vault_type = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The type of destination backup vault where the copied recovery point is stored. Valid values are <code>BACKUP_VAULT</code> for standard backup vaults and <code>LOGICALLY_AIR_GAPPED_BACKUP_VAULT</code> for logically air-gapped vaults.</p>
+    pub fn set_destination_vault_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.destination_vault_type = input;
+        self
+    }
+    /// <p>The type of destination backup vault where the copied recovery point is stored. Valid values are <code>BACKUP_VAULT</code> for standard backup vaults and <code>LOGICALLY_AIR_GAPPED_BACKUP_VAULT</code> for logically air-gapped vaults.</p>
+    pub fn get_destination_vault_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_vault_type
+    }
+    /// <p>The lock state of the destination backup vault. For logically air-gapped vaults, this indicates whether the vault is locked in compliance mode. Valid values include <code>LOCKED</code> and <code>UNLOCKED</code>.</p>
+    pub fn destination_vault_lock_state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.destination_vault_lock_state = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The lock state of the destination backup vault. For logically air-gapped vaults, this indicates whether the vault is locked in compliance mode. Valid values include <code>LOCKED</code> and <code>UNLOCKED</code>.</p>
+    pub fn set_destination_vault_lock_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.destination_vault_lock_state = input;
+        self
+    }
+    /// <p>The lock state of the destination backup vault. For logically air-gapped vaults, this indicates whether the vault is locked in compliance mode. Valid values include <code>LOCKED</code> and <code>UNLOCKED</code>.</p>
+    pub fn get_destination_vault_lock_state(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_vault_lock_state
+    }
     /// <p>An ARN that uniquely identifies a destination recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
     pub fn destination_recovery_point_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_recovery_point_arn = ::std::option::Option::Some(input.into());
@@ -263,6 +325,43 @@ impl CopyJobBuilder {
     /// <p>An ARN that uniquely identifies a destination recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
     pub fn get_destination_recovery_point_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.destination_recovery_point_arn
+    }
+    /// <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the copied backup in the destination vault. This can be a customer-managed key or an Amazon Web Services managed key.</p>
+    pub fn destination_encryption_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.destination_encryption_key_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the copied backup in the destination vault. This can be a customer-managed key or an Amazon Web Services managed key.</p>
+    pub fn set_destination_encryption_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.destination_encryption_key_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the copied backup in the destination vault. This can be a customer-managed key or an Amazon Web Services managed key.</p>
+    pub fn get_destination_encryption_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_encryption_key_arn
+    }
+    /// <p>Specifies the time period, in days, before a recovery point transitions to cold storage or is deleted.</p>
+    /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, on the console, the retention setting must be 90 days greater than the transition to cold after days setting. The transition to cold after days setting can't be changed after a backup has been transitioned to cold.</p>
+    /// <p>Resource types that can transition to cold storage are listed in the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/backup-feature-availability.html#features-by-resource">Feature availability by resource</a> table. Backup ignores this expression for other resource types.</p>
+    /// <p>To remove the existing lifecycle and retention periods and keep your recovery points indefinitely, specify -1 for <code>MoveToColdStorageAfterDays</code> and <code>DeleteAfterDays</code>.</p>
+    pub fn destination_recovery_point_lifecycle(mut self, input: crate::types::Lifecycle) -> Self {
+        self.destination_recovery_point_lifecycle = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the time period, in days, before a recovery point transitions to cold storage or is deleted.</p>
+    /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, on the console, the retention setting must be 90 days greater than the transition to cold after days setting. The transition to cold after days setting can't be changed after a backup has been transitioned to cold.</p>
+    /// <p>Resource types that can transition to cold storage are listed in the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/backup-feature-availability.html#features-by-resource">Feature availability by resource</a> table. Backup ignores this expression for other resource types.</p>
+    /// <p>To remove the existing lifecycle and retention periods and keep your recovery points indefinitely, specify -1 for <code>MoveToColdStorageAfterDays</code> and <code>DeleteAfterDays</code>.</p>
+    pub fn set_destination_recovery_point_lifecycle(mut self, input: ::std::option::Option<crate::types::Lifecycle>) -> Self {
+        self.destination_recovery_point_lifecycle = input;
+        self
+    }
+    /// <p>Specifies the time period, in days, before a recovery point transitions to cold storage or is deleted.</p>
+    /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, on the console, the retention setting must be 90 days greater than the transition to cold after days setting. The transition to cold after days setting can't be changed after a backup has been transitioned to cold.</p>
+    /// <p>Resource types that can transition to cold storage are listed in the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/backup-feature-availability.html#features-by-resource">Feature availability by resource</a> table. Backup ignores this expression for other resource types.</p>
+    /// <p>To remove the existing lifecycle and retention periods and keep your recovery points indefinitely, specify -1 for <code>MoveToColdStorageAfterDays</code> and <code>DeleteAfterDays</code>.</p>
+    pub fn get_destination_recovery_point_lifecycle(&self) -> &::std::option::Option<crate::types::Lifecycle> {
+        &self.destination_recovery_point_lifecycle
     }
     /// <p>The Amazon Web Services resource to be copied; for example, an Amazon Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS) database.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -511,7 +610,11 @@ impl CopyJobBuilder {
             source_backup_vault_arn: self.source_backup_vault_arn,
             source_recovery_point_arn: self.source_recovery_point_arn,
             destination_backup_vault_arn: self.destination_backup_vault_arn,
+            destination_vault_type: self.destination_vault_type,
+            destination_vault_lock_state: self.destination_vault_lock_state,
             destination_recovery_point_arn: self.destination_recovery_point_arn,
+            destination_encryption_key_arn: self.destination_encryption_key_arn,
+            destination_recovery_point_lifecycle: self.destination_recovery_point_lifecycle,
             resource_arn: self.resource_arn,
             creation_date: self.creation_date,
             completion_date: self.completion_date,

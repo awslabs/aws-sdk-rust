@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum ConnectionPropertiesInput {
+    /// <p>The Amazon Q properties of the connection.</p>
+    AmazonQProperties(crate::types::AmazonQPropertiesInput),
     /// <p>The Amazon Athena properties of a connection.</p>
     AthenaProperties(crate::types::AthenaPropertiesInput),
     /// <p>The Amazon Web Services Glue properties of a connection.</p>
@@ -31,6 +33,19 @@ pub enum ConnectionPropertiesInput {
     Unknown,
 }
 impl ConnectionPropertiesInput {
+    /// Tries to convert the enum instance into [`AmazonQProperties`](crate::types::ConnectionPropertiesInput::AmazonQProperties), extracting the inner [`AmazonQPropertiesInput`](crate::types::AmazonQPropertiesInput).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_amazon_q_properties(&self) -> ::std::result::Result<&crate::types::AmazonQPropertiesInput, &Self> {
+        if let ConnectionPropertiesInput::AmazonQProperties(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`AmazonQProperties`](crate::types::ConnectionPropertiesInput::AmazonQProperties).
+    pub fn is_amazon_q_properties(&self) -> bool {
+        self.as_amazon_q_properties().is_ok()
+    }
     /// Tries to convert the enum instance into [`AthenaProperties`](crate::types::ConnectionPropertiesInput::AthenaProperties), extracting the inner [`AthenaPropertiesInput`](crate::types::AthenaPropertiesInput).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_athena_properties(&self) -> ::std::result::Result<&crate::types::AthenaPropertiesInput, &Self> {

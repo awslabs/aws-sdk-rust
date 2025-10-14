@@ -86,6 +86,8 @@ pub struct Contact {
     pub disconnect_reason: ::std::option::Option<::std::string::String>,
     /// <p>Information about the contact evaluations where the key is the FormId, which is a unique identifier for the form.</p>
     pub contact_evaluations: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ContactEvaluation>>,
+    /// <p>If this contact was created using a task template, this contains information about the task template.</p>
+    pub task_template_info: ::std::option::Option<crate::types::TaskTemplateInfoV2>,
     /// <p>A map of string key/value pairs that contain user-defined attributes which are lightly typed within the contact. This object is used only for task contacts.</p>
     pub contact_details: ::std::option::Option<crate::types::ContactDetails>,
     /// <p>The attributes of the contact.</p>
@@ -260,6 +262,10 @@ impl Contact {
     pub fn contact_evaluations(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::ContactEvaluation>> {
         self.contact_evaluations.as_ref()
     }
+    /// <p>If this contact was created using a task template, this contains information about the task template.</p>
+    pub fn task_template_info(&self) -> ::std::option::Option<&crate::types::TaskTemplateInfoV2> {
+        self.task_template_info.as_ref()
+    }
     /// <p>A map of string key/value pairs that contain user-defined attributes which are lightly typed within the contact. This object is used only for task contacts.</p>
     pub fn contact_details(&self) -> ::std::option::Option<&crate::types::ContactDetails> {
         self.contact_details.as_ref()
@@ -313,6 +319,7 @@ impl ::std::fmt::Debug for Contact {
         formatter.field("recordings", &self.recordings);
         formatter.field("disconnect_reason", &self.disconnect_reason);
         formatter.field("contact_evaluations", &self.contact_evaluations);
+        formatter.field("task_template_info", &self.task_template_info);
         formatter.field("contact_details", &self.contact_details);
         formatter.field("attributes", &self.attributes);
         formatter.finish()
@@ -370,6 +377,7 @@ pub struct ContactBuilder {
     pub(crate) recordings: ::std::option::Option<::std::vec::Vec<crate::types::RecordingInfo>>,
     pub(crate) disconnect_reason: ::std::option::Option<::std::string::String>,
     pub(crate) contact_evaluations: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ContactEvaluation>>,
+    pub(crate) task_template_info: ::std::option::Option<crate::types::TaskTemplateInfoV2>,
     pub(crate) contact_details: ::std::option::Option<crate::types::ContactDetails>,
     pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -982,6 +990,20 @@ impl ContactBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ContactEvaluation>> {
         &self.contact_evaluations
     }
+    /// <p>If this contact was created using a task template, this contains information about the task template.</p>
+    pub fn task_template_info(mut self, input: crate::types::TaskTemplateInfoV2) -> Self {
+        self.task_template_info = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>If this contact was created using a task template, this contains information about the task template.</p>
+    pub fn set_task_template_info(mut self, input: ::std::option::Option<crate::types::TaskTemplateInfoV2>) -> Self {
+        self.task_template_info = input;
+        self
+    }
+    /// <p>If this contact was created using a task template, this contains information about the task template.</p>
+    pub fn get_task_template_info(&self) -> &::std::option::Option<crate::types::TaskTemplateInfoV2> {
+        &self.task_template_info
+    }
     /// <p>A map of string key/value pairs that contain user-defined attributes which are lightly typed within the contact. This object is used only for task contacts.</p>
     pub fn contact_details(mut self, input: crate::types::ContactDetails) -> Self {
         self.contact_details = ::std::option::Option::Some(input);
@@ -1060,6 +1082,7 @@ impl ContactBuilder {
             recordings: self.recordings,
             disconnect_reason: self.disconnect_reason,
             contact_evaluations: self.contact_evaluations,
+            task_template_info: self.task_template_info,
             contact_details: self.contact_details,
             attributes: self.attributes,
         }
@@ -1109,6 +1132,7 @@ impl ::std::fmt::Debug for ContactBuilder {
         formatter.field("recordings", &self.recordings);
         formatter.field("disconnect_reason", &self.disconnect_reason);
         formatter.field("contact_evaluations", &self.contact_evaluations);
+        formatter.field("task_template_info", &self.task_template_info);
         formatter.field("contact_details", &self.contact_details);
         formatter.field("attributes", &self.attributes);
         formatter.finish()

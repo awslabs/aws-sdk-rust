@@ -240,4 +240,18 @@ impl ListConnectionsFluentBuilder {
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ConnectionType> {
         self.inner.get_type()
     }
+    /// <p>The scope of the connection.</p>
+    pub fn scope(mut self, input: crate::types::ConnectionScope) -> Self {
+        self.inner = self.inner.scope(input);
+        self
+    }
+    /// <p>The scope of the connection.</p>
+    pub fn set_scope(mut self, input: ::std::option::Option<crate::types::ConnectionScope>) -> Self {
+        self.inner = self.inner.set_scope(input);
+        self
+    }
+    /// <p>The scope of the connection.</p>
+    pub fn get_scope(&self) -> &::std::option::Option<crate::types::ConnectionScope> {
+        self.inner.get_scope()
+    }
 }

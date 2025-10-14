@@ -64,6 +64,8 @@ pub struct Image {
     pub dynamic_app_providers_enabled: ::std::option::Option<crate::types::DynamicAppProvidersEnabled>,
     /// <p>Indicates whether the image is shared with another account ID.</p>
     pub image_shared_with_others: ::std::option::Option<crate::types::ImageSharedWithOthers>,
+    /// <p>Indicates whether the image includes license-included applications.</p>
+    pub managed_software_included: ::std::option::Option<bool>,
 }
 impl Image {
     /// <p>The name of the image.</p>
@@ -174,6 +176,10 @@ impl Image {
     pub fn image_shared_with_others(&self) -> ::std::option::Option<&crate::types::ImageSharedWithOthers> {
         self.image_shared_with_others.as_ref()
     }
+    /// <p>Indicates whether the image includes license-included applications.</p>
+    pub fn managed_software_included(&self) -> ::std::option::Option<bool> {
+        self.managed_software_included
+    }
 }
 impl Image {
     /// Creates a new builder-style object to manufacture [`Image`](crate::types::Image).
@@ -207,6 +213,7 @@ pub struct ImageBuilder {
     pub(crate) supported_instance_families: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) dynamic_app_providers_enabled: ::std::option::Option<crate::types::DynamicAppProvidersEnabled>,
     pub(crate) image_shared_with_others: ::std::option::Option<crate::types::ImageSharedWithOthers>,
+    pub(crate) managed_software_included: ::std::option::Option<bool>,
 }
 impl ImageBuilder {
     /// <p>The name of the image.</p>
@@ -576,6 +583,20 @@ impl ImageBuilder {
     pub fn get_image_shared_with_others(&self) -> &::std::option::Option<crate::types::ImageSharedWithOthers> {
         &self.image_shared_with_others
     }
+    /// <p>Indicates whether the image includes license-included applications.</p>
+    pub fn managed_software_included(mut self, input: bool) -> Self {
+        self.managed_software_included = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether the image includes license-included applications.</p>
+    pub fn set_managed_software_included(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.managed_software_included = input;
+        self
+    }
+    /// <p>Indicates whether the image includes license-included applications.</p>
+    pub fn get_managed_software_included(&self) -> &::std::option::Option<bool> {
+        &self.managed_software_included
+    }
     /// Consumes the builder and constructs a [`Image`](crate::types::Image).
     pub fn build(self) -> crate::types::Image {
         crate::types::Image {
@@ -600,6 +621,7 @@ impl ImageBuilder {
             supported_instance_families: self.supported_instance_families,
             dynamic_app_providers_enabled: self.dynamic_app_providers_enabled,
             image_shared_with_others: self.image_shared_with_others,
+            managed_software_included: self.managed_software_included,
         }
     }
 }

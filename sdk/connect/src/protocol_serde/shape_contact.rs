@@ -231,6 +231,10 @@ where
                             builder =
                                 builder.set_contact_evaluations(crate::protocol_serde::shape_contact_evaluations::de_contact_evaluations(tokens)?);
                         }
+                        "TaskTemplateInfo" => {
+                            builder =
+                                builder.set_task_template_info(crate::protocol_serde::shape_task_template_info_v2::de_task_template_info_v2(tokens)?);
+                        }
                         "ContactDetails" => {
                             builder = builder.set_contact_details(crate::protocol_serde::shape_contact_details::de_contact_details(tokens)?);
                         }

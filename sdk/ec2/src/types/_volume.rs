@@ -8,6 +8,8 @@ pub struct Volume {
     pub availability_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
     pub outpost_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the source volume from which the volume copy was created. Only for volume copies.</p>
+    pub source_volume_id: ::std::option::Option<::std::string::String>,
     /// <p>The number of I/O operations per second (IOPS). For <code>gp3</code>, <code>io1</code>, and <code>io2</code> volumes, this represents the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents the baseline performance of the volume and the rate at which the volume accumulates I/O credits for bursting.</p>
     pub iops: ::std::option::Option<i32>,
     /// <p>Any tags assigned to the volume.</p>
@@ -62,6 +64,10 @@ impl Volume {
     /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
     pub fn outpost_arn(&self) -> ::std::option::Option<&str> {
         self.outpost_arn.as_deref()
+    }
+    /// <p>The ID of the source volume from which the volume copy was created. Only for volume copies.</p>
+    pub fn source_volume_id(&self) -> ::std::option::Option<&str> {
+        self.source_volume_id.as_deref()
     }
     /// <p>The number of I/O operations per second (IOPS). For <code>gp3</code>, <code>io1</code>, and <code>io2</code> volumes, this represents the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents the baseline performance of the volume and the rate at which the volume accumulates I/O credits for bursting.</p>
     pub fn iops(&self) -> ::std::option::Option<i32> {
@@ -162,6 +168,7 @@ impl Volume {
 pub struct VolumeBuilder {
     pub(crate) availability_zone_id: ::std::option::Option<::std::string::String>,
     pub(crate) outpost_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) source_volume_id: ::std::option::Option<::std::string::String>,
     pub(crate) iops: ::std::option::Option<i32>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) volume_type: ::std::option::Option<crate::types::VolumeType>,
@@ -209,6 +216,20 @@ impl VolumeBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
     pub fn get_outpost_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.outpost_arn
+    }
+    /// <p>The ID of the source volume from which the volume copy was created. Only for volume copies.</p>
+    pub fn source_volume_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.source_volume_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the source volume from which the volume copy was created. Only for volume copies.</p>
+    pub fn set_source_volume_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.source_volume_id = input;
+        self
+    }
+    /// <p>The ID of the source volume from which the volume copy was created. Only for volume copies.</p>
+    pub fn get_source_volume_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_volume_id
     }
     /// <p>The number of I/O operations per second (IOPS). For <code>gp3</code>, <code>io1</code>, and <code>io2</code> volumes, this represents the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents the baseline performance of the volume and the rate at which the volume accumulates I/O credits for bursting.</p>
     pub fn iops(mut self, input: i32) -> Self {
@@ -506,6 +527,7 @@ impl VolumeBuilder {
         crate::types::Volume {
             availability_zone_id: self.availability_zone_id,
             outpost_arn: self.outpost_arn,
+            source_volume_id: self.source_volume_id,
             iops: self.iops,
             tags: self.tags,
             volume_type: self.volume_type,

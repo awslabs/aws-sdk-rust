@@ -42,12 +42,39 @@ where
                                     .transpose()?,
                             );
                         }
+                        "VaultType" => {
+                            builder = builder.set_vault_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "VaultLockState" => {
+                            builder = builder.set_vault_lock_state(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "RecoveryPointArn" => {
                             builder = builder.set_recovery_point_arn(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
+                        }
+                        "RecoveryPointLifecycle" => {
+                            builder = builder.set_recovery_point_lifecycle(crate::protocol_serde::shape_lifecycle::de_lifecycle(tokens)?);
+                        }
+                        "EncryptionKeyArn" => {
+                            builder = builder.set_encryption_key_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "IsEncrypted" => {
+                            builder = builder.set_is_encrypted(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "ResourceArn" => {
                             builder = builder.set_resource_arn(

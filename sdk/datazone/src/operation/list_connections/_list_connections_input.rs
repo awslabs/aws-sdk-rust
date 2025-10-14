@@ -21,6 +21,8 @@ pub struct ListConnectionsInput {
     pub project_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The type of connection.</p>
     pub r#type: ::std::option::Option<crate::types::ConnectionType>,
+    /// <p>The scope of the connection.</p>
+    pub scope: ::std::option::Option<crate::types::ConnectionScope>,
 }
 impl ListConnectionsInput {
     /// <p>The ID of the domain where you want to list connections.</p>
@@ -59,6 +61,10 @@ impl ListConnectionsInput {
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::ConnectionType> {
         self.r#type.as_ref()
     }
+    /// <p>The scope of the connection.</p>
+    pub fn scope(&self) -> ::std::option::Option<&crate::types::ConnectionScope> {
+        self.scope.as_ref()
+    }
 }
 impl ListConnectionsInput {
     /// Creates a new builder-style object to manufacture [`ListConnectionsInput`](crate::operation::list_connections::ListConnectionsInput).
@@ -80,6 +86,7 @@ pub struct ListConnectionsInputBuilder {
     pub(crate) environment_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) project_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::ConnectionType>,
+    pub(crate) scope: ::std::option::Option<crate::types::ConnectionScope>,
 }
 impl ListConnectionsInputBuilder {
     /// <p>The ID of the domain where you want to list connections.</p>
@@ -182,7 +189,6 @@ impl ListConnectionsInputBuilder {
         &self.environment_identifier
     }
     /// <p>The ID of the project where you want to list connections.</p>
-    /// This field is required.
     pub fn project_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_identifier = ::std::option::Option::Some(input.into());
         self
@@ -210,6 +216,20 @@ impl ListConnectionsInputBuilder {
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ConnectionType> {
         &self.r#type
     }
+    /// <p>The scope of the connection.</p>
+    pub fn scope(mut self, input: crate::types::ConnectionScope) -> Self {
+        self.scope = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The scope of the connection.</p>
+    pub fn set_scope(mut self, input: ::std::option::Option<crate::types::ConnectionScope>) -> Self {
+        self.scope = input;
+        self
+    }
+    /// <p>The scope of the connection.</p>
+    pub fn get_scope(&self) -> &::std::option::Option<crate::types::ConnectionScope> {
+        &self.scope
+    }
     /// Consumes the builder and constructs a [`ListConnectionsInput`](crate::operation::list_connections::ListConnectionsInput).
     pub fn build(
         self,
@@ -224,6 +244,7 @@ impl ListConnectionsInputBuilder {
             environment_identifier: self.environment_identifier,
             project_identifier: self.project_identifier,
             r#type: self.r#type,
+            scope: self.scope,
         })
     }
 }
