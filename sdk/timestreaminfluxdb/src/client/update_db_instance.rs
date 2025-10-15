@@ -33,6 +33,7 @@ impl super::Client {
     ///   - [`influx_auth_parameters_secret_arn(Option<String>)`](crate::operation::update_db_instance::UpdateDbInstanceOutput::influx_auth_parameters_secret_arn): <p>The Amazon Resource Name (ARN) of the Secrets Manager secret containing the initial InfluxDB authorization parameters. The secret value is a JSON formatted key-value pair holding InfluxDB authorization values: organization, bucket, username, and password.</p>
     ///   - [`db_cluster_id(Option<String>)`](crate::operation::update_db_instance::UpdateDbInstanceOutput::db_cluster_id): <p>Specifies the DbCluster to which this DbInstance belongs to.</p>
     ///   - [`instance_mode(Option<InstanceMode>)`](crate::operation::update_db_instance::UpdateDbInstanceOutput::instance_mode): <p>Specifies the DbInstance's role in the cluster.</p>
+    ///   - [`instance_modes(Option<Vec::<InstanceMode>>)`](crate::operation::update_db_instance::UpdateDbInstanceOutput::instance_modes): <p>Specifies the DbInstance's roles in the cluster.</p>
     /// - On failure, responds with [`SdkError<UpdateDbInstanceError>`](crate::operation::update_db_instance::UpdateDbInstanceError)
     pub fn update_db_instance(&self) -> crate::operation::update_db_instance::builders::UpdateDbInstanceFluentBuilder {
         crate::operation::update_db_instance::builders::UpdateDbInstanceFluentBuilder::new(self.handle.clone())

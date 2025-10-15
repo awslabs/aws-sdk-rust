@@ -73,7 +73,25 @@ pub struct ModifyDbClusterInput {
     /// <p><code>aws docdb describe-db-engine-versions --engine docdb --query "DBEngineVersions\[\].EngineVersion"</code></p>
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>A value that indicates whether major version upgrades are allowed.</p>
-    /// <p>Constraints: You must allow major version upgrades when specifying a value for the <code>EngineVersion</code> parameter that is a different major version than the DB cluster's current version.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>You must allow major version upgrades when specifying a value for the <code>EngineVersion</code> parameter that is a different major version than the cluster's current version.</p></li>
+    /// <li>
+    /// <p>Since some parameters are version specific, changing them requires executing a new <code>ModifyDBCluster</code> API call after the in-place MVU completes.</p></li>
+    /// </ul><note>
+    /// <p>Performing an MVU directly impacts the following parameters:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>MasterUserPassword</code></p></li>
+    /// <li>
+    /// <p><code>NewDBClusterIdentifier</code></p></li>
+    /// <li>
+    /// <p><code>VpcSecurityGroupIds</code></p></li>
+    /// <li>
+    /// <p><code>Port</code></p></li>
+    /// </ul>
+    /// </note>
     pub allow_major_version_upgrade: ::std::option::Option<bool>,
     /// <p>Specifies whether this cluster can be deleted. If <code>DeletionProtection</code> is enabled, the cluster cannot be deleted unless it is modified and <code>DeletionProtection</code> is disabled. <code>DeletionProtection</code> protects clusters from being accidentally deleted.</p>
     pub deletion_protection: ::std::option::Option<bool>,
@@ -101,6 +119,11 @@ pub struct ModifyDbClusterInput {
     /// <p>This setting is valid only if the master user password is managed by Amazon DocumentDB in Amazon Web Services Secrets Manager for the cluster. The secret value contains the updated password.</p>
     /// <p>Constraint: You must apply the change immediately when rotating the master user password.</p>
     pub rotate_master_user_password: ::std::option::Option<bool>,
+    /// <p>The network type of the cluster.</p>
+    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/vpc-clusters.html">DocumentDB clusters in a VPC</a> in the Amazon DocumentDB Developer Guide.</p>
+    /// <p>Valid Values: <code>IPV4</code> | <code>DUAL</code></p>
+    pub network_type: ::std::option::Option<::std::string::String>,
 }
 impl ModifyDbClusterInput {
     /// <p>The cluster identifier for the cluster that is being modified. This parameter is not case sensitive.</p>
@@ -198,7 +221,25 @@ impl ModifyDbClusterInput {
         self.engine_version.as_deref()
     }
     /// <p>A value that indicates whether major version upgrades are allowed.</p>
-    /// <p>Constraints: You must allow major version upgrades when specifying a value for the <code>EngineVersion</code> parameter that is a different major version than the DB cluster's current version.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>You must allow major version upgrades when specifying a value for the <code>EngineVersion</code> parameter that is a different major version than the cluster's current version.</p></li>
+    /// <li>
+    /// <p>Since some parameters are version specific, changing them requires executing a new <code>ModifyDBCluster</code> API call after the in-place MVU completes.</p></li>
+    /// </ul><note>
+    /// <p>Performing an MVU directly impacts the following parameters:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>MasterUserPassword</code></p></li>
+    /// <li>
+    /// <p><code>NewDBClusterIdentifier</code></p></li>
+    /// <li>
+    /// <p><code>VpcSecurityGroupIds</code></p></li>
+    /// <li>
+    /// <p><code>Port</code></p></li>
+    /// </ul>
+    /// </note>
     pub fn allow_major_version_upgrade(&self) -> ::std::option::Option<bool> {
         self.allow_major_version_upgrade
     }
@@ -240,6 +281,13 @@ impl ModifyDbClusterInput {
     pub fn rotate_master_user_password(&self) -> ::std::option::Option<bool> {
         self.rotate_master_user_password
     }
+    /// <p>The network type of the cluster.</p>
+    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/vpc-clusters.html">DocumentDB clusters in a VPC</a> in the Amazon DocumentDB Developer Guide.</p>
+    /// <p>Valid Values: <code>IPV4</code> | <code>DUAL</code></p>
+    pub fn network_type(&self) -> ::std::option::Option<&str> {
+        self.network_type.as_deref()
+    }
 }
 impl ModifyDbClusterInput {
     /// Creates a new builder-style object to manufacture [`ModifyDbClusterInput`](crate::operation::modify_db_cluster::ModifyDbClusterInput).
@@ -271,6 +319,7 @@ pub struct ModifyDbClusterInputBuilder {
     pub(crate) manage_master_user_password: ::std::option::Option<bool>,
     pub(crate) master_user_secret_kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) rotate_master_user_password: ::std::option::Option<bool>,
+    pub(crate) network_type: ::std::option::Option<::std::string::String>,
 }
 impl ModifyDbClusterInputBuilder {
     /// <p>The cluster identifier for the cluster that is being modified. This parameter is not case sensitive.</p>
@@ -581,19 +630,73 @@ impl ModifyDbClusterInputBuilder {
         &self.engine_version
     }
     /// <p>A value that indicates whether major version upgrades are allowed.</p>
-    /// <p>Constraints: You must allow major version upgrades when specifying a value for the <code>EngineVersion</code> parameter that is a different major version than the DB cluster's current version.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>You must allow major version upgrades when specifying a value for the <code>EngineVersion</code> parameter that is a different major version than the cluster's current version.</p></li>
+    /// <li>
+    /// <p>Since some parameters are version specific, changing them requires executing a new <code>ModifyDBCluster</code> API call after the in-place MVU completes.</p></li>
+    /// </ul><note>
+    /// <p>Performing an MVU directly impacts the following parameters:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>MasterUserPassword</code></p></li>
+    /// <li>
+    /// <p><code>NewDBClusterIdentifier</code></p></li>
+    /// <li>
+    /// <p><code>VpcSecurityGroupIds</code></p></li>
+    /// <li>
+    /// <p><code>Port</code></p></li>
+    /// </ul>
+    /// </note>
     pub fn allow_major_version_upgrade(mut self, input: bool) -> Self {
         self.allow_major_version_upgrade = ::std::option::Option::Some(input);
         self
     }
     /// <p>A value that indicates whether major version upgrades are allowed.</p>
-    /// <p>Constraints: You must allow major version upgrades when specifying a value for the <code>EngineVersion</code> parameter that is a different major version than the DB cluster's current version.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>You must allow major version upgrades when specifying a value for the <code>EngineVersion</code> parameter that is a different major version than the cluster's current version.</p></li>
+    /// <li>
+    /// <p>Since some parameters are version specific, changing them requires executing a new <code>ModifyDBCluster</code> API call after the in-place MVU completes.</p></li>
+    /// </ul><note>
+    /// <p>Performing an MVU directly impacts the following parameters:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>MasterUserPassword</code></p></li>
+    /// <li>
+    /// <p><code>NewDBClusterIdentifier</code></p></li>
+    /// <li>
+    /// <p><code>VpcSecurityGroupIds</code></p></li>
+    /// <li>
+    /// <p><code>Port</code></p></li>
+    /// </ul>
+    /// </note>
     pub fn set_allow_major_version_upgrade(mut self, input: ::std::option::Option<bool>) -> Self {
         self.allow_major_version_upgrade = input;
         self
     }
     /// <p>A value that indicates whether major version upgrades are allowed.</p>
-    /// <p>Constraints: You must allow major version upgrades when specifying a value for the <code>EngineVersion</code> parameter that is a different major version than the DB cluster's current version.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>You must allow major version upgrades when specifying a value for the <code>EngineVersion</code> parameter that is a different major version than the cluster's current version.</p></li>
+    /// <li>
+    /// <p>Since some parameters are version specific, changing them requires executing a new <code>ModifyDBCluster</code> API call after the in-place MVU completes.</p></li>
+    /// </ul><note>
+    /// <p>Performing an MVU directly impacts the following parameters:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>MasterUserPassword</code></p></li>
+    /// <li>
+    /// <p><code>NewDBClusterIdentifier</code></p></li>
+    /// <li>
+    /// <p><code>VpcSecurityGroupIds</code></p></li>
+    /// <li>
+    /// <p><code>Port</code></p></li>
+    /// </ul>
+    /// </note>
     pub fn get_allow_major_version_upgrade(&self) -> &::std::option::Option<bool> {
         &self.allow_major_version_upgrade
     }
@@ -723,6 +826,29 @@ impl ModifyDbClusterInputBuilder {
     pub fn get_rotate_master_user_password(&self) -> &::std::option::Option<bool> {
         &self.rotate_master_user_password
     }
+    /// <p>The network type of the cluster.</p>
+    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/vpc-clusters.html">DocumentDB clusters in a VPC</a> in the Amazon DocumentDB Developer Guide.</p>
+    /// <p>Valid Values: <code>IPV4</code> | <code>DUAL</code></p>
+    pub fn network_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.network_type = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The network type of the cluster.</p>
+    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/vpc-clusters.html">DocumentDB clusters in a VPC</a> in the Amazon DocumentDB Developer Guide.</p>
+    /// <p>Valid Values: <code>IPV4</code> | <code>DUAL</code></p>
+    pub fn set_network_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.network_type = input;
+        self
+    }
+    /// <p>The network type of the cluster.</p>
+    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/vpc-clusters.html">DocumentDB clusters in a VPC</a> in the Amazon DocumentDB Developer Guide.</p>
+    /// <p>Valid Values: <code>IPV4</code> | <code>DUAL</code></p>
+    pub fn get_network_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_type
+    }
     /// Consumes the builder and constructs a [`ModifyDbClusterInput`](crate::operation::modify_db_cluster::ModifyDbClusterInput).
     pub fn build(
         self,
@@ -747,6 +873,7 @@ impl ModifyDbClusterInputBuilder {
             manage_master_user_password: self.manage_master_user_password,
             master_user_secret_kms_key_id: self.master_user_secret_kms_key_id,
             rotate_master_user_password: self.rotate_master_user_password,
+            network_type: self.network_type,
         })
     }
 }

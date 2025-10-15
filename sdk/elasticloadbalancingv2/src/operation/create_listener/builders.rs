@@ -292,17 +292,17 @@ impl CreateListenerFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }
-    /// <p>The mutual authentication configuration information.</p>
+    /// <p>\[HTTPS listeners\] The mutual authentication configuration information.</p>
     pub fn mutual_authentication(mut self, input: crate::types::MutualAuthenticationAttributes) -> Self {
         self.inner = self.inner.mutual_authentication(input);
         self
     }
-    /// <p>The mutual authentication configuration information.</p>
+    /// <p>\[HTTPS listeners\] The mutual authentication configuration information.</p>
     pub fn set_mutual_authentication(mut self, input: ::std::option::Option<crate::types::MutualAuthenticationAttributes>) -> Self {
         self.inner = self.inner.set_mutual_authentication(input);
         self
     }
-    /// <p>The mutual authentication configuration information.</p>
+    /// <p>\[HTTPS listeners\] The mutual authentication configuration information.</p>
     pub fn get_mutual_authentication(&self) -> &::std::option::Option<crate::types::MutualAuthenticationAttributes> {
         self.inner.get_mutual_authentication()
     }

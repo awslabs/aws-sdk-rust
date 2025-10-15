@@ -489,6 +489,8 @@ mod copy_snapshot;
 
 mod copy_volumes;
 
+mod create_capacity_manager_data_export;
+
 mod create_capacity_reservation;
 
 mod create_capacity_reservation_by_splitting;
@@ -702,6 +704,8 @@ mod create_vpn_gateway;
 /// ```
 pub mod customize;
 
+mod delete_capacity_manager_data_export;
+
 mod delete_carrier_gateway;
 
 mod delete_client_vpn_endpoint;
@@ -909,6 +913,8 @@ mod describe_capacity_block_offerings;
 mod describe_capacity_block_status;
 
 mod describe_capacity_blocks;
+
+mod describe_capacity_manager_data_exports;
 
 mod describe_capacity_reservation_billing_requests;
 
@@ -1244,6 +1250,8 @@ mod disable_allowed_images_settings;
 
 mod disable_aws_network_performance_metric_subscription;
 
+mod disable_capacity_manager;
+
 mod disable_ebs_encryption_by_default;
 
 mod disable_fast_launch;
@@ -1316,6 +1324,8 @@ mod enable_allowed_images_settings;
 
 mod enable_aws_network_performance_metric_subscription;
 
+mod enable_capacity_manager;
+
 mod enable_ebs_encryption_by_default;
 
 mod enable_fast_launch;
@@ -1369,6 +1379,12 @@ mod get_associated_enclave_certificate_iam_roles;
 mod get_associated_ipv6_pool_cidrs;
 
 mod get_aws_network_performance_data;
+
+mod get_capacity_manager_attributes;
+
+mod get_capacity_manager_metric_data;
+
+mod get_capacity_manager_metric_dimensions;
 
 mod get_capacity_reservation_usage;
 
@@ -1777,6 +1793,8 @@ mod unassign_private_nat_gateway_address;
 mod unlock_snapshot;
 
 mod unmonitor_instances;
+
+mod update_capacity_manager_organizations_access;
 
 mod update_security_group_rule_descriptions_egress;
 

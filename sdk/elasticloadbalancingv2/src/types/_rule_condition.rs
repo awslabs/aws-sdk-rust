@@ -60,6 +60,8 @@ pub struct RuleCondition {
     pub http_request_method_config: ::std::option::Option<crate::types::HttpRequestMethodConditionConfig>,
     /// <p>Information for a source IP condition. Specify only when <code>Field</code> is <code>source-ip</code>.</p>
     pub source_ip_config: ::std::option::Option<crate::types::SourceIpConditionConfig>,
+    /// <p>The regular expressions to match against the condition field. The maximum length of each string is 128 characters. Specify only when <code>Field</code> is <code>http-header</code>, <code>host-header</code>, or <code>path-pattern</code>.</p>
+    pub regex_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RuleCondition {
     /// <p>The field in the HTTP request. The following are the possible values:</p>
@@ -134,6 +136,12 @@ impl RuleCondition {
     pub fn source_ip_config(&self) -> ::std::option::Option<&crate::types::SourceIpConditionConfig> {
         self.source_ip_config.as_ref()
     }
+    /// <p>The regular expressions to match against the condition field. The maximum length of each string is 128 characters. Specify only when <code>Field</code> is <code>http-header</code>, <code>host-header</code>, or <code>path-pattern</code>.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.regex_values.is_none()`.
+    pub fn regex_values(&self) -> &[::std::string::String] {
+        self.regex_values.as_deref().unwrap_or_default()
+    }
 }
 impl RuleCondition {
     /// Creates a new builder-style object to manufacture [`RuleCondition`](crate::types::RuleCondition).
@@ -154,6 +162,7 @@ pub struct RuleConditionBuilder {
     pub(crate) query_string_config: ::std::option::Option<crate::types::QueryStringConditionConfig>,
     pub(crate) http_request_method_config: ::std::option::Option<crate::types::HttpRequestMethodConditionConfig>,
     pub(crate) source_ip_config: ::std::option::Option<crate::types::SourceIpConditionConfig>,
+    pub(crate) regex_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RuleConditionBuilder {
     /// <p>The field in the HTTP request. The following are the possible values:</p>
@@ -388,6 +397,26 @@ impl RuleConditionBuilder {
     pub fn get_source_ip_config(&self) -> &::std::option::Option<crate::types::SourceIpConditionConfig> {
         &self.source_ip_config
     }
+    /// Appends an item to `regex_values`.
+    ///
+    /// To override the contents of this collection use [`set_regex_values`](Self::set_regex_values).
+    ///
+    /// <p>The regular expressions to match against the condition field. The maximum length of each string is 128 characters. Specify only when <code>Field</code> is <code>http-header</code>, <code>host-header</code>, or <code>path-pattern</code>.</p>
+    pub fn regex_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.regex_values.unwrap_or_default();
+        v.push(input.into());
+        self.regex_values = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The regular expressions to match against the condition field. The maximum length of each string is 128 characters. Specify only when <code>Field</code> is <code>http-header</code>, <code>host-header</code>, or <code>path-pattern</code>.</p>
+    pub fn set_regex_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.regex_values = input;
+        self
+    }
+    /// <p>The regular expressions to match against the condition field. The maximum length of each string is 128 characters. Specify only when <code>Field</code> is <code>http-header</code>, <code>host-header</code>, or <code>path-pattern</code>.</p>
+    pub fn get_regex_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.regex_values
+    }
     /// Consumes the builder and constructs a [`RuleCondition`](crate::types::RuleCondition).
     pub fn build(self) -> crate::types::RuleCondition {
         crate::types::RuleCondition {
@@ -399,6 +428,7 @@ impl RuleConditionBuilder {
             query_string_config: self.query_string_config,
             http_request_method_config: self.http_request_method_config,
             source_ip_config: self.source_ip_config,
+            regex_values: self.regex_values,
         }
     }
 }

@@ -51,6 +51,17 @@ pub fn ser_create_rule_input_input_input(
         }
         list_18.finish();
     }
+    #[allow(unused_mut)]
+    let mut scope_20 = writer.prefix("Transforms");
+    if let Some(var_21) = &input.transforms {
+        let mut list_23 = scope_20.start_list(false, None);
+        for item_22 in var_21 {
+            #[allow(unused_mut)]
+            let mut entry_24 = list_23.entry();
+            crate::protocol_serde::shape_rule_transform::ser_rule_transform(entry_24, item_22)?;
+        }
+        list_23.finish();
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

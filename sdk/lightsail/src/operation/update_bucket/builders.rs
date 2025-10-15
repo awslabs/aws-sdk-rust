@@ -208,4 +208,24 @@ impl UpdateBucketFluentBuilder {
     pub fn get_access_log_config(&self) -> &::std::option::Option<crate::types::BucketAccessLogConfig> {
         self.inner.get_access_log_config()
     }
+    /// <p>Sets the cross-origin resource sharing (CORS) configuration for your bucket. If a CORS configuration exists, it is replaced with the specified configuration. For AWS CLI operations, this parameter can also be passed as a file. For more information, see <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/configure-cors.html">Configuring cross-origin resource sharing (CORS)</a>.</p><note>
+    /// <p>CORS information is only returned in a response when you update the CORS policy.</p>
+    /// </note>
+    pub fn cors(mut self, input: crate::types::BucketCorsConfig) -> Self {
+        self.inner = self.inner.cors(input);
+        self
+    }
+    /// <p>Sets the cross-origin resource sharing (CORS) configuration for your bucket. If a CORS configuration exists, it is replaced with the specified configuration. For AWS CLI operations, this parameter can also be passed as a file. For more information, see <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/configure-cors.html">Configuring cross-origin resource sharing (CORS)</a>.</p><note>
+    /// <p>CORS information is only returned in a response when you update the CORS policy.</p>
+    /// </note>
+    pub fn set_cors(mut self, input: ::std::option::Option<crate::types::BucketCorsConfig>) -> Self {
+        self.inner = self.inner.set_cors(input);
+        self
+    }
+    /// <p>Sets the cross-origin resource sharing (CORS) configuration for your bucket. If a CORS configuration exists, it is replaced with the specified configuration. For AWS CLI operations, this parameter can also be passed as a file. For more information, see <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/configure-cors.html">Configuring cross-origin resource sharing (CORS)</a>.</p><note>
+    /// <p>CORS information is only returned in a response when you update the CORS policy.</p>
+    /// </note>
+    pub fn get_cors(&self) -> &::std::option::Option<crate::types::BucketCorsConfig> {
+        self.inner.get_cors()
+    }
 }

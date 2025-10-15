@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateTrunkInterfaceOutput {
-    /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
+    /// <p>Is <code>true</code> if the request succeeds and an error otherwise.</p>
     pub r#return: ::std::option::Option<bool>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html">Ensuring idempotency</a>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DisassociateTrunkInterfaceOutput {
-    /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
+    /// <p>Is <code>true</code> if the request succeeds and an error otherwise.</p>
     pub fn r#return(&self) -> ::std::option::Option<bool> {
         self.r#return
     }
@@ -40,17 +40,17 @@ pub struct DisassociateTrunkInterfaceOutputBuilder {
     _request_id: Option<String>,
 }
 impl DisassociateTrunkInterfaceOutputBuilder {
-    /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
+    /// <p>Is <code>true</code> if the request succeeds and an error otherwise.</p>
     pub fn r#return(mut self, input: bool) -> Self {
         self.r#return = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
+    /// <p>Is <code>true</code> if the request succeeds and an error otherwise.</p>
     pub fn set_return(mut self, input: ::std::option::Option<bool>) -> Self {
         self.r#return = input;
         self
     }
-    /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
+    /// <p>Is <code>true</code> if the request succeeds and an error otherwise.</p>
     pub fn get_return(&self) -> &::std::option::Option<bool> {
         &self.r#return
     }

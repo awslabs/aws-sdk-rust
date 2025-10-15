@@ -3,11 +3,21 @@ pub use crate::types::_validation_exception_reason::ValidationExceptionReason;
 
 pub use crate::types::_parameters::Parameters;
 
-pub use crate::types::_influx_dbv2_parameters::InfluxDBv2Parameters;
+pub use crate::types::_influx_dbv3_enterprise_parameters::InfluxDBv3EnterpriseParameters;
 
 pub use crate::types::_duration::Duration;
 
 pub use crate::types::_duration_type::DurationType;
+
+pub use crate::types::_percent_or_absolute_long::PercentOrAbsoluteLong;
+
+pub use crate::types::_data_fusion_runtime_type::DataFusionRuntimeType;
+
+pub use crate::types::_log_formats::LogFormats;
+
+pub use crate::types::_influx_dbv3_core_parameters::InfluxDBv3CoreParameters;
+
+pub use crate::types::_influx_dbv2_parameters::InfluxDBv2Parameters;
 
 pub use crate::types::_tracing_type::TracingType;
 
@@ -39,6 +49,8 @@ pub use crate::types::_cluster_status::ClusterStatus;
 
 pub use crate::types::_failover_mode::FailoverMode;
 
+pub use crate::types::_engine_type::EngineType;
+
 pub use crate::types::_cluster_deployment_type::ClusterDeploymentType;
 
 pub use crate::types::_db_cluster_summary::DbClusterSummary;
@@ -46,6 +58,8 @@ pub use crate::types::_db_cluster_summary::DbClusterSummary;
 mod _cluster_deployment_type;
 
 mod _cluster_status;
+
+mod _data_fusion_runtime_type;
 
 mod _db_cluster_summary;
 
@@ -65,19 +79,29 @@ mod _duration;
 
 mod _duration_type;
 
+mod _engine_type;
+
 mod _failover_mode;
 
 mod _influx_dbv2_parameters;
 
+mod _influx_dbv3_core_parameters;
+
+mod _influx_dbv3_enterprise_parameters;
+
 mod _instance_mode;
 
 mod _log_delivery_configuration;
+
+mod _log_formats;
 
 mod _log_level;
 
 mod _network_type;
 
 mod _parameters;
+
+mod _percent_or_absolute_long;
 
 mod _s3_configuration;
 

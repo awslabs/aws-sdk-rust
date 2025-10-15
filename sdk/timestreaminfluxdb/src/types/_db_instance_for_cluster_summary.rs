@@ -28,6 +28,8 @@ pub struct DbInstanceForClusterSummary {
     pub deployment_type: ::std::option::Option<crate::types::DeploymentType>,
     /// <p>Specifies the DB instance's role in the cluster.</p>
     pub instance_mode: ::std::option::Option<crate::types::InstanceMode>,
+    /// <p>Specifies the DB instance's roles in the cluster.</p>
+    pub instance_modes: ::std::option::Option<::std::vec::Vec<crate::types::InstanceMode>>,
 }
 impl DbInstanceForClusterSummary {
     /// <p>The service-generated unique identifier of the DB instance.</p>
@@ -81,6 +83,12 @@ impl DbInstanceForClusterSummary {
     pub fn instance_mode(&self) -> ::std::option::Option<&crate::types::InstanceMode> {
         self.instance_mode.as_ref()
     }
+    /// <p>Specifies the DB instance's roles in the cluster.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_modes.is_none()`.
+    pub fn instance_modes(&self) -> &[crate::types::InstanceMode] {
+        self.instance_modes.as_deref().unwrap_or_default()
+    }
 }
 impl DbInstanceForClusterSummary {
     /// Creates a new builder-style object to manufacture [`DbInstanceForClusterSummary`](crate::types::DbInstanceForClusterSummary).
@@ -105,6 +113,7 @@ pub struct DbInstanceForClusterSummaryBuilder {
     pub(crate) allocated_storage: ::std::option::Option<i32>,
     pub(crate) deployment_type: ::std::option::Option<crate::types::DeploymentType>,
     pub(crate) instance_mode: ::std::option::Option<crate::types::InstanceMode>,
+    pub(crate) instance_modes: ::std::option::Option<::std::vec::Vec<crate::types::InstanceMode>>,
 }
 impl DbInstanceForClusterSummaryBuilder {
     /// <p>The service-generated unique identifier of the DB instance.</p>
@@ -278,6 +287,26 @@ impl DbInstanceForClusterSummaryBuilder {
     pub fn get_instance_mode(&self) -> &::std::option::Option<crate::types::InstanceMode> {
         &self.instance_mode
     }
+    /// Appends an item to `instance_modes`.
+    ///
+    /// To override the contents of this collection use [`set_instance_modes`](Self::set_instance_modes).
+    ///
+    /// <p>Specifies the DB instance's roles in the cluster.</p>
+    pub fn instance_modes(mut self, input: crate::types::InstanceMode) -> Self {
+        let mut v = self.instance_modes.unwrap_or_default();
+        v.push(input);
+        self.instance_modes = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Specifies the DB instance's roles in the cluster.</p>
+    pub fn set_instance_modes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceMode>>) -> Self {
+        self.instance_modes = input;
+        self
+    }
+    /// <p>Specifies the DB instance's roles in the cluster.</p>
+    pub fn get_instance_modes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceMode>> {
+        &self.instance_modes
+    }
     /// Consumes the builder and constructs a [`DbInstanceForClusterSummary`](crate::types::DbInstanceForClusterSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::DbInstanceForClusterSummaryBuilder::id)
@@ -312,6 +341,7 @@ impl DbInstanceForClusterSummaryBuilder {
             allocated_storage: self.allocated_storage,
             deployment_type: self.deployment_type,
             instance_mode: self.instance_mode,
+            instance_modes: self.instance_modes,
         })
     }
 }

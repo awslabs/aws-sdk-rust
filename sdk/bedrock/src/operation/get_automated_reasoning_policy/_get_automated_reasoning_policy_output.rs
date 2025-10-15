@@ -15,6 +15,8 @@ pub struct GetAutomatedReasoningPolicyOutput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The hash of the policy definition used as a concurrency token.</p>
     pub definition_hash: ::std::string::String,
+    /// <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the automated reasoning policy and its associated artifacts. If a KMS key is not provided during the initial CreateAutomatedReasoningPolicyRequest, the kmsKeyArn won't be included in the GetAutomatedReasoningPolicyResponse.</p>
+    pub kms_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when the policy was created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp when the policy was last updated.</p>
@@ -51,6 +53,10 @@ impl GetAutomatedReasoningPolicyOutput {
         use std::ops::Deref;
         self.definition_hash.deref()
     }
+    /// <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the automated reasoning policy and its associated artifacts. If a KMS key is not provided during the initial CreateAutomatedReasoningPolicyRequest, the kmsKeyArn won't be included in the GetAutomatedReasoningPolicyResponse.</p>
+    pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
+        self.kms_key_arn.as_deref()
+    }
     /// <p>The timestamp when the policy was created.</p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
@@ -69,6 +75,7 @@ impl ::std::fmt::Debug for GetAutomatedReasoningPolicyOutput {
         formatter.field("policy_id", &self.policy_id);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("definition_hash", &self.definition_hash);
+        formatter.field("kms_key_arn", &self.kms_key_arn);
         formatter.field("created_at", &self.created_at);
         formatter.field("updated_at", &self.updated_at);
         formatter.field("_request_id", &self._request_id);
@@ -97,6 +104,7 @@ pub struct GetAutomatedReasoningPolicyOutputBuilder {
     pub(crate) policy_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) definition_hash: ::std::option::Option<::std::string::String>,
+    pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
@@ -191,6 +199,20 @@ impl GetAutomatedReasoningPolicyOutputBuilder {
     pub fn get_definition_hash(&self) -> &::std::option::Option<::std::string::String> {
         &self.definition_hash
     }
+    /// <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the automated reasoning policy and its associated artifacts. If a KMS key is not provided during the initial CreateAutomatedReasoningPolicyRequest, the kmsKeyArn won't be included in the GetAutomatedReasoningPolicyResponse.</p>
+    pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kms_key_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the automated reasoning policy and its associated artifacts. If a KMS key is not provided during the initial CreateAutomatedReasoningPolicyRequest, the kmsKeyArn won't be included in the GetAutomatedReasoningPolicyResponse.</p>
+    pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.kms_key_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the automated reasoning policy and its associated artifacts. If a KMS key is not provided during the initial CreateAutomatedReasoningPolicyRequest, the kmsKeyArn won't be included in the GetAutomatedReasoningPolicyResponse.</p>
+    pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_arn
+    }
     /// <p>The timestamp when the policy was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -275,6 +297,7 @@ impl GetAutomatedReasoningPolicyOutputBuilder {
                     "definition_hash was not specified but it is required when building GetAutomatedReasoningPolicyOutput",
                 )
             })?,
+            kms_key_arn: self.kms_key_arn,
             created_at: self.created_at,
             updated_at: self.updated_at.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
@@ -295,6 +318,7 @@ impl ::std::fmt::Debug for GetAutomatedReasoningPolicyOutputBuilder {
         formatter.field("policy_id", &self.policy_id);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("definition_hash", &self.definition_hash);
+        formatter.field("kms_key_arn", &self.kms_key_arn);
         formatter.field("created_at", &self.created_at);
         formatter.field("updated_at", &self.updated_at);
         formatter.field("_request_id", &self._request_id);

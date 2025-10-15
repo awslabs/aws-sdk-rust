@@ -68,6 +68,16 @@ pub fn de_rule(
                 builder = builder.set_is_default(var_5);
             }
             ,
+            s if s.matches("Transforms") /* Transforms com.amazonaws.elasticloadbalancingv2#Rule$Transforms */ =>  {
+                let var_6 =
+                    Some(
+                        crate::protocol_serde::shape_rule_transform_list::de_rule_transform_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_transforms(var_6);
+            }
+            ,
             _ => {}
         }
     }

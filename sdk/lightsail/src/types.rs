@@ -81,6 +81,10 @@ pub use crate::types::_container_service_ecr_image_puller_role_request::Containe
 
 pub use crate::types::_bucket::Bucket;
 
+pub use crate::types::_bucket_cors_config::BucketCorsConfig;
+
+pub use crate::types::_bucket_cors_rule::BucketCorsRule;
+
 pub use crate::types::_bucket_access_log_config::BucketAccessLogConfig;
 
 pub use crate::types::_bucket_state::BucketState;
@@ -450,6 +454,10 @@ mod _bucket;
 mod _bucket_access_log_config;
 
 mod _bucket_bundle;
+
+mod _bucket_cors_config;
+
+mod _bucket_cors_rule;
 
 mod _bucket_metric_name;
 

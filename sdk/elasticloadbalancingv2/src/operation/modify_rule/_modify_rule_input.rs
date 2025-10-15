@@ -9,6 +9,10 @@ pub struct ModifyRuleInput {
     pub conditions: ::std::option::Option<::std::vec::Vec<crate::types::RuleCondition>>,
     /// <p>The actions.</p>
     pub actions: ::std::option::Option<::std::vec::Vec<crate::types::Action>>,
+    /// <p>The transforms to apply to requests that match this rule. You can add one host header rewrite transform and one URL rewrite transform. If you specify <code>Transforms</code>, you can't specify <code>ResetTransforms</code>.</p>
+    pub transforms: ::std::option::Option<::std::vec::Vec<crate::types::RuleTransform>>,
+    /// <p>Indicates whether to remove all transforms from the rule. If you specify <code>ResetTransforms</code>, you can't specify <code>Transforms</code>.</p>
+    pub reset_transforms: ::std::option::Option<bool>,
 }
 impl ModifyRuleInput {
     /// <p>The Amazon Resource Name (ARN) of the rule.</p>
@@ -27,6 +31,16 @@ impl ModifyRuleInput {
     pub fn actions(&self) -> &[crate::types::Action] {
         self.actions.as_deref().unwrap_or_default()
     }
+    /// <p>The transforms to apply to requests that match this rule. You can add one host header rewrite transform and one URL rewrite transform. If you specify <code>Transforms</code>, you can't specify <code>ResetTransforms</code>.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.transforms.is_none()`.
+    pub fn transforms(&self) -> &[crate::types::RuleTransform] {
+        self.transforms.as_deref().unwrap_or_default()
+    }
+    /// <p>Indicates whether to remove all transforms from the rule. If you specify <code>ResetTransforms</code>, you can't specify <code>Transforms</code>.</p>
+    pub fn reset_transforms(&self) -> ::std::option::Option<bool> {
+        self.reset_transforms
+    }
 }
 impl ModifyRuleInput {
     /// Creates a new builder-style object to manufacture [`ModifyRuleInput`](crate::operation::modify_rule::ModifyRuleInput).
@@ -42,6 +56,8 @@ pub struct ModifyRuleInputBuilder {
     pub(crate) rule_arn: ::std::option::Option<::std::string::String>,
     pub(crate) conditions: ::std::option::Option<::std::vec::Vec<crate::types::RuleCondition>>,
     pub(crate) actions: ::std::option::Option<::std::vec::Vec<crate::types::Action>>,
+    pub(crate) transforms: ::std::option::Option<::std::vec::Vec<crate::types::RuleTransform>>,
+    pub(crate) reset_transforms: ::std::option::Option<bool>,
 }
 impl ModifyRuleInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the rule.</p>
@@ -99,12 +115,48 @@ impl ModifyRuleInputBuilder {
     pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Action>> {
         &self.actions
     }
+    /// Appends an item to `transforms`.
+    ///
+    /// To override the contents of this collection use [`set_transforms`](Self::set_transforms).
+    ///
+    /// <p>The transforms to apply to requests that match this rule. You can add one host header rewrite transform and one URL rewrite transform. If you specify <code>Transforms</code>, you can't specify <code>ResetTransforms</code>.</p>
+    pub fn transforms(mut self, input: crate::types::RuleTransform) -> Self {
+        let mut v = self.transforms.unwrap_or_default();
+        v.push(input);
+        self.transforms = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The transforms to apply to requests that match this rule. You can add one host header rewrite transform and one URL rewrite transform. If you specify <code>Transforms</code>, you can't specify <code>ResetTransforms</code>.</p>
+    pub fn set_transforms(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RuleTransform>>) -> Self {
+        self.transforms = input;
+        self
+    }
+    /// <p>The transforms to apply to requests that match this rule. You can add one host header rewrite transform and one URL rewrite transform. If you specify <code>Transforms</code>, you can't specify <code>ResetTransforms</code>.</p>
+    pub fn get_transforms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RuleTransform>> {
+        &self.transforms
+    }
+    /// <p>Indicates whether to remove all transforms from the rule. If you specify <code>ResetTransforms</code>, you can't specify <code>Transforms</code>.</p>
+    pub fn reset_transforms(mut self, input: bool) -> Self {
+        self.reset_transforms = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether to remove all transforms from the rule. If you specify <code>ResetTransforms</code>, you can't specify <code>Transforms</code>.</p>
+    pub fn set_reset_transforms(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.reset_transforms = input;
+        self
+    }
+    /// <p>Indicates whether to remove all transforms from the rule. If you specify <code>ResetTransforms</code>, you can't specify <code>Transforms</code>.</p>
+    pub fn get_reset_transforms(&self) -> &::std::option::Option<bool> {
+        &self.reset_transforms
+    }
     /// Consumes the builder and constructs a [`ModifyRuleInput`](crate::operation::modify_rule::ModifyRuleInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::modify_rule::ModifyRuleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::modify_rule::ModifyRuleInput {
             rule_arn: self.rule_arn,
             conditions: self.conditions,
             actions: self.actions,
+            transforms: self.transforms,
+            reset_transforms: self.reset_transforms,
         })
     }
 }

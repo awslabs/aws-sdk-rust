@@ -96,6 +96,11 @@ pub fn ser_restore_db_cluster_to_point_in_time_input_input_input(
     if let Some(var_37) = &input.storage_type {
         scope_36.string(var_37);
     }
+    #[allow(unused_mut)]
+    let mut scope_38 = writer.prefix("NetworkType");
+    if let Some(var_39) = &input.network_type {
+        scope_38.string(var_39);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

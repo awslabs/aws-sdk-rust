@@ -5,27 +5,35 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HttpHeaderConditionConfig {
-    /// <p>The name of the HTTP header field. The maximum size is 40 characters. The header name is case insensitive. The allowed characters are specified by RFC 7230. Wildcards are not supported.</p>
+    /// <p>The name of the HTTP header field. The maximum length is 40 characters. The header name is case insensitive. The allowed characters are specified by RFC 7230. Wildcards are not supported.</p>
     /// <p>You can't use an HTTP header condition to specify the host header. Instead, use a <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html#host-conditions">host condition</a>.</p>
     pub http_header_name: ::std::option::Option<::std::string::String>,
-    /// <p>The strings to compare against the value of the HTTP header. The maximum size of each string is 128 characters. The comparison strings are case insensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character).</p>
+    /// <p>The strings to compare against the value of the HTTP header. The maximum length of each string is 128 characters. The comparison strings are case insensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character).</p>
     /// <p>If the same header appears multiple times in the request, we search them in order until a match is found.</p>
     /// <p>If you specify multiple strings, the condition is satisfied if one of the strings matches the value of the HTTP header. To require that all of the strings are a match, create one condition per string.</p>
     pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The regular expression to compare against the HTTP header. The maximum length of each string is 128 characters.</p>
+    pub regex_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl HttpHeaderConditionConfig {
-    /// <p>The name of the HTTP header field. The maximum size is 40 characters. The header name is case insensitive. The allowed characters are specified by RFC 7230. Wildcards are not supported.</p>
+    /// <p>The name of the HTTP header field. The maximum length is 40 characters. The header name is case insensitive. The allowed characters are specified by RFC 7230. Wildcards are not supported.</p>
     /// <p>You can't use an HTTP header condition to specify the host header. Instead, use a <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html#host-conditions">host condition</a>.</p>
     pub fn http_header_name(&self) -> ::std::option::Option<&str> {
         self.http_header_name.as_deref()
     }
-    /// <p>The strings to compare against the value of the HTTP header. The maximum size of each string is 128 characters. The comparison strings are case insensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character).</p>
+    /// <p>The strings to compare against the value of the HTTP header. The maximum length of each string is 128 characters. The comparison strings are case insensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character).</p>
     /// <p>If the same header appears multiple times in the request, we search them in order until a match is found.</p>
     /// <p>If you specify multiple strings, the condition is satisfied if one of the strings matches the value of the HTTP header. To require that all of the strings are a match, create one condition per string.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.values.is_none()`.
     pub fn values(&self) -> &[::std::string::String] {
         self.values.as_deref().unwrap_or_default()
+    }
+    /// <p>The regular expression to compare against the HTTP header. The maximum length of each string is 128 characters.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.regex_values.is_none()`.
+    pub fn regex_values(&self) -> &[::std::string::String] {
+        self.regex_values.as_deref().unwrap_or_default()
     }
 }
 impl HttpHeaderConditionConfig {
@@ -41,21 +49,22 @@ impl HttpHeaderConditionConfig {
 pub struct HttpHeaderConditionConfigBuilder {
     pub(crate) http_header_name: ::std::option::Option<::std::string::String>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) regex_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl HttpHeaderConditionConfigBuilder {
-    /// <p>The name of the HTTP header field. The maximum size is 40 characters. The header name is case insensitive. The allowed characters are specified by RFC 7230. Wildcards are not supported.</p>
+    /// <p>The name of the HTTP header field. The maximum length is 40 characters. The header name is case insensitive. The allowed characters are specified by RFC 7230. Wildcards are not supported.</p>
     /// <p>You can't use an HTTP header condition to specify the host header. Instead, use a <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html#host-conditions">host condition</a>.</p>
     pub fn http_header_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.http_header_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the HTTP header field. The maximum size is 40 characters. The header name is case insensitive. The allowed characters are specified by RFC 7230. Wildcards are not supported.</p>
+    /// <p>The name of the HTTP header field. The maximum length is 40 characters. The header name is case insensitive. The allowed characters are specified by RFC 7230. Wildcards are not supported.</p>
     /// <p>You can't use an HTTP header condition to specify the host header. Instead, use a <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html#host-conditions">host condition</a>.</p>
     pub fn set_http_header_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.http_header_name = input;
         self
     }
-    /// <p>The name of the HTTP header field. The maximum size is 40 characters. The header name is case insensitive. The allowed characters are specified by RFC 7230. Wildcards are not supported.</p>
+    /// <p>The name of the HTTP header field. The maximum length is 40 characters. The header name is case insensitive. The allowed characters are specified by RFC 7230. Wildcards are not supported.</p>
     /// <p>You can't use an HTTP header condition to specify the host header. Instead, use a <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html#host-conditions">host condition</a>.</p>
     pub fn get_http_header_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.http_header_name
@@ -64,7 +73,7 @@ impl HttpHeaderConditionConfigBuilder {
     ///
     /// To override the contents of this collection use [`set_values`](Self::set_values).
     ///
-    /// <p>The strings to compare against the value of the HTTP header. The maximum size of each string is 128 characters. The comparison strings are case insensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character).</p>
+    /// <p>The strings to compare against the value of the HTTP header. The maximum length of each string is 128 characters. The comparison strings are case insensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character).</p>
     /// <p>If the same header appears multiple times in the request, we search them in order until a match is found.</p>
     /// <p>If you specify multiple strings, the condition is satisfied if one of the strings matches the value of the HTTP header. To require that all of the strings are a match, create one condition per string.</p>
     pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -73,24 +82,45 @@ impl HttpHeaderConditionConfigBuilder {
         self.values = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The strings to compare against the value of the HTTP header. The maximum size of each string is 128 characters. The comparison strings are case insensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character).</p>
+    /// <p>The strings to compare against the value of the HTTP header. The maximum length of each string is 128 characters. The comparison strings are case insensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character).</p>
     /// <p>If the same header appears multiple times in the request, we search them in order until a match is found.</p>
     /// <p>If you specify multiple strings, the condition is satisfied if one of the strings matches the value of the HTTP header. To require that all of the strings are a match, create one condition per string.</p>
     pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.values = input;
         self
     }
-    /// <p>The strings to compare against the value of the HTTP header. The maximum size of each string is 128 characters. The comparison strings are case insensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character).</p>
+    /// <p>The strings to compare against the value of the HTTP header. The maximum length of each string is 128 characters. The comparison strings are case insensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character).</p>
     /// <p>If the same header appears multiple times in the request, we search them in order until a match is found.</p>
     /// <p>If you specify multiple strings, the condition is satisfied if one of the strings matches the value of the HTTP header. To require that all of the strings are a match, create one condition per string.</p>
     pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.values
+    }
+    /// Appends an item to `regex_values`.
+    ///
+    /// To override the contents of this collection use [`set_regex_values`](Self::set_regex_values).
+    ///
+    /// <p>The regular expression to compare against the HTTP header. The maximum length of each string is 128 characters.</p>
+    pub fn regex_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.regex_values.unwrap_or_default();
+        v.push(input.into());
+        self.regex_values = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The regular expression to compare against the HTTP header. The maximum length of each string is 128 characters.</p>
+    pub fn set_regex_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.regex_values = input;
+        self
+    }
+    /// <p>The regular expression to compare against the HTTP header. The maximum length of each string is 128 characters.</p>
+    pub fn get_regex_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.regex_values
     }
     /// Consumes the builder and constructs a [`HttpHeaderConditionConfig`](crate::types::HttpHeaderConditionConfig).
     pub fn build(self) -> crate::types::HttpHeaderConditionConfig {
         crate::types::HttpHeaderConditionConfig {
             http_header_name: self.http_header_name,
             values: self.values,
+            regex_values: self.regex_values,
         }
     }
 }

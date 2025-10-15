@@ -28,6 +28,8 @@ pub struct DbClusterSummary {
     pub db_storage_type: ::std::option::Option<crate::types::DbStorageType>,
     /// <p>The amount of storage allocated for your DB storage type (in gibibytes).</p>
     pub allocated_storage: ::std::option::Option<i32>,
+    /// <p>The engine type of your DB cluster.</p>
+    pub engine_type: ::std::option::Option<crate::types::EngineType>,
 }
 impl DbClusterSummary {
     /// <p>Service-generated unique identifier of the DB cluster to retrieve.</p>
@@ -81,6 +83,10 @@ impl DbClusterSummary {
     pub fn allocated_storage(&self) -> ::std::option::Option<i32> {
         self.allocated_storage
     }
+    /// <p>The engine type of your DB cluster.</p>
+    pub fn engine_type(&self) -> ::std::option::Option<&crate::types::EngineType> {
+        self.engine_type.as_ref()
+    }
 }
 impl DbClusterSummary {
     /// Creates a new builder-style object to manufacture [`DbClusterSummary`](crate::types::DbClusterSummary).
@@ -105,6 +111,7 @@ pub struct DbClusterSummaryBuilder {
     pub(crate) network_type: ::std::option::Option<crate::types::NetworkType>,
     pub(crate) db_storage_type: ::std::option::Option<crate::types::DbStorageType>,
     pub(crate) allocated_storage: ::std::option::Option<i32>,
+    pub(crate) engine_type: ::std::option::Option<crate::types::EngineType>,
 }
 impl DbClusterSummaryBuilder {
     /// <p>Service-generated unique identifier of the DB cluster to retrieve.</p>
@@ -278,6 +285,20 @@ impl DbClusterSummaryBuilder {
     pub fn get_allocated_storage(&self) -> &::std::option::Option<i32> {
         &self.allocated_storage
     }
+    /// <p>The engine type of your DB cluster.</p>
+    pub fn engine_type(mut self, input: crate::types::EngineType) -> Self {
+        self.engine_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The engine type of your DB cluster.</p>
+    pub fn set_engine_type(mut self, input: ::std::option::Option<crate::types::EngineType>) -> Self {
+        self.engine_type = input;
+        self
+    }
+    /// <p>The engine type of your DB cluster.</p>
+    pub fn get_engine_type(&self) -> &::std::option::Option<crate::types::EngineType> {
+        &self.engine_type
+    }
     /// Consumes the builder and constructs a [`DbClusterSummary`](crate::types::DbClusterSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::DbClusterSummaryBuilder::id)
@@ -312,6 +333,7 @@ impl DbClusterSummaryBuilder {
             network_type: self.network_type,
             db_storage_type: self.db_storage_type,
             allocated_storage: self.allocated_storage,
+            engine_type: self.engine_type,
         })
     }
 }

@@ -335,6 +335,8 @@ pub(crate) mod shape_invalid_vpc_network_state_fault;
 
 pub(crate) mod shape_kms_key_not_accessible_fault;
 
+pub(crate) mod shape_network_type_not_supported;
+
 pub(crate) mod shape_parameter;
 
 pub(crate) mod shape_resource_not_found_fault;
@@ -446,6 +448,8 @@ pub(crate) mod shape_event_categories_map;
 pub(crate) mod shape_global_cluster_member_list;
 
 pub(crate) mod shape_log_type_list;
+
+pub(crate) mod shape_network_type_list;
 
 pub(crate) mod shape_orderable_db_instance_option;
 

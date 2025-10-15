@@ -12,7 +12,11 @@
 /// ```text
 /// # let instancemode = unimplemented!();
 /// match instancemode {
+///     InstanceMode::Compact => { /* ... */ },
+///     InstanceMode::Ingest => { /* ... */ },
 ///     InstanceMode::Primary => { /* ... */ },
+///     InstanceMode::Process => { /* ... */ },
+///     InstanceMode::Query => { /* ... */ },
 ///     InstanceMode::Replica => { /* ... */ },
 ///     InstanceMode::Standby => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -44,7 +48,15 @@
 )]
 pub enum InstanceMode {
     #[allow(missing_docs)] // documentation missing in model
+    Compact,
+    #[allow(missing_docs)] // documentation missing in model
+    Ingest,
+    #[allow(missing_docs)] // documentation missing in model
     Primary,
+    #[allow(missing_docs)] // documentation missing in model
+    Process,
+    #[allow(missing_docs)] // documentation missing in model
+    Query,
     #[allow(missing_docs)] // documentation missing in model
     Replica,
     #[allow(missing_docs)] // documentation missing in model
@@ -56,7 +68,11 @@ pub enum InstanceMode {
 impl ::std::convert::From<&str> for InstanceMode {
     fn from(s: &str) -> Self {
         match s {
+            "COMPACT" => InstanceMode::Compact,
+            "INGEST" => InstanceMode::Ingest,
             "PRIMARY" => InstanceMode::Primary,
+            "PROCESS" => InstanceMode::Process,
+            "QUERY" => InstanceMode::Query,
             "REPLICA" => InstanceMode::Replica,
             "STANDBY" => InstanceMode::Standby,
             other => InstanceMode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -74,7 +90,11 @@ impl InstanceMode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            InstanceMode::Compact => "COMPACT",
+            InstanceMode::Ingest => "INGEST",
             InstanceMode::Primary => "PRIMARY",
+            InstanceMode::Process => "PROCESS",
+            InstanceMode::Query => "QUERY",
             InstanceMode::Replica => "REPLICA",
             InstanceMode::Standby => "STANDBY",
             InstanceMode::Unknown(value) => value.as_str(),
@@ -82,7 +102,7 @@ impl InstanceMode {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["PRIMARY", "REPLICA", "STANDBY"]
+        &["COMPACT", "INGEST", "PRIMARY", "PROCESS", "QUERY", "REPLICA", "STANDBY"]
     }
 }
 impl ::std::convert::AsRef<str> for InstanceMode {
@@ -105,7 +125,11 @@ impl InstanceMode {
 impl ::std::fmt::Display for InstanceMode {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            InstanceMode::Compact => write!(f, "COMPACT"),
+            InstanceMode::Ingest => write!(f, "INGEST"),
             InstanceMode::Primary => write!(f, "PRIMARY"),
+            InstanceMode::Process => write!(f, "PROCESS"),
+            InstanceMode::Query => write!(f, "QUERY"),
             InstanceMode::Replica => write!(f, "REPLICA"),
             InstanceMode::Standby => write!(f, "STANDBY"),
             InstanceMode::Unknown(value) => write!(f, "{}", value),

@@ -302,6 +302,21 @@ pub(crate) fn db_parameter_group_summary_correct_errors(
     builder
 }
 
+pub(crate) fn influx_dbv3_enterprise_parameters_correct_errors(
+    mut builder: crate::types::builders::InfluxDBv3EnterpriseParametersBuilder,
+) -> crate::types::builders::InfluxDBv3EnterpriseParametersBuilder {
+    if builder.ingest_query_instances.is_none() {
+        builder.ingest_query_instances = Some(Default::default())
+    }
+    if builder.query_only_instances.is_none() {
+        builder.query_only_instances = Some(Default::default())
+    }
+    if builder.dedicated_compactor.is_none() {
+        builder.dedicated_compactor = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn s3_configuration_correct_errors(
     mut builder: crate::types::builders::S3ConfigurationBuilder,
 ) -> crate::types::builders::S3ConfigurationBuilder {

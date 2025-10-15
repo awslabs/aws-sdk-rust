@@ -418,8 +418,22 @@ pub fn de_db_cluster(
                 builder = builder.set_deletion_protection(var_32);
             }
             ,
-            s if s.matches("StorageType") /* StorageType com.amazonaws.docdb#DBCluster$StorageType */ =>  {
+            s if s.matches("IOOptimizedNextAllowedModificationTime") /* IOOptimizedNextAllowedModificationTime com.amazonaws.docdb#DBCluster$IOOptimizedNextAllowedModificationTime */ =>  {
                 let var_33 =
+                    Some(
+                        ::aws_smithy_types::DateTime::from_str(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            , ::aws_smithy_types::date_time::Format::DateTimeWithOffset
+                        )
+                        .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (timestamp: `com.amazonaws.docdb#TStamp`)"))
+                        ?
+                    )
+                ;
+                builder = builder.set_io_optimized_next_allowed_modification_time(var_33);
+            }
+            ,
+            s if s.matches("StorageType") /* StorageType com.amazonaws.docdb#DBCluster$StorageType */ =>  {
+                let var_34 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -428,27 +442,40 @@ pub fn de_db_cluster(
                         ?
                     )
                 ;
-                builder = builder.set_storage_type(var_33);
+                builder = builder.set_storage_type(var_34);
             }
             ,
             s if s.matches("ServerlessV2ScalingConfiguration") /* ServerlessV2ScalingConfiguration com.amazonaws.docdb#DBCluster$ServerlessV2ScalingConfiguration */ =>  {
-                let var_34 =
+                let var_35 =
                     Some(
                         crate::protocol_serde::shape_serverless_v2_scaling_configuration_info::de_serverless_v2_scaling_configuration_info(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_serverless_v2_scaling_configuration(var_34);
+                builder = builder.set_serverless_v2_scaling_configuration(var_35);
             }
             ,
             s if s.matches("MasterUserSecret") /* MasterUserSecret com.amazonaws.docdb#DBCluster$MasterUserSecret */ =>  {
-                let var_35 =
+                let var_36 =
                     Some(
                         crate::protocol_serde::shape_cluster_master_user_secret::de_cluster_master_user_secret(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_master_user_secret(var_35);
+                builder = builder.set_master_user_secret(var_36);
+            }
+            ,
+            s if s.matches("NetworkType") /* NetworkType com.amazonaws.docdb#DBCluster$NetworkType */ =>  {
+                let var_37 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_network_type(var_37);
             }
             ,
             _ => {}

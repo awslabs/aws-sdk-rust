@@ -217,6 +217,13 @@ pub(crate) fn de_get_db_cluster(
                             .transpose()?,
                     );
                 }
+                "engineType" => {
+                    builder = builder.set_engine_type(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::EngineType::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
                 "publiclyAccessible" => {
                     builder = builder.set_publicly_accessible(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }

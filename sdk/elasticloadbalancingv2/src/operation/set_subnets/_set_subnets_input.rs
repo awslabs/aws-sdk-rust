@@ -9,7 +9,8 @@ pub struct SetSubnetsInput {
     /// <p>\[Application Load Balancers\] You must specify subnets from at least two Availability Zones.</p>
     /// <p>\[Application Load Balancers on Outposts\] You must specify one Outpost subnet.</p>
     /// <p>\[Application Load Balancers on Local Zones\] You can specify subnets from one or more Local Zones.</p>
-    /// <p>\[Network Load Balancers and Gateway Load Balancers\] You can specify subnets from one or more Availability Zones.</p>
+    /// <p>\[Network Load Balancers\] You can specify subnets from one or more Availability Zones.</p>
+    /// <p>\[Gateway Load Balancers\] You can specify subnets from one or more Availability Zones. You must include all subnets that were enabled previously, with their existing configurations, plus any additional subnets.</p>
     pub subnets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings.</p>
     /// <p>\[Application Load Balancers\] You must specify subnets from at least two Availability Zones. You can't specify Elastic IP addresses for your subnets.</p>
@@ -34,7 +35,8 @@ impl SetSubnetsInput {
     /// <p>\[Application Load Balancers\] You must specify subnets from at least two Availability Zones.</p>
     /// <p>\[Application Load Balancers on Outposts\] You must specify one Outpost subnet.</p>
     /// <p>\[Application Load Balancers on Local Zones\] You can specify subnets from one or more Local Zones.</p>
-    /// <p>\[Network Load Balancers and Gateway Load Balancers\] You can specify subnets from one or more Availability Zones.</p>
+    /// <p>\[Network Load Balancers\] You can specify subnets from one or more Availability Zones.</p>
+    /// <p>\[Gateway Load Balancers\] You can specify subnets from one or more Availability Zones. You must include all subnets that were enabled previously, with their existing configurations, plus any additional subnets.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnets.is_none()`.
     pub fn subnets(&self) -> &[::std::string::String] {
@@ -103,7 +105,8 @@ impl SetSubnetsInputBuilder {
     /// <p>\[Application Load Balancers\] You must specify subnets from at least two Availability Zones.</p>
     /// <p>\[Application Load Balancers on Outposts\] You must specify one Outpost subnet.</p>
     /// <p>\[Application Load Balancers on Local Zones\] You can specify subnets from one or more Local Zones.</p>
-    /// <p>\[Network Load Balancers and Gateway Load Balancers\] You can specify subnets from one or more Availability Zones.</p>
+    /// <p>\[Network Load Balancers\] You can specify subnets from one or more Availability Zones.</p>
+    /// <p>\[Gateway Load Balancers\] You can specify subnets from one or more Availability Zones. You must include all subnets that were enabled previously, with their existing configurations, plus any additional subnets.</p>
     pub fn subnets(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.subnets.unwrap_or_default();
         v.push(input.into());
@@ -114,7 +117,8 @@ impl SetSubnetsInputBuilder {
     /// <p>\[Application Load Balancers\] You must specify subnets from at least two Availability Zones.</p>
     /// <p>\[Application Load Balancers on Outposts\] You must specify one Outpost subnet.</p>
     /// <p>\[Application Load Balancers on Local Zones\] You can specify subnets from one or more Local Zones.</p>
-    /// <p>\[Network Load Balancers and Gateway Load Balancers\] You can specify subnets from one or more Availability Zones.</p>
+    /// <p>\[Network Load Balancers\] You can specify subnets from one or more Availability Zones.</p>
+    /// <p>\[Gateway Load Balancers\] You can specify subnets from one or more Availability Zones. You must include all subnets that were enabled previously, with their existing configurations, plus any additional subnets.</p>
     pub fn set_subnets(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.subnets = input;
         self
@@ -123,7 +127,8 @@ impl SetSubnetsInputBuilder {
     /// <p>\[Application Load Balancers\] You must specify subnets from at least two Availability Zones.</p>
     /// <p>\[Application Load Balancers on Outposts\] You must specify one Outpost subnet.</p>
     /// <p>\[Application Load Balancers on Local Zones\] You can specify subnets from one or more Local Zones.</p>
-    /// <p>\[Network Load Balancers and Gateway Load Balancers\] You can specify subnets from one or more Availability Zones.</p>
+    /// <p>\[Network Load Balancers\] You can specify subnets from one or more Availability Zones.</p>
+    /// <p>\[Gateway Load Balancers\] You can specify subnets from one or more Availability Zones. You must include all subnets that were enabled previously, with their existing configurations, plus any additional subnets.</p>
     pub fn get_subnets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.subnets
     }

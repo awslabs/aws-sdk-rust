@@ -1630,6 +1630,38 @@ impl From<crate::operation::copy_volumes::CopyVolumesError> for Error {
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_capacity_manager_data_export::CreateCapacityManagerDataExportError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_capacity_manager_data_export::CreateCapacityManagerDataExportError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_capacity_manager_data_export::CreateCapacityManagerDataExportError> for Error {
+    fn from(err: crate::operation::create_capacity_manager_data_export::CreateCapacityManagerDataExportError) -> Self {
+        match err {
+            crate::operation::create_capacity_manager_data_export::CreateCapacityManagerDataExportError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_capacity_reservation::CreateCapacityReservationError, R>>
     for Error
 where
@@ -4032,6 +4064,38 @@ impl From<crate::operation::create_vpn_gateway::CreateVpnGatewayError> for Error
     fn from(err: crate::operation::create_vpn_gateway::CreateVpnGatewayError) -> Self {
         match err {
             crate::operation::create_vpn_gateway::CreateVpnGatewayError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_capacity_manager_data_export::DeleteCapacityManagerDataExportError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_capacity_manager_data_export::DeleteCapacityManagerDataExportError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_capacity_manager_data_export::DeleteCapacityManagerDataExportError> for Error {
+    fn from(err: crate::operation::delete_capacity_manager_data_export::DeleteCapacityManagerDataExportError) -> Self {
+        match err {
+            crate::operation::delete_capacity_manager_data_export::DeleteCapacityManagerDataExportError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -6745,6 +6809,40 @@ impl From<crate::operation::describe_capacity_block_status::DescribeCapacityBloc
     fn from(err: crate::operation::describe_capacity_block_status::DescribeCapacityBlockStatusError) -> Self {
         match err {
             crate::operation::describe_capacity_block_status::DescribeCapacityBlockStatusError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_capacity_manager_data_exports::DescribeCapacityManagerDataExportsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_capacity_manager_data_exports::DescribeCapacityManagerDataExportsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_capacity_manager_data_exports::DescribeCapacityManagerDataExportsError> for Error {
+    fn from(err: crate::operation::describe_capacity_manager_data_exports::DescribeCapacityManagerDataExportsError) -> Self {
+        match err {
+            crate::operation::describe_capacity_manager_data_exports::DescribeCapacityManagerDataExportsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -11286,6 +11384,29 @@ impl From<crate::operation::disable_aws_network_performance_metric_subscription:
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::disable_capacity_manager::DisableCapacityManagerError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::disable_capacity_manager::DisableCapacityManagerError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::disable_capacity_manager::DisableCapacityManagerError> for Error {
+    fn from(err: crate::operation::disable_capacity_manager::DisableCapacityManagerError) -> Self {
+        match err {
+            crate::operation::disable_capacity_manager::DisableCapacityManagerError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
@@ -12323,6 +12444,29 @@ impl From<crate::operation::enable_aws_network_performance_metric_subscription::
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::enable_capacity_manager::EnableCapacityManagerError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::enable_capacity_manager::EnableCapacityManagerError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::enable_capacity_manager::EnableCapacityManagerError> for Error {
+    fn from(err: crate::operation::enable_capacity_manager::EnableCapacityManagerError) -> Self {
+        match err {
+            crate::operation::enable_capacity_manager::EnableCapacityManagerError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::enable_ebs_encryption_by_default::EnableEbsEncryptionByDefaultError, R>>
     for Error
@@ -13066,6 +13210,96 @@ impl From<crate::operation::get_aws_network_performance_data::GetAwsNetworkPerfo
     fn from(err: crate::operation::get_aws_network_performance_data::GetAwsNetworkPerformanceDataError) -> Self {
         match err {
             crate::operation::get_aws_network_performance_data::GetAwsNetworkPerformanceDataError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_capacity_manager_attributes::GetCapacityManagerAttributesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_capacity_manager_attributes::GetCapacityManagerAttributesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_capacity_manager_attributes::GetCapacityManagerAttributesError> for Error {
+    fn from(err: crate::operation::get_capacity_manager_attributes::GetCapacityManagerAttributesError) -> Self {
+        match err {
+            crate::operation::get_capacity_manager_attributes::GetCapacityManagerAttributesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_capacity_manager_metric_data::GetCapacityManagerMetricDataError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_capacity_manager_metric_data::GetCapacityManagerMetricDataError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_capacity_manager_metric_data::GetCapacityManagerMetricDataError> for Error {
+    fn from(err: crate::operation::get_capacity_manager_metric_data::GetCapacityManagerMetricDataError) -> Self {
+        match err {
+            crate::operation::get_capacity_manager_metric_data::GetCapacityManagerMetricDataError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_capacity_manager_metric_dimensions::GetCapacityManagerMetricDimensionsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_capacity_manager_metric_dimensions::GetCapacityManagerMetricDimensionsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_capacity_manager_metric_dimensions::GetCapacityManagerMetricDimensionsError> for Error {
+    fn from(err: crate::operation::get_capacity_manager_metric_dimensions::GetCapacityManagerMetricDimensionsError) -> Self {
+        match err {
+            crate::operation::get_capacity_manager_metric_dimensions::GetCapacityManagerMetricDimensionsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -18539,6 +18773,40 @@ impl From<crate::operation::unmonitor_instances::UnmonitorInstancesError> for Er
     fn from(err: crate::operation::unmonitor_instances::UnmonitorInstancesError) -> Self {
         match err {
             crate::operation::unmonitor_instances::UnmonitorInstancesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_capacity_manager_organizations_access::UpdateCapacityManagerOrganizationsAccessError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_capacity_manager_organizations_access::UpdateCapacityManagerOrganizationsAccessError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_capacity_manager_organizations_access::UpdateCapacityManagerOrganizationsAccessError> for Error {
+    fn from(err: crate::operation::update_capacity_manager_organizations_access::UpdateCapacityManagerOrganizationsAccessError) -> Self {
+        match err {
+            crate::operation::update_capacity_manager_organizations_access::UpdateCapacityManagerOrganizationsAccessError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }

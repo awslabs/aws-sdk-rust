@@ -179,6 +179,21 @@ pub fn de_modify_db_cluster_http_error(
             }
             tmp
         }),
+        "NetworkTypeNotSupported" => crate::operation::modify_db_cluster::ModifyDBClusterError::NetworkTypeNotSupported({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::NetworkTypeNotSupportedBuilder::default();
+                output = crate::protocol_serde::shape_network_type_not_supported::de_network_type_not_supported_xml_err(_response_body, output)
+                    .map_err(crate::operation::modify_db_cluster::ModifyDBClusterError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "StorageQuotaExceeded" => crate::operation::modify_db_cluster::ModifyDBClusterError::StorageQuotaExceededFault({
             #[allow(unused_mut)]
             let mut tmp = {

@@ -11,6 +11,8 @@ pub use crate::types::error::_invalid_db_instance_state_fault::InvalidDbInstance
 
 pub use crate::types::error::_storage_quota_exceeded_fault::StorageQuotaExceededFault;
 
+pub use crate::types::error::_network_type_not_supported::NetworkTypeNotSupported;
+
 pub use crate::types::error::_kms_key_not_accessible_fault::KmsKeyNotAccessibleFault;
 
 pub use crate::types::error::_invalid_vpc_network_state_fault::InvalidVpcNetworkStateFault;
@@ -200,6 +202,8 @@ mod _invalid_subnet;
 mod _invalid_vpc_network_state_fault;
 
 mod _kms_key_not_accessible_fault;
+
+mod _network_type_not_supported;
 
 mod _resource_not_found_fault;
 

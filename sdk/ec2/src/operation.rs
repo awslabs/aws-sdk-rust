@@ -184,6 +184,9 @@ pub mod copy_snapshot;
 /// Types for the `CopyVolumes` operation.
 pub mod copy_volumes;
 
+/// Types for the `CreateCapacityManagerDataExport` operation.
+pub mod create_capacity_manager_data_export;
+
 /// Types for the `CreateCapacityReservation` operation.
 pub mod create_capacity_reservation;
 
@@ -462,6 +465,9 @@ pub mod create_vpn_connection_route;
 
 /// Types for the `CreateVpnGateway` operation.
 pub mod create_vpn_gateway;
+
+/// Types for the `DeleteCapacityManagerDataExport` operation.
+pub mod delete_capacity_manager_data_export;
 
 /// Types for the `DeleteCarrierGateway` operation.
 pub mod delete_carrier_gateway;
@@ -774,6 +780,9 @@ pub mod describe_capacity_block_status;
 
 /// Types for the `DescribeCapacityBlocks` operation.
 pub mod describe_capacity_blocks;
+
+/// Types for the `DescribeCapacityManagerDataExports` operation.
+pub mod describe_capacity_manager_data_exports;
 
 /// Types for the `DescribeCapacityReservationBillingRequests` operation.
 pub mod describe_capacity_reservation_billing_requests;
@@ -1276,6 +1285,9 @@ pub mod disable_allowed_images_settings;
 /// Types for the `DisableAwsNetworkPerformanceMetricSubscription` operation.
 pub mod disable_aws_network_performance_metric_subscription;
 
+/// Types for the `DisableCapacityManager` operation.
+pub mod disable_capacity_manager;
+
 /// Types for the `DisableEbsEncryptionByDefault` operation.
 pub mod disable_ebs_encryption_by_default;
 
@@ -1384,6 +1396,9 @@ pub mod enable_allowed_images_settings;
 /// Types for the `EnableAwsNetworkPerformanceMetricSubscription` operation.
 pub mod enable_aws_network_performance_metric_subscription;
 
+/// Types for the `EnableCapacityManager` operation.
+pub mod enable_capacity_manager;
+
 /// Types for the `EnableEbsEncryptionByDefault` operation.
 pub mod enable_ebs_encryption_by_default;
 
@@ -1464,6 +1479,15 @@ pub mod get_associated_ipv6_pool_cidrs;
 
 /// Types for the `GetAwsNetworkPerformanceData` operation.
 pub mod get_aws_network_performance_data;
+
+/// Types for the `GetCapacityManagerAttributes` operation.
+pub mod get_capacity_manager_attributes;
+
+/// Types for the `GetCapacityManagerMetricData` operation.
+pub mod get_capacity_manager_metric_data;
+
+/// Types for the `GetCapacityManagerMetricDimensions` operation.
+pub mod get_capacity_manager_metric_dimensions;
 
 /// Types for the `GetCapacityReservationUsage` operation.
 pub mod get_capacity_reservation_usage;
@@ -2076,6 +2100,9 @@ pub mod unlock_snapshot;
 
 /// Types for the `UnmonitorInstances` operation.
 pub mod unmonitor_instances;
+
+/// Types for the `UpdateCapacityManagerOrganizationsAccess` operation.
+pub mod update_capacity_manager_organizations_access;
 
 /// Types for the `UpdateSecurityGroupRuleDescriptionsEgress` operation.
 pub mod update_security_group_rule_descriptions_egress;

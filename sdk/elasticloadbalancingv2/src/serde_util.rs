@@ -15,6 +15,15 @@ pub(crate) fn action_correct_errors(mut builder: crate::types::builders::ActionB
     builder
 }
 
+pub(crate) fn rule_transform_correct_errors(
+    mut builder: crate::types::builders::RuleTransformBuilder,
+) -> crate::types::builders::RuleTransformBuilder {
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::TransformTypeEnum>().ok()
+    }
+    builder
+}
+
 pub(crate) fn tag_correct_errors(mut builder: crate::types::builders::TagBuilder) -> crate::types::builders::TagBuilder {
     if builder.key.is_none() {
         builder.key = Some(Default::default())
@@ -72,6 +81,18 @@ pub(crate) fn redirect_action_config_correct_errors(
 ) -> crate::types::builders::RedirectActionConfigBuilder {
     if builder.status_code.is_none() {
         builder.status_code = "no value was set".parse::<crate::types::RedirectActionStatusCodeEnum>().ok()
+    }
+    builder
+}
+
+pub(crate) fn rewrite_config_correct_errors(
+    mut builder: crate::types::builders::RewriteConfigBuilder,
+) -> crate::types::builders::RewriteConfigBuilder {
+    if builder.regex.is_none() {
+        builder.regex = Some(Default::default())
+    }
+    if builder.replace.is_none() {
+        builder.replace = Some(Default::default())
     }
     builder
 }

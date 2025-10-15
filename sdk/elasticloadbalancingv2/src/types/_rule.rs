@@ -14,6 +14,8 @@ pub struct Rule {
     pub actions: ::std::option::Option<::std::vec::Vec<crate::types::Action>>,
     /// <p>Indicates whether this is the default rule.</p>
     pub is_default: ::std::option::Option<bool>,
+    /// <p>The transforms for the rule.</p>
+    pub transforms: ::std::option::Option<::std::vec::Vec<crate::types::RuleTransform>>,
 }
 impl Rule {
     /// <p>The Amazon Resource Name (ARN) of the rule.</p>
@@ -40,6 +42,12 @@ impl Rule {
     pub fn is_default(&self) -> ::std::option::Option<bool> {
         self.is_default
     }
+    /// <p>The transforms for the rule.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.transforms.is_none()`.
+    pub fn transforms(&self) -> &[crate::types::RuleTransform] {
+        self.transforms.as_deref().unwrap_or_default()
+    }
 }
 impl Rule {
     /// Creates a new builder-style object to manufacture [`Rule`](crate::types::Rule).
@@ -57,6 +65,7 @@ pub struct RuleBuilder {
     pub(crate) conditions: ::std::option::Option<::std::vec::Vec<crate::types::RuleCondition>>,
     pub(crate) actions: ::std::option::Option<::std::vec::Vec<crate::types::Action>>,
     pub(crate) is_default: ::std::option::Option<bool>,
+    pub(crate) transforms: ::std::option::Option<::std::vec::Vec<crate::types::RuleTransform>>,
 }
 impl RuleBuilder {
     /// <p>The Amazon Resource Name (ARN) of the rule.</p>
@@ -141,6 +150,26 @@ impl RuleBuilder {
     pub fn get_is_default(&self) -> &::std::option::Option<bool> {
         &self.is_default
     }
+    /// Appends an item to `transforms`.
+    ///
+    /// To override the contents of this collection use [`set_transforms`](Self::set_transforms).
+    ///
+    /// <p>The transforms for the rule.</p>
+    pub fn transforms(mut self, input: crate::types::RuleTransform) -> Self {
+        let mut v = self.transforms.unwrap_or_default();
+        v.push(input);
+        self.transforms = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The transforms for the rule.</p>
+    pub fn set_transforms(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RuleTransform>>) -> Self {
+        self.transforms = input;
+        self
+    }
+    /// <p>The transforms for the rule.</p>
+    pub fn get_transforms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RuleTransform>> {
+        &self.transforms
+    }
     /// Consumes the builder and constructs a [`Rule`](crate::types::Rule).
     pub fn build(self) -> crate::types::Rule {
         crate::types::Rule {
@@ -149,6 +178,7 @@ impl RuleBuilder {
             conditions: self.conditions,
             actions: self.actions,
             is_default: self.is_default,
+            transforms: self.transforms,
         }
     }
 }

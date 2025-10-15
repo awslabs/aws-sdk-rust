@@ -897,8 +897,14 @@ impl From<crate::operation::delete_automated_reasoning_policy::DeleteAutomatedRe
             crate::operation::delete_automated_reasoning_policy::DeleteAutomatedReasoningPolicyError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
+            crate::operation::delete_automated_reasoning_policy::DeleteAutomatedReasoningPolicyError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
             crate::operation::delete_automated_reasoning_policy::DeleteAutomatedReasoningPolicyError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
+            }
+            crate::operation::delete_automated_reasoning_policy::DeleteAutomatedReasoningPolicyError::ResourceInUseException(inner) => {
+                Error::ResourceInUseException(inner)
             }
             crate::operation::delete_automated_reasoning_policy::DeleteAutomatedReasoningPolicyError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)

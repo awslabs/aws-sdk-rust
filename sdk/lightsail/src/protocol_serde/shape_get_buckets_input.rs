@@ -12,5 +12,8 @@ pub fn ser_get_buckets_input_input(
     if let Some(var_3) = &input.include_connected_resources {
         object.key("includeConnectedResources").boolean(*var_3);
     }
+    if let Some(var_4) = &input.include_cors {
+        object.key("includeCors").boolean(*var_4);
+    }
     Ok(())
 }

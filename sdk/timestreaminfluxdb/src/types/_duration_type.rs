@@ -12,6 +12,7 @@
 /// ```text
 /// # let durationtype = unimplemented!();
 /// match durationtype {
+///     DurationType::Days => { /* ... */ },
 ///     DurationType::Hours => { /* ... */ },
 ///     DurationType::Milliseconds => { /* ... */ },
 ///     DurationType::Minutes => { /* ... */ },
@@ -45,6 +46,8 @@
 )]
 pub enum DurationType {
     #[allow(missing_docs)] // documentation missing in model
+    Days,
+    #[allow(missing_docs)] // documentation missing in model
     Hours,
     #[allow(missing_docs)] // documentation missing in model
     Milliseconds,
@@ -59,6 +62,7 @@ pub enum DurationType {
 impl ::std::convert::From<&str> for DurationType {
     fn from(s: &str) -> Self {
         match s {
+            "days" => DurationType::Days,
             "hours" => DurationType::Hours,
             "milliseconds" => DurationType::Milliseconds,
             "minutes" => DurationType::Minutes,
@@ -78,6 +82,7 @@ impl DurationType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            DurationType::Days => "days",
             DurationType::Hours => "hours",
             DurationType::Milliseconds => "milliseconds",
             DurationType::Minutes => "minutes",
@@ -87,7 +92,7 @@ impl DurationType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["hours", "milliseconds", "minutes", "seconds"]
+        &["days", "hours", "milliseconds", "minutes", "seconds"]
     }
 }
 impl ::std::convert::AsRef<str> for DurationType {
@@ -110,6 +115,7 @@ impl DurationType {
 impl ::std::fmt::Display for DurationType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            DurationType::Days => write!(f, "days"),
             DurationType::Hours => write!(f, "hours"),
             DurationType::Milliseconds => write!(f, "milliseconds"),
             DurationType::Minutes => write!(f, "minutes"),

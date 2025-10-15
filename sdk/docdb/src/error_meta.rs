@@ -92,6 +92,8 @@ pub enum Error {
     InvalidVpcNetworkStateFault(crate::types::error::InvalidVpcNetworkStateFault),
     /// <p>An error occurred when accessing an KMS key.</p>
     KmsKeyNotAccessibleFault(crate::types::error::KmsKeyNotAccessibleFault),
+    /// <p>The network type is not supported by either <code>DBSubnetGroup</code> or the DB engine version.</p>
+    NetworkTypeNotSupported(crate::types::error::NetworkTypeNotSupported),
     /// <p>The specified resource ID was not found.</p>
     ResourceNotFoundFault(crate::types::error::ResourceNotFoundFault),
     /// <p>Amazon SNS has responded that there is a problem with the specified topic.</p>
@@ -174,6 +176,7 @@ impl ::std::fmt::Display for Error {
             Error::InvalidSubnet(inner) => inner.fmt(f),
             Error::InvalidVpcNetworkStateFault(inner) => inner.fmt(f),
             Error::KmsKeyNotAccessibleFault(inner) => inner.fmt(f),
+            Error::NetworkTypeNotSupported(inner) => inner.fmt(f),
             Error::ResourceNotFoundFault(inner) => inner.fmt(f),
             Error::SnsInvalidTopicFault(inner) => inner.fmt(f),
             Error::SnsNoAuthorizationFault(inner) => inner.fmt(f),
@@ -252,6 +255,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::InvalidSubnet(inner) => inner.meta(),
             Self::InvalidVpcNetworkStateFault(inner) => inner.meta(),
             Self::KmsKeyNotAccessibleFault(inner) => inner.meta(),
+            Self::NetworkTypeNotSupported(inner) => inner.meta(),
             Self::ResourceNotFoundFault(inner) => inner.meta(),
             Self::SnsInvalidTopicFault(inner) => inner.meta(),
             Self::SnsNoAuthorizationFault(inner) => inner.meta(),
@@ -500,6 +504,7 @@ impl From<crate::operation::create_db_cluster::CreateDBClusterError> for Error {
                 Error::InvalidVpcNetworkStateFault(inner)
             }
             crate::operation::create_db_cluster::CreateDBClusterError::KmsKeyNotAccessibleFault(inner) => Error::KmsKeyNotAccessibleFault(inner),
+            crate::operation::create_db_cluster::CreateDBClusterError::NetworkTypeNotSupported(inner) => Error::NetworkTypeNotSupported(inner),
             crate::operation::create_db_cluster::CreateDBClusterError::StorageQuotaExceededFault(inner) => Error::StorageQuotaExceededFault(inner),
             crate::operation::create_db_cluster::CreateDBClusterError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -1555,6 +1560,7 @@ impl From<crate::operation::modify_db_cluster::ModifyDBClusterError> for Error {
             crate::operation::modify_db_cluster::ModifyDBClusterError::InvalidVpcNetworkStateFault(inner) => {
                 Error::InvalidVpcNetworkStateFault(inner)
             }
+            crate::operation::modify_db_cluster::ModifyDBClusterError::NetworkTypeNotSupported(inner) => Error::NetworkTypeNotSupported(inner),
             crate::operation::modify_db_cluster::ModifyDBClusterError::StorageQuotaExceededFault(inner) => Error::StorageQuotaExceededFault(inner),
             crate::operation::modify_db_cluster::ModifyDBClusterError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -2024,6 +2030,9 @@ impl From<crate::operation::restore_db_cluster_from_snapshot::RestoreDBClusterFr
             crate::operation::restore_db_cluster_from_snapshot::RestoreDBClusterFromSnapshotError::KmsKeyNotAccessibleFault(inner) => {
                 Error::KmsKeyNotAccessibleFault(inner)
             }
+            crate::operation::restore_db_cluster_from_snapshot::RestoreDBClusterFromSnapshotError::NetworkTypeNotSupported(inner) => {
+                Error::NetworkTypeNotSupported(inner)
+            }
             crate::operation::restore_db_cluster_from_snapshot::RestoreDBClusterFromSnapshotError::StorageQuotaExceededFault(inner) => {
                 Error::StorageQuotaExceededFault(inner)
             }
@@ -2100,6 +2109,9 @@ impl From<crate::operation::restore_db_cluster_to_point_in_time::RestoreDBCluste
             }
             crate::operation::restore_db_cluster_to_point_in_time::RestoreDBClusterToPointInTimeError::KmsKeyNotAccessibleFault(inner) => {
                 Error::KmsKeyNotAccessibleFault(inner)
+            }
+            crate::operation::restore_db_cluster_to_point_in_time::RestoreDBClusterToPointInTimeError::NetworkTypeNotSupported(inner) => {
+                Error::NetworkTypeNotSupported(inner)
             }
             crate::operation::restore_db_cluster_to_point_in_time::RestoreDBClusterToPointInTimeError::StorageQuotaExceededFault(inner) => {
                 Error::StorageQuotaExceededFault(inner)
@@ -2251,6 +2263,7 @@ impl ::std::error::Error for Error {
             Error::InvalidSubnet(inner) => inner.source(),
             Error::InvalidVpcNetworkStateFault(inner) => inner.source(),
             Error::KmsKeyNotAccessibleFault(inner) => inner.source(),
+            Error::NetworkTypeNotSupported(inner) => inner.source(),
             Error::ResourceNotFoundFault(inner) => inner.source(),
             Error::SnsInvalidTopicFault(inner) => inner.source(),
             Error::SnsNoAuthorizationFault(inner) => inner.source(),
@@ -2315,6 +2328,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::InvalidSubnet(e) => e.request_id(),
             Self::InvalidVpcNetworkStateFault(e) => e.request_id(),
             Self::KmsKeyNotAccessibleFault(e) => e.request_id(),
+            Self::NetworkTypeNotSupported(e) => e.request_id(),
             Self::ResourceNotFoundFault(e) => e.request_id(),
             Self::SnsInvalidTopicFault(e) => e.request_id(),
             Self::SnsNoAuthorizationFault(e) => e.request_id(),

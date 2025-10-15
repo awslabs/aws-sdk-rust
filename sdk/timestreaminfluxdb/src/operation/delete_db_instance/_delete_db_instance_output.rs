@@ -45,6 +45,8 @@ pub struct DeleteDbInstanceOutput {
     pub db_cluster_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the DbInstance's role in the cluster.</p>
     pub instance_mode: ::std::option::Option<crate::types::InstanceMode>,
+    /// <p>Specifies the DbInstance's roles in the cluster.</p>
+    pub instance_modes: ::std::option::Option<::std::vec::Vec<crate::types::InstanceMode>>,
     _request_id: Option<String>,
 }
 impl DeleteDbInstanceOutput {
@@ -138,6 +140,12 @@ impl DeleteDbInstanceOutput {
     pub fn instance_mode(&self) -> ::std::option::Option<&crate::types::InstanceMode> {
         self.instance_mode.as_ref()
     }
+    /// <p>Specifies the DbInstance's roles in the cluster.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_modes.is_none()`.
+    pub fn instance_modes(&self) -> &[crate::types::InstanceMode] {
+        self.instance_modes.as_deref().unwrap_or_default()
+    }
 }
 impl ::aws_types::request_id::RequestId for DeleteDbInstanceOutput {
     fn request_id(&self) -> Option<&str> {
@@ -176,6 +184,7 @@ pub struct DeleteDbInstanceOutputBuilder {
     pub(crate) influx_auth_parameters_secret_arn: ::std::option::Option<::std::string::String>,
     pub(crate) db_cluster_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_mode: ::std::option::Option<crate::types::InstanceMode>,
+    pub(crate) instance_modes: ::std::option::Option<::std::vec::Vec<crate::types::InstanceMode>>,
     _request_id: Option<String>,
 }
 impl DeleteDbInstanceOutputBuilder {
@@ -488,6 +497,26 @@ impl DeleteDbInstanceOutputBuilder {
     pub fn get_instance_mode(&self) -> &::std::option::Option<crate::types::InstanceMode> {
         &self.instance_mode
     }
+    /// Appends an item to `instance_modes`.
+    ///
+    /// To override the contents of this collection use [`set_instance_modes`](Self::set_instance_modes).
+    ///
+    /// <p>Specifies the DbInstance's roles in the cluster.</p>
+    pub fn instance_modes(mut self, input: crate::types::InstanceMode) -> Self {
+        let mut v = self.instance_modes.unwrap_or_default();
+        v.push(input);
+        self.instance_modes = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Specifies the DbInstance's roles in the cluster.</p>
+    pub fn set_instance_modes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceMode>>) -> Self {
+        self.instance_modes = input;
+        self
+    }
+    /// <p>Specifies the DbInstance's roles in the cluster.</p>
+    pub fn get_instance_modes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceMode>> {
+        &self.instance_modes
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -548,6 +577,7 @@ impl DeleteDbInstanceOutputBuilder {
             influx_auth_parameters_secret_arn: self.influx_auth_parameters_secret_arn,
             db_cluster_id: self.db_cluster_id,
             instance_mode: self.instance_mode,
+            instance_modes: self.instance_modes,
             _request_id: self._request_id,
         })
     }

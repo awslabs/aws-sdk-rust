@@ -34,6 +34,17 @@ where
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'InfluxDBv2' cannot be null")
                             })?,
                         )),
+                        "InfluxDBv3Core" => Some(crate::types::Parameters::InfluxDBv3Core(
+                            crate::protocol_serde::shape_influx_dbv3_core_parameters::de_influx_dbv3_core_parameters(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'InfluxDBv3Core' cannot be null")
+                            })?,
+                        )),
+                        "InfluxDBv3Enterprise" => Some(crate::types::Parameters::InfluxDBv3Enterprise(
+                            crate::protocol_serde::shape_influx_dbv3_enterprise_parameters::de_influx_dbv3_enterprise_parameters(tokens)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'InfluxDBv3Enterprise' cannot be null")
+                                })?,
+                        )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
                             Some(crate::types::Parameters::Unknown)
@@ -72,6 +83,18 @@ pub fn ser_parameters(
             let mut object_1 = object_4.key("InfluxDBv2").start_object();
             crate::protocol_serde::shape_influx_dbv2_parameters::ser_influx_dbv2_parameters(&mut object_1, inner)?;
             object_1.finish();
+        }
+        crate::types::Parameters::InfluxDBv3Core(inner) => {
+            #[allow(unused_mut)]
+            let mut object_2 = object_4.key("InfluxDBv3Core").start_object();
+            crate::protocol_serde::shape_influx_dbv3_core_parameters::ser_influx_dbv3_core_parameters(&mut object_2, inner)?;
+            object_2.finish();
+        }
+        crate::types::Parameters::InfluxDBv3Enterprise(inner) => {
+            #[allow(unused_mut)]
+            let mut object_3 = object_4.key("InfluxDBv3Enterprise").start_object();
+            crate::protocol_serde::shape_influx_dbv3_enterprise_parameters::ser_influx_dbv3_enterprise_parameters(&mut object_3, inner)?;
+            object_3.finish();
         }
         crate::types::Parameters::Unknown => return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant("Parameters")),
     }

@@ -15,7 +15,7 @@ pub struct CreateDbClusterInput {
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>The port number on which InfluxDB accepts connections.</p>
     /// <p>Valid Values: 1024-65535</p>
-    /// <p>Default: 8086</p>
+    /// <p>Default: 8086 for InfluxDB v2, 8181 for InfluxDB v3</p>
     /// <p>Constraints: The value can't be 2375-2376, 7788-7799, 8090, or 51678-51680</p>
     pub port: ::std::option::Option<i32>,
     /// <p>The ID of the DB parameter group to assign to your DB cluster. DB parameter groups specify how the database is configured. For example, DB parameter groups can specify the limit for query concurrency.</p>
@@ -75,7 +75,7 @@ impl CreateDbClusterInput {
     }
     /// <p>The port number on which InfluxDB accepts connections.</p>
     /// <p>Valid Values: 1024-65535</p>
-    /// <p>Default: 8086</p>
+    /// <p>Default: 8086 for InfluxDB v2, 8181 for InfluxDB v3</p>
     /// <p>Constraints: The value can't be 2375-2376, 7788-7799, 8090, or 51678-51680</p>
     pub fn port(&self) -> ::std::option::Option<i32> {
         self.port
@@ -227,7 +227,6 @@ impl CreateDbClusterInputBuilder {
         &self.username
     }
     /// <p>The password of the initial admin user created in InfluxDB. This password will allow you to access the InfluxDB UI to perform various administrative tasks and also use the InfluxDB CLI to create an operator token. These attributes will be stored in a secret created in Secrets Manager in your account.</p>
-    /// This field is required.
     pub fn password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.password = ::std::option::Option::Some(input.into());
         self
@@ -271,7 +270,7 @@ impl CreateDbClusterInputBuilder {
     }
     /// <p>The port number on which InfluxDB accepts connections.</p>
     /// <p>Valid Values: 1024-65535</p>
-    /// <p>Default: 8086</p>
+    /// <p>Default: 8086 for InfluxDB v2, 8181 for InfluxDB v3</p>
     /// <p>Constraints: The value can't be 2375-2376, 7788-7799, 8090, or 51678-51680</p>
     pub fn port(mut self, input: i32) -> Self {
         self.port = ::std::option::Option::Some(input);
@@ -279,7 +278,7 @@ impl CreateDbClusterInputBuilder {
     }
     /// <p>The port number on which InfluxDB accepts connections.</p>
     /// <p>Valid Values: 1024-65535</p>
-    /// <p>Default: 8086</p>
+    /// <p>Default: 8086 for InfluxDB v2, 8181 for InfluxDB v3</p>
     /// <p>Constraints: The value can't be 2375-2376, 7788-7799, 8090, or 51678-51680</p>
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.port = input;
@@ -287,7 +286,7 @@ impl CreateDbClusterInputBuilder {
     }
     /// <p>The port number on which InfluxDB accepts connections.</p>
     /// <p>Valid Values: 1024-65535</p>
-    /// <p>Default: 8086</p>
+    /// <p>Default: 8086 for InfluxDB v2, 8181 for InfluxDB v3</p>
     /// <p>Constraints: The value can't be 2375-2376, 7788-7799, 8090, or 51678-51680</p>
     pub fn get_port(&self) -> &::std::option::Option<i32> {
         &self.port
@@ -363,7 +362,6 @@ impl CreateDbClusterInputBuilder {
         &self.db_storage_type
     }
     /// <p>The amount of storage to allocate for your DB storage type in GiB (gibibytes).</p>
-    /// This field is required.
     pub fn allocated_storage(mut self, input: i32) -> Self {
         self.allocated_storage = ::std::option::Option::Some(input);
         self
@@ -446,7 +444,6 @@ impl CreateDbClusterInputBuilder {
         &self.vpc_security_group_ids
     }
     /// <p>Specifies the type of cluster to create.</p>
-    /// This field is required.
     pub fn deployment_type(mut self, input: crate::types::ClusterDeploymentType) -> Self {
         self.deployment_type = ::std::option::Option::Some(input);
         self

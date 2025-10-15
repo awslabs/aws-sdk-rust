@@ -114,11 +114,11 @@ impl CopyDBClusterSnapshotFluentBuilder {
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
-    /// <p>Must specify a valid system snapshot in the <i>available</i> state.</p></li>
+    /// <p>Must specify a valid cluster snapshot in the <i>available</i> state.</p></li>
     /// <li>
-    /// <p>If the source snapshot is in the same Amazon Web Services Region as the copy, specify a valid snapshot identifier.</p></li>
+    /// <p>If the source cluster snapshot is in the same Amazon Web Services Region as the copy, specify a valid snapshot identifier.</p></li>
     /// <li>
-    /// <p>If the source snapshot is in a different Amazon Web Services Region than the copy, specify a valid cluster snapshot ARN.</p></li>
+    /// <p>If the source cluster snapshot is in a different Amazon Web Services Region or owned by another Amazon Web Services account, specify the snapshot ARN.</p></li>
     /// </ul>
     /// <p>Example: <code>my-cluster-snapshot1</code></p>
     pub fn source_db_cluster_snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -129,11 +129,11 @@ impl CopyDBClusterSnapshotFluentBuilder {
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
-    /// <p>Must specify a valid system snapshot in the <i>available</i> state.</p></li>
+    /// <p>Must specify a valid cluster snapshot in the <i>available</i> state.</p></li>
     /// <li>
-    /// <p>If the source snapshot is in the same Amazon Web Services Region as the copy, specify a valid snapshot identifier.</p></li>
+    /// <p>If the source cluster snapshot is in the same Amazon Web Services Region as the copy, specify a valid snapshot identifier.</p></li>
     /// <li>
-    /// <p>If the source snapshot is in a different Amazon Web Services Region than the copy, specify a valid cluster snapshot ARN.</p></li>
+    /// <p>If the source cluster snapshot is in a different Amazon Web Services Region or owned by another Amazon Web Services account, specify the snapshot ARN.</p></li>
     /// </ul>
     /// <p>Example: <code>my-cluster-snapshot1</code></p>
     pub fn set_source_db_cluster_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -144,11 +144,11 @@ impl CopyDBClusterSnapshotFluentBuilder {
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
-    /// <p>Must specify a valid system snapshot in the <i>available</i> state.</p></li>
+    /// <p>Must specify a valid cluster snapshot in the <i>available</i> state.</p></li>
     /// <li>
-    /// <p>If the source snapshot is in the same Amazon Web Services Region as the copy, specify a valid snapshot identifier.</p></li>
+    /// <p>If the source cluster snapshot is in the same Amazon Web Services Region as the copy, specify a valid snapshot identifier.</p></li>
     /// <li>
-    /// <p>If the source snapshot is in a different Amazon Web Services Region than the copy, specify a valid cluster snapshot ARN.</p></li>
+    /// <p>If the source cluster snapshot is in a different Amazon Web Services Region or owned by another Amazon Web Services account, specify the snapshot ARN.</p></li>
     /// </ul>
     /// <p>Example: <code>my-cluster-snapshot1</code></p>
     pub fn get_source_db_cluster_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {

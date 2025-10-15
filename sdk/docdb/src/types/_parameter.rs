@@ -6,7 +6,20 @@
 pub struct Parameter {
     /// <p>Specifies the name of the parameter.</p>
     pub parameter_name: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the value of the parameter.</p>
+    /// <p>Specifies the value of the parameter. Must be one or more of the cluster parameter's <code>AllowedValues</code> in CSV format:</p>
+    /// <p>Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>enabled</code>: The cluster accepts secure connections using TLS version 1.0 through 1.3.</p></li>
+    /// <li>
+    /// <p><code>disabled</code>: The cluster does not accept secure connections using TLS.</p></li>
+    /// <li>
+    /// <p><code>fips-140-3</code>: The cluster only accepts secure connections per the requirements of the Federal Information Processing Standards (FIPS) publication 140-3. Only supported starting with Amazon DocumentDB 5.0 (engine version 3.0.3727) clusters in these regions: ca-central-1, us-west-2, us-east-1, us-east-2, us-gov-east-1, us-gov-west-1.</p></li>
+    /// <li>
+    /// <p><code>tls1.2+</code>: The cluster accepts secure connections using TLS version 1.2 and above. Only supported starting with Amazon DocumentDB 4.0 (engine version 2.0.10980) and Amazon DocumentDB 5.0 (engine version 3.0.11051).</p></li>
+    /// <li>
+    /// <p><code>tls1.3+</code>: The cluster accepts secure connections using TLS version 1.3 and above. Only supported starting with Amazon DocumentDB 4.0 (engine version 2.0.10980) and Amazon DocumentDB 5.0 (engine version 3.0.11051).</p></li>
+    /// </ul>
     pub parameter_value: ::std::option::Option<::std::string::String>,
     /// <p>Provides a description of the parameter.</p>
     pub description: ::std::option::Option<::std::string::String>,
@@ -30,7 +43,20 @@ impl Parameter {
     pub fn parameter_name(&self) -> ::std::option::Option<&str> {
         self.parameter_name.as_deref()
     }
-    /// <p>Specifies the value of the parameter.</p>
+    /// <p>Specifies the value of the parameter. Must be one or more of the cluster parameter's <code>AllowedValues</code> in CSV format:</p>
+    /// <p>Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>enabled</code>: The cluster accepts secure connections using TLS version 1.0 through 1.3.</p></li>
+    /// <li>
+    /// <p><code>disabled</code>: The cluster does not accept secure connections using TLS.</p></li>
+    /// <li>
+    /// <p><code>fips-140-3</code>: The cluster only accepts secure connections per the requirements of the Federal Information Processing Standards (FIPS) publication 140-3. Only supported starting with Amazon DocumentDB 5.0 (engine version 3.0.3727) clusters in these regions: ca-central-1, us-west-2, us-east-1, us-east-2, us-gov-east-1, us-gov-west-1.</p></li>
+    /// <li>
+    /// <p><code>tls1.2+</code>: The cluster accepts secure connections using TLS version 1.2 and above. Only supported starting with Amazon DocumentDB 4.0 (engine version 2.0.10980) and Amazon DocumentDB 5.0 (engine version 3.0.11051).</p></li>
+    /// <li>
+    /// <p><code>tls1.3+</code>: The cluster accepts secure connections using TLS version 1.3 and above. Only supported starting with Amazon DocumentDB 4.0 (engine version 2.0.10980) and Amazon DocumentDB 5.0 (engine version 3.0.11051).</p></li>
+    /// </ul>
     pub fn parameter_value(&self) -> ::std::option::Option<&str> {
         self.parameter_value.as_deref()
     }
@@ -104,17 +130,56 @@ impl ParameterBuilder {
     pub fn get_parameter_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.parameter_name
     }
-    /// <p>Specifies the value of the parameter.</p>
+    /// <p>Specifies the value of the parameter. Must be one or more of the cluster parameter's <code>AllowedValues</code> in CSV format:</p>
+    /// <p>Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>enabled</code>: The cluster accepts secure connections using TLS version 1.0 through 1.3.</p></li>
+    /// <li>
+    /// <p><code>disabled</code>: The cluster does not accept secure connections using TLS.</p></li>
+    /// <li>
+    /// <p><code>fips-140-3</code>: The cluster only accepts secure connections per the requirements of the Federal Information Processing Standards (FIPS) publication 140-3. Only supported starting with Amazon DocumentDB 5.0 (engine version 3.0.3727) clusters in these regions: ca-central-1, us-west-2, us-east-1, us-east-2, us-gov-east-1, us-gov-west-1.</p></li>
+    /// <li>
+    /// <p><code>tls1.2+</code>: The cluster accepts secure connections using TLS version 1.2 and above. Only supported starting with Amazon DocumentDB 4.0 (engine version 2.0.10980) and Amazon DocumentDB 5.0 (engine version 3.0.11051).</p></li>
+    /// <li>
+    /// <p><code>tls1.3+</code>: The cluster accepts secure connections using TLS version 1.3 and above. Only supported starting with Amazon DocumentDB 4.0 (engine version 2.0.10980) and Amazon DocumentDB 5.0 (engine version 3.0.11051).</p></li>
+    /// </ul>
     pub fn parameter_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_value = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies the value of the parameter.</p>
+    /// <p>Specifies the value of the parameter. Must be one or more of the cluster parameter's <code>AllowedValues</code> in CSV format:</p>
+    /// <p>Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>enabled</code>: The cluster accepts secure connections using TLS version 1.0 through 1.3.</p></li>
+    /// <li>
+    /// <p><code>disabled</code>: The cluster does not accept secure connections using TLS.</p></li>
+    /// <li>
+    /// <p><code>fips-140-3</code>: The cluster only accepts secure connections per the requirements of the Federal Information Processing Standards (FIPS) publication 140-3. Only supported starting with Amazon DocumentDB 5.0 (engine version 3.0.3727) clusters in these regions: ca-central-1, us-west-2, us-east-1, us-east-2, us-gov-east-1, us-gov-west-1.</p></li>
+    /// <li>
+    /// <p><code>tls1.2+</code>: The cluster accepts secure connections using TLS version 1.2 and above. Only supported starting with Amazon DocumentDB 4.0 (engine version 2.0.10980) and Amazon DocumentDB 5.0 (engine version 3.0.11051).</p></li>
+    /// <li>
+    /// <p><code>tls1.3+</code>: The cluster accepts secure connections using TLS version 1.3 and above. Only supported starting with Amazon DocumentDB 4.0 (engine version 2.0.10980) and Amazon DocumentDB 5.0 (engine version 3.0.11051).</p></li>
+    /// </ul>
     pub fn set_parameter_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parameter_value = input;
         self
     }
-    /// <p>Specifies the value of the parameter.</p>
+    /// <p>Specifies the value of the parameter. Must be one or more of the cluster parameter's <code>AllowedValues</code> in CSV format:</p>
+    /// <p>Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>enabled</code>: The cluster accepts secure connections using TLS version 1.0 through 1.3.</p></li>
+    /// <li>
+    /// <p><code>disabled</code>: The cluster does not accept secure connections using TLS.</p></li>
+    /// <li>
+    /// <p><code>fips-140-3</code>: The cluster only accepts secure connections per the requirements of the Federal Information Processing Standards (FIPS) publication 140-3. Only supported starting with Amazon DocumentDB 5.0 (engine version 3.0.3727) clusters in these regions: ca-central-1, us-west-2, us-east-1, us-east-2, us-gov-east-1, us-gov-west-1.</p></li>
+    /// <li>
+    /// <p><code>tls1.2+</code>: The cluster accepts secure connections using TLS version 1.2 and above. Only supported starting with Amazon DocumentDB 4.0 (engine version 2.0.10980) and Amazon DocumentDB 5.0 (engine version 3.0.11051).</p></li>
+    /// <li>
+    /// <p><code>tls1.3+</code>: The cluster accepts secure connections using TLS version 1.3 and above. Only supported starting with Amazon DocumentDB 4.0 (engine version 2.0.10980) and Amazon DocumentDB 5.0 (engine version 3.0.11051).</p></li>
+    /// </ul>
     pub fn get_parameter_value(&self) -> &::std::option::Option<::std::string::String> {
         &self.parameter_value
     }

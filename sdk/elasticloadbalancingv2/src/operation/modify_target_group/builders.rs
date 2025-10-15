@@ -170,17 +170,17 @@ impl ModifyTargetGroupFluentBuilder {
     pub fn get_health_check_path(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_health_check_path()
     }
-    /// <p>Indicates whether health checks are enabled.</p>
+    /// <p>Indicates whether health checks are enabled. If the target type is <code>lambda</code>, health checks are disabled by default but can be enabled. If the target type is <code>instance</code>, <code>ip</code>, or <code>alb</code>, health checks are always enabled and can't be disabled.</p>
     pub fn health_check_enabled(mut self, input: bool) -> Self {
         self.inner = self.inner.health_check_enabled(input);
         self
     }
-    /// <p>Indicates whether health checks are enabled.</p>
+    /// <p>Indicates whether health checks are enabled. If the target type is <code>lambda</code>, health checks are disabled by default but can be enabled. If the target type is <code>instance</code>, <code>ip</code>, or <code>alb</code>, health checks are always enabled and can't be disabled.</p>
     pub fn set_health_check_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_health_check_enabled(input);
         self
     }
-    /// <p>Indicates whether health checks are enabled.</p>
+    /// <p>Indicates whether health checks are enabled. If the target type is <code>lambda</code>, health checks are disabled by default but can be enabled. If the target type is <code>instance</code>, <code>ip</code>, or <code>alb</code>, health checks are always enabled and can't be disabled.</p>
     pub fn get_health_check_enabled(&self) -> &::std::option::Option<bool> {
         self.inner.get_health_check_enabled()
     }

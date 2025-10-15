@@ -20,6 +20,17 @@ pub fn ser_http_header_condition_config(
         }
         list_6.finish();
     }
+    #[allow(unused_mut)]
+    let mut scope_8 = writer.prefix("RegexValues");
+    if let Some(var_9) = &input.regex_values {
+        let mut list_11 = scope_8.start_list(false, None);
+        for item_10 in var_9 {
+            #[allow(unused_mut)]
+            let mut entry_12 = list_11.entry();
+            entry_12.string(item_10);
+        }
+        list_11.finish();
+    }
     Ok(())
 }
 
@@ -32,7 +43,7 @@ pub fn de_http_header_condition_config(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("HttpHeaderName") /* HttpHeaderName com.amazonaws.elasticloadbalancingv2#HttpHeaderConditionConfig$HttpHeaderName */ =>  {
-                let var_8 =
+                let var_13 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -41,17 +52,27 @@ pub fn de_http_header_condition_config(
                         ?
                     )
                 ;
-                builder = builder.set_http_header_name(var_8);
+                builder = builder.set_http_header_name(var_13);
             }
             ,
             s if s.matches("Values") /* Values com.amazonaws.elasticloadbalancingv2#HttpHeaderConditionConfig$Values */ =>  {
-                let var_9 =
+                let var_14 =
                     Some(
                         crate::protocol_serde::shape_list_of_string::de_list_of_string(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_values(var_9);
+                builder = builder.set_values(var_14);
+            }
+            ,
+            s if s.matches("RegexValues") /* RegexValues com.amazonaws.elasticloadbalancingv2#HttpHeaderConditionConfig$RegexValues */ =>  {
+                let var_15 =
+                    Some(
+                        crate::protocol_serde::shape_list_of_string::de_list_of_string(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_regex_values(var_15);
             }
             ,
             _ => {}

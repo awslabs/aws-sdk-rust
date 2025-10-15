@@ -89,6 +89,16 @@ pub(crate) fn reflens_describe_capacity_blocks_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_describe_capacity_manager_data_exports_output_output_next_token(
+    input: &crate::operation::describe_capacity_manager_data_exports::DescribeCapacityManagerDataExportsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_describe_capacity_reservation_billing_requests_output_output_next_token(
     input: &crate::operation::describe_capacity_reservation_billing_requests::DescribeCapacityReservationBillingRequestsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -1299,6 +1309,26 @@ pub(crate) fn reflens_get_aws_network_performance_data_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_get_capacity_manager_metric_data_output_output_next_token(
+    input: &crate::operation::get_capacity_manager_metric_data::GetCapacityManagerMetricDataOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_get_capacity_manager_metric_dimensions_output_output_next_token(
+    input: &crate::operation::get_capacity_manager_metric_dimensions::GetCapacityManagerMetricDimensionsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_get_groups_for_capacity_reservation_output_output_next_token(
     input: &crate::operation::get_groups_for_capacity_reservation::GetGroupsForCapacityReservationOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -1599,6 +1629,13 @@ pub(crate) fn lens_describe_capacity_blocks_output_output_capacity_blocks(
     input: crate::operation::describe_capacity_blocks::DescribeCapacityBlocksOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::CapacityBlock>> {
     let input = input.capacity_blocks?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_describe_capacity_manager_data_exports_output_output_capacity_manager_data_exports(
+    input: crate::operation::describe_capacity_manager_data_exports::DescribeCapacityManagerDataExportsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::CapacityManagerDataExportResponse>> {
+    let input = input.capacity_manager_data_exports?;
     ::std::option::Option::Some(input)
 }
 
@@ -2446,6 +2483,20 @@ pub(crate) fn lens_get_aws_network_performance_data_output_output_data_responses
     input: crate::operation::get_aws_network_performance_data::GetAwsNetworkPerformanceDataOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DataResponse>> {
     let input = input.data_responses?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_get_capacity_manager_metric_data_output_output_metric_data_results(
+    input: crate::operation::get_capacity_manager_metric_data::GetCapacityManagerMetricDataOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::MetricDataResult>> {
+    let input = input.metric_data_results?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_get_capacity_manager_metric_dimensions_output_output_metric_dimension_results(
+    input: crate::operation::get_capacity_manager_metric_dimensions::GetCapacityManagerMetricDimensionsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::CapacityManagerDimension>> {
+    let input = input.metric_dimension_results?;
     ::std::option::Option::Some(input)
 }
 

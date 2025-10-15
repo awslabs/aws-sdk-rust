@@ -299,6 +299,9 @@ pub(crate) fn de_create_db_instance(
                             .transpose()?,
                     );
                 }
+                "instanceModes" => {
+                    builder = builder.set_instance_modes(crate::protocol_serde::shape_instance_mode_list::de_instance_mode_list(tokens)?);
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {
