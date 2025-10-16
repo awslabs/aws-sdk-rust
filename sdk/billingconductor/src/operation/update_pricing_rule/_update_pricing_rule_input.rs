@@ -11,7 +11,7 @@ pub struct UpdatePricingRuleInput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The new pricing rule type.</p>
     pub r#type: ::std::option::Option<crate::types::PricingRuleType>,
-    /// <p>The new modifier to show pricing plan rates as a percentage.</p>
+    /// <p>The new modifier to show pricing plan rates as a percentage. Your entry will be rounded to the nearest 2 decimal places.</p>
     pub modifier_percentage: ::std::option::Option<f64>,
     /// <p>The set of tiering configurations for the pricing rule.</p>
     pub tiering: ::std::option::Option<crate::types::UpdateTieringInput>,
@@ -33,7 +33,7 @@ impl UpdatePricingRuleInput {
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::PricingRuleType> {
         self.r#type.as_ref()
     }
-    /// <p>The new modifier to show pricing plan rates as a percentage.</p>
+    /// <p>The new modifier to show pricing plan rates as a percentage. Your entry will be rounded to the nearest 2 decimal places.</p>
     pub fn modifier_percentage(&self) -> ::std::option::Option<f64> {
         self.modifier_percentage
     }
@@ -130,17 +130,17 @@ impl UpdatePricingRuleInputBuilder {
     pub fn get_type(&self) -> &::std::option::Option<crate::types::PricingRuleType> {
         &self.r#type
     }
-    /// <p>The new modifier to show pricing plan rates as a percentage.</p>
+    /// <p>The new modifier to show pricing plan rates as a percentage. Your entry will be rounded to the nearest 2 decimal places.</p>
     pub fn modifier_percentage(mut self, input: f64) -> Self {
         self.modifier_percentage = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The new modifier to show pricing plan rates as a percentage.</p>
+    /// <p>The new modifier to show pricing plan rates as a percentage. Your entry will be rounded to the nearest 2 decimal places.</p>
     pub fn set_modifier_percentage(mut self, input: ::std::option::Option<f64>) -> Self {
         self.modifier_percentage = input;
         self
     }
-    /// <p>The new modifier to show pricing plan rates as a percentage.</p>
+    /// <p>The new modifier to show pricing plan rates as a percentage. Your entry will be rounded to the nearest 2 decimal places.</p>
     pub fn get_modifier_percentage(&self) -> &::std::option::Option<f64> {
         &self.modifier_percentage
     }

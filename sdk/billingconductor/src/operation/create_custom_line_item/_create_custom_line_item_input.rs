@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateCustomLineItemInput {
-    /// <p>The token that is needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update.</p>
+    /// <p>A unique, case-sensitive identifier that you specify to ensure idempotency of the request. Idempotency ensures that an API request completes no more than one time. With an idempotent request, if the original request completes successfully, any subsequent retries complete successfully without performing any further actions.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The name of the custom line item.</p>
     pub name: ::std::option::Option<::std::string::String>,
@@ -19,9 +19,13 @@ pub struct CreateCustomLineItemInput {
     pub charge_details: ::std::option::Option<crate::types::CustomLineItemChargeDetails>,
     /// <p>The Amazon Web Services account in which this custom line item will be applied to.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
+    /// The display settings of the custom line item
+    pub computation_rule: ::std::option::Option<crate::types::ComputationRuleEnum>,
+    /// The presentation configuration of the custom line item
+    pub presentation_details: ::std::option::Option<crate::types::PresentationObject>,
 }
 impl CreateCustomLineItemInput {
-    /// <p>The token that is needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update.</p>
+    /// <p>A unique, case-sensitive identifier that you specify to ensure idempotency of the request. Idempotency ensures that an API request completes no more than one time. With an idempotent request, if the original request completes successfully, any subsequent retries complete successfully without performing any further actions.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -53,6 +57,14 @@ impl CreateCustomLineItemInput {
     pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
+    /// The display settings of the custom line item
+    pub fn computation_rule(&self) -> ::std::option::Option<&crate::types::ComputationRuleEnum> {
+        self.computation_rule.as_ref()
+    }
+    /// The presentation configuration of the custom line item
+    pub fn presentation_details(&self) -> ::std::option::Option<&crate::types::PresentationObject> {
+        self.presentation_details.as_ref()
+    }
 }
 impl ::std::fmt::Debug for CreateCustomLineItemInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -65,6 +77,8 @@ impl ::std::fmt::Debug for CreateCustomLineItemInput {
         formatter.field("tags", &self.tags);
         formatter.field("charge_details", &self.charge_details);
         formatter.field("account_id", &self.account_id);
+        formatter.field("computation_rule", &self.computation_rule);
+        formatter.field("presentation_details", &self.presentation_details);
         formatter.finish()
     }
 }
@@ -87,19 +101,21 @@ pub struct CreateCustomLineItemInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) charge_details: ::std::option::Option<crate::types::CustomLineItemChargeDetails>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) computation_rule: ::std::option::Option<crate::types::ComputationRuleEnum>,
+    pub(crate) presentation_details: ::std::option::Option<crate::types::PresentationObject>,
 }
 impl CreateCustomLineItemInputBuilder {
-    /// <p>The token that is needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update.</p>
+    /// <p>A unique, case-sensitive identifier that you specify to ensure idempotency of the request. Idempotency ensures that an API request completes no more than one time. With an idempotent request, if the original request completes successfully, any subsequent retries complete successfully without performing any further actions.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The token that is needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update.</p>
+    /// <p>A unique, case-sensitive identifier that you specify to ensure idempotency of the request. Idempotency ensures that an API request completes no more than one time. With an idempotent request, if the original request completes successfully, any subsequent retries complete successfully without performing any further actions.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
     }
-    /// <p>The token that is needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update.</p>
+    /// <p>A unique, case-sensitive identifier that you specify to ensure idempotency of the request. Idempotency ensures that an API request completes no more than one time. With an idempotent request, if the original request completes successfully, any subsequent retries complete successfully without performing any further actions.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
@@ -211,6 +227,34 @@ impl CreateCustomLineItemInputBuilder {
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_id
     }
+    /// The display settings of the custom line item
+    pub fn computation_rule(mut self, input: crate::types::ComputationRuleEnum) -> Self {
+        self.computation_rule = ::std::option::Option::Some(input);
+        self
+    }
+    /// The display settings of the custom line item
+    pub fn set_computation_rule(mut self, input: ::std::option::Option<crate::types::ComputationRuleEnum>) -> Self {
+        self.computation_rule = input;
+        self
+    }
+    /// The display settings of the custom line item
+    pub fn get_computation_rule(&self) -> &::std::option::Option<crate::types::ComputationRuleEnum> {
+        &self.computation_rule
+    }
+    /// The presentation configuration of the custom line item
+    pub fn presentation_details(mut self, input: crate::types::PresentationObject) -> Self {
+        self.presentation_details = ::std::option::Option::Some(input);
+        self
+    }
+    /// The presentation configuration of the custom line item
+    pub fn set_presentation_details(mut self, input: ::std::option::Option<crate::types::PresentationObject>) -> Self {
+        self.presentation_details = input;
+        self
+    }
+    /// The presentation configuration of the custom line item
+    pub fn get_presentation_details(&self) -> &::std::option::Option<crate::types::PresentationObject> {
+        &self.presentation_details
+    }
     /// Consumes the builder and constructs a [`CreateCustomLineItemInput`](crate::operation::create_custom_line_item::CreateCustomLineItemInput).
     pub fn build(
         self,
@@ -225,6 +269,8 @@ impl CreateCustomLineItemInputBuilder {
             tags: self.tags,
             charge_details: self.charge_details,
             account_id: self.account_id,
+            computation_rule: self.computation_rule,
+            presentation_details: self.presentation_details,
         })
     }
 }
@@ -239,6 +285,8 @@ impl ::std::fmt::Debug for CreateCustomLineItemInputBuilder {
         formatter.field("tags", &self.tags);
         formatter.field("charge_details", &self.charge_details);
         formatter.field("account_id", &self.account_id);
+        formatter.field("computation_rule", &self.computation_rule);
+        formatter.field("presentation_details", &self.presentation_details);
         formatter.finish()
     }
 }

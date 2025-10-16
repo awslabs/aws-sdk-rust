@@ -164,17 +164,17 @@ impl UpdatePricingRuleFluentBuilder {
     pub fn get_type(&self) -> &::std::option::Option<crate::types::PricingRuleType> {
         self.inner.get_type()
     }
-    /// <p>The new modifier to show pricing plan rates as a percentage.</p>
+    /// <p>The new modifier to show pricing plan rates as a percentage. Your entry will be rounded to the nearest 2 decimal places.</p>
     pub fn modifier_percentage(mut self, input: f64) -> Self {
         self.inner = self.inner.modifier_percentage(input);
         self
     }
-    /// <p>The new modifier to show pricing plan rates as a percentage.</p>
+    /// <p>The new modifier to show pricing plan rates as a percentage. Your entry will be rounded to the nearest 2 decimal places.</p>
     pub fn set_modifier_percentage(mut self, input: ::std::option::Option<f64>) -> Self {
         self.inner = self.inner.set_modifier_percentage(input);
         self
     }
-    /// <p>The new modifier to show pricing plan rates as a percentage.</p>
+    /// <p>The new modifier to show pricing plan rates as a percentage. Your entry will be rounded to the nearest 2 decimal places.</p>
     pub fn get_modifier_percentage(&self) -> &::std::option::Option<f64> {
         self.inner.get_modifier_percentage()
     }

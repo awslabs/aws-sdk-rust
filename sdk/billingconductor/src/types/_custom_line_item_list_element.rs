@@ -26,6 +26,10 @@ pub struct CustomLineItemListElement {
     pub association_size: i64,
     /// <p>The Amazon Web Services account in which this custom line item will be applied to.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
+    /// The display settings of the custom line item
+    pub computation_rule: ::std::option::Option<crate::types::ComputationRuleEnum>,
+    /// The presentation configuration of the custom line item
+    pub presentation_details: ::std::option::Option<crate::types::PresentationObject>,
 }
 impl CustomLineItemListElement {
     /// <p>The Amazon Resource Names (ARNs) for custom line items.</p>
@@ -72,6 +76,14 @@ impl CustomLineItemListElement {
     pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
+    /// The display settings of the custom line item
+    pub fn computation_rule(&self) -> ::std::option::Option<&crate::types::ComputationRuleEnum> {
+        self.computation_rule.as_ref()
+    }
+    /// The presentation configuration of the custom line item
+    pub fn presentation_details(&self) -> ::std::option::Option<&crate::types::PresentationObject> {
+        self.presentation_details.as_ref()
+    }
 }
 impl ::std::fmt::Debug for CustomLineItemListElement {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -87,6 +99,8 @@ impl ::std::fmt::Debug for CustomLineItemListElement {
         formatter.field("last_modified_time", &self.last_modified_time);
         formatter.field("association_size", &self.association_size);
         formatter.field("account_id", &self.account_id);
+        formatter.field("computation_rule", &self.computation_rule);
+        formatter.field("presentation_details", &self.presentation_details);
         formatter.finish()
     }
 }
@@ -112,6 +126,8 @@ pub struct CustomLineItemListElementBuilder {
     pub(crate) last_modified_time: ::std::option::Option<i64>,
     pub(crate) association_size: ::std::option::Option<i64>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) computation_rule: ::std::option::Option<crate::types::ComputationRuleEnum>,
+    pub(crate) presentation_details: ::std::option::Option<crate::types::PresentationObject>,
 }
 impl CustomLineItemListElementBuilder {
     /// <p>The Amazon Resource Names (ARNs) for custom line items.</p>
@@ -268,6 +284,34 @@ impl CustomLineItemListElementBuilder {
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_id
     }
+    /// The display settings of the custom line item
+    pub fn computation_rule(mut self, input: crate::types::ComputationRuleEnum) -> Self {
+        self.computation_rule = ::std::option::Option::Some(input);
+        self
+    }
+    /// The display settings of the custom line item
+    pub fn set_computation_rule(mut self, input: ::std::option::Option<crate::types::ComputationRuleEnum>) -> Self {
+        self.computation_rule = input;
+        self
+    }
+    /// The display settings of the custom line item
+    pub fn get_computation_rule(&self) -> &::std::option::Option<crate::types::ComputationRuleEnum> {
+        &self.computation_rule
+    }
+    /// The presentation configuration of the custom line item
+    pub fn presentation_details(mut self, input: crate::types::PresentationObject) -> Self {
+        self.presentation_details = ::std::option::Option::Some(input);
+        self
+    }
+    /// The presentation configuration of the custom line item
+    pub fn set_presentation_details(mut self, input: ::std::option::Option<crate::types::PresentationObject>) -> Self {
+        self.presentation_details = input;
+        self
+    }
+    /// The presentation configuration of the custom line item
+    pub fn get_presentation_details(&self) -> &::std::option::Option<crate::types::PresentationObject> {
+        &self.presentation_details
+    }
     /// Consumes the builder and constructs a [`CustomLineItemListElement`](crate::types::CustomLineItemListElement).
     pub fn build(self) -> crate::types::CustomLineItemListElement {
         crate::types::CustomLineItemListElement {
@@ -282,6 +326,8 @@ impl CustomLineItemListElementBuilder {
             last_modified_time: self.last_modified_time.unwrap_or_default(),
             association_size: self.association_size.unwrap_or_default(),
             account_id: self.account_id,
+            computation_rule: self.computation_rule,
+            presentation_details: self.presentation_details,
         }
     }
 }
@@ -299,6 +345,8 @@ impl ::std::fmt::Debug for CustomLineItemListElementBuilder {
         formatter.field("last_modified_time", &self.last_modified_time);
         formatter.field("association_size", &self.association_size);
         formatter.field("account_id", &self.account_id);
+        formatter.field("computation_rule", &self.computation_rule);
+        formatter.field("presentation_details", &self.presentation_details);
         formatter.finish()
     }
 }

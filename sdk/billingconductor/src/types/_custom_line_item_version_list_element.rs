@@ -32,6 +32,10 @@ pub struct CustomLineItemVersionListElement {
     pub start_time: i64,
     /// <p>The Amazon Web Services account in which this custom line item will be applied to.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
+    /// The display settings of the custom line item
+    pub computation_rule: ::std::option::Option<crate::types::ComputationRuleEnum>,
+    /// The presentation configuration of the custom line item
+    pub presentation_details: ::std::option::Option<crate::types::PresentationObject>,
 }
 impl CustomLineItemVersionListElement {
     /// <p>The name of the custom line item.</p>
@@ -90,6 +94,14 @@ impl CustomLineItemVersionListElement {
     pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
+    /// The display settings of the custom line item
+    pub fn computation_rule(&self) -> ::std::option::Option<&crate::types::ComputationRuleEnum> {
+        self.computation_rule.as_ref()
+    }
+    /// The presentation configuration of the custom line item
+    pub fn presentation_details(&self) -> ::std::option::Option<&crate::types::PresentationObject> {
+        self.presentation_details.as_ref()
+    }
 }
 impl ::std::fmt::Debug for CustomLineItemVersionListElement {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -108,6 +120,8 @@ impl ::std::fmt::Debug for CustomLineItemVersionListElement {
         formatter.field("arn", &self.arn);
         formatter.field("start_time", &self.start_time);
         formatter.field("account_id", &self.account_id);
+        formatter.field("computation_rule", &self.computation_rule);
+        formatter.field("presentation_details", &self.presentation_details);
         formatter.finish()
     }
 }
@@ -136,6 +150,8 @@ pub struct CustomLineItemVersionListElementBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) start_time: ::std::option::Option<i64>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) computation_rule: ::std::option::Option<crate::types::ComputationRuleEnum>,
+    pub(crate) presentation_details: ::std::option::Option<crate::types::PresentationObject>,
 }
 impl CustomLineItemVersionListElementBuilder {
     /// <p>The name of the custom line item.</p>
@@ -334,6 +350,34 @@ impl CustomLineItemVersionListElementBuilder {
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_id
     }
+    /// The display settings of the custom line item
+    pub fn computation_rule(mut self, input: crate::types::ComputationRuleEnum) -> Self {
+        self.computation_rule = ::std::option::Option::Some(input);
+        self
+    }
+    /// The display settings of the custom line item
+    pub fn set_computation_rule(mut self, input: ::std::option::Option<crate::types::ComputationRuleEnum>) -> Self {
+        self.computation_rule = input;
+        self
+    }
+    /// The display settings of the custom line item
+    pub fn get_computation_rule(&self) -> &::std::option::Option<crate::types::ComputationRuleEnum> {
+        &self.computation_rule
+    }
+    /// The presentation configuration of the custom line item
+    pub fn presentation_details(mut self, input: crate::types::PresentationObject) -> Self {
+        self.presentation_details = ::std::option::Option::Some(input);
+        self
+    }
+    /// The presentation configuration of the custom line item
+    pub fn set_presentation_details(mut self, input: ::std::option::Option<crate::types::PresentationObject>) -> Self {
+        self.presentation_details = input;
+        self
+    }
+    /// The presentation configuration of the custom line item
+    pub fn get_presentation_details(&self) -> &::std::option::Option<crate::types::PresentationObject> {
+        &self.presentation_details
+    }
     /// Consumes the builder and constructs a [`CustomLineItemVersionListElement`](crate::types::CustomLineItemVersionListElement).
     pub fn build(self) -> crate::types::CustomLineItemVersionListElement {
         crate::types::CustomLineItemVersionListElement {
@@ -351,6 +395,8 @@ impl CustomLineItemVersionListElementBuilder {
             arn: self.arn,
             start_time: self.start_time.unwrap_or_default(),
             account_id: self.account_id,
+            computation_rule: self.computation_rule,
+            presentation_details: self.presentation_details,
         }
     }
 }
@@ -371,6 +417,8 @@ impl ::std::fmt::Debug for CustomLineItemVersionListElementBuilder {
         formatter.field("arn", &self.arn);
         formatter.field("start_time", &self.start_time);
         formatter.field("account_id", &self.account_id);
+        formatter.field("computation_rule", &self.computation_rule);
+        formatter.field("presentation_details", &self.presentation_details);
         formatter.finish()
     }
 }

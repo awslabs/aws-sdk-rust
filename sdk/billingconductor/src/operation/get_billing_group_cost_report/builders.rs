@@ -22,7 +22,7 @@ impl crate::operation::get_billing_group_cost_report::builders::GetBillingGroupC
 }
 /// Fluent builder constructing a request to `GetBillingGroupCostReport`.
 ///
-/// <p>Retrieves the margin summary report, which includes the Amazon Web Services cost and charged amount (pro forma cost) by Amazon Web Service for a specific billing group.</p>
+/// <p>Retrieves the margin summary report, which includes the Amazon Web Services cost and charged amount (pro forma cost) by Amazon Web Services service for a specific billing group.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetBillingGroupCostReportFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -147,17 +147,17 @@ impl GetBillingGroupCostReportFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_group_by`](Self::set_group_by).
     ///
-    /// <p>A list of strings that specify the attributes that are used to break down costs in the margin summary reports for the billing group. For example, you can view your costs by the Amazon Web Service name or the billing period.</p>
+    /// <p>A list of strings that specify the attributes that are used to break down costs in the margin summary reports for the billing group. For example, you can view your costs by the Amazon Web Services service name or the billing period.</p>
     pub fn group_by(mut self, input: crate::types::GroupByAttributeName) -> Self {
         self.inner = self.inner.group_by(input);
         self
     }
-    /// <p>A list of strings that specify the attributes that are used to break down costs in the margin summary reports for the billing group. For example, you can view your costs by the Amazon Web Service name or the billing period.</p>
+    /// <p>A list of strings that specify the attributes that are used to break down costs in the margin summary reports for the billing group. For example, you can view your costs by the Amazon Web Services service name or the billing period.</p>
     pub fn set_group_by(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GroupByAttributeName>>) -> Self {
         self.inner = self.inner.set_group_by(input);
         self
     }
-    /// <p>A list of strings that specify the attributes that are used to break down costs in the margin summary reports for the billing group. For example, you can view your costs by the Amazon Web Service name or the billing period.</p>
+    /// <p>A list of strings that specify the attributes that are used to break down costs in the margin summary reports for the billing group. For example, you can view your costs by the Amazon Web Services service name or the billing period.</p>
     pub fn get_group_by(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupByAttributeName>> {
         self.inner.get_group_by()
     }

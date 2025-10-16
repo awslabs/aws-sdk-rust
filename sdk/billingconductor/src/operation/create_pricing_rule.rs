@@ -278,7 +278,7 @@ pub enum CreatePricingRuleError {
     ServiceLimitExceededException(crate::types::error::ServiceLimitExceededException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
-    /// <p>The input doesn't match with the constraints specified by Amazon Web Services.</p>
+    /// <p>The input doesn't match with the constraints specified by Amazon Web Services services.</p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
