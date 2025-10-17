@@ -2633,6 +2633,10 @@ source_hash = '2cf81cebef9043e9d506ae6cb829705e827c3889445742acf18d5e3bfb122ca3'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = 'ce44deb8d2c3a8003ae8d231e6d88fc77a0695216626d2c099837474e227d97c'
+
+[release]
+tag = 'release-2025-10-17'
+
 [release.crates]
 aws-sdk-amp = '1.92.0'
 aws-sdk-amplifybackend = '1.87.0'
