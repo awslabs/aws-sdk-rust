@@ -6,7 +6,7 @@
 pub struct LocationConfiguration {
     /// <p>A location's name. For example, <code>us-east-1</code>. For a complete list of locations that Amazon GameLift Streams supports, refer to <a href="https://docs.aws.amazon.com/gameliftstreams/latest/developerguide/regions-quotas.html">Regions, quotas, and limitations</a> in the <i>Amazon GameLift Streams Developer Guide</i>.</p>
     pub location_name: ::std::string::String,
-    /// <p>The streaming capacity that is allocated and ready to handle stream requests without delay. You pay for this capacity whether it's in use or not. Best for quickest time from streaming request to streaming session. Default is 1 when creating a stream group or adding a location.</p>
+    /// <p>The streaming capacity that is allocated and ready to handle stream requests without delay. You pay for this capacity whether it's in use or not. Best for quickest time from streaming request to streaming session. Default is 1 (2 for high stream classes) when creating a stream group or adding a location.</p>
     pub always_on_capacity: ::std::option::Option<i32>,
     /// <p>The streaming capacity that Amazon GameLift Streams can allocate in response to stream requests, and then de-allocate when the session has terminated. This offers a cost control measure at the expense of a greater startup time (typically under 5 minutes). Default is 0 when creating a stream group or adding a location.</p>
     pub on_demand_capacity: ::std::option::Option<i32>,
@@ -17,7 +17,7 @@ impl LocationConfiguration {
         use std::ops::Deref;
         self.location_name.deref()
     }
-    /// <p>The streaming capacity that is allocated and ready to handle stream requests without delay. You pay for this capacity whether it's in use or not. Best for quickest time from streaming request to streaming session. Default is 1 when creating a stream group or adding a location.</p>
+    /// <p>The streaming capacity that is allocated and ready to handle stream requests without delay. You pay for this capacity whether it's in use or not. Best for quickest time from streaming request to streaming session. Default is 1 (2 for high stream classes) when creating a stream group or adding a location.</p>
     pub fn always_on_capacity(&self) -> ::std::option::Option<i32> {
         self.always_on_capacity
     }
@@ -57,17 +57,17 @@ impl LocationConfigurationBuilder {
     pub fn get_location_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.location_name
     }
-    /// <p>The streaming capacity that is allocated and ready to handle stream requests without delay. You pay for this capacity whether it's in use or not. Best for quickest time from streaming request to streaming session. Default is 1 when creating a stream group or adding a location.</p>
+    /// <p>The streaming capacity that is allocated and ready to handle stream requests without delay. You pay for this capacity whether it's in use or not. Best for quickest time from streaming request to streaming session. Default is 1 (2 for high stream classes) when creating a stream group or adding a location.</p>
     pub fn always_on_capacity(mut self, input: i32) -> Self {
         self.always_on_capacity = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The streaming capacity that is allocated and ready to handle stream requests without delay. You pay for this capacity whether it's in use or not. Best for quickest time from streaming request to streaming session. Default is 1 when creating a stream group or adding a location.</p>
+    /// <p>The streaming capacity that is allocated and ready to handle stream requests without delay. You pay for this capacity whether it's in use or not. Best for quickest time from streaming request to streaming session. Default is 1 (2 for high stream classes) when creating a stream group or adding a location.</p>
     pub fn set_always_on_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.always_on_capacity = input;
         self
     }
-    /// <p>The streaming capacity that is allocated and ready to handle stream requests without delay. You pay for this capacity whether it's in use or not. Best for quickest time from streaming request to streaming session. Default is 1 when creating a stream group or adding a location.</p>
+    /// <p>The streaming capacity that is allocated and ready to handle stream requests without delay. You pay for this capacity whether it's in use or not. Best for quickest time from streaming request to streaming session. Default is 1 (2 for high stream classes) when creating a stream group or adding a location.</p>
     pub fn get_always_on_capacity(&self) -> &::std::option::Option<i32> {
         &self.always_on_capacity
     }

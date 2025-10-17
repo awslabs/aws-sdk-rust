@@ -98,7 +98,7 @@ pub struct StreamGroupSummary {
     /// <li>
     /// <p><code>ACTIVE_WITH_ERRORS</code>: One or more locations in the stream group are in an error state. Verify the details of individual locations and remove any locations which are in error.</p></li>
     /// <li>
-    /// <p><code>ERROR</code>: An error occurred when the stream group deployed. See <code>StatusReason</code> for more information.</p></li>
+    /// <p><code>ERROR</code>: An error occurred when the stream group deployed. See <code>StatusReason</code> (returned by <code>CreateStreamGroup</code>, <code>GetStreamGroup</code>, and <code>UpdateStreamGroup</code>) for more information.</p></li>
     /// <li>
     /// <p><code>DELETING</code>: Amazon GameLift Streams is in the process of deleting the stream group.</p></li>
     /// <li>
@@ -216,7 +216,7 @@ impl StreamGroupSummary {
     /// <li>
     /// <p><code>ACTIVE_WITH_ERRORS</code>: One or more locations in the stream group are in an error state. Verify the details of individual locations and remove any locations which are in error.</p></li>
     /// <li>
-    /// <p><code>ERROR</code>: An error occurred when the stream group deployed. See <code>StatusReason</code> for more information.</p></li>
+    /// <p><code>ERROR</code>: An error occurred when the stream group deployed. See <code>StatusReason</code> (returned by <code>CreateStreamGroup</code>, <code>GetStreamGroup</code>, and <code>UpdateStreamGroup</code>) for more information.</p></li>
     /// <li>
     /// <p><code>DELETING</code>: Amazon GameLift Streams is in the process of deleting the stream group.</p></li>
     /// <li>
@@ -560,7 +560,7 @@ impl StreamGroupSummaryBuilder {
     /// <li>
     /// <p><code>ACTIVE_WITH_ERRORS</code>: One or more locations in the stream group are in an error state. Verify the details of individual locations and remove any locations which are in error.</p></li>
     /// <li>
-    /// <p><code>ERROR</code>: An error occurred when the stream group deployed. See <code>StatusReason</code> for more information.</p></li>
+    /// <p><code>ERROR</code>: An error occurred when the stream group deployed. See <code>StatusReason</code> (returned by <code>CreateStreamGroup</code>, <code>GetStreamGroup</code>, and <code>UpdateStreamGroup</code>) for more information.</p></li>
     /// <li>
     /// <p><code>DELETING</code>: Amazon GameLift Streams is in the process of deleting the stream group.</p></li>
     /// <li>
@@ -579,7 +579,7 @@ impl StreamGroupSummaryBuilder {
     /// <li>
     /// <p><code>ACTIVE_WITH_ERRORS</code>: One or more locations in the stream group are in an error state. Verify the details of individual locations and remove any locations which are in error.</p></li>
     /// <li>
-    /// <p><code>ERROR</code>: An error occurred when the stream group deployed. See <code>StatusReason</code> for more information.</p></li>
+    /// <p><code>ERROR</code>: An error occurred when the stream group deployed. See <code>StatusReason</code> (returned by <code>CreateStreamGroup</code>, <code>GetStreamGroup</code>, and <code>UpdateStreamGroup</code>) for more information.</p></li>
     /// <li>
     /// <p><code>DELETING</code>: Amazon GameLift Streams is in the process of deleting the stream group.</p></li>
     /// <li>
@@ -598,7 +598,7 @@ impl StreamGroupSummaryBuilder {
     /// <li>
     /// <p><code>ACTIVE_WITH_ERRORS</code>: One or more locations in the stream group are in an error state. Verify the details of individual locations and remove any locations which are in error.</p></li>
     /// <li>
-    /// <p><code>ERROR</code>: An error occurred when the stream group deployed. See <code>StatusReason</code> for more information.</p></li>
+    /// <p><code>ERROR</code>: An error occurred when the stream group deployed. See <code>StatusReason</code> (returned by <code>CreateStreamGroup</code>, <code>GetStreamGroup</code>, and <code>UpdateStreamGroup</code>) for more information.</p></li>
     /// <li>
     /// <p><code>DELETING</code>: Amazon GameLift Streams is in the process of deleting the stream group.</p></li>
     /// <li>

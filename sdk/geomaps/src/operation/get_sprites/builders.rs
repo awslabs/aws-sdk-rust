@@ -23,6 +23,7 @@ impl crate::operation::get_sprites::builders::GetSpritesInputBuilder {
 /// Fluent builder constructing a request to `GetSprites`.
 ///
 /// <p><code>GetSprites</code> returns the map's sprites.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/styling-iconography-with-sprites.html">Style iconography with sprites</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetSpritesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

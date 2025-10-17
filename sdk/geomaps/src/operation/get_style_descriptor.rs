@@ -214,9 +214,31 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetStyleDesc
                         query.push_kv("political-view", &::aws_smithy_http::query::fmt_string(inner_3));
                     }
                 }
-                if let ::std::option::Option::Some(inner_4) = &_input.key {
+                if let ::std::option::Option::Some(inner_4) = &_input.terrain {
                     {
-                        query.push_kv("key", &::aws_smithy_http::query::fmt_string(inner_4));
+                        query.push_kv("terrain", &::aws_smithy_http::query::fmt_string(inner_4));
+                    }
+                }
+                if let ::std::option::Option::Some(inner_5) = &_input.contour_density {
+                    {
+                        query.push_kv("contour-density", &::aws_smithy_http::query::fmt_string(inner_5));
+                    }
+                }
+                if let ::std::option::Option::Some(inner_6) = &_input.traffic {
+                    {
+                        query.push_kv("traffic", &::aws_smithy_http::query::fmt_string(inner_6));
+                    }
+                }
+                if let ::std::option::Option::Some(inner_7) = &_input.travel_modes {
+                    {
+                        for inner_8 in inner_7 {
+                            query.push_kv("travel-modes", &::aws_smithy_http::query::fmt_string(inner_8));
+                        }
+                    }
+                }
+                if let ::std::option::Option::Some(inner_9) = &_input.key {
+                    {
+                        query.push_kv("key", &::aws_smithy_http::query::fmt_string(inner_9));
                     }
                 }
                 ::std::result::Result::Ok(())

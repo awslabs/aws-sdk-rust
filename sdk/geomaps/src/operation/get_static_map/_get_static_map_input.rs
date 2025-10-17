@@ -3,15 +3,15 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetStaticMapInput {
-    /// <p>Takes in two pairs of coordinates, \[Lon, Lat\], denoting south-westerly and north-easterly edges of the image. The underlying area becomes the view of the image.</p>
+    /// <p>Takes in two pairs of coordinates in World Geodetic System (WGS 84) format: \[longitude, latitude\], denoting south-westerly and north-easterly edges of the image. The underlying area becomes the view of the image.</p>
     /// <p>Example: -123.17075,49.26959,-123.08125,49.31429</p>
     pub bounding_box: ::std::option::Option<::std::string::String>,
-    /// <p>Takes in two or more pair of coordinates, \[Lon, Lat\], with each coordinate separated by a comma. The API will generate an image to encompass all of the provided coordinates.</p><note>
+    /// <p>Takes in two or more pair of coordinates in World Geodetic System (WGS 84) format: \[longitude, latitude\], with each coordinate separated by a comma. The API will generate an image to encompass all of the provided coordinates.</p><note>
     /// <p>Cannot be used with <code>Zoom</code> and or <code>Radius</code></p>
     /// </note>
     /// <p>Example: 97.170451,78.039098,99.045536,27.176178</p>
     pub bounded_positions: ::std::option::Option<::std::string::String>,
-    /// <p>Takes in a pair of coordinates, \[Lon, Lat\], which becomes the center point of the image. This parameter requires that either zoom or radius is set.</p><note>
+    /// <p>Takes in a pair of coordinates in World Geodetic System (WGS 84) format: \[longitude, latitude\], which becomes the center point of the image. This parameter requires that either zoom or radius is set.</p><note>
     /// <p>Cannot be used with <code>Zoom</code> and or <code>Radius</code></p>
     /// </note>
     /// <p>Example: 49.295,-123.108</p>
@@ -244,19 +244,19 @@ pub struct GetStaticMapInput {
     pub zoom: ::std::option::Option<f32>,
 }
 impl GetStaticMapInput {
-    /// <p>Takes in two pairs of coordinates, \[Lon, Lat\], denoting south-westerly and north-easterly edges of the image. The underlying area becomes the view of the image.</p>
+    /// <p>Takes in two pairs of coordinates in World Geodetic System (WGS 84) format: \[longitude, latitude\], denoting south-westerly and north-easterly edges of the image. The underlying area becomes the view of the image.</p>
     /// <p>Example: -123.17075,49.26959,-123.08125,49.31429</p>
     pub fn bounding_box(&self) -> ::std::option::Option<&str> {
         self.bounding_box.as_deref()
     }
-    /// <p>Takes in two or more pair of coordinates, \[Lon, Lat\], with each coordinate separated by a comma. The API will generate an image to encompass all of the provided coordinates.</p><note>
+    /// <p>Takes in two or more pair of coordinates in World Geodetic System (WGS 84) format: \[longitude, latitude\], with each coordinate separated by a comma. The API will generate an image to encompass all of the provided coordinates.</p><note>
     /// <p>Cannot be used with <code>Zoom</code> and or <code>Radius</code></p>
     /// </note>
     /// <p>Example: 97.170451,78.039098,99.045536,27.176178</p>
     pub fn bounded_positions(&self) -> ::std::option::Option<&str> {
         self.bounded_positions.as_deref()
     }
-    /// <p>Takes in a pair of coordinates, \[Lon, Lat\], which becomes the center point of the image. This parameter requires that either zoom or radius is set.</p><note>
+    /// <p>Takes in a pair of coordinates in World Geodetic System (WGS 84) format: \[longitude, latitude\], which becomes the center point of the image. This parameter requires that either zoom or radius is set.</p><note>
     /// <p>Cannot be used with <code>Zoom</code> and or <code>Radius</code></p>
     /// </note>
     /// <p>Example: 49.295,-123.108</p>
@@ -583,24 +583,24 @@ pub struct GetStaticMapInputBuilder {
     pub(crate) zoom: ::std::option::Option<f32>,
 }
 impl GetStaticMapInputBuilder {
-    /// <p>Takes in two pairs of coordinates, \[Lon, Lat\], denoting south-westerly and north-easterly edges of the image. The underlying area becomes the view of the image.</p>
+    /// <p>Takes in two pairs of coordinates in World Geodetic System (WGS 84) format: \[longitude, latitude\], denoting south-westerly and north-easterly edges of the image. The underlying area becomes the view of the image.</p>
     /// <p>Example: -123.17075,49.26959,-123.08125,49.31429</p>
     pub fn bounding_box(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bounding_box = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Takes in two pairs of coordinates, \[Lon, Lat\], denoting south-westerly and north-easterly edges of the image. The underlying area becomes the view of the image.</p>
+    /// <p>Takes in two pairs of coordinates in World Geodetic System (WGS 84) format: \[longitude, latitude\], denoting south-westerly and north-easterly edges of the image. The underlying area becomes the view of the image.</p>
     /// <p>Example: -123.17075,49.26959,-123.08125,49.31429</p>
     pub fn set_bounding_box(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bounding_box = input;
         self
     }
-    /// <p>Takes in two pairs of coordinates, \[Lon, Lat\], denoting south-westerly and north-easterly edges of the image. The underlying area becomes the view of the image.</p>
+    /// <p>Takes in two pairs of coordinates in World Geodetic System (WGS 84) format: \[longitude, latitude\], denoting south-westerly and north-easterly edges of the image. The underlying area becomes the view of the image.</p>
     /// <p>Example: -123.17075,49.26959,-123.08125,49.31429</p>
     pub fn get_bounding_box(&self) -> &::std::option::Option<::std::string::String> {
         &self.bounding_box
     }
-    /// <p>Takes in two or more pair of coordinates, \[Lon, Lat\], with each coordinate separated by a comma. The API will generate an image to encompass all of the provided coordinates.</p><note>
+    /// <p>Takes in two or more pair of coordinates in World Geodetic System (WGS 84) format: \[longitude, latitude\], with each coordinate separated by a comma. The API will generate an image to encompass all of the provided coordinates.</p><note>
     /// <p>Cannot be used with <code>Zoom</code> and or <code>Radius</code></p>
     /// </note>
     /// <p>Example: 97.170451,78.039098,99.045536,27.176178</p>
@@ -608,7 +608,7 @@ impl GetStaticMapInputBuilder {
         self.bounded_positions = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Takes in two or more pair of coordinates, \[Lon, Lat\], with each coordinate separated by a comma. The API will generate an image to encompass all of the provided coordinates.</p><note>
+    /// <p>Takes in two or more pair of coordinates in World Geodetic System (WGS 84) format: \[longitude, latitude\], with each coordinate separated by a comma. The API will generate an image to encompass all of the provided coordinates.</p><note>
     /// <p>Cannot be used with <code>Zoom</code> and or <code>Radius</code></p>
     /// </note>
     /// <p>Example: 97.170451,78.039098,99.045536,27.176178</p>
@@ -616,14 +616,14 @@ impl GetStaticMapInputBuilder {
         self.bounded_positions = input;
         self
     }
-    /// <p>Takes in two or more pair of coordinates, \[Lon, Lat\], with each coordinate separated by a comma. The API will generate an image to encompass all of the provided coordinates.</p><note>
+    /// <p>Takes in two or more pair of coordinates in World Geodetic System (WGS 84) format: \[longitude, latitude\], with each coordinate separated by a comma. The API will generate an image to encompass all of the provided coordinates.</p><note>
     /// <p>Cannot be used with <code>Zoom</code> and or <code>Radius</code></p>
     /// </note>
     /// <p>Example: 97.170451,78.039098,99.045536,27.176178</p>
     pub fn get_bounded_positions(&self) -> &::std::option::Option<::std::string::String> {
         &self.bounded_positions
     }
-    /// <p>Takes in a pair of coordinates, \[Lon, Lat\], which becomes the center point of the image. This parameter requires that either zoom or radius is set.</p><note>
+    /// <p>Takes in a pair of coordinates in World Geodetic System (WGS 84) format: \[longitude, latitude\], which becomes the center point of the image. This parameter requires that either zoom or radius is set.</p><note>
     /// <p>Cannot be used with <code>Zoom</code> and or <code>Radius</code></p>
     /// </note>
     /// <p>Example: 49.295,-123.108</p>
@@ -631,7 +631,7 @@ impl GetStaticMapInputBuilder {
         self.center = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Takes in a pair of coordinates, \[Lon, Lat\], which becomes the center point of the image. This parameter requires that either zoom or radius is set.</p><note>
+    /// <p>Takes in a pair of coordinates in World Geodetic System (WGS 84) format: \[longitude, latitude\], which becomes the center point of the image. This parameter requires that either zoom or radius is set.</p><note>
     /// <p>Cannot be used with <code>Zoom</code> and or <code>Radius</code></p>
     /// </note>
     /// <p>Example: 49.295,-123.108</p>
@@ -639,7 +639,7 @@ impl GetStaticMapInputBuilder {
         self.center = input;
         self
     }
-    /// <p>Takes in a pair of coordinates, \[Lon, Lat\], which becomes the center point of the image. This parameter requires that either zoom or radius is set.</p><note>
+    /// <p>Takes in a pair of coordinates in World Geodetic System (WGS 84) format: \[longitude, latitude\], which becomes the center point of the image. This parameter requires that either zoom or radius is set.</p><note>
     /// <p>Cannot be used with <code>Zoom</code> and or <code>Radius</code></p>
     /// </note>
     /// <p>Example: 49.295,-123.108</p>

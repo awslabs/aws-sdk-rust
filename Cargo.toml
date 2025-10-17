@@ -2,8 +2,8 @@
 resolver = "2"
 exclude = [
     "tests/telemetry",
-    "tests/no-default-features",
-    "tests/webassembly"
+    "tests/webassembly",
+    "tests/no-default-features"
 ]
 members = [
     "sdk/accessanalyzer",

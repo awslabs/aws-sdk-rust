@@ -44,6 +44,23 @@ pub struct GetStyleDescriptorInput {
     /// <p><code>VNM</code>: Vietnam's view on the Paracel Islands and Spratly Islands</p></li>
     /// </ul>
     pub political_view: ::std::option::Option<::std::string::String>,
+    /// <p>Adjusts how physical terrain details are rendered on the map.</p>
+    /// <p>The following terrain styles are currently supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Hillshade</code>: Displays the physical terrain details through shading and highlighting of elevation change and geographic features.</p></li>
+    /// </ul>
+    /// <p>This parameter is valid only for the <code>Standard</code> map style.</p>
+    pub terrain: ::std::option::Option<crate::types::Terrain>,
+    /// <p>Displays the shape and steepness of terrain features using elevation lines. The density value controls how densely the available contour line information is rendered on the map.</p>
+    /// <p>This parameter is valid only for the <code>Standard</code> map style.</p>
+    pub contour_density: ::std::option::Option<crate::types::ContourDensity>,
+    /// <p>Displays real-time traffic information overlay on map, such as incident events and flow events.</p>
+    /// <p>This parameter is valid only for the <code>Standard</code> map style.</p>
+    pub traffic: ::std::option::Option<crate::types::Traffic>,
+    /// <p>Renders additional map information relevant to selected travel modes. Information for multiple travel modes can be displayed simultaneously, although this increases the overall information density rendered on the map.</p>
+    /// <p>This parameter is valid only for the <code>Standard</code> map style.</p>
+    pub travel_modes: ::std::option::Option<::std::vec::Vec<crate::types::TravelMode>>,
     /// <p>Optional: The API key to be used for authorization. Either an API key or valid SigV4 signature must be provided when making a request.</p>
     pub key: ::std::option::Option<::std::string::String>,
 }
@@ -95,6 +112,33 @@ impl GetStyleDescriptorInput {
     pub fn political_view(&self) -> ::std::option::Option<&str> {
         self.political_view.as_deref()
     }
+    /// <p>Adjusts how physical terrain details are rendered on the map.</p>
+    /// <p>The following terrain styles are currently supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Hillshade</code>: Displays the physical terrain details through shading and highlighting of elevation change and geographic features.</p></li>
+    /// </ul>
+    /// <p>This parameter is valid only for the <code>Standard</code> map style.</p>
+    pub fn terrain(&self) -> ::std::option::Option<&crate::types::Terrain> {
+        self.terrain.as_ref()
+    }
+    /// <p>Displays the shape and steepness of terrain features using elevation lines. The density value controls how densely the available contour line information is rendered on the map.</p>
+    /// <p>This parameter is valid only for the <code>Standard</code> map style.</p>
+    pub fn contour_density(&self) -> ::std::option::Option<&crate::types::ContourDensity> {
+        self.contour_density.as_ref()
+    }
+    /// <p>Displays real-time traffic information overlay on map, such as incident events and flow events.</p>
+    /// <p>This parameter is valid only for the <code>Standard</code> map style.</p>
+    pub fn traffic(&self) -> ::std::option::Option<&crate::types::Traffic> {
+        self.traffic.as_ref()
+    }
+    /// <p>Renders additional map information relevant to selected travel modes. Information for multiple travel modes can be displayed simultaneously, although this increases the overall information density rendered on the map.</p>
+    /// <p>This parameter is valid only for the <code>Standard</code> map style.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.travel_modes.is_none()`.
+    pub fn travel_modes(&self) -> &[crate::types::TravelMode] {
+        self.travel_modes.as_deref().unwrap_or_default()
+    }
     /// <p>Optional: The API key to be used for authorization. Either an API key or valid SigV4 signature must be provided when making a request.</p>
     pub fn key(&self) -> ::std::option::Option<&str> {
         self.key.as_deref()
@@ -106,6 +150,10 @@ impl ::std::fmt::Debug for GetStyleDescriptorInput {
         formatter.field("style", &self.style);
         formatter.field("color_scheme", &self.color_scheme);
         formatter.field("political_view", &"*** Sensitive Data Redacted ***");
+        formatter.field("terrain", &self.terrain);
+        formatter.field("contour_density", &self.contour_density);
+        formatter.field("traffic", &self.traffic);
+        formatter.field("travel_modes", &self.travel_modes);
         formatter.field("key", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
@@ -124,6 +172,10 @@ pub struct GetStyleDescriptorInputBuilder {
     pub(crate) style: ::std::option::Option<crate::types::MapStyle>,
     pub(crate) color_scheme: ::std::option::Option<crate::types::ColorScheme>,
     pub(crate) political_view: ::std::option::Option<::std::string::String>,
+    pub(crate) terrain: ::std::option::Option<crate::types::Terrain>,
+    pub(crate) contour_density: ::std::option::Option<crate::types::ContourDensity>,
+    pub(crate) traffic: ::std::option::Option<crate::types::Traffic>,
+    pub(crate) travel_modes: ::std::option::Option<::std::vec::Vec<crate::types::TravelMode>>,
     pub(crate) key: ::std::option::Option<::std::string::String>,
 }
 impl GetStyleDescriptorInputBuilder {
@@ -275,6 +327,95 @@ impl GetStyleDescriptorInputBuilder {
     pub fn get_political_view(&self) -> &::std::option::Option<::std::string::String> {
         &self.political_view
     }
+    /// <p>Adjusts how physical terrain details are rendered on the map.</p>
+    /// <p>The following terrain styles are currently supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Hillshade</code>: Displays the physical terrain details through shading and highlighting of elevation change and geographic features.</p></li>
+    /// </ul>
+    /// <p>This parameter is valid only for the <code>Standard</code> map style.</p>
+    pub fn terrain(mut self, input: crate::types::Terrain) -> Self {
+        self.terrain = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Adjusts how physical terrain details are rendered on the map.</p>
+    /// <p>The following terrain styles are currently supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Hillshade</code>: Displays the physical terrain details through shading and highlighting of elevation change and geographic features.</p></li>
+    /// </ul>
+    /// <p>This parameter is valid only for the <code>Standard</code> map style.</p>
+    pub fn set_terrain(mut self, input: ::std::option::Option<crate::types::Terrain>) -> Self {
+        self.terrain = input;
+        self
+    }
+    /// <p>Adjusts how physical terrain details are rendered on the map.</p>
+    /// <p>The following terrain styles are currently supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Hillshade</code>: Displays the physical terrain details through shading and highlighting of elevation change and geographic features.</p></li>
+    /// </ul>
+    /// <p>This parameter is valid only for the <code>Standard</code> map style.</p>
+    pub fn get_terrain(&self) -> &::std::option::Option<crate::types::Terrain> {
+        &self.terrain
+    }
+    /// <p>Displays the shape and steepness of terrain features using elevation lines. The density value controls how densely the available contour line information is rendered on the map.</p>
+    /// <p>This parameter is valid only for the <code>Standard</code> map style.</p>
+    pub fn contour_density(mut self, input: crate::types::ContourDensity) -> Self {
+        self.contour_density = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Displays the shape and steepness of terrain features using elevation lines. The density value controls how densely the available contour line information is rendered on the map.</p>
+    /// <p>This parameter is valid only for the <code>Standard</code> map style.</p>
+    pub fn set_contour_density(mut self, input: ::std::option::Option<crate::types::ContourDensity>) -> Self {
+        self.contour_density = input;
+        self
+    }
+    /// <p>Displays the shape and steepness of terrain features using elevation lines. The density value controls how densely the available contour line information is rendered on the map.</p>
+    /// <p>This parameter is valid only for the <code>Standard</code> map style.</p>
+    pub fn get_contour_density(&self) -> &::std::option::Option<crate::types::ContourDensity> {
+        &self.contour_density
+    }
+    /// <p>Displays real-time traffic information overlay on map, such as incident events and flow events.</p>
+    /// <p>This parameter is valid only for the <code>Standard</code> map style.</p>
+    pub fn traffic(mut self, input: crate::types::Traffic) -> Self {
+        self.traffic = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Displays real-time traffic information overlay on map, such as incident events and flow events.</p>
+    /// <p>This parameter is valid only for the <code>Standard</code> map style.</p>
+    pub fn set_traffic(mut self, input: ::std::option::Option<crate::types::Traffic>) -> Self {
+        self.traffic = input;
+        self
+    }
+    /// <p>Displays real-time traffic information overlay on map, such as incident events and flow events.</p>
+    /// <p>This parameter is valid only for the <code>Standard</code> map style.</p>
+    pub fn get_traffic(&self) -> &::std::option::Option<crate::types::Traffic> {
+        &self.traffic
+    }
+    /// Appends an item to `travel_modes`.
+    ///
+    /// To override the contents of this collection use [`set_travel_modes`](Self::set_travel_modes).
+    ///
+    /// <p>Renders additional map information relevant to selected travel modes. Information for multiple travel modes can be displayed simultaneously, although this increases the overall information density rendered on the map.</p>
+    /// <p>This parameter is valid only for the <code>Standard</code> map style.</p>
+    pub fn travel_modes(mut self, input: crate::types::TravelMode) -> Self {
+        let mut v = self.travel_modes.unwrap_or_default();
+        v.push(input);
+        self.travel_modes = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Renders additional map information relevant to selected travel modes. Information for multiple travel modes can be displayed simultaneously, although this increases the overall information density rendered on the map.</p>
+    /// <p>This parameter is valid only for the <code>Standard</code> map style.</p>
+    pub fn set_travel_modes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TravelMode>>) -> Self {
+        self.travel_modes = input;
+        self
+    }
+    /// <p>Renders additional map information relevant to selected travel modes. Information for multiple travel modes can be displayed simultaneously, although this increases the overall information density rendered on the map.</p>
+    /// <p>This parameter is valid only for the <code>Standard</code> map style.</p>
+    pub fn get_travel_modes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TravelMode>> {
+        &self.travel_modes
+    }
     /// <p>Optional: The API key to be used for authorization. Either an API key or valid SigV4 signature must be provided when making a request.</p>
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
@@ -298,6 +439,10 @@ impl GetStyleDescriptorInputBuilder {
             style: self.style,
             color_scheme: self.color_scheme,
             political_view: self.political_view,
+            terrain: self.terrain,
+            contour_density: self.contour_density,
+            traffic: self.traffic,
+            travel_modes: self.travel_modes,
             key: self.key,
         })
     }
@@ -308,6 +453,10 @@ impl ::std::fmt::Debug for GetStyleDescriptorInputBuilder {
         formatter.field("style", &self.style);
         formatter.field("color_scheme", &self.color_scheme);
         formatter.field("political_view", &"*** Sensitive Data Redacted ***");
+        formatter.field("terrain", &self.terrain);
+        formatter.field("contour_density", &self.contour_density);
+        formatter.field("traffic", &self.traffic);
+        formatter.field("travel_modes", &self.travel_modes);
         formatter.field("key", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }

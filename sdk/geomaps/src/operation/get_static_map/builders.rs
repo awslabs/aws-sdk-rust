@@ -23,6 +23,15 @@ impl crate::operation::get_static_map::builders::GetStaticMapInputBuilder {
 /// Fluent builder constructing a request to `GetStaticMap`.
 ///
 /// <p><code>GetStaticMap</code> provides high-quality static map images with customizable options. You can modify the map's appearance and overlay additional information. It's an ideal solution for applications requiring tailored static map snapshots.</p>
+/// <p>For more information, see the following topics in the <i>Amazon Location Service Developer Guide</i>:</p>
+/// <ul>
+/// <li>
+/// <p><a href="https://docs.aws.amazon.com/location/latest/developerguide/static-maps.html">Static maps</a></p></li>
+/// <li>
+/// <p><a href="https://docs.aws.amazon.com/location/latest/developerguide/customizing-static-maps.html">Customize static maps</a></p></li>
+/// <li>
+/// <p><a href="https://docs.aws.amazon.com/location/latest/developerguide/overlaying-static-map.html">Overlay on the static map</a></p></li>
+/// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetStaticMapFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,24 +117,24 @@ impl GetStaticMapFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>Takes in two pairs of coordinates, \[Lon, Lat\], denoting south-westerly and north-easterly edges of the image. The underlying area becomes the view of the image.</p>
+    /// <p>Takes in two pairs of coordinates in World Geodetic System (WGS 84) format: \[longitude, latitude\], denoting south-westerly and north-easterly edges of the image. The underlying area becomes the view of the image.</p>
     /// <p>Example: -123.17075,49.26959,-123.08125,49.31429</p>
     pub fn bounding_box(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bounding_box(input.into());
         self
     }
-    /// <p>Takes in two pairs of coordinates, \[Lon, Lat\], denoting south-westerly and north-easterly edges of the image. The underlying area becomes the view of the image.</p>
+    /// <p>Takes in two pairs of coordinates in World Geodetic System (WGS 84) format: \[longitude, latitude\], denoting south-westerly and north-easterly edges of the image. The underlying area becomes the view of the image.</p>
     /// <p>Example: -123.17075,49.26959,-123.08125,49.31429</p>
     pub fn set_bounding_box(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_bounding_box(input);
         self
     }
-    /// <p>Takes in two pairs of coordinates, \[Lon, Lat\], denoting south-westerly and north-easterly edges of the image. The underlying area becomes the view of the image.</p>
+    /// <p>Takes in two pairs of coordinates in World Geodetic System (WGS 84) format: \[longitude, latitude\], denoting south-westerly and north-easterly edges of the image. The underlying area becomes the view of the image.</p>
     /// <p>Example: -123.17075,49.26959,-123.08125,49.31429</p>
     pub fn get_bounding_box(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_bounding_box()
     }
-    /// <p>Takes in two or more pair of coordinates, \[Lon, Lat\], with each coordinate separated by a comma. The API will generate an image to encompass all of the provided coordinates.</p><note>
+    /// <p>Takes in two or more pair of coordinates in World Geodetic System (WGS 84) format: \[longitude, latitude\], with each coordinate separated by a comma. The API will generate an image to encompass all of the provided coordinates.</p><note>
     /// <p>Cannot be used with <code>Zoom</code> and or <code>Radius</code></p>
     /// </note>
     /// <p>Example: 97.170451,78.039098,99.045536,27.176178</p>
@@ -133,7 +142,7 @@ impl GetStaticMapFluentBuilder {
         self.inner = self.inner.bounded_positions(input.into());
         self
     }
-    /// <p>Takes in two or more pair of coordinates, \[Lon, Lat\], with each coordinate separated by a comma. The API will generate an image to encompass all of the provided coordinates.</p><note>
+    /// <p>Takes in two or more pair of coordinates in World Geodetic System (WGS 84) format: \[longitude, latitude\], with each coordinate separated by a comma. The API will generate an image to encompass all of the provided coordinates.</p><note>
     /// <p>Cannot be used with <code>Zoom</code> and or <code>Radius</code></p>
     /// </note>
     /// <p>Example: 97.170451,78.039098,99.045536,27.176178</p>
@@ -141,14 +150,14 @@ impl GetStaticMapFluentBuilder {
         self.inner = self.inner.set_bounded_positions(input);
         self
     }
-    /// <p>Takes in two or more pair of coordinates, \[Lon, Lat\], with each coordinate separated by a comma. The API will generate an image to encompass all of the provided coordinates.</p><note>
+    /// <p>Takes in two or more pair of coordinates in World Geodetic System (WGS 84) format: \[longitude, latitude\], with each coordinate separated by a comma. The API will generate an image to encompass all of the provided coordinates.</p><note>
     /// <p>Cannot be used with <code>Zoom</code> and or <code>Radius</code></p>
     /// </note>
     /// <p>Example: 97.170451,78.039098,99.045536,27.176178</p>
     pub fn get_bounded_positions(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_bounded_positions()
     }
-    /// <p>Takes in a pair of coordinates, \[Lon, Lat\], which becomes the center point of the image. This parameter requires that either zoom or radius is set.</p><note>
+    /// <p>Takes in a pair of coordinates in World Geodetic System (WGS 84) format: \[longitude, latitude\], which becomes the center point of the image. This parameter requires that either zoom or radius is set.</p><note>
     /// <p>Cannot be used with <code>Zoom</code> and or <code>Radius</code></p>
     /// </note>
     /// <p>Example: 49.295,-123.108</p>
@@ -156,7 +165,7 @@ impl GetStaticMapFluentBuilder {
         self.inner = self.inner.center(input.into());
         self
     }
-    /// <p>Takes in a pair of coordinates, \[Lon, Lat\], which becomes the center point of the image. This parameter requires that either zoom or radius is set.</p><note>
+    /// <p>Takes in a pair of coordinates in World Geodetic System (WGS 84) format: \[longitude, latitude\], which becomes the center point of the image. This parameter requires that either zoom or radius is set.</p><note>
     /// <p>Cannot be used with <code>Zoom</code> and or <code>Radius</code></p>
     /// </note>
     /// <p>Example: 49.295,-123.108</p>
@@ -164,7 +173,7 @@ impl GetStaticMapFluentBuilder {
         self.inner = self.inner.set_center(input);
         self
     }
-    /// <p>Takes in a pair of coordinates, \[Lon, Lat\], which becomes the center point of the image. This parameter requires that either zoom or radius is set.</p><note>
+    /// <p>Takes in a pair of coordinates in World Geodetic System (WGS 84) format: \[longitude, latitude\], which becomes the center point of the image. This parameter requires that either zoom or radius is set.</p><note>
     /// <p>Cannot be used with <code>Zoom</code> and or <code>Radius</code></p>
     /// </note>
     /// <p>Example: 49.295,-123.108</p>

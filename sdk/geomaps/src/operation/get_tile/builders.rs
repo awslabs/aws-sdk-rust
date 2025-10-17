@@ -23,6 +23,7 @@ impl crate::operation::get_tile::builders::GetTileInputBuilder {
 /// Fluent builder constructing a request to `GetTile`.
 ///
 /// <p><code>GetTile</code> returns a tile. Map tiles are used by clients to render a map. they're addressed using a grid arrangement with an X coordinate, Y coordinate, and Z (zoom) level.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/tiles.html">Tiles</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetTileFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
