@@ -25,12 +25,15 @@
 ///     Codec::Mjpeg => { /* ... */ },
 ///     Codec::Mp3 => { /* ... */ },
 ///     Codec::Mp4V => { /* ... */ },
+///     Codec::Mpeg1 => { /* ... */ },
 ///     Codec::Mpeg2 => { /* ... */ },
 ///     Codec::Opus => { /* ... */ },
 ///     Codec::Pcm => { /* ... */ },
 ///     Codec::Prores => { /* ... */ },
+///     Codec::Qtrle => { /* ... */ },
 ///     Codec::Theora => { /* ... */ },
 ///     Codec::UnknownValue => { /* ... */ },
+///     Codec::Vfw => { /* ... */ },
 ///     Codec::Vorbis => { /* ... */ },
 ///     Codec::Vp8 => { /* ... */ },
 ///     Codec::Vp9 => { /* ... */ },
@@ -91,6 +94,8 @@ pub enum Codec {
     #[allow(missing_docs)] // documentation missing in model
     Mp4V,
     #[allow(missing_docs)] // documentation missing in model
+    Mpeg1,
+    #[allow(missing_docs)] // documentation missing in model
     Mpeg2,
     #[allow(missing_docs)] // documentation missing in model
     Opus,
@@ -99,10 +104,14 @@ pub enum Codec {
     #[allow(missing_docs)] // documentation missing in model
     Prores,
     #[allow(missing_docs)] // documentation missing in model
+    Qtrle,
+    #[allow(missing_docs)] // documentation missing in model
     Theora,
     ///
     /// _Note: `::Unknown` has been renamed to `::UnknownValue`._
     UnknownValue,
+    #[allow(missing_docs)] // documentation missing in model
+    Vfw,
     #[allow(missing_docs)] // documentation missing in model
     Vorbis,
     #[allow(missing_docs)] // documentation missing in model
@@ -131,12 +140,15 @@ impl ::std::convert::From<&str> for Codec {
             "MJPEG" => Codec::Mjpeg,
             "MP3" => Codec::Mp3,
             "MP4V" => Codec::Mp4V,
+            "MPEG1" => Codec::Mpeg1,
             "MPEG2" => Codec::Mpeg2,
             "OPUS" => Codec::Opus,
             "PCM" => Codec::Pcm,
             "PRORES" => Codec::Prores,
+            "QTRLE" => Codec::Qtrle,
             "THEORA" => Codec::Theora,
             "UNKNOWN" => Codec::UnknownValue,
+            "VFW" => Codec::Vfw,
             "VORBIS" => Codec::Vorbis,
             "VP8" => Codec::Vp8,
             "VP9" => Codec::Vp9,
@@ -169,12 +181,15 @@ impl Codec {
             Codec::Mjpeg => "MJPEG",
             Codec::Mp3 => "MP3",
             Codec::Mp4V => "MP4V",
+            Codec::Mpeg1 => "MPEG1",
             Codec::Mpeg2 => "MPEG2",
             Codec::Opus => "OPUS",
             Codec::Pcm => "PCM",
             Codec::Prores => "PRORES",
+            Codec::Qtrle => "QTRLE",
             Codec::Theora => "THEORA",
             Codec::UnknownValue => "UNKNOWN",
+            Codec::Vfw => "VFW",
             Codec::Vorbis => "VORBIS",
             Codec::Vp8 => "VP8",
             Codec::Vp9 => "VP9",
@@ -185,8 +200,8 @@ impl Codec {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "AAC", "AC3", "AV1", "AVC", "C608", "C708", "EAC3", "FLAC", "HEVC", "JPEG2000", "MJPEG", "MP3", "MP4V", "MPEG2", "OPUS", "PCM", "PRORES",
-            "THEORA", "UNKNOWN", "VORBIS", "VP8", "VP9", "WEBVTT",
+            "AAC", "AC3", "AV1", "AVC", "C608", "C708", "EAC3", "FLAC", "HEVC", "JPEG2000", "MJPEG", "MP3", "MP4V", "MPEG1", "MPEG2", "OPUS", "PCM",
+            "PRORES", "QTRLE", "THEORA", "UNKNOWN", "VFW", "VORBIS", "VP8", "VP9", "WEBVTT",
         ]
     }
 }
@@ -223,12 +238,15 @@ impl ::std::fmt::Display for Codec {
             Codec::Mjpeg => write!(f, "MJPEG"),
             Codec::Mp3 => write!(f, "MP3"),
             Codec::Mp4V => write!(f, "MP4V"),
+            Codec::Mpeg1 => write!(f, "MPEG1"),
             Codec::Mpeg2 => write!(f, "MPEG2"),
             Codec::Opus => write!(f, "OPUS"),
             Codec::Pcm => write!(f, "PCM"),
             Codec::Prores => write!(f, "PRORES"),
+            Codec::Qtrle => write!(f, "QTRLE"),
             Codec::Theora => write!(f, "THEORA"),
             Codec::UnknownValue => write!(f, "UNKNOWN"),
+            Codec::Vfw => write!(f, "VFW"),
             Codec::Vorbis => write!(f, "VORBIS"),
             Codec::Vp8 => write!(f, "VP8"),
             Codec::Vp9 => write!(f, "VP9"),

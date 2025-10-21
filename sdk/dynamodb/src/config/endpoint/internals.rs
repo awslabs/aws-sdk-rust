@@ -218,6 +218,7 @@ pub(super) fn resolve_endpoint(
                                                                     out.push_str(&partition_result.dual_stack_dns_suffix());
                                                                     out
                                                                 })
+                                                                .property("metricValues", vec![::aws_smithy_types::Document::from("O".to_string())])
                                                                 .build());
                                                         }
                                                     }
@@ -268,6 +269,10 @@ pub(super) fn resolve_endpoint(
                                                                         out.push_str(&partition_result.dual_stack_dns_suffix());
                                                                         out
                                                                     })
+                                                                    .property(
+                                                                        "metricValues",
+                                                                        vec![::aws_smithy_types::Document::from("O".to_string())],
+                                                                    )
                                                                     .build());
                                                             }
                                                         }
@@ -302,6 +307,7 @@ pub(super) fn resolve_endpoint(
                                                     out.push_str(&partition_result.dual_stack_dns_suffix());
                                                     out
                                                 })
+                                                .property("metricValues", vec![::aws_smithy_types::Document::from("O".to_string())])
                                                 .build());
                                         }
                                         return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
@@ -376,6 +382,7 @@ pub(super) fn resolve_endpoint(
                                                             out.push_str(&partition_result.dns_suffix());
                                                             out
                                                         })
+                                                        .property("metricValues", vec![::aws_smithy_types::Document::from("O".to_string())])
                                                         .build());
                                                 }
                                             }
@@ -420,6 +427,7 @@ pub(super) fn resolve_endpoint(
                                                                 out.push_str(&partition_result.dns_suffix());
                                                                 out
                                                             })
+                                                            .property("metricValues", vec![::aws_smithy_types::Document::from("O".to_string())])
                                                             .build());
                                                     }
                                                 }
@@ -454,6 +462,7 @@ pub(super) fn resolve_endpoint(
                                             out.push_str(&partition_result.dns_suffix());
                                             out
                                         })
+                                        .property("metricValues", vec![::aws_smithy_types::Document::from("O".to_string())])
                                         .build());
                                 }
                                 return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(

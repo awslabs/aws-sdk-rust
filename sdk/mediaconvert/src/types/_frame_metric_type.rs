@@ -16,6 +16,7 @@
 ///     FrameMetricType::Psnr => { /* ... */ },
 ///     FrameMetricType::PsnrHvs => { /* ... */ },
 ///     FrameMetricType::Qvbr => { /* ... */ },
+///     FrameMetricType::ShotChange => { /* ... */ },
 ///     FrameMetricType::Ssim => { /* ... */ },
 ///     FrameMetricType::Vmaf => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -40,7 +41,7 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-/// * PSNR: Peak Signal-to-Noise Ratio * SSIM: Structural Similarity Index Measure * MS_SSIM: Multi-Scale Similarity Index Measure * PSNR_HVS: Peak Signal-to-Noise Ratio, Human Visual System * VMAF: Video Multi-Method Assessment Fusion * QVBR: Quality-Defined Variable Bitrate. This option is only available when your output uses the QVBR rate control mode.
+/// * PSNR: Peak Signal-to-Noise Ratio * SSIM: Structural Similarity Index Measure * MS_SSIM: Multi-Scale Similarity Index Measure * PSNR_HVS: Peak Signal-to-Noise Ratio, Human Visual System * VMAF: Video Multi-Method Assessment Fusion * QVBR: Quality-Defined Variable Bitrate. This option is only available when your output uses the QVBR rate control mode. * SHOT_CHANGE: Shot Changes
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
@@ -54,6 +55,8 @@ pub enum FrameMetricType {
     PsnrHvs,
     #[allow(missing_docs)] // documentation missing in model
     Qvbr,
+    #[allow(missing_docs)] // documentation missing in model
+    ShotChange,
     #[allow(missing_docs)] // documentation missing in model
     Ssim,
     #[allow(missing_docs)] // documentation missing in model
@@ -69,6 +72,7 @@ impl ::std::convert::From<&str> for FrameMetricType {
             "PSNR" => FrameMetricType::Psnr,
             "PSNR_HVS" => FrameMetricType::PsnrHvs,
             "QVBR" => FrameMetricType::Qvbr,
+            "SHOT_CHANGE" => FrameMetricType::ShotChange,
             "SSIM" => FrameMetricType::Ssim,
             "VMAF" => FrameMetricType::Vmaf,
             other => FrameMetricType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -90,6 +94,7 @@ impl FrameMetricType {
             FrameMetricType::Psnr => "PSNR",
             FrameMetricType::PsnrHvs => "PSNR_HVS",
             FrameMetricType::Qvbr => "QVBR",
+            FrameMetricType::ShotChange => "SHOT_CHANGE",
             FrameMetricType::Ssim => "SSIM",
             FrameMetricType::Vmaf => "VMAF",
             FrameMetricType::Unknown(value) => value.as_str(),
@@ -97,7 +102,7 @@ impl FrameMetricType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["MS_SSIM", "PSNR", "PSNR_HVS", "QVBR", "SSIM", "VMAF"]
+        &["MS_SSIM", "PSNR", "PSNR_HVS", "QVBR", "SHOT_CHANGE", "SSIM", "VMAF"]
     }
 }
 impl ::std::convert::AsRef<str> for FrameMetricType {
@@ -124,6 +129,7 @@ impl ::std::fmt::Display for FrameMetricType {
             FrameMetricType::Psnr => write!(f, "PSNR"),
             FrameMetricType::PsnrHvs => write!(f, "PSNR_HVS"),
             FrameMetricType::Qvbr => write!(f, "QVBR"),
+            FrameMetricType::ShotChange => write!(f, "SHOT_CHANGE"),
             FrameMetricType::Ssim => write!(f, "SSIM"),
             FrameMetricType::Vmaf => write!(f, "VMAF"),
             FrameMetricType::Unknown(value) => write!(f, "{}", value),

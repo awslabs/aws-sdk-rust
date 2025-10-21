@@ -29,6 +29,8 @@ pub use crate::types::error::_invalid_tag_exception::InvalidTagException;
 
 pub use crate::types::error::_invalid_endpoint_region_exception::InvalidEndpointRegionException;
 
+pub use crate::types::error::_idempotency_conflict_exception::IdempotencyConflictException;
+
 pub use crate::types::error::_duplicate_request_exception::DuplicateRequestException;
 
 pub use crate::types::error::_invalid_customer_identifier_exception::InvalidCustomerIdentifierException;
@@ -40,6 +42,8 @@ mod _disabled_api_exception;
 mod _duplicate_request_exception;
 
 mod _expired_token_exception;
+
+mod _idempotency_conflict_exception;
 
 mod _internal_service_error_exception;
 

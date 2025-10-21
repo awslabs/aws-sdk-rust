@@ -48,6 +48,22 @@ pub fn de_meter_usage_http_error(
             }
             tmp
         }),
+        "IdempotencyConflictException" => crate::operation::meter_usage::MeterUsageError::IdempotencyConflictException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::IdempotencyConflictExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_idempotency_conflict_exception::de_idempotency_conflict_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::meter_usage::MeterUsageError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "InternalServiceErrorException" => crate::operation::meter_usage::MeterUsageError::InternalServiceErrorException({
             #[allow(unused_mut)]
             let mut tmp = {

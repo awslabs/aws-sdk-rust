@@ -4576,6 +4576,7 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://111111111111.ddb.us-east-1.api.aws")
+                .property("metricValues", vec!["O".to_string().into()])
                 .build()
         );
     }
@@ -4598,6 +4599,7 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://111111111111.ddb.us-east-1.amazonaws.com")
+                .property("metricValues", vec!["O".to_string().into()])
                 .build()
         );
     }
@@ -4621,6 +4623,7 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://333333333333.ddb.us-east-1.amazonaws.com")
+                .property("metricValues", vec!["O".to_string().into()])
                 .build()
         );
     }
@@ -4645,6 +4648,7 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://222222222222.ddb.us-east-1.amazonaws.com")
+                .property("metricValues", vec!["O".to_string().into()])
                 .build()
         );
     }
@@ -4669,6 +4673,7 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://333333333333.ddb.us-east-1.amazonaws.com")
+                .property("metricValues", vec!["O".to_string().into()])
                 .build()
         );
     }
@@ -4693,6 +4698,7 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://333333333333.ddb.us-east-1.amazonaws.com")
+                .property("metricValues", vec!["O".to_string().into()])
                 .build()
         );
     }
@@ -4717,6 +4723,7 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://111111111111.ddb.us-east-1.amazonaws.com")
+                .property("metricValues", vec!["O".to_string().into()])
                 .build()
         );
     }
@@ -4741,6 +4748,7 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://111111111111.ddb.us-east-1.amazonaws.com")
+                .property("metricValues", vec!["O".to_string().into()])
                 .build()
         );
     }
@@ -4824,6 +4832,7 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://222222222222.ddb.us-east-1.api.aws")
+                .property("metricValues", vec!["O".to_string().into()])
                 .build()
         );
     }
@@ -4846,6 +4855,7 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://222222222222.ddb.us-east-1.amazonaws.com")
+                .property("metricValues", vec!["O".to_string().into()])
                 .build()
         );
     }
@@ -4978,6 +4988,7 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://333333333333.ddb.us-east-1.api.aws")
+                .property("metricValues", vec!["O".to_string().into()])
                 .build()
         );
     }
@@ -5000,6 +5011,7 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://333333333333.ddb.us-east-1.amazonaws.com")
+                .property("metricValues", vec!["O".to_string().into()])
                 .build()
         );
     }
@@ -5023,6 +5035,7 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://222222222222.ddb.us-east-1.amazonaws.com")
+                .property("metricValues", vec!["O".to_string().into()])
                 .build()
         );
     }
@@ -5106,6 +5119,7 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://111111111111.ddb.us-east-1.api.aws")
+                .property("metricValues", vec!["O".to_string().into()])
                 .build()
         );
     }
@@ -5128,6 +5142,7 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://111111111111.ddb.us-east-1.amazonaws.com")
+                .property("metricValues", vec!["O".to_string().into()])
                 .build()
         );
     }
@@ -5151,6 +5166,7 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://333333333333.ddb.us-east-1.amazonaws.com")
+                .property("metricValues", vec!["O".to_string().into()])
                 .build()
         );
     }
@@ -5175,6 +5191,7 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://222222222222.ddb.us-east-1.amazonaws.com")
+                .property("metricValues", vec!["O".to_string().into()])
                 .build()
         );
     }
@@ -5199,6 +5216,7 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://333333333333.ddb.us-east-1.amazonaws.com")
+                .property("metricValues", vec!["O".to_string().into()])
                 .build()
         );
     }
@@ -5223,6 +5241,7 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://333333333333.ddb.us-east-1.amazonaws.com")
+                .property("metricValues", vec!["O".to_string().into()])
                 .build()
         );
     }
@@ -5247,6 +5266,7 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://111111111111.ddb.us-east-1.amazonaws.com")
+                .property("metricValues", vec!["O".to_string().into()])
                 .build()
         );
     }
@@ -5271,6 +5291,7 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://111111111111.ddb.us-east-1.amazonaws.com")
+                .property("metricValues", vec!["O".to_string().into()])
                 .build()
         );
     }
@@ -5350,6 +5371,7 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://222222222222.ddb.us-east-1.api.aws")
+                .property("metricValues", vec!["O".to_string().into()])
                 .build()
         );
     }
@@ -5372,6 +5394,7 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://222222222222.ddb.us-east-1.amazonaws.com")
+                .property("metricValues", vec!["O".to_string().into()])
                 .build()
         );
     }
@@ -5494,6 +5517,7 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://333333333333.ddb.us-east-1.api.aws")
+                .property("metricValues", vec!["O".to_string().into()])
                 .build()
         );
     }
@@ -5516,6 +5540,7 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://333333333333.ddb.us-east-1.amazonaws.com")
+                .property("metricValues", vec!["O".to_string().into()])
                 .build()
         );
     }
@@ -5539,6 +5564,7 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://222222222222.ddb.us-east-1.amazonaws.com")
+                .property("metricValues", vec!["O".to_string().into()])
                 .build()
         );
     }
@@ -8209,9 +8235,23 @@ mod test {
         );
     }
 
-    /// {Endpoint=https://dynamodb.us-west-2.api.aws, Region=us-west-2}
+    /// {Endpoint=https://dynamodb.eu-west-1.api.aws, Region=eu-west-1}
     #[test]
     fn test_364() {
+        let params = crate::config::endpoint::Params::builder()
+            .endpoint("https://dynamodb.eu-west-1.api.aws".to_string())
+            .region("eu-west-1".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let error = endpoint.expect_err("expected error: Endpoint override is not supported for dual-stack endpoints. Please enable dual-stack functionality by enabling the configuration. For more details, see: https://docs.aws.amazon.com/sdkref/latest/guide/feature-endpoints.html [{Endpoint=https://dynamodb.eu-west-1.api.aws, Region=eu-west-1}]");
+        assert_eq!(format!("{}", error), "Endpoint override is not supported for dual-stack endpoints. Please enable dual-stack functionality by enabling the configuration. For more details, see: https://docs.aws.amazon.com/sdkref/latest/guide/feature-endpoints.html")
+    }
+
+    /// {Endpoint=https://dynamodb.us-west-2.api.aws, Region=us-west-2}
+    #[test]
+    fn test_365() {
         let params = crate::config::endpoint::Params::builder()
             .endpoint("https://dynamodb.us-west-2.api.aws".to_string())
             .region("us-west-2".to_string())
@@ -8225,7 +8265,7 @@ mod test {
 
     /// {Endpoint=https://dynamodb.cn-north-1.api.amazonwebservices.com.cn, Region=cn-north-1}
     #[test]
-    fn test_365() {
+    fn test_366() {
         let params = crate::config::endpoint::Params::builder()
             .endpoint("https://dynamodb.cn-north-1.api.amazonwebservices.com.cn".to_string())
             .region("cn-north-1".to_string())
@@ -8239,7 +8279,7 @@ mod test {
 
     /// {Endpoint=https://dynamodb.us-gov-east-1.api.aws, Region=us-gov-east-1}
     #[test]
-    fn test_366() {
+    fn test_367() {
         let params = crate::config::endpoint::Params::builder()
             .endpoint("https://dynamodb.us-gov-east-1.api.aws".to_string())
             .region("us-gov-east-1".to_string())
@@ -8253,7 +8293,7 @@ mod test {
 
     /// {Endpoint=https://dynamodb.us-east-1.api.aws, Region=us-east-1}
     #[test]
-    fn test_367() {
+    fn test_368() {
         let params = crate::config::endpoint::Params::builder()
             .endpoint("https://dynamodb.us-east-1.api.aws".to_string())
             .region("us-east-1".to_string())
@@ -8267,7 +8307,7 @@ mod test {
 
     /// {Endpoint=https://111111111111.ddb.us-east-1.api.aws, Region=us-east-1}
     #[test]
-    fn test_368() {
+    fn test_369() {
         let params = crate::config::endpoint::Params::builder()
             .endpoint("https://111111111111.ddb.us-east-1.api.aws".to_string())
             .region("us-east-1".to_string())
@@ -8286,7 +8326,7 @@ mod test {
 
     /// {Endpoint=https://vpce-1a2b3c4d-5e6f.dynamodb.us-east-1.vpce.api.aws, Region=us-east-1}
     #[test]
-    fn test_369() {
+    fn test_370() {
         let params = crate::config::endpoint::Params::builder()
             .endpoint("https://vpce-1a2b3c4d-5e6f.dynamodb.us-east-1.vpce.api.aws".to_string())
             .region("us-east-1".to_string())
@@ -8301,20 +8341,6 @@ mod test {
                 .url("https://vpce-1a2b3c4d-5e6f.dynamodb.us-east-1.vpce.api.aws")
                 .build()
         );
-    }
-
-    /// {Endpoint=https://dynamodb.eu-west-1.api.aws, Region=eu-west-1}
-    #[test]
-    fn test_370() {
-        let params = crate::config::endpoint::Params::builder()
-            .endpoint("https://dynamodb.eu-west-1.api.aws".to_string())
-            .region("eu-west-1".to_string())
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err("expected error: Endpoint override is not supported for dual-stack endpoints. Please enable dual-stack functionality by enabling the configuration. For more details, see: https://docs.aws.amazon.com/sdkref/latest/guide/feature-endpoints.html [{Endpoint=https://dynamodb.eu-west-1.api.aws, Region=eu-west-1}]");
-        assert_eq!(format!("{}", error), "Endpoint override is not supported for dual-stack endpoints. Please enable dual-stack functionality by enabling the configuration. For more details, see: https://docs.aws.amazon.com/sdkref/latest/guide/feature-endpoints.html")
     }
 }
 

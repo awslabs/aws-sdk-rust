@@ -11,7 +11,7 @@ pub struct CreateJobInput {
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// Optional. Use queue hopping to avoid overly long waits in the backlog of the queue that you submit your job to. Specify an alternate queue and the maximum time that your job will wait in the initial queue before hopping. For more information about this feature, see the AWS Elemental MediaConvert User Guide.
     pub hop_destinations: ::std::option::Option<::std::vec::Vec<crate::types::HopDestination>>,
-    /// Use Job engine versions to run jobs for your production workflow on one version, while you test and validate the latest version. To specify a Job engine version: Enter a date in a YYYY-MM-DD format. For a list of valid Job engine versions, submit a ListVersions request. To not specify a Job engine version: Leave blank.
+    /// Use Job engine versions to run jobs for your production workflow on one version, while you test and validate the latest version. Job engine versions represent periodically grouped MediaConvert releases with new features, updates, improvements, and fixes. Job engine versions are in a YYYY-MM-DD format. Note that the Job engine version feature is not publicly available at this time. To request access, contact AWS support.
     pub job_engine_version: ::std::option::Option<::std::string::String>,
     /// Optional. When you create a job, you can either specify a job template or specify the transcoding settings individually.
     pub job_template: ::std::option::Option<::std::string::String>,
@@ -51,7 +51,7 @@ impl CreateJobInput {
     pub fn hop_destinations(&self) -> &[crate::types::HopDestination] {
         self.hop_destinations.as_deref().unwrap_or_default()
     }
-    /// Use Job engine versions to run jobs for your production workflow on one version, while you test and validate the latest version. To specify a Job engine version: Enter a date in a YYYY-MM-DD format. For a list of valid Job engine versions, submit a ListVersions request. To not specify a Job engine version: Leave blank.
+    /// Use Job engine versions to run jobs for your production workflow on one version, while you test and validate the latest version. Job engine versions represent periodically grouped MediaConvert releases with new features, updates, improvements, and fixes. Job engine versions are in a YYYY-MM-DD format. Note that the Job engine version feature is not publicly available at this time. To request access, contact AWS support.
     pub fn job_engine_version(&self) -> ::std::option::Option<&str> {
         self.job_engine_version.as_deref()
     }
@@ -181,17 +181,17 @@ impl CreateJobInputBuilder {
     pub fn get_hop_destinations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HopDestination>> {
         &self.hop_destinations
     }
-    /// Use Job engine versions to run jobs for your production workflow on one version, while you test and validate the latest version. To specify a Job engine version: Enter a date in a YYYY-MM-DD format. For a list of valid Job engine versions, submit a ListVersions request. To not specify a Job engine version: Leave blank.
+    /// Use Job engine versions to run jobs for your production workflow on one version, while you test and validate the latest version. Job engine versions represent periodically grouped MediaConvert releases with new features, updates, improvements, and fixes. Job engine versions are in a YYYY-MM-DD format. Note that the Job engine version feature is not publicly available at this time. To request access, contact AWS support.
     pub fn job_engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_engine_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// Use Job engine versions to run jobs for your production workflow on one version, while you test and validate the latest version. To specify a Job engine version: Enter a date in a YYYY-MM-DD format. For a list of valid Job engine versions, submit a ListVersions request. To not specify a Job engine version: Leave blank.
+    /// Use Job engine versions to run jobs for your production workflow on one version, while you test and validate the latest version. Job engine versions represent periodically grouped MediaConvert releases with new features, updates, improvements, and fixes. Job engine versions are in a YYYY-MM-DD format. Note that the Job engine version feature is not publicly available at this time. To request access, contact AWS support.
     pub fn set_job_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_engine_version = input;
         self
     }
-    /// Use Job engine versions to run jobs for your production workflow on one version, while you test and validate the latest version. To specify a Job engine version: Enter a date in a YYYY-MM-DD format. For a list of valid Job engine versions, submit a ListVersions request. To not specify a Job engine version: Leave blank.
+    /// Use Job engine versions to run jobs for your production workflow on one version, while you test and validate the latest version. Job engine versions represent periodically grouped MediaConvert releases with new features, updates, improvements, and fixes. Job engine versions are in a YYYY-MM-DD format. Note that the Job engine version feature is not publicly available at this time. To request access, contact AWS support.
     pub fn get_job_engine_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_engine_version
     }

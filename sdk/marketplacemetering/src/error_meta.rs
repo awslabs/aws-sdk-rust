@@ -11,6 +11,8 @@ pub enum Error {
     DuplicateRequestException(crate::types::error::DuplicateRequestException),
     /// <p>The submitted registration token has expired. This can happen if the buyer's browser takes too long to redirect to your page, the buyer has resubmitted the registration token, or your application has held on to the registration token for too long. Your SaaS registration website should redeem this token as soon as it is submitted by the buyer's browser.</p>
     ExpiredTokenException(crate::types::error::ExpiredTokenException),
+    /// <p>The <code>ClientToken</code> is being used for multiple requests.</p>
+    IdempotencyConflictException(crate::types::error::IdempotencyConflictException),
     /// <p>An internal error has occurred. Retry your request. If the problem persists, post a message with details on the Amazon Web Services forums.</p>
     InternalServiceErrorException(crate::types::error::InternalServiceErrorException),
     /// <p>You have metered usage for a <code>CustomerIdentifier</code> that does not exist.</p>
@@ -54,6 +56,7 @@ impl ::std::fmt::Display for Error {
             Error::DisabledApiException(inner) => inner.fmt(f),
             Error::DuplicateRequestException(inner) => inner.fmt(f),
             Error::ExpiredTokenException(inner) => inner.fmt(f),
+            Error::IdempotencyConflictException(inner) => inner.fmt(f),
             Error::InternalServiceErrorException(inner) => inner.fmt(f),
             Error::InvalidCustomerIdentifierException(inner) => inner.fmt(f),
             Error::InvalidEndpointRegionException(inner) => inner.fmt(f),
@@ -92,6 +95,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::DisabledApiException(inner) => inner.meta(),
             Self::DuplicateRequestException(inner) => inner.meta(),
             Self::ExpiredTokenException(inner) => inner.meta(),
+            Self::IdempotencyConflictException(inner) => inner.meta(),
             Self::InternalServiceErrorException(inner) => inner.meta(),
             Self::InvalidCustomerIdentifierException(inner) => inner.meta(),
             Self::InvalidEndpointRegionException(inner) => inner.meta(),
@@ -170,6 +174,7 @@ impl From<crate::operation::meter_usage::MeterUsageError> for Error {
         match err {
             crate::operation::meter_usage::MeterUsageError::CustomerNotEntitledException(inner) => Error::CustomerNotEntitledException(inner),
             crate::operation::meter_usage::MeterUsageError::DuplicateRequestException(inner) => Error::DuplicateRequestException(inner),
+            crate::operation::meter_usage::MeterUsageError::IdempotencyConflictException(inner) => Error::IdempotencyConflictException(inner),
             crate::operation::meter_usage::MeterUsageError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
             crate::operation::meter_usage::MeterUsageError::InvalidEndpointRegionException(inner) => Error::InvalidEndpointRegionException(inner),
             crate::operation::meter_usage::MeterUsageError::InvalidProductCodeException(inner) => Error::InvalidProductCodeException(inner),
@@ -248,6 +253,7 @@ impl ::std::error::Error for Error {
             Error::DisabledApiException(inner) => inner.source(),
             Error::DuplicateRequestException(inner) => inner.source(),
             Error::ExpiredTokenException(inner) => inner.source(),
+            Error::IdempotencyConflictException(inner) => inner.source(),
             Error::InternalServiceErrorException(inner) => inner.source(),
             Error::InvalidCustomerIdentifierException(inner) => inner.source(),
             Error::InvalidEndpointRegionException(inner) => inner.source(),
@@ -272,6 +278,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::DisabledApiException(e) => e.request_id(),
             Self::DuplicateRequestException(e) => e.request_id(),
             Self::ExpiredTokenException(e) => e.request_id(),
+            Self::IdempotencyConflictException(e) => e.request_id(),
             Self::InternalServiceErrorException(e) => e.request_id(),
             Self::InvalidCustomerIdentifierException(e) => e.request_id(),
             Self::InvalidEndpointRegionException(e) => e.request_id(),

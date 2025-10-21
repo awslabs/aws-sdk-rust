@@ -14,6 +14,7 @@
 /// match instancefleetstate {
 ///     InstanceFleetState::Bootstrapping => { /* ... */ },
 ///     InstanceFleetState::Provisioning => { /* ... */ },
+///     InstanceFleetState::Reconfiguring => { /* ... */ },
 ///     InstanceFleetState::Resizing => { /* ... */ },
 ///     InstanceFleetState::Running => { /* ... */ },
 ///     InstanceFleetState::Suspended => { /* ... */ },
@@ -52,6 +53,8 @@ pub enum InstanceFleetState {
     #[allow(missing_docs)] // documentation missing in model
     Provisioning,
     #[allow(missing_docs)] // documentation missing in model
+    Reconfiguring,
+    #[allow(missing_docs)] // documentation missing in model
     Resizing,
     #[allow(missing_docs)] // documentation missing in model
     Running,
@@ -70,6 +73,7 @@ impl ::std::convert::From<&str> for InstanceFleetState {
         match s {
             "BOOTSTRAPPING" => InstanceFleetState::Bootstrapping,
             "PROVISIONING" => InstanceFleetState::Provisioning,
+            "RECONFIGURING" => InstanceFleetState::Reconfiguring,
             "RESIZING" => InstanceFleetState::Resizing,
             "RUNNING" => InstanceFleetState::Running,
             "SUSPENDED" => InstanceFleetState::Suspended,
@@ -92,6 +96,7 @@ impl InstanceFleetState {
         match self {
             InstanceFleetState::Bootstrapping => "BOOTSTRAPPING",
             InstanceFleetState::Provisioning => "PROVISIONING",
+            InstanceFleetState::Reconfiguring => "RECONFIGURING",
             InstanceFleetState::Resizing => "RESIZING",
             InstanceFleetState::Running => "RUNNING",
             InstanceFleetState::Suspended => "SUSPENDED",
@@ -105,6 +110,7 @@ impl InstanceFleetState {
         &[
             "BOOTSTRAPPING",
             "PROVISIONING",
+            "RECONFIGURING",
             "RESIZING",
             "RUNNING",
             "SUSPENDED",
@@ -135,6 +141,7 @@ impl ::std::fmt::Display for InstanceFleetState {
         match self {
             InstanceFleetState::Bootstrapping => write!(f, "BOOTSTRAPPING"),
             InstanceFleetState::Provisioning => write!(f, "PROVISIONING"),
+            InstanceFleetState::Reconfiguring => write!(f, "RECONFIGURING"),
             InstanceFleetState::Resizing => write!(f, "RESIZING"),
             InstanceFleetState::Running => write!(f, "RUNNING"),
             InstanceFleetState::Suspended => write!(f, "SUSPENDED"),

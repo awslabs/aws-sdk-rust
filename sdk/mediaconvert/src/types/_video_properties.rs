@@ -4,25 +4,27 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VideoProperties {
-    /// The bit depth of the video track.
+    /// The number of bits used per color component such as 8, 10, or 12 bits. Standard range (SDR) video typically uses 8-bit, while 10-bit is common for high dynamic range (HDR).
     pub bit_depth: ::std::option::Option<i32>,
     /// The bit rate of the video track, in bits per second.
     pub bit_rate: ::std::option::Option<i64>,
-    /// The color space color primaries of the video track.
+    /// Codec-specific parameters parsed from the video essence headers. This information provides detailed technical specifications about how the video was encoded, including profile settings, resolution details, and color space information that can help you understand the source video characteristics and make informed encoding decisions.
+    pub codec_metadata: ::std::option::Option<crate::types::CodecMetadata>,
+    /// The color space primaries of the video track, defining the red, green, and blue color coordinates used for the video. This information helps ensure accurate color reproduction during playback and transcoding.
     pub color_primaries: ::std::option::Option<crate::types::ColorPrimaries>,
-    /// The frame rate of the video or audio track.
+    /// The frame rate of the video or audio track, expressed as a fraction with numerator and denominator values.
     pub frame_rate: ::std::option::Option<crate::types::FrameRate>,
     /// The height of the video track, in pixels.
     pub height: ::std::option::Option<i32>,
-    /// The color space matrix coefficients of the video track.
+    /// The color space matrix coefficients of the video track, defining how RGB color values are converted to and from YUV color space. This affects color accuracy during encoding and decoding processes.
     pub matrix_coefficients: ::std::option::Option<crate::types::MatrixCoefficients>,
-    /// The color space transfer characteristics of the video track.
+    /// The color space transfer characteristics of the video track, defining the relationship between linear light values and the encoded signal values. This affects brightness and contrast reproduction.
     pub transfer_characteristics: ::std::option::Option<crate::types::TransferCharacteristics>,
     /// The width of the video track, in pixels.
     pub width: ::std::option::Option<i32>,
 }
 impl VideoProperties {
-    /// The bit depth of the video track.
+    /// The number of bits used per color component such as 8, 10, or 12 bits. Standard range (SDR) video typically uses 8-bit, while 10-bit is common for high dynamic range (HDR).
     pub fn bit_depth(&self) -> ::std::option::Option<i32> {
         self.bit_depth
     }
@@ -30,11 +32,15 @@ impl VideoProperties {
     pub fn bit_rate(&self) -> ::std::option::Option<i64> {
         self.bit_rate
     }
-    /// The color space color primaries of the video track.
+    /// Codec-specific parameters parsed from the video essence headers. This information provides detailed technical specifications about how the video was encoded, including profile settings, resolution details, and color space information that can help you understand the source video characteristics and make informed encoding decisions.
+    pub fn codec_metadata(&self) -> ::std::option::Option<&crate::types::CodecMetadata> {
+        self.codec_metadata.as_ref()
+    }
+    /// The color space primaries of the video track, defining the red, green, and blue color coordinates used for the video. This information helps ensure accurate color reproduction during playback and transcoding.
     pub fn color_primaries(&self) -> ::std::option::Option<&crate::types::ColorPrimaries> {
         self.color_primaries.as_ref()
     }
-    /// The frame rate of the video or audio track.
+    /// The frame rate of the video or audio track, expressed as a fraction with numerator and denominator values.
     pub fn frame_rate(&self) -> ::std::option::Option<&crate::types::FrameRate> {
         self.frame_rate.as_ref()
     }
@@ -42,11 +48,11 @@ impl VideoProperties {
     pub fn height(&self) -> ::std::option::Option<i32> {
         self.height
     }
-    /// The color space matrix coefficients of the video track.
+    /// The color space matrix coefficients of the video track, defining how RGB color values are converted to and from YUV color space. This affects color accuracy during encoding and decoding processes.
     pub fn matrix_coefficients(&self) -> ::std::option::Option<&crate::types::MatrixCoefficients> {
         self.matrix_coefficients.as_ref()
     }
-    /// The color space transfer characteristics of the video track.
+    /// The color space transfer characteristics of the video track, defining the relationship between linear light values and the encoded signal values. This affects brightness and contrast reproduction.
     pub fn transfer_characteristics(&self) -> ::std::option::Option<&crate::types::TransferCharacteristics> {
         self.transfer_characteristics.as_ref()
     }
@@ -68,6 +74,7 @@ impl VideoProperties {
 pub struct VideoPropertiesBuilder {
     pub(crate) bit_depth: ::std::option::Option<i32>,
     pub(crate) bit_rate: ::std::option::Option<i64>,
+    pub(crate) codec_metadata: ::std::option::Option<crate::types::CodecMetadata>,
     pub(crate) color_primaries: ::std::option::Option<crate::types::ColorPrimaries>,
     pub(crate) frame_rate: ::std::option::Option<crate::types::FrameRate>,
     pub(crate) height: ::std::option::Option<i32>,
@@ -76,17 +83,17 @@ pub struct VideoPropertiesBuilder {
     pub(crate) width: ::std::option::Option<i32>,
 }
 impl VideoPropertiesBuilder {
-    /// The bit depth of the video track.
+    /// The number of bits used per color component such as 8, 10, or 12 bits. Standard range (SDR) video typically uses 8-bit, while 10-bit is common for high dynamic range (HDR).
     pub fn bit_depth(mut self, input: i32) -> Self {
         self.bit_depth = ::std::option::Option::Some(input);
         self
     }
-    /// The bit depth of the video track.
+    /// The number of bits used per color component such as 8, 10, or 12 bits. Standard range (SDR) video typically uses 8-bit, while 10-bit is common for high dynamic range (HDR).
     pub fn set_bit_depth(mut self, input: ::std::option::Option<i32>) -> Self {
         self.bit_depth = input;
         self
     }
-    /// The bit depth of the video track.
+    /// The number of bits used per color component such as 8, 10, or 12 bits. Standard range (SDR) video typically uses 8-bit, while 10-bit is common for high dynamic range (HDR).
     pub fn get_bit_depth(&self) -> &::std::option::Option<i32> {
         &self.bit_depth
     }
@@ -104,31 +111,45 @@ impl VideoPropertiesBuilder {
     pub fn get_bit_rate(&self) -> &::std::option::Option<i64> {
         &self.bit_rate
     }
-    /// The color space color primaries of the video track.
+    /// Codec-specific parameters parsed from the video essence headers. This information provides detailed technical specifications about how the video was encoded, including profile settings, resolution details, and color space information that can help you understand the source video characteristics and make informed encoding decisions.
+    pub fn codec_metadata(mut self, input: crate::types::CodecMetadata) -> Self {
+        self.codec_metadata = ::std::option::Option::Some(input);
+        self
+    }
+    /// Codec-specific parameters parsed from the video essence headers. This information provides detailed technical specifications about how the video was encoded, including profile settings, resolution details, and color space information that can help you understand the source video characteristics and make informed encoding decisions.
+    pub fn set_codec_metadata(mut self, input: ::std::option::Option<crate::types::CodecMetadata>) -> Self {
+        self.codec_metadata = input;
+        self
+    }
+    /// Codec-specific parameters parsed from the video essence headers. This information provides detailed technical specifications about how the video was encoded, including profile settings, resolution details, and color space information that can help you understand the source video characteristics and make informed encoding decisions.
+    pub fn get_codec_metadata(&self) -> &::std::option::Option<crate::types::CodecMetadata> {
+        &self.codec_metadata
+    }
+    /// The color space primaries of the video track, defining the red, green, and blue color coordinates used for the video. This information helps ensure accurate color reproduction during playback and transcoding.
     pub fn color_primaries(mut self, input: crate::types::ColorPrimaries) -> Self {
         self.color_primaries = ::std::option::Option::Some(input);
         self
     }
-    /// The color space color primaries of the video track.
+    /// The color space primaries of the video track, defining the red, green, and blue color coordinates used for the video. This information helps ensure accurate color reproduction during playback and transcoding.
     pub fn set_color_primaries(mut self, input: ::std::option::Option<crate::types::ColorPrimaries>) -> Self {
         self.color_primaries = input;
         self
     }
-    /// The color space color primaries of the video track.
+    /// The color space primaries of the video track, defining the red, green, and blue color coordinates used for the video. This information helps ensure accurate color reproduction during playback and transcoding.
     pub fn get_color_primaries(&self) -> &::std::option::Option<crate::types::ColorPrimaries> {
         &self.color_primaries
     }
-    /// The frame rate of the video or audio track.
+    /// The frame rate of the video or audio track, expressed as a fraction with numerator and denominator values.
     pub fn frame_rate(mut self, input: crate::types::FrameRate) -> Self {
         self.frame_rate = ::std::option::Option::Some(input);
         self
     }
-    /// The frame rate of the video or audio track.
+    /// The frame rate of the video or audio track, expressed as a fraction with numerator and denominator values.
     pub fn set_frame_rate(mut self, input: ::std::option::Option<crate::types::FrameRate>) -> Self {
         self.frame_rate = input;
         self
     }
-    /// The frame rate of the video or audio track.
+    /// The frame rate of the video or audio track, expressed as a fraction with numerator and denominator values.
     pub fn get_frame_rate(&self) -> &::std::option::Option<crate::types::FrameRate> {
         &self.frame_rate
     }
@@ -146,31 +167,31 @@ impl VideoPropertiesBuilder {
     pub fn get_height(&self) -> &::std::option::Option<i32> {
         &self.height
     }
-    /// The color space matrix coefficients of the video track.
+    /// The color space matrix coefficients of the video track, defining how RGB color values are converted to and from YUV color space. This affects color accuracy during encoding and decoding processes.
     pub fn matrix_coefficients(mut self, input: crate::types::MatrixCoefficients) -> Self {
         self.matrix_coefficients = ::std::option::Option::Some(input);
         self
     }
-    /// The color space matrix coefficients of the video track.
+    /// The color space matrix coefficients of the video track, defining how RGB color values are converted to and from YUV color space. This affects color accuracy during encoding and decoding processes.
     pub fn set_matrix_coefficients(mut self, input: ::std::option::Option<crate::types::MatrixCoefficients>) -> Self {
         self.matrix_coefficients = input;
         self
     }
-    /// The color space matrix coefficients of the video track.
+    /// The color space matrix coefficients of the video track, defining how RGB color values are converted to and from YUV color space. This affects color accuracy during encoding and decoding processes.
     pub fn get_matrix_coefficients(&self) -> &::std::option::Option<crate::types::MatrixCoefficients> {
         &self.matrix_coefficients
     }
-    /// The color space transfer characteristics of the video track.
+    /// The color space transfer characteristics of the video track, defining the relationship between linear light values and the encoded signal values. This affects brightness and contrast reproduction.
     pub fn transfer_characteristics(mut self, input: crate::types::TransferCharacteristics) -> Self {
         self.transfer_characteristics = ::std::option::Option::Some(input);
         self
     }
-    /// The color space transfer characteristics of the video track.
+    /// The color space transfer characteristics of the video track, defining the relationship between linear light values and the encoded signal values. This affects brightness and contrast reproduction.
     pub fn set_transfer_characteristics(mut self, input: ::std::option::Option<crate::types::TransferCharacteristics>) -> Self {
         self.transfer_characteristics = input;
         self
     }
-    /// The color space transfer characteristics of the video track.
+    /// The color space transfer characteristics of the video track, defining the relationship between linear light values and the encoded signal values. This affects brightness and contrast reproduction.
     pub fn get_transfer_characteristics(&self) -> &::std::option::Option<crate::types::TransferCharacteristics> {
         &self.transfer_characteristics
     }
@@ -193,6 +214,7 @@ impl VideoPropertiesBuilder {
         crate::types::VideoProperties {
             bit_depth: self.bit_depth,
             bit_rate: self.bit_rate,
+            codec_metadata: self.codec_metadata,
             color_primaries: self.color_primaries,
             frame_rate: self.frame_rate,
             height: self.height,

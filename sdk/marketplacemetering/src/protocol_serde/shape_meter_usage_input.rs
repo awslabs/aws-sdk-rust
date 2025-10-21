@@ -35,5 +35,8 @@ pub fn ser_meter_usage_input_input(
         }
         array_7.finish();
     }
+    if let Some(var_10) = &input.client_token {
+        object.key("ClientToken").string(var_10.as_str());
+    }
     Ok(())
 }

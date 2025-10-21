@@ -12,8 +12,12 @@ pub struct InputVideoGenerator {
     pub framerate_denominator: ::std::option::Option<i32>,
     /// Specify the numerator of the fraction that represents the frame rate for your video generator input. When you do, you must also specify a value for Frame rate denominator. MediaConvert uses a default frame rate of 29.97 when you leave Frame rate numerator and Frame rate denominator blank.
     pub framerate_numerator: ::std::option::Option<i32>,
+    /// Specify the height, in pixels, for your video generator input. This is useful for positioning when you include one or more video overlays for this input. To use the default resolution 540x360: Leave both width and height blank. To specify a height: Enter an even integer from 32 to 8192. When you do, you must also specify a value for width.
+    pub height: ::std::option::Option<i32>,
     /// Specify the audio sample rate, in Hz, for the silent audio in your video generator input. Enter an integer from 32000 to 48000.
     pub sample_rate: ::std::option::Option<i32>,
+    /// Specify the width, in pixels, for your video generator input. This is useful for positioning when you include one or more video overlays for this input. To use the default resolution 540x360: Leave both width and height blank. To specify a width: Enter an even integer from 32 to 8192. When you do, you must also specify a value for height.
+    pub width: ::std::option::Option<i32>,
 }
 impl InputVideoGenerator {
     /// Specify the number of audio channels to include in your video generator input. MediaConvert creates these audio channels as silent audio within a single audio track. Enter an integer from 1 to 32.
@@ -32,9 +36,17 @@ impl InputVideoGenerator {
     pub fn framerate_numerator(&self) -> ::std::option::Option<i32> {
         self.framerate_numerator
     }
+    /// Specify the height, in pixels, for your video generator input. This is useful for positioning when you include one or more video overlays for this input. To use the default resolution 540x360: Leave both width and height blank. To specify a height: Enter an even integer from 32 to 8192. When you do, you must also specify a value for width.
+    pub fn height(&self) -> ::std::option::Option<i32> {
+        self.height
+    }
     /// Specify the audio sample rate, in Hz, for the silent audio in your video generator input. Enter an integer from 32000 to 48000.
     pub fn sample_rate(&self) -> ::std::option::Option<i32> {
         self.sample_rate
+    }
+    /// Specify the width, in pixels, for your video generator input. This is useful for positioning when you include one or more video overlays for this input. To use the default resolution 540x360: Leave both width and height blank. To specify a width: Enter an even integer from 32 to 8192. When you do, you must also specify a value for height.
+    pub fn width(&self) -> ::std::option::Option<i32> {
+        self.width
     }
 }
 impl InputVideoGenerator {
@@ -52,7 +64,9 @@ pub struct InputVideoGeneratorBuilder {
     pub(crate) duration: ::std::option::Option<i32>,
     pub(crate) framerate_denominator: ::std::option::Option<i32>,
     pub(crate) framerate_numerator: ::std::option::Option<i32>,
+    pub(crate) height: ::std::option::Option<i32>,
     pub(crate) sample_rate: ::std::option::Option<i32>,
+    pub(crate) width: ::std::option::Option<i32>,
 }
 impl InputVideoGeneratorBuilder {
     /// Specify the number of audio channels to include in your video generator input. MediaConvert creates these audio channels as silent audio within a single audio track. Enter an integer from 1 to 32.
@@ -111,6 +125,20 @@ impl InputVideoGeneratorBuilder {
     pub fn get_framerate_numerator(&self) -> &::std::option::Option<i32> {
         &self.framerate_numerator
     }
+    /// Specify the height, in pixels, for your video generator input. This is useful for positioning when you include one or more video overlays for this input. To use the default resolution 540x360: Leave both width and height blank. To specify a height: Enter an even integer from 32 to 8192. When you do, you must also specify a value for width.
+    pub fn height(mut self, input: i32) -> Self {
+        self.height = ::std::option::Option::Some(input);
+        self
+    }
+    /// Specify the height, in pixels, for your video generator input. This is useful for positioning when you include one or more video overlays for this input. To use the default resolution 540x360: Leave both width and height blank. To specify a height: Enter an even integer from 32 to 8192. When you do, you must also specify a value for width.
+    pub fn set_height(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.height = input;
+        self
+    }
+    /// Specify the height, in pixels, for your video generator input. This is useful for positioning when you include one or more video overlays for this input. To use the default resolution 540x360: Leave both width and height blank. To specify a height: Enter an even integer from 32 to 8192. When you do, you must also specify a value for width.
+    pub fn get_height(&self) -> &::std::option::Option<i32> {
+        &self.height
+    }
     /// Specify the audio sample rate, in Hz, for the silent audio in your video generator input. Enter an integer from 32000 to 48000.
     pub fn sample_rate(mut self, input: i32) -> Self {
         self.sample_rate = ::std::option::Option::Some(input);
@@ -125,6 +153,20 @@ impl InputVideoGeneratorBuilder {
     pub fn get_sample_rate(&self) -> &::std::option::Option<i32> {
         &self.sample_rate
     }
+    /// Specify the width, in pixels, for your video generator input. This is useful for positioning when you include one or more video overlays for this input. To use the default resolution 540x360: Leave both width and height blank. To specify a width: Enter an even integer from 32 to 8192. When you do, you must also specify a value for height.
+    pub fn width(mut self, input: i32) -> Self {
+        self.width = ::std::option::Option::Some(input);
+        self
+    }
+    /// Specify the width, in pixels, for your video generator input. This is useful for positioning when you include one or more video overlays for this input. To use the default resolution 540x360: Leave both width and height blank. To specify a width: Enter an even integer from 32 to 8192. When you do, you must also specify a value for height.
+    pub fn set_width(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.width = input;
+        self
+    }
+    /// Specify the width, in pixels, for your video generator input. This is useful for positioning when you include one or more video overlays for this input. To use the default resolution 540x360: Leave both width and height blank. To specify a width: Enter an even integer from 32 to 8192. When you do, you must also specify a value for height.
+    pub fn get_width(&self) -> &::std::option::Option<i32> {
+        &self.width
+    }
     /// Consumes the builder and constructs a [`InputVideoGenerator`](crate::types::InputVideoGenerator).
     pub fn build(self) -> crate::types::InputVideoGenerator {
         crate::types::InputVideoGenerator {
@@ -132,7 +174,9 @@ impl InputVideoGeneratorBuilder {
             duration: self.duration,
             framerate_denominator: self.framerate_denominator,
             framerate_numerator: self.framerate_numerator,
+            height: self.height,
             sample_rate: self.sample_rate,
+            width: self.width,
         }
     }
 }
