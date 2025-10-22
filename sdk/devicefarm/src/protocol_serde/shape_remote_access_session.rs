@@ -144,6 +144,13 @@ where
                         "deviceProxy" => {
                             builder = builder.set_device_proxy(crate::protocol_serde::shape_device_proxy::de_device_proxy(tokens)?);
                         }
+                        "appUpload" => {
+                            builder = builder.set_app_upload(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

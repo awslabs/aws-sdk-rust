@@ -329,4 +329,18 @@ impl StartOutboundVoiceContactFluentBuilder {
     pub fn get_traffic_type(&self) -> &::std::option::Option<crate::types::TrafficType> {
         self.inner.get_traffic_type()
     }
+    /// <p>Information about the outbound strategy.</p>
+    pub fn outbound_strategy(mut self, input: crate::types::OutboundStrategy) -> Self {
+        self.inner = self.inner.outbound_strategy(input);
+        self
+    }
+    /// <p>Information about the outbound strategy.</p>
+    pub fn set_outbound_strategy(mut self, input: ::std::option::Option<crate::types::OutboundStrategy>) -> Self {
+        self.inner = self.inner.set_outbound_strategy(input);
+        self
+    }
+    /// <p>Information about the outbound strategy.</p>
+    pub fn get_outbound_strategy(&self) -> &::std::option::Option<crate::types::OutboundStrategy> {
+        self.inner.get_outbound_strategy()
+    }
 }

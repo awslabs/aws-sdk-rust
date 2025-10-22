@@ -523,6 +523,15 @@ pub(crate) fn rule_trigger_event_source_correct_errors(
     builder
 }
 
+pub(crate) fn alias_configuration_correct_errors(
+    mut builder: crate::types::builders::AliasConfigurationBuilder,
+) -> crate::types::builders::AliasConfigurationBuilder {
+    if builder.email_address_id.is_none() {
+        builder.email_address_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn attached_file_correct_errors(mut builder: crate::types::builders::AttachedFileBuilder) -> crate::types::builders::AttachedFileBuilder {
     if builder.creation_time.is_none() {
         builder.creation_time = Some(Default::default())
@@ -722,6 +731,15 @@ pub(crate) fn lex_bot_correct_errors(mut builder: crate::types::builders::LexBot
     }
     if builder.lex_region.is_none() {
         builder.lex_region = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn outbound_strategy_correct_errors(
+    mut builder: crate::types::builders::OutboundStrategyBuilder,
+) -> crate::types::builders::OutboundStrategyBuilder {
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::OutboundStrategyType>().ok()
     }
     builder
 }
@@ -1251,6 +1269,19 @@ pub(crate) fn case_sla_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn preview_correct_errors(mut builder: crate::types::builders::PreviewBuilder) -> crate::types::builders::PreviewBuilder {
+    if builder.post_accept_timeout_config.is_none() {
+        builder.post_accept_timeout_config = {
+            let builder = crate::types::builders::PostAcceptTimeoutConfigBuilder::default();
+            crate::serde_util::post_accept_timeout_config_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.allowed_user_actions.is_none() {
+        builder.allowed_user_actions = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn real_time_contact_analysis_attachment_correct_errors(
     mut builder: crate::types::builders::RealTimeContactAnalysisAttachmentBuilder,
 ) -> crate::types::builders::RealTimeContactAnalysisAttachmentBuilder {
@@ -1311,6 +1342,15 @@ pub(crate) fn field_value_correct_errors(mut builder: crate::types::builders::Fi
             let builder = crate::types::builders::FieldValueUnionBuilder::default();
             Some(builder.build())
         }
+    }
+    builder
+}
+
+pub(crate) fn post_accept_timeout_config_correct_errors(
+    mut builder: crate::types::builders::PostAcceptTimeoutConfigBuilder,
+) -> crate::types::builders::PostAcceptTimeoutConfigBuilder {
+    if builder.duration_in_seconds.is_none() {
+        builder.duration_in_seconds = Some(Default::default())
     }
     builder
 }

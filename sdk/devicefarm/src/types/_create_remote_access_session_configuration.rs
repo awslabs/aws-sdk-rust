@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateRemoteAccessSessionConfiguration {
+    /// <p>A list of upload ARNs for app packages to be installed onto your device. (Maximum 3)</p>
+    pub auxiliary_apps: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The billing method for the remote access session.</p>
     pub billing_method: ::std::option::Option<crate::types::BillingMethod>,
     /// <p>An array of ARNs included in the VPC endpoint configuration.</p>
@@ -12,6 +14,12 @@ pub struct CreateRemoteAccessSessionConfiguration {
     pub device_proxy: ::std::option::Option<crate::types::DeviceProxy>,
 }
 impl CreateRemoteAccessSessionConfiguration {
+    /// <p>A list of upload ARNs for app packages to be installed onto your device. (Maximum 3)</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.auxiliary_apps.is_none()`.
+    pub fn auxiliary_apps(&self) -> &[::std::string::String] {
+        self.auxiliary_apps.as_deref().unwrap_or_default()
+    }
     /// <p>The billing method for the remote access session.</p>
     pub fn billing_method(&self) -> ::std::option::Option<&crate::types::BillingMethod> {
         self.billing_method.as_ref()
@@ -38,11 +46,32 @@ impl CreateRemoteAccessSessionConfiguration {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct CreateRemoteAccessSessionConfigurationBuilder {
+    pub(crate) auxiliary_apps: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) billing_method: ::std::option::Option<crate::types::BillingMethod>,
     pub(crate) vpce_configuration_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) device_proxy: ::std::option::Option<crate::types::DeviceProxy>,
 }
 impl CreateRemoteAccessSessionConfigurationBuilder {
+    /// Appends an item to `auxiliary_apps`.
+    ///
+    /// To override the contents of this collection use [`set_auxiliary_apps`](Self::set_auxiliary_apps).
+    ///
+    /// <p>A list of upload ARNs for app packages to be installed onto your device. (Maximum 3)</p>
+    pub fn auxiliary_apps(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.auxiliary_apps.unwrap_or_default();
+        v.push(input.into());
+        self.auxiliary_apps = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of upload ARNs for app packages to be installed onto your device. (Maximum 3)</p>
+    pub fn set_auxiliary_apps(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.auxiliary_apps = input;
+        self
+    }
+    /// <p>A list of upload ARNs for app packages to be installed onto your device. (Maximum 3)</p>
+    pub fn get_auxiliary_apps(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.auxiliary_apps
+    }
     /// <p>The billing method for the remote access session.</p>
     pub fn billing_method(mut self, input: crate::types::BillingMethod) -> Self {
         self.billing_method = ::std::option::Option::Some(input);
@@ -94,6 +123,7 @@ impl CreateRemoteAccessSessionConfigurationBuilder {
     /// Consumes the builder and constructs a [`CreateRemoteAccessSessionConfiguration`](crate::types::CreateRemoteAccessSessionConfiguration).
     pub fn build(self) -> crate::types::CreateRemoteAccessSessionConfiguration {
         crate::types::CreateRemoteAccessSessionConfiguration {
+            auxiliary_apps: self.auxiliary_apps,
             billing_method: self.billing_method,
             vpce_configuration_arns: self.vpce_configuration_arns,
             device_proxy: self.device_proxy,

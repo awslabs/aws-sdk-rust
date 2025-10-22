@@ -326,6 +326,21 @@ pub(crate) fn predictive_config_correct_errors(
     builder
 }
 
+pub(crate) fn preview_config_correct_errors(
+    mut builder: crate::types::builders::PreviewConfigBuilder,
+) -> crate::types::builders::PreviewConfigBuilder {
+    if builder.bandwidth_allocation.is_none() {
+        builder.bandwidth_allocation = Some(Default::default())
+    }
+    if builder.timeout_config.is_none() {
+        builder.timeout_config = {
+            let builder = crate::types::builders::TimeoutConfigBuilder::default();
+            crate::serde_util::timeout_config_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn progressive_config_correct_errors(
     mut builder: crate::types::builders::ProgressiveConfigBuilder,
 ) -> crate::types::builders::ProgressiveConfigBuilder {
@@ -343,6 +358,15 @@ pub(crate) fn restricted_period_correct_errors(
     }
     if builder.end_date.is_none() {
         builder.end_date = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn timeout_config_correct_errors(
+    mut builder: crate::types::builders::TimeoutConfigBuilder,
+) -> crate::types::builders::TimeoutConfigBuilder {
+    if builder.duration_in_seconds.is_none() {
+        builder.duration_in_seconds = Some(Default::default())
     }
     builder
 }

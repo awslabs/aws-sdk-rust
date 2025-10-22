@@ -147,6 +147,11 @@ pub(crate) fn de_describe_email_address(
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "AliasConfigurations" => {
+                    builder = builder.set_alias_configurations(crate::protocol_serde::shape_alias_configuration_list::de_alias_configuration_list(
+                        tokens,
+                    )?);
+                }
                 "CreateTimestamp" => {
                     builder = builder.set_create_timestamp(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

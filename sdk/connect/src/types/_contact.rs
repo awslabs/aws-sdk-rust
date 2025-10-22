@@ -82,7 +82,7 @@ pub struct Contact {
     pub segment_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SegmentAttributeValue>>,
     /// <p>If recording was enabled, this is information about the recordings.</p>
     pub recordings: ::std::option::Option<::std::vec::Vec<crate::types::RecordingInfo>>,
-    /// <p>The disconnect reason for the contact.</p>
+    /// <p>The disconnect reason for the contact. For a list and description of all the possible disconnect reasons by channel, see DisconnectReason under <a href="https://docs.aws.amazon.com/connect/latest/adminguide/ctr-data-model.html#ctr-ContactTraceRecord">ContactTraceRecord</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
     pub disconnect_reason: ::std::option::Option<::std::string::String>,
     /// <p>Information about the contact evaluations where the key is the FormId, which is a unique identifier for the form.</p>
     pub contact_evaluations: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ContactEvaluation>>,
@@ -90,6 +90,8 @@ pub struct Contact {
     pub task_template_info: ::std::option::Option<crate::types::TaskTemplateInfoV2>,
     /// <p>A map of string key/value pairs that contain user-defined attributes which are lightly typed within the contact. This object is used only for task contacts.</p>
     pub contact_details: ::std::option::Option<crate::types::ContactDetails>,
+    /// <p>Information about the outbound strategy.</p>
+    pub outbound_strategy: ::std::option::Option<crate::types::OutboundStrategy>,
     /// <p>The attributes of the contact.</p>
     pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -254,7 +256,7 @@ impl Contact {
     pub fn recordings(&self) -> &[crate::types::RecordingInfo] {
         self.recordings.as_deref().unwrap_or_default()
     }
-    /// <p>The disconnect reason for the contact.</p>
+    /// <p>The disconnect reason for the contact. For a list and description of all the possible disconnect reasons by channel, see DisconnectReason under <a href="https://docs.aws.amazon.com/connect/latest/adminguide/ctr-data-model.html#ctr-ContactTraceRecord">ContactTraceRecord</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
     pub fn disconnect_reason(&self) -> ::std::option::Option<&str> {
         self.disconnect_reason.as_deref()
     }
@@ -269,6 +271,10 @@ impl Contact {
     /// <p>A map of string key/value pairs that contain user-defined attributes which are lightly typed within the contact. This object is used only for task contacts.</p>
     pub fn contact_details(&self) -> ::std::option::Option<&crate::types::ContactDetails> {
         self.contact_details.as_ref()
+    }
+    /// <p>Information about the outbound strategy.</p>
+    pub fn outbound_strategy(&self) -> ::std::option::Option<&crate::types::OutboundStrategy> {
+        self.outbound_strategy.as_ref()
     }
     /// <p>The attributes of the contact.</p>
     pub fn attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -321,6 +327,7 @@ impl ::std::fmt::Debug for Contact {
         formatter.field("contact_evaluations", &self.contact_evaluations);
         formatter.field("task_template_info", &self.task_template_info);
         formatter.field("contact_details", &self.contact_details);
+        formatter.field("outbound_strategy", &self.outbound_strategy);
         formatter.field("attributes", &self.attributes);
         formatter.finish()
     }
@@ -379,6 +386,7 @@ pub struct ContactBuilder {
     pub(crate) contact_evaluations: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ContactEvaluation>>,
     pub(crate) task_template_info: ::std::option::Option<crate::types::TaskTemplateInfoV2>,
     pub(crate) contact_details: ::std::option::Option<crate::types::ContactDetails>,
+    pub(crate) outbound_strategy: ::std::option::Option<crate::types::OutboundStrategy>,
     pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ContactBuilder {
@@ -951,17 +959,17 @@ impl ContactBuilder {
     pub fn get_recordings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecordingInfo>> {
         &self.recordings
     }
-    /// <p>The disconnect reason for the contact.</p>
+    /// <p>The disconnect reason for the contact. For a list and description of all the possible disconnect reasons by channel, see DisconnectReason under <a href="https://docs.aws.amazon.com/connect/latest/adminguide/ctr-data-model.html#ctr-ContactTraceRecord">ContactTraceRecord</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
     pub fn disconnect_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.disconnect_reason = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The disconnect reason for the contact.</p>
+    /// <p>The disconnect reason for the contact. For a list and description of all the possible disconnect reasons by channel, see DisconnectReason under <a href="https://docs.aws.amazon.com/connect/latest/adminguide/ctr-data-model.html#ctr-ContactTraceRecord">ContactTraceRecord</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
     pub fn set_disconnect_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.disconnect_reason = input;
         self
     }
-    /// <p>The disconnect reason for the contact.</p>
+    /// <p>The disconnect reason for the contact. For a list and description of all the possible disconnect reasons by channel, see DisconnectReason under <a href="https://docs.aws.amazon.com/connect/latest/adminguide/ctr-data-model.html#ctr-ContactTraceRecord">ContactTraceRecord</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
     pub fn get_disconnect_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.disconnect_reason
     }
@@ -1017,6 +1025,20 @@ impl ContactBuilder {
     /// <p>A map of string key/value pairs that contain user-defined attributes which are lightly typed within the contact. This object is used only for task contacts.</p>
     pub fn get_contact_details(&self) -> &::std::option::Option<crate::types::ContactDetails> {
         &self.contact_details
+    }
+    /// <p>Information about the outbound strategy.</p>
+    pub fn outbound_strategy(mut self, input: crate::types::OutboundStrategy) -> Self {
+        self.outbound_strategy = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Information about the outbound strategy.</p>
+    pub fn set_outbound_strategy(mut self, input: ::std::option::Option<crate::types::OutboundStrategy>) -> Self {
+        self.outbound_strategy = input;
+        self
+    }
+    /// <p>Information about the outbound strategy.</p>
+    pub fn get_outbound_strategy(&self) -> &::std::option::Option<crate::types::OutboundStrategy> {
+        &self.outbound_strategy
     }
     /// Adds a key-value pair to `attributes`.
     ///
@@ -1084,6 +1106,7 @@ impl ContactBuilder {
             contact_evaluations: self.contact_evaluations,
             task_template_info: self.task_template_info,
             contact_details: self.contact_details,
+            outbound_strategy: self.outbound_strategy,
             attributes: self.attributes,
         }
     }
@@ -1134,6 +1157,7 @@ impl ::std::fmt::Debug for ContactBuilder {
         formatter.field("contact_evaluations", &self.contact_evaluations);
         formatter.field("task_template_info", &self.task_template_info);
         formatter.field("contact_details", &self.contact_details);
+        formatter.field("outbound_strategy", &self.outbound_strategy);
         formatter.field("attributes", &self.attributes);
         formatter.finish()
     }

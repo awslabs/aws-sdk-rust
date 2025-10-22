@@ -16,6 +16,7 @@
 ///     FailureReasonCode::InternalError => { /* ... */ },
 ///     FailureReasonCode::InvalidAttributeKey => { /* ... */ },
 ///     FailureReasonCode::InvalidCustomerEndpoint => { /* ... */ },
+///     FailureReasonCode::InvalidOutboundStrategy => { /* ... */ },
 ///     FailureReasonCode::InvalidQueue => { /* ... */ },
 ///     FailureReasonCode::InvalidSystemEndpoint => { /* ... */ },
 ///     FailureReasonCode::MissingCampaign => { /* ... */ },
@@ -59,6 +60,8 @@ pub enum FailureReasonCode {
     #[allow(missing_docs)] // documentation missing in model
     InvalidCustomerEndpoint,
     #[allow(missing_docs)] // documentation missing in model
+    InvalidOutboundStrategy,
+    #[allow(missing_docs)] // documentation missing in model
     InvalidQueue,
     #[allow(missing_docs)] // documentation missing in model
     InvalidSystemEndpoint,
@@ -81,6 +84,7 @@ impl ::std::convert::From<&str> for FailureReasonCode {
             "INTERNAL_ERROR" => FailureReasonCode::InternalError,
             "INVALID_ATTRIBUTE_KEY" => FailureReasonCode::InvalidAttributeKey,
             "INVALID_CUSTOMER_ENDPOINT" => FailureReasonCode::InvalidCustomerEndpoint,
+            "INVALID_OUTBOUND_STRATEGY" => FailureReasonCode::InvalidOutboundStrategy,
             "INVALID_QUEUE" => FailureReasonCode::InvalidQueue,
             "INVALID_SYSTEM_ENDPOINT" => FailureReasonCode::InvalidSystemEndpoint,
             "MISSING_CAMPAIGN" => FailureReasonCode::MissingCampaign,
@@ -106,6 +110,7 @@ impl FailureReasonCode {
             FailureReasonCode::InternalError => "INTERNAL_ERROR",
             FailureReasonCode::InvalidAttributeKey => "INVALID_ATTRIBUTE_KEY",
             FailureReasonCode::InvalidCustomerEndpoint => "INVALID_CUSTOMER_ENDPOINT",
+            FailureReasonCode::InvalidOutboundStrategy => "INVALID_OUTBOUND_STRATEGY",
             FailureReasonCode::InvalidQueue => "INVALID_QUEUE",
             FailureReasonCode::InvalidSystemEndpoint => "INVALID_SYSTEM_ENDPOINT",
             FailureReasonCode::MissingCampaign => "MISSING_CAMPAIGN",
@@ -122,6 +127,7 @@ impl FailureReasonCode {
             "INTERNAL_ERROR",
             "INVALID_ATTRIBUTE_KEY",
             "INVALID_CUSTOMER_ENDPOINT",
+            "INVALID_OUTBOUND_STRATEGY",
             "INVALID_QUEUE",
             "INVALID_SYSTEM_ENDPOINT",
             "MISSING_CAMPAIGN",
@@ -155,6 +161,7 @@ impl ::std::fmt::Display for FailureReasonCode {
             FailureReasonCode::InternalError => write!(f, "INTERNAL_ERROR"),
             FailureReasonCode::InvalidAttributeKey => write!(f, "INVALID_ATTRIBUTE_KEY"),
             FailureReasonCode::InvalidCustomerEndpoint => write!(f, "INVALID_CUSTOMER_ENDPOINT"),
+            FailureReasonCode::InvalidOutboundStrategy => write!(f, "INVALID_OUTBOUND_STRATEGY"),
             FailureReasonCode::InvalidQueue => write!(f, "INVALID_QUEUE"),
             FailureReasonCode::InvalidSystemEndpoint => write!(f, "INVALID_SYSTEM_ENDPOINT"),
             FailureReasonCode::MissingCampaign => write!(f, "MISSING_CAMPAIGN"),

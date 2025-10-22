@@ -49,6 +49,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "AliasConfigurations" => {
+                            builder = builder.set_alias_configurations(
+                                crate::protocol_serde::shape_alias_configuration_list::de_alias_configuration_list(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

@@ -403,6 +403,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | Private CA Connector for SCEP | [aws-sdk-pcaconnectorscep](https://crates.io/crates/aws-sdk-pcaconnectorscep) ([docs](https://docs.rs/aws-sdk-pcaconnectorscep)) |
 | QApps | [aws-sdk-qapps](https://crates.io/crates/aws-sdk-qapps) ([docs](https://docs.rs/aws-sdk-qapps)) |
 | QBusiness | [aws-sdk-qbusiness](https://crates.io/crates/aws-sdk-qbusiness) ([docs](https://docs.rs/aws-sdk-qbusiness)) |
+| RTBFabric | [aws-sdk-rtbfabric](https://crates.io/crates/aws-sdk-rtbfabric) ([docs](https://docs.rs/aws-sdk-rtbfabric)) |
 | Redshift Data API Service | [aws-sdk-redshiftdata](https://crates.io/crates/aws-sdk-redshiftdata) ([docs](https://docs.rs/aws-sdk-redshiftdata)) |
 | Redshift Serverless | [aws-sdk-redshiftserverless](https://crates.io/crates/aws-sdk-redshiftserverless) ([docs](https://docs.rs/aws-sdk-redshiftserverless)) |
 | Route 53 Profiles | [aws-sdk-route53profiles](https://crates.io/crates/aws-sdk-route53profiles) ([docs](https://docs.rs/aws-sdk-route53profiles)) |

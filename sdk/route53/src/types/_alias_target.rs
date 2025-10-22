@@ -232,10 +232,22 @@ pub struct AliasTarget {
     /// </note>
     /// </dd>
     /// <dt>
+    /// API Gateway APIs
+    /// </dt>
+    /// <dd>
+    /// <p>There are no special requirements for setting <code>EvaluateTargetHealth</code> to <code>true</code> when the alias target is an API Gateway API. However, because API Gateway is highly available by design, <code>EvaluateTargetHealth</code> provides no operational benefit and <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 health checks</a> are recommended instead for failover scenarios.</p>
+    /// </dd>
+    /// <dt>
     /// S3 buckets
     /// </dt>
     /// <dd>
-    /// <p>There are no special requirements for setting <code>EvaluateTargetHealth</code> to <code>true</code> when the alias target is an S3 bucket.</p>
+    /// <p>There are no special requirements for setting <code>EvaluateTargetHealth</code> to <code>true</code> when the alias target is an S3 bucket. However, because S3 buckets are highly available by design, <code>EvaluateTargetHealth</code> provides no operational benefit and <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 health checks</a> are recommended instead for failover scenarios.</p>
+    /// </dd>
+    /// <dt>
+    /// VPC interface endpoints
+    /// </dt>
+    /// <dd>
+    /// <p>There are no special requirements for setting <code>EvaluateTargetHealth</code> to <code>true</code> when the alias target is a VPC interface endpoint. However, because VPC interface endpoints are highly available by design, <code>EvaluateTargetHealth</code> provides no operational benefit and <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 health checks</a> are recommended instead for failover scenarios.</p>
     /// </dd>
     /// <dt>
     /// Other records in the same hosted zone
@@ -243,7 +255,9 @@ pub struct AliasTarget {
     /// <dd>
     /// <p>If the Amazon Web Services resource that you specify in <code>DNSName</code> is a record or a group of records (for example, a group of weighted records) but is not another alias record, we recommend that you associate a health check with all of the records in the alias target. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-complex-configs.html#dns-failover-complex-configs-hc-omitting">What Happens When You Omit Health Checks?</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
     /// </dd>
-    /// </dl>
+    /// </dl><note>
+    /// <p>While <code>EvaluateTargetHealth</code> can be set to <code>true</code> for highly available Amazon Web Services services (such as S3 buckets, VPC interface endpoints, and API Gateway), these services are designed for high availability and rarely experience outages that would be detected by this feature. For failover scenarios with these services, consider using <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 health checks</a> that monitor your application's ability to access the service instead.</p>
+    /// </note>
     /// <p>For more information and examples, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Amazon Route 53 Health Checks and DNS Failover</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
     pub evaluate_target_health: bool,
 }
@@ -477,10 +491,22 @@ impl AliasTarget {
     /// </note>
     /// </dd>
     /// <dt>
+    /// API Gateway APIs
+    /// </dt>
+    /// <dd>
+    /// <p>There are no special requirements for setting <code>EvaluateTargetHealth</code> to <code>true</code> when the alias target is an API Gateway API. However, because API Gateway is highly available by design, <code>EvaluateTargetHealth</code> provides no operational benefit and <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 health checks</a> are recommended instead for failover scenarios.</p>
+    /// </dd>
+    /// <dt>
     /// S3 buckets
     /// </dt>
     /// <dd>
-    /// <p>There are no special requirements for setting <code>EvaluateTargetHealth</code> to <code>true</code> when the alias target is an S3 bucket.</p>
+    /// <p>There are no special requirements for setting <code>EvaluateTargetHealth</code> to <code>true</code> when the alias target is an S3 bucket. However, because S3 buckets are highly available by design, <code>EvaluateTargetHealth</code> provides no operational benefit and <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 health checks</a> are recommended instead for failover scenarios.</p>
+    /// </dd>
+    /// <dt>
+    /// VPC interface endpoints
+    /// </dt>
+    /// <dd>
+    /// <p>There are no special requirements for setting <code>EvaluateTargetHealth</code> to <code>true</code> when the alias target is a VPC interface endpoint. However, because VPC interface endpoints are highly available by design, <code>EvaluateTargetHealth</code> provides no operational benefit and <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 health checks</a> are recommended instead for failover scenarios.</p>
     /// </dd>
     /// <dt>
     /// Other records in the same hosted zone
@@ -488,7 +514,9 @@ impl AliasTarget {
     /// <dd>
     /// <p>If the Amazon Web Services resource that you specify in <code>DNSName</code> is a record or a group of records (for example, a group of weighted records) but is not another alias record, we recommend that you associate a health check with all of the records in the alias target. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-complex-configs.html#dns-failover-complex-configs-hc-omitting">What Happens When You Omit Health Checks?</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
     /// </dd>
-    /// </dl>
+    /// </dl><note>
+    /// <p>While <code>EvaluateTargetHealth</code> can be set to <code>true</code> for highly available Amazon Web Services services (such as S3 buckets, VPC interface endpoints, and API Gateway), these services are designed for high availability and rarely experience outages that would be detected by this feature. For failover scenarios with these services, consider using <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 health checks</a> that monitor your application's ability to access the service instead.</p>
+    /// </note>
     /// <p>For more information and examples, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Amazon Route 53 Health Checks and DNS Failover</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
     pub fn evaluate_target_health(&self) -> bool {
         self.evaluate_target_health
@@ -1123,10 +1151,22 @@ impl AliasTargetBuilder {
     /// </note>
     /// </dd>
     /// <dt>
+    /// API Gateway APIs
+    /// </dt>
+    /// <dd>
+    /// <p>There are no special requirements for setting <code>EvaluateTargetHealth</code> to <code>true</code> when the alias target is an API Gateway API. However, because API Gateway is highly available by design, <code>EvaluateTargetHealth</code> provides no operational benefit and <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 health checks</a> are recommended instead for failover scenarios.</p>
+    /// </dd>
+    /// <dt>
     /// S3 buckets
     /// </dt>
     /// <dd>
-    /// <p>There are no special requirements for setting <code>EvaluateTargetHealth</code> to <code>true</code> when the alias target is an S3 bucket.</p>
+    /// <p>There are no special requirements for setting <code>EvaluateTargetHealth</code> to <code>true</code> when the alias target is an S3 bucket. However, because S3 buckets are highly available by design, <code>EvaluateTargetHealth</code> provides no operational benefit and <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 health checks</a> are recommended instead for failover scenarios.</p>
+    /// </dd>
+    /// <dt>
+    /// VPC interface endpoints
+    /// </dt>
+    /// <dd>
+    /// <p>There are no special requirements for setting <code>EvaluateTargetHealth</code> to <code>true</code> when the alias target is a VPC interface endpoint. However, because VPC interface endpoints are highly available by design, <code>EvaluateTargetHealth</code> provides no operational benefit and <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 health checks</a> are recommended instead for failover scenarios.</p>
     /// </dd>
     /// <dt>
     /// Other records in the same hosted zone
@@ -1134,7 +1174,9 @@ impl AliasTargetBuilder {
     /// <dd>
     /// <p>If the Amazon Web Services resource that you specify in <code>DNSName</code> is a record or a group of records (for example, a group of weighted records) but is not another alias record, we recommend that you associate a health check with all of the records in the alias target. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-complex-configs.html#dns-failover-complex-configs-hc-omitting">What Happens When You Omit Health Checks?</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
     /// </dd>
-    /// </dl>
+    /// </dl><note>
+    /// <p>While <code>EvaluateTargetHealth</code> can be set to <code>true</code> for highly available Amazon Web Services services (such as S3 buckets, VPC interface endpoints, and API Gateway), these services are designed for high availability and rarely experience outages that would be detected by this feature. For failover scenarios with these services, consider using <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 health checks</a> that monitor your application's ability to access the service instead.</p>
+    /// </note>
     /// <p>For more information and examples, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Amazon Route 53 Health Checks and DNS Failover</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
     /// This field is required.
     pub fn evaluate_target_health(mut self, input: bool) -> Self {
@@ -1178,10 +1220,22 @@ impl AliasTargetBuilder {
     /// </note>
     /// </dd>
     /// <dt>
+    /// API Gateway APIs
+    /// </dt>
+    /// <dd>
+    /// <p>There are no special requirements for setting <code>EvaluateTargetHealth</code> to <code>true</code> when the alias target is an API Gateway API. However, because API Gateway is highly available by design, <code>EvaluateTargetHealth</code> provides no operational benefit and <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 health checks</a> are recommended instead for failover scenarios.</p>
+    /// </dd>
+    /// <dt>
     /// S3 buckets
     /// </dt>
     /// <dd>
-    /// <p>There are no special requirements for setting <code>EvaluateTargetHealth</code> to <code>true</code> when the alias target is an S3 bucket.</p>
+    /// <p>There are no special requirements for setting <code>EvaluateTargetHealth</code> to <code>true</code> when the alias target is an S3 bucket. However, because S3 buckets are highly available by design, <code>EvaluateTargetHealth</code> provides no operational benefit and <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 health checks</a> are recommended instead for failover scenarios.</p>
+    /// </dd>
+    /// <dt>
+    /// VPC interface endpoints
+    /// </dt>
+    /// <dd>
+    /// <p>There are no special requirements for setting <code>EvaluateTargetHealth</code> to <code>true</code> when the alias target is a VPC interface endpoint. However, because VPC interface endpoints are highly available by design, <code>EvaluateTargetHealth</code> provides no operational benefit and <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 health checks</a> are recommended instead for failover scenarios.</p>
     /// </dd>
     /// <dt>
     /// Other records in the same hosted zone
@@ -1189,7 +1243,9 @@ impl AliasTargetBuilder {
     /// <dd>
     /// <p>If the Amazon Web Services resource that you specify in <code>DNSName</code> is a record or a group of records (for example, a group of weighted records) but is not another alias record, we recommend that you associate a health check with all of the records in the alias target. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-complex-configs.html#dns-failover-complex-configs-hc-omitting">What Happens When You Omit Health Checks?</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
     /// </dd>
-    /// </dl>
+    /// </dl><note>
+    /// <p>While <code>EvaluateTargetHealth</code> can be set to <code>true</code> for highly available Amazon Web Services services (such as S3 buckets, VPC interface endpoints, and API Gateway), these services are designed for high availability and rarely experience outages that would be detected by this feature. For failover scenarios with these services, consider using <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 health checks</a> that monitor your application's ability to access the service instead.</p>
+    /// </note>
     /// <p>For more information and examples, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Amazon Route 53 Health Checks and DNS Failover</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
     pub fn set_evaluate_target_health(mut self, input: ::std::option::Option<bool>) -> Self {
         self.evaluate_target_health = input;
@@ -1232,10 +1288,22 @@ impl AliasTargetBuilder {
     /// </note>
     /// </dd>
     /// <dt>
+    /// API Gateway APIs
+    /// </dt>
+    /// <dd>
+    /// <p>There are no special requirements for setting <code>EvaluateTargetHealth</code> to <code>true</code> when the alias target is an API Gateway API. However, because API Gateway is highly available by design, <code>EvaluateTargetHealth</code> provides no operational benefit and <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 health checks</a> are recommended instead for failover scenarios.</p>
+    /// </dd>
+    /// <dt>
     /// S3 buckets
     /// </dt>
     /// <dd>
-    /// <p>There are no special requirements for setting <code>EvaluateTargetHealth</code> to <code>true</code> when the alias target is an S3 bucket.</p>
+    /// <p>There are no special requirements for setting <code>EvaluateTargetHealth</code> to <code>true</code> when the alias target is an S3 bucket. However, because S3 buckets are highly available by design, <code>EvaluateTargetHealth</code> provides no operational benefit and <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 health checks</a> are recommended instead for failover scenarios.</p>
+    /// </dd>
+    /// <dt>
+    /// VPC interface endpoints
+    /// </dt>
+    /// <dd>
+    /// <p>There are no special requirements for setting <code>EvaluateTargetHealth</code> to <code>true</code> when the alias target is a VPC interface endpoint. However, because VPC interface endpoints are highly available by design, <code>EvaluateTargetHealth</code> provides no operational benefit and <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 health checks</a> are recommended instead for failover scenarios.</p>
     /// </dd>
     /// <dt>
     /// Other records in the same hosted zone
@@ -1243,7 +1311,9 @@ impl AliasTargetBuilder {
     /// <dd>
     /// <p>If the Amazon Web Services resource that you specify in <code>DNSName</code> is a record or a group of records (for example, a group of weighted records) but is not another alias record, we recommend that you associate a health check with all of the records in the alias target. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-complex-configs.html#dns-failover-complex-configs-hc-omitting">What Happens When You Omit Health Checks?</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
     /// </dd>
-    /// </dl>
+    /// </dl><note>
+    /// <p>While <code>EvaluateTargetHealth</code> can be set to <code>true</code> for highly available Amazon Web Services services (such as S3 buckets, VPC interface endpoints, and API Gateway), these services are designed for high availability and rarely experience outages that would be detected by this feature. For failover scenarios with these services, consider using <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 health checks</a> that monitor your application's ability to access the service instead.</p>
+    /// </note>
     /// <p>For more information and examples, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Amazon Route 53 Health Checks and DNS Failover</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
     pub fn get_evaluate_target_health(&self) -> &::std::option::Option<bool> {
         &self.evaluate_target_health

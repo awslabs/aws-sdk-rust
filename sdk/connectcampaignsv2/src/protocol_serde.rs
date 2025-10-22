@@ -285,6 +285,8 @@ pub(crate) mod shape_object_type_names_map;
 
 pub(crate) mod shape_predictive_config;
 
+pub(crate) mod shape_preview_config;
+
 pub(crate) mod shape_progressive_config;
 
 pub(crate) mod shape_restricted_period;
@@ -294,5 +296,9 @@ pub(crate) mod shape_time_range;
 pub(crate) mod shape_daily_hours;
 
 pub(crate) mod shape_restricted_period_list;
+
+pub(crate) mod shape_timeout_config;
+
+pub(crate) mod shape_agent_actions;
 
 pub(crate) mod shape_time_range_list;

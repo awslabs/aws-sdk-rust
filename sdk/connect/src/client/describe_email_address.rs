@@ -13,6 +13,7 @@ impl super::Client {
     ///   - [`description(Option<String>)`](crate::operation::describe_email_address::DescribeEmailAddressOutput::description): <p>The description of the email address.</p>
     ///   - [`create_timestamp(Option<String>)`](crate::operation::describe_email_address::DescribeEmailAddressOutput::create_timestamp): <p>The email address creation timestamp in ISO 8601 Datetime.</p>
     ///   - [`modified_timestamp(Option<String>)`](crate::operation::describe_email_address::DescribeEmailAddressOutput::modified_timestamp): <p>The email address last modification timestamp in ISO 8601 Datetime.</p>
+    ///   - [`alias_configurations(Option<Vec::<AliasConfiguration>>)`](crate::operation::describe_email_address::DescribeEmailAddressOutput::alias_configurations): <p>A list of alias configurations associated with this email address. Contains details about email addresses that forward to this primary email address. The list can contain at most one alias configuration per email address.</p>
     ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::describe_email_address::DescribeEmailAddressOutput::tags): <p>The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
     /// - On failure, responds with [`SdkError<DescribeEmailAddressError>`](crate::operation::describe_email_address::DescribeEmailAddressError)
     pub fn describe_email_address(&self) -> crate::operation::describe_email_address::builders::DescribeEmailAddressFluentBuilder {

@@ -37,5 +37,11 @@ pub fn ser_contact_data_request(
         crate::protocol_serde::shape_campaign::ser_campaign(&mut object_12, var_11)?;
         object_12.finish();
     }
+    if let Some(var_13) = &input.outbound_strategy {
+        #[allow(unused_mut)]
+        let mut object_14 = object.key("OutboundStrategy").start_object();
+        crate::protocol_serde::shape_outbound_strategy::ser_outbound_strategy(&mut object_14, var_13)?;
+        object_14.finish();
+    }
     Ok(())
 }

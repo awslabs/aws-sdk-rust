@@ -238,6 +238,9 @@ where
                         "ContactDetails" => {
                             builder = builder.set_contact_details(crate::protocol_serde::shape_contact_details::de_contact_details(tokens)?);
                         }
+                        "OutboundStrategy" => {
+                            builder = builder.set_outbound_strategy(crate::protocol_serde::shape_outbound_strategy::de_outbound_strategy(tokens)?);
+                        }
                         "Attributes" => {
                             builder = builder.set_attributes(crate::protocol_serde::shape_attributes::de_attributes(tokens)?);
                         }

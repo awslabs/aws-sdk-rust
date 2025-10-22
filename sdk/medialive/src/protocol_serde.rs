@@ -153,6 +153,8 @@ pub(crate) mod shape_get_event_bridge_rule_template_group;
 
 pub(crate) mod shape_get_signal_map;
 
+pub(crate) mod shape_list_alerts;
+
 pub(crate) mod shape_list_channel_placement_groups;
 
 pub(crate) mod shape_list_channels;
@@ -160,6 +162,8 @@ pub(crate) mod shape_list_channels;
 pub(crate) mod shape_list_cloud_watch_alarm_template_groups;
 
 pub(crate) mod shape_list_cloud_watch_alarm_templates;
+
+pub(crate) mod shape_list_cluster_alerts;
 
 pub(crate) mod shape_list_clusters;
 
@@ -174,6 +178,8 @@ pub(crate) mod shape_list_input_devices;
 pub(crate) mod shape_list_input_security_groups;
 
 pub(crate) mod shape_list_inputs;
+
+pub(crate) mod shape_list_multiplex_alerts;
 
 pub(crate) mod shape_list_multiplex_programs;
 
@@ -459,6 +465,8 @@ pub(crate) mod shape_list_of_batch_failed_result_model;
 
 pub(crate) mod shape_list_of_batch_successful_result_model;
 
+pub(crate) mod shape_list_of_channel_alert;
+
 pub(crate) mod shape_list_of_channel_egress_endpoint;
 
 pub(crate) mod shape_list_of_channel_engine_version_response;
@@ -468,6 +476,8 @@ pub(crate) mod shape_list_of_channel_summary;
 pub(crate) mod shape_list_of_cloud_watch_alarm_template_group_summary;
 
 pub(crate) mod shape_list_of_cloud_watch_alarm_template_summary;
+
+pub(crate) mod shape_list_of_cluster_alert;
 
 pub(crate) mod shape_list_of_describe_channel_placement_group_summary;
 
@@ -502,6 +512,8 @@ pub(crate) mod shape_list_of_input_whitelist_rule;
 pub(crate) mod shape_list_of_ip_pool;
 
 pub(crate) mod shape_list_of_media_connect_flow;
+
+pub(crate) mod shape_list_of_multiplex_alert;
 
 pub(crate) mod shape_list_of_multiplex_output_destination;
 
@@ -621,6 +633,8 @@ pub(crate) mod shape_blackout_slate;
 
 pub(crate) mod shape_caption_description;
 
+pub(crate) mod shape_channel_alert;
+
 pub(crate) mod shape_channel_egress_endpoint;
 
 pub(crate) mod shape_channel_summary;
@@ -628,6 +642,8 @@ pub(crate) mod shape_channel_summary;
 pub(crate) mod shape_cloud_watch_alarm_template_group_summary;
 
 pub(crate) mod shape_cloud_watch_alarm_template_summary;
+
+pub(crate) mod shape_cluster_alert;
 
 pub(crate) mod shape_color_correction_settings;
 
@@ -702,6 +718,8 @@ pub(crate) mod shape_motion_graphics_configuration;
 pub(crate) mod shape_multicast_source_create_request;
 
 pub(crate) mod shape_multicast_source_update_request;
+
+pub(crate) mod shape_multiplex_alert;
 
 pub(crate) mod shape_multiplex_output_destination;
 

@@ -1153,6 +1153,10 @@ pub use crate::types::_multiplex_summary::MultiplexSummary;
 
 pub use crate::types::_multiplex_settings_summary::MultiplexSettingsSummary;
 
+pub use crate::types::_multiplex_alert::MultiplexAlert;
+
+pub use crate::types::_multiplex_alert_state::MultiplexAlertState;
+
 pub use crate::types::_transferring_input_device_summary::TransferringInputDeviceSummary;
 
 pub use crate::types::_input_device_transfer_type::InputDeviceTransferType;
@@ -1165,6 +1169,10 @@ pub use crate::types::_event_bridge_rule_template_group_summary::EventBridgeRule
 
 pub use crate::types::_describe_cluster_summary::DescribeClusterSummary;
 
+pub use crate::types::_cluster_alert::ClusterAlert;
+
+pub use crate::types::_cluster_alert_state::ClusterAlertState;
+
 pub use crate::types::_cloud_watch_alarm_template_summary::CloudWatchAlarmTemplateSummary;
 
 pub use crate::types::_cloud_watch_alarm_template_group_summary::CloudWatchAlarmTemplateGroupSummary;
@@ -1172,6 +1180,10 @@ pub use crate::types::_cloud_watch_alarm_template_group_summary::CloudWatchAlarm
 pub use crate::types::_channel_summary::ChannelSummary;
 
 pub use crate::types::_describe_channel_placement_group_summary::DescribeChannelPlacementGroupSummary;
+
+pub use crate::types::_channel_alert::ChannelAlert;
+
+pub use crate::types::_channel_alert_state::ChannelAlertState;
 
 pub use crate::types::_thumbnail_detail::ThumbnailDetail;
 
@@ -1487,6 +1499,10 @@ mod _cdi_input_specification;
 
 mod _channel;
 
+mod _channel_alert;
+
+mod _channel_alert_state;
+
 mod _channel_class;
 
 mod _channel_egress_endpoint;
@@ -1514,6 +1530,10 @@ mod _cloud_watch_alarm_template_summary;
 mod _cloud_watch_alarm_template_target_resource_type;
 
 mod _cloud_watch_alarm_template_treat_missing_data;
+
+mod _cluster_alert;
+
+mod _cluster_alert_state;
 
 mod _cluster_network_settings;
 
@@ -2198,6 +2218,10 @@ mod _multicast_source_create_request;
 mod _multicast_source_update_request;
 
 mod _multiplex;
+
+mod _multiplex_alert;
+
+mod _multiplex_alert_state;
 
 mod _multiplex_container_settings;
 

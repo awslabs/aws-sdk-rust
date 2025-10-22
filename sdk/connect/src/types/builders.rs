@@ -193,6 +193,16 @@ pub use crate::types::_allowed_capabilities::AllowedCapabilitiesBuilder;
 
 pub use crate::types::_participant_capabilities::ParticipantCapabilitiesBuilder;
 
+pub use crate::types::_outbound_strategy::OutboundStrategyBuilder;
+
+pub use crate::types::_outbound_strategy_config::OutboundStrategyConfigBuilder;
+
+pub use crate::types::_agent_first::AgentFirstBuilder;
+
+pub use crate::types::_preview::PreviewBuilder;
+
+pub use crate::types::_post_accept_timeout_config::PostAcceptTimeoutConfigBuilder;
+
 pub use crate::types::_answer_machine_detection_config::AnswerMachineDetectionConfigBuilder;
 
 pub use crate::types::_outbound_email_content::OutboundEmailContentBuilder;
@@ -328,6 +338,8 @@ pub use crate::types::_hours_of_operation_override_search_criteria::HoursOfOpera
 pub use crate::types::_date_condition::DateConditionBuilder;
 
 pub use crate::types::_email_address_metadata::EmailAddressMetadataBuilder;
+
+pub use crate::types::_alias_configuration::AliasConfigurationBuilder;
 
 pub use crate::types::_email_address_search_filter::EmailAddressSearchFilterBuilder;
 

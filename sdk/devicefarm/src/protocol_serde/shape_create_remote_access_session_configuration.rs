@@ -3,23 +3,32 @@ pub fn ser_create_remote_access_session_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CreateRemoteAccessSessionConfiguration,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.billing_method {
-        object.key("billingMethod").string(var_1.as_str());
-    }
-    if let Some(var_2) = &input.vpce_configuration_arns {
-        let mut array_3 = object.key("vpceConfigurationArns").start_array();
-        for item_4 in var_2 {
+    if let Some(var_1) = &input.auxiliary_apps {
+        let mut array_2 = object.key("auxiliaryApps").start_array();
+        for item_3 in var_1 {
             {
-                array_3.value().string(item_4.as_str());
+                array_2.value().string(item_3.as_str());
             }
         }
-        array_3.finish();
+        array_2.finish();
     }
-    if let Some(var_5) = &input.device_proxy {
+    if let Some(var_4) = &input.billing_method {
+        object.key("billingMethod").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.vpce_configuration_arns {
+        let mut array_6 = object.key("vpceConfigurationArns").start_array();
+        for item_7 in var_5 {
+            {
+                array_6.value().string(item_7.as_str());
+            }
+        }
+        array_6.finish();
+    }
+    if let Some(var_8) = &input.device_proxy {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("deviceProxy").start_object();
-        crate::protocol_serde::shape_device_proxy::ser_device_proxy(&mut object_6, var_5)?;
-        object_6.finish();
+        let mut object_9 = object.key("deviceProxy").start_object();
+        crate::protocol_serde::shape_device_proxy::ser_device_proxy(&mut object_9, var_8)?;
+        object_9.finish();
     }
     Ok(())
 }

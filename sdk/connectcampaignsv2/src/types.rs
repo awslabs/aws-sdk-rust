@@ -59,6 +59,12 @@ pub use crate::types::_answer_machine_detection_config::AnswerMachineDetectionCo
 
 pub use crate::types::_telephony_outbound_mode::TelephonyOutboundMode;
 
+pub use crate::types::_preview_config::PreviewConfig;
+
+pub use crate::types::_agent_action::AgentAction;
+
+pub use crate::types::_timeout_config::TimeoutConfig;
+
 pub use crate::types::_predictive_config::PredictiveConfig;
 
 pub use crate::types::_progressive_config::ProgressiveConfig;
@@ -144,6 +150,8 @@ pub use crate::types::_campaign_deletion_policy::CampaignDeletionPolicy;
 pub use crate::types::_communication_time_config_type::CommunicationTimeConfigType;
 
 pub use crate::types::_communication_limits_config_type::CommunicationLimitsConfigType;
+
+mod _agent_action;
 
 mod _agentless_config;
 
@@ -245,6 +253,8 @@ mod _outbound_request;
 
 mod _predictive_config;
 
+mod _preview_config;
+
 mod _profile_outbound_request;
 
 mod _profile_outbound_request_failure_code;
@@ -290,6 +300,8 @@ mod _telephony_outbound_mode;
 mod _time_range;
 
 mod _time_window;
+
+mod _timeout_config;
 
 /// Builders
 pub mod builders;

@@ -525,6 +525,8 @@ pub use crate::types::_multiplex_summary::MultiplexSummaryBuilder;
 
 pub use crate::types::_multiplex_settings_summary::MultiplexSettingsSummaryBuilder;
 
+pub use crate::types::_multiplex_alert::MultiplexAlertBuilder;
+
 pub use crate::types::_transferring_input_device_summary::TransferringInputDeviceSummaryBuilder;
 
 pub use crate::types::_input_device_summary::InputDeviceSummaryBuilder;
@@ -535,6 +537,8 @@ pub use crate::types::_event_bridge_rule_template_group_summary::EventBridgeRule
 
 pub use crate::types::_describe_cluster_summary::DescribeClusterSummaryBuilder;
 
+pub use crate::types::_cluster_alert::ClusterAlertBuilder;
+
 pub use crate::types::_cloud_watch_alarm_template_summary::CloudWatchAlarmTemplateSummaryBuilder;
 
 pub use crate::types::_cloud_watch_alarm_template_group_summary::CloudWatchAlarmTemplateGroupSummaryBuilder;
@@ -542,6 +546,8 @@ pub use crate::types::_cloud_watch_alarm_template_group_summary::CloudWatchAlarm
 pub use crate::types::_channel_summary::ChannelSummaryBuilder;
 
 pub use crate::types::_describe_channel_placement_group_summary::DescribeChannelPlacementGroupSummaryBuilder;
+
+pub use crate::types::_channel_alert::ChannelAlertBuilder;
 
 pub use crate::types::_thumbnail_detail::ThumbnailDetailBuilder;
 

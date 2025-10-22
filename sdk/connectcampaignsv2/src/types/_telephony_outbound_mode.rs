@@ -8,6 +8,8 @@ pub enum TelephonyOutboundMode {
     Agentless(crate::types::AgentlessConfig),
     /// Predictive config
     Predictive(crate::types::PredictiveConfig),
+    /// Preview config
+    Preview(crate::types::PreviewConfig),
     /// Progressive config
     Progressive(crate::types::ProgressiveConfig),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
@@ -46,6 +48,19 @@ impl TelephonyOutboundMode {
     /// Returns true if this is a [`Predictive`](crate::types::TelephonyOutboundMode::Predictive).
     pub fn is_predictive(&self) -> bool {
         self.as_predictive().is_ok()
+    }
+    /// Tries to convert the enum instance into [`Preview`](crate::types::TelephonyOutboundMode::Preview), extracting the inner [`PreviewConfig`](crate::types::PreviewConfig).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_preview(&self) -> ::std::result::Result<&crate::types::PreviewConfig, &Self> {
+        if let TelephonyOutboundMode::Preview(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`Preview`](crate::types::TelephonyOutboundMode::Preview).
+    pub fn is_preview(&self) -> bool {
+        self.as_preview().is_ok()
     }
     /// Tries to convert the enum instance into [`Progressive`](crate::types::TelephonyOutboundMode::Progressive), extracting the inner [`ProgressiveConfig`](crate::types::ProgressiveConfig).
     /// Returns `Err(&Self)` if it can't be converted.

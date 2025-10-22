@@ -22,6 +22,12 @@ pub fn ser_telephony_outbound_mode(
             crate::protocol_serde::shape_agentless_config::ser_agentless_config(&mut object_3, inner)?;
             object_3.finish();
         }
+        crate::types::TelephonyOutboundMode::Preview(inner) => {
+            #[allow(unused_mut)]
+            let mut object_4 = object_4.key("preview").start_object();
+            crate::protocol_serde::shape_preview_config::ser_preview_config(&mut object_4, inner)?;
+            object_4.finish();
+        }
         crate::types::TelephonyOutboundMode::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "TelephonyOutboundMode",
@@ -74,6 +80,11 @@ where
                         "agentless" => Some(crate::types::TelephonyOutboundMode::Agentless(
                             crate::protocol_serde::shape_agentless_config::de_agentless_config(tokens)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'agentless' cannot be null")
+                            })?,
+                        )),
+                        "preview" => Some(crate::types::TelephonyOutboundMode::Preview(
+                            crate::protocol_serde::shape_preview_config::de_preview_config(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'preview' cannot be null")
                             })?,
                         )),
                         _ => {
