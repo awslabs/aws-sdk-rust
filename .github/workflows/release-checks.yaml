@@ -6,6 +6,9 @@ on:
 
 name: Release Configuration Checks
 
+permissions:
+  contents: read
+
 jobs:
   check-config:
     runs-on: ubuntu-latest

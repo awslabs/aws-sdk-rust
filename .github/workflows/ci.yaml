@@ -13,6 +13,9 @@ env:
   RUST_VERSIONS: "stable"
   RUST_VERSION: "stable"
 
+permissions:
+  contents: read
+
 jobs:
   generate-test-sdk-matrix:
     runs-on: ubuntu-latest
