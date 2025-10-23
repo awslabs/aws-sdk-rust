@@ -210,5 +210,5 @@ mod _view_port;
 /// Builders
 pub mod builders;
 
-/// Error types that Amazon Bedrock AgentCore Data Plane Fronting Layer can respond with.
+/// Error types that Amazon Bedrock AgentCore can respond with.
 pub mod error;

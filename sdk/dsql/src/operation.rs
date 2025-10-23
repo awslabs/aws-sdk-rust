@@ -7,8 +7,14 @@ pub mod create_cluster;
 /// Types for the `DeleteCluster` operation.
 pub mod delete_cluster;
 
+/// Types for the `DeleteClusterPolicy` operation.
+pub mod delete_cluster_policy;
+
 /// Types for the `GetCluster` operation.
 pub mod get_cluster;
+
+/// Types for the `GetClusterPolicy` operation.
+pub mod get_cluster_policy;
 
 /// Types for the `GetVpcEndpointServiceName` operation.
 pub mod get_vpc_endpoint_service_name;
@@ -18,6 +24,9 @@ pub mod list_clusters;
 
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
+
+/// Types for the `PutClusterPolicy` operation.
+pub mod put_cluster_policy;
 
 /// Types for the `TagResource` operation.
 pub mod tag_resource;

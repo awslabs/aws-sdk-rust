@@ -6,9 +6,9 @@ pub(crate) struct Handle {
     pub(crate) runtime_plugins: ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugins,
 }
 
-/// Client for Amazon Bedrock AgentCore Data Plane Fronting Layer
+/// Client for Amazon Bedrock AgentCore
 ///
-/// Client for invoking operations on Amazon Bedrock AgentCore Data Plane Fronting Layer. Each operation on Amazon Bedrock AgentCore Data Plane Fronting Layer is a method on this
+/// Client for invoking operations on Amazon Bedrock AgentCore. Each operation on Amazon Bedrock AgentCore is a method on this
 /// this struct. `.send()` MUST be invoked on the generated operations to dispatch the request to the service.
 /// ## Constructing a `Client`
 ///

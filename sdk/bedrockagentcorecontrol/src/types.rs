@@ -554,5 +554,5 @@ mod _workload_identity_type;
 /// Builders
 pub mod builders;
 
-/// Error types that Amazon Bedrock Agent Core Control Plane Fronting Layer can respond with.
+/// Error types that Amazon Bedrock AgentCore Control can respond with.
 pub mod error;

@@ -3,30 +3,36 @@ pub fn ser_create_cluster_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_cluster::CreateClusterInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.client_token {
-        object.key("clientToken").string(var_1.as_str());
+    if let Some(var_1) = &input.bypass_policy_lockout_safety_check {
+        object.key("bypassPolicyLockoutSafetyCheck").boolean(*var_1);
     }
-    if let Some(var_2) = &input.deletion_protection_enabled {
-        object.key("deletionProtectionEnabled").boolean(*var_2);
+    if let Some(var_2) = &input.client_token {
+        object.key("clientToken").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.kms_encryption_key {
-        object.key("kmsEncryptionKey").string(var_3.as_str());
+    if let Some(var_3) = &input.deletion_protection_enabled {
+        object.key("deletionProtectionEnabled").boolean(*var_3);
     }
-    if let Some(var_4) = &input.multi_region_properties {
+    if let Some(var_4) = &input.kms_encryption_key {
+        object.key("kmsEncryptionKey").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.multi_region_properties {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("multiRegionProperties").start_object();
-        crate::protocol_serde::shape_multi_region_properties::ser_multi_region_properties(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_6 = object.key("multiRegionProperties").start_object();
+        crate::protocol_serde::shape_multi_region_properties::ser_multi_region_properties(&mut object_6, var_5)?;
+        object_6.finish();
     }
-    if let Some(var_6) = &input.tags {
+    if let Some(var_7) = &input.policy {
+        object.key("policy").string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("tags").start_object();
-        for (key_8, value_9) in var_6 {
+        let mut object_9 = object.key("tags").start_object();
+        for (key_10, value_11) in var_8 {
             {
-                object_7.key(key_8.as_str()).string(value_9.as_str());
+                object_9.key(key_10.as_str()).string(value_11.as_str());
             }
         }
-        object_7.finish();
+        object_9.finish();
     }
     Ok(())
 }

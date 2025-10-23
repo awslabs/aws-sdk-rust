@@ -7,7 +7,6 @@ pub struct ServiceNetworkEndpoint {
     /// <p>The identifier of the VPC endpoint.</p>
     pub vpc_endpoint_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of the VPC endpoint.</p>
-    /// <p>Valid Values: <code>Interface | Gateway</code></p>
     pub vpc_endpoint_type: ::std::option::Option<crate::types::VpcEndpointType>,
 }
 impl ServiceNetworkEndpoint {
@@ -16,7 +15,6 @@ impl ServiceNetworkEndpoint {
         self.vpc_endpoint_id.as_deref()
     }
     /// <p>The type of the VPC endpoint.</p>
-    /// <p>Valid Values: <code>Interface | Gateway</code></p>
     pub fn vpc_endpoint_type(&self) -> ::std::option::Option<&crate::types::VpcEndpointType> {
         self.vpc_endpoint_type.as_ref()
     }
@@ -51,19 +49,16 @@ impl ServiceNetworkEndpointBuilder {
         &self.vpc_endpoint_id
     }
     /// <p>The type of the VPC endpoint.</p>
-    /// <p>Valid Values: <code>Interface | Gateway</code></p>
     pub fn vpc_endpoint_type(mut self, input: crate::types::VpcEndpointType) -> Self {
         self.vpc_endpoint_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of the VPC endpoint.</p>
-    /// <p>Valid Values: <code>Interface | Gateway</code></p>
     pub fn set_vpc_endpoint_type(mut self, input: ::std::option::Option<crate::types::VpcEndpointType>) -> Self {
         self.vpc_endpoint_type = input;
         self
     }
     /// <p>The type of the VPC endpoint.</p>
-    /// <p>Valid Values: <code>Interface | Gateway</code></p>
     pub fn get_vpc_endpoint_type(&self) -> &::std::option::Option<crate::types::VpcEndpointType> {
         &self.vpc_endpoint_type
     }

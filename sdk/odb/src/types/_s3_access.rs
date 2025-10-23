@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3Access {
     /// <p>The status of the Amazon S3 access.</p>
-    /// <p>Valid Values: <code>enabled | disabled</code></p>
     pub status: ::std::option::Option<crate::types::ManagedResourceStatus>,
     /// <p>The IPv4 addresses for the Amazon S3 access.</p>
     pub ipv4_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -16,7 +15,6 @@ pub struct S3Access {
 }
 impl S3Access {
     /// <p>The status of the Amazon S3 access.</p>
-    /// <p>Valid Values: <code>enabled | disabled</code></p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::ManagedResourceStatus> {
         self.status.as_ref()
     }
@@ -53,19 +51,16 @@ pub struct S3AccessBuilder {
 }
 impl S3AccessBuilder {
     /// <p>The status of the Amazon S3 access.</p>
-    /// <p>Valid Values: <code>enabled | disabled</code></p>
     pub fn status(mut self, input: crate::types::ManagedResourceStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the Amazon S3 access.</p>
-    /// <p>Valid Values: <code>enabled | disabled</code></p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ManagedResourceStatus>) -> Self {
         self.status = input;
         self
     }
     /// <p>The status of the Amazon S3 access.</p>
-    /// <p>Valid Values: <code>enabled | disabled</code></p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ManagedResourceStatus> {
         &self.status
     }

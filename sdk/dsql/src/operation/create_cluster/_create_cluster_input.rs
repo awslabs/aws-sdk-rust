@@ -14,6 +14,10 @@ pub struct CreateClusterInput {
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The configuration settings when creating a multi-Region cluster, including the witness region and linked cluster properties.</p>
     pub multi_region_properties: ::std::option::Option<crate::types::MultiRegionProperties>,
+    /// <p>An optional resource-based policy document in JSON format that defines access permissions for the cluster.</p>
+    pub policy: ::std::option::Option<::std::string::String>,
+    /// <p>An optional field that controls whether to bypass the lockout prevention check. When set to true, this parameter allows you to apply a policy that might lock you out of the cluster. Use with caution.</p>
+    pub bypass_policy_lockout_safety_check: ::std::option::Option<bool>,
 }
 impl CreateClusterInput {
     /// <p>If enabled, you can't delete your cluster. You must first disable this property before you can delete your cluster.</p>
@@ -37,6 +41,14 @@ impl CreateClusterInput {
     pub fn multi_region_properties(&self) -> ::std::option::Option<&crate::types::MultiRegionProperties> {
         self.multi_region_properties.as_ref()
     }
+    /// <p>An optional resource-based policy document in JSON format that defines access permissions for the cluster.</p>
+    pub fn policy(&self) -> ::std::option::Option<&str> {
+        self.policy.as_deref()
+    }
+    /// <p>An optional field that controls whether to bypass the lockout prevention check. When set to true, this parameter allows you to apply a policy that might lock you out of the cluster. Use with caution.</p>
+    pub fn bypass_policy_lockout_safety_check(&self) -> ::std::option::Option<bool> {
+        self.bypass_policy_lockout_safety_check
+    }
 }
 impl CreateClusterInput {
     /// Creates a new builder-style object to manufacture [`CreateClusterInput`](crate::operation::create_cluster::CreateClusterInput).
@@ -54,6 +66,8 @@ pub struct CreateClusterInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) multi_region_properties: ::std::option::Option<crate::types::MultiRegionProperties>,
+    pub(crate) policy: ::std::option::Option<::std::string::String>,
+    pub(crate) bypass_policy_lockout_safety_check: ::std::option::Option<bool>,
 }
 impl CreateClusterInputBuilder {
     /// <p>If enabled, you can't delete your cluster. You must first disable this property before you can delete your cluster.</p>
@@ -135,6 +149,34 @@ impl CreateClusterInputBuilder {
     pub fn get_multi_region_properties(&self) -> &::std::option::Option<crate::types::MultiRegionProperties> {
         &self.multi_region_properties
     }
+    /// <p>An optional resource-based policy document in JSON format that defines access permissions for the cluster.</p>
+    pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.policy = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>An optional resource-based policy document in JSON format that defines access permissions for the cluster.</p>
+    pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.policy = input;
+        self
+    }
+    /// <p>An optional resource-based policy document in JSON format that defines access permissions for the cluster.</p>
+    pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy
+    }
+    /// <p>An optional field that controls whether to bypass the lockout prevention check. When set to true, this parameter allows you to apply a policy that might lock you out of the cluster. Use with caution.</p>
+    pub fn bypass_policy_lockout_safety_check(mut self, input: bool) -> Self {
+        self.bypass_policy_lockout_safety_check = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An optional field that controls whether to bypass the lockout prevention check. When set to true, this parameter allows you to apply a policy that might lock you out of the cluster. Use with caution.</p>
+    pub fn set_bypass_policy_lockout_safety_check(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.bypass_policy_lockout_safety_check = input;
+        self
+    }
+    /// <p>An optional field that controls whether to bypass the lockout prevention check. When set to true, this parameter allows you to apply a policy that might lock you out of the cluster. Use with caution.</p>
+    pub fn get_bypass_policy_lockout_safety_check(&self) -> &::std::option::Option<bool> {
+        &self.bypass_policy_lockout_safety_check
+    }
     /// Consumes the builder and constructs a [`CreateClusterInput`](crate::operation::create_cluster::CreateClusterInput).
     pub fn build(
         self,
@@ -145,6 +187,8 @@ impl CreateClusterInputBuilder {
             tags: self.tags,
             client_token: self.client_token,
             multi_region_properties: self.multi_region_properties,
+            policy: self.policy,
+            bypass_policy_lockout_safety_check: self.bypass_policy_lockout_safety_check,
         })
     }
 }

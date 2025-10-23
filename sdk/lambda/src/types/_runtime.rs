@@ -32,6 +32,7 @@
 ///     Runtime::Nodejs18x => { /* ... */ },
 ///     Runtime::Nodejs20x => { /* ... */ },
 ///     Runtime::Nodejs22x => { /* ... */ },
+///     Runtime::Nodejs24x => { /* ... */ },
 ///     Runtime::Nodejs43 => { /* ... */ },
 ///     Runtime::Nodejs43edge => { /* ... */ },
 ///     Runtime::Nodejs610 => { /* ... */ },
@@ -122,6 +123,8 @@ pub enum Runtime {
     #[allow(missing_docs)] // documentation missing in model
     Nodejs22x,
     #[allow(missing_docs)] // documentation missing in model
+    Nodejs24x,
+    #[allow(missing_docs)] // documentation missing in model
     Nodejs43,
     #[allow(missing_docs)] // documentation missing in model
     Nodejs43edge,
@@ -190,6 +193,7 @@ impl ::std::convert::From<&str> for Runtime {
             "nodejs18.x" => Runtime::Nodejs18x,
             "nodejs20.x" => Runtime::Nodejs20x,
             "nodejs22.x" => Runtime::Nodejs22x,
+            "nodejs24.x" => Runtime::Nodejs24x,
             "nodejs4.3" => Runtime::Nodejs43,
             "nodejs4.3-edge" => Runtime::Nodejs43edge,
             "nodejs6.10" => Runtime::Nodejs610,
@@ -246,6 +250,7 @@ impl Runtime {
             Runtime::Nodejs18x => "nodejs18.x",
             Runtime::Nodejs20x => "nodejs20.x",
             Runtime::Nodejs22x => "nodejs22.x",
+            Runtime::Nodejs24x => "nodejs24.x",
             Runtime::Nodejs43 => "nodejs4.3",
             Runtime::Nodejs43edge => "nodejs4.3-edge",
             Runtime::Nodejs610 => "nodejs6.10",
@@ -293,6 +298,7 @@ impl Runtime {
             "nodejs18.x",
             "nodejs20.x",
             "nodejs22.x",
+            "nodejs24.x",
             "nodejs4.3",
             "nodejs4.3-edge",
             "nodejs6.10",
@@ -357,6 +363,7 @@ impl ::std::fmt::Display for Runtime {
             Runtime::Nodejs18x => write!(f, "nodejs18.x"),
             Runtime::Nodejs20x => write!(f, "nodejs20.x"),
             Runtime::Nodejs22x => write!(f, "nodejs22.x"),
+            Runtime::Nodejs24x => write!(f, "nodejs24.x"),
             Runtime::Nodejs43 => write!(f, "nodejs4.3"),
             Runtime::Nodejs43edge => write!(f, "nodejs4.3-edge"),
             Runtime::Nodejs610 => write!(f, "nodejs6.10"),

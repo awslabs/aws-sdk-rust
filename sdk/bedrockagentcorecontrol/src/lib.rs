@@ -33,7 +33,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-bedrockagentcorecontrol = "1.16.0"
+//! aws-sdk-bedrockagentcorecontrol = "1.17.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -73,7 +73,7 @@
 //! # Crate Organization
 //!
 //! The entry point for most customers will be [`Client`], which exposes one method for each API
-//! offered by Amazon Bedrock Agent Core Control Plane Fronting Layer. The return value of each of these methods is a "fluent builder",
+//! offered by Amazon Bedrock AgentCore Control. The return value of each of these methods is a "fluent builder",
 //! where the different inputs for that API are added by builder-style function call chaining,
 //! followed by calling `send()` to get a [`Future`](std::future::Future) that will result in
 //! either a successful output or a [`SdkError`](crate::error::SdkError).
@@ -100,7 +100,7 @@ pub use error_meta::Error;
 #[doc(inline)]
 pub use config::Config;
 
-/// Client for calling Amazon Bedrock Agent Core Control Plane Fronting Layer.
+/// Client for calling Amazon Bedrock AgentCore Control.
 /// ## Constructing a `Client`
 ///
 /// A [`Config`] is required to construct a client. For most use cases, the [`aws-config`]
@@ -181,7 +181,7 @@ pub use config::Config;
 /// ```
 pub mod client;
 
-/// Configuration for Amazon Bedrock Agent Core Control Plane Fronting Layer.
+/// Configuration for Amazon Bedrock AgentCore Control.
 pub mod config;
 
 /// Common errors and error handling utilities.

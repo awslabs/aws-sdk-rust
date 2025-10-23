@@ -9,7 +9,6 @@ pub struct OdbPeeringConnection {
     /// <p>The display name of the ODB peering connection.</p>
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the ODB peering connection.</p>
-    /// <p>Valid Values: <code>provisioning | active | terminating | terminated | failed</code></p>
     pub status: ::std::option::Option<crate::types::ResourceStatus>,
     /// <p>The reason for the current status of the ODB peering connection.</p>
     pub status_reason: ::std::option::Option<::std::string::String>,
@@ -41,7 +40,6 @@ impl OdbPeeringConnection {
         self.display_name.as_deref()
     }
     /// <p>The status of the ODB peering connection.</p>
-    /// <p>Valid Values: <code>provisioning | active | terminating | terminated | failed</code></p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::ResourceStatus> {
         self.status.as_ref()
     }
@@ -136,19 +134,16 @@ impl OdbPeeringConnectionBuilder {
         &self.display_name
     }
     /// <p>The status of the ODB peering connection.</p>
-    /// <p>Valid Values: <code>provisioning | active | terminating | terminated | failed</code></p>
     pub fn status(mut self, input: crate::types::ResourceStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the ODB peering connection.</p>
-    /// <p>Valid Values: <code>provisioning | active | terminating | terminated | failed</code></p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ResourceStatus>) -> Self {
         self.status = input;
         self
     }
     /// <p>The status of the ODB peering connection.</p>
-    /// <p>Valid Values: <code>provisioning | active | terminating | terminated | failed</code></p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ResourceStatus> {
         &self.status
     }

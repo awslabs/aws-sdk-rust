@@ -22,7 +22,7 @@ impl crate::operation::create_cluster::builders::CreateClusterInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateCluster`.
 ///
-/// <p>The CreateCluster API allows you to create both single-region clusters and multi-Region clusters. With the addition of the <i>multiRegionProperties</i> parameter, you can create a cluster with witness Region support and establish peer relationships with clusters in other Regions during creation.</p><note>
+/// <p>The CreateCluster API allows you to create both single-Region clusters and multi-Region clusters. With the addition of the <i>multiRegionProperties</i> parameter, you can create a cluster with witness Region support and establish peer relationships with clusters in other Regions during creation.</p><note>
 /// <p>Creating multi-Region clusters requires additional IAM permissions beyond those needed for single-Region clusters, as detailed in the <b>Required permissions</b> section below.</p>
 /// </note>
 /// <p><b>Required permissions</b></p>
@@ -45,7 +45,7 @@ impl crate::operation::create_cluster::builders::CreateClusterInputBuilder {
 /// dsql:PutMultiRegionProperties
 /// </dt>
 /// <dd>
-/// <p>Permission to configure multi-region properties for a cluster.</p>
+/// <p>Permission to configure multi-Region properties for a cluster.</p>
 /// <p>Resources: <code>arn:aws:dsql:region:account-id:cluster/*</code></p>
 /// </dd>
 /// <dt>
@@ -237,5 +237,33 @@ impl CreateClusterFluentBuilder {
     /// <p>The configuration settings when creating a multi-Region cluster, including the witness region and linked cluster properties.</p>
     pub fn get_multi_region_properties(&self) -> &::std::option::Option<crate::types::MultiRegionProperties> {
         self.inner.get_multi_region_properties()
+    }
+    /// <p>An optional resource-based policy document in JSON format that defines access permissions for the cluster.</p>
+    pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.policy(input.into());
+        self
+    }
+    /// <p>An optional resource-based policy document in JSON format that defines access permissions for the cluster.</p>
+    pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_policy(input);
+        self
+    }
+    /// <p>An optional resource-based policy document in JSON format that defines access permissions for the cluster.</p>
+    pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_policy()
+    }
+    /// <p>An optional field that controls whether to bypass the lockout prevention check. When set to true, this parameter allows you to apply a policy that might lock you out of the cluster. Use with caution.</p>
+    pub fn bypass_policy_lockout_safety_check(mut self, input: bool) -> Self {
+        self.inner = self.inner.bypass_policy_lockout_safety_check(input);
+        self
+    }
+    /// <p>An optional field that controls whether to bypass the lockout prevention check. When set to true, this parameter allows you to apply a policy that might lock you out of the cluster. Use with caution.</p>
+    pub fn set_bypass_policy_lockout_safety_check(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_bypass_policy_lockout_safety_check(input);
+        self
+    }
+    /// <p>An optional field that controls whether to bypass the lockout prevention check. When set to true, this parameter allows you to apply a policy that might lock you out of the cluster. Use with caution.</p>
+    pub fn get_bypass_policy_lockout_safety_check(&self) -> &::std::option::Option<bool> {
+        self.inner.get_bypass_policy_lockout_safety_check()
     }
 }

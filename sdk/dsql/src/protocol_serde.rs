@@ -27,13 +27,19 @@ pub(crate) mod shape_create_cluster;
 
 pub(crate) mod shape_delete_cluster;
 
+pub(crate) mod shape_delete_cluster_policy;
+
 pub(crate) mod shape_get_cluster;
+
+pub(crate) mod shape_get_cluster_policy;
 
 pub(crate) mod shape_get_vpc_endpoint_service_name;
 
 pub(crate) mod shape_list_clusters;
 
 pub(crate) mod shape_list_tags_for_resource;
+
+pub(crate) mod shape_put_cluster_policy;
 
 pub(crate) mod shape_tag_resource;
 
@@ -56,6 +62,8 @@ pub(crate) mod shape_conflict_exception;
 pub(crate) mod shape_create_cluster_input;
 
 pub(crate) mod shape_internal_server_exception;
+
+pub(crate) mod shape_put_cluster_policy_input;
 
 pub(crate) mod shape_resource_not_found_exception;
 

@@ -122,6 +122,15 @@ pub(crate) fn delete_cluster_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn delete_cluster_policy_output_output_correct_errors(
+    mut builder: crate::operation::delete_cluster_policy::builders::DeleteClusterPolicyOutputBuilder,
+) -> crate::operation::delete_cluster_policy::builders::DeleteClusterPolicyOutputBuilder {
+    if builder.policy_version.is_none() {
+        builder.policy_version = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn get_cluster_output_output_correct_errors(
     mut builder: crate::operation::get_cluster::builders::GetClusterOutputBuilder,
 ) -> crate::operation::get_cluster::builders::GetClusterOutputBuilder {
@@ -143,6 +152,18 @@ pub(crate) fn get_cluster_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_cluster_policy_output_output_correct_errors(
+    mut builder: crate::operation::get_cluster_policy::builders::GetClusterPolicyOutputBuilder,
+) -> crate::operation::get_cluster_policy::builders::GetClusterPolicyOutputBuilder {
+    if builder.policy.is_none() {
+        builder.policy = Some(Default::default())
+    }
+    if builder.policy_version.is_none() {
+        builder.policy_version = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn get_vpc_endpoint_service_name_output_output_correct_errors(
     mut builder: crate::operation::get_vpc_endpoint_service_name::builders::GetVpcEndpointServiceNameOutputBuilder,
 ) -> crate::operation::get_vpc_endpoint_service_name::builders::GetVpcEndpointServiceNameOutputBuilder {
@@ -157,6 +178,15 @@ pub(crate) fn list_clusters_output_output_correct_errors(
 ) -> crate::operation::list_clusters::builders::ListClustersOutputBuilder {
     if builder.clusters.is_none() {
         builder.clusters = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn put_cluster_policy_output_output_correct_errors(
+    mut builder: crate::operation::put_cluster_policy::builders::PutClusterPolicyOutputBuilder,
+) -> crate::operation::put_cluster_policy::builders::PutClusterPolicyOutputBuilder {
+    if builder.policy_version.is_none() {
+        builder.policy_version = Some(Default::default())
     }
     builder
 }

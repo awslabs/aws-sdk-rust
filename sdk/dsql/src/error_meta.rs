@@ -122,6 +122,37 @@ impl From<crate::operation::delete_cluster::DeleteClusterError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_cluster_policy::DeleteClusterPolicyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_cluster_policy::DeleteClusterPolicyError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_cluster_policy::DeleteClusterPolicyError> for Error {
+    fn from(err: crate::operation::delete_cluster_policy::DeleteClusterPolicyError) -> Self {
+        match err {
+            crate::operation::delete_cluster_policy::DeleteClusterPolicyError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_cluster_policy::DeleteClusterPolicyError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_cluster_policy::DeleteClusterPolicyError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_cluster_policy::DeleteClusterPolicyError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_cluster_policy::DeleteClusterPolicyError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_cluster_policy::DeleteClusterPolicyError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_cluster_policy::DeleteClusterPolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_cluster::GetClusterError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -145,6 +176,32 @@ impl From<crate::operation::get_cluster::GetClusterError> for Error {
             crate::operation::get_cluster::GetClusterError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_cluster::GetClusterError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_cluster::GetClusterError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_cluster_policy::GetClusterPolicyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_cluster_policy::GetClusterPolicyError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_cluster_policy::GetClusterPolicyError> for Error {
+    fn from(err: crate::operation::get_cluster_policy::GetClusterPolicyError) -> Self {
+        match err {
+            crate::operation::get_cluster_policy::GetClusterPolicyError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_cluster_policy::GetClusterPolicyError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_cluster_policy::GetClusterPolicyError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_cluster_policy::GetClusterPolicyError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_cluster_policy::GetClusterPolicyError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_cluster_policy::GetClusterPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -240,6 +297,33 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
             crate::operation::list_tags_for_resource::ListTagsForResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_cluster_policy::PutClusterPolicyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_cluster_policy::PutClusterPolicyError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::put_cluster_policy::PutClusterPolicyError> for Error {
+    fn from(err: crate::operation::put_cluster_policy::PutClusterPolicyError) -> Self {
+        match err {
+            crate::operation::put_cluster_policy::PutClusterPolicyError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::put_cluster_policy::PutClusterPolicyError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::put_cluster_policy::PutClusterPolicyError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::put_cluster_policy::PutClusterPolicyError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::put_cluster_policy::PutClusterPolicyError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::put_cluster_policy::PutClusterPolicyError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::put_cluster_policy::PutClusterPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
