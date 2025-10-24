@@ -349,7 +349,15 @@ pub(crate) mod shape_tracking_filter_geometry;
 
 pub(crate) mod shape_validation_exception_field_list;
 
+pub(crate) mod shape_android_app;
+
+pub(crate) mod shape_android_app_list;
+
 pub(crate) mod shape_api_key_action_list;
+
+pub(crate) mod shape_apple_app;
+
+pub(crate) mod shape_apple_app_list;
 
 pub(crate) mod shape_batch_delete_device_position_history_error;
 

@@ -111,6 +111,10 @@ pub use crate::types::_list_geofence_collections_response_entry::ListGeofenceCol
 
 pub use crate::types::_api_key_restrictions::ApiKeyRestrictionsBuilder;
 
+pub use crate::types::_apple_app::AppleAppBuilder;
+
+pub use crate::types::_android_app::AndroidAppBuilder;
+
 pub use crate::types::_list_keys_response_entry::ListKeysResponseEntryBuilder;
 
 pub use crate::types::_api_key_filter::ApiKeyFilterBuilder;

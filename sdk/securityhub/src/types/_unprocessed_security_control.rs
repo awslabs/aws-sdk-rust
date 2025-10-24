@@ -6,7 +6,7 @@
 pub struct UnprocessedSecurityControl {
     /// <p>The control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) for which a response couldn't be returned.</p>
     pub security_control_id: ::std::option::Option<::std::string::String>,
-    /// <p>The error code for the unprocessed security control.</p>
+    /// <p>The error code for the unprocessed security control. The <code>NOT_FOUND</code> value has been deprecated and replaced by the <code>RESOURCE_NOT_FOUND</code> value.</p>
     pub error_code: ::std::option::Option<crate::types::UnprocessedErrorCode>,
     /// <p>The reason why the security control was unprocessed.</p>
     pub error_reason: ::std::option::Option<::std::string::String>,
@@ -16,7 +16,7 @@ impl UnprocessedSecurityControl {
     pub fn security_control_id(&self) -> ::std::option::Option<&str> {
         self.security_control_id.as_deref()
     }
-    /// <p>The error code for the unprocessed security control.</p>
+    /// <p>The error code for the unprocessed security control. The <code>NOT_FOUND</code> value has been deprecated and replaced by the <code>RESOURCE_NOT_FOUND</code> value.</p>
     pub fn error_code(&self) -> ::std::option::Option<&crate::types::UnprocessedErrorCode> {
         self.error_code.as_ref()
     }
@@ -56,18 +56,18 @@ impl UnprocessedSecurityControlBuilder {
     pub fn get_security_control_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.security_control_id
     }
-    /// <p>The error code for the unprocessed security control.</p>
+    /// <p>The error code for the unprocessed security control. The <code>NOT_FOUND</code> value has been deprecated and replaced by the <code>RESOURCE_NOT_FOUND</code> value.</p>
     /// This field is required.
     pub fn error_code(mut self, input: crate::types::UnprocessedErrorCode) -> Self {
         self.error_code = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The error code for the unprocessed security control.</p>
+    /// <p>The error code for the unprocessed security control. The <code>NOT_FOUND</code> value has been deprecated and replaced by the <code>RESOURCE_NOT_FOUND</code> value.</p>
     pub fn set_error_code(mut self, input: ::std::option::Option<crate::types::UnprocessedErrorCode>) -> Self {
         self.error_code = input;
         self
     }
-    /// <p>The error code for the unprocessed security control.</p>
+    /// <p>The error code for the unprocessed security control. The <code>NOT_FOUND</code> value has been deprecated and replaced by the <code>RESOURCE_NOT_FOUND</code> value.</p>
     pub fn get_error_code(&self) -> &::std::option::Option<crate::types::UnprocessedErrorCode> {
         &self.error_code
     }

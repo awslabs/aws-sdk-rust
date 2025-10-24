@@ -53,8 +53,8 @@ pub enum ResourcesDateField {
 impl ::std::convert::From<&str> for ResourcesDateField {
     fn from(s: &str) -> Self {
         match s {
-            "resource_creation_time_dt" => ResourcesDateField::ResourceCreationTimeDt,
-            "resource_detail_capture_time_dt" => ResourcesDateField::ResourceDetailCaptureTimeDt,
+            "ResourceCreationTime" => ResourcesDateField::ResourceCreationTimeDt,
+            "ResourceDetailCaptureTime" => ResourcesDateField::ResourceDetailCaptureTimeDt,
             other => ResourcesDateField::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -70,14 +70,14 @@ impl ResourcesDateField {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            ResourcesDateField::ResourceCreationTimeDt => "resource_creation_time_dt",
-            ResourcesDateField::ResourceDetailCaptureTimeDt => "resource_detail_capture_time_dt",
+            ResourcesDateField::ResourceCreationTimeDt => "ResourceCreationTime",
+            ResourcesDateField::ResourceDetailCaptureTimeDt => "ResourceDetailCaptureTime",
             ResourcesDateField::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["resource_creation_time_dt", "resource_detail_capture_time_dt"]
+        &["ResourceCreationTime", "ResourceDetailCaptureTime"]
     }
 }
 impl ::std::convert::AsRef<str> for ResourcesDateField {
@@ -100,8 +100,8 @@ impl ResourcesDateField {
 impl ::std::fmt::Display for ResourcesDateField {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
-            ResourcesDateField::ResourceCreationTimeDt => write!(f, "resource_creation_time_dt"),
-            ResourcesDateField::ResourceDetailCaptureTimeDt => write!(f, "resource_detail_capture_time_dt"),
+            ResourcesDateField::ResourceCreationTimeDt => write!(f, "ResourceCreationTime"),
+            ResourcesDateField::ResourceDetailCaptureTimeDt => write!(f, "ResourceDetailCaptureTime"),
             ResourcesDateField::Unknown(value) => write!(f, "{}", value),
         }
     }

@@ -2,7 +2,7 @@
 
 /// <p>Contains a place suggestion resulting from a place suggestion query that is run on a place index resource.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SearchForSuggestionsResult {
     /// <p>The text of the place suggestion, typically formatted as an address string.</p>
     pub text: ::std::string::String,
@@ -44,6 +44,16 @@ impl SearchForSuggestionsResult {
         self.supplemental_categories.as_deref().unwrap_or_default()
     }
 }
+impl ::std::fmt::Debug for SearchForSuggestionsResult {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("SearchForSuggestionsResult");
+        formatter.field("text", &"*** Sensitive Data Redacted ***");
+        formatter.field("place_id", &"*** Sensitive Data Redacted ***");
+        formatter.field("categories", &"*** Sensitive Data Redacted ***");
+        formatter.field("supplemental_categories", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl SearchForSuggestionsResult {
     /// Creates a new builder-style object to manufacture [`SearchForSuggestionsResult`](crate::types::SearchForSuggestionsResult).
     pub fn builder() -> crate::types::builders::SearchForSuggestionsResultBuilder {
@@ -52,7 +62,7 @@ impl SearchForSuggestionsResult {
 }
 
 /// A builder for [`SearchForSuggestionsResult`](crate::types::SearchForSuggestionsResult).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct SearchForSuggestionsResultBuilder {
     pub(crate) text: ::std::option::Option<::std::string::String>,
@@ -157,5 +167,15 @@ impl SearchForSuggestionsResultBuilder {
             categories: self.categories,
             supplemental_categories: self.supplemental_categories,
         })
+    }
+}
+impl ::std::fmt::Debug for SearchForSuggestionsResultBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("SearchForSuggestionsResultBuilder");
+        formatter.field("text", &"*** Sensitive Data Redacted ***");
+        formatter.field("place_id", &"*** Sensitive Data Redacted ***");
+        formatter.field("categories", &"*** Sensitive Data Redacted ***");
+        formatter.field("supplemental_categories", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

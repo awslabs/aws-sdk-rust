@@ -50,7 +50,7 @@ pub enum ResourcesMapField {
 impl ::std::convert::From<&str> for ResourcesMapField {
     fn from(s: &str) -> Self {
         match s {
-            "tags" => ResourcesMapField::Tag,
+            "ResourceTags" => ResourcesMapField::Tag,
             other => ResourcesMapField::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -66,13 +66,13 @@ impl ResourcesMapField {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            ResourcesMapField::Tag => "tags",
+            ResourcesMapField::Tag => "ResourceTags",
             ResourcesMapField::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["tags"]
+        &["ResourceTags"]
     }
 }
 impl ::std::convert::AsRef<str> for ResourcesMapField {
@@ -95,7 +95,7 @@ impl ResourcesMapField {
 impl ::std::fmt::Display for ResourcesMapField {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
-            ResourcesMapField::Tag => write!(f, "tags"),
+            ResourcesMapField::Tag => write!(f, "ResourceTags"),
             ResourcesMapField::Unknown(value) => write!(f, "{}", value),
         }
     }

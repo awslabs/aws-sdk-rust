@@ -370,17 +370,17 @@ impl CreateNotebookInstanceFluentBuilder {
     pub fn get_root_access(&self) -> &::std::option::Option<crate::types::RootAccess> {
         self.inner.get_root_access()
     }
-    /// <p>The platform identifier of the notebook instance runtime environment.</p>
+    /// <p>The platform identifier of the notebook instance runtime environment. The default value is <code>notebook-al2-v2</code>.</p>
     pub fn platform_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.platform_identifier(input.into());
         self
     }
-    /// <p>The platform identifier of the notebook instance runtime environment.</p>
+    /// <p>The platform identifier of the notebook instance runtime environment. The default value is <code>notebook-al2-v2</code>.</p>
     pub fn set_platform_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_platform_identifier(input);
         self
     }
-    /// <p>The platform identifier of the notebook instance runtime environment.</p>
+    /// <p>The platform identifier of the notebook instance runtime environment. The default value is <code>notebook-al2-v2</code>.</p>
     pub fn get_platform_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_platform_identifier()
     }

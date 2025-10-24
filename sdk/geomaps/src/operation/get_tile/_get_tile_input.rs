@@ -3,6 +3,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetTileInput {
+    /// <p>A list of optional additional parameters such as map styles that can be requested for each result.</p>
+    pub additional_features: ::std::option::Option<::std::vec::Vec<crate::types::TileAdditionalFeature>>,
     /// <p>Specifies the desired tile set.</p>
     /// <p>Valid Values: <code>raster.satellite | vector.basemap</code></p>
     pub tileset: ::std::option::Option<::std::string::String>,
@@ -16,6 +18,12 @@ pub struct GetTileInput {
     pub key: ::std::option::Option<::std::string::String>,
 }
 impl GetTileInput {
+    /// <p>A list of optional additional parameters such as map styles that can be requested for each result.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.additional_features.is_none()`.
+    pub fn additional_features(&self) -> &[crate::types::TileAdditionalFeature] {
+        self.additional_features.as_deref().unwrap_or_default()
+    }
     /// <p>Specifies the desired tile set.</p>
     /// <p>Valid Values: <code>raster.satellite | vector.basemap</code></p>
     pub fn tileset(&self) -> ::std::option::Option<&str> {
@@ -41,6 +49,7 @@ impl GetTileInput {
 impl ::std::fmt::Debug for GetTileInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GetTileInput");
+        formatter.field("additional_features", &self.additional_features);
         formatter.field("tileset", &self.tileset);
         formatter.field("z", &"*** Sensitive Data Redacted ***");
         formatter.field("x", &"*** Sensitive Data Redacted ***");
@@ -60,6 +69,7 @@ impl GetTileInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct GetTileInputBuilder {
+    pub(crate) additional_features: ::std::option::Option<::std::vec::Vec<crate::types::TileAdditionalFeature>>,
     pub(crate) tileset: ::std::option::Option<::std::string::String>,
     pub(crate) z: ::std::option::Option<::std::string::String>,
     pub(crate) x: ::std::option::Option<::std::string::String>,
@@ -67,6 +77,26 @@ pub struct GetTileInputBuilder {
     pub(crate) key: ::std::option::Option<::std::string::String>,
 }
 impl GetTileInputBuilder {
+    /// Appends an item to `additional_features`.
+    ///
+    /// To override the contents of this collection use [`set_additional_features`](Self::set_additional_features).
+    ///
+    /// <p>A list of optional additional parameters such as map styles that can be requested for each result.</p>
+    pub fn additional_features(mut self, input: crate::types::TileAdditionalFeature) -> Self {
+        let mut v = self.additional_features.unwrap_or_default();
+        v.push(input);
+        self.additional_features = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of optional additional parameters such as map styles that can be requested for each result.</p>
+    pub fn set_additional_features(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TileAdditionalFeature>>) -> Self {
+        self.additional_features = input;
+        self
+    }
+    /// <p>A list of optional additional parameters such as map styles that can be requested for each result.</p>
+    pub fn get_additional_features(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TileAdditionalFeature>> {
+        &self.additional_features
+    }
     /// <p>Specifies the desired tile set.</p>
     /// <p>Valid Values: <code>raster.satellite | vector.basemap</code></p>
     /// This field is required.
@@ -147,6 +177,7 @@ impl GetTileInputBuilder {
     /// Consumes the builder and constructs a [`GetTileInput`](crate::operation::get_tile::GetTileInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_tile::GetTileInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_tile::GetTileInput {
+            additional_features: self.additional_features,
             tileset: self.tileset,
             z: self.z,
             x: self.x,
@@ -158,6 +189,7 @@ impl GetTileInputBuilder {
 impl ::std::fmt::Debug for GetTileInputBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GetTileInputBuilder");
+        formatter.field("additional_features", &self.additional_features);
         formatter.field("tileset", &self.tileset);
         formatter.field("z", &"*** Sensitive Data Redacted ***");
         formatter.field("x", &"*** Sensitive Data Redacted ***");

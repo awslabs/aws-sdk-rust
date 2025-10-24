@@ -949,6 +949,12 @@ pub(crate) mod shape_metadata_form_enforcement_detail;
 
 pub(crate) mod shape_metadata_generation_run_item;
 
+pub(crate) mod shape_mlflow_properties_input;
+
+pub(crate) mod shape_mlflow_properties_output;
+
+pub(crate) mod shape_mlflow_properties_patch;
+
 pub(crate) mod shape_notification_output;
 
 pub(crate) mod shape_override_domain_unit_owners_policy_grant_detail;

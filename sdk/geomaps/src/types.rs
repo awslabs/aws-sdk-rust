@@ -3,6 +3,8 @@ pub use crate::types::_validation_exception_field::ValidationExceptionField;
 
 pub use crate::types::_validation_exception_reason::ValidationExceptionReason;
 
+pub use crate::types::_tile_additional_feature::TileAdditionalFeature;
+
 pub use crate::types::_travel_mode::TravelMode;
 
 pub use crate::types::_traffic::Traffic;
@@ -40,6 +42,8 @@ mod _scale_bar_unit;
 mod _static_map_style;
 
 mod _terrain;
+
+mod _tile_additional_feature;
 
 mod _traffic;
 

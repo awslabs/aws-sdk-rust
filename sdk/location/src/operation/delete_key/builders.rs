@@ -23,6 +23,7 @@ impl crate::operation::delete_key::builders::DeleteKeyInputBuilder {
 /// Fluent builder constructing a request to `DeleteKey`.
 ///
 /// <p>Deletes the specified API key. The API key must have been deactivated more than 90 days previously.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">Use API keys to authenticate</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteKeyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

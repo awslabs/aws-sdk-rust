@@ -285,6 +285,8 @@ pub use crate::types::_connection_type::ConnectionType;
 
 pub use crate::types::_connection_properties_output::ConnectionPropertiesOutput;
 
+pub use crate::types::_mlflow_properties_output::MlflowPropertiesOutput;
+
 pub use crate::types::_amazon_q_properties_output::AmazonQPropertiesOutput;
 
 pub use crate::types::_s3_properties_output::S3PropertiesOutput;
@@ -350,6 +352,8 @@ pub use crate::types::_physical_connection_requirements::PhysicalConnectionRequi
 pub use crate::types::_aws_location::AwsLocation;
 
 pub use crate::types::_connection_properties_patch::ConnectionPropertiesPatch;
+
+pub use crate::types::_mlflow_properties_patch::MlflowPropertiesPatch;
 
 pub use crate::types::_amazon_q_properties_patch::AmazonQPropertiesPatch;
 
@@ -704,6 +708,8 @@ pub use crate::types::_change_action::ChangeAction;
 pub use crate::types::_entity_type::EntityType;
 
 pub use crate::types::_connection_properties_input::ConnectionPropertiesInput;
+
+pub use crate::types::_mlflow_properties_input::MlflowPropertiesInput;
 
 pub use crate::types::_amazon_q_properties_input::AmazonQPropertiesInput;
 
@@ -1178,6 +1184,12 @@ mod _metadata_generation_run_target;
 mod _metadata_generation_run_type;
 
 mod _metadata_generation_target_type;
+
+mod _mlflow_properties_input;
+
+mod _mlflow_properties_output;
+
+mod _mlflow_properties_patch;
 
 mod _model;
 

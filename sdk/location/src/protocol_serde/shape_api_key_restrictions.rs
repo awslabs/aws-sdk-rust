@@ -30,6 +30,30 @@ pub fn ser_api_key_restrictions(
         }
         array_6.finish();
     }
+    if let Some(var_8) = &input.allow_android_apps {
+        let mut array_9 = object.key("AllowAndroidApps").start_array();
+        for item_10 in var_8 {
+            {
+                #[allow(unused_mut)]
+                let mut object_11 = array_9.value().start_object();
+                crate::protocol_serde::shape_android_app::ser_android_app(&mut object_11, item_10)?;
+                object_11.finish();
+            }
+        }
+        array_9.finish();
+    }
+    if let Some(var_12) = &input.allow_apple_apps {
+        let mut array_13 = object.key("AllowAppleApps").start_array();
+        for item_14 in var_12 {
+            {
+                #[allow(unused_mut)]
+                let mut object_15 = array_13.value().start_object();
+                crate::protocol_serde::shape_apple_app::ser_apple_app(&mut object_15, item_14)?;
+                object_15.finish();
+            }
+        }
+        array_13.finish();
+    }
     Ok(())
 }
 
@@ -56,6 +80,12 @@ where
                         }
                         "AllowReferers" => {
                             builder = builder.set_allow_referers(crate::protocol_serde::shape_referer_pattern_list::de_referer_pattern_list(tokens)?);
+                        }
+                        "AllowAndroidApps" => {
+                            builder = builder.set_allow_android_apps(crate::protocol_serde::shape_android_app_list::de_android_app_list(tokens)?);
+                        }
+                        "AllowAppleApps" => {
+                            builder = builder.set_allow_apple_apps(crate::protocol_serde::shape_apple_app_list::de_apple_app_list(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

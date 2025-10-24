@@ -63,8 +63,32 @@ pub fn ser_composite_filter(
         }
         array_18.finish();
     }
-    if let Some(var_21) = &input.operator {
-        object.key("Operator").string(var_21.as_str());
+    if let Some(var_21) = &input.ip_filters {
+        let mut array_22 = object.key("IpFilters").start_array();
+        for item_23 in var_21 {
+            {
+                #[allow(unused_mut)]
+                let mut object_24 = array_22.value().start_object();
+                crate::protocol_serde::shape_ocsf_ip_filter::ser_ocsf_ip_filter(&mut object_24, item_23)?;
+                object_24.finish();
+            }
+        }
+        array_22.finish();
+    }
+    if let Some(var_25) = &input.nested_composite_filters {
+        let mut array_26 = object.key("NestedCompositeFilters").start_array();
+        for item_27 in var_25 {
+            {
+                #[allow(unused_mut)]
+                let mut object_28 = array_26.value().start_object();
+                crate::protocol_serde::shape_composite_filter::ser_composite_filter(&mut object_28, item_27)?;
+                object_28.finish();
+            }
+        }
+        array_26.finish();
+    }
+    if let Some(var_29) = &input.operator {
+        object.key("Operator").string(var_29.as_str());
     }
     Ok(())
 }
@@ -102,6 +126,13 @@ where
                         }
                         "MapFilters" => {
                             builder = builder.set_map_filters(crate::protocol_serde::shape_ocsf_map_filter_list::de_ocsf_map_filter_list(tokens)?);
+                        }
+                        "IpFilters" => {
+                            builder = builder.set_ip_filters(crate::protocol_serde::shape_ocsf_ip_filter_list::de_ocsf_ip_filter_list(tokens)?);
+                        }
+                        "NestedCompositeFilters" => {
+                            builder = builder
+                                .set_nested_composite_filters(crate::protocol_serde::shape_composite_filter_list::de_composite_filter_list(tokens)?);
                         }
                         "Operator" => {
                             builder = builder.set_operator(

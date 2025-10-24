@@ -22,7 +22,7 @@ impl crate::operation::delete_automation_rule_v2::builders::DeleteAutomationRule
 }
 /// Fluent builder constructing a request to `DeleteAutomationRuleV2`.
 ///
-/// <p>Deletes a V2 automation rule. This API is in private preview and subject to change.</p>
+/// <p>Deletes a V2 automation rule. This API is in public preview and subject to change.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteAutomationRuleV2FluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -16,8 +16,8 @@
 ///     ResourcesStringField::FindingType => { /* ... */ },
 ///     ResourcesStringField::ProductName => { /* ... */ },
 ///     ResourcesStringField::Region => { /* ... */ },
-///     ResourcesStringField::ResourceArn => { /* ... */ },
 ///     ResourcesStringField::ResourceCategory => { /* ... */ },
+///     ResourcesStringField::ResourceGuid => { /* ... */ },
 ///     ResourcesStringField::ResourceId => { /* ... */ },
 ///     ResourcesStringField::ResourceName => { /* ... */ },
 ///     ResourcesStringField::ResourceType => { /* ... */ },
@@ -58,9 +58,9 @@ pub enum ResourcesStringField {
     #[allow(missing_docs)] // documentation missing in model
     Region,
     #[allow(missing_docs)] // documentation missing in model
-    ResourceArn,
-    #[allow(missing_docs)] // documentation missing in model
     ResourceCategory,
+    #[allow(missing_docs)] // documentation missing in model
+    ResourceGuid,
     #[allow(missing_docs)] // documentation missing in model
     ResourceId,
     #[allow(missing_docs)] // documentation missing in model
@@ -74,15 +74,15 @@ pub enum ResourcesStringField {
 impl ::std::convert::From<&str> for ResourcesStringField {
     fn from(s: &str) -> Self {
         match s {
-            "account_id" => ResourcesStringField::AccountId,
-            "findings_summary.finding_type" => ResourcesStringField::FindingType,
-            "findings_summary.product_name" => ResourcesStringField::ProductName,
-            "region" => ResourcesStringField::Region,
-            "resource_arn" => ResourcesStringField::ResourceArn,
-            "resource_category" => ResourcesStringField::ResourceCategory,
-            "resource_id" => ResourcesStringField::ResourceId,
-            "resource_name" => ResourcesStringField::ResourceName,
-            "resource_type" => ResourcesStringField::ResourceType,
+            "AccountId" => ResourcesStringField::AccountId,
+            "FindingsSummary.FindingType" => ResourcesStringField::FindingType,
+            "FindingsSummary.ProductName" => ResourcesStringField::ProductName,
+            "Region" => ResourcesStringField::Region,
+            "ResourceCategory" => ResourcesStringField::ResourceCategory,
+            "ResourceGuid" => ResourcesStringField::ResourceGuid,
+            "ResourceId" => ResourcesStringField::ResourceId,
+            "ResourceName" => ResourcesStringField::ResourceName,
+            "ResourceType" => ResourcesStringField::ResourceType,
             other => ResourcesStringField::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -98,30 +98,30 @@ impl ResourcesStringField {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            ResourcesStringField::AccountId => "account_id",
-            ResourcesStringField::FindingType => "findings_summary.finding_type",
-            ResourcesStringField::ProductName => "findings_summary.product_name",
-            ResourcesStringField::Region => "region",
-            ResourcesStringField::ResourceArn => "resource_arn",
-            ResourcesStringField::ResourceCategory => "resource_category",
-            ResourcesStringField::ResourceId => "resource_id",
-            ResourcesStringField::ResourceName => "resource_name",
-            ResourcesStringField::ResourceType => "resource_type",
+            ResourcesStringField::AccountId => "AccountId",
+            ResourcesStringField::FindingType => "FindingsSummary.FindingType",
+            ResourcesStringField::ProductName => "FindingsSummary.ProductName",
+            ResourcesStringField::Region => "Region",
+            ResourcesStringField::ResourceCategory => "ResourceCategory",
+            ResourcesStringField::ResourceGuid => "ResourceGuid",
+            ResourcesStringField::ResourceId => "ResourceId",
+            ResourcesStringField::ResourceName => "ResourceName",
+            ResourcesStringField::ResourceType => "ResourceType",
             ResourcesStringField::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "account_id",
-            "findings_summary.finding_type",
-            "findings_summary.product_name",
-            "region",
-            "resource_arn",
-            "resource_category",
-            "resource_id",
-            "resource_name",
-            "resource_type",
+            "AccountId",
+            "FindingsSummary.FindingType",
+            "FindingsSummary.ProductName",
+            "Region",
+            "ResourceCategory",
+            "ResourceGuid",
+            "ResourceId",
+            "ResourceName",
+            "ResourceType",
         ]
     }
 }
@@ -145,15 +145,15 @@ impl ResourcesStringField {
 impl ::std::fmt::Display for ResourcesStringField {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
-            ResourcesStringField::AccountId => write!(f, "account_id"),
-            ResourcesStringField::FindingType => write!(f, "findings_summary.finding_type"),
-            ResourcesStringField::ProductName => write!(f, "findings_summary.product_name"),
-            ResourcesStringField::Region => write!(f, "region"),
-            ResourcesStringField::ResourceArn => write!(f, "resource_arn"),
-            ResourcesStringField::ResourceCategory => write!(f, "resource_category"),
-            ResourcesStringField::ResourceId => write!(f, "resource_id"),
-            ResourcesStringField::ResourceName => write!(f, "resource_name"),
-            ResourcesStringField::ResourceType => write!(f, "resource_type"),
+            ResourcesStringField::AccountId => write!(f, "AccountId"),
+            ResourcesStringField::FindingType => write!(f, "FindingsSummary.FindingType"),
+            ResourcesStringField::ProductName => write!(f, "FindingsSummary.ProductName"),
+            ResourcesStringField::Region => write!(f, "Region"),
+            ResourcesStringField::ResourceCategory => write!(f, "ResourceCategory"),
+            ResourcesStringField::ResourceGuid => write!(f, "ResourceGuid"),
+            ResourcesStringField::ResourceId => write!(f, "ResourceId"),
+            ResourcesStringField::ResourceName => write!(f, "ResourceName"),
+            ResourcesStringField::ResourceType => write!(f, "ResourceType"),
             ResourcesStringField::Unknown(value) => write!(f, "{}", value),
         }
     }

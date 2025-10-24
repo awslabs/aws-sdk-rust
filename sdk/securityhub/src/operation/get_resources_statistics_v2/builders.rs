@@ -22,7 +22,7 @@ impl crate::operation::get_resources_statistics_v2::builders::GetResourcesStatis
 }
 /// Fluent builder constructing a request to `GetResourcesStatisticsV2`.
 ///
-/// <p>Retrieves statistical information about Amazon Web Services resources and their associated security findings. This API is in private preview and subject to change.</p>
+/// <p>Retrieves statistical information about Amazon Web Services resources and their associated security findings. This API is in public preview and subject to change.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetResourcesStatisticsV2FluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

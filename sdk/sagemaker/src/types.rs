@@ -323,6 +323,8 @@ pub use crate::types::_inference_component_capacity_size_type::InferenceComponen
 
 pub use crate::types::_inference_component_specification::InferenceComponentSpecification;
 
+pub use crate::types::_inference_component_data_cache_config::InferenceComponentDataCacheConfig;
+
 pub use crate::types::_inference_component_compute_resource_requirements::InferenceComponentComputeResourceRequirements;
 
 pub use crate::types::_inference_component_startup_parameters::InferenceComponentStartupParameters;
@@ -1695,6 +1697,8 @@ pub use crate::types::_inference_component_runtime_config_summary::InferenceComp
 
 pub use crate::types::_inference_component_specification_summary::InferenceComponentSpecificationSummary;
 
+pub use crate::types::_inference_component_data_cache_config_summary::InferenceComponentDataCacheConfigSummary;
+
 pub use crate::types::_inference_component_container_specification_summary::InferenceComponentContainerSpecificationSummary;
 
 pub use crate::types::_autotune::Autotune;
@@ -2840,6 +2844,10 @@ mod _inference_component_compute_resource_requirements;
 mod _inference_component_container_specification;
 
 mod _inference_component_container_specification_summary;
+
+mod _inference_component_data_cache_config;
+
+mod _inference_component_data_cache_config_summary;
 
 mod _inference_component_deployment_config;
 

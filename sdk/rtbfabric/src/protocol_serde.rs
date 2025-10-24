@@ -169,6 +169,8 @@ pub(crate) mod shape_no_bid_module_parameters;
 
 pub(crate) mod shape_open_rtb_attribute_module_parameters;
 
+pub(crate) mod shape_rate_limiter_module_parameters;
+
 pub(crate) mod shape_action;
 
 pub(crate) mod shape_filter;

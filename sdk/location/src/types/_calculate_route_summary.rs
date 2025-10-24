@@ -94,8 +94,8 @@ impl ::std::fmt::Debug for CalculateRouteSummary {
         let mut formatter = f.debug_struct("CalculateRouteSummary");
         formatter.field("route_b_box", &"*** Sensitive Data Redacted ***");
         formatter.field("data_source", &self.data_source);
-        formatter.field("distance", &self.distance);
-        formatter.field("duration_seconds", &self.duration_seconds);
+        formatter.field("distance", &"*** Sensitive Data Redacted ***");
+        formatter.field("duration_seconds", &"*** Sensitive Data Redacted ***");
         formatter.field("distance_unit", &self.distance_unit);
         formatter.finish()
     }
@@ -320,8 +320,8 @@ impl ::std::fmt::Debug for CalculateRouteSummaryBuilder {
         let mut formatter = f.debug_struct("CalculateRouteSummaryBuilder");
         formatter.field("route_b_box", &"*** Sensitive Data Redacted ***");
         formatter.field("data_source", &self.data_source);
-        formatter.field("distance", &self.distance);
-        formatter.field("duration_seconds", &self.duration_seconds);
+        formatter.field("distance", &"*** Sensitive Data Redacted ***");
+        formatter.field("duration_seconds", &"*** Sensitive Data Redacted ***");
         formatter.field("distance_unit", &self.distance_unit);
         formatter.finish()
     }

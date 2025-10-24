@@ -16,6 +16,9 @@
 ///     OcsfDateField::FindingInfoFirstSeenTimeDt => { /* ... */ },
 ///     OcsfDateField::FindingInfoLastSeenTimeDt => { /* ... */ },
 ///     OcsfDateField::FindingInfoModifiedTimeDt => { /* ... */ },
+///     OcsfDateField::ResourcesImageCreatedTimeDt => { /* ... */ },
+///     OcsfDateField::ResourcesImageLastUsedTimeDt => { /* ... */ },
+///     OcsfDateField::ResourcesModifiedTimeDt => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -52,6 +55,12 @@ pub enum OcsfDateField {
     FindingInfoLastSeenTimeDt,
     #[allow(missing_docs)] // documentation missing in model
     FindingInfoModifiedTimeDt,
+    #[allow(missing_docs)] // documentation missing in model
+    ResourcesImageCreatedTimeDt,
+    #[allow(missing_docs)] // documentation missing in model
+    ResourcesImageLastUsedTimeDt,
+    #[allow(missing_docs)] // documentation missing in model
+    ResourcesModifiedTimeDt,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -63,6 +72,9 @@ impl ::std::convert::From<&str> for OcsfDateField {
             "finding_info.first_seen_time_dt" => OcsfDateField::FindingInfoFirstSeenTimeDt,
             "finding_info.last_seen_time_dt" => OcsfDateField::FindingInfoLastSeenTimeDt,
             "finding_info.modified_time_dt" => OcsfDateField::FindingInfoModifiedTimeDt,
+            "resources.image.created_time_dt" => OcsfDateField::ResourcesImageCreatedTimeDt,
+            "resources.image.last_used_time_dt" => OcsfDateField::ResourcesImageLastUsedTimeDt,
+            "resources.modified_time_dt" => OcsfDateField::ResourcesModifiedTimeDt,
             other => OcsfDateField::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -82,6 +94,9 @@ impl OcsfDateField {
             OcsfDateField::FindingInfoFirstSeenTimeDt => "finding_info.first_seen_time_dt",
             OcsfDateField::FindingInfoLastSeenTimeDt => "finding_info.last_seen_time_dt",
             OcsfDateField::FindingInfoModifiedTimeDt => "finding_info.modified_time_dt",
+            OcsfDateField::ResourcesImageCreatedTimeDt => "resources.image.created_time_dt",
+            OcsfDateField::ResourcesImageLastUsedTimeDt => "resources.image.last_used_time_dt",
+            OcsfDateField::ResourcesModifiedTimeDt => "resources.modified_time_dt",
             OcsfDateField::Unknown(value) => value.as_str(),
         }
     }
@@ -92,6 +107,9 @@ impl OcsfDateField {
             "finding_info.first_seen_time_dt",
             "finding_info.last_seen_time_dt",
             "finding_info.modified_time_dt",
+            "resources.image.created_time_dt",
+            "resources.image.last_used_time_dt",
+            "resources.modified_time_dt",
         ]
     }
 }
@@ -119,6 +137,9 @@ impl ::std::fmt::Display for OcsfDateField {
             OcsfDateField::FindingInfoFirstSeenTimeDt => write!(f, "finding_info.first_seen_time_dt"),
             OcsfDateField::FindingInfoLastSeenTimeDt => write!(f, "finding_info.last_seen_time_dt"),
             OcsfDateField::FindingInfoModifiedTimeDt => write!(f, "finding_info.modified_time_dt"),
+            OcsfDateField::ResourcesImageCreatedTimeDt => write!(f, "resources.image.created_time_dt"),
+            OcsfDateField::ResourcesImageLastUsedTimeDt => write!(f, "resources.image.last_used_time_dt"),
+            OcsfDateField::ResourcesModifiedTimeDt => write!(f, "resources.modified_time_dt"),
             OcsfDateField::Unknown(value) => write!(f, "{}", value),
         }
     }

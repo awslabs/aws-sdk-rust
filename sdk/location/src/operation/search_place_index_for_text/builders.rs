@@ -22,6 +22,19 @@ impl crate::operation::search_place_index_for_text::builders::SearchPlaceIndexFo
 }
 /// Fluent builder constructing a request to `SearchPlaceIndexForText`.
 ///
+/// <important>
+/// <p>This operation is no longer current and may be deprecated in the future. We recommend you upgrade to <a href="/location/latest/APIReference/API_geoplaces_Geocode.html"> <code>Geocode</code> </a> or <a href="/location/latest/APIReference/API_geoplaces_SearchText.html"> <code>SearchText</code> </a> unless you require Grab data.</p>
+/// <ul>
+/// <li>
+/// <p><code>SearchPlaceIndexForText</code> is part of a previous Amazon Location Service Places API (version 1) which has been superseded by a more intuitive, powerful, and complete API (version 2).</p></li>
+/// <li>
+/// <p>The version 2 <code>Geocode</code> operation gives better results in the address geocoding use case, while the version 2 <code>SearchText</code> operation gives better results when searching for businesses and points of interest.</p></li>
+/// <li>
+/// <p>If you are using an Amazon Web Services SDK or the Amazon Web Services CLI, note that the Places API version 2 is found under <code>geo-places</code> or <code>geo_places</code>, not under <code>location</code>.</p></li>
+/// <li>
+/// <p>Since Grab is not yet fully supported in Places API version 2, we recommend you continue using API version 1 when using Grab.</p></li>
+/// </ul>
+/// </important>
 /// <p>Geocodes free-form text, such as an address, name, city, or region to allow you to search for Places or points of interest.</p>
 /// <p>Optional parameters let you narrow your search results by bounding box or country, or bias your search toward a specific position on the globe.</p><note>
 /// <p>You can search for places near a given position using <code>BiasPosition</code>, or filter results within a bounding box using <code>FilterBBox</code>. Providing both parameters simultaneously returns an error.</p>

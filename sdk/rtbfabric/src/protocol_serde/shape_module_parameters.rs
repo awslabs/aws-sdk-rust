@@ -16,6 +16,12 @@ pub fn ser_module_parameters(
             crate::protocol_serde::shape_open_rtb_attribute_module_parameters::ser_open_rtb_attribute_module_parameters(&mut object_2, inner)?;
             object_2.finish();
         }
+        crate::types::ModuleParameters::RateLimiter(inner) => {
+            #[allow(unused_mut)]
+            let mut object_3 = object_6.key("rateLimiter").start_object();
+            crate::protocol_serde::shape_rate_limiter_module_parameters::ser_rate_limiter_module_parameters(&mut object_3, inner)?;
+            object_3.finish();
+        }
         crate::types::ModuleParameters::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "ModuleParameters",
@@ -64,6 +70,11 @@ where
                                 .ok_or_else(|| {
                                     ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'openRtbAttribute' cannot be null")
                                 })?,
+                        )),
+                        "rateLimiter" => Some(crate::types::ModuleParameters::RateLimiter(
+                            crate::protocol_serde::shape_rate_limiter_module_parameters::de_rate_limiter_module_parameters(tokens)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'rateLimiter' cannot be null"),
+                            )?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

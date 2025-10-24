@@ -137,15 +137,23 @@ pub use crate::types::_list_geofence_collections_response_entry::ListGeofenceCol
 
 pub use crate::types::_api_key_restrictions::ApiKeyRestrictions;
 
+pub use crate::types::_apple_app::AppleApp;
+
+pub use crate::types::_android_app::AndroidApp;
+
 pub use crate::types::_list_keys_response_entry::ListKeysResponseEntry;
 
 pub use crate::types::_api_key_filter::ApiKeyFilter;
 
 pub use crate::types::_status::Status;
 
+mod _android_app;
+
 mod _api_key_filter;
 
 mod _api_key_restrictions;
+
+mod _apple_app;
 
 mod _batch_delete_device_position_history_error;
 

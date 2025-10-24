@@ -8,6 +8,8 @@ pub enum ModuleParameters {
     NoBid(crate::types::NoBidModuleParameters),
     /// <p>Describes the parameters of an open RTB attribute module.</p>
     OpenRtbAttribute(crate::types::OpenRtbAttributeModuleParameters),
+    /// <p>Describes the parameters of a rate limit.</p>
+    RateLimiter(crate::types::RateLimiterModuleParameters),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -44,6 +46,19 @@ impl ModuleParameters {
     /// Returns true if this is a [`OpenRtbAttribute`](crate::types::ModuleParameters::OpenRtbAttribute).
     pub fn is_open_rtb_attribute(&self) -> bool {
         self.as_open_rtb_attribute().is_ok()
+    }
+    /// Tries to convert the enum instance into [`RateLimiter`](crate::types::ModuleParameters::RateLimiter), extracting the inner [`RateLimiterModuleParameters`](crate::types::RateLimiterModuleParameters).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_rate_limiter(&self) -> ::std::result::Result<&crate::types::RateLimiterModuleParameters, &Self> {
+        if let ModuleParameters::RateLimiter(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`RateLimiter`](crate::types::ModuleParameters::RateLimiter).
+    pub fn is_rate_limiter(&self) -> bool {
+        self.as_rate_limiter().is_ok()
     }
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {

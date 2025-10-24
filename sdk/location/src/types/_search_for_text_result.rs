@@ -2,7 +2,7 @@
 
 /// <p>Contains a search result from a text search query that is run on a place index resource.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SearchForTextResult {
     /// <p>Details about the search result, such as its address and position.</p>
     pub place: ::std::option::Option<crate::types::Place>,
@@ -41,6 +41,16 @@ impl SearchForTextResult {
         self.place_id.as_deref()
     }
 }
+impl ::std::fmt::Debug for SearchForTextResult {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("SearchForTextResult");
+        formatter.field("place", &self.place);
+        formatter.field("distance", &"*** Sensitive Data Redacted ***");
+        formatter.field("relevance", &"*** Sensitive Data Redacted ***");
+        formatter.field("place_id", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl SearchForTextResult {
     /// Creates a new builder-style object to manufacture [`SearchForTextResult`](crate::types::SearchForTextResult).
     pub fn builder() -> crate::types::builders::SearchForTextResultBuilder {
@@ -49,7 +59,7 @@ impl SearchForTextResult {
 }
 
 /// A builder for [`SearchForTextResult`](crate::types::SearchForTextResult).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct SearchForTextResultBuilder {
     pub(crate) place: ::std::option::Option<crate::types::Place>,
@@ -138,5 +148,15 @@ impl SearchForTextResultBuilder {
             relevance: self.relevance,
             place_id: self.place_id,
         }
+    }
+}
+impl ::std::fmt::Debug for SearchForTextResultBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("SearchForTextResultBuilder");
+        formatter.field("place", &self.place);
+        formatter.field("distance", &"*** Sensitive Data Redacted ***");
+        formatter.field("relevance", &"*** Sensitive Data Redacted ***");
+        formatter.field("place_id", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

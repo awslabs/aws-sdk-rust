@@ -12,6 +12,8 @@ pub struct ResourcesCompositeFilter {
     pub number_filters: ::std::option::Option<::std::vec::Vec<crate::types::ResourcesNumberFilter>>,
     /// <p>Enables filtering based on map-based field values.</p>
     pub map_filters: ::std::option::Option<::std::vec::Vec<crate::types::ResourcesMapFilter>>,
+    /// <p>Provides an additional level of filtering, creating a three-layer nested structure. The first layer is a <code>CompositeFilters</code> array with a <code>CompositeOperator</code> (<code>AND</code>/<code>OR</code>). The second layer is a <code>CompositeFilter</code> object that contains direct filters and <code>NestedCompositeFilters</code>. The third layer is <code>NestedCompositeFilters</code>, which contains additional filter conditions.</p>
+    pub nested_composite_filters: ::std::option::Option<::std::vec::Vec<crate::types::ResourcesCompositeFilter>>,
     /// <p>The logical operator used to combine multiple filter conditions.</p>
     pub operator: ::std::option::Option<crate::types::AllowedOperators>,
 }
@@ -40,6 +42,12 @@ impl ResourcesCompositeFilter {
     pub fn map_filters(&self) -> &[crate::types::ResourcesMapFilter] {
         self.map_filters.as_deref().unwrap_or_default()
     }
+    /// <p>Provides an additional level of filtering, creating a three-layer nested structure. The first layer is a <code>CompositeFilters</code> array with a <code>CompositeOperator</code> (<code>AND</code>/<code>OR</code>). The second layer is a <code>CompositeFilter</code> object that contains direct filters and <code>NestedCompositeFilters</code>. The third layer is <code>NestedCompositeFilters</code>, which contains additional filter conditions.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.nested_composite_filters.is_none()`.
+    pub fn nested_composite_filters(&self) -> &[crate::types::ResourcesCompositeFilter] {
+        self.nested_composite_filters.as_deref().unwrap_or_default()
+    }
     /// <p>The logical operator used to combine multiple filter conditions.</p>
     pub fn operator(&self) -> ::std::option::Option<&crate::types::AllowedOperators> {
         self.operator.as_ref()
@@ -60,6 +68,7 @@ pub struct ResourcesCompositeFilterBuilder {
     pub(crate) date_filters: ::std::option::Option<::std::vec::Vec<crate::types::ResourcesDateFilter>>,
     pub(crate) number_filters: ::std::option::Option<::std::vec::Vec<crate::types::ResourcesNumberFilter>>,
     pub(crate) map_filters: ::std::option::Option<::std::vec::Vec<crate::types::ResourcesMapFilter>>,
+    pub(crate) nested_composite_filters: ::std::option::Option<::std::vec::Vec<crate::types::ResourcesCompositeFilter>>,
     pub(crate) operator: ::std::option::Option<crate::types::AllowedOperators>,
 }
 impl ResourcesCompositeFilterBuilder {
@@ -143,6 +152,26 @@ impl ResourcesCompositeFilterBuilder {
     pub fn get_map_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcesMapFilter>> {
         &self.map_filters
     }
+    /// Appends an item to `nested_composite_filters`.
+    ///
+    /// To override the contents of this collection use [`set_nested_composite_filters`](Self::set_nested_composite_filters).
+    ///
+    /// <p>Provides an additional level of filtering, creating a three-layer nested structure. The first layer is a <code>CompositeFilters</code> array with a <code>CompositeOperator</code> (<code>AND</code>/<code>OR</code>). The second layer is a <code>CompositeFilter</code> object that contains direct filters and <code>NestedCompositeFilters</code>. The third layer is <code>NestedCompositeFilters</code>, which contains additional filter conditions.</p>
+    pub fn nested_composite_filters(mut self, input: crate::types::ResourcesCompositeFilter) -> Self {
+        let mut v = self.nested_composite_filters.unwrap_or_default();
+        v.push(input);
+        self.nested_composite_filters = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Provides an additional level of filtering, creating a three-layer nested structure. The first layer is a <code>CompositeFilters</code> array with a <code>CompositeOperator</code> (<code>AND</code>/<code>OR</code>). The second layer is a <code>CompositeFilter</code> object that contains direct filters and <code>NestedCompositeFilters</code>. The third layer is <code>NestedCompositeFilters</code>, which contains additional filter conditions.</p>
+    pub fn set_nested_composite_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourcesCompositeFilter>>) -> Self {
+        self.nested_composite_filters = input;
+        self
+    }
+    /// <p>Provides an additional level of filtering, creating a three-layer nested structure. The first layer is a <code>CompositeFilters</code> array with a <code>CompositeOperator</code> (<code>AND</code>/<code>OR</code>). The second layer is a <code>CompositeFilter</code> object that contains direct filters and <code>NestedCompositeFilters</code>. The third layer is <code>NestedCompositeFilters</code>, which contains additional filter conditions.</p>
+    pub fn get_nested_composite_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcesCompositeFilter>> {
+        &self.nested_composite_filters
+    }
     /// <p>The logical operator used to combine multiple filter conditions.</p>
     pub fn operator(mut self, input: crate::types::AllowedOperators) -> Self {
         self.operator = ::std::option::Option::Some(input);
@@ -164,6 +193,7 @@ impl ResourcesCompositeFilterBuilder {
             date_filters: self.date_filters,
             number_filters: self.number_filters,
             map_filters: self.map_filters,
+            nested_composite_filters: self.nested_composite_filters,
             operator: self.operator,
         }
     }

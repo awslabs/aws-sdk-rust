@@ -2,7 +2,7 @@
 
 /// <p>The result for the calculated route of one <code>DeparturePosition</code> <code>DestinationPosition</code> pair.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RouteMatrixEntry {
     /// <p>The total distance of travel for the route.</p>
     pub distance: ::std::option::Option<f64>,
@@ -25,6 +25,15 @@ impl RouteMatrixEntry {
         self.error.as_ref()
     }
 }
+impl ::std::fmt::Debug for RouteMatrixEntry {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteMatrixEntry");
+        formatter.field("distance", &"*** Sensitive Data Redacted ***");
+        formatter.field("duration_seconds", &"*** Sensitive Data Redacted ***");
+        formatter.field("error", &self.error);
+        formatter.finish()
+    }
+}
 impl RouteMatrixEntry {
     /// Creates a new builder-style object to manufacture [`RouteMatrixEntry`](crate::types::RouteMatrixEntry).
     pub fn builder() -> crate::types::builders::RouteMatrixEntryBuilder {
@@ -33,7 +42,7 @@ impl RouteMatrixEntry {
 }
 
 /// A builder for [`RouteMatrixEntry`](crate::types::RouteMatrixEntry).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct RouteMatrixEntryBuilder {
     pub(crate) distance: ::std::option::Option<f64>,
@@ -90,5 +99,14 @@ impl RouteMatrixEntryBuilder {
             duration_seconds: self.duration_seconds,
             error: self.error,
         }
+    }
+}
+impl ::std::fmt::Debug for RouteMatrixEntryBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteMatrixEntryBuilder");
+        formatter.field("distance", &"*** Sensitive Data Redacted ***");
+        formatter.field("duration_seconds", &"*** Sensitive Data Redacted ***");
+        formatter.field("error", &self.error);
+        formatter.finish()
     }
 }

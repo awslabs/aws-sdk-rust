@@ -2569,6 +2569,10 @@ pub(crate) mod shape_inference_component_container_specification;
 
 pub(crate) mod shape_inference_component_container_specification_summary;
 
+pub(crate) mod shape_inference_component_data_cache_config;
+
+pub(crate) mod shape_inference_component_data_cache_config_summary;
+
 pub(crate) mod shape_inference_component_rolling_update_policy;
 
 pub(crate) mod shape_inference_component_startup_parameters;

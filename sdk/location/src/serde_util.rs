@@ -1260,6 +1260,23 @@ pub(crate) fn validation_exception_field_correct_errors(
     builder
 }
 
+pub(crate) fn android_app_correct_errors(mut builder: crate::types::builders::AndroidAppBuilder) -> crate::types::builders::AndroidAppBuilder {
+    if builder.package.is_none() {
+        builder.package = Some(Default::default())
+    }
+    if builder.certificate_fingerprint.is_none() {
+        builder.certificate_fingerprint = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn apple_app_correct_errors(mut builder: crate::types::builders::AppleAppBuilder) -> crate::types::builders::AppleAppBuilder {
+    if builder.bundle_id.is_none() {
+        builder.bundle_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn route_matrix_entry_error_correct_errors(
     mut builder: crate::types::builders::RouteMatrixEntryErrorBuilder,
 ) -> crate::types::builders::RouteMatrixEntryErrorBuilder {

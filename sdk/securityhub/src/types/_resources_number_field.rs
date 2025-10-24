@@ -74,15 +74,15 @@ pub enum ResourcesNumberField {
 impl ::std::convert::From<&str> for ResourcesNumberField {
     fn from(s: &str) -> Self {
         match s {
-            "findings_summary.severities.critical" => ResourcesNumberField::SeverityCritical,
-            "findings_summary.severities.fatal" => ResourcesNumberField::SeverityFatal,
-            "findings_summary.severities.high" => ResourcesNumberField::SeverityHigh,
-            "findings_summary.severities.informational" => ResourcesNumberField::SeverityInformational,
-            "findings_summary.severities.low" => ResourcesNumberField::SeverityLow,
-            "findings_summary.severities.medium" => ResourcesNumberField::SeverityMedium,
-            "findings_summary.severities.other" => ResourcesNumberField::SeverityOther,
-            "findings_summary.severities.unknown" => ResourcesNumberField::SeverityUnknown,
-            "findings_summary.total_findings" => ResourcesNumberField::TotalFindings,
+            "FindingsSummary.Severities.Critical" => ResourcesNumberField::SeverityCritical,
+            "FindingsSummary.Severities.Fatal" => ResourcesNumberField::SeverityFatal,
+            "FindingsSummary.Severities.High" => ResourcesNumberField::SeverityHigh,
+            "FindingsSummary.Severities.Informational" => ResourcesNumberField::SeverityInformational,
+            "FindingsSummary.Severities.Low" => ResourcesNumberField::SeverityLow,
+            "FindingsSummary.Severities.Medium" => ResourcesNumberField::SeverityMedium,
+            "FindingsSummary.Severities.Other" => ResourcesNumberField::SeverityOther,
+            "FindingsSummary.Severities.Unknown" => ResourcesNumberField::SeverityUnknown,
+            "FindingsSummary.TotalFindings" => ResourcesNumberField::TotalFindings,
             other => ResourcesNumberField::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -98,30 +98,30 @@ impl ResourcesNumberField {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            ResourcesNumberField::SeverityCritical => "findings_summary.severities.critical",
-            ResourcesNumberField::SeverityFatal => "findings_summary.severities.fatal",
-            ResourcesNumberField::SeverityHigh => "findings_summary.severities.high",
-            ResourcesNumberField::SeverityInformational => "findings_summary.severities.informational",
-            ResourcesNumberField::SeverityLow => "findings_summary.severities.low",
-            ResourcesNumberField::SeverityMedium => "findings_summary.severities.medium",
-            ResourcesNumberField::SeverityOther => "findings_summary.severities.other",
-            ResourcesNumberField::SeverityUnknown => "findings_summary.severities.unknown",
-            ResourcesNumberField::TotalFindings => "findings_summary.total_findings",
+            ResourcesNumberField::SeverityCritical => "FindingsSummary.Severities.Critical",
+            ResourcesNumberField::SeverityFatal => "FindingsSummary.Severities.Fatal",
+            ResourcesNumberField::SeverityHigh => "FindingsSummary.Severities.High",
+            ResourcesNumberField::SeverityInformational => "FindingsSummary.Severities.Informational",
+            ResourcesNumberField::SeverityLow => "FindingsSummary.Severities.Low",
+            ResourcesNumberField::SeverityMedium => "FindingsSummary.Severities.Medium",
+            ResourcesNumberField::SeverityOther => "FindingsSummary.Severities.Other",
+            ResourcesNumberField::SeverityUnknown => "FindingsSummary.Severities.Unknown",
+            ResourcesNumberField::TotalFindings => "FindingsSummary.TotalFindings",
             ResourcesNumberField::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "findings_summary.severities.critical",
-            "findings_summary.severities.fatal",
-            "findings_summary.severities.high",
-            "findings_summary.severities.informational",
-            "findings_summary.severities.low",
-            "findings_summary.severities.medium",
-            "findings_summary.severities.other",
-            "findings_summary.severities.unknown",
-            "findings_summary.total_findings",
+            "FindingsSummary.Severities.Critical",
+            "FindingsSummary.Severities.Fatal",
+            "FindingsSummary.Severities.High",
+            "FindingsSummary.Severities.Informational",
+            "FindingsSummary.Severities.Low",
+            "FindingsSummary.Severities.Medium",
+            "FindingsSummary.Severities.Other",
+            "FindingsSummary.Severities.Unknown",
+            "FindingsSummary.TotalFindings",
         ]
     }
 }
@@ -145,15 +145,15 @@ impl ResourcesNumberField {
 impl ::std::fmt::Display for ResourcesNumberField {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
-            ResourcesNumberField::SeverityCritical => write!(f, "findings_summary.severities.critical"),
-            ResourcesNumberField::SeverityFatal => write!(f, "findings_summary.severities.fatal"),
-            ResourcesNumberField::SeverityHigh => write!(f, "findings_summary.severities.high"),
-            ResourcesNumberField::SeverityInformational => write!(f, "findings_summary.severities.informational"),
-            ResourcesNumberField::SeverityLow => write!(f, "findings_summary.severities.low"),
-            ResourcesNumberField::SeverityMedium => write!(f, "findings_summary.severities.medium"),
-            ResourcesNumberField::SeverityOther => write!(f, "findings_summary.severities.other"),
-            ResourcesNumberField::SeverityUnknown => write!(f, "findings_summary.severities.unknown"),
-            ResourcesNumberField::TotalFindings => write!(f, "findings_summary.total_findings"),
+            ResourcesNumberField::SeverityCritical => write!(f, "FindingsSummary.Severities.Critical"),
+            ResourcesNumberField::SeverityFatal => write!(f, "FindingsSummary.Severities.Fatal"),
+            ResourcesNumberField::SeverityHigh => write!(f, "FindingsSummary.Severities.High"),
+            ResourcesNumberField::SeverityInformational => write!(f, "FindingsSummary.Severities.Informational"),
+            ResourcesNumberField::SeverityLow => write!(f, "FindingsSummary.Severities.Low"),
+            ResourcesNumberField::SeverityMedium => write!(f, "FindingsSummary.Severities.Medium"),
+            ResourcesNumberField::SeverityOther => write!(f, "FindingsSummary.Severities.Other"),
+            ResourcesNumberField::SeverityUnknown => write!(f, "FindingsSummary.Severities.Unknown"),
+            ResourcesNumberField::TotalFindings => write!(f, "FindingsSummary.TotalFindings"),
             ResourcesNumberField::Unknown(value) => write!(f, "{}", value),
         }
     }

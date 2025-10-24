@@ -22,7 +22,7 @@ impl crate::operation::enable_security_hub_v2::builders::EnableSecurityHubV2Inpu
 }
 /// Fluent builder constructing a request to `EnableSecurityHubV2`.
 ///
-/// <p>Enables the service in account for the current Amazon Web Services Region or specified Amazon Web Services Region. This API is in private preview and subject to change.</p>
+/// <p>Enables the service in account for the current Amazon Web Services Region or specified Amazon Web Services Region. This API is in public preview and subject to change.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct EnableSecurityHubV2FluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

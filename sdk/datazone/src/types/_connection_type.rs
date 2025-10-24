@@ -20,6 +20,7 @@
 ///     ConnectionType::Dynamodb => { /* ... */ },
 ///     ConnectionType::Hyperpod => { /* ... */ },
 ///     ConnectionType::Iam => { /* ... */ },
+///     ConnectionType::Mlflow => { /* ... */ },
 ///     ConnectionType::Mysql => { /* ... */ },
 ///     ConnectionType::Opensearch => { /* ... */ },
 ///     ConnectionType::Oracle => { /* ... */ },
@@ -78,6 +79,8 @@ pub enum ConnectionType {
     #[allow(missing_docs)] // documentation missing in model
     Iam,
     #[allow(missing_docs)] // documentation missing in model
+    Mlflow,
+    #[allow(missing_docs)] // documentation missing in model
     Mysql,
     #[allow(missing_docs)] // documentation missing in model
     Opensearch,
@@ -118,6 +121,7 @@ impl ::std::convert::From<&str> for ConnectionType {
             "DYNAMODB" => ConnectionType::Dynamodb,
             "HYPERPOD" => ConnectionType::Hyperpod,
             "IAM" => ConnectionType::Iam,
+            "MLFLOW" => ConnectionType::Mlflow,
             "MYSQL" => ConnectionType::Mysql,
             "OPENSEARCH" => ConnectionType::Opensearch,
             "ORACLE" => ConnectionType::Oracle,
@@ -154,6 +158,7 @@ impl ConnectionType {
             ConnectionType::Dynamodb => "DYNAMODB",
             ConnectionType::Hyperpod => "HYPERPOD",
             ConnectionType::Iam => "IAM",
+            ConnectionType::Mlflow => "MLFLOW",
             ConnectionType::Mysql => "MYSQL",
             ConnectionType::Opensearch => "OPENSEARCH",
             ConnectionType::Oracle => "ORACLE",
@@ -181,6 +186,7 @@ impl ConnectionType {
             "DYNAMODB",
             "HYPERPOD",
             "IAM",
+            "MLFLOW",
             "MYSQL",
             "OPENSEARCH",
             "ORACLE",
@@ -225,6 +231,7 @@ impl ::std::fmt::Display for ConnectionType {
             ConnectionType::Dynamodb => write!(f, "DYNAMODB"),
             ConnectionType::Hyperpod => write!(f, "HYPERPOD"),
             ConnectionType::Iam => write!(f, "IAM"),
+            ConnectionType::Mlflow => write!(f, "MLFLOW"),
             ConnectionType::Mysql => write!(f, "MYSQL"),
             ConnectionType::Opensearch => write!(f, "OPENSEARCH"),
             ConnectionType::Oracle => write!(f, "ORACLE"),

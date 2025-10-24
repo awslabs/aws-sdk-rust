@@ -11,6 +11,8 @@ pub use crate::types::_responder_error_masking_for_http_code::ResponderErrorMask
 
 pub use crate::types::_module_configuration::ModuleConfigurationBuilder;
 
+pub use crate::types::_rate_limiter_module_parameters::RateLimiterModuleParametersBuilder;
+
 pub use crate::types::_open_rtb_attribute_module_parameters::OpenRtbAttributeModuleParametersBuilder;
 
 pub use crate::types::_header_tag_action::HeaderTagActionBuilder;

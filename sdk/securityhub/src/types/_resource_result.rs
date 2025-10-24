@@ -4,8 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceResult {
-    /// <p>Specifies the ARN that uniquely identifies a resource.</p>
-    pub resource_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The global identifier used to identify a resource.</p>
+    pub resource_guid: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for a resource.</p>
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account that owns the resource.</p>
@@ -30,9 +30,9 @@ pub struct ResourceResult {
     pub resource_config: ::std::option::Option<::aws_smithy_types::Document>,
 }
 impl ResourceResult {
-    /// <p>Specifies the ARN that uniquely identifies a resource.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
-        self.resource_arn.as_deref()
+    /// <p>The global identifier used to identify a resource.</p>
+    pub fn resource_guid(&self) -> ::std::option::Option<&str> {
+        self.resource_guid.as_deref()
     }
     /// <p>The unique identifier for a resource.</p>
     pub fn resource_id(&self) -> ::std::option::Option<&str> {
@@ -94,7 +94,7 @@ impl ResourceResult {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct ResourceResultBuilder {
-    pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) resource_guid: ::std::option::Option<::std::string::String>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) region: ::std::option::Option<::std::string::String>,
@@ -108,19 +108,19 @@ pub struct ResourceResultBuilder {
     pub(crate) resource_config: ::std::option::Option<::aws_smithy_types::Document>,
 }
 impl ResourceResultBuilder {
-    /// <p>Specifies the ARN that uniquely identifies a resource.</p>
-    pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.resource_arn = ::std::option::Option::Some(input.into());
+    /// <p>The global identifier used to identify a resource.</p>
+    pub fn resource_guid(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resource_guid = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies the ARN that uniquely identifies a resource.</p>
-    pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
+    /// <p>The global identifier used to identify a resource.</p>
+    pub fn set_resource_guid(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.resource_guid = input;
         self
     }
-    /// <p>Specifies the ARN that uniquely identifies a resource.</p>
-    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
-        &self.resource_arn
+    /// <p>The global identifier used to identify a resource.</p>
+    pub fn get_resource_guid(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_guid
     }
     /// <p>The unique identifier for a resource.</p>
     /// This field is required.
@@ -296,7 +296,7 @@ impl ResourceResultBuilder {
     /// Consumes the builder and constructs a [`ResourceResult`](crate::types::ResourceResult).
     pub fn build(self) -> crate::types::ResourceResult {
         crate::types::ResourceResult {
-            resource_arn: self.resource_arn,
+            resource_guid: self.resource_guid,
             resource_id: self.resource_id,
             account_id: self.account_id,
             region: self.region,

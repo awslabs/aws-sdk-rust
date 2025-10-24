@@ -12,10 +12,16 @@
 /// ```text
 /// # let streamsessionstatusreason = unimplemented!();
 /// match streamsessionstatusreason {
+///     StreamSessionStatusReason::ApiTerminated => { /* ... */ },
+///     StreamSessionStatusReason::ApplicationExit => { /* ... */ },
 ///     StreamSessionStatusReason::AppLogS3DestinationError => { /* ... */ },
+///     StreamSessionStatusReason::ConnectionTimeout => { /* ... */ },
+///     StreamSessionStatusReason::IdleTimeout => { /* ... */ },
 ///     StreamSessionStatusReason::InternalError => { /* ... */ },
 ///     StreamSessionStatusReason::InvalidSignalRequest => { /* ... */ },
+///     StreamSessionStatusReason::MaxSessionLengthTimeout => { /* ... */ },
 ///     StreamSessionStatusReason::PlacementTimeout => { /* ... */ },
+///     StreamSessionStatusReason::ReconnectionTimeout => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -45,13 +51,25 @@
 )]
 pub enum StreamSessionStatusReason {
     #[allow(missing_docs)] // documentation missing in model
+    ApiTerminated,
+    #[allow(missing_docs)] // documentation missing in model
+    ApplicationExit,
+    #[allow(missing_docs)] // documentation missing in model
     AppLogS3DestinationError,
+    #[allow(missing_docs)] // documentation missing in model
+    ConnectionTimeout,
+    #[allow(missing_docs)] // documentation missing in model
+    IdleTimeout,
     #[allow(missing_docs)] // documentation missing in model
     InternalError,
     #[allow(missing_docs)] // documentation missing in model
     InvalidSignalRequest,
     #[allow(missing_docs)] // documentation missing in model
+    MaxSessionLengthTimeout,
+    #[allow(missing_docs)] // documentation missing in model
     PlacementTimeout,
+    #[allow(missing_docs)] // documentation missing in model
+    ReconnectionTimeout,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -59,10 +77,16 @@ pub enum StreamSessionStatusReason {
 impl ::std::convert::From<&str> for StreamSessionStatusReason {
     fn from(s: &str) -> Self {
         match s {
+            "apiTerminated" => StreamSessionStatusReason::ApiTerminated,
+            "applicationExit" => StreamSessionStatusReason::ApplicationExit,
             "applicationLogS3DestinationError" => StreamSessionStatusReason::AppLogS3DestinationError,
+            "connectionTimeout" => StreamSessionStatusReason::ConnectionTimeout,
+            "idleTimeout" => StreamSessionStatusReason::IdleTimeout,
             "internalError" => StreamSessionStatusReason::InternalError,
             "invalidSignalRequest" => StreamSessionStatusReason::InvalidSignalRequest,
+            "maxSessionLengthTimeout" => StreamSessionStatusReason::MaxSessionLengthTimeout,
             "placementTimeout" => StreamSessionStatusReason::PlacementTimeout,
+            "reconnectionTimeout" => StreamSessionStatusReason::ReconnectionTimeout,
             other => StreamSessionStatusReason::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -78,20 +102,32 @@ impl StreamSessionStatusReason {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            StreamSessionStatusReason::ApiTerminated => "apiTerminated",
+            StreamSessionStatusReason::ApplicationExit => "applicationExit",
             StreamSessionStatusReason::AppLogS3DestinationError => "applicationLogS3DestinationError",
+            StreamSessionStatusReason::ConnectionTimeout => "connectionTimeout",
+            StreamSessionStatusReason::IdleTimeout => "idleTimeout",
             StreamSessionStatusReason::InternalError => "internalError",
             StreamSessionStatusReason::InvalidSignalRequest => "invalidSignalRequest",
+            StreamSessionStatusReason::MaxSessionLengthTimeout => "maxSessionLengthTimeout",
             StreamSessionStatusReason::PlacementTimeout => "placementTimeout",
+            StreamSessionStatusReason::ReconnectionTimeout => "reconnectionTimeout",
             StreamSessionStatusReason::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "apiTerminated",
+            "applicationExit",
             "applicationLogS3DestinationError",
+            "connectionTimeout",
+            "idleTimeout",
             "internalError",
             "invalidSignalRequest",
+            "maxSessionLengthTimeout",
             "placementTimeout",
+            "reconnectionTimeout",
         ]
     }
 }
@@ -115,10 +151,16 @@ impl StreamSessionStatusReason {
 impl ::std::fmt::Display for StreamSessionStatusReason {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            StreamSessionStatusReason::ApiTerminated => write!(f, "apiTerminated"),
+            StreamSessionStatusReason::ApplicationExit => write!(f, "applicationExit"),
             StreamSessionStatusReason::AppLogS3DestinationError => write!(f, "applicationLogS3DestinationError"),
+            StreamSessionStatusReason::ConnectionTimeout => write!(f, "connectionTimeout"),
+            StreamSessionStatusReason::IdleTimeout => write!(f, "idleTimeout"),
             StreamSessionStatusReason::InternalError => write!(f, "internalError"),
             StreamSessionStatusReason::InvalidSignalRequest => write!(f, "invalidSignalRequest"),
+            StreamSessionStatusReason::MaxSessionLengthTimeout => write!(f, "maxSessionLengthTimeout"),
             StreamSessionStatusReason::PlacementTimeout => write!(f, "placementTimeout"),
+            StreamSessionStatusReason::ReconnectionTimeout => write!(f, "reconnectionTimeout"),
             StreamSessionStatusReason::Unknown(value) => write!(f, "{}", value),
         }
     }

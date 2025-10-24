@@ -110,7 +110,7 @@ impl ::std::fmt::Debug for SearchPlaceIndexForTextSummary {
         formatter.field("result_b_box", &"*** Sensitive Data Redacted ***");
         formatter.field("data_source", &self.data_source);
         formatter.field("language", &self.language);
-        formatter.field("filter_categories", &self.filter_categories);
+        formatter.field("filter_categories", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -372,7 +372,7 @@ impl ::std::fmt::Debug for SearchPlaceIndexForTextSummaryBuilder {
         formatter.field("result_b_box", &"*** Sensitive Data Redacted ***");
         formatter.field("data_source", &self.data_source);
         formatter.field("language", &self.language);
-        formatter.field("filter_categories", &self.filter_categories);
+        formatter.field("filter_categories", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

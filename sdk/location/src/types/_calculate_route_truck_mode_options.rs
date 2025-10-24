@@ -2,7 +2,7 @@
 
 /// <p>Contains details about additional route preferences for requests that specify <code>TravelMode</code> as <code>Truck</code>.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CalculateRouteTruckModeOptions {
     /// <p>Avoids ferries when calculating routes.</p>
     /// <p>Default Value: <code>false</code></p>
@@ -39,6 +39,16 @@ impl CalculateRouteTruckModeOptions {
         self.weight.as_ref()
     }
 }
+impl ::std::fmt::Debug for CalculateRouteTruckModeOptions {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("CalculateRouteTruckModeOptions");
+        formatter.field("avoid_ferries", &"*** Sensitive Data Redacted ***");
+        formatter.field("avoid_tolls", &"*** Sensitive Data Redacted ***");
+        formatter.field("dimensions", &self.dimensions);
+        formatter.field("weight", &self.weight);
+        formatter.finish()
+    }
+}
 impl CalculateRouteTruckModeOptions {
     /// Creates a new builder-style object to manufacture [`CalculateRouteTruckModeOptions`](crate::types::CalculateRouteTruckModeOptions).
     pub fn builder() -> crate::types::builders::CalculateRouteTruckModeOptionsBuilder {
@@ -47,7 +57,7 @@ impl CalculateRouteTruckModeOptions {
 }
 
 /// A builder for [`CalculateRouteTruckModeOptions`](crate::types::CalculateRouteTruckModeOptions).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct CalculateRouteTruckModeOptionsBuilder {
     pub(crate) avoid_ferries: ::std::option::Option<bool>,
@@ -132,5 +142,15 @@ impl CalculateRouteTruckModeOptionsBuilder {
             dimensions: self.dimensions,
             weight: self.weight,
         }
+    }
+}
+impl ::std::fmt::Debug for CalculateRouteTruckModeOptionsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("CalculateRouteTruckModeOptionsBuilder");
+        formatter.field("avoid_ferries", &"*** Sensitive Data Redacted ***");
+        formatter.field("avoid_tolls", &"*** Sensitive Data Redacted ***");
+        formatter.field("dimensions", &self.dimensions);
+        formatter.field("weight", &self.weight);
+        formatter.finish()
     }
 }

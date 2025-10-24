@@ -100,6 +100,25 @@ impl GetTileFluentBuilder {
         self.config_override = config_override;
         self
     }
+    ///
+    /// Appends an item to `AdditionalFeatures`.
+    ///
+    /// To override the contents of this collection use [`set_additional_features`](Self::set_additional_features).
+    ///
+    /// <p>A list of optional additional parameters such as map styles that can be requested for each result.</p>
+    pub fn additional_features(mut self, input: crate::types::TileAdditionalFeature) -> Self {
+        self.inner = self.inner.additional_features(input);
+        self
+    }
+    /// <p>A list of optional additional parameters such as map styles that can be requested for each result.</p>
+    pub fn set_additional_features(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TileAdditionalFeature>>) -> Self {
+        self.inner = self.inner.set_additional_features(input);
+        self
+    }
+    /// <p>A list of optional additional parameters such as map styles that can be requested for each result.</p>
+    pub fn get_additional_features(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TileAdditionalFeature>> {
+        self.inner.get_additional_features()
+    }
     /// <p>Specifies the desired tile set.</p>
     /// <p>Valid Values: <code>raster.satellite | vector.basemap</code></p>
     pub fn tileset(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

@@ -14,6 +14,8 @@ pub enum ConnectionPropertiesInput {
     HyperPodProperties(crate::types::HyperPodPropertiesInput),
     /// <p>The IAM properties of a connection.</p>
     IamProperties(crate::types::IamPropertiesInput),
+    /// <p>The MLflow properties of a connection.</p>
+    MlflowProperties(crate::types::MlflowPropertiesInput),
     /// <p>The Amazon Redshift properties of a connection.</p>
     RedshiftProperties(crate::types::RedshiftPropertiesInput),
     /// <p>The Amazon S3 properties of a connection.</p>
@@ -97,6 +99,19 @@ impl ConnectionPropertiesInput {
     /// Returns true if this is a [`IamProperties`](crate::types::ConnectionPropertiesInput::IamProperties).
     pub fn is_iam_properties(&self) -> bool {
         self.as_iam_properties().is_ok()
+    }
+    /// Tries to convert the enum instance into [`MlflowProperties`](crate::types::ConnectionPropertiesInput::MlflowProperties), extracting the inner [`MlflowPropertiesInput`](crate::types::MlflowPropertiesInput).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_mlflow_properties(&self) -> ::std::result::Result<&crate::types::MlflowPropertiesInput, &Self> {
+        if let ConnectionPropertiesInput::MlflowProperties(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`MlflowProperties`](crate::types::ConnectionPropertiesInput::MlflowProperties).
+    pub fn is_mlflow_properties(&self) -> bool {
+        self.as_mlflow_properties().is_ok()
     }
     /// Tries to convert the enum instance into [`RedshiftProperties`](crate::types::ConnectionPropertiesInput::RedshiftProperties), extracting the inner [`RedshiftPropertiesInput`](crate::types::RedshiftPropertiesInput).
     /// Returns `Err(&Self)` if it can't be converted.

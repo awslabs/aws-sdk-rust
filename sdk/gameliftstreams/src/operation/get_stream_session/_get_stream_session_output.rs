@@ -31,16 +31,32 @@ pub struct GetStreamSessionOutput {
     /// <p><code>TERMINATED</code>: The stream session has ended.</p></li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::StreamSessionStatus>,
-    /// <p>A short description of the reason the stream session is in <code>ERROR</code> status.</p>
+    /// <p>A short description of the reason the stream session is in <code>ERROR</code> status or <code>TERMINATED</code> status.</p>
+    /// <p><code>ERROR</code> status reasons:</p>
     /// <ul>
+    /// <li>
+    /// <p><code>applicationLogS3DestinationError</code>: Could not write the application log to the Amazon S3 bucket that is configured for the streaming application. Make sure the bucket still exists.</p></li>
     /// <li>
     /// <p><code>internalError</code>: An internal service error occurred. Start a new stream session to continue streaming.</p></li>
     /// <li>
     /// <p><code>invalidSignalRequest</code>: The WebRTC signal request that was sent is not valid. When starting or reconnecting to a stream session, use <code>generateSignalRequest</code> in the Amazon GameLift Streams Web SDK to generate a new signal request.</p></li>
     /// <li>
     /// <p><code>placementTimeout</code>: Amazon GameLift Streams could not find available stream capacity to start a stream session. Increase the stream capacity in the stream group or wait until capacity becomes available.</p></li>
+    /// </ul>
+    /// <p><code>TERMINATED</code> status reasons:</p>
+    /// <ul>
     /// <li>
-    /// <p><code>applicationLogS3DestinationError</code>: Could not write the application log to the Amazon S3 bucket that is configured for the streaming application. Make sure the bucket still exists.</p></li>
+    /// <p><code>apiTerminated</code>: The stream session was terminated by an API call to <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_TerminateStreamSession.html">TerminateStreamSession</a>.</p></li>
+    /// <li>
+    /// <p><code>applicationExit</code>: The streaming application exited or crashed. The stream session was terminated because the application is no longer running.</p></li>
+    /// <li>
+    /// <p><code>connectionTimeout</code>: The stream session was terminated because the client failed to connect within the connection timeout period specified by <code>ConnectionTimeoutSeconds</code>.</p></li>
+    /// <li>
+    /// <p><code>idleTimeout</code>: The stream session was terminated because it exceeded the idle timeout period of 60 minutes with no user input activity.</p></li>
+    /// <li>
+    /// <p><code>maxSessionLengthTimeout</code>: The stream session was terminated because it exceeded the maximum session length timeout period specified by <code>SessionLengthSeconds</code>.</p></li>
+    /// <li>
+    /// <p><code>reconnectionTimeout</code>: The stream session was terminated because the client failed to reconnect within the reconnection timeout period specified by <code>ConnectionTimeoutSeconds</code> after losing connection.</p></li>
     /// </ul>
     pub status_reason: ::std::option::Option<crate::types::StreamSessionStatusReason>,
     /// <p>The data transfer protocol in use with the stream session.</p>
@@ -117,16 +133,32 @@ impl GetStreamSessionOutput {
     pub fn status(&self) -> ::std::option::Option<&crate::types::StreamSessionStatus> {
         self.status.as_ref()
     }
-    /// <p>A short description of the reason the stream session is in <code>ERROR</code> status.</p>
+    /// <p>A short description of the reason the stream session is in <code>ERROR</code> status or <code>TERMINATED</code> status.</p>
+    /// <p><code>ERROR</code> status reasons:</p>
     /// <ul>
+    /// <li>
+    /// <p><code>applicationLogS3DestinationError</code>: Could not write the application log to the Amazon S3 bucket that is configured for the streaming application. Make sure the bucket still exists.</p></li>
     /// <li>
     /// <p><code>internalError</code>: An internal service error occurred. Start a new stream session to continue streaming.</p></li>
     /// <li>
     /// <p><code>invalidSignalRequest</code>: The WebRTC signal request that was sent is not valid. When starting or reconnecting to a stream session, use <code>generateSignalRequest</code> in the Amazon GameLift Streams Web SDK to generate a new signal request.</p></li>
     /// <li>
     /// <p><code>placementTimeout</code>: Amazon GameLift Streams could not find available stream capacity to start a stream session. Increase the stream capacity in the stream group or wait until capacity becomes available.</p></li>
+    /// </ul>
+    /// <p><code>TERMINATED</code> status reasons:</p>
+    /// <ul>
     /// <li>
-    /// <p><code>applicationLogS3DestinationError</code>: Could not write the application log to the Amazon S3 bucket that is configured for the streaming application. Make sure the bucket still exists.</p></li>
+    /// <p><code>apiTerminated</code>: The stream session was terminated by an API call to <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_TerminateStreamSession.html">TerminateStreamSession</a>.</p></li>
+    /// <li>
+    /// <p><code>applicationExit</code>: The streaming application exited or crashed. The stream session was terminated because the application is no longer running.</p></li>
+    /// <li>
+    /// <p><code>connectionTimeout</code>: The stream session was terminated because the client failed to connect within the connection timeout period specified by <code>ConnectionTimeoutSeconds</code>.</p></li>
+    /// <li>
+    /// <p><code>idleTimeout</code>: The stream session was terminated because it exceeded the idle timeout period of 60 minutes with no user input activity.</p></li>
+    /// <li>
+    /// <p><code>maxSessionLengthTimeout</code>: The stream session was terminated because it exceeded the maximum session length timeout period specified by <code>SessionLengthSeconds</code>.</p></li>
+    /// <li>
+    /// <p><code>reconnectionTimeout</code>: The stream session was terminated because the client failed to reconnect within the reconnection timeout period specified by <code>ConnectionTimeoutSeconds</code> after losing connection.</p></li>
     /// </ul>
     pub fn status_reason(&self) -> ::std::option::Option<&crate::types::StreamSessionStatusReason> {
         self.status_reason.as_ref()
@@ -387,46 +419,94 @@ impl GetStreamSessionOutputBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::StreamSessionStatus> {
         &self.status
     }
-    /// <p>A short description of the reason the stream session is in <code>ERROR</code> status.</p>
+    /// <p>A short description of the reason the stream session is in <code>ERROR</code> status or <code>TERMINATED</code> status.</p>
+    /// <p><code>ERROR</code> status reasons:</p>
     /// <ul>
+    /// <li>
+    /// <p><code>applicationLogS3DestinationError</code>: Could not write the application log to the Amazon S3 bucket that is configured for the streaming application. Make sure the bucket still exists.</p></li>
     /// <li>
     /// <p><code>internalError</code>: An internal service error occurred. Start a new stream session to continue streaming.</p></li>
     /// <li>
     /// <p><code>invalidSignalRequest</code>: The WebRTC signal request that was sent is not valid. When starting or reconnecting to a stream session, use <code>generateSignalRequest</code> in the Amazon GameLift Streams Web SDK to generate a new signal request.</p></li>
     /// <li>
     /// <p><code>placementTimeout</code>: Amazon GameLift Streams could not find available stream capacity to start a stream session. Increase the stream capacity in the stream group or wait until capacity becomes available.</p></li>
+    /// </ul>
+    /// <p><code>TERMINATED</code> status reasons:</p>
+    /// <ul>
     /// <li>
-    /// <p><code>applicationLogS3DestinationError</code>: Could not write the application log to the Amazon S3 bucket that is configured for the streaming application. Make sure the bucket still exists.</p></li>
+    /// <p><code>apiTerminated</code>: The stream session was terminated by an API call to <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_TerminateStreamSession.html">TerminateStreamSession</a>.</p></li>
+    /// <li>
+    /// <p><code>applicationExit</code>: The streaming application exited or crashed. The stream session was terminated because the application is no longer running.</p></li>
+    /// <li>
+    /// <p><code>connectionTimeout</code>: The stream session was terminated because the client failed to connect within the connection timeout period specified by <code>ConnectionTimeoutSeconds</code>.</p></li>
+    /// <li>
+    /// <p><code>idleTimeout</code>: The stream session was terminated because it exceeded the idle timeout period of 60 minutes with no user input activity.</p></li>
+    /// <li>
+    /// <p><code>maxSessionLengthTimeout</code>: The stream session was terminated because it exceeded the maximum session length timeout period specified by <code>SessionLengthSeconds</code>.</p></li>
+    /// <li>
+    /// <p><code>reconnectionTimeout</code>: The stream session was terminated because the client failed to reconnect within the reconnection timeout period specified by <code>ConnectionTimeoutSeconds</code> after losing connection.</p></li>
     /// </ul>
     pub fn status_reason(mut self, input: crate::types::StreamSessionStatusReason) -> Self {
         self.status_reason = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A short description of the reason the stream session is in <code>ERROR</code> status.</p>
+    /// <p>A short description of the reason the stream session is in <code>ERROR</code> status or <code>TERMINATED</code> status.</p>
+    /// <p><code>ERROR</code> status reasons:</p>
     /// <ul>
+    /// <li>
+    /// <p><code>applicationLogS3DestinationError</code>: Could not write the application log to the Amazon S3 bucket that is configured for the streaming application. Make sure the bucket still exists.</p></li>
     /// <li>
     /// <p><code>internalError</code>: An internal service error occurred. Start a new stream session to continue streaming.</p></li>
     /// <li>
     /// <p><code>invalidSignalRequest</code>: The WebRTC signal request that was sent is not valid. When starting or reconnecting to a stream session, use <code>generateSignalRequest</code> in the Amazon GameLift Streams Web SDK to generate a new signal request.</p></li>
     /// <li>
     /// <p><code>placementTimeout</code>: Amazon GameLift Streams could not find available stream capacity to start a stream session. Increase the stream capacity in the stream group or wait until capacity becomes available.</p></li>
+    /// </ul>
+    /// <p><code>TERMINATED</code> status reasons:</p>
+    /// <ul>
     /// <li>
-    /// <p><code>applicationLogS3DestinationError</code>: Could not write the application log to the Amazon S3 bucket that is configured for the streaming application. Make sure the bucket still exists.</p></li>
+    /// <p><code>apiTerminated</code>: The stream session was terminated by an API call to <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_TerminateStreamSession.html">TerminateStreamSession</a>.</p></li>
+    /// <li>
+    /// <p><code>applicationExit</code>: The streaming application exited or crashed. The stream session was terminated because the application is no longer running.</p></li>
+    /// <li>
+    /// <p><code>connectionTimeout</code>: The stream session was terminated because the client failed to connect within the connection timeout period specified by <code>ConnectionTimeoutSeconds</code>.</p></li>
+    /// <li>
+    /// <p><code>idleTimeout</code>: The stream session was terminated because it exceeded the idle timeout period of 60 minutes with no user input activity.</p></li>
+    /// <li>
+    /// <p><code>maxSessionLengthTimeout</code>: The stream session was terminated because it exceeded the maximum session length timeout period specified by <code>SessionLengthSeconds</code>.</p></li>
+    /// <li>
+    /// <p><code>reconnectionTimeout</code>: The stream session was terminated because the client failed to reconnect within the reconnection timeout period specified by <code>ConnectionTimeoutSeconds</code> after losing connection.</p></li>
     /// </ul>
     pub fn set_status_reason(mut self, input: ::std::option::Option<crate::types::StreamSessionStatusReason>) -> Self {
         self.status_reason = input;
         self
     }
-    /// <p>A short description of the reason the stream session is in <code>ERROR</code> status.</p>
+    /// <p>A short description of the reason the stream session is in <code>ERROR</code> status or <code>TERMINATED</code> status.</p>
+    /// <p><code>ERROR</code> status reasons:</p>
     /// <ul>
+    /// <li>
+    /// <p><code>applicationLogS3DestinationError</code>: Could not write the application log to the Amazon S3 bucket that is configured for the streaming application. Make sure the bucket still exists.</p></li>
     /// <li>
     /// <p><code>internalError</code>: An internal service error occurred. Start a new stream session to continue streaming.</p></li>
     /// <li>
     /// <p><code>invalidSignalRequest</code>: The WebRTC signal request that was sent is not valid. When starting or reconnecting to a stream session, use <code>generateSignalRequest</code> in the Amazon GameLift Streams Web SDK to generate a new signal request.</p></li>
     /// <li>
     /// <p><code>placementTimeout</code>: Amazon GameLift Streams could not find available stream capacity to start a stream session. Increase the stream capacity in the stream group or wait until capacity becomes available.</p></li>
+    /// </ul>
+    /// <p><code>TERMINATED</code> status reasons:</p>
+    /// <ul>
     /// <li>
-    /// <p><code>applicationLogS3DestinationError</code>: Could not write the application log to the Amazon S3 bucket that is configured for the streaming application. Make sure the bucket still exists.</p></li>
+    /// <p><code>apiTerminated</code>: The stream session was terminated by an API call to <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_TerminateStreamSession.html">TerminateStreamSession</a>.</p></li>
+    /// <li>
+    /// <p><code>applicationExit</code>: The streaming application exited or crashed. The stream session was terminated because the application is no longer running.</p></li>
+    /// <li>
+    /// <p><code>connectionTimeout</code>: The stream session was terminated because the client failed to connect within the connection timeout period specified by <code>ConnectionTimeoutSeconds</code>.</p></li>
+    /// <li>
+    /// <p><code>idleTimeout</code>: The stream session was terminated because it exceeded the idle timeout period of 60 minutes with no user input activity.</p></li>
+    /// <li>
+    /// <p><code>maxSessionLengthTimeout</code>: The stream session was terminated because it exceeded the maximum session length timeout period specified by <code>SessionLengthSeconds</code>.</p></li>
+    /// <li>
+    /// <p><code>reconnectionTimeout</code>: The stream session was terminated because the client failed to reconnect within the reconnection timeout period specified by <code>ConnectionTimeoutSeconds</code> after losing connection.</p></li>
     /// </ul>
     pub fn get_status_reason(&self) -> &::std::option::Option<crate::types::StreamSessionStatusReason> {
         &self.status_reason

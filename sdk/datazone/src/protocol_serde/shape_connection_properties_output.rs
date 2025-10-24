@@ -74,6 +74,11 @@ where
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'amazonQProperties' cannot be null")
                             })?,
                         )),
+                        "mlflowProperties" => Some(crate::types::ConnectionPropertiesOutput::MlflowProperties(
+                            crate::protocol_serde::shape_mlflow_properties_output::de_mlflow_properties_output(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'mlflowProperties' cannot be null")
+                            })?,
+                        )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
                             Some(crate::types::ConnectionPropertiesOutput::Unknown)

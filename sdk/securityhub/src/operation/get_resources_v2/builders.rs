@@ -22,7 +22,7 @@ impl crate::operation::get_resources_v2::builders::GetResourcesV2InputBuilder {
 }
 /// Fluent builder constructing a request to `GetResourcesV2`.
 ///
-/// <p>Returns a list of resources. This API is in private preview and subject to change.</p>
+/// <p>Returns a list of resources. This API is in public preview and subject to change.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetResourcesV2FluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

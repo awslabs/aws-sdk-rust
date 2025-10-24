@@ -14,12 +14,15 @@
 /// match groupbyfield {
 ///     GroupByField::ActivityName => { /* ... */ },
 ///     GroupByField::ClassName => { /* ... */ },
+///     GroupByField::CloudAccountName => { /* ... */ },
 ///     GroupByField::CloudAccountUid => { /* ... */ },
 ///     GroupByField::CloudProvider => { /* ... */ },
 ///     GroupByField::CloudRegion => { /* ... */ },
 ///     GroupByField::ComplianceAssessmentsName => { /* ... */ },
 ///     GroupByField::ComplianceControl => { /* ... */ },
+///     GroupByField::ComplianceStandards => { /* ... */ },
 ///     GroupByField::ComplianceStatus => { /* ... */ },
+///     GroupByField::FindingInfoAnalyticName => { /* ... */ },
 ///     GroupByField::FindingInfoTitle => { /* ... */ },
 ///     GroupByField::FindingInfoTypes => { /* ... */ },
 ///     GroupByField::MetadataProductName => { /* ... */ },
@@ -28,6 +31,7 @@
 ///     GroupByField::ResourcesUid => { /* ... */ },
 ///     GroupByField::Severity => { /* ... */ },
 ///     GroupByField::Status => { /* ... */ },
+///     GroupByField::VulnerabilitiesAffectedPackagesName => { /* ... */ },
 ///     GroupByField::VulnerabilitiesFixCoverage => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -62,6 +66,8 @@ pub enum GroupByField {
     #[allow(missing_docs)] // documentation missing in model
     ClassName,
     #[allow(missing_docs)] // documentation missing in model
+    CloudAccountName,
+    #[allow(missing_docs)] // documentation missing in model
     CloudAccountUid,
     #[allow(missing_docs)] // documentation missing in model
     CloudProvider,
@@ -72,7 +78,11 @@ pub enum GroupByField {
     #[allow(missing_docs)] // documentation missing in model
     ComplianceControl,
     #[allow(missing_docs)] // documentation missing in model
+    ComplianceStandards,
+    #[allow(missing_docs)] // documentation missing in model
     ComplianceStatus,
+    #[allow(missing_docs)] // documentation missing in model
+    FindingInfoAnalyticName,
     #[allow(missing_docs)] // documentation missing in model
     FindingInfoTitle,
     #[allow(missing_docs)] // documentation missing in model
@@ -90,6 +100,8 @@ pub enum GroupByField {
     #[allow(missing_docs)] // documentation missing in model
     Status,
     #[allow(missing_docs)] // documentation missing in model
+    VulnerabilitiesAffectedPackagesName,
+    #[allow(missing_docs)] // documentation missing in model
     VulnerabilitiesFixCoverage,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -100,12 +112,15 @@ impl ::std::convert::From<&str> for GroupByField {
         match s {
             "activity_name" => GroupByField::ActivityName,
             "class_name" => GroupByField::ClassName,
+            "cloud.account.name" => GroupByField::CloudAccountName,
             "cloud.account.uid" => GroupByField::CloudAccountUid,
             "cloud.provider" => GroupByField::CloudProvider,
             "cloud.region" => GroupByField::CloudRegion,
             "compliance.assessments.name" => GroupByField::ComplianceAssessmentsName,
             "compliance.control" => GroupByField::ComplianceControl,
+            "compliance.standards" => GroupByField::ComplianceStandards,
             "compliance.status" => GroupByField::ComplianceStatus,
+            "finding_info.analytic.name" => GroupByField::FindingInfoAnalyticName,
             "finding_info.title" => GroupByField::FindingInfoTitle,
             "finding_info.types" => GroupByField::FindingInfoTypes,
             "metadata.product.name" => GroupByField::MetadataProductName,
@@ -114,6 +129,7 @@ impl ::std::convert::From<&str> for GroupByField {
             "resources.uid" => GroupByField::ResourcesUid,
             "severity" => GroupByField::Severity,
             "status" => GroupByField::Status,
+            "vulnerabilities.affected_packages.name" => GroupByField::VulnerabilitiesAffectedPackagesName,
             "vulnerabilities.fix_coverage" => GroupByField::VulnerabilitiesFixCoverage,
             other => GroupByField::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -132,12 +148,15 @@ impl GroupByField {
         match self {
             GroupByField::ActivityName => "activity_name",
             GroupByField::ClassName => "class_name",
+            GroupByField::CloudAccountName => "cloud.account.name",
             GroupByField::CloudAccountUid => "cloud.account.uid",
             GroupByField::CloudProvider => "cloud.provider",
             GroupByField::CloudRegion => "cloud.region",
             GroupByField::ComplianceAssessmentsName => "compliance.assessments.name",
             GroupByField::ComplianceControl => "compliance.control",
+            GroupByField::ComplianceStandards => "compliance.standards",
             GroupByField::ComplianceStatus => "compliance.status",
+            GroupByField::FindingInfoAnalyticName => "finding_info.analytic.name",
             GroupByField::FindingInfoTitle => "finding_info.title",
             GroupByField::FindingInfoTypes => "finding_info.types",
             GroupByField::MetadataProductName => "metadata.product.name",
@@ -146,6 +165,7 @@ impl GroupByField {
             GroupByField::ResourcesUid => "resources.uid",
             GroupByField::Severity => "severity",
             GroupByField::Status => "status",
+            GroupByField::VulnerabilitiesAffectedPackagesName => "vulnerabilities.affected_packages.name",
             GroupByField::VulnerabilitiesFixCoverage => "vulnerabilities.fix_coverage",
             GroupByField::Unknown(value) => value.as_str(),
         }
@@ -155,12 +175,15 @@ impl GroupByField {
         &[
             "activity_name",
             "class_name",
+            "cloud.account.name",
             "cloud.account.uid",
             "cloud.provider",
             "cloud.region",
             "compliance.assessments.name",
             "compliance.control",
+            "compliance.standards",
             "compliance.status",
+            "finding_info.analytic.name",
             "finding_info.title",
             "finding_info.types",
             "metadata.product.name",
@@ -169,6 +192,7 @@ impl GroupByField {
             "resources.uid",
             "severity",
             "status",
+            "vulnerabilities.affected_packages.name",
             "vulnerabilities.fix_coverage",
         ]
     }
@@ -195,12 +219,15 @@ impl ::std::fmt::Display for GroupByField {
         match self {
             GroupByField::ActivityName => write!(f, "activity_name"),
             GroupByField::ClassName => write!(f, "class_name"),
+            GroupByField::CloudAccountName => write!(f, "cloud.account.name"),
             GroupByField::CloudAccountUid => write!(f, "cloud.account.uid"),
             GroupByField::CloudProvider => write!(f, "cloud.provider"),
             GroupByField::CloudRegion => write!(f, "cloud.region"),
             GroupByField::ComplianceAssessmentsName => write!(f, "compliance.assessments.name"),
             GroupByField::ComplianceControl => write!(f, "compliance.control"),
+            GroupByField::ComplianceStandards => write!(f, "compliance.standards"),
             GroupByField::ComplianceStatus => write!(f, "compliance.status"),
+            GroupByField::FindingInfoAnalyticName => write!(f, "finding_info.analytic.name"),
             GroupByField::FindingInfoTitle => write!(f, "finding_info.title"),
             GroupByField::FindingInfoTypes => write!(f, "finding_info.types"),
             GroupByField::MetadataProductName => write!(f, "metadata.product.name"),
@@ -209,6 +236,7 @@ impl ::std::fmt::Display for GroupByField {
             GroupByField::ResourcesUid => write!(f, "resources.uid"),
             GroupByField::Severity => write!(f, "severity"),
             GroupByField::Status => write!(f, "status"),
+            GroupByField::VulnerabilitiesAffectedPackagesName => write!(f, "vulnerabilities.affected_packages.name"),
             GroupByField::VulnerabilitiesFixCoverage => write!(f, "vulnerabilities.fix_coverage"),
             GroupByField::Unknown(value) => write!(f, "{}", value),
         }

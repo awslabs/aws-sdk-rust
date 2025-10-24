@@ -58,6 +58,12 @@ pub fn ser_connection_properties_input(
             crate::protocol_serde::shape_amazon_q_properties_input::ser_amazon_q_properties_input(&mut object_9, inner)?;
             object_9.finish();
         }
+        crate::types::ConnectionPropertiesInput::MlflowProperties(inner) => {
+            #[allow(unused_mut)]
+            let mut object_10 = object_9.key("mlflowProperties").start_object();
+            crate::protocol_serde::shape_mlflow_properties_input::ser_mlflow_properties_input(&mut object_10, inner)?;
+            object_10.finish();
+        }
         crate::types::ConnectionPropertiesInput::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "ConnectionPropertiesInput",

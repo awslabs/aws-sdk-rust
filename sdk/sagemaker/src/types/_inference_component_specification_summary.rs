@@ -14,6 +14,8 @@ pub struct InferenceComponentSpecificationSummary {
     pub compute_resource_requirements: ::std::option::Option<crate::types::InferenceComponentComputeResourceRequirements>,
     /// <p>The name of the base inference component that contains this inference component.</p>
     pub base_inference_component_name: ::std::option::Option<::std::string::String>,
+    /// <p>Settings that affect how the inference component caches data.</p>
+    pub data_cache_config: ::std::option::Option<crate::types::InferenceComponentDataCacheConfigSummary>,
 }
 impl InferenceComponentSpecificationSummary {
     /// <p>The name of the SageMaker AI model object that is deployed with the inference component.</p>
@@ -36,6 +38,10 @@ impl InferenceComponentSpecificationSummary {
     pub fn base_inference_component_name(&self) -> ::std::option::Option<&str> {
         self.base_inference_component_name.as_deref()
     }
+    /// <p>Settings that affect how the inference component caches data.</p>
+    pub fn data_cache_config(&self) -> ::std::option::Option<&crate::types::InferenceComponentDataCacheConfigSummary> {
+        self.data_cache_config.as_ref()
+    }
 }
 impl InferenceComponentSpecificationSummary {
     /// Creates a new builder-style object to manufacture [`InferenceComponentSpecificationSummary`](crate::types::InferenceComponentSpecificationSummary).
@@ -53,6 +59,7 @@ pub struct InferenceComponentSpecificationSummaryBuilder {
     pub(crate) startup_parameters: ::std::option::Option<crate::types::InferenceComponentStartupParameters>,
     pub(crate) compute_resource_requirements: ::std::option::Option<crate::types::InferenceComponentComputeResourceRequirements>,
     pub(crate) base_inference_component_name: ::std::option::Option<::std::string::String>,
+    pub(crate) data_cache_config: ::std::option::Option<crate::types::InferenceComponentDataCacheConfigSummary>,
 }
 impl InferenceComponentSpecificationSummaryBuilder {
     /// <p>The name of the SageMaker AI model object that is deployed with the inference component.</p>
@@ -128,6 +135,20 @@ impl InferenceComponentSpecificationSummaryBuilder {
     pub fn get_base_inference_component_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.base_inference_component_name
     }
+    /// <p>Settings that affect how the inference component caches data.</p>
+    pub fn data_cache_config(mut self, input: crate::types::InferenceComponentDataCacheConfigSummary) -> Self {
+        self.data_cache_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Settings that affect how the inference component caches data.</p>
+    pub fn set_data_cache_config(mut self, input: ::std::option::Option<crate::types::InferenceComponentDataCacheConfigSummary>) -> Self {
+        self.data_cache_config = input;
+        self
+    }
+    /// <p>Settings that affect how the inference component caches data.</p>
+    pub fn get_data_cache_config(&self) -> &::std::option::Option<crate::types::InferenceComponentDataCacheConfigSummary> {
+        &self.data_cache_config
+    }
     /// Consumes the builder and constructs a [`InferenceComponentSpecificationSummary`](crate::types::InferenceComponentSpecificationSummary).
     pub fn build(self) -> crate::types::InferenceComponentSpecificationSummary {
         crate::types::InferenceComponentSpecificationSummary {
@@ -136,6 +157,7 @@ impl InferenceComponentSpecificationSummaryBuilder {
             startup_parameters: self.startup_parameters,
             compute_resource_requirements: self.compute_resource_requirements,
             base_inference_component_name: self.base_inference_component_name,
+            data_cache_config: self.data_cache_config,
         }
     }
 }

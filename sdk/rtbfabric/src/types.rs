@@ -23,6 +23,8 @@ pub use crate::types::_module_configuration::ModuleConfiguration;
 
 pub use crate::types::_module_parameters::ModuleParameters;
 
+pub use crate::types::_rate_limiter_module_parameters::RateLimiterModuleParameters;
+
 pub use crate::types::_open_rtb_attribute_module_parameters::OpenRtbAttributeModuleParameters;
 
 pub use crate::types::_action::Action;
@@ -94,6 +96,8 @@ mod _no_bid_module_parameters;
 mod _open_rtb_attribute_module_parameters;
 
 mod _protocol;
+
+mod _rate_limiter_module_parameters;
 
 mod _requester_gateway_status;
 

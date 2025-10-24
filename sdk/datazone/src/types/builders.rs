@@ -161,6 +161,8 @@ pub use crate::types::_configurable_action_parameter::ConfigurableActionParamete
 
 pub use crate::types::_resource::ResourceBuilder;
 
+pub use crate::types::_mlflow_properties_output::MlflowPropertiesOutputBuilder;
+
 pub use crate::types::_amazon_q_properties_output::AmazonQPropertiesOutputBuilder;
 
 pub use crate::types::_s3_properties_output::S3PropertiesOutputBuilder;
@@ -206,6 +208,8 @@ pub use crate::types::_o_auth2_client_application::OAuth2ClientApplicationBuilde
 pub use crate::types::_physical_connection_requirements::PhysicalConnectionRequirementsBuilder;
 
 pub use crate::types::_aws_location::AwsLocationBuilder;
+
+pub use crate::types::_mlflow_properties_patch::MlflowPropertiesPatchBuilder;
 
 pub use crate::types::_amazon_q_properties_patch::AmazonQPropertiesPatchBuilder;
 
@@ -440,6 +444,8 @@ pub use crate::types::_subscribed_project_input::SubscribedProjectInputBuilder;
 pub use crate::types::_asset_target_name_map::AssetTargetNameMapBuilder;
 
 pub use crate::types::_listing_revision_input::ListingRevisionInputBuilder;
+
+pub use crate::types::_mlflow_properties_input::MlflowPropertiesInputBuilder;
 
 pub use crate::types::_amazon_q_properties_input::AmazonQPropertiesInputBuilder;
 

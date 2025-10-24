@@ -46,8 +46,8 @@ impl ::std::fmt::Debug for Step {
         let mut formatter = f.debug_struct("Step");
         formatter.field("start_position", &"*** Sensitive Data Redacted ***");
         formatter.field("end_position", &"*** Sensitive Data Redacted ***");
-        formatter.field("distance", &self.distance);
-        formatter.field("duration_seconds", &self.duration_seconds);
+        formatter.field("distance", &"*** Sensitive Data Redacted ***");
+        formatter.field("duration_seconds", &"*** Sensitive Data Redacted ***");
         formatter.field("geometry_offset", &self.geometry_offset);
         formatter.finish()
     }
@@ -198,8 +198,8 @@ impl ::std::fmt::Debug for StepBuilder {
         let mut formatter = f.debug_struct("StepBuilder");
         formatter.field("start_position", &"*** Sensitive Data Redacted ***");
         formatter.field("end_position", &"*** Sensitive Data Redacted ***");
-        formatter.field("distance", &self.distance);
-        formatter.field("duration_seconds", &self.duration_seconds);
+        formatter.field("distance", &"*** Sensitive Data Redacted ***");
+        formatter.field("duration_seconds", &"*** Sensitive Data Redacted ***");
         formatter.field("geometry_offset", &self.geometry_offset);
         formatter.finish()
     }

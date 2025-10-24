@@ -3,7 +3,7 @@
 /// <p>Contains details about addresses or points of interest that match the search criteria.</p>
 /// <p>Not all details are included with all responses. Some details may only be returned by specific data partners.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Place {
     /// <p>The full name and address of the point of interest such as a city, region, or country. For example, <code>123 Any Street, Any Town, USA</code>.</p>
     pub label: ::std::option::Option<::std::string::String>,
@@ -134,6 +134,29 @@ impl Place {
         self.sub_municipality.as_deref()
     }
 }
+impl ::std::fmt::Debug for Place {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("Place");
+        formatter.field("label", &"*** Sensitive Data Redacted ***");
+        formatter.field("geometry", &self.geometry);
+        formatter.field("address_number", &"*** Sensitive Data Redacted ***");
+        formatter.field("street", &"*** Sensitive Data Redacted ***");
+        formatter.field("neighborhood", &"*** Sensitive Data Redacted ***");
+        formatter.field("municipality", &"*** Sensitive Data Redacted ***");
+        formatter.field("sub_region", &"*** Sensitive Data Redacted ***");
+        formatter.field("region", &"*** Sensitive Data Redacted ***");
+        formatter.field("country", &"*** Sensitive Data Redacted ***");
+        formatter.field("postal_code", &"*** Sensitive Data Redacted ***");
+        formatter.field("interpolated", &"*** Sensitive Data Redacted ***");
+        formatter.field("time_zone", &self.time_zone);
+        formatter.field("unit_type", &"*** Sensitive Data Redacted ***");
+        formatter.field("unit_number", &"*** Sensitive Data Redacted ***");
+        formatter.field("categories", &"*** Sensitive Data Redacted ***");
+        formatter.field("supplemental_categories", &"*** Sensitive Data Redacted ***");
+        formatter.field("sub_municipality", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl Place {
     /// Creates a new builder-style object to manufacture [`Place`](crate::types::Place).
     pub fn builder() -> crate::types::builders::PlaceBuilder {
@@ -142,7 +165,7 @@ impl Place {
 }
 
 /// A builder for [`Place`](crate::types::Place).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct PlaceBuilder {
     pub(crate) label: ::std::option::Option<::std::string::String>,
@@ -466,5 +489,28 @@ impl PlaceBuilder {
             supplemental_categories: self.supplemental_categories,
             sub_municipality: self.sub_municipality,
         }
+    }
+}
+impl ::std::fmt::Debug for PlaceBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("PlaceBuilder");
+        formatter.field("label", &"*** Sensitive Data Redacted ***");
+        formatter.field("geometry", &self.geometry);
+        formatter.field("address_number", &"*** Sensitive Data Redacted ***");
+        formatter.field("street", &"*** Sensitive Data Redacted ***");
+        formatter.field("neighborhood", &"*** Sensitive Data Redacted ***");
+        formatter.field("municipality", &"*** Sensitive Data Redacted ***");
+        formatter.field("sub_region", &"*** Sensitive Data Redacted ***");
+        formatter.field("region", &"*** Sensitive Data Redacted ***");
+        formatter.field("country", &"*** Sensitive Data Redacted ***");
+        formatter.field("postal_code", &"*** Sensitive Data Redacted ***");
+        formatter.field("interpolated", &"*** Sensitive Data Redacted ***");
+        formatter.field("time_zone", &self.time_zone);
+        formatter.field("unit_type", &"*** Sensitive Data Redacted ***");
+        formatter.field("unit_number", &"*** Sensitive Data Redacted ***");
+        formatter.field("categories", &"*** Sensitive Data Redacted ***");
+        formatter.field("supplemental_categories", &"*** Sensitive Data Redacted ***");
+        formatter.field("sub_municipality", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

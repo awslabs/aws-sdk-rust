@@ -22,7 +22,7 @@ impl crate::operation::update_aggregator_v2::builders::UpdateAggregatorV2InputBu
 }
 /// Fluent builder constructing a request to `UpdateAggregatorV2`.
 ///
-/// <p>Udpates the configuration for the Aggregator V2. This API is in private preview and subject to change.</p>
+/// <p>Udpates the configuration for the Aggregator V2. This API is in public preview and subject to change.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateAggregatorV2FluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

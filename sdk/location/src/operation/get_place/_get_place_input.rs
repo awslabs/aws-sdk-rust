@@ -42,7 +42,7 @@ impl ::std::fmt::Debug for GetPlaceInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GetPlaceInput");
         formatter.field("index_name", &self.index_name);
-        formatter.field("place_id", &self.place_id);
+        formatter.field("place_id", &"*** Sensitive Data Redacted ***");
         formatter.field("language", &self.language);
         formatter.field("key", &"*** Sensitive Data Redacted ***");
         formatter.finish()
@@ -149,7 +149,7 @@ impl ::std::fmt::Debug for GetPlaceInputBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GetPlaceInputBuilder");
         formatter.field("index_name", &self.index_name);
-        formatter.field("place_id", &self.place_id);
+        formatter.field("place_id", &"*** Sensitive Data Redacted ***");
         formatter.field("language", &self.language);
         formatter.field("key", &"*** Sensitive Data Redacted ***");
         formatter.finish()

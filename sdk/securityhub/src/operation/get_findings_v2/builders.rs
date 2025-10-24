@@ -22,7 +22,7 @@ impl crate::operation::get_findings_v2::builders::GetFindingsV2InputBuilder {
 }
 /// Fluent builder constructing a request to `GetFindingsV2`.
 ///
-/// <p>Return a list of findings that match the specified criteria. <code>GetFindings</code> and <code>GetFindingsV2</code> both use <code>securityhub:GetFindings</code> in the <code>Action</code> element of an IAM policy statement. You must have permission to perform the <code>securityhub:GetFindings</code> action. This API is in private preview and subject to change.</p>
+/// <p>Return a list of findings that match the specified criteria. <code>GetFindings</code> and <code>GetFindingsV2</code> both use <code>securityhub:GetFindings</code> in the <code>Action</code> element of an IAM policy statement. You must have permission to perform the <code>securityhub:GetFindings</code> action. This API is in public preview and subject to change.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetFindingsV2FluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
