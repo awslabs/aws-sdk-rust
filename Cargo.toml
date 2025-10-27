@@ -1,9 +1,9 @@
 [workspace]
 resolver = "2"
 exclude = [
+    "tests/webassembly",
     "tests/telemetry",
-    "tests/no-default-features",
-    "tests/webassembly"
+    "tests/no-default-features"
 ]
 members = [
     "sdk/accessanalyzer",
@@ -32,7 +32,6 @@ members = [
     "sdk/apprunner",
     "sdk/appstream",
     "sdk/appsync",
-    "sdk/apptest",
     "sdk/arcregionswitch",
     "sdk/arczonalshift",
     "sdk/artifact",
@@ -225,7 +224,6 @@ members = [
     "sdk/iotdeviceadvisor",
     "sdk/iotevents",
     "sdk/ioteventsdata",
-    "sdk/iotfleethub",
     "sdk/iotfleetwise",
     "sdk/iotjobsdataplane",
     "sdk/iotmanagedintegrations",
@@ -265,8 +263,6 @@ members = [
     "sdk/lightsail",
     "sdk/location",
     "sdk/lookoutequipment",
-    "sdk/lookoutmetrics",
-    "sdk/lookoutvision",
     "sdk/m2",
     "sdk/machinelearning",
     "sdk/macie2",
@@ -341,8 +337,6 @@ members = [
     "sdk/qapps",
     "sdk/qbusiness",
     "sdk/qconnect",
-    "sdk/qldb",
-    "sdk/qldbsession",
     "sdk/quicksight",
     "sdk/ram",
     "sdk/rbin",
@@ -357,7 +351,6 @@ members = [
     "sdk/resourceexplorer2",
     "sdk/resourcegroups",
     "sdk/resourcegroupstagging",
-    "sdk/robomaker",
     "sdk/rolesanywhere",
     "sdk/route53",
     "sdk/route53domains",

@@ -183,4 +183,18 @@ impl CreateStreamFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
+    /// <p>The maximum record size of a single record in kibibyte (KiB) that you can write to, and read from a stream.</p>
+    pub fn max_record_size_in_kib(mut self, input: i32) -> Self {
+        self.inner = self.inner.max_record_size_in_kib(input);
+        self
+    }
+    /// <p>The maximum record size of a single record in kibibyte (KiB) that you can write to, and read from a stream.</p>
+    pub fn set_max_record_size_in_kib(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.inner = self.inner.set_max_record_size_in_kib(input);
+        self
+    }
+    /// <p>The maximum record size of a single record in kibibyte (KiB) that you can write to, and read from a stream.</p>
+    pub fn get_max_record_size_in_kib(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_record_size_in_kib()
+    }
 }

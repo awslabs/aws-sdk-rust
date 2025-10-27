@@ -12,6 +12,8 @@ pub struct CreateStreamInput {
     pub stream_mode_details: ::std::option::Option<crate::types::StreamModeDetails>,
     /// <p>A set of up to 50 key-value pairs to use to create the tags. A tag consists of a required key and an optional value.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The maximum record size of a single record in kibibyte (KiB) that you can write to, and read from a stream.</p>
+    pub max_record_size_in_kib: ::std::option::Option<i32>,
 }
 impl CreateStreamInput {
     /// <p>A name to identify the stream. The stream name is scoped to the Amazon Web Services account used by the application that creates the stream. It is also scoped by Amazon Web Services Region. That is, two streams in two different Amazon Web Services accounts can have the same name. Two streams in the same Amazon Web Services account but in two different Regions can also have the same name.</p>
@@ -30,6 +32,10 @@ impl CreateStreamInput {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
+    /// <p>The maximum record size of a single record in kibibyte (KiB) that you can write to, and read from a stream.</p>
+    pub fn max_record_size_in_kib(&self) -> ::std::option::Option<i32> {
+        self.max_record_size_in_kib
+    }
 }
 impl CreateStreamInput {
     /// Creates a new builder-style object to manufacture [`CreateStreamInput`](crate::operation::create_stream::CreateStreamInput).
@@ -46,6 +52,7 @@ pub struct CreateStreamInputBuilder {
     pub(crate) shard_count: ::std::option::Option<i32>,
     pub(crate) stream_mode_details: ::std::option::Option<crate::types::StreamModeDetails>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) max_record_size_in_kib: ::std::option::Option<i32>,
 }
 impl CreateStreamInputBuilder {
     /// <p>A name to identify the stream. The stream name is scoped to the Amazon Web Services account used by the application that creates the stream. It is also scoped by Amazon Web Services Region. That is, two streams in two different Amazon Web Services accounts can have the same name. Two streams in the same Amazon Web Services account but in two different Regions can also have the same name.</p>
@@ -111,6 +118,20 @@ impl CreateStreamInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// <p>The maximum record size of a single record in kibibyte (KiB) that you can write to, and read from a stream.</p>
+    pub fn max_record_size_in_kib(mut self, input: i32) -> Self {
+        self.max_record_size_in_kib = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The maximum record size of a single record in kibibyte (KiB) that you can write to, and read from a stream.</p>
+    pub fn set_max_record_size_in_kib(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.max_record_size_in_kib = input;
+        self
+    }
+    /// <p>The maximum record size of a single record in kibibyte (KiB) that you can write to, and read from a stream.</p>
+    pub fn get_max_record_size_in_kib(&self) -> &::std::option::Option<i32> {
+        &self.max_record_size_in_kib
+    }
     /// Consumes the builder and constructs a [`CreateStreamInput`](crate::operation::create_stream::CreateStreamInput).
     pub fn build(
         self,
@@ -120,6 +141,7 @@ impl CreateStreamInputBuilder {
             shard_count: self.shard_count,
             stream_mode_details: self.stream_mode_details,
             tags: self.tags,
+            max_record_size_in_kib: self.max_record_size_in_kib,
         })
     }
 }

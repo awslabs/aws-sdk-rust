@@ -263,6 +263,8 @@ mod tag_resource;
 
 mod untag_resource;
 
+mod update_max_record_size;
+
 mod update_shard_count;
 
 mod update_stream_mode;

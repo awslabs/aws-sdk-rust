@@ -54,6 +54,8 @@ pub struct StreamDescriptionSummary {
     pub open_shard_count: i32,
     /// <p>The number of enhanced fan-out consumers registered with the stream.</p>
     pub consumer_count: ::std::option::Option<i32>,
+    /// <p>The maximum record size of a single record in kibibyte (KiB) that you can write to, and read from a stream.</p>
+    pub max_record_size_in_kib: ::std::option::Option<i32>,
 }
 impl StreamDescriptionSummary {
     /// <p>The name of the stream being described.</p>
@@ -131,6 +133,10 @@ impl StreamDescriptionSummary {
     pub fn consumer_count(&self) -> ::std::option::Option<i32> {
         self.consumer_count
     }
+    /// <p>The maximum record size of a single record in kibibyte (KiB) that you can write to, and read from a stream.</p>
+    pub fn max_record_size_in_kib(&self) -> ::std::option::Option<i32> {
+        self.max_record_size_in_kib
+    }
 }
 impl StreamDescriptionSummary {
     /// Creates a new builder-style object to manufacture [`StreamDescriptionSummary`](crate::types::StreamDescriptionSummary).
@@ -154,6 +160,7 @@ pub struct StreamDescriptionSummaryBuilder {
     pub(crate) key_id: ::std::option::Option<::std::string::String>,
     pub(crate) open_shard_count: ::std::option::Option<i32>,
     pub(crate) consumer_count: ::std::option::Option<i32>,
+    pub(crate) max_record_size_in_kib: ::std::option::Option<i32>,
 }
 impl StreamDescriptionSummaryBuilder {
     /// <p>The name of the stream being described.</p>
@@ -406,6 +413,20 @@ impl StreamDescriptionSummaryBuilder {
     pub fn get_consumer_count(&self) -> &::std::option::Option<i32> {
         &self.consumer_count
     }
+    /// <p>The maximum record size of a single record in kibibyte (KiB) that you can write to, and read from a stream.</p>
+    pub fn max_record_size_in_kib(mut self, input: i32) -> Self {
+        self.max_record_size_in_kib = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The maximum record size of a single record in kibibyte (KiB) that you can write to, and read from a stream.</p>
+    pub fn set_max_record_size_in_kib(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.max_record_size_in_kib = input;
+        self
+    }
+    /// <p>The maximum record size of a single record in kibibyte (KiB) that you can write to, and read from a stream.</p>
+    pub fn get_max_record_size_in_kib(&self) -> &::std::option::Option<i32> {
+        &self.max_record_size_in_kib
+    }
     /// Consumes the builder and constructs a [`StreamDescriptionSummary`](crate::types::StreamDescriptionSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`stream_name`](crate::types::builders::StreamDescriptionSummaryBuilder::stream_name)
@@ -463,6 +484,7 @@ impl StreamDescriptionSummaryBuilder {
                 )
             })?,
             consumer_count: self.consumer_count,
+            max_record_size_in_kib: self.max_record_size_in_kib,
         })
     }
 }

@@ -28,5 +28,11 @@ pub fn ser_create_stream_input_input(
         }
         object_6.finish();
     }
+    if let Some(var_9) = &input.max_record_size_in_kib {
+        object.key("MaxRecordSizeInKiB").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_9).into()),
+        );
+    }
     Ok(())
 }

@@ -89,6 +89,8 @@ pub(crate) mod shape_tag_resource;
 
 pub(crate) mod shape_untag_resource;
 
+pub(crate) mod shape_update_max_record_size;
+
 pub(crate) mod shape_update_shard_count;
 
 pub(crate) mod shape_update_stream_mode;
@@ -196,6 +198,8 @@ pub(crate) mod shape_subscribe_to_shard_output;
 pub(crate) mod shape_tag_resource_input;
 
 pub(crate) mod shape_untag_resource_input;
+
+pub(crate) mod shape_update_max_record_size_input;
 
 pub(crate) mod shape_update_shard_count_input;
 

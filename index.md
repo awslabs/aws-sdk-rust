@@ -92,7 +92,6 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | AWS IoT Data Plane | [aws-sdk-iotdataplane](https://crates.io/crates/aws-sdk-iotdataplane) ([docs](https://docs.rs/aws-sdk-iotdataplane)) |
 | AWS IoT Events | [aws-sdk-iotevents](https://crates.io/crates/aws-sdk-iotevents) ([docs](https://docs.rs/aws-sdk-iotevents)) |
 | AWS IoT Events Data | [aws-sdk-ioteventsdata](https://crates.io/crates/aws-sdk-ioteventsdata) ([docs](https://docs.rs/aws-sdk-ioteventsdata)) |
-| AWS IoT Fleet Hub | [aws-sdk-iotfleethub](https://crates.io/crates/aws-sdk-iotfleethub) ([docs](https://docs.rs/aws-sdk-iotfleethub)) |
 | AWS IoT FleetWise | [aws-sdk-iotfleetwise](https://crates.io/crates/aws-sdk-iotfleetwise) ([docs](https://docs.rs/aws-sdk-iotfleetwise)) |
 | AWS IoT Greengrass V2 | [aws-sdk-greengrassv2](https://crates.io/crates/aws-sdk-greengrassv2) ([docs](https://docs.rs/aws-sdk-greengrassv2)) |
 | AWS IoT Jobs Data Plane | [aws-sdk-iotjobsdataplane](https://crates.io/crates/aws-sdk-iotjobsdataplane) ([docs](https://docs.rs/aws-sdk-iotjobsdataplane)) |
@@ -108,7 +107,6 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | AWS License Manager | [aws-sdk-licensemanager](https://crates.io/crates/aws-sdk-licensemanager) ([docs](https://docs.rs/aws-sdk-licensemanager)) |
 | AWS License Manager Linux Subscriptions | [aws-sdk-licensemanagerlinuxsubscriptions](https://crates.io/crates/aws-sdk-licensemanagerlinuxsubscriptions) ([docs](https://docs.rs/aws-sdk-licensemanagerlinuxsubscriptions)) |
 | AWS License Manager User Subscriptions | [aws-sdk-licensemanagerusersubscriptions](https://crates.io/crates/aws-sdk-licensemanagerusersubscriptions) ([docs](https://docs.rs/aws-sdk-licensemanagerusersubscriptions)) |
-| AWS Mainframe Modernization Application Testing | [aws-sdk-apptest](https://crates.io/crates/aws-sdk-apptest) ([docs](https://docs.rs/aws-sdk-apptest)) |
 | AWS Marketplace Agreement Service | [aws-sdk-marketplaceagreement](https://crates.io/crates/aws-sdk-marketplaceagreement) ([docs](https://docs.rs/aws-sdk-marketplaceagreement)) |
 | AWS Marketplace Catalog Service | [aws-sdk-marketplacecatalog](https://crates.io/crates/aws-sdk-marketplacecatalog) ([docs](https://docs.rs/aws-sdk-marketplacecatalog)) |
 | AWS Marketplace Commerce Analytics | [aws-sdk-marketplacecommerceanalytics](https://crates.io/crates/aws-sdk-marketplacecommerceanalytics) ([docs](https://docs.rs/aws-sdk-marketplacecommerceanalytics)) |
@@ -137,7 +135,6 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | AWS Resource Explorer | [aws-sdk-resourceexplorer2](https://crates.io/crates/aws-sdk-resourceexplorer2) ([docs](https://docs.rs/aws-sdk-resourceexplorer2)) |
 | AWS Resource Groups | [aws-sdk-resourcegroups](https://crates.io/crates/aws-sdk-resourcegroups) ([docs](https://docs.rs/aws-sdk-resourcegroups)) |
 | AWS Resource Groups Tagging API | [aws-sdk-resourcegroupstagging](https://crates.io/crates/aws-sdk-resourcegroupstagging) ([docs](https://docs.rs/aws-sdk-resourcegroupstagging)) |
-| AWS RoboMaker | [aws-sdk-robomaker](https://crates.io/crates/aws-sdk-robomaker) ([docs](https://docs.rs/aws-sdk-robomaker)) |
 | AWS Route53 Recovery Control Config | [aws-sdk-route53recoverycontrolconfig](https://crates.io/crates/aws-sdk-route53recoverycontrolconfig) ([docs](https://docs.rs/aws-sdk-route53recoverycontrolconfig)) |
 | AWS Route53 Recovery Readiness | [aws-sdk-route53recoveryreadiness](https://crates.io/crates/aws-sdk-route53recoveryreadiness) ([docs](https://docs.rs/aws-sdk-route53recoveryreadiness)) |
 | AWS S3 Control | [aws-sdk-s3control](https://crates.io/crates/aws-sdk-s3control) ([docs](https://docs.rs/aws-sdk-s3control)) |
@@ -292,8 +289,6 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | Amazon Location Service Places V2 | [aws-sdk-geoplaces](https://crates.io/crates/aws-sdk-geoplaces) ([docs](https://docs.rs/aws-sdk-geoplaces)) |
 | Amazon Location Service Routes V2 | [aws-sdk-georoutes](https://crates.io/crates/aws-sdk-georoutes) ([docs](https://docs.rs/aws-sdk-georoutes)) |
 | Amazon Lookout for Equipment | [aws-sdk-lookoutequipment](https://crates.io/crates/aws-sdk-lookoutequipment) ([docs](https://docs.rs/aws-sdk-lookoutequipment)) |
-| Amazon Lookout for Metrics | [aws-sdk-lookoutmetrics](https://crates.io/crates/aws-sdk-lookoutmetrics) ([docs](https://docs.rs/aws-sdk-lookoutmetrics)) |
-| Amazon Lookout for Vision | [aws-sdk-lookoutvision](https://crates.io/crates/aws-sdk-lookoutvision) ([docs](https://docs.rs/aws-sdk-lookoutvision)) |
 | Amazon Machine Learning | [aws-sdk-machinelearning](https://crates.io/crates/aws-sdk-machinelearning) ([docs](https://docs.rs/aws-sdk-machinelearning)) |
 | Amazon Macie 2 | [aws-sdk-macie2](https://crates.io/crates/aws-sdk-macie2) ([docs](https://docs.rs/aws-sdk-macie2)) |
 | Amazon Managed Blockchain | [aws-sdk-managedblockchain](https://crates.io/crates/aws-sdk-managedblockchain) ([docs](https://docs.rs/aws-sdk-managedblockchain)) |
@@ -317,8 +312,6 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | Amazon Polly | [aws-sdk-polly](https://crates.io/crates/aws-sdk-polly) ([docs](https://docs.rs/aws-sdk-polly)) |
 | Amazon Prometheus Service | [aws-sdk-amp](https://crates.io/crates/aws-sdk-amp) ([docs](https://docs.rs/aws-sdk-amp)) |
 | Amazon Q Connect | [aws-sdk-qconnect](https://crates.io/crates/aws-sdk-qconnect) ([docs](https://docs.rs/aws-sdk-qconnect)) |
-| Amazon QLDB | [aws-sdk-qldb](https://crates.io/crates/aws-sdk-qldb) ([docs](https://docs.rs/aws-sdk-qldb)) |
-| Amazon QLDB Session | [aws-sdk-qldbsession](https://crates.io/crates/aws-sdk-qldbsession) ([docs](https://docs.rs/aws-sdk-qldbsession)) |
 | Amazon QuickSight | [aws-sdk-quicksight](https://crates.io/crates/aws-sdk-quicksight) ([docs](https://docs.rs/aws-sdk-quicksight)) |
 | Amazon Recycle Bin | [aws-sdk-rbin](https://crates.io/crates/aws-sdk-rbin) ([docs](https://docs.rs/aws-sdk-rbin)) |
 | Amazon Redshift | [aws-sdk-redshift](https://crates.io/crates/aws-sdk-redshift) ([docs](https://docs.rs/aws-sdk-redshift)) |

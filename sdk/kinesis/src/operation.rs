@@ -100,6 +100,9 @@ pub mod tag_resource;
 /// Types for the `UntagResource` operation.
 pub mod untag_resource;
 
+/// Types for the `UpdateMaxRecordSize` operation.
+pub mod update_max_record_size;
+
 /// Types for the `UpdateShardCount` operation.
 pub mod update_shard_count;
 

@@ -1148,6 +1148,37 @@ impl From<crate::operation::untag_resource::UntagResourceError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_max_record_size::UpdateMaxRecordSizeError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_max_record_size::UpdateMaxRecordSizeError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_max_record_size::UpdateMaxRecordSizeError> for Error {
+    fn from(err: crate::operation::update_max_record_size::UpdateMaxRecordSizeError) -> Self {
+        match err {
+            crate::operation::update_max_record_size::UpdateMaxRecordSizeError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_max_record_size::UpdateMaxRecordSizeError::InvalidArgumentException(inner) => {
+                Error::InvalidArgumentException(inner)
+            }
+            crate::operation::update_max_record_size::UpdateMaxRecordSizeError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::update_max_record_size::UpdateMaxRecordSizeError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::operation::update_max_record_size::UpdateMaxRecordSizeError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_max_record_size::UpdateMaxRecordSizeError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_max_record_size::UpdateMaxRecordSizeError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_shard_count::UpdateShardCountError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
