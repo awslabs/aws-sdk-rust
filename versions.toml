@@ -1,7 +1,7 @@
 smithy_rs_revision = 'bf4f9971ff6464d32a9736222de31f7af6357c79'
 
 [manual_interventions]
-crates_to_remove = []
+crates_to_remove = ["aws-sdk-qldb", "aws-sdk-qldbsession", "aws-sdk-robomaker", "aws-sdk-lookoutmetrics", "aws-sdk-lookoutvision", "aws-sdk-iotfleethub", "aws-sdk-apptest"]
 [crates.aws-config]
 category = 'AwsRuntime'
 version = '1.8.8'
