@@ -97,7 +97,11 @@ pub use crate::types::_programming_language::ProgrammingLanguage;
 
 pub use crate::types::_tool_name::ToolName;
 
+pub use crate::types::_session_status::SessionStatus;
+
 pub use crate::types::_oauth2_flow_type::Oauth2FlowType;
+
+pub use crate::types::_user_identifier::UserIdentifier;
 
 mod _actor_summary;
 
@@ -181,6 +185,8 @@ mod _role;
 
 mod _search_criteria;
 
+mod _session_status;
+
 mod _session_summary;
 
 mod _stream_update;
@@ -193,6 +199,8 @@ mod _tool_name;
 
 mod _tool_result_structured_content;
 
+mod _user_identifier;
+
 mod _validation_exception_field;
 
 mod _validation_exception_reason;
@@ -202,5 +210,5 @@ mod _view_port;
 /// Builders
 pub mod builders;
 
-/// Error types that Amazon Bedrock AgentCore Data Plane Fronting Layer can respond with.
+/// Error types that Amazon Bedrock AgentCore can respond with.
 pub mod error;

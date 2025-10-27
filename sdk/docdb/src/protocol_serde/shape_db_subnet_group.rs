@@ -82,6 +82,16 @@ pub fn de_db_subnet_group(
                 builder = builder.set_db_subnet_group_arn(var_6);
             }
             ,
+            s if s.matches("SupportedNetworkTypes") /* SupportedNetworkTypes com.amazonaws.docdb#DBSubnetGroup$SupportedNetworkTypes */ =>  {
+                let var_7 =
+                    Some(
+                        crate::protocol_serde::shape_network_type_list::de_network_type_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_supported_network_types(var_7);
+            }
+            ,
             _ => {}
         }
     }

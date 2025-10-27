@@ -23,6 +23,7 @@ impl crate::operation::update_service_sync_blocker::builders::UpdateServiceSyncB
 /// Fluent builder constructing a request to `UpdateServiceSyncBlocker`.
 ///
 /// <p>Update the service sync blocker by resolving it.</p>
+#[deprecated(note = "AWS Proton is not accepting new customers.", since = "10/07/2025")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateServiceSyncBlockerFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

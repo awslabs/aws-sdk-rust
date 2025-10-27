@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateNamespaceInput {
-    /// <p>The ID for the Amazon Web Services account that you want to create the QuickSight namespace in.</p>
+    /// <p>The ID for the Amazon Web Services account that you want to create the Quick Sight namespace in.</p>
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The name that you want to use to describe the new namespace.</p>
     pub namespace: ::std::option::Option<::std::string::String>,
@@ -13,7 +13,7 @@ pub struct CreateNamespaceInput {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateNamespaceInput {
-    /// <p>The ID for the Amazon Web Services account that you want to create the QuickSight namespace in.</p>
+    /// <p>The ID for the Amazon Web Services account that you want to create the Quick Sight namespace in.</p>
     pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
@@ -49,18 +49,18 @@ pub struct CreateNamespaceInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateNamespaceInputBuilder {
-    /// <p>The ID for the Amazon Web Services account that you want to create the QuickSight namespace in.</p>
+    /// <p>The ID for the Amazon Web Services account that you want to create the Quick Sight namespace in.</p>
     /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID for the Amazon Web Services account that you want to create the QuickSight namespace in.</p>
+    /// <p>The ID for the Amazon Web Services account that you want to create the Quick Sight namespace in.</p>
     pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
-    /// <p>The ID for the Amazon Web Services account that you want to create the QuickSight namespace in.</p>
+    /// <p>The ID for the Amazon Web Services account that you want to create the Quick Sight namespace in.</p>
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.aws_account_id
     }

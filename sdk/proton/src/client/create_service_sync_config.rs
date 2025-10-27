@@ -11,6 +11,7 @@ impl super::Client {
     /// - On success, responds with [`CreateServiceSyncConfigOutput`](crate::operation::create_service_sync_config::CreateServiceSyncConfigOutput) with field(s):
     ///   - [`service_sync_config(Option<ServiceSyncConfig>)`](crate::operation::create_service_sync_config::CreateServiceSyncConfigOutput::service_sync_config): <p>The detailed data of the Proton Ops file.</p>
     /// - On failure, responds with [`SdkError<CreateServiceSyncConfigError>`](crate::operation::create_service_sync_config::CreateServiceSyncConfigError)
+    #[deprecated(note = "AWS Proton is not accepting new customers.", since = "10/07/2025")]
     pub fn create_service_sync_config(&self) -> crate::operation::create_service_sync_config::builders::CreateServiceSyncConfigFluentBuilder {
         crate::operation::create_service_sync_config::builders::CreateServiceSyncConfigFluentBuilder::new(self.handle.clone())
     }

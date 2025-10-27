@@ -7,7 +7,7 @@ pub struct StartDashboardSnapshotJobScheduleInput {
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the dashboard that you want to start a snapshot job schedule for.</p>
     pub dashboard_id: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of the schedule that you want to start a snapshot job schedule for. The schedule ID can be found in the QuickSight console in the <b>Schedules</b> pane of the dashboard that the schedule is configured for.</p>
+    /// <p>The ID of the schedule that you want to start a snapshot job schedule for. The schedule ID can be found in the Amazon Quick Sight console in the <b>Schedules</b> pane of the dashboard that the schedule is configured for.</p>
     pub schedule_id: ::std::option::Option<::std::string::String>,
 }
 impl StartDashboardSnapshotJobScheduleInput {
@@ -19,7 +19,7 @@ impl StartDashboardSnapshotJobScheduleInput {
     pub fn dashboard_id(&self) -> ::std::option::Option<&str> {
         self.dashboard_id.as_deref()
     }
-    /// <p>The ID of the schedule that you want to start a snapshot job schedule for. The schedule ID can be found in the QuickSight console in the <b>Schedules</b> pane of the dashboard that the schedule is configured for.</p>
+    /// <p>The ID of the schedule that you want to start a snapshot job schedule for. The schedule ID can be found in the Amazon Quick Sight console in the <b>Schedules</b> pane of the dashboard that the schedule is configured for.</p>
     pub fn schedule_id(&self) -> ::std::option::Option<&str> {
         self.schedule_id.as_deref()
     }
@@ -70,18 +70,18 @@ impl StartDashboardSnapshotJobScheduleInputBuilder {
     pub fn get_dashboard_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.dashboard_id
     }
-    /// <p>The ID of the schedule that you want to start a snapshot job schedule for. The schedule ID can be found in the QuickSight console in the <b>Schedules</b> pane of the dashboard that the schedule is configured for.</p>
+    /// <p>The ID of the schedule that you want to start a snapshot job schedule for. The schedule ID can be found in the Amazon Quick Sight console in the <b>Schedules</b> pane of the dashboard that the schedule is configured for.</p>
     /// This field is required.
     pub fn schedule_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schedule_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the schedule that you want to start a snapshot job schedule for. The schedule ID can be found in the QuickSight console in the <b>Schedules</b> pane of the dashboard that the schedule is configured for.</p>
+    /// <p>The ID of the schedule that you want to start a snapshot job schedule for. The schedule ID can be found in the Amazon Quick Sight console in the <b>Schedules</b> pane of the dashboard that the schedule is configured for.</p>
     pub fn set_schedule_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schedule_id = input;
         self
     }
-    /// <p>The ID of the schedule that you want to start a snapshot job schedule for. The schedule ID can be found in the QuickSight console in the <b>Schedules</b> pane of the dashboard that the schedule is configured for.</p>
+    /// <p>The ID of the schedule that you want to start a snapshot job schedule for. The schedule ID can be found in the Amazon Quick Sight console in the <b>Schedules</b> pane of the dashboard that the schedule is configured for.</p>
     pub fn get_schedule_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.schedule_id
     }

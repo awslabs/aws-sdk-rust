@@ -20,6 +20,24 @@ pub fn de_update_saml_provider_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "ConcurrentModification" => crate::operation::update_saml_provider::UpdateSAMLProviderError::ConcurrentModificationException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ConcurrentModificationExceptionBuilder::default();
+                output = crate::protocol_serde::shape_concurrent_modification_exception::de_concurrent_modification_exception_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::update_saml_provider::UpdateSAMLProviderError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "InvalidInput" => crate::operation::update_saml_provider::UpdateSAMLProviderError::InvalidInputException({
             #[allow(unused_mut)]
             let mut tmp = {

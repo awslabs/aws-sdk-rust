@@ -12,18 +12,27 @@ pub fn ser_create_odb_peering_connection_input_input(
     if let Some(var_3) = &input.display_name {
         object.key("displayName").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.client_token {
-        object.key("clientToken").string(var_4.as_str());
-    }
-    if let Some(var_5) = &input.tags {
-        #[allow(unused_mut)]
-        let mut object_6 = object.key("tags").start_object();
-        for (key_7, value_8) in var_5 {
+    if let Some(var_4) = &input.peer_network_cidrs_to_be_added {
+        let mut array_5 = object.key("peerNetworkCidrsToBeAdded").start_array();
+        for item_6 in var_4 {
             {
-                object_6.key(key_7.as_str()).string(value_8.as_str());
+                array_5.value().string(item_6.as_str());
             }
         }
-        object_6.finish();
+        array_5.finish();
+    }
+    if let Some(var_7) = &input.client_token {
+        object.key("clientToken").string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_9 = object.key("tags").start_object();
+        for (key_10, value_11) in var_8 {
+            {
+                object_9.key(key_10.as_str()).string(value_11.as_str());
+            }
+        }
+        object_9.finish();
     }
     Ok(())
 }

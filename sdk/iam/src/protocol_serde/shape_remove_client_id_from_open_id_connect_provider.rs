@@ -24,64 +24,71 @@ pub fn de_remove_client_id_from_open_id_connect_provider_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidInput" => {
-            crate::operation::remove_client_id_from_open_id_connect_provider::RemoveClientIDFromOpenIDConnectProviderError::InvalidInputException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "ConcurrentModification" => crate::operation::remove_client_id_from_open_id_connect_provider::RemoveClientIDFromOpenIDConnectProviderError::ConcurrentModificationException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ConcurrentModificationExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_concurrent_modification_exception::de_concurrent_modification_exception_xml_err(_response_body, output).map_err(crate::operation::remove_client_id_from_open_id_connect_provider::RemoveClientIDFromOpenIDConnectProviderError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                            tmp.message = _error_message;
+                                                        }
+            tmp
+        }),
+        "InvalidInput" => crate::operation::remove_client_id_from_open_id_connect_provider::RemoveClientIDFromOpenIDConnectProviderError::InvalidInputException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidInputExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_input_exception::de_invalid_input_exception_xml_err(_response_body, output)
-                        .map_err(
-                            crate::operation::remove_client_id_from_open_id_connect_provider::RemoveClientIDFromOpenIDConnectProviderError::unhandled,
-                        )?;
+                    output = crate::protocol_serde::shape_invalid_input_exception::de_invalid_input_exception_xml_err(_response_body, output).map_err(crate::operation::remove_client_id_from_open_id_connect_provider::RemoveClientIDFromOpenIDConnectProviderError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "NoSuchEntity" => {
-            crate::operation::remove_client_id_from_open_id_connect_provider::RemoveClientIDFromOpenIDConnectProviderError::NoSuchEntityException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                            tmp.message = _error_message;
+                                                        }
+            tmp
+        }),
+        "NoSuchEntity" => crate::operation::remove_client_id_from_open_id_connect_provider::RemoveClientIDFromOpenIDConnectProviderError::NoSuchEntityException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::NoSuchEntityExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_no_such_entity_exception::de_no_such_entity_exception_xml_err(_response_body, output)
-                        .map_err(
-                            crate::operation::remove_client_id_from_open_id_connect_provider::RemoveClientIDFromOpenIDConnectProviderError::unhandled,
-                        )?;
+                    output = crate::protocol_serde::shape_no_such_entity_exception::de_no_such_entity_exception_xml_err(_response_body, output).map_err(crate::operation::remove_client_id_from_open_id_connect_provider::RemoveClientIDFromOpenIDConnectProviderError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ServiceFailure" => {
-            crate::operation::remove_client_id_from_open_id_connect_provider::RemoveClientIDFromOpenIDConnectProviderError::ServiceFailureException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                            tmp.message = _error_message;
+                                                        }
+            tmp
+        }),
+        "ServiceFailure" => crate::operation::remove_client_id_from_open_id_connect_provider::RemoveClientIDFromOpenIDConnectProviderError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ServiceFailureExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_xml_err(_response_body, output)
-                        .map_err(
-                            crate::operation::remove_client_id_from_open_id_connect_provider::RemoveClientIDFromOpenIDConnectProviderError::unhandled,
-                        )?;
+                    output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_xml_err(_response_body, output).map_err(crate::operation::remove_client_id_from_open_id_connect_provider::RemoveClientIDFromOpenIDConnectProviderError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::operation::remove_client_id_from_open_id_connect_provider::RemoveClientIDFromOpenIDConnectProviderError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                            tmp.message = _error_message;
+                                                        }
+            tmp
+        }),
+        _ => crate::operation::remove_client_id_from_open_id_connect_provider::RemoveClientIDFromOpenIDConnectProviderError::generic(generic)
     })
 }
 

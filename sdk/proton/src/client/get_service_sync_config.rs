@@ -7,6 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetServiceSyncConfigOutput`](crate::operation::get_service_sync_config::GetServiceSyncConfigOutput) with field(s):
     ///   - [`service_sync_config(Option<ServiceSyncConfig>)`](crate::operation::get_service_sync_config::GetServiceSyncConfigOutput::service_sync_config): <p>The detailed data of the requested service sync configuration.</p>
     /// - On failure, responds with [`SdkError<GetServiceSyncConfigError>`](crate::operation::get_service_sync_config::GetServiceSyncConfigError)
+    #[deprecated(note = "AWS Proton is not accepting new customers.", since = "10/07/2025")]
     pub fn get_service_sync_config(&self) -> crate::operation::get_service_sync_config::builders::GetServiceSyncConfigFluentBuilder {
         crate::operation::get_service_sync_config::builders::GetServiceSyncConfigFluentBuilder::new(self.handle.clone())
     }

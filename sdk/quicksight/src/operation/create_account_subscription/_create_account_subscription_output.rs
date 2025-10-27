@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAccountSubscriptionOutput {
-    /// <p>A <code>SignupResponse</code> object that returns information about a newly created QuickSight account.</p>
+    /// <p>A <code>SignupResponse</code> object that returns information about a newly created Quick Sight account.</p>
     pub signup_response: ::std::option::Option<crate::types::SignupResponse>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
@@ -12,7 +12,7 @@ pub struct CreateAccountSubscriptionOutput {
     _request_id: Option<String>,
 }
 impl CreateAccountSubscriptionOutput {
-    /// <p>A <code>SignupResponse</code> object that returns information about a newly created QuickSight account.</p>
+    /// <p>A <code>SignupResponse</code> object that returns information about a newly created Quick Sight account.</p>
     pub fn signup_response(&self) -> ::std::option::Option<&crate::types::SignupResponse> {
         self.signup_response.as_ref()
     }
@@ -47,17 +47,17 @@ pub struct CreateAccountSubscriptionOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateAccountSubscriptionOutputBuilder {
-    /// <p>A <code>SignupResponse</code> object that returns information about a newly created QuickSight account.</p>
+    /// <p>A <code>SignupResponse</code> object that returns information about a newly created Quick Sight account.</p>
     pub fn signup_response(mut self, input: crate::types::SignupResponse) -> Self {
         self.signup_response = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A <code>SignupResponse</code> object that returns information about a newly created QuickSight account.</p>
+    /// <p>A <code>SignupResponse</code> object that returns information about a newly created Quick Sight account.</p>
     pub fn set_signup_response(mut self, input: ::std::option::Option<crate::types::SignupResponse>) -> Self {
         self.signup_response = input;
         self
     }
-    /// <p>A <code>SignupResponse</code> object that returns information about a newly created QuickSight account.</p>
+    /// <p>A <code>SignupResponse</code> object that returns information about a newly created Quick Sight account.</p>
     pub fn get_signup_response(&self) -> &::std::option::Option<crate::types::SignupResponse> {
         &self.signup_response
     }

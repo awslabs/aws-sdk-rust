@@ -22,6 +22,21 @@ impl crate::operation::calculate_route_matrix::builders::CalculateRouteMatrixInp
 }
 /// Fluent builder constructing a request to `CalculateRouteMatrix`.
 ///
+/// <important>
+/// <p>This operation is no longer current and may be deprecated in the future. We recommend you upgrade to the <a href="/location/latest/APIReference/API_CalculateRouteMatrix.html">V2 <code>CalculateRouteMatrix</code> </a> unless you require Grab data.</p>
+/// <ul>
+/// <li>
+/// <p>This version of <code>CalculateRouteMatrix</code> is part of a previous Amazon Location Service Routes API (version 1) which has been superseded by a more intuitive, powerful, and complete API (version 2).</p></li>
+/// <li>
+/// <p>The version 2 <code>CalculateRouteMatrix</code> operation gives better results for matrix routing calculations.</p></li>
+/// <li>
+/// <p>If you are using an Amazon Web Services SDK or the Amazon Web Services CLI, note that the Routes API version 2 is found under <code>geo-routes</code> or <code>geo_routes</code>, not under <code>location</code>.</p></li>
+/// <li>
+/// <p>Since Grab is not yet fully supported in Routes API version 2, we recommend you continue using API version 1 when using Grab.</p></li>
+/// <li>
+/// <p>Start your version 2 API journey with the Routes V2 <a href="/location/latest/APIReference/API_Operations_Amazon_Location_Service_Routes_V2.html">API Reference</a> or the <a href="/location/latest/developerguide/routes.html">Developer Guide</a>.</p></li>
+/// </ul>
+/// </important>
 /// <p><a href="https://docs.aws.amazon.com/location/previous/developerguide/calculate-route-matrix.html"> Calculates a route matrix</a> given the following required parameters: <code>DeparturePositions</code> and <code>DestinationPositions</code>. <code>CalculateRouteMatrix</code> calculates routes and returns the travel time and travel distance from each departure position to each destination position in the request. For example, given departure positions A and B, and destination positions X and Y, <code>CalculateRouteMatrix</code> will return time and distance for routes from A to X, A to Y, B to X, and B to Y (in that order). The number of results returned (and routes calculated) will be the number of <code>DeparturePositions</code> times the number of <code>DestinationPositions</code>.</p><note>
 /// <p>Your account is charged for each route calculated, not the number of requests.</p>
 /// </note>

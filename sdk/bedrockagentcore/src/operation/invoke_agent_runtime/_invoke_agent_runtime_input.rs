@@ -27,6 +27,8 @@ pub struct InvokeAgentRuntimeInput {
     pub agent_runtime_arn: ::std::option::Option<::std::string::String>,
     /// <p>The qualifier to use for the agent runtime. This can be a version number or an endpoint name that points to a specific version. If not specified, Amazon Bedrock uses the default version of the agent runtime.</p>
     pub qualifier: ::std::option::Option<::std::string::String>,
+    /// <p>The identifier of the Amazon Web Services account for the agent runtime resource.</p>
+    pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The input data to send to the agent runtime. The format of this data depends on the specific agent configuration and must match the specified content type. For most agents, this is a JSON object containing the user's request.</p>
     pub payload: ::std::option::Option<::aws_smithy_types::Blob>,
 }
@@ -79,6 +81,10 @@ impl InvokeAgentRuntimeInput {
     pub fn qualifier(&self) -> ::std::option::Option<&str> {
         self.qualifier.as_deref()
     }
+    /// <p>The identifier of the Amazon Web Services account for the agent runtime resource.</p>
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
     /// <p>The input data to send to the agent runtime. The format of this data depends on the specific agent configuration and must match the specified content type. For most agents, this is a JSON object containing the user's request.</p>
     pub fn payload(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
         self.payload.as_ref()
@@ -99,6 +105,7 @@ impl ::std::fmt::Debug for InvokeAgentRuntimeInput {
         formatter.field("baggage", &self.baggage);
         formatter.field("agent_runtime_arn", &self.agent_runtime_arn);
         formatter.field("qualifier", &self.qualifier);
+        formatter.field("account_id", &self.account_id);
         formatter.field("payload", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
@@ -126,6 +133,7 @@ pub struct InvokeAgentRuntimeInputBuilder {
     pub(crate) baggage: ::std::option::Option<::std::string::String>,
     pub(crate) agent_runtime_arn: ::std::option::Option<::std::string::String>,
     pub(crate) qualifier: ::std::option::Option<::std::string::String>,
+    pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) payload: ::std::option::Option<::aws_smithy_types::Blob>,
 }
 impl InvokeAgentRuntimeInputBuilder {
@@ -298,6 +306,20 @@ impl InvokeAgentRuntimeInputBuilder {
     pub fn get_qualifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.qualifier
     }
+    /// <p>The identifier of the Amazon Web Services account for the agent runtime resource.</p>
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier of the Amazon Web Services account for the agent runtime resource.</p>
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.account_id = input;
+        self
+    }
+    /// <p>The identifier of the Amazon Web Services account for the agent runtime resource.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>The input data to send to the agent runtime. The format of this data depends on the specific agent configuration and must match the specified content type. For most agents, this is a JSON object containing the user's request.</p>
     /// This field is required.
     pub fn payload(mut self, input: ::aws_smithy_types::Blob) -> Self {
@@ -331,6 +353,7 @@ impl InvokeAgentRuntimeInputBuilder {
             baggage: self.baggage,
             agent_runtime_arn: self.agent_runtime_arn,
             qualifier: self.qualifier,
+            account_id: self.account_id,
             payload: self.payload,
         })
     }
@@ -350,6 +373,7 @@ impl ::std::fmt::Debug for InvokeAgentRuntimeInputBuilder {
         formatter.field("baggage", &self.baggage);
         formatter.field("agent_runtime_arn", &self.agent_runtime_arn);
         formatter.field("qualifier", &self.qualifier);
+        formatter.field("account_id", &self.account_id);
         formatter.field("payload", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }

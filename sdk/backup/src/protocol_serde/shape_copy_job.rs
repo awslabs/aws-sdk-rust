@@ -49,12 +49,36 @@ where
                                     .transpose()?,
                             );
                         }
+                        "DestinationVaultType" => {
+                            builder = builder.set_destination_vault_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "DestinationVaultLockState" => {
+                            builder = builder.set_destination_vault_lock_state(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "DestinationRecoveryPointArn" => {
                             builder = builder.set_destination_recovery_point_arn(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
+                        }
+                        "DestinationEncryptionKeyArn" => {
+                            builder = builder.set_destination_encryption_key_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "DestinationRecoveryPointLifecycle" => {
+                            builder = builder.set_destination_recovery_point_lifecycle(crate::protocol_serde::shape_lifecycle::de_lifecycle(tokens)?);
                         }
                         "ResourceArn" => {
                             builder = builder.set_resource_arn(

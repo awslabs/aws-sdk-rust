@@ -22,7 +22,7 @@ impl crate::operation::get_session_embed_url::builders::GetSessionEmbedUrlInputB
 }
 /// Fluent builder constructing a request to `GetSessionEmbedUrl`.
 ///
-/// <p>Generates a session URL and authorization code that you can use to embed the Amazon QuickSight console in your web server code. Use <code>GetSessionEmbedUrl</code> where you want to provide an authoring portal that allows users to create data sources, datasets, analyses, and dashboards. The users who access an embedded QuickSight console need belong to the author or admin security cohort. If you want to restrict permissions to some of these features, add a custom permissions profile to the user with the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html">UpdateUser</a> </code> API operation. Use <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_RegisterUser.html">RegisterUser</a> </code> API operation to add a new user with a custom permission profile attached. For more information, see the following sections in the <i>Amazon QuickSight User Guide</i>:</p>
+/// <p>Generates a session URL and authorization code that you can use to embed the Amazon Amazon Quick Sight console in your web server code. Use <code>GetSessionEmbedUrl</code> where you want to provide an authoring portal that allows users to create data sources, datasets, analyses, and dashboards. The users who access an embedded Amazon Quick Sight console need belong to the author or admin security cohort. If you want to restrict permissions to some of these features, add a custom permissions profile to the user with the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html">UpdateUser</a> </code> API operation. Use <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_RegisterUser.html">RegisterUser</a> </code> API operation to add a new user with a custom permission profile attached. For more information, see the following sections in the <i>Amazon QuickSight User Guide</i>:</p>
 /// <ul>
 /// <li>
 /// <p><a href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics.html">Embedding Analytics</a></p></li>
@@ -114,17 +114,17 @@ impl GetSessionEmbedUrlFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ID for the Amazon Web Services account associated with your QuickSight subscription.</p>
+    /// <p>The ID for the Amazon Web Services account associated with your Amazon Quick Sight subscription.</p>
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
-    /// <p>The ID for the Amazon Web Services account associated with your QuickSight subscription.</p>
+    /// <p>The ID for the Amazon Web Services account associated with your Amazon Quick Sight subscription.</p>
     pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
-    /// <p>The ID for the Amazon Web Services account associated with your QuickSight subscription.</p>
+    /// <p>The ID for the Amazon Web Services account associated with your Amazon Quick Sight subscription.</p>
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_aws_account_id()
     }
@@ -139,9 +139,9 @@ impl GetSessionEmbedUrlFluentBuilder {
     /// <li>
     /// <p><code>/start/favorites</code></p></li>
     /// <li>
-    /// <p><code>/dashboards/<i>DashboardId</i> </code> - where <code>DashboardId</code> is the actual ID key from the QuickSight console URL of the dashboard</p></li>
+    /// <p><code>/dashboards/<i>DashboardId</i> </code> - where <code>DashboardId</code> is the actual ID key from the Amazon Quick Sight console URL of the dashboard</p></li>
     /// <li>
-    /// <p><code>/analyses/<i>AnalysisId</i> </code> - where <code>AnalysisId</code> is the actual ID key from the QuickSight console URL of the analysis</p></li>
+    /// <p><code>/analyses/<i>AnalysisId</i> </code> - where <code>AnalysisId</code> is the actual ID key from the Amazon Quick Sight console URL of the analysis</p></li>
     /// </ul>
     pub fn entry_point(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.entry_point(input.into());
@@ -158,9 +158,9 @@ impl GetSessionEmbedUrlFluentBuilder {
     /// <li>
     /// <p><code>/start/favorites</code></p></li>
     /// <li>
-    /// <p><code>/dashboards/<i>DashboardId</i> </code> - where <code>DashboardId</code> is the actual ID key from the QuickSight console URL of the dashboard</p></li>
+    /// <p><code>/dashboards/<i>DashboardId</i> </code> - where <code>DashboardId</code> is the actual ID key from the Amazon Quick Sight console URL of the dashboard</p></li>
     /// <li>
-    /// <p><code>/analyses/<i>AnalysisId</i> </code> - where <code>AnalysisId</code> is the actual ID key from the QuickSight console URL of the analysis</p></li>
+    /// <p><code>/analyses/<i>AnalysisId</i> </code> - where <code>AnalysisId</code> is the actual ID key from the Amazon Quick Sight console URL of the analysis</p></li>
     /// </ul>
     pub fn set_entry_point(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_entry_point(input);
@@ -177,9 +177,9 @@ impl GetSessionEmbedUrlFluentBuilder {
     /// <li>
     /// <p><code>/start/favorites</code></p></li>
     /// <li>
-    /// <p><code>/dashboards/<i>DashboardId</i> </code> - where <code>DashboardId</code> is the actual ID key from the QuickSight console URL of the dashboard</p></li>
+    /// <p><code>/dashboards/<i>DashboardId</i> </code> - where <code>DashboardId</code> is the actual ID key from the Amazon Quick Sight console URL of the dashboard</p></li>
     /// <li>
-    /// <p><code>/analyses/<i>AnalysisId</i> </code> - where <code>AnalysisId</code> is the actual ID key from the QuickSight console URL of the analysis</p></li>
+    /// <p><code>/analyses/<i>AnalysisId</i> </code> - where <code>AnalysisId</code> is the actual ID key from the Amazon Quick Sight console URL of the analysis</p></li>
     /// </ul>
     pub fn get_entry_point(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_entry_point()

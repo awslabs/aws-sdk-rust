@@ -6,7 +6,7 @@
 pub struct CalculatedColumn {
     /// <p>Column name.</p>
     pub column_name: ::std::string::String,
-    /// <p>A unique ID to identify a calculated column. During a dataset update, if the column ID of a calculated column matches that of an existing calculated column, Amazon QuickSight preserves the existing calculated column.</p>
+    /// <p>A unique ID to identify a calculated column. During a dataset update, if the column ID of a calculated column matches that of an existing calculated column, Quick Sight preserves the existing calculated column.</p>
     pub column_id: ::std::string::String,
     /// <p>An expression that defines the calculated column.</p>
     pub expression: ::std::string::String,
@@ -17,7 +17,7 @@ impl CalculatedColumn {
         use std::ops::Deref;
         self.column_name.deref()
     }
-    /// <p>A unique ID to identify a calculated column. During a dataset update, if the column ID of a calculated column matches that of an existing calculated column, Amazon QuickSight preserves the existing calculated column.</p>
+    /// <p>A unique ID to identify a calculated column. During a dataset update, if the column ID of a calculated column matches that of an existing calculated column, Quick Sight preserves the existing calculated column.</p>
     pub fn column_id(&self) -> &str {
         use std::ops::Deref;
         self.column_id.deref()
@@ -68,18 +68,18 @@ impl CalculatedColumnBuilder {
     pub fn get_column_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.column_name
     }
-    /// <p>A unique ID to identify a calculated column. During a dataset update, if the column ID of a calculated column matches that of an existing calculated column, Amazon QuickSight preserves the existing calculated column.</p>
+    /// <p>A unique ID to identify a calculated column. During a dataset update, if the column ID of a calculated column matches that of an existing calculated column, Quick Sight preserves the existing calculated column.</p>
     /// This field is required.
     pub fn column_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.column_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique ID to identify a calculated column. During a dataset update, if the column ID of a calculated column matches that of an existing calculated column, Amazon QuickSight preserves the existing calculated column.</p>
+    /// <p>A unique ID to identify a calculated column. During a dataset update, if the column ID of a calculated column matches that of an existing calculated column, Quick Sight preserves the existing calculated column.</p>
     pub fn set_column_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.column_id = input;
         self
     }
-    /// <p>A unique ID to identify a calculated column. During a dataset update, if the column ID of a calculated column matches that of an existing calculated column, Amazon QuickSight preserves the existing calculated column.</p>
+    /// <p>A unique ID to identify a calculated column. During a dataset update, if the column ID of a calculated column matches that of an existing calculated column, Quick Sight preserves the existing calculated column.</p>
     pub fn get_column_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.column_id
     }

@@ -4,12 +4,16 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum ConnectionPropertiesPatch {
+    /// <p>The Amazon Q properties of the connection.</p>
+    AmazonQProperties(crate::types::AmazonQPropertiesPatch),
     /// <p>The Amazon Athena properties of a connection properties patch.</p>
     AthenaProperties(crate::types::AthenaPropertiesPatch),
     /// <p>The Amazon Web Services Glue properties of a connection properties patch.</p>
     GlueProperties(crate::types::GluePropertiesPatch),
     /// <p>The IAM properties of a connection properties patch.</p>
     IamProperties(crate::types::IamPropertiesPatch),
+    /// <p>The MLflow properties of a connection.</p>
+    MlflowProperties(crate::types::MlflowPropertiesPatch),
     /// <p>The Amazon Redshift properties of a connection properties patch.</p>
     RedshiftProperties(crate::types::RedshiftPropertiesPatch),
     /// <p>The Amazon S3 properties of a connection properties patch.</p>
@@ -27,6 +31,19 @@ pub enum ConnectionPropertiesPatch {
     Unknown,
 }
 impl ConnectionPropertiesPatch {
+    /// Tries to convert the enum instance into [`AmazonQProperties`](crate::types::ConnectionPropertiesPatch::AmazonQProperties), extracting the inner [`AmazonQPropertiesPatch`](crate::types::AmazonQPropertiesPatch).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_amazon_q_properties(&self) -> ::std::result::Result<&crate::types::AmazonQPropertiesPatch, &Self> {
+        if let ConnectionPropertiesPatch::AmazonQProperties(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`AmazonQProperties`](crate::types::ConnectionPropertiesPatch::AmazonQProperties).
+    pub fn is_amazon_q_properties(&self) -> bool {
+        self.as_amazon_q_properties().is_ok()
+    }
     /// Tries to convert the enum instance into [`AthenaProperties`](crate::types::ConnectionPropertiesPatch::AthenaProperties), extracting the inner [`AthenaPropertiesPatch`](crate::types::AthenaPropertiesPatch).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_athena_properties(&self) -> ::std::result::Result<&crate::types::AthenaPropertiesPatch, &Self> {
@@ -65,6 +82,19 @@ impl ConnectionPropertiesPatch {
     /// Returns true if this is a [`IamProperties`](crate::types::ConnectionPropertiesPatch::IamProperties).
     pub fn is_iam_properties(&self) -> bool {
         self.as_iam_properties().is_ok()
+    }
+    /// Tries to convert the enum instance into [`MlflowProperties`](crate::types::ConnectionPropertiesPatch::MlflowProperties), extracting the inner [`MlflowPropertiesPatch`](crate::types::MlflowPropertiesPatch).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_mlflow_properties(&self) -> ::std::result::Result<&crate::types::MlflowPropertiesPatch, &Self> {
+        if let ConnectionPropertiesPatch::MlflowProperties(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`MlflowProperties`](crate::types::ConnectionPropertiesPatch::MlflowProperties).
+    pub fn is_mlflow_properties(&self) -> bool {
+        self.as_mlflow_properties().is_ok()
     }
     /// Tries to convert the enum instance into [`RedshiftProperties`](crate::types::ConnectionPropertiesPatch::RedshiftProperties), extracting the inner [`RedshiftPropertiesPatch`](crate::types::RedshiftPropertiesPatch).
     /// Returns `Err(&Self)` if it can't be converted.

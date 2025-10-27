@@ -13,6 +13,7 @@
 /// # let resourcetype = unimplemented!();
 /// match resourcetype {
 ///     ResourceType::CapacityBlock => { /* ... */ },
+///     ResourceType::CapacityManagerDataExport => { /* ... */ },
 ///     ResourceType::CapacityReservation => { /* ... */ },
 ///     ResourceType::CapacityReservationFleet => { /* ... */ },
 ///     ResourceType::CarrierGateway => { /* ... */ },
@@ -139,6 +140,8 @@
 pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     CapacityBlock,
+    #[allow(missing_docs)] // documentation missing in model
+    CapacityManagerDataExport,
     #[allow(missing_docs)] // documentation missing in model
     CapacityReservation,
     #[allow(missing_docs)] // documentation missing in model
@@ -339,6 +342,7 @@ impl ::std::convert::From<&str> for ResourceType {
     fn from(s: &str) -> Self {
         match s {
             "capacity-block" => ResourceType::CapacityBlock,
+            "capacity-manager-data-export" => ResourceType::CapacityManagerDataExport,
             "capacity-reservation" => ResourceType::CapacityReservation,
             "capacity-reservation-fleet" => ResourceType::CapacityReservationFleet,
             "carrier-gateway" => ResourceType::CarrierGateway,
@@ -451,6 +455,7 @@ impl ResourceType {
     pub fn as_str(&self) -> &str {
         match self {
             ResourceType::CapacityBlock => "capacity-block",
+            ResourceType::CapacityManagerDataExport => "capacity-manager-data-export",
             ResourceType::CapacityReservation => "capacity-reservation",
             ResourceType::CapacityReservationFleet => "capacity-reservation-fleet",
             ResourceType::CarrierGateway => "carrier-gateway",
@@ -554,6 +559,7 @@ impl ResourceType {
     pub const fn values() -> &'static [&'static str] {
         &[
             "capacity-block",
+            "capacity-manager-data-export",
             "capacity-reservation",
             "capacity-reservation-fleet",
             "carrier-gateway",
@@ -674,6 +680,7 @@ impl ::std::fmt::Display for ResourceType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ResourceType::CapacityBlock => write!(f, "capacity-block"),
+            ResourceType::CapacityManagerDataExport => write!(f, "capacity-manager-data-export"),
             ResourceType::CapacityReservation => write!(f, "capacity-reservation"),
             ResourceType::CapacityReservationFleet => write!(f, "capacity-reservation-fleet"),
             ResourceType::CarrierGateway => write!(f, "carrier-gateway"),

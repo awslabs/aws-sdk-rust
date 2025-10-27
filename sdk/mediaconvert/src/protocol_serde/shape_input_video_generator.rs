@@ -27,10 +27,22 @@ pub fn ser_input_video_generator(
             ::aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
-    if let Some(var_5) = &input.sample_rate {
-        object.key("sampleRate").number(
+    if let Some(var_5) = &input.height {
+        object.key("height").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_5).into()),
+        );
+    }
+    if let Some(var_6) = &input.sample_rate {
+        object.key("sampleRate").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_6).into()),
+        );
+    }
+    if let Some(var_7) = &input.width {
+        object.key("width").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_7).into()),
         );
     }
     Ok(())
@@ -79,8 +91,22 @@ where
                                     .transpose()?,
                             );
                         }
+                        "height" => {
+                            builder = builder.set_height(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
                         "sampleRate" => {
                             builder = builder.set_sample_rate(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "width" => {
+                            builder = builder.set_width(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
                                     .transpose()?,

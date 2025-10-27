@@ -145,6 +145,34 @@ impl InvokeCodeInterpreterFluentBuilder {
     pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_session_id()
     }
+    /// <p>The trace identifier for request tracking.</p>
+    pub fn trace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.trace_id(input.into());
+        self
+    }
+    /// <p>The trace identifier for request tracking.</p>
+    pub fn set_trace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_trace_id(input);
+        self
+    }
+    /// <p>The trace identifier for request tracking.</p>
+    pub fn get_trace_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_trace_id()
+    }
+    /// <p>The parent trace information for distributed tracing.</p>
+    pub fn trace_parent(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.trace_parent(input.into());
+        self
+    }
+    /// <p>The parent trace information for distributed tracing.</p>
+    pub fn set_trace_parent(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_trace_parent(input);
+        self
+    }
+    /// <p>The parent trace information for distributed tracing.</p>
+    pub fn get_trace_parent(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_trace_parent()
+    }
     /// <p>The name of the code interpreter to invoke.</p>
     pub fn name(mut self, input: crate::types::ToolName) -> Self {
         self.inner = self.inner.name(input);

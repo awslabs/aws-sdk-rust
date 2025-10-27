@@ -50,6 +50,8 @@ pub struct Bucket {
     pub state: ::std::option::Option<crate::types::BucketState>,
     /// <p>An object that describes the access log configuration for the bucket.</p>
     pub access_log_config: ::std::option::Option<crate::types::BucketAccessLogConfig>,
+    /// <p>An array of cross-origin resource sharing (CORS) rules that identify origins and the HTTP methods that can be executed on your bucket. This field is only included in the response when CORS configuration is requested or when updating CORS configuration. For more information, see <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/configure-cors.html">Configuring cross-origin resource sharing (CORS)</a>.</p>
+    pub cors: ::std::option::Option<crate::types::BucketCorsConfig>,
 }
 impl Bucket {
     /// <p>The Lightsail resource type of the bucket.</p>
@@ -136,6 +138,10 @@ impl Bucket {
     pub fn access_log_config(&self) -> ::std::option::Option<&crate::types::BucketAccessLogConfig> {
         self.access_log_config.as_ref()
     }
+    /// <p>An array of cross-origin resource sharing (CORS) rules that identify origins and the HTTP methods that can be executed on your bucket. This field is only included in the response when CORS configuration is requested or when updating CORS configuration. For more information, see <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/configure-cors.html">Configuring cross-origin resource sharing (CORS)</a>.</p>
+    pub fn cors(&self) -> ::std::option::Option<&crate::types::BucketCorsConfig> {
+        self.cors.as_ref()
+    }
 }
 impl Bucket {
     /// Creates a new builder-style object to manufacture [`Bucket`](crate::types::Bucket).
@@ -164,6 +170,7 @@ pub struct BucketBuilder {
     pub(crate) resources_receiving_access: ::std::option::Option<::std::vec::Vec<crate::types::ResourceReceivingAccess>>,
     pub(crate) state: ::std::option::Option<crate::types::BucketState>,
     pub(crate) access_log_config: ::std::option::Option<crate::types::BucketAccessLogConfig>,
+    pub(crate) cors: ::std::option::Option<crate::types::BucketCorsConfig>,
 }
 impl BucketBuilder {
     /// <p>The Lightsail resource type of the bucket.</p>
@@ -450,6 +457,20 @@ impl BucketBuilder {
     pub fn get_access_log_config(&self) -> &::std::option::Option<crate::types::BucketAccessLogConfig> {
         &self.access_log_config
     }
+    /// <p>An array of cross-origin resource sharing (CORS) rules that identify origins and the HTTP methods that can be executed on your bucket. This field is only included in the response when CORS configuration is requested or when updating CORS configuration. For more information, see <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/configure-cors.html">Configuring cross-origin resource sharing (CORS)</a>.</p>
+    pub fn cors(mut self, input: crate::types::BucketCorsConfig) -> Self {
+        self.cors = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An array of cross-origin resource sharing (CORS) rules that identify origins and the HTTP methods that can be executed on your bucket. This field is only included in the response when CORS configuration is requested or when updating CORS configuration. For more information, see <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/configure-cors.html">Configuring cross-origin resource sharing (CORS)</a>.</p>
+    pub fn set_cors(mut self, input: ::std::option::Option<crate::types::BucketCorsConfig>) -> Self {
+        self.cors = input;
+        self
+    }
+    /// <p>An array of cross-origin resource sharing (CORS) rules that identify origins and the HTTP methods that can be executed on your bucket. This field is only included in the response when CORS configuration is requested or when updating CORS configuration. For more information, see <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/configure-cors.html">Configuring cross-origin resource sharing (CORS)</a>.</p>
+    pub fn get_cors(&self) -> &::std::option::Option<crate::types::BucketCorsConfig> {
+        &self.cors
+    }
     /// Consumes the builder and constructs a [`Bucket`](crate::types::Bucket).
     pub fn build(self) -> crate::types::Bucket {
         crate::types::Bucket {
@@ -469,6 +490,7 @@ impl BucketBuilder {
             resources_receiving_access: self.resources_receiving_access,
             state: self.state,
             access_log_config: self.access_log_config,
+            cors: self.cors,
         }
     }
 }

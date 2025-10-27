@@ -3,26 +3,26 @@
 /// <p>A structure that contains the following account information elements:</p>
 /// <ul>
 /// <li>
-/// <p>Your QuickSight account name.</p></li>
+/// <p>Your Quick Sight account name.</p></li>
 /// <li>
-/// <p>The edition of QuickSight that your account is using.</p></li>
+/// <p>The edition of Quick Sight that your account is using.</p></li>
 /// <li>
-/// <p>The notification email address that is associated with the QuickSight account.</p></li>
+/// <p>The notification email address that is associated with the Quick Sight account.</p></li>
 /// <li>
-/// <p>The authentication type of the QuickSight account.</p></li>
+/// <p>The authentication type of the Quick Sight account.</p></li>
 /// <li>
-/// <p>The status of the QuickSight account's subscription.</p></li>
+/// <p>The status of the Quick Sight account's subscription.</p></li>
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccountInfo {
-    /// <p>The account name that you provided for the QuickSight subscription in your Amazon Web Services account. You create this name when you sign up for QuickSight. It's unique over all of Amazon Web Services, and it appears only when users sign in.</p>
+    /// <p>The account name that you provided for the Amazon Quick Sight subscription in your Amazon Web Services account. You create this name when you sign up for QuickSight. It's unique over all of Amazon Web Services, and it appears only when users sign in.</p>
     pub account_name: ::std::option::Option<::std::string::String>,
-    /// <p>The edition of your QuickSight account.</p>
+    /// <p>The edition of your Quick Sight account.</p>
     pub edition: ::std::option::Option<crate::types::Edition>,
-    /// <p>The email address that will be used for QuickSight to send notifications regarding your Amazon Web Services account or QuickSight subscription.</p>
+    /// <p>The email address that will be used for Quick Sight to send notifications regarding your Amazon Web Services account or Quick Sight subscription.</p>
     pub notification_email: ::std::option::Option<::std::string::String>,
-    /// <p>The way that your QuickSight account is authenticated.</p>
+    /// <p>The way that your Amazon Quick Sight account is authenticated.</p>
     pub authentication_type: ::std::option::Option<::std::string::String>,
     /// <p>The status of your account subscription.</p>
     pub account_subscription_status: ::std::option::Option<::std::string::String>,
@@ -30,19 +30,19 @@ pub struct AccountInfo {
     pub iam_identity_center_instance_arn: ::std::option::Option<::std::string::String>,
 }
 impl AccountInfo {
-    /// <p>The account name that you provided for the QuickSight subscription in your Amazon Web Services account. You create this name when you sign up for QuickSight. It's unique over all of Amazon Web Services, and it appears only when users sign in.</p>
+    /// <p>The account name that you provided for the Amazon Quick Sight subscription in your Amazon Web Services account. You create this name when you sign up for QuickSight. It's unique over all of Amazon Web Services, and it appears only when users sign in.</p>
     pub fn account_name(&self) -> ::std::option::Option<&str> {
         self.account_name.as_deref()
     }
-    /// <p>The edition of your QuickSight account.</p>
+    /// <p>The edition of your Quick Sight account.</p>
     pub fn edition(&self) -> ::std::option::Option<&crate::types::Edition> {
         self.edition.as_ref()
     }
-    /// <p>The email address that will be used for QuickSight to send notifications regarding your Amazon Web Services account or QuickSight subscription.</p>
+    /// <p>The email address that will be used for Quick Sight to send notifications regarding your Amazon Web Services account or Quick Sight subscription.</p>
     pub fn notification_email(&self) -> ::std::option::Option<&str> {
         self.notification_email.as_deref()
     }
-    /// <p>The way that your QuickSight account is authenticated.</p>
+    /// <p>The way that your Amazon Quick Sight account is authenticated.</p>
     pub fn authentication_type(&self) -> ::std::option::Option<&str> {
         self.authentication_type.as_deref()
     }
@@ -74,59 +74,59 @@ pub struct AccountInfoBuilder {
     pub(crate) iam_identity_center_instance_arn: ::std::option::Option<::std::string::String>,
 }
 impl AccountInfoBuilder {
-    /// <p>The account name that you provided for the QuickSight subscription in your Amazon Web Services account. You create this name when you sign up for QuickSight. It's unique over all of Amazon Web Services, and it appears only when users sign in.</p>
+    /// <p>The account name that you provided for the Amazon Quick Sight subscription in your Amazon Web Services account. You create this name when you sign up for QuickSight. It's unique over all of Amazon Web Services, and it appears only when users sign in.</p>
     pub fn account_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The account name that you provided for the QuickSight subscription in your Amazon Web Services account. You create this name when you sign up for QuickSight. It's unique over all of Amazon Web Services, and it appears only when users sign in.</p>
+    /// <p>The account name that you provided for the Amazon Quick Sight subscription in your Amazon Web Services account. You create this name when you sign up for QuickSight. It's unique over all of Amazon Web Services, and it appears only when users sign in.</p>
     pub fn set_account_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_name = input;
         self
     }
-    /// <p>The account name that you provided for the QuickSight subscription in your Amazon Web Services account. You create this name when you sign up for QuickSight. It's unique over all of Amazon Web Services, and it appears only when users sign in.</p>
+    /// <p>The account name that you provided for the Amazon Quick Sight subscription in your Amazon Web Services account. You create this name when you sign up for QuickSight. It's unique over all of Amazon Web Services, and it appears only when users sign in.</p>
     pub fn get_account_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_name
     }
-    /// <p>The edition of your QuickSight account.</p>
+    /// <p>The edition of your Quick Sight account.</p>
     pub fn edition(mut self, input: crate::types::Edition) -> Self {
         self.edition = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The edition of your QuickSight account.</p>
+    /// <p>The edition of your Quick Sight account.</p>
     pub fn set_edition(mut self, input: ::std::option::Option<crate::types::Edition>) -> Self {
         self.edition = input;
         self
     }
-    /// <p>The edition of your QuickSight account.</p>
+    /// <p>The edition of your Quick Sight account.</p>
     pub fn get_edition(&self) -> &::std::option::Option<crate::types::Edition> {
         &self.edition
     }
-    /// <p>The email address that will be used for QuickSight to send notifications regarding your Amazon Web Services account or QuickSight subscription.</p>
+    /// <p>The email address that will be used for Quick Sight to send notifications regarding your Amazon Web Services account or Quick Sight subscription.</p>
     pub fn notification_email(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notification_email = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The email address that will be used for QuickSight to send notifications regarding your Amazon Web Services account or QuickSight subscription.</p>
+    /// <p>The email address that will be used for Quick Sight to send notifications regarding your Amazon Web Services account or Quick Sight subscription.</p>
     pub fn set_notification_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.notification_email = input;
         self
     }
-    /// <p>The email address that will be used for QuickSight to send notifications regarding your Amazon Web Services account or QuickSight subscription.</p>
+    /// <p>The email address that will be used for Quick Sight to send notifications regarding your Amazon Web Services account or Quick Sight subscription.</p>
     pub fn get_notification_email(&self) -> &::std::option::Option<::std::string::String> {
         &self.notification_email
     }
-    /// <p>The way that your QuickSight account is authenticated.</p>
+    /// <p>The way that your Amazon Quick Sight account is authenticated.</p>
     pub fn authentication_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authentication_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The way that your QuickSight account is authenticated.</p>
+    /// <p>The way that your Amazon Quick Sight account is authenticated.</p>
     pub fn set_authentication_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.authentication_type = input;
         self
     }
-    /// <p>The way that your QuickSight account is authenticated.</p>
+    /// <p>The way that your Amazon Quick Sight account is authenticated.</p>
     pub fn get_authentication_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.authentication_type
     }

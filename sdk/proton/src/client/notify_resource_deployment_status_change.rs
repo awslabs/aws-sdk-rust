@@ -10,6 +10,7 @@ impl super::Client {
     ///   - [`status_message(impl Into<String>)`](crate::operation::notify_resource_deployment_status_change::builders::NotifyResourceDeploymentStatusChangeFluentBuilder::status_message) / [`set_status_message(Option<String>)`](crate::operation::notify_resource_deployment_status_change::builders::NotifyResourceDeploymentStatusChangeFluentBuilder::set_status_message):<br>required: **false**<br><p>The deployment status message for your provisioned resource.</p><br>
     /// - On success, responds with [`NotifyResourceDeploymentStatusChangeOutput`](crate::operation::notify_resource_deployment_status_change::NotifyResourceDeploymentStatusChangeOutput)
     /// - On failure, responds with [`SdkError<NotifyResourceDeploymentStatusChangeError>`](crate::operation::notify_resource_deployment_status_change::NotifyResourceDeploymentStatusChangeError)
+    #[deprecated(note = "AWS Proton is not accepting new customers.", since = "10/07/2025")]
     pub fn notify_resource_deployment_status_change(
         &self,
     ) -> crate::operation::notify_resource_deployment_status_change::builders::NotifyResourceDeploymentStatusChangeFluentBuilder {

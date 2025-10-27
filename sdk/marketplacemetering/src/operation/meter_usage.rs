@@ -70,7 +70,14 @@ impl MeterUsage {
         config_override: ::std::option::Option<crate::config::Builder>,
     ) -> ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugins {
         let mut runtime_plugins = client_runtime_plugins.with_operation_plugin(Self::new());
-
+        runtime_plugins = runtime_plugins.with_operation_plugin(crate::client_idempotency_token::IdempotencyTokenRuntimePlugin::new(
+            |token_provider, input| {
+                let input: &mut crate::operation::meter_usage::MeterUsageInput = input.downcast_mut().expect("correct type");
+                if input.client_token.is_none() {
+                    input.client_token = ::std::option::Option::Some(token_provider.make_idempotency_token());
+                }
+            },
+        ));
         if let ::std::option::Option::Some(config_override) = config_override {
             for plugin in config_override.runtime_plugins.iter().cloned() {
                 runtime_plugins = runtime_plugins.with_operation_plugin(plugin);
@@ -261,6 +268,8 @@ pub enum MeterUsageError {
     CustomerNotEntitledException(crate::types::error::CustomerNotEntitledException),
     /// <p>A metering record has already been emitted by the same EC2 instance, ECS task, or EKS pod for the given {<code>usageDimension</code>, <code>timestamp</code>} with a different <code>usageQuantity</code>.</p>
     DuplicateRequestException(crate::types::error::DuplicateRequestException),
+    /// <p>The <code>ClientToken</code> is being used for multiple requests.</p>
+    IdempotencyConflictException(crate::types::error::IdempotencyConflictException),
     /// <p>An internal error has occurred. Retry your request. If the problem persists, post a message with details on the Amazon Web Services forums.</p>
     InternalServiceErrorException(crate::types::error::InternalServiceErrorException),
     /// <p>The endpoint being called is in a Amazon Web Services Region different from your EC2 instance, ECS task, or EKS pod. The Region of the Metering Service endpoint and the Amazon Web Services Region of the resource must match.</p>
@@ -313,6 +322,7 @@ impl MeterUsageError {
         match self {
             Self::CustomerNotEntitledException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::DuplicateRequestException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::IdempotencyConflictException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InternalServiceErrorException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidEndpointRegionException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidProductCodeException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -331,6 +341,10 @@ impl MeterUsageError {
     /// Returns `true` if the error kind is `MeterUsageError::DuplicateRequestException`.
     pub fn is_duplicate_request_exception(&self) -> bool {
         matches!(self, Self::DuplicateRequestException(_))
+    }
+    /// Returns `true` if the error kind is `MeterUsageError::IdempotencyConflictException`.
+    pub fn is_idempotency_conflict_exception(&self) -> bool {
+        matches!(self, Self::IdempotencyConflictException(_))
     }
     /// Returns `true` if the error kind is `MeterUsageError::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
@@ -370,6 +384,7 @@ impl ::std::error::Error for MeterUsageError {
         match self {
             Self::CustomerNotEntitledException(_inner) => ::std::option::Option::Some(_inner),
             Self::DuplicateRequestException(_inner) => ::std::option::Option::Some(_inner),
+            Self::IdempotencyConflictException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalServiceErrorException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidEndpointRegionException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidProductCodeException(_inner) => ::std::option::Option::Some(_inner),
@@ -387,6 +402,7 @@ impl ::std::fmt::Display for MeterUsageError {
         match self {
             Self::CustomerNotEntitledException(_inner) => _inner.fmt(f),
             Self::DuplicateRequestException(_inner) => _inner.fmt(f),
+            Self::IdempotencyConflictException(_inner) => _inner.fmt(f),
             Self::InternalServiceErrorException(_inner) => _inner.fmt(f),
             Self::InvalidEndpointRegionException(_inner) => _inner.fmt(f),
             Self::InvalidProductCodeException(_inner) => _inner.fmt(f),
@@ -418,6 +434,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for MeterUsageErr
         match self {
             Self::CustomerNotEntitledException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DuplicateRequestException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::IdempotencyConflictException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalServiceErrorException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidEndpointRegionException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidProductCodeException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

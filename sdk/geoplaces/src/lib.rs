@@ -18,7 +18,7 @@
 #![allow(rustdoc::invalid_html_tags)]
 #![forbid(unsafe_code)]
 #![warn(missing_docs)]
-#![cfg_attr(docsrs, feature(doc_auto_cfg))]
+#![cfg_attr(docsrs, feature(doc_cfg))]
 //! The Places API enables powerful location search and geocoding capabilities for your applications, offering global coverage with rich, detailed information. Key features include:
 //!   - Forward and reverse geocoding for addresses and coordinates
 //!   - Comprehensive place searches with detailed information, including:
@@ -44,7 +44,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-geoplaces = "1.39.0"
+//! aws-sdk-geoplaces = "1.40.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

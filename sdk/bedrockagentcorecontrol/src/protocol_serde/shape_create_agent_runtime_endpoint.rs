@@ -192,11 +192,25 @@ pub(crate) fn de_create_agent_runtime_endpoint(
                             .transpose()?,
                     );
                 }
+                "agentRuntimeId" => {
+                    builder = builder.set_agent_runtime_id(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "createdAt" => {
                     builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                         tokens.next(),
                         ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
                     )?);
+                }
+                "endpointName" => {
+                    builder = builder.set_endpoint_name(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
                 }
                 "status" => {
                     builder = builder.set_status(

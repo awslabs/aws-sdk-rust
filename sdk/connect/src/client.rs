@@ -148,6 +148,8 @@ mod associate_contact_with_user;
 
 mod associate_default_vocabulary;
 
+mod associate_email_address_alias;
+
 mod associate_flow;
 
 mod associate_instance_storage_config;
@@ -382,6 +384,8 @@ mod disassociate_analytics_data_set;
 mod disassociate_approved_origin;
 
 mod disassociate_bot;
+
+mod disassociate_email_address_alias;
 
 mod disassociate_flow;
 

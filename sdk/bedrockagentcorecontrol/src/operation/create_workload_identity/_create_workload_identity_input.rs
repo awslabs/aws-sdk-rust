@@ -7,6 +7,8 @@ pub struct CreateWorkloadIdentityInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The list of allowed OAuth2 return URLs for resources associated with this workload identity.</p>
     pub allowed_resource_oauth2_return_urls: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>A map of tag keys and values to assign to the workload identity. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.</p>
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateWorkloadIdentityInput {
     /// <p>The name of the workload identity. The name must be unique within your account.</p>
@@ -18,6 +20,10 @@ impl CreateWorkloadIdentityInput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.allowed_resource_oauth2_return_urls.is_none()`.
     pub fn allowed_resource_oauth2_return_urls(&self) -> &[::std::string::String] {
         self.allowed_resource_oauth2_return_urls.as_deref().unwrap_or_default()
+    }
+    /// <p>A map of tag keys and values to assign to the workload identity. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.</p>
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.tags.as_ref()
     }
 }
 impl CreateWorkloadIdentityInput {
@@ -33,6 +39,7 @@ impl CreateWorkloadIdentityInput {
 pub struct CreateWorkloadIdentityInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) allowed_resource_oauth2_return_urls: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateWorkloadIdentityInputBuilder {
     /// <p>The name of the workload identity. The name must be unique within your account.</p>
@@ -70,6 +77,26 @@ impl CreateWorkloadIdentityInputBuilder {
     pub fn get_allowed_resource_oauth2_return_urls(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.allowed_resource_oauth2_return_urls
     }
+    /// Adds a key-value pair to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>A map of tag keys and values to assign to the workload identity. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.</p>
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut hash_map = self.tags.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.tags = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>A map of tag keys and values to assign to the workload identity. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// <p>A map of tag keys and values to assign to the workload identity. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.tags
+    }
     /// Consumes the builder and constructs a [`CreateWorkloadIdentityInput`](crate::operation::create_workload_identity::CreateWorkloadIdentityInput).
     pub fn build(
         self,
@@ -80,6 +107,7 @@ impl CreateWorkloadIdentityInputBuilder {
         ::std::result::Result::Ok(crate::operation::create_workload_identity::CreateWorkloadIdentityInput {
             name: self.name,
             allowed_resource_oauth2_return_urls: self.allowed_resource_oauth2_return_urls,
+            tags: self.tags,
         })
     }
 }

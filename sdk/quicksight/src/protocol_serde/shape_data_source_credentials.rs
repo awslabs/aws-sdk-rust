@@ -15,5 +15,11 @@ pub fn ser_data_source_credentials(
     if let Some(var_4) = &input.secret_arn {
         object.key("SecretArn").string(var_4.as_str());
     }
+    if let Some(var_5) = &input.web_proxy_credentials {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("WebProxyCredentials").start_object();
+        crate::protocol_serde::shape_web_proxy_credentials::ser_web_proxy_credentials(&mut object_6, var_5)?;
+        object_6.finish();
+    }
     Ok(())
 }

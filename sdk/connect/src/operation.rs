@@ -19,6 +19,9 @@ pub mod associate_contact_with_user;
 /// Types for the `AssociateDefaultVocabulary` operation.
 pub mod associate_default_vocabulary;
 
+/// Types for the `AssociateEmailAddressAlias` operation.
+pub mod associate_email_address_alias;
+
 /// Types for the `AssociateFlow` operation.
 pub mod associate_flow;
 
@@ -330,6 +333,9 @@ pub mod disassociate_approved_origin;
 
 /// Types for the `DisassociateBot` operation.
 pub mod disassociate_bot;
+
+/// Types for the `DisassociateEmailAddressAlias` operation.
+pub mod disassociate_email_address_alias;
 
 /// Types for the `DisassociateFlow` operation.
 pub mod disassociate_flow;

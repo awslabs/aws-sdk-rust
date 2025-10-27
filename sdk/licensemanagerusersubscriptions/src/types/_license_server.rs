@@ -10,6 +10,8 @@ pub struct LicenseServer {
     pub health_status: ::std::option::Option<crate::types::LicenseServerHealthStatus>,
     /// <p>A list of domain IPv4 addresses that are used for the RDS license server.</p>
     pub ipv4_address: ::std::option::Option<::std::string::String>,
+    /// <p>A list of domain IPv6 addresses that are used for the RDS license server.</p>
+    pub ipv6_address: ::std::option::Option<::std::string::String>,
 }
 impl LicenseServer {
     /// <p>The current state of the provisioning process for the RDS license server.</p>
@@ -23,6 +25,10 @@ impl LicenseServer {
     /// <p>A list of domain IPv4 addresses that are used for the RDS license server.</p>
     pub fn ipv4_address(&self) -> ::std::option::Option<&str> {
         self.ipv4_address.as_deref()
+    }
+    /// <p>A list of domain IPv6 addresses that are used for the RDS license server.</p>
+    pub fn ipv6_address(&self) -> ::std::option::Option<&str> {
+        self.ipv6_address.as_deref()
     }
 }
 impl LicenseServer {
@@ -39,6 +45,7 @@ pub struct LicenseServerBuilder {
     pub(crate) provisioning_status: ::std::option::Option<crate::types::LicenseServerEndpointProvisioningStatus>,
     pub(crate) health_status: ::std::option::Option<crate::types::LicenseServerHealthStatus>,
     pub(crate) ipv4_address: ::std::option::Option<::std::string::String>,
+    pub(crate) ipv6_address: ::std::option::Option<::std::string::String>,
 }
 impl LicenseServerBuilder {
     /// <p>The current state of the provisioning process for the RDS license server.</p>
@@ -83,12 +90,27 @@ impl LicenseServerBuilder {
     pub fn get_ipv4_address(&self) -> &::std::option::Option<::std::string::String> {
         &self.ipv4_address
     }
+    /// <p>A list of domain IPv6 addresses that are used for the RDS license server.</p>
+    pub fn ipv6_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ipv6_address = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A list of domain IPv6 addresses that are used for the RDS license server.</p>
+    pub fn set_ipv6_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.ipv6_address = input;
+        self
+    }
+    /// <p>A list of domain IPv6 addresses that are used for the RDS license server.</p>
+    pub fn get_ipv6_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ipv6_address
+    }
     /// Consumes the builder and constructs a [`LicenseServer`](crate::types::LicenseServer).
     pub fn build(self) -> crate::types::LicenseServer {
         crate::types::LicenseServer {
             provisioning_status: self.provisioning_status,
             health_status: self.health_status,
             ipv4_address: self.ipv4_address,
+            ipv6_address: self.ipv6_address,
         }
     }
 }

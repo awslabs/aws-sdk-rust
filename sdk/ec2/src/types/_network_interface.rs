@@ -66,6 +66,8 @@ pub struct NetworkInterface {
     pub operator: ::std::option::Option<crate::types::OperatorResponse>,
     /// <p>The subnets associated with this network interface.</p>
     pub associated_subnets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The ID of the Availability Zone.</p>
+    pub availability_zone_id: ::std::option::Option<::std::string::String>,
 }
 impl NetworkInterface {
     /// <p>The association information for an Elastic IP address (IPv4) associated with the network interface.</p>
@@ -206,6 +208,10 @@ impl NetworkInterface {
     pub fn associated_subnets(&self) -> &[::std::string::String] {
         self.associated_subnets.as_deref().unwrap_or_default()
     }
+    /// <p>The ID of the Availability Zone.</p>
+    pub fn availability_zone_id(&self) -> ::std::option::Option<&str> {
+        self.availability_zone_id.as_deref()
+    }
 }
 impl NetworkInterface {
     /// Creates a new builder-style object to manufacture [`NetworkInterface`](crate::types::NetworkInterface).
@@ -249,6 +255,7 @@ pub struct NetworkInterfaceBuilder {
     pub(crate) ipv6_address: ::std::option::Option<::std::string::String>,
     pub(crate) operator: ::std::option::Option<crate::types::OperatorResponse>,
     pub(crate) associated_subnets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) availability_zone_id: ::std::option::Option<::std::string::String>,
 }
 impl NetworkInterfaceBuilder {
     /// <p>The association information for an Elastic IP address (IPv4) associated with the network interface.</p>
@@ -727,6 +734,20 @@ impl NetworkInterfaceBuilder {
     pub fn get_associated_subnets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.associated_subnets
     }
+    /// <p>The ID of the Availability Zone.</p>
+    pub fn availability_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.availability_zone_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the Availability Zone.</p>
+    pub fn set_availability_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.availability_zone_id = input;
+        self
+    }
+    /// <p>The ID of the Availability Zone.</p>
+    pub fn get_availability_zone_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone_id
+    }
     /// Consumes the builder and constructs a [`NetworkInterface`](crate::types::NetworkInterface).
     pub fn build(self) -> crate::types::NetworkInterface {
         crate::types::NetworkInterface {
@@ -761,6 +782,7 @@ impl NetworkInterfaceBuilder {
             ipv6_address: self.ipv6_address,
             operator: self.operator,
             associated_subnets: self.associated_subnets,
+            availability_zone_id: self.availability_zone_id,
         }
     }
 }

@@ -19,6 +19,8 @@ pub use crate::types::_ip_range::IpRange;
 
 pub use crate::types::_user_id_group_pair::UserIdGroupPair;
 
+pub use crate::types::_capacity_manager_status::CapacityManagerStatus;
+
 pub use crate::types::_instance_monitoring::InstanceMonitoring;
 
 pub use crate::types::_monitoring::Monitoring;
@@ -1289,6 +1291,34 @@ pub use crate::types::_coip_address_usage::CoipAddressUsage;
 
 pub use crate::types::_instance_usage::InstanceUsage;
 
+pub use crate::types::_capacity_manager_dimension::CapacityManagerDimension;
+
+pub use crate::types::_reservation_state::ReservationState;
+
+pub use crate::types::_capacity_tenancy::CapacityTenancy;
+
+pub use crate::types::_reservation_end_date_type::ReservationEndDateType;
+
+pub use crate::types::_reservation_type::ReservationType;
+
+pub use crate::types::_metric::Metric;
+
+pub use crate::types::_capacity_manager_condition::CapacityManagerCondition;
+
+pub use crate::types::_dimension_condition::DimensionCondition;
+
+pub use crate::types::_comparison::Comparison;
+
+pub use crate::types::_filter_by_dimension::FilterByDimension;
+
+pub use crate::types::_group_by::GroupBy;
+
+pub use crate::types::_metric_data_result::MetricDataResult;
+
+pub use crate::types::_metric_value::MetricValue;
+
+pub use crate::types::_ingestion_status::IngestionStatus;
+
 pub use crate::types::_data_response::DataResponse;
 
 pub use crate::types::_metric_point::MetricPoint;
@@ -2033,8 +2063,6 @@ pub use crate::types::_instance_capacity::InstanceCapacity;
 
 pub use crate::types::_host_reservation::HostReservation;
 
-pub use crate::types::_reservation_state::ReservationState;
-
 pub use crate::types::_host_offering::HostOffering;
 
 pub use crate::types::_fpga_image::FpgaImage;
@@ -2220,6 +2248,14 @@ pub use crate::types::_capacity_reservation_info::CapacityReservationInfo;
 pub use crate::types::_capacity_reservation_billing_request_status::CapacityReservationBillingRequestStatus;
 
 pub use crate::types::_caller_role::CallerRole;
+
+pub use crate::types::_capacity_manager_data_export_response::CapacityManagerDataExportResponse;
+
+pub use crate::types::_capacity_manager_data_export_status::CapacityManagerDataExportStatus;
+
+pub use crate::types::_output_format::OutputFormat;
+
+pub use crate::types::_schedule::Schedule;
 
 pub use crate::types::_capacity_block_status::CapacityBlockStatus;
 
@@ -2703,6 +2739,16 @@ mod _capacity_block_resource_state;
 
 mod _capacity_block_status;
 
+mod _capacity_manager_condition;
+
+mod _capacity_manager_data_export_response;
+
+mod _capacity_manager_data_export_status;
+
+mod _capacity_manager_dimension;
+
+mod _capacity_manager_status;
+
 mod _capacity_reservation;
 
 mod _capacity_reservation_billing_request;
@@ -2746,6 +2792,8 @@ mod _capacity_reservation_target_response;
 mod _capacity_reservation_tenancy;
 
 mod _capacity_reservation_type;
+
+mod _capacity_tenancy;
 
 mod _carrier_gateway;
 
@@ -2826,6 +2874,8 @@ mod _coip_address_usage;
 mod _coip_cidr;
 
 mod _coip_pool;
+
+mod _comparison;
 
 mod _connection_log_options;
 
@@ -2974,6 +3024,8 @@ mod _device_type;
 mod _dhcp_configuration;
 
 mod _dhcp_options;
+
+mod _dimension_condition;
 
 mod _directory_service_authentication;
 
@@ -3149,6 +3201,8 @@ mod _federated_authentication_request;
 
 mod _filter;
 
+mod _filter_by_dimension;
+
 mod _filter_port_range;
 
 mod _findings_found;
@@ -3236,6 +3290,8 @@ mod _gpu_device_info;
 mod _gpu_device_memory_info;
 
 mod _gpu_info;
+
+mod _group_by;
 
 mod _group_identifier;
 
@@ -3350,6 +3406,8 @@ mod _inference_accelerator_info;
 mod _inference_device_info;
 
 mod _inference_device_memory_info;
+
+mod _ingestion_status;
 
 mod _initialization_status_details;
 
@@ -3871,9 +3929,15 @@ mod _memory_mib_request;
 
 mod _metadata_default_http_tokens_state;
 
+mod _metric;
+
+mod _metric_data_result;
+
 mod _metric_point;
 
 mod _metric_type;
+
+mod _metric_value;
 
 mod _modify_availability_zone_opt_in_status;
 
@@ -4008,6 +4072,8 @@ mod _operator_request;
 mod _operator_response;
 
 mod _outpost_lag;
+
+mod _output_format;
 
 mod _packet_header_statement;
 
@@ -4195,9 +4261,13 @@ mod _request_spot_launch_specification;
 
 mod _reservation;
 
+mod _reservation_end_date_type;
+
 mod _reservation_fleet_instance_specification;
 
 mod _reservation_state;
+
+mod _reservation_type;
 
 mod _reservation_value;
 
@@ -4318,6 +4388,8 @@ mod _run_instances_monitoring_enabled;
 mod _s3_object_tag;
 
 mod _s3_storage;
+
+mod _schedule;
 
 mod _scheduled_instance;
 

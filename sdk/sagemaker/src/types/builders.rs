@@ -245,6 +245,8 @@ pub use crate::types::_inference_component_capacity_size::InferenceComponentCapa
 
 pub use crate::types::_inference_component_specification::InferenceComponentSpecificationBuilder;
 
+pub use crate::types::_inference_component_data_cache_config::InferenceComponentDataCacheConfigBuilder;
+
 pub use crate::types::_inference_component_compute_resource_requirements::InferenceComponentComputeResourceRequirementsBuilder;
 
 pub use crate::types::_inference_component_startup_parameters::InferenceComponentStartupParametersBuilder;
@@ -1108,6 +1110,8 @@ pub use crate::types::_endpoint_metadata::EndpointMetadataBuilder;
 pub use crate::types::_inference_component_runtime_config_summary::InferenceComponentRuntimeConfigSummaryBuilder;
 
 pub use crate::types::_inference_component_specification_summary::InferenceComponentSpecificationSummaryBuilder;
+
+pub use crate::types::_inference_component_data_cache_config_summary::InferenceComponentDataCacheConfigSummaryBuilder;
 
 pub use crate::types::_inference_component_container_specification_summary::InferenceComponentContainerSpecificationSummaryBuilder;
 

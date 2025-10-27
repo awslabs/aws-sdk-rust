@@ -39,7 +39,7 @@ pub struct CreateNotebookInstanceInput {
     /// <p>Lifecycle configurations need root access to be able to set up a notebook instance. Because of this, lifecycle configurations associated with a notebook instance always run with root access even if you disable root access for users.</p>
     /// </note>
     pub root_access: ::std::option::Option<crate::types::RootAccess>,
-    /// <p>The platform identifier of the notebook instance runtime environment.</p>
+    /// <p>The platform identifier of the notebook instance runtime environment. The default value is <code>notebook-al2-v2</code>.</p>
     pub platform_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Information on the IMDS configuration of the notebook instance</p>
     pub instance_metadata_service_configuration: ::std::option::Option<crate::types::InstanceMetadataServiceConfiguration>,
@@ -119,7 +119,7 @@ impl CreateNotebookInstanceInput {
     pub fn root_access(&self) -> ::std::option::Option<&crate::types::RootAccess> {
         self.root_access.as_ref()
     }
-    /// <p>The platform identifier of the notebook instance runtime environment.</p>
+    /// <p>The platform identifier of the notebook instance runtime environment. The default value is <code>notebook-al2-v2</code>.</p>
     pub fn platform_identifier(&self) -> ::std::option::Option<&str> {
         self.platform_identifier.as_deref()
     }
@@ -413,17 +413,17 @@ impl CreateNotebookInstanceInputBuilder {
     pub fn get_root_access(&self) -> &::std::option::Option<crate::types::RootAccess> {
         &self.root_access
     }
-    /// <p>The platform identifier of the notebook instance runtime environment.</p>
+    /// <p>The platform identifier of the notebook instance runtime environment. The default value is <code>notebook-al2-v2</code>.</p>
     pub fn platform_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.platform_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The platform identifier of the notebook instance runtime environment.</p>
+    /// <p>The platform identifier of the notebook instance runtime environment. The default value is <code>notebook-al2-v2</code>.</p>
     pub fn set_platform_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.platform_identifier = input;
         self
     }
-    /// <p>The platform identifier of the notebook instance runtime environment.</p>
+    /// <p>The platform identifier of the notebook instance runtime environment. The default value is <code>notebook-al2-v2</code>.</p>
     pub fn get_platform_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.platform_identifier
     }

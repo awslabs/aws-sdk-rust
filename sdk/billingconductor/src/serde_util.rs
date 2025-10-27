@@ -164,6 +164,15 @@ pub(crate) fn line_item_filter_correct_errors(
     builder
 }
 
+pub(crate) fn presentation_object_correct_errors(
+    mut builder: crate::types::builders::PresentationObjectBuilder,
+) -> crate::types::builders::PresentationObjectBuilder {
+    if builder.service.is_none() {
+        builder.service = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn tiering_correct_errors(mut builder: crate::types::builders::TieringBuilder) -> crate::types::builders::TieringBuilder {
     if builder.free_tier.is_none() {
         builder.free_tier = {

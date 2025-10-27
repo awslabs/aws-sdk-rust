@@ -24,6 +24,7 @@ impl crate::operation::create_component::builders::CreateComponentInputBuilder {
 ///
 /// <p>Create an Proton component. A component is an infrastructure extension for a service instance.</p>
 /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
+#[deprecated(note = "AWS Proton is not accepting new customers.", since = "10/07/2025")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateComponentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

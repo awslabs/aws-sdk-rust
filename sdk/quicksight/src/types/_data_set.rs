@@ -24,7 +24,7 @@ pub struct DataSet {
     pub import_mode: ::std::option::Option<crate::types::DataSetImportMode>,
     /// <p>The amount of SPICE capacity used by this dataset. This is 0 if the dataset isn't imported into SPICE.</p>
     pub consumed_spice_capacity_in_bytes: i64,
-    /// <p>Groupings of columns that work together in certain Amazon QuickSight features. Currently, only geospatial hierarchy is supported.</p>
+    /// <p>Groupings of columns that work together in certain Quick Sight features. Currently, only geospatial hierarchy is supported.</p>
     pub column_groups: ::std::option::Option<::std::vec::Vec<crate::types::ColumnGroup>>,
     /// <p>The folder that contains fields and nested subfolders for your dataset.</p>
     pub field_folders: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FieldFolder>>,
@@ -86,7 +86,7 @@ impl DataSet {
     pub fn consumed_spice_capacity_in_bytes(&self) -> i64 {
         self.consumed_spice_capacity_in_bytes
     }
-    /// <p>Groupings of columns that work together in certain Amazon QuickSight features. Currently, only geospatial hierarchy is supported.</p>
+    /// <p>Groupings of columns that work together in certain Quick Sight features. Currently, only geospatial hierarchy is supported.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.column_groups.is_none()`.
     pub fn column_groups(&self) -> &[crate::types::ColumnGroup] {
@@ -329,19 +329,19 @@ impl DataSetBuilder {
     ///
     /// To override the contents of this collection use [`set_column_groups`](Self::set_column_groups).
     ///
-    /// <p>Groupings of columns that work together in certain Amazon QuickSight features. Currently, only geospatial hierarchy is supported.</p>
+    /// <p>Groupings of columns that work together in certain Quick Sight features. Currently, only geospatial hierarchy is supported.</p>
     pub fn column_groups(mut self, input: crate::types::ColumnGroup) -> Self {
         let mut v = self.column_groups.unwrap_or_default();
         v.push(input);
         self.column_groups = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Groupings of columns that work together in certain Amazon QuickSight features. Currently, only geospatial hierarchy is supported.</p>
+    /// <p>Groupings of columns that work together in certain Quick Sight features. Currently, only geospatial hierarchy is supported.</p>
     pub fn set_column_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ColumnGroup>>) -> Self {
         self.column_groups = input;
         self
     }
-    /// <p>Groupings of columns that work together in certain Amazon QuickSight features. Currently, only geospatial hierarchy is supported.</p>
+    /// <p>Groupings of columns that work together in certain Quick Sight features. Currently, only geospatial hierarchy is supported.</p>
     pub fn get_column_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnGroup>> {
         &self.column_groups
     }

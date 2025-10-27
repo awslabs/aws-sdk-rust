@@ -22,7 +22,7 @@ impl crate::operation::list_templates::builders::ListTemplatesInputBuilder {
 }
 /// Fluent builder constructing a request to `ListTemplates`.
 ///
-/// <p>Lists all the templates in the current Amazon QuickSight account.</p>
+/// <p>Lists all the templates in the current Amazon Quick Sight account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListTemplatesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

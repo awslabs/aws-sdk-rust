@@ -34,8 +34,10 @@ pub struct AddPermissionInput {
     pub revision_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for your organization in Organizations. Use this to grant permissions to all the Amazon Web Services accounts under this organization.</p>
     pub principal_org_id: ::std::option::Option<::std::string::String>,
-    /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Security and auth model for Lambda function URLs</a>.</p>
+    /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Control access to Lambda function URLs</a>.</p>
     pub function_url_auth_type: ::std::option::Option<crate::types::FunctionUrlAuthType>,
+    /// <p>Restricts the <code>lambda:InvokeFunction</code> action to calls coming from a function URL. When set to <code>true</code>, this prevents the principal from invoking the function by any means other than the function URL. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Control access to Lambda function URLs</a>.</p>
+    pub invoked_via_function_url: ::std::option::Option<bool>,
 }
 impl AddPermissionInput {
     /// <p>The name or ARN of the Lambda function, version, or alias.</p>
@@ -89,9 +91,13 @@ impl AddPermissionInput {
     pub fn principal_org_id(&self) -> ::std::option::Option<&str> {
         self.principal_org_id.as_deref()
     }
-    /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Security and auth model for Lambda function URLs</a>.</p>
+    /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Control access to Lambda function URLs</a>.</p>
     pub fn function_url_auth_type(&self) -> ::std::option::Option<&crate::types::FunctionUrlAuthType> {
         self.function_url_auth_type.as_ref()
+    }
+    /// <p>Restricts the <code>lambda:InvokeFunction</code> action to calls coming from a function URL. When set to <code>true</code>, this prevents the principal from invoking the function by any means other than the function URL. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Control access to Lambda function URLs</a>.</p>
+    pub fn invoked_via_function_url(&self) -> ::std::option::Option<bool> {
+        self.invoked_via_function_url
     }
 }
 impl AddPermissionInput {
@@ -116,6 +122,7 @@ pub struct AddPermissionInputBuilder {
     pub(crate) revision_id: ::std::option::Option<::std::string::String>,
     pub(crate) principal_org_id: ::std::option::Option<::std::string::String>,
     pub(crate) function_url_auth_type: ::std::option::Option<crate::types::FunctionUrlAuthType>,
+    pub(crate) invoked_via_function_url: ::std::option::Option<bool>,
 }
 impl AddPermissionInputBuilder {
     /// <p>The name or ARN of the Lambda function, version, or alias.</p>
@@ -295,19 +302,33 @@ impl AddPermissionInputBuilder {
     pub fn get_principal_org_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.principal_org_id
     }
-    /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Security and auth model for Lambda function URLs</a>.</p>
+    /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Control access to Lambda function URLs</a>.</p>
     pub fn function_url_auth_type(mut self, input: crate::types::FunctionUrlAuthType) -> Self {
         self.function_url_auth_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Security and auth model for Lambda function URLs</a>.</p>
+    /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Control access to Lambda function URLs</a>.</p>
     pub fn set_function_url_auth_type(mut self, input: ::std::option::Option<crate::types::FunctionUrlAuthType>) -> Self {
         self.function_url_auth_type = input;
         self
     }
-    /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Security and auth model for Lambda function URLs</a>.</p>
+    /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Control access to Lambda function URLs</a>.</p>
     pub fn get_function_url_auth_type(&self) -> &::std::option::Option<crate::types::FunctionUrlAuthType> {
         &self.function_url_auth_type
+    }
+    /// <p>Restricts the <code>lambda:InvokeFunction</code> action to calls coming from a function URL. When set to <code>true</code>, this prevents the principal from invoking the function by any means other than the function URL. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Control access to Lambda function URLs</a>.</p>
+    pub fn invoked_via_function_url(mut self, input: bool) -> Self {
+        self.invoked_via_function_url = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Restricts the <code>lambda:InvokeFunction</code> action to calls coming from a function URL. When set to <code>true</code>, this prevents the principal from invoking the function by any means other than the function URL. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Control access to Lambda function URLs</a>.</p>
+    pub fn set_invoked_via_function_url(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.invoked_via_function_url = input;
+        self
+    }
+    /// <p>Restricts the <code>lambda:InvokeFunction</code> action to calls coming from a function URL. When set to <code>true</code>, this prevents the principal from invoking the function by any means other than the function URL. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Control access to Lambda function URLs</a>.</p>
+    pub fn get_invoked_via_function_url(&self) -> &::std::option::Option<bool> {
+        &self.invoked_via_function_url
     }
     /// Consumes the builder and constructs a [`AddPermissionInput`](crate::operation::add_permission::AddPermissionInput).
     pub fn build(
@@ -325,6 +346,7 @@ impl AddPermissionInputBuilder {
             revision_id: self.revision_id,
             principal_org_id: self.principal_org_id,
             function_url_auth_type: self.function_url_auth_type,
+            invoked_via_function_url: self.invoked_via_function_url,
         })
     }
 }

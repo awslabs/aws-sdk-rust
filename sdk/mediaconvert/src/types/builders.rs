@@ -345,6 +345,8 @@ pub use crate::types::_hop_destination::HopDestinationBuilder;
 
 pub use crate::types::_acceleration_settings::AccelerationSettingsBuilder;
 
+pub use crate::types::_jobs_query_filter::JobsQueryFilterBuilder;
+
 pub use crate::types::_job::JobBuilder;
 
 pub use crate::types::_warning_group::WarningGroupBuilder;
@@ -386,6 +388,8 @@ pub use crate::types::_track::TrackBuilder;
 pub use crate::types::_video_properties::VideoPropertiesBuilder;
 
 pub use crate::types::_frame_rate::FrameRateBuilder;
+
+pub use crate::types::_codec_metadata::CodecMetadataBuilder;
 
 pub use crate::types::_data_properties::DataPropertiesBuilder;
 

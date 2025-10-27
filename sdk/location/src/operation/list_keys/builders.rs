@@ -23,6 +23,7 @@ impl crate::operation::list_keys::builders::ListKeysInputBuilder {
 /// Fluent builder constructing a request to `ListKeys`.
 ///
 /// <p>Lists API key resources in your Amazon Web Services account.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">Use API keys to authenticate</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListKeysFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

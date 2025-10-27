@@ -22,7 +22,7 @@ impl crate::operation::create_iam_policy_assignment::builders::CreateIamPolicyAs
 }
 /// Fluent builder constructing a request to `CreateIAMPolicyAssignment`.
 ///
-/// <p>Creates an assignment with one specified IAM policy, identified by its Amazon Resource Name (ARN). This policy assignment is attached to the specified groups or users of Amazon QuickSight. Assignment names are unique per Amazon Web Services account. To avoid overwriting rules in other namespaces, use assignment names that are unique.</p>
+/// <p>Creates an assignment with one specified IAM policy, identified by its Amazon Resource Name (ARN). This policy assignment is attached to the specified groups or users of Amazon Quick Sight. Assignment names are unique per Amazon Web Services account. To avoid overwriting rules in other namespaces, use assignment names that are unique.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateIAMPolicyAssignmentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl CreateIAMPolicyAssignmentFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ID of the Amazon Web Services account where you want to assign an IAM policy to QuickSight users or groups.</p>
+    /// <p>The ID of the Amazon Web Services account where you want to assign an IAM policy to Amazon Quick Sight users or groups.</p>
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
-    /// <p>The ID of the Amazon Web Services account where you want to assign an IAM policy to QuickSight users or groups.</p>
+    /// <p>The ID of the Amazon Web Services account where you want to assign an IAM policy to Amazon Quick Sight users or groups.</p>
     pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
-    /// <p>The ID of the Amazon Web Services account where you want to assign an IAM policy to QuickSight users or groups.</p>
+    /// <p>The ID of the Amazon Web Services account where you want to assign an IAM policy to Amazon Quick Sight users or groups.</p>
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_aws_account_id()
     }
@@ -174,17 +174,17 @@ impl CreateIAMPolicyAssignmentFluentBuilder {
     pub fn get_assignment_status(&self) -> &::std::option::Option<crate::types::AssignmentStatus> {
         self.inner.get_assignment_status()
     }
-    /// <p>The ARN for the IAM policy to apply to the QuickSight users and groups specified in this assignment.</p>
+    /// <p>The ARN for the IAM policy to apply to the Amazon Quick Sight users and groups specified in this assignment.</p>
     pub fn policy_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.policy_arn(input.into());
         self
     }
-    /// <p>The ARN for the IAM policy to apply to the QuickSight users and groups specified in this assignment.</p>
+    /// <p>The ARN for the IAM policy to apply to the Amazon Quick Sight users and groups specified in this assignment.</p>
     pub fn set_policy_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy_arn(input);
         self
     }
-    /// <p>The ARN for the IAM policy to apply to the QuickSight users and groups specified in this assignment.</p>
+    /// <p>The ARN for the IAM policy to apply to the Amazon Quick Sight users and groups specified in this assignment.</p>
     pub fn get_policy_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_policy_arn()
     }
@@ -193,12 +193,12 @@ impl CreateIAMPolicyAssignmentFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_identities`](Self::set_identities).
     ///
-    /// <p>The QuickSight users, groups, or both that you want to assign the policy to.</p>
+    /// <p>The Amazon Quick Sight users, groups, or both that you want to assign the policy to.</p>
     pub fn identities(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
         self.inner = self.inner.identities(k.into(), v);
         self
     }
-    /// <p>The QuickSight users, groups, or both that you want to assign the policy to.</p>
+    /// <p>The Amazon Quick Sight users, groups, or both that you want to assign the policy to.</p>
     pub fn set_identities(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
@@ -206,7 +206,7 @@ impl CreateIAMPolicyAssignmentFluentBuilder {
         self.inner = self.inner.set_identities(input);
         self
     }
-    /// <p>The QuickSight users, groups, or both that you want to assign the policy to.</p>
+    /// <p>The Amazon Quick Sight users, groups, or both that you want to assign the policy to.</p>
     pub fn get_identities(
         &self,
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {

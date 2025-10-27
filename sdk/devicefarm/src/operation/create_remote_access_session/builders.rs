@@ -136,6 +136,20 @@ impl CreateRemoteAccessSessionFluentBuilder {
     pub fn get_device_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_device_arn()
     }
+    /// <p>The Amazon Resource Name (ARN) of the app to create the remote access session.</p>
+    pub fn app_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.app_arn(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the app to create the remote access session.</p>
+    pub fn set_app_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_app_arn(input);
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the app to create the remote access session.</p>
+    pub fn get_app_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_app_arn()
+    }
     /// <p>The Amazon Resource Name (ARN) of the device instance for which you want to create a remote access session.</p>
     pub fn instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_arn(input.into());

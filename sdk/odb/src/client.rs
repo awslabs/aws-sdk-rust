@@ -242,3 +242,5 @@ mod untag_resource;
 mod update_cloud_exadata_infrastructure;
 
 mod update_odb_network;
+
+mod update_odb_peering_connection;

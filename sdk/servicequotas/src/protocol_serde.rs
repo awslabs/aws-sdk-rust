@@ -33,6 +33,8 @@ pub(crate) mod shape_disassociate_service_quota_template;
 
 pub(crate) mod shape_get_association_for_service_quota_template;
 
+pub(crate) mod shape_get_auto_management_configuration;
+
 pub(crate) mod shape_get_aws_default_service_quota;
 
 pub(crate) mod shape_get_requested_service_quota_change;
@@ -59,9 +61,15 @@ pub(crate) mod shape_put_service_quota_increase_request_into_template;
 
 pub(crate) mod shape_request_service_quota_increase;
 
+pub(crate) mod shape_start_auto_management;
+
+pub(crate) mod shape_stop_auto_management;
+
 pub(crate) mod shape_tag_resource;
 
 pub(crate) mod shape_untag_resource;
+
+pub(crate) mod shape_update_auto_management;
 
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
@@ -127,6 +135,8 @@ pub(crate) mod shape_service_exception;
 
 pub(crate) mod shape_service_quota_template_not_in_use_exception;
 
+pub(crate) mod shape_start_auto_management_input;
+
 pub(crate) mod shape_tag_policy_violation_exception;
 
 pub(crate) mod shape_tag_resource_input;
@@ -138,6 +148,10 @@ pub(crate) mod shape_too_many_requests_exception;
 pub(crate) mod shape_too_many_tags_exception;
 
 pub(crate) mod shape_untag_resource_input;
+
+pub(crate) mod shape_update_auto_management_input;
+
+pub(crate) mod shape_exclusion_quota_list;
 
 pub(crate) mod shape_output_tags;
 
@@ -163,8 +177,12 @@ pub(crate) mod shape_metric_info;
 
 pub(crate) mod shape_quota_context_info;
 
+pub(crate) mod shape_quota_info_list;
+
 pub(crate) mod shape_quota_period;
 
 pub(crate) mod shape_service_info;
 
 pub(crate) mod shape_metric_dimensions_map_definition;
+
+pub(crate) mod shape_quota_info;

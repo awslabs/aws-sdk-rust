@@ -18,7 +18,7 @@
 #![allow(rustdoc::invalid_html_tags)]
 #![forbid(unsafe_code)]
 #![warn(missing_docs)]
-#![cfg_attr(docsrs, feature(doc_auto_cfg))]
+#![cfg_attr(docsrs, feature(doc_cfg))]
 //! With Step Functions, you can create workflows, also called _state machines_, to build distributed applications, automate processes, orchestrate microservices, and create data and machine learning pipelines.
 //!
 //! Through the Step Functions API, you can create, list, update, and delete state machines, activities, and other data types. You can start, stop, and redrive your state machines. Your activity workers can send task success, heartbeat, and failure responses.
@@ -41,7 +41,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-sfn = "1.89.0"
+//! aws-sdk-sfn = "1.90.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

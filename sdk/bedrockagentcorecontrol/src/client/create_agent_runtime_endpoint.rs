@@ -13,6 +13,8 @@ impl super::Client {
     ///   - [`target_version(String)`](crate::operation::create_agent_runtime_endpoint::CreateAgentRuntimeEndpointOutput::target_version): <p>The target version of the AgentCore Runtime for the endpoint.</p>
     ///   - [`agent_runtime_endpoint_arn(String)`](crate::operation::create_agent_runtime_endpoint::CreateAgentRuntimeEndpointOutput::agent_runtime_endpoint_arn): <p>The Amazon Resource Name (ARN) of the AgentCore Runtime endpoint.</p>
     ///   - [`agent_runtime_arn(String)`](crate::operation::create_agent_runtime_endpoint::CreateAgentRuntimeEndpointOutput::agent_runtime_arn): <p>The Amazon Resource Name (ARN) of the AgentCore Runtime.</p>
+    ///   - [`agent_runtime_id(Option<String>)`](crate::operation::create_agent_runtime_endpoint::CreateAgentRuntimeEndpointOutput::agent_runtime_id): <p>The unique identifier of the AgentCore Runtime.</p>
+    ///   - [`endpoint_name(Option<String>)`](crate::operation::create_agent_runtime_endpoint::CreateAgentRuntimeEndpointOutput::endpoint_name): <p>The name of the AgentCore Runtime endpoint.</p>
     ///   - [`status(AgentRuntimeEndpointStatus)`](crate::operation::create_agent_runtime_endpoint::CreateAgentRuntimeEndpointOutput::status): <p>The current status of the AgentCore Runtime endpoint.</p>
     ///   - [`created_at(DateTime)`](crate::operation::create_agent_runtime_endpoint::CreateAgentRuntimeEndpointOutput::created_at): <p>The timestamp when the AgentCore Runtime endpoint was created.</p>
     /// - On failure, responds with [`SdkError<CreateAgentRuntimeEndpointError>`](crate::operation::create_agent_runtime_endpoint::CreateAgentRuntimeEndpointError)

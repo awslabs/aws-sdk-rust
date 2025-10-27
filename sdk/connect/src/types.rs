@@ -303,6 +303,20 @@ pub use crate::types::_screen_share_capability::ScreenShareCapability;
 
 pub use crate::types::_video_capability::VideoCapability;
 
+pub use crate::types::_outbound_strategy::OutboundStrategy;
+
+pub use crate::types::_outbound_strategy_config::OutboundStrategyConfig;
+
+pub use crate::types::_agent_first::AgentFirst;
+
+pub use crate::types::_preview::Preview;
+
+pub use crate::types::_allowed_user_action::AllowedUserAction;
+
+pub use crate::types::_post_accept_timeout_config::PostAcceptTimeoutConfig;
+
+pub use crate::types::_outbound_strategy_type::OutboundStrategyType;
+
 pub use crate::types::_traffic_type::TrafficType;
 
 pub use crate::types::_answer_machine_detection_config::AnswerMachineDetectionConfig;
@@ -476,6 +490,8 @@ pub use crate::types::_date_condition::DateCondition;
 pub use crate::types::_date_comparison_type::DateComparisonType;
 
 pub use crate::types::_email_address_metadata::EmailAddressMetadata;
+
+pub use crate::types::_alias_configuration::AliasConfiguration;
 
 pub use crate::types::_email_address_search_filter::EmailAddressSearchFilter;
 
@@ -891,6 +907,8 @@ pub use crate::types::_contact::Contact;
 
 pub use crate::types::_contact_details::ContactDetails;
 
+pub use crate::types::_task_template_info_v2::TaskTemplateInfoV2;
+
 pub use crate::types::_contact_evaluation::ContactEvaluation;
 
 pub use crate::types::_status::Status;
@@ -989,6 +1007,8 @@ mod _agent_config;
 
 mod _agent_contact_reference;
 
+mod _agent_first;
+
 mod _agent_hierarchy_group;
 
 mod _agent_hierarchy_groups;
@@ -1015,7 +1035,11 @@ mod _agent_status_type;
 
 mod _agents_criteria;
 
+mod _alias_configuration;
+
 mod _allowed_capabilities;
+
+mod _allowed_user_action;
 
 mod _analytics_data_association_result;
 
@@ -1513,6 +1537,12 @@ mod _outbound_message_source_type;
 
 mod _outbound_raw_message;
 
+mod _outbound_strategy;
+
+mod _outbound_strategy_config;
+
+mod _outbound_strategy_type;
+
 mod _override_days;
 
 mod _override_time_slice;
@@ -1557,6 +1587,8 @@ mod _phone_number_workflow_status;
 
 mod _phone_type;
 
+mod _post_accept_timeout_config;
+
 mod _predefined_attribute;
 
 mod _predefined_attribute_configuration;
@@ -1566,6 +1598,8 @@ mod _predefined_attribute_search_criteria;
 mod _predefined_attribute_summary;
 
 mod _predefined_attribute_values;
+
+mod _preview;
 
 mod _problem_detail;
 
@@ -1846,6 +1880,8 @@ mod _task_template_field;
 mod _task_template_field_identifier;
 
 mod _task_template_field_type;
+
+mod _task_template_info_v2;
 
 mod _task_template_metadata;
 

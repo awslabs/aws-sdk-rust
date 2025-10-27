@@ -12,19 +12,19 @@ pub struct CreateDataSourceInput {
     /// <p>The type of the data source. To return a list of all data sources, use <code>ListDataSources</code>.</p>
     /// <p>Use <code>AMAZON_ELASTICSEARCH</code> for Amazon OpenSearch Service.</p>
     pub r#type: ::std::option::Option<crate::types::DataSourceType>,
-    /// <p>The parameters that QuickSight uses to connect to your underlying source.</p>
+    /// <p>The parameters that Amazon Quick Sight uses to connect to your underlying source.</p>
     pub data_source_parameters: ::std::option::Option<crate::types::DataSourceParameters>,
-    /// <p>The credentials QuickSight that uses to connect to your underlying source. Currently, only credentials based on user name and password are supported.</p>
+    /// <p>The credentials Amazon Quick Sight that uses to connect to your underlying source. Currently, only credentials based on user name and password are supported.</p>
     pub credentials: ::std::option::Option<crate::types::DataSourceCredentials>,
     /// <p>A list of resource permissions on the data source.</p>
     pub permissions: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
-    /// <p>Use this parameter only when you want QuickSight to use a VPC connection when connecting to your underlying source.</p>
+    /// <p>Use this parameter only when you want Amazon Quick Sight to use a VPC connection when connecting to your underlying source.</p>
     pub vpc_connection_properties: ::std::option::Option<crate::types::VpcConnectionProperties>,
-    /// <p>Secure Socket Layer (SSL) properties that apply when QuickSight connects to your underlying source.</p>
+    /// <p>Secure Socket Layer (SSL) properties that apply when Amazon Quick Sight connects to your underlying source.</p>
     pub ssl_properties: ::std::option::Option<crate::types::SslProperties>,
     /// <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the data source.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    /// <p>When you create the data source, QuickSight adds the data source to these folders.</p>
+    /// <p>When you create the data source, Amazon Quick Sight adds the data source to these folders.</p>
     pub folder_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CreateDataSourceInput {
@@ -45,11 +45,11 @@ impl CreateDataSourceInput {
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::DataSourceType> {
         self.r#type.as_ref()
     }
-    /// <p>The parameters that QuickSight uses to connect to your underlying source.</p>
+    /// <p>The parameters that Amazon Quick Sight uses to connect to your underlying source.</p>
     pub fn data_source_parameters(&self) -> ::std::option::Option<&crate::types::DataSourceParameters> {
         self.data_source_parameters.as_ref()
     }
-    /// <p>The credentials QuickSight that uses to connect to your underlying source. Currently, only credentials based on user name and password are supported.</p>
+    /// <p>The credentials Amazon Quick Sight that uses to connect to your underlying source. Currently, only credentials based on user name and password are supported.</p>
     pub fn credentials(&self) -> ::std::option::Option<&crate::types::DataSourceCredentials> {
         self.credentials.as_ref()
     }
@@ -59,11 +59,11 @@ impl CreateDataSourceInput {
     pub fn permissions(&self) -> &[crate::types::ResourcePermission] {
         self.permissions.as_deref().unwrap_or_default()
     }
-    /// <p>Use this parameter only when you want QuickSight to use a VPC connection when connecting to your underlying source.</p>
+    /// <p>Use this parameter only when you want Amazon Quick Sight to use a VPC connection when connecting to your underlying source.</p>
     pub fn vpc_connection_properties(&self) -> ::std::option::Option<&crate::types::VpcConnectionProperties> {
         self.vpc_connection_properties.as_ref()
     }
-    /// <p>Secure Socket Layer (SSL) properties that apply when QuickSight connects to your underlying source.</p>
+    /// <p>Secure Socket Layer (SSL) properties that apply when Amazon Quick Sight connects to your underlying source.</p>
     pub fn ssl_properties(&self) -> ::std::option::Option<&crate::types::SslProperties> {
         self.ssl_properties.as_ref()
     }
@@ -73,7 +73,7 @@ impl CreateDataSourceInput {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
-    /// <p>When you create the data source, QuickSight adds the data source to these folders.</p>
+    /// <p>When you create the data source, Amazon Quick Sight adds the data source to these folders.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.folder_arns.is_none()`.
     pub fn folder_arns(&self) -> &[::std::string::String] {
@@ -184,31 +184,31 @@ impl CreateDataSourceInputBuilder {
     pub fn get_type(&self) -> &::std::option::Option<crate::types::DataSourceType> {
         &self.r#type
     }
-    /// <p>The parameters that QuickSight uses to connect to your underlying source.</p>
+    /// <p>The parameters that Amazon Quick Sight uses to connect to your underlying source.</p>
     pub fn data_source_parameters(mut self, input: crate::types::DataSourceParameters) -> Self {
         self.data_source_parameters = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The parameters that QuickSight uses to connect to your underlying source.</p>
+    /// <p>The parameters that Amazon Quick Sight uses to connect to your underlying source.</p>
     pub fn set_data_source_parameters(mut self, input: ::std::option::Option<crate::types::DataSourceParameters>) -> Self {
         self.data_source_parameters = input;
         self
     }
-    /// <p>The parameters that QuickSight uses to connect to your underlying source.</p>
+    /// <p>The parameters that Amazon Quick Sight uses to connect to your underlying source.</p>
     pub fn get_data_source_parameters(&self) -> &::std::option::Option<crate::types::DataSourceParameters> {
         &self.data_source_parameters
     }
-    /// <p>The credentials QuickSight that uses to connect to your underlying source. Currently, only credentials based on user name and password are supported.</p>
+    /// <p>The credentials Amazon Quick Sight that uses to connect to your underlying source. Currently, only credentials based on user name and password are supported.</p>
     pub fn credentials(mut self, input: crate::types::DataSourceCredentials) -> Self {
         self.credentials = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The credentials QuickSight that uses to connect to your underlying source. Currently, only credentials based on user name and password are supported.</p>
+    /// <p>The credentials Amazon Quick Sight that uses to connect to your underlying source. Currently, only credentials based on user name and password are supported.</p>
     pub fn set_credentials(mut self, input: ::std::option::Option<crate::types::DataSourceCredentials>) -> Self {
         self.credentials = input;
         self
     }
-    /// <p>The credentials QuickSight that uses to connect to your underlying source. Currently, only credentials based on user name and password are supported.</p>
+    /// <p>The credentials Amazon Quick Sight that uses to connect to your underlying source. Currently, only credentials based on user name and password are supported.</p>
     pub fn get_credentials(&self) -> &::std::option::Option<crate::types::DataSourceCredentials> {
         &self.credentials
     }
@@ -232,31 +232,31 @@ impl CreateDataSourceInputBuilder {
     pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
         &self.permissions
     }
-    /// <p>Use this parameter only when you want QuickSight to use a VPC connection when connecting to your underlying source.</p>
+    /// <p>Use this parameter only when you want Amazon Quick Sight to use a VPC connection when connecting to your underlying source.</p>
     pub fn vpc_connection_properties(mut self, input: crate::types::VpcConnectionProperties) -> Self {
         self.vpc_connection_properties = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Use this parameter only when you want QuickSight to use a VPC connection when connecting to your underlying source.</p>
+    /// <p>Use this parameter only when you want Amazon Quick Sight to use a VPC connection when connecting to your underlying source.</p>
     pub fn set_vpc_connection_properties(mut self, input: ::std::option::Option<crate::types::VpcConnectionProperties>) -> Self {
         self.vpc_connection_properties = input;
         self
     }
-    /// <p>Use this parameter only when you want QuickSight to use a VPC connection when connecting to your underlying source.</p>
+    /// <p>Use this parameter only when you want Amazon Quick Sight to use a VPC connection when connecting to your underlying source.</p>
     pub fn get_vpc_connection_properties(&self) -> &::std::option::Option<crate::types::VpcConnectionProperties> {
         &self.vpc_connection_properties
     }
-    /// <p>Secure Socket Layer (SSL) properties that apply when QuickSight connects to your underlying source.</p>
+    /// <p>Secure Socket Layer (SSL) properties that apply when Amazon Quick Sight connects to your underlying source.</p>
     pub fn ssl_properties(mut self, input: crate::types::SslProperties) -> Self {
         self.ssl_properties = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Secure Socket Layer (SSL) properties that apply when QuickSight connects to your underlying source.</p>
+    /// <p>Secure Socket Layer (SSL) properties that apply when Amazon Quick Sight connects to your underlying source.</p>
     pub fn set_ssl_properties(mut self, input: ::std::option::Option<crate::types::SslProperties>) -> Self {
         self.ssl_properties = input;
         self
     }
-    /// <p>Secure Socket Layer (SSL) properties that apply when QuickSight connects to your underlying source.</p>
+    /// <p>Secure Socket Layer (SSL) properties that apply when Amazon Quick Sight connects to your underlying source.</p>
     pub fn get_ssl_properties(&self) -> &::std::option::Option<crate::types::SslProperties> {
         &self.ssl_properties
     }
@@ -284,19 +284,19 @@ impl CreateDataSourceInputBuilder {
     ///
     /// To override the contents of this collection use [`set_folder_arns`](Self::set_folder_arns).
     ///
-    /// <p>When you create the data source, QuickSight adds the data source to these folders.</p>
+    /// <p>When you create the data source, Amazon Quick Sight adds the data source to these folders.</p>
     pub fn folder_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.folder_arns.unwrap_or_default();
         v.push(input.into());
         self.folder_arns = ::std::option::Option::Some(v);
         self
     }
-    /// <p>When you create the data source, QuickSight adds the data source to these folders.</p>
+    /// <p>When you create the data source, Amazon Quick Sight adds the data source to these folders.</p>
     pub fn set_folder_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.folder_arns = input;
         self
     }
-    /// <p>When you create the data source, QuickSight adds the data source to these folders.</p>
+    /// <p>When you create the data source, Amazon Quick Sight adds the data source to these folders.</p>
     pub fn get_folder_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.folder_arns
     }

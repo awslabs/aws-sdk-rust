@@ -6,9 +6,9 @@
 pub struct HlsCaptionLanguageMapping {
     /// Caption channel.
     pub caption_channel: ::std::option::Option<i32>,
-    /// Specify the language for this captions channel, using the ISO 639-2 or ISO 639-3 three-letter language code
+    /// Specify the language, using an ISO 639-2 three-letter code in all capital letters. You can find a list of codes at: https://www.loc.gov/standards/iso639-2/php/code_list.php
     pub custom_language_code: ::std::option::Option<::std::string::String>,
-    /// Specify the language, using the ISO 639-2 three-letter code listed at https://www.loc.gov/standards/iso639-2/php/code_list.php.
+    /// Specify the language, using an ISO 639-2 three-letter code in all capital letters. You can find a list of codes at: https://www.loc.gov/standards/iso639-2/php/code_list.php
     pub language_code: ::std::option::Option<crate::types::LanguageCode>,
     /// Caption language description.
     pub language_description: ::std::option::Option<::std::string::String>,
@@ -18,11 +18,11 @@ impl HlsCaptionLanguageMapping {
     pub fn caption_channel(&self) -> ::std::option::Option<i32> {
         self.caption_channel
     }
-    /// Specify the language for this captions channel, using the ISO 639-2 or ISO 639-3 three-letter language code
+    /// Specify the language, using an ISO 639-2 three-letter code in all capital letters. You can find a list of codes at: https://www.loc.gov/standards/iso639-2/php/code_list.php
     pub fn custom_language_code(&self) -> ::std::option::Option<&str> {
         self.custom_language_code.as_deref()
     }
-    /// Specify the language, using the ISO 639-2 three-letter code listed at https://www.loc.gov/standards/iso639-2/php/code_list.php.
+    /// Specify the language, using an ISO 639-2 three-letter code in all capital letters. You can find a list of codes at: https://www.loc.gov/standards/iso639-2/php/code_list.php
     pub fn language_code(&self) -> ::std::option::Option<&crate::types::LanguageCode> {
         self.language_code.as_ref()
     }
@@ -62,31 +62,31 @@ impl HlsCaptionLanguageMappingBuilder {
     pub fn get_caption_channel(&self) -> &::std::option::Option<i32> {
         &self.caption_channel
     }
-    /// Specify the language for this captions channel, using the ISO 639-2 or ISO 639-3 three-letter language code
+    /// Specify the language, using an ISO 639-2 three-letter code in all capital letters. You can find a list of codes at: https://www.loc.gov/standards/iso639-2/php/code_list.php
     pub fn custom_language_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.custom_language_code = ::std::option::Option::Some(input.into());
         self
     }
-    /// Specify the language for this captions channel, using the ISO 639-2 or ISO 639-3 three-letter language code
+    /// Specify the language, using an ISO 639-2 three-letter code in all capital letters. You can find a list of codes at: https://www.loc.gov/standards/iso639-2/php/code_list.php
     pub fn set_custom_language_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.custom_language_code = input;
         self
     }
-    /// Specify the language for this captions channel, using the ISO 639-2 or ISO 639-3 three-letter language code
+    /// Specify the language, using an ISO 639-2 three-letter code in all capital letters. You can find a list of codes at: https://www.loc.gov/standards/iso639-2/php/code_list.php
     pub fn get_custom_language_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.custom_language_code
     }
-    /// Specify the language, using the ISO 639-2 three-letter code listed at https://www.loc.gov/standards/iso639-2/php/code_list.php.
+    /// Specify the language, using an ISO 639-2 three-letter code in all capital letters. You can find a list of codes at: https://www.loc.gov/standards/iso639-2/php/code_list.php
     pub fn language_code(mut self, input: crate::types::LanguageCode) -> Self {
         self.language_code = ::std::option::Option::Some(input);
         self
     }
-    /// Specify the language, using the ISO 639-2 three-letter code listed at https://www.loc.gov/standards/iso639-2/php/code_list.php.
+    /// Specify the language, using an ISO 639-2 three-letter code in all capital letters. You can find a list of codes at: https://www.loc.gov/standards/iso639-2/php/code_list.php
     pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::LanguageCode>) -> Self {
         self.language_code = input;
         self
     }
-    /// Specify the language, using the ISO 639-2 three-letter code listed at https://www.loc.gov/standards/iso639-2/php/code_list.php.
+    /// Specify the language, using an ISO 639-2 three-letter code in all capital letters. You can find a list of codes at: https://www.loc.gov/standards/iso639-2/php/code_list.php
     pub fn get_language_code(&self) -> &::std::option::Option<crate::types::LanguageCode> {
         &self.language_code
     }

@@ -6,6 +6,8 @@
 pub struct ApplicationTheme {
     /// <p>The color palette.</p>
     pub brand_color_palette: ::std::option::Option<crate::types::BrandColorPalette>,
+    /// <p>The contextual accent palette.</p>
+    pub contextual_accent_palette: ::std::option::Option<crate::types::ContextualAccentPalette>,
     /// <p>The element style.</p>
     pub brand_element_style: ::std::option::Option<crate::types::BrandElementStyle>,
 }
@@ -13,6 +15,10 @@ impl ApplicationTheme {
     /// <p>The color palette.</p>
     pub fn brand_color_palette(&self) -> ::std::option::Option<&crate::types::BrandColorPalette> {
         self.brand_color_palette.as_ref()
+    }
+    /// <p>The contextual accent palette.</p>
+    pub fn contextual_accent_palette(&self) -> ::std::option::Option<&crate::types::ContextualAccentPalette> {
+        self.contextual_accent_palette.as_ref()
     }
     /// <p>The element style.</p>
     pub fn brand_element_style(&self) -> ::std::option::Option<&crate::types::BrandElementStyle> {
@@ -31,6 +37,7 @@ impl ApplicationTheme {
 #[non_exhaustive]
 pub struct ApplicationThemeBuilder {
     pub(crate) brand_color_palette: ::std::option::Option<crate::types::BrandColorPalette>,
+    pub(crate) contextual_accent_palette: ::std::option::Option<crate::types::ContextualAccentPalette>,
     pub(crate) brand_element_style: ::std::option::Option<crate::types::BrandElementStyle>,
 }
 impl ApplicationThemeBuilder {
@@ -47,6 +54,20 @@ impl ApplicationThemeBuilder {
     /// <p>The color palette.</p>
     pub fn get_brand_color_palette(&self) -> &::std::option::Option<crate::types::BrandColorPalette> {
         &self.brand_color_palette
+    }
+    /// <p>The contextual accent palette.</p>
+    pub fn contextual_accent_palette(mut self, input: crate::types::ContextualAccentPalette) -> Self {
+        self.contextual_accent_palette = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The contextual accent palette.</p>
+    pub fn set_contextual_accent_palette(mut self, input: ::std::option::Option<crate::types::ContextualAccentPalette>) -> Self {
+        self.contextual_accent_palette = input;
+        self
+    }
+    /// <p>The contextual accent palette.</p>
+    pub fn get_contextual_accent_palette(&self) -> &::std::option::Option<crate::types::ContextualAccentPalette> {
+        &self.contextual_accent_palette
     }
     /// <p>The element style.</p>
     pub fn brand_element_style(mut self, input: crate::types::BrandElementStyle) -> Self {
@@ -66,6 +87,7 @@ impl ApplicationThemeBuilder {
     pub fn build(self) -> crate::types::ApplicationTheme {
         crate::types::ApplicationTheme {
             brand_color_palette: self.brand_color_palette,
+            contextual_accent_palette: self.contextual_accent_palette,
             brand_element_style: self.brand_element_style,
         }
     }

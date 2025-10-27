@@ -24,6 +24,7 @@ impl crate::operation::untag_resource::builders::UntagResourceInputBuilder {
 ///
 /// <p>Remove a customer tag from a resource. A tag is a key-value pair of metadata associated with an Proton resource.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
+#[deprecated(note = "AWS Proton is not accepting new customers.", since = "10/07/2025")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UntagResourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

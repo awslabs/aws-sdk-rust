@@ -646,4 +646,348 @@ impl CreateImageBuilderFluentBuilder {
     pub fn get_access_endpoints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>> {
         self.inner.get_access_endpoints()
     }
+    ///
+    /// Appends an item to `SoftwaresToInstall`.
+    ///
+    /// To override the contents of this collection use [`set_softwares_to_install`](Self::set_softwares_to_install).
+    ///
+    /// <p>The list of license included applications to install on the image builder during creation.</p>
+    /// <p>Possible values include the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Microsoft_Office_2021_LTSC_Professional_Plus_32Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Office_2021_LTSC_Professional_Plus_64Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Office_2024_LTSC_Professional_Plus_32Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Office_2024_LTSC_Professional_Plus_64Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Visio_2021_LTSC_Professional_32Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Visio_2021_LTSC_Professional_64Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Visio_2024_LTSC_Professional_32Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Visio_2024_LTSC_Professional_64Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Project_2021_Professional_32Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Project_2021_Professional_64Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Project_2024_Professional_32Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Project_2024_Professional_64Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Office_2021_LTSC_Standard_32Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Office_2021_LTSC_Standard_64Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Office_2024_LTSC_Standard_32Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Office_2024_LTSC_Standard_64Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Visio_2021_LTSC_Standard_32Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Visio_2021_LTSC_Standard_64Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Visio_2024_LTSC_Standard_32Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Visio_2024_LTSC_Standard_64Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Project_2021_Standard_32Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Project_2021_Standard_64Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Project_2024_Standard_32Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Project_2024_Standard_64Bit</p></li>
+    /// </ul>
+    pub fn softwares_to_install(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.softwares_to_install(input.into());
+        self
+    }
+    /// <p>The list of license included applications to install on the image builder during creation.</p>
+    /// <p>Possible values include the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Microsoft_Office_2021_LTSC_Professional_Plus_32Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Office_2021_LTSC_Professional_Plus_64Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Office_2024_LTSC_Professional_Plus_32Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Office_2024_LTSC_Professional_Plus_64Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Visio_2021_LTSC_Professional_32Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Visio_2021_LTSC_Professional_64Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Visio_2024_LTSC_Professional_32Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Visio_2024_LTSC_Professional_64Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Project_2021_Professional_32Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Project_2021_Professional_64Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Project_2024_Professional_32Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Project_2024_Professional_64Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Office_2021_LTSC_Standard_32Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Office_2021_LTSC_Standard_64Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Office_2024_LTSC_Standard_32Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Office_2024_LTSC_Standard_64Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Visio_2021_LTSC_Standard_32Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Visio_2021_LTSC_Standard_64Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Visio_2024_LTSC_Standard_32Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Visio_2024_LTSC_Standard_64Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Project_2021_Standard_32Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Project_2021_Standard_64Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Project_2024_Standard_32Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Project_2024_Standard_64Bit</p></li>
+    /// </ul>
+    pub fn set_softwares_to_install(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_softwares_to_install(input);
+        self
+    }
+    /// <p>The list of license included applications to install on the image builder during creation.</p>
+    /// <p>Possible values include the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Microsoft_Office_2021_LTSC_Professional_Plus_32Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Office_2021_LTSC_Professional_Plus_64Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Office_2024_LTSC_Professional_Plus_32Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Office_2024_LTSC_Professional_Plus_64Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Visio_2021_LTSC_Professional_32Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Visio_2021_LTSC_Professional_64Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Visio_2024_LTSC_Professional_32Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Visio_2024_LTSC_Professional_64Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Project_2021_Professional_32Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Project_2021_Professional_64Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Project_2024_Professional_32Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Project_2024_Professional_64Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Office_2021_LTSC_Standard_32Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Office_2021_LTSC_Standard_64Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Office_2024_LTSC_Standard_32Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Office_2024_LTSC_Standard_64Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Visio_2021_LTSC_Standard_32Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Visio_2021_LTSC_Standard_64Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Visio_2024_LTSC_Standard_32Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Visio_2024_LTSC_Standard_64Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Project_2021_Standard_32Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Project_2021_Standard_64Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Project_2024_Standard_32Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Project_2024_Standard_64Bit</p></li>
+    /// </ul>
+    pub fn get_softwares_to_install(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_softwares_to_install()
+    }
+    ///
+    /// Appends an item to `SoftwaresToUninstall`.
+    ///
+    /// To override the contents of this collection use [`set_softwares_to_uninstall`](Self::set_softwares_to_uninstall).
+    ///
+    /// <p>The list of license included applications to uninstall from the image builder during creation.</p>
+    /// <p>Possible values include the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Microsoft_Office_2021_LTSC_Professional_Plus_32Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Office_2021_LTSC_Professional_Plus_64Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Office_2024_LTSC_Professional_Plus_32Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Office_2024_LTSC_Professional_Plus_64Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Visio_2021_LTSC_Professional_32Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Visio_2021_LTSC_Professional_64Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Visio_2024_LTSC_Professional_32Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Visio_2024_LTSC_Professional_64Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Project_2021_Professional_32Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Project_2021_Professional_64Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Project_2024_Professional_32Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Project_2024_Professional_64Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Office_2021_LTSC_Standard_32Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Office_2021_LTSC_Standard_64Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Office_2024_LTSC_Standard_32Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Office_2024_LTSC_Standard_64Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Visio_2021_LTSC_Standard_32Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Visio_2021_LTSC_Standard_64Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Visio_2024_LTSC_Standard_32Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Visio_2024_LTSC_Standard_64Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Project_2021_Standard_32Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Project_2021_Standard_64Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Project_2024_Standard_32Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Project_2024_Standard_64Bit</p></li>
+    /// </ul>
+    pub fn softwares_to_uninstall(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.softwares_to_uninstall(input.into());
+        self
+    }
+    /// <p>The list of license included applications to uninstall from the image builder during creation.</p>
+    /// <p>Possible values include the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Microsoft_Office_2021_LTSC_Professional_Plus_32Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Office_2021_LTSC_Professional_Plus_64Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Office_2024_LTSC_Professional_Plus_32Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Office_2024_LTSC_Professional_Plus_64Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Visio_2021_LTSC_Professional_32Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Visio_2021_LTSC_Professional_64Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Visio_2024_LTSC_Professional_32Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Visio_2024_LTSC_Professional_64Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Project_2021_Professional_32Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Project_2021_Professional_64Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Project_2024_Professional_32Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Project_2024_Professional_64Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Office_2021_LTSC_Standard_32Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Office_2021_LTSC_Standard_64Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Office_2024_LTSC_Standard_32Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Office_2024_LTSC_Standard_64Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Visio_2021_LTSC_Standard_32Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Visio_2021_LTSC_Standard_64Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Visio_2024_LTSC_Standard_32Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Visio_2024_LTSC_Standard_64Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Project_2021_Standard_32Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Project_2021_Standard_64Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Project_2024_Standard_32Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Project_2024_Standard_64Bit</p></li>
+    /// </ul>
+    pub fn set_softwares_to_uninstall(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_softwares_to_uninstall(input);
+        self
+    }
+    /// <p>The list of license included applications to uninstall from the image builder during creation.</p>
+    /// <p>Possible values include the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Microsoft_Office_2021_LTSC_Professional_Plus_32Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Office_2021_LTSC_Professional_Plus_64Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Office_2024_LTSC_Professional_Plus_32Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Office_2024_LTSC_Professional_Plus_64Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Visio_2021_LTSC_Professional_32Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Visio_2021_LTSC_Professional_64Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Visio_2024_LTSC_Professional_32Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Visio_2024_LTSC_Professional_64Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Project_2021_Professional_32Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Project_2021_Professional_64Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Project_2024_Professional_32Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Project_2024_Professional_64Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Office_2021_LTSC_Standard_32Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Office_2021_LTSC_Standard_64Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Office_2024_LTSC_Standard_32Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Office_2024_LTSC_Standard_64Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Visio_2021_LTSC_Standard_32Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Visio_2021_LTSC_Standard_64Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Visio_2024_LTSC_Standard_32Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Visio_2024_LTSC_Standard_64Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Project_2021_Standard_32Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Project_2021_Standard_64Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Project_2024_Standard_32Bit</p></li>
+    /// <li>
+    /// <p>Microsoft_Project_2024_Standard_64Bit</p></li>
+    /// </ul>
+    pub fn get_softwares_to_uninstall(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_softwares_to_uninstall()
+    }
 }

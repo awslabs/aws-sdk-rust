@@ -18,6 +18,11 @@ where
                             builder =
                                 builder.set_brand_color_palette(crate::protocol_serde::shape_brand_color_palette::de_brand_color_palette(tokens)?);
                         }
+                        "ContextualAccentPalette" => {
+                            builder = builder.set_contextual_accent_palette(
+                                crate::protocol_serde::shape_contextual_accent_palette::de_contextual_accent_palette(tokens)?,
+                            );
+                        }
                         "BrandElementStyle" => {
                             builder =
                                 builder.set_brand_element_style(crate::protocol_serde::shape_brand_element_style::de_brand_element_style(tokens)?);
@@ -50,11 +55,17 @@ pub fn ser_application_theme(
         crate::protocol_serde::shape_brand_color_palette::ser_brand_color_palette(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.brand_element_style {
+    if let Some(var_3) = &input.contextual_accent_palette {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("BrandElementStyle").start_object();
-        crate::protocol_serde::shape_brand_element_style::ser_brand_element_style(&mut object_4, var_3)?;
+        let mut object_4 = object.key("ContextualAccentPalette").start_object();
+        crate::protocol_serde::shape_contextual_accent_palette::ser_contextual_accent_palette(&mut object_4, var_3)?;
         object_4.finish();
+    }
+    if let Some(var_5) = &input.brand_element_style {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("BrandElementStyle").start_object();
+        crate::protocol_serde::shape_brand_element_style::ser_brand_element_style(&mut object_6, var_5)?;
+        object_6.finish();
     }
     Ok(())
 }

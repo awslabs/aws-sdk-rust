@@ -22,6 +22,19 @@ impl crate::operation::calculate_route::builders::CalculateRouteInputBuilder {
 }
 /// Fluent builder constructing a request to `CalculateRoute`.
 ///
+/// <important>
+/// <p>This operation is no longer current and may be deprecated in the future. We recommend you upgrade to <a href="/location/latest/APIReference/API_CalculateRoutes.html"> <code>CalculateRoutes</code> </a> or <a href="/location/latest/APIReference/API_CalculateIsolines.html"> <code>CalculateIsolines</code> </a> unless you require Grab data.</p>
+/// <ul>
+/// <li>
+/// <p><code>CalculateRoute</code> is part of a previous Amazon Location Service Routes API (version 1) which has been superseded by a more intuitive, powerful, and complete API (version 2).</p></li>
+/// <li>
+/// <p>The version 2 <code>CalculateRoutes</code> operation gives better results for point-to-point routing, while the version 2 <code>CalculateIsolines</code> operation adds support for calculating service areas and travel time envelopes.</p></li>
+/// <li>
+/// <p>If you are using an Amazon Web Services SDK or the Amazon Web Services CLI, note that the Routes API version 2 is found under <code>geo-routes</code> or <code>geo_routes</code>, not under <code>location</code>.</p></li>
+/// <li>
+/// <p>Since Grab is not yet fully supported in Routes API version 2, we recommend you continue using API version 1 when using Grab.</p></li>
+/// </ul>
+/// </important>
 /// <p><a href="https://docs.aws.amazon.com/location/previous/developerguide/calculate-route.html">Calculates a route</a> given the following required parameters: <code>DeparturePosition</code> and <code>DestinationPosition</code>. Requires that you first <a href="https://docs.aws.amazon.com/location-routes/latest/APIReference/API_CreateRouteCalculator.html">create a route calculator resource</a>.</p>
 /// <p>By default, a request that doesn't specify a departure time uses the best time of day to travel with the best traffic conditions when calculating the route.</p>
 /// <p>Additional options include:</p>

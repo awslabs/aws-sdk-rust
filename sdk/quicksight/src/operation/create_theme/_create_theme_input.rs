@@ -9,7 +9,7 @@ pub struct CreateThemeInput {
     pub theme_id: ::std::option::Option<::std::string::String>,
     /// <p>A display name for the theme.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of the theme that a custom theme will inherit from. All themes inherit from one of the starting themes defined by Amazon QuickSight. For a list of the starting themes, use <code>ListThemes</code> or choose <b>Themes</b> from within an analysis.</p>
+    /// <p>The ID of the theme that a custom theme will inherit from. All themes inherit from one of the starting themes defined by Amazon Quick Sight. For a list of the starting themes, use <code>ListThemes</code> or choose <b>Themes</b> from within an analysis.</p>
     pub base_theme_id: ::std::option::Option<::std::string::String>,
     /// <p>A description of the first version of the theme that you're creating. Every time <code>UpdateTheme</code> is called, a new version is created. Each version of the theme has a description of the version in the <code>VersionDescription</code> field.</p>
     pub version_description: ::std::option::Option<::std::string::String>,
@@ -33,7 +33,7 @@ impl CreateThemeInput {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The ID of the theme that a custom theme will inherit from. All themes inherit from one of the starting themes defined by Amazon QuickSight. For a list of the starting themes, use <code>ListThemes</code> or choose <b>Themes</b> from within an analysis.</p>
+    /// <p>The ID of the theme that a custom theme will inherit from. All themes inherit from one of the starting themes defined by Amazon Quick Sight. For a list of the starting themes, use <code>ListThemes</code> or choose <b>Themes</b> from within an analysis.</p>
     pub fn base_theme_id(&self) -> ::std::option::Option<&str> {
         self.base_theme_id.as_deref()
     }
@@ -124,18 +124,18 @@ impl CreateThemeInputBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The ID of the theme that a custom theme will inherit from. All themes inherit from one of the starting themes defined by Amazon QuickSight. For a list of the starting themes, use <code>ListThemes</code> or choose <b>Themes</b> from within an analysis.</p>
+    /// <p>The ID of the theme that a custom theme will inherit from. All themes inherit from one of the starting themes defined by Amazon Quick Sight. For a list of the starting themes, use <code>ListThemes</code> or choose <b>Themes</b> from within an analysis.</p>
     /// This field is required.
     pub fn base_theme_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.base_theme_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the theme that a custom theme will inherit from. All themes inherit from one of the starting themes defined by Amazon QuickSight. For a list of the starting themes, use <code>ListThemes</code> or choose <b>Themes</b> from within an analysis.</p>
+    /// <p>The ID of the theme that a custom theme will inherit from. All themes inherit from one of the starting themes defined by Amazon Quick Sight. For a list of the starting themes, use <code>ListThemes</code> or choose <b>Themes</b> from within an analysis.</p>
     pub fn set_base_theme_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.base_theme_id = input;
         self
     }
-    /// <p>The ID of the theme that a custom theme will inherit from. All themes inherit from one of the starting themes defined by Amazon QuickSight. For a list of the starting themes, use <code>ListThemes</code> or choose <b>Themes</b> from within an analysis.</p>
+    /// <p>The ID of the theme that a custom theme will inherit from. All themes inherit from one of the starting themes defined by Amazon Quick Sight. For a list of the starting themes, use <code>ListThemes</code> or choose <b>Themes</b> from within an analysis.</p>
     pub fn get_base_theme_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.base_theme_id
     }

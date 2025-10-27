@@ -10,7 +10,7 @@ pub enum EntityTypeFilters {
     ContainerProductFilters(crate::types::ContainerProductFilters),
     /// <p>A filter for data products.</p>
     DataProductFilters(crate::types::DataProductFilters),
-    /// <p>The filters that you can use with the ListEntities operation to filter machine learning products. You can filter by EntityId, LastModifiedDate, ProductTitle, and Visibility.</p>
+    /// <p>The filters that you can use with the ListEntities operation to filter machine learning products. You can filter by <code>EntityId</code>, <code>astModifiedDate</code>, <code>ProductTitle</code>, and <code>Visibility</code>.</p>
     MachineLearningProductFilters(crate::types::MachineLearningProductFilters),
     /// <p>A filter for offers.</p>
     OfferFilters(crate::types::OfferFilters),

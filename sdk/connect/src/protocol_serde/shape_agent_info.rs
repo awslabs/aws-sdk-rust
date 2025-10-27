@@ -21,6 +21,18 @@ where
                                     .transpose()?,
                             );
                         }
+                        "AcceptedByAgentTimestamp" => {
+                            builder = builder.set_accepted_by_agent_timestamp(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                tokens.next(),
+                                ::aws_smithy_types::date_time::Format::EpochSeconds,
+                            )?);
+                        }
+                        "PreviewEndTimestamp" => {
+                            builder = builder.set_preview_end_timestamp(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                tokens.next(),
+                                ::aws_smithy_types::date_time::Format::EpochSeconds,
+                            )?);
+                        }
                         "ConnectedToAgentTimestamp" => {
                             builder = builder.set_connected_to_agent_timestamp(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),

@@ -20,8 +20,14 @@ pub fn ser_get_table_input_input(
             .key("QueryAsOfTime")
             .date_time(var_5, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    if let Some(var_6) = &input.include_status_details {
-        object.key("IncludeStatusDetails").boolean(*var_6);
+    if let Some(var_6) = &input.audit_context {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("AuditContext").start_object();
+        crate::protocol_serde::shape_audit_context::ser_audit_context(&mut object_7, var_6)?;
+        object_7.finish();
+    }
+    if let Some(var_8) = &input.include_status_details {
+        object.key("IncludeStatusDetails").boolean(*var_8);
     }
     Ok(())
 }

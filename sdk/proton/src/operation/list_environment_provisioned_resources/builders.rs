@@ -23,6 +23,7 @@ impl crate::operation::list_environment_provisioned_resources::builders::ListEnv
 /// Fluent builder constructing a request to `ListEnvironmentProvisionedResources`.
 ///
 /// <p>List the provisioned resources for your environment.</p>
+#[deprecated(note = "AWS Proton is not accepting new customers.", since = "10/07/2025")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListEnvironmentProvisionedResourcesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

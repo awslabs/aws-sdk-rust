@@ -64,5 +64,23 @@ pub fn ser_create_image_builder_input_input(
         }
         array_19.finish();
     }
+    if let Some(var_22) = &input.softwares_to_install {
+        let mut array_23 = object.key("SoftwaresToInstall").start_array();
+        for item_24 in var_22 {
+            {
+                array_23.value().string(item_24.as_str());
+            }
+        }
+        array_23.finish();
+    }
+    if let Some(var_25) = &input.softwares_to_uninstall {
+        let mut array_26 = object.key("SoftwaresToUninstall").start_array();
+        for item_27 in var_25 {
+            {
+                array_26.value().string(item_27.as_str());
+            }
+        }
+        array_26.finish();
+    }
     Ok(())
 }

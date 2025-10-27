@@ -7,6 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetServiceTemplateOutput`](crate::operation::get_service_template::GetServiceTemplateOutput) with field(s):
     ///   - [`service_template(Option<ServiceTemplate>)`](crate::operation::get_service_template::GetServiceTemplateOutput::service_template): <p>The detailed data of the requested service template.</p>
     /// - On failure, responds with [`SdkError<GetServiceTemplateError>`](crate::operation::get_service_template::GetServiceTemplateError)
+    #[deprecated(note = "AWS Proton is not accepting new customers.", since = "10/07/2025")]
     pub fn get_service_template(&self) -> crate::operation::get_service_template::builders::GetServiceTemplateFluentBuilder {
         crate::operation::get_service_template::builders::GetServiceTemplateFluentBuilder::new(self.handle.clone())
     }

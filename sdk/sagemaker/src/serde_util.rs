@@ -4523,6 +4523,15 @@ pub(crate) fn inference_component_compute_resource_requirements_correct_errors(
     builder
 }
 
+pub(crate) fn inference_component_data_cache_config_summary_correct_errors(
+    mut builder: crate::types::builders::InferenceComponentDataCacheConfigSummaryBuilder,
+) -> crate::types::builders::InferenceComponentDataCacheConfigSummaryBuilder {
+    if builder.enable_caching.is_none() {
+        builder.enable_caching = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn inference_component_rolling_update_policy_correct_errors(
     mut builder: crate::types::builders::InferenceComponentRollingUpdatePolicyBuilder,
 ) -> crate::types::builders::InferenceComponentRollingUpdatePolicyBuilder {

@@ -85,6 +85,9 @@ pub mod start_capacity_task;
 /// Types for the `StartConnection` operation.
 pub mod start_connection;
 
+/// Types for the `StartOutpostDecommission` operation.
+pub mod start_outpost_decommission;
+
 /// Types for the `TagResource` operation.
 pub mod tag_resource;
 

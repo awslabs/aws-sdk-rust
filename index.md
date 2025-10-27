@@ -193,8 +193,8 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | Amazon Augmented AI Runtime | [aws-sdk-sagemakera2iruntime](https://crates.io/crates/aws-sdk-sagemakera2iruntime) ([docs](https://docs.rs/aws-sdk-sagemakera2iruntime)) |
 | Amazon Aurora DSQL | [aws-sdk-dsql](https://crates.io/crates/aws-sdk-dsql) ([docs](https://docs.rs/aws-sdk-dsql)) |
 | Amazon Bedrock | [aws-sdk-bedrock](https://crates.io/crates/aws-sdk-bedrock) ([docs](https://docs.rs/aws-sdk-bedrock)) |
-| Amazon Bedrock Agent Core Control Plane Fronting Layer | [aws-sdk-bedrockagentcorecontrol](https://crates.io/crates/aws-sdk-bedrockagentcorecontrol) ([docs](https://docs.rs/aws-sdk-bedrockagentcorecontrol)) |
-| Amazon Bedrock AgentCore Data Plane Fronting Layer | [aws-sdk-bedrockagentcore](https://crates.io/crates/aws-sdk-bedrockagentcore) ([docs](https://docs.rs/aws-sdk-bedrockagentcore)) |
+| Amazon Bedrock AgentCore | [aws-sdk-bedrockagentcore](https://crates.io/crates/aws-sdk-bedrockagentcore) ([docs](https://docs.rs/aws-sdk-bedrockagentcore)) |
+| Amazon Bedrock AgentCore Control | [aws-sdk-bedrockagentcorecontrol](https://crates.io/crates/aws-sdk-bedrockagentcorecontrol) ([docs](https://docs.rs/aws-sdk-bedrockagentcorecontrol)) |
 | Amazon Bedrock Runtime | [aws-sdk-bedrockruntime](https://crates.io/crates/aws-sdk-bedrockruntime) ([docs](https://docs.rs/aws-sdk-bedrockruntime)) |
 | Amazon Chime | [aws-sdk-chime](https://crates.io/crates/aws-sdk-chime) ([docs](https://docs.rs/aws-sdk-chime)) |
 | Amazon Chime SDK Identity | [aws-sdk-chimesdkidentity](https://crates.io/crates/aws-sdk-chimesdkidentity) ([docs](https://docs.rs/aws-sdk-chimesdkidentity)) |
@@ -403,6 +403,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | Private CA Connector for SCEP | [aws-sdk-pcaconnectorscep](https://crates.io/crates/aws-sdk-pcaconnectorscep) ([docs](https://docs.rs/aws-sdk-pcaconnectorscep)) |
 | QApps | [aws-sdk-qapps](https://crates.io/crates/aws-sdk-qapps) ([docs](https://docs.rs/aws-sdk-qapps)) |
 | QBusiness | [aws-sdk-qbusiness](https://crates.io/crates/aws-sdk-qbusiness) ([docs](https://docs.rs/aws-sdk-qbusiness)) |
+| RTBFabric | [aws-sdk-rtbfabric](https://crates.io/crates/aws-sdk-rtbfabric) ([docs](https://docs.rs/aws-sdk-rtbfabric)) |
 | Redshift Data API Service | [aws-sdk-redshiftdata](https://crates.io/crates/aws-sdk-redshiftdata) ([docs](https://docs.rs/aws-sdk-redshiftdata)) |
 | Redshift Serverless | [aws-sdk-redshiftserverless](https://crates.io/crates/aws-sdk-redshiftserverless) ([docs](https://docs.rs/aws-sdk-redshiftserverless)) |
 | Route 53 Profiles | [aws-sdk-route53profiles](https://crates.io/crates/aws-sdk-route53profiles) ([docs](https://docs.rs/aws-sdk-route53profiles)) |

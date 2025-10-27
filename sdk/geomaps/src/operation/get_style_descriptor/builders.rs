@@ -23,6 +23,7 @@ impl crate::operation::get_style_descriptor::builders::GetStyleDescriptorInputBu
 /// Fluent builder constructing a request to `GetStyleDescriptor`.
 ///
 /// <p><code>GetStyleDescriptor</code> returns information about the style.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/styling-dynamic-maps.html">Style dynamic maps</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetStyleDescriptorFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -254,6 +255,94 @@ impl GetStyleDescriptorFluentBuilder {
     /// </ul>
     pub fn get_political_view(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_political_view()
+    }
+    /// <p>Adjusts how physical terrain details are rendered on the map.</p>
+    /// <p>The following terrain styles are currently supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Hillshade</code>: Displays the physical terrain details through shading and highlighting of elevation change and geographic features.</p></li>
+    /// </ul>
+    /// <p>This parameter is valid only for the <code>Standard</code> map style.</p>
+    pub fn terrain(mut self, input: crate::types::Terrain) -> Self {
+        self.inner = self.inner.terrain(input);
+        self
+    }
+    /// <p>Adjusts how physical terrain details are rendered on the map.</p>
+    /// <p>The following terrain styles are currently supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Hillshade</code>: Displays the physical terrain details through shading and highlighting of elevation change and geographic features.</p></li>
+    /// </ul>
+    /// <p>This parameter is valid only for the <code>Standard</code> map style.</p>
+    pub fn set_terrain(mut self, input: ::std::option::Option<crate::types::Terrain>) -> Self {
+        self.inner = self.inner.set_terrain(input);
+        self
+    }
+    /// <p>Adjusts how physical terrain details are rendered on the map.</p>
+    /// <p>The following terrain styles are currently supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Hillshade</code>: Displays the physical terrain details through shading and highlighting of elevation change and geographic features.</p></li>
+    /// </ul>
+    /// <p>This parameter is valid only for the <code>Standard</code> map style.</p>
+    pub fn get_terrain(&self) -> &::std::option::Option<crate::types::Terrain> {
+        self.inner.get_terrain()
+    }
+    /// <p>Displays the shape and steepness of terrain features using elevation lines. The density value controls how densely the available contour line information is rendered on the map.</p>
+    /// <p>This parameter is valid only for the <code>Standard</code> map style.</p>
+    pub fn contour_density(mut self, input: crate::types::ContourDensity) -> Self {
+        self.inner = self.inner.contour_density(input);
+        self
+    }
+    /// <p>Displays the shape and steepness of terrain features using elevation lines. The density value controls how densely the available contour line information is rendered on the map.</p>
+    /// <p>This parameter is valid only for the <code>Standard</code> map style.</p>
+    pub fn set_contour_density(mut self, input: ::std::option::Option<crate::types::ContourDensity>) -> Self {
+        self.inner = self.inner.set_contour_density(input);
+        self
+    }
+    /// <p>Displays the shape and steepness of terrain features using elevation lines. The density value controls how densely the available contour line information is rendered on the map.</p>
+    /// <p>This parameter is valid only for the <code>Standard</code> map style.</p>
+    pub fn get_contour_density(&self) -> &::std::option::Option<crate::types::ContourDensity> {
+        self.inner.get_contour_density()
+    }
+    /// <p>Displays real-time traffic information overlay on map, such as incident events and flow events.</p>
+    /// <p>This parameter is valid only for the <code>Standard</code> map style.</p>
+    pub fn traffic(mut self, input: crate::types::Traffic) -> Self {
+        self.inner = self.inner.traffic(input);
+        self
+    }
+    /// <p>Displays real-time traffic information overlay on map, such as incident events and flow events.</p>
+    /// <p>This parameter is valid only for the <code>Standard</code> map style.</p>
+    pub fn set_traffic(mut self, input: ::std::option::Option<crate::types::Traffic>) -> Self {
+        self.inner = self.inner.set_traffic(input);
+        self
+    }
+    /// <p>Displays real-time traffic information overlay on map, such as incident events and flow events.</p>
+    /// <p>This parameter is valid only for the <code>Standard</code> map style.</p>
+    pub fn get_traffic(&self) -> &::std::option::Option<crate::types::Traffic> {
+        self.inner.get_traffic()
+    }
+    ///
+    /// Appends an item to `TravelModes`.
+    ///
+    /// To override the contents of this collection use [`set_travel_modes`](Self::set_travel_modes).
+    ///
+    /// <p>Renders additional map information relevant to selected travel modes. Information for multiple travel modes can be displayed simultaneously, although this increases the overall information density rendered on the map.</p>
+    /// <p>This parameter is valid only for the <code>Standard</code> map style.</p>
+    pub fn travel_modes(mut self, input: crate::types::TravelMode) -> Self {
+        self.inner = self.inner.travel_modes(input);
+        self
+    }
+    /// <p>Renders additional map information relevant to selected travel modes. Information for multiple travel modes can be displayed simultaneously, although this increases the overall information density rendered on the map.</p>
+    /// <p>This parameter is valid only for the <code>Standard</code> map style.</p>
+    pub fn set_travel_modes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TravelMode>>) -> Self {
+        self.inner = self.inner.set_travel_modes(input);
+        self
+    }
+    /// <p>Renders additional map information relevant to selected travel modes. Information for multiple travel modes can be displayed simultaneously, although this increases the overall information density rendered on the map.</p>
+    /// <p>This parameter is valid only for the <code>Standard</code> map style.</p>
+    pub fn get_travel_modes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TravelMode>> {
+        self.inner.get_travel_modes()
     }
     /// <p>Optional: The API key to be used for authorization. Either an API key or valid SigV4 signature must be provided when making a request.</p>
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

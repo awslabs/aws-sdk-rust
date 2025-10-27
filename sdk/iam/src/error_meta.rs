@@ -200,6 +200,9 @@ where
 impl From<crate::operation::add_client_id_to_open_id_connect_provider::AddClientIDToOpenIDConnectProviderError> for Error {
     fn from(err: crate::operation::add_client_id_to_open_id_connect_provider::AddClientIDToOpenIDConnectProviderError) -> Self {
         match err {
+            crate::operation::add_client_id_to_open_id_connect_provider::AddClientIDToOpenIDConnectProviderError::ConcurrentModificationException(
+                inner,
+            ) => Error::ConcurrentModificationException(inner),
             crate::operation::add_client_id_to_open_id_connect_provider::AddClientIDToOpenIDConnectProviderError::InvalidInputException(inner) => {
                 Error::InvalidInputException(inner)
             }
@@ -3801,6 +3804,7 @@ where
 impl From<crate::operation::remove_client_id_from_open_id_connect_provider::RemoveClientIDFromOpenIDConnectProviderError> for Error {
     fn from(err: crate::operation::remove_client_id_from_open_id_connect_provider::RemoveClientIDFromOpenIDConnectProviderError) -> Self {
         match err {
+            crate::operation::remove_client_id_from_open_id_connect_provider::RemoveClientIDFromOpenIDConnectProviderError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
             crate::operation::remove_client_id_from_open_id_connect_provider::RemoveClientIDFromOpenIDConnectProviderError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::remove_client_id_from_open_id_connect_provider::RemoveClientIDFromOpenIDConnectProviderError::NoSuchEntityException(inner) => Error::NoSuchEntityException(inner),
             crate::operation::remove_client_id_from_open_id_connect_provider::RemoveClientIDFromOpenIDConnectProviderError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
@@ -4721,18 +4725,11 @@ where
 impl From<crate::operation::update_open_id_connect_provider_thumbprint::UpdateOpenIDConnectProviderThumbprintError> for Error {
     fn from(err: crate::operation::update_open_id_connect_provider_thumbprint::UpdateOpenIDConnectProviderThumbprintError) -> Self {
         match err {
-            crate::operation::update_open_id_connect_provider_thumbprint::UpdateOpenIDConnectProviderThumbprintError::InvalidInputException(
-                inner,
-            ) => Error::InvalidInputException(inner),
-            crate::operation::update_open_id_connect_provider_thumbprint::UpdateOpenIDConnectProviderThumbprintError::NoSuchEntityException(
-                inner,
-            ) => Error::NoSuchEntityException(inner),
-            crate::operation::update_open_id_connect_provider_thumbprint::UpdateOpenIDConnectProviderThumbprintError::ServiceFailureException(
-                inner,
-            ) => Error::ServiceFailureException(inner),
-            crate::operation::update_open_id_connect_provider_thumbprint::UpdateOpenIDConnectProviderThumbprintError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::update_open_id_connect_provider_thumbprint::UpdateOpenIDConnectProviderThumbprintError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::operation::update_open_id_connect_provider_thumbprint::UpdateOpenIDConnectProviderThumbprintError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::update_open_id_connect_provider_thumbprint::UpdateOpenIDConnectProviderThumbprintError::NoSuchEntityException(inner) => Error::NoSuchEntityException(inner),
+            crate::operation::update_open_id_connect_provider_thumbprint::UpdateOpenIDConnectProviderThumbprintError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::operation::update_open_id_connect_provider_thumbprint::UpdateOpenIDConnectProviderThumbprintError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -4809,6 +4806,9 @@ where
 impl From<crate::operation::update_saml_provider::UpdateSAMLProviderError> for Error {
     fn from(err: crate::operation::update_saml_provider::UpdateSAMLProviderError) -> Self {
         match err {
+            crate::operation::update_saml_provider::UpdateSAMLProviderError::ConcurrentModificationException(inner) => {
+                Error::ConcurrentModificationException(inner)
+            }
             crate::operation::update_saml_provider::UpdateSAMLProviderError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::update_saml_provider::UpdateSAMLProviderError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::update_saml_provider::UpdateSAMLProviderError::NoSuchEntityException(inner) => Error::NoSuchEntityException(inner),

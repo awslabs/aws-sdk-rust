@@ -22,6 +22,21 @@ impl crate::operation::update_map::builders::UpdateMapInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateMap`.
 ///
+/// <important>
+/// <p>This operation is no longer current and may be deprecated in the future. We recommend upgrading to the Maps API V2 unless you require <code>Grab</code> data.</p>
+/// <ul>
+/// <li>
+/// <p><code>UpdateMap</code> is part of a previous Amazon Location Service Maps API (version 1) which has been superseded by a more intuitive, powerful, and complete API (version 2).</p></li>
+/// <li>
+/// <p>The Maps API version 2 has a simplified interface that can be used without creating or managing map resources.</p></li>
+/// <li>
+/// <p>If you are using an AWS SDK or the AWS CLI, note that the Maps API version 2 is found under <code>geo-maps</code> or <code>geo_maps</code>, not under <code>location</code>.</p></li>
+/// <li>
+/// <p>Since <code>Grab</code> is not yet fully supported in Maps API version 2, we recommend you continue using API version 1 when using <code>Grab</code>.</p></li>
+/// <li>
+/// <p>Start your version 2 API journey with the <a href="https://docs.aws.amazon.com/location/latest/APIReference/API_Operations_Amazon_Location_Service_Maps_V2.html">Maps V2 API Reference</a> or the <a href="https://docs.aws.amazon.com/location/latest/developerguide/maps.html">Developer Guide</a>.</p></li>
+/// </ul>
+/// </important>
 /// <p>Updates the specified properties of a given map resource.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateMapFluentBuilder {

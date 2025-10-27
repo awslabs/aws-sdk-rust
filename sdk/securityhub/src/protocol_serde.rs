@@ -745,6 +745,8 @@ pub(crate) mod shape_ocsf_boolean_filter;
 
 pub(crate) mod shape_ocsf_date_filter;
 
+pub(crate) mod shape_ocsf_ip_filter;
+
 pub(crate) mod shape_ocsf_map_filter;
 
 pub(crate) mod shape_ocsf_number_filter;
@@ -1562,6 +1564,8 @@ pub(crate) mod shape_network_geo_location;
 pub(crate) mod shape_ocsf_boolean_filter_list;
 
 pub(crate) mod shape_ocsf_date_filter_list;
+
+pub(crate) mod shape_ocsf_ip_filter_list;
 
 pub(crate) mod shape_ocsf_map_filter_list;
 

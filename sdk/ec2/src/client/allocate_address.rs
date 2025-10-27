@@ -13,13 +13,13 @@ impl super::Client {
     ///   - [`dry_run(bool)`](crate::operation::allocate_address::builders::AllocateAddressFluentBuilder::dry_run) / [`set_dry_run(Option<bool>)`](crate::operation::allocate_address::builders::AllocateAddressFluentBuilder::set_dry_run):<br>required: **false**<br><p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p><br>
     /// - On success, responds with [`AllocateAddressOutput`](crate::operation::allocate_address::AllocateAddressOutput) with field(s):
     ///   - [`allocation_id(Option<String>)`](crate::operation::allocate_address::AllocateAddressOutput::allocation_id): <p>The ID that represents the allocation of the Elastic IP address.</p>
-    ///   - [`public_ipv4_pool(Option<String>)`](crate::operation::allocate_address::AllocateAddressOutput::public_ipv4_pool): <p>The ID of an address pool.</p>
+    ///   - [`public_ipv4_pool(Option<String>)`](crate::operation::allocate_address::AllocateAddressOutput::public_ipv4_pool): <p>The ID of an address pool that you own.</p>
     ///   - [`network_border_group(Option<String>)`](crate::operation::allocate_address::AllocateAddressOutput::network_border_group): <p>The set of Availability Zones, Local Zones, or Wavelength Zones from which Amazon Web Services advertises IP addresses.</p>
     ///   - [`domain(Option<DomainType>)`](crate::operation::allocate_address::AllocateAddressOutput::domain): <p>The network (<code>vpc</code>).</p>
     ///   - [`customer_owned_ip(Option<String>)`](crate::operation::allocate_address::AllocateAddressOutput::customer_owned_ip): <p>The customer-owned IP address.</p>
     ///   - [`customer_owned_ipv4_pool(Option<String>)`](crate::operation::allocate_address::AllocateAddressOutput::customer_owned_ipv4_pool): <p>The ID of the customer-owned address pool.</p>
-    ///   - [`carrier_ip(Option<String>)`](crate::operation::allocate_address::AllocateAddressOutput::carrier_ip): <p>The carrier IP address. This option is only available for network interfaces that reside in a subnet in a Wavelength Zone.</p>
-    ///   - [`public_ip(Option<String>)`](crate::operation::allocate_address::AllocateAddressOutput::public_ip): <p>The Elastic IP address.</p>
+    ///   - [`carrier_ip(Option<String>)`](crate::operation::allocate_address::AllocateAddressOutput::carrier_ip): <p>The carrier IP address. Available only for network interfaces that reside in a subnet in a Wavelength Zone.</p>
+    ///   - [`public_ip(Option<String>)`](crate::operation::allocate_address::AllocateAddressOutput::public_ip): <p>The Amazon-owned IP address. Not available when using an address pool that you own.</p>
     /// - On failure, responds with [`SdkError<AllocateAddressError>`](crate::operation::allocate_address::AllocateAddressError)
     pub fn allocate_address(&self) -> crate::operation::allocate_address::builders::AllocateAddressFluentBuilder {
         crate::operation::allocate_address::builders::AllocateAddressFluentBuilder::new(self.handle.clone())

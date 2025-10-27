@@ -23,6 +23,7 @@ impl crate::operation::get_glyphs::builders::GetGlyphsInputBuilder {
 /// Fluent builder constructing a request to `GetGlyphs`.
 ///
 /// <p><code>GetGlyphs</code> returns the map's glyphs.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/styling-labels-with-glyphs.html">Style labels with glyphs</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetGlyphsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -603,19 +604,19 @@ impl GetGlyphsFluentBuilder {
         self.inner.get_font_stack()
     }
     /// <p>A Unicode range of characters to download glyphs for. This must be aligned to multiples of 256.</p>
-    /// <p>Example: <code>0-255.pdf</code></p>
+    /// <p>Example: <code>0-255.pbf</code></p>
     pub fn font_unicode_range(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.font_unicode_range(input.into());
         self
     }
     /// <p>A Unicode range of characters to download glyphs for. This must be aligned to multiples of 256.</p>
-    /// <p>Example: <code>0-255.pdf</code></p>
+    /// <p>Example: <code>0-255.pbf</code></p>
     pub fn set_font_unicode_range(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_font_unicode_range(input);
         self
     }
     /// <p>A Unicode range of characters to download glyphs for. This must be aligned to multiples of 256.</p>
-    /// <p>Example: <code>0-255.pdf</code></p>
+    /// <p>Example: <code>0-255.pbf</code></p>
     pub fn get_font_unicode_range(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_font_unicode_range()
     }

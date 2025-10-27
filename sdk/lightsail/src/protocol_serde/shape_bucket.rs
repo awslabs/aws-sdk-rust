@@ -96,6 +96,9 @@ where
                                 crate::protocol_serde::shape_bucket_access_log_config::de_bucket_access_log_config(tokens)?,
                             );
                         }
+                        "cors" => {
+                            builder = builder.set_cors(crate::protocol_serde::shape_bucket_cors_config::de_bucket_cors_config(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

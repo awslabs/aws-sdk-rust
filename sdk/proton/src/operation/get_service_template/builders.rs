@@ -23,6 +23,7 @@ impl crate::operation::get_service_template::builders::GetServiceTemplateInputBu
 /// Fluent builder constructing a request to `GetServiceTemplate`.
 ///
 /// <p>Get detailed data for a service template.</p>
+#[deprecated(note = "AWS Proton is not accepting new customers.", since = "10/07/2025")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetServiceTemplateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

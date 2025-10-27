@@ -4,17 +4,25 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HostHeaderConditionConfig {
-    /// <p>The host names. The maximum size of each name is 128 characters. The comparison is case insensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character). You must include at least one "." character. You can include only alphabetical characters after the final "." character.</p>
+    /// <p>The host names. The maximum length of each string is 128 characters. The comparison is case insensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character). You must include at least one "." character. You can include only alphabetical characters after the final "." character.</p>
     /// <p>If you specify multiple strings, the condition is satisfied if one of the strings matches the host name.</p>
     pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The regular expressions to compare against the host header. The maximum length of each string is 128 characters.</p>
+    pub regex_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl HostHeaderConditionConfig {
-    /// <p>The host names. The maximum size of each name is 128 characters. The comparison is case insensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character). You must include at least one "." character. You can include only alphabetical characters after the final "." character.</p>
+    /// <p>The host names. The maximum length of each string is 128 characters. The comparison is case insensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character). You must include at least one "." character. You can include only alphabetical characters after the final "." character.</p>
     /// <p>If you specify multiple strings, the condition is satisfied if one of the strings matches the host name.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.values.is_none()`.
     pub fn values(&self) -> &[::std::string::String] {
         self.values.as_deref().unwrap_or_default()
+    }
+    /// <p>The regular expressions to compare against the host header. The maximum length of each string is 128 characters.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.regex_values.is_none()`.
+    pub fn regex_values(&self) -> &[::std::string::String] {
+        self.regex_values.as_deref().unwrap_or_default()
     }
 }
 impl HostHeaderConditionConfig {
@@ -29,13 +37,14 @@ impl HostHeaderConditionConfig {
 #[non_exhaustive]
 pub struct HostHeaderConditionConfigBuilder {
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) regex_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl HostHeaderConditionConfigBuilder {
     /// Appends an item to `values`.
     ///
     /// To override the contents of this collection use [`set_values`](Self::set_values).
     ///
-    /// <p>The host names. The maximum size of each name is 128 characters. The comparison is case insensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character). You must include at least one "." character. You can include only alphabetical characters after the final "." character.</p>
+    /// <p>The host names. The maximum length of each string is 128 characters. The comparison is case insensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character). You must include at least one "." character. You can include only alphabetical characters after the final "." character.</p>
     /// <p>If you specify multiple strings, the condition is satisfied if one of the strings matches the host name.</p>
     pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
@@ -43,19 +52,42 @@ impl HostHeaderConditionConfigBuilder {
         self.values = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The host names. The maximum size of each name is 128 characters. The comparison is case insensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character). You must include at least one "." character. You can include only alphabetical characters after the final "." character.</p>
+    /// <p>The host names. The maximum length of each string is 128 characters. The comparison is case insensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character). You must include at least one "." character. You can include only alphabetical characters after the final "." character.</p>
     /// <p>If you specify multiple strings, the condition is satisfied if one of the strings matches the host name.</p>
     pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.values = input;
         self
     }
-    /// <p>The host names. The maximum size of each name is 128 characters. The comparison is case insensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character). You must include at least one "." character. You can include only alphabetical characters after the final "." character.</p>
+    /// <p>The host names. The maximum length of each string is 128 characters. The comparison is case insensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character). You must include at least one "." character. You can include only alphabetical characters after the final "." character.</p>
     /// <p>If you specify multiple strings, the condition is satisfied if one of the strings matches the host name.</p>
     pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.values
     }
+    /// Appends an item to `regex_values`.
+    ///
+    /// To override the contents of this collection use [`set_regex_values`](Self::set_regex_values).
+    ///
+    /// <p>The regular expressions to compare against the host header. The maximum length of each string is 128 characters.</p>
+    pub fn regex_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.regex_values.unwrap_or_default();
+        v.push(input.into());
+        self.regex_values = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The regular expressions to compare against the host header. The maximum length of each string is 128 characters.</p>
+    pub fn set_regex_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.regex_values = input;
+        self
+    }
+    /// <p>The regular expressions to compare against the host header. The maximum length of each string is 128 characters.</p>
+    pub fn get_regex_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.regex_values
+    }
     /// Consumes the builder and constructs a [`HostHeaderConditionConfig`](crate::types::HostHeaderConditionConfig).
     pub fn build(self) -> crate::types::HostHeaderConditionConfig {
-        crate::types::HostHeaderConditionConfig { values: self.values }
+        crate::types::HostHeaderConditionConfig {
+            values: self.values,
+            regex_values: self.regex_values,
+        }
     }
 }

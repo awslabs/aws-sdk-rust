@@ -31,7 +31,7 @@ pub struct ModifyListenerInput {
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-listeners.html#alpn-policies">ALPN policies</a> in the <i>Network Load Balancers Guide</i>.</p>
     pub alpn_policy: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The mutual authentication configuration information.</p>
+    /// <p>\[HTTPS listeners\] The mutual authentication configuration information.</p>
     pub mutual_authentication: ::std::option::Option<crate::types::MutualAuthenticationAttributes>,
 }
 impl ModifyListenerInput {
@@ -83,7 +83,7 @@ impl ModifyListenerInput {
     pub fn alpn_policy(&self) -> &[::std::string::String] {
         self.alpn_policy.as_deref().unwrap_or_default()
     }
-    /// <p>The mutual authentication configuration information.</p>
+    /// <p>\[HTTPS listeners\] The mutual authentication configuration information.</p>
     pub fn mutual_authentication(&self) -> ::std::option::Option<&crate::types::MutualAuthenticationAttributes> {
         self.mutual_authentication.as_ref()
     }
@@ -268,17 +268,17 @@ impl ModifyListenerInputBuilder {
     pub fn get_alpn_policy(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.alpn_policy
     }
-    /// <p>The mutual authentication configuration information.</p>
+    /// <p>\[HTTPS listeners\] The mutual authentication configuration information.</p>
     pub fn mutual_authentication(mut self, input: crate::types::MutualAuthenticationAttributes) -> Self {
         self.mutual_authentication = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The mutual authentication configuration information.</p>
+    /// <p>\[HTTPS listeners\] The mutual authentication configuration information.</p>
     pub fn set_mutual_authentication(mut self, input: ::std::option::Option<crate::types::MutualAuthenticationAttributes>) -> Self {
         self.mutual_authentication = input;
         self
     }
-    /// <p>The mutual authentication configuration information.</p>
+    /// <p>\[HTTPS listeners\] The mutual authentication configuration information.</p>
     pub fn get_mutual_authentication(&self) -> &::std::option::Option<crate::types::MutualAuthenticationAttributes> {
         &self.mutual_authentication
     }

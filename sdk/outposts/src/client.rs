@@ -219,6 +219,8 @@ mod start_capacity_task;
 
 mod start_connection;
 
+mod start_outpost_decommission;
+
 mod tag_resource;
 
 mod untag_resource;

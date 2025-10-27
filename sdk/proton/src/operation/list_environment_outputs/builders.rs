@@ -23,6 +23,7 @@ impl crate::operation::list_environment_outputs::builders::ListEnvironmentOutput
 /// Fluent builder constructing a request to `ListEnvironmentOutputs`.
 ///
 /// <p>List the infrastructure as code outputs for your environment.</p>
+#[deprecated(note = "AWS Proton is not accepting new customers.", since = "10/07/2025")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListEnvironmentOutputsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

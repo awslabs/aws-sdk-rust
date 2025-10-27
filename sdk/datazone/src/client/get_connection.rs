@@ -19,6 +19,7 @@ impl super::Client {
     ///   - [`project_id(Option<String>)`](crate::operation::get_connection::GetConnectionOutput::project_id): <p>The ID of the project.</p>
     ///   - [`props(Option<ConnectionPropertiesOutput>)`](crate::operation::get_connection::GetConnectionOutput::props): <p>Connection props.</p>
     ///   - [`r#type(ConnectionType)`](crate::operation::get_connection::GetConnectionOutput::type): <p>The type of the connection.</p>
+    ///   - [`scope(Option<ConnectionScope>)`](crate::operation::get_connection::GetConnectionOutput::scope): <p>The scope of the connection.</p>
     /// - On failure, responds with [`SdkError<GetConnectionError>`](crate::operation::get_connection::GetConnectionError)
     pub fn get_connection(&self) -> crate::operation::get_connection::builders::GetConnectionFluentBuilder {
         crate::operation::get_connection::builders::GetConnectionFluentBuilder::new(self.handle.clone())

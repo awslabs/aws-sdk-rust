@@ -10,6 +10,8 @@ pub struct InitializationStatusDetails {
     /// <p><code>default</code> - Volume initialized using the default volume initialization rate or fast snapshot restore.</p></li>
     /// <li>
     /// <p><code>provisioned-rate</code> - Volume initialized using an Amazon EBS Provisioned Rate for Volume Initialization.</p></li>
+    /// <li>
+    /// <p><code>volume-copy</code> - Volume copy initialized at the rate for volume copies.</p></li>
     /// </ul>
     pub initialization_type: ::std::option::Option<crate::types::InitializationType>,
     /// <p>The current volume initialization progress as a percentage (0-100). Returns <code>100</code> when volume initialization has completed.</p>
@@ -25,6 +27,8 @@ impl InitializationStatusDetails {
     /// <p><code>default</code> - Volume initialized using the default volume initialization rate or fast snapshot restore.</p></li>
     /// <li>
     /// <p><code>provisioned-rate</code> - Volume initialized using an Amazon EBS Provisioned Rate for Volume Initialization.</p></li>
+    /// <li>
+    /// <p><code>volume-copy</code> - Volume copy initialized at the rate for volume copies.</p></li>
     /// </ul>
     pub fn initialization_type(&self) -> ::std::option::Option<&crate::types::InitializationType> {
         self.initialization_type.as_ref()
@@ -61,6 +65,8 @@ impl InitializationStatusDetailsBuilder {
     /// <p><code>default</code> - Volume initialized using the default volume initialization rate or fast snapshot restore.</p></li>
     /// <li>
     /// <p><code>provisioned-rate</code> - Volume initialized using an Amazon EBS Provisioned Rate for Volume Initialization.</p></li>
+    /// <li>
+    /// <p><code>volume-copy</code> - Volume copy initialized at the rate for volume copies.</p></li>
     /// </ul>
     pub fn initialization_type(mut self, input: crate::types::InitializationType) -> Self {
         self.initialization_type = ::std::option::Option::Some(input);
@@ -72,6 +78,8 @@ impl InitializationStatusDetailsBuilder {
     /// <p><code>default</code> - Volume initialized using the default volume initialization rate or fast snapshot restore.</p></li>
     /// <li>
     /// <p><code>provisioned-rate</code> - Volume initialized using an Amazon EBS Provisioned Rate for Volume Initialization.</p></li>
+    /// <li>
+    /// <p><code>volume-copy</code> - Volume copy initialized at the rate for volume copies.</p></li>
     /// </ul>
     pub fn set_initialization_type(mut self, input: ::std::option::Option<crate::types::InitializationType>) -> Self {
         self.initialization_type = input;
@@ -83,6 +91,8 @@ impl InitializationStatusDetailsBuilder {
     /// <p><code>default</code> - Volume initialized using the default volume initialization rate or fast snapshot restore.</p></li>
     /// <li>
     /// <p><code>provisioned-rate</code> - Volume initialized using an Amazon EBS Provisioned Rate for Volume Initialization.</p></li>
+    /// <li>
+    /// <p><code>volume-copy</code> - Volume copy initialized at the rate for volume copies.</p></li>
     /// </ul>
     pub fn get_initialization_type(&self) -> &::std::option::Option<crate::types::InitializationType> {
         &self.initialization_type

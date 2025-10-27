@@ -22,7 +22,7 @@ impl crate::operation::create_aggregator_v2::builders::CreateAggregatorV2InputBu
 }
 /// Fluent builder constructing a request to `CreateAggregatorV2`.
 ///
-/// <p>Enables aggregation across Amazon Web Services Regions. This API is in private preview and subject to change.</p>
+/// <p>Enables aggregation across Amazon Web Services Regions. This API is in public preview and subject to change.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateAggregatorV2FluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -161,4 +161,37 @@ impl ModifyRuleFluentBuilder {
     pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Action>> {
         self.inner.get_actions()
     }
+    ///
+    /// Appends an item to `Transforms`.
+    ///
+    /// To override the contents of this collection use [`set_transforms`](Self::set_transforms).
+    ///
+    /// <p>The transforms to apply to requests that match this rule. You can add one host header rewrite transform and one URL rewrite transform. If you specify <code>Transforms</code>, you can't specify <code>ResetTransforms</code>.</p>
+    pub fn transforms(mut self, input: crate::types::RuleTransform) -> Self {
+        self.inner = self.inner.transforms(input);
+        self
+    }
+    /// <p>The transforms to apply to requests that match this rule. You can add one host header rewrite transform and one URL rewrite transform. If you specify <code>Transforms</code>, you can't specify <code>ResetTransforms</code>.</p>
+    pub fn set_transforms(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RuleTransform>>) -> Self {
+        self.inner = self.inner.set_transforms(input);
+        self
+    }
+    /// <p>The transforms to apply to requests that match this rule. You can add one host header rewrite transform and one URL rewrite transform. If you specify <code>Transforms</code>, you can't specify <code>ResetTransforms</code>.</p>
+    pub fn get_transforms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RuleTransform>> {
+        self.inner.get_transforms()
+    }
+    /// <p>Indicates whether to remove all transforms from the rule. If you specify <code>ResetTransforms</code>, you can't specify <code>Transforms</code>.</p>
+    pub fn reset_transforms(mut self, input: bool) -> Self {
+        self.inner = self.inner.reset_transforms(input);
+        self
+    }
+    /// <p>Indicates whether to remove all transforms from the rule. If you specify <code>ResetTransforms</code>, you can't specify <code>Transforms</code>.</p>
+    pub fn set_reset_transforms(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_reset_transforms(input);
+        self
+    }
+    /// <p>Indicates whether to remove all transforms from the rule. If you specify <code>ResetTransforms</code>, you can't specify <code>Transforms</code>.</p>
+    pub fn get_reset_transforms(&self) -> &::std::option::Option<bool> {
+        self.inner.get_reset_transforms()
+    }
 }

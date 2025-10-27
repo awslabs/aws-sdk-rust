@@ -28,6 +28,9 @@ where
                                     .transpose()?,
                             );
                         }
+                        "codecMetadata" => {
+                            builder = builder.set_codec_metadata(crate::protocol_serde::shape_codec_metadata::de_codec_metadata(tokens)?);
+                        }
                         "colorPrimaries" => {
                             builder = builder.set_color_primaries(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

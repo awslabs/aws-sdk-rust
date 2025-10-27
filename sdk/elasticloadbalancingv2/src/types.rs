@@ -13,6 +13,16 @@ pub use crate::types::_enforce_security_group_inbound_rules_on_private_link_traf
 
 pub use crate::types::_rule::Rule;
 
+pub use crate::types::_rule_transform::RuleTransform;
+
+pub use crate::types::_url_rewrite_config::UrlRewriteConfig;
+
+pub use crate::types::_rewrite_config::RewriteConfig;
+
+pub use crate::types::_host_header_rewrite_config::HostHeaderRewriteConfig;
+
+pub use crate::types::_transform_type_enum::TransformTypeEnum;
+
 pub use crate::types::_action::Action;
 
 pub use crate::types::_forward_action_config::ForwardActionConfig;
@@ -195,6 +205,8 @@ mod _forward_action_config;
 
 mod _host_header_condition_config;
 
+mod _host_header_rewrite_config;
+
 mod _http_header_condition_config;
 
 mod _http_request_method_condition_config;
@@ -249,11 +261,15 @@ mod _revocation_content;
 
 mod _revocation_type;
 
+mod _rewrite_config;
+
 mod _rule;
 
 mod _rule_condition;
 
 mod _rule_priority_pair;
+
+mod _rule_transform;
 
 mod _source_ip_condition_config;
 
@@ -291,6 +307,8 @@ mod _target_health_state_enum;
 
 mod _target_type_enum;
 
+mod _transform_type_enum;
+
 mod _trust_store;
 
 mod _trust_store_association;
@@ -300,6 +318,8 @@ mod _trust_store_association_status_enum;
 mod _trust_store_revocation;
 
 mod _trust_store_status;
+
+mod _url_rewrite_config;
 
 mod _zonal_capacity_reservation_state;
 

@@ -11,7 +11,7 @@ pub enum Error {
     ConflictException(crate::types::error::ConflictException),
     /// <p>The flow has not been published.</p>
     ContactFlowNotPublishedException(crate::types::error::ContactFlowNotPublishedException),
-    /// <p>The contact with the specified ID is not active or does not exist.</p>
+    /// <p>The contact with the specified ID does not exist.</p>
     ContactNotFoundException(crate::types::error::ContactNotFoundException),
     /// <p>Outbound calls to the destination number are not allowed.</p>
     DestinationNotAllowedException(crate::types::error::DestinationNotAllowedException),
@@ -370,6 +370,54 @@ impl From<crate::operation::associate_default_vocabulary::AssociateDefaultVocabu
                 Error::ThrottlingException(inner)
             }
             crate::operation::associate_default_vocabulary::AssociateDefaultVocabularyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::associate_email_address_alias::AssociateEmailAddressAliasError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::associate_email_address_alias::AssociateEmailAddressAliasError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::associate_email_address_alias::AssociateEmailAddressAliasError> for Error {
+    fn from(err: crate::operation::associate_email_address_alias::AssociateEmailAddressAliasError) -> Self {
+        match err {
+            crate::operation::associate_email_address_alias::AssociateEmailAddressAliasError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::associate_email_address_alias::AssociateEmailAddressAliasError::IdempotencyException(inner) => {
+                Error::IdempotencyException(inner)
+            }
+            crate::operation::associate_email_address_alias::AssociateEmailAddressAliasError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::associate_email_address_alias::AssociateEmailAddressAliasError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::associate_email_address_alias::AssociateEmailAddressAliasError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::associate_email_address_alias::AssociateEmailAddressAliasError::ResourceConflictException(inner) => {
+                Error::ResourceConflictException(inner)
+            }
+            crate::operation::associate_email_address_alias::AssociateEmailAddressAliasError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::associate_email_address_alias::AssociateEmailAddressAliasError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::associate_email_address_alias::AssociateEmailAddressAliasError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -4218,6 +4266,56 @@ impl From<crate::operation::disassociate_bot::DisassociateBotError> for Error {
             crate::operation::disassociate_bot::DisassociateBotError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::disassociate_bot::DisassociateBotError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::disassociate_bot::DisassociateBotError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::disassociate_email_address_alias::DisassociateEmailAddressAliasError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::disassociate_email_address_alias::DisassociateEmailAddressAliasError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::disassociate_email_address_alias::DisassociateEmailAddressAliasError> for Error {
+    fn from(err: crate::operation::disassociate_email_address_alias::DisassociateEmailAddressAliasError) -> Self {
+        match err {
+            crate::operation::disassociate_email_address_alias::DisassociateEmailAddressAliasError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::disassociate_email_address_alias::DisassociateEmailAddressAliasError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::disassociate_email_address_alias::DisassociateEmailAddressAliasError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::disassociate_email_address_alias::DisassociateEmailAddressAliasError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::disassociate_email_address_alias::DisassociateEmailAddressAliasError::ResourceConflictException(inner) => {
+                Error::ResourceConflictException(inner)
+            }
+            crate::operation::disassociate_email_address_alias::DisassociateEmailAddressAliasError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::disassociate_email_address_alias::DisassociateEmailAddressAliasError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::disassociate_email_address_alias::DisassociateEmailAddressAliasError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

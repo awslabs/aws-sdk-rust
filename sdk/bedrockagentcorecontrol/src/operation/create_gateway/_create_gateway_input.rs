@@ -7,7 +7,7 @@ pub struct CreateGatewayInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the gateway.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
+    /// <p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If you don't specify this field, a value is randomly generated for you. If this token matches a previous request, the service ignores the request, but doesn't return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role that provides permissions for the gateway to access Amazon Web Services services.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
@@ -16,8 +16,14 @@ pub struct CreateGatewayInput {
     /// <p>The configuration settings for the protocol specified in the <code>protocolType</code> parameter.</p>
     pub protocol_configuration: ::std::option::Option<crate::types::GatewayProtocolConfiguration>,
     /// <p>The type of authorizer to use for the gateway.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CUSTOM_JWT</code> - Authorize with a bearer token.</p></li>
+    /// <li>
+    /// <p><code>AWS_IAM</code> - Authorize with your Amazon Web Services IAM credentials.</p></li>
+    /// </ul>
     pub authorizer_type: ::std::option::Option<crate::types::AuthorizerType>,
-    /// <p>The authorizer configuration for the gateway.</p>
+    /// <p>The authorizer configuration for the gateway. Required if <code>authorizerType</code> is <code>CUSTOM_JWT</code>.</p>
     pub authorizer_configuration: ::std::option::Option<crate::types::AuthorizerConfiguration>,
     /// <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt data associated with the gateway.</p>
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
@@ -41,7 +47,7 @@ impl CreateGatewayInput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
+    /// <p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If you don't specify this field, a value is randomly generated for you. If this token matches a previous request, the service ignores the request, but doesn't return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -58,10 +64,16 @@ impl CreateGatewayInput {
         self.protocol_configuration.as_ref()
     }
     /// <p>The type of authorizer to use for the gateway.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CUSTOM_JWT</code> - Authorize with a bearer token.</p></li>
+    /// <li>
+    /// <p><code>AWS_IAM</code> - Authorize with your Amazon Web Services IAM credentials.</p></li>
+    /// </ul>
     pub fn authorizer_type(&self) -> ::std::option::Option<&crate::types::AuthorizerType> {
         self.authorizer_type.as_ref()
     }
-    /// <p>The authorizer configuration for the gateway.</p>
+    /// <p>The authorizer configuration for the gateway. Required if <code>authorizerType</code> is <code>CUSTOM_JWT</code>.</p>
     pub fn authorizer_configuration(&self) -> ::std::option::Option<&crate::types::AuthorizerConfiguration> {
         self.authorizer_configuration.as_ref()
     }
@@ -154,17 +166,17 @@ impl CreateGatewayInputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
+    /// <p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If you don't specify this field, a value is randomly generated for you. If this token matches a previous request, the service ignores the request, but doesn't return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
+    /// <p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If you don't specify this field, a value is randomly generated for you. If this token matches a previous request, the service ignores the request, but doesn't return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
     }
-    /// <p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
+    /// <p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If you don't specify this field, a value is randomly generated for you. If this token matches a previous request, the service ignores the request, but doesn't return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
@@ -213,32 +225,49 @@ impl CreateGatewayInputBuilder {
         &self.protocol_configuration
     }
     /// <p>The type of authorizer to use for the gateway.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CUSTOM_JWT</code> - Authorize with a bearer token.</p></li>
+    /// <li>
+    /// <p><code>AWS_IAM</code> - Authorize with your Amazon Web Services IAM credentials.</p></li>
+    /// </ul>
     /// This field is required.
     pub fn authorizer_type(mut self, input: crate::types::AuthorizerType) -> Self {
         self.authorizer_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of authorizer to use for the gateway.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CUSTOM_JWT</code> - Authorize with a bearer token.</p></li>
+    /// <li>
+    /// <p><code>AWS_IAM</code> - Authorize with your Amazon Web Services IAM credentials.</p></li>
+    /// </ul>
     pub fn set_authorizer_type(mut self, input: ::std::option::Option<crate::types::AuthorizerType>) -> Self {
         self.authorizer_type = input;
         self
     }
     /// <p>The type of authorizer to use for the gateway.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CUSTOM_JWT</code> - Authorize with a bearer token.</p></li>
+    /// <li>
+    /// <p><code>AWS_IAM</code> - Authorize with your Amazon Web Services IAM credentials.</p></li>
+    /// </ul>
     pub fn get_authorizer_type(&self) -> &::std::option::Option<crate::types::AuthorizerType> {
         &self.authorizer_type
     }
-    /// <p>The authorizer configuration for the gateway.</p>
-    /// This field is required.
+    /// <p>The authorizer configuration for the gateway. Required if <code>authorizerType</code> is <code>CUSTOM_JWT</code>.</p>
     pub fn authorizer_configuration(mut self, input: crate::types::AuthorizerConfiguration) -> Self {
         self.authorizer_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The authorizer configuration for the gateway.</p>
+    /// <p>The authorizer configuration for the gateway. Required if <code>authorizerType</code> is <code>CUSTOM_JWT</code>.</p>
     pub fn set_authorizer_configuration(mut self, input: ::std::option::Option<crate::types::AuthorizerConfiguration>) -> Self {
         self.authorizer_configuration = input;
         self
     }
-    /// <p>The authorizer configuration for the gateway.</p>
+    /// <p>The authorizer configuration for the gateway. Required if <code>authorizerType</code> is <code>CUSTOM_JWT</code>.</p>
     pub fn get_authorizer_configuration(&self) -> &::std::option::Option<crate::types::AuthorizerConfiguration> {
         &self.authorizer_configuration
     }

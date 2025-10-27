@@ -46,6 +46,9 @@ pub mod get_job;
 /// Types for the `GetJobTemplate` operation.
 pub mod get_job_template;
 
+/// Types for the `GetJobsQueryResults` operation.
+pub mod get_jobs_query_results;
+
 /// Types for the `GetPolicy` operation.
 pub mod get_policy;
 
@@ -81,6 +84,9 @@ pub mod put_policy;
 
 /// Types for the `SearchJobs` operation.
 pub mod search_jobs;
+
+/// Types for the `StartJobsQuery` operation.
+pub mod start_jobs_query;
 
 /// Types for the `TagResource` operation.
 pub mod tag_resource;

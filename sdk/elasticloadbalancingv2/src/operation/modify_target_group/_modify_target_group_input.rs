@@ -13,7 +13,7 @@ pub struct ModifyTargetGroupInput {
     /// <p>\[HTTP1 or HTTP2 protocol version\] The ping path. The default is /.</p>
     /// <p>\[GRPC protocol version\] The path of a custom health check method with the format /package.service/method. The default is /Amazon Web Services.ALB/healthcheck.</p>
     pub health_check_path: ::std::option::Option<::std::string::String>,
-    /// <p>Indicates whether health checks are enabled.</p>
+    /// <p>Indicates whether health checks are enabled. If the target type is <code>lambda</code>, health checks are disabled by default but can be enabled. If the target type is <code>instance</code>, <code>ip</code>, or <code>alb</code>, health checks are always enabled and can't be disabled.</p>
     pub health_check_enabled: ::std::option::Option<bool>,
     /// <p>The approximate amount of time, in seconds, between health checks of an individual target.</p>
     pub health_check_interval_seconds: ::std::option::Option<i32>,
@@ -45,7 +45,7 @@ impl ModifyTargetGroupInput {
     pub fn health_check_path(&self) -> ::std::option::Option<&str> {
         self.health_check_path.as_deref()
     }
-    /// <p>Indicates whether health checks are enabled.</p>
+    /// <p>Indicates whether health checks are enabled. If the target type is <code>lambda</code>, health checks are disabled by default but can be enabled. If the target type is <code>instance</code>, <code>ip</code>, or <code>alb</code>, health checks are always enabled and can't be disabled.</p>
     pub fn health_check_enabled(&self) -> ::std::option::Option<bool> {
         self.health_check_enabled
     }
@@ -156,17 +156,17 @@ impl ModifyTargetGroupInputBuilder {
     pub fn get_health_check_path(&self) -> &::std::option::Option<::std::string::String> {
         &self.health_check_path
     }
-    /// <p>Indicates whether health checks are enabled.</p>
+    /// <p>Indicates whether health checks are enabled. If the target type is <code>lambda</code>, health checks are disabled by default but can be enabled. If the target type is <code>instance</code>, <code>ip</code>, or <code>alb</code>, health checks are always enabled and can't be disabled.</p>
     pub fn health_check_enabled(mut self, input: bool) -> Self {
         self.health_check_enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether health checks are enabled.</p>
+    /// <p>Indicates whether health checks are enabled. If the target type is <code>lambda</code>, health checks are disabled by default but can be enabled. If the target type is <code>instance</code>, <code>ip</code>, or <code>alb</code>, health checks are always enabled and can't be disabled.</p>
     pub fn set_health_check_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.health_check_enabled = input;
         self
     }
-    /// <p>Indicates whether health checks are enabled.</p>
+    /// <p>Indicates whether health checks are enabled. If the target type is <code>lambda</code>, health checks are disabled by default but can be enabled. If the target type is <code>instance</code>, <code>ip</code>, or <code>alb</code>, health checks are always enabled and can't be disabled.</p>
     pub fn get_health_check_enabled(&self) -> &::std::option::Option<bool> {
         &self.health_check_enabled
     }

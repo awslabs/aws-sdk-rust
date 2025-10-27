@@ -146,6 +146,8 @@ mod create_account_customization;
 
 mod create_account_subscription;
 
+mod create_action_connector;
+
 mod create_analysis;
 
 mod create_brand;
@@ -223,6 +225,8 @@ mod delete_account_customization;
 
 mod delete_account_subscription;
 
+mod delete_action_connector;
+
 mod delete_analysis;
 
 mod delete_brand;
@@ -288,6 +292,10 @@ mod describe_account_customization;
 mod describe_account_settings;
 
 mod describe_account_subscription;
+
+mod describe_action_connector;
+
+mod describe_action_connector_permissions;
 
 mod describe_analysis;
 
@@ -393,7 +401,13 @@ mod generate_embed_url_for_registered_user_with_identity;
 
 mod get_dashboard_embed_url;
 
+mod get_flow_metadata;
+
+mod get_flow_permissions;
+
 mod get_session_embed_url;
+
+mod list_action_connectors;
 
 mod list_analyses;
 
@@ -412,6 +426,8 @@ mod list_dashboards;
 mod list_data_sets;
 
 mod list_data_sources;
+
+mod list_flows;
 
 mod list_folder_members;
 
@@ -471,6 +487,8 @@ mod register_user;
 
 mod restore_analysis;
 
+mod search_action_connectors;
+
 mod search_analyses;
 
 mod search_dashboards;
@@ -478,6 +496,8 @@ mod search_dashboards;
 mod search_data_sets;
 
 mod search_data_sources;
+
+mod search_flows;
 
 mod search_folders;
 
@@ -502,6 +522,10 @@ mod update_account_custom_permission;
 mod update_account_customization;
 
 mod update_account_settings;
+
+mod update_action_connector;
+
+mod update_action_connector_permissions;
 
 mod update_analysis;
 
@@ -536,6 +560,8 @@ mod update_data_source;
 mod update_data_source_permissions;
 
 mod update_default_q_business_application;
+
+mod update_flow_permissions;
 
 mod update_folder;
 

@@ -272,6 +272,8 @@ pub enum AssociateWebACLError {
     /// <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p></li>
     /// </ul>
     WafInvalidParameterException(crate::types::error::WafInvalidParameterException),
+    /// <p>WAF couldn’t perform the operation because you exceeded your resource limit. For example, the maximum number of <code>WebACL</code> objects that you can create for an Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer Guide</i>.</p>
+    WafLimitsExceededException(crate::types::error::WafLimitsExceededException),
     /// <p>WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource that you're using in this operation, you might just need to wait a few minutes. It can take from a few seconds to a number of minutes for changes to propagate.</p>
     WafNonexistentItemException(crate::types::error::WafNonexistentItemException),
     /// <p>WAF couldn’t retrieve a resource that you specified for this operation. If you've just created a resource that you're using in this operation, you might just need to wait a few minutes. It can take from a few seconds to a number of minutes for changes to propagate. Verify the resource specifications in your request parameters and then retry the operation.</p>
@@ -312,6 +314,7 @@ impl AssociateWebACLError {
             Self::WafInternalErrorException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::WafInvalidOperationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::WafInvalidParameterException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::WafLimitsExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::WafNonexistentItemException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::WafUnavailableEntityException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
@@ -329,6 +332,10 @@ impl AssociateWebACLError {
     pub fn is_waf_invalid_parameter_exception(&self) -> bool {
         matches!(self, Self::WafInvalidParameterException(_))
     }
+    /// Returns `true` if the error kind is `AssociateWebACLError::WafLimitsExceededException`.
+    pub fn is_waf_limits_exceeded_exception(&self) -> bool {
+        matches!(self, Self::WafLimitsExceededException(_))
+    }
     /// Returns `true` if the error kind is `AssociateWebACLError::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
         matches!(self, Self::WafNonexistentItemException(_))
@@ -344,6 +351,7 @@ impl ::std::error::Error for AssociateWebACLError {
             Self::WafInternalErrorException(_inner) => ::std::option::Option::Some(_inner),
             Self::WafInvalidOperationException(_inner) => ::std::option::Option::Some(_inner),
             Self::WafInvalidParameterException(_inner) => ::std::option::Option::Some(_inner),
+            Self::WafLimitsExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::WafNonexistentItemException(_inner) => ::std::option::Option::Some(_inner),
             Self::WafUnavailableEntityException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
@@ -356,6 +364,7 @@ impl ::std::fmt::Display for AssociateWebACLError {
             Self::WafInternalErrorException(_inner) => _inner.fmt(f),
             Self::WafInvalidOperationException(_inner) => _inner.fmt(f),
             Self::WafInvalidParameterException(_inner) => _inner.fmt(f),
+            Self::WafLimitsExceededException(_inner) => _inner.fmt(f),
             Self::WafNonexistentItemException(_inner) => _inner.fmt(f),
             Self::WafUnavailableEntityException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
@@ -382,6 +391,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for AssociateWebA
             Self::WafInternalErrorException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::WafInvalidOperationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::WafInvalidParameterException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::WafLimitsExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::WafNonexistentItemException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::WafUnavailableEntityException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,

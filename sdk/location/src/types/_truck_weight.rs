@@ -2,7 +2,7 @@
 
 /// <p>Contains details about the truck's weight specifications. Used to avoid roads that can't support or allow the total weight for requests that specify <code>TravelMode</code> as <code>Truck</code>.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct TruckWeight {
     /// <p>The total weight of the truck.</p>
     /// <ul>
@@ -29,6 +29,14 @@ impl TruckWeight {
         self.unit.as_ref()
     }
 }
+impl ::std::fmt::Debug for TruckWeight {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("TruckWeight");
+        formatter.field("total", &"*** Sensitive Data Redacted ***");
+        formatter.field("unit", &self.unit);
+        formatter.finish()
+    }
+}
 impl TruckWeight {
     /// Creates a new builder-style object to manufacture [`TruckWeight`](crate::types::TruckWeight).
     pub fn builder() -> crate::types::builders::TruckWeightBuilder {
@@ -37,7 +45,7 @@ impl TruckWeight {
 }
 
 /// A builder for [`TruckWeight`](crate::types::TruckWeight).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct TruckWeightBuilder {
     pub(crate) total: ::std::option::Option<f64>,
@@ -93,5 +101,13 @@ impl TruckWeightBuilder {
             total: self.total,
             unit: self.unit,
         }
+    }
+}
+impl ::std::fmt::Debug for TruckWeightBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("TruckWeightBuilder");
+        formatter.field("total", &"*** Sensitive Data Redacted ***");
+        formatter.field("unit", &self.unit);
+        formatter.finish()
     }
 }

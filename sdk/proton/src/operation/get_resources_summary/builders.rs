@@ -27,6 +27,7 @@ impl crate::operation::get_resources_summary::builders::GetResourcesSummaryInput
 /// <p>The action returns staleness counts (counts of resources that are up-to-date, behind a template major version, or behind a template minor version), the total number of resources, and the number of resources that are in a failed state, grouped by resource type. Components, environments, and service templates return less information - see the <code>components</code>, <code>environments</code>, and <code>serviceTemplates</code> field descriptions.</p>
 /// <p>For context, the action also returns the total number of each type of Proton template in the Amazon Web Services account.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/monitoring-dashboard.html">Proton dashboard</a> in the <i>Proton User Guide</i>.</p>
+#[deprecated(note = "AWS Proton is not accepting new customers.", since = "10/07/2025")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetResourcesSummaryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

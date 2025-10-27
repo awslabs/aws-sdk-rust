@@ -1203,6 +1203,12 @@ pub use crate::types::_acceleration_settings::AccelerationSettings;
 
 pub use crate::types::_acceleration_mode::AccelerationMode;
 
+pub use crate::types::_order::Order;
+
+pub use crate::types::_jobs_query_filter::JobsQueryFilter;
+
+pub use crate::types::_jobs_query_filter_key::JobsQueryFilterKey;
+
 pub use crate::types::_job::Job;
 
 pub use crate::types::_warning_group::WarningGroup;
@@ -1245,8 +1251,6 @@ pub use crate::types::_billing_tags_source::BillingTagsSource;
 
 pub use crate::types::_acceleration_status::AccelerationStatus;
 
-pub use crate::types::_order::Order;
-
 pub use crate::types::_policy::Policy;
 
 pub use crate::types::_input_policy::InputPolicy;
@@ -1271,6 +1275,8 @@ pub use crate::types::_frame_rate::FrameRate;
 
 pub use crate::types::_color_primaries::ColorPrimaries;
 
+pub use crate::types::_codec_metadata::CodecMetadata;
+
 pub use crate::types::_track_type::TrackType;
 
 pub use crate::types::_data_properties::DataProperties;
@@ -1292,6 +1298,8 @@ pub use crate::types::_queue_list_by::QueueListBy;
 pub use crate::types::_preset_list_by::PresetListBy;
 
 pub use crate::types::_job_template_list_by::JobTemplateListBy;
+
+pub use crate::types::_jobs_query_status::JobsQueryStatus;
 
 pub use crate::types::_endpoint::Endpoint;
 
@@ -1570,6 +1578,8 @@ mod _cmfc_timed_metadata;
 mod _cmfc_timed_metadata_box_version;
 
 mod _codec;
+
+mod _codec_metadata;
 
 mod _color_conversion3_dlut_setting;
 
@@ -2050,6 +2060,12 @@ mod _job_template;
 mod _job_template_list_by;
 
 mod _job_template_settings;
+
+mod _jobs_query_filter;
+
+mod _jobs_query_filter_key;
+
+mod _jobs_query_status;
 
 mod _kantar_watermark_settings;
 

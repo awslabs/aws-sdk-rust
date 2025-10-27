@@ -8,6 +8,7 @@ impl super::Client {
     /// - On success, responds with [`CancelServiceInstanceDeploymentOutput`](crate::operation::cancel_service_instance_deployment::CancelServiceInstanceDeploymentOutput) with field(s):
     ///   - [`service_instance(Option<ServiceInstance>)`](crate::operation::cancel_service_instance_deployment::CancelServiceInstanceDeploymentOutput::service_instance): <p>The service instance summary data that's returned by Proton.</p>
     /// - On failure, responds with [`SdkError<CancelServiceInstanceDeploymentError>`](crate::operation::cancel_service_instance_deployment::CancelServiceInstanceDeploymentError)
+    #[deprecated(note = "AWS Proton is not accepting new customers.", since = "10/07/2025")]
     pub fn cancel_service_instance_deployment(
         &self,
     ) -> crate::operation::cancel_service_instance_deployment::builders::CancelServiceInstanceDeploymentFluentBuilder {

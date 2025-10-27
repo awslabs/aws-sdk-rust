@@ -37,6 +37,8 @@ pub(crate) mod shape_delete_telemetry_rule_for_organization;
 
 pub(crate) mod shape_get_centralization_rule_for_organization;
 
+pub(crate) mod shape_get_telemetry_enrichment_status;
+
 pub(crate) mod shape_get_telemetry_evaluation_status;
 
 pub(crate) mod shape_get_telemetry_evaluation_status_for_organization;
@@ -57,9 +59,13 @@ pub(crate) mod shape_list_telemetry_rules;
 
 pub(crate) mod shape_list_telemetry_rules_for_organization;
 
+pub(crate) mod shape_start_telemetry_enrichment;
+
 pub(crate) mod shape_start_telemetry_evaluation;
 
 pub(crate) mod shape_start_telemetry_evaluation_for_organization;
+
+pub(crate) mod shape_stop_telemetry_enrichment;
 
 pub(crate) mod shape_stop_telemetry_evaluation;
 

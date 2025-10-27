@@ -7,6 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteDeploymentOutput`](crate::operation::delete_deployment::DeleteDeploymentOutput) with field(s):
     ///   - [`deployment(Option<Deployment>)`](crate::operation::delete_deployment::DeleteDeploymentOutput::deployment): <p>The detailed data of the deployment being deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteDeploymentError>`](crate::operation::delete_deployment::DeleteDeploymentError)
+    #[deprecated(note = "AWS Proton is not accepting new customers.", since = "10/07/2025")]
     pub fn delete_deployment(&self) -> crate::operation::delete_deployment::builders::DeleteDeploymentFluentBuilder {
         crate::operation::delete_deployment::builders::DeleteDeploymentFluentBuilder::new(self.handle.clone())
     }

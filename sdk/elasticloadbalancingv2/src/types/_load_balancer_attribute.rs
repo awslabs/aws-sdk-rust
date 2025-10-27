@@ -58,7 +58,7 @@ pub struct LoadBalancerAttribute {
     /// <p>If the value is <code>remove</code>, the Application Load Balancer removes the <code>X-Forwarded-For</code> header in the HTTP request before it sends it to targets.</p></li>
     /// </ul></li>
     /// <li>
-    /// <p><code>routing.http2.enabled</code> - Indicates whether HTTP/2 is enabled. The possible values are <code>true</code> and <code>false</code>. The default is <code>true</code>. Elastic Load Balancing requires that message header names contain only alphanumeric characters and hyphens.</p></li>
+    /// <p><code>routing.http2.enabled</code> - Indicates whether clients can connect to the load balancer using HTTP/2. If <code>true</code>, clients can connect using HTTP/2 or HTTP/1.1. However, all client requests are subject to the stricter HTTP/2 header validation rules. For example, message header names must contain only alphanumeric characters and hyphens. If <code>false</code>, clients must connect using HTTP/1.1. The default is <code>true</code>.</p></li>
     /// <li>
     /// <p><code>waf.fail_open.enabled</code> - Indicates whether to allow a WAF-enabled load balancer to route requests to targets if it is unable to forward the request to Amazon Web Services WAF. The possible values are <code>true</code> and <code>false</code>. The default is <code>false</code>.</p></li>
     /// </ul>
@@ -128,7 +128,7 @@ impl LoadBalancerAttribute {
     /// <p>If the value is <code>remove</code>, the Application Load Balancer removes the <code>X-Forwarded-For</code> header in the HTTP request before it sends it to targets.</p></li>
     /// </ul></li>
     /// <li>
-    /// <p><code>routing.http2.enabled</code> - Indicates whether HTTP/2 is enabled. The possible values are <code>true</code> and <code>false</code>. The default is <code>true</code>. Elastic Load Balancing requires that message header names contain only alphanumeric characters and hyphens.</p></li>
+    /// <p><code>routing.http2.enabled</code> - Indicates whether clients can connect to the load balancer using HTTP/2. If <code>true</code>, clients can connect using HTTP/2 or HTTP/1.1. However, all client requests are subject to the stricter HTTP/2 header validation rules. For example, message header names must contain only alphanumeric characters and hyphens. If <code>false</code>, clients must connect using HTTP/1.1. The default is <code>true</code>.</p></li>
     /// <li>
     /// <p><code>waf.fail_open.enabled</code> - Indicates whether to allow a WAF-enabled load balancer to route requests to targets if it is unable to forward the request to Amazon Web Services WAF. The possible values are <code>true</code> and <code>false</code>. The default is <code>false</code>.</p></li>
     /// </ul>
@@ -216,7 +216,7 @@ impl LoadBalancerAttributeBuilder {
     /// <p>If the value is <code>remove</code>, the Application Load Balancer removes the <code>X-Forwarded-For</code> header in the HTTP request before it sends it to targets.</p></li>
     /// </ul></li>
     /// <li>
-    /// <p><code>routing.http2.enabled</code> - Indicates whether HTTP/2 is enabled. The possible values are <code>true</code> and <code>false</code>. The default is <code>true</code>. Elastic Load Balancing requires that message header names contain only alphanumeric characters and hyphens.</p></li>
+    /// <p><code>routing.http2.enabled</code> - Indicates whether clients can connect to the load balancer using HTTP/2. If <code>true</code>, clients can connect using HTTP/2 or HTTP/1.1. However, all client requests are subject to the stricter HTTP/2 header validation rules. For example, message header names must contain only alphanumeric characters and hyphens. If <code>false</code>, clients must connect using HTTP/1.1. The default is <code>true</code>.</p></li>
     /// <li>
     /// <p><code>waf.fail_open.enabled</code> - Indicates whether to allow a WAF-enabled load balancer to route requests to targets if it is unable to forward the request to Amazon Web Services WAF. The possible values are <code>true</code> and <code>false</code>. The default is <code>false</code>.</p></li>
     /// </ul>
@@ -285,7 +285,7 @@ impl LoadBalancerAttributeBuilder {
     /// <p>If the value is <code>remove</code>, the Application Load Balancer removes the <code>X-Forwarded-For</code> header in the HTTP request before it sends it to targets.</p></li>
     /// </ul></li>
     /// <li>
-    /// <p><code>routing.http2.enabled</code> - Indicates whether HTTP/2 is enabled. The possible values are <code>true</code> and <code>false</code>. The default is <code>true</code>. Elastic Load Balancing requires that message header names contain only alphanumeric characters and hyphens.</p></li>
+    /// <p><code>routing.http2.enabled</code> - Indicates whether clients can connect to the load balancer using HTTP/2. If <code>true</code>, clients can connect using HTTP/2 or HTTP/1.1. However, all client requests are subject to the stricter HTTP/2 header validation rules. For example, message header names must contain only alphanumeric characters and hyphens. If <code>false</code>, clients must connect using HTTP/1.1. The default is <code>true</code>.</p></li>
     /// <li>
     /// <p><code>waf.fail_open.enabled</code> - Indicates whether to allow a WAF-enabled load balancer to route requests to targets if it is unable to forward the request to Amazon Web Services WAF. The possible values are <code>true</code> and <code>false</code>. The default is <code>false</code>.</p></li>
     /// </ul>
@@ -354,7 +354,7 @@ impl LoadBalancerAttributeBuilder {
     /// <p>If the value is <code>remove</code>, the Application Load Balancer removes the <code>X-Forwarded-For</code> header in the HTTP request before it sends it to targets.</p></li>
     /// </ul></li>
     /// <li>
-    /// <p><code>routing.http2.enabled</code> - Indicates whether HTTP/2 is enabled. The possible values are <code>true</code> and <code>false</code>. The default is <code>true</code>. Elastic Load Balancing requires that message header names contain only alphanumeric characters and hyphens.</p></li>
+    /// <p><code>routing.http2.enabled</code> - Indicates whether clients can connect to the load balancer using HTTP/2. If <code>true</code>, clients can connect using HTTP/2 or HTTP/1.1. However, all client requests are subject to the stricter HTTP/2 header validation rules. For example, message header names must contain only alphanumeric characters and hyphens. If <code>false</code>, clients must connect using HTTP/1.1. The default is <code>true</code>.</p></li>
     /// <li>
     /// <p><code>waf.fail_open.enabled</code> - Indicates whether to allow a WAF-enabled load balancer to route requests to targets if it is unable to forward the request to Amazon Web Services WAF. The possible values are <code>true</code> and <code>false</code>. The default is <code>false</code>.</p></li>
     /// </ul>

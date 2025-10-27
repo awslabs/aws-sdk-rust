@@ -23,6 +23,8 @@ pub struct UpdateConnectionOutput {
     pub props: ::std::option::Option<crate::types::ConnectionPropertiesOutput>,
     /// <p>The connection type.</p>
     pub r#type: crate::types::ConnectionType,
+    /// <p>The scope of the connection.</p>
+    pub scope: ::std::option::Option<crate::types::ConnectionScope>,
     _request_id: Option<String>,
 }
 impl UpdateConnectionOutput {
@@ -71,6 +73,10 @@ impl UpdateConnectionOutput {
     pub fn r#type(&self) -> &crate::types::ConnectionType {
         &self.r#type
     }
+    /// <p>The scope of the connection.</p>
+    pub fn scope(&self) -> ::std::option::Option<&crate::types::ConnectionScope> {
+        self.scope.as_ref()
+    }
 }
 impl ::std::fmt::Debug for UpdateConnectionOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -85,6 +91,7 @@ impl ::std::fmt::Debug for UpdateConnectionOutput {
         formatter.field("project_id", &self.project_id);
         formatter.field("props", &self.props);
         formatter.field("r#type", &self.r#type);
+        formatter.field("scope", &self.scope);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -115,6 +122,7 @@ pub struct UpdateConnectionOutputBuilder {
     pub(crate) project_id: ::std::option::Option<::std::string::String>,
     pub(crate) props: ::std::option::Option<crate::types::ConnectionPropertiesOutput>,
     pub(crate) r#type: ::std::option::Option<crate::types::ConnectionType>,
+    pub(crate) scope: ::std::option::Option<crate::types::ConnectionScope>,
     _request_id: Option<String>,
 }
 impl UpdateConnectionOutputBuilder {
@@ -269,6 +277,20 @@ impl UpdateConnectionOutputBuilder {
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ConnectionType> {
         &self.r#type
     }
+    /// <p>The scope of the connection.</p>
+    pub fn scope(mut self, input: crate::types::ConnectionScope) -> Self {
+        self.scope = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The scope of the connection.</p>
+    pub fn set_scope(mut self, input: ::std::option::Option<crate::types::ConnectionScope>) -> Self {
+        self.scope = input;
+        self
+    }
+    /// <p>The scope of the connection.</p>
+    pub fn get_scope(&self) -> &::std::option::Option<crate::types::ConnectionScope> {
+        &self.scope
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -330,6 +352,7 @@ impl UpdateConnectionOutputBuilder {
                     "r#type was not specified but it is required when building UpdateConnectionOutput",
                 )
             })?,
+            scope: self.scope,
             _request_id: self._request_id,
         })
     }
@@ -347,6 +370,7 @@ impl ::std::fmt::Debug for UpdateConnectionOutputBuilder {
         formatter.field("project_id", &self.project_id);
         formatter.field("props", &self.props);
         formatter.field("r#type", &self.r#type);
+        formatter.field("scope", &self.scope);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

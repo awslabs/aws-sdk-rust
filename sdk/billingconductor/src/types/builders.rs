@@ -27,6 +27,8 @@ pub use crate::types::_list_resources_associated_to_custom_line_item_filter::Lis
 
 pub use crate::types::_custom_line_item_version_list_element::CustomLineItemVersionListElementBuilder;
 
+pub use crate::types::_presentation_object::PresentationObjectBuilder;
+
 pub use crate::types::_list_custom_line_item_charge_details::ListCustomLineItemChargeDetailsBuilder;
 
 pub use crate::types::_line_item_filter::LineItemFilterBuilder;

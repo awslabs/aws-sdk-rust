@@ -13,6 +13,7 @@ impl super::Client {
     /// - On success, responds with [`CreateServiceInstanceOutput`](crate::operation::create_service_instance::CreateServiceInstanceOutput) with field(s):
     ///   - [`service_instance(Option<ServiceInstance>)`](crate::operation::create_service_instance::CreateServiceInstanceOutput::service_instance): <p>The detailed data of the service instance being created.</p>
     /// - On failure, responds with [`SdkError<CreateServiceInstanceError>`](crate::operation::create_service_instance::CreateServiceInstanceError)
+    #[deprecated(note = "AWS Proton is not accepting new customers.", since = "10/07/2025")]
     pub fn create_service_instance(&self) -> crate::operation::create_service_instance::builders::CreateServiceInstanceFluentBuilder {
         crate::operation::create_service_instance::builders::CreateServiceInstanceFluentBuilder::new(self.handle.clone())
     }

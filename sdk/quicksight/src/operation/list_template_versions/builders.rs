@@ -22,7 +22,7 @@ impl crate::operation::list_template_versions::builders::ListTemplateVersionsInp
 }
 /// Fluent builder constructing a request to `ListTemplateVersions`.
 ///
-/// <p>Lists all the versions of the templates in the current Amazon QuickSight account.</p>
+/// <p>Lists all the versions of the templates in the current Amazon Quick Sight account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListTemplateVersionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

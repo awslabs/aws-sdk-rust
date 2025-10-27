@@ -23,7 +23,7 @@ impl crate::operation::delete_brand::builders::DeleteBrandInputBuilder {
 /// Fluent builder constructing a request to `DeleteBrand`.
 ///
 /// <important>
-/// <p>This API permanently deletes the specified QuickSight brand. When you delete a brand:</p>
+/// <p>This API permanently deletes the specified Quick Sight brand. When you delete a brand:</p>
 /// <ul>
 /// <li>
 /// <p>The brand and all its associated branding elements are permanently removed</p></li>
@@ -34,7 +34,7 @@ impl crate::operation::delete_brand::builders::DeleteBrandInputBuilder {
 /// </ul>
 /// <p><b>Before proceeding:</b> Verify that the brand is no longer needed and consider the impact on any applications currently using this brand.</p>
 /// </important>
-/// <p>Deletes an QuickSight brand.</p>
+/// <p>Deletes an Quick Sight brand.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteBrandFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

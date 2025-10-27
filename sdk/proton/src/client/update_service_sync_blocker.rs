@@ -10,6 +10,7 @@ impl super::Client {
     ///   - [`service_instance_name(Option<String>)`](crate::operation::update_service_sync_blocker::UpdateServiceSyncBlockerOutput::service_instance_name): <p>The name of the service instance that you want to update the service sync blocker for.</p>
     ///   - [`service_sync_blocker(Option<SyncBlocker>)`](crate::operation::update_service_sync_blocker::UpdateServiceSyncBlockerOutput::service_sync_blocker): <p>The detailed data on the service sync blocker that was updated.</p>
     /// - On failure, responds with [`SdkError<UpdateServiceSyncBlockerError>`](crate::operation::update_service_sync_blocker::UpdateServiceSyncBlockerError)
+    #[deprecated(note = "AWS Proton is not accepting new customers.", since = "10/07/2025")]
     pub fn update_service_sync_blocker(&self) -> crate::operation::update_service_sync_blocker::builders::UpdateServiceSyncBlockerFluentBuilder {
         crate::operation::update_service_sync_blocker::builders::UpdateServiceSyncBlockerFluentBuilder::new(self.handle.clone())
     }

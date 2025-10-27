@@ -11,6 +11,8 @@ pub struct CreateAutomatedReasoningPolicyInput {
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>The policy definition that contains the formal logic rules, variables, and custom variable types used to validate foundation model responses in your application.</p>
     pub policy_definition: ::std::option::Option<crate::types::AutomatedReasoningPolicyDefinition>,
+    /// <p>The identifier of the KMS key to use for encrypting the automated reasoning policy and its associated artifacts. If you don't specify a KMS key, Amazon Bedrock uses an KMS managed key for encryption. For enhanced security and control, you can specify a customer managed KMS key.</p>
+    pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of tags to associate with the Automated Reasoning policy. Tags help you organize and manage your policies.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
@@ -31,6 +33,10 @@ impl CreateAutomatedReasoningPolicyInput {
     pub fn policy_definition(&self) -> ::std::option::Option<&crate::types::AutomatedReasoningPolicyDefinition> {
         self.policy_definition.as_ref()
     }
+    /// <p>The identifier of the KMS key to use for encrypting the automated reasoning policy and its associated artifacts. If you don't specify a KMS key, Amazon Bedrock uses an KMS managed key for encryption. For enhanced security and control, you can specify a customer managed KMS key.</p>
+    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
     /// <p>A list of tags to associate with the Automated Reasoning policy. Tags help you organize and manage your policies.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
@@ -45,6 +51,7 @@ impl ::std::fmt::Debug for CreateAutomatedReasoningPolicyInput {
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("client_request_token", &self.client_request_token);
         formatter.field("policy_definition", &self.policy_definition);
+        formatter.field("kms_key_id", &self.kms_key_id);
         formatter.field("tags", &self.tags);
         formatter.finish()
     }
@@ -64,6 +71,7 @@ pub struct CreateAutomatedReasoningPolicyInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
     pub(crate) policy_definition: ::std::option::Option<crate::types::AutomatedReasoningPolicyDefinition>,
+    pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateAutomatedReasoningPolicyInputBuilder {
@@ -124,6 +132,20 @@ impl CreateAutomatedReasoningPolicyInputBuilder {
     pub fn get_policy_definition(&self) -> &::std::option::Option<crate::types::AutomatedReasoningPolicyDefinition> {
         &self.policy_definition
     }
+    /// <p>The identifier of the KMS key to use for encrypting the automated reasoning policy and its associated artifacts. If you don't specify a KMS key, Amazon Bedrock uses an KMS managed key for encryption. For enhanced security and control, you can specify a customer managed KMS key.</p>
+    pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kms_key_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier of the KMS key to use for encrypting the automated reasoning policy and its associated artifacts. If you don't specify a KMS key, Amazon Bedrock uses an KMS managed key for encryption. For enhanced security and control, you can specify a customer managed KMS key.</p>
+    pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.kms_key_id = input;
+        self
+    }
+    /// <p>The identifier of the KMS key to use for encrypting the automated reasoning policy and its associated artifacts. If you don't specify a KMS key, Amazon Bedrock uses an KMS managed key for encryption. For enhanced security and control, you can specify a customer managed KMS key.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -156,6 +178,7 @@ impl CreateAutomatedReasoningPolicyInputBuilder {
             description: self.description,
             client_request_token: self.client_request_token,
             policy_definition: self.policy_definition,
+            kms_key_id: self.kms_key_id,
             tags: self.tags,
         })
     }
@@ -167,6 +190,7 @@ impl ::std::fmt::Debug for CreateAutomatedReasoningPolicyInputBuilder {
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("client_request_token", &self.client_request_token);
         formatter.field("policy_definition", &self.policy_definition);
+        formatter.field("kms_key_id", &self.kms_key_id);
         formatter.field("tags", &self.tags);
         formatter.finish()
     }

@@ -15,5 +15,15 @@ pub fn ser_create_oauth2_credential_provider_input_input(
         crate::protocol_serde::shape_oauth2_provider_config_input::ser_oauth2_provider_config_input(&mut object_4, var_3)?;
         object_4.finish();
     }
+    if let Some(var_5) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("tags").start_object();
+        for (key_7, value_8) in var_5 {
+            {
+                object_6.key(key_7.as_str()).string(value_8.as_str());
+            }
+        }
+        object_6.finish();
+    }
     Ok(())
 }

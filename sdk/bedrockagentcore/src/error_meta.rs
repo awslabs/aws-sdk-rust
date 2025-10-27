@@ -208,6 +208,48 @@ impl From<crate::operation::batch_update_memory_records::BatchUpdateMemoryRecord
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::complete_resource_token_auth::CompleteResourceTokenAuthError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::complete_resource_token_auth::CompleteResourceTokenAuthError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::complete_resource_token_auth::CompleteResourceTokenAuthError> for Error {
+    fn from(err: crate::operation::complete_resource_token_auth::CompleteResourceTokenAuthError) -> Self {
+        match err {
+            crate::operation::complete_resource_token_auth::CompleteResourceTokenAuthError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::complete_resource_token_auth::CompleteResourceTokenAuthError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::complete_resource_token_auth::CompleteResourceTokenAuthError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::complete_resource_token_auth::CompleteResourceTokenAuthError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::complete_resource_token_auth::CompleteResourceTokenAuthError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::complete_resource_token_auth::CompleteResourceTokenAuthError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::complete_resource_token_auth::CompleteResourceTokenAuthError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_event::CreateEventError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

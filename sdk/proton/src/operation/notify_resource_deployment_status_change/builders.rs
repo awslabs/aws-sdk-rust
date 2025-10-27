@@ -24,6 +24,7 @@ impl crate::operation::notify_resource_deployment_status_change::builders::Notif
 ///
 /// <p>Notify Proton of status changes to a provisioned resource when you use self-managed provisioning.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-works-prov-methods.html#ag-works-prov-methods-self">Self-managed provisioning</a> in the <i>Proton User Guide</i>.</p>
+#[deprecated(note = "AWS Proton is not accepting new customers.", since = "10/07/2025")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct NotifyResourceDeploymentStatusChangeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -867,6 +867,16 @@ pub use crate::types::_coip_address_usage::CoipAddressUsageBuilder;
 
 pub use crate::types::_instance_usage::InstanceUsageBuilder;
 
+pub use crate::types::_capacity_manager_dimension::CapacityManagerDimensionBuilder;
+
+pub use crate::types::_capacity_manager_condition::CapacityManagerConditionBuilder;
+
+pub use crate::types::_dimension_condition::DimensionConditionBuilder;
+
+pub use crate::types::_metric_data_result::MetricDataResultBuilder;
+
+pub use crate::types::_metric_value::MetricValueBuilder;
+
 pub use crate::types::_data_response::DataResponseBuilder;
 
 pub use crate::types::_metric_point::MetricPointBuilder;
@@ -1468,6 +1478,8 @@ pub use crate::types::_fleet_capacity_reservation::FleetCapacityReservationBuild
 pub use crate::types::_capacity_reservation_billing_request::CapacityReservationBillingRequestBuilder;
 
 pub use crate::types::_capacity_reservation_info::CapacityReservationInfoBuilder;
+
+pub use crate::types::_capacity_manager_data_export_response::CapacityManagerDataExportResponseBuilder;
 
 pub use crate::types::_capacity_block_status::CapacityBlockStatusBuilder;
 

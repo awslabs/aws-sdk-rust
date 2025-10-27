@@ -29,6 +29,8 @@ pub use crate::types::error::_invalid_tag_exception::InvalidTagExceptionBuilder;
 
 pub use crate::types::error::_invalid_endpoint_region_exception::InvalidEndpointRegionExceptionBuilder;
 
+pub use crate::types::error::_idempotency_conflict_exception::IdempotencyConflictExceptionBuilder;
+
 pub use crate::types::error::_duplicate_request_exception::DuplicateRequestExceptionBuilder;
 
 pub use crate::types::error::_invalid_customer_identifier_exception::InvalidCustomerIdentifierExceptionBuilder;

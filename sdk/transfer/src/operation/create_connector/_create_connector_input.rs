@@ -4,6 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateConnectorInput {
     /// <p>The URL of the partner's AS2 or SFTP endpoint.</p>
+    /// <p>When creating AS2 connectors or service-managed SFTP connectors (connectors without egress configuration), you must provide a URL to specify the remote server endpoint. For VPC Lattice type connectors, the URL must be null.</p>
     pub url: ::std::option::Option<::std::string::String>,
     /// <p>A structure that contains the parameters for an AS2 connector object.</p>
     pub as2_config: ::std::option::Option<crate::types::As2ConnectorConfig>,
@@ -22,9 +23,12 @@ pub struct CreateConnectorInput {
     pub sftp_config: ::std::option::Option<crate::types::SftpConnectorConfig>,
     /// <p>Specifies the name of the security policy for the connector.</p>
     pub security_policy_name: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies the egress configuration for the connector, which determines how traffic is routed from the connector to the SFTP server. When set to VPC, enables routing through customer VPCs using VPC_LATTICE for private connectivity.</p>
+    pub egress_config: ::std::option::Option<crate::types::ConnectorEgressConfig>,
 }
 impl CreateConnectorInput {
     /// <p>The URL of the partner's AS2 or SFTP endpoint.</p>
+    /// <p>When creating AS2 connectors or service-managed SFTP connectors (connectors without egress configuration), you must provide a URL to specify the remote server endpoint. For VPC Lattice type connectors, the URL must be null.</p>
     pub fn url(&self) -> ::std::option::Option<&str> {
         self.url.as_deref()
     }
@@ -59,6 +63,10 @@ impl CreateConnectorInput {
     pub fn security_policy_name(&self) -> ::std::option::Option<&str> {
         self.security_policy_name.as_deref()
     }
+    /// <p>Specifies the egress configuration for the connector, which determines how traffic is routed from the connector to the SFTP server. When set to VPC, enables routing through customer VPCs using VPC_LATTICE for private connectivity.</p>
+    pub fn egress_config(&self) -> ::std::option::Option<&crate::types::ConnectorEgressConfig> {
+        self.egress_config.as_ref()
+    }
 }
 impl CreateConnectorInput {
     /// Creates a new builder-style object to manufacture [`CreateConnectorInput`](crate::operation::create_connector::CreateConnectorInput).
@@ -78,20 +86,23 @@ pub struct CreateConnectorInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) sftp_config: ::std::option::Option<crate::types::SftpConnectorConfig>,
     pub(crate) security_policy_name: ::std::option::Option<::std::string::String>,
+    pub(crate) egress_config: ::std::option::Option<crate::types::ConnectorEgressConfig>,
 }
 impl CreateConnectorInputBuilder {
     /// <p>The URL of the partner's AS2 or SFTP endpoint.</p>
-    /// This field is required.
+    /// <p>When creating AS2 connectors or service-managed SFTP connectors (connectors without egress configuration), you must provide a URL to specify the remote server endpoint. For VPC Lattice type connectors, the URL must be null.</p>
     pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL of the partner's AS2 or SFTP endpoint.</p>
+    /// <p>When creating AS2 connectors or service-managed SFTP connectors (connectors without egress configuration), you must provide a URL to specify the remote server endpoint. For VPC Lattice type connectors, the URL must be null.</p>
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.url = input;
         self
     }
     /// <p>The URL of the partner's AS2 or SFTP endpoint.</p>
+    /// <p>When creating AS2 connectors or service-managed SFTP connectors (connectors without egress configuration), you must provide a URL to specify the remote server endpoint. For VPC Lattice type connectors, the URL must be null.</p>
     pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.url
     }
@@ -201,6 +212,20 @@ impl CreateConnectorInputBuilder {
     pub fn get_security_policy_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.security_policy_name
     }
+    /// <p>Specifies the egress configuration for the connector, which determines how traffic is routed from the connector to the SFTP server. When set to VPC, enables routing through customer VPCs using VPC_LATTICE for private connectivity.</p>
+    pub fn egress_config(mut self, input: crate::types::ConnectorEgressConfig) -> Self {
+        self.egress_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the egress configuration for the connector, which determines how traffic is routed from the connector to the SFTP server. When set to VPC, enables routing through customer VPCs using VPC_LATTICE for private connectivity.</p>
+    pub fn set_egress_config(mut self, input: ::std::option::Option<crate::types::ConnectorEgressConfig>) -> Self {
+        self.egress_config = input;
+        self
+    }
+    /// <p>Specifies the egress configuration for the connector, which determines how traffic is routed from the connector to the SFTP server. When set to VPC, enables routing through customer VPCs using VPC_LATTICE for private connectivity.</p>
+    pub fn get_egress_config(&self) -> &::std::option::Option<crate::types::ConnectorEgressConfig> {
+        &self.egress_config
+    }
     /// Consumes the builder and constructs a [`CreateConnectorInput`](crate::operation::create_connector::CreateConnectorInput).
     pub fn build(
         self,
@@ -213,6 +238,7 @@ impl CreateConnectorInputBuilder {
             tags: self.tags,
             sftp_config: self.sftp_config,
             security_policy_name: self.security_policy_name,
+            egress_config: self.egress_config,
         })
     }
 }

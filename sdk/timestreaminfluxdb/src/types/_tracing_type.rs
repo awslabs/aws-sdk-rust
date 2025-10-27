@@ -12,6 +12,7 @@
 /// ```text
 /// # let tracingtype = unimplemented!();
 /// match tracingtype {
+///     TracingType::Disabled => { /* ... */ },
 ///     TracingType::Jaeger => { /* ... */ },
 ///     TracingType::Log => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -43,6 +44,8 @@
 )]
 pub enum TracingType {
     #[allow(missing_docs)] // documentation missing in model
+    Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     Jaeger,
     #[allow(missing_docs)] // documentation missing in model
     Log,
@@ -53,6 +56,7 @@ pub enum TracingType {
 impl ::std::convert::From<&str> for TracingType {
     fn from(s: &str) -> Self {
         match s {
+            "disabled" => TracingType::Disabled,
             "jaeger" => TracingType::Jaeger,
             "log" => TracingType::Log,
             other => TracingType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -70,6 +74,7 @@ impl TracingType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            TracingType::Disabled => "disabled",
             TracingType::Jaeger => "jaeger",
             TracingType::Log => "log",
             TracingType::Unknown(value) => value.as_str(),
@@ -77,7 +82,7 @@ impl TracingType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["jaeger", "log"]
+        &["disabled", "jaeger", "log"]
     }
 }
 impl ::std::convert::AsRef<str> for TracingType {
@@ -100,6 +105,7 @@ impl TracingType {
 impl ::std::fmt::Display for TracingType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            TracingType::Disabled => write!(f, "disabled"),
             TracingType::Jaeger => write!(f, "jaeger"),
             TracingType::Log => write!(f, "log"),
             TracingType::Unknown(value) => write!(f, "{}", value),

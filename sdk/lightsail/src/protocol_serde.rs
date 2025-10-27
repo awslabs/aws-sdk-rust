@@ -697,6 +697,8 @@ pub(crate) mod shape_bucket_access_log_config;
 
 pub(crate) mod shape_bucket_bundle_list;
 
+pub(crate) mod shape_bucket_cors_config;
+
 pub(crate) mod shape_bucket_list;
 
 pub(crate) mod shape_bundle_list;
@@ -855,6 +857,8 @@ pub(crate) mod shape_blueprint;
 
 pub(crate) mod shape_bucket_bundle;
 
+pub(crate) mod shape_bucket_cors_rule;
+
 pub(crate) mod shape_bucket_state;
 
 pub(crate) mod shape_bundle;
@@ -969,6 +973,8 @@ pub(crate) mod shape_attached_disk_list;
 
 pub(crate) mod shape_availability_zone_list;
 
+pub(crate) mod shape_bucket_cors_rules;
+
 pub(crate) mod shape_cloud_formation_stack_record_source_info_list;
 
 pub(crate) mod shape_contact_protocols_list;
@@ -1054,6 +1060,14 @@ pub(crate) mod shape_load_balancer_tls_certificate_domain_validation_record;
 pub(crate) mod shape_setup_domain_name_list;
 
 pub(crate) mod shape_setup_execution_details;
+
+pub(crate) mod shape_bucket_cors_allowed_headers;
+
+pub(crate) mod shape_bucket_cors_allowed_methods;
+
+pub(crate) mod shape_bucket_cors_allowed_origins;
+
+pub(crate) mod shape_bucket_cors_expose_headers;
 
 pub(crate) mod shape_disk_info_list;
 

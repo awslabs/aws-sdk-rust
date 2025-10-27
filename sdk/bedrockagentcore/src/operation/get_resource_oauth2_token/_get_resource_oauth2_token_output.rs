@@ -7,6 +7,10 @@ pub struct GetResourceOauth2TokenOutput {
     pub authorization_url: ::std::option::Option<::std::string::String>,
     /// <p>The OAuth 2.0 access token to use.</p>
     pub access_token: ::std::option::Option<::std::string::String>,
+    /// <p>Unique identifier for the user's authorization session for retrieving OAuth2 tokens. This matches the sessionId from the request and can be used to track the session state.</p>
+    pub session_uri: ::std::option::Option<::std::string::String>,
+    /// <p>Status indicating whether the user's authorization session is in progress or has failed. This helps determine the next steps in the OAuth2 authentication flow.</p>
+    pub session_status: ::std::option::Option<crate::types::SessionStatus>,
     _request_id: Option<String>,
 }
 impl GetResourceOauth2TokenOutput {
@@ -18,12 +22,22 @@ impl GetResourceOauth2TokenOutput {
     pub fn access_token(&self) -> ::std::option::Option<&str> {
         self.access_token.as_deref()
     }
+    /// <p>Unique identifier for the user's authorization session for retrieving OAuth2 tokens. This matches the sessionId from the request and can be used to track the session state.</p>
+    pub fn session_uri(&self) -> ::std::option::Option<&str> {
+        self.session_uri.as_deref()
+    }
+    /// <p>Status indicating whether the user's authorization session is in progress or has failed. This helps determine the next steps in the OAuth2 authentication flow.</p>
+    pub fn session_status(&self) -> ::std::option::Option<&crate::types::SessionStatus> {
+        self.session_status.as_ref()
+    }
 }
 impl ::std::fmt::Debug for GetResourceOauth2TokenOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GetResourceOauth2TokenOutput");
-        formatter.field("authorization_url", &self.authorization_url);
+        formatter.field("authorization_url", &"*** Sensitive Data Redacted ***");
         formatter.field("access_token", &"*** Sensitive Data Redacted ***");
+        formatter.field("session_uri", &self.session_uri);
+        formatter.field("session_status", &self.session_status);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -46,6 +60,8 @@ impl GetResourceOauth2TokenOutput {
 pub struct GetResourceOauth2TokenOutputBuilder {
     pub(crate) authorization_url: ::std::option::Option<::std::string::String>,
     pub(crate) access_token: ::std::option::Option<::std::string::String>,
+    pub(crate) session_uri: ::std::option::Option<::std::string::String>,
+    pub(crate) session_status: ::std::option::Option<crate::types::SessionStatus>,
     _request_id: Option<String>,
 }
 impl GetResourceOauth2TokenOutputBuilder {
@@ -77,6 +93,34 @@ impl GetResourceOauth2TokenOutputBuilder {
     pub fn get_access_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.access_token
     }
+    /// <p>Unique identifier for the user's authorization session for retrieving OAuth2 tokens. This matches the sessionId from the request and can be used to track the session state.</p>
+    pub fn session_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.session_uri = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Unique identifier for the user's authorization session for retrieving OAuth2 tokens. This matches the sessionId from the request and can be used to track the session state.</p>
+    pub fn set_session_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.session_uri = input;
+        self
+    }
+    /// <p>Unique identifier for the user's authorization session for retrieving OAuth2 tokens. This matches the sessionId from the request and can be used to track the session state.</p>
+    pub fn get_session_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session_uri
+    }
+    /// <p>Status indicating whether the user's authorization session is in progress or has failed. This helps determine the next steps in the OAuth2 authentication flow.</p>
+    pub fn session_status(mut self, input: crate::types::SessionStatus) -> Self {
+        self.session_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Status indicating whether the user's authorization session is in progress or has failed. This helps determine the next steps in the OAuth2 authentication flow.</p>
+    pub fn set_session_status(mut self, input: ::std::option::Option<crate::types::SessionStatus>) -> Self {
+        self.session_status = input;
+        self
+    }
+    /// <p>Status indicating whether the user's authorization session is in progress or has failed. This helps determine the next steps in the OAuth2 authentication flow.</p>
+    pub fn get_session_status(&self) -> &::std::option::Option<crate::types::SessionStatus> {
+        &self.session_status
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -91,6 +135,8 @@ impl GetResourceOauth2TokenOutputBuilder {
         crate::operation::get_resource_oauth2_token::GetResourceOauth2TokenOutput {
             authorization_url: self.authorization_url,
             access_token: self.access_token,
+            session_uri: self.session_uri,
+            session_status: self.session_status,
             _request_id: self._request_id,
         }
     }
@@ -98,8 +144,10 @@ impl GetResourceOauth2TokenOutputBuilder {
 impl ::std::fmt::Debug for GetResourceOauth2TokenOutputBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GetResourceOauth2TokenOutputBuilder");
-        formatter.field("authorization_url", &self.authorization_url);
+        formatter.field("authorization_url", &"*** Sensitive Data Redacted ***");
         formatter.field("access_token", &"*** Sensitive Data Redacted ***");
+        formatter.field("session_uri", &self.session_uri);
+        formatter.field("session_status", &self.session_status);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

@@ -10,6 +10,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateAccountSettingsOutput`](crate::operation::update_account_settings::UpdateAccountSettingsOutput) with field(s):
     ///   - [`account_settings(Option<AccountSettings>)`](crate::operation::update_account_settings::UpdateAccountSettingsOutput::account_settings): <p>The Proton pipeline service role and repository data shared across the Amazon Web Services account.</p>
     /// - On failure, responds with [`SdkError<UpdateAccountSettingsError>`](crate::operation::update_account_settings::UpdateAccountSettingsError)
+    #[deprecated(note = "AWS Proton is not accepting new customers.", since = "10/07/2025")]
     pub fn update_account_settings(&self) -> crate::operation::update_account_settings::builders::UpdateAccountSettingsFluentBuilder {
         crate::operation::update_account_settings::builders::UpdateAccountSettingsFluentBuilder::new(self.handle.clone())
     }

@@ -27,6 +27,8 @@ pub struct GetDbClusterOutput {
     pub db_storage_type: ::std::option::Option<crate::types::DbStorageType>,
     /// <p>The amount of storage allocated for your DB storage type (in gibibytes).</p>
     pub allocated_storage: ::std::option::Option<i32>,
+    /// <p>The engine type of your DB cluster.</p>
+    pub engine_type: ::std::option::Option<crate::types::EngineType>,
     /// <p>Indicates if the DB cluster has a public IP to facilitate access from outside the VPC.</p>
     pub publicly_accessible: ::std::option::Option<bool>,
     /// <p>The ID of the DB parameter group assigned to your DB cluster.</p>
@@ -95,6 +97,10 @@ impl GetDbClusterOutput {
     pub fn allocated_storage(&self) -> ::std::option::Option<i32> {
         self.allocated_storage
     }
+    /// <p>The engine type of your DB cluster.</p>
+    pub fn engine_type(&self) -> ::std::option::Option<&crate::types::EngineType> {
+        self.engine_type.as_ref()
+    }
     /// <p>Indicates if the DB cluster has a public IP to facilitate access from outside the VPC.</p>
     pub fn publicly_accessible(&self) -> ::std::option::Option<bool> {
         self.publicly_accessible
@@ -156,6 +162,7 @@ pub struct GetDbClusterOutputBuilder {
     pub(crate) network_type: ::std::option::Option<crate::types::NetworkType>,
     pub(crate) db_storage_type: ::std::option::Option<crate::types::DbStorageType>,
     pub(crate) allocated_storage: ::std::option::Option<i32>,
+    pub(crate) engine_type: ::std::option::Option<crate::types::EngineType>,
     pub(crate) publicly_accessible: ::std::option::Option<bool>,
     pub(crate) db_parameter_group_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) log_delivery_configuration: ::std::option::Option<crate::types::LogDeliveryConfiguration>,
@@ -337,6 +344,20 @@ impl GetDbClusterOutputBuilder {
     pub fn get_allocated_storage(&self) -> &::std::option::Option<i32> {
         &self.allocated_storage
     }
+    /// <p>The engine type of your DB cluster.</p>
+    pub fn engine_type(mut self, input: crate::types::EngineType) -> Self {
+        self.engine_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The engine type of your DB cluster.</p>
+    pub fn set_engine_type(mut self, input: ::std::option::Option<crate::types::EngineType>) -> Self {
+        self.engine_type = input;
+        self
+    }
+    /// <p>The engine type of your DB cluster.</p>
+    pub fn get_engine_type(&self) -> &::std::option::Option<crate::types::EngineType> {
+        &self.engine_type
+    }
     /// <p>Indicates if the DB cluster has a public IP to facilitate access from outside the VPC.</p>
     pub fn publicly_accessible(mut self, input: bool) -> Self {
         self.publicly_accessible = ::std::option::Option::Some(input);
@@ -492,6 +513,7 @@ impl GetDbClusterOutputBuilder {
             network_type: self.network_type,
             db_storage_type: self.db_storage_type,
             allocated_storage: self.allocated_storage,
+            engine_type: self.engine_type,
             publicly_accessible: self.publicly_accessible,
             db_parameter_group_identifier: self.db_parameter_group_identifier,
             log_delivery_configuration: self.log_delivery_configuration,

@@ -11,11 +11,17 @@ pub use crate::types::_credential_provider_vendor_type::CredentialProviderVendor
 
 pub use crate::types::_oauth2_provider_config_output::Oauth2ProviderConfigOutput;
 
-pub use crate::types::_microsoft_oauth2_provider_config_output::MicrosoftOauth2ProviderConfigOutput;
+pub use crate::types::_included_oauth2_provider_config_output::IncludedOauth2ProviderConfigOutput;
 
 pub use crate::types::_oauth2_discovery::Oauth2Discovery;
 
 pub use crate::types::_oauth2_authorization_server_metadata::Oauth2AuthorizationServerMetadata;
+
+pub use crate::types::_linkedin_oauth2_provider_config_output::LinkedinOauth2ProviderConfigOutput;
+
+pub use crate::types::_atlassian_oauth2_provider_config_output::AtlassianOauth2ProviderConfigOutput;
+
+pub use crate::types::_microsoft_oauth2_provider_config_output::MicrosoftOauth2ProviderConfigOutput;
 
 pub use crate::types::_salesforce_oauth2_provider_config_output::SalesforceOauth2ProviderConfigOutput;
 
@@ -30,6 +36,12 @@ pub use crate::types::_custom_oauth2_provider_config_output::CustomOauth2Provide
 pub use crate::types::_secret::Secret;
 
 pub use crate::types::_oauth2_provider_config_input::Oauth2ProviderConfigInput;
+
+pub use crate::types::_included_oauth2_provider_config_input::IncludedOauth2ProviderConfigInput;
+
+pub use crate::types::_linkedin_oauth2_provider_config_input::LinkedinOauth2ProviderConfigInput;
+
+pub use crate::types::_atlassian_oauth2_provider_config_input::AtlassianOauth2ProviderConfigInput;
 
 pub use crate::types::_microsoft_oauth2_provider_config_input::MicrosoftOauth2ProviderConfigInput;
 
@@ -54,6 +66,18 @@ pub use crate::types::_memory_strategy_status::MemoryStrategyStatus;
 pub use crate::types::_memory_strategy_type::MemoryStrategyType;
 
 pub use crate::types::_strategy_configuration::StrategyConfiguration;
+
+pub use crate::types::_self_managed_configuration::SelfManagedConfiguration;
+
+pub use crate::types::_invocation_configuration::InvocationConfiguration;
+
+pub use crate::types::_trigger_condition::TriggerCondition;
+
+pub use crate::types::_time_based_trigger::TimeBasedTrigger;
+
+pub use crate::types::_token_based_trigger::TokenBasedTrigger;
+
+pub use crate::types::_message_based_trigger::MessageBasedTrigger;
 
 pub use crate::types::_consolidation_configuration::ConsolidationConfiguration;
 
@@ -83,6 +107,18 @@ pub use crate::types::_modify_memory_strategy_input::ModifyMemoryStrategyInput;
 
 pub use crate::types::_modify_strategy_configuration::ModifyStrategyConfiguration;
 
+pub use crate::types::_modify_self_managed_configuration::ModifySelfManagedConfiguration;
+
+pub use crate::types::_modify_invocation_configuration_input::ModifyInvocationConfigurationInput;
+
+pub use crate::types::_trigger_condition_input::TriggerConditionInput;
+
+pub use crate::types::_time_based_trigger_input::TimeBasedTriggerInput;
+
+pub use crate::types::_token_based_trigger_input::TokenBasedTriggerInput;
+
+pub use crate::types::_message_based_trigger_input::MessageBasedTriggerInput;
+
 pub use crate::types::_modify_consolidation_configuration::ModifyConsolidationConfiguration;
 
 pub use crate::types::_custom_consolidation_configuration_input::CustomConsolidationConfigurationInput;
@@ -106,6 +142,10 @@ pub use crate::types::_memory_strategy_input::MemoryStrategyInput;
 pub use crate::types::_custom_memory_strategy_input::CustomMemoryStrategyInput;
 
 pub use crate::types::_custom_configuration_input::CustomConfigurationInput;
+
+pub use crate::types::_self_managed_configuration_input::SelfManagedConfigurationInput;
+
+pub use crate::types::_invocation_configuration_input::InvocationConfigurationInput;
 
 pub use crate::types::_user_preference_override_configuration_input::UserPreferenceOverrideConfigurationInput;
 
@@ -137,6 +177,8 @@ pub use crate::types::_target_configuration::TargetConfiguration;
 
 pub use crate::types::_mcp_target_configuration::McpTargetConfiguration;
 
+pub use crate::types::_mcp_server_target_configuration::McpServerTargetConfiguration;
+
 pub use crate::types::_mcp_lambda_target_configuration::McpLambdaTargetConfiguration;
 
 pub use crate::types::_tool_schema::ToolSchema;
@@ -152,6 +194,8 @@ pub use crate::types::_s3_configuration::S3Configuration;
 pub use crate::types::_api_schema_configuration::ApiSchemaConfiguration;
 
 pub use crate::types::_target_status::TargetStatus;
+
+pub use crate::types::_gateway_target::GatewayTarget;
 
 pub use crate::types::_target_summary::TargetSummary;
 
@@ -247,6 +291,10 @@ mod _api_key_credential_provider_item;
 
 mod _api_schema_configuration;
 
+mod _atlassian_oauth2_provider_config_input;
+
+mod _atlassian_oauth2_provider_config_output;
+
 mod _authorizer_configuration;
 
 mod _authorizer_type;
@@ -313,6 +361,8 @@ mod _gateway_status;
 
 mod _gateway_summary;
 
+mod _gateway_target;
+
 mod _github_oauth2_provider_config_input;
 
 mod _github_oauth2_provider_config_output;
@@ -321,15 +371,29 @@ mod _google_oauth2_provider_config_input;
 
 mod _google_oauth2_provider_config_output;
 
+mod _included_oauth2_provider_config_input;
+
+mod _included_oauth2_provider_config_output;
+
+mod _invocation_configuration;
+
+mod _invocation_configuration_input;
+
 mod _key_type;
 
 mod _kms_configuration;
 
 mod _lifecycle_configuration;
 
+mod _linkedin_oauth2_provider_config_input;
+
+mod _linkedin_oauth2_provider_config_output;
+
 mod _mcp_gateway_configuration;
 
 mod _mcp_lambda_target_configuration;
+
+mod _mcp_server_target_configuration;
 
 mod _mcp_target_configuration;
 
@@ -347,6 +411,10 @@ mod _memory_strategy_type;
 
 mod _memory_summary;
 
+mod _message_based_trigger;
+
+mod _message_based_trigger_input;
+
 mod _microsoft_oauth2_provider_config_input;
 
 mod _microsoft_oauth2_provider_config_output;
@@ -355,9 +423,13 @@ mod _modify_consolidation_configuration;
 
 mod _modify_extraction_configuration;
 
+mod _modify_invocation_configuration_input;
+
 mod _modify_memory_strategies;
 
 mod _modify_memory_strategy_input;
+
+mod _modify_self_managed_configuration;
 
 mod _modify_strategy_configuration;
 
@@ -403,6 +475,10 @@ mod _search_type;
 
 mod _secret;
 
+mod _self_managed_configuration;
+
+mod _self_managed_configuration_input;
+
 mod _semantic_consolidation_override;
 
 mod _semantic_extraction_override;
@@ -437,9 +513,21 @@ mod _target_status;
 
 mod _target_summary;
 
+mod _time_based_trigger;
+
+mod _time_based_trigger_input;
+
+mod _token_based_trigger;
+
+mod _token_based_trigger_input;
+
 mod _tool_definition;
 
 mod _tool_schema;
+
+mod _trigger_condition;
+
+mod _trigger_condition_input;
 
 mod _user_preference_consolidation_override;
 
@@ -466,5 +554,5 @@ mod _workload_identity_type;
 /// Builders
 pub mod builders;
 
-/// Error types that Amazon Bedrock Agent Core Control Plane Fronting Layer can respond with.
+/// Error types that Amazon Bedrock AgentCore Control can respond with.
 pub mod error;

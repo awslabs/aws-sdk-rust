@@ -13,6 +13,8 @@ pub enum Error {
     InternalServerErrorException(crate::types::error::InternalServerErrorException),
     /// The resource you requested doesn't exist.
     NotFoundException(crate::types::error::NotFoundException),
+    /// You attempted to create more resources than the service allows based on service quotas.
+    ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// Too many requests have been sent in too short of a time. The service limits the rate at which it will accept requests.
     TooManyRequestsException(crate::types::error::TooManyRequestsException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -32,6 +34,7 @@ impl ::std::fmt::Display for Error {
             Error::ForbiddenException(inner) => inner.fmt(f),
             Error::InternalServerErrorException(inner) => inner.fmt(f),
             Error::NotFoundException(inner) => inner.fmt(f),
+            Error::ServiceQuotaExceededException(inner) => inner.fmt(f),
             Error::TooManyRequestsException(inner) => inner.fmt(f),
             Error::Unhandled(_) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
@@ -59,6 +62,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::ForbiddenException(inner) => inner.meta(),
             Self::InternalServerErrorException(inner) => inner.meta(),
             Self::NotFoundException(inner) => inner.meta(),
+            Self::ServiceQuotaExceededException(inner) => inner.meta(),
             Self::TooManyRequestsException(inner) => inner.meta(),
             Self::Unhandled(inner) => &inner.meta,
         }
@@ -88,6 +92,9 @@ impl From<crate::operation::associate_certificate::AssociateCertificateError> fo
                 Error::InternalServerErrorException(inner)
             }
             crate::operation::associate_certificate::AssociateCertificateError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::associate_certificate::AssociateCertificateError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
             crate::operation::associate_certificate::AssociateCertificateError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
@@ -117,6 +124,7 @@ impl From<crate::operation::cancel_job::CancelJobError> for Error {
             crate::operation::cancel_job::CancelJobError::ForbiddenException(inner) => Error::ForbiddenException(inner),
             crate::operation::cancel_job::CancelJobError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
             crate::operation::cancel_job::CancelJobError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::cancel_job::CancelJobError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
             crate::operation::cancel_job::CancelJobError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::cancel_job::CancelJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -144,6 +152,7 @@ impl From<crate::operation::create_job::CreateJobError> for Error {
             crate::operation::create_job::CreateJobError::ForbiddenException(inner) => Error::ForbiddenException(inner),
             crate::operation::create_job::CreateJobError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
             crate::operation::create_job::CreateJobError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::create_job::CreateJobError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
             crate::operation::create_job::CreateJobError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::create_job::CreateJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -173,6 +182,9 @@ impl From<crate::operation::create_job_template::CreateJobTemplateError> for Err
                 Error::InternalServerErrorException(inner)
             }
             crate::operation::create_job_template::CreateJobTemplateError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::create_job_template::CreateJobTemplateError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
             crate::operation::create_job_template::CreateJobTemplateError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::create_job_template::CreateJobTemplateError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -200,6 +212,7 @@ impl From<crate::operation::create_preset::CreatePresetError> for Error {
             crate::operation::create_preset::CreatePresetError::ForbiddenException(inner) => Error::ForbiddenException(inner),
             crate::operation::create_preset::CreatePresetError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
             crate::operation::create_preset::CreatePresetError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::create_preset::CreatePresetError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
             crate::operation::create_preset::CreatePresetError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::create_preset::CreatePresetError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -227,6 +240,7 @@ impl From<crate::operation::create_queue::CreateQueueError> for Error {
             crate::operation::create_queue::CreateQueueError::ForbiddenException(inner) => Error::ForbiddenException(inner),
             crate::operation::create_queue::CreateQueueError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
             crate::operation::create_queue::CreateQueueError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::create_queue::CreateQueueError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
             crate::operation::create_queue::CreateQueueError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::create_queue::CreateQueueError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -256,6 +270,9 @@ impl From<crate::operation::create_resource_share::CreateResourceShareError> for
                 Error::InternalServerErrorException(inner)
             }
             crate::operation::create_resource_share::CreateResourceShareError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::create_resource_share::CreateResourceShareError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
             crate::operation::create_resource_share::CreateResourceShareError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
@@ -287,6 +304,9 @@ impl From<crate::operation::delete_job_template::DeleteJobTemplateError> for Err
                 Error::InternalServerErrorException(inner)
             }
             crate::operation::delete_job_template::DeleteJobTemplateError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_job_template::DeleteJobTemplateError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
             crate::operation::delete_job_template::DeleteJobTemplateError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::delete_job_template::DeleteJobTemplateError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -314,6 +334,7 @@ impl From<crate::operation::delete_policy::DeletePolicyError> for Error {
             crate::operation::delete_policy::DeletePolicyError::ForbiddenException(inner) => Error::ForbiddenException(inner),
             crate::operation::delete_policy::DeletePolicyError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
             crate::operation::delete_policy::DeletePolicyError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_policy::DeletePolicyError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
             crate::operation::delete_policy::DeletePolicyError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::delete_policy::DeletePolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -341,6 +362,7 @@ impl From<crate::operation::delete_preset::DeletePresetError> for Error {
             crate::operation::delete_preset::DeletePresetError::ForbiddenException(inner) => Error::ForbiddenException(inner),
             crate::operation::delete_preset::DeletePresetError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
             crate::operation::delete_preset::DeletePresetError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_preset::DeletePresetError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
             crate::operation::delete_preset::DeletePresetError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::delete_preset::DeletePresetError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -368,6 +390,7 @@ impl From<crate::operation::delete_queue::DeleteQueueError> for Error {
             crate::operation::delete_queue::DeleteQueueError::ForbiddenException(inner) => Error::ForbiddenException(inner),
             crate::operation::delete_queue::DeleteQueueError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
             crate::operation::delete_queue::DeleteQueueError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_queue::DeleteQueueError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
             crate::operation::delete_queue::DeleteQueueError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::delete_queue::DeleteQueueError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -397,6 +420,9 @@ impl From<crate::operation::describe_endpoints::DescribeEndpointsError> for Erro
                 Error::InternalServerErrorException(inner)
             }
             crate::operation::describe_endpoints::DescribeEndpointsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::describe_endpoints::DescribeEndpointsError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
             crate::operation::describe_endpoints::DescribeEndpointsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::describe_endpoints::DescribeEndpointsError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -429,6 +455,9 @@ impl From<crate::operation::disassociate_certificate::DisassociateCertificateErr
                 Error::InternalServerErrorException(inner)
             }
             crate::operation::disassociate_certificate::DisassociateCertificateError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::disassociate_certificate::DisassociateCertificateError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
             crate::operation::disassociate_certificate::DisassociateCertificateError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
@@ -458,8 +487,43 @@ impl From<crate::operation::get_job::GetJobError> for Error {
             crate::operation::get_job::GetJobError::ForbiddenException(inner) => Error::ForbiddenException(inner),
             crate::operation::get_job::GetJobError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
             crate::operation::get_job::GetJobError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_job::GetJobError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
             crate::operation::get_job::GetJobError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::get_job::GetJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_jobs_query_results::GetJobsQueryResultsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_jobs_query_results::GetJobsQueryResultsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_jobs_query_results::GetJobsQueryResultsError> for Error {
+    fn from(err: crate::operation::get_jobs_query_results::GetJobsQueryResultsError) -> Self {
+        match err {
+            crate::operation::get_jobs_query_results::GetJobsQueryResultsError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_jobs_query_results::GetJobsQueryResultsError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::get_jobs_query_results::GetJobsQueryResultsError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::get_jobs_query_results::GetJobsQueryResultsError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::get_jobs_query_results::GetJobsQueryResultsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_jobs_query_results::GetJobsQueryResultsError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::get_jobs_query_results::GetJobsQueryResultsError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::get_jobs_query_results::GetJobsQueryResultsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -487,6 +551,9 @@ impl From<crate::operation::get_job_template::GetJobTemplateError> for Error {
                 Error::InternalServerErrorException(inner)
             }
             crate::operation::get_job_template::GetJobTemplateError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_job_template::GetJobTemplateError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
             crate::operation::get_job_template::GetJobTemplateError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::get_job_template::GetJobTemplateError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -514,6 +581,7 @@ impl From<crate::operation::get_policy::GetPolicyError> for Error {
             crate::operation::get_policy::GetPolicyError::ForbiddenException(inner) => Error::ForbiddenException(inner),
             crate::operation::get_policy::GetPolicyError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
             crate::operation::get_policy::GetPolicyError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_policy::GetPolicyError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
             crate::operation::get_policy::GetPolicyError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::get_policy::GetPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -541,6 +609,7 @@ impl From<crate::operation::get_preset::GetPresetError> for Error {
             crate::operation::get_preset::GetPresetError::ForbiddenException(inner) => Error::ForbiddenException(inner),
             crate::operation::get_preset::GetPresetError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
             crate::operation::get_preset::GetPresetError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_preset::GetPresetError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
             crate::operation::get_preset::GetPresetError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::get_preset::GetPresetError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -568,6 +637,7 @@ impl From<crate::operation::get_queue::GetQueueError> for Error {
             crate::operation::get_queue::GetQueueError::ForbiddenException(inner) => Error::ForbiddenException(inner),
             crate::operation::get_queue::GetQueueError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
             crate::operation::get_queue::GetQueueError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_queue::GetQueueError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
             crate::operation::get_queue::GetQueueError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::get_queue::GetQueueError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -595,6 +665,7 @@ impl From<crate::operation::list_jobs::ListJobsError> for Error {
             crate::operation::list_jobs::ListJobsError::ForbiddenException(inner) => Error::ForbiddenException(inner),
             crate::operation::list_jobs::ListJobsError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
             crate::operation::list_jobs::ListJobsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::list_jobs::ListJobsError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
             crate::operation::list_jobs::ListJobsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::list_jobs::ListJobsError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -624,6 +695,9 @@ impl From<crate::operation::list_job_templates::ListJobTemplatesError> for Error
                 Error::InternalServerErrorException(inner)
             }
             crate::operation::list_job_templates::ListJobTemplatesError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::list_job_templates::ListJobTemplatesError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
             crate::operation::list_job_templates::ListJobTemplatesError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::list_job_templates::ListJobTemplatesError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -651,6 +725,7 @@ impl From<crate::operation::list_presets::ListPresetsError> for Error {
             crate::operation::list_presets::ListPresetsError::ForbiddenException(inner) => Error::ForbiddenException(inner),
             crate::operation::list_presets::ListPresetsError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
             crate::operation::list_presets::ListPresetsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::list_presets::ListPresetsError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
             crate::operation::list_presets::ListPresetsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::list_presets::ListPresetsError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -678,6 +753,7 @@ impl From<crate::operation::list_queues::ListQueuesError> for Error {
             crate::operation::list_queues::ListQueuesError::ForbiddenException(inner) => Error::ForbiddenException(inner),
             crate::operation::list_queues::ListQueuesError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
             crate::operation::list_queues::ListQueuesError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::list_queues::ListQueuesError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
             crate::operation::list_queues::ListQueuesError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::list_queues::ListQueuesError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -707,6 +783,9 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
                 Error::InternalServerErrorException(inner)
             }
             crate::operation::list_tags_for_resource::ListTagsForResourceError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
             crate::operation::list_tags_for_resource::ListTagsForResourceError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
@@ -736,6 +815,7 @@ impl From<crate::operation::list_versions::ListVersionsError> for Error {
             crate::operation::list_versions::ListVersionsError::ForbiddenException(inner) => Error::ForbiddenException(inner),
             crate::operation::list_versions::ListVersionsError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
             crate::operation::list_versions::ListVersionsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::list_versions::ListVersionsError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
             crate::operation::list_versions::ListVersionsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::list_versions::ListVersionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -763,6 +843,7 @@ impl From<crate::operation::probe::ProbeError> for Error {
             crate::operation::probe::ProbeError::ForbiddenException(inner) => Error::ForbiddenException(inner),
             crate::operation::probe::ProbeError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
             crate::operation::probe::ProbeError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::probe::ProbeError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
             crate::operation::probe::ProbeError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::probe::ProbeError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -790,6 +871,7 @@ impl From<crate::operation::put_policy::PutPolicyError> for Error {
             crate::operation::put_policy::PutPolicyError::ForbiddenException(inner) => Error::ForbiddenException(inner),
             crate::operation::put_policy::PutPolicyError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
             crate::operation::put_policy::PutPolicyError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::put_policy::PutPolicyError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
             crate::operation::put_policy::PutPolicyError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::put_policy::PutPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -817,8 +899,41 @@ impl From<crate::operation::search_jobs::SearchJobsError> for Error {
             crate::operation::search_jobs::SearchJobsError::ForbiddenException(inner) => Error::ForbiddenException(inner),
             crate::operation::search_jobs::SearchJobsError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
             crate::operation::search_jobs::SearchJobsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::search_jobs::SearchJobsError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
             crate::operation::search_jobs::SearchJobsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::search_jobs::SearchJobsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_jobs_query::StartJobsQueryError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_jobs_query::StartJobsQueryError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_jobs_query::StartJobsQueryError> for Error {
+    fn from(err: crate::operation::start_jobs_query::StartJobsQueryError) -> Self {
+        match err {
+            crate::operation::start_jobs_query::StartJobsQueryError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::start_jobs_query::StartJobsQueryError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::start_jobs_query::StartJobsQueryError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::start_jobs_query::StartJobsQueryError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::start_jobs_query::StartJobsQueryError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::start_jobs_query::StartJobsQueryError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::start_jobs_query::StartJobsQueryError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::start_jobs_query::StartJobsQueryError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -844,6 +959,7 @@ impl From<crate::operation::tag_resource::TagResourceError> for Error {
             crate::operation::tag_resource::TagResourceError::ForbiddenException(inner) => Error::ForbiddenException(inner),
             crate::operation::tag_resource::TagResourceError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
             crate::operation::tag_resource::TagResourceError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::tag_resource::TagResourceError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
             crate::operation::tag_resource::TagResourceError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::tag_resource::TagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -871,6 +987,7 @@ impl From<crate::operation::untag_resource::UntagResourceError> for Error {
             crate::operation::untag_resource::UntagResourceError::ForbiddenException(inner) => Error::ForbiddenException(inner),
             crate::operation::untag_resource::UntagResourceError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
             crate::operation::untag_resource::UntagResourceError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::untag_resource::UntagResourceError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
             crate::operation::untag_resource::UntagResourceError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -900,6 +1017,9 @@ impl From<crate::operation::update_job_template::UpdateJobTemplateError> for Err
                 Error::InternalServerErrorException(inner)
             }
             crate::operation::update_job_template::UpdateJobTemplateError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::update_job_template::UpdateJobTemplateError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
             crate::operation::update_job_template::UpdateJobTemplateError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::update_job_template::UpdateJobTemplateError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -927,6 +1047,7 @@ impl From<crate::operation::update_preset::UpdatePresetError> for Error {
             crate::operation::update_preset::UpdatePresetError::ForbiddenException(inner) => Error::ForbiddenException(inner),
             crate::operation::update_preset::UpdatePresetError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
             crate::operation::update_preset::UpdatePresetError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::update_preset::UpdatePresetError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
             crate::operation::update_preset::UpdatePresetError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::update_preset::UpdatePresetError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -954,6 +1075,7 @@ impl From<crate::operation::update_queue::UpdateQueueError> for Error {
             crate::operation::update_queue::UpdateQueueError::ForbiddenException(inner) => Error::ForbiddenException(inner),
             crate::operation::update_queue::UpdateQueueError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
             crate::operation::update_queue::UpdateQueueError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::update_queue::UpdateQueueError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
             crate::operation::update_queue::UpdateQueueError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::update_queue::UpdateQueueError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -967,6 +1089,7 @@ impl ::std::error::Error for Error {
             Error::ForbiddenException(inner) => inner.source(),
             Error::InternalServerErrorException(inner) => inner.source(),
             Error::NotFoundException(inner) => inner.source(),
+            Error::ServiceQuotaExceededException(inner) => inner.source(),
             Error::TooManyRequestsException(inner) => inner.source(),
             Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source),
         }
@@ -980,6 +1103,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::ForbiddenException(e) => e.request_id(),
             Self::InternalServerErrorException(e) => e.request_id(),
             Self::NotFoundException(e) => e.request_id(),
+            Self::ServiceQuotaExceededException(e) => e.request_id(),
             Self::TooManyRequestsException(e) => e.request_id(),
             Self::Unhandled(e) => e.meta.request_id(),
         }

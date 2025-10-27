@@ -11,6 +11,8 @@ pub struct GetOauth2CredentialProviderOutput {
     pub credential_provider_arn: ::std::string::String,
     /// <p>The vendor of the OAuth2 credential provider.</p>
     pub credential_provider_vendor: crate::types::CredentialProviderVendorType,
+    /// <p>Callback URL to register on the OAuth2 credential provider as an allowed callback URL. This URL is where the OAuth2 authorization server redirects users after they complete the authorization flow.</p>
+    pub callback_url: ::std::option::Option<::std::string::String>,
     /// <p>The configuration output for the OAuth2 provider.</p>
     pub oauth2_provider_config_output: ::std::option::Option<crate::types::Oauth2ProviderConfigOutput>,
     /// <p>The timestamp when the OAuth2 credential provider was created.</p>
@@ -37,6 +39,10 @@ impl GetOauth2CredentialProviderOutput {
     /// <p>The vendor of the OAuth2 credential provider.</p>
     pub fn credential_provider_vendor(&self) -> &crate::types::CredentialProviderVendorType {
         &self.credential_provider_vendor
+    }
+    /// <p>Callback URL to register on the OAuth2 credential provider as an allowed callback URL. This URL is where the OAuth2 authorization server redirects users after they complete the authorization flow.</p>
+    pub fn callback_url(&self) -> ::std::option::Option<&str> {
+        self.callback_url.as_deref()
     }
     /// <p>The configuration output for the OAuth2 provider.</p>
     pub fn oauth2_provider_config_output(&self) -> ::std::option::Option<&crate::types::Oauth2ProviderConfigOutput> {
@@ -71,6 +77,7 @@ pub struct GetOauth2CredentialProviderOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) credential_provider_arn: ::std::option::Option<::std::string::String>,
     pub(crate) credential_provider_vendor: ::std::option::Option<crate::types::CredentialProviderVendorType>,
+    pub(crate) callback_url: ::std::option::Option<::std::string::String>,
     pub(crate) oauth2_provider_config_output: ::std::option::Option<crate::types::Oauth2ProviderConfigOutput>,
     pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -136,6 +143,20 @@ impl GetOauth2CredentialProviderOutputBuilder {
     /// <p>The vendor of the OAuth2 credential provider.</p>
     pub fn get_credential_provider_vendor(&self) -> &::std::option::Option<crate::types::CredentialProviderVendorType> {
         &self.credential_provider_vendor
+    }
+    /// <p>Callback URL to register on the OAuth2 credential provider as an allowed callback URL. This URL is where the OAuth2 authorization server redirects users after they complete the authorization flow.</p>
+    pub fn callback_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.callback_url = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Callback URL to register on the OAuth2 credential provider as an allowed callback URL. This URL is where the OAuth2 authorization server redirects users after they complete the authorization flow.</p>
+    pub fn set_callback_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.callback_url = input;
+        self
+    }
+    /// <p>Callback URL to register on the OAuth2 credential provider as an allowed callback URL. This URL is where the OAuth2 authorization server redirects users after they complete the authorization flow.</p>
+    pub fn get_callback_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.callback_url
     }
     /// <p>The configuration output for the OAuth2 provider.</p>
     /// This field is required.
@@ -224,6 +245,7 @@ impl GetOauth2CredentialProviderOutputBuilder {
                     "credential_provider_vendor was not specified but it is required when building GetOauth2CredentialProviderOutput",
                 )
             })?,
+            callback_url: self.callback_url,
             oauth2_provider_config_output: self.oauth2_provider_config_output,
             created_time: self.created_time.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(

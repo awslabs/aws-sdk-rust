@@ -65,12 +65,12 @@ pub enum ResourceGroupByField {
 impl ::std::convert::From<&str> for ResourceGroupByField {
     fn from(s: &str) -> Self {
         match s {
-            "account_id" => ResourceGroupByField::AccountId,
-            "findings_summary.finding_type" => ResourceGroupByField::FindingType,
-            "region" => ResourceGroupByField::Region,
-            "resource_category" => ResourceGroupByField::ResourceCategory,
-            "resource_name" => ResourceGroupByField::ResourceName,
-            "resource_type" => ResourceGroupByField::ResourceType,
+            "AccountId" => ResourceGroupByField::AccountId,
+            "FindingsSummary.FindingType" => ResourceGroupByField::FindingType,
+            "Region" => ResourceGroupByField::Region,
+            "ResourceCategory" => ResourceGroupByField::ResourceCategory,
+            "ResourceName" => ResourceGroupByField::ResourceName,
+            "ResourceType" => ResourceGroupByField::ResourceType,
             other => ResourceGroupByField::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -86,24 +86,24 @@ impl ResourceGroupByField {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            ResourceGroupByField::AccountId => "account_id",
-            ResourceGroupByField::FindingType => "findings_summary.finding_type",
-            ResourceGroupByField::Region => "region",
-            ResourceGroupByField::ResourceCategory => "resource_category",
-            ResourceGroupByField::ResourceName => "resource_name",
-            ResourceGroupByField::ResourceType => "resource_type",
+            ResourceGroupByField::AccountId => "AccountId",
+            ResourceGroupByField::FindingType => "FindingsSummary.FindingType",
+            ResourceGroupByField::Region => "Region",
+            ResourceGroupByField::ResourceCategory => "ResourceCategory",
+            ResourceGroupByField::ResourceName => "ResourceName",
+            ResourceGroupByField::ResourceType => "ResourceType",
             ResourceGroupByField::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "account_id",
-            "findings_summary.finding_type",
-            "region",
-            "resource_category",
-            "resource_name",
-            "resource_type",
+            "AccountId",
+            "FindingsSummary.FindingType",
+            "Region",
+            "ResourceCategory",
+            "ResourceName",
+            "ResourceType",
         ]
     }
 }
@@ -127,12 +127,12 @@ impl ResourceGroupByField {
 impl ::std::fmt::Display for ResourceGroupByField {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
-            ResourceGroupByField::AccountId => write!(f, "account_id"),
-            ResourceGroupByField::FindingType => write!(f, "findings_summary.finding_type"),
-            ResourceGroupByField::Region => write!(f, "region"),
-            ResourceGroupByField::ResourceCategory => write!(f, "resource_category"),
-            ResourceGroupByField::ResourceName => write!(f, "resource_name"),
-            ResourceGroupByField::ResourceType => write!(f, "resource_type"),
+            ResourceGroupByField::AccountId => write!(f, "AccountId"),
+            ResourceGroupByField::FindingType => write!(f, "FindingsSummary.FindingType"),
+            ResourceGroupByField::Region => write!(f, "Region"),
+            ResourceGroupByField::ResourceCategory => write!(f, "ResourceCategory"),
+            ResourceGroupByField::ResourceName => write!(f, "ResourceName"),
+            ResourceGroupByField::ResourceType => write!(f, "ResourceType"),
             ResourceGroupByField::Unknown(value) => write!(f, "{}", value),
         }
     }

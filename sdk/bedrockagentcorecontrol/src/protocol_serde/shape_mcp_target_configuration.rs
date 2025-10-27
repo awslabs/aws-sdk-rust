@@ -44,6 +44,11 @@ where
                                 || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'lambda' cannot be null"),
                             )?,
                         )),
+                        "mcpServer" => Some(crate::types::McpTargetConfiguration::McpServer(
+                            crate::protocol_serde::shape_mcp_server_target_configuration::de_mcp_server_target_configuration(tokens)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'mcpServer' cannot be null"),
+                            )?,
+                        )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
                             Some(crate::types::McpTargetConfiguration::Unknown)
@@ -94,6 +99,12 @@ pub fn ser_mcp_target_configuration(
             let mut object_3 = object_1.key("lambda").start_object();
             crate::protocol_serde::shape_mcp_lambda_target_configuration::ser_mcp_lambda_target_configuration(&mut object_3, inner)?;
             object_3.finish();
+        }
+        crate::types::McpTargetConfiguration::McpServer(inner) => {
+            #[allow(unused_mut)]
+            let mut object_4 = object_1.key("mcpServer").start_object();
+            crate::protocol_serde::shape_mcp_server_target_configuration::ser_mcp_server_target_configuration(&mut object_4, inner)?;
+            object_4.finish();
         }
         crate::types::McpTargetConfiguration::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(

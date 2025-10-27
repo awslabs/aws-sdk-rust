@@ -18,7 +18,7 @@
 #![allow(rustdoc::invalid_html_tags)]
 #![forbid(unsafe_code)]
 #![warn(missing_docs)]
-#![cfg_attr(docsrs, feature(doc_auto_cfg))]
+#![cfg_attr(docsrs, feature(doc_cfg))]
 //! Amazon Web Services HealthOmics is a service that helps users such as bioinformaticians, researchers, and scientists to store, query, analyze, and generate insights from genomics and other biological data. It simplifies and accelerates the process of storing and analyzing genomic information for Amazon Web Services.
 //!
 //! For an introduction to the service, see [What is Amazon Web Services HealthOmics?](https://docs.aws.amazon.com/omics/latest/dev/what-is-healthomics.html) in the _Amazon Web Services HealthOmics User Guide_.
@@ -35,7 +35,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-omics = "1.92.0"
+//! aws-sdk-omics = "1.94.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

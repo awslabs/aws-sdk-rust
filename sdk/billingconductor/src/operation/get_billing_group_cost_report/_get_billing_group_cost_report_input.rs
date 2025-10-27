@@ -7,7 +7,7 @@ pub struct GetBillingGroupCostReportInput {
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>A time range for which the margin summary is effective. You can specify up to 12 months.</p>
     pub billing_period_range: ::std::option::Option<crate::types::BillingPeriodRange>,
-    /// <p>A list of strings that specify the attributes that are used to break down costs in the margin summary reports for the billing group. For example, you can view your costs by the Amazon Web Service name or the billing period.</p>
+    /// <p>A list of strings that specify the attributes that are used to break down costs in the margin summary reports for the billing group. For example, you can view your costs by the Amazon Web Services service name or the billing period.</p>
     pub group_by: ::std::option::Option<::std::vec::Vec<crate::types::GroupByAttributeName>>,
     /// <p>The maximum number of margin summary reports to retrieve.</p>
     pub max_results: ::std::option::Option<i32>,
@@ -23,7 +23,7 @@ impl GetBillingGroupCostReportInput {
     pub fn billing_period_range(&self) -> ::std::option::Option<&crate::types::BillingPeriodRange> {
         self.billing_period_range.as_ref()
     }
-    /// <p>A list of strings that specify the attributes that are used to break down costs in the margin summary reports for the billing group. For example, you can view your costs by the Amazon Web Service name or the billing period.</p>
+    /// <p>A list of strings that specify the attributes that are used to break down costs in the margin summary reports for the billing group. For example, you can view your costs by the Amazon Web Services service name or the billing period.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.group_by.is_none()`.
     pub fn group_by(&self) -> &[crate::types::GroupByAttributeName] {
@@ -89,19 +89,19 @@ impl GetBillingGroupCostReportInputBuilder {
     ///
     /// To override the contents of this collection use [`set_group_by`](Self::set_group_by).
     ///
-    /// <p>A list of strings that specify the attributes that are used to break down costs in the margin summary reports for the billing group. For example, you can view your costs by the Amazon Web Service name or the billing period.</p>
+    /// <p>A list of strings that specify the attributes that are used to break down costs in the margin summary reports for the billing group. For example, you can view your costs by the Amazon Web Services service name or the billing period.</p>
     pub fn group_by(mut self, input: crate::types::GroupByAttributeName) -> Self {
         let mut v = self.group_by.unwrap_or_default();
         v.push(input);
         self.group_by = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of strings that specify the attributes that are used to break down costs in the margin summary reports for the billing group. For example, you can view your costs by the Amazon Web Service name or the billing period.</p>
+    /// <p>A list of strings that specify the attributes that are used to break down costs in the margin summary reports for the billing group. For example, you can view your costs by the Amazon Web Services service name or the billing period.</p>
     pub fn set_group_by(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GroupByAttributeName>>) -> Self {
         self.group_by = input;
         self
     }
-    /// <p>A list of strings that specify the attributes that are used to break down costs in the margin summary reports for the billing group. For example, you can view your costs by the Amazon Web Service name or the billing period.</p>
+    /// <p>A list of strings that specify the attributes that are used to break down costs in the margin summary reports for the billing group. For example, you can view your costs by the Amazon Web Services service name or the billing period.</p>
     pub fn get_group_by(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupByAttributeName>> {
         &self.group_by
     }

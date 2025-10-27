@@ -180,7 +180,7 @@ impl CreateDbClusterFluentBuilder {
     }
     /// <p>The port number on which InfluxDB accepts connections.</p>
     /// <p>Valid Values: 1024-65535</p>
-    /// <p>Default: 8086</p>
+    /// <p>Default: 8086 for InfluxDB v2, 8181 for InfluxDB v3</p>
     /// <p>Constraints: The value can't be 2375-2376, 7788-7799, 8090, or 51678-51680</p>
     pub fn port(mut self, input: i32) -> Self {
         self.inner = self.inner.port(input);
@@ -188,7 +188,7 @@ impl CreateDbClusterFluentBuilder {
     }
     /// <p>The port number on which InfluxDB accepts connections.</p>
     /// <p>Valid Values: 1024-65535</p>
-    /// <p>Default: 8086</p>
+    /// <p>Default: 8086 for InfluxDB v2, 8181 for InfluxDB v3</p>
     /// <p>Constraints: The value can't be 2375-2376, 7788-7799, 8090, or 51678-51680</p>
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_port(input);
@@ -196,7 +196,7 @@ impl CreateDbClusterFluentBuilder {
     }
     /// <p>The port number on which InfluxDB accepts connections.</p>
     /// <p>Valid Values: 1024-65535</p>
-    /// <p>Default: 8086</p>
+    /// <p>Default: 8086 for InfluxDB v2, 8181 for InfluxDB v3</p>
     /// <p>Constraints: The value can't be 2375-2376, 7788-7799, 8090, or 51678-51680</p>
     pub fn get_port(&self) -> &::std::option::Option<i32> {
         self.inner.get_port()

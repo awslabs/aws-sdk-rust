@@ -201,13 +201,19 @@ pub mod customize;
 
 mod delete_cluster;
 
+mod delete_cluster_policy;
+
 mod get_cluster;
+
+mod get_cluster_policy;
 
 mod get_vpc_endpoint_service_name;
 
 mod list_clusters;
 
 mod list_tags_for_resource;
+
+mod put_cluster_policy;
 
 mod tag_resource;
 

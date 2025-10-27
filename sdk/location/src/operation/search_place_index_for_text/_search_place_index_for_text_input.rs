@@ -114,7 +114,7 @@ impl ::std::fmt::Debug for SearchPlaceIndexForTextInput {
         formatter.field("filter_countries", &"*** Sensitive Data Redacted ***");
         formatter.field("max_results", &self.max_results);
         formatter.field("language", &self.language);
-        formatter.field("filter_categories", &self.filter_categories);
+        formatter.field("filter_categories", &"*** Sensitive Data Redacted ***");
         formatter.field("key", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
@@ -377,7 +377,7 @@ impl ::std::fmt::Debug for SearchPlaceIndexForTextInputBuilder {
         formatter.field("filter_countries", &"*** Sensitive Data Redacted ***");
         formatter.field("max_results", &self.max_results);
         formatter.field("language", &self.language);
-        formatter.field("filter_categories", &self.filter_categories);
+        formatter.field("filter_categories", &"*** Sensitive Data Redacted ***");
         formatter.field("key", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }

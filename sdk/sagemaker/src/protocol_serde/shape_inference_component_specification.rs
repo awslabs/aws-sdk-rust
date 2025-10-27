@@ -33,5 +33,11 @@ pub fn ser_inference_component_specification(
     if let Some(var_8) = &input.base_inference_component_name {
         object.key("BaseInferenceComponentName").string(var_8.as_str());
     }
+    if let Some(var_9) = &input.data_cache_config {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("DataCacheConfig").start_object();
+        crate::protocol_serde::shape_inference_component_data_cache_config::ser_inference_component_data_cache_config(&mut object_10, var_9)?;
+        object_10.finish();
+    }
     Ok(())
 }

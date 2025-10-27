@@ -13,16 +13,13 @@ pub struct ModifyInstanceConnectEndpointInput {
     pub ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
     /// <p>Changes the security groups for the EC2 Instance Connect Endpoint. The new set of groups you specify replaces the current set. You must specify at least one group, even if it's just the default security group in the VPC. You must specify the ID of the security group, not the name.</p>
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>Indicates whether the client IP address is preserved as the source. The following are the possible values.</p>
+    /// <p>Indicates whether the client IP address is preserved as the source when you connect to a resource. The following are the possible values.</p>
     /// <ul>
     /// <li>
-    /// <p><code>true</code> - Use the client IP address as the source.</p></li>
+    /// <p><code>true</code> - Use the IP address of the client. Your instance must have an IPv4 address.</p></li>
     /// <li>
-    /// <p><code>false</code> - Use the network interface IP address as the source.</p></li>
-    /// </ul><note>
-    /// <p><code>PreserveClientIp=true</code> is only supported on IPv4 EC2 Instance Connect Endpoints. If modifying <code>PreserveClientIp</code> to <code>true</code>, either the endpoint's existing <code>IpAddressType</code> must be <code>ipv4</code>, or if modifying <code>IpAddressType</code> in the same request, the new value must be <code>ipv4</code>.</p>
-    /// </note>
-    /// <p>Default: <code>false</code></p>
+    /// <p><code>false</code> - Use the IP address of the network interface.</p></li>
+    /// </ul>
     pub preserve_client_ip: ::std::option::Option<bool>,
 }
 impl ModifyInstanceConnectEndpointInput {
@@ -46,16 +43,13 @@ impl ModifyInstanceConnectEndpointInput {
     pub fn security_group_ids(&self) -> &[::std::string::String] {
         self.security_group_ids.as_deref().unwrap_or_default()
     }
-    /// <p>Indicates whether the client IP address is preserved as the source. The following are the possible values.</p>
+    /// <p>Indicates whether the client IP address is preserved as the source when you connect to a resource. The following are the possible values.</p>
     /// <ul>
     /// <li>
-    /// <p><code>true</code> - Use the client IP address as the source.</p></li>
+    /// <p><code>true</code> - Use the IP address of the client. Your instance must have an IPv4 address.</p></li>
     /// <li>
-    /// <p><code>false</code> - Use the network interface IP address as the source.</p></li>
-    /// </ul><note>
-    /// <p><code>PreserveClientIp=true</code> is only supported on IPv4 EC2 Instance Connect Endpoints. If modifying <code>PreserveClientIp</code> to <code>true</code>, either the endpoint's existing <code>IpAddressType</code> must be <code>ipv4</code>, or if modifying <code>IpAddressType</code> in the same request, the new value must be <code>ipv4</code>.</p>
-    /// </note>
-    /// <p>Default: <code>false</code></p>
+    /// <p><code>false</code> - Use the IP address of the network interface.</p></li>
+    /// </ul>
     pub fn preserve_client_ip(&self) -> ::std::option::Option<bool> {
         self.preserve_client_ip
     }
@@ -147,44 +141,35 @@ impl ModifyInstanceConnectEndpointInputBuilder {
     pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_group_ids
     }
-    /// <p>Indicates whether the client IP address is preserved as the source. The following are the possible values.</p>
+    /// <p>Indicates whether the client IP address is preserved as the source when you connect to a resource. The following are the possible values.</p>
     /// <ul>
     /// <li>
-    /// <p><code>true</code> - Use the client IP address as the source.</p></li>
+    /// <p><code>true</code> - Use the IP address of the client. Your instance must have an IPv4 address.</p></li>
     /// <li>
-    /// <p><code>false</code> - Use the network interface IP address as the source.</p></li>
-    /// </ul><note>
-    /// <p><code>PreserveClientIp=true</code> is only supported on IPv4 EC2 Instance Connect Endpoints. If modifying <code>PreserveClientIp</code> to <code>true</code>, either the endpoint's existing <code>IpAddressType</code> must be <code>ipv4</code>, or if modifying <code>IpAddressType</code> in the same request, the new value must be <code>ipv4</code>.</p>
-    /// </note>
-    /// <p>Default: <code>false</code></p>
+    /// <p><code>false</code> - Use the IP address of the network interface.</p></li>
+    /// </ul>
     pub fn preserve_client_ip(mut self, input: bool) -> Self {
         self.preserve_client_ip = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether the client IP address is preserved as the source. The following are the possible values.</p>
+    /// <p>Indicates whether the client IP address is preserved as the source when you connect to a resource. The following are the possible values.</p>
     /// <ul>
     /// <li>
-    /// <p><code>true</code> - Use the client IP address as the source.</p></li>
+    /// <p><code>true</code> - Use the IP address of the client. Your instance must have an IPv4 address.</p></li>
     /// <li>
-    /// <p><code>false</code> - Use the network interface IP address as the source.</p></li>
-    /// </ul><note>
-    /// <p><code>PreserveClientIp=true</code> is only supported on IPv4 EC2 Instance Connect Endpoints. If modifying <code>PreserveClientIp</code> to <code>true</code>, either the endpoint's existing <code>IpAddressType</code> must be <code>ipv4</code>, or if modifying <code>IpAddressType</code> in the same request, the new value must be <code>ipv4</code>.</p>
-    /// </note>
-    /// <p>Default: <code>false</code></p>
+    /// <p><code>false</code> - Use the IP address of the network interface.</p></li>
+    /// </ul>
     pub fn set_preserve_client_ip(mut self, input: ::std::option::Option<bool>) -> Self {
         self.preserve_client_ip = input;
         self
     }
-    /// <p>Indicates whether the client IP address is preserved as the source. The following are the possible values.</p>
+    /// <p>Indicates whether the client IP address is preserved as the source when you connect to a resource. The following are the possible values.</p>
     /// <ul>
     /// <li>
-    /// <p><code>true</code> - Use the client IP address as the source.</p></li>
+    /// <p><code>true</code> - Use the IP address of the client. Your instance must have an IPv4 address.</p></li>
     /// <li>
-    /// <p><code>false</code> - Use the network interface IP address as the source.</p></li>
-    /// </ul><note>
-    /// <p><code>PreserveClientIp=true</code> is only supported on IPv4 EC2 Instance Connect Endpoints. If modifying <code>PreserveClientIp</code> to <code>true</code>, either the endpoint's existing <code>IpAddressType</code> must be <code>ipv4</code>, or if modifying <code>IpAddressType</code> in the same request, the new value must be <code>ipv4</code>.</p>
-    /// </note>
-    /// <p>Default: <code>false</code></p>
+    /// <p><code>false</code> - Use the IP address of the network interface.</p></li>
+    /// </ul>
     pub fn get_preserve_client_ip(&self) -> &::std::option::Option<bool> {
         &self.preserve_client_ip
     }

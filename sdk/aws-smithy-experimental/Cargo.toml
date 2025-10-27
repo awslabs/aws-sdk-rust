@@ -1,6 +1,6 @@
 [package]
 name = "aws-smithy-experimental"
-version = "0.2.0"
+version = "0.2.1"
 authors = ["AWS Rust SDK Team <aws-sdk-rust@amazon.com>"]
 description = "Experiments for the smithy-rs ecosystem"
 edition = "2021"

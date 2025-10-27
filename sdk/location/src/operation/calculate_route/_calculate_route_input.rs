@@ -201,9 +201,9 @@ impl ::std::fmt::Debug for CalculateRouteInput {
         formatter.field("waypoint_positions", &"*** Sensitive Data Redacted ***");
         formatter.field("travel_mode", &self.travel_mode);
         formatter.field("departure_time", &"*** Sensitive Data Redacted ***");
-        formatter.field("depart_now", &self.depart_now);
+        formatter.field("depart_now", &"*** Sensitive Data Redacted ***");
         formatter.field("distance_unit", &self.distance_unit);
-        formatter.field("include_leg_geometry", &self.include_leg_geometry);
+        formatter.field("include_leg_geometry", &"*** Sensitive Data Redacted ***");
         formatter.field("car_mode_options", &self.car_mode_options);
         formatter.field("truck_mode_options", &self.truck_mode_options);
         formatter.field("arrival_time", &"*** Sensitive Data Redacted ***");
@@ -629,9 +629,9 @@ impl ::std::fmt::Debug for CalculateRouteInputBuilder {
         formatter.field("waypoint_positions", &"*** Sensitive Data Redacted ***");
         formatter.field("travel_mode", &self.travel_mode);
         formatter.field("departure_time", &"*** Sensitive Data Redacted ***");
-        formatter.field("depart_now", &self.depart_now);
+        formatter.field("depart_now", &"*** Sensitive Data Redacted ***");
         formatter.field("distance_unit", &self.distance_unit);
-        formatter.field("include_leg_geometry", &self.include_leg_geometry);
+        formatter.field("include_leg_geometry", &"*** Sensitive Data Redacted ***");
         formatter.field("car_mode_options", &self.car_mode_options);
         formatter.field("truck_mode_options", &self.truck_mode_options);
         formatter.field("arrival_time", &"*** Sensitive Data Redacted ***");

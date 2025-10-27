@@ -6,6 +6,10 @@
 pub enum Parameters {
     /// <p>All the customer-modifiable InfluxDB v2 parameters in Timestream for InfluxDB.</p>
     InfluxDBv2(crate::types::InfluxDBv2Parameters),
+    /// <p>All the customer-modifiable InfluxDB v3 Core parameters in Timestream for InfluxDB.</p>
+    InfluxDBv3Core(crate::types::InfluxDBv3CoreParameters),
+    /// <p>All the customer-modifiable InfluxDB v3 Enterprise parameters in Timestream for InfluxDB.</p>
+    InfluxDBv3Enterprise(crate::types::InfluxDBv3EnterpriseParameters),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -17,7 +21,6 @@ pub enum Parameters {
     Unknown,
 }
 impl Parameters {
-    #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`InfluxDBv2`](crate::types::Parameters::InfluxDBv2), extracting the inner [`InfluxDBv2Parameters`](crate::types::InfluxDBv2Parameters).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_influx_dbv2(&self) -> ::std::result::Result<&crate::types::InfluxDBv2Parameters, &Self> {
@@ -30,6 +33,32 @@ impl Parameters {
     /// Returns true if this is a [`InfluxDBv2`](crate::types::Parameters::InfluxDBv2).
     pub fn is_influx_dbv2(&self) -> bool {
         self.as_influx_dbv2().is_ok()
+    }
+    /// Tries to convert the enum instance into [`InfluxDBv3Core`](crate::types::Parameters::InfluxDBv3Core), extracting the inner [`InfluxDBv3CoreParameters`](crate::types::InfluxDBv3CoreParameters).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_influx_dbv3_core(&self) -> ::std::result::Result<&crate::types::InfluxDBv3CoreParameters, &Self> {
+        if let Parameters::InfluxDBv3Core(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`InfluxDBv3Core`](crate::types::Parameters::InfluxDBv3Core).
+    pub fn is_influx_dbv3_core(&self) -> bool {
+        self.as_influx_dbv3_core().is_ok()
+    }
+    /// Tries to convert the enum instance into [`InfluxDBv3Enterprise`](crate::types::Parameters::InfluxDBv3Enterprise), extracting the inner [`InfluxDBv3EnterpriseParameters`](crate::types::InfluxDBv3EnterpriseParameters).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_influx_dbv3_enterprise(&self) -> ::std::result::Result<&crate::types::InfluxDBv3EnterpriseParameters, &Self> {
+        if let Parameters::InfluxDBv3Enterprise(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`InfluxDBv3Enterprise`](crate::types::Parameters::InfluxDBv3Enterprise).
+    pub fn is_influx_dbv3_enterprise(&self) -> bool {
+        self.as_influx_dbv3_enterprise().is_ok()
     }
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {

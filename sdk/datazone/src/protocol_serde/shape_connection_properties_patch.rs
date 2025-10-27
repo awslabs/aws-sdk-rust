@@ -40,6 +40,18 @@ pub fn ser_connection_properties_patch(
             crate::protocol_serde::shape_s3_properties_patch::ser_s3_properties_patch(&mut object_6, inner)?;
             object_6.finish();
         }
+        crate::types::ConnectionPropertiesPatch::AmazonQProperties(inner) => {
+            #[allow(unused_mut)]
+            let mut object_7 = object_5.key("amazonQProperties").start_object();
+            crate::protocol_serde::shape_amazon_q_properties_patch::ser_amazon_q_properties_patch(&mut object_7, inner)?;
+            object_7.finish();
+        }
+        crate::types::ConnectionPropertiesPatch::MlflowProperties(inner) => {
+            #[allow(unused_mut)]
+            let mut object_8 = object_5.key("mlflowProperties").start_object();
+            crate::protocol_serde::shape_mlflow_properties_patch::ser_mlflow_properties_patch(&mut object_8, inner)?;
+            object_8.finish();
+        }
         crate::types::ConnectionPropertiesPatch::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "ConnectionPropertiesPatch",

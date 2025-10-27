@@ -9,6 +9,10 @@ pub struct CreateOauth2CredentialProviderOutput {
     pub name: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the OAuth2 credential provider.</p>
     pub credential_provider_arn: ::std::string::String,
+    /// <p>Callback URL to register on the OAuth2 credential provider as an allowed callback URL. This URL is where the OAuth2 authorization server redirects users after they complete the authorization flow.</p>
+    pub callback_url: ::std::option::Option<::std::string::String>,
+    /// <p>Contains the output configuration for an OAuth2 provider.</p>
+    pub oauth2_provider_config_output: ::std::option::Option<crate::types::Oauth2ProviderConfigOutput>,
     _request_id: Option<String>,
 }
 impl CreateOauth2CredentialProviderOutput {
@@ -25,6 +29,14 @@ impl CreateOauth2CredentialProviderOutput {
     pub fn credential_provider_arn(&self) -> &str {
         use std::ops::Deref;
         self.credential_provider_arn.deref()
+    }
+    /// <p>Callback URL to register on the OAuth2 credential provider as an allowed callback URL. This URL is where the OAuth2 authorization server redirects users after they complete the authorization flow.</p>
+    pub fn callback_url(&self) -> ::std::option::Option<&str> {
+        self.callback_url.as_deref()
+    }
+    /// <p>Contains the output configuration for an OAuth2 provider.</p>
+    pub fn oauth2_provider_config_output(&self) -> ::std::option::Option<&crate::types::Oauth2ProviderConfigOutput> {
+        self.oauth2_provider_config_output.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateOauth2CredentialProviderOutput {
@@ -46,6 +58,8 @@ pub struct CreateOauth2CredentialProviderOutputBuilder {
     pub(crate) client_secret_arn: ::std::option::Option<crate::types::Secret>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) credential_provider_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) callback_url: ::std::option::Option<::std::string::String>,
+    pub(crate) oauth2_provider_config_output: ::std::option::Option<crate::types::Oauth2ProviderConfigOutput>,
     _request_id: Option<String>,
 }
 impl CreateOauth2CredentialProviderOutputBuilder {
@@ -94,6 +108,34 @@ impl CreateOauth2CredentialProviderOutputBuilder {
     pub fn get_credential_provider_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.credential_provider_arn
     }
+    /// <p>Callback URL to register on the OAuth2 credential provider as an allowed callback URL. This URL is where the OAuth2 authorization server redirects users after they complete the authorization flow.</p>
+    pub fn callback_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.callback_url = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Callback URL to register on the OAuth2 credential provider as an allowed callback URL. This URL is where the OAuth2 authorization server redirects users after they complete the authorization flow.</p>
+    pub fn set_callback_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.callback_url = input;
+        self
+    }
+    /// <p>Callback URL to register on the OAuth2 credential provider as an allowed callback URL. This URL is where the OAuth2 authorization server redirects users after they complete the authorization flow.</p>
+    pub fn get_callback_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.callback_url
+    }
+    /// <p>Contains the output configuration for an OAuth2 provider.</p>
+    pub fn oauth2_provider_config_output(mut self, input: crate::types::Oauth2ProviderConfigOutput) -> Self {
+        self.oauth2_provider_config_output = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains the output configuration for an OAuth2 provider.</p>
+    pub fn set_oauth2_provider_config_output(mut self, input: ::std::option::Option<crate::types::Oauth2ProviderConfigOutput>) -> Self {
+        self.oauth2_provider_config_output = input;
+        self
+    }
+    /// <p>Contains the output configuration for an OAuth2 provider.</p>
+    pub fn get_oauth2_provider_config_output(&self) -> &::std::option::Option<crate::types::Oauth2ProviderConfigOutput> {
+        &self.oauth2_provider_config_output
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -128,6 +170,8 @@ impl CreateOauth2CredentialProviderOutputBuilder {
                         "credential_provider_arn was not specified but it is required when building CreateOauth2CredentialProviderOutput",
                     )
                 })?,
+                callback_url: self.callback_url,
+                oauth2_provider_config_output: self.oauth2_provider_config_output,
                 _request_id: self._request_id,
             },
         )

@@ -11,10 +11,10 @@ pub struct DashboardVersionDefinition {
     /// <p>An array of calculated field definitions for the dashboard.</p>
     pub calculated_fields: ::std::option::Option<::std::vec::Vec<crate::types::CalculatedField>>,
     /// <p>The parameter declarations for a dashboard. Parameters are named variables that can transfer a value for use by an action or an object.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/parameters-in-quicksight.html">Parameters in Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/parameters-in-quicksight.html">Parameters in Amazon Quick Sight</a> in the <i>Amazon Quick Suite User Guide</i>.</p>
     pub parameter_declarations: ::std::option::Option<::std::vec::Vec<crate::types::ParameterDeclaration>>,
     /// <p>The filter definitions for a dashboard.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/adding-a-filter.html">Filtering Data in Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/adding-a-filter.html">Filtering Data in Amazon Quick Sight</a> in the <i>Amazon Quick Suite User Guide</i>.</p>
     pub filter_groups: ::std::option::Option<::std::vec::Vec<crate::types::FilterGroup>>,
     /// <p>An array of dashboard-level column configurations. Column configurations are used to set the default formatting for a column that is used throughout a dashboard.</p>
     pub column_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ColumnConfiguration>>,
@@ -44,14 +44,14 @@ impl DashboardVersionDefinition {
         self.calculated_fields.as_deref().unwrap_or_default()
     }
     /// <p>The parameter declarations for a dashboard. Parameters are named variables that can transfer a value for use by an action or an object.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/parameters-in-quicksight.html">Parameters in Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/parameters-in-quicksight.html">Parameters in Amazon Quick Sight</a> in the <i>Amazon Quick Suite User Guide</i>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameter_declarations.is_none()`.
     pub fn parameter_declarations(&self) -> &[crate::types::ParameterDeclaration] {
         self.parameter_declarations.as_deref().unwrap_or_default()
     }
     /// <p>The filter definitions for a dashboard.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/adding-a-filter.html">Filtering Data in Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/adding-a-filter.html">Filtering Data in Amazon Quick Sight</a> in the <i>Amazon Quick Suite User Guide</i>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filter_groups.is_none()`.
     pub fn filter_groups(&self) -> &[crate::types::FilterGroup] {
@@ -168,7 +168,7 @@ impl DashboardVersionDefinitionBuilder {
     /// To override the contents of this collection use [`set_parameter_declarations`](Self::set_parameter_declarations).
     ///
     /// <p>The parameter declarations for a dashboard. Parameters are named variables that can transfer a value for use by an action or an object.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/parameters-in-quicksight.html">Parameters in Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/parameters-in-quicksight.html">Parameters in Amazon Quick Sight</a> in the <i>Amazon Quick Suite User Guide</i>.</p>
     pub fn parameter_declarations(mut self, input: crate::types::ParameterDeclaration) -> Self {
         let mut v = self.parameter_declarations.unwrap_or_default();
         v.push(input);
@@ -176,13 +176,13 @@ impl DashboardVersionDefinitionBuilder {
         self
     }
     /// <p>The parameter declarations for a dashboard. Parameters are named variables that can transfer a value for use by an action or an object.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/parameters-in-quicksight.html">Parameters in Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/parameters-in-quicksight.html">Parameters in Amazon Quick Sight</a> in the <i>Amazon Quick Suite User Guide</i>.</p>
     pub fn set_parameter_declarations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ParameterDeclaration>>) -> Self {
         self.parameter_declarations = input;
         self
     }
     /// <p>The parameter declarations for a dashboard. Parameters are named variables that can transfer a value for use by an action or an object.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/parameters-in-quicksight.html">Parameters in Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/parameters-in-quicksight.html">Parameters in Amazon Quick Sight</a> in the <i>Amazon Quick Suite User Guide</i>.</p>
     pub fn get_parameter_declarations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterDeclaration>> {
         &self.parameter_declarations
     }
@@ -191,7 +191,7 @@ impl DashboardVersionDefinitionBuilder {
     /// To override the contents of this collection use [`set_filter_groups`](Self::set_filter_groups).
     ///
     /// <p>The filter definitions for a dashboard.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/adding-a-filter.html">Filtering Data in Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/adding-a-filter.html">Filtering Data in Amazon Quick Sight</a> in the <i>Amazon Quick Suite User Guide</i>.</p>
     pub fn filter_groups(mut self, input: crate::types::FilterGroup) -> Self {
         let mut v = self.filter_groups.unwrap_or_default();
         v.push(input);
@@ -199,13 +199,13 @@ impl DashboardVersionDefinitionBuilder {
         self
     }
     /// <p>The filter definitions for a dashboard.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/adding-a-filter.html">Filtering Data in Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/adding-a-filter.html">Filtering Data in Amazon Quick Sight</a> in the <i>Amazon Quick Suite User Guide</i>.</p>
     pub fn set_filter_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FilterGroup>>) -> Self {
         self.filter_groups = input;
         self
     }
     /// <p>The filter definitions for a dashboard.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/adding-a-filter.html">Filtering Data in Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/adding-a-filter.html">Filtering Data in Amazon Quick Sight</a> in the <i>Amazon Quick Suite User Guide</i>.</p>
     pub fn get_filter_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FilterGroup>> {
         &self.filter_groups
     }

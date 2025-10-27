@@ -803,6 +803,12 @@ pub(crate) mod shape_add_to_project_member_pool_policy_grant_detail;
 
 pub(crate) mod shape_aggregation_output;
 
+pub(crate) mod shape_amazon_q_properties_input;
+
+pub(crate) mod shape_amazon_q_properties_output;
+
+pub(crate) mod shape_amazon_q_properties_patch;
+
 pub(crate) mod shape_asset_filter_summary;
 
 pub(crate) mod shape_asset_listing;
@@ -942,6 +948,12 @@ pub(crate) mod shape_listing_revision_input;
 pub(crate) mod shape_metadata_form_enforcement_detail;
 
 pub(crate) mod shape_metadata_generation_run_item;
+
+pub(crate) mod shape_mlflow_properties_input;
+
+pub(crate) mod shape_mlflow_properties_output;
+
+pub(crate) mod shape_mlflow_properties_patch;
 
 pub(crate) mod shape_notification_output;
 

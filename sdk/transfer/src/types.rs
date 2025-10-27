@@ -111,6 +111,10 @@ pub use crate::types::_profile_type::ProfileType;
 
 pub use crate::types::_listed_profile::ListedProfile;
 
+pub use crate::types::_update_connector_egress_config::UpdateConnectorEgressConfig;
+
+pub use crate::types::_update_connector_vpc_lattice_egress_config::UpdateConnectorVpcLatticeEgressConfig;
+
 pub use crate::types::_sftp_connector_config::SftpConnectorConfig;
 
 pub use crate::types::_as2_connector_config::As2ConnectorConfig;
@@ -128,6 +132,18 @@ pub use crate::types::_encryption_alg::EncryptionAlg;
 pub use crate::types::_compression_enum::CompressionEnum;
 
 pub use crate::types::_described_connector::DescribedConnector;
+
+pub use crate::types::_connector_status::ConnectorStatus;
+
+pub use crate::types::_connector_egress_type::ConnectorEgressType;
+
+pub use crate::types::_described_connector_egress_config::DescribedConnectorEgressConfig;
+
+pub use crate::types::_described_connector_vpc_lattice_egress_config::DescribedConnectorVpcLatticeEgressConfig;
+
+pub use crate::types::_connector_egress_config::ConnectorEgressConfig;
+
+pub use crate::types::_connector_vpc_lattice_egress_config::ConnectorVpcLatticeEgressConfig;
 
 pub use crate::types::_listed_connector::ListedConnector;
 
@@ -213,7 +229,15 @@ mod _certificate_usage_type;
 
 mod _compression_enum;
 
+mod _connector_egress_config;
+
+mod _connector_egress_type;
+
 mod _connector_file_transfer_result;
+
+mod _connector_status;
+
+mod _connector_vpc_lattice_egress_config;
 
 mod _copy_step_details;
 
@@ -234,6 +258,10 @@ mod _described_agreement;
 mod _described_certificate;
 
 mod _described_connector;
+
+mod _described_connector_egress_config;
+
+mod _described_connector_vpc_lattice_egress_config;
 
 mod _described_execution;
 
@@ -378,6 +406,10 @@ mod _tag_step_details;
 mod _tls_session_resumption_mode;
 
 mod _transfer_table_status;
+
+mod _update_connector_egress_config;
+
+mod _update_connector_vpc_lattice_egress_config;
 
 mod _update_web_app_identity_center_config;
 

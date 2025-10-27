@@ -21,6 +21,10 @@ pub struct UpdateBucketInput {
     pub readonly_access_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An object that describes the access log configuration for the bucket.</p>
     pub access_log_config: ::std::option::Option<crate::types::BucketAccessLogConfig>,
+    /// <p>Sets the cross-origin resource sharing (CORS) configuration for your bucket. If a CORS configuration exists, it is replaced with the specified configuration. For AWS CLI operations, this parameter can also be passed as a file. For more information, see <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/configure-cors.html">Configuring cross-origin resource sharing (CORS)</a>.</p><note>
+    /// <p>CORS information is only returned in a response when you update the CORS policy.</p>
+    /// </note>
+    pub cors: ::std::option::Option<crate::types::BucketCorsConfig>,
 }
 impl UpdateBucketInput {
     /// <p>The name of the bucket to update.</p>
@@ -53,6 +57,12 @@ impl UpdateBucketInput {
     pub fn access_log_config(&self) -> ::std::option::Option<&crate::types::BucketAccessLogConfig> {
         self.access_log_config.as_ref()
     }
+    /// <p>Sets the cross-origin resource sharing (CORS) configuration for your bucket. If a CORS configuration exists, it is replaced with the specified configuration. For AWS CLI operations, this parameter can also be passed as a file. For more information, see <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/configure-cors.html">Configuring cross-origin resource sharing (CORS)</a>.</p><note>
+    /// <p>CORS information is only returned in a response when you update the CORS policy.</p>
+    /// </note>
+    pub fn cors(&self) -> ::std::option::Option<&crate::types::BucketCorsConfig> {
+        self.cors.as_ref()
+    }
 }
 impl UpdateBucketInput {
     /// Creates a new builder-style object to manufacture [`UpdateBucketInput`](crate::operation::update_bucket::UpdateBucketInput).
@@ -70,6 +80,7 @@ pub struct UpdateBucketInputBuilder {
     pub(crate) versioning: ::std::option::Option<::std::string::String>,
     pub(crate) readonly_access_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) access_log_config: ::std::option::Option<crate::types::BucketAccessLogConfig>,
+    pub(crate) cors: ::std::option::Option<crate::types::BucketCorsConfig>,
 }
 impl UpdateBucketInputBuilder {
     /// <p>The name of the bucket to update.</p>
@@ -173,6 +184,26 @@ impl UpdateBucketInputBuilder {
     pub fn get_access_log_config(&self) -> &::std::option::Option<crate::types::BucketAccessLogConfig> {
         &self.access_log_config
     }
+    /// <p>Sets the cross-origin resource sharing (CORS) configuration for your bucket. If a CORS configuration exists, it is replaced with the specified configuration. For AWS CLI operations, this parameter can also be passed as a file. For more information, see <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/configure-cors.html">Configuring cross-origin resource sharing (CORS)</a>.</p><note>
+    /// <p>CORS information is only returned in a response when you update the CORS policy.</p>
+    /// </note>
+    pub fn cors(mut self, input: crate::types::BucketCorsConfig) -> Self {
+        self.cors = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Sets the cross-origin resource sharing (CORS) configuration for your bucket. If a CORS configuration exists, it is replaced with the specified configuration. For AWS CLI operations, this parameter can also be passed as a file. For more information, see <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/configure-cors.html">Configuring cross-origin resource sharing (CORS)</a>.</p><note>
+    /// <p>CORS information is only returned in a response when you update the CORS policy.</p>
+    /// </note>
+    pub fn set_cors(mut self, input: ::std::option::Option<crate::types::BucketCorsConfig>) -> Self {
+        self.cors = input;
+        self
+    }
+    /// <p>Sets the cross-origin resource sharing (CORS) configuration for your bucket. If a CORS configuration exists, it is replaced with the specified configuration. For AWS CLI operations, this parameter can also be passed as a file. For more information, see <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/configure-cors.html">Configuring cross-origin resource sharing (CORS)</a>.</p><note>
+    /// <p>CORS information is only returned in a response when you update the CORS policy.</p>
+    /// </note>
+    pub fn get_cors(&self) -> &::std::option::Option<crate::types::BucketCorsConfig> {
+        &self.cors
+    }
     /// Consumes the builder and constructs a [`UpdateBucketInput`](crate::operation::update_bucket::UpdateBucketInput).
     pub fn build(
         self,
@@ -183,6 +214,7 @@ impl UpdateBucketInputBuilder {
             versioning: self.versioning,
             readonly_access_accounts: self.readonly_access_accounts,
             access_log_config: self.access_log_config,
+            cors: self.cors,
         })
     }
 }

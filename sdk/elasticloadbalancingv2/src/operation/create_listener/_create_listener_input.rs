@@ -33,7 +33,7 @@ pub struct CreateListenerInput {
     pub alpn_policy: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The tags to assign to the listener.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    /// <p>The mutual authentication configuration information.</p>
+    /// <p>\[HTTPS listeners\] The mutual authentication configuration information.</p>
     pub mutual_authentication: ::std::option::Option<crate::types::MutualAuthenticationAttributes>,
 }
 impl CreateListenerInput {
@@ -91,7 +91,7 @@ impl CreateListenerInput {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
-    /// <p>The mutual authentication configuration information.</p>
+    /// <p>\[HTTPS listeners\] The mutual authentication configuration information.</p>
     pub fn mutual_authentication(&self) -> ::std::option::Option<&crate::types::MutualAuthenticationAttributes> {
         self.mutual_authentication.as_ref()
     }
@@ -297,17 +297,17 @@ impl CreateListenerInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
-    /// <p>The mutual authentication configuration information.</p>
+    /// <p>\[HTTPS listeners\] The mutual authentication configuration information.</p>
     pub fn mutual_authentication(mut self, input: crate::types::MutualAuthenticationAttributes) -> Self {
         self.mutual_authentication = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The mutual authentication configuration information.</p>
+    /// <p>\[HTTPS listeners\] The mutual authentication configuration information.</p>
     pub fn set_mutual_authentication(mut self, input: ::std::option::Option<crate::types::MutualAuthenticationAttributes>) -> Self {
         self.mutual_authentication = input;
         self
     }
-    /// <p>The mutual authentication configuration information.</p>
+    /// <p>\[HTTPS listeners\] The mutual authentication configuration information.</p>
     pub fn get_mutual_authentication(&self) -> &::std::option::Option<crate::types::MutualAuthenticationAttributes> {
         &self.mutual_authentication
     }

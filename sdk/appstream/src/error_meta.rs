@@ -263,6 +263,53 @@ impl From<crate::operation::associate_fleet::AssociateFleetError> for Error {
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::associate_software_to_image_builder::AssociateSoftwareToImageBuilderError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::associate_software_to_image_builder::AssociateSoftwareToImageBuilderError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::associate_software_to_image_builder::AssociateSoftwareToImageBuilderError> for Error {
+    fn from(err: crate::operation::associate_software_to_image_builder::AssociateSoftwareToImageBuilderError) -> Self {
+        match err {
+            crate::operation::associate_software_to_image_builder::AssociateSoftwareToImageBuilderError::ConcurrentModificationException(inner) => {
+                Error::ConcurrentModificationException(inner)
+            }
+            crate::operation::associate_software_to_image_builder::AssociateSoftwareToImageBuilderError::IncompatibleImageException(inner) => {
+                Error::IncompatibleImageException(inner)
+            }
+            crate::operation::associate_software_to_image_builder::AssociateSoftwareToImageBuilderError::InvalidParameterCombinationException(
+                inner,
+            ) => Error::InvalidParameterCombinationException(inner),
+            crate::operation::associate_software_to_image_builder::AssociateSoftwareToImageBuilderError::OperationNotPermittedException(inner) => {
+                Error::OperationNotPermittedException(inner)
+            }
+            crate::operation::associate_software_to_image_builder::AssociateSoftwareToImageBuilderError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::associate_software_to_image_builder::AssociateSoftwareToImageBuilderError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_associate_user_stack::BatchAssociateUserStackError, R>>
     for Error
 where
@@ -1423,6 +1470,39 @@ impl From<crate::operation::describe_applications::DescribeApplicationsError> fo
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_app_license_usage::DescribeAppLicenseUsageError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_app_license_usage::DescribeAppLicenseUsageError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_app_license_usage::DescribeAppLicenseUsageError> for Error {
+    fn from(err: crate::operation::describe_app_license_usage::DescribeAppLicenseUsageError) -> Self {
+        match err {
+            crate::operation::describe_app_license_usage::DescribeAppLicenseUsageError::InvalidParameterCombinationException(inner) => {
+                Error::InvalidParameterCombinationException(inner)
+            }
+            crate::operation::describe_app_license_usage::DescribeAppLicenseUsageError::OperationNotPermittedException(inner) => {
+                Error::OperationNotPermittedException(inner)
+            }
+            crate::operation::describe_app_license_usage::DescribeAppLicenseUsageError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_app_license_usage::DescribeAppLicenseUsageError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_directory_configs::DescribeDirectoryConfigsError, R>>
     for Error
 where
@@ -1601,6 +1681,40 @@ impl From<crate::operation::describe_sessions::DescribeSessionsError> for Error 
                 Error::InvalidParameterCombinationException(inner)
             }
             crate::operation::describe_sessions::DescribeSessionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_software_associations::DescribeSoftwareAssociationsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_software_associations::DescribeSoftwareAssociationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_software_associations::DescribeSoftwareAssociationsError> for Error {
+    fn from(err: crate::operation::describe_software_associations::DescribeSoftwareAssociationsError) -> Self {
+        match err {
+            crate::operation::describe_software_associations::DescribeSoftwareAssociationsError::OperationNotPermittedException(inner) => {
+                Error::OperationNotPermittedException(inner)
+            }
+            crate::operation::describe_software_associations::DescribeSoftwareAssociationsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_software_associations::DescribeSoftwareAssociationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1915,6 +2029,42 @@ impl From<crate::operation::disassociate_fleet::DisassociateFleetError> for Erro
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::disassociate_software_from_image_builder::DisassociateSoftwareFromImageBuilderError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::disassociate_software_from_image_builder::DisassociateSoftwareFromImageBuilderError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::disassociate_software_from_image_builder::DisassociateSoftwareFromImageBuilderError> for Error {
+    fn from(err: crate::operation::disassociate_software_from_image_builder::DisassociateSoftwareFromImageBuilderError) -> Self {
+        match err {
+            crate::operation::disassociate_software_from_image_builder::DisassociateSoftwareFromImageBuilderError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::operation::disassociate_software_from_image_builder::DisassociateSoftwareFromImageBuilderError::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
+            crate::operation::disassociate_software_from_image_builder::DisassociateSoftwareFromImageBuilderError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::operation::disassociate_software_from_image_builder::DisassociateSoftwareFromImageBuilderError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::disassociate_software_from_image_builder::DisassociateSoftwareFromImageBuilderError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::enable_user::EnableUserError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2164,6 +2314,41 @@ impl From<crate::operation::start_image_builder::StartImageBuilderError> for Err
                 Error::ResourceNotFoundException(inner)
             }
             crate::operation::start_image_builder::StartImageBuilderError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::start_software_deployment_to_image_builder::StartSoftwareDeploymentToImageBuilderError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::start_software_deployment_to_image_builder::StartSoftwareDeploymentToImageBuilderError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_software_deployment_to_image_builder::StartSoftwareDeploymentToImageBuilderError> for Error {
+    fn from(err: crate::operation::start_software_deployment_to_image_builder::StartSoftwareDeploymentToImageBuilderError) -> Self {
+        match err {
+            crate::operation::start_software_deployment_to_image_builder::StartSoftwareDeploymentToImageBuilderError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::operation::start_software_deployment_to_image_builder::StartSoftwareDeploymentToImageBuilderError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::operation::start_software_deployment_to_image_builder::StartSoftwareDeploymentToImageBuilderError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::start_software_deployment_to_image_builder::StartSoftwareDeploymentToImageBuilderError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

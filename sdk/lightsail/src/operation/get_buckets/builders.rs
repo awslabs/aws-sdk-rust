@@ -157,4 +157,24 @@ impl GetBucketsFluentBuilder {
     pub fn get_include_connected_resources(&self) -> &::std::option::Option<bool> {
         self.inner.get_include_connected_resources()
     }
+    /// <p>A Boolean value that indicates whether to include Lightsail bucket CORS configuration in the response. For more information, see <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/configure-cors.html">Configuring cross-origin resource sharing (CORS)</a>.</p><note>
+    /// <p>This parameter is only supported when getting a single bucket with <code>bucketName</code> specified. The default value for this parameter is <code>False</code>.</p>
+    /// </note>
+    pub fn include_cors(mut self, input: bool) -> Self {
+        self.inner = self.inner.include_cors(input);
+        self
+    }
+    /// <p>A Boolean value that indicates whether to include Lightsail bucket CORS configuration in the response. For more information, see <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/configure-cors.html">Configuring cross-origin resource sharing (CORS)</a>.</p><note>
+    /// <p>This parameter is only supported when getting a single bucket with <code>bucketName</code> specified. The default value for this parameter is <code>False</code>.</p>
+    /// </note>
+    pub fn set_include_cors(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_include_cors(input);
+        self
+    }
+    /// <p>A Boolean value that indicates whether to include Lightsail bucket CORS configuration in the response. For more information, see <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/configure-cors.html">Configuring cross-origin resource sharing (CORS)</a>.</p><note>
+    /// <p>This parameter is only supported when getting a single bucket with <code>bucketName</code> specified. The default value for this parameter is <code>False</code>.</p>
+    /// </note>
+    pub fn get_include_cors(&self) -> &::std::option::Option<bool> {
+        self.inner.get_include_cors()
+    }
 }

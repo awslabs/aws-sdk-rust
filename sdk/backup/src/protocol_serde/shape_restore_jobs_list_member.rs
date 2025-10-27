@@ -35,6 +35,20 @@ where
                                     .transpose()?,
                             );
                         }
+                        "SourceResourceArn" => {
+                            builder = builder.set_source_resource_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "BackupVaultArn" => {
+                            builder = builder.set_backup_vault_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "CreationDate" => {
                             builder = builder.set_creation_date(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),

@@ -207,6 +207,13 @@ pub(crate) fn de_describe_backup_job(
                         ::aws_smithy_types::date_time::Format::EpochSeconds,
                     )?);
                 }
+                "EncryptionKeyArn" => {
+                    builder = builder.set_encryption_key_arn(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "ExpectedCompletionDate" => {
                     builder = builder.set_expected_completion_date(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                         tokens.next(),
@@ -225,6 +232,9 @@ pub(crate) fn de_describe_backup_job(
                         tokens.next(),
                         ::aws_smithy_types::date_time::Format::EpochSeconds,
                     )?);
+                }
+                "IsEncrypted" => {
+                    builder = builder.set_is_encrypted(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
                 "IsParent" => {
                     builder = builder.set_is_parent(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
@@ -264,6 +274,9 @@ pub(crate) fn de_describe_backup_job(
                             .transpose()?,
                     );
                 }
+                "RecoveryPointLifecycle" => {
+                    builder = builder.set_recovery_point_lifecycle(crate::protocol_serde::shape_lifecycle::de_lifecycle(tokens)?);
+                }
                 "ResourceArn" => {
                     builder = builder.set_resource_arn(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -300,6 +313,20 @@ pub(crate) fn de_describe_backup_job(
                 }
                 "StatusMessage" => {
                     builder = builder.set_status_message(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "VaultLockState" => {
+                    builder = builder.set_vault_lock_state(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "VaultType" => {
+                    builder = builder.set_vault_type(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,

@@ -37,6 +37,10 @@ pub use crate::types::_list_resources_associated_to_custom_line_item_filter::Lis
 
 pub use crate::types::_custom_line_item_version_list_element::CustomLineItemVersionListElement;
 
+pub use crate::types::_presentation_object::PresentationObject;
+
+pub use crate::types::_computation_rule_enum::ComputationRuleEnum;
+
 pub use crate::types::_currency_code::CurrencyCode;
 
 pub use crate::types::_list_custom_line_item_charge_details::ListCustomLineItemChargeDetails;
@@ -139,6 +143,8 @@ mod _billing_period_range;
 
 mod _computation_preference;
 
+mod _computation_rule_enum;
+
 mod _conflict_exception_reason;
 
 mod _create_free_tier_config;
@@ -204,6 +210,8 @@ mod _list_resources_associated_to_custom_line_item_filter;
 mod _list_resources_associated_to_custom_line_item_response_element;
 
 mod _match_option;
+
+mod _presentation_object;
 
 mod _pricing_plan_list_element;
 

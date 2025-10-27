@@ -35,6 +35,21 @@ pub fn de_delete_automated_reasoning_policy_http_error(
             }
             tmp
         }),
+        "ConflictException" => crate::operation::delete_automated_reasoning_policy::DeleteAutomatedReasoningPolicyError::ConflictException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
+                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::delete_automated_reasoning_policy::DeleteAutomatedReasoningPolicyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "InternalServerException" => {
             crate::operation::delete_automated_reasoning_policy::DeleteAutomatedReasoningPolicyError::InternalServerException({
                 #[allow(unused_mut)]
@@ -42,6 +57,23 @@ pub fn de_delete_automated_reasoning_policy_http_error(
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
                     output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::delete_automated_reasoning_policy::DeleteAutomatedReasoningPolicyError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ResourceInUseException" => {
+            crate::operation::delete_automated_reasoning_policy::DeleteAutomatedReasoningPolicyError::ResourceInUseException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ResourceInUseExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_resource_in_use_exception::de_resource_in_use_exception_json_err(_response_body, output)
                         .map_err(crate::operation::delete_automated_reasoning_policy::DeleteAutomatedReasoningPolicyError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()

@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListNamespacesInput {
-    /// <p>The ID for the Amazon Web Services account that contains the QuickSight namespaces that you want to list.</p>
+    /// <p>The ID for the Amazon Web Services account that contains the Quick Sight namespaces that you want to list.</p>
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique pagination token that can be used in a subsequent request. You will receive a pagination token in the response body of a previous <code>ListNameSpaces</code> API call if there is more data that can be returned. To receive the data, make another <code>ListNamespaces</code> API call with the returned token to retrieve the next page of data. Each token is valid for 24 hours. If you try to make a <code>ListNamespaces</code> API call with an expired token, you will receive a <code>HTTP 400 InvalidNextTokenException</code> error.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -11,7 +11,7 @@ pub struct ListNamespacesInput {
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListNamespacesInput {
-    /// <p>The ID for the Amazon Web Services account that contains the QuickSight namespaces that you want to list.</p>
+    /// <p>The ID for the Amazon Web Services account that contains the Quick Sight namespaces that you want to list.</p>
     pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
@@ -40,18 +40,18 @@ pub struct ListNamespacesInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
 }
 impl ListNamespacesInputBuilder {
-    /// <p>The ID for the Amazon Web Services account that contains the QuickSight namespaces that you want to list.</p>
+    /// <p>The ID for the Amazon Web Services account that contains the Quick Sight namespaces that you want to list.</p>
     /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID for the Amazon Web Services account that contains the QuickSight namespaces that you want to list.</p>
+    /// <p>The ID for the Amazon Web Services account that contains the Quick Sight namespaces that you want to list.</p>
     pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
-    /// <p>The ID for the Amazon Web Services account that contains the QuickSight namespaces that you want to list.</p>
+    /// <p>The ID for the Amazon Web Services account that contains the Quick Sight namespaces that you want to list.</p>
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.aws_account_id
     }

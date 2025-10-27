@@ -27,6 +27,10 @@ where
                         "glueConnection" => {
                             builder = builder.set_glue_connection(crate::protocol_serde::shape_glue_connection::de_glue_connection(tokens)?);
                         }
+                        "enableTrustedIdentityPropagation" => {
+                            builder = builder
+                                .set_enable_trusted_identity_propagation(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
                         "host" => {
                             builder = builder.set_host(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

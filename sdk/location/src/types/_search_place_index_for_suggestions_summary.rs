@@ -97,7 +97,7 @@ impl ::std::fmt::Debug for SearchPlaceIndexForSuggestionsSummary {
         formatter.field("max_results", &self.max_results);
         formatter.field("data_source", &self.data_source);
         formatter.field("language", &self.language);
-        formatter.field("filter_categories", &self.filter_categories);
+        formatter.field("filter_categories", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -332,7 +332,7 @@ impl ::std::fmt::Debug for SearchPlaceIndexForSuggestionsSummaryBuilder {
         formatter.field("max_results", &self.max_results);
         formatter.field("data_source", &self.data_source);
         formatter.field("language", &self.language);
-        formatter.field("filter_categories", &self.filter_categories);
+        formatter.field("filter_categories", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

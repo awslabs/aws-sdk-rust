@@ -13,9 +13,16 @@
 /// # let reservationstate = unimplemented!();
 /// match reservationstate {
 ///     ReservationState::Active => { /* ... */ },
+///     ReservationState::Cancelled => { /* ... */ },
+///     ReservationState::Delayed => { /* ... */ },
+///     ReservationState::Expired => { /* ... */ },
+///     ReservationState::Failed => { /* ... */ },
 ///     ReservationState::PaymentFailed => { /* ... */ },
 ///     ReservationState::PaymentPending => { /* ... */ },
+///     ReservationState::Pending => { /* ... */ },
 ///     ReservationState::Retired => { /* ... */ },
+///     ReservationState::Scheduled => { /* ... */ },
+///     ReservationState::Unsupported => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -47,11 +54,25 @@ pub enum ReservationState {
     #[allow(missing_docs)] // documentation missing in model
     Active,
     #[allow(missing_docs)] // documentation missing in model
+    Cancelled,
+    #[allow(missing_docs)] // documentation missing in model
+    Delayed,
+    #[allow(missing_docs)] // documentation missing in model
+    Expired,
+    #[allow(missing_docs)] // documentation missing in model
+    Failed,
+    #[allow(missing_docs)] // documentation missing in model
     PaymentFailed,
     #[allow(missing_docs)] // documentation missing in model
     PaymentPending,
     #[allow(missing_docs)] // documentation missing in model
+    Pending,
+    #[allow(missing_docs)] // documentation missing in model
     Retired,
+    #[allow(missing_docs)] // documentation missing in model
+    Scheduled,
+    #[allow(missing_docs)] // documentation missing in model
+    Unsupported,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -60,9 +81,16 @@ impl ::std::convert::From<&str> for ReservationState {
     fn from(s: &str) -> Self {
         match s {
             "active" => ReservationState::Active,
+            "cancelled" => ReservationState::Cancelled,
+            "delayed" => ReservationState::Delayed,
+            "expired" => ReservationState::Expired,
+            "failed" => ReservationState::Failed,
             "payment-failed" => ReservationState::PaymentFailed,
             "payment-pending" => ReservationState::PaymentPending,
+            "pending" => ReservationState::Pending,
             "retired" => ReservationState::Retired,
+            "scheduled" => ReservationState::Scheduled,
+            "unsupported" => ReservationState::Unsupported,
             other => ReservationState::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -79,15 +107,34 @@ impl ReservationState {
     pub fn as_str(&self) -> &str {
         match self {
             ReservationState::Active => "active",
+            ReservationState::Cancelled => "cancelled",
+            ReservationState::Delayed => "delayed",
+            ReservationState::Expired => "expired",
+            ReservationState::Failed => "failed",
             ReservationState::PaymentFailed => "payment-failed",
             ReservationState::PaymentPending => "payment-pending",
+            ReservationState::Pending => "pending",
             ReservationState::Retired => "retired",
+            ReservationState::Scheduled => "scheduled",
+            ReservationState::Unsupported => "unsupported",
             ReservationState::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["active", "payment-failed", "payment-pending", "retired"]
+        &[
+            "active",
+            "cancelled",
+            "delayed",
+            "expired",
+            "failed",
+            "payment-failed",
+            "payment-pending",
+            "pending",
+            "retired",
+            "scheduled",
+            "unsupported",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for ReservationState {
@@ -111,9 +158,16 @@ impl ::std::fmt::Display for ReservationState {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ReservationState::Active => write!(f, "active"),
+            ReservationState::Cancelled => write!(f, "cancelled"),
+            ReservationState::Delayed => write!(f, "delayed"),
+            ReservationState::Expired => write!(f, "expired"),
+            ReservationState::Failed => write!(f, "failed"),
             ReservationState::PaymentFailed => write!(f, "payment-failed"),
             ReservationState::PaymentPending => write!(f, "payment-pending"),
+            ReservationState::Pending => write!(f, "pending"),
             ReservationState::Retired => write!(f, "retired"),
+            ReservationState::Scheduled => write!(f, "scheduled"),
+            ReservationState::Unsupported => write!(f, "unsupported"),
             ReservationState::Unknown(value) => write!(f, "{}", value),
         }
     }

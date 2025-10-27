@@ -168,7 +168,7 @@ pub struct GetGlyphsInput {
     /// </ul>
     pub font_stack: ::std::option::Option<::std::string::String>,
     /// <p>A Unicode range of characters to download glyphs for. This must be aligned to multiples of 256.</p>
-    /// <p>Example: <code>0-255.pdf</code></p>
+    /// <p>Example: <code>0-255.pbf</code></p>
     pub font_unicode_range: ::std::option::Option<::std::string::String>,
 }
 impl GetGlyphsInput {
@@ -339,7 +339,7 @@ impl GetGlyphsInput {
         self.font_stack.as_deref()
     }
     /// <p>A Unicode range of characters to download glyphs for. This must be aligned to multiples of 256.</p>
-    /// <p>Example: <code>0-255.pdf</code></p>
+    /// <p>Example: <code>0-255.pbf</code></p>
     pub fn font_unicode_range(&self) -> ::std::option::Option<&str> {
         self.font_unicode_range.as_deref()
     }
@@ -861,20 +861,20 @@ impl GetGlyphsInputBuilder {
         &self.font_stack
     }
     /// <p>A Unicode range of characters to download glyphs for. This must be aligned to multiples of 256.</p>
-    /// <p>Example: <code>0-255.pdf</code></p>
+    /// <p>Example: <code>0-255.pbf</code></p>
     /// This field is required.
     pub fn font_unicode_range(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.font_unicode_range = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A Unicode range of characters to download glyphs for. This must be aligned to multiples of 256.</p>
-    /// <p>Example: <code>0-255.pdf</code></p>
+    /// <p>Example: <code>0-255.pbf</code></p>
     pub fn set_font_unicode_range(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.font_unicode_range = input;
         self
     }
     /// <p>A Unicode range of characters to download glyphs for. This must be aligned to multiples of 256.</p>
-    /// <p>Example: <code>0-255.pdf</code></p>
+    /// <p>Example: <code>0-255.pbf</code></p>
     pub fn get_font_unicode_range(&self) -> &::std::option::Option<::std::string::String> {
         &self.font_unicode_range
     }

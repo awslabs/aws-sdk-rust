@@ -99,6 +99,10 @@ pub struct ApiKeyRestrictions {
     /// <p>No spaces allowed. For example, <code>https://example.com</code>.</p></li>
     /// </ul>
     pub allow_referers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>An optional list of allowed Android applications for which requests must originate from. Requests using this API key from other sources will not be allowed.</p>
+    pub allow_android_apps: ::std::option::Option<::std::vec::Vec<crate::types::AndroidApp>>,
+    /// <p>An optional list of allowed Apple applications for which requests must originate from. Requests using this API key from other sources will not be allowed.</p>
+    pub allow_apple_apps: ::std::option::Option<::std::vec::Vec<crate::types::AppleApp>>,
 }
 impl ApiKeyRestrictions {
     /// <p>A list of allowed actions that an API key resource grants permissions to perform. You must have at least one action for each type of resource. For example, if you have a place resource, you must include at least one place action.</p>
@@ -206,6 +210,18 @@ impl ApiKeyRestrictions {
     pub fn allow_referers(&self) -> &[::std::string::String] {
         self.allow_referers.as_deref().unwrap_or_default()
     }
+    /// <p>An optional list of allowed Android applications for which requests must originate from. Requests using this API key from other sources will not be allowed.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.allow_android_apps.is_none()`.
+    pub fn allow_android_apps(&self) -> &[crate::types::AndroidApp] {
+        self.allow_android_apps.as_deref().unwrap_or_default()
+    }
+    /// <p>An optional list of allowed Apple applications for which requests must originate from. Requests using this API key from other sources will not be allowed.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.allow_apple_apps.is_none()`.
+    pub fn allow_apple_apps(&self) -> &[crate::types::AppleApp] {
+        self.allow_apple_apps.as_deref().unwrap_or_default()
+    }
 }
 impl ApiKeyRestrictions {
     /// Creates a new builder-style object to manufacture [`ApiKeyRestrictions`](crate::types::ApiKeyRestrictions).
@@ -221,6 +237,8 @@ pub struct ApiKeyRestrictionsBuilder {
     pub(crate) allow_actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) allow_resources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) allow_referers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) allow_android_apps: ::std::option::Option<::std::vec::Vec<crate::types::AndroidApp>>,
+    pub(crate) allow_apple_apps: ::std::option::Option<::std::vec::Vec<crate::types::AppleApp>>,
 }
 impl ApiKeyRestrictionsBuilder {
     /// Appends an item to `allow_actions`.
@@ -550,6 +568,46 @@ impl ApiKeyRestrictionsBuilder {
     pub fn get_allow_referers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.allow_referers
     }
+    /// Appends an item to `allow_android_apps`.
+    ///
+    /// To override the contents of this collection use [`set_allow_android_apps`](Self::set_allow_android_apps).
+    ///
+    /// <p>An optional list of allowed Android applications for which requests must originate from. Requests using this API key from other sources will not be allowed.</p>
+    pub fn allow_android_apps(mut self, input: crate::types::AndroidApp) -> Self {
+        let mut v = self.allow_android_apps.unwrap_or_default();
+        v.push(input);
+        self.allow_android_apps = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>An optional list of allowed Android applications for which requests must originate from. Requests using this API key from other sources will not be allowed.</p>
+    pub fn set_allow_android_apps(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AndroidApp>>) -> Self {
+        self.allow_android_apps = input;
+        self
+    }
+    /// <p>An optional list of allowed Android applications for which requests must originate from. Requests using this API key from other sources will not be allowed.</p>
+    pub fn get_allow_android_apps(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AndroidApp>> {
+        &self.allow_android_apps
+    }
+    /// Appends an item to `allow_apple_apps`.
+    ///
+    /// To override the contents of this collection use [`set_allow_apple_apps`](Self::set_allow_apple_apps).
+    ///
+    /// <p>An optional list of allowed Apple applications for which requests must originate from. Requests using this API key from other sources will not be allowed.</p>
+    pub fn allow_apple_apps(mut self, input: crate::types::AppleApp) -> Self {
+        let mut v = self.allow_apple_apps.unwrap_or_default();
+        v.push(input);
+        self.allow_apple_apps = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>An optional list of allowed Apple applications for which requests must originate from. Requests using this API key from other sources will not be allowed.</p>
+    pub fn set_allow_apple_apps(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AppleApp>>) -> Self {
+        self.allow_apple_apps = input;
+        self
+    }
+    /// <p>An optional list of allowed Apple applications for which requests must originate from. Requests using this API key from other sources will not be allowed.</p>
+    pub fn get_allow_apple_apps(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AppleApp>> {
+        &self.allow_apple_apps
+    }
     /// Consumes the builder and constructs a [`ApiKeyRestrictions`](crate::types::ApiKeyRestrictions).
     /// This method will fail if any of the following fields are not set:
     /// - [`allow_actions`](crate::types::builders::ApiKeyRestrictionsBuilder::allow_actions)
@@ -569,6 +627,8 @@ impl ApiKeyRestrictionsBuilder {
                 )
             })?,
             allow_referers: self.allow_referers,
+            allow_android_apps: self.allow_android_apps,
+            allow_apple_apps: self.allow_apple_apps,
         })
     }
 }

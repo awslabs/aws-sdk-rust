@@ -73,6 +73,10 @@ pub use crate::types::_allowed_operators::AllowedOperators;
 
 pub use crate::types::_composite_filter::CompositeFilter;
 
+pub use crate::types::_ocsf_ip_filter::OcsfIpFilter;
+
+pub use crate::types::_ocsf_ip_field::OcsfIpField;
+
 pub use crate::types::_ocsf_map_filter::OcsfMapFilter;
 
 pub use crate::types::_ocsf_map_field::OcsfMapField;
@@ -2870,6 +2874,10 @@ mod _ocsf_date_filter;
 mod _ocsf_finding_filters;
 
 mod _ocsf_finding_identifier;
+
+mod _ocsf_ip_field;
+
+mod _ocsf_ip_filter;
 
 mod _ocsf_map_field;
 

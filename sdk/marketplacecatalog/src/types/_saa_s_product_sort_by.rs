@@ -12,6 +12,7 @@
 /// ```text
 /// # let saasproductsortby = unimplemented!();
 /// match saasproductsortby {
+///     SaaSProductSortBy::DeliveryOptionTypes => { /* ... */ },
 ///     SaaSProductSortBy::EntityId => { /* ... */ },
 ///     SaaSProductSortBy::LastModifiedDate => { /* ... */ },
 ///     SaaSProductSortBy::ProductTitle => { /* ... */ },
@@ -45,6 +46,8 @@
 )]
 pub enum SaaSProductSortBy {
     #[allow(missing_docs)] // documentation missing in model
+    DeliveryOptionTypes,
+    #[allow(missing_docs)] // documentation missing in model
     EntityId,
     #[allow(missing_docs)] // documentation missing in model
     LastModifiedDate,
@@ -59,6 +62,7 @@ pub enum SaaSProductSortBy {
 impl ::std::convert::From<&str> for SaaSProductSortBy {
     fn from(s: &str) -> Self {
         match s {
+            "DeliveryOptionTypes" => SaaSProductSortBy::DeliveryOptionTypes,
             "EntityId" => SaaSProductSortBy::EntityId,
             "LastModifiedDate" => SaaSProductSortBy::LastModifiedDate,
             "ProductTitle" => SaaSProductSortBy::ProductTitle,
@@ -78,6 +82,7 @@ impl SaaSProductSortBy {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            SaaSProductSortBy::DeliveryOptionTypes => "DeliveryOptionTypes",
             SaaSProductSortBy::EntityId => "EntityId",
             SaaSProductSortBy::LastModifiedDate => "LastModifiedDate",
             SaaSProductSortBy::ProductTitle => "ProductTitle",
@@ -87,7 +92,7 @@ impl SaaSProductSortBy {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["EntityId", "LastModifiedDate", "ProductTitle", "Visibility"]
+        &["DeliveryOptionTypes", "EntityId", "LastModifiedDate", "ProductTitle", "Visibility"]
     }
 }
 impl ::std::convert::AsRef<str> for SaaSProductSortBy {
@@ -110,6 +115,7 @@ impl SaaSProductSortBy {
 impl ::std::fmt::Display for SaaSProductSortBy {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            SaaSProductSortBy::DeliveryOptionTypes => write!(f, "DeliveryOptionTypes"),
             SaaSProductSortBy::EntityId => write!(f, "EntityId"),
             SaaSProductSortBy::LastModifiedDate => write!(f, "LastModifiedDate"),
             SaaSProductSortBy::ProductTitle => write!(f, "ProductTitle"),

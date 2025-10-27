@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnonymousUserDashboardEmbeddingConfiguration {
-    /// <p>The dashboard ID for the dashboard that you want the user to see first. This ID is included in the output URL. When the URL in response is accessed, QuickSight renders this dashboard.</p>
+    /// <p>The dashboard ID for the dashboard that you want the user to see first. This ID is included in the output URL. When the URL in response is accessed, Amazon Quick Sight renders this dashboard.</p>
     /// <p>The Amazon Resource Name (ARN) of this dashboard must be included in the <code>AuthorizedResourceArns</code> parameter. Otherwise, the request will fail with <code>InvalidParameterValueException</code>.</p>
     pub initial_dashboard_id: ::std::string::String,
     /// <p>A list of all enabled features of a specified anonymous dashboard.</p>
@@ -15,7 +15,7 @@ pub struct AnonymousUserDashboardEmbeddingConfiguration {
     pub feature_configurations: ::std::option::Option<crate::types::AnonymousUserDashboardFeatureConfigurations>,
 }
 impl AnonymousUserDashboardEmbeddingConfiguration {
-    /// <p>The dashboard ID for the dashboard that you want the user to see first. This ID is included in the output URL. When the URL in response is accessed, QuickSight renders this dashboard.</p>
+    /// <p>The dashboard ID for the dashboard that you want the user to see first. This ID is included in the output URL. When the URL in response is accessed, Amazon Quick Sight renders this dashboard.</p>
     /// <p>The Amazon Resource Name (ARN) of this dashboard must be included in the <code>AuthorizedResourceArns</code> parameter. Otherwise, the request will fail with <code>InvalidParameterValueException</code>.</p>
     pub fn initial_dashboard_id(&self) -> &str {
         use std::ops::Deref;
@@ -55,20 +55,20 @@ pub struct AnonymousUserDashboardEmbeddingConfigurationBuilder {
     pub(crate) feature_configurations: ::std::option::Option<crate::types::AnonymousUserDashboardFeatureConfigurations>,
 }
 impl AnonymousUserDashboardEmbeddingConfigurationBuilder {
-    /// <p>The dashboard ID for the dashboard that you want the user to see first. This ID is included in the output URL. When the URL in response is accessed, QuickSight renders this dashboard.</p>
+    /// <p>The dashboard ID for the dashboard that you want the user to see first. This ID is included in the output URL. When the URL in response is accessed, Amazon Quick Sight renders this dashboard.</p>
     /// <p>The Amazon Resource Name (ARN) of this dashboard must be included in the <code>AuthorizedResourceArns</code> parameter. Otherwise, the request will fail with <code>InvalidParameterValueException</code>.</p>
     /// This field is required.
     pub fn initial_dashboard_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.initial_dashboard_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The dashboard ID for the dashboard that you want the user to see first. This ID is included in the output URL. When the URL in response is accessed, QuickSight renders this dashboard.</p>
+    /// <p>The dashboard ID for the dashboard that you want the user to see first. This ID is included in the output URL. When the URL in response is accessed, Amazon Quick Sight renders this dashboard.</p>
     /// <p>The Amazon Resource Name (ARN) of this dashboard must be included in the <code>AuthorizedResourceArns</code> parameter. Otherwise, the request will fail with <code>InvalidParameterValueException</code>.</p>
     pub fn set_initial_dashboard_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.initial_dashboard_id = input;
         self
     }
-    /// <p>The dashboard ID for the dashboard that you want the user to see first. This ID is included in the output URL. When the URL in response is accessed, QuickSight renders this dashboard.</p>
+    /// <p>The dashboard ID for the dashboard that you want the user to see first. This ID is included in the output URL. When the URL in response is accessed, Amazon Quick Sight renders this dashboard.</p>
     /// <p>The Amazon Resource Name (ARN) of this dashboard must be included in the <code>AuthorizedResourceArns</code> parameter. Otherwise, the request will fail with <code>InvalidParameterValueException</code>.</p>
     pub fn get_initial_dashboard_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.initial_dashboard_id

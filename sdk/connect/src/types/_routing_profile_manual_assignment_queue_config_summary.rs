@@ -10,7 +10,9 @@ pub struct RoutingProfileManualAssignmentQueueConfigSummary {
     pub queue_arn: ::std::string::String,
     /// <p>The name of the queue.</p>
     pub queue_name: ::std::string::String,
-    /// <p>The channels this queue supports. Valid Values: CHAT | TASK | EMAIL</p>
+    /// <p>The channels this queue supports. Valid Values: CHAT | TASK | EMAIL</p><important>
+    /// <p>VOICE is not supported. The information shown below is incorrect. We're working to correct it.</p>
+    /// </important>
     pub channel: crate::types::Channel,
 }
 impl RoutingProfileManualAssignmentQueueConfigSummary {
@@ -29,7 +31,9 @@ impl RoutingProfileManualAssignmentQueueConfigSummary {
         use std::ops::Deref;
         self.queue_name.deref()
     }
-    /// <p>The channels this queue supports. Valid Values: CHAT | TASK | EMAIL</p>
+    /// <p>The channels this queue supports. Valid Values: CHAT | TASK | EMAIL</p><important>
+    /// <p>VOICE is not supported. The information shown below is incorrect. We're working to correct it.</p>
+    /// </important>
     pub fn channel(&self) -> &crate::types::Channel {
         &self.channel
     }
@@ -96,18 +100,24 @@ impl RoutingProfileManualAssignmentQueueConfigSummaryBuilder {
     pub fn get_queue_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.queue_name
     }
-    /// <p>The channels this queue supports. Valid Values: CHAT | TASK | EMAIL</p>
+    /// <p>The channels this queue supports. Valid Values: CHAT | TASK | EMAIL</p><important>
+    /// <p>VOICE is not supported. The information shown below is incorrect. We're working to correct it.</p>
+    /// </important>
     /// This field is required.
     pub fn channel(mut self, input: crate::types::Channel) -> Self {
         self.channel = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The channels this queue supports. Valid Values: CHAT | TASK | EMAIL</p>
+    /// <p>The channels this queue supports. Valid Values: CHAT | TASK | EMAIL</p><important>
+    /// <p>VOICE is not supported. The information shown below is incorrect. We're working to correct it.</p>
+    /// </important>
     pub fn set_channel(mut self, input: ::std::option::Option<crate::types::Channel>) -> Self {
         self.channel = input;
         self
     }
-    /// <p>The channels this queue supports. Valid Values: CHAT | TASK | EMAIL</p>
+    /// <p>The channels this queue supports. Valid Values: CHAT | TASK | EMAIL</p><important>
+    /// <p>VOICE is not supported. The information shown below is incorrect. We're working to correct it.</p>
+    /// </important>
     pub fn get_channel(&self) -> &::std::option::Option<crate::types::Channel> {
         &self.channel
     }

@@ -31,6 +31,11 @@ where
                                 crate::protocol_serde::shape_consolidation_configuration::de_consolidation_configuration(tokens)?,
                             );
                         }
+                        "selfManagedConfiguration" => {
+                            builder = builder.set_self_managed_configuration(
+                                crate::protocol_serde::shape_self_managed_configuration::de_self_managed_configuration(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

@@ -7,6 +7,10 @@ pub struct InvokeCodeInterpreterInput {
     pub code_interpreter_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the code interpreter session to use. This must be an active session created with <code>StartCodeInterpreterSession</code>. If the session has expired or been stopped, the request will fail.</p>
     pub session_id: ::std::option::Option<::std::string::String>,
+    /// <p>The trace identifier for request tracking.</p>
+    pub trace_id: ::std::option::Option<::std::string::String>,
+    /// <p>The parent trace information for distributed tracing.</p>
+    pub trace_parent: ::std::option::Option<::std::string::String>,
     /// <p>The name of the code interpreter to invoke.</p>
     pub name: ::std::option::Option<crate::types::ToolName>,
     /// <p>The arguments for the code interpreter. This includes the code to execute and any additional parameters such as the programming language, whether to clear the execution context, and other execution options. The structure of this parameter depends on the specific code interpreter being used.</p>
@@ -20,6 +24,14 @@ impl InvokeCodeInterpreterInput {
     /// <p>The unique identifier of the code interpreter session to use. This must be an active session created with <code>StartCodeInterpreterSession</code>. If the session has expired or been stopped, the request will fail.</p>
     pub fn session_id(&self) -> ::std::option::Option<&str> {
         self.session_id.as_deref()
+    }
+    /// <p>The trace identifier for request tracking.</p>
+    pub fn trace_id(&self) -> ::std::option::Option<&str> {
+        self.trace_id.as_deref()
+    }
+    /// <p>The parent trace information for distributed tracing.</p>
+    pub fn trace_parent(&self) -> ::std::option::Option<&str> {
+        self.trace_parent.as_deref()
     }
     /// <p>The name of the code interpreter to invoke.</p>
     pub fn name(&self) -> ::std::option::Option<&crate::types::ToolName> {
@@ -43,6 +55,8 @@ impl InvokeCodeInterpreterInput {
 pub struct InvokeCodeInterpreterInputBuilder {
     pub(crate) code_interpreter_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) session_id: ::std::option::Option<::std::string::String>,
+    pub(crate) trace_id: ::std::option::Option<::std::string::String>,
+    pub(crate) trace_parent: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<crate::types::ToolName>,
     pub(crate) arguments: ::std::option::Option<crate::types::ToolArguments>,
 }
@@ -75,6 +89,34 @@ impl InvokeCodeInterpreterInputBuilder {
     /// <p>The unique identifier of the code interpreter session to use. This must be an active session created with <code>StartCodeInterpreterSession</code>. If the session has expired or been stopped, the request will fail.</p>
     pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.session_id
+    }
+    /// <p>The trace identifier for request tracking.</p>
+    pub fn trace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.trace_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The trace identifier for request tracking.</p>
+    pub fn set_trace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.trace_id = input;
+        self
+    }
+    /// <p>The trace identifier for request tracking.</p>
+    pub fn get_trace_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.trace_id
+    }
+    /// <p>The parent trace information for distributed tracing.</p>
+    pub fn trace_parent(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.trace_parent = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The parent trace information for distributed tracing.</p>
+    pub fn set_trace_parent(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.trace_parent = input;
+        self
+    }
+    /// <p>The parent trace information for distributed tracing.</p>
+    pub fn get_trace_parent(&self) -> &::std::option::Option<::std::string::String> {
+        &self.trace_parent
     }
     /// <p>The name of the code interpreter to invoke.</p>
     /// This field is required.
@@ -113,6 +155,8 @@ impl InvokeCodeInterpreterInputBuilder {
         ::std::result::Result::Ok(crate::operation::invoke_code_interpreter::InvokeCodeInterpreterInput {
             code_interpreter_identifier: self.code_interpreter_identifier,
             session_id: self.session_id,
+            trace_id: self.trace_id,
+            trace_parent: self.trace_parent,
             name: self.name,
             arguments: self.arguments,
         })

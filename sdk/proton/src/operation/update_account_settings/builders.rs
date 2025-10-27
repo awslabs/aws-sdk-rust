@@ -23,6 +23,7 @@ impl crate::operation::update_account_settings::builders::UpdateAccountSettingsI
 /// Fluent builder constructing a request to `UpdateAccountSettings`.
 ///
 /// <p>Update Proton settings that are used for multiple services in the Amazon Web Services account.</p>
+#[deprecated(note = "AWS Proton is not accepting new customers.", since = "10/07/2025")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateAccountSettingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

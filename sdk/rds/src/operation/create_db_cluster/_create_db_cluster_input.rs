@@ -295,13 +295,24 @@ pub struct CreateDbClusterInput {
     /// </ul>
     pub iops: ::std::option::Option<i32>,
     /// <p>Specifies whether the DB cluster is publicly accessible.</p>
-    /// <p>Valid for Cluster Type: Multi-AZ DB clusters only</p>
-    /// <p>When the DB cluster is publicly accessible and you connect from outside of the DB cluster's virtual private cloud (VPC), its domain name system (DNS) endpoint resolves to the public IP address. When you connect from within the same VPC as the DB cluster, the endpoint resolves to the private IP address. Access to the DB cluster is controlled by its security group settings.</p>
+    /// <p>When the DB cluster is publicly accessible and you connect from outside of the DB cluster's virtual private cloud (VPC), its Domain Name System (DNS) endpoint resolves to the public IP address. When you connect from within the same VPC as the DB cluster, the endpoint resolves to the private IP address. Access to the DB cluster is ultimately controlled by the security group it uses. That public access isn't permitted if the security group assigned to the DB cluster doesn't permit it.</p>
     /// <p>When the DB cluster isn't publicly accessible, it is an internal DB cluster with a DNS name that resolves to a private IP address.</p>
-    /// <p>The default behavior when <code>PubliclyAccessible</code> is not specified depends on whether a <code>DBSubnetGroup</code> is specified.</p>
-    /// <p>If <code>DBSubnetGroup</code> isn't specified, <code>PubliclyAccessible</code> defaults to <code>true</code>.</p>
-    /// <p>If <code>DBSubnetGroup</code> is specified, <code>PubliclyAccessible</code> defaults to <code>false</code> unless the value of <code>DBSubnetGroup</code> is <code>default</code>, in which case <code>PubliclyAccessible</code> defaults to <code>true</code>.</p>
-    /// <p>If <code>PubliclyAccessible</code> is true and the VPC that the <code>DBSubnetGroup</code> is in doesn't have an internet gateway attached to it, Amazon RDS returns an error.</p>
+    /// <p>Valid for Cluster Type: Multi-AZ DB clusters only</p>
+    /// <p>Default: The default behavior varies depending on whether <code>DBSubnetGroupName</code> is specified.</p>
+    /// <p>If <code>DBSubnetGroupName</code> isn't specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If the default VPC in the target Region doesn’t have an internet gateway attached to it, the DB cluster is private.</p></li>
+    /// <li>
+    /// <p>If the default VPC in the target Region has an internet gateway attached to it, the DB cluster is public.</p></li>
+    /// </ul>
+    /// <p>If <code>DBSubnetGroupName</code> is specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If the subnets are part of a VPC that doesn’t have an internet gateway attached to it, the DB cluster is private.</p></li>
+    /// <li>
+    /// <p>If the subnets are part of a VPC that has an internet gateway attached to it, the DB cluster is public.</p></li>
+    /// </ul>
     pub publicly_accessible: ::std::option::Option<bool>,
     /// <p>Specifies whether minor engine upgrades are applied automatically to the DB cluster during the maintenance window. By default, minor engine upgrades are applied automatically.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB cluster.</p>
@@ -802,13 +813,24 @@ impl CreateDbClusterInput {
         self.iops
     }
     /// <p>Specifies whether the DB cluster is publicly accessible.</p>
-    /// <p>Valid for Cluster Type: Multi-AZ DB clusters only</p>
-    /// <p>When the DB cluster is publicly accessible and you connect from outside of the DB cluster's virtual private cloud (VPC), its domain name system (DNS) endpoint resolves to the public IP address. When you connect from within the same VPC as the DB cluster, the endpoint resolves to the private IP address. Access to the DB cluster is controlled by its security group settings.</p>
+    /// <p>When the DB cluster is publicly accessible and you connect from outside of the DB cluster's virtual private cloud (VPC), its Domain Name System (DNS) endpoint resolves to the public IP address. When you connect from within the same VPC as the DB cluster, the endpoint resolves to the private IP address. Access to the DB cluster is ultimately controlled by the security group it uses. That public access isn't permitted if the security group assigned to the DB cluster doesn't permit it.</p>
     /// <p>When the DB cluster isn't publicly accessible, it is an internal DB cluster with a DNS name that resolves to a private IP address.</p>
-    /// <p>The default behavior when <code>PubliclyAccessible</code> is not specified depends on whether a <code>DBSubnetGroup</code> is specified.</p>
-    /// <p>If <code>DBSubnetGroup</code> isn't specified, <code>PubliclyAccessible</code> defaults to <code>true</code>.</p>
-    /// <p>If <code>DBSubnetGroup</code> is specified, <code>PubliclyAccessible</code> defaults to <code>false</code> unless the value of <code>DBSubnetGroup</code> is <code>default</code>, in which case <code>PubliclyAccessible</code> defaults to <code>true</code>.</p>
-    /// <p>If <code>PubliclyAccessible</code> is true and the VPC that the <code>DBSubnetGroup</code> is in doesn't have an internet gateway attached to it, Amazon RDS returns an error.</p>
+    /// <p>Valid for Cluster Type: Multi-AZ DB clusters only</p>
+    /// <p>Default: The default behavior varies depending on whether <code>DBSubnetGroupName</code> is specified.</p>
+    /// <p>If <code>DBSubnetGroupName</code> isn't specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If the default VPC in the target Region doesn’t have an internet gateway attached to it, the DB cluster is private.</p></li>
+    /// <li>
+    /// <p>If the default VPC in the target Region has an internet gateway attached to it, the DB cluster is public.</p></li>
+    /// </ul>
+    /// <p>If <code>DBSubnetGroupName</code> is specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If the subnets are part of a VPC that doesn’t have an internet gateway attached to it, the DB cluster is private.</p></li>
+    /// <li>
+    /// <p>If the subnets are part of a VPC that has an internet gateway attached to it, the DB cluster is public.</p></li>
+    /// </ul>
     pub fn publicly_accessible(&self) -> ::std::option::Option<bool> {
         self.publicly_accessible
     }
@@ -2277,37 +2299,70 @@ impl CreateDbClusterInputBuilder {
         &self.iops
     }
     /// <p>Specifies whether the DB cluster is publicly accessible.</p>
-    /// <p>Valid for Cluster Type: Multi-AZ DB clusters only</p>
-    /// <p>When the DB cluster is publicly accessible and you connect from outside of the DB cluster's virtual private cloud (VPC), its domain name system (DNS) endpoint resolves to the public IP address. When you connect from within the same VPC as the DB cluster, the endpoint resolves to the private IP address. Access to the DB cluster is controlled by its security group settings.</p>
+    /// <p>When the DB cluster is publicly accessible and you connect from outside of the DB cluster's virtual private cloud (VPC), its Domain Name System (DNS) endpoint resolves to the public IP address. When you connect from within the same VPC as the DB cluster, the endpoint resolves to the private IP address. Access to the DB cluster is ultimately controlled by the security group it uses. That public access isn't permitted if the security group assigned to the DB cluster doesn't permit it.</p>
     /// <p>When the DB cluster isn't publicly accessible, it is an internal DB cluster with a DNS name that resolves to a private IP address.</p>
-    /// <p>The default behavior when <code>PubliclyAccessible</code> is not specified depends on whether a <code>DBSubnetGroup</code> is specified.</p>
-    /// <p>If <code>DBSubnetGroup</code> isn't specified, <code>PubliclyAccessible</code> defaults to <code>true</code>.</p>
-    /// <p>If <code>DBSubnetGroup</code> is specified, <code>PubliclyAccessible</code> defaults to <code>false</code> unless the value of <code>DBSubnetGroup</code> is <code>default</code>, in which case <code>PubliclyAccessible</code> defaults to <code>true</code>.</p>
-    /// <p>If <code>PubliclyAccessible</code> is true and the VPC that the <code>DBSubnetGroup</code> is in doesn't have an internet gateway attached to it, Amazon RDS returns an error.</p>
+    /// <p>Valid for Cluster Type: Multi-AZ DB clusters only</p>
+    /// <p>Default: The default behavior varies depending on whether <code>DBSubnetGroupName</code> is specified.</p>
+    /// <p>If <code>DBSubnetGroupName</code> isn't specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If the default VPC in the target Region doesn’t have an internet gateway attached to it, the DB cluster is private.</p></li>
+    /// <li>
+    /// <p>If the default VPC in the target Region has an internet gateway attached to it, the DB cluster is public.</p></li>
+    /// </ul>
+    /// <p>If <code>DBSubnetGroupName</code> is specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If the subnets are part of a VPC that doesn’t have an internet gateway attached to it, the DB cluster is private.</p></li>
+    /// <li>
+    /// <p>If the subnets are part of a VPC that has an internet gateway attached to it, the DB cluster is public.</p></li>
+    /// </ul>
     pub fn publicly_accessible(mut self, input: bool) -> Self {
         self.publicly_accessible = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether the DB cluster is publicly accessible.</p>
-    /// <p>Valid for Cluster Type: Multi-AZ DB clusters only</p>
-    /// <p>When the DB cluster is publicly accessible and you connect from outside of the DB cluster's virtual private cloud (VPC), its domain name system (DNS) endpoint resolves to the public IP address. When you connect from within the same VPC as the DB cluster, the endpoint resolves to the private IP address. Access to the DB cluster is controlled by its security group settings.</p>
+    /// <p>When the DB cluster is publicly accessible and you connect from outside of the DB cluster's virtual private cloud (VPC), its Domain Name System (DNS) endpoint resolves to the public IP address. When you connect from within the same VPC as the DB cluster, the endpoint resolves to the private IP address. Access to the DB cluster is ultimately controlled by the security group it uses. That public access isn't permitted if the security group assigned to the DB cluster doesn't permit it.</p>
     /// <p>When the DB cluster isn't publicly accessible, it is an internal DB cluster with a DNS name that resolves to a private IP address.</p>
-    /// <p>The default behavior when <code>PubliclyAccessible</code> is not specified depends on whether a <code>DBSubnetGroup</code> is specified.</p>
-    /// <p>If <code>DBSubnetGroup</code> isn't specified, <code>PubliclyAccessible</code> defaults to <code>true</code>.</p>
-    /// <p>If <code>DBSubnetGroup</code> is specified, <code>PubliclyAccessible</code> defaults to <code>false</code> unless the value of <code>DBSubnetGroup</code> is <code>default</code>, in which case <code>PubliclyAccessible</code> defaults to <code>true</code>.</p>
-    /// <p>If <code>PubliclyAccessible</code> is true and the VPC that the <code>DBSubnetGroup</code> is in doesn't have an internet gateway attached to it, Amazon RDS returns an error.</p>
+    /// <p>Valid for Cluster Type: Multi-AZ DB clusters only</p>
+    /// <p>Default: The default behavior varies depending on whether <code>DBSubnetGroupName</code> is specified.</p>
+    /// <p>If <code>DBSubnetGroupName</code> isn't specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If the default VPC in the target Region doesn’t have an internet gateway attached to it, the DB cluster is private.</p></li>
+    /// <li>
+    /// <p>If the default VPC in the target Region has an internet gateway attached to it, the DB cluster is public.</p></li>
+    /// </ul>
+    /// <p>If <code>DBSubnetGroupName</code> is specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If the subnets are part of a VPC that doesn’t have an internet gateway attached to it, the DB cluster is private.</p></li>
+    /// <li>
+    /// <p>If the subnets are part of a VPC that has an internet gateway attached to it, the DB cluster is public.</p></li>
+    /// </ul>
     pub fn set_publicly_accessible(mut self, input: ::std::option::Option<bool>) -> Self {
         self.publicly_accessible = input;
         self
     }
     /// <p>Specifies whether the DB cluster is publicly accessible.</p>
-    /// <p>Valid for Cluster Type: Multi-AZ DB clusters only</p>
-    /// <p>When the DB cluster is publicly accessible and you connect from outside of the DB cluster's virtual private cloud (VPC), its domain name system (DNS) endpoint resolves to the public IP address. When you connect from within the same VPC as the DB cluster, the endpoint resolves to the private IP address. Access to the DB cluster is controlled by its security group settings.</p>
+    /// <p>When the DB cluster is publicly accessible and you connect from outside of the DB cluster's virtual private cloud (VPC), its Domain Name System (DNS) endpoint resolves to the public IP address. When you connect from within the same VPC as the DB cluster, the endpoint resolves to the private IP address. Access to the DB cluster is ultimately controlled by the security group it uses. That public access isn't permitted if the security group assigned to the DB cluster doesn't permit it.</p>
     /// <p>When the DB cluster isn't publicly accessible, it is an internal DB cluster with a DNS name that resolves to a private IP address.</p>
-    /// <p>The default behavior when <code>PubliclyAccessible</code> is not specified depends on whether a <code>DBSubnetGroup</code> is specified.</p>
-    /// <p>If <code>DBSubnetGroup</code> isn't specified, <code>PubliclyAccessible</code> defaults to <code>true</code>.</p>
-    /// <p>If <code>DBSubnetGroup</code> is specified, <code>PubliclyAccessible</code> defaults to <code>false</code> unless the value of <code>DBSubnetGroup</code> is <code>default</code>, in which case <code>PubliclyAccessible</code> defaults to <code>true</code>.</p>
-    /// <p>If <code>PubliclyAccessible</code> is true and the VPC that the <code>DBSubnetGroup</code> is in doesn't have an internet gateway attached to it, Amazon RDS returns an error.</p>
+    /// <p>Valid for Cluster Type: Multi-AZ DB clusters only</p>
+    /// <p>Default: The default behavior varies depending on whether <code>DBSubnetGroupName</code> is specified.</p>
+    /// <p>If <code>DBSubnetGroupName</code> isn't specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If the default VPC in the target Region doesn’t have an internet gateway attached to it, the DB cluster is private.</p></li>
+    /// <li>
+    /// <p>If the default VPC in the target Region has an internet gateway attached to it, the DB cluster is public.</p></li>
+    /// </ul>
+    /// <p>If <code>DBSubnetGroupName</code> is specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If the subnets are part of a VPC that doesn’t have an internet gateway attached to it, the DB cluster is private.</p></li>
+    /// <li>
+    /// <p>If the subnets are part of a VPC that has an internet gateway attached to it, the DB cluster is public.</p></li>
+    /// </ul>
     pub fn get_publicly_accessible(&self) -> &::std::option::Option<bool> {
         &self.publicly_accessible
     }

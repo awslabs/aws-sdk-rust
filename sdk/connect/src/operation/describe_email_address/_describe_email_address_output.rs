@@ -17,6 +17,8 @@ pub struct DescribeEmailAddressOutput {
     pub create_timestamp: ::std::option::Option<::std::string::String>,
     /// <p>The email address last modification timestamp in ISO 8601 Datetime.</p>
     pub modified_timestamp: ::std::option::Option<::std::string::String>,
+    /// <p>A list of alias configurations associated with this email address. Contains details about email addresses that forward to this primary email address. The list can contain at most one alias configuration per email address.</p>
+    pub alias_configurations: ::std::option::Option<::std::vec::Vec<crate::types::AliasConfiguration>>,
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
@@ -50,6 +52,12 @@ impl DescribeEmailAddressOutput {
     pub fn modified_timestamp(&self) -> ::std::option::Option<&str> {
         self.modified_timestamp.as_deref()
     }
+    /// <p>A list of alias configurations associated with this email address. Contains details about email addresses that forward to this primary email address. The list can contain at most one alias configuration per email address.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.alias_configurations.is_none()`.
+    pub fn alias_configurations(&self) -> &[crate::types::AliasConfiguration] {
+        self.alias_configurations.as_deref().unwrap_or_default()
+    }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
@@ -65,6 +73,7 @@ impl ::std::fmt::Debug for DescribeEmailAddressOutput {
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("create_timestamp", &self.create_timestamp);
         formatter.field("modified_timestamp", &self.modified_timestamp);
+        formatter.field("alias_configurations", &self.alias_configurations);
         formatter.field("tags", &self.tags);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
@@ -93,6 +102,7 @@ pub struct DescribeEmailAddressOutputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) create_timestamp: ::std::option::Option<::std::string::String>,
     pub(crate) modified_timestamp: ::std::option::Option<::std::string::String>,
+    pub(crate) alias_configurations: ::std::option::Option<::std::vec::Vec<crate::types::AliasConfiguration>>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
@@ -195,6 +205,26 @@ impl DescribeEmailAddressOutputBuilder {
     pub fn get_modified_timestamp(&self) -> &::std::option::Option<::std::string::String> {
         &self.modified_timestamp
     }
+    /// Appends an item to `alias_configurations`.
+    ///
+    /// To override the contents of this collection use [`set_alias_configurations`](Self::set_alias_configurations).
+    ///
+    /// <p>A list of alias configurations associated with this email address. Contains details about email addresses that forward to this primary email address. The list can contain at most one alias configuration per email address.</p>
+    pub fn alias_configurations(mut self, input: crate::types::AliasConfiguration) -> Self {
+        let mut v = self.alias_configurations.unwrap_or_default();
+        v.push(input);
+        self.alias_configurations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of alias configurations associated with this email address. Contains details about email addresses that forward to this primary email address. The list can contain at most one alias configuration per email address.</p>
+    pub fn set_alias_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AliasConfiguration>>) -> Self {
+        self.alias_configurations = input;
+        self
+    }
+    /// <p>A list of alias configurations associated with this email address. Contains details about email addresses that forward to this primary email address. The list can contain at most one alias configuration per email address.</p>
+    pub fn get_alias_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AliasConfiguration>> {
+        &self.alias_configurations
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -234,6 +264,7 @@ impl DescribeEmailAddressOutputBuilder {
             description: self.description,
             create_timestamp: self.create_timestamp,
             modified_timestamp: self.modified_timestamp,
+            alias_configurations: self.alias_configurations,
             tags: self.tags,
             _request_id: self._request_id,
         }
@@ -249,6 +280,7 @@ impl ::std::fmt::Debug for DescribeEmailAddressOutputBuilder {
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("create_timestamp", &self.create_timestamp);
         formatter.field("modified_timestamp", &self.modified_timestamp);
+        formatter.field("alias_configurations", &self.alias_configurations);
         formatter.field("tags", &self.tags);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()

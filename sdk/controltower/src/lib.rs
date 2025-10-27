@@ -18,7 +18,7 @@
 #![allow(rustdoc::invalid_html_tags)]
 #![forbid(unsafe_code)]
 #![warn(missing_docs)]
-#![cfg_attr(docsrs, feature(doc_auto_cfg))]
+#![cfg_attr(docsrs, feature(doc_cfg))]
 //! Amazon Web Services Control Tower offers application programming interface (API) operations that support programmatic interaction with these types of resources:
 //!   - [_Controls_](https://docs.aws.amazon.com/controltower/latest/userguide/controls.html)
 //!     - [DisableControl](https://docs.aws.amazon.com/controltower/latest/APIReference/API_DisableControl.html)
@@ -132,7 +132,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-controltower = "1.91.0"
+//! aws-sdk-controltower = "1.92.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

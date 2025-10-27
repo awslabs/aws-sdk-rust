@@ -52,6 +52,7 @@
 ///     CloudWatchRegion::UsIsoEast1 => { /* ... */ },
 ///     CloudWatchRegion::UsIsoWest1 => { /* ... */ },
 ///     CloudWatchRegion::UsIsobEast1 => { /* ... */ },
+///     CloudWatchRegion::UsIsobWest1 => { /* ... */ },
 ///     CloudWatchRegion::UsIsofEast1 => { /* ... */ },
 ///     CloudWatchRegion::UsIsofSouth1 => { /* ... */ },
 ///     CloudWatchRegion::UsWest1 => { /* ... */ },
@@ -165,6 +166,8 @@ pub enum CloudWatchRegion {
     #[allow(missing_docs)] // documentation missing in model
     UsIsobEast1,
     #[allow(missing_docs)] // documentation missing in model
+    UsIsobWest1,
+    #[allow(missing_docs)] // documentation missing in model
     UsIsofEast1,
     #[allow(missing_docs)] // documentation missing in model
     UsIsofSouth1,
@@ -219,6 +222,7 @@ impl ::std::convert::From<&str> for CloudWatchRegion {
             "us-iso-east-1" => CloudWatchRegion::UsIsoEast1,
             "us-iso-west-1" => CloudWatchRegion::UsIsoWest1,
             "us-isob-east-1" => CloudWatchRegion::UsIsobEast1,
+            "us-isob-west-1" => CloudWatchRegion::UsIsobWest1,
             "us-isof-east-1" => CloudWatchRegion::UsIsofEast1,
             "us-isof-south-1" => CloudWatchRegion::UsIsofSouth1,
             "us-west-1" => CloudWatchRegion::UsWest1,
@@ -278,6 +282,7 @@ impl CloudWatchRegion {
             CloudWatchRegion::UsIsoEast1 => "us-iso-east-1",
             CloudWatchRegion::UsIsoWest1 => "us-iso-west-1",
             CloudWatchRegion::UsIsobEast1 => "us-isob-east-1",
+            CloudWatchRegion::UsIsobWest1 => "us-isob-west-1",
             CloudWatchRegion::UsIsofEast1 => "us-isof-east-1",
             CloudWatchRegion::UsIsofSouth1 => "us-isof-south-1",
             CloudWatchRegion::UsWest1 => "us-west-1",
@@ -328,6 +333,7 @@ impl CloudWatchRegion {
             "us-iso-east-1",
             "us-iso-west-1",
             "us-isob-east-1",
+            "us-isob-west-1",
             "us-isof-east-1",
             "us-isof-south-1",
             "us-west-1",
@@ -395,6 +401,7 @@ impl ::std::fmt::Display for CloudWatchRegion {
             CloudWatchRegion::UsIsoEast1 => write!(f, "us-iso-east-1"),
             CloudWatchRegion::UsIsoWest1 => write!(f, "us-iso-west-1"),
             CloudWatchRegion::UsIsobEast1 => write!(f, "us-isob-east-1"),
+            CloudWatchRegion::UsIsobWest1 => write!(f, "us-isob-west-1"),
             CloudWatchRegion::UsIsofEast1 => write!(f, "us-isof-east-1"),
             CloudWatchRegion::UsIsofSouth1 => write!(f, "us-isof-south-1"),
             CloudWatchRegion::UsWest1 => write!(f, "us-west-1"),

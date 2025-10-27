@@ -11,6 +11,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_service_instance_provisioned_resources::ListServiceInstanceProvisionedResourcesOutput::next_token): <p>A token that indicates the location of the next provisioned resource in the array of provisioned resources, after the current requested list of provisioned resources.</p>
     ///   - [`provisioned_resources(Vec::<ProvisionedResource>)`](crate::operation::list_service_instance_provisioned_resources::ListServiceInstanceProvisionedResourcesOutput::provisioned_resources): <p>An array of provisioned resources for a service instance.</p>
     /// - On failure, responds with [`SdkError<ListServiceInstanceProvisionedResourcesError>`](crate::operation::list_service_instance_provisioned_resources::ListServiceInstanceProvisionedResourcesError)
+    #[deprecated(note = "AWS Proton is not accepting new customers.", since = "10/07/2025")]
     pub fn list_service_instance_provisioned_resources(
         &self,
     ) -> crate::operation::list_service_instance_provisioned_resources::builders::ListServiceInstanceProvisionedResourcesFluentBuilder {

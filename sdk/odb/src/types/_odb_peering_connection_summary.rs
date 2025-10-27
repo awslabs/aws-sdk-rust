@@ -9,7 +9,6 @@ pub struct OdbPeeringConnectionSummary {
     /// <p>The display name of the ODB peering connection.</p>
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the ODB peering connection.</p>
-    /// <p>Valid Values: <code>provisioning | active | terminating | terminated | failed</code></p>
     pub status: ::std::option::Option<crate::types::ResourceStatus>,
     /// <p>The reason for the current status of the ODB peering connection.</p>
     pub status_reason: ::std::option::Option<::std::string::String>,
@@ -22,6 +21,8 @@ pub struct OdbPeeringConnectionSummary {
     /// <p>The type of the ODB peering connection.</p>
     /// <p>Valid Values: <code>ODB-VPC | ODB-ODB</code></p>
     pub odb_peering_connection_type: ::std::option::Option<::std::string::String>,
+    /// <p>The CIDR blocks associated with the peering connection. These CIDR blocks define the IP address ranges that can communicate through the peering connection.</p>
+    pub peer_network_cidrs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The timestamp when the ODB peering connection was created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The percentage progress of the ODB peering connection creation or deletion.</p>
@@ -38,7 +39,6 @@ impl OdbPeeringConnectionSummary {
         self.display_name.as_deref()
     }
     /// <p>The status of the ODB peering connection.</p>
-    /// <p>Valid Values: <code>provisioning | active | terminating | terminated | failed</code></p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::ResourceStatus> {
         self.status.as_ref()
     }
@@ -62,6 +62,12 @@ impl OdbPeeringConnectionSummary {
     /// <p>Valid Values: <code>ODB-VPC | ODB-ODB</code></p>
     pub fn odb_peering_connection_type(&self) -> ::std::option::Option<&str> {
         self.odb_peering_connection_type.as_deref()
+    }
+    /// <p>The CIDR blocks associated with the peering connection. These CIDR blocks define the IP address ranges that can communicate through the peering connection.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.peer_network_cidrs.is_none()`.
+    pub fn peer_network_cidrs(&self) -> &[::std::string::String] {
+        self.peer_network_cidrs.as_deref().unwrap_or_default()
     }
     /// <p>The timestamp when the ODB peering connection was created.</p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -91,6 +97,7 @@ pub struct OdbPeeringConnectionSummaryBuilder {
     pub(crate) odb_network_arn: ::std::option::Option<::std::string::String>,
     pub(crate) peer_network_arn: ::std::option::Option<::std::string::String>,
     pub(crate) odb_peering_connection_type: ::std::option::Option<::std::string::String>,
+    pub(crate) peer_network_cidrs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) percent_progress: ::std::option::Option<f32>,
 }
@@ -125,19 +132,16 @@ impl OdbPeeringConnectionSummaryBuilder {
         &self.display_name
     }
     /// <p>The status of the ODB peering connection.</p>
-    /// <p>Valid Values: <code>provisioning | active | terminating | terminated | failed</code></p>
     pub fn status(mut self, input: crate::types::ResourceStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the ODB peering connection.</p>
-    /// <p>Valid Values: <code>provisioning | active | terminating | terminated | failed</code></p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ResourceStatus>) -> Self {
         self.status = input;
         self
     }
     /// <p>The status of the ODB peering connection.</p>
-    /// <p>Valid Values: <code>provisioning | active | terminating | terminated | failed</code></p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ResourceStatus> {
         &self.status
     }
@@ -214,6 +218,26 @@ impl OdbPeeringConnectionSummaryBuilder {
     pub fn get_odb_peering_connection_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.odb_peering_connection_type
     }
+    /// Appends an item to `peer_network_cidrs`.
+    ///
+    /// To override the contents of this collection use [`set_peer_network_cidrs`](Self::set_peer_network_cidrs).
+    ///
+    /// <p>The CIDR blocks associated with the peering connection. These CIDR blocks define the IP address ranges that can communicate through the peering connection.</p>
+    pub fn peer_network_cidrs(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.peer_network_cidrs.unwrap_or_default();
+        v.push(input.into());
+        self.peer_network_cidrs = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The CIDR blocks associated with the peering connection. These CIDR blocks define the IP address ranges that can communicate through the peering connection.</p>
+    pub fn set_peer_network_cidrs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.peer_network_cidrs = input;
+        self
+    }
+    /// <p>The CIDR blocks associated with the peering connection. These CIDR blocks define the IP address ranges that can communicate through the peering connection.</p>
+    pub fn get_peer_network_cidrs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.peer_network_cidrs
+    }
     /// <p>The timestamp when the ODB peering connection was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -260,6 +284,7 @@ impl OdbPeeringConnectionSummaryBuilder {
             odb_network_arn: self.odb_network_arn,
             peer_network_arn: self.peer_network_arn,
             odb_peering_connection_type: self.odb_peering_connection_type,
+            peer_network_cidrs: self.peer_network_cidrs,
             created_at: self.created_at,
             percent_progress: self.percent_progress,
         })

@@ -26,6 +26,7 @@ impl crate::operation::delete_service::builders::DeleteServiceInputBuilder {
 /// <p>You can't delete a service if it has any service instances that have components attached to them.</p>
 /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
 /// </note>
+#[deprecated(note = "AWS Proton is not accepting new customers.", since = "10/07/2025")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteServiceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

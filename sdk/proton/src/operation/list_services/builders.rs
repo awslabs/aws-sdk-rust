@@ -23,6 +23,7 @@ impl crate::operation::list_services::builders::ListServicesInputBuilder {
 /// Fluent builder constructing a request to `ListServices`.
 ///
 /// <p>List services with summaries of detail data.</p>
+#[deprecated(note = "AWS Proton is not accepting new customers.", since = "10/07/2025")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListServicesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

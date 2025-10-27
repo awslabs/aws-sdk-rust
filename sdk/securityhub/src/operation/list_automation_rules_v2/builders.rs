@@ -22,7 +22,7 @@ impl crate::operation::list_automation_rules_v2::builders::ListAutomationRulesV2
 }
 /// Fluent builder constructing a request to `ListAutomationRulesV2`.
 ///
-/// <p>Returns a list of automation rules and metadata for the calling account. This API is in private preview and subject to change.</p>
+/// <p>Returns a list of automation rules and metadata for the calling account. This API is in public preview and subject to change.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListAutomationRulesV2FluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

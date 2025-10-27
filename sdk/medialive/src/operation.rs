@@ -196,6 +196,9 @@ pub mod get_event_bridge_rule_template_group;
 /// Types for the `GetSignalMap` operation.
 pub mod get_signal_map;
 
+/// Types for the `ListAlerts` operation.
+pub mod list_alerts;
+
 /// Types for the `ListChannelPlacementGroups` operation.
 pub mod list_channel_placement_groups;
 
@@ -207,6 +210,9 @@ pub mod list_cloud_watch_alarm_template_groups;
 
 /// Types for the `ListCloudWatchAlarmTemplates` operation.
 pub mod list_cloud_watch_alarm_templates;
+
+/// Types for the `ListClusterAlerts` operation.
+pub mod list_cluster_alerts;
 
 /// Types for the `ListClusters` operation.
 pub mod list_clusters;
@@ -228,6 +234,9 @@ pub mod list_input_security_groups;
 
 /// Types for the `ListInputs` operation.
 pub mod list_inputs;
+
+/// Types for the `ListMultiplexAlerts` operation.
+pub mod list_multiplex_alerts;
 
 /// Types for the `ListMultiplexPrograms` operation.
 pub mod list_multiplex_programs;

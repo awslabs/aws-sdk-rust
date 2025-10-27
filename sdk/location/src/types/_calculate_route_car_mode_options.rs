@@ -2,7 +2,7 @@
 
 /// <p>Contains details about additional route preferences for requests that specify <code>TravelMode</code> as <code>Car</code>.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CalculateRouteCarModeOptions {
     /// <p>Avoids ferries when calculating routes.</p>
     /// <p>Default Value: <code>false</code></p>
@@ -27,6 +27,14 @@ impl CalculateRouteCarModeOptions {
         self.avoid_tolls
     }
 }
+impl ::std::fmt::Debug for CalculateRouteCarModeOptions {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("CalculateRouteCarModeOptions");
+        formatter.field("avoid_ferries", &"*** Sensitive Data Redacted ***");
+        formatter.field("avoid_tolls", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl CalculateRouteCarModeOptions {
     /// Creates a new builder-style object to manufacture [`CalculateRouteCarModeOptions`](crate::types::CalculateRouteCarModeOptions).
     pub fn builder() -> crate::types::builders::CalculateRouteCarModeOptionsBuilder {
@@ -35,7 +43,7 @@ impl CalculateRouteCarModeOptions {
 }
 
 /// A builder for [`CalculateRouteCarModeOptions`](crate::types::CalculateRouteCarModeOptions).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct CalculateRouteCarModeOptionsBuilder {
     pub(crate) avoid_ferries: ::std::option::Option<bool>,
@@ -88,5 +96,13 @@ impl CalculateRouteCarModeOptionsBuilder {
             avoid_ferries: self.avoid_ferries,
             avoid_tolls: self.avoid_tolls,
         }
+    }
+}
+impl ::std::fmt::Debug for CalculateRouteCarModeOptionsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("CalculateRouteCarModeOptionsBuilder");
+        formatter.field("avoid_ferries", &"*** Sensitive Data Redacted ***");
+        formatter.field("avoid_tolls", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

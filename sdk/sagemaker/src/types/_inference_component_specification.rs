@@ -18,6 +18,8 @@ pub struct InferenceComponentSpecification {
     /// <p>When you create an adapter inference component, use the <code>Container</code> parameter to specify the location of the adapter artifacts. In the parameter value, use the <code>ArtifactUrl</code> parameter of the <code>InferenceComponentContainerSpecification</code> data type.</p>
     /// <p>Before you can create an adapter inference component, you must have an existing inference component that contains the foundation model that you want to adapt.</p>
     pub base_inference_component_name: ::std::option::Option<::std::string::String>,
+    /// <p>Settings that affect how the inference component caches data.</p>
+    pub data_cache_config: ::std::option::Option<crate::types::InferenceComponentDataCacheConfig>,
 }
 impl InferenceComponentSpecification {
     /// <p>The name of an existing SageMaker AI model object in your account that you want to deploy with the inference component.</p>
@@ -44,6 +46,10 @@ impl InferenceComponentSpecification {
     pub fn base_inference_component_name(&self) -> ::std::option::Option<&str> {
         self.base_inference_component_name.as_deref()
     }
+    /// <p>Settings that affect how the inference component caches data.</p>
+    pub fn data_cache_config(&self) -> ::std::option::Option<&crate::types::InferenceComponentDataCacheConfig> {
+        self.data_cache_config.as_ref()
+    }
 }
 impl InferenceComponentSpecification {
     /// Creates a new builder-style object to manufacture [`InferenceComponentSpecification`](crate::types::InferenceComponentSpecification).
@@ -61,6 +67,7 @@ pub struct InferenceComponentSpecificationBuilder {
     pub(crate) startup_parameters: ::std::option::Option<crate::types::InferenceComponentStartupParameters>,
     pub(crate) compute_resource_requirements: ::std::option::Option<crate::types::InferenceComponentComputeResourceRequirements>,
     pub(crate) base_inference_component_name: ::std::option::Option<::std::string::String>,
+    pub(crate) data_cache_config: ::std::option::Option<crate::types::InferenceComponentDataCacheConfig>,
 }
 impl InferenceComponentSpecificationBuilder {
     /// <p>The name of an existing SageMaker AI model object in your account that you want to deploy with the inference component.</p>
@@ -148,6 +155,20 @@ impl InferenceComponentSpecificationBuilder {
     pub fn get_base_inference_component_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.base_inference_component_name
     }
+    /// <p>Settings that affect how the inference component caches data.</p>
+    pub fn data_cache_config(mut self, input: crate::types::InferenceComponentDataCacheConfig) -> Self {
+        self.data_cache_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Settings that affect how the inference component caches data.</p>
+    pub fn set_data_cache_config(mut self, input: ::std::option::Option<crate::types::InferenceComponentDataCacheConfig>) -> Self {
+        self.data_cache_config = input;
+        self
+    }
+    /// <p>Settings that affect how the inference component caches data.</p>
+    pub fn get_data_cache_config(&self) -> &::std::option::Option<crate::types::InferenceComponentDataCacheConfig> {
+        &self.data_cache_config
+    }
     /// Consumes the builder and constructs a [`InferenceComponentSpecification`](crate::types::InferenceComponentSpecification).
     pub fn build(self) -> crate::types::InferenceComponentSpecification {
         crate::types::InferenceComponentSpecification {
@@ -156,6 +177,7 @@ impl InferenceComponentSpecificationBuilder {
             startup_parameters: self.startup_parameters,
             compute_resource_requirements: self.compute_resource_requirements,
             base_inference_component_name: self.base_inference_component_name,
+            data_cache_config: self.data_cache_config,
         }
     }
 }

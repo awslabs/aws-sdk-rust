@@ -23,6 +23,7 @@ impl crate::operation::delete_deployment::builders::DeleteDeploymentInputBuilder
 /// Fluent builder constructing a request to `DeleteDeployment`.
 ///
 /// <p>Delete the deployment.</p>
+#[deprecated(note = "AWS Proton is not accepting new customers.", since = "10/07/2025")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteDeploymentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

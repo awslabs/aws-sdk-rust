@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreatePricingRuleInput {
-    /// <p>The token that's needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update.</p>
+    /// <p>A unique, case-sensitive identifier that you specify to ensure idempotency of the request. Idempotency ensures that an API request completes no more than one time. With an idempotent request, if the original request completes successfully, any subsequent retries complete successfully without performing any further actions.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The pricing rule name. The names must be unique to each pricing rule.</p>
     pub name: ::std::option::Option<::std::string::String>,
@@ -13,7 +13,7 @@ pub struct CreatePricingRuleInput {
     pub scope: ::std::option::Option<crate::types::PricingRuleScope>,
     /// <p>The type of pricing rule.</p>
     pub r#type: ::std::option::Option<crate::types::PricingRuleType>,
-    /// <p>A percentage modifier that's applied on the public pricing rates.</p>
+    /// <p>A percentage modifier that's applied on the public pricing rates. Your entry will be rounded to the nearest 2 decimal places.</p>
     pub modifier_percentage: ::std::option::Option<f64>,
     /// <p>If the <code>Scope</code> attribute is set to <code>SERVICE</code> or <code>SKU</code>, the attribute indicates which service the <code>PricingRule</code> is applicable for.</p>
     pub service: ::std::option::Option<::std::string::String>,
@@ -31,7 +31,7 @@ pub struct CreatePricingRuleInput {
     pub operation: ::std::option::Option<::std::string::String>,
 }
 impl CreatePricingRuleInput {
-    /// <p>The token that's needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update.</p>
+    /// <p>A unique, case-sensitive identifier that you specify to ensure idempotency of the request. Idempotency ensures that an API request completes no more than one time. With an idempotent request, if the original request completes successfully, any subsequent retries complete successfully without performing any further actions.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -51,7 +51,7 @@ impl CreatePricingRuleInput {
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::PricingRuleType> {
         self.r#type.as_ref()
     }
-    /// <p>A percentage modifier that's applied on the public pricing rates.</p>
+    /// <p>A percentage modifier that's applied on the public pricing rates. Your entry will be rounded to the nearest 2 decimal places.</p>
     pub fn modifier_percentage(&self) -> ::std::option::Option<f64> {
         self.modifier_percentage
     }
@@ -125,17 +125,17 @@ pub struct CreatePricingRuleInputBuilder {
     pub(crate) operation: ::std::option::Option<::std::string::String>,
 }
 impl CreatePricingRuleInputBuilder {
-    /// <p>The token that's needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update.</p>
+    /// <p>A unique, case-sensitive identifier that you specify to ensure idempotency of the request. Idempotency ensures that an API request completes no more than one time. With an idempotent request, if the original request completes successfully, any subsequent retries complete successfully without performing any further actions.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The token that's needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update.</p>
+    /// <p>A unique, case-sensitive identifier that you specify to ensure idempotency of the request. Idempotency ensures that an API request completes no more than one time. With an idempotent request, if the original request completes successfully, any subsequent retries complete successfully without performing any further actions.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
     }
-    /// <p>The token that's needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update.</p>
+    /// <p>A unique, case-sensitive identifier that you specify to ensure idempotency of the request. Idempotency ensures that an API request completes no more than one time. With an idempotent request, if the original request completes successfully, any subsequent retries complete successfully without performing any further actions.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
@@ -198,17 +198,17 @@ impl CreatePricingRuleInputBuilder {
     pub fn get_type(&self) -> &::std::option::Option<crate::types::PricingRuleType> {
         &self.r#type
     }
-    /// <p>A percentage modifier that's applied on the public pricing rates.</p>
+    /// <p>A percentage modifier that's applied on the public pricing rates. Your entry will be rounded to the nearest 2 decimal places.</p>
     pub fn modifier_percentage(mut self, input: f64) -> Self {
         self.modifier_percentage = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A percentage modifier that's applied on the public pricing rates.</p>
+    /// <p>A percentage modifier that's applied on the public pricing rates. Your entry will be rounded to the nearest 2 decimal places.</p>
     pub fn set_modifier_percentage(mut self, input: ::std::option::Option<f64>) -> Self {
         self.modifier_percentage = input;
         self
     }
-    /// <p>A percentage modifier that's applied on the public pricing rates.</p>
+    /// <p>A percentage modifier that's applied on the public pricing rates. Your entry will be rounded to the nearest 2 decimal places.</p>
     pub fn get_modifier_percentage(&self) -> &::std::option::Option<f64> {
         &self.modifier_percentage
     }

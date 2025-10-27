@@ -23,6 +23,7 @@ impl crate::operation::get_tile::builders::GetTileInputBuilder {
 /// Fluent builder constructing a request to `GetTile`.
 ///
 /// <p><code>GetTile</code> returns a tile. Map tiles are used by clients to render a map. they're addressed using a grid arrangement with an X coordinate, Y coordinate, and Z (zoom) level.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/tiles.html">Tiles</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetTileFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -98,6 +99,25 @@ impl GetTileFluentBuilder {
     pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
+    }
+    ///
+    /// Appends an item to `AdditionalFeatures`.
+    ///
+    /// To override the contents of this collection use [`set_additional_features`](Self::set_additional_features).
+    ///
+    /// <p>A list of optional additional parameters such as map styles that can be requested for each result.</p>
+    pub fn additional_features(mut self, input: crate::types::TileAdditionalFeature) -> Self {
+        self.inner = self.inner.additional_features(input);
+        self
+    }
+    /// <p>A list of optional additional parameters such as map styles that can be requested for each result.</p>
+    pub fn set_additional_features(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TileAdditionalFeature>>) -> Self {
+        self.inner = self.inner.set_additional_features(input);
+        self
+    }
+    /// <p>A list of optional additional parameters such as map styles that can be requested for each result.</p>
+    pub fn get_additional_features(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TileAdditionalFeature>> {
+        self.inner.get_additional_features()
     }
     /// <p>Specifies the desired tile set.</p>
     /// <p>Valid Values: <code>raster.satellite | vector.basemap</code></p>

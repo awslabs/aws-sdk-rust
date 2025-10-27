@@ -15,17 +15,26 @@ pub fn ser_active_directory_settings(
         }
         array_3.finish();
     }
-    if let Some(var_5) = &input.domain_credentials_provider {
-        #[allow(unused_mut)]
-        let mut object_6 = object.key("DomainCredentialsProvider").start_object();
-        crate::protocol_serde::shape_credentials_provider::ser_credentials_provider(&mut object_6, var_5)?;
-        object_6.finish();
+    if let Some(var_5) = &input.domain_ipv6_list {
+        let mut array_6 = object.key("DomainIpv6List").start_array();
+        for item_7 in var_5 {
+            {
+                array_6.value().string(item_7.as_str());
+            }
+        }
+        array_6.finish();
     }
-    if let Some(var_7) = &input.domain_network_settings {
+    if let Some(var_8) = &input.domain_credentials_provider {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("DomainNetworkSettings").start_object();
-        crate::protocol_serde::shape_domain_network_settings::ser_domain_network_settings(&mut object_8, var_7)?;
-        object_8.finish();
+        let mut object_9 = object.key("DomainCredentialsProvider").start_object();
+        crate::protocol_serde::shape_credentials_provider::ser_credentials_provider(&mut object_9, var_8)?;
+        object_9.finish();
+    }
+    if let Some(var_10) = &input.domain_network_settings {
+        #[allow(unused_mut)]
+        let mut object_11 = object.key("DomainNetworkSettings").start_object();
+        crate::protocol_serde::shape_domain_network_settings::ser_domain_network_settings(&mut object_11, var_10)?;
+        object_11.finish();
     }
     Ok(())
 }
@@ -54,6 +63,9 @@ where
                         }
                         "DomainIpv4List" => {
                             builder = builder.set_domain_ipv4_list(crate::protocol_serde::shape_ipv4_list::de_ipv4_list(tokens)?);
+                        }
+                        "DomainIpv6List" => {
+                            builder = builder.set_domain_ipv6_list(crate::protocol_serde::shape_ipv6_list::de_ipv6_list(tokens)?);
                         }
                         "DomainCredentialsProvider" => {
                             builder = builder

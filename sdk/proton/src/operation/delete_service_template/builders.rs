@@ -23,6 +23,7 @@ impl crate::operation::delete_service_template::builders::DeleteServiceTemplateI
 /// Fluent builder constructing a request to `DeleteServiceTemplate`.
 ///
 /// <p>If no other major or minor versions of the service template exist, delete the service template.</p>
+#[deprecated(note = "AWS Proton is not accepting new customers.", since = "10/07/2025")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteServiceTemplateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

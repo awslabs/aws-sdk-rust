@@ -5,7 +5,7 @@
 pub struct AllocateAddressOutput {
     /// <p>The ID that represents the allocation of the Elastic IP address.</p>
     pub allocation_id: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of an address pool.</p>
+    /// <p>The ID of an address pool that you own.</p>
     pub public_ipv4_pool: ::std::option::Option<::std::string::String>,
     /// <p>The set of Availability Zones, Local Zones, or Wavelength Zones from which Amazon Web Services advertises IP addresses.</p>
     pub network_border_group: ::std::option::Option<::std::string::String>,
@@ -15,9 +15,9 @@ pub struct AllocateAddressOutput {
     pub customer_owned_ip: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the customer-owned address pool.</p>
     pub customer_owned_ipv4_pool: ::std::option::Option<::std::string::String>,
-    /// <p>The carrier IP address. This option is only available for network interfaces that reside in a subnet in a Wavelength Zone.</p>
+    /// <p>The carrier IP address. Available only for network interfaces that reside in a subnet in a Wavelength Zone.</p>
     pub carrier_ip: ::std::option::Option<::std::string::String>,
-    /// <p>The Elastic IP address.</p>
+    /// <p>The Amazon-owned IP address. Not available when using an address pool that you own.</p>
     pub public_ip: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -26,7 +26,7 @@ impl AllocateAddressOutput {
     pub fn allocation_id(&self) -> ::std::option::Option<&str> {
         self.allocation_id.as_deref()
     }
-    /// <p>The ID of an address pool.</p>
+    /// <p>The ID of an address pool that you own.</p>
     pub fn public_ipv4_pool(&self) -> ::std::option::Option<&str> {
         self.public_ipv4_pool.as_deref()
     }
@@ -46,11 +46,11 @@ impl AllocateAddressOutput {
     pub fn customer_owned_ipv4_pool(&self) -> ::std::option::Option<&str> {
         self.customer_owned_ipv4_pool.as_deref()
     }
-    /// <p>The carrier IP address. This option is only available for network interfaces that reside in a subnet in a Wavelength Zone.</p>
+    /// <p>The carrier IP address. Available only for network interfaces that reside in a subnet in a Wavelength Zone.</p>
     pub fn carrier_ip(&self) -> ::std::option::Option<&str> {
         self.carrier_ip.as_deref()
     }
-    /// <p>The Elastic IP address.</p>
+    /// <p>The Amazon-owned IP address. Not available when using an address pool that you own.</p>
     pub fn public_ip(&self) -> ::std::option::Option<&str> {
         self.public_ip.as_deref()
     }
@@ -96,17 +96,17 @@ impl AllocateAddressOutputBuilder {
     pub fn get_allocation_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.allocation_id
     }
-    /// <p>The ID of an address pool.</p>
+    /// <p>The ID of an address pool that you own.</p>
     pub fn public_ipv4_pool(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.public_ipv4_pool = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of an address pool.</p>
+    /// <p>The ID of an address pool that you own.</p>
     pub fn set_public_ipv4_pool(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.public_ipv4_pool = input;
         self
     }
-    /// <p>The ID of an address pool.</p>
+    /// <p>The ID of an address pool that you own.</p>
     pub fn get_public_ipv4_pool(&self) -> &::std::option::Option<::std::string::String> {
         &self.public_ipv4_pool
     }
@@ -166,31 +166,31 @@ impl AllocateAddressOutputBuilder {
     pub fn get_customer_owned_ipv4_pool(&self) -> &::std::option::Option<::std::string::String> {
         &self.customer_owned_ipv4_pool
     }
-    /// <p>The carrier IP address. This option is only available for network interfaces that reside in a subnet in a Wavelength Zone.</p>
+    /// <p>The carrier IP address. Available only for network interfaces that reside in a subnet in a Wavelength Zone.</p>
     pub fn carrier_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.carrier_ip = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The carrier IP address. This option is only available for network interfaces that reside in a subnet in a Wavelength Zone.</p>
+    /// <p>The carrier IP address. Available only for network interfaces that reside in a subnet in a Wavelength Zone.</p>
     pub fn set_carrier_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.carrier_ip = input;
         self
     }
-    /// <p>The carrier IP address. This option is only available for network interfaces that reside in a subnet in a Wavelength Zone.</p>
+    /// <p>The carrier IP address. Available only for network interfaces that reside in a subnet in a Wavelength Zone.</p>
     pub fn get_carrier_ip(&self) -> &::std::option::Option<::std::string::String> {
         &self.carrier_ip
     }
-    /// <p>The Elastic IP address.</p>
+    /// <p>The Amazon-owned IP address. Not available when using an address pool that you own.</p>
     pub fn public_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.public_ip = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Elastic IP address.</p>
+    /// <p>The Amazon-owned IP address. Not available when using an address pool that you own.</p>
     pub fn set_public_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.public_ip = input;
         self
     }
-    /// <p>The Elastic IP address.</p>
+    /// <p>The Amazon-owned IP address. Not available when using an address pool that you own.</p>
     pub fn get_public_ip(&self) -> &::std::option::Option<::std::string::String> {
         &self.public_ip
     }

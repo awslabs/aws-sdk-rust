@@ -29,6 +29,8 @@ pub(crate) mod shape_batch_delete_memory_records;
 
 pub(crate) mod shape_batch_update_memory_records;
 
+pub(crate) mod shape_complete_resource_token_auth;
+
 pub(crate) mod shape_create_event;
 
 pub(crate) mod shape_delete_event;
@@ -102,6 +104,8 @@ pub(crate) mod shape_batch_create_memory_records_input;
 pub(crate) mod shape_batch_delete_memory_records_input;
 
 pub(crate) mod shape_batch_update_memory_records_input;
+
+pub(crate) mod shape_complete_resource_token_auth_input;
 
 pub(crate) mod shape_conflict_exception;
 
@@ -220,6 +224,8 @@ pub(crate) mod shape_session_summary_list;
 pub(crate) mod shape_stream_update;
 
 pub(crate) mod shape_tool_arguments;
+
+pub(crate) mod shape_user_identifier;
 
 pub(crate) mod shape_validation_exception_field_list;
 

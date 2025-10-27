@@ -15,6 +15,17 @@ pub fn ser_host_header_condition_config(
         }
         list_4.finish();
     }
+    #[allow(unused_mut)]
+    let mut scope_6 = writer.prefix("RegexValues");
+    if let Some(var_7) = &input.regex_values {
+        let mut list_9 = scope_6.start_list(false, None);
+        for item_8 in var_7 {
+            #[allow(unused_mut)]
+            let mut entry_10 = list_9.entry();
+            entry_10.string(item_8);
+        }
+        list_9.finish();
+    }
     Ok(())
 }
 
@@ -27,13 +38,23 @@ pub fn de_host_header_condition_config(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Values") /* Values com.amazonaws.elasticloadbalancingv2#HostHeaderConditionConfig$Values */ =>  {
-                let var_6 =
+                let var_11 =
                     Some(
                         crate::protocol_serde::shape_list_of_string::de_list_of_string(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_values(var_6);
+                builder = builder.set_values(var_11);
+            }
+            ,
+            s if s.matches("RegexValues") /* RegexValues com.amazonaws.elasticloadbalancingv2#HostHeaderConditionConfig$RegexValues */ =>  {
+                let var_12 =
+                    Some(
+                        crate::protocol_serde::shape_list_of_string::de_list_of_string(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_regex_values(var_12);
             }
             ,
             _ => {}

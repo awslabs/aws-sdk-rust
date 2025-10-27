@@ -12,6 +12,7 @@
 /// ```text
 /// # let containerproductsortby = unimplemented!();
 /// match containerproductsortby {
+///     ContainerProductSortBy::CompatibleAwsServices => { /* ... */ },
 ///     ContainerProductSortBy::EntityId => { /* ... */ },
 ///     ContainerProductSortBy::LastModifiedDate => { /* ... */ },
 ///     ContainerProductSortBy::ProductTitle => { /* ... */ },
@@ -45,6 +46,8 @@
 )]
 pub enum ContainerProductSortBy {
     #[allow(missing_docs)] // documentation missing in model
+    CompatibleAwsServices,
+    #[allow(missing_docs)] // documentation missing in model
     EntityId,
     #[allow(missing_docs)] // documentation missing in model
     LastModifiedDate,
@@ -59,6 +62,7 @@ pub enum ContainerProductSortBy {
 impl ::std::convert::From<&str> for ContainerProductSortBy {
     fn from(s: &str) -> Self {
         match s {
+            "CompatibleAWSServices" => ContainerProductSortBy::CompatibleAwsServices,
             "EntityId" => ContainerProductSortBy::EntityId,
             "LastModifiedDate" => ContainerProductSortBy::LastModifiedDate,
             "ProductTitle" => ContainerProductSortBy::ProductTitle,
@@ -78,6 +82,7 @@ impl ContainerProductSortBy {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ContainerProductSortBy::CompatibleAwsServices => "CompatibleAWSServices",
             ContainerProductSortBy::EntityId => "EntityId",
             ContainerProductSortBy::LastModifiedDate => "LastModifiedDate",
             ContainerProductSortBy::ProductTitle => "ProductTitle",
@@ -87,7 +92,7 @@ impl ContainerProductSortBy {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["EntityId", "LastModifiedDate", "ProductTitle", "Visibility"]
+        &["CompatibleAWSServices", "EntityId", "LastModifiedDate", "ProductTitle", "Visibility"]
     }
 }
 impl ::std::convert::AsRef<str> for ContainerProductSortBy {
@@ -110,6 +115,7 @@ impl ContainerProductSortBy {
 impl ::std::fmt::Display for ContainerProductSortBy {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            ContainerProductSortBy::CompatibleAwsServices => write!(f, "CompatibleAWSServices"),
             ContainerProductSortBy::EntityId => write!(f, "EntityId"),
             ContainerProductSortBy::LastModifiedDate => write!(f, "LastModifiedDate"),
             ContainerProductSortBy::ProductTitle => write!(f, "ProductTitle"),

@@ -14,6 +14,10 @@ pub struct CompositeFilter {
     pub number_filters: ::std::option::Option<::std::vec::Vec<crate::types::OcsfNumberFilter>>,
     /// <p>Enables filtering based on map field values.</p>
     pub map_filters: ::std::option::Option<::std::vec::Vec<crate::types::OcsfMapFilter>>,
+    /// <p>A list of IP address filters that allowing you to filter findings based on IP address properties.</p>
+    pub ip_filters: ::std::option::Option<::std::vec::Vec<crate::types::OcsfIpFilter>>,
+    /// <p>Provides an additional level of filtering, creating a three-layer nested structure. The first layer is a <code>CompositeFilters</code> array with a <code>CompositeOperator</code> (<code>AND</code>/<code>OR</code>). The second layer is a <code>CompositeFilter</code> object that contains direct filters and <code>NestedCompositeFilters</code>. The third layer is <code>NestedCompositeFilters</code>, which contains additional filter conditions.</p>
+    pub nested_composite_filters: ::std::option::Option<::std::vec::Vec<crate::types::CompositeFilter>>,
     /// <p>The logical operator used to combine multiple filter conditions.</p>
     pub operator: ::std::option::Option<crate::types::AllowedOperators>,
 }
@@ -48,6 +52,18 @@ impl CompositeFilter {
     pub fn map_filters(&self) -> &[crate::types::OcsfMapFilter] {
         self.map_filters.as_deref().unwrap_or_default()
     }
+    /// <p>A list of IP address filters that allowing you to filter findings based on IP address properties.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ip_filters.is_none()`.
+    pub fn ip_filters(&self) -> &[crate::types::OcsfIpFilter] {
+        self.ip_filters.as_deref().unwrap_or_default()
+    }
+    /// <p>Provides an additional level of filtering, creating a three-layer nested structure. The first layer is a <code>CompositeFilters</code> array with a <code>CompositeOperator</code> (<code>AND</code>/<code>OR</code>). The second layer is a <code>CompositeFilter</code> object that contains direct filters and <code>NestedCompositeFilters</code>. The third layer is <code>NestedCompositeFilters</code>, which contains additional filter conditions.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.nested_composite_filters.is_none()`.
+    pub fn nested_composite_filters(&self) -> &[crate::types::CompositeFilter] {
+        self.nested_composite_filters.as_deref().unwrap_or_default()
+    }
     /// <p>The logical operator used to combine multiple filter conditions.</p>
     pub fn operator(&self) -> ::std::option::Option<&crate::types::AllowedOperators> {
         self.operator.as_ref()
@@ -69,6 +85,8 @@ pub struct CompositeFilterBuilder {
     pub(crate) boolean_filters: ::std::option::Option<::std::vec::Vec<crate::types::OcsfBooleanFilter>>,
     pub(crate) number_filters: ::std::option::Option<::std::vec::Vec<crate::types::OcsfNumberFilter>>,
     pub(crate) map_filters: ::std::option::Option<::std::vec::Vec<crate::types::OcsfMapFilter>>,
+    pub(crate) ip_filters: ::std::option::Option<::std::vec::Vec<crate::types::OcsfIpFilter>>,
+    pub(crate) nested_composite_filters: ::std::option::Option<::std::vec::Vec<crate::types::CompositeFilter>>,
     pub(crate) operator: ::std::option::Option<crate::types::AllowedOperators>,
 }
 impl CompositeFilterBuilder {
@@ -172,6 +190,46 @@ impl CompositeFilterBuilder {
     pub fn get_map_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OcsfMapFilter>> {
         &self.map_filters
     }
+    /// Appends an item to `ip_filters`.
+    ///
+    /// To override the contents of this collection use [`set_ip_filters`](Self::set_ip_filters).
+    ///
+    /// <p>A list of IP address filters that allowing you to filter findings based on IP address properties.</p>
+    pub fn ip_filters(mut self, input: crate::types::OcsfIpFilter) -> Self {
+        let mut v = self.ip_filters.unwrap_or_default();
+        v.push(input);
+        self.ip_filters = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of IP address filters that allowing you to filter findings based on IP address properties.</p>
+    pub fn set_ip_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OcsfIpFilter>>) -> Self {
+        self.ip_filters = input;
+        self
+    }
+    /// <p>A list of IP address filters that allowing you to filter findings based on IP address properties.</p>
+    pub fn get_ip_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OcsfIpFilter>> {
+        &self.ip_filters
+    }
+    /// Appends an item to `nested_composite_filters`.
+    ///
+    /// To override the contents of this collection use [`set_nested_composite_filters`](Self::set_nested_composite_filters).
+    ///
+    /// <p>Provides an additional level of filtering, creating a three-layer nested structure. The first layer is a <code>CompositeFilters</code> array with a <code>CompositeOperator</code> (<code>AND</code>/<code>OR</code>). The second layer is a <code>CompositeFilter</code> object that contains direct filters and <code>NestedCompositeFilters</code>. The third layer is <code>NestedCompositeFilters</code>, which contains additional filter conditions.</p>
+    pub fn nested_composite_filters(mut self, input: crate::types::CompositeFilter) -> Self {
+        let mut v = self.nested_composite_filters.unwrap_or_default();
+        v.push(input);
+        self.nested_composite_filters = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Provides an additional level of filtering, creating a three-layer nested structure. The first layer is a <code>CompositeFilters</code> array with a <code>CompositeOperator</code> (<code>AND</code>/<code>OR</code>). The second layer is a <code>CompositeFilter</code> object that contains direct filters and <code>NestedCompositeFilters</code>. The third layer is <code>NestedCompositeFilters</code>, which contains additional filter conditions.</p>
+    pub fn set_nested_composite_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CompositeFilter>>) -> Self {
+        self.nested_composite_filters = input;
+        self
+    }
+    /// <p>Provides an additional level of filtering, creating a three-layer nested structure. The first layer is a <code>CompositeFilters</code> array with a <code>CompositeOperator</code> (<code>AND</code>/<code>OR</code>). The second layer is a <code>CompositeFilter</code> object that contains direct filters and <code>NestedCompositeFilters</code>. The third layer is <code>NestedCompositeFilters</code>, which contains additional filter conditions.</p>
+    pub fn get_nested_composite_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CompositeFilter>> {
+        &self.nested_composite_filters
+    }
     /// <p>The logical operator used to combine multiple filter conditions.</p>
     pub fn operator(mut self, input: crate::types::AllowedOperators) -> Self {
         self.operator = ::std::option::Option::Some(input);
@@ -194,6 +252,8 @@ impl CompositeFilterBuilder {
             boolean_filters: self.boolean_filters,
             number_filters: self.number_filters,
             map_filters: self.map_filters,
+            ip_filters: self.ip_filters,
+            nested_composite_filters: self.nested_composite_filters,
             operator: self.operator,
         }
     }

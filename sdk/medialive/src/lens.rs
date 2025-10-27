@@ -9,6 +9,16 @@ pub(crate) fn reflens_describe_schedule_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_alerts_output_output_next_token(
+    input: &crate::operation::list_alerts::ListAlertsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_channel_placement_groups_output_output_next_token(
     input: &crate::operation::list_channel_placement_groups::ListChannelPlacementGroupsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -41,6 +51,16 @@ pub(crate) fn reflens_list_cloud_watch_alarm_template_groups_output_output_next_
 
 pub(crate) fn reflens_list_cloud_watch_alarm_templates_output_output_next_token(
     input: &crate::operation::list_cloud_watch_alarm_templates::ListCloudWatchAlarmTemplatesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_cluster_alerts_output_output_next_token(
+    input: &crate::operation::list_cluster_alerts::ListClusterAlertsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -111,6 +131,16 @@ pub(crate) fn reflens_list_input_security_groups_output_output_next_token(
 
 pub(crate) fn reflens_list_inputs_output_output_next_token(
     input: &crate::operation::list_inputs::ListInputsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_multiplex_alerts_output_output_next_token(
+    input: &crate::operation::list_multiplex_alerts::ListMultiplexAlertsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -206,6 +236,13 @@ pub(crate) fn lens_describe_schedule_output_output_schedule_actions(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_list_alerts_output_output_alerts(
+    input: crate::operation::list_alerts::ListAlertsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ChannelAlert>> {
+    let input = input.alerts?;
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_channel_placement_groups_output_output_channel_placement_groups(
     input: crate::operation::list_channel_placement_groups::ListChannelPlacementGroupsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DescribeChannelPlacementGroupSummary>> {
@@ -231,6 +268,13 @@ pub(crate) fn lens_list_cloud_watch_alarm_templates_output_output_cloud_watch_al
     input: crate::operation::list_cloud_watch_alarm_templates::ListCloudWatchAlarmTemplatesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchAlarmTemplateSummary>> {
     let input = input.cloud_watch_alarm_templates?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_cluster_alerts_output_output_alerts(
+    input: crate::operation::list_cluster_alerts::ListClusterAlertsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ClusterAlert>> {
+    let input = input.alerts?;
     ::std::option::Option::Some(input)
 }
 
@@ -280,6 +324,13 @@ pub(crate) fn lens_list_inputs_output_output_inputs(
     input: crate::operation::list_inputs::ListInputsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Input>> {
     let input = input.inputs?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_multiplex_alerts_output_output_alerts(
+    input: crate::operation::list_multiplex_alerts::ListMultiplexAlertsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::MultiplexAlert>> {
+    let input = input.alerts?;
     ::std::option::Option::Some(input)
 }
 

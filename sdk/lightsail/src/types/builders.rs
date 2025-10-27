@@ -45,6 +45,10 @@ pub use crate::types::_container_service_ecr_image_puller_role_request::Containe
 
 pub use crate::types::_bucket::BucketBuilder;
 
+pub use crate::types::_bucket_cors_config::BucketCorsConfigBuilder;
+
+pub use crate::types::_bucket_cors_rule::BucketCorsRuleBuilder;
+
 pub use crate::types::_bucket_access_log_config::BucketAccessLogConfigBuilder;
 
 pub use crate::types::_bucket_state::BucketStateBuilder;

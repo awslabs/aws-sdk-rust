@@ -14,6 +14,7 @@
 /// match validationexceptionreason {
 ///     ValidationExceptionReason::AccountsAlreadyAssociated => { /* ... */ },
 ///     ValidationExceptionReason::AccountsNotAssociated => { /* ... */ },
+///     ValidationExceptionReason::BillingGroupAlreadyExistInCurrentBillingPeriod => { /* ... */ },
 ///     ValidationExceptionReason::CannotDeleteAutoAssociateBillingGroup => { /* ... */ },
 ///     ValidationExceptionReason::CannotParse => { /* ... */ },
 ///     ValidationExceptionReason::CustomLineItemAssociationExists => { /* ... */ },
@@ -27,11 +28,13 @@
 ///     ValidationExceptionReason::IllegalBillingPeriodRange => { /* ... */ },
 ///     ValidationExceptionReason::IllegalChargeDetails => { /* ... */ },
 ///     ValidationExceptionReason::IllegalChildAssociateResource => { /* ... */ },
+///     ValidationExceptionReason::IllegalComputationRule => { /* ... */ },
 ///     ValidationExceptionReason::IllegalCustomlineitem => { /* ... */ },
 ///     ValidationExceptionReason::IllegalCustomlineitemModification => { /* ... */ },
 ///     ValidationExceptionReason::IllegalCustomlineitemUpdate => { /* ... */ },
 ///     ValidationExceptionReason::IllegalEndedBillinggroup => { /* ... */ },
 ///     ValidationExceptionReason::IllegalExpression => { /* ... */ },
+///     ValidationExceptionReason::IllegalLineItemFilter => { /* ... */ },
 ///     ValidationExceptionReason::IllegalModifierPercentage => { /* ... */ },
 ///     ValidationExceptionReason::IllegalOperation => { /* ... */ },
 ///     ValidationExceptionReason::IllegalPrimaryAccount => { /* ... */ },
@@ -56,6 +59,7 @@
 ///     ValidationExceptionReason::MismatchedPricingplanArn => { /* ... */ },
 ///     ValidationExceptionReason::MismatchedPricingruleArn => { /* ... */ },
 ///     ValidationExceptionReason::MissingBillinggroup => { /* ... */ },
+///     ValidationExceptionReason::MissingCostcategory => { /* ... */ },
 ///     ValidationExceptionReason::MissingCustomlineitem => { /* ... */ },
 ///     ValidationExceptionReason::MissingLinkedAccountIds => { /* ... */ },
 ///     ValidationExceptionReason::MissingPricingplan => { /* ... */ },
@@ -105,6 +109,8 @@ pub enum ValidationExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     AccountsNotAssociated,
     #[allow(missing_docs)] // documentation missing in model
+    BillingGroupAlreadyExistInCurrentBillingPeriod,
+    #[allow(missing_docs)] // documentation missing in model
     CannotDeleteAutoAssociateBillingGroup,
     #[allow(missing_docs)] // documentation missing in model
     CannotParse,
@@ -131,6 +137,8 @@ pub enum ValidationExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     IllegalChildAssociateResource,
     #[allow(missing_docs)] // documentation missing in model
+    IllegalComputationRule,
+    #[allow(missing_docs)] // documentation missing in model
     IllegalCustomlineitem,
     #[allow(missing_docs)] // documentation missing in model
     IllegalCustomlineitemModification,
@@ -140,6 +148,8 @@ pub enum ValidationExceptionReason {
     IllegalEndedBillinggroup,
     #[allow(missing_docs)] // documentation missing in model
     IllegalExpression,
+    #[allow(missing_docs)] // documentation missing in model
+    IllegalLineItemFilter,
     #[allow(missing_docs)] // documentation missing in model
     IllegalModifierPercentage,
     #[allow(missing_docs)] // documentation missing in model
@@ -189,6 +199,8 @@ pub enum ValidationExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     MissingBillinggroup,
     #[allow(missing_docs)] // documentation missing in model
+    MissingCostcategory,
+    #[allow(missing_docs)] // documentation missing in model
     MissingCustomlineitem,
     #[allow(missing_docs)] // documentation missing in model
     MissingLinkedAccountIds,
@@ -229,6 +241,7 @@ impl ::std::convert::From<&str> for ValidationExceptionReason {
         match s {
             "ACCOUNTS_ALREADY_ASSOCIATED" => ValidationExceptionReason::AccountsAlreadyAssociated,
             "ACCOUNTS_NOT_ASSOCIATED" => ValidationExceptionReason::AccountsNotAssociated,
+            "BILLING_GROUP_ALREADY_EXIST_IN_CURRENT_BILLING_PERIOD" => ValidationExceptionReason::BillingGroupAlreadyExistInCurrentBillingPeriod,
             "CANNOT_DELETE_AUTO_ASSOCIATE_BILLING_GROUP" => ValidationExceptionReason::CannotDeleteAutoAssociateBillingGroup,
             "CANNOT_PARSE" => ValidationExceptionReason::CannotParse,
             "CUSTOM_LINE_ITEM_ASSOCIATION_EXISTS" => ValidationExceptionReason::CustomLineItemAssociationExists,
@@ -242,11 +255,13 @@ impl ::std::convert::From<&str> for ValidationExceptionReason {
             "ILLEGAL_BILLING_PERIOD_RANGE" => ValidationExceptionReason::IllegalBillingPeriodRange,
             "ILLEGAL_CHARGE_DETAILS" => ValidationExceptionReason::IllegalChargeDetails,
             "ILLEGAL_CHILD_ASSOCIATE_RESOURCE" => ValidationExceptionReason::IllegalChildAssociateResource,
+            "ILLEGAL_COMPUTATION_RULE" => ValidationExceptionReason::IllegalComputationRule,
             "ILLEGAL_CUSTOMLINEITEM" => ValidationExceptionReason::IllegalCustomlineitem,
             "ILLEGAL_CUSTOMLINEITEM_MODIFICATION" => ValidationExceptionReason::IllegalCustomlineitemModification,
             "ILLEGAL_CUSTOMLINEITEM_UPDATE" => ValidationExceptionReason::IllegalCustomlineitemUpdate,
             "ILLEGAL_ENDED_BILLINGGROUP" => ValidationExceptionReason::IllegalEndedBillinggroup,
             "ILLEGAL_EXPRESSION" => ValidationExceptionReason::IllegalExpression,
+            "ILLEGAL_LINE_ITEM_FILTER" => ValidationExceptionReason::IllegalLineItemFilter,
             "ILLEGAL_MODIFIER_PERCENTAGE" => ValidationExceptionReason::IllegalModifierPercentage,
             "ILLEGAL_OPERATION" => ValidationExceptionReason::IllegalOperation,
             "ILLEGAL_PRIMARY_ACCOUNT" => ValidationExceptionReason::IllegalPrimaryAccount,
@@ -271,6 +286,7 @@ impl ::std::convert::From<&str> for ValidationExceptionReason {
             "MISMATCHED_PRICINGPLAN_ARN" => ValidationExceptionReason::MismatchedPricingplanArn,
             "MISMATCHED_PRICINGRULE_ARN" => ValidationExceptionReason::MismatchedPricingruleArn,
             "MISSING_BILLINGGROUP" => ValidationExceptionReason::MissingBillinggroup,
+            "MISSING_COSTCATEGORY" => ValidationExceptionReason::MissingCostcategory,
             "MISSING_CUSTOMLINEITEM" => ValidationExceptionReason::MissingCustomlineitem,
             "MISSING_LINKED_ACCOUNT_IDS" => ValidationExceptionReason::MissingLinkedAccountIds,
             "MISSING_PRICINGPLAN" => ValidationExceptionReason::MissingPricingplan,
@@ -304,6 +320,7 @@ impl ValidationExceptionReason {
         match self {
             ValidationExceptionReason::AccountsAlreadyAssociated => "ACCOUNTS_ALREADY_ASSOCIATED",
             ValidationExceptionReason::AccountsNotAssociated => "ACCOUNTS_NOT_ASSOCIATED",
+            ValidationExceptionReason::BillingGroupAlreadyExistInCurrentBillingPeriod => "BILLING_GROUP_ALREADY_EXIST_IN_CURRENT_BILLING_PERIOD",
             ValidationExceptionReason::CannotDeleteAutoAssociateBillingGroup => "CANNOT_DELETE_AUTO_ASSOCIATE_BILLING_GROUP",
             ValidationExceptionReason::CannotParse => "CANNOT_PARSE",
             ValidationExceptionReason::CustomLineItemAssociationExists => "CUSTOM_LINE_ITEM_ASSOCIATION_EXISTS",
@@ -317,11 +334,13 @@ impl ValidationExceptionReason {
             ValidationExceptionReason::IllegalBillingPeriodRange => "ILLEGAL_BILLING_PERIOD_RANGE",
             ValidationExceptionReason::IllegalChargeDetails => "ILLEGAL_CHARGE_DETAILS",
             ValidationExceptionReason::IllegalChildAssociateResource => "ILLEGAL_CHILD_ASSOCIATE_RESOURCE",
+            ValidationExceptionReason::IllegalComputationRule => "ILLEGAL_COMPUTATION_RULE",
             ValidationExceptionReason::IllegalCustomlineitem => "ILLEGAL_CUSTOMLINEITEM",
             ValidationExceptionReason::IllegalCustomlineitemModification => "ILLEGAL_CUSTOMLINEITEM_MODIFICATION",
             ValidationExceptionReason::IllegalCustomlineitemUpdate => "ILLEGAL_CUSTOMLINEITEM_UPDATE",
             ValidationExceptionReason::IllegalEndedBillinggroup => "ILLEGAL_ENDED_BILLINGGROUP",
             ValidationExceptionReason::IllegalExpression => "ILLEGAL_EXPRESSION",
+            ValidationExceptionReason::IllegalLineItemFilter => "ILLEGAL_LINE_ITEM_FILTER",
             ValidationExceptionReason::IllegalModifierPercentage => "ILLEGAL_MODIFIER_PERCENTAGE",
             ValidationExceptionReason::IllegalOperation => "ILLEGAL_OPERATION",
             ValidationExceptionReason::IllegalPrimaryAccount => "ILLEGAL_PRIMARY_ACCOUNT",
@@ -346,6 +365,7 @@ impl ValidationExceptionReason {
             ValidationExceptionReason::MismatchedPricingplanArn => "MISMATCHED_PRICINGPLAN_ARN",
             ValidationExceptionReason::MismatchedPricingruleArn => "MISMATCHED_PRICINGRULE_ARN",
             ValidationExceptionReason::MissingBillinggroup => "MISSING_BILLINGGROUP",
+            ValidationExceptionReason::MissingCostcategory => "MISSING_COSTCATEGORY",
             ValidationExceptionReason::MissingCustomlineitem => "MISSING_CUSTOMLINEITEM",
             ValidationExceptionReason::MissingLinkedAccountIds => "MISSING_LINKED_ACCOUNT_IDS",
             ValidationExceptionReason::MissingPricingplan => "MISSING_PRICINGPLAN",
@@ -370,6 +390,7 @@ impl ValidationExceptionReason {
         &[
             "ACCOUNTS_ALREADY_ASSOCIATED",
             "ACCOUNTS_NOT_ASSOCIATED",
+            "BILLING_GROUP_ALREADY_EXIST_IN_CURRENT_BILLING_PERIOD",
             "CANNOT_DELETE_AUTO_ASSOCIATE_BILLING_GROUP",
             "CANNOT_PARSE",
             "CUSTOM_LINE_ITEM_ASSOCIATION_EXISTS",
@@ -383,11 +404,13 @@ impl ValidationExceptionReason {
             "ILLEGAL_BILLING_PERIOD_RANGE",
             "ILLEGAL_CHARGE_DETAILS",
             "ILLEGAL_CHILD_ASSOCIATE_RESOURCE",
+            "ILLEGAL_COMPUTATION_RULE",
             "ILLEGAL_CUSTOMLINEITEM",
             "ILLEGAL_CUSTOMLINEITEM_MODIFICATION",
             "ILLEGAL_CUSTOMLINEITEM_UPDATE",
             "ILLEGAL_ENDED_BILLINGGROUP",
             "ILLEGAL_EXPRESSION",
+            "ILLEGAL_LINE_ITEM_FILTER",
             "ILLEGAL_MODIFIER_PERCENTAGE",
             "ILLEGAL_OPERATION",
             "ILLEGAL_PRIMARY_ACCOUNT",
@@ -412,6 +435,7 @@ impl ValidationExceptionReason {
             "MISMATCHED_PRICINGPLAN_ARN",
             "MISMATCHED_PRICINGRULE_ARN",
             "MISSING_BILLINGGROUP",
+            "MISSING_COSTCATEGORY",
             "MISSING_CUSTOMLINEITEM",
             "MISSING_LINKED_ACCOUNT_IDS",
             "MISSING_PRICINGPLAN",
@@ -453,6 +477,9 @@ impl ::std::fmt::Display for ValidationExceptionReason {
         match self {
             ValidationExceptionReason::AccountsAlreadyAssociated => write!(f, "ACCOUNTS_ALREADY_ASSOCIATED"),
             ValidationExceptionReason::AccountsNotAssociated => write!(f, "ACCOUNTS_NOT_ASSOCIATED"),
+            ValidationExceptionReason::BillingGroupAlreadyExistInCurrentBillingPeriod => {
+                write!(f, "BILLING_GROUP_ALREADY_EXIST_IN_CURRENT_BILLING_PERIOD")
+            }
             ValidationExceptionReason::CannotDeleteAutoAssociateBillingGroup => write!(f, "CANNOT_DELETE_AUTO_ASSOCIATE_BILLING_GROUP"),
             ValidationExceptionReason::CannotParse => write!(f, "CANNOT_PARSE"),
             ValidationExceptionReason::CustomLineItemAssociationExists => write!(f, "CUSTOM_LINE_ITEM_ASSOCIATION_EXISTS"),
@@ -466,11 +493,13 @@ impl ::std::fmt::Display for ValidationExceptionReason {
             ValidationExceptionReason::IllegalBillingPeriodRange => write!(f, "ILLEGAL_BILLING_PERIOD_RANGE"),
             ValidationExceptionReason::IllegalChargeDetails => write!(f, "ILLEGAL_CHARGE_DETAILS"),
             ValidationExceptionReason::IllegalChildAssociateResource => write!(f, "ILLEGAL_CHILD_ASSOCIATE_RESOURCE"),
+            ValidationExceptionReason::IllegalComputationRule => write!(f, "ILLEGAL_COMPUTATION_RULE"),
             ValidationExceptionReason::IllegalCustomlineitem => write!(f, "ILLEGAL_CUSTOMLINEITEM"),
             ValidationExceptionReason::IllegalCustomlineitemModification => write!(f, "ILLEGAL_CUSTOMLINEITEM_MODIFICATION"),
             ValidationExceptionReason::IllegalCustomlineitemUpdate => write!(f, "ILLEGAL_CUSTOMLINEITEM_UPDATE"),
             ValidationExceptionReason::IllegalEndedBillinggroup => write!(f, "ILLEGAL_ENDED_BILLINGGROUP"),
             ValidationExceptionReason::IllegalExpression => write!(f, "ILLEGAL_EXPRESSION"),
+            ValidationExceptionReason::IllegalLineItemFilter => write!(f, "ILLEGAL_LINE_ITEM_FILTER"),
             ValidationExceptionReason::IllegalModifierPercentage => write!(f, "ILLEGAL_MODIFIER_PERCENTAGE"),
             ValidationExceptionReason::IllegalOperation => write!(f, "ILLEGAL_OPERATION"),
             ValidationExceptionReason::IllegalPrimaryAccount => write!(f, "ILLEGAL_PRIMARY_ACCOUNT"),
@@ -495,6 +524,7 @@ impl ::std::fmt::Display for ValidationExceptionReason {
             ValidationExceptionReason::MismatchedPricingplanArn => write!(f, "MISMATCHED_PRICINGPLAN_ARN"),
             ValidationExceptionReason::MismatchedPricingruleArn => write!(f, "MISMATCHED_PRICINGRULE_ARN"),
             ValidationExceptionReason::MissingBillinggroup => write!(f, "MISSING_BILLINGGROUP"),
+            ValidationExceptionReason::MissingCostcategory => write!(f, "MISSING_COSTCATEGORY"),
             ValidationExceptionReason::MissingCustomlineitem => write!(f, "MISSING_CUSTOMLINEITEM"),
             ValidationExceptionReason::MissingLinkedAccountIds => write!(f, "MISSING_LINKED_ACCOUNT_IDS"),
             ValidationExceptionReason::MissingPricingplan => write!(f, "MISSING_PRICINGPLAN"),

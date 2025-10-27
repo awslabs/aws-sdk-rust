@@ -12,7 +12,7 @@ pub struct ProcessingS3Input {
     pub s3_data_type: ::std::option::Option<crate::types::ProcessingS3DataType>,
     /// <p>Whether to use <code>File</code> or <code>Pipe</code> input mode. In File mode, Amazon SageMaker copies the data from the input source onto the local ML storage volume before starting your processing container. This is the most commonly used input mode. In <code>Pipe</code> mode, Amazon SageMaker streams input data from the source directly to your processing container into named pipes without using the ML storage volume.</p>
     pub s3_input_mode: ::std::option::Option<crate::types::ProcessingS3InputMode>,
-    /// <p>Whether to distribute the data from Amazon S3 to all processing instances with <code>FullyReplicated</code>, or whether the data from Amazon S3 is shared by Amazon S3 key, downloading one shard of data to each processing instance.</p>
+    /// <p>Whether to distribute the data from Amazon S3 to all processing instances with <code>FullyReplicated</code>, or whether the data from Amazon S3 is sharded by Amazon S3 key, downloading one shard of data to each processing instance.</p>
     pub s3_data_distribution_type: ::std::option::Option<crate::types::ProcessingS3DataDistributionType>,
     /// <p>Whether to GZIP-decompress the data in Amazon S3 as it is streamed into the processing container. <code>Gzip</code> can only be used when <code>Pipe</code> mode is specified as the <code>S3InputMode</code>. In <code>Pipe</code> mode, Amazon SageMaker streams input data from the source directly to your container without using the EBS volume.</p>
     pub s3_compression_type: ::std::option::Option<crate::types::ProcessingS3CompressionType>,
@@ -34,7 +34,7 @@ impl ProcessingS3Input {
     pub fn s3_input_mode(&self) -> ::std::option::Option<&crate::types::ProcessingS3InputMode> {
         self.s3_input_mode.as_ref()
     }
-    /// <p>Whether to distribute the data from Amazon S3 to all processing instances with <code>FullyReplicated</code>, or whether the data from Amazon S3 is shared by Amazon S3 key, downloading one shard of data to each processing instance.</p>
+    /// <p>Whether to distribute the data from Amazon S3 to all processing instances with <code>FullyReplicated</code>, or whether the data from Amazon S3 is sharded by Amazon S3 key, downloading one shard of data to each processing instance.</p>
     pub fn s3_data_distribution_type(&self) -> ::std::option::Option<&crate::types::ProcessingS3DataDistributionType> {
         self.s3_data_distribution_type.as_ref()
     }
@@ -120,17 +120,17 @@ impl ProcessingS3InputBuilder {
     pub fn get_s3_input_mode(&self) -> &::std::option::Option<crate::types::ProcessingS3InputMode> {
         &self.s3_input_mode
     }
-    /// <p>Whether to distribute the data from Amazon S3 to all processing instances with <code>FullyReplicated</code>, or whether the data from Amazon S3 is shared by Amazon S3 key, downloading one shard of data to each processing instance.</p>
+    /// <p>Whether to distribute the data from Amazon S3 to all processing instances with <code>FullyReplicated</code>, or whether the data from Amazon S3 is sharded by Amazon S3 key, downloading one shard of data to each processing instance.</p>
     pub fn s3_data_distribution_type(mut self, input: crate::types::ProcessingS3DataDistributionType) -> Self {
         self.s3_data_distribution_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Whether to distribute the data from Amazon S3 to all processing instances with <code>FullyReplicated</code>, or whether the data from Amazon S3 is shared by Amazon S3 key, downloading one shard of data to each processing instance.</p>
+    /// <p>Whether to distribute the data from Amazon S3 to all processing instances with <code>FullyReplicated</code>, or whether the data from Amazon S3 is sharded by Amazon S3 key, downloading one shard of data to each processing instance.</p>
     pub fn set_s3_data_distribution_type(mut self, input: ::std::option::Option<crate::types::ProcessingS3DataDistributionType>) -> Self {
         self.s3_data_distribution_type = input;
         self
     }
-    /// <p>Whether to distribute the data from Amazon S3 to all processing instances with <code>FullyReplicated</code>, or whether the data from Amazon S3 is shared by Amazon S3 key, downloading one shard of data to each processing instance.</p>
+    /// <p>Whether to distribute the data from Amazon S3 to all processing instances with <code>FullyReplicated</code>, or whether the data from Amazon S3 is sharded by Amazon S3 key, downloading one shard of data to each processing instance.</p>
     pub fn get_s3_data_distribution_type(&self) -> &::std::option::Option<crate::types::ProcessingS3DataDistributionType> {
         &self.s3_data_distribution_type
     }

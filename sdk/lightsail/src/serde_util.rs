@@ -7,3 +7,15 @@ pub(crate) fn bucket_access_log_config_correct_errors(
     }
     builder
 }
+
+pub(crate) fn bucket_cors_rule_correct_errors(
+    mut builder: crate::types::builders::BucketCorsRuleBuilder,
+) -> crate::types::builders::BucketCorsRuleBuilder {
+    if builder.allowed_methods.is_none() {
+        builder.allowed_methods = Some(Default::default())
+    }
+    if builder.allowed_origins.is_none() {
+        builder.allowed_origins = Some(Default::default())
+    }
+    builder
+}

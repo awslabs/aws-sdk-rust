@@ -23,6 +23,7 @@ impl crate::operation::list_environment_templates::builders::ListEnvironmentTemp
 /// Fluent builder constructing a request to `ListEnvironmentTemplates`.
 ///
 /// <p>List environment templates.</p>
+#[deprecated(note = "AWS Proton is not accepting new customers.", since = "10/07/2025")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListEnvironmentTemplatesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

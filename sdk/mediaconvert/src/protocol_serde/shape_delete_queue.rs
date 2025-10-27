@@ -93,6 +93,24 @@ pub fn de_delete_queue_http_error(
             }
             tmp
         }),
+        "ServiceQuotaExceededException" => crate::operation::delete_queue::DeleteQueueError::ServiceQuotaExceededException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ServiceQuotaExceededExceptionBuilder::default();
+                output = crate::protocol_serde::shape_service_quota_exceeded_exception::de_service_quota_exceeded_exception_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::delete_queue::DeleteQueueError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "TooManyRequestsException" => crate::operation::delete_queue::DeleteQueueError::TooManyRequestsException({
             #[allow(unused_mut)]
             let mut tmp = {

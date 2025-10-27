@@ -1547,15 +1547,27 @@ pub use crate::types::_assignment_status::AssignmentStatus;
 
 pub use crate::types::_group::Group;
 
+pub use crate::types::_permission::Permission;
+
 pub use crate::types::_ssl_properties::SslProperties;
 
 pub use crate::types::_vpc_connection_properties::VpcConnectionProperties;
 
 pub use crate::types::_data_source_credentials::DataSourceCredentials;
 
+pub use crate::types::_web_proxy_credentials::WebProxyCredentials;
+
 pub use crate::types::_credential_pair::CredentialPair;
 
 pub use crate::types::_data_source_parameters::DataSourceParameters;
+
+pub use crate::types::_q_business_parameters::QBusinessParameters;
+
+pub use crate::types::_confluence_parameters::ConfluenceParameters;
+
+pub use crate::types::_web_crawler_parameters::WebCrawlerParameters;
+
+pub use crate::types::_web_crawler_auth_type::WebCrawlerAuthType;
 
 pub use crate::types::_custom_connection_parameters::CustomConnectionParameters;
 
@@ -1590,6 +1602,8 @@ pub use crate::types::_spark_parameters::SparkParameters;
 pub use crate::types::_snowflake_parameters::SnowflakeParameters;
 
 pub use crate::types::_service_now_parameters::ServiceNowParameters;
+
+pub use crate::types::_s3_knowledge_base_parameters::S3KnowledgeBaseParameters;
 
 pub use crate::types::_s3_parameters::S3Parameters;
 
@@ -1751,6 +1765,8 @@ pub use crate::types::_data_stories_sharing_option::DataStoriesSharingOption;
 
 pub use crate::types::_executive_summary_option::ExecutiveSummaryOption;
 
+pub use crate::types::_quick_suite_actions_option::QuickSuiteActionsOption;
+
 pub use crate::types::_data_qa_enabled_option::DataQaEnabledOption;
 
 pub use crate::types::_data_point_tooltip_option::DataPointTooltipOption;
@@ -1815,6 +1831,8 @@ pub use crate::types::_navbar_style::NavbarStyle;
 
 pub use crate::types::_palette::Palette;
 
+pub use crate::types::_contextual_accent_palette::ContextualAccentPalette;
+
 pub use crate::types::_brand_color_palette::BrandColorPalette;
 
 pub use crate::types::_brand_detail::BrandDetail;
@@ -1836,6 +1854,36 @@ pub use crate::types::_analysis_definition::AnalysisDefinition;
 pub use crate::types::_analysis_source_entity::AnalysisSourceEntity;
 
 pub use crate::types::_analysis_source_template::AnalysisSourceTemplate;
+
+pub use crate::types::_auth_config::AuthConfig;
+
+pub use crate::types::_authentication_metadata::AuthenticationMetadata;
+
+pub use crate::types::_iam_connection_metadata::IamConnectionMetadata;
+
+pub use crate::types::_none_connection_metadata::NoneConnectionMetadata;
+
+pub use crate::types::_api_key_connection_metadata::ApiKeyConnectionMetadata;
+
+pub use crate::types::_basic_auth_connection_metadata::BasicAuthConnectionMetadata;
+
+pub use crate::types::_client_credentials_grant_metadata::ClientCredentialsGrantMetadata;
+
+pub use crate::types::_client_credentials_details::ClientCredentialsDetails;
+
+pub use crate::types::_client_credentials_grant_details::ClientCredentialsGrantDetails;
+
+pub use crate::types::_client_credentials_source::ClientCredentialsSource;
+
+pub use crate::types::_authorization_code_grant_metadata::AuthorizationCodeGrantMetadata;
+
+pub use crate::types::_authorization_code_grant_credentials_details::AuthorizationCodeGrantCredentialsDetails;
+
+pub use crate::types::_authorization_code_grant_details::AuthorizationCodeGrantDetails;
+
+pub use crate::types::_authorization_code_grant_credentials_source::AuthorizationCodeGrantCredentialsSource;
+
+pub use crate::types::_connection_auth_type::ConnectionAuthType;
 
 pub use crate::types::_account_customization::AccountCustomization;
 
@@ -2013,6 +2061,16 @@ pub use crate::types::_folder_filter_attribute::FolderFilterAttribute;
 
 pub use crate::types::_filter_operator::FilterOperator;
 
+pub use crate::types::_flow_summary::FlowSummary;
+
+pub use crate::types::_flow_publish_state::FlowPublishState;
+
+pub use crate::types::_search_flows_filter::SearchFlowsFilter;
+
+pub use crate::types::_search_filter_operator::SearchFilterOperator;
+
+pub use crate::types::_field_name::FieldName;
+
 pub use crate::types::_data_source_summary::DataSourceSummary;
 
 pub use crate::types::_data_source_type::DataSourceType;
@@ -2040,6 +2098,18 @@ pub use crate::types::_analysis_summary::AnalysisSummary;
 pub use crate::types::_analysis_search_filter::AnalysisSearchFilter;
 
 pub use crate::types::_analysis_filter_attribute::AnalysisFilterAttribute;
+
+pub use crate::types::_action_connector_summary::ActionConnectorSummary;
+
+pub use crate::types::_action_connector_error::ActionConnectorError;
+
+pub use crate::types::_action_connector_error_type::ActionConnectorErrorType;
+
+pub use crate::types::_action_connector_type::ActionConnectorType;
+
+pub use crate::types::_action_connector_search_filter::ActionConnectorSearchFilter;
+
+pub use crate::types::_action_connector_search_filter_name_enum::ActionConnectorSearchFilterNameEnum;
 
 pub use crate::types::_qa_result::QaResult;
 
@@ -2333,6 +2403,32 @@ pub use crate::types::_analysis_error_type::AnalysisErrorType;
 
 pub use crate::types::_analysis::Analysis;
 
+pub use crate::types::_action_connector::ActionConnector;
+
+pub use crate::types::_read_auth_config::ReadAuthConfig;
+
+pub use crate::types::_read_authentication_metadata::ReadAuthenticationMetadata;
+
+pub use crate::types::_read_iam_connection_metadata::ReadIamConnectionMetadata;
+
+pub use crate::types::_read_none_connection_metadata::ReadNoneConnectionMetadata;
+
+pub use crate::types::_read_api_key_connection_metadata::ReadApiKeyConnectionMetadata;
+
+pub use crate::types::_read_basic_auth_connection_metadata::ReadBasicAuthConnectionMetadata;
+
+pub use crate::types::_read_client_credentials_grant_metadata::ReadClientCredentialsGrantMetadata;
+
+pub use crate::types::_read_client_credentials_details::ReadClientCredentialsDetails;
+
+pub use crate::types::_read_client_credentials_grant_details::ReadClientCredentialsGrantDetails;
+
+pub use crate::types::_read_authorization_code_grant_metadata::ReadAuthorizationCodeGrantMetadata;
+
+pub use crate::types::_read_authorization_code_grant_credentials_details::ReadAuthorizationCodeGrantCredentialsDetails;
+
+pub use crate::types::_read_authorization_code_grant_details::ReadAuthorizationCodeGrantDetails;
+
 pub use crate::types::_account_info::AccountInfo;
 
 pub use crate::types::_edition::Edition;
@@ -2360,6 +2456,20 @@ mod _account_customization;
 mod _account_info;
 
 mod _account_settings;
+
+mod _action_connector;
+
+mod _action_connector_error;
+
+mod _action_connector_error_type;
+
+mod _action_connector_search_filter;
+
+mod _action_connector_search_filter_name_enum;
+
+mod _action_connector_summary;
+
+mod _action_connector_type;
 
 mod _active_iam_policy_assignment;
 
@@ -2430,6 +2540,8 @@ mod _anonymous_user_generative_qn_a_embedding_configuration;
 mod _anonymous_user_q_search_bar_embedding_configuration;
 
 mod _anonymous_user_snapshot_job_result;
+
+mod _api_key_connection_metadata;
 
 mod _application_theme;
 
@@ -2579,11 +2691,23 @@ mod _aurora_parameters;
 
 mod _aurora_postgre_sql_parameters;
 
+mod _auth_config;
+
+mod _authentication_metadata;
+
 mod _authentication_method_option;
 
 mod _authentication_type;
 
 mod _author_specified_aggregation;
+
+mod _authorization_code_grant_credentials_details;
+
+mod _authorization_code_grant_credentials_source;
+
+mod _authorization_code_grant_details;
+
+mod _authorization_code_grant_metadata;
 
 mod _authorized_targets_by_service;
 
@@ -2628,6 +2752,8 @@ mod _bar_chart_visual;
 mod _bars_arrangement;
 
 mod _base_map_style_type;
+
+mod _basic_auth_connection_metadata;
 
 mod _big_query_parameters;
 
@@ -2725,6 +2851,14 @@ mod _cell_value_synonym;
 
 mod _chart_axis_label_options;
 
+mod _client_credentials_details;
+
+mod _client_credentials_grant_details;
+
+mod _client_credentials_grant_metadata;
+
+mod _client_credentials_source;
+
 mod _cluster_marker;
 
 mod _cluster_marker_configuration;
@@ -2819,9 +2953,15 @@ mod _conditional_formatting_icon_set_type;
 
 mod _conditional_formatting_solid_color;
 
+mod _confluence_parameters;
+
+mod _connection_auth_type;
+
 mod _constant_type;
 
 mod _context_menu_option;
+
+mod _contextual_accent_palette;
 
 mod _contribution_analysis_default;
 
@@ -3143,6 +3283,8 @@ mod _field_folder;
 
 mod _field_label_type;
 
+mod _field_name;
+
 mod _field_series_item;
 
 mod _field_sort;
@@ -3212,6 +3354,10 @@ mod _filter_text_area_control;
 mod _filter_text_field_control;
 
 mod _filter_visual_scope;
+
+mod _flow_publish_state;
+
+mod _flow_summary;
 
 mod _folder;
 
@@ -3446,6 +3592,8 @@ mod _histogram_field_wells;
 mod _histogram_visual;
 
 mod _horizontal_text_alignment;
+
+mod _iam_connection_metadata;
 
 mod _iam_policy_assignment;
 
@@ -3717,6 +3865,8 @@ mod _network_interface_status;
 
 mod _new_default_values;
 
+mod _none_connection_metadata;
+
 mod _null_filter_option;
 
 mod _null_filter_type;
@@ -3812,6 +3962,8 @@ mod _performance_configuration;
 mod _period_over_period_computation;
 
 mod _period_to_date_computation;
+
+mod _permission;
 
 mod _personalization_mode;
 
@@ -3921,6 +4073,8 @@ mod _purchase_mode;
 
 mod _q_business_insights_status;
 
+mod _q_business_parameters;
+
 mod _q_data_key;
 
 mod _q_data_key_type;
@@ -3936,6 +4090,8 @@ mod _query_execution_mode;
 mod _query_execution_options;
 
 mod _queue_info;
+
+mod _quick_suite_actions_option;
 
 mod _radar_chart_aggregated_field_wells;
 
@@ -3960,6 +4116,30 @@ mod _range_constant;
 mod _range_ends_label_type;
 
 mod _rds_parameters;
+
+mod _read_api_key_connection_metadata;
+
+mod _read_auth_config;
+
+mod _read_authentication_metadata;
+
+mod _read_authorization_code_grant_credentials_details;
+
+mod _read_authorization_code_grant_details;
+
+mod _read_authorization_code_grant_metadata;
+
+mod _read_basic_auth_connection_metadata;
+
+mod _read_client_credentials_details;
+
+mod _read_client_credentials_grant_details;
+
+mod _read_client_credentials_grant_metadata;
+
+mod _read_iam_connection_metadata;
+
+mod _read_none_connection_metadata;
 
 mod _recent_snapshots_configurations;
 
@@ -4065,6 +4245,8 @@ mod _row_level_permission_tag_rule;
 
 mod _s3_bucket_configuration;
 
+mod _s3_knowledge_base_parameters;
+
 mod _s3_parameters;
 
 mod _s3_source;
@@ -4098,6 +4280,10 @@ mod _schedule_refresh_on_entity;
 mod _schedules_configurations;
 
 mod _scroll_bar_options;
+
+mod _search_filter_operator;
+
+mod _search_flows_filter;
 
 mod _secondary_value_options;
 
@@ -4680,6 +4866,12 @@ mod _waterfall_chart_options;
 mod _waterfall_chart_sort_configuration;
 
 mod _waterfall_visual;
+
+mod _web_crawler_auth_type;
+
+mod _web_crawler_parameters;
+
+mod _web_proxy_credentials;
 
 mod _what_if_point_scenario;
 

@@ -108,17 +108,17 @@ impl CreateCustomLineItemFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The token that is needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update.</p>
+    /// <p>A unique, case-sensitive identifier that you specify to ensure idempotency of the request. Idempotency ensures that an API request completes no more than one time. With an idempotent request, if the original request completes successfully, any subsequent retries complete successfully without performing any further actions.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
-    /// <p>The token that is needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update.</p>
+    /// <p>A unique, case-sensitive identifier that you specify to ensure idempotency of the request. Idempotency ensures that an API request completes no more than one time. With an idempotent request, if the original request completes successfully, any subsequent retries complete successfully without performing any further actions.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
-    /// <p>The token that is needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update.</p>
+    /// <p>A unique, case-sensitive identifier that you specify to ensure idempotency of the request. Idempotency ensures that an API request completes no more than one time. With an idempotent request, if the original request completes successfully, any subsequent retries complete successfully without performing any further actions.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
@@ -224,5 +224,33 @@ impl CreateCustomLineItemFluentBuilder {
     /// <p>The Amazon Web Services account in which this custom line item will be applied to.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_account_id()
+    }
+    /// The display settings of the custom line item
+    pub fn computation_rule(mut self, input: crate::types::ComputationRuleEnum) -> Self {
+        self.inner = self.inner.computation_rule(input);
+        self
+    }
+    /// The display settings of the custom line item
+    pub fn set_computation_rule(mut self, input: ::std::option::Option<crate::types::ComputationRuleEnum>) -> Self {
+        self.inner = self.inner.set_computation_rule(input);
+        self
+    }
+    /// The display settings of the custom line item
+    pub fn get_computation_rule(&self) -> &::std::option::Option<crate::types::ComputationRuleEnum> {
+        self.inner.get_computation_rule()
+    }
+    /// The presentation configuration of the custom line item
+    pub fn presentation_details(mut self, input: crate::types::PresentationObject) -> Self {
+        self.inner = self.inner.presentation_details(input);
+        self
+    }
+    /// The presentation configuration of the custom line item
+    pub fn set_presentation_details(mut self, input: ::std::option::Option<crate::types::PresentationObject>) -> Self {
+        self.inner = self.inner.set_presentation_details(input);
+        self
+    }
+    /// The presentation configuration of the custom line item
+    pub fn get_presentation_details(&self) -> &::std::option::Option<crate::types::PresentationObject> {
+        self.inner.get_presentation_details()
     }
 }

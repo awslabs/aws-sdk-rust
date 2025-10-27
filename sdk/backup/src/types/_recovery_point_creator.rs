@@ -8,10 +8,18 @@ pub struct RecoveryPointCreator {
     pub backup_plan_id: ::std::option::Option<::std::string::String>,
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup plan; for example, <code>arn:aws:backup:us-east-1:123456789012:plan:8F81F553-3A74-4A3F-B93D-B3360DC80C50</code>.</p>
     pub backup_plan_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The name of the backup plan that created this recovery point. This provides human-readable context about which backup plan was responsible for the backup job.</p>
+    pub backup_plan_name: ::std::option::Option<::std::string::String>,
     /// <p>Version IDs are unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. They cannot be edited.</p>
     pub backup_plan_version: ::std::option::Option<::std::string::String>,
     /// <p>Uniquely identifies a rule used to schedule the backup of a selection of resources.</p>
     pub backup_rule_id: ::std::option::Option<::std::string::String>,
+    /// <p>The name of the backup rule within the backup plan that created this recovery point. This helps identify which specific rule triggered the backup job.</p>
+    pub backup_rule_name: ::std::option::Option<::std::string::String>,
+    /// <p>The cron expression that defines the schedule for the backup rule. This shows the frequency and timing of when backups are automatically triggered.</p>
+    pub backup_rule_cron: ::std::option::Option<::std::string::String>,
+    /// <p>The timezone used for the backup rule schedule. This provides context for when backups are scheduled to run in the specified timezone.</p>
+    pub backup_rule_timezone: ::std::option::Option<::std::string::String>,
 }
 impl RecoveryPointCreator {
     /// <p>Uniquely identifies a backup plan.</p>
@@ -22,6 +30,10 @@ impl RecoveryPointCreator {
     pub fn backup_plan_arn(&self) -> ::std::option::Option<&str> {
         self.backup_plan_arn.as_deref()
     }
+    /// <p>The name of the backup plan that created this recovery point. This provides human-readable context about which backup plan was responsible for the backup job.</p>
+    pub fn backup_plan_name(&self) -> ::std::option::Option<&str> {
+        self.backup_plan_name.as_deref()
+    }
     /// <p>Version IDs are unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. They cannot be edited.</p>
     pub fn backup_plan_version(&self) -> ::std::option::Option<&str> {
         self.backup_plan_version.as_deref()
@@ -29,6 +41,18 @@ impl RecoveryPointCreator {
     /// <p>Uniquely identifies a rule used to schedule the backup of a selection of resources.</p>
     pub fn backup_rule_id(&self) -> ::std::option::Option<&str> {
         self.backup_rule_id.as_deref()
+    }
+    /// <p>The name of the backup rule within the backup plan that created this recovery point. This helps identify which specific rule triggered the backup job.</p>
+    pub fn backup_rule_name(&self) -> ::std::option::Option<&str> {
+        self.backup_rule_name.as_deref()
+    }
+    /// <p>The cron expression that defines the schedule for the backup rule. This shows the frequency and timing of when backups are automatically triggered.</p>
+    pub fn backup_rule_cron(&self) -> ::std::option::Option<&str> {
+        self.backup_rule_cron.as_deref()
+    }
+    /// <p>The timezone used for the backup rule schedule. This provides context for when backups are scheduled to run in the specified timezone.</p>
+    pub fn backup_rule_timezone(&self) -> ::std::option::Option<&str> {
+        self.backup_rule_timezone.as_deref()
     }
 }
 impl RecoveryPointCreator {
@@ -44,8 +68,12 @@ impl RecoveryPointCreator {
 pub struct RecoveryPointCreatorBuilder {
     pub(crate) backup_plan_id: ::std::option::Option<::std::string::String>,
     pub(crate) backup_plan_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) backup_plan_name: ::std::option::Option<::std::string::String>,
     pub(crate) backup_plan_version: ::std::option::Option<::std::string::String>,
     pub(crate) backup_rule_id: ::std::option::Option<::std::string::String>,
+    pub(crate) backup_rule_name: ::std::option::Option<::std::string::String>,
+    pub(crate) backup_rule_cron: ::std::option::Option<::std::string::String>,
+    pub(crate) backup_rule_timezone: ::std::option::Option<::std::string::String>,
 }
 impl RecoveryPointCreatorBuilder {
     /// <p>Uniquely identifies a backup plan.</p>
@@ -76,6 +104,20 @@ impl RecoveryPointCreatorBuilder {
     pub fn get_backup_plan_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.backup_plan_arn
     }
+    /// <p>The name of the backup plan that created this recovery point. This provides human-readable context about which backup plan was responsible for the backup job.</p>
+    pub fn backup_plan_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.backup_plan_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the backup plan that created this recovery point. This provides human-readable context about which backup plan was responsible for the backup job.</p>
+    pub fn set_backup_plan_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.backup_plan_name = input;
+        self
+    }
+    /// <p>The name of the backup plan that created this recovery point. This provides human-readable context about which backup plan was responsible for the backup job.</p>
+    pub fn get_backup_plan_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.backup_plan_name
+    }
     /// <p>Version IDs are unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. They cannot be edited.</p>
     pub fn backup_plan_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_plan_version = ::std::option::Option::Some(input.into());
@@ -104,13 +146,59 @@ impl RecoveryPointCreatorBuilder {
     pub fn get_backup_rule_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.backup_rule_id
     }
+    /// <p>The name of the backup rule within the backup plan that created this recovery point. This helps identify which specific rule triggered the backup job.</p>
+    pub fn backup_rule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.backup_rule_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the backup rule within the backup plan that created this recovery point. This helps identify which specific rule triggered the backup job.</p>
+    pub fn set_backup_rule_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.backup_rule_name = input;
+        self
+    }
+    /// <p>The name of the backup rule within the backup plan that created this recovery point. This helps identify which specific rule triggered the backup job.</p>
+    pub fn get_backup_rule_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.backup_rule_name
+    }
+    /// <p>The cron expression that defines the schedule for the backup rule. This shows the frequency and timing of when backups are automatically triggered.</p>
+    pub fn backup_rule_cron(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.backup_rule_cron = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The cron expression that defines the schedule for the backup rule. This shows the frequency and timing of when backups are automatically triggered.</p>
+    pub fn set_backup_rule_cron(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.backup_rule_cron = input;
+        self
+    }
+    /// <p>The cron expression that defines the schedule for the backup rule. This shows the frequency and timing of when backups are automatically triggered.</p>
+    pub fn get_backup_rule_cron(&self) -> &::std::option::Option<::std::string::String> {
+        &self.backup_rule_cron
+    }
+    /// <p>The timezone used for the backup rule schedule. This provides context for when backups are scheduled to run in the specified timezone.</p>
+    pub fn backup_rule_timezone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.backup_rule_timezone = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The timezone used for the backup rule schedule. This provides context for when backups are scheduled to run in the specified timezone.</p>
+    pub fn set_backup_rule_timezone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.backup_rule_timezone = input;
+        self
+    }
+    /// <p>The timezone used for the backup rule schedule. This provides context for when backups are scheduled to run in the specified timezone.</p>
+    pub fn get_backup_rule_timezone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.backup_rule_timezone
+    }
     /// Consumes the builder and constructs a [`RecoveryPointCreator`](crate::types::RecoveryPointCreator).
     pub fn build(self) -> crate::types::RecoveryPointCreator {
         crate::types::RecoveryPointCreator {
             backup_plan_id: self.backup_plan_id,
             backup_plan_arn: self.backup_plan_arn,
+            backup_plan_name: self.backup_plan_name,
             backup_plan_version: self.backup_plan_version,
             backup_rule_id: self.backup_rule_id,
+            backup_rule_name: self.backup_rule_name,
+            backup_rule_cron: self.backup_rule_cron,
+            backup_rule_timezone: self.backup_rule_timezone,
         }
     }
 }

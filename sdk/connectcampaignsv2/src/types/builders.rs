@@ -35,6 +35,10 @@ pub use crate::types::_telephony_outbound_config::TelephonyOutboundConfigBuilder
 
 pub use crate::types::_answer_machine_detection_config::AnswerMachineDetectionConfigBuilder;
 
+pub use crate::types::_preview_config::PreviewConfigBuilder;
+
+pub use crate::types::_timeout_config::TimeoutConfigBuilder;
+
 pub use crate::types::_predictive_config::PredictiveConfigBuilder;
 
 pub use crate::types::_progressive_config::ProgressiveConfigBuilder;

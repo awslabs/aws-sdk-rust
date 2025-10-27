@@ -9,6 +9,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteServiceTemplateVersionOutput`](crate::operation::delete_service_template_version::DeleteServiceTemplateVersionOutput) with field(s):
     ///   - [`service_template_version(Option<ServiceTemplateVersion>)`](crate::operation::delete_service_template_version::DeleteServiceTemplateVersionOutput::service_template_version): <p>The detailed data of the service template version being deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteServiceTemplateVersionError>`](crate::operation::delete_service_template_version::DeleteServiceTemplateVersionError)
+    #[deprecated(note = "AWS Proton is not accepting new customers.", since = "10/07/2025")]
     pub fn delete_service_template_version(
         &self,
     ) -> crate::operation::delete_service_template_version::builders::DeleteServiceTemplateVersionFluentBuilder {

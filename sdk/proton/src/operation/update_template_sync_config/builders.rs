@@ -23,6 +23,7 @@ impl crate::operation::update_template_sync_config::builders::UpdateTemplateSync
 /// Fluent builder constructing a request to `UpdateTemplateSyncConfig`.
 ///
 /// <p>Update template sync configuration parameters, except for the <code>templateName</code> and <code>templateType</code>. Repository details (branch, name, and provider) should be of a linked repository. A linked repository is a repository that has been registered with Proton. For more information, see <code>CreateRepository</code>.</p>
+#[deprecated(note = "AWS Proton is not accepting new customers.", since = "10/07/2025")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateTemplateSyncConfigFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

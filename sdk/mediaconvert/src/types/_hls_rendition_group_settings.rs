@@ -6,7 +6,7 @@
 pub struct HlsRenditionGroupSettings {
     /// Optional. Specify alternative group ID
     pub rendition_group_id: ::std::option::Option<::std::string::String>,
-    /// Optional. Specify ISO 639-2 or ISO 639-3 code in the language property
+    /// Optionally specify the language, using an ISO 639-2 or ISO 639-3 three-letter code in all capital letters. You can find a list of codes at: https://www.loc.gov/standards/iso639-2/php/code_list.php
     pub rendition_language_code: ::std::option::Option<crate::types::LanguageCode>,
     /// Optional. Specify media name
     pub rendition_name: ::std::option::Option<::std::string::String>,
@@ -16,7 +16,7 @@ impl HlsRenditionGroupSettings {
     pub fn rendition_group_id(&self) -> ::std::option::Option<&str> {
         self.rendition_group_id.as_deref()
     }
-    /// Optional. Specify ISO 639-2 or ISO 639-3 code in the language property
+    /// Optionally specify the language, using an ISO 639-2 or ISO 639-3 three-letter code in all capital letters. You can find a list of codes at: https://www.loc.gov/standards/iso639-2/php/code_list.php
     pub fn rendition_language_code(&self) -> ::std::option::Option<&crate::types::LanguageCode> {
         self.rendition_language_code.as_ref()
     }
@@ -55,17 +55,17 @@ impl HlsRenditionGroupSettingsBuilder {
     pub fn get_rendition_group_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.rendition_group_id
     }
-    /// Optional. Specify ISO 639-2 or ISO 639-3 code in the language property
+    /// Optionally specify the language, using an ISO 639-2 or ISO 639-3 three-letter code in all capital letters. You can find a list of codes at: https://www.loc.gov/standards/iso639-2/php/code_list.php
     pub fn rendition_language_code(mut self, input: crate::types::LanguageCode) -> Self {
         self.rendition_language_code = ::std::option::Option::Some(input);
         self
     }
-    /// Optional. Specify ISO 639-2 or ISO 639-3 code in the language property
+    /// Optionally specify the language, using an ISO 639-2 or ISO 639-3 three-letter code in all capital letters. You can find a list of codes at: https://www.loc.gov/standards/iso639-2/php/code_list.php
     pub fn set_rendition_language_code(mut self, input: ::std::option::Option<crate::types::LanguageCode>) -> Self {
         self.rendition_language_code = input;
         self
     }
-    /// Optional. Specify ISO 639-2 or ISO 639-3 code in the language property
+    /// Optionally specify the language, using an ISO 639-2 or ISO 639-3 three-letter code in all capital letters. You can find a list of codes at: https://www.loc.gov/standards/iso639-2/php/code_list.php
     pub fn get_rendition_language_code(&self) -> &::std::option::Option<crate::types::LanguageCode> {
         &self.rendition_language_code
     }

@@ -167,31 +167,31 @@ impl CreateDataSourceFluentBuilder {
     pub fn get_type(&self) -> &::std::option::Option<crate::types::DataSourceType> {
         self.inner.get_type()
     }
-    /// <p>The parameters that QuickSight uses to connect to your underlying source.</p>
+    /// <p>The parameters that Amazon Quick Sight uses to connect to your underlying source.</p>
     pub fn data_source_parameters(mut self, input: crate::types::DataSourceParameters) -> Self {
         self.inner = self.inner.data_source_parameters(input);
         self
     }
-    /// <p>The parameters that QuickSight uses to connect to your underlying source.</p>
+    /// <p>The parameters that Amazon Quick Sight uses to connect to your underlying source.</p>
     pub fn set_data_source_parameters(mut self, input: ::std::option::Option<crate::types::DataSourceParameters>) -> Self {
         self.inner = self.inner.set_data_source_parameters(input);
         self
     }
-    /// <p>The parameters that QuickSight uses to connect to your underlying source.</p>
+    /// <p>The parameters that Amazon Quick Sight uses to connect to your underlying source.</p>
     pub fn get_data_source_parameters(&self) -> &::std::option::Option<crate::types::DataSourceParameters> {
         self.inner.get_data_source_parameters()
     }
-    /// <p>The credentials QuickSight that uses to connect to your underlying source. Currently, only credentials based on user name and password are supported.</p>
+    /// <p>The credentials Amazon Quick Sight that uses to connect to your underlying source. Currently, only credentials based on user name and password are supported.</p>
     pub fn credentials(mut self, input: crate::types::DataSourceCredentials) -> Self {
         self.inner = self.inner.credentials(input);
         self
     }
-    /// <p>The credentials QuickSight that uses to connect to your underlying source. Currently, only credentials based on user name and password are supported.</p>
+    /// <p>The credentials Amazon Quick Sight that uses to connect to your underlying source. Currently, only credentials based on user name and password are supported.</p>
     pub fn set_credentials(mut self, input: ::std::option::Option<crate::types::DataSourceCredentials>) -> Self {
         self.inner = self.inner.set_credentials(input);
         self
     }
-    /// <p>The credentials QuickSight that uses to connect to your underlying source. Currently, only credentials based on user name and password are supported.</p>
+    /// <p>The credentials Amazon Quick Sight that uses to connect to your underlying source. Currently, only credentials based on user name and password are supported.</p>
     pub fn get_credentials(&self) -> &::std::option::Option<crate::types::DataSourceCredentials> {
         self.inner.get_credentials()
     }
@@ -214,31 +214,31 @@ impl CreateDataSourceFluentBuilder {
     pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
         self.inner.get_permissions()
     }
-    /// <p>Use this parameter only when you want QuickSight to use a VPC connection when connecting to your underlying source.</p>
+    /// <p>Use this parameter only when you want Amazon Quick Sight to use a VPC connection when connecting to your underlying source.</p>
     pub fn vpc_connection_properties(mut self, input: crate::types::VpcConnectionProperties) -> Self {
         self.inner = self.inner.vpc_connection_properties(input);
         self
     }
-    /// <p>Use this parameter only when you want QuickSight to use a VPC connection when connecting to your underlying source.</p>
+    /// <p>Use this parameter only when you want Amazon Quick Sight to use a VPC connection when connecting to your underlying source.</p>
     pub fn set_vpc_connection_properties(mut self, input: ::std::option::Option<crate::types::VpcConnectionProperties>) -> Self {
         self.inner = self.inner.set_vpc_connection_properties(input);
         self
     }
-    /// <p>Use this parameter only when you want QuickSight to use a VPC connection when connecting to your underlying source.</p>
+    /// <p>Use this parameter only when you want Amazon Quick Sight to use a VPC connection when connecting to your underlying source.</p>
     pub fn get_vpc_connection_properties(&self) -> &::std::option::Option<crate::types::VpcConnectionProperties> {
         self.inner.get_vpc_connection_properties()
     }
-    /// <p>Secure Socket Layer (SSL) properties that apply when QuickSight connects to your underlying source.</p>
+    /// <p>Secure Socket Layer (SSL) properties that apply when Amazon Quick Sight connects to your underlying source.</p>
     pub fn ssl_properties(mut self, input: crate::types::SslProperties) -> Self {
         self.inner = self.inner.ssl_properties(input);
         self
     }
-    /// <p>Secure Socket Layer (SSL) properties that apply when QuickSight connects to your underlying source.</p>
+    /// <p>Secure Socket Layer (SSL) properties that apply when Amazon Quick Sight connects to your underlying source.</p>
     pub fn set_ssl_properties(mut self, input: ::std::option::Option<crate::types::SslProperties>) -> Self {
         self.inner = self.inner.set_ssl_properties(input);
         self
     }
-    /// <p>Secure Socket Layer (SSL) properties that apply when QuickSight connects to your underlying source.</p>
+    /// <p>Secure Socket Layer (SSL) properties that apply when Amazon Quick Sight connects to your underlying source.</p>
     pub fn get_ssl_properties(&self) -> &::std::option::Option<crate::types::SslProperties> {
         self.inner.get_ssl_properties()
     }
@@ -266,17 +266,17 @@ impl CreateDataSourceFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_folder_arns`](Self::set_folder_arns).
     ///
-    /// <p>When you create the data source, QuickSight adds the data source to these folders.</p>
+    /// <p>When you create the data source, Amazon Quick Sight adds the data source to these folders.</p>
     pub fn folder_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.folder_arns(input.into());
         self
     }
-    /// <p>When you create the data source, QuickSight adds the data source to these folders.</p>
+    /// <p>When you create the data source, Amazon Quick Sight adds the data source to these folders.</p>
     pub fn set_folder_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_folder_arns(input);
         self
     }
-    /// <p>When you create the data source, QuickSight adds the data source to these folders.</p>
+    /// <p>When you create the data source, Amazon Quick Sight adds the data source to these folders.</p>
     pub fn get_folder_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_folder_arns()
     }

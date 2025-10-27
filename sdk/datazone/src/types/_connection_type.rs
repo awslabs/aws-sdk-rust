@@ -12,6 +12,7 @@
 /// ```text
 /// # let connectiontype = unimplemented!();
 /// match connectiontype {
+///     ConnectionType::AmazonQ => { /* ... */ },
 ///     ConnectionType::Athena => { /* ... */ },
 ///     ConnectionType::Bigquery => { /* ... */ },
 ///     ConnectionType::Databricks => { /* ... */ },
@@ -19,6 +20,7 @@
 ///     ConnectionType::Dynamodb => { /* ... */ },
 ///     ConnectionType::Hyperpod => { /* ... */ },
 ///     ConnectionType::Iam => { /* ... */ },
+///     ConnectionType::Mlflow => { /* ... */ },
 ///     ConnectionType::Mysql => { /* ... */ },
 ///     ConnectionType::Opensearch => { /* ... */ },
 ///     ConnectionType::Oracle => { /* ... */ },
@@ -61,6 +63,8 @@
 )]
 pub enum ConnectionType {
     #[allow(missing_docs)] // documentation missing in model
+    AmazonQ,
+    #[allow(missing_docs)] // documentation missing in model
     Athena,
     #[allow(missing_docs)] // documentation missing in model
     Bigquery,
@@ -74,6 +78,8 @@ pub enum ConnectionType {
     Hyperpod,
     #[allow(missing_docs)] // documentation missing in model
     Iam,
+    #[allow(missing_docs)] // documentation missing in model
+    Mlflow,
     #[allow(missing_docs)] // documentation missing in model
     Mysql,
     #[allow(missing_docs)] // documentation missing in model
@@ -107,6 +113,7 @@ pub enum ConnectionType {
 impl ::std::convert::From<&str> for ConnectionType {
     fn from(s: &str) -> Self {
         match s {
+            "AMAZON_Q" => ConnectionType::AmazonQ,
             "ATHENA" => ConnectionType::Athena,
             "BIGQUERY" => ConnectionType::Bigquery,
             "DATABRICKS" => ConnectionType::Databricks,
@@ -114,6 +121,7 @@ impl ::std::convert::From<&str> for ConnectionType {
             "DYNAMODB" => ConnectionType::Dynamodb,
             "HYPERPOD" => ConnectionType::Hyperpod,
             "IAM" => ConnectionType::Iam,
+            "MLFLOW" => ConnectionType::Mlflow,
             "MYSQL" => ConnectionType::Mysql,
             "OPENSEARCH" => ConnectionType::Opensearch,
             "ORACLE" => ConnectionType::Oracle,
@@ -142,6 +150,7 @@ impl ConnectionType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ConnectionType::AmazonQ => "AMAZON_Q",
             ConnectionType::Athena => "ATHENA",
             ConnectionType::Bigquery => "BIGQUERY",
             ConnectionType::Databricks => "DATABRICKS",
@@ -149,6 +158,7 @@ impl ConnectionType {
             ConnectionType::Dynamodb => "DYNAMODB",
             ConnectionType::Hyperpod => "HYPERPOD",
             ConnectionType::Iam => "IAM",
+            ConnectionType::Mlflow => "MLFLOW",
             ConnectionType::Mysql => "MYSQL",
             ConnectionType::Opensearch => "OPENSEARCH",
             ConnectionType::Oracle => "ORACLE",
@@ -168,6 +178,7 @@ impl ConnectionType {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "AMAZON_Q",
             "ATHENA",
             "BIGQUERY",
             "DATABRICKS",
@@ -175,6 +186,7 @@ impl ConnectionType {
             "DYNAMODB",
             "HYPERPOD",
             "IAM",
+            "MLFLOW",
             "MYSQL",
             "OPENSEARCH",
             "ORACLE",
@@ -211,6 +223,7 @@ impl ConnectionType {
 impl ::std::fmt::Display for ConnectionType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            ConnectionType::AmazonQ => write!(f, "AMAZON_Q"),
             ConnectionType::Athena => write!(f, "ATHENA"),
             ConnectionType::Bigquery => write!(f, "BIGQUERY"),
             ConnectionType::Databricks => write!(f, "DATABRICKS"),
@@ -218,6 +231,7 @@ impl ::std::fmt::Display for ConnectionType {
             ConnectionType::Dynamodb => write!(f, "DYNAMODB"),
             ConnectionType::Hyperpod => write!(f, "HYPERPOD"),
             ConnectionType::Iam => write!(f, "IAM"),
+            ConnectionType::Mlflow => write!(f, "MLFLOW"),
             ConnectionType::Mysql => write!(f, "MYSQL"),
             ConnectionType::Opensearch => write!(f, "OPENSEARCH"),
             ConnectionType::Oracle => write!(f, "ORACLE"),

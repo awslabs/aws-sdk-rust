@@ -22,7 +22,7 @@ impl crate::operation::update_quick_sight_q_search_configuration::builders::Upda
 }
 /// Fluent builder constructing a request to `UpdateQuickSightQSearchConfiguration`.
 ///
-/// <p>Updates the state of a QuickSight Q Search configuration.</p>
+/// <p>Updates the state of a Quick Sight Q Search configuration.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateQuickSightQSearchConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -111,31 +111,31 @@ impl UpdateQuickSightQSearchConfigurationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ID of the Amazon Web Services account that contains the QuickSight Q Search configuration that you want to update.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the Quick Sight Q Search configuration that you want to update.</p>
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
-    /// <p>The ID of the Amazon Web Services account that contains the QuickSight Q Search configuration that you want to update.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the Quick Sight Q Search configuration that you want to update.</p>
     pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
-    /// <p>The ID of the Amazon Web Services account that contains the QuickSight Q Search configuration that you want to update.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the Quick Sight Q Search configuration that you want to update.</p>
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_aws_account_id()
     }
-    /// <p>The status of the QuickSight Q Search configuration that the user wants to update.</p>
+    /// <p>The status of the Quick Sight Q Search configuration that the user wants to update.</p>
     pub fn q_search_status(mut self, input: crate::types::QSearchStatus) -> Self {
         self.inner = self.inner.q_search_status(input);
         self
     }
-    /// <p>The status of the QuickSight Q Search configuration that the user wants to update.</p>
+    /// <p>The status of the Quick Sight Q Search configuration that the user wants to update.</p>
     pub fn set_q_search_status(mut self, input: ::std::option::Option<crate::types::QSearchStatus>) -> Self {
         self.inner = self.inner.set_q_search_status(input);
         self
     }
-    /// <p>The status of the QuickSight Q Search configuration that the user wants to update.</p>
+    /// <p>The status of the Quick Sight Q Search configuration that the user wants to update.</p>
     pub fn get_q_search_status(&self) -> &::std::option::Option<crate::types::QSearchStatus> {
         self.inner.get_q_search_status()
     }

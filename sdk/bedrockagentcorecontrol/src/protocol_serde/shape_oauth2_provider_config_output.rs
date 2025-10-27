@@ -79,6 +79,30 @@ where
                                     )
                                 })?,
                         )),
+                        "atlassianOauth2ProviderConfig" => Some(crate::types::Oauth2ProviderConfigOutput::AtlassianOauth2ProviderConfig(
+                            crate::protocol_serde::shape_atlassian_oauth2_provider_config_output::de_atlassian_oauth2_provider_config_output(tokens)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                        "value for 'atlassianOauth2ProviderConfig' cannot be null",
+                                    )
+                                })?,
+                        )),
+                        "linkedinOauth2ProviderConfig" => Some(crate::types::Oauth2ProviderConfigOutput::LinkedinOauth2ProviderConfig(
+                            crate::protocol_serde::shape_linkedin_oauth2_provider_config_output::de_linkedin_oauth2_provider_config_output(tokens)?
+                                .ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                    "value for 'linkedinOauth2ProviderConfig' cannot be null",
+                                )
+                            })?,
+                        )),
+                        "includedOauth2ProviderConfig" => Some(crate::types::Oauth2ProviderConfigOutput::IncludedOauth2ProviderConfig(
+                            crate::protocol_serde::shape_included_oauth2_provider_config_output::de_included_oauth2_provider_config_output(tokens)?
+                                .ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                    "value for 'includedOauth2ProviderConfig' cannot be null",
+                                )
+                            })?,
+                        )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
                             Some(crate::types::Oauth2ProviderConfigOutput::Unknown)

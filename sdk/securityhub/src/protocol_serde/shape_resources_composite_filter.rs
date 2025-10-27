@@ -51,8 +51,20 @@ pub fn ser_resources_composite_filter(
         }
         array_14.finish();
     }
-    if let Some(var_17) = &input.operator {
-        object.key("Operator").string(var_17.as_str());
+    if let Some(var_17) = &input.nested_composite_filters {
+        let mut array_18 = object.key("NestedCompositeFilters").start_array();
+        for item_19 in var_17 {
+            {
+                #[allow(unused_mut)]
+                let mut object_20 = array_18.value().start_object();
+                crate::protocol_serde::shape_resources_composite_filter::ser_resources_composite_filter(&mut object_20, item_19)?;
+                object_20.finish();
+            }
+        }
+        array_18.finish();
+    }
+    if let Some(var_21) = &input.operator {
+        object.key("Operator").string(var_21.as_str());
     }
     Ok(())
 }

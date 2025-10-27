@@ -366,6 +366,7 @@ members = [
     "sdk/route53recoverycontrolconfig",
     "sdk/route53recoveryreadiness",
     "sdk/route53resolver",
+    "sdk/rtbfabric",
     "sdk/rum",
     "sdk/s3",
     "sdk/s3control",

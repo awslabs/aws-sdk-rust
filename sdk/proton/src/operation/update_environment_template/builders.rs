@@ -23,6 +23,7 @@ impl crate::operation::update_environment_template::builders::UpdateEnvironmentT
 /// Fluent builder constructing a request to `UpdateEnvironmentTemplate`.
 ///
 /// <p>Update an environment template.</p>
+#[deprecated(note = "AWS Proton is not accepting new customers.", since = "10/07/2025")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateEnvironmentTemplateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -11,6 +11,10 @@ pub struct GetBucketsInput {
     pub page_token: ::std::option::Option<::std::string::String>,
     /// <p>A Boolean value that indicates whether to include Lightsail instances that were given access to the bucket using the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_SetResourceAccessForBucket.html">SetResourceAccessForBucket</a> action.</p>
     pub include_connected_resources: ::std::option::Option<bool>,
+    /// <p>A Boolean value that indicates whether to include Lightsail bucket CORS configuration in the response. For more information, see <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/configure-cors.html">Configuring cross-origin resource sharing (CORS)</a>.</p><note>
+    /// <p>This parameter is only supported when getting a single bucket with <code>bucketName</code> specified. The default value for this parameter is <code>False</code>.</p>
+    /// </note>
+    pub include_cors: ::std::option::Option<bool>,
 }
 impl GetBucketsInput {
     /// <p>The name of the bucket for which to return information.</p>
@@ -27,6 +31,12 @@ impl GetBucketsInput {
     pub fn include_connected_resources(&self) -> ::std::option::Option<bool> {
         self.include_connected_resources
     }
+    /// <p>A Boolean value that indicates whether to include Lightsail bucket CORS configuration in the response. For more information, see <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/configure-cors.html">Configuring cross-origin resource sharing (CORS)</a>.</p><note>
+    /// <p>This parameter is only supported when getting a single bucket with <code>bucketName</code> specified. The default value for this parameter is <code>False</code>.</p>
+    /// </note>
+    pub fn include_cors(&self) -> ::std::option::Option<bool> {
+        self.include_cors
+    }
 }
 impl GetBucketsInput {
     /// Creates a new builder-style object to manufacture [`GetBucketsInput`](crate::operation::get_buckets::GetBucketsInput).
@@ -42,6 +52,7 @@ pub struct GetBucketsInputBuilder {
     pub(crate) bucket_name: ::std::option::Option<::std::string::String>,
     pub(crate) page_token: ::std::option::Option<::std::string::String>,
     pub(crate) include_connected_resources: ::std::option::Option<bool>,
+    pub(crate) include_cors: ::std::option::Option<bool>,
 }
 impl GetBucketsInputBuilder {
     /// <p>The name of the bucket for which to return information.</p>
@@ -92,12 +103,33 @@ impl GetBucketsInputBuilder {
     pub fn get_include_connected_resources(&self) -> &::std::option::Option<bool> {
         &self.include_connected_resources
     }
+    /// <p>A Boolean value that indicates whether to include Lightsail bucket CORS configuration in the response. For more information, see <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/configure-cors.html">Configuring cross-origin resource sharing (CORS)</a>.</p><note>
+    /// <p>This parameter is only supported when getting a single bucket with <code>bucketName</code> specified. The default value for this parameter is <code>False</code>.</p>
+    /// </note>
+    pub fn include_cors(mut self, input: bool) -> Self {
+        self.include_cors = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A Boolean value that indicates whether to include Lightsail bucket CORS configuration in the response. For more information, see <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/configure-cors.html">Configuring cross-origin resource sharing (CORS)</a>.</p><note>
+    /// <p>This parameter is only supported when getting a single bucket with <code>bucketName</code> specified. The default value for this parameter is <code>False</code>.</p>
+    /// </note>
+    pub fn set_include_cors(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.include_cors = input;
+        self
+    }
+    /// <p>A Boolean value that indicates whether to include Lightsail bucket CORS configuration in the response. For more information, see <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/configure-cors.html">Configuring cross-origin resource sharing (CORS)</a>.</p><note>
+    /// <p>This parameter is only supported when getting a single bucket with <code>bucketName</code> specified. The default value for this parameter is <code>False</code>.</p>
+    /// </note>
+    pub fn get_include_cors(&self) -> &::std::option::Option<bool> {
+        &self.include_cors
+    }
     /// Consumes the builder and constructs a [`GetBucketsInput`](crate::operation::get_buckets::GetBucketsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_buckets::GetBucketsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_buckets::GetBucketsInput {
             bucket_name: self.bucket_name,
             page_token: self.page_token,
             include_connected_resources: self.include_connected_resources,
+            include_cors: self.include_cors,
         })
     }
 }

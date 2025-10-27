@@ -2452,6 +2452,34 @@ impl From<crate::operation::get_signal_map::GetSignalMapError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_alerts::ListAlertsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_alerts::ListAlertsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_alerts::ListAlertsError> for Error {
+    fn from(err: crate::operation::list_alerts::ListAlertsError) -> Self {
+        match err {
+            crate::operation::list_alerts::ListAlertsError::BadGatewayException(inner) => Error::BadGatewayException(inner),
+            crate::operation::list_alerts::ListAlertsError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::list_alerts::ListAlertsError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::list_alerts::ListAlertsError::GatewayTimeoutException(inner) => Error::GatewayTimeoutException(inner),
+            crate::operation::list_alerts::ListAlertsError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::list_alerts::ListAlertsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::list_alerts::ListAlertsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::list_alerts::ListAlertsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_channel_placement_groups::ListChannelPlacementGroupsError, R>>
     for Error
 where
@@ -2610,6 +2638,36 @@ impl From<crate::operation::list_cloud_watch_alarm_templates::ListCloudWatchAlar
                 Error::TooManyRequestsException(inner)
             }
             crate::operation::list_cloud_watch_alarm_templates::ListCloudWatchAlarmTemplatesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_cluster_alerts::ListClusterAlertsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_cluster_alerts::ListClusterAlertsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_cluster_alerts::ListClusterAlertsError> for Error {
+    fn from(err: crate::operation::list_cluster_alerts::ListClusterAlertsError) -> Self {
+        match err {
+            crate::operation::list_cluster_alerts::ListClusterAlertsError::BadGatewayException(inner) => Error::BadGatewayException(inner),
+            crate::operation::list_cluster_alerts::ListClusterAlertsError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::list_cluster_alerts::ListClusterAlertsError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::list_cluster_alerts::ListClusterAlertsError::GatewayTimeoutException(inner) => Error::GatewayTimeoutException(inner),
+            crate::operation::list_cluster_alerts::ListClusterAlertsError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::list_cluster_alerts::ListClusterAlertsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::list_cluster_alerts::ListClusterAlertsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::list_cluster_alerts::ListClusterAlertsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2870,6 +2928,40 @@ impl From<crate::operation::list_input_security_groups::ListInputSecurityGroupsE
                 Error::TooManyRequestsException(inner)
             }
             crate::operation::list_input_security_groups::ListInputSecurityGroupsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_multiplex_alerts::ListMultiplexAlertsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_multiplex_alerts::ListMultiplexAlertsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_multiplex_alerts::ListMultiplexAlertsError> for Error {
+    fn from(err: crate::operation::list_multiplex_alerts::ListMultiplexAlertsError) -> Self {
+        match err {
+            crate::operation::list_multiplex_alerts::ListMultiplexAlertsError::BadGatewayException(inner) => Error::BadGatewayException(inner),
+            crate::operation::list_multiplex_alerts::ListMultiplexAlertsError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::list_multiplex_alerts::ListMultiplexAlertsError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::list_multiplex_alerts::ListMultiplexAlertsError::GatewayTimeoutException(inner) => {
+                Error::GatewayTimeoutException(inner)
+            }
+            crate::operation::list_multiplex_alerts::ListMultiplexAlertsError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::list_multiplex_alerts::ListMultiplexAlertsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::list_multiplex_alerts::ListMultiplexAlertsError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::list_multiplex_alerts::ListMultiplexAlertsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

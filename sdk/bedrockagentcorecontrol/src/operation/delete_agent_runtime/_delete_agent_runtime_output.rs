@@ -5,12 +5,18 @@
 pub struct DeleteAgentRuntimeOutput {
     /// <p>The current status of the AgentCore Runtime deletion.</p>
     pub status: crate::types::AgentRuntimeStatus,
+    /// <p>The unique identifier of the AgentCore Runtime.</p>
+    pub agent_runtime_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DeleteAgentRuntimeOutput {
     /// <p>The current status of the AgentCore Runtime deletion.</p>
     pub fn status(&self) -> &crate::types::AgentRuntimeStatus {
         &self.status
+    }
+    /// <p>The unique identifier of the AgentCore Runtime.</p>
+    pub fn agent_runtime_id(&self) -> ::std::option::Option<&str> {
+        self.agent_runtime_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteAgentRuntimeOutput {
@@ -30,6 +36,7 @@ impl DeleteAgentRuntimeOutput {
 #[non_exhaustive]
 pub struct DeleteAgentRuntimeOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::AgentRuntimeStatus>,
+    pub(crate) agent_runtime_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DeleteAgentRuntimeOutputBuilder {
@@ -47,6 +54,20 @@ impl DeleteAgentRuntimeOutputBuilder {
     /// <p>The current status of the AgentCore Runtime deletion.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::AgentRuntimeStatus> {
         &self.status
+    }
+    /// <p>The unique identifier of the AgentCore Runtime.</p>
+    pub fn agent_runtime_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.agent_runtime_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique identifier of the AgentCore Runtime.</p>
+    pub fn set_agent_runtime_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.agent_runtime_id = input;
+        self
+    }
+    /// <p>The unique identifier of the AgentCore Runtime.</p>
+    pub fn get_agent_runtime_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.agent_runtime_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
@@ -71,6 +92,7 @@ impl DeleteAgentRuntimeOutputBuilder {
                     "status was not specified but it is required when building DeleteAgentRuntimeOutput",
                 )
             })?,
+            agent_runtime_id: self.agent_runtime_id,
             _request_id: self._request_id,
         })
     }

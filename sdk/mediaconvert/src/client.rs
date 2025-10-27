@@ -193,6 +193,8 @@ mod get_job;
 
 mod get_job_template;
 
+mod get_jobs_query_results;
+
 mod get_policy;
 
 mod get_preset;
@@ -216,6 +218,8 @@ mod probe;
 mod put_policy;
 
 mod search_jobs;
+
+mod start_jobs_query;
 
 mod tag_resource;
 

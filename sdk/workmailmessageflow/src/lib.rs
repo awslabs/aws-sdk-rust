@@ -18,7 +18,7 @@
 #![allow(rustdoc::invalid_html_tags)]
 #![forbid(unsafe_code)]
 #![warn(missing_docs)]
-#![cfg_attr(docsrs, feature(doc_auto_cfg))]
+#![cfg_attr(docsrs, feature(doc_cfg))]
 //! The WorkMail Message Flow API provides access to email messages as they are being sent and received by a WorkMail organization.
 //!
 //! ## Getting Started
@@ -33,7 +33,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-workmailmessageflow = "1.85.0"
+//! aws-sdk-workmailmessageflow = "1.86.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

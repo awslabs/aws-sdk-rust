@@ -4,12 +4,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnonymousUserGenerativeQnAEmbeddingConfiguration {
-    /// <p>The QuickSight Q topic ID of the new reader experience topic that you want the anonymous user to see first. This ID is included in the output URL. When the URL in response is accessed, QuickSight renders the Generative Q&amp;A experience with this new reader experience topic pre selected.</p>
+    /// <p>The Quick Sight Q topic ID of the new reader experience topic that you want the anonymous user to see first. This ID is included in the output URL. When the URL in response is accessed, Quick Sight renders the Generative Q&amp;A experience with this new reader experience topic pre selected.</p>
     /// <p>The Amazon Resource Name (ARN) of this Q new reader experience topic must be included in the <code>AuthorizedResourceArns</code> parameter. Otherwise, the request fails with an <code>InvalidParameterValueException</code> error.</p>
     pub initial_topic_id: ::std::string::String,
 }
 impl AnonymousUserGenerativeQnAEmbeddingConfiguration {
-    /// <p>The QuickSight Q topic ID of the new reader experience topic that you want the anonymous user to see first. This ID is included in the output URL. When the URL in response is accessed, QuickSight renders the Generative Q&amp;A experience with this new reader experience topic pre selected.</p>
+    /// <p>The Quick Sight Q topic ID of the new reader experience topic that you want the anonymous user to see first. This ID is included in the output URL. When the URL in response is accessed, Quick Sight renders the Generative Q&amp;A experience with this new reader experience topic pre selected.</p>
     /// <p>The Amazon Resource Name (ARN) of this Q new reader experience topic must be included in the <code>AuthorizedResourceArns</code> parameter. Otherwise, the request fails with an <code>InvalidParameterValueException</code> error.</p>
     pub fn initial_topic_id(&self) -> &str {
         use std::ops::Deref;
@@ -30,20 +30,20 @@ pub struct AnonymousUserGenerativeQnAEmbeddingConfigurationBuilder {
     pub(crate) initial_topic_id: ::std::option::Option<::std::string::String>,
 }
 impl AnonymousUserGenerativeQnAEmbeddingConfigurationBuilder {
-    /// <p>The QuickSight Q topic ID of the new reader experience topic that you want the anonymous user to see first. This ID is included in the output URL. When the URL in response is accessed, QuickSight renders the Generative Q&amp;A experience with this new reader experience topic pre selected.</p>
+    /// <p>The Quick Sight Q topic ID of the new reader experience topic that you want the anonymous user to see first. This ID is included in the output URL. When the URL in response is accessed, Quick Sight renders the Generative Q&amp;A experience with this new reader experience topic pre selected.</p>
     /// <p>The Amazon Resource Name (ARN) of this Q new reader experience topic must be included in the <code>AuthorizedResourceArns</code> parameter. Otherwise, the request fails with an <code>InvalidParameterValueException</code> error.</p>
     /// This field is required.
     pub fn initial_topic_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.initial_topic_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The QuickSight Q topic ID of the new reader experience topic that you want the anonymous user to see first. This ID is included in the output URL. When the URL in response is accessed, QuickSight renders the Generative Q&amp;A experience with this new reader experience topic pre selected.</p>
+    /// <p>The Quick Sight Q topic ID of the new reader experience topic that you want the anonymous user to see first. This ID is included in the output URL. When the URL in response is accessed, Quick Sight renders the Generative Q&amp;A experience with this new reader experience topic pre selected.</p>
     /// <p>The Amazon Resource Name (ARN) of this Q new reader experience topic must be included in the <code>AuthorizedResourceArns</code> parameter. Otherwise, the request fails with an <code>InvalidParameterValueException</code> error.</p>
     pub fn set_initial_topic_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.initial_topic_id = input;
         self
     }
-    /// <p>The QuickSight Q topic ID of the new reader experience topic that you want the anonymous user to see first. This ID is included in the output URL. When the URL in response is accessed, QuickSight renders the Generative Q&amp;A experience with this new reader experience topic pre selected.</p>
+    /// <p>The Quick Sight Q topic ID of the new reader experience topic that you want the anonymous user to see first. This ID is included in the output URL. When the URL in response is accessed, Quick Sight renders the Generative Q&amp;A experience with this new reader experience topic pre selected.</p>
     /// <p>The Amazon Resource Name (ARN) of this Q new reader experience topic must be included in the <code>AuthorizedResourceArns</code> parameter. Otherwise, the request fails with an <code>InvalidParameterValueException</code> error.</p>
     pub fn get_initial_topic_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.initial_topic_id

@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyInstanceConnectEndpointOutput {
-    /// <p>The return value of the request. Returns <code>true</code> if the specified product code is owned by the requester and associated with the specified instance.</p>
+    /// <p>Is <code>true</code> if the request succeeds and an error otherwise.</p>
     pub r#return: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl ModifyInstanceConnectEndpointOutput {
-    /// <p>The return value of the request. Returns <code>true</code> if the specified product code is owned by the requester and associated with the specified instance.</p>
+    /// <p>Is <code>true</code> if the request succeeds and an error otherwise.</p>
     pub fn r#return(&self) -> ::std::option::Option<bool> {
         self.r#return
     }
@@ -33,17 +33,17 @@ pub struct ModifyInstanceConnectEndpointOutputBuilder {
     _request_id: Option<String>,
 }
 impl ModifyInstanceConnectEndpointOutputBuilder {
-    /// <p>The return value of the request. Returns <code>true</code> if the specified product code is owned by the requester and associated with the specified instance.</p>
+    /// <p>Is <code>true</code> if the request succeeds and an error otherwise.</p>
     pub fn r#return(mut self, input: bool) -> Self {
         self.r#return = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The return value of the request. Returns <code>true</code> if the specified product code is owned by the requester and associated with the specified instance.</p>
+    /// <p>Is <code>true</code> if the request succeeds and an error otherwise.</p>
     pub fn set_return(mut self, input: ::std::option::Option<bool>) -> Self {
         self.r#return = input;
         self
     }
-    /// <p>The return value of the request. Returns <code>true</code> if the specified product code is owned by the requester and associated with the specified instance.</p>
+    /// <p>Is <code>true</code> if the request succeeds and an error otherwise.</p>
     pub fn get_return(&self) -> &::std::option::Option<bool> {
         &self.r#return
     }

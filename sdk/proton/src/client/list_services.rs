@@ -10,6 +10,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_services::ListServicesOutput::next_token): <p>A token that indicates the location of the next service in the array of services, after the current requested list of services.</p>
     ///   - [`services(Vec::<ServiceSummary>)`](crate::operation::list_services::ListServicesOutput::services): <p>An array of services with summaries of detail data.</p>
     /// - On failure, responds with [`SdkError<ListServicesError>`](crate::operation::list_services::ListServicesError)
+    #[deprecated(note = "AWS Proton is not accepting new customers.", since = "10/07/2025")]
     pub fn list_services(&self) -> crate::operation::list_services::builders::ListServicesFluentBuilder {
         crate::operation::list_services::builders::ListServicesFluentBuilder::new(self.handle.clone())
     }

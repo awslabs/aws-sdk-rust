@@ -12,23 +12,26 @@ pub fn ser_add_permission_input_input(
     if let Some(var_3) = &input.function_url_auth_type {
         object.key("FunctionUrlAuthType").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.principal {
-        object.key("Principal").string(var_4.as_str());
+    if let Some(var_4) = &input.invoked_via_function_url {
+        object.key("InvokedViaFunctionUrl").boolean(*var_4);
     }
-    if let Some(var_5) = &input.principal_org_id {
-        object.key("PrincipalOrgID").string(var_5.as_str());
+    if let Some(var_5) = &input.principal {
+        object.key("Principal").string(var_5.as_str());
     }
-    if let Some(var_6) = &input.revision_id {
-        object.key("RevisionId").string(var_6.as_str());
+    if let Some(var_6) = &input.principal_org_id {
+        object.key("PrincipalOrgID").string(var_6.as_str());
     }
-    if let Some(var_7) = &input.source_account {
-        object.key("SourceAccount").string(var_7.as_str());
+    if let Some(var_7) = &input.revision_id {
+        object.key("RevisionId").string(var_7.as_str());
     }
-    if let Some(var_8) = &input.source_arn {
-        object.key("SourceArn").string(var_8.as_str());
+    if let Some(var_8) = &input.source_account {
+        object.key("SourceAccount").string(var_8.as_str());
     }
-    if let Some(var_9) = &input.statement_id {
-        object.key("StatementId").string(var_9.as_str());
+    if let Some(var_9) = &input.source_arn {
+        object.key("SourceArn").string(var_9.as_str());
+    }
+    if let Some(var_10) = &input.statement_id {
+        object.key("StatementId").string(var_10.as_str());
     }
     Ok(())
 }

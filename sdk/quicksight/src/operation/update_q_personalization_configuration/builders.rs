@@ -123,17 +123,17 @@ impl UpdateQPersonalizationConfigurationFluentBuilder {
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_aws_account_id()
     }
-    /// <p>An option to allow QuickSight to customize data stories with user specific metadata, specifically location and job information, in your IAM Identity Center instance.</p>
+    /// <p>An option to allow Amazon Quick Sight to customize data stories with user specific metadata, specifically location and job information, in your IAM Identity Center instance.</p>
     pub fn personalization_mode(mut self, input: crate::types::PersonalizationMode) -> Self {
         self.inner = self.inner.personalization_mode(input);
         self
     }
-    /// <p>An option to allow QuickSight to customize data stories with user specific metadata, specifically location and job information, in your IAM Identity Center instance.</p>
+    /// <p>An option to allow Amazon Quick Sight to customize data stories with user specific metadata, specifically location and job information, in your IAM Identity Center instance.</p>
     pub fn set_personalization_mode(mut self, input: ::std::option::Option<crate::types::PersonalizationMode>) -> Self {
         self.inner = self.inner.set_personalization_mode(input);
         self
     }
-    /// <p>An option to allow QuickSight to customize data stories with user specific metadata, specifically location and job information, in your IAM Identity Center instance.</p>
+    /// <p>An option to allow Amazon Quick Sight to customize data stories with user specific metadata, specifically location and job information, in your IAM Identity Center instance.</p>
     pub fn get_personalization_mode(&self) -> &::std::option::Option<crate::types::PersonalizationMode> {
         self.inner.get_personalization_mode()
     }

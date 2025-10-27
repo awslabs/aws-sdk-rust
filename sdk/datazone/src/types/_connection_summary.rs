@@ -22,6 +22,8 @@ pub struct ConnectionSummary {
     pub props: ::std::option::Option<crate::types::ConnectionPropertiesOutput>,
     /// <p>The connection type.</p>
     pub r#type: crate::types::ConnectionType,
+    /// <p>The scope of the connection.</p>
+    pub scope: ::std::option::Option<crate::types::ConnectionScope>,
 }
 impl ConnectionSummary {
     /// <p>The ID of a connection.</p>
@@ -65,6 +67,10 @@ impl ConnectionSummary {
     pub fn r#type(&self) -> &crate::types::ConnectionType {
         &self.r#type
     }
+    /// <p>The scope of the connection.</p>
+    pub fn scope(&self) -> ::std::option::Option<&crate::types::ConnectionScope> {
+        self.scope.as_ref()
+    }
 }
 impl ConnectionSummary {
     /// Creates a new builder-style object to manufacture [`ConnectionSummary`](crate::types::ConnectionSummary).
@@ -86,6 +92,7 @@ pub struct ConnectionSummaryBuilder {
     pub(crate) project_id: ::std::option::Option<::std::string::String>,
     pub(crate) props: ::std::option::Option<crate::types::ConnectionPropertiesOutput>,
     pub(crate) r#type: ::std::option::Option<crate::types::ConnectionType>,
+    pub(crate) scope: ::std::option::Option<crate::types::ConnectionScope>,
 }
 impl ConnectionSummaryBuilder {
     /// <p>The ID of a connection.</p>
@@ -225,6 +232,20 @@ impl ConnectionSummaryBuilder {
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ConnectionType> {
         &self.r#type
     }
+    /// <p>The scope of the connection.</p>
+    pub fn scope(mut self, input: crate::types::ConnectionScope) -> Self {
+        self.scope = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The scope of the connection.</p>
+    pub fn set_scope(mut self, input: ::std::option::Option<crate::types::ConnectionScope>) -> Self {
+        self.scope = input;
+        self
+    }
+    /// <p>The scope of the connection.</p>
+    pub fn get_scope(&self) -> &::std::option::Option<crate::types::ConnectionScope> {
+        &self.scope
+    }
     /// Consumes the builder and constructs a [`ConnectionSummary`](crate::types::ConnectionSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`connection_id`](crate::types::builders::ConnectionSummaryBuilder::connection_id)
@@ -274,6 +295,7 @@ impl ConnectionSummaryBuilder {
                     "r#type was not specified but it is required when building ConnectionSummary",
                 )
             })?,
+            scope: self.scope,
         })
     }
 }

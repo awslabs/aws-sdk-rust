@@ -89,6 +89,17 @@ where
                                     .transpose()?,
                             );
                         }
+                        "ComputationRule" => {
+                            builder = builder.set_computation_rule(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ComputationRuleEnum::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "PresentationDetails" => {
+                            builder =
+                                builder.set_presentation_details(crate::protocol_serde::shape_presentation_object::de_presentation_object(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

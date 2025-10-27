@@ -45,6 +45,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "DataCacheConfig" => {
+                            builder = builder.set_data_cache_config(
+                                    crate::protocol_serde::shape_inference_component_data_cache_config_summary::de_inference_component_data_cache_config_summary(tokens)?
+                                );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

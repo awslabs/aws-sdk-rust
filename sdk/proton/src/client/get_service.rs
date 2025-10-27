@@ -7,6 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetServiceOutput`](crate::operation::get_service::GetServiceOutput) with field(s):
     ///   - [`service(Option<Service>)`](crate::operation::get_service::GetServiceOutput::service): <p>The detailed data of the requested service.</p>
     /// - On failure, responds with [`SdkError<GetServiceError>`](crate::operation::get_service::GetServiceError)
+    #[deprecated(note = "AWS Proton is not accepting new customers.", since = "10/07/2025")]
     pub fn get_service(&self) -> crate::operation::get_service::builders::GetServiceFluentBuilder {
         crate::operation::get_service::builders::GetServiceFluentBuilder::new(self.handle.clone())
     }

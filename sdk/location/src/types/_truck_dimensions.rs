@@ -2,7 +2,7 @@
 
 /// <p>Contains details about the truck dimensions in the unit of measurement that you specify. Used to filter out roads that can't support or allow the specified dimensions for requests that specify <code>TravelMode</code> as <code>Truck</code>.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct TruckDimensions {
     /// <p>The length of the truck.</p>
     /// <ul>
@@ -69,6 +69,16 @@ impl TruckDimensions {
         self.unit.as_ref()
     }
 }
+impl ::std::fmt::Debug for TruckDimensions {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("TruckDimensions");
+        formatter.field("length", &"*** Sensitive Data Redacted ***");
+        formatter.field("height", &"*** Sensitive Data Redacted ***");
+        formatter.field("width", &"*** Sensitive Data Redacted ***");
+        formatter.field("unit", &self.unit);
+        formatter.finish()
+    }
+}
 impl TruckDimensions {
     /// Creates a new builder-style object to manufacture [`TruckDimensions`](crate::types::TruckDimensions).
     pub fn builder() -> crate::types::builders::TruckDimensionsBuilder {
@@ -77,7 +87,7 @@ impl TruckDimensions {
 }
 
 /// A builder for [`TruckDimensions`](crate::types::TruckDimensions).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct TruckDimensionsBuilder {
     pub(crate) length: ::std::option::Option<f64>,
@@ -207,5 +217,15 @@ impl TruckDimensionsBuilder {
             width: self.width,
             unit: self.unit,
         }
+    }
+}
+impl ::std::fmt::Debug for TruckDimensionsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("TruckDimensionsBuilder");
+        formatter.field("length", &"*** Sensitive Data Redacted ***");
+        formatter.field("height", &"*** Sensitive Data Redacted ***");
+        formatter.field("width", &"*** Sensitive Data Redacted ***");
+        formatter.field("unit", &self.unit);
+        formatter.finish()
     }
 }

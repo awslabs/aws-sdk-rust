@@ -10,7 +10,7 @@ pub struct AudioProperties {
     pub bit_rate: ::std::option::Option<i64>,
     /// The number of audio channels in the audio track.
     pub channels: ::std::option::Option<i32>,
-    /// The frame rate of the video or audio track.
+    /// The frame rate of the video or audio track, expressed as a fraction with numerator and denominator values.
     pub frame_rate: ::std::option::Option<crate::types::FrameRate>,
     /// The language code of the audio track, in three character ISO 639-3 format.
     pub language_code: ::std::option::Option<::std::string::String>,
@@ -30,7 +30,7 @@ impl AudioProperties {
     pub fn channels(&self) -> ::std::option::Option<i32> {
         self.channels
     }
-    /// The frame rate of the video or audio track.
+    /// The frame rate of the video or audio track, expressed as a fraction with numerator and denominator values.
     pub fn frame_rate(&self) -> ::std::option::Option<&crate::types::FrameRate> {
         self.frame_rate.as_ref()
     }
@@ -104,17 +104,17 @@ impl AudioPropertiesBuilder {
     pub fn get_channels(&self) -> &::std::option::Option<i32> {
         &self.channels
     }
-    /// The frame rate of the video or audio track.
+    /// The frame rate of the video or audio track, expressed as a fraction with numerator and denominator values.
     pub fn frame_rate(mut self, input: crate::types::FrameRate) -> Self {
         self.frame_rate = ::std::option::Option::Some(input);
         self
     }
-    /// The frame rate of the video or audio track.
+    /// The frame rate of the video or audio track, expressed as a fraction with numerator and denominator values.
     pub fn set_frame_rate(mut self, input: ::std::option::Option<crate::types::FrameRate>) -> Self {
         self.frame_rate = input;
         self
     }
-    /// The frame rate of the video or audio track.
+    /// The frame rate of the video or audio track, expressed as a fraction with numerator and denominator values.
     pub fn get_frame_rate(&self) -> &::std::option::Option<crate::types::FrameRate> {
         &self.frame_rate
     }

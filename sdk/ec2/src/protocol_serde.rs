@@ -263,6 +263,14 @@ pub(crate) mod shape_copy_snapshot;
 
 pub(crate) mod shape_copy_snapshot_input;
 
+pub(crate) mod shape_copy_volumes;
+
+pub(crate) mod shape_copy_volumes_input;
+
+pub(crate) mod shape_create_capacity_manager_data_export;
+
+pub(crate) mod shape_create_capacity_manager_data_export_input;
+
 pub(crate) mod shape_create_capacity_reservation;
 
 pub(crate) mod shape_create_capacity_reservation_by_splitting;
@@ -634,6 +642,10 @@ pub(crate) mod shape_create_vpn_connection_route_input;
 pub(crate) mod shape_create_vpn_gateway;
 
 pub(crate) mod shape_create_vpn_gateway_input;
+
+pub(crate) mod shape_delete_capacity_manager_data_export;
+
+pub(crate) mod shape_delete_capacity_manager_data_export_input;
 
 pub(crate) mod shape_delete_carrier_gateway;
 
@@ -1050,6 +1062,10 @@ pub(crate) mod shape_describe_capacity_block_status_input;
 pub(crate) mod shape_describe_capacity_blocks;
 
 pub(crate) mod shape_describe_capacity_blocks_input;
+
+pub(crate) mod shape_describe_capacity_manager_data_exports;
+
+pub(crate) mod shape_describe_capacity_manager_data_exports_input;
 
 pub(crate) mod shape_describe_capacity_reservation_billing_requests;
 
@@ -1719,6 +1735,10 @@ pub(crate) mod shape_disable_aws_network_performance_metric_subscription;
 
 pub(crate) mod shape_disable_aws_network_performance_metric_subscription_input;
 
+pub(crate) mod shape_disable_capacity_manager;
+
+pub(crate) mod shape_disable_capacity_manager_input;
+
 pub(crate) mod shape_disable_ebs_encryption_by_default;
 
 pub(crate) mod shape_disable_ebs_encryption_by_default_input;
@@ -1863,6 +1883,10 @@ pub(crate) mod shape_enable_aws_network_performance_metric_subscription;
 
 pub(crate) mod shape_enable_aws_network_performance_metric_subscription_input;
 
+pub(crate) mod shape_enable_capacity_manager;
+
+pub(crate) mod shape_enable_capacity_manager_input;
+
 pub(crate) mod shape_enable_ebs_encryption_by_default;
 
 pub(crate) mod shape_enable_ebs_encryption_by_default_input;
@@ -1970,6 +1994,18 @@ pub(crate) mod shape_get_associated_ipv6_pool_cidrs_input;
 pub(crate) mod shape_get_aws_network_performance_data;
 
 pub(crate) mod shape_get_aws_network_performance_data_input;
+
+pub(crate) mod shape_get_capacity_manager_attributes;
+
+pub(crate) mod shape_get_capacity_manager_attributes_input;
+
+pub(crate) mod shape_get_capacity_manager_metric_data;
+
+pub(crate) mod shape_get_capacity_manager_metric_data_input;
+
+pub(crate) mod shape_get_capacity_manager_metric_dimensions;
+
+pub(crate) mod shape_get_capacity_manager_metric_dimensions_input;
 
 pub(crate) mod shape_get_capacity_reservation_usage;
 
@@ -2787,6 +2823,10 @@ pub(crate) mod shape_unmonitor_instances;
 
 pub(crate) mod shape_unmonitor_instances_input;
 
+pub(crate) mod shape_update_capacity_manager_organizations_access;
+
+pub(crate) mod shape_update_capacity_manager_organizations_access_input;
+
 pub(crate) mod shape_update_security_group_rule_descriptions_egress;
 
 pub(crate) mod shape_update_security_group_rule_descriptions_egress_input;
@@ -2816,6 +2856,8 @@ pub(crate) mod shape_attribute_value;
 pub(crate) mod shape_blob_attribute_value;
 
 pub(crate) mod shape_block_device_mapping;
+
+pub(crate) mod shape_capacity_manager_condition;
 
 pub(crate) mod shape_capacity_reservation_specification;
 
@@ -3159,6 +3201,8 @@ pub(crate) mod shape_capacity_block_set;
 
 pub(crate) mod shape_capacity_block_status_set;
 
+pub(crate) mod shape_capacity_manager_data_export_response_set;
+
 pub(crate) mod shape_capacity_reservation;
 
 pub(crate) mod shape_capacity_reservation_billing_request_set;
@@ -3258,6 +3302,8 @@ pub(crate) mod shape_device_trust_provider_type_list;
 pub(crate) mod shape_dhcp_options;
 
 pub(crate) mod shape_dhcp_options_list;
+
+pub(crate) mod shape_dimension_condition;
 
 pub(crate) mod shape_directory_service_authentication_request;
 
@@ -3570,6 +3616,10 @@ pub(crate) mod shape_managed_prefix_list_set;
 pub(crate) mod shape_memory_gib_per_v_cpu_request;
 
 pub(crate) mod shape_memory_mib_request;
+
+pub(crate) mod shape_metric_data_result_set;
+
+pub(crate) mod shape_metric_dimension_result_set;
 
 pub(crate) mod shape_modify_verified_access_endpoint_port_range;
 
@@ -4077,6 +4127,10 @@ pub(crate) mod shape_capacity_block_offering;
 
 pub(crate) mod shape_capacity_block_status;
 
+pub(crate) mod shape_capacity_manager_data_export_response;
+
+pub(crate) mod shape_capacity_manager_dimension;
+
 pub(crate) mod shape_capacity_reservation_billing_request;
 
 pub(crate) mod shape_capacity_reservation_commitment_info;
@@ -4336,6 +4390,8 @@ pub(crate) mod shape_locked_snapshots_info;
 pub(crate) mod shape_mac_host;
 
 pub(crate) mod shape_mac_system_integrity_protection_configuration;
+
+pub(crate) mod shape_metric_data_result;
 
 pub(crate) mod shape_moving_address_status;
 
@@ -4851,6 +4907,8 @@ pub(crate) mod shape_memory_mib;
 
 pub(crate) mod shape_metric_points;
 
+pub(crate) mod shape_metric_value_set;
+
 pub(crate) mod shape_monitoring;
 
 pub(crate) mod shape_network_acl_association;
@@ -5136,6 +5194,8 @@ pub(crate) mod shape_license_configuration;
 pub(crate) mod shape_media_device_info_list;
 
 pub(crate) mod shape_metric_point;
+
+pub(crate) mod shape_metric_value;
 
 pub(crate) mod shape_network_card_info_list;
 

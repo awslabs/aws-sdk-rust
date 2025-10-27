@@ -3,6 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetTile`](crate::operation::get_tile::builders::GetTileFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
+    ///   - [`additional_features(TileAdditionalFeature)`](crate::operation::get_tile::builders::GetTileFluentBuilder::additional_features) / [`set_additional_features(Option<Vec::<TileAdditionalFeature>>)`](crate::operation::get_tile::builders::GetTileFluentBuilder::set_additional_features):<br>required: **false**<br><p>A list of optional additional parameters such as map styles that can be requested for each result.</p><br>
     ///   - [`tileset(impl Into<String>)`](crate::operation::get_tile::builders::GetTileFluentBuilder::tileset) / [`set_tileset(Option<String>)`](crate::operation::get_tile::builders::GetTileFluentBuilder::set_tileset):<br>required: **true**<br><p>Specifies the desired tile set.</p> <p>Valid Values: <code>raster.satellite | vector.basemap</code></p><br>
     ///   - [`z(impl Into<String>)`](crate::operation::get_tile::builders::GetTileFluentBuilder::z) / [`set_z(Option<String>)`](crate::operation::get_tile::builders::GetTileFluentBuilder::set_z):<br>required: **true**<br><p>The zoom value for the map tile.</p><br>
     ///   - [`x(impl Into<String>)`](crate::operation::get_tile::builders::GetTileFluentBuilder::x) / [`set_x(Option<String>)`](crate::operation::get_tile::builders::GetTileFluentBuilder::set_x):<br>required: **true**<br><p>The X axis value for the map tile. Must be between 0 and 19.</p><br>

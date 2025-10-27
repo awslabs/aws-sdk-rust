@@ -12,6 +12,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_environment_template_versions::ListEnvironmentTemplateVersionsOutput::next_token): <p>A token that indicates the location of the next major or minor version in the array of major or minor versions of an environment template, after the list of major or minor versions that was previously requested.</p>
     ///   - [`template_versions(Vec::<EnvironmentTemplateVersionSummary>)`](crate::operation::list_environment_template_versions::ListEnvironmentTemplateVersionsOutput::template_versions): <p>An array of major or minor versions of an environment template detail data.</p>
     /// - On failure, responds with [`SdkError<ListEnvironmentTemplateVersionsError>`](crate::operation::list_environment_template_versions::ListEnvironmentTemplateVersionsError)
+    #[deprecated(note = "AWS Proton is not accepting new customers.", since = "10/07/2025")]
     pub fn list_environment_template_versions(
         &self,
     ) -> crate::operation::list_environment_template_versions::builders::ListEnvironmentTemplateVersionsFluentBuilder {

@@ -93,6 +93,24 @@ pub fn de_get_job_http_error(
             }
             tmp
         }),
+        "ServiceQuotaExceededException" => crate::operation::get_job::GetJobError::ServiceQuotaExceededException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ServiceQuotaExceededExceptionBuilder::default();
+                output = crate::protocol_serde::shape_service_quota_exceeded_exception::de_service_quota_exceeded_exception_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::get_job::GetJobError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "TooManyRequestsException" => crate::operation::get_job::GetJobError::TooManyRequestsException({
             #[allow(unused_mut)]
             let mut tmp = {

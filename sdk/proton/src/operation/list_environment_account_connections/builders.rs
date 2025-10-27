@@ -24,6 +24,7 @@ impl crate::operation::list_environment_account_connections::builders::ListEnvir
 ///
 /// <p>View a list of environment account connections.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-env-account-connections.html">Environment account connections</a> in the <i>Proton User guide</i>.</p>
+#[deprecated(note = "AWS Proton is not accepting new customers.", since = "10/07/2025")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListEnvironmentAccountConnectionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

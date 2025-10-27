@@ -31,6 +31,8 @@ pub(crate) mod shape_associate_application_to_entitlement;
 
 pub(crate) mod shape_associate_fleet;
 
+pub(crate) mod shape_associate_software_to_image_builder;
+
 pub(crate) mod shape_batch_associate_user_stack;
 
 pub(crate) mod shape_batch_disassociate_user_stack;
@@ -99,6 +101,8 @@ pub(crate) mod shape_describe_app_block_builders;
 
 pub(crate) mod shape_describe_app_blocks;
 
+pub(crate) mod shape_describe_app_license_usage;
+
 pub(crate) mod shape_describe_application_fleet_associations;
 
 pub(crate) mod shape_describe_applications;
@@ -116,6 +120,8 @@ pub(crate) mod shape_describe_image_permissions;
 pub(crate) mod shape_describe_images;
 
 pub(crate) mod shape_describe_sessions;
+
+pub(crate) mod shape_describe_software_associations;
 
 pub(crate) mod shape_describe_stacks;
 
@@ -137,6 +143,8 @@ pub(crate) mod shape_disassociate_application_from_entitlement;
 
 pub(crate) mod shape_disassociate_fleet;
 
+pub(crate) mod shape_disassociate_software_from_image_builder;
+
 pub(crate) mod shape_enable_user;
 
 pub(crate) mod shape_expire_session;
@@ -154,6 +162,8 @@ pub(crate) mod shape_start_app_block_builder;
 pub(crate) mod shape_start_fleet;
 
 pub(crate) mod shape_start_image_builder;
+
+pub(crate) mod shape_start_software_deployment_to_image_builder;
 
 pub(crate) mod shape_stop_app_block_builder;
 
@@ -196,6 +206,8 @@ pub(crate) mod shape_associate_application_fleet_input;
 pub(crate) mod shape_associate_application_to_entitlement_input;
 
 pub(crate) mod shape_associate_fleet_input;
+
+pub(crate) mod shape_associate_software_to_image_builder_input;
 
 pub(crate) mod shape_batch_associate_user_stack_input;
 
@@ -263,6 +275,8 @@ pub(crate) mod shape_describe_app_block_builders_input;
 
 pub(crate) mod shape_describe_app_blocks_input;
 
+pub(crate) mod shape_describe_app_license_usage_input;
+
 pub(crate) mod shape_describe_application_fleet_associations_input;
 
 pub(crate) mod shape_describe_applications_input;
@@ -280,6 +294,8 @@ pub(crate) mod shape_describe_image_permissions_input;
 pub(crate) mod shape_describe_images_input;
 
 pub(crate) mod shape_describe_sessions_input;
+
+pub(crate) mod shape_describe_software_associations_input;
 
 pub(crate) mod shape_describe_stacks_input;
 
@@ -300,6 +316,8 @@ pub(crate) mod shape_disassociate_application_fleet_input;
 pub(crate) mod shape_disassociate_application_from_entitlement_input;
 
 pub(crate) mod shape_disassociate_fleet_input;
+
+pub(crate) mod shape_disassociate_software_from_image_builder_input;
 
 pub(crate) mod shape_enable_user_input;
 
@@ -345,6 +363,8 @@ pub(crate) mod shape_start_fleet_input;
 
 pub(crate) mod shape_start_image_builder_input;
 
+pub(crate) mod shape_start_software_deployment_to_image_builder_input;
+
 pub(crate) mod shape_stop_app_block_builder_input;
 
 pub(crate) mod shape_stop_fleet_input;
@@ -372,6 +392,8 @@ pub(crate) mod shape_update_stack_input;
 pub(crate) mod shape_update_theme_for_stack_input;
 
 pub(crate) mod shape_access_endpoint;
+
+pub(crate) mod shape_admin_app_license_usage_list;
 
 pub(crate) mod shape_app_block;
 
@@ -437,6 +459,8 @@ pub(crate) mod shape_session_list;
 
 pub(crate) mod shape_shared_image_permissions_list;
 
+pub(crate) mod shape_software_associations_list;
+
 pub(crate) mod shape_stack;
 
 pub(crate) mod shape_stack_list;
@@ -468,6 +492,8 @@ pub(crate) mod shape_user_stack_association_list;
 pub(crate) mod shape_vpc_config;
 
 pub(crate) mod shape_access_endpoint_list;
+
+pub(crate) mod shape_admin_app_license_usage_record;
 
 pub(crate) mod shape_app_block_builder_state_change_reason;
 
@@ -502,6 +528,8 @@ pub(crate) mod shape_resource_errors;
 pub(crate) mod shape_session;
 
 pub(crate) mod shape_shared_image_permissions;
+
+pub(crate) mod shape_software_associations;
 
 pub(crate) mod shape_stack_errors;
 

@@ -111,16 +111,19 @@ impl CreateConnectorFluentBuilder {
         self
     }
     /// <p>The URL of the partner's AS2 or SFTP endpoint.</p>
+    /// <p>When creating AS2 connectors or service-managed SFTP connectors (connectors without egress configuration), you must provide a URL to specify the remote server endpoint. For VPC Lattice type connectors, the URL must be null.</p>
     pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.url(input.into());
         self
     }
     /// <p>The URL of the partner's AS2 or SFTP endpoint.</p>
+    /// <p>When creating AS2 connectors or service-managed SFTP connectors (connectors without egress configuration), you must provide a URL to specify the remote server endpoint. For VPC Lattice type connectors, the URL must be null.</p>
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_url(input);
         self
     }
     /// <p>The URL of the partner's AS2 or SFTP endpoint.</p>
+    /// <p>When creating AS2 connectors or service-managed SFTP connectors (connectors without egress configuration), you must provide a URL to specify the remote server endpoint. For VPC Lattice type connectors, the URL must be null.</p>
     pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_url()
     }
@@ -227,5 +230,19 @@ impl CreateConnectorFluentBuilder {
     /// <p>Specifies the name of the security policy for the connector.</p>
     pub fn get_security_policy_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_security_policy_name()
+    }
+    /// <p>Specifies the egress configuration for the connector, which determines how traffic is routed from the connector to the SFTP server. When set to VPC, enables routing through customer VPCs using VPC_LATTICE for private connectivity.</p>
+    pub fn egress_config(mut self, input: crate::types::ConnectorEgressConfig) -> Self {
+        self.inner = self.inner.egress_config(input);
+        self
+    }
+    /// <p>Specifies the egress configuration for the connector, which determines how traffic is routed from the connector to the SFTP server. When set to VPC, enables routing through customer VPCs using VPC_LATTICE for private connectivity.</p>
+    pub fn set_egress_config(mut self, input: ::std::option::Option<crate::types::ConnectorEgressConfig>) -> Self {
+        self.inner = self.inner.set_egress_config(input);
+        self
+    }
+    /// <p>Specifies the egress configuration for the connector, which determines how traffic is routed from the connector to the SFTP server. When set to VPC, enables routing through customer VPCs using VPC_LATTICE for private connectivity.</p>
+    pub fn get_egress_config(&self) -> &::std::option::Option<crate::types::ConnectorEgressConfig> {
+        self.inner.get_egress_config()
     }
 }

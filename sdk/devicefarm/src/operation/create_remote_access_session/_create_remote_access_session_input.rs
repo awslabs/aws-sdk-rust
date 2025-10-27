@@ -8,6 +8,8 @@ pub struct CreateRemoteAccessSessionInput {
     pub project_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the device for which you want to create a remote access session.</p>
     pub device_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the app to create the remote access session.</p>
+    pub app_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the device instance for which you want to create a remote access session.</p>
     pub instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>Ignored. The public key of the <code>ssh</code> key pair you want to use for connecting to remote devices in your remote debugging session. This key is required only if <code>remoteDebugEnabled</code> is set to <code>true</code>.</p>
@@ -49,6 +51,10 @@ impl CreateRemoteAccessSessionInput {
     /// <p>The ARN of the device for which you want to create a remote access session.</p>
     pub fn device_arn(&self) -> ::std::option::Option<&str> {
         self.device_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the app to create the remote access session.</p>
+    pub fn app_arn(&self) -> ::std::option::Option<&str> {
+        self.app_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the device instance for which you want to create a remote access session.</p>
     pub fn instance_arn(&self) -> ::std::option::Option<&str> {
@@ -116,6 +122,7 @@ impl CreateRemoteAccessSessionInput {
 pub struct CreateRemoteAccessSessionInputBuilder {
     pub(crate) project_arn: ::std::option::Option<::std::string::String>,
     pub(crate) device_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) app_arn: ::std::option::Option<::std::string::String>,
     pub(crate) instance_arn: ::std::option::Option<::std::string::String>,
     pub(crate) ssh_public_key: ::std::option::Option<::std::string::String>,
     pub(crate) remote_debug_enabled: ::std::option::Option<bool>,
@@ -157,6 +164,20 @@ impl CreateRemoteAccessSessionInputBuilder {
     /// <p>The ARN of the device for which you want to create a remote access session.</p>
     pub fn get_device_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.device_arn
+    }
+    /// <p>The Amazon Resource Name (ARN) of the app to create the remote access session.</p>
+    pub fn app_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.app_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the app to create the remote access session.</p>
+    pub fn set_app_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.app_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the app to create the remote access session.</p>
+    pub fn get_app_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the device instance for which you want to create a remote access session.</p>
     pub fn instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -344,6 +365,7 @@ impl CreateRemoteAccessSessionInputBuilder {
         ::std::result::Result::Ok(crate::operation::create_remote_access_session::CreateRemoteAccessSessionInput {
             project_arn: self.project_arn,
             device_arn: self.device_arn,
+            app_arn: self.app_arn,
             instance_arn: self.instance_arn,
             ssh_public_key: self.ssh_public_key,
             remote_debug_enabled: self.remote_debug_enabled,

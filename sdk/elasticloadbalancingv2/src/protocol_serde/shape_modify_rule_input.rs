@@ -32,6 +32,22 @@ pub fn ser_modify_rule_input_input_input(
         }
         list_11.finish();
     }
+    #[allow(unused_mut)]
+    let mut scope_13 = writer.prefix("Transforms");
+    if let Some(var_14) = &input.transforms {
+        let mut list_16 = scope_13.start_list(false, None);
+        for item_15 in var_14 {
+            #[allow(unused_mut)]
+            let mut entry_17 = list_16.entry();
+            crate::protocol_serde::shape_rule_transform::ser_rule_transform(entry_17, item_15)?;
+        }
+        list_16.finish();
+    }
+    #[allow(unused_mut)]
+    let mut scope_18 = writer.prefix("ResetTransforms");
+    if let Some(var_19) = &input.reset_transforms {
+        scope_18.boolean(*var_19);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

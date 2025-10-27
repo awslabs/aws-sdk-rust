@@ -30,5 +30,11 @@ pub fn ser_update_bucket_input_input(
         crate::protocol_serde::shape_bucket_access_log_config::ser_bucket_access_log_config(&mut object_9, var_8)?;
         object_9.finish();
     }
+    if let Some(var_10) = &input.cors {
+        #[allow(unused_mut)]
+        let mut object_11 = object.key("cors").start_object();
+        crate::protocol_serde::shape_bucket_cors_config::ser_bucket_cors_config(&mut object_11, var_10)?;
+        object_11.finish();
+    }
     Ok(())
 }

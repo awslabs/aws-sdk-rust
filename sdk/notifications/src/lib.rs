@@ -18,7 +18,7 @@
 #![allow(rustdoc::invalid_html_tags)]
 #![forbid(unsafe_code)]
 #![warn(missing_docs)]
-#![cfg_attr(docsrs, feature(doc_auto_cfg))]
+#![cfg_attr(docsrs, feature(doc_cfg))]
 //! The _User Notifications API Reference_ provides descriptions, API request parameters, and the JSON response for each of the User Notifications API actions.
 //!
 //! User Notification control plane APIs are currently available in US East (Virginia) - us-east-1.
@@ -39,7 +39,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-notifications = "1.38.0"
+//! aws-sdk-notifications = "1.39.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

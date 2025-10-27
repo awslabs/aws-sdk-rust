@@ -282,6 +282,8 @@ pub struct ModifyDbInstanceInput {
     /// <ul>
     /// <li>
     /// <p>Must be in the distinguished name format.</p></li>
+    /// <li>
+    /// <p>Can't be longer than 64 characters.</p></li>
     /// </ul>
     /// <p>Example: <code>OU=mymanagedADtestOU,DC=mymanagedADtest,DC=mymanagedAD,DC=mydomain</code></p>
     pub domain_ou: ::std::option::Option<::std::string::String>,
@@ -885,6 +887,8 @@ impl ModifyDbInstanceInput {
     /// <ul>
     /// <li>
     /// <p>Must be in the distinguished name format.</p></li>
+    /// <li>
+    /// <p>Can't be longer than 64 characters.</p></li>
     /// </ul>
     /// <p>Example: <code>OU=mymanagedADtestOU,DC=mymanagedADtest,DC=mymanagedAD,DC=mydomain</code></p>
     pub fn domain_ou(&self) -> ::std::option::Option<&str> {
@@ -2421,6 +2425,8 @@ impl ModifyDbInstanceInputBuilder {
     /// <ul>
     /// <li>
     /// <p>Must be in the distinguished name format.</p></li>
+    /// <li>
+    /// <p>Can't be longer than 64 characters.</p></li>
     /// </ul>
     /// <p>Example: <code>OU=mymanagedADtestOU,DC=mymanagedADtest,DC=mymanagedAD,DC=mydomain</code></p>
     pub fn domain_ou(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -2432,6 +2438,8 @@ impl ModifyDbInstanceInputBuilder {
     /// <ul>
     /// <li>
     /// <p>Must be in the distinguished name format.</p></li>
+    /// <li>
+    /// <p>Can't be longer than 64 characters.</p></li>
     /// </ul>
     /// <p>Example: <code>OU=mymanagedADtestOU,DC=mymanagedADtest,DC=mymanagedAD,DC=mydomain</code></p>
     pub fn set_domain_ou(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -2443,6 +2451,8 @@ impl ModifyDbInstanceInputBuilder {
     /// <ul>
     /// <li>
     /// <p>Must be in the distinguished name format.</p></li>
+    /// <li>
+    /// <p>Can't be longer than 64 characters.</p></li>
     /// </ul>
     /// <p>Example: <code>OU=mymanagedADtestOU,DC=mymanagedADtest,DC=mymanagedAD,DC=mydomain</code></p>
     pub fn get_domain_ou(&self) -> &::std::option::Option<::std::string::String> {

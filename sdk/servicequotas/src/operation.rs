@@ -16,6 +16,9 @@ pub mod disassociate_service_quota_template;
 /// Types for the `GetAssociationForServiceQuotaTemplate` operation.
 pub mod get_association_for_service_quota_template;
 
+/// Types for the `GetAutoManagementConfiguration` operation.
+pub mod get_auto_management_configuration;
+
 /// Types for the `GetAWSDefaultServiceQuota` operation.
 pub mod get_aws_default_service_quota;
 
@@ -55,8 +58,17 @@ pub mod put_service_quota_increase_request_into_template;
 /// Types for the `RequestServiceQuotaIncrease` operation.
 pub mod request_service_quota_increase;
 
+/// Types for the `StartAutoManagement` operation.
+pub mod start_auto_management;
+
+/// Types for the `StopAutoManagement` operation.
+pub mod stop_auto_management;
+
 /// Types for the `TagResource` operation.
 pub mod tag_resource;
 
 /// Types for the `UntagResource` operation.
 pub mod untag_resource;
+
+/// Types for the `UpdateAutoManagement` operation.
+pub mod update_auto_management;

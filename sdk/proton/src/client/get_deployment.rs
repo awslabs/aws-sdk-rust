@@ -11,6 +11,7 @@ impl super::Client {
     /// - On success, responds with [`GetDeploymentOutput`](crate::operation::get_deployment::GetDeploymentOutput) with field(s):
     ///   - [`deployment(Option<Deployment>)`](crate::operation::get_deployment::GetDeploymentOutput::deployment): <p>The detailed data of the requested deployment.</p>
     /// - On failure, responds with [`SdkError<GetDeploymentError>`](crate::operation::get_deployment::GetDeploymentError)
+    #[deprecated(note = "AWS Proton is not accepting new customers.", since = "10/07/2025")]
     pub fn get_deployment(&self) -> crate::operation::get_deployment::builders::GetDeploymentFluentBuilder {
         crate::operation::get_deployment::builders::GetDeploymentFluentBuilder::new(self.handle.clone())
     }

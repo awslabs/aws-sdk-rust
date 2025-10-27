@@ -22,6 +22,9 @@ pub mod delete_telemetry_rule_for_organization;
 /// Types for the `GetCentralizationRuleForOrganization` operation.
 pub mod get_centralization_rule_for_organization;
 
+/// Types for the `GetTelemetryEnrichmentStatus` operation.
+pub mod get_telemetry_enrichment_status;
+
 /// Types for the `GetTelemetryEvaluationStatus` operation.
 pub mod get_telemetry_evaluation_status;
 
@@ -52,11 +55,17 @@ pub mod list_telemetry_rules;
 /// Types for the `ListTelemetryRulesForOrganization` operation.
 pub mod list_telemetry_rules_for_organization;
 
+/// Types for the `StartTelemetryEnrichment` operation.
+pub mod start_telemetry_enrichment;
+
 /// Types for the `StartTelemetryEvaluation` operation.
 pub mod start_telemetry_evaluation;
 
 /// Types for the `StartTelemetryEvaluationForOrganization` operation.
 pub mod start_telemetry_evaluation_for_organization;
+
+/// Types for the `StopTelemetryEnrichment` operation.
+pub mod stop_telemetry_enrichment;
 
 /// Types for the `StopTelemetryEvaluation` operation.
 pub mod stop_telemetry_evaluation;

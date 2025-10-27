@@ -7,6 +7,14 @@ pub use crate::types::_subnet_mapping::SubnetMappingBuilder;
 
 pub use crate::types::_rule::RuleBuilder;
 
+pub use crate::types::_rule_transform::RuleTransformBuilder;
+
+pub use crate::types::_url_rewrite_config::UrlRewriteConfigBuilder;
+
+pub use crate::types::_rewrite_config::RewriteConfigBuilder;
+
+pub use crate::types::_host_header_rewrite_config::HostHeaderRewriteConfigBuilder;
+
 pub use crate::types::_action::ActionBuilder;
 
 pub use crate::types::_forward_action_config::ForwardActionConfigBuilder;

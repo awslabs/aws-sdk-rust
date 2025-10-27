@@ -27,6 +27,7 @@ impl crate::operation::update_service_instance::builders::UpdateServiceInstanceI
 /// <p>You can't update a service instance while its deployment status, or the deployment status of a component attached to it, is <code>IN_PROGRESS</code>.</p>
 /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
 /// </note>
+#[deprecated(note = "AWS Proton is not accepting new customers.", since = "10/07/2025")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateServiceInstanceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

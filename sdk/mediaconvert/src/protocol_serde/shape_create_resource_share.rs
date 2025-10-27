@@ -96,6 +96,24 @@ pub fn de_create_resource_share_http_error(
             }
             tmp
         }),
+        "ServiceQuotaExceededException" => crate::operation::create_resource_share::CreateResourceShareError::ServiceQuotaExceededException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ServiceQuotaExceededExceptionBuilder::default();
+                output = crate::protocol_serde::shape_service_quota_exceeded_exception::de_service_quota_exceeded_exception_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::create_resource_share::CreateResourceShareError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "TooManyRequestsException" => crate::operation::create_resource_share::CreateResourceShareError::TooManyRequestsException({
             #[allow(unused_mut)]
             let mut tmp = {

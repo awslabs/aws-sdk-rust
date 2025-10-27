@@ -14,9 +14,9 @@ pub struct ListThemesInput {
     /// <li>
     /// <p><code>ALL (default)</code>- Display all existing themes.</p></li>
     /// <li>
-    /// <p><code>CUSTOM</code> - Display only the themes created by people using Amazon QuickSight.</p></li>
+    /// <p><code>CUSTOM</code> - Display only the themes created by people using Amazon Quick Sight.</p></li>
     /// <li>
-    /// <p><code>QUICKSIGHT</code> - Display only the starting themes defined by QuickSight.</p></li>
+    /// <p><code>QUICKSIGHT</code> - Display only the starting themes defined by Quick Sight.</p></li>
     /// </ul>
     pub r#type: ::std::option::Option<crate::types::ThemeType>,
 }
@@ -38,9 +38,9 @@ impl ListThemesInput {
     /// <li>
     /// <p><code>ALL (default)</code>- Display all existing themes.</p></li>
     /// <li>
-    /// <p><code>CUSTOM</code> - Display only the themes created by people using Amazon QuickSight.</p></li>
+    /// <p><code>CUSTOM</code> - Display only the themes created by people using Amazon Quick Sight.</p></li>
     /// <li>
-    /// <p><code>QUICKSIGHT</code> - Display only the starting themes defined by QuickSight.</p></li>
+    /// <p><code>QUICKSIGHT</code> - Display only the starting themes defined by Quick Sight.</p></li>
     /// </ul>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::ThemeType> {
         self.r#type.as_ref()
@@ -111,9 +111,9 @@ impl ListThemesInputBuilder {
     /// <li>
     /// <p><code>ALL (default)</code>- Display all existing themes.</p></li>
     /// <li>
-    /// <p><code>CUSTOM</code> - Display only the themes created by people using Amazon QuickSight.</p></li>
+    /// <p><code>CUSTOM</code> - Display only the themes created by people using Amazon Quick Sight.</p></li>
     /// <li>
-    /// <p><code>QUICKSIGHT</code> - Display only the starting themes defined by QuickSight.</p></li>
+    /// <p><code>QUICKSIGHT</code> - Display only the starting themes defined by Quick Sight.</p></li>
     /// </ul>
     pub fn r#type(mut self, input: crate::types::ThemeType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -124,9 +124,9 @@ impl ListThemesInputBuilder {
     /// <li>
     /// <p><code>ALL (default)</code>- Display all existing themes.</p></li>
     /// <li>
-    /// <p><code>CUSTOM</code> - Display only the themes created by people using Amazon QuickSight.</p></li>
+    /// <p><code>CUSTOM</code> - Display only the themes created by people using Amazon Quick Sight.</p></li>
     /// <li>
-    /// <p><code>QUICKSIGHT</code> - Display only the starting themes defined by QuickSight.</p></li>
+    /// <p><code>QUICKSIGHT</code> - Display only the starting themes defined by Quick Sight.</p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ThemeType>) -> Self {
         self.r#type = input;
@@ -137,9 +137,9 @@ impl ListThemesInputBuilder {
     /// <li>
     /// <p><code>ALL (default)</code>- Display all existing themes.</p></li>
     /// <li>
-    /// <p><code>CUSTOM</code> - Display only the themes created by people using Amazon QuickSight.</p></li>
+    /// <p><code>CUSTOM</code> - Display only the themes created by people using Amazon Quick Sight.</p></li>
     /// <li>
-    /// <p><code>QUICKSIGHT</code> - Display only the starting themes defined by QuickSight.</p></li>
+    /// <p><code>QUICKSIGHT</code> - Display only the starting themes defined by Quick Sight.</p></li>
     /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ThemeType> {
         &self.r#type

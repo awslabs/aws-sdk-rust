@@ -22,8 +22,8 @@ impl crate::operation::list_identity_propagation_configs::builders::ListIdentity
 }
 /// Fluent builder constructing a request to `ListIdentityPropagationConfigs`.
 ///
-/// <p>Lists all services and authorized targets that the QuickSight IAM Identity Center application can access.</p>
-/// <p>This operation is only supported for QuickSight accounts that use IAM Identity Center.</p>
+/// <p>Lists all services and authorized targets that the Quick Sight IAM Identity Center application can access.</p>
+/// <p>This operation is only supported for Quick Sight accounts that use IAM Identity Center.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListIdentityPropagationConfigsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

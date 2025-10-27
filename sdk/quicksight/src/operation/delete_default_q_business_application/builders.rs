@@ -22,7 +22,7 @@ impl crate::operation::delete_default_q_business_application::builders::DeleteDe
 }
 /// Fluent builder constructing a request to `DeleteDefaultQBusinessApplication`.
 ///
-/// <p>Deletes a linked Amazon Q Business application from an QuickSight account</p>
+/// <p>Deletes a linked Amazon Q Business application from an Quick Sight account</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteDefaultQBusinessApplicationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl DeleteDefaultQBusinessApplicationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ID of the QuickSight account that you want to disconnect from a Amazon Q Business application.</p>
+    /// <p>The ID of the Quick Sight account that you want to disconnect from a Amazon Q Business application.</p>
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
-    /// <p>The ID of the QuickSight account that you want to disconnect from a Amazon Q Business application.</p>
+    /// <p>The ID of the Quick Sight account that you want to disconnect from a Amazon Q Business application.</p>
     pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
-    /// <p>The ID of the QuickSight account that you want to disconnect from a Amazon Q Business application.</p>
+    /// <p>The ID of the Quick Sight account that you want to disconnect from a Amazon Q Business application.</p>
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_aws_account_id()
     }
-    /// <p>The QuickSight namespace that you want to delete a linked Amazon Q Business application from. If this field is left blank, the Amazon Q Business application is deleted from the default namespace. Currently, the default namespace is the only valid value for this parameter.</p>
+    /// <p>The Quick Sight namespace that you want to delete a linked Amazon Q Business application from. If this field is left blank, the Amazon Q Business application is deleted from the default namespace. Currently, the default namespace is the only valid value for this parameter.</p>
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.namespace(input.into());
         self
     }
-    /// <p>The QuickSight namespace that you want to delete a linked Amazon Q Business application from. If this field is left blank, the Amazon Q Business application is deleted from the default namespace. Currently, the default namespace is the only valid value for this parameter.</p>
+    /// <p>The Quick Sight namespace that you want to delete a linked Amazon Q Business application from. If this field is left blank, the Amazon Q Business application is deleted from the default namespace. Currently, the default namespace is the only valid value for this parameter.</p>
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_namespace(input);
         self
     }
-    /// <p>The QuickSight namespace that you want to delete a linked Amazon Q Business application from. If this field is left blank, the Amazon Q Business application is deleted from the default namespace. Currently, the default namespace is the only valid value for this parameter.</p>
+    /// <p>The Quick Sight namespace that you want to delete a linked Amazon Q Business application from. If this field is left blank, the Amazon Q Business application is deleted from the default namespace. Currently, the default namespace is the only valid value for this parameter.</p>
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_namespace()
     }

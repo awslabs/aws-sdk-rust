@@ -13,6 +13,8 @@ pub struct CreateRuleInput {
     pub actions: ::std::option::Option<::std::vec::Vec<crate::types::Action>>,
     /// <p>The tags to assign to the rule.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>The transforms to apply to requests that match this rule. You can add one host header rewrite transform and one URL rewrite transform.</p>
+    pub transforms: ::std::option::Option<::std::vec::Vec<crate::types::RuleTransform>>,
 }
 impl CreateRuleInput {
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
@@ -41,6 +43,12 @@ impl CreateRuleInput {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
+    /// <p>The transforms to apply to requests that match this rule. You can add one host header rewrite transform and one URL rewrite transform.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.transforms.is_none()`.
+    pub fn transforms(&self) -> &[crate::types::RuleTransform] {
+        self.transforms.as_deref().unwrap_or_default()
+    }
 }
 impl CreateRuleInput {
     /// Creates a new builder-style object to manufacture [`CreateRuleInput`](crate::operation::create_rule::CreateRuleInput).
@@ -58,6 +66,7 @@ pub struct CreateRuleInputBuilder {
     pub(crate) priority: ::std::option::Option<i32>,
     pub(crate) actions: ::std::option::Option<::std::vec::Vec<crate::types::Action>>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) transforms: ::std::option::Option<::std::vec::Vec<crate::types::RuleTransform>>,
 }
 impl CreateRuleInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
@@ -150,6 +159,26 @@ impl CreateRuleInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
+    /// Appends an item to `transforms`.
+    ///
+    /// To override the contents of this collection use [`set_transforms`](Self::set_transforms).
+    ///
+    /// <p>The transforms to apply to requests that match this rule. You can add one host header rewrite transform and one URL rewrite transform.</p>
+    pub fn transforms(mut self, input: crate::types::RuleTransform) -> Self {
+        let mut v = self.transforms.unwrap_or_default();
+        v.push(input);
+        self.transforms = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The transforms to apply to requests that match this rule. You can add one host header rewrite transform and one URL rewrite transform.</p>
+    pub fn set_transforms(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RuleTransform>>) -> Self {
+        self.transforms = input;
+        self
+    }
+    /// <p>The transforms to apply to requests that match this rule. You can add one host header rewrite transform and one URL rewrite transform.</p>
+    pub fn get_transforms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RuleTransform>> {
+        &self.transforms
+    }
     /// Consumes the builder and constructs a [`CreateRuleInput`](crate::operation::create_rule::CreateRuleInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_rule::CreateRuleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_rule::CreateRuleInput {
@@ -158,6 +187,7 @@ impl CreateRuleInputBuilder {
             priority: self.priority,
             actions: self.actions,
             tags: self.tags,
+            transforms: self.transforms,
         })
     }
 }

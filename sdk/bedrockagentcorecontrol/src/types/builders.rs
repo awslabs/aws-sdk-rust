@@ -5,9 +5,15 @@ pub use crate::types::_workload_identity_type::WorkloadIdentityTypeBuilder;
 
 pub use crate::types::_oauth2_credential_provider_item::Oauth2CredentialProviderItemBuilder;
 
-pub use crate::types::_microsoft_oauth2_provider_config_output::MicrosoftOauth2ProviderConfigOutputBuilder;
+pub use crate::types::_included_oauth2_provider_config_output::IncludedOauth2ProviderConfigOutputBuilder;
 
 pub use crate::types::_oauth2_authorization_server_metadata::Oauth2AuthorizationServerMetadataBuilder;
+
+pub use crate::types::_linkedin_oauth2_provider_config_output::LinkedinOauth2ProviderConfigOutputBuilder;
+
+pub use crate::types::_atlassian_oauth2_provider_config_output::AtlassianOauth2ProviderConfigOutputBuilder;
+
+pub use crate::types::_microsoft_oauth2_provider_config_output::MicrosoftOauth2ProviderConfigOutputBuilder;
 
 pub use crate::types::_salesforce_oauth2_provider_config_output::SalesforceOauth2ProviderConfigOutputBuilder;
 
@@ -20,6 +26,12 @@ pub use crate::types::_google_oauth2_provider_config_output::GoogleOauth2Provide
 pub use crate::types::_custom_oauth2_provider_config_output::CustomOauth2ProviderConfigOutputBuilder;
 
 pub use crate::types::_secret::SecretBuilder;
+
+pub use crate::types::_included_oauth2_provider_config_input::IncludedOauth2ProviderConfigInputBuilder;
+
+pub use crate::types::_linkedin_oauth2_provider_config_input::LinkedinOauth2ProviderConfigInputBuilder;
+
+pub use crate::types::_atlassian_oauth2_provider_config_input::AtlassianOauth2ProviderConfigInputBuilder;
 
 pub use crate::types::_microsoft_oauth2_provider_config_input::MicrosoftOauth2ProviderConfigInputBuilder;
 
@@ -39,6 +51,16 @@ pub use crate::types::_memory_strategy::MemoryStrategyBuilder;
 
 pub use crate::types::_strategy_configuration::StrategyConfigurationBuilder;
 
+pub use crate::types::_self_managed_configuration::SelfManagedConfigurationBuilder;
+
+pub use crate::types::_invocation_configuration::InvocationConfigurationBuilder;
+
+pub use crate::types::_time_based_trigger::TimeBasedTriggerBuilder;
+
+pub use crate::types::_token_based_trigger::TokenBasedTriggerBuilder;
+
+pub use crate::types::_message_based_trigger::MessageBasedTriggerBuilder;
+
 pub use crate::types::_user_preference_consolidation_override::UserPreferenceConsolidationOverrideBuilder;
 
 pub use crate::types::_summary_consolidation_override::SummaryConsolidationOverrideBuilder;
@@ -57,6 +79,16 @@ pub use crate::types::_modify_memory_strategy_input::ModifyMemoryStrategyInputBu
 
 pub use crate::types::_modify_strategy_configuration::ModifyStrategyConfigurationBuilder;
 
+pub use crate::types::_modify_self_managed_configuration::ModifySelfManagedConfigurationBuilder;
+
+pub use crate::types::_modify_invocation_configuration_input::ModifyInvocationConfigurationInputBuilder;
+
+pub use crate::types::_time_based_trigger_input::TimeBasedTriggerInputBuilder;
+
+pub use crate::types::_token_based_trigger_input::TokenBasedTriggerInputBuilder;
+
+pub use crate::types::_message_based_trigger_input::MessageBasedTriggerInputBuilder;
+
 pub use crate::types::_user_preference_override_consolidation_configuration_input::UserPreferenceOverrideConsolidationConfigurationInputBuilder;
 
 pub use crate::types::_summary_override_consolidation_configuration_input::SummaryOverrideConsolidationConfigurationInputBuilder;
@@ -68,6 +100,10 @@ pub use crate::types::_user_preference_override_extraction_configuration_input::
 pub use crate::types::_semantic_override_extraction_configuration_input::SemanticOverrideExtractionConfigurationInputBuilder;
 
 pub use crate::types::_custom_memory_strategy_input::CustomMemoryStrategyInputBuilder;
+
+pub use crate::types::_self_managed_configuration_input::SelfManagedConfigurationInputBuilder;
+
+pub use crate::types::_invocation_configuration_input::InvocationConfigurationInputBuilder;
 
 pub use crate::types::_user_preference_override_configuration_input::UserPreferenceOverrideConfigurationInputBuilder;
 
@@ -89,6 +125,8 @@ pub use crate::types::_gateway_api_key_credential_provider::GatewayApiKeyCredent
 
 pub use crate::types::_o_auth_credential_provider::OAuthCredentialProviderBuilder;
 
+pub use crate::types::_mcp_server_target_configuration::McpServerTargetConfigurationBuilder;
+
 pub use crate::types::_mcp_lambda_target_configuration::McpLambdaTargetConfigurationBuilder;
 
 pub use crate::types::_tool_definition::ToolDefinitionBuilder;
@@ -96,6 +134,8 @@ pub use crate::types::_tool_definition::ToolDefinitionBuilder;
 pub use crate::types::_schema_definition::SchemaDefinitionBuilder;
 
 pub use crate::types::_s3_configuration::S3ConfigurationBuilder;
+
+pub use crate::types::_gateway_target::GatewayTargetBuilder;
 
 pub use crate::types::_target_summary::TargetSummaryBuilder;
 

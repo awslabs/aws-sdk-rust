@@ -81,8 +81,8 @@ impl ::std::fmt::Debug for Leg {
         let mut formatter = f.debug_struct("Leg");
         formatter.field("start_position", &"*** Sensitive Data Redacted ***");
         formatter.field("end_position", &"*** Sensitive Data Redacted ***");
-        formatter.field("distance", &self.distance);
-        formatter.field("duration_seconds", &self.duration_seconds);
+        formatter.field("distance", &"*** Sensitive Data Redacted ***");
+        formatter.field("duration_seconds", &"*** Sensitive Data Redacted ***");
         formatter.field("geometry", &self.geometry);
         formatter.field("steps", &self.steps);
         formatter.finish()
@@ -283,8 +283,8 @@ impl ::std::fmt::Debug for LegBuilder {
         let mut formatter = f.debug_struct("LegBuilder");
         formatter.field("start_position", &"*** Sensitive Data Redacted ***");
         formatter.field("end_position", &"*** Sensitive Data Redacted ***");
-        formatter.field("distance", &self.distance);
-        formatter.field("duration_seconds", &self.duration_seconds);
+        formatter.field("distance", &"*** Sensitive Data Redacted ***");
+        formatter.field("duration_seconds", &"*** Sensitive Data Redacted ***");
         formatter.field("geometry", &self.geometry);
         formatter.field("steps", &self.steps);
         formatter.finish()

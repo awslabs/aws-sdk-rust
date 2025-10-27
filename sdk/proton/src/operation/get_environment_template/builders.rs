@@ -23,6 +23,7 @@ impl crate::operation::get_environment_template::builders::GetEnvironmentTemplat
 /// Fluent builder constructing a request to `GetEnvironmentTemplate`.
 ///
 /// <p>Get detailed data for an environment template.</p>
+#[deprecated(note = "AWS Proton is not accepting new customers.", since = "10/07/2025")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetEnvironmentTemplateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

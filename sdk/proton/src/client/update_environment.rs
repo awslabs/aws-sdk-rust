@@ -17,6 +17,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateEnvironmentOutput`](crate::operation::update_environment::UpdateEnvironmentOutput) with field(s):
     ///   - [`environment(Option<Environment>)`](crate::operation::update_environment::UpdateEnvironmentOutput::environment): <p>The environment detail data that's returned by Proton.</p>
     /// - On failure, responds with [`SdkError<UpdateEnvironmentError>`](crate::operation::update_environment::UpdateEnvironmentError)
+    #[deprecated(note = "AWS Proton is not accepting new customers.", since = "10/07/2025")]
     pub fn update_environment(&self) -> crate::operation::update_environment::builders::UpdateEnvironmentFluentBuilder {
         crate::operation::update_environment::builders::UpdateEnvironmentFluentBuilder::new(self.handle.clone())
     }

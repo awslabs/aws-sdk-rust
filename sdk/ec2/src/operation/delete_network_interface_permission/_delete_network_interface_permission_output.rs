@@ -4,12 +4,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteNetworkInterfacePermissionOutput {
-    /// <p>Returns <code>true</code> if the request succeeds, otherwise returns an error.</p>
+    /// <p>Is <code>true</code> if the request succeeds and an error otherwise.</p>
     pub r#return: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl DeleteNetworkInterfacePermissionOutput {
-    /// <p>Returns <code>true</code> if the request succeeds, otherwise returns an error.</p>
+    /// <p>Is <code>true</code> if the request succeeds and an error otherwise.</p>
     pub fn r#return(&self) -> ::std::option::Option<bool> {
         self.r#return
     }
@@ -34,17 +34,17 @@ pub struct DeleteNetworkInterfacePermissionOutputBuilder {
     _request_id: Option<String>,
 }
 impl DeleteNetworkInterfacePermissionOutputBuilder {
-    /// <p>Returns <code>true</code> if the request succeeds, otherwise returns an error.</p>
+    /// <p>Is <code>true</code> if the request succeeds and an error otherwise.</p>
     pub fn r#return(mut self, input: bool) -> Self {
         self.r#return = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Returns <code>true</code> if the request succeeds, otherwise returns an error.</p>
+    /// <p>Is <code>true</code> if the request succeeds and an error otherwise.</p>
     pub fn set_return(mut self, input: ::std::option::Option<bool>) -> Self {
         self.r#return = input;
         self
     }
-    /// <p>Returns <code>true</code> if the request succeeds, otherwise returns an error.</p>
+    /// <p>Is <code>true</code> if the request succeeds and an error otherwise.</p>
     pub fn get_return(&self) -> &::std::option::Option<bool> {
         &self.r#return
     }

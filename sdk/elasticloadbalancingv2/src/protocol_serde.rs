@@ -319,6 +319,8 @@ pub(crate) mod shape_rule_not_found_exception;
 
 pub(crate) mod shape_rule_priority_pair;
 
+pub(crate) mod shape_rule_transform;
+
 pub(crate) mod shape_ssl_policy_not_found_exception;
 
 pub(crate) mod shape_subnet_mapping;
@@ -385,6 +387,8 @@ pub(crate) mod shape_forward_action_config;
 
 pub(crate) mod shape_host_header_condition_config;
 
+pub(crate) mod shape_host_header_rewrite_config;
+
 pub(crate) mod shape_http_header_condition_config;
 
 pub(crate) mod shape_http_request_method_condition_config;
@@ -427,6 +431,8 @@ pub(crate) mod shape_trust_store_revocations;
 
 pub(crate) mod shape_trust_stores;
 
+pub(crate) mod shape_url_rewrite_config;
+
 pub(crate) mod shape_zonal_capacity_reservation_states;
 
 pub(crate) mod shape_availability_zone;
@@ -440,6 +446,8 @@ pub(crate) mod shape_listener;
 pub(crate) mod shape_load_balancer;
 
 pub(crate) mod shape_query_string_key_value_pair;
+
+pub(crate) mod shape_rewrite_config;
 
 pub(crate) mod shape_rule;
 
@@ -485,6 +493,8 @@ pub(crate) mod shape_load_balancer_state;
 
 pub(crate) mod shape_rule_condition_list;
 
+pub(crate) mod shape_rule_transform_list;
+
 pub(crate) mod shape_source_nat_ipv6_prefixes;
 
 pub(crate) mod shape_ssl_protocols;
@@ -502,5 +512,7 @@ pub(crate) mod shape_authenticate_cognito_action_authentication_request_extra_pa
 pub(crate) mod shape_authenticate_oidc_action_authentication_request_extra_params;
 
 pub(crate) mod shape_query_string_key_value_pair_list;
+
+pub(crate) mod shape_rewrite_config_list;
 
 pub(crate) mod shape_target_group_list;

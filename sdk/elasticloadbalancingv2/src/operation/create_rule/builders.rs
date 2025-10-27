@@ -23,7 +23,7 @@ impl crate::operation::create_rule::builders::CreateRuleInputBuilder {
 /// Fluent builder constructing a request to `CreateRule`.
 ///
 /// <p>Creates a rule for the specified listener. The listener must be associated with an Application Load Balancer.</p>
-/// <p>Each rule consists of a priority, one or more actions, and one or more conditions. Rules are evaluated in priority order, from the lowest value to the highest value. When the conditions for a rule are met, its actions are performed. If the conditions for no rules are met, the actions for the default rule are performed. For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html#listener-rules">Listener rules</a> in the <i>Application Load Balancers Guide</i>.</p>
+/// <p>Each rule consists of a priority, one or more actions, one or more conditions, and up to two optional transforms. Rules are evaluated in priority order, from the lowest value to the highest value. When the conditions for a rule are met, its actions are performed. If the conditions for no rules are met, the actions for the default rule are performed. For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html#listener-rules">Listener rules</a> in the <i>Application Load Balancers Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateRuleFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -193,5 +193,24 @@ impl CreateRuleFluentBuilder {
     /// <p>The tags to assign to the rule.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
+    }
+    ///
+    /// Appends an item to `Transforms`.
+    ///
+    /// To override the contents of this collection use [`set_transforms`](Self::set_transforms).
+    ///
+    /// <p>The transforms to apply to requests that match this rule. You can add one host header rewrite transform and one URL rewrite transform.</p>
+    pub fn transforms(mut self, input: crate::types::RuleTransform) -> Self {
+        self.inner = self.inner.transforms(input);
+        self
+    }
+    /// <p>The transforms to apply to requests that match this rule. You can add one host header rewrite transform and one URL rewrite transform.</p>
+    pub fn set_transforms(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RuleTransform>>) -> Self {
+        self.inner = self.inner.set_transforms(input);
+        self
+    }
+    /// <p>The transforms to apply to requests that match this rule. You can add one host header rewrite transform and one URL rewrite transform.</p>
+    pub fn get_transforms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RuleTransform>> {
+        self.inner.get_transforms()
     }
 }

@@ -116,6 +116,34 @@ impl StopCodeInterpreterSessionFluentBuilder {
         self.config_override = config_override;
         self
     }
+    /// <p>The trace identifier for request tracking.</p>
+    pub fn trace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.trace_id(input.into());
+        self
+    }
+    /// <p>The trace identifier for request tracking.</p>
+    pub fn set_trace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_trace_id(input);
+        self
+    }
+    /// <p>The trace identifier for request tracking.</p>
+    pub fn get_trace_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_trace_id()
+    }
+    /// <p>The parent trace information for distributed tracing.</p>
+    pub fn trace_parent(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.trace_parent(input.into());
+        self
+    }
+    /// <p>The parent trace information for distributed tracing.</p>
+    pub fn set_trace_parent(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_trace_parent(input);
+        self
+    }
+    /// <p>The parent trace information for distributed tracing.</p>
+    pub fn get_trace_parent(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_trace_parent()
+    }
     /// <p>The unique identifier of the code interpreter associated with the session.</p>
     pub fn code_interpreter_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.code_interpreter_identifier(input.into());

@@ -30,7 +30,7 @@ pub struct GetApplicationOutput {
     /// </ul></li>
     /// </ul>
     pub runtime_environment: ::std::option::Option<crate::types::RuntimeEnvironment>,
-    /// <p>The path and file name of the executable file that launches the content for streaming.</p>
+    /// <p>The relative path and file name of the executable file that launches the content for streaming.</p>
     pub executable_path: ::std::option::Option<::std::string::String>,
     /// <p>Locations of log files that your content generates during a stream session. Amazon GameLift Streams uploads log files to the Amazon S3 bucket that you specify in <code>ApplicationLogOutputUri</code> at the end of a stream session. To retrieve stored log files, call <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_GetStreamSession.html">GetStreamSession</a> and get the <code>LogFileLocationUri</code>.</p>
     pub application_log_paths: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -102,7 +102,7 @@ impl GetApplicationOutput {
     pub fn runtime_environment(&self) -> ::std::option::Option<&crate::types::RuntimeEnvironment> {
         self.runtime_environment.as_ref()
     }
-    /// <p>The path and file name of the executable file that launches the content for streaming.</p>
+    /// <p>The relative path and file name of the executable file that launches the content for streaming.</p>
     pub fn executable_path(&self) -> ::std::option::Option<&str> {
         self.executable_path.as_deref()
     }
@@ -305,17 +305,17 @@ impl GetApplicationOutputBuilder {
     pub fn get_runtime_environment(&self) -> &::std::option::Option<crate::types::RuntimeEnvironment> {
         &self.runtime_environment
     }
-    /// <p>The path and file name of the executable file that launches the content for streaming.</p>
+    /// <p>The relative path and file name of the executable file that launches the content for streaming.</p>
     pub fn executable_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.executable_path = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The path and file name of the executable file that launches the content for streaming.</p>
+    /// <p>The relative path and file name of the executable file that launches the content for streaming.</p>
     pub fn set_executable_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.executable_path = input;
         self
     }
-    /// <p>The path and file name of the executable file that launches the content for streaming.</p>
+    /// <p>The relative path and file name of the executable file that launches the content for streaming.</p>
     pub fn get_executable_path(&self) -> &::std::option::Option<::std::string::String> {
         &self.executable_path
     }

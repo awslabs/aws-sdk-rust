@@ -18,7 +18,7 @@
 #![allow(rustdoc::invalid_html_tags)]
 #![forbid(unsafe_code)]
 #![warn(missing_docs)]
-#![cfg_attr(docsrs, feature(doc_auto_cfg))]
+#![cfg_attr(docsrs, feature(doc_cfg))]
 //! AWS Signer is a fully managed code-signing service to help you ensure the trust and integrity of your code.
 //!
 //! Signer supports the following applications:
@@ -43,7 +43,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-signer = "1.85.0"
+//! aws-sdk-signer = "1.87.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

@@ -7,6 +7,7 @@ impl super::Client {
     /// - On success, responds with [`CancelServicePipelineDeploymentOutput`](crate::operation::cancel_service_pipeline_deployment::CancelServicePipelineDeploymentOutput) with field(s):
     ///   - [`pipeline(Option<ServicePipeline>)`](crate::operation::cancel_service_pipeline_deployment::CancelServicePipelineDeploymentOutput::pipeline): <p>The service pipeline detail data that's returned by Proton.</p>
     /// - On failure, responds with [`SdkError<CancelServicePipelineDeploymentError>`](crate::operation::cancel_service_pipeline_deployment::CancelServicePipelineDeploymentError)
+    #[deprecated(note = "AWS Proton is not accepting new customers.", since = "10/07/2025")]
     pub fn cancel_service_pipeline_deployment(
         &self,
     ) -> crate::operation::cancel_service_pipeline_deployment::builders::CancelServicePipelineDeploymentFluentBuilder {

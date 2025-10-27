@@ -9,26 +9,29 @@ pub fn ser_create_automated_reasoning_policy_input_input(
     if let Some(var_2) = &input.description {
         object.key("description").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.name {
-        object.key("name").string(var_3.as_str());
+    if let Some(var_3) = &input.kms_key_id {
+        object.key("kmsKeyId").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.policy_definition {
+    if let Some(var_4) = &input.name {
+        object.key("name").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.policy_definition {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("policyDefinition").start_object();
-        crate::protocol_serde::shape_automated_reasoning_policy_definition::ser_automated_reasoning_policy_definition(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_6 = object.key("policyDefinition").start_object();
+        crate::protocol_serde::shape_automated_reasoning_policy_definition::ser_automated_reasoning_policy_definition(&mut object_6, var_5)?;
+        object_6.finish();
     }
-    if let Some(var_6) = &input.tags {
-        let mut array_7 = object.key("tags").start_array();
-        for item_8 in var_6 {
+    if let Some(var_7) = &input.tags {
+        let mut array_8 = object.key("tags").start_array();
+        for item_9 in var_7 {
             {
                 #[allow(unused_mut)]
-                let mut object_9 = array_7.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_9, item_8)?;
-                object_9.finish();
+                let mut object_10 = array_8.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_10, item_9)?;
+                object_10.finish();
             }
         }
-        array_7.finish();
+        array_8.finish();
     }
     Ok(())
 }

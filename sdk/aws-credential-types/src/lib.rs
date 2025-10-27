@@ -4,7 +4,7 @@
  */
 
 /* Automatically managed default lints */
-#![cfg_attr(docsrs, feature(doc_auto_cfg))]
+#![cfg_attr(docsrs, feature(doc_cfg))]
 /* End of automatically managed default lints */
 //! `aws-credential-types` provides types concerned with AWS SDK credentials including:
 //! * Traits for credentials providers and for credentials caching

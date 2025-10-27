@@ -7,6 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteComponentOutput`](crate::operation::delete_component::DeleteComponentOutput) with field(s):
     ///   - [`component(Option<Component>)`](crate::operation::delete_component::DeleteComponentOutput::component): <p>The detailed data of the component being deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteComponentError>`](crate::operation::delete_component::DeleteComponentError)
+    #[deprecated(note = "AWS Proton is not accepting new customers.", since = "10/07/2025")]
     pub fn delete_component(&self) -> crate::operation::delete_component::builders::DeleteComponentFluentBuilder {
         crate::operation::delete_component::builders::DeleteComponentFluentBuilder::new(self.handle.clone())
     }

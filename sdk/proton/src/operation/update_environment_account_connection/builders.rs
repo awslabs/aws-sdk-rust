@@ -24,6 +24,7 @@ impl crate::operation::update_environment_account_connection::builders::UpdateEn
 ///
 /// <p>In an environment account, update an environment account connection to use a new IAM role.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-env-account-connections.html">Environment account connections</a> in the <i>Proton User guide</i>.</p>
+#[deprecated(note = "AWS Proton is not accepting new customers.", since = "10/07/2025")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateEnvironmentAccountConnectionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

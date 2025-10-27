@@ -18,7 +18,7 @@
 #![allow(rustdoc::invalid_html_tags)]
 #![forbid(unsafe_code)]
 #![warn(missing_docs)]
-#![cfg_attr(docsrs, feature(doc_auto_cfg))]
+#![cfg_attr(docsrs, feature(doc_cfg))]
 //! AWS Mainframe Modernization Application Testing provides tools and resources for automated functional equivalence testing for your migration projects.
 //!
 //! ## Getting Started
@@ -33,7 +33,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-apptest = "1.55.0"
+//! aws-sdk-apptest = "1.57.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

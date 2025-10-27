@@ -62,7 +62,7 @@ pub struct CloudAutonomousVmCluster {
     pub oci_url: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether mutual TLS (mTLS) authentication is enabled for the Autonomous VM cluster.</p>
     pub is_mtls_enabled_vm_cluster: ::std::option::Option<bool>,
-    /// <p>The Oracle license model that applies to the Autonomous VM cluster. Valid values are <code>LICENSE_INCLUDED</code> or <code>BRING_YOUR_OWN_LICENSE</code>.</p>
+    /// <p>The Oracle license model that applies to the Autonomous VM cluster.</p>
     pub license_model: ::std::option::Option<crate::types::LicenseModel>,
     /// <p>The scheduling details for the maintenance window. Patching and system updates take place during the maintenance window.</p>
     pub maintenance_window: ::std::option::Option<crate::types::MaintenanceWindow>,
@@ -223,7 +223,7 @@ impl CloudAutonomousVmCluster {
     pub fn is_mtls_enabled_vm_cluster(&self) -> ::std::option::Option<bool> {
         self.is_mtls_enabled_vm_cluster
     }
-    /// <p>The Oracle license model that applies to the Autonomous VM cluster. Valid values are <code>LICENSE_INCLUDED</code> or <code>BRING_YOUR_OWN_LICENSE</code>.</p>
+    /// <p>The Oracle license model that applies to the Autonomous VM cluster.</p>
     pub fn license_model(&self) -> ::std::option::Option<&crate::types::LicenseModel> {
         self.license_model.as_ref()
     }
@@ -779,17 +779,17 @@ impl CloudAutonomousVmClusterBuilder {
     pub fn get_is_mtls_enabled_vm_cluster(&self) -> &::std::option::Option<bool> {
         &self.is_mtls_enabled_vm_cluster
     }
-    /// <p>The Oracle license model that applies to the Autonomous VM cluster. Valid values are <code>LICENSE_INCLUDED</code> or <code>BRING_YOUR_OWN_LICENSE</code>.</p>
+    /// <p>The Oracle license model that applies to the Autonomous VM cluster.</p>
     pub fn license_model(mut self, input: crate::types::LicenseModel) -> Self {
         self.license_model = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Oracle license model that applies to the Autonomous VM cluster. Valid values are <code>LICENSE_INCLUDED</code> or <code>BRING_YOUR_OWN_LICENSE</code>.</p>
+    /// <p>The Oracle license model that applies to the Autonomous VM cluster.</p>
     pub fn set_license_model(mut self, input: ::std::option::Option<crate::types::LicenseModel>) -> Self {
         self.license_model = input;
         self
     }
-    /// <p>The Oracle license model that applies to the Autonomous VM cluster. Valid values are <code>LICENSE_INCLUDED</code> or <code>BRING_YOUR_OWN_LICENSE</code>.</p>
+    /// <p>The Oracle license model that applies to the Autonomous VM cluster.</p>
     pub fn get_license_model(&self) -> &::std::option::Option<crate::types::LicenseModel> {
         &self.license_model
     }

@@ -6,11 +6,17 @@
 pub struct GithubOauth2ProviderConfigOutput {
     /// <p>The OAuth2 discovery information for the GitHub provider.</p>
     pub oauth_discovery: ::std::option::Option<crate::types::Oauth2Discovery>,
+    /// <p>The client ID for the GitHub OAuth2 provider.</p>
+    pub client_id: ::std::option::Option<::std::string::String>,
 }
 impl GithubOauth2ProviderConfigOutput {
     /// <p>The OAuth2 discovery information for the GitHub provider.</p>
     pub fn oauth_discovery(&self) -> ::std::option::Option<&crate::types::Oauth2Discovery> {
         self.oauth_discovery.as_ref()
+    }
+    /// <p>The client ID for the GitHub OAuth2 provider.</p>
+    pub fn client_id(&self) -> ::std::option::Option<&str> {
+        self.client_id.as_deref()
     }
 }
 impl GithubOauth2ProviderConfigOutput {
@@ -25,6 +31,7 @@ impl GithubOauth2ProviderConfigOutput {
 #[non_exhaustive]
 pub struct GithubOauth2ProviderConfigOutputBuilder {
     pub(crate) oauth_discovery: ::std::option::Option<crate::types::Oauth2Discovery>,
+    pub(crate) client_id: ::std::option::Option<::std::string::String>,
 }
 impl GithubOauth2ProviderConfigOutputBuilder {
     /// <p>The OAuth2 discovery information for the GitHub provider.</p>
@@ -42,10 +49,25 @@ impl GithubOauth2ProviderConfigOutputBuilder {
     pub fn get_oauth_discovery(&self) -> &::std::option::Option<crate::types::Oauth2Discovery> {
         &self.oauth_discovery
     }
+    /// <p>The client ID for the GitHub OAuth2 provider.</p>
+    pub fn client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.client_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The client ID for the GitHub OAuth2 provider.</p>
+    pub fn set_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.client_id = input;
+        self
+    }
+    /// <p>The client ID for the GitHub OAuth2 provider.</p>
+    pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_id
+    }
     /// Consumes the builder and constructs a [`GithubOauth2ProviderConfigOutput`](crate::types::GithubOauth2ProviderConfigOutput).
     pub fn build(self) -> crate::types::GithubOauth2ProviderConfigOutput {
         crate::types::GithubOauth2ProviderConfigOutput {
             oauth_discovery: self.oauth_discovery,
+            client_id: self.client_id,
         }
     }
 }

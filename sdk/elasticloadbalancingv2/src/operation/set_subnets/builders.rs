@@ -23,7 +23,6 @@ impl crate::operation::set_subnets::builders::SetSubnetsInputBuilder {
 /// Fluent builder constructing a request to `SetSubnets`.
 ///
 /// <p>Enables the Availability Zones for the specified public subnets for the specified Application Load Balancer, Network Load Balancer or Gateway Load Balancer. The specified subnets replace the previously enabled subnets.</p>
-/// <p>When you specify subnets for a Network Load Balancer, or Gateway Load Balancer you must include all subnets that were enabled previously, with their existing configurations, plus any additional subnets.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SetSubnetsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -132,7 +131,8 @@ impl SetSubnetsFluentBuilder {
     /// <p>\[Application Load Balancers\] You must specify subnets from at least two Availability Zones.</p>
     /// <p>\[Application Load Balancers on Outposts\] You must specify one Outpost subnet.</p>
     /// <p>\[Application Load Balancers on Local Zones\] You can specify subnets from one or more Local Zones.</p>
-    /// <p>\[Network Load Balancers and Gateway Load Balancers\] You can specify subnets from one or more Availability Zones.</p>
+    /// <p>\[Network Load Balancers\] You can specify subnets from one or more Availability Zones.</p>
+    /// <p>\[Gateway Load Balancers\] You can specify subnets from one or more Availability Zones. You must include all subnets that were enabled previously, with their existing configurations, plus any additional subnets.</p>
     pub fn subnets(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.subnets(input.into());
         self
@@ -141,7 +141,8 @@ impl SetSubnetsFluentBuilder {
     /// <p>\[Application Load Balancers\] You must specify subnets from at least two Availability Zones.</p>
     /// <p>\[Application Load Balancers on Outposts\] You must specify one Outpost subnet.</p>
     /// <p>\[Application Load Balancers on Local Zones\] You can specify subnets from one or more Local Zones.</p>
-    /// <p>\[Network Load Balancers and Gateway Load Balancers\] You can specify subnets from one or more Availability Zones.</p>
+    /// <p>\[Network Load Balancers\] You can specify subnets from one or more Availability Zones.</p>
+    /// <p>\[Gateway Load Balancers\] You can specify subnets from one or more Availability Zones. You must include all subnets that were enabled previously, with their existing configurations, plus any additional subnets.</p>
     pub fn set_subnets(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_subnets(input);
         self
@@ -150,7 +151,8 @@ impl SetSubnetsFluentBuilder {
     /// <p>\[Application Load Balancers\] You must specify subnets from at least two Availability Zones.</p>
     /// <p>\[Application Load Balancers on Outposts\] You must specify one Outpost subnet.</p>
     /// <p>\[Application Load Balancers on Local Zones\] You can specify subnets from one or more Local Zones.</p>
-    /// <p>\[Network Load Balancers and Gateway Load Balancers\] You can specify subnets from one or more Availability Zones.</p>
+    /// <p>\[Network Load Balancers\] You can specify subnets from one or more Availability Zones.</p>
+    /// <p>\[Gateway Load Balancers\] You can specify subnets from one or more Availability Zones. You must include all subnets that were enabled previously, with their existing configurations, plus any additional subnets.</p>
     pub fn get_subnets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_subnets()
     }

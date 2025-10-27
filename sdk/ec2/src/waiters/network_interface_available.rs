@@ -190,6 +190,8 @@ impl NetworkInterfaceAvailableFluentBuilder {
     /// <li>
     /// <p><code>availability-zone</code> - The Availability Zone of the network interface.</p></li>
     /// <li>
+    /// <p><code>availability-zone-id</code> - The ID of the Availability Zone of the network interface.</p></li>
+    /// <li>
     /// <p><code>description</code> - The description of the network interface.</p></li>
     /// <li>
     /// <p><code>group-id</code> - The ID of a security group associated with the network interface.</p></li>
@@ -275,6 +277,8 @@ impl NetworkInterfaceAvailableFluentBuilder {
     /// <li>
     /// <p><code>availability-zone</code> - The Availability Zone of the network interface.</p></li>
     /// <li>
+    /// <p><code>availability-zone-id</code> - The ID of the Availability Zone of the network interface.</p></li>
+    /// <li>
     /// <p><code>description</code> - The description of the network interface.</p></li>
     /// <li>
     /// <p><code>group-id</code> - The ID of a security group associated with the network interface.</p></li>
@@ -359,6 +363,8 @@ impl NetworkInterfaceAvailableFluentBuilder {
     /// <p><code>attachment.status</code> - The status of the attachment (<code>attaching</code> | <code>attached</code> | <code>detaching</code> | <code>detached</code>).</p></li>
     /// <li>
     /// <p><code>availability-zone</code> - The Availability Zone of the network interface.</p></li>
+    /// <li>
+    /// <p><code>availability-zone-id</code> - The ID of the Availability Zone of the network interface.</p></li>
     /// <li>
     /// <p><code>description</code> - The description of the network interface.</p></li>
     /// <li>

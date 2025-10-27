@@ -67,11 +67,17 @@ pub use crate::types::_described_profile::DescribedProfileBuilder;
 
 pub use crate::types::_listed_profile::ListedProfileBuilder;
 
+pub use crate::types::_update_connector_vpc_lattice_egress_config::UpdateConnectorVpcLatticeEgressConfigBuilder;
+
 pub use crate::types::_sftp_connector_config::SftpConnectorConfigBuilder;
 
 pub use crate::types::_as2_connector_config::As2ConnectorConfigBuilder;
 
 pub use crate::types::_described_connector::DescribedConnectorBuilder;
+
+pub use crate::types::_described_connector_vpc_lattice_egress_config::DescribedConnectorVpcLatticeEgressConfigBuilder;
+
+pub use crate::types::_connector_vpc_lattice_egress_config::ConnectorVpcLatticeEgressConfigBuilder;
 
 pub use crate::types::_listed_connector::ListedConnectorBuilder;
 

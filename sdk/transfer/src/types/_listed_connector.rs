@@ -9,6 +9,7 @@ pub struct ListedConnector {
     /// <p>The unique identifier for the connector.</p>
     pub connector_id: ::std::option::Option<::std::string::String>,
     /// <p>The URL of the partner's AS2 or SFTP endpoint.</p>
+    /// <p>When creating AS2 connectors or service-managed SFTP connectors (connectors without egress configuration), you must provide a URL to specify the remote server endpoint. For VPC Lattice type connectors, the URL must be null.</p>
     pub url: ::std::option::Option<::std::string::String>,
 }
 impl ListedConnector {
@@ -21,6 +22,7 @@ impl ListedConnector {
         self.connector_id.as_deref()
     }
     /// <p>The URL of the partner's AS2 or SFTP endpoint.</p>
+    /// <p>When creating AS2 connectors or service-managed SFTP connectors (connectors without egress configuration), you must provide a URL to specify the remote server endpoint. For VPC Lattice type connectors, the URL must be null.</p>
     pub fn url(&self) -> ::std::option::Option<&str> {
         self.url.as_deref()
     }
@@ -70,16 +72,19 @@ impl ListedConnectorBuilder {
         &self.connector_id
     }
     /// <p>The URL of the partner's AS2 or SFTP endpoint.</p>
+    /// <p>When creating AS2 connectors or service-managed SFTP connectors (connectors without egress configuration), you must provide a URL to specify the remote server endpoint. For VPC Lattice type connectors, the URL must be null.</p>
     pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL of the partner's AS2 or SFTP endpoint.</p>
+    /// <p>When creating AS2 connectors or service-managed SFTP connectors (connectors without egress configuration), you must provide a URL to specify the remote server endpoint. For VPC Lattice type connectors, the URL must be null.</p>
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.url = input;
         self
     }
     /// <p>The URL of the partner's AS2 or SFTP endpoint.</p>
+    /// <p>When creating AS2 connectors or service-managed SFTP connectors (connectors without egress configuration), you must provide a URL to specify the remote server endpoint. For VPC Lattice type connectors, the URL must be null.</p>
     pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.url
     }

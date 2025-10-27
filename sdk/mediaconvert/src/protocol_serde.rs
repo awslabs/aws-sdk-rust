@@ -53,6 +53,8 @@ pub(crate) mod shape_get_job;
 
 pub(crate) mod shape_get_job_template;
 
+pub(crate) mod shape_get_jobs_query_results;
+
 pub(crate) mod shape_get_policy;
 
 pub(crate) mod shape_get_preset;
@@ -76,6 +78,8 @@ pub(crate) mod shape_probe;
 pub(crate) mod shape_put_policy;
 
 pub(crate) mod shape_search_jobs;
+
+pub(crate) mod shape_start_jobs_query;
 
 pub(crate) mod shape_tag_resource;
 
@@ -123,6 +127,10 @@ pub(crate) mod shape_probe_input;
 
 pub(crate) mod shape_put_policy_input;
 
+pub(crate) mod shape_service_quota_exceeded_exception;
+
+pub(crate) mod shape_start_jobs_query_input;
+
 pub(crate) mod shape_tag_resource_input;
 
 pub(crate) mod shape_too_many_requests_exception;
@@ -146,6 +154,8 @@ pub(crate) mod shape_job_settings;
 pub(crate) mod shape_job_template;
 
 pub(crate) mod shape_job_template_settings;
+
+pub(crate) mod shape_jobs_query_filter;
 
 pub(crate) mod shape_list_of_endpoint;
 
@@ -602,6 +612,8 @@ pub(crate) mod shape_static_key_provider;
 pub(crate) mod shape_video_detail;
 
 pub(crate) mod shape_video_properties;
+
+pub(crate) mod shape_codec_metadata;
 
 pub(crate) mod shape_encryption_contract_configuration;
 

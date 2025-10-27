@@ -12,6 +12,7 @@
 /// ```text
 /// # let authorizertype = unimplemented!();
 /// match authorizertype {
+///     AuthorizerType::AwsIam => { /* ... */ },
 ///     AuthorizerType::CustomJwt => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -42,6 +43,8 @@
 )]
 pub enum AuthorizerType {
     #[allow(missing_docs)] // documentation missing in model
+    AwsIam,
+    #[allow(missing_docs)] // documentation missing in model
     CustomJwt,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -50,6 +53,7 @@ pub enum AuthorizerType {
 impl ::std::convert::From<&str> for AuthorizerType {
     fn from(s: &str) -> Self {
         match s {
+            "AWS_IAM" => AuthorizerType::AwsIam,
             "CUSTOM_JWT" => AuthorizerType::CustomJwt,
             other => AuthorizerType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -66,13 +70,14 @@ impl AuthorizerType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            AuthorizerType::AwsIam => "AWS_IAM",
             AuthorizerType::CustomJwt => "CUSTOM_JWT",
             AuthorizerType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CUSTOM_JWT"]
+        &["AWS_IAM", "CUSTOM_JWT"]
     }
 }
 impl ::std::convert::AsRef<str> for AuthorizerType {
@@ -95,6 +100,7 @@ impl AuthorizerType {
 impl ::std::fmt::Display for AuthorizerType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            AuthorizerType::AwsIam => write!(f, "AWS_IAM"),
             AuthorizerType::CustomJwt => write!(f, "CUSTOM_JWT"),
             AuthorizerType::Unknown(value) => write!(f, "{}", value),
         }

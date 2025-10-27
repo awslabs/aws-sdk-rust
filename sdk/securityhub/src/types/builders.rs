@@ -41,6 +41,8 @@ pub use crate::types::_ocsf_finding_filters::OcsfFindingFiltersBuilder;
 
 pub use crate::types::_composite_filter::CompositeFilterBuilder;
 
+pub use crate::types::_ocsf_ip_filter::OcsfIpFilterBuilder;
+
 pub use crate::types::_ocsf_map_filter::OcsfMapFilterBuilder;
 
 pub use crate::types::_ocsf_number_filter::OcsfNumberFilterBuilder;

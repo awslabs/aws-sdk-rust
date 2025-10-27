@@ -22,7 +22,7 @@ impl crate::operation::list_user_groups::builders::ListUserGroupsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListUserGroups`.
 ///
-/// <p>Lists the Amazon QuickSight groups that an Amazon QuickSight user is a member of.</p>
+/// <p>Lists the Amazon Quick Sight groups that an Amazon Quick Sight user is a member of.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListUserGroupsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,31 +114,31 @@ impl ListUserGroupsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_user_groups::paginator::ListUserGroupsPaginator {
         crate::operation::list_user_groups::paginator::ListUserGroupsPaginator::new(self.handle, self.inner)
     }
-    /// <p>The Amazon QuickSight user name that you want to list group memberships for.</p>
+    /// <p>The Amazon Quick Sight user name that you want to list group memberships for.</p>
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_name(input.into());
         self
     }
-    /// <p>The Amazon QuickSight user name that you want to list group memberships for.</p>
+    /// <p>The Amazon Quick Sight user name that you want to list group memberships for.</p>
     pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_name(input);
         self
     }
-    /// <p>The Amazon QuickSight user name that you want to list group memberships for.</p>
+    /// <p>The Amazon Quick Sight user name that you want to list group memberships for.</p>
     pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_user_name()
     }
-    /// <p>The Amazon Web Services account ID that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
+    /// <p>The Amazon Web Services account ID that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon Quick Sight account.</p>
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
-    /// <p>The Amazon Web Services account ID that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
+    /// <p>The Amazon Web Services account ID that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon Quick Sight account.</p>
     pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
-    /// <p>The Amazon Web Services account ID that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
+    /// <p>The Amazon Web Services account ID that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon Quick Sight account.</p>
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_aws_account_id()
     }

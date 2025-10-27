@@ -6,7 +6,7 @@
 pub struct UnprocessedStandardsControlAssociationUpdate {
     /// <p>An array of control and standard associations for which an update failed when calling <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateStandardsControlAssociations.html">BatchUpdateStandardsControlAssociations</a>.</p>
     pub standards_control_association_update: ::std::option::Option<crate::types::StandardsControlAssociationUpdate>,
-    /// <p>The error code for the unprocessed update of the control's enablement status in the specified standard.</p>
+    /// <p>The error code for the unprocessed update of the control's enablement status in the specified standard. The <code>NOT_FOUND</code> value has been deprecated and replaced by the <code>RESOURCE_NOT_FOUND</code> value.</p>
     pub error_code: ::std::option::Option<crate::types::UnprocessedErrorCode>,
     /// <p>The reason why a control's enablement status in the specified standard couldn't be updated.</p>
     pub error_reason: ::std::option::Option<::std::string::String>,
@@ -16,7 +16,7 @@ impl UnprocessedStandardsControlAssociationUpdate {
     pub fn standards_control_association_update(&self) -> ::std::option::Option<&crate::types::StandardsControlAssociationUpdate> {
         self.standards_control_association_update.as_ref()
     }
-    /// <p>The error code for the unprocessed update of the control's enablement status in the specified standard.</p>
+    /// <p>The error code for the unprocessed update of the control's enablement status in the specified standard. The <code>NOT_FOUND</code> value has been deprecated and replaced by the <code>RESOURCE_NOT_FOUND</code> value.</p>
     pub fn error_code(&self) -> ::std::option::Option<&crate::types::UnprocessedErrorCode> {
         self.error_code.as_ref()
     }
@@ -56,18 +56,18 @@ impl UnprocessedStandardsControlAssociationUpdateBuilder {
     pub fn get_standards_control_association_update(&self) -> &::std::option::Option<crate::types::StandardsControlAssociationUpdate> {
         &self.standards_control_association_update
     }
-    /// <p>The error code for the unprocessed update of the control's enablement status in the specified standard.</p>
+    /// <p>The error code for the unprocessed update of the control's enablement status in the specified standard. The <code>NOT_FOUND</code> value has been deprecated and replaced by the <code>RESOURCE_NOT_FOUND</code> value.</p>
     /// This field is required.
     pub fn error_code(mut self, input: crate::types::UnprocessedErrorCode) -> Self {
         self.error_code = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The error code for the unprocessed update of the control's enablement status in the specified standard.</p>
+    /// <p>The error code for the unprocessed update of the control's enablement status in the specified standard. The <code>NOT_FOUND</code> value has been deprecated and replaced by the <code>RESOURCE_NOT_FOUND</code> value.</p>
     pub fn set_error_code(mut self, input: ::std::option::Option<crate::types::UnprocessedErrorCode>) -> Self {
         self.error_code = input;
         self
     }
-    /// <p>The error code for the unprocessed update of the control's enablement status in the specified standard.</p>
+    /// <p>The error code for the unprocessed update of the control's enablement status in the specified standard. The <code>NOT_FOUND</code> value has been deprecated and replaced by the <code>RESOURCE_NOT_FOUND</code> value.</p>
     pub fn get_error_code(&self) -> &::std::option::Option<crate::types::UnprocessedErrorCode> {
         &self.error_code
     }

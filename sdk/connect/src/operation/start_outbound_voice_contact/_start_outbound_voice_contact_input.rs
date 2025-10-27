@@ -33,6 +33,8 @@ pub struct StartOutboundVoiceContactInput {
     pub campaign_id: ::std::option::Option<::std::string::String>,
     /// <p>Denotes the class of traffic. Calls with different traffic types are handled differently by Amazon Connect. The default value is <code>GENERAL</code>. Use <code>CAMPAIGN</code> if <code>EnableAnswerMachineDetection</code> is set to <code>true</code>. For all other cases, use <code>GENERAL</code>.</p>
     pub traffic_type: ::std::option::Option<crate::types::TrafficType>,
+    /// <p>Information about the outbound strategy.</p>
+    pub outbound_strategy: ::std::option::Option<crate::types::OutboundStrategy>,
 }
 impl StartOutboundVoiceContactInput {
     /// <p>The name of a voice contact that is shown to an agent in the Contact Control Panel (CCP).</p>
@@ -93,6 +95,10 @@ impl StartOutboundVoiceContactInput {
     pub fn traffic_type(&self) -> ::std::option::Option<&crate::types::TrafficType> {
         self.traffic_type.as_ref()
     }
+    /// <p>Information about the outbound strategy.</p>
+    pub fn outbound_strategy(&self) -> ::std::option::Option<&crate::types::OutboundStrategy> {
+        self.outbound_strategy.as_ref()
+    }
 }
 impl ::std::fmt::Debug for StartOutboundVoiceContactInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -111,6 +117,7 @@ impl ::std::fmt::Debug for StartOutboundVoiceContactInput {
         formatter.field("answer_machine_detection_config", &self.answer_machine_detection_config);
         formatter.field("campaign_id", &self.campaign_id);
         formatter.field("traffic_type", &self.traffic_type);
+        formatter.field("outbound_strategy", &self.outbound_strategy);
         formatter.finish()
     }
 }
@@ -139,6 +146,7 @@ pub struct StartOutboundVoiceContactInputBuilder {
     pub(crate) answer_machine_detection_config: ::std::option::Option<crate::types::AnswerMachineDetectionConfig>,
     pub(crate) campaign_id: ::std::option::Option<::std::string::String>,
     pub(crate) traffic_type: ::std::option::Option<crate::types::TrafficType>,
+    pub(crate) outbound_strategy: ::std::option::Option<crate::types::OutboundStrategy>,
 }
 impl StartOutboundVoiceContactInputBuilder {
     /// <p>The name of a voice contact that is shown to an agent in the Contact Control Panel (CCP).</p>
@@ -361,6 +369,20 @@ impl StartOutboundVoiceContactInputBuilder {
     pub fn get_traffic_type(&self) -> &::std::option::Option<crate::types::TrafficType> {
         &self.traffic_type
     }
+    /// <p>Information about the outbound strategy.</p>
+    pub fn outbound_strategy(mut self, input: crate::types::OutboundStrategy) -> Self {
+        self.outbound_strategy = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Information about the outbound strategy.</p>
+    pub fn set_outbound_strategy(mut self, input: ::std::option::Option<crate::types::OutboundStrategy>) -> Self {
+        self.outbound_strategy = input;
+        self
+    }
+    /// <p>Information about the outbound strategy.</p>
+    pub fn get_outbound_strategy(&self) -> &::std::option::Option<crate::types::OutboundStrategy> {
+        &self.outbound_strategy
+    }
     /// Consumes the builder and constructs a [`StartOutboundVoiceContactInput`](crate::operation::start_outbound_voice_contact::StartOutboundVoiceContactInput).
     pub fn build(
         self,
@@ -383,6 +405,7 @@ impl StartOutboundVoiceContactInputBuilder {
             answer_machine_detection_config: self.answer_machine_detection_config,
             campaign_id: self.campaign_id,
             traffic_type: self.traffic_type,
+            outbound_strategy: self.outbound_strategy,
         })
     }
 }
@@ -403,6 +426,7 @@ impl ::std::fmt::Debug for StartOutboundVoiceContactInputBuilder {
         formatter.field("answer_machine_detection_config", &self.answer_machine_detection_config);
         formatter.field("campaign_id", &self.campaign_id);
         formatter.field("traffic_type", &self.traffic_type);
+        formatter.field("outbound_strategy", &self.outbound_strategy);
         formatter.finish()
     }
 }

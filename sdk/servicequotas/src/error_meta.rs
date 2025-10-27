@@ -333,6 +333,53 @@ impl From<crate::operation::get_association_for_service_quota_template::GetAssoc
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_auto_management_configuration::GetAutoManagementConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_auto_management_configuration::GetAutoManagementConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_auto_management_configuration::GetAutoManagementConfigurationError> for Error {
+    fn from(err: crate::operation::get_auto_management_configuration::GetAutoManagementConfigurationError) -> Self {
+        match err {
+            crate::operation::get_auto_management_configuration::GetAutoManagementConfigurationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_auto_management_configuration::GetAutoManagementConfigurationError::IllegalArgumentException(inner) => {
+                Error::IllegalArgumentException(inner)
+            }
+            crate::operation::get_auto_management_configuration::GetAutoManagementConfigurationError::NoSuchResourceException(inner) => {
+                Error::NoSuchResourceException(inner)
+            }
+            crate::operation::get_auto_management_configuration::GetAutoManagementConfigurationError::ServiceException(inner) => {
+                Error::ServiceException(inner)
+            }
+            crate::operation::get_auto_management_configuration::GetAutoManagementConfigurationError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::get_auto_management_configuration::GetAutoManagementConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_aws_default_service_quota::GetAWSDefaultServiceQuotaError, R>>
     for Error
 where
@@ -834,6 +881,68 @@ impl From<crate::operation::request_service_quota_increase::RequestServiceQuotaI
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_auto_management::StartAutoManagementError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_auto_management::StartAutoManagementError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_auto_management::StartAutoManagementError> for Error {
+    fn from(err: crate::operation::start_auto_management::StartAutoManagementError) -> Self {
+        match err {
+            crate::operation::start_auto_management::StartAutoManagementError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::start_auto_management::StartAutoManagementError::IllegalArgumentException(inner) => {
+                Error::IllegalArgumentException(inner)
+            }
+            crate::operation::start_auto_management::StartAutoManagementError::NoSuchResourceException(inner) => {
+                Error::NoSuchResourceException(inner)
+            }
+            crate::operation::start_auto_management::StartAutoManagementError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::start_auto_management::StartAutoManagementError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::start_auto_management::StartAutoManagementError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_auto_management::StopAutoManagementError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_auto_management::StopAutoManagementError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::stop_auto_management::StopAutoManagementError> for Error {
+    fn from(err: crate::operation::stop_auto_management::StopAutoManagementError) -> Self {
+        match err {
+            crate::operation::stop_auto_management::StopAutoManagementError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::stop_auto_management::StopAutoManagementError::IllegalArgumentException(inner) => {
+                Error::IllegalArgumentException(inner)
+            }
+            crate::operation::stop_auto_management::StopAutoManagementError::NoSuchResourceException(inner) => Error::NoSuchResourceException(inner),
+            crate::operation::stop_auto_management::StopAutoManagementError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::stop_auto_management::StopAutoManagementError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::stop_auto_management::StopAutoManagementError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::tag_resource::TagResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -885,6 +994,38 @@ impl From<crate::operation::untag_resource::UntagResourceError> for Error {
             crate::operation::untag_resource::UntagResourceError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::untag_resource::UntagResourceError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_auto_management::UpdateAutoManagementError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_auto_management::UpdateAutoManagementError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_auto_management::UpdateAutoManagementError> for Error {
+    fn from(err: crate::operation::update_auto_management::UpdateAutoManagementError) -> Self {
+        match err {
+            crate::operation::update_auto_management::UpdateAutoManagementError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_auto_management::UpdateAutoManagementError::IllegalArgumentException(inner) => {
+                Error::IllegalArgumentException(inner)
+            }
+            crate::operation::update_auto_management::UpdateAutoManagementError::NoSuchResourceException(inner) => {
+                Error::NoSuchResourceException(inner)
+            }
+            crate::operation::update_auto_management::UpdateAutoManagementError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::update_auto_management::UpdateAutoManagementError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::update_auto_management::UpdateAutoManagementError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

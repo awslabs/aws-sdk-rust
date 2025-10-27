@@ -17,7 +17,7 @@ pub struct RefreshSchedule {
     /// <li>
     /// <p><code>INCREMENTAL_REFRESH</code>: A partial refresh of some rows of a dataset, based on the time window specified.</p></li>
     /// </ul>
-    /// <p>For more information on full and incremental refreshes, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/refreshing-imported-data.html">Refreshing SPICE data</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+    /// <p>For more information on full and incremental refreshes, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/refreshing-imported-data.html">Refreshing SPICE data</a> in the <i>Amazon Quick Suite User Guide</i>.</p>
     pub refresh_type: crate::types::IngestionType,
     /// <p>The Amazon Resource Name (ARN) for the refresh schedule.</p>
     pub arn: ::std::option::Option<::std::string::String>,
@@ -43,7 +43,7 @@ impl RefreshSchedule {
     /// <li>
     /// <p><code>INCREMENTAL_REFRESH</code>: A partial refresh of some rows of a dataset, based on the time window specified.</p></li>
     /// </ul>
-    /// <p>For more information on full and incremental refreshes, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/refreshing-imported-data.html">Refreshing SPICE data</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+    /// <p>For more information on full and incremental refreshes, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/refreshing-imported-data.html">Refreshing SPICE data</a> in the <i>Amazon Quick Suite User Guide</i>.</p>
     pub fn refresh_type(&self) -> &crate::types::IngestionType {
         &self.refresh_type
     }
@@ -121,7 +121,7 @@ impl RefreshScheduleBuilder {
     /// <li>
     /// <p><code>INCREMENTAL_REFRESH</code>: A partial refresh of some rows of a dataset, based on the time window specified.</p></li>
     /// </ul>
-    /// <p>For more information on full and incremental refreshes, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/refreshing-imported-data.html">Refreshing SPICE data</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+    /// <p>For more information on full and incremental refreshes, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/refreshing-imported-data.html">Refreshing SPICE data</a> in the <i>Amazon Quick Suite User Guide</i>.</p>
     /// This field is required.
     pub fn refresh_type(mut self, input: crate::types::IngestionType) -> Self {
         self.refresh_type = ::std::option::Option::Some(input);
@@ -134,7 +134,7 @@ impl RefreshScheduleBuilder {
     /// <li>
     /// <p><code>INCREMENTAL_REFRESH</code>: A partial refresh of some rows of a dataset, based on the time window specified.</p></li>
     /// </ul>
-    /// <p>For more information on full and incremental refreshes, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/refreshing-imported-data.html">Refreshing SPICE data</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+    /// <p>For more information on full and incremental refreshes, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/refreshing-imported-data.html">Refreshing SPICE data</a> in the <i>Amazon Quick Suite User Guide</i>.</p>
     pub fn set_refresh_type(mut self, input: ::std::option::Option<crate::types::IngestionType>) -> Self {
         self.refresh_type = input;
         self
@@ -146,7 +146,7 @@ impl RefreshScheduleBuilder {
     /// <li>
     /// <p><code>INCREMENTAL_REFRESH</code>: A partial refresh of some rows of a dataset, based on the time window specified.</p></li>
     /// </ul>
-    /// <p>For more information on full and incremental refreshes, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/refreshing-imported-data.html">Refreshing SPICE data</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+    /// <p>For more information on full and incremental refreshes, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/refreshing-imported-data.html">Refreshing SPICE data</a> in the <i>Amazon Quick Suite User Guide</i>.</p>
     pub fn get_refresh_type(&self) -> &::std::option::Option<crate::types::IngestionType> {
         &self.refresh_type
     }

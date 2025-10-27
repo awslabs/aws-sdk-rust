@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JoinKeyProperties {
-    /// <p>A value that indicates that a row in a table is uniquely identified by the columns in a join key. This is used by QuickSight to optimize query performance.</p>
+    /// <p>A value that indicates that a row in a table is uniquely identified by the columns in a join key. This is used by Quick Sight to optimize query performance.</p>
     pub unique_key: ::std::option::Option<bool>,
 }
 impl JoinKeyProperties {
-    /// <p>A value that indicates that a row in a table is uniquely identified by the columns in a join key. This is used by QuickSight to optimize query performance.</p>
+    /// <p>A value that indicates that a row in a table is uniquely identified by the columns in a join key. This is used by Quick Sight to optimize query performance.</p>
     pub fn unique_key(&self) -> ::std::option::Option<bool> {
         self.unique_key
     }
@@ -27,17 +27,17 @@ pub struct JoinKeyPropertiesBuilder {
     pub(crate) unique_key: ::std::option::Option<bool>,
 }
 impl JoinKeyPropertiesBuilder {
-    /// <p>A value that indicates that a row in a table is uniquely identified by the columns in a join key. This is used by QuickSight to optimize query performance.</p>
+    /// <p>A value that indicates that a row in a table is uniquely identified by the columns in a join key. This is used by Quick Sight to optimize query performance.</p>
     pub fn unique_key(mut self, input: bool) -> Self {
         self.unique_key = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A value that indicates that a row in a table is uniquely identified by the columns in a join key. This is used by QuickSight to optimize query performance.</p>
+    /// <p>A value that indicates that a row in a table is uniquely identified by the columns in a join key. This is used by Quick Sight to optimize query performance.</p>
     pub fn set_unique_key(mut self, input: ::std::option::Option<bool>) -> Self {
         self.unique_key = input;
         self
     }
-    /// <p>A value that indicates that a row in a table is uniquely identified by the columns in a join key. This is used by QuickSight to optimize query performance.</p>
+    /// <p>A value that indicates that a row in a table is uniquely identified by the columns in a join key. This is used by Quick Sight to optimize query performance.</p>
     pub fn get_unique_key(&self) -> &::std::option::Option<bool> {
         &self.unique_key
     }

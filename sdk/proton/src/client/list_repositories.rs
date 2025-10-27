@@ -10,6 +10,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_repositories::ListRepositoriesOutput::next_token): <p>A token that indicates the location of the next repository in the array of repositories, after the current requested list of repositories.</p>
     ///   - [`repositories(Vec::<RepositorySummary>)`](crate::operation::list_repositories::ListRepositoriesOutput::repositories): <p>An array of repository links.</p>
     /// - On failure, responds with [`SdkError<ListRepositoriesError>`](crate::operation::list_repositories::ListRepositoriesError)
+    #[deprecated(note = "AWS Proton is not accepting new customers.", since = "10/07/2025")]
     pub fn list_repositories(&self) -> crate::operation::list_repositories::builders::ListRepositoriesFluentBuilder {
         crate::operation::list_repositories::builders::ListRepositoriesFluentBuilder::new(self.handle.clone())
     }

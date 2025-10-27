@@ -6,6 +6,10 @@
 pub struct AgentInfo {
     /// <p>The identifier of the agent who accepted the contact.</p>
     pub id: ::std::option::Option<::std::string::String>,
+    /// <p>The timestamp when the contact was accepted by the agent.</p>
+    pub accepted_by_agent_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The timestamp when the agent finished previewing the contact.</p>
+    pub preview_end_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp when the contact was connected to the agent.</p>
     pub connected_to_agent_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Agent pause duration for a contact in seconds.</p>
@@ -31,6 +35,14 @@ impl AgentInfo {
     /// <p>The identifier of the agent who accepted the contact.</p>
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
+    }
+    /// <p>The timestamp when the contact was accepted by the agent.</p>
+    pub fn accepted_by_agent_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.accepted_by_agent_timestamp.as_ref()
+    }
+    /// <p>The timestamp when the agent finished previewing the contact.</p>
+    pub fn preview_end_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.preview_end_timestamp.as_ref()
     }
     /// <p>The timestamp when the contact was connected to the agent.</p>
     pub fn connected_to_agent_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -87,6 +99,8 @@ impl AgentInfo {
 #[non_exhaustive]
 pub struct AgentInfoBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) accepted_by_agent_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) preview_end_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) connected_to_agent_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) agent_pause_duration_in_seconds: ::std::option::Option<i32>,
     pub(crate) hierarchy_groups: ::std::option::Option<crate::types::HierarchyGroups>,
@@ -112,6 +126,34 @@ impl AgentInfoBuilder {
     /// <p>The identifier of the agent who accepted the contact.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
+    }
+    /// <p>The timestamp when the contact was accepted by the agent.</p>
+    pub fn accepted_by_agent_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.accepted_by_agent_timestamp = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The timestamp when the contact was accepted by the agent.</p>
+    pub fn set_accepted_by_agent_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.accepted_by_agent_timestamp = input;
+        self
+    }
+    /// <p>The timestamp when the contact was accepted by the agent.</p>
+    pub fn get_accepted_by_agent_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.accepted_by_agent_timestamp
+    }
+    /// <p>The timestamp when the agent finished previewing the contact.</p>
+    pub fn preview_end_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.preview_end_timestamp = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The timestamp when the agent finished previewing the contact.</p>
+    pub fn set_preview_end_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.preview_end_timestamp = input;
+        self
+    }
+    /// <p>The timestamp when the agent finished previewing the contact.</p>
+    pub fn get_preview_end_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.preview_end_timestamp
     }
     /// <p>The timestamp when the contact was connected to the agent.</p>
     pub fn connected_to_agent_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -263,6 +305,8 @@ impl AgentInfoBuilder {
     pub fn build(self) -> crate::types::AgentInfo {
         crate::types::AgentInfo {
             id: self.id,
+            accepted_by_agent_timestamp: self.accepted_by_agent_timestamp,
+            preview_end_timestamp: self.preview_end_timestamp,
             connected_to_agent_timestamp: self.connected_to_agent_timestamp,
             agent_pause_duration_in_seconds: self.agent_pause_duration_in_seconds,
             hierarchy_groups: self.hierarchy_groups,

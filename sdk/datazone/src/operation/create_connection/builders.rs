@@ -206,4 +206,32 @@ impl CreateConnectionFluentBuilder {
     pub fn get_props(&self) -> &::std::option::Option<crate::types::ConnectionPropertiesInput> {
         self.inner.get_props()
     }
+    /// <p>Specifies whether the trusted identity propagation is enabled.</p>
+    pub fn enable_trusted_identity_propagation(mut self, input: bool) -> Self {
+        self.inner = self.inner.enable_trusted_identity_propagation(input);
+        self
+    }
+    /// <p>Specifies whether the trusted identity propagation is enabled.</p>
+    pub fn set_enable_trusted_identity_propagation(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_enable_trusted_identity_propagation(input);
+        self
+    }
+    /// <p>Specifies whether the trusted identity propagation is enabled.</p>
+    pub fn get_enable_trusted_identity_propagation(&self) -> &::std::option::Option<bool> {
+        self.inner.get_enable_trusted_identity_propagation()
+    }
+    /// <p>The scope of the connection.</p>
+    pub fn scope(mut self, input: crate::types::ConnectionScope) -> Self {
+        self.inner = self.inner.scope(input);
+        self
+    }
+    /// <p>The scope of the connection.</p>
+    pub fn set_scope(mut self, input: ::std::option::Option<crate::types::ConnectionScope>) -> Self {
+        self.inner = self.inner.set_scope(input);
+        self
+    }
+    /// <p>The scope of the connection.</p>
+    pub fn get_scope(&self) -> &::std::option::Option<crate::types::ConnectionScope> {
+        self.inner.get_scope()
+    }
 }

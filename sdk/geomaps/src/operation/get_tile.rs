@@ -228,9 +228,16 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetTileReque
                 mut output: &mut ::std::string::String,
             ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
-                if let ::std::option::Option::Some(inner_5) = &_input.key {
+                if let ::std::option::Option::Some(inner_5) = &_input.additional_features {
                     {
-                        query.push_kv("key", &::aws_smithy_http::query::fmt_string(inner_5));
+                        for inner_6 in inner_5 {
+                            query.push_kv("additional-features", &::aws_smithy_http::query::fmt_string(inner_6));
+                        }
+                    }
+                }
+                if let ::std::option::Option::Some(inner_7) = &_input.key {
+                    {
+                        query.push_kv("key", &::aws_smithy_http::query::fmt_string(inner_7));
                     }
                 }
                 ::std::result::Result::Ok(())

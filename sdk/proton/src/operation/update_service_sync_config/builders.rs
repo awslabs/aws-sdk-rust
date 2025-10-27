@@ -23,6 +23,7 @@ impl crate::operation::update_service_sync_config::builders::UpdateServiceSyncCo
 /// Fluent builder constructing a request to `UpdateServiceSyncConfig`.
 ///
 /// <p>Update the Proton Ops config file.</p>
+#[deprecated(note = "AWS Proton is not accepting new customers.", since = "10/07/2025")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateServiceSyncConfigFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

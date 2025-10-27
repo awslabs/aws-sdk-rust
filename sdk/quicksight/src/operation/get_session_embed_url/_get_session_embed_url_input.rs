@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSessionEmbedUrlInput {
-    /// <p>The ID for the Amazon Web Services account associated with your QuickSight subscription.</p>
+    /// <p>The ID for the Amazon Web Services account associated with your Amazon Quick Sight subscription.</p>
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The URL you use to access the embedded session. The entry point URL is constrained to the following paths:</p>
     /// <ul>
@@ -16,9 +16,9 @@ pub struct GetSessionEmbedUrlInput {
     /// <li>
     /// <p><code>/start/favorites</code></p></li>
     /// <li>
-    /// <p><code>/dashboards/<i>DashboardId</i> </code> - where <code>DashboardId</code> is the actual ID key from the QuickSight console URL of the dashboard</p></li>
+    /// <p><code>/dashboards/<i>DashboardId</i> </code> - where <code>DashboardId</code> is the actual ID key from the Amazon Quick Sight console URL of the dashboard</p></li>
     /// <li>
-    /// <p><code>/analyses/<i>AnalysisId</i> </code> - where <code>AnalysisId</code> is the actual ID key from the QuickSight console URL of the analysis</p></li>
+    /// <p><code>/analyses/<i>AnalysisId</i> </code> - where <code>AnalysisId</code> is the actual ID key from the Amazon Quick Sight console URL of the analysis</p></li>
     /// </ul>
     pub entry_point: ::std::option::Option<::std::string::String>,
     /// <p>How many minutes the session is valid. The session lifetime must be 15-600 minutes.</p>
@@ -36,7 +36,7 @@ pub struct GetSessionEmbedUrlInput {
     pub user_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetSessionEmbedUrlInput {
-    /// <p>The ID for the Amazon Web Services account associated with your QuickSight subscription.</p>
+    /// <p>The ID for the Amazon Web Services account associated with your Amazon Quick Sight subscription.</p>
     pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
@@ -51,9 +51,9 @@ impl GetSessionEmbedUrlInput {
     /// <li>
     /// <p><code>/start/favorites</code></p></li>
     /// <li>
-    /// <p><code>/dashboards/<i>DashboardId</i> </code> - where <code>DashboardId</code> is the actual ID key from the QuickSight console URL of the dashboard</p></li>
+    /// <p><code>/dashboards/<i>DashboardId</i> </code> - where <code>DashboardId</code> is the actual ID key from the Amazon Quick Sight console URL of the dashboard</p></li>
     /// <li>
-    /// <p><code>/analyses/<i>AnalysisId</i> </code> - where <code>AnalysisId</code> is the actual ID key from the QuickSight console URL of the analysis</p></li>
+    /// <p><code>/analyses/<i>AnalysisId</i> </code> - where <code>AnalysisId</code> is the actual ID key from the Amazon Quick Sight console URL of the analysis</p></li>
     /// </ul>
     pub fn entry_point(&self) -> ::std::option::Option<&str> {
         self.entry_point.as_deref()
@@ -93,18 +93,18 @@ pub struct GetSessionEmbedUrlInputBuilder {
     pub(crate) user_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetSessionEmbedUrlInputBuilder {
-    /// <p>The ID for the Amazon Web Services account associated with your QuickSight subscription.</p>
+    /// <p>The ID for the Amazon Web Services account associated with your Amazon Quick Sight subscription.</p>
     /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID for the Amazon Web Services account associated with your QuickSight subscription.</p>
+    /// <p>The ID for the Amazon Web Services account associated with your Amazon Quick Sight subscription.</p>
     pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
-    /// <p>The ID for the Amazon Web Services account associated with your QuickSight subscription.</p>
+    /// <p>The ID for the Amazon Web Services account associated with your Amazon Quick Sight subscription.</p>
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.aws_account_id
     }
@@ -119,9 +119,9 @@ impl GetSessionEmbedUrlInputBuilder {
     /// <li>
     /// <p><code>/start/favorites</code></p></li>
     /// <li>
-    /// <p><code>/dashboards/<i>DashboardId</i> </code> - where <code>DashboardId</code> is the actual ID key from the QuickSight console URL of the dashboard</p></li>
+    /// <p><code>/dashboards/<i>DashboardId</i> </code> - where <code>DashboardId</code> is the actual ID key from the Amazon Quick Sight console URL of the dashboard</p></li>
     /// <li>
-    /// <p><code>/analyses/<i>AnalysisId</i> </code> - where <code>AnalysisId</code> is the actual ID key from the QuickSight console URL of the analysis</p></li>
+    /// <p><code>/analyses/<i>AnalysisId</i> </code> - where <code>AnalysisId</code> is the actual ID key from the Amazon Quick Sight console URL of the analysis</p></li>
     /// </ul>
     pub fn entry_point(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entry_point = ::std::option::Option::Some(input.into());
@@ -138,9 +138,9 @@ impl GetSessionEmbedUrlInputBuilder {
     /// <li>
     /// <p><code>/start/favorites</code></p></li>
     /// <li>
-    /// <p><code>/dashboards/<i>DashboardId</i> </code> - where <code>DashboardId</code> is the actual ID key from the QuickSight console URL of the dashboard</p></li>
+    /// <p><code>/dashboards/<i>DashboardId</i> </code> - where <code>DashboardId</code> is the actual ID key from the Amazon Quick Sight console URL of the dashboard</p></li>
     /// <li>
-    /// <p><code>/analyses/<i>AnalysisId</i> </code> - where <code>AnalysisId</code> is the actual ID key from the QuickSight console URL of the analysis</p></li>
+    /// <p><code>/analyses/<i>AnalysisId</i> </code> - where <code>AnalysisId</code> is the actual ID key from the Amazon Quick Sight console URL of the analysis</p></li>
     /// </ul>
     pub fn set_entry_point(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.entry_point = input;
@@ -157,9 +157,9 @@ impl GetSessionEmbedUrlInputBuilder {
     /// <li>
     /// <p><code>/start/favorites</code></p></li>
     /// <li>
-    /// <p><code>/dashboards/<i>DashboardId</i> </code> - where <code>DashboardId</code> is the actual ID key from the QuickSight console URL of the dashboard</p></li>
+    /// <p><code>/dashboards/<i>DashboardId</i> </code> - where <code>DashboardId</code> is the actual ID key from the Amazon Quick Sight console URL of the dashboard</p></li>
     /// <li>
-    /// <p><code>/analyses/<i>AnalysisId</i> </code> - where <code>AnalysisId</code> is the actual ID key from the QuickSight console URL of the analysis</p></li>
+    /// <p><code>/analyses/<i>AnalysisId</i> </code> - where <code>AnalysisId</code> is the actual ID key from the Amazon Quick Sight console URL of the analysis</p></li>
     /// </ul>
     pub fn get_entry_point(&self) -> &::std::option::Option<::std::string::String> {
         &self.entry_point

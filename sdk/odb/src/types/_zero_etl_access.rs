@@ -5,14 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ZeroEtlAccess {
     /// <p>The status of the Zero-ETL access.</p>
-    /// <p>Valid Values: <code>enabled | disabled</code></p>
     pub status: ::std::option::Option<crate::types::ManagedResourceStatus>,
     /// <p>The CIDR block for the Zero-ETL access.</p>
     pub cidr: ::std::option::Option<::std::string::String>,
 }
 impl ZeroEtlAccess {
     /// <p>The status of the Zero-ETL access.</p>
-    /// <p>Valid Values: <code>enabled | disabled</code></p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::ManagedResourceStatus> {
         self.status.as_ref()
     }
@@ -37,19 +35,16 @@ pub struct ZeroEtlAccessBuilder {
 }
 impl ZeroEtlAccessBuilder {
     /// <p>The status of the Zero-ETL access.</p>
-    /// <p>Valid Values: <code>enabled | disabled</code></p>
     pub fn status(mut self, input: crate::types::ManagedResourceStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the Zero-ETL access.</p>
-    /// <p>Valid Values: <code>enabled | disabled</code></p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ManagedResourceStatus>) -> Self {
         self.status = input;
         self
     }
     /// <p>The status of the Zero-ETL access.</p>
-    /// <p>Valid Values: <code>enabled | disabled</code></p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ManagedResourceStatus> {
         &self.status
     }

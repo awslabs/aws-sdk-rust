@@ -22,7 +22,7 @@ impl crate::operation::list_iam_policy_assignments::builders::ListIamPolicyAssig
 }
 /// Fluent builder constructing a request to `ListIAMPolicyAssignments`.
 ///
-/// <p>Lists the IAM policy assignments in the current Amazon QuickSight account.</p>
+/// <p>Lists the IAM policy assignments in the current Amazon Quick Sight account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListIAMPolicyAssignmentsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

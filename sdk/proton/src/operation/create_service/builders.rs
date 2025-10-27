@@ -23,6 +23,7 @@ impl crate::operation::create_service::builders::CreateServiceInputBuilder {
 /// Fluent builder constructing a request to `CreateService`.
 ///
 /// <p>Create an Proton service. An Proton service is an instantiation of a service template and often includes several service instances and pipeline. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-services.html">Services</a> in the <i>Proton User Guide</i>.</p>
+#[deprecated(note = "AWS Proton is not accepting new customers.", since = "10/07/2025")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateServiceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

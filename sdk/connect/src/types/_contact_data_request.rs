@@ -16,6 +16,8 @@ pub struct ContactDataRequest {
     pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Structure to store information associated with a campaign.</p>
     pub campaign: ::std::option::Option<crate::types::Campaign>,
+    /// <p>Information about the outbound strategy.</p>
+    pub outbound_strategy: ::std::option::Option<crate::types::OutboundStrategy>,
 }
 impl ContactDataRequest {
     /// <p>Endpoint associated with the Amazon Connect instance from which outbound contact will be initiated for the campaign.</p>
@@ -42,6 +44,10 @@ impl ContactDataRequest {
     pub fn campaign(&self) -> ::std::option::Option<&crate::types::Campaign> {
         self.campaign.as_ref()
     }
+    /// <p>Information about the outbound strategy.</p>
+    pub fn outbound_strategy(&self) -> ::std::option::Option<&crate::types::OutboundStrategy> {
+        self.outbound_strategy.as_ref()
+    }
 }
 impl ContactDataRequest {
     /// Creates a new builder-style object to manufacture [`ContactDataRequest`](crate::types::ContactDataRequest).
@@ -60,6 +66,7 @@ pub struct ContactDataRequestBuilder {
     pub(crate) queue_id: ::std::option::Option<::std::string::String>,
     pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) campaign: ::std::option::Option<crate::types::Campaign>,
+    pub(crate) outbound_strategy: ::std::option::Option<crate::types::OutboundStrategy>,
 }
 impl ContactDataRequestBuilder {
     /// <p>Endpoint associated with the Amazon Connect instance from which outbound contact will be initiated for the campaign.</p>
@@ -152,6 +159,20 @@ impl ContactDataRequestBuilder {
     pub fn get_campaign(&self) -> &::std::option::Option<crate::types::Campaign> {
         &self.campaign
     }
+    /// <p>Information about the outbound strategy.</p>
+    pub fn outbound_strategy(mut self, input: crate::types::OutboundStrategy) -> Self {
+        self.outbound_strategy = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Information about the outbound strategy.</p>
+    pub fn set_outbound_strategy(mut self, input: ::std::option::Option<crate::types::OutboundStrategy>) -> Self {
+        self.outbound_strategy = input;
+        self
+    }
+    /// <p>Information about the outbound strategy.</p>
+    pub fn get_outbound_strategy(&self) -> &::std::option::Option<crate::types::OutboundStrategy> {
+        &self.outbound_strategy
+    }
     /// Consumes the builder and constructs a [`ContactDataRequest`](crate::types::ContactDataRequest).
     pub fn build(self) -> crate::types::ContactDataRequest {
         crate::types::ContactDataRequest {
@@ -161,6 +182,7 @@ impl ContactDataRequestBuilder {
             queue_id: self.queue_id,
             attributes: self.attributes,
             campaign: self.campaign,
+            outbound_strategy: self.outbound_strategy,
         }
     }
 }

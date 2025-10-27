@@ -111,6 +111,8 @@ pub(crate) mod shape_list_workload_identities;
 
 pub(crate) mod shape_set_token_vault_cmk;
 
+pub(crate) mod shape_synchronize_gateway_targets;
+
 pub(crate) mod shape_tag_resource;
 
 pub(crate) mod shape_untag_resource;
@@ -203,6 +205,8 @@ pub(crate) mod shape_service_quota_exceeded_exception;
 
 pub(crate) mod shape_set_token_vault_cmk_input;
 
+pub(crate) mod shape_synchronize_gateway_targets_input;
+
 pub(crate) mod shape_tag_resource_input;
 
 pub(crate) mod shape_throttled_exception;
@@ -257,6 +261,8 @@ pub(crate) mod shape_gateway_protocol_configuration;
 
 pub(crate) mod shape_gateway_summaries;
 
+pub(crate) mod shape_gateway_target_list;
+
 pub(crate) mod shape_kms_configuration;
 
 pub(crate) mod shape_lifecycle_configuration;
@@ -307,6 +313,10 @@ pub(crate) mod shape_agent_runtime_endpoint;
 
 pub(crate) mod shape_api_key_credential_provider_item;
 
+pub(crate) mod shape_atlassian_oauth2_provider_config_input;
+
+pub(crate) mod shape_atlassian_oauth2_provider_config_output;
+
 pub(crate) mod shape_browser_summary;
 
 pub(crate) mod shape_code_interpreter_summary;
@@ -327,6 +337,8 @@ pub(crate) mod shape_delete_memory_strategy_input;
 
 pub(crate) mod shape_gateway_summary;
 
+pub(crate) mod shape_gateway_target;
+
 pub(crate) mod shape_github_oauth2_provider_config_input;
 
 pub(crate) mod shape_github_oauth2_provider_config_output;
@@ -334,6 +346,14 @@ pub(crate) mod shape_github_oauth2_provider_config_output;
 pub(crate) mod shape_google_oauth2_provider_config_input;
 
 pub(crate) mod shape_google_oauth2_provider_config_output;
+
+pub(crate) mod shape_included_oauth2_provider_config_input;
+
+pub(crate) mod shape_included_oauth2_provider_config_output;
+
+pub(crate) mod shape_linkedin_oauth2_provider_config_input;
+
+pub(crate) mod shape_linkedin_oauth2_provider_config_output;
 
 pub(crate) mod shape_mcp_gateway_configuration;
 
@@ -389,6 +409,8 @@ pub(crate) mod shape_gateway_api_key_credential_provider;
 
 pub(crate) mod shape_mcp_lambda_target_configuration;
 
+pub(crate) mod shape_mcp_server_target_configuration;
+
 pub(crate) mod shape_mcp_supported_versions;
 
 pub(crate) mod shape_memory_strategy;
@@ -407,11 +429,15 @@ pub(crate) mod shape_modify_consolidation_configuration;
 
 pub(crate) mod shape_modify_extraction_configuration;
 
+pub(crate) mod shape_modify_self_managed_configuration;
+
 pub(crate) mod shape_namespaces_list;
 
 pub(crate) mod shape_oauth2_authorization_server_metadata;
 
 pub(crate) mod shape_s3_configuration;
+
+pub(crate) mod shape_self_managed_configuration_input;
 
 pub(crate) mod shape_semantic_override_configuration_input;
 
@@ -431,11 +457,17 @@ pub(crate) mod shape_custom_extraction_configuration_input;
 
 pub(crate) mod shape_extraction_configuration;
 
+pub(crate) mod shape_invocation_configuration_input;
+
+pub(crate) mod shape_modify_invocation_configuration_input;
+
 pub(crate) mod shape_o_auth_custom_parameters;
 
 pub(crate) mod shape_o_auth_scopes;
 
 pub(crate) mod shape_response_list_type;
+
+pub(crate) mod shape_self_managed_configuration;
 
 pub(crate) mod shape_semantic_override_consolidation_configuration_input;
 
@@ -443,9 +475,13 @@ pub(crate) mod shape_semantic_override_extraction_configuration_input;
 
 pub(crate) mod shape_summary_override_consolidation_configuration_input;
 
+pub(crate) mod shape_token_endpoint_auth_methods_type;
+
 pub(crate) mod shape_tool_definition;
 
 pub(crate) mod shape_tool_definitions;
+
+pub(crate) mod shape_trigger_condition_input;
 
 pub(crate) mod shape_user_preference_override_consolidation_configuration_input;
 
@@ -455,7 +491,17 @@ pub(crate) mod shape_custom_consolidation_configuration;
 
 pub(crate) mod shape_custom_extraction_configuration;
 
+pub(crate) mod shape_invocation_configuration;
+
+pub(crate) mod shape_message_based_trigger_input;
+
 pub(crate) mod shape_schema_definition;
+
+pub(crate) mod shape_time_based_trigger_input;
+
+pub(crate) mod shape_token_based_trigger_input;
+
+pub(crate) mod shape_trigger_conditions_list;
 
 pub(crate) mod shape_semantic_consolidation_override;
 
@@ -463,10 +509,18 @@ pub(crate) mod shape_semantic_extraction_override;
 
 pub(crate) mod shape_summary_consolidation_override;
 
+pub(crate) mod shape_trigger_condition;
+
 pub(crate) mod shape_user_preference_consolidation_override;
 
 pub(crate) mod shape_user_preference_extraction_override;
 
+pub(crate) mod shape_message_based_trigger;
+
 pub(crate) mod shape_required_properties;
 
 pub(crate) mod shape_schema_properties;
+
+pub(crate) mod shape_time_based_trigger;
+
+pub(crate) mod shape_token_based_trigger;

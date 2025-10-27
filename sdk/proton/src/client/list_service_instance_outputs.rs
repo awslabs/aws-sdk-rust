@@ -12,6 +12,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_service_instance_outputs::ListServiceInstanceOutputsOutput::next_token): <p>A token that indicates the location of the next output in the array of outputs, after the current requested list of outputs.</p>
     ///   - [`outputs(Vec::<Output>)`](crate::operation::list_service_instance_outputs::ListServiceInstanceOutputsOutput::outputs): <p>An array of service instance Infrastructure as Code (IaC) outputs.</p>
     /// - On failure, responds with [`SdkError<ListServiceInstanceOutputsError>`](crate::operation::list_service_instance_outputs::ListServiceInstanceOutputsError)
+    #[deprecated(note = "AWS Proton is not accepting new customers.", since = "10/07/2025")]
     pub fn list_service_instance_outputs(
         &self,
     ) -> crate::operation::list_service_instance_outputs::builders::ListServiceInstanceOutputsFluentBuilder {

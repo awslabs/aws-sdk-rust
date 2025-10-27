@@ -173,6 +173,8 @@ mod disassociate_service_quota_template;
 
 mod get_association_for_service_quota_template;
 
+mod get_auto_management_configuration;
+
 mod get_aws_default_service_quota;
 
 mod get_requested_service_quota_change;
@@ -199,6 +201,12 @@ mod put_service_quota_increase_request_into_template;
 
 mod request_service_quota_increase;
 
+mod start_auto_management;
+
+mod stop_auto_management;
+
 mod tag_resource;
 
 mod untag_resource;
+
+mod update_auto_management;

@@ -16,6 +16,7 @@ impl super::Client {
     /// - On success, responds with [`CreateComponentOutput`](crate::operation::create_component::CreateComponentOutput) with field(s):
     ///   - [`component(Option<Component>)`](crate::operation::create_component::CreateComponentOutput::component): <p>The detailed data of the created component.</p>
     /// - On failure, responds with [`SdkError<CreateComponentError>`](crate::operation::create_component::CreateComponentError)
+    #[deprecated(note = "AWS Proton is not accepting new customers.", since = "10/07/2025")]
     pub fn create_component(&self) -> crate::operation::create_component::builders::CreateComponentFluentBuilder {
         crate::operation::create_component::builders::CreateComponentFluentBuilder::new(self.handle.clone())
     }

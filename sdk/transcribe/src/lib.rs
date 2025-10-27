@@ -18,7 +18,7 @@
 #![allow(rustdoc::invalid_html_tags)]
 #![forbid(unsafe_code)]
 #![warn(missing_docs)]
-#![cfg_attr(docsrs, feature(doc_auto_cfg))]
+#![cfg_attr(docsrs, feature(doc_cfg))]
 //! Amazon Transcribe offers three main types of batch transcription: __Standard__, __Medical__, and __Call Analytics__.
 //!   - __Standard transcriptions__ are the most common option. Refer to for details.
 //!   - __Medical transcriptions__ are tailored to medical professionals and incorporate medical terms. A common use case for this service is transcribing doctor-patient dialogue into after-visit notes. Refer to for details.
@@ -36,7 +36,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-transcribe = "1.90.0"
+//! aws-sdk-transcribe = "1.92.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

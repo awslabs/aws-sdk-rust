@@ -21,21 +21,30 @@ pub fn ser_create_custom_line_item_input_input(
         crate::protocol_serde::shape_custom_line_item_charge_details::ser_custom_line_item_charge_details(&mut object_6, var_5)?;
         object_6.finish();
     }
-    if let Some(var_7) = &input.description {
-        object.key("Description").string(var_7.as_str());
+    if let Some(var_7) = &input.computation_rule {
+        object.key("ComputationRule").string(var_7.as_str());
     }
-    if let Some(var_8) = &input.name {
-        object.key("Name").string(var_8.as_str());
+    if let Some(var_8) = &input.description {
+        object.key("Description").string(var_8.as_str());
     }
-    if let Some(var_9) = &input.tags {
+    if let Some(var_9) = &input.name {
+        object.key("Name").string(var_9.as_str());
+    }
+    if let Some(var_10) = &input.presentation_details {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("Tags").start_object();
-        for (key_11, value_12) in var_9 {
+        let mut object_11 = object.key("PresentationDetails").start_object();
+        crate::protocol_serde::shape_presentation_object::ser_presentation_object(&mut object_11, var_10)?;
+        object_11.finish();
+    }
+    if let Some(var_12) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_13 = object.key("Tags").start_object();
+        for (key_14, value_15) in var_12 {
             {
-                object_10.key(key_11.as_str()).string(value_12.as_str());
+                object_13.key(key_14.as_str()).string(value_15.as_str());
             }
         }
-        object_10.finish();
+        object_13.finish();
     }
     Ok(())
 }

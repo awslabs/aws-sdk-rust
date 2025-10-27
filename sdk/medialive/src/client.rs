@@ -439,6 +439,8 @@ mod get_event_bridge_rule_template_group;
 
 mod get_signal_map;
 
+mod list_alerts;
+
 mod list_channel_placement_groups;
 
 mod list_channels;
@@ -446,6 +448,8 @@ mod list_channels;
 mod list_cloud_watch_alarm_template_groups;
 
 mod list_cloud_watch_alarm_templates;
+
+mod list_cluster_alerts;
 
 mod list_clusters;
 
@@ -460,6 +464,8 @@ mod list_input_devices;
 mod list_input_security_groups;
 
 mod list_inputs;
+
+mod list_multiplex_alerts;
 
 mod list_multiplex_programs;
 

@@ -23,6 +23,7 @@ impl crate::operation::describe_key::builders::DescribeKeyInputBuilder {
 /// Fluent builder constructing a request to `DescribeKey`.
 ///
 /// <p>Retrieves the API key resource details.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">Use API keys to authenticate</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeKeyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

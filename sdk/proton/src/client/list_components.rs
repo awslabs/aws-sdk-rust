@@ -13,6 +13,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_components::ListComponentsOutput::next_token): <p>A token that indicates the location of the next component in the array of components, after the current requested list of components.</p>
     ///   - [`components(Vec::<ComponentSummary>)`](crate::operation::list_components::ListComponentsOutput::components): <p>An array of components with summary data.</p>
     /// - On failure, responds with [`SdkError<ListComponentsError>`](crate::operation::list_components::ListComponentsError)
+    #[deprecated(note = "AWS Proton is not accepting new customers.", since = "10/07/2025")]
     pub fn list_components(&self) -> crate::operation::list_components::builders::ListComponentsFluentBuilder {
         crate::operation::list_components::builders::ListComponentsFluentBuilder::new(self.handle.clone())
     }

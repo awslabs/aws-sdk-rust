@@ -246,6 +246,13 @@ pub(crate) fn de_create_oauth2_credential_provider(
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "callbackUrl" => {
+                    builder = builder.set_callback_url(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "clientSecretArn" => {
                     builder = builder.set_client_secret_arn(crate::protocol_serde::shape_secret::de_secret(tokens)?);
                 }
@@ -261,6 +268,11 @@ pub(crate) fn de_create_oauth2_credential_provider(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
+                    );
+                }
+                "oauth2ProviderConfigOutput" => {
+                    builder = builder.set_oauth2_provider_config_output(
+                        crate::protocol_serde::shape_oauth2_provider_config_output::de_oauth2_provider_config_output(tokens)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

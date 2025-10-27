@@ -409,7 +409,7 @@ mod test {
     }
 }
 
-/// Endpoint resolver trait specific to Amazon Bedrock Agent Core Control Plane Fronting Layer
+/// Endpoint resolver trait specific to Amazon Bedrock AgentCore Control
 pub trait ResolveEndpoint: ::std::marker::Send + ::std::marker::Sync + ::std::fmt::Debug {
     /// Resolve an endpoint with the given parameters
     fn resolve_endpoint<'a>(&'a self, params: &'a crate::config::endpoint::Params) -> ::aws_smithy_runtime_api::client::endpoint::EndpointFuture<'a>;

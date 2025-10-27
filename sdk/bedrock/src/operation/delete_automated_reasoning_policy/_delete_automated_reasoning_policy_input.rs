@@ -5,11 +5,17 @@
 pub struct DeleteAutomatedReasoningPolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the Automated Reasoning policy to delete.</p>
     pub policy_arn: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies whether to force delete the automated reasoning policy even if it has active resources. When <code>false</code>, Amazon Bedrock validates if all artifacts have been deleted (e.g. policy version, test case, test result) for a policy before deletion. When <code>true</code>, Amazon Bedrock will delete the policy and all its artifacts without validation. Default is <code>false</code>.</p>
+    pub force: ::std::option::Option<bool>,
 }
 impl DeleteAutomatedReasoningPolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the Automated Reasoning policy to delete.</p>
     pub fn policy_arn(&self) -> ::std::option::Option<&str> {
         self.policy_arn.as_deref()
+    }
+    /// <p>Specifies whether to force delete the automated reasoning policy even if it has active resources. When <code>false</code>, Amazon Bedrock validates if all artifacts have been deleted (e.g. policy version, test case, test result) for a policy before deletion. When <code>true</code>, Amazon Bedrock will delete the policy and all its artifacts without validation. Default is <code>false</code>.</p>
+    pub fn force(&self) -> ::std::option::Option<bool> {
+        self.force
     }
 }
 impl DeleteAutomatedReasoningPolicyInput {
@@ -24,6 +30,7 @@ impl DeleteAutomatedReasoningPolicyInput {
 #[non_exhaustive]
 pub struct DeleteAutomatedReasoningPolicyInputBuilder {
     pub(crate) policy_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) force: ::std::option::Option<bool>,
 }
 impl DeleteAutomatedReasoningPolicyInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Automated Reasoning policy to delete.</p>
@@ -41,6 +48,20 @@ impl DeleteAutomatedReasoningPolicyInputBuilder {
     pub fn get_policy_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy_arn
     }
+    /// <p>Specifies whether to force delete the automated reasoning policy even if it has active resources. When <code>false</code>, Amazon Bedrock validates if all artifacts have been deleted (e.g. policy version, test case, test result) for a policy before deletion. When <code>true</code>, Amazon Bedrock will delete the policy and all its artifacts without validation. Default is <code>false</code>.</p>
+    pub fn force(mut self, input: bool) -> Self {
+        self.force = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to force delete the automated reasoning policy even if it has active resources. When <code>false</code>, Amazon Bedrock validates if all artifacts have been deleted (e.g. policy version, test case, test result) for a policy before deletion. When <code>true</code>, Amazon Bedrock will delete the policy and all its artifacts without validation. Default is <code>false</code>.</p>
+    pub fn set_force(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.force = input;
+        self
+    }
+    /// <p>Specifies whether to force delete the automated reasoning policy even if it has active resources. When <code>false</code>, Amazon Bedrock validates if all artifacts have been deleted (e.g. policy version, test case, test result) for a policy before deletion. When <code>true</code>, Amazon Bedrock will delete the policy and all its artifacts without validation. Default is <code>false</code>.</p>
+    pub fn get_force(&self) -> &::std::option::Option<bool> {
+        &self.force
+    }
     /// Consumes the builder and constructs a [`DeleteAutomatedReasoningPolicyInput`](crate::operation::delete_automated_reasoning_policy::DeleteAutomatedReasoningPolicyInput).
     pub fn build(
         self,
@@ -50,6 +71,7 @@ impl DeleteAutomatedReasoningPolicyInputBuilder {
     > {
         ::std::result::Result::Ok(crate::operation::delete_automated_reasoning_policy::DeleteAutomatedReasoningPolicyInput {
             policy_arn: self.policy_arn,
+            force: self.force,
         })
     }
 }

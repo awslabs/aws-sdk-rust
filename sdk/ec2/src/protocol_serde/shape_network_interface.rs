@@ -384,6 +384,19 @@ pub fn de_network_interface(
                 builder = builder.set_associated_subnets(var_31);
             }
             ,
+            s if s.matches("availabilityZoneId") /* AvailabilityZoneId com.amazonaws.ec2#NetworkInterface$AvailabilityZoneId */ =>  {
+                let var_32 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_availability_zone_id(var_32);
+            }
+            ,
             _ => {}
         }
     }

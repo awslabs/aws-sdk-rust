@@ -647,6 +647,12 @@ pub(crate) fn described_connector_correct_errors(
     if builder.arn.is_none() {
         builder.arn = Some(Default::default())
     }
+    if builder.egress_type.is_none() {
+        builder.egress_type = "no value was set".parse::<crate::types::ConnectorEgressType>().ok()
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::ConnectorStatus>().ok()
+    }
     builder
 }
 
@@ -822,6 +828,15 @@ pub(crate) fn tag_correct_errors(mut builder: crate::types::builders::TagBuilder
     }
     if builder.value.is_none() {
         builder.value = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn described_connector_vpc_lattice_egress_config_correct_errors(
+    mut builder: crate::types::builders::DescribedConnectorVpcLatticeEgressConfigBuilder,
+) -> crate::types::builders::DescribedConnectorVpcLatticeEgressConfigBuilder {
+    if builder.resource_configuration_arn.is_none() {
+        builder.resource_configuration_arn = Some(Default::default())
     }
     builder
 }

@@ -23,6 +23,7 @@ impl crate::operation::list_service_instance_provisioned_resources::builders::Li
 /// Fluent builder constructing a request to `ListServiceInstanceProvisionedResources`.
 ///
 /// <p>List provisioned resources for a service instance with details.</p>
+#[deprecated(note = "AWS Proton is not accepting new customers.", since = "10/07/2025")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListServiceInstanceProvisionedResourcesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -49,6 +49,8 @@ pub(crate) mod shape_duplicate_request_exception;
 
 pub(crate) mod shape_expired_token_exception;
 
+pub(crate) mod shape_idempotency_conflict_exception;
+
 pub(crate) mod shape_internal_service_error_exception;
 
 pub(crate) mod shape_invalid_customer_identifier_exception;

@@ -275,6 +275,15 @@ pub(crate) fn update_odb_network_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn update_odb_peering_connection_output_output_correct_errors(
+    mut builder: crate::operation::update_odb_peering_connection::builders::UpdateOdbPeeringConnectionOutputBuilder,
+) -> crate::operation::update_odb_peering_connection::builders::UpdateOdbPeeringConnectionOutputBuilder {
+    if builder.odb_peering_connection_id.is_none() {
+        builder.odb_peering_connection_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn cloud_autonomous_vm_cluster_correct_errors(
     mut builder: crate::types::builders::CloudAutonomousVmClusterBuilder,
 ) -> crate::types::builders::CloudAutonomousVmClusterBuilder {

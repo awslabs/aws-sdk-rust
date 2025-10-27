@@ -99,6 +99,8 @@ pub struct RemoteAccessSession {
     pub vpc_config: ::std::option::Option<crate::types::VpcConfig>,
     /// <p>The device proxy configured for the remote access session.</p>
     pub device_proxy: ::std::option::Option<crate::types::DeviceProxy>,
+    /// <p>The ARN for the app to be installed onto your device.</p>
+    pub app_upload: ::std::option::Option<::std::string::String>,
 }
 impl RemoteAccessSession {
     /// <p>The Amazon Resource Name (ARN) of the remote access session.</p>
@@ -242,6 +244,10 @@ impl RemoteAccessSession {
     pub fn device_proxy(&self) -> ::std::option::Option<&crate::types::DeviceProxy> {
         self.device_proxy.as_ref()
     }
+    /// <p>The ARN for the app to be installed onto your device.</p>
+    pub fn app_upload(&self) -> ::std::option::Option<&str> {
+        self.app_upload.as_deref()
+    }
 }
 impl RemoteAccessSession {
     /// Creates a new builder-style object to manufacture [`RemoteAccessSession`](crate::types::RemoteAccessSession).
@@ -277,6 +283,7 @@ pub struct RemoteAccessSessionBuilder {
     pub(crate) skip_app_resign: ::std::option::Option<bool>,
     pub(crate) vpc_config: ::std::option::Option<crate::types::VpcConfig>,
     pub(crate) device_proxy: ::std::option::Option<crate::types::DeviceProxy>,
+    pub(crate) app_upload: ::std::option::Option<::std::string::String>,
 }
 impl RemoteAccessSessionBuilder {
     /// <p>The Amazon Resource Name (ARN) of the remote access session.</p>
@@ -748,6 +755,20 @@ impl RemoteAccessSessionBuilder {
     pub fn get_device_proxy(&self) -> &::std::option::Option<crate::types::DeviceProxy> {
         &self.device_proxy
     }
+    /// <p>The ARN for the app to be installed onto your device.</p>
+    pub fn app_upload(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.app_upload = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN for the app to be installed onto your device.</p>
+    pub fn set_app_upload(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.app_upload = input;
+        self
+    }
+    /// <p>The ARN for the app to be installed onto your device.</p>
+    pub fn get_app_upload(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_upload
+    }
     /// Consumes the builder and constructs a [`RemoteAccessSession`](crate::types::RemoteAccessSession).
     pub fn build(self) -> crate::types::RemoteAccessSession {
         crate::types::RemoteAccessSession {
@@ -774,6 +795,7 @@ impl RemoteAccessSessionBuilder {
             skip_app_resign: self.skip_app_resign,
             vpc_config: self.vpc_config,
             device_proxy: self.device_proxy,
+            app_upload: self.app_upload,
         }
     }
 }

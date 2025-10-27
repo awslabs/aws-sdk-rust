@@ -22,7 +22,7 @@ impl crate::operation::create_load_balancer::builders::CreateLoadBalancerInputBu
 }
 /// Fluent builder constructing a request to `CreateLoadBalancer`.
 ///
-/// <p>Creates a Lightsail load balancer. To learn more about deciding whether to load balance your application, see <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/configure-lightsail-instances-for-load-balancing">Configure your Lightsail instances for load balancing</a>. You can create up to 5 load balancers per AWS Region in your account.</p>
+/// <p>Creates a Lightsail load balancer. To learn more about deciding whether to load balance your application, see <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/configure-lightsail-instances-for-load-balancing">Configure your Lightsail instances for load balancing</a>. You can create up to 10 load balancers per AWS Region in your account.</p>
 /// <p>When you create a load balancer, you can specify a unique name and port settings. To change additional load balancer settings, use the <code>UpdateLoadBalancerAttribute</code> operation.</p>
 /// <p>The <code>create load balancer</code> operation supports tag-based access control via request tags. For more information, see the <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

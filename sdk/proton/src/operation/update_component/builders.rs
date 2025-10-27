@@ -27,6 +27,7 @@ impl crate::operation::update_component::builders::UpdateComponentInputBuilder {
 /// <p>You can't update a component while its deployment status, or the deployment status of a service instance attached to it, is <code>IN_PROGRESS</code>.</p>
 /// </note>
 /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
+#[deprecated(note = "AWS Proton is not accepting new customers.", since = "10/07/2025")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateComponentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

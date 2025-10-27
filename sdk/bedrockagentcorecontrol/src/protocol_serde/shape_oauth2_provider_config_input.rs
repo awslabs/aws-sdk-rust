@@ -40,6 +40,24 @@ pub fn ser_oauth2_provider_config_input(
             crate::protocol_serde::shape_microsoft_oauth2_provider_config_input::ser_microsoft_oauth2_provider_config_input(&mut object_6, inner)?;
             object_6.finish();
         }
+        crate::types::Oauth2ProviderConfigInput::AtlassianOauth2ProviderConfig(inner) => {
+            #[allow(unused_mut)]
+            let mut object_7 = object_4.key("atlassianOauth2ProviderConfig").start_object();
+            crate::protocol_serde::shape_atlassian_oauth2_provider_config_input::ser_atlassian_oauth2_provider_config_input(&mut object_7, inner)?;
+            object_7.finish();
+        }
+        crate::types::Oauth2ProviderConfigInput::LinkedinOauth2ProviderConfig(inner) => {
+            #[allow(unused_mut)]
+            let mut object_8 = object_4.key("linkedinOauth2ProviderConfig").start_object();
+            crate::protocol_serde::shape_linkedin_oauth2_provider_config_input::ser_linkedin_oauth2_provider_config_input(&mut object_8, inner)?;
+            object_8.finish();
+        }
+        crate::types::Oauth2ProviderConfigInput::IncludedOauth2ProviderConfig(inner) => {
+            #[allow(unused_mut)]
+            let mut object_9 = object_4.key("includedOauth2ProviderConfig").start_object();
+            crate::protocol_serde::shape_included_oauth2_provider_config_input::ser_included_oauth2_provider_config_input(&mut object_9, inner)?;
+            object_9.finish();
+        }
         crate::types::Oauth2ProviderConfigInput::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "Oauth2ProviderConfigInput",

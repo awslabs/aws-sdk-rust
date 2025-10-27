@@ -10,6 +10,8 @@ pub struct StrategyConfiguration {
     pub extraction: ::std::option::Option<crate::types::ExtractionConfiguration>,
     /// <p>The consolidation configuration for the memory strategy.</p>
     pub consolidation: ::std::option::Option<crate::types::ConsolidationConfiguration>,
+    /// <p>Self-managed configuration settings.</p>
+    pub self_managed_configuration: ::std::option::Option<crate::types::SelfManagedConfiguration>,
 }
 impl StrategyConfiguration {
     /// <p>The type of override for the strategy configuration.</p>
@@ -23,6 +25,10 @@ impl StrategyConfiguration {
     /// <p>The consolidation configuration for the memory strategy.</p>
     pub fn consolidation(&self) -> ::std::option::Option<&crate::types::ConsolidationConfiguration> {
         self.consolidation.as_ref()
+    }
+    /// <p>Self-managed configuration settings.</p>
+    pub fn self_managed_configuration(&self) -> ::std::option::Option<&crate::types::SelfManagedConfiguration> {
+        self.self_managed_configuration.as_ref()
     }
 }
 impl StrategyConfiguration {
@@ -39,6 +45,7 @@ pub struct StrategyConfigurationBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::OverrideType>,
     pub(crate) extraction: ::std::option::Option<crate::types::ExtractionConfiguration>,
     pub(crate) consolidation: ::std::option::Option<crate::types::ConsolidationConfiguration>,
+    pub(crate) self_managed_configuration: ::std::option::Option<crate::types::SelfManagedConfiguration>,
 }
 impl StrategyConfigurationBuilder {
     /// <p>The type of override for the strategy configuration.</p>
@@ -83,12 +90,27 @@ impl StrategyConfigurationBuilder {
     pub fn get_consolidation(&self) -> &::std::option::Option<crate::types::ConsolidationConfiguration> {
         &self.consolidation
     }
+    /// <p>Self-managed configuration settings.</p>
+    pub fn self_managed_configuration(mut self, input: crate::types::SelfManagedConfiguration) -> Self {
+        self.self_managed_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Self-managed configuration settings.</p>
+    pub fn set_self_managed_configuration(mut self, input: ::std::option::Option<crate::types::SelfManagedConfiguration>) -> Self {
+        self.self_managed_configuration = input;
+        self
+    }
+    /// <p>Self-managed configuration settings.</p>
+    pub fn get_self_managed_configuration(&self) -> &::std::option::Option<crate::types::SelfManagedConfiguration> {
+        &self.self_managed_configuration
+    }
     /// Consumes the builder and constructs a [`StrategyConfiguration`](crate::types::StrategyConfiguration).
     pub fn build(self) -> crate::types::StrategyConfiguration {
         crate::types::StrategyConfiguration {
             r#type: self.r#type,
             extraction: self.extraction,
             consolidation: self.consolidation,
+            self_managed_configuration: self.self_managed_configuration,
         }
     }
 }

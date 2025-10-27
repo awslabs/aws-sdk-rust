@@ -50,6 +50,17 @@ pub fn ser_rule_condition(
     if let Some(var_19) = &input.source_ip_config {
         crate::protocol_serde::shape_source_ip_condition_config::ser_source_ip_condition_config(scope_18, var_19)?;
     }
+    #[allow(unused_mut)]
+    let mut scope_20 = writer.prefix("RegexValues");
+    if let Some(var_21) = &input.regex_values {
+        let mut list_23 = scope_20.start_list(false, None);
+        for item_22 in var_21 {
+            #[allow(unused_mut)]
+            let mut entry_24 = list_23.entry();
+            entry_24.string(item_22);
+        }
+        list_23.finish();
+    }
     Ok(())
 }
 
@@ -62,7 +73,7 @@ pub fn de_rule_condition(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Field") /* Field com.amazonaws.elasticloadbalancingv2#RuleCondition$Field */ =>  {
-                let var_20 =
+                let var_25 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -71,77 +82,87 @@ pub fn de_rule_condition(
                         ?
                     )
                 ;
-                builder = builder.set_field(var_20);
+                builder = builder.set_field(var_25);
             }
             ,
             s if s.matches("Values") /* Values com.amazonaws.elasticloadbalancingv2#RuleCondition$Values */ =>  {
-                let var_21 =
+                let var_26 =
                     Some(
                         crate::protocol_serde::shape_list_of_string::de_list_of_string(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_values(var_21);
+                builder = builder.set_values(var_26);
             }
             ,
             s if s.matches("HostHeaderConfig") /* HostHeaderConfig com.amazonaws.elasticloadbalancingv2#RuleCondition$HostHeaderConfig */ =>  {
-                let var_22 =
+                let var_27 =
                     Some(
                         crate::protocol_serde::shape_host_header_condition_config::de_host_header_condition_config(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_host_header_config(var_22);
+                builder = builder.set_host_header_config(var_27);
             }
             ,
             s if s.matches("PathPatternConfig") /* PathPatternConfig com.amazonaws.elasticloadbalancingv2#RuleCondition$PathPatternConfig */ =>  {
-                let var_23 =
+                let var_28 =
                     Some(
                         crate::protocol_serde::shape_path_pattern_condition_config::de_path_pattern_condition_config(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_path_pattern_config(var_23);
+                builder = builder.set_path_pattern_config(var_28);
             }
             ,
             s if s.matches("HttpHeaderConfig") /* HttpHeaderConfig com.amazonaws.elasticloadbalancingv2#RuleCondition$HttpHeaderConfig */ =>  {
-                let var_24 =
+                let var_29 =
                     Some(
                         crate::protocol_serde::shape_http_header_condition_config::de_http_header_condition_config(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_http_header_config(var_24);
+                builder = builder.set_http_header_config(var_29);
             }
             ,
             s if s.matches("QueryStringConfig") /* QueryStringConfig com.amazonaws.elasticloadbalancingv2#RuleCondition$QueryStringConfig */ =>  {
-                let var_25 =
+                let var_30 =
                     Some(
                         crate::protocol_serde::shape_query_string_condition_config::de_query_string_condition_config(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_query_string_config(var_25);
+                builder = builder.set_query_string_config(var_30);
             }
             ,
             s if s.matches("HttpRequestMethodConfig") /* HttpRequestMethodConfig com.amazonaws.elasticloadbalancingv2#RuleCondition$HttpRequestMethodConfig */ =>  {
-                let var_26 =
+                let var_31 =
                     Some(
                         crate::protocol_serde::shape_http_request_method_condition_config::de_http_request_method_condition_config(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_http_request_method_config(var_26);
+                builder = builder.set_http_request_method_config(var_31);
             }
             ,
             s if s.matches("SourceIpConfig") /* SourceIpConfig com.amazonaws.elasticloadbalancingv2#RuleCondition$SourceIpConfig */ =>  {
-                let var_27 =
+                let var_32 =
                     Some(
                         crate::protocol_serde::shape_source_ip_condition_config::de_source_ip_condition_config(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_source_ip_config(var_27);
+                builder = builder.set_source_ip_config(var_32);
+            }
+            ,
+            s if s.matches("RegexValues") /* RegexValues com.amazonaws.elasticloadbalancingv2#RuleCondition$RegexValues */ =>  {
+                let var_33 =
+                    Some(
+                        crate::protocol_serde::shape_list_of_string::de_list_of_string(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_regex_values(var_33);
             }
             ,
             _ => {}

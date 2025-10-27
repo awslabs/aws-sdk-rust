@@ -88,89 +88,113 @@ pub fn ser_data_source_parameters(
             crate::protocol_serde::shape_s3_parameters::ser_s3_parameters(&mut object_14, inner)?;
             object_14.finish();
         }
+        crate::types::DataSourceParameters::S3KnowledgeBaseParameters(inner) => {
+            #[allow(unused_mut)]
+            let mut object_15 = object_5.key("S3KnowledgeBaseParameters").start_object();
+            crate::protocol_serde::shape_s3_knowledge_base_parameters::ser_s3_knowledge_base_parameters(&mut object_15, inner)?;
+            object_15.finish();
+        }
         crate::types::DataSourceParameters::ServiceNowParameters(inner) => {
             #[allow(unused_mut)]
-            let mut object_15 = object_5.key("ServiceNowParameters").start_object();
-            crate::protocol_serde::shape_service_now_parameters::ser_service_now_parameters(&mut object_15, inner)?;
-            object_15.finish();
+            let mut object_16 = object_5.key("ServiceNowParameters").start_object();
+            crate::protocol_serde::shape_service_now_parameters::ser_service_now_parameters(&mut object_16, inner)?;
+            object_16.finish();
         }
         crate::types::DataSourceParameters::SnowflakeParameters(inner) => {
             #[allow(unused_mut)]
-            let mut object_16 = object_5.key("SnowflakeParameters").start_object();
-            crate::protocol_serde::shape_snowflake_parameters::ser_snowflake_parameters(&mut object_16, inner)?;
-            object_16.finish();
+            let mut object_17 = object_5.key("SnowflakeParameters").start_object();
+            crate::protocol_serde::shape_snowflake_parameters::ser_snowflake_parameters(&mut object_17, inner)?;
+            object_17.finish();
         }
         crate::types::DataSourceParameters::SparkParameters(inner) => {
             #[allow(unused_mut)]
-            let mut object_17 = object_5.key("SparkParameters").start_object();
-            crate::protocol_serde::shape_spark_parameters::ser_spark_parameters(&mut object_17, inner)?;
-            object_17.finish();
+            let mut object_18 = object_5.key("SparkParameters").start_object();
+            crate::protocol_serde::shape_spark_parameters::ser_spark_parameters(&mut object_18, inner)?;
+            object_18.finish();
         }
         crate::types::DataSourceParameters::SqlServerParameters(inner) => {
             #[allow(unused_mut)]
-            let mut object_18 = object_5.key("SqlServerParameters").start_object();
-            crate::protocol_serde::shape_sql_server_parameters::ser_sql_server_parameters(&mut object_18, inner)?;
-            object_18.finish();
+            let mut object_19 = object_5.key("SqlServerParameters").start_object();
+            crate::protocol_serde::shape_sql_server_parameters::ser_sql_server_parameters(&mut object_19, inner)?;
+            object_19.finish();
         }
         crate::types::DataSourceParameters::TeradataParameters(inner) => {
             #[allow(unused_mut)]
-            let mut object_19 = object_5.key("TeradataParameters").start_object();
-            crate::protocol_serde::shape_teradata_parameters::ser_teradata_parameters(&mut object_19, inner)?;
-            object_19.finish();
+            let mut object_20 = object_5.key("TeradataParameters").start_object();
+            crate::protocol_serde::shape_teradata_parameters::ser_teradata_parameters(&mut object_20, inner)?;
+            object_20.finish();
         }
         crate::types::DataSourceParameters::TwitterParameters(inner) => {
             #[allow(unused_mut)]
-            let mut object_20 = object_5.key("TwitterParameters").start_object();
-            crate::protocol_serde::shape_twitter_parameters::ser_twitter_parameters(&mut object_20, inner)?;
-            object_20.finish();
+            let mut object_21 = object_5.key("TwitterParameters").start_object();
+            crate::protocol_serde::shape_twitter_parameters::ser_twitter_parameters(&mut object_21, inner)?;
+            object_21.finish();
         }
         crate::types::DataSourceParameters::AmazonOpenSearchParameters(inner) => {
             #[allow(unused_mut)]
-            let mut object_21 = object_5.key("AmazonOpenSearchParameters").start_object();
-            crate::protocol_serde::shape_amazon_open_search_parameters::ser_amazon_open_search_parameters(&mut object_21, inner)?;
-            object_21.finish();
+            let mut object_22 = object_5.key("AmazonOpenSearchParameters").start_object();
+            crate::protocol_serde::shape_amazon_open_search_parameters::ser_amazon_open_search_parameters(&mut object_22, inner)?;
+            object_22.finish();
         }
         crate::types::DataSourceParameters::ExasolParameters(inner) => {
             #[allow(unused_mut)]
-            let mut object_22 = object_5.key("ExasolParameters").start_object();
-            crate::protocol_serde::shape_exasol_parameters::ser_exasol_parameters(&mut object_22, inner)?;
-            object_22.finish();
+            let mut object_23 = object_5.key("ExasolParameters").start_object();
+            crate::protocol_serde::shape_exasol_parameters::ser_exasol_parameters(&mut object_23, inner)?;
+            object_23.finish();
         }
         crate::types::DataSourceParameters::DatabricksParameters(inner) => {
             #[allow(unused_mut)]
-            let mut object_23 = object_5.key("DatabricksParameters").start_object();
-            crate::protocol_serde::shape_databricks_parameters::ser_databricks_parameters(&mut object_23, inner)?;
-            object_23.finish();
+            let mut object_24 = object_5.key("DatabricksParameters").start_object();
+            crate::protocol_serde::shape_databricks_parameters::ser_databricks_parameters(&mut object_24, inner)?;
+            object_24.finish();
         }
         crate::types::DataSourceParameters::StarburstParameters(inner) => {
             #[allow(unused_mut)]
-            let mut object_24 = object_5.key("StarburstParameters").start_object();
-            crate::protocol_serde::shape_starburst_parameters::ser_starburst_parameters(&mut object_24, inner)?;
-            object_24.finish();
+            let mut object_25 = object_5.key("StarburstParameters").start_object();
+            crate::protocol_serde::shape_starburst_parameters::ser_starburst_parameters(&mut object_25, inner)?;
+            object_25.finish();
         }
         crate::types::DataSourceParameters::TrinoParameters(inner) => {
             #[allow(unused_mut)]
-            let mut object_25 = object_5.key("TrinoParameters").start_object();
-            crate::protocol_serde::shape_trino_parameters::ser_trino_parameters(&mut object_25, inner)?;
-            object_25.finish();
+            let mut object_26 = object_5.key("TrinoParameters").start_object();
+            crate::protocol_serde::shape_trino_parameters::ser_trino_parameters(&mut object_26, inner)?;
+            object_26.finish();
         }
         crate::types::DataSourceParameters::BigQueryParameters(inner) => {
             #[allow(unused_mut)]
-            let mut object_26 = object_5.key("BigQueryParameters").start_object();
-            crate::protocol_serde::shape_big_query_parameters::ser_big_query_parameters(&mut object_26, inner)?;
-            object_26.finish();
+            let mut object_27 = object_5.key("BigQueryParameters").start_object();
+            crate::protocol_serde::shape_big_query_parameters::ser_big_query_parameters(&mut object_27, inner)?;
+            object_27.finish();
         }
         crate::types::DataSourceParameters::ImpalaParameters(inner) => {
             #[allow(unused_mut)]
-            let mut object_27 = object_5.key("ImpalaParameters").start_object();
-            crate::protocol_serde::shape_impala_parameters::ser_impala_parameters(&mut object_27, inner)?;
-            object_27.finish();
+            let mut object_28 = object_5.key("ImpalaParameters").start_object();
+            crate::protocol_serde::shape_impala_parameters::ser_impala_parameters(&mut object_28, inner)?;
+            object_28.finish();
         }
         crate::types::DataSourceParameters::CustomConnectionParameters(inner) => {
             #[allow(unused_mut)]
-            let mut object_28 = object_5.key("CustomConnectionParameters").start_object();
-            crate::protocol_serde::shape_custom_connection_parameters::ser_custom_connection_parameters(&mut object_28, inner)?;
-            object_28.finish();
+            let mut object_29 = object_5.key("CustomConnectionParameters").start_object();
+            crate::protocol_serde::shape_custom_connection_parameters::ser_custom_connection_parameters(&mut object_29, inner)?;
+            object_29.finish();
+        }
+        crate::types::DataSourceParameters::WebCrawlerParameters(inner) => {
+            #[allow(unused_mut)]
+            let mut object_30 = object_5.key("WebCrawlerParameters").start_object();
+            crate::protocol_serde::shape_web_crawler_parameters::ser_web_crawler_parameters(&mut object_30, inner)?;
+            object_30.finish();
+        }
+        crate::types::DataSourceParameters::ConfluenceParameters(inner) => {
+            #[allow(unused_mut)]
+            let mut object_31 = object_5.key("ConfluenceParameters").start_object();
+            crate::protocol_serde::shape_confluence_parameters::ser_confluence_parameters(&mut object_31, inner)?;
+            object_31.finish();
+        }
+        crate::types::DataSourceParameters::QBusinessParameters(inner) => {
+            #[allow(unused_mut)]
+            let mut object_32 = object_5.key("QBusinessParameters").start_object();
+            crate::protocol_serde::shape_q_business_parameters::ser_q_business_parameters(&mut object_32, inner)?;
+            object_32.finish();
         }
         crate::types::DataSourceParameters::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
@@ -291,6 +315,13 @@ where
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'S3Parameters' cannot be null")
                             })?,
                         )),
+                        "S3KnowledgeBaseParameters" => Some(crate::types::DataSourceParameters::S3KnowledgeBaseParameters(
+                            crate::protocol_serde::shape_s3_knowledge_base_parameters::de_s3_knowledge_base_parameters(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                    "value for 'S3KnowledgeBaseParameters' cannot be null",
+                                )
+                            })?,
+                        )),
                         "ServiceNowParameters" => Some(crate::types::DataSourceParameters::ServiceNowParameters(
                             crate::protocol_serde::shape_service_now_parameters::de_service_now_parameters(tokens)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'ServiceNowParameters' cannot be null")
@@ -365,6 +396,21 @@ where
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom(
                                     "value for 'CustomConnectionParameters' cannot be null",
                                 )
+                            })?,
+                        )),
+                        "WebCrawlerParameters" => Some(crate::types::DataSourceParameters::WebCrawlerParameters(
+                            crate::protocol_serde::shape_web_crawler_parameters::de_web_crawler_parameters(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'WebCrawlerParameters' cannot be null")
+                            })?,
+                        )),
+                        "ConfluenceParameters" => Some(crate::types::DataSourceParameters::ConfluenceParameters(
+                            crate::protocol_serde::shape_confluence_parameters::de_confluence_parameters(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'ConfluenceParameters' cannot be null")
+                            })?,
+                        )),
+                        "QBusinessParameters" => Some(crate::types::DataSourceParameters::QBusinessParameters(
+                            crate::protocol_serde::shape_q_business_parameters::de_q_business_parameters(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'QBusinessParameters' cannot be null")
                             })?,
                         )),
                         _ => {

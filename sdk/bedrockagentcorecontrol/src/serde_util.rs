@@ -1049,6 +1049,15 @@ pub(crate) fn api_key_credential_provider_item_correct_errors(
     builder
 }
 
+pub(crate) fn atlassian_oauth2_provider_config_output_correct_errors(
+    mut builder: crate::types::builders::AtlassianOauth2ProviderConfigOutputBuilder,
+) -> crate::types::builders::AtlassianOauth2ProviderConfigOutputBuilder {
+    if builder.oauth_discovery.is_none() {
+        builder.oauth_discovery = Some(crate::types::Oauth2Discovery::Unknown)
+    }
+    builder
+}
+
 pub(crate) fn browser_summary_correct_errors(
     mut builder: crate::types::builders::BrowserSummaryBuilder,
 ) -> crate::types::builders::BrowserSummaryBuilder {
@@ -1148,6 +1157,36 @@ pub(crate) fn gateway_summary_correct_errors(
     builder
 }
 
+pub(crate) fn gateway_target_correct_errors(
+    mut builder: crate::types::builders::GatewayTargetBuilder,
+) -> crate::types::builders::GatewayTargetBuilder {
+    if builder.gateway_arn.is_none() {
+        builder.gateway_arn = Some(Default::default())
+    }
+    if builder.target_id.is_none() {
+        builder.target_id = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::TargetStatus>().ok()
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.target_configuration.is_none() {
+        builder.target_configuration = Some(crate::types::TargetConfiguration::Unknown)
+    }
+    if builder.credential_provider_configurations.is_none() {
+        builder.credential_provider_configurations = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn github_oauth2_provider_config_output_correct_errors(
     mut builder: crate::types::builders::GithubOauth2ProviderConfigOutputBuilder,
 ) -> crate::types::builders::GithubOauth2ProviderConfigOutputBuilder {
@@ -1160,6 +1199,24 @@ pub(crate) fn github_oauth2_provider_config_output_correct_errors(
 pub(crate) fn google_oauth2_provider_config_output_correct_errors(
     mut builder: crate::types::builders::GoogleOauth2ProviderConfigOutputBuilder,
 ) -> crate::types::builders::GoogleOauth2ProviderConfigOutputBuilder {
+    if builder.oauth_discovery.is_none() {
+        builder.oauth_discovery = Some(crate::types::Oauth2Discovery::Unknown)
+    }
+    builder
+}
+
+pub(crate) fn included_oauth2_provider_config_output_correct_errors(
+    mut builder: crate::types::builders::IncludedOauth2ProviderConfigOutputBuilder,
+) -> crate::types::builders::IncludedOauth2ProviderConfigOutputBuilder {
+    if builder.oauth_discovery.is_none() {
+        builder.oauth_discovery = Some(crate::types::Oauth2Discovery::Unknown)
+    }
+    builder
+}
+
+pub(crate) fn linkedin_oauth2_provider_config_output_correct_errors(
+    mut builder: crate::types::builders::LinkedinOauth2ProviderConfigOutputBuilder,
+) -> crate::types::builders::LinkedinOauth2ProviderConfigOutputBuilder {
     if builder.oauth_discovery.is_none() {
         builder.oauth_discovery = Some(crate::types::Oauth2Discovery::Unknown)
     }
@@ -1303,6 +1360,15 @@ pub(crate) fn mcp_lambda_target_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn mcp_server_target_configuration_correct_errors(
+    mut builder: crate::types::builders::McpServerTargetConfigurationBuilder,
+) -> crate::types::builders::McpServerTargetConfigurationBuilder {
+    if builder.endpoint.is_none() {
+        builder.endpoint = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn memory_strategy_correct_errors(
     mut builder: crate::types::builders::MemoryStrategyBuilder,
 ) -> crate::types::builders::MemoryStrategyBuilder {
@@ -1353,6 +1419,36 @@ pub(crate) fn oauth2_authorization_server_metadata_correct_errors(
     }
     if builder.token_endpoint.is_none() {
         builder.token_endpoint = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn self_managed_configuration_correct_errors(
+    mut builder: crate::types::builders::SelfManagedConfigurationBuilder,
+) -> crate::types::builders::SelfManagedConfigurationBuilder {
+    if builder.trigger_conditions.is_none() {
+        builder.trigger_conditions = Some(Default::default())
+    }
+    if builder.invocation_configuration.is_none() {
+        builder.invocation_configuration = {
+            let builder = crate::types::builders::InvocationConfigurationBuilder::default();
+            crate::serde_util::invocation_configuration_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.historical_context_window_size.is_none() {
+        builder.historical_context_window_size = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn invocation_configuration_correct_errors(
+    mut builder: crate::types::builders::InvocationConfigurationBuilder,
+) -> crate::types::builders::InvocationConfigurationBuilder {
+    if builder.topic_arn.is_none() {
+        builder.topic_arn = Some(Default::default())
+    }
+    if builder.payload_delivery_bucket_name.is_none() {
+        builder.payload_delivery_bucket_name = Some(Default::default())
     }
     builder
 }

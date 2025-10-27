@@ -23,6 +23,7 @@ impl crate::operation::list_repositories::builders::ListRepositoriesInputBuilder
 /// Fluent builder constructing a request to `ListRepositories`.
 ///
 /// <p>List linked repositories with detail data.</p>
+#[deprecated(note = "AWS Proton is not accepting new customers.", since = "10/07/2025")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListRepositoriesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -217,6 +217,8 @@ pub(crate) mod shape_list_resources_associated_to_custom_line_item_filter;
 
 pub(crate) mod shape_list_resources_associated_to_custom_line_item_response_list;
 
+pub(crate) mod shape_presentation_object;
+
 pub(crate) mod shape_pricing_plan_arns;
 
 pub(crate) mod shape_pricing_plan_list;

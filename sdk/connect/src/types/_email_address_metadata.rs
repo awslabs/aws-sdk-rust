@@ -14,6 +14,8 @@ pub struct EmailAddressMetadata {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The display name of email address.</p>
     pub display_name: ::std::option::Option<::std::string::String>,
+    /// <p>A list of alias configurations for this email address, showing which email addresses forward to this primary address. Each configuration contains the email address ID of an alias that forwards emails to this address.</p>
+    pub alias_configurations: ::std::option::Option<::std::vec::Vec<crate::types::AliasConfiguration>>,
 }
 impl EmailAddressMetadata {
     /// <p>The identifier of the email address.</p>
@@ -36,6 +38,12 @@ impl EmailAddressMetadata {
     pub fn display_name(&self) -> ::std::option::Option<&str> {
         self.display_name.as_deref()
     }
+    /// <p>A list of alias configurations for this email address, showing which email addresses forward to this primary address. Each configuration contains the email address ID of an alias that forwards emails to this address.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.alias_configurations.is_none()`.
+    pub fn alias_configurations(&self) -> &[crate::types::AliasConfiguration] {
+        self.alias_configurations.as_deref().unwrap_or_default()
+    }
 }
 impl ::std::fmt::Debug for EmailAddressMetadata {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -45,6 +53,7 @@ impl ::std::fmt::Debug for EmailAddressMetadata {
         formatter.field("email_address", &"*** Sensitive Data Redacted ***");
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("display_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("alias_configurations", &self.alias_configurations);
         formatter.finish()
     }
 }
@@ -64,6 +73,7 @@ pub struct EmailAddressMetadataBuilder {
     pub(crate) email_address: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
+    pub(crate) alias_configurations: ::std::option::Option<::std::vec::Vec<crate::types::AliasConfiguration>>,
 }
 impl EmailAddressMetadataBuilder {
     /// <p>The identifier of the email address.</p>
@@ -136,6 +146,26 @@ impl EmailAddressMetadataBuilder {
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.display_name
     }
+    /// Appends an item to `alias_configurations`.
+    ///
+    /// To override the contents of this collection use [`set_alias_configurations`](Self::set_alias_configurations).
+    ///
+    /// <p>A list of alias configurations for this email address, showing which email addresses forward to this primary address. Each configuration contains the email address ID of an alias that forwards emails to this address.</p>
+    pub fn alias_configurations(mut self, input: crate::types::AliasConfiguration) -> Self {
+        let mut v = self.alias_configurations.unwrap_or_default();
+        v.push(input);
+        self.alias_configurations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of alias configurations for this email address, showing which email addresses forward to this primary address. Each configuration contains the email address ID of an alias that forwards emails to this address.</p>
+    pub fn set_alias_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AliasConfiguration>>) -> Self {
+        self.alias_configurations = input;
+        self
+    }
+    /// <p>A list of alias configurations for this email address, showing which email addresses forward to this primary address. Each configuration contains the email address ID of an alias that forwards emails to this address.</p>
+    pub fn get_alias_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AliasConfiguration>> {
+        &self.alias_configurations
+    }
     /// Consumes the builder and constructs a [`EmailAddressMetadata`](crate::types::EmailAddressMetadata).
     pub fn build(self) -> crate::types::EmailAddressMetadata {
         crate::types::EmailAddressMetadata {
@@ -144,6 +174,7 @@ impl EmailAddressMetadataBuilder {
             email_address: self.email_address,
             description: self.description,
             display_name: self.display_name,
+            alias_configurations: self.alias_configurations,
         }
     }
 }
@@ -155,6 +186,7 @@ impl ::std::fmt::Debug for EmailAddressMetadataBuilder {
         formatter.field("email_address", &"*** Sensitive Data Redacted ***");
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("display_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("alias_configurations", &self.alias_configurations);
         formatter.finish()
     }
 }

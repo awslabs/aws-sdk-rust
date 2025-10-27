@@ -4,17 +4,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MultiRegionProperties {
-    /// <p>The that serves as the witness region for a multi-Region cluster. The witness region helps maintain cluster consistency and quorum.</p>
+    /// <p>The Region that serves as the witness region for a multi-Region cluster. The witness Region helps maintain cluster consistency and quorum.</p>
     pub witness_region: ::std::option::Option<::std::string::String>,
-    /// <p>The set of linked clusters that form the multi-Region cluster configuration. Each linked cluster represents a database instance in a different Region.</p>
+    /// <p>The set of peered clusters that form the multi-Region cluster configuration. Each peered cluster represents a database instance in a different Region.</p>
     pub clusters: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl MultiRegionProperties {
-    /// <p>The that serves as the witness region for a multi-Region cluster. The witness region helps maintain cluster consistency and quorum.</p>
+    /// <p>The Region that serves as the witness region for a multi-Region cluster. The witness Region helps maintain cluster consistency and quorum.</p>
     pub fn witness_region(&self) -> ::std::option::Option<&str> {
         self.witness_region.as_deref()
     }
-    /// <p>The set of linked clusters that form the multi-Region cluster configuration. Each linked cluster represents a database instance in a different Region.</p>
+    /// <p>The set of peered clusters that form the multi-Region cluster configuration. Each peered cluster represents a database instance in a different Region.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.clusters.is_none()`.
     pub fn clusters(&self) -> &[::std::string::String] {
@@ -36,17 +36,17 @@ pub struct MultiRegionPropertiesBuilder {
     pub(crate) clusters: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl MultiRegionPropertiesBuilder {
-    /// <p>The that serves as the witness region for a multi-Region cluster. The witness region helps maintain cluster consistency and quorum.</p>
+    /// <p>The Region that serves as the witness region for a multi-Region cluster. The witness Region helps maintain cluster consistency and quorum.</p>
     pub fn witness_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.witness_region = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The that serves as the witness region for a multi-Region cluster. The witness region helps maintain cluster consistency and quorum.</p>
+    /// <p>The Region that serves as the witness region for a multi-Region cluster. The witness Region helps maintain cluster consistency and quorum.</p>
     pub fn set_witness_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.witness_region = input;
         self
     }
-    /// <p>The that serves as the witness region for a multi-Region cluster. The witness region helps maintain cluster consistency and quorum.</p>
+    /// <p>The Region that serves as the witness region for a multi-Region cluster. The witness Region helps maintain cluster consistency and quorum.</p>
     pub fn get_witness_region(&self) -> &::std::option::Option<::std::string::String> {
         &self.witness_region
     }
@@ -54,19 +54,19 @@ impl MultiRegionPropertiesBuilder {
     ///
     /// To override the contents of this collection use [`set_clusters`](Self::set_clusters).
     ///
-    /// <p>The set of linked clusters that form the multi-Region cluster configuration. Each linked cluster represents a database instance in a different Region.</p>
+    /// <p>The set of peered clusters that form the multi-Region cluster configuration. Each peered cluster represents a database instance in a different Region.</p>
     pub fn clusters(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.clusters.unwrap_or_default();
         v.push(input.into());
         self.clusters = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The set of linked clusters that form the multi-Region cluster configuration. Each linked cluster represents a database instance in a different Region.</p>
+    /// <p>The set of peered clusters that form the multi-Region cluster configuration. Each peered cluster represents a database instance in a different Region.</p>
     pub fn set_clusters(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.clusters = input;
         self
     }
-    /// <p>The set of linked clusters that form the multi-Region cluster configuration. Each linked cluster represents a database instance in a different Region.</p>
+    /// <p>The set of peered clusters that form the multi-Region cluster configuration. Each peered cluster represents a database instance in a different Region.</p>
     pub fn get_clusters(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.clusters
     }
