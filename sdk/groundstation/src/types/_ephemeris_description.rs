@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EphemerisDescription {
-    /// <p>Source S3 object used for the ephemeris.</p>
+    /// <p>Source Amazon S3 object used for the ephemeris.</p>
     pub source_s3_object: ::std::option::Option<crate::types::S3Object>,
     /// <p>Supplied ephemeris data.</p>
     pub ephemeris_data: ::std::option::Option<::std::string::String>,
 }
 impl EphemerisDescription {
-    /// <p>Source S3 object used for the ephemeris.</p>
+    /// <p>Source Amazon S3 object used for the ephemeris.</p>
     pub fn source_s3_object(&self) -> ::std::option::Option<&crate::types::S3Object> {
         self.source_s3_object.as_ref()
     }
@@ -34,17 +34,17 @@ pub struct EphemerisDescriptionBuilder {
     pub(crate) ephemeris_data: ::std::option::Option<::std::string::String>,
 }
 impl EphemerisDescriptionBuilder {
-    /// <p>Source S3 object used for the ephemeris.</p>
+    /// <p>Source Amazon S3 object used for the ephemeris.</p>
     pub fn source_s3_object(mut self, input: crate::types::S3Object) -> Self {
         self.source_s3_object = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Source S3 object used for the ephemeris.</p>
+    /// <p>Source Amazon S3 object used for the ephemeris.</p>
     pub fn set_source_s3_object(mut self, input: ::std::option::Option<crate::types::S3Object>) -> Self {
         self.source_s3_object = input;
         self
     }
-    /// <p>Source S3 object used for the ephemeris.</p>
+    /// <p>Source Amazon S3 object used for the ephemeris.</p>
     pub fn get_source_s3_object(&self) -> &::std::option::Option<crate::types::S3Object> {
         &self.source_s3_object
     }

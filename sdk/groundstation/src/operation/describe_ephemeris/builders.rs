@@ -22,7 +22,7 @@ impl crate::operation::describe_ephemeris::builders::DescribeEphemerisInputBuild
 }
 /// Fluent builder constructing a request to `DescribeEphemeris`.
 ///
-/// <p>Describes an existing ephemeris.</p>
+/// <p>Retrieve information about an existing ephemeris.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeEphemerisFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

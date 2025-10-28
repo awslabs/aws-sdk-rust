@@ -16,6 +16,8 @@ pub struct ReserveContactInput {
     pub ground_station: ::std::option::Option<::std::string::String>,
     /// <p>Tags assigned to a contact.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>Tracking configuration overrides for the contact.</p>
+    pub tracking_overrides: ::std::option::Option<crate::types::TrackingOverrides>,
 }
 impl ReserveContactInput {
     /// <p>ARN of a mission profile.</p>
@@ -42,6 +44,10 @@ impl ReserveContactInput {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
+    /// <p>Tracking configuration overrides for the contact.</p>
+    pub fn tracking_overrides(&self) -> ::std::option::Option<&crate::types::TrackingOverrides> {
+        self.tracking_overrides.as_ref()
+    }
 }
 impl ReserveContactInput {
     /// Creates a new builder-style object to manufacture [`ReserveContactInput`](crate::operation::reserve_contact::ReserveContactInput).
@@ -60,6 +66,7 @@ pub struct ReserveContactInputBuilder {
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) ground_station: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tracking_overrides: ::std::option::Option<crate::types::TrackingOverrides>,
 }
 impl ReserveContactInputBuilder {
     /// <p>ARN of a mission profile.</p>
@@ -78,7 +85,6 @@ impl ReserveContactInputBuilder {
         &self.mission_profile_arn
     }
     /// <p>ARN of a satellite</p>
-    /// This field is required.
     pub fn satellite_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.satellite_arn = ::std::option::Option::Some(input.into());
         self
@@ -157,6 +163,20 @@ impl ReserveContactInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// <p>Tracking configuration overrides for the contact.</p>
+    pub fn tracking_overrides(mut self, input: crate::types::TrackingOverrides) -> Self {
+        self.tracking_overrides = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Tracking configuration overrides for the contact.</p>
+    pub fn set_tracking_overrides(mut self, input: ::std::option::Option<crate::types::TrackingOverrides>) -> Self {
+        self.tracking_overrides = input;
+        self
+    }
+    /// <p>Tracking configuration overrides for the contact.</p>
+    pub fn get_tracking_overrides(&self) -> &::std::option::Option<crate::types::TrackingOverrides> {
+        &self.tracking_overrides
+    }
     /// Consumes the builder and constructs a [`ReserveContactInput`](crate::operation::reserve_contact::ReserveContactInput).
     pub fn build(
         self,
@@ -168,6 +188,7 @@ impl ReserveContactInputBuilder {
             end_time: self.end_time,
             ground_station: self.ground_station,
             tags: self.tags,
+            tracking_overrides: self.tracking_overrides,
         })
     }
 }

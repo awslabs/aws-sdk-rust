@@ -81,6 +81,8 @@ pub use crate::types::_auditor_result::AuditorResultBuilder;
 
 pub use crate::types::_audit_target::AuditTargetBuilder;
 
+pub use crate::types::_canary_entity::CanaryEntityBuilder;
+
 pub use crate::types::_service_operation_entity::ServiceOperationEntityBuilder;
 
 pub use crate::types::_service_entity::ServiceEntityBuilder;

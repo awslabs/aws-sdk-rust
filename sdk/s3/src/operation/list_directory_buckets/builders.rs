@@ -40,7 +40,9 @@ impl crate::operation::list_directory_buckets::builders::ListDirectoryBucketsInp
 /// </dd>
 /// </dl><note>
 /// <p>The <code>BucketRegion</code> response element is not part of the <code>ListDirectoryBuckets</code> Response Syntax.</p>
-/// </note>
+/// </note> <important>
+/// <p>You must URL encode any signed header values that contain spaces. For example, if your header value is <code>my file.txt</code>, containing two spaces after <code>my</code>, you must URL encode this value to <code>my%20%20file.txt</code>.</p>
+/// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListDirectoryBucketsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

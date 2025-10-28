@@ -790,6 +790,9 @@ pub mod describe_capacity_reservation_billing_requests;
 /// Types for the `DescribeCapacityReservationFleets` operation.
 pub mod describe_capacity_reservation_fleets;
 
+/// Types for the `DescribeCapacityReservationTopology` operation.
+pub mod describe_capacity_reservation_topology;
+
 /// Types for the `DescribeCapacityReservations` operation.
 pub mod describe_capacity_reservations;
 

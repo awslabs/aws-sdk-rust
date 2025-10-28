@@ -114,6 +114,11 @@ pub(crate) fn de_describe_ephemeris(
                             .transpose()?,
                     );
                 }
+                "errorReasons" => {
+                    builder = builder.set_error_reasons(crate::protocol_serde::shape_ephemeris_error_reason_list::de_ephemeris_error_reason_list(
+                        tokens,
+                    )?);
+                }
                 "invalidReason" => {
                     builder = builder.set_invalid_reason(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

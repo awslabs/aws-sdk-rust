@@ -269,6 +269,8 @@ pub(crate) mod shape_resource_not_found_exception;
 
 pub(crate) mod shape_resource_not_ready_exception;
 
+pub(crate) mod shape_serialized_request_entity_too_large_exception;
+
 pub(crate) mod shape_service_exception;
 
 pub(crate) mod shape_snap_start_exception;

@@ -97,6 +97,10 @@ pub use crate::types::_deployment_rollout_state::DeploymentRolloutState;
 
 pub use crate::types::_deployment_configuration::DeploymentConfiguration;
 
+pub use crate::types::_canary_configuration::CanaryConfiguration;
+
+pub use crate::types::_linear_configuration::LinearConfiguration;
+
 pub use crate::types::_deployment_lifecycle_hook::DeploymentLifecycleHook;
 
 pub use crate::types::_deployment_lifecycle_hook_stage::DeploymentLifecycleHookStage;
@@ -471,6 +475,8 @@ mod _baseline_ebs_bandwidth_mbps_request;
 
 mod _burstable_performance;
 
+mod _canary_configuration;
+
 mod _capacity_provider;
 
 mod _capacity_provider_field;
@@ -630,6 +636,8 @@ mod _kernel_capabilities;
 mod _key_value_pair;
 
 mod _launch_type;
+
+mod _linear_configuration;
 
 mod _linux_parameters;
 

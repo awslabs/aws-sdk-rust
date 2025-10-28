@@ -232,4 +232,18 @@ impl ListContactsFluentBuilder {
     pub fn get_mission_profile_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_mission_profile_arn()
     }
+    /// <p>Filter for selecting contacts that use a specific ephemeris".</p>
+    pub fn ephemeris(mut self, input: crate::types::EphemerisFilter) -> Self {
+        self.inner = self.inner.ephemeris(input);
+        self
+    }
+    /// <p>Filter for selecting contacts that use a specific ephemeris".</p>
+    pub fn set_ephemeris(mut self, input: ::std::option::Option<crate::types::EphemerisFilter>) -> Self {
+        self.inner = self.inner.set_ephemeris(input);
+        self
+    }
+    /// <p>Filter for selecting contacts that use a specific ephemeris".</p>
+    pub fn get_ephemeris(&self) -> &::std::option::Option<crate::types::EphemerisFilter> {
+        self.inner.get_ephemeris()
+    }
 }

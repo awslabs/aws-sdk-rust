@@ -13,6 +13,8 @@
 /// # let deploymentstrategy = unimplemented!();
 /// match deploymentstrategy {
 ///     DeploymentStrategy::BlueGreen => { /* ... */ },
+///     DeploymentStrategy::Canary => { /* ... */ },
+///     DeploymentStrategy::Linear => { /* ... */ },
 ///     DeploymentStrategy::Rolling => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -45,6 +47,10 @@ pub enum DeploymentStrategy {
     #[allow(missing_docs)] // documentation missing in model
     BlueGreen,
     #[allow(missing_docs)] // documentation missing in model
+    Canary,
+    #[allow(missing_docs)] // documentation missing in model
+    Linear,
+    #[allow(missing_docs)] // documentation missing in model
     Rolling,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -54,6 +60,8 @@ impl ::std::convert::From<&str> for DeploymentStrategy {
     fn from(s: &str) -> Self {
         match s {
             "BLUE_GREEN" => DeploymentStrategy::BlueGreen,
+            "CANARY" => DeploymentStrategy::Canary,
+            "LINEAR" => DeploymentStrategy::Linear,
             "ROLLING" => DeploymentStrategy::Rolling,
             other => DeploymentStrategy::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -71,13 +79,15 @@ impl DeploymentStrategy {
     pub fn as_str(&self) -> &str {
         match self {
             DeploymentStrategy::BlueGreen => "BLUE_GREEN",
+            DeploymentStrategy::Canary => "CANARY",
+            DeploymentStrategy::Linear => "LINEAR",
             DeploymentStrategy::Rolling => "ROLLING",
             DeploymentStrategy::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["BLUE_GREEN", "ROLLING"]
+        &["BLUE_GREEN", "CANARY", "LINEAR", "ROLLING"]
     }
 }
 impl ::std::convert::AsRef<str> for DeploymentStrategy {
@@ -101,6 +111,8 @@ impl ::std::fmt::Display for DeploymentStrategy {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             DeploymentStrategy::BlueGreen => write!(f, "BLUE_GREEN"),
+            DeploymentStrategy::Canary => write!(f, "CANARY"),
+            DeploymentStrategy::Linear => write!(f, "LINEAR"),
             DeploymentStrategy::Rolling => write!(f, "ROLLING"),
             DeploymentStrategy::Unknown(value) => write!(f, "{}", value),
         }

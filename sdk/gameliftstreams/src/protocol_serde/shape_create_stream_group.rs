@@ -192,6 +192,12 @@ pub(crate) fn de_create_stream_group(
                             .transpose()?,
                     );
                 }
+                "ExpiresAt" => {
+                    builder = builder.set_expires_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                        tokens.next(),
+                        ::aws_smithy_types::date_time::Format::EpochSeconds,
+                    )?);
+                }
                 "Id" => {
                     builder = builder.set_id(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

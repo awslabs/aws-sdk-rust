@@ -28,7 +28,7 @@ impl crate::operation::start_stream_session::builders::StartStreamSessionInputBu
 /// <p>Prerequisites:</p>
 /// <ul>
 /// <li>
-/// <p>You must have a stream group in <code>ACTIVE</code> state</p></li>
+/// <p>You must have a stream group in <code>ACTIVE</code> status</p></li>
 /// <li>
 /// <p>You must have idle or on-demand capacity in a stream group in the location you want to stream from</p></li>
 /// <li>

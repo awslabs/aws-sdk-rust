@@ -1075,6 +1075,10 @@ pub(crate) mod shape_describe_capacity_reservation_fleets;
 
 pub(crate) mod shape_describe_capacity_reservation_fleets_input;
 
+pub(crate) mod shape_describe_capacity_reservation_topology;
+
+pub(crate) mod shape_describe_capacity_reservation_topology_input;
+
 pub(crate) mod shape_describe_capacity_reservations;
 
 pub(crate) mod shape_describe_capacity_reservations_input;
@@ -3219,6 +3223,8 @@ pub(crate) mod shape_capacity_reservation_set;
 
 pub(crate) mod shape_capacity_reservation_target;
 
+pub(crate) mod shape_capacity_reservation_topology_set;
+
 pub(crate) mod shape_carrier_gateway;
 
 pub(crate) mod shape_carrier_gateway_set;
@@ -4141,6 +4147,8 @@ pub(crate) mod shape_capacity_reservation_fleet_cancellation_state;
 
 pub(crate) mod shape_capacity_reservation_group;
 
+pub(crate) mod shape_capacity_reservation_topology;
+
 pub(crate) mod shape_classic_link_dns_support;
 
 pub(crate) mod shape_classic_link_instance;
@@ -4924,6 +4932,8 @@ pub(crate) mod shape_network_interface_count;
 pub(crate) mod shape_network_interface_ipv6_address;
 
 pub(crate) mod shape_network_interface_private_ip_address;
+
+pub(crate) mod shape_network_node_set;
 
 pub(crate) mod shape_network_nodes_list;
 

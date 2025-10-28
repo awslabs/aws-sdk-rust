@@ -42,6 +42,16 @@ where
                                     .transpose()?,
                             );
                         }
+                        "requestedTestTrafficWeight" => {
+                            builder = builder.set_requested_test_traffic_weight(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?.map(|v| v.to_f64_lossy()),
+                            );
+                        }
+                        "requestedProductionTrafficWeight" => {
+                            builder = builder.set_requested_production_traffic_weight(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?.map(|v| v.to_f64_lossy()),
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

@@ -197,4 +197,18 @@ impl ReserveContactFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
+    /// <p>Tracking configuration overrides for the contact.</p>
+    pub fn tracking_overrides(mut self, input: crate::types::TrackingOverrides) -> Self {
+        self.inner = self.inner.tracking_overrides(input);
+        self
+    }
+    /// <p>Tracking configuration overrides for the contact.</p>
+    pub fn set_tracking_overrides(mut self, input: ::std::option::Option<crate::types::TrackingOverrides>) -> Self {
+        self.inner = self.inner.set_tracking_overrides(input);
+        self
+    }
+    /// <p>Tracking configuration overrides for the contact.</p>
+    pub fn get_tracking_overrides(&self) -> &::std::option::Option<crate::types::TrackingOverrides> {
+        self.inner.get_tracking_overrides()
+    }
 }

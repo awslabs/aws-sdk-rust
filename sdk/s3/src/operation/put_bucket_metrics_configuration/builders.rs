@@ -47,7 +47,9 @@ impl crate::operation::put_bucket_metrics_configuration::builders::PutBucketMetr
 /// <li>
 /// <p>HTTP Status Code: HTTP 400 Bad Request</p></li>
 /// </ul></li>
-/// </ul>
+/// </ul><important>
+/// <p>You must URL encode any signed header values that contain spaces. For example, if your header value is <code>my file.txt</code>, containing two spaces after <code>my</code>, you must URL encode this value to <code>my%20%20file.txt</code>.</p>
+/// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutBucketMetricsConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

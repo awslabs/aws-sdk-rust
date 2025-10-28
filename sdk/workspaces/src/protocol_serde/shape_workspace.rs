@@ -42,6 +42,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "Ipv6Address" => {
+                            builder = builder.set_ipv6_address(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "State" => {
                             builder = builder.set_state(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

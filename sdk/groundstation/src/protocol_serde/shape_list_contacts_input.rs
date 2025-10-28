@@ -8,37 +8,43 @@ pub fn ser_list_contacts_input_input(
             .key("endTime")
             .date_time(var_1, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    if let Some(var_2) = &input.ground_station {
-        object.key("groundStation").string(var_2.as_str());
+    if let Some(var_2) = &input.ephemeris {
+        #[allow(unused_mut)]
+        let mut object_3 = object.key("ephemeris").start_object();
+        crate::protocol_serde::shape_ephemeris_filter::ser_ephemeris_filter(&mut object_3, var_2)?;
+        object_3.finish();
     }
-    if let Some(var_3) = &input.max_results {
+    if let Some(var_4) = &input.ground_station {
+        object.key("groundStation").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.max_results {
         object.key("maxResults").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_3).into()),
+            ::aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
-    if let Some(var_4) = &input.mission_profile_arn {
-        object.key("missionProfileArn").string(var_4.as_str());
+    if let Some(var_6) = &input.mission_profile_arn {
+        object.key("missionProfileArn").string(var_6.as_str());
     }
-    if let Some(var_5) = &input.next_token {
-        object.key("nextToken").string(var_5.as_str());
+    if let Some(var_7) = &input.next_token {
+        object.key("nextToken").string(var_7.as_str());
     }
-    if let Some(var_6) = &input.satellite_arn {
-        object.key("satelliteArn").string(var_6.as_str());
+    if let Some(var_8) = &input.satellite_arn {
+        object.key("satelliteArn").string(var_8.as_str());
     }
-    if let Some(var_7) = &input.start_time {
+    if let Some(var_9) = &input.start_time {
         object
             .key("startTime")
-            .date_time(var_7, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(var_9, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    if let Some(var_8) = &input.status_list {
-        let mut array_9 = object.key("statusList").start_array();
-        for item_10 in var_8 {
+    if let Some(var_10) = &input.status_list {
+        let mut array_11 = object.key("statusList").start_array();
+        for item_12 in var_10 {
             {
-                array_9.value().string(item_10.as_str());
+                array_11.value().string(item_12.as_str());
             }
         }
-        array_9.finish();
+        array_11.finish();
     }
     Ok(())
 }

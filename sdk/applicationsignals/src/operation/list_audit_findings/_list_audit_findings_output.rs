@@ -3,19 +3,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAuditFindingsOutput {
-    /// <p>An array of structures, where each structure contains information about one audit finding, including the auditor results, severity, and associated metric and dependency graphs.</p>
+    /// <p>An array of audit findings that match the specified criteria. Each finding includes details about the issue, affected resources, and auditor results.</p>
     pub audit_findings: ::std::vec::Vec<crate::types::AuditFinding>,
-    /// <p>Include this value in your next use of this API to get the next set of audit findings.</p>
+    /// <p>The token to use for retrieving the next page of results. This value is present only if there are more results available than were returned in the current response.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListAuditFindingsOutput {
-    /// <p>An array of structures, where each structure contains information about one audit finding, including the auditor results, severity, and associated metric and dependency graphs.</p>
+    /// <p>An array of audit findings that match the specified criteria. Each finding includes details about the issue, affected resources, and auditor results.</p>
     pub fn audit_findings(&self) -> &[crate::types::AuditFinding] {
         use std::ops::Deref;
         self.audit_findings.deref()
     }
-    /// <p>Include this value in your next use of this API to get the next set of audit findings.</p>
+    /// <p>The token to use for retrieving the next page of results. This value is present only if there are more results available than were returned in the current response.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -45,33 +45,33 @@ impl ListAuditFindingsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_audit_findings`](Self::set_audit_findings).
     ///
-    /// <p>An array of structures, where each structure contains information about one audit finding, including the auditor results, severity, and associated metric and dependency graphs.</p>
+    /// <p>An array of audit findings that match the specified criteria. Each finding includes details about the issue, affected resources, and auditor results.</p>
     pub fn audit_findings(mut self, input: crate::types::AuditFinding) -> Self {
         let mut v = self.audit_findings.unwrap_or_default();
         v.push(input);
         self.audit_findings = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of structures, where each structure contains information about one audit finding, including the auditor results, severity, and associated metric and dependency graphs.</p>
+    /// <p>An array of audit findings that match the specified criteria. Each finding includes details about the issue, affected resources, and auditor results.</p>
     pub fn set_audit_findings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AuditFinding>>) -> Self {
         self.audit_findings = input;
         self
     }
-    /// <p>An array of structures, where each structure contains information about one audit finding, including the auditor results, severity, and associated metric and dependency graphs.</p>
+    /// <p>An array of audit findings that match the specified criteria. Each finding includes details about the issue, affected resources, and auditor results.</p>
     pub fn get_audit_findings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AuditFinding>> {
         &self.audit_findings
     }
-    /// <p>Include this value in your next use of this API to get the next set of audit findings.</p>
+    /// <p>The token to use for retrieving the next page of results. This value is present only if there are more results available than were returned in the current response.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Include this value in your next use of this API to get the next set of audit findings.</p>
+    /// <p>The token to use for retrieving the next page of results. This value is present only if there are more results available than were returned in the current response.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>Include this value in your next use of this API to get the next set of audit findings.</p>
+    /// <p>The token to use for retrieving the next page of results. This value is present only if there are more results available than were returned in the current response.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

@@ -26,6 +26,8 @@ pub struct WorkspaceRequest {
     /// <p><code>WorkspaceName</code> is required if <code>UserName</code> is <code>\[UNDEFINED\]</code> for user-decoupled WorkSpaces. <code>WorkspaceName</code> is not applicable if <code>UserName</code> is specified for user-assigned WorkSpaces.</p>
     /// </note>
     pub workspace_name: ::std::option::Option<::std::string::String>,
+    /// <p>The IPv6 address for the WorkSpace.</p>
+    pub ipv6_address: ::std::option::Option<::std::string::String>,
 }
 impl WorkspaceRequest {
     /// <p>The identifier of the Directory Service directory for the WorkSpace. You can use <code>DescribeWorkspaceDirectories</code> to list the available directories.</p>
@@ -73,6 +75,10 @@ impl WorkspaceRequest {
     pub fn workspace_name(&self) -> ::std::option::Option<&str> {
         self.workspace_name.as_deref()
     }
+    /// <p>The IPv6 address for the WorkSpace.</p>
+    pub fn ipv6_address(&self) -> ::std::option::Option<&str> {
+        self.ipv6_address.as_deref()
+    }
 }
 impl WorkspaceRequest {
     /// Creates a new builder-style object to manufacture [`WorkspaceRequest`](crate::types::WorkspaceRequest).
@@ -94,6 +100,7 @@ pub struct WorkspaceRequestBuilder {
     pub(crate) workspace_properties: ::std::option::Option<crate::types::WorkspaceProperties>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) workspace_name: ::std::option::Option<::std::string::String>,
+    pub(crate) ipv6_address: ::std::option::Option<::std::string::String>,
 }
 impl WorkspaceRequestBuilder {
     /// <p>The identifier of the Directory Service directory for the WorkSpace. You can use <code>DescribeWorkspaceDirectories</code> to list the available directories.</p>
@@ -243,6 +250,20 @@ impl WorkspaceRequestBuilder {
     pub fn get_workspace_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.workspace_name
     }
+    /// <p>The IPv6 address for the WorkSpace.</p>
+    pub fn ipv6_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ipv6_address = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The IPv6 address for the WorkSpace.</p>
+    pub fn set_ipv6_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.ipv6_address = input;
+        self
+    }
+    /// <p>The IPv6 address for the WorkSpace.</p>
+    pub fn get_ipv6_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ipv6_address
+    }
     /// Consumes the builder and constructs a [`WorkspaceRequest`](crate::types::WorkspaceRequest).
     /// This method will fail if any of the following fields are not set:
     /// - [`directory_id`](crate::types::builders::WorkspaceRequestBuilder::directory_id)
@@ -274,6 +295,7 @@ impl WorkspaceRequestBuilder {
             workspace_properties: self.workspace_properties,
             tags: self.tags,
             workspace_name: self.workspace_name,
+            ipv6_address: self.ipv6_address,
         })
     }
 }

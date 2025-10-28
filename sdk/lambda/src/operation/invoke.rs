@@ -310,6 +310,8 @@ pub enum InvokeError {
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The function is inactive and its VPC connection is no longer available. Wait for the VPC connection to reestablish and try again.</p>
     ResourceNotReadyException(crate::types::error::ResourceNotReadyException),
+    /// <p>The processed request payload exceeded the <code>Invoke</code> request body size limit for asynchronous invocations. While the event payload may be under 1 MB, the size after internal serialization exceeds the maximum allowed size for asynchronous invocations.</p>
+    SerializedRequestEntityTooLargeException(crate::types::error::SerializedRequestEntityTooLargeException),
     /// <p>The Lambda service encountered an internal error.</p>
     ServiceException(crate::types::error::ServiceException),
     /// <p>The <code>afterRestore()</code> <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-runtime-hooks.html">runtime hook</a> encountered an error. For more information, check the Amazon CloudWatch logs.</p>
@@ -380,6 +382,7 @@ impl InvokeError {
             Self::ResourceConflictException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceNotReadyException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::SerializedRequestEntityTooLargeException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ServiceException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::SnapStartException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::SnapStartNotReadyException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -482,6 +485,10 @@ impl InvokeError {
     pub fn is_resource_not_ready_exception(&self) -> bool {
         matches!(self, Self::ResourceNotReadyException(_))
     }
+    /// Returns `true` if the error kind is `InvokeError::SerializedRequestEntityTooLargeException`.
+    pub fn is_serialized_request_entity_too_large_exception(&self) -> bool {
+        matches!(self, Self::SerializedRequestEntityTooLargeException(_))
+    }
     /// Returns `true` if the error kind is `InvokeError::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(self, Self::ServiceException(_))
@@ -537,6 +544,7 @@ impl ::std::error::Error for InvokeError {
             Self::ResourceConflictException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotReadyException(_inner) => ::std::option::Option::Some(_inner),
+            Self::SerializedRequestEntityTooLargeException(_inner) => ::std::option::Option::Some(_inner),
             Self::ServiceException(_inner) => ::std::option::Option::Some(_inner),
             Self::SnapStartException(_inner) => ::std::option::Option::Some(_inner),
             Self::SnapStartNotReadyException(_inner) => ::std::option::Option::Some(_inner),
@@ -574,6 +582,7 @@ impl ::std::fmt::Display for InvokeError {
             Self::ResourceConflictException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::ResourceNotReadyException(_inner) => _inner.fmt(f),
+            Self::SerializedRequestEntityTooLargeException(_inner) => _inner.fmt(f),
             Self::ServiceException(_inner) => _inner.fmt(f),
             Self::SnapStartException(_inner) => _inner.fmt(f),
             Self::SnapStartNotReadyException(_inner) => _inner.fmt(f),
@@ -625,6 +634,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for InvokeError {
             Self::ResourceConflictException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceNotReadyException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::SerializedRequestEntityTooLargeException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ServiceException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::SnapStartException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::SnapStartNotReadyException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

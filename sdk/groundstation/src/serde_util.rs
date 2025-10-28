@@ -45,6 +45,24 @@ pub(crate) fn ephemeris_meta_data_correct_errors(
     builder
 }
 
+pub(crate) fn ephemeris_response_data_correct_errors(
+    mut builder: crate::types::builders::EphemerisResponseDataBuilder,
+) -> crate::types::builders::EphemerisResponseDataBuilder {
+    if builder.ephemeris_type.is_none() {
+        builder.ephemeris_type = "no value was set".parse::<crate::types::EphemerisType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn tracking_overrides_correct_errors(
+    mut builder: crate::types::builders::TrackingOverridesBuilder,
+) -> crate::types::builders::TrackingOverridesBuilder {
+    if builder.program_track_settings.is_none() {
+        builder.program_track_settings = Some(crate::types::ProgramTrackSettings::Unknown)
+    }
+    builder
+}
+
 pub(crate) fn antenna_downlink_config_correct_errors(
     mut builder: crate::types::builders::AntennaDownlinkConfigBuilder,
 ) -> crate::types::builders::AntennaDownlinkConfigBuilder {
@@ -108,6 +126,18 @@ pub(crate) fn dataflow_endpoint_config_correct_errors(
     builder
 }
 
+pub(crate) fn ephemeris_error_reason_correct_errors(
+    mut builder: crate::types::builders::EphemerisErrorReasonBuilder,
+) -> crate::types::builders::EphemerisErrorReasonBuilder {
+    if builder.error_code.is_none() {
+        builder.error_code = "no value was set".parse::<crate::types::EphemerisErrorCode>().ok()
+    }
+    if builder.error_message.is_none() {
+        builder.error_message = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn s3_recording_config_correct_errors(
     mut builder: crate::types::builders::S3RecordingConfigBuilder,
 ) -> crate::types::builders::S3RecordingConfigBuilder {
@@ -158,6 +188,15 @@ pub(crate) fn aws_ground_station_agent_endpoint_correct_errors(
             let builder = crate::types::builders::RangedConnectionDetailsBuilder::default();
             Some(crate::serde_util::ranged_connection_details_correct_errors(builder).build())
         }
+    }
+    builder
+}
+
+pub(crate) fn az_el_program_track_settings_correct_errors(
+    mut builder: crate::types::builders::AzElProgramTrackSettingsBuilder,
+) -> crate::types::builders::AzElProgramTrackSettingsBuilder {
+    if builder.ephemeris_id.is_none() {
+        builder.ephemeris_id = Some(Default::default())
     }
     builder
 }

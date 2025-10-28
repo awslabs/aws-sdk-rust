@@ -119,6 +119,9 @@ pub(crate) fn de_describe_contact(
                         ::aws_smithy_types::date_time::Format::EpochSeconds,
                     )?);
                 }
+                "ephemeris" => {
+                    builder = builder.set_ephemeris(crate::protocol_serde::shape_ephemeris_response_data::de_ephemeris_response_data(tokens)?);
+                }
                 "errorMessage" => {
                     builder = builder.set_error_message(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -177,6 +180,9 @@ pub(crate) fn de_describe_contact(
                 }
                 "tags" => {
                     builder = builder.set_tags(crate::protocol_serde::shape_tags_map::de_tags_map(tokens)?);
+                }
+                "trackingOverrides" => {
+                    builder = builder.set_tracking_overrides(crate::protocol_serde::shape_tracking_overrides::de_tracking_overrides(tokens)?);
                 }
                 "visibilityEndTime" => {
                     builder = builder.set_visibility_end_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

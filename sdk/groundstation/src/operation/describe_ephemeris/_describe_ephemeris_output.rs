@@ -9,22 +9,24 @@ pub struct DescribeEphemerisOutput {
     pub satellite_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the ephemeris.</p>
     pub status: ::std::option::Option<crate::types::EphemerisStatus>,
-    /// <p>Customer-provided priority score to establish the order in which overlapping ephemerides should be used.</p>
-    /// <p>The default for customer-provided ephemeris priority is 1, and higher numbers take precedence.</p>
-    /// <p>Priority must be 1 or greater</p>
+    /// <p>A priority score that determines which ephemeris to use when multiple ephemerides overlap.</p>
+    /// <p>Higher numbers take precedence. The default is 1. Must be 1 or greater.</p>
     pub priority: ::std::option::Option<i32>,
     /// <p>The time the ephemeris was uploaded in UTC.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Whether or not the ephemeris is enabled.</p>
     pub enabled: ::std::option::Option<bool>,
-    /// <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p>
+    /// <p>A name that you can use to identify the ephemeris.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Tags assigned to an ephemeris.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Supplied ephemeris data.</p>
     pub supplied_data: ::std::option::Option<crate::types::EphemerisTypeDescription>,
-    /// <p>Reason that an ephemeris failed validation. Only provided for ephemerides with <code>INVALID</code> status.</p>
+    /// <p>Reason that an ephemeris failed validation. Appears only when the status is <code>INVALID</code>.</p>
     pub invalid_reason: ::std::option::Option<crate::types::EphemerisInvalidReason>,
+    /// <p>Detailed error information for ephemerides with <code>INVALID</code> status.</p>
+    /// <p>Provides specific error codes and messages to help diagnose validation failures.</p>
+    pub error_reasons: ::std::option::Option<::std::vec::Vec<crate::types::EphemerisErrorReason>>,
     _request_id: Option<String>,
 }
 impl DescribeEphemerisOutput {
@@ -40,9 +42,8 @@ impl DescribeEphemerisOutput {
     pub fn status(&self) -> ::std::option::Option<&crate::types::EphemerisStatus> {
         self.status.as_ref()
     }
-    /// <p>Customer-provided priority score to establish the order in which overlapping ephemerides should be used.</p>
-    /// <p>The default for customer-provided ephemeris priority is 1, and higher numbers take precedence.</p>
-    /// <p>Priority must be 1 or greater</p>
+    /// <p>A priority score that determines which ephemeris to use when multiple ephemerides overlap.</p>
+    /// <p>Higher numbers take precedence. The default is 1. Must be 1 or greater.</p>
     pub fn priority(&self) -> ::std::option::Option<i32> {
         self.priority
     }
@@ -54,7 +55,7 @@ impl DescribeEphemerisOutput {
     pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
     }
-    /// <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p>
+    /// <p>A name that you can use to identify the ephemeris.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -66,9 +67,16 @@ impl DescribeEphemerisOutput {
     pub fn supplied_data(&self) -> ::std::option::Option<&crate::types::EphemerisTypeDescription> {
         self.supplied_data.as_ref()
     }
-    /// <p>Reason that an ephemeris failed validation. Only provided for ephemerides with <code>INVALID</code> status.</p>
+    /// <p>Reason that an ephemeris failed validation. Appears only when the status is <code>INVALID</code>.</p>
     pub fn invalid_reason(&self) -> ::std::option::Option<&crate::types::EphemerisInvalidReason> {
         self.invalid_reason.as_ref()
+    }
+    /// <p>Detailed error information for ephemerides with <code>INVALID</code> status.</p>
+    /// <p>Provides specific error codes and messages to help diagnose validation failures.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.error_reasons.is_none()`.
+    pub fn error_reasons(&self) -> &[crate::types::EphemerisErrorReason] {
+        self.error_reasons.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeEphemerisOutput {
@@ -97,6 +105,7 @@ pub struct DescribeEphemerisOutputBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) supplied_data: ::std::option::Option<crate::types::EphemerisTypeDescription>,
     pub(crate) invalid_reason: ::std::option::Option<crate::types::EphemerisInvalidReason>,
+    pub(crate) error_reasons: ::std::option::Option<::std::vec::Vec<crate::types::EphemerisErrorReason>>,
     _request_id: Option<String>,
 }
 impl DescribeEphemerisOutputBuilder {
@@ -142,23 +151,20 @@ impl DescribeEphemerisOutputBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::EphemerisStatus> {
         &self.status
     }
-    /// <p>Customer-provided priority score to establish the order in which overlapping ephemerides should be used.</p>
-    /// <p>The default for customer-provided ephemeris priority is 1, and higher numbers take precedence.</p>
-    /// <p>Priority must be 1 or greater</p>
+    /// <p>A priority score that determines which ephemeris to use when multiple ephemerides overlap.</p>
+    /// <p>Higher numbers take precedence. The default is 1. Must be 1 or greater.</p>
     pub fn priority(mut self, input: i32) -> Self {
         self.priority = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Customer-provided priority score to establish the order in which overlapping ephemerides should be used.</p>
-    /// <p>The default for customer-provided ephemeris priority is 1, and higher numbers take precedence.</p>
-    /// <p>Priority must be 1 or greater</p>
+    /// <p>A priority score that determines which ephemeris to use when multiple ephemerides overlap.</p>
+    /// <p>Higher numbers take precedence. The default is 1. Must be 1 or greater.</p>
     pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
         self.priority = input;
         self
     }
-    /// <p>Customer-provided priority score to establish the order in which overlapping ephemerides should be used.</p>
-    /// <p>The default for customer-provided ephemeris priority is 1, and higher numbers take precedence.</p>
-    /// <p>Priority must be 1 or greater</p>
+    /// <p>A priority score that determines which ephemeris to use when multiple ephemerides overlap.</p>
+    /// <p>Higher numbers take precedence. The default is 1. Must be 1 or greater.</p>
     pub fn get_priority(&self) -> &::std::option::Option<i32> {
         &self.priority
     }
@@ -190,17 +196,17 @@ impl DescribeEphemerisOutputBuilder {
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
         &self.enabled
     }
-    /// <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p>
+    /// <p>A name that you can use to identify the ephemeris.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p>
+    /// <p>A name that you can use to identify the ephemeris.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p>
+    /// <p>A name that you can use to identify the ephemeris.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
@@ -238,19 +244,42 @@ impl DescribeEphemerisOutputBuilder {
     pub fn get_supplied_data(&self) -> &::std::option::Option<crate::types::EphemerisTypeDescription> {
         &self.supplied_data
     }
-    /// <p>Reason that an ephemeris failed validation. Only provided for ephemerides with <code>INVALID</code> status.</p>
+    /// <p>Reason that an ephemeris failed validation. Appears only when the status is <code>INVALID</code>.</p>
     pub fn invalid_reason(mut self, input: crate::types::EphemerisInvalidReason) -> Self {
         self.invalid_reason = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Reason that an ephemeris failed validation. Only provided for ephemerides with <code>INVALID</code> status.</p>
+    /// <p>Reason that an ephemeris failed validation. Appears only when the status is <code>INVALID</code>.</p>
     pub fn set_invalid_reason(mut self, input: ::std::option::Option<crate::types::EphemerisInvalidReason>) -> Self {
         self.invalid_reason = input;
         self
     }
-    /// <p>Reason that an ephemeris failed validation. Only provided for ephemerides with <code>INVALID</code> status.</p>
+    /// <p>Reason that an ephemeris failed validation. Appears only when the status is <code>INVALID</code>.</p>
     pub fn get_invalid_reason(&self) -> &::std::option::Option<crate::types::EphemerisInvalidReason> {
         &self.invalid_reason
+    }
+    /// Appends an item to `error_reasons`.
+    ///
+    /// To override the contents of this collection use [`set_error_reasons`](Self::set_error_reasons).
+    ///
+    /// <p>Detailed error information for ephemerides with <code>INVALID</code> status.</p>
+    /// <p>Provides specific error codes and messages to help diagnose validation failures.</p>
+    pub fn error_reasons(mut self, input: crate::types::EphemerisErrorReason) -> Self {
+        let mut v = self.error_reasons.unwrap_or_default();
+        v.push(input);
+        self.error_reasons = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Detailed error information for ephemerides with <code>INVALID</code> status.</p>
+    /// <p>Provides specific error codes and messages to help diagnose validation failures.</p>
+    pub fn set_error_reasons(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EphemerisErrorReason>>) -> Self {
+        self.error_reasons = input;
+        self
+    }
+    /// <p>Detailed error information for ephemerides with <code>INVALID</code> status.</p>
+    /// <p>Provides specific error codes and messages to help diagnose validation failures.</p>
+    pub fn get_error_reasons(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EphemerisErrorReason>> {
+        &self.error_reasons
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
@@ -274,6 +303,7 @@ impl DescribeEphemerisOutputBuilder {
             tags: self.tags,
             supplied_data: self.supplied_data,
             invalid_reason: self.invalid_reason,
+            error_reasons: self.error_reasons,
             _request_id: self._request_id,
         }
     }

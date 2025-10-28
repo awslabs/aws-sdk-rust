@@ -22,7 +22,7 @@ impl crate::operation::update_ephemeris::builders::UpdateEphemerisInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateEphemeris`.
 ///
-/// <p>Updates an existing ephemeris</p>
+/// <p>Update an existing ephemeris.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateEphemerisFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -122,51 +122,48 @@ impl UpdateEphemerisFluentBuilder {
     pub fn get_ephemeris_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_ephemeris_id()
     }
-    /// <p>Whether the ephemeris is enabled or not. Changing this value will not require the ephemeris to be re-validated.</p>
+    /// <p>Enable or disable the ephemeris. Changing this value doesn't require re-validation.</p>
     pub fn enabled(mut self, input: bool) -> Self {
         self.inner = self.inner.enabled(input);
         self
     }
-    /// <p>Whether the ephemeris is enabled or not. Changing this value will not require the ephemeris to be re-validated.</p>
+    /// <p>Enable or disable the ephemeris. Changing this value doesn't require re-validation.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enabled(input);
         self
     }
-    /// <p>Whether the ephemeris is enabled or not. Changing this value will not require the ephemeris to be re-validated.</p>
+    /// <p>Enable or disable the ephemeris. Changing this value doesn't require re-validation.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
         self.inner.get_enabled()
     }
-    /// <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p>
+    /// <p>A name that you can use to identify the ephemeris.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p>
+    /// <p>A name that you can use to identify the ephemeris.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p>
+    /// <p>A name that you can use to identify the ephemeris.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p>Customer-provided priority score to establish the order in which overlapping ephemerides should be used.</p>
-    /// <p>The default for customer-provided ephemeris priority is 1, and higher numbers take precedence.</p>
-    /// <p>Priority must be 1 or greater</p>
+    /// <p>A priority score that determines which ephemeris to use when multiple ephemerides overlap.</p>
+    /// <p>Higher numbers take precedence. The default is 1. Must be 1 or greater.</p>
     pub fn priority(mut self, input: i32) -> Self {
         self.inner = self.inner.priority(input);
         self
     }
-    /// <p>Customer-provided priority score to establish the order in which overlapping ephemerides should be used.</p>
-    /// <p>The default for customer-provided ephemeris priority is 1, and higher numbers take precedence.</p>
-    /// <p>Priority must be 1 or greater</p>
+    /// <p>A priority score that determines which ephemeris to use when multiple ephemerides overlap.</p>
+    /// <p>Higher numbers take precedence. The default is 1. Must be 1 or greater.</p>
     pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_priority(input);
         self
     }
-    /// <p>Customer-provided priority score to establish the order in which overlapping ephemerides should be used.</p>
-    /// <p>The default for customer-provided ephemeris priority is 1, and higher numbers take precedence.</p>
-    /// <p>Priority must be 1 or greater</p>
+    /// <p>A priority score that determines which ephemeris to use when multiple ephemerides overlap.</p>
+    /// <p>Higher numbers take precedence. The default is 1. Must be 1 or greater.</p>
     pub fn get_priority(&self) -> &::std::option::Option<i32> {
         self.inner.get_priority()
     }

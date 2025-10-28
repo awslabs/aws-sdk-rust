@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListGroupingAttributeDefinitionsInput {
-    /// <p>Include this value, if it was returned by the previous operation, to get the next set of grouping attribute definitions.</p>
+    /// <p>The token for the next set of results. Use this token to retrieve additional pages of grouping attribute definitions when the result set is large.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListGroupingAttributeDefinitionsInput {
-    /// <p>Include this value, if it was returned by the previous operation, to get the next set of grouping attribute definitions.</p>
+    /// <p>The token for the next set of results. Use this token to retrieve additional pages of grouping attribute definitions when the result set is large.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -26,17 +26,17 @@ pub struct ListGroupingAttributeDefinitionsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListGroupingAttributeDefinitionsInputBuilder {
-    /// <p>Include this value, if it was returned by the previous operation, to get the next set of grouping attribute definitions.</p>
+    /// <p>The token for the next set of results. Use this token to retrieve additional pages of grouping attribute definitions when the result set is large.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Include this value, if it was returned by the previous operation, to get the next set of grouping attribute definitions.</p>
+    /// <p>The token for the next set of results. Use this token to retrieve additional pages of grouping attribute definitions when the result set is large.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>Include this value, if it was returned by the previous operation, to get the next set of grouping attribute definitions.</p>
+    /// <p>The token for the next set of results. Use this token to retrieve additional pages of grouping attribute definitions when the result set is large.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

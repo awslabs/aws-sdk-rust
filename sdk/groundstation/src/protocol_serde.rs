@@ -119,6 +119,8 @@ pub(crate) mod shape_register_agent_input;
 
 pub(crate) mod shape_reserve_contact_input;
 
+pub(crate) mod shape_resource_in_use_exception;
+
 pub(crate) mod shape_resource_limit_exceeded_exception;
 
 pub(crate) mod shape_resource_not_found_exception;
@@ -163,7 +165,13 @@ pub(crate) mod shape_ephemerides_list;
 
 pub(crate) mod shape_ephemeris_data;
 
+pub(crate) mod shape_ephemeris_error_reason_list;
+
+pub(crate) mod shape_ephemeris_filter;
+
 pub(crate) mod shape_ephemeris_meta_data;
+
+pub(crate) mod shape_ephemeris_response_data;
 
 pub(crate) mod shape_ephemeris_type_description;
 
@@ -179,6 +187,8 @@ pub(crate) mod shape_satellite_list;
 
 pub(crate) mod shape_tags_map;
 
+pub(crate) mod shape_tracking_overrides;
+
 pub(crate) mod shape_antenna_downlink_config;
 
 pub(crate) mod shape_antenna_downlink_demod_decode_config;
@@ -186,6 +196,10 @@ pub(crate) mod shape_antenna_downlink_demod_decode_config;
 pub(crate) mod shape_antenna_uplink_config;
 
 pub(crate) mod shape_aws_ground_station_agent_endpoint;
+
+pub(crate) mod shape_az_el_ephemeris;
+
+pub(crate) mod shape_az_el_ephemeris_filter;
 
 pub(crate) mod shape_component_version;
 
@@ -205,6 +219,8 @@ pub(crate) mod shape_dataflow_endpoint_list_item;
 
 pub(crate) mod shape_ephemeris_description;
 
+pub(crate) mod shape_ephemeris_error_reason;
+
 pub(crate) mod shape_ephemeris_item;
 
 pub(crate) mod shape_ground_station_data;
@@ -212,6 +228,8 @@ pub(crate) mod shape_ground_station_data;
 pub(crate) mod shape_mission_profile_list_item;
 
 pub(crate) mod shape_oem_ephemeris;
+
+pub(crate) mod shape_program_track_settings;
 
 pub(crate) mod shape_s3_recording_config;
 
@@ -224,6 +242,10 @@ pub(crate) mod shape_tle_ephemeris;
 pub(crate) mod shape_tracking_config;
 
 pub(crate) mod shape_uplink_echo_config;
+
+pub(crate) mod shape_az_el_program_track_settings;
+
+pub(crate) mod shape_az_el_segments_data;
 
 pub(crate) mod shape_capability_health_reason_list;
 
@@ -251,6 +273,8 @@ pub(crate) mod shape_tle_data;
 
 pub(crate) mod shape_uplink_spectrum_config;
 
+pub(crate) mod shape_az_el_segments;
+
 pub(crate) mod shape_config_details;
 
 pub(crate) mod shape_frequency;
@@ -267,6 +291,12 @@ pub(crate) mod shape_time_range;
 
 pub(crate) mod shape_antenna_demod_decode_details;
 
+pub(crate) mod shape_az_el_segment;
+
 pub(crate) mod shape_integer_range;
 
 pub(crate) mod shape_s3_recording_details;
+
+pub(crate) mod shape_iso8601_time_range;
+
+pub(crate) mod shape_time_az_el;

@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutGroupingConfigurationInput {
-    /// <p>An array of grouping attribute definitions that specify how services should be grouped. Each definition includes a friendly name, source keys to derive the grouping value from, and an optional default value.</p>
+    /// <p>An array of grouping attribute definitions that specify how services should be grouped. Each definition includes the grouping name, source keys, and default values.</p>
     pub grouping_attribute_definitions: ::std::option::Option<::std::vec::Vec<crate::types::GroupingAttributeDefinition>>,
 }
 impl PutGroupingConfigurationInput {
-    /// <p>An array of grouping attribute definitions that specify how services should be grouped. Each definition includes a friendly name, source keys to derive the grouping value from, and an optional default value.</p>
+    /// <p>An array of grouping attribute definitions that specify how services should be grouped. Each definition includes the grouping name, source keys, and default values.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.grouping_attribute_definitions.is_none()`.
     pub fn grouping_attribute_definitions(&self) -> &[crate::types::GroupingAttributeDefinition] {
@@ -32,14 +32,14 @@ impl PutGroupingConfigurationInputBuilder {
     ///
     /// To override the contents of this collection use [`set_grouping_attribute_definitions`](Self::set_grouping_attribute_definitions).
     ///
-    /// <p>An array of grouping attribute definitions that specify how services should be grouped. Each definition includes a friendly name, source keys to derive the grouping value from, and an optional default value.</p>
+    /// <p>An array of grouping attribute definitions that specify how services should be grouped. Each definition includes the grouping name, source keys, and default values.</p>
     pub fn grouping_attribute_definitions(mut self, input: crate::types::GroupingAttributeDefinition) -> Self {
         let mut v = self.grouping_attribute_definitions.unwrap_or_default();
         v.push(input);
         self.grouping_attribute_definitions = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of grouping attribute definitions that specify how services should be grouped. Each definition includes a friendly name, source keys to derive the grouping value from, and an optional default value.</p>
+    /// <p>An array of grouping attribute definitions that specify how services should be grouped. Each definition includes the grouping name, source keys, and default values.</p>
     pub fn set_grouping_attribute_definitions(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::GroupingAttributeDefinition>>,
@@ -47,7 +47,7 @@ impl PutGroupingConfigurationInputBuilder {
         self.grouping_attribute_definitions = input;
         self
     }
-    /// <p>An array of grouping attribute definitions that specify how services should be grouped. Each definition includes a friendly name, source keys to derive the grouping value from, and an optional default value.</p>
+    /// <p>An array of grouping attribute definitions that specify how services should be grouped. Each definition includes the grouping name, source keys, and default values.</p>
     pub fn get_grouping_attribute_definitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupingAttributeDefinition>> {
         &self.grouping_attribute_definitions
     }

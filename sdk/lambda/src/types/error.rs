@@ -27,6 +27,8 @@ pub use crate::types::error::_snap_start_not_ready_exception::SnapStartNotReadyE
 
 pub use crate::types::error::_snap_start_exception::SnapStartException;
 
+pub use crate::types::error::_serialized_request_entity_too_large_exception::SerializedRequestEntityTooLargeException;
+
 pub use crate::types::error::_resource_not_ready_exception::ResourceNotReadyException;
 
 pub use crate::types::error::_request_too_large_exception::RequestTooLargeException;
@@ -229,6 +231,8 @@ mod _resource_in_use_exception;
 mod _resource_not_found_exception;
 
 mod _resource_not_ready_exception;
+
+mod _serialized_request_entity_too_large_exception;
 
 mod _service_exception;
 

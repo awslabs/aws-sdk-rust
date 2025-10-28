@@ -33,7 +33,9 @@ impl crate::operation::delete_bucket_ownership_controls::builders::DeleteBucketO
 /// <p><code>GetBucketOwnershipControls</code></p></li>
 /// <li>
 /// <p><code>PutBucketOwnershipControls</code></p></li>
-/// </ul>
+/// </ul><important>
+/// <p>You must URL encode any signed header values that contain spaces. For example, if your header value is <code>my file.txt</code>, containing two spaces after <code>my</code>, you must URL encode this value to <code>my%20%20file.txt</code>.</p>
+/// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteBucketOwnershipControlsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

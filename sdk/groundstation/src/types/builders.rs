@@ -7,9 +7,21 @@ pub use crate::types::_mission_profile_list_item::MissionProfileListItemBuilder;
 
 pub use crate::types::_ground_station_data::GroundStationDataBuilder;
 
+pub use crate::types::_ephemeris_error_reason::EphemerisErrorReasonBuilder;
+
 pub use crate::types::_ephemeris_description::EphemerisDescriptionBuilder;
 
 pub use crate::types::_s3_object::S3ObjectBuilder;
+
+pub use crate::types::_az_el_ephemeris::AzElEphemerisBuilder;
+
+pub use crate::types::_az_el_segments::AzElSegmentsBuilder;
+
+pub use crate::types::_az_el_segment::AzElSegmentBuilder;
+
+pub use crate::types::_time_az_el::TimeAzElBuilder;
+
+pub use crate::types::_iso8601_time_range::Iso8601TimeRangeBuilder;
 
 pub use crate::types::_oem_ephemeris::OemEphemerisBuilder;
 
@@ -41,6 +53,12 @@ pub use crate::types::_security_details::SecurityDetailsBuilder;
 
 pub use crate::types::_dataflow_endpoint_list_item::DataflowEndpointListItemBuilder;
 
+pub use crate::types::_ephemeris_response_data::EphemerisResponseDataBuilder;
+
+pub use crate::types::_tracking_overrides::TrackingOverridesBuilder;
+
+pub use crate::types::_az_el_program_track_settings::AzElProgramTrackSettingsBuilder;
+
 pub use crate::types::_dataflow_detail::DataflowDetailBuilder;
 
 pub use crate::types::_destination::DestinationBuilder;
@@ -54,6 +72,8 @@ pub use crate::types::_source::SourceBuilder;
 pub use crate::types::_elevation::ElevationBuilder;
 
 pub use crate::types::_contact_data::ContactDataBuilder;
+
+pub use crate::types::_az_el_ephemeris_filter::AzElEphemerisFilterBuilder;
 
 pub use crate::types::_s3_recording_config::S3RecordingConfigBuilder;
 

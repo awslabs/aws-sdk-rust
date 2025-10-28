@@ -74,7 +74,9 @@ impl crate::operation::put_bucket_website::builders::PutBucketWebsiteInputBuilde
 /// <p><code>HttpRedirectCode</code></p></li>
 /// </ul>
 /// <p>Amazon S3 has a limitation of 50 routing rules per website configuration. If you require more than 50 routing rules, you can use object redirect. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/how-to-page-redirect.html">Configuring an Object Redirect</a> in the <i>Amazon S3 User Guide</i>.</p>
-/// <p>The maximum request length is limited to 128 KB.</p>
+/// <p>The maximum request length is limited to 128 KB.</p><important>
+/// <p>You must URL encode any signed header values that contain spaces. For example, if your header value is <code>my file.txt</code>, containing two spaces after <code>my</code>, you must URL encode this value to <code>my%20%20file.txt</code>.</p>
+/// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutBucketWebsiteFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

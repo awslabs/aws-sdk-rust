@@ -78,6 +78,32 @@ impl crate::operation::create_service::builders::CreateServiceInputBuilder {
 /// <li>
 /// <p>Load balancer requirement: When your service uses Application Load Balancer, Network Load Balancer, or Service Connect</p></li>
 /// </ul></li>
+/// <li>
+/// <p><code>LINEAR</code>: A <i>linear</i> deployment strategy (<code>LINEAR</code>) gradually shifts traffic from the current production environment to a new environment in equal percentage increments over a specified time period. With Amazon ECS linear deployments, you can control the pace of traffic shifting and validate new service revisions with increasing amounts of production traffic.</p>
+/// <p>Linear deployments are best suited for the following scenarios:</p>
+/// <ul>
+/// <li>
+/// <p>Gradual validation: When you want to gradually validate your new service version with increasing traffic</p></li>
+/// <li>
+/// <p>Performance monitoring: When you need time to monitor metrics and performance during the deployment</p></li>
+/// <li>
+/// <p>Risk minimization: When you want to minimize risk by exposing the new version to production traffic incrementally</p></li>
+/// <li>
+/// <p>Load balancer requirement: When your service uses Application Load Balancer, Network Load Balancer, or Service Connect</p></li>
+/// </ul></li>
+/// <li>
+/// <p><code>CANARY</code>: A <i>canary</i> deployment strategy (<code>CANARY</code>) shifts a small percentage of traffic to the new service revision first, then shifts the remaining traffic all at once after a specified time period. This allows you to test the new version with a subset of users before full deployment.</p>
+/// <p>Canary deployments are best suited for the following scenarios:</p>
+/// <ul>
+/// <li>
+/// <p>Feature testing: When you want to test new features with a small subset of users before full rollout</p></li>
+/// <li>
+/// <p>Production validation: When you need to validate performance and functionality with real production traffic</p></li>
+/// <li>
+/// <p>Blast radius control: When you want to minimize blast radius if issues are discovered in the new version</p></li>
+/// <li>
+/// <p>Load balancer requirement: When your service uses Application Load Balancer, Network Load Balancer, or Service Connect</p></li>
+/// </ul></li>
 /// </ul></li>
 /// <li>
 /// <p>External</p>
@@ -352,7 +378,9 @@ impl CreateServiceFluentBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
-    /// <p>The infrastructure that you run your service on. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <p>The infrastructure that you run your service on. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p><note>
+    /// <p>If you want to use Amazon ECS Managed Instances, you must use the <code>capacityProviderStrategy</code> request parameter and omit the <code>launchType</code> request parameter.</p>
+    /// </note>
     /// <p>The <code>FARGATE</code> launch type runs your tasks on Fargate On-Demand infrastructure.</p><note>
     /// <p>Fargate Spot infrastructure is available for use but a capacity provider strategy must be used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/fargate-capacity-providers.html">Fargate capacity providers</a> in the <i>Amazon ECS Developer Guide</i>.</p>
     /// </note>
@@ -363,7 +391,9 @@ impl CreateServiceFluentBuilder {
         self.inner = self.inner.launch_type(input);
         self
     }
-    /// <p>The infrastructure that you run your service on. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <p>The infrastructure that you run your service on. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p><note>
+    /// <p>If you want to use Amazon ECS Managed Instances, you must use the <code>capacityProviderStrategy</code> request parameter and omit the <code>launchType</code> request parameter.</p>
+    /// </note>
     /// <p>The <code>FARGATE</code> launch type runs your tasks on Fargate On-Demand infrastructure.</p><note>
     /// <p>Fargate Spot infrastructure is available for use but a capacity provider strategy must be used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/fargate-capacity-providers.html">Fargate capacity providers</a> in the <i>Amazon ECS Developer Guide</i>.</p>
     /// </note>
@@ -374,7 +404,9 @@ impl CreateServiceFluentBuilder {
         self.inner = self.inner.set_launch_type(input);
         self
     }
-    /// <p>The infrastructure that you run your service on. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <p>The infrastructure that you run your service on. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p><note>
+    /// <p>If you want to use Amazon ECS Managed Instances, you must use the <code>capacityProviderStrategy</code> request parameter and omit the <code>launchType</code> request parameter.</p>
+    /// </note>
     /// <p>The <code>FARGATE</code> launch type runs your tasks on Fargate On-Demand infrastructure.</p><note>
     /// <p>Fargate Spot infrastructure is available for use but a capacity provider strategy must be used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/fargate-capacity-providers.html">Fargate capacity providers</a> in the <i>Amazon ECS Developer Guide</i>.</p>
     /// </note>
@@ -389,14 +421,18 @@ impl CreateServiceFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_capacity_provider_strategy`](Self::set_capacity_provider_strategy).
     ///
-    /// <p>The capacity provider strategy to use for the service.</p>
+    /// <p>The capacity provider strategy to use for the service.</p><note>
+    /// <p>If you want to use Amazon ECS Managed Instances, you must use the <code>capacityProviderStrategy</code> request parameter and omit the <code>launchType</code> request parameter.</p>
+    /// </note>
     /// <p>If a <code>capacityProviderStrategy</code> is specified, the <code>launchType</code> parameter must be omitted. If no <code>capacityProviderStrategy</code> or <code>launchType</code> is specified, the <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
     /// <p>A capacity provider strategy can contain a maximum of 20 capacity providers.</p>
     pub fn capacity_provider_strategy(mut self, input: crate::types::CapacityProviderStrategyItem) -> Self {
         self.inner = self.inner.capacity_provider_strategy(input);
         self
     }
-    /// <p>The capacity provider strategy to use for the service.</p>
+    /// <p>The capacity provider strategy to use for the service.</p><note>
+    /// <p>If you want to use Amazon ECS Managed Instances, you must use the <code>capacityProviderStrategy</code> request parameter and omit the <code>launchType</code> request parameter.</p>
+    /// </note>
     /// <p>If a <code>capacityProviderStrategy</code> is specified, the <code>launchType</code> parameter must be omitted. If no <code>capacityProviderStrategy</code> or <code>launchType</code> is specified, the <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
     /// <p>A capacity provider strategy can contain a maximum of 20 capacity providers.</p>
     pub fn set_capacity_provider_strategy(
@@ -406,7 +442,9 @@ impl CreateServiceFluentBuilder {
         self.inner = self.inner.set_capacity_provider_strategy(input);
         self
     }
-    /// <p>The capacity provider strategy to use for the service.</p>
+    /// <p>The capacity provider strategy to use for the service.</p><note>
+    /// <p>If you want to use Amazon ECS Managed Instances, you must use the <code>capacityProviderStrategy</code> request parameter and omit the <code>launchType</code> request parameter.</p>
+    /// </note>
     /// <p>If a <code>capacityProviderStrategy</code> is specified, the <code>launchType</code> parameter must be omitted. If no <code>capacityProviderStrategy</code> or <code>launchType</code> is specified, the <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
     /// <p>A capacity provider strategy can contain a maximum of 20 capacity providers.</p>
     pub fn get_capacity_provider_strategy(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CapacityProviderStrategyItem>> {

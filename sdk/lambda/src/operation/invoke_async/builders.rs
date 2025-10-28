@@ -22,10 +22,12 @@ impl crate::operation::invoke_async::builders::InvokeAsyncInputBuilder {
 }
 /// Fluent builder constructing a request to `InvokeAsync`.
 ///
-/// <important>
+/// <note>
 /// <p>For asynchronous function invocation, use <code>Invoke</code>.</p>
-/// </important>
+/// </note>
 /// <p>Invokes a function asynchronously.</p><note>
+/// <p>The payload limit is 256KB. For larger payloads, for up to 1MB, use <code>Invoke</code>.</p>
+/// </note> <note>
 /// <p>If you do use the InvokeAsync action, note that it doesn't support the use of X-Ray active tracing. Trace ID is not propagated to the function, even if X-Ray active tracing is turned on.</p>
 /// </note>
 #[deprecated]

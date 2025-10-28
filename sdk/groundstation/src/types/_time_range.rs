@@ -4,17 +4,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimeRange {
-    /// <p>Time in UTC at which the time range starts.</p>
+    /// <p>Unix epoch timestamp in UTC at which the time range starts.</p>
     pub start_time: ::aws_smithy_types::DateTime,
-    /// <p>Time in UTC at which the time range ends.</p>
+    /// <p>Unix epoch timestamp in UTC at which the time range ends.</p>
     pub end_time: ::aws_smithy_types::DateTime,
 }
 impl TimeRange {
-    /// <p>Time in UTC at which the time range starts.</p>
+    /// <p>Unix epoch timestamp in UTC at which the time range starts.</p>
     pub fn start_time(&self) -> &::aws_smithy_types::DateTime {
         &self.start_time
     }
-    /// <p>Time in UTC at which the time range ends.</p>
+    /// <p>Unix epoch timestamp in UTC at which the time range ends.</p>
     pub fn end_time(&self) -> &::aws_smithy_types::DateTime {
         &self.end_time
     }
@@ -34,33 +34,33 @@ pub struct TimeRangeBuilder {
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl TimeRangeBuilder {
-    /// <p>Time in UTC at which the time range starts.</p>
+    /// <p>Unix epoch timestamp in UTC at which the time range starts.</p>
     /// This field is required.
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Time in UTC at which the time range starts.</p>
+    /// <p>Unix epoch timestamp in UTC at which the time range starts.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
-    /// <p>Time in UTC at which the time range starts.</p>
+    /// <p>Unix epoch timestamp in UTC at which the time range starts.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.start_time
     }
-    /// <p>Time in UTC at which the time range ends.</p>
+    /// <p>Unix epoch timestamp in UTC at which the time range ends.</p>
     /// This field is required.
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Time in UTC at which the time range ends.</p>
+    /// <p>Unix epoch timestamp in UTC at which the time range ends.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
-    /// <p>Time in UTC at which the time range ends.</p>
+    /// <p>Unix epoch timestamp in UTC at which the time range ends.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.end_time
     }

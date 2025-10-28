@@ -105,6 +105,8 @@ pub use crate::types::_audit_target::AuditTarget;
 
 pub use crate::types::_audit_target_entity::AuditTargetEntity;
 
+pub use crate::types::_canary_entity::CanaryEntity;
+
 pub use crate::types::_service_operation_entity::ServiceOperationEntity;
 
 pub use crate::types::_service_entity::ServiceEntity;
@@ -136,6 +138,8 @@ mod _batch_update_exclusion_windows_error;
 mod _burn_rate_configuration;
 
 mod _calendar_interval;
+
+mod _canary_entity;
 
 mod _change_event;
 

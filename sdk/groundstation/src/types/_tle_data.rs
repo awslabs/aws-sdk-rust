@@ -8,7 +8,7 @@ pub struct TleData {
     pub tle_line1: ::std::string::String,
     /// <p>Second line of two-line element set (TLE) data.</p>
     pub tle_line2: ::std::string::String,
-    /// <p>The valid time range for the TLE. Gaps or overlap are not permitted.</p>
+    /// <p>The valid time range for the TLE. Time ranges must be continuous without gaps or overlaps.</p>
     pub valid_time_range: ::std::option::Option<crate::types::TimeRange>,
 }
 impl TleData {
@@ -22,7 +22,7 @@ impl TleData {
         use std::ops::Deref;
         self.tle_line2.deref()
     }
-    /// <p>The valid time range for the TLE. Gaps or overlap are not permitted.</p>
+    /// <p>The valid time range for the TLE. Time ranges must be continuous without gaps or overlaps.</p>
     pub fn valid_time_range(&self) -> ::std::option::Option<&crate::types::TimeRange> {
         self.valid_time_range.as_ref()
     }
@@ -73,18 +73,18 @@ impl TleDataBuilder {
     pub fn get_tle_line2(&self) -> &::std::option::Option<::std::string::String> {
         &self.tle_line2
     }
-    /// <p>The valid time range for the TLE. Gaps or overlap are not permitted.</p>
+    /// <p>The valid time range for the TLE. Time ranges must be continuous without gaps or overlaps.</p>
     /// This field is required.
     pub fn valid_time_range(mut self, input: crate::types::TimeRange) -> Self {
         self.valid_time_range = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The valid time range for the TLE. Gaps or overlap are not permitted.</p>
+    /// <p>The valid time range for the TLE. Time ranges must be continuous without gaps or overlaps.</p>
     pub fn set_valid_time_range(mut self, input: ::std::option::Option<crate::types::TimeRange>) -> Self {
         self.valid_time_range = input;
         self
     }
-    /// <p>The valid time range for the TLE. Gaps or overlap are not permitted.</p>
+    /// <p>The valid time range for the TLE. Time ranges must be continuous without gaps or overlaps.</p>
     pub fn get_valid_time_range(&self) -> &::std::option::Option<crate::types::TimeRange> {
         &self.valid_time_range
     }

@@ -920,6 +920,8 @@ mod describe_capacity_reservation_billing_requests;
 
 mod describe_capacity_reservation_fleets;
 
+mod describe_capacity_reservation_topology;
+
 mod describe_capacity_reservations;
 
 mod describe_carrier_gateways;

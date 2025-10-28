@@ -18,9 +18,9 @@ pub struct CapacityProviderStrategyItem {
     /// <li>
     /// <p>Weight is considered after the base value is satisfied</p></li>
     /// <li>
-    /// <p>Default value is <code>0</code> if not specified</p></li>
+    /// <p>The default value is <code>0</code> if not specified</p></li>
     /// <li>
-    /// <p>Valid range: 0 to 1,000</p></li>
+    /// <p>The valid range is 0 to 1,000</p></li>
     /// <li>
     /// <p>At least one capacity provider must have a weight greater than zero</p></li>
     /// <li>
@@ -43,9 +43,9 @@ pub struct CapacityProviderStrategyItem {
     /// <li>
     /// <p>Only one capacity provider in a strategy can have a base defined</p></li>
     /// <li>
-    /// <p>Default value is <code>0</code> if not specified</p></li>
+    /// <p>The default value is <code>0</code> if not specified</p></li>
     /// <li>
-    /// <p>Valid range: 0 to 100,000</p></li>
+    /// <p>The valid range is 0 to 100,000</p></li>
     /// <li>
     /// <p>Base requirements are satisfied first before weight distribution</p></li>
     /// </ul>
@@ -64,9 +64,9 @@ impl CapacityProviderStrategyItem {
     /// <li>
     /// <p>Weight is considered after the base value is satisfied</p></li>
     /// <li>
-    /// <p>Default value is <code>0</code> if not specified</p></li>
+    /// <p>The default value is <code>0</code> if not specified</p></li>
     /// <li>
-    /// <p>Valid range: 0 to 1,000</p></li>
+    /// <p>The valid range is 0 to 1,000</p></li>
     /// <li>
     /// <p>At least one capacity provider must have a weight greater than zero</p></li>
     /// <li>
@@ -91,9 +91,9 @@ impl CapacityProviderStrategyItem {
     /// <li>
     /// <p>Only one capacity provider in a strategy can have a base defined</p></li>
     /// <li>
-    /// <p>Default value is <code>0</code> if not specified</p></li>
+    /// <p>The default value is <code>0</code> if not specified</p></li>
     /// <li>
-    /// <p>Valid range: 0 to 100,000</p></li>
+    /// <p>The valid range is 0 to 100,000</p></li>
     /// <li>
     /// <p>Base requirements are satisfied first before weight distribution</p></li>
     /// </ul>
@@ -139,9 +139,9 @@ impl CapacityProviderStrategyItemBuilder {
     /// <li>
     /// <p>Weight is considered after the base value is satisfied</p></li>
     /// <li>
-    /// <p>Default value is <code>0</code> if not specified</p></li>
+    /// <p>The default value is <code>0</code> if not specified</p></li>
     /// <li>
-    /// <p>Valid range: 0 to 1,000</p></li>
+    /// <p>The valid range is 0 to 1,000</p></li>
     /// <li>
     /// <p>At least one capacity provider must have a weight greater than zero</p></li>
     /// <li>
@@ -168,9 +168,9 @@ impl CapacityProviderStrategyItemBuilder {
     /// <li>
     /// <p>Weight is considered after the base value is satisfied</p></li>
     /// <li>
-    /// <p>Default value is <code>0</code> if not specified</p></li>
+    /// <p>The default value is <code>0</code> if not specified</p></li>
     /// <li>
-    /// <p>Valid range: 0 to 1,000</p></li>
+    /// <p>The valid range is 0 to 1,000</p></li>
     /// <li>
     /// <p>At least one capacity provider must have a weight greater than zero</p></li>
     /// <li>
@@ -197,9 +197,9 @@ impl CapacityProviderStrategyItemBuilder {
     /// <li>
     /// <p>Weight is considered after the base value is satisfied</p></li>
     /// <li>
-    /// <p>Default value is <code>0</code> if not specified</p></li>
+    /// <p>The default value is <code>0</code> if not specified</p></li>
     /// <li>
-    /// <p>Valid range: 0 to 1,000</p></li>
+    /// <p>The valid range is 0 to 1,000</p></li>
     /// <li>
     /// <p>At least one capacity provider must have a weight greater than zero</p></li>
     /// <li>
@@ -224,9 +224,9 @@ impl CapacityProviderStrategyItemBuilder {
     /// <li>
     /// <p>Only one capacity provider in a strategy can have a base defined</p></li>
     /// <li>
-    /// <p>Default value is <code>0</code> if not specified</p></li>
+    /// <p>The default value is <code>0</code> if not specified</p></li>
     /// <li>
-    /// <p>Valid range: 0 to 100,000</p></li>
+    /// <p>The valid range is 0 to 100,000</p></li>
     /// <li>
     /// <p>Base requirements are satisfied first before weight distribution</p></li>
     /// </ul>
@@ -240,9 +240,9 @@ impl CapacityProviderStrategyItemBuilder {
     /// <li>
     /// <p>Only one capacity provider in a strategy can have a base defined</p></li>
     /// <li>
-    /// <p>Default value is <code>0</code> if not specified</p></li>
+    /// <p>The default value is <code>0</code> if not specified</p></li>
     /// <li>
-    /// <p>Valid range: 0 to 100,000</p></li>
+    /// <p>The valid range is 0 to 100,000</p></li>
     /// <li>
     /// <p>Base requirements are satisfied first before weight distribution</p></li>
     /// </ul>
@@ -256,9 +256,9 @@ impl CapacityProviderStrategyItemBuilder {
     /// <li>
     /// <p>Only one capacity provider in a strategy can have a base defined</p></li>
     /// <li>
-    /// <p>Default value is <code>0</code> if not specified</p></li>
+    /// <p>The default value is <code>0</code> if not specified</p></li>
     /// <li>
-    /// <p>Valid range: 0 to 100,000</p></li>
+    /// <p>The valid range is 0 to 100,000</p></li>
     /// <li>
     /// <p>Base requirements are satisfied first before weight distribution</p></li>
     /// </ul>

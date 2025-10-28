@@ -48,6 +48,18 @@ pub fn ser_deployment_configuration(
         }
         array_10.finish();
     }
+    if let Some(var_13) = &input.linear_configuration {
+        #[allow(unused_mut)]
+        let mut object_14 = object.key("linearConfiguration").start_object();
+        crate::protocol_serde::shape_linear_configuration::ser_linear_configuration(&mut object_14, var_13)?;
+        object_14.finish();
+    }
+    if let Some(var_15) = &input.canary_configuration {
+        #[allow(unused_mut)]
+        let mut object_16 = object.key("canaryConfiguration").start_object();
+        crate::protocol_serde::shape_canary_configuration::ser_canary_configuration(&mut object_16, var_15)?;
+        object_16.finish();
+    }
     Ok(())
 }
 
@@ -106,6 +118,14 @@ where
                             builder = builder.set_lifecycle_hooks(
                                 crate::protocol_serde::shape_deployment_lifecycle_hook_list::de_deployment_lifecycle_hook_list(tokens)?,
                             );
+                        }
+                        "linearConfiguration" => {
+                            builder =
+                                builder.set_linear_configuration(crate::protocol_serde::shape_linear_configuration::de_linear_configuration(tokens)?);
+                        }
+                        "canaryConfiguration" => {
+                            builder =
+                                builder.set_canary_configuration(crate::protocol_serde::shape_canary_configuration::de_canary_configuration(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

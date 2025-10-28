@@ -9,6 +9,7 @@ pub struct CapacityProvider {
     /// <p>The name of the capacity provider.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The cluster that this capacity provider is associated with. Managed instances capacity providers are cluster-scoped, meaning they can only be used within their associated cluster.</p>
+    /// <p>This is required for Managed instances.</p>
     pub cluster: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the capacity provider. Only capacity providers in an <code>ACTIVE</code> state can be used in a cluster. When a capacity provider is successfully deleted, it has an <code>INACTIVE</code> status.</p>
     pub status: ::std::option::Option<crate::types::CapacityProviderStatus>,
@@ -72,6 +73,7 @@ impl CapacityProvider {
         self.name.as_deref()
     }
     /// <p>The cluster that this capacity provider is associated with. Managed instances capacity providers are cluster-scoped, meaning they can only be used within their associated cluster.</p>
+    /// <p>This is required for Managed instances.</p>
     pub fn cluster(&self) -> ::std::option::Option<&str> {
         self.cluster.as_deref()
     }
@@ -195,16 +197,19 @@ impl CapacityProviderBuilder {
         &self.name
     }
     /// <p>The cluster that this capacity provider is associated with. Managed instances capacity providers are cluster-scoped, meaning they can only be used within their associated cluster.</p>
+    /// <p>This is required for Managed instances.</p>
     pub fn cluster(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The cluster that this capacity provider is associated with. Managed instances capacity providers are cluster-scoped, meaning they can only be used within their associated cluster.</p>
+    /// <p>This is required for Managed instances.</p>
     pub fn set_cluster(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster = input;
         self
     }
     /// <p>The cluster that this capacity provider is associated with. Managed instances capacity providers are cluster-scoped, meaning they can only be used within their associated cluster.</p>
+    /// <p>This is required for Managed instances.</p>
     pub fn get_cluster(&self) -> &::std::option::Option<::std::string::String> {
         &self.cluster
     }

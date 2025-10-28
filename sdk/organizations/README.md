@@ -6,7 +6,7 @@ This guide provides descriptions of the Organizations operations. For more infor
 
 __Support and feedback for Organizations__
 
-We welcome your feedback. Send your comments to [feedback-awsorganizations@amazon.com](mailto:feedback-awsorganizations@amazon.com) or post your feedback and questions in the [Organizations support forum](http://forums.aws.amazon.com/forum.jspa?forumID=219). For more information about the Amazon Web Services support forums, see [Forums Help](http://forums.aws.amazon.com/help.jspa).
+We welcome your feedback. You can post your feedback and questions in the [Organizations support forum](https://forums.aws.amazon.com/forum.jspa?forumID=219). For more information about the Amazon Web Services Support forums, see [Forums Help](https://forums.aws.amazon.com/help.jspa).
 
 __Endpoint to call When using the CLI or the Amazon Web Services SDK__
 
@@ -31,7 +31,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-aws-sdk-organizations = "1.97.0"
+aws-sdk-organizations = "1.98.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

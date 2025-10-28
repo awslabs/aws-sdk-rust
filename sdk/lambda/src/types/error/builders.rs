@@ -27,6 +27,8 @@ pub use crate::types::error::_snap_start_not_ready_exception::SnapStartNotReadyE
 
 pub use crate::types::error::_snap_start_exception::SnapStartExceptionBuilder;
 
+pub use crate::types::error::_serialized_request_entity_too_large_exception::SerializedRequestEntityTooLargeExceptionBuilder;
+
 pub use crate::types::error::_resource_not_ready_exception::ResourceNotReadyExceptionBuilder;
 
 pub use crate::types::error::_request_too_large_exception::RequestTooLargeExceptionBuilder;

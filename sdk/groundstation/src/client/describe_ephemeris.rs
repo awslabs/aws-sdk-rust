@@ -8,13 +8,14 @@ impl super::Client {
     ///   - [`ephemeris_id(Option<String>)`](crate::operation::describe_ephemeris::DescribeEphemerisOutput::ephemeris_id): <p>The AWS Ground Station ephemeris ID.</p>
     ///   - [`satellite_id(Option<String>)`](crate::operation::describe_ephemeris::DescribeEphemerisOutput::satellite_id): <p>The AWS Ground Station satellite ID associated with ephemeris.</p>
     ///   - [`status(Option<EphemerisStatus>)`](crate::operation::describe_ephemeris::DescribeEphemerisOutput::status): <p>The status of the ephemeris.</p>
-    ///   - [`priority(Option<i32>)`](crate::operation::describe_ephemeris::DescribeEphemerisOutput::priority): <p>Customer-provided priority score to establish the order in which overlapping ephemerides should be used.</p> <p>The default for customer-provided ephemeris priority is 1, and higher numbers take precedence.</p> <p>Priority must be 1 or greater</p>
+    ///   - [`priority(Option<i32>)`](crate::operation::describe_ephemeris::DescribeEphemerisOutput::priority): <p>A priority score that determines which ephemeris to use when multiple ephemerides overlap.</p> <p>Higher numbers take precedence. The default is 1. Must be 1 or greater.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::describe_ephemeris::DescribeEphemerisOutput::creation_time): <p>The time the ephemeris was uploaded in UTC.</p>
     ///   - [`enabled(Option<bool>)`](crate::operation::describe_ephemeris::DescribeEphemerisOutput::enabled): <p>Whether or not the ephemeris is enabled.</p>
-    ///   - [`name(Option<String>)`](crate::operation::describe_ephemeris::DescribeEphemerisOutput::name): <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p>
+    ///   - [`name(Option<String>)`](crate::operation::describe_ephemeris::DescribeEphemerisOutput::name): <p>A name that you can use to identify the ephemeris.</p>
     ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::describe_ephemeris::DescribeEphemerisOutput::tags): <p>Tags assigned to an ephemeris.</p>
     ///   - [`supplied_data(Option<EphemerisTypeDescription>)`](crate::operation::describe_ephemeris::DescribeEphemerisOutput::supplied_data): <p>Supplied ephemeris data.</p>
-    ///   - [`invalid_reason(Option<EphemerisInvalidReason>)`](crate::operation::describe_ephemeris::DescribeEphemerisOutput::invalid_reason): <p>Reason that an ephemeris failed validation. Only provided for ephemerides with <code>INVALID</code> status.</p>
+    ///   - [`invalid_reason(Option<EphemerisInvalidReason>)`](crate::operation::describe_ephemeris::DescribeEphemerisOutput::invalid_reason): <p>Reason that an ephemeris failed validation. Appears only when the status is <code>INVALID</code>.</p>
+    ///   - [`error_reasons(Option<Vec::<EphemerisErrorReason>>)`](crate::operation::describe_ephemeris::DescribeEphemerisOutput::error_reasons): <p>Detailed error information for ephemerides with <code>INVALID</code> status.</p> <p>Provides specific error codes and messages to help diagnose validation failures.</p>
     /// - On failure, responds with [`SdkError<DescribeEphemerisError>`](crate::operation::describe_ephemeris::DescribeEphemerisError)
     pub fn describe_ephemeris(&self) -> crate::operation::describe_ephemeris::builders::DescribeEphemerisFluentBuilder {
         crate::operation::describe_ephemeris::builders::DescribeEphemerisFluentBuilder::new(self.handle.clone())

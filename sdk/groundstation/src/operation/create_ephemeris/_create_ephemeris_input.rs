@@ -3,20 +3,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateEphemerisInput {
-    /// <p>AWS Ground Station satellite ID for this ephemeris.</p>
+    /// <p>The satellite ID that associates this ephemeris with a satellite in AWS Ground Station.</p>
     pub satellite_id: ::std::option::Option<::std::string::String>,
-    /// <p>Whether to set the ephemeris status to <code>ENABLED</code> after validation.</p>
-    /// <p>Setting this to false will set the ephemeris status to <code>DISABLED</code> after validation.</p>
+    /// <p>Set to <code>true</code> to enable the ephemeris after validation. Set to <code>false</code> to keep it disabled.</p>
     pub enabled: ::std::option::Option<bool>,
-    /// <p>Customer-provided priority score to establish the order in which overlapping ephemerides should be used.</p>
-    /// <p>The default for customer-provided ephemeris priority is 1, and higher numbers take precedence.</p>
-    /// <p>Priority must be 1 or greater</p>
+    /// <p>A priority score that determines which ephemeris to use when multiple ephemerides overlap.</p>
+    /// <p>Higher numbers take precedence. The default is 1. Must be 1 or greater.</p>
     pub priority: ::std::option::Option<i32>,
     /// <p>An overall expiration time for the ephemeris in UTC, after which it will become <code>EXPIRED</code>.</p>
     pub expiration_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p>
+    /// <p>A name that you can use to identify the ephemeris.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The ARN of a KMS key used to encrypt the ephemeris in Ground Station.</p>
+    /// <p>The ARN of the KMS key to use for encrypting the ephemeris.</p>
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>Ephemeris data.</p>
     pub ephemeris: ::std::option::Option<crate::types::EphemerisData>,
@@ -24,18 +22,16 @@ pub struct CreateEphemerisInput {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateEphemerisInput {
-    /// <p>AWS Ground Station satellite ID for this ephemeris.</p>
+    /// <p>The satellite ID that associates this ephemeris with a satellite in AWS Ground Station.</p>
     pub fn satellite_id(&self) -> ::std::option::Option<&str> {
         self.satellite_id.as_deref()
     }
-    /// <p>Whether to set the ephemeris status to <code>ENABLED</code> after validation.</p>
-    /// <p>Setting this to false will set the ephemeris status to <code>DISABLED</code> after validation.</p>
+    /// <p>Set to <code>true</code> to enable the ephemeris after validation. Set to <code>false</code> to keep it disabled.</p>
     pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
     }
-    /// <p>Customer-provided priority score to establish the order in which overlapping ephemerides should be used.</p>
-    /// <p>The default for customer-provided ephemeris priority is 1, and higher numbers take precedence.</p>
-    /// <p>Priority must be 1 or greater</p>
+    /// <p>A priority score that determines which ephemeris to use when multiple ephemerides overlap.</p>
+    /// <p>Higher numbers take precedence. The default is 1. Must be 1 or greater.</p>
     pub fn priority(&self) -> ::std::option::Option<i32> {
         self.priority
     }
@@ -43,11 +39,11 @@ impl CreateEphemerisInput {
     pub fn expiration_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.expiration_time.as_ref()
     }
-    /// <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p>
+    /// <p>A name that you can use to identify the ephemeris.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The ARN of a KMS key used to encrypt the ephemeris in Ground Station.</p>
+    /// <p>The ARN of the KMS key to use for encrypting the ephemeris.</p>
     pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
         self.kms_key_arn.as_deref()
     }
@@ -81,55 +77,48 @@ pub struct CreateEphemerisInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateEphemerisInputBuilder {
-    /// <p>AWS Ground Station satellite ID for this ephemeris.</p>
-    /// This field is required.
+    /// <p>The satellite ID that associates this ephemeris with a satellite in AWS Ground Station.</p>
     pub fn satellite_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.satellite_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>AWS Ground Station satellite ID for this ephemeris.</p>
+    /// <p>The satellite ID that associates this ephemeris with a satellite in AWS Ground Station.</p>
     pub fn set_satellite_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.satellite_id = input;
         self
     }
-    /// <p>AWS Ground Station satellite ID for this ephemeris.</p>
+    /// <p>The satellite ID that associates this ephemeris with a satellite in AWS Ground Station.</p>
     pub fn get_satellite_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.satellite_id
     }
-    /// <p>Whether to set the ephemeris status to <code>ENABLED</code> after validation.</p>
-    /// <p>Setting this to false will set the ephemeris status to <code>DISABLED</code> after validation.</p>
+    /// <p>Set to <code>true</code> to enable the ephemeris after validation. Set to <code>false</code> to keep it disabled.</p>
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Whether to set the ephemeris status to <code>ENABLED</code> after validation.</p>
-    /// <p>Setting this to false will set the ephemeris status to <code>DISABLED</code> after validation.</p>
+    /// <p>Set to <code>true</code> to enable the ephemeris after validation. Set to <code>false</code> to keep it disabled.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
     }
-    /// <p>Whether to set the ephemeris status to <code>ENABLED</code> after validation.</p>
-    /// <p>Setting this to false will set the ephemeris status to <code>DISABLED</code> after validation.</p>
+    /// <p>Set to <code>true</code> to enable the ephemeris after validation. Set to <code>false</code> to keep it disabled.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
         &self.enabled
     }
-    /// <p>Customer-provided priority score to establish the order in which overlapping ephemerides should be used.</p>
-    /// <p>The default for customer-provided ephemeris priority is 1, and higher numbers take precedence.</p>
-    /// <p>Priority must be 1 or greater</p>
+    /// <p>A priority score that determines which ephemeris to use when multiple ephemerides overlap.</p>
+    /// <p>Higher numbers take precedence. The default is 1. Must be 1 or greater.</p>
     pub fn priority(mut self, input: i32) -> Self {
         self.priority = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Customer-provided priority score to establish the order in which overlapping ephemerides should be used.</p>
-    /// <p>The default for customer-provided ephemeris priority is 1, and higher numbers take precedence.</p>
-    /// <p>Priority must be 1 or greater</p>
+    /// <p>A priority score that determines which ephemeris to use when multiple ephemerides overlap.</p>
+    /// <p>Higher numbers take precedence. The default is 1. Must be 1 or greater.</p>
     pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
         self.priority = input;
         self
     }
-    /// <p>Customer-provided priority score to establish the order in which overlapping ephemerides should be used.</p>
-    /// <p>The default for customer-provided ephemeris priority is 1, and higher numbers take precedence.</p>
-    /// <p>Priority must be 1 or greater</p>
+    /// <p>A priority score that determines which ephemeris to use when multiple ephemerides overlap.</p>
+    /// <p>Higher numbers take precedence. The default is 1. Must be 1 or greater.</p>
     pub fn get_priority(&self) -> &::std::option::Option<i32> {
         &self.priority
     }
@@ -147,32 +136,32 @@ impl CreateEphemerisInputBuilder {
     pub fn get_expiration_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.expiration_time
     }
-    /// <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p>
+    /// <p>A name that you can use to identify the ephemeris.</p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p>
+    /// <p>A name that you can use to identify the ephemeris.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p>
+    /// <p>A name that you can use to identify the ephemeris.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The ARN of a KMS key used to encrypt the ephemeris in Ground Station.</p>
+    /// <p>The ARN of the KMS key to use for encrypting the ephemeris.</p>
     pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of a KMS key used to encrypt the ephemeris in Ground Station.</p>
+    /// <p>The ARN of the KMS key to use for encrypting the ephemeris.</p>
     pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_arn = input;
         self
     }
-    /// <p>The ARN of a KMS key used to encrypt the ephemeris in Ground Station.</p>
+    /// <p>The ARN of the KMS key to use for encrypting the ephemeris.</p>
     pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_arn
     }

@@ -48,6 +48,9 @@ where
                         "DnsIpAddresses" => {
                             builder = builder.set_dns_ip_addresses(crate::protocol_serde::shape_dns_ip_addresses::de_dns_ip_addresses(tokens)?);
                         }
+                        "DnsIpv6Addresses" => {
+                            builder = builder.set_dns_ipv6_addresses(crate::protocol_serde::shape_dns_ipv6_addresses::de_dns_ipv6_addresses(tokens)?);
+                        }
                         "CustomerUserName" => {
                             builder = builder.set_customer_user_name(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

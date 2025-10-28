@@ -11,6 +11,10 @@ pub use crate::types::_mission_profile_list_item::MissionProfileListItem;
 
 pub use crate::types::_ground_station_data::GroundStationData;
 
+pub use crate::types::_ephemeris_error_reason::EphemerisErrorReason;
+
+pub use crate::types::_ephemeris_error_code::EphemerisErrorCode;
+
 pub use crate::types::_ephemeris_invalid_reason::EphemerisInvalidReason;
 
 pub use crate::types::_ephemeris_type_description::EphemerisTypeDescription;
@@ -23,6 +27,20 @@ pub use crate::types::_ephemeris_status::EphemerisStatus;
 
 pub use crate::types::_ephemeris_data::EphemerisData;
 
+pub use crate::types::_az_el_ephemeris::AzElEphemeris;
+
+pub use crate::types::_az_el_segments_data::AzElSegmentsData;
+
+pub use crate::types::_az_el_segments::AzElSegments;
+
+pub use crate::types::_az_el_segment::AzElSegment;
+
+pub use crate::types::_time_az_el::TimeAzEl;
+
+pub use crate::types::_iso8601_time_range::Iso8601TimeRange;
+
+pub use crate::types::_angle_units::AngleUnits;
+
 pub use crate::types::_oem_ephemeris::OemEphemeris;
 
 pub use crate::types::_tle_ephemeris::TleEphemeris;
@@ -32,6 +50,8 @@ pub use crate::types::_tle_data::TleData;
 pub use crate::types::_time_range::TimeRange;
 
 pub use crate::types::_ephemeris_item::EphemerisItem;
+
+pub use crate::types::_ephemeris_type::EphemerisType;
 
 pub use crate::types::_endpoint_details::EndpointDetails;
 
@@ -63,6 +83,14 @@ pub use crate::types::_security_details::SecurityDetails;
 
 pub use crate::types::_dataflow_endpoint_list_item::DataflowEndpointListItem;
 
+pub use crate::types::_ephemeris_response_data::EphemerisResponseData;
+
+pub use crate::types::_tracking_overrides::TrackingOverrides;
+
+pub use crate::types::_program_track_settings::ProgramTrackSettings;
+
+pub use crate::types::_az_el_program_track_settings::AzElProgramTrackSettings;
+
 pub use crate::types::_dataflow_detail::DataflowDetail;
 
 pub use crate::types::_destination::Destination;
@@ -79,11 +107,13 @@ pub use crate::types::_source::Source;
 
 pub use crate::types::_elevation::Elevation;
 
-pub use crate::types::_angle_units::AngleUnits;
-
 pub use crate::types::_contact_status::ContactStatus;
 
 pub use crate::types::_contact_data::ContactData;
+
+pub use crate::types::_ephemeris_filter::EphemerisFilter;
+
+pub use crate::types::_az_el_ephemeris_filter::AzElEphemerisFilter;
 
 pub use crate::types::_config_type_data::ConfigTypeData;
 
@@ -157,6 +187,18 @@ mod _audit_results;
 
 mod _aws_ground_station_agent_endpoint;
 
+mod _az_el_ephemeris;
+
+mod _az_el_ephemeris_filter;
+
+mod _az_el_program_track_settings;
+
+mod _az_el_segment;
+
+mod _az_el_segments;
+
+mod _az_el_segments_data;
+
 mod _bandwidth_units;
 
 mod _capability_health;
@@ -213,15 +255,25 @@ mod _ephemeris_data;
 
 mod _ephemeris_description;
 
+mod _ephemeris_error_code;
+
+mod _ephemeris_error_reason;
+
+mod _ephemeris_filter;
+
 mod _ephemeris_invalid_reason;
 
 mod _ephemeris_item;
 
 mod _ephemeris_meta_data;
 
+mod _ephemeris_response_data;
+
 mod _ephemeris_source;
 
 mod _ephemeris_status;
+
+mod _ephemeris_type;
 
 mod _ephemeris_type_description;
 
@@ -235,6 +287,8 @@ mod _ground_station_data;
 
 mod _integer_range;
 
+mod _iso8601_time_range;
+
 mod _kms_key;
 
 mod _mission_profile_list_item;
@@ -242,6 +296,8 @@ mod _mission_profile_list_item;
 mod _oem_ephemeris;
 
 mod _polarization;
+
+mod _program_track_settings;
 
 mod _ranged_connection_details;
 
@@ -263,6 +319,8 @@ mod _source;
 
 mod _spectrum_config;
 
+mod _time_az_el;
+
 mod _time_range;
 
 mod _tle_data;
@@ -270,6 +328,8 @@ mod _tle_data;
 mod _tle_ephemeris;
 
 mod _tracking_config;
+
+mod _tracking_overrides;
 
 mod _uplink_echo_config;
 

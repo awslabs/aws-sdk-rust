@@ -354,7 +354,7 @@ pub enum DescribeResourcePolicyError {
     /// <li>
     /// <p>TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that are not compliant with the tag policy requirements for this account.</p></li>
     /// <li>
-    /// <p>WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait until at least seven days after the account was created. Invited accounts aren't subject to this waiting period.</p></li>
+    /// <p>WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait until at least four days after the account was created. Invited accounts aren't subject to this waiting period.</p></li>
     /// </ul>
     ConstraintViolationException(crate::types::error::ConstraintViolationException),
     /// <p>We can't find a resource policy request with the parameter that you specified.</p>

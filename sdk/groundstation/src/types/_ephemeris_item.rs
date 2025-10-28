@@ -6,19 +6,20 @@
 pub struct EphemerisItem {
     /// <p>The AWS Ground Station ephemeris ID.</p>
     pub ephemeris_id: ::std::option::Option<::std::string::String>,
+    /// <p>The type of ephemeris.</p>
+    pub ephemeris_type: ::std::option::Option<crate::types::EphemerisType>,
     /// <p>The status of the ephemeris.</p>
     pub status: ::std::option::Option<crate::types::EphemerisStatus>,
-    /// <p>Customer-provided priority score to establish the order in which overlapping ephemerides should be used.</p>
-    /// <p>The default for customer-provided ephemeris priority is 1, and higher numbers take precedence.</p>
-    /// <p>Priority must be 1 or greater</p>
+    /// <p>A priority score that determines which ephemeris to use when multiple ephemerides overlap.</p>
+    /// <p>Higher numbers take precedence. The default is 1. Must be 1 or greater.</p>
     pub priority: ::std::option::Option<i32>,
     /// <p>Whether or not the ephemeris is enabled.</p>
     pub enabled: ::std::option::Option<bool>,
     /// <p>The time the ephemeris was uploaded in UTC.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p>
+    /// <p>A name that you can use to identify the ephemeris.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>Source S3 object used for the ephemeris.</p>
+    /// <p>Source Amazon S3 object used for the ephemeris.</p>
     pub source_s3_object: ::std::option::Option<crate::types::S3Object>,
 }
 impl EphemerisItem {
@@ -26,13 +27,16 @@ impl EphemerisItem {
     pub fn ephemeris_id(&self) -> ::std::option::Option<&str> {
         self.ephemeris_id.as_deref()
     }
+    /// <p>The type of ephemeris.</p>
+    pub fn ephemeris_type(&self) -> ::std::option::Option<&crate::types::EphemerisType> {
+        self.ephemeris_type.as_ref()
+    }
     /// <p>The status of the ephemeris.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::EphemerisStatus> {
         self.status.as_ref()
     }
-    /// <p>Customer-provided priority score to establish the order in which overlapping ephemerides should be used.</p>
-    /// <p>The default for customer-provided ephemeris priority is 1, and higher numbers take precedence.</p>
-    /// <p>Priority must be 1 or greater</p>
+    /// <p>A priority score that determines which ephemeris to use when multiple ephemerides overlap.</p>
+    /// <p>Higher numbers take precedence. The default is 1. Must be 1 or greater.</p>
     pub fn priority(&self) -> ::std::option::Option<i32> {
         self.priority
     }
@@ -44,11 +48,11 @@ impl EphemerisItem {
     pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
-    /// <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p>
+    /// <p>A name that you can use to identify the ephemeris.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Source S3 object used for the ephemeris.</p>
+    /// <p>Source Amazon S3 object used for the ephemeris.</p>
     pub fn source_s3_object(&self) -> ::std::option::Option<&crate::types::S3Object> {
         self.source_s3_object.as_ref()
     }
@@ -65,6 +69,7 @@ impl EphemerisItem {
 #[non_exhaustive]
 pub struct EphemerisItemBuilder {
     pub(crate) ephemeris_id: ::std::option::Option<::std::string::String>,
+    pub(crate) ephemeris_type: ::std::option::Option<crate::types::EphemerisType>,
     pub(crate) status: ::std::option::Option<crate::types::EphemerisStatus>,
     pub(crate) priority: ::std::option::Option<i32>,
     pub(crate) enabled: ::std::option::Option<bool>,
@@ -87,6 +92,20 @@ impl EphemerisItemBuilder {
     pub fn get_ephemeris_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.ephemeris_id
     }
+    /// <p>The type of ephemeris.</p>
+    pub fn ephemeris_type(mut self, input: crate::types::EphemerisType) -> Self {
+        self.ephemeris_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of ephemeris.</p>
+    pub fn set_ephemeris_type(mut self, input: ::std::option::Option<crate::types::EphemerisType>) -> Self {
+        self.ephemeris_type = input;
+        self
+    }
+    /// <p>The type of ephemeris.</p>
+    pub fn get_ephemeris_type(&self) -> &::std::option::Option<crate::types::EphemerisType> {
+        &self.ephemeris_type
+    }
     /// <p>The status of the ephemeris.</p>
     pub fn status(mut self, input: crate::types::EphemerisStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -101,23 +120,20 @@ impl EphemerisItemBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::EphemerisStatus> {
         &self.status
     }
-    /// <p>Customer-provided priority score to establish the order in which overlapping ephemerides should be used.</p>
-    /// <p>The default for customer-provided ephemeris priority is 1, and higher numbers take precedence.</p>
-    /// <p>Priority must be 1 or greater</p>
+    /// <p>A priority score that determines which ephemeris to use when multiple ephemerides overlap.</p>
+    /// <p>Higher numbers take precedence. The default is 1. Must be 1 or greater.</p>
     pub fn priority(mut self, input: i32) -> Self {
         self.priority = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Customer-provided priority score to establish the order in which overlapping ephemerides should be used.</p>
-    /// <p>The default for customer-provided ephemeris priority is 1, and higher numbers take precedence.</p>
-    /// <p>Priority must be 1 or greater</p>
+    /// <p>A priority score that determines which ephemeris to use when multiple ephemerides overlap.</p>
+    /// <p>Higher numbers take precedence. The default is 1. Must be 1 or greater.</p>
     pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
         self.priority = input;
         self
     }
-    /// <p>Customer-provided priority score to establish the order in which overlapping ephemerides should be used.</p>
-    /// <p>The default for customer-provided ephemeris priority is 1, and higher numbers take precedence.</p>
-    /// <p>Priority must be 1 or greater</p>
+    /// <p>A priority score that determines which ephemeris to use when multiple ephemerides overlap.</p>
+    /// <p>Higher numbers take precedence. The default is 1. Must be 1 or greater.</p>
     pub fn get_priority(&self) -> &::std::option::Option<i32> {
         &self.priority
     }
@@ -149,31 +165,31 @@ impl EphemerisItemBuilder {
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_time
     }
-    /// <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p>
+    /// <p>A name that you can use to identify the ephemeris.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p>
+    /// <p>A name that you can use to identify the ephemeris.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p>
+    /// <p>A name that you can use to identify the ephemeris.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>Source S3 object used for the ephemeris.</p>
+    /// <p>Source Amazon S3 object used for the ephemeris.</p>
     pub fn source_s3_object(mut self, input: crate::types::S3Object) -> Self {
         self.source_s3_object = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Source S3 object used for the ephemeris.</p>
+    /// <p>Source Amazon S3 object used for the ephemeris.</p>
     pub fn set_source_s3_object(mut self, input: ::std::option::Option<crate::types::S3Object>) -> Self {
         self.source_s3_object = input;
         self
     }
-    /// <p>Source S3 object used for the ephemeris.</p>
+    /// <p>Source Amazon S3 object used for the ephemeris.</p>
     pub fn get_source_s3_object(&self) -> &::std::option::Option<crate::types::S3Object> {
         &self.source_s3_object
     }
@@ -181,6 +197,7 @@ impl EphemerisItemBuilder {
     pub fn build(self) -> crate::types::EphemerisItem {
         crate::types::EphemerisItem {
             ephemeris_id: self.ephemeris_id,
+            ephemeris_type: self.ephemeris_type,
             status: self.status,
             priority: self.priority,
             enabled: self.enabled,

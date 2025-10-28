@@ -14,7 +14,9 @@ pub struct UpdateServiceInput {
     /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task definition to run in your service. If a <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision is used. If you modify the task definition with <code>UpdateService</code>, Amazon ECS spawns a task with the new version of the task definition and then stops an old task after the new version is running.</p>
     /// <p>This parameter triggers a new service deployment.</p>
     pub task_definition: ::std::option::Option<::std::string::String>,
-    /// <p>The details of a capacity provider strategy. You can set a capacity provider when you create a cluster, run a task, or update a service.</p>
+    /// <p>The details of a capacity provider strategy. You can set a capacity provider when you create a cluster, run a task, or update a service.</p><note>
+    /// <p>If you want to use Amazon ECS Managed Instances, you must use the <code>capacityProviderStrategy</code> request parameter.</p>
+    /// </note>
     /// <p>When you use Fargate, the capacity providers are <code>FARGATE</code> or <code>FARGATE_SPOT</code>.</p>
     /// <p>When you use Amazon EC2, the capacity providers are Auto Scaling groups.</p>
     /// <p>You can change capacity providers for rolling deployments and blue/green deployments.</p>
@@ -135,7 +137,9 @@ impl UpdateServiceInput {
     pub fn task_definition(&self) -> ::std::option::Option<&str> {
         self.task_definition.as_deref()
     }
-    /// <p>The details of a capacity provider strategy. You can set a capacity provider when you create a cluster, run a task, or update a service.</p>
+    /// <p>The details of a capacity provider strategy. You can set a capacity provider when you create a cluster, run a task, or update a service.</p><note>
+    /// <p>If you want to use Amazon ECS Managed Instances, you must use the <code>capacityProviderStrategy</code> request parameter.</p>
+    /// </note>
     /// <p>When you use Fargate, the capacity providers are <code>FARGATE</code> or <code>FARGATE_SPOT</code>.</p>
     /// <p>When you use Amazon EC2, the capacity providers are Auto Scaling groups.</p>
     /// <p>You can change capacity providers for rolling deployments and blue/green deployments.</p>
@@ -391,7 +395,9 @@ impl UpdateServiceInputBuilder {
     ///
     /// To override the contents of this collection use [`set_capacity_provider_strategy`](Self::set_capacity_provider_strategy).
     ///
-    /// <p>The details of a capacity provider strategy. You can set a capacity provider when you create a cluster, run a task, or update a service.</p>
+    /// <p>The details of a capacity provider strategy. You can set a capacity provider when you create a cluster, run a task, or update a service.</p><note>
+    /// <p>If you want to use Amazon ECS Managed Instances, you must use the <code>capacityProviderStrategy</code> request parameter.</p>
+    /// </note>
     /// <p>When you use Fargate, the capacity providers are <code>FARGATE</code> or <code>FARGATE_SPOT</code>.</p>
     /// <p>When you use Amazon EC2, the capacity providers are Auto Scaling groups.</p>
     /// <p>You can change capacity providers for rolling deployments and blue/green deployments.</p>
@@ -417,7 +423,9 @@ impl UpdateServiceInputBuilder {
         self.capacity_provider_strategy = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The details of a capacity provider strategy. You can set a capacity provider when you create a cluster, run a task, or update a service.</p>
+    /// <p>The details of a capacity provider strategy. You can set a capacity provider when you create a cluster, run a task, or update a service.</p><note>
+    /// <p>If you want to use Amazon ECS Managed Instances, you must use the <code>capacityProviderStrategy</code> request parameter.</p>
+    /// </note>
     /// <p>When you use Fargate, the capacity providers are <code>FARGATE</code> or <code>FARGATE_SPOT</code>.</p>
     /// <p>When you use Amazon EC2, the capacity providers are Auto Scaling groups.</p>
     /// <p>You can change capacity providers for rolling deployments and blue/green deployments.</p>
@@ -444,7 +452,9 @@ impl UpdateServiceInputBuilder {
         self.capacity_provider_strategy = input;
         self
     }
-    /// <p>The details of a capacity provider strategy. You can set a capacity provider when you create a cluster, run a task, or update a service.</p>
+    /// <p>The details of a capacity provider strategy. You can set a capacity provider when you create a cluster, run a task, or update a service.</p><note>
+    /// <p>If you want to use Amazon ECS Managed Instances, you must use the <code>capacityProviderStrategy</code> request parameter.</p>
+    /// </note>
     /// <p>When you use Fargate, the capacity providers are <code>FARGATE</code> or <code>FARGATE_SPOT</code>.</p>
     /// <p>When you use Amazon EC2, the capacity providers are Auto Scaling groups.</p>
     /// <p>You can change capacity providers for rolling deployments and blue/green deployments.</p>

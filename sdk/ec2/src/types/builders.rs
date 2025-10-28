@@ -1471,6 +1471,8 @@ pub use crate::types::_classic_link_instance::ClassicLinkInstanceBuilder;
 
 pub use crate::types::_carrier_gateway::CarrierGatewayBuilder;
 
+pub use crate::types::_capacity_reservation_topology::CapacityReservationTopologyBuilder;
+
 pub use crate::types::_capacity_reservation_fleet::CapacityReservationFleetBuilder;
 
 pub use crate::types::_fleet_capacity_reservation::FleetCapacityReservationBuilder;

@@ -5,9 +5,11 @@
 pub struct ListEphemeridesInput {
     /// <p>The AWS Ground Station satellite ID to list ephemeris for.</p>
     pub satellite_id: ::std::option::Option<::std::string::String>,
-    /// <p>The start time to list in UTC. The operation will return an ephemeris if its expiration time is within the time range defined by the <code>startTime</code> and <code>endTime</code>.</p>
+    /// <p>Filter ephemerides by type. If not specified, all ephemeris types will be returned.</p>
+    pub ephemeris_type: ::std::option::Option<crate::types::EphemerisType>,
+    /// <p>The start time for the list operation in UTC. Returns ephemerides with expiration times within your specified time range.</p>
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The end time to list in UTC. The operation will return an ephemeris if its expiration time is within the time range defined by the <code>startTime</code> and <code>endTime</code>.</p>
+    /// <p>The end time for the list operation in UTC. Returns ephemerides with expiration times within your specified time range.</p>
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The list of ephemeris status to return.</p>
     pub status_list: ::std::option::Option<::std::vec::Vec<crate::types::EphemerisStatus>>,
@@ -21,11 +23,15 @@ impl ListEphemeridesInput {
     pub fn satellite_id(&self) -> ::std::option::Option<&str> {
         self.satellite_id.as_deref()
     }
-    /// <p>The start time to list in UTC. The operation will return an ephemeris if its expiration time is within the time range defined by the <code>startTime</code> and <code>endTime</code>.</p>
+    /// <p>Filter ephemerides by type. If not specified, all ephemeris types will be returned.</p>
+    pub fn ephemeris_type(&self) -> ::std::option::Option<&crate::types::EphemerisType> {
+        self.ephemeris_type.as_ref()
+    }
+    /// <p>The start time for the list operation in UTC. Returns ephemerides with expiration times within your specified time range.</p>
     pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
-    /// <p>The end time to list in UTC. The operation will return an ephemeris if its expiration time is within the time range defined by the <code>startTime</code> and <code>endTime</code>.</p>
+    /// <p>The end time for the list operation in UTC. Returns ephemerides with expiration times within your specified time range.</p>
     pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
@@ -56,6 +62,7 @@ impl ListEphemeridesInput {
 #[non_exhaustive]
 pub struct ListEphemeridesInputBuilder {
     pub(crate) satellite_id: ::std::option::Option<::std::string::String>,
+    pub(crate) ephemeris_type: ::std::option::Option<crate::types::EphemerisType>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) status_list: ::std::option::Option<::std::vec::Vec<crate::types::EphemerisStatus>>,
@@ -64,7 +71,6 @@ pub struct ListEphemeridesInputBuilder {
 }
 impl ListEphemeridesInputBuilder {
     /// <p>The AWS Ground Station satellite ID to list ephemeris for.</p>
-    /// This field is required.
     pub fn satellite_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.satellite_id = ::std::option::Option::Some(input.into());
         self
@@ -78,33 +84,47 @@ impl ListEphemeridesInputBuilder {
     pub fn get_satellite_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.satellite_id
     }
-    /// <p>The start time to list in UTC. The operation will return an ephemeris if its expiration time is within the time range defined by the <code>startTime</code> and <code>endTime</code>.</p>
+    /// <p>Filter ephemerides by type. If not specified, all ephemeris types will be returned.</p>
+    pub fn ephemeris_type(mut self, input: crate::types::EphemerisType) -> Self {
+        self.ephemeris_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Filter ephemerides by type. If not specified, all ephemeris types will be returned.</p>
+    pub fn set_ephemeris_type(mut self, input: ::std::option::Option<crate::types::EphemerisType>) -> Self {
+        self.ephemeris_type = input;
+        self
+    }
+    /// <p>Filter ephemerides by type. If not specified, all ephemeris types will be returned.</p>
+    pub fn get_ephemeris_type(&self) -> &::std::option::Option<crate::types::EphemerisType> {
+        &self.ephemeris_type
+    }
+    /// <p>The start time for the list operation in UTC. Returns ephemerides with expiration times within your specified time range.</p>
     /// This field is required.
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The start time to list in UTC. The operation will return an ephemeris if its expiration time is within the time range defined by the <code>startTime</code> and <code>endTime</code>.</p>
+    /// <p>The start time for the list operation in UTC. Returns ephemerides with expiration times within your specified time range.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
-    /// <p>The start time to list in UTC. The operation will return an ephemeris if its expiration time is within the time range defined by the <code>startTime</code> and <code>endTime</code>.</p>
+    /// <p>The start time for the list operation in UTC. Returns ephemerides with expiration times within your specified time range.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.start_time
     }
-    /// <p>The end time to list in UTC. The operation will return an ephemeris if its expiration time is within the time range defined by the <code>startTime</code> and <code>endTime</code>.</p>
+    /// <p>The end time for the list operation in UTC. Returns ephemerides with expiration times within your specified time range.</p>
     /// This field is required.
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The end time to list in UTC. The operation will return an ephemeris if its expiration time is within the time range defined by the <code>startTime</code> and <code>endTime</code>.</p>
+    /// <p>The end time for the list operation in UTC. Returns ephemerides with expiration times within your specified time range.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
-    /// <p>The end time to list in UTC. The operation will return an ephemeris if its expiration time is within the time range defined by the <code>startTime</code> and <code>endTime</code>.</p>
+    /// <p>The end time for the list operation in UTC. Returns ephemerides with expiration times within your specified time range.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.end_time
     }
@@ -162,6 +182,7 @@ impl ListEphemeridesInputBuilder {
     ) -> ::std::result::Result<crate::operation::list_ephemerides::ListEphemeridesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_ephemerides::ListEphemeridesInput {
             satellite_id: self.satellite_id,
+            ephemeris_type: self.ephemeris_type,
             start_time: self.start_time,
             end_time: self.end_time,
             status_list: self.status_list,

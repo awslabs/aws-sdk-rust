@@ -22,6 +22,12 @@ pub fn ser_audit_target_entity(
             crate::protocol_serde::shape_service_operation_entity::ser_service_operation_entity(&mut object_3, inner)?;
             object_3.finish();
         }
+        crate::types::AuditTargetEntity::Canary(inner) => {
+            #[allow(unused_mut)]
+            let mut object_4 = object_2.key("Canary").start_object();
+            crate::protocol_serde::shape_canary_entity::ser_canary_entity(&mut object_4, inner)?;
+            object_4.finish();
+        }
         crate::types::AuditTargetEntity::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "AuditTargetEntity",

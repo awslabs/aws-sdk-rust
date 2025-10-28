@@ -56,6 +56,10 @@ pub struct DeploymentConfiguration {
     pub bake_time_in_minutes: ::std::option::Option<i32>,
     /// <p>An array of deployment lifecycle hook objects to run custom logic at specific stages of the deployment lifecycle.</p>
     pub lifecycle_hooks: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentLifecycleHook>>,
+    /// <p>Configuration for linear deployment strategy. Only valid when the deployment strategy is <code>LINEAR</code>. This configuration enables progressive traffic shifting in equal percentage increments with configurable bake times between each step.</p>
+    pub linear_configuration: ::std::option::Option<crate::types::LinearConfiguration>,
+    /// <p>Configuration for canary deployment strategy. Only valid when the deployment strategy is <code>CANARY</code>. This configuration enables shifting a fixed percentage of traffic for testing, followed by shifting the remaining traffic after a bake period.</p>
+    pub canary_configuration: ::std::option::Option<crate::types::CanaryConfiguration>,
 }
 impl DeploymentConfiguration {
     /// <note>
@@ -126,6 +130,14 @@ impl DeploymentConfiguration {
     pub fn lifecycle_hooks(&self) -> &[crate::types::DeploymentLifecycleHook] {
         self.lifecycle_hooks.as_deref().unwrap_or_default()
     }
+    /// <p>Configuration for linear deployment strategy. Only valid when the deployment strategy is <code>LINEAR</code>. This configuration enables progressive traffic shifting in equal percentage increments with configurable bake times between each step.</p>
+    pub fn linear_configuration(&self) -> ::std::option::Option<&crate::types::LinearConfiguration> {
+        self.linear_configuration.as_ref()
+    }
+    /// <p>Configuration for canary deployment strategy. Only valid when the deployment strategy is <code>CANARY</code>. This configuration enables shifting a fixed percentage of traffic for testing, followed by shifting the remaining traffic after a bake period.</p>
+    pub fn canary_configuration(&self) -> ::std::option::Option<&crate::types::CanaryConfiguration> {
+        self.canary_configuration.as_ref()
+    }
 }
 impl DeploymentConfiguration {
     /// Creates a new builder-style object to manufacture [`DeploymentConfiguration`](crate::types::DeploymentConfiguration).
@@ -145,6 +157,8 @@ pub struct DeploymentConfigurationBuilder {
     pub(crate) strategy: ::std::option::Option<crate::types::DeploymentStrategy>,
     pub(crate) bake_time_in_minutes: ::std::option::Option<i32>,
     pub(crate) lifecycle_hooks: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentLifecycleHook>>,
+    pub(crate) linear_configuration: ::std::option::Option<crate::types::LinearConfiguration>,
+    pub(crate) canary_configuration: ::std::option::Option<crate::types::CanaryConfiguration>,
 }
 impl DeploymentConfigurationBuilder {
     /// <note>
@@ -365,6 +379,34 @@ impl DeploymentConfigurationBuilder {
     pub fn get_lifecycle_hooks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeploymentLifecycleHook>> {
         &self.lifecycle_hooks
     }
+    /// <p>Configuration for linear deployment strategy. Only valid when the deployment strategy is <code>LINEAR</code>. This configuration enables progressive traffic shifting in equal percentage increments with configurable bake times between each step.</p>
+    pub fn linear_configuration(mut self, input: crate::types::LinearConfiguration) -> Self {
+        self.linear_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration for linear deployment strategy. Only valid when the deployment strategy is <code>LINEAR</code>. This configuration enables progressive traffic shifting in equal percentage increments with configurable bake times between each step.</p>
+    pub fn set_linear_configuration(mut self, input: ::std::option::Option<crate::types::LinearConfiguration>) -> Self {
+        self.linear_configuration = input;
+        self
+    }
+    /// <p>Configuration for linear deployment strategy. Only valid when the deployment strategy is <code>LINEAR</code>. This configuration enables progressive traffic shifting in equal percentage increments with configurable bake times between each step.</p>
+    pub fn get_linear_configuration(&self) -> &::std::option::Option<crate::types::LinearConfiguration> {
+        &self.linear_configuration
+    }
+    /// <p>Configuration for canary deployment strategy. Only valid when the deployment strategy is <code>CANARY</code>. This configuration enables shifting a fixed percentage of traffic for testing, followed by shifting the remaining traffic after a bake period.</p>
+    pub fn canary_configuration(mut self, input: crate::types::CanaryConfiguration) -> Self {
+        self.canary_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration for canary deployment strategy. Only valid when the deployment strategy is <code>CANARY</code>. This configuration enables shifting a fixed percentage of traffic for testing, followed by shifting the remaining traffic after a bake period.</p>
+    pub fn set_canary_configuration(mut self, input: ::std::option::Option<crate::types::CanaryConfiguration>) -> Self {
+        self.canary_configuration = input;
+        self
+    }
+    /// <p>Configuration for canary deployment strategy. Only valid when the deployment strategy is <code>CANARY</code>. This configuration enables shifting a fixed percentage of traffic for testing, followed by shifting the remaining traffic after a bake period.</p>
+    pub fn get_canary_configuration(&self) -> &::std::option::Option<crate::types::CanaryConfiguration> {
+        &self.canary_configuration
+    }
     /// Consumes the builder and constructs a [`DeploymentConfiguration`](crate::types::DeploymentConfiguration).
     pub fn build(self) -> crate::types::DeploymentConfiguration {
         crate::types::DeploymentConfiguration {
@@ -375,6 +417,8 @@ impl DeploymentConfigurationBuilder {
             strategy: self.strategy,
             bake_time_in_minutes: self.bake_time_in_minutes,
             lifecycle_hooks: self.lifecycle_hooks,
+            linear_configuration: self.linear_configuration,
+            canary_configuration: self.canary_configuration,
         }
     }
 }

@@ -34,6 +34,8 @@ pub struct ContactData {
     pub visibility_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Projected time in UTC your satellite will set below the <a href="https://docs.aws.amazon.com/ground-station/latest/ug/site-masks.html">receive mask</a>. This time is based on the satellite's current active ephemeris for future contacts and the ephemeris that was active during contact execution for completed contacts. <i>This field is not present for contacts with a <code>SCHEDULING</code> or <code>SCHEDULED</code> status.</i></p>
     pub visibility_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The ephemeris that determines antenna pointing for the contact.</p>
+    pub ephemeris: ::std::option::Option<crate::types::EphemerisResponseData>,
 }
 impl ContactData {
     /// <p>UUID of a contact.</p>
@@ -96,6 +98,10 @@ impl ContactData {
     pub fn visibility_end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.visibility_end_time.as_ref()
     }
+    /// <p>The ephemeris that determines antenna pointing for the contact.</p>
+    pub fn ephemeris(&self) -> ::std::option::Option<&crate::types::EphemerisResponseData> {
+        self.ephemeris.as_ref()
+    }
 }
 impl ContactData {
     /// Creates a new builder-style object to manufacture [`ContactData`](crate::types::ContactData).
@@ -123,6 +129,7 @@ pub struct ContactDataBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) visibility_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) visibility_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) ephemeris: ::std::option::Option<crate::types::EphemerisResponseData>,
 }
 impl ContactDataBuilder {
     /// <p>UUID of a contact.</p>
@@ -341,6 +348,20 @@ impl ContactDataBuilder {
     pub fn get_visibility_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.visibility_end_time
     }
+    /// <p>The ephemeris that determines antenna pointing for the contact.</p>
+    pub fn ephemeris(mut self, input: crate::types::EphemerisResponseData) -> Self {
+        self.ephemeris = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ephemeris that determines antenna pointing for the contact.</p>
+    pub fn set_ephemeris(mut self, input: ::std::option::Option<crate::types::EphemerisResponseData>) -> Self {
+        self.ephemeris = input;
+        self
+    }
+    /// <p>The ephemeris that determines antenna pointing for the contact.</p>
+    pub fn get_ephemeris(&self) -> &::std::option::Option<crate::types::EphemerisResponseData> {
+        &self.ephemeris
+    }
     /// Consumes the builder and constructs a [`ContactData`](crate::types::ContactData).
     pub fn build(self) -> crate::types::ContactData {
         crate::types::ContactData {
@@ -359,6 +380,7 @@ impl ContactDataBuilder {
             tags: self.tags,
             visibility_start_time: self.visibility_start_time,
             visibility_end_time: self.visibility_end_time,
+            ephemeris: self.ephemeris,
         }
     }
 }

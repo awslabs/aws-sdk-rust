@@ -69,6 +69,10 @@ pub use crate::types::_service_connect_test_traffic_header_match_rules::ServiceC
 
 pub use crate::types::_deployment_configuration::DeploymentConfigurationBuilder;
 
+pub use crate::types::_canary_configuration::CanaryConfigurationBuilder;
+
+pub use crate::types::_linear_configuration::LinearConfigurationBuilder;
+
 pub use crate::types::_deployment_lifecycle_hook::DeploymentLifecycleHookBuilder;
 
 pub use crate::types::_deployment_alarms::DeploymentAlarmsBuilder;

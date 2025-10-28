@@ -16,6 +16,12 @@ pub fn ser_ephemeris_data(
             crate::protocol_serde::shape_oem_ephemeris::ser_oem_ephemeris(&mut object_2, inner)?;
             object_2.finish();
         }
+        crate::types::EphemerisData::AzEl(inner) => {
+            #[allow(unused_mut)]
+            let mut object_3 = object_3.key("azEl").start_object();
+            crate::protocol_serde::shape_az_el_ephemeris::ser_az_el_ephemeris(&mut object_3, inner)?;
+            object_3.finish();
+        }
         crate::types::EphemerisData::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant("EphemerisData"))
         }

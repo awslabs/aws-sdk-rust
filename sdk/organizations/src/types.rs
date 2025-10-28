@@ -57,6 +57,8 @@ pub use crate::types::_delegated_administrator::DelegatedAdministrator;
 
 pub use crate::types::_account_joined_method::AccountJoinedMethod;
 
+pub use crate::types::_account_state::AccountState;
+
 pub use crate::types::_account_status::AccountStatus;
 
 pub use crate::types::_create_account_status::CreateAccountStatus;
@@ -72,8 +74,6 @@ pub use crate::types::_child_type::ChildType;
 pub use crate::types::_enabled_service_principal::EnabledServicePrincipal;
 
 pub use crate::types::_account::Account;
-
-pub use crate::types::_account_state::AccountState;
 
 pub use crate::types::_handshake_constraint_violation_exception_reason::HandshakeConstraintViolationExceptionReason;
 

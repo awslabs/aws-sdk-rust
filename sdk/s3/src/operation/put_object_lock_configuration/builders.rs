@@ -34,7 +34,9 @@ impl crate::operation::put_object_lock_configuration::builders::PutObjectLockCon
 /// <li>
 /// <p>You can enable Object Lock for new or existing buckets. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock-configure.html">Configuring Object Lock</a>.</p></li>
 /// </ul>
-/// </note>
+/// </note> <important>
+/// <p>You must URL encode any signed header values that contain spaces. For example, if your header value is <code>my file.txt</code>, containing two spaces after <code>my</code>, you must URL encode this value to <code>my%20%20file.txt</code>.</p>
+/// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutObjectLockConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

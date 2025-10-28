@@ -12,6 +12,8 @@ pub struct Workspace {
     pub user_name: ::std::option::Option<::std::string::String>,
     /// <p>The IP address of the WorkSpace.</p>
     pub ip_address: ::std::option::Option<::std::string::String>,
+    /// <p>The IPv6 address of the WorkSpace.</p>
+    pub ipv6_address: ::std::option::Option<::std::string::String>,
     /// <p>The operational state of the WorkSpace.</p>
     /// <ul>
     /// <li>
@@ -97,6 +99,10 @@ impl Workspace {
     /// <p>The IP address of the WorkSpace.</p>
     pub fn ip_address(&self) -> ::std::option::Option<&str> {
         self.ip_address.as_deref()
+    }
+    /// <p>The IPv6 address of the WorkSpace.</p>
+    pub fn ipv6_address(&self) -> ::std::option::Option<&str> {
+        self.ipv6_address.as_deref()
     }
     /// <p>The operational state of the WorkSpace.</p>
     /// <ul>
@@ -218,6 +224,7 @@ pub struct WorkspaceBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_name: ::std::option::Option<::std::string::String>,
     pub(crate) ip_address: ::std::option::Option<::std::string::String>,
+    pub(crate) ipv6_address: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::WorkspaceState>,
     pub(crate) bundle_id: ::std::option::Option<::std::string::String>,
     pub(crate) subnet_id: ::std::option::Option<::std::string::String>,
@@ -290,6 +297,20 @@ impl WorkspaceBuilder {
     /// <p>The IP address of the WorkSpace.</p>
     pub fn get_ip_address(&self) -> &::std::option::Option<::std::string::String> {
         &self.ip_address
+    }
+    /// <p>The IPv6 address of the WorkSpace.</p>
+    pub fn ipv6_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ipv6_address = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The IPv6 address of the WorkSpace.</p>
+    pub fn set_ipv6_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.ipv6_address = input;
+        self
+    }
+    /// <p>The IPv6 address of the WorkSpace.</p>
+    pub fn get_ipv6_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ipv6_address
     }
     /// <p>The operational state of the WorkSpace.</p>
     /// <ul>
@@ -643,6 +664,7 @@ impl WorkspaceBuilder {
             directory_id: self.directory_id,
             user_name: self.user_name,
             ip_address: self.ip_address,
+            ipv6_address: self.ipv6_address,
             state: self.state,
             bundle_id: self.bundle_id,
             subnet_id: self.subnet_id,

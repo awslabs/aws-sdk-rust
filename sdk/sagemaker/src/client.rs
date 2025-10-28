@@ -502,6 +502,8 @@ mod delete_partner_app;
 
 mod delete_pipeline;
 
+mod delete_processing_job;
+
 mod delete_project;
 
 mod delete_space;
@@ -509,6 +511,8 @@ mod delete_space;
 mod delete_studio_lifecycle_config;
 
 mod delete_tags;
+
+mod delete_training_job;
 
 mod delete_trial;
 

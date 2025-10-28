@@ -62,7 +62,9 @@ impl crate::operation::put_bucket_intelligent_tiering_configuration::builders::P
 /// <dd>
 /// <p><i>Cause:</i> You are not the owner of the specified bucket, or you do not have the <code>s3:PutIntelligentTieringConfiguration</code> bucket permission to set the configuration on the bucket.</p>
 /// </dd>
-/// </dl>
+/// </dl><important>
+/// <p>You must URL encode any signed header values that contain spaces. For example, if your header value is <code>my file.txt</code>, containing two spaces after <code>my</code>, you must URL encode this value to <code>my%20%20file.txt</code>.</p>
+/// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutBucketIntelligentTieringConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

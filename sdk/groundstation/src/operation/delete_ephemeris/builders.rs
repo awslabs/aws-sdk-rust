@@ -22,7 +22,7 @@ impl crate::operation::delete_ephemeris::builders::DeleteEphemerisInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteEphemeris`.
 ///
-/// <p>Deletes an ephemeris</p>
+/// <p>Delete an ephemeris.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteEphemerisFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -363,7 +363,7 @@ pub enum ListEffectivePolicyValidationErrorsError {
     /// <li>
     /// <p>TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that are not compliant with the tag policy requirements for this account.</p></li>
     /// <li>
-    /// <p>WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait until at least seven days after the account was created. Invited accounts aren't subject to this waiting period.</p></li>
+    /// <p>WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait until at least four days after the account was created. Invited accounts aren't subject to this waiting period.</p></li>
     /// </ul>
     ConstraintViolationException(crate::types::error::ConstraintViolationException),
     /// <p>If you ran this action on the management account, this policy type is not enabled. If you ran the action on a member account, the account doesn't have an effective policy of this type. Contact the administrator of your organization about attaching a policy of this type to the account.</p>

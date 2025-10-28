@@ -22,7 +22,7 @@ impl crate::operation::list_ephemerides::builders::ListEphemeridesInputBuilder {
 }
 /// Fluent builder constructing a request to `ListEphemerides`.
 ///
-/// <p>List existing ephemerides.</p>
+/// <p>List your existing ephemerides.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListEphemeridesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -128,31 +128,45 @@ impl ListEphemeridesFluentBuilder {
     pub fn get_satellite_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_satellite_id()
     }
-    /// <p>The start time to list in UTC. The operation will return an ephemeris if its expiration time is within the time range defined by the <code>startTime</code> and <code>endTime</code>.</p>
+    /// <p>Filter ephemerides by type. If not specified, all ephemeris types will be returned.</p>
+    pub fn ephemeris_type(mut self, input: crate::types::EphemerisType) -> Self {
+        self.inner = self.inner.ephemeris_type(input);
+        self
+    }
+    /// <p>Filter ephemerides by type. If not specified, all ephemeris types will be returned.</p>
+    pub fn set_ephemeris_type(mut self, input: ::std::option::Option<crate::types::EphemerisType>) -> Self {
+        self.inner = self.inner.set_ephemeris_type(input);
+        self
+    }
+    /// <p>Filter ephemerides by type. If not specified, all ephemeris types will be returned.</p>
+    pub fn get_ephemeris_type(&self) -> &::std::option::Option<crate::types::EphemerisType> {
+        self.inner.get_ephemeris_type()
+    }
+    /// <p>The start time for the list operation in UTC. Returns ephemerides with expiration times within your specified time range.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.start_time(input);
         self
     }
-    /// <p>The start time to list in UTC. The operation will return an ephemeris if its expiration time is within the time range defined by the <code>startTime</code> and <code>endTime</code>.</p>
+    /// <p>The start time for the list operation in UTC. Returns ephemerides with expiration times within your specified time range.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
-    /// <p>The start time to list in UTC. The operation will return an ephemeris if its expiration time is within the time range defined by the <code>startTime</code> and <code>endTime</code>.</p>
+    /// <p>The start time for the list operation in UTC. Returns ephemerides with expiration times within your specified time range.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_start_time()
     }
-    /// <p>The end time to list in UTC. The operation will return an ephemeris if its expiration time is within the time range defined by the <code>startTime</code> and <code>endTime</code>.</p>
+    /// <p>The end time for the list operation in UTC. Returns ephemerides with expiration times within your specified time range.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.end_time(input);
         self
     }
-    /// <p>The end time to list in UTC. The operation will return an ephemeris if its expiration time is within the time range defined by the <code>startTime</code> and <code>endTime</code>.</p>
+    /// <p>The end time for the list operation in UTC. Returns ephemerides with expiration times within your specified time range.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
     }
-    /// <p>The end time to list in UTC. The operation will return an ephemeris if its expiration time is within the time range defined by the <code>startTime</code> and <code>endTime</code>.</p>
+    /// <p>The end time for the list operation in UTC. Returns ephemerides with expiration times within your specified time range.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_end_time()
     }

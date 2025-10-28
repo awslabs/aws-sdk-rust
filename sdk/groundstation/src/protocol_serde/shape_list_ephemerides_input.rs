@@ -8,22 +8,25 @@ pub fn ser_list_ephemerides_input_input(
             .key("endTime")
             .date_time(var_1, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    if let Some(var_2) = &input.satellite_id {
-        object.key("satelliteId").string(var_2.as_str());
+    if let Some(var_2) = &input.ephemeris_type {
+        object.key("ephemerisType").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.start_time {
+    if let Some(var_3) = &input.satellite_id {
+        object.key("satelliteId").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.start_time {
         object
             .key("startTime")
-            .date_time(var_3, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(var_4, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    if let Some(var_4) = &input.status_list {
-        let mut array_5 = object.key("statusList").start_array();
-        for item_6 in var_4 {
+    if let Some(var_5) = &input.status_list {
+        let mut array_6 = object.key("statusList").start_array();
+        for item_7 in var_5 {
             {
-                array_5.value().string(item_6.as_str());
+                array_6.value().string(item_7.as_str());
             }
         }
-        array_5.finish();
+        array_6.finish();
     }
     Ok(())
 }

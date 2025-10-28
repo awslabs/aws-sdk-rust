@@ -22,7 +22,7 @@ impl crate::operation::update_stream_group::builders::UpdateStreamGroupInputBuil
 }
 /// Fluent builder constructing a request to `UpdateStreamGroup`.
 ///
-/// <p>Updates the configuration settings for an Amazon GameLift Streams stream group resource. You can change the description, the set of locations, and the requested capacity of a stream group per location. If you want to change the stream class, create a new stream group.</p>
+/// <p>Updates the configuration settings for an Amazon GameLift Streams stream group resource. To update a stream group, it must be in <code>ACTIVE</code> status. You can change the description, the set of locations, and the requested capacity of a stream group per location. If you want to change the stream class, create a new stream group.</p>
 /// <p>Stream capacity represents the number of concurrent streams that can be active at a time. You set stream capacity per location, per stream group. There are two types of capacity, always-on and on-demand:</p>
 /// <ul>
 /// <li>
@@ -31,7 +31,7 @@ impl crate::operation::update_stream_group::builders::UpdateStreamGroupInputBuil
 /// <p><b>On-demand</b>: The streaming capacity that Amazon GameLift Streams can allocate in response to stream requests, and then de-allocate when the session has terminated. This offers a cost control measure at the expense of a greater startup time (typically under 5 minutes). Default is 0 when creating a stream group or adding a location.</p></li>
 /// </ul>
 /// <p>Values for capacity must be whole number multiples of the tenancy value of the stream group's stream class.</p>
-/// <p>To update a stream group, specify the stream group's Amazon Resource Name (ARN) and provide the new values. If the request is successful, Amazon GameLift Streams returns the complete updated metadata for the stream group.</p>
+/// <p>To update a stream group, specify the stream group's Amazon Resource Name (ARN) and provide the new values. If the request is successful, Amazon GameLift Streams returns the complete updated metadata for the stream group. Expired stream groups cannot be updated.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateStreamGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

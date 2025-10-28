@@ -2231,6 +2231,8 @@ pub use crate::types::_carrier_gateway::CarrierGateway;
 
 pub use crate::types::_carrier_gateway_state::CarrierGatewayState;
 
+pub use crate::types::_capacity_reservation_topology::CapacityReservationTopology;
+
 pub use crate::types::_capacity_reservation_fleet::CapacityReservationFleet;
 
 pub use crate::types::_fleet_capacity_reservation::FleetCapacityReservation;
@@ -2790,6 +2792,8 @@ mod _capacity_reservation_target;
 mod _capacity_reservation_target_response;
 
 mod _capacity_reservation_tenancy;
+
+mod _capacity_reservation_topology;
 
 mod _capacity_reservation_type;
 

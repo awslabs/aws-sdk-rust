@@ -17,6 +17,7 @@
 ///     StreamGroupStatus::ActiveWithErrors => { /* ... */ },
 ///     StreamGroupStatus::Deleting => { /* ... */ },
 ///     StreamGroupStatus::Error => { /* ... */ },
+///     StreamGroupStatus::Expired => { /* ... */ },
 ///     StreamGroupStatus::UpdatingLocations => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -57,6 +58,8 @@ pub enum StreamGroupStatus {
     #[allow(missing_docs)] // documentation missing in model
     Error,
     #[allow(missing_docs)] // documentation missing in model
+    Expired,
+    #[allow(missing_docs)] // documentation missing in model
     UpdatingLocations,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -70,6 +73,7 @@ impl ::std::convert::From<&str> for StreamGroupStatus {
             "ACTIVE_WITH_ERRORS" => StreamGroupStatus::ActiveWithErrors,
             "DELETING" => StreamGroupStatus::Deleting,
             "ERROR" => StreamGroupStatus::Error,
+            "EXPIRED" => StreamGroupStatus::Expired,
             "UPDATING_LOCATIONS" => StreamGroupStatus::UpdatingLocations,
             other => StreamGroupStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -91,13 +95,22 @@ impl StreamGroupStatus {
             StreamGroupStatus::ActiveWithErrors => "ACTIVE_WITH_ERRORS",
             StreamGroupStatus::Deleting => "DELETING",
             StreamGroupStatus::Error => "ERROR",
+            StreamGroupStatus::Expired => "EXPIRED",
             StreamGroupStatus::UpdatingLocations => "UPDATING_LOCATIONS",
             StreamGroupStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVATING", "ACTIVE", "ACTIVE_WITH_ERRORS", "DELETING", "ERROR", "UPDATING_LOCATIONS"]
+        &[
+            "ACTIVATING",
+            "ACTIVE",
+            "ACTIVE_WITH_ERRORS",
+            "DELETING",
+            "ERROR",
+            "EXPIRED",
+            "UPDATING_LOCATIONS",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for StreamGroupStatus {
@@ -125,6 +138,7 @@ impl ::std::fmt::Display for StreamGroupStatus {
             StreamGroupStatus::ActiveWithErrors => write!(f, "ACTIVE_WITH_ERRORS"),
             StreamGroupStatus::Deleting => write!(f, "DELETING"),
             StreamGroupStatus::Error => write!(f, "ERROR"),
+            StreamGroupStatus::Expired => write!(f, "EXPIRED"),
             StreamGroupStatus::UpdatingLocations => write!(f, "UPDATING_LOCATIONS"),
             StreamGroupStatus::Unknown(value) => write!(f, "{}", value),
         }

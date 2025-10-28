@@ -12,6 +12,10 @@ pub struct ServiceRevisionSummary {
     pub running_task_count: i32,
     /// <p>The number of pending tasks for the service revision.</p>
     pub pending_task_count: i32,
+    /// <p>The percentage of test traffic that is directed to this service revision. This value represents a snapshot of the traffic distribution and may not reflect real-time changes during active deployments. Valid values are 0.0 to 100.0.</p>
+    pub requested_test_traffic_weight: ::std::option::Option<f64>,
+    /// <p>The percentage of production traffic that is directed to this service revision. This value represents a snapshot of the traffic distribution and may not reflect real-time changes during active deployments. Valid values are 0.0 to 100.0.</p>
+    pub requested_production_traffic_weight: ::std::option::Option<f64>,
 }
 impl ServiceRevisionSummary {
     /// <p>The ARN of the service revision.</p>
@@ -30,6 +34,14 @@ impl ServiceRevisionSummary {
     pub fn pending_task_count(&self) -> i32 {
         self.pending_task_count
     }
+    /// <p>The percentage of test traffic that is directed to this service revision. This value represents a snapshot of the traffic distribution and may not reflect real-time changes during active deployments. Valid values are 0.0 to 100.0.</p>
+    pub fn requested_test_traffic_weight(&self) -> ::std::option::Option<f64> {
+        self.requested_test_traffic_weight
+    }
+    /// <p>The percentage of production traffic that is directed to this service revision. This value represents a snapshot of the traffic distribution and may not reflect real-time changes during active deployments. Valid values are 0.0 to 100.0.</p>
+    pub fn requested_production_traffic_weight(&self) -> ::std::option::Option<f64> {
+        self.requested_production_traffic_weight
+    }
 }
 impl ServiceRevisionSummary {
     /// Creates a new builder-style object to manufacture [`ServiceRevisionSummary`](crate::types::ServiceRevisionSummary).
@@ -46,6 +58,8 @@ pub struct ServiceRevisionSummaryBuilder {
     pub(crate) requested_task_count: ::std::option::Option<i32>,
     pub(crate) running_task_count: ::std::option::Option<i32>,
     pub(crate) pending_task_count: ::std::option::Option<i32>,
+    pub(crate) requested_test_traffic_weight: ::std::option::Option<f64>,
+    pub(crate) requested_production_traffic_weight: ::std::option::Option<f64>,
 }
 impl ServiceRevisionSummaryBuilder {
     /// <p>The ARN of the service revision.</p>
@@ -104,6 +118,34 @@ impl ServiceRevisionSummaryBuilder {
     pub fn get_pending_task_count(&self) -> &::std::option::Option<i32> {
         &self.pending_task_count
     }
+    /// <p>The percentage of test traffic that is directed to this service revision. This value represents a snapshot of the traffic distribution and may not reflect real-time changes during active deployments. Valid values are 0.0 to 100.0.</p>
+    pub fn requested_test_traffic_weight(mut self, input: f64) -> Self {
+        self.requested_test_traffic_weight = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The percentage of test traffic that is directed to this service revision. This value represents a snapshot of the traffic distribution and may not reflect real-time changes during active deployments. Valid values are 0.0 to 100.0.</p>
+    pub fn set_requested_test_traffic_weight(mut self, input: ::std::option::Option<f64>) -> Self {
+        self.requested_test_traffic_weight = input;
+        self
+    }
+    /// <p>The percentage of test traffic that is directed to this service revision. This value represents a snapshot of the traffic distribution and may not reflect real-time changes during active deployments. Valid values are 0.0 to 100.0.</p>
+    pub fn get_requested_test_traffic_weight(&self) -> &::std::option::Option<f64> {
+        &self.requested_test_traffic_weight
+    }
+    /// <p>The percentage of production traffic that is directed to this service revision. This value represents a snapshot of the traffic distribution and may not reflect real-time changes during active deployments. Valid values are 0.0 to 100.0.</p>
+    pub fn requested_production_traffic_weight(mut self, input: f64) -> Self {
+        self.requested_production_traffic_weight = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The percentage of production traffic that is directed to this service revision. This value represents a snapshot of the traffic distribution and may not reflect real-time changes during active deployments. Valid values are 0.0 to 100.0.</p>
+    pub fn set_requested_production_traffic_weight(mut self, input: ::std::option::Option<f64>) -> Self {
+        self.requested_production_traffic_weight = input;
+        self
+    }
+    /// <p>The percentage of production traffic that is directed to this service revision. This value represents a snapshot of the traffic distribution and may not reflect real-time changes during active deployments. Valid values are 0.0 to 100.0.</p>
+    pub fn get_requested_production_traffic_weight(&self) -> &::std::option::Option<f64> {
+        &self.requested_production_traffic_weight
+    }
     /// Consumes the builder and constructs a [`ServiceRevisionSummary`](crate::types::ServiceRevisionSummary).
     pub fn build(self) -> crate::types::ServiceRevisionSummary {
         crate::types::ServiceRevisionSummary {
@@ -111,6 +153,8 @@ impl ServiceRevisionSummaryBuilder {
             requested_task_count: self.requested_task_count.unwrap_or_default(),
             running_task_count: self.running_task_count.unwrap_or_default(),
             pending_task_count: self.pending_task_count.unwrap_or_default(),
+            requested_test_traffic_weight: self.requested_test_traffic_weight,
+            requested_production_traffic_weight: self.requested_production_traffic_weight,
         }
     }
 }

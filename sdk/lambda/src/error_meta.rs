@@ -71,6 +71,8 @@ pub enum Error {
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The function is inactive and its VPC connection is no longer available. Wait for the VPC connection to reestablish and try again.</p>
     ResourceNotReadyException(crate::types::error::ResourceNotReadyException),
+    /// <p>The processed request payload exceeded the <code>Invoke</code> request body size limit for asynchronous invocations. While the event payload may be under 1 MB, the size after internal serialization exceeds the maximum allowed size for asynchronous invocations.</p>
+    SerializedRequestEntityTooLargeException(crate::types::error::SerializedRequestEntityTooLargeException),
     /// <p>The Lambda service encountered an internal error.</p>
     ServiceException(crate::types::error::ServiceException),
     /// <p>The <code>afterRestore()</code> <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-runtime-hooks.html">runtime hook</a> encountered an error. For more information, check the Amazon CloudWatch logs.</p>
@@ -128,6 +130,7 @@ impl ::std::fmt::Display for Error {
             Error::ResourceInUseException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
             Error::ResourceNotReadyException(inner) => inner.fmt(f),
+            Error::SerializedRequestEntityTooLargeException(inner) => inner.fmt(f),
             Error::ServiceException(inner) => inner.fmt(f),
             Error::SnapStartException(inner) => inner.fmt(f),
             Error::SnapStartNotReadyException(inner) => inner.fmt(f),
@@ -187,6 +190,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::ResourceInUseException(inner) => inner.meta(),
             Self::ResourceNotFoundException(inner) => inner.meta(),
             Self::ResourceNotReadyException(inner) => inner.meta(),
+            Self::SerializedRequestEntityTooLargeException(inner) => inner.meta(),
             Self::ServiceException(inner) => inner.meta(),
             Self::SnapStartException(inner) => inner.meta(),
             Self::SnapStartNotReadyException(inner) => inner.meta(),
@@ -1391,6 +1395,9 @@ impl From<crate::operation::invoke::InvokeError> for Error {
             crate::operation::invoke::InvokeError::ResourceConflictException(inner) => Error::ResourceConflictException(inner),
             crate::operation::invoke::InvokeError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::invoke::InvokeError::ResourceNotReadyException(inner) => Error::ResourceNotReadyException(inner),
+            crate::operation::invoke::InvokeError::SerializedRequestEntityTooLargeException(inner) => {
+                Error::SerializedRequestEntityTooLargeException(inner)
+            }
             crate::operation::invoke::InvokeError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::invoke::InvokeError::SnapStartException(inner) => Error::SnapStartException(inner),
             crate::operation::invoke::InvokeError::SnapStartNotReadyException(inner) => Error::SnapStartNotReadyException(inner),
@@ -1514,6 +1521,9 @@ impl From<crate::operation::invoke_with_response_stream::InvokeWithResponseStrea
             }
             crate::operation::invoke_with_response_stream::InvokeWithResponseStreamError::ResourceNotReadyException(inner) => {
                 Error::ResourceNotReadyException(inner)
+            }
+            crate::operation::invoke_with_response_stream::InvokeWithResponseStreamError::SerializedRequestEntityTooLargeException(inner) => {
+                Error::SerializedRequestEntityTooLargeException(inner)
             }
             crate::operation::invoke_with_response_stream::InvokeWithResponseStreamError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::invoke_with_response_stream::InvokeWithResponseStreamError::SnapStartException(inner) => {
@@ -2720,6 +2730,7 @@ impl ::std::error::Error for Error {
             Error::ResourceInUseException(inner) => inner.source(),
             Error::ResourceNotFoundException(inner) => inner.source(),
             Error::ResourceNotReadyException(inner) => inner.source(),
+            Error::SerializedRequestEntityTooLargeException(inner) => inner.source(),
             Error::ServiceException(inner) => inner.source(),
             Error::SnapStartException(inner) => inner.source(),
             Error::SnapStartNotReadyException(inner) => inner.source(),
@@ -2765,6 +2776,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::ResourceInUseException(e) => e.request_id(),
             Self::ResourceNotFoundException(e) => e.request_id(),
             Self::ResourceNotReadyException(e) => e.request_id(),
+            Self::SerializedRequestEntityTooLargeException(e) => e.request_id(),
             Self::ServiceException(e) => e.request_id(),
             Self::SnapStartException(e) => e.request_id(),
             Self::SnapStartNotReadyException(e) => e.request_id(),

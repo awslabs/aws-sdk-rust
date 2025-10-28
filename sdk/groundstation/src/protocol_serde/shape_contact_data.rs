@@ -105,6 +105,10 @@ where
                                 ::aws_smithy_types::date_time::Format::EpochSeconds,
                             )?);
                         }
+                        "ephemeris" => {
+                            builder =
+                                builder.set_ephemeris(crate::protocol_serde::shape_ephemeris_response_data::de_ephemeris_response_data(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

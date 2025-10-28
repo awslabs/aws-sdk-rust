@@ -13,6 +13,7 @@
 /// # let trainingjobstatus = unimplemented!();
 /// match trainingjobstatus {
 ///     TrainingJobStatus::Completed => { /* ... */ },
+///     TrainingJobStatus::Deleting => { /* ... */ },
 ///     TrainingJobStatus::Failed => { /* ... */ },
 ///     TrainingJobStatus::InProgress => { /* ... */ },
 ///     TrainingJobStatus::Stopped => { /* ... */ },
@@ -48,6 +49,8 @@ pub enum TrainingJobStatus {
     #[allow(missing_docs)] // documentation missing in model
     Completed,
     #[allow(missing_docs)] // documentation missing in model
+    Deleting,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
     #[allow(missing_docs)] // documentation missing in model
     InProgress,
@@ -63,6 +66,7 @@ impl ::std::convert::From<&str> for TrainingJobStatus {
     fn from(s: &str) -> Self {
         match s {
             "Completed" => TrainingJobStatus::Completed,
+            "Deleting" => TrainingJobStatus::Deleting,
             "Failed" => TrainingJobStatus::Failed,
             "InProgress" => TrainingJobStatus::InProgress,
             "Stopped" => TrainingJobStatus::Stopped,
@@ -83,6 +87,7 @@ impl TrainingJobStatus {
     pub fn as_str(&self) -> &str {
         match self {
             TrainingJobStatus::Completed => "Completed",
+            TrainingJobStatus::Deleting => "Deleting",
             TrainingJobStatus::Failed => "Failed",
             TrainingJobStatus::InProgress => "InProgress",
             TrainingJobStatus::Stopped => "Stopped",
@@ -92,7 +97,7 @@ impl TrainingJobStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Completed", "Failed", "InProgress", "Stopped", "Stopping"]
+        &["Completed", "Deleting", "Failed", "InProgress", "Stopped", "Stopping"]
     }
 }
 impl ::std::convert::AsRef<str> for TrainingJobStatus {
@@ -116,6 +121,7 @@ impl ::std::fmt::Display for TrainingJobStatus {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             TrainingJobStatus::Completed => write!(f, "Completed"),
+            TrainingJobStatus::Deleting => write!(f, "Deleting"),
             TrainingJobStatus::Failed => write!(f, "Failed"),
             TrainingJobStatus::InProgress => write!(f, "InProgress"),
             TrainingJobStatus::Stopped => write!(f, "Stopped"),

@@ -261,6 +261,8 @@ pub(crate) mod shape_delete_partner_app;
 
 pub(crate) mod shape_delete_pipeline;
 
+pub(crate) mod shape_delete_processing_job;
+
 pub(crate) mod shape_delete_project;
 
 pub(crate) mod shape_delete_space;
@@ -268,6 +270,8 @@ pub(crate) mod shape_delete_space;
 pub(crate) mod shape_delete_studio_lifecycle_config;
 
 pub(crate) mod shape_delete_tags;
+
+pub(crate) mod shape_delete_training_job;
 
 pub(crate) mod shape_delete_trial;
 
@@ -1009,6 +1013,8 @@ pub(crate) mod shape_delete_partner_app_input;
 
 pub(crate) mod shape_delete_pipeline_input;
 
+pub(crate) mod shape_delete_processing_job_input;
+
 pub(crate) mod shape_delete_project_input;
 
 pub(crate) mod shape_delete_space_input;
@@ -1016,6 +1022,8 @@ pub(crate) mod shape_delete_space_input;
 pub(crate) mod shape_delete_studio_lifecycle_config_input;
 
 pub(crate) mod shape_delete_tags_input;
+
+pub(crate) mod shape_delete_training_job_input;
 
 pub(crate) mod shape_delete_trial_component_input;
 

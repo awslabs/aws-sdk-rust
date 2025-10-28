@@ -22,7 +22,9 @@ impl crate::operation::delete_function::builders::DeleteFunctionInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteFunction`.
 ///
-/// <p>Deletes a Lambda function. To delete a specific function version, use the <code>Qualifier</code> parameter. Otherwise, all versions and aliases are deleted. This doesn't require the user to have explicit permissions for <code>DeleteAlias</code>.</p>
+/// <p>Deletes a Lambda function. To delete a specific function version, use the <code>Qualifier</code> parameter. Otherwise, all versions and aliases are deleted. This doesn't require the user to have explicit permissions for <code>DeleteAlias</code>.</p><note>
+/// <p>A deleted Lambda function cannot be recovered. Ensure that you specify the correct function name and version before deleting.</p>
+/// </note>
 /// <p>To delete Lambda event source mappings that invoke a function, use <code>DeleteEventSourceMapping</code>. For Amazon Web Services services and resources that invoke your function directly, delete the trigger in the service where you originally configured it.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteFunctionFluentBuilder {

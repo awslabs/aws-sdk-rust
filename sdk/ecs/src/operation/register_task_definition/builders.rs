@@ -445,7 +445,7 @@ impl RegisterTaskDefinitionFluentBuilder {
     /// <p>The process namespace to use for the containers in the task. The valid values are <code>host</code> or <code>task</code>. On Fargate for Linux containers, the only valid value is <code>task</code>. For example, monitoring sidecars might need <code>pidMode</code> to access information about other containers running in the same task.</p>
     /// <p>If <code>host</code> is specified, all containers within the tasks that specified the <code>host</code> PID mode on the same container instance share the same process namespace with the host Amazon EC2 instance.</p>
     /// <p>If <code>task</code> is specified, all containers within the specified task share the same process namespace.</p>
-    /// <p>If no value is specified, the default is a private namespace for each container.</p>
+    /// <p>If no value is specified, the The default is a private namespace for each container.</p>
     /// <p>If the <code>host</code> PID mode is used, there's a heightened risk of undesired process namespace exposure.</p><note>
     /// <p>This parameter is not supported for Windows containers.</p>
     /// </note> <note>
@@ -458,7 +458,7 @@ impl RegisterTaskDefinitionFluentBuilder {
     /// <p>The process namespace to use for the containers in the task. The valid values are <code>host</code> or <code>task</code>. On Fargate for Linux containers, the only valid value is <code>task</code>. For example, monitoring sidecars might need <code>pidMode</code> to access information about other containers running in the same task.</p>
     /// <p>If <code>host</code> is specified, all containers within the tasks that specified the <code>host</code> PID mode on the same container instance share the same process namespace with the host Amazon EC2 instance.</p>
     /// <p>If <code>task</code> is specified, all containers within the specified task share the same process namespace.</p>
-    /// <p>If no value is specified, the default is a private namespace for each container.</p>
+    /// <p>If no value is specified, the The default is a private namespace for each container.</p>
     /// <p>If the <code>host</code> PID mode is used, there's a heightened risk of undesired process namespace exposure.</p><note>
     /// <p>This parameter is not supported for Windows containers.</p>
     /// </note> <note>
@@ -471,7 +471,7 @@ impl RegisterTaskDefinitionFluentBuilder {
     /// <p>The process namespace to use for the containers in the task. The valid values are <code>host</code> or <code>task</code>. On Fargate for Linux containers, the only valid value is <code>task</code>. For example, monitoring sidecars might need <code>pidMode</code> to access information about other containers running in the same task.</p>
     /// <p>If <code>host</code> is specified, all containers within the tasks that specified the <code>host</code> PID mode on the same container instance share the same process namespace with the host Amazon EC2 instance.</p>
     /// <p>If <code>task</code> is specified, all containers within the specified task share the same process namespace.</p>
-    /// <p>If no value is specified, the default is a private namespace for each container.</p>
+    /// <p>If no value is specified, the The default is a private namespace for each container.</p>
     /// <p>If the <code>host</code> PID mode is used, there's a heightened risk of undesired process namespace exposure.</p><note>
     /// <p>This parameter is not supported for Windows containers.</p>
     /// </note> <note>

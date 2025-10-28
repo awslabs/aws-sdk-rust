@@ -14,6 +14,9 @@ pub struct DelegatedAdministrator {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the delegated administrator's account in the organization.</p>
     pub status: ::std::option::Option<crate::types::AccountStatus>,
+    /// <p>Each state represents a specific phase in the account lifecycle. Use this information to manage account access, automate workflows, or trigger actions based on account state changes.</p>
+    /// <p>For more information about account states and their implications, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_account_state.html">Monitor the state of your Amazon Web Services accounts </a> in the <i>Organizations User Guide</i>.</p>
+    pub state: ::std::option::Option<crate::types::AccountState>,
     /// <p>The method by which the delegated administrator's account joined the organization.</p>
     pub joined_method: ::std::option::Option<crate::types::AccountJoinedMethod>,
     /// <p>The date when the delegated administrator's account became a part of the organization.</p>
@@ -42,6 +45,11 @@ impl DelegatedAdministrator {
     pub fn status(&self) -> ::std::option::Option<&crate::types::AccountStatus> {
         self.status.as_ref()
     }
+    /// <p>Each state represents a specific phase in the account lifecycle. Use this information to manage account access, automate workflows, or trigger actions based on account state changes.</p>
+    /// <p>For more information about account states and their implications, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_account_state.html">Monitor the state of your Amazon Web Services accounts </a> in the <i>Organizations User Guide</i>.</p>
+    pub fn state(&self) -> ::std::option::Option<&crate::types::AccountState> {
+        self.state.as_ref()
+    }
     /// <p>The method by which the delegated administrator's account joined the organization.</p>
     pub fn joined_method(&self) -> ::std::option::Option<&crate::types::AccountJoinedMethod> {
         self.joined_method.as_ref()
@@ -63,6 +71,7 @@ impl ::std::fmt::Debug for DelegatedAdministrator {
         formatter.field("email", &"*** Sensitive Data Redacted ***");
         formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.field("status", &self.status);
+        formatter.field("state", &self.state);
         formatter.field("joined_method", &self.joined_method);
         formatter.field("joined_timestamp", &self.joined_timestamp);
         formatter.field("delegation_enabled_date", &self.delegation_enabled_date);
@@ -85,6 +94,7 @@ pub struct DelegatedAdministratorBuilder {
     pub(crate) email: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::AccountStatus>,
+    pub(crate) state: ::std::option::Option<crate::types::AccountState>,
     pub(crate) joined_method: ::std::option::Option<crate::types::AccountJoinedMethod>,
     pub(crate) joined_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) delegation_enabled_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -160,6 +170,23 @@ impl DelegatedAdministratorBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::AccountStatus> {
         &self.status
     }
+    /// <p>Each state represents a specific phase in the account lifecycle. Use this information to manage account access, automate workflows, or trigger actions based on account state changes.</p>
+    /// <p>For more information about account states and their implications, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_account_state.html">Monitor the state of your Amazon Web Services accounts </a> in the <i>Organizations User Guide</i>.</p>
+    pub fn state(mut self, input: crate::types::AccountState) -> Self {
+        self.state = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Each state represents a specific phase in the account lifecycle. Use this information to manage account access, automate workflows, or trigger actions based on account state changes.</p>
+    /// <p>For more information about account states and their implications, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_account_state.html">Monitor the state of your Amazon Web Services accounts </a> in the <i>Organizations User Guide</i>.</p>
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::AccountState>) -> Self {
+        self.state = input;
+        self
+    }
+    /// <p>Each state represents a specific phase in the account lifecycle. Use this information to manage account access, automate workflows, or trigger actions based on account state changes.</p>
+    /// <p>For more information about account states and their implications, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_account_state.html">Monitor the state of your Amazon Web Services accounts </a> in the <i>Organizations User Guide</i>.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::AccountState> {
+        &self.state
+    }
     /// <p>The method by which the delegated administrator's account joined the organization.</p>
     pub fn joined_method(mut self, input: crate::types::AccountJoinedMethod) -> Self {
         self.joined_method = ::std::option::Option::Some(input);
@@ -210,6 +237,7 @@ impl DelegatedAdministratorBuilder {
             email: self.email,
             name: self.name,
             status: self.status,
+            state: self.state,
             joined_method: self.joined_method,
             joined_timestamp: self.joined_timestamp,
             delegation_enabled_date: self.delegation_enabled_date,
@@ -224,6 +252,7 @@ impl ::std::fmt::Debug for DelegatedAdministratorBuilder {
         formatter.field("email", &"*** Sensitive Data Redacted ***");
         formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.field("status", &self.status);
+        formatter.field("state", &self.state);
         formatter.field("joined_method", &self.joined_method);
         formatter.field("joined_timestamp", &self.joined_timestamp);
         formatter.field("delegation_enabled_date", &self.delegation_enabled_date);

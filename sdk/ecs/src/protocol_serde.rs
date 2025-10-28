@@ -461,6 +461,8 @@ pub(crate) mod shape_attachments;
 
 pub(crate) mod shape_aws_vpc_configuration;
 
+pub(crate) mod shape_canary_configuration;
+
 pub(crate) mod shape_capacity_provider_strategy;
 
 pub(crate) mod shape_cluster_service_connect_defaults;
@@ -520,6 +522,8 @@ pub(crate) mod shape_instance_launch_template;
 pub(crate) mod shape_instance_launch_template_update;
 
 pub(crate) mod shape_key_value_pair;
+
+pub(crate) mod shape_linear_configuration;
 
 pub(crate) mod shape_linux_parameters;
 

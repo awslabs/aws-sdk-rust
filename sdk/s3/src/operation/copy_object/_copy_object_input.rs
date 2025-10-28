@@ -156,6 +156,14 @@ pub struct CopyObjectInput {
     /// </ul>
     /// </note>
     pub grant_write_acp: ::std::option::Option<::std::string::String>,
+    /// <p>Copies the object if the entity tag (ETag) of the destination object matches the specified tag. If the ETag values do not match, the operation returns a <code>412 Precondition Failed</code> error. If a concurrent operation occurs during the upload S3 returns a <code>409 ConditionalRequestConflict</code> response. On a 409 failure you should fetch the object's ETag and retry the upload.</p>
+    /// <p>Expects the ETag value as a string.</p>
+    /// <p>For more information about conditional requests, see <a href="https://tools.ietf.org/html/rfc7232">RFC 7232</a>.</p>
+    pub if_match: ::std::option::Option<::std::string::String>,
+    /// <p>Copies the object only if the object key name at the destination does not already exist in the bucket specified. Otherwise, Amazon S3 returns a <code>412 Precondition Failed</code> error. If a concurrent operation occurs during the upload S3 returns a <code>409 ConditionalRequestConflict</code> response. On a 409 failure you should retry the upload.</p>
+    /// <p>Expects the '*' (asterisk) character.</p>
+    /// <p>For more information about conditional requests, see <a href="https://tools.ietf.org/html/rfc7232">RFC 7232</a>.</p>
+    pub if_none_match: ::std::option::Option<::std::string::String>,
     /// <p>The key of the destination object.</p>
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>A map of metadata to store with the object in S3.</p>
@@ -507,6 +515,18 @@ impl CopyObjectInput {
     pub fn grant_write_acp(&self) -> ::std::option::Option<&str> {
         self.grant_write_acp.as_deref()
     }
+    /// <p>Copies the object if the entity tag (ETag) of the destination object matches the specified tag. If the ETag values do not match, the operation returns a <code>412 Precondition Failed</code> error. If a concurrent operation occurs during the upload S3 returns a <code>409 ConditionalRequestConflict</code> response. On a 409 failure you should fetch the object's ETag and retry the upload.</p>
+    /// <p>Expects the ETag value as a string.</p>
+    /// <p>For more information about conditional requests, see <a href="https://tools.ietf.org/html/rfc7232">RFC 7232</a>.</p>
+    pub fn if_match(&self) -> ::std::option::Option<&str> {
+        self.if_match.as_deref()
+    }
+    /// <p>Copies the object only if the object key name at the destination does not already exist in the bucket specified. Otherwise, Amazon S3 returns a <code>412 Precondition Failed</code> error. If a concurrent operation occurs during the upload S3 returns a <code>409 ConditionalRequestConflict</code> response. On a 409 failure you should retry the upload.</p>
+    /// <p>Expects the '*' (asterisk) character.</p>
+    /// <p>For more information about conditional requests, see <a href="https://tools.ietf.org/html/rfc7232">RFC 7232</a>.</p>
+    pub fn if_none_match(&self) -> ::std::option::Option<&str> {
+        self.if_none_match.as_deref()
+    }
     /// <p>The key of the destination object.</p>
     pub fn key(&self) -> ::std::option::Option<&str> {
         self.key.as_deref()
@@ -735,6 +755,8 @@ impl ::std::fmt::Debug for CopyObjectInput {
         formatter.field("grant_read", &self.grant_read);
         formatter.field("grant_read_acp", &self.grant_read_acp);
         formatter.field("grant_write_acp", &self.grant_write_acp);
+        formatter.field("if_match", &self.if_match);
+        formatter.field("if_none_match", &self.if_none_match);
         formatter.field("key", &self.key);
         formatter.field("metadata", &self.metadata);
         formatter.field("metadata_directive", &self.metadata_directive);
@@ -790,6 +812,8 @@ pub struct CopyObjectInputBuilder {
     pub(crate) grant_read: ::std::option::Option<::std::string::String>,
     pub(crate) grant_read_acp: ::std::option::Option<::std::string::String>,
     pub(crate) grant_write_acp: ::std::option::Option<::std::string::String>,
+    pub(crate) if_match: ::std::option::Option<::std::string::String>,
+    pub(crate) if_none_match: ::std::option::Option<::std::string::String>,
     pub(crate) key: ::std::option::Option<::std::string::String>,
     pub(crate) metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) metadata_directive: ::std::option::Option<crate::types::MetadataDirective>,
@@ -1419,6 +1443,46 @@ impl CopyObjectInputBuilder {
     /// </note>
     pub fn get_grant_write_acp(&self) -> &::std::option::Option<::std::string::String> {
         &self.grant_write_acp
+    }
+    /// <p>Copies the object if the entity tag (ETag) of the destination object matches the specified tag. If the ETag values do not match, the operation returns a <code>412 Precondition Failed</code> error. If a concurrent operation occurs during the upload S3 returns a <code>409 ConditionalRequestConflict</code> response. On a 409 failure you should fetch the object's ETag and retry the upload.</p>
+    /// <p>Expects the ETag value as a string.</p>
+    /// <p>For more information about conditional requests, see <a href="https://tools.ietf.org/html/rfc7232">RFC 7232</a>.</p>
+    pub fn if_match(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.if_match = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Copies the object if the entity tag (ETag) of the destination object matches the specified tag. If the ETag values do not match, the operation returns a <code>412 Precondition Failed</code> error. If a concurrent operation occurs during the upload S3 returns a <code>409 ConditionalRequestConflict</code> response. On a 409 failure you should fetch the object's ETag and retry the upload.</p>
+    /// <p>Expects the ETag value as a string.</p>
+    /// <p>For more information about conditional requests, see <a href="https://tools.ietf.org/html/rfc7232">RFC 7232</a>.</p>
+    pub fn set_if_match(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.if_match = input;
+        self
+    }
+    /// <p>Copies the object if the entity tag (ETag) of the destination object matches the specified tag. If the ETag values do not match, the operation returns a <code>412 Precondition Failed</code> error. If a concurrent operation occurs during the upload S3 returns a <code>409 ConditionalRequestConflict</code> response. On a 409 failure you should fetch the object's ETag and retry the upload.</p>
+    /// <p>Expects the ETag value as a string.</p>
+    /// <p>For more information about conditional requests, see <a href="https://tools.ietf.org/html/rfc7232">RFC 7232</a>.</p>
+    pub fn get_if_match(&self) -> &::std::option::Option<::std::string::String> {
+        &self.if_match
+    }
+    /// <p>Copies the object only if the object key name at the destination does not already exist in the bucket specified. Otherwise, Amazon S3 returns a <code>412 Precondition Failed</code> error. If a concurrent operation occurs during the upload S3 returns a <code>409 ConditionalRequestConflict</code> response. On a 409 failure you should retry the upload.</p>
+    /// <p>Expects the '*' (asterisk) character.</p>
+    /// <p>For more information about conditional requests, see <a href="https://tools.ietf.org/html/rfc7232">RFC 7232</a>.</p>
+    pub fn if_none_match(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.if_none_match = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Copies the object only if the object key name at the destination does not already exist in the bucket specified. Otherwise, Amazon S3 returns a <code>412 Precondition Failed</code> error. If a concurrent operation occurs during the upload S3 returns a <code>409 ConditionalRequestConflict</code> response. On a 409 failure you should retry the upload.</p>
+    /// <p>Expects the '*' (asterisk) character.</p>
+    /// <p>For more information about conditional requests, see <a href="https://tools.ietf.org/html/rfc7232">RFC 7232</a>.</p>
+    pub fn set_if_none_match(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.if_none_match = input;
+        self
+    }
+    /// <p>Copies the object only if the object key name at the destination does not already exist in the bucket specified. Otherwise, Amazon S3 returns a <code>412 Precondition Failed</code> error. If a concurrent operation occurs during the upload S3 returns a <code>409 ConditionalRequestConflict</code> response. On a 409 failure you should retry the upload.</p>
+    /// <p>Expects the '*' (asterisk) character.</p>
+    /// <p>For more information about conditional requests, see <a href="https://tools.ietf.org/html/rfc7232">RFC 7232</a>.</p>
+    pub fn get_if_none_match(&self) -> &::std::option::Option<::std::string::String> {
+        &self.if_none_match
     }
     /// <p>The key of the destination object.</p>
     /// This field is required.
@@ -2112,6 +2176,8 @@ impl CopyObjectInputBuilder {
             grant_read: self.grant_read,
             grant_read_acp: self.grant_read_acp,
             grant_write_acp: self.grant_write_acp,
+            if_match: self.if_match,
+            if_none_match: self.if_none_match,
             key: self.key,
             metadata: self.metadata,
             metadata_directive: self.metadata_directive,
@@ -2159,6 +2225,8 @@ impl ::std::fmt::Debug for CopyObjectInputBuilder {
         formatter.field("grant_read", &self.grant_read);
         formatter.field("grant_read_acp", &self.grant_read_acp);
         formatter.field("grant_write_acp", &self.grant_write_acp);
+        formatter.field("if_match", &self.if_match);
+        formatter.field("if_none_match", &self.if_none_match);
         formatter.field("key", &self.key);
         formatter.field("metadata", &self.metadata);
         formatter.field("metadata_directive", &self.metadata_directive);

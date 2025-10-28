@@ -3100,6 +3100,29 @@ impl From<crate::operation::delete_pipeline::DeletePipelineError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_processing_job::DeleteProcessingJobError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_processing_job::DeleteProcessingJobError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_processing_job::DeleteProcessingJobError> for Error {
+    fn from(err: crate::operation::delete_processing_job::DeleteProcessingJobError) -> Self {
+        match err {
+            crate::operation::delete_processing_job::DeleteProcessingJobError::ResourceInUse(inner) => Error::ResourceInUse(inner),
+            crate::operation::delete_processing_job::DeleteProcessingJobError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
+            crate::operation::delete_processing_job::DeleteProcessingJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_project::DeleteProjectError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -3195,6 +3218,29 @@ impl From<crate::operation::delete_tags::DeleteTagsError> for Error {
     fn from(err: crate::operation::delete_tags::DeleteTagsError) -> Self {
         match err {
             crate::operation::delete_tags::DeleteTagsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_training_job::DeleteTrainingJobError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_training_job::DeleteTrainingJobError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_training_job::DeleteTrainingJobError> for Error {
+    fn from(err: crate::operation::delete_training_job::DeleteTrainingJobError) -> Self {
+        match err {
+            crate::operation::delete_training_job::DeleteTrainingJobError::ResourceInUse(inner) => Error::ResourceInUse(inner),
+            crate::operation::delete_training_job::DeleteTrainingJobError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
+            crate::operation::delete_training_job::DeleteTrainingJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

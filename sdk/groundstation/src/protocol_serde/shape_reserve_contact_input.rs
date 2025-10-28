@@ -32,5 +32,11 @@ pub fn ser_reserve_contact_input_input(
         }
         object_7.finish();
     }
+    if let Some(var_10) = &input.tracking_overrides {
+        #[allow(unused_mut)]
+        let mut object_11 = object.key("trackingOverrides").start_object();
+        crate::protocol_serde::shape_tracking_overrides::ser_tracking_overrides(&mut object_11, var_10)?;
+        object_11.finish();
+    }
     Ok(())
 }

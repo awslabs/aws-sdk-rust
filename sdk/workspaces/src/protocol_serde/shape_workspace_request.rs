@@ -42,6 +42,9 @@ pub fn ser_workspace_request(
     if let Some(var_10) = &input.workspace_name {
         object.key("WorkspaceName").string(var_10.as_str());
     }
+    if let Some(var_11) = &input.ipv6_address {
+        object.key("Ipv6Address").string(var_11.as_str());
+    }
     Ok(())
 }
 
@@ -105,6 +108,13 @@ where
                         }
                         "WorkspaceName" => {
                             builder = builder.set_workspace_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "Ipv6Address" => {
+                            builder = builder.set_ipv6_address(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,

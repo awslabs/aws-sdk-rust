@@ -37,6 +37,10 @@ where
                             crate::protocol_serde::shape_ephemeris_description::de_ephemeris_description(tokens)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'oem' cannot be null"))?,
                         )),
+                        "azEl" => Some(crate::types::EphemerisTypeDescription::AzEl(
+                            crate::protocol_serde::shape_ephemeris_description::de_ephemeris_description(tokens)?
+                                .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'azEl' cannot be null"))?,
+                        )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
                             Some(crate::types::EphemerisTypeDescription::Unknown)

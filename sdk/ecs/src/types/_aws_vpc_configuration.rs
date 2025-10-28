@@ -16,7 +16,7 @@ pub struct AwsVpcConfiguration {
     /// <p>Consider the following when you set this value:</p>
     /// <ul>
     /// <li>
-    /// <p>When you use <code>create-service</code> or <code>update-service</code>, the default is <code>DISABLED</code>.</p></li>
+    /// <p>When you use <code>create-service</code> or <code>update-service</code>, the The default is <code>DISABLED</code>.</p></li>
     /// <li>
     /// <p>When the service <code>deploymentController</code> is <code>ECS</code>, the value must be <code>DISABLED</code>.</p></li>
     /// </ul>
@@ -42,7 +42,7 @@ impl AwsVpcConfiguration {
     /// <p>Consider the following when you set this value:</p>
     /// <ul>
     /// <li>
-    /// <p>When you use <code>create-service</code> or <code>update-service</code>, the default is <code>DISABLED</code>.</p></li>
+    /// <p>When you use <code>create-service</code> or <code>update-service</code>, the The default is <code>DISABLED</code>.</p></li>
     /// <li>
     /// <p>When the service <code>deploymentController</code> is <code>ECS</code>, the value must be <code>DISABLED</code>.</p></li>
     /// </ul>
@@ -122,7 +122,7 @@ impl AwsVpcConfigurationBuilder {
     /// <p>Consider the following when you set this value:</p>
     /// <ul>
     /// <li>
-    /// <p>When you use <code>create-service</code> or <code>update-service</code>, the default is <code>DISABLED</code>.</p></li>
+    /// <p>When you use <code>create-service</code> or <code>update-service</code>, the The default is <code>DISABLED</code>.</p></li>
     /// <li>
     /// <p>When the service <code>deploymentController</code> is <code>ECS</code>, the value must be <code>DISABLED</code>.</p></li>
     /// </ul>
@@ -134,7 +134,7 @@ impl AwsVpcConfigurationBuilder {
     /// <p>Consider the following when you set this value:</p>
     /// <ul>
     /// <li>
-    /// <p>When you use <code>create-service</code> or <code>update-service</code>, the default is <code>DISABLED</code>.</p></li>
+    /// <p>When you use <code>create-service</code> or <code>update-service</code>, the The default is <code>DISABLED</code>.</p></li>
     /// <li>
     /// <p>When the service <code>deploymentController</code> is <code>ECS</code>, the value must be <code>DISABLED</code>.</p></li>
     /// </ul>
@@ -146,7 +146,7 @@ impl AwsVpcConfigurationBuilder {
     /// <p>Consider the following when you set this value:</p>
     /// <ul>
     /// <li>
-    /// <p>When you use <code>create-service</code> or <code>update-service</code>, the default is <code>DISABLED</code>.</p></li>
+    /// <p>When you use <code>create-service</code> or <code>update-service</code>, the The default is <code>DISABLED</code>.</p></li>
     /// <li>
     /// <p>When the service <code>deploymentController</code> is <code>ECS</code>, the value must be <code>DISABLED</code>.</p></li>
     /// </ul>

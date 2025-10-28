@@ -358,6 +358,9 @@ pub mod delete_partner_app;
 /// Types for the `DeletePipeline` operation.
 pub mod delete_pipeline;
 
+/// Types for the `DeleteProcessingJob` operation.
+pub mod delete_processing_job;
+
 /// Types for the `DeleteProject` operation.
 pub mod delete_project;
 
@@ -369,6 +372,9 @@ pub mod delete_studio_lifecycle_config;
 
 /// Types for the `DeleteTags` operation.
 pub mod delete_tags;
+
+/// Types for the `DeleteTrainingJob` operation.
+pub mod delete_training_job;
 
 /// Types for the `DeleteTrial` operation.
 pub mod delete_trial;

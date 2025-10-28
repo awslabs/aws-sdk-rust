@@ -20,6 +20,8 @@ pub struct ListContactsInput {
     pub satellite_arn: ::std::option::Option<::std::string::String>,
     /// <p>ARN of a mission profile.</p>
     pub mission_profile_arn: ::std::option::Option<::std::string::String>,
+    /// <p>Filter for selecting contacts that use a specific ephemeris".</p>
+    pub ephemeris: ::std::option::Option<crate::types::EphemerisFilter>,
 }
 impl ListContactsInput {
     /// <p>Maximum number of contacts returned.</p>
@@ -56,6 +58,10 @@ impl ListContactsInput {
     pub fn mission_profile_arn(&self) -> ::std::option::Option<&str> {
         self.mission_profile_arn.as_deref()
     }
+    /// <p>Filter for selecting contacts that use a specific ephemeris".</p>
+    pub fn ephemeris(&self) -> ::std::option::Option<&crate::types::EphemerisFilter> {
+        self.ephemeris.as_ref()
+    }
 }
 impl ListContactsInput {
     /// Creates a new builder-style object to manufacture [`ListContactsInput`](crate::operation::list_contacts::ListContactsInput).
@@ -76,6 +82,7 @@ pub struct ListContactsInputBuilder {
     pub(crate) ground_station: ::std::option::Option<::std::string::String>,
     pub(crate) satellite_arn: ::std::option::Option<::std::string::String>,
     pub(crate) mission_profile_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) ephemeris: ::std::option::Option<crate::types::EphemerisFilter>,
 }
 impl ListContactsInputBuilder {
     /// <p>Maximum number of contacts returned.</p>
@@ -198,6 +205,20 @@ impl ListContactsInputBuilder {
     pub fn get_mission_profile_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.mission_profile_arn
     }
+    /// <p>Filter for selecting contacts that use a specific ephemeris".</p>
+    pub fn ephemeris(mut self, input: crate::types::EphemerisFilter) -> Self {
+        self.ephemeris = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Filter for selecting contacts that use a specific ephemeris".</p>
+    pub fn set_ephemeris(mut self, input: ::std::option::Option<crate::types::EphemerisFilter>) -> Self {
+        self.ephemeris = input;
+        self
+    }
+    /// <p>Filter for selecting contacts that use a specific ephemeris".</p>
+    pub fn get_ephemeris(&self) -> &::std::option::Option<crate::types::EphemerisFilter> {
+        &self.ephemeris
+    }
     /// Consumes the builder and constructs a [`ListContactsInput`](crate::operation::list_contacts::ListContactsInput).
     pub fn build(
         self,
@@ -211,6 +232,7 @@ impl ListContactsInputBuilder {
             ground_station: self.ground_station,
             satellite_arn: self.satellite_arn,
             mission_profile_arn: self.mission_profile_arn,
+            ephemeris: self.ephemeris,
         })
     }
 }

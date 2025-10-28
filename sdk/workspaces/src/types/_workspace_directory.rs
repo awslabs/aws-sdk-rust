@@ -16,6 +16,8 @@ pub struct WorkspaceDirectory {
     pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The IP addresses of the DNS servers for the directory.</p>
     pub dns_ip_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The IPv6 addresses of the DNS servers for the directory.</p>
+    pub dns_ipv6_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The user name for the service account.</p>
     pub customer_user_name: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the IAM role. This is the role that allows Amazon WorkSpaces to make calls to other services, such as Amazon EC2, on your behalf.</p>
@@ -89,6 +91,12 @@ impl WorkspaceDirectory {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dns_ip_addresses.is_none()`.
     pub fn dns_ip_addresses(&self) -> &[::std::string::String] {
         self.dns_ip_addresses.as_deref().unwrap_or_default()
+    }
+    /// <p>The IPv6 addresses of the DNS servers for the directory.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dns_ipv6_addresses.is_none()`.
+    pub fn dns_ipv6_addresses(&self) -> &[::std::string::String] {
+        self.dns_ipv6_addresses.as_deref().unwrap_or_default()
     }
     /// <p>The user name for the service account.</p>
     pub fn customer_user_name(&self) -> ::std::option::Option<&str> {
@@ -198,6 +206,7 @@ pub struct WorkspaceDirectoryBuilder {
     pub(crate) registration_code: ::std::option::Option<::std::string::String>,
     pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) dns_ip_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) dns_ipv6_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) customer_user_name: ::std::option::Option<::std::string::String>,
     pub(crate) iam_role_id: ::std::option::Option<::std::string::String>,
     pub(crate) directory_type: ::std::option::Option<crate::types::WorkspaceDirectoryType>,
@@ -317,6 +326,26 @@ impl WorkspaceDirectoryBuilder {
     /// <p>The IP addresses of the DNS servers for the directory.</p>
     pub fn get_dns_ip_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.dns_ip_addresses
+    }
+    /// Appends an item to `dns_ipv6_addresses`.
+    ///
+    /// To override the contents of this collection use [`set_dns_ipv6_addresses`](Self::set_dns_ipv6_addresses).
+    ///
+    /// <p>The IPv6 addresses of the DNS servers for the directory.</p>
+    pub fn dns_ipv6_addresses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.dns_ipv6_addresses.unwrap_or_default();
+        v.push(input.into());
+        self.dns_ipv6_addresses = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The IPv6 addresses of the DNS servers for the directory.</p>
+    pub fn set_dns_ipv6_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.dns_ipv6_addresses = input;
+        self
+    }
+    /// <p>The IPv6 addresses of the DNS servers for the directory.</p>
+    pub fn get_dns_ipv6_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.dns_ipv6_addresses
     }
     /// <p>The user name for the service account.</p>
     pub fn customer_user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -641,6 +670,7 @@ impl WorkspaceDirectoryBuilder {
             registration_code: self.registration_code,
             subnet_ids: self.subnet_ids,
             dns_ip_addresses: self.dns_ip_addresses,
+            dns_ipv6_addresses: self.dns_ipv6_addresses,
             customer_user_name: self.customer_user_name,
             iam_role_id: self.iam_role_id,
             directory_type: self.directory_type,

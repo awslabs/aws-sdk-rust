@@ -11,12 +11,19 @@ pub struct InstanceTopology {
     /// <p>The name of the placement group that the instance is in.</p>
     pub group_name: ::std::option::Option<::std::string::String>,
     /// <p>The network nodes. The nodes are hashed based on your account. Instances from different accounts running under the same server will return a different hashed list of strings.</p>
+    /// <p>The value is <code>null</code> or empty if:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The instance type is not supported.</p></li>
+    /// <li>
+    /// <p>The instance is in a state other than <code>running</code>.</p></li>
+    /// </ul>
     pub network_nodes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The name of the Availability Zone or Local Zone that the instance is in.</p>
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Availability Zone or Local Zone that the instance is in.</p>
     pub zone_id: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of the Capacity Block. This parameter is only supported for Ultraserver instances and identifies instances within the Ultraserver domain.</p>
+    /// <p>The ID of the Capacity Block. This parameter is only supported for UltraServer instances and identifies instances within the UltraServer domain.</p>
     pub capacity_block_id: ::std::option::Option<::std::string::String>,
 }
 impl InstanceTopology {
@@ -33,6 +40,13 @@ impl InstanceTopology {
         self.group_name.as_deref()
     }
     /// <p>The network nodes. The nodes are hashed based on your account. Instances from different accounts running under the same server will return a different hashed list of strings.</p>
+    /// <p>The value is <code>null</code> or empty if:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The instance type is not supported.</p></li>
+    /// <li>
+    /// <p>The instance is in a state other than <code>running</code>.</p></li>
+    /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.network_nodes.is_none()`.
     pub fn network_nodes(&self) -> &[::std::string::String] {
@@ -46,7 +60,7 @@ impl InstanceTopology {
     pub fn zone_id(&self) -> ::std::option::Option<&str> {
         self.zone_id.as_deref()
     }
-    /// <p>The ID of the Capacity Block. This parameter is only supported for Ultraserver instances and identifies instances within the Ultraserver domain.</p>
+    /// <p>The ID of the Capacity Block. This parameter is only supported for UltraServer instances and identifies instances within the UltraServer domain.</p>
     pub fn capacity_block_id(&self) -> ::std::option::Option<&str> {
         self.capacity_block_id.as_deref()
     }
@@ -118,6 +132,13 @@ impl InstanceTopologyBuilder {
     /// To override the contents of this collection use [`set_network_nodes`](Self::set_network_nodes).
     ///
     /// <p>The network nodes. The nodes are hashed based on your account. Instances from different accounts running under the same server will return a different hashed list of strings.</p>
+    /// <p>The value is <code>null</code> or empty if:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The instance type is not supported.</p></li>
+    /// <li>
+    /// <p>The instance is in a state other than <code>running</code>.</p></li>
+    /// </ul>
     pub fn network_nodes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.network_nodes.unwrap_or_default();
         v.push(input.into());
@@ -125,11 +146,25 @@ impl InstanceTopologyBuilder {
         self
     }
     /// <p>The network nodes. The nodes are hashed based on your account. Instances from different accounts running under the same server will return a different hashed list of strings.</p>
+    /// <p>The value is <code>null</code> or empty if:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The instance type is not supported.</p></li>
+    /// <li>
+    /// <p>The instance is in a state other than <code>running</code>.</p></li>
+    /// </ul>
     pub fn set_network_nodes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.network_nodes = input;
         self
     }
     /// <p>The network nodes. The nodes are hashed based on your account. Instances from different accounts running under the same server will return a different hashed list of strings.</p>
+    /// <p>The value is <code>null</code> or empty if:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The instance type is not supported.</p></li>
+    /// <li>
+    /// <p>The instance is in a state other than <code>running</code>.</p></li>
+    /// </ul>
     pub fn get_network_nodes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.network_nodes
     }
@@ -161,17 +196,17 @@ impl InstanceTopologyBuilder {
     pub fn get_zone_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.zone_id
     }
-    /// <p>The ID of the Capacity Block. This parameter is only supported for Ultraserver instances and identifies instances within the Ultraserver domain.</p>
+    /// <p>The ID of the Capacity Block. This parameter is only supported for UltraServer instances and identifies instances within the UltraServer domain.</p>
     pub fn capacity_block_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.capacity_block_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the Capacity Block. This parameter is only supported for Ultraserver instances and identifies instances within the Ultraserver domain.</p>
+    /// <p>The ID of the Capacity Block. This parameter is only supported for UltraServer instances and identifies instances within the UltraServer domain.</p>
     pub fn set_capacity_block_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.capacity_block_id = input;
         self
     }
-    /// <p>The ID of the Capacity Block. This parameter is only supported for Ultraserver instances and identifies instances within the Ultraserver domain.</p>
+    /// <p>The ID of the Capacity Block. This parameter is only supported for UltraServer instances and identifies instances within the UltraServer domain.</p>
     pub fn get_capacity_block_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.capacity_block_id
     }

@@ -43,7 +43,9 @@ impl crate::operation::rename_object::builders::RenameObjectInputBuilder {
 /// <dd>
 /// <p><b>Directory buckets </b> - The HTTP Host header syntax is <code> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</code>.</p>
 /// </dd>
-/// </dl>
+/// </dl><important>
+/// <p>You must URL encode any signed header values that contain spaces. For example, if your header value is <code>my file.txt</code>, containing two spaces after <code>my</code>, you must URL encode this value to <code>my%20%20file.txt</code>.</p>
+/// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RenameObjectFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

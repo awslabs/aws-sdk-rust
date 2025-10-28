@@ -3,47 +3,47 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListServiceStatesInput {
-    /// <p>The start of the time period to retrieve service state information for. When used in a raw HTTP Query API, it is formatted as epoch time in seconds. For example, <code>1698778057</code>.</p>
+    /// <p>The start time for the service states query. Only service states from this time onward will be included. Specify the time as the number of milliseconds since January 1, 1970, 00:00:00 UTC.</p>
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The end of the time period to retrieve service state information for. When used in a raw HTTP Query API, it is formatted as epoch time in seconds. For example, <code>1698778057</code>.</p>
+    /// <p>The end time for the service states query. Only service states before this time will be included. Specify the time as the number of milliseconds since January 1, 1970, 00:00:00 UTC.</p>
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The maximum number of service states to return in one operation. If you omit this parameter, the default of 20 is used.</p>
+    /// <p>The maximum number of service states to return in a single request. Valid range is 1 to 100. If not specified, defaults to 50.</p>
     pub max_results: ::std::option::Option<i32>,
-    /// <p>Include this value, if it was returned by the previous operation, to get the next set of service states.</p>
+    /// <p>The token for the next set of results. Use this token to retrieve additional pages of service states when the result set is large.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>If you are using this operation in a monitoring account, specify <code>true</code> to include service states from source accounts in the returned data.</p>
+    /// <p>Specifies whether to include service states from linked AWS accounts in the results. Set to <code>true</code> to include linked accounts, or <code>false</code> to only include the current account. Defaults to <code>false</code>.</p>
     pub include_linked_accounts: ::std::option::Option<bool>,
-    /// <p>The Amazon Web Services account ID to filter service states by. Use this to limit results to services from a specific account.</p>
+    /// <p>The AWS account ID to filter service states. If specified, only service states from this account will be returned. If not specified, service states from the current account (and linked accounts if enabled) are returned.</p>
     pub aws_account_id: ::std::option::Option<::std::string::String>,
-    /// <p>A list of attribute filters to narrow down the services. You can filter by platform, environment, or other service attributes.</p>
+    /// <p>An array of attribute filters to narrow down the service states returned. Each filter specifies an attribute name and the values to match against.</p>
     pub attribute_filters: ::std::option::Option<::std::vec::Vec<crate::types::AttributeFilter>>,
 }
 impl ListServiceStatesInput {
-    /// <p>The start of the time period to retrieve service state information for. When used in a raw HTTP Query API, it is formatted as epoch time in seconds. For example, <code>1698778057</code>.</p>
+    /// <p>The start time for the service states query. Only service states from this time onward will be included. Specify the time as the number of milliseconds since January 1, 1970, 00:00:00 UTC.</p>
     pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
-    /// <p>The end of the time period to retrieve service state information for. When used in a raw HTTP Query API, it is formatted as epoch time in seconds. For example, <code>1698778057</code>.</p>
+    /// <p>The end time for the service states query. Only service states before this time will be included. Specify the time as the number of milliseconds since January 1, 1970, 00:00:00 UTC.</p>
     pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
-    /// <p>The maximum number of service states to return in one operation. If you omit this parameter, the default of 20 is used.</p>
+    /// <p>The maximum number of service states to return in a single request. Valid range is 1 to 100. If not specified, defaults to 50.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
-    /// <p>Include this value, if it was returned by the previous operation, to get the next set of service states.</p>
+    /// <p>The token for the next set of results. Use this token to retrieve additional pages of service states when the result set is large.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>If you are using this operation in a monitoring account, specify <code>true</code> to include service states from source accounts in the returned data.</p>
+    /// <p>Specifies whether to include service states from linked AWS accounts in the results. Set to <code>true</code> to include linked accounts, or <code>false</code> to only include the current account. Defaults to <code>false</code>.</p>
     pub fn include_linked_accounts(&self) -> ::std::option::Option<bool> {
         self.include_linked_accounts
     }
-    /// <p>The Amazon Web Services account ID to filter service states by. Use this to limit results to services from a specific account.</p>
+    /// <p>The AWS account ID to filter service states. If specified, only service states from this account will be returned. If not specified, service states from the current account (and linked accounts if enabled) are returned.</p>
     pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
-    /// <p>A list of attribute filters to narrow down the services. You can filter by platform, environment, or other service attributes.</p>
+    /// <p>An array of attribute filters to narrow down the service states returned. Each filter specifies an attribute name and the values to match against.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attribute_filters.is_none()`.
     pub fn attribute_filters(&self) -> &[crate::types::AttributeFilter] {
@@ -70,89 +70,89 @@ pub struct ListServiceStatesInputBuilder {
     pub(crate) attribute_filters: ::std::option::Option<::std::vec::Vec<crate::types::AttributeFilter>>,
 }
 impl ListServiceStatesInputBuilder {
-    /// <p>The start of the time period to retrieve service state information for. When used in a raw HTTP Query API, it is formatted as epoch time in seconds. For example, <code>1698778057</code>.</p>
+    /// <p>The start time for the service states query. Only service states from this time onward will be included. Specify the time as the number of milliseconds since January 1, 1970, 00:00:00 UTC.</p>
     /// This field is required.
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The start of the time period to retrieve service state information for. When used in a raw HTTP Query API, it is formatted as epoch time in seconds. For example, <code>1698778057</code>.</p>
+    /// <p>The start time for the service states query. Only service states from this time onward will be included. Specify the time as the number of milliseconds since January 1, 1970, 00:00:00 UTC.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
-    /// <p>The start of the time period to retrieve service state information for. When used in a raw HTTP Query API, it is formatted as epoch time in seconds. For example, <code>1698778057</code>.</p>
+    /// <p>The start time for the service states query. Only service states from this time onward will be included. Specify the time as the number of milliseconds since January 1, 1970, 00:00:00 UTC.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.start_time
     }
-    /// <p>The end of the time period to retrieve service state information for. When used in a raw HTTP Query API, it is formatted as epoch time in seconds. For example, <code>1698778057</code>.</p>
+    /// <p>The end time for the service states query. Only service states before this time will be included. Specify the time as the number of milliseconds since January 1, 1970, 00:00:00 UTC.</p>
     /// This field is required.
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The end of the time period to retrieve service state information for. When used in a raw HTTP Query API, it is formatted as epoch time in seconds. For example, <code>1698778057</code>.</p>
+    /// <p>The end time for the service states query. Only service states before this time will be included. Specify the time as the number of milliseconds since January 1, 1970, 00:00:00 UTC.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
-    /// <p>The end of the time period to retrieve service state information for. When used in a raw HTTP Query API, it is formatted as epoch time in seconds. For example, <code>1698778057</code>.</p>
+    /// <p>The end time for the service states query. Only service states before this time will be included. Specify the time as the number of milliseconds since January 1, 1970, 00:00:00 UTC.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.end_time
     }
-    /// <p>The maximum number of service states to return in one operation. If you omit this parameter, the default of 20 is used.</p>
+    /// <p>The maximum number of service states to return in a single request. Valid range is 1 to 100. If not specified, defaults to 50.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of service states to return in one operation. If you omit this parameter, the default of 20 is used.</p>
+    /// <p>The maximum number of service states to return in a single request. Valid range is 1 to 100. If not specified, defaults to 50.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>The maximum number of service states to return in one operation. If you omit this parameter, the default of 20 is used.</p>
+    /// <p>The maximum number of service states to return in a single request. Valid range is 1 to 100. If not specified, defaults to 50.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
-    /// <p>Include this value, if it was returned by the previous operation, to get the next set of service states.</p>
+    /// <p>The token for the next set of results. Use this token to retrieve additional pages of service states when the result set is large.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Include this value, if it was returned by the previous operation, to get the next set of service states.</p>
+    /// <p>The token for the next set of results. Use this token to retrieve additional pages of service states when the result set is large.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>Include this value, if it was returned by the previous operation, to get the next set of service states.</p>
+    /// <p>The token for the next set of results. Use this token to retrieve additional pages of service states when the result set is large.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
-    /// <p>If you are using this operation in a monitoring account, specify <code>true</code> to include service states from source accounts in the returned data.</p>
+    /// <p>Specifies whether to include service states from linked AWS accounts in the results. Set to <code>true</code> to include linked accounts, or <code>false</code> to only include the current account. Defaults to <code>false</code>.</p>
     pub fn include_linked_accounts(mut self, input: bool) -> Self {
         self.include_linked_accounts = ::std::option::Option::Some(input);
         self
     }
-    /// <p>If you are using this operation in a monitoring account, specify <code>true</code> to include service states from source accounts in the returned data.</p>
+    /// <p>Specifies whether to include service states from linked AWS accounts in the results. Set to <code>true</code> to include linked accounts, or <code>false</code> to only include the current account. Defaults to <code>false</code>.</p>
     pub fn set_include_linked_accounts(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_linked_accounts = input;
         self
     }
-    /// <p>If you are using this operation in a monitoring account, specify <code>true</code> to include service states from source accounts in the returned data.</p>
+    /// <p>Specifies whether to include service states from linked AWS accounts in the results. Set to <code>true</code> to include linked accounts, or <code>false</code> to only include the current account. Defaults to <code>false</code>.</p>
     pub fn get_include_linked_accounts(&self) -> &::std::option::Option<bool> {
         &self.include_linked_accounts
     }
-    /// <p>The Amazon Web Services account ID to filter service states by. Use this to limit results to services from a specific account.</p>
+    /// <p>The AWS account ID to filter service states. If specified, only service states from this account will be returned. If not specified, service states from the current account (and linked accounts if enabled) are returned.</p>
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Web Services account ID to filter service states by. Use this to limit results to services from a specific account.</p>
+    /// <p>The AWS account ID to filter service states. If specified, only service states from this account will be returned. If not specified, service states from the current account (and linked accounts if enabled) are returned.</p>
     pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
-    /// <p>The Amazon Web Services account ID to filter service states by. Use this to limit results to services from a specific account.</p>
+    /// <p>The AWS account ID to filter service states. If specified, only service states from this account will be returned. If not specified, service states from the current account (and linked accounts if enabled) are returned.</p>
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.aws_account_id
     }
@@ -160,19 +160,19 @@ impl ListServiceStatesInputBuilder {
     ///
     /// To override the contents of this collection use [`set_attribute_filters`](Self::set_attribute_filters).
     ///
-    /// <p>A list of attribute filters to narrow down the services. You can filter by platform, environment, or other service attributes.</p>
+    /// <p>An array of attribute filters to narrow down the service states returned. Each filter specifies an attribute name and the values to match against.</p>
     pub fn attribute_filters(mut self, input: crate::types::AttributeFilter) -> Self {
         let mut v = self.attribute_filters.unwrap_or_default();
         v.push(input);
         self.attribute_filters = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of attribute filters to narrow down the services. You can filter by platform, environment, or other service attributes.</p>
+    /// <p>An array of attribute filters to narrow down the service states returned. Each filter specifies an attribute name and the values to match against.</p>
     pub fn set_attribute_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeFilter>>) -> Self {
         self.attribute_filters = input;
         self
     }
-    /// <p>A list of attribute filters to narrow down the services. You can filter by platform, environment, or other service attributes.</p>
+    /// <p>An array of attribute filters to narrow down the service states returned. Each filter specifies an attribute name and the values to match against.</p>
     pub fn get_attribute_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeFilter>> {
         &self.attribute_filters
     }

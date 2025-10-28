@@ -655,6 +655,8 @@ pub(crate) mod shape_default_workspace_creation_properties;
 
 pub(crate) mod shape_dns_ip_addresses;
 
+pub(crate) mod shape_dns_ipv6_addresses;
+
 pub(crate) mod shape_error_details_list;
 
 pub(crate) mod shape_idc_config;

@@ -225,6 +225,8 @@ pub(crate) mod shape_auditor_results;
 
 pub(crate) mod shape_calendar_interval;
 
+pub(crate) mod shape_canary_entity;
+
 pub(crate) mod shape_dependency_graph;
 
 pub(crate) mod shape_grouping_source_key_string_list;

@@ -36,6 +36,10 @@ pub struct DescribeContactOutput {
     pub visibility_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Projected time in UTC your satellite will set below the <a href="https://docs.aws.amazon.com/ground-station/latest/ug/site-masks.html">receive mask</a>. This time is based on the satellite's current active ephemeris for future contacts and the ephemeris that was active during contact execution for completed contacts.</p>
     pub visibility_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>Tracking configuration overrides specified when the contact was reserved.</p>
+    pub tracking_overrides: ::std::option::Option<crate::types::TrackingOverrides>,
+    /// <p>The ephemeris that determines antenna pointing directions for the contact.</p>
+    pub ephemeris: ::std::option::Option<crate::types::EphemerisResponseData>,
     _request_id: Option<String>,
 }
 impl DescribeContactOutput {
@@ -105,6 +109,14 @@ impl DescribeContactOutput {
     pub fn visibility_end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.visibility_end_time.as_ref()
     }
+    /// <p>Tracking configuration overrides specified when the contact was reserved.</p>
+    pub fn tracking_overrides(&self) -> ::std::option::Option<&crate::types::TrackingOverrides> {
+        self.tracking_overrides.as_ref()
+    }
+    /// <p>The ephemeris that determines antenna pointing directions for the contact.</p>
+    pub fn ephemeris(&self) -> ::std::option::Option<&crate::types::EphemerisResponseData> {
+        self.ephemeris.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for DescribeContactOutput {
     fn request_id(&self) -> Option<&str> {
@@ -138,6 +150,8 @@ pub struct DescribeContactOutputBuilder {
     pub(crate) dataflow_list: ::std::option::Option<::std::vec::Vec<crate::types::DataflowDetail>>,
     pub(crate) visibility_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) visibility_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) tracking_overrides: ::std::option::Option<crate::types::TrackingOverrides>,
+    pub(crate) ephemeris: ::std::option::Option<crate::types::EphemerisResponseData>,
     _request_id: Option<String>,
 }
 impl DescribeContactOutputBuilder {
@@ -377,6 +391,34 @@ impl DescribeContactOutputBuilder {
     pub fn get_visibility_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.visibility_end_time
     }
+    /// <p>Tracking configuration overrides specified when the contact was reserved.</p>
+    pub fn tracking_overrides(mut self, input: crate::types::TrackingOverrides) -> Self {
+        self.tracking_overrides = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Tracking configuration overrides specified when the contact was reserved.</p>
+    pub fn set_tracking_overrides(mut self, input: ::std::option::Option<crate::types::TrackingOverrides>) -> Self {
+        self.tracking_overrides = input;
+        self
+    }
+    /// <p>Tracking configuration overrides specified when the contact was reserved.</p>
+    pub fn get_tracking_overrides(&self) -> &::std::option::Option<crate::types::TrackingOverrides> {
+        &self.tracking_overrides
+    }
+    /// <p>The ephemeris that determines antenna pointing directions for the contact.</p>
+    pub fn ephemeris(mut self, input: crate::types::EphemerisResponseData) -> Self {
+        self.ephemeris = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ephemeris that determines antenna pointing directions for the contact.</p>
+    pub fn set_ephemeris(mut self, input: ::std::option::Option<crate::types::EphemerisResponseData>) -> Self {
+        self.ephemeris = input;
+        self
+    }
+    /// <p>The ephemeris that determines antenna pointing directions for the contact.</p>
+    pub fn get_ephemeris(&self) -> &::std::option::Option<crate::types::EphemerisResponseData> {
+        &self.ephemeris
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -405,6 +447,8 @@ impl DescribeContactOutputBuilder {
             dataflow_list: self.dataflow_list,
             visibility_start_time: self.visibility_start_time,
             visibility_end_time: self.visibility_end_time,
+            tracking_overrides: self.tracking_overrides,
+            ephemeris: self.ephemeris,
             _request_id: self._request_id,
         }
     }

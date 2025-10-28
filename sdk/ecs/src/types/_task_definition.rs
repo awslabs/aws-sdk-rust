@@ -44,7 +44,7 @@ pub struct TaskDefinition {
     /// <p>The operating system that your task definitions are running on. A platform family is specified only for tasks using the Fargate launch type.</p>
     /// <p>When you specify a task in a service, this value must match the <code>runtimePlatform</code> value of the service.</p>
     pub runtime_platform: ::std::option::Option<crate::types::RuntimePlatform>,
-    /// <p>The task launch types the task definition was validated against. The valid values are <code>EC2</code>, <code>FARGATE</code>, and <code>EXTERNAL</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <p>The task launch types the task definition was validated against. The valid values are <code>MANAGED_INSTANCES</code>, <code>EC2</code>, <code>FARGATE</code>, and <code>EXTERNAL</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub requires_compatibilities: ::std::option::Option<::std::vec::Vec<crate::types::Compatibility>>,
     /// <p>The number of <code>cpu</code> units used by the task. If you use the EC2 launch type, this field is optional. Any value can be used. If you use the Fargate launch type, this field is required. You must use one of the following values. The value that you choose determines your range of valid values for the <code>memory</code> parameter.</p>
     /// <p>If you're using the EC2 launch type or the external launch type, this field is optional. Supported values are between <code>128</code> CPU units (<code>0.125</code> vCPUs) and <code>196608</code> CPU units (<code>192</code> vCPUs).</p>
@@ -77,7 +77,7 @@ pub struct TaskDefinition {
     /// <p>The process namespace to use for the containers in the task. The valid values are <code>host</code> or <code>task</code>. On Fargate for Linux containers, the only valid value is <code>task</code>. For example, monitoring sidecars might need <code>pidMode</code> to access information about other containers running in the same task.</p>
     /// <p>If <code>host</code> is specified, all containers within the tasks that specified the <code>host</code> PID mode on the same container instance share the same process namespace with the host Amazon EC2 instance.</p>
     /// <p>If <code>task</code> is specified, all containers within the specified task share the same process namespace.</p>
-    /// <p>If no value is specified, the default is a private namespace for each container.</p>
+    /// <p>If no value is specified, the The default is a private namespace for each container.</p>
     /// <p>If the <code>host</code> PID mode is used, there's a heightened risk of undesired process namespace exposure.</p><note>
     /// <p>This parameter is not supported for Windows containers.</p>
     /// </note> <note>
@@ -187,7 +187,7 @@ impl TaskDefinition {
     pub fn runtime_platform(&self) -> ::std::option::Option<&crate::types::RuntimePlatform> {
         self.runtime_platform.as_ref()
     }
-    /// <p>The task launch types the task definition was validated against. The valid values are <code>EC2</code>, <code>FARGATE</code>, and <code>EXTERNAL</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <p>The task launch types the task definition was validated against. The valid values are <code>MANAGED_INSTANCES</code>, <code>EC2</code>, <code>FARGATE</code>, and <code>EXTERNAL</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.requires_compatibilities.is_none()`.
     pub fn requires_compatibilities(&self) -> &[crate::types::Compatibility] {
@@ -232,7 +232,7 @@ impl TaskDefinition {
     /// <p>The process namespace to use for the containers in the task. The valid values are <code>host</code> or <code>task</code>. On Fargate for Linux containers, the only valid value is <code>task</code>. For example, monitoring sidecars might need <code>pidMode</code> to access information about other containers running in the same task.</p>
     /// <p>If <code>host</code> is specified, all containers within the tasks that specified the <code>host</code> PID mode on the same container instance share the same process namespace with the host Amazon EC2 instance.</p>
     /// <p>If <code>task</code> is specified, all containers within the specified task share the same process namespace.</p>
-    /// <p>If no value is specified, the default is a private namespace for each container.</p>
+    /// <p>If no value is specified, the The default is a private namespace for each container.</p>
     /// <p>If the <code>host</code> PID mode is used, there's a heightened risk of undesired process namespace exposure.</p><note>
     /// <p>This parameter is not supported for Windows containers.</p>
     /// </note> <note>
@@ -580,19 +580,19 @@ impl TaskDefinitionBuilder {
     ///
     /// To override the contents of this collection use [`set_requires_compatibilities`](Self::set_requires_compatibilities).
     ///
-    /// <p>The task launch types the task definition was validated against. The valid values are <code>EC2</code>, <code>FARGATE</code>, and <code>EXTERNAL</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <p>The task launch types the task definition was validated against. The valid values are <code>MANAGED_INSTANCES</code>, <code>EC2</code>, <code>FARGATE</code>, and <code>EXTERNAL</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub fn requires_compatibilities(mut self, input: crate::types::Compatibility) -> Self {
         let mut v = self.requires_compatibilities.unwrap_or_default();
         v.push(input);
         self.requires_compatibilities = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The task launch types the task definition was validated against. The valid values are <code>EC2</code>, <code>FARGATE</code>, and <code>EXTERNAL</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <p>The task launch types the task definition was validated against. The valid values are <code>MANAGED_INSTANCES</code>, <code>EC2</code>, <code>FARGATE</code>, and <code>EXTERNAL</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub fn set_requires_compatibilities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Compatibility>>) -> Self {
         self.requires_compatibilities = input;
         self
     }
-    /// <p>The task launch types the task definition was validated against. The valid values are <code>EC2</code>, <code>FARGATE</code>, and <code>EXTERNAL</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <p>The task launch types the task definition was validated against. The valid values are <code>MANAGED_INSTANCES</code>, <code>EC2</code>, <code>FARGATE</code>, and <code>EXTERNAL</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub fn get_requires_compatibilities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Compatibility>> {
         &self.requires_compatibilities
     }
@@ -713,7 +713,7 @@ impl TaskDefinitionBuilder {
     /// <p>The process namespace to use for the containers in the task. The valid values are <code>host</code> or <code>task</code>. On Fargate for Linux containers, the only valid value is <code>task</code>. For example, monitoring sidecars might need <code>pidMode</code> to access information about other containers running in the same task.</p>
     /// <p>If <code>host</code> is specified, all containers within the tasks that specified the <code>host</code> PID mode on the same container instance share the same process namespace with the host Amazon EC2 instance.</p>
     /// <p>If <code>task</code> is specified, all containers within the specified task share the same process namespace.</p>
-    /// <p>If no value is specified, the default is a private namespace for each container.</p>
+    /// <p>If no value is specified, the The default is a private namespace for each container.</p>
     /// <p>If the <code>host</code> PID mode is used, there's a heightened risk of undesired process namespace exposure.</p><note>
     /// <p>This parameter is not supported for Windows containers.</p>
     /// </note> <note>
@@ -726,7 +726,7 @@ impl TaskDefinitionBuilder {
     /// <p>The process namespace to use for the containers in the task. The valid values are <code>host</code> or <code>task</code>. On Fargate for Linux containers, the only valid value is <code>task</code>. For example, monitoring sidecars might need <code>pidMode</code> to access information about other containers running in the same task.</p>
     /// <p>If <code>host</code> is specified, all containers within the tasks that specified the <code>host</code> PID mode on the same container instance share the same process namespace with the host Amazon EC2 instance.</p>
     /// <p>If <code>task</code> is specified, all containers within the specified task share the same process namespace.</p>
-    /// <p>If no value is specified, the default is a private namespace for each container.</p>
+    /// <p>If no value is specified, the The default is a private namespace for each container.</p>
     /// <p>If the <code>host</code> PID mode is used, there's a heightened risk of undesired process namespace exposure.</p><note>
     /// <p>This parameter is not supported for Windows containers.</p>
     /// </note> <note>
@@ -739,7 +739,7 @@ impl TaskDefinitionBuilder {
     /// <p>The process namespace to use for the containers in the task. The valid values are <code>host</code> or <code>task</code>. On Fargate for Linux containers, the only valid value is <code>task</code>. For example, monitoring sidecars might need <code>pidMode</code> to access information about other containers running in the same task.</p>
     /// <p>If <code>host</code> is specified, all containers within the tasks that specified the <code>host</code> PID mode on the same container instance share the same process namespace with the host Amazon EC2 instance.</p>
     /// <p>If <code>task</code> is specified, all containers within the specified task share the same process namespace.</p>
-    /// <p>If no value is specified, the default is a private namespace for each container.</p>
+    /// <p>If no value is specified, the The default is a private namespace for each container.</p>
     /// <p>If the <code>host</code> PID mode is used, there's a heightened risk of undesired process namespace exposure.</p><note>
     /// <p>This parameter is not supported for Windows containers.</p>
     /// </note> <note>

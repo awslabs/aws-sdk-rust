@@ -7,6 +7,8 @@ pub enum Error {
     DependencyException(crate::types::error::DependencyException),
     /// <p>One or more parameters are not valid.</p>
     InvalidParameterException(crate::types::error::InvalidParameterException),
+    /// <p>The specified resource is in use by non-terminal state contacts and cannot be modified or deleted.</p>
+    ResourceInUseException(crate::types::error::ResourceInUseException),
     /// <p>Account limits for this resource have been exceeded.</p>
     ResourceLimitExceededException(crate::types::error::ResourceLimitExceededException),
     /// <p>Resource was not found.</p>
@@ -25,6 +27,7 @@ impl ::std::fmt::Display for Error {
         match self {
             Error::DependencyException(inner) => inner.fmt(f),
             Error::InvalidParameterException(inner) => inner.fmt(f),
+            Error::ResourceInUseException(inner) => inner.fmt(f),
             Error::ResourceLimitExceededException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
             Error::Unhandled(_) => {
@@ -50,6 +53,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
         match self {
             Self::DependencyException(inner) => inner.meta(),
             Self::InvalidParameterException(inner) => inner.meta(),
+            Self::ResourceInUseException(inner) => inner.meta(),
             Self::ResourceLimitExceededException(inner) => inner.meta(),
             Self::ResourceNotFoundException(inner) => inner.meta(),
             Self::Unhandled(inner) => &inner.meta,
@@ -274,6 +278,7 @@ impl From<crate::operation::delete_ephemeris::DeleteEphemerisError> for Error {
         match err {
             crate::operation::delete_ephemeris::DeleteEphemerisError::DependencyException(inner) => Error::DependencyException(inner),
             crate::operation::delete_ephemeris::DeleteEphemerisError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::delete_ephemeris::DeleteEphemerisError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
             crate::operation::delete_ephemeris::DeleteEphemerisError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::delete_ephemeris::DeleteEphemerisError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -774,6 +779,9 @@ impl From<crate::operation::reserve_contact::ReserveContactError> for Error {
         match err {
             crate::operation::reserve_contact::ReserveContactError::DependencyException(inner) => Error::DependencyException(inner),
             crate::operation::reserve_contact::ReserveContactError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::reserve_contact::ReserveContactError::ResourceLimitExceededException(inner) => {
+                Error::ResourceLimitExceededException(inner)
+            }
             crate::operation::reserve_contact::ReserveContactError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::reserve_contact::ReserveContactError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -948,6 +956,7 @@ impl ::std::error::Error for Error {
         match self {
             Error::DependencyException(inner) => inner.source(),
             Error::InvalidParameterException(inner) => inner.source(),
+            Error::ResourceInUseException(inner) => inner.source(),
             Error::ResourceLimitExceededException(inner) => inner.source(),
             Error::ResourceNotFoundException(inner) => inner.source(),
             Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source),
@@ -959,6 +968,7 @@ impl ::aws_types::request_id::RequestId for Error {
         match self {
             Self::DependencyException(e) => e.request_id(),
             Self::InvalidParameterException(e) => e.request_id(),
+            Self::ResourceInUseException(e) => e.request_id(),
             Self::ResourceLimitExceededException(e) => e.request_id(),
             Self::ResourceNotFoundException(e) => e.request_id(),
             Self::Unhandled(e) => e.meta.request_id(),

@@ -5,4 +5,6 @@ pub use crate::types::error::_invalid_parameter_exception::InvalidParameterExcep
 
 pub use crate::types::error::_dependency_exception::DependencyExceptionBuilder;
 
+pub use crate::types::error::_resource_in_use_exception::ResourceInUseExceptionBuilder;
+
 pub use crate::types::error::_resource_limit_exceeded_exception::ResourceLimitExceededExceptionBuilder;

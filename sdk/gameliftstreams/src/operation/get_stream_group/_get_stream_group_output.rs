@@ -110,9 +110,11 @@ pub struct GetStreamGroupOutput {
     /// <li>
     /// <p><code>ACTIVE_WITH_ERRORS</code>: One or more locations in the stream group are in an error state. Verify the details of individual locations and remove any locations which are in error.</p></li>
     /// <li>
+    /// <p><code>DELETING</code>: Amazon GameLift Streams is in the process of deleting the stream group.</p></li>
+    /// <li>
     /// <p><code>ERROR</code>: An error occurred when the stream group deployed. See <code>StatusReason</code> (returned by <code>CreateStreamGroup</code>, <code>GetStreamGroup</code>, and <code>UpdateStreamGroup</code>) for more information.</p></li>
     /// <li>
-    /// <p><code>DELETING</code>: Amazon GameLift Streams is in the process of deleting the stream group.</p></li>
+    /// <p><code>EXPIRED</code>: The stream group is expired and can no longer host streams. This typically occurs when a stream group is 365 days old, as indicated by the value of <code>ExpiresAt</code>. Create a new stream group to resume streaming capabilities.</p></li>
     /// <li>
     /// <p><code>UPDATING_LOCATIONS</code>: One or more locations in the stream group are in the process of updating (either activating or deleting).</p></li>
     /// </ul>
@@ -129,6 +131,8 @@ pub struct GetStreamGroupOutput {
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A timestamp that indicates when this resource was created. Timestamps are expressed using in ISO8601 format, such as: <code>2022-12-27T22:29:40+00:00</code> (UTC).</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The time at which this stream group expires. Timestamps are expressed using in ISO8601 format, such as: <code>2022-12-27T22:29:40+00:00</code> (UTC). After this time, you will no longer be able to update this stream group or use it to start stream sessions. Only Get and Delete operations will work on an expired stream group.</p>
+    pub expires_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A set of applications that this stream group is associated to. You can stream any of these applications by using this stream group.</p>
     /// <p>This value is a set of <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Names (ARNs)</a> that uniquely identify application resources. Example ARN: <code>arn:aws:gameliftstreams:us-west-2:111122223333:application/a-9ZY8X7Wv6</code>.</p>
     pub associated_applications: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -257,9 +261,11 @@ impl GetStreamGroupOutput {
     /// <li>
     /// <p><code>ACTIVE_WITH_ERRORS</code>: One or more locations in the stream group are in an error state. Verify the details of individual locations and remove any locations which are in error.</p></li>
     /// <li>
+    /// <p><code>DELETING</code>: Amazon GameLift Streams is in the process of deleting the stream group.</p></li>
+    /// <li>
     /// <p><code>ERROR</code>: An error occurred when the stream group deployed. See <code>StatusReason</code> (returned by <code>CreateStreamGroup</code>, <code>GetStreamGroup</code>, and <code>UpdateStreamGroup</code>) for more information.</p></li>
     /// <li>
-    /// <p><code>DELETING</code>: Amazon GameLift Streams is in the process of deleting the stream group.</p></li>
+    /// <p><code>EXPIRED</code>: The stream group is expired and can no longer host streams. This typically occurs when a stream group is 365 days old, as indicated by the value of <code>ExpiresAt</code>. Create a new stream group to resume streaming capabilities.</p></li>
     /// <li>
     /// <p><code>UPDATING_LOCATIONS</code>: One or more locations in the stream group are in the process of updating (either activating or deleting).</p></li>
     /// </ul>
@@ -283,6 +289,10 @@ impl GetStreamGroupOutput {
     /// <p>A timestamp that indicates when this resource was created. Timestamps are expressed using in ISO8601 format, such as: <code>2022-12-27T22:29:40+00:00</code> (UTC).</p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
+    }
+    /// <p>The time at which this stream group expires. Timestamps are expressed using in ISO8601 format, such as: <code>2022-12-27T22:29:40+00:00</code> (UTC). After this time, you will no longer be able to update this stream group or use it to start stream sessions. Only Get and Delete operations will work on an expired stream group.</p>
+    pub fn expires_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.expires_at.as_ref()
     }
     /// <p>A set of applications that this stream group is associated to. You can stream any of these applications by using this stream group.</p>
     /// <p>This value is a set of <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Names (ARNs)</a> that uniquely identify application resources. Example ARN: <code>arn:aws:gameliftstreams:us-west-2:111122223333:application/a-9ZY8X7Wv6</code>.</p>
@@ -318,6 +328,7 @@ pub struct GetStreamGroupOutputBuilder {
     pub(crate) status_reason: ::std::option::Option<crate::types::StreamGroupStatusReason>,
     pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) expires_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) associated_applications: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
@@ -680,9 +691,11 @@ impl GetStreamGroupOutputBuilder {
     /// <li>
     /// <p><code>ACTIVE_WITH_ERRORS</code>: One or more locations in the stream group are in an error state. Verify the details of individual locations and remove any locations which are in error.</p></li>
     /// <li>
+    /// <p><code>DELETING</code>: Amazon GameLift Streams is in the process of deleting the stream group.</p></li>
+    /// <li>
     /// <p><code>ERROR</code>: An error occurred when the stream group deployed. See <code>StatusReason</code> (returned by <code>CreateStreamGroup</code>, <code>GetStreamGroup</code>, and <code>UpdateStreamGroup</code>) for more information.</p></li>
     /// <li>
-    /// <p><code>DELETING</code>: Amazon GameLift Streams is in the process of deleting the stream group.</p></li>
+    /// <p><code>EXPIRED</code>: The stream group is expired and can no longer host streams. This typically occurs when a stream group is 365 days old, as indicated by the value of <code>ExpiresAt</code>. Create a new stream group to resume streaming capabilities.</p></li>
     /// <li>
     /// <p><code>UPDATING_LOCATIONS</code>: One or more locations in the stream group are in the process of updating (either activating or deleting).</p></li>
     /// </ul>
@@ -699,9 +712,11 @@ impl GetStreamGroupOutputBuilder {
     /// <li>
     /// <p><code>ACTIVE_WITH_ERRORS</code>: One or more locations in the stream group are in an error state. Verify the details of individual locations and remove any locations which are in error.</p></li>
     /// <li>
+    /// <p><code>DELETING</code>: Amazon GameLift Streams is in the process of deleting the stream group.</p></li>
+    /// <li>
     /// <p><code>ERROR</code>: An error occurred when the stream group deployed. See <code>StatusReason</code> (returned by <code>CreateStreamGroup</code>, <code>GetStreamGroup</code>, and <code>UpdateStreamGroup</code>) for more information.</p></li>
     /// <li>
-    /// <p><code>DELETING</code>: Amazon GameLift Streams is in the process of deleting the stream group.</p></li>
+    /// <p><code>EXPIRED</code>: The stream group is expired and can no longer host streams. This typically occurs when a stream group is 365 days old, as indicated by the value of <code>ExpiresAt</code>. Create a new stream group to resume streaming capabilities.</p></li>
     /// <li>
     /// <p><code>UPDATING_LOCATIONS</code>: One or more locations in the stream group are in the process of updating (either activating or deleting).</p></li>
     /// </ul>
@@ -718,9 +733,11 @@ impl GetStreamGroupOutputBuilder {
     /// <li>
     /// <p><code>ACTIVE_WITH_ERRORS</code>: One or more locations in the stream group are in an error state. Verify the details of individual locations and remove any locations which are in error.</p></li>
     /// <li>
+    /// <p><code>DELETING</code>: Amazon GameLift Streams is in the process of deleting the stream group.</p></li>
+    /// <li>
     /// <p><code>ERROR</code>: An error occurred when the stream group deployed. See <code>StatusReason</code> (returned by <code>CreateStreamGroup</code>, <code>GetStreamGroup</code>, and <code>UpdateStreamGroup</code>) for more information.</p></li>
     /// <li>
-    /// <p><code>DELETING</code>: Amazon GameLift Streams is in the process of deleting the stream group.</p></li>
+    /// <p><code>EXPIRED</code>: The stream group is expired and can no longer host streams. This typically occurs when a stream group is 365 days old, as indicated by the value of <code>ExpiresAt</code>. Create a new stream group to resume streaming capabilities.</p></li>
     /// <li>
     /// <p><code>UPDATING_LOCATIONS</code>: One or more locations in the stream group are in the process of updating (either activating or deleting).</p></li>
     /// </ul>
@@ -787,6 +804,20 @@ impl GetStreamGroupOutputBuilder {
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_at
     }
+    /// <p>The time at which this stream group expires. Timestamps are expressed using in ISO8601 format, such as: <code>2022-12-27T22:29:40+00:00</code> (UTC). After this time, you will no longer be able to update this stream group or use it to start stream sessions. Only Get and Delete operations will work on an expired stream group.</p>
+    pub fn expires_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.expires_at = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The time at which this stream group expires. Timestamps are expressed using in ISO8601 format, such as: <code>2022-12-27T22:29:40+00:00</code> (UTC). After this time, you will no longer be able to update this stream group or use it to start stream sessions. Only Get and Delete operations will work on an expired stream group.</p>
+    pub fn set_expires_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.expires_at = input;
+        self
+    }
+    /// <p>The time at which this stream group expires. Timestamps are expressed using in ISO8601 format, such as: <code>2022-12-27T22:29:40+00:00</code> (UTC). After this time, you will no longer be able to update this stream group or use it to start stream sessions. Only Get and Delete operations will work on an expired stream group.</p>
+    pub fn get_expires_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.expires_at
+    }
     /// Appends an item to `associated_applications`.
     ///
     /// To override the contents of this collection use [`set_associated_applications`](Self::set_associated_applications).
@@ -841,6 +872,7 @@ impl GetStreamGroupOutputBuilder {
             status_reason: self.status_reason,
             last_updated_at: self.last_updated_at,
             created_at: self.created_at,
+            expires_at: self.expires_at,
             associated_applications: self.associated_applications,
             _request_id: self._request_id,
         })
