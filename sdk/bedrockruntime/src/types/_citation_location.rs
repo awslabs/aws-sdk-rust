@@ -10,6 +10,8 @@ pub enum CitationLocation {
     DocumentChunk(crate::types::DocumentChunkLocation),
     /// <p>The page-level location within the document where the cited content is found.</p>
     DocumentPage(crate::types::DocumentPageLocation),
+    /// <p>The web URL that was cited for this reference.</p>
+    Web(crate::types::WebLocation),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -59,6 +61,19 @@ impl CitationLocation {
     /// Returns true if this is a [`DocumentPage`](crate::types::CitationLocation::DocumentPage).
     pub fn is_document_page(&self) -> bool {
         self.as_document_page().is_ok()
+    }
+    /// Tries to convert the enum instance into [`Web`](crate::types::CitationLocation::Web), extracting the inner [`WebLocation`](crate::types::WebLocation).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_web(&self) -> ::std::result::Result<&crate::types::WebLocation, &Self> {
+        if let CitationLocation::Web(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`Web`](crate::types::CitationLocation::Web).
+    pub fn is_web(&self) -> bool {
+        self.as_web().is_ok()
     }
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {

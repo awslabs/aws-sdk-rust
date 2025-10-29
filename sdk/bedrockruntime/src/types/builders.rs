@@ -19,6 +19,8 @@ pub use crate::types::_document_page_location::DocumentPageLocationBuilder;
 
 pub use crate::types::_document_char_location::DocumentCharLocationBuilder;
 
+pub use crate::types::_web_location::WebLocationBuilder;
+
 pub use crate::types::_reasoning_text_block::ReasoningTextBlockBuilder;
 
 pub use crate::types::_tool_result_block::ToolResultBlockBuilder;
@@ -137,6 +139,8 @@ pub use crate::types::_tool_use_block_delta::ToolUseBlockDeltaBuilder;
 
 pub use crate::types::_content_block_start_event::ContentBlockStartEventBuilder;
 
+pub use crate::types::_tool_result_block_start::ToolResultBlockStartBuilder;
+
 pub use crate::types::_tool_use_block_start::ToolUseBlockStartBuilder;
 
 pub use crate::types::_message_start_event::MessageStartEventBuilder;
@@ -150,6 +154,8 @@ pub use crate::types::_specific_tool_choice::SpecificToolChoiceBuilder;
 pub use crate::types::_any_tool_choice::AnyToolChoiceBuilder;
 
 pub use crate::types::_auto_tool_choice::AutoToolChoiceBuilder;
+
+pub use crate::types::_system_tool::SystemToolBuilder;
 
 pub use crate::types::_tool_specification::ToolSpecificationBuilder;
 

@@ -40,6 +40,11 @@ where
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'toolUse' cannot be null")
                             })?,
                         )),
+                        "toolResult" => Some(crate::types::ContentBlockDelta::ToolResult(
+                            crate::protocol_serde::shape_tool_result_blocks_delta::de_tool_result_blocks_delta(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'toolResult' cannot be null")
+                            })?,
+                        )),
                         "reasoningContent" => Some(crate::types::ContentBlockDelta::ReasoningContent(
                             crate::protocol_serde::shape_reasoning_content_block_delta::de_reasoning_content_block_delta(tokens)?.ok_or_else(
                                 || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'reasoningContent' cannot be null"),

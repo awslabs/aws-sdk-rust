@@ -4,23 +4,29 @@ pub fn ser_citation_location(
     input: &crate::types::CitationLocation,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
+        crate::types::CitationLocation::Web(inner) => {
+            #[allow(unused_mut)]
+            let mut object_1 = object_7.key("web").start_object();
+            crate::protocol_serde::shape_web_location::ser_web_location(&mut object_1, inner)?;
+            object_1.finish();
+        }
         crate::types::CitationLocation::DocumentChar(inner) => {
             #[allow(unused_mut)]
-            let mut object_1 = object_7.key("documentChar").start_object();
-            crate::protocol_serde::shape_document_char_location::ser_document_char_location(&mut object_1, inner)?;
-            object_1.finish();
+            let mut object_2 = object_7.key("documentChar").start_object();
+            crate::protocol_serde::shape_document_char_location::ser_document_char_location(&mut object_2, inner)?;
+            object_2.finish();
         }
         crate::types::CitationLocation::DocumentPage(inner) => {
             #[allow(unused_mut)]
-            let mut object_2 = object_7.key("documentPage").start_object();
-            crate::protocol_serde::shape_document_page_location::ser_document_page_location(&mut object_2, inner)?;
-            object_2.finish();
+            let mut object_3 = object_7.key("documentPage").start_object();
+            crate::protocol_serde::shape_document_page_location::ser_document_page_location(&mut object_3, inner)?;
+            object_3.finish();
         }
         crate::types::CitationLocation::DocumentChunk(inner) => {
             #[allow(unused_mut)]
-            let mut object_3 = object_7.key("documentChunk").start_object();
-            crate::protocol_serde::shape_document_chunk_location::ser_document_chunk_location(&mut object_3, inner)?;
-            object_3.finish();
+            let mut object_4 = object_7.key("documentChunk").start_object();
+            crate::protocol_serde::shape_document_chunk_location::ser_document_chunk_location(&mut object_4, inner)?;
+            object_4.finish();
         }
         crate::types::CitationLocation::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
@@ -61,6 +67,10 @@ where
                         ));
                     }
                     variant = match key.as_ref() {
+                        "web" => Some(crate::types::CitationLocation::Web(
+                            crate::protocol_serde::shape_web_location::de_web_location(tokens)?
+                                .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'web' cannot be null"))?,
+                        )),
                         "documentChar" => Some(crate::types::CitationLocation::DocumentChar(
                             crate::protocol_serde::shape_document_char_location::de_document_char_location(tokens)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'documentChar' cannot be null")

@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum ContentBlockStart {
+    /// <p>The</p>
+    ToolResult(crate::types::ToolResultBlockStart),
     /// <p>Information about a tool that the model is requesting to use.</p>
     ToolUse(crate::types::ToolUseBlockStart),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
@@ -17,7 +19,19 @@ pub enum ContentBlockStart {
     Unknown,
 }
 impl ContentBlockStart {
-    #[allow(irrefutable_let_patterns)]
+    /// Tries to convert the enum instance into [`ToolResult`](crate::types::ContentBlockStart::ToolResult), extracting the inner [`ToolResultBlockStart`](crate::types::ToolResultBlockStart).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_tool_result(&self) -> ::std::result::Result<&crate::types::ToolResultBlockStart, &Self> {
+        if let ContentBlockStart::ToolResult(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`ToolResult`](crate::types::ContentBlockStart::ToolResult).
+    pub fn is_tool_result(&self) -> bool {
+        self.as_tool_result().is_ok()
+    }
     /// Tries to convert the enum instance into [`ToolUse`](crate::types::ContentBlockStart::ToolUse), extracting the inner [`ToolUseBlockStart`](crate::types::ToolUseBlockStart).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_tool_use(&self) -> ::std::result::Result<&crate::types::ToolUseBlockStart, &Self> {

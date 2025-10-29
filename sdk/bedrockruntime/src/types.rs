@@ -37,6 +37,8 @@ pub use crate::types::_document_page_location::DocumentPageLocation;
 
 pub use crate::types::_document_char_location::DocumentCharLocation;
 
+pub use crate::types::_web_location::WebLocation;
+
 pub use crate::types::_citation_source_content::CitationSourceContent;
 
 pub use crate::types::_citation_generated_content::CitationGeneratedContent;
@@ -76,6 +78,8 @@ pub use crate::types::_image_source::ImageSource;
 pub use crate::types::_image_format::ImageFormat;
 
 pub use crate::types::_tool_use_block::ToolUseBlock;
+
+pub use crate::types::_tool_use_type::ToolUseType;
 
 pub use crate::types::_conversation_role::ConversationRole;
 
@@ -223,11 +227,15 @@ pub use crate::types::_citation_source_content_delta::CitationSourceContentDelta
 
 pub use crate::types::_reasoning_content_block_delta::ReasoningContentBlockDelta;
 
+pub use crate::types::_tool_result_block_delta::ToolResultBlockDelta;
+
 pub use crate::types::_tool_use_block_delta::ToolUseBlockDelta;
 
 pub use crate::types::_content_block_start_event::ContentBlockStartEvent;
 
 pub use crate::types::_content_block_start::ContentBlockStart;
+
+pub use crate::types::_tool_result_block_start::ToolResultBlockStart;
 
 pub use crate::types::_tool_use_block_start::ToolUseBlockStart;
 
@@ -252,6 +260,8 @@ pub use crate::types::_any_tool_choice::AnyToolChoice;
 pub use crate::types::_auto_tool_choice::AutoToolChoice;
 
 pub use crate::types::_tool::Tool;
+
+pub use crate::types::_system_tool::SystemTool;
 
 pub use crate::types::_tool_specification::ToolSpecification;
 
@@ -569,6 +579,8 @@ mod _stop_reason;
 
 mod _system_content_block;
 
+mod _system_tool;
+
 mod _tag;
 
 mod _token_usage;
@@ -583,6 +595,10 @@ mod _tool_input_schema;
 
 mod _tool_result_block;
 
+mod _tool_result_block_delta;
+
+mod _tool_result_block_start;
+
 mod _tool_result_content_block;
 
 mod _tool_result_status;
@@ -595,6 +611,8 @@ mod _tool_use_block_delta;
 
 mod _tool_use_block_start;
 
+mod _tool_use_type;
+
 mod _trace;
 
 mod _video_block;
@@ -602,6 +620,8 @@ mod _video_block;
 mod _video_format;
 
 mod _video_source;
+
+mod _web_location;
 
 /// Builders
 pub mod builders;

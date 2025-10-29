@@ -21,6 +21,9 @@ pub fn ser_tool_result_block(
     if let Some(var_4) = &input.status {
         object.key("status").string(var_4.as_str());
     }
+    if let Some(var_5) = &input.r#type {
+        object.key("type").string(var_5.as_str());
+    }
     Ok(())
 }
 
@@ -55,6 +58,13 @@ where
                             builder = builder.set_status(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::ToolResultStatus::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "type" => {
+                            builder = builder.set_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
                         }

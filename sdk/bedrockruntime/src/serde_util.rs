@@ -449,6 +449,15 @@ pub(crate) fn tool_result_block_correct_errors(
     builder
 }
 
+pub(crate) fn tool_result_block_start_correct_errors(
+    mut builder: crate::types::builders::ToolResultBlockStartBuilder,
+) -> crate::types::builders::ToolResultBlockStartBuilder {
+    if builder.tool_use_id.is_none() {
+        builder.tool_use_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn tool_use_block_correct_errors(mut builder: crate::types::builders::ToolUseBlockBuilder) -> crate::types::builders::ToolUseBlockBuilder {
     if builder.tool_use_id.is_none() {
         builder.tool_use_id = Some(Default::default())
