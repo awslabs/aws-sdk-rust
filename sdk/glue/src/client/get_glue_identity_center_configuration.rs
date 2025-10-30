@@ -7,6 +7,7 @@ impl super::Client {
     ///   - [`application_arn(Option<String>)`](crate::operation::get_glue_identity_center_configuration::GetGlueIdentityCenterConfigurationOutput::application_arn): <p>The Amazon Resource Name (ARN) of the Identity Center application associated with the Glue configuration.</p>
     ///   - [`instance_arn(Option<String>)`](crate::operation::get_glue_identity_center_configuration::GetGlueIdentityCenterConfigurationOutput::instance_arn): <p>The Amazon Resource Name (ARN) of the Identity Center instance associated with the Glue configuration.</p>
     ///   - [`scopes(Option<Vec::<String>>)`](crate::operation::get_glue_identity_center_configuration::GetGlueIdentityCenterConfigurationOutput::scopes): <p>A list of Identity Center scopes that define the permissions and access levels for the Glue configuration.</p>
+    ///   - [`user_background_sessions_enabled(Option<bool>)`](crate::operation::get_glue_identity_center_configuration::GetGlueIdentityCenterConfigurationOutput::user_background_sessions_enabled): <p>Indicates whether users can run background sessions when using Identity Center authentication with Glue services.</p>
     /// - On failure, responds with [`SdkError<GetGlueIdentityCenterConfigurationError>`](crate::operation::get_glue_identity_center_configuration::GetGlueIdentityCenterConfigurationError)
     pub fn get_glue_identity_center_configuration(
         &self,

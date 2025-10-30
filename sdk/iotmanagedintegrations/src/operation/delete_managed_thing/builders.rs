@@ -22,7 +22,7 @@ impl crate::operation::delete_managed_thing::builders::DeleteManagedThingInputBu
 }
 /// Fluent builder constructing a request to `DeleteManagedThing`.
 ///
-/// <p>Delete a managed thing. If a controller is deleted, all of the devices connected to it will have their status changed to <code>PENDING</code>. It is not possible to remove a cloud device.</p>
+/// <p>Delete a managed thing. For direct-connected and hub-connected devices connecting with Managed integrations via a controller, all of the devices connected to it will have their status changed to <code>PENDING</code>. It is not possible to remove a cloud-to-cloud device.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteManagedThingFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

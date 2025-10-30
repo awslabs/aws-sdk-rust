@@ -961,6 +961,15 @@ pub(crate) fn kms_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn browser_signing_config_output_correct_errors(
+    mut builder: crate::types::builders::BrowserSigningConfigOutputBuilder,
+) -> crate::types::builders::BrowserSigningConfigOutputBuilder {
+    if builder.enabled.is_none() {
+        builder.enabled = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn protocol_configuration_correct_errors(
     mut builder: crate::types::builders::ProtocolConfigurationBuilder,
 ) -> crate::types::builders::ProtocolConfigurationBuilder {

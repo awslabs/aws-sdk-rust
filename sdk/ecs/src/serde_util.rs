@@ -213,6 +213,15 @@ pub(crate) fn repository_credentials_correct_errors(
     builder
 }
 
+pub(crate) fn service_connect_access_log_configuration_correct_errors(
+    mut builder: crate::types::builders::ServiceConnectAccessLogConfigurationBuilder,
+) -> crate::types::builders::ServiceConnectAccessLogConfigurationBuilder {
+    if builder.format.is_none() {
+        builder.format = "no value was set".parse::<crate::types::ServiceConnectAccessLoggingFormat>().ok()
+    }
+    builder
+}
+
 pub(crate) fn service_volume_configuration_correct_errors(
     mut builder: crate::types::builders::ServiceVolumeConfigurationBuilder,
 ) -> crate::types::builders::ServiceVolumeConfigurationBuilder {

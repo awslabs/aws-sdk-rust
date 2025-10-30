@@ -22,8 +22,8 @@ impl crate::operation::get_link::builders::GetLinkInputBuilder {
 }
 /// Fluent builder constructing a request to `GetLink`.
 ///
-/// <p>Retrieves information about a link between RTB applications.</p>
-/// <p>Returns detailed information about the link configuration, status, and associated RTB applications.</p>
+/// <p>Retrieves information about a link between gateways.</p>
+/// <p>Returns detailed information about the link configuration, status, and associated gateways.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetLinkFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

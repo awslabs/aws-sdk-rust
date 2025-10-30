@@ -22,7 +22,7 @@ impl crate::operation::update_destination::builders::UpdateDestinationInputBuild
 }
 /// Fluent builder constructing a request to `UpdateDestination`.
 ///
-/// <p>Update a destination specified by id.</p>
+/// <p>Update a destination specified by name.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateDestinationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

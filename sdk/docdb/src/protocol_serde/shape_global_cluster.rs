@@ -138,6 +138,26 @@ pub fn de_global_cluster(
                 builder = builder.set_global_cluster_members(var_10);
             }
             ,
+            s if s.matches("FailoverState") /* FailoverState com.amazonaws.docdb#GlobalCluster$FailoverState */ =>  {
+                let var_11 =
+                    Some(
+                        crate::protocol_serde::shape_failover_state::de_failover_state(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_failover_state(var_11);
+            }
+            ,
+            s if s.matches("TagList") /* TagList com.amazonaws.docdb#GlobalCluster$TagList */ =>  {
+                let var_12 =
+                    Some(
+                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_tag_list(var_12);
+            }
+            ,
             _ => {}
         }
     }

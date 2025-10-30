@@ -245,6 +245,10 @@ pub(crate) mod shape_authorizer_configuration;
 
 pub(crate) mod shape_browser_network_configuration;
 
+pub(crate) mod shape_browser_signing_config_input;
+
+pub(crate) mod shape_browser_signing_config_output;
+
 pub(crate) mod shape_browser_summaries;
 
 pub(crate) mod shape_code_interpreter_network_configuration;

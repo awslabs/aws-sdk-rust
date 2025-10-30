@@ -445,6 +445,8 @@ pub(crate) mod shape_event_categories_list;
 
 pub(crate) mod shape_event_categories_map;
 
+pub(crate) mod shape_failover_state;
+
 pub(crate) mod shape_global_cluster_member_list;
 
 pub(crate) mod shape_log_type_list;

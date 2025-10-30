@@ -683,6 +683,8 @@ pub(crate) mod shape_schema_status_detail;
 
 pub(crate) mod shape_snowflake_table_schema;
 
+pub(crate) mod shape_worker_compute_configuration_properties;
+
 pub(crate) mod shape_access_budget;
 
 pub(crate) mod shape_aggregate_column;
@@ -788,6 +790,8 @@ pub(crate) mod shape_scalar_functions_list;
 pub(crate) mod shape_schema_status_reason;
 
 pub(crate) mod shape_snowflake_table_schema_list;
+
+pub(crate) mod shape_spark_properties;
 
 pub(crate) mod shape_access_budget_details;
 

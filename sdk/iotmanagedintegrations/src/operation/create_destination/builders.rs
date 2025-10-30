@@ -22,7 +22,7 @@ impl crate::operation::create_destination::builders::CreateDestinationInputBuild
 }
 /// Fluent builder constructing a request to `CreateDestination`.
 ///
-/// <p>Create a destination. IoT managed integrations uses the destination to determine where to deliver notifications for a device.</p>
+/// <p>Create a notification destination such as Kinesis Data Streams that receive events and notifications from Managed integrations. Managed integrations uses the destination to determine where to deliver notifications.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateDestinationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

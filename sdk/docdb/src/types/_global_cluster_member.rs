@@ -10,6 +10,8 @@ pub struct GlobalClusterMember {
     pub readers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies whether the Amazon DocumentDB cluster is the primary cluster (that is, has read-write capability) for the Amazon DocumentDB global cluster with which it is associated.</p>
     pub is_writer: ::std::option::Option<bool>,
+    /// <p>The status of synchronization of each Amazon DocumentDB cluster in the global cluster.</p>
+    pub synchronization_status: ::std::option::Option<crate::types::GlobalClusterMemberSynchronizationStatus>,
 }
 impl GlobalClusterMember {
     /// <p>The Amazon Resource Name (ARN) for each Amazon DocumentDB cluster.</p>
@@ -26,6 +28,10 @@ impl GlobalClusterMember {
     pub fn is_writer(&self) -> ::std::option::Option<bool> {
         self.is_writer
     }
+    /// <p>The status of synchronization of each Amazon DocumentDB cluster in the global cluster.</p>
+    pub fn synchronization_status(&self) -> ::std::option::Option<&crate::types::GlobalClusterMemberSynchronizationStatus> {
+        self.synchronization_status.as_ref()
+    }
 }
 impl GlobalClusterMember {
     /// Creates a new builder-style object to manufacture [`GlobalClusterMember`](crate::types::GlobalClusterMember).
@@ -41,6 +47,7 @@ pub struct GlobalClusterMemberBuilder {
     pub(crate) db_cluster_arn: ::std::option::Option<::std::string::String>,
     pub(crate) readers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) is_writer: ::std::option::Option<bool>,
+    pub(crate) synchronization_status: ::std::option::Option<crate::types::GlobalClusterMemberSynchronizationStatus>,
 }
 impl GlobalClusterMemberBuilder {
     /// <p>The Amazon Resource Name (ARN) for each Amazon DocumentDB cluster.</p>
@@ -91,12 +98,27 @@ impl GlobalClusterMemberBuilder {
     pub fn get_is_writer(&self) -> &::std::option::Option<bool> {
         &self.is_writer
     }
+    /// <p>The status of synchronization of each Amazon DocumentDB cluster in the global cluster.</p>
+    pub fn synchronization_status(mut self, input: crate::types::GlobalClusterMemberSynchronizationStatus) -> Self {
+        self.synchronization_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The status of synchronization of each Amazon DocumentDB cluster in the global cluster.</p>
+    pub fn set_synchronization_status(mut self, input: ::std::option::Option<crate::types::GlobalClusterMemberSynchronizationStatus>) -> Self {
+        self.synchronization_status = input;
+        self
+    }
+    /// <p>The status of synchronization of each Amazon DocumentDB cluster in the global cluster.</p>
+    pub fn get_synchronization_status(&self) -> &::std::option::Option<crate::types::GlobalClusterMemberSynchronizationStatus> {
+        &self.synchronization_status
+    }
     /// Consumes the builder and constructs a [`GlobalClusterMember`](crate::types::GlobalClusterMember).
     pub fn build(self) -> crate::types::GlobalClusterMember {
         crate::types::GlobalClusterMember {
             db_cluster_arn: self.db_cluster_arn,
             readers: self.readers,
             is_writer: self.is_writer,
+            synchronization_status: self.synchronization_status,
         }
     }
 }

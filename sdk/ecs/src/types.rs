@@ -71,6 +71,12 @@ pub use crate::types::_service_connect_service_resource::ServiceConnectServiceRe
 
 pub use crate::types::_service_connect_configuration::ServiceConnectConfiguration;
 
+pub use crate::types::_service_connect_access_log_configuration::ServiceConnectAccessLogConfiguration;
+
+pub use crate::types::_service_connect_include_query_parameters::ServiceConnectIncludeQueryParameters;
+
+pub use crate::types::_service_connect_access_logging_format::ServiceConnectAccessLoggingFormat;
+
 pub use crate::types::_log_configuration::LogConfiguration;
 
 pub use crate::types::_secret::Secret;
@@ -747,9 +753,15 @@ mod _secret;
 
 mod _service;
 
+mod _service_connect_access_log_configuration;
+
+mod _service_connect_access_logging_format;
+
 mod _service_connect_client_alias;
 
 mod _service_connect_configuration;
+
+mod _service_connect_include_query_parameters;
 
 mod _service_connect_service;
 

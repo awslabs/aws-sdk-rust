@@ -22,7 +22,7 @@ impl crate::operation::update_link::builders::UpdateLinkInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateLink`.
 ///
-/// <p>Updates the configuration of a link between RTB applications.</p>
+/// <p>Updates the configuration of a link between gateways.</p>
 /// <p>Allows you to modify settings and parameters for an existing link.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateLinkFluentBuilder {

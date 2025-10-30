@@ -22,7 +22,7 @@ impl crate::operation::get_destination::builders::GetDestinationInputBuilder {
 }
 /// Fluent builder constructing a request to `GetDestination`.
 ///
-/// <p>Gets a destination by ID.</p>
+/// <p>Gets a destination by name.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetDestinationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

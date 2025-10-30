@@ -190,6 +190,10 @@ pub(crate) fn de_get_glue_identity_center_configuration(
                         tokens,
                     )?);
                 }
+                "UserBackgroundSessionsEnabled" => {
+                    builder =
+                        builder.set_user_background_sessions_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

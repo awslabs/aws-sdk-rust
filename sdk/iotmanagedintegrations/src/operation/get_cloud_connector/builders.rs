@@ -22,7 +22,7 @@ impl crate::operation::get_cloud_connector::builders::GetCloudConnectorInputBuil
 }
 /// Fluent builder constructing a request to `GetCloudConnector`.
 ///
-/// <p>Gets all the information about a connector for a connector developer.</p>
+/// <p>Get configuration details for a cloud connector.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetCloudConnectorFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

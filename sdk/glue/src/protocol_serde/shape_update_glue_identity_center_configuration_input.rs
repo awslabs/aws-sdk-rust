@@ -12,5 +12,8 @@ pub fn ser_update_glue_identity_center_configuration_input_input(
         }
         array_2.finish();
     }
+    if let Some(var_4) = &input.user_background_sessions_enabled {
+        object.key("UserBackgroundSessionsEnabled").boolean(*var_4);
+    }
     Ok(())
 }

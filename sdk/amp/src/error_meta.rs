@@ -117,6 +117,41 @@ impl From<crate::operation::create_alert_manager_definition::CreateAlertManagerD
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_anomaly_detector::CreateAnomalyDetectorError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_anomaly_detector::CreateAnomalyDetectorError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_anomaly_detector::CreateAnomalyDetectorError> for Error {
+    fn from(err: crate::operation::create_anomaly_detector::CreateAnomalyDetectorError) -> Self {
+        match err {
+            crate::operation::create_anomaly_detector::CreateAnomalyDetectorError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_anomaly_detector::CreateAnomalyDetectorError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_anomaly_detector::CreateAnomalyDetectorError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_anomaly_detector::CreateAnomalyDetectorError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_anomaly_detector::CreateAnomalyDetectorError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_anomaly_detector::CreateAnomalyDetectorError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_anomaly_detector::CreateAnomalyDetectorError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_logging_configuration::CreateLoggingConfigurationError, R>>
     for Error
 where
@@ -342,6 +377,41 @@ impl From<crate::operation::delete_alert_manager_definition::DeleteAlertManagerD
                 Error::ValidationException(inner)
             }
             crate::operation::delete_alert_manager_definition::DeleteAlertManagerDefinitionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_anomaly_detector::DeleteAnomalyDetectorError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_anomaly_detector::DeleteAnomalyDetectorError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_anomaly_detector::DeleteAnomalyDetectorError> for Error {
+    fn from(err: crate::operation::delete_anomaly_detector::DeleteAnomalyDetectorError) -> Self {
+        match err {
+            crate::operation::delete_anomaly_detector::DeleteAnomalyDetectorError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_anomaly_detector::DeleteAnomalyDetectorError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_anomaly_detector::DeleteAnomalyDetectorError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_anomaly_detector::DeleteAnomalyDetectorError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_anomaly_detector::DeleteAnomalyDetectorError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_anomaly_detector::DeleteAnomalyDetectorError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_anomaly_detector::DeleteAnomalyDetectorError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -651,6 +721,45 @@ impl From<crate::operation::describe_alert_manager_definition::DescribeAlertMana
                 Error::ValidationException(inner)
             }
             crate::operation::describe_alert_manager_definition::DescribeAlertManagerDefinitionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_anomaly_detector::DescribeAnomalyDetectorError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_anomaly_detector::DescribeAnomalyDetectorError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_anomaly_detector::DescribeAnomalyDetectorError> for Error {
+    fn from(err: crate::operation::describe_anomaly_detector::DescribeAnomalyDetectorError) -> Self {
+        match err {
+            crate::operation::describe_anomaly_detector::DescribeAnomalyDetectorError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::describe_anomaly_detector::DescribeAnomalyDetectorError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::describe_anomaly_detector::DescribeAnomalyDetectorError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_anomaly_detector::DescribeAnomalyDetectorError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::describe_anomaly_detector::DescribeAnomalyDetectorError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::describe_anomaly_detector::DescribeAnomalyDetectorError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1003,6 +1112,36 @@ impl From<crate::operation::get_default_scraper_configuration::GetDefaultScraper
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_anomaly_detectors::ListAnomalyDetectorsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_anomaly_detectors::ListAnomalyDetectorsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_anomaly_detectors::ListAnomalyDetectorsError> for Error {
+    fn from(err: crate::operation::list_anomaly_detectors::ListAnomalyDetectorsError) -> Self {
+        match err {
+            crate::operation::list_anomaly_detectors::ListAnomalyDetectorsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_anomaly_detectors::ListAnomalyDetectorsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_anomaly_detectors::ListAnomalyDetectorsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_anomaly_detectors::ListAnomalyDetectorsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_anomaly_detectors::ListAnomalyDetectorsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_anomaly_detectors::ListAnomalyDetectorsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_rule_groups_namespaces::ListRuleGroupsNamespacesError, R>>
     for Error
 where
@@ -1164,6 +1303,35 @@ impl From<crate::operation::put_alert_manager_definition::PutAlertManagerDefinit
                 Error::ValidationException(inner)
             }
             crate::operation::put_alert_manager_definition::PutAlertManagerDefinitionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_anomaly_detector::PutAnomalyDetectorError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_anomaly_detector::PutAnomalyDetectorError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::put_anomaly_detector::PutAnomalyDetectorError> for Error {
+    fn from(err: crate::operation::put_anomaly_detector::PutAnomalyDetectorError) -> Self {
+        match err {
+            crate::operation::put_anomaly_detector::PutAnomalyDetectorError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::put_anomaly_detector::PutAnomalyDetectorError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::put_anomaly_detector::PutAnomalyDetectorError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::put_anomaly_detector::PutAnomalyDetectorError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::put_anomaly_detector::PutAnomalyDetectorError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::put_anomaly_detector::PutAnomalyDetectorError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::put_anomaly_detector::PutAnomalyDetectorError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

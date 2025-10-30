@@ -22,7 +22,7 @@ impl crate::operation::reset_runtime_log_configuration::builders::ResetRuntimeLo
 }
 /// Fluent builder constructing a request to `ResetRuntimeLogConfiguration`.
 ///
-/// <p>Reset a runtime log configuration for a specific managed thing or for all managed things as a group.</p>
+/// <p>Reset a runtime log configuration for a specific managed thing.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ResetRuntimeLogConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

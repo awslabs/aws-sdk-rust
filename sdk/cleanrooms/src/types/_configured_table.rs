@@ -25,7 +25,7 @@ pub struct ConfiguredTable {
     /// <p><code>DIRECT_JOB</code> allows PySpark jobs to be run directly on this table.</p>
     /// <p><code>MULTIPLE</code> allows both SQL queries and PySpark jobs to be run directly on this table.</p>
     pub analysis_method: crate::types::AnalysisMethod,
-    /// <p>The columns within the underlying Glue table that can be utilized within collaborations.</p>
+    /// <p>The columns within the underlying Glue table that can be used within collaborations.</p>
     pub allowed_columns: ::std::vec::Vec<::std::string::String>,
     /// <p>The selected analysis methods for the configured table.</p>
     pub selected_analysis_methods: ::std::option::Option<::std::vec::Vec<crate::types::SelectedAnalysisMethod>>,
@@ -74,7 +74,7 @@ impl ConfiguredTable {
     pub fn analysis_method(&self) -> &crate::types::AnalysisMethod {
         &self.analysis_method
     }
-    /// <p>The columns within the underlying Glue table that can be utilized within collaborations.</p>
+    /// <p>The columns within the underlying Glue table that can be used within collaborations.</p>
     pub fn allowed_columns(&self) -> &[::std::string::String] {
         use std::ops::Deref;
         self.allowed_columns.deref()
@@ -262,19 +262,19 @@ impl ConfiguredTableBuilder {
     ///
     /// To override the contents of this collection use [`set_allowed_columns`](Self::set_allowed_columns).
     ///
-    /// <p>The columns within the underlying Glue table that can be utilized within collaborations.</p>
+    /// <p>The columns within the underlying Glue table that can be used within collaborations.</p>
     pub fn allowed_columns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.allowed_columns.unwrap_or_default();
         v.push(input.into());
         self.allowed_columns = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The columns within the underlying Glue table that can be utilized within collaborations.</p>
+    /// <p>The columns within the underlying Glue table that can be used within collaborations.</p>
     pub fn set_allowed_columns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.allowed_columns = input;
         self
     }
-    /// <p>The columns within the underlying Glue table that can be utilized within collaborations.</p>
+    /// <p>The columns within the underlying Glue table that can be used within collaborations.</p>
     pub fn get_allowed_columns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.allowed_columns
     }

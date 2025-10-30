@@ -32,6 +32,9 @@ pub struct UpdateCustomKeyStoreInput {
     /// <p>Changes the name that KMS uses to identify the Amazon VPC endpoint service for your external key store proxy (XKS proxy). This parameter is valid when the <code>CustomKeyStoreType</code> is <code>EXTERNAL_KEY_STORE</code> and the <code>XksProxyConnectivity</code> is <code>VPC_ENDPOINT_SERVICE</code>.</p>
     /// <p>To change this value, the external key store must be disconnected.</p>
     pub xks_proxy_vpc_endpoint_service_name: ::std::option::Option<::std::string::String>,
+    /// <p>Changes the Amazon Web Services account ID that KMS uses to identify the Amazon VPC endpoint service for your external key store proxy (XKS proxy). This parameter is optional. If not specified, the current Amazon Web Services account ID for the VPC endpoint service will not be updated.</p>
+    /// <p>To change this value, the external key store must be disconnected.</p>
+    pub xks_proxy_vpc_endpoint_service_owner: ::std::option::Option<::std::string::String>,
     /// <p>Changes the credentials that KMS uses to sign requests to the external key store proxy (XKS proxy). This parameter is valid only for custom key stores with a <code>CustomKeyStoreType</code> of <code>EXTERNAL_KEY_STORE</code>.</p>
     /// <p>You must specify both the <code>AccessKeyId</code> and <code>SecretAccessKey</code> value in the authentication credential, even if you are only updating one value.</p>
     /// <p>This parameter doesn't establish or change your authentication credentials on the proxy. It just tells KMS the credential that you established with your external key store proxy. For example, if you rotate the credential on your external key store proxy, you can use this parameter to update the credential in KMS.</p>
@@ -87,6 +90,11 @@ impl UpdateCustomKeyStoreInput {
     pub fn xks_proxy_vpc_endpoint_service_name(&self) -> ::std::option::Option<&str> {
         self.xks_proxy_vpc_endpoint_service_name.as_deref()
     }
+    /// <p>Changes the Amazon Web Services account ID that KMS uses to identify the Amazon VPC endpoint service for your external key store proxy (XKS proxy). This parameter is optional. If not specified, the current Amazon Web Services account ID for the VPC endpoint service will not be updated.</p>
+    /// <p>To change this value, the external key store must be disconnected.</p>
+    pub fn xks_proxy_vpc_endpoint_service_owner(&self) -> ::std::option::Option<&str> {
+        self.xks_proxy_vpc_endpoint_service_owner.as_deref()
+    }
     /// <p>Changes the credentials that KMS uses to sign requests to the external key store proxy (XKS proxy). This parameter is valid only for custom key stores with a <code>CustomKeyStoreType</code> of <code>EXTERNAL_KEY_STORE</code>.</p>
     /// <p>You must specify both the <code>AccessKeyId</code> and <code>SecretAccessKey</code> value in the authentication credential, even if you are only updating one value.</p>
     /// <p>This parameter doesn't establish or change your authentication credentials on the proxy. It just tells KMS the credential that you established with your external key store proxy. For example, if you rotate the credential on your external key store proxy, you can use this parameter to update the credential in KMS.</p>
@@ -112,6 +120,7 @@ impl ::std::fmt::Debug for UpdateCustomKeyStoreInput {
         formatter.field("xks_proxy_uri_endpoint", &self.xks_proxy_uri_endpoint);
         formatter.field("xks_proxy_uri_path", &self.xks_proxy_uri_path);
         formatter.field("xks_proxy_vpc_endpoint_service_name", &self.xks_proxy_vpc_endpoint_service_name);
+        formatter.field("xks_proxy_vpc_endpoint_service_owner", &self.xks_proxy_vpc_endpoint_service_owner);
         formatter.field("xks_proxy_authentication_credential", &self.xks_proxy_authentication_credential);
         formatter.field("xks_proxy_connectivity", &self.xks_proxy_connectivity);
         formatter.finish()
@@ -135,6 +144,7 @@ pub struct UpdateCustomKeyStoreInputBuilder {
     pub(crate) xks_proxy_uri_endpoint: ::std::option::Option<::std::string::String>,
     pub(crate) xks_proxy_uri_path: ::std::option::Option<::std::string::String>,
     pub(crate) xks_proxy_vpc_endpoint_service_name: ::std::option::Option<::std::string::String>,
+    pub(crate) xks_proxy_vpc_endpoint_service_owner: ::std::option::Option<::std::string::String>,
     pub(crate) xks_proxy_authentication_credential: ::std::option::Option<crate::types::XksProxyAuthenticationCredentialType>,
     pub(crate) xks_proxy_connectivity: ::std::option::Option<crate::types::XksProxyConnectivityType>,
 }
@@ -283,6 +293,23 @@ impl UpdateCustomKeyStoreInputBuilder {
     pub fn get_xks_proxy_vpc_endpoint_service_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.xks_proxy_vpc_endpoint_service_name
     }
+    /// <p>Changes the Amazon Web Services account ID that KMS uses to identify the Amazon VPC endpoint service for your external key store proxy (XKS proxy). This parameter is optional. If not specified, the current Amazon Web Services account ID for the VPC endpoint service will not be updated.</p>
+    /// <p>To change this value, the external key store must be disconnected.</p>
+    pub fn xks_proxy_vpc_endpoint_service_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.xks_proxy_vpc_endpoint_service_owner = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Changes the Amazon Web Services account ID that KMS uses to identify the Amazon VPC endpoint service for your external key store proxy (XKS proxy). This parameter is optional. If not specified, the current Amazon Web Services account ID for the VPC endpoint service will not be updated.</p>
+    /// <p>To change this value, the external key store must be disconnected.</p>
+    pub fn set_xks_proxy_vpc_endpoint_service_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.xks_proxy_vpc_endpoint_service_owner = input;
+        self
+    }
+    /// <p>Changes the Amazon Web Services account ID that KMS uses to identify the Amazon VPC endpoint service for your external key store proxy (XKS proxy). This parameter is optional. If not specified, the current Amazon Web Services account ID for the VPC endpoint service will not be updated.</p>
+    /// <p>To change this value, the external key store must be disconnected.</p>
+    pub fn get_xks_proxy_vpc_endpoint_service_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.xks_proxy_vpc_endpoint_service_owner
+    }
     /// <p>Changes the credentials that KMS uses to sign requests to the external key store proxy (XKS proxy). This parameter is valid only for custom key stores with a <code>CustomKeyStoreType</code> of <code>EXTERNAL_KEY_STORE</code>.</p>
     /// <p>You must specify both the <code>AccessKeyId</code> and <code>SecretAccessKey</code> value in the authentication credential, even if you are only updating one value.</p>
     /// <p>This parameter doesn't establish or change your authentication credentials on the proxy. It just tells KMS the credential that you established with your external key store proxy. For example, if you rotate the credential on your external key store proxy, you can use this parameter to update the credential in KMS.</p>
@@ -345,6 +372,7 @@ impl UpdateCustomKeyStoreInputBuilder {
             xks_proxy_uri_endpoint: self.xks_proxy_uri_endpoint,
             xks_proxy_uri_path: self.xks_proxy_uri_path,
             xks_proxy_vpc_endpoint_service_name: self.xks_proxy_vpc_endpoint_service_name,
+            xks_proxy_vpc_endpoint_service_owner: self.xks_proxy_vpc_endpoint_service_owner,
             xks_proxy_authentication_credential: self.xks_proxy_authentication_credential,
             xks_proxy_connectivity: self.xks_proxy_connectivity,
         })
@@ -360,6 +388,7 @@ impl ::std::fmt::Debug for UpdateCustomKeyStoreInputBuilder {
         formatter.field("xks_proxy_uri_endpoint", &self.xks_proxy_uri_endpoint);
         formatter.field("xks_proxy_uri_path", &self.xks_proxy_uri_path);
         formatter.field("xks_proxy_vpc_endpoint_service_name", &self.xks_proxy_vpc_endpoint_service_name);
+        formatter.field("xks_proxy_vpc_endpoint_service_owner", &self.xks_proxy_vpc_endpoint_service_owner);
         formatter.field("xks_proxy_authentication_credential", &self.xks_proxy_authentication_credential);
         formatter.field("xks_proxy_connectivity", &self.xks_proxy_connectivity);
         formatter.finish()

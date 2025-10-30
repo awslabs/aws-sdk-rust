@@ -22,7 +22,7 @@ impl crate::operation::get_managed_thing::builders::GetManagedThingInputBuilder 
 }
 /// Fluent builder constructing a request to `GetManagedThing`.
 ///
-/// <p>Get the attributes and capabilities associated with a managed thing.</p>
+/// <p>Get details of a managed thing including its attributes and capabilities.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetManagedThingFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

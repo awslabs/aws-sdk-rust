@@ -22,7 +22,9 @@ impl crate::operation::create_credential_locker::builders::CreateCredentialLocke
 }
 /// Fluent builder constructing a request to `CreateCredentialLocker`.
 ///
-/// <p>Create a product credential locker. This operation will trigger the creation of all the manufacturing resources including the Wi-Fi setup key pair and device certificate.</p>
+/// <p>Create a credential locker.</p><note>
+/// <p>This operation will not trigger the creation of all the manufacturing resources.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateCredentialLockerFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

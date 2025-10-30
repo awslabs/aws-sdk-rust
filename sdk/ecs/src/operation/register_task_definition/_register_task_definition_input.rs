@@ -112,7 +112,7 @@ pub struct RegisterTaskDefinitionInput {
     /// </ul>
     /// </note>
     pub ephemeral_storage: ::std::option::Option<crate::types::EphemeralStorage>,
-    /// <p>The operating system that your tasks definitions run on. A platform family is specified only for tasks using the Fargate launch type.</p>
+    /// <p>The operating system that your tasks definitions run on.</p>
     pub runtime_platform: ::std::option::Option<crate::types::RuntimePlatform>,
     /// <p>Enables fault injection when you register your task definition and allows for fault injection requests to be accepted from the task's containers. The default value is <code>false</code>.</p>
     pub enable_fault_injection: ::std::option::Option<bool>,
@@ -271,7 +271,7 @@ impl RegisterTaskDefinitionInput {
     pub fn ephemeral_storage(&self) -> ::std::option::Option<&crate::types::EphemeralStorage> {
         self.ephemeral_storage.as_ref()
     }
-    /// <p>The operating system that your tasks definitions run on. A platform family is specified only for tasks using the Fargate launch type.</p>
+    /// <p>The operating system that your tasks definitions run on.</p>
     pub fn runtime_platform(&self) -> ::std::option::Option<&crate::types::RuntimePlatform> {
         self.runtime_platform.as_ref()
     }
@@ -806,17 +806,17 @@ impl RegisterTaskDefinitionInputBuilder {
     pub fn get_ephemeral_storage(&self) -> &::std::option::Option<crate::types::EphemeralStorage> {
         &self.ephemeral_storage
     }
-    /// <p>The operating system that your tasks definitions run on. A platform family is specified only for tasks using the Fargate launch type.</p>
+    /// <p>The operating system that your tasks definitions run on.</p>
     pub fn runtime_platform(mut self, input: crate::types::RuntimePlatform) -> Self {
         self.runtime_platform = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The operating system that your tasks definitions run on. A platform family is specified only for tasks using the Fargate launch type.</p>
+    /// <p>The operating system that your tasks definitions run on.</p>
     pub fn set_runtime_platform(mut self, input: ::std::option::Option<crate::types::RuntimePlatform>) -> Self {
         self.runtime_platform = input;
         self
     }
-    /// <p>The operating system that your tasks definitions run on. A platform family is specified only for tasks using the Fargate launch type.</p>
+    /// <p>The operating system that your tasks definitions run on.</p>
     pub fn get_runtime_platform(&self) -> &::std::option::Option<crate::types::RuntimePlatform> {
         &self.runtime_platform
     }

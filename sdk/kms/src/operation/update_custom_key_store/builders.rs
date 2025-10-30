@@ -281,6 +281,23 @@ impl UpdateCustomKeyStoreFluentBuilder {
     pub fn get_xks_proxy_vpc_endpoint_service_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_xks_proxy_vpc_endpoint_service_name()
     }
+    /// <p>Changes the Amazon Web Services account ID that KMS uses to identify the Amazon VPC endpoint service for your external key store proxy (XKS proxy). This parameter is optional. If not specified, the current Amazon Web Services account ID for the VPC endpoint service will not be updated.</p>
+    /// <p>To change this value, the external key store must be disconnected.</p>
+    pub fn xks_proxy_vpc_endpoint_service_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.xks_proxy_vpc_endpoint_service_owner(input.into());
+        self
+    }
+    /// <p>Changes the Amazon Web Services account ID that KMS uses to identify the Amazon VPC endpoint service for your external key store proxy (XKS proxy). This parameter is optional. If not specified, the current Amazon Web Services account ID for the VPC endpoint service will not be updated.</p>
+    /// <p>To change this value, the external key store must be disconnected.</p>
+    pub fn set_xks_proxy_vpc_endpoint_service_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_xks_proxy_vpc_endpoint_service_owner(input);
+        self
+    }
+    /// <p>Changes the Amazon Web Services account ID that KMS uses to identify the Amazon VPC endpoint service for your external key store proxy (XKS proxy). This parameter is optional. If not specified, the current Amazon Web Services account ID for the VPC endpoint service will not be updated.</p>
+    /// <p>To change this value, the external key store must be disconnected.</p>
+    pub fn get_xks_proxy_vpc_endpoint_service_owner(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_xks_proxy_vpc_endpoint_service_owner()
+    }
     /// <p>Changes the credentials that KMS uses to sign requests to the external key store proxy (XKS proxy). This parameter is valid only for custom key stores with a <code>CustomKeyStoreType</code> of <code>EXTERNAL_KEY_STORE</code>.</p>
     /// <p>You must specify both the <code>AccessKeyId</code> and <code>SecretAccessKey</code> value in the authentication credential, even if you are only updating one value.</p>
     /// <p>This parameter doesn't establish or change your authentication credentials on the proxy. It just tells KMS the credential that you established with your external key store proxy. For example, if you rotate the credential on your external key store proxy, you can use this parameter to update the credential in KMS.</p>

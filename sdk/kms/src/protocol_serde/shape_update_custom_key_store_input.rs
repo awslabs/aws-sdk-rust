@@ -24,14 +24,17 @@ pub fn ser_update_custom_key_store_input_input(
     if let Some(var_7) = &input.xks_proxy_vpc_endpoint_service_name {
         object.key("XksProxyVpcEndpointServiceName").string(var_7.as_str());
     }
-    if let Some(var_8) = &input.xks_proxy_authentication_credential {
-        #[allow(unused_mut)]
-        let mut object_9 = object.key("XksProxyAuthenticationCredential").start_object();
-        crate::protocol_serde::shape_xks_proxy_authentication_credential_type::ser_xks_proxy_authentication_credential_type(&mut object_9, var_8)?;
-        object_9.finish();
+    if let Some(var_8) = &input.xks_proxy_vpc_endpoint_service_owner {
+        object.key("XksProxyVpcEndpointServiceOwner").string(var_8.as_str());
     }
-    if let Some(var_10) = &input.xks_proxy_connectivity {
-        object.key("XksProxyConnectivity").string(var_10.as_str());
+    if let Some(var_9) = &input.xks_proxy_authentication_credential {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("XksProxyAuthenticationCredential").start_object();
+        crate::protocol_serde::shape_xks_proxy_authentication_credential_type::ser_xks_proxy_authentication_credential_type(&mut object_10, var_9)?;
+        object_10.finish();
+    }
+    if let Some(var_11) = &input.xks_proxy_connectivity {
+        object.key("XksProxyConnectivity").string(var_11.as_str());
     }
     Ok(())
 }

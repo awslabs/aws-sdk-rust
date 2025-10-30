@@ -101,6 +101,24 @@ pub(crate) fn create_alert_manager_definition_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_anomaly_detector_output_output_correct_errors(
+    mut builder: crate::operation::create_anomaly_detector::builders::CreateAnomalyDetectorOutputBuilder,
+) -> crate::operation::create_anomaly_detector::builders::CreateAnomalyDetectorOutputBuilder {
+    if builder.anomaly_detector_id.is_none() {
+        builder.anomaly_detector_id = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = {
+            let builder = crate::types::builders::AnomalyDetectorStatusBuilder::default();
+            crate::serde_util::anomaly_detector_status_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn create_logging_configuration_output_output_correct_errors(
     mut builder: crate::operation::create_logging_configuration::builders::CreateLoggingConfigurationOutputBuilder,
 ) -> crate::operation::create_logging_configuration::builders::CreateLoggingConfigurationOutputBuilder {
@@ -203,6 +221,18 @@ pub(crate) fn describe_alert_manager_definition_output_output_correct_errors(
             crate::serde_util::alert_manager_definition_description_correct_errors(builder)
                 .build()
                 .ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn describe_anomaly_detector_output_output_correct_errors(
+    mut builder: crate::operation::describe_anomaly_detector::builders::DescribeAnomalyDetectorOutputBuilder,
+) -> crate::operation::describe_anomaly_detector::builders::DescribeAnomalyDetectorOutputBuilder {
+    if builder.anomaly_detector.is_none() {
+        builder.anomaly_detector = {
+            let builder = crate::types::builders::AnomalyDetectorDescriptionBuilder::default();
+            crate::serde_util::anomaly_detector_description_correct_errors(builder).build().ok()
         }
     }
     builder
@@ -332,6 +362,15 @@ pub(crate) fn get_default_scraper_configuration_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_anomaly_detectors_output_output_correct_errors(
+    mut builder: crate::operation::list_anomaly_detectors::builders::ListAnomalyDetectorsOutputBuilder,
+) -> crate::operation::list_anomaly_detectors::builders::ListAnomalyDetectorsOutputBuilder {
+    if builder.anomaly_detectors.is_none() {
+        builder.anomaly_detectors = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_rule_groups_namespaces_output_output_correct_errors(
     mut builder: crate::operation::list_rule_groups_namespaces::builders::ListRuleGroupsNamespacesOutputBuilder,
 ) -> crate::operation::list_rule_groups_namespaces::builders::ListRuleGroupsNamespacesOutputBuilder {
@@ -366,6 +405,24 @@ pub(crate) fn put_alert_manager_definition_output_output_correct_errors(
         builder.status = {
             let builder = crate::types::builders::AlertManagerDefinitionStatusBuilder::default();
             crate::serde_util::alert_manager_definition_status_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn put_anomaly_detector_output_output_correct_errors(
+    mut builder: crate::operation::put_anomaly_detector::builders::PutAnomalyDetectorOutputBuilder,
+) -> crate::operation::put_anomaly_detector::builders::PutAnomalyDetectorOutputBuilder {
+    if builder.anomaly_detector_id.is_none() {
+        builder.anomaly_detector_id = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = {
+            let builder = crate::types::builders::AnomalyDetectorStatusBuilder::default();
+            crate::serde_util::anomaly_detector_status_correct_errors(builder).build().ok()
         }
     }
     builder
@@ -478,6 +535,15 @@ pub(crate) fn alert_manager_definition_status_correct_errors(
     builder
 }
 
+pub(crate) fn anomaly_detector_status_correct_errors(
+    mut builder: crate::types::builders::AnomalyDetectorStatusBuilder,
+) -> crate::types::builders::AnomalyDetectorStatusBuilder {
+    if builder.status_code.is_none() {
+        builder.status_code = "no value was set".parse::<crate::types::AnomalyDetectorStatusCode>().ok()
+    }
+    builder
+}
+
 pub(crate) fn logging_configuration_status_correct_errors(
     mut builder: crate::types::builders::LoggingConfigurationStatusBuilder,
 ) -> crate::types::builders::LoggingConfigurationStatusBuilder {
@@ -534,6 +600,33 @@ pub(crate) fn alert_manager_definition_description_correct_errors(
     }
     if builder.data.is_none() {
         builder.data = Some(::aws_smithy_types::Blob::new(""))
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.modified_at.is_none() {
+        builder.modified_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn anomaly_detector_description_correct_errors(
+    mut builder: crate::types::builders::AnomalyDetectorDescriptionBuilder,
+) -> crate::types::builders::AnomalyDetectorDescriptionBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.anomaly_detector_id.is_none() {
+        builder.anomaly_detector_id = Some(Default::default())
+    }
+    if builder.alias.is_none() {
+        builder.alias = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = {
+            let builder = crate::types::builders::AnomalyDetectorStatusBuilder::default();
+            crate::serde_util::anomaly_detector_status_correct_errors(builder).build().ok()
+        }
     }
     if builder.created_at.is_none() {
         builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
@@ -706,6 +799,33 @@ pub(crate) fn workspace_configuration_status_correct_errors(
     builder
 }
 
+pub(crate) fn anomaly_detector_summary_correct_errors(
+    mut builder: crate::types::builders::AnomalyDetectorSummaryBuilder,
+) -> crate::types::builders::AnomalyDetectorSummaryBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.anomaly_detector_id.is_none() {
+        builder.anomaly_detector_id = Some(Default::default())
+    }
+    if builder.alias.is_none() {
+        builder.alias = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = {
+            let builder = crate::types::builders::AnomalyDetectorStatusBuilder::default();
+            crate::serde_util::anomaly_detector_status_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.modified_at.is_none() {
+        builder.modified_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn cloud_watch_log_destination_correct_errors(
     mut builder: crate::types::builders::CloudWatchLogDestinationBuilder,
 ) -> crate::types::builders::CloudWatchLogDestinationBuilder {
@@ -864,6 +984,15 @@ pub(crate) fn logging_destination_correct_errors(
             let builder = crate::types::builders::LoggingFilterBuilder::default();
             crate::serde_util::logging_filter_correct_errors(builder).build().ok()
         }
+    }
+    builder
+}
+
+pub(crate) fn random_cut_forest_configuration_correct_errors(
+    mut builder: crate::types::builders::RandomCutForestConfigurationBuilder,
+) -> crate::types::builders::RandomCutForestConfigurationBuilder {
+    if builder.query.is_none() {
+        builder.query = Some(Default::default())
     }
     builder
 }

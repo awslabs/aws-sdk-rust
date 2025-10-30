@@ -22,8 +22,8 @@ impl crate::operation::delete_link::builders::DeleteLinkInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteLink`.
 ///
-/// <p>Deletes a link between RTB applications.</p>
-/// <p>Permanently removes the connection between RTB applications. This action cannot be undone.</p>
+/// <p>Deletes a link between gateways.</p>
+/// <p>Permanently removes the connection between gateways. This action cannot be undone.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteLinkFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

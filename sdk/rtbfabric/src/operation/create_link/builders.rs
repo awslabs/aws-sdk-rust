@@ -22,8 +22,8 @@ impl crate::operation::create_link::builders::CreateLinkInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateLink`.
 ///
-/// <p>Creates a new link between RTB applications.</p>
-/// <p>Establishes a connection that allows RTB applications to communicate and exchange bid requests and responses.</p>
+/// <p>Creates a new link between gateways.</p>
+/// <p>Establishes a connection that allows gateways to communicate and exchange bid requests and responses.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateLinkFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -32,7 +32,7 @@ pub struct ContainerDefinition {
     pub image: ::std::option::Option<::std::string::String>,
     /// <p>The private repository authentication credentials to use.</p>
     pub repository_credentials: ::std::option::Option<crate::types::RepositoryCredentials>,
-    /// <p>The number of <code>cpu</code> units reserved for the container. This parameter maps to <code>CpuShares</code> in the docker container create commandand the <code>--cpu-shares</code> option to docker run.</p>
+    /// <p>The number of <code>cpu</code> units reserved for the container. This parameter maps to <code>CpuShares</code> in the docker container create command and the <code>--cpu-shares</code> option to docker run.</p>
     /// <p>This field is optional for tasks using the Fargate launch type, and the only requirement is that the total amount of CPU reserved for all containers within a task be lower than the task-level <code>cpu</code> value.</p><note>
     /// <p>You can determine the number of CPU units that are available per EC2 instance type by multiplying the vCPUs listed for that instance type on the <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instances</a> detail page by 1,024.</p>
     /// </note>
@@ -287,7 +287,7 @@ impl ContainerDefinition {
     pub fn repository_credentials(&self) -> ::std::option::Option<&crate::types::RepositoryCredentials> {
         self.repository_credentials.as_ref()
     }
-    /// <p>The number of <code>cpu</code> units reserved for the container. This parameter maps to <code>CpuShares</code> in the docker container create commandand the <code>--cpu-shares</code> option to docker run.</p>
+    /// <p>The number of <code>cpu</code> units reserved for the container. This parameter maps to <code>CpuShares</code> in the docker container create command and the <code>--cpu-shares</code> option to docker run.</p>
     /// <p>This field is optional for tasks using the Fargate launch type, and the only requirement is that the total amount of CPU reserved for all containers within a task be lower than the task-level <code>cpu</code> value.</p><note>
     /// <p>You can determine the number of CPU units that are available per EC2 instance type by multiplying the vCPUs listed for that instance type on the <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instances</a> detail page by 1,024.</p>
     /// </note>
@@ -784,7 +784,7 @@ impl ContainerDefinitionBuilder {
     pub fn get_repository_credentials(&self) -> &::std::option::Option<crate::types::RepositoryCredentials> {
         &self.repository_credentials
     }
-    /// <p>The number of <code>cpu</code> units reserved for the container. This parameter maps to <code>CpuShares</code> in the docker container create commandand the <code>--cpu-shares</code> option to docker run.</p>
+    /// <p>The number of <code>cpu</code> units reserved for the container. This parameter maps to <code>CpuShares</code> in the docker container create command and the <code>--cpu-shares</code> option to docker run.</p>
     /// <p>This field is optional for tasks using the Fargate launch type, and the only requirement is that the total amount of CPU reserved for all containers within a task be lower than the task-level <code>cpu</code> value.</p><note>
     /// <p>You can determine the number of CPU units that are available per EC2 instance type by multiplying the vCPUs listed for that instance type on the <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instances</a> detail page by 1,024.</p>
     /// </note>
@@ -803,7 +803,7 @@ impl ContainerDefinitionBuilder {
         self.cpu = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of <code>cpu</code> units reserved for the container. This parameter maps to <code>CpuShares</code> in the docker container create commandand the <code>--cpu-shares</code> option to docker run.</p>
+    /// <p>The number of <code>cpu</code> units reserved for the container. This parameter maps to <code>CpuShares</code> in the docker container create command and the <code>--cpu-shares</code> option to docker run.</p>
     /// <p>This field is optional for tasks using the Fargate launch type, and the only requirement is that the total amount of CPU reserved for all containers within a task be lower than the task-level <code>cpu</code> value.</p><note>
     /// <p>You can determine the number of CPU units that are available per EC2 instance type by multiplying the vCPUs listed for that instance type on the <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instances</a> detail page by 1,024.</p>
     /// </note>
@@ -822,7 +822,7 @@ impl ContainerDefinitionBuilder {
         self.cpu = input;
         self
     }
-    /// <p>The number of <code>cpu</code> units reserved for the container. This parameter maps to <code>CpuShares</code> in the docker container create commandand the <code>--cpu-shares</code> option to docker run.</p>
+    /// <p>The number of <code>cpu</code> units reserved for the container. This parameter maps to <code>CpuShares</code> in the docker container create command and the <code>--cpu-shares</code> option to docker run.</p>
     /// <p>This field is optional for tasks using the Fargate launch type, and the only requirement is that the total amount of CPU reserved for all containers within a task be lower than the task-level <code>cpu</code> value.</p><note>
     /// <p>You can determine the number of CPU units that are available per EC2 instance type by multiplying the vCPUs listed for that instance type on the <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instances</a> detail page by 1,024.</p>
     /// </note>

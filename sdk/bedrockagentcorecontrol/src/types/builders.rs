@@ -153,11 +153,15 @@ pub use crate::types::_vpc_config::VpcConfigBuilder;
 
 pub use crate::types::_code_interpreter_summary::CodeInterpreterSummaryBuilder;
 
+pub use crate::types::_browser_signing_config_output::BrowserSigningConfigOutputBuilder;
+
 pub use crate::types::_recording_config::RecordingConfigBuilder;
 
 pub use crate::types::_s3_location::S3LocationBuilder;
 
 pub use crate::types::_browser_network_configuration::BrowserNetworkConfigurationBuilder;
+
+pub use crate::types::_browser_signing_config_input::BrowserSigningConfigInputBuilder;
 
 pub use crate::types::_browser_summary::BrowserSummaryBuilder;
 

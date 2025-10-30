@@ -16,6 +16,8 @@ pub struct XksProxyConfigurationType {
     pub uri_path: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon VPC endpoint service used to communicate with the external key store proxy. This field appears only when the external key store proxy uses an Amazon VPC endpoint service to communicate with KMS.</p>
     pub vpc_endpoint_service_name: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon Web Services account ID that owns the Amazon VPC endpoint service used to communicate with the external key store proxy (XKS). This field appears only when the XKS uses an VPC endpoint service to communicate with KMS.</p>
+    pub vpc_endpoint_service_owner: ::std::option::Option<::std::string::String>,
 }
 impl XksProxyConfigurationType {
     /// <p>Indicates whether the external key store proxy uses a public endpoint or an Amazon VPC endpoint service to communicate with KMS.</p>
@@ -40,6 +42,10 @@ impl XksProxyConfigurationType {
     pub fn vpc_endpoint_service_name(&self) -> ::std::option::Option<&str> {
         self.vpc_endpoint_service_name.as_deref()
     }
+    /// <p>The Amazon Web Services account ID that owns the Amazon VPC endpoint service used to communicate with the external key store proxy (XKS). This field appears only when the XKS uses an VPC endpoint service to communicate with KMS.</p>
+    pub fn vpc_endpoint_service_owner(&self) -> ::std::option::Option<&str> {
+        self.vpc_endpoint_service_owner.as_deref()
+    }
 }
 impl ::std::fmt::Debug for XksProxyConfigurationType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -49,6 +55,7 @@ impl ::std::fmt::Debug for XksProxyConfigurationType {
         formatter.field("uri_endpoint", &self.uri_endpoint);
         formatter.field("uri_path", &self.uri_path);
         formatter.field("vpc_endpoint_service_name", &self.vpc_endpoint_service_name);
+        formatter.field("vpc_endpoint_service_owner", &self.vpc_endpoint_service_owner);
         formatter.finish()
     }
 }
@@ -68,6 +75,7 @@ pub struct XksProxyConfigurationTypeBuilder {
     pub(crate) uri_endpoint: ::std::option::Option<::std::string::String>,
     pub(crate) uri_path: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_endpoint_service_name: ::std::option::Option<::std::string::String>,
+    pub(crate) vpc_endpoint_service_owner: ::std::option::Option<::std::string::String>,
 }
 impl XksProxyConfigurationTypeBuilder {
     /// <p>Indicates whether the external key store proxy uses a public endpoint or an Amazon VPC endpoint service to communicate with KMS.</p>
@@ -146,6 +154,20 @@ impl XksProxyConfigurationTypeBuilder {
     pub fn get_vpc_endpoint_service_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.vpc_endpoint_service_name
     }
+    /// <p>The Amazon Web Services account ID that owns the Amazon VPC endpoint service used to communicate with the external key store proxy (XKS). This field appears only when the XKS uses an VPC endpoint service to communicate with KMS.</p>
+    pub fn vpc_endpoint_service_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.vpc_endpoint_service_owner = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Web Services account ID that owns the Amazon VPC endpoint service used to communicate with the external key store proxy (XKS). This field appears only when the XKS uses an VPC endpoint service to communicate with KMS.</p>
+    pub fn set_vpc_endpoint_service_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.vpc_endpoint_service_owner = input;
+        self
+    }
+    /// <p>The Amazon Web Services account ID that owns the Amazon VPC endpoint service used to communicate with the external key store proxy (XKS). This field appears only when the XKS uses an VPC endpoint service to communicate with KMS.</p>
+    pub fn get_vpc_endpoint_service_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_endpoint_service_owner
+    }
     /// Consumes the builder and constructs a [`XksProxyConfigurationType`](crate::types::XksProxyConfigurationType).
     pub fn build(self) -> crate::types::XksProxyConfigurationType {
         crate::types::XksProxyConfigurationType {
@@ -154,6 +176,7 @@ impl XksProxyConfigurationTypeBuilder {
             uri_endpoint: self.uri_endpoint,
             uri_path: self.uri_path,
             vpc_endpoint_service_name: self.vpc_endpoint_service_name,
+            vpc_endpoint_service_owner: self.vpc_endpoint_service_owner,
         }
     }
 }
@@ -165,6 +188,7 @@ impl ::std::fmt::Debug for XksProxyConfigurationTypeBuilder {
         formatter.field("uri_endpoint", &self.uri_endpoint);
         formatter.field("uri_path", &self.uri_path);
         formatter.field("vpc_endpoint_service_name", &self.vpc_endpoint_service_name);
+        formatter.field("vpc_endpoint_service_owner", &self.vpc_endpoint_service_owner);
         formatter.finish()
     }
 }

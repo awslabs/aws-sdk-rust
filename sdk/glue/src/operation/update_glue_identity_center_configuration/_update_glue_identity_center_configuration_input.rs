@@ -6,6 +6,8 @@
 pub struct UpdateGlueIdentityCenterConfigurationInput {
     /// <p>A list of Identity Center scopes that define the updated permissions and access levels for the Glue configuration.</p>
     pub scopes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Specifies whether users can run background sessions when using Identity Center authentication with Glue services.</p>
+    pub user_background_sessions_enabled: ::std::option::Option<bool>,
 }
 impl UpdateGlueIdentityCenterConfigurationInput {
     /// <p>A list of Identity Center scopes that define the updated permissions and access levels for the Glue configuration.</p>
@@ -13,6 +15,10 @@ impl UpdateGlueIdentityCenterConfigurationInput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.scopes.is_none()`.
     pub fn scopes(&self) -> &[::std::string::String] {
         self.scopes.as_deref().unwrap_or_default()
+    }
+    /// <p>Specifies whether users can run background sessions when using Identity Center authentication with Glue services.</p>
+    pub fn user_background_sessions_enabled(&self) -> ::std::option::Option<bool> {
+        self.user_background_sessions_enabled
     }
 }
 impl UpdateGlueIdentityCenterConfigurationInput {
@@ -27,6 +33,7 @@ impl UpdateGlueIdentityCenterConfigurationInput {
 #[non_exhaustive]
 pub struct UpdateGlueIdentityCenterConfigurationInputBuilder {
     pub(crate) scopes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) user_background_sessions_enabled: ::std::option::Option<bool>,
 }
 impl UpdateGlueIdentityCenterConfigurationInputBuilder {
     /// Appends an item to `scopes`.
@@ -49,6 +56,20 @@ impl UpdateGlueIdentityCenterConfigurationInputBuilder {
     pub fn get_scopes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.scopes
     }
+    /// <p>Specifies whether users can run background sessions when using Identity Center authentication with Glue services.</p>
+    pub fn user_background_sessions_enabled(mut self, input: bool) -> Self {
+        self.user_background_sessions_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether users can run background sessions when using Identity Center authentication with Glue services.</p>
+    pub fn set_user_background_sessions_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.user_background_sessions_enabled = input;
+        self
+    }
+    /// <p>Specifies whether users can run background sessions when using Identity Center authentication with Glue services.</p>
+    pub fn get_user_background_sessions_enabled(&self) -> &::std::option::Option<bool> {
+        &self.user_background_sessions_enabled
+    }
     /// Consumes the builder and constructs a [`UpdateGlueIdentityCenterConfigurationInput`](crate::operation::update_glue_identity_center_configuration::UpdateGlueIdentityCenterConfigurationInput).
     pub fn build(
         self,
@@ -57,7 +78,10 @@ impl UpdateGlueIdentityCenterConfigurationInputBuilder {
         ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
-            crate::operation::update_glue_identity_center_configuration::UpdateGlueIdentityCenterConfigurationInput { scopes: self.scopes },
+            crate::operation::update_glue_identity_center_configuration::UpdateGlueIdentityCenterConfigurationInput {
+                scopes: self.scopes,
+                user_background_sessions_enabled: self.user_background_sessions_enabled,
+            },
         )
     }
 }

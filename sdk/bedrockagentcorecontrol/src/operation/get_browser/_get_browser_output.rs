@@ -17,6 +17,8 @@ pub struct GetBrowserOutput {
     pub network_configuration: ::std::option::Option<crate::types::BrowserNetworkConfiguration>,
     /// <p>The recording configuration for a browser. This structure defines how browser sessions are recorded.</p>
     pub recording: ::std::option::Option<crate::types::RecordingConfig>,
+    /// <p>The browser signing configuration that shows whether cryptographic agent identification is enabled for web bot authentication.</p>
+    pub browser_signing: ::std::option::Option<crate::types::BrowserSigningConfigOutput>,
     /// <p>The current status of the browser.</p>
     pub status: crate::types::BrowserStatus,
     /// <p>The reason for failure if the browser is in a failed state.</p>
@@ -59,6 +61,10 @@ impl GetBrowserOutput {
     pub fn recording(&self) -> ::std::option::Option<&crate::types::RecordingConfig> {
         self.recording.as_ref()
     }
+    /// <p>The browser signing configuration that shows whether cryptographic agent identification is enabled for web bot authentication.</p>
+    pub fn browser_signing(&self) -> ::std::option::Option<&crate::types::BrowserSigningConfigOutput> {
+        self.browser_signing.as_ref()
+    }
     /// <p>The current status of the browser.</p>
     pub fn status(&self) -> &crate::types::BrowserStatus {
         &self.status
@@ -86,6 +92,7 @@ impl ::std::fmt::Debug for GetBrowserOutput {
         formatter.field("execution_role_arn", &self.execution_role_arn);
         formatter.field("network_configuration", &self.network_configuration);
         formatter.field("recording", &self.recording);
+        formatter.field("browser_signing", &self.browser_signing);
         formatter.field("status", &self.status);
         formatter.field("failure_reason", &self.failure_reason);
         formatter.field("created_at", &self.created_at);
@@ -117,6 +124,7 @@ pub struct GetBrowserOutputBuilder {
     pub(crate) execution_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) network_configuration: ::std::option::Option<crate::types::BrowserNetworkConfiguration>,
     pub(crate) recording: ::std::option::Option<crate::types::RecordingConfig>,
+    pub(crate) browser_signing: ::std::option::Option<crate::types::BrowserSigningConfigOutput>,
     pub(crate) status: ::std::option::Option<crate::types::BrowserStatus>,
     pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -226,6 +234,20 @@ impl GetBrowserOutputBuilder {
     pub fn get_recording(&self) -> &::std::option::Option<crate::types::RecordingConfig> {
         &self.recording
     }
+    /// <p>The browser signing configuration that shows whether cryptographic agent identification is enabled for web bot authentication.</p>
+    pub fn browser_signing(mut self, input: crate::types::BrowserSigningConfigOutput) -> Self {
+        self.browser_signing = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The browser signing configuration that shows whether cryptographic agent identification is enabled for web bot authentication.</p>
+    pub fn set_browser_signing(mut self, input: ::std::option::Option<crate::types::BrowserSigningConfigOutput>) -> Self {
+        self.browser_signing = input;
+        self
+    }
+    /// <p>The browser signing configuration that shows whether cryptographic agent identification is enabled for web bot authentication.</p>
+    pub fn get_browser_signing(&self) -> &::std::option::Option<crate::types::BrowserSigningConfigOutput> {
+        &self.browser_signing
+    }
     /// <p>The current status of the browser.</p>
     /// This field is required.
     pub fn status(mut self, input: crate::types::BrowserStatus) -> Self {
@@ -326,6 +348,7 @@ impl GetBrowserOutputBuilder {
             execution_role_arn: self.execution_role_arn,
             network_configuration: self.network_configuration,
             recording: self.recording,
+            browser_signing: self.browser_signing,
             status: self.status.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
@@ -359,6 +382,7 @@ impl ::std::fmt::Debug for GetBrowserOutputBuilder {
         formatter.field("execution_role_arn", &self.execution_role_arn);
         formatter.field("network_configuration", &self.network_configuration);
         formatter.field("recording", &self.recording);
+        formatter.field("browser_signing", &self.browser_signing);
         formatter.field("status", &self.status);
         formatter.field("failure_reason", &self.failure_reason);
         formatter.field("created_at", &self.created_at);

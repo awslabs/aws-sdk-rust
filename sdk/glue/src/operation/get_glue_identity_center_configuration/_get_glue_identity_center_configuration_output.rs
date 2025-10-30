@@ -10,6 +10,8 @@ pub struct GetGlueIdentityCenterConfigurationOutput {
     pub instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of Identity Center scopes that define the permissions and access levels for the Glue configuration.</p>
     pub scopes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Indicates whether users can run background sessions when using Identity Center authentication with Glue services.</p>
+    pub user_background_sessions_enabled: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl GetGlueIdentityCenterConfigurationOutput {
@@ -26,6 +28,10 @@ impl GetGlueIdentityCenterConfigurationOutput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.scopes.is_none()`.
     pub fn scopes(&self) -> &[::std::string::String] {
         self.scopes.as_deref().unwrap_or_default()
+    }
+    /// <p>Indicates whether users can run background sessions when using Identity Center authentication with Glue services.</p>
+    pub fn user_background_sessions_enabled(&self) -> ::std::option::Option<bool> {
+        self.user_background_sessions_enabled
     }
 }
 impl ::aws_types::request_id::RequestId for GetGlueIdentityCenterConfigurationOutput {
@@ -47,6 +53,7 @@ pub struct GetGlueIdentityCenterConfigurationOutputBuilder {
     pub(crate) application_arn: ::std::option::Option<::std::string::String>,
     pub(crate) instance_arn: ::std::option::Option<::std::string::String>,
     pub(crate) scopes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) user_background_sessions_enabled: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl GetGlueIdentityCenterConfigurationOutputBuilder {
@@ -98,6 +105,20 @@ impl GetGlueIdentityCenterConfigurationOutputBuilder {
     pub fn get_scopes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.scopes
     }
+    /// <p>Indicates whether users can run background sessions when using Identity Center authentication with Glue services.</p>
+    pub fn user_background_sessions_enabled(mut self, input: bool) -> Self {
+        self.user_background_sessions_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether users can run background sessions when using Identity Center authentication with Glue services.</p>
+    pub fn set_user_background_sessions_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.user_background_sessions_enabled = input;
+        self
+    }
+    /// <p>Indicates whether users can run background sessions when using Identity Center authentication with Glue services.</p>
+    pub fn get_user_background_sessions_enabled(&self) -> &::std::option::Option<bool> {
+        &self.user_background_sessions_enabled
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -113,6 +134,7 @@ impl GetGlueIdentityCenterConfigurationOutputBuilder {
             application_arn: self.application_arn,
             instance_arn: self.instance_arn,
             scopes: self.scopes,
+            user_background_sessions_enabled: self.user_background_sessions_enabled,
             _request_id: self._request_id,
         }
     }

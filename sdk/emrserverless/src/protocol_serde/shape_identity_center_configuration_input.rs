@@ -6,5 +6,8 @@ pub fn ser_identity_center_configuration_input(
     if let Some(var_1) = &input.identity_center_instance_arn {
         object.key("identityCenterInstanceArn").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.user_background_sessions_enabled {
+        object.key("userBackgroundSessionsEnabled").boolean(*var_2);
+    }
     Ok(())
 }

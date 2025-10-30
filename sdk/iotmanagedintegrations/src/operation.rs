@@ -106,6 +106,9 @@ pub mod get_managed_thing;
 /// Types for the `GetManagedThingCapabilities` operation.
 pub mod get_managed_thing_capabilities;
 
+/// Types for the `GetManagedThingCertificate` operation.
+pub mod get_managed_thing_certificate;
+
 /// Types for the `GetManagedThingConnectivityData` operation.
 pub mod get_managed_thing_connectivity_data;
 

@@ -22,8 +22,8 @@ impl crate::operation::list_links::builders::ListLinksInputBuilder {
 }
 /// Fluent builder constructing a request to `ListLinks`.
 ///
-/// <p>Lists links associated with an RTB application.</p>
-/// <p>Returns a list of all links for the specified RTB application, including their status and configuration details.</p>
+/// <p>Lists links associated with gateways.</p>
+/// <p>Returns a list of all links for the specified gateways, including their status and configuration details.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListLinksFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

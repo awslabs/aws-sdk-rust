@@ -130,4 +130,18 @@ impl UpdateGlueIdentityCenterConfigurationFluentBuilder {
     pub fn get_scopes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_scopes()
     }
+    /// <p>Specifies whether users can run background sessions when using Identity Center authentication with Glue services.</p>
+    pub fn user_background_sessions_enabled(mut self, input: bool) -> Self {
+        self.inner = self.inner.user_background_sessions_enabled(input);
+        self
+    }
+    /// <p>Specifies whether users can run background sessions when using Identity Center authentication with Glue services.</p>
+    pub fn set_user_background_sessions_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_user_background_sessions_enabled(input);
+        self
+    }
+    /// <p>Specifies whether users can run background sessions when using Identity Center authentication with Glue services.</p>
+    pub fn get_user_background_sessions_enabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_user_background_sessions_enabled()
+    }
 }

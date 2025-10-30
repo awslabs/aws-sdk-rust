@@ -22,7 +22,7 @@ impl crate::operation::get_connector_destination::builders::GetConnectorDestinat
 }
 /// Fluent builder constructing a request to `GetConnectorDestination`.
 ///
-/// <p>Get a connector destination of a cloud-to-cloud (C2C) connector connecting to a customer's Amazon Web Services account.</p>
+/// <p>Get connector destination details linked to a cloud-to-cloud (C2C) connector.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetConnectorDestinationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -22,7 +22,7 @@ impl crate::operation::delete_destination::builders::DeleteDestinationInputBuild
 }
 /// Fluent builder constructing a request to `DeleteDestination`.
 ///
-/// <p>Deletes a customer-managed destination specified by id.</p>
+/// <p>Deletes a notification destination specified by name.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteDestinationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

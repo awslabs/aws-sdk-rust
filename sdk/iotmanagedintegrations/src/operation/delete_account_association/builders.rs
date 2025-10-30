@@ -22,7 +22,9 @@ impl crate::operation::delete_account_association::builders::DeleteAccountAssoci
 }
 /// Fluent builder constructing a request to `DeleteAccountAssociation`.
 ///
-/// <p>Remove a third party account and related devices from an end user.</p>
+/// <p>Remove a third-party account association for an end user.</p><note>
+/// <p>You must first call the <code>DeregisterAccountAssociation</code> to remove the connection between the managed thing and the third-party account before calling the <code>DeleteAccountAssociation</code> API.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteAccountAssociationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

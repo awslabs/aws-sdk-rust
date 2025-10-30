@@ -93,6 +93,8 @@ pub(crate) mod shape_get_managed_thing;
 
 pub(crate) mod shape_get_managed_thing_capabilities;
 
+pub(crate) mod shape_get_managed_thing_certificate;
+
 pub(crate) mod shape_get_managed_thing_connectivity_data;
 
 pub(crate) mod shape_get_managed_thing_meta_data;

@@ -22,7 +22,7 @@ impl crate::operation::create_managed_thing::builders::CreateManagedThingInputBu
 }
 /// Fluent builder constructing a request to `CreateManagedThing`.
 ///
-/// <p>Creates a managed thing. A managed thing contains the device identifier, protocol supported, and capabilities of the device in a protocol-specific format.</p>
+/// <p>Creates a managed thing. A managed thing contains the device identifier, protocol supported, and capabilities of the device in a data model format defined by Managed integrations.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateManagedThingFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

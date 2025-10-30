@@ -22,7 +22,7 @@ impl crate::operation::list_destinations::builders::ListDestinationsInputBuilder
 }
 /// Fluent builder constructing a request to `ListDestinations`.
 ///
-/// <p>List all destination names under one Amazon Web Services account.</p>
+/// <p>List all notification destinations.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListDestinationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

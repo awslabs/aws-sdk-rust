@@ -9,7 +9,7 @@ pub struct GetProvisioningProfileOutput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of provisioning workflow the device uses for onboarding to IoT managed integrations.</p>
     pub provisioning_type: ::std::option::Option<crate::types::ProvisioningType>,
-    /// <p>The provisioning profile id..</p>
+    /// <p>The provisioning profile id.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The id of the claim certificate.</p>
     pub claim_certificate: ::std::option::Option<::std::string::String>,
@@ -30,7 +30,7 @@ impl GetProvisioningProfileOutput {
     pub fn provisioning_type(&self) -> ::std::option::Option<&crate::types::ProvisioningType> {
         self.provisioning_type.as_ref()
     }
-    /// <p>The provisioning profile id..</p>
+    /// <p>The provisioning profile id.</p>
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -123,17 +123,17 @@ impl GetProvisioningProfileOutputBuilder {
     pub fn get_provisioning_type(&self) -> &::std::option::Option<crate::types::ProvisioningType> {
         &self.provisioning_type
     }
-    /// <p>The provisioning profile id..</p>
+    /// <p>The provisioning profile id.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The provisioning profile id..</p>
+    /// <p>The provisioning profile id.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
-    /// <p>The provisioning profile id..</p>
+    /// <p>The provisioning profile id.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }

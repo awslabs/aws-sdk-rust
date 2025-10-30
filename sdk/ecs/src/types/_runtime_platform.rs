@@ -6,14 +6,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RuntimePlatform {
     /// <p>The CPU architecture.</p>
-    /// <p>You can run your Linux tasks on an ARM-based platform by setting the value to <code>ARM64</code>. This option is available for tasks that run on Linux Amazon EC2 instance or Linux containers on Fargate.</p>
+    /// <p>You can run your Linux tasks on an ARM-based platform by setting the value to <code>ARM64</code>. This option is available for tasks that run on Linux Amazon EC2 instance, Amazon ECS Managed Instances, or Linux containers on Fargate.</p>
     pub cpu_architecture: ::std::option::Option<crate::types::CpuArchitecture>,
     /// <p>The operating system.</p>
     pub operating_system_family: ::std::option::Option<crate::types::OsFamily>,
 }
 impl RuntimePlatform {
     /// <p>The CPU architecture.</p>
-    /// <p>You can run your Linux tasks on an ARM-based platform by setting the value to <code>ARM64</code>. This option is available for tasks that run on Linux Amazon EC2 instance or Linux containers on Fargate.</p>
+    /// <p>You can run your Linux tasks on an ARM-based platform by setting the value to <code>ARM64</code>. This option is available for tasks that run on Linux Amazon EC2 instance, Amazon ECS Managed Instances, or Linux containers on Fargate.</p>
     pub fn cpu_architecture(&self) -> ::std::option::Option<&crate::types::CpuArchitecture> {
         self.cpu_architecture.as_ref()
     }
@@ -38,19 +38,19 @@ pub struct RuntimePlatformBuilder {
 }
 impl RuntimePlatformBuilder {
     /// <p>The CPU architecture.</p>
-    /// <p>You can run your Linux tasks on an ARM-based platform by setting the value to <code>ARM64</code>. This option is available for tasks that run on Linux Amazon EC2 instance or Linux containers on Fargate.</p>
+    /// <p>You can run your Linux tasks on an ARM-based platform by setting the value to <code>ARM64</code>. This option is available for tasks that run on Linux Amazon EC2 instance, Amazon ECS Managed Instances, or Linux containers on Fargate.</p>
     pub fn cpu_architecture(mut self, input: crate::types::CpuArchitecture) -> Self {
         self.cpu_architecture = ::std::option::Option::Some(input);
         self
     }
     /// <p>The CPU architecture.</p>
-    /// <p>You can run your Linux tasks on an ARM-based platform by setting the value to <code>ARM64</code>. This option is available for tasks that run on Linux Amazon EC2 instance or Linux containers on Fargate.</p>
+    /// <p>You can run your Linux tasks on an ARM-based platform by setting the value to <code>ARM64</code>. This option is available for tasks that run on Linux Amazon EC2 instance, Amazon ECS Managed Instances, or Linux containers on Fargate.</p>
     pub fn set_cpu_architecture(mut self, input: ::std::option::Option<crate::types::CpuArchitecture>) -> Self {
         self.cpu_architecture = input;
         self
     }
     /// <p>The CPU architecture.</p>
-    /// <p>You can run your Linux tasks on an ARM-based platform by setting the value to <code>ARM64</code>. This option is available for tasks that run on Linux Amazon EC2 instance or Linux containers on Fargate.</p>
+    /// <p>You can run your Linux tasks on an ARM-based platform by setting the value to <code>ARM64</code>. This option is available for tasks that run on Linux Amazon EC2 instance, Amazon ECS Managed Instances, or Linux containers on Fargate.</p>
     pub fn get_cpu_architecture(&self) -> &::std::option::Option<crate::types::CpuArchitecture> {
         &self.cpu_architecture
     }

@@ -4,6 +4,9 @@ pub use ::aws_types::request_id::RequestId;
 /// Types for the `CreateAlertManagerDefinition` operation.
 pub mod create_alert_manager_definition;
 
+/// Types for the `CreateAnomalyDetector` operation.
+pub mod create_anomaly_detector;
+
 /// Types for the `CreateLoggingConfiguration` operation.
 pub mod create_logging_configuration;
 
@@ -21,6 +24,9 @@ pub mod create_workspace;
 
 /// Types for the `DeleteAlertManagerDefinition` operation.
 pub mod delete_alert_manager_definition;
+
+/// Types for the `DeleteAnomalyDetector` operation.
+pub mod delete_anomaly_detector;
 
 /// Types for the `DeleteLoggingConfiguration` operation.
 pub mod delete_logging_configuration;
@@ -45,6 +51,9 @@ pub mod delete_workspace;
 
 /// Types for the `DescribeAlertManagerDefinition` operation.
 pub mod describe_alert_manager_definition;
+
+/// Types for the `DescribeAnomalyDetector` operation.
+pub mod describe_anomaly_detector;
 
 /// Types for the `DescribeLoggingConfiguration` operation.
 pub mod describe_logging_configuration;
@@ -73,6 +82,9 @@ pub mod describe_workspace_configuration;
 /// Types for the `GetDefaultScraperConfiguration` operation.
 pub mod get_default_scraper_configuration;
 
+/// Types for the `ListAnomalyDetectors` operation.
+pub mod list_anomaly_detectors;
+
 /// Types for the `ListRuleGroupsNamespaces` operation.
 pub mod list_rule_groups_namespaces;
 
@@ -87,6 +99,9 @@ pub mod list_workspaces;
 
 /// Types for the `PutAlertManagerDefinition` operation.
 pub mod put_alert_manager_definition;
+
+/// Types for the `PutAnomalyDetector` operation.
+pub mod put_anomaly_detector;
 
 /// Types for the `PutResourcePolicy` operation.
 pub mod put_resource_policy;

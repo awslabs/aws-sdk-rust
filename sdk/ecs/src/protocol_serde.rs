@@ -557,6 +557,8 @@ pub(crate) mod shape_resources;
 
 pub(crate) mod shape_secret;
 
+pub(crate) mod shape_service_connect_access_log_configuration;
+
 pub(crate) mod shape_service_connect_service;
 
 pub(crate) mod shape_service_deployment;

@@ -140,6 +140,10 @@ impl Client {
 /// Import this trait to get `wait_until` methods on the client.
 ///
 pub trait Waiters {
+    /// Wait until the anomaly detector reaches ACTIVE status
+    fn wait_until_anomaly_detector_active(&self) -> crate::waiters::anomaly_detector_active::AnomalyDetectorActiveFluentBuilder;
+    /// Wait until the anomaly detector reaches DELETED status
+    fn wait_until_anomaly_detector_deleted(&self) -> crate::waiters::anomaly_detector_deleted::AnomalyDetectorDeletedFluentBuilder;
     /// Wait until a scraper reaches ACTIVE status
     fn wait_until_scraper_active(&self) -> crate::waiters::scraper_active::ScraperActiveFluentBuilder;
     /// Wait until a scraper reaches DELETED status
@@ -150,6 +154,12 @@ pub trait Waiters {
     fn wait_until_workspace_deleted(&self) -> crate::waiters::workspace_deleted::WorkspaceDeletedFluentBuilder;
 }
 impl Waiters for Client {
+    fn wait_until_anomaly_detector_active(&self) -> crate::waiters::anomaly_detector_active::AnomalyDetectorActiveFluentBuilder {
+        crate::waiters::anomaly_detector_active::AnomalyDetectorActiveFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_anomaly_detector_deleted(&self) -> crate::waiters::anomaly_detector_deleted::AnomalyDetectorDeletedFluentBuilder {
+        crate::waiters::anomaly_detector_deleted::AnomalyDetectorDeletedFluentBuilder::new(self.handle.clone())
+    }
     fn wait_until_scraper_active(&self) -> crate::waiters::scraper_active::ScraperActiveFluentBuilder {
         crate::waiters::scraper_active::ScraperActiveFluentBuilder::new(self.handle.clone())
     }
@@ -181,6 +191,8 @@ impl Client {
 }
 
 mod create_alert_manager_definition;
+
+mod create_anomaly_detector;
 
 mod create_logging_configuration;
 
@@ -221,6 +233,8 @@ pub mod customize;
 
 mod delete_alert_manager_definition;
 
+mod delete_anomaly_detector;
+
 mod delete_logging_configuration;
 
 mod delete_query_logging_configuration;
@@ -236,6 +250,8 @@ mod delete_scraper_logging_configuration;
 mod delete_workspace;
 
 mod describe_alert_manager_definition;
+
+mod describe_anomaly_detector;
 
 mod describe_logging_configuration;
 
@@ -255,6 +271,8 @@ mod describe_workspace_configuration;
 
 mod get_default_scraper_configuration;
 
+mod list_anomaly_detectors;
+
 mod list_rule_groups_namespaces;
 
 mod list_scrapers;
@@ -264,6 +282,8 @@ mod list_tags_for_resource;
 mod list_workspaces;
 
 mod put_alert_manager_definition;
+
+mod put_anomaly_detector;
 
 mod put_resource_policy;
 

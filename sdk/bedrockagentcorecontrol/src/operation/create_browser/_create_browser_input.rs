@@ -13,6 +13,8 @@ pub struct CreateBrowserInput {
     pub network_configuration: ::std::option::Option<crate::types::BrowserNetworkConfiguration>,
     /// <p>The recording configuration for the browser. When enabled, browser sessions are recorded and stored in the specified Amazon S3 location.</p>
     pub recording: ::std::option::Option<crate::types::RecordingConfig>,
+    /// <p>The browser signing configuration that enables cryptographic agent identification using HTTP message signatures for web bot authentication.</p>
+    pub browser_signing: ::std::option::Option<crate::types::BrowserSigningConfigInput>,
     /// <p>A unique, case-sensitive identifier to ensure that the operation completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request but does not return an error.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>A map of tag keys and values to assign to the browser. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.</p>
@@ -39,6 +41,10 @@ impl CreateBrowserInput {
     pub fn recording(&self) -> ::std::option::Option<&crate::types::RecordingConfig> {
         self.recording.as_ref()
     }
+    /// <p>The browser signing configuration that enables cryptographic agent identification using HTTP message signatures for web bot authentication.</p>
+    pub fn browser_signing(&self) -> ::std::option::Option<&crate::types::BrowserSigningConfigInput> {
+        self.browser_signing.as_ref()
+    }
     /// <p>A unique, case-sensitive identifier to ensure that the operation completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request but does not return an error.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
@@ -56,6 +62,7 @@ impl ::std::fmt::Debug for CreateBrowserInput {
         formatter.field("execution_role_arn", &self.execution_role_arn);
         formatter.field("network_configuration", &self.network_configuration);
         formatter.field("recording", &self.recording);
+        formatter.field("browser_signing", &self.browser_signing);
         formatter.field("client_token", &self.client_token);
         formatter.field("tags", &self.tags);
         formatter.finish()
@@ -77,6 +84,7 @@ pub struct CreateBrowserInputBuilder {
     pub(crate) execution_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) network_configuration: ::std::option::Option<crate::types::BrowserNetworkConfiguration>,
     pub(crate) recording: ::std::option::Option<crate::types::RecordingConfig>,
+    pub(crate) browser_signing: ::std::option::Option<crate::types::BrowserSigningConfigInput>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -153,6 +161,20 @@ impl CreateBrowserInputBuilder {
     pub fn get_recording(&self) -> &::std::option::Option<crate::types::RecordingConfig> {
         &self.recording
     }
+    /// <p>The browser signing configuration that enables cryptographic agent identification using HTTP message signatures for web bot authentication.</p>
+    pub fn browser_signing(mut self, input: crate::types::BrowserSigningConfigInput) -> Self {
+        self.browser_signing = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The browser signing configuration that enables cryptographic agent identification using HTTP message signatures for web bot authentication.</p>
+    pub fn set_browser_signing(mut self, input: ::std::option::Option<crate::types::BrowserSigningConfigInput>) -> Self {
+        self.browser_signing = input;
+        self
+    }
+    /// <p>The browser signing configuration that enables cryptographic agent identification using HTTP message signatures for web bot authentication.</p>
+    pub fn get_browser_signing(&self) -> &::std::option::Option<crate::types::BrowserSigningConfigInput> {
+        &self.browser_signing
+    }
     /// <p>A unique, case-sensitive identifier to ensure that the operation completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request but does not return an error.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -197,6 +219,7 @@ impl CreateBrowserInputBuilder {
             execution_role_arn: self.execution_role_arn,
             network_configuration: self.network_configuration,
             recording: self.recording,
+            browser_signing: self.browser_signing,
             client_token: self.client_token,
             tags: self.tags,
         })
@@ -210,6 +233,7 @@ impl ::std::fmt::Debug for CreateBrowserInputBuilder {
         formatter.field("execution_role_arn", &self.execution_role_arn);
         formatter.field("network_configuration", &self.network_configuration);
         formatter.field("recording", &self.recording);
+        formatter.field("browser_signing", &self.browser_signing);
         formatter.field("client_token", &self.client_token);
         formatter.field("tags", &self.tags);
         formatter.finish()

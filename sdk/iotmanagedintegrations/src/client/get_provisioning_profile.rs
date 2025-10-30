@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`arn(Option<String>)`](crate::operation::get_provisioning_profile::GetProvisioningProfileOutput::arn): <p>The Amazon Resource Name (ARN) of the provisioning template used in the provisioning profile.</p>
     ///   - [`name(Option<String>)`](crate::operation::get_provisioning_profile::GetProvisioningProfileOutput::name): <p>The name of the provisioning template.</p>
     ///   - [`provisioning_type(Option<ProvisioningType>)`](crate::operation::get_provisioning_profile::GetProvisioningProfileOutput::provisioning_type): <p>The type of provisioning workflow the device uses for onboarding to IoT managed integrations.</p>
-    ///   - [`id(Option<String>)`](crate::operation::get_provisioning_profile::GetProvisioningProfileOutput::id): <p>The provisioning profile id..</p>
+    ///   - [`id(Option<String>)`](crate::operation::get_provisioning_profile::GetProvisioningProfileOutput::id): <p>The provisioning profile id.</p>
     ///   - [`claim_certificate(Option<String>)`](crate::operation::get_provisioning_profile::GetProvisioningProfileOutput::claim_certificate): <p>The id of the claim certificate.</p>
     ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_provisioning_profile::GetProvisioningProfileOutput::tags): <p>A set of key/value pairs that are used to manage the provisioning profile.</p>
     /// - On failure, responds with [`SdkError<GetProvisioningProfileError>`](crate::operation::get_provisioning_profile::GetProvisioningProfileError)

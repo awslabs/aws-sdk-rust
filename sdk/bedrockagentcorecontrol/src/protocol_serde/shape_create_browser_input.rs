@@ -3,39 +3,45 @@ pub fn ser_create_browser_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_browser::CreateBrowserInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.client_token {
-        object.key("clientToken").string(var_1.as_str());
-    }
-    if let Some(var_2) = &input.description {
-        object.key("description").string(var_2.as_str());
-    }
-    if let Some(var_3) = &input.execution_role_arn {
-        object.key("executionRoleArn").string(var_3.as_str());
-    }
-    if let Some(var_4) = &input.name {
-        object.key("name").string(var_4.as_str());
-    }
-    if let Some(var_5) = &input.network_configuration {
+    if let Some(var_1) = &input.browser_signing {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("networkConfiguration").start_object();
-        crate::protocol_serde::shape_browser_network_configuration::ser_browser_network_configuration(&mut object_6, var_5)?;
-        object_6.finish();
+        let mut object_2 = object.key("browserSigning").start_object();
+        crate::protocol_serde::shape_browser_signing_config_input::ser_browser_signing_config_input(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_7) = &input.recording {
+    if let Some(var_3) = &input.client_token {
+        object.key("clientToken").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.description {
+        object.key("description").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.execution_role_arn {
+        object.key("executionRoleArn").string(var_5.as_str());
+    }
+    if let Some(var_6) = &input.name {
+        object.key("name").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.network_configuration {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("recording").start_object();
-        crate::protocol_serde::shape_recording_config::ser_recording_config(&mut object_8, var_7)?;
+        let mut object_8 = object.key("networkConfiguration").start_object();
+        crate::protocol_serde::shape_browser_network_configuration::ser_browser_network_configuration(&mut object_8, var_7)?;
         object_8.finish();
     }
-    if let Some(var_9) = &input.tags {
+    if let Some(var_9) = &input.recording {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("tags").start_object();
-        for (key_11, value_12) in var_9 {
+        let mut object_10 = object.key("recording").start_object();
+        crate::protocol_serde::shape_recording_config::ser_recording_config(&mut object_10, var_9)?;
+        object_10.finish();
+    }
+    if let Some(var_11) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_12 = object.key("tags").start_object();
+        for (key_13, value_14) in var_11 {
             {
-                object_10.key(key_11.as_str()).string(value_12.as_str());
+                object_12.key(key_13.as_str()).string(value_14.as_str());
             }
         }
-        object_10.finish();
+        object_12.finish();
     }
     Ok(())
 }

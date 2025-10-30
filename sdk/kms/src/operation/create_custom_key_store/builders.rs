@@ -349,6 +349,20 @@ impl CreateCustomKeyStoreFluentBuilder {
     pub fn get_xks_proxy_vpc_endpoint_service_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_xks_proxy_vpc_endpoint_service_name()
     }
+    /// <p>Specifies the Amazon Web Services account ID that owns the Amazon VPC service endpoint for the interface that is used to communicate with your external key store proxy (XKS proxy). This parameter is optional. If not provided, the Amazon Web Services account ID calling the action will be used.</p>
+    pub fn xks_proxy_vpc_endpoint_service_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.xks_proxy_vpc_endpoint_service_owner(input.into());
+        self
+    }
+    /// <p>Specifies the Amazon Web Services account ID that owns the Amazon VPC service endpoint for the interface that is used to communicate with your external key store proxy (XKS proxy). This parameter is optional. If not provided, the Amazon Web Services account ID calling the action will be used.</p>
+    pub fn set_xks_proxy_vpc_endpoint_service_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_xks_proxy_vpc_endpoint_service_owner(input);
+        self
+    }
+    /// <p>Specifies the Amazon Web Services account ID that owns the Amazon VPC service endpoint for the interface that is used to communicate with your external key store proxy (XKS proxy). This parameter is optional. If not provided, the Amazon Web Services account ID calling the action will be used.</p>
+    pub fn get_xks_proxy_vpc_endpoint_service_owner(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_xks_proxy_vpc_endpoint_service_owner()
+    }
     /// <p>Specifies an authentication credential for the external key store proxy (XKS proxy). This parameter is required for all custom key stores with a <code>CustomKeyStoreType</code> of <code>EXTERNAL_KEY_STORE</code>.</p>
     /// <p>The <code>XksProxyAuthenticationCredential</code> has two required elements: <code>RawSecretAccessKey</code>, a secret key, and <code>AccessKeyId</code>, a unique identifier for the <code>RawSecretAccessKey</code>. For character requirements, see <a href="API_XksProxyAuthenticationCredentialType.html">XksProxyAuthenticationCredentialType</a>.</p>
     /// <p>KMS uses this authentication credential to sign requests to the external key store proxy on your behalf. This credential is unrelated to Identity and Access Management (IAM) and Amazon Web Services credentials.</p>

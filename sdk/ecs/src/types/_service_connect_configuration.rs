@@ -29,6 +29,10 @@ pub struct ServiceConnectConfiguration {
     /// <p>For tasks that are on Fargate, because you don't have access to the underlying infrastructure your tasks are hosted on, any additional software needed must be installed outside of the task. For example, the Fluentd output aggregators or a remote host running Logstash to send Gelf logs to.</p></li>
     /// </ul>
     pub log_configuration: ::std::option::Option<crate::types::LogConfiguration>,
+    /// <p>The configuration for Service Connect access logging. Access logs capture detailed information about requests made to your service, including request patterns, response codes, and timing data. They can be useful for debugging connectivity issues, monitoring service performance, and auditing service-to-service communication for security and compliance purposes.</p><note>
+    /// <p>To enable access logs, you must also specify a <code>logConfiguration</code> in the <code>serviceConnectConfiguration</code>.</p>
+    /// </note>
+    pub access_log_configuration: ::std::option::Option<crate::types::ServiceConnectAccessLogConfiguration>,
 }
 impl ServiceConnectConfiguration {
     /// <p>Specifies whether to use Service Connect with this service.</p>
@@ -65,6 +69,12 @@ impl ServiceConnectConfiguration {
     pub fn log_configuration(&self) -> ::std::option::Option<&crate::types::LogConfiguration> {
         self.log_configuration.as_ref()
     }
+    /// <p>The configuration for Service Connect access logging. Access logs capture detailed information about requests made to your service, including request patterns, response codes, and timing data. They can be useful for debugging connectivity issues, monitoring service performance, and auditing service-to-service communication for security and compliance purposes.</p><note>
+    /// <p>To enable access logs, you must also specify a <code>logConfiguration</code> in the <code>serviceConnectConfiguration</code>.</p>
+    /// </note>
+    pub fn access_log_configuration(&self) -> ::std::option::Option<&crate::types::ServiceConnectAccessLogConfiguration> {
+        self.access_log_configuration.as_ref()
+    }
 }
 impl ServiceConnectConfiguration {
     /// Creates a new builder-style object to manufacture [`ServiceConnectConfiguration`](crate::types::ServiceConnectConfiguration).
@@ -81,6 +91,7 @@ pub struct ServiceConnectConfigurationBuilder {
     pub(crate) namespace: ::std::option::Option<::std::string::String>,
     pub(crate) services: ::std::option::Option<::std::vec::Vec<crate::types::ServiceConnectService>>,
     pub(crate) log_configuration: ::std::option::Option<crate::types::LogConfiguration>,
+    pub(crate) access_log_configuration: ::std::option::Option<crate::types::ServiceConnectAccessLogConfiguration>,
 }
 impl ServiceConnectConfigurationBuilder {
     /// <p>Specifies whether to use Service Connect with this service.</p>
@@ -194,6 +205,26 @@ impl ServiceConnectConfigurationBuilder {
     pub fn get_log_configuration(&self) -> &::std::option::Option<crate::types::LogConfiguration> {
         &self.log_configuration
     }
+    /// <p>The configuration for Service Connect access logging. Access logs capture detailed information about requests made to your service, including request patterns, response codes, and timing data. They can be useful for debugging connectivity issues, monitoring service performance, and auditing service-to-service communication for security and compliance purposes.</p><note>
+    /// <p>To enable access logs, you must also specify a <code>logConfiguration</code> in the <code>serviceConnectConfiguration</code>.</p>
+    /// </note>
+    pub fn access_log_configuration(mut self, input: crate::types::ServiceConnectAccessLogConfiguration) -> Self {
+        self.access_log_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration for Service Connect access logging. Access logs capture detailed information about requests made to your service, including request patterns, response codes, and timing data. They can be useful for debugging connectivity issues, monitoring service performance, and auditing service-to-service communication for security and compliance purposes.</p><note>
+    /// <p>To enable access logs, you must also specify a <code>logConfiguration</code> in the <code>serviceConnectConfiguration</code>.</p>
+    /// </note>
+    pub fn set_access_log_configuration(mut self, input: ::std::option::Option<crate::types::ServiceConnectAccessLogConfiguration>) -> Self {
+        self.access_log_configuration = input;
+        self
+    }
+    /// <p>The configuration for Service Connect access logging. Access logs capture detailed information about requests made to your service, including request patterns, response codes, and timing data. They can be useful for debugging connectivity issues, monitoring service performance, and auditing service-to-service communication for security and compliance purposes.</p><note>
+    /// <p>To enable access logs, you must also specify a <code>logConfiguration</code> in the <code>serviceConnectConfiguration</code>.</p>
+    /// </note>
+    pub fn get_access_log_configuration(&self) -> &::std::option::Option<crate::types::ServiceConnectAccessLogConfiguration> {
+        &self.access_log_configuration
+    }
     /// Consumes the builder and constructs a [`ServiceConnectConfiguration`](crate::types::ServiceConnectConfiguration).
     pub fn build(self) -> crate::types::ServiceConnectConfiguration {
         crate::types::ServiceConnectConfiguration {
@@ -201,6 +232,7 @@ impl ServiceConnectConfigurationBuilder {
             namespace: self.namespace,
             services: self.services,
             log_configuration: self.log_configuration,
+            access_log_configuration: self.access_log_configuration,
         }
     }
 }

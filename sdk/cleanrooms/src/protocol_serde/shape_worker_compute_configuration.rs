@@ -12,6 +12,12 @@ pub fn ser_worker_compute_configuration(
             ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
+    if let Some(var_3) = &input.properties {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("properties").start_object();
+        crate::protocol_serde::shape_worker_compute_configuration_properties::ser_worker_compute_configuration_properties(&mut object_4, var_3)?;
+        object_4.finish();
+    }
     Ok(())
 }
 
@@ -42,6 +48,13 @@ where
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
                                     .transpose()?,
+                            );
+                        }
+                        "properties" => {
+                            builder = builder.set_properties(
+                                crate::protocol_serde::shape_worker_compute_configuration_properties::de_worker_compute_configuration_properties(
+                                    tokens,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

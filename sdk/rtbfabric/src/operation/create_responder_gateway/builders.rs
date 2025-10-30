@@ -22,7 +22,9 @@ impl crate::operation::create_responder_gateway::builders::CreateResponderGatewa
 }
 /// Fluent builder constructing a request to `CreateResponderGateway`.
 ///
-/// <p>Creates a responder gateway.</p>
+/// <p>Creates a responder gateway.</p><important>
+/// <p>A domain name or managed endpoint is required.</p>
+/// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateResponderGatewayFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

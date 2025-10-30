@@ -25,6 +25,8 @@ pub fn parse_http_error_metadata(
 
 pub(crate) mod shape_create_alert_manager_definition;
 
+pub(crate) mod shape_create_anomaly_detector;
+
 pub(crate) mod shape_create_logging_configuration;
 
 pub(crate) mod shape_create_query_logging_configuration;
@@ -36,6 +38,8 @@ pub(crate) mod shape_create_scraper;
 pub(crate) mod shape_create_workspace;
 
 pub(crate) mod shape_delete_alert_manager_definition;
+
+pub(crate) mod shape_delete_anomaly_detector;
 
 pub(crate) mod shape_delete_logging_configuration;
 
@@ -52,6 +56,8 @@ pub(crate) mod shape_delete_scraper_logging_configuration;
 pub(crate) mod shape_delete_workspace;
 
 pub(crate) mod shape_describe_alert_manager_definition;
+
+pub(crate) mod shape_describe_anomaly_detector;
 
 pub(crate) mod shape_describe_logging_configuration;
 
@@ -71,6 +77,8 @@ pub(crate) mod shape_describe_workspace_configuration;
 
 pub(crate) mod shape_get_default_scraper_configuration;
 
+pub(crate) mod shape_list_anomaly_detectors;
+
 pub(crate) mod shape_list_rule_groups_namespaces;
 
 pub(crate) mod shape_list_scrapers;
@@ -80,6 +88,8 @@ pub(crate) mod shape_list_tags_for_resource;
 pub(crate) mod shape_list_workspaces;
 
 pub(crate) mod shape_put_alert_manager_definition;
+
+pub(crate) mod shape_put_anomaly_detector;
 
 pub(crate) mod shape_put_resource_policy;
 
@@ -115,6 +125,8 @@ pub(crate) mod shape_conflict_exception;
 
 pub(crate) mod shape_create_alert_manager_definition_input;
 
+pub(crate) mod shape_create_anomaly_detector_input;
+
 pub(crate) mod shape_create_logging_configuration_input;
 
 pub(crate) mod shape_create_query_logging_configuration_input;
@@ -128,6 +140,8 @@ pub(crate) mod shape_create_workspace_input;
 pub(crate) mod shape_internal_server_exception;
 
 pub(crate) mod shape_put_alert_manager_definition_input;
+
+pub(crate) mod shape_put_anomaly_detector_input;
 
 pub(crate) mod shape_put_resource_policy_input;
 
@@ -158,6 +172,16 @@ pub(crate) mod shape_validation_exception;
 pub(crate) mod shape_alert_manager_definition_description;
 
 pub(crate) mod shape_alert_manager_definition_status;
+
+pub(crate) mod shape_anomaly_detector_configuration;
+
+pub(crate) mod shape_anomaly_detector_description;
+
+pub(crate) mod shape_anomaly_detector_missing_data_action;
+
+pub(crate) mod shape_anomaly_detector_status;
+
+pub(crate) mod shape_anomaly_detector_summary_list;
 
 pub(crate) mod shape_destination;
 
@@ -215,6 +239,8 @@ pub(crate) mod shape_workspace_summary_list;
 
 pub(crate) mod shape_amp_configuration;
 
+pub(crate) mod shape_anomaly_detector_summary;
+
 pub(crate) mod shape_cloud_watch_log_destination;
 
 pub(crate) mod shape_component_config;
@@ -229,6 +255,10 @@ pub(crate) mod shape_logging_destinations;
 
 pub(crate) mod shape_logging_filter;
 
+pub(crate) mod shape_prometheus_metric_label_map;
+
+pub(crate) mod shape_random_cut_forest_configuration;
+
 pub(crate) mod shape_rule_groups_namespace_summary;
 
 pub(crate) mod shape_scraper_summary;
@@ -236,6 +266,8 @@ pub(crate) mod shape_scraper_summary;
 pub(crate) mod shape_validation_exception_field;
 
 pub(crate) mod shape_workspace_summary;
+
+pub(crate) mod shape_ignore_near_expected;
 
 pub(crate) mod shape_label_set;
 

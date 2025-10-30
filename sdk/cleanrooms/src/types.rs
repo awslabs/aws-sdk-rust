@@ -47,6 +47,8 @@ pub use crate::types::_compute_configuration::ComputeConfiguration;
 
 pub use crate::types::_worker_compute_configuration::WorkerComputeConfiguration;
 
+pub use crate::types::_worker_compute_configuration_properties::WorkerComputeConfigurationProperties;
+
 pub use crate::types::_worker_compute_type::WorkerComputeType;
 
 pub use crate::types::_differential_privacy_parameters::DifferentialPrivacyParameters;
@@ -968,6 +970,8 @@ mod _validation_exception_field;
 mod _validation_exception_reason;
 
 mod _worker_compute_configuration;
+
+mod _worker_compute_configuration_properties;
 
 mod _worker_compute_type;
 

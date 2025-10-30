@@ -22,7 +22,7 @@ impl crate::operation::create_ota_task::builders::CreateOtaTaskInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateOtaTask`.
 ///
-/// <p>Create an over-the-air (OTA) task to update a device.</p>
+/// <p>Create an over-the-air (OTA) task to target a device.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateOtaTaskFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

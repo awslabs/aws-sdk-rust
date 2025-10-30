@@ -49,6 +49,22 @@ pub use crate::types::_logging_configuration_status_code::LoggingConfigurationSt
 
 pub use crate::types::_logging_configuration_metadata::LoggingConfigurationMetadata;
 
+pub use crate::types::_anomaly_detector_description::AnomalyDetectorDescription;
+
+pub use crate::types::_anomaly_detector_status::AnomalyDetectorStatus;
+
+pub use crate::types::_anomaly_detector_status_code::AnomalyDetectorStatusCode;
+
+pub use crate::types::_anomaly_detector_configuration::AnomalyDetectorConfiguration;
+
+pub use crate::types::_random_cut_forest_configuration::RandomCutForestConfiguration;
+
+pub use crate::types::_ignore_near_expected::IgnoreNearExpected;
+
+pub use crate::types::_anomaly_detector_missing_data_action::AnomalyDetectorMissingDataAction;
+
+pub use crate::types::_anomaly_detector_summary::AnomalyDetectorSummary;
+
 pub use crate::types::_alert_manager_definition_status::AlertManagerDefinitionStatus;
 
 pub use crate::types::_alert_manager_definition_status_code::AlertManagerDefinitionStatusCode;
@@ -95,6 +111,18 @@ mod _alert_manager_definition_status_code;
 
 mod _amp_configuration;
 
+mod _anomaly_detector_configuration;
+
+mod _anomaly_detector_description;
+
+mod _anomaly_detector_missing_data_action;
+
+mod _anomaly_detector_status;
+
+mod _anomaly_detector_status_code;
+
+mod _anomaly_detector_summary;
+
 mod _cloud_watch_log_destination;
 
 mod _component_config;
@@ -102,6 +130,8 @@ mod _component_config;
 mod _destination;
 
 mod _eks_configuration;
+
+mod _ignore_near_expected;
 
 mod _limits_per_label_set;
 
@@ -122,6 +152,8 @@ mod _query_logging_configuration_metadata;
 mod _query_logging_configuration_status;
 
 mod _query_logging_configuration_status_code;
+
+mod _random_cut_forest_configuration;
 
 mod _role_configuration;
 

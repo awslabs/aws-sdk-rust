@@ -233,6 +233,8 @@ mod get_managed_thing;
 
 mod get_managed_thing_capabilities;
 
+mod get_managed_thing_certificate;
+
 mod get_managed_thing_connectivity_data;
 
 mod get_managed_thing_meta_data;

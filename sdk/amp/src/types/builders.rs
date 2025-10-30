@@ -35,6 +35,14 @@ pub use crate::types::_logging_configuration_status::LoggingConfigurationStatusB
 
 pub use crate::types::_logging_configuration_metadata::LoggingConfigurationMetadataBuilder;
 
+pub use crate::types::_anomaly_detector_description::AnomalyDetectorDescriptionBuilder;
+
+pub use crate::types::_anomaly_detector_status::AnomalyDetectorStatusBuilder;
+
+pub use crate::types::_random_cut_forest_configuration::RandomCutForestConfigurationBuilder;
+
+pub use crate::types::_anomaly_detector_summary::AnomalyDetectorSummaryBuilder;
+
 pub use crate::types::_alert_manager_definition_status::AlertManagerDefinitionStatusBuilder;
 
 pub use crate::types::_alert_manager_definition_description::AlertManagerDefinitionDescriptionBuilder;

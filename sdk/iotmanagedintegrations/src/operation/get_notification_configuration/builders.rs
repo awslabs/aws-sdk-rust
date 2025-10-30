@@ -22,7 +22,7 @@ impl crate::operation::get_notification_configuration::builders::GetNotification
 }
 /// Fluent builder constructing a request to `GetNotificationConfiguration`.
 ///
-/// <p>Get a notification configuration.</p>
+/// <p>Get a notification configuration for a specified event type.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetNotificationConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

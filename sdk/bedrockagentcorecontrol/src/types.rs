@@ -235,6 +235,8 @@ pub use crate::types::_resource_type::ResourceType;
 
 pub use crate::types::_browser_status::BrowserStatus;
 
+pub use crate::types::_browser_signing_config_output::BrowserSigningConfigOutput;
+
 pub use crate::types::_recording_config::RecordingConfig;
 
 pub use crate::types::_s3_location::S3Location;
@@ -242,6 +244,8 @@ pub use crate::types::_s3_location::S3Location;
 pub use crate::types::_browser_network_configuration::BrowserNetworkConfiguration;
 
 pub use crate::types::_browser_network_mode::BrowserNetworkMode;
+
+pub use crate::types::_browser_signing_config_input::BrowserSigningConfigInput;
 
 pub use crate::types::_browser_summary::BrowserSummary;
 
@@ -302,6 +306,10 @@ mod _authorizer_type;
 mod _browser_network_configuration;
 
 mod _browser_network_mode;
+
+mod _browser_signing_config_input;
+
+mod _browser_signing_config_output;
 
 mod _browser_status;
 

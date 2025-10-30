@@ -22,7 +22,9 @@ impl crate::operation::delete_connector_destination::builders::DeleteConnectorDe
 }
 /// Fluent builder constructing a request to `DeleteConnectorDestination`.
 ///
-/// <p>Delete a connector destination for connecting a cloud-to-cloud (C2C) connector to the customer's Amazon Web Services account.</p>
+/// <p>Delete a connector destination linked to a cloud-to-cloud (C2C) connector.</p><note>
+/// <p>Deletion can't be done if the account association has used this connector destination.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteConnectorDestinationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

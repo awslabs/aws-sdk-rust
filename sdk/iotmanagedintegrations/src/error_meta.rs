@@ -124,6 +124,9 @@ impl From<crate::operation::create_account_association::CreateAccountAssociation
             crate::operation::create_account_association::CreateAccountAssociationError::ThrottlingException(inner) => {
                 Error::ThrottlingException(inner)
             }
+            crate::operation::create_account_association::CreateAccountAssociationError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
             crate::operation::create_account_association::CreateAccountAssociationError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
@@ -188,8 +191,14 @@ impl From<crate::operation::create_connector_destination::CreateConnectorDestina
             crate::operation::create_connector_destination::CreateConnectorDestinationError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
+            crate::operation::create_connector_destination::CreateConnectorDestinationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::create_connector_destination::CreateConnectorDestinationError::ThrottlingException(inner) => {
                 Error::ThrottlingException(inner)
+            }
+            crate::operation::create_connector_destination::CreateConnectorDestinationError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
             }
             crate::operation::create_connector_destination::CreateConnectorDestinationError::ValidationException(inner) => {
                 Error::ValidationException(inner)
@@ -570,6 +579,7 @@ impl From<crate::operation::delete_cloud_connector::DeleteCloudConnectorError> f
                 Error::ResourceNotFoundException(inner)
             }
             crate::operation::delete_cloud_connector::DeleteCloudConnectorError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_cloud_connector::DeleteCloudConnectorError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::delete_cloud_connector::DeleteCloudConnectorError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_cloud_connector::DeleteCloudConnectorError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -1384,6 +1394,51 @@ impl From<crate::operation::get_managed_thing_capabilities::GetManagedThingCapab
                 Error::ValidationException(inner)
             }
             crate::operation::get_managed_thing_capabilities::GetManagedThingCapabilitiesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_managed_thing_certificate::GetManagedThingCertificateError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_managed_thing_certificate::GetManagedThingCertificateError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_managed_thing_certificate::GetManagedThingCertificateError> for Error {
+    fn from(err: crate::operation::get_managed_thing_certificate::GetManagedThingCertificateError) -> Self {
+        match err {
+            crate::operation::get_managed_thing_certificate::GetManagedThingCertificateError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_managed_thing_certificate::GetManagedThingCertificateError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_managed_thing_certificate::GetManagedThingCertificateError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_managed_thing_certificate::GetManagedThingCertificateError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::get_managed_thing_certificate::GetManagedThingCertificateError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_managed_thing_certificate::GetManagedThingCertificateError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::get_managed_thing_certificate::GetManagedThingCertificateError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_managed_thing_certificate::GetManagedThingCertificateError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2903,6 +2958,7 @@ impl From<crate::operation::update_cloud_connector::UpdateCloudConnectorError> f
                 Error::ResourceNotFoundException(inner)
             }
             crate::operation::update_cloud_connector::UpdateCloudConnectorError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_cloud_connector::UpdateCloudConnectorError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::update_cloud_connector::UpdateCloudConnectorError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_cloud_connector::UpdateCloudConnectorError::Unhandled(inner) => Error::Unhandled(inner),
         }

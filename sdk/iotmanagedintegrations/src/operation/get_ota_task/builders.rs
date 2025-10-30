@@ -22,7 +22,7 @@ impl crate::operation::get_ota_task::builders::GetOtaTaskInputBuilder {
 }
 /// Fluent builder constructing a request to `GetOtaTask`.
 ///
-/// <p>Get the over-the-air (OTA) task.</p>
+/// <p>Get details of the over-the-air (OTA) task by its task id.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetOtaTaskFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

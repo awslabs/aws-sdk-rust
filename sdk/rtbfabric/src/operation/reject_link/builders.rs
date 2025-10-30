@@ -22,8 +22,8 @@ impl crate::operation::reject_link::builders::RejectLinkInputBuilder {
 }
 /// Fluent builder constructing a request to `RejectLink`.
 ///
-/// <p>Rejects a link request between RTB applications.</p>
-/// <p>When a requester RTB application requests to link with a responder RTB application, the responder can use this operation to decline the link request.</p>
+/// <p>Rejects a link request between gateways.</p>
+/// <p>When a requester gateway requests to link with a responder gateway, the responder can use this operation to decline the link request.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RejectLinkFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

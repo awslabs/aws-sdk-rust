@@ -22,7 +22,7 @@ impl crate::operation::deregister_account_association::builders::DeregisterAccou
 }
 /// Fluent builder constructing a request to `DeregisterAccountAssociation`.
 ///
-/// <p>Deregisters an account association, removing the connection between a managed thing and a third-party account.</p>
+/// <p>Deregister an account association from a managed thing.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeregisterAccountAssociationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -22,7 +22,7 @@ impl crate::operation::list_cloud_connectors::builders::ListCloudConnectorsInput
 }
 /// Fluent builder constructing a request to `ListCloudConnectors`.
 ///
-/// <p>Returns a list of connectors based on permissions.</p>
+/// <p>Returns a list of connectors filtered by its Lambda Amazon Resource Name (ARN) and <code>type</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListCloudConnectorsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

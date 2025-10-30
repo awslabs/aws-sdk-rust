@@ -47,6 +47,8 @@ pub use crate::types::_service_connect_service_resource::ServiceConnectServiceRe
 
 pub use crate::types::_service_connect_configuration::ServiceConnectConfigurationBuilder;
 
+pub use crate::types::_service_connect_access_log_configuration::ServiceConnectAccessLogConfigurationBuilder;
+
 pub use crate::types::_log_configuration::LogConfigurationBuilder;
 
 pub use crate::types::_secret::SecretBuilder;
