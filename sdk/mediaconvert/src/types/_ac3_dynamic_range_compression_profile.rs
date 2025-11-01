@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Ac3DynamicRangeCompressionProfile {
         match self {
             Ac3DynamicRangeCompressionProfile::FilmStandard => write!(f, "FILM_STANDARD"),
             Ac3DynamicRangeCompressionProfile::None => write!(f, "NONE"),
-            Ac3DynamicRangeCompressionProfile::Unknown(value) => write!(f, "{}", value),
+            Ac3DynamicRangeCompressionProfile::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

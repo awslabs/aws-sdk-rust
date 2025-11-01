@@ -53,8 +53,7 @@ pub fn de_create_verified_access_group(
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateVerifiedAccessGroupResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected CreateVerifiedAccessGroupResponse got {:?}",
-            start_el
+            "invalid root, expected CreateVerifiedAccessGroupResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

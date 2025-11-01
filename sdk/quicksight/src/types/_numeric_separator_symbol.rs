@@ -108,7 +108,7 @@ impl ::std::fmt::Display for NumericSeparatorSymbol {
             NumericSeparatorSymbol::Comma => write!(f, "COMMA"),
             NumericSeparatorSymbol::Dot => write!(f, "DOT"),
             NumericSeparatorSymbol::Space => write!(f, "SPACE"),
-            NumericSeparatorSymbol::Unknown(value) => write!(f, "{}", value),
+            NumericSeparatorSymbol::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -217,7 +217,7 @@ impl ::std::fmt::Display for ResourceType {
             ResourceType::PipelineVersion => write!(f, "PipelineVersion"),
             ResourceType::Project => write!(f, "Project"),
             ResourceType::TrainingJob => write!(f, "TrainingJob"),
-            ResourceType::Unknown(value) => write!(f, "{}", value),
+            ResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

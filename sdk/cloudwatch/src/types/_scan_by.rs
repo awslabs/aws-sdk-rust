@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ScanBy {
         match self {
             ScanBy::TimestampAscending => write!(f, "TimestampAscending"),
             ScanBy::TimestampDescending => write!(f, "TimestampDescending"),
-            ScanBy::Unknown(value) => write!(f, "{}", value),
+            ScanBy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

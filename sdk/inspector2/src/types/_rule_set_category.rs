@@ -108,7 +108,7 @@ impl ::std::fmt::Display for RuleSetCategory {
             RuleSetCategory::Iac => write!(f, "IAC"),
             RuleSetCategory::Sast => write!(f, "SAST"),
             RuleSetCategory::Sca => write!(f, "SCA"),
-            RuleSetCategory::Unknown(value) => write!(f, "{}", value),
+            RuleSetCategory::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

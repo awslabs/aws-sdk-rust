@@ -189,7 +189,7 @@ impl ::std::fmt::Display for DataReplicationErrorString {
             DataReplicationErrorString::NotConverging => write!(f, "NOT_CONVERGING"),
             DataReplicationErrorString::SnapshotsFailure => write!(f, "SNAPSHOTS_FAILURE"),
             DataReplicationErrorString::UnstableNetwork => write!(f, "UNSTABLE_NETWORK"),
-            DataReplicationErrorString::Unknown(value) => write!(f, "{}", value),
+            DataReplicationErrorString::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for QueryTokenStandard {
             QueryTokenStandard::Erc1155 => write!(f, "ERC1155"),
             QueryTokenStandard::Erc20 => write!(f, "ERC20"),
             QueryTokenStandard::Erc721 => write!(f, "ERC721"),
-            QueryTokenStandard::Unknown(value) => write!(f, "{}", value),
+            QueryTokenStandard::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

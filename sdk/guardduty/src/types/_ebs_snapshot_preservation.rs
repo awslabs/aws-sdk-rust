@@ -102,7 +102,7 @@ impl ::std::fmt::Display for EbsSnapshotPreservation {
         match self {
             EbsSnapshotPreservation::NoRetention => write!(f, "NO_RETENTION"),
             EbsSnapshotPreservation::RetentionWithFinding => write!(f, "RETENTION_WITH_FINDING"),
-            EbsSnapshotPreservation::Unknown(value) => write!(f, "{}", value),
+            EbsSnapshotPreservation::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

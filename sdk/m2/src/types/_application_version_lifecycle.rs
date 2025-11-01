@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ApplicationVersionLifecycle {
             ApplicationVersionLifecycle::Available => write!(f, "Available"),
             ApplicationVersionLifecycle::Creating => write!(f, "Creating"),
             ApplicationVersionLifecycle::Failed => write!(f, "Failed"),
-            ApplicationVersionLifecycle::Unknown(value) => write!(f, "{}", value),
+            ApplicationVersionLifecycle::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

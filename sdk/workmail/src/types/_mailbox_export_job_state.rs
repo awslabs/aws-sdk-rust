@@ -114,7 +114,7 @@ impl ::std::fmt::Display for MailboxExportJobState {
             MailboxExportJobState::Completed => write!(f, "COMPLETED"),
             MailboxExportJobState::Failed => write!(f, "FAILED"),
             MailboxExportJobState::Running => write!(f, "RUNNING"),
-            MailboxExportJobState::Unknown(value) => write!(f, "{}", value),
+            MailboxExportJobState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

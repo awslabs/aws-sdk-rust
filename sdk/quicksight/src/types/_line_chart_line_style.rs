@@ -108,7 +108,7 @@ impl ::std::fmt::Display for LineChartLineStyle {
             LineChartLineStyle::Dashed => write!(f, "DASHED"),
             LineChartLineStyle::Dotted => write!(f, "DOTTED"),
             LineChartLineStyle::Solid => write!(f, "SOLID"),
-            LineChartLineStyle::Unknown(value) => write!(f, "{}", value),
+            LineChartLineStyle::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

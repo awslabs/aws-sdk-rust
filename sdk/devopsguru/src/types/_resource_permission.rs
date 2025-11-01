@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ResourcePermission {
         match self {
             ResourcePermission::FullPermission => write!(f, "FULL_PERMISSION"),
             ResourcePermission::MissingPermission => write!(f, "MISSING_PERMISSION"),
-            ResourcePermission::Unknown(value) => write!(f, "{}", value),
+            ResourcePermission::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

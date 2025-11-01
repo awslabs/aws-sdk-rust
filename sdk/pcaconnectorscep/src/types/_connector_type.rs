@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ConnectorType {
         match self {
             ConnectorType::GeneralPurpose => write!(f, "GENERAL_PURPOSE"),
             ConnectorType::Intune => write!(f, "INTUNE"),
-            ConnectorType::Unknown(value) => write!(f, "{}", value),
+            ConnectorType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for EcsServiceMetricName {
         match self {
             EcsServiceMetricName::Cpu => write!(f, "Cpu"),
             EcsServiceMetricName::Memory => write!(f, "Memory"),
-            EcsServiceMetricName::Unknown(value) => write!(f, "{}", value),
+            EcsServiceMetricName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for SortQuotaBy {
             SortQuotaBy::CreationTime => write!(f, "CreationTime"),
             SortQuotaBy::Name => write!(f, "Name"),
             SortQuotaBy::Status => write!(f, "Status"),
-            SortQuotaBy::Unknown(value) => write!(f, "{}", value),
+            SortQuotaBy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

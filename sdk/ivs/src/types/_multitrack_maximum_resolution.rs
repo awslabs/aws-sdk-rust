@@ -108,7 +108,7 @@ impl ::std::fmt::Display for MultitrackMaximumResolution {
             MultitrackMaximumResolution::FullHd => write!(f, "FULL_HD"),
             MultitrackMaximumResolution::Hd => write!(f, "HD"),
             MultitrackMaximumResolution::Sd => write!(f, "SD"),
-            MultitrackMaximumResolution::Unknown(value) => write!(f, "{}", value),
+            MultitrackMaximumResolution::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -96,7 +96,7 @@ impl ::std::fmt::Display for IngestionJobFilterAttribute {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             IngestionJobFilterAttribute::Status => write!(f, "STATUS"),
-            IngestionJobFilterAttribute::Unknown(value) => write!(f, "{}", value),
+            IngestionJobFilterAttribute::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

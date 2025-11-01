@@ -17,8 +17,7 @@ pub fn de_legal_hold(inp: &[u8]) -> std::result::Result<crate::types::ObjectLock
     let start_el = decoder.start_el();
     if !(start_el.matches("LegalHold")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected LegalHold got {:?}",
-            start_el
+            "invalid root, expected LegalHold got {start_el:?}"
         )));
     }
     crate::protocol_serde::shape_object_lock_legal_hold::de_object_lock_legal_hold(&mut decoder)

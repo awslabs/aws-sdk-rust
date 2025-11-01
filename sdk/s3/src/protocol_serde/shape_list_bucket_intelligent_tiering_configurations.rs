@@ -73,10 +73,11 @@ pub fn de_list_bucket_intelligent_tiering_configurations(
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !start_el.matches("ListBucketIntelligentTieringConfigurationsOutput") {
-        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "encountered invalid XML root: expected ListBucketIntelligentTieringConfigurationsOutput but got {:?}. This is likely a bug in the SDK.",
-            start_el
-        )));
+        return Err(
+                                ::aws_smithy_xml::decode::XmlDecodeError::custom(
+                                    format!("encountered invalid XML root: expected ListBucketIntelligentTieringConfigurationsOutput but got {start_el:?}. This is likely a bug in the SDK.")
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {

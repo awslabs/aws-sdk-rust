@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ConfigurationState {
             ConfigurationState::Active => write!(f, "ACTIVE"),
             ConfigurationState::DeleteFailed => write!(f, "DELETE_FAILED"),
             ConfigurationState::Deleting => write!(f, "DELETING"),
-            ConfigurationState::Unknown(value) => write!(f, "{}", value),
+            ConfigurationState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

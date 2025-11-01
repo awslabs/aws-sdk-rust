@@ -31,8 +31,7 @@ pub(crate) fn de_incorrect_file_system_life_cycle_state_json_err(
             },
             other => {
                 return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                    "expected object key or end object, found: {:?}",
-                    other
+                    "expected object key or end object, found: {other:?}"
                 )))
             }
         }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FeatureEvaluationStrategy {
         match self {
             FeatureEvaluationStrategy::AllRules => write!(f, "ALL_RULES"),
             FeatureEvaluationStrategy::DefaultVariation => write!(f, "DEFAULT_VARIATION"),
-            FeatureEvaluationStrategy::Unknown(value) => write!(f, "{}", value),
+            FeatureEvaluationStrategy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

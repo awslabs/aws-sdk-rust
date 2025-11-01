@@ -126,7 +126,7 @@ impl ::std::fmt::Display for PromptType {
             PromptType::Orchestration => write!(f, "ORCHESTRATION"),
             PromptType::PostProcessing => write!(f, "POST_PROCESSING"),
             PromptType::PreProcessing => write!(f, "PRE_PROCESSING"),
-            PromptType::Unknown(value) => write!(f, "{}", value),
+            PromptType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

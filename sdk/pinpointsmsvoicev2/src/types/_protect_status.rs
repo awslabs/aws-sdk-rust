@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ProtectStatus {
             ProtectStatus::Block => write!(f, "BLOCK"),
             ProtectStatus::Filter => write!(f, "FILTER"),
             ProtectStatus::Monitor => write!(f, "MONITOR"),
-            ProtectStatus::Unknown(value) => write!(f, "{}", value),
+            ProtectStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

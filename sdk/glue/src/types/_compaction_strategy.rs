@@ -108,7 +108,7 @@ impl ::std::fmt::Display for CompactionStrategy {
             CompactionStrategy::Binpack => write!(f, "binpack"),
             CompactionStrategy::Sort => write!(f, "sort"),
             CompactionStrategy::Zorder => write!(f, "z-order"),
-            CompactionStrategy::Unknown(value) => write!(f, "{}", value),
+            CompactionStrategy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

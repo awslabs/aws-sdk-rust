@@ -175,7 +175,7 @@ impl ::std::fmt::Display for EventSourceName {
             EventSourceName::OnSlaBreach => write!(f, "OnSlaBreach"),
             EventSourceName::OnZendeskTicketCreate => write!(f, "OnZendeskTicketCreate"),
             EventSourceName::OnZendeskTicketStatusUpdate => write!(f, "OnZendeskTicketStatusUpdate"),
-            EventSourceName::Unknown(value) => write!(f, "{}", value),
+            EventSourceName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

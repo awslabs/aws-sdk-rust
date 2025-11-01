@@ -203,7 +203,7 @@ impl ::std::fmt::Display for ChallengeNameType {
             ChallengeNameType::SmsOtp => write!(f, "SMS_OTP"),
             ChallengeNameType::SoftwareTokenMfa => write!(f, "SOFTWARE_TOKEN_MFA"),
             ChallengeNameType::WebAuthn => write!(f, "WEB_AUTHN"),
-            ChallengeNameType::Unknown(value) => write!(f, "{}", value),
+            ChallengeNameType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for TranscribePartialResultsStability {
             TranscribePartialResultsStability::High => write!(f, "high"),
             TranscribePartialResultsStability::Low => write!(f, "low"),
             TranscribePartialResultsStability::Medium => write!(f, "medium"),
-            TranscribePartialResultsStability::Unknown(value) => write!(f, "{}", value),
+            TranscribePartialResultsStability::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

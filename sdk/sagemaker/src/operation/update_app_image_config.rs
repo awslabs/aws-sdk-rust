@@ -180,6 +180,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for UpdateAppIma
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::update_app_image_config::UpdateAppImageConfigInput,
                 output: &mut ::std::string::String,

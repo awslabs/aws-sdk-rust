@@ -147,7 +147,7 @@ impl ::std::fmt::Display for AssociationFilterKey {
             AssociationFilterKey::LastExecutedBefore => write!(f, "LastExecutedBefore"),
             AssociationFilterKey::Name => write!(f, "Name"),
             AssociationFilterKey::ResourceGroupName => write!(f, "ResourceGroupName"),
-            AssociationFilterKey::Unknown(value) => write!(f, "{}", value),
+            AssociationFilterKey::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CostAllocationTagStatus {
         match self {
             CostAllocationTagStatus::Active => write!(f, "Active"),
             CostAllocationTagStatus::Inactive => write!(f, "Inactive"),
-            CostAllocationTagStatus::Unknown(value) => write!(f, "{}", value),
+            CostAllocationTagStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

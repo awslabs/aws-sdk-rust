@@ -180,6 +180,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetRouteServ
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::get_route_server_associations::GetRouteServerAssociationsInput,
                 output: &mut ::std::string::String,

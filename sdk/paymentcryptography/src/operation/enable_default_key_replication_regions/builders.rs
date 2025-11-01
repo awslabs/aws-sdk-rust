@@ -22,8 +22,8 @@ impl crate::operation::enable_default_key_replication_regions::builders::EnableD
 }
 /// Fluent builder constructing a request to `EnableDefaultKeyReplicationRegions`.
 ///
-/// <p>Enables multi-region key replication settings for your account, causing new keys to be automatically replicated to the specified Amazon Web Services Regions when created.</p>
-/// <p>When default Replication Regions are enabled, any new keys created in your account will automatically be replicated to these regions unless you explicitly override this behavior during key creation. This simplifies key management for applications that operate across multiple regions.</p>
+/// <p>Enables <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-multi-region-replication.html">Multi-Region key replication</a> settings for your Amazon Web Services account, causing new keys to be automatically replicated to the specified Amazon Web Services Regions when created.</p>
+/// <p>When Multi-Region key replication are enabled, any new keys created in your account will automatically be replicated to these regions unless you explicitly override this behavior during key creation. This simplifies key management for applications that operate across multiple regions.</p>
 /// <p>Existing keys are not affected by this operation - only keys created after enabling default replication will be automatically replicated.</p>
 /// <p><b>Cross-account use:</b> This operation can't be used across different Amazon Web Services accounts.</p>
 /// <p><b>Related operations:</b></p>
@@ -123,19 +123,19 @@ impl EnableDefaultKeyReplicationRegionsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_replication_regions`](Self::set_replication_regions).
     ///
-    /// <p>The list of Amazon Web Services Regions to enable as default replication regions for the account.</p>
+    /// <p>The list of Amazon Web Services Regions to enable as default replication regions for the Amazon Web Services account for <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-multi-region-replication.html">Multi-Region key replication</a>.</p>
     /// <p>New keys created in this account will automatically be replicated to these regions unless explicitly overridden during key creation.</p>
     pub fn replication_regions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.replication_regions(input.into());
         self
     }
-    /// <p>The list of Amazon Web Services Regions to enable as default replication regions for the account.</p>
+    /// <p>The list of Amazon Web Services Regions to enable as default replication regions for the Amazon Web Services account for <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-multi-region-replication.html">Multi-Region key replication</a>.</p>
     /// <p>New keys created in this account will automatically be replicated to these regions unless explicitly overridden during key creation.</p>
     pub fn set_replication_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_replication_regions(input);
         self
     }
-    /// <p>The list of Amazon Web Services Regions to enable as default replication regions for the account.</p>
+    /// <p>The list of Amazon Web Services Regions to enable as default replication regions for the Amazon Web Services account for <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-multi-region-replication.html">Multi-Region key replication</a>.</p>
     /// <p>New keys created in this account will automatically be replicated to these regions unless explicitly overridden during key creation.</p>
     pub fn get_replication_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_replication_regions()

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AutoEnableStandards {
         match self {
             AutoEnableStandards::Default => write!(f, "DEFAULT"),
             AutoEnableStandards::None => write!(f, "NONE"),
-            AutoEnableStandards::Unknown(value) => write!(f, "{}", value),
+            AutoEnableStandards::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

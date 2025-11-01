@@ -102,7 +102,7 @@ impl ::std::fmt::Display for OperationLevelMetricsConfig {
         match self {
             OperationLevelMetricsConfig::Disabled => write!(f, "DISABLED"),
             OperationLevelMetricsConfig::Enabled => write!(f, "ENABLED"),
-            OperationLevelMetricsConfig::Unknown(value) => write!(f, "{}", value),
+            OperationLevelMetricsConfig::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

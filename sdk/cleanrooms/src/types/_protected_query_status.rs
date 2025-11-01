@@ -132,7 +132,7 @@ impl ::std::fmt::Display for ProtectedQueryStatus {
             ProtectedQueryStatus::Submitted => write!(f, "SUBMITTED"),
             ProtectedQueryStatus::Success => write!(f, "SUCCESS"),
             ProtectedQueryStatus::TimedOut => write!(f, "TIMED_OUT"),
-            ProtectedQueryStatus::Unknown(value) => write!(f, "{}", value),
+            ProtectedQueryStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

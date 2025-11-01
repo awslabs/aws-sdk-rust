@@ -147,7 +147,7 @@ impl ::std::fmt::Display for TargetStatus {
             TargetStatus::Synchronizing => write!(f, "SYNCHRONIZING"),
             TargetStatus::UpdateUnsuccessful => write!(f, "UPDATE_UNSUCCESSFUL"),
             TargetStatus::Updating => write!(f, "UPDATING"),
-            TargetStatus::Unknown(value) => write!(f, "{}", value),
+            TargetStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

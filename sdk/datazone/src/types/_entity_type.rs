@@ -102,7 +102,7 @@ impl ::std::fmt::Display for EntityType {
         match self {
             EntityType::Asset => write!(f, "ASSET"),
             EntityType::DataProduct => write!(f, "DATA_PRODUCT"),
-            EntityType::Unknown(value) => write!(f, "{}", value),
+            EntityType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

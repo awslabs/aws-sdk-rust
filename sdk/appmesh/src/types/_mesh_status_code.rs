@@ -108,7 +108,7 @@ impl ::std::fmt::Display for MeshStatusCode {
             MeshStatusCode::Active => write!(f, "ACTIVE"),
             MeshStatusCode::Deleted => write!(f, "DELETED"),
             MeshStatusCode::Inactive => write!(f, "INACTIVE"),
-            MeshStatusCode::Unknown(value) => write!(f, "{}", value),
+            MeshStatusCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

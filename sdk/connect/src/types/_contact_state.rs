@@ -154,7 +154,7 @@ impl ::std::fmt::Display for ContactState {
             ContactState::Missed => write!(f, "MISSED"),
             ContactState::Pending => write!(f, "PENDING"),
             ContactState::Rejected => write!(f, "REJECTED"),
-            ContactState::Unknown(value) => write!(f, "{}", value),
+            ContactState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

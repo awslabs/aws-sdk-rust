@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ServerType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ServerType::RdsSal => write!(f, "RDS_SAL"),
-            ServerType::Unknown(value) => write!(f, "{}", value),
+            ServerType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

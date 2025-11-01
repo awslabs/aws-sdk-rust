@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ChannelStatus {
             ChannelStatus::Created => write!(f, "CREATED"),
             ChannelStatus::Failed => write!(f, "FAILED"),
             ChannelStatus::InProgress => write!(f, "IN_PROGRESS"),
-            ChannelStatus::Unknown(value) => write!(f, "{}", value),
+            ChannelStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

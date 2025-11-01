@@ -168,7 +168,7 @@ impl ::std::fmt::Display for RecommendationType {
             RecommendationType::GenerativeResponse => write!(f, "GENERATIVE_RESPONSE"),
             RecommendationType::IntentAnswerChunk => write!(f, "INTENT_ANSWER_CHUNK"),
             RecommendationType::KnowledgeContent => write!(f, "KNOWLEDGE_CONTENT"),
-            RecommendationType::Unknown(value) => write!(f, "{}", value),
+            RecommendationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

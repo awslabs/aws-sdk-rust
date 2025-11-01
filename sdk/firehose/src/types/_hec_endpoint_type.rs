@@ -102,7 +102,7 @@ impl ::std::fmt::Display for HecEndpointType {
         match self {
             HecEndpointType::Event => write!(f, "Event"),
             HecEndpointType::Raw => write!(f, "Raw"),
-            HecEndpointType::Unknown(value) => write!(f, "{}", value),
+            HecEndpointType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

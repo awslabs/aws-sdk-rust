@@ -114,7 +114,7 @@ impl ::std::fmt::Display for AudioNormalizationAlgorithm {
             AudioNormalizationAlgorithm::ItuBs17702 => write!(f, "ITU_BS_1770_2"),
             AudioNormalizationAlgorithm::ItuBs17703 => write!(f, "ITU_BS_1770_3"),
             AudioNormalizationAlgorithm::ItuBs17704 => write!(f, "ITU_BS_1770_4"),
-            AudioNormalizationAlgorithm::Unknown(value) => write!(f, "{}", value),
+            AudioNormalizationAlgorithm::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

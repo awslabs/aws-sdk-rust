@@ -120,7 +120,7 @@ impl ::std::fmt::Display for TargetStatus {
             TargetStatus::Inactive => write!(f, "INACTIVE"),
             TargetStatus::Pending => write!(f, "PENDING"),
             TargetStatus::Unreachable => write!(f, "UNREACHABLE"),
-            TargetStatus::Unknown(value) => write!(f, "{}", value),
+            TargetStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

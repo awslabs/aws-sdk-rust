@@ -120,7 +120,7 @@ impl ::std::fmt::Display for ParticipantType {
             ParticipantType::Customer => write!(f, "CUSTOMER"),
             ParticipantType::Manager => write!(f, "MANAGER"),
             ParticipantType::Thirdparty => write!(f, "THIRDPARTY"),
-            ParticipantType::Unknown(value) => write!(f, "{}", value),
+            ParticipantType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

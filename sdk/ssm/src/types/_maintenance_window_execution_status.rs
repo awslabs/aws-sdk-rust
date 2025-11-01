@@ -147,7 +147,7 @@ impl ::std::fmt::Display for MaintenanceWindowExecutionStatus {
             MaintenanceWindowExecutionStatus::SkippedOverlapping => write!(f, "SKIPPED_OVERLAPPING"),
             MaintenanceWindowExecutionStatus::Success => write!(f, "SUCCESS"),
             MaintenanceWindowExecutionStatus::TimedOut => write!(f, "TIMED_OUT"),
-            MaintenanceWindowExecutionStatus::Unknown(value) => write!(f, "{}", value),
+            MaintenanceWindowExecutionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

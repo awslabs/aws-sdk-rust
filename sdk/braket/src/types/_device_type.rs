@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DeviceType {
         match self {
             DeviceType::Qpu => write!(f, "QPU"),
             DeviceType::Simulator => write!(f, "SIMULATOR"),
-            DeviceType::Unknown(value) => write!(f, "{}", value),
+            DeviceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

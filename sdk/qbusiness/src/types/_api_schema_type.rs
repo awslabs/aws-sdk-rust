@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ApiSchemaType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ApiSchemaType::OpenApiV3 => write!(f, "OPEN_API_V3"),
-            ApiSchemaType::Unknown(value) => write!(f, "{}", value),
+            ApiSchemaType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

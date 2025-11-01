@@ -102,7 +102,7 @@ impl ::std::fmt::Display for GlobalClusterMemberSynchronizationStatus {
         match self {
             GlobalClusterMemberSynchronizationStatus::Connected => write!(f, "connected"),
             GlobalClusterMemberSynchronizationStatus::PendingResync => write!(f, "pending-resync"),
-            GlobalClusterMemberSynchronizationStatus::Unknown(value) => write!(f, "{}", value),
+            GlobalClusterMemberSynchronizationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

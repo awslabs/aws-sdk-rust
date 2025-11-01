@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SettablePolicyStateValues {
         match self {
             SettablePolicyStateValues::Disabled => write!(f, "DISABLED"),
             SettablePolicyStateValues::Enabled => write!(f, "ENABLED"),
-            SettablePolicyStateValues::Unknown(value) => write!(f, "{}", value),
+            SettablePolicyStateValues::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

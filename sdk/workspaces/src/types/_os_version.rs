@@ -102,7 +102,7 @@ impl ::std::fmt::Display for OsVersion {
         match self {
             OsVersion::Windows10 => write!(f, "Windows_10"),
             OsVersion::Windows11 => write!(f, "Windows_11"),
-            OsVersion::Unknown(value) => write!(f, "{}", value),
+            OsVersion::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

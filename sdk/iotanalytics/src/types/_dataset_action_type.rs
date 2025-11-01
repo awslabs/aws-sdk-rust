@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DatasetActionType {
         match self {
             DatasetActionType::Container => write!(f, "CONTAINER"),
             DatasetActionType::Query => write!(f, "QUERY"),
-            DatasetActionType::Unknown(value) => write!(f, "{}", value),
+            DatasetActionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

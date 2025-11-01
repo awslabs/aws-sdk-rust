@@ -114,7 +114,7 @@ impl ::std::fmt::Display for DatabaseEngineType {
             DatabaseEngineType::RdsAuroraPostgresql => write!(f, "RDS_AURORA_POSTGRESQL"),
             DatabaseEngineType::RdsMysql => write!(f, "RDS_MYSQL"),
             DatabaseEngineType::RdsPostgresql => write!(f, "RDS_POSTGRESQL"),
-            DatabaseEngineType::Unknown(value) => write!(f, "{}", value),
+            DatabaseEngineType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RelayConversationHistory {
         match self {
             RelayConversationHistory::Disabled => write!(f, "DISABLED"),
             RelayConversationHistory::ToCollaborator => write!(f, "TO_COLLABORATOR"),
-            RelayConversationHistory::Unknown(value) => write!(f, "{}", value),
+            RelayConversationHistory::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

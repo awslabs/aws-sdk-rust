@@ -154,7 +154,7 @@ impl ::std::fmt::Display for ScteFilter {
             ScteFilter::ProviderOverlayPlacementOpportunity => write!(f, "PROVIDER_OVERLAY_PLACEMENT_OPPORTUNITY"),
             ScteFilter::ProviderPlacementOpportunity => write!(f, "PROVIDER_PLACEMENT_OPPORTUNITY"),
             ScteFilter::SpliceInsert => write!(f, "SPLICE_INSERT"),
-            ScteFilter::Unknown(value) => write!(f, "{}", value),
+            ScteFilter::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

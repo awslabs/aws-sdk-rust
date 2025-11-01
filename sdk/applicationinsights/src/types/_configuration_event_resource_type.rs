@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ConfigurationEventResourceType {
             ConfigurationEventResourceType::CloudwatchAlarm => write!(f, "CLOUDWATCH_ALARM"),
             ConfigurationEventResourceType::CloudwatchLog => write!(f, "CLOUDWATCH_LOG"),
             ConfigurationEventResourceType::SsmAssociation => write!(f, "SSM_ASSOCIATION"),
-            ConfigurationEventResourceType::Unknown(value) => write!(f, "{}", value),
+            ConfigurationEventResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

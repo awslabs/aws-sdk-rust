@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DeploymentOption {
         match self {
             DeploymentOption::WithoutTrafficControl => write!(f, "WITHOUT_TRAFFIC_CONTROL"),
             DeploymentOption::WithTrafficControl => write!(f, "WITH_TRAFFIC_CONTROL"),
-            DeploymentOption::Unknown(value) => write!(f, "{}", value),
+            DeploymentOption::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

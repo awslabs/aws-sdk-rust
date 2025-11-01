@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AutoMountHomeEfs {
             AutoMountHomeEfs::DefaultAsDomain => write!(f, "DefaultAsDomain"),
             AutoMountHomeEfs::Disabled => write!(f, "Disabled"),
             AutoMountHomeEfs::Enabled => write!(f, "Enabled"),
-            AutoMountHomeEfs::Unknown(value) => write!(f, "{}", value),
+            AutoMountHomeEfs::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

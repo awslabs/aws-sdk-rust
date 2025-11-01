@@ -114,7 +114,7 @@ impl ::std::fmt::Display for AutoMountStatus {
             AutoMountStatus::Mounted => write!(f, "Mounted"),
             AutoMountStatus::NotMounted => write!(f, "NotMounted"),
             AutoMountStatus::Pending => write!(f, "Pending"),
-            AutoMountStatus::Unknown(value) => write!(f, "{}", value),
+            AutoMountStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

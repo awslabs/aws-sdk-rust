@@ -120,7 +120,7 @@ impl ::std::fmt::Display for ReplicationMode {
             ReplicationMode::Primary => write!(f, "PRIMARY"),
             ReplicationMode::Sync => write!(f, "SYNC"),
             ReplicationMode::Syncmem => write!(f, "SYNCMEM"),
-            ReplicationMode::Unknown(value) => write!(f, "{}", value),
+            ReplicationMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

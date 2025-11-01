@@ -102,7 +102,7 @@ impl ::std::fmt::Display for StorageType {
         match self {
             StorageType::MultiLayerStorage => write!(f, "MULTI_LAYER_STORAGE"),
             StorageType::SitewiseDefaultStorage => write!(f, "SITEWISE_DEFAULT_STORAGE"),
-            StorageType::Unknown(value) => write!(f, "{}", value),
+            StorageType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

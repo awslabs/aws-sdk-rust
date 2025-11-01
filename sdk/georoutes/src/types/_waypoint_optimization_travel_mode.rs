@@ -114,7 +114,7 @@ impl ::std::fmt::Display for WaypointOptimizationTravelMode {
             WaypointOptimizationTravelMode::Pedestrian => write!(f, "Pedestrian"),
             WaypointOptimizationTravelMode::Scooter => write!(f, "Scooter"),
             WaypointOptimizationTravelMode::Truck => write!(f, "Truck"),
-            WaypointOptimizationTravelMode::Unknown(value) => write!(f, "{}", value),
+            WaypointOptimizationTravelMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

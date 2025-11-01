@@ -140,7 +140,7 @@ impl ::std::fmt::Display for AnalyticsSessionMetricName {
             AnalyticsSessionMetricName::Failure => write!(f, "Failure"),
             AnalyticsSessionMetricName::Success => write!(f, "Success"),
             AnalyticsSessionMetricName::TurnsPerConversation => write!(f, "TurnsPerConversation"),
-            AnalyticsSessionMetricName::Unknown(value) => write!(f, "{}", value),
+            AnalyticsSessionMetricName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

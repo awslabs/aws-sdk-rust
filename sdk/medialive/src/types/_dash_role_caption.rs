@@ -182,7 +182,7 @@ impl ::std::fmt::Display for DashRoleCaption {
             DashRoleCaption::Metadata => write!(f, "METADATA"),
             DashRoleCaption::Subtitle => write!(f, "SUBTITLE"),
             DashRoleCaption::Supplementary => write!(f, "SUPPLEMENTARY"),
-            DashRoleCaption::Unknown(value) => write!(f, "{}", value),
+            DashRoleCaption::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

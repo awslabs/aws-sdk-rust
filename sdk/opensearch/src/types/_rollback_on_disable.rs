@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RollbackOnDisable {
         match self {
             RollbackOnDisable::DefaultRollback => write!(f, "DEFAULT_ROLLBACK"),
             RollbackOnDisable::NoRollback => write!(f, "NO_ROLLBACK"),
-            RollbackOnDisable::Unknown(value) => write!(f, "{}", value),
+            RollbackOnDisable::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

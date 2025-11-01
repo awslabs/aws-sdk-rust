@@ -108,7 +108,7 @@ impl ::std::fmt::Display for UpdateType {
             UpdateType::Network => write!(f, "NETWORK"),
             UpdateType::Os => write!(f, "OS"),
             UpdateType::Size => write!(f, "SIZE"),
-            UpdateType::Unknown(value) => write!(f, "{}", value),
+            UpdateType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

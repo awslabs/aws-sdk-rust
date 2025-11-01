@@ -68,16 +68,14 @@ pub fn de_modify_ip_pools(
     let start_el = decoder.start_el();
     if !(start_el.matches("ModifyIpPoolsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected ModifyIpPoolsResponse got {:?}",
-            start_el
+            "invalid root, expected ModifyIpPoolsResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("ModifyIpPoolsResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected ModifyIpPoolsResult got {:?}",
-                start_el
+                "invalid result, expected ModifyIpPoolsResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for LinkAssociationState {
             LinkAssociationState::Deleted => write!(f, "DELETED"),
             LinkAssociationState::Deleting => write!(f, "DELETING"),
             LinkAssociationState::Pending => write!(f, "PENDING"),
-            LinkAssociationState::Unknown(value) => write!(f, "{}", value),
+            LinkAssociationState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

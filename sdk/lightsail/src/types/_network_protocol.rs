@@ -120,7 +120,7 @@ impl ::std::fmt::Display for NetworkProtocol {
             NetworkProtocol::Icmpv6 => write!(f, "icmpv6"),
             NetworkProtocol::Tcp => write!(f, "tcp"),
             NetworkProtocol::Udp => write!(f, "udp"),
-            NetworkProtocol::Unknown(value) => write!(f, "{}", value),
+            NetworkProtocol::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

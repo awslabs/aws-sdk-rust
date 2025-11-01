@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SpotInstanceType {
         match self {
             SpotInstanceType::OneTime => write!(f, "one-time"),
             SpotInstanceType::Persistent => write!(f, "persistent"),
-            SpotInstanceType::Unknown(value) => write!(f, "{}", value),
+            SpotInstanceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

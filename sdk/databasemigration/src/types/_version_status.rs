@@ -108,7 +108,7 @@ impl ::std::fmt::Display for VersionStatus {
             VersionStatus::Outdated => write!(f, "OUTDATED"),
             VersionStatus::Unsupported => write!(f, "UNSUPPORTED"),
             VersionStatus::UpToDate => write!(f, "UP_TO_DATE"),
-            VersionStatus::Unknown(value) => write!(f, "{}", value),
+            VersionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

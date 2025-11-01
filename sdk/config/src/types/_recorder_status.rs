@@ -114,7 +114,7 @@ impl ::std::fmt::Display for RecorderStatus {
             RecorderStatus::NotApplicable => write!(f, "NotApplicable"),
             RecorderStatus::Pending => write!(f, "Pending"),
             RecorderStatus::Success => write!(f, "Success"),
-            RecorderStatus::Unknown(value) => write!(f, "{}", value),
+            RecorderStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

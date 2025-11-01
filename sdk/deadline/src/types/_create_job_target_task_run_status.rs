@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CreateJobTargetTaskRunStatus {
         match self {
             CreateJobTargetTaskRunStatus::Ready => write!(f, "READY"),
             CreateJobTargetTaskRunStatus::Suspended => write!(f, "SUSPENDED"),
-            CreateJobTargetTaskRunStatus::Unknown(value) => write!(f, "{}", value),
+            CreateJobTargetTaskRunStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

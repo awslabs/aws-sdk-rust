@@ -102,7 +102,7 @@ impl ::std::fmt::Display for InsightType {
         match self {
             InsightType::Proactive => write!(f, "PROACTIVE"),
             InsightType::Reactive => write!(f, "REACTIVE"),
-            InsightType::Unknown(value) => write!(f, "{}", value),
+            InsightType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

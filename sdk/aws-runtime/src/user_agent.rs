@@ -247,22 +247,22 @@ impl AwsUserAgent {
         write!(ua_value, "{} ", &self.os_metadata).unwrap();
         write!(ua_value, "{} ", &self.language_metadata).unwrap();
         if let Some(ref env_meta) = self.exec_env_metadata {
-            write!(ua_value, "{} ", env_meta).unwrap();
+            write!(ua_value, "{env_meta} ").unwrap();
         }
         if !self.business_metrics.is_empty() {
             write!(ua_value, "{} ", &self.business_metrics).unwrap()
         }
         for framework in &self.framework_metadata {
-            write!(ua_value, "{} ", framework).unwrap();
+            write!(ua_value, "{framework} ").unwrap();
         }
         for additional_metadata in &self.additional_metadata {
-            write!(ua_value, "{} ", additional_metadata).unwrap();
+            write!(ua_value, "{additional_metadata} ").unwrap();
         }
         if let Some(app_name) = &self.app_name {
-            write!(ua_value, "app/{}", app_name).unwrap();
+            write!(ua_value, "app/{app_name}").unwrap();
         }
         if let Some(additional_metadata) = &self.build_env_additional_metadata {
-            write!(ua_value, "{}", additional_metadata).unwrap();
+            write!(ua_value, "{additional_metadata}").unwrap();
         }
         if ua_value.ends_with(' ') {
             ua_value.truncate(ua_value.len() - 1);
@@ -418,7 +418,7 @@ impl AdditionalMetadataList {
 impl fmt::Display for AdditionalMetadataList {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         for metadata in &self.0 {
-            write!(f, " {}", metadata)?;
+            write!(f, " {metadata}")?;
         }
         Ok(())
     }
@@ -579,9 +579,9 @@ impl fmt::Display for OsMetadata {
             OsFamily::Ios => "ios",
             OsFamily::Other => "other",
         };
-        write!(f, "os/{}", os_family)?;
+        write!(f, "os/{os_family}")?;
         if let Some(ref version) = self.version {
-            write!(f, "/{}", version)?;
+            write!(f, "/{version}")?;
         }
         Ok(())
     }

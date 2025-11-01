@@ -133,7 +133,7 @@ impl ::std::fmt::Display for FastLaunchStateCode {
             FastLaunchStateCode::EnabledFailed => write!(f, "enabled-failed"),
             FastLaunchStateCode::Enabling => write!(f, "enabling"),
             FastLaunchStateCode::EnablingFailed => write!(f, "enabling-failed"),
-            FastLaunchStateCode::Unknown(value) => write!(f, "{}", value),
+            FastLaunchStateCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

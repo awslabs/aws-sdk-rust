@@ -117,7 +117,7 @@ impl ::std::fmt::Display for Readiness {
             Readiness::NotReady => write!(f, "NOT_READY"),
             Readiness::Ready => write!(f, "READY"),
             Readiness::UnknownValue => write!(f, "UNKNOWN"),
-            Readiness::Unknown(value) => write!(f, "{}", value),
+            Readiness::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

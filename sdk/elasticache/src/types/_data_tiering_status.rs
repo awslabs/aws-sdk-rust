@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DataTieringStatus {
         match self {
             DataTieringStatus::Disabled => write!(f, "disabled"),
             DataTieringStatus::Enabled => write!(f, "enabled"),
-            DataTieringStatus::Unknown(value) => write!(f, "{}", value),
+            DataTieringStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

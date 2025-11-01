@@ -108,7 +108,7 @@ impl ::std::fmt::Display for FindingType {
             FindingType::CodeVulnerability => write!(f, "CODE_VULNERABILITY"),
             FindingType::NetworkReachability => write!(f, "NETWORK_REACHABILITY"),
             FindingType::PackageVulnerability => write!(f, "PACKAGE_VULNERABILITY"),
-            FindingType::Unknown(value) => write!(f, "{}", value),
+            FindingType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

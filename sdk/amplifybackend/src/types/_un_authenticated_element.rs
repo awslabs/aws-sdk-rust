@@ -108,7 +108,7 @@ impl ::std::fmt::Display for UnAuthenticatedElement {
             UnAuthenticatedElement::CreateAndUpdate => write!(f, "CREATE_AND_UPDATE"),
             UnAuthenticatedElement::Delete => write!(f, "DELETE"),
             UnAuthenticatedElement::Read => write!(f, "READ"),
-            UnAuthenticatedElement::Unknown(value) => write!(f, "{}", value),
+            UnAuthenticatedElement::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

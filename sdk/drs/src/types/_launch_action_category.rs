@@ -120,7 +120,7 @@ impl ::std::fmt::Display for LaunchActionCategory {
             LaunchActionCategory::Other => write!(f, "OTHER"),
             LaunchActionCategory::Security => write!(f, "SECURITY"),
             LaunchActionCategory::Validation => write!(f, "VALIDATION"),
-            LaunchActionCategory::Unknown(value) => write!(f, "{}", value),
+            LaunchActionCategory::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

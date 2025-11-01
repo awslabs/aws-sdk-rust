@@ -114,7 +114,7 @@ impl ::std::fmt::Display for TestSetGenerationStatus {
             TestSetGenerationStatus::Generating => write!(f, "Generating"),
             TestSetGenerationStatus::Pending => write!(f, "Pending"),
             TestSetGenerationStatus::Ready => write!(f, "Ready"),
-            TestSetGenerationStatus::Unknown(value) => write!(f, "{}", value),
+            TestSetGenerationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -120,7 +120,7 @@ impl ::std::fmt::Display for AutomationJobStatus {
             AutomationJobStatus::InProgress => write!(f, "InProgress"),
             AutomationJobStatus::ServiceError => write!(f, "ServiceError"),
             AutomationJobStatus::Success => write!(f, "Success"),
-            AutomationJobStatus::Unknown(value) => write!(f, "{}", value),
+            AutomationJobStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

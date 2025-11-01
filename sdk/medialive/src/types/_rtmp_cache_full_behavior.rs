@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RtmpCacheFullBehavior {
         match self {
             RtmpCacheFullBehavior::DisconnectImmediately => write!(f, "DISCONNECT_IMMEDIATELY"),
             RtmpCacheFullBehavior::WaitForServer => write!(f, "WAIT_FOR_SERVER"),
-            RtmpCacheFullBehavior::Unknown(value) => write!(f, "{}", value),
+            RtmpCacheFullBehavior::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

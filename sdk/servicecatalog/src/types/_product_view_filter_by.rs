@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ProductViewFilterBy {
             ProductViewFilterBy::Owner => write!(f, "Owner"),
             ProductViewFilterBy::ProductType => write!(f, "ProductType"),
             ProductViewFilterBy::SourceProductId => write!(f, "SourceProductId"),
-            ProductViewFilterBy::Unknown(value) => write!(f, "{}", value),
+            ProductViewFilterBy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -51,8 +51,7 @@ pub fn de_describe_vpc_endpoint_services(
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeVpcEndpointServicesResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected DescribeVpcEndpointServicesResponse got {:?}",
-            start_el
+            "invalid root, expected DescribeVpcEndpointServicesResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

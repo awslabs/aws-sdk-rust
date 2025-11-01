@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MemberRelation {
         match self {
             MemberRelation::And => write!(f, "AND"),
             MemberRelation::Or => write!(f, "OR"),
-            MemberRelation::Unknown(value) => write!(f, "{}", value),
+            MemberRelation::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -140,7 +140,7 @@ impl ::std::fmt::Display for SrcCodeOrDbAnalysisStatus {
             SrcCodeOrDbAnalysisStatus::AnalysisToBeScheduled => write!(f, "ANALYSIS_TO_BE_SCHEDULED"),
             SrcCodeOrDbAnalysisStatus::Configured => write!(f, "CONFIGURED"),
             SrcCodeOrDbAnalysisStatus::Unconfigured => write!(f, "UNCONFIGURED"),
-            SrcCodeOrDbAnalysisStatus::Unknown(value) => write!(f, "{}", value),
+            SrcCodeOrDbAnalysisStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

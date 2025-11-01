@@ -96,7 +96,7 @@ impl ::std::fmt::Display for EcsEnvironmentFileType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             EcsEnvironmentFileType::S3 => write!(f, "s3"),
-            EcsEnvironmentFileType::Unknown(value) => write!(f, "{}", value),
+            EcsEnvironmentFileType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

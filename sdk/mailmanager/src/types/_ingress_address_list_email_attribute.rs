@@ -96,7 +96,7 @@ impl ::std::fmt::Display for IngressAddressListEmailAttribute {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             IngressAddressListEmailAttribute::Recipient => write!(f, "RECIPIENT"),
-            IngressAddressListEmailAttribute::Unknown(value) => write!(f, "{}", value),
+            IngressAddressListEmailAttribute::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

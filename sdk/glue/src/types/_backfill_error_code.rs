@@ -126,7 +126,7 @@ impl ::std::fmt::Display for BackfillErrorCode {
             BackfillErrorCode::InvalidPartitionTypeDataError => write!(f, "INVALID_PARTITION_TYPE_DATA_ERROR"),
             BackfillErrorCode::MissingPartitionValueError => write!(f, "MISSING_PARTITION_VALUE_ERROR"),
             BackfillErrorCode::UnsupportedPartitionCharacterError => write!(f, "UNSUPPORTED_PARTITION_CHARACTER_ERROR"),
-            BackfillErrorCode::Unknown(value) => write!(f, "{}", value),
+            BackfillErrorCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

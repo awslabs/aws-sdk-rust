@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Av1SceneChangeDetect {
         match self {
             Av1SceneChangeDetect::Disabled => write!(f, "DISABLED"),
             Av1SceneChangeDetect::Enabled => write!(f, "ENABLED"),
-            Av1SceneChangeDetect::Unknown(value) => write!(f, "{}", value),
+            Av1SceneChangeDetect::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

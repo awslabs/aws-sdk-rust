@@ -108,7 +108,7 @@ impl ::std::fmt::Display for RelevanceLevel {
             RelevanceLevel::High => write!(f, "HIGH"),
             RelevanceLevel::Low => write!(f, "LOW"),
             RelevanceLevel::Medium => write!(f, "MEDIUM"),
-            RelevanceLevel::Unknown(value) => write!(f, "{}", value),
+            RelevanceLevel::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

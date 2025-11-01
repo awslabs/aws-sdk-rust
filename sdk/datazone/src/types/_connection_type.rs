@@ -245,7 +245,7 @@ impl ::std::fmt::Display for ConnectionType {
             ConnectionType::Teradata => write!(f, "TERADATA"),
             ConnectionType::Vertica => write!(f, "VERTICA"),
             ConnectionType::WorkflowsMwaa => write!(f, "WORKFLOWS_MWAA"),
-            ConnectionType::Unknown(value) => write!(f, "{}", value),
+            ConnectionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for TrainedModelExportJobStatus {
             TrainedModelExportJobStatus::CreateFailed => write!(f, "CREATE_FAILED"),
             TrainedModelExportJobStatus::CreateInProgress => write!(f, "CREATE_IN_PROGRESS"),
             TrainedModelExportJobStatus::CreatePending => write!(f, "CREATE_PENDING"),
-            TrainedModelExportJobStatus::Unknown(value) => write!(f, "{}", value),
+            TrainedModelExportJobStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

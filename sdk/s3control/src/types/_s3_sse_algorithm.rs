@@ -102,7 +102,7 @@ impl ::std::fmt::Display for S3SseAlgorithm {
         match self {
             S3SseAlgorithm::Aes256 => write!(f, "AES256"),
             S3SseAlgorithm::Kms => write!(f, "KMS"),
-            S3SseAlgorithm::Unknown(value) => write!(f, "{}", value),
+            S3SseAlgorithm::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

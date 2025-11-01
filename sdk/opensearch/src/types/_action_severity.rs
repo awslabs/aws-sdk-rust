@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ActionSeverity {
             ActionSeverity::High => write!(f, "HIGH"),
             ActionSeverity::Low => write!(f, "LOW"),
             ActionSeverity::Medium => write!(f, "MEDIUM"),
-            ActionSeverity::Unknown(value) => write!(f, "{}", value),
+            ActionSeverity::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

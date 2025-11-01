@@ -20,8 +20,7 @@ pub fn de_realtime_log_configs(inp: &[u8]) -> std::result::Result<crate::types::
     let start_el = decoder.start_el();
     if !(start_el.matches("RealtimeLogConfigs")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected RealtimeLogConfigs got {:?}",
-            start_el
+            "invalid root, expected RealtimeLogConfigs got {start_el:?}"
         )));
     }
     crate::protocol_serde::shape_realtime_log_configs::de_realtime_log_configs(&mut decoder)

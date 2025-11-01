@@ -102,7 +102,7 @@ impl ::std::fmt::Display for UsageState {
         match self {
             UsageState::InUse => write!(f, "IN_USE"),
             UsageState::NotInUse => write!(f, "NOT_IN_USE"),
-            UsageState::Unknown(value) => write!(f, "{}", value),
+            UsageState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

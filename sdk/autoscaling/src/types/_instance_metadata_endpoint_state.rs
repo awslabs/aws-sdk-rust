@@ -102,7 +102,7 @@ impl ::std::fmt::Display for InstanceMetadataEndpointState {
         match self {
             InstanceMetadataEndpointState::Disabled => write!(f, "disabled"),
             InstanceMetadataEndpointState::Enabled => write!(f, "enabled"),
-            InstanceMetadataEndpointState::Unknown(value) => write!(f, "{}", value),
+            InstanceMetadataEndpointState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

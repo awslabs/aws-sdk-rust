@@ -154,7 +154,7 @@ impl ::std::fmt::Display for VpcPeeringConnectionStateReasonCode {
             VpcPeeringConnectionStateReasonCode::PendingAcceptance => write!(f, "pending-acceptance"),
             VpcPeeringConnectionStateReasonCode::Provisioning => write!(f, "provisioning"),
             VpcPeeringConnectionStateReasonCode::Rejected => write!(f, "rejected"),
-            VpcPeeringConnectionStateReasonCode::Unknown(value) => write!(f, "{}", value),
+            VpcPeeringConnectionStateReasonCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

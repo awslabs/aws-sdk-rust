@@ -138,7 +138,7 @@ impl ::std::fmt::Display for CacheClusterSize {
             CacheClusterSize::Size28Point4Gb => write!(f, "28.4"),
             CacheClusterSize::Size58Point2Gb => write!(f, "58.2"),
             CacheClusterSize::Size6Point1Gb => write!(f, "6.1"),
-            CacheClusterSize::Unknown(value) => write!(f, "{}", value),
+            CacheClusterSize::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ResourceSyncStatus {
             ResourceSyncStatus::Initiated => write!(f, "INITIATED"),
             ResourceSyncStatus::InProgress => write!(f, "IN_PROGRESS"),
             ResourceSyncStatus::Succeeded => write!(f, "SUCCEEDED"),
-            ResourceSyncStatus::Unknown(value) => write!(f, "{}", value),
+            ResourceSyncStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

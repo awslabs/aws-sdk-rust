@@ -180,6 +180,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListMedicalS
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::list_medical_scribe_jobs::ListMedicalScribeJobsInput,
                 output: &mut ::std::string::String,

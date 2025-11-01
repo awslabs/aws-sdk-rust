@@ -102,7 +102,7 @@ impl ::std::fmt::Display for GraphSummaryMode {
         match self {
             GraphSummaryMode::Basic => write!(f, "BASIC"),
             GraphSummaryMode::Detailed => write!(f, "DETAILED"),
-            GraphSummaryMode::Unknown(value) => write!(f, "{}", value),
+            GraphSummaryMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

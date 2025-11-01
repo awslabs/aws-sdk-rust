@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TermLength {
         match self {
             TermLength::OneYear => write!(f, "ONE_YEAR"),
             TermLength::ThreeYear => write!(f, "THREE_YEAR"),
-            TermLength::Unknown(value) => write!(f, "{}", value),
+            TermLength::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

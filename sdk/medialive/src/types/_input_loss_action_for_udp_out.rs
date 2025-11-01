@@ -108,7 +108,7 @@ impl ::std::fmt::Display for InputLossActionForUdpOut {
             InputLossActionForUdpOut::DropProgram => write!(f, "DROP_PROGRAM"),
             InputLossActionForUdpOut::DropTs => write!(f, "DROP_TS"),
             InputLossActionForUdpOut::EmitProgram => write!(f, "EMIT_PROGRAM"),
-            InputLossActionForUdpOut::Unknown(value) => write!(f, "{}", value),
+            InputLossActionForUdpOut::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for VoiceRecordingTrack {
             VoiceRecordingTrack::All => write!(f, "ALL"),
             VoiceRecordingTrack::FromAgent => write!(f, "FROM_AGENT"),
             VoiceRecordingTrack::ToAgent => write!(f, "TO_AGENT"),
-            VoiceRecordingTrack::Unknown(value) => write!(f, "{}", value),
+            VoiceRecordingTrack::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

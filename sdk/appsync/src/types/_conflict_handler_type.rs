@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ConflictHandlerType {
             ConflictHandlerType::Lambda => write!(f, "LAMBDA"),
             ConflictHandlerType::None => write!(f, "NONE"),
             ConflictHandlerType::OptimisticConcurrency => write!(f, "OPTIMISTIC_CONCURRENCY"),
-            ConflictHandlerType::Unknown(value) => write!(f, "{}", value),
+            ConflictHandlerType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

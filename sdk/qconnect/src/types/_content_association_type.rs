@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ContentAssociationType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ContentAssociationType::AmazonConnectGuide => write!(f, "AMAZON_CONNECT_GUIDE"),
-            ContentAssociationType::Unknown(value) => write!(f, "{}", value),
+            ContentAssociationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

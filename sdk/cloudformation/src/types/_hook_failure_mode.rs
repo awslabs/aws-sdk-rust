@@ -102,7 +102,7 @@ impl ::std::fmt::Display for HookFailureMode {
         match self {
             HookFailureMode::Fail => write!(f, "FAIL"),
             HookFailureMode::Warn => write!(f, "WARN"),
-            HookFailureMode::Unknown(value) => write!(f, "{}", value),
+            HookFailureMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

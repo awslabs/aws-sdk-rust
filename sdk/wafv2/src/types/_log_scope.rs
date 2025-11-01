@@ -102,7 +102,7 @@ impl ::std::fmt::Display for LogScope {
         match self {
             LogScope::Customer => write!(f, "CUSTOMER"),
             LogScope::SecurityLake => write!(f, "SECURITY_LAKE"),
-            LogScope::Unknown(value) => write!(f, "{}", value),
+            LogScope::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

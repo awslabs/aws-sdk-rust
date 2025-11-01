@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ColumnType {
             ColumnType::Edge => write!(f, "EDGE"),
             ColumnType::Node => write!(f, "NODE"),
             ColumnType::Value => write!(f, "VALUE"),
-            ColumnType::Unknown(value) => write!(f, "{}", value),
+            ColumnType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

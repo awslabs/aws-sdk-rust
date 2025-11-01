@@ -120,7 +120,7 @@ impl ::std::fmt::Display for QueryStateString {
             QueryStateString::Finished => write!(f, "FINISHED"),
             QueryStateString::Pending => write!(f, "PENDING"),
             QueryStateString::WorkunitsAvailable => write!(f, "WORKUNITS_AVAILABLE"),
-            QueryStateString::Unknown(value) => write!(f, "{}", value),
+            QueryStateString::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -120,7 +120,7 @@ impl ::std::fmt::Display for ContainerInstanceStatus {
             ContainerInstanceStatus::Draining => write!(f, "DRAINING"),
             ContainerInstanceStatus::Registering => write!(f, "REGISTERING"),
             ContainerInstanceStatus::RegistrationFailed => write!(f, "REGISTRATION_FAILED"),
-            ContainerInstanceStatus::Unknown(value) => write!(f, "{}", value),
+            ContainerInstanceStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

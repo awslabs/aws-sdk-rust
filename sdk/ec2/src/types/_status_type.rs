@@ -114,7 +114,7 @@ impl ::std::fmt::Display for StatusType {
             StatusType::Initializing => write!(f, "initializing"),
             StatusType::InsufficientData => write!(f, "insufficient-data"),
             StatusType::Passed => write!(f, "passed"),
-            StatusType::Unknown(value) => write!(f, "{}", value),
+            StatusType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TranscribeMedicalType {
         match self {
             TranscribeMedicalType::Conversation => write!(f, "CONVERSATION"),
             TranscribeMedicalType::Dictation => write!(f, "DICTATION"),
-            TranscribeMedicalType::Unknown(value) => write!(f, "{}", value),
+            TranscribeMedicalType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

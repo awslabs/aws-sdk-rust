@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MediaStreamType {
         match self {
             MediaStreamType::Audio => write!(f, "AUDIO"),
             MediaStreamType::Video => write!(f, "VIDEO"),
-            MediaStreamType::Unknown(value) => write!(f, "{}", value),
+            MediaStreamType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

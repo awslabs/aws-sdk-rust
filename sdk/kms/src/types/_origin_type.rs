@@ -114,7 +114,7 @@ impl ::std::fmt::Display for OriginType {
             OriginType::AwsKms => write!(f, "AWS_KMS"),
             OriginType::External => write!(f, "EXTERNAL"),
             OriginType::ExternalKeyStore => write!(f, "EXTERNAL_KEY_STORE"),
-            OriginType::Unknown(value) => write!(f, "{}", value),
+            OriginType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

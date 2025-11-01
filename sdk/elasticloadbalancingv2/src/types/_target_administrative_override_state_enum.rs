@@ -116,7 +116,7 @@ impl ::std::fmt::Display for TargetAdministrativeOverrideStateEnum {
             TargetAdministrativeOverrideStateEnum::UnknownValue => write!(f, "unknown"),
             TargetAdministrativeOverrideStateEnum::ZonalShiftActive => write!(f, "zonal_shift_active"),
             TargetAdministrativeOverrideStateEnum::ZonalShiftDelegatedToDns => write!(f, "zonal_shift_delegated_to_dns"),
-            TargetAdministrativeOverrideStateEnum::Unknown(value) => write!(f, "{}", value),
+            TargetAdministrativeOverrideStateEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

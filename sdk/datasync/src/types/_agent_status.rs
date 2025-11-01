@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AgentStatus {
         match self {
             AgentStatus::Offline => write!(f, "OFFLINE"),
             AgentStatus::Online => write!(f, "ONLINE"),
-            AgentStatus::Unknown(value) => write!(f, "{}", value),
+            AgentStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

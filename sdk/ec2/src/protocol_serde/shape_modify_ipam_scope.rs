@@ -42,8 +42,7 @@ pub fn de_modify_ipam_scope(
     let start_el = decoder.start_el();
     if !(start_el.matches("ModifyIpamScopeResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected ModifyIpamScopeResponse got {:?}",
-            start_el
+            "invalid root, expected ModifyIpamScopeResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

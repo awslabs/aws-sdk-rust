@@ -108,7 +108,7 @@ impl ::std::fmt::Display for FlowPublishState {
             FlowPublishState::Draft => write!(f, "DRAFT"),
             FlowPublishState::PendingApproval => write!(f, "PENDING_APPROVAL"),
             FlowPublishState::Published => write!(f, "PUBLISHED"),
-            FlowPublishState::Unknown(value) => write!(f, "{}", value),
+            FlowPublishState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

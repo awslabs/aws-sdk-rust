@@ -102,7 +102,7 @@ impl ::std::fmt::Display for EnabledAnalysisType {
         match self {
             EnabledAnalysisType::HttpHost => write!(f, "HTTP_HOST"),
             EnabledAnalysisType::TlsSni => write!(f, "TLS_SNI"),
-            EnabledAnalysisType::Unknown(value) => write!(f, "{}", value),
+            EnabledAnalysisType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ChangesetStatus {
             ChangesetStatus::Failed => write!(f, "FAILED"),
             ChangesetStatus::Pending => write!(f, "PENDING"),
             ChangesetStatus::Processing => write!(f, "PROCESSING"),
-            ChangesetStatus::Unknown(value) => write!(f, "{}", value),
+            ChangesetStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

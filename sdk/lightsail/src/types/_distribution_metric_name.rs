@@ -133,7 +133,7 @@ impl ::std::fmt::Display for DistributionMetricName {
             DistributionMetricName::Http5xxErrorRate => write!(f, "Http5xxErrorRate"),
             DistributionMetricName::Requests => write!(f, "Requests"),
             DistributionMetricName::TotalErrorRate => write!(f, "TotalErrorRate"),
-            DistributionMetricName::Unknown(value) => write!(f, "{}", value),
+            DistributionMetricName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -132,7 +132,7 @@ impl ::std::fmt::Display for CertificateAuthorityStatus {
             CertificateAuthorityStatus::Expired => write!(f, "EXPIRED"),
             CertificateAuthorityStatus::Failed => write!(f, "FAILED"),
             CertificateAuthorityStatus::PendingCertificate => write!(f, "PENDING_CERTIFICATE"),
-            CertificateAuthorityStatus::Unknown(value) => write!(f, "{}", value),
+            CertificateAuthorityStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

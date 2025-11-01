@@ -132,7 +132,7 @@ impl ::std::fmt::Display for InstanceGroupStatus {
             InstanceGroupStatus::Inservice => write!(f, "InService"),
             InstanceGroupStatus::Systemupdating => write!(f, "SystemUpdating"),
             InstanceGroupStatus::Updating => write!(f, "Updating"),
-            InstanceGroupStatus::Unknown(value) => write!(f, "{}", value),
+            InstanceGroupStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

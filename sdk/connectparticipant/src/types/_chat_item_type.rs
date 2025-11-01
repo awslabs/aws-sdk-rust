@@ -175,7 +175,7 @@ impl ::std::fmt::Display for ChatItemType {
             ChatItemType::TransferFailed => write!(f, "TRANSFER_FAILED"),
             ChatItemType::TransferSucceeded => write!(f, "TRANSFER_SUCCEEDED"),
             ChatItemType::Typing => write!(f, "TYPING"),
-            ChatItemType::Unknown(value) => write!(f, "{}", value),
+            ChatItemType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

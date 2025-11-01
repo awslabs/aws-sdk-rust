@@ -120,7 +120,7 @@ impl ::std::fmt::Display for OtaStatus {
             OtaStatus::DeletionInProgress => write!(f, "DELETION_IN_PROGRESS"),
             OtaStatus::InProgress => write!(f, "IN_PROGRESS"),
             OtaStatus::Scheduled => write!(f, "SCHEDULED"),
-            OtaStatus::Unknown(value) => write!(f, "{}", value),
+            OtaStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

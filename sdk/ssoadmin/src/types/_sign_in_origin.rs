@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SignInOrigin {
         match self {
             SignInOrigin::Application => write!(f, "APPLICATION"),
             SignInOrigin::IdentityCenter => write!(f, "IDENTITY_CENTER"),
-            SignInOrigin::Unknown(value) => write!(f, "{}", value),
+            SignInOrigin::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

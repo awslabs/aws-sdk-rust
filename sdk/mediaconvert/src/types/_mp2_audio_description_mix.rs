@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Mp2AudioDescriptionMix {
         match self {
             Mp2AudioDescriptionMix::BroadcasterMixedAd => write!(f, "BROADCASTER_MIXED_AD"),
             Mp2AudioDescriptionMix::None => write!(f, "NONE"),
-            Mp2AudioDescriptionMix::Unknown(value) => write!(f, "{}", value),
+            Mp2AudioDescriptionMix::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

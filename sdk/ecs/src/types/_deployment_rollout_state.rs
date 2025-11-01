@@ -108,7 +108,7 @@ impl ::std::fmt::Display for DeploymentRolloutState {
             DeploymentRolloutState::Completed => write!(f, "COMPLETED"),
             DeploymentRolloutState::Failed => write!(f, "FAILED"),
             DeploymentRolloutState::InProgress => write!(f, "IN_PROGRESS"),
-            DeploymentRolloutState::Unknown(value) => write!(f, "{}", value),
+            DeploymentRolloutState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

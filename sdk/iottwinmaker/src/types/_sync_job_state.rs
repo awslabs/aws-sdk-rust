@@ -120,7 +120,7 @@ impl ::std::fmt::Display for SyncJobState {
             SyncJobState::Deleting => write!(f, "DELETING"),
             SyncJobState::Error => write!(f, "ERROR"),
             SyncJobState::Initializing => write!(f, "INITIALIZING"),
-            SyncJobState::Unknown(value) => write!(f, "{}", value),
+            SyncJobState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

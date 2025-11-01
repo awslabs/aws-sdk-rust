@@ -51,8 +51,7 @@ pub fn de_purchase_capacity_block_extension(
     let start_el = decoder.start_el();
     if !(start_el.matches("PurchaseCapacityBlockExtensionResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected PurchaseCapacityBlockExtensionResponse got {:?}",
-            start_el
+            "invalid root, expected PurchaseCapacityBlockExtensionResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AutoMlChannelType {
         match self {
             AutoMlChannelType::Training => write!(f, "training"),
             AutoMlChannelType::Validation => write!(f, "validation"),
-            AutoMlChannelType::Unknown(value) => write!(f, "{}", value),
+            AutoMlChannelType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

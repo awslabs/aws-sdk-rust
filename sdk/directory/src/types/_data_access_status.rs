@@ -120,7 +120,7 @@ impl ::std::fmt::Display for DataAccessStatus {
             DataAccessStatus::Enabled => write!(f, "Enabled"),
             DataAccessStatus::Enabling => write!(f, "Enabling"),
             DataAccessStatus::Failed => write!(f, "Failed"),
-            DataAccessStatus::Unknown(value) => write!(f, "{}", value),
+            DataAccessStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

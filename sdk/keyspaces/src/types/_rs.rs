@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Rs {
         match self {
             Rs::MultiRegion => write!(f, "MULTI_REGION"),
             Rs::SingleRegion => write!(f, "SINGLE_REGION"),
-            Rs::Unknown(value) => write!(f, "{}", value),
+            Rs::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

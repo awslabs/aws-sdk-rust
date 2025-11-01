@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TopicNumericSeparatorSymbol {
         match self {
             TopicNumericSeparatorSymbol::Comma => write!(f, "COMMA"),
             TopicNumericSeparatorSymbol::Dot => write!(f, "DOT"),
-            TopicNumericSeparatorSymbol::Unknown(value) => write!(f, "{}", value),
+            TopicNumericSeparatorSymbol::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

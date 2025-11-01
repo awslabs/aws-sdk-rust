@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ImportResourceType {
             ImportResourceType::BotLocale => write!(f, "BotLocale"),
             ImportResourceType::CustomVocabulary => write!(f, "CustomVocabulary"),
             ImportResourceType::TestSet => write!(f, "TestSet"),
-            ImportResourceType::Unknown(value) => write!(f, "{}", value),
+            ImportResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

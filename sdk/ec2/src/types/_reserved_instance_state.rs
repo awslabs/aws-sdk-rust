@@ -126,7 +126,7 @@ impl ::std::fmt::Display for ReservedInstanceState {
             ReservedInstanceState::Queued => write!(f, "queued"),
             ReservedInstanceState::QueuedDeleted => write!(f, "queued-deleted"),
             ReservedInstanceState::Retired => write!(f, "retired"),
-            ReservedInstanceState::Unknown(value) => write!(f, "{}", value),
+            ReservedInstanceState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

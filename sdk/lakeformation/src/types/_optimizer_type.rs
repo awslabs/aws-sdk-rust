@@ -108,7 +108,7 @@ impl ::std::fmt::Display for OptimizerType {
             OptimizerType::Generic => write!(f, "ALL"),
             OptimizerType::Compaction => write!(f, "COMPACTION"),
             OptimizerType::GarbageCollection => write!(f, "GARBAGE_COLLECTION"),
-            OptimizerType::Unknown(value) => write!(f, "{}", value),
+            OptimizerType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

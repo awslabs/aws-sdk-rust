@@ -114,7 +114,7 @@ impl ::std::fmt::Display for JourneyRunStatus {
             JourneyRunStatus::Completed => write!(f, "COMPLETED"),
             JourneyRunStatus::Running => write!(f, "RUNNING"),
             JourneyRunStatus::Scheduled => write!(f, "SCHEDULED"),
-            JourneyRunStatus::Unknown(value) => write!(f, "{}", value),
+            JourneyRunStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

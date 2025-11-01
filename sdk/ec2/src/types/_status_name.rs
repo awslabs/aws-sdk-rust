@@ -96,7 +96,7 @@ impl ::std::fmt::Display for StatusName {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             StatusName::Reachability => write!(f, "reachability"),
-            StatusName::Unknown(value) => write!(f, "{}", value),
+            StatusName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

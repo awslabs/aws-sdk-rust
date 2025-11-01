@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AnomalyStatus {
         match self {
             AnomalyStatus::Closed => write!(f, "CLOSED"),
             AnomalyStatus::Ongoing => write!(f, "ONGOING"),
-            AnomalyStatus::Unknown(value) => write!(f, "{}", value),
+            AnomalyStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

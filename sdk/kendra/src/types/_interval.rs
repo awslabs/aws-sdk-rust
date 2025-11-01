@@ -133,7 +133,7 @@ impl ::std::fmt::Display for Interval {
             Interval::ThisWeek => write!(f, "THIS_WEEK"),
             Interval::TwoMonthsAgo => write!(f, "TWO_MONTHS_AGO"),
             Interval::TwoWeeksAgo => write!(f, "TWO_WEEKS_AGO"),
-            Interval::Unknown(value) => write!(f, "{}", value),
+            Interval::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

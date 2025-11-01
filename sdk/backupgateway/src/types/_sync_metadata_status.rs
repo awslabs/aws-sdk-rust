@@ -120,7 +120,7 @@ impl ::std::fmt::Display for SyncMetadataStatus {
             SyncMetadataStatus::PartiallyFailed => write!(f, "PARTIALLY_FAILED"),
             SyncMetadataStatus::Running => write!(f, "RUNNING"),
             SyncMetadataStatus::Succeeded => write!(f, "SUCCEEDED"),
-            SyncMetadataStatus::Unknown(value) => write!(f, "{}", value),
+            SyncMetadataStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

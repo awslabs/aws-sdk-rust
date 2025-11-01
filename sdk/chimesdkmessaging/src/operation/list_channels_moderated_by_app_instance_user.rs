@@ -191,6 +191,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListChannels
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::list_channels_moderated_by_app_instance_user::ListChannelsModeratedByAppInstanceUserInput,
                 output: &mut ::std::string::String,

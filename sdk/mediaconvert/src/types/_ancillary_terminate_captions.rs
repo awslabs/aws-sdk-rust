@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AncillaryTerminateCaptions {
         match self {
             AncillaryTerminateCaptions::Disabled => write!(f, "DISABLED"),
             AncillaryTerminateCaptions::EndOfInput => write!(f, "END_OF_INPUT"),
-            AncillaryTerminateCaptions::Unknown(value) => write!(f, "{}", value),
+            AncillaryTerminateCaptions::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

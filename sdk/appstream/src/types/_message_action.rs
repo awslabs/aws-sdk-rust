@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MessageAction {
         match self {
             MessageAction::Resend => write!(f, "RESEND"),
             MessageAction::Suppress => write!(f, "SUPPRESS"),
-            MessageAction::Unknown(value) => write!(f, "{}", value),
+            MessageAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

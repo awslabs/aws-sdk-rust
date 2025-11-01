@@ -150,7 +150,7 @@ impl ::std::fmt::Display for DisplayLanguageCode {
             DisplayLanguageCode::Pt => write!(f, "pt"),
             DisplayLanguageCode::Zh => write!(f, "zh"),
             DisplayLanguageCode::ZhTw => write!(f, "zh-TW"),
-            DisplayLanguageCode::Unknown(value) => write!(f, "{}", value),
+            DisplayLanguageCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

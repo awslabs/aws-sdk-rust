@@ -138,7 +138,7 @@ impl ::std::fmt::Display for TcpFlag {
             TcpFlag::Rst => write!(f, "RST"),
             TcpFlag::Syn => write!(f, "SYN"),
             TcpFlag::Urg => write!(f, "URG"),
-            TcpFlag::Unknown(value) => write!(f, "{}", value),
+            TcpFlag::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

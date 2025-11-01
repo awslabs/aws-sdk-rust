@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PrivacyBudgetType {
         match self {
             PrivacyBudgetType::AccessBudget => write!(f, "ACCESS_BUDGET"),
             PrivacyBudgetType::DifferentialPrivacy => write!(f, "DIFFERENTIAL_PRIVACY"),
-            PrivacyBudgetType::Unknown(value) => write!(f, "{}", value),
+            PrivacyBudgetType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -154,7 +154,7 @@ impl ::std::fmt::Display for AnalyticsIntentStageFilterName {
             AnalyticsIntentStageFilterName::Modality => write!(f, "Modality"),
             AnalyticsIntentStageFilterName::OriginatingRequestId => write!(f, "OriginatingRequestId"),
             AnalyticsIntentStageFilterName::SessionId => write!(f, "SessionId"),
-            AnalyticsIntentStageFilterName::Unknown(value) => write!(f, "{}", value),
+            AnalyticsIntentStageFilterName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

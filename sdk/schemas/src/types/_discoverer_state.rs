@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DiscovererState {
         match self {
             DiscovererState::Started => write!(f, "STARTED"),
             DiscovererState::Stopped => write!(f, "STOPPED"),
-            DiscovererState::Unknown(value) => write!(f, "{}", value),
+            DiscovererState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

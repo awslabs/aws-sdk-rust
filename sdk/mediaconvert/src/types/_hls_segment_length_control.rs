@@ -108,7 +108,7 @@ impl ::std::fmt::Display for HlsSegmentLengthControl {
             HlsSegmentLengthControl::Exact => write!(f, "EXACT"),
             HlsSegmentLengthControl::GopMultiple => write!(f, "GOP_MULTIPLE"),
             HlsSegmentLengthControl::Match => write!(f, "MATCH"),
-            HlsSegmentLengthControl::Unknown(value) => write!(f, "{}", value),
+            HlsSegmentLengthControl::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TrafficMirrorRuleAction {
         match self {
             TrafficMirrorRuleAction::Accept => write!(f, "accept"),
             TrafficMirrorRuleAction::Reject => write!(f, "reject"),
-            TrafficMirrorRuleAction::Unknown(value) => write!(f, "{}", value),
+            TrafficMirrorRuleAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

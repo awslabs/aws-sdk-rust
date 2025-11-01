@@ -114,7 +114,7 @@ impl ::std::fmt::Display for WebhookStatus {
             WebhookStatus::CreateFailed => write!(f, "CREATE_FAILED"),
             WebhookStatus::Creating => write!(f, "CREATING"),
             WebhookStatus::Deleting => write!(f, "DELETING"),
-            WebhookStatus::Unknown(value) => write!(f, "{}", value),
+            WebhookStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

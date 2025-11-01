@@ -140,7 +140,7 @@ impl ::std::fmt::Display for ListServiceInstancesSortBy {
             ListServiceInstancesSortBy::Name => write!(f, "name"),
             ListServiceInstancesSortBy::ServiceName => write!(f, "serviceName"),
             ListServiceInstancesSortBy::TemplateName => write!(f, "templateName"),
-            ListServiceInstancesSortBy::Unknown(value) => write!(f, "{}", value),
+            ListServiceInstancesSortBy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

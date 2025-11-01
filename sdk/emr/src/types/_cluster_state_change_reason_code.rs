@@ -147,7 +147,7 @@ impl ::std::fmt::Display for ClusterStateChangeReasonCode {
             ClusterStateChangeReasonCode::StepFailure => write!(f, "STEP_FAILURE"),
             ClusterStateChangeReasonCode::UserRequest => write!(f, "USER_REQUEST"),
             ClusterStateChangeReasonCode::ValidationError => write!(f, "VALIDATION_ERROR"),
-            ClusterStateChangeReasonCode::Unknown(value) => write!(f, "{}", value),
+            ClusterStateChangeReasonCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

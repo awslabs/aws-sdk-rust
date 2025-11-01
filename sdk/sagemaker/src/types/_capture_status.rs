@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CaptureStatus {
         match self {
             CaptureStatus::Started => write!(f, "Started"),
             CaptureStatus::Stopped => write!(f, "Stopped"),
-            CaptureStatus::Unknown(value) => write!(f, "{}", value),
+            CaptureStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

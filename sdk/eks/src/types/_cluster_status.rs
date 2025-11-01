@@ -126,7 +126,7 @@ impl ::std::fmt::Display for ClusterStatus {
             ClusterStatus::Failed => write!(f, "FAILED"),
             ClusterStatus::Pending => write!(f, "PENDING"),
             ClusterStatus::Updating => write!(f, "UPDATING"),
-            ClusterStatus::Unknown(value) => write!(f, "{}", value),
+            ClusterStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

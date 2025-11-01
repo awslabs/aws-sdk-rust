@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DynamoKeyType {
         match self {
             DynamoKeyType::Number => write!(f, "NUMBER"),
             DynamoKeyType::String => write!(f, "STRING"),
-            DynamoKeyType::Unknown(value) => write!(f, "{}", value),
+            DynamoKeyType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

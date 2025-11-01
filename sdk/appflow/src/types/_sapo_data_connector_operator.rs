@@ -238,7 +238,7 @@ impl ::std::fmt::Display for SapoDataConnectorOperator {
             SapoDataConnectorOperator::ValidateNonNull => write!(f, "VALIDATE_NON_NULL"),
             SapoDataConnectorOperator::ValidateNonZero => write!(f, "VALIDATE_NON_ZERO"),
             SapoDataConnectorOperator::ValidateNumeric => write!(f, "VALIDATE_NUMERIC"),
-            SapoDataConnectorOperator::Unknown(value) => write!(f, "{}", value),
+            SapoDataConnectorOperator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

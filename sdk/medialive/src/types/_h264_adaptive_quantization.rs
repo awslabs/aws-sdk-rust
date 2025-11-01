@@ -132,7 +132,7 @@ impl ::std::fmt::Display for H264AdaptiveQuantization {
             H264AdaptiveQuantization::Max => write!(f, "MAX"),
             H264AdaptiveQuantization::Medium => write!(f, "MEDIUM"),
             H264AdaptiveQuantization::Off => write!(f, "OFF"),
-            H264AdaptiveQuantization::Unknown(value) => write!(f, "{}", value),
+            H264AdaptiveQuantization::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

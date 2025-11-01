@@ -62,7 +62,7 @@ impl<'a> XmlWriter<'a> {
 
 impl XmlWriter<'_> {
     pub fn start_el<'b, 'c>(&'c mut self, tag: &'b str) -> ElWriter<'c, 'b> {
-        write!(self.doc, "<{}", tag).unwrap();
+        write!(self.doc, "<{tag}").unwrap();
         ElWriter::new(self.doc, tag)
     }
 }
@@ -159,7 +159,7 @@ impl ScopeWriter<'_, '_> {
     }
 
     pub fn start_el<'b, 'c>(&'c mut self, tag: &'b str) -> ElWriter<'c, 'b> {
-        write!(self.doc, "<{}", tag).unwrap();
+        write!(self.doc, "<{tag}").unwrap();
         ElWriter::new(self.doc, tag)
     }
 }

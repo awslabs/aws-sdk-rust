@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AccessType {
         match self {
             AccessType::Private => write!(f, "private"),
             AccessType::Public => write!(f, "public"),
-            AccessType::Unknown(value) => write!(f, "{}", value),
+            AccessType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

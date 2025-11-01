@@ -108,7 +108,7 @@ impl ::std::fmt::Display for SubmissionMutationKind {
             SubmissionMutationKind::Add => write!(f, "add"),
             SubmissionMutationKind::Delete => write!(f, "delete"),
             SubmissionMutationKind::Edit => write!(f, "edit"),
-            SubmissionMutationKind::Unknown(value) => write!(f, "{}", value),
+            SubmissionMutationKind::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -120,16 +120,14 @@ pub fn de_describe_cache_parameter_groups(
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeCacheParameterGroupsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected DescribeCacheParameterGroupsResponse got {:?}",
-            start_el
+            "invalid root, expected DescribeCacheParameterGroupsResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("DescribeCacheParameterGroupsResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected DescribeCacheParameterGroupsResult got {:?}",
-                start_el
+                "invalid result, expected DescribeCacheParameterGroupsResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

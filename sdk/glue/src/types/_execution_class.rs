@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ExecutionClass {
         match self {
             ExecutionClass::Flex => write!(f, "FLEX"),
             ExecutionClass::Standard => write!(f, "STANDARD"),
-            ExecutionClass::Unknown(value) => write!(f, "{}", value),
+            ExecutionClass::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

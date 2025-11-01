@@ -21,14 +21,14 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for ResponseStreamUnmars
             "event" => match response_headers.smithy_type.as_str() {
                 "trace" => {
                     let parsed = crate::protocol_serde::shape_trace::de_trace_payload(&message.payload()[..])
-                        .map_err(|err| ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall Trace: {}", err)))?;
+                        .map_err(|err| ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall Trace: {err}")))?;
                     Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Event(
                         crate::types::ResponseStream::Trace(parsed),
                     ))
                 }
                 "output" => {
                     let parsed = crate::protocol_serde::shape_invocation_output::de_invocation_output_payload(&message.payload()[..])
-                        .map_err(|err| ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall Output: {}", err)))?;
+                        .map_err(|err| ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall Output: {err}")))?;
                     Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Event(
                         crate::types::ResponseStream::Output(parsed),
                     ))
@@ -54,7 +54,7 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for ResponseStreamUnmars
                             builder,
                         )
                         .map_err(|err| {
-                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall accessDeniedException: {}", err))
+                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall accessDeniedException: {err}"))
                         })?;
                         builder.set_meta(Some(generic));
                         return Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
@@ -69,8 +69,7 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for ResponseStreamUnmars
                         )
                         .map_err(|err| {
                             ::aws_smithy_eventstream::error::Error::unmarshalling(format!(
-                                "failed to unmarshall conflictingOperationException: {}",
-                                err
+                                "failed to unmarshall conflictingOperationException: {err}"
                             ))
                         })?;
                         builder.set_meta(Some(generic));
@@ -78,7 +77,7 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for ResponseStreamUnmars
                             crate::types::error::ResponseStreamError::ConflictingOperationException(
                                 crate::serde_util::conflicting_operation_exception_correct_errors(builder)
                                     .build()
-                                    .map_err(|err| ::aws_smithy_eventstream::error::Error::unmarshalling(format!("{}", err)))?,
+                                    .map_err(|err| ::aws_smithy_eventstream::error::Error::unmarshalling(format!("{err}")))?,
                             ),
                         ));
                     }
@@ -89,14 +88,14 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for ResponseStreamUnmars
                             builder,
                         )
                         .map_err(|err| {
-                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall internalFailureException: {}", err))
+                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall internalFailureException: {err}"))
                         })?;
                         builder.set_meta(Some(generic));
                         return Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
                             crate::types::error::ResponseStreamError::InternalFailureException(
                                 crate::serde_util::internal_failure_exception_correct_errors(builder)
                                     .build()
-                                    .map_err(|err| ::aws_smithy_eventstream::error::Error::unmarshalling(format!("{}", err)))?,
+                                    .map_err(|err| ::aws_smithy_eventstream::error::Error::unmarshalling(format!("{err}")))?,
                             ),
                         ));
                     }
@@ -107,14 +106,14 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for ResponseStreamUnmars
                             builder,
                         )
                         .map_err(|err| {
-                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall invalidRequestException: {}", err))
+                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall invalidRequestException: {err}"))
                         })?;
                         builder.set_meta(Some(generic));
                         return Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
                             crate::types::error::ResponseStreamError::InvalidRequestException(
                                 crate::serde_util::invalid_request_exception_correct_errors(builder)
                                     .build()
-                                    .map_err(|err| ::aws_smithy_eventstream::error::Error::unmarshalling(format!("{}", err)))?,
+                                    .map_err(|err| ::aws_smithy_eventstream::error::Error::unmarshalling(format!("{err}")))?,
                             ),
                         ));
                     }
@@ -125,14 +124,14 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for ResponseStreamUnmars
                             builder,
                         )
                         .map_err(|err| {
-                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall limitExceededException: {}", err))
+                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall limitExceededException: {err}"))
                         })?;
                         builder.set_meta(Some(generic));
                         return Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
                             crate::types::error::ResponseStreamError::LimitExceededException(
                                 crate::serde_util::limit_exceeded_exception_correct_errors(builder)
                                     .build()
-                                    .map_err(|err| ::aws_smithy_eventstream::error::Error::unmarshalling(format!("{}", err)))?,
+                                    .map_err(|err| ::aws_smithy_eventstream::error::Error::unmarshalling(format!("{err}")))?,
                             ),
                         ));
                     }
@@ -143,14 +142,14 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for ResponseStreamUnmars
                             builder,
                         )
                         .map_err(|err| {
-                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall resourceNotFoundException: {}", err))
+                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall resourceNotFoundException: {err}"))
                         })?;
                         builder.set_meta(Some(generic));
                         return Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
                             crate::types::error::ResponseStreamError::ResourceNotFoundException(
                                 crate::serde_util::resource_not_found_exception_correct_errors(builder)
                                     .build()
-                                    .map_err(|err| ::aws_smithy_eventstream::error::Error::unmarshalling(format!("{}", err)))?,
+                                    .map_err(|err| ::aws_smithy_eventstream::error::Error::unmarshalling(format!("{err}")))?,
                             ),
                         ));
                     }
@@ -159,17 +158,14 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for ResponseStreamUnmars
                         builder =
                             crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(&message.payload()[..], builder)
                                 .map_err(|err| {
-                                    ::aws_smithy_eventstream::error::Error::unmarshalling(format!(
-                                        "failed to unmarshall throttlingException: {}",
-                                        err
-                                    ))
+                                    ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall throttlingException: {err}"))
                                 })?;
                         builder.set_meta(Some(generic));
                         return Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
                             crate::types::error::ResponseStreamError::ThrottlingException(
                                 crate::serde_util::throttling_exception_correct_errors(builder)
                                     .build()
-                                    .map_err(|err| ::aws_smithy_eventstream::error::Error::unmarshalling(format!("{}", err)))?,
+                                    .map_err(|err| ::aws_smithy_eventstream::error::Error::unmarshalling(format!("{err}")))?,
                             ),
                         ));
                     }
@@ -181,8 +177,7 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for ResponseStreamUnmars
             }
             value => {
                 return Err(::aws_smithy_eventstream::error::Error::unmarshalling(format!(
-                    "unrecognized :message-type: {}",
-                    value
+                    "unrecognized :message-type: {value}"
                 )));
             }
         }

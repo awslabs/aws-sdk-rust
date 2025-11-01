@@ -83,29 +83,26 @@ impl fmt::Display for Error {
             HeaderValueTooLong => write!(f, "header value too long to fit in event stream frame"),
             InvalidHeaderNameLength => write!(f, "invalid header name length"),
             InvalidHeaderValue => write!(f, "invalid header value"),
-            InvalidHeaderValueType(val) => write!(f, "invalid header value type: {}", val),
+            InvalidHeaderValueType(val) => write!(f, "invalid header value type: {val}"),
             InvalidHeadersLength => write!(f, "invalid headers length"),
             InvalidMessageLength => write!(f, "invalid message length"),
             InvalidUtf8String => write!(f, "encountered invalid UTF-8 string"),
             MessageChecksumMismatch(expected, actual) => write!(
                 f,
-                "message checksum 0x{:X} didn't match expected checksum 0x{:X}",
-                actual, expected
+                "message checksum 0x{actual:X} didn't match expected checksum 0x{expected:X}"
             ),
             MessageTooLong => write!(f, "message too long to fit in event stream frame"),
             PayloadTooLong => write!(f, "message payload too long to fit in event stream frame"),
             PreludeChecksumMismatch(expected, actual) => write!(
                 f,
-                "prelude checksum 0x{:X} didn't match expected checksum 0x{:X}",
-                actual, expected
+                "prelude checksum 0x{actual:X} didn't match expected checksum 0x{expected:X}"
             ),
             TimestampValueTooLarge(time) => write!(
                 f,
-                "timestamp value {:?} is too large to fit into an i64",
-                time
+                "timestamp value {time:?} is too large to fit into an i64"
             ),
-            Marshalling(error) => write!(f, "failed to marshall message: {}", error),
-            Unmarshalling(error) => write!(f, "failed to unmarshall message: {}", error),
+            Marshalling(error) => write!(f, "failed to marshall message: {error}"),
+            Unmarshalling(error) => write!(f, "failed to unmarshall message: {error}"),
         }
     }
 }

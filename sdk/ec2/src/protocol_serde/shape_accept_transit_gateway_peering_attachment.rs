@@ -55,8 +55,7 @@ pub fn de_accept_transit_gateway_peering_attachment(
     let start_el = decoder.start_el();
     if !(start_el.matches("AcceptTransitGatewayPeeringAttachmentResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected AcceptTransitGatewayPeeringAttachmentResponse got {:?}",
-            start_el
+            "invalid root, expected AcceptTransitGatewayPeeringAttachmentResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

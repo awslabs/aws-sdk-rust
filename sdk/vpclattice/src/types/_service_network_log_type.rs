@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ServiceNetworkLogType {
         match self {
             ServiceNetworkLogType::Resource => write!(f, "RESOURCE"),
             ServiceNetworkLogType::Service => write!(f, "SERVICE"),
-            ServiceNetworkLogType::Unknown(value) => write!(f, "{}", value),
+            ServiceNetworkLogType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

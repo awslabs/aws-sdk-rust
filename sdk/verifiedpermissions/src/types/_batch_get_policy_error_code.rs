@@ -102,7 +102,7 @@ impl ::std::fmt::Display for BatchGetPolicyErrorCode {
         match self {
             BatchGetPolicyErrorCode::PolicyNotFound => write!(f, "POLICY_NOT_FOUND"),
             BatchGetPolicyErrorCode::PolicyStoreNotFound => write!(f, "POLICY_STORE_NOT_FOUND"),
-            BatchGetPolicyErrorCode::Unknown(value) => write!(f, "{}", value),
+            BatchGetPolicyErrorCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

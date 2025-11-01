@@ -120,7 +120,7 @@ impl ::std::fmt::Display for NatGatewayState {
             NatGatewayState::Deleting => write!(f, "deleting"),
             NatGatewayState::Failed => write!(f, "failed"),
             NatGatewayState::Pending => write!(f, "pending"),
-            NatGatewayState::Unknown(value) => write!(f, "{}", value),
+            NatGatewayState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -138,7 +138,7 @@ impl ::std::fmt::Display for TopicTimeGranularity {
             TopicTimeGranularity::Second => write!(f, "SECOND"),
             TopicTimeGranularity::Week => write!(f, "WEEK"),
             TopicTimeGranularity::Year => write!(f, "YEAR"),
-            TopicTimeGranularity::Unknown(value) => write!(f, "{}", value),
+            TopicTimeGranularity::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -96,7 +96,7 @@ impl ::std::fmt::Display for AcceleratorType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             AcceleratorType::Gpu => write!(f, "gpu"),
-            AcceleratorType::Unknown(value) => write!(f, "{}", value),
+            AcceleratorType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

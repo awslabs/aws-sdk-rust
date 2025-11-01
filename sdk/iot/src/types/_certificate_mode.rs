@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CertificateMode {
         match self {
             CertificateMode::Default => write!(f, "DEFAULT"),
             CertificateMode::SniOnly => write!(f, "SNI_ONLY"),
-            CertificateMode::Unknown(value) => write!(f, "{}", value),
+            CertificateMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

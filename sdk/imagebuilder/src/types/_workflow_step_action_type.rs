@@ -102,7 +102,7 @@ impl ::std::fmt::Display for WorkflowStepActionType {
         match self {
             WorkflowStepActionType::Resume => write!(f, "RESUME"),
             WorkflowStepActionType::Stop => write!(f, "STOP"),
-            WorkflowStepActionType::Unknown(value) => write!(f, "{}", value),
+            WorkflowStepActionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

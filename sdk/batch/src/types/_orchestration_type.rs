@@ -102,7 +102,7 @@ impl ::std::fmt::Display for OrchestrationType {
         match self {
             OrchestrationType::Ecs => write!(f, "ECS"),
             OrchestrationType::Eks => write!(f, "EKS"),
-            OrchestrationType::Unknown(value) => write!(f, "{}", value),
+            OrchestrationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

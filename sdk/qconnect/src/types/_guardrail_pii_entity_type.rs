@@ -306,7 +306,7 @@ impl ::std::fmt::Display for GuardrailPiiEntityType {
             GuardrailPiiEntityType::UsPassportNumber => write!(f, "US_PASSPORT_NUMBER"),
             GuardrailPiiEntityType::UsSocialSecurityNumber => write!(f, "US_SOCIAL_SECURITY_NUMBER"),
             GuardrailPiiEntityType::VehicleIdentificationNumber => write!(f, "VEHICLE_IDENTIFICATION_NUMBER"),
-            GuardrailPiiEntityType::Unknown(value) => write!(f, "{}", value),
+            GuardrailPiiEntityType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

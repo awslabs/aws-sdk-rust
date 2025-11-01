@@ -102,7 +102,7 @@ impl ::std::fmt::Display for QuickResponseFilterOperator {
         match self {
             QuickResponseFilterOperator::Equals => write!(f, "EQUALS"),
             QuickResponseFilterOperator::Prefix => write!(f, "PREFIX"),
-            QuickResponseFilterOperator::Unknown(value) => write!(f, "{}", value),
+            QuickResponseFilterOperator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

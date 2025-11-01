@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ReviewTemplateAnswerStatus {
         match self {
             ReviewTemplateAnswerStatus::Answered => write!(f, "ANSWERED"),
             ReviewTemplateAnswerStatus::Unanswered => write!(f, "UNANSWERED"),
-            ReviewTemplateAnswerStatus::Unknown(value) => write!(f, "{}", value),
+            ReviewTemplateAnswerStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

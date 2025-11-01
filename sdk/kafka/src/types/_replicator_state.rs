@@ -120,7 +120,7 @@ impl ::std::fmt::Display for ReplicatorState {
             ReplicatorState::Failed => write!(f, "FAILED"),
             ReplicatorState::Running => write!(f, "RUNNING"),
             ReplicatorState::Updating => write!(f, "UPDATING"),
-            ReplicatorState::Unknown(value) => write!(f, "{}", value),
+            ReplicatorState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

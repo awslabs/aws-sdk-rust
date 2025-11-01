@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RuleVerdictAttribute {
         match self {
             RuleVerdictAttribute::Dkim => write!(f, "DKIM"),
             RuleVerdictAttribute::Spf => write!(f, "SPF"),
-            RuleVerdictAttribute::Unknown(value) => write!(f, "{}", value),
+            RuleVerdictAttribute::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MacModificationTaskType {
         match self {
             MacModificationTaskType::SipModification => write!(f, "sip-modification"),
             MacModificationTaskType::VolumeOwnershipDelegation => write!(f, "volume-ownership-delegation"),
-            MacModificationTaskType::Unknown(value) => write!(f, "{}", value),
+            MacModificationTaskType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

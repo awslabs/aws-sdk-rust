@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SlotTypeFilterName {
         match self {
             SlotTypeFilterName::ExternalSourceType => write!(f, "ExternalSourceType"),
             SlotTypeFilterName::SlotTypeName => write!(f, "SlotTypeName"),
-            SlotTypeFilterName::Unknown(value) => write!(f, "{}", value),
+            SlotTypeFilterName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

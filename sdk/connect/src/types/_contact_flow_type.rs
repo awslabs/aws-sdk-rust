@@ -161,7 +161,7 @@ impl ::std::fmt::Display for ContactFlowType {
             ContactFlowType::CustomerWhisper => write!(f, "CUSTOMER_WHISPER"),
             ContactFlowType::OutboundWhisper => write!(f, "OUTBOUND_WHISPER"),
             ContactFlowType::QueueTransfer => write!(f, "QUEUE_TRANSFER"),
-            ContactFlowType::Unknown(value) => write!(f, "{}", value),
+            ContactFlowType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

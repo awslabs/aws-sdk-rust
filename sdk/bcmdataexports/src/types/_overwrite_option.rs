@@ -102,7 +102,7 @@ impl ::std::fmt::Display for OverwriteOption {
         match self {
             OverwriteOption::CreateNewReport => write!(f, "CREATE_NEW_REPORT"),
             OverwriteOption::OverwriteReport => write!(f, "OVERWRITE_REPORT"),
-            OverwriteOption::Unknown(value) => write!(f, "{}", value),
+            OverwriteOption::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

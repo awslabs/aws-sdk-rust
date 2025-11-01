@@ -126,7 +126,7 @@ impl ::std::fmt::Display for RuleAddressListEmailAttribute {
             RuleAddressListEmailAttribute::Recipient => write!(f, "RECIPIENT"),
             RuleAddressListEmailAttribute::Sender => write!(f, "SENDER"),
             RuleAddressListEmailAttribute::To => write!(f, "TO"),
-            RuleAddressListEmailAttribute::Unknown(value) => write!(f, "{}", value),
+            RuleAddressListEmailAttribute::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

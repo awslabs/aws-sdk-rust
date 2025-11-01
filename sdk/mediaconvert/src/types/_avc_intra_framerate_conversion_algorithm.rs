@@ -114,7 +114,7 @@ impl ::std::fmt::Display for AvcIntraFramerateConversionAlgorithm {
             AvcIntraFramerateConversionAlgorithm::Frameformer => write!(f, "FRAMEFORMER"),
             AvcIntraFramerateConversionAlgorithm::Interpolate => write!(f, "INTERPOLATE"),
             AvcIntraFramerateConversionAlgorithm::MaintainFrameCount => write!(f, "MAINTAIN_FRAME_COUNT"),
-            AvcIntraFramerateConversionAlgorithm::Unknown(value) => write!(f, "{}", value),
+            AvcIntraFramerateConversionAlgorithm::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

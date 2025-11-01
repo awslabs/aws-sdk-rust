@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SdiSourceType {
         match self {
             SdiSourceType::Quad => write!(f, "QUAD"),
             SdiSourceType::Single => write!(f, "SINGLE"),
-            SdiSourceType::Unknown(value) => write!(f, "{}", value),
+            SdiSourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

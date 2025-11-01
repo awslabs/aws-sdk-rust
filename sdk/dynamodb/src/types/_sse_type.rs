@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SseType {
         match self {
             SseType::Aes256 => write!(f, "AES256"),
             SseType::Kms => write!(f, "KMS"),
-            SseType::Unknown(value) => write!(f, "{}", value),
+            SseType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

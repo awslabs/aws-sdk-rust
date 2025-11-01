@@ -114,7 +114,7 @@ impl ::std::fmt::Display for UserStackAssociationErrorCode {
             UserStackAssociationErrorCode::InternalError => write!(f, "INTERNAL_ERROR"),
             UserStackAssociationErrorCode::StackNotFound => write!(f, "STACK_NOT_FOUND"),
             UserStackAssociationErrorCode::UserNameNotFound => write!(f, "USER_NAME_NOT_FOUND"),
-            UserStackAssociationErrorCode::Unknown(value) => write!(f, "{}", value),
+            UserStackAssociationErrorCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

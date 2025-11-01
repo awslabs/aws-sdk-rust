@@ -114,7 +114,7 @@ impl ::std::fmt::Display for AdditionalConstraintsElement {
             AdditionalConstraintsElement::RequireLowercase => write!(f, "REQUIRE_LOWERCASE"),
             AdditionalConstraintsElement::RequireSymbol => write!(f, "REQUIRE_SYMBOL"),
             AdditionalConstraintsElement::RequireUppercase => write!(f, "REQUIRE_UPPERCASE"),
-            AdditionalConstraintsElement::Unknown(value) => write!(f, "{}", value),
+            AdditionalConstraintsElement::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

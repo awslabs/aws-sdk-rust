@@ -364,7 +364,7 @@ impl ::std::fmt::Display for JdbcDataType {
             JdbcDataType::Tinyint => write!(f, "TINYINT"),
             JdbcDataType::Varbinary => write!(f, "VARBINARY"),
             JdbcDataType::Varchar => write!(f, "VARCHAR"),
-            JdbcDataType::Unknown(value) => write!(f, "{}", value),
+            JdbcDataType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

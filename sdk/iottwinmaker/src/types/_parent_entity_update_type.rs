@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ParentEntityUpdateType {
         match self {
             ParentEntityUpdateType::Delete => write!(f, "DELETE"),
             ParentEntityUpdateType::Update => write!(f, "UPDATE"),
-            ParentEntityUpdateType::Unknown(value) => write!(f, "{}", value),
+            ParentEntityUpdateType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

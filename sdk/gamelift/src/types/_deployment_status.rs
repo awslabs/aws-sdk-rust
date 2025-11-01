@@ -140,7 +140,7 @@ impl ::std::fmt::Display for DeploymentStatus {
             DeploymentStatus::Pending => write!(f, "PENDING"),
             DeploymentStatus::RollbackComplete => write!(f, "ROLLBACK_COMPLETE"),
             DeploymentStatus::RollbackInProgress => write!(f, "ROLLBACK_IN_PROGRESS"),
-            DeploymentStatus::Unknown(value) => write!(f, "{}", value),
+            DeploymentStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

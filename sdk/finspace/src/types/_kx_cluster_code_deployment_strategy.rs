@@ -108,7 +108,7 @@ impl ::std::fmt::Display for KxClusterCodeDeploymentStrategy {
             KxClusterCodeDeploymentStrategy::Force => write!(f, "FORCE"),
             KxClusterCodeDeploymentStrategy::NoRestart => write!(f, "NO_RESTART"),
             KxClusterCodeDeploymentStrategy::Rolling => write!(f, "ROLLING"),
-            KxClusterCodeDeploymentStrategy::Unknown(value) => write!(f, "{}", value),
+            KxClusterCodeDeploymentStrategy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

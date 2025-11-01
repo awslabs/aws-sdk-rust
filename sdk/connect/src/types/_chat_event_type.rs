@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ChatEventType {
             ChatEventType::Disconnect => write!(f, "DISCONNECT"),
             ChatEventType::Event => write!(f, "EVENT"),
             ChatEventType::Message => write!(f, "MESSAGE"),
-            ChatEventType::Unknown(value) => write!(f, "{}", value),
+            ChatEventType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

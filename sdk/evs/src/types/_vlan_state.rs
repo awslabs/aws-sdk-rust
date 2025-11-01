@@ -120,7 +120,7 @@ impl ::std::fmt::Display for VlanState {
             VlanState::Creating => write!(f, "CREATING"),
             VlanState::Deleted => write!(f, "DELETED"),
             VlanState::Deleting => write!(f, "DELETING"),
-            VlanState::Unknown(value) => write!(f, "{}", value),
+            VlanState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

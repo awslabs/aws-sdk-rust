@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DefaultRouteTablePropagationValue {
         match self {
             DefaultRouteTablePropagationValue::Disable => write!(f, "disable"),
             DefaultRouteTablePropagationValue::Enable => write!(f, "enable"),
-            DefaultRouteTablePropagationValue::Unknown(value) => write!(f, "{}", value),
+            DefaultRouteTablePropagationValue::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

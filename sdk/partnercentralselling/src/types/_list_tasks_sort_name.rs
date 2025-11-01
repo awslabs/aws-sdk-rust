@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ListTasksSortName {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ListTasksSortName::StartTime => write!(f, "StartTime"),
-            ListTasksSortName::Unknown(value) => write!(f, "{}", value),
+            ListTasksSortName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

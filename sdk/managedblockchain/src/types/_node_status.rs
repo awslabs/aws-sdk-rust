@@ -154,7 +154,7 @@ impl ::std::fmt::Display for NodeStatus {
             NodeStatus::InaccessibleEncryptionKey => write!(f, "INACCESSIBLE_ENCRYPTION_KEY"),
             NodeStatus::Unhealthy => write!(f, "UNHEALTHY"),
             NodeStatus::Updating => write!(f, "UPDATING"),
-            NodeStatus::Unknown(value) => write!(f, "{}", value),
+            NodeStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

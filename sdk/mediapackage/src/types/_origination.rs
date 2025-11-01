@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Origination {
         match self {
             Origination::Allow => write!(f, "ALLOW"),
             Origination::Deny => write!(f, "DENY"),
-            Origination::Unknown(value) => write!(f, "{}", value),
+            Origination::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

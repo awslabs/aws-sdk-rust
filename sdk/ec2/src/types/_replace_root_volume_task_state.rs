@@ -126,7 +126,7 @@ impl ::std::fmt::Display for ReplaceRootVolumeTaskState {
             ReplaceRootVolumeTaskState::InProgress => write!(f, "in-progress"),
             ReplaceRootVolumeTaskState::Pending => write!(f, "pending"),
             ReplaceRootVolumeTaskState::Succeeded => write!(f, "succeeded"),
-            ReplaceRootVolumeTaskState::Unknown(value) => write!(f, "{}", value),
+            ReplaceRootVolumeTaskState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

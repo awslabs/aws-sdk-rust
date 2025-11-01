@@ -110,7 +110,7 @@ impl ::std::fmt::Display for BehaviorOnMxFailure {
         match self {
             BehaviorOnMxFailure::RejectMessage => write!(f, "REJECT_MESSAGE"),
             BehaviorOnMxFailure::UseDefaultValue => write!(f, "USE_DEFAULT_VALUE"),
-            BehaviorOnMxFailure::Unknown(value) => write!(f, "{}", value),
+            BehaviorOnMxFailure::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -112,7 +112,7 @@ impl ::std::fmt::Display for RouteVehicleIncidentSeverity {
             RouteVehicleIncidentSeverity::High => write!(f, "High"),
             RouteVehicleIncidentSeverity::Low => write!(f, "Low"),
             RouteVehicleIncidentSeverity::Medium => write!(f, "Medium"),
-            RouteVehicleIncidentSeverity::Unknown(value) => write!(f, "{}", value),
+            RouteVehicleIncidentSeverity::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

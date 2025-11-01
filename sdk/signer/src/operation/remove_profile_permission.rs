@@ -180,6 +180,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for RemoveProfil
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::remove_profile_permission::RemoveProfilePermissionInput,
                 output: &mut ::std::string::String,

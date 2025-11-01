@@ -120,7 +120,7 @@ impl ::std::fmt::Display for SearchState {
             SearchState::Failed => write!(f, "FAILED"),
             SearchState::Queued => write!(f, "QUEUED"),
             SearchState::Running => write!(f, "RUNNING"),
-            SearchState::Unknown(value) => write!(f, "{}", value),
+            SearchState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

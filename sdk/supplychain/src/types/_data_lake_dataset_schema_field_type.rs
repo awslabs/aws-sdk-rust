@@ -120,7 +120,7 @@ impl ::std::fmt::Display for DataLakeDatasetSchemaFieldType {
             DataLakeDatasetSchemaFieldType::Long => write!(f, "LONG"),
             DataLakeDatasetSchemaFieldType::String => write!(f, "STRING"),
             DataLakeDatasetSchemaFieldType::Timestamp => write!(f, "TIMESTAMP"),
-            DataLakeDatasetSchemaFieldType::Unknown(value) => write!(f, "{}", value),
+            DataLakeDatasetSchemaFieldType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

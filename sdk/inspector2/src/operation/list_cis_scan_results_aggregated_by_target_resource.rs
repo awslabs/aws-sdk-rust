@@ -182,6 +182,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListCisScanR
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::list_cis_scan_results_aggregated_by_target_resource::ListCisScanResultsAggregatedByTargetResourceInput,
                 output: &mut ::std::string::String,

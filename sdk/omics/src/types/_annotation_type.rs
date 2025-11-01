@@ -140,7 +140,7 @@ impl ::std::fmt::Display for AnnotationType {
             AnnotationType::ChrStartEndRefAltZeroBase => write!(f, "CHR_START_END_REF_ALT_ZERO_BASE"),
             AnnotationType::ChrStartEndZeroBase => write!(f, "CHR_START_END_ZERO_BASE"),
             AnnotationType::Generic => write!(f, "GENERIC"),
-            AnnotationType::Unknown(value) => write!(f, "{}", value),
+            AnnotationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

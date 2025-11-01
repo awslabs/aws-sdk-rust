@@ -96,7 +96,7 @@ impl ::std::fmt::Display for RuleType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             RuleType::MetadataFormEnforcement => write!(f, "METADATA_FORM_ENFORCEMENT"),
-            RuleType::Unknown(value) => write!(f, "{}", value),
+            RuleType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

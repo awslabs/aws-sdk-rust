@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ChannelType {
             ChannelType::Kik => write!(f, "Kik"),
             ChannelType::Slack => write!(f, "Slack"),
             ChannelType::TwilioSms => write!(f, "Twilio-Sms"),
-            ChannelType::Unknown(value) => write!(f, "{}", value),
+            ChannelType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

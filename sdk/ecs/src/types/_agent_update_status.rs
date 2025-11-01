@@ -126,7 +126,7 @@ impl ::std::fmt::Display for AgentUpdateStatus {
             AgentUpdateStatus::Staging => write!(f, "STAGING"),
             AgentUpdateStatus::Updated => write!(f, "UPDATED"),
             AgentUpdateStatus::Updating => write!(f, "UPDATING"),
-            AgentUpdateStatus::Unknown(value) => write!(f, "{}", value),
+            AgentUpdateStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

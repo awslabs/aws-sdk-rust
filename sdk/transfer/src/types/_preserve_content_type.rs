@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PreserveContentType {
         match self {
             PreserveContentType::Disabled => write!(f, "DISABLED"),
             PreserveContentType::Enabled => write!(f, "ENABLED"),
-            PreserveContentType::Unknown(value) => write!(f, "{}", value),
+            PreserveContentType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

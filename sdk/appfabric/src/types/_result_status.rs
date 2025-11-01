@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ResultStatus {
             ResultStatus::Expired => write!(f, "EXPIRED"),
             ResultStatus::Failed => write!(f, "FAILED"),
             ResultStatus::InProgress => write!(f, "IN_PROGRESS"),
-            ResultStatus::Unknown(value) => write!(f, "{}", value),
+            ResultStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

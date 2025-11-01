@@ -108,7 +108,7 @@ impl ::std::fmt::Display for SystemLogLevel {
             SystemLogLevel::Debug => write!(f, "DEBUG"),
             SystemLogLevel::Info => write!(f, "INFO"),
             SystemLogLevel::Warn => write!(f, "WARN"),
-            SystemLogLevel::Unknown(value) => write!(f, "{}", value),
+            SystemLogLevel::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

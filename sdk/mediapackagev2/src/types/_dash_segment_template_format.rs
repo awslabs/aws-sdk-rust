@@ -96,7 +96,7 @@ impl ::std::fmt::Display for DashSegmentTemplateFormat {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             DashSegmentTemplateFormat::NumberWithTimeline => write!(f, "NUMBER_WITH_TIMELINE"),
-            DashSegmentTemplateFormat::Unknown(value) => write!(f, "{}", value),
+            DashSegmentTemplateFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

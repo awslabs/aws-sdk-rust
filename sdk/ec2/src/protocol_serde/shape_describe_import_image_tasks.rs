@@ -53,8 +53,7 @@ pub fn de_describe_import_image_tasks(
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeImportImageTasksResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected DescribeImportImageTasksResponse got {:?}",
-            start_el
+            "invalid root, expected DescribeImportImageTasksResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

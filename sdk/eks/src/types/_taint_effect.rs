@@ -108,7 +108,7 @@ impl ::std::fmt::Display for TaintEffect {
             TaintEffect::NoExecute => write!(f, "NO_EXECUTE"),
             TaintEffect::NoSchedule => write!(f, "NO_SCHEDULE"),
             TaintEffect::PreferNoSchedule => write!(f, "PREFER_NO_SCHEDULE"),
-            TaintEffect::Unknown(value) => write!(f, "{}", value),
+            TaintEffect::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for GameServerUtilizationStatus {
         match self {
             GameServerUtilizationStatus::Available => write!(f, "AVAILABLE"),
             GameServerUtilizationStatus::Utilized => write!(f, "UTILIZED"),
-            GameServerUtilizationStatus::Unknown(value) => write!(f, "{}", value),
+            GameServerUtilizationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

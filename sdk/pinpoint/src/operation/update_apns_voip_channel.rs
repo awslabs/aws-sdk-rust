@@ -180,6 +180,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for UpdateApnsVo
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::update_apns_voip_channel::UpdateApnsVoipChannelInput,
                 output: &mut ::std::string::String,

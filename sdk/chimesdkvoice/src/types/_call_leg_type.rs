@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CallLegType {
         match self {
             CallLegType::Callee => write!(f, "Callee"),
             CallLegType::Caller => write!(f, "Caller"),
-            CallLegType::Unknown(value) => write!(f, "{}", value),
+            CallLegType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

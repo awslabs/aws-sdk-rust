@@ -96,7 +96,7 @@ impl ::std::fmt::Display for AiPromptTemplateType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             AiPromptTemplateType::Text => write!(f, "TEXT"),
-            AiPromptTemplateType::Unknown(value) => write!(f, "{}", value),
+            AiPromptTemplateType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

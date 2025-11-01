@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Connectivity {
         match self {
             Connectivity::Connected => write!(f, "CONNECTED"),
             Connectivity::Disconnected => write!(f, "DISCONNECTED"),
-            Connectivity::Unknown(value) => write!(f, "{}", value),
+            Connectivity::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

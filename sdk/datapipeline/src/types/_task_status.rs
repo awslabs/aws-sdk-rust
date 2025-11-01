@@ -108,7 +108,7 @@ impl ::std::fmt::Display for TaskStatus {
             TaskStatus::Failed => write!(f, "FAILED"),
             TaskStatus::False => write!(f, "FALSE"),
             TaskStatus::Finished => write!(f, "FINISHED"),
-            TaskStatus::Unknown(value) => write!(f, "{}", value),
+            TaskStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

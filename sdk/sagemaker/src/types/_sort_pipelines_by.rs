@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SortPipelinesBy {
         match self {
             SortPipelinesBy::CreationTime => write!(f, "CreationTime"),
             SortPipelinesBy::Name => write!(f, "Name"),
-            SortPipelinesBy::Unknown(value) => write!(f, "{}", value),
+            SortPipelinesBy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

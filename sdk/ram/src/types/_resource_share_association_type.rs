@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ResourceShareAssociationType {
         match self {
             ResourceShareAssociationType::Principal => write!(f, "PRINCIPAL"),
             ResourceShareAssociationType::Resource => write!(f, "RESOURCE"),
-            ResourceShareAssociationType::Unknown(value) => write!(f, "{}", value),
+            ResourceShareAssociationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for QueryType {
         match self {
             QueryType::BusinessChain => write!(f, "BusinessChain"),
             QueryType::Category => write!(f, "Category"),
-            QueryType::Unknown(value) => write!(f, "{}", value),
+            QueryType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

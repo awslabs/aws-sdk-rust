@@ -108,7 +108,7 @@ impl ::std::fmt::Display for HubContentType {
             HubContentType::Model => write!(f, "Model"),
             HubContentType::ModelReference => write!(f, "ModelReference"),
             HubContentType::Notebook => write!(f, "Notebook"),
-            HubContentType::Unknown(value) => write!(f, "{}", value),
+            HubContentType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

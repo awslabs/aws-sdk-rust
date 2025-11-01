@@ -102,7 +102,7 @@ impl ::std::fmt::Display for InstanceInterruptionBehaviorEnum {
         match self {
             InstanceInterruptionBehaviorEnum::Hibernate => write!(f, "hibernate"),
             InstanceInterruptionBehaviorEnum::Stop => write!(f, "stop"),
-            InstanceInterruptionBehaviorEnum::Unknown(value) => write!(f, "{}", value),
+            InstanceInterruptionBehaviorEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

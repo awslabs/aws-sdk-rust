@@ -186,6 +186,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for StopPHIDetec
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::stop_phi_detection_job::StopPhiDetectionJobInput,
                 output: &mut ::std::string::String,

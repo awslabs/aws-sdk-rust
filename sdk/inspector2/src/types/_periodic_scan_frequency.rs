@@ -108,7 +108,7 @@ impl ::std::fmt::Display for PeriodicScanFrequency {
             PeriodicScanFrequency::Monthly => write!(f, "MONTHLY"),
             PeriodicScanFrequency::Never => write!(f, "NEVER"),
             PeriodicScanFrequency::Weekly => write!(f, "WEEKLY"),
-            PeriodicScanFrequency::Unknown(value) => write!(f, "{}", value),
+            PeriodicScanFrequency::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -110,7 +110,7 @@ impl ::std::fmt::Display for RouteWeightConstraintType {
             RouteWeightConstraintType::Current => write!(f, "Current"),
             RouteWeightConstraintType::Gross => write!(f, "Gross"),
             RouteWeightConstraintType::UnknownValue => write!(f, "Unknown"),
-            RouteWeightConstraintType::Unknown(value) => write!(f, "{}", value),
+            RouteWeightConstraintType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

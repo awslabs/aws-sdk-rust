@@ -120,7 +120,7 @@ impl ::std::fmt::Display for ScalarType {
             ScalarType::Int => write!(f, "INT"),
             ScalarType::String => write!(f, "STRING"),
             ScalarType::Timestamp => write!(f, "TIMESTAMP"),
-            ScalarType::Unknown(value) => write!(f, "{}", value),
+            ScalarType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

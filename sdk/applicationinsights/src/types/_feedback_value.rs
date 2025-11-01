@@ -108,7 +108,7 @@ impl ::std::fmt::Display for FeedbackValue {
             FeedbackValue::NotSpecified => write!(f, "NOT_SPECIFIED"),
             FeedbackValue::NotUseful => write!(f, "NOT_USEFUL"),
             FeedbackValue::Useful => write!(f, "USEFUL"),
-            FeedbackValue::Unknown(value) => write!(f, "{}", value),
+            FeedbackValue::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

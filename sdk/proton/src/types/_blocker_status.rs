@@ -102,7 +102,7 @@ impl ::std::fmt::Display for BlockerStatus {
         match self {
             BlockerStatus::Active => write!(f, "ACTIVE"),
             BlockerStatus::Resolved => write!(f, "RESOLVED"),
-            BlockerStatus::Unknown(value) => write!(f, "{}", value),
+            BlockerStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

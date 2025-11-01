@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PackagingType {
         match self {
             PackagingType::Appstream2 => write!(f, "APPSTREAM2"),
             PackagingType::Custom => write!(f, "CUSTOM"),
-            PackagingType::Unknown(value) => write!(f, "{}", value),
+            PackagingType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

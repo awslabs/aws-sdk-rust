@@ -108,7 +108,7 @@ impl ::std::fmt::Display for JobTemplateListBy {
             JobTemplateListBy::CreationDate => write!(f, "CREATION_DATE"),
             JobTemplateListBy::Name => write!(f, "NAME"),
             JobTemplateListBy::System => write!(f, "SYSTEM"),
-            JobTemplateListBy::Unknown(value) => write!(f, "{}", value),
+            JobTemplateListBy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

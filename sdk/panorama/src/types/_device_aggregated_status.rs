@@ -161,7 +161,7 @@ impl ::std::fmt::Display for DeviceAggregatedStatus {
             DeviceAggregatedStatus::Pending => write!(f, "PENDING"),
             DeviceAggregatedStatus::Rebooting => write!(f, "REBOOTING"),
             DeviceAggregatedStatus::UpdateNeeded => write!(f, "UPDATE_NEEDED"),
-            DeviceAggregatedStatus::Unknown(value) => write!(f, "{}", value),
+            DeviceAggregatedStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

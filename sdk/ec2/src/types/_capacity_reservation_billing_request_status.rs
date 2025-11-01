@@ -126,7 +126,7 @@ impl ::std::fmt::Display for CapacityReservationBillingRequestStatus {
             CapacityReservationBillingRequestStatus::Pending => write!(f, "pending"),
             CapacityReservationBillingRequestStatus::Rejected => write!(f, "rejected"),
             CapacityReservationBillingRequestStatus::Revoked => write!(f, "revoked"),
-            CapacityReservationBillingRequestStatus::Unknown(value) => write!(f, "{}", value),
+            CapacityReservationBillingRequestStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

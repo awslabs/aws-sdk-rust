@@ -108,7 +108,7 @@ impl ::std::fmt::Display for UpdateType {
             UpdateType::Add => write!(f, "ADD"),
             UpdateType::Remove => write!(f, "REMOVE"),
             UpdateType::Replace => write!(f, "REPLACE"),
-            UpdateType::Unknown(value) => write!(f, "{}", value),
+            UpdateType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

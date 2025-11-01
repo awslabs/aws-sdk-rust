@@ -126,7 +126,7 @@ impl ::std::fmt::Display for ImageReferenceResourceType {
             ImageReferenceResourceType::ImageBuilderContainerRecipe => write!(f, "imagebuilder:ContainerRecipe"),
             ImageReferenceResourceType::ImageBuilderImageRecipe => write!(f, "imagebuilder:ImageRecipe"),
             ImageReferenceResourceType::SsmParameter => write!(f, "ssm:Parameter"),
-            ImageReferenceResourceType::Unknown(value) => write!(f, "{}", value),
+            ImageReferenceResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

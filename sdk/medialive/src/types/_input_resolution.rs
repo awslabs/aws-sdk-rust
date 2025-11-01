@@ -108,7 +108,7 @@ impl ::std::fmt::Display for InputResolution {
             InputResolution::Hd => write!(f, "HD"),
             InputResolution::Sd => write!(f, "SD"),
             InputResolution::Uhd => write!(f, "UHD"),
-            InputResolution::Unknown(value) => write!(f, "{}", value),
+            InputResolution::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

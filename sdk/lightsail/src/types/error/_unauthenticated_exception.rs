@@ -39,7 +39,7 @@ impl ::std::fmt::Display for UnauthenticatedException {
         ::std::write!(f, "UnauthenticatedException")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
             {
-                ::std::write!(f, ": {}", inner_1)?;
+                ::std::write!(f, ": {inner_1}")?;
             }
         }
         Ok(())

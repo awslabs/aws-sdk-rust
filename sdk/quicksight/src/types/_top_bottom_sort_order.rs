@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TopBottomSortOrder {
         match self {
             TopBottomSortOrder::AbsoluteDifference => write!(f, "ABSOLUTE_DIFFERENCE"),
             TopBottomSortOrder::PercentDifference => write!(f, "PERCENT_DIFFERENCE"),
-            TopBottomSortOrder::Unknown(value) => write!(f, "{}", value),
+            TopBottomSortOrder::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ImageStandardGenerativeFieldType {
         match self {
             ImageStandardGenerativeFieldType::Iab => write!(f, "IAB"),
             ImageStandardGenerativeFieldType::ImageSummary => write!(f, "IMAGE_SUMMARY"),
-            ImageStandardGenerativeFieldType::Unknown(value) => write!(f, "{}", value),
+            ImageStandardGenerativeFieldType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

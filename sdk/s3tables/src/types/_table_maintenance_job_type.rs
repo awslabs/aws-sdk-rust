@@ -108,7 +108,7 @@ impl ::std::fmt::Display for TableMaintenanceJobType {
             TableMaintenanceJobType::IcebergCompaction => write!(f, "icebergCompaction"),
             TableMaintenanceJobType::IcebergSnapshotManagement => write!(f, "icebergSnapshotManagement"),
             TableMaintenanceJobType::IcebergUnreferencedFileRemoval => write!(f, "icebergUnreferencedFileRemoval"),
-            TableMaintenanceJobType::Unknown(value) => write!(f, "{}", value),
+            TableMaintenanceJobType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

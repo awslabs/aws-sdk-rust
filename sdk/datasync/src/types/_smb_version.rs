@@ -120,7 +120,7 @@ impl ::std::fmt::Display for SmbVersion {
             SmbVersion::Smb2 => write!(f, "SMB2"),
             SmbVersion::Smb20 => write!(f, "SMB2_0"),
             SmbVersion::Smb3 => write!(f, "SMB3"),
-            SmbVersion::Unknown(value) => write!(f, "{}", value),
+            SmbVersion::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

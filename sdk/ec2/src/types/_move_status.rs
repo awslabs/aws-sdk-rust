@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MoveStatus {
         match self {
             MoveStatus::MovingToVpc => write!(f, "movingToVpc"),
             MoveStatus::RestoringToClassic => write!(f, "restoringToClassic"),
-            MoveStatus::Unknown(value) => write!(f, "{}", value),
+            MoveStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

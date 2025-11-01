@@ -108,7 +108,7 @@ impl ::std::fmt::Display for GranteeType {
             GranteeType::DirectoryGroup => write!(f, "DIRECTORY_GROUP"),
             GranteeType::DirectoryUser => write!(f, "DIRECTORY_USER"),
             GranteeType::Iam => write!(f, "IAM"),
-            GranteeType::Unknown(value) => write!(f, "{}", value),
+            GranteeType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

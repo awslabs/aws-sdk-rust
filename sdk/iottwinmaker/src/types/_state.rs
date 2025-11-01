@@ -120,7 +120,7 @@ impl ::std::fmt::Display for State {
             State::Deleting => write!(f, "DELETING"),
             State::Error => write!(f, "ERROR"),
             State::Updating => write!(f, "UPDATING"),
-            State::Unknown(value) => write!(f, "{}", value),
+            State::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

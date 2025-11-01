@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AdvancedInputFilter {
         match self {
             AdvancedInputFilter::Disabled => write!(f, "DISABLED"),
             AdvancedInputFilter::Enabled => write!(f, "ENABLED"),
-            AdvancedInputFilter::Unknown(value) => write!(f, "{}", value),
+            AdvancedInputFilter::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

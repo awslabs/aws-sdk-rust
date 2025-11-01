@@ -138,7 +138,7 @@ impl ::std::fmt::Display for NoiseReducerFilter {
             NoiseReducerFilter::Sharpen => write!(f, "SHARPEN"),
             NoiseReducerFilter::Spatial => write!(f, "SPATIAL"),
             NoiseReducerFilter::Temporal => write!(f, "TEMPORAL"),
-            NoiseReducerFilter::Unknown(value) => write!(f, "{}", value),
+            NoiseReducerFilter::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

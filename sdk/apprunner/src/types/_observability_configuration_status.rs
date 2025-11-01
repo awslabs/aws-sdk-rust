@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ObservabilityConfigurationStatus {
         match self {
             ObservabilityConfigurationStatus::Active => write!(f, "ACTIVE"),
             ObservabilityConfigurationStatus::Inactive => write!(f, "INACTIVE"),
-            ObservabilityConfigurationStatus::Unknown(value) => write!(f, "{}", value),
+            ObservabilityConfigurationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

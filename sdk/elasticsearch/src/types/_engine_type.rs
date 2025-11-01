@@ -102,7 +102,7 @@ impl ::std::fmt::Display for EngineType {
         match self {
             EngineType::Elasticsearch => write!(f, "Elasticsearch"),
             EngineType::OpenSearch => write!(f, "OpenSearch"),
-            EngineType::Unknown(value) => write!(f, "{}", value),
+            EngineType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for RetentionLockType {
             RetentionLockType::Compliance => write!(f, "COMPLIANCE"),
             RetentionLockType::Governance => write!(f, "GOVERNANCE"),
             RetentionLockType::None => write!(f, "NONE"),
-            RetentionLockType::Unknown(value) => write!(f, "{}", value),
+            RetentionLockType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

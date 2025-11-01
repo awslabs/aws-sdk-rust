@@ -108,7 +108,7 @@ impl ::std::fmt::Display for WorkspaceBundleState {
             WorkspaceBundleState::Available => write!(f, "AVAILABLE"),
             WorkspaceBundleState::Error => write!(f, "ERROR"),
             WorkspaceBundleState::Pending => write!(f, "PENDING"),
-            WorkspaceBundleState::Unknown(value) => write!(f, "{}", value),
+            WorkspaceBundleState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

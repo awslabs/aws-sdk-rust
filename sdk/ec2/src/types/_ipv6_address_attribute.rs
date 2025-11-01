@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Ipv6AddressAttribute {
         match self {
             Ipv6AddressAttribute::Private => write!(f, "private"),
             Ipv6AddressAttribute::Public => write!(f, "public"),
-            Ipv6AddressAttribute::Unknown(value) => write!(f, "{}", value),
+            Ipv6AddressAttribute::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

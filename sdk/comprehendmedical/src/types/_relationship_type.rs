@@ -245,7 +245,7 @@ impl ::std::fmt::Display for RelationshipType {
             RelationshipType::TestValue => write!(f, "TEST_VALUE"),
             RelationshipType::Usage => write!(f, "USAGE"),
             RelationshipType::WithDosage => write!(f, "WITH_DOSAGE"),
-            RelationshipType::Unknown(value) => write!(f, "{}", value),
+            RelationshipType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

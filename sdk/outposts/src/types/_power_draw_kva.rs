@@ -114,7 +114,7 @@ impl ::std::fmt::Display for PowerDrawKva {
             PowerDrawKva::Power15Kva => write!(f, "POWER_15_KVA"),
             PowerDrawKva::Power30Kva => write!(f, "POWER_30_KVA"),
             PowerDrawKva::Power5Kva => write!(f, "POWER_5_KVA"),
-            PowerDrawKva::Unknown(value) => write!(f, "{}", value),
+            PowerDrawKva::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

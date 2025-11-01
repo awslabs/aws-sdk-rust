@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TokenState {
         match self {
             TokenState::Expired => write!(f, "expired"),
             TokenState::Valid => write!(f, "valid"),
-            TokenState::Unknown(value) => write!(f, "{}", value),
+            TokenState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

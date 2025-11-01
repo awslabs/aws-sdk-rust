@@ -140,7 +140,7 @@ impl ::std::fmt::Display for ManagedCertificateStatus {
             ManagedCertificateStatus::PendingValidation => write!(f, "pending-validation"),
             ManagedCertificateStatus::Revoked => write!(f, "revoked"),
             ManagedCertificateStatus::ValidationTimedOut => write!(f, "validation-timed-out"),
-            ManagedCertificateStatus::Unknown(value) => write!(f, "{}", value),
+            ManagedCertificateStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

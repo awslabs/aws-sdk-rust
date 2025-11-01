@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SearchAllRelatedItemsSortProperty {
         match self {
             SearchAllRelatedItemsSortProperty::AssociationTime => write!(f, "AssociationTime"),
             SearchAllRelatedItemsSortProperty::CaseId => write!(f, "CaseId"),
-            SearchAllRelatedItemsSortProperty::Unknown(value) => write!(f, "{}", value),
+            SearchAllRelatedItemsSortProperty::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

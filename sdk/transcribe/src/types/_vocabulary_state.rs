@@ -108,7 +108,7 @@ impl ::std::fmt::Display for VocabularyState {
             VocabularyState::Failed => write!(f, "FAILED"),
             VocabularyState::Pending => write!(f, "PENDING"),
             VocabularyState::Ready => write!(f, "READY"),
-            VocabularyState::Unknown(value) => write!(f, "{}", value),
+            VocabularyState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

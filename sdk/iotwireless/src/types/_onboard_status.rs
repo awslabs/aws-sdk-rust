@@ -114,7 +114,7 @@ impl ::std::fmt::Display for OnboardStatus {
             OnboardStatus::Initialized => write!(f, "INITIALIZED"),
             OnboardStatus::Onboarded => write!(f, "ONBOARDED"),
             OnboardStatus::Pending => write!(f, "PENDING"),
-            OnboardStatus::Unknown(value) => write!(f, "{}", value),
+            OnboardStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

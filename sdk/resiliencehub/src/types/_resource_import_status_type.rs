@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ResourceImportStatusType {
             ResourceImportStatusType::InProgress => write!(f, "InProgress"),
             ResourceImportStatusType::Pending => write!(f, "Pending"),
             ResourceImportStatusType::Success => write!(f, "Success"),
-            ResourceImportStatusType::Unknown(value) => write!(f, "{}", value),
+            ResourceImportStatusType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

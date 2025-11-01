@@ -102,7 +102,7 @@ impl ::std::fmt::Display for LogSubscription {
         match self {
             LogSubscription::Disable => write!(f, "DISABLE"),
             LogSubscription::Enable => write!(f, "ENABLE"),
-            LogSubscription::Unknown(value) => write!(f, "{}", value),
+            LogSubscription::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

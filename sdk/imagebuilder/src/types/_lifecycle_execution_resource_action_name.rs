@@ -114,7 +114,7 @@ impl ::std::fmt::Display for LifecycleExecutionResourceActionName {
             LifecycleExecutionResourceActionName::Delete => write!(f, "DELETE"),
             LifecycleExecutionResourceActionName::Deprecate => write!(f, "DEPRECATE"),
             LifecycleExecutionResourceActionName::Disable => write!(f, "DISABLE"),
-            LifecycleExecutionResourceActionName::Unknown(value) => write!(f, "{}", value),
+            LifecycleExecutionResourceActionName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

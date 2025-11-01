@@ -147,7 +147,7 @@ impl ::std::fmt::Display for SystemInstanceDeploymentStatus {
             SystemInstanceDeploymentStatus::NotDeployed => write!(f, "NOT_DEPLOYED"),
             SystemInstanceDeploymentStatus::PendingDelete => write!(f, "PENDING_DELETE"),
             SystemInstanceDeploymentStatus::UndeployInProgress => write!(f, "UNDEPLOY_IN_PROGRESS"),
-            SystemInstanceDeploymentStatus::Unknown(value) => write!(f, "{}", value),
+            SystemInstanceDeploymentStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

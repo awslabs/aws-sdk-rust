@@ -114,7 +114,7 @@ impl ::std::fmt::Display for Ec2InstanceSortBy {
             Ec2InstanceSortBy::Critical => write!(f, "CRITICAL"),
             Ec2InstanceSortBy::High => write!(f, "HIGH"),
             Ec2InstanceSortBy::NetworkFindings => write!(f, "NETWORK_FINDINGS"),
-            Ec2InstanceSortBy::Unknown(value) => write!(f, "{}", value),
+            Ec2InstanceSortBy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

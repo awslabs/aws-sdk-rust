@@ -102,7 +102,7 @@ impl ::std::fmt::Display for IngestionState {
         match self {
             IngestionState::Disabled => write!(f, "disabled"),
             IngestionState::Enabled => write!(f, "enabled"),
-            IngestionState::Unknown(value) => write!(f, "{}", value),
+            IngestionState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

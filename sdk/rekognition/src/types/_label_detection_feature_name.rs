@@ -96,7 +96,7 @@ impl ::std::fmt::Display for LabelDetectionFeatureName {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             LabelDetectionFeatureName::GeneralLabels => write!(f, "GENERAL_LABELS"),
-            LabelDetectionFeatureName::Unknown(value) => write!(f, "{}", value),
+            LabelDetectionFeatureName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

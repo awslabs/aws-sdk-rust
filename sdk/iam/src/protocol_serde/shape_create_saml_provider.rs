@@ -136,16 +136,14 @@ pub fn de_create_saml_provider(
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateSAMLProviderResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected CreateSAMLProviderResponse got {:?}",
-            start_el
+            "invalid root, expected CreateSAMLProviderResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("CreateSAMLProviderResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected CreateSAMLProviderResult got {:?}",
-                start_el
+                "invalid result, expected CreateSAMLProviderResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

@@ -116,7 +116,7 @@ impl ::std::fmt::Display for InsightStatusValue {
             InsightStatusValue::Passing => write!(f, "PASSING"),
             InsightStatusValue::UnknownValue => write!(f, "UNKNOWN"),
             InsightStatusValue::Warning => write!(f, "WARNING"),
-            InsightStatusValue::Unknown(value) => write!(f, "{}", value),
+            InsightStatusValue::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

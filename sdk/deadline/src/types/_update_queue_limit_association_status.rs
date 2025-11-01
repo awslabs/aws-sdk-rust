@@ -108,7 +108,7 @@ impl ::std::fmt::Display for UpdateQueueLimitAssociationStatus {
             UpdateQueueLimitAssociationStatus::Active => write!(f, "ACTIVE"),
             UpdateQueueLimitAssociationStatus::StopLimitUsageAndCancelTasks => write!(f, "STOP_LIMIT_USAGE_AND_CANCEL_TASKS"),
             UpdateQueueLimitAssociationStatus::StopLimitUsageAndCompleteTasks => write!(f, "STOP_LIMIT_USAGE_AND_COMPLETE_TASKS"),
-            UpdateQueueLimitAssociationStatus::Unknown(value) => write!(f, "{}", value),
+            UpdateQueueLimitAssociationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

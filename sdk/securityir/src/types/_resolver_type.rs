@@ -104,7 +104,7 @@ impl ::std::fmt::Display for ResolverType {
         match self {
             ResolverType::Aws => write!(f, "AWS"),
             ResolverType::SelfValue => write!(f, "Self"),
-            ResolverType::Unknown(value) => write!(f, "{}", value),
+            ResolverType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

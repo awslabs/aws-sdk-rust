@@ -114,7 +114,7 @@ impl ::std::fmt::Display for UpdatePlanExecutionAction {
             UpdatePlanExecutionAction::Resume => write!(f, "resume"),
             UpdatePlanExecutionAction::SwitchToGraceful => write!(f, "switchToGraceful"),
             UpdatePlanExecutionAction::SwitchToUngraceful => write!(f, "switchToUngraceful"),
-            UpdatePlanExecutionAction::Unknown(value) => write!(f, "{}", value),
+            UpdatePlanExecutionAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

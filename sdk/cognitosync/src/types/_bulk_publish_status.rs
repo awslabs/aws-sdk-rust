@@ -114,7 +114,7 @@ impl ::std::fmt::Display for BulkPublishStatus {
             BulkPublishStatus::InProgress => write!(f, "IN_PROGRESS"),
             BulkPublishStatus::NotStarted => write!(f, "NOT_STARTED"),
             BulkPublishStatus::Succeeded => write!(f, "SUCCEEDED"),
-            BulkPublishStatus::Unknown(value) => write!(f, "{}", value),
+            BulkPublishStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

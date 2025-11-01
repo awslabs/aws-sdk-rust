@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ContentType {
             ContentType::CustomPayload => write!(f, "CustomPayload"),
             ContentType::PlainText => write!(f, "PlainText"),
             ContentType::Ssml => write!(f, "SSML"),
-            ContentType::Unknown(value) => write!(f, "{}", value),
+            ContentType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

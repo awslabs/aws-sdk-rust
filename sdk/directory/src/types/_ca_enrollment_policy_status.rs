@@ -126,7 +126,7 @@ impl ::std::fmt::Display for CaEnrollmentPolicyStatus {
             CaEnrollmentPolicyStatus::Impaired => write!(f, "Impaired"),
             CaEnrollmentPolicyStatus::InProgress => write!(f, "InProgress"),
             CaEnrollmentPolicyStatus::Success => write!(f, "Success"),
-            CaEnrollmentPolicyStatus::Unknown(value) => write!(f, "{}", value),
+            CaEnrollmentPolicyStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

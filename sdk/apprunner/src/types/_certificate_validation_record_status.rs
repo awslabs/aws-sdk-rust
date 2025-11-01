@@ -108,7 +108,7 @@ impl ::std::fmt::Display for CertificateValidationRecordStatus {
             CertificateValidationRecordStatus::Failed => write!(f, "FAILED"),
             CertificateValidationRecordStatus::PendingValidation => write!(f, "PENDING_VALIDATION"),
             CertificateValidationRecordStatus::Success => write!(f, "SUCCESS"),
-            CertificateValidationRecordStatus::Unknown(value) => write!(f, "{}", value),
+            CertificateValidationRecordStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

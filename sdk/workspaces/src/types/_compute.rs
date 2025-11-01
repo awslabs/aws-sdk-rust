@@ -168,7 +168,7 @@ impl ::std::fmt::Display for Compute {
             Compute::Powerpro => write!(f, "POWERPRO"),
             Compute::Standard => write!(f, "STANDARD"),
             Compute::Value => write!(f, "VALUE"),
-            Compute::Unknown(value) => write!(f, "{}", value),
+            Compute::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

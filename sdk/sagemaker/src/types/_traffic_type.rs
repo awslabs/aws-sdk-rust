@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TrafficType {
         match self {
             TrafficType::Phases => write!(f, "PHASES"),
             TrafficType::Stairs => write!(f, "STAIRS"),
-            TrafficType::Unknown(value) => write!(f, "{}", value),
+            TrafficType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

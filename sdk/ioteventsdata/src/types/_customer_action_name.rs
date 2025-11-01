@@ -120,7 +120,7 @@ impl ::std::fmt::Display for CustomerActionName {
             CustomerActionName::Enable => write!(f, "ENABLE"),
             CustomerActionName::Reset => write!(f, "RESET"),
             CustomerActionName::Snooze => write!(f, "SNOOZE"),
-            CustomerActionName::Unknown(value) => write!(f, "{}", value),
+            CustomerActionName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

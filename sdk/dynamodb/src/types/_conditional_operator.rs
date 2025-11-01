@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ConditionalOperator {
         match self {
             ConditionalOperator::And => write!(f, "AND"),
             ConditionalOperator::Or => write!(f, "OR"),
-            ConditionalOperator::Unknown(value) => write!(f, "{}", value),
+            ConditionalOperator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

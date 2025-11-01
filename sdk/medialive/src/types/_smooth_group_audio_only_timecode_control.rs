@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SmoothGroupAudioOnlyTimecodeControl {
         match self {
             SmoothGroupAudioOnlyTimecodeControl::Passthrough => write!(f, "PASSTHROUGH"),
             SmoothGroupAudioOnlyTimecodeControl::UseConfiguredClock => write!(f, "USE_CONFIGURED_CLOCK"),
-            SmoothGroupAudioOnlyTimecodeControl::Unknown(value) => write!(f, "{}", value),
+            SmoothGroupAudioOnlyTimecodeControl::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

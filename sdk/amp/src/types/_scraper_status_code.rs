@@ -140,7 +140,7 @@ impl ::std::fmt::Display for ScraperStatusCode {
             ScraperStatusCode::DeletionFailed => write!(f, "DELETION_FAILED"),
             ScraperStatusCode::UpdateFailed => write!(f, "UPDATE_FAILED"),
             ScraperStatusCode::Updating => write!(f, "UPDATING"),
-            ScraperStatusCode::Unknown(value) => write!(f, "{}", value),
+            ScraperStatusCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -120,7 +120,7 @@ impl ::std::fmt::Display for TemplateType {
             TemplateType::Push => write!(f, "PUSH"),
             TemplateType::Sms => write!(f, "SMS"),
             TemplateType::Voice => write!(f, "VOICE"),
-            TemplateType::Unknown(value) => write!(f, "{}", value),
+            TemplateType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

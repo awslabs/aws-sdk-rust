@@ -126,7 +126,7 @@ impl ::std::fmt::Display for ParticipantRecordingState {
             ParticipantRecordingState::Starting => write!(f, "STARTING"),
             ParticipantRecordingState::Stopped => write!(f, "STOPPED"),
             ParticipantRecordingState::Stopping => write!(f, "STOPPING"),
-            ParticipantRecordingState::Unknown(value) => write!(f, "{}", value),
+            ParticipantRecordingState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

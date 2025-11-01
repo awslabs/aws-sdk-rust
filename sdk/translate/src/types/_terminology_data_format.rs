@@ -108,7 +108,7 @@ impl ::std::fmt::Display for TerminologyDataFormat {
             TerminologyDataFormat::Csv => write!(f, "CSV"),
             TerminologyDataFormat::Tmx => write!(f, "TMX"),
             TerminologyDataFormat::Tsv => write!(f, "TSV"),
-            TerminologyDataFormat::Unknown(value) => write!(f, "{}", value),
+            TerminologyDataFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

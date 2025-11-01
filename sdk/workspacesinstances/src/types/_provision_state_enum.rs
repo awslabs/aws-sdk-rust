@@ -133,7 +133,7 @@ impl ::std::fmt::Display for ProvisionStateEnum {
             ProvisionStateEnum::Deallocating => write!(f, "DEALLOCATING"),
             ProvisionStateEnum::ErrorAllocating => write!(f, "ERROR_ALLOCATING"),
             ProvisionStateEnum::ErrorDeallocating => write!(f, "ERROR_DEALLOCATING"),
-            ProvisionStateEnum::Unknown(value) => write!(f, "{}", value),
+            ProvisionStateEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

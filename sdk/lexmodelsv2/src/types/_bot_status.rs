@@ -147,7 +147,7 @@ impl ::std::fmt::Display for BotStatus {
             BotStatus::Inactive => write!(f, "Inactive"),
             BotStatus::Updating => write!(f, "Updating"),
             BotStatus::Versioning => write!(f, "Versioning"),
-            BotStatus::Unknown(value) => write!(f, "{}", value),
+            BotStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

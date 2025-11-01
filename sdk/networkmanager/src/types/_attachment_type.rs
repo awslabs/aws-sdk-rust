@@ -126,7 +126,7 @@ impl ::std::fmt::Display for AttachmentType {
             AttachmentType::SiteToSiteVpn => write!(f, "SITE_TO_SITE_VPN"),
             AttachmentType::TransitGatewayRouteTable => write!(f, "TRANSIT_GATEWAY_ROUTE_TABLE"),
             AttachmentType::Vpc => write!(f, "VPC"),
-            AttachmentType::Unknown(value) => write!(f, "{}", value),
+            AttachmentType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

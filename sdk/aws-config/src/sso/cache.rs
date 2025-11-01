@@ -294,7 +294,7 @@ fn json_parse_loop<'a>(
             }
             other => {
                 return Err(Error::Other(
-                    format!("expected object key, found: {:?}", other).into(),
+                    format!("expected object key, found: {other:?}").into(),
                 ));
             }
         }

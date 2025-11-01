@@ -170,7 +170,7 @@ impl ::std::fmt::Display for Locale {
             Locale::ItIt => write!(f, "it-IT"),
             Locale::JaJp => write!(f, "ja-JP"),
             Locale::KoKr => write!(f, "ko-KR"),
-            Locale::Unknown(value) => write!(f, "{}", value),
+            Locale::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

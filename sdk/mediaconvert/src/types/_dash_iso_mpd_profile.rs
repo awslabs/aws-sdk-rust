@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DashIsoMpdProfile {
         match self {
             DashIsoMpdProfile::MainProfile => write!(f, "MAIN_PROFILE"),
             DashIsoMpdProfile::OnDemandProfile => write!(f, "ON_DEMAND_PROFILE"),
-            DashIsoMpdProfile::Unknown(value) => write!(f, "{}", value),
+            DashIsoMpdProfile::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

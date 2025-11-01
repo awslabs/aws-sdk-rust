@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ExportViewType {
         match self {
             ExportViewType::NewAndOldImages => write!(f, "NEW_AND_OLD_IMAGES"),
             ExportViewType::NewImage => write!(f, "NEW_IMAGE"),
-            ExportViewType::Unknown(value) => write!(f, "{}", value),
+            ExportViewType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

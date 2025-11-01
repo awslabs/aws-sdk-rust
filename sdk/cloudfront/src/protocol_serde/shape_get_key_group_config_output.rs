@@ -24,8 +24,7 @@ pub fn de_key_group_config(inp: &[u8]) -> std::result::Result<crate::types::KeyG
     let start_el = decoder.start_el();
     if !(start_el.matches("KeyGroupConfig")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected KeyGroupConfig got {:?}",
-            start_el
+            "invalid root, expected KeyGroupConfig got {start_el:?}"
         )));
     }
     crate::protocol_serde::shape_key_group_config::de_key_group_config(&mut decoder)

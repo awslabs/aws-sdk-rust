@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AccountStatus {
         match self {
             AccountStatus::Active => write!(f, "Active"),
             AccountStatus::Suspended => write!(f, "Suspended"),
-            AccountStatus::Unknown(value) => write!(f, "{}", value),
+            AccountStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

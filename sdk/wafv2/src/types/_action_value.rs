@@ -126,7 +126,7 @@ impl ::std::fmt::Display for ActionValue {
             ActionValue::Challenge => write!(f, "CHALLENGE"),
             ActionValue::Count => write!(f, "COUNT"),
             ActionValue::ExcludedAsCount => write!(f, "EXCLUDED_AS_COUNT"),
-            ActionValue::Unknown(value) => write!(f, "{}", value),
+            ActionValue::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

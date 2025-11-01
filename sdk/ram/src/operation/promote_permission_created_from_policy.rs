@@ -190,6 +190,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for PromotePermi
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::promote_permission_created_from_policy::PromotePermissionCreatedFromPolicyInput,
                 output: &mut ::std::string::String,

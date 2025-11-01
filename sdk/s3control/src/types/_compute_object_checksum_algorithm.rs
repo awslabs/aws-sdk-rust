@@ -126,7 +126,7 @@ impl ::std::fmt::Display for ComputeObjectChecksumAlgorithm {
             ComputeObjectChecksumAlgorithm::Md5 => write!(f, "MD5"),
             ComputeObjectChecksumAlgorithm::Sha1 => write!(f, "SHA1"),
             ComputeObjectChecksumAlgorithm::Sha256 => write!(f, "SHA256"),
-            ComputeObjectChecksumAlgorithm::Unknown(value) => write!(f, "{}", value),
+            ComputeObjectChecksumAlgorithm::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

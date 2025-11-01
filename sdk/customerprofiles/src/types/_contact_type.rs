@@ -140,7 +140,7 @@ impl ::std::fmt::Display for ContactType {
             ContactType::MobilePhoneNumber => write!(f, "MobilePhoneNumber"),
             ContactType::PersonalEmailAddress => write!(f, "PersonalEmailAddress"),
             ContactType::PhoneNumber => write!(f, "PhoneNumber"),
-            ContactType::Unknown(value) => write!(f, "{}", value),
+            ContactType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

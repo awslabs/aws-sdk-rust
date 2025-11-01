@@ -310,14 +310,12 @@ pub(super) fn resolve_endpoint(
                                 }
                                 #[allow(unreachable_code)]
                                 return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(format!(
-                                    "No rules matched these parameters. This is a bug. {:?}",
-                                    _params
+                                    "No rules matched these parameters. This is a bug. {_params:?}"
                                 )));
                             }
                             #[allow(unreachable_code)]
                             return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(format!(
-                                "No rules matched these parameters. This is a bug. {:?}",
-                                _params
+                                "No rules matched these parameters. This is a bug. {_params:?}"
                             )));
                         }
                     }
@@ -1083,8 +1081,7 @@ pub(super) fn resolve_endpoint(
                         }
                         #[allow(unreachable_code)]
                         return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(format!(
-                            "No rules matched these parameters. This is a bug. {:?}",
-                            _params
+                            "No rules matched these parameters. This is a bug. {_params:?}"
                         )));
                     }
                     return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
@@ -2010,8 +2007,7 @@ pub(super) fn resolve_endpoint(
                         }
                         #[allow(unreachable_code)]
                         return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(format!(
-                            "No rules matched these parameters. This is a bug. {:?}",
-                            _params
+                            "No rules matched these parameters. This is a bug. {_params:?}"
                         )));
                     }
                     return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
@@ -2110,8 +2106,7 @@ pub(super) fn resolve_endpoint(
                     }
                     #[allow(unreachable_code)]
                     return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(format!(
-                        "No rules matched these parameters. This is a bug. {:?}",
-                        _params
+                        "No rules matched these parameters. This is a bug. {_params:?}"
                     )));
                 }
             }
@@ -2191,8 +2186,7 @@ pub(super) fn resolve_endpoint(
                                                 }
                                                 #[allow(unreachable_code)]
                                                 return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(format!(
-                                                    "No rules matched these parameters. This is a bug. {:?}",
-                                                    _params
+                                                    "No rules matched these parameters. This is a bug. {_params:?}"
                                                 )));
                                             }
                                             return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
@@ -2295,8 +2289,7 @@ pub(super) fn resolve_endpoint(
                                                 }
                                                 #[allow(unreachable_code)]
                                                 return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(format!(
-                                                    "No rules matched these parameters. This is a bug. {:?}",
-                                                    _params
+                                                    "No rules matched these parameters. This is a bug. {_params:?}"
                                                 )));
                                             }
                                             return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
@@ -3446,8 +3439,7 @@ pub(super) fn resolve_endpoint(
                             }
                             #[allow(unreachable_code)]
                             return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(format!(
-                                "No rules matched these parameters. This is a bug. {:?}",
-                                _params
+                                "No rules matched these parameters. This is a bug. {_params:?}"
                             )));
                         }
                         return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
@@ -3456,8 +3448,7 @@ pub(super) fn resolve_endpoint(
                     }
                     #[allow(unreachable_code)]
                     return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(format!(
-                        "No rules matched these parameters. This is a bug. {:?}",
-                        _params
+                        "No rules matched these parameters. This is a bug. {_params:?}"
                     )));
                 }
             }
@@ -3515,8 +3506,7 @@ pub(super) fn resolve_endpoint(
                                             }
                                             #[allow(unreachable_code)]
                                             return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(format!(
-                                                "No rules matched these parameters. This is a bug. {:?}",
-                                                _params
+                                                "No rules matched these parameters. This is a bug. {_params:?}"
                                             )));
                                         }
                                     }
@@ -3790,14 +3780,12 @@ pub(super) fn resolve_endpoint(
                                                         }
                                                         #[allow(unreachable_code)]
                                                         return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(format!(
-                                                            "No rules matched these parameters. This is a bug. {:?}",
-                                                            _params
+                                                            "No rules matched these parameters. This is a bug. {_params:?}"
                                                         )));
                                                     }
                                                     #[allow(unreachable_code)]
                                                     return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(format!(
-                                                        "No rules matched these parameters. This is a bug. {:?}",
-                                                        _params
+                                                        "No rules matched these parameters. This is a bug. {_params:?}"
                                                     )));
                                                 }
                                                 return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
@@ -4050,7 +4038,7 @@ out })
                                                                                         }
                                                                                     }
                                                                                     #[allow(unreachable_code)]
-return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(format!("No rules matched these parameters. This is a bug. {:?}", _params)));
+return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(format!("No rules matched these parameters. This is a bug. {_params:?}")));
                                                                                 }
                                                                                 return Err(
                                                                                     ::aws_smithy_http::endpoint::ResolveEndpointError::message({
@@ -4108,14 +4096,12 @@ return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(format!("N
                                                             }
                                                             #[allow(unreachable_code)]
                                                             return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(format!(
-                                                                "No rules matched these parameters. This is a bug. {:?}",
-                                                                _params
+                                                                "No rules matched these parameters. This is a bug. {_params:?}"
                                                             )));
                                                         }
                                                         #[allow(unreachable_code)]
                                                         return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(format!(
-                                                            "No rules matched these parameters. This is a bug. {:?}",
-                                                            _params
+                                                            "No rules matched these parameters. This is a bug. {_params:?}"
                                                         )));
                                                     }
                                                     return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
@@ -4125,14 +4111,12 @@ return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(format!("N
                                                 }
                                                 #[allow(unreachable_code)]
                                                 return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(format!(
-                                                    "No rules matched these parameters. This is a bug. {:?}",
-                                                    _params
+                                                    "No rules matched these parameters. This is a bug. {_params:?}"
                                                 )));
                                             }
                                             #[allow(unreachable_code)]
                                             return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(format!(
-                                                "No rules matched these parameters. This is a bug. {:?}",
-                                                _params
+                                                "No rules matched these parameters. This is a bug. {_params:?}"
                                             )));
                                         }
                                         if crate::endpoint_lib::host::is_valid_host_label(
@@ -4207,8 +4191,7 @@ return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(format!("N
                                             }
                                             #[allow(unreachable_code)]
                                             return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(format!(
-                                                "No rules matched these parameters. This is a bug. {:?}",
-                                                _params
+                                                "No rules matched these parameters. This is a bug. {_params:?}"
                                             )));
                                         }
                                         return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
@@ -4488,14 +4471,12 @@ return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(format!("N
                                             }
                                             #[allow(unreachable_code)]
                                             return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(format!(
-                                                "No rules matched these parameters. This is a bug. {:?}",
-                                                _params
+                                                "No rules matched these parameters. This is a bug. {_params:?}"
                                             )));
                                         }
                                         #[allow(unreachable_code)]
                                         return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(format!(
-                                            "No rules matched these parameters. This is a bug. {:?}",
-                                            _params
+                                            "No rules matched these parameters. This is a bug. {_params:?}"
                                         )));
                                     }
                                     return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message({
@@ -5141,8 +5122,7 @@ return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(format!("N
                     }
                     #[allow(unreachable_code)]
                     return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(format!(
-                        "No rules matched these parameters. This is a bug. {:?}",
-                        _params
+                        "No rules matched these parameters. This is a bug. {_params:?}"
                     )));
                 }
                 return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
@@ -5151,8 +5131,7 @@ return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(format!("N
             }
             #[allow(unreachable_code)]
             return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(format!(
-                "No rules matched these parameters. This is a bug. {:?}",
-                _params
+                "No rules matched these parameters. This is a bug. {_params:?}"
             )));
         }
         #[allow(unused_variables)]
@@ -5256,8 +5235,7 @@ return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(format!("N
                 }
                 #[allow(unreachable_code)]
                 return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(format!(
-                    "No rules matched these parameters. This is a bug. {:?}",
-                    _params
+                    "No rules matched these parameters. This is a bug. {_params:?}"
                 )));
             }
         }
@@ -5803,8 +5781,7 @@ return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(format!("N
                     }
                     #[allow(unreachable_code)]
                     return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(format!(
-                        "No rules matched these parameters. This is a bug. {:?}",
-                        _params
+                        "No rules matched these parameters. This is a bug. {_params:?}"
                     )));
                 }
                 return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
@@ -5813,14 +5790,12 @@ return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(format!("N
             }
             #[allow(unreachable_code)]
             return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(format!(
-                "No rules matched these parameters. This is a bug. {:?}",
-                _params
+                "No rules matched these parameters. This is a bug. {_params:?}"
             )));
         }
         #[allow(unreachable_code)]
         return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(format!(
-            "No rules matched these parameters. This is a bug. {:?}",
-            _params
+            "No rules matched these parameters. This is a bug. {_params:?}"
         )));
     }
     return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(

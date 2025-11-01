@@ -114,7 +114,7 @@ impl ::std::fmt::Display for DomainHealth {
             DomainHealth::NotAvailable => write!(f, "NotAvailable"),
             DomainHealth::Red => write!(f, "Red"),
             DomainHealth::Yellow => write!(f, "Yellow"),
-            DomainHealth::Unknown(value) => write!(f, "{}", value),
+            DomainHealth::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

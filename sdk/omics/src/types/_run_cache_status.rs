@@ -108,7 +108,7 @@ impl ::std::fmt::Display for RunCacheStatus {
             RunCacheStatus::Active => write!(f, "ACTIVE"),
             RunCacheStatus::Deleted => write!(f, "DELETED"),
             RunCacheStatus::Failed => write!(f, "FAILED"),
-            RunCacheStatus::Unknown(value) => write!(f, "{}", value),
+            RunCacheStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

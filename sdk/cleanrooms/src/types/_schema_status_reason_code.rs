@@ -168,7 +168,7 @@ impl ::std::fmt::Display for SchemaStatusReasonCode {
             SchemaStatusReasonCode::IdMappingTableNotPopulated => write!(f, "ID_MAPPING_TABLE_NOT_POPULATED"),
             SchemaStatusReasonCode::ResultReceiversNotAllowed => write!(f, "RESULT_RECEIVERS_NOT_ALLOWED"),
             SchemaStatusReasonCode::ResultReceiversNotConfigured => write!(f, "RESULT_RECEIVERS_NOT_CONFIGURED"),
-            SchemaStatusReasonCode::Unknown(value) => write!(f, "{}", value),
+            SchemaStatusReasonCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

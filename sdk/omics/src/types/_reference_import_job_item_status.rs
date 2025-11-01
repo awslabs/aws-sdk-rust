@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ReferenceImportJobItemStatus {
             ReferenceImportJobItemStatus::Finished => write!(f, "FINISHED"),
             ReferenceImportJobItemStatus::InProgress => write!(f, "IN_PROGRESS"),
             ReferenceImportJobItemStatus::NotStarted => write!(f, "NOT_STARTED"),
-            ReferenceImportJobItemStatus::Unknown(value) => write!(f, "{}", value),
+            ReferenceImportJobItemStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

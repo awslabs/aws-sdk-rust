@@ -102,7 +102,7 @@ impl ::std::fmt::Display for StreamView {
         match self {
             StreamView::App => write!(f, "APP"),
             StreamView::Desktop => write!(f, "DESKTOP"),
-            StreamView::Unknown(value) => write!(f, "{}", value),
+            StreamView::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

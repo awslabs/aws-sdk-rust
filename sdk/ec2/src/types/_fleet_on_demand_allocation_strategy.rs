@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FleetOnDemandAllocationStrategy {
         match self {
             FleetOnDemandAllocationStrategy::LowestPrice => write!(f, "lowest-price"),
             FleetOnDemandAllocationStrategy::Prioritized => write!(f, "prioritized"),
-            FleetOnDemandAllocationStrategy::Unknown(value) => write!(f, "{}", value),
+            FleetOnDemandAllocationStrategy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

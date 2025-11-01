@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ErrorType {
         match self {
             ErrorType::ResourceNotFoundException => write!(f, "RESOURCE_NOT_FOUND_EXCEPTION"),
             ErrorType::ValidationException => write!(f, "VALIDATION_EXCEPTION"),
-            ErrorType::Unknown(value) => write!(f, "{}", value),
+            ErrorType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

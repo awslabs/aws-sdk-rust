@@ -96,7 +96,7 @@ impl ::std::fmt::Display for Variant {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             Variant::Default => write!(f, "Default"),
-            Variant::Unknown(value) => write!(f, "{}", value),
+            Variant::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

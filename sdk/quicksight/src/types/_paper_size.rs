@@ -168,7 +168,7 @@ impl ::std::fmt::Display for PaperSize {
             PaperSize::UsLegal => write!(f, "US_LEGAL"),
             PaperSize::UsLetter => write!(f, "US_LETTER"),
             PaperSize::UsTabloidLedger => write!(f, "US_TABLOID_LEDGER"),
-            PaperSize::Unknown(value) => write!(f, "{}", value),
+            PaperSize::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

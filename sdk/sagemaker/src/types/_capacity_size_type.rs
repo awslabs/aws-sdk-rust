@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CapacitySizeType {
         match self {
             CapacitySizeType::CapacityPercent => write!(f, "CAPACITY_PERCENT"),
             CapacitySizeType::InstanceCount => write!(f, "INSTANCE_COUNT"),
-            CapacitySizeType::Unknown(value) => write!(f, "{}", value),
+            CapacitySizeType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

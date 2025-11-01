@@ -120,7 +120,7 @@ impl ::std::fmt::Display for DeliveryStreamStatus {
             DeliveryStreamStatus::CreatingFailed => write!(f, "CREATING_FAILED"),
             DeliveryStreamStatus::Deleting => write!(f, "DELETING"),
             DeliveryStreamStatus::DeletingFailed => write!(f, "DELETING_FAILED"),
-            DeliveryStreamStatus::Unknown(value) => write!(f, "{}", value),
+            DeliveryStreamStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

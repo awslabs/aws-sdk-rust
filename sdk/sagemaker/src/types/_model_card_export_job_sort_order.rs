@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ModelCardExportJobSortOrder {
         match self {
             ModelCardExportJobSortOrder::Ascending => write!(f, "Ascending"),
             ModelCardExportJobSortOrder::Descending => write!(f, "Descending"),
-            ModelCardExportJobSortOrder::Unknown(value) => write!(f, "{}", value),
+            ModelCardExportJobSortOrder::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

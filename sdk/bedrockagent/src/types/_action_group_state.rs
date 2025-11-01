@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ActionGroupState {
         match self {
             ActionGroupState::Disabled => write!(f, "DISABLED"),
             ActionGroupState::Enabled => write!(f, "ENABLED"),
-            ActionGroupState::Unknown(value) => write!(f, "{}", value),
+            ActionGroupState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

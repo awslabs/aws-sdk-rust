@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RestoreTestingRecoveryPointType {
         match self {
             RestoreTestingRecoveryPointType::Continuous => write!(f, "CONTINUOUS"),
             RestoreTestingRecoveryPointType::Snapshot => write!(f, "SNAPSHOT"),
-            RestoreTestingRecoveryPointType::Unknown(value) => write!(f, "{}", value),
+            RestoreTestingRecoveryPointType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

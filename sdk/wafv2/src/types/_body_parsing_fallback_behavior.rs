@@ -108,7 +108,7 @@ impl ::std::fmt::Display for BodyParsingFallbackBehavior {
             BodyParsingFallbackBehavior::EvaluateAsString => write!(f, "EVALUATE_AS_STRING"),
             BodyParsingFallbackBehavior::Match => write!(f, "MATCH"),
             BodyParsingFallbackBehavior::NoMatch => write!(f, "NO_MATCH"),
-            BodyParsingFallbackBehavior::Unknown(value) => write!(f, "{}", value),
+            BodyParsingFallbackBehavior::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

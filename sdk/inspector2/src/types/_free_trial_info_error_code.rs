@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FreeTrialInfoErrorCode {
         match self {
             FreeTrialInfoErrorCode::AccessDenied => write!(f, "ACCESS_DENIED"),
             FreeTrialInfoErrorCode::InternalError => write!(f, "INTERNAL_ERROR"),
-            FreeTrialInfoErrorCode::Unknown(value) => write!(f, "{}", value),
+            FreeTrialInfoErrorCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

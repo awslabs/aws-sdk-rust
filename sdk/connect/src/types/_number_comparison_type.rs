@@ -132,7 +132,7 @@ impl ::std::fmt::Display for NumberComparisonType {
             NumberComparisonType::LesserOrEqual => write!(f, "LESSER_OR_EQUAL"),
             NumberComparisonType::NotEqual => write!(f, "NOT_EQUAL"),
             NumberComparisonType::Range => write!(f, "RANGE"),
-            NumberComparisonType::Unknown(value) => write!(f, "{}", value),
+            NumberComparisonType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ConfigurationLevel {
         match self {
             ConfigurationLevel::Account => write!(f, "ACCOUNT"),
             ConfigurationLevel::Organization => write!(f, "ORGANIZATION"),
-            ConfigurationLevel::Unknown(value) => write!(f, "{}", value),
+            ConfigurationLevel::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

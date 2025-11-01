@@ -120,7 +120,7 @@ impl ::std::fmt::Display for IndexState {
             IndexState::Deleted => write!(f, "DELETED"),
             IndexState::Deleting => write!(f, "DELETING"),
             IndexState::Updating => write!(f, "UPDATING"),
-            IndexState::Unknown(value) => write!(f, "{}", value),
+            IndexState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

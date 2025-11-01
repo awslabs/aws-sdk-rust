@@ -120,7 +120,7 @@ impl ::std::fmt::Display for CompletedStatus {
             CompletedStatus::Interrupted => write!(f, "INTERRUPTED"),
             CompletedStatus::NeverAttempted => write!(f, "NEVER_ATTEMPTED"),
             CompletedStatus::Succeeded => write!(f, "SUCCEEDED"),
-            CompletedStatus::Unknown(value) => write!(f, "{}", value),
+            CompletedStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

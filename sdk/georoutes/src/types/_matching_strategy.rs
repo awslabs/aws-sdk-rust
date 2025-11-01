@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MatchingStrategy {
         match self {
             MatchingStrategy::MatchAny => write!(f, "MatchAny"),
             MatchingStrategy::MatchMostSignificantRoad => write!(f, "MatchMostSignificantRoad"),
-            MatchingStrategy::Unknown(value) => write!(f, "{}", value),
+            MatchingStrategy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -17,8 +17,7 @@ pub fn de_retention(inp: &[u8]) -> std::result::Result<crate::types::ObjectLockR
     let start_el = decoder.start_el();
     if !(start_el.matches("Retention")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected Retention got {:?}",
-            start_el
+            "invalid root, expected Retention got {start_el:?}"
         )));
     }
     crate::protocol_serde::shape_object_lock_retention::de_object_lock_retention(&mut decoder)

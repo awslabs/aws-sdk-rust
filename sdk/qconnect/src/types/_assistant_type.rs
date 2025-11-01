@@ -96,7 +96,7 @@ impl ::std::fmt::Display for AssistantType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             AssistantType::Agent => write!(f, "AGENT"),
-            AssistantType::Unknown(value) => write!(f, "{}", value),
+            AssistantType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for Period {
             Period::Hourly => write!(f, "HOURLY"),
             Period::Monthly => write!(f, "MONTHLY"),
             Period::Weekly => write!(f, "WEEKLY"),
-            Period::Unknown(value) => write!(f, "{}", value),
+            Period::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

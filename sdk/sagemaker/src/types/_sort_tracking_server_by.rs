@@ -108,7 +108,7 @@ impl ::std::fmt::Display for SortTrackingServerBy {
             SortTrackingServerBy::CreationTime => write!(f, "CreationTime"),
             SortTrackingServerBy::Name => write!(f, "Name"),
             SortTrackingServerBy::Status => write!(f, "Status"),
-            SortTrackingServerBy::Unknown(value) => write!(f, "{}", value),
+            SortTrackingServerBy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

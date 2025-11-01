@@ -102,7 +102,7 @@ impl ::std::fmt::Display for LaunchActionParameterType {
         match self {
             LaunchActionParameterType::Dynamic => write!(f, "DYNAMIC"),
             LaunchActionParameterType::SsmStore => write!(f, "SSM_STORE"),
-            LaunchActionParameterType::Unknown(value) => write!(f, "{}", value),
+            LaunchActionParameterType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

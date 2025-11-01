@@ -114,7 +114,7 @@ impl ::std::fmt::Display for AggregationResourceType {
             AggregationResourceType::AwsEcrContainerImage => write!(f, "AWS_ECR_CONTAINER_IMAGE"),
             AggregationResourceType::AwsLambdaFunction => write!(f, "AWS_LAMBDA_FUNCTION"),
             AggregationResourceType::CodeRepository => write!(f, "CODE_REPOSITORY"),
-            AggregationResourceType::Unknown(value) => write!(f, "{}", value),
+            AggregationResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

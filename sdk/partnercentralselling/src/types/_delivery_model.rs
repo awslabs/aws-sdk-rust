@@ -133,7 +133,7 @@ impl ::std::fmt::Display for DeliveryModel {
             DeliveryModel::ProfessionalServices => write!(f, "Professional Services"),
             DeliveryModel::Resell => write!(f, "Resell"),
             DeliveryModel::SaasOrPaas => write!(f, "SaaS or PaaS"),
-            DeliveryModel::Unknown(value) => write!(f, "{}", value),
+            DeliveryModel::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

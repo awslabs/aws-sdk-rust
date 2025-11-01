@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ResourceContentType {
         match self {
             ResourceContentType::Blob => write!(f, "blob"),
             ResourceContentType::Text => write!(f, "text"),
-            ResourceContentType::Unknown(value) => write!(f, "{}", value),
+            ResourceContentType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

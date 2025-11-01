@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MessageTemplateQueryOperator {
         match self {
             MessageTemplateQueryOperator::Contains => write!(f, "CONTAINS"),
             MessageTemplateQueryOperator::ContainsAndPrefix => write!(f, "CONTAINS_AND_PREFIX"),
-            MessageTemplateQueryOperator::Unknown(value) => write!(f, "{}", value),
+            MessageTemplateQueryOperator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

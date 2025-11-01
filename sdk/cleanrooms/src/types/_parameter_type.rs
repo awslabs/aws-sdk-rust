@@ -287,7 +287,7 @@ impl ::std::fmt::Display for ParameterType {
             ParameterType::Tinyint => write!(f, "TINYINT"),
             ParameterType::Varbyte => write!(f, "VARBYTE"),
             ParameterType::Varchar => write!(f, "VARCHAR"),
-            ParameterType::Unknown(value) => write!(f, "{}", value),
+            ParameterType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -140,7 +140,7 @@ impl ::std::fmt::Display for ChannelPlacementGroupState {
             ChannelPlacementGroupState::Deleting => write!(f, "DELETING"),
             ChannelPlacementGroupState::Unassigned => write!(f, "UNASSIGNED"),
             ChannelPlacementGroupState::Unassigning => write!(f, "UNASSIGNING"),
-            ChannelPlacementGroupState::Unknown(value) => write!(f, "{}", value),
+            ChannelPlacementGroupState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

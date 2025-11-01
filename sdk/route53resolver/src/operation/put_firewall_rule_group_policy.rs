@@ -186,6 +186,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for PutFirewallR
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::put_firewall_rule_group_policy::PutFirewallRuleGroupPolicyInput,
                 output: &mut ::std::string::String,

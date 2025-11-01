@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ScheduledActionTypeValues {
             ScheduledActionTypeValues::PauseCluster => write!(f, "PauseCluster"),
             ScheduledActionTypeValues::ResizeCluster => write!(f, "ResizeCluster"),
             ScheduledActionTypeValues::ResumeCluster => write!(f, "ResumeCluster"),
-            ScheduledActionTypeValues::Unknown(value) => write!(f, "{}", value),
+            ScheduledActionTypeValues::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for NodeRole {
         match self {
             NodeRole::Active => write!(f, "ACTIVE"),
             NodeRole::Backup => write!(f, "BACKUP"),
-            NodeRole::Unknown(value) => write!(f, "{}", value),
+            NodeRole::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

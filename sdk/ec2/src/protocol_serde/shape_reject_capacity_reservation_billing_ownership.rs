@@ -54,8 +54,7 @@ pub fn de_reject_capacity_reservation_billing_ownership(
     let start_el = decoder.start_el();
     if !(start_el.matches("RejectCapacityReservationBillingOwnershipResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected RejectCapacityReservationBillingOwnershipResponse got {:?}",
-            start_el
+            "invalid root, expected RejectCapacityReservationBillingOwnershipResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

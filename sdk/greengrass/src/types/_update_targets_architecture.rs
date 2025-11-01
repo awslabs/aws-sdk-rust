@@ -114,7 +114,7 @@ impl ::std::fmt::Display for UpdateTargetsArchitecture {
             UpdateTargetsArchitecture::Armv6l => write!(f, "armv6l"),
             UpdateTargetsArchitecture::Armv7l => write!(f, "armv7l"),
             UpdateTargetsArchitecture::X8664 => write!(f, "x86_64"),
-            UpdateTargetsArchitecture::Unknown(value) => write!(f, "{}", value),
+            UpdateTargetsArchitecture::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -126,7 +126,7 @@ impl ::std::fmt::Display for DeliveryStreamEncryptionStatus {
             DeliveryStreamEncryptionStatus::Enabled => write!(f, "ENABLED"),
             DeliveryStreamEncryptionStatus::Enabling => write!(f, "ENABLING"),
             DeliveryStreamEncryptionStatus::EnablingFailed => write!(f, "ENABLING_FAILED"),
-            DeliveryStreamEncryptionStatus::Unknown(value) => write!(f, "{}", value),
+            DeliveryStreamEncryptionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

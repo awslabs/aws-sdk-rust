@@ -108,7 +108,7 @@ impl ::std::fmt::Display for Monotonicity {
             Monotonicity::Decreasing => write!(f, "DECREASING"),
             Monotonicity::Increasing => write!(f, "INCREASING"),
             Monotonicity::Static => write!(f, "STATIC"),
-            Monotonicity::Unknown(value) => write!(f, "{}", value),
+            Monotonicity::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

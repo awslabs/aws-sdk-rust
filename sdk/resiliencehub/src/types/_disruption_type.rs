@@ -114,7 +114,7 @@ impl ::std::fmt::Display for DisruptionType {
             DisruptionType::Hardware => write!(f, "Hardware"),
             DisruptionType::Region => write!(f, "Region"),
             DisruptionType::Software => write!(f, "Software"),
-            DisruptionType::Unknown(value) => write!(f, "{}", value),
+            DisruptionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

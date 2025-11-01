@@ -114,7 +114,7 @@ impl ::std::fmt::Display for DocumentFilterKey {
             DocumentFilterKey::Name => write!(f, "Name"),
             DocumentFilterKey::Owner => write!(f, "Owner"),
             DocumentFilterKey::PlatformTypes => write!(f, "PlatformTypes"),
-            DocumentFilterKey::Unknown(value) => write!(f, "{}", value),
+            DocumentFilterKey::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

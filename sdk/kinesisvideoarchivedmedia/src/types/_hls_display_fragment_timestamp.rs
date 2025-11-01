@@ -102,7 +102,7 @@ impl ::std::fmt::Display for HlsDisplayFragmentTimestamp {
         match self {
             HlsDisplayFragmentTimestamp::Always => write!(f, "ALWAYS"),
             HlsDisplayFragmentTimestamp::Never => write!(f, "NEVER"),
-            HlsDisplayFragmentTimestamp::Unknown(value) => write!(f, "{}", value),
+            HlsDisplayFragmentTimestamp::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

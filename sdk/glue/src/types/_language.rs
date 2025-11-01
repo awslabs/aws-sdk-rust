@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Language {
         match self {
             Language::Python => write!(f, "PYTHON"),
             Language::Scala => write!(f, "SCALA"),
-            Language::Unknown(value) => write!(f, "{}", value),
+            Language::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

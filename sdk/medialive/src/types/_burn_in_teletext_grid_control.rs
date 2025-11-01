@@ -102,7 +102,7 @@ impl ::std::fmt::Display for BurnInTeletextGridControl {
         match self {
             BurnInTeletextGridControl::Fixed => write!(f, "FIXED"),
             BurnInTeletextGridControl::Scaled => write!(f, "SCALED"),
-            BurnInTeletextGridControl::Unknown(value) => write!(f, "{}", value),
+            BurnInTeletextGridControl::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -96,7 +96,7 @@ impl ::std::fmt::Display for DataIntegrationFlowDedupeStrategyType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             DataIntegrationFlowDedupeStrategyType::FieldPriority => write!(f, "FIELD_PRIORITY"),
-            DataIntegrationFlowDedupeStrategyType::Unknown(value) => write!(f, "{}", value),
+            DataIntegrationFlowDedupeStrategyType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

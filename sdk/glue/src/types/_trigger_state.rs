@@ -147,7 +147,7 @@ impl ::std::fmt::Display for TriggerState {
             TriggerState::Deactivating => write!(f, "DEACTIVATING"),
             TriggerState::Deleting => write!(f, "DELETING"),
             TriggerState::Updating => write!(f, "UPDATING"),
-            TriggerState::Unknown(value) => write!(f, "{}", value),
+            TriggerState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

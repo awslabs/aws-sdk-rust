@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TargetPlatformOs {
         match self {
             TargetPlatformOs::Android => write!(f, "ANDROID"),
             TargetPlatformOs::Linux => write!(f, "LINUX"),
-            TargetPlatformOs::Unknown(value) => write!(f, "{}", value),
+            TargetPlatformOs::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

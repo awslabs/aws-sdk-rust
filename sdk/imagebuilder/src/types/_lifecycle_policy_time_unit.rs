@@ -114,7 +114,7 @@ impl ::std::fmt::Display for LifecyclePolicyTimeUnit {
             LifecyclePolicyTimeUnit::Months => write!(f, "MONTHS"),
             LifecyclePolicyTimeUnit::Weeks => write!(f, "WEEKS"),
             LifecyclePolicyTimeUnit::Years => write!(f, "YEARS"),
-            LifecyclePolicyTimeUnit::Unknown(value) => write!(f, "{}", value),
+            LifecyclePolicyTimeUnit::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for DependentServiceName {
             DependentServiceName::AwsShieldAdvanced => write!(f, "AWSSHIELD_ADVANCED"),
             DependentServiceName::AwsVirtualPrivateCloud => write!(f, "AWSVPC"),
             DependentServiceName::Awswaf => write!(f, "AWSWAF"),
-            DependentServiceName::Unknown(value) => write!(f, "{}", value),
+            DependentServiceName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

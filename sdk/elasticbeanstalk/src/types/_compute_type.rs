@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ComputeType {
             ComputeType::BuildGeneral1Large => write!(f, "BUILD_GENERAL1_LARGE"),
             ComputeType::BuildGeneral1Medium => write!(f, "BUILD_GENERAL1_MEDIUM"),
             ComputeType::BuildGeneral1Small => write!(f, "BUILD_GENERAL1_SMALL"),
-            ComputeType::Unknown(value) => write!(f, "{}", value),
+            ComputeType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

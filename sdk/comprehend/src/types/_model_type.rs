@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ModelType {
         match self {
             ModelType::DocumentClassifier => write!(f, "DOCUMENT_CLASSIFIER"),
             ModelType::EntityRecognizer => write!(f, "ENTITY_RECOGNIZER"),
-            ModelType::Unknown(value) => write!(f, "{}", value),
+            ModelType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

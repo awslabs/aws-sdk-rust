@@ -96,7 +96,7 @@ impl ::std::fmt::Display for GameServerClaimStatus {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             GameServerClaimStatus::Claimed => write!(f, "CLAIMED"),
-            GameServerClaimStatus::Unknown(value) => write!(f, "{}", value),
+            GameServerClaimStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AnomalySubscriptionFrequency {
             AnomalySubscriptionFrequency::Daily => write!(f, "DAILY"),
             AnomalySubscriptionFrequency::Immediate => write!(f, "IMMEDIATE"),
             AnomalySubscriptionFrequency::Weekly => write!(f, "WEEKLY"),
-            AnomalySubscriptionFrequency::Unknown(value) => write!(f, "{}", value),
+            AnomalySubscriptionFrequency::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

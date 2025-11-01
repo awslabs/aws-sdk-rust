@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MessageType {
         match self {
             MessageType::SpliceInsert => write!(f, "SPLICE_INSERT"),
             MessageType::TimeSignal => write!(f, "TIME_SIGNAL"),
-            MessageType::Unknown(value) => write!(f, "{}", value),
+            MessageType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

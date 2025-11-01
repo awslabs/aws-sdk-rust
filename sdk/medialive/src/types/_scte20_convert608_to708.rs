@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Scte20Convert608To708 {
         match self {
             Scte20Convert608To708::Disabled => write!(f, "DISABLED"),
             Scte20Convert608To708::Upconvert => write!(f, "UPCONVERT"),
-            Scte20Convert608To708::Unknown(value) => write!(f, "{}", value),
+            Scte20Convert608To708::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

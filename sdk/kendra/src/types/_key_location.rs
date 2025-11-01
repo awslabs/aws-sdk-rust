@@ -102,7 +102,7 @@ impl ::std::fmt::Display for KeyLocation {
         match self {
             KeyLocation::SecretManager => write!(f, "SECRET_MANAGER"),
             KeyLocation::Url => write!(f, "URL"),
-            KeyLocation::Unknown(value) => write!(f, "{}", value),
+            KeyLocation::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

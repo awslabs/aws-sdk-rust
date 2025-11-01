@@ -108,7 +108,7 @@ impl ::std::fmt::Display for TelemetryEnrichmentStatus {
             TelemetryEnrichmentStatus::Impaired => write!(f, "Impaired"),
             TelemetryEnrichmentStatus::Running => write!(f, "Running"),
             TelemetryEnrichmentStatus::Stopped => write!(f, "Stopped"),
-            TelemetryEnrichmentStatus::Unknown(value) => write!(f, "{}", value),
+            TelemetryEnrichmentStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

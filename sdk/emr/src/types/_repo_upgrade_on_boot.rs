@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RepoUpgradeOnBoot {
         match self {
             RepoUpgradeOnBoot::None => write!(f, "NONE"),
             RepoUpgradeOnBoot::Security => write!(f, "SECURITY"),
-            RepoUpgradeOnBoot::Unknown(value) => write!(f, "{}", value),
+            RepoUpgradeOnBoot::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

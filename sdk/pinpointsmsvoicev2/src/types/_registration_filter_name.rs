@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RegistrationFilterName {
         match self {
             RegistrationFilterName::RegistrationStatus => write!(f, "registration-status"),
             RegistrationFilterName::RegistrationType => write!(f, "registration-type"),
-            RegistrationFilterName::Unknown(value) => write!(f, "{}", value),
+            RegistrationFilterName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

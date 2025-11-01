@@ -173,7 +173,7 @@ impl ::std::fmt::Display for RouteSpanRoadAttribute {
             RouteSpanRoadAttribute::Roundabout => write!(f, "Roundabout"),
             RouteSpanRoadAttribute::Tunnel => write!(f, "Tunnel"),
             RouteSpanRoadAttribute::UnderConstruction => write!(f, "UnderConstruction"),
-            RouteSpanRoadAttribute::Unknown(value) => write!(f, "{}", value),
+            RouteSpanRoadAttribute::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

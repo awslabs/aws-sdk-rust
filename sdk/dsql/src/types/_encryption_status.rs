@@ -114,7 +114,7 @@ impl ::std::fmt::Display for EncryptionStatus {
             EncryptionStatus::Enabling => write!(f, "ENABLING"),
             EncryptionStatus::KmsKeyInaccessible => write!(f, "KMS_KEY_INACCESSIBLE"),
             EncryptionStatus::Updating => write!(f, "UPDATING"),
-            EncryptionStatus::Unknown(value) => write!(f, "{}", value),
+            EncryptionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

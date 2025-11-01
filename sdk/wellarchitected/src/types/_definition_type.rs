@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DefinitionType {
         match self {
             DefinitionType::AppRegistry => write!(f, "APP_REGISTRY"),
             DefinitionType::WorkloadMetadata => write!(f, "WORKLOAD_METADATA"),
-            DefinitionType::Unknown(value) => write!(f, "{}", value),
+            DefinitionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

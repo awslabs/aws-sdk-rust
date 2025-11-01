@@ -114,7 +114,7 @@ impl ::std::fmt::Display for H264RateControlMode {
             H264RateControlMode::Multiplex => write!(f, "MULTIPLEX"),
             H264RateControlMode::Qvbr => write!(f, "QVBR"),
             H264RateControlMode::Vbr => write!(f, "VBR"),
-            H264RateControlMode::Unknown(value) => write!(f, "{}", value),
+            H264RateControlMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

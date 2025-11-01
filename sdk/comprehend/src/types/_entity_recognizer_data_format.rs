@@ -102,7 +102,7 @@ impl ::std::fmt::Display for EntityRecognizerDataFormat {
         match self {
             EntityRecognizerDataFormat::AugmentedManifest => write!(f, "AUGMENTED_MANIFEST"),
             EntityRecognizerDataFormat::ComprehendCsv => write!(f, "COMPREHEND_CSV"),
-            EntityRecognizerDataFormat::Unknown(value) => write!(f, "{}", value),
+            EntityRecognizerDataFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

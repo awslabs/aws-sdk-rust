@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Visibility {
         match self {
             Visibility::Private => write!(f, "PRIVATE"),
             Visibility::Public => write!(f, "PUBLIC"),
-            Visibility::Unknown(value) => write!(f, "{}", value),
+            Visibility::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

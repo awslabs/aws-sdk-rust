@@ -106,7 +106,7 @@ impl ::std::fmt::Display for RouteTurnIntensity {
             RouteTurnIntensity::Sharp => write!(f, "Sharp"),
             RouteTurnIntensity::Slight => write!(f, "Slight"),
             RouteTurnIntensity::Typical => write!(f, "Typical"),
-            RouteTurnIntensity::Unknown(value) => write!(f, "{}", value),
+            RouteTurnIntensity::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

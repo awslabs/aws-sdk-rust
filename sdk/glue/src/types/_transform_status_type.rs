@@ -108,7 +108,7 @@ impl ::std::fmt::Display for TransformStatusType {
             TransformStatusType::Deleting => write!(f, "DELETING"),
             TransformStatusType::NotReady => write!(f, "NOT_READY"),
             TransformStatusType::Ready => write!(f, "READY"),
-            TransformStatusType::Unknown(value) => write!(f, "{}", value),
+            TransformStatusType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

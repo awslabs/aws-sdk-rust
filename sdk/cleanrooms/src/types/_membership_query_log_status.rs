@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MembershipQueryLogStatus {
         match self {
             MembershipQueryLogStatus::Disabled => write!(f, "DISABLED"),
             MembershipQueryLogStatus::Enabled => write!(f, "ENABLED"),
-            MembershipQueryLogStatus::Unknown(value) => write!(f, "{}", value),
+            MembershipQueryLogStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

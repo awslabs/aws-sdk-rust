@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AlexaSkillStatus {
         match self {
             AlexaSkillStatus::Active => write!(f, "ACTIVE"),
             AlexaSkillStatus::Inactive => write!(f, "INACTIVE"),
-            AlexaSkillStatus::Unknown(value) => write!(f, "{}", value),
+            AlexaSkillStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

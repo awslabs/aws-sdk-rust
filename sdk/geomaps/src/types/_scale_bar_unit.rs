@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ScaleBarUnit {
             ScaleBarUnit::KilometersMiles => write!(f, "KilometersMiles"),
             ScaleBarUnit::Miles => write!(f, "Miles"),
             ScaleBarUnit::MilesKilometers => write!(f, "MilesKilometers"),
-            ScaleBarUnit::Unknown(value) => write!(f, "{}", value),
+            ScaleBarUnit::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

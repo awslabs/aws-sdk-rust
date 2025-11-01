@@ -108,7 +108,7 @@ impl ::std::fmt::Display for DeploymentControllerType {
             DeploymentControllerType::CodeDeploy => write!(f, "CODE_DEPLOY"),
             DeploymentControllerType::Ecs => write!(f, "ECS"),
             DeploymentControllerType::External => write!(f, "EXTERNAL"),
-            DeploymentControllerType::Unknown(value) => write!(f, "{}", value),
+            DeploymentControllerType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

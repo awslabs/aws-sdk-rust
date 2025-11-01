@@ -108,7 +108,7 @@ impl ::std::fmt::Display for DnsRecordCreationStateCode {
             DnsRecordCreationStateCode::Failed => write!(f, "FAILED"),
             DnsRecordCreationStateCode::Started => write!(f, "STARTED"),
             DnsRecordCreationStateCode::Succeeded => write!(f, "SUCCEEDED"),
-            DnsRecordCreationStateCode::Unknown(value) => write!(f, "{}", value),
+            DnsRecordCreationStateCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

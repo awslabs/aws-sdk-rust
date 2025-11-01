@@ -114,7 +114,7 @@ impl ::std::fmt::Display for MapStyle {
             MapStyle::Monochrome => write!(f, "Monochrome"),
             MapStyle::Satellite => write!(f, "Satellite"),
             MapStyle::Standard => write!(f, "Standard"),
-            MapStyle::Unknown(value) => write!(f, "{}", value),
+            MapStyle::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for IdentityType {
             IdentityType::Group => write!(f, "GROUP"),
             IdentityType::Iam => write!(f, "IAM"),
             IdentityType::User => write!(f, "USER"),
-            IdentityType::Unknown(value) => write!(f, "{}", value),
+            IdentityType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

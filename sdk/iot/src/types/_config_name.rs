@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ConfigName {
         match self {
             ConfigName::CertAgeThresholdInDays => write!(f, "CERT_AGE_THRESHOLD_IN_DAYS"),
             ConfigName::CertExpirationThresholdInDays => write!(f, "CERT_EXPIRATION_THRESHOLD_IN_DAYS"),
-            ConfigName::Unknown(value) => write!(f, "{}", value),
+            ConfigName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

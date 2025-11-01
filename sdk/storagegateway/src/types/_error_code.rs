@@ -525,7 +525,7 @@ impl ::std::fmt::Display for ErrorCode {
             ErrorCode::VolumeInUse => write!(f, "VolumeInUse"),
             ErrorCode::VolumeNotFound => write!(f, "VolumeNotFound"),
             ErrorCode::VolumeNotReady => write!(f, "VolumeNotReady"),
-            ErrorCode::Unknown(value) => write!(f, "{}", value),
+            ErrorCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

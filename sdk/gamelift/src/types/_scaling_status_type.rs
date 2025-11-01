@@ -140,7 +140,7 @@ impl ::std::fmt::Display for ScalingStatusType {
             ScalingStatusType::Error => write!(f, "ERROR"),
             ScalingStatusType::UpdateRequested => write!(f, "UPDATE_REQUESTED"),
             ScalingStatusType::Updating => write!(f, "UPDATING"),
-            ScalingStatusType::Unknown(value) => write!(f, "{}", value),
+            ScalingStatusType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

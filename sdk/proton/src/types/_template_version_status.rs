@@ -114,7 +114,7 @@ impl ::std::fmt::Display for TemplateVersionStatus {
             TemplateVersionStatus::Published => write!(f, "PUBLISHED"),
             TemplateVersionStatus::RegistrationFailed => write!(f, "REGISTRATION_FAILED"),
             TemplateVersionStatus::RegistrationInProgress => write!(f, "REGISTRATION_IN_PROGRESS"),
-            TemplateVersionStatus::Unknown(value) => write!(f, "{}", value),
+            TemplateVersionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

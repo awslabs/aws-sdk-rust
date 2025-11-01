@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ControlSeverity {
             ControlSeverity::High => write!(f, "HIGH"),
             ControlSeverity::Low => write!(f, "LOW"),
             ControlSeverity::Medium => write!(f, "MEDIUM"),
-            ControlSeverity::Unknown(value) => write!(f, "{}", value),
+            ControlSeverity::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

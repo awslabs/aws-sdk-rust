@@ -224,7 +224,7 @@ impl ::std::fmt::Display for AutomationExecutionStatus {
             AutomationExecutionStatus::Success => write!(f, "Success"),
             AutomationExecutionStatus::Timedout => write!(f, "TimedOut"),
             AutomationExecutionStatus::Waiting => write!(f, "Waiting"),
-            AutomationExecutionStatus::Unknown(value) => write!(f, "{}", value),
+            AutomationExecutionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

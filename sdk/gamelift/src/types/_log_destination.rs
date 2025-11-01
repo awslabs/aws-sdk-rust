@@ -108,7 +108,7 @@ impl ::std::fmt::Display for LogDestination {
             LogDestination::Cloudwatch => write!(f, "CLOUDWATCH"),
             LogDestination::None => write!(f, "NONE"),
             LogDestination::S3 => write!(f, "S3"),
-            LogDestination::Unknown(value) => write!(f, "{}", value),
+            LogDestination::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

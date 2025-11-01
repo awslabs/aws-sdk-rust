@@ -108,7 +108,7 @@ impl ::std::fmt::Display for RepositoryProvider {
             RepositoryProvider::Bitbucket => write!(f, "BITBUCKET"),
             RepositoryProvider::Github => write!(f, "GITHUB"),
             RepositoryProvider::GithubEnterprise => write!(f, "GITHUB_ENTERPRISE"),
-            RepositoryProvider::Unknown(value) => write!(f, "{}", value),
+            RepositoryProvider::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

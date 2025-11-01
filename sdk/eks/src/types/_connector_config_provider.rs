@@ -144,7 +144,7 @@ impl ::std::fmt::Display for ConnectorConfigProvider {
             ConnectorConfigProvider::Other => write!(f, "OTHER"),
             ConnectorConfigProvider::Rancher => write!(f, "RANCHER"),
             ConnectorConfigProvider::Tanzu => write!(f, "TANZU"),
-            ConnectorConfigProvider::Unknown(value) => write!(f, "{}", value),
+            ConnectorConfigProvider::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MessageSelectionStrategy {
         match self {
             MessageSelectionStrategy::Ordered => write!(f, "Ordered"),
             MessageSelectionStrategy::Random => write!(f, "Random"),
-            MessageSelectionStrategy::Unknown(value) => write!(f, "{}", value),
+            MessageSelectionStrategy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

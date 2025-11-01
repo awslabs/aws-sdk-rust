@@ -126,7 +126,7 @@ impl ::std::fmt::Display for FilterField {
             FilterField::SessionStatus => write!(f, "SessionStatus"),
             FilterField::Vote => write!(f, "Vote"),
             FilterField::VotingTime => write!(f, "VotingTime"),
-            FilterField::Unknown(value) => write!(f, "{}", value),
+            FilterField::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for SourceCodeAnalyzerName {
             SourceCodeAnalyzerName::CsharpAnalyzer => write!(f, "CSHARP_ANALYZER"),
             SourceCodeAnalyzerName::JavaAnalyzer => write!(f, "JAVA_ANALYZER"),
             SourceCodeAnalyzerName::PortingAssistant => write!(f, "PORTING_ASSISTANT"),
-            SourceCodeAnalyzerName::Unknown(value) => write!(f, "{}", value),
+            SourceCodeAnalyzerName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

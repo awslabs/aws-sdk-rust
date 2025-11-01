@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ConnectionState {
             ConnectionState::Deleting => write!(f, "DELETING"),
             ConnectionState::Pending => write!(f, "PENDING"),
             ConnectionState::Updating => write!(f, "UPDATING"),
-            ConnectionState::Unknown(value) => write!(f, "{}", value),
+            ConnectionState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

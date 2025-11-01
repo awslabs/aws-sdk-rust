@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ButtonAction {
             ButtonAction::Close => write!(f, "CLOSE"),
             ButtonAction::DeepLink => write!(f, "DEEP_LINK"),
             ButtonAction::Link => write!(f, "LINK"),
-            ButtonAction::Unknown(value) => write!(f, "{}", value),
+            ButtonAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -96,7 +96,7 @@ impl ::std::fmt::Display for TableFieldIconSetType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             TableFieldIconSetType::Link => write!(f, "LINK"),
-            TableFieldIconSetType::Unknown(value) => write!(f, "{}", value),
+            TableFieldIconSetType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for FlowNodeInputCategory {
             FlowNodeInputCategory::ExitLoop => write!(f, "ExitLoop"),
             FlowNodeInputCategory::LoopCondition => write!(f, "LoopCondition"),
             FlowNodeInputCategory::ReturnValueToLoopStart => write!(f, "ReturnValueToLoopStart"),
-            FlowNodeInputCategory::Unknown(value) => write!(f, "{}", value),
+            FlowNodeInputCategory::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

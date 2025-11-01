@@ -108,7 +108,7 @@ impl ::std::fmt::Display for MetadataDefaultHttpTokensState {
             MetadataDefaultHttpTokensState::NoPreference => write!(f, "no-preference"),
             MetadataDefaultHttpTokensState::Optional => write!(f, "optional"),
             MetadataDefaultHttpTokensState::Required => write!(f, "required"),
-            MetadataDefaultHttpTokensState::Unknown(value) => write!(f, "{}", value),
+            MetadataDefaultHttpTokensState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -51,8 +51,7 @@ pub fn de_create_replace_root_volume_task(
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateReplaceRootVolumeTaskResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected CreateReplaceRootVolumeTaskResponse got {:?}",
-            start_el
+            "invalid root, expected CreateReplaceRootVolumeTaskResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

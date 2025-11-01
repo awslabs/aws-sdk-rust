@@ -154,7 +154,7 @@ impl ::std::fmt::Display for IpamResourceDiscoveryAssociationState {
             IpamResourceDiscoveryAssociationState::IsolateComplete => write!(f, "isolate-complete"),
             IpamResourceDiscoveryAssociationState::IsolateInProgress => write!(f, "isolate-in-progress"),
             IpamResourceDiscoveryAssociationState::RestoreInProgress => write!(f, "restore-in-progress"),
-            IpamResourceDiscoveryAssociationState::Unknown(value) => write!(f, "{}", value),
+            IpamResourceDiscoveryAssociationState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

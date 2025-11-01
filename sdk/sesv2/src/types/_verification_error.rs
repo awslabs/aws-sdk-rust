@@ -161,7 +161,7 @@ impl ::std::fmt::Display for VerificationError {
             VerificationError::ReplicationReplicaAsPrimaryNotSupported => write!(f, "REPLICATION_REPLICA_AS_PRIMARY_NOT_SUPPORTED"),
             VerificationError::ServiceError => write!(f, "SERVICE_ERROR"),
             VerificationError::TypeNotFound => write!(f, "TYPE_NOT_FOUND"),
-            VerificationError::Unknown(value) => write!(f, "{}", value),
+            VerificationError::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

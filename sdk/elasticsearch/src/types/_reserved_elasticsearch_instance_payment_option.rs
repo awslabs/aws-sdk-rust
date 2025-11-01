@@ -110,7 +110,7 @@ impl ::std::fmt::Display for ReservedElasticsearchInstancePaymentOption {
             ReservedElasticsearchInstancePaymentOption::AllUpfront => write!(f, "ALL_UPFRONT"),
             ReservedElasticsearchInstancePaymentOption::NoUpfront => write!(f, "NO_UPFRONT"),
             ReservedElasticsearchInstancePaymentOption::PartialUpfront => write!(f, "PARTIAL_UPFRONT"),
-            ReservedElasticsearchInstancePaymentOption::Unknown(value) => write!(f, "{}", value),
+            ReservedElasticsearchInstancePaymentOption::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

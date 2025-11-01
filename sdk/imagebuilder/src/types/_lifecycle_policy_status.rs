@@ -102,7 +102,7 @@ impl ::std::fmt::Display for LifecyclePolicyStatus {
         match self {
             LifecyclePolicyStatus::Disabled => write!(f, "DISABLED"),
             LifecyclePolicyStatus::Enabled => write!(f, "ENABLED"),
-            LifecyclePolicyStatus::Unknown(value) => write!(f, "{}", value),
+            LifecyclePolicyStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

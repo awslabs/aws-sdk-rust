@@ -108,7 +108,7 @@ impl ::std::fmt::Display for IndexEdition {
             IndexEdition::DeveloperEdition => write!(f, "DEVELOPER_EDITION"),
             IndexEdition::EnterpriseEdition => write!(f, "ENTERPRISE_EDITION"),
             IndexEdition::GenAiEnterpriseEdition => write!(f, "GEN_AI_ENTERPRISE_EDITION"),
-            IndexEdition::Unknown(value) => write!(f, "{}", value),
+            IndexEdition::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

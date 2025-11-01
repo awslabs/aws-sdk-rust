@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ConfigurationState {
             ConfigurationState::Enabled => write!(f, "ENABLED"),
             ConfigurationState::UpdateFailed => write!(f, "UPDATE_FAILED"),
             ConfigurationState::UpdateInProgress => write!(f, "UPDATE_IN_PROGRESS"),
-            ConfigurationState::Unknown(value) => write!(f, "{}", value),
+            ConfigurationState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

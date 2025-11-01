@@ -114,7 +114,7 @@ impl ::std::fmt::Display for AppAuthorizationStatus {
             AppAuthorizationStatus::ConnectionValidationFailed => write!(f, "ConnectionValidationFailed"),
             AppAuthorizationStatus::PendingConnect => write!(f, "PendingConnect"),
             AppAuthorizationStatus::TokenAutoRotationFailed => write!(f, "TokenAutoRotationFailed"),
-            AppAuthorizationStatus::Unknown(value) => write!(f, "{}", value),
+            AppAuthorizationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

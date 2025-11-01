@@ -114,7 +114,7 @@ impl ::std::fmt::Display for SearchContactsMatchType {
             SearchContactsMatchType::MatchAny => write!(f, "MATCH_ANY"),
             SearchContactsMatchType::MatchExact => write!(f, "MATCH_EXACT"),
             SearchContactsMatchType::MatchNone => write!(f, "MATCH_NONE"),
-            SearchContactsMatchType::Unknown(value) => write!(f, "{}", value),
+            SearchContactsMatchType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

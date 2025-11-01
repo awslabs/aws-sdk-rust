@@ -126,7 +126,7 @@ impl ::std::fmt::Display for AssociateResourceErrorReason {
             AssociateResourceErrorReason::InvalidArn => write!(f, "INVALID_ARN"),
             AssociateResourceErrorReason::InvalidBillingPeriodRange => write!(f, "INVALID_BILLING_PERIOD_RANGE"),
             AssociateResourceErrorReason::ServiceLimitExceeded => write!(f, "SERVICE_LIMIT_EXCEEDED"),
-            AssociateResourceErrorReason::Unknown(value) => write!(f, "{}", value),
+            AssociateResourceErrorReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

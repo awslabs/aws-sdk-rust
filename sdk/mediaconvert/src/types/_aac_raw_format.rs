@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AacRawFormat {
         match self {
             AacRawFormat::LatmLoas => write!(f, "LATM_LOAS"),
             AacRawFormat::None => write!(f, "NONE"),
-            AacRawFormat::Unknown(value) => write!(f, "{}", value),
+            AacRawFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

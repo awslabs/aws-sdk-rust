@@ -96,7 +96,7 @@ impl ::std::fmt::Display for BackupRetentionType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             BackupRetentionType::Days => write!(f, "DAYS"),
-            BackupRetentionType::Unknown(value) => write!(f, "{}", value),
+            BackupRetentionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

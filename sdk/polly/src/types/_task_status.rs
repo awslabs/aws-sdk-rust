@@ -114,7 +114,7 @@ impl ::std::fmt::Display for TaskStatus {
             TaskStatus::Failed => write!(f, "failed"),
             TaskStatus::InProgress => write!(f, "inProgress"),
             TaskStatus::Scheduled => write!(f, "scheduled"),
-            TaskStatus::Unknown(value) => write!(f, "{}", value),
+            TaskStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

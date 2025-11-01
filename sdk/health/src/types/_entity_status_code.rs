@@ -122,7 +122,7 @@ impl ::std::fmt::Display for EntityStatusCode {
             EntityStatusCode::Resolved => write!(f, "RESOLVED"),
             EntityStatusCode::Unimpaired => write!(f, "UNIMPAIRED"),
             EntityStatusCode::UnknownValue => write!(f, "UNKNOWN"),
-            EntityStatusCode::Unknown(value) => write!(f, "{}", value),
+            EntityStatusCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

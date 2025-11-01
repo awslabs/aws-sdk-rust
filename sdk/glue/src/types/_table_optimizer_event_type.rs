@@ -114,7 +114,7 @@ impl ::std::fmt::Display for TableOptimizerEventType {
             TableOptimizerEventType::Failed => write!(f, "failed"),
             TableOptimizerEventType::InProgress => write!(f, "in_progress"),
             TableOptimizerEventType::Starting => write!(f, "starting"),
-            TableOptimizerEventType::Unknown(value) => write!(f, "{}", value),
+            TableOptimizerEventType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

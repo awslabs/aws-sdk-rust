@@ -108,7 +108,7 @@ impl ::std::fmt::Display for JsScript {
             JsScript::Js => write!(f, "js"),
             JsScript::Jsx => write!(f, "jsx"),
             JsScript::Tsx => write!(f, "tsx"),
-            JsScript::Unknown(value) => write!(f, "{}", value),
+            JsScript::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AwsFundingUsed {
         match self {
             AwsFundingUsed::No => write!(f, "No"),
             AwsFundingUsed::Yes => write!(f, "Yes"),
-            AwsFundingUsed::Unknown(value) => write!(f, "{}", value),
+            AwsFundingUsed::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

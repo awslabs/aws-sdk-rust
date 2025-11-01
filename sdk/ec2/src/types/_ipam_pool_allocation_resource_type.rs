@@ -126,7 +126,7 @@ impl ::std::fmt::Display for IpamPoolAllocationResourceType {
             IpamPoolAllocationResourceType::IpamPool => write!(f, "ipam-pool"),
             IpamPoolAllocationResourceType::Subnet => write!(f, "subnet"),
             IpamPoolAllocationResourceType::Vpc => write!(f, "vpc"),
-            IpamPoolAllocationResourceType::Unknown(value) => write!(f, "{}", value),
+            IpamPoolAllocationResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

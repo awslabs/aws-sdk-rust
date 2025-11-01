@@ -102,7 +102,7 @@ impl ::std::fmt::Display for InferenceExperimentStopDesiredState {
         match self {
             InferenceExperimentStopDesiredState::Cancelled => write!(f, "Cancelled"),
             InferenceExperimentStopDesiredState::Completed => write!(f, "Completed"),
-            InferenceExperimentStopDesiredState::Unknown(value) => write!(f, "{}", value),
+            InferenceExperimentStopDesiredState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

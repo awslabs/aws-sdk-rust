@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Mpeg2DisplayRatio {
         match self {
             Mpeg2DisplayRatio::Displayratio16X9 => write!(f, "DISPLAYRATIO16X9"),
             Mpeg2DisplayRatio::Displayratio4X3 => write!(f, "DISPLAYRATIO4X3"),
-            Mpeg2DisplayRatio::Unknown(value) => write!(f, "{}", value),
+            Mpeg2DisplayRatio::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

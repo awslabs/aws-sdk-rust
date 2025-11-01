@@ -147,7 +147,7 @@ impl ::std::fmt::Display for ErrorCategory {
             ErrorCategory::Throttling => write!(f, "THROTTLING"),
             ErrorCategory::UserRecoverable => write!(f, "USER_RECOVERABLE"),
             ErrorCategory::Validation => write!(f, "VALIDATION"),
-            ErrorCategory::Unknown(value) => write!(f, "{}", value),
+            ErrorCategory::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

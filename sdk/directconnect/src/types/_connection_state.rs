@@ -156,7 +156,7 @@ impl ::std::fmt::Display for ConnectionState {
             ConnectionState::Rejected => write!(f, "rejected"),
             ConnectionState::Requested => write!(f, "requested"),
             ConnectionState::UnknownValue => write!(f, "unknown"),
-            ConnectionState::Unknown(value) => write!(f, "{}", value),
+            ConnectionState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

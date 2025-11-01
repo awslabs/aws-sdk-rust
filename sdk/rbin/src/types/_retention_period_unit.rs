@@ -96,7 +96,7 @@ impl ::std::fmt::Display for RetentionPeriodUnit {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             RetentionPeriodUnit::Days => write!(f, "DAYS"),
-            RetentionPeriodUnit::Unknown(value) => write!(f, "{}", value),
+            RetentionPeriodUnit::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

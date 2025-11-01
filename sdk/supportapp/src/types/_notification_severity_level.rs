@@ -108,7 +108,7 @@ impl ::std::fmt::Display for NotificationSeverityLevel {
             NotificationSeverityLevel::All => write!(f, "all"),
             NotificationSeverityLevel::High => write!(f, "high"),
             NotificationSeverityLevel::None => write!(f, "none"),
-            NotificationSeverityLevel::Unknown(value) => write!(f, "{}", value),
+            NotificationSeverityLevel::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

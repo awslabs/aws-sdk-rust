@@ -96,7 +96,7 @@ impl ::std::fmt::Display for MapComparison {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             MapComparison::Equals => write!(f, "EQUALS"),
-            MapComparison::Unknown(value) => write!(f, "{}", value),
+            MapComparison::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

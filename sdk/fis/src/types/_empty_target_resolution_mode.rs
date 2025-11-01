@@ -102,7 +102,7 @@ impl ::std::fmt::Display for EmptyTargetResolutionMode {
         match self {
             EmptyTargetResolutionMode::Fail => write!(f, "fail"),
             EmptyTargetResolutionMode::Skip => write!(f, "skip"),
-            EmptyTargetResolutionMode::Unknown(value) => write!(f, "{}", value),
+            EmptyTargetResolutionMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

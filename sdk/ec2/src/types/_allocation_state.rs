@@ -133,7 +133,7 @@ impl ::std::fmt::Display for AllocationState {
             AllocationState::Released => write!(f, "released"),
             AllocationState::ReleasedPermanentFailure => write!(f, "released-permanent-failure"),
             AllocationState::UnderAssessment => write!(f, "under-assessment"),
-            AllocationState::Unknown(value) => write!(f, "{}", value),
+            AllocationState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

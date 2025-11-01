@@ -280,7 +280,7 @@ impl ::std::fmt::Display for ActionConnectorType {
             ActionConnectorType::Slack => write!(f, "SLACK"),
             ActionConnectorType::Smartsheet => write!(f, "SMARTSHEET"),
             ActionConnectorType::ZendeskSuite => write!(f, "ZENDESK_SUITE"),
-            ActionConnectorType::Unknown(value) => write!(f, "{}", value),
+            ActionConnectorType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ExpirationModelType {
         match self {
             ExpirationModelType::KeyMaterialDoesNotExpire => write!(f, "KEY_MATERIAL_DOES_NOT_EXPIRE"),
             ExpirationModelType::KeyMaterialExpires => write!(f, "KEY_MATERIAL_EXPIRES"),
-            ExpirationModelType::Unknown(value) => write!(f, "{}", value),
+            ExpirationModelType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

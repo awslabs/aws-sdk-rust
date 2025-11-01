@@ -126,7 +126,7 @@ impl ::std::fmt::Display for FlowStatus {
             FlowStatus::Draft => write!(f, "Draft"),
             FlowStatus::Errored => write!(f, "Errored"),
             FlowStatus::Suspended => write!(f, "Suspended"),
-            FlowStatus::Unknown(value) => write!(f, "{}", value),
+            FlowStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

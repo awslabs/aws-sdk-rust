@@ -42,16 +42,14 @@ pub fn de_describe_stacks(
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeStacksResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected DescribeStacksResponse got {:?}",
-            start_el
+            "invalid root, expected DescribeStacksResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("DescribeStacksResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected DescribeStacksResult got {:?}",
-                start_el
+                "invalid result, expected DescribeStacksResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

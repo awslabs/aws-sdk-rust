@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DeploymentFailureHandlingPolicy {
         match self {
             DeploymentFailureHandlingPolicy::DoNothing => write!(f, "DO_NOTHING"),
             DeploymentFailureHandlingPolicy::Rollback => write!(f, "ROLLBACK"),
-            DeploymentFailureHandlingPolicy::Unknown(value) => write!(f, "{}", value),
+            DeploymentFailureHandlingPolicy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

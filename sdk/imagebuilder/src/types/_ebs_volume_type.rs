@@ -132,7 +132,7 @@ impl ::std::fmt::Display for EbsVolumeType {
             EbsVolumeType::Sc1 => write!(f, "sc1"),
             EbsVolumeType::St1 => write!(f, "st1"),
             EbsVolumeType::Standard => write!(f, "standard"),
-            EbsVolumeType::Unknown(value) => write!(f, "{}", value),
+            EbsVolumeType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

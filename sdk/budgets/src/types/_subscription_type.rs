@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SubscriptionType {
         match self {
             SubscriptionType::Email => write!(f, "EMAIL"),
             SubscriptionType::Sns => write!(f, "SNS"),
-            SubscriptionType::Unknown(value) => write!(f, "{}", value),
+            SubscriptionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

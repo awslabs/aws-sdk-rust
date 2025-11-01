@@ -108,7 +108,7 @@ impl ::std::fmt::Display for EngagementScore {
             EngagementScore::High => write!(f, "High"),
             EngagementScore::Low => write!(f, "Low"),
             EngagementScore::Medium => write!(f, "Medium"),
-            EngagementScore::Unknown(value) => write!(f, "{}", value),
+            EngagementScore::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

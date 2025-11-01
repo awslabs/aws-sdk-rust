@@ -190,6 +190,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for CreateLicens
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::create_license_conversion_task_for_resource::CreateLicenseConversionTaskForResourceInput,
                 output: &mut ::std::string::String,

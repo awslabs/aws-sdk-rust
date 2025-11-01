@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ModelPackageGroupSortBy {
         match self {
             ModelPackageGroupSortBy::CreationTime => write!(f, "CreationTime"),
             ModelPackageGroupSortBy::Name => write!(f, "Name"),
-            ModelPackageGroupSortBy::Unknown(value) => write!(f, "{}", value),
+            ModelPackageGroupSortBy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

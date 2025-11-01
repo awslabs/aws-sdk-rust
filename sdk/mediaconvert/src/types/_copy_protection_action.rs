@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CopyProtectionAction {
         match self {
             CopyProtectionAction::Passthrough => write!(f, "PASSTHROUGH"),
             CopyProtectionAction::Strip => write!(f, "STRIP"),
-            CopyProtectionAction::Unknown(value) => write!(f, "{}", value),
+            CopyProtectionAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

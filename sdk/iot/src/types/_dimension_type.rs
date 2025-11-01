@@ -96,7 +96,7 @@ impl ::std::fmt::Display for DimensionType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             DimensionType::TopicFilter => write!(f, "TOPIC_FILTER"),
-            DimensionType::Unknown(value) => write!(f, "{}", value),
+            DimensionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

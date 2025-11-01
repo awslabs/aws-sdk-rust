@@ -104,7 +104,7 @@ impl ::std::fmt::Display for DashIsoWriteSegmentTimelineInRepresentation {
         match self {
             DashIsoWriteSegmentTimelineInRepresentation::Disabled => write!(f, "DISABLED"),
             DashIsoWriteSegmentTimelineInRepresentation::Enabled => write!(f, "ENABLED"),
-            DashIsoWriteSegmentTimelineInRepresentation::Unknown(value) => write!(f, "{}", value),
+            DashIsoWriteSegmentTimelineInRepresentation::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

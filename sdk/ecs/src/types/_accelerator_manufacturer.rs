@@ -120,7 +120,7 @@ impl ::std::fmt::Display for AcceleratorManufacturer {
             AcceleratorManufacturer::Habana => write!(f, "habana"),
             AcceleratorManufacturer::Nvidia => write!(f, "nvidia"),
             AcceleratorManufacturer::Xilinx => write!(f, "xilinx"),
-            AcceleratorManufacturer::Unknown(value) => write!(f, "{}", value),
+            AcceleratorManufacturer::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

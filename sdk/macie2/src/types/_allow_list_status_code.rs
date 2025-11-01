@@ -147,7 +147,7 @@ impl ::std::fmt::Display for AllowListStatusCode {
             AllowListStatusCode::S3Throttled => write!(f, "S3_THROTTLED"),
             AllowListStatusCode::S3UserAccessDenied => write!(f, "S3_USER_ACCESS_DENIED"),
             AllowListStatusCode::UnknownError => write!(f, "UNKNOWN_ERROR"),
-            AllowListStatusCode::Unknown(value) => write!(f, "{}", value),
+            AllowListStatusCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

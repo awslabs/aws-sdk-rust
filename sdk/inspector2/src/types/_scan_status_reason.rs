@@ -315,7 +315,7 @@ impl ::std::fmt::Display for ScanStatusReason {
             ScanStatusReason::UnsupportedMediaType => write!(f, "UNSUPPORTED_MEDIA_TYPE"),
             ScanStatusReason::UnsupportedOs => write!(f, "UNSUPPORTED_OS"),
             ScanStatusReason::UnsupportedRuntime => write!(f, "UNSUPPORTED_RUNTIME"),
-            ScanStatusReason::Unknown(value) => write!(f, "{}", value),
+            ScanStatusReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

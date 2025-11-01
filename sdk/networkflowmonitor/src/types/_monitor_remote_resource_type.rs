@@ -126,7 +126,7 @@ impl ::std::fmt::Display for MonitorRemoteResourceType {
             MonitorRemoteResourceType::AwsSubnet => write!(f, "AWS::EC2::Subnet"),
             MonitorRemoteResourceType::AwsVpc => write!(f, "AWS::EC2::VPC"),
             MonitorRemoteResourceType::AwsRegion => write!(f, "AWS::Region"),
-            MonitorRemoteResourceType::Unknown(value) => write!(f, "{}", value),
+            MonitorRemoteResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

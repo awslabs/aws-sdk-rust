@@ -114,7 +114,7 @@ impl ::std::fmt::Display for BillScenarioStatus {
             BillScenarioStatus::Locked => write!(f, "LOCKED"),
             BillScenarioStatus::Ready => write!(f, "READY"),
             BillScenarioStatus::Stale => write!(f, "STALE"),
-            BillScenarioStatus::Unknown(value) => write!(f, "{}", value),
+            BillScenarioStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ResourceItemStatus {
             ResourceItemStatus::InProgress => write!(f, "IN_PROGRESS"),
             ResourceItemStatus::Skipped => write!(f, "SKIPPED"),
             ResourceItemStatus::Success => write!(f, "SUCCESS"),
-            ResourceItemStatus::Unknown(value) => write!(f, "{}", value),
+            ResourceItemStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

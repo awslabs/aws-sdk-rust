@@ -108,7 +108,7 @@ impl ::std::fmt::Display for CharLengthSemantics {
             CharLengthSemantics::Byte => write!(f, "byte"),
             CharLengthSemantics::Char => write!(f, "char"),
             CharLengthSemantics::Default => write!(f, "default"),
-            CharLengthSemantics::Unknown(value) => write!(f, "{}", value),
+            CharLengthSemantics::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

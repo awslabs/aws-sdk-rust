@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AccessDeniedExceptionReason {
         match self {
             AccessDeniedExceptionReason::AccountDisabled => write!(f, "ACCOUNT_DISABLED"),
             AccessDeniedExceptionReason::InsufficientAccountReputation => write!(f, "INSUFFICIENT_ACCOUNT_REPUTATION"),
-            AccessDeniedExceptionReason::Unknown(value) => write!(f, "{}", value),
+            AccessDeniedExceptionReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

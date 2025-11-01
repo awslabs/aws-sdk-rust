@@ -114,7 +114,7 @@ impl ::std::fmt::Display for DvbddsHandling {
             DvbddsHandling::NoDisplayWindow => write!(f, "NO_DISPLAY_WINDOW"),
             DvbddsHandling::Specified => write!(f, "SPECIFIED"),
             DvbddsHandling::SpecifiedOptimal => write!(f, "SPECIFIED_OPTIMAL"),
-            DvbddsHandling::Unknown(value) => write!(f, "{}", value),
+            DvbddsHandling::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

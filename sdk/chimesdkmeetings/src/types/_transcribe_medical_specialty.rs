@@ -126,7 +126,7 @@ impl ::std::fmt::Display for TranscribeMedicalSpecialty {
             TranscribeMedicalSpecialty::Primarycare => write!(f, "PRIMARYCARE"),
             TranscribeMedicalSpecialty::Radiology => write!(f, "RADIOLOGY"),
             TranscribeMedicalSpecialty::Urology => write!(f, "UROLOGY"),
-            TranscribeMedicalSpecialty::Unknown(value) => write!(f, "{}", value),
+            TranscribeMedicalSpecialty::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for EphemerisSource {
         match self {
             EphemerisSource::CustomerProvided => write!(f, "CUSTOMER_PROVIDED"),
             EphemerisSource::SpaceTrack => write!(f, "SPACE_TRACK"),
-            EphemerisSource::Unknown(value) => write!(f, "{}", value),
+            EphemerisSource::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

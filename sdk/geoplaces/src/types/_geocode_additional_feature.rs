@@ -114,7 +114,7 @@ impl ::std::fmt::Display for GeocodeAdditionalFeature {
             GeocodeAdditionalFeature::Intersections => write!(f, "Intersections"),
             GeocodeAdditionalFeature::SecondaryAddresses => write!(f, "SecondaryAddresses"),
             GeocodeAdditionalFeature::TimeZone => write!(f, "TimeZone"),
-            GeocodeAdditionalFeature::Unknown(value) => write!(f, "{}", value),
+            GeocodeAdditionalFeature::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for NielsenWatermarksDistributionTypes {
         match self {
             NielsenWatermarksDistributionTypes::FinalDistributor => write!(f, "FINAL_DISTRIBUTOR"),
             NielsenWatermarksDistributionTypes::ProgramContent => write!(f, "PROGRAM_CONTENT"),
-            NielsenWatermarksDistributionTypes::Unknown(value) => write!(f, "{}", value),
+            NielsenWatermarksDistributionTypes::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

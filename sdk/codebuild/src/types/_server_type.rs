@@ -120,7 +120,7 @@ impl ::std::fmt::Display for ServerType {
             ServerType::GithubEnterprise => write!(f, "GITHUB_ENTERPRISE"),
             ServerType::Gitlab => write!(f, "GITLAB"),
             ServerType::GitlabSelfManaged => write!(f, "GITLAB_SELF_MANAGED"),
-            ServerType::Unknown(value) => write!(f, "{}", value),
+            ServerType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

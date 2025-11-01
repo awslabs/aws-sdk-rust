@@ -168,7 +168,7 @@ impl ::std::fmt::Display for WorkflowRunStatus {
             WorkflowRunStatus::Succeeded => write!(f, "SUCCEEDED"),
             WorkflowRunStatus::Superseded => write!(f, "SUPERSEDED"),
             WorkflowRunStatus::Validating => write!(f, "VALIDATING"),
-            WorkflowRunStatus::Unknown(value) => write!(f, "{}", value),
+            WorkflowRunStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

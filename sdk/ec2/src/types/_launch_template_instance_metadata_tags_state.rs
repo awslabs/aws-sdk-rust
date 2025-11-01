@@ -102,7 +102,7 @@ impl ::std::fmt::Display for LaunchTemplateInstanceMetadataTagsState {
         match self {
             LaunchTemplateInstanceMetadataTagsState::Disabled => write!(f, "disabled"),
             LaunchTemplateInstanceMetadataTagsState::Enabled => write!(f, "enabled"),
-            LaunchTemplateInstanceMetadataTagsState::Unknown(value) => write!(f, "{}", value),
+            LaunchTemplateInstanceMetadataTagsState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

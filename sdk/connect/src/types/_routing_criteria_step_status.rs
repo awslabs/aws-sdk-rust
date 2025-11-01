@@ -114,7 +114,7 @@ impl ::std::fmt::Display for RoutingCriteriaStepStatus {
             RoutingCriteriaStepStatus::Expired => write!(f, "EXPIRED"),
             RoutingCriteriaStepStatus::Inactive => write!(f, "INACTIVE"),
             RoutingCriteriaStepStatus::Joined => write!(f, "JOINED"),
-            RoutingCriteriaStepStatus::Unknown(value) => write!(f, "{}", value),
+            RoutingCriteriaStepStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

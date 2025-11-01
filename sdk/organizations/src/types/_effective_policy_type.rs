@@ -133,7 +133,7 @@ impl ::std::fmt::Display for EffectivePolicyType {
             EffectivePolicyType::DeclarativePolicyEc2 => write!(f, "DECLARATIVE_POLICY_EC2"),
             EffectivePolicyType::SecurityhubPolicy => write!(f, "SECURITYHUB_POLICY"),
             EffectivePolicyType::TagPolicy => write!(f, "TAG_POLICY"),
-            EffectivePolicyType::Unknown(value) => write!(f, "{}", value),
+            EffectivePolicyType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

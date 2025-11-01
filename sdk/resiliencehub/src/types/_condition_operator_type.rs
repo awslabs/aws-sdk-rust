@@ -126,7 +126,7 @@ impl ::std::fmt::Display for ConditionOperatorType {
             ConditionOperatorType::LessOrEquals => write!(f, "LessOrEquals"),
             ConditionOperatorType::LessThen => write!(f, "LessThen"),
             ConditionOperatorType::NotEquals => write!(f, "NotEquals"),
-            ConditionOperatorType::Unknown(value) => write!(f, "{}", value),
+            ConditionOperatorType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

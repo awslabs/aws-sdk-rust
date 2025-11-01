@@ -110,7 +110,7 @@ impl ::std::fmt::Display for AutomatedReasoningPolicyBuildWorkflowType {
             AutomatedReasoningPolicyBuildWorkflowType::ImportPolicy => write!(f, "IMPORT_POLICY"),
             AutomatedReasoningPolicyBuildWorkflowType::IngestContent => write!(f, "INGEST_CONTENT"),
             AutomatedReasoningPolicyBuildWorkflowType::RefinePolicy => write!(f, "REFINE_POLICY"),
-            AutomatedReasoningPolicyBuildWorkflowType::Unknown(value) => write!(f, "{}", value),
+            AutomatedReasoningPolicyBuildWorkflowType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

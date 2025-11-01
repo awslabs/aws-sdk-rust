@@ -108,7 +108,7 @@ impl ::std::fmt::Display for RiskDecisionType {
             RiskDecisionType::AccountTakeover => write!(f, "AccountTakeover"),
             RiskDecisionType::Block => write!(f, "Block"),
             RiskDecisionType::NoRisk => write!(f, "NoRisk"),
-            RiskDecisionType::Unknown(value) => write!(f, "{}", value),
+            RiskDecisionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

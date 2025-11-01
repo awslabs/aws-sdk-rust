@@ -102,7 +102,7 @@ impl ::std::fmt::Display for HistogramBinType {
         match self {
             HistogramBinType::BinCount => write!(f, "BIN_COUNT"),
             HistogramBinType::BinWidth => write!(f, "BIN_WIDTH"),
-            HistogramBinType::Unknown(value) => write!(f, "{}", value),
+            HistogramBinType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

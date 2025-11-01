@@ -102,7 +102,7 @@ impl ::std::fmt::Display for VerificationChannel {
         match self {
             VerificationChannel::Text => write!(f, "TEXT"),
             VerificationChannel::Voice => write!(f, "VOICE"),
-            VerificationChannel::Unknown(value) => write!(f, "{}", value),
+            VerificationChannel::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

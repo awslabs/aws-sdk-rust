@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ArtifactsType {
             ArtifactsType::Codepipeline => write!(f, "CODEPIPELINE"),
             ArtifactsType::NoArtifacts => write!(f, "NO_ARTIFACTS"),
             ArtifactsType::S3 => write!(f, "S3"),
-            ArtifactsType::Unknown(value) => write!(f, "{}", value),
+            ArtifactsType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

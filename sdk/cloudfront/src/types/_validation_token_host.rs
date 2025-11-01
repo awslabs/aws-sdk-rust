@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ValidationTokenHost {
         match self {
             ValidationTokenHost::CloudFront => write!(f, "cloudfront"),
             ValidationTokenHost::SelfHosted => write!(f, "self-hosted"),
-            ValidationTokenHost::Unknown(value) => write!(f, "{}", value),
+            ValidationTokenHost::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

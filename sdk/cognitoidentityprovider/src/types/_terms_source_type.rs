@@ -96,7 +96,7 @@ impl ::std::fmt::Display for TermsSourceType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             TermsSourceType::Link => write!(f, "LINK"),
-            TermsSourceType::Unknown(value) => write!(f, "{}", value),
+            TermsSourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

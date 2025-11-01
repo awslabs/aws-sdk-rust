@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ConflictDetailLevelTypeEnum {
         match self {
             ConflictDetailLevelTypeEnum::FileLevel => write!(f, "FILE_LEVEL"),
             ConflictDetailLevelTypeEnum::LineLevel => write!(f, "LINE_LEVEL"),
-            ConflictDetailLevelTypeEnum::Unknown(value) => write!(f, "{}", value),
+            ConflictDetailLevelTypeEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

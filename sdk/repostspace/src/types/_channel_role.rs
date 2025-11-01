@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ChannelRole {
             ChannelRole::Expert => write!(f, "EXPERT"),
             ChannelRole::Moderator => write!(f, "MODERATOR"),
             ChannelRole::Supportrequestor => write!(f, "SUPPORTREQUESTOR"),
-            ChannelRole::Unknown(value) => write!(f, "{}", value),
+            ChannelRole::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

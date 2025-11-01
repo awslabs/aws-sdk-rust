@@ -108,7 +108,7 @@ impl ::std::fmt::Display for FleetType {
             FleetType::AlwaysOn => write!(f, "ALWAYS_ON"),
             FleetType::Elastic => write!(f, "ELASTIC"),
             FleetType::OnDemand => write!(f, "ON_DEMAND"),
-            FleetType::Unknown(value) => write!(f, "{}", value),
+            FleetType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -147,7 +147,7 @@ impl ::std::fmt::Display for KxClusterStatus {
             KxClusterStatus::Pending => write!(f, "PENDING"),
             KxClusterStatus::Running => write!(f, "RUNNING"),
             KxClusterStatus::Updating => write!(f, "UPDATING"),
-            KxClusterStatus::Unknown(value) => write!(f, "{}", value),
+            KxClusterStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

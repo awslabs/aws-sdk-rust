@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AccountStatus {
             AccountStatus::Active => write!(f, "ACTIVE"),
             AccountStatus::Inactive => write!(f, "INACTIVE"),
             AccountStatus::PendingActivation => write!(f, "PENDING_ACTIVATION"),
-            AccountStatus::Unknown(value) => write!(f, "{}", value),
+            AccountStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -196,7 +196,7 @@ impl ::std::fmt::Display for Av1Level {
             Av1Level::Av1Level62 => write!(f, "AV1_LEVEL_6_2"),
             Av1Level::Av1Level63 => write!(f, "AV1_LEVEL_6_3"),
             Av1Level::Av1LevelAuto => write!(f, "AV1_LEVEL_AUTO"),
-            Av1Level::Unknown(value) => write!(f, "{}", value),
+            Av1Level::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ExternalReportStatus {
             ExternalReportStatus::Failed => write!(f, "FAILED"),
             ExternalReportStatus::InProgress => write!(f, "IN_PROGRESS"),
             ExternalReportStatus::Succeeded => write!(f, "SUCCEEDED"),
-            ExternalReportStatus::Unknown(value) => write!(f, "{}", value),
+            ExternalReportStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

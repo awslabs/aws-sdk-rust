@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Vc3FramerateControl {
         match self {
             Vc3FramerateControl::InitializeFromSource => write!(f, "INITIALIZE_FROM_SOURCE"),
             Vc3FramerateControl::Specified => write!(f, "SPECIFIED"),
-            Vc3FramerateControl::Unknown(value) => write!(f, "{}", value),
+            Vc3FramerateControl::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

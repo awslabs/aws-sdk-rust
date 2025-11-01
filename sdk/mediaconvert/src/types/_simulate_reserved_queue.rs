@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SimulateReservedQueue {
         match self {
             SimulateReservedQueue::Disabled => write!(f, "DISABLED"),
             SimulateReservedQueue::Enabled => write!(f, "ENABLED"),
-            SimulateReservedQueue::Unknown(value) => write!(f, "{}", value),
+            SimulateReservedQueue::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

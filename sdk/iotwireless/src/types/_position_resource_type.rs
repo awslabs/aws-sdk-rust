@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PositionResourceType {
         match self {
             PositionResourceType::WirelessDevice => write!(f, "WirelessDevice"),
             PositionResourceType::WirelessGateway => write!(f, "WirelessGateway"),
-            PositionResourceType::Unknown(value) => write!(f, "{}", value),
+            PositionResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

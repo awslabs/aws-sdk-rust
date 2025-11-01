@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FaceSearchSortBy {
         match self {
             FaceSearchSortBy::Index => write!(f, "INDEX"),
             FaceSearchSortBy::Timestamp => write!(f, "TIMESTAMP"),
-            FaceSearchSortBy::Unknown(value) => write!(f, "{}", value),
+            FaceSearchSortBy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

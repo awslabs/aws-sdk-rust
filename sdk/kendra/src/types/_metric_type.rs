@@ -133,7 +133,7 @@ impl ::std::fmt::Display for MetricType {
             MetricType::QueriesByZeroClickRate => write!(f, "QUERIES_BY_ZERO_CLICK_RATE"),
             MetricType::QueriesByZeroResultRate => write!(f, "QUERIES_BY_ZERO_RESULT_RATE"),
             MetricType::TrendQueryDocMetrics => write!(f, "TREND_QUERY_DOC_METRICS"),
-            MetricType::Unknown(value) => write!(f, "{}", value),
+            MetricType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

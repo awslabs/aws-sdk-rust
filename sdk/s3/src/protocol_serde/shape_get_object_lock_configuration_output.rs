@@ -22,8 +22,7 @@ pub fn de_object_lock_configuration(
     let start_el = decoder.start_el();
     if !(start_el.matches("ObjectLockConfiguration")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected ObjectLockConfiguration got {:?}",
-            start_el
+            "invalid root, expected ObjectLockConfiguration got {start_el:?}"
         )));
     }
     crate::protocol_serde::shape_object_lock_configuration::de_object_lock_configuration(&mut decoder)

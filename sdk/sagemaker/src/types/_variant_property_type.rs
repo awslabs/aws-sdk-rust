@@ -108,7 +108,7 @@ impl ::std::fmt::Display for VariantPropertyType {
             VariantPropertyType::DataCaptureConfig => write!(f, "DataCaptureConfig"),
             VariantPropertyType::DesiredInstanceCount => write!(f, "DesiredInstanceCount"),
             VariantPropertyType::DesiredWeight => write!(f, "DesiredWeight"),
-            VariantPropertyType::Unknown(value) => write!(f, "{}", value),
+            VariantPropertyType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

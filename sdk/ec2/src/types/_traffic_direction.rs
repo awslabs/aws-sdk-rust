@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TrafficDirection {
         match self {
             TrafficDirection::Egress => write!(f, "egress"),
             TrafficDirection::Ingress => write!(f, "ingress"),
-            TrafficDirection::Unknown(value) => write!(f, "{}", value),
+            TrafficDirection::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

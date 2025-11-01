@@ -120,7 +120,7 @@ impl ::std::fmt::Display for HumanLoopStatus {
             HumanLoopStatus::InProgress => write!(f, "InProgress"),
             HumanLoopStatus::Stopped => write!(f, "Stopped"),
             HumanLoopStatus::Stopping => write!(f, "Stopping"),
-            HumanLoopStatus::Unknown(value) => write!(f, "{}", value),
+            HumanLoopStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

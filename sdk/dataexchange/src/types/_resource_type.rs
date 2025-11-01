@@ -126,7 +126,7 @@ impl ::std::fmt::Display for ResourceType {
             ResourceType::EventAction => write!(f, "EVENT_ACTION"),
             ResourceType::Job => write!(f, "JOB"),
             ResourceType::Revision => write!(f, "REVISION"),
-            ResourceType::Unknown(value) => write!(f, "{}", value),
+            ResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

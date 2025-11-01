@@ -96,7 +96,7 @@ impl ::std::fmt::Display for UnlockDelayUnit {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             UnlockDelayUnit::Days => write!(f, "DAYS"),
-            UnlockDelayUnit::Unknown(value) => write!(f, "{}", value),
+            UnlockDelayUnit::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SamlConfigurationStatus {
         match self {
             SamlConfigurationStatus::Configured => write!(f, "CONFIGURED"),
             SamlConfigurationStatus::NotConfigured => write!(f, "NOT_CONFIGURED"),
-            SamlConfigurationStatus::Unknown(value) => write!(f, "{}", value),
+            SamlConfigurationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

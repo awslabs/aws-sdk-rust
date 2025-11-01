@@ -132,7 +132,7 @@ impl ::std::fmt::Display for TestExecutionStatus {
             TestExecutionStatus::Stopped => write!(f, "Stopped"),
             TestExecutionStatus::Stopping => write!(f, "Stopping"),
             TestExecutionStatus::Waiting => write!(f, "Waiting"),
-            TestExecutionStatus::Unknown(value) => write!(f, "{}", value),
+            TestExecutionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

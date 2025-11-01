@@ -102,7 +102,7 @@ impl ::std::fmt::Display for NitroEnclavesSupport {
         match self {
             NitroEnclavesSupport::Supported => write!(f, "supported"),
             NitroEnclavesSupport::Unsupported => write!(f, "unsupported"),
-            NitroEnclavesSupport::Unknown(value) => write!(f, "{}", value),
+            NitroEnclavesSupport::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

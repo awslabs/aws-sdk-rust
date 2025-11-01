@@ -119,7 +119,7 @@ impl ::std::fmt::Display for DataSourceFilterAttribute {
             DataSourceFilterAttribute::DirectQuicksightOwner => write!(f, "DIRECT_QUICKSIGHT_OWNER"),
             DataSourceFilterAttribute::DirectQuicksightSoleOwner => write!(f, "DIRECT_QUICKSIGHT_SOLE_OWNER"),
             DataSourceFilterAttribute::DirectQuicksightViewerOrOwner => write!(f, "DIRECT_QUICKSIGHT_VIEWER_OR_OWNER"),
-            DataSourceFilterAttribute::Unknown(value) => write!(f, "{}", value),
+            DataSourceFilterAttribute::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

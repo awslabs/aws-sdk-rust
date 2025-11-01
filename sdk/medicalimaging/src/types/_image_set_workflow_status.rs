@@ -182,7 +182,7 @@ impl ::std::fmt::Display for ImageSetWorkflowStatus {
             ImageSetWorkflowStatus::Updated => write!(f, "UPDATED"),
             ImageSetWorkflowStatus::UpdateFailed => write!(f, "UPDATE_FAILED"),
             ImageSetWorkflowStatus::Updating => write!(f, "UPDATING"),
-            ImageSetWorkflowStatus::Unknown(value) => write!(f, "{}", value),
+            ImageSetWorkflowStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

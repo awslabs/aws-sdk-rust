@@ -147,7 +147,7 @@ impl ::std::fmt::Display for ExperimentStatus {
             ExperimentStatus::Running => write!(f, "running"),
             ExperimentStatus::Stopped => write!(f, "stopped"),
             ExperimentStatus::Stopping => write!(f, "stopping"),
-            ExperimentStatus::Unknown(value) => write!(f, "{}", value),
+            ExperimentStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for RenditionConfigurationRendition {
             RenditionConfigurationRendition::Hd => write!(f, "HD"),
             RenditionConfigurationRendition::LowestResolution => write!(f, "LOWEST_RESOLUTION"),
             RenditionConfigurationRendition::Sd => write!(f, "SD"),
-            RenditionConfigurationRendition::Unknown(value) => write!(f, "{}", value),
+            RenditionConfigurationRendition::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

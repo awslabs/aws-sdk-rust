@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ImportErrorType {
         match self {
             ImportErrorType::ProcessingError => write!(f, "PROCESSING_ERROR"),
             ImportErrorType::ValidationError => write!(f, "VALIDATION_ERROR"),
-            ImportErrorType::Unknown(value) => write!(f, "{}", value),
+            ImportErrorType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

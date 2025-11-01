@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ReverseGeocodeAdditionalFeature {
             ReverseGeocodeAdditionalFeature::Access => write!(f, "Access"),
             ReverseGeocodeAdditionalFeature::Intersections => write!(f, "Intersections"),
             ReverseGeocodeAdditionalFeature::TimeZone => write!(f, "TimeZone"),
-            ReverseGeocodeAdditionalFeature::Unknown(value) => write!(f, "{}", value),
+            ReverseGeocodeAdditionalFeature::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

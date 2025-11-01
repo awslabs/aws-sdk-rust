@@ -108,7 +108,7 @@ impl ::std::fmt::Display for RouteResponseNoticeCode {
             RouteResponseNoticeCode::MainLanguageNotFound => write!(f, "MainLanguageNotFound"),
             RouteResponseNoticeCode::Other => write!(f, "Other"),
             RouteResponseNoticeCode::TravelTimeExceedsDriverWorkHours => write!(f, "TravelTimeExceedsDriverWorkHours"),
-            RouteResponseNoticeCode::Unknown(value) => write!(f, "{}", value),
+            RouteResponseNoticeCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

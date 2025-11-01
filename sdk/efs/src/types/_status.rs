@@ -114,7 +114,7 @@ impl ::std::fmt::Display for Status {
             Status::Disabling => write!(f, "DISABLING"),
             Status::Enabled => write!(f, "ENABLED"),
             Status::Enabling => write!(f, "ENABLING"),
-            Status::Unknown(value) => write!(f, "{}", value),
+            Status::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

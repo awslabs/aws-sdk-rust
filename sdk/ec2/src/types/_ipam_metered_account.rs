@@ -102,7 +102,7 @@ impl ::std::fmt::Display for IpamMeteredAccount {
         match self {
             IpamMeteredAccount::IpamOwner => write!(f, "ipam-owner"),
             IpamMeteredAccount::ResourceOwner => write!(f, "resource-owner"),
-            IpamMeteredAccount::Unknown(value) => write!(f, "{}", value),
+            IpamMeteredAccount::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for InstanceInterruptionBehavior {
             InstanceInterruptionBehavior::Hibernate => write!(f, "hibernate"),
             InstanceInterruptionBehavior::Stop => write!(f, "stop"),
             InstanceInterruptionBehavior::Terminate => write!(f, "terminate"),
-            InstanceInterruptionBehavior::Unknown(value) => write!(f, "{}", value),
+            InstanceInterruptionBehavior::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

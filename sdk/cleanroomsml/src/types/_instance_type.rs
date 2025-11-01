@@ -1026,7 +1026,7 @@ impl ::std::fmt::Display for InstanceType {
             InstanceType::MlTrn12Xlarge => write!(f, "ml.trn1.2xlarge"),
             InstanceType::MlTrn132Xlarge => write!(f, "ml.trn1.32xlarge"),
             InstanceType::MlTrn1N32Xlarge => write!(f, "ml.trn1n.32xlarge"),
-            InstanceType::Unknown(value) => write!(f, "{}", value),
+            InstanceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

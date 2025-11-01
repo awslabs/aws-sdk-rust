@@ -102,7 +102,7 @@ impl ::std::fmt::Display for NetworkFabricType {
         match self {
             NetworkFabricType::None => write!(f, "NONE"),
             NetworkFabricType::TransitGateway => write!(f, "TRANSIT_GATEWAY"),
-            NetworkFabricType::Unknown(value) => write!(f, "{}", value),
+            NetworkFabricType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

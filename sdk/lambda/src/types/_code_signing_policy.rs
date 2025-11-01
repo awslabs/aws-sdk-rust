@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CodeSigningPolicy {
         match self {
             CodeSigningPolicy::Enforce => write!(f, "Enforce"),
             CodeSigningPolicy::Warn => write!(f, "Warn"),
-            CodeSigningPolicy::Unknown(value) => write!(f, "{}", value),
+            CodeSigningPolicy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

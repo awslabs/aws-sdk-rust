@@ -114,7 +114,7 @@ impl ::std::fmt::Display for CrType {
             CrType::Fargate => write!(f, "FARGATE"),
             CrType::FargateSpot => write!(f, "FARGATE_SPOT"),
             CrType::Spot => write!(f, "SPOT"),
-            CrType::Unknown(value) => write!(f, "{}", value),
+            CrType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

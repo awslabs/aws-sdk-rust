@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ShippingOption {
             ShippingOption::NextDay => write!(f, "NEXT_DAY"),
             ShippingOption::SecondDay => write!(f, "SECOND_DAY"),
             ShippingOption::Standard => write!(f, "STANDARD"),
-            ShippingOption::Unknown(value) => write!(f, "{}", value),
+            ShippingOption::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

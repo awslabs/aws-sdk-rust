@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ContainerStatus {
             ContainerStatus::Active => write!(f, "ACTIVE"),
             ContainerStatus::Creating => write!(f, "CREATING"),
             ContainerStatus::Deleting => write!(f, "DELETING"),
-            ContainerStatus::Unknown(value) => write!(f, "{}", value),
+            ContainerStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

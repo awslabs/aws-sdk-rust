@@ -108,7 +108,7 @@ impl ::std::fmt::Display for InputMode {
             InputMode::Dtmf => write!(f, "DTMF"),
             InputMode::Speech => write!(f, "Speech"),
             InputMode::Text => write!(f, "Text"),
-            InputMode::Unknown(value) => write!(f, "{}", value),
+            InputMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CommentVisibilityType {
         match self {
             CommentVisibilityType::Private => write!(f, "PRIVATE"),
             CommentVisibilityType::Public => write!(f, "PUBLIC"),
-            CommentVisibilityType::Unknown(value) => write!(f, "{}", value),
+            CommentVisibilityType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

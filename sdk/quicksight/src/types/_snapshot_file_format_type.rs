@@ -108,7 +108,7 @@ impl ::std::fmt::Display for SnapshotFileFormatType {
             SnapshotFileFormatType::Csv => write!(f, "CSV"),
             SnapshotFileFormatType::Excel => write!(f, "EXCEL"),
             SnapshotFileFormatType::Pdf => write!(f, "PDF"),
-            SnapshotFileFormatType::Unknown(value) => write!(f, "{}", value),
+            SnapshotFileFormatType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for CodeGenerationStatus {
             CodeGenerationStatus::CreateComplete => write!(f, "CREATE_COMPLETE"),
             CodeGenerationStatus::CreateFailed => write!(f, "CREATE_FAILED"),
             CodeGenerationStatus::CreateInProgress => write!(f, "CREATE_IN_PROGRESS"),
-            CodeGenerationStatus::Unknown(value) => write!(f, "{}", value),
+            CodeGenerationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -140,7 +140,7 @@ impl ::std::fmt::Display for DataSourceErrorType {
             DataSourceErrorType::ServiceQuotaExceededException => write!(f, "SERVICE_QUOTA_EXCEEDED_EXCEPTION"),
             DataSourceErrorType::ThrottlingException => write!(f, "THROTTLING_EXCEPTION"),
             DataSourceErrorType::ValidationException => write!(f, "VALIDATION_EXCEPTION"),
-            DataSourceErrorType::Unknown(value) => write!(f, "{}", value),
+            DataSourceErrorType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for TableFormat {
             TableFormat::Default => write!(f, "Default"),
             TableFormat::Glue => write!(f, "Glue"),
             TableFormat::Iceberg => write!(f, "Iceberg"),
-            TableFormat::Unknown(value) => write!(f, "{}", value),
+            TableFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

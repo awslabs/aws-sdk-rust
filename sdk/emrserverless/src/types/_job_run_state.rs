@@ -154,7 +154,7 @@ impl ::std::fmt::Display for JobRunState {
             JobRunState::Scheduled => write!(f, "SCHEDULED"),
             JobRunState::Submitted => write!(f, "SUBMITTED"),
             JobRunState::Success => write!(f, "SUCCESS"),
-            JobRunState::Unknown(value) => write!(f, "{}", value),
+            JobRunState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

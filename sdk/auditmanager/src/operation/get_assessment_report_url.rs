@@ -186,6 +186,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetAssessmen
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::get_assessment_report_url::GetAssessmentReportUrlInput,
                 output: &mut ::std::string::String,

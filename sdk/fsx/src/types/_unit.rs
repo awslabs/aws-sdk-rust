@@ -96,7 +96,7 @@ impl ::std::fmt::Display for Unit {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             Unit::Days => write!(f, "DAYS"),
-            Unit::Unknown(value) => write!(f, "{}", value),
+            Unit::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FirewallDeploymentModel {
         match self {
             FirewallDeploymentModel::Centralized => write!(f, "CENTRALIZED"),
             FirewallDeploymentModel::Distributed => write!(f, "DISTRIBUTED"),
-            FirewallDeploymentModel::Unknown(value) => write!(f, "{}", value),
+            FirewallDeploymentModel::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

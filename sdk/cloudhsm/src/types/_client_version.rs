@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ClientVersion {
         match self {
             ClientVersion::FiveOne => write!(f, "5.1"),
             ClientVersion::FiveThree => write!(f, "5.3"),
-            ClientVersion::Unknown(value) => write!(f, "{}", value),
+            ClientVersion::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -186,6 +186,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DetachLoadBa
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::detach_load_balancer_from_subnets::DetachLoadBalancerFromSubnetsInput,
                 output: &mut ::std::string::String,

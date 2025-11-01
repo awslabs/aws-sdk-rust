@@ -102,7 +102,7 @@ impl ::std::fmt::Display for LaunchActionType {
         match self {
             LaunchActionType::SsmAutomation => write!(f, "SSM_AUTOMATION"),
             LaunchActionType::SsmCommand => write!(f, "SSM_COMMAND"),
-            LaunchActionType::Unknown(value) => write!(f, "{}", value),
+            LaunchActionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

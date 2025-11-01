@@ -238,7 +238,7 @@ impl ::std::fmt::Display for GatewayResponseType {
             GatewayResponseType::Unauthorized => write!(f, "UNAUTHORIZED"),
             GatewayResponseType::UnsupportedMediaType => write!(f, "UNSUPPORTED_MEDIA_TYPE"),
             GatewayResponseType::WafFiltered => write!(f, "WAF_FILTERED"),
-            GatewayResponseType::Unknown(value) => write!(f, "{}", value),
+            GatewayResponseType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

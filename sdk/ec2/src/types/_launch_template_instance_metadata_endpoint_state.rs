@@ -104,7 +104,7 @@ impl ::std::fmt::Display for LaunchTemplateInstanceMetadataEndpointState {
         match self {
             LaunchTemplateInstanceMetadataEndpointState::Disabled => write!(f, "disabled"),
             LaunchTemplateInstanceMetadataEndpointState::Enabled => write!(f, "enabled"),
-            LaunchTemplateInstanceMetadataEndpointState::Unknown(value) => write!(f, "{}", value),
+            LaunchTemplateInstanceMetadataEndpointState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

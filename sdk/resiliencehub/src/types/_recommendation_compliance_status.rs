@@ -114,7 +114,7 @@ impl ::std::fmt::Display for RecommendationComplianceStatus {
             RecommendationComplianceStatus::BreachedUnattainable => write!(f, "BreachedUnattainable"),
             RecommendationComplianceStatus::MetCanImprove => write!(f, "MetCanImprove"),
             RecommendationComplianceStatus::MissingPolicy => write!(f, "MissingPolicy"),
-            RecommendationComplianceStatus::Unknown(value) => write!(f, "{}", value),
+            RecommendationComplianceStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

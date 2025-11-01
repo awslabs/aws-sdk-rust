@@ -102,7 +102,7 @@ impl ::std::fmt::Display for S3ObjectLockRetentionMode {
         match self {
             S3ObjectLockRetentionMode::Compliance => write!(f, "COMPLIANCE"),
             S3ObjectLockRetentionMode::Governance => write!(f, "GOVERNANCE"),
-            S3ObjectLockRetentionMode::Unknown(value) => write!(f, "{}", value),
+            S3ObjectLockRetentionMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

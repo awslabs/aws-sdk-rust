@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AnalyticsSessionSortByName {
             AnalyticsSessionSortByName::ConversationStartTime => write!(f, "ConversationStartTime"),
             AnalyticsSessionSortByName::Duration => write!(f, "Duration"),
             AnalyticsSessionSortByName::NumberOfTurns => write!(f, "NumberOfTurns"),
-            AnalyticsSessionSortByName::Unknown(value) => write!(f, "{}", value),
+            AnalyticsSessionSortByName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

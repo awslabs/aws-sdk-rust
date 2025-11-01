@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DigitGroupingStyle {
         match self {
             DigitGroupingStyle::Default => write!(f, "DEFAULT"),
             DigitGroupingStyle::Lakhs => write!(f, "LAKHS"),
-            DigitGroupingStyle::Unknown(value) => write!(f, "{}", value),
+            DigitGroupingStyle::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TopicSortDirection {
         match self {
             TopicSortDirection::Ascending => write!(f, "ASCENDING"),
             TopicSortDirection::Descending => write!(f, "DESCENDING"),
-            TopicSortDirection::Unknown(value) => write!(f, "{}", value),
+            TopicSortDirection::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

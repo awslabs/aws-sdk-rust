@@ -114,7 +114,7 @@ impl ::std::fmt::Display for Mode {
             Mode::ApiKey => write!(f, "API_KEY"),
             Mode::AwsIam => write!(f, "AWS_IAM"),
             Mode::OpenidConnect => write!(f, "OPENID_CONNECT"),
-            Mode::Unknown(value) => write!(f, "{}", value),
+            Mode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

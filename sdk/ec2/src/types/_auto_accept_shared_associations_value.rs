@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AutoAcceptSharedAssociationsValue {
         match self {
             AutoAcceptSharedAssociationsValue::Disable => write!(f, "disable"),
             AutoAcceptSharedAssociationsValue::Enable => write!(f, "enable"),
-            AutoAcceptSharedAssociationsValue::Unknown(value) => write!(f, "{}", value),
+            AutoAcceptSharedAssociationsValue::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ObjectVersionIds {
         match self {
             ObjectVersionIds::Include => write!(f, "INCLUDE"),
             ObjectVersionIds::None => write!(f, "NONE"),
-            ObjectVersionIds::Unknown(value) => write!(f, "{}", value),
+            ObjectVersionIds::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

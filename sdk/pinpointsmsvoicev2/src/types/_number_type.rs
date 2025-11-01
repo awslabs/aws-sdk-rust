@@ -120,7 +120,7 @@ impl ::std::fmt::Display for NumberType {
             NumberType::Simulator => write!(f, "SIMULATOR"),
             NumberType::TenDlc => write!(f, "TEN_DLC"),
             NumberType::TollFree => write!(f, "TOLL_FREE"),
-            NumberType::Unknown(value) => write!(f, "{}", value),
+            NumberType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

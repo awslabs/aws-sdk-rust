@@ -168,7 +168,7 @@ impl ::std::fmt::Display for ActionCategory {
             ActionCategory::Refactoring => write!(f, "REFACTORING"),
             ActionCategory::Security => write!(f, "SECURITY"),
             ActionCategory::Validation => write!(f, "VALIDATION"),
-            ActionCategory::Unknown(value) => write!(f, "{}", value),
+            ActionCategory::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

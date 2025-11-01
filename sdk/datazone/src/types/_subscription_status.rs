@@ -108,7 +108,7 @@ impl ::std::fmt::Display for SubscriptionStatus {
             SubscriptionStatus::Approved => write!(f, "APPROVED"),
             SubscriptionStatus::Cancelled => write!(f, "CANCELLED"),
             SubscriptionStatus::Revoked => write!(f, "REVOKED"),
-            SubscriptionStatus::Unknown(value) => write!(f, "{}", value),
+            SubscriptionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ShareRequestAction {
             ShareRequestAction::Accept => write!(f, "ACCEPT"),
             ShareRequestAction::Decline => write!(f, "DECLINE"),
             ShareRequestAction::Revoke => write!(f, "REVOKE"),
-            ShareRequestAction::Unknown(value) => write!(f, "{}", value),
+            ShareRequestAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

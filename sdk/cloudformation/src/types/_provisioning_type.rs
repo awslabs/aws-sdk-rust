@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ProvisioningType {
             ProvisioningType::FullyMutable => write!(f, "FULLY_MUTABLE"),
             ProvisioningType::Immutable => write!(f, "IMMUTABLE"),
             ProvisioningType::NonProvisionable => write!(f, "NON_PROVISIONABLE"),
-            ProvisioningType::Unknown(value) => write!(f, "{}", value),
+            ProvisioningType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

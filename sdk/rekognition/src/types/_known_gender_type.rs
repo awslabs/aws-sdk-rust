@@ -114,7 +114,7 @@ impl ::std::fmt::Display for KnownGenderType {
             KnownGenderType::Male => write!(f, "Male"),
             KnownGenderType::Nonbinary => write!(f, "Nonbinary"),
             KnownGenderType::Unlisted => write!(f, "Unlisted"),
-            KnownGenderType::Unknown(value) => write!(f, "{}", value),
+            KnownGenderType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

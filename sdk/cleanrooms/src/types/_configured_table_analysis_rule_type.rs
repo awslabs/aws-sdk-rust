@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ConfiguredTableAnalysisRuleType {
             ConfiguredTableAnalysisRuleType::Aggregation => write!(f, "AGGREGATION"),
             ConfiguredTableAnalysisRuleType::Custom => write!(f, "CUSTOM"),
             ConfiguredTableAnalysisRuleType::List => write!(f, "LIST"),
-            ConfiguredTableAnalysisRuleType::Unknown(value) => write!(f, "{}", value),
+            ConfiguredTableAnalysisRuleType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

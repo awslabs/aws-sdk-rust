@@ -132,7 +132,7 @@ impl ::std::fmt::Display for VolumeType {
             VolumeType::Sc1 => write!(f, "sc1"),
             VolumeType::St1 => write!(f, "st1"),
             VolumeType::Standard => write!(f, "standard"),
-            VolumeType::Unknown(value) => write!(f, "{}", value),
+            VolumeType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

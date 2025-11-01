@@ -126,7 +126,7 @@ impl ::std::fmt::Display for ImportTaskStatus {
             ImportTaskStatus::Initialized => write!(f, "INITIALIZED"),
             ImportTaskStatus::Initializing => write!(f, "INITIALIZING"),
             ImportTaskStatus::Pending => write!(f, "PENDING"),
-            ImportTaskStatus::Unknown(value) => write!(f, "{}", value),
+            ImportTaskStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

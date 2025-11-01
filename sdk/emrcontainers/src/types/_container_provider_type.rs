@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ContainerProviderType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ContainerProviderType::Eks => write!(f, "EKS"),
-            ContainerProviderType::Unknown(value) => write!(f, "{}", value),
+            ContainerProviderType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

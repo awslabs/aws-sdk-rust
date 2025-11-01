@@ -109,16 +109,14 @@ pub fn de_create_generated_template(
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateGeneratedTemplateResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected CreateGeneratedTemplateResponse got {:?}",
-            start_el
+            "invalid root, expected CreateGeneratedTemplateResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("CreateGeneratedTemplateResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected CreateGeneratedTemplateResult got {:?}",
-                start_el
+                "invalid result, expected CreateGeneratedTemplateResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

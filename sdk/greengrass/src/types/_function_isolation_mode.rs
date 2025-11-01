@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FunctionIsolationMode {
         match self {
             FunctionIsolationMode::GreengrassContainer => write!(f, "GreengrassContainer"),
             FunctionIsolationMode::NoContainer => write!(f, "NoContainer"),
-            FunctionIsolationMode::Unknown(value) => write!(f, "{}", value),
+            FunctionIsolationMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

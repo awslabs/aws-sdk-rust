@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DestinationFileFormat {
         match self {
             DestinationFileFormat::Parquet => write!(f, "parquet"),
             DestinationFileFormat::PlainText => write!(f, "plain-text"),
-            DestinationFileFormat::Unknown(value) => write!(f, "{}", value),
+            DestinationFileFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -525,7 +525,7 @@ impl ::std::fmt::Display for HistoryEventType {
             HistoryEventType::WaitStateAborted => write!(f, "WaitStateAborted"),
             HistoryEventType::WaitStateEntered => write!(f, "WaitStateEntered"),
             HistoryEventType::WaitStateExited => write!(f, "WaitStateExited"),
-            HistoryEventType::Unknown(value) => write!(f, "{}", value),
+            HistoryEventType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

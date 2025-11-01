@@ -126,7 +126,7 @@ impl ::std::fmt::Display for TargetStatus {
             TargetStatus::Unavailable => write!(f, "UNAVAILABLE"),
             TargetStatus::Unhealthy => write!(f, "UNHEALTHY"),
             TargetStatus::Unused => write!(f, "UNUSED"),
-            TargetStatus::Unknown(value) => write!(f, "{}", value),
+            TargetStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

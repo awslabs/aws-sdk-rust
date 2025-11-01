@@ -52,7 +52,6 @@ impl TemplateRuleBuilder {
         &self.case_rule_id
     }
     /// <p>Unique identifier of a field.</p>
-    /// This field is required.
     pub fn field_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.field_id = ::std::option::Option::Some(input.into());
         self
@@ -69,7 +68,6 @@ impl TemplateRuleBuilder {
     /// Consumes the builder and constructs a [`TemplateRule`](crate::types::TemplateRule).
     /// This method will fail if any of the following fields are not set:
     /// - [`case_rule_id`](crate::types::builders::TemplateRuleBuilder::case_rule_id)
-    /// - [`field_id`](crate::types::builders::TemplateRuleBuilder::field_id)
     pub fn build(self) -> ::std::result::Result<crate::types::TemplateRule, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TemplateRule {
             case_rule_id: self.case_rule_id.ok_or_else(|| {
@@ -78,12 +76,7 @@ impl TemplateRuleBuilder {
                     "case_rule_id was not specified but it is required when building TemplateRule",
                 )
             })?,
-            field_id: self.field_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "field_id",
-                    "field_id was not specified but it is required when building TemplateRule",
-                )
-            })?,
+            field_id: self.field_id.unwrap_or_else(|| "NULL".to_owned()),
         })
     }
 }

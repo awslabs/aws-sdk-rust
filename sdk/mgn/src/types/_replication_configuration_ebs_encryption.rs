@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ReplicationConfigurationEbsEncryption {
         match self {
             ReplicationConfigurationEbsEncryption::Custom => write!(f, "CUSTOM"),
             ReplicationConfigurationEbsEncryption::Default => write!(f, "DEFAULT"),
-            ReplicationConfigurationEbsEncryption::Unknown(value) => write!(f, "{}", value),
+            ReplicationConfigurationEbsEncryption::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

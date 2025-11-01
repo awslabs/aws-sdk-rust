@@ -96,7 +96,7 @@ impl ::std::fmt::Display for MedicalScribeSessionControlEventType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             MedicalScribeSessionControlEventType::EndOfSession => write!(f, "END_OF_SESSION"),
-            MedicalScribeSessionControlEventType::Unknown(value) => write!(f, "{}", value),
+            MedicalScribeSessionControlEventType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

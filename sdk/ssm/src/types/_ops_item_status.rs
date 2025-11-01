@@ -231,7 +231,7 @@ impl ::std::fmt::Display for OpsItemStatus {
             OpsItemStatus::RunbookInProgress => write!(f, "RunbookInProgress"),
             OpsItemStatus::Scheduled => write!(f, "Scheduled"),
             OpsItemStatus::TimedOut => write!(f, "TimedOut"),
-            OpsItemStatus::Unknown(value) => write!(f, "{}", value),
+            OpsItemStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

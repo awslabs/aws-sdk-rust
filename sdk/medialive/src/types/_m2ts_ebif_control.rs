@@ -102,7 +102,7 @@ impl ::std::fmt::Display for M2tsEbifControl {
         match self {
             M2tsEbifControl::None => write!(f, "NONE"),
             M2tsEbifControl::Passthrough => write!(f, "PASSTHROUGH"),
-            M2tsEbifControl::Unknown(value) => write!(f, "{}", value),
+            M2tsEbifControl::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

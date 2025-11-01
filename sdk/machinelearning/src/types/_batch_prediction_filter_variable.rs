@@ -179,7 +179,7 @@ impl ::std::fmt::Display for BatchPredictionFilterVariable {
             BatchPredictionFilterVariable::MlModelId => write!(f, "MLModelId"),
             BatchPredictionFilterVariable::Name => write!(f, "Name"),
             BatchPredictionFilterVariable::Status => write!(f, "Status"),
-            BatchPredictionFilterVariable::Unknown(value) => write!(f, "{}", value),
+            BatchPredictionFilterVariable::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

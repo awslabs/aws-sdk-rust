@@ -210,7 +210,7 @@ impl ::std::fmt::Display for TemporalFilterStrength {
             TemporalFilterStrength::Strength7 => write!(f, "STRENGTH_7"),
             TemporalFilterStrength::Strength8 => write!(f, "STRENGTH_8"),
             TemporalFilterStrength::Strength9 => write!(f, "STRENGTH_9"),
-            TemporalFilterStrength::Unknown(value) => write!(f, "{}", value),
+            TemporalFilterStrength::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -96,7 +96,7 @@ impl ::std::fmt::Display for DigitalSignatureMethod {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             DigitalSignatureMethod::JwtPs384 => write!(f, "JWT_PS384"),
-            DigitalSignatureMethod::Unknown(value) => write!(f, "{}", value),
+            DigitalSignatureMethod::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for GroupLifecycleEventsDesiredStatus {
         match self {
             GroupLifecycleEventsDesiredStatus::Active => write!(f, "ACTIVE"),
             GroupLifecycleEventsDesiredStatus::Inactive => write!(f, "INACTIVE"),
-            GroupLifecycleEventsDesiredStatus::Unknown(value) => write!(f, "{}", value),
+            GroupLifecycleEventsDesiredStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

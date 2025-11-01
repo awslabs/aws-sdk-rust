@@ -120,7 +120,7 @@ impl ::std::fmt::Display for Status {
             Status::Recovering => write!(f, "RECOVERING"),
             Status::Recurring => write!(f, "RECURRING"),
             Status::Resolved => write!(f, "RESOLVED"),
-            Status::Unknown(value) => write!(f, "{}", value),
+            Status::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

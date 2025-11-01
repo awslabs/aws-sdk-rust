@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Ec2ScanModeStatus {
         match self {
             Ec2ScanModeStatus::Pending => write!(f, "PENDING"),
             Ec2ScanModeStatus::Success => write!(f, "SUCCESS"),
-            Ec2ScanModeStatus::Unknown(value) => write!(f, "{}", value),
+            Ec2ScanModeStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

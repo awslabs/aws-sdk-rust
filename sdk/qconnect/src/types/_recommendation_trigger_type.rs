@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RecommendationTriggerType {
         match self {
             RecommendationTriggerType::Generative => write!(f, "GENERATIVE"),
             RecommendationTriggerType::Query => write!(f, "QUERY"),
-            RecommendationTriggerType::Unknown(value) => write!(f, "{}", value),
+            RecommendationTriggerType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

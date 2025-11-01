@@ -114,7 +114,7 @@ impl ::std::fmt::Display for WebvttStylePassthrough {
             WebvttStylePassthrough::Enabled => write!(f, "ENABLED"),
             WebvttStylePassthrough::Merge => write!(f, "MERGE"),
             WebvttStylePassthrough::Strict => write!(f, "STRICT"),
-            WebvttStylePassthrough::Unknown(value) => write!(f, "{}", value),
+            WebvttStylePassthrough::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

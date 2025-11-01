@@ -27,8 +27,7 @@ pub fn de_distribution_tenant(inp: &[u8]) -> std::result::Result<crate::types::D
     let start_el = decoder.start_el();
     if !(start_el.matches("DistributionTenant")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected DistributionTenant got {:?}",
-            start_el
+            "invalid root, expected DistributionTenant got {start_el:?}"
         )));
     }
     crate::protocol_serde::shape_distribution_tenant::de_distribution_tenant(&mut decoder)

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CustomRoutingDestinationTrafficState {
         match self {
             CustomRoutingDestinationTrafficState::Allow => write!(f, "ALLOW"),
             CustomRoutingDestinationTrafficState::Deny => write!(f, "DENY"),
-            CustomRoutingDestinationTrafficState::Unknown(value) => write!(f, "{}", value),
+            CustomRoutingDestinationTrafficState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

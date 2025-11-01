@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ConversionSourceFormat {
         match self {
             ConversionSourceFormat::Json => write!(f, "JSON"),
             ConversionSourceFormat::Xml => write!(f, "XML"),
-            ConversionSourceFormat::Unknown(value) => write!(f, "{}", value),
+            ConversionSourceFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

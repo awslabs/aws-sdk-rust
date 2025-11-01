@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SchemaVersionVisibility {
         match self {
             SchemaVersionVisibility::Private => write!(f, "PRIVATE"),
             SchemaVersionVisibility::Public => write!(f, "PUBLIC"),
-            SchemaVersionVisibility::Unknown(value) => write!(f, "{}", value),
+            SchemaVersionVisibility::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for InspectionLevel {
             InspectionLevel::Debug => write!(f, "DEBUG"),
             InspectionLevel::Info => write!(f, "INFO"),
             InspectionLevel::Trace => write!(f, "TRACE"),
-            InspectionLevel::Unknown(value) => write!(f, "{}", value),
+            InspectionLevel::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

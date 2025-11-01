@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AacRateControlMode {
         match self {
             AacRateControlMode::Cbr => write!(f, "CBR"),
             AacRateControlMode::Vbr => write!(f, "VBR"),
-            AacRateControlMode::Unknown(value) => write!(f, "{}", value),
+            AacRateControlMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

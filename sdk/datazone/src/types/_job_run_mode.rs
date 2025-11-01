@@ -102,7 +102,7 @@ impl ::std::fmt::Display for JobRunMode {
         match self {
             JobRunMode::OnDemand => write!(f, "ON_DEMAND"),
             JobRunMode::Scheduled => write!(f, "SCHEDULED"),
-            JobRunMode::Unknown(value) => write!(f, "{}", value),
+            JobRunMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for KeywordAction {
             KeywordAction::AutomaticResponse => write!(f, "AUTOMATIC_RESPONSE"),
             KeywordAction::OptIn => write!(f, "OPT_IN"),
             KeywordAction::OptOut => write!(f, "OPT_OUT"),
-            KeywordAction::Unknown(value) => write!(f, "{}", value),
+            KeywordAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

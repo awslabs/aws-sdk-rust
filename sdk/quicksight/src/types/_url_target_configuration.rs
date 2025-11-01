@@ -108,7 +108,7 @@ impl ::std::fmt::Display for UrlTargetConfiguration {
             UrlTargetConfiguration::NewTab => write!(f, "NEW_TAB"),
             UrlTargetConfiguration::NewWindow => write!(f, "NEW_WINDOW"),
             UrlTargetConfiguration::SameTab => write!(f, "SAME_TAB"),
-            UrlTargetConfiguration::Unknown(value) => write!(f, "{}", value),
+            UrlTargetConfiguration::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

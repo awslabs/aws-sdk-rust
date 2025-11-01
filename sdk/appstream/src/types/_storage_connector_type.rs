@@ -108,7 +108,7 @@ impl ::std::fmt::Display for StorageConnectorType {
             StorageConnectorType::GoogleDrive => write!(f, "GOOGLE_DRIVE"),
             StorageConnectorType::Homefolders => write!(f, "HOMEFOLDERS"),
             StorageConnectorType::OneDrive => write!(f, "ONE_DRIVE"),
-            StorageConnectorType::Unknown(value) => write!(f, "{}", value),
+            StorageConnectorType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

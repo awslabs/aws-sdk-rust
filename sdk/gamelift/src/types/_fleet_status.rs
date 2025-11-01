@@ -161,7 +161,7 @@ impl ::std::fmt::Display for FleetStatus {
             FleetStatus::NotFound => write!(f, "NOT_FOUND"),
             FleetStatus::Terminated => write!(f, "TERMINATED"),
             FleetStatus::Validating => write!(f, "VALIDATING"),
-            FleetStatus::Unknown(value) => write!(f, "{}", value),
+            FleetStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

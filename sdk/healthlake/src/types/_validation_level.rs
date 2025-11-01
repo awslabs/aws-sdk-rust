@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ValidationLevel {
             ValidationLevel::Minimal => write!(f, "minimal"),
             ValidationLevel::Strict => write!(f, "strict"),
             ValidationLevel::StructureOnly => write!(f, "structure-only"),
-            ValidationLevel::Unknown(value) => write!(f, "{}", value),
+            ValidationLevel::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

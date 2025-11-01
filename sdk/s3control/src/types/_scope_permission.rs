@@ -147,7 +147,7 @@ impl ::std::fmt::Display for ScopePermission {
             ScopePermission::ListBucketMultipartUploads => write!(f, "ListBucketMultipartUploads"),
             ScopePermission::ListMultipartUploadParts => write!(f, "ListMultipartUploadParts"),
             ScopePermission::PutObject => write!(f, "PutObject"),
-            ScopePermission::Unknown(value) => write!(f, "{}", value),
+            ScopePermission::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

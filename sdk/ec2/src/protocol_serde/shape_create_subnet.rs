@@ -42,8 +42,7 @@ pub fn de_create_subnet(
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateSubnetResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected CreateSubnetResponse got {:?}",
-            start_el
+            "invalid root, expected CreateSubnetResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

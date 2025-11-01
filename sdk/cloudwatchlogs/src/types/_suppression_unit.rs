@@ -108,7 +108,7 @@ impl ::std::fmt::Display for SuppressionUnit {
             SuppressionUnit::Hours => write!(f, "HOURS"),
             SuppressionUnit::Minutes => write!(f, "MINUTES"),
             SuppressionUnit::Seconds => write!(f, "SECONDS"),
-            SuppressionUnit::Unknown(value) => write!(f, "{}", value),
+            SuppressionUnit::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for StackErrorCode {
         match self {
             StackErrorCode::InternalServiceError => write!(f, "INTERNAL_SERVICE_ERROR"),
             StackErrorCode::StorageConnectorError => write!(f, "STORAGE_CONNECTOR_ERROR"),
-            StackErrorCode::Unknown(value) => write!(f, "{}", value),
+            StackErrorCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

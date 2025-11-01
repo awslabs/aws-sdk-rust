@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TrainingDataSourceEnum {
         match self {
             TrainingDataSourceEnum::ExternalEvents => write!(f, "EXTERNAL_EVENTS"),
             TrainingDataSourceEnum::IngestedEvents => write!(f, "INGESTED_EVENTS"),
-            TrainingDataSourceEnum::Unknown(value) => write!(f, "{}", value),
+            TrainingDataSourceEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

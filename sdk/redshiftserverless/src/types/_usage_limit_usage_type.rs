@@ -102,7 +102,7 @@ impl ::std::fmt::Display for UsageLimitUsageType {
         match self {
             UsageLimitUsageType::CrossRegionDatasharing => write!(f, "cross-region-datasharing"),
             UsageLimitUsageType::ServerlessCompute => write!(f, "serverless-compute"),
-            UsageLimitUsageType::Unknown(value) => write!(f, "{}", value),
+            UsageLimitUsageType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

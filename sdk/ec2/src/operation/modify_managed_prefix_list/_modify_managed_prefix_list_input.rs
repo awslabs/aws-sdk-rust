@@ -18,6 +18,8 @@ pub struct ModifyManagedPrefixListInput {
     /// <p>The maximum number of entries for the prefix list. You cannot modify the entries of a prefix list and modify the size of a prefix list at the same time.</p>
     /// <p>If any of the resources that reference the prefix list cannot support the new maximum size, the modify operation fails. Check the state message for the IDs of the first ten resources that do not support the new maximum size.</p>
     pub max_entries: ::std::option::Option<i32>,
+    /// <p>Indicates whether synchronization with an IPAM prefix list resolver should be enabled for this managed prefix list. When enabled, the prefix list CIDRs are automatically updated based on the associated resolver's CIDR selection rules.</p>
+    pub ipam_prefix_list_resolver_sync_enabled: ::std::option::Option<bool>,
 }
 impl ModifyManagedPrefixListInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -53,6 +55,10 @@ impl ModifyManagedPrefixListInput {
     pub fn max_entries(&self) -> ::std::option::Option<i32> {
         self.max_entries
     }
+    /// <p>Indicates whether synchronization with an IPAM prefix list resolver should be enabled for this managed prefix list. When enabled, the prefix list CIDRs are automatically updated based on the associated resolver's CIDR selection rules.</p>
+    pub fn ipam_prefix_list_resolver_sync_enabled(&self) -> ::std::option::Option<bool> {
+        self.ipam_prefix_list_resolver_sync_enabled
+    }
 }
 impl ModifyManagedPrefixListInput {
     /// Creates a new builder-style object to manufacture [`ModifyManagedPrefixListInput`](crate::operation::modify_managed_prefix_list::ModifyManagedPrefixListInput).
@@ -72,6 +78,7 @@ pub struct ModifyManagedPrefixListInputBuilder {
     pub(crate) add_entries: ::std::option::Option<::std::vec::Vec<crate::types::AddPrefixListEntry>>,
     pub(crate) remove_entries: ::std::option::Option<::std::vec::Vec<crate::types::RemovePrefixListEntry>>,
     pub(crate) max_entries: ::std::option::Option<i32>,
+    pub(crate) ipam_prefix_list_resolver_sync_enabled: ::std::option::Option<bool>,
 }
 impl ModifyManagedPrefixListInputBuilder {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -188,6 +195,20 @@ impl ModifyManagedPrefixListInputBuilder {
     pub fn get_max_entries(&self) -> &::std::option::Option<i32> {
         &self.max_entries
     }
+    /// <p>Indicates whether synchronization with an IPAM prefix list resolver should be enabled for this managed prefix list. When enabled, the prefix list CIDRs are automatically updated based on the associated resolver's CIDR selection rules.</p>
+    pub fn ipam_prefix_list_resolver_sync_enabled(mut self, input: bool) -> Self {
+        self.ipam_prefix_list_resolver_sync_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether synchronization with an IPAM prefix list resolver should be enabled for this managed prefix list. When enabled, the prefix list CIDRs are automatically updated based on the associated resolver's CIDR selection rules.</p>
+    pub fn set_ipam_prefix_list_resolver_sync_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.ipam_prefix_list_resolver_sync_enabled = input;
+        self
+    }
+    /// <p>Indicates whether synchronization with an IPAM prefix list resolver should be enabled for this managed prefix list. When enabled, the prefix list CIDRs are automatically updated based on the associated resolver's CIDR selection rules.</p>
+    pub fn get_ipam_prefix_list_resolver_sync_enabled(&self) -> &::std::option::Option<bool> {
+        &self.ipam_prefix_list_resolver_sync_enabled
+    }
     /// Consumes the builder and constructs a [`ModifyManagedPrefixListInput`](crate::operation::modify_managed_prefix_list::ModifyManagedPrefixListInput).
     pub fn build(
         self,
@@ -203,6 +224,7 @@ impl ModifyManagedPrefixListInputBuilder {
             add_entries: self.add_entries,
             remove_entries: self.remove_entries,
             max_entries: self.max_entries,
+            ipam_prefix_list_resolver_sync_enabled: self.ipam_prefix_list_resolver_sync_enabled,
         })
     }
 }

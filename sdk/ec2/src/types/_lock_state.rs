@@ -114,7 +114,7 @@ impl ::std::fmt::Display for LockState {
             LockState::ComplianceCooloff => write!(f, "compliance-cooloff"),
             LockState::Expired => write!(f, "expired"),
             LockState::Governance => write!(f, "governance"),
-            LockState::Unknown(value) => write!(f, "{}", value),
+            LockState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

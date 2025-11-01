@@ -49,8 +49,7 @@ pub fn de_describe_byoip_cidrs(
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeByoipCidrsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected DescribeByoipCidrsResponse got {:?}",
-            start_el
+            "invalid root, expected DescribeByoipCidrsResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

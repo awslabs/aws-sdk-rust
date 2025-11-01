@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ServiceEnvironmentType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ServiceEnvironmentType::SagemakerTraining => write!(f, "SAGEMAKER_TRAINING"),
-            ServiceEnvironmentType::Unknown(value) => write!(f, "{}", value),
+            ServiceEnvironmentType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

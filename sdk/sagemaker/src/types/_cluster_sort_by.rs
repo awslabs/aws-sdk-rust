@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ClusterSortBy {
         match self {
             ClusterSortBy::CreationTime => write!(f, "CREATION_TIME"),
             ClusterSortBy::Name => write!(f, "NAME"),
-            ClusterSortBy::Unknown(value) => write!(f, "{}", value),
+            ClusterSortBy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

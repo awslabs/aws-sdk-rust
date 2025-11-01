@@ -120,7 +120,7 @@ impl ::std::fmt::Display for DifferentialPrivacyAggregationType {
             DifferentialPrivacyAggregationType::CountDistinct => write!(f, "COUNT_DISTINCT"),
             DifferentialPrivacyAggregationType::Stddev => write!(f, "STDDEV"),
             DifferentialPrivacyAggregationType::Sum => write!(f, "SUM"),
-            DifferentialPrivacyAggregationType::Unknown(value) => write!(f, "{}", value),
+            DifferentialPrivacyAggregationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

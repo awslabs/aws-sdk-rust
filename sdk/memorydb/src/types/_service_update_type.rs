@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ServiceUpdateType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ServiceUpdateType::SecurityUpdate => write!(f, "security-update"),
-            ServiceUpdateType::Unknown(value) => write!(f, "{}", value),
+            ServiceUpdateType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

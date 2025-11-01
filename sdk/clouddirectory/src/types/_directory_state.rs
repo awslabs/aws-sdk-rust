@@ -108,7 +108,7 @@ impl ::std::fmt::Display for DirectoryState {
             DirectoryState::Deleted => write!(f, "DELETED"),
             DirectoryState::Disabled => write!(f, "DISABLED"),
             DirectoryState::Enabled => write!(f, "ENABLED"),
-            DirectoryState::Unknown(value) => write!(f, "{}", value),
+            DirectoryState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for TargetIdType {
             TargetIdType::Account => write!(f, "ACCOUNT"),
             TargetIdType::Ou => write!(f, "OU"),
             TargetIdType::Root => write!(f, "ROOT"),
-            TargetIdType::Unknown(value) => write!(f, "{}", value),
+            TargetIdType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

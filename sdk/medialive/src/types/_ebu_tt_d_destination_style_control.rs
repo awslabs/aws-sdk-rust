@@ -102,7 +102,7 @@ impl ::std::fmt::Display for EbuTtDDestinationStyleControl {
         match self {
             EbuTtDDestinationStyleControl::Exclude => write!(f, "EXCLUDE"),
             EbuTtDDestinationStyleControl::Include => write!(f, "INCLUDE"),
-            EbuTtDDestinationStyleControl::Unknown(value) => write!(f, "{}", value),
+            EbuTtDDestinationStyleControl::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

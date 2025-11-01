@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ReservationResolution {
             ReservationResolution::Hd => write!(f, "HD"),
             ReservationResolution::Sd => write!(f, "SD"),
             ReservationResolution::Uhd => write!(f, "UHD"),
-            ReservationResolution::Unknown(value) => write!(f, "{}", value),
+            ReservationResolution::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

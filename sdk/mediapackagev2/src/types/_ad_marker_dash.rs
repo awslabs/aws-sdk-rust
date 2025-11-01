@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AdMarkerDash {
         match self {
             AdMarkerDash::Binary => write!(f, "BINARY"),
             AdMarkerDash::Xml => write!(f, "XML"),
-            AdMarkerDash::Unknown(value) => write!(f, "{}", value),
+            AdMarkerDash::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

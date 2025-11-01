@@ -120,7 +120,7 @@ impl ::std::fmt::Display for RelativeDateType {
             RelativeDateType::Now => write!(f, "NOW"),
             RelativeDateType::Previous => write!(f, "PREVIOUS"),
             RelativeDateType::This => write!(f, "THIS"),
-            RelativeDateType::Unknown(value) => write!(f, "{}", value),
+            RelativeDateType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

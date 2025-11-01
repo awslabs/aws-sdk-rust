@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DqStopJobOnFailureTiming {
         match self {
             DqStopJobOnFailureTiming::AfterDataLoad => write!(f, "AfterDataLoad"),
             DqStopJobOnFailureTiming::Immediate => write!(f, "Immediate"),
-            DqStopJobOnFailureTiming::Unknown(value) => write!(f, "{}", value),
+            DqStopJobOnFailureTiming::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

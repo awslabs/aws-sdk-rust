@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RuleDmarcOperator {
         match self {
             RuleDmarcOperator::Equals => write!(f, "EQUALS"),
             RuleDmarcOperator::NotEquals => write!(f, "NOT_EQUALS"),
-            RuleDmarcOperator::Unknown(value) => write!(f, "{}", value),
+            RuleDmarcOperator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

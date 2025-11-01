@@ -114,7 +114,7 @@ impl ::std::fmt::Display for BackupState {
             BackupState::Deleted => write!(f, "DELETED"),
             BackupState::PendingDeletion => write!(f, "PENDING_DELETION"),
             BackupState::Ready => write!(f, "READY"),
-            BackupState::Unknown(value) => write!(f, "{}", value),
+            BackupState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

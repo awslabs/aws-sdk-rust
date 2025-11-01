@@ -108,7 +108,7 @@ impl ::std::fmt::Display for FeatureAdditionalConfiguration {
             FeatureAdditionalConfiguration::Ec2AgentManagement => write!(f, "EC2_AGENT_MANAGEMENT"),
             FeatureAdditionalConfiguration::EcsFargateAgentManagement => write!(f, "ECS_FARGATE_AGENT_MANAGEMENT"),
             FeatureAdditionalConfiguration::EksAddonManagement => write!(f, "EKS_ADDON_MANAGEMENT"),
-            FeatureAdditionalConfiguration::Unknown(value) => write!(f, "{}", value),
+            FeatureAdditionalConfiguration::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

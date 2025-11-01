@@ -120,7 +120,7 @@ impl ::std::fmt::Display for PropertyType {
             PropertyType::SecretOrUserInput => write!(f, "SECRET_OR_USER_INPUT"),
             PropertyType::Unused => write!(f, "UNUSED"),
             PropertyType::UserInput => write!(f, "USER_INPUT"),
-            PropertyType::Unknown(value) => write!(f, "{}", value),
+            PropertyType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

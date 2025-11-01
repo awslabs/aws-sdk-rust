@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AutomationMode {
         match self {
             AutomationMode::AllPaused => write!(f, "all-paused"),
             AutomationMode::Full => write!(f, "full"),
-            AutomationMode::Unknown(value) => write!(f, "{}", value),
+            AutomationMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

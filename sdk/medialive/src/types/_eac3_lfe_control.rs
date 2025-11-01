@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Eac3LfeControl {
         match self {
             Eac3LfeControl::Lfe => write!(f, "LFE"),
             Eac3LfeControl::NoLfe => write!(f, "NO_LFE"),
-            Eac3LfeControl::Unknown(value) => write!(f, "{}", value),
+            Eac3LfeControl::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

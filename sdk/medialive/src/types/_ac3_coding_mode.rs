@@ -114,7 +114,7 @@ impl ::std::fmt::Display for Ac3CodingMode {
             Ac3CodingMode::CodingMode11 => write!(f, "CODING_MODE_1_1"),
             Ac3CodingMode::CodingMode20 => write!(f, "CODING_MODE_2_0"),
             Ac3CodingMode::CodingMode32Lfe => write!(f, "CODING_MODE_3_2_LFE"),
-            Ac3CodingMode::Unknown(value) => write!(f, "{}", value),
+            Ac3CodingMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

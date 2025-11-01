@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AutomatedReasoningPolicyBuildMessageType {
             AutomatedReasoningPolicyBuildMessageType::Error => write!(f, "ERROR"),
             AutomatedReasoningPolicyBuildMessageType::Info => write!(f, "INFO"),
             AutomatedReasoningPolicyBuildMessageType::Warning => write!(f, "WARNING"),
-            AutomatedReasoningPolicyBuildMessageType::Unknown(value) => write!(f, "{}", value),
+            AutomatedReasoningPolicyBuildMessageType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

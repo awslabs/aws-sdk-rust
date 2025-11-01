@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CmafSegmentControl {
         match self {
             CmafSegmentControl::SegmentedFiles => write!(f, "SEGMENTED_FILES"),
             CmafSegmentControl::SingleFile => write!(f, "SINGLE_FILE"),
-            CmafSegmentControl::Unknown(value) => write!(f, "{}", value),
+            CmafSegmentControl::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

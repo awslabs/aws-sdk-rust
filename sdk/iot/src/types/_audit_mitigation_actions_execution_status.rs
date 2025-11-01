@@ -126,7 +126,7 @@ impl ::std::fmt::Display for AuditMitigationActionsExecutionStatus {
             AuditMitigationActionsExecutionStatus::InProgress => write!(f, "IN_PROGRESS"),
             AuditMitigationActionsExecutionStatus::Pending => write!(f, "PENDING"),
             AuditMitigationActionsExecutionStatus::Skipped => write!(f, "SKIPPED"),
-            AuditMitigationActionsExecutionStatus::Unknown(value) => write!(f, "{}", value),
+            AuditMitigationActionsExecutionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for OverrideType {
             OverrideType::SemanticOverride => write!(f, "SEMANTIC_OVERRIDE"),
             OverrideType::SummaryOverride => write!(f, "SUMMARY_OVERRIDE"),
             OverrideType::UserPreferenceOverride => write!(f, "USER_PREFERENCE_OVERRIDE"),
-            OverrideType::Unknown(value) => write!(f, "{}", value),
+            OverrideType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

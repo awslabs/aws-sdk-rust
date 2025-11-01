@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ClipFragmentSelectorType {
         match self {
             ClipFragmentSelectorType::ProducerTimestamp => write!(f, "PRODUCER_TIMESTAMP"),
             ClipFragmentSelectorType::ServerTimestamp => write!(f, "SERVER_TIMESTAMP"),
-            ClipFragmentSelectorType::Unknown(value) => write!(f, "{}", value),
+            ClipFragmentSelectorType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

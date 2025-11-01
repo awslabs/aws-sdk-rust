@@ -175,7 +175,7 @@ impl ::std::fmt::Display for LoadBalancerMetricName {
             LoadBalancerMetricName::RejectedConnectionCount => write!(f, "RejectedConnectionCount"),
             LoadBalancerMetricName::RequestCount => write!(f, "RequestCount"),
             LoadBalancerMetricName::UnhealthyHostCount => write!(f, "UnhealthyHostCount"),
-            LoadBalancerMetricName::Unknown(value) => write!(f, "{}", value),
+            LoadBalancerMetricName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

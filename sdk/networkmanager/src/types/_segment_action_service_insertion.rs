@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SegmentActionServiceInsertion {
         match self {
             SegmentActionServiceInsertion::SendTo => write!(f, "send-to"),
             SegmentActionServiceInsertion::SendVia => write!(f, "send-via"),
-            SegmentActionServiceInsertion::Unknown(value) => write!(f, "{}", value),
+            SegmentActionServiceInsertion::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

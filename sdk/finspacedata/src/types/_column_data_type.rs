@@ -164,7 +164,7 @@ impl ::std::fmt::Display for ColumnDataType {
             ColumnDataType::Smallint => write!(f, "SMALLINT"),
             ColumnDataType::String => write!(f, "STRING"),
             ColumnDataType::Tinyint => write!(f, "TINYINT"),
-            ColumnDataType::Unknown(value) => write!(f, "{}", value),
+            ColumnDataType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

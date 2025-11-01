@@ -102,7 +102,7 @@ impl ::std::fmt::Display for IngestionDestinationStatus {
         match self {
             IngestionDestinationStatus::Active => write!(f, "Active"),
             IngestionDestinationStatus::Failed => write!(f, "Failed"),
-            IngestionDestinationStatus::Unknown(value) => write!(f, "{}", value),
+            IngestionDestinationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

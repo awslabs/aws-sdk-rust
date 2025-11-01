@@ -108,7 +108,7 @@ impl ::std::fmt::Display for InputFilter {
             InputFilter::Auto => write!(f, "AUTO"),
             InputFilter::Disabled => write!(f, "DISABLED"),
             InputFilter::Forced => write!(f, "FORCED"),
-            InputFilter::Unknown(value) => write!(f, "{}", value),
+            InputFilter::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

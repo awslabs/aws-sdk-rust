@@ -147,7 +147,7 @@ impl ::std::fmt::Display for IndicatorType {
             IndicatorType::RelatedFinding => write!(f, "RELATED_FINDING"),
             IndicatorType::RelatedFindingGroup => write!(f, "RELATED_FINDING_GROUP"),
             IndicatorType::TtpObserved => write!(f, "TTP_OBSERVED"),
-            IndicatorType::Unknown(value) => write!(f, "{}", value),
+            IndicatorType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

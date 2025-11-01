@@ -114,7 +114,7 @@ impl ::std::fmt::Display for AlarmModelVersionStatus {
             AlarmModelVersionStatus::Active => write!(f, "ACTIVE"),
             AlarmModelVersionStatus::Failed => write!(f, "FAILED"),
             AlarmModelVersionStatus::Inactive => write!(f, "INACTIVE"),
-            AlarmModelVersionStatus::Unknown(value) => write!(f, "{}", value),
+            AlarmModelVersionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

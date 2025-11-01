@@ -196,7 +196,7 @@ impl ::std::fmt::Display for StatusUpdateInterval {
             StatusUpdateInterval::Seconds540 => write!(f, "SECONDS_540"),
             StatusUpdateInterval::Seconds60 => write!(f, "SECONDS_60"),
             StatusUpdateInterval::Seconds600 => write!(f, "SECONDS_600"),
-            StatusUpdateInterval::Unknown(value) => write!(f, "{}", value),
+            StatusUpdateInterval::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

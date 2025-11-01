@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ConfirmationState {
             ConfirmationState::Confirmed => write!(f, "Confirmed"),
             ConfirmationState::Denied => write!(f, "Denied"),
             ConfirmationState::None => write!(f, "None"),
-            ConfirmationState::Unknown(value) => write!(f, "{}", value),
+            ConfirmationState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

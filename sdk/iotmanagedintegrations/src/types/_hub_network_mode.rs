@@ -102,7 +102,7 @@ impl ::std::fmt::Display for HubNetworkMode {
         match self {
             HubNetworkMode::NetworkWideExclusion => write!(f, "NETWORK_WIDE_EXCLUSION"),
             HubNetworkMode::Standard => write!(f, "STANDARD"),
-            HubNetworkMode::Unknown(value) => write!(f, "{}", value),
+            HubNetworkMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

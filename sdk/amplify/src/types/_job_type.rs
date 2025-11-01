@@ -114,7 +114,7 @@ impl ::std::fmt::Display for JobType {
             JobType::Release => write!(f, "RELEASE"),
             JobType::Retry => write!(f, "RETRY"),
             JobType::WebHook => write!(f, "WEB_HOOK"),
-            JobType::Unknown(value) => write!(f, "{}", value),
+            JobType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -124,7 +124,7 @@ impl ::std::fmt::Display for RouteSpanPedestrianAccessAttribute {
             RouteSpanPedestrianAccessAttribute::Park => write!(f, "Park"),
             RouteSpanPedestrianAccessAttribute::Stairs => write!(f, "Stairs"),
             RouteSpanPedestrianAccessAttribute::TollRoad => write!(f, "TollRoad"),
-            RouteSpanPedestrianAccessAttribute::Unknown(value) => write!(f, "{}", value),
+            RouteSpanPedestrianAccessAttribute::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

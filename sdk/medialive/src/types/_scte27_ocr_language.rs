@@ -126,7 +126,7 @@ impl ::std::fmt::Display for Scte27OcrLanguage {
             Scte27OcrLanguage::Nld => write!(f, "NLD"),
             Scte27OcrLanguage::Por => write!(f, "POR"),
             Scte27OcrLanguage::Spa => write!(f, "SPA"),
-            Scte27OcrLanguage::Unknown(value) => write!(f, "{}", value),
+            Scte27OcrLanguage::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

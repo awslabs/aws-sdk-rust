@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SheetControlSliderType {
         match self {
             SheetControlSliderType::Range => write!(f, "RANGE"),
             SheetControlSliderType::SinglePoint => write!(f, "SINGLE_POINT"),
-            SheetControlSliderType::Unknown(value) => write!(f, "{}", value),
+            SheetControlSliderType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

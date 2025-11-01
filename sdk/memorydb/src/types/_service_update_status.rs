@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ServiceUpdateStatus {
             ServiceUpdateStatus::Complete => write!(f, "complete"),
             ServiceUpdateStatus::InProgress => write!(f, "in-progress"),
             ServiceUpdateStatus::Scheduled => write!(f, "scheduled"),
-            ServiceUpdateStatus::Unknown(value) => write!(f, "{}", value),
+            ServiceUpdateStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

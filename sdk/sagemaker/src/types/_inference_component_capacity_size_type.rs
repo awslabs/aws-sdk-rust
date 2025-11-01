@@ -102,7 +102,7 @@ impl ::std::fmt::Display for InferenceComponentCapacitySizeType {
         match self {
             InferenceComponentCapacitySizeType::CapacityPercent => write!(f, "CAPACITY_PERCENT"),
             InferenceComponentCapacitySizeType::CopyCount => write!(f, "COPY_COUNT"),
-            InferenceComponentCapacitySizeType::Unknown(value) => write!(f, "{}", value),
+            InferenceComponentCapacitySizeType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

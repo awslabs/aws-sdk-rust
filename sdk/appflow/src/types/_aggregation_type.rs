@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AggregationType {
         match self {
             AggregationType::None => write!(f, "None"),
             AggregationType::SingleFile => write!(f, "SingleFile"),
-            AggregationType::Unknown(value) => write!(f, "{}", value),
+            AggregationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PermissionType {
         match self {
             PermissionType::Contributor => write!(f, "CONTRIBUTOR"),
             PermissionType::Readonly => write!(f, "READONLY"),
-            PermissionType::Unknown(value) => write!(f, "{}", value),
+            PermissionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

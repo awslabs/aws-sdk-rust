@@ -96,7 +96,7 @@ impl ::std::fmt::Display for Specialty {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             Specialty::Primarycare => write!(f, "PRIMARYCARE"),
-            Specialty::Unknown(value) => write!(f, "{}", value),
+            Specialty::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

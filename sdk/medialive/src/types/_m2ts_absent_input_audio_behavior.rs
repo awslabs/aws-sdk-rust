@@ -102,7 +102,7 @@ impl ::std::fmt::Display for M2tsAbsentInputAudioBehavior {
         match self {
             M2tsAbsentInputAudioBehavior::Drop => write!(f, "DROP"),
             M2tsAbsentInputAudioBehavior::EncodeSilence => write!(f, "ENCODE_SILENCE"),
-            M2tsAbsentInputAudioBehavior::Unknown(value) => write!(f, "{}", value),
+            M2tsAbsentInputAudioBehavior::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for LogsConfigStatusType {
         match self {
             LogsConfigStatusType::Disabled => write!(f, "DISABLED"),
             LogsConfigStatusType::Enabled => write!(f, "ENABLED"),
-            LogsConfigStatusType::Unknown(value) => write!(f, "{}", value),
+            LogsConfigStatusType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

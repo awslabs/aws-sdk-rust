@@ -114,7 +114,7 @@ impl ::std::fmt::Display for AgentStatus {
             AgentStatus::Failed => write!(f, "FAILED"),
             AgentStatus::Inactive => write!(f, "INACTIVE"),
             AgentStatus::Success => write!(f, "SUCCESS"),
-            AgentStatus::Unknown(value) => write!(f, "{}", value),
+            AgentStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

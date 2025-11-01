@@ -108,7 +108,7 @@ impl ::std::fmt::Display for PaymentOption {
             PaymentOption::AllUpfront => write!(f, "ALL_UPFRONT"),
             PaymentOption::NoUpfront => write!(f, "NO_UPFRONT"),
             PaymentOption::PartialUpfront => write!(f, "PARTIAL_UPFRONT"),
-            PaymentOption::Unknown(value) => write!(f, "{}", value),
+            PaymentOption::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -147,7 +147,7 @@ impl ::std::fmt::Display for RunStatus {
             RunStatus::Running => write!(f, "RUNNING"),
             RunStatus::Starting => write!(f, "STARTING"),
             RunStatus::Stopping => write!(f, "STOPPING"),
-            RunStatus::Unknown(value) => write!(f, "{}", value),
+            RunStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RecordWrapper {
         match self {
             RecordWrapper::None => write!(f, "None"),
             RecordWrapper::Recordio => write!(f, "RecordIO"),
-            RecordWrapper::Unknown(value) => write!(f, "{}", value),
+            RecordWrapper::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

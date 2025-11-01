@@ -179,7 +179,7 @@ impl ::std::fmt::Display for EvaluationFilterVariable {
             EvaluationFilterVariable::MlModelId => write!(f, "MLModelId"),
             EvaluationFilterVariable::Name => write!(f, "Name"),
             EvaluationFilterVariable::Status => write!(f, "Status"),
-            EvaluationFilterVariable::Unknown(value) => write!(f, "{}", value),
+            EvaluationFilterVariable::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

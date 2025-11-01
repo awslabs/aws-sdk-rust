@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TransitGatewayRouteType {
         match self {
             TransitGatewayRouteType::Propagated => write!(f, "propagated"),
             TransitGatewayRouteType::Static => write!(f, "static"),
-            TransitGatewayRouteType::Unknown(value) => write!(f, "{}", value),
+            TransitGatewayRouteType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -158,7 +158,7 @@ impl ::std::fmt::Display for MediaInsightsPipelineConfigurationElementType {
             MediaInsightsPipelineConfigurationElementType::SqsQueueSink => write!(f, "SqsQueueSink"),
             MediaInsightsPipelineConfigurationElementType::VoiceAnalyticsProcessor => write!(f, "VoiceAnalyticsProcessor"),
             MediaInsightsPipelineConfigurationElementType::VoiceEnhancementSink => write!(f, "VoiceEnhancementSink"),
-            MediaInsightsPipelineConfigurationElementType::Unknown(value) => write!(f, "{}", value),
+            MediaInsightsPipelineConfigurationElementType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

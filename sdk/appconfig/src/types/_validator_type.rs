@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ValidatorType {
         match self {
             ValidatorType::JsonSchema => write!(f, "JSON_SCHEMA"),
             ValidatorType::Lambda => write!(f, "LAMBDA"),
-            ValidatorType::Unknown(value) => write!(f, "{}", value),
+            ValidatorType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

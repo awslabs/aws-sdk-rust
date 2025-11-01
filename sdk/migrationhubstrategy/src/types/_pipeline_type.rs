@@ -96,7 +96,7 @@ impl ::std::fmt::Display for PipelineType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             PipelineType::AzureDevops => write!(f, "AZURE_DEVOPS"),
-            PipelineType::Unknown(value) => write!(f, "{}", value),
+            PipelineType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

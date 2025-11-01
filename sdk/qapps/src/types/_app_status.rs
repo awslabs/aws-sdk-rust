@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AppStatus {
             AppStatus::Deleted => write!(f, "DELETED"),
             AppStatus::Draft => write!(f, "DRAFT"),
             AppStatus::Published => write!(f, "PUBLISHED"),
-            AppStatus::Unknown(value) => write!(f, "{}", value),
+            AppStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

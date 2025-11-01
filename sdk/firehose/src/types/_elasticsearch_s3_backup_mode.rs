@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ElasticsearchS3BackupMode {
         match self {
             ElasticsearchS3BackupMode::AllDocuments => write!(f, "AllDocuments"),
             ElasticsearchS3BackupMode::FailedDocumentsOnly => write!(f, "FailedDocumentsOnly"),
-            ElasticsearchS3BackupMode::Unknown(value) => write!(f, "{}", value),
+            ElasticsearchS3BackupMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

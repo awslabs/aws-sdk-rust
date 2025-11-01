@@ -120,7 +120,7 @@ impl ::std::fmt::Display for TransformJobStatus {
             TransformJobStatus::InProgress => write!(f, "InProgress"),
             TransformJobStatus::Stopped => write!(f, "Stopped"),
             TransformJobStatus::Stopping => write!(f, "Stopping"),
-            TransformJobStatus::Unknown(value) => write!(f, "{}", value),
+            TransformJobStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

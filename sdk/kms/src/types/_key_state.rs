@@ -147,7 +147,7 @@ impl ::std::fmt::Display for KeyState {
             KeyState::PendingReplicaDeletion => write!(f, "PendingReplicaDeletion"),
             KeyState::Unavailable => write!(f, "Unavailable"),
             KeyState::Updating => write!(f, "Updating"),
-            KeyState::Unknown(value) => write!(f, "{}", value),
+            KeyState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

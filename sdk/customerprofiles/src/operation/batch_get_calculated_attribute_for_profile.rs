@@ -191,6 +191,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for BatchGetCalc
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::batch_get_calculated_attribute_for_profile::BatchGetCalculatedAttributeForProfileInput,
                 output: &mut ::std::string::String,

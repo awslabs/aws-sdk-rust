@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MessageTemplateFilterOperator {
         match self {
             MessageTemplateFilterOperator::Equals => write!(f, "EQUALS"),
             MessageTemplateFilterOperator::Prefix => write!(f, "PREFIX"),
-            MessageTemplateFilterOperator::Unknown(value) => write!(f, "{}", value),
+            MessageTemplateFilterOperator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

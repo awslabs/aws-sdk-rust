@@ -108,7 +108,7 @@ impl ::std::fmt::Display for LambdaFunctionMemoryMetricStatistic {
             LambdaFunctionMemoryMetricStatistic::Expected => write!(f, "Expected"),
             LambdaFunctionMemoryMetricStatistic::LowerBound => write!(f, "LowerBound"),
             LambdaFunctionMemoryMetricStatistic::UpperBound => write!(f, "UpperBound"),
-            LambdaFunctionMemoryMetricStatistic::Unknown(value) => write!(f, "{}", value),
+            LambdaFunctionMemoryMetricStatistic::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

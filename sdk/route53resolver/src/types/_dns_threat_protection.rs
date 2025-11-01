@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DnsThreatProtection {
         match self {
             DnsThreatProtection::Dga => write!(f, "DGA"),
             DnsThreatProtection::DnsTunneling => write!(f, "DNS_TUNNELING"),
-            DnsThreatProtection::Unknown(value) => write!(f, "{}", value),
+            DnsThreatProtection::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for DataFormat {
             DataFormat::Avro => write!(f, "AVRO"),
             DataFormat::Json => write!(f, "JSON"),
             DataFormat::Protobuf => write!(f, "PROTOBUF"),
-            DataFormat::Unknown(value) => write!(f, "{}", value),
+            DataFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

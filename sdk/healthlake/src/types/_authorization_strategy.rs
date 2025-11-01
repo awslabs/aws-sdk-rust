@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AuthorizationStrategy {
             AuthorizationStrategy::AwsAuth => write!(f, "AWS_AUTH"),
             AuthorizationStrategy::SmartOnFhir => write!(f, "SMART_ON_FHIR"),
             AuthorizationStrategy::Smartv1 => write!(f, "SMART_ON_FHIR_V1"),
-            AuthorizationStrategy::Unknown(value) => write!(f, "{}", value),
+            AuthorizationStrategy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

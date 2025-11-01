@@ -102,7 +102,7 @@ impl ::std::fmt::Display for QuotaContextScope {
         match self {
             QuotaContextScope::Account => write!(f, "ACCOUNT"),
             QuotaContextScope::Resource => write!(f, "RESOURCE"),
-            QuotaContextScope::Unknown(value) => write!(f, "{}", value),
+            QuotaContextScope::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

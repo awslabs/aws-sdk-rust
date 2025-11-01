@@ -108,7 +108,7 @@ impl ::std::fmt::Display for CisTargetStatusReason {
             CisTargetStatusReason::ScanInProgress => write!(f, "SCAN_IN_PROGRESS"),
             CisTargetStatusReason::SsmUnmanaged => write!(f, "SSM_UNMANAGED"),
             CisTargetStatusReason::UnsupportedOs => write!(f, "UNSUPPORTED_OS"),
-            CisTargetStatusReason::Unknown(value) => write!(f, "{}", value),
+            CisTargetStatusReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

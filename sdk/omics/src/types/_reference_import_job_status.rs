@@ -140,7 +140,7 @@ impl ::std::fmt::Display for ReferenceImportJobStatus {
             ReferenceImportJobStatus::Failed => write!(f, "FAILED"),
             ReferenceImportJobStatus::InProgress => write!(f, "IN_PROGRESS"),
             ReferenceImportJobStatus::Submitted => write!(f, "SUBMITTED"),
-            ReferenceImportJobStatus::Unknown(value) => write!(f, "{}", value),
+            ReferenceImportJobStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

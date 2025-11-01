@@ -108,7 +108,7 @@ impl ::std::fmt::Display for NetworkConnectionStatus {
             NetworkConnectionStatus::Connected => write!(f, "CONNECTED"),
             NetworkConnectionStatus::Connecting => write!(f, "CONNECTING"),
             NetworkConnectionStatus::NotConnected => write!(f, "NOT_CONNECTED"),
-            NetworkConnectionStatus::Unknown(value) => write!(f, "{}", value),
+            NetworkConnectionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

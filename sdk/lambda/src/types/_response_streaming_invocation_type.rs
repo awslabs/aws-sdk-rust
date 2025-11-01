@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ResponseStreamingInvocationType {
         match self {
             ResponseStreamingInvocationType::DryRun => write!(f, "DryRun"),
             ResponseStreamingInvocationType::RequestResponse => write!(f, "RequestResponse"),
-            ResponseStreamingInvocationType::Unknown(value) => write!(f, "{}", value),
+            ResponseStreamingInvocationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

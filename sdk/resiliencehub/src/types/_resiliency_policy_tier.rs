@@ -126,7 +126,7 @@ impl ::std::fmt::Display for ResiliencyPolicyTier {
             ResiliencyPolicyTier::MissionCritical => write!(f, "MissionCritical"),
             ResiliencyPolicyTier::NonCritical => write!(f, "NonCritical"),
             ResiliencyPolicyTier::NotApplicable => write!(f, "NotApplicable"),
-            ResiliencyPolicyTier::Unknown(value) => write!(f, "{}", value),
+            ResiliencyPolicyTier::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

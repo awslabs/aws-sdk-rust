@@ -114,7 +114,7 @@ impl ::std::fmt::Display for PrivateKeyAlgorithm {
             PrivateKeyAlgorithm::EcdhP384 => write!(f, "ECDH_P384"),
             PrivateKeyAlgorithm::EcdhP521 => write!(f, "ECDH_P521"),
             PrivateKeyAlgorithm::Rsa => write!(f, "RSA"),
-            PrivateKeyAlgorithm::Unknown(value) => write!(f, "{}", value),
+            PrivateKeyAlgorithm::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

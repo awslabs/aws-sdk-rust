@@ -96,7 +96,7 @@ impl ::std::fmt::Display for S3InputFormat {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             S3InputFormat::Jsonl => write!(f, "JSONL"),
-            S3InputFormat::Unknown(value) => write!(f, "{}", value),
+            S3InputFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

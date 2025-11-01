@@ -196,6 +196,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for CreateRestor
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::create_restore_access_backup_vault::CreateRestoreAccessBackupVaultInput,
                 output: &mut ::std::string::String,

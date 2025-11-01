@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AuthDecision {
             AuthDecision::Allowed => write!(f, "ALLOWED"),
             AuthDecision::ExplicitDeny => write!(f, "EXPLICIT_DENY"),
             AuthDecision::ImplicitDeny => write!(f, "IMPLICIT_DENY"),
-            AuthDecision::Unknown(value) => write!(f, "{}", value),
+            AuthDecision::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

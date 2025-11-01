@@ -135,7 +135,7 @@ impl ::std::fmt::Display for CisScanResultsAggregatedByTargetResourceSortBy {
             CisScanResultsAggregatedByTargetResourceSortBy::ResourceId => write!(f, "RESOURCE_ID"),
             CisScanResultsAggregatedByTargetResourceSortBy::TargetStatus => write!(f, "TARGET_STATUS"),
             CisScanResultsAggregatedByTargetResourceSortBy::TargetStatusReason => write!(f, "TARGET_STATUS_REASON"),
-            CisScanResultsAggregatedByTargetResourceSortBy::Unknown(value) => write!(f, "{}", value),
+            CisScanResultsAggregatedByTargetResourceSortBy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

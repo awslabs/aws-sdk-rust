@@ -142,7 +142,7 @@ impl ::std::fmt::Display for TransitGatewayMulitcastDomainAssociationState {
             TransitGatewayMulitcastDomainAssociationState::Failed => write!(f, "failed"),
             TransitGatewayMulitcastDomainAssociationState::PendingAcceptance => write!(f, "pendingAcceptance"),
             TransitGatewayMulitcastDomainAssociationState::Rejected => write!(f, "rejected"),
-            TransitGatewayMulitcastDomainAssociationState::Unknown(value) => write!(f, "{}", value),
+            TransitGatewayMulitcastDomainAssociationState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

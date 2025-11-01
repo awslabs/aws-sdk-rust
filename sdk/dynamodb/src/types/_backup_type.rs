@@ -108,7 +108,7 @@ impl ::std::fmt::Display for BackupType {
             BackupType::AwsBackup => write!(f, "AWS_BACKUP"),
             BackupType::System => write!(f, "SYSTEM"),
             BackupType::User => write!(f, "USER"),
-            BackupType::Unknown(value) => write!(f, "{}", value),
+            BackupType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

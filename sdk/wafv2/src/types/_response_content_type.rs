@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ResponseContentType {
             ResponseContentType::ApplicationJson => write!(f, "APPLICATION_JSON"),
             ResponseContentType::TextHtml => write!(f, "TEXT_HTML"),
             ResponseContentType::TextPlain => write!(f, "TEXT_PLAIN"),
-            ResponseContentType::Unknown(value) => write!(f, "{}", value),
+            ResponseContentType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

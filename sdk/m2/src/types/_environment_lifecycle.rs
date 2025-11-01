@@ -126,7 +126,7 @@ impl ::std::fmt::Display for EnvironmentLifecycle {
             EnvironmentLifecycle::Failed => write!(f, "Failed"),
             EnvironmentLifecycle::Unhealthy => write!(f, "UnHealthy"),
             EnvironmentLifecycle::Updating => write!(f, "Updating"),
-            EnvironmentLifecycle::Unknown(value) => write!(f, "{}", value),
+            EnvironmentLifecycle::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

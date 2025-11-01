@@ -108,7 +108,7 @@ impl ::std::fmt::Display for SchemaElement {
             SchemaElement::ManualDiscountCompatibility => write!(f, "MANUAL_DISCOUNT_COMPATIBILITY"),
             SchemaElement::Resources => write!(f, "RESOURCES"),
             SchemaElement::SplitCostAllocationData => write!(f, "SPLIT_COST_ALLOCATION_DATA"),
-            SchemaElement::Unknown(value) => write!(f, "{}", value),
+            SchemaElement::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

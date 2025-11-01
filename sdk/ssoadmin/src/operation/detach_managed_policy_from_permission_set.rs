@@ -190,6 +190,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DetachManage
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::detach_managed_policy_from_permission_set::DetachManagedPolicyFromPermissionSetInput,
                 output: &mut ::std::string::String,

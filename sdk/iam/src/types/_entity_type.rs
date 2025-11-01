@@ -120,7 +120,7 @@ impl ::std::fmt::Display for EntityType {
             EntityType::LocalManagedPolicy => write!(f, "LocalManagedPolicy"),
             EntityType::Role => write!(f, "Role"),
             EntityType::User => write!(f, "User"),
-            EntityType::Unknown(value) => write!(f, "{}", value),
+            EntityType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

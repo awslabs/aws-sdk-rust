@@ -102,7 +102,7 @@ impl ::std::fmt::Display for EnvironmentType {
         match self {
             EnvironmentType::Ec2 => write!(f, "ec2"),
             EnvironmentType::Ssh => write!(f, "ssh"),
-            EnvironmentType::Unknown(value) => write!(f, "{}", value),
+            EnvironmentType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

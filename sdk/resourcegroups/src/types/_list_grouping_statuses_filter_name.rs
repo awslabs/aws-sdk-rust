@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ListGroupingStatusesFilterName {
         match self {
             ListGroupingStatusesFilterName::ResourceArn => write!(f, "resource-arn"),
             ListGroupingStatusesFilterName::Status => write!(f, "status"),
-            ListGroupingStatusesFilterName::Unknown(value) => write!(f, "{}", value),
+            ListGroupingStatusesFilterName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

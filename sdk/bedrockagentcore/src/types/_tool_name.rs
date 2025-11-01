@@ -154,7 +154,7 @@ impl ::std::fmt::Display for ToolName {
             ToolName::StartCommandExecution => write!(f, "startCommandExecution"),
             ToolName::StopTask => write!(f, "stopTask"),
             ToolName::WriteFiles => write!(f, "writeFiles"),
-            ToolName::Unknown(value) => write!(f, "{}", value),
+            ToolName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CreatorModeControl {
         match self {
             CreatorModeControl::Disabled => write!(f, "DISABLED"),
             CreatorModeControl::Enabled => write!(f, "ENABLED"),
-            CreatorModeControl::Unknown(value) => write!(f, "{}", value),
+            CreatorModeControl::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

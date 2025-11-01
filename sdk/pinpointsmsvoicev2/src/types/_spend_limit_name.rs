@@ -112,7 +112,7 @@ impl ::std::fmt::Display for SpendLimitName {
             SpendLimitName::MediaMessageMonthlySpendLimit => write!(f, "MEDIA_MESSAGE_MONTHLY_SPEND_LIMIT"),
             SpendLimitName::TextMessageMonthlySpendLimit => write!(f, "TEXT_MESSAGE_MONTHLY_SPEND_LIMIT"),
             SpendLimitName::VoiceMessageMonthlySpendLimit => write!(f, "VOICE_MESSAGE_MONTHLY_SPEND_LIMIT"),
-            SpendLimitName::Unknown(value) => write!(f, "{}", value),
+            SpendLimitName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

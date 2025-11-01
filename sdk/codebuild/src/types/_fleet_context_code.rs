@@ -126,7 +126,7 @@ impl ::std::fmt::Display for FleetContextCode {
             FleetContextCode::InsufficientCapacity => write!(f, "INSUFFICIENT_CAPACITY"),
             FleetContextCode::PendingDeletion => write!(f, "PENDING_DELETION"),
             FleetContextCode::UpdateFailed => write!(f, "UPDATE_FAILED"),
-            FleetContextCode::Unknown(value) => write!(f, "{}", value),
+            FleetContextCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

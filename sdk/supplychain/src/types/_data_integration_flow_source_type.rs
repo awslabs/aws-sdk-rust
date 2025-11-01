@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DataIntegrationFlowSourceType {
         match self {
             DataIntegrationFlowSourceType::Dataset => write!(f, "DATASET"),
             DataIntegrationFlowSourceType::S3 => write!(f, "S3"),
-            DataIntegrationFlowSourceType::Unknown(value) => write!(f, "{}", value),
+            DataIntegrationFlowSourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for HubContentSortBy {
             HubContentSortBy::CreationTime => write!(f, "CreationTime"),
             HubContentSortBy::HubContentName => write!(f, "HubContentName"),
             HubContentSortBy::HubContentStatus => write!(f, "HubContentStatus"),
-            HubContentSortBy::Unknown(value) => write!(f, "{}", value),
+            HubContentSortBy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

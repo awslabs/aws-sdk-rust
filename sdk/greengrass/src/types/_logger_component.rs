@@ -102,7 +102,7 @@ impl ::std::fmt::Display for LoggerComponent {
         match self {
             LoggerComponent::GreengrassSystem => write!(f, "GreengrassSystem"),
             LoggerComponent::Lambda => write!(f, "Lambda"),
-            LoggerComponent::Unknown(value) => write!(f, "{}", value),
+            LoggerComponent::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

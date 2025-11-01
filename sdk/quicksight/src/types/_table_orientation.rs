@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TableOrientation {
         match self {
             TableOrientation::Horizontal => write!(f, "HORIZONTAL"),
             TableOrientation::Vertical => write!(f, "VERTICAL"),
-            TableOrientation::Unknown(value) => write!(f, "{}", value),
+            TableOrientation::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

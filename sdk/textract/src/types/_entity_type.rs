@@ -154,7 +154,7 @@ impl ::std::fmt::Display for EntityType {
             EntityType::TableSummary => write!(f, "TABLE_SUMMARY"),
             EntityType::TableTitle => write!(f, "TABLE_TITLE"),
             EntityType::Value => write!(f, "VALUE"),
-            EntityType::Unknown(value) => write!(f, "{}", value),
+            EntityType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -147,7 +147,7 @@ impl ::std::fmt::Display for GeneratedTemplateStatus {
             GeneratedTemplateStatus::Failed => write!(f, "FAILED"),
             GeneratedTemplateStatus::UpdateInProgress => write!(f, "UPDATE_IN_PROGRESS"),
             GeneratedTemplateStatus::UpdatePending => write!(f, "UPDATE_PENDING"),
-            GeneratedTemplateStatus::Unknown(value) => write!(f, "{}", value),
+            GeneratedTemplateStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

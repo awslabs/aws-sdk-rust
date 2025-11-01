@@ -102,7 +102,7 @@ impl ::std::fmt::Display for WordCloudWordCasing {
         match self {
             WordCloudWordCasing::ExistingCase => write!(f, "EXISTING_CASE"),
             WordCloudWordCasing::LowerCase => write!(f, "LOWER_CASE"),
-            WordCloudWordCasing::Unknown(value) => write!(f, "{}", value),
+            WordCloudWordCasing::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

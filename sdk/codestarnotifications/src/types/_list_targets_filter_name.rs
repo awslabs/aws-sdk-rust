@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ListTargetsFilterName {
             ListTargetsFilterName::TargetAddress => write!(f, "TARGET_ADDRESS"),
             ListTargetsFilterName::TargetStatus => write!(f, "TARGET_STATUS"),
             ListTargetsFilterName::TargetType => write!(f, "TARGET_TYPE"),
-            ListTargetsFilterName::Unknown(value) => write!(f, "{}", value),
+            ListTargetsFilterName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

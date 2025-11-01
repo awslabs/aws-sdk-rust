@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ModelVersionStatus {
             ModelVersionStatus::Active => write!(f, "ACTIVE"),
             ModelVersionStatus::Inactive => write!(f, "INACTIVE"),
             ModelVersionStatus::TrainingCancelled => write!(f, "TRAINING_CANCELLED"),
-            ModelVersionStatus::Unknown(value) => write!(f, "{}", value),
+            ModelVersionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

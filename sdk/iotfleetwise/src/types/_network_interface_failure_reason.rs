@@ -153,7 +153,7 @@ impl ::std::fmt::Display for NetworkInterfaceFailureReason {
             NetworkInterfaceFailureReason::VehicleMiddlewareNetworkInterfaceInfoIsNull => {
                 write!(f, "VEHICLE_MIDDLEWARE_NETWORK_INTERFACE_INFO_IS_NULL")
             }
-            NetworkInterfaceFailureReason::Unknown(value) => write!(f, "{}", value),
+            NetworkInterfaceFailureReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

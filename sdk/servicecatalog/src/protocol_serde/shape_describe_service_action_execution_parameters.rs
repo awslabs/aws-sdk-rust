@@ -135,8 +135,7 @@ pub(crate) fn de_describe_service_action_execution_parameters(
             },
             other => {
                 return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                    "expected object key or end object, found: {:?}",
-                    other
+                    "expected object key or end object, found: {other:?}"
                 )))
             }
         }

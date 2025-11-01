@@ -263,7 +263,7 @@ impl ::std::fmt::Display for ScalableDimension {
             ScalableDimension::SageMakerVariantDesiredInstanceCount => write!(f, "sagemaker:variant:DesiredInstanceCount"),
             ScalableDimension::SageMakerVariantDesiredProvisionedConcurrency => write!(f, "sagemaker:variant:DesiredProvisionedConcurrency"),
             ScalableDimension::WorkSpacesWorkSpacesPoolDesiredUserSessions => write!(f, "workspaces:workspacespool:DesiredUserSessions"),
-            ScalableDimension::Unknown(value) => write!(f, "{}", value),
+            ScalableDimension::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

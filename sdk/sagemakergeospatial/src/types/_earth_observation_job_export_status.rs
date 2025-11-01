@@ -108,7 +108,7 @@ impl ::std::fmt::Display for EarthObservationJobExportStatus {
             EarthObservationJobExportStatus::Failed => write!(f, "FAILED"),
             EarthObservationJobExportStatus::InProgress => write!(f, "IN_PROGRESS"),
             EarthObservationJobExportStatus::Succeeded => write!(f, "SUCCEEDED"),
-            EarthObservationJobExportStatus::Unknown(value) => write!(f, "{}", value),
+            EarthObservationJobExportStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

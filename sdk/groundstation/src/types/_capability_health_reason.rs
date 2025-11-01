@@ -140,7 +140,7 @@ impl ::std::fmt::Display for CapabilityHealthReason {
             CapabilityHealthReason::NotAuthorizedToCreateSlr => write!(f, "NOT_AUTHORIZED_TO_CREATE_SLR"),
             CapabilityHealthReason::NoRegisteredAgent => write!(f, "NO_REGISTERED_AGENT"),
             CapabilityHealthReason::UnverifiedIpOwnership => write!(f, "UNVERIFIED_IP_OWNERSHIP"),
-            CapabilityHealthReason::Unknown(value) => write!(f, "{}", value),
+            CapabilityHealthReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

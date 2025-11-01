@@ -126,7 +126,7 @@ impl ::std::fmt::Display for ResourceType {
             ResourceType::AwsEcrRepository => write!(f, "AWS_ECR_REPOSITORY"),
             ResourceType::AwsLambdaFunction => write!(f, "AWS_LAMBDA_FUNCTION"),
             ResourceType::CodeRepository => write!(f, "CODE_REPOSITORY"),
-            ResourceType::Unknown(value) => write!(f, "{}", value),
+            ResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

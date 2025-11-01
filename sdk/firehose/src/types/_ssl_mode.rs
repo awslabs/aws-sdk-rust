@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SslMode {
         match self {
             SslMode::Disabled => write!(f, "Disabled"),
             SslMode::Enabled => write!(f, "Enabled"),
-            SslMode::Unknown(value) => write!(f, "{}", value),
+            SslMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

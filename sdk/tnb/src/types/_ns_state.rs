@@ -168,7 +168,7 @@ impl ::std::fmt::Display for NsState {
             NsState::Updated => write!(f, "UPDATED"),
             NsState::UpdateFailed => write!(f, "UPDATE_FAILED"),
             NsState::UpdateInProgress => write!(f, "UPDATE_IN_PROGRESS"),
-            NsState::Unknown(value) => write!(f, "{}", value),
+            NsState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

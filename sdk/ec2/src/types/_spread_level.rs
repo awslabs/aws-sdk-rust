@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SpreadLevel {
         match self {
             SpreadLevel::Host => write!(f, "host"),
             SpreadLevel::Rack => write!(f, "rack"),
-            SpreadLevel::Unknown(value) => write!(f, "{}", value),
+            SpreadLevel::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AnalysisMethod {
             AnalysisMethod::DirectJob => write!(f, "DIRECT_JOB"),
             AnalysisMethod::DirectQuery => write!(f, "DIRECT_QUERY"),
             AnalysisMethod::Multiple => write!(f, "MULTIPLE"),
-            AnalysisMethod::Unknown(value) => write!(f, "{}", value),
+            AnalysisMethod::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

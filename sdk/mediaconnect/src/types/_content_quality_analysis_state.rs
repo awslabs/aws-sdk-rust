@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ContentQualityAnalysisState {
         match self {
             ContentQualityAnalysisState::Disabled => write!(f, "DISABLED"),
             ContentQualityAnalysisState::Enabled => write!(f, "ENABLED"),
-            ContentQualityAnalysisState::Unknown(value) => write!(f, "{}", value),
+            ContentQualityAnalysisState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

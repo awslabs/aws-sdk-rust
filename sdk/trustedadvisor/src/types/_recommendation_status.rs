@@ -108,7 +108,7 @@ impl ::std::fmt::Display for RecommendationStatus {
             RecommendationStatus::Error => write!(f, "error"),
             RecommendationStatus::Ok => write!(f, "ok"),
             RecommendationStatus::Warning => write!(f, "warning"),
-            RecommendationStatus::Unknown(value) => write!(f, "{}", value),
+            RecommendationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

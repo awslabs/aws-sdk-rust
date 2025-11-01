@@ -96,7 +96,7 @@ impl ::std::fmt::Display for CisResultStatusComparison {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             CisResultStatusComparison::Equals => write!(f, "EQUALS"),
-            CisResultStatusComparison::Unknown(value) => write!(f, "{}", value),
+            CisResultStatusComparison::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

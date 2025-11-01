@@ -126,7 +126,7 @@ impl ::std::fmt::Display for QueryStatus {
             QueryStatus::Queued => write!(f, "QUEUED"),
             QueryStatus::Running => write!(f, "RUNNING"),
             QueryStatus::TimedOut => write!(f, "TIMED_OUT"),
-            QueryStatus::Unknown(value) => write!(f, "{}", value),
+            QueryStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ParsingModality {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ParsingModality::Multimodal => write!(f, "MULTIMODAL"),
-            ParsingModality::Unknown(value) => write!(f, "{}", value),
+            ParsingModality::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

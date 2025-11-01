@@ -102,7 +102,7 @@ impl ::std::fmt::Display for HdrToSdrToneMapper {
         match self {
             HdrToSdrToneMapper::PreserveDetails => write!(f, "PRESERVE_DETAILS"),
             HdrToSdrToneMapper::Vibrant => write!(f, "VIBRANT"),
-            HdrToSdrToneMapper::Unknown(value) => write!(f, "{}", value),
+            HdrToSdrToneMapper::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -441,7 +441,7 @@ pub fn ser_create_multipart_upload_headers(
                 let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                     ::aws_smithy_types::error::operation::BuildError::invalid_field(
                         "metadata",
-                        format!("`{}` cannot be used as a header value: {}", v, err),
+                        format!("`{v}` cannot be used as a header value: {err}"),
                     )
                 })?;
                 builder = builder.header(header_name, header_value);
@@ -467,8 +467,7 @@ pub fn de_create_multipart_upload(
     let start_el = decoder.start_el();
     if !start_el.matches("InitiateMultipartUploadResult") {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "encountered invalid XML root: expected InitiateMultipartUploadResult but got {:?}. This is likely a bug in the SDK.",
-            start_el
+            "encountered invalid XML root: expected InitiateMultipartUploadResult but got {start_el:?}. This is likely a bug in the SDK."
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

@@ -96,7 +96,7 @@ impl ::std::fmt::Display for RedactionType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             RedactionType::Pii => write!(f, "PII"),
-            RedactionType::Unknown(value) => write!(f, "{}", value),
+            RedactionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

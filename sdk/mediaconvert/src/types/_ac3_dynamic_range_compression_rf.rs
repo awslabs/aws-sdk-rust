@@ -126,7 +126,7 @@ impl ::std::fmt::Display for Ac3DynamicRangeCompressionRf {
             Ac3DynamicRangeCompressionRf::MusicStandard => write!(f, "MUSIC_STANDARD"),
             Ac3DynamicRangeCompressionRf::None => write!(f, "NONE"),
             Ac3DynamicRangeCompressionRf::Speech => write!(f, "SPEECH"),
-            Ac3DynamicRangeCompressionRf::Unknown(value) => write!(f, "{}", value),
+            Ac3DynamicRangeCompressionRf::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for IncludedData {
         match self {
             IncludedData::AllData => write!(f, "ALL_DATA"),
             IncludedData::MetadataOnly => write!(f, "METADATA_ONLY"),
-            IncludedData::Unknown(value) => write!(f, "{}", value),
+            IncludedData::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RecordState {
         match self {
             RecordState::Active => write!(f, "ACTIVE"),
             RecordState::Archived => write!(f, "ARCHIVED"),
-            RecordState::Unknown(value) => write!(f, "{}", value),
+            RecordState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

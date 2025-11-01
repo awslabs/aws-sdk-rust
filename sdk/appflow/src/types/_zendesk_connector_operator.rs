@@ -189,7 +189,7 @@ impl ::std::fmt::Display for ZendeskConnectorOperator {
             ZendeskConnectorOperator::ValidateNonNull => write!(f, "VALIDATE_NON_NULL"),
             ZendeskConnectorOperator::ValidateNonZero => write!(f, "VALIDATE_NON_ZERO"),
             ZendeskConnectorOperator::ValidateNumeric => write!(f, "VALIDATE_NUMERIC"),
-            ZendeskConnectorOperator::Unknown(value) => write!(f, "{}", value),
+            ZendeskConnectorOperator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

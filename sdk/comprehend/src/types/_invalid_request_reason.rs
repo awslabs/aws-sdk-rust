@@ -96,7 +96,7 @@ impl ::std::fmt::Display for InvalidRequestReason {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             InvalidRequestReason::InvalidDocument => write!(f, "INVALID_DOCUMENT"),
-            InvalidRequestReason::Unknown(value) => write!(f, "{}", value),
+            InvalidRequestReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

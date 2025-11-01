@@ -96,7 +96,7 @@ impl ::std::fmt::Display for QueryTransformationType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             QueryTransformationType::QueryDecomposition => write!(f, "QUERY_DECOMPOSITION"),
-            QueryTransformationType::Unknown(value) => write!(f, "{}", value),
+            QueryTransformationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

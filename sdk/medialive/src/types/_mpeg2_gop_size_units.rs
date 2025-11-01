@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Mpeg2GopSizeUnits {
         match self {
             Mpeg2GopSizeUnits::Frames => write!(f, "FRAMES"),
             Mpeg2GopSizeUnits::Seconds => write!(f, "SECONDS"),
-            Mpeg2GopSizeUnits::Unknown(value) => write!(f, "{}", value),
+            Mpeg2GopSizeUnits::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

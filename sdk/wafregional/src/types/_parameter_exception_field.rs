@@ -217,7 +217,7 @@ impl ::std::fmt::Display for ParameterExceptionField {
             ParameterExceptionField::TagKeys => write!(f, "TAG_KEYS"),
             ParameterExceptionField::WafAction => write!(f, "WAF_ACTION"),
             ParameterExceptionField::WafOverrideAction => write!(f, "WAF_OVERRIDE_ACTION"),
-            ParameterExceptionField::Unknown(value) => write!(f, "{}", value),
+            ParameterExceptionField::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -140,7 +140,7 @@ impl ::std::fmt::Display for FleetAttribute {
             FleetAttribute::UsbDeviceFilterStrings => write!(f, "USB_DEVICE_FILTER_STRINGS"),
             FleetAttribute::VpcConfiguration => write!(f, "VPC_CONFIGURATION"),
             FleetAttribute::VpcConfigurationSecurityGroupIds => write!(f, "VPC_CONFIGURATION_SECURITY_GROUP_IDS"),
-            FleetAttribute::Unknown(value) => write!(f, "{}", value),
+            FleetAttribute::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

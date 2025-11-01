@@ -161,7 +161,7 @@ impl ::std::fmt::Display for ReplicaStatus {
             ReplicaStatus::RegionDisabled => write!(f, "REGION_DISABLED"),
             ReplicaStatus::ReplicationNotAuthorized => write!(f, "REPLICATION_NOT_AUTHORIZED"),
             ReplicaStatus::Updating => write!(f, "UPDATING"),
-            ReplicaStatus::Unknown(value) => write!(f, "{}", value),
+            ReplicaStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

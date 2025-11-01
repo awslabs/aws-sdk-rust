@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Eac3DcFilter {
         match self {
             Eac3DcFilter::Disabled => write!(f, "DISABLED"),
             Eac3DcFilter::Enabled => write!(f, "ENABLED"),
-            Eac3DcFilter::Unknown(value) => write!(f, "{}", value),
+            Eac3DcFilter::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -224,7 +224,7 @@ impl ::std::fmt::Display for ClusterIssueCode {
             ClusterIssueCode::StsRegionalEndpointDisabled => write!(f, "StsRegionalEndpointDisabled"),
             ClusterIssueCode::UnsupportedVersion => write!(f, "UnsupportedVersion"),
             ClusterIssueCode::VpcNotFound => write!(f, "VpcNotFound"),
-            ClusterIssueCode::Unknown(value) => write!(f, "{}", value),
+            ClusterIssueCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

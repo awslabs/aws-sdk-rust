@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ManagedAgentName {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ManagedAgentName::ExecuteCommandAgent => write!(f, "ExecuteCommandAgent"),
-            ManagedAgentName::Unknown(value) => write!(f, "{}", value),
+            ManagedAgentName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

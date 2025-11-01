@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ReservationResourceType {
             ReservationResourceType::Input => write!(f, "INPUT"),
             ReservationResourceType::Multiplex => write!(f, "MULTIPLEX"),
             ReservationResourceType::Output => write!(f, "OUTPUT"),
-            ReservationResourceType::Unknown(value) => write!(f, "{}", value),
+            ReservationResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

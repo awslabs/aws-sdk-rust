@@ -102,7 +102,7 @@ impl ::std::fmt::Display for HlsTargetDurationCompatibilityMode {
         match self {
             HlsTargetDurationCompatibilityMode::Legacy => write!(f, "LEGACY"),
             HlsTargetDurationCompatibilityMode::SpecCompliant => write!(f, "SPEC_COMPLIANT"),
-            HlsTargetDurationCompatibilityMode::Unknown(value) => write!(f, "{}", value),
+            HlsTargetDurationCompatibilityMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

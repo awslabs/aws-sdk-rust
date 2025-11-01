@@ -102,7 +102,7 @@ impl ::std::fmt::Display for HlsCaptionSegmentLengthControl {
         match self {
             HlsCaptionSegmentLengthControl::LargeSegments => write!(f, "LARGE_SEGMENTS"),
             HlsCaptionSegmentLengthControl::MatchVideo => write!(f, "MATCH_VIDEO"),
-            HlsCaptionSegmentLengthControl::Unknown(value) => write!(f, "{}", value),
+            HlsCaptionSegmentLengthControl::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

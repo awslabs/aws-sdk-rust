@@ -53,8 +53,7 @@ pub fn de_create_local_gateway_virtual_interface(
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateLocalGatewayVirtualInterfaceResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected CreateLocalGatewayVirtualInterfaceResponse got {:?}",
-            start_el
+            "invalid root, expected CreateLocalGatewayVirtualInterfaceResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

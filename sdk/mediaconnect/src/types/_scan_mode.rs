@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ScanMode {
             ScanMode::Interlace => write!(f, "interlace"),
             ScanMode::Progressive => write!(f, "progressive"),
             ScanMode::ProgressiveSegmentedFrame => write!(f, "progressive-segmented-frame"),
-            ScanMode::Unknown(value) => write!(f, "{}", value),
+            ScanMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SmoothGroupStreamManifestBehavior {
         match self {
             SmoothGroupStreamManifestBehavior::DoNotSend => write!(f, "DO_NOT_SEND"),
             SmoothGroupStreamManifestBehavior::Send => write!(f, "SEND"),
-            SmoothGroupStreamManifestBehavior::Unknown(value) => write!(f, "{}", value),
+            SmoothGroupStreamManifestBehavior::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

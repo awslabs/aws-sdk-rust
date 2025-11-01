@@ -140,7 +140,7 @@ impl ::std::fmt::Display for ResponseHeadersPolicyAccessControlAllowMethodsValue
             ResponseHeadersPolicyAccessControlAllowMethodsValues::Patch => write!(f, "PATCH"),
             ResponseHeadersPolicyAccessControlAllowMethodsValues::Post => write!(f, "POST"),
             ResponseHeadersPolicyAccessControlAllowMethodsValues::Put => write!(f, "PUT"),
-            ResponseHeadersPolicyAccessControlAllowMethodsValues::Unknown(value) => write!(f, "{}", value),
+            ResponseHeadersPolicyAccessControlAllowMethodsValues::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for S3MetadataDirective {
         match self {
             S3MetadataDirective::Copy => write!(f, "COPY"),
             S3MetadataDirective::Replace => write!(f, "REPLACE"),
-            S3MetadataDirective::Unknown(value) => write!(f, "{}", value),
+            S3MetadataDirective::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

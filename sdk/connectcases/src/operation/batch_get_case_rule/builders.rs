@@ -127,17 +127,17 @@ impl BatchGetCaseRuleFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_case_rules`](Self::set_case_rules).
     ///
-    /// <p>List of case rule identifiers.</p>
+    /// <p>A list of case rule identifiers.</p>
     pub fn case_rules(mut self, input: crate::types::CaseRuleIdentifier) -> Self {
         self.inner = self.inner.case_rules(input);
         self
     }
-    /// <p>List of case rule identifiers.</p>
+    /// <p>A list of case rule identifiers.</p>
     pub fn set_case_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CaseRuleIdentifier>>) -> Self {
         self.inner = self.inner.set_case_rules(input);
         self
     }
-    /// <p>List of case rule identifiers.</p>
+    /// <p>A list of case rule identifiers.</p>
     pub fn get_case_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CaseRuleIdentifier>> {
         self.inner.get_case_rules()
     }

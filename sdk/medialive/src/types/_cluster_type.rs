@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ClusterType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ClusterType::OnPremises => write!(f, "ON_PREMISES"),
-            ClusterType::Unknown(value) => write!(f, "{}", value),
+            ClusterType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

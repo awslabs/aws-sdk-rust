@@ -108,7 +108,7 @@ impl ::std::fmt::Display for X12Gs05TimeFormat {
             X12Gs05TimeFormat::Hhmm => write!(f, "HHMM"),
             X12Gs05TimeFormat::Hhmmss => write!(f, "HHMMSS"),
             X12Gs05TimeFormat::Hhmmssdd => write!(f, "HHMMSSDD"),
-            X12Gs05TimeFormat::Unknown(value) => write!(f, "{}", value),
+            X12Gs05TimeFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

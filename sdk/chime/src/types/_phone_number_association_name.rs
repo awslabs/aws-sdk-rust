@@ -120,7 +120,7 @@ impl ::std::fmt::Display for PhoneNumberAssociationName {
             PhoneNumberAssociationName::UserId => write!(f, "UserId"),
             PhoneNumberAssociationName::VoiceConnectorGroupId => write!(f, "VoiceConnectorGroupId"),
             PhoneNumberAssociationName::VoiceConnectorId => write!(f, "VoiceConnectorId"),
-            PhoneNumberAssociationName::Unknown(value) => write!(f, "{}", value),
+            PhoneNumberAssociationName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

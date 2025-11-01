@@ -219,7 +219,7 @@ impl ::std::fmt::Display for StatefulRuleProtocol {
             StatefulRuleProtocol::Tftp => write!(f, "TFTP"),
             StatefulRuleProtocol::Tls => write!(f, "TLS"),
             StatefulRuleProtocol::Udp => write!(f, "UDP"),
-            StatefulRuleProtocol::Unknown(value) => write!(f, "{}", value),
+            StatefulRuleProtocol::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

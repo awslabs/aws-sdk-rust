@@ -114,7 +114,7 @@ impl ::std::fmt::Display for RdsCurrentInstancePerformanceRisk {
             RdsCurrentInstancePerformanceRisk::Low => write!(f, "Low"),
             RdsCurrentInstancePerformanceRisk::Medium => write!(f, "Medium"),
             RdsCurrentInstancePerformanceRisk::VeryLow => write!(f, "VeryLow"),
-            RdsCurrentInstancePerformanceRisk::Unknown(value) => write!(f, "{}", value),
+            RdsCurrentInstancePerformanceRisk::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

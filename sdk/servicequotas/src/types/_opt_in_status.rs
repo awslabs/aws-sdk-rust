@@ -102,7 +102,7 @@ impl ::std::fmt::Display for OptInStatus {
         match self {
             OptInStatus::Disabled => write!(f, "DISABLED"),
             OptInStatus::Enabled => write!(f, "ENABLED"),
-            OptInStatus::Unknown(value) => write!(f, "{}", value),
+            OptInStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

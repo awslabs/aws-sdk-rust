@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AudioExtractionType {
         match self {
             AudioExtractionType::Summary => write!(f, "SUMMARY"),
             AudioExtractionType::Transcript => write!(f, "TRANSCRIPT"),
-            AudioExtractionType::Unknown(value) => write!(f, "{}", value),
+            AudioExtractionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

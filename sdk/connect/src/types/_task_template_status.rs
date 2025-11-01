@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TaskTemplateStatus {
         match self {
             TaskTemplateStatus::Active => write!(f, "ACTIVE"),
             TaskTemplateStatus::Inactive => write!(f, "INACTIVE"),
-            TaskTemplateStatus::Unknown(value) => write!(f, "{}", value),
+            TaskTemplateStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

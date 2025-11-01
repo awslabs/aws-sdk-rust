@@ -120,7 +120,7 @@ impl ::std::fmt::Display for StackSetOperationResultStatus {
             StackSetOperationResultStatus::Pending => write!(f, "PENDING"),
             StackSetOperationResultStatus::Running => write!(f, "RUNNING"),
             StackSetOperationResultStatus::Succeeded => write!(f, "SUCCEEDED"),
-            StackSetOperationResultStatus::Unknown(value) => write!(f, "{}", value),
+            StackSetOperationResultStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

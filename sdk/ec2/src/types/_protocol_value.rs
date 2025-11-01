@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ProtocolValue {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ProtocolValue::Gre => write!(f, "gre"),
-            ProtocolValue::Unknown(value) => write!(f, "{}", value),
+            ProtocolValue::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

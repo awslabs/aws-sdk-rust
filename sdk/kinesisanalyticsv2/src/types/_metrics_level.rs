@@ -114,7 +114,7 @@ impl ::std::fmt::Display for MetricsLevel {
             MetricsLevel::Operator => write!(f, "OPERATOR"),
             MetricsLevel::Parallelism => write!(f, "PARALLELISM"),
             MetricsLevel::Task => write!(f, "TASK"),
-            MetricsLevel::Unknown(value) => write!(f, "{}", value),
+            MetricsLevel::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

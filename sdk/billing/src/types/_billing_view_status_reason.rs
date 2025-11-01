@@ -147,7 +147,7 @@ impl ::std::fmt::Display for BillingViewStatusReason {
             BillingViewStatusReason::SourceViewUnhealthy => write!(f, "SOURCE_VIEW_UNHEALTHY"),
             BillingViewStatusReason::SourceViewUpdating => write!(f, "SOURCE_VIEW_UPDATING"),
             BillingViewStatusReason::ViewOwnerNotManagementAccount => write!(f, "VIEW_OWNER_NOT_MANAGEMENT_ACCOUNT"),
-            BillingViewStatusReason::Unknown(value) => write!(f, "{}", value),
+            BillingViewStatusReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

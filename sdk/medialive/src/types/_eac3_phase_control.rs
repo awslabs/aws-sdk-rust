@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Eac3PhaseControl {
         match self {
             Eac3PhaseControl::NoShift => write!(f, "NO_SHIFT"),
             Eac3PhaseControl::Shift90Degrees => write!(f, "SHIFT_90_DEGREES"),
-            Eac3PhaseControl::Unknown(value) => write!(f, "{}", value),
+            Eac3PhaseControl::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

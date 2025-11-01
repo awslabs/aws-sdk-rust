@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DriveCacheType {
         match self {
             DriveCacheType::None => write!(f, "NONE"),
             DriveCacheType::Read => write!(f, "READ"),
-            DriveCacheType::Unknown(value) => write!(f, "{}", value),
+            DriveCacheType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

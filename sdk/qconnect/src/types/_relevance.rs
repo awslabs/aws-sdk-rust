@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Relevance {
         match self {
             Relevance::Helpful => write!(f, "HELPFUL"),
             Relevance::NotHelpful => write!(f, "NOT_HELPFUL"),
-            Relevance::Unknown(value) => write!(f, "{}", value),
+            Relevance::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

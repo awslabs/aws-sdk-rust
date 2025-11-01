@@ -120,7 +120,7 @@ impl ::std::fmt::Display for ChoiceReason {
             ChoiceReason::None => write!(f, "NONE"),
             ChoiceReason::Other => write!(f, "OTHER"),
             ChoiceReason::OutOfScope => write!(f, "OUT_OF_SCOPE"),
-            ChoiceReason::Unknown(value) => write!(f, "{}", value),
+            ChoiceReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

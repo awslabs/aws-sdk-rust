@@ -182,7 +182,7 @@ impl ::std::fmt::Display for DecisionType {
             DecisionType::SignalExternalWorkflowExecution => write!(f, "SignalExternalWorkflowExecution"),
             DecisionType::StartChildWorkflowExecution => write!(f, "StartChildWorkflowExecution"),
             DecisionType::StartTimer => write!(f, "StartTimer"),
-            DecisionType::Unknown(value) => write!(f, "{}", value),
+            DecisionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

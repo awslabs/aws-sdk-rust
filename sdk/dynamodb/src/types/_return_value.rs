@@ -120,7 +120,7 @@ impl ::std::fmt::Display for ReturnValue {
             ReturnValue::None => write!(f, "NONE"),
             ReturnValue::UpdatedNew => write!(f, "UPDATED_NEW"),
             ReturnValue::UpdatedOld => write!(f, "UPDATED_OLD"),
-            ReturnValue::Unknown(value) => write!(f, "{}", value),
+            ReturnValue::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

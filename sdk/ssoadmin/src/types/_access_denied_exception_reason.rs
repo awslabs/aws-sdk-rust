@@ -96,7 +96,7 @@ impl ::std::fmt::Display for AccessDeniedExceptionReason {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             AccessDeniedExceptionReason::KmsAccessDeniedException => write!(f, "KMS_AccessDeniedException"),
-            AccessDeniedExceptionReason::Unknown(value) => write!(f, "{}", value),
+            AccessDeniedExceptionReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

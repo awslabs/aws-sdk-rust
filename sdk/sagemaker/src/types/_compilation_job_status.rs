@@ -126,7 +126,7 @@ impl ::std::fmt::Display for CompilationJobStatus {
             CompilationJobStatus::Starting => write!(f, "STARTING"),
             CompilationJobStatus::Stopped => write!(f, "STOPPED"),
             CompilationJobStatus::Stopping => write!(f, "STOPPING"),
-            CompilationJobStatus::Unknown(value) => write!(f, "{}", value),
+            CompilationJobStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

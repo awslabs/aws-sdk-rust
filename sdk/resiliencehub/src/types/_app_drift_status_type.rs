@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AppDriftStatusType {
             AppDriftStatusType::Detected => write!(f, "Detected"),
             AppDriftStatusType::NotChecked => write!(f, "NotChecked"),
             AppDriftStatusType::NotDetected => write!(f, "NotDetected"),
-            AppDriftStatusType::Unknown(value) => write!(f, "{}", value),
+            AppDriftStatusType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

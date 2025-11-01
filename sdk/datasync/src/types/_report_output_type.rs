@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ReportOutputType {
         match self {
             ReportOutputType::Standard => write!(f, "STANDARD"),
             ReportOutputType::SummaryOnly => write!(f, "SUMMARY_ONLY"),
-            ReportOutputType::Unknown(value) => write!(f, "{}", value),
+            ReportOutputType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

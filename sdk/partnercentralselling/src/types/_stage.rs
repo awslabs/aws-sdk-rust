@@ -140,7 +140,7 @@ impl ::std::fmt::Display for Stage {
             Stage::Prospect => write!(f, "Prospect"),
             Stage::Qualified => write!(f, "Qualified"),
             Stage::TechnicalValidation => write!(f, "Technical Validation"),
-            Stage::Unknown(value) => write!(f, "{}", value),
+            Stage::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

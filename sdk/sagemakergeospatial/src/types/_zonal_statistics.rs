@@ -126,7 +126,7 @@ impl ::std::fmt::Display for ZonalStatistics {
             ZonalStatistics::Min => write!(f, "MIN"),
             ZonalStatistics::StandardDeviation => write!(f, "STANDARD_DEVIATION"),
             ZonalStatistics::Sum => write!(f, "SUM"),
-            ZonalStatistics::Unknown(value) => write!(f, "{}", value),
+            ZonalStatistics::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

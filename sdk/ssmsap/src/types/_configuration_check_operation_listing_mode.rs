@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ConfigurationCheckOperationListingMode {
         match self {
             ConfigurationCheckOperationListingMode::AllOperations => write!(f, "ALL_OPERATIONS"),
             ConfigurationCheckOperationListingMode::LatestPerCheck => write!(f, "LATEST_PER_CHECK"),
-            ConfigurationCheckOperationListingMode::Unknown(value) => write!(f, "{}", value),
+            ConfigurationCheckOperationListingMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

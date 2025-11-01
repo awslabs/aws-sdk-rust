@@ -96,7 +96,7 @@ impl ::std::fmt::Display for EventNotificationPartnerType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             EventNotificationPartnerType::Sidewalk => write!(f, "Sidewalk"),
-            EventNotificationPartnerType::Unknown(value) => write!(f, "{}", value),
+            EventNotificationPartnerType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

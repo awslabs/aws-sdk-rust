@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AccessType {
         match self {
             AccessType::Justintime => write!(f, "JustInTime"),
             AccessType::Standard => write!(f, "Standard"),
-            AccessType::Unknown(value) => write!(f, "{}", value),
+            AccessType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

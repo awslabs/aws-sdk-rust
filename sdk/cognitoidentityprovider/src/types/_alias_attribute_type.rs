@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AliasAttributeType {
             AliasAttributeType::Email => write!(f, "email"),
             AliasAttributeType::PhoneNumber => write!(f, "phone_number"),
             AliasAttributeType::PreferredUsername => write!(f, "preferred_username"),
-            AliasAttributeType::Unknown(value) => write!(f, "{}", value),
+            AliasAttributeType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -110,7 +110,7 @@ impl ::std::fmt::Display for BatchDeleteBillScenarioUsageModificationErrorCode {
             BatchDeleteBillScenarioUsageModificationErrorCode::BadRequest => write!(f, "BAD_REQUEST"),
             BatchDeleteBillScenarioUsageModificationErrorCode::Conflict => write!(f, "CONFLICT"),
             BatchDeleteBillScenarioUsageModificationErrorCode::InternalServerError => write!(f, "INTERNAL_SERVER_ERROR"),
-            BatchDeleteBillScenarioUsageModificationErrorCode::Unknown(value) => write!(f, "{}", value),
+            BatchDeleteBillScenarioUsageModificationErrorCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

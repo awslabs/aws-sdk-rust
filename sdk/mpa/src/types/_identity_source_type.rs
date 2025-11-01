@@ -96,7 +96,7 @@ impl ::std::fmt::Display for IdentitySourceType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             IdentitySourceType::IamIdentityCenter => write!(f, "IAM_IDENTITY_CENTER"),
-            IdentitySourceType::Unknown(value) => write!(f, "{}", value),
+            IdentitySourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

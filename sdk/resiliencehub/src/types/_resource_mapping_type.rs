@@ -126,7 +126,7 @@ impl ::std::fmt::Display for ResourceMappingType {
             ResourceMappingType::Resource => write!(f, "Resource"),
             ResourceMappingType::ResourceGroup => write!(f, "ResourceGroup"),
             ResourceMappingType::Terraform => write!(f, "Terraform"),
-            ResourceMappingType::Unknown(value) => write!(f, "{}", value),
+            ResourceMappingType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

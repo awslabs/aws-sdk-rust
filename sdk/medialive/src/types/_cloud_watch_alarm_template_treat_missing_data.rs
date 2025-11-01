@@ -114,7 +114,7 @@ impl ::std::fmt::Display for CloudWatchAlarmTemplateTreatMissingData {
             CloudWatchAlarmTemplateTreatMissingData::Ignore => write!(f, "ignore"),
             CloudWatchAlarmTemplateTreatMissingData::Missing => write!(f, "missing"),
             CloudWatchAlarmTemplateTreatMissingData::NotBreaching => write!(f, "notBreaching"),
-            CloudWatchAlarmTemplateTreatMissingData::Unknown(value) => write!(f, "{}", value),
+            CloudWatchAlarmTemplateTreatMissingData::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

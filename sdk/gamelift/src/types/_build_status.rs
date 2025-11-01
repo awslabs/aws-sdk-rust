@@ -108,7 +108,7 @@ impl ::std::fmt::Display for BuildStatus {
             BuildStatus::Failed => write!(f, "FAILED"),
             BuildStatus::Initialized => write!(f, "INITIALIZED"),
             BuildStatus::Ready => write!(f, "READY"),
-            BuildStatus::Unknown(value) => write!(f, "{}", value),
+            BuildStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

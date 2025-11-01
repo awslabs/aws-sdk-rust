@@ -96,7 +96,7 @@ impl ::std::fmt::Display for AppCategory {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             AppCategory::LfR => write!(f, "LfR"),
-            AppCategory::Unknown(value) => write!(f, "{}", value),
+            AppCategory::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

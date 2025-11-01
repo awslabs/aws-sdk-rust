@@ -98,7 +98,7 @@ impl ::std::fmt::Display for ServiceTemplateSupportedComponentSourceType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ServiceTemplateSupportedComponentSourceType::DirectlyDefined => write!(f, "DIRECTLY_DEFINED"),
-            ServiceTemplateSupportedComponentSourceType::Unknown(value) => write!(f, "{}", value),
+            ServiceTemplateSupportedComponentSourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

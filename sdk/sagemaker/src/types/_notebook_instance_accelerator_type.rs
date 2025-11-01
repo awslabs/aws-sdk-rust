@@ -133,7 +133,7 @@ impl ::std::fmt::Display for NotebookInstanceAcceleratorType {
             NotebookInstanceAcceleratorType::MlEia2Large => write!(f, "ml.eia2.large"),
             NotebookInstanceAcceleratorType::MlEia2Medium => write!(f, "ml.eia2.medium"),
             NotebookInstanceAcceleratorType::MlEia2Xlarge => write!(f, "ml.eia2.xlarge"),
-            NotebookInstanceAcceleratorType::Unknown(value) => write!(f, "{}", value),
+            NotebookInstanceAcceleratorType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

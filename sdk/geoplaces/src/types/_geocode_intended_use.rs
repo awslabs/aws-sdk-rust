@@ -102,7 +102,7 @@ impl ::std::fmt::Display for GeocodeIntendedUse {
         match self {
             GeocodeIntendedUse::SingleUse => write!(f, "SingleUse"),
             GeocodeIntendedUse::Storage => write!(f, "Storage"),
-            GeocodeIntendedUse::Unknown(value) => write!(f, "{}", value),
+            GeocodeIntendedUse::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

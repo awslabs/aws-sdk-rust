@@ -120,7 +120,7 @@ impl ::std::fmt::Display for WatermarkingStrength {
             WatermarkingStrength::Lightest => write!(f, "LIGHTEST"),
             WatermarkingStrength::Stronger => write!(f, "STRONGER"),
             WatermarkingStrength::Strongest => write!(f, "STRONGEST"),
-            WatermarkingStrength::Unknown(value) => write!(f, "{}", value),
+            WatermarkingStrength::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

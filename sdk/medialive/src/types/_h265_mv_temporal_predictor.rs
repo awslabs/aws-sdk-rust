@@ -102,7 +102,7 @@ impl ::std::fmt::Display for H265MvTemporalPredictor {
         match self {
             H265MvTemporalPredictor::Disabled => write!(f, "DISABLED"),
             H265MvTemporalPredictor::Enabled => write!(f, "ENABLED"),
-            H265MvTemporalPredictor::Unknown(value) => write!(f, "{}", value),
+            H265MvTemporalPredictor::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

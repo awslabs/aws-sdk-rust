@@ -108,7 +108,7 @@ impl ::std::fmt::Display for DatabaseManagementPreference {
             DatabaseManagementPreference::AwsManaged => write!(f, "AWS-managed"),
             DatabaseManagementPreference::NoPreference => write!(f, "No preference"),
             DatabaseManagementPreference::SelfManage => write!(f, "Self-manage"),
-            DatabaseManagementPreference::Unknown(value) => write!(f, "{}", value),
+            DatabaseManagementPreference::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

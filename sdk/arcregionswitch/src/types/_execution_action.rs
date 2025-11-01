@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ExecutionAction {
         match self {
             ExecutionAction::Activate => write!(f, "activate"),
             ExecutionAction::Deactivate => write!(f, "deactivate"),
-            ExecutionAction::Unknown(value) => write!(f, "{}", value),
+            ExecutionAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

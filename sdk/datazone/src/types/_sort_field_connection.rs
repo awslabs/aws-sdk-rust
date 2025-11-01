@@ -96,7 +96,7 @@ impl ::std::fmt::Display for SortFieldConnection {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             SortFieldConnection::Name => write!(f, "NAME"),
-            SortFieldConnection::Unknown(value) => write!(f, "{}", value),
+            SortFieldConnection::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

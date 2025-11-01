@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PlacementConstraintType {
         match self {
             PlacementConstraintType::DistinctInstance => write!(f, "distinctInstance"),
             PlacementConstraintType::MemberOf => write!(f, "memberOf"),
-            PlacementConstraintType::Unknown(value) => write!(f, "{}", value),
+            PlacementConstraintType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

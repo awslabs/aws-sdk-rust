@@ -108,7 +108,7 @@ impl ::std::fmt::Display for LensType {
             LensType::AwsOfficial => write!(f, "AWS_OFFICIAL"),
             LensType::CustomSelf => write!(f, "CUSTOM_SELF"),
             LensType::CustomShared => write!(f, "CUSTOM_SHARED"),
-            LensType::Unknown(value) => write!(f, "{}", value),
+            LensType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

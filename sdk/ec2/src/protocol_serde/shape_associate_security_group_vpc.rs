@@ -53,8 +53,7 @@ pub fn de_associate_security_group_vpc(
     let start_el = decoder.start_el();
     if !(start_el.matches("AssociateSecurityGroupVpcResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected AssociateSecurityGroupVpcResponse got {:?}",
-            start_el
+            "invalid root, expected AssociateSecurityGroupVpcResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

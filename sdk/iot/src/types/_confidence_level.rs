@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ConfidenceLevel {
             ConfidenceLevel::High => write!(f, "HIGH"),
             ConfidenceLevel::Low => write!(f, "LOW"),
             ConfidenceLevel::Medium => write!(f, "MEDIUM"),
-            ConfidenceLevel::Unknown(value) => write!(f, "{}", value),
+            ConfidenceLevel::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CeType {
         match self {
             CeType::Managed => write!(f, "MANAGED"),
             CeType::Unmanaged => write!(f, "UNMANAGED"),
-            CeType::Unknown(value) => write!(f, "{}", value),
+            CeType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

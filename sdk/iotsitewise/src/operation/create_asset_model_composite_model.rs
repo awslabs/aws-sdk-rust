@@ -196,6 +196,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for CreateAssetM
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::create_asset_model_composite_model::CreateAssetModelCompositeModelInput,
                 output: &mut ::std::string::String,

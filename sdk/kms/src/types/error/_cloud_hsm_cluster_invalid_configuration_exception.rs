@@ -29,7 +29,7 @@ impl ::std::fmt::Display for CloudHsmClusterInvalidConfigurationException {
         ::std::write!(f, "CloudHsmClusterInvalidConfigurationException")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
             {
-                ::std::write!(f, ": {}", inner_1)?;
+                ::std::write!(f, ": {inner_1}")?;
             }
         }
         Ok(())

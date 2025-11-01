@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ReplicationType {
         match self {
             ReplicationType::AgentBased => write!(f, "AGENT_BASED"),
             ReplicationType::SnapshotShipping => write!(f, "SNAPSHOT_SHIPPING"),
-            ReplicationType::Unknown(value) => write!(f, "{}", value),
+            ReplicationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

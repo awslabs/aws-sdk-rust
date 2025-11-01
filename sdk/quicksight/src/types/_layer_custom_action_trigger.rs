@@ -102,7 +102,7 @@ impl ::std::fmt::Display for LayerCustomActionTrigger {
         match self {
             LayerCustomActionTrigger::DataPointClick => write!(f, "DATA_POINT_CLICK"),
             LayerCustomActionTrigger::DataPointMenu => write!(f, "DATA_POINT_MENU"),
-            LayerCustomActionTrigger::Unknown(value) => write!(f, "{}", value),
+            LayerCustomActionTrigger::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

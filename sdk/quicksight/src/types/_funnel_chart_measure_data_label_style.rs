@@ -126,7 +126,7 @@ impl ::std::fmt::Display for FunnelChartMeasureDataLabelStyle {
             FunnelChartMeasureDataLabelStyle::ValueAndPercentageByFirstStage => write!(f, "VALUE_AND_PERCENTAGE_BY_FIRST_STAGE"),
             FunnelChartMeasureDataLabelStyle::ValueAndPercentageByPreviousStage => write!(f, "VALUE_AND_PERCENTAGE_BY_PREVIOUS_STAGE"),
             FunnelChartMeasureDataLabelStyle::ValueOnly => write!(f, "VALUE_ONLY"),
-            FunnelChartMeasureDataLabelStyle::Unknown(value) => write!(f, "{}", value),
+            FunnelChartMeasureDataLabelStyle::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

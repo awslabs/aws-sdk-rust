@@ -102,7 +102,7 @@ impl ::std::fmt::Display for BrowserSessionStatus {
         match self {
             BrowserSessionStatus::Ready => write!(f, "READY"),
             BrowserSessionStatus::Terminated => write!(f, "TERMINATED"),
-            BrowserSessionStatus::Unknown(value) => write!(f, "{}", value),
+            BrowserSessionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

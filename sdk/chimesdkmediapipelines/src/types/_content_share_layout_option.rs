@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ContentShareLayoutOption {
             ContentShareLayoutOption::Horizontal => write!(f, "Horizontal"),
             ContentShareLayoutOption::PresenterOnly => write!(f, "PresenterOnly"),
             ContentShareLayoutOption::Vertical => write!(f, "Vertical"),
-            ContentShareLayoutOption::Unknown(value) => write!(f, "{}", value),
+            ContentShareLayoutOption::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -122,7 +122,7 @@ impl ::std::fmt::Display for ParticipantRecordingFilterByRecordingState {
             ParticipantRecordingFilterByRecordingState::Starting => write!(f, "STARTING"),
             ParticipantRecordingFilterByRecordingState::Stopped => write!(f, "STOPPED"),
             ParticipantRecordingFilterByRecordingState::Stopping => write!(f, "STOPPING"),
-            ParticipantRecordingFilterByRecordingState::Unknown(value) => write!(f, "{}", value),
+            ParticipantRecordingFilterByRecordingState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

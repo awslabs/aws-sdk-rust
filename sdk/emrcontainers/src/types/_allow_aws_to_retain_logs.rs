@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AllowAwsToRetainLogs {
         match self {
             AllowAwsToRetainLogs::Disabled => write!(f, "DISABLED"),
             AllowAwsToRetainLogs::Enabled => write!(f, "ENABLED"),
-            AllowAwsToRetainLogs::Unknown(value) => write!(f, "{}", value),
+            AllowAwsToRetainLogs::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

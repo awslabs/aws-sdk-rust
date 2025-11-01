@@ -147,7 +147,7 @@ impl ::std::fmt::Display for InferenceExperimentStatus {
             InferenceExperimentStatus::Starting => write!(f, "Starting"),
             InferenceExperimentStatus::Stopping => write!(f, "Stopping"),
             InferenceExperimentStatus::Updating => write!(f, "Updating"),
-            InferenceExperimentStatus::Unknown(value) => write!(f, "{}", value),
+            InferenceExperimentStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

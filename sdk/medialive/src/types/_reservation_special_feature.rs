@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ReservationSpecialFeature {
             ReservationSpecialFeature::AudioNormalization => write!(f, "AUDIO_NORMALIZATION"),
             ReservationSpecialFeature::Mghd => write!(f, "MGHD"),
             ReservationSpecialFeature::Mguhd => write!(f, "MGUHD"),
-            ReservationSpecialFeature::Unknown(value) => write!(f, "{}", value),
+            ReservationSpecialFeature::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

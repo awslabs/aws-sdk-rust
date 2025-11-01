@@ -96,7 +96,7 @@ impl ::std::fmt::Display for WirelessGatewayType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             WirelessGatewayType::LoRaWan => write!(f, "LoRaWAN"),
-            WirelessGatewayType::Unknown(value) => write!(f, "{}", value),
+            WirelessGatewayType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

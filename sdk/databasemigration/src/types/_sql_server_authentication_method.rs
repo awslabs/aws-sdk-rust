@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SqlServerAuthenticationMethod {
         match self {
             SqlServerAuthenticationMethod::Kerberos => write!(f, "kerberos"),
             SqlServerAuthenticationMethod::Password => write!(f, "password"),
-            SqlServerAuthenticationMethod::Unknown(value) => write!(f, "{}", value),
+            SqlServerAuthenticationMethod::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

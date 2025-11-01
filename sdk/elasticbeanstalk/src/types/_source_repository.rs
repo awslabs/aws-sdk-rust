@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SourceRepository {
         match self {
             SourceRepository::CodeCommit => write!(f, "CodeCommit"),
             SourceRepository::S3 => write!(f, "S3"),
-            SourceRepository::Unknown(value) => write!(f, "{}", value),
+            SourceRepository::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

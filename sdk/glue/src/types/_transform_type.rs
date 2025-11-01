@@ -96,7 +96,7 @@ impl ::std::fmt::Display for TransformType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             TransformType::FindMatches => write!(f, "FIND_MATCHES"),
-            TransformType::Unknown(value) => write!(f, "{}", value),
+            TransformType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

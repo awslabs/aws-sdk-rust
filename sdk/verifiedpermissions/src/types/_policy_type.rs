@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PolicyType {
         match self {
             PolicyType::Static => write!(f, "STATIC"),
             PolicyType::TemplateLinked => write!(f, "TEMPLATE_LINKED"),
-            PolicyType::Unknown(value) => write!(f, "{}", value),
+            PolicyType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

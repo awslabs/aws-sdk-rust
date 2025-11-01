@@ -161,7 +161,7 @@ impl ::std::fmt::Display for NotebookExecutionStatus {
             NotebookExecutionStatus::Stopped => write!(f, "STOPPED"),
             NotebookExecutionStatus::Stopping => write!(f, "STOPPING"),
             NotebookExecutionStatus::StopPending => write!(f, "STOP_PENDING"),
-            NotebookExecutionStatus::Unknown(value) => write!(f, "{}", value),
+            NotebookExecutionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

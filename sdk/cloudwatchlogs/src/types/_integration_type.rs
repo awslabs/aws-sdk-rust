@@ -96,7 +96,7 @@ impl ::std::fmt::Display for IntegrationType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             IntegrationType::Opensearch => write!(f, "OPENSEARCH"),
-            IntegrationType::Unknown(value) => write!(f, "{}", value),
+            IntegrationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

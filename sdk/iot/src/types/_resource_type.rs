@@ -154,7 +154,7 @@ impl ::std::fmt::Display for ResourceType {
             ResourceType::IotPolicy => write!(f, "IOT_POLICY"),
             ResourceType::IssuerCertificate => write!(f, "ISSUER_CERTIFICATE"),
             ResourceType::RoleAlias => write!(f, "ROLE_ALIAS"),
-            ResourceType::Unknown(value) => write!(f, "{}", value),
+            ResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

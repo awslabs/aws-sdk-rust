@@ -114,7 +114,7 @@ impl ::std::fmt::Display for LegendPosition {
             LegendPosition::Bottom => write!(f, "BOTTOM"),
             LegendPosition::Right => write!(f, "RIGHT"),
             LegendPosition::Top => write!(f, "TOP"),
-            LegendPosition::Unknown(value) => write!(f, "{}", value),
+            LegendPosition::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

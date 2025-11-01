@@ -114,7 +114,7 @@ impl ::std::fmt::Display for StandardMessages {
             StandardMessages::Auto => write!(f, "AUTO"),
             StandardMessages::Mentions => write!(f, "MENTIONS"),
             StandardMessages::None => write!(f, "NONE"),
-            StandardMessages::Unknown(value) => write!(f, "{}", value),
+            StandardMessages::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

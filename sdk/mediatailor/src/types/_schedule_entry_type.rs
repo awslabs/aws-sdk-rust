@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ScheduleEntryType {
             ScheduleEntryType::AlternateMedia => write!(f, "ALTERNATE_MEDIA"),
             ScheduleEntryType::FillerSlate => write!(f, "FILLER_SLATE"),
             ScheduleEntryType::Program => write!(f, "PROGRAM"),
-            ScheduleEntryType::Unknown(value) => write!(f, "{}", value),
+            ScheduleEntryType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

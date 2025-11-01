@@ -126,7 +126,7 @@ impl ::std::fmt::Display for AccountLinkStatusEnum {
             AccountLinkStatusEnum::LinkNotFound => write!(f, "LINK_NOT_FOUND"),
             AccountLinkStatusEnum::PendingAcceptanceByTargetAccount => write!(f, "PENDING_ACCEPTANCE_BY_TARGET_ACCOUNT"),
             AccountLinkStatusEnum::Rejected => write!(f, "REJECTED"),
-            AccountLinkStatusEnum::Unknown(value) => write!(f, "{}", value),
+            AccountLinkStatusEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

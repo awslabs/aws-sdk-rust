@@ -108,7 +108,7 @@ impl ::std::fmt::Display for HealthState {
             HealthState::Healthy => write!(f, "HEALTHY"),
             HealthState::Initial => write!(f, "INITIAL"),
             HealthState::Unhealthy => write!(f, "UNHEALTHY"),
-            HealthState::Unknown(value) => write!(f, "{}", value),
+            HealthState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

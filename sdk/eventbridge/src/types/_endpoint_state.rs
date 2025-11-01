@@ -140,7 +140,7 @@ impl ::std::fmt::Display for EndpointState {
             EndpointState::Deleting => write!(f, "DELETING"),
             EndpointState::UpdateFailed => write!(f, "UPDATE_FAILED"),
             EndpointState::Updating => write!(f, "UPDATING"),
-            EndpointState::Unknown(value) => write!(f, "{}", value),
+            EndpointState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ColumnDataSubType {
         match self {
             ColumnDataSubType::Fixed => write!(f, "FIXED"),
             ColumnDataSubType::Float => write!(f, "FLOAT"),
-            ColumnDataSubType::Unknown(value) => write!(f, "{}", value),
+            ColumnDataSubType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

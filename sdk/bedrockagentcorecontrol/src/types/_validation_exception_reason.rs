@@ -126,7 +126,7 @@ impl ::std::fmt::Display for ValidationExceptionReason {
             ValidationExceptionReason::FieldValidationFailed => write!(f, "FieldValidationFailed"),
             ValidationExceptionReason::IdempotentParameterMismatchException => write!(f, "IdempotentParameterMismatchException"),
             ValidationExceptionReason::ResourceConflict => write!(f, "ResourceConflict"),
-            ValidationExceptionReason::Unknown(value) => write!(f, "{}", value),
+            ValidationExceptionReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ContactMethodVerificationProtocol {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ContactMethodVerificationProtocol::Email => write!(f, "Email"),
-            ContactMethodVerificationProtocol::Unknown(value) => write!(f, "{}", value),
+            ContactMethodVerificationProtocol::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

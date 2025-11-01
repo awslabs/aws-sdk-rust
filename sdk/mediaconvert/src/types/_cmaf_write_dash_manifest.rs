@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CmafWriteDashManifest {
         match self {
             CmafWriteDashManifest::Disabled => write!(f, "DISABLED"),
             CmafWriteDashManifest::Enabled => write!(f, "ENABLED"),
-            CmafWriteDashManifest::Unknown(value) => write!(f, "{}", value),
+            CmafWriteDashManifest::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

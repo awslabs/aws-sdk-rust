@@ -108,7 +108,7 @@ impl ::std::fmt::Display for UsageLimitBreachAction {
             UsageLimitBreachAction::Deactivate => write!(f, "deactivate"),
             UsageLimitBreachAction::EmitMetric => write!(f, "emit-metric"),
             UsageLimitBreachAction::Log => write!(f, "log"),
-            UsageLimitBreachAction::Unknown(value) => write!(f, "{}", value),
+            UsageLimitBreachAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

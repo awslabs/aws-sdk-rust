@@ -140,7 +140,7 @@ impl ::std::fmt::Display for DomainProcessingStatusType {
             DomainProcessingStatusType::Modifying => write!(f, "Modifying"),
             DomainProcessingStatusType::Updating => write!(f, "UpdatingServiceSoftware"),
             DomainProcessingStatusType::Upgrading => write!(f, "UpgradingEngineVersion"),
-            DomainProcessingStatusType::Unknown(value) => write!(f, "{}", value),
+            DomainProcessingStatusType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for LambdaFunctionMetricName {
         match self {
             LambdaFunctionMetricName::Duration => write!(f, "Duration"),
             LambdaFunctionMetricName::Memory => write!(f, "Memory"),
-            LambdaFunctionMetricName::Unknown(value) => write!(f, "{}", value),
+            LambdaFunctionMetricName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

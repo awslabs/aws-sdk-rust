@@ -175,7 +175,7 @@ impl ::std::fmt::Display for ContextKeyTypeEnum {
             ContextKeyTypeEnum::NumericList => write!(f, "numericList"),
             ContextKeyTypeEnum::String => write!(f, "string"),
             ContextKeyTypeEnum::StringList => write!(f, "stringList"),
-            ContextKeyTypeEnum::Unknown(value) => write!(f, "{}", value),
+            ContextKeyTypeEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

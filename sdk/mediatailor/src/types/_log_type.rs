@@ -96,7 +96,7 @@ impl ::std::fmt::Display for LogType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             LogType::AsRun => write!(f, "AS_RUN"),
-            LogType::Unknown(value) => write!(f, "{}", value),
+            LogType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

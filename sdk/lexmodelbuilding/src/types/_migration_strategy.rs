@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MigrationStrategy {
         match self {
             MigrationStrategy::CreateNew => write!(f, "CREATE_NEW"),
             MigrationStrategy::UpdateExisting => write!(f, "UPDATE_EXISTING"),
-            MigrationStrategy::Unknown(value) => write!(f, "{}", value),
+            MigrationStrategy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

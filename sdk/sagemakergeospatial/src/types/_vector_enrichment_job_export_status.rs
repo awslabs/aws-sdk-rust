@@ -108,7 +108,7 @@ impl ::std::fmt::Display for VectorEnrichmentJobExportStatus {
             VectorEnrichmentJobExportStatus::Failed => write!(f, "FAILED"),
             VectorEnrichmentJobExportStatus::InProgress => write!(f, "IN_PROGRESS"),
             VectorEnrichmentJobExportStatus::Succeeded => write!(f, "SUCCEEDED"),
-            VectorEnrichmentJobExportStatus::Unknown(value) => write!(f, "{}", value),
+            VectorEnrichmentJobExportStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

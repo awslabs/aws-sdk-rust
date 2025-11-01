@@ -108,7 +108,7 @@ impl ::std::fmt::Display for SortBy {
             SortBy::CreationTime => write!(f, "CreationTime"),
             SortBy::Name => write!(f, "Name"),
             SortBy::Status => write!(f, "Status"),
-            SortBy::Unknown(value) => write!(f, "{}", value),
+            SortBy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

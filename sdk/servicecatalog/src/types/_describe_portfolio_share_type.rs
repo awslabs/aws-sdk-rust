@@ -114,7 +114,7 @@ impl ::std::fmt::Display for DescribePortfolioShareType {
             DescribePortfolioShareType::Organization => write!(f, "ORGANIZATION"),
             DescribePortfolioShareType::OrganizationalUnit => write!(f, "ORGANIZATIONAL_UNIT"),
             DescribePortfolioShareType::OrganizationMemberAccount => write!(f, "ORGANIZATION_MEMBER_ACCOUNT"),
-            DescribePortfolioShareType::Unknown(value) => write!(f, "{}", value),
+            DescribePortfolioShareType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

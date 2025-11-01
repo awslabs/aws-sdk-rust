@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AssignmentStatusType {
             AssignmentStatusType::Any => write!(f, "Any"),
             AssignmentStatusType::Assigned => write!(f, "Assigned"),
             AssignmentStatusType::Unassigned => write!(f, "Unassigned"),
-            AssignmentStatusType::Unknown(value) => write!(f, "{}", value),
+            AssignmentStatusType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

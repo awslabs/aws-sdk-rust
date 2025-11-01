@@ -102,7 +102,7 @@ impl ::std::fmt::Display for M2tsTimedMetadataBehavior {
         match self {
             M2tsTimedMetadataBehavior::NoPassthrough => write!(f, "NO_PASSTHROUGH"),
             M2tsTimedMetadataBehavior::Passthrough => write!(f, "PASSTHROUGH"),
-            M2tsTimedMetadataBehavior::Unknown(value) => write!(f, "{}", value),
+            M2tsTimedMetadataBehavior::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

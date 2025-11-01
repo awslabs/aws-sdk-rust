@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RoutingStrategyType {
         match self {
             RoutingStrategyType::Simple => write!(f, "SIMPLE"),
             RoutingStrategyType::Terminal => write!(f, "TERMINAL"),
-            RoutingStrategyType::Unknown(value) => write!(f, "{}", value),
+            RoutingStrategyType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -140,7 +140,7 @@ impl ::std::fmt::Display for Code {
             Code::ResourceNotFoundException => write!(f, "RESOURCE_NOT_FOUND_EXCEPTION"),
             Code::ServiceQuotaExceededException => write!(f, "SERVICE_QUOTA_EXCEEDED_EXCEPTION"),
             Code::ValidationException => write!(f, "VALIDATION_EXCEPTION"),
-            Code::Unknown(value) => write!(f, "{}", value),
+            Code::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

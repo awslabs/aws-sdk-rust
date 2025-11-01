@@ -188,6 +188,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for StartCommitm
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::start_commitment_purchase_analysis::StartCommitmentPurchaseAnalysisInput,
                 output: &mut ::std::string::String,

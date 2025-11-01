@@ -138,7 +138,7 @@ impl ::std::fmt::Display for ShareRequestStatus {
             ShareRequestStatus::Replicating => write!(f, "REPLICATING"),
             ShareRequestStatus::Revoked => write!(f, "REVOKED"),
             ShareRequestStatus::Shared => write!(f, "SHARED"),
-            ShareRequestStatus::Unknown(value) => write!(f, "{}", value),
+            ShareRequestStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

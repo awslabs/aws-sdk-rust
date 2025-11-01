@@ -238,7 +238,7 @@ impl ::std::fmt::Display for Runtime {
             Runtime::Ruby27 => write!(f, "RUBY_2_7"),
             Runtime::Ruby32 => write!(f, "RUBY_3_2"),
             Runtime::Unsupported => write!(f, "UNSUPPORTED"),
-            Runtime::Unknown(value) => write!(f, "{}", value),
+            Runtime::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

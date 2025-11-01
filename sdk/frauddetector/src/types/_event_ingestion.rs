@@ -102,7 +102,7 @@ impl ::std::fmt::Display for EventIngestion {
         match self {
             EventIngestion::Disabled => write!(f, "DISABLED"),
             EventIngestion::Enabled => write!(f, "ENABLED"),
-            EventIngestion::Unknown(value) => write!(f, "{}", value),
+            EventIngestion::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

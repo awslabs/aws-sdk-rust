@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RetryTrigger {
         match self {
             RetryTrigger::AutomatedStageRetry => write!(f, "AutomatedStageRetry"),
             RetryTrigger::ManualStageRetry => write!(f, "ManualStageRetry"),
-            RetryTrigger::Unknown(value) => write!(f, "{}", value),
+            RetryTrigger::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -175,7 +175,7 @@ impl ::std::fmt::Display for ImageStatus {
             ImageStatus::Integrating => write!(f, "INTEGRATING"),
             ImageStatus::Pending => write!(f, "PENDING"),
             ImageStatus::Testing => write!(f, "TESTING"),
-            ImageStatus::Unknown(value) => write!(f, "{}", value),
+            ImageStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

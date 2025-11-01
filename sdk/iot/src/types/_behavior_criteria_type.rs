@@ -108,7 +108,7 @@ impl ::std::fmt::Display for BehaviorCriteriaType {
             BehaviorCriteriaType::MachineLearning => write!(f, "MACHINE_LEARNING"),
             BehaviorCriteriaType::Static => write!(f, "STATIC"),
             BehaviorCriteriaType::Statistical => write!(f, "STATISTICAL"),
-            BehaviorCriteriaType::Unknown(value) => write!(f, "{}", value),
+            BehaviorCriteriaType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -147,7 +147,7 @@ impl ::std::fmt::Display for LogAnomalyType {
             LogAnomalyType::NewFieldName => write!(f, "NEW_FIELD_NAME"),
             LogAnomalyType::NumericalNan => write!(f, "NUMERICAL_NAN"),
             LogAnomalyType::NumericalPoint => write!(f, "NUMERICAL_POINT"),
-            LogAnomalyType::Unknown(value) => write!(f, "{}", value),
+            LogAnomalyType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

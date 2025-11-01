@@ -138,7 +138,7 @@ impl ::std::fmt::Display for RoadSnapNoticeCode {
             RoadSnapNoticeCode::TracePointsOutOfSequence => write!(f, "TracePointsOutOfSequence"),
             RoadSnapNoticeCode::TracePointsSpeedEstimated => write!(f, "TracePointsSpeedEstimated"),
             RoadSnapNoticeCode::TracePointsSpeedIgnored => write!(f, "TracePointsSpeedIgnored"),
-            RoadSnapNoticeCode::Unknown(value) => write!(f, "{}", value),
+            RoadSnapNoticeCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

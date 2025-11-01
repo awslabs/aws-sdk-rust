@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ImageSelectorType {
         match self {
             ImageSelectorType::ProducerTimestamp => write!(f, "PRODUCER_TIMESTAMP"),
             ImageSelectorType::ServerTimestamp => write!(f, "SERVER_TIMESTAMP"),
-            ImageSelectorType::Unknown(value) => write!(f, "{}", value),
+            ImageSelectorType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

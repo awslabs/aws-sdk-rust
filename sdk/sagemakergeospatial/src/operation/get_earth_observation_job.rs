@@ -187,6 +187,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetEarthObse
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::get_earth_observation_job::GetEarthObservationJobInput,
                 output: &mut ::std::string::String,

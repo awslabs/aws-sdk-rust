@@ -501,16 +501,14 @@ pub fn de_restore_db_instance_from_db_snapshot(
     let start_el = decoder.start_el();
     if !(start_el.matches("RestoreDBInstanceFromDBSnapshotResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected RestoreDBInstanceFromDBSnapshotResponse got {:?}",
-            start_el
+            "invalid root, expected RestoreDBInstanceFromDBSnapshotResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("RestoreDBInstanceFromDBSnapshotResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected RestoreDBInstanceFromDBSnapshotResult got {:?}",
-                start_el
+                "invalid result, expected RestoreDBInstanceFromDBSnapshotResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

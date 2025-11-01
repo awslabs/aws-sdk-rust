@@ -114,7 +114,7 @@ impl ::std::fmt::Display for SnapshotJobStatus {
             SnapshotJobStatus::Failed => write!(f, "FAILED"),
             SnapshotJobStatus::Queued => write!(f, "QUEUED"),
             SnapshotJobStatus::Running => write!(f, "RUNNING"),
-            SnapshotJobStatus::Unknown(value) => write!(f, "{}", value),
+            SnapshotJobStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

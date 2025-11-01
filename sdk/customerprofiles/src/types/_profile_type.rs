@@ -100,7 +100,7 @@ impl ::std::fmt::Display for ProfileType {
         match self {
             ProfileType::AccountProfile => write!(f, "ACCOUNT_PROFILE"),
             ProfileType::Profile => write!(f, "PROFILE"),
-            ProfileType::Unknown(value) => write!(f, "{}", value),
+            ProfileType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

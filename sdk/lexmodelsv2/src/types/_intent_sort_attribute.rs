@@ -102,7 +102,7 @@ impl ::std::fmt::Display for IntentSortAttribute {
         match self {
             IntentSortAttribute::IntentName => write!(f, "IntentName"),
             IntentSortAttribute::LastUpdatedDateTime => write!(f, "LastUpdatedDateTime"),
-            IntentSortAttribute::Unknown(value) => write!(f, "{}", value),
+            IntentSortAttribute::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

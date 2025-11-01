@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CoverageStatus {
         match self {
             CoverageStatus::Healthy => write!(f, "HEALTHY"),
             CoverageStatus::Unhealthy => write!(f, "UNHEALTHY"),
-            CoverageStatus::Unknown(value) => write!(f, "{}", value),
+            CoverageStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -175,7 +175,7 @@ impl ::std::fmt::Display for ImportStatus {
             ImportStatus::ImportFailedUnsupportedFileType => write!(f, "IMPORT_FAILED_UNSUPPORTED_FILE_TYPE"),
             ImportStatus::ImportInProgress => write!(f, "IMPORT_IN_PROGRESS"),
             ImportStatus::InternalError => write!(f, "INTERNAL_ERROR"),
-            ImportStatus::Unknown(value) => write!(f, "{}", value),
+            ImportStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

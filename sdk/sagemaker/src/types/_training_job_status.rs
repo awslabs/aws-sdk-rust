@@ -126,7 +126,7 @@ impl ::std::fmt::Display for TrainingJobStatus {
             TrainingJobStatus::InProgress => write!(f, "InProgress"),
             TrainingJobStatus::Stopped => write!(f, "Stopped"),
             TrainingJobStatus::Stopping => write!(f, "Stopping"),
-            TrainingJobStatus::Unknown(value) => write!(f, "{}", value),
+            TrainingJobStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

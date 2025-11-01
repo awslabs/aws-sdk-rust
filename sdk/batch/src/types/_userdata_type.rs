@@ -102,7 +102,7 @@ impl ::std::fmt::Display for UserdataType {
         match self {
             UserdataType::EksBootstrapSh => write!(f, "EKS_BOOTSTRAP_SH"),
             UserdataType::EksNodeadm => write!(f, "EKS_NODEADM"),
-            UserdataType::Unknown(value) => write!(f, "{}", value),
+            UserdataType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

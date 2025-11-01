@@ -140,7 +140,7 @@ impl ::std::fmt::Display for AudienceGenerationJobStatus {
             AudienceGenerationJobStatus::DeleteFailed => write!(f, "DELETE_FAILED"),
             AudienceGenerationJobStatus::DeleteInProgress => write!(f, "DELETE_IN_PROGRESS"),
             AudienceGenerationJobStatus::DeletePending => write!(f, "DELETE_PENDING"),
-            AudienceGenerationJobStatus::Unknown(value) => write!(f, "{}", value),
+            AudienceGenerationJobStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

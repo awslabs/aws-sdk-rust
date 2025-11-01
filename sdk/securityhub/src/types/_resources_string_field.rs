@@ -154,7 +154,7 @@ impl ::std::fmt::Display for ResourcesStringField {
             ResourcesStringField::ResourceId => write!(f, "ResourceId"),
             ResourcesStringField::ResourceName => write!(f, "ResourceName"),
             ResourcesStringField::ResourceType => write!(f, "ResourceType"),
-            ResourcesStringField::Unknown(value) => write!(f, "{}", value),
+            ResourcesStringField::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

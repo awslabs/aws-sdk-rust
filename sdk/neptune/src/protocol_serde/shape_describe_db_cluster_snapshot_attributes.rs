@@ -81,16 +81,14 @@ pub fn de_describe_db_cluster_snapshot_attributes(
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeDBClusterSnapshotAttributesResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected DescribeDBClusterSnapshotAttributesResponse got {:?}",
-            start_el
+            "invalid root, expected DescribeDBClusterSnapshotAttributesResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("DescribeDBClusterSnapshotAttributesResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected DescribeDBClusterSnapshotAttributesResult got {:?}",
-                start_el
+                "invalid result, expected DescribeDBClusterSnapshotAttributesResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

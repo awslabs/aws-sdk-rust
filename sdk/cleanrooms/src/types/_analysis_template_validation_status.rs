@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AnalysisTemplateValidationStatus {
             AnalysisTemplateValidationStatus::Invalid => write!(f, "INVALID"),
             AnalysisTemplateValidationStatus::UnableToValidate => write!(f, "UNABLE_TO_VALIDATE"),
             AnalysisTemplateValidationStatus::Valid => write!(f, "VALID"),
-            AnalysisTemplateValidationStatus::Unknown(value) => write!(f, "{}", value),
+            AnalysisTemplateValidationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

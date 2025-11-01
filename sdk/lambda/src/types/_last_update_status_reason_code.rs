@@ -238,7 +238,7 @@ impl ::std::fmt::Display for LastUpdateStatusReasonCode {
             LastUpdateStatusReasonCode::KmsKeyAccessDenied => write!(f, "KMSKeyAccessDenied"),
             LastUpdateStatusReasonCode::KmsKeyNotFound => write!(f, "KMSKeyNotFound"),
             LastUpdateStatusReasonCode::SubnetOutOfIpAddresses => write!(f, "SubnetOutOfIPAddresses"),
-            LastUpdateStatusReasonCode::Unknown(value) => write!(f, "{}", value),
+            LastUpdateStatusReasonCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

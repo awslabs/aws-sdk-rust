@@ -147,7 +147,7 @@ impl ::std::fmt::Display for MaxDisplayResolution {
             MaxDisplayResolution::ResolutionUhd4K => write!(f, "size3840X2160"),
             MaxDisplayResolution::ResolutionDci4K => write!(f, "size4096X2160"),
             MaxDisplayResolution::Resolution600P => write!(f, "size800X600"),
-            MaxDisplayResolution::Unknown(value) => write!(f, "{}", value),
+            MaxDisplayResolution::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

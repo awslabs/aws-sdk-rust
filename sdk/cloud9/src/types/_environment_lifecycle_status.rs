@@ -120,7 +120,7 @@ impl ::std::fmt::Display for EnvironmentLifecycleStatus {
             EnvironmentLifecycleStatus::Creating => write!(f, "CREATING"),
             EnvironmentLifecycleStatus::DeleteFailed => write!(f, "DELETE_FAILED"),
             EnvironmentLifecycleStatus::Deleting => write!(f, "DELETING"),
-            EnvironmentLifecycleStatus::Unknown(value) => write!(f, "{}", value),
+            EnvironmentLifecycleStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

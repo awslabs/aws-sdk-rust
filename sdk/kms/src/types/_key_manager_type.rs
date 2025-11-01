@@ -102,7 +102,7 @@ impl ::std::fmt::Display for KeyManagerType {
         match self {
             KeyManagerType::Aws => write!(f, "AWS"),
             KeyManagerType::Customer => write!(f, "CUSTOMER"),
-            KeyManagerType::Unknown(value) => write!(f, "{}", value),
+            KeyManagerType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

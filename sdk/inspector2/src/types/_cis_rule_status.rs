@@ -134,7 +134,7 @@ impl ::std::fmt::Display for CisRuleStatus {
             CisRuleStatus::NotEvaluated => write!(f, "NOT_EVALUATED"),
             CisRuleStatus::Passed => write!(f, "PASSED"),
             CisRuleStatus::UnknownValue => write!(f, "UNKNOWN"),
-            CisRuleStatus::Unknown(value) => write!(f, "{}", value),
+            CisRuleStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

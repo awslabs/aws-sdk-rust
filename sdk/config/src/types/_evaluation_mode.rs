@@ -102,7 +102,7 @@ impl ::std::fmt::Display for EvaluationMode {
         match self {
             EvaluationMode::Detective => write!(f, "DETECTIVE"),
             EvaluationMode::Proactive => write!(f, "PROACTIVE"),
-            EvaluationMode::Unknown(value) => write!(f, "{}", value),
+            EvaluationMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

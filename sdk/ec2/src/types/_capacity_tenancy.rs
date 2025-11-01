@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CapacityTenancy {
         match self {
             CapacityTenancy::Dedicated => write!(f, "dedicated"),
             CapacityTenancy::Default => write!(f, "default"),
-            CapacityTenancy::Unknown(value) => write!(f, "{}", value),
+            CapacityTenancy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

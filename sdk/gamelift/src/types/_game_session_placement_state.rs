@@ -120,7 +120,7 @@ impl ::std::fmt::Display for GameSessionPlacementState {
             GameSessionPlacementState::Fulfilled => write!(f, "FULFILLED"),
             GameSessionPlacementState::Pending => write!(f, "PENDING"),
             GameSessionPlacementState::TimedOut => write!(f, "TIMED_OUT"),
-            GameSessionPlacementState::Unknown(value) => write!(f, "{}", value),
+            GameSessionPlacementState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

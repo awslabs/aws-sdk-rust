@@ -102,7 +102,7 @@ impl ::std::fmt::Display for JsonType {
         match self {
             JsonType::Document => write!(f, "DOCUMENT"),
             JsonType::Lines => write!(f, "LINES"),
-            JsonType::Unknown(value) => write!(f, "{}", value),
+            JsonType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for EndpointType {
             EndpointType::Public => write!(f, "PUBLIC"),
             EndpointType::Vpc => write!(f, "VPC"),
             EndpointType::VpcEndpoint => write!(f, "VPC_ENDPOINT"),
-            EndpointType::Unknown(value) => write!(f, "{}", value),
+            EndpointType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

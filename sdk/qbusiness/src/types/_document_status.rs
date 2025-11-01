@@ -147,7 +147,7 @@ impl ::std::fmt::Display for DocumentStatus {
             DocumentStatus::Processing => write!(f, "PROCESSING"),
             DocumentStatus::Received => write!(f, "RECEIVED"),
             DocumentStatus::Updated => write!(f, "UPDATED"),
-            DocumentStatus::Unknown(value) => write!(f, "{}", value),
+            DocumentStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

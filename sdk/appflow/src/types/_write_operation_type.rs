@@ -115,7 +115,7 @@ impl ::std::fmt::Display for WriteOperationType {
             WriteOperationType::Insert => write!(f, "INSERT"),
             WriteOperationType::Update => write!(f, "UPDATE"),
             WriteOperationType::Upsert => write!(f, "UPSERT"),
-            WriteOperationType::Unknown(value) => write!(f, "{}", value),
+            WriteOperationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AddressTransferStatus {
             AddressTransferStatus::Accepted => write!(f, "accepted"),
             AddressTransferStatus::Disabled => write!(f, "disabled"),
             AddressTransferStatus::Pending => write!(f, "pending"),
-            AddressTransferStatus::Unknown(value) => write!(f, "{}", value),
+            AddressTransferStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

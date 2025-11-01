@@ -132,7 +132,7 @@ impl ::std::fmt::Display for MachineLearningProductVisibilityString {
             MachineLearningProductVisibilityString::Limited => write!(f, "Limited"),
             MachineLearningProductVisibilityString::Public => write!(f, "Public"),
             MachineLearningProductVisibilityString::Restricted => write!(f, "Restricted"),
-            MachineLearningProductVisibilityString::Unknown(value) => write!(f, "{}", value),
+            MachineLearningProductVisibilityString::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ImpersonationRoleType {
         match self {
             ImpersonationRoleType::FullAccess => write!(f, "FULL_ACCESS"),
             ImpersonationRoleType::ReadOnly => write!(f, "READ_ONLY"),
-            ImpersonationRoleType::Unknown(value) => write!(f, "{}", value),
+            ImpersonationRoleType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

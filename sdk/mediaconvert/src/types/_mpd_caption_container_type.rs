@@ -36,7 +36,7 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-/// Use this setting only in DASH output groups that include sidecar TTML or IMSC captions. You specify sidecar captions in a separate output from your audio and video. Choose Raw for captions in a single XML file in a raw container. Choose Fragmented MPEG-4 for captions in XML format contained within fragmented MP4 files. This set of fragmented MP4 files is separate from your video and audio fragmented MP4 files.
+/// Use this setting only in DASH output groups that include sidecar TTML, IMSC or WEBVTT captions. You specify sidecar captions in a separate output from your audio and video. Choose Raw for captions in a single XML file in a raw container. Choose Fragmented MPEG-4 for captions in XML format contained within fragmented MP4 files. This set of fragmented MP4 files is separate from your video and audio fragmented MP4 files.
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MpdCaptionContainerType {
         match self {
             MpdCaptionContainerType::FragmentedMp4 => write!(f, "FRAGMENTED_MP4"),
             MpdCaptionContainerType::Raw => write!(f, "RAW"),
-            MpdCaptionContainerType::Unknown(value) => write!(f, "{}", value),
+            MpdCaptionContainerType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

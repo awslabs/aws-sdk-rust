@@ -100,7 +100,7 @@ impl ::std::fmt::Display for RouteSideOfStreet {
         match self {
             RouteSideOfStreet::Left => write!(f, "Left"),
             RouteSideOfStreet::Right => write!(f, "Right"),
-            RouteSideOfStreet::Unknown(value) => write!(f, "{}", value),
+            RouteSideOfStreet::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

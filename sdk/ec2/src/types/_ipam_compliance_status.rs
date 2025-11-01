@@ -114,7 +114,7 @@ impl ::std::fmt::Display for IpamComplianceStatus {
             IpamComplianceStatus::Ignored => write!(f, "ignored"),
             IpamComplianceStatus::Noncompliant => write!(f, "noncompliant"),
             IpamComplianceStatus::Unmanaged => write!(f, "unmanaged"),
-            IpamComplianceStatus::Unknown(value) => write!(f, "{}", value),
+            IpamComplianceStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

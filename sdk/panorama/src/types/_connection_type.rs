@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ConnectionType {
         match self {
             ConnectionType::Dhcp => write!(f, "DHCP"),
             ConnectionType::StaticIp => write!(f, "STATIC_IP"),
-            ConnectionType::Unknown(value) => write!(f, "{}", value),
+            ConnectionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for VideoDescriptionScalingBehavior {
         match self {
             VideoDescriptionScalingBehavior::Default => write!(f, "DEFAULT"),
             VideoDescriptionScalingBehavior::StretchToOutput => write!(f, "STRETCH_TO_OUTPUT"),
-            VideoDescriptionScalingBehavior::Unknown(value) => write!(f, "{}", value),
+            VideoDescriptionScalingBehavior::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

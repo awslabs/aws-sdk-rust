@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ReferenceFile {
         match self {
             ReferenceFile::Index => write!(f, "INDEX"),
             ReferenceFile::Source => write!(f, "SOURCE"),
-            ReferenceFile::Unknown(value) => write!(f, "{}", value),
+            ReferenceFile::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

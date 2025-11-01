@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ServiceType {
             ServiceType::CredentialProvider => write!(f, "CREDENTIAL_PROVIDER"),
             ServiceType::Data => write!(f, "DATA"),
             ServiceType::Jobs => write!(f, "JOBS"),
-            ServiceType::Unknown(value) => write!(f, "{}", value),
+            ServiceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

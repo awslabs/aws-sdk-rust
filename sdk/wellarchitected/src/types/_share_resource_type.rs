@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ShareResourceType {
             ShareResourceType::Profile => write!(f, "PROFILE"),
             ShareResourceType::Template => write!(f, "TEMPLATE"),
             ShareResourceType::Workload => write!(f, "WORKLOAD"),
-            ShareResourceType::Unknown(value) => write!(f, "{}", value),
+            ShareResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

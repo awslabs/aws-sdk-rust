@@ -108,7 +108,7 @@ impl ::std::fmt::Display for TargetInstanceTypeRightSizingMethod {
             TargetInstanceTypeRightSizingMethod::Basic => write!(f, "BASIC"),
             TargetInstanceTypeRightSizingMethod::InAws => write!(f, "IN_AWS"),
             TargetInstanceTypeRightSizingMethod::None => write!(f, "NONE"),
-            TargetInstanceTypeRightSizingMethod::Unknown(value) => write!(f, "{}", value),
+            TargetInstanceTypeRightSizingMethod::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

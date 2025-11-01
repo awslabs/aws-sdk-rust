@@ -126,7 +126,7 @@ impl ::std::fmt::Display for AlertManagerDefinitionStatusCode {
             AlertManagerDefinitionStatusCode::Deleting => write!(f, "DELETING"),
             AlertManagerDefinitionStatusCode::UpdateFailed => write!(f, "UPDATE_FAILED"),
             AlertManagerDefinitionStatusCode::Updating => write!(f, "UPDATING"),
-            AlertManagerDefinitionStatusCode::Unknown(value) => write!(f, "{}", value),
+            AlertManagerDefinitionStatusCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

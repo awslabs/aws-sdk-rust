@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ClientVpnRouteStatusCode {
             ClientVpnRouteStatusCode::Creating => write!(f, "creating"),
             ClientVpnRouteStatusCode::Deleting => write!(f, "deleting"),
             ClientVpnRouteStatusCode::Failed => write!(f, "failed"),
-            ClientVpnRouteStatusCode::Unknown(value) => write!(f, "{}", value),
+            ClientVpnRouteStatusCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

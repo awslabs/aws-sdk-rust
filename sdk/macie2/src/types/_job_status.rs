@@ -126,7 +126,7 @@ impl ::std::fmt::Display for JobStatus {
             JobStatus::Paused => write!(f, "PAUSED"),
             JobStatus::Running => write!(f, "RUNNING"),
             JobStatus::UserPaused => write!(f, "USER_PAUSED"),
-            JobStatus::Unknown(value) => write!(f, "{}", value),
+            JobStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

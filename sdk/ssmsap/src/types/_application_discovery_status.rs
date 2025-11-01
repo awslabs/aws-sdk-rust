@@ -120,7 +120,7 @@ impl ::std::fmt::Display for ApplicationDiscoveryStatus {
             ApplicationDiscoveryStatus::Registering => write!(f, "REGISTERING"),
             ApplicationDiscoveryStatus::RegistrationFailed => write!(f, "REGISTRATION_FAILED"),
             ApplicationDiscoveryStatus::Success => write!(f, "SUCCESS"),
-            ApplicationDiscoveryStatus::Unknown(value) => write!(f, "{}", value),
+            ApplicationDiscoveryStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

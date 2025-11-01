@@ -114,7 +114,7 @@ impl ::std::fmt::Display for RequestableNumberType {
             RequestableNumberType::Simulator => write!(f, "SIMULATOR"),
             RequestableNumberType::TenDlc => write!(f, "TEN_DLC"),
             RequestableNumberType::TollFree => write!(f, "TOLL_FREE"),
-            RequestableNumberType::Unknown(value) => write!(f, "{}", value),
+            RequestableNumberType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

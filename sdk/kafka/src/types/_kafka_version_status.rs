@@ -102,7 +102,7 @@ impl ::std::fmt::Display for KafkaVersionStatus {
         match self {
             KafkaVersionStatus::Active => write!(f, "ACTIVE"),
             KafkaVersionStatus::Deprecated => write!(f, "DEPRECATED"),
-            KafkaVersionStatus::Unknown(value) => write!(f, "{}", value),
+            KafkaVersionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MembershipJobLogStatus {
         match self {
             MembershipJobLogStatus::Disabled => write!(f, "DISABLED"),
             MembershipJobLogStatus::Enabled => write!(f, "ENABLED"),
-            MembershipJobLogStatus::Unknown(value) => write!(f, "{}", value),
+            MembershipJobLogStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

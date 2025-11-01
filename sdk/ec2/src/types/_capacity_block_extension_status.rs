@@ -108,7 +108,7 @@ impl ::std::fmt::Display for CapacityBlockExtensionStatus {
             CapacityBlockExtensionStatus::PaymentFailed => write!(f, "payment-failed"),
             CapacityBlockExtensionStatus::PaymentPending => write!(f, "payment-pending"),
             CapacityBlockExtensionStatus::PaymentSucceeded => write!(f, "payment-succeeded"),
-            CapacityBlockExtensionStatus::Unknown(value) => write!(f, "{}", value),
+            CapacityBlockExtensionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -196,7 +196,7 @@ impl ::std::fmt::Display for ErrorCode {
             ErrorCode::Unauthorized => write!(f, "Unauthorized"),
             ErrorCode::Unprocessable => write!(f, "Unprocessable"),
             ErrorCode::VoiceConnectorGroupAssociationsExist => write!(f, "VoiceConnectorGroupAssociationsExist"),
-            ErrorCode::Unknown(value) => write!(f, "{}", value),
+            ErrorCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

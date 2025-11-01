@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PostContactSummaryStatus {
         match self {
             PostContactSummaryStatus::Completed => write!(f, "COMPLETED"),
             PostContactSummaryStatus::Failed => write!(f, "FAILED"),
-            PostContactSummaryStatus::Unknown(value) => write!(f, "{}", value),
+            PostContactSummaryStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

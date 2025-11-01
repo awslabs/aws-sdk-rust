@@ -94,7 +94,7 @@ impl ::std::fmt::Display for GuardrailTopicType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             GuardrailTopicType::Deny => write!(f, "DENY"),
-            GuardrailTopicType::Unknown(value) => write!(f, "{}", value),
+            GuardrailTopicType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

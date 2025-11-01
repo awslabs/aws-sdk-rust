@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ListJobsFilterKey {
             ListJobsFilterKey::JobStatus => write!(f, "jobStatus"),
             ListJobsFilterKey::JobType => write!(f, "jobType"),
             ListJobsFilterKey::Name => write!(f, "name"),
-            ListJobsFilterKey::Unknown(value) => write!(f, "{}", value),
+            ListJobsFilterKey::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

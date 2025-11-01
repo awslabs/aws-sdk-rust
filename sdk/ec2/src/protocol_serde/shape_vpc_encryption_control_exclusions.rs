@@ -57,6 +57,36 @@ pub fn de_vpc_encryption_control_exclusions(
                 builder = builder.set_vpc_peering(var_5);
             }
             ,
+            s if s.matches("lambda") /* Lambda com.amazonaws.ec2#VpcEncryptionControlExclusions$Lambda */ =>  {
+                let var_6 =
+                    Some(
+                        crate::protocol_serde::shape_vpc_encryption_control_exclusion::de_vpc_encryption_control_exclusion(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_lambda(var_6);
+            }
+            ,
+            s if s.matches("vpcLattice") /* VpcLattice com.amazonaws.ec2#VpcEncryptionControlExclusions$VpcLattice */ =>  {
+                let var_7 =
+                    Some(
+                        crate::protocol_serde::shape_vpc_encryption_control_exclusion::de_vpc_encryption_control_exclusion(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_vpc_lattice(var_7);
+            }
+            ,
+            s if s.matches("elasticFileSystem") /* ElasticFileSystem com.amazonaws.ec2#VpcEncryptionControlExclusions$ElasticFileSystem */ =>  {
+                let var_8 =
+                    Some(
+                        crate::protocol_serde::shape_vpc_encryption_control_exclusion::de_vpc_encryption_control_exclusion(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_elastic_file_system(var_8);
+            }
+            ,
             _ => {}
         }
     }

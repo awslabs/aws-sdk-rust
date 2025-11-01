@@ -108,7 +108,7 @@ impl ::std::fmt::Display for KeyDerivationHashAlgorithm {
             KeyDerivationHashAlgorithm::Sha256 => write!(f, "SHA_256"),
             KeyDerivationHashAlgorithm::Sha384 => write!(f, "SHA_384"),
             KeyDerivationHashAlgorithm::Sha512 => write!(f, "SHA_512"),
-            KeyDerivationHashAlgorithm::Unknown(value) => write!(f, "{}", value),
+            KeyDerivationHashAlgorithm::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

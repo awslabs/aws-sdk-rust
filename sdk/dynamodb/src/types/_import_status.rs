@@ -120,7 +120,7 @@ impl ::std::fmt::Display for ImportStatus {
             ImportStatus::Completed => write!(f, "COMPLETED"),
             ImportStatus::Failed => write!(f, "FAILED"),
             ImportStatus::InProgress => write!(f, "IN_PROGRESS"),
-            ImportStatus::Unknown(value) => write!(f, "{}", value),
+            ImportStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

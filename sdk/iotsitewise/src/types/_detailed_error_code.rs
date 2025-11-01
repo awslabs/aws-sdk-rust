@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DetailedErrorCode {
         match self {
             DetailedErrorCode::IncompatibleComputeLocation => write!(f, "INCOMPATIBLE_COMPUTE_LOCATION"),
             DetailedErrorCode::IncompatibleForwardingConfiguration => write!(f, "INCOMPATIBLE_FORWARDING_CONFIGURATION"),
-            DetailedErrorCode::Unknown(value) => write!(f, "{}", value),
+            DetailedErrorCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

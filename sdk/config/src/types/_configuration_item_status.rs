@@ -126,7 +126,7 @@ impl ::std::fmt::Display for ConfigurationItemStatus {
             ConfigurationItemStatus::ResourceDeletedNotRecorded => write!(f, "ResourceDeletedNotRecorded"),
             ConfigurationItemStatus::ResourceDiscovered => write!(f, "ResourceDiscovered"),
             ConfigurationItemStatus::ResourceNotRecorded => write!(f, "ResourceNotRecorded"),
-            ConfigurationItemStatus::Unknown(value) => write!(f, "{}", value),
+            ConfigurationItemStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ResourceType {
             ResourceType::ConfiguredTable => write!(f, "CONFIGURED_TABLE"),
             ResourceType::ConfiguredTableAssociation => write!(f, "CONFIGURED_TABLE_ASSOCIATION"),
             ResourceType::Membership => write!(f, "MEMBERSHIP"),
-            ResourceType::Unknown(value) => write!(f, "{}", value),
+            ResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

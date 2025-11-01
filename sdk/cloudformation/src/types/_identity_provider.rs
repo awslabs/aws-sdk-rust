@@ -108,7 +108,7 @@ impl ::std::fmt::Display for IdentityProvider {
             IdentityProvider::AwsMarketplace => write!(f, "AWS_Marketplace"),
             IdentityProvider::Bitbucket => write!(f, "Bitbucket"),
             IdentityProvider::GitHub => write!(f, "GitHub"),
-            IdentityProvider::Unknown(value) => write!(f, "{}", value),
+            IdentityProvider::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

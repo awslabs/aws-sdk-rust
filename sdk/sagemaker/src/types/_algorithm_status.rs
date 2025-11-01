@@ -120,7 +120,7 @@ impl ::std::fmt::Display for AlgorithmStatus {
             AlgorithmStatus::Failed => write!(f, "Failed"),
             AlgorithmStatus::InProgress => write!(f, "InProgress"),
             AlgorithmStatus::Pending => write!(f, "Pending"),
-            AlgorithmStatus::Unknown(value) => write!(f, "{}", value),
+            AlgorithmStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

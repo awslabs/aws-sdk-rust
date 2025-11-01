@@ -252,7 +252,7 @@ impl ::std::fmt::Display for LifecycleState {
             LifecycleState::WarmedTerminating => write!(f, "Warmed:Terminating"),
             LifecycleState::WarmedTerminatingProceed => write!(f, "Warmed:Terminating:Proceed"),
             LifecycleState::WarmedTerminatingWait => write!(f, "Warmed:Terminating:Wait"),
-            LifecycleState::Unknown(value) => write!(f, "{}", value),
+            LifecycleState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for TaxRegistrationStatus {
             TaxRegistrationStatus::Pending => write!(f, "Pending"),
             TaxRegistrationStatus::Rejected => write!(f, "Rejected"),
             TaxRegistrationStatus::Verified => write!(f, "Verified"),
-            TaxRegistrationStatus::Unknown(value) => write!(f, "{}", value),
+            TaxRegistrationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

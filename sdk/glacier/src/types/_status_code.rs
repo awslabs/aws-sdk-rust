@@ -108,7 +108,7 @@ impl ::std::fmt::Display for StatusCode {
             StatusCode::Failed => write!(f, "Failed"),
             StatusCode::InProgress => write!(f, "InProgress"),
             StatusCode::Succeeded => write!(f, "Succeeded"),
-            StatusCode::Unknown(value) => write!(f, "{}", value),
+            StatusCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

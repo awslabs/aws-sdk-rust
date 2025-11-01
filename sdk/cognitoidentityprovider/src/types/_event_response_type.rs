@@ -108,7 +108,7 @@ impl ::std::fmt::Display for EventResponseType {
             EventResponseType::Fail => write!(f, "Fail"),
             EventResponseType::InProgress => write!(f, "InProgress"),
             EventResponseType::Pass => write!(f, "Pass"),
-            EventResponseType::Unknown(value) => write!(f, "{}", value),
+            EventResponseType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

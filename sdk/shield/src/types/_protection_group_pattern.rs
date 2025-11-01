@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ProtectionGroupPattern {
             ProtectionGroupPattern::All => write!(f, "ALL"),
             ProtectionGroupPattern::Arbitrary => write!(f, "ARBITRARY"),
             ProtectionGroupPattern::ByResourceType => write!(f, "BY_RESOURCE_TYPE"),
-            ProtectionGroupPattern::Unknown(value) => write!(f, "{}", value),
+            ProtectionGroupPattern::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

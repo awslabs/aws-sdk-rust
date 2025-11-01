@@ -114,7 +114,7 @@ impl ::std::fmt::Display for TimeConditionOperator {
             TimeConditionOperator::GreaterThanEqualTo => write!(f, "GREATER_THAN_EQUAL_TO"),
             TimeConditionOperator::LessThanEqualTo => write!(f, "LESS_THAN_EQUAL_TO"),
             TimeConditionOperator::NotEqualsTo => write!(f, "NOT_EQUALS_TO"),
-            TimeConditionOperator::Unknown(value) => write!(f, "{}", value),
+            TimeConditionOperator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

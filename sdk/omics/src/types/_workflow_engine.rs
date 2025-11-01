@@ -15,6 +15,7 @@
 ///     WorkflowEngine::Cwl => { /* ... */ },
 ///     WorkflowEngine::Nextflow => { /* ... */ },
 ///     WorkflowEngine::Wdl => { /* ... */ },
+///     WorkflowEngine::WdlLenient => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -49,6 +50,8 @@ pub enum WorkflowEngine {
     Nextflow,
     #[allow(missing_docs)] // documentation missing in model
     Wdl,
+    #[allow(missing_docs)] // documentation missing in model
+    WdlLenient,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -59,6 +62,7 @@ impl ::std::convert::From<&str> for WorkflowEngine {
             "CWL" => WorkflowEngine::Cwl,
             "NEXTFLOW" => WorkflowEngine::Nextflow,
             "WDL" => WorkflowEngine::Wdl,
+            "WDL_LENIENT" => WorkflowEngine::WdlLenient,
             other => WorkflowEngine::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -77,12 +81,13 @@ impl WorkflowEngine {
             WorkflowEngine::Cwl => "CWL",
             WorkflowEngine::Nextflow => "NEXTFLOW",
             WorkflowEngine::Wdl => "WDL",
+            WorkflowEngine::WdlLenient => "WDL_LENIENT",
             WorkflowEngine::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CWL", "NEXTFLOW", "WDL"]
+        &["CWL", "NEXTFLOW", "WDL", "WDL_LENIENT"]
     }
 }
 impl ::std::convert::AsRef<str> for WorkflowEngine {
@@ -108,7 +113,8 @@ impl ::std::fmt::Display for WorkflowEngine {
             WorkflowEngine::Cwl => write!(f, "CWL"),
             WorkflowEngine::Nextflow => write!(f, "NEXTFLOW"),
             WorkflowEngine::Wdl => write!(f, "WDL"),
-            WorkflowEngine::Unknown(value) => write!(f, "{}", value),
+            WorkflowEngine::WdlLenient => write!(f, "WDL_LENIENT"),
+            WorkflowEngine::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

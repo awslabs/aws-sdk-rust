@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AlgorithmSortBy {
         match self {
             AlgorithmSortBy::CreationTime => write!(f, "CreationTime"),
             AlgorithmSortBy::Name => write!(f, "Name"),
-            AlgorithmSortBy::Unknown(value) => write!(f, "{}", value),
+            AlgorithmSortBy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

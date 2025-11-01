@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Scope {
         match self {
             Scope::Entity => write!(f, "ENTITY"),
             Scope::Workspace => write!(f, "WORKSPACE"),
-            Scope::Unknown(value) => write!(f, "{}", value),
+            Scope::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

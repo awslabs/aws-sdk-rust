@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ConnectorEgressType {
         match self {
             ConnectorEgressType::ServiceManaged => write!(f, "SERVICE_MANAGED"),
             ConnectorEgressType::VpcLattice => write!(f, "VPC_LATTICE"),
-            ConnectorEgressType::Unknown(value) => write!(f, "{}", value),
+            ConnectorEgressType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

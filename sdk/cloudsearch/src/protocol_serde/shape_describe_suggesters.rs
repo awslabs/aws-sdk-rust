@@ -103,16 +103,14 @@ pub fn de_describe_suggesters(
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeSuggestersResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected DescribeSuggestersResponse got {:?}",
-            start_el
+            "invalid root, expected DescribeSuggestersResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("DescribeSuggestersResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected DescribeSuggestersResult got {:?}",
-                start_el
+                "invalid result, expected DescribeSuggestersResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

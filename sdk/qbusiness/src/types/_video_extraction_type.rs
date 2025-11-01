@@ -102,7 +102,7 @@ impl ::std::fmt::Display for VideoExtractionType {
         match self {
             VideoExtractionType::Summary => write!(f, "SUMMARY"),
             VideoExtractionType::Transcript => write!(f, "TRANSCRIPT"),
-            VideoExtractionType::Unknown(value) => write!(f, "{}", value),
+            VideoExtractionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

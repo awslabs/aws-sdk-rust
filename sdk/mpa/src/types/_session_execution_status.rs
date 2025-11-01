@@ -108,7 +108,7 @@ impl ::std::fmt::Display for SessionExecutionStatus {
             SessionExecutionStatus::Executed => write!(f, "EXECUTED"),
             SessionExecutionStatus::Failed => write!(f, "FAILED"),
             SessionExecutionStatus::Pending => write!(f, "PENDING"),
-            SessionExecutionStatus::Unknown(value) => write!(f, "{}", value),
+            SessionExecutionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

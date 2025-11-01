@@ -168,7 +168,7 @@ impl ::std::fmt::Display for ConditionOperator {
             ConditionOperator::NotContains => write!(f, "NotContains"),
             ConditionOperator::NotEquals => write!(f, "NotEquals"),
             ConditionOperator::NotExists => write!(f, "NotExists"),
-            ConditionOperator::Unknown(value) => write!(f, "{}", value),
+            ConditionOperator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

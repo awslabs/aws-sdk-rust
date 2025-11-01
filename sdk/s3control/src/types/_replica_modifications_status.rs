@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ReplicaModificationsStatus {
         match self {
             ReplicaModificationsStatus::Disabled => write!(f, "Disabled"),
             ReplicaModificationsStatus::Enabled => write!(f, "Enabled"),
-            ReplicaModificationsStatus::Unknown(value) => write!(f, "{}", value),
+            ReplicaModificationsStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

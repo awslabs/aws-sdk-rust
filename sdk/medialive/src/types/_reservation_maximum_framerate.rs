@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ReservationMaximumFramerate {
         match self {
             ReservationMaximumFramerate::Max30Fps => write!(f, "MAX_30_FPS"),
             ReservationMaximumFramerate::Max60Fps => write!(f, "MAX_60_FPS"),
-            ReservationMaximumFramerate::Unknown(value) => write!(f, "{}", value),
+            ReservationMaximumFramerate::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

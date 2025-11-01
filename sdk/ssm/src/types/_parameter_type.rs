@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ParameterType {
             ParameterType::SecureString => write!(f, "SecureString"),
             ParameterType::String => write!(f, "String"),
             ParameterType::StringList => write!(f, "StringList"),
-            ParameterType::Unknown(value) => write!(f, "{}", value),
+            ParameterType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

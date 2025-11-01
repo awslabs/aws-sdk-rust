@@ -114,7 +114,7 @@ impl ::std::fmt::Display for IdentitySourceStatus {
             IdentitySourceStatus::Creating => write!(f, "CREATING"),
             IdentitySourceStatus::Deleting => write!(f, "DELETING"),
             IdentitySourceStatus::Error => write!(f, "ERROR"),
-            IdentitySourceStatus::Unknown(value) => write!(f, "{}", value),
+            IdentitySourceStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

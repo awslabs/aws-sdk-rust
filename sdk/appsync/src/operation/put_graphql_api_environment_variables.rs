@@ -190,6 +190,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for PutGraphqlAp
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::put_graphql_api_environment_variables::PutGraphqlApiEnvironmentVariablesInput,
                 output: &mut ::std::string::String,

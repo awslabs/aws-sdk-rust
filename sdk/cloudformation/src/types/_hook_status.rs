@@ -114,7 +114,7 @@ impl ::std::fmt::Display for HookStatus {
             HookStatus::HookCompleteSucceeded => write!(f, "HOOK_COMPLETE_SUCCEEDED"),
             HookStatus::HookFailed => write!(f, "HOOK_FAILED"),
             HookStatus::HookInProgress => write!(f, "HOOK_IN_PROGRESS"),
-            HookStatus::Unknown(value) => write!(f, "{}", value),
+            HookStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

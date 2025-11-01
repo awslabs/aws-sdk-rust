@@ -147,7 +147,7 @@ impl ::std::fmt::Display for NumericQuestionPropertyAutomationLabel {
             NumericQuestionPropertyAutomationLabel::NumberOfInterruptions => write!(f, "NUMBER_OF_INTERRUPTIONS"),
             NumericQuestionPropertyAutomationLabel::OverallAgentSentimentScore => write!(f, "OVERALL_AGENT_SENTIMENT_SCORE"),
             NumericQuestionPropertyAutomationLabel::OverallCustomerSentimentScore => write!(f, "OVERALL_CUSTOMER_SENTIMENT_SCORE"),
-            NumericQuestionPropertyAutomationLabel::Unknown(value) => write!(f, "{}", value),
+            NumericQuestionPropertyAutomationLabel::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

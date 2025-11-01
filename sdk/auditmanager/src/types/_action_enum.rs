@@ -147,7 +147,7 @@ impl ::std::fmt::Display for ActionEnum {
             ActionEnum::Reviewed => write!(f, "REVIEWED"),
             ActionEnum::UnderReview => write!(f, "UNDER_REVIEW"),
             ActionEnum::UpdateMetadata => write!(f, "UPDATE_METADATA"),
-            ActionEnum::Unknown(value) => write!(f, "{}", value),
+            ActionEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

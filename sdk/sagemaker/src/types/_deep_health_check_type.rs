@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DeepHealthCheckType {
         match self {
             DeepHealthCheckType::InstanceConnectivity => write!(f, "InstanceConnectivity"),
             DeepHealthCheckType::InstanceStress => write!(f, "InstanceStress"),
-            DeepHealthCheckType::Unknown(value) => write!(f, "{}", value),
+            DeepHealthCheckType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

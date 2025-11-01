@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ChannelProtocol {
             ChannelProtocol::Https => write!(f, "HTTPS"),
             ChannelProtocol::Webrtc => write!(f, "WEBRTC"),
             ChannelProtocol::Wss => write!(f, "WSS"),
-            ChannelProtocol::Unknown(value) => write!(f, "{}", value),
+            ChannelProtocol::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for StorageVirtualMachineSubtype {
             StorageVirtualMachineSubtype::DpDestination => write!(f, "DP_DESTINATION"),
             StorageVirtualMachineSubtype::SyncDestination => write!(f, "SYNC_DESTINATION"),
             StorageVirtualMachineSubtype::SyncSource => write!(f, "SYNC_SOURCE"),
-            StorageVirtualMachineSubtype::Unknown(value) => write!(f, "{}", value),
+            StorageVirtualMachineSubtype::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

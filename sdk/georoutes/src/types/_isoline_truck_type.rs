@@ -108,7 +108,7 @@ impl ::std::fmt::Display for IsolineTruckType {
             IsolineTruckType::LightTruck => write!(f, "LightTruck"),
             IsolineTruckType::StraightTruck => write!(f, "StraightTruck"),
             IsolineTruckType::Tractor => write!(f, "Tractor"),
-            IsolineTruckType::Unknown(value) => write!(f, "{}", value),
+            IsolineTruckType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

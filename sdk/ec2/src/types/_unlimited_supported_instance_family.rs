@@ -114,7 +114,7 @@ impl ::std::fmt::Display for UnlimitedSupportedInstanceFamily {
             UnlimitedSupportedInstanceFamily::T3 => write!(f, "t3"),
             UnlimitedSupportedInstanceFamily::T3a => write!(f, "t3a"),
             UnlimitedSupportedInstanceFamily::T4g => write!(f, "t4g"),
-            UnlimitedSupportedInstanceFamily::Unknown(value) => write!(f, "{}", value),
+            UnlimitedSupportedInstanceFamily::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

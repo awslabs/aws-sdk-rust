@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ScalingMode {
         match self {
             ScalingMode::Managed => write!(f, "MANAGED"),
             ScalingMode::Standard => write!(f, "STANDARD"),
-            ScalingMode::Unknown(value) => write!(f, "{}", value),
+            ScalingMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

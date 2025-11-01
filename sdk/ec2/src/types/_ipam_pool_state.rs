@@ -175,7 +175,7 @@ impl ::std::fmt::Display for IpamPoolState {
             IpamPoolState::ModifyFailed => write!(f, "modify-failed"),
             IpamPoolState::ModifyInProgress => write!(f, "modify-in-progress"),
             IpamPoolState::RestoreInProgress => write!(f, "restore-in-progress"),
-            IpamPoolState::Unknown(value) => write!(f, "{}", value),
+            IpamPoolState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

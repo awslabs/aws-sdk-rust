@@ -102,7 +102,7 @@ impl ::std::fmt::Display for StatementEffect {
         match self {
             StatementEffect::Allow => write!(f, "Allow"),
             StatementEffect::Deny => write!(f, "Deny"),
-            StatementEffect::Unknown(value) => write!(f, "{}", value),
+            StatementEffect::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

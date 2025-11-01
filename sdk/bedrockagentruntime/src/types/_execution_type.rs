@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ExecutionType {
         match self {
             ExecutionType::Lambda => write!(f, "LAMBDA"),
             ExecutionType::ReturnControl => write!(f, "RETURN_CONTROL"),
-            ExecutionType::Unknown(value) => write!(f, "{}", value),
+            ExecutionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

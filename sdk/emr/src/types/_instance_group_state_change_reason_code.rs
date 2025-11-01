@@ -114,7 +114,7 @@ impl ::std::fmt::Display for InstanceGroupStateChangeReasonCode {
             InstanceGroupStateChangeReasonCode::InstanceFailure => write!(f, "INSTANCE_FAILURE"),
             InstanceGroupStateChangeReasonCode::InternalError => write!(f, "INTERNAL_ERROR"),
             InstanceGroupStateChangeReasonCode::ValidationError => write!(f, "VALIDATION_ERROR"),
-            InstanceGroupStateChangeReasonCode::Unknown(value) => write!(f, "{}", value),
+            InstanceGroupStateChangeReasonCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

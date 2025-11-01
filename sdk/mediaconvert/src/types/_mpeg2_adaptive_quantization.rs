@@ -114,7 +114,7 @@ impl ::std::fmt::Display for Mpeg2AdaptiveQuantization {
             Mpeg2AdaptiveQuantization::Low => write!(f, "LOW"),
             Mpeg2AdaptiveQuantization::Medium => write!(f, "MEDIUM"),
             Mpeg2AdaptiveQuantization::Off => write!(f, "OFF"),
-            Mpeg2AdaptiveQuantization::Unknown(value) => write!(f, "{}", value),
+            Mpeg2AdaptiveQuantization::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

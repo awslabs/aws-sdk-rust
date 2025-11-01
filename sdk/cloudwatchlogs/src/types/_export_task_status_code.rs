@@ -126,7 +126,7 @@ impl ::std::fmt::Display for ExportTaskStatusCode {
             ExportTaskStatusCode::Pending => write!(f, "PENDING"),
             ExportTaskStatusCode::PendingCancel => write!(f, "PENDING_CANCEL"),
             ExportTaskStatusCode::Running => write!(f, "RUNNING"),
-            ExportTaskStatusCode::Unknown(value) => write!(f, "{}", value),
+            ExportTaskStatusCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

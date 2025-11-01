@@ -102,7 +102,7 @@ impl ::std::fmt::Display for GeneratedTemplateDeletionPolicy {
         match self {
             GeneratedTemplateDeletionPolicy::Delete => write!(f, "DELETE"),
             GeneratedTemplateDeletionPolicy::Retain => write!(f, "RETAIN"),
-            GeneratedTemplateDeletionPolicy::Unknown(value) => write!(f, "{}", value),
+            GeneratedTemplateDeletionPolicy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

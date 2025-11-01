@@ -120,7 +120,7 @@ impl ::std::fmt::Display for RepositoryAssociationState {
             RepositoryAssociationState::Disassociated => write!(f, "Disassociated"),
             RepositoryAssociationState::Disassociating => write!(f, "Disassociating"),
             RepositoryAssociationState::Failed => write!(f, "Failed"),
-            RepositoryAssociationState::Unknown(value) => write!(f, "{}", value),
+            RepositoryAssociationState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

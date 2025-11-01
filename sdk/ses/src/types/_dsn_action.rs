@@ -120,7 +120,7 @@ impl ::std::fmt::Display for DsnAction {
             DsnAction::Expanded => write!(f, "expanded"),
             DsnAction::Failed => write!(f, "failed"),
             DsnAction::Relayed => write!(f, "relayed"),
-            DsnAction::Unknown(value) => write!(f, "{}", value),
+            DsnAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

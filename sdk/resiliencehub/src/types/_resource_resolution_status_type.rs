@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ResourceResolutionStatusType {
             ResourceResolutionStatusType::InProgress => write!(f, "InProgress"),
             ResourceResolutionStatusType::Pending => write!(f, "Pending"),
             ResourceResolutionStatusType::Success => write!(f, "Success"),
-            ResourceResolutionStatusType::Unknown(value) => write!(f, "{}", value),
+            ResourceResolutionStatusType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

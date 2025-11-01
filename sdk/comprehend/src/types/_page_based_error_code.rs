@@ -126,7 +126,7 @@ impl ::std::fmt::Display for PageBasedErrorCode {
             PageBasedErrorCode::PageSizeExceeded => write!(f, "PAGE_SIZE_EXCEEDED"),
             PageBasedErrorCode::TextractBadPage => write!(f, "TEXTRACT_BAD_PAGE"),
             PageBasedErrorCode::TextractProvisionedThroughputExceeded => write!(f, "TEXTRACT_PROVISIONED_THROUGHPUT_EXCEEDED"),
-            PageBasedErrorCode::Unknown(value) => write!(f, "{}", value),
+            PageBasedErrorCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

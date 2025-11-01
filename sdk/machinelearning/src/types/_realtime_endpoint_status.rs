@@ -114,7 +114,7 @@ impl ::std::fmt::Display for RealtimeEndpointStatus {
             RealtimeEndpointStatus::None => write!(f, "NONE"),
             RealtimeEndpointStatus::Ready => write!(f, "READY"),
             RealtimeEndpointStatus::Updating => write!(f, "UPDATING"),
-            RealtimeEndpointStatus::Unknown(value) => write!(f, "{}", value),
+            RealtimeEndpointStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for IntegrationType {
         match self {
             IntegrationType::Github => write!(f, "GITHUB"),
             IntegrationType::GitlabSelfManaged => write!(f, "GITLAB_SELF_MANAGED"),
-            IntegrationType::Unknown(value) => write!(f, "{}", value),
+            IntegrationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

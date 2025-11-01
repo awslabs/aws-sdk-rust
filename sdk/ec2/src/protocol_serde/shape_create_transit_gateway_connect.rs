@@ -51,8 +51,7 @@ pub fn de_create_transit_gateway_connect(
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateTransitGatewayConnectResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected CreateTransitGatewayConnectResponse got {:?}",
-            start_el
+            "invalid root, expected CreateTransitGatewayConnectResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

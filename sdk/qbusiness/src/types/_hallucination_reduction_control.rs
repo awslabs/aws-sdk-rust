@@ -102,7 +102,7 @@ impl ::std::fmt::Display for HallucinationReductionControl {
         match self {
             HallucinationReductionControl::Disabled => write!(f, "DISABLED"),
             HallucinationReductionControl::Enabled => write!(f, "ENABLED"),
-            HallucinationReductionControl::Unknown(value) => write!(f, "{}", value),
+            HallucinationReductionControl::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

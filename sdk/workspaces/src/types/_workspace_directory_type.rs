@@ -114,7 +114,7 @@ impl ::std::fmt::Display for WorkspaceDirectoryType {
             WorkspaceDirectoryType::AwsIamIdentityCenter => write!(f, "AWS_IAM_IDENTITY_CENTER"),
             WorkspaceDirectoryType::CustomerManaged => write!(f, "CUSTOMER_MANAGED"),
             WorkspaceDirectoryType::SimpleAd => write!(f, "SIMPLE_AD"),
-            WorkspaceDirectoryType::Unknown(value) => write!(f, "{}", value),
+            WorkspaceDirectoryType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

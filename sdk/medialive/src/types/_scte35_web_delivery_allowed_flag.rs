@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Scte35WebDeliveryAllowedFlag {
         match self {
             Scte35WebDeliveryAllowedFlag::WebDeliveryAllowed => write!(f, "WEB_DELIVERY_ALLOWED"),
             Scte35WebDeliveryAllowedFlag::WebDeliveryNotAllowed => write!(f, "WEB_DELIVERY_NOT_ALLOWED"),
-            Scte35WebDeliveryAllowedFlag::Unknown(value) => write!(f, "{}", value),
+            Scte35WebDeliveryAllowedFlag::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

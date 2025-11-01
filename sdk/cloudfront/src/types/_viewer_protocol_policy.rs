@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ViewerProtocolPolicy {
             ViewerProtocolPolicy::AllowAll => write!(f, "allow-all"),
             ViewerProtocolPolicy::HttpsOnly => write!(f, "https-only"),
             ViewerProtocolPolicy::RedirectToHttps => write!(f, "redirect-to-https"),
-            ViewerProtocolPolicy::Unknown(value) => write!(f, "{}", value),
+            ViewerProtocolPolicy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

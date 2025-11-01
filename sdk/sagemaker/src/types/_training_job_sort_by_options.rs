@@ -114,7 +114,7 @@ impl ::std::fmt::Display for TrainingJobSortByOptions {
             TrainingJobSortByOptions::FinalObjectiveMetricValue => write!(f, "FinalObjectiveMetricValue"),
             TrainingJobSortByOptions::Name => write!(f, "Name"),
             TrainingJobSortByOptions::Status => write!(f, "Status"),
-            TrainingJobSortByOptions::Unknown(value) => write!(f, "{}", value),
+            TrainingJobSortByOptions::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

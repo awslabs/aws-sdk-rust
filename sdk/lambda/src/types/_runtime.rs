@@ -22,6 +22,7 @@
 ///     Runtime::Java11 => { /* ... */ },
 ///     Runtime::Java17 => { /* ... */ },
 ///     Runtime::Java21 => { /* ... */ },
+///     Runtime::Java25 => { /* ... */ },
 ///     Runtime::Java8 => { /* ... */ },
 ///     Runtime::Java8al2 => { /* ... */ },
 ///     Runtime::Nodejs => { /* ... */ },
@@ -45,6 +46,7 @@
 ///     Runtime::Python311 => { /* ... */ },
 ///     Runtime::Python312 => { /* ... */ },
 ///     Runtime::Python313 => { /* ... */ },
+///     Runtime::Python314 => { /* ... */ },
 ///     Runtime::Python36 => { /* ... */ },
 ///     Runtime::Python37 => { /* ... */ },
 ///     Runtime::Python38 => { /* ... */ },
@@ -103,6 +105,8 @@ pub enum Runtime {
     #[allow(missing_docs)] // documentation missing in model
     Java21,
     #[allow(missing_docs)] // documentation missing in model
+    Java25,
+    #[allow(missing_docs)] // documentation missing in model
     Java8,
     #[allow(missing_docs)] // documentation missing in model
     Java8al2,
@@ -149,6 +153,8 @@ pub enum Runtime {
     #[allow(missing_docs)] // documentation missing in model
     Python313,
     #[allow(missing_docs)] // documentation missing in model
+    Python314,
+    #[allow(missing_docs)] // documentation missing in model
     Python36,
     #[allow(missing_docs)] // documentation missing in model
     Python37,
@@ -183,6 +189,7 @@ impl ::std::convert::From<&str> for Runtime {
             "java11" => Runtime::Java11,
             "java17" => Runtime::Java17,
             "java21" => Runtime::Java21,
+            "java25" => Runtime::Java25,
             "java8" => Runtime::Java8,
             "java8.al2" => Runtime::Java8al2,
             "nodejs" => Runtime::Nodejs,
@@ -206,6 +213,7 @@ impl ::std::convert::From<&str> for Runtime {
             "python3.11" => Runtime::Python311,
             "python3.12" => Runtime::Python312,
             "python3.13" => Runtime::Python313,
+            "python3.14" => Runtime::Python314,
             "python3.6" => Runtime::Python36,
             "python3.7" => Runtime::Python37,
             "python3.8" => Runtime::Python38,
@@ -240,6 +248,7 @@ impl Runtime {
             Runtime::Java11 => "java11",
             Runtime::Java17 => "java17",
             Runtime::Java21 => "java21",
+            Runtime::Java25 => "java25",
             Runtime::Java8 => "java8",
             Runtime::Java8al2 => "java8.al2",
             Runtime::Nodejs => "nodejs",
@@ -263,6 +272,7 @@ impl Runtime {
             Runtime::Python311 => "python3.11",
             Runtime::Python312 => "python3.12",
             Runtime::Python313 => "python3.13",
+            Runtime::Python314 => "python3.14",
             Runtime::Python36 => "python3.6",
             Runtime::Python37 => "python3.7",
             Runtime::Python38 => "python3.8",
@@ -288,6 +298,7 @@ impl Runtime {
             "java11",
             "java17",
             "java21",
+            "java25",
             "java8",
             "java8.al2",
             "nodejs",
@@ -311,6 +322,7 @@ impl Runtime {
             "python3.11",
             "python3.12",
             "python3.13",
+            "python3.14",
             "python3.6",
             "python3.7",
             "python3.8",
@@ -353,6 +365,7 @@ impl ::std::fmt::Display for Runtime {
             Runtime::Java11 => write!(f, "java11"),
             Runtime::Java17 => write!(f, "java17"),
             Runtime::Java21 => write!(f, "java21"),
+            Runtime::Java25 => write!(f, "java25"),
             Runtime::Java8 => write!(f, "java8"),
             Runtime::Java8al2 => write!(f, "java8.al2"),
             Runtime::Nodejs => write!(f, "nodejs"),
@@ -376,6 +389,7 @@ impl ::std::fmt::Display for Runtime {
             Runtime::Python311 => write!(f, "python3.11"),
             Runtime::Python312 => write!(f, "python3.12"),
             Runtime::Python313 => write!(f, "python3.13"),
+            Runtime::Python314 => write!(f, "python3.14"),
             Runtime::Python36 => write!(f, "python3.6"),
             Runtime::Python37 => write!(f, "python3.7"),
             Runtime::Python38 => write!(f, "python3.8"),
@@ -385,7 +399,7 @@ impl ::std::fmt::Display for Runtime {
             Runtime::Ruby32 => write!(f, "ruby3.2"),
             Runtime::Ruby33 => write!(f, "ruby3.3"),
             Runtime::Ruby34 => write!(f, "ruby3.4"),
-            Runtime::Unknown(value) => write!(f, "{}", value),
+            Runtime::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

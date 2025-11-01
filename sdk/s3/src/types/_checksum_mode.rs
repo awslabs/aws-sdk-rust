@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ChecksumMode {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ChecksumMode::Enabled => write!(f, "ENABLED"),
-            ChecksumMode::Unknown(value) => write!(f, "{}", value),
+            ChecksumMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -126,7 +126,7 @@ impl ::std::fmt::Display for ContainerServicePowerName {
             ContainerServicePowerName::Nano => write!(f, "nano"),
             ContainerServicePowerName::Small => write!(f, "small"),
             ContainerServicePowerName::Xlarge => write!(f, "xlarge"),
-            ContainerServicePowerName::Unknown(value) => write!(f, "{}", value),
+            ContainerServicePowerName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

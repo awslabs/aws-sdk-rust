@@ -108,7 +108,7 @@ impl ::std::fmt::Display for GeospatialSelectedPointStyle {
             GeospatialSelectedPointStyle::Cluster => write!(f, "CLUSTER"),
             GeospatialSelectedPointStyle::Heatmap => write!(f, "HEATMAP"),
             GeospatialSelectedPointStyle::Point => write!(f, "POINT"),
-            GeospatialSelectedPointStyle::Unknown(value) => write!(f, "{}", value),
+            GeospatialSelectedPointStyle::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

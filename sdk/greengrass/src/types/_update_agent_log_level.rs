@@ -138,7 +138,7 @@ impl ::std::fmt::Display for UpdateAgentLogLevel {
             UpdateAgentLogLevel::Trace => write!(f, "TRACE"),
             UpdateAgentLogLevel::Verbose => write!(f, "VERBOSE"),
             UpdateAgentLogLevel::Warn => write!(f, "WARN"),
-            UpdateAgentLogLevel::Unknown(value) => write!(f, "{}", value),
+            UpdateAgentLogLevel::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

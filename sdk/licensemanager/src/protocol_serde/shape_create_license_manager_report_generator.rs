@@ -229,8 +229,7 @@ pub(crate) fn de_create_license_manager_report_generator(
             },
             other => {
                 return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                    "expected object key or end object, found: {:?}",
-                    other
+                    "expected object key or end object, found: {other:?}"
                 )))
             }
         }

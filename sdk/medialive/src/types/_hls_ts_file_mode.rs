@@ -102,7 +102,7 @@ impl ::std::fmt::Display for HlsTsFileMode {
         match self {
             HlsTsFileMode::SegmentedFiles => write!(f, "SEGMENTED_FILES"),
             HlsTsFileMode::SingleFile => write!(f, "SINGLE_FILE"),
-            HlsTsFileMode::Unknown(value) => write!(f, "{}", value),
+            HlsTsFileMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

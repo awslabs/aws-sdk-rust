@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ChangeSpecificationType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ChangeSpecificationType::Member => write!(f, "MEMBER"),
-            ChangeSpecificationType::Unknown(value) => write!(f, "{}", value),
+            ChangeSpecificationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

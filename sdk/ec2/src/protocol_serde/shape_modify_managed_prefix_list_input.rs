@@ -62,6 +62,11 @@ pub fn ser_modify_managed_prefix_list_input_input_input(
             ::aws_smithy_types::Number::NegInt((*var_20).into()),
         );
     }
+    #[allow(unused_mut)]
+    let mut scope_21 = writer.prefix("IpamPrefixListResolverSyncEnabled");
+    if let Some(var_22) = &input.ipam_prefix_list_resolver_sync_enabled {
+        scope_21.boolean(*var_22);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

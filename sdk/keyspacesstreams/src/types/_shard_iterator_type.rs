@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ShardIteratorType {
             ShardIteratorType::AtSequenceNumber => write!(f, "AT_SEQUENCE_NUMBER"),
             ShardIteratorType::Latest => write!(f, "LATEST"),
             ShardIteratorType::TrimHorizon => write!(f, "TRIM_HORIZON"),
-            ShardIteratorType::Unknown(value) => write!(f, "{}", value),
+            ShardIteratorType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

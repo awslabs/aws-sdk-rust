@@ -102,7 +102,7 @@ impl ::std::fmt::Display for IdentifiedType {
         match self {
             IdentifiedType::StatelessRuleContainsTcpFlags => write!(f, "STATELESS_RULE_CONTAINS_TCP_FLAGS"),
             IdentifiedType::StatelessRuleForwardingAsymmetrically => write!(f, "STATELESS_RULE_FORWARDING_ASYMMETRICALLY"),
-            IdentifiedType::Unknown(value) => write!(f, "{}", value),
+            IdentifiedType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

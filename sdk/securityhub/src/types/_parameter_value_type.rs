@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ParameterValueType {
         match self {
             ParameterValueType::Custom => write!(f, "CUSTOM"),
             ParameterValueType::Default => write!(f, "DEFAULT"),
-            ParameterValueType::Unknown(value) => write!(f, "{}", value),
+            ParameterValueType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

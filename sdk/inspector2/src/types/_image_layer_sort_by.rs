@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ImageLayerSortBy {
             ImageLayerSortBy::All => write!(f, "ALL"),
             ImageLayerSortBy::Critical => write!(f, "CRITICAL"),
             ImageLayerSortBy::High => write!(f, "HIGH"),
-            ImageLayerSortBy::Unknown(value) => write!(f, "{}", value),
+            ImageLayerSortBy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

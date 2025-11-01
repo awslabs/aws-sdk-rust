@@ -133,7 +133,7 @@ impl ::std::fmt::Display for FailedItemReason {
             FailedItemReason::NotValidRegion => write!(f, "NOT_VALID_REGION"),
             FailedItemReason::NotValidResourceType => write!(f, "NOT_VALID_RESOURCE_TYPE"),
             FailedItemReason::NotValidService => write!(f, "NOT_VALID_SERVICE"),
-            FailedItemReason::Unknown(value) => write!(f, "{}", value),
+            FailedItemReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

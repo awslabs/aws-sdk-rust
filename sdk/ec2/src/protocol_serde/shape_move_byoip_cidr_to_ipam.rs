@@ -51,8 +51,7 @@ pub fn de_move_byoip_cidr_to_ipam(
     let start_el = decoder.start_el();
     if !(start_el.matches("MoveByoipCidrToIpamResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected MoveByoipCidrToIpamResponse got {:?}",
-            start_el
+            "invalid root, expected MoveByoipCidrToIpamResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

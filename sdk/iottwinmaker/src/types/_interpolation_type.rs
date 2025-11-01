@@ -96,7 +96,7 @@ impl ::std::fmt::Display for InterpolationType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             InterpolationType::Linear => write!(f, "LINEAR"),
-            InterpolationType::Unknown(value) => write!(f, "{}", value),
+            InterpolationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

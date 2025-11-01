@@ -114,7 +114,7 @@ impl ::std::fmt::Display for UpdateCampaignAction {
             UpdateCampaignAction::Resume => write!(f, "RESUME"),
             UpdateCampaignAction::Suspend => write!(f, "SUSPEND"),
             UpdateCampaignAction::Update => write!(f, "UPDATE"),
-            UpdateCampaignAction::Unknown(value) => write!(f, "{}", value),
+            UpdateCampaignAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

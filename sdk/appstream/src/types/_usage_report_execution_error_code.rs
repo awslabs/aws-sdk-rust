@@ -108,7 +108,7 @@ impl ::std::fmt::Display for UsageReportExecutionErrorCode {
             UsageReportExecutionErrorCode::AccessDenied => write!(f, "ACCESS_DENIED"),
             UsageReportExecutionErrorCode::InternalServiceError => write!(f, "INTERNAL_SERVICE_ERROR"),
             UsageReportExecutionErrorCode::ResourceNotFound => write!(f, "RESOURCE_NOT_FOUND"),
-            UsageReportExecutionErrorCode::Unknown(value) => write!(f, "{}", value),
+            UsageReportExecutionErrorCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

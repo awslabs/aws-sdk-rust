@@ -161,7 +161,7 @@ impl ::std::fmt::Display for Comparator {
             Comparator::LessThanOrEqualTo => write!(f, "LessThanOrEqualTo"),
             Comparator::NotEqualTo => write!(f, "NotEqualTo"),
             Comparator::NotIn => write!(f, "NotIn"),
-            Comparator::Unknown(value) => write!(f, "{}", value),
+            Comparator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ControlStatus {
             ControlStatus::Inactive => write!(f, "INACTIVE"),
             ControlStatus::Reviewed => write!(f, "REVIEWED"),
             ControlStatus::UnderReview => write!(f, "UNDER_REVIEW"),
-            ControlStatus::Unknown(value) => write!(f, "{}", value),
+            ControlStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

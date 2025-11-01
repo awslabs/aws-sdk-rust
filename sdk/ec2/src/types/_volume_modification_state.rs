@@ -114,7 +114,7 @@ impl ::std::fmt::Display for VolumeModificationState {
             VolumeModificationState::Failed => write!(f, "failed"),
             VolumeModificationState::Modifying => write!(f, "modifying"),
             VolumeModificationState::Optimizing => write!(f, "optimizing"),
-            VolumeModificationState::Unknown(value) => write!(f, "{}", value),
+            VolumeModificationState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

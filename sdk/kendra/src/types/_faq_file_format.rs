@@ -108,7 +108,7 @@ impl ::std::fmt::Display for FaqFileFormat {
             FaqFileFormat::Csv => write!(f, "CSV"),
             FaqFileFormat::CsvWithHeader => write!(f, "CSV_WITH_HEADER"),
             FaqFileFormat::Json => write!(f, "JSON"),
-            FaqFileFormat::Unknown(value) => write!(f, "{}", value),
+            FaqFileFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

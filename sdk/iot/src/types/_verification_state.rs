@@ -116,7 +116,7 @@ impl ::std::fmt::Display for VerificationState {
             VerificationState::FalsePositive => write!(f, "FALSE_POSITIVE"),
             VerificationState::TruePositive => write!(f, "TRUE_POSITIVE"),
             VerificationState::UnknownValue => write!(f, "UNKNOWN"),
-            VerificationState::Unknown(value) => write!(f, "{}", value),
+            VerificationState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

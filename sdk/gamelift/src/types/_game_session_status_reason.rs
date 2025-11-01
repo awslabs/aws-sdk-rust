@@ -108,7 +108,7 @@ impl ::std::fmt::Display for GameSessionStatusReason {
             GameSessionStatusReason::ForceTerminated => write!(f, "FORCE_TERMINATED"),
             GameSessionStatusReason::Interrupted => write!(f, "INTERRUPTED"),
             GameSessionStatusReason::TriggeredOnProcessTerminate => write!(f, "TRIGGERED_ON_PROCESS_TERMINATE"),
-            GameSessionStatusReason::Unknown(value) => write!(f, "{}", value),
+            GameSessionStatusReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

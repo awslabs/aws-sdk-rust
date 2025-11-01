@@ -108,7 +108,7 @@ impl ::std::fmt::Display for RenewType {
             RenewType::Monthly => write!(f, "Monthly"),
             RenewType::None => write!(f, "None"),
             RenewType::Weekly => write!(f, "Weekly"),
-            RenewType::Unknown(value) => write!(f, "{}", value),
+            RenewType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

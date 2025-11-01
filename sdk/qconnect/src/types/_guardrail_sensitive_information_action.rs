@@ -100,7 +100,7 @@ impl ::std::fmt::Display for GuardrailSensitiveInformationAction {
         match self {
             GuardrailSensitiveInformationAction::Anonymize => write!(f, "ANONYMIZE"),
             GuardrailSensitiveInformationAction::Block => write!(f, "BLOCK"),
-            GuardrailSensitiveInformationAction::Unknown(value) => write!(f, "{}", value),
+            GuardrailSensitiveInformationAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ListLabelingJobsForWorkteamSortByOptions {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ListLabelingJobsForWorkteamSortByOptions::CreationTime => write!(f, "CreationTime"),
-            ListLabelingJobsForWorkteamSortByOptions::Unknown(value) => write!(f, "{}", value),
+            ListLabelingJobsForWorkteamSortByOptions::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -120,7 +120,7 @@ impl ::std::fmt::Display for ClusterField {
             ClusterField::Settings => write!(f, "SETTINGS"),
             ClusterField::Statistics => write!(f, "STATISTICS"),
             ClusterField::Tags => write!(f, "TAGS"),
-            ClusterField::Unknown(value) => write!(f, "{}", value),
+            ClusterField::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

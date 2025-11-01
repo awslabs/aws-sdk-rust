@@ -120,7 +120,7 @@ impl ::std::fmt::Display for SourceConnectorType {
             SourceConnectorType::Salesforce => write!(f, "Salesforce"),
             SourceConnectorType::Servicenow => write!(f, "Servicenow"),
             SourceConnectorType::Zendesk => write!(f, "Zendesk"),
-            SourceConnectorType::Unknown(value) => write!(f, "{}", value),
+            SourceConnectorType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

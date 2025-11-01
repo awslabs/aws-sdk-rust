@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AttributeChangeType {
             AttributeChangeType::Add => write!(f, "Add"),
             AttributeChangeType::Modify => write!(f, "Modify"),
             AttributeChangeType::Remove => write!(f, "Remove"),
-            AttributeChangeType::Unknown(value) => write!(f, "{}", value),
+            AttributeChangeType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

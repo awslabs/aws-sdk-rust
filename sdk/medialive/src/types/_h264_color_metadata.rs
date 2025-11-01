@@ -102,7 +102,7 @@ impl ::std::fmt::Display for H264ColorMetadata {
         match self {
             H264ColorMetadata::Ignore => write!(f, "IGNORE"),
             H264ColorMetadata::Insert => write!(f, "INSERT"),
-            H264ColorMetadata::Unknown(value) => write!(f, "{}", value),
+            H264ColorMetadata::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

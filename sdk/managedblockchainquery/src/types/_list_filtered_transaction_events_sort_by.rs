@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ListFilteredTransactionEventsSortBy {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ListFilteredTransactionEventsSortBy::BlockchainInstant => write!(f, "blockchainInstant"),
-            ListFilteredTransactionEventsSortBy::Unknown(value) => write!(f, "{}", value),
+            ListFilteredTransactionEventsSortBy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

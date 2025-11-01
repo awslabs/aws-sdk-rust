@@ -108,7 +108,7 @@ impl ::std::fmt::Display for NoiseFilterPostTemporalSharpening {
             NoiseFilterPostTemporalSharpening::Auto => write!(f, "AUTO"),
             NoiseFilterPostTemporalSharpening::Disabled => write!(f, "DISABLED"),
             NoiseFilterPostTemporalSharpening::Enabled => write!(f, "ENABLED"),
-            NoiseFilterPostTemporalSharpening::Unknown(value) => write!(f, "{}", value),
+            NoiseFilterPostTemporalSharpening::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

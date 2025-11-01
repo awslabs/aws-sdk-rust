@@ -112,7 +112,7 @@ impl ::std::fmt::Display for SanitizationWarningReason {
             SanitizationWarningReason::DisallowedAttributeRemoved => write!(f, "DISALLOWED_ATTRIBUTE_REMOVED"),
             SanitizationWarningReason::DisallowedElementRemoved => write!(f, "DISALLOWED_ELEMENT_REMOVED"),
             SanitizationWarningReason::InvalidAttributeValueRemoved => write!(f, "INVALID_ATTRIBUTE_VALUE_REMOVED"),
-            SanitizationWarningReason::Unknown(value) => write!(f, "{}", value),
+            SanitizationWarningReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

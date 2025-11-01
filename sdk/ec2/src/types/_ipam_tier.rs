@@ -102,7 +102,7 @@ impl ::std::fmt::Display for IpamTier {
         match self {
             IpamTier::Advanced => write!(f, "advanced"),
             IpamTier::Free => write!(f, "free"),
-            IpamTier::Unknown(value) => write!(f, "{}", value),
+            IpamTier::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

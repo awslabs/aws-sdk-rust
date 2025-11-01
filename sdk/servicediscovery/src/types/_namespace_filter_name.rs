@@ -114,7 +114,7 @@ impl ::std::fmt::Display for NamespaceFilterName {
             NamespaceFilterName::Name => write!(f, "NAME"),
             NamespaceFilterName::ResourceOwner => write!(f, "RESOURCE_OWNER"),
             NamespaceFilterName::Type => write!(f, "TYPE"),
-            NamespaceFilterName::Unknown(value) => write!(f, "{}", value),
+            NamespaceFilterName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

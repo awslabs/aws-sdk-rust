@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ListComputeInputStatus {
         match self {
             ListComputeInputStatus::Active => write!(f, "ACTIVE"),
             ListComputeInputStatus::Impaired => write!(f, "IMPAIRED"),
-            ListComputeInputStatus::Unknown(value) => write!(f, "{}", value),
+            ListComputeInputStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

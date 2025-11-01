@@ -120,7 +120,7 @@ impl ::std::fmt::Display for AggregationTransformationValue {
             AggregationTransformationValue::Max => write!(f, "max"),
             AggregationTransformationValue::Min => write!(f, "min"),
             AggregationTransformationValue::Sum => write!(f, "sum"),
-            AggregationTransformationValue::Unknown(value) => write!(f, "{}", value),
+            AggregationTransformationValue::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

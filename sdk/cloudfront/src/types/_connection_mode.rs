@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ConnectionMode {
         match self {
             ConnectionMode::Direct => write!(f, "direct"),
             ConnectionMode::TenantOnly => write!(f, "tenant-only"),
-            ConnectionMode::Unknown(value) => write!(f, "{}", value),
+            ConnectionMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

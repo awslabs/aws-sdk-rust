@@ -140,7 +140,7 @@ impl ::std::fmt::Display for Reason {
             Reason::LowFaceQuality => write!(f, "LOW_FACE_QUALITY"),
             Reason::LowSharpness => write!(f, "LOW_SHARPNESS"),
             Reason::SmallBoundingBox => write!(f, "SMALL_BOUNDING_BOX"),
-            Reason::Unknown(value) => write!(f, "{}", value),
+            Reason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

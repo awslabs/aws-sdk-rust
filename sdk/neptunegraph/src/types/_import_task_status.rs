@@ -168,7 +168,7 @@ impl ::std::fmt::Display for ImportTaskStatus {
             ImportTaskStatus::Reprovisioning => write!(f, "REPROVISIONING"),
             ImportTaskStatus::RollingBack => write!(f, "ROLLING_BACK"),
             ImportTaskStatus::Succeeded => write!(f, "SUCCEEDED"),
-            ImportTaskStatus::Unknown(value) => write!(f, "{}", value),
+            ImportTaskStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for H264SaliencyAwareEncoding {
         match self {
             H264SaliencyAwareEncoding::Disabled => write!(f, "DISABLED"),
             H264SaliencyAwareEncoding::Preferred => write!(f, "PREFERRED"),
-            H264SaliencyAwareEncoding::Unknown(value) => write!(f, "{}", value),
+            H264SaliencyAwareEncoding::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

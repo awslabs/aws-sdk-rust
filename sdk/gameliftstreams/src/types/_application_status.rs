@@ -120,7 +120,7 @@ impl ::std::fmt::Display for ApplicationStatus {
             ApplicationStatus::Initialized => write!(f, "INITIALIZED"),
             ApplicationStatus::Processing => write!(f, "PROCESSING"),
             ApplicationStatus::Ready => write!(f, "READY"),
-            ApplicationStatus::Unknown(value) => write!(f, "{}", value),
+            ApplicationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

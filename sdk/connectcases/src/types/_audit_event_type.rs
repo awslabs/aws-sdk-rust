@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AuditEventType {
             AuditEventType::CaseCreated => write!(f, "Case.Created"),
             AuditEventType::CaseUpdated => write!(f, "Case.Updated"),
             AuditEventType::RelatedItemCreated => write!(f, "RelatedItem.Created"),
-            AuditEventType::Unknown(value) => write!(f, "{}", value),
+            AuditEventType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Type {
         match self {
             Type::RequestContext => write!(f, "RequestContext"),
             Type::TagContext => write!(f, "TagContext"),
-            Type::Unknown(value) => write!(f, "{}", value),
+            Type::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

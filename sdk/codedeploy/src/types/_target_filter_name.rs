@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TargetFilterName {
         match self {
             TargetFilterName::ServerInstanceLabel => write!(f, "ServerInstanceLabel"),
             TargetFilterName::TargetStatus => write!(f, "TargetStatus"),
-            TargetFilterName::Unknown(value) => write!(f, "{}", value),
+            TargetFilterName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

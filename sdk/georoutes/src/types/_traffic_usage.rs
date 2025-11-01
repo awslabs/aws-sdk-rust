@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TrafficUsage {
         match self {
             TrafficUsage::IgnoreTrafficData => write!(f, "IgnoreTrafficData"),
             TrafficUsage::UseTrafficData => write!(f, "UseTrafficData"),
-            TrafficUsage::Unknown(value) => write!(f, "{}", value),
+            TrafficUsage::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

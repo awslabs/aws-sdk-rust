@@ -108,7 +108,7 @@ impl ::std::fmt::Display for MarketplaceSubscriptionOnboardingStatus {
             MarketplaceSubscriptionOnboardingStatus::Complete => write!(f, "COMPLETE"),
             MarketplaceSubscriptionOnboardingStatus::NotComplete => write!(f, "NOT_COMPLETE"),
             MarketplaceSubscriptionOnboardingStatus::NoSubscription => write!(f, "NO_SUBSCRIPTION"),
-            MarketplaceSubscriptionOnboardingStatus::Unknown(value) => write!(f, "{}", value),
+            MarketplaceSubscriptionOnboardingStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

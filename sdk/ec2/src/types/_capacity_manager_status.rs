@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CapacityManagerStatus {
         match self {
             CapacityManagerStatus::Disabled => write!(f, "disabled"),
             CapacityManagerStatus::Enabled => write!(f, "enabled"),
-            CapacityManagerStatus::Unknown(value) => write!(f, "{}", value),
+            CapacityManagerStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

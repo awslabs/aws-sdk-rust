@@ -108,7 +108,7 @@ impl ::std::fmt::Display for WorkflowExecutionTerminatedCause {
             WorkflowExecutionTerminatedCause::ChildPolicyApplied => write!(f, "CHILD_POLICY_APPLIED"),
             WorkflowExecutionTerminatedCause::EventLimitExceeded => write!(f, "EVENT_LIMIT_EXCEEDED"),
             WorkflowExecutionTerminatedCause::OperatorInitiated => write!(f, "OPERATOR_INITIATED"),
-            WorkflowExecutionTerminatedCause::Unknown(value) => write!(f, "{}", value),
+            WorkflowExecutionTerminatedCause::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

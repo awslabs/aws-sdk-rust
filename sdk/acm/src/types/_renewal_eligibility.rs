@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RenewalEligibility {
         match self {
             RenewalEligibility::Eligible => write!(f, "ELIGIBLE"),
             RenewalEligibility::Ineligible => write!(f, "INELIGIBLE"),
-            RenewalEligibility::Unknown(value) => write!(f, "{}", value),
+            RenewalEligibility::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

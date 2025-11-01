@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CertificateType {
         match self {
             CertificateType::AmplifyManaged => write!(f, "AMPLIFY_MANAGED"),
             CertificateType::Custom => write!(f, "CUSTOM"),
-            CertificateType::Unknown(value) => write!(f, "{}", value),
+            CertificateType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

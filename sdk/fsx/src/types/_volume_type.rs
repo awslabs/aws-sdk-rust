@@ -102,7 +102,7 @@ impl ::std::fmt::Display for VolumeType {
         match self {
             VolumeType::Ontap => write!(f, "ONTAP"),
             VolumeType::Openzfs => write!(f, "OPENZFS"),
-            VolumeType::Unknown(value) => write!(f, "{}", value),
+            VolumeType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

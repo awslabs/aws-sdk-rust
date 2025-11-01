@@ -215,8 +215,7 @@ pub(crate) fn de_put_app_instance_user_expiration_settings(
             },
             other => {
                 return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                    "expected object key or end object, found: {:?}",
-                    other
+                    "expected object key or end object, found: {other:?}"
                 )))
             }
         }

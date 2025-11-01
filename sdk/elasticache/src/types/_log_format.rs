@@ -102,7 +102,7 @@ impl ::std::fmt::Display for LogFormat {
         match self {
             LogFormat::Json => write!(f, "json"),
             LogFormat::Text => write!(f, "text"),
-            LogFormat::Unknown(value) => write!(f, "{}", value),
+            LogFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

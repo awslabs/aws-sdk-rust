@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ChangeType {
         match self {
             ChangeType::Delete => write!(f, "DELETE"),
             ChangeType::Put => write!(f, "PUT"),
-            ChangeType::Unknown(value) => write!(f, "{}", value),
+            ChangeType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

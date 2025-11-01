@@ -102,7 +102,7 @@ impl ::std::fmt::Display for UpdateBehavior {
         match self {
             UpdateBehavior::Log => write!(f, "LOG"),
             UpdateBehavior::UpdateInDatabase => write!(f, "UPDATE_IN_DATABASE"),
-            UpdateBehavior::Unknown(value) => write!(f, "{}", value),
+            UpdateBehavior::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

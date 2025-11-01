@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AssessmentStatus {
         match self {
             AssessmentStatus::Active => write!(f, "ACTIVE"),
             AssessmentStatus::Inactive => write!(f, "INACTIVE"),
-            AssessmentStatus::Unknown(value) => write!(f, "{}", value),
+            AssessmentStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

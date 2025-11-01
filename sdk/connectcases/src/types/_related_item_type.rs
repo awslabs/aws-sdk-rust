@@ -126,7 +126,7 @@ impl ::std::fmt::Display for RelatedItemType {
             RelatedItemType::Custom => write!(f, "Custom"),
             RelatedItemType::File => write!(f, "File"),
             RelatedItemType::Sla => write!(f, "Sla"),
-            RelatedItemType::Unknown(value) => write!(f, "{}", value),
+            RelatedItemType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

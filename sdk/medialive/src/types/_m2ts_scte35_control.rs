@@ -102,7 +102,7 @@ impl ::std::fmt::Display for M2tsScte35Control {
         match self {
             M2tsScte35Control::None => write!(f, "NONE"),
             M2tsScte35Control::Passthrough => write!(f, "PASSTHROUGH"),
-            M2tsScte35Control::Unknown(value) => write!(f, "{}", value),
+            M2tsScte35Control::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

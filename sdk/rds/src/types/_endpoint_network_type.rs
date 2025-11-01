@@ -108,7 +108,7 @@ impl ::std::fmt::Display for EndpointNetworkType {
             EndpointNetworkType::Dual => write!(f, "DUAL"),
             EndpointNetworkType::Ipv4 => write!(f, "IPV4"),
             EndpointNetworkType::Ipv6 => write!(f, "IPV6"),
-            EndpointNetworkType::Unknown(value) => write!(f, "{}", value),
+            EndpointNetworkType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

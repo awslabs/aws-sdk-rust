@@ -120,7 +120,7 @@ impl ::std::fmt::Display for Status {
             Status::Completed => write!(f, "Completed"),
             Status::Failed => write!(f, "Failed"),
             Status::InProgress => write!(f, "InProgress"),
-            Status::Unknown(value) => write!(f, "{}", value),
+            Status::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

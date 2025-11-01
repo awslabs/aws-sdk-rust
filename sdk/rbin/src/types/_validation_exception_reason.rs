@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ValidationExceptionReason {
         match self {
             ValidationExceptionReason::InvalidPageToken => write!(f, "INVALID_PAGE_TOKEN"),
             ValidationExceptionReason::InvalidParameterValue => write!(f, "INVALID_PARAMETER_VALUE"),
-            ValidationExceptionReason::Unknown(value) => write!(f, "{}", value),
+            ValidationExceptionReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SoftwareSetUpdateSchedule {
         match self {
             SoftwareSetUpdateSchedule::ApplyImmediately => write!(f, "APPLY_IMMEDIATELY"),
             SoftwareSetUpdateSchedule::UseMaintenanceWindow => write!(f, "USE_MAINTENANCE_WINDOW"),
-            SoftwareSetUpdateSchedule::Unknown(value) => write!(f, "{}", value),
+            SoftwareSetUpdateSchedule::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

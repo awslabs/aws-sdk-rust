@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CustomRoutingAcceleratorStatus {
         match self {
             CustomRoutingAcceleratorStatus::Deployed => write!(f, "DEPLOYED"),
             CustomRoutingAcceleratorStatus::InProgress => write!(f, "IN_PROGRESS"),
-            CustomRoutingAcceleratorStatus::Unknown(value) => write!(f, "{}", value),
+            CustomRoutingAcceleratorStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

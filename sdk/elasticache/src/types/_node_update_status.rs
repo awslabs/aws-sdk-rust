@@ -126,7 +126,7 @@ impl ::std::fmt::Display for NodeUpdateStatus {
             NodeUpdateStatus::Stopped => write!(f, "stopped"),
             NodeUpdateStatus::Stopping => write!(f, "stopping"),
             NodeUpdateStatus::WaitingToStart => write!(f, "waiting-to-start"),
-            NodeUpdateStatus::Unknown(value) => write!(f, "{}", value),
+            NodeUpdateStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

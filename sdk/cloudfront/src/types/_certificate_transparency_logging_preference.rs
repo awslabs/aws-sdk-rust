@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CertificateTransparencyLoggingPreference {
         match self {
             CertificateTransparencyLoggingPreference::Disabled => write!(f, "disabled"),
             CertificateTransparencyLoggingPreference::Enabled => write!(f, "enabled"),
-            CertificateTransparencyLoggingPreference::Unknown(value) => write!(f, "{}", value),
+            CertificateTransparencyLoggingPreference::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

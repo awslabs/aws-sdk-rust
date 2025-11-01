@@ -126,7 +126,7 @@ impl ::std::fmt::Display for DisplayFormat {
             DisplayFormat::Number => write!(f, "NUMBER"),
             DisplayFormat::Percent => write!(f, "PERCENT"),
             DisplayFormat::String => write!(f, "STRING"),
-            DisplayFormat::Unknown(value) => write!(f, "{}", value),
+            DisplayFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

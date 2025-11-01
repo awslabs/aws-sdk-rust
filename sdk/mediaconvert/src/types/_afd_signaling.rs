@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AfdSignaling {
             AfdSignaling::Auto => write!(f, "AUTO"),
             AfdSignaling::Fixed => write!(f, "FIXED"),
             AfdSignaling::None => write!(f, "NONE"),
-            AfdSignaling::Unknown(value) => write!(f, "{}", value),
+            AfdSignaling::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

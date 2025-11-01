@@ -102,7 +102,7 @@ impl ::std::fmt::Display for IncludeGeneratedAnswer {
         match self {
             IncludeGeneratedAnswer::Exclude => write!(f, "EXCLUDE"),
             IncludeGeneratedAnswer::Include => write!(f, "INCLUDE"),
-            IncludeGeneratedAnswer::Unknown(value) => write!(f, "{}", value),
+            IncludeGeneratedAnswer::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

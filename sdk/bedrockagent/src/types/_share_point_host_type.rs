@@ -96,7 +96,7 @@ impl ::std::fmt::Display for SharePointHostType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             SharePointHostType::Online => write!(f, "ONLINE"),
-            SharePointHostType::Unknown(value) => write!(f, "{}", value),
+            SharePointHostType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AudioExtractionStatus {
         match self {
             AudioExtractionStatus::Disabled => write!(f, "DISABLED"),
             AudioExtractionStatus::Enabled => write!(f, "ENABLED"),
-            AudioExtractionStatus::Unknown(value) => write!(f, "{}", value),
+            AudioExtractionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AdditionalArtifact {
             AdditionalArtifact::Athena => write!(f, "ATHENA"),
             AdditionalArtifact::Quicksight => write!(f, "QUICKSIGHT"),
             AdditionalArtifact::Redshift => write!(f, "REDSHIFT"),
-            AdditionalArtifact::Unknown(value) => write!(f, "{}", value),
+            AdditionalArtifact::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

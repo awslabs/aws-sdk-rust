@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ExecutionMode {
         match self {
             ExecutionMode::OnDemand => write!(f, "ON_DEMAND"),
             ExecutionMode::Scheduled => write!(f, "SCHEDULED"),
-            ExecutionMode::Unknown(value) => write!(f, "{}", value),
+            ExecutionMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

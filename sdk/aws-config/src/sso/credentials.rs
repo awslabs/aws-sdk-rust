@@ -284,8 +284,7 @@ async fn load_sso_credentials(
         .try_into()
         .map_err(|err| {
             CredentialsError::unhandled(format!(
-                "expiration could not be converted into a system time: {}",
-                err
+                "expiration could not be converted into a system time: {err}",
             ))
         })?;
     let mut builder = Credentials::builder()

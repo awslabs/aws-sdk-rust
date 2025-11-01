@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ParameterType {
         match self {
             ParameterType::Default => write!(f, "DEFAULT"),
             ParameterType::NodeTypeSpecific => write!(f, "NODE_TYPE_SPECIFIC"),
-            ParameterType::Unknown(value) => write!(f, "{}", value),
+            ParameterType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

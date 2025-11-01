@@ -1939,7 +1939,7 @@ impl ::std::fmt::Display for ProductionVariantInstanceType {
             ProductionVariantInstanceType::MlTrn132Xlarge => write!(f, "ml.trn1.32xlarge"),
             ProductionVariantInstanceType::MlTrn1N32Xlarge => write!(f, "ml.trn1n.32xlarge"),
             ProductionVariantInstanceType::MlTrn248Xlarge => write!(f, "ml.trn2.48xlarge"),
-            ProductionVariantInstanceType::Unknown(value) => write!(f, "{}", value),
+            ProductionVariantInstanceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

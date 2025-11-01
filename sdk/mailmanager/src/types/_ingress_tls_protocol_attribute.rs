@@ -102,7 +102,7 @@ impl ::std::fmt::Display for IngressTlsProtocolAttribute {
         match self {
             IngressTlsProtocolAttribute::Tls12 => write!(f, "TLS1_2"),
             IngressTlsProtocolAttribute::Tls13 => write!(f, "TLS1_3"),
-            IngressTlsProtocolAttribute::Unknown(value) => write!(f, "{}", value),
+            IngressTlsProtocolAttribute::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

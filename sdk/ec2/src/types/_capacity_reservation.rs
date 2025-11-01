@@ -10,7 +10,7 @@ pub struct CapacityReservation {
     pub owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Capacity Reservation.</p>
     pub capacity_reservation_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The Availability Zone ID of the Capacity Reservation.</p>
+    /// <p>The ID of the Availability Zone in which the capacity is reserved.</p>
     pub availability_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of instance for which the Capacity Reservation reserves capacity.</p>
     pub instance_type: ::std::option::Option<::std::string::String>,
@@ -60,9 +60,9 @@ pub struct CapacityReservation {
     /// <p><code>unsupported</code> - (<i>Future-dated Capacity Reservations</i>) Amazon EC2 can't support the future-dated Capacity Reservation request due to capacity constraints. You can view unsupported requests for 30 days. The Capacity Reservation will not be delivered.</p></li>
     /// </ul>
     pub state: ::std::option::Option<crate::types::CapacityReservationState>,
-    /// <p>The date and time at which the Capacity Reservation was started.</p>
+    /// <p>The date and time the Capacity Reservation was started.</p>
     pub start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The date and time at which the Capacity Reservation expires. When a Capacity Reservation expires, the reserved capacity is released and you can no longer launch instances into it. The Capacity Reservation's state changes to <code>expired</code> when it reaches its end date and time.</p>
+    /// <p>The date and time the Capacity Reservation expires. When a Capacity Reservation expires, the reserved capacity is released and you can no longer launch instances into it. The Capacity Reservation's state changes to <code>expired</code> when it reaches its end date and time.</p>
     pub end_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Indicates the way in which the Capacity Reservation ends. A Capacity Reservation can have one of the following end types:</p>
     /// <ul>
@@ -80,7 +80,7 @@ pub struct CapacityReservation {
     /// <p><code>targeted</code> - The Capacity Reservation only accepts instances that have matching attributes (instance type, platform, and Availability Zone), and explicitly target the Capacity Reservation. This ensures that only permitted instances can use the reserved capacity.</p></li>
     /// </ul>
     pub instance_match_criteria: ::std::option::Option<crate::types::InstanceMatchCriteria>,
-    /// <p>The date and time at which the Capacity Reservation was created.</p>
+    /// <p>The date and time the Capacity Reservation was created.</p>
     pub create_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Any tags assigned to the Capacity Reservation.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -116,7 +116,7 @@ impl CapacityReservation {
     pub fn capacity_reservation_arn(&self) -> ::std::option::Option<&str> {
         self.capacity_reservation_arn.as_deref()
     }
-    /// <p>The Availability Zone ID of the Capacity Reservation.</p>
+    /// <p>The ID of the Availability Zone in which the capacity is reserved.</p>
     pub fn availability_zone_id(&self) -> ::std::option::Option<&str> {
         self.availability_zone_id.as_deref()
     }
@@ -186,11 +186,11 @@ impl CapacityReservation {
     pub fn state(&self) -> ::std::option::Option<&crate::types::CapacityReservationState> {
         self.state.as_ref()
     }
-    /// <p>The date and time at which the Capacity Reservation was started.</p>
+    /// <p>The date and time the Capacity Reservation was started.</p>
     pub fn start_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.start_date.as_ref()
     }
-    /// <p>The date and time at which the Capacity Reservation expires. When a Capacity Reservation expires, the reserved capacity is released and you can no longer launch instances into it. The Capacity Reservation's state changes to <code>expired</code> when it reaches its end date and time.</p>
+    /// <p>The date and time the Capacity Reservation expires. When a Capacity Reservation expires, the reserved capacity is released and you can no longer launch instances into it. The Capacity Reservation's state changes to <code>expired</code> when it reaches its end date and time.</p>
     pub fn end_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.end_date.as_ref()
     }
@@ -214,7 +214,7 @@ impl CapacityReservation {
     pub fn instance_match_criteria(&self) -> ::std::option::Option<&crate::types::InstanceMatchCriteria> {
         self.instance_match_criteria.as_ref()
     }
-    /// <p>The date and time at which the Capacity Reservation was created.</p>
+    /// <p>The date and time the Capacity Reservation was created.</p>
     pub fn create_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.create_date.as_ref()
     }
@@ -346,17 +346,17 @@ impl CapacityReservationBuilder {
     pub fn get_capacity_reservation_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.capacity_reservation_arn
     }
-    /// <p>The Availability Zone ID of the Capacity Reservation.</p>
+    /// <p>The ID of the Availability Zone in which the capacity is reserved.</p>
     pub fn availability_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Availability Zone ID of the Capacity Reservation.</p>
+    /// <p>The ID of the Availability Zone in which the capacity is reserved.</p>
     pub fn set_availability_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone_id = input;
         self
     }
-    /// <p>The Availability Zone ID of the Capacity Reservation.</p>
+    /// <p>The ID of the Availability Zone in which the capacity is reserved.</p>
     pub fn get_availability_zone_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.availability_zone_id
     }
@@ -576,31 +576,31 @@ impl CapacityReservationBuilder {
     pub fn get_state(&self) -> &::std::option::Option<crate::types::CapacityReservationState> {
         &self.state
     }
-    /// <p>The date and time at which the Capacity Reservation was started.</p>
+    /// <p>The date and time the Capacity Reservation was started.</p>
     pub fn start_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_date = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date and time at which the Capacity Reservation was started.</p>
+    /// <p>The date and time the Capacity Reservation was started.</p>
     pub fn set_start_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_date = input;
         self
     }
-    /// <p>The date and time at which the Capacity Reservation was started.</p>
+    /// <p>The date and time the Capacity Reservation was started.</p>
     pub fn get_start_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.start_date
     }
-    /// <p>The date and time at which the Capacity Reservation expires. When a Capacity Reservation expires, the reserved capacity is released and you can no longer launch instances into it. The Capacity Reservation's state changes to <code>expired</code> when it reaches its end date and time.</p>
+    /// <p>The date and time the Capacity Reservation expires. When a Capacity Reservation expires, the reserved capacity is released and you can no longer launch instances into it. The Capacity Reservation's state changes to <code>expired</code> when it reaches its end date and time.</p>
     pub fn end_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_date = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date and time at which the Capacity Reservation expires. When a Capacity Reservation expires, the reserved capacity is released and you can no longer launch instances into it. The Capacity Reservation's state changes to <code>expired</code> when it reaches its end date and time.</p>
+    /// <p>The date and time the Capacity Reservation expires. When a Capacity Reservation expires, the reserved capacity is released and you can no longer launch instances into it. The Capacity Reservation's state changes to <code>expired</code> when it reaches its end date and time.</p>
     pub fn set_end_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_date = input;
         self
     }
-    /// <p>The date and time at which the Capacity Reservation expires. When a Capacity Reservation expires, the reserved capacity is released and you can no longer launch instances into it. The Capacity Reservation's state changes to <code>expired</code> when it reaches its end date and time.</p>
+    /// <p>The date and time the Capacity Reservation expires. When a Capacity Reservation expires, the reserved capacity is released and you can no longer launch instances into it. The Capacity Reservation's state changes to <code>expired</code> when it reaches its end date and time.</p>
     pub fn get_end_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.end_date
     }
@@ -668,17 +668,17 @@ impl CapacityReservationBuilder {
     pub fn get_instance_match_criteria(&self) -> &::std::option::Option<crate::types::InstanceMatchCriteria> {
         &self.instance_match_criteria
     }
-    /// <p>The date and time at which the Capacity Reservation was created.</p>
+    /// <p>The date and time the Capacity Reservation was created.</p>
     pub fn create_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.create_date = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date and time at which the Capacity Reservation was created.</p>
+    /// <p>The date and time the Capacity Reservation was created.</p>
     pub fn set_create_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.create_date = input;
         self
     }
-    /// <p>The date and time at which the Capacity Reservation was created.</p>
+    /// <p>The date and time the Capacity Reservation was created.</p>
     pub fn get_create_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.create_date
     }

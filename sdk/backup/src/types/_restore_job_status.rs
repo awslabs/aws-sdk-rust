@@ -120,7 +120,7 @@ impl ::std::fmt::Display for RestoreJobStatus {
             RestoreJobStatus::Failed => write!(f, "FAILED"),
             RestoreJobStatus::Pending => write!(f, "PENDING"),
             RestoreJobStatus::Running => write!(f, "RUNNING"),
-            RestoreJobStatus::Unknown(value) => write!(f, "{}", value),
+            RestoreJobStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

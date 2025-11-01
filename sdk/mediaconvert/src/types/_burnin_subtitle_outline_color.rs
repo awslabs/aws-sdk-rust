@@ -132,7 +132,7 @@ impl ::std::fmt::Display for BurninSubtitleOutlineColor {
             BurninSubtitleOutlineColor::Red => write!(f, "RED"),
             BurninSubtitleOutlineColor::White => write!(f, "WHITE"),
             BurninSubtitleOutlineColor::Yellow => write!(f, "YELLOW"),
-            BurninSubtitleOutlineColor::Unknown(value) => write!(f, "{}", value),
+            BurninSubtitleOutlineColor::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

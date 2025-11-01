@@ -126,7 +126,7 @@ impl ::std::fmt::Display for FlywheelIterationStatus {
             FlywheelIterationStatus::Stopped => write!(f, "STOPPED"),
             FlywheelIterationStatus::StopRequested => write!(f, "STOP_REQUESTED"),
             FlywheelIterationStatus::Training => write!(f, "TRAINING"),
-            FlywheelIterationStatus::Unknown(value) => write!(f, "{}", value),
+            FlywheelIterationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

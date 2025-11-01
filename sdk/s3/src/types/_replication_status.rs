@@ -120,7 +120,7 @@ impl ::std::fmt::Display for ReplicationStatus {
             ReplicationStatus::Failed => write!(f, "FAILED"),
             ReplicationStatus::Pending => write!(f, "PENDING"),
             ReplicationStatus::Replica => write!(f, "REPLICA"),
-            ReplicationStatus::Unknown(value) => write!(f, "{}", value),
+            ReplicationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

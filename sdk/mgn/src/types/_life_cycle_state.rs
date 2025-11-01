@@ -161,7 +161,7 @@ impl ::std::fmt::Display for LifeCycleState {
             LifeCycleState::ReadyForTest => write!(f, "READY_FOR_TEST"),
             LifeCycleState::Stopped => write!(f, "STOPPED"),
             LifeCycleState::Testing => write!(f, "TESTING"),
-            LifeCycleState::Unknown(value) => write!(f, "{}", value),
+            LifeCycleState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -154,7 +154,7 @@ impl ::std::fmt::Display for ResponderGatewayStatus {
             ResponderGatewayStatus::PendingIsolation => write!(f, "PENDING_ISOLATION"),
             ResponderGatewayStatus::PendingRestoration => write!(f, "PENDING_RESTORATION"),
             ResponderGatewayStatus::PendingUpdate => write!(f, "PENDING_UPDATE"),
-            ResponderGatewayStatus::Unknown(value) => write!(f, "{}", value),
+            ResponderGatewayStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

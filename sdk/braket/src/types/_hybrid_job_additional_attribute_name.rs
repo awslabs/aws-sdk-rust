@@ -96,7 +96,7 @@ impl ::std::fmt::Display for HybridJobAdditionalAttributeName {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             HybridJobAdditionalAttributeName::QueueInfo => write!(f, "QueueInfo"),
-            HybridJobAdditionalAttributeName::Unknown(value) => write!(f, "{}", value),
+            HybridJobAdditionalAttributeName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for OtaType {
         match self {
             OtaType::Continuous => write!(f, "CONTINUOUS"),
             OtaType::OneTime => write!(f, "ONE_TIME"),
-            OtaType::Unknown(value) => write!(f, "{}", value),
+            OtaType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

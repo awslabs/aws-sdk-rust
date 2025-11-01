@@ -707,7 +707,7 @@ impl ::std::fmt::Display for GameServerGroupInstanceType {
             GameServerGroupInstanceType::R6gLarge => write!(f, "r6g.large"),
             GameServerGroupInstanceType::R6gMedium => write!(f, "r6g.medium"),
             GameServerGroupInstanceType::R6gXlarge => write!(f, "r6g.xlarge"),
-            GameServerGroupInstanceType::Unknown(value) => write!(f, "{}", value),
+            GameServerGroupInstanceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

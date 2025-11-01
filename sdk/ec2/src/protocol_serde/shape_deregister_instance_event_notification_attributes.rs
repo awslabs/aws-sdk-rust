@@ -58,8 +58,7 @@ pub fn de_deregister_instance_event_notification_attributes(
     let start_el = decoder.start_el();
     if !(start_el.matches("DeregisterInstanceEventNotificationAttributesResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected DeregisterInstanceEventNotificationAttributesResponse got {:?}",
-            start_el
+            "invalid root, expected DeregisterInstanceEventNotificationAttributesResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

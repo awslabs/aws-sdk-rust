@@ -147,7 +147,7 @@ impl ::std::fmt::Display for MacAlgorithm {
             MacAlgorithm::HmacSha512 => write!(f, "HMAC_SHA512"),
             MacAlgorithm::Iso9797Algorithm1 => write!(f, "ISO9797_ALGORITHM1"),
             MacAlgorithm::Iso9797Algorithm3 => write!(f, "ISO9797_ALGORITHM3"),
-            MacAlgorithm::Unknown(value) => write!(f, "{}", value),
+            MacAlgorithm::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

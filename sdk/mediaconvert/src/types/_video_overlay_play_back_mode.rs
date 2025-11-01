@@ -102,7 +102,7 @@ impl ::std::fmt::Display for VideoOverlayPlayBackMode {
         match self {
             VideoOverlayPlayBackMode::Once => write!(f, "ONCE"),
             VideoOverlayPlayBackMode::Repeat => write!(f, "REPEAT"),
-            VideoOverlayPlayBackMode::Unknown(value) => write!(f, "{}", value),
+            VideoOverlayPlayBackMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

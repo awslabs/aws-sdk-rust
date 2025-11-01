@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ReferenceLineLabelVerticalPosition {
         match self {
             ReferenceLineLabelVerticalPosition::Above => write!(f, "ABOVE"),
             ReferenceLineLabelVerticalPosition::Below => write!(f, "BELOW"),
-            ReferenceLineLabelVerticalPosition::Unknown(value) => write!(f, "{}", value),
+            ReferenceLineLabelVerticalPosition::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

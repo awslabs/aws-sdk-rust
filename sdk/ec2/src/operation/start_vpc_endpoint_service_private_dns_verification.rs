@@ -182,6 +182,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for StartVpcEndp
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::start_vpc_endpoint_service_private_dns_verification::StartVpcEndpointServicePrivateDnsVerificationInput,
                 output: &mut ::std::string::String,

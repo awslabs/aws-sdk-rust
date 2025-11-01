@@ -133,7 +133,7 @@ impl ::std::fmt::Display for ServiceActionAssociationErrorCode {
             ServiceActionAssociationErrorCode::LimitExceededException => write!(f, "LIMIT_EXCEEDED"),
             ServiceActionAssociationErrorCode::ResourceNotFoundException => write!(f, "RESOURCE_NOT_FOUND"),
             ServiceActionAssociationErrorCode::ThrottlingException => write!(f, "THROTTLING"),
-            ServiceActionAssociationErrorCode::Unknown(value) => write!(f, "{}", value),
+            ServiceActionAssociationErrorCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

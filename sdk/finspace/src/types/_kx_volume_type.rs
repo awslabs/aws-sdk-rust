@@ -96,7 +96,7 @@ impl ::std::fmt::Display for KxVolumeType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             KxVolumeType::Nas1 => write!(f, "NAS_1"),
-            KxVolumeType::Unknown(value) => write!(f, "{}", value),
+            KxVolumeType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

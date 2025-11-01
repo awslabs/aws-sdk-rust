@@ -126,7 +126,7 @@ impl ::std::fmt::Display for AllocationStrategy {
             AllocationStrategy::Diversified => write!(f, "diversified"),
             AllocationStrategy::LowestPrice => write!(f, "lowestPrice"),
             AllocationStrategy::PriceCapacityOptimized => write!(f, "priceCapacityOptimized"),
-            AllocationStrategy::Unknown(value) => write!(f, "{}", value),
+            AllocationStrategy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

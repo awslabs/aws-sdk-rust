@@ -114,7 +114,7 @@ impl ::std::fmt::Display for TimecodeBurninFontSize {
             TimecodeBurninFontSize::Large48 => write!(f, "LARGE_48"),
             TimecodeBurninFontSize::Medium32 => write!(f, "MEDIUM_32"),
             TimecodeBurninFontSize::Small16 => write!(f, "SMALL_16"),
-            TimecodeBurninFontSize::Unknown(value) => write!(f, "{}", value),
+            TimecodeBurninFontSize::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

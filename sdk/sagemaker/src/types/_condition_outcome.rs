@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ConditionOutcome {
         match self {
             ConditionOutcome::False => write!(f, "False"),
             ConditionOutcome::True => write!(f, "True"),
-            ConditionOutcome::Unknown(value) => write!(f, "{}", value),
+            ConditionOutcome::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -120,7 +120,7 @@ impl ::std::fmt::Display for DataLakeDatasetPartitionTransformType {
             DataLakeDatasetPartitionTransformType::Identity => write!(f, "IDENTITY"),
             DataLakeDatasetPartitionTransformType::Month => write!(f, "MONTH"),
             DataLakeDatasetPartitionTransformType::Year => write!(f, "YEAR"),
-            DataLakeDatasetPartitionTransformType::Unknown(value) => write!(f, "{}", value),
+            DataLakeDatasetPartitionTransformType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

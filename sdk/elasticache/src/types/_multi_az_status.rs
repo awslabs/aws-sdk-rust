@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MultiAzStatus {
         match self {
             MultiAzStatus::Disabled => write!(f, "disabled"),
             MultiAzStatus::Enabled => write!(f, "enabled"),
-            MultiAzStatus::Unknown(value) => write!(f, "{}", value),
+            MultiAzStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

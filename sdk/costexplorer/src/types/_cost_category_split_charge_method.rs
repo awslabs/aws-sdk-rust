@@ -108,7 +108,7 @@ impl ::std::fmt::Display for CostCategorySplitChargeMethod {
             CostCategorySplitChargeMethod::Even => write!(f, "EVEN"),
             CostCategorySplitChargeMethod::Fixed => write!(f, "FIXED"),
             CostCategorySplitChargeMethod::Proportional => write!(f, "PROPORTIONAL"),
-            CostCategorySplitChargeMethod::Unknown(value) => write!(f, "{}", value),
+            CostCategorySplitChargeMethod::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

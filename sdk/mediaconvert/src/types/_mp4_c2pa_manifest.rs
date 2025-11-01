@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Mp4C2paManifest {
         match self {
             Mp4C2paManifest::Exclude => write!(f, "EXCLUDE"),
             Mp4C2paManifest::Include => write!(f, "INCLUDE"),
-            Mp4C2paManifest::Unknown(value) => write!(f, "{}", value),
+            Mp4C2paManifest::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

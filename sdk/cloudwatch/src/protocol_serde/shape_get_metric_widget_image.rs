@@ -51,16 +51,14 @@ pub fn de_get_metric_widget_image(
     let start_el = decoder.start_el();
     if !(start_el.matches("GetMetricWidgetImageResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected GetMetricWidgetImageResponse got {:?}",
-            start_el
+            "invalid root, expected GetMetricWidgetImageResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("GetMetricWidgetImageResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected GetMetricWidgetImageResult got {:?}",
-                start_el
+                "invalid result, expected GetMetricWidgetImageResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {
@@ -71,7 +69,7 @@ pub fn de_get_metric_widget_image(
                         ::aws_smithy_types::base64::decode(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                         )
-                        .map_err(|err|::aws_smithy_xml::decode::XmlDecodeError::custom(format!("invalid base64: {:?}", err))).map(::aws_smithy_types::Blob::new)
+                        .map_err(|err|::aws_smithy_xml::decode::XmlDecodeError::custom(format!("invalid base64: {err:?}"))).map(::aws_smithy_types::Blob::new)
                         ?
                     )
                 ;

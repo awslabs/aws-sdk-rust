@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AttachmentStatus {
         match self {
             AttachmentStatus::Failed => write!(f, "FAILED"),
             AttachmentStatus::Success => write!(f, "SUCCESS"),
-            AttachmentStatus::Unknown(value) => write!(f, "{}", value),
+            AttachmentStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

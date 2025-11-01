@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Mpeg2ColorSpace {
         match self {
             Mpeg2ColorSpace::Auto => write!(f, "AUTO"),
             Mpeg2ColorSpace::Passthrough => write!(f, "PASSTHROUGH"),
-            Mpeg2ColorSpace::Unknown(value) => write!(f, "{}", value),
+            Mpeg2ColorSpace::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

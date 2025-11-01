@@ -147,7 +147,7 @@ impl ::std::fmt::Display for WorkflowExecutionStatus {
             WorkflowExecutionStatus::RollbackInProgress => write!(f, "ROLLBACK_IN_PROGRESS"),
             WorkflowExecutionStatus::Running => write!(f, "RUNNING"),
             WorkflowExecutionStatus::Skipped => write!(f, "SKIPPED"),
-            WorkflowExecutionStatus::Unknown(value) => write!(f, "{}", value),
+            WorkflowExecutionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

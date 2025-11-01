@@ -175,7 +175,7 @@ impl ::std::fmt::Display for RecoveryInstanceDataReplicationState {
             RecoveryInstanceDataReplicationState::Rescan => write!(f, "RESCAN"),
             RecoveryInstanceDataReplicationState::Stalled => write!(f, "STALLED"),
             RecoveryInstanceDataReplicationState::Stopped => write!(f, "STOPPED"),
-            RecoveryInstanceDataReplicationState::Unknown(value) => write!(f, "{}", value),
+            RecoveryInstanceDataReplicationState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

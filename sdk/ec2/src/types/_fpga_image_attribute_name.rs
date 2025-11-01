@@ -114,7 +114,7 @@ impl ::std::fmt::Display for FpgaImageAttributeName {
             FpgaImageAttributeName::LoadPermission => write!(f, "loadPermission"),
             FpgaImageAttributeName::Name => write!(f, "name"),
             FpgaImageAttributeName::ProductCodes => write!(f, "productCodes"),
-            FpgaImageAttributeName::Unknown(value) => write!(f, "{}", value),
+            FpgaImageAttributeName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

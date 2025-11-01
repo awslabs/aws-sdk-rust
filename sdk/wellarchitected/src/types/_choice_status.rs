@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ChoiceStatus {
             ChoiceStatus::NotApplicable => write!(f, "NOT_APPLICABLE"),
             ChoiceStatus::Selected => write!(f, "SELECTED"),
             ChoiceStatus::Unselected => write!(f, "UNSELECTED"),
-            ChoiceStatus::Unknown(value) => write!(f, "{}", value),
+            ChoiceStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

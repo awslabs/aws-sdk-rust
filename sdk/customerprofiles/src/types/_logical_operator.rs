@@ -102,7 +102,7 @@ impl ::std::fmt::Display for LogicalOperator {
         match self {
             LogicalOperator::And => write!(f, "AND"),
             LogicalOperator::Or => write!(f, "OR"),
-            LogicalOperator::Unknown(value) => write!(f, "{}", value),
+            LogicalOperator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

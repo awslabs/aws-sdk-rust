@@ -96,7 +96,7 @@ impl ::std::fmt::Display for IncludeExecutionDataOption {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             IncludeExecutionDataOption::All => write!(f, "ALL"),
-            IncludeExecutionDataOption::Unknown(value) => write!(f, "{}", value),
+            IncludeExecutionDataOption::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

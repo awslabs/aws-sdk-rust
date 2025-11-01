@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ImpairedZoneHealthCheckBehavior {
         match self {
             ImpairedZoneHealthCheckBehavior::IgnoreUnhealthy => write!(f, "IgnoreUnhealthy"),
             ImpairedZoneHealthCheckBehavior::ReplaceUnhealthy => write!(f, "ReplaceUnhealthy"),
-            ImpairedZoneHealthCheckBehavior::Unknown(value) => write!(f, "{}", value),
+            ImpairedZoneHealthCheckBehavior::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

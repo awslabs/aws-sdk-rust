@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Eac3AttenuationControl {
         match self {
             Eac3AttenuationControl::Attenuate3Db => write!(f, "ATTENUATE_3_DB"),
             Eac3AttenuationControl::None => write!(f, "NONE"),
-            Eac3AttenuationControl::Unknown(value) => write!(f, "{}", value),
+            Eac3AttenuationControl::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

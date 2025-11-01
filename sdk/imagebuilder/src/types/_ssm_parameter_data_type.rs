@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SsmParameterDataType {
         match self {
             SsmParameterDataType::AwsEc2Image => write!(f, "aws:ec2:image"),
             SsmParameterDataType::Text => write!(f, "text"),
-            SsmParameterDataType::Unknown(value) => write!(f, "{}", value),
+            SsmParameterDataType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -280,7 +280,7 @@ impl ::std::fmt::Display for Unit {
             Unit::TeraBitsPerSecond => write!(f, "TERA_BITS_PER_SECOND"),
             Unit::TeraBytes => write!(f, "TERA_BYTES"),
             Unit::TeraBytesPerSecond => write!(f, "TERA_BYTES_PER_SECOND"),
-            Unit::Unknown(value) => write!(f, "{}", value),
+            Unit::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

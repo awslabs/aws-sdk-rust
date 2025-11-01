@@ -96,7 +96,7 @@ impl ::std::fmt::Display for OpsItemRelatedItemsFilterOperator {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             OpsItemRelatedItemsFilterOperator::Equal => write!(f, "Equal"),
-            OpsItemRelatedItemsFilterOperator::Unknown(value) => write!(f, "{}", value),
+            OpsItemRelatedItemsFilterOperator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

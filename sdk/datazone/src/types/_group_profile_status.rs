@@ -102,7 +102,7 @@ impl ::std::fmt::Display for GroupProfileStatus {
         match self {
             GroupProfileStatus::Assigned => write!(f, "ASSIGNED"),
             GroupProfileStatus::NotAssigned => write!(f, "NOT_ASSIGNED"),
-            GroupProfileStatus::Unknown(value) => write!(f, "{}", value),
+            GroupProfileStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

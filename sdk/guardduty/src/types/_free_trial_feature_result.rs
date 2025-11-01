@@ -168,7 +168,7 @@ impl ::std::fmt::Display for FreeTrialFeatureResult {
             FreeTrialFeatureResult::LambdaNetworkLogs => write!(f, "LAMBDA_NETWORK_LOGS"),
             FreeTrialFeatureResult::RdsLoginEvents => write!(f, "RDS_LOGIN_EVENTS"),
             FreeTrialFeatureResult::S3DataEvents => write!(f, "S3_DATA_EVENTS"),
-            FreeTrialFeatureResult::Unknown(value) => write!(f, "{}", value),
+            FreeTrialFeatureResult::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

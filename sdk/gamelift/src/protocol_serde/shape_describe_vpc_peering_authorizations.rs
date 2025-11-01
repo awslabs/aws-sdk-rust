@@ -123,8 +123,7 @@ pub(crate) fn de_describe_vpc_peering_authorizations(
             },
             other => {
                 return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                    "expected object key or end object, found: {:?}",
-                    other
+                    "expected object key or end object, found: {other:?}"
                 )))
             }
         }

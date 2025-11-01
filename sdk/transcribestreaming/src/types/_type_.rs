@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Type {
         match self {
             Type::Conversation => write!(f, "CONVERSATION"),
             Type::Dictation => write!(f, "DICTATION"),
-            Type::Unknown(value) => write!(f, "{}", value),
+            Type::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

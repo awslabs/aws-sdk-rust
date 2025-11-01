@@ -96,7 +96,7 @@ impl ::std::fmt::Display for CrawlFilterConfigurationType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             CrawlFilterConfigurationType::Pattern => write!(f, "PATTERN"),
-            CrawlFilterConfigurationType::Unknown(value) => write!(f, "{}", value),
+            CrawlFilterConfigurationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

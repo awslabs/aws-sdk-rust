@@ -96,7 +96,7 @@ impl ::std::fmt::Display for EventAggregateField {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             EventAggregateField::EventTypeCategory => write!(f, "eventTypeCategory"),
-            EventAggregateField::Unknown(value) => write!(f, "{}", value),
+            EventAggregateField::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -168,7 +168,7 @@ impl ::std::fmt::Display for InstanceGroupState {
             InstanceGroupState::Suspended => write!(f, "SUSPENDED"),
             InstanceGroupState::Terminated => write!(f, "TERMINATED"),
             InstanceGroupState::Terminating => write!(f, "TERMINATING"),
-            InstanceGroupState::Unknown(value) => write!(f, "{}", value),
+            InstanceGroupState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

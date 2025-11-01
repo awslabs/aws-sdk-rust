@@ -122,7 +122,7 @@ impl ::std::fmt::Display for RemediationExecutionState {
             RemediationExecutionState::Queued => write!(f, "QUEUED"),
             RemediationExecutionState::Succeeded => write!(f, "SUCCEEDED"),
             RemediationExecutionState::UnknownValue => write!(f, "UNKNOWN"),
-            RemediationExecutionState::Unknown(value) => write!(f, "{}", value),
+            RemediationExecutionState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

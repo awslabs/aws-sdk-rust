@@ -108,7 +108,7 @@ impl ::std::fmt::Display for DataIntegrationFlowFileType {
             DataIntegrationFlowFileType::Csv => write!(f, "CSV"),
             DataIntegrationFlowFileType::Json => write!(f, "JSON"),
             DataIntegrationFlowFileType::Parquet => write!(f, "PARQUET"),
-            DataIntegrationFlowFileType::Unknown(value) => write!(f, "{}", value),
+            DataIntegrationFlowFileType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

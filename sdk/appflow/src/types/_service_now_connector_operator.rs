@@ -238,7 +238,7 @@ impl ::std::fmt::Display for ServiceNowConnectorOperator {
             ServiceNowConnectorOperator::ValidateNonNull => write!(f, "VALIDATE_NON_NULL"),
             ServiceNowConnectorOperator::ValidateNonZero => write!(f, "VALIDATE_NON_ZERO"),
             ServiceNowConnectorOperator::ValidateNumeric => write!(f, "VALIDATE_NUMERIC"),
-            ServiceNowConnectorOperator::Unknown(value) => write!(f, "{}", value),
+            ServiceNowConnectorOperator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

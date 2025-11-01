@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SourceType {
         match self {
             SourceType::Git => write!(f, "Git"),
             SourceType::Zip => write!(f, "Zip"),
-            SourceType::Unknown(value) => write!(f, "{}", value),
+            SourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -94,16 +94,14 @@ pub fn de_batch_describe_type_configurations(
     let start_el = decoder.start_el();
     if !(start_el.matches("BatchDescribeTypeConfigurationsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected BatchDescribeTypeConfigurationsResponse got {:?}",
-            start_el
+            "invalid root, expected BatchDescribeTypeConfigurationsResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("BatchDescribeTypeConfigurationsResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected BatchDescribeTypeConfigurationsResult got {:?}",
-                start_el
+                "invalid result, expected BatchDescribeTypeConfigurationsResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

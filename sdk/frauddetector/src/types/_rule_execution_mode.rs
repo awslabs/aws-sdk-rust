@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RuleExecutionMode {
         match self {
             RuleExecutionMode::AllMatched => write!(f, "ALL_MATCHED"),
             RuleExecutionMode::FirstMatched => write!(f, "FIRST_MATCHED"),
-            RuleExecutionMode::Unknown(value) => write!(f, "{}", value),
+            RuleExecutionMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

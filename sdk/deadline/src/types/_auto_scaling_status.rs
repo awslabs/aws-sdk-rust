@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AutoScalingStatus {
             AutoScalingStatus::Growing => write!(f, "GROWING"),
             AutoScalingStatus::Shrinking => write!(f, "SHRINKING"),
             AutoScalingStatus::Steady => write!(f, "STEADY"),
-            AutoScalingStatus::Unknown(value) => write!(f, "{}", value),
+            AutoScalingStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for SigningStatus {
             SigningStatus::Failed => write!(f, "Failed"),
             SigningStatus::InProgress => write!(f, "InProgress"),
             SigningStatus::Succeeded => write!(f, "Succeeded"),
-            SigningStatus::Unknown(value) => write!(f, "{}", value),
+            SigningStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

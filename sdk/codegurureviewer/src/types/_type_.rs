@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Type {
         match self {
             Type::PullRequest => write!(f, "PullRequest"),
             Type::RepositoryAnalysis => write!(f, "RepositoryAnalysis"),
-            Type::Unknown(value) => write!(f, "{}", value),
+            Type::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

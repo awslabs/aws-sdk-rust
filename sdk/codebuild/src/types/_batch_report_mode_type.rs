@@ -102,7 +102,7 @@ impl ::std::fmt::Display for BatchReportModeType {
         match self {
             BatchReportModeType::ReportAggregatedBatch => write!(f, "REPORT_AGGREGATED_BATCH"),
             BatchReportModeType::ReportIndividualBuilds => write!(f, "REPORT_INDIVIDUAL_BUILDS"),
-            BatchReportModeType::Unknown(value) => write!(f, "{}", value),
+            BatchReportModeType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

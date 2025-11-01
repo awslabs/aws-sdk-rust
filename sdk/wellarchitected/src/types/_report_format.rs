@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ReportFormat {
         match self {
             ReportFormat::Json => write!(f, "JSON"),
             ReportFormat::Pdf => write!(f, "PDF"),
-            ReportFormat::Unknown(value) => write!(f, "{}", value),
+            ReportFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

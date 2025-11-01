@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SuppressionType {
         match self {
             SuppressionType::Infinite => write!(f, "INFINITE"),
             SuppressionType::Limited => write!(f, "LIMITED"),
-            SuppressionType::Unknown(value) => write!(f, "{}", value),
+            SuppressionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -156,7 +156,7 @@ impl ::std::fmt::Display for RecommendationLanguage {
             RecommendationLanguage::BrazilianPortuguese => write!(f, "pt_BR"),
             RecommendationLanguage::Chinese => write!(f, "zh"),
             RecommendationLanguage::TraditionalChinese => write!(f, "zh_TW"),
-            RecommendationLanguage::Unknown(value) => write!(f, "{}", value),
+            RecommendationLanguage::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

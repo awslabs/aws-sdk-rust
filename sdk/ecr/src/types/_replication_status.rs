@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ReplicationStatus {
             ReplicationStatus::Complete => write!(f, "COMPLETE"),
             ReplicationStatus::Failed => write!(f, "FAILED"),
             ReplicationStatus::InProgress => write!(f, "IN_PROGRESS"),
-            ReplicationStatus::Unknown(value) => write!(f, "{}", value),
+            ReplicationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -96,7 +96,7 @@ impl ::std::fmt::Display for IpamPoolSourceResourceType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             IpamPoolSourceResourceType::Vpc => write!(f, "vpc"),
-            IpamPoolSourceResourceType::Unknown(value) => write!(f, "{}", value),
+            IpamPoolSourceResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

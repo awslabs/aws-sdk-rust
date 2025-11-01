@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AssociationStatus {
             AssociationStatus::Failed => write!(f, "FAILED"),
             AssociationStatus::Processing => write!(f, "PROCESSING"),
             AssociationStatus::Success => write!(f, "SUCCESS"),
-            AssociationStatus::Unknown(value) => write!(f, "{}", value),
+            AssociationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

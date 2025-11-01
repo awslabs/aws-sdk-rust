@@ -114,7 +114,7 @@ impl ::std::fmt::Display for InvitationStatus {
             InvitationStatus::Expired => write!(f, "EXPIRED"),
             InvitationStatus::Pending => write!(f, "PENDING"),
             InvitationStatus::Rejected => write!(f, "REJECTED"),
-            InvitationStatus::Unknown(value) => write!(f, "{}", value),
+            InvitationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

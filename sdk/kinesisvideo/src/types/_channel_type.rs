@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ChannelType {
         match self {
             ChannelType::FullMesh => write!(f, "FULL_MESH"),
             ChannelType::SingleMaster => write!(f, "SINGLE_MASTER"),
-            ChannelType::Unknown(value) => write!(f, "{}", value),
+            ChannelType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -54,8 +54,7 @@ pub fn de_describe_instance_event_notification_attributes(
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeInstanceEventNotificationAttributesResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected DescribeInstanceEventNotificationAttributesResponse got {:?}",
-            start_el
+            "invalid root, expected DescribeInstanceEventNotificationAttributesResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

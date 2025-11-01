@@ -175,7 +175,7 @@ impl ::std::fmt::Display for ComputeType {
             ComputeType::BuildLambda4Gb => write!(f, "BUILD_LAMBDA_4GB"),
             ComputeType::BuildLambda8Gb => write!(f, "BUILD_LAMBDA_8GB"),
             ComputeType::CustomInstanceType => write!(f, "CUSTOM_INSTANCE_TYPE"),
-            ComputeType::Unknown(value) => write!(f, "{}", value),
+            ComputeType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

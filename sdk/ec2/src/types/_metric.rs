@@ -392,7 +392,7 @@ impl ::std::fmt::Display for Metric {
             Metric::UnreservedTotalEstimatedCost => write!(f, "unreserved-total-estimated-cost"),
             Metric::UnreservedTotalUsageHrsInst => write!(f, "unreserved-total-usage-hrs-inst"),
             Metric::UnreservedTotalUsageHrsVcpu => write!(f, "unreserved-total-usage-hrs-vcpu"),
-            Metric::Unknown(value) => write!(f, "{}", value),
+            Metric::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

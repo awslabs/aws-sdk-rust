@@ -135,7 +135,7 @@ impl ::std::fmt::Display for InstanceStatus {
             InstanceStatus::Skipped => write!(f, "Skipped"),
             InstanceStatus::Succeeded => write!(f, "Succeeded"),
             InstanceStatus::UnknownValue => write!(f, "Unknown"),
-            InstanceStatus::Unknown(value) => write!(f, "{}", value),
+            InstanceStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

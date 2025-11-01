@@ -108,7 +108,7 @@ impl ::std::fmt::Display for SecurityConfigType {
             SecurityConfigType::Iamfederation => write!(f, "iamfederation"),
             SecurityConfigType::Iamidentitycenter => write!(f, "iamidentitycenter"),
             SecurityConfigType::Saml => write!(f, "saml"),
-            SecurityConfigType::Unknown(value) => write!(f, "{}", value),
+            SecurityConfigType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

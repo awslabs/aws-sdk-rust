@@ -102,7 +102,7 @@ impl ::std::fmt::Display for GroupingRecommendationConfidenceLevel {
         match self {
             GroupingRecommendationConfidenceLevel::High => write!(f, "High"),
             GroupingRecommendationConfidenceLevel::Medium => write!(f, "Medium"),
-            GroupingRecommendationConfidenceLevel::Unknown(value) => write!(f, "{}", value),
+            GroupingRecommendationConfidenceLevel::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

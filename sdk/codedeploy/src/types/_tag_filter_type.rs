@@ -108,7 +108,7 @@ impl ::std::fmt::Display for TagFilterType {
             TagFilterType::KeyAndValue => write!(f, "KEY_AND_VALUE"),
             TagFilterType::KeyOnly => write!(f, "KEY_ONLY"),
             TagFilterType::ValueOnly => write!(f, "VALUE_ONLY"),
-            TagFilterType::Unknown(value) => write!(f, "{}", value),
+            TagFilterType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PinBlockPaddingType {
         match self {
             PinBlockPaddingType::IsoIec78164 => write!(f, "ISO_IEC_7816_4"),
             PinBlockPaddingType::NoPadding => write!(f, "NO_PADDING"),
-            PinBlockPaddingType::Unknown(value) => write!(f, "{}", value),
+            PinBlockPaddingType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

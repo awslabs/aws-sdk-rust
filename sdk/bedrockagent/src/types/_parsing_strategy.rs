@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ParsingStrategy {
         match self {
             ParsingStrategy::BedrockDataAutomation => write!(f, "BEDROCK_DATA_AUTOMATION"),
             ParsingStrategy::BedrockFoundationModel => write!(f, "BEDROCK_FOUNDATION_MODEL"),
-            ParsingStrategy::Unknown(value) => write!(f, "{}", value),
+            ParsingStrategy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

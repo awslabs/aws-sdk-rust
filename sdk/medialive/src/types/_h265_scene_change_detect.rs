@@ -102,7 +102,7 @@ impl ::std::fmt::Display for H265SceneChangeDetect {
         match self {
             H265SceneChangeDetect::Disabled => write!(f, "DISABLED"),
             H265SceneChangeDetect::Enabled => write!(f, "ENABLED"),
-            H265SceneChangeDetect::Unknown(value) => write!(f, "{}", value),
+            H265SceneChangeDetect::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

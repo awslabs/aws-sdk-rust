@@ -108,7 +108,7 @@ impl ::std::fmt::Display for Trace {
             Trace::Disabled => write!(f, "DISABLED"),
             Trace::Enabled => write!(f, "ENABLED"),
             Trace::EnabledFull => write!(f, "ENABLED_FULL"),
-            Trace::Unknown(value) => write!(f, "{}", value),
+            Trace::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

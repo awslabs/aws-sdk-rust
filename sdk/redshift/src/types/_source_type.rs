@@ -126,7 +126,7 @@ impl ::std::fmt::Display for SourceType {
             SourceType::ClusterSecurityGroup => write!(f, "cluster-security-group"),
             SourceType::ClusterSnapshot => write!(f, "cluster-snapshot"),
             SourceType::ScheduledAction => write!(f, "scheduled-action"),
-            SourceType::Unknown(value) => write!(f, "{}", value),
+            SourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

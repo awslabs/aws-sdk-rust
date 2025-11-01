@@ -108,7 +108,7 @@ impl ::std::fmt::Display for DataTransferApiType {
             DataTransferApiType::Async => write!(f, "ASYNC"),
             DataTransferApiType::Automatic => write!(f, "AUTOMATIC"),
             DataTransferApiType::Sync => write!(f, "SYNC"),
-            DataTransferApiType::Unknown(value) => write!(f, "{}", value),
+            DataTransferApiType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

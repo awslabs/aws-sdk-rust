@@ -102,7 +102,7 @@ impl ::std::fmt::Display for EnableHybridValues {
         match self {
             EnableHybridValues::False => write!(f, "FALSE"),
             EnableHybridValues::True => write!(f, "TRUE"),
-            EnableHybridValues::Unknown(value) => write!(f, "{}", value),
+            EnableHybridValues::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

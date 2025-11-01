@@ -74,14 +74,14 @@ fn calculate_string_to_sign(
 
     let mut sts: Vec<u8> = Vec::new();
     writeln!(sts, "AWS4-HMAC-SHA256-PAYLOAD").unwrap();
-    writeln!(sts, "{}", date_time_str).unwrap();
+    writeln!(sts, "{date_time_str}").unwrap();
     writeln!(
         sts,
         "{}/{}/{}/aws4_request",
         date_str, params.region, params.name
     )
     .unwrap();
-    writeln!(sts, "{}", last_signature).unwrap();
+    writeln!(sts, "{last_signature}").unwrap();
 
     let date_header = Header::new(":date", HeaderValue::Timestamp(time.into()));
     let mut date_buffer = Vec::new();

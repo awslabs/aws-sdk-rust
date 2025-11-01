@@ -108,7 +108,7 @@ impl ::std::fmt::Display for BatchGetAssetPropertyAggregatesErrorCode {
             BatchGetAssetPropertyAggregatesErrorCode::AccessDeniedException => write!(f, "AccessDeniedException"),
             BatchGetAssetPropertyAggregatesErrorCode::InvalidRequestException => write!(f, "InvalidRequestException"),
             BatchGetAssetPropertyAggregatesErrorCode::ResourceNotFoundException => write!(f, "ResourceNotFoundException"),
-            BatchGetAssetPropertyAggregatesErrorCode::Unknown(value) => write!(f, "{}", value),
+            BatchGetAssetPropertyAggregatesErrorCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

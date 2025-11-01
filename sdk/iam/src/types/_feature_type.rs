@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FeatureType {
         match self {
             FeatureType::RootCredentialsManagement => write!(f, "RootCredentialsManagement"),
             FeatureType::RootSessions => write!(f, "RootSessions"),
-            FeatureType::Unknown(value) => write!(f, "{}", value),
+            FeatureType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

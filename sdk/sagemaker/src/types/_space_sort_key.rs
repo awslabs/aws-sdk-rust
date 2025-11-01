@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SpaceSortKey {
         match self {
             SpaceSortKey::CreationTime => write!(f, "CreationTime"),
             SpaceSortKey::LastModifiedTime => write!(f, "LastModifiedTime"),
-            SpaceSortKey::Unknown(value) => write!(f, "{}", value),
+            SpaceSortKey::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

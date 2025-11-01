@@ -108,7 +108,7 @@ impl ::std::fmt::Display for EcsSavingsEstimationModeSource {
             EcsSavingsEstimationModeSource::CostExplorerRightsizing => write!(f, "CostExplorerRightsizing"),
             EcsSavingsEstimationModeSource::CostOptimizationHub => write!(f, "CostOptimizationHub"),
             EcsSavingsEstimationModeSource::PublicPricing => write!(f, "PublicPricing"),
-            EcsSavingsEstimationModeSource::Unknown(value) => write!(f, "{}", value),
+            EcsSavingsEstimationModeSource::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

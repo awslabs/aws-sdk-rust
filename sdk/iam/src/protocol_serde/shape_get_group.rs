@@ -82,16 +82,14 @@ pub fn de_get_group(
     let start_el = decoder.start_el();
     if !(start_el.matches("GetGroupResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected GetGroupResponse got {:?}",
-            start_el
+            "invalid root, expected GetGroupResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("GetGroupResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected GetGroupResult got {:?}",
-                start_el
+                "invalid result, expected GetGroupResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

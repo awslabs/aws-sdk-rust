@@ -102,7 +102,7 @@ impl ::std::fmt::Display for NationalSecurity {
         match self {
             NationalSecurity::No => write!(f, "No"),
             NationalSecurity::Yes => write!(f, "Yes"),
-            NationalSecurity::Unknown(value) => write!(f, "{}", value),
+            NationalSecurity::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

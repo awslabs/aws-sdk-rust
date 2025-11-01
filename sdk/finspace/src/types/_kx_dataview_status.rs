@@ -120,7 +120,7 @@ impl ::std::fmt::Display for KxDataviewStatus {
             KxDataviewStatus::Deleting => write!(f, "DELETING"),
             KxDataviewStatus::Failed => write!(f, "FAILED"),
             KxDataviewStatus::Updating => write!(f, "UPDATING"),
-            KxDataviewStatus::Unknown(value) => write!(f, "{}", value),
+            KxDataviewStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

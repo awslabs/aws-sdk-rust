@@ -140,7 +140,7 @@ impl ::std::fmt::Display for AutomatedReasoningCheckResult {
             AutomatedReasoningCheckResult::TooComplex => write!(f, "TOO_COMPLEX"),
             AutomatedReasoningCheckResult::TranslationAmbiguous => write!(f, "TRANSLATION_AMBIGUOUS"),
             AutomatedReasoningCheckResult::Valid => write!(f, "VALID"),
-            AutomatedReasoningCheckResult::Unknown(value) => write!(f, "{}", value),
+            AutomatedReasoningCheckResult::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

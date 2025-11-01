@@ -120,7 +120,7 @@ impl ::std::fmt::Display for PowerConnector {
             PowerConnector::Cs8365C => write!(f, "CS8365C"),
             PowerConnector::Iec309 => write!(f, "IEC309"),
             PowerConnector::L630P => write!(f, "L6_30P"),
-            PowerConnector::Unknown(value) => write!(f, "{}", value),
+            PowerConnector::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

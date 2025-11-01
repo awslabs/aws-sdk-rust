@@ -102,7 +102,7 @@ impl ::std::fmt::Display for LogsStatus {
         match self {
             LogsStatus::PublishFailed => write!(f, "PUBLISH_FAILED"),
             LogsStatus::PublishSucceeded => write!(f, "PUBLISH_SUCCEEDED"),
-            LogsStatus::Unknown(value) => write!(f, "{}", value),
+            LogsStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

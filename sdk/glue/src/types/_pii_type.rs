@@ -140,7 +140,7 @@ impl ::std::fmt::Display for PiiType {
             PiiType::RowHashing => write!(f, "RowHashing"),
             PiiType::RowMasking => write!(f, "RowMasking"),
             PiiType::RowPartialMasking => write!(f, "RowPartialMasking"),
-            PiiType::Unknown(value) => write!(f, "{}", value),
+            PiiType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

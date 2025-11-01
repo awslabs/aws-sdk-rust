@@ -3,11 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-use std::{
-    io::{Error as IoError, ErrorKind as IoErrorKind},
-    net::IpAddr,
-    time::Duration,
-};
+use std::{io::Error as IoError, net::IpAddr, time::Duration};
 
 use aws_smithy_runtime_api::client::dns::{DnsFuture, ResolveDns, ResolveDnsError};
 use hickory_resolver::{
@@ -60,10 +56,7 @@ impl ResolveDns for HickoryDnsResolver {
 
             match result {
                 Ok(ips) => Ok(ips.into_iter().collect()),
-                Err(failure) => Err(ResolveDnsError::new(IoError::new(
-                    IoErrorKind::Other,
-                    failure,
-                ))),
+                Err(failure) => Err(ResolveDnsError::new(IoError::other(failure))),
             }
         })
     }

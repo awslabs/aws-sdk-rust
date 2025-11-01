@@ -161,7 +161,7 @@ impl ::std::fmt::Display for MessageSystemAttributeName {
             MessageSystemAttributeName::SenderId => write!(f, "SenderId"),
             MessageSystemAttributeName::SentTimestamp => write!(f, "SentTimestamp"),
             MessageSystemAttributeName::SequenceNumber => write!(f, "SequenceNumber"),
-            MessageSystemAttributeName::Unknown(value) => write!(f, "{}", value),
+            MessageSystemAttributeName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

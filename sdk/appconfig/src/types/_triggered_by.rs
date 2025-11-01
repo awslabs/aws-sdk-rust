@@ -114,7 +114,7 @@ impl ::std::fmt::Display for TriggeredBy {
             TriggeredBy::CloudwatchAlarm => write!(f, "CLOUDWATCH_ALARM"),
             TriggeredBy::InternalError => write!(f, "INTERNAL_ERROR"),
             TriggeredBy::User => write!(f, "USER"),
-            TriggeredBy::Unknown(value) => write!(f, "{}", value),
+            TriggeredBy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

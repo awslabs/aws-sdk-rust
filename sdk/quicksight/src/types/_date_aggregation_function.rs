@@ -114,7 +114,7 @@ impl ::std::fmt::Display for DateAggregationFunction {
             DateAggregationFunction::DistinctCount => write!(f, "DISTINCT_COUNT"),
             DateAggregationFunction::Max => write!(f, "MAX"),
             DateAggregationFunction::Min => write!(f, "MIN"),
-            DateAggregationFunction::Unknown(value) => write!(f, "{}", value),
+            DateAggregationFunction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for VirtualGatewayStatusCode {
             VirtualGatewayStatusCode::Active => write!(f, "ACTIVE"),
             VirtualGatewayStatusCode::Deleted => write!(f, "DELETED"),
             VirtualGatewayStatusCode::Inactive => write!(f, "INACTIVE"),
-            VirtualGatewayStatusCode::Unknown(value) => write!(f, "{}", value),
+            VirtualGatewayStatusCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

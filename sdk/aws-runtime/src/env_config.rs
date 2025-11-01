@@ -212,7 +212,7 @@ impl<'a> EnvConfigValue<'a> {
         value
             .map(|(v, ctx)| {
                 validator(v.as_ref()).map_err(|err| EnvConfigError {
-                    property_source: format!("{}", ctx),
+                    property_source: format!("{ctx}"),
                     err,
                 })
             })
@@ -234,7 +234,7 @@ impl<'a> EnvConfigValue<'a> {
                 let origin: Origin = (&ctx).into();
                 validator(v.as_ref())
                     .map_err(|err| EnvConfigError {
-                        property_source: format!("{}", ctx),
+                        property_source: format!("{ctx}"),
                         err,
                     })
                     .map(|value| (Some(value), origin))

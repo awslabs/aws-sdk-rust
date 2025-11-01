@@ -126,7 +126,7 @@ impl ::std::fmt::Display for KxScalingGroupStatus {
             KxScalingGroupStatus::Deleted => write!(f, "DELETED"),
             KxScalingGroupStatus::DeleteFailed => write!(f, "DELETE_FAILED"),
             KxScalingGroupStatus::Deleting => write!(f, "DELETING"),
-            KxScalingGroupStatus::Unknown(value) => write!(f, "{}", value),
+            KxScalingGroupStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

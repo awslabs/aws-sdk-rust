@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ModelEndpointStatus {
         match self {
             ModelEndpointStatus::Associated => write!(f, "ASSOCIATED"),
             ModelEndpointStatus::Dissociated => write!(f, "DISSOCIATED"),
-            ModelEndpointStatus::Unknown(value) => write!(f, "{}", value),
+            ModelEndpointStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

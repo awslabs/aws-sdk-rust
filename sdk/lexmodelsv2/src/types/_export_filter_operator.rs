@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ExportFilterOperator {
         match self {
             ExportFilterOperator::Contains => write!(f, "CO"),
             ExportFilterOperator::Equals => write!(f, "EQ"),
-            ExportFilterOperator::Unknown(value) => write!(f, "{}", value),
+            ExportFilterOperator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

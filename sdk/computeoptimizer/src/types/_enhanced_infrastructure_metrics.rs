@@ -102,7 +102,7 @@ impl ::std::fmt::Display for EnhancedInfrastructureMetrics {
         match self {
             EnhancedInfrastructureMetrics::Active => write!(f, "Active"),
             EnhancedInfrastructureMetrics::Inactive => write!(f, "Inactive"),
-            EnhancedInfrastructureMetrics::Unknown(value) => write!(f, "{}", value),
+            EnhancedInfrastructureMetrics::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

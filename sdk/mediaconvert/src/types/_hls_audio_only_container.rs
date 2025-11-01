@@ -102,7 +102,7 @@ impl ::std::fmt::Display for HlsAudioOnlyContainer {
         match self {
             HlsAudioOnlyContainer::Automatic => write!(f, "AUTOMATIC"),
             HlsAudioOnlyContainer::M2Ts => write!(f, "M2TS"),
-            HlsAudioOnlyContainer::Unknown(value) => write!(f, "{}", value),
+            HlsAudioOnlyContainer::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

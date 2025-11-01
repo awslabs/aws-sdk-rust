@@ -168,7 +168,7 @@ impl ::std::fmt::Display for QueryTransactionEventType {
             QueryTransactionEventType::Erc721Transfer => write!(f, "ERC721_TRANSFER"),
             QueryTransactionEventType::EthTransfer => write!(f, "ETH_TRANSFER"),
             QueryTransactionEventType::InternalEthTransfer => write!(f, "INTERNAL_ETH_TRANSFER"),
-            QueryTransactionEventType::Unknown(value) => write!(f, "{}", value),
+            QueryTransactionEventType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

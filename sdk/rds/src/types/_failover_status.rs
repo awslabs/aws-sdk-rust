@@ -108,7 +108,7 @@ impl ::std::fmt::Display for FailoverStatus {
             FailoverStatus::Cancelling => write!(f, "cancelling"),
             FailoverStatus::FailingOver => write!(f, "failing-over"),
             FailoverStatus::Pending => write!(f, "pending"),
-            FailoverStatus::Unknown(value) => write!(f, "{}", value),
+            FailoverStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

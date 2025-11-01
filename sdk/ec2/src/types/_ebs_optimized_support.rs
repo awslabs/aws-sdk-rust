@@ -108,7 +108,7 @@ impl ::std::fmt::Display for EbsOptimizedSupport {
             EbsOptimizedSupport::Default => write!(f, "default"),
             EbsOptimizedSupport::Supported => write!(f, "supported"),
             EbsOptimizedSupport::Unsupported => write!(f, "unsupported"),
-            EbsOptimizedSupport::Unknown(value) => write!(f, "{}", value),
+            EbsOptimizedSupport::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

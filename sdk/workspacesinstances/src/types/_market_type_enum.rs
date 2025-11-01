@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MarketTypeEnum {
         match self {
             MarketTypeEnum::CapacityBlock => write!(f, "capacity-block"),
             MarketTypeEnum::Spot => write!(f, "spot"),
-            MarketTypeEnum::Unknown(value) => write!(f, "{}", value),
+            MarketTypeEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

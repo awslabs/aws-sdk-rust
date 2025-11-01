@@ -108,7 +108,7 @@ impl ::std::fmt::Display for Shape {
             Shape::Composite => write!(f, "Composite"),
             Shape::List => write!(f, "List"),
             Shape::Scalar => write!(f, "Scalar"),
-            Shape::Unknown(value) => write!(f, "{}", value),
+            Shape::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

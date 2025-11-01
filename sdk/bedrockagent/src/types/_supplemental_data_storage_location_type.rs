@@ -96,7 +96,7 @@ impl ::std::fmt::Display for SupplementalDataStorageLocationType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             SupplementalDataStorageLocationType::S3 => write!(f, "S3"),
-            SupplementalDataStorageLocationType::Unknown(value) => write!(f, "{}", value),
+            SupplementalDataStorageLocationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

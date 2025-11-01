@@ -114,7 +114,7 @@ impl ::std::fmt::Display for OriginRequestPolicyQueryStringBehavior {
             OriginRequestPolicyQueryStringBehavior::AllExcept => write!(f, "allExcept"),
             OriginRequestPolicyQueryStringBehavior::None => write!(f, "none"),
             OriginRequestPolicyQueryStringBehavior::Whitelist => write!(f, "whitelist"),
-            OriginRequestPolicyQueryStringBehavior::Unknown(value) => write!(f, "{}", value),
+            OriginRequestPolicyQueryStringBehavior::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

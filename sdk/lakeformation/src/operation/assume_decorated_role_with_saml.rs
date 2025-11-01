@@ -186,6 +186,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for AssumeDecora
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::assume_decorated_role_with_saml::AssumeDecoratedRoleWithSamlInput,
                 output: &mut ::std::string::String,

@@ -110,7 +110,7 @@ impl ::std::fmt::Display for AttachedFileInvalidRequestExceptionReason {
             AttachedFileInvalidRequestExceptionReason::InvalidFileName => write!(f, "INVALID_FILE_NAME"),
             AttachedFileInvalidRequestExceptionReason::InvalidFileSize => write!(f, "INVALID_FILE_SIZE"),
             AttachedFileInvalidRequestExceptionReason::InvalidFileType => write!(f, "INVALID_FILE_TYPE"),
-            AttachedFileInvalidRequestExceptionReason::Unknown(value) => write!(f, "{}", value),
+            AttachedFileInvalidRequestExceptionReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

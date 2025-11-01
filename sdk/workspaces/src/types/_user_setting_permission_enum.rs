@@ -102,7 +102,7 @@ impl ::std::fmt::Display for UserSettingPermissionEnum {
         match self {
             UserSettingPermissionEnum::Disabled => write!(f, "DISABLED"),
             UserSettingPermissionEnum::Enabled => write!(f, "ENABLED"),
-            UserSettingPermissionEnum::Unknown(value) => write!(f, "{}", value),
+            UserSettingPermissionEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

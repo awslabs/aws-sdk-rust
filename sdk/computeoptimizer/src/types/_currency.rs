@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Currency {
         match self {
             Currency::Cny => write!(f, "CNY"),
             Currency::Usd => write!(f, "USD"),
-            Currency::Unknown(value) => write!(f, "{}", value),
+            Currency::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

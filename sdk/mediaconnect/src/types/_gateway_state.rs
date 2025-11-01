@@ -126,7 +126,7 @@ impl ::std::fmt::Display for GatewayState {
             GatewayState::Deleting => write!(f, "DELETING"),
             GatewayState::Error => write!(f, "ERROR"),
             GatewayState::Updating => write!(f, "UPDATING"),
-            GatewayState::Unknown(value) => write!(f, "{}", value),
+            GatewayState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

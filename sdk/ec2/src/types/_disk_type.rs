@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DiskType {
         match self {
             DiskType::Hdd => write!(f, "hdd"),
             DiskType::Ssd => write!(f, "ssd"),
-            DiskType::Unknown(value) => write!(f, "{}", value),
+            DiskType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

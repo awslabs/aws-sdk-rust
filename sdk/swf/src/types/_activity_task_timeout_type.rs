@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ActivityTaskTimeoutType {
             ActivityTaskTimeoutType::ScheduleToClose => write!(f, "SCHEDULE_TO_CLOSE"),
             ActivityTaskTimeoutType::ScheduleToStart => write!(f, "SCHEDULE_TO_START"),
             ActivityTaskTimeoutType::StartToClose => write!(f, "START_TO_CLOSE"),
-            ActivityTaskTimeoutType::Unknown(value) => write!(f, "{}", value),
+            ActivityTaskTimeoutType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

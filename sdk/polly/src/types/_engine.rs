@@ -114,7 +114,7 @@ impl ::std::fmt::Display for Engine {
             Engine::LongForm => write!(f, "long-form"),
             Engine::Neural => write!(f, "neural"),
             Engine::Standard => write!(f, "standard"),
-            Engine::Unknown(value) => write!(f, "{}", value),
+            Engine::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

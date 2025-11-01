@@ -147,7 +147,7 @@ impl ::std::fmt::Display for KubernetesResourcesTypes {
             KubernetesResourcesTypes::Replicasets => write!(f, "REPLICASETS"),
             KubernetesResourcesTypes::Replicationcontrollers => write!(f, "REPLICATIONCONTROLLERS"),
             KubernetesResourcesTypes::Statefulsets => write!(f, "STATEFULSETS"),
-            KubernetesResourcesTypes::Unknown(value) => write!(f, "{}", value),
+            KubernetesResourcesTypes::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

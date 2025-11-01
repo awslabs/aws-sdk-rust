@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ExecuteCommandLogging {
             ExecuteCommandLogging::Default => write!(f, "DEFAULT"),
             ExecuteCommandLogging::None => write!(f, "NONE"),
             ExecuteCommandLogging::Override => write!(f, "OVERRIDE"),
-            ExecuteCommandLogging::Unknown(value) => write!(f, "{}", value),
+            ExecuteCommandLogging::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

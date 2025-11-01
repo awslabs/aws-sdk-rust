@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ParticipantTimerAction {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ParticipantTimerAction::Unset => write!(f, "Unset"),
-            ParticipantTimerAction::Unknown(value) => write!(f, "{}", value),
+            ParticipantTimerAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

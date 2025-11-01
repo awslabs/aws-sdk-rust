@@ -179,7 +179,7 @@ impl ::std::fmt::Display for HandshakeConstraintViolationExceptionReason {
                 write!(f, "ORGANIZATION_MEMBERSHIP_CHANGE_RATE_LIMIT_EXCEEDED")
             }
             HandshakeConstraintViolationExceptionReason::PaymentInstrumentRequired => write!(f, "PAYMENT_INSTRUMENT_REQUIRED"),
-            HandshakeConstraintViolationExceptionReason::Unknown(value) => write!(f, "{}", value),
+            HandshakeConstraintViolationExceptionReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

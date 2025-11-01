@@ -219,7 +219,7 @@ impl ::std::fmt::Display for AssetBundleExportJobDataSourcePropertyToOverride {
             AssetBundleExportJobDataSourcePropertyToOverride::Username => write!(f, "Username"),
             AssetBundleExportJobDataSourcePropertyToOverride::Warehouse => write!(f, "Warehouse"),
             AssetBundleExportJobDataSourcePropertyToOverride::WorkGroup => write!(f, "WorkGroup"),
-            AssetBundleExportJobDataSourcePropertyToOverride::Unknown(value) => write!(f, "{}", value),
+            AssetBundleExportJobDataSourcePropertyToOverride::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

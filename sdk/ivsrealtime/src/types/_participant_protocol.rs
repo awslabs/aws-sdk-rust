@@ -116,7 +116,7 @@ impl ::std::fmt::Display for ParticipantProtocol {
             ParticipantProtocol::Rtmps => write!(f, "RTMPS"),
             ParticipantProtocol::UnknownValue => write!(f, "UNKNOWN"),
             ParticipantProtocol::Whip => write!(f, "WHIP"),
-            ParticipantProtocol::Unknown(value) => write!(f, "{}", value),
+            ParticipantProtocol::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

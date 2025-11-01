@@ -102,7 +102,7 @@ impl ::std::fmt::Display for IngestProtocol {
         match self {
             IngestProtocol::Rtmp => write!(f, "RTMP"),
             IngestProtocol::Rtmps => write!(f, "RTMPS"),
-            IngestProtocol::Unknown(value) => write!(f, "{}", value),
+            IngestProtocol::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

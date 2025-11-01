@@ -133,7 +133,7 @@ impl ::std::fmt::Display for ShardFilterType {
             ShardFilterType::AtTrimHorizon => write!(f, "AT_TRIM_HORIZON"),
             ShardFilterType::FromTimestamp => write!(f, "FROM_TIMESTAMP"),
             ShardFilterType::FromTrimHorizon => write!(f, "FROM_TRIM_HORIZON"),
-            ShardFilterType::Unknown(value) => write!(f, "{}", value),
+            ShardFilterType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

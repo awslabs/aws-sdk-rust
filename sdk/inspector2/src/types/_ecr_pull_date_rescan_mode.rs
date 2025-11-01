@@ -102,7 +102,7 @@ impl ::std::fmt::Display for EcrPullDateRescanMode {
         match self {
             EcrPullDateRescanMode::LastInUseAt => write!(f, "LAST_IN_USE_AT"),
             EcrPullDateRescanMode::LastPullDate => write!(f, "LAST_PULL_DATE"),
-            EcrPullDateRescanMode::Unknown(value) => write!(f, "{}", value),
+            EcrPullDateRescanMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

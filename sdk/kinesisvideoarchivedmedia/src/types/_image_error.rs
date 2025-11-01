@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ImageError {
         match self {
             ImageError::MediaError => write!(f, "MEDIA_ERROR"),
             ImageError::NoMedia => write!(f, "NO_MEDIA"),
-            ImageError::Unknown(value) => write!(f, "{}", value),
+            ImageError::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RebootOption {
         match self {
             RebootOption::NoReboot => write!(f, "NoReboot"),
             RebootOption::RebootIfNeeded => write!(f, "RebootIfNeeded"),
-            RebootOption::Unknown(value) => write!(f, "{}", value),
+            RebootOption::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

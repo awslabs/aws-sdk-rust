@@ -120,7 +120,7 @@ impl ::std::fmt::Display for EventType {
             EventType::ExecuteAction => write!(f, "EXECUTE_ACTION"),
             EventType::System => write!(f, "SYSTEM"),
             EventType::UpdateAction => write!(f, "UPDATE_ACTION"),
-            EventType::Unknown(value) => write!(f, "{}", value),
+            EventType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

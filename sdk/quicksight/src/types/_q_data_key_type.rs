@@ -102,7 +102,7 @@ impl ::std::fmt::Display for QDataKeyType {
         match self {
             QDataKeyType::AwsOwned => write!(f, "AWS_OWNED"),
             QDataKeyType::Cmk => write!(f, "CMK"),
-            QDataKeyType::Unknown(value) => write!(f, "{}", value),
+            QDataKeyType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

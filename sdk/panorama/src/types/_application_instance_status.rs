@@ -168,7 +168,7 @@ impl ::std::fmt::Display for ApplicationInstanceStatus {
             ApplicationInstanceStatus::RemovalPending => write!(f, "REMOVAL_PENDING"),
             ApplicationInstanceStatus::RemovalRequested => write!(f, "REMOVAL_REQUESTED"),
             ApplicationInstanceStatus::RemovalSucceeded => write!(f, "REMOVAL_SUCCEEDED"),
-            ApplicationInstanceStatus::Unknown(value) => write!(f, "{}", value),
+            ApplicationInstanceStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

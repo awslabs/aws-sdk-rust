@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ThirdPartyFirewall {
         match self {
             ThirdPartyFirewall::FortigateCloudNativeFirewall => write!(f, "FORTIGATE_CLOUD_NATIVE_FIREWALL"),
             ThirdPartyFirewall::PaloAltoNetworksCloudNgfw => write!(f, "PALO_ALTO_NETWORKS_CLOUD_NGFW"),
-            ThirdPartyFirewall::Unknown(value) => write!(f, "{}", value),
+            ThirdPartyFirewall::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

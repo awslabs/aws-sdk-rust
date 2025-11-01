@@ -85,7 +85,7 @@ pub fn de_s3_storage(
                         ::aws_smithy_types::base64::decode(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                         )
-                        .map_err(|err|::aws_smithy_xml::decode::XmlDecodeError::custom(format!("invalid base64: {:?}", err))).map(::aws_smithy_types::Blob::new)
+                        .map_err(|err|::aws_smithy_xml::decode::XmlDecodeError::custom(format!("invalid base64: {err:?}"))).map(::aws_smithy_types::Blob::new)
                         ?
                     )
                 ;

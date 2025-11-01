@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ValidateStateMachineDefinitionSeverity {
         match self {
             ValidateStateMachineDefinitionSeverity::Error => write!(f, "ERROR"),
             ValidateStateMachineDefinitionSeverity::Warning => write!(f, "WARNING"),
-            ValidateStateMachineDefinitionSeverity::Unknown(value) => write!(f, "{}", value),
+            ValidateStateMachineDefinitionSeverity::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

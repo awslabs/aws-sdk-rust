@@ -54,8 +54,7 @@ pub fn de_describe_capacity_reservation_billing_requests(
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeCapacityReservationBillingRequestsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected DescribeCapacityReservationBillingRequestsResponse got {:?}",
-            start_el
+            "invalid root, expected DescribeCapacityReservationBillingRequestsResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

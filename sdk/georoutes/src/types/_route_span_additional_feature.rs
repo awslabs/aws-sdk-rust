@@ -259,7 +259,7 @@ impl ::std::fmt::Display for RouteSpanAdditionalFeature {
             RouteSpanAdditionalFeature::TruckRoadTypes => write!(f, "TruckRoadTypes"),
             RouteSpanAdditionalFeature::TypicalDuration => write!(f, "TypicalDuration"),
             RouteSpanAdditionalFeature::Zones => write!(f, "Zones"),
-            RouteSpanAdditionalFeature::Unknown(value) => write!(f, "{}", value),
+            RouteSpanAdditionalFeature::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

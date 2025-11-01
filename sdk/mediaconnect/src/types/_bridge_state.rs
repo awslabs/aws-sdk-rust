@@ -175,7 +175,7 @@ impl ::std::fmt::Display for BridgeState {
             BridgeState::Stopping => write!(f, "STOPPING"),
             BridgeState::StopFailed => write!(f, "STOP_FAILED"),
             BridgeState::Updating => write!(f, "UPDATING"),
-            BridgeState::Unknown(value) => write!(f, "{}", value),
+            BridgeState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

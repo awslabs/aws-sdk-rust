@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FolderType {
         match self {
             FolderType::Restricted => write!(f, "RESTRICTED"),
             FolderType::Shared => write!(f, "SHARED"),
-            FolderType::Unknown(value) => write!(f, "{}", value),
+            FolderType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

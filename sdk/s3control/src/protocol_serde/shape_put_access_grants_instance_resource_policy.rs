@@ -87,10 +87,11 @@ pub fn de_put_access_grants_instance_resource_policy(
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !start_el.matches("PutAccessGrantsInstanceResourcePolicyResult") {
-        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "encountered invalid XML root: expected PutAccessGrantsInstanceResourcePolicyResult but got {:?}. This is likely a bug in the SDK.",
-            start_el
-        )));
+        return Err(
+                                ::aws_smithy_xml::decode::XmlDecodeError::custom(
+                                    format!("encountered invalid XML root: expected PutAccessGrantsInstanceResourcePolicyResult but got {start_el:?}. This is likely a bug in the SDK.")
+                                )
+                            );
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {

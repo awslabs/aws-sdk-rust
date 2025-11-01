@@ -102,7 +102,7 @@ impl ::std::fmt::Display for InstanceGeneration {
         match self {
             InstanceGeneration::Current => write!(f, "current"),
             InstanceGeneration::Previous => write!(f, "previous"),
-            InstanceGeneration::Unknown(value) => write!(f, "{}", value),
+            InstanceGeneration::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

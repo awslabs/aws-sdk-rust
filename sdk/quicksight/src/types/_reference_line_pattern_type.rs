@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ReferenceLinePatternType {
             ReferenceLinePatternType::Dashed => write!(f, "DASHED"),
             ReferenceLinePatternType::Dotted => write!(f, "DOTTED"),
             ReferenceLinePatternType::Solid => write!(f, "SOLID"),
-            ReferenceLinePatternType::Unknown(value) => write!(f, "{}", value),
+            ReferenceLinePatternType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

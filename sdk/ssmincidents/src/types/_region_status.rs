@@ -114,7 +114,7 @@ impl ::std::fmt::Display for RegionStatus {
             RegionStatus::Creating => write!(f, "CREATING"),
             RegionStatus::Deleting => write!(f, "DELETING"),
             RegionStatus::Failed => write!(f, "FAILED"),
-            RegionStatus::Unknown(value) => write!(f, "{}", value),
+            RegionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

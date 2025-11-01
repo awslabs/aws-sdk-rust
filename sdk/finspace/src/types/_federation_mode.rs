@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FederationMode {
         match self {
             FederationMode::Federated => write!(f, "FEDERATED"),
             FederationMode::Local => write!(f, "LOCAL"),
-            FederationMode::Unknown(value) => write!(f, "{}", value),
+            FederationMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

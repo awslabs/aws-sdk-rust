@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RuleIpOperator {
         match self {
             RuleIpOperator::CidrMatches => write!(f, "CIDR_MATCHES"),
             RuleIpOperator::NotCidrMatches => write!(f, "NOT_CIDR_MATCHES"),
-            RuleIpOperator::Unknown(value) => write!(f, "{}", value),
+            RuleIpOperator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DataQualityEncryptionMode {
         match self {
             DataQualityEncryptionMode::Disabled => write!(f, "DISABLED"),
             DataQualityEncryptionMode::Ssekms => write!(f, "SSE-KMS"),
-            DataQualityEncryptionMode::Unknown(value) => write!(f, "{}", value),
+            DataQualityEncryptionMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

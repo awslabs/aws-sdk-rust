@@ -161,7 +161,7 @@ impl ::std::fmt::Display for TopicIrFilterFunction {
             TopicIrFilterFunction::Previous => write!(f, "PREVIOUS"),
             TopicIrFilterFunction::StartsWith => write!(f, "STARTS_WITH"),
             TopicIrFilterFunction::This => write!(f, "THIS"),
-            TopicIrFilterFunction::Unknown(value) => write!(f, "{}", value),
+            TopicIrFilterFunction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

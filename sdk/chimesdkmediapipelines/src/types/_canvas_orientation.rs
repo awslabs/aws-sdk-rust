@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CanvasOrientation {
         match self {
             CanvasOrientation::Landscape => write!(f, "Landscape"),
             CanvasOrientation::Portrait => write!(f, "Portrait"),
-            CanvasOrientation::Unknown(value) => write!(f, "{}", value),
+            CanvasOrientation::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

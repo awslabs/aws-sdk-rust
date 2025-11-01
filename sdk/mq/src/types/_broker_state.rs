@@ -140,7 +140,7 @@ impl ::std::fmt::Display for BrokerState {
             BrokerState::RebootInProgress => write!(f, "REBOOT_IN_PROGRESS"),
             BrokerState::Replica => write!(f, "REPLICA"),
             BrokerState::Running => write!(f, "RUNNING"),
-            BrokerState::Unknown(value) => write!(f, "{}", value),
+            BrokerState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

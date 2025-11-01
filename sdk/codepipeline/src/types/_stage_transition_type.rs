@@ -102,7 +102,7 @@ impl ::std::fmt::Display for StageTransitionType {
         match self {
             StageTransitionType::Inbound => write!(f, "Inbound"),
             StageTransitionType::Outbound => write!(f, "Outbound"),
-            StageTransitionType::Unknown(value) => write!(f, "{}", value),
+            StageTransitionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for RecoveryOptionNameType {
             RecoveryOptionNameType::AdminOnly => write!(f, "admin_only"),
             RecoveryOptionNameType::VerifiedEmail => write!(f, "verified_email"),
             RecoveryOptionNameType::VerifiedPhoneNumber => write!(f, "verified_phone_number"),
-            RecoveryOptionNameType::Unknown(value) => write!(f, "{}", value),
+            RecoveryOptionNameType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

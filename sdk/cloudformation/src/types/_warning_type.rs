@@ -126,7 +126,7 @@ impl ::std::fmt::Display for WarningType {
             WarningType::MutuallyExclusiveProperties => write!(f, "MUTUALLY_EXCLUSIVE_PROPERTIES"),
             WarningType::MutuallyExclusiveTypes => write!(f, "MUTUALLY_EXCLUSIVE_TYPES"),
             WarningType::UnsupportedProperties => write!(f, "UNSUPPORTED_PROPERTIES"),
-            WarningType::Unknown(value) => write!(f, "{}", value),
+            WarningType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

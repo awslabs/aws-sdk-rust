@@ -175,7 +175,7 @@ impl ::std::fmt::Display for SchedulerResourceStatus {
             SchedulerResourceStatus::UpdateRollbackFailed => write!(f, "UpdateRollbackFailed"),
             SchedulerResourceStatus::Updated => write!(f, "Updated"),
             SchedulerResourceStatus::Updating => write!(f, "Updating"),
-            SchedulerResourceStatus::Unknown(value) => write!(f, "{}", value),
+            SchedulerResourceStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -133,7 +133,7 @@ impl ::std::fmt::Display for ValidatePolicyResourceType {
             ValidatePolicyResourceType::S3Bucket => write!(f, "AWS::S3::Bucket"),
             ValidatePolicyResourceType::S3MultiRegionAccessPoint => write!(f, "AWS::S3::MultiRegionAccessPoint"),
             ValidatePolicyResourceType::S3ObjectLambdaAccessPoint => write!(f, "AWS::S3ObjectLambda::AccessPoint"),
-            ValidatePolicyResourceType::Unknown(value) => write!(f, "{}", value),
+            ValidatePolicyResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

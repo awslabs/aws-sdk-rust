@@ -22,8 +22,7 @@ pub fn de_get_bucket_metadata_table_configuration_result(
     let start_el = decoder.start_el();
     if !(start_el.matches("GetBucketMetadataTableConfigurationResult")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected GetBucketMetadataTableConfigurationResult got {:?}",
-            start_el
+            "invalid root, expected GetBucketMetadataTableConfigurationResult got {start_el:?}"
         )));
     }
     crate::protocol_serde::shape_get_bucket_metadata_table_configuration_result::de_get_bucket_metadata_table_configuration_result(&mut decoder)

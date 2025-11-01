@@ -120,7 +120,7 @@ impl ::std::fmt::Display for FileCacheLifecycle {
             FileCacheLifecycle::Deleting => write!(f, "DELETING"),
             FileCacheLifecycle::Failed => write!(f, "FAILED"),
             FileCacheLifecycle::Updating => write!(f, "UPDATING"),
-            FileCacheLifecycle::Unknown(value) => write!(f, "{}", value),
+            FileCacheLifecycle::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

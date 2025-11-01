@@ -96,7 +96,7 @@ impl ::std::fmt::Display for AttachmentUploadErrorReason {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             AttachmentUploadErrorReason::InternalError => write!(f, "INTERNAL_ERROR"),
-            AttachmentUploadErrorReason::Unknown(value) => write!(f, "{}", value),
+            AttachmentUploadErrorReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

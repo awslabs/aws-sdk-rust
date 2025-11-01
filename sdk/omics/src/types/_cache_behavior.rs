@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CacheBehavior {
         match self {
             CacheBehavior::CacheAlways => write!(f, "CACHE_ALWAYS"),
             CacheBehavior::CacheOnFailure => write!(f, "CACHE_ON_FAILURE"),
-            CacheBehavior::Unknown(value) => write!(f, "{}", value),
+            CacheBehavior::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

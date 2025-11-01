@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ResolverQueryLogConfigAssociationError {
             ResolverQueryLogConfigAssociationError::DestinationNotFound => write!(f, "DESTINATION_NOT_FOUND"),
             ResolverQueryLogConfigAssociationError::InternalServiceError => write!(f, "INTERNAL_SERVICE_ERROR"),
             ResolverQueryLogConfigAssociationError::None => write!(f, "NONE"),
-            ResolverQueryLogConfigAssociationError::Unknown(value) => write!(f, "{}", value),
+            ResolverQueryLogConfigAssociationError::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

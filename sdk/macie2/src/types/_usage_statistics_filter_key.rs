@@ -114,7 +114,7 @@ impl ::std::fmt::Display for UsageStatisticsFilterKey {
             UsageStatisticsFilterKey::FreeTrialStartDate => write!(f, "freeTrialStartDate"),
             UsageStatisticsFilterKey::ServiceLimit => write!(f, "serviceLimit"),
             UsageStatisticsFilterKey::Total => write!(f, "total"),
-            UsageStatisticsFilterKey::Unknown(value) => write!(f, "{}", value),
+            UsageStatisticsFilterKey::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -96,7 +96,7 @@ impl ::std::fmt::Display for NodeAggregatorType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             NodeAggregatorType::Count => write!(f, "Count"),
-            NodeAggregatorType::Unknown(value) => write!(f, "{}", value),
+            NodeAggregatorType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

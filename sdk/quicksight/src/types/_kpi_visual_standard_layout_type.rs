@@ -102,7 +102,7 @@ impl ::std::fmt::Display for KpiVisualStandardLayoutType {
         match self {
             KpiVisualStandardLayoutType::Classic => write!(f, "CLASSIC"),
             KpiVisualStandardLayoutType::Vertical => write!(f, "VERTICAL"),
-            KpiVisualStandardLayoutType::Unknown(value) => write!(f, "{}", value),
+            KpiVisualStandardLayoutType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

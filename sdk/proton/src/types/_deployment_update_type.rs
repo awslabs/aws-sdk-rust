@@ -114,7 +114,7 @@ impl ::std::fmt::Display for DeploymentUpdateType {
             DeploymentUpdateType::MajorVersion => write!(f, "MAJOR_VERSION"),
             DeploymentUpdateType::MinorVersion => write!(f, "MINOR_VERSION"),
             DeploymentUpdateType::None => write!(f, "NONE"),
-            DeploymentUpdateType::Unknown(value) => write!(f, "{}", value),
+            DeploymentUpdateType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

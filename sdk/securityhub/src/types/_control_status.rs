@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ControlStatus {
         match self {
             ControlStatus::Disabled => write!(f, "DISABLED"),
             ControlStatus::Enabled => write!(f, "ENABLED"),
-            ControlStatus::Unknown(value) => write!(f, "{}", value),
+            ControlStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

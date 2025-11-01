@@ -108,7 +108,7 @@ impl ::std::fmt::Display for Direction {
             Direction::Ascendants => write!(f, "Ascendants"),
             Direction::Both => write!(f, "Both"),
             Direction::Descendants => write!(f, "Descendants"),
-            Direction::Unknown(value) => write!(f, "{}", value),
+            Direction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -96,7 +96,7 @@ impl ::std::fmt::Display for NotebookType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             NotebookType::Ipynb => write!(f, "IPYNB"),
-            NotebookType::Unknown(value) => write!(f, "{}", value),
+            NotebookType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RenewalType {
         match self {
             RenewalType::AutoRenew => write!(f, "AUTO_RENEW"),
             RenewalType::Expire => write!(f, "EXPIRE"),
-            RenewalType::Unknown(value) => write!(f, "{}", value),
+            RenewalType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AccountJoinedMethod {
         match self {
             AccountJoinedMethod::Created => write!(f, "CREATED"),
             AccountJoinedMethod::Invited => write!(f, "INVITED"),
-            AccountJoinedMethod::Unknown(value) => write!(f, "{}", value),
+            AccountJoinedMethod::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

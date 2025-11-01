@@ -210,7 +210,7 @@ impl ::std::fmt::Display for SalesforceStandardObjectName {
             SalesforceStandardObjectName::Solution => write!(f, "SOLUTION"),
             SalesforceStandardObjectName::Task => write!(f, "TASK"),
             SalesforceStandardObjectName::User => write!(f, "USER"),
-            SalesforceStandardObjectName::Unknown(value) => write!(f, "{}", value),
+            SalesforceStandardObjectName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

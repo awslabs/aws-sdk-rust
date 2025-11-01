@@ -51,8 +51,7 @@ pub fn de_associate_client_vpn_target_network(
     let start_el = decoder.start_el();
     if !(start_el.matches("AssociateClientVpnTargetNetworkResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected AssociateClientVpnTargetNetworkResponse got {:?}",
-            start_el
+            "invalid root, expected AssociateClientVpnTargetNetworkResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

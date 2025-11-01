@@ -2299,6 +2299,68 @@ impl From<crate::operation::create_ipam_pool::CreateIpamPoolError> for Error {
     }
 }
 impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_ipam_prefix_list_resolver::CreateIpamPrefixListResolverError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_ipam_prefix_list_resolver::CreateIpamPrefixListResolverError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_ipam_prefix_list_resolver::CreateIpamPrefixListResolverError> for Error {
+    fn from(err: crate::operation::create_ipam_prefix_list_resolver::CreateIpamPrefixListResolverError) -> Self {
+        match err {
+            crate::operation::create_ipam_prefix_list_resolver::CreateIpamPrefixListResolverError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_ipam_prefix_list_resolver_target::CreateIpamPrefixListResolverTargetError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_ipam_prefix_list_resolver_target::CreateIpamPrefixListResolverTargetError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_ipam_prefix_list_resolver_target::CreateIpamPrefixListResolverTargetError> for Error {
+    fn from(err: crate::operation::create_ipam_prefix_list_resolver_target::CreateIpamPrefixListResolverTargetError) -> Self {
+        match err {
+            crate::operation::create_ipam_prefix_list_resolver_target::CreateIpamPrefixListResolverTargetError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
     From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_ipam_resource_discovery::CreateIpamResourceDiscoveryError, R>>
     for Error
 where
@@ -4521,6 +4583,68 @@ impl From<crate::operation::delete_ipam_pool::DeleteIpamPoolError> for Error {
     fn from(err: crate::operation::delete_ipam_pool::DeleteIpamPoolError) -> Self {
         match err {
             crate::operation::delete_ipam_pool::DeleteIpamPoolError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_ipam_prefix_list_resolver::DeleteIpamPrefixListResolverError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_ipam_prefix_list_resolver::DeleteIpamPrefixListResolverError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_ipam_prefix_list_resolver::DeleteIpamPrefixListResolverError> for Error {
+    fn from(err: crate::operation::delete_ipam_prefix_list_resolver::DeleteIpamPrefixListResolverError) -> Self {
+        match err {
+            crate::operation::delete_ipam_prefix_list_resolver::DeleteIpamPrefixListResolverError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_ipam_prefix_list_resolver_target::DeleteIpamPrefixListResolverTargetError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_ipam_prefix_list_resolver_target::DeleteIpamPrefixListResolverTargetError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_ipam_prefix_list_resolver_target::DeleteIpamPrefixListResolverTargetError> for Error {
+    fn from(err: crate::operation::delete_ipam_prefix_list_resolver_target::DeleteIpamPrefixListResolverTargetError) -> Self {
+        match err {
+            crate::operation::delete_ipam_prefix_list_resolver_target::DeleteIpamPrefixListResolverTargetError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -8307,6 +8431,72 @@ impl From<crate::operation::describe_ipam_pools::DescribeIpamPoolsError> for Err
     fn from(err: crate::operation::describe_ipam_pools::DescribeIpamPoolsError) -> Self {
         match err {
             crate::operation::describe_ipam_pools::DescribeIpamPoolsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_ipam_prefix_list_resolvers::DescribeIpamPrefixListResolversError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_ipam_prefix_list_resolvers::DescribeIpamPrefixListResolversError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_ipam_prefix_list_resolvers::DescribeIpamPrefixListResolversError> for Error {
+    fn from(err: crate::operation::describe_ipam_prefix_list_resolvers::DescribeIpamPrefixListResolversError) -> Self {
+        match err {
+            crate::operation::describe_ipam_prefix_list_resolvers::DescribeIpamPrefixListResolversError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_ipam_prefix_list_resolver_targets::DescribeIpamPrefixListResolverTargetsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_ipam_prefix_list_resolver_targets::DescribeIpamPrefixListResolverTargetsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_ipam_prefix_list_resolver_targets::DescribeIpamPrefixListResolverTargetsError> for Error {
+    fn from(err: crate::operation::describe_ipam_prefix_list_resolver_targets::DescribeIpamPrefixListResolverTargetsError) -> Self {
+        match err {
+            crate::operation::describe_ipam_prefix_list_resolver_targets::DescribeIpamPrefixListResolverTargetsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -13931,6 +14121,106 @@ impl From<crate::operation::get_ipam_pool_cidrs::GetIpamPoolCidrsError> for Erro
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_ipam_prefix_list_resolver_rules::GetIpamPrefixListResolverRulesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_ipam_prefix_list_resolver_rules::GetIpamPrefixListResolverRulesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_ipam_prefix_list_resolver_rules::GetIpamPrefixListResolverRulesError> for Error {
+    fn from(err: crate::operation::get_ipam_prefix_list_resolver_rules::GetIpamPrefixListResolverRulesError) -> Self {
+        match err {
+            crate::operation::get_ipam_prefix_list_resolver_rules::GetIpamPrefixListResolverRulesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_ipam_prefix_list_resolver_version_entries::GetIpamPrefixListResolverVersionEntriesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_ipam_prefix_list_resolver_version_entries::GetIpamPrefixListResolverVersionEntriesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_ipam_prefix_list_resolver_version_entries::GetIpamPrefixListResolverVersionEntriesError> for Error {
+    fn from(err: crate::operation::get_ipam_prefix_list_resolver_version_entries::GetIpamPrefixListResolverVersionEntriesError) -> Self {
+        match err {
+            crate::operation::get_ipam_prefix_list_resolver_version_entries::GetIpamPrefixListResolverVersionEntriesError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_ipam_prefix_list_resolver_versions::GetIpamPrefixListResolverVersionsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_ipam_prefix_list_resolver_versions::GetIpamPrefixListResolverVersionsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_ipam_prefix_list_resolver_versions::GetIpamPrefixListResolverVersionsError> for Error {
+    fn from(err: crate::operation::get_ipam_prefix_list_resolver_versions::GetIpamPrefixListResolverVersionsError) -> Self {
+        match err {
+            crate::operation::get_ipam_prefix_list_resolver_versions::GetIpamPrefixListResolverVersionsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_ipam_resource_cidrs::GetIpamResourceCidrsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -15716,6 +16006,68 @@ impl From<crate::operation::modify_ipam_pool::ModifyIpamPoolError> for Error {
     fn from(err: crate::operation::modify_ipam_pool::ModifyIpamPoolError) -> Self {
         match err {
             crate::operation::modify_ipam_pool::ModifyIpamPoolError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::modify_ipam_prefix_list_resolver::ModifyIpamPrefixListResolverError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::modify_ipam_prefix_list_resolver::ModifyIpamPrefixListResolverError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::modify_ipam_prefix_list_resolver::ModifyIpamPrefixListResolverError> for Error {
+    fn from(err: crate::operation::modify_ipam_prefix_list_resolver::ModifyIpamPrefixListResolverError) -> Self {
+        match err {
+            crate::operation::modify_ipam_prefix_list_resolver::ModifyIpamPrefixListResolverError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::modify_ipam_prefix_list_resolver_target::ModifyIpamPrefixListResolverTargetError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::modify_ipam_prefix_list_resolver_target::ModifyIpamPrefixListResolverTargetError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::modify_ipam_prefix_list_resolver_target::ModifyIpamPrefixListResolverTargetError> for Error {
+    fn from(err: crate::operation::modify_ipam_prefix_list_resolver_target::ModifyIpamPrefixListResolverTargetError) -> Self {
+        match err {
+            crate::operation::modify_ipam_prefix_list_resolver_target::ModifyIpamPrefixListResolverTargetError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for DiskImageFormat {
             DiskImageFormat::Raw => write!(f, "RAW"),
             DiskImageFormat::Vhd => write!(f, "VHD"),
             DiskImageFormat::Vmdk => write!(f, "VMDK"),
-            DiskImageFormat::Unknown(value) => write!(f, "{}", value),
+            DiskImageFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

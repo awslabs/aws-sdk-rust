@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ActiveDirectoryType {
         match self {
             ActiveDirectoryType::AwsManaged => write!(f, "AWS_MANAGED"),
             ActiveDirectoryType::SelfManaged => write!(f, "SELF_MANAGED"),
-            ActiveDirectoryType::Unknown(value) => write!(f, "{}", value),
+            ActiveDirectoryType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

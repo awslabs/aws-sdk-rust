@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MfaTypesElement {
         match self {
             MfaTypesElement::Sms => write!(f, "SMS"),
             MfaTypesElement::Totp => write!(f, "TOTP"),
-            MfaTypesElement::Unknown(value) => write!(f, "{}", value),
+            MfaTypesElement::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

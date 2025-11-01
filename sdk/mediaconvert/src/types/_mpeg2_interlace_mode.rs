@@ -120,7 +120,7 @@ impl ::std::fmt::Display for Mpeg2InterlaceMode {
             Mpeg2InterlaceMode::FollowTopField => write!(f, "FOLLOW_TOP_FIELD"),
             Mpeg2InterlaceMode::Progressive => write!(f, "PROGRESSIVE"),
             Mpeg2InterlaceMode::TopField => write!(f, "TOP_FIELD"),
-            Mpeg2InterlaceMode::Unknown(value) => write!(f, "{}", value),
+            Mpeg2InterlaceMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

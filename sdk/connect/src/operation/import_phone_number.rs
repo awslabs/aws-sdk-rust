@@ -187,6 +187,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ImportPhoneN
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::import_phone_number::ImportPhoneNumberInput,
                 output: &mut ::std::string::String,

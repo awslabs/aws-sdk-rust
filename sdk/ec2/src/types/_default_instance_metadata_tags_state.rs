@@ -108,7 +108,7 @@ impl ::std::fmt::Display for DefaultInstanceMetadataTagsState {
             DefaultInstanceMetadataTagsState::Disabled => write!(f, "disabled"),
             DefaultInstanceMetadataTagsState::Enabled => write!(f, "enabled"),
             DefaultInstanceMetadataTagsState::NoPreference => write!(f, "no-preference"),
-            DefaultInstanceMetadataTagsState::Unknown(value) => write!(f, "{}", value),
+            DefaultInstanceMetadataTagsState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

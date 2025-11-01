@@ -96,7 +96,7 @@ impl ::std::fmt::Display for Terrain {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             Terrain::Hillshade => write!(f, "Hillshade"),
-            Terrain::Unknown(value) => write!(f, "{}", value),
+            Terrain::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

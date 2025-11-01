@@ -102,7 +102,7 @@ impl ::std::fmt::Display for BooleanEnumType {
         match self {
             BooleanEnumType::False => write!(f, "FALSE"),
             BooleanEnumType::True => write!(f, "TRUE"),
-            BooleanEnumType::Unknown(value) => write!(f, "{}", value),
+            BooleanEnumType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

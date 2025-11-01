@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Decision {
         match self {
             Decision::Allow => write!(f, "ALLOW"),
             Decision::Deny => write!(f, "DENY"),
-            Decision::Unknown(value) => write!(f, "{}", value),
+            Decision::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

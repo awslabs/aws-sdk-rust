@@ -161,7 +161,7 @@ impl ::std::fmt::Display for ResourceAttributeType {
             ResourceAttributeType::VmManagerId => write!(f, "VM_MANAGER_ID"),
             ResourceAttributeType::VmName => write!(f, "VM_NAME"),
             ResourceAttributeType::VmPath => write!(f, "VM_PATH"),
-            ResourceAttributeType::Unknown(value) => write!(f, "{}", value),
+            ResourceAttributeType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

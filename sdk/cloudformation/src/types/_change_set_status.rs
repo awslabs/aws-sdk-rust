@@ -147,7 +147,7 @@ impl ::std::fmt::Display for ChangeSetStatus {
             ChangeSetStatus::DeleteInProgress => write!(f, "DELETE_IN_PROGRESS"),
             ChangeSetStatus::DeletePending => write!(f, "DELETE_PENDING"),
             ChangeSetStatus::Failed => write!(f, "FAILED"),
-            ChangeSetStatus::Unknown(value) => write!(f, "{}", value),
+            ChangeSetStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

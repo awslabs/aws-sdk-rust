@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ProjectDesignation {
             ProjectDesignation::Contributor => write!(f, "CONTRIBUTOR"),
             ProjectDesignation::Owner => write!(f, "OWNER"),
             ProjectDesignation::ProjectCatalogSteward => write!(f, "PROJECT_CATALOG_STEWARD"),
-            ProjectDesignation::Unknown(value) => write!(f, "{}", value),
+            ProjectDesignation::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

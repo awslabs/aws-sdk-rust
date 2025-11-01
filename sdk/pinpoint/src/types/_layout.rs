@@ -126,7 +126,7 @@ impl ::std::fmt::Display for Layout {
             Layout::MobileFeed => write!(f, "MOBILE_FEED"),
             Layout::Overlays => write!(f, "OVERLAYS"),
             Layout::TopBanner => write!(f, "TOP_BANNER"),
-            Layout::Unknown(value) => write!(f, "{}", value),
+            Layout::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

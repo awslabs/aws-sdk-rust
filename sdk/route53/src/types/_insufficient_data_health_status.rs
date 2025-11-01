@@ -108,7 +108,7 @@ impl ::std::fmt::Display for InsufficientDataHealthStatus {
             InsufficientDataHealthStatus::Healthy => write!(f, "Healthy"),
             InsufficientDataHealthStatus::LastKnownStatus => write!(f, "LastKnownStatus"),
             InsufficientDataHealthStatus::Unhealthy => write!(f, "Unhealthy"),
-            InsufficientDataHealthStatus::Unknown(value) => write!(f, "{}", value),
+            InsufficientDataHealthStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

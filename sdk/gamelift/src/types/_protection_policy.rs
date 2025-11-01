@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ProtectionPolicy {
         match self {
             ProtectionPolicy::FullProtection => write!(f, "FullProtection"),
             ProtectionPolicy::NoProtection => write!(f, "NoProtection"),
-            ProtectionPolicy::Unknown(value) => write!(f, "{}", value),
+            ProtectionPolicy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

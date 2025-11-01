@@ -190,6 +190,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for EnableApplic
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::enable_application_layer_automatic_response::EnableApplicationLayerAutomaticResponseInput,
                 output: &mut ::std::string::String,

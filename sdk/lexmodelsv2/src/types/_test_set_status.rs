@@ -120,7 +120,7 @@ impl ::std::fmt::Display for TestSetStatus {
             TestSetStatus::PendingAnnotation => write!(f, "PendingAnnotation"),
             TestSetStatus::Ready => write!(f, "Ready"),
             TestSetStatus::ValidationError => write!(f, "ValidationError"),
-            TestSetStatus::Unknown(value) => write!(f, "{}", value),
+            TestSetStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

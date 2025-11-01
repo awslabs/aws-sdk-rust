@@ -108,7 +108,7 @@ impl ::std::fmt::Display for FleetType {
             FleetType::Instant => write!(f, "instant"),
             FleetType::Maintain => write!(f, "maintain"),
             FleetType::Request => write!(f, "request"),
-            FleetType::Unknown(value) => write!(f, "{}", value),
+            FleetType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

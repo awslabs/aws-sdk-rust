@@ -102,7 +102,7 @@ impl ::std::fmt::Display for UncompressedFramerateControl {
         match self {
             UncompressedFramerateControl::InitializeFromSource => write!(f, "INITIALIZE_FROM_SOURCE"),
             UncompressedFramerateControl::Specified => write!(f, "SPECIFIED"),
-            UncompressedFramerateControl::Unknown(value) => write!(f, "{}", value),
+            UncompressedFramerateControl::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

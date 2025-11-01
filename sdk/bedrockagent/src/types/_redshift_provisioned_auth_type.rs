@@ -108,7 +108,7 @@ impl ::std::fmt::Display for RedshiftProvisionedAuthType {
             RedshiftProvisionedAuthType::Iam => write!(f, "IAM"),
             RedshiftProvisionedAuthType::Username => write!(f, "USERNAME"),
             RedshiftProvisionedAuthType::UsernamePassword => write!(f, "USERNAME_PASSWORD"),
-            RedshiftProvisionedAuthType::Unknown(value) => write!(f, "{}", value),
+            RedshiftProvisionedAuthType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RefreshScheduleStatus {
         match self {
             RefreshScheduleStatus::Disabled => write!(f, "DISABLED"),
             RefreshScheduleStatus::Enabled => write!(f, "ENABLED"),
-            RefreshScheduleStatus::Unknown(value) => write!(f, "{}", value),
+            RefreshScheduleStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

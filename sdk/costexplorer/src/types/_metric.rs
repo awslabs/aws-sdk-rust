@@ -140,7 +140,7 @@ impl ::std::fmt::Display for Metric {
             Metric::NormalizedUsageAmount => write!(f, "NORMALIZED_USAGE_AMOUNT"),
             Metric::UnblendedCost => write!(f, "UNBLENDED_COST"),
             Metric::UsageQuantity => write!(f, "USAGE_QUANTITY"),
-            Metric::Unknown(value) => write!(f, "{}", value),
+            Metric::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -147,7 +147,7 @@ impl ::std::fmt::Display for UpstreamRegistry {
             UpstreamRegistry::GitLabContainerRegistry => write!(f, "gitlab-container-registry"),
             UpstreamRegistry::K8s => write!(f, "k8s"),
             UpstreamRegistry::Quay => write!(f, "quay"),
-            UpstreamRegistry::Unknown(value) => write!(f, "{}", value),
+            UpstreamRegistry::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

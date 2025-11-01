@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MonitoringAlertStatus {
         match self {
             MonitoringAlertStatus::InAlert => write!(f, "InAlert"),
             MonitoringAlertStatus::Ok => write!(f, "OK"),
-            MonitoringAlertStatus::Unknown(value) => write!(f, "{}", value),
+            MonitoringAlertStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

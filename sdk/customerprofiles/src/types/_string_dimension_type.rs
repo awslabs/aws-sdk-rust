@@ -120,7 +120,7 @@ impl ::std::fmt::Display for StringDimensionType {
             StringDimensionType::EndsWith => write!(f, "ENDS_WITH"),
             StringDimensionType::Exclusive => write!(f, "EXCLUSIVE"),
             StringDimensionType::Inclusive => write!(f, "INCLUSIVE"),
-            StringDimensionType::Unknown(value) => write!(f, "{}", value),
+            StringDimensionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

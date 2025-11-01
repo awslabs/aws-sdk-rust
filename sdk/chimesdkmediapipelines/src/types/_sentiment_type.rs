@@ -96,7 +96,7 @@ impl ::std::fmt::Display for SentimentType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             SentimentType::Negative => write!(f, "NEGATIVE"),
-            SentimentType::Unknown(value) => write!(f, "{}", value),
+            SentimentType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

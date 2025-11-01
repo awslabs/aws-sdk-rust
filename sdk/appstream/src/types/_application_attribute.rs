@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ApplicationAttribute {
         match self {
             ApplicationAttribute::LaunchParameters => write!(f, "LAUNCH_PARAMETERS"),
             ApplicationAttribute::WorkingDirectory => write!(f, "WORKING_DIRECTORY"),
-            ApplicationAttribute::Unknown(value) => write!(f, "{}", value),
+            ApplicationAttribute::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -132,7 +132,7 @@ impl ::std::fmt::Display for TrustedEntitySetStatus {
             TrustedEntitySetStatus::DeletePending => write!(f, "DELETE_PENDING"),
             TrustedEntitySetStatus::Error => write!(f, "ERROR"),
             TrustedEntitySetStatus::Inactive => write!(f, "INACTIVE"),
-            TrustedEntitySetStatus::Unknown(value) => write!(f, "{}", value),
+            TrustedEntitySetStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

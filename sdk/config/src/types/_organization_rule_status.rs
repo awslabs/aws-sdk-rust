@@ -154,7 +154,7 @@ impl ::std::fmt::Display for OrganizationRuleStatus {
             OrganizationRuleStatus::UpdateFailed => write!(f, "UPDATE_FAILED"),
             OrganizationRuleStatus::UpdateInProgress => write!(f, "UPDATE_IN_PROGRESS"),
             OrganizationRuleStatus::UpdateSuccessful => write!(f, "UPDATE_SUCCESSFUL"),
-            OrganizationRuleStatus::Unknown(value) => write!(f, "{}", value),
+            OrganizationRuleStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

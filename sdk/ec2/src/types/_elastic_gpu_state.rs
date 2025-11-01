@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ElasticGpuState {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ElasticGpuState::Attached => write!(f, "ATTACHED"),
-            ElasticGpuState::Unknown(value) => write!(f, "{}", value),
+            ElasticGpuState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

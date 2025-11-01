@@ -96,7 +96,7 @@ impl ::std::fmt::Display for CustomSmsSenderLambdaVersionType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             CustomSmsSenderLambdaVersionType::V10 => write!(f, "V1_0"),
-            CustomSmsSenderLambdaVersionType::Unknown(value) => write!(f, "{}", value),
+            CustomSmsSenderLambdaVersionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

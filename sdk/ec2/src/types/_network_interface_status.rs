@@ -120,7 +120,7 @@ impl ::std::fmt::Display for NetworkInterfaceStatus {
             NetworkInterfaceStatus::Available => write!(f, "available"),
             NetworkInterfaceStatus::Detaching => write!(f, "detaching"),
             NetworkInterfaceStatus::InUse => write!(f, "in-use"),
-            NetworkInterfaceStatus::Unknown(value) => write!(f, "{}", value),
+            NetworkInterfaceStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

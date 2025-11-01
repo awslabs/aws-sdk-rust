@@ -154,7 +154,7 @@ impl ::std::fmt::Display for BatchPutAssetPropertyValueErrorCode {
             BatchPutAssetPropertyValueErrorCode::ServiceUnavailableException => write!(f, "ServiceUnavailableException"),
             BatchPutAssetPropertyValueErrorCode::ThrottlingException => write!(f, "ThrottlingException"),
             BatchPutAssetPropertyValueErrorCode::TimestampOutOfRangeException => write!(f, "TimestampOutOfRangeException"),
-            BatchPutAssetPropertyValueErrorCode::Unknown(value) => write!(f, "{}", value),
+            BatchPutAssetPropertyValueErrorCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for UsageStatistic {
             UsageStatistic::Max => write!(f, "MAX"),
             UsageStatistic::Min => write!(f, "MIN"),
             UsageStatistic::Sum => write!(f, "SUM"),
-            UsageStatistic::Unknown(value) => write!(f, "{}", value),
+            UsageStatistic::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

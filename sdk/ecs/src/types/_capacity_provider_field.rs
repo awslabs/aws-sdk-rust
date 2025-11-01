@@ -96,7 +96,7 @@ impl ::std::fmt::Display for CapacityProviderField {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             CapacityProviderField::Tags => write!(f, "TAGS"),
-            CapacityProviderField::Unknown(value) => write!(f, "{}", value),
+            CapacityProviderField::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

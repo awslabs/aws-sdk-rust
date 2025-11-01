@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ProjectSelectionScope {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ProjectSelectionScope::All => write!(f, "ALL"),
-            ProjectSelectionScope::Unknown(value) => write!(f, "{}", value),
+            ProjectSelectionScope::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

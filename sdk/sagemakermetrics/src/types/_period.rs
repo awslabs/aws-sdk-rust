@@ -114,7 +114,7 @@ impl ::std::fmt::Display for Period {
             Period::IterationNumber => write!(f, "IterationNumber"),
             Period::OneHour => write!(f, "OneHour"),
             Period::OneMinute => write!(f, "OneMinute"),
-            Period::Unknown(value) => write!(f, "{}", value),
+            Period::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

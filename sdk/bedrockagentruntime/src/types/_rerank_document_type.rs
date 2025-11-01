@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RerankDocumentType {
         match self {
             RerankDocumentType::Json => write!(f, "JSON"),
             RerankDocumentType::Text => write!(f, "TEXT"),
-            RerankDocumentType::Unknown(value) => write!(f, "{}", value),
+            RerankDocumentType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

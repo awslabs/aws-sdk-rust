@@ -96,7 +96,7 @@ impl ::std::fmt::Display for AnalysisTemplateValidationType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             AnalysisTemplateValidationType::DifferentialPrivacy => write!(f, "DIFFERENTIAL_PRIVACY"),
-            AnalysisTemplateValidationType::Unknown(value) => write!(f, "{}", value),
+            AnalysisTemplateValidationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -96,7 +96,7 @@ impl ::std::fmt::Display for IcebergStructTypeEnum {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             IcebergStructTypeEnum::Struct => write!(f, "struct"),
-            IcebergStructTypeEnum::Unknown(value) => write!(f, "{}", value),
+            IcebergStructTypeEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

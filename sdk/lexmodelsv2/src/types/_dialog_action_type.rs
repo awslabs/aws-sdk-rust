@@ -154,7 +154,7 @@ impl ::std::fmt::Display for DialogActionType {
             DialogActionType::FulfillIntent => write!(f, "FulfillIntent"),
             DialogActionType::InvokeDialogCodeHook => write!(f, "InvokeDialogCodeHook"),
             DialogActionType::StartIntent => write!(f, "StartIntent"),
-            DialogActionType::Unknown(value) => write!(f, "{}", value),
+            DialogActionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

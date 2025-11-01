@@ -15,6 +15,7 @@
 ///     DashManifestStyle::Basic => { /* ... */ },
 ///     DashManifestStyle::Compact => { /* ... */ },
 ///     DashManifestStyle::Distinct => { /* ... */ },
+///     DashManifestStyle::Full => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -37,7 +38,7 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-/// Specify how MediaConvert writes SegmentTimeline in your output DASH manifest. To write a SegmentTimeline in each video Representation: Keep the default value, Basic. To write a common SegmentTimeline in the video AdaptationSet: Choose Compact. Note that MediaConvert will still write a SegmentTimeline in any Representation that does not share a common timeline. To write a video AdaptationSet for each different output framerate, and a common SegmentTimeline in each AdaptationSet: Choose Distinct.
+/// Specify how MediaConvert writes SegmentTimeline in your output DASH manifest. To write a SegmentTimeline for outputs that you also specify a Name modifier for: Keep the default value, Basic. Note that if you do not specify a name modifier for an output, MediaConvert will not write a SegmentTimeline for it. To write a common SegmentTimeline in the video AdaptationSet: Choose Compact. Note that MediaConvert will still write a SegmentTimeline in any Representation that does not share a common timeline. To write a video AdaptationSet for each different output framerate, and a common SegmentTimeline in each AdaptationSet: Choose Distinct. To write a SegmentTimeline in each AdaptationSet: Choose Full.
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
@@ -49,6 +50,8 @@ pub enum DashManifestStyle {
     Compact,
     #[allow(missing_docs)] // documentation missing in model
     Distinct,
+    #[allow(missing_docs)] // documentation missing in model
+    Full,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -59,6 +62,7 @@ impl ::std::convert::From<&str> for DashManifestStyle {
             "BASIC" => DashManifestStyle::Basic,
             "COMPACT" => DashManifestStyle::Compact,
             "DISTINCT" => DashManifestStyle::Distinct,
+            "FULL" => DashManifestStyle::Full,
             other => DashManifestStyle::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -77,12 +81,13 @@ impl DashManifestStyle {
             DashManifestStyle::Basic => "BASIC",
             DashManifestStyle::Compact => "COMPACT",
             DashManifestStyle::Distinct => "DISTINCT",
+            DashManifestStyle::Full => "FULL",
             DashManifestStyle::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["BASIC", "COMPACT", "DISTINCT"]
+        &["BASIC", "COMPACT", "DISTINCT", "FULL"]
     }
 }
 impl ::std::convert::AsRef<str> for DashManifestStyle {
@@ -108,7 +113,8 @@ impl ::std::fmt::Display for DashManifestStyle {
             DashManifestStyle::Basic => write!(f, "BASIC"),
             DashManifestStyle::Compact => write!(f, "COMPACT"),
             DashManifestStyle::Distinct => write!(f, "DISTINCT"),
-            DashManifestStyle::Unknown(value) => write!(f, "{}", value),
+            DashManifestStyle::Full => write!(f, "FULL"),
+            DashManifestStyle::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

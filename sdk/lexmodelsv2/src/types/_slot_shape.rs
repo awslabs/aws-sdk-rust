@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SlotShape {
         match self {
             SlotShape::List => write!(f, "List"),
             SlotShape::Scalar => write!(f, "Scalar"),
-            SlotShape::Unknown(value) => write!(f, "{}", value),
+            SlotShape::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

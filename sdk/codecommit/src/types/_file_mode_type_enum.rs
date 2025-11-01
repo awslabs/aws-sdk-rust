@@ -108,7 +108,7 @@ impl ::std::fmt::Display for FileModeTypeEnum {
             FileModeTypeEnum::Executable => write!(f, "EXECUTABLE"),
             FileModeTypeEnum::Normal => write!(f, "NORMAL"),
             FileModeTypeEnum::Symlink => write!(f, "SYMLINK"),
-            FileModeTypeEnum::Unknown(value) => write!(f, "{}", value),
+            FileModeTypeEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

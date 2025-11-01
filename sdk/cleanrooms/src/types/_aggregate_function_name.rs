@@ -120,7 +120,7 @@ impl ::std::fmt::Display for AggregateFunctionName {
             AggregateFunctionName::CountDistinct => write!(f, "COUNT_DISTINCT"),
             AggregateFunctionName::Sum => write!(f, "SUM"),
             AggregateFunctionName::SumDistinct => write!(f, "SUM_DISTINCT"),
-            AggregateFunctionName::Unknown(value) => write!(f, "{}", value),
+            AggregateFunctionName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

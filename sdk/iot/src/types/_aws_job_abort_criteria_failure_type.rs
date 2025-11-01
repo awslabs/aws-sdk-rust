@@ -114,7 +114,7 @@ impl ::std::fmt::Display for AwsJobAbortCriteriaFailureType {
             AwsJobAbortCriteriaFailureType::Failed => write!(f, "FAILED"),
             AwsJobAbortCriteriaFailureType::Rejected => write!(f, "REJECTED"),
             AwsJobAbortCriteriaFailureType::TimedOut => write!(f, "TIMED_OUT"),
-            AwsJobAbortCriteriaFailureType::Unknown(value) => write!(f, "{}", value),
+            AwsJobAbortCriteriaFailureType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

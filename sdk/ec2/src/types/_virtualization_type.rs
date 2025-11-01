@@ -102,7 +102,7 @@ impl ::std::fmt::Display for VirtualizationType {
         match self {
             VirtualizationType::Hvm => write!(f, "hvm"),
             VirtualizationType::Paravirtual => write!(f, "paravirtual"),
-            VirtualizationType::Unknown(value) => write!(f, "{}", value),
+            VirtualizationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

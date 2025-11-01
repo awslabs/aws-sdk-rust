@@ -114,7 +114,7 @@ impl ::std::fmt::Display for DashIsoImageBasedTrickPlay {
             DashIsoImageBasedTrickPlay::None => write!(f, "NONE"),
             DashIsoImageBasedTrickPlay::Thumbnail => write!(f, "THUMBNAIL"),
             DashIsoImageBasedTrickPlay::ThumbnailAndFullframe => write!(f, "THUMBNAIL_AND_FULLFRAME"),
-            DashIsoImageBasedTrickPlay::Unknown(value) => write!(f, "{}", value),
+            DashIsoImageBasedTrickPlay::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

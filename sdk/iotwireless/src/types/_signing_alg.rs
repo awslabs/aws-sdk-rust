@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SigningAlg {
         match self {
             SigningAlg::Ed25519 => write!(f, "Ed25519"),
             SigningAlg::P256r1 => write!(f, "P256r1"),
-            SigningAlg::Unknown(value) => write!(f, "{}", value),
+            SigningAlg::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

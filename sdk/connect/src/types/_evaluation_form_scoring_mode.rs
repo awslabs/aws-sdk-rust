@@ -102,7 +102,7 @@ impl ::std::fmt::Display for EvaluationFormScoringMode {
         match self {
             EvaluationFormScoringMode::QuestionOnly => write!(f, "QUESTION_ONLY"),
             EvaluationFormScoringMode::SectionOnly => write!(f, "SECTION_ONLY"),
-            EvaluationFormScoringMode::Unknown(value) => write!(f, "{}", value),
+            EvaluationFormScoringMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for EncryptionType {
         match self {
             EncryptionType::FleetwiseDefaultEncryption => write!(f, "FLEETWISE_DEFAULT_ENCRYPTION"),
             EncryptionType::KmsBasedEncryption => write!(f, "KMS_BASED_ENCRYPTION"),
-            EncryptionType::Unknown(value) => write!(f, "{}", value),
+            EncryptionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

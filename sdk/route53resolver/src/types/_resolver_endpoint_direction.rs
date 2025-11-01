@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ResolverEndpointDirection {
             ResolverEndpointDirection::Inbound => write!(f, "INBOUND"),
             ResolverEndpointDirection::InboundDelegation => write!(f, "INBOUND_DELEGATION"),
             ResolverEndpointDirection::Outbound => write!(f, "OUTBOUND"),
-            ResolverEndpointDirection::Unknown(value) => write!(f, "{}", value),
+            ResolverEndpointDirection::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

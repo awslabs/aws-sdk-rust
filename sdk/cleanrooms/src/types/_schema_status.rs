@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SchemaStatus {
         match self {
             SchemaStatus::NotReady => write!(f, "NOT_READY"),
             SchemaStatus::Ready => write!(f, "READY"),
-            SchemaStatus::Unknown(value) => write!(f, "{}", value),
+            SchemaStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

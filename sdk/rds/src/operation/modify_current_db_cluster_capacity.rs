@@ -188,6 +188,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ModifyCurren
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::modify_current_db_cluster_capacity::ModifyCurrentDbClusterCapacityInput,
                 output: &mut ::std::string::String,

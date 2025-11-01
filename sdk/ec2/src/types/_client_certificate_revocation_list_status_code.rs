@@ -104,7 +104,7 @@ impl ::std::fmt::Display for ClientCertificateRevocationListStatusCode {
         match self {
             ClientCertificateRevocationListStatusCode::Active => write!(f, "active"),
             ClientCertificateRevocationListStatusCode::Pending => write!(f, "pending"),
-            ClientCertificateRevocationListStatusCode::Unknown(value) => write!(f, "{}", value),
+            ClientCertificateRevocationListStatusCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

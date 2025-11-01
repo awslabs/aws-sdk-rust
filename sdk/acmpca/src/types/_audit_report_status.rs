@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AuditReportStatus {
             AuditReportStatus::Creating => write!(f, "CREATING"),
             AuditReportStatus::Failed => write!(f, "FAILED"),
             AuditReportStatus::Success => write!(f, "SUCCESS"),
-            AuditReportStatus::Unknown(value) => write!(f, "{}", value),
+            AuditReportStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

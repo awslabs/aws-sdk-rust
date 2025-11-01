@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Scte35InputMode {
         match self {
             Scte35InputMode::Fixed => write!(f, "FIXED"),
             Scte35InputMode::FollowActive => write!(f, "FOLLOW_ACTIVE"),
-            Scte35InputMode::Unknown(value) => write!(f, "{}", value),
+            Scte35InputMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

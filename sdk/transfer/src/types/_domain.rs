@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Domain {
         match self {
             Domain::Efs => write!(f, "EFS"),
             Domain::S3 => write!(f, "S3"),
-            Domain::Unknown(value) => write!(f, "{}", value),
+            Domain::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

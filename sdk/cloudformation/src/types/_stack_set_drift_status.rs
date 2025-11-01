@@ -108,7 +108,7 @@ impl ::std::fmt::Display for StackSetDriftStatus {
             StackSetDriftStatus::Drifted => write!(f, "DRIFTED"),
             StackSetDriftStatus::InSync => write!(f, "IN_SYNC"),
             StackSetDriftStatus::NotChecked => write!(f, "NOT_CHECKED"),
-            StackSetDriftStatus::Unknown(value) => write!(f, "{}", value),
+            StackSetDriftStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

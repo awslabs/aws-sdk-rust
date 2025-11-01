@@ -114,7 +114,7 @@ impl ::std::fmt::Display for MetricQueryResultStatus {
             MetricQueryResultStatus::InternalError => write!(f, "InternalError"),
             MetricQueryResultStatus::Truncated => write!(f, "Truncated"),
             MetricQueryResultStatus::ValidationError => write!(f, "ValidationError"),
-            MetricQueryResultStatus::Unknown(value) => write!(f, "{}", value),
+            MetricQueryResultStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

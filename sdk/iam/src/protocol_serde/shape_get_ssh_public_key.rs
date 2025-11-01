@@ -81,16 +81,14 @@ pub fn de_get_ssh_public_key(
     let start_el = decoder.start_el();
     if !(start_el.matches("GetSSHPublicKeyResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected GetSSHPublicKeyResponse got {:?}",
-            start_el
+            "invalid root, expected GetSSHPublicKeyResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("GetSSHPublicKeyResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected GetSSHPublicKeyResult got {:?}",
-                start_el
+                "invalid result, expected GetSSHPublicKeyResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

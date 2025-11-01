@@ -161,7 +161,7 @@ impl ::std::fmt::Display for HeterogeneousTargetDatabaseEngine {
             HeterogeneousTargetDatabaseEngine::NoneSpecified => write!(f, "None specified"),
             HeterogeneousTargetDatabaseEngine::OracleDatabase => write!(f, "Oracle Database"),
             HeterogeneousTargetDatabaseEngine::Sap => write!(f, "SAP"),
-            HeterogeneousTargetDatabaseEngine::Unknown(value) => write!(f, "{}", value),
+            HeterogeneousTargetDatabaseEngine::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

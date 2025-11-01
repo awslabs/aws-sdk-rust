@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ClarifyTextGranularity {
             ClarifyTextGranularity::Paragraph => write!(f, "paragraph"),
             ClarifyTextGranularity::Sentence => write!(f, "sentence"),
             ClarifyTextGranularity::Token => write!(f, "token"),
-            ClarifyTextGranularity::Unknown(value) => write!(f, "{}", value),
+            ClarifyTextGranularity::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TableMaintenanceType {
         match self {
             TableMaintenanceType::IcebergCompaction => write!(f, "icebergCompaction"),
             TableMaintenanceType::IcebergSnapshotManagement => write!(f, "icebergSnapshotManagement"),
-            TableMaintenanceType::Unknown(value) => write!(f, "{}", value),
+            TableMaintenanceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

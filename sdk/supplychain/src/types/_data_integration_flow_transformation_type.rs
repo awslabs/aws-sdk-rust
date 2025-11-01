@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DataIntegrationFlowTransformationType {
         match self {
             DataIntegrationFlowTransformationType::None => write!(f, "NONE"),
             DataIntegrationFlowTransformationType::Sql => write!(f, "SQL"),
-            DataIntegrationFlowTransformationType::Unknown(value) => write!(f, "{}", value),
+            DataIntegrationFlowTransformationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

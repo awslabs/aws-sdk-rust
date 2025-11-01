@@ -102,7 +102,7 @@ impl ::std::fmt::Display for InvitationType {
         match self {
             InvitationType::Invitation => write!(f, "INVITATION"),
             InvitationType::Organization => write!(f, "ORGANIZATION"),
-            InvitationType::Unknown(value) => write!(f, "{}", value),
+            InvitationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

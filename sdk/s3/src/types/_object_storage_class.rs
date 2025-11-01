@@ -175,7 +175,7 @@ impl ::std::fmt::Display for ObjectStorageClass {
             ObjectStorageClass::Snow => write!(f, "SNOW"),
             ObjectStorageClass::Standard => write!(f, "STANDARD"),
             ObjectStorageClass::StandardIa => write!(f, "STANDARD_IA"),
-            ObjectStorageClass::Unknown(value) => write!(f, "{}", value),
+            ObjectStorageClass::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

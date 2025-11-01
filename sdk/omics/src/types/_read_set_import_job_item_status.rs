@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ReadSetImportJobItemStatus {
             ReadSetImportJobItemStatus::Finished => write!(f, "FINISHED"),
             ReadSetImportJobItemStatus::InProgress => write!(f, "IN_PROGRESS"),
             ReadSetImportJobItemStatus::NotStarted => write!(f, "NOT_STARTED"),
-            ReadSetImportJobItemStatus::Unknown(value) => write!(f, "{}", value),
+            ReadSetImportJobItemStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

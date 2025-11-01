@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ReportPackagingType {
         match self {
             ReportPackagingType::None => write!(f, "NONE"),
             ReportPackagingType::Zip => write!(f, "ZIP"),
-            ReportPackagingType::Unknown(value) => write!(f, "{}", value),
+            ReportPackagingType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

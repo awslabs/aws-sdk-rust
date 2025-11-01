@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AutomaticUpdatePolicy {
         match self {
             AutomaticUpdatePolicy::AllVersions => write!(f, "ALL_VERSIONS"),
             AutomaticUpdatePolicy::EmergencyVersionsOnly => write!(f, "EMERGENCY_VERSIONS_ONLY"),
-            AutomaticUpdatePolicy::Unknown(value) => write!(f, "{}", value),
+            AutomaticUpdatePolicy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

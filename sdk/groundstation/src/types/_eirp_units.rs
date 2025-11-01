@@ -96,7 +96,7 @@ impl ::std::fmt::Display for EirpUnits {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             EirpUnits::Dbw => write!(f, "dBW"),
-            EirpUnits::Unknown(value) => write!(f, "{}", value),
+            EirpUnits::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

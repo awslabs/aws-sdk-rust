@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ModelCopyJobStatus {
             ModelCopyJobStatus::Completed => write!(f, "Completed"),
             ModelCopyJobStatus::Failed => write!(f, "Failed"),
             ModelCopyJobStatus::InProgress => write!(f, "InProgress"),
-            ModelCopyJobStatus::Unknown(value) => write!(f, "{}", value),
+            ModelCopyJobStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

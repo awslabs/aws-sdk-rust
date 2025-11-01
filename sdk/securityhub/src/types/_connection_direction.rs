@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ConnectionDirection {
         match self {
             ConnectionDirection::Inbound => write!(f, "INBOUND"),
             ConnectionDirection::Outbound => write!(f, "OUTBOUND"),
-            ConnectionDirection::Unknown(value) => write!(f, "{}", value),
+            ConnectionDirection::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

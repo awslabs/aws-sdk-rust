@@ -114,7 +114,7 @@ impl ::std::fmt::Display for MemoryStrategyStatus {
             MemoryStrategyStatus::Creating => write!(f, "CREATING"),
             MemoryStrategyStatus::Deleting => write!(f, "DELETING"),
             MemoryStrategyStatus::Failed => write!(f, "FAILED"),
-            MemoryStrategyStatus::Unknown(value) => write!(f, "{}", value),
+            MemoryStrategyStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

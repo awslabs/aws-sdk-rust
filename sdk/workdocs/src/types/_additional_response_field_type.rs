@@ -96,7 +96,7 @@ impl ::std::fmt::Display for AdditionalResponseFieldType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             AdditionalResponseFieldType::Weburl => write!(f, "WEBURL"),
-            AdditionalResponseFieldType::Unknown(value) => write!(f, "{}", value),
+            AdditionalResponseFieldType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

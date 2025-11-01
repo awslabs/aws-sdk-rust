@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PreemptTeamTasks {
         match self {
             PreemptTeamTasks::Lowerpriority => write!(f, "LowerPriority"),
             PreemptTeamTasks::Never => write!(f, "Never"),
-            PreemptTeamTasks::Unknown(value) => write!(f, "{}", value),
+            PreemptTeamTasks::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

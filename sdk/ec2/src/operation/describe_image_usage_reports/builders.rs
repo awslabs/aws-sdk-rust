@@ -178,6 +178,10 @@ impl DescribeImageUsageReportsFluentBuilder {
     /// <p><code>creation-time</code> - The time when the report was created, in the ISO 8601 format in the UTC time zone (YYYY-MM-DDThh:mm:ss.sssZ), for example, <code>2025-11-29T11:04:43.305Z</code>. You can use a wildcard (<code>*</code>), for example, <code>2025-11-29T*</code>, which matches an entire day.</p></li>
     /// <li>
     /// <p><code>state</code> - The state of the report (<code>available</code> | <code>pending</code> | <code>error</code>).</p></li>
+    /// <li>
+    /// <p><code>tag:<key></key></code> - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p></li>
+    /// <li>
+    /// <p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p></li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filters(input);
@@ -189,6 +193,10 @@ impl DescribeImageUsageReportsFluentBuilder {
     /// <p><code>creation-time</code> - The time when the report was created, in the ISO 8601 format in the UTC time zone (YYYY-MM-DDThh:mm:ss.sssZ), for example, <code>2025-11-29T11:04:43.305Z</code>. You can use a wildcard (<code>*</code>), for example, <code>2025-11-29T*</code>, which matches an entire day.</p></li>
     /// <li>
     /// <p><code>state</code> - The state of the report (<code>available</code> | <code>pending</code> | <code>error</code>).</p></li>
+    /// <li>
+    /// <p><code>tag:<key></key></code> - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p></li>
+    /// <li>
+    /// <p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p></li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
@@ -200,6 +208,10 @@ impl DescribeImageUsageReportsFluentBuilder {
     /// <p><code>creation-time</code> - The time when the report was created, in the ISO 8601 format in the UTC time zone (YYYY-MM-DDThh:mm:ss.sssZ), for example, <code>2025-11-29T11:04:43.305Z</code>. You can use a wildcard (<code>*</code>), for example, <code>2025-11-29T*</code>, which matches an entire day.</p></li>
     /// <li>
     /// <p><code>state</code> - The state of the report (<code>available</code> | <code>pending</code> | <code>error</code>).</p></li>
+    /// <li>
+    /// <p><code>tag:<key></key></code> - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p></li>
+    /// <li>
+    /// <p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p></li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_filters()

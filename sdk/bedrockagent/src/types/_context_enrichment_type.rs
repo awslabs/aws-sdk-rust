@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ContextEnrichmentType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ContextEnrichmentType::BedrockFoundationModel => write!(f, "BEDROCK_FOUNDATION_MODEL"),
-            ContextEnrichmentType::Unknown(value) => write!(f, "{}", value),
+            ContextEnrichmentType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

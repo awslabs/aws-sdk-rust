@@ -108,7 +108,7 @@ impl ::std::fmt::Display for MedicalScribeVocabularyFilterMethod {
             MedicalScribeVocabularyFilterMethod::Mask => write!(f, "mask"),
             MedicalScribeVocabularyFilterMethod::Remove => write!(f, "remove"),
             MedicalScribeVocabularyFilterMethod::Tag => write!(f, "tag"),
-            MedicalScribeVocabularyFilterMethod::Unknown(value) => write!(f, "{}", value),
+            MedicalScribeVocabularyFilterMethod::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

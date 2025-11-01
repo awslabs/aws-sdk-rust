@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RelativeFileVersionEnum {
         match self {
             RelativeFileVersionEnum::After => write!(f, "AFTER"),
             RelativeFileVersionEnum::Before => write!(f, "BEFORE"),
-            RelativeFileVersionEnum::Unknown(value) => write!(f, "{}", value),
+            RelativeFileVersionEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

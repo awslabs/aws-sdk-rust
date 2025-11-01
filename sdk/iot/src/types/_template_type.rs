@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TemplateType {
         match self {
             TemplateType::FleetProvisioning => write!(f, "FLEET_PROVISIONING"),
             TemplateType::Jitp => write!(f, "JITP"),
-            TemplateType::Unknown(value) => write!(f, "{}", value),
+            TemplateType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

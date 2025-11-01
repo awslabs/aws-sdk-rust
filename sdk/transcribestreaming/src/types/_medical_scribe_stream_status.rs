@@ -114,7 +114,7 @@ impl ::std::fmt::Display for MedicalScribeStreamStatus {
             MedicalScribeStreamStatus::Failed => write!(f, "FAILED"),
             MedicalScribeStreamStatus::InProgress => write!(f, "IN_PROGRESS"),
             MedicalScribeStreamStatus::Paused => write!(f, "PAUSED"),
-            MedicalScribeStreamStatus::Unknown(value) => write!(f, "{}", value),
+            MedicalScribeStreamStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

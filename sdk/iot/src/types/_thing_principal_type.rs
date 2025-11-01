@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ThingPrincipalType {
         match self {
             ThingPrincipalType::ExclusiveThing => write!(f, "EXCLUSIVE_THING"),
             ThingPrincipalType::NonExclusiveThing => write!(f, "NON_EXCLUSIVE_THING"),
-            ThingPrincipalType::Unknown(value) => write!(f, "{}", value),
+            ThingPrincipalType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

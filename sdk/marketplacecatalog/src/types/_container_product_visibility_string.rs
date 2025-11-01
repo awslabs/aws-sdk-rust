@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ContainerProductVisibilityString {
             ContainerProductVisibilityString::Limited => write!(f, "Limited"),
             ContainerProductVisibilityString::Public => write!(f, "Public"),
             ContainerProductVisibilityString::Restricted => write!(f, "Restricted"),
-            ContainerProductVisibilityString::Unknown(value) => write!(f, "{}", value),
+            ContainerProductVisibilityString::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

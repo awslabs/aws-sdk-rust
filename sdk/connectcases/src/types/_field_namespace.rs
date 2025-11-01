@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FieldNamespace {
         match self {
             FieldNamespace::Custom => write!(f, "Custom"),
             FieldNamespace::System => write!(f, "System"),
-            FieldNamespace::Unknown(value) => write!(f, "{}", value),
+            FieldNamespace::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

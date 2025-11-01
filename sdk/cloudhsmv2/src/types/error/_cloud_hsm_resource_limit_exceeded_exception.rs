@@ -19,7 +19,7 @@ impl ::std::fmt::Display for CloudHsmResourceLimitExceededException {
         ::std::write!(f, "CloudHsmResourceLimitExceededException")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
             {
-                ::std::write!(f, ": {}", inner_1)?;
+                ::std::write!(f, ": {inner_1}")?;
             }
         }
         Ok(())

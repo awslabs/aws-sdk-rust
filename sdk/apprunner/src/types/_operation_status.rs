@@ -140,7 +140,7 @@ impl ::std::fmt::Display for OperationStatus {
             OperationStatus::RollbackInProgress => write!(f, "ROLLBACK_IN_PROGRESS"),
             OperationStatus::RollbackSucceeded => write!(f, "ROLLBACK_SUCCEEDED"),
             OperationStatus::Succeeded => write!(f, "SUCCEEDED"),
-            OperationStatus::Unknown(value) => write!(f, "{}", value),
+            OperationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

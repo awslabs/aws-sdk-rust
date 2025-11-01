@@ -126,7 +126,7 @@ impl ::std::fmt::Display for RoutePedestrianNoticeCode {
             RoutePedestrianNoticeCode::ViolatedAvoidDirtRoad => write!(f, "ViolatedAvoidDirtRoad"),
             RoutePedestrianNoticeCode::ViolatedAvoidTunnel => write!(f, "ViolatedAvoidTunnel"),
             RoutePedestrianNoticeCode::ViolatedPedestrianOption => write!(f, "ViolatedPedestrianOption"),
-            RoutePedestrianNoticeCode::Unknown(value) => write!(f, "{}", value),
+            RoutePedestrianNoticeCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

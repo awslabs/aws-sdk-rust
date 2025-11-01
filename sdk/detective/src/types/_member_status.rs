@@ -126,7 +126,7 @@ impl ::std::fmt::Display for MemberStatus {
             MemberStatus::Invited => write!(f, "INVITED"),
             MemberStatus::VerificationFailed => write!(f, "VERIFICATION_FAILED"),
             MemberStatus::VerificationInProgress => write!(f, "VERIFICATION_IN_PROGRESS"),
-            MemberStatus::Unknown(value) => write!(f, "{}", value),
+            MemberStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

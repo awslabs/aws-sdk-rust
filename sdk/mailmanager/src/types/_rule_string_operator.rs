@@ -120,7 +120,7 @@ impl ::std::fmt::Display for RuleStringOperator {
             RuleStringOperator::Equals => write!(f, "EQUALS"),
             RuleStringOperator::NotEquals => write!(f, "NOT_EQUALS"),
             RuleStringOperator::StartsWith => write!(f, "STARTS_WITH"),
-            RuleStringOperator::Unknown(value) => write!(f, "{}", value),
+            RuleStringOperator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

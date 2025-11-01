@@ -120,7 +120,7 @@ impl ::std::fmt::Display for FraudsterRegistrationJobStatus {
             FraudsterRegistrationJobStatus::Failed => write!(f, "FAILED"),
             FraudsterRegistrationJobStatus::InProgress => write!(f, "IN_PROGRESS"),
             FraudsterRegistrationJobStatus::Submitted => write!(f, "SUBMITTED"),
-            FraudsterRegistrationJobStatus::Unknown(value) => write!(f, "{}", value),
+            FraudsterRegistrationJobStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

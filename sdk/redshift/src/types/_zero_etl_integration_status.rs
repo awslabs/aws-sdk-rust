@@ -132,7 +132,7 @@ impl ::std::fmt::Display for ZeroEtlIntegrationStatus {
             ZeroEtlIntegrationStatus::Modifying => write!(f, "modifying"),
             ZeroEtlIntegrationStatus::NeedsAttention => write!(f, "needs_attention"),
             ZeroEtlIntegrationStatus::Syncing => write!(f, "syncing"),
-            ZeroEtlIntegrationStatus::Unknown(value) => write!(f, "{}", value),
+            ZeroEtlIntegrationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

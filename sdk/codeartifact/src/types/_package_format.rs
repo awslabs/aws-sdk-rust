@@ -138,7 +138,7 @@ impl ::std::fmt::Display for PackageFormat {
             PackageFormat::Pypi => write!(f, "pypi"),
             PackageFormat::Ruby => write!(f, "ruby"),
             PackageFormat::Swift => write!(f, "swift"),
-            PackageFormat::Unknown(value) => write!(f, "{}", value),
+            PackageFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

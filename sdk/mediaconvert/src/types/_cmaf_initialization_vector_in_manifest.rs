@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CmafInitializationVectorInManifest {
         match self {
             CmafInitializationVectorInManifest::Exclude => write!(f, "EXCLUDE"),
             CmafInitializationVectorInManifest::Include => write!(f, "INCLUDE"),
-            CmafInitializationVectorInManifest::Unknown(value) => write!(f, "{}", value),
+            CmafInitializationVectorInManifest::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

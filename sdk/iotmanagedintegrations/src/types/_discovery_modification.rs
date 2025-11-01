@@ -108,7 +108,7 @@ impl ::std::fmt::Display for DiscoveryModification {
             DiscoveryModification::Discovered => write!(f, "DISCOVERED"),
             DiscoveryModification::NoChange => write!(f, "NO_CHANGE"),
             DiscoveryModification::Updated => write!(f, "UPDATED"),
-            DiscoveryModification::Unknown(value) => write!(f, "{}", value),
+            DiscoveryModification::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

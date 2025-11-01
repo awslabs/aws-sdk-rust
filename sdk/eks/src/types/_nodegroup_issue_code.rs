@@ -345,7 +345,7 @@ impl ::std::fmt::Display for NodegroupIssueCode {
             NodegroupIssueCode::PodEvictionFailure => write!(f, "PodEvictionFailure"),
             NodegroupIssueCode::SourceEc2LaunchTemplateNotFound => write!(f, "SourceEc2LaunchTemplateNotFound"),
             NodegroupIssueCode::UnknownValue => write!(f, "Unknown"),
-            NodegroupIssueCode::Unknown(value) => write!(f, "{}", value),
+            NodegroupIssueCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

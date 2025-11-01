@@ -112,7 +112,7 @@ impl ::std::fmt::Display for CentralizationFailureReason {
             CentralizationFailureReason::DestinationAccountNotInOrganization => write!(f, "DESTINATION_ACCOUNT_NOT_IN_ORGANIZATION"),
             CentralizationFailureReason::InternalServerError => write!(f, "INTERNAL_SERVER_ERROR"),
             CentralizationFailureReason::TrustedAccessNotEnabled => write!(f, "TRUSTED_ACCESS_NOT_ENABLED"),
-            CentralizationFailureReason::Unknown(value) => write!(f, "{}", value),
+            CentralizationFailureReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

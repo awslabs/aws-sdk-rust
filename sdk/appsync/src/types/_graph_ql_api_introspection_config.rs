@@ -102,7 +102,7 @@ impl ::std::fmt::Display for GraphQlApiIntrospectionConfig {
         match self {
             GraphQlApiIntrospectionConfig::Disabled => write!(f, "DISABLED"),
             GraphQlApiIntrospectionConfig::Enabled => write!(f, "ENABLED"),
-            GraphQlApiIntrospectionConfig::Unknown(value) => write!(f, "{}", value),
+            GraphQlApiIntrospectionConfig::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

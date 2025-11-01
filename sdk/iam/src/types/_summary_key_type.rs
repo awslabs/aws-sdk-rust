@@ -329,7 +329,7 @@ impl ::std::fmt::Display for SummaryKeyType {
             SummaryKeyType::Users => write!(f, "Users"),
             SummaryKeyType::UsersQuota => write!(f, "UsersQuota"),
             SummaryKeyType::VersionsPerPolicyQuota => write!(f, "VersionsPerPolicyQuota"),
-            SummaryKeyType::Unknown(value) => write!(f, "{}", value),
+            SummaryKeyType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

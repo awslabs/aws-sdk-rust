@@ -120,7 +120,7 @@ impl ::std::fmt::Display for DirectoryConfigurationStatus {
             DirectoryConfigurationStatus::Requested => write!(f, "Requested"),
             DirectoryConfigurationStatus::Updated => write!(f, "Updated"),
             DirectoryConfigurationStatus::Updating => write!(f, "Updating"),
-            DirectoryConfigurationStatus::Unknown(value) => write!(f, "{}", value),
+            DirectoryConfigurationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

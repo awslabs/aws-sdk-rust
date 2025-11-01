@@ -102,7 +102,7 @@ impl ::std::fmt::Display for IngestionJobSortByAttribute {
         match self {
             IngestionJobSortByAttribute::StartedAt => write!(f, "STARTED_AT"),
             IngestionJobSortByAttribute::Status => write!(f, "STATUS"),
-            IngestionJobSortByAttribute::Unknown(value) => write!(f, "{}", value),
+            IngestionJobSortByAttribute::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

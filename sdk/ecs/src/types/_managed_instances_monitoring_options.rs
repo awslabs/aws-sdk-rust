@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ManagedInstancesMonitoringOptions {
         match self {
             ManagedInstancesMonitoringOptions::Basic => write!(f, "BASIC"),
             ManagedInstancesMonitoringOptions::Detailed => write!(f, "DETAILED"),
-            ManagedInstancesMonitoringOptions::Unknown(value) => write!(f, "{}", value),
+            ManagedInstancesMonitoringOptions::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

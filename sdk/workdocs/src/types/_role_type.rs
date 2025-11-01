@@ -114,7 +114,7 @@ impl ::std::fmt::Display for RoleType {
             RoleType::Coowner => write!(f, "COOWNER"),
             RoleType::Owner => write!(f, "OWNER"),
             RoleType::Viewer => write!(f, "VIEWER"),
-            RoleType::Unknown(value) => write!(f, "{}", value),
+            RoleType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

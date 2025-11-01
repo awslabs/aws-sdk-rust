@@ -120,7 +120,7 @@ impl ::std::fmt::Display for CancelSpotInstanceRequestState {
             CancelSpotInstanceRequestState::Closed => write!(f, "closed"),
             CancelSpotInstanceRequestState::Completed => write!(f, "completed"),
             CancelSpotInstanceRequestState::Open => write!(f, "open"),
-            CancelSpotInstanceRequestState::Unknown(value) => write!(f, "{}", value),
+            CancelSpotInstanceRequestState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

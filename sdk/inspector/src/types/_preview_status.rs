@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PreviewStatus {
         match self {
             PreviewStatus::Completed => write!(f, "COMPLETED"),
             PreviewStatus::WorkInProgress => write!(f, "WORK_IN_PROGRESS"),
-            PreviewStatus::Unknown(value) => write!(f, "{}", value),
+            PreviewStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

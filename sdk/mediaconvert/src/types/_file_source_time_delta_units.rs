@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FileSourceTimeDeltaUnits {
         match self {
             FileSourceTimeDeltaUnits::Milliseconds => write!(f, "MILLISECONDS"),
             FileSourceTimeDeltaUnits::Seconds => write!(f, "SECONDS"),
-            FileSourceTimeDeltaUnits::Unknown(value) => write!(f, "{}", value),
+            FileSourceTimeDeltaUnits::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

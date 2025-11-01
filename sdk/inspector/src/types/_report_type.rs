@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ReportType {
         match self {
             ReportType::Finding => write!(f, "FINDING"),
             ReportType::Full => write!(f, "FULL"),
-            ReportType::Unknown(value) => write!(f, "{}", value),
+            ReportType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

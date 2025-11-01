@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AgreementStatusType {
         match self {
             AgreementStatusType::Active => write!(f, "ACTIVE"),
             AgreementStatusType::Inactive => write!(f, "INACTIVE"),
-            AgreementStatusType::Unknown(value) => write!(f, "{}", value),
+            AgreementStatusType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

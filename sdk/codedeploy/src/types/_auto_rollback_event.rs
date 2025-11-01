@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AutoRollbackEvent {
             AutoRollbackEvent::DeploymentFailure => write!(f, "DEPLOYMENT_FAILURE"),
             AutoRollbackEvent::DeploymentStopOnAlarm => write!(f, "DEPLOYMENT_STOP_ON_ALARM"),
             AutoRollbackEvent::DeploymentStopOnRequest => write!(f, "DEPLOYMENT_STOP_ON_REQUEST"),
-            AutoRollbackEvent::Unknown(value) => write!(f, "{}", value),
+            AutoRollbackEvent::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

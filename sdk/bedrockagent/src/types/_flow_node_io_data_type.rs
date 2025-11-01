@@ -120,7 +120,7 @@ impl ::std::fmt::Display for FlowNodeIoDataType {
             FlowNodeIoDataType::Number => write!(f, "Number"),
             FlowNodeIoDataType::Object => write!(f, "Object"),
             FlowNodeIoDataType::String => write!(f, "String"),
-            FlowNodeIoDataType::Unknown(value) => write!(f, "{}", value),
+            FlowNodeIoDataType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

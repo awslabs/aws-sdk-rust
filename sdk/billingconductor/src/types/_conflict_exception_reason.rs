@@ -130,7 +130,7 @@ impl ::std::fmt::Display for ConflictExceptionReason {
             ConflictExceptionReason::PricingRuleInPricingPlanConflict => write!(f, "PRICING_RULE_IN_PRICING_PLAN_CONFLICT"),
             ConflictExceptionReason::ResourceNameConflict => write!(f, "RESOURCE_NAME_CONFLICT"),
             ConflictExceptionReason::WriteConflictRetry => write!(f, "WRITE_CONFLICT_RETRY"),
-            ConflictExceptionReason::Unknown(value) => write!(f, "{}", value),
+            ConflictExceptionReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for SnapshotBlockPublicAccessState {
             SnapshotBlockPublicAccessState::BlockAllSharing => write!(f, "block-all-sharing"),
             SnapshotBlockPublicAccessState::BlockNewSharing => write!(f, "block-new-sharing"),
             SnapshotBlockPublicAccessState::Unblocked => write!(f, "unblocked"),
-            SnapshotBlockPublicAccessState::Unknown(value) => write!(f, "{}", value),
+            SnapshotBlockPublicAccessState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

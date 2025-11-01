@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Architecture {
         match self {
             Architecture::Arm64 => write!(f, "arm64"),
             Architecture::X8664 => write!(f, "x86_64"),
-            Architecture::Unknown(value) => write!(f, "{}", value),
+            Architecture::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

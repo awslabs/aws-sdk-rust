@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DeviceRememberedStatusType {
         match self {
             DeviceRememberedStatusType::NotRemembered => write!(f, "not_remembered"),
             DeviceRememberedStatusType::Remembered => write!(f, "remembered"),
-            DeviceRememberedStatusType::Unknown(value) => write!(f, "{}", value),
+            DeviceRememberedStatusType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

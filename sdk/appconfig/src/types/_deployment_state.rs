@@ -132,7 +132,7 @@ impl ::std::fmt::Display for DeploymentState {
             DeploymentState::RolledBack => write!(f, "ROLLED_BACK"),
             DeploymentState::RollingBack => write!(f, "ROLLING_BACK"),
             DeploymentState::Validating => write!(f, "VALIDATING"),
-            DeploymentState::Unknown(value) => write!(f, "{}", value),
+            DeploymentState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

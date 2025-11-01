@@ -114,7 +114,7 @@ impl ::std::fmt::Display for Operation {
             Operation::Divide => write!(f, "DIVIDE"),
             Operation::Multiply => write!(f, "MULTIPLY"),
             Operation::Subtract => write!(f, "SUBTRACT"),
-            Operation::Unknown(value) => write!(f, "{}", value),
+            Operation::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

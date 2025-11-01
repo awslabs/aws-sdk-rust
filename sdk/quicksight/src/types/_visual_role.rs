@@ -120,7 +120,7 @@ impl ::std::fmt::Display for VisualRole {
             VisualRole::Fragment => write!(f, "FRAGMENT"),
             VisualRole::MultiIntent => write!(f, "MULTI_INTENT"),
             VisualRole::Primary => write!(f, "PRIMARY"),
-            VisualRole::Unknown(value) => write!(f, "{}", value),
+            VisualRole::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

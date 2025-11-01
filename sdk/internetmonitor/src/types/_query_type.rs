@@ -133,7 +133,7 @@ impl ::std::fmt::Display for QueryType {
             QueryType::RoutingSuggestions => write!(f, "ROUTING_SUGGESTIONS"),
             QueryType::TopLocations => write!(f, "TOP_LOCATIONS"),
             QueryType::TopLocationDetails => write!(f, "TOP_LOCATION_DETAILS"),
-            QueryType::Unknown(value) => write!(f, "{}", value),
+            QueryType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

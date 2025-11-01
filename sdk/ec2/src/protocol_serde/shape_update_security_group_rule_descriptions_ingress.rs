@@ -54,8 +54,7 @@ pub fn de_update_security_group_rule_descriptions_ingress(
     let start_el = decoder.start_el();
     if !(start_el.matches("UpdateSecurityGroupRuleDescriptionsIngressResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected UpdateSecurityGroupRuleDescriptionsIngressResponse got {:?}",
-            start_el
+            "invalid root, expected UpdateSecurityGroupRuleDescriptionsIngressResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

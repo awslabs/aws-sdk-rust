@@ -231,7 +231,7 @@ impl ::std::fmt::Display for AggType {
             AggType::Sum => write!(f, "SUM"),
             AggType::Var => write!(f, "VAR"),
             AggType::Varp => write!(f, "VARP"),
-            AggType::Unknown(value) => write!(f, "{}", value),
+            AggType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

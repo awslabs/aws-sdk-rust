@@ -54,8 +54,7 @@ pub fn de_register_transit_gateway_multicast_group_sources(
     let start_el = decoder.start_el();
     if !(start_el.matches("RegisterTransitGatewayMulticastGroupSourcesResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected RegisterTransitGatewayMulticastGroupSourcesResponse got {:?}",
-            start_el
+            "invalid root, expected RegisterTransitGatewayMulticastGroupSourcesResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ComparisonMethod {
             ComparisonMethod::Difference => write!(f, "DIFFERENCE"),
             ComparisonMethod::Percent => write!(f, "PERCENT"),
             ComparisonMethod::PercentDifference => write!(f, "PERCENT_DIFFERENCE"),
-            ComparisonMethod::Unknown(value) => write!(f, "{}", value),
+            ComparisonMethod::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AggregationFindingType {
             AggregationFindingType::CodeVulnerability => write!(f, "CODE_VULNERABILITY"),
             AggregationFindingType::NetworkReachability => write!(f, "NETWORK_REACHABILITY"),
             AggregationFindingType::PackageVulnerability => write!(f, "PACKAGE_VULNERABILITY"),
-            AggregationFindingType::Unknown(value) => write!(f, "{}", value),
+            AggregationFindingType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

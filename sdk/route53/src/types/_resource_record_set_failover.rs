@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ResourceRecordSetFailover {
         match self {
             ResourceRecordSetFailover::Primary => write!(f, "PRIMARY"),
             ResourceRecordSetFailover::Secondary => write!(f, "SECONDARY"),
-            ResourceRecordSetFailover::Unknown(value) => write!(f, "{}", value),
+            ResourceRecordSetFailover::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

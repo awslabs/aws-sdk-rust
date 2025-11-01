@@ -22,8 +22,7 @@ pub fn de_storage_lens_configuration(
     let start_el = decoder.start_el();
     if !(start_el.matches("StorageLensConfiguration")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected StorageLensConfiguration got {:?}",
-            start_el
+            "invalid root, expected StorageLensConfiguration got {start_el:?}"
         )));
     }
     crate::protocol_serde::shape_storage_lens_configuration::de_storage_lens_configuration(&mut decoder)

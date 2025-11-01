@@ -217,7 +217,7 @@ impl ::std::fmt::Display for NetworkInterfaceType {
             NetworkInterfaceType::TransitGateway => write!(f, "transit_gateway"),
             NetworkInterfaceType::Trunk => write!(f, "trunk"),
             NetworkInterfaceType::VpcEndpoint => write!(f, "vpc_endpoint"),
-            NetworkInterfaceType::Unknown(value) => write!(f, "{}", value),
+            NetworkInterfaceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

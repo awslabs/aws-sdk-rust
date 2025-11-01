@@ -114,7 +114,7 @@ impl ::std::fmt::Display for VideoAspectRatio {
             VideoAspectRatio::Portrait => write!(f, "PORTRAIT"),
             VideoAspectRatio::Square => write!(f, "SQUARE"),
             VideoAspectRatio::Video => write!(f, "VIDEO"),
-            VideoAspectRatio::Unknown(value) => write!(f, "{}", value),
+            VideoAspectRatio::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

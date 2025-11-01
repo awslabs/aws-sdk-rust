@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FleetProxyRuleType {
         match self {
             FleetProxyRuleType::Domain => write!(f, "DOMAIN"),
             FleetProxyRuleType::Ip => write!(f, "IP"),
-            FleetProxyRuleType::Unknown(value) => write!(f, "{}", value),
+            FleetProxyRuleType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

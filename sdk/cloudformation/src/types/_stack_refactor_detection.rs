@@ -102,7 +102,7 @@ impl ::std::fmt::Display for StackRefactorDetection {
         match self {
             StackRefactorDetection::Auto => write!(f, "AUTO"),
             StackRefactorDetection::Manual => write!(f, "MANUAL"),
-            StackRefactorDetection::Unknown(value) => write!(f, "{}", value),
+            StackRefactorDetection::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

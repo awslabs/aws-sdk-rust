@@ -168,7 +168,7 @@ impl ::std::fmt::Display for RevocationReason {
             RevocationReason::Superceded => write!(f, "SUPERCEDED"),
             RevocationReason::Superseded => write!(f, "SUPERSEDED"),
             RevocationReason::Unspecified => write!(f, "UNSPECIFIED"),
-            RevocationReason::Unknown(value) => write!(f, "{}", value),
+            RevocationReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ModelStatus {
             ModelStatus::Completed => write!(f, "COMPLETED"),
             ModelStatus::Failed => write!(f, "FAILED"),
             ModelStatus::InProgress => write!(f, "IN_PROGRESS"),
-            ModelStatus::Unknown(value) => write!(f, "{}", value),
+            ModelStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

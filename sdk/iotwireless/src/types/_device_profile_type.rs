@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DeviceProfileType {
         match self {
             DeviceProfileType::LoRaWan => write!(f, "LoRaWAN"),
             DeviceProfileType::Sidewalk => write!(f, "Sidewalk"),
-            DeviceProfileType::Unknown(value) => write!(f, "{}", value),
+            DeviceProfileType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

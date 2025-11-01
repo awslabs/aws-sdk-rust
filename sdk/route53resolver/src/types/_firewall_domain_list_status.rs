@@ -120,7 +120,7 @@ impl ::std::fmt::Display for FirewallDomainListStatus {
             FirewallDomainListStatus::Deleting => write!(f, "DELETING"),
             FirewallDomainListStatus::Importing => write!(f, "IMPORTING"),
             FirewallDomainListStatus::Updating => write!(f, "UPDATING"),
-            FirewallDomainListStatus::Unknown(value) => write!(f, "{}", value),
+            FirewallDomainListStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

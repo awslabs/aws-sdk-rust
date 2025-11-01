@@ -120,7 +120,7 @@ impl ::std::fmt::Display for LaunchStatus {
             LaunchStatus::Launched => write!(f, "LAUNCHED"),
             LaunchStatus::Pending => write!(f, "PENDING"),
             LaunchStatus::Terminated => write!(f, "TERMINATED"),
-            LaunchStatus::Unknown(value) => write!(f, "{}", value),
+            LaunchStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

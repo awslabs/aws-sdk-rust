@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SharePointOnlineAuthenticationType {
         match self {
             SharePointOnlineAuthenticationType::HttpBasic => write!(f, "HTTP_BASIC"),
             SharePointOnlineAuthenticationType::Oauth2 => write!(f, "OAUTH2"),
-            SharePointOnlineAuthenticationType::Unknown(value) => write!(f, "{}", value),
+            SharePointOnlineAuthenticationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

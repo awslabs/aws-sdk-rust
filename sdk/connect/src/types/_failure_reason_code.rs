@@ -168,7 +168,7 @@ impl ::std::fmt::Display for FailureReasonCode {
             FailureReasonCode::MissingCustomerEndpoint => write!(f, "MISSING_CUSTOMER_ENDPOINT"),
             FailureReasonCode::MissingQueueIdAndSystemEndpoint => write!(f, "MISSING_QUEUE_ID_AND_SYSTEM_ENDPOINT"),
             FailureReasonCode::RequestThrottled => write!(f, "REQUEST_THROTTLED"),
-            FailureReasonCode::Unknown(value) => write!(f, "{}", value),
+            FailureReasonCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

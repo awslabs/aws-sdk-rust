@@ -196,7 +196,7 @@ impl ::std::fmt::Display for InventoryOptionalField {
             InventoryOptionalField::ReplicationStatus => write!(f, "ReplicationStatus"),
             InventoryOptionalField::Size => write!(f, "Size"),
             InventoryOptionalField::StorageClass => write!(f, "StorageClass"),
-            InventoryOptionalField::Unknown(value) => write!(f, "{}", value),
+            InventoryOptionalField::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

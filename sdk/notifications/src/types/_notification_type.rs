@@ -114,7 +114,7 @@ impl ::std::fmt::Display for NotificationType {
             NotificationType::Announcement => write!(f, "ANNOUNCEMENT"),
             NotificationType::Informational => write!(f, "INFORMATIONAL"),
             NotificationType::Warning => write!(f, "WARNING"),
-            NotificationType::Unknown(value) => write!(f, "{}", value),
+            NotificationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

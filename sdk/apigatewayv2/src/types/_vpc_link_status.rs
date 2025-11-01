@@ -120,7 +120,7 @@ impl ::std::fmt::Display for VpcLinkStatus {
             VpcLinkStatus::Failed => write!(f, "FAILED"),
             VpcLinkStatus::Inactive => write!(f, "INACTIVE"),
             VpcLinkStatus::Pending => write!(f, "PENDING"),
-            VpcLinkStatus::Unknown(value) => write!(f, "{}", value),
+            VpcLinkStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

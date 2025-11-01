@@ -108,7 +108,7 @@ impl ::std::fmt::Display for FixAvailable {
             FixAvailable::No => write!(f, "NO"),
             FixAvailable::Partial => write!(f, "PARTIAL"),
             FixAvailable::Yes => write!(f, "YES"),
-            FixAvailable::Unknown(value) => write!(f, "{}", value),
+            FixAvailable::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

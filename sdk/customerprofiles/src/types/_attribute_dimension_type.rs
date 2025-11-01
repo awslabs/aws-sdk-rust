@@ -196,7 +196,7 @@ impl ::std::fmt::Display for AttributeDimensionType {
             AttributeDimensionType::LessThanOrEqual => write!(f, "LESS_THAN_OR_EQUAL"),
             AttributeDimensionType::NotBetween => write!(f, "NOT_BETWEEN"),
             AttributeDimensionType::On => write!(f, "ON"),
-            AttributeDimensionType::Unknown(value) => write!(f, "{}", value),
+            AttributeDimensionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

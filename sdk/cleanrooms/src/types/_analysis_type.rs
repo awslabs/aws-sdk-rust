@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AnalysisType {
         match self {
             AnalysisType::AdditionalAnalysis => write!(f, "ADDITIONAL_ANALYSIS"),
             AnalysisType::DirectAnalysis => write!(f, "DIRECT_ANALYSIS"),
-            AnalysisType::Unknown(value) => write!(f, "{}", value),
+            AnalysisType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

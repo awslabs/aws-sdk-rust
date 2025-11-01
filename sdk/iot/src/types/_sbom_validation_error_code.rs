@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SbomValidationErrorCode {
         match self {
             SbomValidationErrorCode::FileSizeLimitExceeded => write!(f, "FILE_SIZE_LIMIT_EXCEEDED"),
             SbomValidationErrorCode::IncompatibleFormat => write!(f, "INCOMPATIBLE_FORMAT"),
-            SbomValidationErrorCode::Unknown(value) => write!(f, "{}", value),
+            SbomValidationErrorCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for Result {
             Result::Retry => write!(f, "RETRY"),
             Result::Rollback => write!(f, "ROLLBACK"),
             Result::Skip => write!(f, "SKIP"),
-            Result::Unknown(value) => write!(f, "{}", value),
+            Result::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

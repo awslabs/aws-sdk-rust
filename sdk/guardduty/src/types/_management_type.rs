@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ManagementType {
             ManagementType::AutoManaged => write!(f, "AUTO_MANAGED"),
             ManagementType::Disabled => write!(f, "DISABLED"),
             ManagementType::Manual => write!(f, "MANUAL"),
-            ManagementType::Unknown(value) => write!(f, "{}", value),
+            ManagementType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

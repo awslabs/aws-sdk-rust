@@ -114,7 +114,7 @@ impl ::std::fmt::Display for UnlabeledEventsTreatment {
             UnlabeledEventsTreatment::Fraud => write!(f, "FRAUD"),
             UnlabeledEventsTreatment::Ignore => write!(f, "IGNORE"),
             UnlabeledEventsTreatment::Legit => write!(f, "LEGIT"),
-            UnlabeledEventsTreatment::Unknown(value) => write!(f, "{}", value),
+            UnlabeledEventsTreatment::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

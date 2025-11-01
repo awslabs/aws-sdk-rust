@@ -12,7 +12,7 @@
 use aws_smithy_async::time::SystemTimeSource;
 use aws_smithy_http_client::{proxy::ProxyConfig, tls, Connector};
 use aws_smithy_runtime_api::client::http::{
-    http_client_fn, HttpClient, HttpConnector, HttpConnectorSettings,
+    http_client_fn, HttpClient, HttpConnector, HttpConnectorSettings, SharedHttpConnector,
 };
 use aws_smithy_runtime_api::client::orchestrator::HttpRequest;
 use aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder;
@@ -26,6 +26,7 @@ use std::collections::HashMap;
 use std::convert::Infallible;
 use std::net::SocketAddr;
 use std::sync::{Arc, Mutex};
+use std::time::Duration;
 use tokio::net::TcpListener;
 use tokio::sync::oneshot;
 
@@ -36,6 +37,7 @@ use tokio::sync::oneshot;
 /// Mock HTTP server that acts as a proxy endpoint for testing
 #[derive(Debug)]
 struct MockProxyServer {
+    conn_count: Arc<()>,
     addr: SocketAddr,
     shutdown_tx: Option<oneshot::Sender<()>>,
     request_log: Arc<Mutex<Vec<RecordedRequest>>>,
@@ -60,6 +62,8 @@ impl MockProxyServer {
         let (shutdown_tx, shutdown_rx) = oneshot::channel();
         let request_log = Arc::new(Mutex::new(Vec::new()));
         let request_log_clone = request_log.clone();
+        let conn_count = Arc::new(());
+        let server_conn_count = conn_count.clone();
 
         let handler = Arc::new(handler);
 
@@ -75,7 +79,9 @@ impl MockProxyServer {
                                 let handler = handler.clone();
                                 let request_log = request_log_clone.clone();
 
+                                let stream_conn_count = server_conn_count.clone();
                                 tokio::spawn(async move {
+                                    let _stream_conn_count = stream_conn_count;
                                     let service = service_fn(move |req: Request<Incoming>| {
                                         let handler = handler.clone();
                                         let request_log = request_log.clone();
@@ -125,7 +131,17 @@ impl MockProxyServer {
             addr,
             shutdown_tx: Some(shutdown_tx),
             request_log,
+            conn_count,
         }
+    }
+
+    /// Return the number of active connections to this server
+    fn conn_count(&self) -> usize {
+        // 1 reference for the struct MockProxyServer, 1 reference for the
+        // socket task.
+        Arc::strong_count(&self.conn_count)
+            .checked_sub(2)
+            .expect("de-count 2 refs")
     }
 
     /// Create a simple mock proxy that returns a fixed response
@@ -231,10 +247,26 @@ async fn make_http_request_through_proxy(
     proxy_config: ProxyConfig,
     target_url: &str,
 ) -> Result<(StatusCode, String), Box<dyn std::error::Error + Send + Sync>> {
+    make_http_request_through_proxy_with_pool_timeout(
+        proxy_config,
+        Some(Duration::from_secs(90)),
+        target_url,
+    )
+    .await
+    .map(|(status, res, _client)| (status, res))
+}
+
+/// Helper function to make HTTP requests through a proxy-configured connector
+async fn make_http_request_through_proxy_with_pool_timeout(
+    proxy_config: ProxyConfig,
+    pool_idle_timeout: Option<Duration>,
+    target_url: &str,
+) -> Result<(StatusCode, String, SharedHttpConnector), Box<dyn std::error::Error + Send + Sync>> {
     // Create an HttpClient using http_client_fn with proxy-configured connector
     let http_client = http_client_fn(move |settings, _components| {
         let connector = Connector::builder()
             .proxy_config(proxy_config.clone())
+            .pool_idle_timeout(pool_idle_timeout)
             .connector_settings(settings.clone())
             .build_http();
 
@@ -262,7 +294,64 @@ async fn make_http_request_through_proxy(
     let body_bytes = response.into_body().collect().await?.to_bytes();
     let body_string = String::from_utf8(body_bytes.to_vec())?;
 
-    Ok((status.into(), body_string))
+    Ok((status.into(), body_string, http_connector))
+}
+
+// test the pool idle timeout. The test is in this file because it has a convenient
+// infrastructure for making a server that answers smithy requests.
+#[tokio::test(start_paused = false)]
+// can't set start_paused due to <https://github.com/hyperium/hyper/issues/3950>
+async fn test_http_proxy_connection_pool_timeout() {
+    const TIMEOUT: Duration = Duration::from_secs(10);
+
+    // Create a mock proxy server that validates the request was routed through it
+    let mock_proxy = MockProxyServer::new(|req| {
+        // Validate that this looks like a proxy request
+        assert_eq!(req.method, "GET");
+        // For HTTP proxy, the URI should be the full target URL
+        assert_eq!(req.uri, "http://aws.amazon.com/api/data");
+
+        // Return a successful response that we can identify
+        Response::builder()
+            .status(StatusCode::OK)
+            .body("proxied response from mock server".to_string())
+            .unwrap()
+    })
+    .await;
+    // make sure that conn_count for an empty proxy is 0
+    assert_eq!(mock_proxy.conn_count(), 0);
+    tracing::info!("Start!");
+
+    // Configure connector with HTTP proxy
+    let proxy_config = ProxyConfig::http(format!("http://{}", mock_proxy.addr())).unwrap();
+
+    // Make an HTTP request through the proxy - use safe domain
+    let target_url = "http://aws.amazon.com/api/data";
+    let start = tokio::time::Instant::now();
+    let result =
+        make_http_request_through_proxy_with_pool_timeout(proxy_config, Some(TIMEOUT), target_url)
+            .await;
+    // hold _connector to avoid the timer being dropped
+    let (status, body, _connector) = result.expect("HTTP request through proxy should succeed");
+    assert_eq!(status, StatusCode::OK);
+    assert_eq!(body, "proxied response from mock server");
+
+    // Verify the mock proxy received the expected request
+    let requests = mock_proxy.requests();
+    assert_eq!(requests.len(), 1);
+    assert_eq!(requests[0].method, "GET");
+    assert_eq!(requests[0].uri, target_url);
+
+    // after making a request, conn count is 1
+    assert_eq!(mock_proxy.conn_count(), 1);
+
+    // sleep 1 second below the idle timeout, conn count is still 1
+    tokio::time::sleep_until(start + TIMEOUT - Duration::from_secs(1)).await;
+    assert_eq!(mock_proxy.conn_count(), 1);
+
+    // sleep 2 more seconds, the connection should be disconnected, conn count should be 0
+    tokio::time::sleep(Duration::from_secs(3)).await;
+    assert_eq!(mock_proxy.conn_count(), 0);
 }
 
 #[tokio::test]

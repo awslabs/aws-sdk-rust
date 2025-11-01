@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AttachmentsControlMode {
         match self {
             AttachmentsControlMode::Disabled => write!(f, "DISABLED"),
             AttachmentsControlMode::Enabled => write!(f, "ENABLED"),
-            AttachmentsControlMode::Unknown(value) => write!(f, "{}", value),
+            AttachmentsControlMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

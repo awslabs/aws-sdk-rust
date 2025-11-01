@@ -133,7 +133,7 @@ impl ::std::fmt::Display for ResourceGroupByField {
             ResourceGroupByField::ResourceCategory => write!(f, "ResourceCategory"),
             ResourceGroupByField::ResourceName => write!(f, "ResourceName"),
             ResourceGroupByField::ResourceType => write!(f, "ResourceType"),
-            ResourceGroupByField::Unknown(value) => write!(f, "{}", value),
+            ResourceGroupByField::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

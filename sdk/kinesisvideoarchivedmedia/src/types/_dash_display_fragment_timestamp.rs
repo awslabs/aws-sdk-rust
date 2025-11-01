@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DashDisplayFragmentTimestamp {
         match self {
             DashDisplayFragmentTimestamp::Always => write!(f, "ALWAYS"),
             DashDisplayFragmentTimestamp::Never => write!(f, "NEVER"),
-            DashDisplayFragmentTimestamp::Unknown(value) => write!(f, "{}", value),
+            DashDisplayFragmentTimestamp::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

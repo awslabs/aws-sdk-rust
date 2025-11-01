@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ScopeType {
         match self {
             ScopeType::InstanceId => write!(f, "INSTANCE_ID"),
             ScopeType::RulesPackageArn => write!(f, "RULES_PACKAGE_ARN"),
-            ScopeType::Unknown(value) => write!(f, "{}", value),
+            ScopeType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ManagedBy {
         match self {
             ManagedBy::Account => write!(f, "account"),
             ManagedBy::DeclarativePolicy => write!(f, "declarative-policy"),
-            ManagedBy::Unknown(value) => write!(f, "{}", value),
+            ManagedBy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for CodeSnippetErrorCode {
             CodeSnippetErrorCode::CodeSnippetNotFound => write!(f, "CODE_SNIPPET_NOT_FOUND"),
             CodeSnippetErrorCode::InternalError => write!(f, "INTERNAL_ERROR"),
             CodeSnippetErrorCode::InvalidInput => write!(f, "INVALID_INPUT"),
-            CodeSnippetErrorCode::Unknown(value) => write!(f, "{}", value),
+            CodeSnippetErrorCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

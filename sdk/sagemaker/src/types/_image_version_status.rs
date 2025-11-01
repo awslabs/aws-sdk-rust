@@ -120,7 +120,7 @@ impl ::std::fmt::Display for ImageVersionStatus {
             ImageVersionStatus::Creating => write!(f, "CREATING"),
             ImageVersionStatus::DeleteFailed => write!(f, "DELETE_FAILED"),
             ImageVersionStatus::Deleting => write!(f, "DELETING"),
-            ImageVersionStatus::Unknown(value) => write!(f, "{}", value),
+            ImageVersionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

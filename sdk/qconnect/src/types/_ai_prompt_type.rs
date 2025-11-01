@@ -154,7 +154,7 @@ impl ::std::fmt::Display for AiPromptType {
             AiPromptType::QueryReformulation => write!(f, "QUERY_REFORMULATION"),
             AiPromptType::SelfServiceAnswerGeneration => write!(f, "SELF_SERVICE_ANSWER_GENERATION"),
             AiPromptType::SelfServicePreProcessing => write!(f, "SELF_SERVICE_PRE_PROCESSING"),
-            AiPromptType::Unknown(value) => write!(f, "{}", value),
+            AiPromptType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

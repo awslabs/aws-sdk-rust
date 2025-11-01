@@ -114,7 +114,7 @@ impl ::std::fmt::Display for BaselineOperationType {
             BaselineOperationType::EnableBaseline => write!(f, "ENABLE_BASELINE"),
             BaselineOperationType::ResetEnabledBaseline => write!(f, "RESET_ENABLED_BASELINE"),
             BaselineOperationType::UpdateEnabledBaseline => write!(f, "UPDATE_ENABLED_BASELINE"),
-            BaselineOperationType::Unknown(value) => write!(f, "{}", value),
+            BaselineOperationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

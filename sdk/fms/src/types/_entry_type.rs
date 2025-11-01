@@ -108,7 +108,7 @@ impl ::std::fmt::Display for EntryType {
             EntryType::CustomEntry => write!(f, "CUSTOM_ENTRY"),
             EntryType::FmsManagedFirstEntry => write!(f, "FMS_MANAGED_FIRST_ENTRY"),
             EntryType::FmsManagedLastEntry => write!(f, "FMS_MANAGED_LAST_ENTRY"),
-            EntryType::Unknown(value) => write!(f, "{}", value),
+            EntryType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FilterAction {
         match self {
             FilterAction::Archive => write!(f, "ARCHIVE"),
             FilterAction::Noop => write!(f, "NOOP"),
-            FilterAction::Unknown(value) => write!(f, "{}", value),
+            FilterAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

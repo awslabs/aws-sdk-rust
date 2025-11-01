@@ -102,7 +102,7 @@ impl ::std::fmt::Display for InlineContentType {
         match self {
             InlineContentType::Byte => write!(f, "BYTE"),
             InlineContentType::Text => write!(f, "TEXT"),
-            InlineContentType::Unknown(value) => write!(f, "{}", value),
+            InlineContentType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

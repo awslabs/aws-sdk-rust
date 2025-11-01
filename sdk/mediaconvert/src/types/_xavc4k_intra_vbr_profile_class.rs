@@ -108,7 +108,7 @@ impl ::std::fmt::Display for Xavc4kIntraVbrProfileClass {
             Xavc4kIntraVbrProfileClass::Class100 => write!(f, "CLASS_100"),
             Xavc4kIntraVbrProfileClass::Class300 => write!(f, "CLASS_300"),
             Xavc4kIntraVbrProfileClass::Class480 => write!(f, "CLASS_480"),
-            Xavc4kIntraVbrProfileClass::Unknown(value) => write!(f, "{}", value),
+            Xavc4kIntraVbrProfileClass::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

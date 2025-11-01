@@ -102,7 +102,7 @@ impl ::std::fmt::Display for QueueType {
         match self {
             QueueType::Agent => write!(f, "AGENT"),
             QueueType::Standard => write!(f, "STANDARD"),
-            QueueType::Unknown(value) => write!(f, "{}", value),
+            QueueType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

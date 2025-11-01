@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RowLevelPermissionFormatVersion {
         match self {
             RowLevelPermissionFormatVersion::Version1 => write!(f, "VERSION_1"),
             RowLevelPermissionFormatVersion::Version2 => write!(f, "VERSION_2"),
-            RowLevelPermissionFormatVersion::Unknown(value) => write!(f, "{}", value),
+            RowLevelPermissionFormatVersion::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

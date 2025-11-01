@@ -120,7 +120,7 @@ impl ::std::fmt::Display for FieldName {
             FieldName::EndTime => write!(f, "END_TIME"),
             FieldName::StartTime => write!(f, "START_TIME"),
             FieldName::State => write!(f, "STATE"),
-            FieldName::Unknown(value) => write!(f, "{}", value),
+            FieldName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

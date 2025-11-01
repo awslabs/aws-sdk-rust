@@ -119,7 +119,7 @@ impl ::std::fmt::Display for GrantType {
             GrantType::RefreshToken => write!(f, "refresh_token"),
             GrantType::JwtBearer => write!(f, "urn:ietf:params:oauth:grant-type:jwt-bearer"),
             GrantType::TokenExchange => write!(f, "urn:ietf:params:oauth:grant-type:token-exchange"),
-            GrantType::Unknown(value) => write!(f, "{}", value),
+            GrantType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for WorkloadEstimateStatus {
             WorkloadEstimateStatus::Invalid => write!(f, "INVALID"),
             WorkloadEstimateStatus::Updating => write!(f, "UPDATING"),
             WorkloadEstimateStatus::Valid => write!(f, "VALID"),
-            WorkloadEstimateStatus::Unknown(value) => write!(f, "{}", value),
+            WorkloadEstimateStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

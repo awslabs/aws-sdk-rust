@@ -126,7 +126,7 @@ impl ::std::fmt::Display for QuerySuggestionsBlockListStatus {
             QuerySuggestionsBlockListStatus::Deleting => write!(f, "DELETING"),
             QuerySuggestionsBlockListStatus::Failed => write!(f, "FAILED"),
             QuerySuggestionsBlockListStatus::Updating => write!(f, "UPDATING"),
-            QuerySuggestionsBlockListStatus::Unknown(value) => write!(f, "{}", value),
+            QuerySuggestionsBlockListStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

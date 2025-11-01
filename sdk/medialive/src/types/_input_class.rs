@@ -102,7 +102,7 @@ impl ::std::fmt::Display for InputClass {
         match self {
             InputClass::SinglePipeline => write!(f, "SINGLE_PIPELINE"),
             InputClass::Standard => write!(f, "STANDARD"),
-            InputClass::Unknown(value) => write!(f, "{}", value),
+            InputClass::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

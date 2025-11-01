@@ -102,7 +102,7 @@ impl ::std::fmt::Display for S3GlacierJobTier {
         match self {
             S3GlacierJobTier::Bulk => write!(f, "BULK"),
             S3GlacierJobTier::Standard => write!(f, "STANDARD"),
-            S3GlacierJobTier::Unknown(value) => write!(f, "{}", value),
+            S3GlacierJobTier::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

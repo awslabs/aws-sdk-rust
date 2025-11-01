@@ -140,7 +140,7 @@ impl ::std::fmt::Display for SortableFieldName {
             SortableFieldName::InitiationMethod => write!(f, "INITIATION_METHOD"),
             SortableFieldName::InitiationTimestamp => write!(f, "INITIATION_TIMESTAMP"),
             SortableFieldName::ScheduledTimestamp => write!(f, "SCHEDULED_TIMESTAMP"),
-            SortableFieldName::Unknown(value) => write!(f, "{}", value),
+            SortableFieldName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

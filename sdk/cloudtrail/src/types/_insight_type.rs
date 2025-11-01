@@ -102,7 +102,7 @@ impl ::std::fmt::Display for InsightType {
         match self {
             InsightType::ApiCallRateInsight => write!(f, "ApiCallRateInsight"),
             InsightType::ApiErrorRateInsight => write!(f, "ApiErrorRateInsight"),
-            InsightType::Unknown(value) => write!(f, "{}", value),
+            InsightType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

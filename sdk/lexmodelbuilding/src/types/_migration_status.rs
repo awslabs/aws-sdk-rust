@@ -108,7 +108,7 @@ impl ::std::fmt::Display for MigrationStatus {
             MigrationStatus::Completed => write!(f, "COMPLETED"),
             MigrationStatus::Failed => write!(f, "FAILED"),
             MigrationStatus::InProgress => write!(f, "IN_PROGRESS"),
-            MigrationStatus::Unknown(value) => write!(f, "{}", value),
+            MigrationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

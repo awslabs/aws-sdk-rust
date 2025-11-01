@@ -102,7 +102,7 @@ impl ::std::fmt::Display for InferenceProfileType {
         match self {
             InferenceProfileType::Application => write!(f, "APPLICATION"),
             InferenceProfileType::SystemDefined => write!(f, "SYSTEM_DEFINED"),
-            InferenceProfileType::Unknown(value) => write!(f, "{}", value),
+            InferenceProfileType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

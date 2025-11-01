@@ -132,7 +132,7 @@ impl ::std::fmt::Display for Status {
             Status::NotStarted => write!(f, "NOT_STARTED"),
             Status::Retry => write!(f, "RETRY"),
             Status::Split => write!(f, "SPLIT"),
-            Status::Unknown(value) => write!(f, "{}", value),
+            Status::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

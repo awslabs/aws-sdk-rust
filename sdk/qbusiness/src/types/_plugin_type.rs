@@ -210,7 +210,7 @@ impl ::std::fmt::Display for PluginType {
             PluginType::Smartsheet => write!(f, "SMARTSHEET"),
             PluginType::Zendesk => write!(f, "ZENDESK"),
             PluginType::ZendeskSuite => write!(f, "ZENDESK_SUITE"),
-            PluginType::Unknown(value) => write!(f, "{}", value),
+            PluginType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

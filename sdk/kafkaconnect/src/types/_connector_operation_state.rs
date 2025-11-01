@@ -140,7 +140,7 @@ impl ::std::fmt::Display for ConnectorOperationState {
             ConnectorOperationState::UpdateComplete => write!(f, "UPDATE_COMPLETE"),
             ConnectorOperationState::UpdateFailed => write!(f, "UPDATE_FAILED"),
             ConnectorOperationState::UpdateInProgress => write!(f, "UPDATE_IN_PROGRESS"),
-            ConnectorOperationState::Unknown(value) => write!(f, "{}", value),
+            ConnectorOperationState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

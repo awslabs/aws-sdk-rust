@@ -120,7 +120,7 @@ impl ::std::fmt::Display for ResourceType {
             ResourceType::ConfigurationProfile => write!(f, "ConfigurationProfile"),
             ResourceType::Deployment => write!(f, "Deployment"),
             ResourceType::Environment => write!(f, "Environment"),
-            ResourceType::Unknown(value) => write!(f, "{}", value),
+            ResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

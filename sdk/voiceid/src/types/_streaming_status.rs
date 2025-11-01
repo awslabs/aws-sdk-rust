@@ -108,7 +108,7 @@ impl ::std::fmt::Display for StreamingStatus {
             StreamingStatus::Ended => write!(f, "ENDED"),
             StreamingStatus::Ongoing => write!(f, "ONGOING"),
             StreamingStatus::PendingConfiguration => write!(f, "PENDING_CONFIGURATION"),
-            StreamingStatus::Unknown(value) => write!(f, "{}", value),
+            StreamingStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

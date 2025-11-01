@@ -53,16 +53,14 @@ pub fn de_describe_snapshot_schedules(
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeSnapshotSchedulesResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected DescribeSnapshotSchedulesResponse got {:?}",
-            start_el
+            "invalid root, expected DescribeSnapshotSchedulesResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("DescribeSnapshotSchedulesResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected DescribeSnapshotSchedulesResult got {:?}",
-                start_el
+                "invalid result, expected DescribeSnapshotSchedulesResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

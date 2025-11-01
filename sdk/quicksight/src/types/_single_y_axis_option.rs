@@ -96,7 +96,7 @@ impl ::std::fmt::Display for SingleYAxisOption {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             SingleYAxisOption::PrimaryYAxis => write!(f, "PRIMARY_Y_AXIS"),
-            SingleYAxisOption::Unknown(value) => write!(f, "{}", value),
+            SingleYAxisOption::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

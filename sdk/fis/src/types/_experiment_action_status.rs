@@ -154,7 +154,7 @@ impl ::std::fmt::Display for ExperimentActionStatus {
             ExperimentActionStatus::Skipped => write!(f, "skipped"),
             ExperimentActionStatus::Stopped => write!(f, "stopped"),
             ExperimentActionStatus::Stopping => write!(f, "stopping"),
-            ExperimentActionStatus::Unknown(value) => write!(f, "{}", value),
+            ExperimentActionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

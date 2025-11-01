@@ -194,6 +194,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for SendWorkflow
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::send_workflow_step_action::SendWorkflowStepActionInput,
                 output: &mut ::std::string::String,

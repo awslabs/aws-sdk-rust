@@ -1356,7 +1356,7 @@ impl Builder {
     }
     #[cfg(any(feature = "test-util", test))]
     #[allow(unused_mut)]
-    /// Apply test defaults to the builder
+    /// Apply test defaults to the builder. NOTE: Consider migrating to use `apply_test_defaults_v2` instead.
     pub fn apply_test_defaults(&mut self) -> &mut Self {
         self.set_idempotency_token_provider(Some("00000000-0000-4000-8000-000000000000".into()));
 
@@ -1372,9 +1372,27 @@ impl Builder {
     }
     #[cfg(any(feature = "test-util", test))]
     #[allow(unused_mut)]
-    /// Apply test defaults to the builder
+    /// Apply test defaults to the builder. NOTE: Consider migrating to use `with_test_defaults_v2` instead.
     pub fn with_test_defaults(mut self) -> Self {
         self.apply_test_defaults();
+        self
+    }
+    #[cfg(any(feature = "test-util", test))]
+    #[allow(unused_mut)]
+    /// Apply test defaults to the builder. V2 of this function sets additional test defaults such as region configuration (if applicable).
+    pub fn apply_test_defaults_v2(&mut self) -> &mut Self {
+        self.apply_test_defaults();
+
+        if self.config.load::<crate::config::Region>().is_none() {
+            self.set_region(::std::option::Option::Some(crate::config::Region::new("us-east-1")));
+        }
+        self
+    }
+    #[cfg(any(feature = "test-util", test))]
+    #[allow(unused_mut)]
+    /// Apply test defaults to the builder. V2 of this function sets additional test defaults such as region configuration (if applicable).
+    pub fn with_test_defaults_v2(mut self) -> Self {
+        self.apply_test_defaults_v2();
         self
     }
     /// Builds a [`Config`].
@@ -1610,7 +1628,7 @@ pub(crate) fn base_client_runtime_plugins(mut config: crate::Config) -> ::aws_sm
 
     let default_retry_partition = "s3";
     let default_retry_partition = match config.region() {
-        Some(region) => ::std::borrow::Cow::from(format!("{default_retry_partition}-{}", region)),
+        Some(region) => ::std::borrow::Cow::from(format!("{default_retry_partition}-{region}")),
         None => ::std::borrow::Cow::from(default_retry_partition),
     };
 

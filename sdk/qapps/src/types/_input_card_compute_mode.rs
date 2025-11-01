@@ -102,7 +102,7 @@ impl ::std::fmt::Display for InputCardComputeMode {
         match self {
             InputCardComputeMode::Append => write!(f, "append"),
             InputCardComputeMode::Replace => write!(f, "replace"),
-            InputCardComputeMode::Unknown(value) => write!(f, "{}", value),
+            InputCardComputeMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

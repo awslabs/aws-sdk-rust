@@ -102,7 +102,7 @@ impl ::std::fmt::Display for InventorySchemaDeleteOption {
         match self {
             InventorySchemaDeleteOption::DeleteSchema => write!(f, "DeleteSchema"),
             InventorySchemaDeleteOption::DisableSchema => write!(f, "DisableSchema"),
-            InventorySchemaDeleteOption::Unknown(value) => write!(f, "{}", value),
+            InventorySchemaDeleteOption::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

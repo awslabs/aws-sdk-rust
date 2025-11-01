@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RecommendationTarget {
         match self {
             RecommendationTarget::CrossInstanceFamily => write!(f, "CROSS_INSTANCE_FAMILY"),
             RecommendationTarget::SameInstanceFamily => write!(f, "SAME_INSTANCE_FAMILY"),
-            RecommendationTarget::Unknown(value) => write!(f, "{}", value),
+            RecommendationTarget::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

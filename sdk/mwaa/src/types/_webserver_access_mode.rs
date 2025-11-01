@@ -102,7 +102,7 @@ impl ::std::fmt::Display for WebserverAccessMode {
         match self {
             WebserverAccessMode::PrivateOnly => write!(f, "PRIVATE_ONLY"),
             WebserverAccessMode::PublicOnly => write!(f, "PUBLIC_ONLY"),
-            WebserverAccessMode::Unknown(value) => write!(f, "{}", value),
+            WebserverAccessMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

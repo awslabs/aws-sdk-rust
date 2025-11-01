@@ -108,7 +108,7 @@ impl ::std::fmt::Display for DesktopType {
             DesktopType::Appstream => write!(f, "appstream"),
             DesktopType::Workspaces => write!(f, "workspaces"),
             DesktopType::WorkspacesWeb => write!(f, "workspaces-web"),
-            DesktopType::Unknown(value) => write!(f, "{}", value),
+            DesktopType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for OverwriteExisting {
         match self {
             OverwriteExisting::False => write!(f, "FALSE"),
             OverwriteExisting::True => write!(f, "TRUE"),
-            OverwriteExisting::Unknown(value) => write!(f, "{}", value),
+            OverwriteExisting::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CoverageStringComparison {
         match self {
             CoverageStringComparison::Equals => write!(f, "EQUALS"),
             CoverageStringComparison::NotEquals => write!(f, "NOT_EQUALS"),
-            CoverageStringComparison::Unknown(value) => write!(f, "{}", value),
+            CoverageStringComparison::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

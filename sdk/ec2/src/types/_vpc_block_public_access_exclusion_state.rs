@@ -161,7 +161,7 @@ impl ::std::fmt::Display for VpcBlockPublicAccessExclusionState {
             VpcBlockPublicAccessExclusionState::UpdateComplete => write!(f, "update-complete"),
             VpcBlockPublicAccessExclusionState::UpdateFailed => write!(f, "update-failed"),
             VpcBlockPublicAccessExclusionState::UpdateInProgress => write!(f, "update-in-progress"),
-            VpcBlockPublicAccessExclusionState::Unknown(value) => write!(f, "{}", value),
+            VpcBlockPublicAccessExclusionState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

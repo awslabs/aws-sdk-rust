@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AttributeSuggestionsMode {
         match self {
             AttributeSuggestionsMode::Active => write!(f, "ACTIVE"),
             AttributeSuggestionsMode::Inactive => write!(f, "INACTIVE"),
-            AttributeSuggestionsMode::Unknown(value) => write!(f, "{}", value),
+            AttributeSuggestionsMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

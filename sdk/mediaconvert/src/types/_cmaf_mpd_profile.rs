@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CmafMpdProfile {
         match self {
             CmafMpdProfile::MainProfile => write!(f, "MAIN_PROFILE"),
             CmafMpdProfile::OnDemandProfile => write!(f, "ON_DEMAND_PROFILE"),
-            CmafMpdProfile::Unknown(value) => write!(f, "{}", value),
+            CmafMpdProfile::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

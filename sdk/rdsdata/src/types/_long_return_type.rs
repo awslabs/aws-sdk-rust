@@ -102,7 +102,7 @@ impl ::std::fmt::Display for LongReturnType {
         match self {
             LongReturnType::Long => write!(f, "LONG"),
             LongReturnType::String => write!(f, "STRING"),
-            LongReturnType::Unknown(value) => write!(f, "{}", value),
+            LongReturnType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

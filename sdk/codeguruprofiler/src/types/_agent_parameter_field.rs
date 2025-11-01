@@ -126,7 +126,7 @@ impl ::std::fmt::Display for AgentParameterField {
             AgentParameterField::MinimumTimeForReportingInMilliseconds => write!(f, "MinimumTimeForReportingInMilliseconds"),
             AgentParameterField::ReportingIntervalInMilliseconds => write!(f, "ReportingIntervalInMilliseconds"),
             AgentParameterField::SamplingIntervalInMilliseconds => write!(f, "SamplingIntervalInMilliseconds"),
-            AgentParameterField::Unknown(value) => write!(f, "{}", value),
+            AgentParameterField::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

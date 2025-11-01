@@ -102,7 +102,7 @@ impl ::std::fmt::Display for VchipAction {
         match self {
             VchipAction::Passthrough => write!(f, "PASSTHROUGH"),
             VchipAction::Strip => write!(f, "STRIP"),
-            VchipAction::Unknown(value) => write!(f, "{}", value),
+            VchipAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

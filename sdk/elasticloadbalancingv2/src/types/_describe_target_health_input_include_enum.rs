@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DescribeTargetHealthInputIncludeEnum {
         match self {
             DescribeTargetHealthInputIncludeEnum::All => write!(f, "All"),
             DescribeTargetHealthInputIncludeEnum::Anomaly => write!(f, "AnomalyDetection"),
-            DescribeTargetHealthInputIncludeEnum::Unknown(value) => write!(f, "{}", value),
+            DescribeTargetHealthInputIncludeEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

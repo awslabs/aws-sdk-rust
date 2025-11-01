@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ReadWriteType {
             ReadWriteType::All => write!(f, "All"),
             ReadWriteType::ReadOnly => write!(f, "ReadOnly"),
             ReadWriteType::WriteOnly => write!(f, "WriteOnly"),
-            ReadWriteType::Unknown(value) => write!(f, "{}", value),
+            ReadWriteType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

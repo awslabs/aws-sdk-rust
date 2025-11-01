@@ -120,7 +120,7 @@ impl ::std::fmt::Display for Stage {
             Stage::Experimental => write!(f, "EXPERIMENTAL"),
             Stage::Production => write!(f, "PRODUCTION"),
             Stage::PullRequest => write!(f, "PULL_REQUEST"),
-            Stage::Unknown(value) => write!(f, "{}", value),
+            Stage::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for RouteOrigin {
             RouteOrigin::CreateRoute => write!(f, "CreateRoute"),
             RouteOrigin::CreateRouteTable => write!(f, "CreateRouteTable"),
             RouteOrigin::EnableVgwRoutePropagation => write!(f, "EnableVgwRoutePropagation"),
-            RouteOrigin::Unknown(value) => write!(f, "{}", value),
+            RouteOrigin::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

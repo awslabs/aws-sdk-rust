@@ -96,7 +96,7 @@ impl ::std::fmt::Display for AutomationRulesActionType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             AutomationRulesActionType::FindingFieldsUpdate => write!(f, "FINDING_FIELDS_UPDATE"),
-            AutomationRulesActionType::Unknown(value) => write!(f, "{}", value),
+            AutomationRulesActionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

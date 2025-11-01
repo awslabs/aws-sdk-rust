@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ReceiptFilterPolicy {
         match self {
             ReceiptFilterPolicy::Allow => write!(f, "Allow"),
             ReceiptFilterPolicy::Block => write!(f, "Block"),
-            ReceiptFilterPolicy::Unknown(value) => write!(f, "{}", value),
+            ReceiptFilterPolicy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

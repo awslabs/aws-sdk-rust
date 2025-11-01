@@ -96,7 +96,7 @@ impl ::std::fmt::Display for RecommendationTriggerType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             RecommendationTriggerType::Query => write!(f, "QUERY"),
-            RecommendationTriggerType::Unknown(value) => write!(f, "{}", value),
+            RecommendationTriggerType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

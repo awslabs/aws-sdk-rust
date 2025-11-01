@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TemplateStatus {
         match self {
             TemplateStatus::Active => write!(f, "Active"),
             TemplateStatus::Inactive => write!(f, "Inactive"),
-            TemplateStatus::Unknown(value) => write!(f, "{}", value),
+            TemplateStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

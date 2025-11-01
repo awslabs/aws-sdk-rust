@@ -133,7 +133,7 @@ impl ::std::fmt::Display for ResourceGroupState {
             ResourceGroupState::UpdateComplete => write!(f, "UPDATE_COMPLETE"),
             ResourceGroupState::UpdateFailed => write!(f, "UPDATE_FAILED"),
             ResourceGroupState::Updating => write!(f, "UPDATING"),
-            ResourceGroupState::Unknown(value) => write!(f, "{}", value),
+            ResourceGroupState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

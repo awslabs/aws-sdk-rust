@@ -108,7 +108,7 @@ impl ::std::fmt::Display for DataCollectionType {
             DataCollectionType::Premium => write!(f, "PREMIUM"),
             DataCollectionType::Public => write!(f, "PUBLIC"),
             DataCollectionType::User => write!(f, "USER"),
-            DataCollectionType::Unknown(value) => write!(f, "{}", value),
+            DataCollectionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

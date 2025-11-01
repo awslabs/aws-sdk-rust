@@ -132,7 +132,7 @@ impl ::std::fmt::Display for ThreatIntelSetStatus {
             ThreatIntelSetStatus::DeletePending => write!(f, "DELETE_PENDING"),
             ThreatIntelSetStatus::Error => write!(f, "ERROR"),
             ThreatIntelSetStatus::Inactive => write!(f, "INACTIVE"),
-            ThreatIntelSetStatus::Unknown(value) => write!(f, "{}", value),
+            ThreatIntelSetStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

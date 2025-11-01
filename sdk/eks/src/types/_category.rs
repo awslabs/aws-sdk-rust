@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Category {
         match self {
             Category::Misconfiguration => write!(f, "MISCONFIGURATION"),
             Category::UpgradeReadiness => write!(f, "UPGRADE_READINESS"),
-            Category::Unknown(value) => write!(f, "{}", value),
+            Category::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

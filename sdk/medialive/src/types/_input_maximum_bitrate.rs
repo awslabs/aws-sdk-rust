@@ -108,7 +108,7 @@ impl ::std::fmt::Display for InputMaximumBitrate {
             InputMaximumBitrate::Max10Mbps => write!(f, "MAX_10_MBPS"),
             InputMaximumBitrate::Max20Mbps => write!(f, "MAX_20_MBPS"),
             InputMaximumBitrate::Max50Mbps => write!(f, "MAX_50_MBPS"),
-            InputMaximumBitrate::Unknown(value) => write!(f, "{}", value),
+            InputMaximumBitrate::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

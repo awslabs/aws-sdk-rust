@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ScheduledActionState {
         match self {
             ScheduledActionState::Active => write!(f, "ACTIVE"),
             ScheduledActionState::Disabled => write!(f, "DISABLED"),
-            ScheduledActionState::Unknown(value) => write!(f, "{}", value),
+            ScheduledActionState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

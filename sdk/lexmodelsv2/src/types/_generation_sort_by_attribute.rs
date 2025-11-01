@@ -102,7 +102,7 @@ impl ::std::fmt::Display for GenerationSortByAttribute {
         match self {
             GenerationSortByAttribute::CreationStartTime => write!(f, "creationStartTime"),
             GenerationSortByAttribute::LastUpdatedTime => write!(f, "lastUpdatedTime"),
-            GenerationSortByAttribute::Unknown(value) => write!(f, "{}", value),
+            GenerationSortByAttribute::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

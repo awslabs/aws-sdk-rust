@@ -108,7 +108,7 @@ impl ::std::fmt::Display for PivotTableSubtotalLevel {
             PivotTableSubtotalLevel::All => write!(f, "ALL"),
             PivotTableSubtotalLevel::Custom => write!(f, "CUSTOM"),
             PivotTableSubtotalLevel::Last => write!(f, "LAST"),
-            PivotTableSubtotalLevel::Unknown(value) => write!(f, "{}", value),
+            PivotTableSubtotalLevel::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

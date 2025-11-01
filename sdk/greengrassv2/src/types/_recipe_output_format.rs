@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RecipeOutputFormat {
         match self {
             RecipeOutputFormat::Json => write!(f, "JSON"),
             RecipeOutputFormat::Yaml => write!(f, "YAML"),
-            RecipeOutputFormat::Unknown(value) => write!(f, "{}", value),
+            RecipeOutputFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Auth {
         match self {
             Auth::PlainText => write!(f, "PLAIN_TEXT"),
             Auth::SecretArn => write!(f, "SECRET_ARN"),
-            Auth::Unknown(value) => write!(f, "{}", value),
+            Auth::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

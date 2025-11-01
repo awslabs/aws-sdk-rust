@@ -102,7 +102,7 @@ impl ::std::fmt::Display for EfsInTransitEncryption {
         match self {
             EfsInTransitEncryption::None => write!(f, "NONE"),
             EfsInTransitEncryption::Tls12 => write!(f, "TLS1_2"),
-            EfsInTransitEncryption::Unknown(value) => write!(f, "{}", value),
+            EfsInTransitEncryption::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MarketingSource {
         match self {
             MarketingSource::MarketingActivity => write!(f, "Marketing Activity"),
             MarketingSource::None => write!(f, "None"),
-            MarketingSource::Unknown(value) => write!(f, "{}", value),
+            MarketingSource::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

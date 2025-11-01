@@ -96,7 +96,7 @@ impl ::std::fmt::Display for TraversalType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             TraversalType::PathToRoot => write!(f, "PATH_TO_ROOT"),
-            TraversalType::Unknown(value) => write!(f, "{}", value),
+            TraversalType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

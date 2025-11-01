@@ -114,7 +114,7 @@ impl ::std::fmt::Display for TranscriptionJobStatus {
             TranscriptionJobStatus::Failed => write!(f, "FAILED"),
             TranscriptionJobStatus::InProgress => write!(f, "IN_PROGRESS"),
             TranscriptionJobStatus::Queued => write!(f, "QUEUED"),
-            TranscriptionJobStatus::Unknown(value) => write!(f, "{}", value),
+            TranscriptionJobStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

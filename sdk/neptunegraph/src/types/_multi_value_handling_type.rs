@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MultiValueHandlingType {
         match self {
             MultiValueHandlingType::PickFirst => write!(f, "PICK_FIRST"),
             MultiValueHandlingType::ToList => write!(f, "TO_LIST"),
-            MultiValueHandlingType::Unknown(value) => write!(f, "{}", value),
+            MultiValueHandlingType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

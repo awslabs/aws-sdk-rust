@@ -108,7 +108,7 @@ impl ::std::fmt::Display for RecrawlBehavior {
             RecrawlBehavior::CrawlEventMode => write!(f, "CRAWL_EVENT_MODE"),
             RecrawlBehavior::CrawlEverything => write!(f, "CRAWL_EVERYTHING"),
             RecrawlBehavior::CrawlNewFoldersOnly => write!(f, "CRAWL_NEW_FOLDERS_ONLY"),
-            RecrawlBehavior::Unknown(value) => write!(f, "{}", value),
+            RecrawlBehavior::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

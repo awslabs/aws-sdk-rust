@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PipelineId {
         match self {
             PipelineId::Pipeline0 => write!(f, "PIPELINE_0"),
             PipelineId::Pipeline1 => write!(f, "PIPELINE_1"),
-            PipelineId::Unknown(value) => write!(f, "{}", value),
+            PipelineId::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

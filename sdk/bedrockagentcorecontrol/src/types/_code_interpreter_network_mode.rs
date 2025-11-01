@@ -108,7 +108,7 @@ impl ::std::fmt::Display for CodeInterpreterNetworkMode {
             CodeInterpreterNetworkMode::Public => write!(f, "PUBLIC"),
             CodeInterpreterNetworkMode::Sandbox => write!(f, "SANDBOX"),
             CodeInterpreterNetworkMode::Vpc => write!(f, "VPC"),
-            CodeInterpreterNetworkMode::Unknown(value) => write!(f, "{}", value),
+            CodeInterpreterNetworkMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

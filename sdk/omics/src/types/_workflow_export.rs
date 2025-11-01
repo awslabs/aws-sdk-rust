@@ -102,7 +102,7 @@ impl ::std::fmt::Display for WorkflowExport {
         match self {
             WorkflowExport::Definition => write!(f, "DEFINITION"),
             WorkflowExport::Readme => write!(f, "README"),
-            WorkflowExport::Unknown(value) => write!(f, "{}", value),
+            WorkflowExport::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

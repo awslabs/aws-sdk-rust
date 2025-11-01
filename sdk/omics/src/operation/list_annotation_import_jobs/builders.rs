@@ -22,6 +22,9 @@ impl crate::operation::list_annotation_import_jobs::builders::ListAnnotationImpo
 }
 /// Fluent builder constructing a request to `ListAnnotationImportJobs`.
 ///
+/// <important>
+/// <p>Amazon Web Services HealthOmics variant stores and annotation stores will no longer be open to new customers starting November 7, 2025. If you would like to use variant stores or annotation stores, sign up prior to that date. Existing customers can continue to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html"> Amazon Web Services HealthOmics variant store and annotation store availability change</a>.</p>
+/// </important>
 /// <p>Retrieves a list of annotation import jobs.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListAnnotationImportJobsFluentBuilder {

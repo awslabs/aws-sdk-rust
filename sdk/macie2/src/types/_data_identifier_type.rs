@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DataIdentifierType {
         match self {
             DataIdentifierType::Custom => write!(f, "CUSTOM"),
             DataIdentifierType::Managed => write!(f, "MANAGED"),
-            DataIdentifierType::Unknown(value) => write!(f, "{}", value),
+            DataIdentifierType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for DataIntegrationEventDatasetOperationType {
             DataIntegrationEventDatasetOperationType::Append => write!(f, "APPEND"),
             DataIntegrationEventDatasetOperationType::Delete => write!(f, "DELETE"),
             DataIntegrationEventDatasetOperationType::Upsert => write!(f, "UPSERT"),
-            DataIntegrationEventDatasetOperationType::Unknown(value) => write!(f, "{}", value),
+            DataIntegrationEventDatasetOperationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SseKmsEncryptedObjectsStatus {
         match self {
             SseKmsEncryptedObjectsStatus::Disabled => write!(f, "Disabled"),
             SseKmsEncryptedObjectsStatus::Enabled => write!(f, "Enabled"),
-            SseKmsEncryptedObjectsStatus::Unknown(value) => write!(f, "{}", value),
+            SseKmsEncryptedObjectsStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

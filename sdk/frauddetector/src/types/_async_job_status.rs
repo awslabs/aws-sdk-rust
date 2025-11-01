@@ -133,7 +133,7 @@ impl ::std::fmt::Display for AsyncJobStatus {
             AsyncJobStatus::Failed => write!(f, "FAILED"),
             AsyncJobStatus::InProgress => write!(f, "IN_PROGRESS"),
             AsyncJobStatus::InProgressInitializing => write!(f, "IN_PROGRESS_INITIALIZING"),
-            AsyncJobStatus::Unknown(value) => write!(f, "{}", value),
+            AsyncJobStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

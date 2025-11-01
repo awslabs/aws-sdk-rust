@@ -102,7 +102,7 @@ impl ::std::fmt::Display for InvoiceType {
         match self {
             InvoiceType::CreditMemo => write!(f, "CREDIT_MEMO"),
             InvoiceType::Invoice => write!(f, "INVOICE"),
-            InvoiceType::Unknown(value) => write!(f, "{}", value),
+            InvoiceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

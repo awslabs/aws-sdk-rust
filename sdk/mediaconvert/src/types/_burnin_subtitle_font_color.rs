@@ -138,7 +138,7 @@ impl ::std::fmt::Display for BurninSubtitleFontColor {
             BurninSubtitleFontColor::Red => write!(f, "RED"),
             BurninSubtitleFontColor::White => write!(f, "WHITE"),
             BurninSubtitleFontColor::Yellow => write!(f, "YELLOW"),
-            BurninSubtitleFontColor::Unknown(value) => write!(f, "{}", value),
+            BurninSubtitleFontColor::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

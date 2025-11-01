@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ResourceSharingStrategy {
             ResourceSharingStrategy::Dontlend => write!(f, "DontLend"),
             ResourceSharingStrategy::Lend => write!(f, "Lend"),
             ResourceSharingStrategy::Lendandborrow => write!(f, "LendAndBorrow"),
-            ResourceSharingStrategy::Unknown(value) => write!(f, "{}", value),
+            ResourceSharingStrategy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

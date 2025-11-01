@@ -154,7 +154,7 @@ impl ::std::fmt::Display for OrganizationResourceStatus {
             OrganizationResourceStatus::UpdateFailed => write!(f, "UPDATE_FAILED"),
             OrganizationResourceStatus::UpdateInProgress => write!(f, "UPDATE_IN_PROGRESS"),
             OrganizationResourceStatus::UpdateSuccessful => write!(f, "UPDATE_SUCCESSFUL"),
-            OrganizationResourceStatus::Unknown(value) => write!(f, "{}", value),
+            OrganizationResourceStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

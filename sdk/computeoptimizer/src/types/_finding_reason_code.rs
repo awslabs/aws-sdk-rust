@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FindingReasonCode {
         match self {
             FindingReasonCode::MemoryOverProvisioned => write!(f, "MemoryOverprovisioned"),
             FindingReasonCode::MemoryUnderProvisioned => write!(f, "MemoryUnderprovisioned"),
-            FindingReasonCode::Unknown(value) => write!(f, "{}", value),
+            FindingReasonCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

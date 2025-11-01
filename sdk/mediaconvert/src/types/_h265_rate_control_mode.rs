@@ -108,7 +108,7 @@ impl ::std::fmt::Display for H265RateControlMode {
             H265RateControlMode::Cbr => write!(f, "CBR"),
             H265RateControlMode::Qvbr => write!(f, "QVBR"),
             H265RateControlMode::Vbr => write!(f, "VBR"),
-            H265RateControlMode::Unknown(value) => write!(f, "{}", value),
+            H265RateControlMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

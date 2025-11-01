@@ -106,7 +106,7 @@ impl ::std::fmt::Display for DeliverabilityTestStatus {
         match self {
             DeliverabilityTestStatus::Completed => write!(f, "COMPLETED"),
             DeliverabilityTestStatus::InProgress => write!(f, "IN_PROGRESS"),
-            DeliverabilityTestStatus::Unknown(value) => write!(f, "{}", value),
+            DeliverabilityTestStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

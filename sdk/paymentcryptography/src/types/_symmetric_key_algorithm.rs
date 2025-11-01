@@ -154,7 +154,7 @@ impl ::std::fmt::Display for SymmetricKeyAlgorithm {
             SymmetricKeyAlgorithm::HmacSha512 => write!(f, "HMAC_SHA512"),
             SymmetricKeyAlgorithm::Tdes2Key => write!(f, "TDES_2KEY"),
             SymmetricKeyAlgorithm::Tdes3Key => write!(f, "TDES_3KEY"),
-            SymmetricKeyAlgorithm::Unknown(value) => write!(f, "{}", value),
+            SymmetricKeyAlgorithm::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

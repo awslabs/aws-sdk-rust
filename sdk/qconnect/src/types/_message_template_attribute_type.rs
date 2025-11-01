@@ -114,7 +114,7 @@ impl ::std::fmt::Display for MessageTemplateAttributeType {
             MessageTemplateAttributeType::Custom => write!(f, "CUSTOM"),
             MessageTemplateAttributeType::CustomerProfile => write!(f, "CUSTOMER_PROFILE"),
             MessageTemplateAttributeType::System => write!(f, "SYSTEM"),
-            MessageTemplateAttributeType::Unknown(value) => write!(f, "{}", value),
+            MessageTemplateAttributeType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

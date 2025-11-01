@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MachineType {
         match self {
             MachineType::General => write!(f, "GENERAL"),
             MachineType::Nvme => write!(f, "NVME"),
-            MachineType::Unknown(value) => write!(f, "{}", value),
+            MachineType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

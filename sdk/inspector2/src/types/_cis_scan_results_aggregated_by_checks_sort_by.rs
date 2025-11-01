@@ -120,7 +120,7 @@ impl ::std::fmt::Display for CisScanResultsAggregatedByChecksSortBy {
             CisScanResultsAggregatedByChecksSortBy::Platform => write!(f, "PLATFORM"),
             CisScanResultsAggregatedByChecksSortBy::SecurityLevel => write!(f, "SECURITY_LEVEL"),
             CisScanResultsAggregatedByChecksSortBy::Title => write!(f, "TITLE"),
-            CisScanResultsAggregatedByChecksSortBy::Unknown(value) => write!(f, "{}", value),
+            CisScanResultsAggregatedByChecksSortBy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

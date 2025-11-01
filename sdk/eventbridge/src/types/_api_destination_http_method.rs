@@ -132,7 +132,7 @@ impl ::std::fmt::Display for ApiDestinationHttpMethod {
             ApiDestinationHttpMethod::Patch => write!(f, "PATCH"),
             ApiDestinationHttpMethod::Post => write!(f, "POST"),
             ApiDestinationHttpMethod::Put => write!(f, "PUT"),
-            ApiDestinationHttpMethod::Unknown(value) => write!(f, "{}", value),
+            ApiDestinationHttpMethod::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

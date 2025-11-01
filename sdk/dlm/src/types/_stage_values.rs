@@ -102,7 +102,7 @@ impl ::std::fmt::Display for StageValues {
         match self {
             StageValues::Post => write!(f, "POST"),
             StageValues::Pre => write!(f, "PRE"),
-            StageValues::Unknown(value) => write!(f, "{}", value),
+            StageValues::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

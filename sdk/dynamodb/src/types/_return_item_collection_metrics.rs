@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ReturnItemCollectionMetrics {
         match self {
             ReturnItemCollectionMetrics::None => write!(f, "NONE"),
             ReturnItemCollectionMetrics::Size => write!(f, "SIZE"),
-            ReturnItemCollectionMetrics::Unknown(value) => write!(f, "{}", value),
+            ReturnItemCollectionMetrics::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

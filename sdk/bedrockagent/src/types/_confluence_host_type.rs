@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ConfluenceHostType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ConfluenceHostType::Saas => write!(f, "SAAS"),
-            ConfluenceHostType::Unknown(value) => write!(f, "{}", value),
+            ConfluenceHostType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for EkPubKeyFormat {
         match self {
             EkPubKeyFormat::Der => write!(f, "der"),
             EkPubKeyFormat::Tpmt => write!(f, "tpmt"),
-            EkPubKeyFormat::Unknown(value) => write!(f, "{}", value),
+            EkPubKeyFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

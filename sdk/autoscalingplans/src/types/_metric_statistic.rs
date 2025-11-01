@@ -120,7 +120,7 @@ impl ::std::fmt::Display for MetricStatistic {
             MetricStatistic::Minimum => write!(f, "Minimum"),
             MetricStatistic::SampleCount => write!(f, "SampleCount"),
             MetricStatistic::Sum => write!(f, "Sum"),
-            MetricStatistic::Unknown(value) => write!(f, "{}", value),
+            MetricStatistic::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PartitionDateSource {
         match self {
             PartitionDateSource::DeliveryTime => write!(f, "DeliveryTime"),
             PartitionDateSource::EventTime => write!(f, "EventTime"),
-            PartitionDateSource::Unknown(value) => write!(f, "{}", value),
+            PartitionDateSource::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

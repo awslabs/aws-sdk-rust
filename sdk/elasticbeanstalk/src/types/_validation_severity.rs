@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ValidationSeverity {
         match self {
             ValidationSeverity::Error => write!(f, "error"),
             ValidationSeverity::Warning => write!(f, "warning"),
-            ValidationSeverity::Unknown(value) => write!(f, "{}", value),
+            ValidationSeverity::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

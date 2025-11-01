@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ConnectedEntityType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ConnectedEntityType::Dbms => write!(f, "DBMS"),
-            ConnectedEntityType::Unknown(value) => write!(f, "{}", value),
+            ConnectedEntityType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

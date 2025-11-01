@@ -108,7 +108,7 @@ impl ::std::fmt::Display for IsModifiable {
             IsModifiable::Conditional => write!(f, "CONDITIONAL"),
             IsModifiable::False => write!(f, "FALSE"),
             IsModifiable::True => write!(f, "TRUE"),
-            IsModifiable::Unknown(value) => write!(f, "{}", value),
+            IsModifiable::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

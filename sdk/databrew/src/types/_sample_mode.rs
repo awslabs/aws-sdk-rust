@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SampleMode {
         match self {
             SampleMode::CustomRows => write!(f, "CUSTOM_ROWS"),
             SampleMode::FullDataset => write!(f, "FULL_DATASET"),
-            SampleMode::Unknown(value) => write!(f, "{}", value),
+            SampleMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

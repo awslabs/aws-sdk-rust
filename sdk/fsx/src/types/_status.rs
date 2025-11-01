@@ -147,7 +147,7 @@ impl ::std::fmt::Display for Status {
             Status::Paused => write!(f, "PAUSED"),
             Status::Pending => write!(f, "PENDING"),
             Status::UpdatedOptimizing => write!(f, "UPDATED_OPTIMIZING"),
-            Status::Unknown(value) => write!(f, "{}", value),
+            Status::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

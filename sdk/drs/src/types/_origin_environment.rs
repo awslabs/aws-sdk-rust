@@ -102,7 +102,7 @@ impl ::std::fmt::Display for OriginEnvironment {
         match self {
             OriginEnvironment::Aws => write!(f, "AWS"),
             OriginEnvironment::OnPremises => write!(f, "ON_PREMISES"),
-            OriginEnvironment::Unknown(value) => write!(f, "{}", value),
+            OriginEnvironment::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -140,16 +140,14 @@ pub fn de_define_expression(
     let start_el = decoder.start_el();
     if !(start_el.matches("DefineExpressionResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected DefineExpressionResponse got {:?}",
-            start_el
+            "invalid root, expected DefineExpressionResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("DefineExpressionResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected DefineExpressionResult got {:?}",
-                start_el
+                "invalid result, expected DefineExpressionResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

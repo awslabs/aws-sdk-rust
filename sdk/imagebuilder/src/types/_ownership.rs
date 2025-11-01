@@ -122,7 +122,7 @@ impl ::std::fmt::Display for Ownership {
             Ownership::SelfValue => write!(f, "Self"),
             Ownership::Shared => write!(f, "Shared"),
             Ownership::Thirdparty => write!(f, "ThirdParty"),
-            Ownership::Unknown(value) => write!(f, "{}", value),
+            Ownership::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -126,7 +126,7 @@ impl ::std::fmt::Display for NotificationMessageType {
             NotificationMessageType::NewInsight => write!(f, "NEW_INSIGHT"),
             NotificationMessageType::NewRecommendation => write!(f, "NEW_RECOMMENDATION"),
             NotificationMessageType::SeverityUpgraded => write!(f, "SEVERITY_UPGRADED"),
-            NotificationMessageType::Unknown(value) => write!(f, "{}", value),
+            NotificationMessageType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

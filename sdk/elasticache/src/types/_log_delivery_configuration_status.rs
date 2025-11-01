@@ -120,7 +120,7 @@ impl ::std::fmt::Display for LogDeliveryConfigurationStatus {
             LogDeliveryConfigurationStatus::Enabling => write!(f, "enabling"),
             LogDeliveryConfigurationStatus::Error => write!(f, "error"),
             LogDeliveryConfigurationStatus::Modifying => write!(f, "modifying"),
-            LogDeliveryConfigurationStatus::Unknown(value) => write!(f, "{}", value),
+            LogDeliveryConfigurationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -126,7 +126,7 @@ impl ::std::fmt::Display for AgentRuntimeEndpointStatus {
             AgentRuntimeEndpointStatus::Ready => write!(f, "READY"),
             AgentRuntimeEndpointStatus::UpdateFailed => write!(f, "UPDATE_FAILED"),
             AgentRuntimeEndpointStatus::Updating => write!(f, "UPDATING"),
-            AgentRuntimeEndpointStatus::Unknown(value) => write!(f, "{}", value),
+            AgentRuntimeEndpointStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for S3ObjectCannedAcl {
             S3ObjectCannedAcl::BucketOwnerFullControl => write!(f, "BUCKET_OWNER_FULL_CONTROL"),
             S3ObjectCannedAcl::BucketOwnerRead => write!(f, "BUCKET_OWNER_READ"),
             S3ObjectCannedAcl::PublicRead => write!(f, "PUBLIC_READ"),
-            S3ObjectCannedAcl::Unknown(value) => write!(f, "{}", value),
+            S3ObjectCannedAcl::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

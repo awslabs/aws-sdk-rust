@@ -137,7 +137,7 @@ impl ::std::fmt::Display for BudgetType {
             BudgetType::SpCoverage => write!(f, "SAVINGS_PLANS_COVERAGE"),
             BudgetType::SpUtilization => write!(f, "SAVINGS_PLANS_UTILIZATION"),
             BudgetType::Usage => write!(f, "USAGE"),
-            BudgetType::Unknown(value) => write!(f, "{}", value),
+            BudgetType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

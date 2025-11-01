@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ScalingType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ScalingType::UniformScaling => write!(f, "UNIFORM_SCALING"),
-            ScalingType::Unknown(value) => write!(f, "{}", value),
+            ScalingType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

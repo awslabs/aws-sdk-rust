@@ -126,7 +126,7 @@ impl ::std::fmt::Display for DestinationStatus {
             DestinationStatus::EnableFailed => write!(f, "ENABLE_FAILED"),
             DestinationStatus::Enabling => write!(f, "ENABLING"),
             DestinationStatus::Updating => write!(f, "UPDATING"),
-            DestinationStatus::Unknown(value) => write!(f, "{}", value),
+            DestinationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

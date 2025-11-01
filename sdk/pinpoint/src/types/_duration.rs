@@ -114,7 +114,7 @@ impl ::std::fmt::Display for Duration {
             Duration::Day30 => write!(f, "DAY_30"),
             Duration::Day7 => write!(f, "DAY_7"),
             Duration::Hr24 => write!(f, "HR_24"),
-            Duration::Unknown(value) => write!(f, "{}", value),
+            Duration::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

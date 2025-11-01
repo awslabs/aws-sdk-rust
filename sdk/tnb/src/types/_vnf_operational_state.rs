@@ -102,7 +102,7 @@ impl ::std::fmt::Display for VnfOperationalState {
         match self {
             VnfOperationalState::Started => write!(f, "STARTED"),
             VnfOperationalState::Stopped => write!(f, "STOPPED"),
-            VnfOperationalState::Unknown(value) => write!(f, "{}", value),
+            VnfOperationalState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

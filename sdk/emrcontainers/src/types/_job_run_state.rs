@@ -132,7 +132,7 @@ impl ::std::fmt::Display for JobRunState {
             JobRunState::Pending => write!(f, "PENDING"),
             JobRunState::Running => write!(f, "RUNNING"),
             JobRunState::Submitted => write!(f, "SUBMITTED"),
-            JobRunState::Unknown(value) => write!(f, "{}", value),
+            JobRunState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

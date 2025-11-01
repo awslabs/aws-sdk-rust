@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TravelMode {
         match self {
             TravelMode::Transit => write!(f, "Transit"),
             TravelMode::Truck => write!(f, "Truck"),
-            TravelMode::Unknown(value) => write!(f, "{}", value),
+            TravelMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

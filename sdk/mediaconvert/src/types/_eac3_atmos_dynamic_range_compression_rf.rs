@@ -126,7 +126,7 @@ impl ::std::fmt::Display for Eac3AtmosDynamicRangeCompressionRf {
             Eac3AtmosDynamicRangeCompressionRf::MusicStandard => write!(f, "MUSIC_STANDARD"),
             Eac3AtmosDynamicRangeCompressionRf::None => write!(f, "NONE"),
             Eac3AtmosDynamicRangeCompressionRf::Speech => write!(f, "SPEECH"),
-            Eac3AtmosDynamicRangeCompressionRf::Unknown(value) => write!(f, "{}", value),
+            Eac3AtmosDynamicRangeCompressionRf::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

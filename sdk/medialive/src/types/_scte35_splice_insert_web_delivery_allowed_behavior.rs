@@ -104,7 +104,7 @@ impl ::std::fmt::Display for Scte35SpliceInsertWebDeliveryAllowedBehavior {
         match self {
             Scte35SpliceInsertWebDeliveryAllowedBehavior::Follow => write!(f, "FOLLOW"),
             Scte35SpliceInsertWebDeliveryAllowedBehavior::Ignore => write!(f, "IGNORE"),
-            Scte35SpliceInsertWebDeliveryAllowedBehavior::Unknown(value) => write!(f, "{}", value),
+            Scte35SpliceInsertWebDeliveryAllowedBehavior::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

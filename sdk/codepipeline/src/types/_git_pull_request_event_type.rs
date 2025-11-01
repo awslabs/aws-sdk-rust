@@ -108,7 +108,7 @@ impl ::std::fmt::Display for GitPullRequestEventType {
             GitPullRequestEventType::Closed => write!(f, "CLOSED"),
             GitPullRequestEventType::Open => write!(f, "OPEN"),
             GitPullRequestEventType::Updated => write!(f, "UPDATED"),
-            GitPullRequestEventType::Unknown(value) => write!(f, "{}", value),
+            GitPullRequestEventType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

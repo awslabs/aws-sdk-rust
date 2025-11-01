@@ -217,7 +217,7 @@ impl ::std::fmt::Display for BatchWriteExceptionType {
             BatchWriteExceptionType::StillContainsLinksException => write!(f, "StillContainsLinksException"),
             BatchWriteExceptionType::UnsupportedIndexTypeException => write!(f, "UnsupportedIndexTypeException"),
             BatchWriteExceptionType::ValidationException => write!(f, "ValidationException"),
-            BatchWriteExceptionType::Unknown(value) => write!(f, "{}", value),
+            BatchWriteExceptionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

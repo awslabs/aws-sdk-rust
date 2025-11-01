@@ -108,7 +108,7 @@ impl ::std::fmt::Display for DukptKeyVariant {
             DukptKeyVariant::Bidirectional => write!(f, "BIDIRECTIONAL"),
             DukptKeyVariant::Request => write!(f, "REQUEST"),
             DukptKeyVariant::Response => write!(f, "RESPONSE"),
-            DukptKeyVariant::Unknown(value) => write!(f, "{}", value),
+            DukptKeyVariant::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for GatewayAssociationState {
             GatewayAssociationState::Associating => write!(f, "associating"),
             GatewayAssociationState::Disassociating => write!(f, "disassociating"),
             GatewayAssociationState::NotAssociated => write!(f, "not-associated"),
-            GatewayAssociationState::Unknown(value) => write!(f, "{}", value),
+            GatewayAssociationState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

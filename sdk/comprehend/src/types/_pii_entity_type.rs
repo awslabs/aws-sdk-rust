@@ -350,7 +350,7 @@ impl ::std::fmt::Display for PiiEntityType {
             PiiEntityType::Username => write!(f, "USERNAME"),
             PiiEntityType::UsIndividualTaxIdentificationNumber => write!(f, "US_INDIVIDUAL_TAX_IDENTIFICATION_NUMBER"),
             PiiEntityType::VehicleIdentificationNumber => write!(f, "VEHICLE_IDENTIFICATION_NUMBER"),
-            PiiEntityType::Unknown(value) => write!(f, "{}", value),
+            PiiEntityType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

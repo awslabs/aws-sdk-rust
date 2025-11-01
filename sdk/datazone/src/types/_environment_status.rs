@@ -182,7 +182,7 @@ impl ::std::fmt::Display for EnvironmentStatus {
             EnvironmentStatus::UpdateFailed => write!(f, "UPDATE_FAILED"),
             EnvironmentStatus::Updating => write!(f, "UPDATING"),
             EnvironmentStatus::ValidationFailed => write!(f, "VALIDATION_FAILED"),
-            EnvironmentStatus::Unknown(value) => write!(f, "{}", value),
+            EnvironmentStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

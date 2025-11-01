@@ -102,7 +102,7 @@ impl ::std::fmt::Display for LoggingStrategy {
         match self {
             LoggingStrategy::LegacyCloudwatch => write!(f, "LEGACY_CLOUDWATCH"),
             LoggingStrategy::VendedLogs => write!(f, "VENDED_LOGS"),
-            LoggingStrategy::Unknown(value) => write!(f, "{}", value),
+            LoggingStrategy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PurchaseMode {
         match self {
             PurchaseMode::AutoPurchase => write!(f, "AUTO_PURCHASE"),
             PurchaseMode::Manual => write!(f, "MANUAL"),
-            PurchaseMode::Unknown(value) => write!(f, "{}", value),
+            PurchaseMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -96,7 +96,7 @@ impl ::std::fmt::Display for CaCertificateUpdateAction {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             CaCertificateUpdateAction::Deactivate => write!(f, "DEACTIVATE"),
-            CaCertificateUpdateAction::Unknown(value) => write!(f, "{}", value),
+            CaCertificateUpdateAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

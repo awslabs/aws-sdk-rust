@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ResourceSubType {
             ResourceSubType::Database => write!(f, "Database"),
             ResourceSubType::DatabaseProcess => write!(f, "DatabaseProcess"),
             ResourceSubType::Process => write!(f, "Process"),
-            ResourceSubType::Unknown(value) => write!(f, "{}", value),
+            ResourceSubType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

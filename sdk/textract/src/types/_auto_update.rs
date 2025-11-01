@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AutoUpdate {
         match self {
             AutoUpdate::Disabled => write!(f, "DISABLED"),
             AutoUpdate::Enabled => write!(f, "ENABLED"),
-            AutoUpdate::Unknown(value) => write!(f, "{}", value),
+            AutoUpdate::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

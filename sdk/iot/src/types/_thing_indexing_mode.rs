@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ThingIndexingMode {
             ThingIndexingMode::Off => write!(f, "OFF"),
             ThingIndexingMode::Registry => write!(f, "REGISTRY"),
             ThingIndexingMode::RegistryAndShadow => write!(f, "REGISTRY_AND_SHADOW"),
-            ThingIndexingMode::Unknown(value) => write!(f, "{}", value),
+            ThingIndexingMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

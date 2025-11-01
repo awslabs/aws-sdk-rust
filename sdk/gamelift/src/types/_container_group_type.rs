@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ContainerGroupType {
         match self {
             ContainerGroupType::GameServer => write!(f, "GAME_SERVER"),
             ContainerGroupType::PerInstance => write!(f, "PER_INSTANCE"),
-            ContainerGroupType::Unknown(value) => write!(f, "{}", value),
+            ContainerGroupType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

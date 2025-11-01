@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ResourceStateType {
             ResourceStateType::Recycled => write!(f, "RECYCLED"),
             ResourceStateType::Recycling => write!(f, "RECYCLING"),
             ResourceStateType::Restoring => write!(f, "RESTORING"),
-            ResourceStateType::Unknown(value) => write!(f, "{}", value),
+            ResourceStateType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

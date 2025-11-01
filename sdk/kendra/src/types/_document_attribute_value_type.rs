@@ -114,7 +114,7 @@ impl ::std::fmt::Display for DocumentAttributeValueType {
             DocumentAttributeValueType::LongValue => write!(f, "LONG_VALUE"),
             DocumentAttributeValueType::StringListValue => write!(f, "STRING_LIST_VALUE"),
             DocumentAttributeValueType::StringValue => write!(f, "STRING_VALUE"),
-            DocumentAttributeValueType::Unknown(value) => write!(f, "{}", value),
+            DocumentAttributeValueType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

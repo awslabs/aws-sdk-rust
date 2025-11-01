@@ -108,7 +108,7 @@ impl ::std::fmt::Display for Permission {
             Permission::Read => write!(f, "READ"),
             Permission::Readwrite => write!(f, "READWRITE"),
             Permission::Write => write!(f, "WRITE"),
-            Permission::Unknown(value) => write!(f, "{}", value),
+            Permission::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

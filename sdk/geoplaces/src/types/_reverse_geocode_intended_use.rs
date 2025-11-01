@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ReverseGeocodeIntendedUse {
         match self {
             ReverseGeocodeIntendedUse::SingleUse => write!(f, "SingleUse"),
             ReverseGeocodeIntendedUse::Storage => write!(f, "Storage"),
-            ReverseGeocodeIntendedUse::Unknown(value) => write!(f, "{}", value),
+            ReverseGeocodeIntendedUse::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

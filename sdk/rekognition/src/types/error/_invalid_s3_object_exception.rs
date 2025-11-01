@@ -33,7 +33,7 @@ impl ::std::fmt::Display for InvalidS3ObjectException {
         ::std::write!(f, "InvalidS3ObjectException")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
             {
-                ::std::write!(f, ": {}", inner_1)?;
+                ::std::write!(f, ": {inner_1}")?;
             }
         }
         Ok(())

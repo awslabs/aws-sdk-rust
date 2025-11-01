@@ -108,7 +108,7 @@ impl ::std::fmt::Display for BackupStatus {
             BackupStatus::Available => write!(f, "AVAILABLE"),
             BackupStatus::Creating => write!(f, "CREATING"),
             BackupStatus::Deleted => write!(f, "DELETED"),
-            BackupStatus::Unknown(value) => write!(f, "{}", value),
+            BackupStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

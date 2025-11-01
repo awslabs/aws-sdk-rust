@@ -73,16 +73,14 @@ pub fn de_describe_trust_stores(
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeTrustStoresResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected DescribeTrustStoresResponse got {:?}",
-            start_el
+            "invalid root, expected DescribeTrustStoresResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("DescribeTrustStoresResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected DescribeTrustStoresResult got {:?}",
-                start_el
+                "invalid result, expected DescribeTrustStoresResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

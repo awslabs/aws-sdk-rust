@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ConfigurationCheckType {
             ConfigurationCheckType::SapCheck01 => write!(f, "SAP_CHECK_01"),
             ConfigurationCheckType::SapCheck02 => write!(f, "SAP_CHECK_02"),
             ConfigurationCheckType::SapCheck03 => write!(f, "SAP_CHECK_03"),
-            ConfigurationCheckType::Unknown(value) => write!(f, "{}", value),
+            ConfigurationCheckType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -120,7 +120,7 @@ impl ::std::fmt::Display for SavingsPlanRatePropertyKey {
             SavingsPlanRatePropertyKey::ProductDescription => write!(f, "productDescription"),
             SavingsPlanRatePropertyKey::Region => write!(f, "region"),
             SavingsPlanRatePropertyKey::Tenancy => write!(f, "tenancy"),
-            SavingsPlanRatePropertyKey::Unknown(value) => write!(f, "{}", value),
+            SavingsPlanRatePropertyKey::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

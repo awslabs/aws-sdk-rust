@@ -108,7 +108,7 @@ impl ::std::fmt::Display for RouteTableType {
             RouteTableType::CoreNetworkSegment => write!(f, "CORE_NETWORK_SEGMENT"),
             RouteTableType::NetworkFunctionGroup => write!(f, "NETWORK_FUNCTION_GROUP"),
             RouteTableType::TransitGatewayRouteTable => write!(f, "TRANSIT_GATEWAY_ROUTE_TABLE"),
-            RouteTableType::Unknown(value) => write!(f, "{}", value),
+            RouteTableType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

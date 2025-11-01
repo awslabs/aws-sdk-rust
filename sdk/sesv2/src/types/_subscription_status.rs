@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SubscriptionStatus {
         match self {
             SubscriptionStatus::OptIn => write!(f, "OPT_IN"),
             SubscriptionStatus::OptOut => write!(f, "OPT_OUT"),
-            SubscriptionStatus::Unknown(value) => write!(f, "{}", value),
+            SubscriptionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

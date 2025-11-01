@@ -51,8 +51,7 @@ pub fn de_delete_client_vpn_route(
     let start_el = decoder.start_el();
     if !(start_el.matches("DeleteClientVpnRouteResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected DeleteClientVpnRouteResponse got {:?}",
-            start_el
+            "invalid root, expected DeleteClientVpnRouteResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

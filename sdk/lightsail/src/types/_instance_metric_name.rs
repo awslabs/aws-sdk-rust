@@ -154,7 +154,7 @@ impl ::std::fmt::Display for InstanceMetricName {
             InstanceMetricName::StatusCheckFailed => write!(f, "StatusCheckFailed"),
             InstanceMetricName::StatusCheckFailedInstance => write!(f, "StatusCheckFailed_Instance"),
             InstanceMetricName::StatusCheckFailedSystem => write!(f, "StatusCheckFailed_System"),
-            InstanceMetricName::Unknown(value) => write!(f, "{}", value),
+            InstanceMetricName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

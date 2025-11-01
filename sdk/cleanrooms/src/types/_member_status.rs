@@ -114,7 +114,7 @@ impl ::std::fmt::Display for MemberStatus {
             MemberStatus::Invited => write!(f, "INVITED"),
             MemberStatus::Left => write!(f, "LEFT"),
             MemberStatus::Removed => write!(f, "REMOVED"),
-            MemberStatus::Unknown(value) => write!(f, "{}", value),
+            MemberStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

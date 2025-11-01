@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ComputePlatform {
             ComputePlatform::Ecs => write!(f, "ECS"),
             ComputePlatform::Lambda => write!(f, "Lambda"),
             ComputePlatform::Server => write!(f, "Server"),
-            ComputePlatform::Unknown(value) => write!(f, "{}", value),
+            ComputePlatform::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

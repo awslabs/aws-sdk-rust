@@ -114,7 +114,7 @@ impl ::std::fmt::Display for SyncStatus {
             SyncStatus::SyncingInProgress => write!(f, "SYNCING_IN_PROGRESS"),
             SyncStatus::SyncFailed => write!(f, "SYNC_FAILED"),
             SyncStatus::SyncSuccess => write!(f, "SYNC_SUCCESS"),
-            SyncStatus::Unknown(value) => write!(f, "{}", value),
+            SyncStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DataIntegrationFlowLoadType {
         match self {
             DataIntegrationFlowLoadType::Incremental => write!(f, "INCREMENTAL"),
             DataIntegrationFlowLoadType::Replace => write!(f, "REPLACE"),
-            DataIntegrationFlowLoadType::Unknown(value) => write!(f, "{}", value),
+            DataIntegrationFlowLoadType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TextWrap {
         match self {
             TextWrap::None => write!(f, "NONE"),
             TextWrap::Wrap => write!(f, "WRAP"),
-            TextWrap::Unknown(value) => write!(f, "{}", value),
+            TextWrap::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

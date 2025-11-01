@@ -102,7 +102,7 @@ impl ::std::fmt::Display for IpamNetworkInterfaceAttachmentStatus {
         match self {
             IpamNetworkInterfaceAttachmentStatus::Available => write!(f, "available"),
             IpamNetworkInterfaceAttachmentStatus::InUse => write!(f, "in-use"),
-            IpamNetworkInterfaceAttachmentStatus::Unknown(value) => write!(f, "{}", value),
+            IpamNetworkInterfaceAttachmentStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

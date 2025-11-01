@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ProtectConfigurationRuleOverrideAction {
         match self {
             ProtectConfigurationRuleOverrideAction::Allow => write!(f, "ALLOW"),
             ProtectConfigurationRuleOverrideAction::Block => write!(f, "BLOCK"),
-            ProtectConfigurationRuleOverrideAction::Unknown(value) => write!(f, "{}", value),
+            ProtectConfigurationRuleOverrideAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

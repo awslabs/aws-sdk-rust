@@ -108,7 +108,7 @@ impl ::std::fmt::Display for InstanceOnboardingJobStatusCode {
             InstanceOnboardingJobStatusCode::Failed => write!(f, "FAILED"),
             InstanceOnboardingJobStatusCode::InProgress => write!(f, "IN_PROGRESS"),
             InstanceOnboardingJobStatusCode::Succeeded => write!(f, "SUCCEEDED"),
-            InstanceOnboardingJobStatusCode::Unknown(value) => write!(f, "{}", value),
+            InstanceOnboardingJobStatusCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

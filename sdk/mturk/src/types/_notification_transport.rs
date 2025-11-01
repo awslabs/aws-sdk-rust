@@ -108,7 +108,7 @@ impl ::std::fmt::Display for NotificationTransport {
             NotificationTransport::Email => write!(f, "Email"),
             NotificationTransport::Sns => write!(f, "SNS"),
             NotificationTransport::Sqs => write!(f, "SQS"),
-            NotificationTransport::Unknown(value) => write!(f, "{}", value),
+            NotificationTransport::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

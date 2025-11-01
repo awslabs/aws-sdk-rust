@@ -132,7 +132,7 @@ impl ::std::fmt::Display for Colorimetry {
             Colorimetry::St20651 => write!(f, "ST2065-1"),
             Colorimetry::St20653 => write!(f, "ST2065-3"),
             Colorimetry::Xyz => write!(f, "XYZ"),
-            Colorimetry::Unknown(value) => write!(f, "{}", value),
+            Colorimetry::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

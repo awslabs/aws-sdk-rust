@@ -116,7 +116,7 @@ impl ::std::fmt::Display for EvaluationStatus {
             EvaluationStatus::Passed => write!(f, "passed"),
             EvaluationStatus::PendingEvaluation => write!(f, "pendingEvaluation"),
             EvaluationStatus::UnknownValue => write!(f, "unknown"),
-            EvaluationStatus::Unknown(value) => write!(f, "{}", value),
+            EvaluationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

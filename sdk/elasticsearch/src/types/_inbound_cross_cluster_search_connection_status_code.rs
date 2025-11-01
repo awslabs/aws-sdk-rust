@@ -128,7 +128,7 @@ impl ::std::fmt::Display for InboundCrossClusterSearchConnectionStatusCode {
             InboundCrossClusterSearchConnectionStatusCode::PendingAcceptance => write!(f, "PENDING_ACCEPTANCE"),
             InboundCrossClusterSearchConnectionStatusCode::Rejected => write!(f, "REJECTED"),
             InboundCrossClusterSearchConnectionStatusCode::Rejecting => write!(f, "REJECTING"),
-            InboundCrossClusterSearchConnectionStatusCode::Unknown(value) => write!(f, "{}", value),
+            InboundCrossClusterSearchConnectionStatusCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

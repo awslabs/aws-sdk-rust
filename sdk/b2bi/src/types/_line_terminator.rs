@@ -108,7 +108,7 @@ impl ::std::fmt::Display for LineTerminator {
             LineTerminator::Cr => write!(f, "CR"),
             LineTerminator::Crlf => write!(f, "CRLF"),
             LineTerminator::Lf => write!(f, "LF"),
-            LineTerminator::Unknown(value) => write!(f, "{}", value),
+            LineTerminator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

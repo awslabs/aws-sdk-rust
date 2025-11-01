@@ -108,7 +108,7 @@ impl ::std::fmt::Display for Platform {
             Platform::Web => write!(f, "WEB"),
             Platform::WebCompute => write!(f, "WEB_COMPUTE"),
             Platform::WebDynamic => write!(f, "WEB_DYNAMIC"),
-            Platform::Unknown(value) => write!(f, "{}", value),
+            Platform::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

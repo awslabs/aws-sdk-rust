@@ -360,7 +360,7 @@ impl ::std::fmt::Display for ExportableLambdaFunctionField {
             ExportableLambdaFunctionField::UtilizationMetricsDurationMaximum => write!(f, "UtilizationMetricsDurationMaximum"),
             ExportableLambdaFunctionField::UtilizationMetricsMemoryAverage => write!(f, "UtilizationMetricsMemoryAverage"),
             ExportableLambdaFunctionField::UtilizationMetricsMemoryMaximum => write!(f, "UtilizationMetricsMemoryMaximum"),
-            ExportableLambdaFunctionField::Unknown(value) => write!(f, "{}", value),
+            ExportableLambdaFunctionField::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

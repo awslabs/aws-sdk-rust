@@ -102,7 +102,7 @@ impl ::std::fmt::Display for HostnameType {
         match self {
             HostnameType::IpName => write!(f, "ip-name"),
             HostnameType::ResourceName => write!(f, "resource-name"),
-            HostnameType::Unknown(value) => write!(f, "{}", value),
+            HostnameType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

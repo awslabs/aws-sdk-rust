@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ResourceStatus {
             ResourceStatus::Deleted => write!(f, "DELETED"),
             ResourceStatus::Deprecated => write!(f, "DEPRECATED"),
             ResourceStatus::Disabled => write!(f, "DISABLED"),
-            ResourceStatus::Unknown(value) => write!(f, "{}", value),
+            ResourceStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

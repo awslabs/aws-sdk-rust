@@ -108,7 +108,7 @@ impl ::std::fmt::Display for Type {
             Type::AmazonCustomerByEmail => write!(f, "AmazonCustomerByEmail"),
             Type::CanonicalUser => write!(f, "CanonicalUser"),
             Type::Group => write!(f, "Group"),
-            Type::Unknown(value) => write!(f, "{}", value),
+            Type::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

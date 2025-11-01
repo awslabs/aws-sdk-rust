@@ -102,7 +102,7 @@ impl ::std::fmt::Display for LaunchStopDesiredState {
         match self {
             LaunchStopDesiredState::Cancelled => write!(f, "CANCELLED"),
             LaunchStopDesiredState::Completed => write!(f, "COMPLETED"),
-            LaunchStopDesiredState::Unknown(value) => write!(f, "{}", value),
+            LaunchStopDesiredState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

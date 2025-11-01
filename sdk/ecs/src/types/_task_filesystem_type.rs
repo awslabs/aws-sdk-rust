@@ -114,7 +114,7 @@ impl ::std::fmt::Display for TaskFilesystemType {
             TaskFilesystemType::Ext4 => write!(f, "ext4"),
             TaskFilesystemType::Ntfs => write!(f, "ntfs"),
             TaskFilesystemType::Xfs => write!(f, "xfs"),
-            TaskFilesystemType::Unknown(value) => write!(f, "{}", value),
+            TaskFilesystemType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

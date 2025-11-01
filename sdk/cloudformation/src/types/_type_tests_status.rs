@@ -114,7 +114,7 @@ impl ::std::fmt::Display for TypeTestsStatus {
             TypeTestsStatus::InProgress => write!(f, "IN_PROGRESS"),
             TypeTestsStatus::NotTested => write!(f, "NOT_TESTED"),
             TypeTestsStatus::Passed => write!(f, "PASSED"),
-            TypeTestsStatus::Unknown(value) => write!(f, "{}", value),
+            TypeTestsStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

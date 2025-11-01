@@ -102,7 +102,7 @@ impl ::std::fmt::Display for NetworkOrigin {
         match self {
             NetworkOrigin::Internet => write!(f, "Internet"),
             NetworkOrigin::Vpc => write!(f, "VPC"),
-            NetworkOrigin::Unknown(value) => write!(f, "{}", value),
+            NetworkOrigin::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

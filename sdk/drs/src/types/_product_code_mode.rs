@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ProductCodeMode {
         match self {
             ProductCodeMode::Disabled => write!(f, "DISABLED"),
             ProductCodeMode::Enabled => write!(f, "ENABLED"),
-            ProductCodeMode::Unknown(value) => write!(f, "{}", value),
+            ProductCodeMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

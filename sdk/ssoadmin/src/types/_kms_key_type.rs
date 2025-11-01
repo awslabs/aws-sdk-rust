@@ -102,7 +102,7 @@ impl ::std::fmt::Display for KmsKeyType {
         match self {
             KmsKeyType::AwsOwnedKmsKey => write!(f, "AWS_OWNED_KMS_KEY"),
             KmsKeyType::CustomerManagedKey => write!(f, "CUSTOMER_MANAGED_KEY"),
-            KmsKeyType::Unknown(value) => write!(f, "{}", value),
+            KmsKeyType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for TransitGatewayAssociationState {
             TransitGatewayAssociationState::Associating => write!(f, "associating"),
             TransitGatewayAssociationState::Disassociated => write!(f, "disassociated"),
             TransitGatewayAssociationState::Disassociating => write!(f, "disassociating"),
-            TransitGatewayAssociationState::Unknown(value) => write!(f, "{}", value),
+            TransitGatewayAssociationState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

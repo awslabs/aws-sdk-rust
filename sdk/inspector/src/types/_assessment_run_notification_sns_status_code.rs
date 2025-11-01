@@ -114,7 +114,7 @@ impl ::std::fmt::Display for AssessmentRunNotificationSnsStatusCode {
             AssessmentRunNotificationSnsStatusCode::InternalError => write!(f, "INTERNAL_ERROR"),
             AssessmentRunNotificationSnsStatusCode::Success => write!(f, "SUCCESS"),
             AssessmentRunNotificationSnsStatusCode::TopicDoesNotExist => write!(f, "TOPIC_DOES_NOT_EXIST"),
-            AssessmentRunNotificationSnsStatusCode::Unknown(value) => write!(f, "{}", value),
+            AssessmentRunNotificationSnsStatusCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

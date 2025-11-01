@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RuleBooleanOperator {
         match self {
             RuleBooleanOperator::IsFalse => write!(f, "IS_FALSE"),
             RuleBooleanOperator::IsTrue => write!(f, "IS_TRUE"),
-            RuleBooleanOperator::Unknown(value) => write!(f, "{}", value),
+            RuleBooleanOperator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -147,7 +147,7 @@ impl ::std::fmt::Display for StackInstanceDetailedStatus {
             StackInstanceDetailedStatus::Running => write!(f, "RUNNING"),
             StackInstanceDetailedStatus::SkippedSuspendedAccount => write!(f, "SKIPPED_SUSPENDED_ACCOUNT"),
             StackInstanceDetailedStatus::Succeeded => write!(f, "SUCCEEDED"),
-            StackInstanceDetailedStatus::Unknown(value) => write!(f, "{}", value),
+            StackInstanceDetailedStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

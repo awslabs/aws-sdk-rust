@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Eac3LfeFilter {
         match self {
             Eac3LfeFilter::Disabled => write!(f, "DISABLED"),
             Eac3LfeFilter::Enabled => write!(f, "ENABLED"),
-            Eac3LfeFilter::Unknown(value) => write!(f, "{}", value),
+            Eac3LfeFilter::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

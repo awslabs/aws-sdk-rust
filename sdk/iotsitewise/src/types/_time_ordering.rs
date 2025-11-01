@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TimeOrdering {
         match self {
             TimeOrdering::Ascending => write!(f, "ASCENDING"),
             TimeOrdering::Descending => write!(f, "DESCENDING"),
-            TimeOrdering::Unknown(value) => write!(f, "{}", value),
+            TimeOrdering::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

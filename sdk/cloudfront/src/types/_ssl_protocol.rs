@@ -114,7 +114,7 @@ impl ::std::fmt::Display for SslProtocol {
             SslProtocol::TlSv1 => write!(f, "TLSv1"),
             SslProtocol::TlSv11 => write!(f, "TLSv1.1"),
             SslProtocol::TlSv12 => write!(f, "TLSv1.2"),
-            SslProtocol::Unknown(value) => write!(f, "{}", value),
+            SslProtocol::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

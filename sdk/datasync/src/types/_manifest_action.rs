@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ManifestAction {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ManifestAction::Transfer => write!(f, "TRANSFER"),
-            ManifestAction::Unknown(value) => write!(f, "{}", value),
+            ManifestAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ServiceJobRetryAction {
         match self {
             ServiceJobRetryAction::Exit => write!(f, "EXIT"),
             ServiceJobRetryAction::Retry => write!(f, "RETRY"),
-            ServiceJobRetryAction::Unknown(value) => write!(f, "{}", value),
+            ServiceJobRetryAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

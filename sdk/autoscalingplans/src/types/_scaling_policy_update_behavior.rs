@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ScalingPolicyUpdateBehavior {
         match self {
             ScalingPolicyUpdateBehavior::KeepExternalPolicies => write!(f, "KeepExternalPolicies"),
             ScalingPolicyUpdateBehavior::ReplaceExternalPolicies => write!(f, "ReplaceExternalPolicies"),
-            ScalingPolicyUpdateBehavior::Unknown(value) => write!(f, "{}", value),
+            ScalingPolicyUpdateBehavior::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

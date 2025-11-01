@@ -140,7 +140,7 @@ impl ::std::fmt::Display for TransitGatewayAttachmentResourceType {
             TransitGatewayAttachmentResourceType::TgwPeering => write!(f, "tgw-peering"),
             TransitGatewayAttachmentResourceType::Vpc => write!(f, "vpc"),
             TransitGatewayAttachmentResourceType::Vpn => write!(f, "vpn"),
-            TransitGatewayAttachmentResourceType::Unknown(value) => write!(f, "{}", value),
+            TransitGatewayAttachmentResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

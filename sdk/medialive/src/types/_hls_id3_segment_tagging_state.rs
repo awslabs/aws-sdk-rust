@@ -102,7 +102,7 @@ impl ::std::fmt::Display for HlsId3SegmentTaggingState {
         match self {
             HlsId3SegmentTaggingState::Disabled => write!(f, "DISABLED"),
             HlsId3SegmentTaggingState::Enabled => write!(f, "ENABLED"),
-            HlsId3SegmentTaggingState::Unknown(value) => write!(f, "{}", value),
+            HlsId3SegmentTaggingState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

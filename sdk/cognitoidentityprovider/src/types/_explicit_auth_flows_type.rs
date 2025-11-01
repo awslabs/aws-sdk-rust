@@ -154,7 +154,7 @@ impl ::std::fmt::Display for ExplicitAuthFlowsType {
             ExplicitAuthFlowsType::AllowUserSrpAuth => write!(f, "ALLOW_USER_SRP_AUTH"),
             ExplicitAuthFlowsType::CustomAuthFlowOnly => write!(f, "CUSTOM_AUTH_FLOW_ONLY"),
             ExplicitAuthFlowsType::UserPasswordAuth => write!(f, "USER_PASSWORD_AUTH"),
-            ExplicitAuthFlowsType::Unknown(value) => write!(f, "{}", value),
+            ExplicitAuthFlowsType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ChannelMembershipType {
         match self {
             ChannelMembershipType::Default => write!(f, "DEFAULT"),
             ChannelMembershipType::Hidden => write!(f, "HIDDEN"),
-            ChannelMembershipType::Unknown(value) => write!(f, "{}", value),
+            ChannelMembershipType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for EmailContactStatus {
         match self {
             EmailContactStatus::Active => write!(f, "active"),
             EmailContactStatus::Inactive => write!(f, "inactive"),
-            EmailContactStatus::Unknown(value) => write!(f, "{}", value),
+            EmailContactStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TrainingPlanSortOrder {
         match self {
             TrainingPlanSortOrder::Ascending => write!(f, "Ascending"),
             TrainingPlanSortOrder::Descending => write!(f, "Descending"),
-            TrainingPlanSortOrder::Unknown(value) => write!(f, "{}", value),
+            TrainingPlanSortOrder::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

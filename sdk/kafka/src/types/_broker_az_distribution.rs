@@ -97,7 +97,7 @@ impl ::std::fmt::Display for BrokerAzDistribution {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             BrokerAzDistribution::Default => write!(f, "DEFAULT"),
-            BrokerAzDistribution::Unknown(value) => write!(f, "{}", value),
+            BrokerAzDistribution::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

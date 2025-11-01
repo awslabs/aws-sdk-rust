@@ -123,7 +123,7 @@ mod handrolled_base64 {
     fn encode_inner(inp: &[u8]) -> String {
         // Base 64 encodes groups of 6 bits into characters—this means that each
         // 3 byte group (24 bits) is encoded into 4 base64 characters.
-        let char_ct = ((inp.len() + 2) / 3) * 4;
+        let char_ct = inp.len().div_ceil(3) * 4;
         let mut output = String::with_capacity(char_ct);
         for chunk in inp.chunks(3) {
             let mut block: i32 = 0;
@@ -131,7 +131,7 @@ mod handrolled_base64 {
             for (idx, chunk) in chunk.iter().enumerate() {
                 block |= (*chunk as i32) << ((3 - idx) * 8);
             }
-            let num_sextets = ((chunk.len() * 8) + 5) / 6;
+            let num_sextets = (chunk.len() * 8).div_ceil(6);
             for idx in 0..num_sextets {
                 let slice = block >> (26 - (6 * idx));
                 let idx = (slice as u8) & 0b0011_1111;
@@ -187,7 +187,7 @@ mod handrolled_base64 {
 
         // when there's padding, we might slightly over allocate but it significantly simplifies
         // the code to just ignore it.
-        let mut ret = Vec::with_capacity((inp.len() + 3) / 4 * 3);
+        let mut ret = Vec::with_capacity(inp.len().div_ceil(4) * 3);
 
         // 4 base-64 characters = 3 bytes
         // 1. Break the input into 4 character segments
@@ -227,6 +227,6 @@ mod handrolled_base64 {
     /// Given the length of some data in bytes, return how many bytes it would take to base64 encode
     /// that data.
     pub fn encoded_length(length: u64) -> u64 {
-        (length + 2) / 3 * 4
+        length.div_ceil(3) * 4
     }
 }

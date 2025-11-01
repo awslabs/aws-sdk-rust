@@ -108,7 +108,7 @@ impl ::std::fmt::Display for PhaseStatus {
             PhaseStatus::Error => write!(f, "ERROR"),
             PhaseStatus::Pending => write!(f, "PENDING"),
             PhaseStatus::Success => write!(f, "SUCCESS"),
-            PhaseStatus::Unknown(value) => write!(f, "{}", value),
+            PhaseStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

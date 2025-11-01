@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RefreshScheduleFrequencyUnit {
         match self {
             RefreshScheduleFrequencyUnit::Days => write!(f, "DAYS"),
             RefreshScheduleFrequencyUnit::Hours => write!(f, "HOURS"),
-            RefreshScheduleFrequencyUnit::Unknown(value) => write!(f, "{}", value),
+            RefreshScheduleFrequencyUnit::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

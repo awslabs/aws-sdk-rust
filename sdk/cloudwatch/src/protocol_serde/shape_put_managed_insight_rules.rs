@@ -99,16 +99,14 @@ pub fn de_put_managed_insight_rules(
     let start_el = decoder.start_el();
     if !(start_el.matches("PutManagedInsightRulesResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected PutManagedInsightRulesResponse got {:?}",
-            start_el
+            "invalid root, expected PutManagedInsightRulesResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("PutManagedInsightRulesResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected PutManagedInsightRulesResult got {:?}",
-                start_el
+                "invalid result, expected PutManagedInsightRulesResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

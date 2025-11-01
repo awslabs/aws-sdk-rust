@@ -108,7 +108,7 @@ impl ::std::fmt::Display for BounceType {
             BounceType::Permanent => write!(f, "PERMANENT"),
             BounceType::Transient => write!(f, "TRANSIENT"),
             BounceType::Undetermined => write!(f, "UNDETERMINED"),
-            BounceType::Unknown(value) => write!(f, "{}", value),
+            BounceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

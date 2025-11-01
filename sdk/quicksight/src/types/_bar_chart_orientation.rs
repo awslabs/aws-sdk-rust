@@ -102,7 +102,7 @@ impl ::std::fmt::Display for BarChartOrientation {
         match self {
             BarChartOrientation::Horizontal => write!(f, "HORIZONTAL"),
             BarChartOrientation::Vertical => write!(f, "VERTICAL"),
-            BarChartOrientation::Unknown(value) => write!(f, "{}", value),
+            BarChartOrientation::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

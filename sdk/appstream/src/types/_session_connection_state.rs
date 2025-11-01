@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SessionConnectionState {
         match self {
             SessionConnectionState::Connected => write!(f, "CONNECTED"),
             SessionConnectionState::NotConnected => write!(f, "NOT_CONNECTED"),
-            SessionConnectionState::Unknown(value) => write!(f, "{}", value),
+            SessionConnectionState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

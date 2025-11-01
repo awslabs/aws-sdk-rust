@@ -96,7 +96,7 @@ impl ::std::fmt::Display for CommunicationLimitTimeUnit {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             CommunicationLimitTimeUnit::Day => write!(f, "DAY"),
-            CommunicationLimitTimeUnit::Unknown(value) => write!(f, "{}", value),
+            CommunicationLimitTimeUnit::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

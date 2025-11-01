@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Mpeg2ScanType {
         match self {
             Mpeg2ScanType::Interlaced => write!(f, "INTERLACED"),
             Mpeg2ScanType::Progressive => write!(f, "PROGRESSIVE"),
-            Mpeg2ScanType::Unknown(value) => write!(f, "{}", value),
+            Mpeg2ScanType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

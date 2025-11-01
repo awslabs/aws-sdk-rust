@@ -102,7 +102,7 @@ impl ::std::fmt::Display for IamUserAccessToBilling {
         match self {
             IamUserAccessToBilling::Allow => write!(f, "ALLOW"),
             IamUserAccessToBilling::Deny => write!(f, "DENY"),
-            IamUserAccessToBilling::Unknown(value) => write!(f, "{}", value),
+            IamUserAccessToBilling::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

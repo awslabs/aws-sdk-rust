@@ -186,6 +186,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListRestoreA
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::list_restore_access_backup_vaults::ListRestoreAccessBackupVaultsInput,
                 output: &mut ::std::string::String,

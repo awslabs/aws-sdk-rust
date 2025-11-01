@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FillPolicy {
         match self {
             FillPolicy::FullAvailOnly => write!(f, "FULL_AVAIL_ONLY"),
             FillPolicy::PartialAvail => write!(f, "PARTIAL_AVAIL"),
-            FillPolicy::Unknown(value) => write!(f, "{}", value),
+            FillPolicy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

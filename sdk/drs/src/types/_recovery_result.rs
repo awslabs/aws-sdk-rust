@@ -140,7 +140,7 @@ impl ::std::fmt::Display for RecoveryResult {
             RecoveryResult::NotStarted => write!(f, "NOT_STARTED"),
             RecoveryResult::PartialSuccess => write!(f, "PARTIAL_SUCCESS"),
             RecoveryResult::Success => write!(f, "SUCCESS"),
-            RecoveryResult::Unknown(value) => write!(f, "{}", value),
+            RecoveryResult::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

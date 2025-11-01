@@ -102,7 +102,7 @@ impl ::std::fmt::Display for EventStreamState {
         match self {
             EventStreamState::Running => write!(f, "RUNNING"),
             EventStreamState::Stopped => write!(f, "STOPPED"),
-            EventStreamState::Unknown(value) => write!(f, "{}", value),
+            EventStreamState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

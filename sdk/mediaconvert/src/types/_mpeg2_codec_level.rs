@@ -120,7 +120,7 @@ impl ::std::fmt::Display for Mpeg2CodecLevel {
             Mpeg2CodecLevel::High1440 => write!(f, "HIGH1440"),
             Mpeg2CodecLevel::Low => write!(f, "LOW"),
             Mpeg2CodecLevel::Main => write!(f, "MAIN"),
-            Mpeg2CodecLevel::Unknown(value) => write!(f, "{}", value),
+            Mpeg2CodecLevel::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

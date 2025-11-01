@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DocumentScope {
         match self {
             DocumentScope::Application => write!(f, "APPLICATION"),
             DocumentScope::Session => write!(f, "SESSION"),
-            DocumentScope::Unknown(value) => write!(f, "{}", value),
+            DocumentScope::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

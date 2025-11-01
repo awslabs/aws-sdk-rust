@@ -53,16 +53,14 @@ pub fn de_list_virtual_mfa_devices(
     let start_el = decoder.start_el();
     if !(start_el.matches("ListVirtualMFADevicesResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected ListVirtualMFADevicesResponse got {:?}",
-            start_el
+            "invalid root, expected ListVirtualMFADevicesResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("ListVirtualMFADevicesResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected ListVirtualMFADevicesResult got {:?}",
-                start_el
+                "invalid result, expected ListVirtualMFADevicesResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

@@ -126,7 +126,7 @@ impl ::std::fmt::Display for BurnInOutlineColor {
             BurnInOutlineColor::Red => write!(f, "RED"),
             BurnInOutlineColor::White => write!(f, "WHITE"),
             BurnInOutlineColor::Yellow => write!(f, "YELLOW"),
-            BurnInOutlineColor::Unknown(value) => write!(f, "{}", value),
+            BurnInOutlineColor::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -126,7 +126,7 @@ impl ::std::fmt::Display for FileFormat {
             FileFormat::Json => write!(f, "JSON"),
             FileFormat::Tsv => write!(f, "TSV"),
             FileFormat::Xlsx => write!(f, "XLSX"),
-            FileFormat::Unknown(value) => write!(f, "{}", value),
+            FileFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

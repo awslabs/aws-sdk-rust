@@ -102,7 +102,7 @@ impl ::std::fmt::Display for InvocationType {
         match self {
             InvocationType::Event => write!(f, "Event"),
             InvocationType::RequestResponse => write!(f, "RequestResponse"),
-            InvocationType::Unknown(value) => write!(f, "{}", value),
+            InvocationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

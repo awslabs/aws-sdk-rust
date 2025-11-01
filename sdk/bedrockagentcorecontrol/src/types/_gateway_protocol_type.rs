@@ -96,7 +96,7 @@ impl ::std::fmt::Display for GatewayProtocolType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             GatewayProtocolType::Mcp => write!(f, "MCP"),
-            GatewayProtocolType::Unknown(value) => write!(f, "{}", value),
+            GatewayProtocolType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

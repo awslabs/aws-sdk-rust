@@ -114,7 +114,7 @@ impl ::std::fmt::Display for TargetState {
             TargetState::Registering => write!(f, "REGISTERING"),
             TargetState::Unavailable => write!(f, "UNAVAILABLE"),
             TargetState::Unused => write!(f, "UNUSED"),
-            TargetState::Unknown(value) => write!(f, "{}", value),
+            TargetState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

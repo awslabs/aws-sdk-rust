@@ -177,6 +177,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for StopBackupJo
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::stop_backup_job::StopBackupJobInput,
                 output: &mut ::std::string::String,

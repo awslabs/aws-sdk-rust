@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RoutingObjective {
         match self {
             RoutingObjective::FastestRoute => write!(f, "FastestRoute"),
             RoutingObjective::ShortestRoute => write!(f, "ShortestRoute"),
-            RoutingObjective::Unknown(value) => write!(f, "{}", value),
+            RoutingObjective::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -175,7 +175,7 @@ impl ::std::fmt::Display for IpamScopeState {
             IpamScopeState::ModifyFailed => write!(f, "modify-failed"),
             IpamScopeState::ModifyInProgress => write!(f, "modify-in-progress"),
             IpamScopeState::RestoreInProgress => write!(f, "restore-in-progress"),
-            IpamScopeState::Unknown(value) => write!(f, "{}", value),
+            IpamScopeState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

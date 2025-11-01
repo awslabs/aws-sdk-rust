@@ -108,7 +108,7 @@ impl ::std::fmt::Display for StatisticsAutoGenerationMode {
             StatisticsAutoGenerationMode::DisableAutocompute => write!(f, "disableAutoCompute"),
             StatisticsAutoGenerationMode::EnableAutocompute => write!(f, "enableAutoCompute"),
             StatisticsAutoGenerationMode::Refresh => write!(f, "refresh"),
-            StatisticsAutoGenerationMode::Unknown(value) => write!(f, "{}", value),
+            StatisticsAutoGenerationMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

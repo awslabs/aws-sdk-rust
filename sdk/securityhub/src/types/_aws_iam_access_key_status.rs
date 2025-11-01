@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AwsIamAccessKeyStatus {
         match self {
             AwsIamAccessKeyStatus::Active => write!(f, "Active"),
             AwsIamAccessKeyStatus::Inactive => write!(f, "Inactive"),
-            AwsIamAccessKeyStatus::Unknown(value) => write!(f, "{}", value),
+            AwsIamAccessKeyStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

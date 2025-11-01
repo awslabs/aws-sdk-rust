@@ -126,7 +126,7 @@ impl ::std::fmt::Display for IngressPointStatus {
             IngressPointStatus::Failed => write!(f, "FAILED"),
             IngressPointStatus::Provisioning => write!(f, "PROVISIONING"),
             IngressPointStatus::Updating => write!(f, "UPDATING"),
-            IngressPointStatus::Unknown(value) => write!(f, "{}", value),
+            IngressPointStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

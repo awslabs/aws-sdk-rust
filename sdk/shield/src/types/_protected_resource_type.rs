@@ -133,7 +133,7 @@ impl ::std::fmt::Display for ProtectedResourceType {
             ProtectedResourceType::ElasticIpAllocation => write!(f, "ELASTIC_IP_ALLOCATION"),
             ProtectedResourceType::GlobalAccelerator => write!(f, "GLOBAL_ACCELERATOR"),
             ProtectedResourceType::Route53HostedZone => write!(f, "ROUTE_53_HOSTED_ZONE"),
-            ProtectedResourceType::Unknown(value) => write!(f, "{}", value),
+            ProtectedResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

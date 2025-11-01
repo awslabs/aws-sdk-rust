@@ -114,7 +114,7 @@ impl ::std::fmt::Display for WindowsAccessAuditLogLevel {
             WindowsAccessAuditLogLevel::FailureOnly => write!(f, "FAILURE_ONLY"),
             WindowsAccessAuditLogLevel::SuccessAndFailure => write!(f, "SUCCESS_AND_FAILURE"),
             WindowsAccessAuditLogLevel::SuccessOnly => write!(f, "SUCCESS_ONLY"),
-            WindowsAccessAuditLogLevel::Unknown(value) => write!(f, "{}", value),
+            WindowsAccessAuditLogLevel::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

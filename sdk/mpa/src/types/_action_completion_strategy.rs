@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ActionCompletionStrategy {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ActionCompletionStrategy::AutoCompletionUponApproval => write!(f, "AUTO_COMPLETION_UPON_APPROVAL"),
-            ActionCompletionStrategy::Unknown(value) => write!(f, "{}", value),
+            ActionCompletionStrategy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -55,8 +55,7 @@ pub fn de_delete_transit_gateway_prefix_list_reference(
     let start_el = decoder.start_el();
     if !(start_el.matches("DeleteTransitGatewayPrefixListReferenceResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected DeleteTransitGatewayPrefixListReferenceResponse got {:?}",
-            start_el
+            "invalid root, expected DeleteTransitGatewayPrefixListReferenceResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

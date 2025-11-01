@@ -120,7 +120,7 @@ impl ::std::fmt::Display for PositionalConstraint {
             PositionalConstraint::EndsWith => write!(f, "ENDS_WITH"),
             PositionalConstraint::Exactly => write!(f, "EXACTLY"),
             PositionalConstraint::StartsWith => write!(f, "STARTS_WITH"),
-            PositionalConstraint::Unknown(value) => write!(f, "{}", value),
+            PositionalConstraint::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

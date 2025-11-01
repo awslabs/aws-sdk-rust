@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PositionConfigurationFec {
         match self {
             PositionConfigurationFec::None => write!(f, "NONE"),
             PositionConfigurationFec::Rose => write!(f, "ROSE"),
-            PositionConfigurationFec::Unknown(value) => write!(f, "{}", value),
+            PositionConfigurationFec::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

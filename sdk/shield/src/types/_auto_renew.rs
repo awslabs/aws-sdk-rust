@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AutoRenew {
         match self {
             AutoRenew::Disabled => write!(f, "DISABLED"),
             AutoRenew::Enabled => write!(f, "ENABLED"),
-            AutoRenew::Unknown(value) => write!(f, "{}", value),
+            AutoRenew::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

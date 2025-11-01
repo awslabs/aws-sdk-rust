@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RecordingFrequency {
         match self {
             RecordingFrequency::Continuous => write!(f, "CONTINUOUS"),
             RecordingFrequency::Daily => write!(f, "DAILY"),
-            RecordingFrequency::Unknown(value) => write!(f, "{}", value),
+            RecordingFrequency::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

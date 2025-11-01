@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ConfirmationStatus {
         match self {
             ConfirmationStatus::Final => write!(f, "FINAL"),
             ConfirmationStatus::Nonfinal => write!(f, "NONFINAL"),
-            ConfirmationStatus::Unknown(value) => write!(f, "{}", value),
+            ConfirmationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

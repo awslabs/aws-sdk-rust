@@ -108,7 +108,7 @@ impl ::std::fmt::Display for EntityType {
             EntityType::Group => write!(f, "GROUP"),
             EntityType::Resource => write!(f, "RESOURCE"),
             EntityType::User => write!(f, "USER"),
-            EntityType::Unknown(value) => write!(f, "{}", value),
+            EntityType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

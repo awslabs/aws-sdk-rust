@@ -108,7 +108,7 @@ impl ::std::fmt::Display for PrimaryValueDisplayType {
             PrimaryValueDisplayType::Actual => write!(f, "ACTUAL"),
             PrimaryValueDisplayType::Comparison => write!(f, "COMPARISON"),
             PrimaryValueDisplayType::Hidden => write!(f, "HIDDEN"),
-            PrimaryValueDisplayType::Unknown(value) => write!(f, "{}", value),
+            PrimaryValueDisplayType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

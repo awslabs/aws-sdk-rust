@@ -102,7 +102,7 @@ impl ::std::fmt::Display for GlobalConfigurationOutputTimingSource {
         match self {
             GlobalConfigurationOutputTimingSource::InputClock => write!(f, "INPUT_CLOCK"),
             GlobalConfigurationOutputTimingSource::SystemClock => write!(f, "SYSTEM_CLOCK"),
-            GlobalConfigurationOutputTimingSource::Unknown(value) => write!(f, "{}", value),
+            GlobalConfigurationOutputTimingSource::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

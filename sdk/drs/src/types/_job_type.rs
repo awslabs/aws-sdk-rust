@@ -108,7 +108,7 @@ impl ::std::fmt::Display for JobType {
             JobType::CreateConvertedSnapshot => write!(f, "CREATE_CONVERTED_SNAPSHOT"),
             JobType::Launch => write!(f, "LAUNCH"),
             JobType::Terminate => write!(f, "TERMINATE"),
-            JobType::Unknown(value) => write!(f, "{}", value),
+            JobType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

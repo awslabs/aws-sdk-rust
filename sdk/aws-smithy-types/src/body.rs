@@ -402,7 +402,7 @@ mod test {
     #[test]
     fn sdkbody_debug_once() {
         let body = SdkBody::from("123");
-        assert!(format!("{:?}", body).contains("Once"));
+        assert!(format!("{body:?}").contains("Once"));
     }
 
     #[test]

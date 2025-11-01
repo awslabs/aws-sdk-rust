@@ -140,7 +140,7 @@ impl ::std::fmt::Display for ResourceType {
             ResourceType::Session => write!(f, "SESSION"),
             ResourceType::Speaker => write!(f, "SPEAKER"),
             ResourceType::Watchlist => write!(f, "WATCHLIST"),
-            ResourceType::Unknown(value) => write!(f, "{}", value),
+            ResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

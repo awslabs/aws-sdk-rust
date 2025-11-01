@@ -102,7 +102,7 @@ impl ::std::fmt::Display for JdbcMetadataEntry {
         match self {
             JdbcMetadataEntry::Comments => write!(f, "COMMENTS"),
             JdbcMetadataEntry::Rawtypes => write!(f, "RAWTYPES"),
-            JdbcMetadataEntry::Unknown(value) => write!(f, "{}", value),
+            JdbcMetadataEntry::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

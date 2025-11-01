@@ -114,7 +114,7 @@ impl ::std::fmt::Display for TargetEntityType {
             TargetEntityType::DomainUnit => write!(f, "DOMAIN_UNIT"),
             TargetEntityType::EnvironmentBlueprintConfiguration => write!(f, "ENVIRONMENT_BLUEPRINT_CONFIGURATION"),
             TargetEntityType::EnvironmentProfile => write!(f, "ENVIRONMENT_PROFILE"),
-            TargetEntityType::Unknown(value) => write!(f, "{}", value),
+            TargetEntityType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

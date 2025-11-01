@@ -238,7 +238,7 @@ impl ::std::fmt::Display for Operator {
             Operator::ValidateNonNull => write!(f, "VALIDATE_NON_NULL"),
             Operator::ValidateNonZero => write!(f, "VALIDATE_NON_ZERO"),
             Operator::ValidateNumeric => write!(f, "VALIDATE_NUMERIC"),
-            Operator::Unknown(value) => write!(f, "{}", value),
+            Operator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

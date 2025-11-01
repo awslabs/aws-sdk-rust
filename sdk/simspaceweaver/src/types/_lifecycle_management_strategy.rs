@@ -116,7 +116,7 @@ impl ::std::fmt::Display for LifecycleManagementStrategy {
             LifecycleManagementStrategy::BySpatialSubdivision => write!(f, "BySpatialSubdivision"),
             LifecycleManagementStrategy::PerWorker => write!(f, "PerWorker"),
             LifecycleManagementStrategy::UnknownValue => write!(f, "Unknown"),
-            LifecycleManagementStrategy::Unknown(value) => write!(f, "{}", value),
+            LifecycleManagementStrategy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

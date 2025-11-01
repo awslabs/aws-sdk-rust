@@ -96,7 +96,7 @@ impl ::std::fmt::Display for IvrRecordingTrack {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             IvrRecordingTrack::All => write!(f, "ALL"),
-            IvrRecordingTrack::Unknown(value) => write!(f, "{}", value),
+            IvrRecordingTrack::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

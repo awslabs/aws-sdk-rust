@@ -96,7 +96,7 @@ impl ::std::fmt::Display for EventSourceMappingMetric {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             EventSourceMappingMetric::EventCount => write!(f, "EventCount"),
-            EventSourceMappingMetric::Unknown(value) => write!(f, "{}", value),
+            EventSourceMappingMetric::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

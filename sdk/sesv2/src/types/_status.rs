@@ -132,7 +132,7 @@ impl ::std::fmt::Display for Status {
             Status::Deleting => write!(f, "DELETING"),
             Status::Failed => write!(f, "FAILED"),
             Status::Ready => write!(f, "READY"),
-            Status::Unknown(value) => write!(f, "{}", value),
+            Status::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ImageExtractionStatus {
         match self {
             ImageExtractionStatus::Disabled => write!(f, "DISABLED"),
             ImageExtractionStatus::Enabled => write!(f, "ENABLED"),
-            ImageExtractionStatus::Unknown(value) => write!(f, "{}", value),
+            ImageExtractionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AuthenticationMode {
             AuthenticationMode::Api => write!(f, "API"),
             AuthenticationMode::ApiAndConfigMap => write!(f, "API_AND_CONFIG_MAP"),
             AuthenticationMode::ConfigMap => write!(f, "CONFIG_MAP"),
-            AuthenticationMode::Unknown(value) => write!(f, "{}", value),
+            AuthenticationMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

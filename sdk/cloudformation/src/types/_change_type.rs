@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ChangeType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ChangeType::Resource => write!(f, "Resource"),
-            ChangeType::Unknown(value) => write!(f, "{}", value),
+            ChangeType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -122,7 +122,7 @@ impl ::std::fmt::Display for RawValueType {
             RawValueType::Integer => write!(f, "I"),
             RawValueType::String => write!(f, "S"),
             RawValueType::UnknownValue => write!(f, "U"),
-            RawValueType::Unknown(value) => write!(f, "{}", value),
+            RawValueType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ChallengeName {
         match self {
             ChallengeName::Mfa => write!(f, "Mfa"),
             ChallengeName::Password => write!(f, "Password"),
-            ChallengeName::Unknown(value) => write!(f, "{}", value),
+            ChallengeName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

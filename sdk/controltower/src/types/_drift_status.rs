@@ -116,7 +116,7 @@ impl ::std::fmt::Display for DriftStatus {
             DriftStatus::InSync => write!(f, "IN_SYNC"),
             DriftStatus::NotChecking => write!(f, "NOT_CHECKING"),
             DriftStatus::UnknownValue => write!(f, "UNKNOWN"),
-            DriftStatus::Unknown(value) => write!(f, "{}", value),
+            DriftStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

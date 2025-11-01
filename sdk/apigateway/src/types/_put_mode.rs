@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PutMode {
         match self {
             PutMode::Merge => write!(f, "merge"),
             PutMode::Overwrite => write!(f, "overwrite"),
-            PutMode::Unknown(value) => write!(f, "{}", value),
+            PutMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

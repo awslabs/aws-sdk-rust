@@ -95,16 +95,14 @@ pub fn de_describe_target_groups(
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeTargetGroupsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected DescribeTargetGroupsResponse got {:?}",
-            start_el
+            "invalid root, expected DescribeTargetGroupsResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("DescribeTargetGroupsResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected DescribeTargetGroupsResult got {:?}",
-                start_el
+                "invalid result, expected DescribeTargetGroupsResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

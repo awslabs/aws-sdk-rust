@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DecimalReturnType {
         match self {
             DecimalReturnType::DoubleOrLong => write!(f, "DOUBLE_OR_LONG"),
             DecimalReturnType::String => write!(f, "STRING"),
-            DecimalReturnType::Unknown(value) => write!(f, "{}", value),
+            DecimalReturnType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

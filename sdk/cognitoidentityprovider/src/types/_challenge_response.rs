@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ChallengeResponse {
         match self {
             ChallengeResponse::Failure => write!(f, "Failure"),
             ChallengeResponse::Success => write!(f, "Success"),
-            ChallengeResponse::Unknown(value) => write!(f, "{}", value),
+            ChallengeResponse::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

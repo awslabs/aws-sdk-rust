@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ListingStatus {
             ListingStatus::Active => write!(f, "ACTIVE"),
             ListingStatus::Creating => write!(f, "CREATING"),
             ListingStatus::Inactive => write!(f, "INACTIVE"),
-            ListingStatus::Unknown(value) => write!(f, "{}", value),
+            ListingStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

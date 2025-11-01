@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TargetDbType {
         match self {
             TargetDbType::MultipleDatabases => write!(f, "multiple-databases"),
             TargetDbType::SpecificDatabase => write!(f, "specific-database"),
-            TargetDbType::Unknown(value) => write!(f, "{}", value),
+            TargetDbType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

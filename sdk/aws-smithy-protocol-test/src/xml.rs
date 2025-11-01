@@ -18,12 +18,12 @@ pub(crate) fn try_xml_equivalent(expected: &str, actual: &str) -> Result<(), Pro
     let norm_expected =
         normalize_xml(expected).map_err(|e| ProtocolTestFailure::InvalidBodyFormat {
             expected: "expected document to be valid XML".to_string(),
-            found: format!("{}", e),
+            found: format!("{e}"),
         })?;
     let norm_actual =
         normalize_xml(actual).map_err(|e| ProtocolTestFailure::InvalidBodyFormat {
             expected: "actual document to be valid XML".to_string(),
-            found: format!("{}\n{}", e, actual),
+            found: format!("{e}\n{actual}"),
         })?;
     if norm_expected == norm_actual {
         Ok(())
@@ -108,7 +108,7 @@ fn unparse_start_element(n: Node<'_, '_>) -> String {
     for ns in n.namespaces() {
         out.push_str(" xmlns");
         if let Some(ns_name) = ns.name() {
-            write!(&mut out, ":{}", ns_name).unwrap();
+            write!(&mut out, ":{ns_name}").unwrap();
         }
         write!(&mut out, "={}", ns.uri()).unwrap();
     }
@@ -117,7 +117,7 @@ fn unparse_start_element(n: Node<'_, '_>) -> String {
     for attribute in attributes {
         write!(&mut out, " ").unwrap();
         if let Some(ns) = attribute.namespace() {
-            write!(&mut out, "{}:", ns).unwrap();
+            write!(&mut out, "{ns}:").unwrap();
         }
         write!(&mut out, "{}=\"{}\"", attribute.name(), attribute.value()).unwrap();
     }

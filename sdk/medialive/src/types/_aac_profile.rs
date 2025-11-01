@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AacProfile {
             AacProfile::Hev1 => write!(f, "HEV1"),
             AacProfile::Hev2 => write!(f, "HEV2"),
             AacProfile::Lc => write!(f, "LC"),
-            AacProfile::Unknown(value) => write!(f, "{}", value),
+            AacProfile::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

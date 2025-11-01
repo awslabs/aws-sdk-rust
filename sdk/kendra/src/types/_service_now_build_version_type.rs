@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ServiceNowBuildVersionType {
         match self {
             ServiceNowBuildVersionType::London => write!(f, "LONDON"),
             ServiceNowBuildVersionType::Others => write!(f, "OTHERS"),
-            ServiceNowBuildVersionType::Unknown(value) => write!(f, "{}", value),
+            ServiceNowBuildVersionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

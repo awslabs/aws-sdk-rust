@@ -126,7 +126,7 @@ impl ::std::fmt::Display for TeletextPageType {
             TeletextPageType::PageTypeInitial => write!(f, "PAGE_TYPE_INITIAL"),
             TeletextPageType::PageTypeProgramSchedule => write!(f, "PAGE_TYPE_PROGRAM_SCHEDULE"),
             TeletextPageType::PageTypeSubtitle => write!(f, "PAGE_TYPE_SUBTITLE"),
-            TeletextPageType::Unknown(value) => write!(f, "{}", value),
+            TeletextPageType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

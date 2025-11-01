@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ApiGatewayEndpointType {
         match self {
             ApiGatewayEndpointType::Private => write!(f, "PRIVATE"),
             ApiGatewayEndpointType::Regional => write!(f, "REGIONAL"),
-            ApiGatewayEndpointType::Unknown(value) => write!(f, "{}", value),
+            ApiGatewayEndpointType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

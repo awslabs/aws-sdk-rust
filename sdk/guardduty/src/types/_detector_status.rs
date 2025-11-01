@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DetectorStatus {
         match self {
             DetectorStatus::Disabled => write!(f, "DISABLED"),
             DetectorStatus::Enabled => write!(f, "ENABLED"),
-            DetectorStatus::Unknown(value) => write!(f, "{}", value),
+            DetectorStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

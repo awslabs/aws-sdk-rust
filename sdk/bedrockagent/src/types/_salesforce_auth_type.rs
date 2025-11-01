@@ -96,7 +96,7 @@ impl ::std::fmt::Display for SalesforceAuthType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             SalesforceAuthType::Oauth2ClientCredentials => write!(f, "OAUTH2_CLIENT_CREDENTIALS"),
-            SalesforceAuthType::Unknown(value) => write!(f, "{}", value),
+            SalesforceAuthType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

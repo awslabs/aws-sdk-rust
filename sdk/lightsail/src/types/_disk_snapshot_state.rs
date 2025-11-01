@@ -116,7 +116,7 @@ impl ::std::fmt::Display for DiskSnapshotState {
             DiskSnapshotState::Error => write!(f, "error"),
             DiskSnapshotState::Pending => write!(f, "pending"),
             DiskSnapshotState::UnknownValue => write!(f, "unknown"),
-            DiskSnapshotState::Unknown(value) => write!(f, "{}", value),
+            DiskSnapshotState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

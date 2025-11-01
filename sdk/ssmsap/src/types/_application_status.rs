@@ -149,7 +149,7 @@ impl ::std::fmt::Display for ApplicationStatus {
             ApplicationStatus::Stopped => write!(f, "STOPPED"),
             ApplicationStatus::Stopping => write!(f, "STOPPING"),
             ApplicationStatus::UnknownValue => write!(f, "UNKNOWN"),
-            ApplicationStatus::Unknown(value) => write!(f, "{}", value),
+            ApplicationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

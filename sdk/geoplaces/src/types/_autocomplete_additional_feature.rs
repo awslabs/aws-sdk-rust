@@ -96,7 +96,7 @@ impl ::std::fmt::Display for AutocompleteAdditionalFeature {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             AutocompleteAdditionalFeature::Core => write!(f, "Core"),
-            AutocompleteAdditionalFeature::Unknown(value) => write!(f, "{}", value),
+            AutocompleteAdditionalFeature::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FederationProtocol {
         match self {
             FederationProtocol::Oauth => write!(f, "OAUTH"),
             FederationProtocol::Saml => write!(f, "SAML"),
-            FederationProtocol::Unknown(value) => write!(f, "{}", value),
+            FederationProtocol::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

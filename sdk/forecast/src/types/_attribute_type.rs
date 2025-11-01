@@ -120,7 +120,7 @@ impl ::std::fmt::Display for AttributeType {
             AttributeType::Integer => write!(f, "integer"),
             AttributeType::String => write!(f, "string"),
             AttributeType::Timestamp => write!(f, "timestamp"),
-            AttributeType::Unknown(value) => write!(f, "{}", value),
+            AttributeType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

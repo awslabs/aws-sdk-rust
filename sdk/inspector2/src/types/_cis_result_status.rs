@@ -108,7 +108,7 @@ impl ::std::fmt::Display for CisResultStatus {
             CisResultStatus::Failed => write!(f, "FAILED"),
             CisResultStatus::Passed => write!(f, "PASSED"),
             CisResultStatus::Skipped => write!(f, "SKIPPED"),
-            CisResultStatus::Unknown(value) => write!(f, "{}", value),
+            CisResultStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

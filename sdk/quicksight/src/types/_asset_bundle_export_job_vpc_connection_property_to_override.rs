@@ -110,7 +110,7 @@ impl ::std::fmt::Display for AssetBundleExportJobVpcConnectionPropertyToOverride
             AssetBundleExportJobVpcConnectionPropertyToOverride::DnsResolvers => write!(f, "DnsResolvers"),
             AssetBundleExportJobVpcConnectionPropertyToOverride::Name => write!(f, "Name"),
             AssetBundleExportJobVpcConnectionPropertyToOverride::RoleArn => write!(f, "RoleArn"),
-            AssetBundleExportJobVpcConnectionPropertyToOverride::Unknown(value) => write!(f, "{}", value),
+            AssetBundleExportJobVpcConnectionPropertyToOverride::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

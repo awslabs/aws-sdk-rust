@@ -120,7 +120,7 @@ impl ::std::fmt::Display for ImpactLevel {
             ImpactLevel::Il5 => write!(f, "IL5"),
             ImpactLevel::Il6 => write!(f, "IL6"),
             ImpactLevel::Il99 => write!(f, "IL99"),
-            ImpactLevel::Unknown(value) => write!(f, "{}", value),
+            ImpactLevel::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

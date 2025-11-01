@@ -108,7 +108,7 @@ impl ::std::fmt::Display for FraudDetectionDecision {
             FraudDetectionDecision::HighRisk => write!(f, "HIGH_RISK"),
             FraudDetectionDecision::LowRisk => write!(f, "LOW_RISK"),
             FraudDetectionDecision::NotEnoughSpeech => write!(f, "NOT_ENOUGH_SPEECH"),
-            FraudDetectionDecision::Unknown(value) => write!(f, "{}", value),
+            FraudDetectionDecision::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

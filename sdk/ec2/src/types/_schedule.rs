@@ -96,7 +96,7 @@ impl ::std::fmt::Display for Schedule {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             Schedule::Hourly => write!(f, "hourly"),
-            Schedule::Unknown(value) => write!(f, "{}", value),
+            Schedule::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

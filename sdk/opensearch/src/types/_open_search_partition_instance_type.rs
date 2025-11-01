@@ -812,7 +812,7 @@ impl ::std::fmt::Display for OpenSearchPartitionInstanceType {
             OpenSearchPartitionInstanceType::Ultrawarm1LargeSearch => write!(f, "ultrawarm1.large.search"),
             OpenSearchPartitionInstanceType::Ultrawarm1MediumSearch => write!(f, "ultrawarm1.medium.search"),
             OpenSearchPartitionInstanceType::Ultrawarm1XlargeSearch => write!(f, "ultrawarm1.xlarge.search"),
-            OpenSearchPartitionInstanceType::Unknown(value) => write!(f, "{}", value),
+            OpenSearchPartitionInstanceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

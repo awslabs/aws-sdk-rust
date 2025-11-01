@@ -149,7 +149,7 @@ impl ::std::fmt::Display for BucketOwnerAccess {
             BucketOwnerAccess::Full => write!(f, "FULL"),
             BucketOwnerAccess::None => write!(f, "NONE"),
             BucketOwnerAccess::ReadOnly => write!(f, "READ_ONLY"),
-            BucketOwnerAccess::Unknown(value) => write!(f, "{}", value),
+            BucketOwnerAccess::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

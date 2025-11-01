@@ -357,7 +357,7 @@ impl ::std::fmt::Display for EphemerisErrorCode {
             EphemerisErrorCode::TimeAzElElRadianRangeInvalid => write!(f, "TIME_AZ_EL_EL_RADIAN_RANGE_INVALID"),
             EphemerisErrorCode::TimeAzElItemsOutOfOrder => write!(f, "TIME_AZ_EL_ITEMS_OUT_OF_ORDER"),
             EphemerisErrorCode::TimeSystemUnsupported => write!(f, "TIME_SYSTEM_UNSUPPORTED"),
-            EphemerisErrorCode::Unknown(value) => write!(f, "{}", value),
+            EphemerisErrorCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

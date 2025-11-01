@@ -102,7 +102,7 @@ impl ::std::fmt::Display for StandbyReplicas {
         match self {
             StandbyReplicas::Disabled => write!(f, "DISABLED"),
             StandbyReplicas::Enabled => write!(f, "ENABLED"),
-            StandbyReplicas::Unknown(value) => write!(f, "{}", value),
+            StandbyReplicas::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

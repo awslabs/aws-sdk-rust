@@ -133,7 +133,7 @@ impl ::std::fmt::Display for ServiceNetworkResourceAssociationStatus {
             ServiceNetworkResourceAssociationStatus::DeleteFailed => write!(f, "DELETE_FAILED"),
             ServiceNetworkResourceAssociationStatus::DeleteInProgress => write!(f, "DELETE_IN_PROGRESS"),
             ServiceNetworkResourceAssociationStatus::Partial => write!(f, "PARTIAL"),
-            ServiceNetworkResourceAssociationStatus::Unknown(value) => write!(f, "{}", value),
+            ServiceNetworkResourceAssociationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

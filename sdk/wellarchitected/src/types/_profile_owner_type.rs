@@ -104,7 +104,7 @@ impl ::std::fmt::Display for ProfileOwnerType {
         match self {
             ProfileOwnerType::SelfValue => write!(f, "SELF"),
             ProfileOwnerType::Shared => write!(f, "SHARED"),
-            ProfileOwnerType::Unknown(value) => write!(f, "{}", value),
+            ProfileOwnerType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

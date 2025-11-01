@@ -104,7 +104,7 @@ impl ::std::fmt::Display for InputPsiControl {
         match self {
             InputPsiControl::IgnorePsi => write!(f, "IGNORE_PSI"),
             InputPsiControl::UsePsi => write!(f, "USE_PSI"),
-            InputPsiControl::Unknown(value) => write!(f, "{}", value),
+            InputPsiControl::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

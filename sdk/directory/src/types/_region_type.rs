@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RegionType {
         match self {
             RegionType::Additional => write!(f, "Additional"),
             RegionType::Primary => write!(f, "Primary"),
-            RegionType::Unknown(value) => write!(f, "{}", value),
+            RegionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

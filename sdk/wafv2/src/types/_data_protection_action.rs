@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DataProtectionAction {
         match self {
             DataProtectionAction::Hash => write!(f, "HASH"),
             DataProtectionAction::Substitution => write!(f, "SUBSTITUTION"),
-            DataProtectionAction::Unknown(value) => write!(f, "{}", value),
+            DataProtectionAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

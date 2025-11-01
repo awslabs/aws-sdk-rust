@@ -108,7 +108,7 @@ impl ::std::fmt::Display for InputSampleRange {
             InputSampleRange::Follow => write!(f, "FOLLOW"),
             InputSampleRange::FullRange => write!(f, "FULL_RANGE"),
             InputSampleRange::LimitedRange => write!(f, "LIMITED_RANGE"),
-            InputSampleRange::Unknown(value) => write!(f, "{}", value),
+            InputSampleRange::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

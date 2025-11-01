@@ -128,7 +128,7 @@ impl ::std::fmt::Display for RemediationExecutionStepState {
             RemediationExecutionStepState::Pending => write!(f, "PENDING"),
             RemediationExecutionStepState::Succeeded => write!(f, "SUCCEEDED"),
             RemediationExecutionStepState::UnknownValue => write!(f, "UNKNOWN"),
-            RemediationExecutionStepState::Unknown(value) => write!(f, "{}", value),
+            RemediationExecutionStepState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -120,7 +120,7 @@ impl ::std::fmt::Display for IntegrationStatus {
             IntegrationStatus::Inactive => write!(f, "INACTIVE"),
             IntegrationStatus::InProgress => write!(f, "IN_PROGRESS"),
             IntegrationStatus::Pending => write!(f, "PENDING"),
-            IntegrationStatus::Unknown(value) => write!(f, "{}", value),
+            IntegrationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

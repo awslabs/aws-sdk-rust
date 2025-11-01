@@ -114,7 +114,7 @@ impl ::std::fmt::Display for MonitorMetric {
             MonitorMetric::Retransmissions => write!(f, "RETRANSMISSIONS"),
             MonitorMetric::RoundTripTime => write!(f, "ROUND_TRIP_TIME"),
             MonitorMetric::Timeouts => write!(f, "TIMEOUTS"),
-            MonitorMetric::Unknown(value) => write!(f, "{}", value),
+            MonitorMetric::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CommitmentDuration {
         match self {
             CommitmentDuration::OneMonth => write!(f, "OneMonth"),
             CommitmentDuration::SixMonths => write!(f, "SixMonths"),
-            CommitmentDuration::Unknown(value) => write!(f, "{}", value),
+            CommitmentDuration::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

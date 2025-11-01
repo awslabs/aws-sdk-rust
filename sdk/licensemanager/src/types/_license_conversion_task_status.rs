@@ -108,7 +108,7 @@ impl ::std::fmt::Display for LicenseConversionTaskStatus {
             LicenseConversionTaskStatus::Failed => write!(f, "FAILED"),
             LicenseConversionTaskStatus::InProgress => write!(f, "IN_PROGRESS"),
             LicenseConversionTaskStatus::Succeeded => write!(f, "SUCCEEDED"),
-            LicenseConversionTaskStatus::Unknown(value) => write!(f, "{}", value),
+            LicenseConversionTaskStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

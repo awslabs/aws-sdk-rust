@@ -108,7 +108,7 @@ impl ::std::fmt::Display for DatasourcePackage {
             DatasourcePackage::AsffSecurityhubFinding => write!(f, "ASFF_SECURITYHUB_FINDING"),
             DatasourcePackage::DetectiveCore => write!(f, "DETECTIVE_CORE"),
             DatasourcePackage::EksAudit => write!(f, "EKS_AUDIT"),
-            DatasourcePackage::Unknown(value) => write!(f, "{}", value),
+            DatasourcePackage::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

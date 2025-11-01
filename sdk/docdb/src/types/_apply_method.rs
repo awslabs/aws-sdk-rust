@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ApplyMethod {
         match self {
             ApplyMethod::Immediate => write!(f, "immediate"),
             ApplyMethod::PendingReboot => write!(f, "pending-reboot"),
-            ApplyMethod::Unknown(value) => write!(f, "{}", value),
+            ApplyMethod::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

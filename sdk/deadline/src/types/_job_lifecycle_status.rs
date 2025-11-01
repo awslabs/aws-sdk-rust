@@ -154,7 +154,7 @@ impl ::std::fmt::Display for JobLifecycleStatus {
             JobLifecycleStatus::UpdateSucceeded => write!(f, "UPDATE_SUCCEEDED"),
             JobLifecycleStatus::UploadFailed => write!(f, "UPLOAD_FAILED"),
             JobLifecycleStatus::UploadInProgress => write!(f, "UPLOAD_IN_PROGRESS"),
-            JobLifecycleStatus::Unknown(value) => write!(f, "{}", value),
+            JobLifecycleStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

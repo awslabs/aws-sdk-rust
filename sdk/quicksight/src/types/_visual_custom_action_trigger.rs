@@ -102,7 +102,7 @@ impl ::std::fmt::Display for VisualCustomActionTrigger {
         match self {
             VisualCustomActionTrigger::DataPointClick => write!(f, "DATA_POINT_CLICK"),
             VisualCustomActionTrigger::DataPointMenu => write!(f, "DATA_POINT_MENU"),
-            VisualCustomActionTrigger::Unknown(value) => write!(f, "{}", value),
+            VisualCustomActionTrigger::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Vp8ParControl {
         match self {
             Vp8ParControl::InitializeFromSource => write!(f, "INITIALIZE_FROM_SOURCE"),
             Vp8ParControl::Specified => write!(f, "SPECIFIED"),
-            Vp8ParControl::Unknown(value) => write!(f, "{}", value),
+            Vp8ParControl::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

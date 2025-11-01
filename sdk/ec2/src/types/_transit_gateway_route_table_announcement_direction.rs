@@ -104,7 +104,7 @@ impl ::std::fmt::Display for TransitGatewayRouteTableAnnouncementDirection {
         match self {
             TransitGatewayRouteTableAnnouncementDirection::Incoming => write!(f, "incoming"),
             TransitGatewayRouteTableAnnouncementDirection::Outgoing => write!(f, "outgoing"),
-            TransitGatewayRouteTableAnnouncementDirection::Unknown(value) => write!(f, "{}", value),
+            TransitGatewayRouteTableAnnouncementDirection::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

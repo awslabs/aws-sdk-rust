@@ -96,7 +96,7 @@ impl ::std::fmt::Display for AnalyticsS3ExportFileFormat {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             AnalyticsS3ExportFileFormat::Csv => write!(f, "CSV"),
-            AnalyticsS3ExportFileFormat::Unknown(value) => write!(f, "{}", value),
+            AnalyticsS3ExportFileFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

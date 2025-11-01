@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ApplianceModeSupportValue {
         match self {
             ApplianceModeSupportValue::Disable => write!(f, "disable"),
             ApplianceModeSupportValue::Enable => write!(f, "enable"),
-            ApplianceModeSupportValue::Unknown(value) => write!(f, "{}", value),
+            ApplianceModeSupportValue::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

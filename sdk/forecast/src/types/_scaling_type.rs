@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ScalingType {
             ScalingType::Linear => write!(f, "Linear"),
             ScalingType::Logarithmic => write!(f, "Logarithmic"),
             ScalingType::ReverseLogarithmic => write!(f, "ReverseLogarithmic"),
-            ScalingType::Unknown(value) => write!(f, "{}", value),
+            ScalingType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

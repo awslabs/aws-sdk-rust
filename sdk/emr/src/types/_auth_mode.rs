@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AuthMode {
         match self {
             AuthMode::Iam => write!(f, "IAM"),
             AuthMode::Sso => write!(f, "SSO"),
-            AuthMode::Unknown(value) => write!(f, "{}", value),
+            AuthMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -499,6 +499,26 @@ pub(crate) fn reflens_describe_ipam_pools_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_describe_ipam_prefix_list_resolver_targets_output_output_next_token(
+    input: &crate::operation::describe_ipam_prefix_list_resolver_targets::DescribeIpamPrefixListResolverTargetsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_describe_ipam_prefix_list_resolvers_output_output_next_token(
+    input: &crate::operation::describe_ipam_prefix_list_resolvers::DescribeIpamPrefixListResolversOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_describe_ipam_resource_discoveries_output_output_next_token(
     input: &crate::operation::describe_ipam_resource_discoveries::DescribeIpamResourceDiscoveriesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -1399,6 +1419,36 @@ pub(crate) fn reflens_get_ipam_pool_cidrs_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_get_ipam_prefix_list_resolver_rules_output_output_next_token(
+    input: &crate::operation::get_ipam_prefix_list_resolver_rules::GetIpamPrefixListResolverRulesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_get_ipam_prefix_list_resolver_version_entries_output_output_next_token(
+    input: &crate::operation::get_ipam_prefix_list_resolver_version_entries::GetIpamPrefixListResolverVersionEntriesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_get_ipam_prefix_list_resolver_versions_output_output_next_token(
+    input: &crate::operation::get_ipam_prefix_list_resolver_versions::GetIpamPrefixListResolverVersionsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_get_ipam_resource_cidrs_output_output_next_token(
     input: &crate::operation::get_ipam_resource_cidrs::GetIpamResourceCidrsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -1916,6 +1966,20 @@ pub(crate) fn lens_describe_ipam_pools_output_output_ipam_pools(
     input: crate::operation::describe_ipam_pools::DescribeIpamPoolsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::IpamPool>> {
     let input = input.ipam_pools?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_describe_ipam_prefix_list_resolver_targets_output_output_ipam_prefix_list_resolver_targets(
+    input: crate::operation::describe_ipam_prefix_list_resolver_targets::DescribeIpamPrefixListResolverTargetsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::IpamPrefixListResolverTarget>> {
+    let input = input.ipam_prefix_list_resolver_targets?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_describe_ipam_prefix_list_resolvers_output_output_ipam_prefix_list_resolvers(
+    input: crate::operation::describe_ipam_prefix_list_resolvers::DescribeIpamPrefixListResolversOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::IpamPrefixListResolver>> {
+    let input = input.ipam_prefix_list_resolvers?;
     ::std::option::Option::Some(input)
 }
 
@@ -2546,6 +2610,27 @@ pub(crate) fn lens_get_ipam_pool_cidrs_output_output_ipam_pool_cidrs(
     input: crate::operation::get_ipam_pool_cidrs::GetIpamPoolCidrsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::IpamPoolCidr>> {
     let input = input.ipam_pool_cidrs?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_get_ipam_prefix_list_resolver_rules_output_output_rules(
+    input: crate::operation::get_ipam_prefix_list_resolver_rules::GetIpamPrefixListResolverRulesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::IpamPrefixListResolverRule>> {
+    let input = input.rules?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_get_ipam_prefix_list_resolver_version_entries_output_output_entries(
+    input: crate::operation::get_ipam_prefix_list_resolver_version_entries::GetIpamPrefixListResolverVersionEntriesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::IpamPrefixListResolverVersionEntry>> {
+    let input = input.entries?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_get_ipam_prefix_list_resolver_versions_output_output_ipam_prefix_list_resolver_versions(
+    input: crate::operation::get_ipam_prefix_list_resolver_versions::GetIpamPrefixListResolverVersionsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::IpamPrefixListResolverVersion>> {
+    let input = input.ipam_prefix_list_resolver_versions?;
     ::std::option::Option::Some(input)
 }
 

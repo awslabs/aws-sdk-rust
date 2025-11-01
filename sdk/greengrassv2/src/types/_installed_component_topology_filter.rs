@@ -102,7 +102,7 @@ impl ::std::fmt::Display for InstalledComponentTopologyFilter {
         match self {
             InstalledComponentTopologyFilter::All => write!(f, "ALL"),
             InstalledComponentTopologyFilter::Root => write!(f, "ROOT"),
-            InstalledComponentTopologyFilter::Unknown(value) => write!(f, "{}", value),
+            InstalledComponentTopologyFilter::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

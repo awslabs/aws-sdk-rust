@@ -743,7 +743,7 @@ mod message_frame_decoder_tests {
     #[test]
     fn multiple_streaming_messages() {
         for chunk_size in 1..=11 {
-            println!("chunk size: {}", chunk_size);
+            println!("chunk size: {chunk_size}");
             multiple_streaming_messages_chunk_size(chunk_size);
         }
     }

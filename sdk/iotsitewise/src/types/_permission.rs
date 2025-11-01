@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Permission {
         match self {
             Permission::Administrator => write!(f, "ADMINISTRATOR"),
             Permission::Viewer => write!(f, "VIEWER"),
-            Permission::Unknown(value) => write!(f, "{}", value),
+            Permission::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

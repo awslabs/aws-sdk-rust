@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ShareRequestType {
         match self {
             ShareRequestType::Received => write!(f, "RECEIVED"),
             ShareRequestType::Sent => write!(f, "SENT"),
-            ShareRequestType::Unknown(value) => write!(f, "{}", value),
+            ShareRequestType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AlfrescoEntity {
             AlfrescoEntity::Blog => write!(f, "blog"),
             AlfrescoEntity::DocumentLibrary => write!(f, "documentLibrary"),
             AlfrescoEntity::Wiki => write!(f, "wiki"),
-            AlfrescoEntity::Unknown(value) => write!(f, "{}", value),
+            AlfrescoEntity::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

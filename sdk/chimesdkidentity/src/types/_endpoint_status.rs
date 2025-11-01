@@ -102,7 +102,7 @@ impl ::std::fmt::Display for EndpointStatus {
         match self {
             EndpointStatus::Active => write!(f, "ACTIVE"),
             EndpointStatus::Inactive => write!(f, "INACTIVE"),
-            EndpointStatus::Unknown(value) => write!(f, "{}", value),
+            EndpointStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

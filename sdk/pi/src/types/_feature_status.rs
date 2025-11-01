@@ -135,7 +135,7 @@ impl ::std::fmt::Display for FeatureStatus {
             FeatureStatus::EnabledPendingReboot => write!(f, "ENABLED_PENDING_REBOOT"),
             FeatureStatus::UnknownValue => write!(f, "UNKNOWN"),
             FeatureStatus::Unsupported => write!(f, "UNSUPPORTED"),
-            FeatureStatus::Unknown(value) => write!(f, "{}", value),
+            FeatureStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for DvbSubDestinationAlignment {
             DvbSubDestinationAlignment::Centered => write!(f, "CENTERED"),
             DvbSubDestinationAlignment::Left => write!(f, "LEFT"),
             DvbSubDestinationAlignment::Smart => write!(f, "SMART"),
-            DvbSubDestinationAlignment::Unknown(value) => write!(f, "{}", value),
+            DvbSubDestinationAlignment::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

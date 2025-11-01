@@ -102,7 +102,7 @@ impl ::std::fmt::Display for HostedZoneLimitType {
         match self {
             HostedZoneLimitType::MaxRrsetsByZone => write!(f, "MAX_RRSETS_BY_ZONE"),
             HostedZoneLimitType::MaxVpcsAssociatedByZone => write!(f, "MAX_VPCS_ASSOCIATED_BY_ZONE"),
-            HostedZoneLimitType::Unknown(value) => write!(f, "{}", value),
+            HostedZoneLimitType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

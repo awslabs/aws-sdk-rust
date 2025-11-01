@@ -114,7 +114,7 @@ impl ::std::fmt::Display for OverallChangeStatus {
             OverallChangeStatus::Failed => write!(f, "FAILED"),
             OverallChangeStatus::Pending => write!(f, "PENDING"),
             OverallChangeStatus::Processing => write!(f, "PROCESSING"),
-            OverallChangeStatus::Unknown(value) => write!(f, "{}", value),
+            OverallChangeStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

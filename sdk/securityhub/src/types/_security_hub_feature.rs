@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SecurityHubFeature {
         match self {
             SecurityHubFeature::SecurityHub => write!(f, "SecurityHub"),
             SecurityHubFeature::SecurityHubV2 => write!(f, "SecurityHubV2"),
-            SecurityHubFeature::Unknown(value) => write!(f, "{}", value),
+            SecurityHubFeature::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

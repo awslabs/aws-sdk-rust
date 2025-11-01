@@ -168,7 +168,7 @@ impl ::std::fmt::Display for ChannelState {
             ChannelState::Stopping => write!(f, "STOPPING"),
             ChannelState::UpdateFailed => write!(f, "UPDATE_FAILED"),
             ChannelState::Updating => write!(f, "UPDATING"),
-            ChannelState::Unknown(value) => write!(f, "{}", value),
+            ChannelState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -51,8 +51,7 @@ pub fn de_delete_carrier_gateway(
     let start_el = decoder.start_el();
     if !(start_el.matches("DeleteCarrierGatewayResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected DeleteCarrierGatewayResponse got {:?}",
-            start_el
+            "invalid root, expected DeleteCarrierGatewayResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

@@ -104,7 +104,7 @@ impl ::std::fmt::Display for RealTimeContactAnalysisPostContactSummaryStatus {
         match self {
             RealTimeContactAnalysisPostContactSummaryStatus::Completed => write!(f, "COMPLETED"),
             RealTimeContactAnalysisPostContactSummaryStatus::Failed => write!(f, "FAILED"),
-            RealTimeContactAnalysisPostContactSummaryStatus::Unknown(value) => write!(f, "{}", value),
+            RealTimeContactAnalysisPostContactSummaryStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

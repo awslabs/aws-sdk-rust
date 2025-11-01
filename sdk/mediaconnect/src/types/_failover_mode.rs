@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FailoverMode {
         match self {
             FailoverMode::Failover => write!(f, "FAILOVER"),
             FailoverMode::Merge => write!(f, "MERGE"),
-            FailoverMode::Unknown(value) => write!(f, "{}", value),
+            FailoverMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

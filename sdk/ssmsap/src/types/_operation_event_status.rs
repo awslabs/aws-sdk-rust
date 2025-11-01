@@ -108,7 +108,7 @@ impl ::std::fmt::Display for OperationEventStatus {
             OperationEventStatus::Completed => write!(f, "COMPLETED"),
             OperationEventStatus::Failed => write!(f, "FAILED"),
             OperationEventStatus::InProgress => write!(f, "IN_PROGRESS"),
-            OperationEventStatus::Unknown(value) => write!(f, "{}", value),
+            OperationEventStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

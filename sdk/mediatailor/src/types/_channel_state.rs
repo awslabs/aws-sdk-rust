@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ChannelState {
         match self {
             ChannelState::Running => write!(f, "RUNNING"),
             ChannelState::Stopped => write!(f, "STOPPED"),
-            ChannelState::Unknown(value) => write!(f, "{}", value),
+            ChannelState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

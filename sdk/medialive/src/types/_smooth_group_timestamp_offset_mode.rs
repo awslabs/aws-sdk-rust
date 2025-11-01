@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SmoothGroupTimestampOffsetMode {
         match self {
             SmoothGroupTimestampOffsetMode::UseConfiguredOffset => write!(f, "USE_CONFIGURED_OFFSET"),
             SmoothGroupTimestampOffsetMode::UseEventStartDate => write!(f, "USE_EVENT_START_DATE"),
-            SmoothGroupTimestampOffsetMode::Unknown(value) => write!(f, "{}", value),
+            SmoothGroupTimestampOffsetMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

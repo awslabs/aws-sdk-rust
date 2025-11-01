@@ -114,7 +114,7 @@ impl ::std::fmt::Display for StatusCode {
             StatusCode::Forbidden => write!(f, "Forbidden"),
             StatusCode::InternalError => write!(f, "InternalError"),
             StatusCode::PartialData => write!(f, "PartialData"),
-            StatusCode::Unknown(value) => write!(f, "{}", value),
+            StatusCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

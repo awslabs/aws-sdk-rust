@@ -96,7 +96,7 @@ impl ::std::fmt::Display for Service {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             Service::Turn => write!(f, "TURN"),
-            Service::Unknown(value) => write!(f, "{}", value),
+            Service::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

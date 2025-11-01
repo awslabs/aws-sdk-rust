@@ -102,7 +102,7 @@ impl ::std::fmt::Display for BehaviorEnum {
         match self {
             BehaviorEnum::CacheSetting => write!(f, "cache"),
             BehaviorEnum::DontCacheSetting => write!(f, "dont-cache"),
-            BehaviorEnum::Unknown(value) => write!(f, "{}", value),
+            BehaviorEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

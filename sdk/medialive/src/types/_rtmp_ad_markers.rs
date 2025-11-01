@@ -96,7 +96,7 @@ impl ::std::fmt::Display for RtmpAdMarkers {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             RtmpAdMarkers::OnCuePointScte35 => write!(f, "ON_CUE_POINT_SCTE35"),
-            RtmpAdMarkers::Unknown(value) => write!(f, "{}", value),
+            RtmpAdMarkers::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

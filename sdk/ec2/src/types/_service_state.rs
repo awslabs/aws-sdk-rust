@@ -120,7 +120,7 @@ impl ::std::fmt::Display for ServiceState {
             ServiceState::Deleting => write!(f, "Deleting"),
             ServiceState::Failed => write!(f, "Failed"),
             ServiceState::Pending => write!(f, "Pending"),
-            ServiceState::Unknown(value) => write!(f, "{}", value),
+            ServiceState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

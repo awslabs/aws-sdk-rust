@@ -102,7 +102,7 @@ impl ::std::fmt::Display for StabilityStatus {
         match self {
             StabilityStatus::Stabilizing => write!(f, "STABILIZING"),
             StabilityStatus::SteadyState => write!(f, "STEADY_STATE"),
-            StabilityStatus::Unknown(value) => write!(f, "{}", value),
+            StabilityStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

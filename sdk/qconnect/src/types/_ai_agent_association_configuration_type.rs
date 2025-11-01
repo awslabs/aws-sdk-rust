@@ -96,7 +96,7 @@ impl ::std::fmt::Display for AiAgentAssociationConfigurationType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             AiAgentAssociationConfigurationType::KnowledgeBase => write!(f, "KNOWLEDGE_BASE"),
-            AiAgentAssociationConfigurationType::Unknown(value) => write!(f, "{}", value),
+            AiAgentAssociationConfigurationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

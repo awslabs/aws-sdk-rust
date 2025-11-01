@@ -114,7 +114,7 @@ impl ::std::fmt::Display for GlobalTableStatus {
             GlobalTableStatus::Creating => write!(f, "CREATING"),
             GlobalTableStatus::Deleting => write!(f, "DELETING"),
             GlobalTableStatus::Updating => write!(f, "UPDATING"),
-            GlobalTableStatus::Unknown(value) => write!(f, "{}", value),
+            GlobalTableStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

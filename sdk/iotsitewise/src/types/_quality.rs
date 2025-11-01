@@ -108,7 +108,7 @@ impl ::std::fmt::Display for Quality {
             Quality::Bad => write!(f, "BAD"),
             Quality::Good => write!(f, "GOOD"),
             Quality::Uncertain => write!(f, "UNCERTAIN"),
-            Quality::Unknown(value) => write!(f, "{}", value),
+            Quality::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

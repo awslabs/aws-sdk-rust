@@ -108,7 +108,7 @@ impl ::std::fmt::Display for State {
             State::Active => write!(f, "Active"),
             State::Baseline => write!(f, "Baseline"),
             State::Suppressed => write!(f, "Suppressed"),
-            State::Unknown(value) => write!(f, "{}", value),
+            State::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

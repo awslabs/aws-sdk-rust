@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CompressionType {
         match self {
             CompressionType::Bzip2 => write!(f, "bzip2"),
             CompressionType::Gzip => write!(f, "gzip"),
-            CompressionType::Unknown(value) => write!(f, "{}", value),
+            CompressionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

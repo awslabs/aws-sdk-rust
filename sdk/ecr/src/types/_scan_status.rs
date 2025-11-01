@@ -154,7 +154,7 @@ impl ::std::fmt::Display for ScanStatus {
             ScanStatus::Pending => write!(f, "PENDING"),
             ScanStatus::ScanEligibilityExpired => write!(f, "SCAN_ELIGIBILITY_EXPIRED"),
             ScanStatus::UnsupportedImage => write!(f, "UNSUPPORTED_IMAGE"),
-            ScanStatus::Unknown(value) => write!(f, "{}", value),
+            ScanStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

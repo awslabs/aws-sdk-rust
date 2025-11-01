@@ -96,7 +96,7 @@ impl ::std::fmt::Display for StorageConnectorTypeEnum {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             StorageConnectorTypeEnum::HomeFolder => write!(f, "HOME_FOLDER"),
-            StorageConnectorTypeEnum::Unknown(value) => write!(f, "{}", value),
+            StorageConnectorTypeEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

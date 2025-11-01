@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ImportJobType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ImportJobType::QuickResponses => write!(f, "QUICK_RESPONSES"),
-            ImportJobType::Unknown(value) => write!(f, "{}", value),
+            ImportJobType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

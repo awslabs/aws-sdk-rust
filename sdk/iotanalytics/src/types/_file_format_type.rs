@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FileFormatType {
         match self {
             FileFormatType::Json => write!(f, "JSON"),
             FileFormatType::Parquet => write!(f, "PARQUET"),
-            FileFormatType::Unknown(value) => write!(f, "{}", value),
+            FileFormatType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

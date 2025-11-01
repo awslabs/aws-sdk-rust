@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ApproximationDimension {
         match self {
             ApproximationDimension::Resource => write!(f, "RESOURCE"),
             ApproximationDimension::Service => write!(f, "SERVICE"),
-            ApproximationDimension::Unknown(value) => write!(f, "{}", value),
+            ApproximationDimension::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

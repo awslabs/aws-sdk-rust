@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SecurityPolicyProtocol {
         match self {
             SecurityPolicyProtocol::Ftps => write!(f, "FTPS"),
             SecurityPolicyProtocol::Sftp => write!(f, "SFTP"),
-            SecurityPolicyProtocol::Unknown(value) => write!(f, "{}", value),
+            SecurityPolicyProtocol::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

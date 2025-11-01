@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AllowsMultipleInstanceTypes {
         match self {
             AllowsMultipleInstanceTypes::Off => write!(f, "off"),
             AllowsMultipleInstanceTypes::On => write!(f, "on"),
-            AllowsMultipleInstanceTypes::Unknown(value) => write!(f, "{}", value),
+            AllowsMultipleInstanceTypes::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

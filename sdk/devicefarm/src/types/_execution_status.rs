@@ -154,7 +154,7 @@ impl ::std::fmt::Display for ExecutionStatus {
             ExecutionStatus::Running => write!(f, "RUNNING"),
             ExecutionStatus::Scheduling => write!(f, "SCHEDULING"),
             ExecutionStatus::Stopping => write!(f, "STOPPING"),
-            ExecutionStatus::Unknown(value) => write!(f, "{}", value),
+            ExecutionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

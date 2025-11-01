@@ -102,7 +102,7 @@ impl ::std::fmt::Display for UzbekistanTaxRegistrationNumberType {
         match self {
             UzbekistanTaxRegistrationNumberType::Business => write!(f, "Business"),
             UzbekistanTaxRegistrationNumberType::Individual => write!(f, "Individual"),
-            UzbekistanTaxRegistrationNumberType::Unknown(value) => write!(f, "{}", value),
+            UzbekistanTaxRegistrationNumberType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

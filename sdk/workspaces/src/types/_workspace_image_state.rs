@@ -108,7 +108,7 @@ impl ::std::fmt::Display for WorkspaceImageState {
             WorkspaceImageState::Available => write!(f, "AVAILABLE"),
             WorkspaceImageState::Error => write!(f, "ERROR"),
             WorkspaceImageState::Pending => write!(f, "PENDING"),
-            WorkspaceImageState::Unknown(value) => write!(f, "{}", value),
+            WorkspaceImageState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

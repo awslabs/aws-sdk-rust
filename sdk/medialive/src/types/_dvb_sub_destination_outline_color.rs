@@ -126,7 +126,7 @@ impl ::std::fmt::Display for DvbSubDestinationOutlineColor {
             DvbSubDestinationOutlineColor::Red => write!(f, "RED"),
             DvbSubDestinationOutlineColor::White => write!(f, "WHITE"),
             DvbSubDestinationOutlineColor::Yellow => write!(f, "YELLOW"),
-            DvbSubDestinationOutlineColor::Unknown(value) => write!(f, "{}", value),
+            DvbSubDestinationOutlineColor::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

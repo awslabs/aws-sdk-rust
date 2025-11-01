@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AcceleratorStatus {
         match self {
             AcceleratorStatus::Deployed => write!(f, "DEPLOYED"),
             AcceleratorStatus::InProgress => write!(f, "IN_PROGRESS"),
-            AcceleratorStatus::Unknown(value) => write!(f, "{}", value),
+            AcceleratorStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

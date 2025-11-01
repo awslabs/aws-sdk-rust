@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ParticipantTimerType {
         match self {
             ParticipantTimerType::DisconnectNoncustomer => write!(f, "DISCONNECT_NONCUSTOMER"),
             ParticipantTimerType::Idle => write!(f, "IDLE"),
-            ParticipantTimerType::Unknown(value) => write!(f, "{}", value),
+            ParticipantTimerType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

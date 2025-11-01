@@ -108,7 +108,7 @@ impl ::std::fmt::Display for DeviceCgroupPermission {
             DeviceCgroupPermission::Mknod => write!(f, "MKNOD"),
             DeviceCgroupPermission::Read => write!(f, "READ"),
             DeviceCgroupPermission::Write => write!(f, "WRITE"),
-            DeviceCgroupPermission::Unknown(value) => write!(f, "{}", value),
+            DeviceCgroupPermission::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

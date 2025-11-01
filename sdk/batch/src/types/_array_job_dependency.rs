@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ArrayJobDependency {
         match self {
             ArrayJobDependency::NToN => write!(f, "N_TO_N"),
             ArrayJobDependency::Sequential => write!(f, "SEQUENTIAL"),
-            ArrayJobDependency::Unknown(value) => write!(f, "{}", value),
+            ArrayJobDependency::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for DeleteFleetErrorCode {
             DeleteFleetErrorCode::FleetIdMalformed => write!(f, "fleetIdMalformed"),
             DeleteFleetErrorCode::FleetNotInDeletableState => write!(f, "fleetNotInDeletableState"),
             DeleteFleetErrorCode::UnexpectedError => write!(f, "unexpectedError"),
-            DeleteFleetErrorCode::Unknown(value) => write!(f, "{}", value),
+            DeleteFleetErrorCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for LogType {
         match self {
             LogType::EngineLog => write!(f, "engine-log"),
             LogType::SlowLog => write!(f, "slow-log"),
-            LogType::Unknown(value) => write!(f, "{}", value),
+            LogType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

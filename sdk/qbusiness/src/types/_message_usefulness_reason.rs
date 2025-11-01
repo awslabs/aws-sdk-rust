@@ -175,7 +175,7 @@ impl ::std::fmt::Display for MessageUsefulnessReason {
             MessageUsefulnessReason::NotHelpful => write!(f, "NOT_HELPFUL"),
             MessageUsefulnessReason::Other => write!(f, "OTHER"),
             MessageUsefulnessReason::RelevantSources => write!(f, "RELEVANT_SOURCES"),
-            MessageUsefulnessReason::Unknown(value) => write!(f, "{}", value),
+            MessageUsefulnessReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

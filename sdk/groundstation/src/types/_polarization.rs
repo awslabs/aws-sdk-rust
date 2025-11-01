@@ -108,7 +108,7 @@ impl ::std::fmt::Display for Polarization {
             Polarization::LeftHand => write!(f, "LEFT_HAND"),
             Polarization::None => write!(f, "NONE"),
             Polarization::RightHand => write!(f, "RIGHT_HAND"),
-            Polarization::Unknown(value) => write!(f, "{}", value),
+            Polarization::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

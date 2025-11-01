@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ListEventTypesFilterName {
         match self {
             ListEventTypesFilterName::ResourceType => write!(f, "RESOURCE_TYPE"),
             ListEventTypesFilterName::ServiceName => write!(f, "SERVICE_NAME"),
-            ListEventTypesFilterName::Unknown(value) => write!(f, "{}", value),
+            ListEventTypesFilterName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

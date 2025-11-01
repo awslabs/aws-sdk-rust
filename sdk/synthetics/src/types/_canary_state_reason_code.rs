@@ -175,7 +175,7 @@ impl ::std::fmt::Display for CanaryStateReasonCode {
             CanaryStateReasonCode::UpdateComplete => write!(f, "UPDATE_COMPLETE"),
             CanaryStateReasonCode::UpdateInProgress => write!(f, "UPDATE_IN_PROGRESS"),
             CanaryStateReasonCode::UpdatePending => write!(f, "UPDATE_PENDING"),
-            CanaryStateReasonCode::Unknown(value) => write!(f, "{}", value),
+            CanaryStateReasonCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

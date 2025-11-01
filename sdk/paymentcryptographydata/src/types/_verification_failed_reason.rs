@@ -114,7 +114,7 @@ impl ::std::fmt::Display for VerificationFailedReason {
             VerificationFailedReason::InvalidMac => write!(f, "INVALID_MAC"),
             VerificationFailedReason::InvalidPin => write!(f, "INVALID_PIN"),
             VerificationFailedReason::InvalidValidationData => write!(f, "INVALID_VALIDATION_DATA"),
-            VerificationFailedReason::Unknown(value) => write!(f, "{}", value),
+            VerificationFailedReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

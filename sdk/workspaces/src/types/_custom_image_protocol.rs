@@ -108,7 +108,7 @@ impl ::std::fmt::Display for CustomImageProtocol {
             CustomImageProtocol::Byop => write!(f, "BYOP"),
             CustomImageProtocol::Dcv => write!(f, "DCV"),
             CustomImageProtocol::Pcoip => write!(f, "PCOIP"),
-            CustomImageProtocol::Unknown(value) => write!(f, "{}", value),
+            CustomImageProtocol::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

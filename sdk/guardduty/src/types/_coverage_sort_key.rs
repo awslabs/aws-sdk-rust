@@ -154,7 +154,7 @@ impl ::std::fmt::Display for CoverageSortKey {
             CoverageSortKey::InstanceId => write!(f, "INSTANCE_ID"),
             CoverageSortKey::Issue => write!(f, "ISSUE"),
             CoverageSortKey::UpdatedAt => write!(f, "UPDATED_AT"),
-            CoverageSortKey::Unknown(value) => write!(f, "{}", value),
+            CoverageSortKey::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

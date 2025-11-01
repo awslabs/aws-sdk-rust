@@ -126,7 +126,7 @@ impl ::std::fmt::Display for ActionGroupSignature {
             ActionGroupSignature::AnthropicBash => write!(f, "ANTHROPIC.Bash"),
             ActionGroupSignature::AnthropicComputer => write!(f, "ANTHROPIC.Computer"),
             ActionGroupSignature::AnthropicTexteditor => write!(f, "ANTHROPIC.TextEditor"),
-            ActionGroupSignature::Unknown(value) => write!(f, "{}", value),
+            ActionGroupSignature::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

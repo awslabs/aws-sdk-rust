@@ -3,23 +3,23 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCertificateSigningRequestInput {
-    /// Asymmetric key used for generating the certificate signing request
+    /// <p>Asymmetric key used for generating the certificate signing request</p>
     pub key_identifier: ::std::option::Option<::std::string::String>,
-    /// Algorithm used to generate the certificate signing request
+    /// <p>The cryptographic algorithm used to sign your CSR.</p>
     pub signing_algorithm: ::std::option::Option<crate::types::SigningAlgorithmType>,
-    /// Certificate subject data
+    /// <p>The metadata used to create the CSR.</p>
     pub certificate_subject: ::std::option::Option<crate::types::CertificateSubjectType>,
 }
 impl GetCertificateSigningRequestInput {
-    /// Asymmetric key used for generating the certificate signing request
+    /// <p>Asymmetric key used for generating the certificate signing request</p>
     pub fn key_identifier(&self) -> ::std::option::Option<&str> {
         self.key_identifier.as_deref()
     }
-    /// Algorithm used to generate the certificate signing request
+    /// <p>The cryptographic algorithm used to sign your CSR.</p>
     pub fn signing_algorithm(&self) -> ::std::option::Option<&crate::types::SigningAlgorithmType> {
         self.signing_algorithm.as_ref()
     }
-    /// Certificate subject data
+    /// <p>The metadata used to create the CSR.</p>
     pub fn certificate_subject(&self) -> ::std::option::Option<&crate::types::CertificateSubjectType> {
         self.certificate_subject.as_ref()
     }
@@ -40,48 +40,48 @@ pub struct GetCertificateSigningRequestInputBuilder {
     pub(crate) certificate_subject: ::std::option::Option<crate::types::CertificateSubjectType>,
 }
 impl GetCertificateSigningRequestInputBuilder {
-    /// Asymmetric key used for generating the certificate signing request
+    /// <p>Asymmetric key used for generating the certificate signing request</p>
     /// This field is required.
     pub fn key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// Asymmetric key used for generating the certificate signing request
+    /// <p>Asymmetric key used for generating the certificate signing request</p>
     pub fn set_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_identifier = input;
         self
     }
-    /// Asymmetric key used for generating the certificate signing request
+    /// <p>Asymmetric key used for generating the certificate signing request</p>
     pub fn get_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.key_identifier
     }
-    /// Algorithm used to generate the certificate signing request
+    /// <p>The cryptographic algorithm used to sign your CSR.</p>
     /// This field is required.
     pub fn signing_algorithm(mut self, input: crate::types::SigningAlgorithmType) -> Self {
         self.signing_algorithm = ::std::option::Option::Some(input);
         self
     }
-    /// Algorithm used to generate the certificate signing request
+    /// <p>The cryptographic algorithm used to sign your CSR.</p>
     pub fn set_signing_algorithm(mut self, input: ::std::option::Option<crate::types::SigningAlgorithmType>) -> Self {
         self.signing_algorithm = input;
         self
     }
-    /// Algorithm used to generate the certificate signing request
+    /// <p>The cryptographic algorithm used to sign your CSR.</p>
     pub fn get_signing_algorithm(&self) -> &::std::option::Option<crate::types::SigningAlgorithmType> {
         &self.signing_algorithm
     }
-    /// Certificate subject data
+    /// <p>The metadata used to create the CSR.</p>
     /// This field is required.
     pub fn certificate_subject(mut self, input: crate::types::CertificateSubjectType) -> Self {
         self.certificate_subject = ::std::option::Option::Some(input);
         self
     }
-    /// Certificate subject data
+    /// <p>The metadata used to create the CSR.</p>
     pub fn set_certificate_subject(mut self, input: ::std::option::Option<crate::types::CertificateSubjectType>) -> Self {
         self.certificate_subject = input;
         self
     }
-    /// Certificate subject data
+    /// <p>The metadata used to create the CSR.</p>
     pub fn get_certificate_subject(&self) -> &::std::option::Option<crate::types::CertificateSubjectType> {
         &self.certificate_subject
     }

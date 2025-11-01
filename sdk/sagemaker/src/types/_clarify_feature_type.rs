@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ClarifyFeatureType {
             ClarifyFeatureType::Categorical => write!(f, "categorical"),
             ClarifyFeatureType::Numerical => write!(f, "numerical"),
             ClarifyFeatureType::Text => write!(f, "text"),
-            ClarifyFeatureType::Unknown(value) => write!(f, "{}", value),
+            ClarifyFeatureType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

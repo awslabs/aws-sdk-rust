@@ -190,7 +190,7 @@ pub(crate) fn resolve_chain(
                     } else {
                         ProfileFileError::InvalidCredentialSource {
                             profile: profile.name().into(),
-                            message: format!("could not load source profile: {}", err).into(),
+                            message: format!("could not load source profile: {err}").into(),
                         }
                     }
                 })?;

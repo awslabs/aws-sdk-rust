@@ -126,7 +126,7 @@ impl ::std::fmt::Display for SpotInstanceState {
             SpotInstanceState::Disabled => write!(f, "disabled"),
             SpotInstanceState::Failed => write!(f, "failed"),
             SpotInstanceState::Open => write!(f, "open"),
-            SpotInstanceState::Unknown(value) => write!(f, "{}", value),
+            SpotInstanceState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

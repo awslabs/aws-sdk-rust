@@ -301,7 +301,7 @@ impl ProfileFileError {
     fn missing_field(profile: &Profile, field: &'static str) -> Self {
         ProfileFileError::MissingProfile {
             profile: profile.name().to_string(),
-            message: format!("`{}` was missing", field).into(),
+            message: format!("`{field}` was missing").into(),
         }
     }
 }
@@ -319,33 +319,30 @@ impl Display for ProfileFileError {
     fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
         match self {
             ProfileFileError::InvalidProfile(err) => {
-                write!(f, "invalid profile: {}", err)
+                write!(f, "invalid profile: {err}")
             }
             ProfileFileError::CredentialLoop { profiles, next } => write!(
                 f,
-                "profile formed an infinite loop. first we loaded {:?}, \
-            then attempted to reload {}",
-                profiles, next
+                "profile formed an infinite loop. first we loaded {profiles:?}, \
+            then attempted to reload {next}",
             ),
             ProfileFileError::MissingCredentialSource { profile, message } => {
-                write!(f, "missing credential source in `{}`: {}", profile, message)
+                write!(f, "missing credential source in `{profile}`: {message}")
             }
             ProfileFileError::InvalidCredentialSource { profile, message } => {
-                write!(f, "invalid credential source in `{}`: {}", profile, message)
+                write!(f, "invalid credential source in `{profile}`: {message}")
             }
             ProfileFileError::MissingProfile { profile, message } => {
-                write!(f, "profile `{}` was not defined: {}", profile, message)
+                write!(f, "profile `{profile}` was not defined: {message}")
             }
             ProfileFileError::UnknownProvider { name } => write!(
                 f,
-                "profile referenced `{}` provider but that provider is not supported",
-                name
+                "profile referenced `{name}` provider but that provider is not supported",
             ),
             ProfileFileError::NoProfilesDefined => write!(f, "No profiles were defined"),
             ProfileFileError::ProfileDidNotContainCredentials { profile } => write!(
                 f,
-                "profile `{}` did not contain credential information",
-                profile
+                "profile `{profile}` did not contain credential information"
             ),
             ProfileFileError::FeatureNotEnabled { feature, message } => {
                 let message = message.as_deref().unwrap_or_default();

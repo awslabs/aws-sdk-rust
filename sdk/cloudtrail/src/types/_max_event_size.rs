@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MaxEventSize {
         match self {
             MaxEventSize::Large => write!(f, "Large"),
             MaxEventSize::Standard => write!(f, "Standard"),
-            MaxEventSize::Unknown(value) => write!(f, "{}", value),
+            MaxEventSize::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

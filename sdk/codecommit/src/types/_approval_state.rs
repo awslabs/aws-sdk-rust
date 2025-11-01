@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ApprovalState {
         match self {
             ApprovalState::Approve => write!(f, "APPROVE"),
             ApprovalState::Revoke => write!(f, "REVOKE"),
-            ApprovalState::Unknown(value) => write!(f, "{}", value),
+            ApprovalState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

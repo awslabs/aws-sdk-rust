@@ -168,7 +168,7 @@ impl ::std::fmt::Display for UnavailabilityReasonCode {
             UnavailabilityReasonCode::RoleTooPermissive => write!(f, "ROLE_TOO_PERMISSIVE"),
             UnavailabilityReasonCode::UnsupportedFindingType => write!(f, "UNSUPPORTED_FINDING_TYPE"),
             UnavailabilityReasonCode::UnsupportedObjectType => write!(f, "UNSUPPORTED_OBJECT_TYPE"),
-            UnavailabilityReasonCode::Unknown(value) => write!(f, "{}", value),
+            UnavailabilityReasonCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

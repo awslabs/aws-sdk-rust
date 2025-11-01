@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ResourceRegionScopeFilter {
             ResourceRegionScopeFilter::All => write!(f, "ALL"),
             ResourceRegionScopeFilter::Global => write!(f, "GLOBAL"),
             ResourceRegionScopeFilter::Regional => write!(f, "REGIONAL"),
-            ResourceRegionScopeFilter::Unknown(value) => write!(f, "{}", value),
+            ResourceRegionScopeFilter::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RuleAction {
         match self {
             RuleAction::Allow => write!(f, "allow"),
             RuleAction::Deny => write!(f, "deny"),
-            RuleAction::Unknown(value) => write!(f, "{}", value),
+            RuleAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

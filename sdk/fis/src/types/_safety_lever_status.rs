@@ -108,7 +108,7 @@ impl ::std::fmt::Display for SafetyLeverStatus {
             SafetyLeverStatus::Disengaged => write!(f, "disengaged"),
             SafetyLeverStatus::Engaged => write!(f, "engaged"),
             SafetyLeverStatus::Engaging => write!(f, "engaging"),
-            SafetyLeverStatus::Unknown(value) => write!(f, "{}", value),
+            SafetyLeverStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

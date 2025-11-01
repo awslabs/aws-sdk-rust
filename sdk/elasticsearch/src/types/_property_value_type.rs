@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PropertyValueType {
         match self {
             PropertyValueType::PlainText => write!(f, "PLAIN_TEXT"),
             PropertyValueType::StringifiedJson => write!(f, "STRINGIFIED_JSON"),
-            PropertyValueType::Unknown(value) => write!(f, "{}", value),
+            PropertyValueType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

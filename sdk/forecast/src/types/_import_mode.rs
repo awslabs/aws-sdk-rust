@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ImportMode {
         match self {
             ImportMode::Full => write!(f, "FULL"),
             ImportMode::Incremental => write!(f, "INCREMENTAL"),
-            ImportMode::Unknown(value) => write!(f, "{}", value),
+            ImportMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

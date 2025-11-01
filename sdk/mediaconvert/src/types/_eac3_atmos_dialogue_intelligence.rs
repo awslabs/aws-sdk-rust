@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Eac3AtmosDialogueIntelligence {
         match self {
             Eac3AtmosDialogueIntelligence::Disabled => write!(f, "DISABLED"),
             Eac3AtmosDialogueIntelligence::Enabled => write!(f, "ENABLED"),
-            Eac3AtmosDialogueIntelligence::Unknown(value) => write!(f, "{}", value),
+            Eac3AtmosDialogueIntelligence::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

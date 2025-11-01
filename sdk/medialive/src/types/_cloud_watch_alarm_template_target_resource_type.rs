@@ -156,7 +156,7 @@ impl ::std::fmt::Display for CloudWatchAlarmTemplateTargetResourceType {
             CloudWatchAlarmTemplateTargetResourceType::MediapackageOriginEndpoint => write!(f, "MEDIAPACKAGE_ORIGIN_ENDPOINT"),
             CloudWatchAlarmTemplateTargetResourceType::MediatailorPlaybackConfiguration => write!(f, "MEDIATAILOR_PLAYBACK_CONFIGURATION"),
             CloudWatchAlarmTemplateTargetResourceType::S3Bucket => write!(f, "S3_BUCKET"),
-            CloudWatchAlarmTemplateTargetResourceType::Unknown(value) => write!(f, "{}", value),
+            CloudWatchAlarmTemplateTargetResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

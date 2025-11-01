@@ -108,7 +108,7 @@ impl ::std::fmt::Display for TableCellImageScalingConfiguration {
             TableCellImageScalingConfiguration::DoNotScale => write!(f, "DO_NOT_SCALE"),
             TableCellImageScalingConfiguration::FitToCellHeight => write!(f, "FIT_TO_CELL_HEIGHT"),
             TableCellImageScalingConfiguration::FitToCellWidth => write!(f, "FIT_TO_CELL_WIDTH"),
-            TableCellImageScalingConfiguration::Unknown(value) => write!(f, "{}", value),
+            TableCellImageScalingConfiguration::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

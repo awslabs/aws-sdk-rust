@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FulfillmentActivityType {
         match self {
             FulfillmentActivityType::CodeHook => write!(f, "CodeHook"),
             FulfillmentActivityType::ReturnIntent => write!(f, "ReturnIntent"),
-            FulfillmentActivityType::Unknown(value) => write!(f, "{}", value),
+            FulfillmentActivityType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for KnowledgeBaseType {
             KnowledgeBaseType::Kendra => write!(f, "KENDRA"),
             KnowledgeBaseType::Sql => write!(f, "SQL"),
             KnowledgeBaseType::Vector => write!(f, "VECTOR"),
-            KnowledgeBaseType::Unknown(value) => write!(f, "{}", value),
+            KnowledgeBaseType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

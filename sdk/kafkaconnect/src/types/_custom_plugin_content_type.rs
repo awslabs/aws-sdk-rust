@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CustomPluginContentType {
         match self {
             CustomPluginContentType::Jar => write!(f, "JAR"),
             CustomPluginContentType::Zip => write!(f, "ZIP"),
-            CustomPluginContentType::Unknown(value) => write!(f, "{}", value),
+            CustomPluginContentType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

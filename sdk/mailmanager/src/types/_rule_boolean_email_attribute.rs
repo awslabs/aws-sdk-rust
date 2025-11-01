@@ -108,7 +108,7 @@ impl ::std::fmt::Display for RuleBooleanEmailAttribute {
             RuleBooleanEmailAttribute::ReadReceiptRequested => write!(f, "READ_RECEIPT_REQUESTED"),
             RuleBooleanEmailAttribute::Tls => write!(f, "TLS"),
             RuleBooleanEmailAttribute::TlsWrapped => write!(f, "TLS_WRAPPED"),
-            RuleBooleanEmailAttribute::Unknown(value) => write!(f, "{}", value),
+            RuleBooleanEmailAttribute::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

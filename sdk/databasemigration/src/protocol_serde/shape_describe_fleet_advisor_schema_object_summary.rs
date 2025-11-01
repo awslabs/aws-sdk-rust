@@ -114,8 +114,7 @@ pub(crate) fn de_describe_fleet_advisor_schema_object_summary(
             },
             other => {
                 return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                    "expected object key or end object, found: {:?}",
-                    other
+                    "expected object key or end object, found: {other:?}"
                 )))
             }
         }

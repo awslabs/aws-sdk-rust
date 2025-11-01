@@ -114,7 +114,7 @@ impl ::std::fmt::Display for FlowExecutionStatus {
             FlowExecutionStatus::Failed => write!(f, "FAILED"),
             FlowExecutionStatus::Running => write!(f, "RUNNING"),
             FlowExecutionStatus::Succeeded => write!(f, "SUCCEEDED"),
-            FlowExecutionStatus::Unknown(value) => write!(f, "{}", value),
+            FlowExecutionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

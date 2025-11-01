@@ -108,7 +108,7 @@ impl ::std::fmt::Display for OperationTargetType {
             OperationTargetType::Instance => write!(f, "INSTANCE"),
             OperationTargetType::Namespace => write!(f, "NAMESPACE"),
             OperationTargetType::Service => write!(f, "SERVICE"),
-            OperationTargetType::Unknown(value) => write!(f, "{}", value),
+            OperationTargetType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

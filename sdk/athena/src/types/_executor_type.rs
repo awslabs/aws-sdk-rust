@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ExecutorType {
             ExecutorType::Coordinator => write!(f, "COORDINATOR"),
             ExecutorType::Gateway => write!(f, "GATEWAY"),
             ExecutorType::Worker => write!(f, "WORKER"),
-            ExecutorType::Unknown(value) => write!(f, "{}", value),
+            ExecutorType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

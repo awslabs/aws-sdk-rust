@@ -102,7 +102,7 @@ impl ::std::fmt::Display for OrchestrationControl {
         match self {
             OrchestrationControl::Disabled => write!(f, "DISABLED"),
             OrchestrationControl::Enabled => write!(f, "ENABLED"),
-            OrchestrationControl::Unknown(value) => write!(f, "{}", value),
+            OrchestrationControl::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

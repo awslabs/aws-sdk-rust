@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MultiRegionConsistency {
         match self {
             MultiRegionConsistency::Eventual => write!(f, "EVENTUAL"),
             MultiRegionConsistency::Strong => write!(f, "STRONG"),
-            MultiRegionConsistency::Unknown(value) => write!(f, "{}", value),
+            MultiRegionConsistency::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

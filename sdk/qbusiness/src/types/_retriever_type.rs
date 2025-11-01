@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RetrieverType {
         match self {
             RetrieverType::KendraIndex => write!(f, "KENDRA_INDEX"),
             RetrieverType::NativeIndex => write!(f, "NATIVE_INDEX"),
-            RetrieverType::Unknown(value) => write!(f, "{}", value),
+            RetrieverType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

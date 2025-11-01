@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RedshiftS3BackupMode {
         match self {
             RedshiftS3BackupMode::Disabled => write!(f, "Disabled"),
             RedshiftS3BackupMode::Enabled => write!(f, "Enabled"),
-            RedshiftS3BackupMode::Unknown(value) => write!(f, "{}", value),
+            RedshiftS3BackupMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

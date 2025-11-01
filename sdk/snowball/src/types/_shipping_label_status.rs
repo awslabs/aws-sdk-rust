@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ShippingLabelStatus {
             ShippingLabelStatus::InProgress => write!(f, "InProgress"),
             ShippingLabelStatus::Succeeded => write!(f, "Succeeded"),
             ShippingLabelStatus::TimedOut => write!(f, "TimedOut"),
-            ShippingLabelStatus::Unknown(value) => write!(f, "{}", value),
+            ShippingLabelStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

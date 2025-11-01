@@ -102,7 +102,7 @@ impl ::std::fmt::Display for QualificationStatus {
         match self {
             QualificationStatus::Granted => write!(f, "Granted"),
             QualificationStatus::Revoked => write!(f, "Revoked"),
-            QualificationStatus::Unknown(value) => write!(f, "{}", value),
+            QualificationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

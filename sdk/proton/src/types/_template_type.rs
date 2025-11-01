@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TemplateType {
         match self {
             TemplateType::Environment => write!(f, "ENVIRONMENT"),
             TemplateType::Service => write!(f, "SERVICE"),
-            TemplateType::Unknown(value) => write!(f, "{}", value),
+            TemplateType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ResourceDeploymentStatus {
             ResourceDeploymentStatus::Failed => write!(f, "FAILED"),
             ResourceDeploymentStatus::InProgress => write!(f, "IN_PROGRESS"),
             ResourceDeploymentStatus::Succeeded => write!(f, "SUCCEEDED"),
-            ResourceDeploymentStatus::Unknown(value) => write!(f, "{}", value),
+            ResourceDeploymentStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

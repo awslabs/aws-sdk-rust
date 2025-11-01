@@ -108,7 +108,7 @@ impl ::std::fmt::Display for DashPlaybackMode {
             DashPlaybackMode::Live => write!(f, "LIVE"),
             DashPlaybackMode::LiveReplay => write!(f, "LIVE_REPLAY"),
             DashPlaybackMode::OnDemand => write!(f, "ON_DEMAND"),
-            DashPlaybackMode::Unknown(value) => write!(f, "{}", value),
+            DashPlaybackMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

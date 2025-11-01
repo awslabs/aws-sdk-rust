@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ModelCompressionType {
         match self {
             ModelCompressionType::Gzip => write!(f, "Gzip"),
             ModelCompressionType::None => write!(f, "None"),
-            ModelCompressionType::Unknown(value) => write!(f, "{}", value),
+            ModelCompressionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

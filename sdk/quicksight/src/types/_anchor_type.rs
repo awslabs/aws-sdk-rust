@@ -96,7 +96,7 @@ impl ::std::fmt::Display for AnchorType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             AnchorType::Today => write!(f, "TODAY"),
-            AnchorType::Unknown(value) => write!(f, "{}", value),
+            AnchorType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

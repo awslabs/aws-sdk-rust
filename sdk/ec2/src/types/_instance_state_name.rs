@@ -126,7 +126,7 @@ impl ::std::fmt::Display for InstanceStateName {
             InstanceStateName::Stopped => write!(f, "stopped"),
             InstanceStateName::Stopping => write!(f, "stopping"),
             InstanceStateName::Terminated => write!(f, "terminated"),
-            InstanceStateName::Unknown(value) => write!(f, "{}", value),
+            InstanceStateName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

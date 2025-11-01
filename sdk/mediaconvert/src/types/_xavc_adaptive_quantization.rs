@@ -132,7 +132,7 @@ impl ::std::fmt::Display for XavcAdaptiveQuantization {
             XavcAdaptiveQuantization::Max => write!(f, "MAX"),
             XavcAdaptiveQuantization::Medium => write!(f, "MEDIUM"),
             XavcAdaptiveQuantization::Off => write!(f, "OFF"),
-            XavcAdaptiveQuantization::Unknown(value) => write!(f, "{}", value),
+            XavcAdaptiveQuantization::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

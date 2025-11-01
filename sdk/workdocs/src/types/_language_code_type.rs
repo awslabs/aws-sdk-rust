@@ -279,7 +279,7 @@ impl ::std::fmt::Display for LanguageCodeType {
             LanguageCodeType::Th => write!(f, "TH"),
             LanguageCodeType::Tr => write!(f, "TR"),
             LanguageCodeType::Zh => write!(f, "ZH"),
-            LanguageCodeType::Unknown(value) => write!(f, "{}", value),
+            LanguageCodeType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

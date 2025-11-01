@@ -102,7 +102,7 @@ impl ::std::fmt::Display for InputAuthenticationType {
         match self {
             InputAuthenticationType::Iam => write!(f, "iam"),
             InputAuthenticationType::Password => write!(f, "password"),
-            InputAuthenticationType::Unknown(value) => write!(f, "{}", value),
+            InputAuthenticationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

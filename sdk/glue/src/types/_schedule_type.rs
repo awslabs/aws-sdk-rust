@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ScheduleType {
         match self {
             ScheduleType::Auto => write!(f, "AUTO"),
             ScheduleType::Cron => write!(f, "CRON"),
-            ScheduleType::Unknown(value) => write!(f, "{}", value),
+            ScheduleType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

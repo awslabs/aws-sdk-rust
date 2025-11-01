@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AssociationExecutionTargetsFilterKey {
             AssociationExecutionTargetsFilterKey::ResourceId => write!(f, "ResourceId"),
             AssociationExecutionTargetsFilterKey::ResourceType => write!(f, "ResourceType"),
             AssociationExecutionTargetsFilterKey::Status => write!(f, "Status"),
-            AssociationExecutionTargetsFilterKey::Unknown(value) => write!(f, "{}", value),
+            AssociationExecutionTargetsFilterKey::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

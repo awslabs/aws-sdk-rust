@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FileSourceConvert608To708 {
         match self {
             FileSourceConvert608To708::Disabled => write!(f, "DISABLED"),
             FileSourceConvert608To708::Upconvert => write!(f, "UPCONVERT"),
-            FileSourceConvert608To708::Unknown(value) => write!(f, "{}", value),
+            FileSourceConvert608To708::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

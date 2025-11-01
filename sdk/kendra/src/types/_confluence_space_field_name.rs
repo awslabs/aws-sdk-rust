@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ConfluenceSpaceFieldName {
             ConfluenceSpaceFieldName::ItemType => write!(f, "ITEM_TYPE"),
             ConfluenceSpaceFieldName::SpaceKey => write!(f, "SPACE_KEY"),
             ConfluenceSpaceFieldName::Url => write!(f, "URL"),
-            ConfluenceSpaceFieldName::Unknown(value) => write!(f, "{}", value),
+            ConfluenceSpaceFieldName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

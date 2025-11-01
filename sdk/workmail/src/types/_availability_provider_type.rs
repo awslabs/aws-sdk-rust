@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AvailabilityProviderType {
         match self {
             AvailabilityProviderType::Ews => write!(f, "EWS"),
             AvailabilityProviderType::Lambda => write!(f, "LAMBDA"),
-            AvailabilityProviderType::Unknown(value) => write!(f, "{}", value),
+            AvailabilityProviderType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CmafTargetDurationCompatibilityMode {
         match self {
             CmafTargetDurationCompatibilityMode::Legacy => write!(f, "LEGACY"),
             CmafTargetDurationCompatibilityMode::SpecCompliant => write!(f, "SPEC_COMPLIANT"),
-            CmafTargetDurationCompatibilityMode::Unknown(value) => write!(f, "{}", value),
+            CmafTargetDurationCompatibilityMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

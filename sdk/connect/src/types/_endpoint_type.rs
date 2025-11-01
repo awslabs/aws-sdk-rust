@@ -120,7 +120,7 @@ impl ::std::fmt::Display for EndpointType {
             EndpointType::EmailAddress => write!(f, "EMAIL_ADDRESS"),
             EndpointType::TelephoneNumber => write!(f, "TELEPHONE_NUMBER"),
             EndpointType::Voip => write!(f, "VOIP"),
-            EndpointType::Unknown(value) => write!(f, "{}", value),
+            EndpointType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

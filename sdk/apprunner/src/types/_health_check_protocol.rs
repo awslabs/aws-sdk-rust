@@ -102,7 +102,7 @@ impl ::std::fmt::Display for HealthCheckProtocol {
         match self {
             HealthCheckProtocol::Http => write!(f, "HTTP"),
             HealthCheckProtocol::Tcp => write!(f, "TCP"),
-            HealthCheckProtocol::Unknown(value) => write!(f, "{}", value),
+            HealthCheckProtocol::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

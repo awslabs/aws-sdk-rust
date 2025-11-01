@@ -118,7 +118,7 @@ impl ::std::fmt::Display for IdentityType {
             IdentityType::Domain => write!(f, "DOMAIN"),
             IdentityType::EmailAddress => write!(f, "EMAIL_ADDRESS"),
             IdentityType::ManagedDomain => write!(f, "MANAGED_DOMAIN"),
-            IdentityType::Unknown(value) => write!(f, "{}", value),
+            IdentityType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

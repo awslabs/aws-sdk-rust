@@ -120,7 +120,7 @@ impl ::std::fmt::Display for ChangeRequestStatus {
             ChangeRequestStatus::Committed => write!(f, "COMMITTED"),
             ChangeRequestStatus::Denied => write!(f, "DENIED"),
             ChangeRequestStatus::Pending => write!(f, "PENDING"),
-            ChangeRequestStatus::Unknown(value) => write!(f, "{}", value),
+            ChangeRequestStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

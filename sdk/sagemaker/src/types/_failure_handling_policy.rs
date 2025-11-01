@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FailureHandlingPolicy {
         match self {
             FailureHandlingPolicy::DoNothing => write!(f, "DO_NOTHING"),
             FailureHandlingPolicy::RollbackOnFailure => write!(f, "ROLLBACK_ON_FAILURE"),
-            FailureHandlingPolicy::Unknown(value) => write!(f, "{}", value),
+            FailureHandlingPolicy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

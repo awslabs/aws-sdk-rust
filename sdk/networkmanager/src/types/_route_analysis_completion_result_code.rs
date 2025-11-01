@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RouteAnalysisCompletionResultCode {
         match self {
             RouteAnalysisCompletionResultCode::Connected => write!(f, "CONNECTED"),
             RouteAnalysisCompletionResultCode::NotConnected => write!(f, "NOT_CONNECTED"),
-            RouteAnalysisCompletionResultCode::Unknown(value) => write!(f, "{}", value),
+            RouteAnalysisCompletionResultCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

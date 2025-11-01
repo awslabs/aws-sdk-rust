@@ -96,7 +96,7 @@ impl ::std::fmt::Display for TextToSqlConfigurationType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             TextToSqlConfigurationType::KnowledgeBase => write!(f, "KNOWLEDGE_BASE"),
-            TextToSqlConfigurationType::Unknown(value) => write!(f, "{}", value),
+            TextToSqlConfigurationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

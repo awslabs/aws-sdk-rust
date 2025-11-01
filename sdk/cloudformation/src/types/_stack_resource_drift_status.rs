@@ -122,7 +122,7 @@ impl ::std::fmt::Display for StackResourceDriftStatus {
             StackResourceDriftStatus::Modified => write!(f, "MODIFIED"),
             StackResourceDriftStatus::NotChecked => write!(f, "NOT_CHECKED"),
             StackResourceDriftStatus::UnknownValue => write!(f, "UNKNOWN"),
-            StackResourceDriftStatus::Unknown(value) => write!(f, "{}", value),
+            StackResourceDriftStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

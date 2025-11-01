@@ -114,7 +114,7 @@ impl ::std::fmt::Display for EventType {
             EventType::CampaignOrchestration => write!(f, "Campaign-Orchestration"),
             EventType::CampaignSms => write!(f, "Campaign-SMS"),
             EventType::CampaignTelephony => write!(f, "Campaign-Telephony"),
-            EventType::Unknown(value) => write!(f, "{}", value),
+            EventType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

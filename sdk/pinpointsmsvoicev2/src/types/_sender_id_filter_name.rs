@@ -126,7 +126,7 @@ impl ::std::fmt::Display for SenderIdFilterName {
             SenderIdFilterName::MessageType => write!(f, "message-type"),
             SenderIdFilterName::Registered => write!(f, "registered"),
             SenderIdFilterName::SenderId => write!(f, "sender-id"),
-            SenderIdFilterName::Unknown(value) => write!(f, "{}", value),
+            SenderIdFilterName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

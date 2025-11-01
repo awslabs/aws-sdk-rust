@@ -120,7 +120,7 @@ impl ::std::fmt::Display for DeploymentStatus {
             DeploymentStatus::Completed => write!(f, "COMPLETED"),
             DeploymentStatus::Failed => write!(f, "FAILED"),
             DeploymentStatus::Inactive => write!(f, "INACTIVE"),
-            DeploymentStatus::Unknown(value) => write!(f, "{}", value),
+            DeploymentStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

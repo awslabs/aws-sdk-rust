@@ -108,7 +108,7 @@ impl ::std::fmt::Display for CommunicationTimeConfigType {
             CommunicationTimeConfigType::Email => write!(f, "EMAIL"),
             CommunicationTimeConfigType::Sms => write!(f, "SMS"),
             CommunicationTimeConfigType::Telephony => write!(f, "TELEPHONY"),
-            CommunicationTimeConfigType::Unknown(value) => write!(f, "{}", value),
+            CommunicationTimeConfigType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

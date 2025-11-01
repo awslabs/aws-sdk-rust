@@ -183,6 +183,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for AcceptTransi
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::accept_transit_gateway_multicast_domain_associations::AcceptTransitGatewayMulticastDomainAssociationsInput,
                 output: &mut ::std::string::String,

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for HandshakePartyType {
             HandshakePartyType::Account => write!(f, "ACCOUNT"),
             HandshakePartyType::Email => write!(f, "EMAIL"),
             HandshakePartyType::Organization => write!(f, "ORGANIZATION"),
-            HandshakePartyType::Unknown(value) => write!(f, "{}", value),
+            HandshakePartyType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

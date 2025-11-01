@@ -126,7 +126,7 @@ impl ::std::fmt::Display for AggregateType {
             AggregateType::Minimum => write!(f, "MINIMUM"),
             AggregateType::StandardDeviation => write!(f, "STANDARD_DEVIATION"),
             AggregateType::Sum => write!(f, "SUM"),
-            AggregateType::Unknown(value) => write!(f, "{}", value),
+            AggregateType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

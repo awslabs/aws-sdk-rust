@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RadarChartShape {
         match self {
             RadarChartShape::Circle => write!(f, "CIRCLE"),
             RadarChartShape::Polygon => write!(f, "POLYGON"),
-            RadarChartShape::Unknown(value) => write!(f, "{}", value),
+            RadarChartShape::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

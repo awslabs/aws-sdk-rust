@@ -149,7 +149,7 @@ impl ::std::fmt::Display for UserStatusType {
             UserStatusType::ResetRequired => write!(f, "RESET_REQUIRED"),
             UserStatusType::Unconfirmed => write!(f, "UNCONFIRMED"),
             UserStatusType::UnknownValue => write!(f, "UNKNOWN"),
-            UserStatusType::Unknown(value) => write!(f, "{}", value),
+            UserStatusType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

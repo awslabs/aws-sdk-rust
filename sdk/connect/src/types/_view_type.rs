@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ViewType {
         match self {
             ViewType::AwsManaged => write!(f, "AWS_MANAGED"),
             ViewType::CustomerManaged => write!(f, "CUSTOMER_MANAGED"),
-            ViewType::Unknown(value) => write!(f, "{}", value),
+            ViewType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

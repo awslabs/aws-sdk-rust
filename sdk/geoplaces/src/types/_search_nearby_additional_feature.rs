@@ -114,7 +114,7 @@ impl ::std::fmt::Display for SearchNearbyAdditionalFeature {
             SearchNearbyAdditionalFeature::Contact => write!(f, "Contact"),
             SearchNearbyAdditionalFeature::Phonemes => write!(f, "Phonemes"),
             SearchNearbyAdditionalFeature::TimeZone => write!(f, "TimeZone"),
-            SearchNearbyAdditionalFeature::Unknown(value) => write!(f, "{}", value),
+            SearchNearbyAdditionalFeature::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

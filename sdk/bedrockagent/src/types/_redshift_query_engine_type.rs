@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RedshiftQueryEngineType {
         match self {
             RedshiftQueryEngineType::Provisioned => write!(f, "PROVISIONED"),
             RedshiftQueryEngineType::Serverless => write!(f, "SERVERLESS"),
-            RedshiftQueryEngineType::Unknown(value) => write!(f, "{}", value),
+            RedshiftQueryEngineType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

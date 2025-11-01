@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Comparison {
         match self {
             Comparison::Equals => write!(f, "equals"),
             Comparison::In => write!(f, "in"),
-            Comparison::Unknown(value) => write!(f, "{}", value),
+            Comparison::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

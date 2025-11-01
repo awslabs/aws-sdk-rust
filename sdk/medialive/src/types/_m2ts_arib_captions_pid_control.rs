@@ -102,7 +102,7 @@ impl ::std::fmt::Display for M2tsAribCaptionsPidControl {
         match self {
             M2tsAribCaptionsPidControl::Auto => write!(f, "AUTO"),
             M2tsAribCaptionsPidControl::UseConfigured => write!(f, "USE_CONFIGURED"),
-            M2tsAribCaptionsPidControl::Unknown(value) => write!(f, "{}", value),
+            M2tsAribCaptionsPidControl::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

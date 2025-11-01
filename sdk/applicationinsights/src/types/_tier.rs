@@ -252,7 +252,7 @@ impl ::std::fmt::Display for Tier {
             Tier::SqlServer => write!(f, "SQL_SERVER"),
             Tier::SqlServerAlwaysonAvailabilityGroup => write!(f, "SQL_SERVER_ALWAYSON_AVAILABILITY_GROUP"),
             Tier::SqlServerFailoverClusterInstance => write!(f, "SQL_SERVER_FAILOVER_CLUSTER_INSTANCE"),
-            Tier::Unknown(value) => write!(f, "{}", value),
+            Tier::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

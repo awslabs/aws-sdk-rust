@@ -102,7 +102,7 @@ impl ::std::fmt::Display for IcebergNullOrder {
         match self {
             IcebergNullOrder::NullsFirst => write!(f, "nulls-first"),
             IcebergNullOrder::NullsLast => write!(f, "nulls-last"),
-            IcebergNullOrder::Unknown(value) => write!(f, "{}", value),
+            IcebergNullOrder::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

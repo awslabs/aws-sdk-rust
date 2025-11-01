@@ -128,7 +128,7 @@ impl ::std::fmt::Display for AgentHealthCode {
             AgentHealthCode::Throttled => write!(f, "THROTTLED"),
             AgentHealthCode::Unhealthy => write!(f, "UNHEALTHY"),
             AgentHealthCode::UnknownValue => write!(f, "UNKNOWN"),
-            AgentHealthCode::Unknown(value) => write!(f, "{}", value),
+            AgentHealthCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

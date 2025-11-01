@@ -108,7 +108,7 @@ impl ::std::fmt::Display for BurnInDestinationSubtitleRows {
             BurnInDestinationSubtitleRows::Rows16 => write!(f, "ROWS_16"),
             BurnInDestinationSubtitleRows::Rows20 => write!(f, "ROWS_20"),
             BurnInDestinationSubtitleRows::Rows24 => write!(f, "ROWS_24"),
-            BurnInDestinationSubtitleRows::Unknown(value) => write!(f, "{}", value),
+            BurnInDestinationSubtitleRows::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

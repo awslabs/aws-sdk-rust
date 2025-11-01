@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SupportType {
         match self {
             SupportType::Extended => write!(f, "EXTENDED"),
             SupportType::Standard => write!(f, "STANDARD"),
-            SupportType::Unknown(value) => write!(f, "{}", value),
+            SupportType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

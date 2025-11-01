@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DnsResponseType {
         match self {
             DnsResponseType::Endpoints => write!(f, "ENDPOINTS"),
             DnsResponseType::Loadbalancer => write!(f, "LOADBALANCER"),
-            DnsResponseType::Unknown(value) => write!(f, "{}", value),
+            DnsResponseType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

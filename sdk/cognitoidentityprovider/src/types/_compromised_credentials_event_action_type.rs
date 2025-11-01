@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CompromisedCredentialsEventActionType {
         match self {
             CompromisedCredentialsEventActionType::Block => write!(f, "BLOCK"),
             CompromisedCredentialsEventActionType::NoAction => write!(f, "NO_ACTION"),
-            CompromisedCredentialsEventActionType::Unknown(value) => write!(f, "{}", value),
+            CompromisedCredentialsEventActionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for IngressPointStatusToUpdate {
         match self {
             IngressPointStatusToUpdate::Active => write!(f, "ACTIVE"),
             IngressPointStatusToUpdate::Closed => write!(f, "CLOSED"),
-            IngressPointStatusToUpdate::Unknown(value) => write!(f, "{}", value),
+            IngressPointStatusToUpdate::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

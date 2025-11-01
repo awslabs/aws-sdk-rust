@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PhcSupport {
         match self {
             PhcSupport::Supported => write!(f, "supported"),
             PhcSupport::Unsupported => write!(f, "unsupported"),
-            PhcSupport::Unknown(value) => write!(f, "{}", value),
+            PhcSupport::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

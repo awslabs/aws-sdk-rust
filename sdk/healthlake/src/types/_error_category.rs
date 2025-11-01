@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ErrorCategory {
         match self {
             ErrorCategory::NonRetryableError => write!(f, "NON_RETRYABLE_ERROR"),
             ErrorCategory::RetryableError => write!(f, "RETRYABLE_ERROR"),
-            ErrorCategory::Unknown(value) => write!(f, "{}", value),
+            ErrorCategory::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

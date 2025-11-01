@@ -108,7 +108,7 @@ impl ::std::fmt::Display for OnStackFailure {
             OnStackFailure::Delete => write!(f, "DELETE"),
             OnStackFailure::DoNothing => write!(f, "DO_NOTHING"),
             OnStackFailure::Rollback => write!(f, "ROLLBACK"),
-            OnStackFailure::Unknown(value) => write!(f, "{}", value),
+            OnStackFailure::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

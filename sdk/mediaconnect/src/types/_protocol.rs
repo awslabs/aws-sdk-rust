@@ -175,7 +175,7 @@ impl ::std::fmt::Display for Protocol {
             Protocol::Udp => write!(f, "udp"),
             Protocol::ZixiPull => write!(f, "zixi-pull"),
             Protocol::ZixiPush => write!(f, "zixi-push"),
-            Protocol::Unknown(value) => write!(f, "{}", value),
+            Protocol::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AuthType {
         match self {
             AuthType::AwsIam => write!(f, "AWS_IAM"),
             AuthType::None => write!(f, "NONE"),
-            AuthType::Unknown(value) => write!(f, "{}", value),
+            AuthType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

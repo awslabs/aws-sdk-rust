@@ -126,7 +126,7 @@ impl ::std::fmt::Display for CapacityTaskFailureType {
             CapacityTaskFailureType::ResourceNotFound => write!(f, "RESOURCE_NOT_FOUND"),
             CapacityTaskFailureType::UnexpectedAssetState => write!(f, "UNEXPECTED_ASSET_STATE"),
             CapacityTaskFailureType::UnsupportedCapacityConfiguration => write!(f, "UNSUPPORTED_CAPACITY_CONFIGURATION"),
-            CapacityTaskFailureType::Unknown(value) => write!(f, "{}", value),
+            CapacityTaskFailureType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

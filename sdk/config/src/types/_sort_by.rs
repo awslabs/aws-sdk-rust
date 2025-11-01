@@ -96,7 +96,7 @@ impl ::std::fmt::Display for SortBy {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             SortBy::Score => write!(f, "SCORE"),
-            SortBy::Unknown(value) => write!(f, "{}", value),
+            SortBy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

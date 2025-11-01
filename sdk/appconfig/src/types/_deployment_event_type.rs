@@ -140,7 +140,7 @@ impl ::std::fmt::Display for DeploymentEventType {
             DeploymentEventType::RevertCompleted => write!(f, "REVERT_COMPLETED"),
             DeploymentEventType::RollbackCompleted => write!(f, "ROLLBACK_COMPLETED"),
             DeploymentEventType::RollbackStarted => write!(f, "ROLLBACK_STARTED"),
-            DeploymentEventType::Unknown(value) => write!(f, "{}", value),
+            DeploymentEventType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

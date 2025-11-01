@@ -108,7 +108,7 @@ impl ::std::fmt::Display for Size {
             Size::Large => write!(f, "LARGE"),
             Size::Medium => write!(f, "MEDIUM"),
             Size::Small => write!(f, "SMALL"),
-            Size::Unknown(value) => write!(f, "{}", value),
+            Size::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

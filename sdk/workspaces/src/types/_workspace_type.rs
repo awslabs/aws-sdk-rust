@@ -102,7 +102,7 @@ impl ::std::fmt::Display for WorkspaceType {
         match self {
             WorkspaceType::Personal => write!(f, "PERSONAL"),
             WorkspaceType::Pools => write!(f, "POOLS"),
-            WorkspaceType::Unknown(value) => write!(f, "{}", value),
+            WorkspaceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

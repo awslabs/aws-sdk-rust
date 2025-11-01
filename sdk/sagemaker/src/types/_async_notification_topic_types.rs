@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AsyncNotificationTopicTypes {
         match self {
             AsyncNotificationTopicTypes::ErrorNotificationTopic => write!(f, "ERROR_NOTIFICATION_TOPIC"),
             AsyncNotificationTopicTypes::SuccessNotificationTopic => write!(f, "SUCCESS_NOTIFICATION_TOPIC"),
-            AsyncNotificationTopicTypes::Unknown(value) => write!(f, "{}", value),
+            AsyncNotificationTopicTypes::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

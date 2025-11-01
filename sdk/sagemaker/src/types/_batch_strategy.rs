@@ -102,7 +102,7 @@ impl ::std::fmt::Display for BatchStrategy {
         match self {
             BatchStrategy::MultiRecord => write!(f, "MultiRecord"),
             BatchStrategy::SingleRecord => write!(f, "SingleRecord"),
-            BatchStrategy::Unknown(value) => write!(f, "{}", value),
+            BatchStrategy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

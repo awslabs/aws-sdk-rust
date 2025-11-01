@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ScaleInProtectedInstances {
             ScaleInProtectedInstances::Ignore => write!(f, "Ignore"),
             ScaleInProtectedInstances::Refresh => write!(f, "Refresh"),
             ScaleInProtectedInstances::Wait => write!(f, "Wait"),
-            ScaleInProtectedInstances::Unknown(value) => write!(f, "{}", value),
+            ScaleInProtectedInstances::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

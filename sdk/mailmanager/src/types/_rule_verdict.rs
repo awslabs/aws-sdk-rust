@@ -114,7 +114,7 @@ impl ::std::fmt::Display for RuleVerdict {
             RuleVerdict::Gray => write!(f, "GRAY"),
             RuleVerdict::Pass => write!(f, "PASS"),
             RuleVerdict::ProcessingFailed => write!(f, "PROCESSING_FAILED"),
-            RuleVerdict::Unknown(value) => write!(f, "{}", value),
+            RuleVerdict::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

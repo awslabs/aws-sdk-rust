@@ -108,7 +108,7 @@ impl ::std::fmt::Display for InputDeviceOutputType {
             InputDeviceOutputType::MediaconnectFlow => write!(f, "MEDIACONNECT_FLOW"),
             InputDeviceOutputType::MedialiveInput => write!(f, "MEDIALIVE_INPUT"),
             InputDeviceOutputType::None => write!(f, "NONE"),
-            InputDeviceOutputType::Unknown(value) => write!(f, "{}", value),
+            InputDeviceOutputType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

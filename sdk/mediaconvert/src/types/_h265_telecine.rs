@@ -108,7 +108,7 @@ impl ::std::fmt::Display for H265Telecine {
             H265Telecine::Hard => write!(f, "HARD"),
             H265Telecine::None => write!(f, "NONE"),
             H265Telecine::Soft => write!(f, "SOFT"),
-            H265Telecine::Unknown(value) => write!(f, "{}", value),
+            H265Telecine::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

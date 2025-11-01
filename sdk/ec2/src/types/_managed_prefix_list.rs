@@ -24,6 +24,11 @@ pub struct ManagedPrefixList {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The ID of the owner of the prefix list.</p>
     pub owner_id: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the IPAM prefix list resolver target associated with this managed prefix list. When set, this prefix list becomes an IPAM managed prefix list.</p>
+    /// <p>An IPAM-managed prefix list is a customer-managed prefix list that has been associated with an IPAM prefix list resolver target. When a prefix list becomes IPAM managed, its CIDRs are automatically synchronized based on the IPAM prefix list resolver's CIDR selection rules, and direct CIDR modifications are restricted.</p>
+    pub ipam_prefix_list_resolver_target_id: ::std::option::Option<::std::string::String>,
+    /// <p>Indicates whether synchronization with an IPAM prefix list resolver is enabled for this managed prefix list. When enabled, the prefix list CIDRs are automatically updated based on the resolver's CIDR selection rules.</p>
+    pub ipam_prefix_list_resolver_sync_enabled: ::std::option::Option<bool>,
 }
 impl ManagedPrefixList {
     /// <p>The ID of the prefix list.</p>
@@ -68,6 +73,15 @@ impl ManagedPrefixList {
     pub fn owner_id(&self) -> ::std::option::Option<&str> {
         self.owner_id.as_deref()
     }
+    /// <p>The ID of the IPAM prefix list resolver target associated with this managed prefix list. When set, this prefix list becomes an IPAM managed prefix list.</p>
+    /// <p>An IPAM-managed prefix list is a customer-managed prefix list that has been associated with an IPAM prefix list resolver target. When a prefix list becomes IPAM managed, its CIDRs are automatically synchronized based on the IPAM prefix list resolver's CIDR selection rules, and direct CIDR modifications are restricted.</p>
+    pub fn ipam_prefix_list_resolver_target_id(&self) -> ::std::option::Option<&str> {
+        self.ipam_prefix_list_resolver_target_id.as_deref()
+    }
+    /// <p>Indicates whether synchronization with an IPAM prefix list resolver is enabled for this managed prefix list. When enabled, the prefix list CIDRs are automatically updated based on the resolver's CIDR selection rules.</p>
+    pub fn ipam_prefix_list_resolver_sync_enabled(&self) -> ::std::option::Option<bool> {
+        self.ipam_prefix_list_resolver_sync_enabled
+    }
 }
 impl ManagedPrefixList {
     /// Creates a new builder-style object to manufacture [`ManagedPrefixList`](crate::types::ManagedPrefixList).
@@ -90,6 +104,8 @@ pub struct ManagedPrefixListBuilder {
     pub(crate) version: ::std::option::Option<i64>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) owner_id: ::std::option::Option<::std::string::String>,
+    pub(crate) ipam_prefix_list_resolver_target_id: ::std::option::Option<::std::string::String>,
+    pub(crate) ipam_prefix_list_resolver_sync_enabled: ::std::option::Option<bool>,
 }
 impl ManagedPrefixListBuilder {
     /// <p>The ID of the prefix list.</p>
@@ -238,6 +254,37 @@ impl ManagedPrefixListBuilder {
     pub fn get_owner_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.owner_id
     }
+    /// <p>The ID of the IPAM prefix list resolver target associated with this managed prefix list. When set, this prefix list becomes an IPAM managed prefix list.</p>
+    /// <p>An IPAM-managed prefix list is a customer-managed prefix list that has been associated with an IPAM prefix list resolver target. When a prefix list becomes IPAM managed, its CIDRs are automatically synchronized based on the IPAM prefix list resolver's CIDR selection rules, and direct CIDR modifications are restricted.</p>
+    pub fn ipam_prefix_list_resolver_target_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ipam_prefix_list_resolver_target_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the IPAM prefix list resolver target associated with this managed prefix list. When set, this prefix list becomes an IPAM managed prefix list.</p>
+    /// <p>An IPAM-managed prefix list is a customer-managed prefix list that has been associated with an IPAM prefix list resolver target. When a prefix list becomes IPAM managed, its CIDRs are automatically synchronized based on the IPAM prefix list resolver's CIDR selection rules, and direct CIDR modifications are restricted.</p>
+    pub fn set_ipam_prefix_list_resolver_target_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.ipam_prefix_list_resolver_target_id = input;
+        self
+    }
+    /// <p>The ID of the IPAM prefix list resolver target associated with this managed prefix list. When set, this prefix list becomes an IPAM managed prefix list.</p>
+    /// <p>An IPAM-managed prefix list is a customer-managed prefix list that has been associated with an IPAM prefix list resolver target. When a prefix list becomes IPAM managed, its CIDRs are automatically synchronized based on the IPAM prefix list resolver's CIDR selection rules, and direct CIDR modifications are restricted.</p>
+    pub fn get_ipam_prefix_list_resolver_target_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ipam_prefix_list_resolver_target_id
+    }
+    /// <p>Indicates whether synchronization with an IPAM prefix list resolver is enabled for this managed prefix list. When enabled, the prefix list CIDRs are automatically updated based on the resolver's CIDR selection rules.</p>
+    pub fn ipam_prefix_list_resolver_sync_enabled(mut self, input: bool) -> Self {
+        self.ipam_prefix_list_resolver_sync_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether synchronization with an IPAM prefix list resolver is enabled for this managed prefix list. When enabled, the prefix list CIDRs are automatically updated based on the resolver's CIDR selection rules.</p>
+    pub fn set_ipam_prefix_list_resolver_sync_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.ipam_prefix_list_resolver_sync_enabled = input;
+        self
+    }
+    /// <p>Indicates whether synchronization with an IPAM prefix list resolver is enabled for this managed prefix list. When enabled, the prefix list CIDRs are automatically updated based on the resolver's CIDR selection rules.</p>
+    pub fn get_ipam_prefix_list_resolver_sync_enabled(&self) -> &::std::option::Option<bool> {
+        &self.ipam_prefix_list_resolver_sync_enabled
+    }
     /// Consumes the builder and constructs a [`ManagedPrefixList`](crate::types::ManagedPrefixList).
     pub fn build(self) -> crate::types::ManagedPrefixList {
         crate::types::ManagedPrefixList {
@@ -251,6 +298,8 @@ impl ManagedPrefixListBuilder {
             version: self.version,
             tags: self.tags,
             owner_id: self.owner_id,
+            ipam_prefix_list_resolver_target_id: self.ipam_prefix_list_resolver_target_id,
+            ipam_prefix_list_resolver_sync_enabled: self.ipam_prefix_list_resolver_sync_enabled,
         }
     }
 }

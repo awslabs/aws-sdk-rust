@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ChangeType {
         match self {
             ChangeType::Immediate => write!(f, "IMMEDIATE"),
             ChangeType::RequiresReboot => write!(f, "REQUIRES_REBOOT"),
-            ChangeType::Unknown(value) => write!(f, "{}", value),
+            ChangeType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

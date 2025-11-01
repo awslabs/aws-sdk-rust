@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PreferenceType {
         match self {
             PreferenceType::CustomPreference => write!(f, "CUSTOM_PREFERENCE"),
             PreferenceType::NoPreference => write!(f, "NO_PREFERENCE"),
-            PreferenceType::Unknown(value) => write!(f, "{}", value),
+            PreferenceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

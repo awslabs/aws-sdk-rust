@@ -108,7 +108,7 @@ impl ::std::fmt::Display for RuleExecutionType {
             RuleExecutionType::Continuous => write!(f, "CONTINUOUS"),
             RuleExecutionType::ContinuousAndSnapshots => write!(f, "CONTINUOUS_AND_SNAPSHOTS"),
             RuleExecutionType::Snapshots => write!(f, "SNAPSHOTS"),
-            RuleExecutionType::Unknown(value) => write!(f, "{}", value),
+            RuleExecutionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

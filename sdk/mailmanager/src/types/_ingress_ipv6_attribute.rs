@@ -96,7 +96,7 @@ impl ::std::fmt::Display for IngressIpv6Attribute {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             IngressIpv6Attribute::SenderIpv6 => write!(f, "SENDER_IPV6"),
-            IngressIpv6Attribute::Unknown(value) => write!(f, "{}", value),
+            IngressIpv6Attribute::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

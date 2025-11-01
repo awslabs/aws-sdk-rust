@@ -120,7 +120,7 @@ impl ::std::fmt::Display for ThirdPartyFirewallAssociationStatus {
             ThirdPartyFirewallAssociationStatus::OffboardComplete => write!(f, "OFFBOARD_COMPLETE"),
             ThirdPartyFirewallAssociationStatus::Onboarding => write!(f, "ONBOARDING"),
             ThirdPartyFirewallAssociationStatus::OnboardComplete => write!(f, "ONBOARD_COMPLETE"),
-            ThirdPartyFirewallAssociationStatus::Unknown(value) => write!(f, "{}", value),
+            ThirdPartyFirewallAssociationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

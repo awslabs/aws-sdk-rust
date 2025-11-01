@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ScanType {
         match self {
             ScanType::Express => write!(f, "Express"),
             ScanType::Standard => write!(f, "Standard"),
-            ScanType::Unknown(value) => write!(f, "{}", value),
+            ScanType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

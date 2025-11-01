@@ -132,7 +132,7 @@ impl ::std::fmt::Display for EventType {
             EventType::InitiatedCall => write!(f, "INITIATED_CALL"),
             EventType::NoAnswer => write!(f, "NO_ANSWER"),
             EventType::Ringing => write!(f, "RINGING"),
-            EventType::Unknown(value) => write!(f, "{}", value),
+            EventType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

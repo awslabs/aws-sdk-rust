@@ -22,7 +22,7 @@ impl ::std::fmt::Display for DefaultUndefinedFault {
         ::std::write!(f, "DefaultUndefinedFault")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
             {
-                ::std::write!(f, ": {}", inner_1)?;
+                ::std::write!(f, ": {inner_1}")?;
             }
         }
         Ok(())

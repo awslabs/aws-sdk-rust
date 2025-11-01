@@ -102,7 +102,7 @@ impl ::std::fmt::Display for HlsFragmentSelectorType {
         match self {
             HlsFragmentSelectorType::ProducerTimestamp => write!(f, "PRODUCER_TIMESTAMP"),
             HlsFragmentSelectorType::ServerTimestamp => write!(f, "SERVER_TIMESTAMP"),
-            HlsFragmentSelectorType::Unknown(value) => write!(f, "{}", value),
+            HlsFragmentSelectorType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

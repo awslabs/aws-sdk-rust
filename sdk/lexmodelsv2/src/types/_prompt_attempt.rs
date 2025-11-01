@@ -126,7 +126,7 @@ impl ::std::fmt::Display for PromptAttempt {
             PromptAttempt::Retry3 => write!(f, "Retry3"),
             PromptAttempt::Retry4 => write!(f, "Retry4"),
             PromptAttempt::Retry5 => write!(f, "Retry5"),
-            PromptAttempt::Unknown(value) => write!(f, "{}", value),
+            PromptAttempt::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

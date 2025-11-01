@@ -57,8 +57,7 @@ pub(crate) fn unescape(s: &str) -> Result<Cow<'_, str>, XmlDecodeError> {
                         })?;
                         let chr = std::char::from_u32(char_code).ok_or_else(|| {
                             XmlDecodeError::invalid_escape(format!(
-                                "invalid char code: {}",
-                                char_code
+                                "invalid char code: {char_code}"
                             ))
                         })?;
                         res.push(chr);

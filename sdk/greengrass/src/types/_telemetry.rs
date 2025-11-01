@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Telemetry {
         match self {
             Telemetry::Off => write!(f, "Off"),
             Telemetry::On => write!(f, "On"),
-            Telemetry::Unknown(value) => write!(f, "{}", value),
+            Telemetry::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

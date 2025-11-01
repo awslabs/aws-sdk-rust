@@ -107,7 +107,7 @@ impl ::std::fmt::Display for PartyType {
             PartyType::Business => write!(f, "BUSINESS"),
             PartyType::Individual => write!(f, "INDIVIDUAL"),
             PartyType::Other => write!(f, "OTHER"),
-            PartyType::Unknown(value) => write!(f, "{}", value),
+            PartyType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ResourceType {
             ResourceType::Archive => write!(f, "ARCHIVE"),
             ResourceType::File => write!(f, "FILE"),
             ResourceType::Jar => write!(f, "JAR"),
-            ResourceType::Unknown(value) => write!(f, "{}", value),
+            ResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -126,7 +126,7 @@ impl ::std::fmt::Display for CommandExecutionStatus {
             CommandExecutionStatus::Rejected => write!(f, "REJECTED"),
             CommandExecutionStatus::Succeeded => write!(f, "SUCCEEDED"),
             CommandExecutionStatus::TimedOut => write!(f, "TIMED_OUT"),
-            CommandExecutionStatus::Unknown(value) => write!(f, "{}", value),
+            CommandExecutionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

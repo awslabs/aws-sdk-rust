@@ -102,7 +102,7 @@ impl ::std::fmt::Display for LoadBalancerProtocol {
         match self {
             LoadBalancerProtocol::Http => write!(f, "HTTP"),
             LoadBalancerProtocol::HttpHttps => write!(f, "HTTP_HTTPS"),
-            LoadBalancerProtocol::Unknown(value) => write!(f, "{}", value),
+            LoadBalancerProtocol::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

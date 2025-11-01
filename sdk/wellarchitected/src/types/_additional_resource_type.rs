@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AdditionalResourceType {
         match self {
             AdditionalResourceType::HelpfulResource => write!(f, "HELPFUL_RESOURCE"),
             AdditionalResourceType::ImprovementPlan => write!(f, "IMPROVEMENT_PLAN"),
-            AdditionalResourceType::Unknown(value) => write!(f, "{}", value),
+            AdditionalResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Directionality {
         match self {
             Directionality::Multi => write!(f, "MULTI"),
             Directionality::Uni => write!(f, "UNI"),
-            Directionality::Unknown(value) => write!(f, "{}", value),
+            Directionality::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

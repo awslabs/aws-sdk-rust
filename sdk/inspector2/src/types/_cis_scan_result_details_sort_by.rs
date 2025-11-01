@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CisScanResultDetailsSortBy {
         match self {
             CisScanResultDetailsSortBy::CheckId => write!(f, "CHECK_ID"),
             CisScanResultDetailsSortBy::Status => write!(f, "STATUS"),
-            CisScanResultDetailsSortBy::Unknown(value) => write!(f, "{}", value),
+            CisScanResultDetailsSortBy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

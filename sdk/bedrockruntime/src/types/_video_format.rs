@@ -144,7 +144,7 @@ impl ::std::fmt::Display for VideoFormat {
             VideoFormat::ThreeGp => write!(f, "three_gp"),
             VideoFormat::Webm => write!(f, "webm"),
             VideoFormat::Wmv => write!(f, "wmv"),
-            VideoFormat::Unknown(value) => write!(f, "{}", value),
+            VideoFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

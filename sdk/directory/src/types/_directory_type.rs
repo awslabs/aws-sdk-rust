@@ -114,7 +114,7 @@ impl ::std::fmt::Display for DirectoryType {
             DirectoryType::MicrosoftAd => write!(f, "MicrosoftAD"),
             DirectoryType::SharedMicrosoftAd => write!(f, "SharedMicrosoftAD"),
             DirectoryType::SimpleAd => write!(f, "SimpleAD"),
-            DirectoryType::Unknown(value) => write!(f, "{}", value),
+            DirectoryType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

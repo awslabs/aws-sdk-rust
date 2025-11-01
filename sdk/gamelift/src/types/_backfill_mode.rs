@@ -102,7 +102,7 @@ impl ::std::fmt::Display for BackfillMode {
         match self {
             BackfillMode::Automatic => write!(f, "AUTOMATIC"),
             BackfillMode::Manual => write!(f, "MANUAL"),
-            BackfillMode::Unknown(value) => write!(f, "{}", value),
+            BackfillMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AssociationExecutionFilterKey {
             AssociationExecutionFilterKey::CreatedTime => write!(f, "CreatedTime"),
             AssociationExecutionFilterKey::ExecutionId => write!(f, "ExecutionId"),
             AssociationExecutionFilterKey::Status => write!(f, "Status"),
-            AssociationExecutionFilterKey::Unknown(value) => write!(f, "{}", value),
+            AssociationExecutionFilterKey::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

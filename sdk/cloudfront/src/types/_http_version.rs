@@ -114,7 +114,7 @@ impl ::std::fmt::Display for HttpVersion {
             HttpVersion::Http2 => write!(f, "http2"),
             HttpVersion::Http2and3 => write!(f, "http2and3"),
             HttpVersion::Http3 => write!(f, "http3"),
-            HttpVersion::Unknown(value) => write!(f, "{}", value),
+            HttpVersion::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

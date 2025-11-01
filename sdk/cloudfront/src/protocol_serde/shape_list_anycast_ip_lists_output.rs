@@ -18,8 +18,7 @@ pub fn de_anycast_ip_lists(inp: &[u8]) -> std::result::Result<crate::types::Anyc
     let start_el = decoder.start_el();
     if !(start_el.matches("AnycastIpListCollection")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected AnycastIpListCollection got {:?}",
-            start_el
+            "invalid root, expected AnycastIpListCollection got {start_el:?}"
         )));
     }
     crate::protocol_serde::shape_anycast_ip_list_collection::de_anycast_ip_list_collection(&mut decoder)

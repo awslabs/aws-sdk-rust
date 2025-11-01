@@ -96,7 +96,7 @@ impl ::std::fmt::Display for EksAnywhereSubscriptionTermUnit {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             EksAnywhereSubscriptionTermUnit::Months => write!(f, "MONTHS"),
-            EksAnywhereSubscriptionTermUnit::Unknown(value) => write!(f, "{}", value),
+            EksAnywhereSubscriptionTermUnit::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for DvbSubtitleAlignment {
             DvbSubtitleAlignment::Auto => write!(f, "AUTO"),
             DvbSubtitleAlignment::Centered => write!(f, "CENTERED"),
             DvbSubtitleAlignment::Left => write!(f, "LEFT"),
-            DvbSubtitleAlignment::Unknown(value) => write!(f, "{}", value),
+            DvbSubtitleAlignment::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

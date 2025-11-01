@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ErrorCode {
         match self {
             ErrorCode::ClientError => write!(f, "ClientError"),
             ErrorCode::InternalError => write!(f, "InternalError"),
-            ErrorCode::Unknown(value) => write!(f, "{}", value),
+            ErrorCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

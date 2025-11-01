@@ -108,16 +108,14 @@ pub fn de_describe_scaling_parameters(
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeScalingParametersResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected DescribeScalingParametersResponse got {:?}",
-            start_el
+            "invalid root, expected DescribeScalingParametersResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("DescribeScalingParametersResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected DescribeScalingParametersResult got {:?}",
-                start_el
+                "invalid result, expected DescribeScalingParametersResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

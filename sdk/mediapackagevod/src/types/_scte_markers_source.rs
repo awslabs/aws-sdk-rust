@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ScteMarkersSource {
         match self {
             ScteMarkersSource::Manifest => write!(f, "MANIFEST"),
             ScteMarkersSource::Segments => write!(f, "SEGMENTS"),
-            ScteMarkersSource::Unknown(value) => write!(f, "{}", value),
+            ScteMarkersSource::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

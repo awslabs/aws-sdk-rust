@@ -114,7 +114,7 @@ impl ::std::fmt::Display for HorizontalTextAlignment {
             HorizontalTextAlignment::Center => write!(f, "CENTER"),
             HorizontalTextAlignment::Left => write!(f, "LEFT"),
             HorizontalTextAlignment::Right => write!(f, "RIGHT"),
-            HorizontalTextAlignment::Unknown(value) => write!(f, "{}", value),
+            HorizontalTextAlignment::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

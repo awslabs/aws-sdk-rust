@@ -108,7 +108,7 @@ impl ::std::fmt::Display for OperatorType {
             OperatorType::EqualsTo => write!(f, "EQUALS_TO"),
             OperatorType::Exists => write!(f, "EXISTS"),
             OperatorType::NotExists => write!(f, "NOT_EXISTS"),
-            OperatorType::Unknown(value) => write!(f, "{}", value),
+            OperatorType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

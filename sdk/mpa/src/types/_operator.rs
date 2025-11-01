@@ -144,7 +144,7 @@ impl ::std::fmt::Display for Operator {
             Operator::LessThanOrEqualTo => write!(f, "LTE"),
             Operator::NotEquals => write!(f, "NE"),
             Operator::DoesNotContain => write!(f, "NOT_CONTAINS"),
-            Operator::Unknown(value) => write!(f, "{}", value),
+            Operator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

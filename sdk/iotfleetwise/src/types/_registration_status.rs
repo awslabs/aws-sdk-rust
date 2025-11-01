@@ -108,7 +108,7 @@ impl ::std::fmt::Display for RegistrationStatus {
             RegistrationStatus::RegistrationFailure => write!(f, "REGISTRATION_FAILURE"),
             RegistrationStatus::RegistrationPending => write!(f, "REGISTRATION_PENDING"),
             RegistrationStatus::RegistrationSuccess => write!(f, "REGISTRATION_SUCCESS"),
-            RegistrationStatus::Unknown(value) => write!(f, "{}", value),
+            RegistrationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

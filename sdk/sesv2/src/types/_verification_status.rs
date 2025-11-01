@@ -120,7 +120,7 @@ impl ::std::fmt::Display for VerificationStatus {
             VerificationStatus::Pending => write!(f, "PENDING"),
             VerificationStatus::Success => write!(f, "SUCCESS"),
             VerificationStatus::TemporaryFailure => write!(f, "TEMPORARY_FAILURE"),
-            VerificationStatus::Unknown(value) => write!(f, "{}", value),
+            VerificationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

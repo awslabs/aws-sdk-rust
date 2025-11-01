@@ -483,7 +483,7 @@ impl ::std::fmt::Display for EventCode {
             EventCode::ServerProcessSdkInitializationFailed => write!(f, "SERVER_PROCESS_SDK_INITIALIZATION_FAILED"),
             EventCode::ServerProcessSdkInitializationTimeout => write!(f, "SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT"),
             EventCode::ServerProcessTerminatedUnhealthy => write!(f, "SERVER_PROCESS_TERMINATED_UNHEALTHY"),
-            EventCode::Unknown(value) => write!(f, "{}", value),
+            EventCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

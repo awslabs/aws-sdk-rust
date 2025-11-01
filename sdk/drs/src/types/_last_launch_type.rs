@@ -102,7 +102,7 @@ impl ::std::fmt::Display for LastLaunchType {
         match self {
             LastLaunchType::Drill => write!(f, "DRILL"),
             LastLaunchType::Recovery => write!(f, "RECOVERY"),
-            LastLaunchType::Unknown(value) => write!(f, "{}", value),
+            LastLaunchType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

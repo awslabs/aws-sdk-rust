@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ProjectStatus {
         match self {
             ProjectStatus::Available => write!(f, "AVAILABLE"),
             ProjectStatus::Updating => write!(f, "UPDATING"),
-            ProjectStatus::Unknown(value) => write!(f, "{}", value),
+            ProjectStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

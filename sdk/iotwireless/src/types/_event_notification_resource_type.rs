@@ -108,7 +108,7 @@ impl ::std::fmt::Display for EventNotificationResourceType {
             EventNotificationResourceType::SidewalkAccount => write!(f, "SidewalkAccount"),
             EventNotificationResourceType::WirelessDevice => write!(f, "WirelessDevice"),
             EventNotificationResourceType::WirelessGateway => write!(f, "WirelessGateway"),
-            EventNotificationResourceType::Unknown(value) => write!(f, "{}", value),
+            EventNotificationResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

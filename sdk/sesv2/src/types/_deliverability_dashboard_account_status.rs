@@ -110,7 +110,7 @@ impl ::std::fmt::Display for DeliverabilityDashboardAccountStatus {
             DeliverabilityDashboardAccountStatus::Active => write!(f, "ACTIVE"),
             DeliverabilityDashboardAccountStatus::Disabled => write!(f, "DISABLED"),
             DeliverabilityDashboardAccountStatus::PendingExpiration => write!(f, "PENDING_EXPIRATION"),
-            DeliverabilityDashboardAccountStatus::Unknown(value) => write!(f, "{}", value),
+            DeliverabilityDashboardAccountStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

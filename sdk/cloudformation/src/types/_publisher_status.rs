@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PublisherStatus {
         match self {
             PublisherStatus::Unverified => write!(f, "UNVERIFIED"),
             PublisherStatus::Verified => write!(f, "VERIFIED"),
-            PublisherStatus::Unknown(value) => write!(f, "{}", value),
+            PublisherStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

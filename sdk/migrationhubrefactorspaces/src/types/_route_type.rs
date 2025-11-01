@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RouteType {
         match self {
             RouteType::Default => write!(f, "DEFAULT"),
             RouteType::UriPath => write!(f, "URI_PATH"),
-            RouteType::Unknown(value) => write!(f, "{}", value),
+            RouteType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

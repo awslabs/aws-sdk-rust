@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ServiceUpdateSeverity {
             ServiceUpdateSeverity::Important => write!(f, "important"),
             ServiceUpdateSeverity::Low => write!(f, "low"),
             ServiceUpdateSeverity::Medium => write!(f, "medium"),
-            ServiceUpdateSeverity::Unknown(value) => write!(f, "{}", value),
+            ServiceUpdateSeverity::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

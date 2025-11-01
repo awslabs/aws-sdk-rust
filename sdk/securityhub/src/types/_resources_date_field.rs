@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ResourcesDateField {
         match self {
             ResourcesDateField::ResourceCreationTimeDt => write!(f, "ResourceCreationTime"),
             ResourcesDateField::ResourceDetailCaptureTimeDt => write!(f, "ResourceDetailCaptureTime"),
-            ResourcesDateField::Unknown(value) => write!(f, "{}", value),
+            ResourcesDateField::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

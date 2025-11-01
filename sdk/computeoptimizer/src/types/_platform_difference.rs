@@ -133,7 +133,7 @@ impl ::std::fmt::Display for PlatformDifference {
             PlatformDifference::NetworkInterface => write!(f, "NetworkInterface"),
             PlatformDifference::StorageInterface => write!(f, "StorageInterface"),
             PlatformDifference::VirtualizationType => write!(f, "VirtualizationType"),
-            PlatformDifference::Unknown(value) => write!(f, "{}", value),
+            PlatformDifference::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

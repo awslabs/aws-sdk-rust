@@ -108,7 +108,7 @@ impl ::std::fmt::Display for GameServerGroupDeleteOption {
             GameServerGroupDeleteOption::ForceDelete => write!(f, "FORCE_DELETE"),
             GameServerGroupDeleteOption::Retain => write!(f, "RETAIN"),
             GameServerGroupDeleteOption::SafeDelete => write!(f, "SAFE_DELETE"),
-            GameServerGroupDeleteOption::Unknown(value) => write!(f, "{}", value),
+            GameServerGroupDeleteOption::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

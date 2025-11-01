@@ -24,8 +24,7 @@ pub(crate) fn de_invalid_git_hub_account_token_exception_json_err(
             },
             other => {
                 return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                    "expected object key or end object, found: {:?}",
-                    other
+                    "expected object key or end object, found: {other:?}"
                 )))
             }
         }

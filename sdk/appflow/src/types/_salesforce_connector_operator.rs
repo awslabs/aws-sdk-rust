@@ -238,7 +238,7 @@ impl ::std::fmt::Display for SalesforceConnectorOperator {
             SalesforceConnectorOperator::ValidateNonNull => write!(f, "VALIDATE_NON_NULL"),
             SalesforceConnectorOperator::ValidateNonZero => write!(f, "VALIDATE_NON_ZERO"),
             SalesforceConnectorOperator::ValidateNumeric => write!(f, "VALIDATE_NUMERIC"),
-            SalesforceConnectorOperator::Unknown(value) => write!(f, "{}", value),
+            SalesforceConnectorOperator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

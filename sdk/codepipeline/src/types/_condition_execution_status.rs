@@ -132,7 +132,7 @@ impl ::std::fmt::Display for ConditionExecutionStatus {
             ConditionExecutionStatus::InProgress => write!(f, "InProgress"),
             ConditionExecutionStatus::Overridden => write!(f, "Overridden"),
             ConditionExecutionStatus::Succeeded => write!(f, "Succeeded"),
-            ConditionExecutionStatus::Unknown(value) => write!(f, "{}", value),
+            ConditionExecutionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

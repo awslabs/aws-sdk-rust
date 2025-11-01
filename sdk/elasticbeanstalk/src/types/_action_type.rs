@@ -110,7 +110,7 @@ impl ::std::fmt::Display for ActionType {
             ActionType::InstanceRefresh => write!(f, "InstanceRefresh"),
             ActionType::PlatformUpdate => write!(f, "PlatformUpdate"),
             ActionType::UnknownValue => write!(f, "Unknown"),
-            ActionType::Unknown(value) => write!(f, "{}", value),
+            ActionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

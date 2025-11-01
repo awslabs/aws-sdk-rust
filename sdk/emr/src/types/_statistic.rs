@@ -120,7 +120,7 @@ impl ::std::fmt::Display for Statistic {
             Statistic::Minimum => write!(f, "MINIMUM"),
             Statistic::SampleCount => write!(f, "SAMPLE_COUNT"),
             Statistic::Sum => write!(f, "SUM"),
-            Statistic::Unknown(value) => write!(f, "{}", value),
+            Statistic::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

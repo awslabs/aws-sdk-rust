@@ -53,8 +53,7 @@ pub fn de_describe_store_image_tasks(
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeStoreImageTasksResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected DescribeStoreImageTasksResponse got {:?}",
-            start_el
+            "invalid root, expected DescribeStoreImageTasksResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

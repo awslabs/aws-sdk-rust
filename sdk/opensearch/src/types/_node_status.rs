@@ -108,7 +108,7 @@ impl ::std::fmt::Display for NodeStatus {
             NodeStatus::Active => write!(f, "Active"),
             NodeStatus::NotAvailable => write!(f, "NotAvailable"),
             NodeStatus::StandBy => write!(f, "StandBy"),
-            NodeStatus::Unknown(value) => write!(f, "{}", value),
+            NodeStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -96,7 +96,7 @@ impl ::std::fmt::Display for EventSortBy {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             EventSortBy::EventTime => write!(f, "EventTime"),
-            EventSortBy::Unknown(value) => write!(f, "{}", value),
+            EventSortBy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

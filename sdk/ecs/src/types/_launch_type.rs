@@ -114,7 +114,7 @@ impl ::std::fmt::Display for LaunchType {
             LaunchType::External => write!(f, "EXTERNAL"),
             LaunchType::Fargate => write!(f, "FARGATE"),
             LaunchType::ManagedInstances => write!(f, "MANAGED_INSTANCES"),
-            LaunchType::Unknown(value) => write!(f, "{}", value),
+            LaunchType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

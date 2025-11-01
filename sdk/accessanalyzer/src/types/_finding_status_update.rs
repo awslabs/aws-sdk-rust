@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FindingStatusUpdate {
         match self {
             FindingStatusUpdate::Active => write!(f, "ACTIVE"),
             FindingStatusUpdate::Archived => write!(f, "ARCHIVED"),
-            FindingStatusUpdate::Unknown(value) => write!(f, "{}", value),
+            FindingStatusUpdate::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

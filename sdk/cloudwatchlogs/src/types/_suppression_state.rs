@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SuppressionState {
         match self {
             SuppressionState::Suppressed => write!(f, "SUPPRESSED"),
             SuppressionState::Unsuppressed => write!(f, "UNSUPPRESSED"),
-            SuppressionState::Unknown(value) => write!(f, "{}", value),
+            SuppressionState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

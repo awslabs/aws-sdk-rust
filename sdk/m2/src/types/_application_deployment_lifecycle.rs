@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ApplicationDeploymentLifecycle {
         match self {
             ApplicationDeploymentLifecycle::Deployed => write!(f, "Deployed"),
             ApplicationDeploymentLifecycle::Deploying => write!(f, "Deploying"),
-            ApplicationDeploymentLifecycle::Unknown(value) => write!(f, "{}", value),
+            ApplicationDeploymentLifecycle::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

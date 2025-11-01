@@ -51,8 +51,7 @@ pub fn de_authorize_security_group_ingress(
     let start_el = decoder.start_el();
     if !(start_el.matches("AuthorizeSecurityGroupIngressResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected AuthorizeSecurityGroupIngressResponse got {:?}",
-            start_el
+            "invalid root, expected AuthorizeSecurityGroupIngressResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

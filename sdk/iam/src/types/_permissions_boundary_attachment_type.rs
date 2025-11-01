@@ -96,7 +96,7 @@ impl ::std::fmt::Display for PermissionsBoundaryAttachmentType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             PermissionsBoundaryAttachmentType::Policy => write!(f, "PermissionsBoundaryPolicy"),
-            PermissionsBoundaryAttachmentType::Unknown(value) => write!(f, "{}", value),
+            PermissionsBoundaryAttachmentType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

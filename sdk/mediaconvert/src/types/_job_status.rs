@@ -120,7 +120,7 @@ impl ::std::fmt::Display for JobStatus {
             JobStatus::Error => write!(f, "ERROR"),
             JobStatus::Progressing => write!(f, "PROGRESSING"),
             JobStatus::Submitted => write!(f, "SUBMITTED"),
-            JobStatus::Unknown(value) => write!(f, "{}", value),
+            JobStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

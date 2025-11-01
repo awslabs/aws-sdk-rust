@@ -114,7 +114,7 @@ impl ::std::fmt::Display for InitiatedBy {
             InitiatedBy::StartCutover => write!(f, "START_CUTOVER"),
             InitiatedBy::StartTest => write!(f, "START_TEST"),
             InitiatedBy::Terminate => write!(f, "TERMINATE"),
-            InitiatedBy::Unknown(value) => write!(f, "{}", value),
+            InitiatedBy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

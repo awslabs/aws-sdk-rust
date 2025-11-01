@@ -108,7 +108,7 @@ impl ::std::fmt::Display for GroupingRecommendationStatusType {
             GroupingRecommendationStatusType::Accepted => write!(f, "Accepted"),
             GroupingRecommendationStatusType::PendingDecision => write!(f, "PendingDecision"),
             GroupingRecommendationStatusType::Rejected => write!(f, "Rejected"),
-            GroupingRecommendationStatusType::Unknown(value) => write!(f, "{}", value),
+            GroupingRecommendationStatusType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

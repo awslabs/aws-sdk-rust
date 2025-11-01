@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ModelCacheSetting {
         match self {
             ModelCacheSetting::Disabled => write!(f, "Disabled"),
             ModelCacheSetting::Enabled => write!(f, "Enabled"),
-            ModelCacheSetting::Unknown(value) => write!(f, "{}", value),
+            ModelCacheSetting::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

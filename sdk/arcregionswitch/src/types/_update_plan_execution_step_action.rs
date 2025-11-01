@@ -102,7 +102,7 @@ impl ::std::fmt::Display for UpdatePlanExecutionStepAction {
         match self {
             UpdatePlanExecutionStepAction::Skip => write!(f, "skip"),
             UpdatePlanExecutionStepAction::SwitchToUngraceful => write!(f, "switchToUngraceful"),
-            UpdatePlanExecutionStepAction::Unknown(value) => write!(f, "{}", value),
+            UpdatePlanExecutionStepAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

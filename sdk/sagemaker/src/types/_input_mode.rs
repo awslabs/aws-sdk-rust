@@ -102,7 +102,7 @@ impl ::std::fmt::Display for InputMode {
         match self {
             InputMode::File => write!(f, "File"),
             InputMode::Pipe => write!(f, "Pipe"),
-            InputMode::Unknown(value) => write!(f, "{}", value),
+            InputMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

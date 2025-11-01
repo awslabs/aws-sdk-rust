@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ExceptionLevel {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ExceptionLevel::Debug => write!(f, "DEBUG"),
-            ExceptionLevel::Unknown(value) => write!(f, "{}", value),
+            ExceptionLevel::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

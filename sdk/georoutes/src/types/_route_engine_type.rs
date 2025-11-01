@@ -106,7 +106,7 @@ impl ::std::fmt::Display for RouteEngineType {
             RouteEngineType::Electric => write!(f, "Electric"),
             RouteEngineType::InternalCombustion => write!(f, "InternalCombustion"),
             RouteEngineType::PluginHybrid => write!(f, "PluginHybrid"),
-            RouteEngineType::Unknown(value) => write!(f, "{}", value),
+            RouteEngineType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

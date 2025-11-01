@@ -96,7 +96,7 @@ impl ::std::fmt::Display for RedactionPlaceHolderType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             RedactionPlaceHolderType::CustomText => write!(f, "CustomText"),
-            RedactionPlaceHolderType::Unknown(value) => write!(f, "{}", value),
+            RedactionPlaceHolderType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

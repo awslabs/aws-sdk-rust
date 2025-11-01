@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ProfileType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ProfileType::Frequency => write!(f, "FREQUENCY"),
-            ProfileType::Unknown(value) => write!(f, "{}", value),
+            ProfileType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

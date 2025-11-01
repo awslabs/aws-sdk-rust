@@ -102,7 +102,7 @@ impl ::std::fmt::Display for WordCloudWordScaling {
         match self {
             WordCloudWordScaling::Emphasize => write!(f, "EMPHASIZE"),
             WordCloudWordScaling::Normal => write!(f, "NORMAL"),
-            WordCloudWordScaling::Unknown(value) => write!(f, "{}", value),
+            WordCloudWordScaling::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

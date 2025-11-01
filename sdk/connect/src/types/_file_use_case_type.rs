@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FileUseCaseType {
         match self {
             FileUseCaseType::Attachment => write!(f, "ATTACHMENT"),
             FileUseCaseType::EmailMessage => write!(f, "EMAIL_MESSAGE"),
-            FileUseCaseType::Unknown(value) => write!(f, "{}", value),
+            FileUseCaseType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

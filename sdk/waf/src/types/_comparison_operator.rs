@@ -126,7 +126,7 @@ impl ::std::fmt::Display for ComparisonOperator {
             ComparisonOperator::Le => write!(f, "LE"),
             ComparisonOperator::Lt => write!(f, "LT"),
             ComparisonOperator::Ne => write!(f, "NE"),
-            ComparisonOperator::Unknown(value) => write!(f, "{}", value),
+            ComparisonOperator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

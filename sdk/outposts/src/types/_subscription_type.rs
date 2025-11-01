@@ -108,7 +108,7 @@ impl ::std::fmt::Display for SubscriptionType {
             SubscriptionType::CapacityIncrease => write!(f, "CAPACITY_INCREASE"),
             SubscriptionType::Original => write!(f, "ORIGINAL"),
             SubscriptionType::Renewal => write!(f, "RENEWAL"),
-            SubscriptionType::Unknown(value) => write!(f, "{}", value),
+            SubscriptionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

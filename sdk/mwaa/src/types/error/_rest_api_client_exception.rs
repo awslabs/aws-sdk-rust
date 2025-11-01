@@ -43,7 +43,7 @@ impl ::std::fmt::Display for RestApiClientException {
         ::std::write!(f, "RestApiClientException")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
             {
-                ::std::write!(f, ": {}", inner_1)?;
+                ::std::write!(f, ": {inner_1}")?;
             }
         }
         Ok(())

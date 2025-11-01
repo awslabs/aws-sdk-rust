@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CmafWriteSegmentTimelineInRepresentation {
         match self {
             CmafWriteSegmentTimelineInRepresentation::Disabled => write!(f, "DISABLED"),
             CmafWriteSegmentTimelineInRepresentation::Enabled => write!(f, "ENABLED"),
-            CmafWriteSegmentTimelineInRepresentation::Unknown(value) => write!(f, "{}", value),
+            CmafWriteSegmentTimelineInRepresentation::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

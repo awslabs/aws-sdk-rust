@@ -154,7 +154,7 @@ impl ::std::fmt::Display for AnalyticsUtteranceFilterName {
             AnalyticsUtteranceFilterName::SessionId => write!(f, "SessionId"),
             AnalyticsUtteranceFilterName::UtteranceState => write!(f, "UtteranceState"),
             AnalyticsUtteranceFilterName::UtteranceText => write!(f, "UtteranceText"),
-            AnalyticsUtteranceFilterName::Unknown(value) => write!(f, "{}", value),
+            AnalyticsUtteranceFilterName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

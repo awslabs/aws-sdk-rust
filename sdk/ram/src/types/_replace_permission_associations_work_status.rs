@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ReplacePermissionAssociationsWorkStatus {
             ReplacePermissionAssociationsWorkStatus::Completed => write!(f, "COMPLETED"),
             ReplacePermissionAssociationsWorkStatus::Failed => write!(f, "FAILED"),
             ReplacePermissionAssociationsWorkStatus::InProgress => write!(f, "IN_PROGRESS"),
-            ReplacePermissionAssociationsWorkStatus::Unknown(value) => write!(f, "{}", value),
+            ReplacePermissionAssociationsWorkStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

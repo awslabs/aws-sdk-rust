@@ -53,8 +53,7 @@ pub fn de_release_ipam_pool_allocation(
     let start_el = decoder.start_el();
     if !(start_el.matches("ReleaseIpamPoolAllocationResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected ReleaseIpamPoolAllocationResponse got {:?}",
-            start_el
+            "invalid root, expected ReleaseIpamPoolAllocationResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

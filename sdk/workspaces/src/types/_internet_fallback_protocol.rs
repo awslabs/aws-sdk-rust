@@ -96,7 +96,7 @@ impl ::std::fmt::Display for InternetFallbackProtocol {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             InternetFallbackProtocol::Pcoip => write!(f, "PCOIP"),
-            InternetFallbackProtocol::Unknown(value) => write!(f, "{}", value),
+            InternetFallbackProtocol::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

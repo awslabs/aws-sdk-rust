@@ -100,7 +100,7 @@ impl ::std::fmt::Display for GuardrailContextualGroundingFilterType {
         match self {
             GuardrailContextualGroundingFilterType::Grounding => write!(f, "GROUNDING"),
             GuardrailContextualGroundingFilterType::Relevance => write!(f, "RELEVANCE"),
-            GuardrailContextualGroundingFilterType::Unknown(value) => write!(f, "{}", value),
+            GuardrailContextualGroundingFilterType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

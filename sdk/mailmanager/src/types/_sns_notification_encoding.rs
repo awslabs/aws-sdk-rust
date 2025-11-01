@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SnsNotificationEncoding {
         match self {
             SnsNotificationEncoding::Base64 => write!(f, "BASE64"),
             SnsNotificationEncoding::Utf8 => write!(f, "UTF-8"),
-            SnsNotificationEncoding::Unknown(value) => write!(f, "{}", value),
+            SnsNotificationEncoding::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

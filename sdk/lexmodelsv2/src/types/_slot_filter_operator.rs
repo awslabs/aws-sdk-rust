@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SlotFilterOperator {
         match self {
             SlotFilterOperator::Contains => write!(f, "CO"),
             SlotFilterOperator::Equals => write!(f, "EQ"),
-            SlotFilterOperator::Unknown(value) => write!(f, "{}", value),
+            SlotFilterOperator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

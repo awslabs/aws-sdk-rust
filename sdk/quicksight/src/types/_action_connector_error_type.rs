@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ActionConnectorErrorType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ActionConnectorErrorType::InternalFailure => write!(f, "INTERNAL_FAILURE"),
-            ActionConnectorErrorType::Unknown(value) => write!(f, "{}", value),
+            ActionConnectorErrorType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

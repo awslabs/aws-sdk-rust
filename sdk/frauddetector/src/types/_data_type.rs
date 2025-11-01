@@ -120,7 +120,7 @@ impl ::std::fmt::Display for DataType {
             DataType::Float => write!(f, "FLOAT"),
             DataType::Integer => write!(f, "INTEGER"),
             DataType::String => write!(f, "STRING"),
-            DataType::Unknown(value) => write!(f, "{}", value),
+            DataType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

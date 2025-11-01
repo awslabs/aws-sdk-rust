@@ -108,7 +108,7 @@ impl ::std::fmt::Display for SlotValueResolutionStrategy {
             SlotValueResolutionStrategy::Concatenation => write!(f, "Concatenation"),
             SlotValueResolutionStrategy::OriginalValue => write!(f, "OriginalValue"),
             SlotValueResolutionStrategy::TopResolution => write!(f, "TopResolution"),
-            SlotValueResolutionStrategy::Unknown(value) => write!(f, "{}", value),
+            SlotValueResolutionStrategy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

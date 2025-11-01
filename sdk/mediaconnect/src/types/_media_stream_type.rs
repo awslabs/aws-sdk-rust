@@ -108,7 +108,7 @@ impl ::std::fmt::Display for MediaStreamType {
             MediaStreamType::AncillaryData => write!(f, "ancillary-data"),
             MediaStreamType::Audio => write!(f, "audio"),
             MediaStreamType::Video => write!(f, "video"),
-            MediaStreamType::Unknown(value) => write!(f, "{}", value),
+            MediaStreamType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

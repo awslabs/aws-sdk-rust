@@ -181,6 +181,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for CreateExtend
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::create_extended_source_server::CreateExtendedSourceServerInput,
                 output: &mut ::std::string::String,

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AutoScalingPolicyStateChangeReasonCode {
             AutoScalingPolicyStateChangeReasonCode::CleanupFailure => write!(f, "CLEANUP_FAILURE"),
             AutoScalingPolicyStateChangeReasonCode::ProvisionFailure => write!(f, "PROVISION_FAILURE"),
             AutoScalingPolicyStateChangeReasonCode::UserRequest => write!(f, "USER_REQUEST"),
-            AutoScalingPolicyStateChangeReasonCode::Unknown(value) => write!(f, "{}", value),
+            AutoScalingPolicyStateChangeReasonCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

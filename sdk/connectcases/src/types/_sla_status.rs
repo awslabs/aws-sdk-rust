@@ -114,7 +114,7 @@ impl ::std::fmt::Display for SlaStatus {
             SlaStatus::Met => write!(f, "Met"),
             SlaStatus::NotMet => write!(f, "NotMet"),
             SlaStatus::Overdue => write!(f, "Overdue"),
-            SlaStatus::Unknown(value) => write!(f, "{}", value),
+            SlaStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

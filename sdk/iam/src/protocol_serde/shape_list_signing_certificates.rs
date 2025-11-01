@@ -95,16 +95,14 @@ pub fn de_list_signing_certificates(
     let start_el = decoder.start_el();
     if !(start_el.matches("ListSigningCertificatesResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected ListSigningCertificatesResponse got {:?}",
-            start_el
+            "invalid root, expected ListSigningCertificatesResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("ListSigningCertificatesResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected ListSigningCertificatesResult got {:?}",
-                start_el
+                "invalid result, expected ListSigningCertificatesResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

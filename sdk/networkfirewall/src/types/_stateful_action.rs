@@ -114,7 +114,7 @@ impl ::std::fmt::Display for StatefulAction {
             StatefulAction::Drop => write!(f, "DROP"),
             StatefulAction::Pass => write!(f, "PASS"),
             StatefulAction::Reject => write!(f, "REJECT"),
-            StatefulAction::Unknown(value) => write!(f, "{}", value),
+            StatefulAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

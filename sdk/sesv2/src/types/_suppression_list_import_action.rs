@@ -110,7 +110,7 @@ impl ::std::fmt::Display for SuppressionListImportAction {
         match self {
             SuppressionListImportAction::Delete => write!(f, "DELETE"),
             SuppressionListImportAction::Put => write!(f, "PUT"),
-            SuppressionListImportAction::Unknown(value) => write!(f, "{}", value),
+            SuppressionListImportAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

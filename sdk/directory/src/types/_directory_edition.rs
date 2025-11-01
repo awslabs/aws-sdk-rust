@@ -108,7 +108,7 @@ impl ::std::fmt::Display for DirectoryEdition {
             DirectoryEdition::Enterprise => write!(f, "Enterprise"),
             DirectoryEdition::Hybrid => write!(f, "Hybrid"),
             DirectoryEdition::Standard => write!(f, "Standard"),
-            DirectoryEdition::Unknown(value) => write!(f, "{}", value),
+            DirectoryEdition::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

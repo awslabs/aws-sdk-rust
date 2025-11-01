@@ -108,7 +108,7 @@ impl ::std::fmt::Display for QueryResultType {
             QueryResultType::Answer => write!(f, "ANSWER"),
             QueryResultType::Document => write!(f, "DOCUMENT"),
             QueryResultType::QuestionAnswer => write!(f, "QUESTION_ANSWER"),
-            QueryResultType::Unknown(value) => write!(f, "{}", value),
+            QueryResultType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

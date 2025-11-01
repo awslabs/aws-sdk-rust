@@ -296,7 +296,7 @@ impl ::std::fmt::Display for NodeDataType {
             NodeDataType::UnixTimestamp => write!(f, "UNIX_TIMESTAMP"),
             NodeDataType::UnixTimestampArray => write!(f, "UNIX_TIMESTAMP_ARRAY"),
             NodeDataType::UnknownValue => write!(f, "UNKNOWN"),
-            NodeDataType::Unknown(value) => write!(f, "{}", value),
+            NodeDataType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

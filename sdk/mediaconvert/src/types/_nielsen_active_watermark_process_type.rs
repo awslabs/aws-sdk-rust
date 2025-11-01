@@ -108,7 +108,7 @@ impl ::std::fmt::Display for NielsenActiveWatermarkProcessType {
             NielsenActiveWatermarkProcessType::Cbet => write!(f, "CBET"),
             NielsenActiveWatermarkProcessType::Naes2AndNw => write!(f, "NAES2_AND_NW"),
             NielsenActiveWatermarkProcessType::Naes2AndNwAndCbet => write!(f, "NAES2_AND_NW_AND_CBET"),
-            NielsenActiveWatermarkProcessType::Unknown(value) => write!(f, "{}", value),
+            NielsenActiveWatermarkProcessType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

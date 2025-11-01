@@ -120,7 +120,7 @@ impl ::std::fmt::Display for ProresInterlaceMode {
             ProresInterlaceMode::FollowTopField => write!(f, "FOLLOW_TOP_FIELD"),
             ProresInterlaceMode::Progressive => write!(f, "PROGRESSIVE"),
             ProresInterlaceMode::TopField => write!(f, "TOP_FIELD"),
-            ProresInterlaceMode::Unknown(value) => write!(f, "{}", value),
+            ProresInterlaceMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

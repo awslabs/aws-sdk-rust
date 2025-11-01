@@ -154,7 +154,7 @@ impl ::std::fmt::Display for ConnectionState {
             ConnectionState::Deleting => write!(f, "DELETING"),
             ConnectionState::FailedConnectivity => write!(f, "FAILED_CONNECTIVITY"),
             ConnectionState::Updating => write!(f, "UPDATING"),
-            ConnectionState::Unknown(value) => write!(f, "{}", value),
+            ConnectionState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

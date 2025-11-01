@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FunctionUrlAuthType {
         match self {
             FunctionUrlAuthType::AwsIam => write!(f, "AWS_IAM"),
             FunctionUrlAuthType::None => write!(f, "NONE"),
-            FunctionUrlAuthType::Unknown(value) => write!(f, "{}", value),
+            FunctionUrlAuthType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

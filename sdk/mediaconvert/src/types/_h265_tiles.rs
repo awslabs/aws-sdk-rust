@@ -102,7 +102,7 @@ impl ::std::fmt::Display for H265Tiles {
         match self {
             H265Tiles::Disabled => write!(f, "DISABLED"),
             H265Tiles::Enabled => write!(f, "ENABLED"),
-            H265Tiles::Unknown(value) => write!(f, "{}", value),
+            H265Tiles::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

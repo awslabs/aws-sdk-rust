@@ -133,7 +133,7 @@ impl ::std::fmt::Display for ProvisionedProductPlanStatus {
             ProvisionedProductPlanStatus::ExecuteFailed => write!(f, "EXECUTE_FAILED"),
             ProvisionedProductPlanStatus::ExecuteInProgress => write!(f, "EXECUTE_IN_PROGRESS"),
             ProvisionedProductPlanStatus::ExecuteSuccess => write!(f, "EXECUTE_SUCCESS"),
-            ProvisionedProductPlanStatus::Unknown(value) => write!(f, "{}", value),
+            ProvisionedProductPlanStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

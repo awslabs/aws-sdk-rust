@@ -104,7 +104,7 @@ impl ::std::fmt::Display for EnforceSecurityGroupInboundRulesOnPrivateLinkTraffi
         match self {
             EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnum::Off => write!(f, "off"),
             EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnum::On => write!(f, "on"),
-            EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnum::Unknown(value) => write!(f, "{}", value),
+            EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

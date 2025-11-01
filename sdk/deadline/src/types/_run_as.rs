@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RunAs {
         match self {
             RunAs::QueueConfiguredUser => write!(f, "QUEUE_CONFIGURED_USER"),
             RunAs::WorkerAgentUser => write!(f, "WORKER_AGENT_USER"),
-            RunAs::Unknown(value) => write!(f, "{}", value),
+            RunAs::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

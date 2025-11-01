@@ -102,7 +102,7 @@ impl ::std::fmt::Display for HlsProgramDateTimeClock {
         match self {
             HlsProgramDateTimeClock::InitializeFromOutputTimecode => write!(f, "INITIALIZE_FROM_OUTPUT_TIMECODE"),
             HlsProgramDateTimeClock::SystemClock => write!(f, "SYSTEM_CLOCK"),
-            HlsProgramDateTimeClock::Unknown(value) => write!(f, "{}", value),
+            HlsProgramDateTimeClock::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

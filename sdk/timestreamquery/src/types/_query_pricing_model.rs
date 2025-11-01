@@ -102,7 +102,7 @@ impl ::std::fmt::Display for QueryPricingModel {
         match self {
             QueryPricingModel::BytesScanned => write!(f, "BYTES_SCANNED"),
             QueryPricingModel::ComputeUnits => write!(f, "COMPUTE_UNITS"),
-            QueryPricingModel::Unknown(value) => write!(f, "{}", value),
+            QueryPricingModel::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

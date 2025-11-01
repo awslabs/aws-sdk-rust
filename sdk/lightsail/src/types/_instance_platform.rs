@@ -102,7 +102,7 @@ impl ::std::fmt::Display for InstancePlatform {
         match self {
             InstancePlatform::LinuxUnix => write!(f, "LINUX_UNIX"),
             InstancePlatform::Windows => write!(f, "WINDOWS"),
-            InstancePlatform::Unknown(value) => write!(f, "{}", value),
+            InstancePlatform::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for LicenseEdition {
             LicenseEdition::Free => write!(f, "Free"),
             LicenseEdition::NoLicenseEditionFound => write!(f, "NoLicenseEditionFound"),
             LicenseEdition::Standard => write!(f, "Standard"),
-            LicenseEdition::Unknown(value) => write!(f, "{}", value),
+            LicenseEdition::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

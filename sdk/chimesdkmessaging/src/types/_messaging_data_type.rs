@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MessagingDataType {
         match self {
             MessagingDataType::Channel => write!(f, "Channel"),
             MessagingDataType::ChannelMessage => write!(f, "ChannelMessage"),
-            MessagingDataType::Unknown(value) => write!(f, "{}", value),
+            MessagingDataType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

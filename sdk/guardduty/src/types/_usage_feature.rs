@@ -182,7 +182,7 @@ impl ::std::fmt::Display for UsageFeature {
             UsageFeature::RdsDbiProtectionServerless => write!(f, "RDS_DBI_PROTECTION_SERVERLESS"),
             UsageFeature::RdsLoginEvents => write!(f, "RDS_LOGIN_EVENTS"),
             UsageFeature::S3DataEvents => write!(f, "S3_DATA_EVENTS"),
-            UsageFeature::Unknown(value) => write!(f, "{}", value),
+            UsageFeature::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

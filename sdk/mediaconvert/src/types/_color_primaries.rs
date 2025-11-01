@@ -203,7 +203,7 @@ impl ::std::fmt::Display for ColorPrimaries {
             ColorPrimaries::Smpte4312 => write!(f, "SMPTE_431_2"),
             ColorPrimaries::SmpteEg4321 => write!(f, "SMPTE_EG_432_1"),
             ColorPrimaries::Unspecified => write!(f, "UNSPECIFIED"),
-            ColorPrimaries::Unknown(value) => write!(f, "{}", value),
+            ColorPrimaries::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

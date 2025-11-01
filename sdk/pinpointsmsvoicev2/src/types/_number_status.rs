@@ -120,7 +120,7 @@ impl ::std::fmt::Display for NumberStatus {
             NumberStatus::Deleted => write!(f, "DELETED"),
             NumberStatus::Disassociating => write!(f, "DISASSOCIATING"),
             NumberStatus::Pending => write!(f, "PENDING"),
-            NumberStatus::Unknown(value) => write!(f, "{}", value),
+            NumberStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

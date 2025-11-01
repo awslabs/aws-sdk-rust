@@ -147,7 +147,7 @@ impl ::std::fmt::Display for QuickResponseStatus {
             QuickResponseStatus::DeleteInProgress => write!(f, "DELETE_IN_PROGRESS"),
             QuickResponseStatus::UpdateFailed => write!(f, "UPDATE_FAILED"),
             QuickResponseStatus::UpdateInProgress => write!(f, "UPDATE_IN_PROGRESS"),
-            QuickResponseStatus::Unknown(value) => write!(f, "{}", value),
+            QuickResponseStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

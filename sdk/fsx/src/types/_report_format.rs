@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ReportFormat {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ReportFormat::ReportCsv20191124 => write!(f, "REPORT_CSV_20191124"),
-            ReportFormat::Unknown(value) => write!(f, "{}", value),
+            ReportFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

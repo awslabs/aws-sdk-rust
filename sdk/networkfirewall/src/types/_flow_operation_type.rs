@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FlowOperationType {
         match self {
             FlowOperationType::FlowCapture => write!(f, "FLOW_CAPTURE"),
             FlowOperationType::FlowFlush => write!(f, "FLOW_FLUSH"),
-            FlowOperationType::Unknown(value) => write!(f, "{}", value),
+            FlowOperationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

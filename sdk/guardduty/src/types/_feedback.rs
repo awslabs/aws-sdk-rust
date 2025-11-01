@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Feedback {
         match self {
             Feedback::NotUseful => write!(f, "NOT_USEFUL"),
             Feedback::Useful => write!(f, "USEFUL"),
-            Feedback::Unknown(value) => write!(f, "{}", value),
+            Feedback::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

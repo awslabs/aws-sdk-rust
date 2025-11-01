@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DirectorySize {
         match self {
             DirectorySize::Large => write!(f, "Large"),
             DirectorySize::Small => write!(f, "Small"),
-            DirectorySize::Unknown(value) => write!(f, "{}", value),
+            DirectorySize::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

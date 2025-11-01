@@ -108,7 +108,7 @@ impl ::std::fmt::Display for InferenceDataImportStrategy {
             InferenceDataImportStrategy::AddWhenEmpty => write!(f, "ADD_WHEN_EMPTY"),
             InferenceDataImportStrategy::NoImport => write!(f, "NO_IMPORT"),
             InferenceDataImportStrategy::Overwrite => write!(f, "OVERWRITE"),
-            InferenceDataImportStrategy::Unknown(value) => write!(f, "{}", value),
+            InferenceDataImportStrategy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -96,7 +96,7 @@ impl ::std::fmt::Display for DataSource {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             DataSource::Agent => write!(f, "AGENT"),
-            DataSource::Unknown(value) => write!(f, "{}", value),
+            DataSource::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

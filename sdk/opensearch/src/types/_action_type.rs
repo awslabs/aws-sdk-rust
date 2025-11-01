@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ActionType {
             ActionType::JvmHeapSizeTuning => write!(f, "JVM_HEAP_SIZE_TUNING"),
             ActionType::JvmYoungGenTuning => write!(f, "JVM_YOUNG_GEN_TUNING"),
             ActionType::ServiceSoftwareUpdate => write!(f, "SERVICE_SOFTWARE_UPDATE"),
-            ActionType::Unknown(value) => write!(f, "{}", value),
+            ActionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for FindingTypeSortBy {
             FindingTypeSortBy::All => write!(f, "ALL"),
             FindingTypeSortBy::Critical => write!(f, "CRITICAL"),
             FindingTypeSortBy::High => write!(f, "HIGH"),
-            FindingTypeSortBy::Unknown(value) => write!(f, "{}", value),
+            FindingTypeSortBy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

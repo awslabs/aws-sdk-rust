@@ -114,7 +114,7 @@ impl ::std::fmt::Display for BatchCreateWorkloadEstimateUsageCode {
             BatchCreateWorkloadEstimateUsageCode::Conflict => write!(f, "CONFLICT"),
             BatchCreateWorkloadEstimateUsageCode::InternalServerError => write!(f, "INTERNAL_SERVER_ERROR"),
             BatchCreateWorkloadEstimateUsageCode::NotFound => write!(f, "NOT_FOUND"),
-            BatchCreateWorkloadEstimateUsageCode::Unknown(value) => write!(f, "{}", value),
+            BatchCreateWorkloadEstimateUsageCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

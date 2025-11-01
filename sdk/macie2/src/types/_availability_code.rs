@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AvailabilityCode {
         match self {
             AvailabilityCode::Available => write!(f, "AVAILABLE"),
             AvailabilityCode::Unavailable => write!(f, "UNAVAILABLE"),
-            AvailabilityCode::Unknown(value) => write!(f, "{}", value),
+            AvailabilityCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

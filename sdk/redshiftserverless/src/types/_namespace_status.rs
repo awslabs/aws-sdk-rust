@@ -108,7 +108,7 @@ impl ::std::fmt::Display for NamespaceStatus {
             NamespaceStatus::Available => write!(f, "AVAILABLE"),
             NamespaceStatus::Deleting => write!(f, "DELETING"),
             NamespaceStatus::Modifying => write!(f, "MODIFYING"),
-            NamespaceStatus::Unknown(value) => write!(f, "{}", value),
+            NamespaceStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -147,7 +147,7 @@ impl ::std::fmt::Display for StepStatus {
             StepStatus::Ready => write!(f, "READY"),
             StepStatus::Skipped => write!(f, "SKIPPED"),
             StepStatus::UserAttentionRequired => write!(f, "USER_ATTENTION_REQUIRED"),
-            StepStatus::Unknown(value) => write!(f, "{}", value),
+            StepStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -168,7 +168,7 @@ impl ::std::fmt::Display for ApplicationLifecycle {
             ApplicationLifecycle::Starting => write!(f, "Starting"),
             ApplicationLifecycle::Stopped => write!(f, "Stopped"),
             ApplicationLifecycle::Stopping => write!(f, "Stopping"),
-            ApplicationLifecycle::Unknown(value) => write!(f, "{}", value),
+            ApplicationLifecycle::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

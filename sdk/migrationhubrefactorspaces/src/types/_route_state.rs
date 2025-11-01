@@ -126,7 +126,7 @@ impl ::std::fmt::Display for RouteState {
             RouteState::Failed => write!(f, "FAILED"),
             RouteState::Inactive => write!(f, "INACTIVE"),
             RouteState::Updating => write!(f, "UPDATING"),
-            RouteState::Unknown(value) => write!(f, "{}", value),
+            RouteState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

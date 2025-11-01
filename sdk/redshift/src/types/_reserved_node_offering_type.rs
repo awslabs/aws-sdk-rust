@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ReservedNodeOfferingType {
         match self {
             ReservedNodeOfferingType::Regular => write!(f, "Regular"),
             ReservedNodeOfferingType::Upgradable => write!(f, "Upgradable"),
-            ReservedNodeOfferingType::Unknown(value) => write!(f, "{}", value),
+            ReservedNodeOfferingType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

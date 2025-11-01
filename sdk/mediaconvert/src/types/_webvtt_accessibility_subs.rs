@@ -102,7 +102,7 @@ impl ::std::fmt::Display for WebvttAccessibilitySubs {
         match self {
             WebvttAccessibilitySubs::Disabled => write!(f, "DISABLED"),
             WebvttAccessibilitySubs::Enabled => write!(f, "ENABLED"),
-            WebvttAccessibilitySubs::Unknown(value) => write!(f, "{}", value),
+            WebvttAccessibilitySubs::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

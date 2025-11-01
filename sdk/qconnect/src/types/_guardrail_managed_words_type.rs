@@ -94,7 +94,7 @@ impl ::std::fmt::Display for GuardrailManagedWordsType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             GuardrailManagedWordsType::Profanity => write!(f, "PROFANITY"),
-            GuardrailManagedWordsType::Unknown(value) => write!(f, "{}", value),
+            GuardrailManagedWordsType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

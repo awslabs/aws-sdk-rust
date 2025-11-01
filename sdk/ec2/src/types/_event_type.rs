@@ -114,7 +114,7 @@ impl ::std::fmt::Display for EventType {
             EventType::BatchChange => write!(f, "fleetRequestChange"),
             EventType::Information => write!(f, "information"),
             EventType::InstanceChange => write!(f, "instanceChange"),
-            EventType::Unknown(value) => write!(f, "{}", value),
+            EventType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

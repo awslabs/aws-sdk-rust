@@ -168,7 +168,7 @@ impl ::std::fmt::Display for WebhookFilterType {
             WebhookFilterType::RepositoryName => write!(f, "REPOSITORY_NAME"),
             WebhookFilterType::TagName => write!(f, "TAG_NAME"),
             WebhookFilterType::WorkflowName => write!(f, "WORKFLOW_NAME"),
-            WebhookFilterType::Unknown(value) => write!(f, "{}", value),
+            WebhookFilterType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

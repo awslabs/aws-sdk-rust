@@ -140,7 +140,7 @@ impl ::std::fmt::Display for ServiceNetworkVpcAssociationStatus {
             ServiceNetworkVpcAssociationStatus::DeleteInProgress => write!(f, "DELETE_IN_PROGRESS"),
             ServiceNetworkVpcAssociationStatus::UpdateFailed => write!(f, "UPDATE_FAILED"),
             ServiceNetworkVpcAssociationStatus::UpdateInProgress => write!(f, "UPDATE_IN_PROGRESS"),
-            ServiceNetworkVpcAssociationStatus::Unknown(value) => write!(f, "{}", value),
+            ServiceNetworkVpcAssociationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

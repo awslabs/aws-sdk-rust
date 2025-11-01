@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ListInferenceRecommendationsJobsSortBy {
             ListInferenceRecommendationsJobsSortBy::CreationTime => write!(f, "CreationTime"),
             ListInferenceRecommendationsJobsSortBy::Name => write!(f, "Name"),
             ListInferenceRecommendationsJobsSortBy::Status => write!(f, "Status"),
-            ListInferenceRecommendationsJobsSortBy::Unknown(value) => write!(f, "{}", value),
+            ListInferenceRecommendationsJobsSortBy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

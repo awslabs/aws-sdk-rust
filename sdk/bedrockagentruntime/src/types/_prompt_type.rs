@@ -126,7 +126,7 @@ impl ::std::fmt::Display for PromptType {
             PromptType::PostProcessing => write!(f, "POST_PROCESSING"),
             PromptType::PreProcessing => write!(f, "PRE_PROCESSING"),
             PromptType::RoutingClassifier => write!(f, "ROUTING_CLASSIFIER"),
-            PromptType::Unknown(value) => write!(f, "{}", value),
+            PromptType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

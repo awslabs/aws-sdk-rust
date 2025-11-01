@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MfaStatus {
         match self {
             MfaStatus::Disabled => write!(f, "DISABLED"),
             MfaStatus::Enabled => write!(f, "ENABLED"),
-            MfaStatus::Unknown(value) => write!(f, "{}", value),
+            MfaStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

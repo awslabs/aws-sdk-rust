@@ -126,7 +126,7 @@ impl ::std::fmt::Display for HistoryItemType {
             HistoryItemType::AlarmContributorStateUpdate => write!(f, "AlarmContributorStateUpdate"),
             HistoryItemType::ConfigurationUpdate => write!(f, "ConfigurationUpdate"),
             HistoryItemType::StateUpdate => write!(f, "StateUpdate"),
-            HistoryItemType::Unknown(value) => write!(f, "{}", value),
+            HistoryItemType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

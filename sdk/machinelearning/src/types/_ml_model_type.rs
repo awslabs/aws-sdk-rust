@@ -108,7 +108,7 @@ impl ::std::fmt::Display for MlModelType {
             MlModelType::Binary => write!(f, "BINARY"),
             MlModelType::Multiclass => write!(f, "MULTICLASS"),
             MlModelType::Regression => write!(f, "REGRESSION"),
-            MlModelType::Unknown(value) => write!(f, "{}", value),
+            MlModelType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

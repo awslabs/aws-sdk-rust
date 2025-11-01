@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PipeTargetInvocationType {
         match self {
             PipeTargetInvocationType::FireAndForget => write!(f, "FIRE_AND_FORGET"),
             PipeTargetInvocationType::RequestResponse => write!(f, "REQUEST_RESPONSE"),
-            PipeTargetInvocationType::Unknown(value) => write!(f, "{}", value),
+            PipeTargetInvocationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

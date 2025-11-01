@@ -108,7 +108,7 @@ impl ::std::fmt::Display for IngestionMode {
             IngestionMode::All => write!(f, "ALL"),
             IngestionMode::Bulk => write!(f, "BULK"),
             IngestionMode::Put => write!(f, "PUT"),
-            IngestionMode::Unknown(value) => write!(f, "{}", value),
+            IngestionMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

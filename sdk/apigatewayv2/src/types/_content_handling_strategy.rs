@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ContentHandlingStrategy {
         match self {
             ContentHandlingStrategy::ConvertToBinary => write!(f, "CONVERT_TO_BINARY"),
             ContentHandlingStrategy::ConvertToText => write!(f, "CONVERT_TO_TEXT"),
-            ContentHandlingStrategy::Unknown(value) => write!(f, "{}", value),
+            ContentHandlingStrategy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

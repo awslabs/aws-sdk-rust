@@ -114,7 +114,7 @@ impl ::std::fmt::Display for CallingNameStatus {
             CallingNameStatus::UpdateFailed => write!(f, "UpdateFailed"),
             CallingNameStatus::UpdateInProgress => write!(f, "UpdateInProgress"),
             CallingNameStatus::UpdateSucceeded => write!(f, "UpdateSucceeded"),
-            CallingNameStatus::Unknown(value) => write!(f, "{}", value),
+            CallingNameStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

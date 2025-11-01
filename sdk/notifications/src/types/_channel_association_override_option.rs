@@ -104,7 +104,7 @@ impl ::std::fmt::Display for ChannelAssociationOverrideOption {
         match self {
             ChannelAssociationOverrideOption::Disabled => write!(f, "DISABLED"),
             ChannelAssociationOverrideOption::Enabled => write!(f, "ENABLED"),
-            ChannelAssociationOverrideOption::Unknown(value) => write!(f, "{}", value),
+            ChannelAssociationOverrideOption::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

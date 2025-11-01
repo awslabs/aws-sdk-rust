@@ -126,7 +126,7 @@ impl ::std::fmt::Display for DomainStatus {
             DomainStatus::Deleted => write!(f, "DELETED"),
             DomainStatus::Deleting => write!(f, "DELETING"),
             DomainStatus::DeletionFailed => write!(f, "DELETION_FAILED"),
-            DomainStatus::Unknown(value) => write!(f, "{}", value),
+            DomainStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

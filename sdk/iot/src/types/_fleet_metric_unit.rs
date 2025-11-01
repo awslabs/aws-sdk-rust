@@ -280,7 +280,7 @@ impl ::std::fmt::Display for FleetMetricUnit {
             FleetMetricUnit::TerabitsSecond => write!(f, "Terabits/Second"),
             FleetMetricUnit::Terabytes => write!(f, "Terabytes"),
             FleetMetricUnit::TerabytesSecond => write!(f, "Terabytes/Second"),
-            FleetMetricUnit::Unknown(value) => write!(f, "{}", value),
+            FleetMetricUnit::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

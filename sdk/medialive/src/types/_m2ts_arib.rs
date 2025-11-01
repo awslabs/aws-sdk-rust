@@ -102,7 +102,7 @@ impl ::std::fmt::Display for M2tsArib {
         match self {
             M2tsArib::Disabled => write!(f, "DISABLED"),
             M2tsArib::Enabled => write!(f, "ENABLED"),
-            M2tsArib::Unknown(value) => write!(f, "{}", value),
+            M2tsArib::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

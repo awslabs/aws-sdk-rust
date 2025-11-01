@@ -102,7 +102,7 @@ impl ::std::fmt::Display for WebAppEndpointPolicy {
         match self {
             WebAppEndpointPolicy::Fips => write!(f, "FIPS"),
             WebAppEndpointPolicy::Standard => write!(f, "STANDARD"),
-            WebAppEndpointPolicy::Unknown(value) => write!(f, "{}", value),
+            WebAppEndpointPolicy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

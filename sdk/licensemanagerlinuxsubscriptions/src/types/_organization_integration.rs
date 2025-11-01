@@ -102,7 +102,7 @@ impl ::std::fmt::Display for OrganizationIntegration {
         match self {
             OrganizationIntegration::Disabled => write!(f, "Disabled"),
             OrganizationIntegration::Enabled => write!(f, "Enabled"),
-            OrganizationIntegration::Unknown(value) => write!(f, "{}", value),
+            OrganizationIntegration::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

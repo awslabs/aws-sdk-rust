@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ThemeErrorType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ThemeErrorType::InternalFailure => write!(f, "INTERNAL_FAILURE"),
-            ThemeErrorType::Unknown(value) => write!(f, "{}", value),
+            ThemeErrorType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

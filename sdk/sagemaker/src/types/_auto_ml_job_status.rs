@@ -120,7 +120,7 @@ impl ::std::fmt::Display for AutoMlJobStatus {
             AutoMlJobStatus::InProgress => write!(f, "InProgress"),
             AutoMlJobStatus::Stopped => write!(f, "Stopped"),
             AutoMlJobStatus::Stopping => write!(f, "Stopping"),
-            AutoMlJobStatus::Unknown(value) => write!(f, "{}", value),
+            AutoMlJobStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

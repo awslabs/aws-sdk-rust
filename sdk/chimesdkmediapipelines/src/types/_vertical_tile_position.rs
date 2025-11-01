@@ -102,7 +102,7 @@ impl ::std::fmt::Display for VerticalTilePosition {
         match self {
             VerticalTilePosition::Left => write!(f, "Left"),
             VerticalTilePosition::Right => write!(f, "Right"),
-            VerticalTilePosition::Unknown(value) => write!(f, "{}", value),
+            VerticalTilePosition::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

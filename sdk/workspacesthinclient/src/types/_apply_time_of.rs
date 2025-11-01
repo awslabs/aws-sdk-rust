@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ApplyTimeOf {
         match self {
             ApplyTimeOf::Device => write!(f, "DEVICE"),
             ApplyTimeOf::Utc => write!(f, "UTC"),
-            ApplyTimeOf::Unknown(value) => write!(f, "{}", value),
+            ApplyTimeOf::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

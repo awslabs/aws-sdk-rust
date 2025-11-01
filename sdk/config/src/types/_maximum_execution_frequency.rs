@@ -120,7 +120,7 @@ impl ::std::fmt::Display for MaximumExecutionFrequency {
             MaximumExecutionFrequency::ThreeHours => write!(f, "Three_Hours"),
             MaximumExecutionFrequency::TwelveHours => write!(f, "Twelve_Hours"),
             MaximumExecutionFrequency::TwentyFourHours => write!(f, "TwentyFour_Hours"),
-            MaximumExecutionFrequency::Unknown(value) => write!(f, "{}", value),
+            MaximumExecutionFrequency::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

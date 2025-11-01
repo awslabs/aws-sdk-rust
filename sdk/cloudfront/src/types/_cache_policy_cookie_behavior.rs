@@ -114,7 +114,7 @@ impl ::std::fmt::Display for CachePolicyCookieBehavior {
             CachePolicyCookieBehavior::AllExcept => write!(f, "allExcept"),
             CachePolicyCookieBehavior::None => write!(f, "none"),
             CachePolicyCookieBehavior::Whitelist => write!(f, "whitelist"),
-            CachePolicyCookieBehavior::Unknown(value) => write!(f, "{}", value),
+            CachePolicyCookieBehavior::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

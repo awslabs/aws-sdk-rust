@@ -102,7 +102,7 @@ impl ::std::fmt::Display for InstanceRebootMigrationState {
         match self {
             InstanceRebootMigrationState::Default => write!(f, "default"),
             InstanceRebootMigrationState::Disabled => write!(f, "disabled"),
-            InstanceRebootMigrationState::Unknown(value) => write!(f, "{}", value),
+            InstanceRebootMigrationState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

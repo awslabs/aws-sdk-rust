@@ -120,7 +120,7 @@ impl ::std::fmt::Display for EndpointState {
             EndpointState::Terminated => write!(f, "TERMINATED"),
             EndpointState::TerminatedWithErrors => write!(f, "TERMINATED_WITH_ERRORS"),
             EndpointState::Terminating => write!(f, "TERMINATING"),
-            EndpointState::Unknown(value) => write!(f, "{}", value),
+            EndpointState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

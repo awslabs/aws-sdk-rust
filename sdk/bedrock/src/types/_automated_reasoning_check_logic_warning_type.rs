@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AutomatedReasoningCheckLogicWarningType {
         match self {
             AutomatedReasoningCheckLogicWarningType::AlwaysFalse => write!(f, "ALWAYS_FALSE"),
             AutomatedReasoningCheckLogicWarningType::AlwaysTrue => write!(f, "ALWAYS_TRUE"),
-            AutomatedReasoningCheckLogicWarningType::Unknown(value) => write!(f, "{}", value),
+            AutomatedReasoningCheckLogicWarningType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

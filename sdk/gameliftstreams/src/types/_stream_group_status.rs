@@ -140,7 +140,7 @@ impl ::std::fmt::Display for StreamGroupStatus {
             StreamGroupStatus::Error => write!(f, "ERROR"),
             StreamGroupStatus::Expired => write!(f, "EXPIRED"),
             StreamGroupStatus::UpdatingLocations => write!(f, "UPDATING_LOCATIONS"),
-            StreamGroupStatus::Unknown(value) => write!(f, "{}", value),
+            StreamGroupStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

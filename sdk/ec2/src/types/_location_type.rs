@@ -114,7 +114,7 @@ impl ::std::fmt::Display for LocationType {
             LocationType::AvailabilityZoneId => write!(f, "availability-zone-id"),
             LocationType::Outpost => write!(f, "outpost"),
             LocationType::Region => write!(f, "region"),
-            LocationType::Unknown(value) => write!(f, "{}", value),
+            LocationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -303,7 +303,7 @@ impl ::std::fmt::Display for AnalysisSchemeLanguage {
             AnalysisSchemeLanguage::Tr => write!(f, "tr"),
             AnalysisSchemeLanguage::ZhHans => write!(f, "zh-Hans"),
             AnalysisSchemeLanguage::ZhHant => write!(f, "zh-Hant"),
-            AnalysisSchemeLanguage::Unknown(value) => write!(f, "{}", value),
+            AnalysisSchemeLanguage::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

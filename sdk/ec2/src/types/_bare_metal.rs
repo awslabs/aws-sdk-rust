@@ -108,7 +108,7 @@ impl ::std::fmt::Display for BareMetal {
             BareMetal::Excluded => write!(f, "excluded"),
             BareMetal::Included => write!(f, "included"),
             BareMetal::Required => write!(f, "required"),
-            BareMetal::Unknown(value) => write!(f, "{}", value),
+            BareMetal::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Owner {
         match self {
             Owner::AwsManaged => write!(f, "AWS_MANAGED"),
             Owner::Custom => write!(f, "CUSTOM"),
-            Owner::Unknown(value) => write!(f, "{}", value),
+            Owner::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

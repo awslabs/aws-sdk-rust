@@ -102,7 +102,7 @@ impl ::std::fmt::Display for LayerAvailability {
         match self {
             LayerAvailability::Available => write!(f, "AVAILABLE"),
             LayerAvailability::Unavailable => write!(f, "UNAVAILABLE"),
-            LayerAvailability::Unknown(value) => write!(f, "{}", value),
+            LayerAvailability::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

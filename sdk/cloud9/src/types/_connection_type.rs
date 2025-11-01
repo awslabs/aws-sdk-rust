@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ConnectionType {
         match self {
             ConnectionType::ConnectSsh => write!(f, "CONNECT_SSH"),
             ConnectionType::ConnectSsm => write!(f, "CONNECT_SSM"),
-            ConnectionType::Unknown(value) => write!(f, "{}", value),
+            ConnectionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

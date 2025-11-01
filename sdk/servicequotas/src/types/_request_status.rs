@@ -140,7 +140,7 @@ impl ::std::fmt::Display for RequestStatus {
             RequestStatus::InvalidRequest => write!(f, "INVALID_REQUEST"),
             RequestStatus::NotApproved => write!(f, "NOT_APPROVED"),
             RequestStatus::Pending => write!(f, "PENDING"),
-            RequestStatus::Unknown(value) => write!(f, "{}", value),
+            RequestStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

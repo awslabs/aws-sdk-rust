@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ServiceLevelIndicatorComparisonOperator {
             ServiceLevelIndicatorComparisonOperator::GreaterThanOrEqualTo => write!(f, "GreaterThanOrEqualTo"),
             ServiceLevelIndicatorComparisonOperator::LessThan => write!(f, "LessThan"),
             ServiceLevelIndicatorComparisonOperator::LessThanOrEqualTo => write!(f, "LessThanOrEqualTo"),
-            ServiceLevelIndicatorComparisonOperator::Unknown(value) => write!(f, "{}", value),
+            ServiceLevelIndicatorComparisonOperator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

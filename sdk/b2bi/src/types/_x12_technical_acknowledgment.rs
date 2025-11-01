@@ -102,7 +102,7 @@ impl ::std::fmt::Display for X12TechnicalAcknowledgment {
         match self {
             X12TechnicalAcknowledgment::DoNotGenerate => write!(f, "DO_NOT_GENERATE"),
             X12TechnicalAcknowledgment::GenerateAllSegments => write!(f, "GENERATE_ALL_SEGMENTS"),
-            X12TechnicalAcknowledgment::Unknown(value) => write!(f, "{}", value),
+            X12TechnicalAcknowledgment::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

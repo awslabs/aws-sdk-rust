@@ -168,7 +168,7 @@ impl ::std::fmt::Display for DefaultAggregation {
             DefaultAggregation::Sum => write!(f, "SUM"),
             DefaultAggregation::Var => write!(f, "VAR"),
             DefaultAggregation::Varp => write!(f, "VARP"),
-            DefaultAggregation::Unknown(value) => write!(f, "{}", value),
+            DefaultAggregation::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

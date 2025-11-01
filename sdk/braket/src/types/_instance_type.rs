@@ -364,7 +364,7 @@ impl ::std::fmt::Display for InstanceType {
             InstanceType::MlP38Xlarge => write!(f, "ml.p3.8xlarge"),
             InstanceType::MlP3Dn24Xlarge => write!(f, "ml.p3dn.24xlarge"),
             InstanceType::MlP4D24Xlarge => write!(f, "ml.p4d.24xlarge"),
-            InstanceType::Unknown(value) => write!(f, "{}", value),
+            InstanceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

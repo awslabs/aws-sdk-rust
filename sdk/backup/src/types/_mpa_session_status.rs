@@ -108,7 +108,7 @@ impl ::std::fmt::Display for MpaSessionStatus {
             MpaSessionStatus::Approved => write!(f, "APPROVED"),
             MpaSessionStatus::Failed => write!(f, "FAILED"),
             MpaSessionStatus::Pending => write!(f, "PENDING"),
-            MpaSessionStatus::Unknown(value) => write!(f, "{}", value),
+            MpaSessionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

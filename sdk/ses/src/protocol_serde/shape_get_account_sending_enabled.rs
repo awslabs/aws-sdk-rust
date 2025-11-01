@@ -53,16 +53,14 @@ pub fn de_get_account_sending_enabled(
     let start_el = decoder.start_el();
     if !(start_el.matches("GetAccountSendingEnabledResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected GetAccountSendingEnabledResponse got {:?}",
-            start_el
+            "invalid root, expected GetAccountSendingEnabledResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("GetAccountSendingEnabledResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected GetAccountSendingEnabledResult got {:?}",
-                start_el
+                "invalid result, expected GetAccountSendingEnabledResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

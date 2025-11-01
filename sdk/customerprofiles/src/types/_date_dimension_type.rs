@@ -120,7 +120,7 @@ impl ::std::fmt::Display for DateDimensionType {
             DateDimensionType::Between => write!(f, "BETWEEN"),
             DateDimensionType::NotBetween => write!(f, "NOT_BETWEEN"),
             DateDimensionType::On => write!(f, "ON"),
-            DateDimensionType::Unknown(value) => write!(f, "{}", value),
+            DateDimensionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -375,6 +375,14 @@ pub(crate) mod shape_create_ipam_pool;
 
 pub(crate) mod shape_create_ipam_pool_input;
 
+pub(crate) mod shape_create_ipam_prefix_list_resolver;
+
+pub(crate) mod shape_create_ipam_prefix_list_resolver_input;
+
+pub(crate) mod shape_create_ipam_prefix_list_resolver_target;
+
+pub(crate) mod shape_create_ipam_prefix_list_resolver_target_input;
+
 pub(crate) mod shape_create_ipam_resource_discovery;
 
 pub(crate) mod shape_create_ipam_resource_discovery_input;
@@ -718,6 +726,14 @@ pub(crate) mod shape_delete_ipam_input;
 pub(crate) mod shape_delete_ipam_pool;
 
 pub(crate) mod shape_delete_ipam_pool_input;
+
+pub(crate) mod shape_delete_ipam_prefix_list_resolver;
+
+pub(crate) mod shape_delete_ipam_prefix_list_resolver_input;
+
+pub(crate) mod shape_delete_ipam_prefix_list_resolver_target;
+
+pub(crate) mod shape_delete_ipam_prefix_list_resolver_target_input;
 
 pub(crate) mod shape_delete_ipam_resource_discovery;
 
@@ -1290,6 +1306,14 @@ pub(crate) mod shape_describe_ipam_external_resource_verification_tokens_input;
 pub(crate) mod shape_describe_ipam_pools;
 
 pub(crate) mod shape_describe_ipam_pools_input;
+
+pub(crate) mod shape_describe_ipam_prefix_list_resolver_targets;
+
+pub(crate) mod shape_describe_ipam_prefix_list_resolver_targets_input;
+
+pub(crate) mod shape_describe_ipam_prefix_list_resolvers;
+
+pub(crate) mod shape_describe_ipam_prefix_list_resolvers_input;
 
 pub(crate) mod shape_describe_ipam_resource_discoveries;
 
@@ -2099,6 +2123,18 @@ pub(crate) mod shape_get_ipam_pool_cidrs;
 
 pub(crate) mod shape_get_ipam_pool_cidrs_input;
 
+pub(crate) mod shape_get_ipam_prefix_list_resolver_rules;
+
+pub(crate) mod shape_get_ipam_prefix_list_resolver_rules_input;
+
+pub(crate) mod shape_get_ipam_prefix_list_resolver_version_entries;
+
+pub(crate) mod shape_get_ipam_prefix_list_resolver_version_entries_input;
+
+pub(crate) mod shape_get_ipam_prefix_list_resolver_versions;
+
+pub(crate) mod shape_get_ipam_prefix_list_resolver_versions_input;
+
 pub(crate) mod shape_get_ipam_resource_cidrs;
 
 pub(crate) mod shape_get_ipam_resource_cidrs_input;
@@ -2358,6 +2394,14 @@ pub(crate) mod shape_modify_ipam_input;
 pub(crate) mod shape_modify_ipam_pool;
 
 pub(crate) mod shape_modify_ipam_pool_input;
+
+pub(crate) mod shape_modify_ipam_prefix_list_resolver;
+
+pub(crate) mod shape_modify_ipam_prefix_list_resolver_input;
+
+pub(crate) mod shape_modify_ipam_prefix_list_resolver_target;
+
+pub(crate) mod shape_modify_ipam_prefix_list_resolver_target_input;
 
 pub(crate) mod shape_modify_ipam_resource_cidr;
 
@@ -2995,6 +3039,8 @@ pub(crate) mod shape_ipam_cidr_authorization_context;
 
 pub(crate) mod shape_ipam_pool_source_resource_request;
 
+pub(crate) mod shape_ipam_prefix_list_resolver_rule_request;
+
 pub(crate) mod shape_ipv4_prefix_specification_request;
 
 pub(crate) mod shape_ipv6_prefix_specification_request;
@@ -3496,6 +3542,22 @@ pub(crate) mod shape_ipam_pool_cidr;
 pub(crate) mod shape_ipam_pool_cidr_set;
 
 pub(crate) mod shape_ipam_pool_set;
+
+pub(crate) mod shape_ipam_prefix_list_resolver;
+
+pub(crate) mod shape_ipam_prefix_list_resolver_rule_condition_request;
+
+pub(crate) mod shape_ipam_prefix_list_resolver_rule_set;
+
+pub(crate) mod shape_ipam_prefix_list_resolver_set;
+
+pub(crate) mod shape_ipam_prefix_list_resolver_target;
+
+pub(crate) mod shape_ipam_prefix_list_resolver_target_set;
+
+pub(crate) mod shape_ipam_prefix_list_resolver_version_entry_set;
+
+pub(crate) mod shape_ipam_prefix_list_resolver_version_set;
 
 pub(crate) mod shape_ipam_resource_cidr;
 
@@ -4335,6 +4397,12 @@ pub(crate) mod shape_ipam_pool_cidr_failure_reason;
 
 pub(crate) mod shape_ipam_pool_source_resource;
 
+pub(crate) mod shape_ipam_prefix_list_resolver_rule;
+
+pub(crate) mod shape_ipam_prefix_list_resolver_version;
+
+pub(crate) mod shape_ipam_prefix_list_resolver_version_entry;
+
 pub(crate) mod shape_ipam_resource_tag_list;
 
 pub(crate) mod shape_ipv4_prefix_specification;
@@ -4867,6 +4935,8 @@ pub(crate) mod shape_ipam_operating_region;
 
 pub(crate) mod shape_ipam_organizational_unit_exclusion;
 
+pub(crate) mod shape_ipam_prefix_list_resolver_rule_condition_set;
+
 pub(crate) mod shape_ipam_public_address_security_group_list;
 
 pub(crate) mod shape_ipam_public_address_tags;
@@ -5180,6 +5250,8 @@ pub(crate) mod shape_instance_network_interface_specification_list;
 pub(crate) mod shape_instance_status_details_list;
 
 pub(crate) mod shape_ip_address_list;
+
+pub(crate) mod shape_ipam_prefix_list_resolver_rule_condition;
 
 pub(crate) mod shape_ipam_public_address_security_group;
 

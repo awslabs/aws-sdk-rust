@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ValidityType {
             ValidityType::Days => write!(f, "DAYS"),
             ValidityType::Months => write!(f, "MONTHS"),
             ValidityType::Years => write!(f, "YEARS"),
-            ValidityType::Unknown(value) => write!(f, "{}", value),
+            ValidityType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -133,7 +133,7 @@ impl ::std::fmt::Display for ResolverDnssecValidationStatus {
             ResolverDnssecValidationStatus::Enabling => write!(f, "ENABLING"),
             ResolverDnssecValidationStatus::UpdateToUseLocalResourceSetting => write!(f, "UPDATING_TO_USE_LOCAL_RESOURCE_SETTING"),
             ResolverDnssecValidationStatus::UseLocalResourceSetting => write!(f, "USE_LOCAL_RESOURCE_SETTING"),
-            ResolverDnssecValidationStatus::Unknown(value) => write!(f, "{}", value),
+            ResolverDnssecValidationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

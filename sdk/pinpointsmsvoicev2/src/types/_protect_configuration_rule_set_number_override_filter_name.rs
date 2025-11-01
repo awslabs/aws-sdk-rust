@@ -144,7 +144,7 @@ impl ::std::fmt::Display for ProtectConfigurationRuleSetNumberOverrideFilterName
             ProtectConfigurationRuleSetNumberOverrideFilterName::ExpiresAfter => write!(f, "expires-after"),
             ProtectConfigurationRuleSetNumberOverrideFilterName::ExpiresBefore => write!(f, "expires-before"),
             ProtectConfigurationRuleSetNumberOverrideFilterName::IsoCountryCode => write!(f, "iso-country-code"),
-            ProtectConfigurationRuleSetNumberOverrideFilterName::Unknown(value) => write!(f, "{}", value),
+            ProtectConfigurationRuleSetNumberOverrideFilterName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

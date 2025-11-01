@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ChannelMessageType {
         match self {
             ChannelMessageType::Control => write!(f, "CONTROL"),
             ChannelMessageType::Standard => write!(f, "STANDARD"),
-            ChannelMessageType::Unknown(value) => write!(f, "{}", value),
+            ChannelMessageType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

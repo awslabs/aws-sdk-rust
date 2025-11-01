@@ -96,7 +96,7 @@ impl ::std::fmt::Display for IpamPoolAwsService {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             IpamPoolAwsService::Ec2 => write!(f, "ec2"),
-            IpamPoolAwsService::Unknown(value) => write!(f, "{}", value),
+            IpamPoolAwsService::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

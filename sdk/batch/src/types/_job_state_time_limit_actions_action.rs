@@ -102,7 +102,7 @@ impl ::std::fmt::Display for JobStateTimeLimitActionsAction {
         match self {
             JobStateTimeLimitActionsAction::Cancel => write!(f, "CANCEL"),
             JobStateTimeLimitActionsAction::Terminate => write!(f, "TERMINATE"),
-            JobStateTimeLimitActionsAction::Unknown(value) => write!(f, "{}", value),
+            JobStateTimeLimitActionsAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

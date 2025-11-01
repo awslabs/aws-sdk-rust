@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CreationType {
         match self {
             CreationType::Import => write!(f, "IMPORT"),
             CreationType::Upload => write!(f, "UPLOAD"),
-            CreationType::Unknown(value) => write!(f, "{}", value),
+            CreationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

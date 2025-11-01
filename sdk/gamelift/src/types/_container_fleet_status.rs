@@ -132,7 +132,7 @@ impl ::std::fmt::Display for ContainerFleetStatus {
             ContainerFleetStatus::Deleting => write!(f, "DELETING"),
             ContainerFleetStatus::Pending => write!(f, "PENDING"),
             ContainerFleetStatus::Updating => write!(f, "UPDATING"),
-            ContainerFleetStatus::Unknown(value) => write!(f, "{}", value),
+            ContainerFleetStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for OAuthGrantType {
         match self {
             OAuthGrantType::Code => write!(f, "CODE"),
             OAuthGrantType::Implicit => write!(f, "IMPLICIT"),
-            OAuthGrantType::Unknown(value) => write!(f, "{}", value),
+            OAuthGrantType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

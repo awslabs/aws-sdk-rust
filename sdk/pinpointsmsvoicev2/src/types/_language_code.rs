@@ -170,7 +170,7 @@ impl ::std::fmt::Display for LanguageCode {
             LanguageCode::PtBr => write!(f, "PT_BR"),
             LanguageCode::ZhCn => write!(f, "ZH_CN"),
             LanguageCode::ZhTw => write!(f, "ZH_TW"),
-            LanguageCode::Unknown(value) => write!(f, "{}", value),
+            LanguageCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

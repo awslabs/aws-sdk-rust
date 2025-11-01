@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Formality {
         match self {
             Formality::Formal => write!(f, "FORMAL"),
             Formality::Informal => write!(f, "INFORMAL"),
-            Formality::Unknown(value) => write!(f, "{}", value),
+            Formality::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

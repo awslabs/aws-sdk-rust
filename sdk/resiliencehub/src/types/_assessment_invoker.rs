@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AssessmentInvoker {
         match self {
             AssessmentInvoker::System => write!(f, "System"),
             AssessmentInvoker::User => write!(f, "User"),
-            AssessmentInvoker::Unknown(value) => write!(f, "{}", value),
+            AssessmentInvoker::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

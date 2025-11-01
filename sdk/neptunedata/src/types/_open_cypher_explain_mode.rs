@@ -108,7 +108,7 @@ impl ::std::fmt::Display for OpenCypherExplainMode {
             OpenCypherExplainMode::Details => write!(f, "details"),
             OpenCypherExplainMode::Dynamic => write!(f, "dynamic"),
             OpenCypherExplainMode::Static => write!(f, "static"),
-            OpenCypherExplainMode::Unknown(value) => write!(f, "{}", value),
+            OpenCypherExplainMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

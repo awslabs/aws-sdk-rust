@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FeatureType {
         match self {
             FeatureType::Disabled => write!(f, "DISABLED"),
             FeatureType::Enabled => write!(f, "ENABLED"),
-            FeatureType::Unknown(value) => write!(f, "{}", value),
+            FeatureType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

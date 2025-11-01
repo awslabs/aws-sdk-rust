@@ -161,7 +161,7 @@ impl ::std::fmt::Display for DomainAvailability {
             DomainAvailability::Unavailable => write!(f, "UNAVAILABLE"),
             DomainAvailability::UnavailablePremium => write!(f, "UNAVAILABLE_PREMIUM"),
             DomainAvailability::UnavailableRestricted => write!(f, "UNAVAILABLE_RESTRICTED"),
-            DomainAvailability::Unknown(value) => write!(f, "{}", value),
+            DomainAvailability::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

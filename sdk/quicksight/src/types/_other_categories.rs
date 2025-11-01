@@ -102,7 +102,7 @@ impl ::std::fmt::Display for OtherCategories {
         match self {
             OtherCategories::Exclude => write!(f, "EXCLUDE"),
             OtherCategories::Include => write!(f, "INCLUDE"),
-            OtherCategories::Unknown(value) => write!(f, "{}", value),
+            OtherCategories::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetCertificateSigningRequestOutput {
-    /// Certificate signing request
+    /// <p>The certificate signing request generated using the key pair associated with the key identifier.</p>
     pub certificate_signing_request: ::std::string::String,
     _request_id: Option<String>,
 }
 impl GetCertificateSigningRequestOutput {
-    /// Certificate signing request
+    /// <p>The certificate signing request generated using the key pair associated with the key identifier.</p>
     pub fn certificate_signing_request(&self) -> &str {
         use std::ops::Deref;
         self.certificate_signing_request.deref()
@@ -42,18 +42,18 @@ pub struct GetCertificateSigningRequestOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetCertificateSigningRequestOutputBuilder {
-    /// Certificate signing request
+    /// <p>The certificate signing request generated using the key pair associated with the key identifier.</p>
     /// This field is required.
     pub fn certificate_signing_request(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_signing_request = ::std::option::Option::Some(input.into());
         self
     }
-    /// Certificate signing request
+    /// <p>The certificate signing request generated using the key pair associated with the key identifier.</p>
     pub fn set_certificate_signing_request(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_signing_request = input;
         self
     }
-    /// Certificate signing request
+    /// <p>The certificate signing request generated using the key pair associated with the key identifier.</p>
     pub fn get_certificate_signing_request(&self) -> &::std::option::Option<::std::string::String> {
         &self.certificate_signing_request
     }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for GuardrailOutputScope {
         match self {
             GuardrailOutputScope::Full => write!(f, "FULL"),
             GuardrailOutputScope::Interventions => write!(f, "INTERVENTIONS"),
-            GuardrailOutputScope::Unknown(value) => write!(f, "{}", value),
+            GuardrailOutputScope::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

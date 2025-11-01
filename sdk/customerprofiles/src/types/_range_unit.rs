@@ -96,7 +96,7 @@ impl ::std::fmt::Display for RangeUnit {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             RangeUnit::Days => write!(f, "DAYS"),
-            RangeUnit::Unknown(value) => write!(f, "{}", value),
+            RangeUnit::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for NetworkInterfaceMode {
         match self {
             NetworkInterfaceMode::Bridge => write!(f, "BRIDGE"),
             NetworkInterfaceMode::Nat => write!(f, "NAT"),
-            NetworkInterfaceMode::Unknown(value) => write!(f, "{}", value),
+            NetworkInterfaceMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

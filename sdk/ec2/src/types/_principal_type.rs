@@ -126,7 +126,7 @@ impl ::std::fmt::Display for PrincipalType {
             PrincipalType::Role => write!(f, "Role"),
             PrincipalType::Service => write!(f, "Service"),
             PrincipalType::User => write!(f, "User"),
-            PrincipalType::Unknown(value) => write!(f, "{}", value),
+            PrincipalType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

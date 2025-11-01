@@ -114,7 +114,7 @@ impl ::std::fmt::Display for PermissionStatus {
             PermissionStatus::Deleted => write!(f, "DELETED"),
             PermissionStatus::Deleting => write!(f, "DELETING"),
             PermissionStatus::Unattachable => write!(f, "UNATTACHABLE"),
-            PermissionStatus::Unknown(value) => write!(f, "{}", value),
+            PermissionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

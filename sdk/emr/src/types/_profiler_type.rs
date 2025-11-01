@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ProfilerType {
             ProfilerType::Shs => write!(f, "SHS"),
             ProfilerType::Tezui => write!(f, "TEZUI"),
             ProfilerType::Yts => write!(f, "YTS"),
-            ProfilerType::Unknown(value) => write!(f, "{}", value),
+            ProfilerType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for LogType {
             LogType::Alert => write!(f, "ALERT"),
             LogType::Flow => write!(f, "FLOW"),
             LogType::Tls => write!(f, "TLS"),
-            LogType::Unknown(value) => write!(f, "{}", value),
+            LogType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

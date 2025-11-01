@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Ec2AutoScalingGroupType {
         match self {
             Ec2AutoScalingGroupType::MixedInstanceTypes => write!(f, "MixedInstanceTypes"),
             Ec2AutoScalingGroupType::SingleInstanceType => write!(f, "SingleInstanceType"),
-            Ec2AutoScalingGroupType::Unknown(value) => write!(f, "{}", value),
+            Ec2AutoScalingGroupType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

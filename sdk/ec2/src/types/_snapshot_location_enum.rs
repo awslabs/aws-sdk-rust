@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SnapshotLocationEnum {
         match self {
             SnapshotLocationEnum::Local => write!(f, "local"),
             SnapshotLocationEnum::Regional => write!(f, "regional"),
-            SnapshotLocationEnum::Unknown(value) => write!(f, "{}", value),
+            SnapshotLocationEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

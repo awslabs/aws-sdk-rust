@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MailFrom {
         match self {
             MailFrom::Preserve => write!(f, "PRESERVE"),
             MailFrom::Replace => write!(f, "REPLACE"),
-            MailFrom::Unknown(value) => write!(f, "{}", value),
+            MailFrom::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

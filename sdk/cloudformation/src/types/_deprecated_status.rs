@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DeprecatedStatus {
         match self {
             DeprecatedStatus::Deprecated => write!(f, "DEPRECATED"),
             DeprecatedStatus::Live => write!(f, "LIVE"),
-            DeprecatedStatus::Unknown(value) => write!(f, "{}", value),
+            DeprecatedStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

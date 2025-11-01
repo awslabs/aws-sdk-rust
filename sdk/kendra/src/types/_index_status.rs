@@ -126,7 +126,7 @@ impl ::std::fmt::Display for IndexStatus {
             IndexStatus::Failed => write!(f, "FAILED"),
             IndexStatus::SystemUpdating => write!(f, "SYSTEM_UPDATING"),
             IndexStatus::Updating => write!(f, "UPDATING"),
-            IndexStatus::Unknown(value) => write!(f, "{}", value),
+            IndexStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

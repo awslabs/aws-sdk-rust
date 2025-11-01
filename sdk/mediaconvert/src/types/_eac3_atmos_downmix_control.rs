@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Eac3AtmosDownmixControl {
         match self {
             Eac3AtmosDownmixControl::InitializeFromSource => write!(f, "INITIALIZE_FROM_SOURCE"),
             Eac3AtmosDownmixControl::Specified => write!(f, "SPECIFIED"),
-            Eac3AtmosDownmixControl::Unknown(value) => write!(f, "{}", value),
+            Eac3AtmosDownmixControl::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

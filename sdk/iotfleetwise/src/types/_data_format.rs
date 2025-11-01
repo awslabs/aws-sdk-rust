@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DataFormat {
         match self {
             DataFormat::Json => write!(f, "JSON"),
             DataFormat::Parquet => write!(f, "PARQUET"),
-            DataFormat::Unknown(value) => write!(f, "{}", value),
+            DataFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

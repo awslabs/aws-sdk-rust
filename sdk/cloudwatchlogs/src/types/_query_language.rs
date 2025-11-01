@@ -108,7 +108,7 @@ impl ::std::fmt::Display for QueryLanguage {
             QueryLanguage::Cwli => write!(f, "CWLI"),
             QueryLanguage::Ppl => write!(f, "PPL"),
             QueryLanguage::Sql => write!(f, "SQL"),
-            QueryLanguage::Unknown(value) => write!(f, "{}", value),
+            QueryLanguage::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

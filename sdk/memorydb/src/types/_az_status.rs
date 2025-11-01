@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AzStatus {
         match self {
             AzStatus::MultiAz => write!(f, "multiaz"),
             AzStatus::SingleAz => write!(f, "singleaz"),
-            AzStatus::Unknown(value) => write!(f, "{}", value),
+            AzStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -24,8 +24,7 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for ResponseStreamUnmars
                     let content_type = response_headers.content_type().unwrap_or_default();
                     if content_type != "application/octet-stream" {
                         return Err(::aws_smithy_eventstream::error::Error::unmarshalling(format!(
-                            "expected :content-type to be 'application/octet-stream', but was '{}'",
-                            content_type
+                            "expected :content-type to be 'application/octet-stream', but was '{content_type}'"
                         )));
                     }
                     builder = builder.set_bytes(Some(::aws_smithy_types::Blob::new(message.payload().as_ref())));
@@ -51,7 +50,7 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for ResponseStreamUnmars
                         let mut builder = crate::types::error::builders::ModelStreamErrorBuilder::default();
                         builder = crate::protocol_serde::shape_model_stream_error::de_model_stream_error_json_err(&message.payload()[..], builder)
                             .map_err(|err| {
-                                ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall ModelStreamError: {}", err))
+                                ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall ModelStreamError: {err}"))
                             })?;
                         builder.set_meta(Some(generic));
                         return Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
@@ -65,7 +64,7 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for ResponseStreamUnmars
                             builder,
                         )
                         .map_err(|err| {
-                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall InternalStreamFailure: {}", err))
+                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall InternalStreamFailure: {err}"))
                         })?;
                         builder.set_meta(Some(generic));
                         return Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
@@ -80,8 +79,7 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for ResponseStreamUnmars
             }
             value => {
                 return Err(::aws_smithy_eventstream::error::Error::unmarshalling(format!(
-                    "unrecognized :message-type: {}",
-                    value
+                    "unrecognized :message-type: {value}"
                 )));
             }
         }

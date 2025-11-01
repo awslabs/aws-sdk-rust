@@ -168,7 +168,7 @@ impl ::std::fmt::Display for SecurityServiceType {
             SecurityServiceType::ThirdPartyFirewall => write!(f, "THIRD_PARTY_FIREWALL"),
             SecurityServiceType::Waf => write!(f, "WAF"),
             SecurityServiceType::Wafv2 => write!(f, "WAFV2"),
-            SecurityServiceType::Unknown(value) => write!(f, "{}", value),
+            SecurityServiceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

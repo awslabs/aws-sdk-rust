@@ -114,7 +114,7 @@ impl ::std::fmt::Display for InstanceStatus {
             InstanceStatus::CreateFailed => write!(f, "CREATE_FAILED"),
             InstanceStatus::CreateInProgress => write!(f, "CREATE_IN_PROGRESS"),
             InstanceStatus::DeleteInProgress => write!(f, "DELETE_IN_PROGRESS"),
-            InstanceStatus::Unknown(value) => write!(f, "{}", value),
+            InstanceStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

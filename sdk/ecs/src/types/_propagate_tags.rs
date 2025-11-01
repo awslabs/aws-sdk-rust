@@ -108,7 +108,7 @@ impl ::std::fmt::Display for PropagateTags {
             PropagateTags::None => write!(f, "NONE"),
             PropagateTags::Service => write!(f, "SERVICE"),
             PropagateTags::TaskDefinition => write!(f, "TASK_DEFINITION"),
-            PropagateTags::Unknown(value) => write!(f, "{}", value),
+            PropagateTags::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

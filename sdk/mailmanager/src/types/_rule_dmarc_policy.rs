@@ -108,7 +108,7 @@ impl ::std::fmt::Display for RuleDmarcPolicy {
             RuleDmarcPolicy::None => write!(f, "NONE"),
             RuleDmarcPolicy::Quarantine => write!(f, "QUARANTINE"),
             RuleDmarcPolicy::Reject => write!(f, "REJECT"),
-            RuleDmarcPolicy::Unknown(value) => write!(f, "{}", value),
+            RuleDmarcPolicy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

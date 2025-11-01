@@ -102,7 +102,7 @@ impl ::std::fmt::Display for EgressType {
         match self {
             EgressType::Default => write!(f, "DEFAULT"),
             EgressType::Vpc => write!(f, "VPC"),
-            EgressType::Unknown(value) => write!(f, "{}", value),
+            EgressType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

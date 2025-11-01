@@ -114,7 +114,7 @@ impl ::std::fmt::Display for DeploymentStrategy {
             DeploymentStrategy::Canary => write!(f, "CANARY"),
             DeploymentStrategy::Linear => write!(f, "LINEAR"),
             DeploymentStrategy::Rolling => write!(f, "ROLLING"),
-            DeploymentStrategy::Unknown(value) => write!(f, "{}", value),
+            DeploymentStrategy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

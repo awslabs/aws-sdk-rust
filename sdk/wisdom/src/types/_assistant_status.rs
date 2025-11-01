@@ -133,7 +133,7 @@ impl ::std::fmt::Display for AssistantStatus {
             AssistantStatus::Deleted => write!(f, "DELETED"),
             AssistantStatus::DeleteFailed => write!(f, "DELETE_FAILED"),
             AssistantStatus::DeleteInProgress => write!(f, "DELETE_IN_PROGRESS"),
-            AssistantStatus::Unknown(value) => write!(f, "{}", value),
+            AssistantStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

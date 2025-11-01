@@ -175,7 +175,7 @@ impl ::std::fmt::Display for OciOnboardingStatus {
             OciOnboardingStatus::PendingLinkGeneration => write!(f, "PENDING_LINK_GENERATION"),
             OciOnboardingStatus::PublicOfferUnsupported => write!(f, "PUBLIC_OFFER_UNSUPPORTED"),
             OciOnboardingStatus::Suspended => write!(f, "SUSPENDED"),
-            OciOnboardingStatus::Unknown(value) => write!(f, "{}", value),
+            OciOnboardingStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for TestSetDiscrepancyReportStatus {
             TestSetDiscrepancyReportStatus::Completed => write!(f, "Completed"),
             TestSetDiscrepancyReportStatus::Failed => write!(f, "Failed"),
             TestSetDiscrepancyReportStatus::InProgress => write!(f, "InProgress"),
-            TestSetDiscrepancyReportStatus::Unknown(value) => write!(f, "{}", value),
+            TestSetDiscrepancyReportStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

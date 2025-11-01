@@ -96,7 +96,7 @@ impl ::std::fmt::Display for GroupFilterAttribute {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             GroupFilterAttribute::GroupName => write!(f, "GROUP_NAME"),
-            GroupFilterAttribute::Unknown(value) => write!(f, "{}", value),
+            GroupFilterAttribute::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

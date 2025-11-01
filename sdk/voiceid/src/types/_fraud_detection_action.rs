@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FraudDetectionAction {
         match self {
             FraudDetectionAction::Fail => write!(f, "FAIL"),
             FraudDetectionAction::Ignore => write!(f, "IGNORE"),
-            FraudDetectionAction::Unknown(value) => write!(f, "{}", value),
+            FraudDetectionAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

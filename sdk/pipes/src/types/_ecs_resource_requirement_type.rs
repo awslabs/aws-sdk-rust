@@ -102,7 +102,7 @@ impl ::std::fmt::Display for EcsResourceRequirementType {
         match self {
             EcsResourceRequirementType::Gpu => write!(f, "GPU"),
             EcsResourceRequirementType::InferenceAccelerator => write!(f, "InferenceAccelerator"),
-            EcsResourceRequirementType::Unknown(value) => write!(f, "{}", value),
+            EcsResourceRequirementType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

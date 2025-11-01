@@ -595,7 +595,7 @@ impl ::std::fmt::Display for ParameterExceptionField {
             ParameterExceptionField::TokenDomain => write!(f, "TOKEN_DOMAIN"),
             ParameterExceptionField::WebAcl => write!(f, "WEB_ACL"),
             ParameterExceptionField::XssMatchStatement => write!(f, "XSS_MATCH_STATEMENT"),
-            ParameterExceptionField::Unknown(value) => write!(f, "{}", value),
+            ParameterExceptionField::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

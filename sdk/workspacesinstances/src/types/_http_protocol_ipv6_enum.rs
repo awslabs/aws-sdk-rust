@@ -102,7 +102,7 @@ impl ::std::fmt::Display for HttpProtocolIpv6Enum {
         match self {
             HttpProtocolIpv6Enum::Disabled => write!(f, "disabled"),
             HttpProtocolIpv6Enum::Enabled => write!(f, "enabled"),
-            HttpProtocolIpv6Enum::Unknown(value) => write!(f, "{}", value),
+            HttpProtocolIpv6Enum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

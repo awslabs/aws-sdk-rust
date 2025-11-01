@@ -102,7 +102,7 @@ impl ::std::fmt::Display for VideoTimecodeInsertion {
         match self {
             VideoTimecodeInsertion::Disabled => write!(f, "DISABLED"),
             VideoTimecodeInsertion::PicTimingSei => write!(f, "PIC_TIMING_SEI"),
-            VideoTimecodeInsertion::Unknown(value) => write!(f, "{}", value),
+            VideoTimecodeInsertion::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

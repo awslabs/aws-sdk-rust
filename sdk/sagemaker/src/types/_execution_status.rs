@@ -140,7 +140,7 @@ impl ::std::fmt::Display for ExecutionStatus {
             ExecutionStatus::Pending => write!(f, "Pending"),
             ExecutionStatus::Stopped => write!(f, "Stopped"),
             ExecutionStatus::Stopping => write!(f, "Stopping"),
-            ExecutionStatus::Unknown(value) => write!(f, "{}", value),
+            ExecutionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -147,7 +147,7 @@ impl ::std::fmt::Display for ImageState {
             ImageState::Invalid => write!(f, "invalid"),
             ImageState::Pending => write!(f, "pending"),
             ImageState::Transient => write!(f, "transient"),
-            ImageState::Unknown(value) => write!(f, "{}", value),
+            ImageState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

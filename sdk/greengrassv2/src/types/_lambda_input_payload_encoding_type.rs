@@ -102,7 +102,7 @@ impl ::std::fmt::Display for LambdaInputPayloadEncodingType {
         match self {
             LambdaInputPayloadEncodingType::Binary => write!(f, "binary"),
             LambdaInputPayloadEncodingType::Json => write!(f, "json"),
-            LambdaInputPayloadEncodingType::Unknown(value) => write!(f, "{}", value),
+            LambdaInputPayloadEncodingType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -126,7 +126,7 @@ impl ::std::fmt::Display for OpenLineageRunState {
             OpenLineageRunState::Other => write!(f, "OTHER"),
             OpenLineageRunState::Running => write!(f, "RUNNING"),
             OpenLineageRunState::Start => write!(f, "START"),
-            OpenLineageRunState::Unknown(value) => write!(f, "{}", value),
+            OpenLineageRunState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DynamicRoutingValue {
         match self {
             DynamicRoutingValue::Disable => write!(f, "disable"),
             DynamicRoutingValue::Enable => write!(f, "enable"),
-            DynamicRoutingValue::Unknown(value) => write!(f, "{}", value),
+            DynamicRoutingValue::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

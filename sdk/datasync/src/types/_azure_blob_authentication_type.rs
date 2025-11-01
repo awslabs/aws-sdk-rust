@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AzureBlobAuthenticationType {
         match self {
             AzureBlobAuthenticationType::None => write!(f, "NONE"),
             AzureBlobAuthenticationType::Sas => write!(f, "SAS"),
-            AzureBlobAuthenticationType::Unknown(value) => write!(f, "{}", value),
+            AzureBlobAuthenticationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

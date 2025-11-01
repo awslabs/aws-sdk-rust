@@ -110,7 +110,7 @@ impl ::std::fmt::Display for DnsConfigurationStatus {
             DnsConfigurationStatus::Invalid => write!(f, "invalid-configuration"),
             DnsConfigurationStatus::UnknownValue => write!(f, "unknown-configuration"),
             DnsConfigurationStatus::Valid => write!(f, "valid-configuration"),
-            DnsConfigurationStatus::Unknown(value) => write!(f, "{}", value),
+            DnsConfigurationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

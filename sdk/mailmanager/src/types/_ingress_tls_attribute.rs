@@ -96,7 +96,7 @@ impl ::std::fmt::Display for IngressTlsAttribute {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             IngressTlsAttribute::TlsProtocol => write!(f, "TLS_PROTOCOL"),
-            IngressTlsAttribute::Unknown(value) => write!(f, "{}", value),
+            IngressTlsAttribute::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

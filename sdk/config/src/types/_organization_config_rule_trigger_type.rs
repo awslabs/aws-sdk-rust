@@ -114,7 +114,7 @@ impl ::std::fmt::Display for OrganizationConfigRuleTriggerType {
                 write!(f, "OversizedConfigurationItemChangeNotification")
             }
             OrganizationConfigRuleTriggerType::ScheduledNotification => write!(f, "ScheduledNotification"),
-            OrganizationConfigRuleTriggerType::Unknown(value) => write!(f, "{}", value),
+            OrganizationConfigRuleTriggerType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -133,7 +133,7 @@ impl ::std::fmt::Display for IpamPublicAddressType {
             IpamPublicAddressType::Ec2PublicIp => write!(f, "ec2-public-ip"),
             IpamPublicAddressType::ServiceManagedByoip => write!(f, "service-managed-byoip"),
             IpamPublicAddressType::ServiceManagedIp => write!(f, "service-managed-ip"),
-            IpamPublicAddressType::Unknown(value) => write!(f, "{}", value),
+            IpamPublicAddressType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

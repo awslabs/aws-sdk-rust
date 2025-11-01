@@ -120,7 +120,7 @@ impl ::std::fmt::Display for ContributorInsightsStatus {
             ContributorInsightsStatus::Enabled => write!(f, "ENABLED"),
             ContributorInsightsStatus::Enabling => write!(f, "ENABLING"),
             ContributorInsightsStatus::Failed => write!(f, "FAILED"),
-            ContributorInsightsStatus::Unknown(value) => write!(f, "{}", value),
+            ContributorInsightsStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

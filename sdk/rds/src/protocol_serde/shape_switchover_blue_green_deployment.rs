@@ -100,16 +100,14 @@ pub fn de_switchover_blue_green_deployment(
     let start_el = decoder.start_el();
     if !(start_el.matches("SwitchoverBlueGreenDeploymentResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected SwitchoverBlueGreenDeploymentResponse got {:?}",
-            start_el
+            "invalid root, expected SwitchoverBlueGreenDeploymentResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("SwitchoverBlueGreenDeploymentResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected SwitchoverBlueGreenDeploymentResult got {:?}",
-                start_el
+                "invalid result, expected SwitchoverBlueGreenDeploymentResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

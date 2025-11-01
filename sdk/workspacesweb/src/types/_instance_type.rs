@@ -108,7 +108,7 @@ impl ::std::fmt::Display for InstanceType {
             InstanceType::StandardLarge => write!(f, "standard.large"),
             InstanceType::StandardRegular => write!(f, "standard.regular"),
             InstanceType::StandardXlarge => write!(f, "standard.xlarge"),
-            InstanceType::Unknown(value) => write!(f, "{}", value),
+            InstanceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

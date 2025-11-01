@@ -114,7 +114,7 @@ impl ::std::fmt::Display for OfferTargetingString {
             OfferTargetingString::CountryCodes => write!(f, "CountryCodes"),
             OfferTargetingString::None => write!(f, "None"),
             OfferTargetingString::ParticipatingPrograms => write!(f, "ParticipatingPrograms"),
-            OfferTargetingString::Unknown(value) => write!(f, "{}", value),
+            OfferTargetingString::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

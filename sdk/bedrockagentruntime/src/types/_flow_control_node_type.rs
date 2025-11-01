@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FlowControlNodeType {
         match self {
             FlowControlNodeType::Iterator => write!(f, "Iterator"),
             FlowControlNodeType::Loop => write!(f, "Loop"),
-            FlowControlNodeType::Unknown(value) => write!(f, "{}", value),
+            FlowControlNodeType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

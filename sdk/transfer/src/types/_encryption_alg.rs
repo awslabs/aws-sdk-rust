@@ -120,7 +120,7 @@ impl ::std::fmt::Display for EncryptionAlg {
             EncryptionAlg::Aes256Cbc => write!(f, "AES256_CBC"),
             EncryptionAlg::DesEde3Cbc => write!(f, "DES_EDE3_CBC"),
             EncryptionAlg::None => write!(f, "NONE"),
-            EncryptionAlg::Unknown(value) => write!(f, "{}", value),
+            EncryptionAlg::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AuthTokenUpdateStrategyType {
             AuthTokenUpdateStrategyType::Delete => write!(f, "DELETE"),
             AuthTokenUpdateStrategyType::Rotate => write!(f, "ROTATE"),
             AuthTokenUpdateStrategyType::Set => write!(f, "SET"),
-            AuthTokenUpdateStrategyType::Unknown(value) => write!(f, "{}", value),
+            AuthTokenUpdateStrategyType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

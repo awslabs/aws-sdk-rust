@@ -102,7 +102,7 @@ impl ::std::fmt::Display for BucketVersioningStatus {
         match self {
             BucketVersioningStatus::Enabled => write!(f, "Enabled"),
             BucketVersioningStatus::Suspended => write!(f, "Suspended"),
-            BucketVersioningStatus::Unknown(value) => write!(f, "{}", value),
+            BucketVersioningStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ModificationResourceEnum {
             ModificationResourceEnum::ComputeType => write!(f, "COMPUTE_TYPE"),
             ModificationResourceEnum::RootVolume => write!(f, "ROOT_VOLUME"),
             ModificationResourceEnum::UserVolume => write!(f, "USER_VOLUME"),
-            ModificationResourceEnum::Unknown(value) => write!(f, "{}", value),
+            ModificationResourceEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

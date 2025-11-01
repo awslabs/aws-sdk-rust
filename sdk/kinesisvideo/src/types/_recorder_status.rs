@@ -108,7 +108,7 @@ impl ::std::fmt::Display for RecorderStatus {
             RecorderStatus::Success => write!(f, "SUCCESS"),
             RecorderStatus::SystemError => write!(f, "SYSTEM_ERROR"),
             RecorderStatus::UserError => write!(f, "USER_ERROR"),
-            RecorderStatus::Unknown(value) => write!(f, "{}", value),
+            RecorderStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

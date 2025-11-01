@@ -196,6 +196,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for UpdateQueryL
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::update_query_logging_configuration::UpdateQueryLoggingConfigurationInput,
                 output: &mut ::std::string::String,

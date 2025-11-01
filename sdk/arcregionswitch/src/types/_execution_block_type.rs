@@ -161,7 +161,7 @@ impl ::std::fmt::Display for ExecutionBlockType {
             ExecutionBlockType::ExecutionApproval => write!(f, "ManualApproval"),
             ExecutionBlockType::Parallel => write!(f, "Parallel"),
             ExecutionBlockType::Route53HealthCheck => write!(f, "Route53HealthCheck"),
-            ExecutionBlockType::Unknown(value) => write!(f, "{}", value),
+            ExecutionBlockType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for CoreNetworkState {
             CoreNetworkState::Creating => write!(f, "CREATING"),
             CoreNetworkState::Deleting => write!(f, "DELETING"),
             CoreNetworkState::Updating => write!(f, "UPDATING"),
-            CoreNetworkState::Unknown(value) => write!(f, "{}", value),
+            CoreNetworkState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

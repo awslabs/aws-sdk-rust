@@ -108,7 +108,7 @@ impl ::std::fmt::Display for KeywordInputType {
             KeywordInputType::InputText => write!(f, "INPUT_TEXT"),
             KeywordInputType::SelectFromList => write!(f, "SELECT_FROM_LIST"),
             KeywordInputType::UploadFile => write!(f, "UPLOAD_FILE"),
-            KeywordInputType::Unknown(value) => write!(f, "{}", value),
+            KeywordInputType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

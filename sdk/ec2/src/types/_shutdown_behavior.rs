@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ShutdownBehavior {
         match self {
             ShutdownBehavior::Stop => write!(f, "stop"),
             ShutdownBehavior::Terminate => write!(f, "terminate"),
-            ShutdownBehavior::Unknown(value) => write!(f, "{}", value),
+            ShutdownBehavior::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

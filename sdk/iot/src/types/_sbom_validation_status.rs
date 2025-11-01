@@ -108,7 +108,7 @@ impl ::std::fmt::Display for SbomValidationStatus {
             SbomValidationStatus::Failed => write!(f, "FAILED"),
             SbomValidationStatus::InProgress => write!(f, "IN_PROGRESS"),
             SbomValidationStatus::Succeeded => write!(f, "SUCCEEDED"),
-            SbomValidationStatus::Unknown(value) => write!(f, "{}", value),
+            SbomValidationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

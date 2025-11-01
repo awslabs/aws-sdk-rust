@@ -68,16 +68,14 @@ pub fn de_describe_change_set(
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeChangeSetResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected DescribeChangeSetResponse got {:?}",
-            start_el
+            "invalid root, expected DescribeChangeSetResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("DescribeChangeSetResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected DescribeChangeSetResult got {:?}",
-                start_el
+                "invalid result, expected DescribeChangeSetResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

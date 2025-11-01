@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ResourceShareType {
             ResourceShareType::All => write!(f, "ALL"),
             ResourceShareType::Federated => write!(f, "FEDERATED"),
             ResourceShareType::Foreign => write!(f, "FOREIGN"),
-            ResourceShareType::Unknown(value) => write!(f, "{}", value),
+            ResourceShareType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

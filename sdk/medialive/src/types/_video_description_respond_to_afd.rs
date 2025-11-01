@@ -108,7 +108,7 @@ impl ::std::fmt::Display for VideoDescriptionRespondToAfd {
             VideoDescriptionRespondToAfd::None => write!(f, "NONE"),
             VideoDescriptionRespondToAfd::Passthrough => write!(f, "PASSTHROUGH"),
             VideoDescriptionRespondToAfd::Respond => write!(f, "RESPOND"),
-            VideoDescriptionRespondToAfd::Unknown(value) => write!(f, "{}", value),
+            VideoDescriptionRespondToAfd::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

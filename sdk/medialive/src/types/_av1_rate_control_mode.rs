@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Av1RateControlMode {
         match self {
             Av1RateControlMode::Cbr => write!(f, "CBR"),
             Av1RateControlMode::Qvbr => write!(f, "QVBR"),
-            Av1RateControlMode::Unknown(value) => write!(f, "{}", value),
+            Av1RateControlMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

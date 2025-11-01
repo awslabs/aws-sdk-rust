@@ -108,7 +108,7 @@ impl ::std::fmt::Display for QueueStatus {
             QueueStatus::Idle => write!(f, "IDLE"),
             QueueStatus::Scheduling => write!(f, "SCHEDULING"),
             QueueStatus::SchedulingBlocked => write!(f, "SCHEDULING_BLOCKED"),
-            QueueStatus::Unknown(value) => write!(f, "{}", value),
+            QueueStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SupportDataSetType {
         match self {
             SupportDataSetType::CustomerSupportContactsData => write!(f, "customer_support_contacts_data"),
             SupportDataSetType::TestCustomerSupportContactsData => write!(f, "test_customer_support_contacts_data"),
-            SupportDataSetType::Unknown(value) => write!(f, "{}", value),
+            SupportDataSetType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AutoMlSortOrder {
         match self {
             AutoMlSortOrder::Ascending => write!(f, "Ascending"),
             AutoMlSortOrder::Descending => write!(f, "Descending"),
-            AutoMlSortOrder::Unknown(value) => write!(f, "{}", value),
+            AutoMlSortOrder::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

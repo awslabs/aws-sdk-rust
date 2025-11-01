@@ -108,7 +108,7 @@ impl ::std::fmt::Display for StatusType {
             StatusType::Active => write!(f, "Active"),
             StatusType::Expired => write!(f, "Expired"),
             StatusType::Inactive => write!(f, "Inactive"),
-            StatusType::Unknown(value) => write!(f, "{}", value),
+            StatusType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

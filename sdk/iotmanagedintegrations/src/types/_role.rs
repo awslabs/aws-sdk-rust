@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Role {
         match self {
             Role::Controller => write!(f, "CONTROLLER"),
             Role::Device => write!(f, "DEVICE"),
-            Role::Unknown(value) => write!(f, "{}", value),
+            Role::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -140,7 +140,7 @@ impl ::std::fmt::Display for OcsfDateField {
             OcsfDateField::ResourcesImageCreatedTimeDt => write!(f, "resources.image.created_time_dt"),
             OcsfDateField::ResourcesImageLastUsedTimeDt => write!(f, "resources.image.last_used_time_dt"),
             OcsfDateField::ResourcesModifiedTimeDt => write!(f, "resources.modified_time_dt"),
-            OcsfDateField::Unknown(value) => write!(f, "{}", value),
+            OcsfDateField::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

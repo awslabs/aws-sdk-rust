@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ReferenceCreationType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ReferenceCreationType::Import => write!(f, "IMPORT"),
-            ReferenceCreationType::Unknown(value) => write!(f, "{}", value),
+            ReferenceCreationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

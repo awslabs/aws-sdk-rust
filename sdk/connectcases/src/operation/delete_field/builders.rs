@@ -32,9 +32,9 @@ impl crate::operation::delete_field::builders::DeleteFieldInputBuilder {
 /// <li>
 /// <p>Deleted fields are not included in the <code>ListFields</code> response.</p></li>
 /// <li>
-/// <p>Calling <code>CreateCase</code> with a deleted field throws a <code>ValidationException</code> denoting which field IDs in the request have been deleted.</p></li>
+/// <p>Calling <code>CreateCase</code> with a deleted field throws a <code>ValidationException</code> denoting which field identifiers in the request have been deleted.</p></li>
 /// <li>
-/// <p>Calling <code>GetCase</code> with a deleted field ID returns the deleted field's value if one exists.</p></li>
+/// <p>Calling <code>GetCase</code> with a deleted field identifier returns the deleted field's value if one exists.</p></li>
 /// <li>
 /// <p>Calling <code>UpdateCase</code> with a deleted field ID throws a <code>ValidationException</code> if the case does not already contain a value for the deleted field. Otherwise it succeeds, allowing you to update or remove (using <code>emptyValue: {}</code>) the field's value from the case.</p></li>
 /// <li>

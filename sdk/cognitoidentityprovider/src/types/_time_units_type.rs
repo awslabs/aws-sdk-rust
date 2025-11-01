@@ -114,7 +114,7 @@ impl ::std::fmt::Display for TimeUnitsType {
             TimeUnitsType::Hours => write!(f, "hours"),
             TimeUnitsType::Minutes => write!(f, "minutes"),
             TimeUnitsType::Seconds => write!(f, "seconds"),
-            TimeUnitsType::Unknown(value) => write!(f, "{}", value),
+            TimeUnitsType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

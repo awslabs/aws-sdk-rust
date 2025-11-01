@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AvailabilityZoneRebalancing {
         match self {
             AvailabilityZoneRebalancing::Disabled => write!(f, "DISABLED"),
             AvailabilityZoneRebalancing::Enabled => write!(f, "ENABLED"),
-            AvailabilityZoneRebalancing::Unknown(value) => write!(f, "{}", value),
+            AvailabilityZoneRebalancing::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

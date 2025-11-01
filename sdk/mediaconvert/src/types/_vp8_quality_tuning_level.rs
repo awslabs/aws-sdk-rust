@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Vp8QualityTuningLevel {
         match self {
             Vp8QualityTuningLevel::MultiPass => write!(f, "MULTI_PASS"),
             Vp8QualityTuningLevel::MultiPassHq => write!(f, "MULTI_PASS_HQ"),
-            Vp8QualityTuningLevel::Unknown(value) => write!(f, "{}", value),
+            Vp8QualityTuningLevel::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

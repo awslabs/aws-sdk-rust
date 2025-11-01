@@ -102,7 +102,7 @@ impl ::std::fmt::Display for HyperParameterTuningJobObjectiveType {
         match self {
             HyperParameterTuningJobObjectiveType::Maximize => write!(f, "Maximize"),
             HyperParameterTuningJobObjectiveType::Minimize => write!(f, "Minimize"),
-            HyperParameterTuningJobObjectiveType::Unknown(value) => write!(f, "{}", value),
+            HyperParameterTuningJobObjectiveType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

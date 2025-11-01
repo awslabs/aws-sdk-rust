@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CertificateAuthorityType {
         match self {
             CertificateAuthorityType::Root => write!(f, "ROOT"),
             CertificateAuthorityType::Subordinate => write!(f, "SUBORDINATE"),
-            CertificateAuthorityType::Unknown(value) => write!(f, "{}", value),
+            CertificateAuthorityType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

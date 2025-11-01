@@ -158,7 +158,7 @@ impl ::std::fmt::Display for TargetSamplingRate {
             TargetSamplingRate::Pt30S => write!(f, "PT30S"),
             TargetSamplingRate::Pt5M => write!(f, "PT5M"),
             TargetSamplingRate::Pt5S => write!(f, "PT5S"),
-            TargetSamplingRate::Unknown(value) => write!(f, "{}", value),
+            TargetSamplingRate::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

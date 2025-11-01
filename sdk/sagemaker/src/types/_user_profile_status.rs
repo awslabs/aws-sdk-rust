@@ -132,7 +132,7 @@ impl ::std::fmt::Display for UserProfileStatus {
             UserProfileStatus::Pending => write!(f, "Pending"),
             UserProfileStatus::UpdateFailed => write!(f, "Update_Failed"),
             UserProfileStatus::Updating => write!(f, "Updating"),
-            UserProfileStatus::Unknown(value) => write!(f, "{}", value),
+            UserProfileStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

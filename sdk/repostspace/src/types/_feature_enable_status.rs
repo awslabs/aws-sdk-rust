@@ -108,7 +108,7 @@ impl ::std::fmt::Display for FeatureEnableStatus {
             FeatureEnableStatus::Disabled => write!(f, "DISABLED"),
             FeatureEnableStatus::Enabled => write!(f, "ENABLED"),
             FeatureEnableStatus::NotAllowed => write!(f, "NOT_ALLOWED"),
-            FeatureEnableStatus::Unknown(value) => write!(f, "{}", value),
+            FeatureEnableStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

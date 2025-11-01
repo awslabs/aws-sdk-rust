@@ -108,7 +108,7 @@ impl ::std::fmt::Display for EmbeddingIdentityType {
             EmbeddingIdentityType::Anonymous => write!(f, "ANONYMOUS"),
             EmbeddingIdentityType::Iam => write!(f, "IAM"),
             EmbeddingIdentityType::Quicksight => write!(f, "QUICKSIGHT"),
-            EmbeddingIdentityType::Unknown(value) => write!(f, "{}", value),
+            EmbeddingIdentityType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -382,7 +382,7 @@ impl ::std::fmt::Display for AdsInteractionExcludeEventType {
             AdsInteractionExcludeEventType::WarningNoAdvertisements => write!(f, "WARNING_NO_ADVERTISEMENTS"),
             AdsInteractionExcludeEventType::WarningUrlVariableSubstitutionFailed => write!(f, "WARNING_URL_VARIABLE_SUBSTITUTION_FAILED"),
             AdsInteractionExcludeEventType::WarningVpaidAdDropped => write!(f, "WARNING_VPAID_AD_DROPPED"),
-            AdsInteractionExcludeEventType::Unknown(value) => write!(f, "{}", value),
+            AdsInteractionExcludeEventType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

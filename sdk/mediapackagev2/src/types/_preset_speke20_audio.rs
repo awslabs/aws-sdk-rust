@@ -120,7 +120,7 @@ impl ::std::fmt::Display for PresetSpeke20Audio {
             PresetSpeke20Audio::PresetAudio3 => write!(f, "PRESET_AUDIO_3"),
             PresetSpeke20Audio::Shared => write!(f, "SHARED"),
             PresetSpeke20Audio::Unencrypted => write!(f, "UNENCRYPTED"),
-            PresetSpeke20Audio::Unknown(value) => write!(f, "{}", value),
+            PresetSpeke20Audio::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for CapacityReservationPreference {
             CapacityReservationPreference::CapacityReservationsOnly => write!(f, "capacity-reservations-only"),
             CapacityReservationPreference::None => write!(f, "none"),
             CapacityReservationPreference::Open => write!(f, "open"),
-            CapacityReservationPreference::Unknown(value) => write!(f, "{}", value),
+            CapacityReservationPreference::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

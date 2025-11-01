@@ -102,7 +102,7 @@ impl ::std::fmt::Display for EfsTransitEncryption {
         match self {
             EfsTransitEncryption::Disabled => write!(f, "DISABLED"),
             EfsTransitEncryption::Enabled => write!(f, "ENABLED"),
-            EfsTransitEncryption::Unknown(value) => write!(f, "{}", value),
+            EfsTransitEncryption::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

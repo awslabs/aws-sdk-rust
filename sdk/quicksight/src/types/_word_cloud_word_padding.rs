@@ -114,7 +114,7 @@ impl ::std::fmt::Display for WordCloudWordPadding {
             WordCloudWordPadding::Medium => write!(f, "MEDIUM"),
             WordCloudWordPadding::None => write!(f, "NONE"),
             WordCloudWordPadding::Small => write!(f, "SMALL"),
-            WordCloudWordPadding::Unknown(value) => write!(f, "{}", value),
+            WordCloudWordPadding::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

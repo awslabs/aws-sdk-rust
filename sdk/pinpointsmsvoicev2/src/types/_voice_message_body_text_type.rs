@@ -102,7 +102,7 @@ impl ::std::fmt::Display for VoiceMessageBodyTextType {
         match self {
             VoiceMessageBodyTextType::Ssml => write!(f, "SSML"),
             VoiceMessageBodyTextType::Text => write!(f, "TEXT"),
-            VoiceMessageBodyTextType::Unknown(value) => write!(f, "{}", value),
+            VoiceMessageBodyTextType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -53,8 +53,7 @@ pub fn de_disassociate_vpc_cidr_block(
     let start_el = decoder.start_el();
     if !(start_el.matches("DisassociateVpcCidrBlockResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected DisassociateVpcCidrBlockResponse got {:?}",
-            start_el
+            "invalid root, expected DisassociateVpcCidrBlockResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

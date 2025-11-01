@@ -114,7 +114,7 @@ impl ::std::fmt::Display for DataProductSortBy {
             DataProductSortBy::LastModifiedDate => write!(f, "LastModifiedDate"),
             DataProductSortBy::ProductTitle => write!(f, "ProductTitle"),
             DataProductSortBy::Visibility => write!(f, "Visibility"),
-            DataProductSortBy::Unknown(value) => write!(f, "{}", value),
+            DataProductSortBy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

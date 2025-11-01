@@ -114,7 +114,7 @@ impl ::std::fmt::Display for FargateProfileIssueCode {
             FargateProfileIssueCode::ClusterUnreachable => write!(f, "ClusterUnreachable"),
             FargateProfileIssueCode::InternalFailure => write!(f, "InternalFailure"),
             FargateProfileIssueCode::PodExecutionRoleAlreadyInUse => write!(f, "PodExecutionRoleAlreadyInUse"),
-            FargateProfileIssueCode::Unknown(value) => write!(f, "{}", value),
+            FargateProfileIssueCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for M2tsEbpPlacement {
         match self {
             M2tsEbpPlacement::VideoAndAudioPids => write!(f, "VIDEO_AND_AUDIO_PIDS"),
             M2tsEbpPlacement::VideoPid => write!(f, "VIDEO_PID"),
-            M2tsEbpPlacement::Unknown(value) => write!(f, "{}", value),
+            M2tsEbpPlacement::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

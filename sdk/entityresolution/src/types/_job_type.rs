@@ -108,7 +108,7 @@ impl ::std::fmt::Display for JobType {
             JobType::Batch => write!(f, "BATCH"),
             JobType::DeleteOnly => write!(f, "DELETE_ONLY"),
             JobType::Incremental => write!(f, "INCREMENTAL"),
-            JobType::Unknown(value) => write!(f, "{}", value),
+            JobType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

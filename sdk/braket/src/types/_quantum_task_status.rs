@@ -132,7 +132,7 @@ impl ::std::fmt::Display for QuantumTaskStatus {
             QuantumTaskStatus::Failed => write!(f, "FAILED"),
             QuantumTaskStatus::Queued => write!(f, "QUEUED"),
             QuantumTaskStatus::Running => write!(f, "RUNNING"),
-            QuantumTaskStatus::Unknown(value) => write!(f, "{}", value),
+            QuantumTaskStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for InputDeblockFilter {
         match self {
             InputDeblockFilter::Disabled => write!(f, "DISABLED"),
             InputDeblockFilter::Enabled => write!(f, "ENABLED"),
-            InputDeblockFilter::Unknown(value) => write!(f, "{}", value),
+            InputDeblockFilter::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

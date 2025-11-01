@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AacLoudnessMeasurementMode {
         match self {
             AacLoudnessMeasurementMode::Anchor => write!(f, "ANCHOR"),
             AacLoudnessMeasurementMode::Program => write!(f, "PROGRAM"),
-            AacLoudnessMeasurementMode::Unknown(value) => write!(f, "{}", value),
+            AacLoudnessMeasurementMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

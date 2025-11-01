@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ConcurrencyMode {
         match self {
             ConcurrencyMode::SoftFailureTolerance => write!(f, "SOFT_FAILURE_TOLERANCE"),
             ConcurrencyMode::StrictFailureTolerance => write!(f, "STRICT_FAILURE_TOLERANCE"),
-            ConcurrencyMode::Unknown(value) => write!(f, "{}", value),
+            ConcurrencyMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

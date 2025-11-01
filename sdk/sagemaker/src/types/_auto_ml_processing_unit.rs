@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AutoMlProcessingUnit {
         match self {
             AutoMlProcessingUnit::Cpu => write!(f, "CPU"),
             AutoMlProcessingUnit::Gpu => write!(f, "GPU"),
-            AutoMlProcessingUnit::Unknown(value) => write!(f, "{}", value),
+            AutoMlProcessingUnit::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for EndpointIpAddressType {
             EndpointIpAddressType::DualStack => write!(f, "dual-stack"),
             EndpointIpAddressType::Ipv4 => write!(f, "ipv4"),
             EndpointIpAddressType::Ipv6 => write!(f, "ipv6"),
-            EndpointIpAddressType::Unknown(value) => write!(f, "{}", value),
+            EndpointIpAddressType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

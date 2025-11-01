@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ManifestStatus {
             ManifestStatus::Draft => write!(f, "DRAFT"),
             ManifestStatus::Invalid => write!(f, "INVALID"),
             ManifestStatus::Validating => write!(f, "VALIDATING"),
-            ManifestStatus::Unknown(value) => write!(f, "{}", value),
+            ManifestStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -24,8 +24,7 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for InvokeWithResponseSt
                     let content_type = response_headers.content_type().unwrap_or_default();
                     if content_type != "application/octet-stream" {
                         return Err(::aws_smithy_eventstream::error::Error::unmarshalling(format!(
-                            "expected :content-type to be 'application/octet-stream', but was '{}'",
-                            content_type
+                            "expected :content-type to be 'application/octet-stream', but was '{content_type}'"
                         )));
                     }
                     builder = builder.set_payload(Some(::aws_smithy_types::Blob::new(message.payload().as_ref())));
@@ -37,7 +36,7 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for InvokeWithResponseSt
                     let parsed =
                             crate::protocol_serde::shape_invoke_with_response_stream_complete_event::de_invoke_with_response_stream_complete_event_payload(&message.payload()[..])
                                             .map_err(|err| {
-                                                ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall InvokeComplete: {}", err))
+                                                ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall InvokeComplete: {err}"))
                                             })?
                         ;
                     Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Event(
@@ -63,8 +62,7 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for InvokeWithResponseSt
             }
             value => {
                 return Err(::aws_smithy_eventstream::error::Error::unmarshalling(format!(
-                    "unrecognized :message-type: {}",
-                    value
+                    "unrecognized :message-type: {value}"
                 )));
             }
         }

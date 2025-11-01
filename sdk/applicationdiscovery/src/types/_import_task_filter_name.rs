@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ImportTaskFilterName {
             ImportTaskFilterName::ImportTaskId => write!(f, "IMPORT_TASK_ID"),
             ImportTaskFilterName::Name => write!(f, "NAME"),
             ImportTaskFilterName::Status => write!(f, "STATUS"),
-            ImportTaskFilterName::Unknown(value) => write!(f, "{}", value),
+            ImportTaskFilterName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

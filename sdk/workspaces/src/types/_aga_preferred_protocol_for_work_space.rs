@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AgaPreferredProtocolForWorkSpace {
             AgaPreferredProtocolForWorkSpace::Inherited => write!(f, "INHERITED"),
             AgaPreferredProtocolForWorkSpace::None => write!(f, "NONE"),
             AgaPreferredProtocolForWorkSpace::Tcp => write!(f, "TCP"),
-            AgaPreferredProtocolForWorkSpace::Unknown(value) => write!(f, "{}", value),
+            AgaPreferredProtocolForWorkSpace::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

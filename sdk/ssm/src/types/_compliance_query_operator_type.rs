@@ -120,7 +120,7 @@ impl ::std::fmt::Display for ComplianceQueryOperatorType {
             ComplianceQueryOperatorType::GreaterThan => write!(f, "GREATER_THAN"),
             ComplianceQueryOperatorType::LessThan => write!(f, "LESS_THAN"),
             ComplianceQueryOperatorType::NotEqual => write!(f, "NOT_EQUAL"),
-            ComplianceQueryOperatorType::Unknown(value) => write!(f, "{}", value),
+            ComplianceQueryOperatorType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

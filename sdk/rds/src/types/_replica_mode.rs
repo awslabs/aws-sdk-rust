@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ReplicaMode {
         match self {
             ReplicaMode::Mounted => write!(f, "mounted"),
             ReplicaMode::OpenReadOnly => write!(f, "open-read-only"),
-            ReplicaMode::Unknown(value) => write!(f, "{}", value),
+            ReplicaMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -196,7 +196,7 @@ impl ::std::fmt::Display for ValidationExceptionReason {
             ValidationExceptionReason::MissingValue => write!(f, "MissingValue"),
             ValidationExceptionReason::UnsupportedAz => write!(f, "UnsupportedAz"),
             ValidationExceptionReason::UnsupportedPracticeCancelShiftType => write!(f, "UnsupportedPracticeCancelShiftType"),
-            ValidationExceptionReason::Unknown(value) => write!(f, "{}", value),
+            ValidationExceptionReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

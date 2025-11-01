@@ -108,7 +108,7 @@ impl ::std::fmt::Display for DriftStatus {
             DriftStatus::Detected => write!(f, "Detected"),
             DriftStatus::NotChecked => write!(f, "NotChecked"),
             DriftStatus::NotDetected => write!(f, "NotDetected"),
-            DriftStatus::Unknown(value) => write!(f, "{}", value),
+            DriftStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PipBehavior {
         match self {
             PipBehavior::Dynamic => write!(f, "DYNAMIC"),
             PipBehavior::Static => write!(f, "STATIC"),
-            PipBehavior::Unknown(value) => write!(f, "{}", value),
+            PipBehavior::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

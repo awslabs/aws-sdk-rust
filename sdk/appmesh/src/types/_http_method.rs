@@ -144,7 +144,7 @@ impl ::std::fmt::Display for HttpMethod {
             HttpMethod::Post => write!(f, "POST"),
             HttpMethod::Put => write!(f, "PUT"),
             HttpMethod::Trace => write!(f, "TRACE"),
-            HttpMethod::Unknown(value) => write!(f, "{}", value),
+            HttpMethod::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

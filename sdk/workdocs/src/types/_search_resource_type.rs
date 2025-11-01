@@ -114,7 +114,7 @@ impl ::std::fmt::Display for SearchResourceType {
             SearchResourceType::Document => write!(f, "DOCUMENT"),
             SearchResourceType::DocumentVersion => write!(f, "DOCUMENT_VERSION"),
             SearchResourceType::Folder => write!(f, "FOLDER"),
-            SearchResourceType::Unknown(value) => write!(f, "{}", value),
+            SearchResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

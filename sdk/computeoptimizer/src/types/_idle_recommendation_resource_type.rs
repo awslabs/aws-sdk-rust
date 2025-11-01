@@ -120,7 +120,7 @@ impl ::std::fmt::Display for IdleRecommendationResourceType {
             IdleRecommendationResourceType::Ec2Instance => write!(f, "EC2Instance"),
             IdleRecommendationResourceType::EcsService => write!(f, "ECSService"),
             IdleRecommendationResourceType::RdsDbInstance => write!(f, "RDSDBInstance"),
-            IdleRecommendationResourceType::Unknown(value) => write!(f, "{}", value),
+            IdleRecommendationResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

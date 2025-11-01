@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FecOutputIncludeFec {
         match self {
             FecOutputIncludeFec::Column => write!(f, "COLUMN"),
             FecOutputIncludeFec::ColumnAndRow => write!(f, "COLUMN_AND_ROW"),
-            FecOutputIncludeFec::Unknown(value) => write!(f, "{}", value),
+            FecOutputIncludeFec::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

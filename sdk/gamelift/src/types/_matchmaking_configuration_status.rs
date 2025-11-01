@@ -147,7 +147,7 @@ impl ::std::fmt::Display for MatchmakingConfigurationStatus {
             MatchmakingConfigurationStatus::RequiresAcceptance => write!(f, "REQUIRES_ACCEPTANCE"),
             MatchmakingConfigurationStatus::Searching => write!(f, "SEARCHING"),
             MatchmakingConfigurationStatus::TimedOut => write!(f, "TIMED_OUT"),
-            MatchmakingConfigurationStatus::Unknown(value) => write!(f, "{}", value),
+            MatchmakingConfigurationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for KeyType {
         match self {
             KeyType::Ed25519 => write!(f, "ed25519"),
             KeyType::Rsa => write!(f, "rsa"),
-            KeyType::Unknown(value) => write!(f, "{}", value),
+            KeyType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CollaborationQueryLogStatus {
         match self {
             CollaborationQueryLogStatus::Disabled => write!(f, "DISABLED"),
             CollaborationQueryLogStatus::Enabled => write!(f, "ENABLED"),
-            CollaborationQueryLogStatus::Unknown(value) => write!(f, "{}", value),
+            CollaborationQueryLogStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

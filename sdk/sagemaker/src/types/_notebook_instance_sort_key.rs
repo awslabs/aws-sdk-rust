@@ -108,7 +108,7 @@ impl ::std::fmt::Display for NotebookInstanceSortKey {
             NotebookInstanceSortKey::CreationTime => write!(f, "CreationTime"),
             NotebookInstanceSortKey::Name => write!(f, "Name"),
             NotebookInstanceSortKey::Status => write!(f, "Status"),
-            NotebookInstanceSortKey::Unknown(value) => write!(f, "{}", value),
+            NotebookInstanceSortKey::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

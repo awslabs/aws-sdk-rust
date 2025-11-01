@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ChannelMode {
         match self {
             ChannelMode::Restricted => write!(f, "RESTRICTED"),
             ChannelMode::Unrestricted => write!(f, "UNRESTRICTED"),
-            ChannelMode::Unknown(value) => write!(f, "{}", value),
+            ChannelMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

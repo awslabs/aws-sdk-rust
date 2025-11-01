@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MsSmoothFragmentLengthControl {
         match self {
             MsSmoothFragmentLengthControl::Exact => write!(f, "EXACT"),
             MsSmoothFragmentLengthControl::GopMultiple => write!(f, "GOP_MULTIPLE"),
-            MsSmoothFragmentLengthControl::Unknown(value) => write!(f, "{}", value),
+            MsSmoothFragmentLengthControl::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

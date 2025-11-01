@@ -102,7 +102,7 @@ impl ::std::fmt::Display for OrderEnum {
         match self {
             OrderEnum::Ascending => write!(f, "ascending"),
             OrderEnum::Descending => write!(f, "descending"),
-            OrderEnum::Unknown(value) => write!(f, "{}", value),
+            OrderEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

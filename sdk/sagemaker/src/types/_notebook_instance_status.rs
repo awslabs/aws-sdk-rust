@@ -132,7 +132,7 @@ impl ::std::fmt::Display for NotebookInstanceStatus {
             NotebookInstanceStatus::Stopped => write!(f, "Stopped"),
             NotebookInstanceStatus::Stopping => write!(f, "Stopping"),
             NotebookInstanceStatus::Updating => write!(f, "Updating"),
-            NotebookInstanceStatus::Unknown(value) => write!(f, "{}", value),
+            NotebookInstanceStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -110,7 +110,7 @@ impl ::std::fmt::Display for BatchCreateBillScenarioCommitmentModificationErrorC
             BatchCreateBillScenarioCommitmentModificationErrorCode::Conflict => write!(f, "CONFLICT"),
             BatchCreateBillScenarioCommitmentModificationErrorCode::InternalServerError => write!(f, "INTERNAL_SERVER_ERROR"),
             BatchCreateBillScenarioCommitmentModificationErrorCode::InvalidAccount => write!(f, "INVALID_ACCOUNT"),
-            BatchCreateBillScenarioCommitmentModificationErrorCode::Unknown(value) => write!(f, "{}", value),
+            BatchCreateBillScenarioCommitmentModificationErrorCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

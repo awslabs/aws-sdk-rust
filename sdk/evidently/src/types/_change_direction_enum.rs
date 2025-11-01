@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ChangeDirectionEnum {
         match self {
             ChangeDirectionEnum::Decrease => write!(f, "DECREASE"),
             ChangeDirectionEnum::Increase => write!(f, "INCREASE"),
-            ChangeDirectionEnum::Unknown(value) => write!(f, "{}", value),
+            ChangeDirectionEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

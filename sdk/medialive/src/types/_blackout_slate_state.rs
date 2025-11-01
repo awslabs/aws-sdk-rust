@@ -102,7 +102,7 @@ impl ::std::fmt::Display for BlackoutSlateState {
         match self {
             BlackoutSlateState::Disabled => write!(f, "DISABLED"),
             BlackoutSlateState::Enabled => write!(f, "ENABLED"),
-            BlackoutSlateState::Unknown(value) => write!(f, "{}", value),
+            BlackoutSlateState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

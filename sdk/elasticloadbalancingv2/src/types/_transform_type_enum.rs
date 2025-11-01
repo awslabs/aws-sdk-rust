@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TransformTypeEnum {
         match self {
             TransformTypeEnum::HostHeaderRewrite => write!(f, "host-header-rewrite"),
             TransformTypeEnum::UrlRewrite => write!(f, "url-rewrite"),
-            TransformTypeEnum::Unknown(value) => write!(f, "{}", value),
+            TransformTypeEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

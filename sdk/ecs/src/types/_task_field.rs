@@ -96,7 +96,7 @@ impl ::std::fmt::Display for TaskField {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             TaskField::Tags => write!(f, "TAGS"),
-            TaskField::Unknown(value) => write!(f, "{}", value),
+            TaskField::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ConfigurableActionTypeAuthorization {
         match self {
             ConfigurableActionTypeAuthorization::Https => write!(f, "HTTPS"),
             ConfigurableActionTypeAuthorization::Iam => write!(f, "IAM"),
-            ConfigurableActionTypeAuthorization::Unknown(value) => write!(f, "{}", value),
+            ConfigurableActionTypeAuthorization::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

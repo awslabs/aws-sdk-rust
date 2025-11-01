@@ -114,7 +114,7 @@ impl ::std::fmt::Display for PricingTier {
             PricingTier::Tier2 => write!(f, "TIER_2"),
             PricingTier::Tier3 => write!(f, "TIER_3"),
             PricingTier::Tier4 => write!(f, "TIER_4"),
-            PricingTier::Unknown(value) => write!(f, "{}", value),
+            PricingTier::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

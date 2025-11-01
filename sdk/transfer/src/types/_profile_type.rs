@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ProfileType {
         match self {
             ProfileType::Local => write!(f, "LOCAL"),
             ProfileType::Partner => write!(f, "PARTNER"),
-            ProfileType::Unknown(value) => write!(f, "{}", value),
+            ProfileType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

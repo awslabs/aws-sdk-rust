@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CmfcManifestMetadataSignaling {
         match self {
             CmfcManifestMetadataSignaling::Disabled => write!(f, "DISABLED"),
             CmfcManifestMetadataSignaling::Enabled => write!(f, "ENABLED"),
-            CmfcManifestMetadataSignaling::Unknown(value) => write!(f, "{}", value),
+            CmfcManifestMetadataSignaling::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

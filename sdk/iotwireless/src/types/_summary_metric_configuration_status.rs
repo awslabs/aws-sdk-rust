@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SummaryMetricConfigurationStatus {
         match self {
             SummaryMetricConfigurationStatus::Disabled => write!(f, "Disabled"),
             SummaryMetricConfigurationStatus::Enabled => write!(f, "Enabled"),
-            SummaryMetricConfigurationStatus::Unknown(value) => write!(f, "{}", value),
+            SummaryMetricConfigurationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for EngineType {
         match self {
             EngineType::Bluage => write!(f, "bluage"),
             EngineType::Microfocus => write!(f, "microfocus"),
-            EngineType::Unknown(value) => write!(f, "{}", value),
+            EngineType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

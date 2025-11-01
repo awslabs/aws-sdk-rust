@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AggregationEventType {
             AggregationEventType::Aggregate => write!(f, "AGGREGATE"),
             AggregationEventType::Child => write!(f, "CHILD"),
             AggregationEventType::None => write!(f, "NONE"),
-            AggregationEventType::Unknown(value) => write!(f, "{}", value),
+            AggregationEventType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

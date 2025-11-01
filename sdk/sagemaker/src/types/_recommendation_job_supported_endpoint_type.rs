@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RecommendationJobSupportedEndpointType {
         match self {
             RecommendationJobSupportedEndpointType::Realtime => write!(f, "RealTime"),
             RecommendationJobSupportedEndpointType::Serverless => write!(f, "Serverless"),
-            RecommendationJobSupportedEndpointType::Unknown(value) => write!(f, "{}", value),
+            RecommendationJobSupportedEndpointType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

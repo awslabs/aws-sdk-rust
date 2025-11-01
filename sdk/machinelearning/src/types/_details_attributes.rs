@@ -112,7 +112,7 @@ impl ::std::fmt::Display for DetailsAttributes {
         match self {
             DetailsAttributes::Algorithm => write!(f, "Algorithm"),
             DetailsAttributes::PredictiveModelType => write!(f, "PredictiveModelType"),
-            DetailsAttributes::Unknown(value) => write!(f, "{}", value),
+            DetailsAttributes::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

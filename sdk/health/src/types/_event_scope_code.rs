@@ -108,7 +108,7 @@ impl ::std::fmt::Display for EventScopeCode {
             EventScopeCode::AccountSpecific => write!(f, "ACCOUNT_SPECIFIC"),
             EventScopeCode::None => write!(f, "NONE"),
             EventScopeCode::Public => write!(f, "PUBLIC"),
-            EventScopeCode::Unknown(value) => write!(f, "{}", value),
+            EventScopeCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

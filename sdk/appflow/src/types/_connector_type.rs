@@ -259,7 +259,7 @@ impl ::std::fmt::Display for ConnectorType {
             ConnectorType::Upsolver => write!(f, "Upsolver"),
             ConnectorType::Veeva => write!(f, "Veeva"),
             ConnectorType::Zendesk => write!(f, "Zendesk"),
-            ConnectorType::Unknown(value) => write!(f, "{}", value),
+            ConnectorType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

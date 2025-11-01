@@ -108,7 +108,7 @@ impl ::std::fmt::Display for SslSupportMethod {
             SslSupportMethod::SniOnly => write!(f, "sni-only"),
             SslSupportMethod::StaticIp => write!(f, "static-ip"),
             SslSupportMethod::Vip => write!(f, "vip"),
-            SslSupportMethod::Unknown(value) => write!(f, "{}", value),
+            SslSupportMethod::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

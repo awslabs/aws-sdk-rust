@@ -108,7 +108,7 @@ impl ::std::fmt::Display for MapMatchScope {
             MapMatchScope::All => write!(f, "ALL"),
             MapMatchScope::Key => write!(f, "KEY"),
             MapMatchScope::Value => write!(f, "VALUE"),
-            MapMatchScope::Unknown(value) => write!(f, "{}", value),
+            MapMatchScope::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

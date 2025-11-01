@@ -108,7 +108,7 @@ impl ::std::fmt::Display for PerObjectSyncStatus {
             PerObjectSyncStatus::CapacityConstrained => write!(f, "CAPACITY_CONSTRAINED"),
             PerObjectSyncStatus::InSync => write!(f, "IN_SYNC"),
             PerObjectSyncStatus::Pending => write!(f, "PENDING"),
-            PerObjectSyncStatus::Unknown(value) => write!(f, "{}", value),
+            PerObjectSyncStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

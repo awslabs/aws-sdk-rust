@@ -53,8 +53,7 @@ pub fn de_enable_fast_snapshot_restores(
     let start_el = decoder.start_el();
     if !(start_el.matches("EnableFastSnapshotRestoresResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected EnableFastSnapshotRestoresResponse got {:?}",
-            start_el
+            "invalid root, expected EnableFastSnapshotRestoresResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

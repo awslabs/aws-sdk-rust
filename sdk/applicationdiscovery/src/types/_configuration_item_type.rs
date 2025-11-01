@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ConfigurationItemType {
             ConfigurationItemType::Connections => write!(f, "CONNECTION"),
             ConfigurationItemType::Process => write!(f, "PROCESS"),
             ConfigurationItemType::Server => write!(f, "SERVER"),
-            ConfigurationItemType::Unknown(value) => write!(f, "{}", value),
+            ConfigurationItemType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

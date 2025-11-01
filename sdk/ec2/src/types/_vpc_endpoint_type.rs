@@ -120,7 +120,7 @@ impl ::std::fmt::Display for VpcEndpointType {
             VpcEndpointType::Interface => write!(f, "Interface"),
             VpcEndpointType::Resource => write!(f, "Resource"),
             VpcEndpointType::ServiceNetwork => write!(f, "ServiceNetwork"),
-            VpcEndpointType::Unknown(value) => write!(f, "{}", value),
+            VpcEndpointType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

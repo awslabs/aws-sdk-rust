@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AgaPreferredProtocolForDirectory {
         match self {
             AgaPreferredProtocolForDirectory::None => write!(f, "NONE"),
             AgaPreferredProtocolForDirectory::Tcp => write!(f, "TCP"),
-            AgaPreferredProtocolForDirectory::Unknown(value) => write!(f, "{}", value),
+            AgaPreferredProtocolForDirectory::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

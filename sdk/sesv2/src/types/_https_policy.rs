@@ -112,7 +112,7 @@ impl ::std::fmt::Display for HttpsPolicy {
             HttpsPolicy::Optional => write!(f, "OPTIONAL"),
             HttpsPolicy::Require => write!(f, "REQUIRE"),
             HttpsPolicy::RequireOpenOnly => write!(f, "REQUIRE_OPEN_ONLY"),
-            HttpsPolicy::Unknown(value) => write!(f, "{}", value),
+            HttpsPolicy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

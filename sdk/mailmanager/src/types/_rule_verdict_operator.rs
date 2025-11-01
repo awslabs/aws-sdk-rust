@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RuleVerdictOperator {
         match self {
             RuleVerdictOperator::Equals => write!(f, "EQUALS"),
             RuleVerdictOperator::NotEquals => write!(f, "NOT_EQUALS"),
-            RuleVerdictOperator::Unknown(value) => write!(f, "{}", value),
+            RuleVerdictOperator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

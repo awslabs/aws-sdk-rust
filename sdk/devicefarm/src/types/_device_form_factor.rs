@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DeviceFormFactor {
         match self {
             DeviceFormFactor::Phone => write!(f, "PHONE"),
             DeviceFormFactor::Tablet => write!(f, "TABLET"),
-            DeviceFormFactor::Unknown(value) => write!(f, "{}", value),
+            DeviceFormFactor::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

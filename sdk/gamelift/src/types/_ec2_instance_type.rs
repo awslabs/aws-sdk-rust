@@ -3626,7 +3626,7 @@ impl ::std::fmt::Display for Ec2InstanceType {
             Ec2InstanceType::T2Medium => write!(f, "t2.medium"),
             Ec2InstanceType::T2Micro => write!(f, "t2.micro"),
             Ec2InstanceType::T2Small => write!(f, "t2.small"),
-            Ec2InstanceType::Unknown(value) => write!(f, "{}", value),
+            Ec2InstanceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

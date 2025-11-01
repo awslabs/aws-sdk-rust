@@ -140,7 +140,7 @@ impl ::std::fmt::Display for ReadSetImportJobStatus {
             ReadSetImportJobStatus::Failed => write!(f, "FAILED"),
             ReadSetImportJobStatus::InProgress => write!(f, "IN_PROGRESS"),
             ReadSetImportJobStatus::Submitted => write!(f, "SUBMITTED"),
-            ReadSetImportJobStatus::Unknown(value) => write!(f, "{}", value),
+            ReadSetImportJobStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

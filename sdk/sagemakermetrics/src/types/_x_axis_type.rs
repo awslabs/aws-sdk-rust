@@ -102,7 +102,7 @@ impl ::std::fmt::Display for XAxisType {
         match self {
             XAxisType::IterationNumber => write!(f, "IterationNumber"),
             XAxisType::Timestamp => write!(f, "Timestamp"),
-            XAxisType::Unknown(value) => write!(f, "{}", value),
+            XAxisType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

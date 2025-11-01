@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TunnelInsideIpVersion {
         match self {
             TunnelInsideIpVersion::Ipv4 => write!(f, "ipv4"),
             TunnelInsideIpVersion::Ipv6 => write!(f, "ipv6"),
-            TunnelInsideIpVersion::Unknown(value) => write!(f, "{}", value),
+            TunnelInsideIpVersion::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

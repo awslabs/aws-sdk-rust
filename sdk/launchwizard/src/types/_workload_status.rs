@@ -114,7 +114,7 @@ impl ::std::fmt::Display for WorkloadStatus {
             WorkloadStatus::Deleted => write!(f, "DELETED"),
             WorkloadStatus::Disabled => write!(f, "DISABLED"),
             WorkloadStatus::Inactive => write!(f, "INACTIVE"),
-            WorkloadStatus::Unknown(value) => write!(f, "{}", value),
+            WorkloadStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for GuadrailAction {
         match self {
             GuadrailAction::Intervened => write!(f, "INTERVENED"),
             GuadrailAction::None => write!(f, "NONE"),
-            GuadrailAction::Unknown(value) => write!(f, "{}", value),
+            GuadrailAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

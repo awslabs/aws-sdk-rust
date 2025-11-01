@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AdditionalS3DataSourceDataType {
         match self {
             AdditionalS3DataSourceDataType::S3Object => write!(f, "S3Object"),
             AdditionalS3DataSourceDataType::S3Prefix => write!(f, "S3Prefix"),
-            AdditionalS3DataSourceDataType::Unknown(value) => write!(f, "{}", value),
+            AdditionalS3DataSourceDataType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for NsdOnboardingState {
             NsdOnboardingState::Created => write!(f, "CREATED"),
             NsdOnboardingState::Error => write!(f, "ERROR"),
             NsdOnboardingState::Onboarded => write!(f, "ONBOARDED"),
-            NsdOnboardingState::Unknown(value) => write!(f, "{}", value),
+            NsdOnboardingState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

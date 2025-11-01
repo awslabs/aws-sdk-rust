@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DependencyConsumerResolutionStatus {
         match self {
             DependencyConsumerResolutionStatus::Resolved => write!(f, "RESOLVED"),
             DependencyConsumerResolutionStatus::Unresolved => write!(f, "UNRESOLVED"),
-            DependencyConsumerResolutionStatus::Unknown(value) => write!(f, "{}", value),
+            DependencyConsumerResolutionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

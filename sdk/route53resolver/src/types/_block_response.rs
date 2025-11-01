@@ -108,7 +108,7 @@ impl ::std::fmt::Display for BlockResponse {
             BlockResponse::Nodata => write!(f, "NODATA"),
             BlockResponse::Nxdomain => write!(f, "NXDOMAIN"),
             BlockResponse::Override => write!(f, "OVERRIDE"),
-            BlockResponse::Unknown(value) => write!(f, "{}", value),
+            BlockResponse::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

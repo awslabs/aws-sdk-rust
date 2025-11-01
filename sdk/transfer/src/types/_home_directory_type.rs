@@ -102,7 +102,7 @@ impl ::std::fmt::Display for HomeDirectoryType {
         match self {
             HomeDirectoryType::Logical => write!(f, "LOGICAL"),
             HomeDirectoryType::Path => write!(f, "PATH"),
-            HomeDirectoryType::Unknown(value) => write!(f, "{}", value),
+            HomeDirectoryType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

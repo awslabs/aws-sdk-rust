@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ReferenceLineValueLabelRelativePosition {
         match self {
             ReferenceLineValueLabelRelativePosition::AfterCustomLabel => write!(f, "AFTER_CUSTOM_LABEL"),
             ReferenceLineValueLabelRelativePosition::BeforeCustomLabel => write!(f, "BEFORE_CUSTOM_LABEL"),
-            ReferenceLineValueLabelRelativePosition::Unknown(value) => write!(f, "{}", value),
+            ReferenceLineValueLabelRelativePosition::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

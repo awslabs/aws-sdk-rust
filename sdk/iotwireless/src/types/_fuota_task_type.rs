@@ -96,7 +96,7 @@ impl ::std::fmt::Display for FuotaTaskType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             FuotaTaskType::LoRaWan => write!(f, "LoRaWAN"),
-            FuotaTaskType::Unknown(value) => write!(f, "{}", value),
+            FuotaTaskType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

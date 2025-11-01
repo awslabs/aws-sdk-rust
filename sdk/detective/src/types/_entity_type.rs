@@ -102,7 +102,7 @@ impl ::std::fmt::Display for EntityType {
         match self {
             EntityType::IamRole => write!(f, "IAM_ROLE"),
             EntityType::IamUser => write!(f, "IAM_USER"),
-            EntityType::Unknown(value) => write!(f, "{}", value),
+            EntityType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

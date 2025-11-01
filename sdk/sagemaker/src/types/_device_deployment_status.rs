@@ -126,7 +126,7 @@ impl ::std::fmt::Display for DeviceDeploymentStatus {
             DeviceDeploymentStatus::ReadyToDeploy => write!(f, "READYTODEPLOY"),
             DeviceDeploymentStatus::Stopped => write!(f, "STOPPED"),
             DeviceDeploymentStatus::Stopping => write!(f, "STOPPING"),
-            DeviceDeploymentStatus::Unknown(value) => write!(f, "{}", value),
+            DeviceDeploymentStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

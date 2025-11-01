@@ -32,8 +32,8 @@ use crate::client::result::SdkError;
 use aws_smithy_types::config_bag::ConfigBag;
 use aws_smithy_types::type_erasure::{TypeErasedBox, TypeErasedError};
 use phase::Phase;
+use std::fmt;
 use std::fmt::Debug;
-use std::{fmt, mem};
 use tracing::{debug, error, trace};
 
 macro_rules! new_type_box {
@@ -416,6 +416,7 @@ where
     /// Convert this context into the final operation result that is returned in client's the public API.
     ///
     /// Note: This method is intended for internal use only.
+    #[allow(clippy::result_large_err)]
     pub fn finalize(mut self) -> Result<O, SdkError<E, HttpResponse>> {
         let output_or_error = self
             .output_or_error
@@ -427,6 +428,7 @@ where
     /// Convert the given output/error into a final operation result that is returned in the client's public API.
     ///
     /// Note: This method is intended for internal use only.
+    #[allow(clippy::result_large_err)]
     pub fn finalize_result(
         &mut self,
         result: Result<O, OrchestratorError<E>>,
@@ -446,7 +448,7 @@ where
                 self.phase
             );
         }
-        if let Some(Err(existing_err)) = mem::replace(&mut self.output_or_error, Some(Err(error))) {
+        if let Some(Err(existing_err)) = self.output_or_error.replace(Err(error)) {
             error!("orchestrator context received an error but one was already present; Throwing away previous error: {:?}", existing_err);
         }
     }

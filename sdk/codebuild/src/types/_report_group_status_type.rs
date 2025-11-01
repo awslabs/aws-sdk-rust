@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ReportGroupStatusType {
         match self {
             ReportGroupStatusType::Active => write!(f, "ACTIVE"),
             ReportGroupStatusType::Deleting => write!(f, "DELETING"),
-            ReportGroupStatusType::Unknown(value) => write!(f, "{}", value),
+            ReportGroupStatusType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

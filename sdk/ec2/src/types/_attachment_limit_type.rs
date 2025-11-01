@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AttachmentLimitType {
         match self {
             AttachmentLimitType::Dedicated => write!(f, "dedicated"),
             AttachmentLimitType::Shared => write!(f, "shared"),
-            AttachmentLimitType::Unknown(value) => write!(f, "{}", value),
+            AttachmentLimitType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

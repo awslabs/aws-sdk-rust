@@ -147,7 +147,7 @@ impl ::std::fmt::Display for ClusterState {
             ClusterState::Maintenance => write!(f, "MAINTENANCE"),
             ClusterState::RebootingBroker => write!(f, "REBOOTING_BROKER"),
             ClusterState::Updating => write!(f, "UPDATING"),
-            ClusterState::Unknown(value) => write!(f, "{}", value),
+            ClusterState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

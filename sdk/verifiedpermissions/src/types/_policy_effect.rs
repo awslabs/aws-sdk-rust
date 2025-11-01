@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PolicyEffect {
         match self {
             PolicyEffect::Forbid => write!(f, "Forbid"),
             PolicyEffect::Permit => write!(f, "Permit"),
-            PolicyEffect::Unknown(value) => write!(f, "{}", value),
+            PolicyEffect::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

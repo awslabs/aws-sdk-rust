@@ -102,7 +102,7 @@ impl ::std::fmt::Display for EvaluationFormScoringStatus {
         match self {
             EvaluationFormScoringStatus::Disabled => write!(f, "DISABLED"),
             EvaluationFormScoringStatus::Enabled => write!(f, "ENABLED"),
-            EvaluationFormScoringStatus::Unknown(value) => write!(f, "{}", value),
+            EvaluationFormScoringStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

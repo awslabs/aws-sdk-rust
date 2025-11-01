@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Scte35SegmentationScope {
         match self {
             Scte35SegmentationScope::AllOutputGroups => write!(f, "ALL_OUTPUT_GROUPS"),
             Scte35SegmentationScope::Scte35EnabledOutputGroups => write!(f, "SCTE35_ENABLED_OUTPUT_GROUPS"),
-            Scte35SegmentationScope::Unknown(value) => write!(f, "{}", value),
+            Scte35SegmentationScope::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

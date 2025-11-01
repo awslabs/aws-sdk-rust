@@ -102,7 +102,7 @@ impl ::std::fmt::Display for XavcHdProfileTelecine {
         match self {
             XavcHdProfileTelecine::Hard => write!(f, "HARD"),
             XavcHdProfileTelecine::None => write!(f, "NONE"),
-            XavcHdProfileTelecine::Unknown(value) => write!(f, "{}", value),
+            XavcHdProfileTelecine::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

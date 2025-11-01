@@ -133,7 +133,7 @@ impl ::std::fmt::Display for PackageVersionErrorCode {
             PackageVersionErrorCode::NotAllowed => write!(f, "NOT_ALLOWED"),
             PackageVersionErrorCode::NotFound => write!(f, "NOT_FOUND"),
             PackageVersionErrorCode::Skipped => write!(f, "SKIPPED"),
-            PackageVersionErrorCode::Unknown(value) => write!(f, "{}", value),
+            PackageVersionErrorCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

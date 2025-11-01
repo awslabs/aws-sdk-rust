@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ThemeType {
             ThemeType::All => write!(f, "ALL"),
             ThemeType::Custom => write!(f, "CUSTOM"),
             ThemeType::Quicksight => write!(f, "QUICKSIGHT"),
-            ThemeType::Unknown(value) => write!(f, "{}", value),
+            ThemeType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

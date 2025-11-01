@@ -104,7 +104,7 @@ impl ::std::fmt::Display for InputSourceType {
         match self {
             InputSourceType::Dynamic => write!(f, "DYNAMIC"),
             InputSourceType::Static => write!(f, "STATIC"),
-            InputSourceType::Unknown(value) => write!(f, "{}", value),
+            InputSourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ServiceQuotaTemplateAssociationStatus {
         match self {
             ServiceQuotaTemplateAssociationStatus::Associated => write!(f, "ASSOCIATED"),
             ServiceQuotaTemplateAssociationStatus::Disassociated => write!(f, "DISASSOCIATED"),
-            ServiceQuotaTemplateAssociationStatus::Unknown(value) => write!(f, "{}", value),
+            ServiceQuotaTemplateAssociationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

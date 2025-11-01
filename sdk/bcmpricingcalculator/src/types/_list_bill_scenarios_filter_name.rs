@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ListBillScenariosFilterName {
         match self {
             ListBillScenariosFilterName::Name => write!(f, "NAME"),
             ListBillScenariosFilterName::Status => write!(f, "STATUS"),
-            ListBillScenariosFilterName::Unknown(value) => write!(f, "{}", value),
+            ListBillScenariosFilterName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -126,7 +126,7 @@ impl ::std::fmt::Display for TaskTargetRunStatus {
             TaskTargetRunStatus::Ready => write!(f, "READY"),
             TaskTargetRunStatus::Succeeded => write!(f, "SUCCEEDED"),
             TaskTargetRunStatus::Suspended => write!(f, "SUSPENDED"),
-            TaskTargetRunStatus::Unknown(value) => write!(f, "{}", value),
+            TaskTargetRunStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

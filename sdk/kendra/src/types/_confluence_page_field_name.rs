@@ -175,7 +175,7 @@ impl ::std::fmt::Display for ConfluencePageFieldName {
             ConfluencePageFieldName::SpaceName => write!(f, "SPACE_NAME"),
             ConfluencePageFieldName::Url => write!(f, "URL"),
             ConfluencePageFieldName::Version => write!(f, "VERSION"),
-            ConfluencePageFieldName::Unknown(value) => write!(f, "{}", value),
+            ConfluencePageFieldName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -120,7 +120,7 @@ impl ::std::fmt::Display for LineChartMarkerShape {
             LineChartMarkerShape::RoundedSquare => write!(f, "ROUNDED_SQUARE"),
             LineChartMarkerShape::Square => write!(f, "SQUARE"),
             LineChartMarkerShape::Triangle => write!(f, "TRIANGLE"),
-            LineChartMarkerShape::Unknown(value) => write!(f, "{}", value),
+            LineChartMarkerShape::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

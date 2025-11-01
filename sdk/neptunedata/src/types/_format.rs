@@ -126,7 +126,7 @@ impl ::std::fmt::Display for Format {
             Format::Opencypher => write!(f, "opencypher"),
             Format::Rdfxml => write!(f, "rdfxml"),
             Format::Turtle => write!(f, "turtle"),
-            Format::Unknown(value) => write!(f, "{}", value),
+            Format::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

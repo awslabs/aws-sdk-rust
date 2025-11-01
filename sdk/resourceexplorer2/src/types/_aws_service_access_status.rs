@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AwsServiceAccessStatus {
         match self {
             AwsServiceAccessStatus::Disabled => write!(f, "DISABLED"),
             AwsServiceAccessStatus::Enabled => write!(f, "ENABLED"),
-            AwsServiceAccessStatus::Unknown(value) => write!(f, "{}", value),
+            AwsServiceAccessStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

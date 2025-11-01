@@ -126,7 +126,7 @@ impl ::std::fmt::Display for InsightFeedbackOption {
             InsightFeedbackOption::DataNoisyAnomaly => write!(f, "DATA_NOISY_ANOMALY"),
             InsightFeedbackOption::RecommendationUseful => write!(f, "RECOMMENDATION_USEFUL"),
             InsightFeedbackOption::ValidCollection => write!(f, "VALID_COLLECTION"),
-            InsightFeedbackOption::Unknown(value) => write!(f, "{}", value),
+            InsightFeedbackOption::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

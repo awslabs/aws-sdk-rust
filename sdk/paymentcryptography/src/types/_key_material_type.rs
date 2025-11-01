@@ -126,7 +126,7 @@ impl ::std::fmt::Display for KeyMaterialType {
             KeyMaterialType::Tr31KeyBlock => write!(f, "TR31_KEY_BLOCK"),
             KeyMaterialType::Tr34KeyBlock => write!(f, "TR34_KEY_BLOCK"),
             KeyMaterialType::TrustedPublicKeyCertificate => write!(f, "TRUSTED_PUBLIC_KEY_CERTIFICATE"),
-            KeyMaterialType::Unknown(value) => write!(f, "{}", value),
+            KeyMaterialType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

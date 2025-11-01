@@ -182,7 +182,7 @@ impl ::std::fmt::Display for JobStatus {
             JobStatus::Preparing => write!(f, "Preparing"),
             JobStatus::Ready => write!(f, "Ready"),
             JobStatus::Suspended => write!(f, "Suspended"),
-            JobStatus::Unknown(value) => write!(f, "{}", value),
+            JobStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

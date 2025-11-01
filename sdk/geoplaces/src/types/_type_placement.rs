@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TypePlacement {
         match self {
             TypePlacement::AfterBaseName => write!(f, "AfterBaseName"),
             TypePlacement::BeforeBaseName => write!(f, "BeforeBaseName"),
-            TypePlacement::Unknown(value) => write!(f, "{}", value),
+            TypePlacement::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

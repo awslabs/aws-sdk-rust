@@ -96,7 +96,7 @@ impl ::std::fmt::Display for MemoryType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             MemoryType::SessionSummary => write!(f, "SESSION_SUMMARY"),
-            MemoryType::Unknown(value) => write!(f, "{}", value),
+            MemoryType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

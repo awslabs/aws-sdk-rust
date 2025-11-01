@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Reaction {
         match self {
             Reaction::ThumbsDown => write!(f, "ThumbsDown"),
             Reaction::ThumbsUp => write!(f, "ThumbsUp"),
-            Reaction::Unknown(value) => write!(f, "{}", value),
+            Reaction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

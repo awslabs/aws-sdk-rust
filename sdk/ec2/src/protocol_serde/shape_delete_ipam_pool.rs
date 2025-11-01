@@ -42,8 +42,7 @@ pub fn de_delete_ipam_pool(
     let start_el = decoder.start_el();
     if !(start_el.matches("DeleteIpamPoolResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected DeleteIpamPoolResponse got {:?}",
-            start_el
+            "invalid root, expected DeleteIpamPoolResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

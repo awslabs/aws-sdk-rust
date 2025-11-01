@@ -189,7 +189,7 @@ impl ::std::fmt::Display for ServiceStatus {
             ServiceStatus::UpdateFailedCleanupFailed => write!(f, "UPDATE_FAILED_CLEANUP_FAILED"),
             ServiceStatus::UpdateFailedCleanupInProgress => write!(f, "UPDATE_FAILED_CLEANUP_IN_PROGRESS"),
             ServiceStatus::UpdateInProgress => write!(f, "UPDATE_IN_PROGRESS"),
-            ServiceStatus::Unknown(value) => write!(f, "{}", value),
+            ServiceStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -190,6 +190,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for SetKeepJobFl
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::set_keep_job_flow_alive_when_no_steps::SetKeepJobFlowAliveWhenNoStepsInput,
                 output: &mut ::std::string::String,

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DatasetType {
         match self {
             DatasetType::Test => write!(f, "TEST"),
             DatasetType::Train => write!(f, "TRAIN"),
-            DatasetType::Unknown(value) => write!(f, "{}", value),
+            DatasetType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

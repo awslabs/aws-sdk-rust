@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ChannelLatencyMode {
         match self {
             ChannelLatencyMode::LowLatency => write!(f, "LOW"),
             ChannelLatencyMode::NormalLatency => write!(f, "NORMAL"),
-            ChannelLatencyMode::Unknown(value) => write!(f, "{}", value),
+            ChannelLatencyMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

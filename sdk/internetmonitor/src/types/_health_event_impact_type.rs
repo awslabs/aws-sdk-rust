@@ -114,7 +114,7 @@ impl ::std::fmt::Display for HealthEventImpactType {
             HealthEventImpactType::LocalAvailability => write!(f, "LOCAL_AVAILABILITY"),
             HealthEventImpactType::LocalPerformance => write!(f, "LOCAL_PERFORMANCE"),
             HealthEventImpactType::Performance => write!(f, "PERFORMANCE"),
-            HealthEventImpactType::Unknown(value) => write!(f, "{}", value),
+            HealthEventImpactType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

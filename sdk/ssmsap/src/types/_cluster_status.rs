@@ -120,7 +120,7 @@ impl ::std::fmt::Display for ClusterStatus {
             ClusterStatus::Offline => write!(f, "OFFLINE"),
             ClusterStatus::Online => write!(f, "ONLINE"),
             ClusterStatus::Standby => write!(f, "STANDBY"),
-            ClusterStatus::Unknown(value) => write!(f, "{}", value),
+            ClusterStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

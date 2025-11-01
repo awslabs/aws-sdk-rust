@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ClassificationScopeUpdateOperation {
             ClassificationScopeUpdateOperation::Add => write!(f, "ADD"),
             ClassificationScopeUpdateOperation::Remove => write!(f, "REMOVE"),
             ClassificationScopeUpdateOperation::Replace => write!(f, "REPLACE"),
-            ClassificationScopeUpdateOperation::Unknown(value) => write!(f, "{}", value),
+            ClassificationScopeUpdateOperation::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

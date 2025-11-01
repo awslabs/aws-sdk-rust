@@ -132,7 +132,7 @@ impl ::std::fmt::Display for CommandStatus {
             CommandStatus::Pending => write!(f, "Pending"),
             CommandStatus::Success => write!(f, "Success"),
             CommandStatus::TimedOut => write!(f, "TimedOut"),
-            CommandStatus::Unknown(value) => write!(f, "{}", value),
+            CommandStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

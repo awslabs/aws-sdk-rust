@@ -51,8 +51,7 @@ pub fn de_get_ipam_address_history(
     let start_el = decoder.start_el();
     if !(start_el.matches("GetIpamAddressHistoryResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected GetIpamAddressHistoryResponse got {:?}",
-            start_el
+            "invalid root, expected GetIpamAddressHistoryResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

@@ -120,7 +120,7 @@ impl ::std::fmt::Display for ProposalStatus {
             ProposalStatus::Expired => write!(f, "EXPIRED"),
             ProposalStatus::InProgress => write!(f, "IN_PROGRESS"),
             ProposalStatus::Rejected => write!(f, "REJECTED"),
-            ProposalStatus::Unknown(value) => write!(f, "{}", value),
+            ProposalStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

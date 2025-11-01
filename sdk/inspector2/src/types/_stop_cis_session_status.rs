@@ -114,7 +114,7 @@ impl ::std::fmt::Display for StopCisSessionStatus {
             StopCisSessionStatus::Interrupted => write!(f, "INTERRUPTED"),
             StopCisSessionStatus::Success => write!(f, "SUCCESS"),
             StopCisSessionStatus::UnsupportedOs => write!(f, "UNSUPPORTED_OS"),
-            StopCisSessionStatus::Unknown(value) => write!(f, "{}", value),
+            StopCisSessionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

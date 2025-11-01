@@ -114,7 +114,7 @@ impl ::std::fmt::Display for PackageType {
             PackageType::PackageLicense => write!(f, "PACKAGE-LICENSE"),
             PackageType::TxtDictionary => write!(f, "TXT-DICTIONARY"),
             PackageType::ZipPlugin => write!(f, "ZIP-PLUGIN"),
-            PackageType::Unknown(value) => write!(f, "{}", value),
+            PackageType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

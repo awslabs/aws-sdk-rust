@@ -114,7 +114,7 @@ impl ::std::fmt::Display for WorkspacePolicyStatusCode {
             WorkspacePolicyStatusCode::Creating => write!(f, "CREATING"),
             WorkspacePolicyStatusCode::Deleting => write!(f, "DELETING"),
             WorkspacePolicyStatusCode::Updating => write!(f, "UPDATING"),
-            WorkspacePolicyStatusCode::Unknown(value) => write!(f, "{}", value),
+            WorkspacePolicyStatusCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

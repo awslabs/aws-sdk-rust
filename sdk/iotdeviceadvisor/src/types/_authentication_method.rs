@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AuthenticationMethod {
         match self {
             AuthenticationMethod::SignatureVersion4 => write!(f, "SignatureVersion4"),
             AuthenticationMethod::X509ClientCertificate => write!(f, "X509ClientCertificate"),
-            AuthenticationMethod::Unknown(value) => write!(f, "{}", value),
+            AuthenticationMethod::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

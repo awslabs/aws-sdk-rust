@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PatchAction {
         match self {
             PatchAction::AllowAsDependency => write!(f, "ALLOW_AS_DEPENDENCY"),
             PatchAction::Block => write!(f, "BLOCK"),
-            PatchAction::Unknown(value) => write!(f, "{}", value),
+            PatchAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

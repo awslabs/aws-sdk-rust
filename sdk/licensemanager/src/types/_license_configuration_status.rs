@@ -102,7 +102,7 @@ impl ::std::fmt::Display for LicenseConfigurationStatus {
         match self {
             LicenseConfigurationStatus::Available => write!(f, "AVAILABLE"),
             LicenseConfigurationStatus::Disabled => write!(f, "DISABLED"),
-            LicenseConfigurationStatus::Unknown(value) => write!(f, "{}", value),
+            LicenseConfigurationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

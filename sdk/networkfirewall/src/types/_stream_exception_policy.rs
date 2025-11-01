@@ -108,7 +108,7 @@ impl ::std::fmt::Display for StreamExceptionPolicy {
             StreamExceptionPolicy::Continue => write!(f, "CONTINUE"),
             StreamExceptionPolicy::Drop => write!(f, "DROP"),
             StreamExceptionPolicy::Reject => write!(f, "REJECT"),
-            StreamExceptionPolicy::Unknown(value) => write!(f, "{}", value),
+            StreamExceptionPolicy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

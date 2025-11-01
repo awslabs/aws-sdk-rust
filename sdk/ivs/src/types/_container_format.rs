@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ContainerFormat {
         match self {
             ContainerFormat::FragmentedMp4 => write!(f, "FRAGMENTED_MP4"),
             ContainerFormat::Ts => write!(f, "TS"),
-            ContainerFormat::Unknown(value) => write!(f, "{}", value),
+            ContainerFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -126,7 +126,7 @@ impl ::std::fmt::Display for MediaPipelineTaskStatus {
             MediaPipelineTaskStatus::NotStarted => write!(f, "NotStarted"),
             MediaPipelineTaskStatus::Stopped => write!(f, "Stopped"),
             MediaPipelineTaskStatus::Stopping => write!(f, "Stopping"),
-            MediaPipelineTaskStatus::Unknown(value) => write!(f, "{}", value),
+            MediaPipelineTaskStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

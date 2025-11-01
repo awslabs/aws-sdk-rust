@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ListCisScansSortBy {
             ListCisScansSortBy::ScanStartDate => write!(f, "SCAN_START_DATE"),
             ListCisScansSortBy::ScheduledBy => write!(f, "SCHEDULED_BY"),
             ListCisScansSortBy::Status => write!(f, "STATUS"),
-            ListCisScansSortBy::Unknown(value) => write!(f, "{}", value),
+            ListCisScansSortBy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

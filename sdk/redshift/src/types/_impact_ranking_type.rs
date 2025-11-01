@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ImpactRankingType {
             ImpactRankingType::High => write!(f, "HIGH"),
             ImpactRankingType::Low => write!(f, "LOW"),
             ImpactRankingType::Medium => write!(f, "MEDIUM"),
-            ImpactRankingType::Unknown(value) => write!(f, "{}", value),
+            ImpactRankingType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

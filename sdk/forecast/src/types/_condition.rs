@@ -114,7 +114,7 @@ impl ::std::fmt::Display for Condition {
             Condition::GreaterThan => write!(f, "GREATER_THAN"),
             Condition::LessThan => write!(f, "LESS_THAN"),
             Condition::NotEquals => write!(f, "NOT_EQUALS"),
-            Condition::Unknown(value) => write!(f, "{}", value),
+            Condition::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ExistingEnrollmentAction {
         match self {
             ExistingEnrollmentAction::Overwrite => write!(f, "OVERWRITE"),
             ExistingEnrollmentAction::Skip => write!(f, "SKIP"),
-            ExistingEnrollmentAction::Unknown(value) => write!(f, "{}", value),
+            ExistingEnrollmentAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

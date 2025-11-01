@@ -102,7 +102,7 @@ impl ::std::fmt::Display for VariableType {
         match self {
             VariableType::IncidentRecordArn => write!(f, "INCIDENT_RECORD_ARN"),
             VariableType::InvolvedResources => write!(f, "INVOLVED_RESOURCES"),
-            VariableType::Unknown(value) => write!(f, "{}", value),
+            VariableType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for VariationValueType {
             VariationValueType::Double => write!(f, "DOUBLE"),
             VariationValueType::Long => write!(f, "LONG"),
             VariationValueType::String => write!(f, "STRING"),
-            VariationValueType::Unknown(value) => write!(f, "{}", value),
+            VariationValueType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

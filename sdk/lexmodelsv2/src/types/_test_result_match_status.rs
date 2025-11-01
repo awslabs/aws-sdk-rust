@@ -108,7 +108,7 @@ impl ::std::fmt::Display for TestResultMatchStatus {
             TestResultMatchStatus::ExecutionError => write!(f, "ExecutionError"),
             TestResultMatchStatus::Matched => write!(f, "Matched"),
             TestResultMatchStatus::Mismatched => write!(f, "Mismatched"),
-            TestResultMatchStatus::Unknown(value) => write!(f, "{}", value),
+            TestResultMatchStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

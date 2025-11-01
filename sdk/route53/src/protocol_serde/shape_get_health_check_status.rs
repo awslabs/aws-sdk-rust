@@ -91,8 +91,7 @@ pub fn de_get_health_check_status(
     let start_el = decoder.start_el();
     if !start_el.matches("GetHealthCheckStatusResponse") {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "encountered invalid XML root: expected GetHealthCheckStatusResponse but got {:?}. This is likely a bug in the SDK.",
-            start_el
+            "encountered invalid XML root: expected GetHealthCheckStatusResponse but got {start_el:?}. This is likely a bug in the SDK."
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

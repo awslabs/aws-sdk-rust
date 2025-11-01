@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AacInputType {
         match self {
             AacInputType::BroadcasterMixedAd => write!(f, "BROADCASTER_MIXED_AD"),
             AacInputType::Normal => write!(f, "NORMAL"),
-            AacInputType::Unknown(value) => write!(f, "{}", value),
+            AacInputType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

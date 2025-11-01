@@ -102,7 +102,7 @@ impl ::std::fmt::Display for UndefinedSpecifiedValueType {
         match self {
             UndefinedSpecifiedValueType::Least => write!(f, "LEAST"),
             UndefinedSpecifiedValueType::Most => write!(f, "MOST"),
-            UndefinedSpecifiedValueType::Unknown(value) => write!(f, "{}", value),
+            UndefinedSpecifiedValueType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

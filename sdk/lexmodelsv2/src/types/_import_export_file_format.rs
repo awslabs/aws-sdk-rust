@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ImportExportFileFormat {
             ImportExportFileFormat::Csv => write!(f, "CSV"),
             ImportExportFileFormat::LexJson => write!(f, "LexJson"),
             ImportExportFileFormat::Tsv => write!(f, "TSV"),
-            ImportExportFileFormat::Unknown(value) => write!(f, "{}", value),
+            ImportExportFileFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

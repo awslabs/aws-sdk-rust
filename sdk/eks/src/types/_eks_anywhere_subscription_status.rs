@@ -126,7 +126,7 @@ impl ::std::fmt::Display for EksAnywhereSubscriptionStatus {
             EksAnywhereSubscriptionStatus::Expired => write!(f, "EXPIRED"),
             EksAnywhereSubscriptionStatus::Expiring => write!(f, "EXPIRING"),
             EksAnywhereSubscriptionStatus::Updating => write!(f, "UPDATING"),
-            EksAnywhereSubscriptionStatus::Unknown(value) => write!(f, "{}", value),
+            EksAnywhereSubscriptionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

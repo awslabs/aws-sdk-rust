@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SchemaType {
         match self {
             SchemaType::IdMappingTable => write!(f, "ID_MAPPING_TABLE"),
             SchemaType::Table => write!(f, "TABLE"),
-            SchemaType::Unknown(value) => write!(f, "{}", value),
+            SchemaType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

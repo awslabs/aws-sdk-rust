@@ -357,7 +357,7 @@ impl ::std::fmt::Display for ResourceRecordSetRegion {
             ResourceRecordSetRegion::UsGovWest1 => write!(f, "us-gov-west-1"),
             ResourceRecordSetRegion::UsWest1 => write!(f, "us-west-1"),
             ResourceRecordSetRegion::UsWest2 => write!(f, "us-west-2"),
-            ResourceRecordSetRegion::Unknown(value) => write!(f, "{}", value),
+            ResourceRecordSetRegion::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

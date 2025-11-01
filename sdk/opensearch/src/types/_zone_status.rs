@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ZoneStatus {
             ZoneStatus::Active => write!(f, "Active"),
             ZoneStatus::NotAvailable => write!(f, "NotAvailable"),
             ZoneStatus::StandBy => write!(f, "StandBy"),
-            ZoneStatus::Unknown(value) => write!(f, "{}", value),
+            ZoneStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

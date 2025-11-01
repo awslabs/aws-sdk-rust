@@ -96,7 +96,7 @@ impl ::std::fmt::Display for IdMappingIncrementalRunType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             IdMappingIncrementalRunType::OnDemand => write!(f, "ON_DEMAND"),
-            IdMappingIncrementalRunType::Unknown(value) => write!(f, "{}", value),
+            IdMappingIncrementalRunType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

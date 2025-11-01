@@ -203,7 +203,7 @@ impl ::std::fmt::Display for Permission {
             Permission::Insert => write!(f, "INSERT"),
             Permission::Select => write!(f, "SELECT"),
             Permission::SuperUser => write!(f, "SUPER_USER"),
-            Permission::Unknown(value) => write!(f, "{}", value),
+            Permission::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

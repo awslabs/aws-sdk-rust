@@ -56,8 +56,7 @@ pub fn de_get_instance_types_from_instance_requirements(
     let start_el = decoder.start_el();
     if !(start_el.matches("GetInstanceTypesFromInstanceRequirementsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected GetInstanceTypesFromInstanceRequirementsResponse got {:?}",
-            start_el
+            "invalid root, expected GetInstanceTypesFromInstanceRequirementsResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

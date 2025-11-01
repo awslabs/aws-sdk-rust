@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AdminStatus {
         match self {
             AdminStatus::DisablingInProgress => write!(f, "DISABLING_IN_PROGRESS"),
             AdminStatus::Enabled => write!(f, "ENABLED"),
-            AdminStatus::Unknown(value) => write!(f, "{}", value),
+            AdminStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

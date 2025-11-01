@@ -114,7 +114,7 @@ impl ::std::fmt::Display for TransitGatewayRouteTableState {
             TransitGatewayRouteTableState::Deleted => write!(f, "deleted"),
             TransitGatewayRouteTableState::Deleting => write!(f, "deleting"),
             TransitGatewayRouteTableState::Pending => write!(f, "pending"),
-            TransitGatewayRouteTableState::Unknown(value) => write!(f, "{}", value),
+            TransitGatewayRouteTableState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

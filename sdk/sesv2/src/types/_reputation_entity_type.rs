@@ -97,7 +97,7 @@ impl ::std::fmt::Display for ReputationEntityType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ReputationEntityType::Resource => write!(f, "RESOURCE"),
-            ReputationEntityType::Unknown(value) => write!(f, "{}", value),
+            ReputationEntityType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

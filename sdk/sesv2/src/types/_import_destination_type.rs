@@ -103,7 +103,7 @@ impl ::std::fmt::Display for ImportDestinationType {
         match self {
             ImportDestinationType::ContactList => write!(f, "CONTACT_LIST"),
             ImportDestinationType::SuppressionList => write!(f, "SUPPRESSION_LIST"),
-            ImportDestinationType::Unknown(value) => write!(f, "{}", value),
+            ImportDestinationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

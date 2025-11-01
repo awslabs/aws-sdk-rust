@@ -102,7 +102,7 @@ impl ::std::fmt::Display for H265ParControl {
         match self {
             H265ParControl::InitializeFromSource => write!(f, "INITIALIZE_FROM_SOURCE"),
             H265ParControl::Specified => write!(f, "SPECIFIED"),
-            H265ParControl::Unknown(value) => write!(f, "{}", value),
+            H265ParControl::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

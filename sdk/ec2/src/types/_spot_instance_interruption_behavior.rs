@@ -108,7 +108,7 @@ impl ::std::fmt::Display for SpotInstanceInterruptionBehavior {
             SpotInstanceInterruptionBehavior::Hibernate => write!(f, "hibernate"),
             SpotInstanceInterruptionBehavior::Stop => write!(f, "stop"),
             SpotInstanceInterruptionBehavior::Terminate => write!(f, "terminate"),
-            SpotInstanceInterruptionBehavior::Unknown(value) => write!(f, "{}", value),
+            SpotInstanceInterruptionBehavior::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

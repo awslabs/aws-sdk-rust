@@ -108,7 +108,7 @@ impl ::std::fmt::Display for RuleState {
             RuleState::Disabled => write!(f, "DISABLED"),
             RuleState::Enabled => write!(f, "ENABLED"),
             RuleState::EnabledWithAllCloudtrailManagementEvents => write!(f, "ENABLED_WITH_ALL_CLOUDTRAIL_MANAGEMENT_EVENTS"),
-            RuleState::Unknown(value) => write!(f, "{}", value),
+            RuleState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AttachmentsSourceKey {
             AttachmentsSourceKey::AttachmentReference => write!(f, "AttachmentReference"),
             AttachmentsSourceKey::S3FileUrl => write!(f, "S3FileUrl"),
             AttachmentsSourceKey::SourceUrl => write!(f, "SourceUrl"),
-            AttachmentsSourceKey::Unknown(value) => write!(f, "{}", value),
+            AttachmentsSourceKey::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

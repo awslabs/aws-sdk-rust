@@ -126,7 +126,7 @@ impl ::std::fmt::Display for SessionBorderControllerType {
             SessionBorderControllerType::CiscoUnifiedBorderElement => write!(f, "CISCO_UNIFIED_BORDER_ELEMENT"),
             SessionBorderControllerType::OracleAcmePacketSbc => write!(f, "ORACLE_ACME_PACKET_SBC"),
             SessionBorderControllerType::RibbonSbc => write!(f, "RIBBON_SBC"),
-            SessionBorderControllerType::Unknown(value) => write!(f, "{}", value),
+            SessionBorderControllerType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

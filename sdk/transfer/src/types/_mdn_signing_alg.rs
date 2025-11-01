@@ -126,7 +126,7 @@ impl ::std::fmt::Display for MdnSigningAlg {
             MdnSigningAlg::Sha256 => write!(f, "SHA256"),
             MdnSigningAlg::Sha384 => write!(f, "SHA384"),
             MdnSigningAlg::Sha512 => write!(f, "SHA512"),
-            MdnSigningAlg::Unknown(value) => write!(f, "{}", value),
+            MdnSigningAlg::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

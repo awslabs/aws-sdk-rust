@@ -102,7 +102,7 @@ impl ::std::fmt::Display for M2tsEsRateInPes {
         match self {
             M2tsEsRateInPes::Exclude => write!(f, "EXCLUDE"),
             M2tsEsRateInPes::Include => write!(f, "INCLUDE"),
-            M2tsEsRateInPes::Unknown(value) => write!(f, "{}", value),
+            M2tsEsRateInPes::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AutoMlMode {
             AutoMlMode::Auto => write!(f, "AUTO"),
             AutoMlMode::Ensembling => write!(f, "ENSEMBLING"),
             AutoMlMode::HyperparameterTuning => write!(f, "HYPERPARAMETER_TUNING"),
-            AutoMlMode::Unknown(value) => write!(f, "{}", value),
+            AutoMlMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

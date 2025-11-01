@@ -96,7 +96,7 @@ impl ::std::fmt::Display for Eac3AtmosBitstreamMode {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             Eac3AtmosBitstreamMode::CompleteMain => write!(f, "COMPLETE_MAIN"),
-            Eac3AtmosBitstreamMode::Unknown(value) => write!(f, "{}", value),
+            Eac3AtmosBitstreamMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

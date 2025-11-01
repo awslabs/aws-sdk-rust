@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Sender {
         match self {
             Sender::System => write!(f, "SYSTEM"),
             Sender::User => write!(f, "USER"),
-            Sender::Unknown(value) => write!(f, "{}", value),
+            Sender::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

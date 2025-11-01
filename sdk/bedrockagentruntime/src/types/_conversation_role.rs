@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ConversationRole {
         match self {
             ConversationRole::Assistant => write!(f, "assistant"),
             ConversationRole::User => write!(f, "user"),
-            ConversationRole::Unknown(value) => write!(f, "{}", value),
+            ConversationRole::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

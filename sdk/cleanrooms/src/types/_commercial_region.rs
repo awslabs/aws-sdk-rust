@@ -322,7 +322,7 @@ impl ::std::fmt::Display for CommercialRegion {
             CommercialRegion::UsEast2 => write!(f, "us-east-2"),
             CommercialRegion::UsWest1 => write!(f, "us-west-1"),
             CommercialRegion::UsWest2 => write!(f, "us-west-2"),
-            CommercialRegion::Unknown(value) => write!(f, "{}", value),
+            CommercialRegion::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

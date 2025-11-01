@@ -102,7 +102,7 @@ impl ::std::fmt::Display for H264ForceFieldPictures {
         match self {
             H264ForceFieldPictures::Disabled => write!(f, "DISABLED"),
             H264ForceFieldPictures::Enabled => write!(f, "ENABLED"),
-            H264ForceFieldPictures::Unknown(value) => write!(f, "{}", value),
+            H264ForceFieldPictures::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

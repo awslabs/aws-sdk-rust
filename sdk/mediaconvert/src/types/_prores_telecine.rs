@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ProresTelecine {
         match self {
             ProresTelecine::Hard => write!(f, "HARD"),
             ProresTelecine::None => write!(f, "NONE"),
-            ProresTelecine::Unknown(value) => write!(f, "{}", value),
+            ProresTelecine::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -280,7 +280,7 @@ impl ::std::fmt::Display for Event {
             Event::S3ReplicationOperationMissedThreshold => write!(f, "s3:Replication:OperationMissedThreshold"),
             Event::S3ReplicationOperationNotTracked => write!(f, "s3:Replication:OperationNotTracked"),
             Event::S3ReplicationOperationReplicatedAfterThreshold => write!(f, "s3:Replication:OperationReplicatedAfterThreshold"),
-            Event::Unknown(value) => write!(f, "{}", value),
+            Event::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

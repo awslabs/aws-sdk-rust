@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CancelTimerFailedCause {
         match self {
             CancelTimerFailedCause::OperationNotPermitted => write!(f, "OPERATION_NOT_PERMITTED"),
             CancelTimerFailedCause::TimerIdUnknown => write!(f, "TIMER_ID_UNKNOWN"),
-            CancelTimerFailedCause::Unknown(value) => write!(f, "{}", value),
+            CancelTimerFailedCause::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

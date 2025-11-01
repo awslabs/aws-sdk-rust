@@ -189,7 +189,7 @@ impl ::std::fmt::Display for AnsweringMachineDetectionStatus {
             AnsweringMachineDetectionStatus::Undetected => write!(f, "UNDETECTED"),
             AnsweringMachineDetectionStatus::VoicemailBeep => write!(f, "VOICEMAIL_BEEP"),
             AnsweringMachineDetectionStatus::VoicemailNoBeep => write!(f, "VOICEMAIL_NO_BEEP"),
-            AnsweringMachineDetectionStatus::Unknown(value) => write!(f, "{}", value),
+            AnsweringMachineDetectionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

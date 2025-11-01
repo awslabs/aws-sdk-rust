@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AuthorizerType {
         match self {
             AuthorizerType::Jwt => write!(f, "JWT"),
             AuthorizerType::Request => write!(f, "REQUEST"),
-            AuthorizerType::Unknown(value) => write!(f, "{}", value),
+            AuthorizerType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -210,7 +210,7 @@ impl ::std::fmt::Display for CodegenGenericDataFieldDataType {
             CodegenGenericDataFieldDataType::Model => write!(f, "Model"),
             CodegenGenericDataFieldDataType::NonModel => write!(f, "NonModel"),
             CodegenGenericDataFieldDataType::String => write!(f, "String"),
-            CodegenGenericDataFieldDataType::Unknown(value) => write!(f, "{}", value),
+            CodegenGenericDataFieldDataType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

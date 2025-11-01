@@ -384,7 +384,7 @@ impl ::std::fmt::Display for ConstraintViolationExceptionReason {
             ConstraintViolationExceptionReason::ServiceAccessNotEnabled => write!(f, "SERVICE_ACCESS_NOT_ENABLED"),
             ConstraintViolationExceptionReason::TagPolicyViolation => write!(f, "TAG_POLICY_VIOLATION"),
             ConstraintViolationExceptionReason::WaitPeriodActive => write!(f, "WAIT_PERIOD_ACTIVE"),
-            ConstraintViolationExceptionReason::Unknown(value) => write!(f, "{}", value),
+            ConstraintViolationExceptionReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

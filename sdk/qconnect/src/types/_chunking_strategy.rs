@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ChunkingStrategy {
             ChunkingStrategy::Hierarchical => write!(f, "HIERARCHICAL"),
             ChunkingStrategy::None => write!(f, "NONE"),
             ChunkingStrategy::Semantic => write!(f, "SEMANTIC"),
-            ChunkingStrategy::Unknown(value) => write!(f, "{}", value),
+            ChunkingStrategy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -189,7 +189,7 @@ impl ::std::fmt::Display for H265CodecLevel {
             H265CodecLevel::Level6 => write!(f, "LEVEL_6"),
             H265CodecLevel::Level61 => write!(f, "LEVEL_6_1"),
             H265CodecLevel::Level62 => write!(f, "LEVEL_6_2"),
-            H265CodecLevel::Unknown(value) => write!(f, "{}", value),
+            H265CodecLevel::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

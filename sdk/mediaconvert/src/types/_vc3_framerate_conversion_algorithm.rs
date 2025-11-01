@@ -114,7 +114,7 @@ impl ::std::fmt::Display for Vc3FramerateConversionAlgorithm {
             Vc3FramerateConversionAlgorithm::Frameformer => write!(f, "FRAMEFORMER"),
             Vc3FramerateConversionAlgorithm::Interpolate => write!(f, "INTERPOLATE"),
             Vc3FramerateConversionAlgorithm::MaintainFrameCount => write!(f, "MAINTAIN_FRAME_COUNT"),
-            Vc3FramerateConversionAlgorithm::Unknown(value) => write!(f, "{}", value),
+            Vc3FramerateConversionAlgorithm::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

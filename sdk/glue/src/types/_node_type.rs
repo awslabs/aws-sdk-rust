@@ -108,7 +108,7 @@ impl ::std::fmt::Display for NodeType {
             NodeType::Crawler => write!(f, "CRAWLER"),
             NodeType::Job => write!(f, "JOB"),
             NodeType::Trigger => write!(f, "TRIGGER"),
-            NodeType::Unknown(value) => write!(f, "{}", value),
+            NodeType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

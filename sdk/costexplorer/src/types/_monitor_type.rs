@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MonitorType {
         match self {
             MonitorType::Custom => write!(f, "CUSTOM"),
             MonitorType::Dimensional => write!(f, "DIMENSIONAL"),
-            MonitorType::Unknown(value) => write!(f, "{}", value),
+            MonitorType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

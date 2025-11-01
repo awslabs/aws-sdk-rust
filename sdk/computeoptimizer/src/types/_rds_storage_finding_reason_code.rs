@@ -140,7 +140,7 @@ impl ::std::fmt::Display for RdsStorageFindingReasonCode {
             RdsStorageFindingReasonCode::EbsVolumeThroughputOverProvisioned => write!(f, "EBSVolumeThroughputOverprovisioned"),
             RdsStorageFindingReasonCode::EbsVolumeThroughputUnderProvisioned => write!(f, "EBSVolumeThroughputUnderprovisioned"),
             RdsStorageFindingReasonCode::NewGenerationStorageTypeAvailable => write!(f, "NewGenerationStorageTypeAvailable"),
-            RdsStorageFindingReasonCode::Unknown(value) => write!(f, "{}", value),
+            RdsStorageFindingReasonCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

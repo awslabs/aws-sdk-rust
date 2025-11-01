@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Scte35NoRegionalBlackoutFlag {
         match self {
             Scte35NoRegionalBlackoutFlag::NoRegionalBlackout => write!(f, "NO_REGIONAL_BLACKOUT"),
             Scte35NoRegionalBlackoutFlag::RegionalBlackout => write!(f, "REGIONAL_BLACKOUT"),
-            Scte35NoRegionalBlackoutFlag::Unknown(value) => write!(f, "{}", value),
+            Scte35NoRegionalBlackoutFlag::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -196,7 +196,7 @@ impl ::std::fmt::Display for KeyAlgorithm {
             KeyAlgorithm::Rsa4096 => write!(f, "RSA_4096"),
             KeyAlgorithm::Tdes2Key => write!(f, "TDES_2KEY"),
             KeyAlgorithm::Tdes3Key => write!(f, "TDES_3KEY"),
-            KeyAlgorithm::Unknown(value) => write!(f, "{}", value),
+            KeyAlgorithm::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

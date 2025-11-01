@@ -108,7 +108,7 @@ impl ::std::fmt::Display for VpcConnectionAvailabilityStatus {
             VpcConnectionAvailabilityStatus::Available => write!(f, "AVAILABLE"),
             VpcConnectionAvailabilityStatus::PartiallyAvailable => write!(f, "PARTIALLY_AVAILABLE"),
             VpcConnectionAvailabilityStatus::Unavailable => write!(f, "UNAVAILABLE"),
-            VpcConnectionAvailabilityStatus::Unknown(value) => write!(f, "{}", value),
+            VpcConnectionAvailabilityStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

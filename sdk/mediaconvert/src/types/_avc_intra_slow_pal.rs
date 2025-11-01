@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AvcIntraSlowPal {
         match self {
             AvcIntraSlowPal::Disabled => write!(f, "DISABLED"),
             AvcIntraSlowPal::Enabled => write!(f, "ENABLED"),
-            AvcIntraSlowPal::Unknown(value) => write!(f, "{}", value),
+            AvcIntraSlowPal::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

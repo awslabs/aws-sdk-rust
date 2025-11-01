@@ -114,7 +114,7 @@ impl ::std::fmt::Display for LegalHoldStatus {
             LegalHoldStatus::Canceled => write!(f, "CANCELED"),
             LegalHoldStatus::Canceling => write!(f, "CANCELING"),
             LegalHoldStatus::Creating => write!(f, "CREATING"),
-            LegalHoldStatus::Unknown(value) => write!(f, "{}", value),
+            LegalHoldStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

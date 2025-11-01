@@ -126,7 +126,7 @@ impl ::std::fmt::Display for DateComparisonType {
             DateComparisonType::GreaterThanOrEqualTo => write!(f, "GREATER_THAN_OR_EQUAL_TO"),
             DateComparisonType::LessThan => write!(f, "LESS_THAN"),
             DateComparisonType::LessThanOrEqualTo => write!(f, "LESS_THAN_OR_EQUAL_TO"),
-            DateComparisonType::Unknown(value) => write!(f, "{}", value),
+            DateComparisonType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

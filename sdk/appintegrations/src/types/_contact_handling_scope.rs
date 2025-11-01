@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ContactHandlingScope {
         match self {
             ContactHandlingScope::CrossContacts => write!(f, "CROSS_CONTACTS"),
             ContactHandlingScope::PerContact => write!(f, "PER_CONTACT"),
-            ContactHandlingScope::Unknown(value) => write!(f, "{}", value),
+            ContactHandlingScope::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

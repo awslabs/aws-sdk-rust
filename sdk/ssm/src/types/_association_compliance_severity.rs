@@ -120,7 +120,7 @@ impl ::std::fmt::Display for AssociationComplianceSeverity {
             AssociationComplianceSeverity::Low => write!(f, "LOW"),
             AssociationComplianceSeverity::Medium => write!(f, "MEDIUM"),
             AssociationComplianceSeverity::Unspecified => write!(f, "UNSPECIFIED"),
-            AssociationComplianceSeverity::Unknown(value) => write!(f, "{}", value),
+            AssociationComplianceSeverity::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

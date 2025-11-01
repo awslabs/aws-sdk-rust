@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AnalyticsNodeType {
         match self {
             AnalyticsNodeType::Exit => write!(f, "Exit"),
             AnalyticsNodeType::Inner => write!(f, "Inner"),
-            AnalyticsNodeType::Unknown(value) => write!(f, "{}", value),
+            AnalyticsNodeType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

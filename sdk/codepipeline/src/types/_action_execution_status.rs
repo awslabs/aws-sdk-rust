@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ActionExecutionStatus {
             ActionExecutionStatus::Failed => write!(f, "Failed"),
             ActionExecutionStatus::InProgress => write!(f, "InProgress"),
             ActionExecutionStatus::Succeeded => write!(f, "Succeeded"),
-            ActionExecutionStatus::Unknown(value) => write!(f, "{}", value),
+            ActionExecutionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

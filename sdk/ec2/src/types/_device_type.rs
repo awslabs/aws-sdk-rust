@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DeviceType {
         match self {
             DeviceType::Ebs => write!(f, "ebs"),
             DeviceType::InstanceStore => write!(f, "instance-store"),
-            DeviceType::Unknown(value) => write!(f, "{}", value),
+            DeviceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

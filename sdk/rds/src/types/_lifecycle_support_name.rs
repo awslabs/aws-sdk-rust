@@ -102,7 +102,7 @@ impl ::std::fmt::Display for LifecycleSupportName {
         match self {
             LifecycleSupportName::OpenSourceRdsExtendedSupport => write!(f, "open-source-rds-extended-support"),
             LifecycleSupportName::OpenSourceRdsStandardSupport => write!(f, "open-source-rds-standard-support"),
-            LifecycleSupportName::Unknown(value) => write!(f, "{}", value),
+            LifecycleSupportName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

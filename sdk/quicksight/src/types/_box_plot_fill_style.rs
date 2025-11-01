@@ -102,7 +102,7 @@ impl ::std::fmt::Display for BoxPlotFillStyle {
         match self {
             BoxPlotFillStyle::Solid => write!(f, "SOLID"),
             BoxPlotFillStyle::Transparent => write!(f, "TRANSPARENT"),
-            BoxPlotFillStyle::Unknown(value) => write!(f, "{}", value),
+            BoxPlotFillStyle::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

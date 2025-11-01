@@ -108,7 +108,7 @@ impl ::std::fmt::Display for StringComparisonType {
             StringComparisonType::Contains => write!(f, "CONTAINS"),
             StringComparisonType::Exact => write!(f, "EXACT"),
             StringComparisonType::StartsWith => write!(f, "STARTS_WITH"),
-            StringComparisonType::Unknown(value) => write!(f, "{}", value),
+            StringComparisonType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

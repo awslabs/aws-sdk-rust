@@ -385,7 +385,7 @@ impl ::std::fmt::Display for LanguageCode {
             LanguageCode::SvSe => write!(f, "sv-SE"),
             LanguageCode::TrTr => write!(f, "tr-TR"),
             LanguageCode::YueCn => write!(f, "yue-CN"),
-            LanguageCode::Unknown(value) => write!(f, "{}", value),
+            LanguageCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

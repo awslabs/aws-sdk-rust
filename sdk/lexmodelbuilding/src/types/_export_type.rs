@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ExportType {
         match self {
             ExportType::AlexaSkillsKit => write!(f, "ALEXA_SKILLS_KIT"),
             ExportType::Lex => write!(f, "LEX"),
-            ExportType::Unknown(value) => write!(f, "{}", value),
+            ExportType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

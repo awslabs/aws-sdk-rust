@@ -108,7 +108,7 @@ impl ::std::fmt::Display for RuleBasedMatchingStatus {
             RuleBasedMatchingStatus::Active => write!(f, "ACTIVE"),
             RuleBasedMatchingStatus::InProgress => write!(f, "IN_PROGRESS"),
             RuleBasedMatchingStatus::Pending => write!(f, "PENDING"),
-            RuleBasedMatchingStatus::Unknown(value) => write!(f, "{}", value),
+            RuleBasedMatchingStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

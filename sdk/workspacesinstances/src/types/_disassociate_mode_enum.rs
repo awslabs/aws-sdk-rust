@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DisassociateModeEnum {
         match self {
             DisassociateModeEnum::Force => write!(f, "FORCE"),
             DisassociateModeEnum::NoForce => write!(f, "NO_FORCE"),
-            DisassociateModeEnum::Unknown(value) => write!(f, "{}", value),
+            DisassociateModeEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for NodeUpdateInitiatedBy {
         match self {
             NodeUpdateInitiatedBy::Customer => write!(f, "customer"),
             NodeUpdateInitiatedBy::System => write!(f, "system"),
-            NodeUpdateInitiatedBy::Unknown(value) => write!(f, "{}", value),
+            NodeUpdateInitiatedBy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

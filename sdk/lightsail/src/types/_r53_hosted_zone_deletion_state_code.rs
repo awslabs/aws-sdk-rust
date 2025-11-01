@@ -114,7 +114,7 @@ impl ::std::fmt::Display for R53HostedZoneDeletionStateCode {
             R53HostedZoneDeletionStateCode::Pending => write!(f, "PENDING"),
             R53HostedZoneDeletionStateCode::Started => write!(f, "STARTED"),
             R53HostedZoneDeletionStateCode::Succeeded => write!(f, "SUCCEEDED"),
-            R53HostedZoneDeletionStateCode::Unknown(value) => write!(f, "{}", value),
+            R53HostedZoneDeletionStateCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

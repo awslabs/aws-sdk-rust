@@ -188,6 +188,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeletePerfor
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::delete_performance_analysis_report::DeletePerformanceAnalysisReportInput,
                 output: &mut ::std::string::String,

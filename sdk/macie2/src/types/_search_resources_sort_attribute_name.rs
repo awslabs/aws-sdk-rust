@@ -119,7 +119,7 @@ impl ::std::fmt::Display for SearchResourcesSortAttributeName {
             SearchResourcesSortAttributeName::ResourceName => write!(f, "RESOURCE_NAME"),
             SearchResourcesSortAttributeName::S3ClassifiableObjectCount => write!(f, "S3_CLASSIFIABLE_OBJECT_COUNT"),
             SearchResourcesSortAttributeName::S3ClassifiableSizeInBytes => write!(f, "S3_CLASSIFIABLE_SIZE_IN_BYTES"),
-            SearchResourcesSortAttributeName::Unknown(value) => write!(f, "{}", value),
+            SearchResourcesSortAttributeName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

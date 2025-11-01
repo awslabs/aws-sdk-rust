@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ResourceScanStatus {
             ResourceScanStatus::Expired => write!(f, "EXPIRED"),
             ResourceScanStatus::Failed => write!(f, "FAILED"),
             ResourceScanStatus::InProgress => write!(f, "IN_PROGRESS"),
-            ResourceScanStatus::Unknown(value) => write!(f, "{}", value),
+            ResourceScanStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

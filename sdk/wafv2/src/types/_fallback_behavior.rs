@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FallbackBehavior {
         match self {
             FallbackBehavior::Match => write!(f, "MATCH"),
             FallbackBehavior::NoMatch => write!(f, "NO_MATCH"),
-            FallbackBehavior::Unknown(value) => write!(f, "{}", value),
+            FallbackBehavior::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

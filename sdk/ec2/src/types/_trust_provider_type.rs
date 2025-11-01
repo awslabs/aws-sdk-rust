@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TrustProviderType {
         match self {
             TrustProviderType::Device => write!(f, "device"),
             TrustProviderType::User => write!(f, "user"),
-            TrustProviderType::Unknown(value) => write!(f, "{}", value),
+            TrustProviderType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

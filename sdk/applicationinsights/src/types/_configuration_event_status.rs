@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ConfigurationEventStatus {
             ConfigurationEventStatus::Error => write!(f, "ERROR"),
             ConfigurationEventStatus::Info => write!(f, "INFO"),
             ConfigurationEventStatus::Warn => write!(f, "WARN"),
-            ConfigurationEventStatus::Unknown(value) => write!(f, "{}", value),
+            ConfigurationEventStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

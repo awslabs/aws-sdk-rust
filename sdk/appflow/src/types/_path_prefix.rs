@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PathPrefix {
         match self {
             PathPrefix::ExecutionId => write!(f, "EXECUTION_ID"),
             PathPrefix::SchemaVersion => write!(f, "SCHEMA_VERSION"),
-            PathPrefix::Unknown(value) => write!(f, "{}", value),
+            PathPrefix::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

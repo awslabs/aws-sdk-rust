@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ClientBroker {
             ClientBroker::Plaintext => write!(f, "PLAINTEXT"),
             ClientBroker::Tls => write!(f, "TLS"),
             ClientBroker::TlsPlaintext => write!(f, "TLS_PLAINTEXT"),
-            ClientBroker::Unknown(value) => write!(f, "{}", value),
+            ClientBroker::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

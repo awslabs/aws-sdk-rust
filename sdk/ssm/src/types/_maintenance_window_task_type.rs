@@ -114,7 +114,7 @@ impl ::std::fmt::Display for MaintenanceWindowTaskType {
             MaintenanceWindowTaskType::Lambda => write!(f, "LAMBDA"),
             MaintenanceWindowTaskType::RunCommand => write!(f, "RUN_COMMAND"),
             MaintenanceWindowTaskType::StepFunctions => write!(f, "STEP_FUNCTIONS"),
-            MaintenanceWindowTaskType::Unknown(value) => write!(f, "{}", value),
+            MaintenanceWindowTaskType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for VideoSelectorColorSpaceUsage {
         match self {
             VideoSelectorColorSpaceUsage::Fallback => write!(f, "FALLBACK"),
             VideoSelectorColorSpaceUsage::Force => write!(f, "FORCE"),
-            VideoSelectorColorSpaceUsage::Unknown(value) => write!(f, "{}", value),
+            VideoSelectorColorSpaceUsage::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

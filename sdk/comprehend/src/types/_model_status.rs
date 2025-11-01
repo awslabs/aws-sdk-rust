@@ -147,7 +147,7 @@ impl ::std::fmt::Display for ModelStatus {
             ModelStatus::Trained => write!(f, "TRAINED"),
             ModelStatus::TrainedWithWarning => write!(f, "TRAINED_WITH_WARNING"),
             ModelStatus::Training => write!(f, "TRAINING"),
-            ModelStatus::Unknown(value) => write!(f, "{}", value),
+            ModelStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

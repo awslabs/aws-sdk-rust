@@ -108,7 +108,7 @@ impl ::std::fmt::Display for UsageLimitPeriod {
             UsageLimitPeriod::Daily => write!(f, "daily"),
             UsageLimitPeriod::Monthly => write!(f, "monthly"),
             UsageLimitPeriod::Weekly => write!(f, "weekly"),
-            UsageLimitPeriod::Unknown(value) => write!(f, "{}", value),
+            UsageLimitPeriod::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

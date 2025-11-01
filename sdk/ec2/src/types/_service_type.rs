@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ServiceType {
             ServiceType::Gateway => write!(f, "Gateway"),
             ServiceType::GatewayLoadBalancer => write!(f, "GatewayLoadBalancer"),
             ServiceType::Interface => write!(f, "Interface"),
-            ServiceType::Unknown(value) => write!(f, "{}", value),
+            ServiceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

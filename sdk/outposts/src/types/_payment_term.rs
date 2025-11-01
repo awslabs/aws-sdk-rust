@@ -108,7 +108,7 @@ impl ::std::fmt::Display for PaymentTerm {
             PaymentTerm::FiveYears => write!(f, "FIVE_YEARS"),
             PaymentTerm::OneYear => write!(f, "ONE_YEAR"),
             PaymentTerm::ThreeYears => write!(f, "THREE_YEARS"),
-            PaymentTerm::Unknown(value) => write!(f, "{}", value),
+            PaymentTerm::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

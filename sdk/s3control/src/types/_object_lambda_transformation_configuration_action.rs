@@ -116,7 +116,7 @@ impl ::std::fmt::Display for ObjectLambdaTransformationConfigurationAction {
             ObjectLambdaTransformationConfigurationAction::HeadObject => write!(f, "HeadObject"),
             ObjectLambdaTransformationConfigurationAction::ListObjects => write!(f, "ListObjects"),
             ObjectLambdaTransformationConfigurationAction::ListObjectsV2 => write!(f, "ListObjectsV2"),
-            ObjectLambdaTransformationConfigurationAction::Unknown(value) => write!(f, "{}", value),
+            ObjectLambdaTransformationConfigurationAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

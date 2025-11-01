@@ -140,7 +140,7 @@ impl ::std::fmt::Display for CaseStatus {
             CaseStatus::PostIncidentActivities => write!(f, "Post-incident Activities"),
             CaseStatus::ReadyToClose => write!(f, "Ready to Close"),
             CaseStatus::Submitted => write!(f, "Submitted"),
-            CaseStatus::Unknown(value) => write!(f, "{}", value),
+            CaseStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RoleType {
         match self {
             RoleType::ProcessOwner => write!(f, "PROCESS_OWNER"),
             RoleType::ResourceOwner => write!(f, "RESOURCE_OWNER"),
-            RoleType::Unknown(value) => write!(f, "{}", value),
+            RoleType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -126,7 +126,7 @@ impl ::std::fmt::Display for ResolverEndpointStatus {
             ResolverEndpointStatus::Deleting => write!(f, "DELETING"),
             ResolverEndpointStatus::Operational => write!(f, "OPERATIONAL"),
             ResolverEndpointStatus::Updating => write!(f, "UPDATING"),
-            ResolverEndpointStatus::Unknown(value) => write!(f, "{}", value),
+            ResolverEndpointStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

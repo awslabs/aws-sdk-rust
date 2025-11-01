@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DataSourceStatus {
         match self {
             DataSourceStatus::Disabled => write!(f, "DISABLED"),
             DataSourceStatus::Enabled => write!(f, "ENABLED"),
-            DataSourceStatus::Unknown(value) => write!(f, "{}", value),
+            DataSourceStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

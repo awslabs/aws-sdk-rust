@@ -126,7 +126,7 @@ impl ::std::fmt::Display for DeviceStatus {
             DeviceStatus::Failed => write!(f, "FAILED"),
             DeviceStatus::Pending => write!(f, "PENDING"),
             DeviceStatus::Succeeded => write!(f, "SUCCEEDED"),
-            DeviceStatus::Unknown(value) => write!(f, "{}", value),
+            DeviceStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -96,7 +96,7 @@ impl ::std::fmt::Display for CapacityReservationPreference {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             CapacityReservationPreference::CapacityReservationsOnly => write!(f, "capacity-reservations-only"),
-            CapacityReservationPreference::Unknown(value) => write!(f, "{}", value),
+            CapacityReservationPreference::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

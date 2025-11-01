@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DvbSubtitleApplyFontColor {
         match self {
             DvbSubtitleApplyFontColor::AllText => write!(f, "ALL_TEXT"),
             DvbSubtitleApplyFontColor::WhiteTextOnly => write!(f, "WHITE_TEXT_ONLY"),
-            DvbSubtitleApplyFontColor::Unknown(value) => write!(f, "{}", value),
+            DvbSubtitleApplyFontColor::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

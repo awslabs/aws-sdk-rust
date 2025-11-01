@@ -224,7 +224,7 @@ impl ::std::fmt::Display for DataSourceType {
             DataSourceType::Template => write!(f, "TEMPLATE"),
             DataSourceType::Webcrawler => write!(f, "WEBCRAWLER"),
             DataSourceType::Workdocs => write!(f, "WORKDOCS"),
-            DataSourceType::Unknown(value) => write!(f, "{}", value),
+            DataSourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

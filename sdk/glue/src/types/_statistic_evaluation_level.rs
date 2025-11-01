@@ -108,7 +108,7 @@ impl ::std::fmt::Display for StatisticEvaluationLevel {
             StatisticEvaluationLevel::Column => write!(f, "Column"),
             StatisticEvaluationLevel::Dataset => write!(f, "Dataset"),
             StatisticEvaluationLevel::Multicolumn => write!(f, "Multicolumn"),
-            StatisticEvaluationLevel::Unknown(value) => write!(f, "{}", value),
+            StatisticEvaluationLevel::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

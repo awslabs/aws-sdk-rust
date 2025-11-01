@@ -140,7 +140,7 @@ impl ::std::fmt::Display for JobStatus {
             JobStatus::Stopped => write!(f, "STOPPED"),
             JobStatus::StopRequested => write!(f, "STOP_REQUESTED"),
             JobStatus::Submitted => write!(f, "SUBMITTED"),
-            JobStatus::Unknown(value) => write!(f, "{}", value),
+            JobStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

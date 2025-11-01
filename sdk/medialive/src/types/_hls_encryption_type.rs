@@ -102,7 +102,7 @@ impl ::std::fmt::Display for HlsEncryptionType {
         match self {
             HlsEncryptionType::Aes128 => write!(f, "AES128"),
             HlsEncryptionType::SampleAes => write!(f, "SAMPLE_AES"),
-            HlsEncryptionType::Unknown(value) => write!(f, "{}", value),
+            HlsEncryptionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

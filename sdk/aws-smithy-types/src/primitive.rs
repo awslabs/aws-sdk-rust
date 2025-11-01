@@ -117,14 +117,14 @@ enum Inner {
 impl fmt::Debug for Inner {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         match self {
-            Self::Bool(v) => write!(f, "Bool({})", v),
-            Self::I8(v, _) => write!(f, "I8({})", v),
-            Self::I16(v, _) => write!(f, "I16({})", v),
-            Self::I32(v, _) => write!(f, "I32({})", v),
-            Self::I64(v, _) => write!(f, "I64({})", v),
-            Self::U64(v, _) => write!(f, "U64({})", v),
-            Self::F32(v, _) => write!(f, "F32({})", v),
-            Self::F64(v, _) => write!(f, "F64({})", v),
+            Self::Bool(v) => write!(f, "Bool({v})"),
+            Self::I8(v, _) => write!(f, "I8({v})"),
+            Self::I16(v, _) => write!(f, "I16({v})"),
+            Self::I32(v, _) => write!(f, "I32({v})"),
+            Self::I64(v, _) => write!(f, "I64({v})"),
+            Self::U64(v, _) => write!(f, "U64({v})"),
+            Self::F32(v, _) => write!(f, "F32({v})"),
+            Self::F64(v, _) => write!(f, "F64({v})"),
         }
     }
 }

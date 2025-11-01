@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AudioNormalizationLoudnessLogging {
         match self {
             AudioNormalizationLoudnessLogging::DontLog => write!(f, "DONT_LOG"),
             AudioNormalizationLoudnessLogging::Log => write!(f, "LOG"),
-            AudioNormalizationLoudnessLogging::Unknown(value) => write!(f, "{}", value),
+            AudioNormalizationLoudnessLogging::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

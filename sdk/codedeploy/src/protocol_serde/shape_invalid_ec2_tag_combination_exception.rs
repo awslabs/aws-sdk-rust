@@ -24,8 +24,7 @@ pub(crate) fn de_invalid_ec2_tag_combination_exception_json_err(
             },
             other => {
                 return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                    "expected object key or end object, found: {:?}",
-                    other
+                    "expected object key or end object, found: {other:?}"
                 )))
             }
         }

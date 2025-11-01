@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ResourceCatalogSortBy {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ResourceCatalogSortBy::CreationTime => write!(f, "CreationTime"),
-            ResourceCatalogSortBy::Unknown(value) => write!(f, "{}", value),
+            ResourceCatalogSortBy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

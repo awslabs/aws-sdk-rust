@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AutoRefreshMode {
         match self {
             AutoRefreshMode::Disabled => write!(f, "DISABLED"),
             AutoRefreshMode::Enabled => write!(f, "ENABLED"),
-            AutoRefreshMode::Unknown(value) => write!(f, "{}", value),
+            AutoRefreshMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

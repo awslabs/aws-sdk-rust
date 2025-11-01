@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ServiceAuthorization {
         match self {
             ServiceAuthorization::Disabled => write!(f, "Disabled"),
             ServiceAuthorization::Enabled => write!(f, "Enabled"),
-            ServiceAuthorization::Unknown(value) => write!(f, "{}", value),
+            ServiceAuthorization::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

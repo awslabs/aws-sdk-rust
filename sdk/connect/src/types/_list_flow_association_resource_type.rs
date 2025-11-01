@@ -126,7 +126,7 @@ impl ::std::fmt::Display for ListFlowAssociationResourceType {
             ListFlowAssociationResourceType::OutboundEmail => write!(f, "OUTBOUND_EMAIL"),
             ListFlowAssociationResourceType::VoicePhoneNumber => write!(f, "VOICE_PHONE_NUMBER"),
             ListFlowAssociationResourceType::WhatsappMessagingPhoneNumber => write!(f, "WHATSAPP_MESSAGING_PHONE_NUMBER"),
-            ListFlowAssociationResourceType::Unknown(value) => write!(f, "{}", value),
+            ListFlowAssociationResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

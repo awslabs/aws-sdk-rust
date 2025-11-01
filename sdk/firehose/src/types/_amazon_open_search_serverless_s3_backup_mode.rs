@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AmazonOpenSearchServerlessS3BackupMode {
         match self {
             AmazonOpenSearchServerlessS3BackupMode::AllDocuments => write!(f, "AllDocuments"),
             AmazonOpenSearchServerlessS3BackupMode::FailedDocumentsOnly => write!(f, "FailedDocumentsOnly"),
-            AmazonOpenSearchServerlessS3BackupMode::Unknown(value) => write!(f, "{}", value),
+            AmazonOpenSearchServerlessS3BackupMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for Alignment {
             Alignment::Center => write!(f, "CENTER"),
             Alignment::Left => write!(f, "LEFT"),
             Alignment::Right => write!(f, "RIGHT"),
-            Alignment::Unknown(value) => write!(f, "{}", value),
+            Alignment::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

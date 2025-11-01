@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ItemType {
         match self {
             ItemType::Pronunciation => write!(f, "pronunciation"),
             ItemType::Punctuation => write!(f, "punctuation"),
-            ItemType::Unknown(value) => write!(f, "{}", value),
+            ItemType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

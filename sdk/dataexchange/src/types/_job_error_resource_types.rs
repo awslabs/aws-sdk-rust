@@ -108,7 +108,7 @@ impl ::std::fmt::Display for JobErrorResourceTypes {
             JobErrorResourceTypes::Asset => write!(f, "ASSET"),
             JobErrorResourceTypes::DataSet => write!(f, "DATA_SET"),
             JobErrorResourceTypes::Revision => write!(f, "REVISION"),
-            JobErrorResourceTypes::Unknown(value) => write!(f, "{}", value),
+            JobErrorResourceTypes::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

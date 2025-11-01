@@ -112,7 +112,7 @@ impl ::std::fmt::Display for ApplicationRestoreType {
             ApplicationRestoreType::RestoreFromCustomSnapshot => write!(f, "RESTORE_FROM_CUSTOM_SNAPSHOT"),
             ApplicationRestoreType::RestoreFromLatestSnapshot => write!(f, "RESTORE_FROM_LATEST_SNAPSHOT"),
             ApplicationRestoreType::SkipRestoreFromSnapshot => write!(f, "SKIP_RESTORE_FROM_SNAPSHOT"),
-            ApplicationRestoreType::Unknown(value) => write!(f, "{}", value),
+            ApplicationRestoreType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ServiceConnectivityType {
         match self {
             ServiceConnectivityType::Ipv4 => write!(f, "ipv4"),
             ServiceConnectivityType::Ipv6 => write!(f, "ipv6"),
-            ServiceConnectivityType::Unknown(value) => write!(f, "{}", value),
+            ServiceConnectivityType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -843,7 +843,7 @@ impl ::std::fmt::Display for ExportableRdsdbField {
             ExportableRdsdbField::UtilizationMetricsWriteIopsEphemeralStorageMaximum => {
                 write!(f, "UtilizationMetricsWriteIOPSEphemeralStorageMaximum")
             }
-            ExportableRdsdbField::Unknown(value) => write!(f, "{}", value),
+            ExportableRdsdbField::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

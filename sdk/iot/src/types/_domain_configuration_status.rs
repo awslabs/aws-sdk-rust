@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DomainConfigurationStatus {
         match self {
             DomainConfigurationStatus::Disabled => write!(f, "DISABLED"),
             DomainConfigurationStatus::Enabled => write!(f, "ENABLED"),
-            DomainConfigurationStatus::Unknown(value) => write!(f, "{}", value),
+            DomainConfigurationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

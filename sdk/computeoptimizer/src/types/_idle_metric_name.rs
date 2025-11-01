@@ -154,7 +154,7 @@ impl ::std::fmt::Display for IdleMetricName {
             IdleMetricName::NetworkOutBytesPerSecond => write!(f, "NetworkOutBytesPerSecond"),
             IdleMetricName::VolumeReadOpsPerSecond => write!(f, "VolumeReadOpsPerSecond"),
             IdleMetricName::VolumeWriteOpsPerSecond => write!(f, "VolumeWriteOpsPerSecond"),
-            IdleMetricName::Unknown(value) => write!(f, "{}", value),
+            IdleMetricName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

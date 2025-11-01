@@ -108,7 +108,7 @@ impl ::std::fmt::Display for UpdateRuntimeOn {
             UpdateRuntimeOn::Auto => write!(f, "Auto"),
             UpdateRuntimeOn::FunctionUpdate => write!(f, "FunctionUpdate"),
             UpdateRuntimeOn::Manual => write!(f, "Manual"),
-            UpdateRuntimeOn::Unknown(value) => write!(f, "{}", value),
+            UpdateRuntimeOn::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

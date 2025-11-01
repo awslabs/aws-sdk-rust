@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CheckNoNewAccessResult {
         match self {
             CheckNoNewAccessResult::Fail => write!(f, "FAIL"),
             CheckNoNewAccessResult::Pass => write!(f, "PASS"),
-            CheckNoNewAccessResult::Unknown(value) => write!(f, "{}", value),
+            CheckNoNewAccessResult::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

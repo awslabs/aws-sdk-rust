@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RebootInputDeviceForce {
         match self {
             RebootInputDeviceForce::No => write!(f, "NO"),
             RebootInputDeviceForce::Yes => write!(f, "YES"),
-            RebootInputDeviceForce::Unknown(value) => write!(f, "{}", value),
+            RebootInputDeviceForce::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

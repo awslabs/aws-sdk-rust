@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TableBorderStyle {
         match self {
             TableBorderStyle::None => write!(f, "NONE"),
             TableBorderStyle::Solid => write!(f, "SOLID"),
-            TableBorderStyle::Unknown(value) => write!(f, "{}", value),
+            TableBorderStyle::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

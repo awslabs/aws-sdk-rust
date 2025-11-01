@@ -133,7 +133,7 @@ impl ::std::fmt::Display for StackRefactorStatus {
             StackRefactorStatus::DeleteComplete => write!(f, "DELETE_COMPLETE"),
             StackRefactorStatus::DeleteFailed => write!(f, "DELETE_FAILED"),
             StackRefactorStatus::DeleteInProgress => write!(f, "DELETE_IN_PROGRESS"),
-            StackRefactorStatus::Unknown(value) => write!(f, "{}", value),
+            StackRefactorStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

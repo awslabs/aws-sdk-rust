@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RouteServerRouteStatus {
         match self {
             RouteServerRouteStatus::InFib => write!(f, "in-fib"),
             RouteServerRouteStatus::InRib => write!(f, "in-rib"),
-            RouteServerRouteStatus::Unknown(value) => write!(f, "{}", value),
+            RouteServerRouteStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

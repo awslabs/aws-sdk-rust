@@ -126,7 +126,7 @@ impl ::std::fmt::Display for PackageVersionStatus {
             PackageVersionStatus::Published => write!(f, "Published"),
             PackageVersionStatus::Unfinished => write!(f, "Unfinished"),
             PackageVersionStatus::Unlisted => write!(f, "Unlisted"),
-            PackageVersionStatus::Unknown(value) => write!(f, "{}", value),
+            PackageVersionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

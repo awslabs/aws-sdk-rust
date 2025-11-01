@@ -20,6 +20,69 @@ pub(super) fn resolve_endpoint(
     let use_fips = &_params.use_fips;
     #[allow(unused_variables)]
     let endpoint = &_params.endpoint;
+    if !(endpoint.is_some()) {
+        if (*use_fips) == (false) {
+            if (*use_dual_stack) == (true) {
+                #[allow(unused_variables)]
+                if let Some(region) = region {
+                    #[allow(unused_variables)]
+                    if let Some(partition_result) = partition_resolver.resolve_partition(region.as_ref() as &str, _diagnostic_collector) {
+                        if (partition_result.name()) == ("aws") {
+                            return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
+                                .url("https://savingsplans.global.api.aws".to_string())
+                                .property(
+                                    "authSchemes",
+                                    vec![::aws_smithy_types::Document::from({
+                                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                                        out.insert("name".to_string(), "sigv4".to_string().into());
+                                        out.insert("signingName".to_string(), "savingsplans".to_string().into());
+                                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
+                                        out
+                                    })],
+                                )
+                                .build());
+                        }
+                        if (partition_result.supports_dual_stack()) == (true) {
+                            return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
+                                .url({
+                                    let mut out = String::new();
+                                    out.push_str("https://savingsplans.");
+                                    #[allow(clippy::needless_borrow)]
+                                    out.push_str(&region.as_ref() as &str);
+                                    out.push('.');
+                                    #[allow(clippy::needless_borrow)]
+                                    out.push_str(&partition_result.dual_stack_dns_suffix());
+                                    out
+                                })
+                                .build());
+                        }
+                        return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                            "DualStack is enabled but this partition does not support DualStack".to_string(),
+                        ));
+                    }
+                }
+                if !(region.is_some()) {
+                    return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
+                        .url("https://savingsplans.global.api.aws".to_string())
+                        .property(
+                            "authSchemes",
+                            vec![::aws_smithy_types::Document::from({
+                                let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                                out.insert("name".to_string(), "sigv4".to_string().into());
+                                out.insert("signingName".to_string(), "savingsplans".to_string().into());
+                                out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
+                                out
+                            })],
+                        )
+                        .build());
+                }
+                #[allow(unreachable_code)]
+                return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(format!(
+                    "No rules matched these parameters. This is a bug. {_params:?}"
+                )));
+            }
+        }
+    }
     #[allow(unused_variables)]
     if let Some(endpoint) = endpoint {
         if (*use_fips) == (true) {
@@ -133,8 +196,7 @@ pub(super) fn resolve_endpoint(
         }
         #[allow(unreachable_code)]
         return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(format!(
-            "No rules matched these parameters. This is a bug. {:?}",
-            _params
+            "No rules matched these parameters. This is a bug. {_params:?}"
         )));
     }
     return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(

@@ -224,7 +224,7 @@ impl ::std::fmt::Display for ReasonCode {
             ReasonCode::ResourceSnapshotJobValidationFailed => write!(f, "ResourceSnapshotJobValidationFailed"),
             ReasonCode::ResourceSnapshotValidationFailed => write!(f, "ResourceSnapshotValidationFailed"),
             ReasonCode::ServiceQuotaExceeded => write!(f, "ServiceQuotaExceeded"),
-            ReasonCode::Unknown(value) => write!(f, "{}", value),
+            ReasonCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for AudienceExportJobStatus {
             AudienceExportJobStatus::CreateFailed => write!(f, "CREATE_FAILED"),
             AudienceExportJobStatus::CreateInProgress => write!(f, "CREATE_IN_PROGRESS"),
             AudienceExportJobStatus::CreatePending => write!(f, "CREATE_PENDING"),
-            AudienceExportJobStatus::Unknown(value) => write!(f, "{}", value),
+            AudienceExportJobStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

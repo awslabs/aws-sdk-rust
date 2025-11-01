@@ -120,7 +120,7 @@ impl ::std::fmt::Display for Status {
             Status::NotBuilt => write!(f, "NOT_BUILT"),
             Status::Ready => write!(f, "READY"),
             Status::ReadyBasicTesting => write!(f, "READY_BASIC_TESTING"),
-            Status::Unknown(value) => write!(f, "{}", value),
+            Status::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

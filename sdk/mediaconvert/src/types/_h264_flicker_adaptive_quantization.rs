@@ -102,7 +102,7 @@ impl ::std::fmt::Display for H264FlickerAdaptiveQuantization {
         match self {
             H264FlickerAdaptiveQuantization::Disabled => write!(f, "DISABLED"),
             H264FlickerAdaptiveQuantization::Enabled => write!(f, "ENABLED"),
-            H264FlickerAdaptiveQuantization::Unknown(value) => write!(f, "{}", value),
+            H264FlickerAdaptiveQuantization::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

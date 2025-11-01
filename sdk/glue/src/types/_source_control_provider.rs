@@ -114,7 +114,7 @@ impl ::std::fmt::Display for SourceControlProvider {
             SourceControlProvider::Bitbucket => write!(f, "BITBUCKET"),
             SourceControlProvider::Github => write!(f, "GITHUB"),
             SourceControlProvider::Gitlab => write!(f, "GITLAB"),
-            SourceControlProvider::Unknown(value) => write!(f, "{}", value),
+            SourceControlProvider::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

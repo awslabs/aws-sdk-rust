@@ -108,7 +108,7 @@ impl ::std::fmt::Display for IpAddressType {
             IpAddressType::DualStack => write!(f, "dualstack"),
             IpAddressType::Ipv4 => write!(f, "ipv4"),
             IpAddressType::Ipv6 => write!(f, "ipv6"),
-            IpAddressType::Unknown(value) => write!(f, "{}", value),
+            IpAddressType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

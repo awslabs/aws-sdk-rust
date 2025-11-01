@@ -108,7 +108,7 @@ impl ::std::fmt::Display for VpnTunnelProvisioningStatus {
             VpnTunnelProvisioningStatus::Available => write!(f, "available"),
             VpnTunnelProvisioningStatus::Failed => write!(f, "failed"),
             VpnTunnelProvisioningStatus::Pending => write!(f, "pending"),
-            VpnTunnelProvisioningStatus::Unknown(value) => write!(f, "{}", value),
+            VpnTunnelProvisioningStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

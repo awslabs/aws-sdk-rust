@@ -224,7 +224,7 @@ impl ::std::fmt::Display for PatchFilterKey {
             PatchFilterKey::Security => write!(f, "SECURITY"),
             PatchFilterKey::Severity => write!(f, "SEVERITY"),
             PatchFilterKey::Version => write!(f, "VERSION"),
-            PatchFilterKey::Unknown(value) => write!(f, "{}", value),
+            PatchFilterKey::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

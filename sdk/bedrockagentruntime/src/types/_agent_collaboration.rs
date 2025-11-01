@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AgentCollaboration {
             AgentCollaboration::Disabled => write!(f, "DISABLED"),
             AgentCollaboration::Supervisor => write!(f, "SUPERVISOR"),
             AgentCollaboration::SupervisorRouter => write!(f, "SUPERVISOR_ROUTER"),
-            AgentCollaboration::Unknown(value) => write!(f, "{}", value),
+            AgentCollaboration::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

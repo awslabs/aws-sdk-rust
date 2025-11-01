@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ComplianceStatus {
         match self {
             ComplianceStatus::Compliant => write!(f, "COMPLIANT"),
             ComplianceStatus::NonCompliant => write!(f, "NON_COMPLIANT"),
-            ComplianceStatus::Unknown(value) => write!(f, "{}", value),
+            ComplianceStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

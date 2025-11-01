@@ -147,7 +147,7 @@ impl ::std::fmt::Display for NoSuchEntityErrorCode {
             NoSuchEntityErrorCode::ResourceGroupDoesNotExist => write!(f, "RESOURCE_GROUP_DOES_NOT_EXIST"),
             NoSuchEntityErrorCode::RulesPackageDoesNotExist => write!(f, "RULES_PACKAGE_DOES_NOT_EXIST"),
             NoSuchEntityErrorCode::SnsTopicDoesNotExist => write!(f, "SNS_TOPIC_DOES_NOT_EXIST"),
-            NoSuchEntityErrorCode::Unknown(value) => write!(f, "{}", value),
+            NoSuchEntityErrorCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

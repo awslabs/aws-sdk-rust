@@ -114,7 +114,7 @@ impl ::std::fmt::Display for GroupLifecycleEventsStatus {
             GroupLifecycleEventsStatus::Error => write!(f, "ERROR"),
             GroupLifecycleEventsStatus::Inactive => write!(f, "INACTIVE"),
             GroupLifecycleEventsStatus::InProgress => write!(f, "IN_PROGRESS"),
-            GroupLifecycleEventsStatus::Unknown(value) => write!(f, "{}", value),
+            GroupLifecycleEventsStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

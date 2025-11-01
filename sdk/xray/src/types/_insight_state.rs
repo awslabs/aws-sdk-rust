@@ -102,7 +102,7 @@ impl ::std::fmt::Display for InsightState {
         match self {
             InsightState::Active => write!(f, "ACTIVE"),
             InsightState::Closed => write!(f, "CLOSED"),
-            InsightState::Unknown(value) => write!(f, "{}", value),
+            InsightState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PullRequestStatusEnum {
         match self {
             PullRequestStatusEnum::Closed => write!(f, "CLOSED"),
             PullRequestStatusEnum::Open => write!(f, "OPEN"),
-            PullRequestStatusEnum::Unknown(value) => write!(f, "{}", value),
+            PullRequestStatusEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

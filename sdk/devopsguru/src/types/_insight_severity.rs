@@ -108,7 +108,7 @@ impl ::std::fmt::Display for InsightSeverity {
             InsightSeverity::High => write!(f, "HIGH"),
             InsightSeverity::Low => write!(f, "LOW"),
             InsightSeverity::Medium => write!(f, "MEDIUM"),
-            InsightSeverity::Unknown(value) => write!(f, "{}", value),
+            InsightSeverity::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

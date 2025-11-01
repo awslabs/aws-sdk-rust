@@ -108,7 +108,7 @@ impl ::std::fmt::Display for XavcEntropyEncoding {
             XavcEntropyEncoding::Auto => write!(f, "AUTO"),
             XavcEntropyEncoding::Cabac => write!(f, "CABAC"),
             XavcEntropyEncoding::Cavlc => write!(f, "CAVLC"),
-            XavcEntropyEncoding::Unknown(value) => write!(f, "{}", value),
+            XavcEntropyEncoding::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

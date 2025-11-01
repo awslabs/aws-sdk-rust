@@ -120,7 +120,7 @@ impl ::std::fmt::Display for S3AccessPointAttachmentLifecycle {
             S3AccessPointAttachmentLifecycle::Deleting => write!(f, "DELETING"),
             S3AccessPointAttachmentLifecycle::Failed => write!(f, "FAILED"),
             S3AccessPointAttachmentLifecycle::Updating => write!(f, "UPDATING"),
-            S3AccessPointAttachmentLifecycle::Unknown(value) => write!(f, "{}", value),
+            S3AccessPointAttachmentLifecycle::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

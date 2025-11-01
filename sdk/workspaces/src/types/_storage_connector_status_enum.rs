@@ -102,7 +102,7 @@ impl ::std::fmt::Display for StorageConnectorStatusEnum {
         match self {
             StorageConnectorStatusEnum::Disabled => write!(f, "DISABLED"),
             StorageConnectorStatusEnum::Enabled => write!(f, "ENABLED"),
-            StorageConnectorStatusEnum::Unknown(value) => write!(f, "{}", value),
+            StorageConnectorStatusEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

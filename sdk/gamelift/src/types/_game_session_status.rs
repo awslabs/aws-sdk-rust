@@ -120,7 +120,7 @@ impl ::std::fmt::Display for GameSessionStatus {
             GameSessionStatus::Error => write!(f, "ERROR"),
             GameSessionStatus::Terminated => write!(f, "TERMINATED"),
             GameSessionStatus::Terminating => write!(f, "TERMINATING"),
-            GameSessionStatus::Unknown(value) => write!(f, "{}", value),
+            GameSessionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

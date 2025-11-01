@@ -114,7 +114,7 @@ impl ::std::fmt::Display for JoinType {
             JoinType::Left => write!(f, "LEFT"),
             JoinType::Outer => write!(f, "OUTER"),
             JoinType::Right => write!(f, "RIGHT"),
-            JoinType::Unknown(value) => write!(f, "{}", value),
+            JoinType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

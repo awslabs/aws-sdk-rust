@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MsSmoothManifestEncoding {
         match self {
             MsSmoothManifestEncoding::Utf16 => write!(f, "UTF16"),
             MsSmoothManifestEncoding::Utf8 => write!(f, "UTF8"),
-            MsSmoothManifestEncoding::Unknown(value) => write!(f, "{}", value),
+            MsSmoothManifestEncoding::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -126,7 +126,7 @@ impl ::std::fmt::Display for BrandStatus {
             BrandStatus::CreateSucceeded => write!(f, "CREATE_SUCCEEDED"),
             BrandStatus::DeleteFailed => write!(f, "DELETE_FAILED"),
             BrandStatus::DeleteInProgress => write!(f, "DELETE_IN_PROGRESS"),
-            BrandStatus::Unknown(value) => write!(f, "{}", value),
+            BrandStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

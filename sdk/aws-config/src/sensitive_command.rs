@@ -36,7 +36,7 @@ where
         let command = self.0.as_ref();
         match command.find(char::is_whitespace) {
             Some(index) => write!(f, "{} ** arguments redacted **", &command[0..index]),
-            None => write!(f, "{}", command),
+            None => write!(f, "{command}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for Uid {
             Uid::IntValue => write!(f, "INT_VALUE"),
             Uid::Name => write!(f, "NAME"),
             Uid::None => write!(f, "NONE"),
-            Uid::Unknown(value) => write!(f, "{}", value),
+            Uid::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

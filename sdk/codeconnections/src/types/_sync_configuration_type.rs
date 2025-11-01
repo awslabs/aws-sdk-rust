@@ -96,7 +96,7 @@ impl ::std::fmt::Display for SyncConfigurationType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             SyncConfigurationType::CfnStackSync => write!(f, "CFN_STACK_SYNC"),
-            SyncConfigurationType::Unknown(value) => write!(f, "{}", value),
+            SyncConfigurationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

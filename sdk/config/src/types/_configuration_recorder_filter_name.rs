@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ConfigurationRecorderFilterName {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ConfigurationRecorderFilterName::RecordingScope => write!(f, "recordingScope"),
-            ConfigurationRecorderFilterName::Unknown(value) => write!(f, "{}", value),
+            ConfigurationRecorderFilterName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

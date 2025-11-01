@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RuleScopeSelectionMode {
         match self {
             RuleScopeSelectionMode::All => write!(f, "ALL"),
             RuleScopeSelectionMode::Specific => write!(f, "SPECIFIC"),
-            RuleScopeSelectionMode::Unknown(value) => write!(f, "{}", value),
+            RuleScopeSelectionMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

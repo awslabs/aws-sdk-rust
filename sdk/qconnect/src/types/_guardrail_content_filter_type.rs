@@ -124,7 +124,7 @@ impl ::std::fmt::Display for GuardrailContentFilterType {
             GuardrailContentFilterType::PromptAttack => write!(f, "PROMPT_ATTACK"),
             GuardrailContentFilterType::Sexual => write!(f, "SEXUAL"),
             GuardrailContentFilterType::Violence => write!(f, "VIOLENCE"),
-            GuardrailContentFilterType::Unknown(value) => write!(f, "{}", value),
+            GuardrailContentFilterType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

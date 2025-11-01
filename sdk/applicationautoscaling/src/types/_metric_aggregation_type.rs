@@ -108,7 +108,7 @@ impl ::std::fmt::Display for MetricAggregationType {
             MetricAggregationType::Average => write!(f, "Average"),
             MetricAggregationType::Maximum => write!(f, "Maximum"),
             MetricAggregationType::Minimum => write!(f, "Minimum"),
-            MetricAggregationType::Unknown(value) => write!(f, "{}", value),
+            MetricAggregationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

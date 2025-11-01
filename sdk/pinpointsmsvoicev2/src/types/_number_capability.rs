@@ -108,7 +108,7 @@ impl ::std::fmt::Display for NumberCapability {
             NumberCapability::Mms => write!(f, "MMS"),
             NumberCapability::Sms => write!(f, "SMS"),
             NumberCapability::Voice => write!(f, "VOICE"),
-            NumberCapability::Unknown(value) => write!(f, "{}", value),
+            NumberCapability::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

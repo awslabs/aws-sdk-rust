@@ -102,7 +102,7 @@ impl ::std::fmt::Display for IdentityProviderAuthenticationMode {
         match self {
             IdentityProviderAuthenticationMode::IdentityProviderAndDirectory => write!(f, "IDENTITY_PROVIDER_AND_DIRECTORY"),
             IdentityProviderAuthenticationMode::IdentityProviderOnly => write!(f, "IDENTITY_PROVIDER_ONLY"),
-            IdentityProviderAuthenticationMode::Unknown(value) => write!(f, "{}", value),
+            IdentityProviderAuthenticationMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

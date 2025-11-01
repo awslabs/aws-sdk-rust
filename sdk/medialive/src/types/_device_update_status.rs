@@ -108,7 +108,7 @@ impl ::std::fmt::Display for DeviceUpdateStatus {
             DeviceUpdateStatus::NotUpToDate => write!(f, "NOT_UP_TO_DATE"),
             DeviceUpdateStatus::Updating => write!(f, "UPDATING"),
             DeviceUpdateStatus::UpToDate => write!(f, "UP_TO_DATE"),
-            DeviceUpdateStatus::Unknown(value) => write!(f, "{}", value),
+            DeviceUpdateStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

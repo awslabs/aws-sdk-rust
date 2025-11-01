@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MedicalScribeTranscriptItemType {
         match self {
             MedicalScribeTranscriptItemType::Pronunciation => write!(f, "pronunciation"),
             MedicalScribeTranscriptItemType::Punctuation => write!(f, "punctuation"),
-            MedicalScribeTranscriptItemType::Unknown(value) => write!(f, "{}", value),
+            MedicalScribeTranscriptItemType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

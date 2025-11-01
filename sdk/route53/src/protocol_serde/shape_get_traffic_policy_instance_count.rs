@@ -53,8 +53,7 @@ pub fn de_get_traffic_policy_instance_count(
     let start_el = decoder.start_el();
     if !start_el.matches("GetTrafficPolicyInstanceCountResponse") {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "encountered invalid XML root: expected GetTrafficPolicyInstanceCountResponse but got {:?}. This is likely a bug in the SDK.",
-            start_el
+            "encountered invalid XML root: expected GetTrafficPolicyInstanceCountResponse but got {start_el:?}. This is likely a bug in the SDK."
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

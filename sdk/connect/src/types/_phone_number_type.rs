@@ -132,7 +132,7 @@ impl ::std::fmt::Display for PhoneNumberType {
             PhoneNumberType::ThirdPartyTf => write!(f, "THIRD_PARTY_TF"),
             PhoneNumberType::TollFree => write!(f, "TOLL_FREE"),
             PhoneNumberType::Uifn => write!(f, "UIFN"),
-            PhoneNumberType::Unknown(value) => write!(f, "{}", value),
+            PhoneNumberType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

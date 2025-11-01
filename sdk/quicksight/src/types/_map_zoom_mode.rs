@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MapZoomMode {
         match self {
             MapZoomMode::Auto => write!(f, "AUTO"),
             MapZoomMode::Manual => write!(f, "MANUAL"),
-            MapZoomMode::Unknown(value) => write!(f, "{}", value),
+            MapZoomMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -132,7 +132,7 @@ impl ::std::fmt::Display for InputColumnDataType {
             InputColumnDataType::Integer => write!(f, "INTEGER"),
             InputColumnDataType::Json => write!(f, "JSON"),
             InputColumnDataType::String => write!(f, "STRING"),
-            InputColumnDataType::Unknown(value) => write!(f, "{}", value),
+            InputColumnDataType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

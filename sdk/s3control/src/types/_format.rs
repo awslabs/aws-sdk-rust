@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Format {
         match self {
             Format::Csv => write!(f, "CSV"),
             Format::Parquet => write!(f, "Parquet"),
-            Format::Unknown(value) => write!(f, "{}", value),
+            Format::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

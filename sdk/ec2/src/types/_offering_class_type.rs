@@ -102,7 +102,7 @@ impl ::std::fmt::Display for OfferingClassType {
         match self {
             OfferingClassType::Convertible => write!(f, "convertible"),
             OfferingClassType::Standard => write!(f, "standard"),
-            OfferingClassType::Unknown(value) => write!(f, "{}", value),
+            OfferingClassType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

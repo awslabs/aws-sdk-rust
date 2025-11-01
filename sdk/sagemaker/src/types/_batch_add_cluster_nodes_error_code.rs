@@ -102,7 +102,7 @@ impl ::std::fmt::Display for BatchAddClusterNodesErrorCode {
         match self {
             BatchAddClusterNodesErrorCode::InstanceGroupNotFound => write!(f, "InstanceGroupNotFound"),
             BatchAddClusterNodesErrorCode::InvalidInstanceGroupStatus => write!(f, "InvalidInstanceGroupStatus"),
-            BatchAddClusterNodesErrorCode::Unknown(value) => write!(f, "{}", value),
+            BatchAddClusterNodesErrorCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

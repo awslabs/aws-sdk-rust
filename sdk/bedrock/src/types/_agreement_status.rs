@@ -114,7 +114,7 @@ impl ::std::fmt::Display for AgreementStatus {
             AgreementStatus::Error => write!(f, "ERROR"),
             AgreementStatus::NotAvailable => write!(f, "NOT_AVAILABLE"),
             AgreementStatus::Pending => write!(f, "PENDING"),
-            AgreementStatus::Unknown(value) => write!(f, "{}", value),
+            AgreementStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

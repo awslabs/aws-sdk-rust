@@ -52,8 +52,7 @@ pub fn de_describe_trunk_interface_associations(
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeTrunkInterfaceAssociationsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected DescribeTrunkInterfaceAssociationsResponse got {:?}",
-            start_el
+            "invalid root, expected DescribeTrunkInterfaceAssociationsResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

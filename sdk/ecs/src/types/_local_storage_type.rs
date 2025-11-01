@@ -102,7 +102,7 @@ impl ::std::fmt::Display for LocalStorageType {
         match self {
             LocalStorageType::Hdd => write!(f, "hdd"),
             LocalStorageType::Ssd => write!(f, "ssd"),
-            LocalStorageType::Unknown(value) => write!(f, "{}", value),
+            LocalStorageType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

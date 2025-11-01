@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TemplateParameterDataType {
         match self {
             TemplateParameterDataType::Number => write!(f, "NUMBER"),
             TemplateParameterDataType::String => write!(f, "STRING"),
-            TemplateParameterDataType::Unknown(value) => write!(f, "{}", value),
+            TemplateParameterDataType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

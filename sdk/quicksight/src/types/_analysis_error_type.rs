@@ -161,7 +161,7 @@ impl ::std::fmt::Display for AnalysisErrorType {
             AnalysisErrorType::ParameterTypeInvalid => write!(f, "PARAMETER_TYPE_INVALID"),
             AnalysisErrorType::ParameterValueIncompatible => write!(f, "PARAMETER_VALUE_INCOMPATIBLE"),
             AnalysisErrorType::SourceNotFound => write!(f, "SOURCE_NOT_FOUND"),
-            AnalysisErrorType::Unknown(value) => write!(f, "{}", value),
+            AnalysisErrorType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SagemakerServicecatalogStatus {
         match self {
             SagemakerServicecatalogStatus::Disabled => write!(f, "Disabled"),
             SagemakerServicecatalogStatus::Enabled => write!(f, "Enabled"),
-            SagemakerServicecatalogStatus::Unknown(value) => write!(f, "{}", value),
+            SagemakerServicecatalogStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

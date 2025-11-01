@@ -105,7 +105,7 @@ impl ::std::fmt::Display for ResourceOwner {
         match self {
             ResourceOwner::Other => write!(f, "OTHER"),
             ResourceOwner::SelfValue => write!(f, "SELF"),
-            ResourceOwner::Unknown(value) => write!(f, "{}", value),
+            ResourceOwner::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

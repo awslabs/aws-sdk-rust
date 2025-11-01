@@ -102,7 +102,7 @@ impl ::std::fmt::Display for StandardsControlsUpdatable {
         match self {
             StandardsControlsUpdatable::NotReadyForUpdates => write!(f, "NOT_READY_FOR_UPDATES"),
             StandardsControlsUpdatable::ReadyForUpdates => write!(f, "READY_FOR_UPDATES"),
-            StandardsControlsUpdatable::Unknown(value) => write!(f, "{}", value),
+            StandardsControlsUpdatable::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

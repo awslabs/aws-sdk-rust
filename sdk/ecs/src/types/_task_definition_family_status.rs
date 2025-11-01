@@ -108,7 +108,7 @@ impl ::std::fmt::Display for TaskDefinitionFamilyStatus {
             TaskDefinitionFamilyStatus::Active => write!(f, "ACTIVE"),
             TaskDefinitionFamilyStatus::All => write!(f, "ALL"),
             TaskDefinitionFamilyStatus::Inactive => write!(f, "INACTIVE"),
-            TaskDefinitionFamilyStatus::Unknown(value) => write!(f, "{}", value),
+            TaskDefinitionFamilyStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

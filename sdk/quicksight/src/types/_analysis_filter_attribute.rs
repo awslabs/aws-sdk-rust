@@ -140,7 +140,7 @@ impl ::std::fmt::Display for AnalysisFilterAttribute {
             AnalysisFilterAttribute::QuicksightOwner => write!(f, "QUICKSIGHT_OWNER"),
             AnalysisFilterAttribute::QuicksightUser => write!(f, "QUICKSIGHT_USER"),
             AnalysisFilterAttribute::QuicksightViewerOrOwner => write!(f, "QUICKSIGHT_VIEWER_OR_OWNER"),
-            AnalysisFilterAttribute::Unknown(value) => write!(f, "{}", value),
+            AnalysisFilterAttribute::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

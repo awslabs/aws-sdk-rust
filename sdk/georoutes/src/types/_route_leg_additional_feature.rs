@@ -152,7 +152,7 @@ impl ::std::fmt::Display for RouteLegAdditionalFeature {
             RouteLegAdditionalFeature::TruckRoadTypes => write!(f, "TruckRoadTypes"),
             RouteLegAdditionalFeature::TypicalDuration => write!(f, "TypicalDuration"),
             RouteLegAdditionalFeature::Zones => write!(f, "Zones"),
-            RouteLegAdditionalFeature::Unknown(value) => write!(f, "{}", value),
+            RouteLegAdditionalFeature::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

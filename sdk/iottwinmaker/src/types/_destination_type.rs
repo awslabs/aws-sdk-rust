@@ -108,7 +108,7 @@ impl ::std::fmt::Display for DestinationType {
             DestinationType::Iotsitewise => write!(f, "iotsitewise"),
             DestinationType::Iottwinmaker => write!(f, "iottwinmaker"),
             DestinationType::S3 => write!(f, "s3"),
-            DestinationType::Unknown(value) => write!(f, "{}", value),
+            DestinationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

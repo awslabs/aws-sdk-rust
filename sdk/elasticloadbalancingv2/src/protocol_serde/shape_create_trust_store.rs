@@ -148,16 +148,14 @@ pub fn de_create_trust_store(
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateTrustStoreResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected CreateTrustStoreResponse got {:?}",
-            start_el
+            "invalid root, expected CreateTrustStoreResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("CreateTrustStoreResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected CreateTrustStoreResult got {:?}",
-                start_el
+                "invalid result, expected CreateTrustStoreResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

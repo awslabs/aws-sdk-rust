@@ -108,7 +108,7 @@ impl ::std::fmt::Display for WavFormat {
             WavFormat::Extensible => write!(f, "EXTENSIBLE"),
             WavFormat::Rf64 => write!(f, "RF64"),
             WavFormat::Riff => write!(f, "RIFF"),
-            WavFormat::Unknown(value) => write!(f, "{}", value),
+            WavFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

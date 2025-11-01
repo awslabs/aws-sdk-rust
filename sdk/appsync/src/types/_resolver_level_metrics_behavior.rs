@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ResolverLevelMetricsBehavior {
         match self {
             ResolverLevelMetricsBehavior::FullRequestResolverMetrics => write!(f, "FULL_REQUEST_RESOLVER_METRICS"),
             ResolverLevelMetricsBehavior::PerResolverMetrics => write!(f, "PER_RESOLVER_METRICS"),
-            ResolverLevelMetricsBehavior::Unknown(value) => write!(f, "{}", value),
+            ResolverLevelMetricsBehavior::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -93,7 +93,7 @@ impl fmt::Display for DeserializeError {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         use DeserializeErrorKind::*;
         if let Some(offset) = self.offset {
-            write!(f, "Error at offset {}: ", offset)?;
+            write!(f, "Error at offset {offset}: ")?;
         }
         match &self.kind {
             Custom { message, .. } => write!(f, "failed to parse JSON: {message}"),

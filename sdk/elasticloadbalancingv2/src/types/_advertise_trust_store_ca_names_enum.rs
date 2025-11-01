@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AdvertiseTrustStoreCaNamesEnum {
         match self {
             AdvertiseTrustStoreCaNamesEnum::Off => write!(f, "off"),
             AdvertiseTrustStoreCaNamesEnum::On => write!(f, "on"),
-            AdvertiseTrustStoreCaNamesEnum::Unknown(value) => write!(f, "{}", value),
+            AdvertiseTrustStoreCaNamesEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

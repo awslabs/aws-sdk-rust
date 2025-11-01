@@ -108,7 +108,7 @@ impl ::std::fmt::Display for TrafficRoutingConfigType {
             TrafficRoutingConfigType::AllAtOnce => write!(f, "ALL_AT_ONCE"),
             TrafficRoutingConfigType::Canary => write!(f, "CANARY"),
             TrafficRoutingConfigType::Linear => write!(f, "LINEAR"),
-            TrafficRoutingConfigType::Unknown(value) => write!(f, "{}", value),
+            TrafficRoutingConfigType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

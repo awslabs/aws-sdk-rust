@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ListJobsSortAttributeName {
             ListJobsSortAttributeName::JobStatus => write!(f, "jobStatus"),
             ListJobsSortAttributeName::JobType => write!(f, "jobType"),
             ListJobsSortAttributeName::Name => write!(f, "name"),
-            ListJobsSortAttributeName::Unknown(value) => write!(f, "{}", value),
+            ListJobsSortAttributeName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

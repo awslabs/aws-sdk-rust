@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Payer {
         match self {
             Payer::BucketOwner => write!(f, "BucketOwner"),
             Payer::Requester => write!(f, "Requester"),
-            Payer::Unknown(value) => write!(f, "{}", value),
+            Payer::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -119,7 +119,7 @@ impl ::std::fmt::Display for SelfManagedCaseStatus {
             SelfManagedCaseStatus::DetectionAndAnalysis => write!(f, "Detection and Analysis"),
             SelfManagedCaseStatus::PostIncidentActivities => write!(f, "Post-incident Activities"),
             SelfManagedCaseStatus::Submitted => write!(f, "Submitted"),
-            SelfManagedCaseStatus::Unknown(value) => write!(f, "{}", value),
+            SelfManagedCaseStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

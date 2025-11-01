@@ -434,7 +434,7 @@ impl ::std::fmt::Display for ConnectionPropertyKey {
             ConnectionPropertyKey::SkipCustomJdbcCertValidation => write!(f, "SKIP_CUSTOM_JDBC_CERT_VALIDATION"),
             ConnectionPropertyKey::UserName => write!(f, "USERNAME"),
             ConnectionPropertyKey::WorkgroupName => write!(f, "WORKGROUP_NAME"),
-            ConnectionPropertyKey::Unknown(value) => write!(f, "{}", value),
+            ConnectionPropertyKey::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

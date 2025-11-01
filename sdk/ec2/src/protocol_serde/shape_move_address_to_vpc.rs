@@ -44,8 +44,7 @@ pub fn de_move_address_to_vpc(
     let start_el = decoder.start_el();
     if !(start_el.matches("MoveAddressToVpcResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected MoveAddressToVpcResponse got {:?}",
-            start_el
+            "invalid root, expected MoveAddressToVpcResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

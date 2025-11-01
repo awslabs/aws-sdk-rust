@@ -102,7 +102,7 @@ impl ::std::fmt::Display for UsageType {
         match self {
             UsageType::Compute => write!(f, "COMPUTE"),
             UsageType::License => write!(f, "LICENSE"),
-            UsageType::Unknown(value) => write!(f, "{}", value),
+            UsageType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

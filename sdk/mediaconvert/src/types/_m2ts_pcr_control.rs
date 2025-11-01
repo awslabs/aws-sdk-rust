@@ -102,7 +102,7 @@ impl ::std::fmt::Display for M2tsPcrControl {
         match self {
             M2tsPcrControl::ConfiguredPcrPeriod => write!(f, "CONFIGURED_PCR_PERIOD"),
             M2tsPcrControl::PcrEveryPesPacket => write!(f, "PCR_EVERY_PES_PACKET"),
-            M2tsPcrControl::Unknown(value) => write!(f, "{}", value),
+            M2tsPcrControl::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

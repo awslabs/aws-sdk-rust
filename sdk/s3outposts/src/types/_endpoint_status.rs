@@ -120,7 +120,7 @@ impl ::std::fmt::Display for EndpointStatus {
             EndpointStatus::DeleteFailed => write!(f, "Delete_Failed"),
             EndpointStatus::Deleting => write!(f, "Deleting"),
             EndpointStatus::Pending => write!(f, "Pending"),
-            EndpointStatus::Unknown(value) => write!(f, "{}", value),
+            EndpointStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

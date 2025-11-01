@@ -108,7 +108,7 @@ impl ::std::fmt::Display for IncludeOptions {
             IncludeOptions::All => write!(f, "ALL"),
             IncludeOptions::Any => write!(f, "ANY"),
             IncludeOptions::None => write!(f, "NONE"),
-            IncludeOptions::Unknown(value) => write!(f, "{}", value),
+            IncludeOptions::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

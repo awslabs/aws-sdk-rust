@@ -132,7 +132,7 @@ impl ::std::fmt::Display for DvbSubtitleOutlineColor {
             DvbSubtitleOutlineColor::Red => write!(f, "RED"),
             DvbSubtitleOutlineColor::White => write!(f, "WHITE"),
             DvbSubtitleOutlineColor::Yellow => write!(f, "YELLOW"),
-            DvbSubtitleOutlineColor::Unknown(value) => write!(f, "{}", value),
+            DvbSubtitleOutlineColor::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

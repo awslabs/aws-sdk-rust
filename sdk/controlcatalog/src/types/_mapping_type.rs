@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MappingType {
         match self {
             MappingType::CommonControl => write!(f, "COMMON_CONTROL"),
             MappingType::Framework => write!(f, "FRAMEWORK"),
-            MappingType::Unknown(value) => write!(f, "{}", value),
+            MappingType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

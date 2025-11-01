@@ -126,7 +126,7 @@ impl ::std::fmt::Display for DvbSubOcrLanguage {
             DvbSubOcrLanguage::Nld => write!(f, "NLD"),
             DvbSubOcrLanguage::Por => write!(f, "POR"),
             DvbSubOcrLanguage::Spa => write!(f, "SPA"),
-            DvbSubOcrLanguage::Unknown(value) => write!(f, "{}", value),
+            DvbSubOcrLanguage::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

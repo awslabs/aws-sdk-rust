@@ -114,7 +114,7 @@ impl ::std::fmt::Display for AbortCriteriaFailureType {
             AbortCriteriaFailureType::Failed => write!(f, "FAILED"),
             AbortCriteriaFailureType::Rejected => write!(f, "REJECTED"),
             AbortCriteriaFailureType::TimedOut => write!(f, "TIMED_OUT"),
-            AbortCriteriaFailureType::Unknown(value) => write!(f, "{}", value),
+            AbortCriteriaFailureType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

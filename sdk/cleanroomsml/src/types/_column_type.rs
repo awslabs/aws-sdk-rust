@@ -120,7 +120,7 @@ impl ::std::fmt::Display for ColumnType {
             ColumnType::NumericalFeature => write!(f, "NUMERICAL_FEATURE"),
             ColumnType::Timestamp => write!(f, "TIMESTAMP"),
             ColumnType::UserId => write!(f, "USER_ID"),
-            ColumnType::Unknown(value) => write!(f, "{}", value),
+            ColumnType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

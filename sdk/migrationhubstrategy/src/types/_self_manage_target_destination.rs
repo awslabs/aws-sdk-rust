@@ -119,7 +119,7 @@ impl ::std::fmt::Display for SelfManageTargetDestination {
             SelfManageTargetDestination::AmazonElasticContainerService => write!(f, "Amazon Elastic Container Service (ECS)"),
             SelfManageTargetDestination::AmazonElasticKubernetesService => write!(f, "Amazon Elastic Kubernetes Service (EKS)"),
             SelfManageTargetDestination::NoneSpecified => write!(f, "None specified"),
-            SelfManageTargetDestination::Unknown(value) => write!(f, "{}", value),
+            SelfManageTargetDestination::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

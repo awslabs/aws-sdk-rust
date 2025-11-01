@@ -133,7 +133,7 @@ impl ::std::fmt::Display for ThrottleReason {
             ThrottleReason::FunctionInvocationRateLimitExceeded => write!(f, "FunctionInvocationRateLimitExceeded"),
             ThrottleReason::ReservedFunctionConcurrentInvocationLimitExceeded => write!(f, "ReservedFunctionConcurrentInvocationLimitExceeded"),
             ThrottleReason::ReservedFunctionInvocationRateLimitExceeded => write!(f, "ReservedFunctionInvocationRateLimitExceeded"),
-            ThrottleReason::Unknown(value) => write!(f, "{}", value),
+            ThrottleReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

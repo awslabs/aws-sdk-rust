@@ -133,7 +133,7 @@ impl ::std::fmt::Display for NamedFilterType {
             NamedFilterType::NumericEqualityFilter => write!(f, "NUMERIC_EQUALITY_FILTER"),
             NamedFilterType::NumericRangeFilter => write!(f, "NUMERIC_RANGE_FILTER"),
             NamedFilterType::RelativeDateFilter => write!(f, "RELATIVE_DATE_FILTER"),
-            NamedFilterType::Unknown(value) => write!(f, "{}", value),
+            NamedFilterType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

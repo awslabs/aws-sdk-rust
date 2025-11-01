@@ -168,7 +168,7 @@ impl ::std::fmt::Display for ProcessorParameterName {
             ProcessorParameterName::LambdaNumberOfRetries => write!(f, "NumberOfRetries"),
             ProcessorParameterName::RoleArn => write!(f, "RoleArn"),
             ProcessorParameterName::SubRecordType => write!(f, "SubRecordType"),
-            ProcessorParameterName::Unknown(value) => write!(f, "{}", value),
+            ProcessorParameterName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

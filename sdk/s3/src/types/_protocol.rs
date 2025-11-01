@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Protocol {
         match self {
             Protocol::Http => write!(f, "http"),
             Protocol::Https => write!(f, "https"),
-            Protocol::Unknown(value) => write!(f, "{}", value),
+            Protocol::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

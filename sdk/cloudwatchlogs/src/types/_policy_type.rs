@@ -126,7 +126,7 @@ impl ::std::fmt::Display for PolicyType {
             PolicyType::MetricExtractionPolicy => write!(f, "METRIC_EXTRACTION_POLICY"),
             PolicyType::SubscriptionFilterPolicy => write!(f, "SUBSCRIPTION_FILTER_POLICY"),
             PolicyType::TransformerPolicy => write!(f, "TRANSFORMER_POLICY"),
-            PolicyType::Unknown(value) => write!(f, "{}", value),
+            PolicyType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for LastRunErrorStatusCode {
         match self {
             LastRunErrorStatusCode::Error => write!(f, "ERROR"),
             LastRunErrorStatusCode::None => write!(f, "NONE"),
-            LastRunErrorStatusCode::Unknown(value) => write!(f, "{}", value),
+            LastRunErrorStatusCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

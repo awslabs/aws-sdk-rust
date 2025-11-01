@@ -81,6 +81,6 @@ mod tests {
     fn sdkbody_debug_dyn() {
         let hyper_body = hyper_0_14::Body::channel().1;
         let body = SdkBody::from_body_0_4(hyper_body);
-        assert!(format!("{:?}", body).contains("BoxBody"));
+        assert!(format!("{body:?}").contains("BoxBody"));
     }
 }

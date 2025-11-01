@@ -96,7 +96,7 @@ impl ::std::fmt::Display for S3AclOption {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             S3AclOption::BucketOwnerFullControl => write!(f, "BUCKET_OWNER_FULL_CONTROL"),
-            S3AclOption::Unknown(value) => write!(f, "{}", value),
+            S3AclOption::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for StateMachineStatus {
         match self {
             StateMachineStatus::Active => write!(f, "ACTIVE"),
             StateMachineStatus::Deleting => write!(f, "DELETING"),
-            StateMachineStatus::Unknown(value) => write!(f, "{}", value),
+            StateMachineStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

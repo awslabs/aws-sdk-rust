@@ -56,8 +56,7 @@ pub fn de_get_transit_gateway_policy_table_associations(
     let start_el = decoder.start_el();
     if !(start_el.matches("GetTransitGatewayPolicyTableAssociationsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected GetTransitGatewayPolicyTableAssociationsResponse got {:?}",
-            start_el
+            "invalid root, expected GetTransitGatewayPolicyTableAssociationsResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

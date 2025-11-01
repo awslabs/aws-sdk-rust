@@ -186,6 +186,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListWhatsApp
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::list_whats_app_message_templates::ListWhatsAppMessageTemplatesInput,
                 output: &mut ::std::string::String,

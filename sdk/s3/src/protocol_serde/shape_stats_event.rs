@@ -6,8 +6,7 @@ pub fn de_details(inp: &[u8]) -> std::result::Result<crate::types::Stats, ::aws_
     let start_el = decoder.start_el();
     if !(start_el.matches("Stats")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected Stats got {:?}",
-            start_el
+            "invalid root, expected Stats got {start_el:?}"
         )));
     }
     crate::protocol_serde::shape_stats::de_stats(&mut decoder)

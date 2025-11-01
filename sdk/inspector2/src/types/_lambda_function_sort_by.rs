@@ -108,7 +108,7 @@ impl ::std::fmt::Display for LambdaFunctionSortBy {
             LambdaFunctionSortBy::All => write!(f, "ALL"),
             LambdaFunctionSortBy::Critical => write!(f, "CRITICAL"),
             LambdaFunctionSortBy::High => write!(f, "HIGH"),
-            LambdaFunctionSortBy::Unknown(value) => write!(f, "{}", value),
+            LambdaFunctionSortBy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

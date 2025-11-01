@@ -175,7 +175,7 @@ impl ::std::fmt::Display for PrefixListState {
             PrefixListState::RestoreComplete => write!(f, "restore-complete"),
             PrefixListState::RestoreFailed => write!(f, "restore-failed"),
             PrefixListState::RestoreInProgress => write!(f, "restore-in-progress"),
-            PrefixListState::Unknown(value) => write!(f, "{}", value),
+            PrefixListState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ActivityStatus {
             ActivityStatus::Expiring => write!(f, "EXPIRING"),
             ActivityStatus::InProgress => write!(f, "IN_PROGRESS"),
             ActivityStatus::NotStarted => write!(f, "NOT_STARTED"),
-            ActivityStatus::Unknown(value) => write!(f, "{}", value),
+            ActivityStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

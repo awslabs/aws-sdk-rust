@@ -102,7 +102,7 @@ impl ::std::fmt::Display for EbuTtDFillLineGapControl {
         match self {
             EbuTtDFillLineGapControl::Disabled => write!(f, "DISABLED"),
             EbuTtDFillLineGapControl::Enabled => write!(f, "ENABLED"),
-            EbuTtDFillLineGapControl::Unknown(value) => write!(f, "{}", value),
+            EbuTtDFillLineGapControl::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

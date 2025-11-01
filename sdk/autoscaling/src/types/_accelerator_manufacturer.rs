@@ -114,7 +114,7 @@ impl ::std::fmt::Display for AcceleratorManufacturer {
             AcceleratorManufacturer::Amd => write!(f, "amd"),
             AcceleratorManufacturer::Nvidia => write!(f, "nvidia"),
             AcceleratorManufacturer::Xilinx => write!(f, "xilinx"),
-            AcceleratorManufacturer::Unknown(value) => write!(f, "{}", value),
+            AcceleratorManufacturer::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

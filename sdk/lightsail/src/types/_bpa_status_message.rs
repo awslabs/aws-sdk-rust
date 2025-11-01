@@ -121,7 +121,7 @@ impl ::std::fmt::Display for BpaStatusMessage {
             BpaStatusMessage::DefaultedForSlrMissingOnHold => write!(f, "DEFAULTED_FOR_SLR_MISSING_ON_HOLD"),
             BpaStatusMessage::SyncOnHold => write!(f, "SYNC_ON_HOLD"),
             BpaStatusMessage::UnknownValue => write!(f, "Unknown"),
-            BpaStatusMessage::Unknown(value) => write!(f, "{}", value),
+            BpaStatusMessage::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

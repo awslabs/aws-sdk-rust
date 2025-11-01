@@ -53,8 +53,7 @@ pub fn de_disable_serial_console_access(
     let start_el = decoder.start_el();
     if !(start_el.matches("DisableSerialConsoleAccessResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected DisableSerialConsoleAccessResponse got {:?}",
-            start_el
+            "invalid root, expected DisableSerialConsoleAccessResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

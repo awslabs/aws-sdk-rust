@@ -203,8 +203,7 @@ fn parse_response(
         }
         JsonCredentials::Error { code, message } => Err(OrchestratorError::operation(
             CredentialsError::provider_error(format!(
-                "failed to load credentials [{}]: {}",
-                code, message
+                "failed to load credentials [{code}]: {message}",
             )),
         )),
     }

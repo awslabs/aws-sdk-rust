@@ -175,7 +175,7 @@ impl ::std::fmt::Display for DocumentStatus {
             DocumentStatus::PartiallyIndexed => write!(f, "PARTIALLY_INDEXED"),
             DocumentStatus::Pending => write!(f, "PENDING"),
             DocumentStatus::Starting => write!(f, "STARTING"),
-            DocumentStatus::Unknown(value) => write!(f, "{}", value),
+            DocumentStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for DeviceType {
             DeviceType::Apns => write!(f, "APNS"),
             DeviceType::ApnsSandbox => write!(f, "APNS_SANDBOX"),
             DeviceType::Gcm => write!(f, "GCM"),
-            DeviceType::Unknown(value) => write!(f, "{}", value),
+            DeviceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

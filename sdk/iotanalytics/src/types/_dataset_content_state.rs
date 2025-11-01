@@ -108,7 +108,7 @@ impl ::std::fmt::Display for DatasetContentState {
             DatasetContentState::Creating => write!(f, "CREATING"),
             DatasetContentState::Failed => write!(f, "FAILED"),
             DatasetContentState::Succeeded => write!(f, "SUCCEEDED"),
-            DatasetContentState::Unknown(value) => write!(f, "{}", value),
+            DatasetContentState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

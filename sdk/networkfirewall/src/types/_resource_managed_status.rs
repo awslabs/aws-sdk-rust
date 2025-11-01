@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ResourceManagedStatus {
         match self {
             ResourceManagedStatus::Account => write!(f, "ACCOUNT"),
             ResourceManagedStatus::Managed => write!(f, "MANAGED"),
-            ResourceManagedStatus::Unknown(value) => write!(f, "{}", value),
+            ResourceManagedStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

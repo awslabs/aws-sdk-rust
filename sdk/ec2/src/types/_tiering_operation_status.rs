@@ -154,7 +154,7 @@ impl ::std::fmt::Display for TieringOperationStatus {
             TieringOperationStatus::TemporaryRestoreCompleted => write!(f, "temporary-restore-completed"),
             TieringOperationStatus::TemporaryRestoreFailed => write!(f, "temporary-restore-failed"),
             TieringOperationStatus::TemporaryRestoreInProgress => write!(f, "temporary-restore-in-progress"),
-            TieringOperationStatus::Unknown(value) => write!(f, "{}", value),
+            TieringOperationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

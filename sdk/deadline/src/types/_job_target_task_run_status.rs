@@ -126,7 +126,7 @@ impl ::std::fmt::Display for JobTargetTaskRunStatus {
             JobTargetTaskRunStatus::Ready => write!(f, "READY"),
             JobTargetTaskRunStatus::Succeeded => write!(f, "SUCCEEDED"),
             JobTargetTaskRunStatus::Suspended => write!(f, "SUSPENDED"),
-            JobTargetTaskRunStatus::Unknown(value) => write!(f, "{}", value),
+            JobTargetTaskRunStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

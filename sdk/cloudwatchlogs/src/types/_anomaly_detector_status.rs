@@ -126,7 +126,7 @@ impl ::std::fmt::Display for AnomalyDetectorStatus {
             AnomalyDetectorStatus::Initializing => write!(f, "INITIALIZING"),
             AnomalyDetectorStatus::Paused => write!(f, "PAUSED"),
             AnomalyDetectorStatus::Training => write!(f, "TRAINING"),
-            AnomalyDetectorStatus::Unknown(value) => write!(f, "{}", value),
+            AnomalyDetectorStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

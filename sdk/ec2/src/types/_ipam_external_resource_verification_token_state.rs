@@ -135,7 +135,7 @@ impl ::std::fmt::Display for IpamExternalResourceVerificationTokenState {
             IpamExternalResourceVerificationTokenState::DeleteComplete => write!(f, "delete-complete"),
             IpamExternalResourceVerificationTokenState::DeleteFailed => write!(f, "delete-failed"),
             IpamExternalResourceVerificationTokenState::DeleteInProgress => write!(f, "delete-in-progress"),
-            IpamExternalResourceVerificationTokenState::Unknown(value) => write!(f, "{}", value),
+            IpamExternalResourceVerificationTokenState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

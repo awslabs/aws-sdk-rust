@@ -114,7 +114,7 @@ impl ::std::fmt::Display for TemplateErrorType {
             TemplateErrorType::DataSetNotFound => write!(f, "DATA_SET_NOT_FOUND"),
             TemplateErrorType::InternalFailure => write!(f, "INTERNAL_FAILURE"),
             TemplateErrorType::SourceNotFound => write!(f, "SOURCE_NOT_FOUND"),
-            TemplateErrorType::Unknown(value) => write!(f, "{}", value),
+            TemplateErrorType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

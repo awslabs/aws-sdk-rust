@@ -96,7 +96,7 @@ impl ::std::fmt::Display for LogicalOperator {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             LogicalOperator::Equals => write!(f, "EQUALS"),
-            LogicalOperator::Unknown(value) => write!(f, "{}", value),
+            LogicalOperator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

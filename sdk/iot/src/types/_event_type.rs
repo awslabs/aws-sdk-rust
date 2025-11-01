@@ -168,7 +168,7 @@ impl ::std::fmt::Display for EventType {
             EventType::ThingGroupMembership => write!(f, "THING_GROUP_MEMBERSHIP"),
             EventType::ThingType => write!(f, "THING_TYPE"),
             EventType::ThingTypeAssociation => write!(f, "THING_TYPE_ASSOCIATION"),
-            EventType::Unknown(value) => write!(f, "{}", value),
+            EventType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

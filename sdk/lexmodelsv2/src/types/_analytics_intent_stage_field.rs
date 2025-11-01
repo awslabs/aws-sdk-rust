@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AnalyticsIntentStageField {
         match self {
             AnalyticsIntentStageField::IntentStageName => write!(f, "IntentStageName"),
             AnalyticsIntentStageField::SwitchedToIntent => write!(f, "SwitchedToIntent"),
-            AnalyticsIntentStageField::Unknown(value) => write!(f, "{}", value),
+            AnalyticsIntentStageField::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

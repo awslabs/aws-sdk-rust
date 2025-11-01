@@ -182,7 +182,7 @@ impl ::std::fmt::Display for ImageAttributeName {
             ImageAttributeName::SriovNetSupport => write!(f, "sriovNetSupport"),
             ImageAttributeName::TpmSupport => write!(f, "tpmSupport"),
             ImageAttributeName::UefiData => write!(f, "uefiData"),
-            ImageAttributeName::Unknown(value) => write!(f, "{}", value),
+            ImageAttributeName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

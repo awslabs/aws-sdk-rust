@@ -132,7 +132,7 @@ impl ::std::fmt::Display for Day {
             Day::Thu => write!(f, "THU"),
             Day::Tue => write!(f, "TUE"),
             Day::Wed => write!(f, "WED"),
-            Day::Unknown(value) => write!(f, "{}", value),
+            Day::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

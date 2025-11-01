@@ -51,8 +51,7 @@ pub fn de_modify_public_ip_dns_name_options(
     let start_el = decoder.start_el();
     if !(start_el.matches("ModifyPublicIpDnsNameOptionsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected ModifyPublicIpDnsNameOptionsResponse got {:?}",
-            start_el
+            "invalid root, expected ModifyPublicIpDnsNameOptionsResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

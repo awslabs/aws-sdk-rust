@@ -108,7 +108,7 @@ impl ::std::fmt::Display for SdiSourceState {
             SdiSourceState::Deleted => write!(f, "DELETED"),
             SdiSourceState::Idle => write!(f, "IDLE"),
             SdiSourceState::InUse => write!(f, "IN_USE"),
-            SdiSourceState::Unknown(value) => write!(f, "{}", value),
+            SdiSourceState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

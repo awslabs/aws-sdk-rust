@@ -96,7 +96,7 @@ impl ::std::fmt::Display for JobStateTimeLimitActionsState {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             JobStateTimeLimitActionsState::Runnable => write!(f, "RUNNABLE"),
-            JobStateTimeLimitActionsState::Unknown(value) => write!(f, "{}", value),
+            JobStateTimeLimitActionsState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

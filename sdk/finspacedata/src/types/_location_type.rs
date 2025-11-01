@@ -102,7 +102,7 @@ impl ::std::fmt::Display for LocationType {
         match self {
             LocationType::Ingestion => write!(f, "INGESTION"),
             LocationType::Sagemaker => write!(f, "SAGEMAKER"),
-            LocationType::Unknown(value) => write!(f, "{}", value),
+            LocationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -120,7 +120,7 @@ impl ::std::fmt::Display for DataSourceType {
             DataSourceType::AwsConfig => write!(f, "AWS_Config"),
             DataSourceType::AwsSecurityHub => write!(f, "AWS_Security_Hub"),
             DataSourceType::Manual => write!(f, "MANUAL"),
-            DataSourceType::Unknown(value) => write!(f, "{}", value),
+            DataSourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

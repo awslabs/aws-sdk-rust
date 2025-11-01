@@ -175,7 +175,7 @@ impl ::std::fmt::Display for CapacityReservationState {
             CapacityReservationState::Scheduled => write!(f, "scheduled"),
             CapacityReservationState::Unavailable => write!(f, "unavailable"),
             CapacityReservationState::Unsupported => write!(f, "unsupported"),
-            CapacityReservationState::Unknown(value) => write!(f, "{}", value),
+            CapacityReservationState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ThumbnailState {
         match self {
             ThumbnailState::Auto => write!(f, "AUTO"),
             ThumbnailState::Disabled => write!(f, "DISABLED"),
-            ThumbnailState::Unknown(value) => write!(f, "{}", value),
+            ThumbnailState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

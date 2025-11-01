@@ -120,7 +120,7 @@ impl ::std::fmt::Display for RouteServerState {
             RouteServerState::Deleting => write!(f, "deleting"),
             RouteServerState::Modifying => write!(f, "modifying"),
             RouteServerState::Pending => write!(f, "pending"),
-            RouteServerState::Unknown(value) => write!(f, "{}", value),
+            RouteServerState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

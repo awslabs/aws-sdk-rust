@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SectionPageBreakStatus {
         match self {
             SectionPageBreakStatus::Disabled => write!(f, "DISABLED"),
             SectionPageBreakStatus::Enabled => write!(f, "ENABLED"),
-            SectionPageBreakStatus::Unknown(value) => write!(f, "{}", value),
+            SectionPageBreakStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

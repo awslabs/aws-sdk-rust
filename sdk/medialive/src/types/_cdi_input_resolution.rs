@@ -114,7 +114,7 @@ impl ::std::fmt::Display for CdiInputResolution {
             CdiInputResolution::Hd => write!(f, "HD"),
             CdiInputResolution::Sd => write!(f, "SD"),
             CdiInputResolution::Uhd => write!(f, "UHD"),
-            CdiInputResolution::Unknown(value) => write!(f, "{}", value),
+            CdiInputResolution::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

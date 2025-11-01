@@ -318,7 +318,7 @@ impl fmt::Display for BusinessMetrics {
             MAX_COMMA_SEPARATED_METRICS_VALUES_LENGTH,
         );
 
-        write!(f, "m/{}", metrics_values)
+        write!(f, "m/{metrics_values}")
     }
 }
 #[cfg(test)]

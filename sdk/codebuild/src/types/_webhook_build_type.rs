@@ -108,7 +108,7 @@ impl ::std::fmt::Display for WebhookBuildType {
             WebhookBuildType::Build => write!(f, "BUILD"),
             WebhookBuildType::BuildBatch => write!(f, "BUILD_BATCH"),
             WebhookBuildType::RunnerBuildkiteBuild => write!(f, "RUNNER_BUILDKITE_BUILD"),
-            WebhookBuildType::Unknown(value) => write!(f, "{}", value),
+            WebhookBuildType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

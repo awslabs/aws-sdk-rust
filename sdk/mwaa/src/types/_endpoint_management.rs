@@ -102,7 +102,7 @@ impl ::std::fmt::Display for EndpointManagement {
         match self {
             EndpointManagement::Customer => write!(f, "CUSTOMER"),
             EndpointManagement::Service => write!(f, "SERVICE"),
-            EndpointManagement::Unknown(value) => write!(f, "{}", value),
+            EndpointManagement::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for Status {
             Status::Failed => write!(f, "FAILED"),
             Status::InProgress => write!(f, "IN_PROGRESS"),
             Status::NotStarted => write!(f, "NOT_STARTED"),
-            Status::Unknown(value) => write!(f, "{}", value),
+            Status::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

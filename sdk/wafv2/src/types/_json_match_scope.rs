@@ -108,7 +108,7 @@ impl ::std::fmt::Display for JsonMatchScope {
             JsonMatchScope::All => write!(f, "ALL"),
             JsonMatchScope::Key => write!(f, "KEY"),
             JsonMatchScope::Value => write!(f, "VALUE"),
-            JsonMatchScope::Unknown(value) => write!(f, "{}", value),
+            JsonMatchScope::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

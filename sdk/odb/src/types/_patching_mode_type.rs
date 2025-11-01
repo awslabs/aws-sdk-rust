@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PatchingModeType {
         match self {
             PatchingModeType::Nonrolling => write!(f, "NONROLLING"),
             PatchingModeType::Rolling => write!(f, "ROLLING"),
-            PatchingModeType::Unknown(value) => write!(f, "{}", value),
+            PatchingModeType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

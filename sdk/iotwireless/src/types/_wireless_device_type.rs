@@ -102,7 +102,7 @@ impl ::std::fmt::Display for WirelessDeviceType {
         match self {
             WirelessDeviceType::LoRaWan => write!(f, "LoRaWAN"),
             WirelessDeviceType::Sidewalk => write!(f, "Sidewalk"),
-            WirelessDeviceType::Unknown(value) => write!(f, "{}", value),
+            WirelessDeviceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

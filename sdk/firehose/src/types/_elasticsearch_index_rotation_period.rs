@@ -120,7 +120,7 @@ impl ::std::fmt::Display for ElasticsearchIndexRotationPeriod {
             ElasticsearchIndexRotationPeriod::OneHour => write!(f, "OneHour"),
             ElasticsearchIndexRotationPeriod::OneMonth => write!(f, "OneMonth"),
             ElasticsearchIndexRotationPeriod::OneWeek => write!(f, "OneWeek"),
-            ElasticsearchIndexRotationPeriod::Unknown(value) => write!(f, "{}", value),
+            ElasticsearchIndexRotationPeriod::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

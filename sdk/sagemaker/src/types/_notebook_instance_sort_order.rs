@@ -102,7 +102,7 @@ impl ::std::fmt::Display for NotebookInstanceSortOrder {
         match self {
             NotebookInstanceSortOrder::Ascending => write!(f, "Ascending"),
             NotebookInstanceSortOrder::Descending => write!(f, "Descending"),
-            NotebookInstanceSortOrder::Unknown(value) => write!(f, "{}", value),
+            NotebookInstanceSortOrder::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

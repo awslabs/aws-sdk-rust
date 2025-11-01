@@ -102,7 +102,7 @@ impl ::std::fmt::Display for NumericEqualityMatchOperator {
         match self {
             NumericEqualityMatchOperator::DoesNotEqual => write!(f, "DOES_NOT_EQUAL"),
             NumericEqualityMatchOperator::Equals => write!(f, "EQUALS"),
-            NumericEqualityMatchOperator::Unknown(value) => write!(f, "{}", value),
+            NumericEqualityMatchOperator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

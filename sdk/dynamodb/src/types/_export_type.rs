@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ExportType {
         match self {
             ExportType::FullExport => write!(f, "FULL_EXPORT"),
             ExportType::IncrementalExport => write!(f, "INCREMENTAL_EXPORT"),
-            ExportType::Unknown(value) => write!(f, "{}", value),
+            ExportType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

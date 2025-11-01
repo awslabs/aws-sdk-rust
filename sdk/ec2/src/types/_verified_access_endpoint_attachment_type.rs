@@ -96,7 +96,7 @@ impl ::std::fmt::Display for VerifiedAccessEndpointAttachmentType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             VerifiedAccessEndpointAttachmentType::Vpc => write!(f, "vpc"),
-            VerifiedAccessEndpointAttachmentType::Unknown(value) => write!(f, "{}", value),
+            VerifiedAccessEndpointAttachmentType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

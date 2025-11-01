@@ -114,7 +114,7 @@ impl ::std::fmt::Display for AccessStatus {
             AccessStatus::Enabled => write!(f, "ENABLED"),
             AccessStatus::Failed => write!(f, "FAILED"),
             AccessStatus::Pending => write!(f, "PENDING"),
-            AccessStatus::Unknown(value) => write!(f, "{}", value),
+            AccessStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

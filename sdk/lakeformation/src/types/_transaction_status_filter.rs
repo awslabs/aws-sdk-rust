@@ -120,7 +120,7 @@ impl ::std::fmt::Display for TransactionStatusFilter {
             TransactionStatusFilter::All => write!(f, "ALL"),
             TransactionStatusFilter::Committed => write!(f, "COMMITTED"),
             TransactionStatusFilter::Completed => write!(f, "COMPLETED"),
-            TransactionStatusFilter::Unknown(value) => write!(f, "{}", value),
+            TransactionStatusFilter::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

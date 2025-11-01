@@ -114,7 +114,7 @@ impl ::std::fmt::Display for LicenseEndpointStatus {
             LicenseEndpointStatus::DeleteInProgress => write!(f, "DELETE_IN_PROGRESS"),
             LicenseEndpointStatus::NotReady => write!(f, "NOT_READY"),
             LicenseEndpointStatus::Ready => write!(f, "READY"),
-            LicenseEndpointStatus::Unknown(value) => write!(f, "{}", value),
+            LicenseEndpointStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

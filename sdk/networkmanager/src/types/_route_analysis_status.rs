@@ -108,7 +108,7 @@ impl ::std::fmt::Display for RouteAnalysisStatus {
             RouteAnalysisStatus::Completed => write!(f, "COMPLETED"),
             RouteAnalysisStatus::Failed => write!(f, "FAILED"),
             RouteAnalysisStatus::Running => write!(f, "RUNNING"),
-            RouteAnalysisStatus::Unknown(value) => write!(f, "{}", value),
+            RouteAnalysisStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

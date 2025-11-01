@@ -102,7 +102,7 @@ impl ::std::fmt::Display for IdcUserAssignment {
         match self {
             IdcUserAssignment::Optional => write!(f, "OPTIONAL"),
             IdcUserAssignment::Required => write!(f, "REQUIRED"),
-            IdcUserAssignment::Unknown(value) => write!(f, "{}", value),
+            IdcUserAssignment::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

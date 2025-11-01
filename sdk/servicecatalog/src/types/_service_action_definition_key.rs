@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ServiceActionDefinitionKey {
             ServiceActionDefinitionKey::Name => write!(f, "Name"),
             ServiceActionDefinitionKey::Parameters => write!(f, "Parameters"),
             ServiceActionDefinitionKey::Version => write!(f, "Version"),
-            ServiceActionDefinitionKey::Unknown(value) => write!(f, "{}", value),
+            ServiceActionDefinitionKey::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

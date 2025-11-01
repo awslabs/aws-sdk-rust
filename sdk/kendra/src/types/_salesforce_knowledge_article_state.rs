@@ -108,7 +108,7 @@ impl ::std::fmt::Display for SalesforceKnowledgeArticleState {
             SalesforceKnowledgeArticleState::Archived => write!(f, "ARCHIVED"),
             SalesforceKnowledgeArticleState::Draft => write!(f, "DRAFT"),
             SalesforceKnowledgeArticleState::Published => write!(f, "PUBLISHED"),
-            SalesforceKnowledgeArticleState::Unknown(value) => write!(f, "{}", value),
+            SalesforceKnowledgeArticleState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

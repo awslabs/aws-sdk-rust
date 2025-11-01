@@ -108,7 +108,7 @@ impl ::std::fmt::Display for KeyMaterialState {
             KeyMaterialState::Current => write!(f, "CURRENT"),
             KeyMaterialState::NonCurrent => write!(f, "NON_CURRENT"),
             KeyMaterialState::PendingRotation => write!(f, "PENDING_ROTATION"),
-            KeyMaterialState::Unknown(value) => write!(f, "{}", value),
+            KeyMaterialState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

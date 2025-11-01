@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TrafficShapingType {
         match self {
             TrafficShapingType::RetrievalWindow => write!(f, "RETRIEVAL_WINDOW"),
             TrafficShapingType::Tps => write!(f, "TPS"),
-            TrafficShapingType::Unknown(value) => write!(f, "{}", value),
+            TrafficShapingType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

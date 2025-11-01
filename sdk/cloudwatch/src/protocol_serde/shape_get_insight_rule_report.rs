@@ -110,16 +110,14 @@ pub fn de_get_insight_rule_report(
     let start_el = decoder.start_el();
     if !(start_el.matches("GetInsightRuleReportResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected GetInsightRuleReportResponse got {:?}",
-            start_el
+            "invalid root, expected GetInsightRuleReportResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("GetInsightRuleReportResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected GetInsightRuleReportResult got {:?}",
-                start_el
+                "invalid result, expected GetInsightRuleReportResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

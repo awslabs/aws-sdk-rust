@@ -49,8 +49,7 @@ pub fn de_assign_ipv6_addresses(
     let start_el = decoder.start_el();
     if !(start_el.matches("AssignIpv6AddressesResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected AssignIpv6AddressesResponse got {:?}",
-            start_el
+            "invalid root, expected AssignIpv6AddressesResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

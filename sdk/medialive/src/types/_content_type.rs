@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ContentType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ContentType::ImageJpeg => write!(f, "image/jpeg"),
-            ContentType::Unknown(value) => write!(f, "{}", value),
+            ContentType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

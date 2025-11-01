@@ -133,7 +133,7 @@ impl ::std::fmt::Display for NoPreferenceTargetDestination {
             NoPreferenceTargetDestination::AmazonElasticContainerService => write!(f, "Amazon Elastic Container Service (ECS)"),
             NoPreferenceTargetDestination::AmazonElasticKubernetesService => write!(f, "Amazon Elastic Kubernetes Service (EKS)"),
             NoPreferenceTargetDestination::NoneSpecified => write!(f, "None specified"),
-            NoPreferenceTargetDestination::Unknown(value) => write!(f, "{}", value),
+            NoPreferenceTargetDestination::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

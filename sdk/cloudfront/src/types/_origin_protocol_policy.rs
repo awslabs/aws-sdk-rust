@@ -108,7 +108,7 @@ impl ::std::fmt::Display for OriginProtocolPolicy {
             OriginProtocolPolicy::HttpOnly => write!(f, "http-only"),
             OriginProtocolPolicy::HttpsOnly => write!(f, "https-only"),
             OriginProtocolPolicy::MatchViewer => write!(f, "match-viewer"),
-            OriginProtocolPolicy::Unknown(value) => write!(f, "{}", value),
+            OriginProtocolPolicy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

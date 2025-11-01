@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ColorMetadata {
         match self {
             ColorMetadata::Ignore => write!(f, "IGNORE"),
             ColorMetadata::Insert => write!(f, "INSERT"),
-            ColorMetadata::Unknown(value) => write!(f, "{}", value),
+            ColorMetadata::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

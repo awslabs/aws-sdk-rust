@@ -108,7 +108,7 @@ impl ::std::fmt::Display for XavcHdIntraCbgProfileClass {
             XavcHdIntraCbgProfileClass::Class100 => write!(f, "CLASS_100"),
             XavcHdIntraCbgProfileClass::Class200 => write!(f, "CLASS_200"),
             XavcHdIntraCbgProfileClass::Class50 => write!(f, "CLASS_50"),
-            XavcHdIntraCbgProfileClass::Unknown(value) => write!(f, "{}", value),
+            XavcHdIntraCbgProfileClass::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

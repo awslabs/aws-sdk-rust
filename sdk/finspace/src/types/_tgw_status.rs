@@ -120,7 +120,7 @@ impl ::std::fmt::Display for TgwStatus {
             TgwStatus::SuccessfullyUpdated => write!(f, "SUCCESSFULLY_UPDATED"),
             TgwStatus::UpdateRequested => write!(f, "UPDATE_REQUESTED"),
             TgwStatus::Updating => write!(f, "UPDATING"),
-            TgwStatus::Unknown(value) => write!(f, "{}", value),
+            TgwStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

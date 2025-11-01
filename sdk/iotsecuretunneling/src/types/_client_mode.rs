@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ClientMode {
             ClientMode::All => write!(f, "ALL"),
             ClientMode::Destination => write!(f, "DESTINATION"),
             ClientMode::Source => write!(f, "SOURCE"),
-            ClientMode::Unknown(value) => write!(f, "{}", value),
+            ClientMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

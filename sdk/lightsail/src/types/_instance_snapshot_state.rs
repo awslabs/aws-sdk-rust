@@ -108,7 +108,7 @@ impl ::std::fmt::Display for InstanceSnapshotState {
             InstanceSnapshotState::Available => write!(f, "available"),
             InstanceSnapshotState::Error => write!(f, "error"),
             InstanceSnapshotState::Pending => write!(f, "pending"),
-            InstanceSnapshotState::Unknown(value) => write!(f, "{}", value),
+            InstanceSnapshotState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

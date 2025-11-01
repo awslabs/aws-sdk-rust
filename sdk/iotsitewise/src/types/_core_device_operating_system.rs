@@ -108,7 +108,7 @@ impl ::std::fmt::Display for CoreDeviceOperatingSystem {
             CoreDeviceOperatingSystem::LinuxAarch64 => write!(f, "LINUX_AARCH64"),
             CoreDeviceOperatingSystem::LinuxAmd64 => write!(f, "LINUX_AMD64"),
             CoreDeviceOperatingSystem::WindowsAmd64 => write!(f, "WINDOWS_AMD64"),
-            CoreDeviceOperatingSystem::Unknown(value) => write!(f, "{}", value),
+            CoreDeviceOperatingSystem::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

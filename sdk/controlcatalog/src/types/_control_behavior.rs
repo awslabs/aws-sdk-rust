@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ControlBehavior {
             ControlBehavior::Detective => write!(f, "DETECTIVE"),
             ControlBehavior::Preventive => write!(f, "PREVENTIVE"),
             ControlBehavior::Proactive => write!(f, "PROACTIVE"),
-            ControlBehavior::Unknown(value) => write!(f, "{}", value),
+            ControlBehavior::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

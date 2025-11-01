@@ -108,7 +108,7 @@ impl ::std::fmt::Display for SummaryRuleOption {
             SummaryRuleOption::Metadata => write!(f, "METADATA"),
             SummaryRuleOption::Msg => write!(f, "MSG"),
             SummaryRuleOption::Sid => write!(f, "SID"),
-            SummaryRuleOption::Unknown(value) => write!(f, "{}", value),
+            SummaryRuleOption::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

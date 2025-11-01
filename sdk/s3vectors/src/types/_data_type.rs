@@ -96,7 +96,7 @@ impl ::std::fmt::Display for DataType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             DataType::Float32 => write!(f, "float32"),
-            DataType::Unknown(value) => write!(f, "{}", value),
+            DataType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -166,7 +166,7 @@ impl ::std::fmt::Display for IsolineHazardousCargoType {
             IsolineHazardousCargoType::Poison => write!(f, "Poison"),
             IsolineHazardousCargoType::PoisonousInhalation => write!(f, "PoisonousInhalation"),
             IsolineHazardousCargoType::Radioactive => write!(f, "Radioactive"),
-            IsolineHazardousCargoType::Unknown(value) => write!(f, "{}", value),
+            IsolineHazardousCargoType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

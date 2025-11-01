@@ -108,7 +108,7 @@ impl ::std::fmt::Display for FleetEventType {
             FleetEventType::FleetChange => write!(f, "fleet-change"),
             FleetEventType::InstanceChange => write!(f, "instance-change"),
             FleetEventType::ServiceError => write!(f, "service-error"),
-            FleetEventType::Unknown(value) => write!(f, "{}", value),
+            FleetEventType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

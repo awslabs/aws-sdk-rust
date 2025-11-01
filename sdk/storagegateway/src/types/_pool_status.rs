@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PoolStatus {
         match self {
             PoolStatus::Active => write!(f, "ACTIVE"),
             PoolStatus::Deleted => write!(f, "DELETED"),
-            PoolStatus::Unknown(value) => write!(f, "{}", value),
+            PoolStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

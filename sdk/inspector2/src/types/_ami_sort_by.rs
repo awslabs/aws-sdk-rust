@@ -114,7 +114,7 @@ impl ::std::fmt::Display for AmiSortBy {
             AmiSortBy::All => write!(f, "ALL"),
             AmiSortBy::Critical => write!(f, "CRITICAL"),
             AmiSortBy::High => write!(f, "HIGH"),
-            AmiSortBy::Unknown(value) => write!(f, "{}", value),
+            AmiSortBy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

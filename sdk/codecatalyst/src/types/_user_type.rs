@@ -110,7 +110,7 @@ impl ::std::fmt::Display for UserType {
             UserType::AwsAccount => write!(f, "AWS_ACCOUNT"),
             UserType::UnknownValue => write!(f, "UNKNOWN"),
             UserType::User => write!(f, "USER"),
-            UserType::Unknown(value) => write!(f, "{}", value),
+            UserType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

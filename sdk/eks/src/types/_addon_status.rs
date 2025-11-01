@@ -147,7 +147,7 @@ impl ::std::fmt::Display for AddonStatus {
             AddonStatus::Deleting => write!(f, "DELETING"),
             AddonStatus::UpdateFailed => write!(f, "UPDATE_FAILED"),
             AddonStatus::Updating => write!(f, "UPDATING"),
-            AddonStatus::Unknown(value) => write!(f, "{}", value),
+            AddonStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

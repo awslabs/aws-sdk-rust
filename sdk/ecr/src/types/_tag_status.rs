@@ -108,7 +108,7 @@ impl ::std::fmt::Display for TagStatus {
             TagStatus::Any => write!(f, "ANY"),
             TagStatus::Tagged => write!(f, "TAGGED"),
             TagStatus::Untagged => write!(f, "UNTAGGED"),
-            TagStatus::Unknown(value) => write!(f, "{}", value),
+            TagStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

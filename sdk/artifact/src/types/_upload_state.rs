@@ -114,7 +114,7 @@ impl ::std::fmt::Display for UploadState {
             UploadState::Failed => write!(f, "FAILED"),
             UploadState::Fault => write!(f, "FAULT"),
             UploadState::Processing => write!(f, "PROCESSING"),
-            UploadState::Unknown(value) => write!(f, "{}", value),
+            UploadState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

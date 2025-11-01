@@ -55,8 +55,7 @@ pub fn de_modify_vpc_endpoint_service_configuration(
     let start_el = decoder.start_el();
     if !(start_el.matches("ModifyVpcEndpointServiceConfigurationResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected ModifyVpcEndpointServiceConfigurationResponse got {:?}",
-            start_el
+            "invalid root, expected ModifyVpcEndpointServiceConfigurationResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

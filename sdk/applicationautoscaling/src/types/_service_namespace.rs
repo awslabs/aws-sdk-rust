@@ -196,7 +196,7 @@ impl ::std::fmt::Display for ServiceNamespace {
             ServiceNamespace::Rds => write!(f, "rds"),
             ServiceNamespace::Sagemaker => write!(f, "sagemaker"),
             ServiceNamespace::Workspaces => write!(f, "workspaces"),
-            ServiceNamespace::Unknown(value) => write!(f, "{}", value),
+            ServiceNamespace::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

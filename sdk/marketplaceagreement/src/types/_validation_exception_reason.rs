@@ -168,7 +168,7 @@ impl ::std::fmt::Display for ValidationExceptionReason {
             ValidationExceptionReason::MissingAgreementId => write!(f, "MISSING_AGREEMENT_ID"),
             ValidationExceptionReason::Other => write!(f, "OTHER"),
             ValidationExceptionReason::UnsupportedFilters => write!(f, "UNSUPPORTED_FILTERS"),
-            ValidationExceptionReason::Unknown(value) => write!(f, "{}", value),
+            ValidationExceptionReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

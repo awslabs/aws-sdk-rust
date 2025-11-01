@@ -120,7 +120,7 @@ impl ::std::fmt::Display for OperatingSystem {
             OperatingSystem::AmazonLinux2023 => write!(f, "AMAZON_LINUX_2023"),
             OperatingSystem::Windows2012 => write!(f, "WINDOWS_2012"),
             OperatingSystem::Windows2016 => write!(f, "WINDOWS_2016"),
-            OperatingSystem::Unknown(value) => write!(f, "{}", value),
+            OperatingSystem::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

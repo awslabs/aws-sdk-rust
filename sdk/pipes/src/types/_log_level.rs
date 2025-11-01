@@ -114,7 +114,7 @@ impl ::std::fmt::Display for LogLevel {
             LogLevel::Info => write!(f, "INFO"),
             LogLevel::Off => write!(f, "OFF"),
             LogLevel::Trace => write!(f, "TRACE"),
-            LogLevel::Unknown(value) => write!(f, "{}", value),
+            LogLevel::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

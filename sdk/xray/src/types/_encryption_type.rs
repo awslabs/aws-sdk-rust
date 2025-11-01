@@ -102,7 +102,7 @@ impl ::std::fmt::Display for EncryptionType {
         match self {
             EncryptionType::Kms => write!(f, "KMS"),
             EncryptionType::None => write!(f, "NONE"),
-            EncryptionType::Unknown(value) => write!(f, "{}", value),
+            EncryptionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

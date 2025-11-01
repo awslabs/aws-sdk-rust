@@ -102,7 +102,7 @@ impl ::std::fmt::Display for EmbeddedTimecodeOverride {
         match self {
             EmbeddedTimecodeOverride::None => write!(f, "NONE"),
             EmbeddedTimecodeOverride::UseMdpm => write!(f, "USE_MDPM"),
-            EmbeddedTimecodeOverride::Unknown(value) => write!(f, "{}", value),
+            EmbeddedTimecodeOverride::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

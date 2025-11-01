@@ -114,7 +114,7 @@ impl ::std::fmt::Display for IngestionJobStatus {
             IngestionJobStatus::ImportInProgress => write!(f, "IMPORT_IN_PROGRESS"),
             IngestionJobStatus::InProgress => write!(f, "IN_PROGRESS"),
             IngestionJobStatus::Success => write!(f, "SUCCESS"),
-            IngestionJobStatus::Unknown(value) => write!(f, "{}", value),
+            IngestionJobStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

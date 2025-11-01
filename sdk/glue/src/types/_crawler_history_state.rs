@@ -114,7 +114,7 @@ impl ::std::fmt::Display for CrawlerHistoryState {
             CrawlerHistoryState::Failed => write!(f, "FAILED"),
             CrawlerHistoryState::Running => write!(f, "RUNNING"),
             CrawlerHistoryState::Stopped => write!(f, "STOPPED"),
-            CrawlerHistoryState::Unknown(value) => write!(f, "{}", value),
+            CrawlerHistoryState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

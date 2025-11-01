@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MeasurementSystem {
         match self {
             MeasurementSystem::Imperial => write!(f, "Imperial"),
             MeasurementSystem::Metric => write!(f, "Metric"),
-            MeasurementSystem::Unknown(value) => write!(f, "{}", value),
+            MeasurementSystem::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

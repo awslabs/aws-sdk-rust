@@ -190,6 +190,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for RegisterSlac
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::register_slack_workspace_for_organization::RegisterSlackWorkspaceForOrganizationInput,
                 output: &mut ::std::string::String,

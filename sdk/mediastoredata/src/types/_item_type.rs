@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ItemType {
         match self {
             ItemType::Folder => write!(f, "FOLDER"),
             ItemType::Object => write!(f, "OBJECT"),
-            ItemType::Unknown(value) => write!(f, "{}", value),
+            ItemType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

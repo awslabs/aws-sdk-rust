@@ -100,7 +100,7 @@ impl ::std::fmt::Display for WaypointOptimizationServiceTimeTreatment {
         match self {
             WaypointOptimizationServiceTimeTreatment::Rest => write!(f, "Rest"),
             WaypointOptimizationServiceTimeTreatment::Work => write!(f, "Work"),
-            WaypointOptimizationServiceTimeTreatment::Unknown(value) => write!(f, "{}", value),
+            WaypointOptimizationServiceTimeTreatment::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

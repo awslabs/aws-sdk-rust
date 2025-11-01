@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AssociatedTranscriptFilterName {
         match self {
             AssociatedTranscriptFilterName::IntentId => write!(f, "IntentId"),
             AssociatedTranscriptFilterName::SlotTypeId => write!(f, "SlotTypeId"),
-            AssociatedTranscriptFilterName::Unknown(value) => write!(f, "{}", value),
+            AssociatedTranscriptFilterName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

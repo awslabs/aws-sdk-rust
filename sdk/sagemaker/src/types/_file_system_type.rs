@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FileSystemType {
         match self {
             FileSystemType::Efs => write!(f, "EFS"),
             FileSystemType::Fsxlustre => write!(f, "FSxLustre"),
-            FileSystemType::Unknown(value) => write!(f, "{}", value),
+            FileSystemType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

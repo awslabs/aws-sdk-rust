@@ -161,7 +161,7 @@ impl ::std::fmt::Display for DashboardErrorType {
             DashboardErrorType::ParameterTypeInvalid => write!(f, "PARAMETER_TYPE_INVALID"),
             DashboardErrorType::ParameterValueIncompatible => write!(f, "PARAMETER_VALUE_INCOMPATIBLE"),
             DashboardErrorType::SourceNotFound => write!(f, "SOURCE_NOT_FOUND"),
-            DashboardErrorType::Unknown(value) => write!(f, "{}", value),
+            DashboardErrorType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

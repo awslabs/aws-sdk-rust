@@ -120,7 +120,7 @@ impl ::std::fmt::Display for FieldAggregationType {
             FieldAggregationType::Max => write!(f, "Max"),
             FieldAggregationType::Min => write!(f, "Min"),
             FieldAggregationType::Sum => write!(f, "Sum"),
-            FieldAggregationType::Unknown(value) => write!(f, "{}", value),
+            FieldAggregationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

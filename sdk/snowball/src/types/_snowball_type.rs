@@ -161,7 +161,7 @@ impl ::std::fmt::Display for SnowballType {
             SnowballType::Standard => write!(f, "STANDARD"),
             SnowballType::V35C => write!(f, "V3_5C"),
             SnowballType::V35S => write!(f, "V3_5S"),
-            SnowballType::Unknown(value) => write!(f, "{}", value),
+            SnowballType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

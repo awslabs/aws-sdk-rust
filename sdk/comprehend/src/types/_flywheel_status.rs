@@ -120,7 +120,7 @@ impl ::std::fmt::Display for FlywheelStatus {
             FlywheelStatus::Deleting => write!(f, "DELETING"),
             FlywheelStatus::Failed => write!(f, "FAILED"),
             FlywheelStatus::Updating => write!(f, "UPDATING"),
-            FlywheelStatus::Unknown(value) => write!(f, "{}", value),
+            FlywheelStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

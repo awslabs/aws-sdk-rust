@@ -99,7 +99,7 @@ mod test {
         let mut file = NamedTempFile::new().unwrap();
 
         for i in 0..10000 {
-            writeln!(file, "Brian was here. Briefly. {}", i).unwrap();
+            writeln!(file, "Brian was here. Briefly. {i}").unwrap();
         }
         let file_length = file
             .as_file()
@@ -187,8 +187,8 @@ mod test {
         let line_0 = "Line 0\n";
         let line_1 = "Line 1\n";
 
-        write!(file, "{}", line_0).unwrap();
-        write!(file, "{}", line_1).unwrap();
+        write!(file, "{line_0}").unwrap();
+        write!(file, "{line_1}").unwrap();
 
         // Ensure that the file was written to
         file.flush().expect("flushing is OK");
@@ -212,7 +212,7 @@ mod test {
         let mut file = NamedTempFile::new().unwrap();
         let test_sentence = "This sentence is 30 bytes long";
         assert_eq!(test_sentence.len(), 30);
-        write!(file, "{}", test_sentence).unwrap();
+        write!(file, "{test_sentence}").unwrap();
 
         // Ensure that the file was written to
         file.flush().expect("flushing is OK");
@@ -248,8 +248,8 @@ mod test {
         let line_0 = "Line 0\n";
         let line_1 = "Line 1\n";
 
-        write!(file, "{}", line_0).unwrap();
-        write!(file, "{}", line_1).unwrap();
+        write!(file, "{line_0}").unwrap();
+        write!(file, "{line_1}").unwrap();
 
         // Ensure that the file was written to
         file.flush().expect("flushing is OK");
@@ -275,9 +275,9 @@ mod test {
         let line_1 = "Line 1\n";
         let line_2 = "Line 2\n";
 
-        write!(file, "{}", line_0).unwrap();
-        write!(file, "{}", line_1).unwrap();
-        write!(file, "{}", line_2).unwrap();
+        write!(file, "{line_0}").unwrap();
+        write!(file, "{line_1}").unwrap();
+        write!(file, "{line_2}").unwrap();
 
         // Ensure that the file was written to
         file.flush().expect("flushing is OK");
@@ -304,8 +304,8 @@ mod test {
         let line_0 = "Line 0\n";
         let line_1 = "Line 1\n";
 
-        write!(file, "{}", line_0).unwrap();
-        write!(file, "{}", line_1).unwrap();
+        write!(file, "{line_0}").unwrap();
+        write!(file, "{line_1}").unwrap();
 
         // Ensure that the file was written to
         file.flush().expect("flushing is OK");
@@ -330,8 +330,8 @@ mod test {
         let line_0 = "Line 0\n";
         let line_1 = "Line 1\n";
 
-        write!(file, "{}", line_0).unwrap();
-        write!(file, "{}", line_1).unwrap();
+        write!(file, "{line_0}").unwrap();
+        write!(file, "{line_1}").unwrap();
 
         // Ensure that the file was written to
         file.flush().expect("flushing is OK");
@@ -346,7 +346,7 @@ mod test {
         let data = body.collect().await.unwrap().into_bytes();
         let data_str = String::from_utf8(data.to_vec()).unwrap();
 
-        assert_eq!(data_str, format!("{}{}", line_0, line_1));
+        assert_eq!(data_str, format!("{line_0}{line_1}"));
     }
 
     #[tokio::test]
@@ -357,14 +357,14 @@ mod test {
         {
             use std::io::Write;
             for i in 0..1000 {
-                writeln!(file, "Line {:04}", i).unwrap();
+                writeln!(file, "Line {i:04}").unwrap();
             }
         }
 
         {
             use std::fmt::Write;
             for i in 0..1000 {
-                writeln!(in_memory_copy_of_file_contents, "Line {:04}", i).unwrap();
+                writeln!(in_memory_copy_of_file_contents, "Line {i:04}").unwrap();
             }
             // Check we wrote the lines
             assert!(!in_memory_copy_of_file_contents.is_empty());

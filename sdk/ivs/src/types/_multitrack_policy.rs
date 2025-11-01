@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MultitrackPolicy {
         match self {
             MultitrackPolicy::Allow => write!(f, "ALLOW"),
             MultitrackPolicy::Require => write!(f, "REQUIRE"),
-            MultitrackPolicy::Unknown(value) => write!(f, "{}", value),
+            MultitrackPolicy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

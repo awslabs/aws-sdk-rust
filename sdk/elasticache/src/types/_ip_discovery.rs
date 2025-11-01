@@ -102,7 +102,7 @@ impl ::std::fmt::Display for IpDiscovery {
         match self {
             IpDiscovery::Ipv4 => write!(f, "ipv4"),
             IpDiscovery::Ipv6 => write!(f, "ipv6"),
-            IpDiscovery::Unknown(value) => write!(f, "{}", value),
+            IpDiscovery::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

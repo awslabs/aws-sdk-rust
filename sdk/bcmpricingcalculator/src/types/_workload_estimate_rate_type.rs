@@ -108,7 +108,7 @@ impl ::std::fmt::Display for WorkloadEstimateRateType {
             WorkloadEstimateRateType::AfterDiscounts => write!(f, "AFTER_DISCOUNTS"),
             WorkloadEstimateRateType::AfterDiscountsAndCommitments => write!(f, "AFTER_DISCOUNTS_AND_COMMITMENTS"),
             WorkloadEstimateRateType::BeforeDiscounts => write!(f, "BEFORE_DISCOUNTS"),
-            WorkloadEstimateRateType::Unknown(value) => write!(f, "{}", value),
+            WorkloadEstimateRateType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CpuArchitecture {
         match self {
             CpuArchitecture::Arm64 => write!(f, "ARM64"),
             CpuArchitecture::X8664 => write!(f, "X86_64"),
-            CpuArchitecture::Unknown(value) => write!(f, "{}", value),
+            CpuArchitecture::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

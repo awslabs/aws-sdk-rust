@@ -102,7 +102,7 @@ impl ::std::fmt::Display for UsageOfAction {
         match self {
             UsageOfAction::Disabled => write!(f, "DISABLED"),
             UsageOfAction::Enabled => write!(f, "ENABLED"),
-            UsageOfAction::Unknown(value) => write!(f, "{}", value),
+            UsageOfAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

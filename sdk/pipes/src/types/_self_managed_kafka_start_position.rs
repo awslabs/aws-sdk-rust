@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SelfManagedKafkaStartPosition {
         match self {
             SelfManagedKafkaStartPosition::Latest => write!(f, "LATEST"),
             SelfManagedKafkaStartPosition::TrimHorizon => write!(f, "TRIM_HORIZON"),
-            SelfManagedKafkaStartPosition::Unknown(value) => write!(f, "{}", value),
+            SelfManagedKafkaStartPosition::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

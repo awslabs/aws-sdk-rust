@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ProcessBehavior {
         match self {
             ProcessBehavior::Build => write!(f, "BUILD"),
             ProcessBehavior::Save => write!(f, "SAVE"),
-            ProcessBehavior::Unknown(value) => write!(f, "{}", value),
+            ProcessBehavior::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

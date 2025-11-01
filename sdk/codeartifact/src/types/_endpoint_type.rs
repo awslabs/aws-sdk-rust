@@ -102,7 +102,7 @@ impl ::std::fmt::Display for EndpointType {
         match self {
             EndpointType::Dualstack => write!(f, "dualstack"),
             EndpointType::Ipv4 => write!(f, "ipv4"),
-            EndpointType::Unknown(value) => write!(f, "{}", value),
+            EndpointType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

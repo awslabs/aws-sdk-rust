@@ -140,7 +140,7 @@ impl ::std::fmt::Display for SubscriptionGrantOverallStatus {
             SubscriptionGrantOverallStatus::InProgress => write!(f, "IN_PROGRESS"),
             SubscriptionGrantOverallStatus::Pending => write!(f, "PENDING"),
             SubscriptionGrantOverallStatus::RevokeFailed => write!(f, "REVOKE_FAILED"),
-            SubscriptionGrantOverallStatus::Unknown(value) => write!(f, "{}", value),
+            SubscriptionGrantOverallStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

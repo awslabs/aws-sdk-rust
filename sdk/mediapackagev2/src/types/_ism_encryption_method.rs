@@ -96,7 +96,7 @@ impl ::std::fmt::Display for IsmEncryptionMethod {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             IsmEncryptionMethod::Cenc => write!(f, "CENC"),
-            IsmEncryptionMethod::Unknown(value) => write!(f, "{}", value),
+            IsmEncryptionMethod::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

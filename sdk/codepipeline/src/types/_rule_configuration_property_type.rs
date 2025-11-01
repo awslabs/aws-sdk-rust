@@ -108,7 +108,7 @@ impl ::std::fmt::Display for RuleConfigurationPropertyType {
             RuleConfigurationPropertyType::Boolean => write!(f, "Boolean"),
             RuleConfigurationPropertyType::Number => write!(f, "Number"),
             RuleConfigurationPropertyType::String => write!(f, "String"),
-            RuleConfigurationPropertyType::Unknown(value) => write!(f, "{}", value),
+            RuleConfigurationPropertyType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

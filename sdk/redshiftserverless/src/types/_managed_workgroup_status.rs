@@ -120,7 +120,7 @@ impl ::std::fmt::Display for ManagedWorkgroupStatus {
             ManagedWorkgroupStatus::Deleting => write!(f, "DELETING"),
             ManagedWorkgroupStatus::Modifying => write!(f, "MODIFYING"),
             ManagedWorkgroupStatus::NotAvailable => write!(f, "NOT_AVAILABLE"),
-            ManagedWorkgroupStatus::Unknown(value) => write!(f, "{}", value),
+            ManagedWorkgroupStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

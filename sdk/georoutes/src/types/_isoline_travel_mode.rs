@@ -114,7 +114,7 @@ impl ::std::fmt::Display for IsolineTravelMode {
             IsolineTravelMode::Pedestrian => write!(f, "Pedestrian"),
             IsolineTravelMode::Scooter => write!(f, "Scooter"),
             IsolineTravelMode::Truck => write!(f, "Truck"),
-            IsolineTravelMode::Unknown(value) => write!(f, "{}", value),
+            IsolineTravelMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

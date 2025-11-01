@@ -120,7 +120,7 @@ impl ::std::fmt::Display for MaximumSupportedWeightLbs {
             MaximumSupportedWeightLbs::Max1800Lbs => write!(f, "MAX_1800_LBS"),
             MaximumSupportedWeightLbs::Max2000Lbs => write!(f, "MAX_2000_LBS"),
             MaximumSupportedWeightLbs::NoLimit => write!(f, "NO_LIMIT"),
-            MaximumSupportedWeightLbs::Unknown(value) => write!(f, "{}", value),
+            MaximumSupportedWeightLbs::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

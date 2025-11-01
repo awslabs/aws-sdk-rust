@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SelectiveAuth {
         match self {
             SelectiveAuth::Disabled => write!(f, "Disabled"),
             SelectiveAuth::Enabled => write!(f, "Enabled"),
-            SelectiveAuth::Unknown(value) => write!(f, "{}", value),
+            SelectiveAuth::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

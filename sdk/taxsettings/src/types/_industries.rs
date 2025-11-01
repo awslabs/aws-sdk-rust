@@ -133,7 +133,7 @@ impl ::std::fmt::Display for Industries {
             Industries::Insurance => write!(f, "Insurance"),
             Industries::PensionAndBenefitFunds => write!(f, "PensionAndBenefitFunds"),
             Industries::ProfessionalOrg => write!(f, "ProfessionalOrg"),
-            Industries::Unknown(value) => write!(f, "{}", value),
+            Industries::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

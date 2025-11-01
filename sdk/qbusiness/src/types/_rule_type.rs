@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RuleType {
         match self {
             RuleType::ContentBlockerRule => write!(f, "CONTENT_BLOCKER_RULE"),
             RuleType::ContentRetrievalRule => write!(f, "CONTENT_RETRIEVAL_RULE"),
-            RuleType::Unknown(value) => write!(f, "{}", value),
+            RuleType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

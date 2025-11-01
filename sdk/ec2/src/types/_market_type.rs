@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MarketType {
         match self {
             MarketType::CapacityBlock => write!(f, "capacity-block"),
             MarketType::Spot => write!(f, "spot"),
-            MarketType::Unknown(value) => write!(f, "{}", value),
+            MarketType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

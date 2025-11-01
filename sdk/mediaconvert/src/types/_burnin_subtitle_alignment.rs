@@ -108,7 +108,7 @@ impl ::std::fmt::Display for BurninSubtitleAlignment {
             BurninSubtitleAlignment::Auto => write!(f, "AUTO"),
             BurninSubtitleAlignment::Centered => write!(f, "CENTERED"),
             BurninSubtitleAlignment::Left => write!(f, "LEFT"),
-            BurninSubtitleAlignment::Unknown(value) => write!(f, "{}", value),
+            BurninSubtitleAlignment::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

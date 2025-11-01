@@ -234,12 +234,12 @@ impl PropertyError {
                 ctx.get_mut(0..1).unwrap().make_ascii_uppercase();
                 EnvConfigParseError {
                     location,
-                    message: format!("{} did not have a name", ctx),
+                    message: format!("{ctx} did not have a name"),
                 }
             }
             PropertyError::NoEquals => EnvConfigParseError {
                 location,
-                message: format!("Expected an '=' sign defining a {}", ctx),
+                message: format!("Expected an '=' sign defining a {ctx}"),
             },
         }
     }

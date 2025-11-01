@@ -140,7 +140,7 @@ impl ::std::fmt::Display for FailureType {
             FailureType::RollbackFailed => write!(f, "RollbackFailed"),
             FailureType::RollbackSuccessful => write!(f, "RollbackSuccessful"),
             FailureType::UpdateCancelled => write!(f, "UpdateCancelled"),
-            FailureType::Unknown(value) => write!(f, "{}", value),
+            FailureType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

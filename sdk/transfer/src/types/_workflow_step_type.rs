@@ -120,7 +120,7 @@ impl ::std::fmt::Display for WorkflowStepType {
             WorkflowStepType::Decrypt => write!(f, "DECRYPT"),
             WorkflowStepType::Delete => write!(f, "DELETE"),
             WorkflowStepType::Tag => write!(f, "TAG"),
-            WorkflowStepType::Unknown(value) => write!(f, "{}", value),
+            WorkflowStepType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

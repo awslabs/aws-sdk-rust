@@ -96,7 +96,7 @@ impl ::std::fmt::Display for AppSortKey {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             AppSortKey::CreationTime => write!(f, "CreationTime"),
-            AppSortKey::Unknown(value) => write!(f, "{}", value),
+            AppSortKey::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

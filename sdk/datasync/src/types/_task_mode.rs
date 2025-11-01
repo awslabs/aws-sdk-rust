@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TaskMode {
         match self {
             TaskMode::Basic => write!(f, "BASIC"),
             TaskMode::Enhanced => write!(f, "ENHANCED"),
-            TaskMode::Unknown(value) => write!(f, "{}", value),
+            TaskMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

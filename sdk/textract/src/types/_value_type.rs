@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ValueType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ValueType::Date => write!(f, "DATE"),
-            ValueType::Unknown(value) => write!(f, "{}", value),
+            ValueType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

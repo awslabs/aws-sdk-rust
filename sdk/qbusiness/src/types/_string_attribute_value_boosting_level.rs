@@ -144,7 +144,7 @@ impl ::std::fmt::Display for StringAttributeValueBoostingLevel {
             StringAttributeValueBoostingLevel::Three => write!(f, "THREE"),
             StringAttributeValueBoostingLevel::Two => write!(f, "TWO"),
             StringAttributeValueBoostingLevel::VeryHigh => write!(f, "VERY_HIGH"),
-            StringAttributeValueBoostingLevel::Unknown(value) => write!(f, "{}", value),
+            StringAttributeValueBoostingLevel::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

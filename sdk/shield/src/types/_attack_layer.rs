@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AttackLayer {
         match self {
             AttackLayer::Application => write!(f, "APPLICATION"),
             AttackLayer::Network => write!(f, "NETWORK"),
-            AttackLayer::Unknown(value) => write!(f, "{}", value),
+            AttackLayer::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -180,6 +180,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeleteS3Acce
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::delete_s3_access_policy::DeleteS3AccessPolicyInput,
                 output: &mut ::std::string::String,

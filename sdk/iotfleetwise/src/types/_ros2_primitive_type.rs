@@ -183,7 +183,7 @@ impl ::std::fmt::Display for Ros2PrimitiveType {
             Ros2PrimitiveType::Uint64 => write!(f, "UINT64"),
             Ros2PrimitiveType::Uint8 => write!(f, "UINT8"),
             Ros2PrimitiveType::Wstring => write!(f, "WSTRING"),
-            Ros2PrimitiveType::Unknown(value) => write!(f, "{}", value),
+            Ros2PrimitiveType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

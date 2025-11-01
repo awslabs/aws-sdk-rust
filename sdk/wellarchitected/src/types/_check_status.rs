@@ -120,7 +120,7 @@ impl ::std::fmt::Display for CheckStatus {
             CheckStatus::NotAvailable => write!(f, "NOT_AVAILABLE"),
             CheckStatus::Okay => write!(f, "OKAY"),
             CheckStatus::Warning => write!(f, "WARNING"),
-            CheckStatus::Unknown(value) => write!(f, "{}", value),
+            CheckStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for QuestionType {
         match self {
             QuestionType::NonPrioritized => write!(f, "NON_PRIORITIZED"),
             QuestionType::Prioritized => write!(f, "PRIORITIZED"),
-            QuestionType::Unknown(value) => write!(f, "{}", value),
+            QuestionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

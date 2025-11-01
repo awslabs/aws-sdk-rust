@@ -154,7 +154,7 @@ impl ::std::fmt::Display for SnomedctTraitName {
             SnomedctTraitName::PertainsToFamily => write!(f, "PERTAINS_TO_FAMILY"),
             SnomedctTraitName::Sign => write!(f, "SIGN"),
             SnomedctTraitName::Symptom => write!(f, "SYMPTOM"),
-            SnomedctTraitName::Unknown(value) => write!(f, "{}", value),
+            SnomedctTraitName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -96,7 +96,7 @@ impl ::std::fmt::Display for EndpointType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             EndpointType::Lambda => write!(f, "LAMBDA"),
-            EndpointType::Unknown(value) => write!(f, "{}", value),
+            EndpointType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

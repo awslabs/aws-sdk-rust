@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TableTagPolicyLfPermission {
         match self {
             TableTagPolicyLfPermission::Describe => write!(f, "DESCRIBE"),
             TableTagPolicyLfPermission::Select => write!(f, "SELECT"),
-            TableTagPolicyLfPermission::Unknown(value) => write!(f, "{}", value),
+            TableTagPolicyLfPermission::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

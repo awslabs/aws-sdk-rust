@@ -132,7 +132,7 @@ impl ::std::fmt::Display for NodegroupStatus {
             NodegroupStatus::DeleteFailed => write!(f, "DELETE_FAILED"),
             NodegroupStatus::Deleting => write!(f, "DELETING"),
             NodegroupStatus::Updating => write!(f, "UPDATING"),
-            NodegroupStatus::Unknown(value) => write!(f, "{}", value),
+            NodegroupStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for DataFormat {
             DataFormat::Csv => write!(f, "CSV"),
             DataFormat::Jsonl => write!(f, "JSONL"),
             DataFormat::Orc => write!(f, "ORC"),
-            DataFormat::Unknown(value) => write!(f, "{}", value),
+            DataFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

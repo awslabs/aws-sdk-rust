@@ -238,7 +238,7 @@ impl ::std::fmt::Display for RdsdbMetricName {
             RdsdbMetricName::VolumeReadIops => write!(f, "VolumeReadIOPs"),
             RdsdbMetricName::VolumeWriteIops => write!(f, "VolumeWriteIOPs"),
             RdsdbMetricName::WriteIopsEphemeralStorage => write!(f, "WriteIOPSEphemeralStorage"),
-            RdsdbMetricName::Unknown(value) => write!(f, "{}", value),
+            RdsdbMetricName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for LogDestinationType {
             LogDestinationType::CloudwatchLogs => write!(f, "CloudWatchLogs"),
             LogDestinationType::KinesisDataFirehose => write!(f, "KinesisDataFirehose"),
             LogDestinationType::S3 => write!(f, "S3"),
-            LogDestinationType::Unknown(value) => write!(f, "{}", value),
+            LogDestinationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

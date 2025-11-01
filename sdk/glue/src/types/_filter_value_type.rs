@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FilterValueType {
         match self {
             FilterValueType::Columnextracted => write!(f, "COLUMNEXTRACTED"),
             FilterValueType::Constant => write!(f, "CONSTANT"),
-            FilterValueType::Unknown(value) => write!(f, "{}", value),
+            FilterValueType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

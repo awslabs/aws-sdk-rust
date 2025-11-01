@@ -53,8 +53,7 @@ pub fn de_delete_instance_event_window(
     let start_el = decoder.start_el();
     if !(start_el.matches("DeleteInstanceEventWindowResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected DeleteInstanceEventWindowResponse got {:?}",
-            start_el
+            "invalid root, expected DeleteInstanceEventWindowResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

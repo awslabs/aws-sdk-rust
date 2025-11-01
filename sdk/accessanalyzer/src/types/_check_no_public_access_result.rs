@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CheckNoPublicAccessResult {
         match self {
             CheckNoPublicAccessResult::Fail => write!(f, "FAIL"),
             CheckNoPublicAccessResult::Pass => write!(f, "PASS"),
-            CheckNoPublicAccessResult::Unknown(value) => write!(f, "{}", value),
+            CheckNoPublicAccessResult::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

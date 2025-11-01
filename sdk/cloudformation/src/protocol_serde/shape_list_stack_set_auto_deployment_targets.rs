@@ -79,16 +79,14 @@ pub fn de_list_stack_set_auto_deployment_targets(
     let start_el = decoder.start_el();
     if !(start_el.matches("ListStackSetAutoDeploymentTargetsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected ListStackSetAutoDeploymentTargetsResponse got {:?}",
-            start_el
+            "invalid root, expected ListStackSetAutoDeploymentTargetsResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("ListStackSetAutoDeploymentTargetsResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected ListStackSetAutoDeploymentTargetsResult got {:?}",
-                start_el
+                "invalid result, expected ListStackSetAutoDeploymentTargetsResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

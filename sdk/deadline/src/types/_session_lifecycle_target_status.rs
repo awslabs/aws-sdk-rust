@@ -96,7 +96,7 @@ impl ::std::fmt::Display for SessionLifecycleTargetStatus {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             SessionLifecycleTargetStatus::Ended => write!(f, "ENDED"),
-            SessionLifecycleTargetStatus::Unknown(value) => write!(f, "{}", value),
+            SessionLifecycleTargetStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

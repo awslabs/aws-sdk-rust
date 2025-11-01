@@ -126,7 +126,7 @@ impl ::std::fmt::Display for EdgePackagingJobStatus {
             EdgePackagingJobStatus::Starting => write!(f, "STARTING"),
             EdgePackagingJobStatus::Stopped => write!(f, "STOPPED"),
             EdgePackagingJobStatus::Stopping => write!(f, "STOPPING"),
-            EdgePackagingJobStatus::Unknown(value) => write!(f, "{}", value),
+            EdgePackagingJobStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

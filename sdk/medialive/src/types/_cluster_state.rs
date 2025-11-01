@@ -126,7 +126,7 @@ impl ::std::fmt::Display for ClusterState {
             ClusterState::Deleted => write!(f, "DELETED"),
             ClusterState::DeleteFailed => write!(f, "DELETE_FAILED"),
             ClusterState::Deleting => write!(f, "DELETING"),
-            ClusterState::Unknown(value) => write!(f, "{}", value),
+            ClusterState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for BotType {
         match self {
             BotType::Bot => write!(f, "Bot"),
             BotType::BotNetwork => write!(f, "BotNetwork"),
-            BotType::Unknown(value) => write!(f, "{}", value),
+            BotType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

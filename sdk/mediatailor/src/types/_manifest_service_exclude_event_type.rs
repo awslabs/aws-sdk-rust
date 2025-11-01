@@ -315,7 +315,7 @@ impl ::std::fmt::Display for ManifestServiceExcludeEventType {
             ManifestServiceExcludeEventType::UnknownError => write!(f, "UNKNOWN_ERROR"),
             ManifestServiceExcludeEventType::UnknownHost => write!(f, "UNKNOWN_HOST"),
             ManifestServiceExcludeEventType::UnsupportedSinglePeriodDashManifest => write!(f, "UNSUPPORTED_SINGLE_PERIOD_DASH_MANIFEST"),
-            ManifestServiceExcludeEventType::Unknown(value) => write!(f, "{}", value),
+            ManifestServiceExcludeEventType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

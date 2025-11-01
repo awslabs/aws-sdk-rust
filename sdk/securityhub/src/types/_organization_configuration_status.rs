@@ -108,7 +108,7 @@ impl ::std::fmt::Display for OrganizationConfigurationStatus {
             OrganizationConfigurationStatus::Enabled => write!(f, "ENABLED"),
             OrganizationConfigurationStatus::Failed => write!(f, "FAILED"),
             OrganizationConfigurationStatus::Pending => write!(f, "PENDING"),
-            OrganizationConfigurationStatus::Unknown(value) => write!(f, "{}", value),
+            OrganizationConfigurationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

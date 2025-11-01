@@ -102,7 +102,7 @@ impl ::std::fmt::Display for OfferStateString {
         match self {
             OfferStateString::Draft => write!(f, "Draft"),
             OfferStateString::Released => write!(f, "Released"),
-            OfferStateString::Unknown(value) => write!(f, "{}", value),
+            OfferStateString::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

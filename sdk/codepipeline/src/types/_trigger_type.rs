@@ -154,7 +154,7 @@ impl ::std::fmt::Display for TriggerType {
             TriggerType::StartPipelineExecution => write!(f, "StartPipelineExecution"),
             TriggerType::Webhook => write!(f, "Webhook"),
             TriggerType::WebhookV2 => write!(f, "WebhookV2"),
-            TriggerType::Unknown(value) => write!(f, "{}", value),
+            TriggerType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

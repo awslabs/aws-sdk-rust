@@ -102,7 +102,7 @@ impl ::std::fmt::Display for VolumeFilterName {
         match self {
             VolumeFilterName::FileSystemId => write!(f, "file-system-id"),
             VolumeFilterName::StorageVirtualMachineId => write!(f, "storage-virtual-machine-id"),
-            VolumeFilterName::Unknown(value) => write!(f, "{}", value),
+            VolumeFilterName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

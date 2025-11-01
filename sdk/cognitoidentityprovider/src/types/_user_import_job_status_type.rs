@@ -147,7 +147,7 @@ impl ::std::fmt::Display for UserImportJobStatusType {
             UserImportJobStatusType::Stopped => write!(f, "Stopped"),
             UserImportJobStatusType::Stopping => write!(f, "Stopping"),
             UserImportJobStatusType::Succeeded => write!(f, "Succeeded"),
-            UserImportJobStatusType::Unknown(value) => write!(f, "{}", value),
+            UserImportJobStatusType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

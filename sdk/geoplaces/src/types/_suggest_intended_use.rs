@@ -96,7 +96,7 @@ impl ::std::fmt::Display for SuggestIntendedUse {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             SuggestIntendedUse::SingleUse => write!(f, "SingleUse"),
-            SuggestIntendedUse::Unknown(value) => write!(f, "{}", value),
+            SuggestIntendedUse::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

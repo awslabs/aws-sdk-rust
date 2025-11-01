@@ -105,7 +105,7 @@ impl ::std::fmt::Display for WirelessDeviceFrameInfo {
         match self {
             WirelessDeviceFrameInfo::Disabled => write!(f, "DISABLED"),
             WirelessDeviceFrameInfo::Enabled => write!(f, "ENABLED"),
-            WirelessDeviceFrameInfo::Unknown(value) => write!(f, "{}", value),
+            WirelessDeviceFrameInfo::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

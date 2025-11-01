@@ -51,8 +51,7 @@ pub fn de_attach_classic_link_vpc(
     let start_el = decoder.start_el();
     if !(start_el.matches("AttachClassicLinkVpcResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected AttachClassicLinkVpcResponse got {:?}",
-            start_el
+            "invalid root, expected AttachClassicLinkVpcResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

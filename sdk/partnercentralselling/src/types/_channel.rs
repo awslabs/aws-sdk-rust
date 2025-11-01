@@ -182,7 +182,7 @@ impl ::std::fmt::Display for Channel {
             Channel::Telemarketing => write!(f, "Telemarketing"),
             Channel::Video => write!(f, "Video"),
             Channel::VirtualEvent => write!(f, "Virtual Event"),
-            Channel::Unknown(value) => write!(f, "{}", value),
+            Channel::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

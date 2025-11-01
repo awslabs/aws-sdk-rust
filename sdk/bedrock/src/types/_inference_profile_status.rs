@@ -96,7 +96,7 @@ impl ::std::fmt::Display for InferenceProfileStatus {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             InferenceProfileStatus::Active => write!(f, "ACTIVE"),
-            InferenceProfileStatus::Unknown(value) => write!(f, "{}", value),
+            InferenceProfileStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

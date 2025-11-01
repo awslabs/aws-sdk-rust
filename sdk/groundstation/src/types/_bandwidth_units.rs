@@ -108,7 +108,7 @@ impl ::std::fmt::Display for BandwidthUnits {
             BandwidthUnits::Ghz => write!(f, "GHz"),
             BandwidthUnits::Mhz => write!(f, "MHz"),
             BandwidthUnits::Khz => write!(f, "kHz"),
-            BandwidthUnits::Unknown(value) => write!(f, "{}", value),
+            BandwidthUnits::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

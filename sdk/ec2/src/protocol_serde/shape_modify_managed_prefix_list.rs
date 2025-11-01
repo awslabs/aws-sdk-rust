@@ -53,8 +53,7 @@ pub fn de_modify_managed_prefix_list(
     let start_el = decoder.start_el();
     if !(start_el.matches("ModifyManagedPrefixListResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected ModifyManagedPrefixListResponse got {:?}",
-            start_el
+            "invalid root, expected ModifyManagedPrefixListResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

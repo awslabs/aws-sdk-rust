@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ClientSideTimestampsStatus {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ClientSideTimestampsStatus::Enabled => write!(f, "ENABLED"),
-            ClientSideTimestampsStatus::Unknown(value) => write!(f, "{}", value),
+            ClientSideTimestampsStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -147,7 +147,7 @@ impl ::std::fmt::Display for VpcConnectionState {
             VpcConnectionState::Inactive => write!(f, "INACTIVE"),
             VpcConnectionState::Rejected => write!(f, "REJECTED"),
             VpcConnectionState::Rejecting => write!(f, "REJECTING"),
-            VpcConnectionState::Unknown(value) => write!(f, "{}", value),
+            VpcConnectionState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

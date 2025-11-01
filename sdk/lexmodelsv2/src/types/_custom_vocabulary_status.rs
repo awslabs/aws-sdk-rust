@@ -120,7 +120,7 @@ impl ::std::fmt::Display for CustomVocabularyStatus {
             CustomVocabularyStatus::Exporting => write!(f, "Exporting"),
             CustomVocabularyStatus::Importing => write!(f, "Importing"),
             CustomVocabularyStatus::Ready => write!(f, "Ready"),
-            CustomVocabularyStatus::Unknown(value) => write!(f, "{}", value),
+            CustomVocabularyStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

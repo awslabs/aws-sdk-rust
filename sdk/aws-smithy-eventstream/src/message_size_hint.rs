@@ -123,14 +123,13 @@ mod tests {
             // Get actual serialized size
             let mut buffer = Vec::new();
             write_message_to(message, &mut buffer)
-                .expect(&format!("Failed to serialize test case {}", i));
+                .unwrap_or_else(|_| panic!("Failed to serialize test case {i}"));
             let actual_size = buffer.len();
 
             // The size hint should exactly match the actual serialized size
             assert_eq!(
                 size_hint, actual_size,
-                "Size hint mismatch for test case {}: hint={}, actual={}",
-                i, size_hint, actual_size
+                "Size hint mismatch for test case {i}: hint={size_hint}, actual={actual_size}"
             );
         }
     }

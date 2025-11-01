@@ -108,7 +108,7 @@ impl ::std::fmt::Display for Platform {
             Platform::Linux => write!(f, "Linux"),
             Platform::Windows => write!(f, "Windows"),
             Platform::Macos => write!(f, "macOS"),
-            Platform::Unknown(value) => write!(f, "{}", value),
+            Platform::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

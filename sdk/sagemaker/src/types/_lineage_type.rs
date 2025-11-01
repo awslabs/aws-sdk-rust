@@ -114,7 +114,7 @@ impl ::std::fmt::Display for LineageType {
             LineageType::Artifact => write!(f, "Artifact"),
             LineageType::Context => write!(f, "Context"),
             LineageType::TrialComponent => write!(f, "TrialComponent"),
-            LineageType::Unknown(value) => write!(f, "{}", value),
+            LineageType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

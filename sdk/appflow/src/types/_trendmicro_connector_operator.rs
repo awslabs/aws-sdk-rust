@@ -189,7 +189,7 @@ impl ::std::fmt::Display for TrendmicroConnectorOperator {
             TrendmicroConnectorOperator::ValidateNonNull => write!(f, "VALIDATE_NON_NULL"),
             TrendmicroConnectorOperator::ValidateNonZero => write!(f, "VALIDATE_NON_ZERO"),
             TrendmicroConnectorOperator::ValidateNumeric => write!(f, "VALIDATE_NUMERIC"),
-            TrendmicroConnectorOperator::Unknown(value) => write!(f, "{}", value),
+            TrendmicroConnectorOperator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

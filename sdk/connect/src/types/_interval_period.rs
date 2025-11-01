@@ -126,7 +126,7 @@ impl ::std::fmt::Display for IntervalPeriod {
             IntervalPeriod::ThirtyMin => write!(f, "THIRTY_MIN"),
             IntervalPeriod::Total => write!(f, "TOTAL"),
             IntervalPeriod::Week => write!(f, "WEEK"),
-            IntervalPeriod::Unknown(value) => write!(f, "{}", value),
+            IntervalPeriod::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

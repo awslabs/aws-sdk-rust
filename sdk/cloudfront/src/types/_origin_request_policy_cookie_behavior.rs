@@ -114,7 +114,7 @@ impl ::std::fmt::Display for OriginRequestPolicyCookieBehavior {
             OriginRequestPolicyCookieBehavior::AllExcept => write!(f, "allExcept"),
             OriginRequestPolicyCookieBehavior::None => write!(f, "none"),
             OriginRequestPolicyCookieBehavior::Whitelist => write!(f, "whitelist"),
-            OriginRequestPolicyCookieBehavior::Unknown(value) => write!(f, "{}", value),
+            OriginRequestPolicyCookieBehavior::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -140,7 +140,7 @@ impl ::std::fmt::Display for FailbackState {
             FailbackState::FailbackNotReadyForLaunch => write!(f, "FAILBACK_NOT_READY_FOR_LAUNCH"),
             FailbackState::FailbackNotStarted => write!(f, "FAILBACK_NOT_STARTED"),
             FailbackState::FailbackReadyForLaunch => write!(f, "FAILBACK_READY_FOR_LAUNCH"),
-            FailbackState::Unknown(value) => write!(f, "{}", value),
+            FailbackState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

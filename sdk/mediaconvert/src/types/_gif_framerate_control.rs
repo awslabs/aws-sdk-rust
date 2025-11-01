@@ -102,7 +102,7 @@ impl ::std::fmt::Display for GifFramerateControl {
         match self {
             GifFramerateControl::InitializeFromSource => write!(f, "INITIALIZE_FROM_SOURCE"),
             GifFramerateControl::Specified => write!(f, "SPECIFIED"),
-            GifFramerateControl::Unknown(value) => write!(f, "{}", value),
+            GifFramerateControl::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

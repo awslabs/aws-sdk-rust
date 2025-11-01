@@ -96,7 +96,7 @@ impl ::std::fmt::Display for TrainedModelArtifactMaxSizeUnitType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             TrainedModelArtifactMaxSizeUnitType::Gb => write!(f, "GB"),
-            TrainedModelArtifactMaxSizeUnitType::Unknown(value) => write!(f, "{}", value),
+            TrainedModelArtifactMaxSizeUnitType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for H265FramerateConversionAlgorithm {
             H265FramerateConversionAlgorithm::Frameformer => write!(f, "FRAMEFORMER"),
             H265FramerateConversionAlgorithm::Interpolate => write!(f, "INTERPOLATE"),
             H265FramerateConversionAlgorithm::MaintainFrameCount => write!(f, "MAINTAIN_FRAME_COUNT"),
-            H265FramerateConversionAlgorithm::Unknown(value) => write!(f, "{}", value),
+            H265FramerateConversionAlgorithm::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

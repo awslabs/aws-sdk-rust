@@ -114,7 +114,7 @@ impl ::std::fmt::Display for InputSecurityGroupState {
             InputSecurityGroupState::Idle => write!(f, "IDLE"),
             InputSecurityGroupState::InUse => write!(f, "IN_USE"),
             InputSecurityGroupState::Updating => write!(f, "UPDATING"),
-            InputSecurityGroupState::Unknown(value) => write!(f, "{}", value),
+            InputSecurityGroupState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

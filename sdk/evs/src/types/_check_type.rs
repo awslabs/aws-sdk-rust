@@ -114,7 +114,7 @@ impl ::std::fmt::Display for CheckType {
             CheckType::KeyCoverage => write!(f, "KEY_COVERAGE"),
             CheckType::KeyReuse => write!(f, "KEY_REUSE"),
             CheckType::Reachability => write!(f, "REACHABILITY"),
-            CheckType::Unknown(value) => write!(f, "{}", value),
+            CheckType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

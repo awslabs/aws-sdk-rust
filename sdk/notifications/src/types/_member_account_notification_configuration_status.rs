@@ -122,7 +122,7 @@ impl ::std::fmt::Display for MemberAccountNotificationConfigurationStatus {
             MemberAccountNotificationConfigurationStatus::Deleting => write!(f, "DELETING"),
             MemberAccountNotificationConfigurationStatus::Inactive => write!(f, "INACTIVE"),
             MemberAccountNotificationConfigurationStatus::Pending => write!(f, "PENDING"),
-            MemberAccountNotificationConfigurationStatus::Unknown(value) => write!(f, "{}", value),
+            MemberAccountNotificationConfigurationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -96,7 +96,7 @@ impl ::std::fmt::Display for TrainingPlanFilterName {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             TrainingPlanFilterName::Status => write!(f, "Status"),
-            TrainingPlanFilterName::Unknown(value) => write!(f, "{}", value),
+            TrainingPlanFilterName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

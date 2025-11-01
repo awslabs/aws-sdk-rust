@@ -102,7 +102,7 @@ impl ::std::fmt::Display for KafkaClusterEncryptionInTransitType {
         match self {
             KafkaClusterEncryptionInTransitType::Plaintext => write!(f, "PLAINTEXT"),
             KafkaClusterEncryptionInTransitType::Tls => write!(f, "TLS"),
-            KafkaClusterEncryptionInTransitType::Unknown(value) => write!(f, "{}", value),
+            KafkaClusterEncryptionInTransitType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

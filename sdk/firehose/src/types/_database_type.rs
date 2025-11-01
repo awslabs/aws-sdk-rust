@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DatabaseType {
         match self {
             DatabaseType::MySql => write!(f, "MySQL"),
             DatabaseType::PostgreSql => write!(f, "PostgreSQL"),
-            DatabaseType::Unknown(value) => write!(f, "{}", value),
+            DatabaseType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

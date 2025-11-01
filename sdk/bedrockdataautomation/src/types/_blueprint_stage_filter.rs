@@ -108,7 +108,7 @@ impl ::std::fmt::Display for BlueprintStageFilter {
             BlueprintStageFilter::All => write!(f, "ALL"),
             BlueprintStageFilter::Development => write!(f, "DEVELOPMENT"),
             BlueprintStageFilter::Live => write!(f, "LIVE"),
-            BlueprintStageFilter::Unknown(value) => write!(f, "{}", value),
+            BlueprintStageFilter::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

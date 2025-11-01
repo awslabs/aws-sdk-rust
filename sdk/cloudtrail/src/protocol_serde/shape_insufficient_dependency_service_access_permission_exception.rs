@@ -24,8 +24,7 @@ pub(crate) fn de_insufficient_dependency_service_access_permission_exception_jso
             },
             other => {
                 return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                    "expected object key or end object, found: {:?}",
-                    other
+                    "expected object key or end object, found: {other:?}"
                 )))
             }
         }

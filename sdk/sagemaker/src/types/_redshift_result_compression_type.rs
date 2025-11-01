@@ -120,7 +120,7 @@ impl ::std::fmt::Display for RedshiftResultCompressionType {
             RedshiftResultCompressionType::None => write!(f, "None"),
             RedshiftResultCompressionType::Snappy => write!(f, "SNAPPY"),
             RedshiftResultCompressionType::Zstd => write!(f, "ZSTD"),
-            RedshiftResultCompressionType::Unknown(value) => write!(f, "{}", value),
+            RedshiftResultCompressionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

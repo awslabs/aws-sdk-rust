@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ColorFillType {
         match self {
             ColorFillType::Discrete => write!(f, "DISCRETE"),
             ColorFillType::Gradient => write!(f, "GRADIENT"),
-            ColorFillType::Unknown(value) => write!(f, "{}", value),
+            ColorFillType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

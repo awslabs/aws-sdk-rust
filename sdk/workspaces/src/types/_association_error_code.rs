@@ -126,7 +126,7 @@ impl ::std::fmt::Display for AssociationErrorCode {
             AssociationErrorCode::InsufficientDiskspace => write!(f, "ValidationError.InsufficientDiskSpace"),
             AssociationErrorCode::InsufficientMemory => write!(f, "ValidationError.InsufficientMemory"),
             AssociationErrorCode::UnsupportedOperatingSystem => write!(f, "ValidationError.UnsupportedOperatingSystem"),
-            AssociationErrorCode::Unknown(value) => write!(f, "{}", value),
+            AssociationErrorCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

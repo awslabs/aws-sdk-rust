@@ -120,7 +120,7 @@ impl ::std::fmt::Display for LogType {
             LogType::Authenticator => write!(f, "authenticator"),
             LogType::ControllerManager => write!(f, "controllerManager"),
             LogType::Scheduler => write!(f, "scheduler"),
-            LogType::Unknown(value) => write!(f, "{}", value),
+            LogType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

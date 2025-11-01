@@ -102,7 +102,7 @@ impl ::std::fmt::Display for LandingZoneDriftStatus {
         match self {
             LandingZoneDriftStatus::Drifted => write!(f, "DRIFTED"),
             LandingZoneDriftStatus::InSync => write!(f, "IN_SYNC"),
-            LandingZoneDriftStatus::Unknown(value) => write!(f, "{}", value),
+            LandingZoneDriftStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

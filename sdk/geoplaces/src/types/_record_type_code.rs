@@ -124,7 +124,7 @@ impl ::std::fmt::Display for RecordTypeCode {
             RecordTypeCode::PostOfficeBox => write!(f, "PostOfficeBox"),
             RecordTypeCode::Rural => write!(f, "Rural"),
             RecordTypeCode::Street => write!(f, "Street"),
-            RecordTypeCode::Unknown(value) => write!(f, "{}", value),
+            RecordTypeCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

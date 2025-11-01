@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PublicAclIgnoreBehavior {
         match self {
             PublicAclIgnoreBehavior::Ignored => write!(f, "IGNORED"),
             PublicAclIgnoreBehavior::NotIgnored => write!(f, "NOT_IGNORED"),
-            PublicAclIgnoreBehavior::Unknown(value) => write!(f, "{}", value),
+            PublicAclIgnoreBehavior::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

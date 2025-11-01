@@ -134,7 +134,7 @@ impl DateTime {
     /// ```
     pub fn from_secs_and_nanos(seconds: i64, subsecond_nanos: u32) -> Self {
         if subsecond_nanos >= 1_000_000_000 {
-            panic!("{} is > 1_000_000_000", subsecond_nanos)
+            panic!("{subsecond_nanos} is > 1_000_000_000")
         }
         DateTime {
             seconds,
@@ -345,7 +345,7 @@ impl Display for DateTime {
             Ok(date) => date,
             Err(_err) => format::epoch_seconds::format(self),
         };
-        write!(f, "{}", date)
+        write!(f, "{date}")
     }
 }
 
@@ -399,31 +399,31 @@ mod test {
     #[test]
     fn test_display_date_time() {
         let date_time = DateTime::from_secs(1576540098);
-        assert_eq!(format!("{}", date_time), "2019-12-16T23:48:18Z");
+        assert_eq!(format!("{date_time}"), "2019-12-16T23:48:18Z");
 
         let date_time = DateTime::from_fractional_secs(1576540098, 0.52);
-        assert_eq!(format!("{}", date_time), "2019-12-16T23:48:18.52Z");
+        assert_eq!(format!("{date_time}"), "2019-12-16T23:48:18.52Z");
 
         let date_time = DateTime::from_secs(1699942527);
-        assert_eq!(format!("{}", date_time), "2023-11-14T06:15:27Z");
+        assert_eq!(format!("{date_time}"), "2023-11-14T06:15:27Z");
 
         let date_time = DateTime::from_secs(16995123);
-        assert_eq!(format!("{}", date_time), "1970-07-16T16:52:03Z");
+        assert_eq!(format!("{date_time}"), "1970-07-16T16:52:03Z");
     }
 
     #[test]
     fn test_debug_date_time() {
         let date_time = DateTime::from_secs(1576540098);
-        assert_eq!(format!("{:?}", date_time), "2019-12-16T23:48:18Z");
+        assert_eq!(format!("{date_time:?}"), "2019-12-16T23:48:18Z");
 
         let date_time = DateTime::from_fractional_secs(1576540098, 0.52);
-        assert_eq!(format!("{:?}", date_time), "2019-12-16T23:48:18.52Z");
+        assert_eq!(format!("{date_time:?}"), "2019-12-16T23:48:18.52Z");
 
         let date_time = DateTime::from_secs(1699942527);
-        assert_eq!(format!("{:?}", date_time), "2023-11-14T06:15:27Z");
+        assert_eq!(format!("{date_time:?}"), "2023-11-14T06:15:27Z");
 
         let date_time = DateTime::from_secs(16995123);
-        assert_eq!(format!("{:?}", date_time), "1970-07-16T16:52:03Z");
+        assert_eq!(format!("{date_time:?}"), "1970-07-16T16:52:03Z");
     }
 
     #[test]
@@ -541,7 +541,7 @@ mod test {
     #[test]
     fn to_millis() {
         for test_case in EPOCH_MILLIS_TEST_CASES {
-            println!("Test case: {:?}", test_case);
+            println!("Test case: {test_case:?}");
             let date_time = DateTime::from_secs_and_nanos(
                 test_case.epoch_seconds,
                 test_case.epoch_subsec_nanos,
@@ -559,7 +559,7 @@ mod test {
     #[test]
     fn from_millis() {
         for test_case in EPOCH_MILLIS_TEST_CASES {
-            println!("Test case: {:?}", test_case);
+            println!("Test case: {test_case:?}");
             let date_time = DateTime::from_millis(test_case.epoch_millis);
             assert_eq!(test_case.epoch_seconds, date_time.secs());
             assert_eq!(test_case.epoch_subsec_nanos, date_time.subsec_nanos());
@@ -644,7 +644,7 @@ mod test {
     fn formatting_of_early_dates() {
         let date: DateTime =
             DateTime::from_str("Mon, 16 Dec -019 23:48:18 GMT", Format::HttpDate).unwrap();
-        assert_eq!(format!("{}", date), "-62736509502");
+        assert_eq!(format!("{date}"), "-62736509502");
     }
 
     #[test]

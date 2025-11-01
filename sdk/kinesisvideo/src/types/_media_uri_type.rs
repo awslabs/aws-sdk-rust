@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MediaUriType {
         match self {
             MediaUriType::FileUri => write!(f, "FILE_URI"),
             MediaUriType::RtspUri => write!(f, "RTSP_URI"),
-            MediaUriType::Unknown(value) => write!(f, "{}", value),
+            MediaUriType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

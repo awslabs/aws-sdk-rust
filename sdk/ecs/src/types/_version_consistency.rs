@@ -102,7 +102,7 @@ impl ::std::fmt::Display for VersionConsistency {
         match self {
             VersionConsistency::Disabled => write!(f, "disabled"),
             VersionConsistency::Enabled => write!(f, "enabled"),
-            VersionConsistency::Unknown(value) => write!(f, "{}", value),
+            VersionConsistency::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

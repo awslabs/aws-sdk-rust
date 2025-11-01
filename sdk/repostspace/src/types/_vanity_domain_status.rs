@@ -108,7 +108,7 @@ impl ::std::fmt::Display for VanityDomainStatus {
             VanityDomainStatus::Approved => write!(f, "APPROVED"),
             VanityDomainStatus::Pending => write!(f, "PENDING"),
             VanityDomainStatus::Unapproved => write!(f, "UNAPPROVED"),
-            VanityDomainStatus::Unknown(value) => write!(f, "{}", value),
+            VanityDomainStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

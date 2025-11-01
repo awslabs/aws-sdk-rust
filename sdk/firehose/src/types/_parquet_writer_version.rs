@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ParquetWriterVersion {
         match self {
             ParquetWriterVersion::V1 => write!(f, "V1"),
             ParquetWriterVersion::V2 => write!(f, "V2"),
-            ParquetWriterVersion::Unknown(value) => write!(f, "{}", value),
+            ParquetWriterVersion::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

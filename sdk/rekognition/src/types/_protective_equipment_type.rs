@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ProtectiveEquipmentType {
             ProtectiveEquipmentType::FaceCover => write!(f, "FACE_COVER"),
             ProtectiveEquipmentType::HandCover => write!(f, "HAND_COVER"),
             ProtectiveEquipmentType::HeadCover => write!(f, "HEAD_COVER"),
-            ProtectiveEquipmentType::Unknown(value) => write!(f, "{}", value),
+            ProtectiveEquipmentType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

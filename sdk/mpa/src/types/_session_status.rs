@@ -120,7 +120,7 @@ impl ::std::fmt::Display for SessionStatus {
             SessionStatus::Creating => write!(f, "CREATING"),
             SessionStatus::Failed => write!(f, "FAILED"),
             SessionStatus::Pending => write!(f, "PENDING"),
-            SessionStatus::Unknown(value) => write!(f, "{}", value),
+            SessionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

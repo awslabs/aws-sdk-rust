@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CertificateBasedAuthStatusEnum {
         match self {
             CertificateBasedAuthStatusEnum::Disabled => write!(f, "DISABLED"),
             CertificateBasedAuthStatusEnum::Enabled => write!(f, "ENABLED"),
-            CertificateBasedAuthStatusEnum::Unknown(value) => write!(f, "{}", value),
+            CertificateBasedAuthStatusEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

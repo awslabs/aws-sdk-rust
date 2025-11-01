@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ViewDialect {
             ViewDialect::Athena => write!(f, "ATHENA"),
             ViewDialect::Redshift => write!(f, "REDSHIFT"),
             ViewDialect::Spark => write!(f, "SPARK"),
-            ViewDialect::Unknown(value) => write!(f, "{}", value),
+            ViewDialect::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

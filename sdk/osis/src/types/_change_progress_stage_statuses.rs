@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ChangeProgressStageStatuses {
             ChangeProgressStageStatuses::Failed => write!(f, "FAILED"),
             ChangeProgressStageStatuses::InProgress => write!(f, "IN_PROGRESS"),
             ChangeProgressStageStatuses::Pending => write!(f, "PENDING"),
-            ChangeProgressStageStatuses::Unknown(value) => write!(f, "{}", value),
+            ChangeProgressStageStatuses::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

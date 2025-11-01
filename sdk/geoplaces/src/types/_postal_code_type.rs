@@ -100,7 +100,7 @@ impl ::std::fmt::Display for PostalCodeType {
         match self {
             PostalCodeType::UspsZip => write!(f, "UspsZip"),
             PostalCodeType::UspsZipPlus4 => write!(f, "UspsZipPlus4"),
-            PostalCodeType::Unknown(value) => write!(f, "{}", value),
+            PostalCodeType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

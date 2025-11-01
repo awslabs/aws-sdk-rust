@@ -147,7 +147,7 @@ impl ::std::fmt::Display for H265CodecProfile {
             H265CodecProfile::Main4228BitMain => write!(f, "MAIN_422_8BIT_MAIN"),
             H265CodecProfile::MainHigh => write!(f, "MAIN_HIGH"),
             H265CodecProfile::MainMain => write!(f, "MAIN_MAIN"),
-            H265CodecProfile::Unknown(value) => write!(f, "{}", value),
+            H265CodecProfile::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

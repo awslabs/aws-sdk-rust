@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ScanState {
             ScanState::Failed => write!(f, "Failed"),
             ScanState::InProgress => write!(f, "InProgress"),
             ScanState::Successful => write!(f, "Successful"),
-            ScanState::Unknown(value) => write!(f, "{}", value),
+            ScanState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

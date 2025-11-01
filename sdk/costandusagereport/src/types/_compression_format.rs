@@ -108,7 +108,7 @@ impl ::std::fmt::Display for CompressionFormat {
             CompressionFormat::Gzip => write!(f, "GZIP"),
             CompressionFormat::Parquet => write!(f, "Parquet"),
             CompressionFormat::Zip => write!(f, "ZIP"),
-            CompressionFormat::Unknown(value) => write!(f, "{}", value),
+            CompressionFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

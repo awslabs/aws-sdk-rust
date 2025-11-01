@@ -96,7 +96,7 @@ impl ::std::fmt::Display for GovernedEntityType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             GovernedEntityType::Asset => write!(f, "ASSET"),
-            GovernedEntityType::Unknown(value) => write!(f, "{}", value),
+            GovernedEntityType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

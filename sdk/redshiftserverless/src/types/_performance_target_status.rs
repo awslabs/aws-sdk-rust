@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PerformanceTargetStatus {
         match self {
             PerformanceTargetStatus::Disabled => write!(f, "DISABLED"),
             PerformanceTargetStatus::Enabled => write!(f, "ENABLED"),
-            PerformanceTargetStatus::Unknown(value) => write!(f, "{}", value),
+            PerformanceTargetStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

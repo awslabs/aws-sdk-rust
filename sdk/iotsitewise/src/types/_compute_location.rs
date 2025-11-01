@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ComputeLocation {
         match self {
             ComputeLocation::Cloud => write!(f, "CLOUD"),
             ComputeLocation::Edge => write!(f, "EDGE"),
-            ComputeLocation::Unknown(value) => write!(f, "{}", value),
+            ComputeLocation::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

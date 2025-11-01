@@ -108,7 +108,7 @@ impl ::std::fmt::Display for FirewallFailOpenStatus {
             FirewallFailOpenStatus::Disabled => write!(f, "DISABLED"),
             FirewallFailOpenStatus::Enabled => write!(f, "ENABLED"),
             FirewallFailOpenStatus::UseLocalResourceSetting => write!(f, "USE_LOCAL_RESOURCE_SETTING"),
-            FirewallFailOpenStatus::Unknown(value) => write!(f, "{}", value),
+            FirewallFailOpenStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

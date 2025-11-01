@@ -108,7 +108,7 @@ impl ::std::fmt::Display for VocabularyFilterMethod {
             VocabularyFilterMethod::Mask => write!(f, "mask"),
             VocabularyFilterMethod::Remove => write!(f, "remove"),
             VocabularyFilterMethod::Tag => write!(f, "tag"),
-            VocabularyFilterMethod::Unknown(value) => write!(f, "{}", value),
+            VocabularyFilterMethod::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

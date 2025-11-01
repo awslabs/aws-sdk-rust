@@ -1160,6 +1160,9 @@ impl From<crate::operation::update_case_rule::UpdateCaseRuleError> for Error {
             crate::operation::update_case_rule::UpdateCaseRuleError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::update_case_rule::UpdateCaseRuleError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::update_case_rule::UpdateCaseRuleError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_case_rule::UpdateCaseRuleError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
             crate::operation::update_case_rule::UpdateCaseRuleError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_case_rule::UpdateCaseRuleError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_case_rule::UpdateCaseRuleError::Unhandled(inner) => Error::Unhandled(inner),
@@ -1242,6 +1245,9 @@ impl From<crate::operation::update_template::UpdateTemplateError> for Error {
             crate::operation::update_template::UpdateTemplateError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::update_template::UpdateTemplateError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::update_template::UpdateTemplateError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_template::UpdateTemplateError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
             crate::operation::update_template::UpdateTemplateError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_template::UpdateTemplateError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_template::UpdateTemplateError::Unhandled(inner) => Error::Unhandled(inner),

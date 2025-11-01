@@ -108,7 +108,7 @@ impl ::std::fmt::Display for OpenZfsCopyStrategy {
             OpenZfsCopyStrategy::Clone => write!(f, "CLONE"),
             OpenZfsCopyStrategy::FullCopy => write!(f, "FULL_COPY"),
             OpenZfsCopyStrategy::IncrementalCopy => write!(f, "INCREMENTAL_COPY"),
-            OpenZfsCopyStrategy::Unknown(value) => write!(f, "{}", value),
+            OpenZfsCopyStrategy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

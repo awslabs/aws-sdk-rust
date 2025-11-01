@@ -102,7 +102,7 @@ impl ::std::fmt::Display for NetworkDirection {
         match self {
             NetworkDirection::Inbound => write!(f, "INBOUND"),
             NetworkDirection::Outbound => write!(f, "OUTBOUND"),
-            NetworkDirection::Unknown(value) => write!(f, "{}", value),
+            NetworkDirection::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

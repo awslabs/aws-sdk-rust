@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ActionType {
             ActionType::Publish => write!(f, "PUBLISH"),
             ActionType::Receive => write!(f, "RECEIVE"),
             ActionType::Subscribe => write!(f, "SUBSCRIBE"),
-            ActionType::Unknown(value) => write!(f, "{}", value),
+            ActionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -154,7 +154,7 @@ impl ::std::fmt::Display for ReportInstanceReasonCodes {
             ReportInstanceReasonCodes::PerformanceNetwork => write!(f, "performance-network"),
             ReportInstanceReasonCodes::PerformanceOther => write!(f, "performance-other"),
             ReportInstanceReasonCodes::Unresponsive => write!(f, "unresponsive"),
-            ReportInstanceReasonCodes::Unknown(value) => write!(f, "{}", value),
+            ReportInstanceReasonCodes::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

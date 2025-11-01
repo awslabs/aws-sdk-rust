@@ -96,7 +96,7 @@ impl ::std::fmt::Display for DeviceCertificateUpdateAction {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             DeviceCertificateUpdateAction::Deactivate => write!(f, "DEACTIVATE"),
-            DeviceCertificateUpdateAction::Unknown(value) => write!(f, "{}", value),
+            DeviceCertificateUpdateAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

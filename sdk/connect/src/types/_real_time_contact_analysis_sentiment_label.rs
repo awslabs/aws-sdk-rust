@@ -108,7 +108,7 @@ impl ::std::fmt::Display for RealTimeContactAnalysisSentimentLabel {
             RealTimeContactAnalysisSentimentLabel::Negative => write!(f, "NEGATIVE"),
             RealTimeContactAnalysisSentimentLabel::Neutral => write!(f, "NEUTRAL"),
             RealTimeContactAnalysisSentimentLabel::Positive => write!(f, "POSITIVE"),
-            RealTimeContactAnalysisSentimentLabel::Unknown(value) => write!(f, "{}", value),
+            RealTimeContactAnalysisSentimentLabel::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -126,7 +126,7 @@ impl ::std::fmt::Display for OutputGroupType {
             OutputGroupType::FileGroupSettings => write!(f, "FILE_GROUP_SETTINGS"),
             OutputGroupType::HlsGroupSettings => write!(f, "HLS_GROUP_SETTINGS"),
             OutputGroupType::MsSmoothGroupSettings => write!(f, "MS_SMOOTH_GROUP_SETTINGS"),
-            OutputGroupType::Unknown(value) => write!(f, "{}", value),
+            OutputGroupType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

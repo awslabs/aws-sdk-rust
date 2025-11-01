@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DestinationCountryParameterKey {
         match self {
             DestinationCountryParameterKey::InEntityId => write!(f, "IN_ENTITY_ID"),
             DestinationCountryParameterKey::InTemplateId => write!(f, "IN_TEMPLATE_ID"),
-            DestinationCountryParameterKey::Unknown(value) => write!(f, "{}", value),
+            DestinationCountryParameterKey::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

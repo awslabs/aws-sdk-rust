@@ -55,8 +55,7 @@ pub fn de_create_capacity_reservation_by_splitting(
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateCapacityReservationBySplittingResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected CreateCapacityReservationBySplittingResponse got {:?}",
-            start_el
+            "invalid root, expected CreateCapacityReservationBySplittingResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

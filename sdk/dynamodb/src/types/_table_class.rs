@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TableClass {
         match self {
             TableClass::Standard => write!(f, "STANDARD"),
             TableClass::StandardInfrequentAccess => write!(f, "STANDARD_INFREQUENT_ACCESS"),
-            TableClass::Unknown(value) => write!(f, "{}", value),
+            TableClass::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

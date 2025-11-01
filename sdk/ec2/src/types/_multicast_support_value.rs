@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MulticastSupportValue {
         match self {
             MulticastSupportValue::Disable => write!(f, "disable"),
             MulticastSupportValue::Enable => write!(f, "enable"),
-            MulticastSupportValue::Unknown(value) => write!(f, "{}", value),
+            MulticastSupportValue::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

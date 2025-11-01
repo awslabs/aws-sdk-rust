@@ -190,6 +190,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DescribeBatc
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::describe_batch_delete_configuration_task::DescribeBatchDeleteConfigurationTaskInput,
                 output: &mut ::std::string::String,

@@ -96,7 +96,7 @@ impl ::std::fmt::Display for EnvironmentFileType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             EnvironmentFileType::S3 => write!(f, "s3"),
-            EnvironmentFileType::Unknown(value) => write!(f, "{}", value),
+            EnvironmentFileType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

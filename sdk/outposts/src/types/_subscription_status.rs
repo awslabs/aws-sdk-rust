@@ -108,7 +108,7 @@ impl ::std::fmt::Display for SubscriptionStatus {
             SubscriptionStatus::Active => write!(f, "ACTIVE"),
             SubscriptionStatus::Cancelled => write!(f, "CANCELLED"),
             SubscriptionStatus::Inactive => write!(f, "INACTIVE"),
-            SubscriptionStatus::Unknown(value) => write!(f, "{}", value),
+            SubscriptionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

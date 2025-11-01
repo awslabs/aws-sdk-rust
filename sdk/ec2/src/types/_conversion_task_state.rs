@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ConversionTaskState {
             ConversionTaskState::Cancelled => write!(f, "cancelled"),
             ConversionTaskState::Cancelling => write!(f, "cancelling"),
             ConversionTaskState::Completed => write!(f, "completed"),
-            ConversionTaskState::Unknown(value) => write!(f, "{}", value),
+            ConversionTaskState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for OnDemandCapacityReservationPreference {
         match self {
             OnDemandCapacityReservationPreference::None => write!(f, "none"),
             OnDemandCapacityReservationPreference::Open => write!(f, "open"),
-            OnDemandCapacityReservationPreference::Unknown(value) => write!(f, "{}", value),
+            OnDemandCapacityReservationPreference::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

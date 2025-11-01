@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ReplicationStatus {
             ReplicationStatus::InProgress => write!(f, "IN_PROGRESS"),
             ReplicationStatus::Protected => write!(f, "PROTECTED"),
             ReplicationStatus::Stopped => write!(f, "STOPPED"),
-            ReplicationStatus::Unknown(value) => write!(f, "{}", value),
+            ReplicationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

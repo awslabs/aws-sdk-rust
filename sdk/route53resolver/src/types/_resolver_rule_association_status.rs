@@ -120,7 +120,7 @@ impl ::std::fmt::Display for ResolverRuleAssociationStatus {
             ResolverRuleAssociationStatus::Deleting => write!(f, "DELETING"),
             ResolverRuleAssociationStatus::Failed => write!(f, "FAILED"),
             ResolverRuleAssociationStatus::Overridden => write!(f, "OVERRIDDEN"),
-            ResolverRuleAssociationStatus::Unknown(value) => write!(f, "{}", value),
+            ResolverRuleAssociationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

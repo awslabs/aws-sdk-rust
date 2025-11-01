@@ -114,7 +114,7 @@ impl ::std::fmt::Display for KeyCheckValueAlgorithm {
             KeyCheckValueAlgorithm::Cmac => write!(f, "CMAC"),
             KeyCheckValueAlgorithm::Hmac => write!(f, "HMAC"),
             KeyCheckValueAlgorithm::Sha1 => write!(f, "SHA_1"),
-            KeyCheckValueAlgorithm::Unknown(value) => write!(f, "{}", value),
+            KeyCheckValueAlgorithm::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

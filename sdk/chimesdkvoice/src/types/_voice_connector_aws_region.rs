@@ -161,7 +161,7 @@ impl ::std::fmt::Display for VoiceConnectorAwsRegion {
             VoiceConnectorAwsRegion::EuWest2 => write!(f, "eu-west-2"),
             VoiceConnectorAwsRegion::UsEast1 => write!(f, "us-east-1"),
             VoiceConnectorAwsRegion::UsWest2 => write!(f, "us-west-2"),
-            VoiceConnectorAwsRegion::Unknown(value) => write!(f, "{}", value),
+            VoiceConnectorAwsRegion::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

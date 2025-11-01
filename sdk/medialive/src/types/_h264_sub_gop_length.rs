@@ -102,7 +102,7 @@ impl ::std::fmt::Display for H264SubGopLength {
         match self {
             H264SubGopLength::Dynamic => write!(f, "DYNAMIC"),
             H264SubGopLength::Fixed => write!(f, "FIXED"),
-            H264SubGopLength::Unknown(value) => write!(f, "{}", value),
+            H264SubGopLength::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

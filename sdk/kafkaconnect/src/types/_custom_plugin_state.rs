@@ -126,7 +126,7 @@ impl ::std::fmt::Display for CustomPluginState {
             CustomPluginState::Deleting => write!(f, "DELETING"),
             CustomPluginState::UpdateFailed => write!(f, "UPDATE_FAILED"),
             CustomPluginState::Updating => write!(f, "UPDATING"),
-            CustomPluginState::Unknown(value) => write!(f, "{}", value),
+            CustomPluginState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

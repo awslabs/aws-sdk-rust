@@ -126,7 +126,7 @@ impl ::std::fmt::Display for ArchiveStringEmailAttribute {
             ArchiveStringEmailAttribute::From => write!(f, "FROM"),
             ArchiveStringEmailAttribute::Subject => write!(f, "SUBJECT"),
             ArchiveStringEmailAttribute::To => write!(f, "TO"),
-            ArchiveStringEmailAttribute::Unknown(value) => write!(f, "{}", value),
+            ArchiveStringEmailAttribute::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

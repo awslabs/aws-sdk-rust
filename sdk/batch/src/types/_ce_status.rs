@@ -126,7 +126,7 @@ impl ::std::fmt::Display for CeStatus {
             CeStatus::Invalid => write!(f, "INVALID"),
             CeStatus::Updating => write!(f, "UPDATING"),
             CeStatus::Valid => write!(f, "VALID"),
-            CeStatus::Unknown(value) => write!(f, "{}", value),
+            CeStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

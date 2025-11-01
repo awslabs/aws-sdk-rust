@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ScalingStrategy {
         match self {
             ScalingStrategy::Advanced => write!(f, "ADVANCED"),
             ScalingStrategy::Default => write!(f, "DEFAULT"),
-            ScalingStrategy::Unknown(value) => write!(f, "{}", value),
+            ScalingStrategy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

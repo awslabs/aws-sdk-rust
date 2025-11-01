@@ -102,7 +102,7 @@ impl ::std::fmt::Display for QAppsControlMode {
         match self {
             QAppsControlMode::Disabled => write!(f, "DISABLED"),
             QAppsControlMode::Enabled => write!(f, "ENABLED"),
-            QAppsControlMode::Unknown(value) => write!(f, "{}", value),
+            QAppsControlMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

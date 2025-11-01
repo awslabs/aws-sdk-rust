@@ -126,7 +126,7 @@ impl ::std::fmt::Display for ValidationExceptionReason {
             ValidationExceptionReason::Other => write!(f, "OTHER"),
             ValidationExceptionReason::UnknownOperation => write!(f, "UNKNOWN_OPERATION"),
             ValidationExceptionReason::UnsupportedSbomType => write!(f, "UNSUPPORTED_SBOM_TYPE"),
-            ValidationExceptionReason::Unknown(value) => write!(f, "{}", value),
+            ValidationExceptionReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

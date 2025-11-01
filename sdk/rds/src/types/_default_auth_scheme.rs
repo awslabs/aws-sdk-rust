@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DefaultAuthScheme {
         match self {
             DefaultAuthScheme::IamAuth => write!(f, "IAM_AUTH"),
             DefaultAuthScheme::None => write!(f, "NONE"),
-            DefaultAuthScheme::Unknown(value) => write!(f, "{}", value),
+            DefaultAuthScheme::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -96,7 +96,7 @@ impl ::std::fmt::Display for GroupFilterOperator {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             GroupFilterOperator::StartsWith => write!(f, "StartsWith"),
-            GroupFilterOperator::Unknown(value) => write!(f, "{}", value),
+            GroupFilterOperator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

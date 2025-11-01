@@ -114,7 +114,7 @@ impl ::std::fmt::Display for CdcStatus {
             CdcStatus::Disabling => write!(f, "DISABLING"),
             CdcStatus::Enabled => write!(f, "ENABLED"),
             CdcStatus::Enabling => write!(f, "ENABLING"),
-            CdcStatus::Unknown(value) => write!(f, "{}", value),
+            CdcStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

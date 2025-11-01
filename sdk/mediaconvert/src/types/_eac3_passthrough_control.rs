@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Eac3PassthroughControl {
         match self {
             Eac3PassthroughControl::NoPassthrough => write!(f, "NO_PASSTHROUGH"),
             Eac3PassthroughControl::WhenPossible => write!(f, "WHEN_POSSIBLE"),
-            Eac3PassthroughControl::Unknown(value) => write!(f, "{}", value),
+            Eac3PassthroughControl::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

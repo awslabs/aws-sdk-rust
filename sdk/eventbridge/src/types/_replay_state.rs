@@ -126,7 +126,7 @@ impl ::std::fmt::Display for ReplayState {
             ReplayState::Failed => write!(f, "FAILED"),
             ReplayState::Running => write!(f, "RUNNING"),
             ReplayState::Starting => write!(f, "STARTING"),
-            ReplayState::Unknown(value) => write!(f, "{}", value),
+            ReplayState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for StringComparison {
             StringComparison::Equals => write!(f, "EQUALS"),
             StringComparison::NotEquals => write!(f, "NOT_EQUALS"),
             StringComparison::Prefix => write!(f, "PREFIX"),
-            StringComparison::Unknown(value) => write!(f, "{}", value),
+            StringComparison::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

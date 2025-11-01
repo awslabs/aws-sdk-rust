@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SlotValueSelectionStrategy {
         match self {
             SlotValueSelectionStrategy::OriginalValue => write!(f, "ORIGINAL_VALUE"),
             SlotValueSelectionStrategy::TopResolution => write!(f, "TOP_RESOLUTION"),
-            SlotValueSelectionStrategy::Unknown(value) => write!(f, "{}", value),
+            SlotValueSelectionStrategy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

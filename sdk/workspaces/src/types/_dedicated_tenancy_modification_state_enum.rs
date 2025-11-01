@@ -108,7 +108,7 @@ impl ::std::fmt::Display for DedicatedTenancyModificationStateEnum {
             DedicatedTenancyModificationStateEnum::Completed => write!(f, "COMPLETED"),
             DedicatedTenancyModificationStateEnum::Failed => write!(f, "FAILED"),
             DedicatedTenancyModificationStateEnum::Pending => write!(f, "PENDING"),
-            DedicatedTenancyModificationStateEnum::Unknown(value) => write!(f, "{}", value),
+            DedicatedTenancyModificationStateEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

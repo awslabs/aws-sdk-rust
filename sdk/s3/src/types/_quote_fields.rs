@@ -102,7 +102,7 @@ impl ::std::fmt::Display for QuoteFields {
         match self {
             QuoteFields::Always => write!(f, "ALWAYS"),
             QuoteFields::Asneeded => write!(f, "ASNEEDED"),
-            QuoteFields::Unknown(value) => write!(f, "{}", value),
+            QuoteFields::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

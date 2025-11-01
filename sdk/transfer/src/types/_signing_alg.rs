@@ -120,7 +120,7 @@ impl ::std::fmt::Display for SigningAlg {
             SigningAlg::Sha256 => write!(f, "SHA256"),
             SigningAlg::Sha384 => write!(f, "SHA384"),
             SigningAlg::Sha512 => write!(f, "SHA512"),
-            SigningAlg::Unknown(value) => write!(f, "{}", value),
+            SigningAlg::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

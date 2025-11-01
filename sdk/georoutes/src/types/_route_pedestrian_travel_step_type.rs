@@ -166,7 +166,7 @@ impl ::std::fmt::Display for RoutePedestrianTravelStepType {
             RoutePedestrianTravelStepType::RoundaboutPass => write!(f, "RoundaboutPass"),
             RoutePedestrianTravelStepType::Turn => write!(f, "Turn"),
             RoutePedestrianTravelStepType::UTurn => write!(f, "UTurn"),
-            RoutePedestrianTravelStepType::Unknown(value) => write!(f, "{}", value),
+            RoutePedestrianTravelStepType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

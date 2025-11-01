@@ -175,7 +175,7 @@ impl ::std::fmt::Display for FuotaDeviceStatus {
             FuotaDeviceStatus::SessionCntReplay => write!(f, "SessionCnt_replay"),
             FuotaDeviceStatus::Successful => write!(f, "Successful"),
             FuotaDeviceStatus::WrongDescriptor => write!(f, "Wrong_descriptor"),
-            FuotaDeviceStatus::Unknown(value) => write!(f, "{}", value),
+            FuotaDeviceStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

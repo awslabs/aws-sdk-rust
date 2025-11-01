@@ -140,7 +140,7 @@ impl ::std::fmt::Display for ComponentStatus {
             ComponentStatus::Stopped => write!(f, "STOPPED"),
             ComponentStatus::Stopping => write!(f, "STOPPING"),
             ComponentStatus::Undefined => write!(f, "UNDEFINED"),
-            ComponentStatus::Unknown(value) => write!(f, "{}", value),
+            ComponentStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

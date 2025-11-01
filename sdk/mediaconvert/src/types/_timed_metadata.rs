@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TimedMetadata {
         match self {
             TimedMetadata::None => write!(f, "NONE"),
             TimedMetadata::Passthrough => write!(f, "PASSTHROUGH"),
-            TimedMetadata::Unknown(value) => write!(f, "{}", value),
+            TimedMetadata::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

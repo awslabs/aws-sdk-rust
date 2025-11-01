@@ -120,7 +120,7 @@ impl ::std::fmt::Display for TimeUnit {
             TimeUnit::Daily => write!(f, "DAILY"),
             TimeUnit::Monthly => write!(f, "MONTHLY"),
             TimeUnit::Quarterly => write!(f, "QUARTERLY"),
-            TimeUnit::Unknown(value) => write!(f, "{}", value),
+            TimeUnit::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

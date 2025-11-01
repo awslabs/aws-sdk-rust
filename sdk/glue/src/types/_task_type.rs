@@ -120,7 +120,7 @@ impl ::std::fmt::Display for TaskType {
             TaskType::FindMatches => write!(f, "FIND_MATCHES"),
             TaskType::ImportLabels => write!(f, "IMPORT_LABELS"),
             TaskType::LabelingSetGeneration => write!(f, "LABELING_SET_GENERATION"),
-            TaskType::Unknown(value) => write!(f, "{}", value),
+            TaskType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

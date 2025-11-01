@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ChannelSubtype {
         match self {
             ChannelSubtype::Email => write!(f, "EMAIL"),
             ChannelSubtype::Sms => write!(f, "SMS"),
-            ChannelSubtype::Unknown(value) => write!(f, "{}", value),
+            ChannelSubtype::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

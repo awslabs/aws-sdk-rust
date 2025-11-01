@@ -126,7 +126,7 @@ impl ::std::fmt::Display for VpcCidrBlockStateCode {
             VpcCidrBlockStateCode::Disassociating => write!(f, "disassociating"),
             VpcCidrBlockStateCode::Failed => write!(f, "failed"),
             VpcCidrBlockStateCode::Failing => write!(f, "failing"),
-            VpcCidrBlockStateCode::Unknown(value) => write!(f, "{}", value),
+            VpcCidrBlockStateCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

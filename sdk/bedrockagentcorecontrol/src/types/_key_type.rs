@@ -102,7 +102,7 @@ impl ::std::fmt::Display for KeyType {
         match self {
             KeyType::CustomerManagedKey => write!(f, "CustomerManagedKey"),
             KeyType::ServiceManagedKey => write!(f, "ServiceManagedKey"),
-            KeyType::Unknown(value) => write!(f, "{}", value),
+            KeyType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

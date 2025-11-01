@@ -102,7 +102,7 @@ impl ::std::fmt::Display for InputLossActionForRtmpOut {
         match self {
             InputLossActionForRtmpOut::EmitOutput => write!(f, "EMIT_OUTPUT"),
             InputLossActionForRtmpOut::PauseOutput => write!(f, "PAUSE_OUTPUT"),
-            InputLossActionForRtmpOut::Unknown(value) => write!(f, "{}", value),
+            InputLossActionForRtmpOut::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

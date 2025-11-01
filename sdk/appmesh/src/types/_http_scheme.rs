@@ -102,7 +102,7 @@ impl ::std::fmt::Display for HttpScheme {
         match self {
             HttpScheme::Http => write!(f, "http"),
             HttpScheme::Https => write!(f, "https"),
-            HttpScheme::Unknown(value) => write!(f, "{}", value),
+            HttpScheme::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

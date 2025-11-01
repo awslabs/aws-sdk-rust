@@ -102,7 +102,7 @@ impl ::std::fmt::Display for IntegrationStatus {
         match self {
             IntegrationStatus::Configured => write!(f, "CONFIGURED"),
             IntegrationStatus::NotConfigured => write!(f, "NOT_CONFIGURED"),
-            IntegrationStatus::Unknown(value) => write!(f, "{}", value),
+            IntegrationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

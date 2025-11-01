@@ -132,7 +132,7 @@ impl ::std::fmt::Display for HyperParameterTuningJobStatus {
             HyperParameterTuningJobStatus::InProgress => write!(f, "InProgress"),
             HyperParameterTuningJobStatus::Stopped => write!(f, "Stopped"),
             HyperParameterTuningJobStatus::Stopping => write!(f, "Stopping"),
-            HyperParameterTuningJobStatus::Unknown(value) => write!(f, "{}", value),
+            HyperParameterTuningJobStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

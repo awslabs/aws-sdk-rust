@@ -24,8 +24,7 @@ pub fn de_public_key_config(inp: &[u8]) -> std::result::Result<crate::types::Pub
     let start_el = decoder.start_el();
     if !(start_el.matches("PublicKeyConfig")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected PublicKeyConfig got {:?}",
-            start_el
+            "invalid root, expected PublicKeyConfig got {start_el:?}"
         )));
     }
     crate::protocol_serde::shape_public_key_config::de_public_key_config(&mut decoder)

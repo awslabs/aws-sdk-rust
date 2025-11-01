@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DatasetParameterValueType {
         match self {
             DatasetParameterValueType::MultiValued => write!(f, "MULTI_VALUED"),
             DatasetParameterValueType::SingleValued => write!(f, "SINGLE_VALUED"),
-            DatasetParameterValueType::Unknown(value) => write!(f, "{}", value),
+            DatasetParameterValueType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

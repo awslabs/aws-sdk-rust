@@ -108,7 +108,7 @@ impl ::std::fmt::Display for SourceAuthType {
             SourceAuthType::Codeconnections => write!(f, "CODECONNECTIONS"),
             SourceAuthType::Oauth => write!(f, "OAUTH"),
             SourceAuthType::SecretsManager => write!(f, "SECRETS_MANAGER"),
-            SourceAuthType::Unknown(value) => write!(f, "{}", value),
+            SourceAuthType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

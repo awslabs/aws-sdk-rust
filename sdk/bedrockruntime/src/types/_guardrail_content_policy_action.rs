@@ -102,7 +102,7 @@ impl ::std::fmt::Display for GuardrailContentPolicyAction {
         match self {
             GuardrailContentPolicyAction::Blocked => write!(f, "BLOCKED"),
             GuardrailContentPolicyAction::None => write!(f, "NONE"),
-            GuardrailContentPolicyAction::Unknown(value) => write!(f, "{}", value),
+            GuardrailContentPolicyAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

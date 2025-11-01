@@ -108,7 +108,7 @@ impl ::std::fmt::Display for OntapVolumeType {
             OntapVolumeType::Dp => write!(f, "DP"),
             OntapVolumeType::Ls => write!(f, "LS"),
             OntapVolumeType::Rw => write!(f, "RW"),
-            OntapVolumeType::Unknown(value) => write!(f, "{}", value),
+            OntapVolumeType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

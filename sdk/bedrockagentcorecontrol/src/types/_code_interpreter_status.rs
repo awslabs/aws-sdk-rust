@@ -126,7 +126,7 @@ impl ::std::fmt::Display for CodeInterpreterStatus {
             CodeInterpreterStatus::DeleteFailed => write!(f, "DELETE_FAILED"),
             CodeInterpreterStatus::Deleting => write!(f, "DELETING"),
             CodeInterpreterStatus::Ready => write!(f, "READY"),
-            CodeInterpreterStatus::Unknown(value) => write!(f, "{}", value),
+            CodeInterpreterStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

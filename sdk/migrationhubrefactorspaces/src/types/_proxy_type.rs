@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ProxyType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ProxyType::ApiGateway => write!(f, "API_GATEWAY"),
-            ProxyType::Unknown(value) => write!(f, "{}", value),
+            ProxyType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

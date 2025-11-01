@@ -114,7 +114,7 @@ impl ::std::fmt::Display for Type {
             Type::Document => write!(f, "DOCUMENT"),
             Type::Image => write!(f, "IMAGE"),
             Type::Video => write!(f, "VIDEO"),
-            Type::Unknown(value) => write!(f, "{}", value),
+            Type::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

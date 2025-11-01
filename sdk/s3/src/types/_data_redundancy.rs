@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DataRedundancy {
         match self {
             DataRedundancy::SingleAvailabilityZone => write!(f, "SingleAvailabilityZone"),
             DataRedundancy::SingleLocalZone => write!(f, "SingleLocalZone"),
-            DataRedundancy::Unknown(value) => write!(f, "{}", value),
+            DataRedundancy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

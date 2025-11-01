@@ -292,7 +292,7 @@ impl ::std::fmt::Display for VocabularyLanguageCode {
             VocabularyLanguageCode::SvSe => write!(f, "sv-SE"),
             VocabularyLanguageCode::TlPh => write!(f, "tl-PH"),
             VocabularyLanguageCode::ZhCn => write!(f, "zh-CN"),
-            VocabularyLanguageCode::Unknown(value) => write!(f, "{}", value),
+            VocabularyLanguageCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

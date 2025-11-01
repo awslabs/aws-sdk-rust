@@ -203,7 +203,7 @@ impl ::std::fmt::Display for FindingReasonCode {
             FindingReasonCode::NetworkBandwidthUnderProvisioned => write!(f, "NETWORK_BANDWIDTH_UNDER_PROVISIONED"),
             FindingReasonCode::NetworkPpsOverProvisioned => write!(f, "NETWORK_PPS_OVER_PROVISIONED"),
             FindingReasonCode::NetworkPpsUnderProvisioned => write!(f, "NETWORK_PPS_UNDER_PROVISIONED"),
-            FindingReasonCode::Unknown(value) => write!(f, "{}", value),
+            FindingReasonCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

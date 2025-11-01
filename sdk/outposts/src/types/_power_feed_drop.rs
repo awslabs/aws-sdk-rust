@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PowerFeedDrop {
         match self {
             PowerFeedDrop::AboveRack => write!(f, "ABOVE_RACK"),
             PowerFeedDrop::BelowRack => write!(f, "BELOW_RACK"),
-            PowerFeedDrop::Unknown(value) => write!(f, "{}", value),
+            PowerFeedDrop::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

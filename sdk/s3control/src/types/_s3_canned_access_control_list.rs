@@ -140,7 +140,7 @@ impl ::std::fmt::Display for S3CannedAccessControlList {
             S3CannedAccessControlList::Private => write!(f, "private"),
             S3CannedAccessControlList::PublicRead => write!(f, "public-read"),
             S3CannedAccessControlList::PublicReadWrite => write!(f, "public-read-write"),
-            S3CannedAccessControlList::Unknown(value) => write!(f, "{}", value),
+            S3CannedAccessControlList::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

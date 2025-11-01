@@ -15,41 +15,47 @@ pub fn ser_audio_description(
         crate::protocol_serde::shape_audio_normalization_settings::ser_audio_normalization_settings(&mut object_4, var_3)?;
         object_4.finish();
     }
-    if let Some(var_5) = &input.audio_source_name {
-        object.key("audioSourceName").string(var_5.as_str());
+    if let Some(var_5) = &input.audio_pitch_correction_settings {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("audioPitchCorrectionSettings").start_object();
+        crate::protocol_serde::shape_audio_pitch_correction_settings::ser_audio_pitch_correction_settings(&mut object_6, var_5)?;
+        object_6.finish();
     }
-    if let Some(var_6) = &input.audio_type {
+    if let Some(var_7) = &input.audio_source_name {
+        object.key("audioSourceName").string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.audio_type {
         object.key("audioType").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_6).into()),
+            ::aws_smithy_types::Number::NegInt((*var_8).into()),
         );
     }
-    if let Some(var_7) = &input.audio_type_control {
-        object.key("audioTypeControl").string(var_7.as_str());
+    if let Some(var_9) = &input.audio_type_control {
+        object.key("audioTypeControl").string(var_9.as_str());
     }
-    if let Some(var_8) = &input.codec_settings {
+    if let Some(var_10) = &input.codec_settings {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("codecSettings").start_object();
-        crate::protocol_serde::shape_audio_codec_settings::ser_audio_codec_settings(&mut object_9, var_8)?;
-        object_9.finish();
+        let mut object_11 = object.key("codecSettings").start_object();
+        crate::protocol_serde::shape_audio_codec_settings::ser_audio_codec_settings(&mut object_11, var_10)?;
+        object_11.finish();
     }
-    if let Some(var_10) = &input.custom_language_code {
-        object.key("customLanguageCode").string(var_10.as_str());
+    if let Some(var_12) = &input.custom_language_code {
+        object.key("customLanguageCode").string(var_12.as_str());
     }
-    if let Some(var_11) = &input.language_code {
-        object.key("languageCode").string(var_11.as_str());
+    if let Some(var_13) = &input.language_code {
+        object.key("languageCode").string(var_13.as_str());
     }
-    if let Some(var_12) = &input.language_code_control {
-        object.key("languageCodeControl").string(var_12.as_str());
+    if let Some(var_14) = &input.language_code_control {
+        object.key("languageCodeControl").string(var_14.as_str());
     }
-    if let Some(var_13) = &input.remix_settings {
+    if let Some(var_15) = &input.remix_settings {
         #[allow(unused_mut)]
-        let mut object_14 = object.key("remixSettings").start_object();
-        crate::protocol_serde::shape_remix_settings::ser_remix_settings(&mut object_14, var_13)?;
-        object_14.finish();
+        let mut object_16 = object.key("remixSettings").start_object();
+        crate::protocol_serde::shape_remix_settings::ser_remix_settings(&mut object_16, var_15)?;
+        object_16.finish();
     }
-    if let Some(var_15) = &input.stream_name {
-        object.key("streamName").string(var_15.as_str());
+    if let Some(var_17) = &input.stream_name {
+        object.key("streamName").string(var_17.as_str());
     }
     Ok(())
 }
@@ -77,6 +83,11 @@ where
                         "audioNormalizationSettings" => {
                             builder = builder.set_audio_normalization_settings(
                                 crate::protocol_serde::shape_audio_normalization_settings::de_audio_normalization_settings(tokens)?,
+                            );
+                        }
+                        "audioPitchCorrectionSettings" => {
+                            builder = builder.set_audio_pitch_correction_settings(
+                                crate::protocol_serde::shape_audio_pitch_correction_settings::de_audio_pitch_correction_settings(tokens)?,
                             );
                         }
                         "audioSourceName" => {
@@ -138,8 +149,7 @@ where
                     },
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                            "expected object key or end object, found: {:?}",
-                            other
+                            "expected object key or end object, found: {other:?}"
                         )))
                     }
                 }

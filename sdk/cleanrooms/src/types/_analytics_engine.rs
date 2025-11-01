@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AnalyticsEngine {
         match self {
             AnalyticsEngine::CleanRoomsSql => write!(f, "CLEAN_ROOMS_SQL"),
             AnalyticsEngine::Spark => write!(f, "SPARK"),
-            AnalyticsEngine::Unknown(value) => write!(f, "{}", value),
+            AnalyticsEngine::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

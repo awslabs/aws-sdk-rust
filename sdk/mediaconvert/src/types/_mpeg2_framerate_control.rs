@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Mpeg2FramerateControl {
         match self {
             Mpeg2FramerateControl::InitializeFromSource => write!(f, "INITIALIZE_FROM_SOURCE"),
             Mpeg2FramerateControl::Specified => write!(f, "SPECIFIED"),
-            Mpeg2FramerateControl::Unknown(value) => write!(f, "{}", value),
+            Mpeg2FramerateControl::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

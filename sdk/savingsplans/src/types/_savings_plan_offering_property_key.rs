@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SavingsPlanOfferingPropertyKey {
         match self {
             SavingsPlanOfferingPropertyKey::InstanceFamily => write!(f, "instanceFamily"),
             SavingsPlanOfferingPropertyKey::Region => write!(f, "region"),
-            SavingsPlanOfferingPropertyKey::Unknown(value) => write!(f, "{}", value),
+            SavingsPlanOfferingPropertyKey::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

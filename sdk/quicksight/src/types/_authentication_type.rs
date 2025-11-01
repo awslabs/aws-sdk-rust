@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AuthenticationType {
             AuthenticationType::Password => write!(f, "PASSWORD"),
             AuthenticationType::Token => write!(f, "TOKEN"),
             AuthenticationType::X509 => write!(f, "X509"),
-            AuthenticationType::Unknown(value) => write!(f, "{}", value),
+            AuthenticationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

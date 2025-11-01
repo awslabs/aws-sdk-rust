@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SupportedDataTransferType {
         match self {
             SupportedDataTransferType::File => write!(f, "FILE"),
             SupportedDataTransferType::Record => write!(f, "RECORD"),
-            SupportedDataTransferType::Unknown(value) => write!(f, "{}", value),
+            SupportedDataTransferType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

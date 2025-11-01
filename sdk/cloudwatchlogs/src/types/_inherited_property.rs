@@ -96,7 +96,7 @@ impl ::std::fmt::Display for InheritedProperty {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             InheritedProperty::AccountDataProtection => write!(f, "ACCOUNT_DATA_PROTECTION"),
-            InheritedProperty::Unknown(value) => write!(f, "{}", value),
+            InheritedProperty::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

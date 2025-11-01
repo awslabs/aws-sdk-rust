@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ProvisionedModelStatus {
             ProvisionedModelStatus::Failed => write!(f, "Failed"),
             ProvisionedModelStatus::InService => write!(f, "InService"),
             ProvisionedModelStatus::Updating => write!(f, "Updating"),
-            ProvisionedModelStatus::Unknown(value) => write!(f, "{}", value),
+            ProvisionedModelStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

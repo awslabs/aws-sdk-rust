@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MovPaddingControl {
         match self {
             MovPaddingControl::None => write!(f, "NONE"),
             MovPaddingControl::Omneon => write!(f, "OMNEON"),
-            MovPaddingControl::Unknown(value) => write!(f, "{}", value),
+            MovPaddingControl::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

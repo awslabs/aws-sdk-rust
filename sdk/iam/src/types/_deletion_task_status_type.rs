@@ -114,7 +114,7 @@ impl ::std::fmt::Display for DeletionTaskStatusType {
             DeletionTaskStatusType::InProgress => write!(f, "IN_PROGRESS"),
             DeletionTaskStatusType::NotStarted => write!(f, "NOT_STARTED"),
             DeletionTaskStatusType::Succeeded => write!(f, "SUCCEEDED"),
-            DeletionTaskStatusType::Unknown(value) => write!(f, "{}", value),
+            DeletionTaskStatusType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

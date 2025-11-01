@@ -120,7 +120,7 @@ impl ::std::fmt::Display for RangeMode {
             RangeMode::Inclusive => write!(f, "INCLUSIVE"),
             RangeMode::Last => write!(f, "LAST"),
             RangeMode::LastBeforeMissingValues => write!(f, "LAST_BEFORE_MISSING_VALUES"),
-            RangeMode::Unknown(value) => write!(f, "{}", value),
+            RangeMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

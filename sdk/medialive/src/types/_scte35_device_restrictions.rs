@@ -114,7 +114,7 @@ impl ::std::fmt::Display for Scte35DeviceRestrictions {
             Scte35DeviceRestrictions::RestrictGroup0 => write!(f, "RESTRICT_GROUP0"),
             Scte35DeviceRestrictions::RestrictGroup1 => write!(f, "RESTRICT_GROUP1"),
             Scte35DeviceRestrictions::RestrictGroup2 => write!(f, "RESTRICT_GROUP2"),
-            Scte35DeviceRestrictions::Unknown(value) => write!(f, "{}", value),
+            Scte35DeviceRestrictions::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

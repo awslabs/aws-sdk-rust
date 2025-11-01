@@ -133,7 +133,7 @@ impl ::std::fmt::Display for AiAgentType {
             AiAgentType::EmailResponse => write!(f, "EMAIL_RESPONSE"),
             AiAgentType::ManualSearch => write!(f, "MANUAL_SEARCH"),
             AiAgentType::SelfService => write!(f, "SELF_SERVICE"),
-            AiAgentType::Unknown(value) => write!(f, "{}", value),
+            AiAgentType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

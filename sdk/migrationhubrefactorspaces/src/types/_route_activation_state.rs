@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RouteActivationState {
         match self {
             RouteActivationState::Active => write!(f, "ACTIVE"),
             RouteActivationState::Inactive => write!(f, "INACTIVE"),
-            RouteActivationState::Unknown(value) => write!(f, "{}", value),
+            RouteActivationState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

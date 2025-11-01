@@ -120,7 +120,7 @@ impl ::std::fmt::Display for ModelCustomizationJobStatus {
             ModelCustomizationJobStatus::InProgress => write!(f, "InProgress"),
             ModelCustomizationJobStatus::Stopped => write!(f, "Stopped"),
             ModelCustomizationJobStatus::Stopping => write!(f, "Stopping"),
-            ModelCustomizationJobStatus::Unknown(value) => write!(f, "{}", value),
+            ModelCustomizationJobStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

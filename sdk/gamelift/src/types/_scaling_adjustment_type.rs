@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ScalingAdjustmentType {
             ScalingAdjustmentType::ChangeInCapacity => write!(f, "ChangeInCapacity"),
             ScalingAdjustmentType::ExactCapacity => write!(f, "ExactCapacity"),
             ScalingAdjustmentType::PercentChangeInCapacity => write!(f, "PercentChangeInCapacity"),
-            ScalingAdjustmentType::Unknown(value) => write!(f, "{}", value),
+            ScalingAdjustmentType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MssManifestLayout {
         match self {
             MssManifestLayout::Compact => write!(f, "COMPACT"),
             MssManifestLayout::Full => write!(f, "FULL"),
-            MssManifestLayout::Unknown(value) => write!(f, "{}", value),
+            MssManifestLayout::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

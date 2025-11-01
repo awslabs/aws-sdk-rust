@@ -140,7 +140,7 @@ impl ::std::fmt::Display for DeliveryStatus {
             DeliveryStatus::TemporaryFailure => write!(f, "TEMPORARY_FAILURE"),
             DeliveryStatus::Throttled => write!(f, "THROTTLED"),
             DeliveryStatus::UnknownFailure => write!(f, "UNKNOWN_FAILURE"),
-            DeliveryStatus::Unknown(value) => write!(f, "{}", value),
+            DeliveryStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

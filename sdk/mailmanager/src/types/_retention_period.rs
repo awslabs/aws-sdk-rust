@@ -203,7 +203,7 @@ impl ::std::fmt::Display for RetentionPeriod {
             RetentionPeriod::ThreeMonths => write!(f, "THREE_MONTHS"),
             RetentionPeriod::ThreeYears => write!(f, "THREE_YEARS"),
             RetentionPeriod::TwoYears => write!(f, "TWO_YEARS"),
-            RetentionPeriod::Unknown(value) => write!(f, "{}", value),
+            RetentionPeriod::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for QueuePriority {
         match self {
             QueuePriority::Normal => write!(f, "Normal"),
             QueuePriority::Priority => write!(f, "Priority"),
-            QueuePriority::Unknown(value) => write!(f, "{}", value),
+            QueuePriority::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

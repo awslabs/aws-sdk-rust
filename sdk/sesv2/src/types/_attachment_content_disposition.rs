@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AttachmentContentDisposition {
         match self {
             AttachmentContentDisposition::Attachment => write!(f, "ATTACHMENT"),
             AttachmentContentDisposition::Inline => write!(f, "INLINE"),
-            AttachmentContentDisposition::Unknown(value) => write!(f, "{}", value),
+            AttachmentContentDisposition::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

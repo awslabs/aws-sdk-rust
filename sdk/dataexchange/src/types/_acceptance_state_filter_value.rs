@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AcceptanceStateFilterValue {
         match self {
             AcceptanceStateFilterValue::Accepted => write!(f, "ACCEPTED"),
             AcceptanceStateFilterValue::PendingReceiverAcceptance => write!(f, "PENDING_RECEIVER_ACCEPTANCE"),
-            AcceptanceStateFilterValue::Unknown(value) => write!(f, "{}", value),
+            AcceptanceStateFilterValue::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

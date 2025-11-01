@@ -120,7 +120,7 @@ impl ::std::fmt::Display for BotAliasReplicationStatus {
             BotAliasReplicationStatus::Deleting => write!(f, "Deleting"),
             BotAliasReplicationStatus::Failed => write!(f, "Failed"),
             BotAliasReplicationStatus::Updating => write!(f, "Updating"),
-            BotAliasReplicationStatus::Unknown(value) => write!(f, "{}", value),
+            BotAliasReplicationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

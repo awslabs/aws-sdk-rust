@@ -102,7 +102,7 @@ impl ::std::fmt::Display for VerifySoftwareTokenResponseType {
         match self {
             VerifySoftwareTokenResponseType::Error => write!(f, "ERROR"),
             VerifySoftwareTokenResponseType::Success => write!(f, "SUCCESS"),
-            VerifySoftwareTokenResponseType::Unknown(value) => write!(f, "{}", value),
+            VerifySoftwareTokenResponseType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ResponseHeadersPolicyType {
         match self {
             ResponseHeadersPolicyType::Custom => write!(f, "custom"),
             ResponseHeadersPolicyType::Managed => write!(f, "managed"),
-            ResponseHeadersPolicyType::Unknown(value) => write!(f, "{}", value),
+            ResponseHeadersPolicyType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -188,6 +188,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DescribeTraf
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::describe_traffic_distribution_group::DescribeTrafficDistributionGroupInput,
                 output: &mut ::std::string::String,

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MaintenanceWindowResourceType {
         match self {
             MaintenanceWindowResourceType::Instance => write!(f, "INSTANCE"),
             MaintenanceWindowResourceType::ResourceGroup => write!(f, "RESOURCE_GROUP"),
-            MaintenanceWindowResourceType::Unknown(value) => write!(f, "{}", value),
+            MaintenanceWindowResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

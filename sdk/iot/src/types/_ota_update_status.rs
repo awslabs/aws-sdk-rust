@@ -133,7 +133,7 @@ impl ::std::fmt::Display for OtaUpdateStatus {
             OtaUpdateStatus::CreatePending => write!(f, "CREATE_PENDING"),
             OtaUpdateStatus::DeleteFailed => write!(f, "DELETE_FAILED"),
             OtaUpdateStatus::DeleteInProgress => write!(f, "DELETE_IN_PROGRESS"),
-            OtaUpdateStatus::Unknown(value) => write!(f, "{}", value),
+            OtaUpdateStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

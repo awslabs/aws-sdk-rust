@@ -53,8 +53,7 @@ pub fn de_disable_ipam_organization_admin_account(
     let start_el = decoder.start_el();
     if !(start_el.matches("DisableIpamOrganizationAdminAccountResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected DisableIpamOrganizationAdminAccountResponse got {:?}",
-            start_el
+            "invalid root, expected DisableIpamOrganizationAdminAccountResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

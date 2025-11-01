@@ -126,7 +126,7 @@ impl ::std::fmt::Display for FormatToHeaderKey {
             FormatToHeaderKey::Pos => write!(f, "POS"),
             FormatToHeaderKey::Ref => write!(f, "REF"),
             FormatToHeaderKey::Start => write!(f, "START"),
-            FormatToHeaderKey::Unknown(value) => write!(f, "{}", value),
+            FormatToHeaderKey::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

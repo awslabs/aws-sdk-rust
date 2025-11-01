@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Affinity {
         match self {
             Affinity::Default => write!(f, "default"),
             Affinity::Host => write!(f, "host"),
-            Affinity::Unknown(value) => write!(f, "{}", value),
+            Affinity::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

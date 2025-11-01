@@ -27,7 +27,7 @@ impl ::std::fmt::Display for InvalidS3ConfigurationException {
         ::std::write!(f, "InvalidS3ConfigurationException")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
             {
-                ::std::write!(f, ": {}", inner_1)?;
+                ::std::write!(f, ": {inner_1}")?;
             }
         }
         Ok(())

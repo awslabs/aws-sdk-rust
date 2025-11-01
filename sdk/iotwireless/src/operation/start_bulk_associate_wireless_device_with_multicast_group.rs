@@ -181,6 +181,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for StartBulkAss
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::start_bulk_associate_wireless_device_with_multicast_group::StartBulkAssociateWirelessDeviceWithMulticastGroupInput,
                 output: &mut ::std::string::String,

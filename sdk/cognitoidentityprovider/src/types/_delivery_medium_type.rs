@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DeliveryMediumType {
         match self {
             DeliveryMediumType::Email => write!(f, "EMAIL"),
             DeliveryMediumType::Sms => write!(f, "SMS"),
-            DeliveryMediumType::Unknown(value) => write!(f, "{}", value),
+            DeliveryMediumType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

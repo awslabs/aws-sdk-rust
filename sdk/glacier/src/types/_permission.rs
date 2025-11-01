@@ -120,7 +120,7 @@ impl ::std::fmt::Display for Permission {
             Permission::ReadAcp => write!(f, "READ_ACP"),
             Permission::Write => write!(f, "WRITE"),
             Permission::WriteAcp => write!(f, "WRITE_ACP"),
-            Permission::Unknown(value) => write!(f, "{}", value),
+            Permission::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

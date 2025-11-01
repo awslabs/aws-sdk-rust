@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FunctionRuntime {
         match self {
             FunctionRuntime::CloudfrontJs10 => write!(f, "cloudfront-js-1.0"),
             FunctionRuntime::CloudfrontJs20 => write!(f, "cloudfront-js-2.0"),
-            FunctionRuntime::Unknown(value) => write!(f, "{}", value),
+            FunctionRuntime::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

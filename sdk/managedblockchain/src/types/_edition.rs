@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Edition {
         match self {
             Edition::Standard => write!(f, "STANDARD"),
             Edition::Starter => write!(f, "STARTER"),
-            Edition::Unknown(value) => write!(f, "{}", value),
+            Edition::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

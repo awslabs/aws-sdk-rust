@@ -114,7 +114,7 @@ impl ::std::fmt::Display for PlatformType {
             PlatformType::Debian => write!(f, "DEBIAN"),
             PlatformType::Ubuntu => write!(f, "UBUNTU"),
             PlatformType::WindowsServer => write!(f, "WINDOWS_SERVER"),
-            PlatformType::Unknown(value) => write!(f, "{}", value),
+            PlatformType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

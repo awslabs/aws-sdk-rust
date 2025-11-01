@@ -96,7 +96,7 @@ impl ::std::fmt::Display for DataShareType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             DataShareType::Internal => write!(f, "INTERNAL"),
-            DataShareType::Unknown(value) => write!(f, "{}", value),
+            DataShareType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

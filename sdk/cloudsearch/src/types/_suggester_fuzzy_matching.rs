@@ -108,7 +108,7 @@ impl ::std::fmt::Display for SuggesterFuzzyMatching {
             SuggesterFuzzyMatching::High => write!(f, "high"),
             SuggesterFuzzyMatching::Low => write!(f, "low"),
             SuggesterFuzzyMatching::None => write!(f, "none"),
-            SuggesterFuzzyMatching::Unknown(value) => write!(f, "{}", value),
+            SuggesterFuzzyMatching::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

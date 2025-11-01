@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ElasticGpuStatus {
         match self {
             ElasticGpuStatus::Impaired => write!(f, "IMPAIRED"),
             ElasticGpuStatus::Ok => write!(f, "OK"),
-            ElasticGpuStatus::Unknown(value) => write!(f, "{}", value),
+            ElasticGpuStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

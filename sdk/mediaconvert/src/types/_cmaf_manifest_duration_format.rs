@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CmafManifestDurationFormat {
         match self {
             CmafManifestDurationFormat::FloatingPoint => write!(f, "FLOATING_POINT"),
             CmafManifestDurationFormat::Integer => write!(f, "INTEGER"),
-            CmafManifestDurationFormat::Unknown(value) => write!(f, "{}", value),
+            CmafManifestDurationFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

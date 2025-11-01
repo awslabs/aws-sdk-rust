@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AutoEnableMode {
             AutoEnableMode::All => write!(f, "ALL"),
             AutoEnableMode::New => write!(f, "NEW"),
             AutoEnableMode::None => write!(f, "NONE"),
-            AutoEnableMode::Unknown(value) => write!(f, "{}", value),
+            AutoEnableMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

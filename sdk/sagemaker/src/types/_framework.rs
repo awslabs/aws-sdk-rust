@@ -154,7 +154,7 @@ impl ::std::fmt::Display for Framework {
             Framework::Tensorflow => write!(f, "TENSORFLOW"),
             Framework::Tflite => write!(f, "TFLITE"),
             Framework::Xgboost => write!(f, "XGBOOST"),
-            Framework::Unknown(value) => write!(f, "{}", value),
+            Framework::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

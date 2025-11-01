@@ -108,7 +108,7 @@ impl ::std::fmt::Display for Mode {
             Mode::AfterLiveEdge => write!(f, "AFTER_LIVE_EDGE"),
             Mode::BehindLiveEdge => write!(f, "BEHIND_LIVE_EDGE"),
             Mode::Off => write!(f, "OFF"),
-            Mode::Unknown(value) => write!(f, "{}", value),
+            Mode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

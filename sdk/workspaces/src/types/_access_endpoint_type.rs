@@ -96,7 +96,7 @@ impl ::std::fmt::Display for AccessEndpointType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             AccessEndpointType::StreamingWsp => write!(f, "STREAMING_WSP"),
-            AccessEndpointType::Unknown(value) => write!(f, "{}", value),
+            AccessEndpointType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

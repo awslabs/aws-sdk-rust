@@ -108,7 +108,7 @@ impl ::std::fmt::Display for RtmpCaptionData {
             RtmpCaptionData::All => write!(f, "ALL"),
             RtmpCaptionData::Field1608 => write!(f, "FIELD1_608"),
             RtmpCaptionData::Field1AndField2608 => write!(f, "FIELD1_AND_FIELD2_608"),
-            RtmpCaptionData::Unknown(value) => write!(f, "{}", value),
+            RtmpCaptionData::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

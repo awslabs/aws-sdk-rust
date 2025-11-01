@@ -168,7 +168,7 @@ impl ::std::fmt::Display for MetricName {
             MetricName::UnblendedCost => write!(f, "UnblendedCost"),
             MetricName::Unit => write!(f, "Unit"),
             MetricName::UsageQuantity => write!(f, "UsageQuantity"),
-            MetricName::Unknown(value) => write!(f, "{}", value),
+            MetricName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -161,7 +161,7 @@ impl ::std::fmt::Display for Operator {
             Operator::Le => write!(f, "LessThanOrEqual"),
             Operator::NotContains => write!(f, "NotContains"),
             Operator::Ne => write!(f, "NotEquals"),
-            Operator::Unknown(value) => write!(f, "{}", value),
+            Operator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

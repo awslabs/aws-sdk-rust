@@ -225,8 +225,7 @@ impl ImdsCredentialsProvider {
         let credentials = self
             .client
             .get(format!(
-                "/latest/meta-data/iam/security-credentials/{}",
-                profile
+                "/latest/meta-data/iam/security-credentials/{profile}",
             ))
             .await
             .map_err(CredentialsError::provider_error)?;
@@ -256,17 +255,13 @@ impl ImdsCredentialsProvider {
                 if code == codes::ASSUME_ROLE_UNAUTHORIZED_ACCESS =>
             {
                 Err(CredentialsError::invalid_configuration(format!(
-                    "Incorrect IMDS/IAM configuration: [{}] {}. \
+                    "Incorrect IMDS/IAM configuration: [{code}] {message}. \
                         Hint: Does this role have a trust relationship with EC2?",
-                    code, message
                 )))
             }
-            Ok(JsonCredentials::Error { code, message }) => {
-                Err(CredentialsError::provider_error(format!(
-                    "Error retrieving credentials from IMDS: {} {}",
-                    code, message
-                )))
-            }
+            Ok(JsonCredentials::Error { code, message }) => Err(CredentialsError::provider_error(
+                format!("Error retrieving credentials from IMDS: {code} {message}"),
+            )),
             // got bad data from IMDS, should not occur during normal operation:
             Err(invalid) => Err(CredentialsError::unhandled(invalid)),
         }

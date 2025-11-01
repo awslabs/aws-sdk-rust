@@ -110,7 +110,7 @@ impl ::std::fmt::Display for FindingsFound {
             FindingsFound::False => write!(f, "false"),
             FindingsFound::True => write!(f, "true"),
             FindingsFound::UnknownValue => write!(f, "unknown"),
-            FindingsFound::Unknown(value) => write!(f, "{}", value),
+            FindingsFound::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

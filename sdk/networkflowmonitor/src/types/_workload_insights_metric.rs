@@ -108,7 +108,7 @@ impl ::std::fmt::Display for WorkloadInsightsMetric {
             WorkloadInsightsMetric::DataTransferred => write!(f, "DATA_TRANSFERRED"),
             WorkloadInsightsMetric::Retransmissions => write!(f, "RETRANSMISSIONS"),
             WorkloadInsightsMetric::Timeouts => write!(f, "TIMEOUTS"),
-            WorkloadInsightsMetric::Unknown(value) => write!(f, "{}", value),
+            WorkloadInsightsMetric::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

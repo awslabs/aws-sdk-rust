@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ResourceType {
         match self {
             ResourceType::Ec2Instance => write!(f, "EC2Instance"),
             ResourceType::ManagedInstance => write!(f, "ManagedInstance"),
-            ResourceType::Unknown(value) => write!(f, "{}", value),
+            ResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

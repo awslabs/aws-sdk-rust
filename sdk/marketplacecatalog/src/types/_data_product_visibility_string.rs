@@ -120,7 +120,7 @@ impl ::std::fmt::Display for DataProductVisibilityString {
             DataProductVisibilityString::Public => write!(f, "Public"),
             DataProductVisibilityString::Restricted => write!(f, "Restricted"),
             DataProductVisibilityString::Unavailable => write!(f, "Unavailable"),
-            DataProductVisibilityString::Unknown(value) => write!(f, "{}", value),
+            DataProductVisibilityString::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

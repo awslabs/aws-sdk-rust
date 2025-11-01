@@ -168,7 +168,7 @@ impl ::std::fmt::Display for ReservationState {
             ReservationState::Retired => write!(f, "retired"),
             ReservationState::Scheduled => write!(f, "scheduled"),
             ReservationState::Unsupported => write!(f, "unsupported"),
-            ReservationState::Unknown(value) => write!(f, "{}", value),
+            ReservationState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

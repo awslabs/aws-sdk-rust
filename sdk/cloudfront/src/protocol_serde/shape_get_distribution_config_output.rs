@@ -25,8 +25,7 @@ pub fn de_distribution_config(inp: &[u8]) -> std::result::Result<crate::types::D
     let start_el = decoder.start_el();
     if !(start_el.matches("DistributionConfig")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected DistributionConfig got {:?}",
-            start_el
+            "invalid root, expected DistributionConfig got {start_el:?}"
         )));
     }
     crate::protocol_serde::shape_distribution_config::de_distribution_config(&mut decoder)

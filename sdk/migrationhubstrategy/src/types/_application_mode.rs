@@ -110,7 +110,7 @@ impl ::std::fmt::Display for ApplicationMode {
             ApplicationMode::All => write!(f, "ALL"),
             ApplicationMode::Known => write!(f, "KNOWN"),
             ApplicationMode::UnknownValue => write!(f, "UNKNOWN"),
-            ApplicationMode::Unknown(value) => write!(f, "{}", value),
+            ApplicationMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

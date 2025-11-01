@@ -108,7 +108,7 @@ impl ::std::fmt::Display for StorageType {
             StorageType::Hdd => write!(f, "HDD"),
             StorageType::IntelligentTiering => write!(f, "INTELLIGENT_TIERING"),
             StorageType::Ssd => write!(f, "SSD"),
-            StorageType::Unknown(value) => write!(f, "{}", value),
+            StorageType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

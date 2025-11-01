@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SortKey {
         match self {
             SortKey::Ascending => write!(f, "ASCENDING"),
             SortKey::Descending => write!(f, "DESCENDING"),
-            SortKey::Unknown(value) => write!(f, "{}", value),
+            SortKey::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

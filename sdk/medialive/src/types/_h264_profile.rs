@@ -126,7 +126,7 @@ impl ::std::fmt::Display for H264Profile {
             H264Profile::High422 => write!(f, "HIGH_422"),
             H264Profile::High42210Bit => write!(f, "HIGH_422_10BIT"),
             H264Profile::Main => write!(f, "MAIN"),
-            H264Profile::Unknown(value) => write!(f, "{}", value),
+            H264Profile::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

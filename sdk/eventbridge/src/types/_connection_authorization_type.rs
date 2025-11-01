@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ConnectionAuthorizationType {
             ConnectionAuthorizationType::ApiKey => write!(f, "API_KEY"),
             ConnectionAuthorizationType::Basic => write!(f, "BASIC"),
             ConnectionAuthorizationType::OauthClientCredentials => write!(f, "OAUTH_CLIENT_CREDENTIALS"),
-            ConnectionAuthorizationType::Unknown(value) => write!(f, "{}", value),
+            ConnectionAuthorizationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

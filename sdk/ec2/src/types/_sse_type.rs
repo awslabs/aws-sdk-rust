@@ -108,7 +108,7 @@ impl ::std::fmt::Display for SseType {
             SseType::None => write!(f, "none"),
             SseType::SseEbs => write!(f, "sse-ebs"),
             SseType::SseKms => write!(f, "sse-kms"),
-            SseType::Unknown(value) => write!(f, "{}", value),
+            SseType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for UseCaseType {
         match self {
             UseCaseType::ConnectCampaigns => write!(f, "CONNECT_CAMPAIGNS"),
             UseCaseType::RulesEvaluation => write!(f, "RULES_EVALUATION"),
-            UseCaseType::Unknown(value) => write!(f, "{}", value),
+            UseCaseType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

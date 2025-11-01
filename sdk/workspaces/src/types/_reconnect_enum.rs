@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ReconnectEnum {
         match self {
             ReconnectEnum::Disabled => write!(f, "DISABLED"),
             ReconnectEnum::Enabled => write!(f, "ENABLED"),
-            ReconnectEnum::Unknown(value) => write!(f, "{}", value),
+            ReconnectEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

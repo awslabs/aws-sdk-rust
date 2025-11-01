@@ -108,7 +108,7 @@ impl ::std::fmt::Display for TemporalStatistics {
             TemporalStatistics::Mean => write!(f, "MEAN"),
             TemporalStatistics::Median => write!(f, "MEDIAN"),
             TemporalStatistics::StandardDeviation => write!(f, "STANDARD_DEVIATION"),
-            TemporalStatistics::Unknown(value) => write!(f, "{}", value),
+            TemporalStatistics::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

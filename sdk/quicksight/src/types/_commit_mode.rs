@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CommitMode {
         match self {
             CommitMode::Auto => write!(f, "AUTO"),
             CommitMode::Manual => write!(f, "MANUAL"),
-            CommitMode::Unknown(value) => write!(f, "{}", value),
+            CommitMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

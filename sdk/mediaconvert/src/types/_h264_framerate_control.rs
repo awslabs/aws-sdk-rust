@@ -102,7 +102,7 @@ impl ::std::fmt::Display for H264FramerateControl {
         match self {
             H264FramerateControl::InitializeFromSource => write!(f, "INITIALIZE_FROM_SOURCE"),
             H264FramerateControl::Specified => write!(f, "SPECIFIED"),
-            H264FramerateControl::Unknown(value) => write!(f, "{}", value),
+            H264FramerateControl::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

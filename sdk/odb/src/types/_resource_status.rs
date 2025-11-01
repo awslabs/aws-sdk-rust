@@ -140,7 +140,7 @@ impl ::std::fmt::Display for ResourceStatus {
             ResourceStatus::Terminated => write!(f, "TERMINATED"),
             ResourceStatus::Terminating => write!(f, "TERMINATING"),
             ResourceStatus::Updating => write!(f, "UPDATING"),
-            ResourceStatus::Unknown(value) => write!(f, "{}", value),
+            ResourceStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

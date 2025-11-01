@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TelemetryStatus {
         match self {
             TelemetryStatus::Down => write!(f, "DOWN"),
             TelemetryStatus::Up => write!(f, "UP"),
-            TelemetryStatus::Unknown(value) => write!(f, "{}", value),
+            TelemetryStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

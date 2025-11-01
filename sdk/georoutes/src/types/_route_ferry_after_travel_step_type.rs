@@ -94,7 +94,7 @@ impl ::std::fmt::Display for RouteFerryAfterTravelStepType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             RouteFerryAfterTravelStepType::Deboard => write!(f, "Deboard"),
-            RouteFerryAfterTravelStepType::Unknown(value) => write!(f, "{}", value),
+            RouteFerryAfterTravelStepType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

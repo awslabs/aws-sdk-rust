@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AliasInvocationState {
         match self {
             AliasInvocationState::AcceptInvocations => write!(f, "ACCEPT_INVOCATIONS"),
             AliasInvocationState::RejectInvocations => write!(f, "REJECT_INVOCATIONS"),
-            AliasInvocationState::Unknown(value) => write!(f, "{}", value),
+            AliasInvocationState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

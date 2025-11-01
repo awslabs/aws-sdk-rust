@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AutoMlJobObjectiveType {
         match self {
             AutoMlJobObjectiveType::Maximize => write!(f, "Maximize"),
             AutoMlJobObjectiveType::Minimize => write!(f, "Minimize"),
-            AutoMlJobObjectiveType::Unknown(value) => write!(f, "{}", value),
+            AutoMlJobObjectiveType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

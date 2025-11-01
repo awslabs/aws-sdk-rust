@@ -120,7 +120,7 @@ impl ::std::fmt::Display for EventRuleStatus {
             EventRuleStatus::Deleting => write!(f, "DELETING"),
             EventRuleStatus::Inactive => write!(f, "INACTIVE"),
             EventRuleStatus::Updating => write!(f, "UPDATING"),
-            EventRuleStatus::Unknown(value) => write!(f, "{}", value),
+            EventRuleStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

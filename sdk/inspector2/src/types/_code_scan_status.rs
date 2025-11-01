@@ -114,7 +114,7 @@ impl ::std::fmt::Display for CodeScanStatus {
             CodeScanStatus::InProgress => write!(f, "IN_PROGRESS"),
             CodeScanStatus::Skipped => write!(f, "SKIPPED"),
             CodeScanStatus::Successful => write!(f, "SUCCESSFUL"),
-            CodeScanStatus::Unknown(value) => write!(f, "{}", value),
+            CodeScanStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

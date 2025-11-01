@@ -161,7 +161,7 @@ impl ::std::fmt::Display for ChangeType {
             ChangeType::NetworkFunctionGroup => write!(f, "NETWORK_FUNCTION_GROUP"),
             ChangeType::SegmentsConfiguration => write!(f, "SEGMENTS_CONFIGURATION"),
             ChangeType::SegmentActionsConfiguration => write!(f, "SEGMENT_ACTIONS_CONFIGURATION"),
-            ChangeType::Unknown(value) => write!(f, "{}", value),
+            ChangeType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

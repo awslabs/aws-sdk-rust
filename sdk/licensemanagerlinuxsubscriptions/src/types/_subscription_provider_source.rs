@@ -96,7 +96,7 @@ impl ::std::fmt::Display for SubscriptionProviderSource {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             SubscriptionProviderSource::RedHat => write!(f, "RedHat"),
-            SubscriptionProviderSource::Unknown(value) => write!(f, "{}", value),
+            SubscriptionProviderSource::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

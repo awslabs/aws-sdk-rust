@@ -154,7 +154,7 @@ impl ::std::fmt::Display for ResourcesNumberField {
             ResourcesNumberField::SeverityOther => write!(f, "FindingsSummary.Severities.Other"),
             ResourcesNumberField::SeverityUnknown => write!(f, "FindingsSummary.Severities.Unknown"),
             ResourcesNumberField::TotalFindings => write!(f, "FindingsSummary.TotalFindings"),
-            ResourcesNumberField::Unknown(value) => write!(f, "{}", value),
+            ResourcesNumberField::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

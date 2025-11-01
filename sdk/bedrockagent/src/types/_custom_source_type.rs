@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CustomSourceType {
         match self {
             CustomSourceType::InLine => write!(f, "IN_LINE"),
             CustomSourceType::S3Location => write!(f, "S3_LOCATION"),
-            CustomSourceType::Unknown(value) => write!(f, "{}", value),
+            CustomSourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

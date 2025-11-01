@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DescribeWorkspaceDirectoriesFilterName {
         match self {
             DescribeWorkspaceDirectoriesFilterName::UserIdentityType => write!(f, "USER_IDENTITY_TYPE"),
             DescribeWorkspaceDirectoriesFilterName::WorkspaceType => write!(f, "WORKSPACE_TYPE"),
-            DescribeWorkspaceDirectoriesFilterName::Unknown(value) => write!(f, "{}", value),
+            DescribeWorkspaceDirectoriesFilterName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

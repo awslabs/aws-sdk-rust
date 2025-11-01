@@ -108,7 +108,7 @@ impl ::std::fmt::Display for CapacityTypes {
             CapacityTypes::CapacityBlock => write!(f, "CAPACITY_BLOCK"),
             CapacityTypes::OnDemand => write!(f, "ON_DEMAND"),
             CapacityTypes::Spot => write!(f, "SPOT"),
-            CapacityTypes::Unknown(value) => write!(f, "{}", value),
+            CapacityTypes::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PropertyKey {
         match self {
             PropertyKey::LaunchRole => write!(f, "LAUNCH_ROLE"),
             PropertyKey::Owner => write!(f, "OWNER"),
-            PropertyKey::Unknown(value) => write!(f, "{}", value),
+            PropertyKey::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

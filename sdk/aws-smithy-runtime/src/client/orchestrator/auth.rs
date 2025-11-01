@@ -107,7 +107,7 @@ impl fmt::Display for AuthOrchestrationError {
             Self::MissingEndpointConfig => f.write_str("missing endpoint config"),
             Self::BadAuthSchemeEndpointConfig(message) => f.write_str(message),
             Self::FailedToResolveEndpoint(source) => {
-                write!(f, "failed to resolve endpoint: {}", source)
+                write!(f, "failed to resolve endpoint: {source}")
             }
         }
     }

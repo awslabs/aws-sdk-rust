@@ -114,7 +114,7 @@ impl ::std::fmt::Display for S3BucketRegion {
             S3BucketRegion::ApEast1 => write!(f, "ap-east-1"),
             S3BucketRegion::EuSouth1 => write!(f, "eu-south-1"),
             S3BucketRegion::MeSouth1 => write!(f, "me-south-1"),
-            S3BucketRegion::Unknown(value) => write!(f, "{}", value),
+            S3BucketRegion::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

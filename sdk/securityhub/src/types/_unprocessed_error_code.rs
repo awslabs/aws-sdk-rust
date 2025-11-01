@@ -120,7 +120,7 @@ impl ::std::fmt::Display for UnprocessedErrorCode {
             UnprocessedErrorCode::LimitExceeded => write!(f, "LIMIT_EXCEEDED"),
             UnprocessedErrorCode::NotFound => write!(f, "NOT_FOUND"),
             UnprocessedErrorCode::ResourceNotFound => write!(f, "RESOURCE_NOT_FOUND"),
-            UnprocessedErrorCode::Unknown(value) => write!(f, "{}", value),
+            UnprocessedErrorCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

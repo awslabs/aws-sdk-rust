@@ -180,12 +180,30 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for SendApiAsset
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::send_api_asset::SendApiAssetInput,
                 output: &mut ::std::string::String,
             ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 use ::std::fmt::Write as _;
                 ::std::write!(output, "/v1").expect("formatting should succeed");
+                ::std::result::Result::Ok(())
+            }
+            fn uri_query(
+                _input: &crate::operation::send_api_asset::SendApiAssetInput,
+                mut output: &mut ::std::string::String,
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
+                let mut query = ::aws_smithy_http::query::Writer::new(output);
+                let protected_params = [];
+                if let ::std::option::Option::Some(inner_1) = &_input.query_string_parameters {
+                    {
+                        for (k, v) in inner_1 {
+                            if !protected_params.contains(&k.as_str()) {
+                                query.push_kv(&::aws_smithy_http::query::fmt_string(k), &::aws_smithy_http::query::fmt_string(v));
+                            }
+                        }
+                    }
+                }
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -195,6 +213,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for SendApiAsset
             ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
+                uri_query(input, &mut uri)?;
                 let builder = crate::protocol_serde::shape_send_api_asset::ser_send_api_asset_headers(input, builder)?;
                 ::std::result::Result::Ok(builder.method("POST").uri(uri))
             }

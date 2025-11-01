@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ComparisonOperator {
             ComparisonOperator::GreaterThanOrEqual => write!(f, "GREATER_THAN_OR_EQUAL"),
             ComparisonOperator::LessThan => write!(f, "LESS_THAN"),
             ComparisonOperator::LessThanOrEqual => write!(f, "LESS_THAN_OR_EQUAL"),
-            ComparisonOperator::Unknown(value) => write!(f, "{}", value),
+            ComparisonOperator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -126,7 +126,7 @@ impl ::std::fmt::Display for UserIdentityType {
             UserIdentityType::FederatedUser => write!(f, "FederatedUser"),
             UserIdentityType::IamUser => write!(f, "IAMUser"),
             UserIdentityType::Root => write!(f, "Root"),
-            UserIdentityType::Unknown(value) => write!(f, "{}", value),
+            UserIdentityType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

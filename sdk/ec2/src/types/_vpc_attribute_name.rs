@@ -108,7 +108,7 @@ impl ::std::fmt::Display for VpcAttributeName {
             VpcAttributeName::EnableDnsHostnames => write!(f, "enableDnsHostnames"),
             VpcAttributeName::EnableDnsSupport => write!(f, "enableDnsSupport"),
             VpcAttributeName::EnableNetworkAddressUsageMetrics => write!(f, "enableNetworkAddressUsageMetrics"),
-            VpcAttributeName::Unknown(value) => write!(f, "{}", value),
+            VpcAttributeName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for EstimatedCostTier {
             EstimatedCostTier::L2 => write!(f, "L2"),
             EstimatedCostTier::L3 => write!(f, "L3"),
             EstimatedCostTier::L4 => write!(f, "L4"),
-            EstimatedCostTier::Unknown(value) => write!(f, "{}", value),
+            EstimatedCostTier::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

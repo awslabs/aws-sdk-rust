@@ -120,7 +120,7 @@ impl ::std::fmt::Display for QueryStatus {
             QueryStatus::Queued => write!(f, "QUEUED"),
             QueryStatus::Running => write!(f, "RUNNING"),
             QueryStatus::Succeeded => write!(f, "SUCCEEDED"),
-            QueryStatus::Unknown(value) => write!(f, "{}", value),
+            QueryStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

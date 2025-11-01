@@ -108,7 +108,7 @@ impl ::std::fmt::Display for SourceType {
             SourceType::Cases => write!(f, "CASES"),
             SourceType::Salesforce => write!(f, "SALESFORCE"),
             SourceType::Zendesk => write!(f, "ZENDESK"),
-            SourceType::Unknown(value) => write!(f, "{}", value),
+            SourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

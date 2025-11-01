@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ServiceType {
         match self {
             ServiceType::Docdb => write!(f, "DOCDB"),
             ServiceType::Rds => write!(f, "RDS"),
-            ServiceType::Unknown(value) => write!(f, "{}", value),
+            ServiceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

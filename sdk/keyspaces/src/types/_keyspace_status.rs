@@ -114,7 +114,7 @@ impl ::std::fmt::Display for KeyspaceStatus {
             KeyspaceStatus::Creating => write!(f, "CREATING"),
             KeyspaceStatus::Deleting => write!(f, "DELETING"),
             KeyspaceStatus::Updating => write!(f, "UPDATING"),
-            KeyspaceStatus::Unknown(value) => write!(f, "{}", value),
+            KeyspaceStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

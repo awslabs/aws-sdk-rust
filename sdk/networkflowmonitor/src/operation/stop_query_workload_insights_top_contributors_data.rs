@@ -187,6 +187,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for StopQueryWor
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::stop_query_workload_insights_top_contributors_data::StopQueryWorkloadInsightsTopContributorsDataInput,
                 output: &mut ::std::string::String,

@@ -121,7 +121,7 @@ impl ::std::fmt::Display for CloudWatchAlarmTemplateComparisonOperator {
             CloudWatchAlarmTemplateComparisonOperator::GreaterThanThreshold => write!(f, "GreaterThanThreshold"),
             CloudWatchAlarmTemplateComparisonOperator::LessThanOrEqualToThreshold => write!(f, "LessThanOrEqualToThreshold"),
             CloudWatchAlarmTemplateComparisonOperator::LessThanThreshold => write!(f, "LessThanThreshold"),
-            CloudWatchAlarmTemplateComparisonOperator::Unknown(value) => write!(f, "{}", value),
+            CloudWatchAlarmTemplateComparisonOperator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

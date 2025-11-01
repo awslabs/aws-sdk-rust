@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ChecksumType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ChecksumType::Sha1 => write!(f, "SHA1"),
-            ChecksumType::Unknown(value) => write!(f, "{}", value),
+            ChecksumType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

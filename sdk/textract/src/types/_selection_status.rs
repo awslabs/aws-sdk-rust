@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SelectionStatus {
         match self {
             SelectionStatus::NotSelected => write!(f, "NOT_SELECTED"),
             SelectionStatus::Selected => write!(f, "SELECTED"),
-            SelectionStatus::Unknown(value) => write!(f, "{}", value),
+            SelectionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

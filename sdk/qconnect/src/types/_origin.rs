@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Origin {
         match self {
             Origin::Customer => write!(f, "CUSTOMER"),
             Origin::System => write!(f, "SYSTEM"),
-            Origin::Unknown(value) => write!(f, "{}", value),
+            Origin::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

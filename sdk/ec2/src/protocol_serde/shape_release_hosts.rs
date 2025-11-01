@@ -42,8 +42,7 @@ pub fn de_release_hosts(
     let start_el = decoder.start_el();
     if !(start_el.matches("ReleaseHostsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected ReleaseHostsResponse got {:?}",
-            start_el
+            "invalid root, expected ReleaseHostsResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

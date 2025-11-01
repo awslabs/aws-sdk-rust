@@ -126,7 +126,7 @@ impl ::std::fmt::Display for HandshakeState {
             HandshakeState::Expired => write!(f, "EXPIRED"),
             HandshakeState::Open => write!(f, "OPEN"),
             HandshakeState::Requested => write!(f, "REQUESTED"),
-            HandshakeState::Unknown(value) => write!(f, "{}", value),
+            HandshakeState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

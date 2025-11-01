@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FirewallDomainRedirectionAction {
         match self {
             FirewallDomainRedirectionAction::InspectRedirectionDomain => write!(f, "INSPECT_REDIRECTION_DOMAIN"),
             FirewallDomainRedirectionAction::TrustRedirectionDomain => write!(f, "TRUST_REDIRECTION_DOMAIN"),
-            FirewallDomainRedirectionAction::Unknown(value) => write!(f, "{}", value),
+            FirewallDomainRedirectionAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

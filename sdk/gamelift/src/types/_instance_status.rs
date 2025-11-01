@@ -108,7 +108,7 @@ impl ::std::fmt::Display for InstanceStatus {
             InstanceStatus::Active => write!(f, "ACTIVE"),
             InstanceStatus::Pending => write!(f, "PENDING"),
             InstanceStatus::Terminating => write!(f, "TERMINATING"),
-            InstanceStatus::Unknown(value) => write!(f, "{}", value),
+            InstanceStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

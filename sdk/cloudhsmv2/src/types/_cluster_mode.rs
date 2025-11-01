@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ClusterMode {
         match self {
             ClusterMode::Fips => write!(f, "FIPS"),
             ClusterMode::NonFips => write!(f, "NON_FIPS"),
-            ClusterMode::Unknown(value) => write!(f, "{}", value),
+            ClusterMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

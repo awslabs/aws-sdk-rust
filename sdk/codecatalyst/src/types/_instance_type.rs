@@ -119,7 +119,7 @@ impl ::std::fmt::Display for InstanceType {
             InstanceType::DevStandard1Medium => write!(f, "dev.standard1.medium"),
             InstanceType::DevStandard1Small => write!(f, "dev.standard1.small"),
             InstanceType::DevStandard1Xlarge => write!(f, "dev.standard1.xlarge"),
-            InstanceType::Unknown(value) => write!(f, "{}", value),
+            InstanceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for FieldNameString {
             FieldNameString::LastModified => write!(f, "LAST_MODIFIED"),
             FieldNameString::ResourceArn => write!(f, "RESOURCE_ARN"),
             FieldNameString::RoleArn => write!(f, "ROLE_ARN"),
-            FieldNameString::Unknown(value) => write!(f, "{}", value),
+            FieldNameString::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

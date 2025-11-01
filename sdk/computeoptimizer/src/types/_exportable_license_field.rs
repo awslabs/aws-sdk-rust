@@ -244,7 +244,7 @@ impl ::std::fmt::Display for ExportableLicenseField {
             }
             ExportableLicenseField::ResourceArn => write!(f, "ResourceArn"),
             ExportableLicenseField::Tags => write!(f, "Tags"),
-            ExportableLicenseField::Unknown(value) => write!(f, "{}", value),
+            ExportableLicenseField::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

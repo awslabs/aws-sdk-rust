@@ -102,7 +102,7 @@ impl ::std::fmt::Display for JobDefinitionType {
         match self {
             JobDefinitionType::Container => write!(f, "container"),
             JobDefinitionType::Multinode => write!(f, "multinode"),
-            JobDefinitionType::Unknown(value) => write!(f, "{}", value),
+            JobDefinitionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

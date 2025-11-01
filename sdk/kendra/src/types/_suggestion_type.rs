@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SuggestionType {
         match self {
             SuggestionType::DocumentAttributes => write!(f, "DOCUMENT_ATTRIBUTES"),
             SuggestionType::Query => write!(f, "QUERY"),
-            SuggestionType::Unknown(value) => write!(f, "{}", value),
+            SuggestionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -166,7 +166,7 @@ impl ::std::fmt::Display for WaypointOptimizationHazardousCargoType {
             WaypointOptimizationHazardousCargoType::Poison => write!(f, "Poison"),
             WaypointOptimizationHazardousCargoType::PoisonousInhalation => write!(f, "PoisonousInhalation"),
             WaypointOptimizationHazardousCargoType::Radioactive => write!(f, "Radioactive"),
-            WaypointOptimizationHazardousCargoType::Unknown(value) => write!(f, "{}", value),
+            WaypointOptimizationHazardousCargoType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

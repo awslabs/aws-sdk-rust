@@ -144,7 +144,7 @@ impl ::std::fmt::Display for CompressionFormat {
             CompressionFormat::Snappy => write!(f, "SNAPPY"),
             CompressionFormat::Zlib => write!(f, "ZLIB"),
             CompressionFormat::Zstd => write!(f, "ZSTD"),
-            CompressionFormat::Unknown(value) => write!(f, "{}", value),
+            CompressionFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -154,7 +154,7 @@ impl ::std::fmt::Display for ClusterStatus {
             ClusterStatus::Suspending => write!(f, "SUSPENDING"),
             ClusterStatus::UpdateFailed => write!(f, "UPDATE_FAILED"),
             ClusterStatus::Updating => write!(f, "UPDATING"),
-            ClusterStatus::Unknown(value) => write!(f, "{}", value),
+            ClusterStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

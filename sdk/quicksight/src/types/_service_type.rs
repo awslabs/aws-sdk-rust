@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ServiceType {
             ServiceType::Athena => write!(f, "ATHENA"),
             ServiceType::Qbusiness => write!(f, "QBUSINESS"),
             ServiceType::Redshift => write!(f, "REDSHIFT"),
-            ServiceType::Unknown(value) => write!(f, "{}", value),
+            ServiceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

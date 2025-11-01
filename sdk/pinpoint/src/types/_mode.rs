@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Mode {
         match self {
             Mode::Delivery => write!(f, "DELIVERY"),
             Mode::Filter => write!(f, "FILTER"),
-            Mode::Unknown(value) => write!(f, "{}", value),
+            Mode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

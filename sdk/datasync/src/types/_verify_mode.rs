@@ -108,7 +108,7 @@ impl ::std::fmt::Display for VerifyMode {
             VerifyMode::None => write!(f, "NONE"),
             VerifyMode::OnlyFilesTransferred => write!(f, "ONLY_FILES_TRANSFERRED"),
             VerifyMode::PointInTimeConsistent => write!(f, "POINT_IN_TIME_CONSISTENT"),
-            VerifyMode::Unknown(value) => write!(f, "{}", value),
+            VerifyMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

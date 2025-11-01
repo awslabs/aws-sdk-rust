@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RuleGroupType {
         match self {
             RuleGroupType::Stateful => write!(f, "STATEFUL"),
             RuleGroupType::Stateless => write!(f, "STATELESS"),
-            RuleGroupType::Unknown(value) => write!(f, "{}", value),
+            RuleGroupType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

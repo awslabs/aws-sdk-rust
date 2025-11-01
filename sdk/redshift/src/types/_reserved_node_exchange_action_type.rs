@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ReservedNodeExchangeActionType {
         match self {
             ReservedNodeExchangeActionType::ResizeCluster => write!(f, "resize-cluster"),
             ReservedNodeExchangeActionType::RestoreCluster => write!(f, "restore-cluster"),
-            ReservedNodeExchangeActionType::Unknown(value) => write!(f, "{}", value),
+            ReservedNodeExchangeActionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

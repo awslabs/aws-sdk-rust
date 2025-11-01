@@ -126,7 +126,7 @@ impl ::std::fmt::Display for StreamProcessorStatus {
             StreamProcessorStatus::Stopped => write!(f, "STOPPED"),
             StreamProcessorStatus::Stopping => write!(f, "STOPPING"),
             StreamProcessorStatus::Updating => write!(f, "UPDATING"),
-            StreamProcessorStatus::Unknown(value) => write!(f, "{}", value),
+            StreamProcessorStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

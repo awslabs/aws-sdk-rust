@@ -102,7 +102,7 @@ impl ::std::fmt::Display for HdfsAuthenticationType {
         match self {
             HdfsAuthenticationType::Kerberos => write!(f, "KERBEROS"),
             HdfsAuthenticationType::Simple => write!(f, "SIMPLE"),
-            HdfsAuthenticationType::Unknown(value) => write!(f, "{}", value),
+            HdfsAuthenticationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

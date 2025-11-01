@@ -14,6 +14,21 @@ use tracing_subscriber::fmt::TestWriter;
 #[derive(Debug)]
 pub struct LogCaptureGuard(#[allow(dead_code)] DefaultGuard);
 
+/// Enables output of test logs to stdout
+///
+/// The `env` filter can be configured to set the log level for different modules
+pub fn show_filtered_test_logs(filter: &str) -> LogCaptureGuard {
+    let (mut writer, _rx) = Tee::stdout();
+    writer.loud();
+
+    let subscriber = tracing_subscriber::fmt()
+        .with_env_filter(filter)
+        .with_writer(Mutex::new(writer))
+        .finish();
+    let guard = tracing::subscriber::set_default(subscriber);
+    LogCaptureGuard(guard)
+}
+
 /// Enables output of test logs to stdout at trace level by default.
 ///
 /// The env filter can be changed with the `RUST_LOG` environment variable.
@@ -29,12 +44,7 @@ pub fn show_test_logs() -> LogCaptureGuard {
         You can change the env filter with the RUST_LOG environment variable."
     );
 
-    let subscriber = tracing_subscriber::fmt()
-        .with_env_filter(env_filter)
-        .with_writer(Mutex::new(writer))
-        .finish();
-    let guard = tracing::subscriber::set_default(subscriber);
-    LogCaptureGuard(guard)
+    show_filtered_test_logs(env_filter)
 }
 
 /// Capture logs from this test.

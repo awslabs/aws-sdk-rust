@@ -181,6 +181,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DownloadDBLo
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::download_db_log_file_portion::DownloadDbLogFilePortionInput,
                 output: &mut ::std::string::String,

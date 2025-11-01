@@ -102,7 +102,7 @@ impl ::std::fmt::Display for GroupSearchType {
         match self {
             GroupSearchType::DatazoneSsoGroup => write!(f, "DATAZONE_SSO_GROUP"),
             GroupSearchType::SsoGroup => write!(f, "SSO_GROUP"),
-            GroupSearchType::Unknown(value) => write!(f, "{}", value),
+            GroupSearchType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -96,7 +96,7 @@ impl ::std::fmt::Display for PolicyType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             PolicyType::TargetTrackingScaling => write!(f, "TargetTrackingScaling"),
-            PolicyType::Unknown(value) => write!(f, "{}", value),
+            PolicyType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ImagePullCredentialsType {
         match self {
             ImagePullCredentialsType::Codebuild => write!(f, "CODEBUILD"),
             ImagePullCredentialsType::ServiceRole => write!(f, "SERVICE_ROLE"),
-            ImagePullCredentialsType::Unknown(value) => write!(f, "{}", value),
+            ImagePullCredentialsType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

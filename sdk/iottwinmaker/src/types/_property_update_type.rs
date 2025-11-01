@@ -114,7 +114,7 @@ impl ::std::fmt::Display for PropertyUpdateType {
             PropertyUpdateType::Delete => write!(f, "DELETE"),
             PropertyUpdateType::ResetValue => write!(f, "RESET_VALUE"),
             PropertyUpdateType::Update => write!(f, "UPDATE"),
-            PropertyUpdateType::Unknown(value) => write!(f, "{}", value),
+            PropertyUpdateType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

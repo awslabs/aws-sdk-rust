@@ -96,7 +96,7 @@ impl ::std::fmt::Display for IntegrationStatusInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             IntegrationStatusInput::NotConfigured => write!(f, "NOT_CONFIGURED"),
-            IntegrationStatusInput::Unknown(value) => write!(f, "{}", value),
+            IntegrationStatusInput::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

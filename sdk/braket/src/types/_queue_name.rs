@@ -102,7 +102,7 @@ impl ::std::fmt::Display for QueueName {
         match self {
             QueueName::JobsQueue => write!(f, "JOBS_QUEUE"),
             QueueName::QuantumTasksQueue => write!(f, "QUANTUM_TASKS_QUEUE"),
-            QueueName::Unknown(value) => write!(f, "{}", value),
+            QueueName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

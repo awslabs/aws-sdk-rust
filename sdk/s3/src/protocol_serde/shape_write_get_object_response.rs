@@ -489,7 +489,7 @@ pub fn ser_write_get_object_response_headers(
                 let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                     ::aws_smithy_types::error::operation::BuildError::invalid_field(
                         "metadata",
-                        format!("`{}` cannot be used as a header value: {}", v, err),
+                        format!("`{v}` cannot be used as a header value: {err}"),
                     )
                 })?;
                 builder = builder.header(header_name, header_value);

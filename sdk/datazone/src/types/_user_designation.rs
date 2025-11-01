@@ -126,7 +126,7 @@ impl ::std::fmt::Display for UserDesignation {
             UserDesignation::ProjectCatalogViewer => write!(f, "PROJECT_CATALOG_VIEWER"),
             UserDesignation::ProjectContributor => write!(f, "PROJECT_CONTRIBUTOR"),
             UserDesignation::ProjectOwner => write!(f, "PROJECT_OWNER"),
-            UserDesignation::Unknown(value) => write!(f, "{}", value),
+            UserDesignation::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

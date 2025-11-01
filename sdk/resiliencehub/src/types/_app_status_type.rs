@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AppStatusType {
         match self {
             AppStatusType::Active => write!(f, "Active"),
             AppStatusType::Deleting => write!(f, "Deleting"),
-            AppStatusType::Unknown(value) => write!(f, "{}", value),
+            AppStatusType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -133,7 +133,7 @@ impl ::std::fmt::Display for MitigationActionType {
             MitigationActionType::ReplaceDefaultPolicyVersion => write!(f, "REPLACE_DEFAULT_POLICY_VERSION"),
             MitigationActionType::UpdateCaCertificate => write!(f, "UPDATE_CA_CERTIFICATE"),
             MitigationActionType::UpdateDeviceCertificate => write!(f, "UPDATE_DEVICE_CERTIFICATE"),
-            MitigationActionType::Unknown(value) => write!(f, "{}", value),
+            MitigationActionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for UserStatusType {
             UserStatusType::Active => write!(f, "ACTIVE"),
             UserStatusType::Inactive => write!(f, "INACTIVE"),
             UserStatusType::Pending => write!(f, "PENDING"),
-            UserStatusType::Unknown(value) => write!(f, "{}", value),
+            UserStatusType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

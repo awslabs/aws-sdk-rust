@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AacSpec {
         match self {
             AacSpec::Mpeg2 => write!(f, "MPEG2"),
             AacSpec::Mpeg4 => write!(f, "MPEG4"),
-            AacSpec::Unknown(value) => write!(f, "{}", value),
+            AacSpec::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

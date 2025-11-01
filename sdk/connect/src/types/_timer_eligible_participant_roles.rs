@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TimerEligibleParticipantRoles {
         match self {
             TimerEligibleParticipantRoles::Agent => write!(f, "AGENT"),
             TimerEligibleParticipantRoles::Customer => write!(f, "CUSTOMER"),
-            TimerEligibleParticipantRoles::Unknown(value) => write!(f, "{}", value),
+            TimerEligibleParticipantRoles::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

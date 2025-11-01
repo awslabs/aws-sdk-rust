@@ -108,7 +108,7 @@ impl ::std::fmt::Display for TimeRangeType {
             TimeRangeType::Event => write!(f, "Event"),
             TimeRangeType::Service => write!(f, "Service"),
             TimeRangeType::TraceId => write!(f, "TraceId"),
-            TimeRangeType::Unknown(value) => write!(f, "{}", value),
+            TimeRangeType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

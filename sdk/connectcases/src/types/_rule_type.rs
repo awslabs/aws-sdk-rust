@@ -12,6 +12,8 @@
 /// ```text
 /// # let ruletype = unimplemented!();
 /// match ruletype {
+///     RuleType::FieldOptions => { /* ... */ },
+///     RuleType::Hidden => { /* ... */ },
 ///     RuleType::Required => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -42,6 +44,10 @@
 )]
 pub enum RuleType {
     #[allow(missing_docs)] // documentation missing in model
+    FieldOptions,
+    #[allow(missing_docs)] // documentation missing in model
+    Hidden,
+    #[allow(missing_docs)] // documentation missing in model
     Required,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -50,6 +56,8 @@ pub enum RuleType {
 impl ::std::convert::From<&str> for RuleType {
     fn from(s: &str) -> Self {
         match s {
+            "FieldOptions" => RuleType::FieldOptions,
+            "Hidden" => RuleType::Hidden,
             "Required" => RuleType::Required,
             other => RuleType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -66,13 +74,15 @@ impl RuleType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            RuleType::FieldOptions => "FieldOptions",
+            RuleType::Hidden => "Hidden",
             RuleType::Required => "Required",
             RuleType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Required"]
+        &["FieldOptions", "Hidden", "Required"]
     }
 }
 impl ::std::convert::AsRef<str> for RuleType {
@@ -95,8 +105,10 @@ impl RuleType {
 impl ::std::fmt::Display for RuleType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            RuleType::FieldOptions => write!(f, "FieldOptions"),
+            RuleType::Hidden => write!(f, "Hidden"),
             RuleType::Required => write!(f, "Required"),
-            RuleType::Unknown(value) => write!(f, "{}", value),
+            RuleType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

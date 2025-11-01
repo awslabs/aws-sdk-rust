@@ -120,7 +120,7 @@ impl ::std::fmt::Display for IngestionStatus {
             IngestionStatus::Running => write!(f, "RUNNING"),
             IngestionStatus::StopRequested => write!(f, "STOP_REQUESTED"),
             IngestionStatus::Success => write!(f, "SUCCESS"),
-            IngestionStatus::Unknown(value) => write!(f, "{}", value),
+            IngestionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

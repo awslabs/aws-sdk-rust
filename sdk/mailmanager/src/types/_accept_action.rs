@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AcceptAction {
         match self {
             AcceptAction::Allow => write!(f, "ALLOW"),
             AcceptAction::Deny => write!(f, "DENY"),
-            AcceptAction::Unknown(value) => write!(f, "{}", value),
+            AcceptAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

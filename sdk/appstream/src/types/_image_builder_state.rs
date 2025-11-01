@@ -182,7 +182,7 @@ impl ::std::fmt::Display for ImageBuilderState {
             ImageBuilderState::SyncingApps => write!(f, "SYNCING_APPS"),
             ImageBuilderState::Updating => write!(f, "UPDATING"),
             ImageBuilderState::UpdatingAgent => write!(f, "UPDATING_AGENT"),
-            ImageBuilderState::Unknown(value) => write!(f, "{}", value),
+            ImageBuilderState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

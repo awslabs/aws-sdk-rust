@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ScheduleGroupState {
         match self {
             ScheduleGroupState::Active => write!(f, "ACTIVE"),
             ScheduleGroupState::Deleting => write!(f, "DELETING"),
-            ScheduleGroupState::Unknown(value) => write!(f, "{}", value),
+            ScheduleGroupState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for TlogAccessMode {
             TlogAccessMode::PreferBackup => write!(f, "PreferBackup"),
             TlogAccessMode::PreferTlog => write!(f, "PreferTlog"),
             TlogAccessMode::TlogOnly => write!(f, "TlogOnly"),
-            TlogAccessMode::Unknown(value) => write!(f, "{}", value),
+            TlogAccessMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

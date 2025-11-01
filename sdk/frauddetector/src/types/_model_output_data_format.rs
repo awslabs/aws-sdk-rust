@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ModelOutputDataFormat {
         match self {
             ModelOutputDataFormat::Jsonlines => write!(f, "APPLICATION_JSONLINES"),
             ModelOutputDataFormat::Csv => write!(f, "TEXT_CSV"),
-            ModelOutputDataFormat::Unknown(value) => write!(f, "{}", value),
+            ModelOutputDataFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for H264TemporalAq {
         match self {
             H264TemporalAq::Disabled => write!(f, "DISABLED"),
             H264TemporalAq::Enabled => write!(f, "ENABLED"),
-            H264TemporalAq::Unknown(value) => write!(f, "{}", value),
+            H264TemporalAq::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

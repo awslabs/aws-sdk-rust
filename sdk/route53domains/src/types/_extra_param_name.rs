@@ -329,7 +329,7 @@ impl ::std::fmt::Display for ExtraParamName {
             ExtraParamName::UkCompanyNumber => write!(f, "UK_COMPANY_NUMBER"),
             ExtraParamName::UkContactType => write!(f, "UK_CONTACT_TYPE"),
             ExtraParamName::VatNumber => write!(f, "VAT_NUMBER"),
-            ExtraParamName::Unknown(value) => write!(f, "{}", value),
+            ExtraParamName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -24,8 +24,7 @@ pub(crate) fn de_xks_proxy_incorrect_authentication_credential_exception_json_er
             },
             other => {
                 return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                    "expected object key or end object, found: {:?}",
-                    other
+                    "expected object key or end object, found: {other:?}"
                 )))
             }
         }

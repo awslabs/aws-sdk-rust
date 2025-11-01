@@ -96,7 +96,7 @@ impl ::std::fmt::Display for VcfVersion {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             VcfVersion::Vcf521 => write!(f, "VCF-5.2.1"),
-            VcfVersion::Unknown(value) => write!(f, "{}", value),
+            VcfVersion::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

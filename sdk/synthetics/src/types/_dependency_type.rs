@@ -96,7 +96,7 @@ impl ::std::fmt::Display for DependencyType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             DependencyType::LambdaLayer => write!(f, "LambdaLayer"),
-            DependencyType::Unknown(value) => write!(f, "{}", value),
+            DependencyType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

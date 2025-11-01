@@ -96,7 +96,7 @@ impl ::std::fmt::Display for TargetType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             TargetType::ContainerInstance => write!(f, "container-instance"),
-            TargetType::Unknown(value) => write!(f, "{}", value),
+            TargetType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -120,7 +120,7 @@ impl ::std::fmt::Display for AnalyticsIntentMetricName {
             AnalyticsIntentMetricName::Failure => write!(f, "Failure"),
             AnalyticsIntentMetricName::Success => write!(f, "Success"),
             AnalyticsIntentMetricName::Switched => write!(f, "Switched"),
-            AnalyticsIntentMetricName::Unknown(value) => write!(f, "{}", value),
+            AnalyticsIntentMetricName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

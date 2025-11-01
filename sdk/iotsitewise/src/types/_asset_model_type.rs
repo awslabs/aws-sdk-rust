@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AssetModelType {
             AssetModelType::AssetModel => write!(f, "ASSET_MODEL"),
             AssetModelType::ComponentModel => write!(f, "COMPONENT_MODEL"),
             AssetModelType::Interface => write!(f, "INTERFACE"),
-            AssetModelType::Unknown(value) => write!(f, "{}", value),
+            AssetModelType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

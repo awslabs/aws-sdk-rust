@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AuthorizerType {
             AuthorizerType::CognitoUserPools => write!(f, "COGNITO_USER_POOLS"),
             AuthorizerType::Request => write!(f, "REQUEST"),
             AuthorizerType::Token => write!(f, "TOKEN"),
-            AuthorizerType::Unknown(value) => write!(f, "{}", value),
+            AuthorizerType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

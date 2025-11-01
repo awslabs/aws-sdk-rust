@@ -102,7 +102,7 @@ impl ::std::fmt::Display for NumberAttributeBoostingType {
         match self {
             NumberAttributeBoostingType::PrioritizeLargerValues => write!(f, "PRIORITIZE_LARGER_VALUES"),
             NumberAttributeBoostingType::PrioritizeSmallerValues => write!(f, "PRIORITIZE_SMALLER_VALUES"),
-            NumberAttributeBoostingType::Unknown(value) => write!(f, "{}", value),
+            NumberAttributeBoostingType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

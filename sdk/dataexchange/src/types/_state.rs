@@ -126,7 +126,7 @@ impl ::std::fmt::Display for State {
             State::InProgress => write!(f, "IN_PROGRESS"),
             State::TimedOut => write!(f, "TIMED_OUT"),
             State::Waiting => write!(f, "WAITING"),
-            State::Unknown(value) => write!(f, "{}", value),
+            State::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

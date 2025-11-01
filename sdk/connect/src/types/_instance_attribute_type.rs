@@ -175,7 +175,7 @@ impl ::std::fmt::Display for InstanceAttributeType {
             InstanceAttributeType::MultiPartyConference => write!(f, "MULTI_PARTY_CONFERENCE"),
             InstanceAttributeType::OutboundCalls => write!(f, "OUTBOUND_CALLS"),
             InstanceAttributeType::UseCustomTtsVoices => write!(f, "USE_CUSTOM_TTS_VOICES"),
-            InstanceAttributeType::Unknown(value) => write!(f, "{}", value),
+            InstanceAttributeType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

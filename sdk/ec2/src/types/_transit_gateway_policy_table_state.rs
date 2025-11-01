@@ -114,7 +114,7 @@ impl ::std::fmt::Display for TransitGatewayPolicyTableState {
             TransitGatewayPolicyTableState::Deleted => write!(f, "deleted"),
             TransitGatewayPolicyTableState::Deleting => write!(f, "deleting"),
             TransitGatewayPolicyTableState::Pending => write!(f, "pending"),
-            TransitGatewayPolicyTableState::Unknown(value) => write!(f, "{}", value),
+            TransitGatewayPolicyTableState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

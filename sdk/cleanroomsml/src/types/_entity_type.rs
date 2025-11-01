@@ -108,7 +108,7 @@ impl ::std::fmt::Display for EntityType {
             EntityType::AllPersonallyIdentifiableInformation => write!(f, "ALL_PERSONALLY_IDENTIFIABLE_INFORMATION"),
             EntityType::Custom => write!(f, "CUSTOM"),
             EntityType::Numbers => write!(f, "NUMBERS"),
-            EntityType::Unknown(value) => write!(f, "{}", value),
+            EntityType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for LandingZoneStatus {
             LandingZoneStatus::Active => write!(f, "ACTIVE"),
             LandingZoneStatus::Failed => write!(f, "FAILED"),
             LandingZoneStatus::Processing => write!(f, "PROCESSING"),
-            LandingZoneStatus::Unknown(value) => write!(f, "{}", value),
+            LandingZoneStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for UserBackgroundSessionApplicationStatus {
         match self {
             UserBackgroundSessionApplicationStatus::Disabled => write!(f, "DISABLED"),
             UserBackgroundSessionApplicationStatus::Enabled => write!(f, "ENABLED"),
-            UserBackgroundSessionApplicationStatus::Unknown(value) => write!(f, "{}", value),
+            UserBackgroundSessionApplicationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for AlgorithmicStemming {
             AlgorithmicStemming::Light => write!(f, "light"),
             AlgorithmicStemming::Minimal => write!(f, "minimal"),
             AlgorithmicStemming::None => write!(f, "none"),
-            AlgorithmicStemming::Unknown(value) => write!(f, "{}", value),
+            AlgorithmicStemming::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

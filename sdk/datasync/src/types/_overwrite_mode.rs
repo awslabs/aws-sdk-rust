@@ -102,7 +102,7 @@ impl ::std::fmt::Display for OverwriteMode {
         match self {
             OverwriteMode::Always => write!(f, "ALWAYS"),
             OverwriteMode::Never => write!(f, "NEVER"),
-            OverwriteMode::Unknown(value) => write!(f, "{}", value),
+            OverwriteMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

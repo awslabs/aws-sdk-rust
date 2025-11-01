@@ -140,7 +140,7 @@ impl ::std::fmt::Display for StatusFilter {
             StatusFilter::ProcessingRemoval => write!(f, "PROCESSING_REMOVAL"),
             StatusFilter::RemovalFailed => write!(f, "REMOVAL_FAILED"),
             StatusFilter::RemovalSucceeded => write!(f, "REMOVAL_SUCCEEDED"),
-            StatusFilter::Unknown(value) => write!(f, "{}", value),
+            StatusFilter::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

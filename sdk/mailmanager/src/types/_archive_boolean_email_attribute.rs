@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ArchiveBooleanEmailAttribute {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ArchiveBooleanEmailAttribute::HasAttachments => write!(f, "HAS_ATTACHMENTS"),
-            ArchiveBooleanEmailAttribute::Unknown(value) => write!(f, "{}", value),
+            ArchiveBooleanEmailAttribute::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for GeoRestrictionType {
             GeoRestrictionType::Blacklist => write!(f, "blacklist"),
             GeoRestrictionType::None => write!(f, "none"),
             GeoRestrictionType::Whitelist => write!(f, "whitelist"),
-            GeoRestrictionType::Unknown(value) => write!(f, "{}", value),
+            GeoRestrictionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

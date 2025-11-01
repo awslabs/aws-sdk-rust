@@ -102,7 +102,7 @@ impl ::std::fmt::Display for BucketMetadataErrorCode {
         match self {
             BucketMetadataErrorCode::AccessDenied => write!(f, "ACCESS_DENIED"),
             BucketMetadataErrorCode::BucketCountExceedsQuota => write!(f, "BUCKET_COUNT_EXCEEDS_QUOTA"),
-            BucketMetadataErrorCode::Unknown(value) => write!(f, "{}", value),
+            BucketMetadataErrorCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

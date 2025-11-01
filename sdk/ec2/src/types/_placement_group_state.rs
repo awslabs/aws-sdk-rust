@@ -114,7 +114,7 @@ impl ::std::fmt::Display for PlacementGroupState {
             PlacementGroupState::Deleted => write!(f, "deleted"),
             PlacementGroupState::Deleting => write!(f, "deleting"),
             PlacementGroupState::Pending => write!(f, "pending"),
-            PlacementGroupState::Unknown(value) => write!(f, "{}", value),
+            PlacementGroupState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

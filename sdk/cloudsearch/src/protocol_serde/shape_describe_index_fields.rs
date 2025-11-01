@@ -104,16 +104,14 @@ pub fn de_describe_index_fields(
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeIndexFieldsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected DescribeIndexFieldsResponse got {:?}",
-            start_el
+            "invalid root, expected DescribeIndexFieldsResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("DescribeIndexFieldsResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected DescribeIndexFieldsResult got {:?}",
-                start_el
+                "invalid result, expected DescribeIndexFieldsResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

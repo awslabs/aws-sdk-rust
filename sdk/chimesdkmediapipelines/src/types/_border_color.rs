@@ -126,7 +126,7 @@ impl ::std::fmt::Display for BorderColor {
             BorderColor::Red => write!(f, "Red"),
             BorderColor::White => write!(f, "White"),
             BorderColor::Yellow => write!(f, "Yellow"),
-            BorderColor::Unknown(value) => write!(f, "{}", value),
+            BorderColor::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

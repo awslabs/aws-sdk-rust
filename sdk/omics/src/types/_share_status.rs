@@ -126,7 +126,7 @@ impl ::std::fmt::Display for ShareStatus {
             ShareStatus::Deleting => write!(f, "DELETING"),
             ShareStatus::Failed => write!(f, "FAILED"),
             ShareStatus::Pending => write!(f, "PENDING"),
-            ShareStatus::Unknown(value) => write!(f, "{}", value),
+            ShareStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

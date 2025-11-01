@@ -154,7 +154,7 @@ impl ::std::fmt::Display for CapacityReservationFleetState {
             CapacityReservationFleetState::Modifying => write!(f, "modifying"),
             CapacityReservationFleetState::PartiallyFulfilled => write!(f, "partially_fulfilled"),
             CapacityReservationFleetState::Submitted => write!(f, "submitted"),
-            CapacityReservationFleetState::Unknown(value) => write!(f, "{}", value),
+            CapacityReservationFleetState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

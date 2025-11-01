@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ComponentDeploymentUpdateType {
         match self {
             ComponentDeploymentUpdateType::CurrentVersion => write!(f, "CURRENT_VERSION"),
             ComponentDeploymentUpdateType::None => write!(f, "NONE"),
-            ComponentDeploymentUpdateType::Unknown(value) => write!(f, "{}", value),
+            ComponentDeploymentUpdateType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

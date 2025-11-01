@@ -96,7 +96,7 @@ impl ::std::fmt::Display for MetricNamespace {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             MetricNamespace::Vdm => write!(f, "VDM"),
-            MetricNamespace::Unknown(value) => write!(f, "{}", value),
+            MetricNamespace::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

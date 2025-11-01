@@ -108,7 +108,7 @@ impl ::std::fmt::Display for LongVarcharMappingType {
             LongVarcharMappingType::Clob => write!(f, "clob"),
             LongVarcharMappingType::Nclob => write!(f, "nclob"),
             LongVarcharMappingType::Wstring => write!(f, "wstring"),
-            LongVarcharMappingType::Unknown(value) => write!(f, "{}", value),
+            LongVarcharMappingType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

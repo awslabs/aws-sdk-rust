@@ -108,7 +108,7 @@ impl ::std::fmt::Display for SortInferenceExperimentsBy {
             SortInferenceExperimentsBy::CreationTime => write!(f, "CreationTime"),
             SortInferenceExperimentsBy::Name => write!(f, "Name"),
             SortInferenceExperimentsBy::Status => write!(f, "Status"),
-            SortInferenceExperimentsBy::Unknown(value) => write!(f, "{}", value),
+            SortInferenceExperimentsBy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

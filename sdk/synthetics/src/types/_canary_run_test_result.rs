@@ -110,7 +110,7 @@ impl ::std::fmt::Display for CanaryRunTestResult {
             CanaryRunTestResult::Failed => write!(f, "FAILED"),
             CanaryRunTestResult::Passed => write!(f, "PASSED"),
             CanaryRunTestResult::UnknownValue => write!(f, "UNKNOWN"),
-            CanaryRunTestResult::Unknown(value) => write!(f, "{}", value),
+            CanaryRunTestResult::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

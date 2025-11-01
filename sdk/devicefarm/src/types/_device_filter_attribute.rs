@@ -175,7 +175,7 @@ impl ::std::fmt::Display for DeviceFilterAttribute {
             DeviceFilterAttribute::Platform => write!(f, "PLATFORM"),
             DeviceFilterAttribute::RemoteAccessEnabled => write!(f, "REMOTE_ACCESS_ENABLED"),
             DeviceFilterAttribute::RemoteDebugEnabled => write!(f, "REMOTE_DEBUG_ENABLED"),
-            DeviceFilterAttribute::Unknown(value) => write!(f, "{}", value),
+            DeviceFilterAttribute::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

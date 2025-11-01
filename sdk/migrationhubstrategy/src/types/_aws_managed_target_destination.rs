@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AwsManagedTargetDestination {
             AwsManagedTargetDestination::AwsElasticBeanstalk => write!(f, "AWS Elastic BeanStalk"),
             AwsManagedTargetDestination::AwsFargate => write!(f, "AWS Fargate"),
             AwsManagedTargetDestination::NoneSpecified => write!(f, "None specified"),
-            AwsManagedTargetDestination::Unknown(value) => write!(f, "{}", value),
+            AwsManagedTargetDestination::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

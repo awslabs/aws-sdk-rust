@@ -161,7 +161,7 @@ impl ::std::fmt::Display for ActionStatus {
             ActionStatus::ReverseInProgress => write!(f, "REVERSE_IN_PROGRESS"),
             ActionStatus::ReverseSuccess => write!(f, "REVERSE_SUCCESS"),
             ActionStatus::Standby => write!(f, "STANDBY"),
-            ActionStatus::Unknown(value) => write!(f, "{}", value),
+            ActionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for StoreType {
         match self {
             StoreType::ReferenceStore => write!(f, "REFERENCE_STORE"),
             StoreType::SequenceStore => write!(f, "SEQUENCE_STORE"),
-            StoreType::Unknown(value) => write!(f, "{}", value),
+            StoreType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

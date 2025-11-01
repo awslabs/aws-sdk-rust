@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PackageType {
         match self {
             PackageType::Image => write!(f, "Image"),
             PackageType::Zip => write!(f, "Zip"),
-            PackageType::Unknown(value) => write!(f, "{}", value),
+            PackageType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

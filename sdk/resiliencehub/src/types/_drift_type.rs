@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DriftType {
         match self {
             DriftType::AppComponentResiliencyComplianceStatus => write!(f, "AppComponentResiliencyComplianceStatus"),
             DriftType::ApplicationCompliance => write!(f, "ApplicationCompliance"),
-            DriftType::Unknown(value) => write!(f, "{}", value),
+            DriftType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for MissingAttributeKeyStrategy {
             MissingAttributeKeyStrategy::Collapse => write!(f, "COLLAPSE"),
             MissingAttributeKeyStrategy::Expand => write!(f, "EXPAND"),
             MissingAttributeKeyStrategy::Ignore => write!(f, "IGNORE"),
-            MissingAttributeKeyStrategy::Unknown(value) => write!(f, "{}", value),
+            MissingAttributeKeyStrategy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

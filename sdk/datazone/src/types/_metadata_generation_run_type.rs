@@ -96,7 +96,7 @@ impl ::std::fmt::Display for MetadataGenerationRunType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             MetadataGenerationRunType::BusinessDescriptions => write!(f, "BUSINESS_DESCRIPTIONS"),
-            MetadataGenerationRunType::Unknown(value) => write!(f, "{}", value),
+            MetadataGenerationRunType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

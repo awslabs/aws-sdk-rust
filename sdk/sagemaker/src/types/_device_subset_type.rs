@@ -108,7 +108,7 @@ impl ::std::fmt::Display for DeviceSubsetType {
             DeviceSubsetType::NameContains => write!(f, "NAMECONTAINS"),
             DeviceSubsetType::Percentage => write!(f, "PERCENTAGE"),
             DeviceSubsetType::Selection => write!(f, "SELECTION"),
-            DeviceSubsetType::Unknown(value) => write!(f, "{}", value),
+            DeviceSubsetType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

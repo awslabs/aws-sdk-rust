@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ApprovalModel {
         match self {
             ApprovalModel::Auto => write!(f, "AUTOMATIC"),
             ApprovalModel::Manual => write!(f, "MANUAL"),
-            ApprovalModel::Unknown(value) => write!(f, "{}", value),
+            ApprovalModel::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

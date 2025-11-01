@@ -102,7 +102,7 @@ impl ::std::fmt::Display for IngressTlsProtocolOperator {
         match self {
             IngressTlsProtocolOperator::Is => write!(f, "IS"),
             IngressTlsProtocolOperator::MinimumTlsVersion => write!(f, "MINIMUM_TLS_VERSION"),
-            IngressTlsProtocolOperator::Unknown(value) => write!(f, "{}", value),
+            IngressTlsProtocolOperator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

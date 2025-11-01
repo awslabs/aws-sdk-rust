@@ -126,7 +126,7 @@ impl ::std::fmt::Display for RdsdbRecommendationFilterName {
             RdsdbRecommendationFilterName::InstanceFindingReasonCode => write!(f, "InstanceFindingReasonCode"),
             RdsdbRecommendationFilterName::StorageFinding => write!(f, "StorageFinding"),
             RdsdbRecommendationFilterName::StorageFindingReasonCode => write!(f, "StorageFindingReasonCode"),
-            RdsdbRecommendationFilterName::Unknown(value) => write!(f, "{}", value),
+            RdsdbRecommendationFilterName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

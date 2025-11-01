@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ListCompilationJobsSortBy {
             ListCompilationJobsSortBy::CreationTime => write!(f, "CreationTime"),
             ListCompilationJobsSortBy::Name => write!(f, "Name"),
             ListCompilationJobsSortBy::Status => write!(f, "Status"),
-            ListCompilationJobsSortBy::Unknown(value) => write!(f, "{}", value),
+            ListCompilationJobsSortBy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

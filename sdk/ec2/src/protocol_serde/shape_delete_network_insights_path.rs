@@ -53,8 +53,7 @@ pub fn de_delete_network_insights_path(
     let start_el = decoder.start_el();
     if !(start_el.matches("DeleteNetworkInsightsPathResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected DeleteNetworkInsightsPathResponse got {:?}",
-            start_el
+            "invalid root, expected DeleteNetworkInsightsPathResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

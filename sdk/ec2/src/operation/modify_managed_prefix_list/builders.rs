@@ -221,4 +221,18 @@ impl ModifyManagedPrefixListFluentBuilder {
     pub fn get_max_entries(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_entries()
     }
+    /// <p>Indicates whether synchronization with an IPAM prefix list resolver should be enabled for this managed prefix list. When enabled, the prefix list CIDRs are automatically updated based on the associated resolver's CIDR selection rules.</p>
+    pub fn ipam_prefix_list_resolver_sync_enabled(mut self, input: bool) -> Self {
+        self.inner = self.inner.ipam_prefix_list_resolver_sync_enabled(input);
+        self
+    }
+    /// <p>Indicates whether synchronization with an IPAM prefix list resolver should be enabled for this managed prefix list. When enabled, the prefix list CIDRs are automatically updated based on the associated resolver's CIDR selection rules.</p>
+    pub fn set_ipam_prefix_list_resolver_sync_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_ipam_prefix_list_resolver_sync_enabled(input);
+        self
+    }
+    /// <p>Indicates whether synchronization with an IPAM prefix list resolver should be enabled for this managed prefix list. When enabled, the prefix list CIDRs are automatically updated based on the associated resolver's CIDR selection rules.</p>
+    pub fn get_ipam_prefix_list_resolver_sync_enabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_ipam_prefix_list_resolver_sync_enabled()
+    }
 }

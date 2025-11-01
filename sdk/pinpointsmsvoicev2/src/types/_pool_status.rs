@@ -108,7 +108,7 @@ impl ::std::fmt::Display for PoolStatus {
             PoolStatus::Active => write!(f, "ACTIVE"),
             PoolStatus::Creating => write!(f, "CREATING"),
             PoolStatus::Deleting => write!(f, "DELETING"),
-            PoolStatus::Unknown(value) => write!(f, "{}", value),
+            PoolStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

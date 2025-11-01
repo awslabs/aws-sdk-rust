@@ -120,7 +120,7 @@ impl ::std::fmt::Display for WorkloadImprovementStatus {
             WorkloadImprovementStatus::NotApplicable => write!(f, "NOT_APPLICABLE"),
             WorkloadImprovementStatus::NotStarted => write!(f, "NOT_STARTED"),
             WorkloadImprovementStatus::RiskAcknowledged => write!(f, "RISK_ACKNOWLEDGED"),
-            WorkloadImprovementStatus::Unknown(value) => write!(f, "{}", value),
+            WorkloadImprovementStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

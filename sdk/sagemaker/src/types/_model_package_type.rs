@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ModelPackageType {
             ModelPackageType::Both => write!(f, "Both"),
             ModelPackageType::Unversioned => write!(f, "Unversioned"),
             ModelPackageType::Versioned => write!(f, "Versioned"),
-            ModelPackageType::Unknown(value) => write!(f, "{}", value),
+            ModelPackageType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

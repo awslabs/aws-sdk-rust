@@ -108,7 +108,7 @@ impl ::std::fmt::Display for OpportunitySortName {
             OpportunitySortName::CustomerCompanyName => write!(f, "CustomerCompanyName"),
             OpportunitySortName::Identifier => write!(f, "Identifier"),
             OpportunitySortName::LastModifieddate => write!(f, "LastModifiedDate"),
-            OpportunitySortName::Unknown(value) => write!(f, "{}", value),
+            OpportunitySortName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -53,16 +53,14 @@ pub fn de_list_identity_policies(
     let start_el = decoder.start_el();
     if !(start_el.matches("ListIdentityPoliciesResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected ListIdentityPoliciesResponse got {:?}",
-            start_el
+            "invalid root, expected ListIdentityPoliciesResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("ListIdentityPoliciesResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected ListIdentityPoliciesResult got {:?}",
-                start_el
+                "invalid result, expected ListIdentityPoliciesResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

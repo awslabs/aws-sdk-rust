@@ -178,6 +178,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GenerateRand
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::generate_random::GenerateRandomInput,
                 output: &mut ::std::string::String,

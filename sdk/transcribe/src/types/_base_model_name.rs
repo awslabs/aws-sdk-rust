@@ -102,7 +102,7 @@ impl ::std::fmt::Display for BaseModelName {
         match self {
             BaseModelName::NarrowBand => write!(f, "NarrowBand"),
             BaseModelName::WideBand => write!(f, "WideBand"),
-            BaseModelName::Unknown(value) => write!(f, "{}", value),
+            BaseModelName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

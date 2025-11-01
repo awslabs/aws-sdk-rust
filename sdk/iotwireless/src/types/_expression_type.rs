@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ExpressionType {
         match self {
             ExpressionType::MqttTopic => write!(f, "MqttTopic"),
             ExpressionType::RuleName => write!(f, "RuleName"),
-            ExpressionType::Unknown(value) => write!(f, "{}", value),
+            ExpressionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

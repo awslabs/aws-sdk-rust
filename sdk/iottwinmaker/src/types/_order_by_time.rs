@@ -102,7 +102,7 @@ impl ::std::fmt::Display for OrderByTime {
         match self {
             OrderByTime::Ascending => write!(f, "ASCENDING"),
             OrderByTime::Descending => write!(f, "DESCENDING"),
-            OrderByTime::Unknown(value) => write!(f, "{}", value),
+            OrderByTime::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

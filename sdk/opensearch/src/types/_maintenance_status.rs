@@ -120,7 +120,7 @@ impl ::std::fmt::Display for MaintenanceStatus {
             MaintenanceStatus::InProgress => write!(f, "IN_PROGRESS"),
             MaintenanceStatus::Pending => write!(f, "PENDING"),
             MaintenanceStatus::TimedOut => write!(f, "TIMED_OUT"),
-            MaintenanceStatus::Unknown(value) => write!(f, "{}", value),
+            MaintenanceStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ImportSourceType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ImportSourceType::S3 => write!(f, "S3"),
-            ImportSourceType::Unknown(value) => write!(f, "{}", value),
+            ImportSourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

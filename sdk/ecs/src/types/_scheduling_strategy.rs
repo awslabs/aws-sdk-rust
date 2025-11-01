@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SchedulingStrategy {
         match self {
             SchedulingStrategy::Daemon => write!(f, "DAEMON"),
             SchedulingStrategy::Replica => write!(f, "REPLICA"),
-            SchedulingStrategy::Unknown(value) => write!(f, "{}", value),
+            SchedulingStrategy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

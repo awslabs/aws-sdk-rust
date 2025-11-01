@@ -96,7 +96,7 @@ impl ::std::fmt::Display for AnchorOption {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             AnchorOption::Now => write!(f, "NOW"),
-            AnchorOption::Unknown(value) => write!(f, "{}", value),
+            AnchorOption::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

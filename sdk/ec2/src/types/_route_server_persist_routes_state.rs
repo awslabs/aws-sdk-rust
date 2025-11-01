@@ -126,7 +126,7 @@ impl ::std::fmt::Display for RouteServerPersistRoutesState {
             RouteServerPersistRoutesState::Enabling => write!(f, "enabling"),
             RouteServerPersistRoutesState::Modifying => write!(f, "modifying"),
             RouteServerPersistRoutesState::Resetting => write!(f, "resetting"),
-            RouteServerPersistRoutesState::Unknown(value) => write!(f, "{}", value),
+            RouteServerPersistRoutesState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

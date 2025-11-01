@@ -108,7 +108,7 @@ impl ::std::fmt::Display for WafRuleType {
             WafRuleType::Group => write!(f, "GROUP"),
             WafRuleType::RateBased => write!(f, "RATE_BASED"),
             WafRuleType::Regular => write!(f, "REGULAR"),
-            WafRuleType::Unknown(value) => write!(f, "{}", value),
+            WafRuleType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

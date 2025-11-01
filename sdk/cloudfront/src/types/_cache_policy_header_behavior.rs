@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CachePolicyHeaderBehavior {
         match self {
             CachePolicyHeaderBehavior::None => write!(f, "none"),
             CachePolicyHeaderBehavior::Whitelist => write!(f, "whitelist"),
-            CachePolicyHeaderBehavior::Unknown(value) => write!(f, "{}", value),
+            CachePolicyHeaderBehavior::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

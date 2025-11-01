@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SensitivityLevel {
         match self {
             SensitivityLevel::High => write!(f, "HIGH"),
             SensitivityLevel::Low => write!(f, "LOW"),
-            SensitivityLevel::Unknown(value) => write!(f, "{}", value),
+            SensitivityLevel::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

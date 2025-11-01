@@ -108,7 +108,7 @@ impl ::std::fmt::Display for HlsTimedMetadataId3Frame {
             HlsTimedMetadataId3Frame::None => write!(f, "NONE"),
             HlsTimedMetadataId3Frame::Priv => write!(f, "PRIV"),
             HlsTimedMetadataId3Frame::Tdrl => write!(f, "TDRL"),
-            HlsTimedMetadataId3Frame::Unknown(value) => write!(f, "{}", value),
+            HlsTimedMetadataId3Frame::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

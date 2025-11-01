@@ -168,7 +168,7 @@ impl ::std::fmt::Display for OrderStatus {
             OrderStatus::Preparing => write!(f, "PREPARING"),
             OrderStatus::Processing => write!(f, "PROCESSING"),
             OrderStatus::Received => write!(f, "RECEIVED"),
-            OrderStatus::Unknown(value) => write!(f, "{}", value),
+            OrderStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

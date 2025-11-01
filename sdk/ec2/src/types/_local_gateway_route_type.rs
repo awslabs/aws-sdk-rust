@@ -102,7 +102,7 @@ impl ::std::fmt::Display for LocalGatewayRouteType {
         match self {
             LocalGatewayRouteType::Propagated => write!(f, "propagated"),
             LocalGatewayRouteType::Static => write!(f, "static"),
-            LocalGatewayRouteType::Unknown(value) => write!(f, "{}", value),
+            LocalGatewayRouteType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

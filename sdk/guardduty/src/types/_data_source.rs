@@ -133,7 +133,7 @@ impl ::std::fmt::Display for DataSource {
             DataSource::FlowLogs => write!(f, "FLOW_LOGS"),
             DataSource::KubernetesAuditLogs => write!(f, "KUBERNETES_AUDIT_LOGS"),
             DataSource::S3Logs => write!(f, "S3_LOGS"),
-            DataSource::Unknown(value) => write!(f, "{}", value),
+            DataSource::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CmfcTimedMetadata {
         match self {
             CmfcTimedMetadata::None => write!(f, "NONE"),
             CmfcTimedMetadata::Passthrough => write!(f, "PASSTHROUGH"),
-            CmfcTimedMetadata::Unknown(value) => write!(f, "{}", value),
+            CmfcTimedMetadata::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for PackageVersionStatus {
             PackageVersionStatus::Deprecated => write!(f, "DEPRECATED"),
             PackageVersionStatus::Draft => write!(f, "DRAFT"),
             PackageVersionStatus::Published => write!(f, "PUBLISHED"),
-            PackageVersionStatus::Unknown(value) => write!(f, "{}", value),
+            PackageVersionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

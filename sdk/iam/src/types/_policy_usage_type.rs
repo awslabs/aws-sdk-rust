@@ -105,7 +105,7 @@ impl ::std::fmt::Display for PolicyUsageType {
         match self {
             PolicyUsageType::PermissionsBoundary => write!(f, "PermissionsBoundary"),
             PolicyUsageType::PermissionsPolicy => write!(f, "PermissionsPolicy"),
-            PolicyUsageType::Unknown(value) => write!(f, "{}", value),
+            PolicyUsageType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

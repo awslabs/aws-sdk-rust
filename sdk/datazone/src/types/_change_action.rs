@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ChangeAction {
         match self {
             ChangeAction::Publish => write!(f, "PUBLISH"),
             ChangeAction::Unpublish => write!(f, "UNPUBLISH"),
-            ChangeAction::Unknown(value) => write!(f, "{}", value),
+            ChangeAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

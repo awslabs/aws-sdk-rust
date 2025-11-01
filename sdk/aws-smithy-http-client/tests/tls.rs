@@ -28,6 +28,7 @@ use rustls::ServerConfig;
 use rustls_pki_types::{CertificateDer, PrivateKeyDer};
 use std::net::SocketAddr;
 use std::sync::Arc;
+use std::time::Duration;
 use std::{fs, io};
 use tokio::net::TcpListener;
 use tokio::task::JoinHandle;
@@ -37,6 +38,18 @@ use tracing::{debug, error};
 struct TestServer {
     _handle: JoinHandle<()>,
     listen_addr: SocketAddr,
+    conn_count: Arc<()>,
+}
+
+impl TestServer {
+    /// Return the number of active connections to this server
+    fn conn_count(&self) -> usize {
+        // 1 reference for the struct MockProxyServer, 1 reference for the
+        // socket task.
+        Arc::strong_count(&self.conn_count)
+            .checked_sub(2)
+            .expect("de-count 2 refs")
+    }
 }
 
 async fn server() -> Result<TestServer, BoxError> {
@@ -64,13 +77,18 @@ async fn server() -> Result<TestServer, BoxError> {
     let tls_acceptor = TlsAcceptor::from(Arc::new(server_config));
     let service = service_fn(echo);
 
+    let conn_count = Arc::new(());
+    let server_conn_count = conn_count.clone();
+
     let server = async move {
         loop {
             let (tcp_stream, remote_addr) = listener.accept().await.unwrap();
             debug!("accepted connection from: {}", remote_addr);
 
             let tls_acceptor = tls_acceptor.clone();
+            let connection_conn_count = server_conn_count.clone();
             tokio::spawn(async move {
+                let _connection_conn_count = connection_conn_count;
                 let tls_stream = match tls_acceptor.accept(tcp_stream).await {
                     Ok(tls_stream) => tls_stream,
                     Err(err) => {
@@ -93,6 +111,7 @@ async fn server() -> Result<TestServer, BoxError> {
     Ok(TestServer {
         _handle: server_task,
         listen_addr: addr,
+        conn_count,
     })
 }
 
@@ -175,6 +194,24 @@ async fn test_rustls_aws_lc_custom_ca() {
     run_tls_test(&client).await.unwrap()
 }
 
+#[cfg(feature = "rustls-aws-lc")]
+#[tokio::test(start_paused = false)]
+// can't have paused clock due to <https://github.com/hyperium/hyper/issues/3950>
+async fn test_rustls_aws_lc_custom_ca_with_timeout() {
+    const TIMEOUT: Duration = Duration::from_secs(10);
+    let client = aws_smithy_http_client::Builder::new()
+        .pool_idle_timeout(TIMEOUT)
+        .tls_provider(tls::Provider::Rustls(
+            tls::rustls_provider::CryptoMode::AwsLc,
+        ))
+        .tls_context(tls_context_from_pem("tests/server.pem"))
+        .build_https();
+
+    run_tls_test_with_idle_timeout(&client, Some(TIMEOUT))
+        .await
+        .unwrap()
+}
+
 #[cfg(feature = "rustls-aws-lc-fips")]
 #[should_panic(expected = "InvalidCertificate(UnknownIssuer)")]
 #[tokio::test]
@@ -249,7 +286,16 @@ async fn test_s2n_tls_custom_ca() {
 }
 
 async fn run_tls_test(client: &dyn HttpClient) -> Result<(), BoxError> {
+    run_tls_test_with_idle_timeout(client, None).await
+}
+
+async fn run_tls_test_with_idle_timeout(
+    client: &dyn HttpClient,
+    pool_timeout: Option<Duration>,
+) -> Result<(), BoxError> {
     let server = server().await?;
+    let start = tokio::time::Instant::now();
+    assert_eq!(server.conn_count(), 0); // calibrate conn_count
     let endpoint = format!("https://localhost:{}/", server.listen_addr.port());
 
     let connector_settings = HttpConnectorSettings::builder().build();
@@ -264,5 +310,13 @@ async fn run_tls_test(client: &dyn HttpClient) -> Result<(), BoxError> {
     let body_stream = ByteStream::new(sdk_body);
     let resp_bytes = body_stream.collect().await?.into_bytes();
     assert_eq!(b"Hello TLS!", &resp_bytes[..]);
+
+    if let Some(pool_timeout) = pool_timeout {
+        assert_eq!(server.conn_count(), 1);
+        tokio::time::sleep_until(start + pool_timeout - Duration::from_secs(1)).await;
+        assert_eq!(server.conn_count(), 1);
+        tokio::time::sleep(Duration::from_secs(2)).await;
+        assert_eq!(server.conn_count(), 0);
+    }
     Ok(())
 }

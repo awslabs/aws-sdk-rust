@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ResourceType {
         match self {
             ResourceType::Document => write!(f, "DOCUMENT"),
             ResourceType::Folder => write!(f, "FOLDER"),
-            ResourceType::Unknown(value) => write!(f, "{}", value),
+            ResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

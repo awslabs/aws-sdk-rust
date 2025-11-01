@@ -114,7 +114,7 @@ impl ::std::fmt::Display for SignInMethod {
             SignInMethod::EmailAndPhoneNumber => write!(f, "EMAIL_AND_PHONE_NUMBER"),
             SignInMethod::PhoneNumber => write!(f, "PHONE_NUMBER"),
             SignInMethod::Username => write!(f, "USERNAME"),
-            SignInMethod::Unknown(value) => write!(f, "{}", value),
+            SignInMethod::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

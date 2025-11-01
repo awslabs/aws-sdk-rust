@@ -126,7 +126,7 @@ impl ::std::fmt::Display for CommandPluginStatus {
             CommandPluginStatus::Pending => write!(f, "Pending"),
             CommandPluginStatus::Success => write!(f, "Success"),
             CommandPluginStatus::TimedOut => write!(f, "TimedOut"),
-            CommandPluginStatus::Unknown(value) => write!(f, "{}", value),
+            CommandPluginStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

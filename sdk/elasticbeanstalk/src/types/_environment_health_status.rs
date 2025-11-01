@@ -146,7 +146,7 @@ impl ::std::fmt::Display for EnvironmentHealthStatus {
             EnvironmentHealthStatus::Suspended => write!(f, "Suspended"),
             EnvironmentHealthStatus::UnknownValue => write!(f, "Unknown"),
             EnvironmentHealthStatus::Warning => write!(f, "Warning"),
-            EnvironmentHealthStatus::Unknown(value) => write!(f, "{}", value),
+            EnvironmentHealthStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

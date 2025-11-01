@@ -108,7 +108,7 @@ impl ::std::fmt::Display for DefaultQueueBudgetAction {
             DefaultQueueBudgetAction::None => write!(f, "NONE"),
             DefaultQueueBudgetAction::StopSchedulingAndCancelTasks => write!(f, "STOP_SCHEDULING_AND_CANCEL_TASKS"),
             DefaultQueueBudgetAction::StopSchedulingAndCompleteTasks => write!(f, "STOP_SCHEDULING_AND_COMPLETE_TASKS"),
-            DefaultQueueBudgetAction::Unknown(value) => write!(f, "{}", value),
+            DefaultQueueBudgetAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

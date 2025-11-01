@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ReportFrequencyType {
             ReportFrequencyType::Day => write!(f, "DAY"),
             ReportFrequencyType::Month => write!(f, "MONTH"),
             ReportFrequencyType::Week => write!(f, "WEEK"),
-            ReportFrequencyType::Unknown(value) => write!(f, "{}", value),
+            ReportFrequencyType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for FulfillmentState {
             FulfillmentState::Failed => write!(f, "Failed"),
             FulfillmentState::Fulfilled => write!(f, "Fulfilled"),
             FulfillmentState::ReadyForFulfillment => write!(f, "ReadyForFulfillment"),
-            FulfillmentState::Unknown(value) => write!(f, "{}", value),
+            FulfillmentState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

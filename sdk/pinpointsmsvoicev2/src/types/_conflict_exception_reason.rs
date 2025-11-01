@@ -359,7 +359,7 @@ impl ::std::fmt::Display for ConflictExceptionReason {
             ConflictExceptionReason::TwoWayConfigMismatch => write!(f, "TWO_WAY_CONFIG_MISMATCH"),
             ConflictExceptionReason::VerificationAlreadyComplete => write!(f, "VERIFICATION_ALREADY_COMPLETE"),
             ConflictExceptionReason::VerificationCodeExpired => write!(f, "VERIFICATION_CODE_EXPIRED"),
-            ConflictExceptionReason::Unknown(value) => write!(f, "{}", value),
+            ConflictExceptionReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

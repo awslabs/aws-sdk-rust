@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ComputeModel {
         match self {
             ComputeModel::Ecpu => write!(f, "ECPU"),
             ComputeModel::Ocpu => write!(f, "OCPU"),
-            ComputeModel::Unknown(value) => write!(f, "{}", value),
+            ComputeModel::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

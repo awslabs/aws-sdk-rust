@@ -120,7 +120,7 @@ impl ::std::fmt::Display for GrpcRetryPolicyEvent {
             GrpcRetryPolicyEvent::Internal => write!(f, "internal"),
             GrpcRetryPolicyEvent::ResourceExhausted => write!(f, "resource-exhausted"),
             GrpcRetryPolicyEvent::Unavailable => write!(f, "unavailable"),
-            GrpcRetryPolicyEvent::Unknown(value) => write!(f, "{}", value),
+            GrpcRetryPolicyEvent::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

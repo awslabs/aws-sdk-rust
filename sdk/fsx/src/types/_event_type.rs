@@ -108,7 +108,7 @@ impl ::std::fmt::Display for EventType {
             EventType::Changed => write!(f, "CHANGED"),
             EventType::Deleted => write!(f, "DELETED"),
             EventType::New => write!(f, "NEW"),
-            EventType::Unknown(value) => write!(f, "{}", value),
+            EventType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

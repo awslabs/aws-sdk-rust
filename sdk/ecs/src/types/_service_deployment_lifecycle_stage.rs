@@ -161,7 +161,7 @@ impl ::std::fmt::Display for ServiceDeploymentLifecycleStage {
             ServiceDeploymentLifecycleStage::ReconcileService => write!(f, "RECONCILE_SERVICE"),
             ServiceDeploymentLifecycleStage::ScaleUp => write!(f, "SCALE_UP"),
             ServiceDeploymentLifecycleStage::TestTrafficShift => write!(f, "TEST_TRAFFIC_SHIFT"),
-            ServiceDeploymentLifecycleStage::Unknown(value) => write!(f, "{}", value),
+            ServiceDeploymentLifecycleStage::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

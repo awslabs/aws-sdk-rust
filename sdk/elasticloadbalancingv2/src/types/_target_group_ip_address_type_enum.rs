@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TargetGroupIpAddressTypeEnum {
         match self {
             TargetGroupIpAddressTypeEnum::Ipv4 => write!(f, "ipv4"),
             TargetGroupIpAddressTypeEnum::Ipv6 => write!(f, "ipv6"),
-            TargetGroupIpAddressTypeEnum::Unknown(value) => write!(f, "{}", value),
+            TargetGroupIpAddressTypeEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

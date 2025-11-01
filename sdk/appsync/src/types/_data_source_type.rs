@@ -154,7 +154,7 @@ impl ::std::fmt::Display for DataSourceType {
             DataSourceType::Http => write!(f, "HTTP"),
             DataSourceType::None => write!(f, "NONE"),
             DataSourceType::RelationalDatabase => write!(f, "RELATIONAL_DATABASE"),
-            DataSourceType::Unknown(value) => write!(f, "{}", value),
+            DataSourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

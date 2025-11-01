@@ -196,7 +196,7 @@ impl ::std::fmt::Display for ValidationExceptionReason {
             ValidationExceptionReason::LdapSizeLimitExceeded => write!(f, "LDAP_SIZE_LIMIT_EXCEEDED"),
             ValidationExceptionReason::LdapUnsupportedOperation => write!(f, "LDAP_UNSUPPORTED_OPERATION"),
             ValidationExceptionReason::MissingAttribute => write!(f, "MISSING_ATTRIBUTE"),
-            ValidationExceptionReason::Unknown(value) => write!(f, "{}", value),
+            ValidationExceptionReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

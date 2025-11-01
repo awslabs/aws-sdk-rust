@@ -106,7 +106,7 @@ impl ::std::fmt::Display for EncodingType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             EncodingType::Url => write!(f, "url"),
-            EncodingType::Unknown(value) => write!(f, "{}", value),
+            EncodingType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

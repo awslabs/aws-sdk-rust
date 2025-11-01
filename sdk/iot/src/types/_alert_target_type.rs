@@ -96,7 +96,7 @@ impl ::std::fmt::Display for AlertTargetType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             AlertTargetType::Sns => write!(f, "SNS"),
-            AlertTargetType::Unknown(value) => write!(f, "{}", value),
+            AlertTargetType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

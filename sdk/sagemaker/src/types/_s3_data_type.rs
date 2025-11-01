@@ -114,7 +114,7 @@ impl ::std::fmt::Display for S3DataType {
             S3DataType::Converse => write!(f, "Converse"),
             S3DataType::ManifestFile => write!(f, "ManifestFile"),
             S3DataType::S3Prefix => write!(f, "S3Prefix"),
-            S3DataType::Unknown(value) => write!(f, "{}", value),
+            S3DataType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

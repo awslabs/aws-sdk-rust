@@ -161,8 +161,7 @@ impl ReplayingClient {
             let actual = actual_requests
                 .remove(&conn_id)
                 .ok_or(format!(
-                    "expected connection {:?} but request was never sent",
-                    conn_id
+                    "expected connection {conn_id:?} but request was never sent"
                 ))?
                 .take()
                 .await;

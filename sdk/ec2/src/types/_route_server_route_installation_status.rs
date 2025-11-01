@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RouteServerRouteInstallationStatus {
         match self {
             RouteServerRouteInstallationStatus::Installed => write!(f, "installed"),
             RouteServerRouteInstallationStatus::Rejected => write!(f, "rejected"),
-            RouteServerRouteInstallationStatus::Unknown(value) => write!(f, "{}", value),
+            RouteServerRouteInstallationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for CisScanStatus {
             CisScanStatus::Completed => write!(f, "COMPLETED"),
             CisScanStatus::Failed => write!(f, "FAILED"),
             CisScanStatus::InProgress => write!(f, "IN_PROGRESS"),
-            CisScanStatus::Unknown(value) => write!(f, "{}", value),
+            CisScanStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

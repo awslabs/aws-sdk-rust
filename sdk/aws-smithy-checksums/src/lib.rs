@@ -266,7 +266,7 @@ impl Sha1 {
 
     fn finalize(self) -> Bytes {
         use sha1::Digest;
-        Bytes::copy_from_slice(self.hasher.finalize().as_slice())
+        Bytes::copy_from_slice(self.hasher.finalize().as_ref())
     }
 
     // Size of the checksum in bytes
@@ -302,7 +302,7 @@ impl Sha256 {
 
     fn finalize(self) -> Bytes {
         use sha2::Digest;
-        Bytes::copy_from_slice(self.hasher.finalize().as_slice())
+        Bytes::copy_from_slice(self.hasher.finalize().as_ref())
     }
 
     // Size of the checksum in bytes
@@ -340,7 +340,7 @@ impl Md5 {
     #[warn(dead_code)]
     fn finalize(self) -> Bytes {
         use md5::Digest;
-        Bytes::copy_from_slice(self.hasher.finalize().as_slice())
+        Bytes::copy_from_slice(self.hasher.finalize().as_ref())
     }
 
     // Size of the checksum in bytes
@@ -392,7 +392,7 @@ mod tests {
                 acc
             });
 
-        format!("0x{}", decoded_checksum)
+        format!("0x{decoded_checksum}")
     }
 
     #[test]

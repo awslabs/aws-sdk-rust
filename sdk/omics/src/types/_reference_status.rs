@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ReferenceStatus {
             ReferenceStatus::Active => write!(f, "ACTIVE"),
             ReferenceStatus::Deleted => write!(f, "DELETED"),
             ReferenceStatus::Deleting => write!(f, "DELETING"),
-            ReferenceStatus::Unknown(value) => write!(f, "{}", value),
+            ReferenceStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

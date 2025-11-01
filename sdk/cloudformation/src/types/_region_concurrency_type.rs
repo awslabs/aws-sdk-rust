@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RegionConcurrencyType {
         match self {
             RegionConcurrencyType::Parallel => write!(f, "PARALLEL"),
             RegionConcurrencyType::Sequential => write!(f, "SEQUENTIAL"),
-            RegionConcurrencyType::Unknown(value) => write!(f, "{}", value),
+            RegionConcurrencyType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

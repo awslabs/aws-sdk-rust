@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ParticipantRecordingMediaType {
             ParticipantRecordingMediaType::AudioOnly => write!(f, "AUDIO_ONLY"),
             ParticipantRecordingMediaType::AudioVideo => write!(f, "AUDIO_VIDEO"),
             ParticipantRecordingMediaType::None => write!(f, "NONE"),
-            ParticipantRecordingMediaType::Unknown(value) => write!(f, "{}", value),
+            ParticipantRecordingMediaType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

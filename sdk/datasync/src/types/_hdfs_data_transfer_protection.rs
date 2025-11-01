@@ -114,7 +114,7 @@ impl ::std::fmt::Display for HdfsDataTransferProtection {
             HdfsDataTransferProtection::Disabled => write!(f, "DISABLED"),
             HdfsDataTransferProtection::Integrity => write!(f, "INTEGRITY"),
             HdfsDataTransferProtection::Privacy => write!(f, "PRIVACY"),
-            HdfsDataTransferProtection::Unknown(value) => write!(f, "{}", value),
+            HdfsDataTransferProtection::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

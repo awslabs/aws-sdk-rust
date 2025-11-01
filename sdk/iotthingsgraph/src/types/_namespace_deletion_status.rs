@@ -108,7 +108,7 @@ impl ::std::fmt::Display for NamespaceDeletionStatus {
             NamespaceDeletionStatus::Failed => write!(f, "FAILED"),
             NamespaceDeletionStatus::InProgress => write!(f, "IN_PROGRESS"),
             NamespaceDeletionStatus::Succeeded => write!(f, "SUCCEEDED"),
-            NamespaceDeletionStatus::Unknown(value) => write!(f, "{}", value),
+            NamespaceDeletionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for Status {
             Status::Creating => write!(f, "CREATING"),
             Status::Deleting => write!(f, "DELETING"),
             Status::Updating => write!(f, "UPDATING"),
-            Status::Unknown(value) => write!(f, "{}", value),
+            Status::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

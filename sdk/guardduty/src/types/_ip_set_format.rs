@@ -126,7 +126,7 @@ impl ::std::fmt::Display for IpSetFormat {
             IpSetFormat::ProofPoint => write!(f, "PROOF_POINT"),
             IpSetFormat::Stix => write!(f, "STIX"),
             IpSetFormat::Txt => write!(f, "TXT"),
-            IpSetFormat::Unknown(value) => write!(f, "{}", value),
+            IpSetFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

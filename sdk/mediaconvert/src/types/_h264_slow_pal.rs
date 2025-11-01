@@ -102,7 +102,7 @@ impl ::std::fmt::Display for H264SlowPal {
         match self {
             H264SlowPal::Disabled => write!(f, "DISABLED"),
             H264SlowPal::Enabled => write!(f, "ENABLED"),
-            H264SlowPal::Unknown(value) => write!(f, "{}", value),
+            H264SlowPal::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

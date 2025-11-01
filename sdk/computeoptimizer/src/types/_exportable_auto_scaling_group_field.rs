@@ -758,7 +758,7 @@ impl ::std::fmt::Display for ExportableAutoScalingGroupField {
             ExportableAutoScalingGroupField::UtilizationMetricsNetworkPacketsOutPerSecondMaximum => {
                 write!(f, "UtilizationMetricsNetworkPacketsOutPerSecondMaximum")
             }
-            ExportableAutoScalingGroupField::Unknown(value) => write!(f, "{}", value),
+            ExportableAutoScalingGroupField::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

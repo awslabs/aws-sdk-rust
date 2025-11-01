@@ -120,7 +120,7 @@ impl ::std::fmt::Display for ResourceStatus {
             ResourceStatus::Pending => write!(f, "PENDING"),
             ResourceStatus::Unavailable => write!(f, "UNAVAILABLE"),
             ResourceStatus::ZonalResourceInaccessible => write!(f, "ZONAL_RESOURCE_INACCESSIBLE"),
-            ResourceStatus::Unknown(value) => write!(f, "{}", value),
+            ResourceStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

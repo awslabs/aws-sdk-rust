@@ -114,7 +114,7 @@ impl ::std::fmt::Display for OpsItemFilterOperator {
             OpsItemFilterOperator::Equal => write!(f, "Equal"),
             OpsItemFilterOperator::GreaterThan => write!(f, "GreaterThan"),
             OpsItemFilterOperator::LessThan => write!(f, "LessThan"),
-            OpsItemFilterOperator::Unknown(value) => write!(f, "{}", value),
+            OpsItemFilterOperator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

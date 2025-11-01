@@ -133,7 +133,7 @@ impl ::std::fmt::Display for MonitorProcessingStatusCode {
             MonitorProcessingStatusCode::Inactive => write!(f, "INACTIVE"),
             MonitorProcessingStatusCode::InsufficientData => write!(f, "INSUFFICIENT_DATA"),
             MonitorProcessingStatusCode::Ok => write!(f, "OK"),
-            MonitorProcessingStatusCode::Unknown(value) => write!(f, "{}", value),
+            MonitorProcessingStatusCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

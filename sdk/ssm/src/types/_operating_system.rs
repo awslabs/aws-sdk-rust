@@ -196,7 +196,7 @@ impl ::std::fmt::Display for OperatingSystem {
             OperatingSystem::Suse => write!(f, "SUSE"),
             OperatingSystem::Ubuntu => write!(f, "UBUNTU"),
             OperatingSystem::Windows => write!(f, "WINDOWS"),
-            OperatingSystem::Unknown(value) => write!(f, "{}", value),
+            OperatingSystem::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

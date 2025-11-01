@@ -110,7 +110,7 @@ impl ::std::fmt::Display for CheckResult {
             CheckResult::Failed => write!(f, "FAILED"),
             CheckResult::Passed => write!(f, "PASSED"),
             CheckResult::UnknownValue => write!(f, "UNKNOWN"),
-            CheckResult::Unknown(value) => write!(f, "{}", value),
+            CheckResult::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

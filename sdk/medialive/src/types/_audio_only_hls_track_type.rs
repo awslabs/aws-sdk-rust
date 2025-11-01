@@ -119,7 +119,7 @@ impl ::std::fmt::Display for AudioOnlyHlsTrackType {
             AudioOnlyHlsTrackType::AlternateAudioAutoSelectDefault => write!(f, "ALTERNATE_AUDIO_AUTO_SELECT_DEFAULT"),
             AudioOnlyHlsTrackType::AlternateAudioNotAutoSelect => write!(f, "ALTERNATE_AUDIO_NOT_AUTO_SELECT"),
             AudioOnlyHlsTrackType::AudioOnlyVariantStream => write!(f, "AUDIO_ONLY_VARIANT_STREAM"),
-            AudioOnlyHlsTrackType::Unknown(value) => write!(f, "{}", value),
+            AudioOnlyHlsTrackType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

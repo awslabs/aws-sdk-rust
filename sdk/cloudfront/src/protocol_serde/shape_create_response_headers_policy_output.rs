@@ -34,8 +34,7 @@ pub fn de_response_headers_policy(inp: &[u8]) -> std::result::Result<crate::type
     let start_el = decoder.start_el();
     if !(start_el.matches("ResponseHeadersPolicy")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected ResponseHeadersPolicy got {:?}",
-            start_el
+            "invalid root, expected ResponseHeadersPolicy got {start_el:?}"
         )));
     }
     crate::protocol_serde::shape_response_headers_policy::de_response_headers_policy(&mut decoder)

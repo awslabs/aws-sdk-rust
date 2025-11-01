@@ -96,7 +96,7 @@ impl ::std::fmt::Display for StepType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             StepType::PostChunking => write!(f, "POST_CHUNKING"),
-            StepType::Unknown(value) => write!(f, "{}", value),
+            StepType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

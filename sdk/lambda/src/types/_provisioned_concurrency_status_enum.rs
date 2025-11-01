@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ProvisionedConcurrencyStatusEnum {
             ProvisionedConcurrencyStatusEnum::Failed => write!(f, "FAILED"),
             ProvisionedConcurrencyStatusEnum::InProgress => write!(f, "IN_PROGRESS"),
             ProvisionedConcurrencyStatusEnum::Ready => write!(f, "READY"),
-            ProvisionedConcurrencyStatusEnum::Unknown(value) => write!(f, "{}", value),
+            ProvisionedConcurrencyStatusEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

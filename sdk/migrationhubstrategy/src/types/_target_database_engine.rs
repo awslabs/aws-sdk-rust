@@ -161,7 +161,7 @@ impl ::std::fmt::Display for TargetDatabaseEngine {
             TargetDatabaseEngine::NoneSpecified => write!(f, "None specified"),
             TargetDatabaseEngine::OracleDatabase => write!(f, "Oracle Database"),
             TargetDatabaseEngine::Sap => write!(f, "SAP"),
-            TargetDatabaseEngine::Unknown(value) => write!(f, "{}", value),
+            TargetDatabaseEngine::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

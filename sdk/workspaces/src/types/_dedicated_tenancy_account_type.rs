@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DedicatedTenancyAccountType {
         match self {
             DedicatedTenancyAccountType::SourceAccount => write!(f, "SOURCE_ACCOUNT"),
             DedicatedTenancyAccountType::TargetAccount => write!(f, "TARGET_ACCOUNT"),
-            DedicatedTenancyAccountType::Unknown(value) => write!(f, "{}", value),
+            DedicatedTenancyAccountType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

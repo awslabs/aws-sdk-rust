@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ModelStatus {
             ModelStatus::Active => write!(f, "ACTIVE"),
             ModelStatus::Expired => write!(f, "EXPIRED"),
             ModelStatus::PendingBuild => write!(f, "PENDING_BUILD"),
-            ModelStatus::Unknown(value) => write!(f, "{}", value),
+            ModelStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ReplacementTypeEnum {
             ReplacementTypeEnum::KeepDestination => write!(f, "KEEP_DESTINATION"),
             ReplacementTypeEnum::KeepSource => write!(f, "KEEP_SOURCE"),
             ReplacementTypeEnum::UseNewContent => write!(f, "USE_NEW_CONTENT"),
-            ReplacementTypeEnum::Unknown(value) => write!(f, "{}", value),
+            ReplacementTypeEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

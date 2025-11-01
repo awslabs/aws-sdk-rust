@@ -114,7 +114,7 @@ impl ::std::fmt::Display for InventoryFilterCondition {
             InventoryFilterCondition::Contains => write!(f, "CONTAINS"),
             InventoryFilterCondition::Equals => write!(f, "EQUALS"),
             InventoryFilterCondition::NotEquals => write!(f, "NOT_EQUALS"),
-            InventoryFilterCondition::Unknown(value) => write!(f, "{}", value),
+            InventoryFilterCondition::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

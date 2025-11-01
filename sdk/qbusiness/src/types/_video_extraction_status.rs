@@ -102,7 +102,7 @@ impl ::std::fmt::Display for VideoExtractionStatus {
         match self {
             VideoExtractionStatus::Disabled => write!(f, "DISABLED"),
             VideoExtractionStatus::Enabled => write!(f, "ENABLED"),
-            VideoExtractionStatus::Unknown(value) => write!(f, "{}", value),
+            VideoExtractionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AutoEnableMembers {
             AutoEnableMembers::All => write!(f, "ALL"),
             AutoEnableMembers::New => write!(f, "NEW"),
             AutoEnableMembers::None => write!(f, "NONE"),
-            AutoEnableMembers::Unknown(value) => write!(f, "{}", value),
+            AutoEnableMembers::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

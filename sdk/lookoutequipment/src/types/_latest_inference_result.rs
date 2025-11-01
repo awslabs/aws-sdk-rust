@@ -102,7 +102,7 @@ impl ::std::fmt::Display for LatestInferenceResult {
         match self {
             LatestInferenceResult::Anomalous => write!(f, "ANOMALOUS"),
             LatestInferenceResult::Normal => write!(f, "NORMAL"),
-            LatestInferenceResult::Unknown(value) => write!(f, "{}", value),
+            LatestInferenceResult::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

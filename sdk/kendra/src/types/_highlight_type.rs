@@ -102,7 +102,7 @@ impl ::std::fmt::Display for HighlightType {
         match self {
             HighlightType::Standard => write!(f, "STANDARD"),
             HighlightType::ThesaurusSynonym => write!(f, "THESAURUS_SYNONYM"),
-            HighlightType::Unknown(value) => write!(f, "{}", value),
+            HighlightType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

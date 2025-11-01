@@ -104,7 +104,7 @@ impl ::std::fmt::Display for LaunchTemplateInstanceMetadataOptionsState {
         match self {
             LaunchTemplateInstanceMetadataOptionsState::Applied => write!(f, "applied"),
             LaunchTemplateInstanceMetadataOptionsState::Pending => write!(f, "pending"),
-            LaunchTemplateInstanceMetadataOptionsState::Unknown(value) => write!(f, "{}", value),
+            LaunchTemplateInstanceMetadataOptionsState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

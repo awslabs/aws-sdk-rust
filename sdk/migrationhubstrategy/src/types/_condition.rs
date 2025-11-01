@@ -114,7 +114,7 @@ impl ::std::fmt::Display for Condition {
             Condition::Equals => write!(f, "EQUALS"),
             Condition::NotContains => write!(f, "NOT_CONTAINS"),
             Condition::NotEquals => write!(f, "NOT_EQUALS"),
-            Condition::Unknown(value) => write!(f, "{}", value),
+            Condition::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

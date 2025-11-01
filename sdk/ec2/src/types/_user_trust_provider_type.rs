@@ -102,7 +102,7 @@ impl ::std::fmt::Display for UserTrustProviderType {
         match self {
             UserTrustProviderType::IamIdentityCenter => write!(f, "iam-identity-center"),
             UserTrustProviderType::Oidc => write!(f, "oidc"),
-            UserTrustProviderType::Unknown(value) => write!(f, "{}", value),
+            UserTrustProviderType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

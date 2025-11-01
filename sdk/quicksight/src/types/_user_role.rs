@@ -147,7 +147,7 @@ impl ::std::fmt::Display for UserRole {
             UserRole::ReaderPro => write!(f, "READER_PRO"),
             UserRole::RestrictedAuthor => write!(f, "RESTRICTED_AUTHOR"),
             UserRole::RestrictedReader => write!(f, "RESTRICTED_READER"),
-            UserRole::Unknown(value) => write!(f, "{}", value),
+            UserRole::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

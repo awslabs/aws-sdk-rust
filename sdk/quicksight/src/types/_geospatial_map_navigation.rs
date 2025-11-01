@@ -102,7 +102,7 @@ impl ::std::fmt::Display for GeospatialMapNavigation {
         match self {
             GeospatialMapNavigation::Disabled => write!(f, "DISABLED"),
             GeospatialMapNavigation::Enabled => write!(f, "ENABLED"),
-            GeospatialMapNavigation::Unknown(value) => write!(f, "{}", value),
+            GeospatialMapNavigation::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

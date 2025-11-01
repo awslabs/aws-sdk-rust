@@ -102,7 +102,7 @@ impl ::std::fmt::Display for StaticSourcesSupportValue {
         match self {
             StaticSourcesSupportValue::Disable => write!(f, "disable"),
             StaticSourcesSupportValue::Enable => write!(f, "enable"),
-            StaticSourcesSupportValue::Unknown(value) => write!(f, "{}", value),
+            StaticSourcesSupportValue::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

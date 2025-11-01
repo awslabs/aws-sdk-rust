@@ -114,7 +114,7 @@ impl ::std::fmt::Display for TestType {
             TestType::Hardware => write!(f, "Hardware"),
             TestType::Region => write!(f, "Region"),
             TestType::Software => write!(f, "Software"),
-            TestType::Unknown(value) => write!(f, "{}", value),
+            TestType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

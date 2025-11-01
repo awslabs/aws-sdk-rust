@@ -108,7 +108,7 @@ impl ::std::fmt::Display for InterfaceTypeEnum {
             InterfaceTypeEnum::Efa => write!(f, "efa"),
             InterfaceTypeEnum::EfaOnly => write!(f, "efa-only"),
             InterfaceTypeEnum::Interface => write!(f, "interface"),
-            InterfaceTypeEnum::Unknown(value) => write!(f, "{}", value),
+            InterfaceTypeEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

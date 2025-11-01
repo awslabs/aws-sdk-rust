@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CisSortOrder {
         match self {
             CisSortOrder::Asc => write!(f, "ASC"),
             CisSortOrder::Desc => write!(f, "DESC"),
-            CisSortOrder::Unknown(value) => write!(f, "{}", value),
+            CisSortOrder::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

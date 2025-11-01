@@ -112,7 +112,7 @@ impl ::std::fmt::Display for OptionState {
             OptionState::Active => write!(f, "Active"),
             OptionState::Processing => write!(f, "Processing"),
             OptionState::RequiresIndexDocuments => write!(f, "RequiresIndexDocuments"),
-            OptionState::Unknown(value) => write!(f, "{}", value),
+            OptionState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

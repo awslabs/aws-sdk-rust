@@ -114,7 +114,7 @@ impl ::std::fmt::Display for JobQueueType {
             JobQueueType::EcsFargate => write!(f, "ECS_FARGATE"),
             JobQueueType::Eks => write!(f, "EKS"),
             JobQueueType::SagemakerTraining => write!(f, "SAGEMAKER_TRAINING"),
-            JobQueueType::Unknown(value) => write!(f, "{}", value),
+            JobQueueType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for SkipUnavailableStatus {
         match self {
             SkipUnavailableStatus::Disabled => write!(f, "DISABLED"),
             SkipUnavailableStatus::Enabled => write!(f, "ENABLED"),
-            SkipUnavailableStatus::Unknown(value) => write!(f, "{}", value),
+            SkipUnavailableStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

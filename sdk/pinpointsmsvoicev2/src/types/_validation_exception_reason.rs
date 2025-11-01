@@ -378,7 +378,7 @@ impl ::std::fmt::Display for ValidationExceptionReason {
             ValidationExceptionReason::UnspecifiedParameterNotSupported => write!(f, "UNSPECIFIED_PARAMETER_NOT_SUPPORTED"),
             ValidationExceptionReason::VerificationCodeMismatch => write!(f, "VERIFICATION_CODE_MISMATCH"),
             ValidationExceptionReason::VoiceCapabilityNotAvailable => write!(f, "VOICE_CAPABILITY_NOT_AVAILABLE"),
-            ValidationExceptionReason::Unknown(value) => write!(f, "{}", value),
+            ValidationExceptionReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

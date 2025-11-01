@@ -29,7 +29,7 @@ pub fn apply_endpoint(
         .map(|auth| auth.as_str())
         .unwrap_or("");
     let authority = if !prefix.is_empty() {
-        Cow::Owned(format!("{}{}", prefix, authority))
+        Cow::Owned(format!("{prefix}{authority}"))
     } else {
         Cow::Borrowed(authority)
     };
@@ -63,6 +63,6 @@ fn merge_paths<'a>(endpoint: &'a http_02x::Uri, uri: &'a http_02x::Uri) -> Cow<'
         let uri_path_no_slash = uri_path_and_query
             .strip_prefix('/')
             .unwrap_or(uri_path_and_query);
-        Cow::Owned(format!("{}/{}", ep_no_slash, uri_path_no_slash))
+        Cow::Owned(format!("{ep_no_slash}/{uri_path_no_slash}"))
     }
 }

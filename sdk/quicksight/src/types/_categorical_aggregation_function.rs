@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CategoricalAggregationFunction {
         match self {
             CategoricalAggregationFunction::Count => write!(f, "COUNT"),
             CategoricalAggregationFunction::DistinctCount => write!(f, "DISTINCT_COUNT"),
-            CategoricalAggregationFunction::Unknown(value) => write!(f, "{}", value),
+            CategoricalAggregationFunction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -110,7 +110,7 @@ impl ::std::fmt::Display for AuthenticateCognitoActionConditionalBehaviorEnum {
             AuthenticateCognitoActionConditionalBehaviorEnum::Allow => write!(f, "allow"),
             AuthenticateCognitoActionConditionalBehaviorEnum::Authenticate => write!(f, "authenticate"),
             AuthenticateCognitoActionConditionalBehaviorEnum::Deny => write!(f, "deny"),
-            AuthenticateCognitoActionConditionalBehaviorEnum::Unknown(value) => write!(f, "{}", value),
+            AuthenticateCognitoActionConditionalBehaviorEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -154,7 +154,7 @@ impl ::std::fmt::Display for DbInstanceType {
             DbInstanceType::DbInfluxLarge => write!(f, "db.influx.large"),
             DbInstanceType::DbInfluxMedium => write!(f, "db.influx.medium"),
             DbInstanceType::DbInfluxXlarge => write!(f, "db.influx.xlarge"),
-            DbInstanceType::Unknown(value) => write!(f, "{}", value),
+            DbInstanceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

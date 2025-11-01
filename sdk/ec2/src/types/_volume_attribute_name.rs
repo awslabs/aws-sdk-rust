@@ -102,7 +102,7 @@ impl ::std::fmt::Display for VolumeAttributeName {
         match self {
             VolumeAttributeName::AutoEnableIo => write!(f, "autoEnableIO"),
             VolumeAttributeName::ProductCodes => write!(f, "productCodes"),
-            VolumeAttributeName::Unknown(value) => write!(f, "{}", value),
+            VolumeAttributeName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

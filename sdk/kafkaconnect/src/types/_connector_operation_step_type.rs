@@ -126,7 +126,7 @@ impl ::std::fmt::Display for ConnectorOperationStepType {
             ConnectorOperationStepType::UpdateConnectorConfiguration => write!(f, "UPDATE_CONNECTOR_CONFIGURATION"),
             ConnectorOperationStepType::UpdateWorkerSetting => write!(f, "UPDATE_WORKER_SETTING"),
             ConnectorOperationStepType::ValidateUpdate => write!(f, "VALIDATE_UPDATE"),
-            ConnectorOperationStepType::Unknown(value) => write!(f, "{}", value),
+            ConnectorOperationStepType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

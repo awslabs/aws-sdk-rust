@@ -120,7 +120,7 @@ impl ::std::fmt::Display for IdentityType {
             IdentityType::AwsIamIdpOidc => write!(f, "AWS_IAM_IDP_OIDC"),
             IdentityType::AwsIamIdpSaml => write!(f, "AWS_IAM_IDP_SAML"),
             IdentityType::AwsQuicksightIdp => write!(f, "AWS_QUICKSIGHT_IDP"),
-            IdentityType::Unknown(value) => write!(f, "{}", value),
+            IdentityType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

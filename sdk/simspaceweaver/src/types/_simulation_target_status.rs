@@ -116,7 +116,7 @@ impl ::std::fmt::Display for SimulationTargetStatus {
             SimulationTargetStatus::Started => write!(f, "STARTED"),
             SimulationTargetStatus::Stopped => write!(f, "STOPPED"),
             SimulationTargetStatus::UnknownValue => write!(f, "UNKNOWN"),
-            SimulationTargetStatus::Unknown(value) => write!(f, "{}", value),
+            SimulationTargetStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

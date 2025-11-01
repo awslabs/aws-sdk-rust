@@ -133,7 +133,7 @@ impl ::std::fmt::Display for ConfigRecommendationOptimizationType {
             ConfigRecommendationOptimizationType::LeastChange => write!(f, "LeastChange"),
             ConfigRecommendationOptimizationType::LeastCost => write!(f, "LeastCost"),
             ConfigRecommendationOptimizationType::LeastErrors => write!(f, "LeastErrors"),
-            ConfigRecommendationOptimizationType::Unknown(value) => write!(f, "{}", value),
+            ConfigRecommendationOptimizationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

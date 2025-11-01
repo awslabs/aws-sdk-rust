@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ServiceFilterName {
         match self {
             ServiceFilterName::NamespaceId => write!(f, "NAMESPACE_ID"),
             ServiceFilterName::ResourceOwner => write!(f, "RESOURCE_OWNER"),
-            ServiceFilterName::Unknown(value) => write!(f, "{}", value),
+            ServiceFilterName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

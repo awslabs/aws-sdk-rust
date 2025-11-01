@@ -96,7 +96,7 @@ impl ::std::fmt::Display for AgentAction {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             AgentAction::Discard => write!(f, "DISCARD"),
-            AgentAction::Unknown(value) => write!(f, "{}", value),
+            AgentAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

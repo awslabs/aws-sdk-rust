@@ -108,7 +108,7 @@ impl ::std::fmt::Display for BarsArrangement {
             BarsArrangement::Clustered => write!(f, "CLUSTERED"),
             BarsArrangement::Stacked => write!(f, "STACKED"),
             BarsArrangement::StackedPercent => write!(f, "STACKED_PERCENT"),
-            BarsArrangement::Unknown(value) => write!(f, "{}", value),
+            BarsArrangement::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

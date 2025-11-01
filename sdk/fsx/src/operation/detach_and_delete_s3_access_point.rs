@@ -188,6 +188,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DetachAndDel
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::detach_and_delete_s3_access_point::DetachAndDeleteS3AccessPointInput,
                 output: &mut ::std::string::String,

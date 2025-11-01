@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AutoAdjustType {
         match self {
             AutoAdjustType::Forecast => write!(f, "FORECAST"),
             AutoAdjustType::Historical => write!(f, "HISTORICAL"),
-            AutoAdjustType::Unknown(value) => write!(f, "{}", value),
+            AutoAdjustType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

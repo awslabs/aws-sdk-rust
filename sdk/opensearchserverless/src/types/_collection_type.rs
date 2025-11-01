@@ -108,7 +108,7 @@ impl ::std::fmt::Display for CollectionType {
             CollectionType::Search => write!(f, "SEARCH"),
             CollectionType::Timeseries => write!(f, "TIMESERIES"),
             CollectionType::Vectorsearch => write!(f, "VECTORSEARCH"),
-            CollectionType::Unknown(value) => write!(f, "{}", value),
+            CollectionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

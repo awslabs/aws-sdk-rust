@@ -51,8 +51,7 @@ pub fn de_get_ipam_discovered_public_addresses(
     let start_el = decoder.start_el();
     if !(start_el.matches("GetIpamDiscoveredPublicAddressesResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected GetIpamDiscoveredPublicAddressesResponse got {:?}",
-            start_el
+            "invalid root, expected GetIpamDiscoveredPublicAddressesResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

@@ -154,7 +154,7 @@ impl ::std::fmt::Display for MultiplexState {
             MultiplexState::Running => write!(f, "RUNNING"),
             MultiplexState::Starting => write!(f, "STARTING"),
             MultiplexState::Stopping => write!(f, "STOPPING"),
-            MultiplexState::Unknown(value) => write!(f, "{}", value),
+            MultiplexState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

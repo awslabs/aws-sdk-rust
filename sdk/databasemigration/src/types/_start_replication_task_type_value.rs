@@ -108,7 +108,7 @@ impl ::std::fmt::Display for StartReplicationTaskTypeValue {
             StartReplicationTaskTypeValue::ReloadTarget => write!(f, "reload-target"),
             StartReplicationTaskTypeValue::ResumeProcessing => write!(f, "resume-processing"),
             StartReplicationTaskTypeValue::StartReplication => write!(f, "start-replication"),
-            StartReplicationTaskTypeValue::Unknown(value) => write!(f, "{}", value),
+            StartReplicationTaskTypeValue::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

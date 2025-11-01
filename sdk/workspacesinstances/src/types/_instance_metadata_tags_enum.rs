@@ -102,7 +102,7 @@ impl ::std::fmt::Display for InstanceMetadataTagsEnum {
         match self {
             InstanceMetadataTagsEnum::Disabled => write!(f, "disabled"),
             InstanceMetadataTagsEnum::Enabled => write!(f, "enabled"),
-            InstanceMetadataTagsEnum::Unknown(value) => write!(f, "{}", value),
+            InstanceMetadataTagsEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

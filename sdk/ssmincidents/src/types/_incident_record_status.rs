@@ -102,7 +102,7 @@ impl ::std::fmt::Display for IncidentRecordStatus {
         match self {
             IncidentRecordStatus::Open => write!(f, "OPEN"),
             IncidentRecordStatus::Resolved => write!(f, "RESOLVED"),
-            IncidentRecordStatus::Unknown(value) => write!(f, "{}", value),
+            IncidentRecordStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

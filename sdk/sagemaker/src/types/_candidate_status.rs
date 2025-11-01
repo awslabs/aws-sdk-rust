@@ -120,7 +120,7 @@ impl ::std::fmt::Display for CandidateStatus {
             CandidateStatus::InProgress => write!(f, "InProgress"),
             CandidateStatus::Stopped => write!(f, "Stopped"),
             CandidateStatus::Stopping => write!(f, "Stopping"),
-            CandidateStatus::Unknown(value) => write!(f, "{}", value),
+            CandidateStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

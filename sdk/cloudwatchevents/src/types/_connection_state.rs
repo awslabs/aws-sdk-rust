@@ -140,7 +140,7 @@ impl ::std::fmt::Display for ConnectionState {
             ConnectionState::Deauthorizing => write!(f, "DEAUTHORIZING"),
             ConnectionState::Deleting => write!(f, "DELETING"),
             ConnectionState::Updating => write!(f, "UPDATING"),
-            ConnectionState::Unknown(value) => write!(f, "{}", value),
+            ConnectionState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

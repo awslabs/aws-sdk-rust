@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ActionType {
             ActionType::GetCertificate => write!(f, "GetCertificate"),
             ActionType::IssueCertificate => write!(f, "IssueCertificate"),
             ActionType::ListPermissions => write!(f, "ListPermissions"),
-            ActionType::Unknown(value) => write!(f, "{}", value),
+            ActionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

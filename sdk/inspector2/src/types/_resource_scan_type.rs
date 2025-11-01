@@ -120,7 +120,7 @@ impl ::std::fmt::Display for ResourceScanType {
             ResourceScanType::Ecr => write!(f, "ECR"),
             ResourceScanType::Lambda => write!(f, "LAMBDA"),
             ResourceScanType::LambdaCode => write!(f, "LAMBDA_CODE"),
-            ResourceScanType::Unknown(value) => write!(f, "{}", value),
+            ResourceScanType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

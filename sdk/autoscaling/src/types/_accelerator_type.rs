@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AcceleratorType {
             AcceleratorType::Fpga => write!(f, "fpga"),
             AcceleratorType::Gpu => write!(f, "gpu"),
             AcceleratorType::Inference => write!(f, "inference"),
-            AcceleratorType::Unknown(value) => write!(f, "{}", value),
+            AcceleratorType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -96,7 +96,7 @@ impl ::std::fmt::Display for OtaMechanism {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             OtaMechanism::Push => write!(f, "PUSH"),
-            OtaMechanism::Unknown(value) => write!(f, "{}", value),
+            OtaMechanism::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

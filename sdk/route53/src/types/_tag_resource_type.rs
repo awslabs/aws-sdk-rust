@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TagResourceType {
         match self {
             TagResourceType::Healthcheck => write!(f, "healthcheck"),
             TagResourceType::Hostedzone => write!(f, "hostedzone"),
-            TagResourceType::Unknown(value) => write!(f, "{}", value),
+            TagResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

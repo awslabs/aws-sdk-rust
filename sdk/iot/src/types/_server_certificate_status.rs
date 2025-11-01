@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ServerCertificateStatus {
         match self {
             ServerCertificateStatus::Invalid => write!(f, "INVALID"),
             ServerCertificateStatus::Valid => write!(f, "VALID"),
-            ServerCertificateStatus::Unknown(value) => write!(f, "{}", value),
+            ServerCertificateStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

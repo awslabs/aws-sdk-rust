@@ -120,7 +120,7 @@ impl ::std::fmt::Display for TransitGatewayRegistrationState {
             TransitGatewayRegistrationState::Deleting => write!(f, "DELETING"),
             TransitGatewayRegistrationState::Failed => write!(f, "FAILED"),
             TransitGatewayRegistrationState::Pending => write!(f, "PENDING"),
-            TransitGatewayRegistrationState::Unknown(value) => write!(f, "{}", value),
+            TransitGatewayRegistrationState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

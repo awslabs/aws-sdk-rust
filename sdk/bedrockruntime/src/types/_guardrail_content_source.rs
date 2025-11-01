@@ -102,7 +102,7 @@ impl ::std::fmt::Display for GuardrailContentSource {
         match self {
             GuardrailContentSource::Input => write!(f, "INPUT"),
             GuardrailContentSource::Output => write!(f, "OUTPUT"),
-            GuardrailContentSource::Unknown(value) => write!(f, "{}", value),
+            GuardrailContentSource::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

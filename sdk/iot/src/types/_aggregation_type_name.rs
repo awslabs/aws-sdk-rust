@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AggregationTypeName {
             AggregationTypeName::Cardinality => write!(f, "Cardinality"),
             AggregationTypeName::Percentiles => write!(f, "Percentiles"),
             AggregationTypeName::Statistics => write!(f, "Statistics"),
-            AggregationTypeName::Unknown(value) => write!(f, "{}", value),
+            AggregationTypeName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

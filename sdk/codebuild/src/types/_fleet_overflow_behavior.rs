@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FleetOverflowBehavior {
         match self {
             FleetOverflowBehavior::OnDemand => write!(f, "ON_DEMAND"),
             FleetOverflowBehavior::Queue => write!(f, "QUEUE"),
-            FleetOverflowBehavior::Unknown(value) => write!(f, "{}", value),
+            FleetOverflowBehavior::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

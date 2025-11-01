@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MessageType {
         match self {
             MessageType::Promotional => write!(f, "PROMOTIONAL"),
             MessageType::Transactional => write!(f, "TRANSACTIONAL"),
-            MessageType::Unknown(value) => write!(f, "{}", value),
+            MessageType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -120,7 +120,7 @@ impl ::std::fmt::Display for NamespaceStatus {
             NamespaceStatus::Deleting => write!(f, "DELETING"),
             NamespaceStatus::NonRetryableFailure => write!(f, "NON_RETRYABLE_FAILURE"),
             NamespaceStatus::RetryableFailure => write!(f, "RETRYABLE_FAILURE"),
-            NamespaceStatus::Unknown(value) => write!(f, "{}", value),
+            NamespaceStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ProresSlowPal {
         match self {
             ProresSlowPal::Disabled => write!(f, "DISABLED"),
             ProresSlowPal::Enabled => write!(f, "ENABLED"),
-            ProresSlowPal::Unknown(value) => write!(f, "{}", value),
+            ProresSlowPal::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

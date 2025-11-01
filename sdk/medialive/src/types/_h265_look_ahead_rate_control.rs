@@ -108,7 +108,7 @@ impl ::std::fmt::Display for H265LookAheadRateControl {
             H265LookAheadRateControl::High => write!(f, "HIGH"),
             H265LookAheadRateControl::Low => write!(f, "LOW"),
             H265LookAheadRateControl::Medium => write!(f, "MEDIUM"),
-            H265LookAheadRateControl::Unknown(value) => write!(f, "{}", value),
+            H265LookAheadRateControl::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DnsSupportValue {
         match self {
             DnsSupportValue::Disable => write!(f, "disable"),
             DnsSupportValue::Enable => write!(f, "enable"),
-            DnsSupportValue::Unknown(value) => write!(f, "{}", value),
+            DnsSupportValue::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

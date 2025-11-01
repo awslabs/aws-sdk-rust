@@ -114,7 +114,7 @@ impl ::std::fmt::Display for TestExecutionStatus {
             TestExecutionStatus::Failed => write!(f, "FAILED"),
             TestExecutionStatus::Retriable => write!(f, "RETRIABLE"),
             TestExecutionStatus::Succeeded => write!(f, "SUCCEEDED"),
-            TestExecutionStatus::Unknown(value) => write!(f, "{}", value),
+            TestExecutionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

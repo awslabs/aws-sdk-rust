@@ -108,7 +108,7 @@ impl ::std::fmt::Display for WirelessGatewayIdType {
             WirelessGatewayIdType::GatewayEui => write!(f, "GatewayEui"),
             WirelessGatewayIdType::ThingName => write!(f, "ThingName"),
             WirelessGatewayIdType::WirelessGatewayId => write!(f, "WirelessGatewayId"),
-            WirelessGatewayIdType::Unknown(value) => write!(f, "{}", value),
+            WirelessGatewayIdType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

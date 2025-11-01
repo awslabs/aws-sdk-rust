@@ -133,7 +133,7 @@ impl ::std::fmt::Display for InstanceOnboardingJobFailureCode {
             InstanceOnboardingJobFailureCode::InternalFailure => write!(f, "INTERNAL_FAILURE"),
             InstanceOnboardingJobFailureCode::KmsAccessDenied => write!(f, "KMS_ACCESS_DENIED"),
             InstanceOnboardingJobFailureCode::KmsKeyNotFound => write!(f, "KMS_KEY_NOT_FOUND"),
-            InstanceOnboardingJobFailureCode::Unknown(value) => write!(f, "{}", value),
+            InstanceOnboardingJobFailureCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

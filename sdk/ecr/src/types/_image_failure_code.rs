@@ -161,7 +161,7 @@ impl ::std::fmt::Display for ImageFailureCode {
             ImageFailureCode::UpstreamAccessDenied => write!(f, "UpstreamAccessDenied"),
             ImageFailureCode::UpstreamTooManyRequests => write!(f, "UpstreamTooManyRequests"),
             ImageFailureCode::UpstreamUnavailable => write!(f, "UpstreamUnavailable"),
-            ImageFailureCode::Unknown(value) => write!(f, "{}", value),
+            ImageFailureCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for BuildComputeType {
             BuildComputeType::Large16Gb => write!(f, "LARGE_16GB"),
             BuildComputeType::Standard8Gb => write!(f, "STANDARD_8GB"),
             BuildComputeType::Xlarge72Gb => write!(f, "XLARGE_72GB"),
-            BuildComputeType::Unknown(value) => write!(f, "{}", value),
+            BuildComputeType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

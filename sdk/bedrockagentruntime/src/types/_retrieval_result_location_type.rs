@@ -138,7 +138,7 @@ impl ::std::fmt::Display for RetrievalResultLocationType {
             RetrievalResultLocationType::Sharepoint => write!(f, "SHAREPOINT"),
             RetrievalResultLocationType::Sql => write!(f, "SQL"),
             RetrievalResultLocationType::Web => write!(f, "WEB"),
-            RetrievalResultLocationType::Unknown(value) => write!(f, "{}", value),
+            RetrievalResultLocationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

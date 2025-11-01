@@ -126,7 +126,7 @@ impl ::std::fmt::Display for RetrievalStatus {
             RetrievalStatus::Running => write!(f, "RUNNING"),
             RetrievalStatus::Scheduled => write!(f, "SCHEDULED"),
             RetrievalStatus::Timeout => write!(f, "TIMEOUT"),
-            RetrievalStatus::Unknown(value) => write!(f, "{}", value),
+            RetrievalStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

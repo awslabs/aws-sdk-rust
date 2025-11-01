@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ComplianceStatus {
             ComplianceStatus::NotApplicable => write!(f, "NotApplicable"),
             ComplianceStatus::PolicyBreached => write!(f, "PolicyBreached"),
             ComplianceStatus::PolicyMet => write!(f, "PolicyMet"),
-            ComplianceStatus::Unknown(value) => write!(f, "{}", value),
+            ComplianceStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

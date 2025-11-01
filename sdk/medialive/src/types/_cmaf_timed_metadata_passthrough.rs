@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CmafTimedMetadataPassthrough {
         match self {
             CmafTimedMetadataPassthrough::Disabled => write!(f, "DISABLED"),
             CmafTimedMetadataPassthrough::Enabled => write!(f, "ENABLED"),
-            CmafTimedMetadataPassthrough::Unknown(value) => write!(f, "{}", value),
+            CmafTimedMetadataPassthrough::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

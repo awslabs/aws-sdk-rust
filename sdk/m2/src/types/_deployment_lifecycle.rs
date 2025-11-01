@@ -114,7 +114,7 @@ impl ::std::fmt::Display for DeploymentLifecycle {
             DeploymentLifecycle::Failed => write!(f, "Failed"),
             DeploymentLifecycle::Succeeded => write!(f, "Succeeded"),
             DeploymentLifecycle::DeployUpdate => write!(f, "Updating Deployment"),
-            DeploymentLifecycle::Unknown(value) => write!(f, "{}", value),
+            DeploymentLifecycle::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

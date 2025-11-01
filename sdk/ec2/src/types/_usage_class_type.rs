@@ -108,7 +108,7 @@ impl ::std::fmt::Display for UsageClassType {
             UsageClassType::CapacityBlock => write!(f, "capacity-block"),
             UsageClassType::OnDemand => write!(f, "on-demand"),
             UsageClassType::Spot => write!(f, "spot"),
-            UsageClassType::Unknown(value) => write!(f, "{}", value),
+            UsageClassType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -182,7 +182,7 @@ impl ::std::fmt::Display for EnvironmentStatus {
             EnvironmentStatus::Suspended => write!(f, "SUSPENDED"),
             EnvironmentStatus::UpdateNetworkRequested => write!(f, "UPDATE_NETWORK_REQUESTED"),
             EnvironmentStatus::UpdatingNetwork => write!(f, "UPDATING_NETWORK"),
-            EnvironmentStatus::Unknown(value) => write!(f, "{}", value),
+            EnvironmentStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

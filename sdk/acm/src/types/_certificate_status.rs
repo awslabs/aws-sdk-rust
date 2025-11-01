@@ -140,7 +140,7 @@ impl ::std::fmt::Display for CertificateStatus {
             CertificateStatus::PendingValidation => write!(f, "PENDING_VALIDATION"),
             CertificateStatus::Revoked => write!(f, "REVOKED"),
             CertificateStatus::ValidationTimedOut => write!(f, "VALIDATION_TIMED_OUT"),
-            CertificateStatus::Unknown(value) => write!(f, "{}", value),
+            CertificateStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

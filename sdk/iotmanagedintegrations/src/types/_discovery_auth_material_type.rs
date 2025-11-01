@@ -96,7 +96,7 @@ impl ::std::fmt::Display for DiscoveryAuthMaterialType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             DiscoveryAuthMaterialType::ZwaveInstallCode => write!(f, "ZWAVE_INSTALL_CODE"),
-            DiscoveryAuthMaterialType::Unknown(value) => write!(f, "{}", value),
+            DiscoveryAuthMaterialType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -118,16 +118,14 @@ pub fn de_list_metric_streams(
     let start_el = decoder.start_el();
     if !(start_el.matches("ListMetricStreamsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected ListMetricStreamsResponse got {:?}",
-            start_el
+            "invalid root, expected ListMetricStreamsResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("ListMetricStreamsResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected ListMetricStreamsResult got {:?}",
-                start_el
+                "invalid result, expected ListMetricStreamsResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

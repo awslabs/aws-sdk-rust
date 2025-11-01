@@ -38,7 +38,7 @@ impl ::std::fmt::Display for WafInvalidPermissionPolicyException {
         ::std::write!(f, "WafInvalidPermissionPolicyException [WAFInvalidPermissionPolicyException]")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
             {
-                ::std::write!(f, ": {}", inner_1)?;
+                ::std::write!(f, ": {inner_1}")?;
             }
         }
         Ok(())

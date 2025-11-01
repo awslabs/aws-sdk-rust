@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ImageFileType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ImageFileType::Png => write!(f, "PNG"),
-            ImageFileType::Unknown(value) => write!(f, "{}", value),
+            ImageFileType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

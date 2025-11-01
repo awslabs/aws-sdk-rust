@@ -108,7 +108,7 @@ impl ::std::fmt::Display for Validation {
             Validation::Disable => write!(f, "DISABLE"),
             Validation::Enable => write!(f, "ENABLE"),
             Validation::UseLocalResourceSetting => write!(f, "USE_LOCAL_RESOURCE_SETTING"),
-            Validation::Unknown(value) => write!(f, "{}", value),
+            Validation::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

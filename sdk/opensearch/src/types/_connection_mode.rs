@@ -113,7 +113,7 @@ impl ::std::fmt::Display for ConnectionMode {
         match self {
             ConnectionMode::Direct => write!(f, "DIRECT"),
             ConnectionMode::VpcEndpoint => write!(f, "VPC_ENDPOINT"),
-            ConnectionMode::Unknown(value) => write!(f, "{}", value),
+            ConnectionMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

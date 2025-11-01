@@ -53,8 +53,7 @@ pub fn de_create_network_insights_path(
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateNetworkInsightsPathResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected CreateNetworkInsightsPathResponse got {:?}",
-            start_el
+            "invalid root, expected CreateNetworkInsightsPathResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

@@ -42,8 +42,7 @@ pub fn de_import_instance(
     let start_el = decoder.start_el();
     if !(start_el.matches("ImportInstanceResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected ImportInstanceResponse got {:?}",
-            start_el
+            "invalid root, expected ImportInstanceResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

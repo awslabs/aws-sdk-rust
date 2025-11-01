@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RouteState {
         match self {
             RouteState::Active => write!(f, "ACTIVE"),
             RouteState::Blackhole => write!(f, "BLACKHOLE"),
-            RouteState::Unknown(value) => write!(f, "{}", value),
+            RouteState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

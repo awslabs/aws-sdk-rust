@@ -114,7 +114,7 @@ impl ::std::fmt::Display for H264FramerateConversionAlgorithm {
             H264FramerateConversionAlgorithm::Frameformer => write!(f, "FRAMEFORMER"),
             H264FramerateConversionAlgorithm::Interpolate => write!(f, "INTERPOLATE"),
             H264FramerateConversionAlgorithm::MaintainFrameCount => write!(f, "MAINTAIN_FRAME_COUNT"),
-            H264FramerateConversionAlgorithm::Unknown(value) => write!(f, "{}", value),
+            H264FramerateConversionAlgorithm::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

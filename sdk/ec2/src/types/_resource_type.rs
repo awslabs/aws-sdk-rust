@@ -42,6 +42,8 @@
 ///     ResourceType::Ipam => { /* ... */ },
 ///     ResourceType::IpamExternalResourceVerificationToken => { /* ... */ },
 ///     ResourceType::IpamPool => { /* ... */ },
+///     ResourceType::IpamPrefixListResolver => { /* ... */ },
+///     ResourceType::IpamPrefixListResolverTarget => { /* ... */ },
 ///     ResourceType::IpamResourceDiscovery => { /* ... */ },
 ///     ResourceType::IpamResourceDiscoveryAssociation => { /* ... */ },
 ///     ResourceType::IpamScope => { /* ... */ },
@@ -198,6 +200,10 @@ pub enum ResourceType {
     IpamExternalResourceVerificationToken,
     #[allow(missing_docs)] // documentation missing in model
     IpamPool,
+    #[allow(missing_docs)] // documentation missing in model
+    IpamPrefixListResolver,
+    #[allow(missing_docs)] // documentation missing in model
+    IpamPrefixListResolverTarget,
     #[allow(missing_docs)] // documentation missing in model
     IpamResourceDiscovery,
     #[allow(missing_docs)] // documentation missing in model
@@ -371,6 +377,8 @@ impl ::std::convert::From<&str> for ResourceType {
             "ipam" => ResourceType::Ipam,
             "ipam-external-resource-verification-token" => ResourceType::IpamExternalResourceVerificationToken,
             "ipam-pool" => ResourceType::IpamPool,
+            "ipam-prefix-list-resolver" => ResourceType::IpamPrefixListResolver,
+            "ipam-prefix-list-resolver-target" => ResourceType::IpamPrefixListResolverTarget,
             "ipam-resource-discovery" => ResourceType::IpamResourceDiscovery,
             "ipam-resource-discovery-association" => ResourceType::IpamResourceDiscoveryAssociation,
             "ipam-scope" => ResourceType::IpamScope,
@@ -484,6 +492,8 @@ impl ResourceType {
             ResourceType::Ipam => "ipam",
             ResourceType::IpamExternalResourceVerificationToken => "ipam-external-resource-verification-token",
             ResourceType::IpamPool => "ipam-pool",
+            ResourceType::IpamPrefixListResolver => "ipam-prefix-list-resolver",
+            ResourceType::IpamPrefixListResolverTarget => "ipam-prefix-list-resolver-target",
             ResourceType::IpamResourceDiscovery => "ipam-resource-discovery",
             ResourceType::IpamResourceDiscoveryAssociation => "ipam-resource-discovery-association",
             ResourceType::IpamScope => "ipam-scope",
@@ -588,6 +598,8 @@ impl ResourceType {
             "ipam",
             "ipam-external-resource-verification-token",
             "ipam-pool",
+            "ipam-prefix-list-resolver",
+            "ipam-prefix-list-resolver-target",
             "ipam-resource-discovery",
             "ipam-resource-discovery-association",
             "ipam-scope",
@@ -709,6 +721,8 @@ impl ::std::fmt::Display for ResourceType {
             ResourceType::Ipam => write!(f, "ipam"),
             ResourceType::IpamExternalResourceVerificationToken => write!(f, "ipam-external-resource-verification-token"),
             ResourceType::IpamPool => write!(f, "ipam-pool"),
+            ResourceType::IpamPrefixListResolver => write!(f, "ipam-prefix-list-resolver"),
+            ResourceType::IpamPrefixListResolverTarget => write!(f, "ipam-prefix-list-resolver-target"),
             ResourceType::IpamResourceDiscovery => write!(f, "ipam-resource-discovery"),
             ResourceType::IpamResourceDiscoveryAssociation => write!(f, "ipam-resource-discovery-association"),
             ResourceType::IpamScope => write!(f, "ipam-scope"),
@@ -779,7 +793,7 @@ impl ::std::fmt::Display for ResourceType {
             ResourceType::VpnConnection => write!(f, "vpn-connection"),
             ResourceType::VpnConnectionDeviceType => write!(f, "vpn-connection-device-type"),
             ResourceType::VpnGateway => write!(f, "vpn-gateway"),
-            ResourceType::Unknown(value) => write!(f, "{}", value),
+            ResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -120,7 +120,7 @@ impl ::std::fmt::Display for AnswerReason {
             AnswerReason::None => write!(f, "NONE"),
             AnswerReason::Other => write!(f, "OTHER"),
             AnswerReason::OutOfScope => write!(f, "OUT_OF_SCOPE"),
-            AnswerReason::Unknown(value) => write!(f, "{}", value),
+            AnswerReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

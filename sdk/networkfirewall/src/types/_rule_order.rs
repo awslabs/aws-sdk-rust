@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RuleOrder {
         match self {
             RuleOrder::DefaultActionOrder => write!(f, "DEFAULT_ACTION_ORDER"),
             RuleOrder::StrictOrder => write!(f, "STRICT_ORDER"),
-            RuleOrder::Unknown(value) => write!(f, "{}", value),
+            RuleOrder::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

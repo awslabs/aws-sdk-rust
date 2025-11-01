@@ -182,16 +182,14 @@ pub fn de_purchase_reserved_cache_nodes_offering(
     let start_el = decoder.start_el();
     if !(start_el.matches("PurchaseReservedCacheNodesOfferingResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected PurchaseReservedCacheNodesOfferingResponse got {:?}",
-            start_el
+            "invalid root, expected PurchaseReservedCacheNodesOfferingResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("PurchaseReservedCacheNodesOfferingResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected PurchaseReservedCacheNodesOfferingResult got {:?}",
-                start_el
+                "invalid result, expected PurchaseReservedCacheNodesOfferingResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

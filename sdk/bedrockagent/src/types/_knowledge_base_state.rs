@@ -102,7 +102,7 @@ impl ::std::fmt::Display for KnowledgeBaseState {
         match self {
             KnowledgeBaseState::Disabled => write!(f, "DISABLED"),
             KnowledgeBaseState::Enabled => write!(f, "ENABLED"),
-            KnowledgeBaseState::Unknown(value) => write!(f, "{}", value),
+            KnowledgeBaseState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

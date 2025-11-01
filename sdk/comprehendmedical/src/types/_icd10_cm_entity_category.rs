@@ -96,7 +96,7 @@ impl ::std::fmt::Display for Icd10CmEntityCategory {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             Icd10CmEntityCategory::MedicalCondition => write!(f, "MEDICAL_CONDITION"),
-            Icd10CmEntityCategory::Unknown(value) => write!(f, "{}", value),
+            Icd10CmEntityCategory::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

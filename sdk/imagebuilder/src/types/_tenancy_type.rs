@@ -108,7 +108,7 @@ impl ::std::fmt::Display for TenancyType {
             TenancyType::Dedicated => write!(f, "dedicated"),
             TenancyType::Default => write!(f, "default"),
             TenancyType::Host => write!(f, "host"),
-            TenancyType::Unknown(value) => write!(f, "{}", value),
+            TenancyType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

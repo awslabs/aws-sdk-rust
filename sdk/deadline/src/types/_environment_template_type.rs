@@ -102,7 +102,7 @@ impl ::std::fmt::Display for EnvironmentTemplateType {
         match self {
             EnvironmentTemplateType::Json => write!(f, "JSON"),
             EnvironmentTemplateType::Yaml => write!(f, "YAML"),
-            EnvironmentTemplateType::Unknown(value) => write!(f, "{}", value),
+            EnvironmentTemplateType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

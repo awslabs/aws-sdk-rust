@@ -108,7 +108,7 @@ impl ::std::fmt::Display for Telemetry {
             Telemetry::Errors => write!(f, "errors"),
             Telemetry::Http => write!(f, "http"),
             Telemetry::Performance => write!(f, "performance"),
-            Telemetry::Unknown(value) => write!(f, "{}", value),
+            Telemetry::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

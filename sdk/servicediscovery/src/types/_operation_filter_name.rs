@@ -120,7 +120,7 @@ impl ::std::fmt::Display for OperationFilterName {
             OperationFilterName::Status => write!(f, "STATUS"),
             OperationFilterName::Type => write!(f, "TYPE"),
             OperationFilterName::UpdateDate => write!(f, "UPDATE_DATE"),
-            OperationFilterName::Unknown(value) => write!(f, "{}", value),
+            OperationFilterName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

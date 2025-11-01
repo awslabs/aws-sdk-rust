@@ -120,7 +120,7 @@ impl ::std::fmt::Display for FieldLogLevel {
             FieldLogLevel::Error => write!(f, "ERROR"),
             FieldLogLevel::Info => write!(f, "INFO"),
             FieldLogLevel::None => write!(f, "NONE"),
-            FieldLogLevel::Unknown(value) => write!(f, "{}", value),
+            FieldLogLevel::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

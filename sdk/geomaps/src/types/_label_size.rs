@@ -102,7 +102,7 @@ impl ::std::fmt::Display for LabelSize {
         match self {
             LabelSize::Large => write!(f, "Large"),
             LabelSize::Small => write!(f, "Small"),
-            LabelSize::Unknown(value) => write!(f, "{}", value),
+            LabelSize::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

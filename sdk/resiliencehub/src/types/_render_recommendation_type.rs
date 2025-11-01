@@ -108,7 +108,7 @@ impl ::std::fmt::Display for RenderRecommendationType {
             RenderRecommendationType::Alarm => write!(f, "Alarm"),
             RenderRecommendationType::Sop => write!(f, "Sop"),
             RenderRecommendationType::Test => write!(f, "Test"),
-            RenderRecommendationType::Unknown(value) => write!(f, "{}", value),
+            RenderRecommendationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

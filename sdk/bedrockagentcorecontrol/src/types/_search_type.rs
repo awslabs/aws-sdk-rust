@@ -96,7 +96,7 @@ impl ::std::fmt::Display for SearchType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             SearchType::Semantic => write!(f, "SEMANTIC"),
-            SearchType::Unknown(value) => write!(f, "{}", value),
+            SearchType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

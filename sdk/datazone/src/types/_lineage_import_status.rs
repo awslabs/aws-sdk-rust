@@ -114,7 +114,7 @@ impl ::std::fmt::Display for LineageImportStatus {
             LineageImportStatus::InProgress => write!(f, "IN_PROGRESS"),
             LineageImportStatus::PartiallySucceeded => write!(f, "PARTIALLY_SUCCEEDED"),
             LineageImportStatus::Success => write!(f, "SUCCESS"),
-            LineageImportStatus::Unknown(value) => write!(f, "{}", value),
+            LineageImportStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

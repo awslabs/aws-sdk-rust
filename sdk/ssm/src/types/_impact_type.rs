@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ImpactType {
             ImpactType::Mutating => write!(f, "Mutating"),
             ImpactType::NonMutating => write!(f, "NonMutating"),
             ImpactType::Undetermined => write!(f, "Undetermined"),
-            ImpactType::Unknown(value) => write!(f, "{}", value),
+            ImpactType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

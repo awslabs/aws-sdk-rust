@@ -57,8 +57,8 @@ pub fn ser_audio_selector(
     if let Some(var_15) = &input.selector_type {
         object.key("selectorType").string(var_15.as_str());
     }
-    if let Some(var_16) = &input.tracks {
-        let mut array_17 = object.key("tracks").start_array();
+    if let Some(var_16) = &input.streams {
+        let mut array_17 = object.key("streams").start_array();
         for item_18 in var_16 {
             {
                 array_17.value().number(
@@ -68,6 +68,18 @@ pub fn ser_audio_selector(
             }
         }
         array_17.finish();
+    }
+    if let Some(var_19) = &input.tracks {
+        let mut array_20 = object.key("tracks").start_array();
+        for item_21 in var_19 {
+            {
+                array_20.value().number(
+                    #[allow(clippy::useless_conversion)]
+                    ::aws_smithy_types::Number::NegInt((*item_21).into()),
+                );
+            }
+        }
+        array_20.finish();
     }
     Ok(())
 }
@@ -156,6 +168,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "streams" => {
+                            builder = builder.set_streams(
+                                crate::protocol_serde::shape_list_of_integer_min1_max2147483647::de_list_of_integer_min1_max2147483647(tokens)?,
+                            );
+                        }
                         "tracks" => {
                             builder = builder.set_tracks(
                                 crate::protocol_serde::shape_list_of_integer_min1_max2147483647::de_list_of_integer_min1_max2147483647(tokens)?,
@@ -165,8 +182,7 @@ where
                     },
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                            "expected object key or end object, found: {:?}",
-                            other
+                            "expected object key or end object, found: {other:?}"
                         )))
                     }
                 }

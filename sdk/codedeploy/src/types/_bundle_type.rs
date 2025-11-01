@@ -120,7 +120,7 @@ impl ::std::fmt::Display for BundleType {
             BundleType::Tar => write!(f, "tar"),
             BundleType::TarGZip => write!(f, "tgz"),
             BundleType::Zip => write!(f, "zip"),
-            BundleType::Unknown(value) => write!(f, "{}", value),
+            BundleType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

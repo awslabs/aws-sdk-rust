@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DeploymentType {
         match self {
             DeploymentType::SingleAz => write!(f, "SINGLE_AZ"),
             DeploymentType::WithMultiazStandby => write!(f, "WITH_MULTIAZ_STANDBY"),
-            DeploymentType::Unknown(value) => write!(f, "{}", value),
+            DeploymentType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

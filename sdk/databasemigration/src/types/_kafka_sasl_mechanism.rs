@@ -102,7 +102,7 @@ impl ::std::fmt::Display for KafkaSaslMechanism {
         match self {
             KafkaSaslMechanism::Plain => write!(f, "plain"),
             KafkaSaslMechanism::ScramSha512 => write!(f, "scram-sha-512"),
-            KafkaSaslMechanism::Unknown(value) => write!(f, "{}", value),
+            KafkaSaslMechanism::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

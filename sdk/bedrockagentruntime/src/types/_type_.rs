@@ -126,7 +126,7 @@ impl ::std::fmt::Display for Type {
             Type::Finish => write!(f, "FINISH"),
             Type::KnowledgeBase => write!(f, "KNOWLEDGE_BASE"),
             Type::Reprompt => write!(f, "REPROMPT"),
-            Type::Unknown(value) => write!(f, "{}", value),
+            Type::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

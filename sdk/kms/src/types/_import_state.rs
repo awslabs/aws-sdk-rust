@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ImportState {
         match self {
             ImportState::Imported => write!(f, "IMPORTED"),
             ImportState::PendingImport => write!(f, "PENDING_IMPORT"),
-            ImportState::Unknown(value) => write!(f, "{}", value),
+            ImportState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

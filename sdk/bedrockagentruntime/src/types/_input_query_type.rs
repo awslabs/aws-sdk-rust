@@ -96,7 +96,7 @@ impl ::std::fmt::Display for InputQueryType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             InputQueryType::Text => write!(f, "TEXT"),
-            InputQueryType::Unknown(value) => write!(f, "{}", value),
+            InputQueryType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

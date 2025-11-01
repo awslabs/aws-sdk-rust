@@ -102,7 +102,7 @@ impl ::std::fmt::Display for HlsInitializationVectorInManifest {
         match self {
             HlsInitializationVectorInManifest::Exclude => write!(f, "EXCLUDE"),
             HlsInitializationVectorInManifest::Include => write!(f, "INCLUDE"),
-            HlsInitializationVectorInManifest::Unknown(value) => write!(f, "{}", value),
+            HlsInitializationVectorInManifest::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

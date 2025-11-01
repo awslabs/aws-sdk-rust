@@ -100,7 +100,7 @@ impl ::std::fmt::Display for GuardrailWordAction {
         match self {
             GuardrailWordAction::Block => write!(f, "BLOCK"),
             GuardrailWordAction::None => write!(f, "NONE"),
-            GuardrailWordAction::Unknown(value) => write!(f, "{}", value),
+            GuardrailWordAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

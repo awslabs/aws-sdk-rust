@@ -102,7 +102,7 @@ impl ::std::fmt::Display for HttpTokensState {
         match self {
             HttpTokensState::Optional => write!(f, "optional"),
             HttpTokensState::Required => write!(f, "required"),
-            HttpTokensState::Unknown(value) => write!(f, "{}", value),
+            HttpTokensState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

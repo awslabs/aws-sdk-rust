@@ -108,7 +108,7 @@ impl ::std::fmt::Display for VerifiedAccessEndpointProtocol {
             VerifiedAccessEndpointProtocol::Http => write!(f, "http"),
             VerifiedAccessEndpointProtocol::Https => write!(f, "https"),
             VerifiedAccessEndpointProtocol::Tcp => write!(f, "tcp"),
-            VerifiedAccessEndpointProtocol::Unknown(value) => write!(f, "{}", value),
+            VerifiedAccessEndpointProtocol::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

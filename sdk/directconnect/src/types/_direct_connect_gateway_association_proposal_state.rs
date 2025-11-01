@@ -110,7 +110,7 @@ impl ::std::fmt::Display for DirectConnectGatewayAssociationProposalState {
             DirectConnectGatewayAssociationProposalState::Accepted => write!(f, "accepted"),
             DirectConnectGatewayAssociationProposalState::Deleted => write!(f, "deleted"),
             DirectConnectGatewayAssociationProposalState::Requested => write!(f, "requested"),
-            DirectConnectGatewayAssociationProposalState::Unknown(value) => write!(f, "{}", value),
+            DirectConnectGatewayAssociationProposalState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

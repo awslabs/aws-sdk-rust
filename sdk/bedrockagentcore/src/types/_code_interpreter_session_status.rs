@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CodeInterpreterSessionStatus {
         match self {
             CodeInterpreterSessionStatus::Ready => write!(f, "READY"),
             CodeInterpreterSessionStatus::Terminated => write!(f, "TERMINATED"),
-            CodeInterpreterSessionStatus::Unknown(value) => write!(f, "{}", value),
+            CodeInterpreterSessionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -116,7 +116,7 @@ impl ::std::fmt::Display for TransitGatewayConnectPeerAssociationState {
             TransitGatewayConnectPeerAssociationState::Deleted => write!(f, "DELETED"),
             TransitGatewayConnectPeerAssociationState::Deleting => write!(f, "DELETING"),
             TransitGatewayConnectPeerAssociationState::Pending => write!(f, "PENDING"),
-            TransitGatewayConnectPeerAssociationState::Unknown(value) => write!(f, "{}", value),
+            TransitGatewayConnectPeerAssociationState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

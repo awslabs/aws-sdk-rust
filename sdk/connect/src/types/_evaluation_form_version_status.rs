@@ -102,7 +102,7 @@ impl ::std::fmt::Display for EvaluationFormVersionStatus {
         match self {
             EvaluationFormVersionStatus::Active => write!(f, "ACTIVE"),
             EvaluationFormVersionStatus::Draft => write!(f, "DRAFT"),
-            EvaluationFormVersionStatus::Unknown(value) => write!(f, "{}", value),
+            EvaluationFormVersionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

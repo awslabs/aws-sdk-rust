@@ -102,7 +102,7 @@ impl ::std::fmt::Display for JobFilterName {
         match self {
             JobFilterName::JobStatus => write!(f, "JobStatus"),
             JobFilterName::ResourceType => write!(f, "ResourceType"),
-            JobFilterName::Unknown(value) => write!(f, "{}", value),
+            JobFilterName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

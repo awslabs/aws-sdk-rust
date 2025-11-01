@@ -164,16 +164,14 @@ pub fn de_modify_cluster_subnet_group(
     let start_el = decoder.start_el();
     if !(start_el.matches("ModifyClusterSubnetGroupResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected ModifyClusterSubnetGroupResponse got {:?}",
-            start_el
+            "invalid root, expected ModifyClusterSubnetGroupResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("ModifyClusterSubnetGroupResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected ModifyClusterSubnetGroupResult got {:?}",
-                start_el
+                "invalid result, expected ModifyClusterSubnetGroupResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

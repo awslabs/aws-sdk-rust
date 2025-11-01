@@ -108,7 +108,7 @@ impl ::std::fmt::Display for EnablementStatus {
             EnablementStatus::Failed => write!(f, "FAILED"),
             EnablementStatus::Succeeded => write!(f, "SUCCEEDED"),
             EnablementStatus::UnderChange => write!(f, "UNDER_CHANGE"),
-            EnablementStatus::Unknown(value) => write!(f, "{}", value),
+            EnablementStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

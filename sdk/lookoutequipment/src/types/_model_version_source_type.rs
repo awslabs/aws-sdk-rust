@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ModelVersionSourceType {
             ModelVersionSourceType::Import => write!(f, "IMPORT"),
             ModelVersionSourceType::Retraining => write!(f, "RETRAINING"),
             ModelVersionSourceType::Training => write!(f, "TRAINING"),
-            ModelVersionSourceType::Unknown(value) => write!(f, "{}", value),
+            ModelVersionSourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

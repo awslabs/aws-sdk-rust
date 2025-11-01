@@ -102,7 +102,7 @@ impl ::std::fmt::Display for H264RepeatPps {
         match self {
             H264RepeatPps::Disabled => write!(f, "DISABLED"),
             H264RepeatPps::Enabled => write!(f, "ENABLED"),
-            H264RepeatPps::Unknown(value) => write!(f, "{}", value),
+            H264RepeatPps::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

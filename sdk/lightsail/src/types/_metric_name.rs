@@ -266,7 +266,7 @@ impl ::std::fmt::Display for MetricName {
             MetricName::StatusCheckFailedInstance => write!(f, "StatusCheckFailed_Instance"),
             MetricName::StatusCheckFailedSystem => write!(f, "StatusCheckFailed_System"),
             MetricName::UnhealthyHostCount => write!(f, "UnhealthyHostCount"),
-            MetricName::Unknown(value) => write!(f, "{}", value),
+            MetricName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

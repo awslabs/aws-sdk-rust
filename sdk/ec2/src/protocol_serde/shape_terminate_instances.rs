@@ -48,8 +48,7 @@ pub fn de_terminate_instances(
     let start_el = decoder.start_el();
     if !(start_el.matches("TerminateInstancesResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected TerminateInstancesResponse got {:?}",
-            start_el
+            "invalid root, expected TerminateInstancesResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

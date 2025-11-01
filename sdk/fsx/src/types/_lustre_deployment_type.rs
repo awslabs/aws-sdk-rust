@@ -114,7 +114,7 @@ impl ::std::fmt::Display for LustreDeploymentType {
             LustreDeploymentType::Persistent2 => write!(f, "PERSISTENT_2"),
             LustreDeploymentType::Scratch1 => write!(f, "SCRATCH_1"),
             LustreDeploymentType::Scratch2 => write!(f, "SCRATCH_2"),
-            LustreDeploymentType::Unknown(value) => write!(f, "{}", value),
+            LustreDeploymentType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

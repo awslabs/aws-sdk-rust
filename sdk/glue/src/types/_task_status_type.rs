@@ -132,7 +132,7 @@ impl ::std::fmt::Display for TaskStatusType {
             TaskStatusType::Stopping => write!(f, "STOPPING"),
             TaskStatusType::Succeeded => write!(f, "SUCCEEDED"),
             TaskStatusType::Timeout => write!(f, "TIMEOUT"),
-            TaskStatusType::Unknown(value) => write!(f, "{}", value),
+            TaskStatusType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

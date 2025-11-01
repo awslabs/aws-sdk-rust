@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ConfigurationSource {
         match self {
             ConfigurationSource::Catalog => write!(f, "catalog"),
             ConfigurationSource::Table => write!(f, "table"),
-            ConfigurationSource::Unknown(value) => write!(f, "{}", value),
+            ConfigurationSource::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

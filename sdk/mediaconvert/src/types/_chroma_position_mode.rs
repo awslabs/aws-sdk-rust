@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ChromaPositionMode {
             ChromaPositionMode::Auto => write!(f, "AUTO"),
             ChromaPositionMode::ForceCenter => write!(f, "FORCE_CENTER"),
             ChromaPositionMode::ForceTopLeft => write!(f, "FORCE_TOP_LEFT"),
-            ChromaPositionMode::Unknown(value) => write!(f, "{}", value),
+            ChromaPositionMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

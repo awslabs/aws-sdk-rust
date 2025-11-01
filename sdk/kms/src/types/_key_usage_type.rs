@@ -114,7 +114,7 @@ impl ::std::fmt::Display for KeyUsageType {
             KeyUsageType::GenerateVerifyMac => write!(f, "GENERATE_VERIFY_MAC"),
             KeyUsageType::KeyAgreement => write!(f, "KEY_AGREEMENT"),
             KeyUsageType::SignVerify => write!(f, "SIGN_VERIFY"),
-            KeyUsageType::Unknown(value) => write!(f, "{}", value),
+            KeyUsageType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

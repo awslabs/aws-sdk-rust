@@ -17,8 +17,7 @@ pub fn de_storage_lens_group(inp: &[u8]) -> std::result::Result<crate::types::St
     let start_el = decoder.start_el();
     if !(start_el.matches("StorageLensGroup")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected StorageLensGroup got {:?}",
-            start_el
+            "invalid root, expected StorageLensGroup got {start_el:?}"
         )));
     }
     crate::protocol_serde::shape_storage_lens_group::de_storage_lens_group(&mut decoder)

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AnalyticsFilterOperator {
             AnalyticsFilterOperator::Equals => write!(f, "EQ"),
             AnalyticsFilterOperator::GreaterThan => write!(f, "GT"),
             AnalyticsFilterOperator::LessThan => write!(f, "LT"),
-            AnalyticsFilterOperator::Unknown(value) => write!(f, "{}", value),
+            AnalyticsFilterOperator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

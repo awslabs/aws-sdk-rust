@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SnapshotFilterName {
         match self {
             SnapshotFilterName::FileSystemId => write!(f, "file-system-id"),
             SnapshotFilterName::VolumeId => write!(f, "volume-id"),
-            SnapshotFilterName::Unknown(value) => write!(f, "{}", value),
+            SnapshotFilterName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

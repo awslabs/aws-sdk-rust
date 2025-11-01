@@ -96,7 +96,7 @@ impl ::std::fmt::Display for NotificationDestinationType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             NotificationDestinationType::Sns => write!(f, "SNS"),
-            NotificationDestinationType::Unknown(value) => write!(f, "{}", value),
+            NotificationDestinationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

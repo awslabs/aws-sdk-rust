@@ -108,7 +108,7 @@ impl ::std::fmt::Display for VirtualGatewayPortProtocol {
             VirtualGatewayPortProtocol::Grpc => write!(f, "grpc"),
             VirtualGatewayPortProtocol::Http => write!(f, "http"),
             VirtualGatewayPortProtocol::Http2 => write!(f, "http2"),
-            VirtualGatewayPortProtocol::Unknown(value) => write!(f, "{}", value),
+            VirtualGatewayPortProtocol::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

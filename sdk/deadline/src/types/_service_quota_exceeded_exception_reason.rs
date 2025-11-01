@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ServiceQuotaExceededExceptionReason {
             ServiceQuotaExceededExceptionReason::DependencyLimitExceeded => write!(f, "DEPENDENCY_LIMIT_EXCEEDED"),
             ServiceQuotaExceededExceptionReason::KmsKeyLimitExceeded => write!(f, "KMS_KEY_LIMIT_EXCEEDED"),
             ServiceQuotaExceededExceptionReason::ServiceQuotaExceededException => write!(f, "SERVICE_QUOTA_EXCEEDED_EXCEPTION"),
-            ServiceQuotaExceededExceptionReason::Unknown(value) => write!(f, "{}", value),
+            ServiceQuotaExceededExceptionReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

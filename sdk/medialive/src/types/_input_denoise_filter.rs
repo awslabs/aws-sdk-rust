@@ -102,7 +102,7 @@ impl ::std::fmt::Display for InputDenoiseFilter {
         match self {
             InputDenoiseFilter::Disabled => write!(f, "DISABLED"),
             InputDenoiseFilter::Enabled => write!(f, "ENABLED"),
-            InputDenoiseFilter::Unknown(value) => write!(f, "{}", value),
+            InputDenoiseFilter::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ApplicationLayerAutomaticResponseStatus {
         match self {
             ApplicationLayerAutomaticResponseStatus::Disabled => write!(f, "DISABLED"),
             ApplicationLayerAutomaticResponseStatus::Enabled => write!(f, "ENABLED"),
-            ApplicationLayerAutomaticResponseStatus::Unknown(value) => write!(f, "{}", value),
+            ApplicationLayerAutomaticResponseStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

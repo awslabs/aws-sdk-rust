@@ -96,7 +96,7 @@ impl ::std::fmt::Display for IncrementalRunType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             IncrementalRunType::Immediate => write!(f, "IMMEDIATE"),
-            IncrementalRunType::Unknown(value) => write!(f, "{}", value),
+            IncrementalRunType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

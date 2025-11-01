@@ -154,7 +154,7 @@ impl ::std::fmt::Display for Tcs {
             Tcs::Sdr => write!(f, "SDR"),
             Tcs::St20651 => write!(f, "ST2065-1"),
             Tcs::St4281 => write!(f, "ST428-1"),
-            Tcs::Unknown(value) => write!(f, "{}", value),
+            Tcs::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

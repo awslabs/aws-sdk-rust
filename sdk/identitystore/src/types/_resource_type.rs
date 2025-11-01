@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ResourceType {
             ResourceType::GroupMembership => write!(f, "GROUP_MEMBERSHIP"),
             ResourceType::IdentityStore => write!(f, "IDENTITY_STORE"),
             ResourceType::User => write!(f, "USER"),
-            ResourceType::Unknown(value) => write!(f, "{}", value),
+            ResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

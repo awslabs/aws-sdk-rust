@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FilterableMemberStatus {
         match self {
             FilterableMemberStatus::Active => write!(f, "ACTIVE"),
             FilterableMemberStatus::Invited => write!(f, "INVITED"),
-            FilterableMemberStatus::Unknown(value) => write!(f, "{}", value),
+            FilterableMemberStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

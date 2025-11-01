@@ -329,7 +329,7 @@ impl ::std::fmt::Display for OptimizationJobDeploymentInstanceType {
             OptimizationJobDeploymentInstanceType::MlTrn12Xlarge => write!(f, "ml.trn1.2xlarge"),
             OptimizationJobDeploymentInstanceType::MlTrn132Xlarge => write!(f, "ml.trn1.32xlarge"),
             OptimizationJobDeploymentInstanceType::MlTrn1N32Xlarge => write!(f, "ml.trn1n.32xlarge"),
-            OptimizationJobDeploymentInstanceType::Unknown(value) => write!(f, "{}", value),
+            OptimizationJobDeploymentInstanceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

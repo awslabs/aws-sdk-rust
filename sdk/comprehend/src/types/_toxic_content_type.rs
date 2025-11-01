@@ -140,7 +140,7 @@ impl ::std::fmt::Display for ToxicContentType {
             ToxicContentType::Profanity => write!(f, "PROFANITY"),
             ToxicContentType::Sexual => write!(f, "SEXUAL"),
             ToxicContentType::ViolenceOrThreat => write!(f, "VIOLENCE_OR_THREAT"),
-            ToxicContentType::Unknown(value) => write!(f, "{}", value),
+            ToxicContentType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

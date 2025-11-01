@@ -280,7 +280,7 @@ impl ::std::fmt::Display for JobLogEvent {
             JobLogEvent::UpdateNetworkConfigurationStart => write!(f, "UPDATE_NETWORK_CONFIGURATION_START"),
             JobLogEvent::UsingPreviousSnapshot => write!(f, "USING_PREVIOUS_SNAPSHOT"),
             JobLogEvent::UsingPreviousSnapshotFailed => write!(f, "USING_PREVIOUS_SNAPSHOT_FAILED"),
-            JobLogEvent::Unknown(value) => write!(f, "{}", value),
+            JobLogEvent::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -51,8 +51,7 @@ pub fn de_describe_traffic_mirror_filter_rules(
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeTrafficMirrorFilterRulesResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected DescribeTrafficMirrorFilterRulesResponse got {:?}",
-            start_el
+            "invalid root, expected DescribeTrafficMirrorFilterRulesResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

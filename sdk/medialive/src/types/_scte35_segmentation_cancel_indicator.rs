@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Scte35SegmentationCancelIndicator {
         match self {
             Scte35SegmentationCancelIndicator::SegmentationEventCanceled => write!(f, "SEGMENTATION_EVENT_CANCELED"),
             Scte35SegmentationCancelIndicator::SegmentationEventNotCanceled => write!(f, "SEGMENTATION_EVENT_NOT_CANCELED"),
-            Scte35SegmentationCancelIndicator::Unknown(value) => write!(f, "{}", value),
+            Scte35SegmentationCancelIndicator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

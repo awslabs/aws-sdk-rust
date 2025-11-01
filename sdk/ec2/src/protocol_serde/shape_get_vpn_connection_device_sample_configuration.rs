@@ -54,8 +54,7 @@ pub fn de_get_vpn_connection_device_sample_configuration(
     let start_el = decoder.start_el();
     if !(start_el.matches("GetVpnConnectionDeviceSampleConfigurationResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected GetVpnConnectionDeviceSampleConfigurationResponse got {:?}",
-            start_el
+            "invalid root, expected GetVpnConnectionDeviceSampleConfigurationResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

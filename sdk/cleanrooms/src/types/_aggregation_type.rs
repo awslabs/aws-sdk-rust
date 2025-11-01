@@ -96,7 +96,7 @@ impl ::std::fmt::Display for AggregationType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             AggregationType::CountDistinct => write!(f, "COUNT_DISTINCT"),
-            AggregationType::Unknown(value) => write!(f, "{}", value),
+            AggregationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

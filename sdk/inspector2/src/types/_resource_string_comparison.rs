@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ResourceStringComparison {
         match self {
             ResourceStringComparison::Equals => write!(f, "EQUALS"),
             ResourceStringComparison::NotEquals => write!(f, "NOT_EQUALS"),
-            ResourceStringComparison::Unknown(value) => write!(f, "{}", value),
+            ResourceStringComparison::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

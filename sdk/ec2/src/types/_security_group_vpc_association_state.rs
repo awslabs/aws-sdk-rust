@@ -133,7 +133,7 @@ impl ::std::fmt::Display for SecurityGroupVpcAssociationState {
             SecurityGroupVpcAssociationState::Disassociated => write!(f, "disassociated"),
             SecurityGroupVpcAssociationState::Disassociating => write!(f, "disassociating"),
             SecurityGroupVpcAssociationState::DisassociationFailed => write!(f, "disassociation-failed"),
-            SecurityGroupVpcAssociationState::Unknown(value) => write!(f, "{}", value),
+            SecurityGroupVpcAssociationState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

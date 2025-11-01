@@ -102,7 +102,7 @@ impl ::std::fmt::Display for OutputType {
         match self {
             OutputType::Json => write!(f, "JSON"),
             OutputType::Sdl => write!(f, "SDL"),
-            OutputType::Unknown(value) => write!(f, "{}", value),
+            OutputType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

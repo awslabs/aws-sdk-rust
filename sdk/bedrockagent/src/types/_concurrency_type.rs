@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ConcurrencyType {
         match self {
             ConcurrencyType::Automatic => write!(f, "Automatic"),
             ConcurrencyType::Manual => write!(f, "Manual"),
-            ConcurrencyType::Unknown(value) => write!(f, "{}", value),
+            ConcurrencyType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

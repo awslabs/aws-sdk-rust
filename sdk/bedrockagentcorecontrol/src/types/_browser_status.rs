@@ -126,7 +126,7 @@ impl ::std::fmt::Display for BrowserStatus {
             BrowserStatus::DeleteFailed => write!(f, "DELETE_FAILED"),
             BrowserStatus::Deleting => write!(f, "DELETING"),
             BrowserStatus::Ready => write!(f, "READY"),
-            BrowserStatus::Unknown(value) => write!(f, "{}", value),
+            BrowserStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

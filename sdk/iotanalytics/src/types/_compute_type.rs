@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ComputeType {
         match self {
             ComputeType::Acu1 => write!(f, "ACU_1"),
             ComputeType::Acu2 => write!(f, "ACU_2"),
-            ComputeType::Unknown(value) => write!(f, "{}", value),
+            ComputeType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

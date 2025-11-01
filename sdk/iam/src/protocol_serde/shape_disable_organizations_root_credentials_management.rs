@@ -135,16 +135,14 @@ pub fn de_disable_organizations_root_credentials_management(
     let start_el = decoder.start_el();
     if !(start_el.matches("DisableOrganizationsRootCredentialsManagementResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected DisableOrganizationsRootCredentialsManagementResponse got {:?}",
-            start_el
+            "invalid root, expected DisableOrganizationsRootCredentialsManagementResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("DisableOrganizationsRootCredentialsManagementResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected DisableOrganizationsRootCredentialsManagementResult got {:?}",
-                start_el
+                "invalid result, expected DisableOrganizationsRootCredentialsManagementResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

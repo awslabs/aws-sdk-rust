@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ModelInputDataFormat {
         match self {
             ModelInputDataFormat::Json => write!(f, "APPLICATION_JSON"),
             ModelInputDataFormat::Csv => write!(f, "TEXT_CSV"),
-            ModelInputDataFormat::Unknown(value) => write!(f, "{}", value),
+            ModelInputDataFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

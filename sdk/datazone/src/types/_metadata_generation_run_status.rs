@@ -120,7 +120,7 @@ impl ::std::fmt::Display for MetadataGenerationRunStatus {
             MetadataGenerationRunStatus::InProgress => write!(f, "IN_PROGRESS"),
             MetadataGenerationRunStatus::Submitted => write!(f, "SUBMITTED"),
             MetadataGenerationRunStatus::Succeeded => write!(f, "SUCCEEDED"),
-            MetadataGenerationRunStatus::Unknown(value) => write!(f, "{}", value),
+            MetadataGenerationRunStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

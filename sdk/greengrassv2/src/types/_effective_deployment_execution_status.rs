@@ -147,7 +147,7 @@ impl ::std::fmt::Display for EffectiveDeploymentExecutionStatus {
             EffectiveDeploymentExecutionStatus::Rejected => write!(f, "REJECTED"),
             EffectiveDeploymentExecutionStatus::Succeeded => write!(f, "SUCCEEDED"),
             EffectiveDeploymentExecutionStatus::TimedOut => write!(f, "TIMED_OUT"),
-            EffectiveDeploymentExecutionStatus::Unknown(value) => write!(f, "{}", value),
+            EffectiveDeploymentExecutionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

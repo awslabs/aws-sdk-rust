@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SharedAudienceMetrics {
         match self {
             SharedAudienceMetrics::All => write!(f, "ALL"),
             SharedAudienceMetrics::None => write!(f, "NONE"),
-            SharedAudienceMetrics::Unknown(value) => write!(f, "{}", value),
+            SharedAudienceMetrics::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

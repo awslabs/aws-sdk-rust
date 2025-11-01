@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RecommendationImpact {
         match self {
             RecommendationImpact::High => write!(f, "HIGH"),
             RecommendationImpact::Low => write!(f, "LOW"),
-            RecommendationImpact::Unknown(value) => write!(f, "{}", value),
+            RecommendationImpact::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

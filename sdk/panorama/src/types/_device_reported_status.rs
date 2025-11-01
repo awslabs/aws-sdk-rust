@@ -168,7 +168,7 @@ impl ::std::fmt::Display for DeviceReportedStatus {
             DeviceReportedStatus::Stopped => write!(f, "STOPPED"),
             DeviceReportedStatus::Stopping => write!(f, "STOPPING"),
             DeviceReportedStatus::StopError => write!(f, "STOP_ERROR"),
-            DeviceReportedStatus::Unknown(value) => write!(f, "{}", value),
+            DeviceReportedStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

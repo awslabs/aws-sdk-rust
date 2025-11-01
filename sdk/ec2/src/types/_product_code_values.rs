@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ProductCodeValues {
         match self {
             ProductCodeValues::Devpay => write!(f, "devpay"),
             ProductCodeValues::Marketplace => write!(f, "marketplace"),
-            ProductCodeValues::Unknown(value) => write!(f, "{}", value),
+            ProductCodeValues::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

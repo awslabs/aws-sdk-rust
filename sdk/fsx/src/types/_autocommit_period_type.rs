@@ -126,7 +126,7 @@ impl ::std::fmt::Display for AutocommitPeriodType {
             AutocommitPeriodType::Months => write!(f, "MONTHS"),
             AutocommitPeriodType::None => write!(f, "NONE"),
             AutocommitPeriodType::Years => write!(f, "YEARS"),
-            AutocommitPeriodType::Unknown(value) => write!(f, "{}", value),
+            AutocommitPeriodType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

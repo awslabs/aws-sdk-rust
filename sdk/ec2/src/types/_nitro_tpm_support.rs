@@ -102,7 +102,7 @@ impl ::std::fmt::Display for NitroTpmSupport {
         match self {
             NitroTpmSupport::Supported => write!(f, "supported"),
             NitroTpmSupport::Unsupported => write!(f, "unsupported"),
-            NitroTpmSupport::Unknown(value) => write!(f, "{}", value),
+            NitroTpmSupport::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

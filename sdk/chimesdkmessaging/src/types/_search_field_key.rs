@@ -96,7 +96,7 @@ impl ::std::fmt::Display for SearchFieldKey {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             SearchFieldKey::Members => write!(f, "MEMBERS"),
-            SearchFieldKey::Unknown(value) => write!(f, "{}", value),
+            SearchFieldKey::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

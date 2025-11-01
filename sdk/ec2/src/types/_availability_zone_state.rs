@@ -120,7 +120,7 @@ impl ::std::fmt::Display for AvailabilityZoneState {
             AvailabilityZoneState::Impaired => write!(f, "impaired"),
             AvailabilityZoneState::Information => write!(f, "information"),
             AvailabilityZoneState::Unavailable => write!(f, "unavailable"),
-            AvailabilityZoneState::Unknown(value) => write!(f, "{}", value),
+            AvailabilityZoneState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

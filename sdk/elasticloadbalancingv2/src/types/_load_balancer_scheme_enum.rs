@@ -102,7 +102,7 @@ impl ::std::fmt::Display for LoadBalancerSchemeEnum {
         match self {
             LoadBalancerSchemeEnum::Internal => write!(f, "internal"),
             LoadBalancerSchemeEnum::InternetFacing => write!(f, "internet-facing"),
-            LoadBalancerSchemeEnum::Unknown(value) => write!(f, "{}", value),
+            LoadBalancerSchemeEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -110,7 +110,7 @@ impl ::std::fmt::Display for TestGridSessionArtifactType {
             TestGridSessionArtifactType::SeleniumLog => write!(f, "SELENIUM_LOG"),
             TestGridSessionArtifactType::UnknownValue => write!(f, "UNKNOWN"),
             TestGridSessionArtifactType::Video => write!(f, "VIDEO"),
-            TestGridSessionArtifactType::Unknown(value) => write!(f, "{}", value),
+            TestGridSessionArtifactType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

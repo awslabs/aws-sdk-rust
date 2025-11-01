@@ -156,7 +156,7 @@ impl ::std::fmt::Display for SnowballCapacity {
             SnowballCapacity::T8 => write!(f, "T8"),
             SnowballCapacity::T80 => write!(f, "T80"),
             SnowballCapacity::T98 => write!(f, "T98"),
-            SnowballCapacity::Unknown(value) => write!(f, "{}", value),
+            SnowballCapacity::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

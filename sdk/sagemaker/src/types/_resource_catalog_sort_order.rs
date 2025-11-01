@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ResourceCatalogSortOrder {
         match self {
             ResourceCatalogSortOrder::Ascending => write!(f, "Ascending"),
             ResourceCatalogSortOrder::Descending => write!(f, "Descending"),
-            ResourceCatalogSortOrder::Unknown(value) => write!(f, "{}", value),
+            ResourceCatalogSortOrder::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

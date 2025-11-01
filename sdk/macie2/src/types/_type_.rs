@@ -114,7 +114,7 @@ impl ::std::fmt::Display for Type {
             Type::None => write!(f, "NONE"),
             Type::AwsKms => write!(f, "aws:kms"),
             Type::AwsKmsDsse => write!(f, "aws:kms:dsse"),
-            Type::Unknown(value) => write!(f, "{}", value),
+            Type::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

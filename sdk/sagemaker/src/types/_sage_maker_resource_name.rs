@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SageMakerResourceName {
         match self {
             SageMakerResourceName::HyperpodCluster => write!(f, "hyperpod-cluster"),
             SageMakerResourceName::TrainingJob => write!(f, "training-job"),
-            SageMakerResourceName::Unknown(value) => write!(f, "{}", value),
+            SageMakerResourceName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CmafIngestSegmentLengthUnits {
         match self {
             CmafIngestSegmentLengthUnits::Milliseconds => write!(f, "MILLISECONDS"),
             CmafIngestSegmentLengthUnits::Seconds => write!(f, "SECONDS"),
-            CmafIngestSegmentLengthUnits::Unknown(value) => write!(f, "{}", value),
+            CmafIngestSegmentLengthUnits::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

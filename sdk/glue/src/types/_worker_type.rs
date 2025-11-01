@@ -132,7 +132,7 @@ impl ::std::fmt::Display for WorkerType {
             WorkerType::G8X => write!(f, "G.8X"),
             WorkerType::Standard => write!(f, "Standard"),
             WorkerType::Z2X => write!(f, "Z.2X"),
-            WorkerType::Unknown(value) => write!(f, "{}", value),
+            WorkerType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for KxDeploymentStrategy {
         match self {
             KxDeploymentStrategy::NoRestart => write!(f, "NO_RESTART"),
             KxDeploymentStrategy::Rolling => write!(f, "ROLLING"),
-            KxDeploymentStrategy::Unknown(value) => write!(f, "{}", value),
+            KxDeploymentStrategy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

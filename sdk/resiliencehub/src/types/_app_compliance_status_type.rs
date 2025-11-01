@@ -133,7 +133,7 @@ impl ::std::fmt::Display for AppComplianceStatusType {
             AppComplianceStatusType::NotAssessed => write!(f, "NotAssessed"),
             AppComplianceStatusType::PolicyBreached => write!(f, "PolicyBreached"),
             AppComplianceStatusType::PolicyMet => write!(f, "PolicyMet"),
-            AppComplianceStatusType::Unknown(value) => write!(f, "{}", value),
+            AppComplianceStatusType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

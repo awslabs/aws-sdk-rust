@@ -108,7 +108,7 @@ impl ::std::fmt::Display for InstanceLifecycleType {
             InstanceLifecycleType::CapacityBlock => write!(f, "capacity-block"),
             InstanceLifecycleType::Scheduled => write!(f, "scheduled"),
             InstanceLifecycleType::Spot => write!(f, "spot"),
-            InstanceLifecycleType::Unknown(value) => write!(f, "{}", value),
+            InstanceLifecycleType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

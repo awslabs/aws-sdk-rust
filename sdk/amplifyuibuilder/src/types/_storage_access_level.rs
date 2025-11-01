@@ -108,7 +108,7 @@ impl ::std::fmt::Display for StorageAccessLevel {
             StorageAccessLevel::Private => write!(f, "private"),
             StorageAccessLevel::Protected => write!(f, "protected"),
             StorageAccessLevel::Public => write!(f, "public"),
-            StorageAccessLevel::Unknown(value) => write!(f, "{}", value),
+            StorageAccessLevel::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

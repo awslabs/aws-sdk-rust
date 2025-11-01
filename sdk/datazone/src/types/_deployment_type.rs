@@ -108,7 +108,7 @@ impl ::std::fmt::Display for DeploymentType {
             DeploymentType::Create => write!(f, "CREATE"),
             DeploymentType::Delete => write!(f, "DELETE"),
             DeploymentType::Update => write!(f, "UPDATE"),
-            DeploymentType::Unknown(value) => write!(f, "{}", value),
+            DeploymentType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

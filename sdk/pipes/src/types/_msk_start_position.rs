@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MskStartPosition {
         match self {
             MskStartPosition::Latest => write!(f, "LATEST"),
             MskStartPosition::TrimHorizon => write!(f, "TRIM_HORIZON"),
-            MskStartPosition::Unknown(value) => write!(f, "{}", value),
+            MskStartPosition::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

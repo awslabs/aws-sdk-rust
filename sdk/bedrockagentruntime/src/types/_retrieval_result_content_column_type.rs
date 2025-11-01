@@ -126,7 +126,7 @@ impl ::std::fmt::Display for RetrievalResultContentColumnType {
             RetrievalResultContentColumnType::Long => write!(f, "LONG"),
             RetrievalResultContentColumnType::Null => write!(f, "NULL"),
             RetrievalResultContentColumnType::String => write!(f, "STRING"),
-            RetrievalResultContentColumnType::Unknown(value) => write!(f, "{}", value),
+            RetrievalResultContentColumnType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

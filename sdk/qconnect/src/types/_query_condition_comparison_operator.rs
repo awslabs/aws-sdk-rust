@@ -96,7 +96,7 @@ impl ::std::fmt::Display for QueryConditionComparisonOperator {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             QueryConditionComparisonOperator::Equals => write!(f, "EQUALS"),
-            QueryConditionComparisonOperator::Unknown(value) => write!(f, "{}", value),
+            QueryConditionComparisonOperator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ImscAccessibilitySubs {
         match self {
             ImscAccessibilitySubs::Disabled => write!(f, "DISABLED"),
             ImscAccessibilitySubs::Enabled => write!(f, "ENABLED"),
-            ImscAccessibilitySubs::Unknown(value) => write!(f, "{}", value),
+            ImscAccessibilitySubs::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

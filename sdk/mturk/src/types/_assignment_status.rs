@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AssignmentStatus {
             AssignmentStatus::Approved => write!(f, "Approved"),
             AssignmentStatus::Rejected => write!(f, "Rejected"),
             AssignmentStatus::Submitted => write!(f, "Submitted"),
-            AssignmentStatus::Unknown(value) => write!(f, "{}", value),
+            AssignmentStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

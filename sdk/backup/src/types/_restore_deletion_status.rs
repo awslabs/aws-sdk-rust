@@ -108,7 +108,7 @@ impl ::std::fmt::Display for RestoreDeletionStatus {
             RestoreDeletionStatus::Deleting => write!(f, "DELETING"),
             RestoreDeletionStatus::Failed => write!(f, "FAILED"),
             RestoreDeletionStatus::Successful => write!(f, "SUCCESSFUL"),
-            RestoreDeletionStatus::Unknown(value) => write!(f, "{}", value),
+            RestoreDeletionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for BlueprintStatus {
             BlueprintStatus::Creating => write!(f, "CREATING"),
             BlueprintStatus::Failed => write!(f, "FAILED"),
             BlueprintStatus::Updating => write!(f, "UPDATING"),
-            BlueprintStatus::Unknown(value) => write!(f, "{}", value),
+            BlueprintStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

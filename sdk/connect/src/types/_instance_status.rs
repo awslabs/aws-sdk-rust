@@ -108,7 +108,7 @@ impl ::std::fmt::Display for InstanceStatus {
             InstanceStatus::Active => write!(f, "ACTIVE"),
             InstanceStatus::CreationFailed => write!(f, "CREATION_FAILED"),
             InstanceStatus::CreationInProgress => write!(f, "CREATION_IN_PROGRESS"),
-            InstanceStatus::Unknown(value) => write!(f, "{}", value),
+            InstanceStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

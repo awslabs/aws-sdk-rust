@@ -126,7 +126,7 @@ impl ::std::fmt::Display for Av1AdaptiveQuantization {
             Av1AdaptiveQuantization::Max => write!(f, "MAX"),
             Av1AdaptiveQuantization::Medium => write!(f, "MEDIUM"),
             Av1AdaptiveQuantization::Off => write!(f, "OFF"),
-            Av1AdaptiveQuantization::Unknown(value) => write!(f, "{}", value),
+            Av1AdaptiveQuantization::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

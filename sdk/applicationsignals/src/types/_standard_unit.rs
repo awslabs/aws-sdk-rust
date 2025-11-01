@@ -280,7 +280,7 @@ impl ::std::fmt::Display for StandardUnit {
             StandardUnit::TerabitsSecond => write!(f, "Terabits/Second"),
             StandardUnit::Terabytes => write!(f, "Terabytes"),
             StandardUnit::TerabytesSecond => write!(f, "Terabytes/Second"),
-            StandardUnit::Unknown(value) => write!(f, "{}", value),
+            StandardUnit::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

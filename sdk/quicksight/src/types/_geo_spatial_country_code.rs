@@ -96,7 +96,7 @@ impl ::std::fmt::Display for GeoSpatialCountryCode {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             GeoSpatialCountryCode::Us => write!(f, "US"),
-            GeoSpatialCountryCode::Unknown(value) => write!(f, "{}", value),
+            GeoSpatialCountryCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for TsPtsOffset {
             TsPtsOffset::Auto => write!(f, "AUTO"),
             TsPtsOffset::Milliseconds => write!(f, "MILLISECONDS"),
             TsPtsOffset::Seconds => write!(f, "SECONDS"),
-            TsPtsOffset::Unknown(value) => write!(f, "{}", value),
+            TsPtsOffset::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

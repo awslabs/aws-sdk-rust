@@ -102,7 +102,7 @@ impl ::std::fmt::Display for QuestionPriority {
         match self {
             QuestionPriority::None => write!(f, "NONE"),
             QuestionPriority::Prioritized => write!(f, "PRIORITIZED"),
-            QuestionPriority::Unknown(value) => write!(f, "{}", value),
+            QuestionPriority::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

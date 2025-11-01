@@ -96,7 +96,7 @@ impl ::std::fmt::Display for NumericFilterSelectAllOptions {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             NumericFilterSelectAllOptions::FilterAllValues => write!(f, "FILTER_ALL_VALUES"),
-            NumericFilterSelectAllOptions::Unknown(value) => write!(f, "{}", value),
+            NumericFilterSelectAllOptions::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

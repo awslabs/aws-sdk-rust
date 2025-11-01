@@ -182,7 +182,7 @@ impl ::std::fmt::Display for OpticalStandard {
             OpticalStandard::Optic40GbaseIr4Lr4L => write!(f, "OPTIC_40GBASE_IR4_LR4L"),
             OpticalStandard::Optic40GbaseLr4 => write!(f, "OPTIC_40GBASE_LR4"),
             OpticalStandard::Optic40GbaseSr => write!(f, "OPTIC_40GBASE_SR"),
-            OpticalStandard::Unknown(value) => write!(f, "{}", value),
+            OpticalStandard::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

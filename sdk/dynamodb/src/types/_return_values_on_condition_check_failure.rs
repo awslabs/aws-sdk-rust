@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ReturnValuesOnConditionCheckFailure {
         match self {
             ReturnValuesOnConditionCheckFailure::AllOld => write!(f, "ALL_OLD"),
             ReturnValuesOnConditionCheckFailure::None => write!(f, "NONE"),
-            ReturnValuesOnConditionCheckFailure::Unknown(value) => write!(f, "{}", value),
+            ReturnValuesOnConditionCheckFailure::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for BlockType {
         match self {
             BlockType::Line => write!(f, "LINE"),
             BlockType::Word => write!(f, "WORD"),
-            BlockType::Unknown(value) => write!(f, "{}", value),
+            BlockType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

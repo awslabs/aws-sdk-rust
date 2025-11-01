@@ -119,7 +119,7 @@ impl ::std::fmt::Display for InvalidRequestExceptionReason {
             InvalidRequestExceptionReason::KmsInvalidKeyUsage => write!(f, "KMS_InvalidKeyUsageException"),
             InvalidRequestExceptionReason::KmsInvalidState => write!(f, "KMS_InvalidStateException"),
             InvalidRequestExceptionReason::KmsKeyNotFound => write!(f, "KMS_NotFoundException"),
-            InvalidRequestExceptionReason::Unknown(value) => write!(f, "{}", value),
+            InvalidRequestExceptionReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

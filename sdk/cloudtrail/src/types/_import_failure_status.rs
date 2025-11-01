@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ImportFailureStatus {
             ImportFailureStatus::Failed => write!(f, "FAILED"),
             ImportFailureStatus::Retry => write!(f, "RETRY"),
             ImportFailureStatus::Succeeded => write!(f, "SUCCEEDED"),
-            ImportFailureStatus::Unknown(value) => write!(f, "{}", value),
+            ImportFailureStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

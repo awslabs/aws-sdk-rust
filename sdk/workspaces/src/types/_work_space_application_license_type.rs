@@ -102,7 +102,7 @@ impl ::std::fmt::Display for WorkSpaceApplicationLicenseType {
         match self {
             WorkSpaceApplicationLicenseType::Licensed => write!(f, "LICENSED"),
             WorkSpaceApplicationLicenseType::Unlicensed => write!(f, "UNLICENSED"),
-            WorkSpaceApplicationLicenseType::Unknown(value) => write!(f, "{}", value),
+            WorkSpaceApplicationLicenseType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

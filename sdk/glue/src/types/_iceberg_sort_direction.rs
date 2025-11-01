@@ -102,7 +102,7 @@ impl ::std::fmt::Display for IcebergSortDirection {
         match self {
             IcebergSortDirection::Asc => write!(f, "asc"),
             IcebergSortDirection::Desc => write!(f, "desc"),
-            IcebergSortDirection::Unknown(value) => write!(f, "{}", value),
+            IcebergSortDirection::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

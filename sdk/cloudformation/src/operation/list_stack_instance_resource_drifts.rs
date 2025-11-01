@@ -188,6 +188,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListStackIns
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::list_stack_instance_resource_drifts::ListStackInstanceResourceDriftsInput,
                 output: &mut ::std::string::String,

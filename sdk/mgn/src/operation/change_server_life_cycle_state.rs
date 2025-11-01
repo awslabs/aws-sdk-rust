@@ -181,6 +181,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ChangeServer
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::change_server_life_cycle_state::ChangeServerLifeCycleStateInput,
                 output: &mut ::std::string::String,

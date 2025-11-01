@@ -116,7 +116,7 @@ impl ::std::fmt::Display for ReplicationConfigurationDefaultLargeStagingDiskType
             ReplicationConfigurationDefaultLargeStagingDiskType::Gp2 => write!(f, "GP2"),
             ReplicationConfigurationDefaultLargeStagingDiskType::Gp3 => write!(f, "GP3"),
             ReplicationConfigurationDefaultLargeStagingDiskType::St1 => write!(f, "ST1"),
-            ReplicationConfigurationDefaultLargeStagingDiskType::Unknown(value) => write!(f, "{}", value),
+            ReplicationConfigurationDefaultLargeStagingDiskType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

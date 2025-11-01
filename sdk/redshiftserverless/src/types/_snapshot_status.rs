@@ -126,7 +126,7 @@ impl ::std::fmt::Display for SnapshotStatus {
             SnapshotStatus::Creating => write!(f, "CREATING"),
             SnapshotStatus::Deleted => write!(f, "DELETED"),
             SnapshotStatus::Failed => write!(f, "FAILED"),
-            SnapshotStatus::Unknown(value) => write!(f, "{}", value),
+            SnapshotStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

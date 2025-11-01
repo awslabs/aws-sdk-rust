@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ListTenantResourcesFilterKey {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ListTenantResourcesFilterKey::ResourceType => write!(f, "RESOURCE_TYPE"),
-            ListTenantResourcesFilterKey::Unknown(value) => write!(f, "{}", value),
+            ListTenantResourcesFilterKey::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

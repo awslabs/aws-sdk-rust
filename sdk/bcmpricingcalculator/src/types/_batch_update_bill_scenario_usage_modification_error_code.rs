@@ -116,7 +116,7 @@ impl ::std::fmt::Display for BatchUpdateBillScenarioUsageModificationErrorCode {
             BatchUpdateBillScenarioUsageModificationErrorCode::Conflict => write!(f, "CONFLICT"),
             BatchUpdateBillScenarioUsageModificationErrorCode::InternalServerError => write!(f, "INTERNAL_SERVER_ERROR"),
             BatchUpdateBillScenarioUsageModificationErrorCode::NotFound => write!(f, "NOT_FOUND"),
-            BatchUpdateBillScenarioUsageModificationErrorCode::Unknown(value) => write!(f, "{}", value),
+            BatchUpdateBillScenarioUsageModificationErrorCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

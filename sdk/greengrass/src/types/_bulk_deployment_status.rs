@@ -126,7 +126,7 @@ impl ::std::fmt::Display for BulkDeploymentStatus {
             BulkDeploymentStatus::Running => write!(f, "Running"),
             BulkDeploymentStatus::Stopped => write!(f, "Stopped"),
             BulkDeploymentStatus::Stopping => write!(f, "Stopping"),
-            BulkDeploymentStatus::Unknown(value) => write!(f, "{}", value),
+            BulkDeploymentStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

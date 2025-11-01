@@ -215,7 +215,7 @@ impl ::std::fmt::Display for SignalDecoderFailureReason {
             SignalDecoderFailureReason::SignalNotInModel => write!(f, "SIGNAL_NOT_IN_MODEL"),
             SignalDecoderFailureReason::SignalToAddAlreadyExists => write!(f, "SIGNAL_TO_ADD_ALREADY_EXISTS"),
             SignalDecoderFailureReason::StructSizeMismatch => write!(f, "STRUCT_SIZE_MISMATCH"),
-            SignalDecoderFailureReason::Unknown(value) => write!(f, "{}", value),
+            SignalDecoderFailureReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

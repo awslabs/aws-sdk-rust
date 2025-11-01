@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FilterConditionString {
         match self {
             FilterConditionString::Is => write!(f, "IS"),
             FilterConditionString::IsNot => write!(f, "IS_NOT"),
-            FilterConditionString::Unknown(value) => write!(f, "{}", value),
+            FilterConditionString::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ModelPromoteMode {
         match self {
             ModelPromoteMode::Managed => write!(f, "MANAGED"),
             ModelPromoteMode::Manual => write!(f, "MANUAL"),
-            ModelPromoteMode::Unknown(value) => write!(f, "{}", value),
+            ModelPromoteMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

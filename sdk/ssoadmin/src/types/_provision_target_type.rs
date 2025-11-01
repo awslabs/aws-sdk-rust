@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ProvisionTargetType {
         match self {
             ProvisionTargetType::AllProvisionedAccounts => write!(f, "ALL_PROVISIONED_ACCOUNTS"),
             ProvisionTargetType::AwsAccount => write!(f, "AWS_ACCOUNT"),
-            ProvisionTargetType::Unknown(value) => write!(f, "{}", value),
+            ProvisionTargetType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

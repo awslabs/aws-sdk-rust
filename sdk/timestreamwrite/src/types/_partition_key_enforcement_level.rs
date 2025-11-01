@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PartitionKeyEnforcementLevel {
         match self {
             PartitionKeyEnforcementLevel::Optional => write!(f, "OPTIONAL"),
             PartitionKeyEnforcementLevel::Required => write!(f, "REQUIRED"),
-            PartitionKeyEnforcementLevel::Unknown(value) => write!(f, "{}", value),
+            PartitionKeyEnforcementLevel::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

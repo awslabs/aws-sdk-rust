@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AutomatedDiscoveryAccountUpdateErrorCode {
         match self {
             AutomatedDiscoveryAccountUpdateErrorCode::AccountNotFound => write!(f, "ACCOUNT_NOT_FOUND"),
             AutomatedDiscoveryAccountUpdateErrorCode::AccountPaused => write!(f, "ACCOUNT_PAUSED"),
-            AutomatedDiscoveryAccountUpdateErrorCode::Unknown(value) => write!(f, "{}", value),
+            AutomatedDiscoveryAccountUpdateErrorCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

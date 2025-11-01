@@ -198,6 +198,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for CreateCloudW
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::create_cloud_watch_alarm_template_group::CreateCloudWatchAlarmTemplateGroupInput,
                 output: &mut ::std::string::String,

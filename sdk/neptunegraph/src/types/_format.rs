@@ -114,7 +114,7 @@ impl ::std::fmt::Display for Format {
             Format::Ntriples => write!(f, "NTRIPLES"),
             Format::OpenCypher => write!(f, "OPEN_CYPHER"),
             Format::Parquet => write!(f, "PARQUET"),
-            Format::Unknown(value) => write!(f, "{}", value),
+            Format::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -126,7 +126,7 @@ impl ::std::fmt::Display for StatementStatusString {
             StatementStatusString::Picked => write!(f, "PICKED"),
             StatementStatusString::Started => write!(f, "STARTED"),
             StatementStatusString::Submitted => write!(f, "SUBMITTED"),
-            StatementStatusString::Unknown(value) => write!(f, "{}", value),
+            StatementStatusString::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

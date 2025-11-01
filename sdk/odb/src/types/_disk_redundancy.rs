@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DiskRedundancy {
         match self {
             DiskRedundancy::High => write!(f, "HIGH"),
             DiskRedundancy::Normal => write!(f, "NORMAL"),
-            DiskRedundancy::Unknown(value) => write!(f, "{}", value),
+            DiskRedundancy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

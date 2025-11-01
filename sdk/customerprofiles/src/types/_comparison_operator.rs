@@ -196,7 +196,7 @@ impl ::std::fmt::Display for ComparisonOperator {
             ComparisonOperator::LessThanOrEqual => write!(f, "LESS_THAN_OR_EQUAL"),
             ComparisonOperator::NotBetween => write!(f, "NOT_BETWEEN"),
             ComparisonOperator::On => write!(f, "ON"),
-            ComparisonOperator::Unknown(value) => write!(f, "{}", value),
+            ComparisonOperator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

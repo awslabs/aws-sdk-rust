@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SsmTargetAccount {
         match self {
             SsmTargetAccount::ImpactedAccount => write!(f, "IMPACTED_ACCOUNT"),
             SsmTargetAccount::ResponsePlanOwnerAccount => write!(f, "RESPONSE_PLAN_OWNER_ACCOUNT"),
-            SsmTargetAccount::Unknown(value) => write!(f, "{}", value),
+            SsmTargetAccount::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

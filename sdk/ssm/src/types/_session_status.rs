@@ -126,7 +126,7 @@ impl ::std::fmt::Display for SessionStatus {
             SessionStatus::Failed => write!(f, "Failed"),
             SessionStatus::Terminated => write!(f, "Terminated"),
             SessionStatus::Terminating => write!(f, "Terminating"),
-            SessionStatus::Unknown(value) => write!(f, "{}", value),
+            SessionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

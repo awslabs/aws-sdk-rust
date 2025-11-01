@@ -147,7 +147,7 @@ impl ::std::fmt::Display for MlInputChannelStatus {
             MlInputChannelStatus::DeleteInProgress => write!(f, "DELETE_IN_PROGRESS"),
             MlInputChannelStatus::DeletePending => write!(f, "DELETE_PENDING"),
             MlInputChannelStatus::Inactive => write!(f, "INACTIVE"),
-            MlInputChannelStatus::Unknown(value) => write!(f, "{}", value),
+            MlInputChannelStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

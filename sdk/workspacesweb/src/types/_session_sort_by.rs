@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SessionSortBy {
         match self {
             SessionSortBy::StartTimeAscending => write!(f, "StartTimeAscending"),
             SessionSortBy::StartTimeDescending => write!(f, "StartTimeDescending"),
-            SessionSortBy::Unknown(value) => write!(f, "{}", value),
+            SessionSortBy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

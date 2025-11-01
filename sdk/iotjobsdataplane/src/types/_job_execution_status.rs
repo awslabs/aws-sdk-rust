@@ -147,7 +147,7 @@ impl ::std::fmt::Display for JobExecutionStatus {
             JobExecutionStatus::Removed => write!(f, "REMOVED"),
             JobExecutionStatus::Succeeded => write!(f, "SUCCEEDED"),
             JobExecutionStatus::TimedOut => write!(f, "TIMED_OUT"),
-            JobExecutionStatus::Unknown(value) => write!(f, "{}", value),
+            JobExecutionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

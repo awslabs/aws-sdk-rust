@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Format {
         match self {
             Format::Json => write!(f, "json"),
             Format::Parquet => write!(f, "parquet"),
-            Format::Unknown(value) => write!(f, "{}", value),
+            Format::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

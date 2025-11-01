@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ClientAffinity {
         match self {
             ClientAffinity::None => write!(f, "NONE"),
             ClientAffinity::SourceIp => write!(f, "SOURCE_IP"),
-            ClientAffinity::Unknown(value) => write!(f, "{}", value),
+            ClientAffinity::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -120,7 +120,7 @@ impl ::std::fmt::Display for ResourceState {
             ResourceState::Queued => write!(f, "QUEUED"),
             ResourceState::Stopped => write!(f, "STOPPED"),
             ResourceState::Success => write!(f, "SUCCESS"),
-            ResourceState::Unknown(value) => write!(f, "{}", value),
+            ResourceState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ProgrammingLanguage {
             ProgrammingLanguage::Javascript => write!(f, "javascript"),
             ProgrammingLanguage::Python => write!(f, "python"),
             ProgrammingLanguage::Typescript => write!(f, "typescript"),
-            ProgrammingLanguage::Unknown(value) => write!(f, "{}", value),
+            ProgrammingLanguage::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

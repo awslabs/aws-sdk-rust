@@ -110,7 +110,7 @@ impl ::std::fmt::Display for BatchDeleteBillScenarioCommitmentModificationErrorC
             BatchDeleteBillScenarioCommitmentModificationErrorCode::BadRequest => write!(f, "BAD_REQUEST"),
             BatchDeleteBillScenarioCommitmentModificationErrorCode::Conflict => write!(f, "CONFLICT"),
             BatchDeleteBillScenarioCommitmentModificationErrorCode::InternalServerError => write!(f, "INTERNAL_SERVER_ERROR"),
-            BatchDeleteBillScenarioCommitmentModificationErrorCode::Unknown(value) => write!(f, "{}", value),
+            BatchDeleteBillScenarioCommitmentModificationErrorCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

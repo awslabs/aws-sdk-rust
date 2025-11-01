@@ -108,7 +108,7 @@ impl ::std::fmt::Display for IpcMode {
             IpcMode::Host => write!(f, "host"),
             IpcMode::None => write!(f, "none"),
             IpcMode::Task => write!(f, "task"),
-            IpcMode::Unknown(value) => write!(f, "{}", value),
+            IpcMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

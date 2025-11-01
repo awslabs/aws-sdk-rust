@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ResolverKind {
         match self {
             ResolverKind::Pipeline => write!(f, "PIPELINE"),
             ResolverKind::Unit => write!(f, "UNIT"),
-            ResolverKind::Unknown(value) => write!(f, "{}", value),
+            ResolverKind::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

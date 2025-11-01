@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ProjectionType {
             ProjectionType::All => write!(f, "ALL"),
             ProjectionType::Include => write!(f, "INCLUDE"),
             ProjectionType::KeysOnly => write!(f, "KEYS_ONLY"),
-            ProjectionType::Unknown(value) => write!(f, "{}", value),
+            ProjectionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

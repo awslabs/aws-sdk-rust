@@ -104,7 +104,7 @@ impl ::std::fmt::Display for CallAs {
         match self {
             CallAs::DelegatedAdmin => write!(f, "DELEGATED_ADMIN"),
             CallAs::SelfValue => write!(f, "SELF"),
-            CallAs::Unknown(value) => write!(f, "{}", value),
+            CallAs::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

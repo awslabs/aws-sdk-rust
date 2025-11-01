@@ -108,7 +108,7 @@ impl ::std::fmt::Display for NodeType {
             NodeType::Data => write!(f, "Data"),
             NodeType::Master => write!(f, "Master"),
             NodeType::Ultrawarm => write!(f, "Ultrawarm"),
-            NodeType::Unknown(value) => write!(f, "{}", value),
+            NodeType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

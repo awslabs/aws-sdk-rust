@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MotionGraphicsInsertion {
         match self {
             MotionGraphicsInsertion::Disabled => write!(f, "DISABLED"),
             MotionGraphicsInsertion::Enabled => write!(f, "ENABLED"),
-            MotionGraphicsInsertion::Unknown(value) => write!(f, "{}", value),
+            MotionGraphicsInsertion::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

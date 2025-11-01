@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CmafManifestCompression {
         match self {
             CmafManifestCompression::Gzip => write!(f, "GZIP"),
             CmafManifestCompression::None => write!(f, "NONE"),
-            CmafManifestCompression::Unknown(value) => write!(f, "{}", value),
+            CmafManifestCompression::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

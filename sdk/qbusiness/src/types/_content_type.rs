@@ -175,7 +175,7 @@ impl ::std::fmt::Display for ContentType {
             ContentType::Rtf => write!(f, "RTF"),
             ContentType::Xml => write!(f, "XML"),
             ContentType::Xslt => write!(f, "XSLT"),
-            ContentType::Unknown(value) => write!(f, "{}", value),
+            ContentType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

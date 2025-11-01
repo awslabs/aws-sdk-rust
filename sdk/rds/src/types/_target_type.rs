@@ -108,7 +108,7 @@ impl ::std::fmt::Display for TargetType {
             TargetType::RdsInstance => write!(f, "RDS_INSTANCE"),
             TargetType::RdsServerlessEndpoint => write!(f, "RDS_SERVERLESS_ENDPOINT"),
             TargetType::TrackedCluster => write!(f, "TRACKED_CLUSTER"),
-            TargetType::Unknown(value) => write!(f, "{}", value),
+            TargetType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

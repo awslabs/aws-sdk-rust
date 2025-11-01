@@ -102,7 +102,7 @@ impl ::std::fmt::Display for KeySpec {
         match self {
             KeySpec::KeyExchange => write!(f, "KEY_EXCHANGE"),
             KeySpec::Signature => write!(f, "SIGNATURE"),
-            KeySpec::Unknown(value) => write!(f, "{}", value),
+            KeySpec::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

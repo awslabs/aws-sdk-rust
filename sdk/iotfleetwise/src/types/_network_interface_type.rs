@@ -114,7 +114,7 @@ impl ::std::fmt::Display for NetworkInterfaceType {
             NetworkInterfaceType::CustomDecodingInterface => write!(f, "CUSTOM_DECODING_INTERFACE"),
             NetworkInterfaceType::ObdInterface => write!(f, "OBD_INTERFACE"),
             NetworkInterfaceType::VehicleMiddleware => write!(f, "VEHICLE_MIDDLEWARE"),
-            NetworkInterfaceType::Unknown(value) => write!(f, "{}", value),
+            NetworkInterfaceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

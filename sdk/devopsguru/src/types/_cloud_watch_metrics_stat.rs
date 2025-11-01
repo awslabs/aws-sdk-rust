@@ -138,7 +138,7 @@ impl ::std::fmt::Display for CloudWatchMetricsStat {
             CloudWatchMetricsStat::P50 => write!(f, "p50"),
             CloudWatchMetricsStat::P90 => write!(f, "p90"),
             CloudWatchMetricsStat::P99 => write!(f, "p99"),
-            CloudWatchMetricsStat::Unknown(value) => write!(f, "{}", value),
+            CloudWatchMetricsStat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

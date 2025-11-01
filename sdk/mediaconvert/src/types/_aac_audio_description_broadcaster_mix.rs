@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AacAudioDescriptionBroadcasterMix {
         match self {
             AacAudioDescriptionBroadcasterMix::BroadcasterMixedAd => write!(f, "BROADCASTER_MIXED_AD"),
             AacAudioDescriptionBroadcasterMix::Normal => write!(f, "NORMAL"),
-            AacAudioDescriptionBroadcasterMix::Unknown(value) => write!(f, "{}", value),
+            AacAudioDescriptionBroadcasterMix::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

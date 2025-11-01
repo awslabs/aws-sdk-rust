@@ -133,7 +133,7 @@ impl ::std::fmt::Display for OfferingTypeValues {
             OfferingTypeValues::MediumUtilization => write!(f, "Medium Utilization"),
             OfferingTypeValues::NoUpfront => write!(f, "No Upfront"),
             OfferingTypeValues::PartialUpfront => write!(f, "Partial Upfront"),
-            OfferingTypeValues::Unknown(value) => write!(f, "{}", value),
+            OfferingTypeValues::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

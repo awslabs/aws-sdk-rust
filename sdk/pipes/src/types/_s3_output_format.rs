@@ -108,7 +108,7 @@ impl ::std::fmt::Display for S3OutputFormat {
             S3OutputFormat::Json => write!(f, "json"),
             S3OutputFormat::Plain => write!(f, "plain"),
             S3OutputFormat::W3C => write!(f, "w3c"),
-            S3OutputFormat::Unknown(value) => write!(f, "{}", value),
+            S3OutputFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

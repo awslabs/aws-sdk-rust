@@ -104,7 +104,7 @@ impl ::std::fmt::Display for PredictiveScalingMaxCapacityBreachBehavior {
         match self {
             PredictiveScalingMaxCapacityBreachBehavior::HonorMaxCapacity => write!(f, "HonorMaxCapacity"),
             PredictiveScalingMaxCapacityBreachBehavior::IncreaseMaxCapacity => write!(f, "IncreaseMaxCapacity"),
-            PredictiveScalingMaxCapacityBreachBehavior::Unknown(value) => write!(f, "{}", value),
+            PredictiveScalingMaxCapacityBreachBehavior::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

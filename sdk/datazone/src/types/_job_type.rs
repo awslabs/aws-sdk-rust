@@ -96,7 +96,7 @@ impl ::std::fmt::Display for JobType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             JobType::Lineage => write!(f, "LINEAGE"),
-            JobType::Unknown(value) => write!(f, "{}", value),
+            JobType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

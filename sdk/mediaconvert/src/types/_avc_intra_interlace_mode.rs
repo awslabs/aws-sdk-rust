@@ -120,7 +120,7 @@ impl ::std::fmt::Display for AvcIntraInterlaceMode {
             AvcIntraInterlaceMode::FollowTopField => write!(f, "FOLLOW_TOP_FIELD"),
             AvcIntraInterlaceMode::Progressive => write!(f, "PROGRESSIVE"),
             AvcIntraInterlaceMode::TopField => write!(f, "TOP_FIELD"),
-            AvcIntraInterlaceMode::Unknown(value) => write!(f, "{}", value),
+            AvcIntraInterlaceMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

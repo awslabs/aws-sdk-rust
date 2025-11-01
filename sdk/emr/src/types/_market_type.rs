@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MarketType {
         match self {
             MarketType::OnDemand => write!(f, "ON_DEMAND"),
             MarketType::Spot => write!(f, "SPOT"),
-            MarketType::Unknown(value) => write!(f, "{}", value),
+            MarketType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

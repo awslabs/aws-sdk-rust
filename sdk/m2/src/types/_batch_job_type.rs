@@ -108,7 +108,7 @@ impl ::std::fmt::Display for BatchJobType {
             BatchJobType::Jes2 => write!(f, "JES2"),
             BatchJobType::Jes3 => write!(f, "JES3"),
             BatchJobType::Vse => write!(f, "VSE"),
-            BatchJobType::Unknown(value) => write!(f, "{}", value),
+            BatchJobType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

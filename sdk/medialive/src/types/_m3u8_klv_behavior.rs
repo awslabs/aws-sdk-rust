@@ -102,7 +102,7 @@ impl ::std::fmt::Display for M3u8KlvBehavior {
         match self {
             M3u8KlvBehavior::NoPassthrough => write!(f, "NO_PASSTHROUGH"),
             M3u8KlvBehavior::Passthrough => write!(f, "PASSTHROUGH"),
-            M3u8KlvBehavior::Unknown(value) => write!(f, "{}", value),
+            M3u8KlvBehavior::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

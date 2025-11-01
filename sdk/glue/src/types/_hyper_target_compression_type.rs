@@ -96,7 +96,7 @@ impl ::std::fmt::Display for HyperTargetCompressionType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             HyperTargetCompressionType::Uncompressed => write!(f, "uncompressed"),
-            HyperTargetCompressionType::Unknown(value) => write!(f, "{}", value),
+            HyperTargetCompressionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

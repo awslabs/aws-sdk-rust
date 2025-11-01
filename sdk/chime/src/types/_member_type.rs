@@ -108,7 +108,7 @@ impl ::std::fmt::Display for MemberType {
             MemberType::Bot => write!(f, "Bot"),
             MemberType::User => write!(f, "User"),
             MemberType::Webhook => write!(f, "Webhook"),
-            MemberType::Unknown(value) => write!(f, "{}", value),
+            MemberType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

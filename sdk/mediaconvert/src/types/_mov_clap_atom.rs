@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MovClapAtom {
         match self {
             MovClapAtom::Exclude => write!(f, "EXCLUDE"),
             MovClapAtom::Include => write!(f, "INCLUDE"),
-            MovClapAtom::Unknown(value) => write!(f, "{}", value),
+            MovClapAtom::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

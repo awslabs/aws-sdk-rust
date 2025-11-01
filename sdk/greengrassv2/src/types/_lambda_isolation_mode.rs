@@ -102,7 +102,7 @@ impl ::std::fmt::Display for LambdaIsolationMode {
         match self {
             LambdaIsolationMode::GreengrassContainer => write!(f, "GreengrassContainer"),
             LambdaIsolationMode::NoContainer => write!(f, "NoContainer"),
-            LambdaIsolationMode::Unknown(value) => write!(f, "{}", value),
+            LambdaIsolationMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

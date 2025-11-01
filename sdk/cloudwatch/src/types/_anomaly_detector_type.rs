@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AnomalyDetectorType {
         match self {
             AnomalyDetectorType::MetricMath => write!(f, "METRIC_MATH"),
             AnomalyDetectorType::SingleMetric => write!(f, "SINGLE_METRIC"),
-            AnomalyDetectorType::Unknown(value) => write!(f, "{}", value),
+            AnomalyDetectorType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

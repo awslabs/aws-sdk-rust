@@ -102,7 +102,7 @@ impl ::std::fmt::Display for NodeSignalValue {
         match self {
             NodeSignalValue::Pause => write!(f, "PAUSE"),
             NodeSignalValue::Resume => write!(f, "RESUME"),
-            NodeSignalValue::Unknown(value) => write!(f, "{}", value),
+            NodeSignalValue::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

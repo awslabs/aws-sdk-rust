@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ToFormat {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ToFormat::X12 => write!(f, "X12"),
-            ToFormat::Unknown(value) => write!(f, "{}", value),
+            ToFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MaintenanceWindowType {
         match self {
             MaintenanceWindowType::Custom => write!(f, "CUSTOM"),
             MaintenanceWindowType::System => write!(f, "SYSTEM"),
-            MaintenanceWindowType::Unknown(value) => write!(f, "{}", value),
+            MaintenanceWindowType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

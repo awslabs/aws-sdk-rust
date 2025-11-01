@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ListEdgeDeploymentPlansSortBy {
             ListEdgeDeploymentPlansSortBy::DeviceFleetName => write!(f, "DEVICE_FLEET_NAME"),
             ListEdgeDeploymentPlansSortBy::LastModifiedTime => write!(f, "LAST_MODIFIED_TIME"),
             ListEdgeDeploymentPlansSortBy::Name => write!(f, "NAME"),
-            ListEdgeDeploymentPlansSortBy::Unknown(value) => write!(f, "{}", value),
+            ListEdgeDeploymentPlansSortBy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

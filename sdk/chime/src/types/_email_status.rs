@@ -108,7 +108,7 @@ impl ::std::fmt::Display for EmailStatus {
             EmailStatus::Failed => write!(f, "Failed"),
             EmailStatus::NotSent => write!(f, "NotSent"),
             EmailStatus::Sent => write!(f, "Sent"),
-            EmailStatus::Unknown(value) => write!(f, "{}", value),
+            EmailStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

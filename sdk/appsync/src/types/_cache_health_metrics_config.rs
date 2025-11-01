@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CacheHealthMetricsConfig {
         match self {
             CacheHealthMetricsConfig::Disabled => write!(f, "DISABLED"),
             CacheHealthMetricsConfig::Enabled => write!(f, "ENABLED"),
-            CacheHealthMetricsConfig::Unknown(value) => write!(f, "{}", value),
+            CacheHealthMetricsConfig::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MediaStorageConfigurationStatus {
         match self {
             MediaStorageConfigurationStatus::Disabled => write!(f, "DISABLED"),
             MediaStorageConfigurationStatus::Enabled => write!(f, "ENABLED"),
-            MediaStorageConfigurationStatus::Unknown(value) => write!(f, "{}", value),
+            MediaStorageConfigurationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

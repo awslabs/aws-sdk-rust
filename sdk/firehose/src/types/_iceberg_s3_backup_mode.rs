@@ -102,7 +102,7 @@ impl ::std::fmt::Display for IcebergS3BackupMode {
         match self {
             IcebergS3BackupMode::AllData => write!(f, "AllData"),
             IcebergS3BackupMode::FailedDataOnly => write!(f, "FailedDataOnly"),
-            IcebergS3BackupMode::Unknown(value) => write!(f, "{}", value),
+            IcebergS3BackupMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

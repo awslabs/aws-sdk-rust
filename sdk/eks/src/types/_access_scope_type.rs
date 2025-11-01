@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AccessScopeType {
         match self {
             AccessScopeType::Cluster => write!(f, "cluster"),
             AccessScopeType::Namespace => write!(f, "namespace"),
-            AccessScopeType::Unknown(value) => write!(f, "{}", value),
+            AccessScopeType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

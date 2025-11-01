@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TargetType {
         match self {
             TargetType::Recommendation => write!(f, "RECOMMENDATION"),
             TargetType::Result => write!(f, "RESULT"),
-            TargetType::Unknown(value) => write!(f, "{}", value),
+            TargetType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

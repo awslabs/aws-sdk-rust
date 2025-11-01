@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MpdAudioDuration {
         match self {
             MpdAudioDuration::DefaultCodecDuration => write!(f, "DEFAULT_CODEC_DURATION"),
             MpdAudioDuration::MatchVideoDuration => write!(f, "MATCH_VIDEO_DURATION"),
-            MpdAudioDuration::Unknown(value) => write!(f, "{}", value),
+            MpdAudioDuration::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

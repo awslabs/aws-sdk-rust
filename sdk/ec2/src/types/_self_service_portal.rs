@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SelfServicePortal {
         match self {
             SelfServicePortal::Disabled => write!(f, "disabled"),
             SelfServicePortal::Enabled => write!(f, "enabled"),
-            SelfServicePortal::Unknown(value) => write!(f, "{}", value),
+            SelfServicePortal::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -182,7 +182,7 @@ impl ::std::fmt::Display for AssessmentRunState {
             AssessmentRunState::StartDataCollectionPending => write!(f, "START_DATA_COLLECTION_PENDING"),
             AssessmentRunState::StartEvaluatingRulesPending => write!(f, "START_EVALUATING_RULES_PENDING"),
             AssessmentRunState::StopDataCollectionPending => write!(f, "STOP_DATA_COLLECTION_PENDING"),
-            AssessmentRunState::Unknown(value) => write!(f, "{}", value),
+            AssessmentRunState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

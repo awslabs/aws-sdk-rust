@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AlarmType {
         match self {
             AlarmType::CompositeAlarm => write!(f, "CompositeAlarm"),
             AlarmType::MetricAlarm => write!(f, "MetricAlarm"),
-            AlarmType::Unknown(value) => write!(f, "{}", value),
+            AlarmType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DisassociatedDataStorageState {
         match self {
             DisassociatedDataStorageState::Disabled => write!(f, "DISABLED"),
             DisassociatedDataStorageState::Enabled => write!(f, "ENABLED"),
-            DisassociatedDataStorageState::Unknown(value) => write!(f, "{}", value),
+            DisassociatedDataStorageState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for GifFramerateConversionAlgorithm {
         match self {
             GifFramerateConversionAlgorithm::DuplicateDrop => write!(f, "DUPLICATE_DROP"),
             GifFramerateConversionAlgorithm::Interpolate => write!(f, "INTERPOLATE"),
-            GifFramerateConversionAlgorithm::Unknown(value) => write!(f, "{}", value),
+            GifFramerateConversionAlgorithm::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

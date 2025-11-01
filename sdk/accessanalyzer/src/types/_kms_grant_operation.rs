@@ -189,7 +189,7 @@ impl ::std::fmt::Display for KmsGrantOperation {
             KmsGrantOperation::RetireGrant => write!(f, "RetireGrant"),
             KmsGrantOperation::Sign => write!(f, "Sign"),
             KmsGrantOperation::Verify => write!(f, "Verify"),
-            KmsGrantOperation::Unknown(value) => write!(f, "{}", value),
+            KmsGrantOperation::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

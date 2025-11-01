@@ -108,7 +108,7 @@ impl ::std::fmt::Display for DynamicGroupStatus {
             DynamicGroupStatus::Active => write!(f, "ACTIVE"),
             DynamicGroupStatus::Building => write!(f, "BUILDING"),
             DynamicGroupStatus::Rebuilding => write!(f, "REBUILDING"),
-            DynamicGroupStatus::Unknown(value) => write!(f, "{}", value),
+            DynamicGroupStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

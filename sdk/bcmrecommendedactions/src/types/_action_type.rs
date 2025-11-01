@@ -217,7 +217,7 @@ impl ::std::fmt::Display for ActionType {
             ActionType::UpdateInvalidPaymentMethod => write!(f, "UPDATE_INVALID_PAYMENT_METHOD"),
             ActionType::UpdateTaxExemptionCertificate => write!(f, "UPDATE_TAX_EXEMPTION_CERTIFICATE"),
             ActionType::UpdateTaxRegistrationNumber => write!(f, "UPDATE_TAX_REGISTRATION_NUMBER"),
-            ActionType::Unknown(value) => write!(f, "{}", value),
+            ActionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

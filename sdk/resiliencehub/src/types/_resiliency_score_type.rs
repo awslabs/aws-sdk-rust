@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ResiliencyScoreType {
             ResiliencyScoreType::Compliance => write!(f, "Compliance"),
             ResiliencyScoreType::Sop => write!(f, "Sop"),
             ResiliencyScoreType::Test => write!(f, "Test"),
-            ResiliencyScoreType::Unknown(value) => write!(f, "{}", value),
+            ResiliencyScoreType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

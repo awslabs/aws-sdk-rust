@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ContactListImportAction {
         match self {
             ContactListImportAction::Delete => write!(f, "DELETE"),
             ContactListImportAction::Put => write!(f, "PUT"),
-            ContactListImportAction::Unknown(value) => write!(f, "{}", value),
+            ContactListImportAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for InsightsRefreshStatus {
             InsightsRefreshStatus::Completed => write!(f, "COMPLETED"),
             InsightsRefreshStatus::Failed => write!(f, "FAILED"),
             InsightsRefreshStatus::InProgress => write!(f, "IN_PROGRESS"),
-            InsightsRefreshStatus::Unknown(value) => write!(f, "{}", value),
+            InsightsRefreshStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

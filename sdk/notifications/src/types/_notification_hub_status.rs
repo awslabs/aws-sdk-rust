@@ -114,7 +114,7 @@ impl ::std::fmt::Display for NotificationHubStatus {
             NotificationHubStatus::Deregistering => write!(f, "DEREGISTERING"),
             NotificationHubStatus::Inactive => write!(f, "INACTIVE"),
             NotificationHubStatus::Registering => write!(f, "REGISTERING"),
-            NotificationHubStatus::Unknown(value) => write!(f, "{}", value),
+            NotificationHubStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

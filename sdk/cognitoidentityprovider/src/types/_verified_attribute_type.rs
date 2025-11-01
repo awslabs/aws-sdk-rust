@@ -102,7 +102,7 @@ impl ::std::fmt::Display for VerifiedAttributeType {
         match self {
             VerifiedAttributeType::Email => write!(f, "email"),
             VerifiedAttributeType::PhoneNumber => write!(f, "phone_number"),
-            VerifiedAttributeType::Unknown(value) => write!(f, "{}", value),
+            VerifiedAttributeType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -147,7 +147,7 @@ impl ::std::fmt::Display for JobRunStatus {
             JobRunStatus::Scheduled => write!(f, "SCHEDULED"),
             JobRunStatus::Success => write!(f, "SUCCESS"),
             JobRunStatus::TimedOut => write!(f, "TIMED_OUT"),
-            JobRunStatus::Unknown(value) => write!(f, "{}", value),
+            JobRunStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

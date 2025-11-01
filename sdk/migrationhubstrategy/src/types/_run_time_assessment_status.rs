@@ -140,7 +140,7 @@ impl ::std::fmt::Display for RunTimeAssessmentStatus {
             RunTimeAssessmentStatus::DcStopped => write!(f, "dataCollectionTaskStopped"),
             RunTimeAssessmentStatus::DcSuccess => write!(f, "dataCollectionTaskSuccess"),
             RunTimeAssessmentStatus::DcToBeScheduled => write!(f, "dataCollectionTaskToBeScheduled"),
-            RunTimeAssessmentStatus::Unknown(value) => write!(f, "{}", value),
+            RunTimeAssessmentStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -164,7 +164,7 @@ impl ::std::fmt::Display for ServiceLimit {
             ServiceLimit::TotalUserInitiatedBackups => write!(f, "TOTAL_USER_INITIATED_BACKUPS"),
             ServiceLimit::TotalUserTags => write!(f, "TOTAL_USER_TAGS"),
             ServiceLimit::VolumesPerFileSystem => write!(f, "VOLUMES_PER_FILE_SYSTEM"),
-            ServiceLimit::Unknown(value) => write!(f, "{}", value),
+            ServiceLimit::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

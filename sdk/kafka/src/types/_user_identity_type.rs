@@ -102,7 +102,7 @@ impl ::std::fmt::Display for UserIdentityType {
         match self {
             UserIdentityType::Awsaccount => write!(f, "AWSACCOUNT"),
             UserIdentityType::Awsservice => write!(f, "AWSSERVICE"),
-            UserIdentityType::Unknown(value) => write!(f, "{}", value),
+            UserIdentityType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

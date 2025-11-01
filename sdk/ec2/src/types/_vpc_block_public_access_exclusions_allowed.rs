@@ -102,7 +102,7 @@ impl ::std::fmt::Display for VpcBlockPublicAccessExclusionsAllowed {
         match self {
             VpcBlockPublicAccessExclusionsAllowed::Allowed => write!(f, "allowed"),
             VpcBlockPublicAccessExclusionsAllowed::NotAllowed => write!(f, "not-allowed"),
-            VpcBlockPublicAccessExclusionsAllowed::Unknown(value) => write!(f, "{}", value),
+            VpcBlockPublicAccessExclusionsAllowed::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

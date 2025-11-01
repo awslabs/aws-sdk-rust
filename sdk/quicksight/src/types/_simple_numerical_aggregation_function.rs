@@ -168,7 +168,7 @@ impl ::std::fmt::Display for SimpleNumericalAggregationFunction {
             SimpleNumericalAggregationFunction::Sum => write!(f, "SUM"),
             SimpleNumericalAggregationFunction::Var => write!(f, "VAR"),
             SimpleNumericalAggregationFunction::Varp => write!(f, "VARP"),
-            SimpleNumericalAggregationFunction::Unknown(value) => write!(f, "{}", value),
+            SimpleNumericalAggregationFunction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

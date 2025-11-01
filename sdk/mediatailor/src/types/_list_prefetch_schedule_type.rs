@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ListPrefetchScheduleType {
             ListPrefetchScheduleType::All => write!(f, "ALL"),
             ListPrefetchScheduleType::Recurring => write!(f, "RECURRING"),
             ListPrefetchScheduleType::Single => write!(f, "SINGLE"),
-            ListPrefetchScheduleType::Unknown(value) => write!(f, "{}", value),
+            ListPrefetchScheduleType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

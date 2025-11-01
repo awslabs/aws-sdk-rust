@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MapType {
         match self {
             MapType::Directory => write!(f, "DIRECTORY"),
             MapType::File => write!(f, "FILE"),
-            MapType::Unknown(value) => write!(f, "{}", value),
+            MapType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

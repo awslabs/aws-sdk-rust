@@ -114,7 +114,7 @@ impl ::std::fmt::Display for CallAnalyticsJobStatus {
             CallAnalyticsJobStatus::Failed => write!(f, "FAILED"),
             CallAnalyticsJobStatus::InProgress => write!(f, "IN_PROGRESS"),
             CallAnalyticsJobStatus::Queued => write!(f, "QUEUED"),
-            CallAnalyticsJobStatus::Unknown(value) => write!(f, "{}", value),
+            CallAnalyticsJobStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

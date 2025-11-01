@@ -120,7 +120,7 @@ impl ::std::fmt::Display for LocalWriteForwardingStatus {
             LocalWriteForwardingStatus::Enabled => write!(f, "enabled"),
             LocalWriteForwardingStatus::Enabling => write!(f, "enabling"),
             LocalWriteForwardingStatus::Requested => write!(f, "requested"),
-            LocalWriteForwardingStatus::Unknown(value) => write!(f, "{}", value),
+            LocalWriteForwardingStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

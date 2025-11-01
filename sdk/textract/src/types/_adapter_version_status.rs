@@ -120,7 +120,7 @@ impl ::std::fmt::Display for AdapterVersionStatus {
             AdapterVersionStatus::CreationError => write!(f, "CREATION_ERROR"),
             AdapterVersionStatus::CreationInProgress => write!(f, "CREATION_IN_PROGRESS"),
             AdapterVersionStatus::Deprecated => write!(f, "DEPRECATED"),
-            AdapterVersionStatus::Unknown(value) => write!(f, "{}", value),
+            AdapterVersionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

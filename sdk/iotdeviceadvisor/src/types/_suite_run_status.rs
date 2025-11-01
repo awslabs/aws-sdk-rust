@@ -154,7 +154,7 @@ impl ::std::fmt::Display for SuiteRunStatus {
             SuiteRunStatus::Running => write!(f, "RUNNING"),
             SuiteRunStatus::Stopped => write!(f, "STOPPED"),
             SuiteRunStatus::Stopping => write!(f, "STOPPING"),
-            SuiteRunStatus::Unknown(value) => write!(f, "{}", value),
+            SuiteRunStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

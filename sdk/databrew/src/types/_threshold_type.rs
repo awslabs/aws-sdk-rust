@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ThresholdType {
             ThresholdType::GreaterThanOrEqual => write!(f, "GREATER_THAN_OR_EQUAL"),
             ThresholdType::LessThan => write!(f, "LESS_THAN"),
             ThresholdType::LessThanOrEqual => write!(f, "LESS_THAN_OR_EQUAL"),
-            ThresholdType::Unknown(value) => write!(f, "{}", value),
+            ThresholdType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

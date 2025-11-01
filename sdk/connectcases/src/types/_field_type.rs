@@ -132,7 +132,7 @@ impl ::std::fmt::Display for FieldType {
             FieldType::Text => write!(f, "Text"),
             FieldType::Url => write!(f, "Url"),
             FieldType::User => write!(f, "User"),
-            FieldType::Unknown(value) => write!(f, "{}", value),
+            FieldType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

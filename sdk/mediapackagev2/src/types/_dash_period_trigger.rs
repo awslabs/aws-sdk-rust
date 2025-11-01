@@ -120,7 +120,7 @@ impl ::std::fmt::Display for DashPeriodTrigger {
             DashPeriodTrigger::None => write!(f, "NONE"),
             DashPeriodTrigger::SourceChanges => write!(f, "SOURCE_CHANGES"),
             DashPeriodTrigger::SourceDisruptions => write!(f, "SOURCE_DISRUPTIONS"),
-            DashPeriodTrigger::Unknown(value) => write!(f, "{}", value),
+            DashPeriodTrigger::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

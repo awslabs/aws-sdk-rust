@@ -86,8 +86,7 @@ pub fn de_create_access_grants_instance(
     let start_el = decoder.start_el();
     if !start_el.matches("CreateAccessGrantsInstanceResult") {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "encountered invalid XML root: expected CreateAccessGrantsInstanceResult but got {:?}. This is likely a bug in the SDK.",
-            start_el
+            "encountered invalid XML root: expected CreateAccessGrantsInstanceResult but got {start_el:?}. This is likely a bug in the SDK."
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

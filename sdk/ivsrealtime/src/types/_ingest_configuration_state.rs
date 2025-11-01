@@ -102,7 +102,7 @@ impl ::std::fmt::Display for IngestConfigurationState {
         match self {
             IngestConfigurationState::Active => write!(f, "ACTIVE"),
             IngestConfigurationState::Inactive => write!(f, "INACTIVE"),
-            IngestConfigurationState::Unknown(value) => write!(f, "{}", value),
+            IngestConfigurationState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ActivationState {
         match self {
             ActivationState::Disabled => write!(f, "Disabled"),
             ActivationState::Enabled => write!(f, "Enabled"),
-            ActivationState::Unknown(value) => write!(f, "{}", value),
+            ActivationState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

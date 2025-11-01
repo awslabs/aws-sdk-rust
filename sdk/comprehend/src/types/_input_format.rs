@@ -102,7 +102,7 @@ impl ::std::fmt::Display for InputFormat {
         match self {
             InputFormat::OneDocPerFile => write!(f, "ONE_DOC_PER_FILE"),
             InputFormat::OneDocPerLine => write!(f, "ONE_DOC_PER_LINE"),
-            InputFormat::Unknown(value) => write!(f, "{}", value),
+            InputFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

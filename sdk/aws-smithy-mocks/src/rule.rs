@@ -21,6 +21,7 @@ use std::sync::Arc;
 /// - `Http`: An HTTP response
 ///
 #[derive(Debug)]
+#[allow(clippy::large_enum_variant)]
 pub(crate) enum MockResponse<O, E> {
     /// A successful modeled response.
     Output(O),

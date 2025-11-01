@@ -108,7 +108,7 @@ impl ::std::fmt::Display for TableTotalsPlacement {
             TableTotalsPlacement::Auto => write!(f, "AUTO"),
             TableTotalsPlacement::End => write!(f, "END"),
             TableTotalsPlacement::Start => write!(f, "START"),
-            TableTotalsPlacement::Unknown(value) => write!(f, "{}", value),
+            TableTotalsPlacement::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

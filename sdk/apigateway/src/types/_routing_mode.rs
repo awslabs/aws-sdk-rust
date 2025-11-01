@@ -108,7 +108,7 @@ impl ::std::fmt::Display for RoutingMode {
             RoutingMode::BasePathMappingOnly => write!(f, "BASE_PATH_MAPPING_ONLY"),
             RoutingMode::RoutingRuleOnly => write!(f, "ROUTING_RULE_ONLY"),
             RoutingMode::RoutingRuleThenBasePathMapping => write!(f, "ROUTING_RULE_THEN_BASE_PATH_MAPPING"),
-            RoutingMode::Unknown(value) => write!(f, "{}", value),
+            RoutingMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -210,7 +210,7 @@ impl ::std::fmt::Display for AutoMlMetricEnum {
             AutoMlMetricEnum::Recall => write!(f, "Recall"),
             AutoMlMetricEnum::RecallMacro => write!(f, "RecallMacro"),
             AutoMlMetricEnum::Wape => write!(f, "WAPE"),
-            AutoMlMetricEnum::Unknown(value) => write!(f, "{}", value),
+            AutoMlMetricEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for TransformerJobStatus {
             TransformerJobStatus::Failed => write!(f, "failed"),
             TransformerJobStatus::Running => write!(f, "running"),
             TransformerJobStatus::Succeeded => write!(f, "succeeded"),
-            TransformerJobStatus::Unknown(value) => write!(f, "{}", value),
+            TransformerJobStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

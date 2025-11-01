@@ -108,7 +108,7 @@ impl ::std::fmt::Display for LastUpdateStatus {
             LastUpdateStatus::Failed => write!(f, "Failed"),
             LastUpdateStatus::InProgress => write!(f, "InProgress"),
             LastUpdateStatus::Successful => write!(f, "Successful"),
-            LastUpdateStatus::Unknown(value) => write!(f, "{}", value),
+            LastUpdateStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

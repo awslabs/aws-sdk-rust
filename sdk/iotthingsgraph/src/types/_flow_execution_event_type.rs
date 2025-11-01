@@ -210,7 +210,7 @@ impl ::std::fmt::Display for FlowExecutionEventType {
             FlowExecutionEventType::ThingActionTask => write!(f, "THING_ACTION_TASK"),
             FlowExecutionEventType::ThingActionTaskFailed => write!(f, "THING_ACTION_TASK_FAILED"),
             FlowExecutionEventType::ThingActionTaskSucceeded => write!(f, "THING_ACTION_TASK_SUCCEEDED"),
-            FlowExecutionEventType::Unknown(value) => write!(f, "{}", value),
+            FlowExecutionEventType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

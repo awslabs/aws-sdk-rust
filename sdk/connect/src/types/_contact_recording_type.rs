@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ContactRecordingType {
             ContactRecordingType::Agent => write!(f, "AGENT"),
             ContactRecordingType::Ivr => write!(f, "IVR"),
             ContactRecordingType::Screen => write!(f, "SCREEN"),
-            ContactRecordingType::Unknown(value) => write!(f, "{}", value),
+            ContactRecordingType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

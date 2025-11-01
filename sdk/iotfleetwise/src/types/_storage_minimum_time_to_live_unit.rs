@@ -108,7 +108,7 @@ impl ::std::fmt::Display for StorageMinimumTimeToLiveUnit {
             StorageMinimumTimeToLiveUnit::Days => write!(f, "DAYS"),
             StorageMinimumTimeToLiveUnit::Hours => write!(f, "HOURS"),
             StorageMinimumTimeToLiveUnit::Weeks => write!(f, "WEEKS"),
-            StorageMinimumTimeToLiveUnit::Unknown(value) => write!(f, "{}", value),
+            StorageMinimumTimeToLiveUnit::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

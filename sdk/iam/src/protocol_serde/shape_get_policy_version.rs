@@ -95,16 +95,14 @@ pub fn de_get_policy_version(
     let start_el = decoder.start_el();
     if !(start_el.matches("GetPolicyVersionResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected GetPolicyVersionResponse got {:?}",
-            start_el
+            "invalid root, expected GetPolicyVersionResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("GetPolicyVersionResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected GetPolicyVersionResult got {:?}",
-                start_el
+                "invalid result, expected GetPolicyVersionResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

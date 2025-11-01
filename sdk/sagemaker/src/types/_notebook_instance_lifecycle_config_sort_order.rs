@@ -102,7 +102,7 @@ impl ::std::fmt::Display for NotebookInstanceLifecycleConfigSortOrder {
         match self {
             NotebookInstanceLifecycleConfigSortOrder::Ascending => write!(f, "Ascending"),
             NotebookInstanceLifecycleConfigSortOrder::Descending => write!(f, "Descending"),
-            NotebookInstanceLifecycleConfigSortOrder::Unknown(value) => write!(f, "{}", value),
+            NotebookInstanceLifecycleConfigSortOrder::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -133,7 +133,7 @@ impl ::std::fmt::Display for ProcessorType {
             ProcessorType::Lambda => write!(f, "Lambda"),
             ProcessorType::MetadataExtraction => write!(f, "MetadataExtraction"),
             ProcessorType::RecordDeAggregation => write!(f, "RecordDeAggregation"),
-            ProcessorType::Unknown(value) => write!(f, "{}", value),
+            ProcessorType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

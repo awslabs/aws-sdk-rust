@@ -22,8 +22,7 @@ pub fn de_managed_certificate_details(
     let start_el = decoder.start_el();
     if !(start_el.matches("ManagedCertificateDetails")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected ManagedCertificateDetails got {:?}",
-            start_el
+            "invalid root, expected ManagedCertificateDetails got {start_el:?}"
         )));
     }
     crate::protocol_serde::shape_managed_certificate_details::de_managed_certificate_details(&mut decoder)

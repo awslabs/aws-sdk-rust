@@ -132,7 +132,7 @@ impl ::std::fmt::Display for HsmStatus {
             HsmStatus::Terminated => write!(f, "TERMINATED"),
             HsmStatus::Terminating => write!(f, "TERMINATING"),
             HsmStatus::Updating => write!(f, "UPDATING"),
-            HsmStatus::Unknown(value) => write!(f, "{}", value),
+            HsmStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

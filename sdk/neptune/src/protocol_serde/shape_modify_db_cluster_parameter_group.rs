@@ -99,16 +99,14 @@ pub fn de_modify_db_cluster_parameter_group(
     let start_el = decoder.start_el();
     if !(start_el.matches("ModifyDBClusterParameterGroupResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected ModifyDBClusterParameterGroupResponse got {:?}",
-            start_el
+            "invalid root, expected ModifyDBClusterParameterGroupResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("ModifyDBClusterParameterGroupResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected ModifyDBClusterParameterGroupResult got {:?}",
-                start_el
+                "invalid result, expected ModifyDBClusterParameterGroupResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

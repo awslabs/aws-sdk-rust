@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ListingState {
             ListingState::Cancelled => write!(f, "cancelled"),
             ListingState::Pending => write!(f, "pending"),
             ListingState::Sold => write!(f, "sold"),
-            ListingState::Unknown(value) => write!(f, "{}", value),
+            ListingState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

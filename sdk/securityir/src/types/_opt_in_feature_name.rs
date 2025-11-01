@@ -96,7 +96,7 @@ impl ::std::fmt::Display for OptInFeatureName {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             OptInFeatureName::Triage => write!(f, "Triage"),
-            OptInFeatureName::Unknown(value) => write!(f, "{}", value),
+            OptInFeatureName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

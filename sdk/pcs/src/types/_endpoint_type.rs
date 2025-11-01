@@ -102,7 +102,7 @@ impl ::std::fmt::Display for EndpointType {
         match self {
             EndpointType::Slurmctld => write!(f, "SLURMCTLD"),
             EndpointType::Slurmdbd => write!(f, "SLURMDBD"),
-            EndpointType::Unknown(value) => write!(f, "{}", value),
+            EndpointType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

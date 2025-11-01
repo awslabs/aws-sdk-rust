@@ -102,7 +102,7 @@ impl ::std::fmt::Display for OriginProtocolPolicyEnum {
         match self {
             OriginProtocolPolicyEnum::HttpOnly => write!(f, "http-only"),
             OriginProtocolPolicyEnum::HttpsOnly => write!(f, "https-only"),
-            OriginProtocolPolicyEnum::Unknown(value) => write!(f, "{}", value),
+            OriginProtocolPolicyEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

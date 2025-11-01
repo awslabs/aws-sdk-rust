@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FeatureEnableParameter {
         match self {
             FeatureEnableParameter::Disabled => write!(f, "DISABLED"),
             FeatureEnableParameter::Enabled => write!(f, "ENABLED"),
-            FeatureEnableParameter::Unknown(value) => write!(f, "{}", value),
+            FeatureEnableParameter::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

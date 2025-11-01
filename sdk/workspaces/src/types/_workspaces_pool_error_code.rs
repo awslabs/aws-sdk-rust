@@ -375,7 +375,7 @@ impl ::std::fmt::Display for WorkspacesPoolErrorCode {
             WorkspacesPoolErrorCode::SubnetNotFound => write!(f, "SUBNET_NOT_FOUND"),
             WorkspacesPoolErrorCode::WorkspacesPoolInstanceProvisioningFailure => write!(f, "WORKSPACES_POOL_INSTANCE_PROVISIONING_FAILURE"),
             WorkspacesPoolErrorCode::WorkspacesPoolStopped => write!(f, "WORKSPACES_POOL_STOPPED"),
-            WorkspacesPoolErrorCode::Unknown(value) => write!(f, "{}", value),
+            WorkspacesPoolErrorCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

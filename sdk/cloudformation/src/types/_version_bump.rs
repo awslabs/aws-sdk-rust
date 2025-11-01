@@ -102,7 +102,7 @@ impl ::std::fmt::Display for VersionBump {
         match self {
             VersionBump::Major => write!(f, "MAJOR"),
             VersionBump::Minor => write!(f, "MINOR"),
-            VersionBump::Unknown(value) => write!(f, "{}", value),
+            VersionBump::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Mpeg2ScanTypeConversionMode {
         match self {
             Mpeg2ScanTypeConversionMode::Interlaced => write!(f, "INTERLACED"),
             Mpeg2ScanTypeConversionMode::InterlacedOptimize => write!(f, "INTERLACED_OPTIMIZE"),
-            Mpeg2ScanTypeConversionMode::Unknown(value) => write!(f, "{}", value),
+            Mpeg2ScanTypeConversionMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

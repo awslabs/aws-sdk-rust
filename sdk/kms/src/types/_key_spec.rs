@@ -203,7 +203,7 @@ impl ::std::fmt::Display for KeySpec {
             KeySpec::Rsa4096 => write!(f, "RSA_4096"),
             KeySpec::Sm2 => write!(f, "SM2"),
             KeySpec::SymmetricDefault => write!(f, "SYMMETRIC_DEFAULT"),
-            KeySpec::Unknown(value) => write!(f, "{}", value),
+            KeySpec::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for Owner {
             Owner::Aws => write!(f, "AWS"),
             Owner::CustomLambda => write!(f, "CUSTOM_LAMBDA"),
             Owner::CustomPolicy => write!(f, "CUSTOM_POLICY"),
-            Owner::Unknown(value) => write!(f, "{}", value),
+            Owner::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AutomatedDiscoveryMonitoringStatus {
         match self {
             AutomatedDiscoveryMonitoringStatus::Monitored => write!(f, "MONITORED"),
             AutomatedDiscoveryMonitoringStatus::NotMonitored => write!(f, "NOT_MONITORED"),
-            AutomatedDiscoveryMonitoringStatus::Unknown(value) => write!(f, "{}", value),
+            AutomatedDiscoveryMonitoringStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

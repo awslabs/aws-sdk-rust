@@ -55,8 +55,7 @@ pub fn de_describe_vpc_endpoint_service_permissions(
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeVpcEndpointServicePermissionsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected DescribeVpcEndpointServicePermissionsResponse got {:?}",
-            start_el
+            "invalid root, expected DescribeVpcEndpointServicePermissionsResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

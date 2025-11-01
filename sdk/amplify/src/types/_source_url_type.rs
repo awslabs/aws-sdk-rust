@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SourceUrlType {
         match self {
             SourceUrlType::BucketPrefix => write!(f, "BUCKET_PREFIX"),
             SourceUrlType::Zip => write!(f, "ZIP"),
-            SourceUrlType::Unknown(value) => write!(f, "{}", value),
+            SourceUrlType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

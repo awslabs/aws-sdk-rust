@@ -177,6 +177,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListNetworks
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::list_networks::ListNetworksInput,
                 output: &mut ::std::string::String,

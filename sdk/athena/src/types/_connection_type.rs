@@ -231,7 +231,7 @@ impl ::std::fmt::Display for ConnectionType {
             ConnectionType::Synapse => write!(f, "SYNAPSE"),
             ConnectionType::Timestream => write!(f, "TIMESTREAM"),
             ConnectionType::Tpcds => write!(f, "TPCDS"),
-            ConnectionType::Unknown(value) => write!(f, "{}", value),
+            ConnectionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

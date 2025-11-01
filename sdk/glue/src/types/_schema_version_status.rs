@@ -114,7 +114,7 @@ impl ::std::fmt::Display for SchemaVersionStatus {
             SchemaVersionStatus::Deleting => write!(f, "DELETING"),
             SchemaVersionStatus::Failure => write!(f, "FAILURE"),
             SchemaVersionStatus::Pending => write!(f, "PENDING"),
-            SchemaVersionStatus::Unknown(value) => write!(f, "{}", value),
+            SchemaVersionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

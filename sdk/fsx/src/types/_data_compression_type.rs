@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DataCompressionType {
         match self {
             DataCompressionType::Lz4 => write!(f, "LZ4"),
             DataCompressionType::None => write!(f, "NONE"),
-            DataCompressionType::Unknown(value) => write!(f, "{}", value),
+            DataCompressionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

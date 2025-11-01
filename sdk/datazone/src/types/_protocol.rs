@@ -132,7 +132,7 @@ impl ::std::fmt::Display for Protocol {
             Protocol::Livy => write!(f, "LIVY"),
             Protocol::Odbc => write!(f, "ODBC"),
             Protocol::Prism => write!(f, "PRISM"),
-            Protocol::Unknown(value) => write!(f, "{}", value),
+            Protocol::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

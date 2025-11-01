@@ -140,7 +140,7 @@ impl ::std::fmt::Display for ObjectCannedAcl {
             ObjectCannedAcl::Private => write!(f, "private"),
             ObjectCannedAcl::PublicRead => write!(f, "public-read"),
             ObjectCannedAcl::PublicReadWrite => write!(f, "public-read-write"),
-            ObjectCannedAcl::Unknown(value) => write!(f, "{}", value),
+            ObjectCannedAcl::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

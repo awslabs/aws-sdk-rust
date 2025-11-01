@@ -108,7 +108,7 @@ impl ::std::fmt::Display for DeviceSoftwareSetComplianceStatus {
             DeviceSoftwareSetComplianceStatus::Compliant => write!(f, "COMPLIANT"),
             DeviceSoftwareSetComplianceStatus::None => write!(f, "NONE"),
             DeviceSoftwareSetComplianceStatus::NotCompliant => write!(f, "NOT_COMPLIANT"),
-            DeviceSoftwareSetComplianceStatus::Unknown(value) => write!(f, "{}", value),
+            DeviceSoftwareSetComplianceStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

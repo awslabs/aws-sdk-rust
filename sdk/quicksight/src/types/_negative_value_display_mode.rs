@@ -102,7 +102,7 @@ impl ::std::fmt::Display for NegativeValueDisplayMode {
         match self {
             NegativeValueDisplayMode::Negative => write!(f, "NEGATIVE"),
             NegativeValueDisplayMode::Positive => write!(f, "POSITIVE"),
-            NegativeValueDisplayMode::Unknown(value) => write!(f, "{}", value),
+            NegativeValueDisplayMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

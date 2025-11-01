@@ -108,7 +108,7 @@ impl ::std::fmt::Display for WitnessStatus {
             WitnessStatus::Active => write!(f, "ACTIVE"),
             WitnessStatus::Creating => write!(f, "CREATING"),
             WitnessStatus::Deleting => write!(f, "DELETING"),
-            WitnessStatus::Unknown(value) => write!(f, "{}", value),
+            WitnessStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

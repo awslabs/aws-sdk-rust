@@ -114,7 +114,7 @@ impl ::std::fmt::Display for TieringPolicyName {
             TieringPolicyName::Auto => write!(f, "AUTO"),
             TieringPolicyName::None => write!(f, "NONE"),
             TieringPolicyName::SnapshotOnly => write!(f, "SNAPSHOT_ONLY"),
-            TieringPolicyName::Unknown(value) => write!(f, "{}", value),
+            TieringPolicyName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

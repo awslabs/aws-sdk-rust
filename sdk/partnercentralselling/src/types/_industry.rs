@@ -287,7 +287,7 @@ impl ::std::fmt::Display for Industry {
             Industry::TransportationLogistics => write!(f, "Transportation and Logistics"),
             Industry::Travel => write!(f, "Travel"),
             Industry::WholesaleDistribution => write!(f, "Wholesale and Distribution"),
-            Industry::Unknown(value) => write!(f, "{}", value),
+            Industry::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for NdiState {
         match self {
             NdiState::Disabled => write!(f, "DISABLED"),
             NdiState::Enabled => write!(f, "ENABLED"),
-            NdiState::Unknown(value) => write!(f, "{}", value),
+            NdiState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

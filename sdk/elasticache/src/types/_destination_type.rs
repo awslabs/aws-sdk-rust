@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DestinationType {
         match self {
             DestinationType::CloudWatchLogs => write!(f, "cloudwatch-logs"),
             DestinationType::KinesisFirehose => write!(f, "kinesis-firehose"),
-            DestinationType::Unknown(value) => write!(f, "{}", value),
+            DestinationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

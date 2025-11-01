@@ -114,7 +114,7 @@ impl ::std::fmt::Display for UserSearchType {
             UserSearchType::DatazoneSsoUser => write!(f, "DATAZONE_SSO_USER"),
             UserSearchType::DatazoneUser => write!(f, "DATAZONE_USER"),
             UserSearchType::SsoUser => write!(f, "SSO_USER"),
-            UserSearchType::Unknown(value) => write!(f, "{}", value),
+            UserSearchType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

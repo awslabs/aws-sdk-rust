@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MpaRevokeSessionStatus {
         match self {
             MpaRevokeSessionStatus::Failed => write!(f, "FAILED"),
             MpaRevokeSessionStatus::Pending => write!(f, "PENDING"),
-            MpaRevokeSessionStatus::Unknown(value) => write!(f, "{}", value),
+            MpaRevokeSessionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

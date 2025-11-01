@@ -120,7 +120,7 @@ impl ::std::fmt::Display for AuthenticationType {
             AuthenticationType::CustomAuth => write!(f, "CUSTOM_AUTH"),
             AuthenticationType::CustomAuthX509 => write!(f, "CUSTOM_AUTH_X509"),
             AuthenticationType::Default => write!(f, "DEFAULT"),
-            AuthenticationType::Unknown(value) => write!(f, "{}", value),
+            AuthenticationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

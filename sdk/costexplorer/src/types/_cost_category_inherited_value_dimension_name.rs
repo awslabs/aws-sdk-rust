@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CostCategoryInheritedValueDimensionName {
         match self {
             CostCategoryInheritedValueDimensionName::LinkedAccountName => write!(f, "LINKED_ACCOUNT_NAME"),
             CostCategoryInheritedValueDimensionName::Tag => write!(f, "TAG"),
-            CostCategoryInheritedValueDimensionName::Unknown(value) => write!(f, "{}", value),
+            CostCategoryInheritedValueDimensionName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

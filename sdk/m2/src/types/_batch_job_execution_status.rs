@@ -161,7 +161,7 @@ impl ::std::fmt::Display for BatchJobExecutionStatus {
             BatchJobExecutionStatus::Submitting => write!(f, "Submitting"),
             BatchJobExecutionStatus::Succeeded => write!(f, "Succeeded"),
             BatchJobExecutionStatus::SucceededWithWarning => write!(f, "Succeeded With Warning"),
-            BatchJobExecutionStatus::Unknown(value) => write!(f, "{}", value),
+            BatchJobExecutionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Oauth2FlowType {
         match self {
             Oauth2FlowType::M2M => write!(f, "M2M"),
             Oauth2FlowType::UserFederation => write!(f, "USER_FEDERATION"),
-            Oauth2FlowType::Unknown(value) => write!(f, "{}", value),
+            Oauth2FlowType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

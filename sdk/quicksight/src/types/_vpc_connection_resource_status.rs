@@ -154,7 +154,7 @@ impl ::std::fmt::Display for VpcConnectionResourceStatus {
             VpcConnectionResourceStatus::UpdateFailed => write!(f, "UPDATE_FAILED"),
             VpcConnectionResourceStatus::UpdateInProgress => write!(f, "UPDATE_IN_PROGRESS"),
             VpcConnectionResourceStatus::UpdateSuccessful => write!(f, "UPDATE_SUCCESSFUL"),
-            VpcConnectionResourceStatus::Unknown(value) => write!(f, "{}", value),
+            VpcConnectionResourceStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

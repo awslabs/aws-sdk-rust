@@ -53,8 +53,7 @@ pub fn de_describe_public_ipv4_pools(
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribePublicIpv4PoolsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected DescribePublicIpv4PoolsResponse got {:?}",
-            start_el
+            "invalid root, expected DescribePublicIpv4PoolsResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

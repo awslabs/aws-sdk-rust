@@ -147,7 +147,7 @@ impl ::std::fmt::Display for HealthCheckRegion {
             HealthCheckRegion::UsEast1 => write!(f, "us-east-1"),
             HealthCheckRegion::UsWest1 => write!(f, "us-west-1"),
             HealthCheckRegion::UsWest2 => write!(f, "us-west-2"),
-            HealthCheckRegion::Unknown(value) => write!(f, "{}", value),
+            HealthCheckRegion::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

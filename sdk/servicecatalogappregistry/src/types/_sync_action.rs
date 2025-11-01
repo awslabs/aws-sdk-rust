@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SyncAction {
         match self {
             SyncAction::NoAction => write!(f, "NO_ACTION"),
             SyncAction::StartSync => write!(f, "START_SYNC"),
-            SyncAction::Unknown(value) => write!(f, "{}", value),
+            SyncAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

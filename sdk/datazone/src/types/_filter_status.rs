@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FilterStatus {
         match self {
             FilterStatus::Invalid => write!(f, "INVALID"),
             FilterStatus::Valid => write!(f, "VALID"),
-            FilterStatus::Unknown(value) => write!(f, "{}", value),
+            FilterStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

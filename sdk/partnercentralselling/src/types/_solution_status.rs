@@ -108,7 +108,7 @@ impl ::std::fmt::Display for SolutionStatus {
             SolutionStatus::Active => write!(f, "Active"),
             SolutionStatus::Draft => write!(f, "Draft"),
             SolutionStatus::Inactive => write!(f, "Inactive"),
-            SolutionStatus::Unknown(value) => write!(f, "{}", value),
+            SolutionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

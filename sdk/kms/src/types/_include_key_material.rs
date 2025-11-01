@@ -102,7 +102,7 @@ impl ::std::fmt::Display for IncludeKeyMaterial {
         match self {
             IncludeKeyMaterial::AllKeyMaterial => write!(f, "ALL_KEY_MATERIAL"),
             IncludeKeyMaterial::RotationsOnly => write!(f, "ROTATIONS_ONLY"),
-            IncludeKeyMaterial::Unknown(value) => write!(f, "{}", value),
+            IncludeKeyMaterial::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ReplicationStartingPositionType {
         match self {
             ReplicationStartingPositionType::Earliest => write!(f, "EARLIEST"),
             ReplicationStartingPositionType::Latest => write!(f, "LATEST"),
-            ReplicationStartingPositionType::Unknown(value) => write!(f, "{}", value),
+            ReplicationStartingPositionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

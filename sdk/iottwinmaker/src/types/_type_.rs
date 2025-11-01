@@ -138,7 +138,7 @@ impl ::std::fmt::Display for Type {
             Type::Map => write!(f, "MAP"),
             Type::Relationship => write!(f, "RELATIONSHIP"),
             Type::String => write!(f, "STRING"),
-            Type::Unknown(value) => write!(f, "{}", value),
+            Type::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

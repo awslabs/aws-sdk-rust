@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TagPropagationMode {
         match self {
             TagPropagationMode::NoPropagation => write!(f, "NO_PROPAGATION"),
             TagPropagationMode::PropagateTagsToWorkersAtLaunch => write!(f, "PROPAGATE_TAGS_TO_WORKERS_AT_LAUNCH"),
-            TagPropagationMode::Unknown(value) => write!(f, "{}", value),
+            TagPropagationMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

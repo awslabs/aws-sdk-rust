@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ExistCondition {
             ExistCondition::MustExist => write!(f, "MUST_EXIST"),
             ExistCondition::None => write!(f, "NONE"),
             ExistCondition::NotExist => write!(f, "NOT_EXIST"),
-            ExistCondition::Unknown(value) => write!(f, "{}", value),
+            ExistCondition::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

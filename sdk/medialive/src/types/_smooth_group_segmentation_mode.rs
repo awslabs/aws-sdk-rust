@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SmoothGroupSegmentationMode {
         match self {
             SmoothGroupSegmentationMode::UseInputSegmentation => write!(f, "USE_INPUT_SEGMENTATION"),
             SmoothGroupSegmentationMode::UseSegmentDuration => write!(f, "USE_SEGMENT_DURATION"),
-            SmoothGroupSegmentationMode::Unknown(value) => write!(f, "{}", value),
+            SmoothGroupSegmentationMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

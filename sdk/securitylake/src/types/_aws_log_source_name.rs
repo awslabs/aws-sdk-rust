@@ -147,7 +147,7 @@ impl ::std::fmt::Display for AwsLogSourceName {
             AwsLogSourceName::ShFindings => write!(f, "SH_FINDINGS"),
             AwsLogSourceName::VpcFlow => write!(f, "VPC_FLOW"),
             AwsLogSourceName::Waf => write!(f, "WAF"),
-            AwsLogSourceName::Unknown(value) => write!(f, "{}", value),
+            AwsLogSourceName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

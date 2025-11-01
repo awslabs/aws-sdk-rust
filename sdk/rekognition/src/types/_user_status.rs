@@ -114,7 +114,7 @@ impl ::std::fmt::Display for UserStatus {
             UserStatus::Created => write!(f, "CREATED"),
             UserStatus::Creating => write!(f, "CREATING"),
             UserStatus::Updating => write!(f, "UPDATING"),
-            UserStatus::Unknown(value) => write!(f, "{}", value),
+            UserStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RecordMatchingModel {
         match self {
             RecordMatchingModel::ManySourceToOneTarget => write!(f, "MANY_SOURCE_TO_ONE_TARGET"),
             RecordMatchingModel::OneSourceToOneTarget => write!(f, "ONE_SOURCE_TO_ONE_TARGET"),
-            RecordMatchingModel::Unknown(value) => write!(f, "{}", value),
+            RecordMatchingModel::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

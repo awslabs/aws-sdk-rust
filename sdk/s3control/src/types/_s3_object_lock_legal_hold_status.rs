@@ -102,7 +102,7 @@ impl ::std::fmt::Display for S3ObjectLockLegalHoldStatus {
         match self {
             S3ObjectLockLegalHoldStatus::Off => write!(f, "OFF"),
             S3ObjectLockLegalHoldStatus::On => write!(f, "ON"),
-            S3ObjectLockLegalHoldStatus::Unknown(value) => write!(f, "{}", value),
+            S3ObjectLockLegalHoldStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

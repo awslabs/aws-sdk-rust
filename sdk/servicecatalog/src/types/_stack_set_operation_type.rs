@@ -108,7 +108,7 @@ impl ::std::fmt::Display for StackSetOperationType {
             StackSetOperationType::Create => write!(f, "CREATE"),
             StackSetOperationType::Delete => write!(f, "DELETE"),
             StackSetOperationType::Update => write!(f, "UPDATE"),
-            StackSetOperationType::Unknown(value) => write!(f, "{}", value),
+            StackSetOperationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

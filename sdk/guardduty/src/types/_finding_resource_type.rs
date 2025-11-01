@@ -147,7 +147,7 @@ impl ::std::fmt::Display for FindingResourceType {
             FindingResourceType::KubernetesWorkload => write!(f, "KUBERNETES_WORKLOAD"),
             FindingResourceType::S3Bucket => write!(f, "S3_BUCKET"),
             FindingResourceType::S3Object => write!(f, "S3_OBJECT"),
-            FindingResourceType::Unknown(value) => write!(f, "{}", value),
+            FindingResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

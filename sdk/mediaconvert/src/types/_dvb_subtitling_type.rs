@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DvbSubtitlingType {
         match self {
             DvbSubtitlingType::HearingImpaired => write!(f, "HEARING_IMPAIRED"),
             DvbSubtitlingType::Standard => write!(f, "STANDARD"),
-            DvbSubtitlingType::Unknown(value) => write!(f, "{}", value),
+            DvbSubtitlingType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

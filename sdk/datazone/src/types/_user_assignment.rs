@@ -102,7 +102,7 @@ impl ::std::fmt::Display for UserAssignment {
         match self {
             UserAssignment::Automatic => write!(f, "AUTOMATIC"),
             UserAssignment::Manual => write!(f, "MANUAL"),
-            UserAssignment::Unknown(value) => write!(f, "{}", value),
+            UserAssignment::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

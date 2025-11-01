@@ -51,8 +51,7 @@ pub fn de_confirm_product_instance(
     let start_el = decoder.start_el();
     if !(start_el.matches("ConfirmProductInstanceResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected ConfirmProductInstanceResponse got {:?}",
-            start_el
+            "invalid root, expected ConfirmProductInstanceResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

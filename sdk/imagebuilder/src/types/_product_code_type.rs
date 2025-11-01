@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ProductCodeType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ProductCodeType::Marketplace => write!(f, "marketplace"),
-            ProductCodeType::Unknown(value) => write!(f, "{}", value),
+            ProductCodeType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

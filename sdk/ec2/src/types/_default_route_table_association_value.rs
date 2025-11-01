@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DefaultRouteTableAssociationValue {
         match self {
             DefaultRouteTableAssociationValue::Disable => write!(f, "disable"),
             DefaultRouteTableAssociationValue::Enable => write!(f, "enable"),
-            DefaultRouteTableAssociationValue::Unknown(value) => write!(f, "{}", value),
+            DefaultRouteTableAssociationValue::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

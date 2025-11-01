@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SrtStylePassthrough {
         match self {
             SrtStylePassthrough::Disabled => write!(f, "DISABLED"),
             SrtStylePassthrough::Enabled => write!(f, "ENABLED"),
-            SrtStylePassthrough::Unknown(value) => write!(f, "{}", value),
+            SrtStylePassthrough::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

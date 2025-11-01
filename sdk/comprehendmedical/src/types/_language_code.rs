@@ -96,7 +96,7 @@ impl ::std::fmt::Display for LanguageCode {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             LanguageCode::En => write!(f, "en"),
-            LanguageCode::Unknown(value) => write!(f, "{}", value),
+            LanguageCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -107,7 +107,7 @@ impl ::std::fmt::Display for Gender {
             Gender::Female => write!(f, "FEMALE"),
             Gender::Male => write!(f, "MALE"),
             Gender::Unspecified => write!(f, "UNSPECIFIED"),
-            Gender::Unknown(value) => write!(f, "{}", value),
+            Gender::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -117,16 +117,14 @@ pub fn de_delete_user_group(
     let start_el = decoder.start_el();
     if !(start_el.matches("DeleteUserGroupResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected DeleteUserGroupResponse got {:?}",
-            start_el
+            "invalid root, expected DeleteUserGroupResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("DeleteUserGroupResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected DeleteUserGroupResult got {:?}",
-                start_el
+                "invalid result, expected DeleteUserGroupResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

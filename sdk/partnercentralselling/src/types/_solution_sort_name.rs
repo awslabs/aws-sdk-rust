@@ -120,7 +120,7 @@ impl ::std::fmt::Display for SolutionSortName {
             SolutionSortName::Identifier => write!(f, "Identifier"),
             SolutionSortName::Name => write!(f, "Name"),
             SolutionSortName::Status => write!(f, "Status"),
-            SolutionSortName::Unknown(value) => write!(f, "{}", value),
+            SolutionSortName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

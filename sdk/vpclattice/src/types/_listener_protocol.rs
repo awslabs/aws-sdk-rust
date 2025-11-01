@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ListenerProtocol {
             ListenerProtocol::Http => write!(f, "HTTP"),
             ListenerProtocol::Https => write!(f, "HTTPS"),
             ListenerProtocol::TlsPassthrough => write!(f, "TLS_PASSTHROUGH"),
-            ListenerProtocol::Unknown(value) => write!(f, "{}", value),
+            ListenerProtocol::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

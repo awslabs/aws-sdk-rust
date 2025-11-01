@@ -102,7 +102,7 @@ impl ::std::fmt::Display for IdMappingWorkflowRuleDefinitionType {
         match self {
             IdMappingWorkflowRuleDefinitionType::Source => write!(f, "SOURCE"),
             IdMappingWorkflowRuleDefinitionType::Target => write!(f, "TARGET"),
-            IdMappingWorkflowRuleDefinitionType::Unknown(value) => write!(f, "{}", value),
+            IdMappingWorkflowRuleDefinitionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

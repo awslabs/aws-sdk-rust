@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TextQualifier {
         match self {
             TextQualifier::DoubleQuote => write!(f, "DOUBLE_QUOTE"),
             TextQualifier::SingleQuote => write!(f, "SINGLE_QUOTE"),
-            TextQualifier::Unknown(value) => write!(f, "{}", value),
+            TextQualifier::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

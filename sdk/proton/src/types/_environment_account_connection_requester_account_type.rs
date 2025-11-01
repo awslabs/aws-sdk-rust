@@ -104,7 +104,7 @@ impl ::std::fmt::Display for EnvironmentAccountConnectionRequesterAccountType {
         match self {
             EnvironmentAccountConnectionRequesterAccountType::EnvironmentAccount => write!(f, "ENVIRONMENT_ACCOUNT"),
             EnvironmentAccountConnectionRequesterAccountType::ManagementAccount => write!(f, "MANAGEMENT_ACCOUNT"),
-            EnvironmentAccountConnectionRequesterAccountType::Unknown(value) => write!(f, "{}", value),
+            EnvironmentAccountConnectionRequesterAccountType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

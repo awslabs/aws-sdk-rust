@@ -120,7 +120,7 @@ impl ::std::fmt::Display for HsmState {
             HsmState::Degraded => write!(f, "DEGRADED"),
             HsmState::Deleted => write!(f, "DELETED"),
             HsmState::DeleteInProgress => write!(f, "DELETE_IN_PROGRESS"),
-            HsmState::Unknown(value) => write!(f, "{}", value),
+            HsmState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

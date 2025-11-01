@@ -119,7 +119,7 @@ impl ::std::fmt::Display for ErrorCode {
             ErrorCode::InternalServerFailure => write!(f, "INTERNAL_SERVER_FAILURE"),
             ErrorCode::ResourceAlreadyExists => write!(f, "RESOURCE_ALREADY_EXISTS"),
             ErrorCode::ResourceDoesNotExist => write!(f, "RESOURCE_DOES_NOT_EXIST"),
-            ErrorCode::Unknown(value) => write!(f, "{}", value),
+            ErrorCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

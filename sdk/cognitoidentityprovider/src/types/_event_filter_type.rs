@@ -108,7 +108,7 @@ impl ::std::fmt::Display for EventFilterType {
             EventFilterType::PasswordChange => write!(f, "PASSWORD_CHANGE"),
             EventFilterType::SignIn => write!(f, "SIGN_IN"),
             EventFilterType::SignUp => write!(f, "SIGN_UP"),
-            EventFilterType::Unknown(value) => write!(f, "{}", value),
+            EventFilterType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

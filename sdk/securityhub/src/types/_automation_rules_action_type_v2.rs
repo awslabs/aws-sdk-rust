@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AutomationRulesActionTypeV2 {
         match self {
             AutomationRulesActionTypeV2::ExternalIntegration => write!(f, "EXTERNAL_INTEGRATION"),
             AutomationRulesActionTypeV2::FindingFieldsUpdate => write!(f, "FINDING_FIELDS_UPDATE"),
-            AutomationRulesActionTypeV2::Unknown(value) => write!(f, "{}", value),
+            AutomationRulesActionTypeV2::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -196,7 +196,7 @@ impl ::std::fmt::Display for AssetCategoryType {
             AssetCategoryType::PasskeyGraphic => write!(f, "PASSKEY_GRAPHIC"),
             AssetCategoryType::PasswordGraphic => write!(f, "PASSWORD_GRAPHIC"),
             AssetCategoryType::SmsGraphic => write!(f, "SMS_GRAPHIC"),
-            AssetCategoryType::Unknown(value) => write!(f, "{}", value),
+            AssetCategoryType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

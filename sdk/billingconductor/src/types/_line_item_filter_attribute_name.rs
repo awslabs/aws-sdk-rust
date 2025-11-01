@@ -96,7 +96,7 @@ impl ::std::fmt::Display for LineItemFilterAttributeName {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             LineItemFilterAttributeName::LineItemType => write!(f, "LINE_ITEM_TYPE"),
-            LineItemFilterAttributeName::Unknown(value) => write!(f, "{}", value),
+            LineItemFilterAttributeName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for RegistryType {
             RegistryType::Hook => write!(f, "HOOK"),
             RegistryType::Module => write!(f, "MODULE"),
             RegistryType::Resource => write!(f, "RESOURCE"),
-            RegistryType::Unknown(value) => write!(f, "{}", value),
+            RegistryType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -126,7 +126,7 @@ impl ::std::fmt::Display for HighlightColor {
             HighlightColor::Red => write!(f, "Red"),
             HighlightColor::White => write!(f, "White"),
             HighlightColor::Yellow => write!(f, "Yellow"),
-            HighlightColor::Unknown(value) => write!(f, "{}", value),
+            HighlightColor::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

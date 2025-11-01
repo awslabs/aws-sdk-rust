@@ -120,7 +120,7 @@ impl ::std::fmt::Display for LivenessSessionStatus {
             LivenessSessionStatus::Failed => write!(f, "FAILED"),
             LivenessSessionStatus::InProgress => write!(f, "IN_PROGRESS"),
             LivenessSessionStatus::Succeeded => write!(f, "SUCCEEDED"),
-            LivenessSessionStatus::Unknown(value) => write!(f, "{}", value),
+            LivenessSessionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

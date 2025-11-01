@@ -120,7 +120,7 @@ impl ::std::fmt::Display for ConnectorOperationStepState {
             ConnectorOperationStepState::Failed => write!(f, "FAILED"),
             ConnectorOperationStepState::InProgress => write!(f, "IN_PROGRESS"),
             ConnectorOperationStepState::Pending => write!(f, "PENDING"),
-            ConnectorOperationStepState::Unknown(value) => write!(f, "{}", value),
+            ConnectorOperationStepState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

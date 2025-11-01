@@ -200,7 +200,7 @@ impl ::std::fmt::Display for PartOfSpeechTagType {
             PartOfSpeechTagType::Sconj => write!(f, "SCONJ"),
             PartOfSpeechTagType::Sym => write!(f, "SYM"),
             PartOfSpeechTagType::Verb => write!(f, "VERB"),
-            PartOfSpeechTagType::Unknown(value) => write!(f, "{}", value),
+            PartOfSpeechTagType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

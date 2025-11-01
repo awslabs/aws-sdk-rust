@@ -133,7 +133,7 @@ impl ::std::fmt::Display for RuleNumberOperator {
             RuleNumberOperator::LessThan => write!(f, "LESS_THAN"),
             RuleNumberOperator::LessThanOrEqual => write!(f, "LESS_THAN_OR_EQUAL"),
             RuleNumberOperator::NotEquals => write!(f, "NOT_EQUALS"),
-            RuleNumberOperator::Unknown(value) => write!(f, "{}", value),
+            RuleNumberOperator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

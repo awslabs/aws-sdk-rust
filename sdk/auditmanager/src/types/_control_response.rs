@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ControlResponse {
             ControlResponse::Defer => write!(f, "DEFER"),
             ControlResponse::Ignore => write!(f, "IGNORE"),
             ControlResponse::Manual => write!(f, "MANUAL"),
-            ControlResponse::Unknown(value) => write!(f, "{}", value),
+            ControlResponse::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

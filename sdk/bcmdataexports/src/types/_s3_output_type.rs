@@ -96,7 +96,7 @@ impl ::std::fmt::Display for S3OutputType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             S3OutputType::Custom => write!(f, "CUSTOM"),
-            S3OutputType::Unknown(value) => write!(f, "{}", value),
+            S3OutputType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

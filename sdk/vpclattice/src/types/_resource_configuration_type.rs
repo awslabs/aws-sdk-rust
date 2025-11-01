@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ResourceConfigurationType {
             ResourceConfigurationType::Child => write!(f, "CHILD"),
             ResourceConfigurationType::Group => write!(f, "GROUP"),
             ResourceConfigurationType::Single => write!(f, "SINGLE"),
-            ResourceConfigurationType::Unknown(value) => write!(f, "{}", value),
+            ResourceConfigurationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

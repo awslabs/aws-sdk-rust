@@ -120,7 +120,7 @@ impl ::std::fmt::Display for OptionState {
             OptionState::FailedToValidate => write!(f, "FailedToValidate"),
             OptionState::Processing => write!(f, "Processing"),
             OptionState::RequiresIndexDocuments => write!(f, "RequiresIndexDocuments"),
-            OptionState::Unknown(value) => write!(f, "{}", value),
+            OptionState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

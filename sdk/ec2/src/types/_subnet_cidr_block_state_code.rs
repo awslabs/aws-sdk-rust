@@ -126,7 +126,7 @@ impl ::std::fmt::Display for SubnetCidrBlockStateCode {
             SubnetCidrBlockStateCode::Disassociating => write!(f, "disassociating"),
             SubnetCidrBlockStateCode::Failed => write!(f, "failed"),
             SubnetCidrBlockStateCode::Failing => write!(f, "failing"),
-            SubnetCidrBlockStateCode::Unknown(value) => write!(f, "{}", value),
+            SubnetCidrBlockStateCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PrefetchScheduleType {
         match self {
             PrefetchScheduleType::Recurring => write!(f, "RECURRING"),
             PrefetchScheduleType::Single => write!(f, "SINGLE"),
-            PrefetchScheduleType::Unknown(value) => write!(f, "{}", value),
+            PrefetchScheduleType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -140,7 +140,7 @@ impl ::std::fmt::Display for ResourceGatewayStatus {
             ResourceGatewayStatus::DeleteInProgress => write!(f, "DELETE_IN_PROGRESS"),
             ResourceGatewayStatus::UpdateFailed => write!(f, "UPDATE_FAILED"),
             ResourceGatewayStatus::UpdateInProgress => write!(f, "UPDATE_IN_PROGRESS"),
-            ResourceGatewayStatus::Unknown(value) => write!(f, "{}", value),
+            ResourceGatewayStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

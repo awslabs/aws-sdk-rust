@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ResolverQueryLogConfigStatus {
             ResolverQueryLogConfigStatus::Creating => write!(f, "CREATING"),
             ResolverQueryLogConfigStatus::Deleting => write!(f, "DELETING"),
             ResolverQueryLogConfigStatus::Failed => write!(f, "FAILED"),
-            ResolverQueryLogConfigStatus::Unknown(value) => write!(f, "{}", value),
+            ResolverQueryLogConfigStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

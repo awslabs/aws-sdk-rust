@@ -108,7 +108,7 @@ impl ::std::fmt::Display for EnvironmentSoftwareSetComplianceStatus {
             EnvironmentSoftwareSetComplianceStatus::Compliant => write!(f, "COMPLIANT"),
             EnvironmentSoftwareSetComplianceStatus::NotCompliant => write!(f, "NOT_COMPLIANT"),
             EnvironmentSoftwareSetComplianceStatus::NoRegisteredDevices => write!(f, "NO_REGISTERED_DEVICES"),
-            EnvironmentSoftwareSetComplianceStatus::Unknown(value) => write!(f, "{}", value),
+            EnvironmentSoftwareSetComplianceStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

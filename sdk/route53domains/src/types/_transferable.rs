@@ -164,7 +164,7 @@ impl ::std::fmt::Display for Transferable {
             Transferable::PremiumDomain => write!(f, "PREMIUM_DOMAIN"),
             Transferable::Transferable => write!(f, "TRANSFERABLE"),
             Transferable::Untransferable => write!(f, "UNTRANSFERABLE"),
-            Transferable::Unknown(value) => write!(f, "{}", value),
+            Transferable::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

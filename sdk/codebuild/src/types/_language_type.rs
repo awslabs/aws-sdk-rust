@@ -152,7 +152,7 @@ impl ::std::fmt::Display for LanguageType {
             LanguageType::Php => write!(f, "PHP"),
             LanguageType::Python => write!(f, "PYTHON"),
             LanguageType::Ruby => write!(f, "RUBY"),
-            LanguageType::Unknown(value) => write!(f, "{}", value),
+            LanguageType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

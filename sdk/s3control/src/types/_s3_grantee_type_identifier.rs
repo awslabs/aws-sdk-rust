@@ -108,7 +108,7 @@ impl ::std::fmt::Display for S3GranteeTypeIdentifier {
             S3GranteeTypeIdentifier::EmailAddress => write!(f, "emailAddress"),
             S3GranteeTypeIdentifier::Canonical => write!(f, "id"),
             S3GranteeTypeIdentifier::Group => write!(f, "uri"),
-            S3GranteeTypeIdentifier::Unknown(value) => write!(f, "{}", value),
+            S3GranteeTypeIdentifier::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

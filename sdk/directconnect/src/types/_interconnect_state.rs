@@ -134,7 +134,7 @@ impl ::std::fmt::Display for InterconnectState {
             InterconnectState::Pending => write!(f, "pending"),
             InterconnectState::Requested => write!(f, "requested"),
             InterconnectState::UnknownValue => write!(f, "unknown"),
-            InterconnectState::Unknown(value) => write!(f, "{}", value),
+            InterconnectState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for SlotTypeCategory {
             SlotTypeCategory::Custom => write!(f, "Custom"),
             SlotTypeCategory::Extended => write!(f, "Extended"),
             SlotTypeCategory::ExternalGrammar => write!(f, "ExternalGrammar"),
-            SlotTypeCategory::Unknown(value) => write!(f, "{}", value),
+            SlotTypeCategory::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

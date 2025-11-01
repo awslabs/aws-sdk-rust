@@ -108,7 +108,7 @@ impl ::std::fmt::Display for DetectorVersionStatus {
             DetectorVersionStatus::Active => write!(f, "ACTIVE"),
             DetectorVersionStatus::Draft => write!(f, "DRAFT"),
             DetectorVersionStatus::Inactive => write!(f, "INACTIVE"),
-            DetectorVersionStatus::Unknown(value) => write!(f, "{}", value),
+            DetectorVersionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

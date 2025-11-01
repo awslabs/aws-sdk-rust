@@ -96,7 +96,7 @@ impl ::std::fmt::Display for FlowExecutionErrorType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             FlowExecutionErrorType::TimedOut => write!(f, "ExecutionTimedOut"),
-            FlowExecutionErrorType::Unknown(value) => write!(f, "{}", value),
+            FlowExecutionErrorType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

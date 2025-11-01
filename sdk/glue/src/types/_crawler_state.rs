@@ -108,7 +108,7 @@ impl ::std::fmt::Display for CrawlerState {
             CrawlerState::Ready => write!(f, "READY"),
             CrawlerState::Running => write!(f, "RUNNING"),
             CrawlerState::Stopping => write!(f, "STOPPING"),
-            CrawlerState::Unknown(value) => write!(f, "{}", value),
+            CrawlerState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

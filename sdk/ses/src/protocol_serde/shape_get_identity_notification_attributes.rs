@@ -53,16 +53,14 @@ pub fn de_get_identity_notification_attributes(
     let start_el = decoder.start_el();
     if !(start_el.matches("GetIdentityNotificationAttributesResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected GetIdentityNotificationAttributesResponse got {:?}",
-            start_el
+            "invalid root, expected GetIdentityNotificationAttributesResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("GetIdentityNotificationAttributesResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected GetIdentityNotificationAttributesResult got {:?}",
-                start_el
+                "invalid result, expected GetIdentityNotificationAttributesResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

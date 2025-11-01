@@ -102,7 +102,7 @@ impl ::std::fmt::Display for QueueListBy {
         match self {
             QueueListBy::CreationDate => write!(f, "CREATION_DATE"),
             QueueListBy::Name => write!(f, "NAME"),
-            QueueListBy::Unknown(value) => write!(f, "{}", value),
+            QueueListBy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -126,7 +126,7 @@ impl ::std::fmt::Display for ReservationCodec {
             ReservationCodec::Hevc => write!(f, "HEVC"),
             ReservationCodec::Link => write!(f, "LINK"),
             ReservationCodec::Mpeg2 => write!(f, "MPEG2"),
-            ReservationCodec::Unknown(value) => write!(f, "{}", value),
+            ReservationCodec::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

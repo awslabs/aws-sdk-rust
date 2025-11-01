@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ParameterExceptionReason {
             ParameterExceptionReason::IllegalCombination => write!(f, "ILLEGAL_COMBINATION"),
             ParameterExceptionReason::InvalidOption => write!(f, "INVALID_OPTION"),
             ParameterExceptionReason::InvalidTagKey => write!(f, "INVALID_TAG_KEY"),
-            ParameterExceptionReason::Unknown(value) => write!(f, "{}", value),
+            ParameterExceptionReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

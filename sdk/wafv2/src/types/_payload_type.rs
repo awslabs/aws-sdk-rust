@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PayloadType {
         match self {
             PayloadType::FormEncoded => write!(f, "FORM_ENCODED"),
             PayloadType::Json => write!(f, "JSON"),
-            PayloadType::Unknown(value) => write!(f, "{}", value),
+            PayloadType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -17,8 +17,7 @@ pub fn de_key_group_list(inp: &[u8]) -> std::result::Result<crate::types::KeyGro
     let start_el = decoder.start_el();
     if !(start_el.matches("KeyGroupList")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected KeyGroupList got {:?}",
-            start_el
+            "invalid root, expected KeyGroupList got {start_el:?}"
         )));
     }
     crate::protocol_serde::shape_key_group_list::de_key_group_list(&mut decoder)

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for VisualMode {
         match self {
             VisualMode::Dark => write!(f, "Dark"),
             VisualMode::Light => write!(f, "Light"),
-            VisualMode::Unknown(value) => write!(f, "{}", value),
+            VisualMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

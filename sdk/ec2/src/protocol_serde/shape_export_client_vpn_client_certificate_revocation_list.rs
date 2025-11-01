@@ -51,8 +51,7 @@ pub fn de_export_client_vpn_client_certificate_revocation_list(
     let start_el = decoder.start_el();
     if !(start_el.matches("ExportClientVpnClientCertificateRevocationListResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected ExportClientVpnClientCertificateRevocationListResponse got {:?}",
-            start_el
+            "invalid root, expected ExportClientVpnClientCertificateRevocationListResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

@@ -126,7 +126,7 @@ impl ::std::fmt::Display for NatGatewayAddressStatus {
             NatGatewayAddressStatus::Failed => write!(f, "failed"),
             NatGatewayAddressStatus::Succeeded => write!(f, "succeeded"),
             NatGatewayAddressStatus::Unassigning => write!(f, "unassigning"),
-            NatGatewayAddressStatus::Unknown(value) => write!(f, "{}", value),
+            NatGatewayAddressStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

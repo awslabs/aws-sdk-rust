@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ExecutionRoleIdentityConfig {
         match self {
             ExecutionRoleIdentityConfig::Disabled => write!(f, "DISABLED"),
             ExecutionRoleIdentityConfig::UserProfileName => write!(f, "USER_PROFILE_NAME"),
-            ExecutionRoleIdentityConfig::Unknown(value) => write!(f, "{}", value),
+            ExecutionRoleIdentityConfig::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

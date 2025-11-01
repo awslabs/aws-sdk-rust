@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AllowedOperators {
         match self {
             AllowedOperators::And => write!(f, "AND"),
             AllowedOperators::Or => write!(f, "OR"),
-            AllowedOperators::Unknown(value) => write!(f, "{}", value),
+            AllowedOperators::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

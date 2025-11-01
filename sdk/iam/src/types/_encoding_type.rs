@@ -102,7 +102,7 @@ impl ::std::fmt::Display for EncodingType {
         match self {
             EncodingType::Pem => write!(f, "PEM"),
             EncodingType::Ssh => write!(f, "SSH"),
-            EncodingType::Unknown(value) => write!(f, "{}", value),
+            EncodingType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

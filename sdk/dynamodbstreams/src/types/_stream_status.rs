@@ -114,7 +114,7 @@ impl ::std::fmt::Display for StreamStatus {
             StreamStatus::Disabling => write!(f, "DISABLING"),
             StreamStatus::Enabled => write!(f, "ENABLED"),
             StreamStatus::Enabling => write!(f, "ENABLING"),
-            StreamStatus::Unknown(value) => write!(f, "{}", value),
+            StreamStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

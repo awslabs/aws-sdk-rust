@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CoreNetworkPolicyAlias {
         match self {
             CoreNetworkPolicyAlias::Latest => write!(f, "LATEST"),
             CoreNetworkPolicyAlias::Live => write!(f, "LIVE"),
-            CoreNetworkPolicyAlias::Unknown(value) => write!(f, "{}", value),
+            CoreNetworkPolicyAlias::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

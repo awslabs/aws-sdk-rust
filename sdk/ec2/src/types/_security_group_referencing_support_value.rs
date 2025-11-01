@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SecurityGroupReferencingSupportValue {
         match self {
             SecurityGroupReferencingSupportValue::Disable => write!(f, "disable"),
             SecurityGroupReferencingSupportValue::Enable => write!(f, "enable"),
-            SecurityGroupReferencingSupportValue::Unknown(value) => write!(f, "{}", value),
+            SecurityGroupReferencingSupportValue::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

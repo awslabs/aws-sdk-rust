@@ -120,7 +120,7 @@ impl ::std::fmt::Display for ComputationModelState {
             ComputationModelState::Deleting => write!(f, "DELETING"),
             ComputationModelState::Failed => write!(f, "FAILED"),
             ComputationModelState::Updating => write!(f, "UPDATING"),
-            ComputationModelState::Unknown(value) => write!(f, "{}", value),
+            ComputationModelState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for SyncExecutionStatus {
             SyncExecutionStatus::Failed => write!(f, "FAILED"),
             SyncExecutionStatus::Succeeded => write!(f, "SUCCEEDED"),
             SyncExecutionStatus::TimedOut => write!(f, "TIMED_OUT"),
-            SyncExecutionStatus::Unknown(value) => write!(f, "{}", value),
+            SyncExecutionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

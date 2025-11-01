@@ -126,7 +126,7 @@ impl ::std::fmt::Display for NotificationEvent {
             NotificationEvent::InProgress => write!(f, "InProgress"),
             NotificationEvent::Success => write!(f, "Success"),
             NotificationEvent::TimedOut => write!(f, "TimedOut"),
-            NotificationEvent::Unknown(value) => write!(f, "{}", value),
+            NotificationEvent::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

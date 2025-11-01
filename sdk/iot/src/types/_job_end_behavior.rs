@@ -108,7 +108,7 @@ impl ::std::fmt::Display for JobEndBehavior {
             JobEndBehavior::Cancel => write!(f, "CANCEL"),
             JobEndBehavior::ForceCancel => write!(f, "FORCE_CANCEL"),
             JobEndBehavior::StopRollout => write!(f, "STOP_ROLLOUT"),
-            JobEndBehavior::Unknown(value) => write!(f, "{}", value),
+            JobEndBehavior::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

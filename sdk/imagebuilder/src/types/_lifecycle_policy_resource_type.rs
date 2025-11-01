@@ -102,7 +102,7 @@ impl ::std::fmt::Display for LifecyclePolicyResourceType {
         match self {
             LifecyclePolicyResourceType::AmiImage => write!(f, "AMI_IMAGE"),
             LifecyclePolicyResourceType::ContainerImage => write!(f, "CONTAINER_IMAGE"),
-            LifecyclePolicyResourceType::Unknown(value) => write!(f, "{}", value),
+            LifecyclePolicyResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

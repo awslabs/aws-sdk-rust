@@ -103,7 +103,7 @@ impl ::std::fmt::Display for Distribution {
         match self {
             Distribution::ByLogStream => write!(f, "ByLogStream"),
             Distribution::Random => write!(f, "Random"),
-            Distribution::Unknown(value) => write!(f, "{}", value),
+            Distribution::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

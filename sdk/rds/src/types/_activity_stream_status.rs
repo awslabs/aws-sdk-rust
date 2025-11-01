@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ActivityStreamStatus {
             ActivityStreamStatus::Starting => write!(f, "starting"),
             ActivityStreamStatus::Stopped => write!(f, "stopped"),
             ActivityStreamStatus::Stopping => write!(f, "stopping"),
-            ActivityStreamStatus::Unknown(value) => write!(f, "{}", value),
+            ActivityStreamStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

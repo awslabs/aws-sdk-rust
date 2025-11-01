@@ -126,7 +126,7 @@ impl ::std::fmt::Display for ReplicationStatus {
             ReplicationStatus::Error => write!(f, "ERROR"),
             ReplicationStatus::Paused => write!(f, "PAUSED"),
             ReplicationStatus::Pausing => write!(f, "PAUSING"),
-            ReplicationStatus::Unknown(value) => write!(f, "{}", value),
+            ReplicationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

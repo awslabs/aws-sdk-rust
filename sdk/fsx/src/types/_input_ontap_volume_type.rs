@@ -102,7 +102,7 @@ impl ::std::fmt::Display for InputOntapVolumeType {
         match self {
             InputOntapVolumeType::Dp => write!(f, "DP"),
             InputOntapVolumeType::Rw => write!(f, "RW"),
-            InputOntapVolumeType::Unknown(value) => write!(f, "{}", value),
+            InputOntapVolumeType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

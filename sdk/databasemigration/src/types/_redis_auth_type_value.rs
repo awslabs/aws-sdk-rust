@@ -108,7 +108,7 @@ impl ::std::fmt::Display for RedisAuthTypeValue {
             RedisAuthTypeValue::AuthRole => write!(f, "auth-role"),
             RedisAuthTypeValue::AuthToken => write!(f, "auth-token"),
             RedisAuthTypeValue::None => write!(f, "none"),
-            RedisAuthTypeValue::Unknown(value) => write!(f, "{}", value),
+            RedisAuthTypeValue::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for GroupScope {
             GroupScope::DomainLocal => write!(f, "DomainLocal"),
             GroupScope::Global => write!(f, "Global"),
             GroupScope::Universal => write!(f, "Universal"),
-            GroupScope::Unknown(value) => write!(f, "{}", value),
+            GroupScope::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

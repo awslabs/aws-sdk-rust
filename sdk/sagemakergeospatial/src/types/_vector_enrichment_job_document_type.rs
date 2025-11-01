@@ -96,7 +96,7 @@ impl ::std::fmt::Display for VectorEnrichmentJobDocumentType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             VectorEnrichmentJobDocumentType::Csv => write!(f, "CSV"),
-            VectorEnrichmentJobDocumentType::Unknown(value) => write!(f, "{}", value),
+            VectorEnrichmentJobDocumentType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

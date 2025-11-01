@@ -126,7 +126,7 @@ impl ::std::fmt::Display for MetricStatistic {
             MetricStatistic::Max => write!(f, "Max"),
             MetricStatistic::Min => write!(f, "Min"),
             MetricStatistic::StdDev => write!(f, "StdDev"),
-            MetricStatistic::Unknown(value) => write!(f, "{}", value),
+            MetricStatistic::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

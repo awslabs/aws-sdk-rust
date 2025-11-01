@@ -175,7 +175,7 @@ impl ::std::fmt::Display for MonthName {
             MonthName::November => write!(f, "NOVEMBER"),
             MonthName::October => write!(f, "OCTOBER"),
             MonthName::September => write!(f, "SEPTEMBER"),
-            MonthName::Unknown(value) => write!(f, "{}", value),
+            MonthName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

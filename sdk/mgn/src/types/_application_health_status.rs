@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ApplicationHealthStatus {
             ApplicationHealthStatus::Error => write!(f, "ERROR"),
             ApplicationHealthStatus::Healthy => write!(f, "HEALTHY"),
             ApplicationHealthStatus::Lagging => write!(f, "LAGGING"),
-            ApplicationHealthStatus::Unknown(value) => write!(f, "{}", value),
+            ApplicationHealthStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

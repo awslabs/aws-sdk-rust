@@ -102,7 +102,7 @@ impl ::std::fmt::Display for QueryType {
         match self {
             QueryType::CloudformationStack10 => write!(f, "CLOUDFORMATION_STACK_1_0"),
             QueryType::TagFilters10 => write!(f, "TAG_FILTERS_1_0"),
-            QueryType::Unknown(value) => write!(f, "{}", value),
+            QueryType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -53,8 +53,7 @@ pub fn de_describe_fast_launch_images(
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeFastLaunchImagesResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected DescribeFastLaunchImagesResponse got {:?}",
-            start_el
+            "invalid root, expected DescribeFastLaunchImagesResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AnalysisResultLevel {
             AnalysisResultLevel::Error => write!(f, "ERROR"),
             AnalysisResultLevel::Info => write!(f, "INFO"),
             AnalysisResultLevel::Warning => write!(f, "WARNING"),
-            AnalysisResultLevel::Unknown(value) => write!(f, "{}", value),
+            AnalysisResultLevel::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

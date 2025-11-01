@@ -96,7 +96,7 @@ impl ::std::fmt::Display for Language {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             Language::Detectorpl => write!(f, "DETECTORPL"),
-            Language::Unknown(value) => write!(f, "{}", value),
+            Language::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

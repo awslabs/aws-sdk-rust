@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MasterNodeStatus {
         match self {
             MasterNodeStatus::Available => write!(f, "Available"),
             MasterNodeStatus::UnAvailable => write!(f, "UnAvailable"),
-            MasterNodeStatus::Unknown(value) => write!(f, "{}", value),
+            MasterNodeStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

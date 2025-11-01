@@ -161,7 +161,7 @@ impl ::std::fmt::Display for Status {
             Status::Updating => write!(f, "UPDATING"),
             Status::UpdatingDeploymentType => write!(f, "UPDATING_DEPLOYMENT_TYPE"),
             Status::UpdatingInstanceType => write!(f, "UPDATING_INSTANCE_TYPE"),
-            Status::Unknown(value) => write!(f, "{}", value),
+            Status::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

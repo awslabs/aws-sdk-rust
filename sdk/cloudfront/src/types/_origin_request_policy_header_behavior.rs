@@ -120,7 +120,7 @@ impl ::std::fmt::Display for OriginRequestPolicyHeaderBehavior {
             OriginRequestPolicyHeaderBehavior::AllViewerAndWhitelistCloudFront => write!(f, "allViewerAndWhitelistCloudFront"),
             OriginRequestPolicyHeaderBehavior::None => write!(f, "none"),
             OriginRequestPolicyHeaderBehavior::Whitelist => write!(f, "whitelist"),
-            OriginRequestPolicyHeaderBehavior::Unknown(value) => write!(f, "{}", value),
+            OriginRequestPolicyHeaderBehavior::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -245,16 +245,14 @@ pub fn de_modify_db_cluster(
     let start_el = decoder.start_el();
     if !(start_el.matches("ModifyDBClusterResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected ModifyDBClusterResponse got {:?}",
-            start_el
+            "invalid root, expected ModifyDBClusterResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("ModifyDBClusterResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected ModifyDBClusterResult got {:?}",
-                start_el
+                "invalid result, expected ModifyDBClusterResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

@@ -140,7 +140,7 @@ impl ::std::fmt::Display for SourceType {
             SourceType::CommonControl => write!(f, "Common_Control"),
             SourceType::CoreControl => write!(f, "Core_Control"),
             SourceType::Manual => write!(f, "MANUAL"),
-            SourceType::Unknown(value) => write!(f, "{}", value),
+            SourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

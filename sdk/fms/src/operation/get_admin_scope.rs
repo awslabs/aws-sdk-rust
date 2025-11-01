@@ -177,6 +177,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetAdminScop
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::get_admin_scope::GetAdminScopeInput,
                 output: &mut ::std::string::String,

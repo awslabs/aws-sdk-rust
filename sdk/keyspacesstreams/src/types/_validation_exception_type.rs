@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ValidationExceptionType {
             ValidationExceptionType::ExpiredNextToken => write!(f, "ExpiredNextToken"),
             ValidationExceptionType::InvalidFormat => write!(f, "InvalidFormat"),
             ValidationExceptionType::TrimmedDataAccess => write!(f, "TrimmedDataAccess"),
-            ValidationExceptionType::Unknown(value) => write!(f, "{}", value),
+            ValidationExceptionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

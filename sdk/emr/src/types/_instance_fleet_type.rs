@@ -108,7 +108,7 @@ impl ::std::fmt::Display for InstanceFleetType {
             InstanceFleetType::Core => write!(f, "CORE"),
             InstanceFleetType::Master => write!(f, "MASTER"),
             InstanceFleetType::Task => write!(f, "TASK"),
-            InstanceFleetType::Unknown(value) => write!(f, "{}", value),
+            InstanceFleetType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

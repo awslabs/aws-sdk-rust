@@ -108,7 +108,7 @@ impl ::std::fmt::Display for UnnestSpec {
             UnnestSpec::Full => write!(f, "FULL"),
             UnnestSpec::Nounnest => write!(f, "NOUNNEST"),
             UnnestSpec::Toplevel => write!(f, "TOPLEVEL"),
-            UnnestSpec::Unknown(value) => write!(f, "{}", value),
+            UnnestSpec::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

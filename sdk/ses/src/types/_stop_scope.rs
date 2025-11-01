@@ -96,7 +96,7 @@ impl ::std::fmt::Display for StopScope {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             StopScope::RuleSet => write!(f, "RuleSet"),
-            StopScope::Unknown(value) => write!(f, "{}", value),
+            StopScope::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for LinkState {
             LinkState::Deleting => write!(f, "DELETING"),
             LinkState::Pending => write!(f, "PENDING"),
             LinkState::Updating => write!(f, "UPDATING"),
-            LinkState::Unknown(value) => write!(f, "{}", value),
+            LinkState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

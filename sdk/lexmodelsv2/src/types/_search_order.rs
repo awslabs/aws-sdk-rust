@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SearchOrder {
         match self {
             SearchOrder::Ascending => write!(f, "Ascending"),
             SearchOrder::Descending => write!(f, "Descending"),
-            SearchOrder::Unknown(value) => write!(f, "{}", value),
+            SearchOrder::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

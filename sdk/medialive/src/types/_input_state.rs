@@ -120,7 +120,7 @@ impl ::std::fmt::Display for InputState {
             InputState::Deleted => write!(f, "DELETED"),
             InputState::Deleting => write!(f, "DELETING"),
             InputState::Detached => write!(f, "DETACHED"),
-            InputState::Unknown(value) => write!(f, "{}", value),
+            InputState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

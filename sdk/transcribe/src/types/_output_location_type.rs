@@ -102,7 +102,7 @@ impl ::std::fmt::Display for OutputLocationType {
         match self {
             OutputLocationType::CustomerBucket => write!(f, "CUSTOMER_BUCKET"),
             OutputLocationType::ServiceBucket => write!(f, "SERVICE_BUCKET"),
-            OutputLocationType::Unknown(value) => write!(f, "{}", value),
+            OutputLocationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

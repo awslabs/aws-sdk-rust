@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SdiSourceMode {
         match self {
             SdiSourceMode::Interleave => write!(f, "INTERLEAVE"),
             SdiSourceMode::Quadrant => write!(f, "QUADRANT"),
-            SdiSourceMode::Unknown(value) => write!(f, "{}", value),
+            SdiSourceMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

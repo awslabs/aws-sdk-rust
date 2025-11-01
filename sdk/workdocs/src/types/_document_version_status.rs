@@ -96,7 +96,7 @@ impl ::std::fmt::Display for DocumentVersionStatus {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             DocumentVersionStatus::Active => write!(f, "ACTIVE"),
-            DocumentVersionStatus::Unknown(value) => write!(f, "{}", value),
+            DocumentVersionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

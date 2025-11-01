@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Mpeg2SceneChangeDetect {
         match self {
             Mpeg2SceneChangeDetect::Disabled => write!(f, "DISABLED"),
             Mpeg2SceneChangeDetect::Enabled => write!(f, "ENABLED"),
-            Mpeg2SceneChangeDetect::Unknown(value) => write!(f, "{}", value),
+            Mpeg2SceneChangeDetect::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

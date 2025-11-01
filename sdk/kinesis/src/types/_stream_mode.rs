@@ -102,7 +102,7 @@ impl ::std::fmt::Display for StreamMode {
         match self {
             StreamMode::OnDemand => write!(f, "ON_DEMAND"),
             StreamMode::Provisioned => write!(f, "PROVISIONED"),
-            StreamMode::Unknown(value) => write!(f, "{}", value),
+            StreamMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

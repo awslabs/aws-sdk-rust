@@ -187,6 +187,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for InviteAccoun
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::invite_account_to_organization::InviteAccountToOrganizationInput,
                 output: &mut ::std::string::String,

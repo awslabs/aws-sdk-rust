@@ -102,7 +102,7 @@ impl ::std::fmt::Display for EgressFilterType {
         match self {
             EgressFilterType::AllowAll => write!(f, "ALLOW_ALL"),
             EgressFilterType::DropAll => write!(f, "DROP_ALL"),
-            EgressFilterType::Unknown(value) => write!(f, "{}", value),
+            EgressFilterType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

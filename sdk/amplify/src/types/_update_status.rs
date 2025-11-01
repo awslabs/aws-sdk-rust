@@ -140,7 +140,7 @@ impl ::std::fmt::Display for UpdateStatus {
             UpdateStatus::RequestingCertificate => write!(f, "REQUESTING_CERTIFICATE"),
             UpdateStatus::UpdateComplete => write!(f, "UPDATE_COMPLETE"),
             UpdateStatus::UpdateFailed => write!(f, "UPDATE_FAILED"),
-            UpdateStatus::Unknown(value) => write!(f, "{}", value),
+            UpdateStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

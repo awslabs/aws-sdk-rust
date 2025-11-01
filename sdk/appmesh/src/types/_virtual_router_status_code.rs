@@ -108,7 +108,7 @@ impl ::std::fmt::Display for VirtualRouterStatusCode {
             VirtualRouterStatusCode::Active => write!(f, "ACTIVE"),
             VirtualRouterStatusCode::Deleted => write!(f, "DELETED"),
             VirtualRouterStatusCode::Inactive => write!(f, "INACTIVE"),
-            VirtualRouterStatusCode::Unknown(value) => write!(f, "{}", value),
+            VirtualRouterStatusCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

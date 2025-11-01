@@ -102,7 +102,7 @@ impl ::std::fmt::Display for EncryptionStatus {
         match self {
             EncryptionStatus::Active => write!(f, "ACTIVE"),
             EncryptionStatus::Updating => write!(f, "UPDATING"),
-            EncryptionStatus::Unknown(value) => write!(f, "{}", value),
+            EncryptionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

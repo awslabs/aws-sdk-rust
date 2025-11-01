@@ -102,7 +102,7 @@ impl ::std::fmt::Display for NielsenWatermarksCbetStepaside {
         match self {
             NielsenWatermarksCbetStepaside::Disabled => write!(f, "DISABLED"),
             NielsenWatermarksCbetStepaside::Enabled => write!(f, "ENABLED"),
-            NielsenWatermarksCbetStepaside::Unknown(value) => write!(f, "{}", value),
+            NielsenWatermarksCbetStepaside::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

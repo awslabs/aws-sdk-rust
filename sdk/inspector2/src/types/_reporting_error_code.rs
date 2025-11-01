@@ -133,7 +133,7 @@ impl ::std::fmt::Display for ReportingErrorCode {
             ReportingErrorCode::InvalidPermissions => write!(f, "INVALID_PERMISSIONS"),
             ReportingErrorCode::MalformedKmsKey => write!(f, "MALFORMED_KMS_KEY"),
             ReportingErrorCode::NoFindingsFound => write!(f, "NO_FINDINGS_FOUND"),
-            ReportingErrorCode::Unknown(value) => write!(f, "{}", value),
+            ReportingErrorCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

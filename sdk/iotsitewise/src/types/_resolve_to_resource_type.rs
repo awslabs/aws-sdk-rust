@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ResolveToResourceType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ResolveToResourceType::Asset => write!(f, "ASSET"),
-            ResolveToResourceType::Unknown(value) => write!(f, "{}", value),
+            ResolveToResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -42,8 +42,7 @@ pub fn de_import_key_pair(
     let start_el = decoder.start_el();
     if !(start_el.matches("ImportKeyPairResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected ImportKeyPairResponse got {:?}",
-            start_el
+            "invalid root, expected ImportKeyPairResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

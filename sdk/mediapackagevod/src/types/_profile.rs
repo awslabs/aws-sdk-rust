@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Profile {
         match self {
             Profile::Hbbtv15 => write!(f, "HBBTV_1_5"),
             Profile::None => write!(f, "NONE"),
-            Profile::Unknown(value) => write!(f, "{}", value),
+            Profile::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

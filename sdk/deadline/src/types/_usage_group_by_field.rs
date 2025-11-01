@@ -140,7 +140,7 @@ impl ::std::fmt::Display for UsageGroupByField {
             UsageGroupByField::QueueId => write!(f, "QUEUE_ID"),
             UsageGroupByField::UsageType => write!(f, "USAGE_TYPE"),
             UsageGroupByField::UserId => write!(f, "USER_ID"),
-            UsageGroupByField::Unknown(value) => write!(f, "{}", value),
+            UsageGroupByField::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

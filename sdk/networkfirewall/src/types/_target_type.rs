@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TargetType {
         match self {
             TargetType::HttpHost => write!(f, "HTTP_HOST"),
             TargetType::TlsSni => write!(f, "TLS_SNI"),
-            TargetType::Unknown(value) => write!(f, "{}", value),
+            TargetType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

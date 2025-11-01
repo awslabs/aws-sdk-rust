@@ -102,7 +102,7 @@ impl ::std::fmt::Display for EvaluationType {
         match self {
             EvaluationType::Dynamic => write!(f, "Dynamic"),
             EvaluationType::Static => write!(f, "Static"),
-            EvaluationType::Unknown(value) => write!(f, "{}", value),
+            EvaluationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

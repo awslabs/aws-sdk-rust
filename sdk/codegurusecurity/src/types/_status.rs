@@ -108,7 +108,7 @@ impl ::std::fmt::Display for Status {
             Status::All => write!(f, "All"),
             Status::Closed => write!(f, "Closed"),
             Status::Open => write!(f, "Open"),
-            Status::Unknown(value) => write!(f, "{}", value),
+            Status::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

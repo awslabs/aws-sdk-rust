@@ -46,7 +46,7 @@ impl ::aws_smithy_eventstream::frame::MarshallMessage for InvokeModelWithBidirec
                 headers.push(::aws_smithy_types::event_stream::Header::new(":event-type", ::aws_smithy_types::event_stream::HeaderValue::String("chunk".into())));
                 headers.push(::aws_smithy_types::event_stream::Header::new(":content-type", ::aws_smithy_types::event_stream::HeaderValue::String("application/json".into())));
                 crate::protocol_serde::shape_invoke_model_with_bidirectional_stream_input::ser_chunk_payload(&inner)
-                                            .map_err(|err| ::aws_smithy_eventstream::error::Error::marshalling(format!("{}", err)))?
+                                            .map_err(|err| ::aws_smithy_eventstream::error::Error::marshalling(format!("{err}")))?
             }
             Self::Input::Unknown => return Err(
                                             ::aws_smithy_eventstream::error::Error::marshalling("Cannot serialize `InvokeModelWithBidirectionalStreamInput::Unknown` for the request. The `Unknown` variant is intended for responses only. It occurs when an outdated client is used after a new enum variant was added on the server side.".to_owned())
@@ -78,10 +78,8 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for ConverseStreamOutput
         match response_headers.message_type.as_str() {
             "event" => match response_headers.smithy_type.as_str() {
                 "messageStart" => {
-                    let parsed =
-                        crate::protocol_serde::shape_message_start_event::de_message_start_event_payload(&message.payload()[..]).map_err(|err| {
-                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall MessageStart: {}", err))
-                        })?;
+                    let parsed = crate::protocol_serde::shape_message_start_event::de_message_start_event_payload(&message.payload()[..])
+                        .map_err(|err| ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall MessageStart: {err}")))?;
                     Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Event(
                         crate::types::ConverseStreamOutput::MessageStart(parsed),
                     ))
@@ -89,7 +87,7 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for ConverseStreamOutput
                 "contentBlockStart" => {
                     let parsed = crate::protocol_serde::shape_content_block_start_event::de_content_block_start_event_payload(&message.payload()[..])
                         .map_err(|err| {
-                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall ContentBlockStart: {}", err))
+                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall ContentBlockStart: {err}"))
                         })?;
                     Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Event(
                         crate::types::ConverseStreamOutput::ContentBlockStart(parsed),
@@ -98,7 +96,7 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for ConverseStreamOutput
                 "contentBlockDelta" => {
                     let parsed = crate::protocol_serde::shape_content_block_delta_event::de_content_block_delta_event_payload(&message.payload()[..])
                         .map_err(|err| {
-                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall ContentBlockDelta: {}", err))
+                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall ContentBlockDelta: {err}"))
                         })?;
                     Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Event(
                         crate::types::ConverseStreamOutput::ContentBlockDelta(parsed),
@@ -107,7 +105,7 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for ConverseStreamOutput
                 "contentBlockStop" => {
                     let parsed = crate::protocol_serde::shape_content_block_stop_event::de_content_block_stop_event_payload(&message.payload()[..])
                         .map_err(|err| {
-                        ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall ContentBlockStop: {}", err))
+                        ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall ContentBlockStop: {err}"))
                     })?;
                     Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Event(
                         crate::types::ConverseStreamOutput::ContentBlockStop(parsed),
@@ -115,7 +113,7 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for ConverseStreamOutput
                 }
                 "messageStop" => {
                     let parsed = crate::protocol_serde::shape_message_stop_event::de_message_stop_event_payload(&message.payload()[..])
-                        .map_err(|err| ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall MessageStop: {}", err)))?;
+                        .map_err(|err| ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall MessageStop: {err}")))?;
                     Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Event(
                         crate::types::ConverseStreamOutput::MessageStop(parsed),
                     ))
@@ -124,7 +122,7 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for ConverseStreamOutput
                     let parsed = crate::protocol_serde::shape_converse_stream_metadata_event::de_converse_stream_metadata_event_payload(
                         &message.payload()[..],
                     )
-                    .map_err(|err| ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall Metadata: {}", err)))?;
+                    .map_err(|err| ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall Metadata: {err}")))?;
                     Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Event(
                         crate::types::ConverseStreamOutput::Metadata(parsed),
                     ))
@@ -150,7 +148,7 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for ConverseStreamOutput
                             builder,
                         )
                         .map_err(|err| {
-                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall internalServerException: {}", err))
+                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall internalServerException: {err}"))
                         })?;
                         builder.set_meta(Some(generic));
                         return Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
@@ -164,7 +162,7 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for ConverseStreamOutput
                             builder,
                         )
                         .map_err(|err| {
-                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall modelStreamErrorException: {}", err))
+                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall modelStreamErrorException: {err}"))
                         })?;
                         builder.set_meta(Some(generic));
                         return Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
@@ -176,10 +174,7 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for ConverseStreamOutput
                         builder =
                             crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(&message.payload()[..], builder)
                                 .map_err(|err| {
-                                    ::aws_smithy_eventstream::error::Error::unmarshalling(format!(
-                                        "failed to unmarshall validationException: {}",
-                                        err
-                                    ))
+                                    ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall validationException: {err}"))
                                 })?;
                         builder.set_meta(Some(generic));
                         return Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
@@ -191,10 +186,7 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for ConverseStreamOutput
                         builder =
                             crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(&message.payload()[..], builder)
                                 .map_err(|err| {
-                                    ::aws_smithy_eventstream::error::Error::unmarshalling(format!(
-                                        "failed to unmarshall throttlingException: {}",
-                                        err
-                                    ))
+                                    ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall throttlingException: {err}"))
                                 })?;
                         builder.set_meta(Some(generic));
                         return Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
@@ -208,10 +200,7 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for ConverseStreamOutput
                             builder,
                         )
                         .map_err(|err| {
-                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!(
-                                "failed to unmarshall serviceUnavailableException: {}",
-                                err
-                            ))
+                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall serviceUnavailableException: {err}"))
                         })?;
                         builder.set_meta(Some(generic));
                         return Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
@@ -226,8 +215,7 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for ConverseStreamOutput
             }
             value => {
                 return Err(::aws_smithy_eventstream::error::Error::unmarshalling(format!(
-                    "unrecognized :message-type: {}",
-                    value
+                    "unrecognized :message-type: {value}"
                 )));
             }
         }
@@ -258,7 +246,7 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for InvokeModelWithBidir
                     let parsed = crate::protocol_serde::shape_bidirectional_output_payload_part::de_bidirectional_output_payload_part_payload(
                         &message.payload()[..],
                     )
-                    .map_err(|err| ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall Chunk: {}", err)))?;
+                    .map_err(|err| ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall Chunk: {err}")))?;
                     Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Event(
                         crate::types::InvokeModelWithBidirectionalStreamOutput::Chunk(parsed),
                     ))
@@ -284,7 +272,7 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for InvokeModelWithBidir
                             builder,
                         )
                         .map_err(|err| {
-                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall internalServerException: {}", err))
+                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall internalServerException: {err}"))
                         })?;
                         builder.set_meta(Some(generic));
                         return Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
@@ -298,7 +286,7 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for InvokeModelWithBidir
                             builder,
                         )
                         .map_err(|err| {
-                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall modelStreamErrorException: {}", err))
+                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall modelStreamErrorException: {err}"))
                         })?;
                         builder.set_meta(Some(generic));
                         return Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
@@ -310,10 +298,7 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for InvokeModelWithBidir
                         builder =
                             crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(&message.payload()[..], builder)
                                 .map_err(|err| {
-                                    ::aws_smithy_eventstream::error::Error::unmarshalling(format!(
-                                        "failed to unmarshall validationException: {}",
-                                        err
-                                    ))
+                                    ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall validationException: {err}"))
                                 })?;
                         builder.set_meta(Some(generic));
                         return Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
@@ -325,10 +310,7 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for InvokeModelWithBidir
                         builder =
                             crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(&message.payload()[..], builder)
                                 .map_err(|err| {
-                                    ::aws_smithy_eventstream::error::Error::unmarshalling(format!(
-                                        "failed to unmarshall throttlingException: {}",
-                                        err
-                                    ))
+                                    ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall throttlingException: {err}"))
                                 })?;
                         builder.set_meta(Some(generic));
                         return Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
@@ -342,7 +324,7 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for InvokeModelWithBidir
                             builder,
                         )
                         .map_err(|err| {
-                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall modelTimeoutException: {}", err))
+                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall modelTimeoutException: {err}"))
                         })?;
                         builder.set_meta(Some(generic));
                         return Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
@@ -356,10 +338,7 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for InvokeModelWithBidir
                             builder,
                         )
                         .map_err(|err| {
-                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!(
-                                "failed to unmarshall serviceUnavailableException: {}",
-                                err
-                            ))
+                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall serviceUnavailableException: {err}"))
                         })?;
                         builder.set_meta(Some(generic));
                         return Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
@@ -374,8 +353,7 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for InvokeModelWithBidir
             }
             value => {
                 return Err(::aws_smithy_eventstream::error::Error::unmarshalling(format!(
-                    "unrecognized :message-type: {}",
-                    value
+                    "unrecognized :message-type: {value}"
                 )));
             }
         }
@@ -404,7 +382,7 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for ResponseStreamUnmars
             "event" => match response_headers.smithy_type.as_str() {
                 "chunk" => {
                     let parsed = crate::protocol_serde::shape_payload_part::de_payload_part_payload(&message.payload()[..])
-                        .map_err(|err| ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall Chunk: {}", err)))?;
+                        .map_err(|err| ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall Chunk: {err}")))?;
                     Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Event(
                         crate::types::ResponseStream::Chunk(parsed),
                     ))
@@ -430,7 +408,7 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for ResponseStreamUnmars
                             builder,
                         )
                         .map_err(|err| {
-                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall internalServerException: {}", err))
+                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall internalServerException: {err}"))
                         })?;
                         builder.set_meta(Some(generic));
                         return Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
@@ -444,7 +422,7 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for ResponseStreamUnmars
                             builder,
                         )
                         .map_err(|err| {
-                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall modelStreamErrorException: {}", err))
+                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall modelStreamErrorException: {err}"))
                         })?;
                         builder.set_meta(Some(generic));
                         return Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
@@ -456,10 +434,7 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for ResponseStreamUnmars
                         builder =
                             crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(&message.payload()[..], builder)
                                 .map_err(|err| {
-                                    ::aws_smithy_eventstream::error::Error::unmarshalling(format!(
-                                        "failed to unmarshall validationException: {}",
-                                        err
-                                    ))
+                                    ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall validationException: {err}"))
                                 })?;
                         builder.set_meta(Some(generic));
                         return Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
@@ -471,10 +446,7 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for ResponseStreamUnmars
                         builder =
                             crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(&message.payload()[..], builder)
                                 .map_err(|err| {
-                                    ::aws_smithy_eventstream::error::Error::unmarshalling(format!(
-                                        "failed to unmarshall throttlingException: {}",
-                                        err
-                                    ))
+                                    ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall throttlingException: {err}"))
                                 })?;
                         builder.set_meta(Some(generic));
                         return Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
@@ -488,7 +460,7 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for ResponseStreamUnmars
                             builder,
                         )
                         .map_err(|err| {
-                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall modelTimeoutException: {}", err))
+                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall modelTimeoutException: {err}"))
                         })?;
                         builder.set_meta(Some(generic));
                         return Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
@@ -502,10 +474,7 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for ResponseStreamUnmars
                             builder,
                         )
                         .map_err(|err| {
-                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!(
-                                "failed to unmarshall serviceUnavailableException: {}",
-                                err
-                            ))
+                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall serviceUnavailableException: {err}"))
                         })?;
                         builder.set_meta(Some(generic));
                         return Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
@@ -520,8 +489,7 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for ResponseStreamUnmars
             }
             value => {
                 return Err(::aws_smithy_eventstream::error::Error::unmarshalling(format!(
-                    "unrecognized :message-type: {}",
-                    value
+                    "unrecognized :message-type: {value}"
                 )));
             }
         }

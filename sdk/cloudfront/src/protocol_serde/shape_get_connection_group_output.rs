@@ -24,8 +24,7 @@ pub fn de_connection_group(inp: &[u8]) -> std::result::Result<crate::types::Conn
     let start_el = decoder.start_el();
     if !(start_el.matches("ConnectionGroup")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected ConnectionGroup got {:?}",
-            start_el
+            "invalid root, expected ConnectionGroup got {start_el:?}"
         )));
     }
     crate::protocol_serde::shape_connection_group::de_connection_group(&mut decoder)

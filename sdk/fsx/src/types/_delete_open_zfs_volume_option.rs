@@ -96,7 +96,7 @@ impl ::std::fmt::Display for DeleteOpenZfsVolumeOption {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             DeleteOpenZfsVolumeOption::DeleteChildVolumesAndSnapshots => write!(f, "DELETE_CHILD_VOLUMES_AND_SNAPSHOTS"),
-            DeleteOpenZfsVolumeOption::Unknown(value) => write!(f, "{}", value),
+            DeleteOpenZfsVolumeOption::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

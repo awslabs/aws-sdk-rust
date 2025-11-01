@@ -147,7 +147,7 @@ impl ::std::fmt::Display for ScalingPlanStatusCode {
             ScalingPlanStatusCode::DeletionInProgress => write!(f, "DeletionInProgress"),
             ScalingPlanStatusCode::UpdateFailed => write!(f, "UpdateFailed"),
             ScalingPlanStatusCode::UpdateInProgress => write!(f, "UpdateInProgress"),
-            ScalingPlanStatusCode::Unknown(value) => write!(f, "{}", value),
+            ScalingPlanStatusCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

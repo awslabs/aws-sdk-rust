@@ -120,7 +120,7 @@ impl ::std::fmt::Display for LoggerLevel {
             LoggerLevel::Fatal => write!(f, "FATAL"),
             LoggerLevel::Info => write!(f, "INFO"),
             LoggerLevel::Warn => write!(f, "WARN"),
-            LoggerLevel::Unknown(value) => write!(f, "{}", value),
+            LoggerLevel::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

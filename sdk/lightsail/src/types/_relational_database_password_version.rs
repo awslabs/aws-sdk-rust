@@ -108,7 +108,7 @@ impl ::std::fmt::Display for RelationalDatabasePasswordVersion {
             RelationalDatabasePasswordVersion::Current => write!(f, "CURRENT"),
             RelationalDatabasePasswordVersion::Pending => write!(f, "PENDING"),
             RelationalDatabasePasswordVersion::Previous => write!(f, "PREVIOUS"),
-            RelationalDatabasePasswordVersion::Unknown(value) => write!(f, "{}", value),
+            RelationalDatabasePasswordVersion::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

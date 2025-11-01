@@ -132,7 +132,7 @@ impl ::std::fmt::Display for UsageStatisticsFilterComparator {
             UsageStatisticsFilterComparator::Lt => write!(f, "LT"),
             UsageStatisticsFilterComparator::Lte => write!(f, "LTE"),
             UsageStatisticsFilterComparator::Ne => write!(f, "NE"),
-            UsageStatisticsFilterComparator::Unknown(value) => write!(f, "{}", value),
+            UsageStatisticsFilterComparator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

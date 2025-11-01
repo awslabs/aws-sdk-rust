@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ListWorkforcesSortByOptions {
         match self {
             ListWorkforcesSortByOptions::CreateDate => write!(f, "CreateDate"),
             ListWorkforcesSortByOptions::Name => write!(f, "Name"),
-            ListWorkforcesSortByOptions::Unknown(value) => write!(f, "{}", value),
+            ListWorkforcesSortByOptions::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

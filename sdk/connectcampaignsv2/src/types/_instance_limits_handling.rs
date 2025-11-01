@@ -102,7 +102,7 @@ impl ::std::fmt::Display for InstanceLimitsHandling {
         match self {
             InstanceLimitsHandling::OptIn => write!(f, "OPT_IN"),
             InstanceLimitsHandling::OptOut => write!(f, "OPT_OUT"),
-            InstanceLimitsHandling::Unknown(value) => write!(f, "{}", value),
+            InstanceLimitsHandling::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

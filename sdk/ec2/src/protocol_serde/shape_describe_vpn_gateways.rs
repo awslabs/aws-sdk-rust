@@ -49,8 +49,7 @@ pub fn de_describe_vpn_gateways(
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeVpnGatewaysResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected DescribeVpnGatewaysResponse got {:?}",
-            start_el
+            "invalid root, expected DescribeVpnGatewaysResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

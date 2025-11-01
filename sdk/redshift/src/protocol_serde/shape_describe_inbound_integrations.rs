@@ -104,16 +104,14 @@ pub fn de_describe_inbound_integrations(
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeInboundIntegrationsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected DescribeInboundIntegrationsResponse got {:?}",
-            start_el
+            "invalid root, expected DescribeInboundIntegrationsResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("DescribeInboundIntegrationsResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected DescribeInboundIntegrationsResult got {:?}",
-                start_el
+                "invalid result, expected DescribeInboundIntegrationsResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

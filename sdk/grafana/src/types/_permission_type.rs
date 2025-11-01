@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PermissionType {
         match self {
             PermissionType::CustomerManaged => write!(f, "CUSTOMER_MANAGED"),
             PermissionType::ServiceManaged => write!(f, "SERVICE_MANAGED"),
-            PermissionType::Unknown(value) => write!(f, "{}", value),
+            PermissionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

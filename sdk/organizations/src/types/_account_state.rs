@@ -120,7 +120,7 @@ impl ::std::fmt::Display for AccountState {
             AccountState::PendingActivation => write!(f, "PENDING_ACTIVATION"),
             AccountState::PendingClosure => write!(f, "PENDING_CLOSURE"),
             AccountState::Suspended => write!(f, "SUSPENDED"),
-            AccountState::Unknown(value) => write!(f, "{}", value),
+            AccountState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TextTypes {
         match self {
             TextTypes::Line => write!(f, "LINE"),
             TextTypes::Word => write!(f, "WORD"),
-            TextTypes::Unknown(value) => write!(f, "{}", value),
+            TextTypes::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

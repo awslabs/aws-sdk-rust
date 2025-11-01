@@ -114,7 +114,7 @@ impl ::std::fmt::Display for Level {
             Level::Info => write!(f, "INFO"),
             Level::Off => write!(f, "OFF"),
             Level::Trace => write!(f, "TRACE"),
-            Level::Unknown(value) => write!(f, "{}", value),
+            Level::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MobileDeviceAccessRuleEffect {
         match self {
             MobileDeviceAccessRuleEffect::Allow => write!(f, "ALLOW"),
             MobileDeviceAccessRuleEffect::Deny => write!(f, "DENY"),
-            MobileDeviceAccessRuleEffect::Unknown(value) => write!(f, "{}", value),
+            MobileDeviceAccessRuleEffect::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for CapacityProviderType {
             CapacityProviderType::Fargate => write!(f, "FARGATE"),
             CapacityProviderType::FargateSpot => write!(f, "FARGATE_SPOT"),
             CapacityProviderType::ManagedInstances => write!(f, "MANAGED_INSTANCES"),
-            CapacityProviderType::Unknown(value) => write!(f, "{}", value),
+            CapacityProviderType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

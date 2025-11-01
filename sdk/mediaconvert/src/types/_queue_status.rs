@@ -102,7 +102,7 @@ impl ::std::fmt::Display for QueueStatus {
         match self {
             QueueStatus::Active => write!(f, "ACTIVE"),
             QueueStatus::Paused => write!(f, "PAUSED"),
-            QueueStatus::Unknown(value) => write!(f, "{}", value),
+            QueueStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

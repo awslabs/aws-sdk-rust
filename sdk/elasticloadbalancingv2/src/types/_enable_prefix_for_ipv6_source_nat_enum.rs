@@ -102,7 +102,7 @@ impl ::std::fmt::Display for EnablePrefixForIpv6SourceNatEnum {
         match self {
             EnablePrefixForIpv6SourceNatEnum::Off => write!(f, "off"),
             EnablePrefixForIpv6SourceNatEnum::On => write!(f, "on"),
-            EnablePrefixForIpv6SourceNatEnum::Unknown(value) => write!(f, "{}", value),
+            EnablePrefixForIpv6SourceNatEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

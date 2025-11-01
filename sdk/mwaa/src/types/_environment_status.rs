@@ -175,7 +175,7 @@ impl ::std::fmt::Display for EnvironmentStatus {
             EnvironmentStatus::Unavailable => write!(f, "UNAVAILABLE"),
             EnvironmentStatus::UpdateFailed => write!(f, "UPDATE_FAILED"),
             EnvironmentStatus::Updating => write!(f, "UPDATING"),
-            EnvironmentStatus::Unknown(value) => write!(f, "{}", value),
+            EnvironmentStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

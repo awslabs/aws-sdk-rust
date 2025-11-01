@@ -126,7 +126,7 @@ impl ::std::fmt::Display for TestResultTypeFilter {
             TestResultTypeFilter::OverallTestResults => write!(f, "OverallTestResults"),
             TestResultTypeFilter::SlotResolutionTestResults => write!(f, "SlotResolutionTestResults"),
             TestResultTypeFilter::UtteranceLevelResults => write!(f, "UtteranceLevelResults"),
-            TestResultTypeFilter::Unknown(value) => write!(f, "{}", value),
+            TestResultTypeFilter::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

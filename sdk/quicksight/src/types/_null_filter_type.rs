@@ -108,7 +108,7 @@ impl ::std::fmt::Display for NullFilterType {
             NullFilterType::AllValues => write!(f, "ALL_VALUES"),
             NullFilterType::NonNullsOnly => write!(f, "NON_NULLS_ONLY"),
             NullFilterType::NullsOnly => write!(f, "NULLS_ONLY"),
-            NullFilterType::Unknown(value) => write!(f, "{}", value),
+            NullFilterType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

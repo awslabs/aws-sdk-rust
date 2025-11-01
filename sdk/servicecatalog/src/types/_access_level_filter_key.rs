@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AccessLevelFilterKey {
             AccessLevelFilterKey::Account => write!(f, "Account"),
             AccessLevelFilterKey::Role => write!(f, "Role"),
             AccessLevelFilterKey::User => write!(f, "User"),
-            AccessLevelFilterKey::Unknown(value) => write!(f, "{}", value),
+            AccessLevelFilterKey::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

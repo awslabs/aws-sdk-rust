@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RecordFormatType {
         match self {
             RecordFormatType::Csv => write!(f, "CSV"),
             RecordFormatType::Json => write!(f, "JSON"),
-            RecordFormatType::Unknown(value) => write!(f, "{}", value),
+            RecordFormatType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

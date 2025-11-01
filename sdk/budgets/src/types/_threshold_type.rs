@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ThresholdType {
         match self {
             ThresholdType::AbsoluteValue => write!(f, "ABSOLUTE_VALUE"),
             ThresholdType::Percentage => write!(f, "PERCENTAGE"),
-            ThresholdType::Unknown(value) => write!(f, "{}", value),
+            ThresholdType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for TablePreparationMode {
             TablePreparationMode::DoNothing => write!(f, "do-nothing"),
             TablePreparationMode::DropTablesOnTarget => write!(f, "drop-tables-on-target"),
             TablePreparationMode::Truncate => write!(f, "truncate"),
-            TablePreparationMode::Unknown(value) => write!(f, "{}", value),
+            TablePreparationMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

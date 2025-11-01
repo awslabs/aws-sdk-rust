@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ExpirationCriterion {
         match self {
             ExpirationCriterion::CreatedTimestamp => write!(f, "CREATED_TIMESTAMP"),
             ExpirationCriterion::LastMessageTimestamp => write!(f, "LAST_MESSAGE_TIMESTAMP"),
-            ExpirationCriterion::Unknown(value) => write!(f, "{}", value),
+            ExpirationCriterion::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

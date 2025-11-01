@@ -114,7 +114,7 @@ impl ::std::fmt::Display for PeeringState {
             PeeringState::Creating => write!(f, "CREATING"),
             PeeringState::Deleting => write!(f, "DELETING"),
             PeeringState::Failed => write!(f, "FAILED"),
-            PeeringState::Unknown(value) => write!(f, "{}", value),
+            PeeringState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

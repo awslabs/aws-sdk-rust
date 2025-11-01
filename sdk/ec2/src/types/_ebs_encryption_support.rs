@@ -102,7 +102,7 @@ impl ::std::fmt::Display for EbsEncryptionSupport {
         match self {
             EbsEncryptionSupport::Supported => write!(f, "supported"),
             EbsEncryptionSupport::Unsupported => write!(f, "unsupported"),
-            EbsEncryptionSupport::Unknown(value) => write!(f, "{}", value),
+            EbsEncryptionSupport::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

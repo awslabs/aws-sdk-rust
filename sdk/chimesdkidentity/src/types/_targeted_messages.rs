@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TargetedMessages {
         match self {
             TargetedMessages::All => write!(f, "ALL"),
             TargetedMessages::None => write!(f, "NONE"),
-            TargetedMessages::Unknown(value) => write!(f, "{}", value),
+            TargetedMessages::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

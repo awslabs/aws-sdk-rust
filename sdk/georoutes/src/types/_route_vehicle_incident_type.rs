@@ -166,7 +166,7 @@ impl ::std::fmt::Display for RouteVehicleIncidentType {
             RouteVehicleIncidentType::RoadClosure => write!(f, "RoadClosure"),
             RouteVehicleIncidentType::RoadHazard => write!(f, "RoadHazard"),
             RouteVehicleIncidentType::Weather => write!(f, "Weather"),
-            RouteVehicleIncidentType::Unknown(value) => write!(f, "{}", value),
+            RouteVehicleIncidentType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

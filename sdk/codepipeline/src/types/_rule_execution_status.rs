@@ -114,7 +114,7 @@ impl ::std::fmt::Display for RuleExecutionStatus {
             RuleExecutionStatus::Failed => write!(f, "Failed"),
             RuleExecutionStatus::InProgress => write!(f, "InProgress"),
             RuleExecutionStatus::Succeeded => write!(f, "Succeeded"),
-            RuleExecutionStatus::Unknown(value) => write!(f, "{}", value),
+            RuleExecutionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

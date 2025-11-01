@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ApiKeySourceType {
         match self {
             ApiKeySourceType::Authorizer => write!(f, "AUTHORIZER"),
             ApiKeySourceType::Header => write!(f, "HEADER"),
-            ApiKeySourceType::Unknown(value) => write!(f, "{}", value),
+            ApiKeySourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

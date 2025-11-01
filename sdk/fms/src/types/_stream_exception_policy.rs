@@ -114,7 +114,7 @@ impl ::std::fmt::Display for StreamExceptionPolicy {
             StreamExceptionPolicy::Drop => write!(f, "DROP"),
             StreamExceptionPolicy::FmsIgnore => write!(f, "FMS_IGNORE"),
             StreamExceptionPolicy::Reject => write!(f, "REJECT"),
-            StreamExceptionPolicy::Unknown(value) => write!(f, "{}", value),
+            StreamExceptionPolicy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

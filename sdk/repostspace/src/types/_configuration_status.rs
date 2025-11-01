@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ConfigurationStatus {
         match self {
             ConfigurationStatus::Configured => write!(f, "CONFIGURED"),
             ConfigurationStatus::Unconfigured => write!(f, "UNCONFIGURED"),
-            ConfigurationStatus::Unknown(value) => write!(f, "{}", value),
+            ConfigurationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

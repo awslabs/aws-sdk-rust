@@ -114,7 +114,7 @@ impl ::std::fmt::Display for UserRole {
             UserRole::Resource => write!(f, "RESOURCE"),
             UserRole::SystemUser => write!(f, "SYSTEM_USER"),
             UserRole::User => write!(f, "USER"),
-            UserRole::Unknown(value) => write!(f, "{}", value),
+            UserRole::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

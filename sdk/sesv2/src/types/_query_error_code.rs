@@ -102,7 +102,7 @@ impl ::std::fmt::Display for QueryErrorCode {
         match self {
             QueryErrorCode::AccessDenied => write!(f, "ACCESS_DENIED"),
             QueryErrorCode::InternalFailure => write!(f, "INTERNAL_FAILURE"),
-            QueryErrorCode::Unknown(value) => write!(f, "{}", value),
+            QueryErrorCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

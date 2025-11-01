@@ -108,7 +108,7 @@ impl ::std::fmt::Display for BurstablePerformance {
             BurstablePerformance::Excluded => write!(f, "excluded"),
             BurstablePerformance::Included => write!(f, "included"),
             BurstablePerformance::Required => write!(f, "required"),
-            BurstablePerformance::Unknown(value) => write!(f, "{}", value),
+            BurstablePerformance::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SourceControlAuthStrategy {
         match self {
             SourceControlAuthStrategy::AwsSecretsManager => write!(f, "AWS_SECRETS_MANAGER"),
             SourceControlAuthStrategy::PersonalAccessToken => write!(f, "PERSONAL_ACCESS_TOKEN"),
-            SourceControlAuthStrategy::Unknown(value) => write!(f, "{}", value),
+            SourceControlAuthStrategy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

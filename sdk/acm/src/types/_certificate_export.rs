@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CertificateExport {
         match self {
             CertificateExport::Disabled => write!(f, "DISABLED"),
             CertificateExport::Enabled => write!(f, "ENABLED"),
-            CertificateExport::Unknown(value) => write!(f, "{}", value),
+            CertificateExport::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

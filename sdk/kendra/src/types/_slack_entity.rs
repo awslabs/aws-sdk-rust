@@ -114,7 +114,7 @@ impl ::std::fmt::Display for SlackEntity {
             SlackEntity::GroupMessage => write!(f, "GROUP_MESSAGE"),
             SlackEntity::PrivateChannel => write!(f, "PRIVATE_CHANNEL"),
             SlackEntity::PublicChannel => write!(f, "PUBLIC_CHANNEL"),
-            SlackEntity::Unknown(value) => write!(f, "{}", value),
+            SlackEntity::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

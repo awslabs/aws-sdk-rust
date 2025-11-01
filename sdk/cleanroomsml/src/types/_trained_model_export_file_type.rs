@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TrainedModelExportFileType {
         match self {
             TrainedModelExportFileType::Model => write!(f, "MODEL"),
             TrainedModelExportFileType::Output => write!(f, "OUTPUT"),
-            TrainedModelExportFileType::Unknown(value) => write!(f, "{}", value),
+            TrainedModelExportFileType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

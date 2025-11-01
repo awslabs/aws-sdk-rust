@@ -102,7 +102,7 @@ impl ::std::fmt::Display for VpcConnectorStatus {
         match self {
             VpcConnectorStatus::Active => write!(f, "ACTIVE"),
             VpcConnectorStatus::Inactive => write!(f, "INACTIVE"),
-            VpcConnectorStatus::Unknown(value) => write!(f, "{}", value),
+            VpcConnectorStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

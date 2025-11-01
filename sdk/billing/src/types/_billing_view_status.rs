@@ -114,7 +114,7 @@ impl ::std::fmt::Display for BillingViewStatus {
             BillingViewStatus::Healthy => write!(f, "HEALTHY"),
             BillingViewStatus::Unhealthy => write!(f, "UNHEALTHY"),
             BillingViewStatus::Updating => write!(f, "UPDATING"),
-            BillingViewStatus::Unknown(value) => write!(f, "{}", value),
+            BillingViewStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SearchResourcesComparator {
         match self {
             SearchResourcesComparator::Eq => write!(f, "EQ"),
             SearchResourcesComparator::Ne => write!(f, "NE"),
-            SearchResourcesComparator::Unknown(value) => write!(f, "{}", value),
+            SearchResourcesComparator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

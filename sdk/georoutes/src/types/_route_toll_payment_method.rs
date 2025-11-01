@@ -145,7 +145,7 @@ impl ::std::fmt::Display for RouteTollPaymentMethod {
             RouteTollPaymentMethod::Transponder => write!(f, "Transponder"),
             RouteTollPaymentMethod::TravelCard => write!(f, "TravelCard"),
             RouteTollPaymentMethod::VideoToll => write!(f, "VideoToll"),
-            RouteTollPaymentMethod::Unknown(value) => write!(f, "{}", value),
+            RouteTollPaymentMethod::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FilterType {
         match self {
             FilterType::Endpoint => write!(f, "ENDPOINT"),
             FilterType::System => write!(f, "SYSTEM"),
-            FilterType::Unknown(value) => write!(f, "{}", value),
+            FilterType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

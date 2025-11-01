@@ -116,7 +116,7 @@ impl ::std::fmt::Display for WirelessDeviceSidewalkStatus {
             WirelessDeviceSidewalkStatus::Provisioned => write!(f, "PROVISIONED"),
             WirelessDeviceSidewalkStatus::Registered => write!(f, "REGISTERED"),
             WirelessDeviceSidewalkStatus::UnknownValue => write!(f, "UNKNOWN"),
-            WirelessDeviceSidewalkStatus::Unknown(value) => write!(f, "{}", value),
+            WirelessDeviceSidewalkStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

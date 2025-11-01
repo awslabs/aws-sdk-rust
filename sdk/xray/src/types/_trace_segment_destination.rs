@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TraceSegmentDestination {
         match self {
             TraceSegmentDestination::CloudWatchLogs => write!(f, "CloudWatchLogs"),
             TraceSegmentDestination::XRay => write!(f, "XRay"),
-            TraceSegmentDestination::Unknown(value) => write!(f, "{}", value),
+            TraceSegmentDestination::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

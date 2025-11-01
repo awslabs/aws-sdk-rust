@@ -102,7 +102,7 @@ impl ::std::fmt::Display for KeyOrigin {
         match self {
             KeyOrigin::AwsPaymentCryptography => write!(f, "AWS_PAYMENT_CRYPTOGRAPHY"),
             KeyOrigin::External => write!(f, "EXTERNAL"),
-            KeyOrigin::Unknown(value) => write!(f, "{}", value),
+            KeyOrigin::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

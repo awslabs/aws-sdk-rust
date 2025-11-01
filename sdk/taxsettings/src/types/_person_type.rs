@@ -108,7 +108,7 @@ impl ::std::fmt::Display for PersonType {
             PersonType::Business => write!(f, "Business"),
             PersonType::LegalPerson => write!(f, "Legal Person"),
             PersonType::PhysicalPerson => write!(f, "Physical Person"),
-            PersonType::Unknown(value) => write!(f, "{}", value),
+            PersonType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

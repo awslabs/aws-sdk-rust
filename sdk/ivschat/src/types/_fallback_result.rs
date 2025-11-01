@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FallbackResult {
         match self {
             FallbackResult::Allow => write!(f, "ALLOW"),
             FallbackResult::Deny => write!(f, "DENY"),
-            FallbackResult::Unknown(value) => write!(f, "{}", value),
+            FallbackResult::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

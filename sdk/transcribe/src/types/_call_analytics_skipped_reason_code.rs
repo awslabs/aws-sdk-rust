@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CallAnalyticsSkippedReasonCode {
         match self {
             CallAnalyticsSkippedReasonCode::FailedSafetyGuidelines => write!(f, "FAILED_SAFETY_GUIDELINES"),
             CallAnalyticsSkippedReasonCode::InsufficientConversationContent => write!(f, "INSUFFICIENT_CONVERSATION_CONTENT"),
-            CallAnalyticsSkippedReasonCode::Unknown(value) => write!(f, "{}", value),
+            CallAnalyticsSkippedReasonCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

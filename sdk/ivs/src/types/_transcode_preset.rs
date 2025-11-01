@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TranscodePreset {
         match self {
             TranscodePreset::ConstrainedBandwidthTranscodePreset => write!(f, "CONSTRAINED_BANDWIDTH_DELIVERY"),
             TranscodePreset::HigherBandwidthTranscodePreset => write!(f, "HIGHER_BANDWIDTH_DELIVERY"),
-            TranscodePreset::Unknown(value) => write!(f, "{}", value),
+            TranscodePreset::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -168,7 +168,7 @@ impl ::std::fmt::Display for PhoneNumberStatus {
             PhoneNumberStatus::ReleaseFailed => write!(f, "ReleaseFailed"),
             PhoneNumberStatus::ReleaseInProgress => write!(f, "ReleaseInProgress"),
             PhoneNumberStatus::Unassigned => write!(f, "Unassigned"),
-            PhoneNumberStatus::Unknown(value) => write!(f, "{}", value),
+            PhoneNumberStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

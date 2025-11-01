@@ -154,7 +154,7 @@ impl ::std::fmt::Display for AppType {
             AppType::RSessionGateway => write!(f, "RSessionGateway"),
             AppType::RStudioServerPro => write!(f, "RStudioServerPro"),
             AppType::TensorBoard => write!(f, "TensorBoard"),
-            AppType::Unknown(value) => write!(f, "{}", value),
+            AppType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

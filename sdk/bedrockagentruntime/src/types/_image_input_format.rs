@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ImageInputFormat {
             ImageInputFormat::Jpeg => write!(f, "jpeg"),
             ImageInputFormat::Png => write!(f, "png"),
             ImageInputFormat::Webp => write!(f, "webp"),
-            ImageInputFormat::Unknown(value) => write!(f, "{}", value),
+            ImageInputFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

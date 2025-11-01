@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DataOperation {
         match self {
             DataOperation::Read => write!(f, "READ"),
             DataOperation::Write => write!(f, "WRITE"),
-            DataOperation::Unknown(value) => write!(f, "{}", value),
+            DataOperation::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

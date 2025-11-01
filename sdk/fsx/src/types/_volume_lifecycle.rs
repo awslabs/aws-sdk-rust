@@ -132,7 +132,7 @@ impl ::std::fmt::Display for VolumeLifecycle {
             VolumeLifecycle::Failed => write!(f, "FAILED"),
             VolumeLifecycle::Misconfigured => write!(f, "MISCONFIGURED"),
             VolumeLifecycle::Pending => write!(f, "PENDING"),
-            VolumeLifecycle::Unknown(value) => write!(f, "{}", value),
+            VolumeLifecycle::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

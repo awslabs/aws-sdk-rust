@@ -114,7 +114,7 @@ impl ::std::fmt::Display for IdentityStatus {
             IdentityStatus::Invalid => write!(f, "INVALID"),
             IdentityStatus::Pending => write!(f, "PENDING"),
             IdentityStatus::Rejected => write!(f, "REJECTED"),
-            IdentityStatus::Unknown(value) => write!(f, "{}", value),
+            IdentityStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FormActionType {
         match self {
             FormActionType::Create => write!(f, "create"),
             FormActionType::Update => write!(f, "update"),
-            FormActionType::Unknown(value) => write!(f, "{}", value),
+            FormActionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

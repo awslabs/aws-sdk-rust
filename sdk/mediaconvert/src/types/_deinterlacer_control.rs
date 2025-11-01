@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DeinterlacerControl {
         match self {
             DeinterlacerControl::ForceAllFrames => write!(f, "FORCE_ALL_FRAMES"),
             DeinterlacerControl::Normal => write!(f, "NORMAL"),
-            DeinterlacerControl::Unknown(value) => write!(f, "{}", value),
+            DeinterlacerControl::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -120,7 +120,7 @@ impl ::std::fmt::Display for Eac3BitstreamMode {
             Eac3BitstreamMode::Emergency => write!(f, "EMERGENCY"),
             Eac3BitstreamMode::HearingImpaired => write!(f, "HEARING_IMPAIRED"),
             Eac3BitstreamMode::VisuallyImpaired => write!(f, "VISUALLY_IMPAIRED"),
-            Eac3BitstreamMode::Unknown(value) => write!(f, "{}", value),
+            Eac3BitstreamMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

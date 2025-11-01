@@ -120,7 +120,7 @@ impl ::std::fmt::Display for Format {
             Format::Mxf => write!(f, "mxf"),
             Format::Quicktime => write!(f, "quicktime"),
             Format::Webm => write!(f, "webm"),
-            Format::Unknown(value) => write!(f, "{}", value),
+            Format::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

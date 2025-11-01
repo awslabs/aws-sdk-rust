@@ -114,7 +114,7 @@ impl ::std::fmt::Display for LustreAccessAuditLogLevel {
             LustreAccessAuditLogLevel::ErrorOnly => write!(f, "ERROR_ONLY"),
             LustreAccessAuditLogLevel::WarnError => write!(f, "WARN_ERROR"),
             LustreAccessAuditLogLevel::WarnOnly => write!(f, "WARN_ONLY"),
-            LustreAccessAuditLogLevel::Unknown(value) => write!(f, "{}", value),
+            LustreAccessAuditLogLevel::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

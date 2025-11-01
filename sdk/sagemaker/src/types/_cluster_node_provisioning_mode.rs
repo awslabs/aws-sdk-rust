@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ClusterNodeProvisioningMode {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ClusterNodeProvisioningMode::Continuous => write!(f, "Continuous"),
-            ClusterNodeProvisioningMode::Unknown(value) => write!(f, "{}", value),
+            ClusterNodeProvisioningMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

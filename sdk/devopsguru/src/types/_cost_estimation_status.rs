@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CostEstimationStatus {
         match self {
             CostEstimationStatus::Completed => write!(f, "COMPLETED"),
             CostEstimationStatus::Ongoing => write!(f, "ONGOING"),
-            CostEstimationStatus::Unknown(value) => write!(f, "{}", value),
+            CostEstimationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

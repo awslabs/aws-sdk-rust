@@ -123,8 +123,7 @@ pub fn de_list_distribution_tenants(
     let start_el = decoder.start_el();
     if !start_el.matches("ListDistributionTenantsResult") {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "encountered invalid XML root: expected ListDistributionTenantsResult but got {:?}. This is likely a bug in the SDK.",
-            start_el
+            "encountered invalid XML root: expected ListDistributionTenantsResult but got {start_el:?}. This is likely a bug in the SDK."
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for RenewalStatus {
             RenewalStatus::PendingAutoRenewal => write!(f, "PendingAutoRenewal"),
             RenewalStatus::PendingValidation => write!(f, "PendingValidation"),
             RenewalStatus::Success => write!(f, "Success"),
-            RenewalStatus::Unknown(value) => write!(f, "{}", value),
+            RenewalStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

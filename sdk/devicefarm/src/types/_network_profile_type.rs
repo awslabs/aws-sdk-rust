@@ -102,7 +102,7 @@ impl ::std::fmt::Display for NetworkProfileType {
         match self {
             NetworkProfileType::Curated => write!(f, "CURATED"),
             NetworkProfileType::Private => write!(f, "PRIVATE"),
-            NetworkProfileType::Unknown(value) => write!(f, "{}", value),
+            NetworkProfileType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

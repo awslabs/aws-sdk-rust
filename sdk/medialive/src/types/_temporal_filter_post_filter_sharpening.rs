@@ -108,7 +108,7 @@ impl ::std::fmt::Display for TemporalFilterPostFilterSharpening {
             TemporalFilterPostFilterSharpening::Auto => write!(f, "AUTO"),
             TemporalFilterPostFilterSharpening::Disabled => write!(f, "DISABLED"),
             TemporalFilterPostFilterSharpening::Enabled => write!(f, "ENABLED"),
-            TemporalFilterPostFilterSharpening::Unknown(value) => write!(f, "{}", value),
+            TemporalFilterPostFilterSharpening::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

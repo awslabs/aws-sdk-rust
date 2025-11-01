@@ -42,7 +42,7 @@ impl fmt::Display for ConnectorMetadata {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         write!(f, "http#{}", self.name)?;
         if let Some(version) = self.version.as_deref() {
-            write!(f, "-{}", version)?;
+            write!(f, "-{version}")?;
         }
 
         Ok(())

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for S3EndpointType {
         match self {
             S3EndpointType::Global => write!(f, "GLOBAL"),
             S3EndpointType::Regional => write!(f, "REGIONAL"),
-            S3EndpointType::Unknown(value) => write!(f, "{}", value),
+            S3EndpointType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

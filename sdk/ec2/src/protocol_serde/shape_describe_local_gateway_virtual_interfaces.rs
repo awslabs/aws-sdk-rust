@@ -55,8 +55,7 @@ pub fn de_describe_local_gateway_virtual_interfaces(
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeLocalGatewayVirtualInterfacesResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected DescribeLocalGatewayVirtualInterfacesResponse got {:?}",
-            start_el
+            "invalid root, expected DescribeLocalGatewayVirtualInterfacesResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

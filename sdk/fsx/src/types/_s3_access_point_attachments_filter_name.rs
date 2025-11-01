@@ -108,7 +108,7 @@ impl ::std::fmt::Display for S3AccessPointAttachmentsFilterName {
             S3AccessPointAttachmentsFilterName::FileSystemId => write!(f, "file-system-id"),
             S3AccessPointAttachmentsFilterName::Type => write!(f, "type"),
             S3AccessPointAttachmentsFilterName::VolumeId => write!(f, "volume-id"),
-            S3AccessPointAttachmentsFilterName::Unknown(value) => write!(f, "{}", value),
+            S3AccessPointAttachmentsFilterName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for LocationFilterName {
             LocationFilterName::CreationTime => write!(f, "CreationTime"),
             LocationFilterName::LocationType => write!(f, "LocationType"),
             LocationFilterName::LocationUri => write!(f, "LocationUri"),
-            LocationFilterName::Unknown(value) => write!(f, "{}", value),
+            LocationFilterName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ExportFileFormat {
         match self {
             ExportFileFormat::DelimitedText => write!(f, "DELIMITED_TEXT"),
             ExportFileFormat::Parquet => write!(f, "PARQUET"),
-            ExportFileFormat::Unknown(value) => write!(f, "{}", value),
+            ExportFileFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

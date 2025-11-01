@@ -138,7 +138,7 @@ impl ::std::fmt::Display for ResourceCategory {
             ResourceCategory::Network => write!(f, "Network"),
             ResourceCategory::Other => write!(f, "Other"),
             ResourceCategory::Storage => write!(f, "Storage"),
-            ResourceCategory::Unknown(value) => write!(f, "{}", value),
+            ResourceCategory::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

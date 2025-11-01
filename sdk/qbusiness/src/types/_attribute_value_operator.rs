@@ -96,7 +96,7 @@ impl ::std::fmt::Display for AttributeValueOperator {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             AttributeValueOperator::Delete => write!(f, "DELETE"),
-            AttributeValueOperator::Unknown(value) => write!(f, "{}", value),
+            AttributeValueOperator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

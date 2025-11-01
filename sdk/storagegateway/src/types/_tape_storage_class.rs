@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TapeStorageClass {
         match self {
             TapeStorageClass::DeepArchive => write!(f, "DEEP_ARCHIVE"),
             TapeStorageClass::Glacier => write!(f, "GLACIER"),
-            TapeStorageClass::Unknown(value) => write!(f, "{}", value),
+            TapeStorageClass::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

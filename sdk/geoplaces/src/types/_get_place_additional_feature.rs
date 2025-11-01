@@ -120,7 +120,7 @@ impl ::std::fmt::Display for GetPlaceAdditionalFeature {
             GetPlaceAdditionalFeature::Phonemes => write!(f, "Phonemes"),
             GetPlaceAdditionalFeature::SecondaryAddresses => write!(f, "SecondaryAddresses"),
             GetPlaceAdditionalFeature::TimeZone => write!(f, "TimeZone"),
-            GetPlaceAdditionalFeature::Unknown(value) => write!(f, "{}", value),
+            GetPlaceAdditionalFeature::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

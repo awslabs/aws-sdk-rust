@@ -102,7 +102,7 @@ impl ::std::fmt::Display for OverrideStatus {
         match self {
             OverrideStatus::Override => write!(f, "OVERRIDE"),
             OverrideStatus::Revoke => write!(f, "REVOKE"),
-            OverrideStatus::Unknown(value) => write!(f, "{}", value),
+            OverrideStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

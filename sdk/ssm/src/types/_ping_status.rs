@@ -108,7 +108,7 @@ impl ::std::fmt::Display for PingStatus {
             PingStatus::ConnectionLost => write!(f, "ConnectionLost"),
             PingStatus::Inactive => write!(f, "Inactive"),
             PingStatus::Online => write!(f, "Online"),
-            PingStatus::Unknown(value) => write!(f, "{}", value),
+            PingStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

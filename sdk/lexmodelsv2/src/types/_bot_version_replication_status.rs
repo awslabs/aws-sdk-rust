@@ -114,7 +114,7 @@ impl ::std::fmt::Display for BotVersionReplicationStatus {
             BotVersionReplicationStatus::Creating => write!(f, "Creating"),
             BotVersionReplicationStatus::Deleting => write!(f, "Deleting"),
             BotVersionReplicationStatus::Failed => write!(f, "Failed"),
-            BotVersionReplicationStatus::Unknown(value) => write!(f, "{}", value),
+            BotVersionReplicationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

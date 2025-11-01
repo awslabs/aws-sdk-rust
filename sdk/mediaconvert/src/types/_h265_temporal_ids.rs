@@ -102,7 +102,7 @@ impl ::std::fmt::Display for H265TemporalIds {
         match self {
             H265TemporalIds::Disabled => write!(f, "DISABLED"),
             H265TemporalIds::Enabled => write!(f, "ENABLED"),
-            H265TemporalIds::Unknown(value) => write!(f, "{}", value),
+            H265TemporalIds::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

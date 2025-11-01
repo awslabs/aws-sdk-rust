@@ -102,7 +102,7 @@ impl ::std::fmt::Display for HostRecovery {
         match self {
             HostRecovery::Off => write!(f, "off"),
             HostRecovery::On => write!(f, "on"),
-            HostRecovery::Unknown(value) => write!(f, "{}", value),
+            HostRecovery::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

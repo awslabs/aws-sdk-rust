@@ -108,7 +108,7 @@ impl ::std::fmt::Display for OpportunityType {
             OpportunityType::Expansion => write!(f, "Expansion"),
             OpportunityType::FlatRenewal => write!(f, "Flat Renewal"),
             OpportunityType::NetNewBusiness => write!(f, "Net New Business"),
-            OpportunityType::Unknown(value) => write!(f, "{}", value),
+            OpportunityType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

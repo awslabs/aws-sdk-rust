@@ -108,7 +108,7 @@ impl ::std::fmt::Display for PitPolicyRuleUnits {
             PitPolicyRuleUnits::Day => write!(f, "DAY"),
             PitPolicyRuleUnits::Hour => write!(f, "HOUR"),
             PitPolicyRuleUnits::Minute => write!(f, "MINUTE"),
-            PitPolicyRuleUnits::Unknown(value) => write!(f, "{}", value),
+            PitPolicyRuleUnits::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

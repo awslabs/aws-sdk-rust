@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CmfcScte35Esam {
         match self {
             CmfcScte35Esam::Insert => write!(f, "INSERT"),
             CmfcScte35Esam::None => write!(f, "NONE"),
-            CmfcScte35Esam::Unknown(value) => write!(f, "{}", value),
+            CmfcScte35Esam::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

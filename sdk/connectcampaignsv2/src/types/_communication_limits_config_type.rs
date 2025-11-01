@@ -96,7 +96,7 @@ impl ::std::fmt::Display for CommunicationLimitsConfigType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             CommunicationLimitsConfigType::AllChannelSubtypes => write!(f, "ALL_CHANNEL_SUBTYPES"),
-            CommunicationLimitsConfigType::Unknown(value) => write!(f, "{}", value),
+            CommunicationLimitsConfigType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

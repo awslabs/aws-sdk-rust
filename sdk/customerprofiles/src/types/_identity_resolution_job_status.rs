@@ -140,7 +140,7 @@ impl ::std::fmt::Display for IdentityResolutionJobStatus {
             IdentityResolutionJobStatus::PartialSuccess => write!(f, "PARTIAL_SUCCESS"),
             IdentityResolutionJobStatus::Pending => write!(f, "PENDING"),
             IdentityResolutionJobStatus::Preprocessing => write!(f, "PREPROCESSING"),
-            IdentityResolutionJobStatus::Unknown(value) => write!(f, "{}", value),
+            IdentityResolutionJobStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

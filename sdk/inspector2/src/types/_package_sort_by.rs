@@ -108,7 +108,7 @@ impl ::std::fmt::Display for PackageSortBy {
             PackageSortBy::All => write!(f, "ALL"),
             PackageSortBy::Critical => write!(f, "CRITICAL"),
             PackageSortBy::High => write!(f, "HIGH"),
-            PackageSortBy::Unknown(value) => write!(f, "{}", value),
+            PackageSortBy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

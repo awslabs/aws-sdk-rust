@@ -114,7 +114,7 @@ impl ::std::fmt::Display for FilterName {
             FilterName::FindingReasonCodes => write!(f, "FindingReasonCodes"),
             FilterName::InferredWorkloadTypes => write!(f, "InferredWorkloadTypes"),
             FilterName::RecommendationSourceType => write!(f, "RecommendationSourceType"),
-            FilterName::Unknown(value) => write!(f, "{}", value),
+            FilterName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

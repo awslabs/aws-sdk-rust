@@ -133,7 +133,7 @@ impl ::std::fmt::Display for ServicePrincipalNameStatusReason {
             ServicePrincipalNameStatusReason::InternalFailure => write!(f, "INTERNAL_FAILURE"),
             ServicePrincipalNameStatusReason::SpnExistsOnDifferentAdObject => write!(f, "SPN_EXISTS_ON_DIFFERENT_AD_OBJECT"),
             ServicePrincipalNameStatusReason::SpnLimitExceeded => write!(f, "SPN_LIMIT_EXCEEDED"),
-            ServicePrincipalNameStatusReason::Unknown(value) => write!(f, "{}", value),
+            ServicePrincipalNameStatusReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

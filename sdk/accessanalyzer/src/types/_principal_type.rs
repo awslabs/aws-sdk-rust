@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PrincipalType {
         match self {
             PrincipalType::IamRole => write!(f, "IAM_ROLE"),
             PrincipalType::IamUser => write!(f, "IAM_USER"),
-            PrincipalType::Unknown(value) => write!(f, "{}", value),
+            PrincipalType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

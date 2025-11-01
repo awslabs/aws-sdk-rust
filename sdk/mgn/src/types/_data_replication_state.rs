@@ -175,7 +175,7 @@ impl ::std::fmt::Display for DataReplicationState {
             DataReplicationState::ShippingSnapshot => write!(f, "SHIPPING_SNAPSHOT"),
             DataReplicationState::Stalled => write!(f, "STALLED"),
             DataReplicationState::Stopped => write!(f, "STOPPED"),
-            DataReplicationState::Unknown(value) => write!(f, "{}", value),
+            DataReplicationState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

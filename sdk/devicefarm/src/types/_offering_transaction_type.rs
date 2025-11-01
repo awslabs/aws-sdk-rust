@@ -108,7 +108,7 @@ impl ::std::fmt::Display for OfferingTransactionType {
             OfferingTransactionType::Purchase => write!(f, "PURCHASE"),
             OfferingTransactionType::Renew => write!(f, "RENEW"),
             OfferingTransactionType::System => write!(f, "SYSTEM"),
-            OfferingTransactionType::Unknown(value) => write!(f, "{}", value),
+            OfferingTransactionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

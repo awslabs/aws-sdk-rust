@@ -102,7 +102,7 @@ impl ::std::fmt::Display for GroupType {
         match self {
             GroupType::Distribution => write!(f, "Distribution"),
             GroupType::Security => write!(f, "Security"),
-            GroupType::Unknown(value) => write!(f, "{}", value),
+            GroupType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

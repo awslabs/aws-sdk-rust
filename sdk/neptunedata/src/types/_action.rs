@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Action {
         match self {
             Action::InitializeReset => write!(f, "initiateDatabaseReset"),
             Action::PerformReset => write!(f, "performDatabaseReset"),
-            Action::Unknown(value) => write!(f, "{}", value),
+            Action::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

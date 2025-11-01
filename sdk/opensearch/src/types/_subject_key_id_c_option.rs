@@ -108,7 +108,7 @@ impl ::std::fmt::Display for SubjectKeyIdCOption {
             SubjectKeyIdCOption::Email => write!(f, "Email"),
             SubjectKeyIdCOption::UserId => write!(f, "UserId"),
             SubjectKeyIdCOption::UserName => write!(f, "UserName"),
-            SubjectKeyIdCOption::Unknown(value) => write!(f, "{}", value),
+            SubjectKeyIdCOption::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

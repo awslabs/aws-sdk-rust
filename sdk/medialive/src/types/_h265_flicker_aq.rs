@@ -102,7 +102,7 @@ impl ::std::fmt::Display for H265FlickerAq {
         match self {
             H265FlickerAq::Disabled => write!(f, "DISABLED"),
             H265FlickerAq::Enabled => write!(f, "ENABLED"),
-            H265FlickerAq::Unknown(value) => write!(f, "{}", value),
+            H265FlickerAq::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

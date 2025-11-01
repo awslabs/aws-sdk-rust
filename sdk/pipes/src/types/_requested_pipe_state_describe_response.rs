@@ -108,7 +108,7 @@ impl ::std::fmt::Display for RequestedPipeStateDescribeResponse {
             RequestedPipeStateDescribeResponse::Deleted => write!(f, "DELETED"),
             RequestedPipeStateDescribeResponse::Running => write!(f, "RUNNING"),
             RequestedPipeStateDescribeResponse::Stopped => write!(f, "STOPPED"),
-            RequestedPipeStateDescribeResponse::Unknown(value) => write!(f, "{}", value),
+            RequestedPipeStateDescribeResponse::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

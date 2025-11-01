@@ -114,7 +114,7 @@ impl ::std::fmt::Display for HlsImageBasedTrickPlay {
             HlsImageBasedTrickPlay::None => write!(f, "NONE"),
             HlsImageBasedTrickPlay::Thumbnail => write!(f, "THUMBNAIL"),
             HlsImageBasedTrickPlay::ThumbnailAndFullframe => write!(f, "THUMBNAIL_AND_FULLFRAME"),
-            HlsImageBasedTrickPlay::Unknown(value) => write!(f, "{}", value),
+            HlsImageBasedTrickPlay::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

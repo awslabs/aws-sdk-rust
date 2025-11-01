@@ -175,7 +175,7 @@ impl ::std::fmt::Display for EventType {
             EventType::HitExtended => write!(f, "HITExtended"),
             EventType::HitReviewable => write!(f, "HITReviewable"),
             EventType::Ping => write!(f, "Ping"),
-            EventType::Unknown(value) => write!(f, "{}", value),
+            EventType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

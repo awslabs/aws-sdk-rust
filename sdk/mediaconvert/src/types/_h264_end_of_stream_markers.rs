@@ -102,7 +102,7 @@ impl ::std::fmt::Display for H264EndOfStreamMarkers {
         match self {
             H264EndOfStreamMarkers::Include => write!(f, "INCLUDE"),
             H264EndOfStreamMarkers::Suppress => write!(f, "SUPPRESS"),
-            H264EndOfStreamMarkers::Unknown(value) => write!(f, "{}", value),
+            H264EndOfStreamMarkers::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

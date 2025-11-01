@@ -168,7 +168,7 @@ impl ::std::fmt::Display for CoverageFilterCriterionKey {
             CoverageFilterCriterionKey::InstanceId => write!(f, "INSTANCE_ID"),
             CoverageFilterCriterionKey::ManagementType => write!(f, "MANAGEMENT_TYPE"),
             CoverageFilterCriterionKey::ResourceType => write!(f, "RESOURCE_TYPE"),
-            CoverageFilterCriterionKey::Unknown(value) => write!(f, "{}", value),
+            CoverageFilterCriterionKey::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

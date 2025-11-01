@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ServiceLevelObjectiveBudgetStatus {
             ServiceLevelObjectiveBudgetStatus::InsufficientData => write!(f, "INSUFFICIENT_DATA"),
             ServiceLevelObjectiveBudgetStatus::Ok => write!(f, "OK"),
             ServiceLevelObjectiveBudgetStatus::Warning => write!(f, "WARNING"),
-            ServiceLevelObjectiveBudgetStatus::Unknown(value) => write!(f, "{}", value),
+            ServiceLevelObjectiveBudgetStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

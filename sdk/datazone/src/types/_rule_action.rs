@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RuleAction {
         match self {
             RuleAction::CreateListingChangeSet => write!(f, "CREATE_LISTING_CHANGE_SET"),
             RuleAction::CreateSubscriptionRequest => write!(f, "CREATE_SUBSCRIPTION_REQUEST"),
-            RuleAction::Unknown(value) => write!(f, "{}", value),
+            RuleAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

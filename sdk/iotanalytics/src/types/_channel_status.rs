@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ChannelStatus {
             ChannelStatus::Active => write!(f, "ACTIVE"),
             ChannelStatus::Creating => write!(f, "CREATING"),
             ChannelStatus::Deleting => write!(f, "DELETING"),
-            ChannelStatus::Unknown(value) => write!(f, "{}", value),
+            ChannelStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

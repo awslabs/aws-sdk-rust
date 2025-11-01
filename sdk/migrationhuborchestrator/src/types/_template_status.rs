@@ -120,7 +120,7 @@ impl ::std::fmt::Display for TemplateStatus {
             TemplateStatus::CreationFailed => write!(f, "CREATION_FAILED"),
             TemplateStatus::PendingCreation => write!(f, "PENDING_CREATION"),
             TemplateStatus::Ready => write!(f, "READY"),
-            TemplateStatus::Unknown(value) => write!(f, "{}", value),
+            TemplateStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

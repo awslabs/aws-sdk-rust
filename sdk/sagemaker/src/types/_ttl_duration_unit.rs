@@ -120,7 +120,7 @@ impl ::std::fmt::Display for TtlDurationUnit {
             TtlDurationUnit::Minutes => write!(f, "Minutes"),
             TtlDurationUnit::Seconds => write!(f, "Seconds"),
             TtlDurationUnit::Weeks => write!(f, "Weeks"),
-            TtlDurationUnit::Unknown(value) => write!(f, "{}", value),
+            TtlDurationUnit::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

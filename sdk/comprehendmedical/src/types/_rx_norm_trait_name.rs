@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RxNormTraitName {
         match self {
             RxNormTraitName::Negation => write!(f, "NEGATION"),
             RxNormTraitName::PastHistory => write!(f, "PAST_HISTORY"),
-            RxNormTraitName::Unknown(value) => write!(f, "{}", value),
+            RxNormTraitName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

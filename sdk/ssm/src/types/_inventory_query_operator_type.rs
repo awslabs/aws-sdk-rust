@@ -126,7 +126,7 @@ impl ::std::fmt::Display for InventoryQueryOperatorType {
             InventoryQueryOperatorType::GreaterThan => write!(f, "GreaterThan"),
             InventoryQueryOperatorType::LessThan => write!(f, "LessThan"),
             InventoryQueryOperatorType::NotEqual => write!(f, "NotEqual"),
-            InventoryQueryOperatorType::Unknown(value) => write!(f, "{}", value),
+            InventoryQueryOperatorType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

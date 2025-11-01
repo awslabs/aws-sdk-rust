@@ -126,7 +126,7 @@ impl ::std::fmt::Display for Mpeg2IntraDcPrecision {
             Mpeg2IntraDcPrecision::IntraDcPrecision11 => write!(f, "INTRA_DC_PRECISION_11"),
             Mpeg2IntraDcPrecision::IntraDcPrecision8 => write!(f, "INTRA_DC_PRECISION_8"),
             Mpeg2IntraDcPrecision::IntraDcPrecision9 => write!(f, "INTRA_DC_PRECISION_9"),
-            Mpeg2IntraDcPrecision::Unknown(value) => write!(f, "{}", value),
+            Mpeg2IntraDcPrecision::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

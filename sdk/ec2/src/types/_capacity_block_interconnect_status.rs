@@ -108,7 +108,7 @@ impl ::std::fmt::Display for CapacityBlockInterconnectStatus {
             CapacityBlockInterconnectStatus::Impaired => write!(f, "impaired"),
             CapacityBlockInterconnectStatus::InsufficientData => write!(f, "insufficient-data"),
             CapacityBlockInterconnectStatus::Ok => write!(f, "ok"),
-            CapacityBlockInterconnectStatus::Unknown(value) => write!(f, "{}", value),
+            CapacityBlockInterconnectStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

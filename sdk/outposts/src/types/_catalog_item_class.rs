@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CatalogItemClass {
         match self {
             CatalogItemClass::Rack => write!(f, "RACK"),
             CatalogItemClass::Server => write!(f, "SERVER"),
-            CatalogItemClass::Unknown(value) => write!(f, "{}", value),
+            CatalogItemClass::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

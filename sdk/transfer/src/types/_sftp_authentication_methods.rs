@@ -114,7 +114,7 @@ impl ::std::fmt::Display for SftpAuthenticationMethods {
             SftpAuthenticationMethods::PublicKey => write!(f, "PUBLIC_KEY"),
             SftpAuthenticationMethods::PublicKeyAndPassword => write!(f, "PUBLIC_KEY_AND_PASSWORD"),
             SftpAuthenticationMethods::PublicKeyOrPassword => write!(f, "PUBLIC_KEY_OR_PASSWORD"),
-            SftpAuthenticationMethods::Unknown(value) => write!(f, "{}", value),
+            SftpAuthenticationMethods::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

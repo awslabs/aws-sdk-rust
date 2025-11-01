@@ -108,7 +108,7 @@ impl ::std::fmt::Display for CapacityReservationPreferenceEnum {
             CapacityReservationPreferenceEnum::CapacityReservationsOnly => write!(f, "capacity-reservations-only"),
             CapacityReservationPreferenceEnum::None => write!(f, "none"),
             CapacityReservationPreferenceEnum::Open => write!(f, "open"),
-            CapacityReservationPreferenceEnum::Unknown(value) => write!(f, "{}", value),
+            CapacityReservationPreferenceEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

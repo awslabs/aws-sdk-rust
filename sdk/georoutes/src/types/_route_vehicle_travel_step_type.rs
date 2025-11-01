@@ -180,7 +180,7 @@ impl ::std::fmt::Display for RouteVehicleTravelStepType {
             RouteVehicleTravelStepType::RoundaboutPass => write!(f, "RoundaboutPass"),
             RouteVehicleTravelStepType::Turn => write!(f, "Turn"),
             RouteVehicleTravelStepType::UTurn => write!(f, "UTurn"),
-            RouteVehicleTravelStepType::Unknown(value) => write!(f, "{}", value),
+            RouteVehicleTravelStepType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

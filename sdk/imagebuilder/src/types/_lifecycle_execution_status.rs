@@ -126,7 +126,7 @@ impl ::std::fmt::Display for LifecycleExecutionStatus {
             LifecycleExecutionStatus::InProgress => write!(f, "IN_PROGRESS"),
             LifecycleExecutionStatus::Pending => write!(f, "PENDING"),
             LifecycleExecutionStatus::Success => write!(f, "SUCCESS"),
-            LifecycleExecutionStatus::Unknown(value) => write!(f, "{}", value),
+            LifecycleExecutionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

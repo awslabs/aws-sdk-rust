@@ -120,7 +120,7 @@ impl ::std::fmt::Display for ApplicationStatus {
             ApplicationStatus::Deleting => write!(f, "DELETING"),
             ApplicationStatus::Failed => write!(f, "FAILED"),
             ApplicationStatus::Updating => write!(f, "UPDATING"),
-            ApplicationStatus::Unknown(value) => write!(f, "{}", value),
+            ApplicationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

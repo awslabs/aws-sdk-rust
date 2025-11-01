@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ErrorCode {
         match self {
             ErrorCode::AccessDenied => write!(f, "AccessDenied"),
             ErrorCode::InternalServerError => write!(f, "InternalServerError"),
-            ErrorCode::Unknown(value) => write!(f, "{}", value),
+            ErrorCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

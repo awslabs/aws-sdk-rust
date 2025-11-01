@@ -120,7 +120,7 @@ impl ::std::fmt::Display for WorkspaceStatusCode {
             WorkspaceStatusCode::CreationFailed => write!(f, "CREATION_FAILED"),
             WorkspaceStatusCode::Deleting => write!(f, "DELETING"),
             WorkspaceStatusCode::Updating => write!(f, "UPDATING"),
-            WorkspaceStatusCode::Unknown(value) => write!(f, "{}", value),
+            WorkspaceStatusCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

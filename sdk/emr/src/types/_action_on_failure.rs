@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ActionOnFailure {
             ActionOnFailure::Continue => write!(f, "CONTINUE"),
             ActionOnFailure::TerminateCluster => write!(f, "TERMINATE_CLUSTER"),
             ActionOnFailure::TerminateJobFlow => write!(f, "TERMINATE_JOB_FLOW"),
-            ActionOnFailure::Unknown(value) => write!(f, "{}", value),
+            ActionOnFailure::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

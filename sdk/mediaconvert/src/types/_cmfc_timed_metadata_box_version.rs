@@ -105,7 +105,7 @@ impl ::std::fmt::Display for CmfcTimedMetadataBoxVersion {
         match self {
             CmfcTimedMetadataBoxVersion::Version0 => write!(f, "VERSION_0"),
             CmfcTimedMetadataBoxVersion::Version1 => write!(f, "VERSION_1"),
-            CmfcTimedMetadataBoxVersion::Unknown(value) => write!(f, "{}", value),
+            CmfcTimedMetadataBoxVersion::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

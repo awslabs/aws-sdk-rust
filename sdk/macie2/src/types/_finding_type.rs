@@ -168,7 +168,7 @@ impl ::std::fmt::Display for FindingType {
             FindingType::SensitiveDataS3ObjectFinancial => write!(f, "SensitiveData:S3Object/Financial"),
             FindingType::SensitiveDataS3ObjectMultiple => write!(f, "SensitiveData:S3Object/Multiple"),
             FindingType::SensitiveDataS3ObjectPersonal => write!(f, "SensitiveData:S3Object/Personal"),
-            FindingType::Unknown(value) => write!(f, "{}", value),
+            FindingType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

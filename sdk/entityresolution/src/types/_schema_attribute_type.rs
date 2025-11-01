@@ -252,7 +252,7 @@ impl ::std::fmt::Display for SchemaAttributeType {
             SchemaAttributeType::ProviderId => write!(f, "PROVIDER_ID"),
             SchemaAttributeType::String => write!(f, "STRING"),
             SchemaAttributeType::UniqueId => write!(f, "UNIQUE_ID"),
-            SchemaAttributeType::Unknown(value) => write!(f, "{}", value),
+            SchemaAttributeType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

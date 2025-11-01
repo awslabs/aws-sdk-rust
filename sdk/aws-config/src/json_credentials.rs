@@ -45,16 +45,14 @@ impl Display for InvalidJsonCredentials {
     fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
         match self {
             InvalidJsonCredentials::JsonError(json) => {
-                write!(f, "invalid JSON in response: {}", json)
+                write!(f, "invalid JSON in response: {json}")
             }
-            InvalidJsonCredentials::MissingField(field) => write!(
-                f,
-                "Expected field `{}` in response but it was missing",
-                field
-            ),
-            InvalidJsonCredentials::Other(msg) => write!(f, "{}", msg),
+            InvalidJsonCredentials::MissingField(field) => {
+                write!(f, "Expected field `{field}` in response but it was missing",)
+            }
+            InvalidJsonCredentials::Other(msg) => write!(f, "{msg}"),
             InvalidJsonCredentials::InvalidField { field, err } => {
-                write!(f, "Invalid field in response: `{}`. {}", field, err)
+                write!(f, "Invalid field in response: `{field}`. {err}")
             }
         }
     }
@@ -237,7 +235,7 @@ pub(crate) fn json_parse_loop<'a>(
             }
             other => {
                 return Err(InvalidJsonCredentials::Other(
-                    format!("expected object key, found: {:?}", other).into(),
+                    format!("expected object key, found: {other:?}").into(),
                 ));
             }
         }

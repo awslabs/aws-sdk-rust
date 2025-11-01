@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ClusterDeploymentType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ClusterDeploymentType::MultiNodeReadReplicas => write!(f, "MULTI_NODE_READ_REPLICAS"),
-            ClusterDeploymentType::Unknown(value) => write!(f, "{}", value),
+            ClusterDeploymentType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

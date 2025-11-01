@@ -161,7 +161,7 @@ impl ::std::fmt::Display for PresetSpeke20Video {
             PresetSpeke20Video::PresetVideo8 => write!(f, "PRESET-VIDEO-8"),
             PresetSpeke20Video::Shared => write!(f, "SHARED"),
             PresetSpeke20Video::Unencrypted => write!(f, "UNENCRYPTED"),
-            PresetSpeke20Video::Unknown(value) => write!(f, "{}", value),
+            PresetSpeke20Video::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

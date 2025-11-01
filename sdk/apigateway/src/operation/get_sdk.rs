@@ -167,6 +167,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetSdkReques
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::get_sdk::GetSdkInput,
                 output: &mut ::std::string::String,
@@ -215,6 +216,23 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetSdkReques
                 .expect("formatting should succeed");
                 ::std::result::Result::Ok(())
             }
+            fn uri_query(
+                _input: &crate::operation::get_sdk::GetSdkInput,
+                mut output: &mut ::std::string::String,
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
+                let mut query = ::aws_smithy_http::query::Writer::new(output);
+                let protected_params = [];
+                if let ::std::option::Option::Some(inner_4) = &_input.parameters {
+                    {
+                        for (k, v) in inner_4 {
+                            if !protected_params.contains(&k.as_str()) {
+                                query.push_kv(&::aws_smithy_http::query::fmt_string(k), &::aws_smithy_http::query::fmt_string(v));
+                            }
+                        }
+                    }
+                }
+                ::std::result::Result::Ok(())
+            }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::operation::get_sdk::GetSdkInput,
@@ -222,6 +240,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetSdkReques
             ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
+                uri_query(input, &mut uri)?;
                 ::std::result::Result::Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&input, ::http::request::Builder::new())?;

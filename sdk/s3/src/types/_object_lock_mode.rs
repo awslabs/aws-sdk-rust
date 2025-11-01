@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ObjectLockMode {
         match self {
             ObjectLockMode::Compliance => write!(f, "COMPLIANCE"),
             ObjectLockMode::Governance => write!(f, "GOVERNANCE"),
-            ObjectLockMode::Unknown(value) => write!(f, "{}", value),
+            ObjectLockMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

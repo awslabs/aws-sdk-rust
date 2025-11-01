@@ -268,7 +268,7 @@ impl ::std::fmt::Display for ExecutionEventType {
             ExecutionEventType::StepSucceeded => write!(f, "stepSucceeded"),
             ExecutionEventType::StepUpdate => write!(f, "stepUpdate"),
             ExecutionEventType::UnknownValue => write!(f, "unknown"),
-            ExecutionEventType::Unknown(value) => write!(f, "{}", value),
+            ExecutionEventType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

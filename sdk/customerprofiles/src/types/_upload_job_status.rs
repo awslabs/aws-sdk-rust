@@ -126,7 +126,7 @@ impl ::std::fmt::Display for UploadJobStatus {
             UploadJobStatus::PartiallySucceeded => write!(f, "PARTIALLY_SUCCEEDED"),
             UploadJobStatus::Stopped => write!(f, "STOPPED"),
             UploadJobStatus::Succeeded => write!(f, "SUCCEEDED"),
-            UploadJobStatus::Unknown(value) => write!(f, "{}", value),
+            UploadJobStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

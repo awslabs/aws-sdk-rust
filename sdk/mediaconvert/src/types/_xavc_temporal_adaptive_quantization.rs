@@ -102,7 +102,7 @@ impl ::std::fmt::Display for XavcTemporalAdaptiveQuantization {
         match self {
             XavcTemporalAdaptiveQuantization::Disabled => write!(f, "DISABLED"),
             XavcTemporalAdaptiveQuantization::Enabled => write!(f, "ENABLED"),
-            XavcTemporalAdaptiveQuantization::Unknown(value) => write!(f, "{}", value),
+            XavcTemporalAdaptiveQuantization::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

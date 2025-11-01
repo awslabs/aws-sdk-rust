@@ -140,7 +140,7 @@ impl ::std::fmt::Display for BundleTaskState {
             BundleTaskState::Pending => write!(f, "pending"),
             BundleTaskState::Storing => write!(f, "storing"),
             BundleTaskState::WaitingForShutdown => write!(f, "waiting-for-shutdown"),
-            BundleTaskState::Unknown(value) => write!(f, "{}", value),
+            BundleTaskState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

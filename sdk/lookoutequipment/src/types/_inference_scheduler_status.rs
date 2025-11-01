@@ -114,7 +114,7 @@ impl ::std::fmt::Display for InferenceSchedulerStatus {
             InferenceSchedulerStatus::Running => write!(f, "RUNNING"),
             InferenceSchedulerStatus::Stopped => write!(f, "STOPPED"),
             InferenceSchedulerStatus::Stopping => write!(f, "STOPPING"),
-            InferenceSchedulerStatus::Unknown(value) => write!(f, "{}", value),
+            InferenceSchedulerStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

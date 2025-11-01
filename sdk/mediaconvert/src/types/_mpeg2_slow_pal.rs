@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Mpeg2SlowPal {
         match self {
             Mpeg2SlowPal::Disabled => write!(f, "DISABLED"),
             Mpeg2SlowPal::Enabled => write!(f, "ENABLED"),
-            Mpeg2SlowPal::Unknown(value) => write!(f, "{}", value),
+            Mpeg2SlowPal::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TargetOptions {
         match self {
             TargetOptions::Input => write!(f, "INPUT"),
             TargetOptions::Output => write!(f, "OUTPUT"),
-            TargetOptions::Unknown(value) => write!(f, "{}", value),
+            TargetOptions::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

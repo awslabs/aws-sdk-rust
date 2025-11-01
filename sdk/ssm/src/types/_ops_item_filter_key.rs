@@ -350,7 +350,7 @@ impl ::std::fmt::Display for OpsItemFilterKey {
             OpsItemFilterKey::Source => write!(f, "Source"),
             OpsItemFilterKey::Status => write!(f, "Status"),
             OpsItemFilterKey::Title => write!(f, "Title"),
-            OpsItemFilterKey::Unknown(value) => write!(f, "{}", value),
+            OpsItemFilterKey::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

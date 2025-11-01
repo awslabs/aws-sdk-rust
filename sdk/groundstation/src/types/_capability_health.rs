@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CapabilityHealth {
         match self {
             CapabilityHealth::Healthy => write!(f, "HEALTHY"),
             CapabilityHealth::Unhealthy => write!(f, "UNHEALTHY"),
-            CapabilityHealth::Unknown(value) => write!(f, "{}", value),
+            CapabilityHealth::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

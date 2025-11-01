@@ -154,7 +154,7 @@ impl ::std::fmt::Display for ContainerServiceStateDetailCode {
             ContainerServiceStateDetailCode::ProvisioningCertificate => write!(f, "PROVISIONING_CERTIFICATE"),
             ContainerServiceStateDetailCode::ProvisioningService => write!(f, "PROVISIONING_SERVICE"),
             ContainerServiceStateDetailCode::UnknownError => write!(f, "UNKNOWN_ERROR"),
-            ContainerServiceStateDetailCode::Unknown(value) => write!(f, "{}", value),
+            ContainerServiceStateDetailCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

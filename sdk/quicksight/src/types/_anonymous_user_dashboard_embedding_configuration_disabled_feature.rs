@@ -98,7 +98,7 @@ impl ::std::fmt::Display for AnonymousUserDashboardEmbeddingConfigurationDisable
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             AnonymousUserDashboardEmbeddingConfigurationDisabledFeature::SharedView => write!(f, "SHARED_VIEW"),
-            AnonymousUserDashboardEmbeddingConfigurationDisabledFeature::Unknown(value) => write!(f, "{}", value),
+            AnonymousUserDashboardEmbeddingConfigurationDisabledFeature::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

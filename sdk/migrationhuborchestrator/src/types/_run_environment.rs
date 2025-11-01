@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RunEnvironment {
         match self {
             RunEnvironment::Aws => write!(f, "AWS"),
             RunEnvironment::Onpremise => write!(f, "ONPREMISE"),
-            RunEnvironment::Unknown(value) => write!(f, "{}", value),
+            RunEnvironment::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

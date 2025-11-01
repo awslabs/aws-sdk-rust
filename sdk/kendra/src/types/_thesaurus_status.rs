@@ -126,7 +126,7 @@ impl ::std::fmt::Display for ThesaurusStatus {
             ThesaurusStatus::Deleting => write!(f, "DELETING"),
             ThesaurusStatus::Failed => write!(f, "FAILED"),
             ThesaurusStatus::Updating => write!(f, "UPDATING"),
-            ThesaurusStatus::Unknown(value) => write!(f, "{}", value),
+            ThesaurusStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

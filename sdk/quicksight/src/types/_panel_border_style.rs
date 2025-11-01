@@ -108,7 +108,7 @@ impl ::std::fmt::Display for PanelBorderStyle {
             PanelBorderStyle::Dashed => write!(f, "DASHED"),
             PanelBorderStyle::Dotted => write!(f, "DOTTED"),
             PanelBorderStyle::Solid => write!(f, "SOLID"),
-            PanelBorderStyle::Unknown(value) => write!(f, "{}", value),
+            PanelBorderStyle::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

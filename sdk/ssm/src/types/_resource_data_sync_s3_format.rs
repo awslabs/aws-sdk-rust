@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ResourceDataSyncS3Format {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ResourceDataSyncS3Format::JsonSerde => write!(f, "JsonSerDe"),
-            ResourceDataSyncS3Format::Unknown(value) => write!(f, "{}", value),
+            ResourceDataSyncS3Format::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

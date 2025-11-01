@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ImageRepositoryType {
         match self {
             ImageRepositoryType::Ecr => write!(f, "ECR"),
             ImageRepositoryType::EcrPublic => write!(f, "ECR_PUBLIC"),
-            ImageRepositoryType::Unknown(value) => write!(f, "{}", value),
+            ImageRepositoryType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

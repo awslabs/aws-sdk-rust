@@ -102,7 +102,7 @@ impl ::std::fmt::Display for HlsAkamaiHttpTransferMode {
         match self {
             HlsAkamaiHttpTransferMode::Chunked => write!(f, "CHUNKED"),
             HlsAkamaiHttpTransferMode::NonChunked => write!(f, "NON_CHUNKED"),
-            HlsAkamaiHttpTransferMode::Unknown(value) => write!(f, "{}", value),
+            HlsAkamaiHttpTransferMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

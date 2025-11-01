@@ -102,7 +102,7 @@ impl ::std::fmt::Display for EncryptionMode {
         match self {
             EncryptionMode::Ssekms => write!(f, "SSE-KMS"),
             EncryptionMode::Sses3 => write!(f, "SSE-S3"),
-            EncryptionMode::Unknown(value) => write!(f, "{}", value),
+            EncryptionMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

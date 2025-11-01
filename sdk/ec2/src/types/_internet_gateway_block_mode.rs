@@ -108,7 +108,7 @@ impl ::std::fmt::Display for InternetGatewayBlockMode {
             InternetGatewayBlockMode::BlockBidirectional => write!(f, "block-bidirectional"),
             InternetGatewayBlockMode::BlockIngress => write!(f, "block-ingress"),
             InternetGatewayBlockMode::Off => write!(f, "off"),
-            InternetGatewayBlockMode::Unknown(value) => write!(f, "{}", value),
+            InternetGatewayBlockMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

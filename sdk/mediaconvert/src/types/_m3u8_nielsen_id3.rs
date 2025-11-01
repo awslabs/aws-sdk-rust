@@ -102,7 +102,7 @@ impl ::std::fmt::Display for M3u8NielsenId3 {
         match self {
             M3u8NielsenId3::Insert => write!(f, "INSERT"),
             M3u8NielsenId3::None => write!(f, "NONE"),
-            M3u8NielsenId3::Unknown(value) => write!(f, "{}", value),
+            M3u8NielsenId3::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

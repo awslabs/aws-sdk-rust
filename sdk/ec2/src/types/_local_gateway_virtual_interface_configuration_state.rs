@@ -116,7 +116,7 @@ impl ::std::fmt::Display for LocalGatewayVirtualInterfaceConfigurationState {
             LocalGatewayVirtualInterfaceConfigurationState::Deleted => write!(f, "deleted"),
             LocalGatewayVirtualInterfaceConfigurationState::Deleting => write!(f, "deleting"),
             LocalGatewayVirtualInterfaceConfigurationState::Pending => write!(f, "pending"),
-            LocalGatewayVirtualInterfaceConfigurationState::Unknown(value) => write!(f, "{}", value),
+            LocalGatewayVirtualInterfaceConfigurationState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

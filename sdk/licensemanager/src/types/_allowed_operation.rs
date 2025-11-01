@@ -140,7 +140,7 @@ impl ::std::fmt::Display for AllowedOperation {
             AllowedOperation::CreateToken => write!(f, "CreateToken"),
             AllowedOperation::ExtendConsumptionLicense => write!(f, "ExtendConsumptionLicense"),
             AllowedOperation::ListPurchasedLicenses => write!(f, "ListPurchasedLicenses"),
-            AllowedOperation::Unknown(value) => write!(f, "{}", value),
+            AllowedOperation::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

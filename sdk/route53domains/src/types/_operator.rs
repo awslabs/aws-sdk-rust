@@ -108,7 +108,7 @@ impl ::std::fmt::Display for Operator {
             Operator::BeginsWith => write!(f, "BEGINS_WITH"),
             Operator::Ge => write!(f, "GE"),
             Operator::Le => write!(f, "LE"),
-            Operator::Unknown(value) => write!(f, "{}", value),
+            Operator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -147,7 +147,7 @@ impl ::std::fmt::Display for SavingsPlanState {
             SavingsPlanState::QueuedDeleted => write!(f, "queued-deleted"),
             SavingsPlanState::Retired => write!(f, "retired"),
             SavingsPlanState::Returned => write!(f, "returned"),
-            SavingsPlanState::Unknown(value) => write!(f, "{}", value),
+            SavingsPlanState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -1106,7 +1106,7 @@ impl ::std::fmt::Display for CurrencyCode {
             CurrencyCode::Zar => write!(f, "ZAR"),
             CurrencyCode::Zmw => write!(f, "ZMW"),
             CurrencyCode::Zwl => write!(f, "ZWL"),
-            CurrencyCode::Unknown(value) => write!(f, "{}", value),
+            CurrencyCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

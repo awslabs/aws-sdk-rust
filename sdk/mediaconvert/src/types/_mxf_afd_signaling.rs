@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MxfAfdSignaling {
         match self {
             MxfAfdSignaling::CopyFromVideo => write!(f, "COPY_FROM_VIDEO"),
             MxfAfdSignaling::NoCopy => write!(f, "NO_COPY"),
-            MxfAfdSignaling::Unknown(value) => write!(f, "{}", value),
+            MxfAfdSignaling::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

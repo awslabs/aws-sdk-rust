@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DefaultGatewayRouteRewrite {
         match self {
             DefaultGatewayRouteRewrite::Disabled => write!(f, "DISABLED"),
             DefaultGatewayRouteRewrite::Enabled => write!(f, "ENABLED"),
-            DefaultGatewayRouteRewrite::Unknown(value) => write!(f, "{}", value),
+            DefaultGatewayRouteRewrite::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

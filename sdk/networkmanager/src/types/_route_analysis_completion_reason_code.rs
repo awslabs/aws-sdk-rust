@@ -176,7 +176,7 @@ impl ::std::fmt::Display for RouteAnalysisCompletionReasonCode {
             RouteAnalysisCompletionReasonCode::TransitGatewayAttachmentStableRouteTableNotFound => {
                 write!(f, "TRANSIT_GATEWAY_ATTACHMENT_STABLE_ROUTE_TABLE_NOT_FOUND")
             }
-            RouteAnalysisCompletionReasonCode::Unknown(value) => write!(f, "{}", value),
+            RouteAnalysisCompletionReasonCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

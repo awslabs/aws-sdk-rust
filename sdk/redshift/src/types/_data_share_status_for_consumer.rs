@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DataShareStatusForConsumer {
         match self {
             DataShareStatusForConsumer::Active => write!(f, "ACTIVE"),
             DataShareStatusForConsumer::Available => write!(f, "AVAILABLE"),
-            DataShareStatusForConsumer::Unknown(value) => write!(f, "{}", value),
+            DataShareStatusForConsumer::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for KpiSparklineType {
         match self {
             KpiSparklineType::Area => write!(f, "AREA"),
             KpiSparklineType::Line => write!(f, "LINE"),
-            KpiSparklineType::Unknown(value) => write!(f, "{}", value),
+            KpiSparklineType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

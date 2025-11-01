@@ -102,7 +102,7 @@ impl ::std::fmt::Display for OpsItemDataType {
         match self {
             OpsItemDataType::SearchableString => write!(f, "SearchableString"),
             OpsItemDataType::String => write!(f, "String"),
-            OpsItemDataType::Unknown(value) => write!(f, "{}", value),
+            OpsItemDataType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -376,6 +376,6 @@ mod test {
             .into(),
         };
         let body = SdkBody::from_body_1_x(body);
-        assert!(format!("{:?}", body).contains("BoxBody"));
+        assert!(format!("{body:?}").contains("BoxBody"));
     }
 }

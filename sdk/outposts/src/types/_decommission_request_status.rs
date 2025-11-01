@@ -108,7 +108,7 @@ impl ::std::fmt::Display for DecommissionRequestStatus {
             DecommissionRequestStatus::Blocked => write!(f, "BLOCKED"),
             DecommissionRequestStatus::Requested => write!(f, "REQUESTED"),
             DecommissionRequestStatus::Skipped => write!(f, "SKIPPED"),
-            DecommissionRequestStatus::Unknown(value) => write!(f, "{}", value),
+            DecommissionRequestStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

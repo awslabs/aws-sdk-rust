@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Ac3DrcProfile {
         match self {
             Ac3DrcProfile::FilmStandard => write!(f, "FILM_STANDARD"),
             Ac3DrcProfile::None => write!(f, "NONE"),
-            Ac3DrcProfile::Unknown(value) => write!(f, "{}", value),
+            Ac3DrcProfile::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

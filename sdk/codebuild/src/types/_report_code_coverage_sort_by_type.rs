@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ReportCodeCoverageSortByType {
         match self {
             ReportCodeCoverageSortByType::FilePath => write!(f, "FILE_PATH"),
             ReportCodeCoverageSortByType::LineCoveragePercentage => write!(f, "LINE_COVERAGE_PERCENTAGE"),
-            ReportCodeCoverageSortByType::Unknown(value) => write!(f, "{}", value),
+            ReportCodeCoverageSortByType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

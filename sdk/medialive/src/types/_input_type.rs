@@ -189,7 +189,7 @@ impl ::std::fmt::Display for InputType {
             InputType::TsFile => write!(f, "TS_FILE"),
             InputType::UdpPush => write!(f, "UDP_PUSH"),
             InputType::UrlPull => write!(f, "URL_PULL"),
-            InputType::Unknown(value) => write!(f, "{}", value),
+            InputType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

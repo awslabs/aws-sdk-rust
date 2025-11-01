@@ -102,7 +102,7 @@ impl ::std::fmt::Display for LabelDetectionAggregateBy {
         match self {
             LabelDetectionAggregateBy::Segments => write!(f, "SEGMENTS"),
             LabelDetectionAggregateBy::Timestamps => write!(f, "TIMESTAMPS"),
-            LabelDetectionAggregateBy::Unknown(value) => write!(f, "{}", value),
+            LabelDetectionAggregateBy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

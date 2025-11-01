@@ -108,7 +108,7 @@ impl ::std::fmt::Display for OpenSearchResourceStatusType {
             OpenSearchResourceStatusType::Active => write!(f, "ACTIVE"),
             OpenSearchResourceStatusType::Error => write!(f, "ERROR"),
             OpenSearchResourceStatusType::NotFound => write!(f, "NOT_FOUND"),
-            OpenSearchResourceStatusType::Unknown(value) => write!(f, "{}", value),
+            OpenSearchResourceStatusType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

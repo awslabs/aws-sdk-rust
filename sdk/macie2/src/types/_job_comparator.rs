@@ -138,7 +138,7 @@ impl ::std::fmt::Display for JobComparator {
             JobComparator::Lte => write!(f, "LTE"),
             JobComparator::Ne => write!(f, "NE"),
             JobComparator::StartsWith => write!(f, "STARTS_WITH"),
-            JobComparator::Unknown(value) => write!(f, "{}", value),
+            JobComparator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

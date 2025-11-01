@@ -108,7 +108,7 @@ impl ::std::fmt::Display for LicenseRecommendationFilterName {
             LicenseRecommendationFilterName::LicenseFinding => write!(f, "Finding"),
             LicenseRecommendationFilterName::LicenseFindingReasonCode => write!(f, "FindingReasonCode"),
             LicenseRecommendationFilterName::LicenseName => write!(f, "LicenseName"),
-            LicenseRecommendationFilterName::Unknown(value) => write!(f, "{}", value),
+            LicenseRecommendationFilterName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

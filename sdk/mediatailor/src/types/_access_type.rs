@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AccessType {
             AccessType::AutodetectSigv4 => write!(f, "AUTODETECT_SIGV4"),
             AccessType::S3Sigv4 => write!(f, "S3_SIGV4"),
             AccessType::SecretsManagerAccessToken => write!(f, "SECRETS_MANAGER_ACCESS_TOKEN"),
-            AccessType::Unknown(value) => write!(f, "{}", value),
+            AccessType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

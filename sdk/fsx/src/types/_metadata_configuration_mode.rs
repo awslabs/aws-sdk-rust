@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MetadataConfigurationMode {
         match self {
             MetadataConfigurationMode::Automatic => write!(f, "AUTOMATIC"),
             MetadataConfigurationMode::UserProvisioned => write!(f, "USER_PROVISIONED"),
-            MetadataConfigurationMode::Unknown(value) => write!(f, "{}", value),
+            MetadataConfigurationMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

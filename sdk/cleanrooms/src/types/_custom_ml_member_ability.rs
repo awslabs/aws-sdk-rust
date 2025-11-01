@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CustomMlMemberAbility {
         match self {
             CustomMlMemberAbility::CanReceiveInferenceOutput => write!(f, "CAN_RECEIVE_INFERENCE_OUTPUT"),
             CustomMlMemberAbility::CanReceiveModelOutput => write!(f, "CAN_RECEIVE_MODEL_OUTPUT"),
-            CustomMlMemberAbility::Unknown(value) => write!(f, "{}", value),
+            CustomMlMemberAbility::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

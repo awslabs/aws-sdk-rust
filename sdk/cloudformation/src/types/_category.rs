@@ -114,7 +114,7 @@ impl ::std::fmt::Display for Category {
             Category::AwsTypes => write!(f, "AWS_TYPES"),
             Category::Registered => write!(f, "REGISTERED"),
             Category::ThirdParty => write!(f, "THIRD_PARTY"),
-            Category::Unknown(value) => write!(f, "{}", value),
+            Category::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

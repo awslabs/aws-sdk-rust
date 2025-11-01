@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CidrCollectionChangeAction {
         match self {
             CidrCollectionChangeAction::DeleteIfExists => write!(f, "DELETE_IF_EXISTS"),
             CidrCollectionChangeAction::Put => write!(f, "PUT"),
-            CidrCollectionChangeAction::Unknown(value) => write!(f, "{}", value),
+            CidrCollectionChangeAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

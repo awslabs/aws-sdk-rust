@@ -100,7 +100,7 @@ impl ::std::fmt::Display for WaypointOptimizationClusteringAlgorithm {
         match self {
             WaypointOptimizationClusteringAlgorithm::DrivingDistance => write!(f, "DrivingDistance"),
             WaypointOptimizationClusteringAlgorithm::TopologySegment => write!(f, "TopologySegment"),
-            WaypointOptimizationClusteringAlgorithm::Unknown(value) => write!(f, "{}", value),
+            WaypointOptimizationClusteringAlgorithm::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

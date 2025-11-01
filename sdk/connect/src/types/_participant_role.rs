@@ -120,7 +120,7 @@ impl ::std::fmt::Display for ParticipantRole {
             ParticipantRole::CustomBot => write!(f, "CUSTOM_BOT"),
             ParticipantRole::Supervisor => write!(f, "SUPERVISOR"),
             ParticipantRole::System => write!(f, "SYSTEM"),
-            ParticipantRole::Unknown(value) => write!(f, "{}", value),
+            ParticipantRole::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

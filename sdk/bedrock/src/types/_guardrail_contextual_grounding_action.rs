@@ -100,7 +100,7 @@ impl ::std::fmt::Display for GuardrailContextualGroundingAction {
         match self {
             GuardrailContextualGroundingAction::Block => write!(f, "BLOCK"),
             GuardrailContextualGroundingAction::None => write!(f, "NONE"),
-            GuardrailContextualGroundingAction::Unknown(value) => write!(f, "{}", value),
+            GuardrailContextualGroundingAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

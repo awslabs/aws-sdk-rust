@@ -102,7 +102,7 @@ impl ::std::fmt::Display for HlsSegmentControl {
         match self {
             HlsSegmentControl::SegmentedFiles => write!(f, "SEGMENTED_FILES"),
             HlsSegmentControl::SingleFile => write!(f, "SINGLE_FILE"),
-            HlsSegmentControl::Unknown(value) => write!(f, "{}", value),
+            HlsSegmentControl::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

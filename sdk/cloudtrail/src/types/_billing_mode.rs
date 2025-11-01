@@ -102,7 +102,7 @@ impl ::std::fmt::Display for BillingMode {
         match self {
             BillingMode::ExtendableRetentionPricing => write!(f, "EXTENDABLE_RETENTION_PRICING"),
             BillingMode::FixedRetentionPricing => write!(f, "FIXED_RETENTION_PRICING"),
-            BillingMode::Unknown(value) => write!(f, "{}", value),
+            BillingMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

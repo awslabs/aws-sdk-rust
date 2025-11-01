@@ -102,7 +102,7 @@ impl ::std::fmt::Display for BatchInferenceJobMode {
         match self {
             BatchInferenceJobMode::BatchInference => write!(f, "BATCH_INFERENCE"),
             BatchInferenceJobMode::ThemeGeneration => write!(f, "THEME_GENERATION"),
-            BatchInferenceJobMode::Unknown(value) => write!(f, "{}", value),
+            BatchInferenceJobMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

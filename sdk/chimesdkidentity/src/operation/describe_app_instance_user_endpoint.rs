@@ -189,6 +189,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DescribeAppI
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::describe_app_instance_user_endpoint::DescribeAppInstanceUserEndpointInput,
                 output: &mut ::std::string::String,

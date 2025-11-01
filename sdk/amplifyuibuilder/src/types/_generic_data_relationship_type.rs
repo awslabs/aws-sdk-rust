@@ -108,7 +108,7 @@ impl ::std::fmt::Display for GenericDataRelationshipType {
             GenericDataRelationshipType::BelongsTo => write!(f, "BELONGS_TO"),
             GenericDataRelationshipType::HasMany => write!(f, "HAS_MANY"),
             GenericDataRelationshipType::HasOne => write!(f, "HAS_ONE"),
-            GenericDataRelationshipType::Unknown(value) => write!(f, "{}", value),
+            GenericDataRelationshipType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

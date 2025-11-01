@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ServicePrincipalNameStatus {
             ServicePrincipalNameStatus::Creating => write!(f, "CREATING"),
             ServicePrincipalNameStatus::Deleting => write!(f, "DELETING"),
             ServicePrincipalNameStatus::Failed => write!(f, "FAILED"),
-            ServicePrincipalNameStatus::Unknown(value) => write!(f, "{}", value),
+            ServicePrincipalNameStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

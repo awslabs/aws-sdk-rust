@@ -196,7 +196,7 @@ impl ::std::fmt::Display for AggFunction {
             AggFunction::SumDistinct => write!(f, "sumDistinct"),
             AggFunction::VarPop => write!(f, "var_pop"),
             AggFunction::VarSamp => write!(f, "var_samp"),
-            AggFunction::Unknown(value) => write!(f, "{}", value),
+            AggFunction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

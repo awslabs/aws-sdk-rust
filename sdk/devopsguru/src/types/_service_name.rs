@@ -266,7 +266,7 @@ impl ::std::fmt::Display for ServiceName {
             ServiceName::Sqs => write!(f, "SQS"),
             ServiceName::StepFunctions => write!(f, "STEP_FUNCTIONS"),
             ServiceName::Swf => write!(f, "SWF"),
-            ServiceName::Unknown(value) => write!(f, "{}", value),
+            ServiceName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

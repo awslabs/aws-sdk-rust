@@ -96,7 +96,7 @@ impl ::std::fmt::Display for AuthorizationCodeGrantCredentialsSource {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             AuthorizationCodeGrantCredentialsSource::PlainCredentials => write!(f, "PLAIN_CREDENTIALS"),
-            AuthorizationCodeGrantCredentialsSource::Unknown(value) => write!(f, "{}", value),
+            AuthorizationCodeGrantCredentialsSource::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

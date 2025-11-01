@@ -573,11 +573,19 @@ pub use crate::types::_ipam_resource_cidr::IpamResourceCidrBuilder;
 
 pub use crate::types::_ipam_resource_tag::IpamResourceTagBuilder;
 
+pub use crate::types::_ipam_prefix_list_resolver_target::IpamPrefixListResolverTargetBuilder;
+
+pub use crate::types::_ipam_prefix_list_resolver::IpamPrefixListResolverBuilder;
+
+pub use crate::types::_ipam_prefix_list_resolver_rule_request::IpamPrefixListResolverRuleRequestBuilder;
+
+pub use crate::types::_ipam_prefix_list_resolver_rule_condition_request::IpamPrefixListResolverRuleConditionRequestBuilder;
+
+pub use crate::types::_request_ipam_resource_tag::RequestIpamResourceTagBuilder;
+
 pub use crate::types::_ipam_pool::IpamPoolBuilder;
 
 pub use crate::types::_ipam_pool_source_resource::IpamPoolSourceResourceBuilder;
-
-pub use crate::types::_request_ipam_resource_tag::RequestIpamResourceTagBuilder;
 
 pub use crate::types::_ipam::IpamBuilder;
 
@@ -830,6 +838,14 @@ pub use crate::types::_launch_template_block_device_mapping::LaunchTemplateBlock
 pub use crate::types::_launch_template_ebs_block_device::LaunchTemplateEbsBlockDeviceBuilder;
 
 pub use crate::types::_launch_template_iam_instance_profile_specification::LaunchTemplateIamInstanceProfileSpecificationBuilder;
+
+pub use crate::types::_ipam_prefix_list_resolver_version::IpamPrefixListResolverVersionBuilder;
+
+pub use crate::types::_ipam_prefix_list_resolver_version_entry::IpamPrefixListResolverVersionEntryBuilder;
+
+pub use crate::types::_ipam_prefix_list_resolver_rule::IpamPrefixListResolverRuleBuilder;
+
+pub use crate::types::_ipam_prefix_list_resolver_rule_condition::IpamPrefixListResolverRuleConditionBuilder;
 
 pub use crate::types::_ipam_pool_allocation::IpamPoolAllocationBuilder;
 

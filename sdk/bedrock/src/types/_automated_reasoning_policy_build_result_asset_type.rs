@@ -110,7 +110,7 @@ impl ::std::fmt::Display for AutomatedReasoningPolicyBuildResultAssetType {
             AutomatedReasoningPolicyBuildResultAssetType::BuildLog => write!(f, "BUILD_LOG"),
             AutomatedReasoningPolicyBuildResultAssetType::PolicyDefinition => write!(f, "POLICY_DEFINITION"),
             AutomatedReasoningPolicyBuildResultAssetType::QualityReport => write!(f, "QUALITY_REPORT"),
-            AutomatedReasoningPolicyBuildResultAssetType::Unknown(value) => write!(f, "{}", value),
+            AutomatedReasoningPolicyBuildResultAssetType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

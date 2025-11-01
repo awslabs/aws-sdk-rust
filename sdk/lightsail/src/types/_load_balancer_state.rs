@@ -122,7 +122,7 @@ impl ::std::fmt::Display for LoadBalancerState {
             LoadBalancerState::Failed => write!(f, "failed"),
             LoadBalancerState::Provisioning => write!(f, "provisioning"),
             LoadBalancerState::UnknownValue => write!(f, "unknown"),
-            LoadBalancerState::Unknown(value) => write!(f, "{}", value),
+            LoadBalancerState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

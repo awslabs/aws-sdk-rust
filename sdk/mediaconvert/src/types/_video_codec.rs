@@ -189,7 +189,7 @@ impl ::std::fmt::Display for VideoCodec {
             VideoCodec::Vp8 => write!(f, "VP8"),
             VideoCodec::Vp9 => write!(f, "VP9"),
             VideoCodec::Xavc => write!(f, "XAVC"),
-            VideoCodec::Unknown(value) => write!(f, "{}", value),
+            VideoCodec::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ListResponseScope {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ListResponseScope::MetadataOnly => write!(f, "METADATA_ONLY"),
-            ListResponseScope::Unknown(value) => write!(f, "{}", value),
+            ListResponseScope::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for GuardrailContentQualifier {
             GuardrailContentQualifier::GroundingSource => write!(f, "grounding_source"),
             GuardrailContentQualifier::GuardContent => write!(f, "guard_content"),
             GuardrailContentQualifier::Query => write!(f, "query"),
-            GuardrailContentQualifier::Unknown(value) => write!(f, "{}", value),
+            GuardrailContentQualifier::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

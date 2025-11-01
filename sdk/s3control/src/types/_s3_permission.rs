@@ -120,7 +120,7 @@ impl ::std::fmt::Display for S3Permission {
             S3Permission::ReadAcp => write!(f, "READ_ACP"),
             S3Permission::Write => write!(f, "WRITE"),
             S3Permission::WriteAcp => write!(f, "WRITE_ACP"),
-            S3Permission::Unknown(value) => write!(f, "{}", value),
+            S3Permission::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

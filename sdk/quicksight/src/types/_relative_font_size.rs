@@ -120,7 +120,7 @@ impl ::std::fmt::Display for RelativeFontSize {
             RelativeFontSize::Large => write!(f, "LARGE"),
             RelativeFontSize::Medium => write!(f, "MEDIUM"),
             RelativeFontSize::Small => write!(f, "SMALL"),
-            RelativeFontSize::Unknown(value) => write!(f, "{}", value),
+            RelativeFontSize::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

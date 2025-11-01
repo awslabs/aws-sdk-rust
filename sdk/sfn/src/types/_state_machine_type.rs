@@ -102,7 +102,7 @@ impl ::std::fmt::Display for StateMachineType {
         match self {
             StateMachineType::Express => write!(f, "EXPRESS"),
             StateMachineType::Standard => write!(f, "STANDARD"),
-            StateMachineType::Unknown(value) => write!(f, "{}", value),
+            StateMachineType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

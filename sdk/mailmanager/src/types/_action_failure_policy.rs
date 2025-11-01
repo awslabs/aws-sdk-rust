@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ActionFailurePolicy {
         match self {
             ActionFailurePolicy::Continue => write!(f, "CONTINUE"),
             ActionFailurePolicy::Drop => write!(f, "DROP"),
-            ActionFailurePolicy::Unknown(value) => write!(f, "{}", value),
+            ActionFailurePolicy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

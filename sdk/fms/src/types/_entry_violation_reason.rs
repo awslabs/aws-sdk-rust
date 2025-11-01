@@ -108,7 +108,7 @@ impl ::std::fmt::Display for EntryViolationReason {
             EntryViolationReason::EntryConflict => write!(f, "ENTRY_CONFLICT"),
             EntryViolationReason::IncorrectEntryOrder => write!(f, "INCORRECT_ENTRY_ORDER"),
             EntryViolationReason::MissingExpectedEntry => write!(f, "MISSING_EXPECTED_ENTRY"),
-            EntryViolationReason::Unknown(value) => write!(f, "{}", value),
+            EntryViolationReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

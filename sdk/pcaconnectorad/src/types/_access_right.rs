@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AccessRight {
         match self {
             AccessRight::Allow => write!(f, "ALLOW"),
             AccessRight::Deny => write!(f, "DENY"),
-            AccessRight::Unknown(value) => write!(f, "{}", value),
+            AccessRight::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for StreamingExperiencePreferredProtocolEnum {
         match self {
             StreamingExperiencePreferredProtocolEnum::Tcp => write!(f, "TCP"),
             StreamingExperiencePreferredProtocolEnum::Udp => write!(f, "UDP"),
-            StreamingExperiencePreferredProtocolEnum::Unknown(value) => write!(f, "{}", value),
+            StreamingExperiencePreferredProtocolEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

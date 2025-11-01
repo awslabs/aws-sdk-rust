@@ -114,7 +114,7 @@ impl ::std::fmt::Display for RecommendationTemplateStatus {
             RecommendationTemplateStatus::InProgress => write!(f, "InProgress"),
             RecommendationTemplateStatus::Pending => write!(f, "Pending"),
             RecommendationTemplateStatus::Success => write!(f, "Success"),
-            RecommendationTemplateStatus::Unknown(value) => write!(f, "{}", value),
+            RecommendationTemplateStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

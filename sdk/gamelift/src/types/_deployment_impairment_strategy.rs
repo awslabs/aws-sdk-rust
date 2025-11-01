@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DeploymentImpairmentStrategy {
         match self {
             DeploymentImpairmentStrategy::Maintain => write!(f, "MAINTAIN"),
             DeploymentImpairmentStrategy::Rollback => write!(f, "ROLLBACK"),
-            DeploymentImpairmentStrategy::Unknown(value) => write!(f, "{}", value),
+            DeploymentImpairmentStrategy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ThingGroupIndexingMode {
         match self {
             ThingGroupIndexingMode::Off => write!(f, "OFF"),
             ThingGroupIndexingMode::On => write!(f, "ON"),
-            ThingGroupIndexingMode::Unknown(value) => write!(f, "{}", value),
+            ThingGroupIndexingMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

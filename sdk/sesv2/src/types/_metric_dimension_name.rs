@@ -124,7 +124,7 @@ impl ::std::fmt::Display for MetricDimensionName {
             MetricDimensionName::ConfigurationSet => write!(f, "CONFIGURATION_SET"),
             MetricDimensionName::EmailIdentity => write!(f, "EMAIL_IDENTITY"),
             MetricDimensionName::Isp => write!(f, "ISP"),
-            MetricDimensionName::Unknown(value) => write!(f, "{}", value),
+            MetricDimensionName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

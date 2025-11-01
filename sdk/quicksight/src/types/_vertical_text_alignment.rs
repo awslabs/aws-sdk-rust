@@ -114,7 +114,7 @@ impl ::std::fmt::Display for VerticalTextAlignment {
             VerticalTextAlignment::Bottom => write!(f, "BOTTOM"),
             VerticalTextAlignment::Middle => write!(f, "MIDDLE"),
             VerticalTextAlignment::Top => write!(f, "TOP"),
-            VerticalTextAlignment::Unknown(value) => write!(f, "{}", value),
+            VerticalTextAlignment::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

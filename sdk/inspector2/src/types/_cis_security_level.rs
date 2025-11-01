@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CisSecurityLevel {
         match self {
             CisSecurityLevel::Level1 => write!(f, "LEVEL_1"),
             CisSecurityLevel::Level2 => write!(f, "LEVEL_2"),
-            CisSecurityLevel::Unknown(value) => write!(f, "{}", value),
+            CisSecurityLevel::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

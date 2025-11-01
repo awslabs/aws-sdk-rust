@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ObjectTypeEnum {
             ObjectTypeEnum::File => write!(f, "FILE"),
             ObjectTypeEnum::GitLink => write!(f, "GIT_LINK"),
             ObjectTypeEnum::SymbolicLink => write!(f, "SYMBOLIC_LINK"),
-            ObjectTypeEnum::Unknown(value) => write!(f, "{}", value),
+            ObjectTypeEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

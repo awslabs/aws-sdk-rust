@@ -210,7 +210,7 @@ impl ::std::fmt::Display for SortField {
             SortField::VendorSeverity => write!(f, "VENDOR_SEVERITY"),
             SortField::VulnerabilityId => write!(f, "VULNERABILITY_ID"),
             SortField::VulnerabilitySource => write!(f, "VULNERABILITY_SOURCE"),
-            SortField::Unknown(value) => write!(f, "{}", value),
+            SortField::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

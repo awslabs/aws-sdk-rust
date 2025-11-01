@@ -108,7 +108,7 @@ impl ::std::fmt::Display for RequirementLevel {
             RequirementLevel::None => write!(f, "NONE"),
             RequirementLevel::Optional => write!(f, "OPTIONAL"),
             RequirementLevel::Required => write!(f, "REQUIRED"),
-            RequirementLevel::Unknown(value) => write!(f, "{}", value),
+            RequirementLevel::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

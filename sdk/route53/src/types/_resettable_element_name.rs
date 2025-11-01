@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ResettableElementName {
             ResettableElementName::FullyQualifiedDomainName => write!(f, "FullyQualifiedDomainName"),
             ResettableElementName::Regions => write!(f, "Regions"),
             ResettableElementName::ResourcePath => write!(f, "ResourcePath"),
-            ResettableElementName::Unknown(value) => write!(f, "{}", value),
+            ResettableElementName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

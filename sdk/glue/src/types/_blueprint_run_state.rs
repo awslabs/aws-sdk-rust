@@ -114,7 +114,7 @@ impl ::std::fmt::Display for BlueprintRunState {
             BlueprintRunState::RollingBack => write!(f, "ROLLING_BACK"),
             BlueprintRunState::Running => write!(f, "RUNNING"),
             BlueprintRunState::Succeeded => write!(f, "SUCCEEDED"),
-            BlueprintRunState::Unknown(value) => write!(f, "{}", value),
+            BlueprintRunState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

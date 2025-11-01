@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ComplianceType {
             ComplianceType::InsufficientData => write!(f, "INSUFFICIENT_DATA"),
             ComplianceType::NonCompliant => write!(f, "NON_COMPLIANT"),
             ComplianceType::NotApplicable => write!(f, "NOT_APPLICABLE"),
-            ComplianceType::Unknown(value) => write!(f, "{}", value),
+            ComplianceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

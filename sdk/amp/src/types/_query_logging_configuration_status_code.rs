@@ -126,7 +126,7 @@ impl ::std::fmt::Display for QueryLoggingConfigurationStatusCode {
             QueryLoggingConfigurationStatusCode::Deleting => write!(f, "DELETING"),
             QueryLoggingConfigurationStatusCode::UpdateFailed => write!(f, "UPDATE_FAILED"),
             QueryLoggingConfigurationStatusCode::Updating => write!(f, "UPDATING"),
-            QueryLoggingConfigurationStatusCode::Unknown(value) => write!(f, "{}", value),
+            QueryLoggingConfigurationStatusCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

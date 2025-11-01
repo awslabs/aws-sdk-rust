@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ObjectStorageServerProtocol {
         match self {
             ObjectStorageServerProtocol::Http => write!(f, "HTTP"),
             ObjectStorageServerProtocol::Https => write!(f, "HTTPS"),
-            ObjectStorageServerProtocol::Unknown(value) => write!(f, "{}", value),
+            ObjectStorageServerProtocol::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

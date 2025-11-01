@@ -108,7 +108,7 @@ impl ::std::fmt::Display for TargetCapacityUnitType {
             TargetCapacityUnitType::MemoryMib => write!(f, "memory-mib"),
             TargetCapacityUnitType::Units => write!(f, "units"),
             TargetCapacityUnitType::Vcpu => write!(f, "vcpu"),
-            TargetCapacityUnitType::Unknown(value) => write!(f, "{}", value),
+            TargetCapacityUnitType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ObjectVersionStorageClass {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ObjectVersionStorageClass::Standard => write!(f, "STANDARD"),
-            ObjectVersionStorageClass::Unknown(value) => write!(f, "{}", value),
+            ObjectVersionStorageClass::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AuthTypeValue {
         match self {
             AuthTypeValue::No => write!(f, "no"),
             AuthTypeValue::Password => write!(f, "password"),
-            AuthTypeValue::Unknown(value) => write!(f, "{}", value),
+            AuthTypeValue::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

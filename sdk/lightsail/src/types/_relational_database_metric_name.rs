@@ -133,7 +133,7 @@ impl ::std::fmt::Display for RelationalDatabaseMetricName {
             RelationalDatabaseMetricName::FreeStorageSpace => write!(f, "FreeStorageSpace"),
             RelationalDatabaseMetricName::NetworkReceiveThroughput => write!(f, "NetworkReceiveThroughput"),
             RelationalDatabaseMetricName::NetworkTransmitThroughput => write!(f, "NetworkTransmitThroughput"),
-            RelationalDatabaseMetricName::Unknown(value) => write!(f, "{}", value),
+            RelationalDatabaseMetricName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

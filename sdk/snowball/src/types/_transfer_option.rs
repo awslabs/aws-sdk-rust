@@ -108,7 +108,7 @@ impl ::std::fmt::Display for TransferOption {
             TransferOption::Export => write!(f, "EXPORT"),
             TransferOption::Import => write!(f, "IMPORT"),
             TransferOption::LocalUse => write!(f, "LOCAL_USE"),
-            TransferOption::Unknown(value) => write!(f, "{}", value),
+            TransferOption::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

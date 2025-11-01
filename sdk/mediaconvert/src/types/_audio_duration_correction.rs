@@ -120,7 +120,7 @@ impl ::std::fmt::Display for AudioDurationCorrection {
             AudioDurationCorrection::Force => write!(f, "FORCE"),
             AudioDurationCorrection::Frame => write!(f, "FRAME"),
             AudioDurationCorrection::Track => write!(f, "TRACK"),
-            AudioDurationCorrection::Unknown(value) => write!(f, "{}", value),
+            AudioDurationCorrection::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

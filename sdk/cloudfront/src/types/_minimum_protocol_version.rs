@@ -154,7 +154,7 @@ impl ::std::fmt::Display for MinimumProtocolVersion {
             MinimumProtocolVersion::TlSv122025 => write!(f, "TLSv1.2_2025"),
             MinimumProtocolVersion::TlSv132025 => write!(f, "TLSv1.3_2025"),
             MinimumProtocolVersion::TlSv12016 => write!(f, "TLSv1_2016"),
-            MinimumProtocolVersion::Unknown(value) => write!(f, "{}", value),
+            MinimumProtocolVersion::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

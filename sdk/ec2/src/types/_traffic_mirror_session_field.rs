@@ -108,7 +108,7 @@ impl ::std::fmt::Display for TrafficMirrorSessionField {
             TrafficMirrorSessionField::Description => write!(f, "description"),
             TrafficMirrorSessionField::PacketLength => write!(f, "packet-length"),
             TrafficMirrorSessionField::VirtualNetworkId => write!(f, "virtual-network-id"),
-            TrafficMirrorSessionField::Unknown(value) => write!(f, "{}", value),
+            TrafficMirrorSessionField::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

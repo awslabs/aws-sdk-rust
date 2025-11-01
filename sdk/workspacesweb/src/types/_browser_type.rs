@@ -96,7 +96,7 @@ impl ::std::fmt::Display for BrowserType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             BrowserType::Chrome => write!(f, "Chrome"),
-            BrowserType::Unknown(value) => write!(f, "{}", value),
+            BrowserType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

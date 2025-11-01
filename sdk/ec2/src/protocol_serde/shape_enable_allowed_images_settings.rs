@@ -51,8 +51,7 @@ pub fn de_enable_allowed_images_settings(
     let start_el = decoder.start_el();
     if !(start_el.matches("EnableAllowedImagesSettingsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected EnableAllowedImagesSettingsResponse got {:?}",
-            start_el
+            "invalid root, expected EnableAllowedImagesSettingsResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

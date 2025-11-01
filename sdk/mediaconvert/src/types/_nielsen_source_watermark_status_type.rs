@@ -102,7 +102,7 @@ impl ::std::fmt::Display for NielsenSourceWatermarkStatusType {
         match self {
             NielsenSourceWatermarkStatusType::Clean => write!(f, "CLEAN"),
             NielsenSourceWatermarkStatusType::Watermarked => write!(f, "WATERMARKED"),
-            NielsenSourceWatermarkStatusType::Unknown(value) => write!(f, "{}", value),
+            NielsenSourceWatermarkStatusType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

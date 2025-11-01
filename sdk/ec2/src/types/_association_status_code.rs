@@ -120,7 +120,7 @@ impl ::std::fmt::Display for AssociationStatusCode {
             AssociationStatusCode::AssociationFailed => write!(f, "association-failed"),
             AssociationStatusCode::Disassociated => write!(f, "disassociated"),
             AssociationStatusCode::Disassociating => write!(f, "disassociating"),
-            AssociationStatusCode::Unknown(value) => write!(f, "{}", value),
+            AssociationStatusCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

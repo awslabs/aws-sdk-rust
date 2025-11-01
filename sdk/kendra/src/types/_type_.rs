@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Type {
         match self {
             Type::OnPremise => write!(f, "ON_PREMISE"),
             Type::Saas => write!(f, "SAAS"),
-            Type::Unknown(value) => write!(f, "{}", value),
+            Type::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

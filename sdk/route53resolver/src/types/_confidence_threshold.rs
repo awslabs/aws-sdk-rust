@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ConfidenceThreshold {
             ConfidenceThreshold::High => write!(f, "HIGH"),
             ConfidenceThreshold::Low => write!(f, "LOW"),
             ConfidenceThreshold::Medium => write!(f, "MEDIUM"),
-            ConfidenceThreshold::Unknown(value) => write!(f, "{}", value),
+            ConfidenceThreshold::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

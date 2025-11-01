@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CollaborationJobLogStatus {
         match self {
             CollaborationJobLogStatus::Disabled => write!(f, "DISABLED"),
             CollaborationJobLogStatus::Enabled => write!(f, "ENABLED"),
-            CollaborationJobLogStatus::Unknown(value) => write!(f, "{}", value),
+            CollaborationJobLogStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

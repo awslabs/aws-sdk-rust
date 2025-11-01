@@ -196,7 +196,7 @@ impl ::std::fmt::Display for DynatraceConnectorOperator {
             DynatraceConnectorOperator::ValidateNonNull => write!(f, "VALIDATE_NON_NULL"),
             DynatraceConnectorOperator::ValidateNonZero => write!(f, "VALIDATE_NON_ZERO"),
             DynatraceConnectorOperator::ValidateNumeric => write!(f, "VALIDATE_NUMERIC"),
-            DynatraceConnectorOperator::Unknown(value) => write!(f, "{}", value),
+            DynatraceConnectorOperator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

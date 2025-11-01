@@ -108,7 +108,7 @@ impl ::std::fmt::Display for VolumeStatusName {
             VolumeStatusName::InitializationState => write!(f, "initialization-state"),
             VolumeStatusName::IoEnabled => write!(f, "io-enabled"),
             VolumeStatusName::IoPerformance => write!(f, "io-performance"),
-            VolumeStatusName::Unknown(value) => write!(f, "{}", value),
+            VolumeStatusName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

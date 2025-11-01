@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ConfigurationDeploymentStatus {
             ConfigurationDeploymentStatus::Deployed => write!(f, "deployed"),
             ConfigurationDeploymentStatus::Failed => write!(f, "failed"),
             ConfigurationDeploymentStatus::Pending => write!(f, "pending"),
-            ConfigurationDeploymentStatus::Unknown(value) => write!(f, "{}", value),
+            ConfigurationDeploymentStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

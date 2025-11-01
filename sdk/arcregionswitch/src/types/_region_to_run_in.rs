@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RegionToRunIn {
         match self {
             RegionToRunIn::ActivatingRegion => write!(f, "activatingRegion"),
             RegionToRunIn::DeactivatingRegion => write!(f, "deactivatingRegion"),
-            RegionToRunIn::Unknown(value) => write!(f, "{}", value),
+            RegionToRunIn::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

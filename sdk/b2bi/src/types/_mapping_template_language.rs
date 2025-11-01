@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MappingTemplateLanguage {
         match self {
             MappingTemplateLanguage::Jsonata => write!(f, "JSONATA"),
             MappingTemplateLanguage::Xslt => write!(f, "XSLT"),
-            MappingTemplateLanguage::Unknown(value) => write!(f, "{}", value),
+            MappingTemplateLanguage::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

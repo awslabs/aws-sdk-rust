@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ArtifactStatus {
             ArtifactStatus::Approved => write!(f, "APPROVED"),
             ArtifactStatus::InProgress => write!(f, "IN_PROGRESS"),
             ArtifactStatus::Rejected => write!(f, "REJECTED"),
-            ArtifactStatus::Unknown(value) => write!(f, "{}", value),
+            ArtifactStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

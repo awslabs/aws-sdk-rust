@@ -102,7 +102,7 @@ impl ::std::fmt::Display for GrowthType {
         match self {
             GrowthType::Exponential => write!(f, "EXPONENTIAL"),
             GrowthType::Linear => write!(f, "LINEAR"),
-            GrowthType::Unknown(value) => write!(f, "{}", value),
+            GrowthType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

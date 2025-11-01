@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ImageComputeType {
         match self {
             ImageComputeType::Base => write!(f, "BASE"),
             ImageComputeType::GraphicsG4Dn => write!(f, "GRAPHICS_G4DN"),
-            ImageComputeType::Unknown(value) => write!(f, "{}", value),
+            ImageComputeType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

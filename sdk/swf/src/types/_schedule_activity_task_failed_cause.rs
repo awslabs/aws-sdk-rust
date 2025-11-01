@@ -168,7 +168,7 @@ impl ::std::fmt::Display for ScheduleActivityTaskFailedCause {
             ScheduleActivityTaskFailedCause::DefaultTaskListUndefined => write!(f, "DEFAULT_TASK_LIST_UNDEFINED"),
             ScheduleActivityTaskFailedCause::OpenActivitiesLimitExceeded => write!(f, "OPEN_ACTIVITIES_LIMIT_EXCEEDED"),
             ScheduleActivityTaskFailedCause::OperationNotPermitted => write!(f, "OPERATION_NOT_PERMITTED"),
-            ScheduleActivityTaskFailedCause::Unknown(value) => write!(f, "{}", value),
+            ScheduleActivityTaskFailedCause::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

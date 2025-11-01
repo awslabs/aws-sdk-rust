@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MemberAccountDiscountVisibility {
         match self {
             MemberAccountDiscountVisibility::All => write!(f, "All"),
             MemberAccountDiscountVisibility::None => write!(f, "None"),
-            MemberAccountDiscountVisibility::Unknown(value) => write!(f, "{}", value),
+            MemberAccountDiscountVisibility::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

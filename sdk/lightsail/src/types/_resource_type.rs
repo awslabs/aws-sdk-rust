@@ -231,7 +231,7 @@ impl ::std::fmt::Display for ResourceType {
             ResourceType::RelationalDatabase => write!(f, "RelationalDatabase"),
             ResourceType::RelationalDatabaseSnapshot => write!(f, "RelationalDatabaseSnapshot"),
             ResourceType::StaticIp => write!(f, "StaticIp"),
-            ResourceType::Unknown(value) => write!(f, "{}", value),
+            ResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

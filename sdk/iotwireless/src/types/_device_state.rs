@@ -114,7 +114,7 @@ impl ::std::fmt::Display for DeviceState {
             DeviceState::Registerednotseen => write!(f, "RegisteredNotSeen"),
             DeviceState::Registeredreachable => write!(f, "RegisteredReachable"),
             DeviceState::Registeredunreachable => write!(f, "RegisteredUnreachable"),
-            DeviceState::Unknown(value) => write!(f, "{}", value),
+            DeviceState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

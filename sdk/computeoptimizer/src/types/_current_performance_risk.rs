@@ -114,7 +114,7 @@ impl ::std::fmt::Display for CurrentPerformanceRisk {
             CurrentPerformanceRisk::Low => write!(f, "Low"),
             CurrentPerformanceRisk::Medium => write!(f, "Medium"),
             CurrentPerformanceRisk::VeryLow => write!(f, "VeryLow"),
-            CurrentPerformanceRisk::Unknown(value) => write!(f, "{}", value),
+            CurrentPerformanceRisk::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

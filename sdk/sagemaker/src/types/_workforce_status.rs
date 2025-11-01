@@ -120,7 +120,7 @@ impl ::std::fmt::Display for WorkforceStatus {
             WorkforceStatus::Failed => write!(f, "Failed"),
             WorkforceStatus::Initializing => write!(f, "Initializing"),
             WorkforceStatus::Updating => write!(f, "Updating"),
-            WorkforceStatus::Unknown(value) => write!(f, "{}", value),
+            WorkforceStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

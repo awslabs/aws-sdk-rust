@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RecommendationStatus {
         match self {
             RecommendationStatus::Fixed => write!(f, "FIXED"),
             RecommendationStatus::Open => write!(f, "OPEN"),
-            RecommendationStatus::Unknown(value) => write!(f, "{}", value),
+            RecommendationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

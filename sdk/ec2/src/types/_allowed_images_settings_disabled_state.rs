@@ -96,7 +96,7 @@ impl ::std::fmt::Display for AllowedImagesSettingsDisabledState {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             AllowedImagesSettingsDisabledState::Disabled => write!(f, "disabled"),
-            AllowedImagesSettingsDisabledState::Unknown(value) => write!(f, "{}", value),
+            AllowedImagesSettingsDisabledState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

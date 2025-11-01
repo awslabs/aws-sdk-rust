@@ -27,8 +27,7 @@ pub fn de_streaming_distribution(inp: &[u8]) -> std::result::Result<crate::types
     let start_el = decoder.start_el();
     if !(start_el.matches("StreamingDistribution")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected StreamingDistribution got {:?}",
-            start_el
+            "invalid root, expected StreamingDistribution got {start_el:?}"
         )));
     }
     crate::protocol_serde::shape_streaming_distribution::de_streaming_distribution(&mut decoder)

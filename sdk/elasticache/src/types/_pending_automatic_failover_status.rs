@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PendingAutomaticFailoverStatus {
         match self {
             PendingAutomaticFailoverStatus::Disabled => write!(f, "disabled"),
             PendingAutomaticFailoverStatus::Enabled => write!(f, "enabled"),
-            PendingAutomaticFailoverStatus::Unknown(value) => write!(f, "{}", value),
+            PendingAutomaticFailoverStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -163,7 +163,7 @@ impl ::std::fmt::Display for LoadBalancerTlsCertificateRevocationReason {
             LoadBalancerTlsCertificateRevocationReason::RemoveFromCrl => write!(f, "REMOVE_FROM_CRL"),
             LoadBalancerTlsCertificateRevocationReason::Superceded => write!(f, "SUPERCEDED"),
             LoadBalancerTlsCertificateRevocationReason::Unspecified => write!(f, "UNSPECIFIED"),
-            LoadBalancerTlsCertificateRevocationReason::Unknown(value) => write!(f, "{}", value),
+            LoadBalancerTlsCertificateRevocationReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

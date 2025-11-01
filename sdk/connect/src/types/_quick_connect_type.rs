@@ -108,7 +108,7 @@ impl ::std::fmt::Display for QuickConnectType {
             QuickConnectType::PhoneNumber => write!(f, "PHONE_NUMBER"),
             QuickConnectType::Queue => write!(f, "QUEUE"),
             QuickConnectType::User => write!(f, "USER"),
-            QuickConnectType::Unknown(value) => write!(f, "{}", value),
+            QuickConnectType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

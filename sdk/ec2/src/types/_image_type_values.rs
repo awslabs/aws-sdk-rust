@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ImageTypeValues {
             ImageTypeValues::Kernel => write!(f, "kernel"),
             ImageTypeValues::Machine => write!(f, "machine"),
             ImageTypeValues::Ramdisk => write!(f, "ramdisk"),
-            ImageTypeValues::Unknown(value) => write!(f, "{}", value),
+            ImageTypeValues::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -96,7 +96,7 @@ impl ::std::fmt::Display for Comparison {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             Comparison::Lt => write!(f, "LT"),
-            Comparison::Unknown(value) => write!(f, "{}", value),
+            Comparison::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

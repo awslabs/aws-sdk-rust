@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AssociationSyncCompliance {
         match self {
             AssociationSyncCompliance::Auto => write!(f, "AUTO"),
             AssociationSyncCompliance::Manual => write!(f, "MANUAL"),
-            AssociationSyncCompliance::Unknown(value) => write!(f, "{}", value),
+            AssociationSyncCompliance::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

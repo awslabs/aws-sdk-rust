@@ -102,7 +102,7 @@ impl ::std::fmt::Display for OfferingType {
         match self {
             OfferingType::AllUpfront => write!(f, "ALL_UPFRONT"),
             OfferingType::NoUpfront => write!(f, "NO_UPFRONT"),
-            OfferingType::Unknown(value) => write!(f, "{}", value),
+            OfferingType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

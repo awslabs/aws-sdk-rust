@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ImageStateChangeReasonCode {
             ImageStateChangeReasonCode::ImageBuilderNotAvailable => write!(f, "IMAGE_BUILDER_NOT_AVAILABLE"),
             ImageStateChangeReasonCode::ImageCopyFailure => write!(f, "IMAGE_COPY_FAILURE"),
             ImageStateChangeReasonCode::InternalError => write!(f, "INTERNAL_ERROR"),
-            ImageStateChangeReasonCode::Unknown(value) => write!(f, "{}", value),
+            ImageStateChangeReasonCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

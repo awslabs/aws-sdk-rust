@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SearchTermMatchingType {
         match self {
             SearchTermMatchingType::Contains => write!(f, "CONTAINS"),
             SearchTermMatchingType::FuzzyMatch => write!(f, "FUZZY_MATCH"),
-            SearchTermMatchingType::Unknown(value) => write!(f, "{}", value),
+            SearchTermMatchingType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

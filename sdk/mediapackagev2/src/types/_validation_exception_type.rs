@@ -735,7 +735,7 @@ impl ::std::fmt::Display for ValidationExceptionType {
             ValidationExceptionType::UrlScheme => write!(f, "URL_SCHEME"),
             ValidationExceptionType::UrlUnknownHost => write!(f, "URL_UNKNOWN_HOST"),
             ValidationExceptionType::UrlUserInfo => write!(f, "URL_USER_INFO"),
-            ValidationExceptionType::Unknown(value) => write!(f, "{}", value),
+            ValidationExceptionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

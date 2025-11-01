@@ -102,7 +102,7 @@ impl ::std::fmt::Display for HttpEndpointS3BackupMode {
         match self {
             HttpEndpointS3BackupMode::AllData => write!(f, "AllData"),
             HttpEndpointS3BackupMode::FailedDataOnly => write!(f, "FailedDataOnly"),
-            HttpEndpointS3BackupMode::Unknown(value) => write!(f, "{}", value),
+            HttpEndpointS3BackupMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

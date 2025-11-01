@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ColorScheme {
         match self {
             ColorScheme::Dark => write!(f, "Dark"),
             ColorScheme::Light => write!(f, "Light"),
-            ColorScheme::Unknown(value) => write!(f, "{}", value),
+            ColorScheme::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

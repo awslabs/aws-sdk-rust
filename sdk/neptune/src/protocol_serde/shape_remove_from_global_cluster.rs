@@ -114,16 +114,14 @@ pub fn de_remove_from_global_cluster(
     let start_el = decoder.start_el();
     if !(start_el.matches("RemoveFromGlobalClusterResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected RemoveFromGlobalClusterResponse got {:?}",
-            start_el
+            "invalid root, expected RemoveFromGlobalClusterResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("RemoveFromGlobalClusterResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected RemoveFromGlobalClusterResult got {:?}",
-                start_el
+                "invalid result, expected RemoveFromGlobalClusterResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

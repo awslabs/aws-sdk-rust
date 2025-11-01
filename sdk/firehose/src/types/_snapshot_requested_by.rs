@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SnapshotRequestedBy {
         match self {
             SnapshotRequestedBy::Firehose => write!(f, "FIREHOSE"),
             SnapshotRequestedBy::User => write!(f, "USER"),
-            SnapshotRequestedBy::Unknown(value) => write!(f, "{}", value),
+            SnapshotRequestedBy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

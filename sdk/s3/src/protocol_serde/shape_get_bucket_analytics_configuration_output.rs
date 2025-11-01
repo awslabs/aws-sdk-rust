@@ -20,8 +20,7 @@ pub fn de_analytics_configuration(inp: &[u8]) -> std::result::Result<crate::type
     let start_el = decoder.start_el();
     if !(start_el.matches("AnalyticsConfiguration")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected AnalyticsConfiguration got {:?}",
-            start_el
+            "invalid root, expected AnalyticsConfiguration got {start_el:?}"
         )));
     }
     crate::protocol_serde::shape_analytics_configuration::de_analytics_configuration(&mut decoder)

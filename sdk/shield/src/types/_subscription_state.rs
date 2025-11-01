@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SubscriptionState {
         match self {
             SubscriptionState::Active => write!(f, "ACTIVE"),
             SubscriptionState::Inactive => write!(f, "INACTIVE"),
-            SubscriptionState::Unknown(value) => write!(f, "{}", value),
+            SubscriptionState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

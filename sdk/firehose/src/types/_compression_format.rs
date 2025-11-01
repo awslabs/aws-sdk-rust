@@ -120,7 +120,7 @@ impl ::std::fmt::Display for CompressionFormat {
             CompressionFormat::Snappy => write!(f, "Snappy"),
             CompressionFormat::Uncompressed => write!(f, "UNCOMPRESSED"),
             CompressionFormat::Zip => write!(f, "ZIP"),
-            CompressionFormat::Unknown(value) => write!(f, "{}", value),
+            CompressionFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

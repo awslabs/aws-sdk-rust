@@ -108,7 +108,7 @@ impl ::std::fmt::Display for PinBlockFormatForEmvPinChange {
             PinBlockFormatForEmvPinChange::IsoFormat0 => write!(f, "ISO_FORMAT_0"),
             PinBlockFormatForEmvPinChange::IsoFormat1 => write!(f, "ISO_FORMAT_1"),
             PinBlockFormatForEmvPinChange::IsoFormat3 => write!(f, "ISO_FORMAT_3"),
-            PinBlockFormatForEmvPinChange::Unknown(value) => write!(f, "{}", value),
+            PinBlockFormatForEmvPinChange::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

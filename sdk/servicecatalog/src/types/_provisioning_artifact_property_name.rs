@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ProvisioningArtifactPropertyName {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ProvisioningArtifactPropertyName::Id => write!(f, "Id"),
-            ProvisioningArtifactPropertyName::Unknown(value) => write!(f, "{}", value),
+            ProvisioningArtifactPropertyName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

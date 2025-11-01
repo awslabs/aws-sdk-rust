@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FilterRuleName {
         match self {
             FilterRuleName::Prefix => write!(f, "prefix"),
             FilterRuleName::Suffix => write!(f, "suffix"),
-            FilterRuleName::Unknown(value) => write!(f, "{}", value),
+            FilterRuleName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

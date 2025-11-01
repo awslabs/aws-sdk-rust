@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AlertCategory {
             AlertCategory::Info => write!(f, "INFO"),
             AlertCategory::PlaybackWarning => write!(f, "PLAYBACK_WARNING"),
             AlertCategory::SchedulingError => write!(f, "SCHEDULING_ERROR"),
-            AlertCategory::Unknown(value) => write!(f, "{}", value),
+            AlertCategory::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for GreenFleetProvisioningAction {
         match self {
             GreenFleetProvisioningAction::CopyAutoScalingGroup => write!(f, "COPY_AUTO_SCALING_GROUP"),
             GreenFleetProvisioningAction::DiscoverExisting => write!(f, "DISCOVER_EXISTING"),
-            GreenFleetProvisioningAction::Unknown(value) => write!(f, "{}", value),
+            GreenFleetProvisioningAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

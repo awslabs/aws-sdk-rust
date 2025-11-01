@@ -120,7 +120,7 @@ impl ::std::fmt::Display for ReportStatusType {
             ReportStatusType::Generating => write!(f, "GENERATING"),
             ReportStatusType::Incomplete => write!(f, "INCOMPLETE"),
             ReportStatusType::Succeeded => write!(f, "SUCCEEDED"),
-            ReportStatusType::Unknown(value) => write!(f, "{}", value),
+            ReportStatusType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

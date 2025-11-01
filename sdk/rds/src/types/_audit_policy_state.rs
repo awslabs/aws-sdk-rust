@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AuditPolicyState {
         match self {
             AuditPolicyState::LockedPolicy => write!(f, "locked"),
             AuditPolicyState::UnlockedPolicy => write!(f, "unlocked"),
-            AuditPolicyState::Unknown(value) => write!(f, "{}", value),
+            AuditPolicyState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

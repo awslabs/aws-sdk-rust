@@ -114,7 +114,7 @@ impl ::std::fmt::Display for PriceClass {
             PriceClass::PriceClass100 => write!(f, "PriceClass_100"),
             PriceClass::PriceClass200 => write!(f, "PriceClass_200"),
             PriceClass::PriceClassAll => write!(f, "PriceClass_All"),
-            PriceClass::Unknown(value) => write!(f, "{}", value),
+            PriceClass::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

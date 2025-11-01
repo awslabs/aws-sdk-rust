@@ -175,7 +175,7 @@ impl ::std::fmt::Display for AcceleratorName {
             AcceleratorName::T4G => write!(f, "t4g"),
             AcceleratorName::V100 => write!(f, "v100"),
             AcceleratorName::Vu9P => write!(f, "vu9p"),
-            AcceleratorName::Unknown(value) => write!(f, "{}", value),
+            AcceleratorName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

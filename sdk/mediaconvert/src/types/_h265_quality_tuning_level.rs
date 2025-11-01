@@ -108,7 +108,7 @@ impl ::std::fmt::Display for H265QualityTuningLevel {
             H265QualityTuningLevel::MultiPassHq => write!(f, "MULTI_PASS_HQ"),
             H265QualityTuningLevel::SinglePass => write!(f, "SINGLE_PASS"),
             H265QualityTuningLevel::SinglePassHq => write!(f, "SINGLE_PASS_HQ"),
-            H265QualityTuningLevel::Unknown(value) => write!(f, "{}", value),
+            H265QualityTuningLevel::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

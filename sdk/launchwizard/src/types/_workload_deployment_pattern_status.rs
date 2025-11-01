@@ -114,7 +114,7 @@ impl ::std::fmt::Display for WorkloadDeploymentPatternStatus {
             WorkloadDeploymentPatternStatus::Deleted => write!(f, "DELETED"),
             WorkloadDeploymentPatternStatus::Disabled => write!(f, "DISABLED"),
             WorkloadDeploymentPatternStatus::Inactive => write!(f, "INACTIVE"),
-            WorkloadDeploymentPatternStatus::Unknown(value) => write!(f, "{}", value),
+            WorkloadDeploymentPatternStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -96,7 +96,7 @@ impl ::std::fmt::Display for RecordingConfigurationFormat {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             RecordingConfigurationFormat::Hls => write!(f, "HLS"),
-            RecordingConfigurationFormat::Unknown(value) => write!(f, "{}", value),
+            RecordingConfigurationFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

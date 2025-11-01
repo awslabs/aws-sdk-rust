@@ -96,7 +96,7 @@ impl ::std::fmt::Display for SupplementalTaxRegistrationType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             SupplementalTaxRegistrationType::Vat => write!(f, "VAT"),
-            SupplementalTaxRegistrationType::Unknown(value) => write!(f, "{}", value),
+            SupplementalTaxRegistrationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

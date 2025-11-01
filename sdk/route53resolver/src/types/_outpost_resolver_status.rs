@@ -140,7 +140,7 @@ impl ::std::fmt::Display for OutpostResolverStatus {
             OutpostResolverStatus::FailedDeletion => write!(f, "FAILED_DELETION"),
             OutpostResolverStatus::Operational => write!(f, "OPERATIONAL"),
             OutpostResolverStatus::Updating => write!(f, "UPDATING"),
-            OutpostResolverStatus::Unknown(value) => write!(f, "{}", value),
+            OutpostResolverStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

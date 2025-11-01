@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FailWorkflowExecutionFailedCause {
         match self {
             FailWorkflowExecutionFailedCause::OperationNotPermitted => write!(f, "OPERATION_NOT_PERMITTED"),
             FailWorkflowExecutionFailedCause::UnhandledDecision => write!(f, "UNHANDLED_DECISION"),
-            FailWorkflowExecutionFailedCause::Unknown(value) => write!(f, "{}", value),
+            FailWorkflowExecutionFailedCause::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DataSourceName {
         match self {
             DataSourceName::SalesforceGenie => write!(f, "SalesforceGenie"),
             DataSourceName::Snowflake => write!(f, "Snowflake"),
-            DataSourceName::Unknown(value) => write!(f, "{}", value),
+            DataSourceName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

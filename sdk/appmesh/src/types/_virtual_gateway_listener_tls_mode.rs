@@ -108,7 +108,7 @@ impl ::std::fmt::Display for VirtualGatewayListenerTlsMode {
             VirtualGatewayListenerTlsMode::Disabled => write!(f, "DISABLED"),
             VirtualGatewayListenerTlsMode::Permissive => write!(f, "PERMISSIVE"),
             VirtualGatewayListenerTlsMode::Strict => write!(f, "STRICT"),
-            VirtualGatewayListenerTlsMode::Unknown(value) => write!(f, "{}", value),
+            VirtualGatewayListenerTlsMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

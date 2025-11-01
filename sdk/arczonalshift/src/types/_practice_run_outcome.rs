@@ -120,7 +120,7 @@ impl ::std::fmt::Display for PracticeRunOutcome {
             PracticeRunOutcome::Interrupted => write!(f, "INTERRUPTED"),
             PracticeRunOutcome::Pending => write!(f, "PENDING"),
             PracticeRunOutcome::Succeeded => write!(f, "SUCCEEDED"),
-            PracticeRunOutcome::Unknown(value) => write!(f, "{}", value),
+            PracticeRunOutcome::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

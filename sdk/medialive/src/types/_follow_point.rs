@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FollowPoint {
         match self {
             FollowPoint::End => write!(f, "END"),
             FollowPoint::Start => write!(f, "START"),
-            FollowPoint::Unknown(value) => write!(f, "{}", value),
+            FollowPoint::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

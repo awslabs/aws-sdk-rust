@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ChatMode {
             ChatMode::CreatorMode => write!(f, "CREATOR_MODE"),
             ChatMode::PluginMode => write!(f, "PLUGIN_MODE"),
             ChatMode::RetrievalMode => write!(f, "RETRIEVAL_MODE"),
-            ChatMode::Unknown(value) => write!(f, "{}", value),
+            ChatMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

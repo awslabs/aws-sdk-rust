@@ -108,7 +108,7 @@ impl ::std::fmt::Display for OversizeHandling {
             OversizeHandling::Continue => write!(f, "CONTINUE"),
             OversizeHandling::Match => write!(f, "MATCH"),
             OversizeHandling::NoMatch => write!(f, "NO_MATCH"),
-            OversizeHandling::Unknown(value) => write!(f, "{}", value),
+            OversizeHandling::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

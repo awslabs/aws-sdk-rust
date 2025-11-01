@@ -108,7 +108,7 @@ impl ::std::fmt::Display for IncludeFolderMembers {
             IncludeFolderMembers::None => write!(f, "NONE"),
             IncludeFolderMembers::OneLevel => write!(f, "ONE_LEVEL"),
             IncludeFolderMembers::Recurse => write!(f, "RECURSE"),
-            IncludeFolderMembers::Unknown(value) => write!(f, "{}", value),
+            IncludeFolderMembers::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

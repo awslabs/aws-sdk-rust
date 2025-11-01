@@ -126,7 +126,7 @@ impl ::std::fmt::Display for ThreatIntelSetFormat {
             ThreatIntelSetFormat::ProofPoint => write!(f, "PROOF_POINT"),
             ThreatIntelSetFormat::Stix => write!(f, "STIX"),
             ThreatIntelSetFormat::Txt => write!(f, "TXT"),
-            ThreatIntelSetFormat::Unknown(value) => write!(f, "{}", value),
+            ThreatIntelSetFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

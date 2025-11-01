@@ -108,7 +108,7 @@ impl ::std::fmt::Display for VersionControlType {
             VersionControlType::AzureDevopsGit => write!(f, "AZURE_DEVOPS_GIT"),
             VersionControlType::Github => write!(f, "GITHUB"),
             VersionControlType::GithubEnterprise => write!(f, "GITHUB_ENTERPRISE"),
-            VersionControlType::Unknown(value) => write!(f, "{}", value),
+            VersionControlType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

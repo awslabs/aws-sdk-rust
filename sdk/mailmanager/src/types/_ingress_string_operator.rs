@@ -120,7 +120,7 @@ impl ::std::fmt::Display for IngressStringOperator {
             IngressStringOperator::Equals => write!(f, "EQUALS"),
             IngressStringOperator::NotEquals => write!(f, "NOT_EQUALS"),
             IngressStringOperator::StartsWith => write!(f, "STARTS_WITH"),
-            IngressStringOperator::Unknown(value) => write!(f, "{}", value),
+            IngressStringOperator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

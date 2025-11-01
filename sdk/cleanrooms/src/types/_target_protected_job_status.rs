@@ -96,7 +96,7 @@ impl ::std::fmt::Display for TargetProtectedJobStatus {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             TargetProtectedJobStatus::Cancelled => write!(f, "CANCELLED"),
-            TargetProtectedJobStatus::Unknown(value) => write!(f, "{}", value),
+            TargetProtectedJobStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

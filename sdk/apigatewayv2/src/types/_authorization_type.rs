@@ -114,7 +114,7 @@ impl ::std::fmt::Display for AuthorizationType {
             AuthorizationType::Custom => write!(f, "CUSTOM"),
             AuthorizationType::Jwt => write!(f, "JWT"),
             AuthorizationType::None => write!(f, "NONE"),
-            AuthorizationType::Unknown(value) => write!(f, "{}", value),
+            AuthorizationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

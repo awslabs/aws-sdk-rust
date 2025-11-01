@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ContentClassifier {
         match self {
             ContentClassifier::FreeOfAdultContent => write!(f, "FreeOfAdultContent"),
             ContentClassifier::FreeOfPersonallyIdentifiableInformation => write!(f, "FreeOfPersonallyIdentifiableInformation"),
-            ContentClassifier::Unknown(value) => write!(f, "{}", value),
+            ContentClassifier::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

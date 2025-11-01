@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ConsumerStatus {
             ConsumerStatus::Active => write!(f, "ACTIVE"),
             ConsumerStatus::Creating => write!(f, "CREATING"),
             ConsumerStatus::Deleting => write!(f, "DELETING"),
-            ConsumerStatus::Unknown(value) => write!(f, "{}", value),
+            ConsumerStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

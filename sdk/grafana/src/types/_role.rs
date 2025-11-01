@@ -108,7 +108,7 @@ impl ::std::fmt::Display for Role {
             Role::Admin => write!(f, "ADMIN"),
             Role::Editor => write!(f, "EDITOR"),
             Role::Viewer => write!(f, "VIEWER"),
-            Role::Unknown(value) => write!(f, "{}", value),
+            Role::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

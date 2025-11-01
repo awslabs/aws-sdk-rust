@@ -112,7 +112,7 @@ impl ::std::fmt::Display for IntegrationV2Type {
             IntegrationV2Type::ReceiveFindingsFromSecurityHub => write!(f, "RECEIVE_FINDINGS_FROM_SECURITY_HUB"),
             IntegrationV2Type::SendFindingsToSecurityHub => write!(f, "SEND_FINDINGS_TO_SECURITY_HUB"),
             IntegrationV2Type::UpdateFindingsInSecurityHub => write!(f, "UPDATE_FINDINGS_IN_SECURITY_HUB"),
-            IntegrationV2Type::Unknown(value) => write!(f, "{}", value),
+            IntegrationV2Type::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

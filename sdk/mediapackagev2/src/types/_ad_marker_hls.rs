@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AdMarkerHls {
         match self {
             AdMarkerHls::Daterange => write!(f, "DATERANGE"),
             AdMarkerHls::Scte35Enhanced => write!(f, "SCTE35_ENHANCED"),
-            AdMarkerHls::Unknown(value) => write!(f, "{}", value),
+            AdMarkerHls::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

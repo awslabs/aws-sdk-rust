@@ -108,7 +108,7 @@ impl ::std::fmt::Display for DeleteBehavior {
             DeleteBehavior::DeleteFromDatabase => write!(f, "DELETE_FROM_DATABASE"),
             DeleteBehavior::DeprecateInDatabase => write!(f, "DEPRECATE_IN_DATABASE"),
             DeleteBehavior::Log => write!(f, "LOG"),
-            DeleteBehavior::Unknown(value) => write!(f, "{}", value),
+            DeleteBehavior::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

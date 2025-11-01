@@ -126,7 +126,7 @@ impl ::std::fmt::Display for Eac3DrcLine {
             Eac3DrcLine::MusicStandard => write!(f, "MUSIC_STANDARD"),
             Eac3DrcLine::None => write!(f, "NONE"),
             Eac3DrcLine::Speech => write!(f, "SPEECH"),
-            Eac3DrcLine::Unknown(value) => write!(f, "{}", value),
+            Eac3DrcLine::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for SearchTextAdditionalFeature {
             SearchTextAdditionalFeature::Contact => write!(f, "Contact"),
             SearchTextAdditionalFeature::Phonemes => write!(f, "Phonemes"),
             SearchTextAdditionalFeature::TimeZone => write!(f, "TimeZone"),
-            SearchTextAdditionalFeature::Unknown(value) => write!(f, "{}", value),
+            SearchTextAdditionalFeature::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

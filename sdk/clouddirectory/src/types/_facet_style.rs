@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FacetStyle {
         match self {
             FacetStyle::Dynamic => write!(f, "DYNAMIC"),
             FacetStyle::Static => write!(f, "STATIC"),
-            FacetStyle::Unknown(value) => write!(f, "{}", value),
+            FacetStyle::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

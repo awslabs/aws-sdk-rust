@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ShareStatusType {
         match self {
             ShareStatusType::Failure => write!(f, "FAILURE"),
             ShareStatusType::Success => write!(f, "SUCCESS"),
-            ShareStatusType::Unknown(value) => write!(f, "{}", value),
+            ShareStatusType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

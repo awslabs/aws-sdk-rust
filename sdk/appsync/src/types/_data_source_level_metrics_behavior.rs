@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DataSourceLevelMetricsBehavior {
         match self {
             DataSourceLevelMetricsBehavior::FullRequestDataSourceMetrics => write!(f, "FULL_REQUEST_DATA_SOURCE_METRICS"),
             DataSourceLevelMetricsBehavior::PerDataSourceMetrics => write!(f, "PER_DATA_SOURCE_METRICS"),
-            DataSourceLevelMetricsBehavior::Unknown(value) => write!(f, "{}", value),
+            DataSourceLevelMetricsBehavior::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

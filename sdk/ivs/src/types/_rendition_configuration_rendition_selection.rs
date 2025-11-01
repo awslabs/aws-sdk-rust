@@ -108,7 +108,7 @@ impl ::std::fmt::Display for RenditionConfigurationRenditionSelection {
             RenditionConfigurationRenditionSelection::All => write!(f, "ALL"),
             RenditionConfigurationRenditionSelection::Custom => write!(f, "CUSTOM"),
             RenditionConfigurationRenditionSelection::None => write!(f, "NONE"),
-            RenditionConfigurationRenditionSelection::Unknown(value) => write!(f, "{}", value),
+            RenditionConfigurationRenditionSelection::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

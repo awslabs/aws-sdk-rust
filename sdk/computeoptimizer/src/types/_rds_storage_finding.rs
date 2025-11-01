@@ -114,7 +114,7 @@ impl ::std::fmt::Display for RdsStorageFinding {
             RdsStorageFinding::Optimized => write!(f, "Optimized"),
             RdsStorageFinding::OverProvisioned => write!(f, "Overprovisioned"),
             RdsStorageFinding::UnderProvisioned => write!(f, "Underprovisioned"),
-            RdsStorageFinding::Unknown(value) => write!(f, "{}", value),
+            RdsStorageFinding::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

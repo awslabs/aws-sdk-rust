@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ServerSideEncryptionTypes {
         match self {
             ServerSideEncryptionTypes::Aes256 => write!(f, "AES256"),
             ServerSideEncryptionTypes::AwsKms => write!(f, "aws:kms"),
-            ServerSideEncryptionTypes::Unknown(value) => write!(f, "{}", value),
+            ServerSideEncryptionTypes::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -120,7 +120,7 @@ impl ::std::fmt::Display for CopyJobState {
             CopyJobState::Failed => write!(f, "FAILED"),
             CopyJobState::Partial => write!(f, "PARTIAL"),
             CopyJobState::Running => write!(f, "RUNNING"),
-            CopyJobState::Unknown(value) => write!(f, "{}", value),
+            CopyJobState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

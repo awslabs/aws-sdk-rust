@@ -114,7 +114,7 @@ impl ::std::fmt::Display for JobManifestFieldName {
             JobManifestFieldName::Ignore => write!(f, "Ignore"),
             JobManifestFieldName::Key => write!(f, "Key"),
             JobManifestFieldName::VersionId => write!(f, "VersionId"),
-            JobManifestFieldName::Unknown(value) => write!(f, "{}", value),
+            JobManifestFieldName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

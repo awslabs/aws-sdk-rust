@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MessageActionType {
         match self {
             MessageActionType::Resend => write!(f, "RESEND"),
             MessageActionType::Suppress => write!(f, "SUPPRESS"),
-            MessageActionType::Unknown(value) => write!(f, "{}", value),
+            MessageActionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

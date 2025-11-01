@@ -114,7 +114,7 @@ impl ::std::fmt::Display for InstanceFleetStateChangeReasonCode {
             InstanceFleetStateChangeReasonCode::InstanceFailure => write!(f, "INSTANCE_FAILURE"),
             InstanceFleetStateChangeReasonCode::InternalError => write!(f, "INTERNAL_ERROR"),
             InstanceFleetStateChangeReasonCode::ValidationError => write!(f, "VALIDATION_ERROR"),
-            InstanceFleetStateChangeReasonCode::Unknown(value) => write!(f, "{}", value),
+            InstanceFleetStateChangeReasonCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

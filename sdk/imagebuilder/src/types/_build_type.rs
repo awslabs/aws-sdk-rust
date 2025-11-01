@@ -114,7 +114,7 @@ impl ::std::fmt::Display for BuildType {
             BuildType::ImportIso => write!(f, "IMPORT_ISO"),
             BuildType::Scheduled => write!(f, "SCHEDULED"),
             BuildType::UserInitiated => write!(f, "USER_INITIATED"),
-            BuildType::Unknown(value) => write!(f, "{}", value),
+            BuildType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

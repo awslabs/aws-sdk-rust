@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MacieStatus {
         match self {
             MacieStatus::Enabled => write!(f, "ENABLED"),
             MacieStatus::Paused => write!(f, "PAUSED"),
-            MacieStatus::Unknown(value) => write!(f, "{}", value),
+            MacieStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

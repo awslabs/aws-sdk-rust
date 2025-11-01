@@ -454,7 +454,7 @@ impl ::std::fmt::Display for ClarifyTextLanguage {
             ClarifyTextLanguage::MultiLanguage => write!(f, "xx"),
             ClarifyTextLanguage::Yoruba => write!(f, "yo"),
             ClarifyTextLanguage::Chinese => write!(f, "zh"),
-            ClarifyTextLanguage::Unknown(value) => write!(f, "{}", value),
+            ClarifyTextLanguage::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

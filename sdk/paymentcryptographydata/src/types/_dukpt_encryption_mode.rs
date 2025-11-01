@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DukptEncryptionMode {
         match self {
             DukptEncryptionMode::Cbc => write!(f, "CBC"),
             DukptEncryptionMode::Ecb => write!(f, "ECB"),
-            DukptEncryptionMode::Unknown(value) => write!(f, "{}", value),
+            DukptEncryptionMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

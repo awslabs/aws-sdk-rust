@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FileSystemMaintenanceOperation {
         match self {
             FileSystemMaintenanceOperation::BackingUp => write!(f, "BACKING_UP"),
             FileSystemMaintenanceOperation::Patching => write!(f, "PATCHING"),
-            FileSystemMaintenanceOperation::Unknown(value) => write!(f, "{}", value),
+            FileSystemMaintenanceOperation::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -161,7 +161,7 @@ impl ::std::fmt::Display for ComputeNodeGroupStatus {
             ComputeNodeGroupStatus::Suspending => write!(f, "SUSPENDING"),
             ComputeNodeGroupStatus::UpdateFailed => write!(f, "UPDATE_FAILED"),
             ComputeNodeGroupStatus::Updating => write!(f, "UPDATING"),
-            ComputeNodeGroupStatus::Unknown(value) => write!(f, "{}", value),
+            ComputeNodeGroupStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

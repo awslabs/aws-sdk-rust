@@ -120,7 +120,7 @@ impl ::std::fmt::Display for DataUploadFrequency {
             DataUploadFrequency::Pt1H => write!(f, "PT1H"),
             DataUploadFrequency::Pt30M => write!(f, "PT30M"),
             DataUploadFrequency::Pt5M => write!(f, "PT5M"),
-            DataUploadFrequency::Unknown(value) => write!(f, "{}", value),
+            DataUploadFrequency::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

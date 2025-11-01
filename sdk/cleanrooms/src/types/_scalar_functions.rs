@@ -259,7 +259,7 @@ impl ::std::fmt::Display for ScalarFunctions {
             ScalarFunctions::Trim => write!(f, "TRIM"),
             ScalarFunctions::Trunc => write!(f, "TRUNC"),
             ScalarFunctions::Upper => write!(f, "UPPER"),
-            ScalarFunctions::Unknown(value) => write!(f, "{}", value),
+            ScalarFunctions::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

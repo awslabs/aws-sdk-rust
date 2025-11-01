@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ChildType {
         match self {
             ChildType::Account => write!(f, "ACCOUNT"),
             ChildType::OrganizationalUnit => write!(f, "ORGANIZATIONAL_UNIT"),
-            ChildType::Unknown(value) => write!(f, "{}", value),
+            ChildType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

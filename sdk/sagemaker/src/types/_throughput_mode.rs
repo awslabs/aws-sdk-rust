@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ThroughputMode {
         match self {
             ThroughputMode::OnDemand => write!(f, "OnDemand"),
             ThroughputMode::Provisioned => write!(f, "Provisioned"),
-            ThroughputMode::Unknown(value) => write!(f, "{}", value),
+            ThroughputMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

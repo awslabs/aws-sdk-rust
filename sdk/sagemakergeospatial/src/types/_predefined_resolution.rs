@@ -108,7 +108,7 @@ impl ::std::fmt::Display for PredefinedResolution {
             PredefinedResolution::Average => write!(f, "AVERAGE"),
             PredefinedResolution::Highest => write!(f, "HIGHEST"),
             PredefinedResolution::Lowest => write!(f, "LOWEST"),
-            PredefinedResolution::Unknown(value) => write!(f, "{}", value),
+            PredefinedResolution::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

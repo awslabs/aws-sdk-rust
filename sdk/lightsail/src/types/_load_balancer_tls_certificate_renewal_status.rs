@@ -114,7 +114,7 @@ impl ::std::fmt::Display for LoadBalancerTlsCertificateRenewalStatus {
             LoadBalancerTlsCertificateRenewalStatus::PendingAutoRenewal => write!(f, "PENDING_AUTO_RENEWAL"),
             LoadBalancerTlsCertificateRenewalStatus::PendingValidation => write!(f, "PENDING_VALIDATION"),
             LoadBalancerTlsCertificateRenewalStatus::Success => write!(f, "SUCCESS"),
-            LoadBalancerTlsCertificateRenewalStatus::Unknown(value) => write!(f, "{}", value),
+            LoadBalancerTlsCertificateRenewalStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

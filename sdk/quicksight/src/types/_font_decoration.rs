@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FontDecoration {
         match self {
             FontDecoration::None => write!(f, "NONE"),
             FontDecoration::Underline => write!(f, "UNDERLINE"),
-            FontDecoration::Unknown(value) => write!(f, "{}", value),
+            FontDecoration::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

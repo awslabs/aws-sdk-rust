@@ -120,7 +120,7 @@ impl ::std::fmt::Display for CloudComponentState {
             CloudComponentState::Failed => write!(f, "FAILED"),
             CloudComponentState::Initiated => write!(f, "INITIATED"),
             CloudComponentState::Requested => write!(f, "REQUESTED"),
-            CloudComponentState::Unknown(value) => write!(f, "{}", value),
+            CloudComponentState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

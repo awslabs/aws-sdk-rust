@@ -102,7 +102,7 @@ impl ::std::fmt::Display for UserProfileSortKey {
         match self {
             UserProfileSortKey::CreationTime => write!(f, "CreationTime"),
             UserProfileSortKey::LastModifiedTime => write!(f, "LastModifiedTime"),
-            UserProfileSortKey::Unknown(value) => write!(f, "{}", value),
+            UserProfileSortKey::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

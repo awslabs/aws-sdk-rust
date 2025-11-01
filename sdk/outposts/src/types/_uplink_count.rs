@@ -161,7 +161,7 @@ impl ::std::fmt::Display for UplinkCount {
             UplinkCount::UplinkCount6 => write!(f, "UPLINK_COUNT_6"),
             UplinkCount::UplinkCount7 => write!(f, "UPLINK_COUNT_7"),
             UplinkCount::UplinkCount8 => write!(f, "UPLINK_COUNT_8"),
-            UplinkCount::Unknown(value) => write!(f, "{}", value),
+            UplinkCount::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

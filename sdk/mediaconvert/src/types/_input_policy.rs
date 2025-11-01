@@ -102,7 +102,7 @@ impl ::std::fmt::Display for InputPolicy {
         match self {
             InputPolicy::Allowed => write!(f, "ALLOWED"),
             InputPolicy::Disallowed => write!(f, "DISALLOWED"),
-            InputPolicy::Unknown(value) => write!(f, "{}", value),
+            InputPolicy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

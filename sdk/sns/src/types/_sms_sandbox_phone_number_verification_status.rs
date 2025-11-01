@@ -105,7 +105,7 @@ impl ::std::fmt::Display for SmsSandboxPhoneNumberVerificationStatus {
         match self {
             SmsSandboxPhoneNumberVerificationStatus::Pending => write!(f, "Pending"),
             SmsSandboxPhoneNumberVerificationStatus::Verified => write!(f, "Verified"),
-            SmsSandboxPhoneNumberVerificationStatus::Unknown(value) => write!(f, "{}", value),
+            SmsSandboxPhoneNumberVerificationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

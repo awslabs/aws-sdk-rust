@@ -102,7 +102,7 @@ impl ::std::fmt::Display for InferenceExecutionMode {
         match self {
             InferenceExecutionMode::Direct => write!(f, "Direct"),
             InferenceExecutionMode::Serial => write!(f, "Serial"),
-            InferenceExecutionMode::Unknown(value) => write!(f, "{}", value),
+            InferenceExecutionMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -119,7 +119,7 @@ impl ::std::fmt::Display for ConflictExceptionType {
             ConflictExceptionType::IdempotentParameterMismatch => write!(f, "IDEMPOTENT_PARAMETER_MISMATCH"),
             ConflictExceptionType::ResourceAlreadyExists => write!(f, "RESOURCE_ALREADY_EXISTS"),
             ConflictExceptionType::ResourceInUse => write!(f, "RESOURCE_IN_USE"),
-            ConflictExceptionType::Unknown(value) => write!(f, "{}", value),
+            ConflictExceptionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

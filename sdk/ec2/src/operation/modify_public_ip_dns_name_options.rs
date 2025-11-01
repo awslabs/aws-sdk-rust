@@ -180,6 +180,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ModifyPublic
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::modify_public_ip_dns_name_options::ModifyPublicIpDnsNameOptionsInput,
                 output: &mut ::std::string::String,

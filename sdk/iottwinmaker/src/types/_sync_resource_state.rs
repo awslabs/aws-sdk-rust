@@ -120,7 +120,7 @@ impl ::std::fmt::Display for SyncResourceState {
             SyncResourceState::Initializing => write!(f, "INITIALIZING"),
             SyncResourceState::InSync => write!(f, "IN_SYNC"),
             SyncResourceState::Processing => write!(f, "PROCESSING"),
-            SyncResourceState::Unknown(value) => write!(f, "{}", value),
+            SyncResourceState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

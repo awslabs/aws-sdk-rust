@@ -108,7 +108,7 @@ impl ::std::fmt::Display for EndpointType {
             EndpointType::Edge => write!(f, "EDGE"),
             EndpointType::Private => write!(f, "PRIVATE"),
             EndpointType::Regional => write!(f, "REGIONAL"),
-            EndpointType::Unknown(value) => write!(f, "{}", value),
+            EndpointType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -126,7 +126,7 @@ impl ::std::fmt::Display for RealTimeContactAnalysisSegmentType {
             RealTimeContactAnalysisSegmentType::Issues => write!(f, "Issues"),
             RealTimeContactAnalysisSegmentType::PostContactSummary => write!(f, "PostContactSummary"),
             RealTimeContactAnalysisSegmentType::Transcript => write!(f, "Transcript"),
-            RealTimeContactAnalysisSegmentType::Unknown(value) => write!(f, "{}", value),
+            RealTimeContactAnalysisSegmentType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

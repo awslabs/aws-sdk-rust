@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SearchFieldOperator {
         match self {
             SearchFieldOperator::Equals => write!(f, "EQUALS"),
             SearchFieldOperator::Includes => write!(f, "INCLUDES"),
-            SearchFieldOperator::Unknown(value) => write!(f, "{}", value),
+            SearchFieldOperator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

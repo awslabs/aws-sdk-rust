@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RolesKeyIdCOption {
         match self {
             RolesKeyIdCOption::GroupId => write!(f, "GroupId"),
             RolesKeyIdCOption::GroupName => write!(f, "GroupName"),
-            RolesKeyIdCOption::Unknown(value) => write!(f, "{}", value),
+            RolesKeyIdCOption::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

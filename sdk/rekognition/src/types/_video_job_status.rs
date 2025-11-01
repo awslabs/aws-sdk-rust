@@ -108,7 +108,7 @@ impl ::std::fmt::Display for VideoJobStatus {
             VideoJobStatus::Failed => write!(f, "FAILED"),
             VideoJobStatus::InProgress => write!(f, "IN_PROGRESS"),
             VideoJobStatus::Succeeded => write!(f, "SUCCEEDED"),
-            VideoJobStatus::Unknown(value) => write!(f, "{}", value),
+            VideoJobStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

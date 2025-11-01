@@ -120,7 +120,7 @@ impl ::std::fmt::Display for NetworkStatus {
             NetworkStatus::Creating => write!(f, "CREATING"),
             NetworkStatus::Deleted => write!(f, "DELETED"),
             NetworkStatus::Deleting => write!(f, "DELETING"),
-            NetworkStatus::Unknown(value) => write!(f, "{}", value),
+            NetworkStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

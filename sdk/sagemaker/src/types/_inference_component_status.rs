@@ -120,7 +120,7 @@ impl ::std::fmt::Display for InferenceComponentStatus {
             InferenceComponentStatus::Failed => write!(f, "Failed"),
             InferenceComponentStatus::InService => write!(f, "InService"),
             InferenceComponentStatus::Updating => write!(f, "Updating"),
-            InferenceComponentStatus::Unknown(value) => write!(f, "{}", value),
+            InferenceComponentStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

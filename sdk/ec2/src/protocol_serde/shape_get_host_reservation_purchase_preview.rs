@@ -51,8 +51,7 @@ pub fn de_get_host_reservation_purchase_preview(
     let start_el = decoder.start_el();
     if !(start_el.matches("GetHostReservationPurchasePreviewResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected GetHostReservationPurchasePreviewResponse got {:?}",
-            start_el
+            "invalid root, expected GetHostReservationPurchasePreviewResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

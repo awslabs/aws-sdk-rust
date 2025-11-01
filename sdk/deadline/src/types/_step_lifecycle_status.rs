@@ -114,7 +114,7 @@ impl ::std::fmt::Display for StepLifecycleStatus {
             StepLifecycleStatus::UpdateFailed => write!(f, "UPDATE_FAILED"),
             StepLifecycleStatus::UpdateInProgress => write!(f, "UPDATE_IN_PROGRESS"),
             StepLifecycleStatus::UpdateSucceeded => write!(f, "UPDATE_SUCCEEDED"),
-            StepLifecycleStatus::Unknown(value) => write!(f, "{}", value),
+            StepLifecycleStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PerformanceMode {
         match self {
             PerformanceMode::GeneralPurpose => write!(f, "generalPurpose"),
             PerformanceMode::MaxIo => write!(f, "maxIO"),
-            PerformanceMode::Unknown(value) => write!(f, "{}", value),
+            PerformanceMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for SpecialValue {
             SpecialValue::Empty => write!(f, "EMPTY"),
             SpecialValue::Null => write!(f, "NULL"),
             SpecialValue::Other => write!(f, "OTHER"),
-            SpecialValue::Unknown(value) => write!(f, "{}", value),
+            SpecialValue::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

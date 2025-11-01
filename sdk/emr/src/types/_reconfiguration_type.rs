@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ReconfigurationType {
         match self {
             ReconfigurationType::Merge => write!(f, "MERGE"),
             ReconfigurationType::Overwrite => write!(f, "OVERWRITE"),
-            ReconfigurationType::Unknown(value) => write!(f, "{}", value),
+            ReconfigurationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

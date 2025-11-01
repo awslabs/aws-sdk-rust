@@ -102,7 +102,7 @@ impl ::std::fmt::Display for EngineWorkflowStatus {
         match self {
             EngineWorkflowStatus::Failed => write!(f, "FAILED"),
             EngineWorkflowStatus::Succeeded => write!(f, "SUCCEEDED"),
-            EngineWorkflowStatus::Unknown(value) => write!(f, "{}", value),
+            EngineWorkflowStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

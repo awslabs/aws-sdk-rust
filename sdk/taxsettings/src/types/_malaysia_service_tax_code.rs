@@ -119,7 +119,7 @@ impl ::std::fmt::Display for MalaysiaServiceTaxCode {
             MalaysiaServiceTaxCode::DigitalSvcElectronicMedium => write!(f, "Digital Service And Electronic Medium"),
             MalaysiaServiceTaxCode::ItServices => write!(f, "IT Services"),
             MalaysiaServiceTaxCode::TrainingOrCoaching => write!(f, "Training Or Coaching"),
-            MalaysiaServiceTaxCode::Unknown(value) => write!(f, "{}", value),
+            MalaysiaServiceTaxCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

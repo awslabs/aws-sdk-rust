@@ -96,7 +96,7 @@ impl ::std::fmt::Display for OfferingType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             OfferingType::Recurring => write!(f, "RECURRING"),
-            OfferingType::Unknown(value) => write!(f, "{}", value),
+            OfferingType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

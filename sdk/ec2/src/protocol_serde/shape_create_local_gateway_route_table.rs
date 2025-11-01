@@ -51,8 +51,7 @@ pub fn de_create_local_gateway_route_table(
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateLocalGatewayRouteTableResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected CreateLocalGatewayRouteTableResponse got {:?}",
-            start_el
+            "invalid root, expected CreateLocalGatewayRouteTableResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CpuCreditsEnum {
         match self {
             CpuCreditsEnum::Standard => write!(f, "standard"),
             CpuCreditsEnum::Unlimited => write!(f, "unlimited"),
-            CpuCreditsEnum::Unknown(value) => write!(f, "{}", value),
+            CpuCreditsEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

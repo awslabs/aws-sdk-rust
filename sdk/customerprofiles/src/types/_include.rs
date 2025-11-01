@@ -108,7 +108,7 @@ impl ::std::fmt::Display for Include {
             Include::All => write!(f, "ALL"),
             Include::Any => write!(f, "ANY"),
             Include::None => write!(f, "NONE"),
-            Include::Unknown(value) => write!(f, "{}", value),
+            Include::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

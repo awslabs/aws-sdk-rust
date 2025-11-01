@@ -108,7 +108,7 @@ impl ::std::fmt::Display for EcsServiceRecommendationFinding {
             EcsServiceRecommendationFinding::Optimized => write!(f, "Optimized"),
             EcsServiceRecommendationFinding::OverProvisioned => write!(f, "Overprovisioned"),
             EcsServiceRecommendationFinding::UnderProvisioned => write!(f, "Underprovisioned"),
-            EcsServiceRecommendationFinding::Unknown(value) => write!(f, "{}", value),
+            EcsServiceRecommendationFinding::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -504,7 +504,7 @@ impl ::std::fmt::Display for VoiceId {
             VoiceId::Vitoria => write!(f, "VITORIA"),
             VoiceId::Zeina => write!(f, "ZEINA"),
             VoiceId::Zhiyu => write!(f, "ZHIYU"),
-            VoiceId::Unknown(value) => write!(f, "{}", value),
+            VoiceId::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

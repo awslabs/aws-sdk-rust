@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RerankingMetadataSelectionMode {
         match self {
             RerankingMetadataSelectionMode::All => write!(f, "ALL"),
             RerankingMetadataSelectionMode::Selective => write!(f, "SELECTIVE"),
-            RerankingMetadataSelectionMode::Unknown(value) => write!(f, "{}", value),
+            RerankingMetadataSelectionMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -120,7 +120,7 @@ impl ::std::fmt::Display for HubContentStatus {
             HubContentStatus::Deleting => write!(f, "Deleting"),
             HubContentStatus::ImportFailed => write!(f, "ImportFailed"),
             HubContentStatus::Importing => write!(f, "Importing"),
-            HubContentStatus::Unknown(value) => write!(f, "{}", value),
+            HubContentStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

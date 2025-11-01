@@ -188,6 +188,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DescribeHype
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::describe_hyper_parameter_tuning_job::DescribeHyperParameterTuningJobInput,
                 output: &mut ::std::string::String,

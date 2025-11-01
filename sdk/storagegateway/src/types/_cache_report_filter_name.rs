@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CacheReportFilterName {
         match self {
             CacheReportFilterName::UploadFailureReason => write!(f, "UploadFailureReason"),
             CacheReportFilterName::UploadState => write!(f, "UploadState"),
-            CacheReportFilterName::Unknown(value) => write!(f, "{}", value),
+            CacheReportFilterName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

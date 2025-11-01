@@ -126,7 +126,7 @@ impl ::std::fmt::Display for CrawlState {
             CrawlState::Failed => write!(f, "FAILED"),
             CrawlState::Running => write!(f, "RUNNING"),
             CrawlState::Succeeded => write!(f, "SUCCEEDED"),
-            CrawlState::Unknown(value) => write!(f, "{}", value),
+            CrawlState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -190,6 +190,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for RemoveDraftA
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::remove_draft_app_version_resource_mappings::RemoveDraftAppVersionResourceMappingsInput,
                 output: &mut ::std::string::String,

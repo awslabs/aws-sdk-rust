@@ -114,7 +114,7 @@ impl ::std::fmt::Display for PrivateGraphEndpointStatus {
             PrivateGraphEndpointStatus::Creating => write!(f, "CREATING"),
             PrivateGraphEndpointStatus::Deleting => write!(f, "DELETING"),
             PrivateGraphEndpointStatus::Failed => write!(f, "FAILED"),
-            PrivateGraphEndpointStatus::Unknown(value) => write!(f, "{}", value),
+            PrivateGraphEndpointStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

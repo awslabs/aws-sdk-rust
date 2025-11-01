@@ -96,7 +96,7 @@ impl ::std::fmt::Display for OverrideAction {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             OverrideAction::DropToAlert => write!(f, "DROP_TO_ALERT"),
-            OverrideAction::Unknown(value) => write!(f, "{}", value),
+            OverrideAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

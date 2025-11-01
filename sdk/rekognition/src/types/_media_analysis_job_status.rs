@@ -120,7 +120,7 @@ impl ::std::fmt::Display for MediaAnalysisJobStatus {
             MediaAnalysisJobStatus::InProgress => write!(f, "IN_PROGRESS"),
             MediaAnalysisJobStatus::Queued => write!(f, "QUEUED"),
             MediaAnalysisJobStatus::Succeeded => write!(f, "SUCCEEDED"),
-            MediaAnalysisJobStatus::Unknown(value) => write!(f, "{}", value),
+            MediaAnalysisJobStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

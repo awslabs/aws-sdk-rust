@@ -238,7 +238,7 @@ mod tests {
         let result = underlying_future.maybe_timeout(maybe_timeout).await;
         let err = result.expect_err("should have timed out");
 
-        assert_eq!(format!("{:?}", err), "TimeoutError(TimeoutError { source: MaybeTimeoutError { kind: Operation, duration: 250ms } })");
+        assert_eq!(format!("{err:?}"), "TimeoutError(TimeoutError { source: MaybeTimeoutError { kind: Operation, duration: 250ms } })");
         assert_elapsed!(now, Duration::from_secs_f32(0.25));
     }
 }

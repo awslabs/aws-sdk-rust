@@ -120,7 +120,7 @@ impl ::std::fmt::Display for MatchOption {
             MatchOption::Equals => write!(f, "EQUALS"),
             MatchOption::GreaterThanOrEqual => write!(f, "GREATER_THAN_OR_EQUAL"),
             MatchOption::StartsWith => write!(f, "STARTS_WITH"),
-            MatchOption::Unknown(value) => write!(f, "{}", value),
+            MatchOption::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

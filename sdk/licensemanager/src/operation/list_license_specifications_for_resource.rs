@@ -190,6 +190,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListLicenseS
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::list_license_specifications_for_resource::ListLicenseSpecificationsForResourceInput,
                 output: &mut ::std::string::String,

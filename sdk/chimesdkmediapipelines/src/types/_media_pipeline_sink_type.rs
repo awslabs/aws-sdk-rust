@@ -96,7 +96,7 @@ impl ::std::fmt::Display for MediaPipelineSinkType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             MediaPipelineSinkType::S3Bucket => write!(f, "S3Bucket"),
-            MediaPipelineSinkType::Unknown(value) => write!(f, "{}", value),
+            MediaPipelineSinkType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

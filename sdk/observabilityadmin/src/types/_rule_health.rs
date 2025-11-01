@@ -108,7 +108,7 @@ impl ::std::fmt::Display for RuleHealth {
             RuleHealth::Healthy => write!(f, "Healthy"),
             RuleHealth::Provisioning => write!(f, "Provisioning"),
             RuleHealth::Unhealthy => write!(f, "Unhealthy"),
-            RuleHealth::Unknown(value) => write!(f, "{}", value),
+            RuleHealth::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

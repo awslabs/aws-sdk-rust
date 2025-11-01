@@ -108,7 +108,7 @@ impl ::std::fmt::Display for HealthCheckType {
             HealthCheckType::Http => write!(f, "HTTP"),
             HealthCheckType::Https => write!(f, "HTTPS"),
             HealthCheckType::Tcp => write!(f, "TCP"),
-            HealthCheckType::Unknown(value) => write!(f, "{}", value),
+            HealthCheckType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

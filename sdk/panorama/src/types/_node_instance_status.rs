@@ -114,7 +114,7 @@ impl ::std::fmt::Display for NodeInstanceStatus {
             NodeInstanceStatus::NotAvailable => write!(f, "NOT_AVAILABLE"),
             NodeInstanceStatus::Paused => write!(f, "PAUSED"),
             NodeInstanceStatus::Running => write!(f, "RUNNING"),
-            NodeInstanceStatus::Unknown(value) => write!(f, "{}", value),
+            NodeInstanceStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

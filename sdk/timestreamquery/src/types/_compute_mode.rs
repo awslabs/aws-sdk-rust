@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ComputeMode {
         match self {
             ComputeMode::OnDemand => write!(f, "ON_DEMAND"),
             ComputeMode::Provisioned => write!(f, "PROVISIONED"),
-            ComputeMode::Unknown(value) => write!(f, "{}", value),
+            ComputeMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

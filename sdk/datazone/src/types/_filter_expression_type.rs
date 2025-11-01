@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FilterExpressionType {
         match self {
             FilterExpressionType::Exclude => write!(f, "EXCLUDE"),
             FilterExpressionType::Include => write!(f, "INCLUDE"),
-            FilterExpressionType::Unknown(value) => write!(f, "{}", value),
+            FilterExpressionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

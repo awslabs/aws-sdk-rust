@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Atime {
         match self {
             Atime::BestEffort => write!(f, "BEST_EFFORT"),
             Atime::None => write!(f, "NONE"),
-            Atime::Unknown(value) => write!(f, "{}", value),
+            Atime::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

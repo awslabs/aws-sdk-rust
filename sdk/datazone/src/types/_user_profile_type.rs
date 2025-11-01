@@ -102,7 +102,7 @@ impl ::std::fmt::Display for UserProfileType {
         match self {
             UserProfileType::Iam => write!(f, "IAM"),
             UserProfileType::Sso => write!(f, "SSO"),
-            UserProfileType::Unknown(value) => write!(f, "{}", value),
+            UserProfileType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

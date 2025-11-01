@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PermissionModelType {
         match self {
             PermissionModelType::LegacyIamUser => write!(f, "LegacyIAMUser"),
             PermissionModelType::RoleBased => write!(f, "RoleBased"),
-            PermissionModelType::Unknown(value) => write!(f, "{}", value),
+            PermissionModelType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

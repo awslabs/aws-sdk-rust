@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SheetContentType {
         match self {
             SheetContentType::Interactive => write!(f, "INTERACTIVE"),
             SheetContentType::Paginated => write!(f, "PAGINATED"),
-            SheetContentType::Unknown(value) => write!(f, "{}", value),
+            SheetContentType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

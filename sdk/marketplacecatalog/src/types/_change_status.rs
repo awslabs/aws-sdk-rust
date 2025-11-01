@@ -120,7 +120,7 @@ impl ::std::fmt::Display for ChangeStatus {
             ChangeStatus::Failed => write!(f, "FAILED"),
             ChangeStatus::Preparing => write!(f, "PREPARING"),
             ChangeStatus::Succeeded => write!(f, "SUCCEEDED"),
-            ChangeStatus::Unknown(value) => write!(f, "{}", value),
+            ChangeStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

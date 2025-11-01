@@ -96,7 +96,7 @@ impl ::std::fmt::Display for AbortAction {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             AbortAction::Cancel => write!(f, "CANCEL"),
-            AbortAction::Unknown(value) => write!(f, "{}", value),
+            AbortAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

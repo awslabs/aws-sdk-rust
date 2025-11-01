@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ResolverRuleStatus {
             ResolverRuleStatus::Deleting => write!(f, "DELETING"),
             ResolverRuleStatus::Failed => write!(f, "FAILED"),
             ResolverRuleStatus::Updating => write!(f, "UPDATING"),
-            ResolverRuleStatus::Unknown(value) => write!(f, "{}", value),
+            ResolverRuleStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

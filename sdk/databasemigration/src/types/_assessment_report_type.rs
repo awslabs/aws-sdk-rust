@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AssessmentReportType {
         match self {
             AssessmentReportType::Csv => write!(f, "csv"),
             AssessmentReportType::Pdf => write!(f, "pdf"),
-            AssessmentReportType::Unknown(value) => write!(f, "{}", value),
+            AssessmentReportType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

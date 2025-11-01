@@ -120,7 +120,7 @@ impl ::std::fmt::Display for StackSetDriftDetectionStatus {
             StackSetDriftDetectionStatus::InProgress => write!(f, "IN_PROGRESS"),
             StackSetDriftDetectionStatus::PartialSuccess => write!(f, "PARTIAL_SUCCESS"),
             StackSetDriftDetectionStatus::Stopped => write!(f, "STOPPED"),
-            StackSetDriftDetectionStatus::Unknown(value) => write!(f, "{}", value),
+            StackSetDriftDetectionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

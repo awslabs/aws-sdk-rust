@@ -140,7 +140,7 @@ impl ::std::fmt::Display for SelfGrantStatus {
             SelfGrantStatus::RevokeFailed => write!(f, "REVOKE_FAILED"),
             SelfGrantStatus::RevokeInProgress => write!(f, "REVOKE_IN_PROGRESS"),
             SelfGrantStatus::RevokePending => write!(f, "REVOKE_PENDING"),
-            SelfGrantStatus::Unknown(value) => write!(f, "{}", value),
+            SelfGrantStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

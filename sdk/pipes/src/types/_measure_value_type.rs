@@ -120,7 +120,7 @@ impl ::std::fmt::Display for MeasureValueType {
             MeasureValueType::Double => write!(f, "DOUBLE"),
             MeasureValueType::Timestamp => write!(f, "TIMESTAMP"),
             MeasureValueType::Varchar => write!(f, "VARCHAR"),
-            MeasureValueType::Unknown(value) => write!(f, "{}", value),
+            MeasureValueType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

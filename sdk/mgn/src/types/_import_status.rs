@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ImportStatus {
             ImportStatus::Pending => write!(f, "PENDING"),
             ImportStatus::Started => write!(f, "STARTED"),
             ImportStatus::Succeeded => write!(f, "SUCCEEDED"),
-            ImportStatus::Unknown(value) => write!(f, "{}", value),
+            ImportStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

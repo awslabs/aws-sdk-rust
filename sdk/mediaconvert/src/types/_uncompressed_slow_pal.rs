@@ -102,7 +102,7 @@ impl ::std::fmt::Display for UncompressedSlowPal {
         match self {
             UncompressedSlowPal::Disabled => write!(f, "DISABLED"),
             UncompressedSlowPal::Enabled => write!(f, "ENABLED"),
-            UncompressedSlowPal::Unknown(value) => write!(f, "{}", value),
+            UncompressedSlowPal::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

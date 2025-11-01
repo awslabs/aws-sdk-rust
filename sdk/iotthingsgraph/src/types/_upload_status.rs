@@ -108,7 +108,7 @@ impl ::std::fmt::Display for UploadStatus {
             UploadStatus::Failed => write!(f, "FAILED"),
             UploadStatus::InProgress => write!(f, "IN_PROGRESS"),
             UploadStatus::Succeeded => write!(f, "SUCCEEDED"),
-            UploadStatus::Unknown(value) => write!(f, "{}", value),
+            UploadStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

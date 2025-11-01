@@ -51,8 +51,7 @@ pub fn de_create_transit_gateway_policy_table(
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateTransitGatewayPolicyTableResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected CreateTransitGatewayPolicyTableResponse got {:?}",
-            start_el
+            "invalid root, expected CreateTransitGatewayPolicyTableResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

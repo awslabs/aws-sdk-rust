@@ -120,7 +120,7 @@ impl ::std::fmt::Display for LogTargetType {
             LogTargetType::PrincipalId => write!(f, "PRINCIPAL_ID"),
             LogTargetType::SourceIp => write!(f, "SOURCE_IP"),
             LogTargetType::ThingGroup => write!(f, "THING_GROUP"),
-            LogTargetType::Unknown(value) => write!(f, "{}", value),
+            LogTargetType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

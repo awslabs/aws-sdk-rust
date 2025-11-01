@@ -96,7 +96,7 @@ impl ::std::fmt::Display for PlatformValues {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             PlatformValues::Windows => write!(f, "Windows"),
-            PlatformValues::Unknown(value) => write!(f, "{}", value),
+            PlatformValues::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

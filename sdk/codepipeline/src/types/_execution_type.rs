@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ExecutionType {
         match self {
             ExecutionType::Rollback => write!(f, "ROLLBACK"),
             ExecutionType::Standard => write!(f, "STANDARD"),
-            ExecutionType::Unknown(value) => write!(f, "{}", value),
+            ExecutionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

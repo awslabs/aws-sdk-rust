@@ -168,7 +168,7 @@ impl ::std::fmt::Display for DataReplicationInitiationStepName {
             DataReplicationInitiationStepName::PairReplicationServerWithAgent => write!(f, "PAIR_REPLICATION_SERVER_WITH_AGENT"),
             DataReplicationInitiationStepName::StartDataTransfer => write!(f, "START_DATA_TRANSFER"),
             DataReplicationInitiationStepName::Wait => write!(f, "WAIT"),
-            DataReplicationInitiationStepName::Unknown(value) => write!(f, "{}", value),
+            DataReplicationInitiationStepName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

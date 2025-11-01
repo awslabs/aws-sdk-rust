@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ErrorCode {
             ErrorCode::InvalidRequest => write!(f, "InvalidRequest"),
             ErrorCode::ResourceInactive => write!(f, "ResourceInactive"),
             ErrorCode::ResourceNotFound => write!(f, "ResourceNotFound"),
-            ErrorCode::Unknown(value) => write!(f, "{}", value),
+            ErrorCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

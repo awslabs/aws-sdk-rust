@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TransitionDefaultMinimumObjectSize {
         match self {
             TransitionDefaultMinimumObjectSize::AllStorageClasses128K => write!(f, "all_storage_classes_128K"),
             TransitionDefaultMinimumObjectSize::VariesByStorageClass => write!(f, "varies_by_storage_class"),
-            TransitionDefaultMinimumObjectSize::Unknown(value) => write!(f, "{}", value),
+            TransitionDefaultMinimumObjectSize::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

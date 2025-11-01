@@ -261,7 +261,7 @@ impl ::std::fmt::Display for AudioChannelTag {
             AudioChannelTag::Vhc => write!(f, "VHC"),
             AudioChannelTag::Vhl => write!(f, "VHL"),
             AudioChannelTag::Vhr => write!(f, "VHR"),
-            AudioChannelTag::Unknown(value) => write!(f, "{}", value),
+            AudioChannelTag::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

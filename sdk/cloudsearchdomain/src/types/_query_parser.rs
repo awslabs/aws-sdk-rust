@@ -114,7 +114,7 @@ impl ::std::fmt::Display for QueryParser {
             QueryParser::Lucene => write!(f, "lucene"),
             QueryParser::Simple => write!(f, "simple"),
             QueryParser::Structured => write!(f, "structured"),
-            QueryParser::Unknown(value) => write!(f, "{}", value),
+            QueryParser::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

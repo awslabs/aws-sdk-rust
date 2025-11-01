@@ -108,7 +108,7 @@ impl ::std::fmt::Display for KeyStorageSecurityStandard {
             KeyStorageSecurityStandard::CcpcLevel1OrHigher => write!(f, "CCPC_LEVEL_1_OR_HIGHER"),
             KeyStorageSecurityStandard::Fips1402Level2OrHigher => write!(f, "FIPS_140_2_LEVEL_2_OR_HIGHER"),
             KeyStorageSecurityStandard::Fips1402Level3OrHigher => write!(f, "FIPS_140_2_LEVEL_3_OR_HIGHER"),
-            KeyStorageSecurityStandard::Unknown(value) => write!(f, "{}", value),
+            KeyStorageSecurityStandard::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

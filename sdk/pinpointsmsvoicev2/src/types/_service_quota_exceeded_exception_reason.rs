@@ -252,7 +252,7 @@ impl ::std::fmt::Display for ServiceQuotaExceededExceptionReason {
             ServiceQuotaExceededExceptionReason::TagsPerResource => write!(f, "TAGS_PER_RESOURCE"),
             ServiceQuotaExceededExceptionReason::VerificationAttemptsPerDay => write!(f, "VERIFICATION_ATTEMPTS_PER_DAY"),
             ServiceQuotaExceededExceptionReason::VerifiedDestinationNumbersPerAccount => write!(f, "VERIFIED_DESTINATION_NUMBERS_PER_ACCOUNT"),
-            ServiceQuotaExceededExceptionReason::Unknown(value) => write!(f, "{}", value),
+            ServiceQuotaExceededExceptionReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

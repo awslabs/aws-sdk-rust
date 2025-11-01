@@ -114,7 +114,7 @@ impl ::std::fmt::Display for MetadataValueType {
             MetadataValueType::Number => write!(f, "NUMBER"),
             MetadataValueType::String => write!(f, "STRING"),
             MetadataValueType::StringList => write!(f, "STRING_LIST"),
-            MetadataValueType::Unknown(value) => write!(f, "{}", value),
+            MetadataValueType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -96,7 +96,7 @@ impl ::std::fmt::Display for DestinationType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             DestinationType::CloudwatchLogs => write!(f, "cloud-watch-logs"),
-            DestinationType::Unknown(value) => write!(f, "{}", value),
+            DestinationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

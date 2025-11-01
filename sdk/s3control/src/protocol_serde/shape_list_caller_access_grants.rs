@@ -69,8 +69,7 @@ pub fn de_list_caller_access_grants(
     let start_el = decoder.start_el();
     if !start_el.matches("ListCallerAccessGrantsResult") {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "encountered invalid XML root: expected ListCallerAccessGrantsResult but got {:?}. This is likely a bug in the SDK.",
-            start_el
+            "encountered invalid XML root: expected ListCallerAccessGrantsResult but got {start_el:?}. This is likely a bug in the SDK."
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

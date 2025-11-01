@@ -108,7 +108,7 @@ impl ::std::fmt::Display for LastCrawlStatus {
             LastCrawlStatus::Cancelled => write!(f, "CANCELLED"),
             LastCrawlStatus::Failed => write!(f, "FAILED"),
             LastCrawlStatus::Succeeded => write!(f, "SUCCEEDED"),
-            LastCrawlStatus::Unknown(value) => write!(f, "{}", value),
+            LastCrawlStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

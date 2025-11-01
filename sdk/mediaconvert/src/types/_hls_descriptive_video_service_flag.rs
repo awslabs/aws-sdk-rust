@@ -102,7 +102,7 @@ impl ::std::fmt::Display for HlsDescriptiveVideoServiceFlag {
         match self {
             HlsDescriptiveVideoServiceFlag::DontFlag => write!(f, "DONT_FLAG"),
             HlsDescriptiveVideoServiceFlag::Flag => write!(f, "FLAG"),
-            HlsDescriptiveVideoServiceFlag::Unknown(value) => write!(f, "{}", value),
+            HlsDescriptiveVideoServiceFlag::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

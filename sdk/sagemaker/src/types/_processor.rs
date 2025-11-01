@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Processor {
         match self {
             Processor::Cpu => write!(f, "CPU"),
             Processor::Gpu => write!(f, "GPU"),
-            Processor::Unknown(value) => write!(f, "{}", value),
+            Processor::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

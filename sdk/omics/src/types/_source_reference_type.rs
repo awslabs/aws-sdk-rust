@@ -108,7 +108,7 @@ impl ::std::fmt::Display for SourceReferenceType {
             SourceReferenceType::Branch => write!(f, "BRANCH"),
             SourceReferenceType::Commit => write!(f, "COMMIT"),
             SourceReferenceType::Tag => write!(f, "TAG"),
-            SourceReferenceType::Unknown(value) => write!(f, "{}", value),
+            SourceReferenceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

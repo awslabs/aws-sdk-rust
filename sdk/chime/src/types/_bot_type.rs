@@ -96,7 +96,7 @@ impl ::std::fmt::Display for BotType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             BotType::ChatBot => write!(f, "ChatBot"),
-            BotType::Unknown(value) => write!(f, "{}", value),
+            BotType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

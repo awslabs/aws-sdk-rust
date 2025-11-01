@@ -140,7 +140,7 @@ impl ::std::fmt::Display for StringFilterComparison {
             StringFilterComparison::NotEquals => write!(f, "NOT_EQUALS"),
             StringFilterComparison::Prefix => write!(f, "PREFIX"),
             StringFilterComparison::PrefixNotEquals => write!(f, "PREFIX_NOT_EQUALS"),
-            StringFilterComparison::Unknown(value) => write!(f, "{}", value),
+            StringFilterComparison::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

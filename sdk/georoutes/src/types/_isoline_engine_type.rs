@@ -106,7 +106,7 @@ impl ::std::fmt::Display for IsolineEngineType {
             IsolineEngineType::Electric => write!(f, "Electric"),
             IsolineEngineType::InternalCombustion => write!(f, "InternalCombustion"),
             IsolineEngineType::PluginHybrid => write!(f, "PluginHybrid"),
-            IsolineEngineType::Unknown(value) => write!(f, "{}", value),
+            IsolineEngineType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

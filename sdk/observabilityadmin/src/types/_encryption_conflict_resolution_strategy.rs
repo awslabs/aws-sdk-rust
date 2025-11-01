@@ -102,7 +102,7 @@ impl ::std::fmt::Display for EncryptionConflictResolutionStrategy {
         match self {
             EncryptionConflictResolutionStrategy::Allow => write!(f, "ALLOW"),
             EncryptionConflictResolutionStrategy::Skip => write!(f, "SKIP"),
-            EncryptionConflictResolutionStrategy::Unknown(value) => write!(f, "{}", value),
+            EncryptionConflictResolutionStrategy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

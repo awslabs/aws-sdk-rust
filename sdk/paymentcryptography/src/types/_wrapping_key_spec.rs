@@ -102,7 +102,7 @@ impl ::std::fmt::Display for WrappingKeySpec {
         match self {
             WrappingKeySpec::RsaOaepSha256 => write!(f, "RSA_OAEP_SHA_256"),
             WrappingKeySpec::RsaOaepSha512 => write!(f, "RSA_OAEP_SHA_512"),
-            WrappingKeySpec::Unknown(value) => write!(f, "{}", value),
+            WrappingKeySpec::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

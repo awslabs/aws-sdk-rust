@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ArtifactPackaging {
         match self {
             ArtifactPackaging::None => write!(f, "NONE"),
             ArtifactPackaging::Zip => write!(f, "ZIP"),
-            ArtifactPackaging::Unknown(value) => write!(f, "{}", value),
+            ArtifactPackaging::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

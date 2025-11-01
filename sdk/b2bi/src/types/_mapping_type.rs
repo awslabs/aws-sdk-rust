@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MappingType {
         match self {
             MappingType::Jsonata => write!(f, "JSONATA"),
             MappingType::Xslt => write!(f, "XSLT"),
-            MappingType::Unknown(value) => write!(f, "{}", value),
+            MappingType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

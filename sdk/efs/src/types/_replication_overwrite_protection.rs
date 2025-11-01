@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ReplicationOverwriteProtection {
             ReplicationOverwriteProtection::Disabled => write!(f, "DISABLED"),
             ReplicationOverwriteProtection::Enabled => write!(f, "ENABLED"),
             ReplicationOverwriteProtection::Replicating => write!(f, "REPLICATING"),
-            ReplicationOverwriteProtection::Unknown(value) => write!(f, "{}", value),
+            ReplicationOverwriteProtection::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

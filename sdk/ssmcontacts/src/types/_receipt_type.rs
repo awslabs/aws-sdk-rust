@@ -120,7 +120,7 @@ impl ::std::fmt::Display for ReceiptType {
             ReceiptType::Read => write!(f, "READ"),
             ReceiptType::Sent => write!(f, "SENT"),
             ReceiptType::Stop => write!(f, "STOP"),
-            ReceiptType::Unknown(value) => write!(f, "{}", value),
+            ReceiptType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

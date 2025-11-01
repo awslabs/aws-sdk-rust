@@ -108,7 +108,7 @@ impl ::std::fmt::Display for IpamManagementState {
             IpamManagementState::Ignored => write!(f, "ignored"),
             IpamManagementState::Managed => write!(f, "managed"),
             IpamManagementState::Unmanaged => write!(f, "unmanaged"),
-            IpamManagementState::Unknown(value) => write!(f, "{}", value),
+            IpamManagementState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

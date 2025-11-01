@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ConversationStatus {
             ConversationStatus::Closed => write!(f, "CLOSED"),
             ConversationStatus::Processing => write!(f, "PROCESSING"),
             ConversationStatus::Ready => write!(f, "READY"),
-            ConversationStatus::Unknown(value) => write!(f, "{}", value),
+            ConversationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

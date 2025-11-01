@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RctAppliedFor {
         match self {
             RctAppliedFor::PullThroughCache => write!(f, "PULL_THROUGH_CACHE"),
             RctAppliedFor::Replication => write!(f, "REPLICATION"),
-            RctAppliedFor::Unknown(value) => write!(f, "{}", value),
+            RctAppliedFor::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for TargetPlatformAccelerator {
             TargetPlatformAccelerator::Mali => write!(f, "MALI"),
             TargetPlatformAccelerator::Nna => write!(f, "NNA"),
             TargetPlatformAccelerator::Nvidia => write!(f, "NVIDIA"),
-            TargetPlatformAccelerator::Unknown(value) => write!(f, "{}", value),
+            TargetPlatformAccelerator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

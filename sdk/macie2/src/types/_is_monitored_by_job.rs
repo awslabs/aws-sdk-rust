@@ -110,7 +110,7 @@ impl ::std::fmt::Display for IsMonitoredByJob {
             IsMonitoredByJob::False => write!(f, "FALSE"),
             IsMonitoredByJob::True => write!(f, "TRUE"),
             IsMonitoredByJob::UnknownValue => write!(f, "UNKNOWN"),
-            IsMonitoredByJob::Unknown(value) => write!(f, "{}", value),
+            IsMonitoredByJob::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

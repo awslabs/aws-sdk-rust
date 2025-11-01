@@ -102,7 +102,7 @@ impl ::std::fmt::Display for InputDeviceCodec {
         match self {
             InputDeviceCodec::Avc => write!(f, "AVC"),
             InputDeviceCodec::Hevc => write!(f, "HEVC"),
-            InputDeviceCodec::Unknown(value) => write!(f, "{}", value),
+            InputDeviceCodec::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

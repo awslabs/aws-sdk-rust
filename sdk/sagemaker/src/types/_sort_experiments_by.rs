@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SortExperimentsBy {
         match self {
             SortExperimentsBy::CreationTime => write!(f, "CreationTime"),
             SortExperimentsBy::Name => write!(f, "Name"),
-            SortExperimentsBy::Unknown(value) => write!(f, "{}", value),
+            SortExperimentsBy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

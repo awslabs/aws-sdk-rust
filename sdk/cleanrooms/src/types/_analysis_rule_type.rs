@@ -114,7 +114,7 @@ impl ::std::fmt::Display for AnalysisRuleType {
             AnalysisRuleType::Custom => write!(f, "CUSTOM"),
             AnalysisRuleType::IdMappingTable => write!(f, "ID_MAPPING_TABLE"),
             AnalysisRuleType::List => write!(f, "LIST"),
-            AnalysisRuleType::Unknown(value) => write!(f, "{}", value),
+            AnalysisRuleType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

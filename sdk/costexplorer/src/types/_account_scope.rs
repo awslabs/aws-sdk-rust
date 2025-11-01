@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AccountScope {
         match self {
             AccountScope::Linked => write!(f, "LINKED"),
             AccountScope::Payer => write!(f, "PAYER"),
-            AccountScope::Unknown(value) => write!(f, "{}", value),
+            AccountScope::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

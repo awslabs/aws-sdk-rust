@@ -147,7 +147,7 @@ impl ::std::fmt::Display for TableStatus {
             TableStatus::InaccessibleEncryptionCredentials => write!(f, "INACCESSIBLE_ENCRYPTION_CREDENTIALS"),
             TableStatus::ReplicationNotAuthorized => write!(f, "REPLICATION_NOT_AUTHORIZED"),
             TableStatus::Updating => write!(f, "UPDATING"),
-            TableStatus::Unknown(value) => write!(f, "{}", value),
+            TableStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

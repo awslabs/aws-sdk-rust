@@ -120,7 +120,7 @@ impl ::std::fmt::Display for ShipmentCarrier {
             ShipmentCarrier::Expeditors => write!(f, "EXPEDITORS"),
             ShipmentCarrier::Fedex => write!(f, "FEDEX"),
             ShipmentCarrier::Ups => write!(f, "UPS"),
-            ShipmentCarrier::Unknown(value) => write!(f, "{}", value),
+            ShipmentCarrier::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

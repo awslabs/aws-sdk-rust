@@ -51,8 +51,7 @@ pub fn de_get_route_server_routing_database(
     let start_el = decoder.start_el();
     if !(start_el.matches("GetRouteServerRoutingDatabaseResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected GetRouteServerRoutingDatabaseResponse got {:?}",
-            start_el
+            "invalid root, expected GetRouteServerRoutingDatabaseResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

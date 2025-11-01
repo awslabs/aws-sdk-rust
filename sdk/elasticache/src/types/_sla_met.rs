@@ -108,7 +108,7 @@ impl ::std::fmt::Display for SlaMet {
             SlaMet::Na => write!(f, "n/a"),
             SlaMet::No => write!(f, "no"),
             SlaMet::Yes => write!(f, "yes"),
-            SlaMet::Unknown(value) => write!(f, "{}", value),
+            SlaMet::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

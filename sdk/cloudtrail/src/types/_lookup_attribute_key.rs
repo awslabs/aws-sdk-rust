@@ -147,7 +147,7 @@ impl ::std::fmt::Display for LookupAttributeKey {
             LookupAttributeKey::ResourceName => write!(f, "ResourceName"),
             LookupAttributeKey::ResourceType => write!(f, "ResourceType"),
             LookupAttributeKey::Username => write!(f, "Username"),
-            LookupAttributeKey::Unknown(value) => write!(f, "{}", value),
+            LookupAttributeKey::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

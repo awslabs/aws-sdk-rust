@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RecoveryApproach {
         match self {
             RecoveryApproach::ActiveActive => write!(f, "activeActive"),
             RecoveryApproach::ActivePassive => write!(f, "activePassive"),
-            RecoveryApproach::Unknown(value) => write!(f, "{}", value),
+            RecoveryApproach::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

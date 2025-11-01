@@ -217,7 +217,7 @@ impl ::std::fmt::Display for ConnectionErrorCodeType {
             ConnectionErrorCodeType::XksProxyTimedOut => write!(f, "XKS_PROXY_TIMED_OUT"),
             ConnectionErrorCodeType::XksVpcEndpointServiceInvalidConfiguration => write!(f, "XKS_VPC_ENDPOINT_SERVICE_INVALID_CONFIGURATION"),
             ConnectionErrorCodeType::XksVpcEndpointServiceNotFound => write!(f, "XKS_VPC_ENDPOINT_SERVICE_NOT_FOUND"),
-            ConnectionErrorCodeType::Unknown(value) => write!(f, "{}", value),
+            ConnectionErrorCodeType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

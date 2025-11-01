@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RolePermissionType {
         match self {
             RolePermissionType::Direct => write!(f, "DIRECT"),
             RolePermissionType::Inherited => write!(f, "INHERITED"),
-            RolePermissionType::Unknown(value) => write!(f, "{}", value),
+            RolePermissionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

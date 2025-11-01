@@ -120,7 +120,7 @@ impl ::std::fmt::Display for SseStatus {
             SseStatus::Enabled => write!(f, "ENABLED"),
             SseStatus::Enabling => write!(f, "ENABLING"),
             SseStatus::Updating => write!(f, "UPDATING"),
-            SseStatus::Unknown(value) => write!(f, "{}", value),
+            SseStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

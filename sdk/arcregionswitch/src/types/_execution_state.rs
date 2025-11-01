@@ -168,7 +168,7 @@ impl ::std::fmt::Display for ExecutionState {
             ExecutionState::Pending => write!(f, "pending"),
             ExecutionState::PendingManualApproval => write!(f, "pendingManualApproval"),
             ExecutionState::PlanExecutionTimedOut => write!(f, "planExecutionTimedOut"),
-            ExecutionState::Unknown(value) => write!(f, "{}", value),
+            ExecutionState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

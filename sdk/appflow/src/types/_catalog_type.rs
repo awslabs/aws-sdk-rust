@@ -96,7 +96,7 @@ impl ::std::fmt::Display for CatalogType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             CatalogType::Glue => write!(f, "GLUE"),
-            CatalogType::Unknown(value) => write!(f, "{}", value),
+            CatalogType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for TimecodeSource {
             TimecodeSource::Embedded => write!(f, "EMBEDDED"),
             TimecodeSource::Specifiedstart => write!(f, "SPECIFIEDSTART"),
             TimecodeSource::Zerobased => write!(f, "ZEROBASED"),
-            TimecodeSource::Unknown(value) => write!(f, "{}", value),
+            TimecodeSource::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

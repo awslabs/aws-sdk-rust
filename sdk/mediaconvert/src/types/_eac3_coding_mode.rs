@@ -108,7 +108,7 @@ impl ::std::fmt::Display for Eac3CodingMode {
             Eac3CodingMode::CodingMode10 => write!(f, "CODING_MODE_1_0"),
             Eac3CodingMode::CodingMode20 => write!(f, "CODING_MODE_2_0"),
             Eac3CodingMode::CodingMode32 => write!(f, "CODING_MODE_3_2"),
-            Eac3CodingMode::Unknown(value) => write!(f, "{}", value),
+            Eac3CodingMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

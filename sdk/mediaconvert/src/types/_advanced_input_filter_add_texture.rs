@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AdvancedInputFilterAddTexture {
         match self {
             AdvancedInputFilterAddTexture::Disabled => write!(f, "DISABLED"),
             AdvancedInputFilterAddTexture::Enabled => write!(f, "ENABLED"),
-            AdvancedInputFilterAddTexture::Unknown(value) => write!(f, "{}", value),
+            AdvancedInputFilterAddTexture::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

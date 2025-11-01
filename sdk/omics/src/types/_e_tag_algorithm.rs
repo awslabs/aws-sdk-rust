@@ -154,7 +154,7 @@ impl ::std::fmt::Display for ETagAlgorithm {
             ETagAlgorithm::FastqMd5Up => write!(f, "FASTQ_MD5up"),
             ETagAlgorithm::FastqSha256Up => write!(f, "FASTQ_SHA256up"),
             ETagAlgorithm::FastqSha512Up => write!(f, "FASTQ_SHA512up"),
-            ETagAlgorithm::Unknown(value) => write!(f, "{}", value),
+            ETagAlgorithm::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

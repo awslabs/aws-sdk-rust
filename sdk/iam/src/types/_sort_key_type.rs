@@ -119,7 +119,7 @@ impl ::std::fmt::Display for SortKeyType {
             SortKeyType::LastAuthenticatedTimeDescending => write!(f, "LAST_AUTHENTICATED_TIME_DESCENDING"),
             SortKeyType::ServiceNamespaceAscending => write!(f, "SERVICE_NAMESPACE_ASCENDING"),
             SortKeyType::ServiceNamespaceDescending => write!(f, "SERVICE_NAMESPACE_DESCENDING"),
-            SortKeyType::Unknown(value) => write!(f, "{}", value),
+            SortKeyType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

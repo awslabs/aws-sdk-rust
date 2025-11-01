@@ -114,7 +114,7 @@ impl ::std::fmt::Display for SpeechMarkType {
             SpeechMarkType::Ssml => write!(f, "ssml"),
             SpeechMarkType::Viseme => write!(f, "viseme"),
             SpeechMarkType::Word => write!(f, "word"),
-            SpeechMarkType::Unknown(value) => write!(f, "{}", value),
+            SpeechMarkType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

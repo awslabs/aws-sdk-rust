@@ -126,7 +126,7 @@ impl ::std::fmt::Display for ExperimentResultResponseType {
             ExperimentResultResponseType::Mean => write!(f, "Mean"),
             ExperimentResultResponseType::PValue => write!(f, "PValue"),
             ExperimentResultResponseType::TreatmentEffect => write!(f, "TreatmentEffect"),
-            ExperimentResultResponseType::Unknown(value) => write!(f, "{}", value),
+            ExperimentResultResponseType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

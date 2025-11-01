@@ -102,7 +102,7 @@ impl ::std::fmt::Display for IntentFilterOperator {
         match self {
             IntentFilterOperator::Contains => write!(f, "CO"),
             IntentFilterOperator::Equals => write!(f, "EQ"),
-            IntentFilterOperator::Unknown(value) => write!(f, "{}", value),
+            IntentFilterOperator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for CustomMailFromStatus {
             CustomMailFromStatus::Pending => write!(f, "Pending"),
             CustomMailFromStatus::Success => write!(f, "Success"),
             CustomMailFromStatus::TemporaryFailure => write!(f, "TemporaryFailure"),
-            CustomMailFromStatus::Unknown(value) => write!(f, "{}", value),
+            CustomMailFromStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

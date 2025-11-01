@@ -126,7 +126,7 @@ impl ::std::fmt::Display for ProductType {
             ProductType::Marketplace => write!(f, "MARKETPLACE"),
             ProductType::TerraformCloud => write!(f, "TERRAFORM_CLOUD"),
             ProductType::TerraformOpenSource => write!(f, "TERRAFORM_OPEN_SOURCE"),
-            ProductType::Unknown(value) => write!(f, "{}", value),
+            ProductType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ContactType {
             ContactType::Escalation => write!(f, "ESCALATION"),
             ContactType::OncallSchedule => write!(f, "ONCALL_SCHEDULE"),
             ContactType::Personal => write!(f, "PERSONAL"),
-            ContactType::Unknown(value) => write!(f, "{}", value),
+            ContactType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

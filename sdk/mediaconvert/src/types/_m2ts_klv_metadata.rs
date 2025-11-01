@@ -102,7 +102,7 @@ impl ::std::fmt::Display for M2tsKlvMetadata {
         match self {
             M2tsKlvMetadata::None => write!(f, "NONE"),
             M2tsKlvMetadata::Passthrough => write!(f, "PASSTHROUGH"),
-            M2tsKlvMetadata::Unknown(value) => write!(f, "{}", value),
+            M2tsKlvMetadata::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

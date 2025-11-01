@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ClusterAutoScalingStatus {
             ClusterAutoScalingStatus::Deleting => write!(f, "Deleting"),
             ClusterAutoScalingStatus::Failed => write!(f, "Failed"),
             ClusterAutoScalingStatus::Inservice => write!(f, "InService"),
-            ClusterAutoScalingStatus::Unknown(value) => write!(f, "{}", value),
+            ClusterAutoScalingStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

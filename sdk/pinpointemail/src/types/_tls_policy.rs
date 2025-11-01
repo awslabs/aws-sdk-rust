@@ -105,7 +105,7 @@ impl ::std::fmt::Display for TlsPolicy {
         match self {
             TlsPolicy::Optional => write!(f, "OPTIONAL"),
             TlsPolicy::Require => write!(f, "REQUIRE"),
-            TlsPolicy::Unknown(value) => write!(f, "{}", value),
+            TlsPolicy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

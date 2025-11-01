@@ -102,7 +102,7 @@ impl ::std::fmt::Display for M2tsKlv {
         match self {
             M2tsKlv::None => write!(f, "NONE"),
             M2tsKlv::Passthrough => write!(f, "PASSTHROUGH"),
-            M2tsKlv::Unknown(value) => write!(f, "{}", value),
+            M2tsKlv::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

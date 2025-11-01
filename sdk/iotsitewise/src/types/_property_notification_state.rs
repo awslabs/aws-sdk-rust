@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PropertyNotificationState {
         match self {
             PropertyNotificationState::Disabled => write!(f, "DISABLED"),
             PropertyNotificationState::Enabled => write!(f, "ENABLED"),
-            PropertyNotificationState::Unknown(value) => write!(f, "{}", value),
+            PropertyNotificationState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

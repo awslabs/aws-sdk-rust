@@ -161,7 +161,7 @@ impl ::std::fmt::Display for NielsenWatermarkTimezones {
             NielsenWatermarkTimezones::UsPacific => write!(f, "US_PACIFIC"),
             NielsenWatermarkTimezones::UsSamoa => write!(f, "US_SAMOA"),
             NielsenWatermarkTimezones::Utc => write!(f, "UTC"),
-            NielsenWatermarkTimezones::Unknown(value) => write!(f, "{}", value),
+            NielsenWatermarkTimezones::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

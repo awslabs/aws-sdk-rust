@@ -96,7 +96,7 @@ impl ::std::fmt::Display for CommandType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             CommandType::Shell => write!(f, "SHELL"),
-            CommandType::Unknown(value) => write!(f, "{}", value),
+            CommandType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

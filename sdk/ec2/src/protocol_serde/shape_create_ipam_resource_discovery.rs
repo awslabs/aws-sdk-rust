@@ -51,8 +51,7 @@ pub fn de_create_ipam_resource_discovery(
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateIpamResourceDiscoveryResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected CreateIpamResourceDiscoveryResponse got {:?}",
-            start_el
+            "invalid root, expected CreateIpamResourceDiscoveryResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

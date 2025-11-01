@@ -100,7 +100,7 @@ impl ::std::fmt::Display for GuardrailModality {
         match self {
             GuardrailModality::Image => write!(f, "IMAGE"),
             GuardrailModality::Text => write!(f, "TEXT"),
-            GuardrailModality::Unknown(value) => write!(f, "{}", value),
+            GuardrailModality::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

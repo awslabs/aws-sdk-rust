@@ -189,7 +189,7 @@ impl ::std::fmt::Display for TaskTemplateFieldType {
             TaskTemplateFieldType::Text => write!(f, "TEXT"),
             TaskTemplateFieldType::TextArea => write!(f, "TEXT_AREA"),
             TaskTemplateFieldType::Url => write!(f, "URL"),
-            TaskTemplateFieldType::Unknown(value) => write!(f, "{}", value),
+            TaskTemplateFieldType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

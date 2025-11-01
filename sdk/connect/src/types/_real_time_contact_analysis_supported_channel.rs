@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RealTimeContactAnalysisSupportedChannel {
         match self {
             RealTimeContactAnalysisSupportedChannel::Chat => write!(f, "CHAT"),
             RealTimeContactAnalysisSupportedChannel::Voice => write!(f, "VOICE"),
-            RealTimeContactAnalysisSupportedChannel::Unknown(value) => write!(f, "{}", value),
+            RealTimeContactAnalysisSupportedChannel::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

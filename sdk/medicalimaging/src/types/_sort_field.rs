@@ -108,7 +108,7 @@ impl ::std::fmt::Display for SortField {
             SortField::DicomStudyDateAndTime => write!(f, "DICOMStudyDateAndTime"),
             SortField::CreatedAt => write!(f, "createdAt"),
             SortField::UpdatedAt => write!(f, "updatedAt"),
-            SortField::Unknown(value) => write!(f, "{}", value),
+            SortField::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

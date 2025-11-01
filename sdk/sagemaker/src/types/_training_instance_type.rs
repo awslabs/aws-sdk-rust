@@ -1057,7 +1057,7 @@ impl ::std::fmt::Display for TrainingInstanceType {
             TrainingInstanceType::MlTrn132Xlarge => write!(f, "ml.trn1.32xlarge"),
             TrainingInstanceType::MlTrn1N32Xlarge => write!(f, "ml.trn1n.32xlarge"),
             TrainingInstanceType::MlTrn248Xlarge => write!(f, "ml.trn2.48xlarge"),
-            TrainingInstanceType::Unknown(value) => write!(f, "{}", value),
+            TrainingInstanceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -120,7 +120,7 @@ impl ::std::fmt::Display for Risk {
             Risk::None => write!(f, "NONE"),
             Risk::NotApplicable => write!(f, "NOT_APPLICABLE"),
             Risk::Unanswered => write!(f, "UNANSWERED"),
-            Risk::Unknown(value) => write!(f, "{}", value),
+            Risk::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

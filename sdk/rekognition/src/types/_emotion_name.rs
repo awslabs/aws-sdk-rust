@@ -146,7 +146,7 @@ impl ::std::fmt::Display for EmotionName {
             EmotionName::Sad => write!(f, "SAD"),
             EmotionName::Surprised => write!(f, "SURPRISED"),
             EmotionName::UnknownValue => write!(f, "UNKNOWN"),
-            EmotionName::Unknown(value) => write!(f, "{}", value),
+            EmotionName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

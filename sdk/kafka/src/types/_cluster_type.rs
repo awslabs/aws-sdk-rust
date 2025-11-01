@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ClusterType {
         match self {
             ClusterType::Provisioned => write!(f, "PROVISIONED"),
             ClusterType::Serverless => write!(f, "SERVERLESS"),
-            ClusterType::Unknown(value) => write!(f, "{}", value),
+            ClusterType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

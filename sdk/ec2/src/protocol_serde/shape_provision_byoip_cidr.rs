@@ -49,8 +49,7 @@ pub fn de_provision_byoip_cidr(
     let start_el = decoder.start_el();
     if !(start_el.matches("ProvisionByoipCidrResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected ProvisionByoipCidrResponse got {:?}",
-            start_el
+            "invalid root, expected ProvisionByoipCidrResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

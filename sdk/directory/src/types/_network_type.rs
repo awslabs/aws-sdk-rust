@@ -108,7 +108,7 @@ impl ::std::fmt::Display for NetworkType {
             NetworkType::DualStack => write!(f, "Dual-stack"),
             NetworkType::Ipv4Only => write!(f, "IPv4"),
             NetworkType::Ipv6Only => write!(f, "IPv6"),
-            NetworkType::Unknown(value) => write!(f, "{}", value),
+            NetworkType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

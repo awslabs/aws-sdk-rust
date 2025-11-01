@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ThingConnectivityIndexingMode {
         match self {
             ThingConnectivityIndexingMode::Off => write!(f, "OFF"),
             ThingConnectivityIndexingMode::Status => write!(f, "STATUS"),
-            ThingConnectivityIndexingMode::Unknown(value) => write!(f, "{}", value),
+            ThingConnectivityIndexingMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

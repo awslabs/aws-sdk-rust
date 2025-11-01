@@ -108,7 +108,7 @@ impl ::std::fmt::Display for LoadBalancerTypeEnum {
             LoadBalancerTypeEnum::Application => write!(f, "application"),
             LoadBalancerTypeEnum::Gateway => write!(f, "gateway"),
             LoadBalancerTypeEnum::Network => write!(f, "network"),
-            LoadBalancerTypeEnum::Unknown(value) => write!(f, "{}", value),
+            LoadBalancerTypeEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

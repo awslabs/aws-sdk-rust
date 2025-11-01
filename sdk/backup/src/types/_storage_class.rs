@@ -108,7 +108,7 @@ impl ::std::fmt::Display for StorageClass {
             StorageClass::Cold => write!(f, "COLD"),
             StorageClass::Deleted => write!(f, "DELETED"),
             StorageClass::Warm => write!(f, "WARM"),
-            StorageClass::Unknown(value) => write!(f, "{}", value),
+            StorageClass::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

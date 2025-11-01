@@ -259,7 +259,7 @@ impl ::std::fmt::Display for AwsOpportunityStage {
             AwsOpportunityStage::SellerRegistered => write!(f, "Seller Registered"),
             AwsOpportunityStage::TechnicalValidation => write!(f, "Technical Validation"),
             AwsOpportunityStage::TermSheetNegotiation => write!(f, "Term Sheet Negotiation"),
-            AwsOpportunityStage::Unknown(value) => write!(f, "{}", value),
+            AwsOpportunityStage::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

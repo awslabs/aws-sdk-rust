@@ -104,7 +104,7 @@ impl ::std::fmt::Display for AssetBundleExportJobDataSetPropertyToOverride {
         match self {
             AssetBundleExportJobDataSetPropertyToOverride::Name => write!(f, "Name"),
             AssetBundleExportJobDataSetPropertyToOverride::RefreshFailureEmailAlertStatus => write!(f, "RefreshFailureEmailAlertStatus"),
-            AssetBundleExportJobDataSetPropertyToOverride::Unknown(value) => write!(f, "{}", value),
+            AssetBundleExportJobDataSetPropertyToOverride::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

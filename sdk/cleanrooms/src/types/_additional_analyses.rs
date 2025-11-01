@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AdditionalAnalyses {
             AdditionalAnalyses::Allowed => write!(f, "ALLOWED"),
             AdditionalAnalyses::NotAllowed => write!(f, "NOT_ALLOWED"),
             AdditionalAnalyses::Required => write!(f, "REQUIRED"),
-            AdditionalAnalyses::Unknown(value) => write!(f, "{}", value),
+            AdditionalAnalyses::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

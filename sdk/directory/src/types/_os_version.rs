@@ -102,7 +102,7 @@ impl ::std::fmt::Display for OsVersion {
         match self {
             OsVersion::Version2012 => write!(f, "SERVER_2012"),
             OsVersion::Version2019 => write!(f, "SERVER_2019"),
-            OsVersion::Unknown(value) => write!(f, "{}", value),
+            OsVersion::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for XavcSlowPal {
         match self {
             XavcSlowPal::Disabled => write!(f, "DISABLED"),
             XavcSlowPal::Enabled => write!(f, "ENABLED"),
-            XavcSlowPal::Unknown(value) => write!(f, "{}", value),
+            XavcSlowPal::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

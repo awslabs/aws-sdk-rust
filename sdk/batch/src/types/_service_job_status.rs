@@ -147,7 +147,7 @@ impl ::std::fmt::Display for ServiceJobStatus {
             ServiceJobStatus::Starting => write!(f, "STARTING"),
             ServiceJobStatus::Submitted => write!(f, "SUBMITTED"),
             ServiceJobStatus::Succeeded => write!(f, "SUCCEEDED"),
-            ServiceJobStatus::Unknown(value) => write!(f, "{}", value),
+            ServiceJobStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

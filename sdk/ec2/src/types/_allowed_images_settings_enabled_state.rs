@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AllowedImagesSettingsEnabledState {
         match self {
             AllowedImagesSettingsEnabledState::AuditMode => write!(f, "audit-mode"),
             AllowedImagesSettingsEnabledState::Enabled => write!(f, "enabled"),
-            AllowedImagesSettingsEnabledState::Unknown(value) => write!(f, "{}", value),
+            AllowedImagesSettingsEnabledState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

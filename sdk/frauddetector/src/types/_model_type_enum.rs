@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ModelTypeEnum {
             ModelTypeEnum::AccountTakeoverInsights => write!(f, "ACCOUNT_TAKEOVER_INSIGHTS"),
             ModelTypeEnum::OnlineFraudInsights => write!(f, "ONLINE_FRAUD_INSIGHTS"),
             ModelTypeEnum::TransactionFraudInsights => write!(f, "TRANSACTION_FRAUD_INSIGHTS"),
-            ModelTypeEnum::Unknown(value) => write!(f, "{}", value),
+            ModelTypeEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

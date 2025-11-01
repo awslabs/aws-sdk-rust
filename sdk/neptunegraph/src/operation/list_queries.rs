@@ -180,6 +180,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListQueriesR
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::list_queries::ListQueriesInput,
                 output: &mut ::std::string::String,
@@ -257,6 +258,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListQueriesEn
                     .into(),
                 );
             }
+            #[allow(clippy::uninlined_format_args)]
             ::aws_smithy_runtime_api::client::endpoint::EndpointPrefix::new(format!("{graphIdentifier}.", graphIdentifier = graph_identifier))
         }
         .map_err(|err| ::aws_smithy_runtime_api::client::interceptors::error::ContextAttachedError::new("endpoint prefix could not be built", err))?;

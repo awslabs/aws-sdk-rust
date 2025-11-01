@@ -108,7 +108,7 @@ impl ::std::fmt::Display for RouteStatusCode {
             RouteStatusCode::Active => write!(f, "ACTIVE"),
             RouteStatusCode::Deleted => write!(f, "DELETED"),
             RouteStatusCode::Inactive => write!(f, "INACTIVE"),
-            RouteStatusCode::Unknown(value) => write!(f, "{}", value),
+            RouteStatusCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

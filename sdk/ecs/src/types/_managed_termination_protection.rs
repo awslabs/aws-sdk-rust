@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ManagedTerminationProtection {
         match self {
             ManagedTerminationProtection::Disabled => write!(f, "DISABLED"),
             ManagedTerminationProtection::Enabled => write!(f, "ENABLED"),
-            ManagedTerminationProtection::Unknown(value) => write!(f, "{}", value),
+            ManagedTerminationProtection::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

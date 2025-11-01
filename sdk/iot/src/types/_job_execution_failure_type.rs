@@ -114,7 +114,7 @@ impl ::std::fmt::Display for JobExecutionFailureType {
             JobExecutionFailureType::Failed => write!(f, "FAILED"),
             JobExecutionFailureType::Rejected => write!(f, "REJECTED"),
             JobExecutionFailureType::TimedOut => write!(f, "TIMED_OUT"),
-            JobExecutionFailureType::Unknown(value) => write!(f, "{}", value),
+            JobExecutionFailureType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

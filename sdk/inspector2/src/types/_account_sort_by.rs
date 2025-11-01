@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AccountSortBy {
             AccountSortBy::All => write!(f, "ALL"),
             AccountSortBy::Critical => write!(f, "CRITICAL"),
             AccountSortBy::High => write!(f, "HIGH"),
-            AccountSortBy::Unknown(value) => write!(f, "{}", value),
+            AccountSortBy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

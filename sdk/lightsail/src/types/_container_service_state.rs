@@ -132,7 +132,7 @@ impl ::std::fmt::Display for ContainerServiceState {
             ContainerServiceState::Ready => write!(f, "READY"),
             ContainerServiceState::Running => write!(f, "RUNNING"),
             ContainerServiceState::Updating => write!(f, "UPDATING"),
-            ContainerServiceState::Unknown(value) => write!(f, "{}", value),
+            ContainerServiceState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

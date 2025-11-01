@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AccelerationMode {
             AccelerationMode::Disabled => write!(f, "DISABLED"),
             AccelerationMode::Enabled => write!(f, "ENABLED"),
             AccelerationMode::Preferred => write!(f, "PREFERRED"),
-            AccelerationMode::Unknown(value) => write!(f, "{}", value),
+            AccelerationMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

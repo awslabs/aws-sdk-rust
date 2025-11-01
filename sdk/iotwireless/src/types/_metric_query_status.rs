@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MetricQueryStatus {
         match self {
             MetricQueryStatus::Failed => write!(f, "Failed"),
             MetricQueryStatus::Succeeded => write!(f, "Succeeded"),
-            MetricQueryStatus::Unknown(value) => write!(f, "{}", value),
+            MetricQueryStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

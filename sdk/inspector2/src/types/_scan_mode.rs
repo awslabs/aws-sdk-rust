@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ScanMode {
         match self {
             ScanMode::Ec2Agentless => write!(f, "EC2_AGENTLESS"),
             ScanMode::Ec2SsmAgentBased => write!(f, "EC2_SSM_AGENT_BASED"),
-            ScanMode::Unknown(value) => write!(f, "{}", value),
+            ScanMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

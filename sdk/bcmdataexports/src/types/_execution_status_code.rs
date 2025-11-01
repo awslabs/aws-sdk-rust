@@ -140,7 +140,7 @@ impl ::std::fmt::Display for ExecutionStatusCode {
             ExecutionStatusCode::QueryFailure => write!(f, "QUERY_FAILURE"),
             ExecutionStatusCode::QueryInProcess => write!(f, "QUERY_IN_PROCESS"),
             ExecutionStatusCode::QueryQueued => write!(f, "QUERY_QUEUED"),
-            ExecutionStatusCode::Unknown(value) => write!(f, "{}", value),
+            ExecutionStatusCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for VerificationStatus {
         match self {
             VerificationStatus::Pending => write!(f, "PENDING"),
             VerificationStatus::Verified => write!(f, "VERIFIED"),
-            VerificationStatus::Unknown(value) => write!(f, "{}", value),
+            VerificationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

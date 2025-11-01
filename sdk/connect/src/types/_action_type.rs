@@ -154,7 +154,7 @@ impl ::std::fmt::Display for ActionType {
             ActionType::SendNotification => write!(f, "SEND_NOTIFICATION"),
             ActionType::SubmitAutoEvaluation => write!(f, "SUBMIT_AUTO_EVALUATION"),
             ActionType::UpdateCase => write!(f, "UPDATE_CASE"),
-            ActionType::Unknown(value) => write!(f, "{}", value),
+            ActionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

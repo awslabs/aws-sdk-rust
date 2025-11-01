@@ -108,7 +108,7 @@ impl ::std::fmt::Display for WorkspaceConfigurationStatusCode {
             WorkspaceConfigurationStatusCode::Active => write!(f, "ACTIVE"),
             WorkspaceConfigurationStatusCode::UpdateFailed => write!(f, "UPDATE_FAILED"),
             WorkspaceConfigurationStatusCode::Updating => write!(f, "UPDATING"),
-            WorkspaceConfigurationStatusCode::Unknown(value) => write!(f, "{}", value),
+            WorkspaceConfigurationStatusCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -112,7 +112,7 @@ impl ::std::fmt::Display for ExportSourceType {
         match self {
             ExportSourceType::MessageInsights => write!(f, "MESSAGE_INSIGHTS"),
             ExportSourceType::MetricsData => write!(f, "METRICS_DATA"),
-            ExportSourceType::Unknown(value) => write!(f, "{}", value),
+            ExportSourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

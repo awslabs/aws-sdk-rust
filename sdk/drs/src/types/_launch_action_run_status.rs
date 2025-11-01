@@ -108,7 +108,7 @@ impl ::std::fmt::Display for LaunchActionRunStatus {
             LaunchActionRunStatus::Failed => write!(f, "FAILED"),
             LaunchActionRunStatus::InProgress => write!(f, "IN_PROGRESS"),
             LaunchActionRunStatus::Succeeded => write!(f, "SUCCEEDED"),
-            LaunchActionRunStatus::Unknown(value) => write!(f, "{}", value),
+            LaunchActionRunStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

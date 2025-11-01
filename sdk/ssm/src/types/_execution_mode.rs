@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ExecutionMode {
         match self {
             ExecutionMode::Auto => write!(f, "Auto"),
             ExecutionMode::Interactive => write!(f, "Interactive"),
-            ExecutionMode::Unknown(value) => write!(f, "{}", value),
+            ExecutionMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for VpcEncryptionControlMode {
         match self {
             VpcEncryptionControlMode::Enforce => write!(f, "enforce"),
             VpcEncryptionControlMode::Monitor => write!(f, "monitor"),
-            VpcEncryptionControlMode::Unknown(value) => write!(f, "{}", value),
+            VpcEncryptionControlMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

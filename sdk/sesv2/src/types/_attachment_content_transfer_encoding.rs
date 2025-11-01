@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AttachmentContentTransferEncoding {
             AttachmentContentTransferEncoding::Base64 => write!(f, "BASE64"),
             AttachmentContentTransferEncoding::QuotedPrintable => write!(f, "QUOTED_PRINTABLE"),
             AttachmentContentTransferEncoding::SevenBit => write!(f, "SEVEN_BIT"),
-            AttachmentContentTransferEncoding::Unknown(value) => write!(f, "{}", value),
+            AttachmentContentTransferEncoding::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

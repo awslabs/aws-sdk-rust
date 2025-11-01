@@ -126,7 +126,7 @@ impl ::std::fmt::Display for AssociationState {
             AssociationState::AssociationInProgress => write!(f, "ASSOCIATION_IN_PROGRESS"),
             AssociationState::AssociationSucceeded => write!(f, "ASSOCIATION_SUCCEEDED"),
             AssociationState::RefreshTokenExpired => write!(f, "REFRESH_TOKEN_EXPIRED"),
-            AssociationState::Unknown(value) => write!(f, "{}", value),
+            AssociationState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

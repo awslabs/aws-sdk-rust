@@ -154,7 +154,7 @@ impl ::std::fmt::Display for SignalMapStatus {
             SignalMapStatus::UpdateFailed => write!(f, "UPDATE_FAILED"),
             SignalMapStatus::UpdateInProgress => write!(f, "UPDATE_IN_PROGRESS"),
             SignalMapStatus::UpdateReverted => write!(f, "UPDATE_REVERTED"),
-            SignalMapStatus::Unknown(value) => write!(f, "{}", value),
+            SignalMapStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -147,7 +147,7 @@ impl ::std::fmt::Display for TaskExecutionStatus {
             TaskExecutionStatus::Success => write!(f, "SUCCESS"),
             TaskExecutionStatus::Transferring => write!(f, "TRANSFERRING"),
             TaskExecutionStatus::Verifying => write!(f, "VERIFYING"),
-            TaskExecutionStatus::Unknown(value) => write!(f, "{}", value),
+            TaskExecutionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

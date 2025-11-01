@@ -140,7 +140,7 @@ impl ::std::fmt::Display for TargetHealthStateEnum {
             TargetHealthStateEnum::Unhealthy => write!(f, "unhealthy"),
             TargetHealthStateEnum::UnhealthyDraining => write!(f, "unhealthy.draining"),
             TargetHealthStateEnum::Unused => write!(f, "unused"),
-            TargetHealthStateEnum::Unknown(value) => write!(f, "{}", value),
+            TargetHealthStateEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

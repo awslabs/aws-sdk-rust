@@ -96,7 +96,7 @@ impl ::std::fmt::Display for DbNodeMaintenanceType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             DbNodeMaintenanceType::VmdbRebootMigration => write!(f, "VMDB_REBOOT_MIGRATION"),
-            DbNodeMaintenanceType::Unknown(value) => write!(f, "{}", value),
+            DbNodeMaintenanceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

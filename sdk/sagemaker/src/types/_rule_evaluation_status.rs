@@ -126,7 +126,7 @@ impl ::std::fmt::Display for RuleEvaluationStatus {
             RuleEvaluationStatus::NoIssuesFound => write!(f, "NoIssuesFound"),
             RuleEvaluationStatus::Stopped => write!(f, "Stopped"),
             RuleEvaluationStatus::Stopping => write!(f, "Stopping"),
-            RuleEvaluationStatus::Unknown(value) => write!(f, "{}", value),
+            RuleEvaluationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

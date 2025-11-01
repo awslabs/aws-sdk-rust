@@ -20,8 +20,7 @@ pub fn de_inventory_configuration(inp: &[u8]) -> std::result::Result<crate::type
     let start_el = decoder.start_el();
     if !(start_el.matches("InventoryConfiguration")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected InventoryConfiguration got {:?}",
-            start_el
+            "invalid root, expected InventoryConfiguration got {start_el:?}"
         )));
     }
     crate::protocol_serde::shape_inventory_configuration::de_inventory_configuration(&mut decoder)

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for FailureCode {
             FailureCode::InvalidInput => write!(f, "InvalidInput"),
             FailureCode::RequestThrottled => write!(f, "RequestThrottled"),
             FailureCode::UnknownError => write!(f, "UnknownError"),
-            FailureCode::Unknown(value) => write!(f, "{}", value),
+            FailureCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -120,7 +120,7 @@ impl ::std::fmt::Display for AssetState {
             AssetState::Deleting => write!(f, "DELETING"),
             AssetState::Failed => write!(f, "FAILED"),
             AssetState::Updating => write!(f, "UPDATING"),
-            AssetState::Unknown(value) => write!(f, "{}", value),
+            AssetState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

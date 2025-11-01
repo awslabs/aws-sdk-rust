@@ -120,7 +120,7 @@ impl ::std::fmt::Display for SortAssociationsBy {
             SortAssociationsBy::DestinationType => write!(f, "DestinationType"),
             SortAssociationsBy::SourceArn => write!(f, "SourceArn"),
             SortAssociationsBy::SourceType => write!(f, "SourceType"),
-            SortAssociationsBy::Unknown(value) => write!(f, "{}", value),
+            SortAssociationsBy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TrainingType {
         match self {
             TrainingType::Automatic => write!(f, "AUTOMATIC"),
             TrainingType::Manual => write!(f, "MANUAL"),
-            TrainingType::Unknown(value) => write!(f, "{}", value),
+            TrainingType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

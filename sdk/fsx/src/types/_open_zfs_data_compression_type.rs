@@ -108,7 +108,7 @@ impl ::std::fmt::Display for OpenZfsDataCompressionType {
             OpenZfsDataCompressionType::Lz4 => write!(f, "LZ4"),
             OpenZfsDataCompressionType::None => write!(f, "NONE"),
             OpenZfsDataCompressionType::Zstd => write!(f, "ZSTD"),
-            OpenZfsDataCompressionType::Unknown(value) => write!(f, "{}", value),
+            OpenZfsDataCompressionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

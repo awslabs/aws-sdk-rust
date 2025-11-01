@@ -120,7 +120,7 @@ impl ::std::fmt::Display for InputFormat {
             InputFormat::Json => write!(f, "JSON"),
             InputFormat::Orc => write!(f, "ORC"),
             InputFormat::Parquet => write!(f, "PARQUET"),
-            InputFormat::Unknown(value) => write!(f, "{}", value),
+            InputFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

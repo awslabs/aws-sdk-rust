@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ParquetType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ParquetType::Columnar => write!(f, "COLUMNAR"),
-            ParquetType::Unknown(value) => write!(f, "{}", value),
+            ParquetType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

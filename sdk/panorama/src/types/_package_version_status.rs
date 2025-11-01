@@ -114,7 +114,7 @@ impl ::std::fmt::Display for PackageVersionStatus {
             PackageVersionStatus::Failed => write!(f, "FAILED"),
             PackageVersionStatus::RegisterCompleted => write!(f, "REGISTER_COMPLETED"),
             PackageVersionStatus::RegisterPending => write!(f, "REGISTER_PENDING"),
-            PackageVersionStatus::Unknown(value) => write!(f, "{}", value),
+            PackageVersionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

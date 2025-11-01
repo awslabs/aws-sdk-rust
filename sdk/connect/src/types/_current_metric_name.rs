@@ -182,7 +182,7 @@ impl ::std::fmt::Display for CurrentMetricName {
             CurrentMetricName::OldestContactAge => write!(f, "OLDEST_CONTACT_AGE"),
             CurrentMetricName::SlotsActive => write!(f, "SLOTS_ACTIVE"),
             CurrentMetricName::SlotsAvailable => write!(f, "SLOTS_AVAILABLE"),
-            CurrentMetricName::Unknown(value) => write!(f, "{}", value),
+            CurrentMetricName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AppliedLevelEnum {
             AppliedLevelEnum::Account => write!(f, "ACCOUNT"),
             AppliedLevelEnum::All => write!(f, "ALL"),
             AppliedLevelEnum::Resource => write!(f, "RESOURCE"),
-            AppliedLevelEnum::Unknown(value) => write!(f, "{}", value),
+            AppliedLevelEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

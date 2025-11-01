@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TargetDeviceStatus {
         match self {
             TargetDeviceStatus::Archived => write!(f, "ARCHIVED"),
             TargetDeviceStatus::Deregistered => write!(f, "DEREGISTERED"),
-            TargetDeviceStatus::Unknown(value) => write!(f, "{}", value),
+            TargetDeviceStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

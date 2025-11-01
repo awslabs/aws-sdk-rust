@@ -140,7 +140,7 @@ impl ::std::fmt::Display for PredicateType {
             PredicateType::SizeConstraint => write!(f, "SizeConstraint"),
             PredicateType::SqlInjectionMatch => write!(f, "SqlInjectionMatch"),
             PredicateType::XssMatch => write!(f, "XssMatch"),
-            PredicateType::Unknown(value) => write!(f, "{}", value),
+            PredicateType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

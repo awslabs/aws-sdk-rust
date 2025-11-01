@@ -126,7 +126,7 @@ impl ::std::fmt::Display for ProtectedJobStatus {
             ProtectedJobStatus::Started => write!(f, "STARTED"),
             ProtectedJobStatus::Submitted => write!(f, "SUBMITTED"),
             ProtectedJobStatus::Success => write!(f, "SUCCESS"),
-            ProtectedJobStatus::Unknown(value) => write!(f, "{}", value),
+            ProtectedJobStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

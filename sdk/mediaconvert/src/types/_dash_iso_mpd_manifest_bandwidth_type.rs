@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DashIsoMpdManifestBandwidthType {
         match self {
             DashIsoMpdManifestBandwidthType::Average => write!(f, "AVERAGE"),
             DashIsoMpdManifestBandwidthType::Max => write!(f, "MAX"),
-            DashIsoMpdManifestBandwidthType::Unknown(value) => write!(f, "{}", value),
+            DashIsoMpdManifestBandwidthType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

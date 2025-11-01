@@ -126,7 +126,7 @@ impl ::std::fmt::Display for PatchProperty {
             PatchProperty::Product => write!(f, "PRODUCT"),
             PatchProperty::PatchProductFamily => write!(f, "PRODUCT_FAMILY"),
             PatchProperty::PatchSeverity => write!(f, "SEVERITY"),
-            PatchProperty::Unknown(value) => write!(f, "{}", value),
+            PatchProperty::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

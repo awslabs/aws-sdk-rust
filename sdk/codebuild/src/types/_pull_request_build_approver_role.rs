@@ -189,7 +189,7 @@ impl ::std::fmt::Display for PullRequestBuildApproverRole {
             PullRequestBuildApproverRole::GitlabOwner => write!(f, "GITLAB_OWNER"),
             PullRequestBuildApproverRole::GitlabPlanner => write!(f, "GITLAB_PLANNER"),
             PullRequestBuildApproverRole::GitlabReporter => write!(f, "GITLAB_REPORTER"),
-            PullRequestBuildApproverRole::Unknown(value) => write!(f, "{}", value),
+            PullRequestBuildApproverRole::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

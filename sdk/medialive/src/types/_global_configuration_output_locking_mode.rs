@@ -108,7 +108,7 @@ impl ::std::fmt::Display for GlobalConfigurationOutputLockingMode {
             GlobalConfigurationOutputLockingMode::Disabled => write!(f, "DISABLED"),
             GlobalConfigurationOutputLockingMode::EpochLocking => write!(f, "EPOCH_LOCKING"),
             GlobalConfigurationOutputLockingMode::PipelineLocking => write!(f, "PIPELINE_LOCKING"),
-            GlobalConfigurationOutputLockingMode::Unknown(value) => write!(f, "{}", value),
+            GlobalConfigurationOutputLockingMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ProactiveEngagementStatus {
             ProactiveEngagementStatus::Disabled => write!(f, "DISABLED"),
             ProactiveEngagementStatus::Enabled => write!(f, "ENABLED"),
             ProactiveEngagementStatus::Pending => write!(f, "PENDING"),
-            ProactiveEngagementStatus::Unknown(value) => write!(f, "{}", value),
+            ProactiveEngagementStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

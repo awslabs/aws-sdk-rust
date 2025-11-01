@@ -22,8 +22,8 @@ impl crate::operation::get_default_key_replication_regions::builders::GetDefault
 }
 /// Fluent builder constructing a request to `GetDefaultKeyReplicationRegions`.
 ///
-/// <p>Retrieves the list of regions where default key replication is currently enabled for your account.</p>
-/// <p>This operation returns the current configuration of default Replication Regions. New keys created in your account will be automatically replicated to these regions unless explicitly overridden during key creation.</p>
+/// <p>Retrieves the list of Amazon Web Services Regions where <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-multi-region-replication.html">Multi-Region key replication</a> is currently enabled for your Amazon Web Services account.</p>
+/// <p>This operation returns the current Multi-Region key replication configuration. New keys created in your account will be automatically replicated to these regions unless explicitly overridden during key creation.</p>
 /// <p><b>Cross-account use:</b> This operation can't be used across different Amazon Web Services accounts.</p>
 /// <p><b>Related operations:</b></p>
 /// <ul>

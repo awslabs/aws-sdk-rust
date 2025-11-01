@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ProvisionedResourceEngine {
         match self {
             ProvisionedResourceEngine::Cloudformation => write!(f, "CLOUDFORMATION"),
             ProvisionedResourceEngine::Terraform => write!(f, "TERRAFORM"),
-            ProvisionedResourceEngine::Unknown(value) => write!(f, "{}", value),
+            ProvisionedResourceEngine::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

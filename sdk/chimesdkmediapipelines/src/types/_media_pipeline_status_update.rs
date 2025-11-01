@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MediaPipelineStatusUpdate {
         match self {
             MediaPipelineStatusUpdate::Pause => write!(f, "Pause"),
             MediaPipelineStatusUpdate::Resume => write!(f, "Resume"),
-            MediaPipelineStatusUpdate::Unknown(value) => write!(f, "{}", value),
+            MediaPipelineStatusUpdate::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

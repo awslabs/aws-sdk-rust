@@ -108,7 +108,7 @@ impl ::std::fmt::Display for InitializationType {
             InitializationType::Default => write!(f, "default"),
             InitializationType::ProvisionedRate => write!(f, "provisioned-rate"),
             InitializationType::VolumeCopy => write!(f, "volume-copy"),
-            InitializationType::Unknown(value) => write!(f, "{}", value),
+            InitializationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

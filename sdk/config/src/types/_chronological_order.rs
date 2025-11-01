@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ChronologicalOrder {
         match self {
             ChronologicalOrder::Forward => write!(f, "Forward"),
             ChronologicalOrder::Reverse => write!(f, "Reverse"),
-            ChronologicalOrder::Unknown(value) => write!(f, "{}", value),
+            ChronologicalOrder::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

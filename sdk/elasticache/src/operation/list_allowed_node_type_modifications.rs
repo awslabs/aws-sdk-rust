@@ -190,6 +190,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListAllowedN
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::list_allowed_node_type_modifications::ListAllowedNodeTypeModificationsInput,
                 output: &mut ::std::string::String,

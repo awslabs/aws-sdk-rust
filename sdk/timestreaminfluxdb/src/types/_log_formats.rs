@@ -96,7 +96,7 @@ impl ::std::fmt::Display for LogFormats {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             LogFormats::Full => write!(f, "full"),
-            LogFormats::Unknown(value) => write!(f, "{}", value),
+            LogFormats::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

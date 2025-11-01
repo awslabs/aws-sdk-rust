@@ -102,7 +102,7 @@ impl ::std::fmt::Display for UnsuccessfulFaceDeletionReason {
         match self {
             UnsuccessfulFaceDeletionReason::AssociatedToAnExistingUser => write!(f, "ASSOCIATED_TO_AN_EXISTING_USER"),
             UnsuccessfulFaceDeletionReason::FaceNotFound => write!(f, "FACE_NOT_FOUND"),
-            UnsuccessfulFaceDeletionReason::Unknown(value) => write!(f, "{}", value),
+            UnsuccessfulFaceDeletionReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

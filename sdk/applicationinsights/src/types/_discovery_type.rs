@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DiscoveryType {
         match self {
             DiscoveryType::AccountBased => write!(f, "ACCOUNT_BASED"),
             DiscoveryType::ResourceGroupBased => write!(f, "RESOURCE_GROUP_BASED"),
-            DiscoveryType::Unknown(value) => write!(f, "{}", value),
+            DiscoveryType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

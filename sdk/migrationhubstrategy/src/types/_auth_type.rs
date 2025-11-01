@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AuthType {
             AuthType::Cert => write!(f, "CERT"),
             AuthType::Ntlm => write!(f, "NTLM"),
             AuthType::Ssh => write!(f, "SSH"),
-            AuthType::Unknown(value) => write!(f, "{}", value),
+            AuthType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

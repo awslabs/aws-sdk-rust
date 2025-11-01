@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ExecutionRedriveFilter {
         match self {
             ExecutionRedriveFilter::NotRedriven => write!(f, "NOT_REDRIVEN"),
             ExecutionRedriveFilter::Redriven => write!(f, "REDRIVEN"),
-            ExecutionRedriveFilter::Unknown(value) => write!(f, "{}", value),
+            ExecutionRedriveFilter::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

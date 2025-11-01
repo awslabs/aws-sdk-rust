@@ -154,7 +154,7 @@ impl ::std::fmt::Display for BotRecommendationStatus {
             BotRecommendationStatus::Stopped => write!(f, "Stopped"),
             BotRecommendationStatus::Stopping => write!(f, "Stopping"),
             BotRecommendationStatus::Updating => write!(f, "Updating"),
-            BotRecommendationStatus::Unknown(value) => write!(f, "{}", value),
+            BotRecommendationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

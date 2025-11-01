@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Ipv6SupportValue {
         match self {
             Ipv6SupportValue::Disable => write!(f, "disable"),
             Ipv6SupportValue::Enable => write!(f, "enable"),
-            Ipv6SupportValue::Unknown(value) => write!(f, "{}", value),
+            Ipv6SupportValue::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

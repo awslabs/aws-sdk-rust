@@ -133,7 +133,7 @@ impl ::std::fmt::Display for ProvisioningArtifactType {
             ProvisioningArtifactType::MarketplaceCar => write!(f, "MARKETPLACE_CAR"),
             ProvisioningArtifactType::TerraformCloud => write!(f, "TERRAFORM_CLOUD"),
             ProvisioningArtifactType::TerraformOpenSource => write!(f, "TERRAFORM_OPEN_SOURCE"),
-            ProvisioningArtifactType::Unknown(value) => write!(f, "{}", value),
+            ProvisioningArtifactType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

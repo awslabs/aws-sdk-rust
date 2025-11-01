@@ -108,7 +108,7 @@ impl ::std::fmt::Display for VpcBlockPublicAccessState {
             VpcBlockPublicAccessState::DefaultState => write!(f, "default-state"),
             VpcBlockPublicAccessState::UpdateComplete => write!(f, "update-complete"),
             VpcBlockPublicAccessState::UpdateInProgress => write!(f, "update-in-progress"),
-            VpcBlockPublicAccessState::Unknown(value) => write!(f, "{}", value),
+            VpcBlockPublicAccessState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

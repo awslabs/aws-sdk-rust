@@ -140,7 +140,7 @@ impl ::std::fmt::Display for BuildBatchPhaseType {
             BuildBatchPhaseType::Stopped => write!(f, "STOPPED"),
             BuildBatchPhaseType::Submitted => write!(f, "SUBMITTED"),
             BuildBatchPhaseType::Succeeded => write!(f, "SUCCEEDED"),
-            BuildBatchPhaseType::Unknown(value) => write!(f, "{}", value),
+            BuildBatchPhaseType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

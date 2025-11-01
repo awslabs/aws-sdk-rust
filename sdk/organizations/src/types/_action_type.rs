@@ -119,7 +119,7 @@ impl ::std::fmt::Display for ActionType {
             ActionType::ApproveAllFeatures => write!(f, "APPROVE_ALL_FEATURES"),
             ActionType::EnableAllFeatures => write!(f, "ENABLE_ALL_FEATURES"),
             ActionType::InviteAccountToOrganization => write!(f, "INVITE"),
-            ActionType::Unknown(value) => write!(f, "{}", value),
+            ActionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

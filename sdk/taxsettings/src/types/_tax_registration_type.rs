@@ -132,7 +132,7 @@ impl ::std::fmt::Display for TaxRegistrationType {
             TaxRegistrationType::Sst => write!(f, "SST"),
             TaxRegistrationType::Tin => write!(f, "TIN"),
             TaxRegistrationType::Vat => write!(f, "VAT"),
-            TaxRegistrationType::Unknown(value) => write!(f, "{}", value),
+            TaxRegistrationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

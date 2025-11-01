@@ -108,7 +108,7 @@ impl ::std::fmt::Display for DolbyVisionLevel6Mode {
             DolbyVisionLevel6Mode::Passthrough => write!(f, "PASSTHROUGH"),
             DolbyVisionLevel6Mode::Recalculate => write!(f, "RECALCULATE"),
             DolbyVisionLevel6Mode::Specify => write!(f, "SPECIFY"),
-            DolbyVisionLevel6Mode::Unknown(value) => write!(f, "{}", value),
+            DolbyVisionLevel6Mode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

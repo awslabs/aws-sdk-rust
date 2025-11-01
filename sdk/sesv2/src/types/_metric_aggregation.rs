@@ -113,7 +113,7 @@ impl ::std::fmt::Display for MetricAggregation {
         match self {
             MetricAggregation::Rate => write!(f, "RATE"),
             MetricAggregation::Volume => write!(f, "VOLUME"),
-            MetricAggregation::Unknown(value) => write!(f, "{}", value),
+            MetricAggregation::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

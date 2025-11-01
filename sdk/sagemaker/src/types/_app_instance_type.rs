@@ -1232,7 +1232,7 @@ impl ::std::fmt::Display for AppInstanceType {
             AppInstanceType::MlTrn132Xlarge => write!(f, "ml.trn1.32xlarge"),
             AppInstanceType::MlTrn1N32Xlarge => write!(f, "ml.trn1n.32xlarge"),
             AppInstanceType::System => write!(f, "system"),
-            AppInstanceType::Unknown(value) => write!(f, "{}", value),
+            AppInstanceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

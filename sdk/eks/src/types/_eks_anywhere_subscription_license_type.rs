@@ -96,7 +96,7 @@ impl ::std::fmt::Display for EksAnywhereSubscriptionLicenseType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             EksAnywhereSubscriptionLicenseType::Cluster => write!(f, "Cluster"),
-            EksAnywhereSubscriptionLicenseType::Unknown(value) => write!(f, "{}", value),
+            EksAnywhereSubscriptionLicenseType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

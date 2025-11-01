@@ -108,7 +108,7 @@ impl ::std::fmt::Display for MatchOption {
             MatchOption::Contains => write!(f, "CONTAINS"),
             MatchOption::Equals => write!(f, "EQUALS"),
             MatchOption::StartsWith => write!(f, "STARTS_WITH"),
-            MatchOption::Unknown(value) => write!(f, "{}", value),
+            MatchOption::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

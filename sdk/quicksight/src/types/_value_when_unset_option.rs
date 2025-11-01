@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ValueWhenUnsetOption {
         match self {
             ValueWhenUnsetOption::Null => write!(f, "NULL"),
             ValueWhenUnsetOption::RecommendedValue => write!(f, "RECOMMENDED_VALUE"),
-            ValueWhenUnsetOption::Unknown(value) => write!(f, "{}", value),
+            ValueWhenUnsetOption::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

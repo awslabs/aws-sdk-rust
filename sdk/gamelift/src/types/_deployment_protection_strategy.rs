@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DeploymentProtectionStrategy {
         match self {
             DeploymentProtectionStrategy::IgnoreProtection => write!(f, "IGNORE_PROTECTION"),
             DeploymentProtectionStrategy::WithProtection => write!(f, "WITH_PROTECTION"),
-            DeploymentProtectionStrategy::Unknown(value) => write!(f, "{}", value),
+            DeploymentProtectionStrategy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

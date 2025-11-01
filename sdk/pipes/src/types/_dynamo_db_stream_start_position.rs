@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DynamoDbStreamStartPosition {
         match self {
             DynamoDbStreamStartPosition::Latest => write!(f, "LATEST"),
             DynamoDbStreamStartPosition::TrimHorizon => write!(f, "TRIM_HORIZON"),
-            DynamoDbStreamStartPosition::Unknown(value) => write!(f, "{}", value),
+            DynamoDbStreamStartPosition::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

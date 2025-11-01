@@ -96,7 +96,7 @@ impl ::std::fmt::Display for FixedPosition {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             FixedPosition::First => write!(f, "first"),
-            FixedPosition::Unknown(value) => write!(f, "{}", value),
+            FixedPosition::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -497,7 +497,7 @@ impl ::std::fmt::Display for EsPartitionInstanceType {
             EsPartitionInstanceType::T2SmallElasticsearch => write!(f, "t2.small.elasticsearch"),
             EsPartitionInstanceType::Ultrawarm1LargeElasticsearch => write!(f, "ultrawarm1.large.elasticsearch"),
             EsPartitionInstanceType::Ultrawarm1MediumElasticsearch => write!(f, "ultrawarm1.medium.elasticsearch"),
-            EsPartitionInstanceType::Unknown(value) => write!(f, "{}", value),
+            EsPartitionInstanceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

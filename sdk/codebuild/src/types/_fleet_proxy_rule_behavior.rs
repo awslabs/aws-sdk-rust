@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FleetProxyRuleBehavior {
         match self {
             FleetProxyRuleBehavior::AllowAll => write!(f, "ALLOW_ALL"),
             FleetProxyRuleBehavior::DenyAll => write!(f, "DENY_ALL"),
-            FleetProxyRuleBehavior::Unknown(value) => write!(f, "{}", value),
+            FleetProxyRuleBehavior::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CancellationStatus {
         match self {
             CancellationStatus::Cancelled => write!(f, "CANCELLED"),
             CancellationStatus::Cancelling => write!(f, "CANCELLING"),
-            CancellationStatus::Unknown(value) => write!(f, "{}", value),
+            CancellationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

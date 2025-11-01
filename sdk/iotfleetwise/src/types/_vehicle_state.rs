@@ -126,7 +126,7 @@ impl ::std::fmt::Display for VehicleState {
             VehicleState::Ready => write!(f, "READY"),
             VehicleState::ReadyForCheckin => write!(f, "READY_FOR_CHECKIN"),
             VehicleState::Suspended => write!(f, "SUSPENDED"),
-            VehicleState::Unknown(value) => write!(f, "{}", value),
+            VehicleState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

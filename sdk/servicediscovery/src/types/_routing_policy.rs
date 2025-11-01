@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RoutingPolicy {
         match self {
             RoutingPolicy::Multivalue => write!(f, "MULTIVALUE"),
             RoutingPolicy::Weighted => write!(f, "WEIGHTED"),
-            RoutingPolicy::Unknown(value) => write!(f, "{}", value),
+            RoutingPolicy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

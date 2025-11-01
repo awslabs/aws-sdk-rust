@@ -4,6 +4,10 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum CaseRuleDetails {
+    /// <p>Which options are available in a child field based on the selected value in a parent field.</p>
+    FieldOptions(crate::types::FieldOptionsCaseRule),
+    /// <p>Whether a field is visible, based on values in other fields.</p>
+    Hidden(crate::types::HiddenCaseRule),
     /// <p>Required rule type, used to indicate whether a field is required.</p>
     Required(crate::types::RequiredCaseRule),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
@@ -17,7 +21,32 @@ pub enum CaseRuleDetails {
     Unknown,
 }
 impl CaseRuleDetails {
-    #[allow(irrefutable_let_patterns)]
+    /// Tries to convert the enum instance into [`FieldOptions`](crate::types::CaseRuleDetails::FieldOptions), extracting the inner [`FieldOptionsCaseRule`](crate::types::FieldOptionsCaseRule).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_field_options(&self) -> ::std::result::Result<&crate::types::FieldOptionsCaseRule, &Self> {
+        if let CaseRuleDetails::FieldOptions(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`FieldOptions`](crate::types::CaseRuleDetails::FieldOptions).
+    pub fn is_field_options(&self) -> bool {
+        self.as_field_options().is_ok()
+    }
+    /// Tries to convert the enum instance into [`Hidden`](crate::types::CaseRuleDetails::Hidden), extracting the inner [`HiddenCaseRule`](crate::types::HiddenCaseRule).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_hidden(&self) -> ::std::result::Result<&crate::types::HiddenCaseRule, &Self> {
+        if let CaseRuleDetails::Hidden(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`Hidden`](crate::types::CaseRuleDetails::Hidden).
+    pub fn is_hidden(&self) -> bool {
+        self.as_hidden().is_ok()
+    }
     /// Tries to convert the enum instance into [`Required`](crate::types::CaseRuleDetails::Required), extracting the inner [`RequiredCaseRule`](crate::types::RequiredCaseRule).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_required(&self) -> ::std::result::Result<&crate::types::RequiredCaseRule, &Self> {

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ResourceSignalStatus {
         match self {
             ResourceSignalStatus::Failure => write!(f, "FAILURE"),
             ResourceSignalStatus::Success => write!(f, "SUCCESS"),
-            ResourceSignalStatus::Unknown(value) => write!(f, "{}", value),
+            ResourceSignalStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

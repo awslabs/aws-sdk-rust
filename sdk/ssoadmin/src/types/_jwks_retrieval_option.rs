@@ -96,7 +96,7 @@ impl ::std::fmt::Display for JwksRetrievalOption {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             JwksRetrievalOption::OpenIdDiscovery => write!(f, "OPEN_ID_DISCOVERY"),
-            JwksRetrievalOption::Unknown(value) => write!(f, "{}", value),
+            JwksRetrievalOption::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

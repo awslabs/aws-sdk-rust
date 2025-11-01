@@ -108,7 +108,7 @@ impl ::std::fmt::Display for WrappedKeyMaterialFormat {
             WrappedKeyMaterialFormat::KeyCryptogram => write!(f, "KEY_CRYPTOGRAM"),
             WrappedKeyMaterialFormat::Tr31KeyBlock => write!(f, "TR31_KEY_BLOCK"),
             WrappedKeyMaterialFormat::Tr34KeyBlock => write!(f, "TR34_KEY_BLOCK"),
-            WrappedKeyMaterialFormat::Unknown(value) => write!(f, "{}", value),
+            WrappedKeyMaterialFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for MapFilterComparison {
             MapFilterComparison::Equals => write!(f, "EQUALS"),
             MapFilterComparison::NotContains => write!(f, "NOT_CONTAINS"),
             MapFilterComparison::NotEquals => write!(f, "NOT_EQUALS"),
-            MapFilterComparison::Unknown(value) => write!(f, "{}", value),
+            MapFilterComparison::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

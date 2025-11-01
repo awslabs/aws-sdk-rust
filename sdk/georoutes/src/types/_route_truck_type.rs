@@ -106,7 +106,7 @@ impl ::std::fmt::Display for RouteTruckType {
             RouteTruckType::LightTruck => write!(f, "LightTruck"),
             RouteTruckType::StraightTruck => write!(f, "StraightTruck"),
             RouteTruckType::Tractor => write!(f, "Tractor"),
-            RouteTruckType::Unknown(value) => write!(f, "{}", value),
+            RouteTruckType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

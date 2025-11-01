@@ -102,7 +102,7 @@ impl ::std::fmt::Display for M2tsRateMode {
         match self {
             M2tsRateMode::Cbr => write!(f, "CBR"),
             M2tsRateMode::Vbr => write!(f, "VBR"),
-            M2tsRateMode::Unknown(value) => write!(f, "{}", value),
+            M2tsRateMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

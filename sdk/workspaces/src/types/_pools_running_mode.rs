@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PoolsRunningMode {
         match self {
             PoolsRunningMode::AlwaysOn => write!(f, "ALWAYS_ON"),
             PoolsRunningMode::AutoStop => write!(f, "AUTO_STOP"),
-            PoolsRunningMode::Unknown(value) => write!(f, "{}", value),
+            PoolsRunningMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

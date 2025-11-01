@@ -126,7 +126,7 @@ impl ::std::fmt::Display for RouteServerPeerState {
             RouteServerPeerState::Failed => write!(f, "failed"),
             RouteServerPeerState::Failing => write!(f, "failing"),
             RouteServerPeerState::Pending => write!(f, "pending"),
-            RouteServerPeerState::Unknown(value) => write!(f, "{}", value),
+            RouteServerPeerState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

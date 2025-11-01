@@ -102,7 +102,7 @@ impl ::std::fmt::Display for LogDeliveryStatus {
         match self {
             LogDeliveryStatus::Disabled => write!(f, "DISABLED"),
             LogDeliveryStatus::Enabled => write!(f, "ENABLED"),
-            LogDeliveryStatus::Unknown(value) => write!(f, "{}", value),
+            LogDeliveryStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

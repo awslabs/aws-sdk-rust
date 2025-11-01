@@ -175,7 +175,7 @@ impl ::std::fmt::Display for IpamResourceDiscoveryState {
             IpamResourceDiscoveryState::ModifyFailed => write!(f, "modify-failed"),
             IpamResourceDiscoveryState::ModifyInProgress => write!(f, "modify-in-progress"),
             IpamResourceDiscoveryState::RestoreInProgress => write!(f, "restore-in-progress"),
-            IpamResourceDiscoveryState::Unknown(value) => write!(f, "{}", value),
+            IpamResourceDiscoveryState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

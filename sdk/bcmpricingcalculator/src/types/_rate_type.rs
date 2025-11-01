@@ -108,7 +108,7 @@ impl ::std::fmt::Display for RateType {
             RateType::AfterDiscounts => write!(f, "AFTER_DISCOUNTS"),
             RateType::AfterDiscountsAndCommitments => write!(f, "AFTER_DISCOUNTS_AND_COMMITMENTS"),
             RateType::BeforeDiscounts => write!(f, "BEFORE_DISCOUNTS"),
-            RateType::Unknown(value) => write!(f, "{}", value),
+            RateType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

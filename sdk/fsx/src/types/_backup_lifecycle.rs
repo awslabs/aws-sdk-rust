@@ -164,7 +164,7 @@ impl ::std::fmt::Display for BackupLifecycle {
             BackupLifecycle::Failed => write!(f, "FAILED"),
             BackupLifecycle::Pending => write!(f, "PENDING"),
             BackupLifecycle::Transferring => write!(f, "TRANSFERRING"),
-            BackupLifecycle::Unknown(value) => write!(f, "{}", value),
+            BackupLifecycle::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ApplicationProgressStatus {
             ApplicationProgressStatus::Completed => write!(f, "COMPLETED"),
             ApplicationProgressStatus::InProgress => write!(f, "IN_PROGRESS"),
             ApplicationProgressStatus::NotStarted => write!(f, "NOT_STARTED"),
-            ApplicationProgressStatus::Unknown(value) => write!(f, "{}", value),
+            ApplicationProgressStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

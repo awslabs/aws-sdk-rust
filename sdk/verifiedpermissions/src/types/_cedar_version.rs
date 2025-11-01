@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CedarVersion {
         match self {
             CedarVersion::Cedar2 => write!(f, "CEDAR_2"),
             CedarVersion::Cedar4 => write!(f, "CEDAR_4"),
-            CedarVersion::Unknown(value) => write!(f, "{}", value),
+            CedarVersion::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

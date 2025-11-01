@@ -108,7 +108,7 @@ impl ::std::fmt::Display for EngineType {
             EngineType::InfluxdbV2 => write!(f, "INFLUXDB_V2"),
             EngineType::InfluxdbV3Core => write!(f, "INFLUXDB_V3_CORE"),
             EngineType::InfluxdbV3Enterprise => write!(f, "INFLUXDB_V3_ENTERPRISE"),
-            EngineType::Unknown(value) => write!(f, "{}", value),
+            EngineType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

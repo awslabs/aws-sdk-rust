@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ComputeAssetState {
             ComputeAssetState::Active => write!(f, "ACTIVE"),
             ComputeAssetState::Isolated => write!(f, "ISOLATED"),
             ComputeAssetState::Retiring => write!(f, "RETIRING"),
-            ComputeAssetState::Unknown(value) => write!(f, "{}", value),
+            ComputeAssetState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

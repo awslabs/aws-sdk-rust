@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ResourceType {
         match self {
             ResourceType::CfnStack => write!(f, "CFN_STACK"),
             ResourceType::ResourceTagValue => write!(f, "RESOURCE_TAG_VALUE"),
-            ResourceType::Unknown(value) => write!(f, "{}", value),
+            ResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

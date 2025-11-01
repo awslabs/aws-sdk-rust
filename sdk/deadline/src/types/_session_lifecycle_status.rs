@@ -120,7 +120,7 @@ impl ::std::fmt::Display for SessionLifecycleStatus {
             SessionLifecycleStatus::UpdateFailed => write!(f, "UPDATE_FAILED"),
             SessionLifecycleStatus::UpdateInProgress => write!(f, "UPDATE_IN_PROGRESS"),
             SessionLifecycleStatus::UpdateSucceeded => write!(f, "UPDATE_SUCCEEDED"),
-            SessionLifecycleStatus::Unknown(value) => write!(f, "{}", value),
+            SessionLifecycleStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

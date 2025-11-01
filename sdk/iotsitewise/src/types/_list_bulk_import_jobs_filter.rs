@@ -132,7 +132,7 @@ impl ::std::fmt::Display for ListBulkImportJobsFilter {
             ListBulkImportJobsFilter::Failed => write!(f, "FAILED"),
             ListBulkImportJobsFilter::Pending => write!(f, "PENDING"),
             ListBulkImportJobsFilter::Running => write!(f, "RUNNING"),
-            ListBulkImportJobsFilter::Unknown(value) => write!(f, "{}", value),
+            ListBulkImportJobsFilter::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

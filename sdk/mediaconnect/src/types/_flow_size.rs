@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FlowSize {
         match self {
             FlowSize::Large => write!(f, "LARGE"),
             FlowSize::Medium => write!(f, "MEDIUM"),
-            FlowSize::Unknown(value) => write!(f, "{}", value),
+            FlowSize::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

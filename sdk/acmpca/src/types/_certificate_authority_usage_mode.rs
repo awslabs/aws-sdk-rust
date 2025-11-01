@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CertificateAuthorityUsageMode {
         match self {
             CertificateAuthorityUsageMode::GeneralPurpose => write!(f, "GENERAL_PURPOSE"),
             CertificateAuthorityUsageMode::ShortLivedCertificate => write!(f, "SHORT_LIVED_CERTIFICATE"),
-            CertificateAuthorityUsageMode::Unknown(value) => write!(f, "{}", value),
+            CertificateAuthorityUsageMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AdjustmentType {
             AdjustmentType::ChangeInCapacity => write!(f, "CHANGE_IN_CAPACITY"),
             AdjustmentType::ExactCapacity => write!(f, "EXACT_CAPACITY"),
             AdjustmentType::PercentChangeInCapacity => write!(f, "PERCENT_CHANGE_IN_CAPACITY"),
-            AdjustmentType::Unknown(value) => write!(f, "{}", value),
+            AdjustmentType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

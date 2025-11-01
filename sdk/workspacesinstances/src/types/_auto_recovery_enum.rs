@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AutoRecoveryEnum {
         match self {
             AutoRecoveryEnum::Default => write!(f, "default"),
             AutoRecoveryEnum::Disabled => write!(f, "disabled"),
-            AutoRecoveryEnum::Unknown(value) => write!(f, "{}", value),
+            AutoRecoveryEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

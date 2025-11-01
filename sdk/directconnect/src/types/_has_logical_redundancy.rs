@@ -110,7 +110,7 @@ impl ::std::fmt::Display for HasLogicalRedundancy {
             HasLogicalRedundancy::No => write!(f, "no"),
             HasLogicalRedundancy::UnknownValue => write!(f, "unknown"),
             HasLogicalRedundancy::Yes => write!(f, "yes"),
-            HasLogicalRedundancy::Unknown(value) => write!(f, "{}", value),
+            HasLogicalRedundancy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

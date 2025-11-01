@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RoomMembershipRole {
         match self {
             RoomMembershipRole::Administrator => write!(f, "Administrator"),
             RoomMembershipRole::Member => write!(f, "Member"),
-            RoomMembershipRole::Unknown(value) => write!(f, "{}", value),
+            RoomMembershipRole::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -126,7 +126,7 @@ impl ::std::fmt::Display for CampaignState {
             CampaignState::Paused => write!(f, "Paused"),
             CampaignState::Running => write!(f, "Running"),
             CampaignState::Stopped => write!(f, "Stopped"),
-            CampaignState::Unknown(value) => write!(f, "{}", value),
+            CampaignState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

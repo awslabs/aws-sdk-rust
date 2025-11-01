@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FallbackAction {
         match self {
             FallbackAction::Abort => write!(f, "ABORT"),
             FallbackAction::Continue => write!(f, "CONTINUE"),
-            FallbackAction::Unknown(value) => write!(f, "{}", value),
+            FallbackAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

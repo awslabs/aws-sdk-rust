@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ConfiguredAudienceModelStatus {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ConfiguredAudienceModelStatus::Active => write!(f, "ACTIVE"),
-            ConfiguredAudienceModelStatus::Unknown(value) => write!(f, "{}", value),
+            ConfiguredAudienceModelStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -161,7 +161,7 @@ impl ::std::fmt::Display for PipelineStatus {
             PipelineStatus::Stopping => write!(f, "STOPPING"),
             PipelineStatus::UpdateFailed => write!(f, "UPDATE_FAILED"),
             PipelineStatus::Updating => write!(f, "UPDATING"),
-            PipelineStatus::Unknown(value) => write!(f, "{}", value),
+            PipelineStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

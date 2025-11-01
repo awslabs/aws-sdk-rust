@@ -110,7 +110,7 @@ impl ::std::fmt::Display for StreamHealth {
             StreamHealth::StreamHealthy => write!(f, "HEALTHY"),
             StreamHealth::Starving => write!(f, "STARVING"),
             StreamHealth::UnknownValue => write!(f, "UNKNOWN"),
-            StreamHealth::Unknown(value) => write!(f, "{}", value),
+            StreamHealth::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

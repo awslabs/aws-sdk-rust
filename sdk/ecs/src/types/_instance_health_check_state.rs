@@ -114,7 +114,7 @@ impl ::std::fmt::Display for InstanceHealthCheckState {
             InstanceHealthCheckState::Initializing => write!(f, "INITIALIZING"),
             InstanceHealthCheckState::InsufficientData => write!(f, "INSUFFICIENT_DATA"),
             InstanceHealthCheckState::Ok => write!(f, "OK"),
-            InstanceHealthCheckState::Unknown(value) => write!(f, "{}", value),
+            InstanceHealthCheckState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

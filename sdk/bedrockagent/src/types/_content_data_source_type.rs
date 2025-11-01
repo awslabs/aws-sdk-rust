@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ContentDataSourceType {
         match self {
             ContentDataSourceType::Custom => write!(f, "CUSTOM"),
             ContentDataSourceType::S3 => write!(f, "S3"),
-            ContentDataSourceType::Unknown(value) => write!(f, "{}", value),
+            ContentDataSourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ContainerServiceProtocol {
             ContainerServiceProtocol::Https => write!(f, "HTTPS"),
             ContainerServiceProtocol::Tcp => write!(f, "TCP"),
             ContainerServiceProtocol::Udp => write!(f, "UDP"),
-            ContainerServiceProtocol::Unknown(value) => write!(f, "{}", value),
+            ContainerServiceProtocol::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

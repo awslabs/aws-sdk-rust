@@ -20,8 +20,7 @@ pub fn de_monitoring_subscription(inp: &[u8]) -> std::result::Result<crate::type
     let start_el = decoder.start_el();
     if !(start_el.matches("MonitoringSubscription")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected MonitoringSubscription got {:?}",
-            start_el
+            "invalid root, expected MonitoringSubscription got {start_el:?}"
         )));
     }
     crate::protocol_serde::shape_monitoring_subscription::de_monitoring_subscription(&mut decoder)

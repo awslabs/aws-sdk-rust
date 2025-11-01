@@ -114,7 +114,7 @@ impl ::std::fmt::Display for BandwidthReductionPostFilterSharpening {
             BandwidthReductionPostFilterSharpening::Sharpening1 => write!(f, "SHARPENING_1"),
             BandwidthReductionPostFilterSharpening::Sharpening2 => write!(f, "SHARPENING_2"),
             BandwidthReductionPostFilterSharpening::Sharpening3 => write!(f, "SHARPENING_3"),
-            BandwidthReductionPostFilterSharpening::Unknown(value) => write!(f, "{}", value),
+            BandwidthReductionPostFilterSharpening::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

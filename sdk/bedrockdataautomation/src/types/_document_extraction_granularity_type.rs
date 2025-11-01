@@ -120,7 +120,7 @@ impl ::std::fmt::Display for DocumentExtractionGranularityType {
             DocumentExtractionGranularityType::Line => write!(f, "LINE"),
             DocumentExtractionGranularityType::Page => write!(f, "PAGE"),
             DocumentExtractionGranularityType::Word => write!(f, "WORD"),
-            DocumentExtractionGranularityType::Unknown(value) => write!(f, "{}", value),
+            DocumentExtractionGranularityType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

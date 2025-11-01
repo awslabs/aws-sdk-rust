@@ -108,7 +108,7 @@ impl ::std::fmt::Display for MedicalScribeMediaEncoding {
             MedicalScribeMediaEncoding::Flac => write!(f, "flac"),
             MedicalScribeMediaEncoding::OggOpus => write!(f, "ogg-opus"),
             MedicalScribeMediaEncoding::Pcm => write!(f, "pcm"),
-            MedicalScribeMediaEncoding::Unknown(value) => write!(f, "{}", value),
+            MedicalScribeMediaEncoding::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

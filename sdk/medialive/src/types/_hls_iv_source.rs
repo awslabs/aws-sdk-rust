@@ -102,7 +102,7 @@ impl ::std::fmt::Display for HlsIvSource {
         match self {
             HlsIvSource::Explicit => write!(f, "EXPLICIT"),
             HlsIvSource::FollowsSegmentNumber => write!(f, "FOLLOWS_SEGMENT_NUMBER"),
-            HlsIvSource::Unknown(value) => write!(f, "{}", value),
+            HlsIvSource::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

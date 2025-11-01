@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DashboardType {
         match self {
             DashboardType::Custom => write!(f, "CUSTOM"),
             DashboardType::Managed => write!(f, "MANAGED"),
-            DashboardType::Unknown(value) => write!(f, "{}", value),
+            DashboardType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

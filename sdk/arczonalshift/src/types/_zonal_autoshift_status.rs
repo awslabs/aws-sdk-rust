@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ZonalAutoshiftStatus {
         match self {
             ZonalAutoshiftStatus::Disabled => write!(f, "DISABLED"),
             ZonalAutoshiftStatus::Enabled => write!(f, "ENABLED"),
-            ZonalAutoshiftStatus::Unknown(value) => write!(f, "{}", value),
+            ZonalAutoshiftStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

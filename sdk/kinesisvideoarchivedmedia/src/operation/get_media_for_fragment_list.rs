@@ -200,6 +200,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetMediaForF
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::get_media_for_fragment_list::GetMediaForFragmentListInput,
                 output: &mut ::std::string::String,

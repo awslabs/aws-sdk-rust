@@ -110,7 +110,7 @@ impl ::std::fmt::Display for AuthenticateOidcActionConditionalBehaviorEnum {
             AuthenticateOidcActionConditionalBehaviorEnum::Allow => write!(f, "allow"),
             AuthenticateOidcActionConditionalBehaviorEnum::Authenticate => write!(f, "authenticate"),
             AuthenticateOidcActionConditionalBehaviorEnum::Deny => write!(f, "deny"),
-            AuthenticateOidcActionConditionalBehaviorEnum::Unknown(value) => write!(f, "{}", value),
+            AuthenticateOidcActionConditionalBehaviorEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

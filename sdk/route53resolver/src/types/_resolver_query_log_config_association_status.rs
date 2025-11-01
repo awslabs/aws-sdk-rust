@@ -120,7 +120,7 @@ impl ::std::fmt::Display for ResolverQueryLogConfigAssociationStatus {
             ResolverQueryLogConfigAssociationStatus::Creating => write!(f, "CREATING"),
             ResolverQueryLogConfigAssociationStatus::Deleting => write!(f, "DELETING"),
             ResolverQueryLogConfigAssociationStatus::Failed => write!(f, "FAILED"),
-            ResolverQueryLogConfigAssociationStatus::Unknown(value) => write!(f, "{}", value),
+            ResolverQueryLogConfigAssociationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for SpeakerStatus {
             SpeakerStatus::Expired => write!(f, "EXPIRED"),
             SpeakerStatus::OptedOut => write!(f, "OPTED_OUT"),
             SpeakerStatus::Pending => write!(f, "PENDING"),
-            SpeakerStatus::Unknown(value) => write!(f, "{}", value),
+            SpeakerStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

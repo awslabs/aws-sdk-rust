@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ClusterEndpointEncryptionType {
         match self {
             ClusterEndpointEncryptionType::None => write!(f, "NONE"),
             ClusterEndpointEncryptionType::Tls => write!(f, "TLS"),
-            ClusterEndpointEncryptionType::Unknown(value) => write!(f, "{}", value),
+            ClusterEndpointEncryptionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

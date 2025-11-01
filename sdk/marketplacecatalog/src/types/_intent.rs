@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Intent {
         match self {
             Intent::Apply => write!(f, "APPLY"),
             Intent::Validate => write!(f, "VALIDATE"),
-            Intent::Unknown(value) => write!(f, "{}", value),
+            Intent::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

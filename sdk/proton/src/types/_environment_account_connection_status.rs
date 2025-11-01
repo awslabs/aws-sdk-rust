@@ -108,7 +108,7 @@ impl ::std::fmt::Display for EnvironmentAccountConnectionStatus {
             EnvironmentAccountConnectionStatus::Connected => write!(f, "CONNECTED"),
             EnvironmentAccountConnectionStatus::Pending => write!(f, "PENDING"),
             EnvironmentAccountConnectionStatus::Rejected => write!(f, "REJECTED"),
-            EnvironmentAccountConnectionStatus::Unknown(value) => write!(f, "{}", value),
+            EnvironmentAccountConnectionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

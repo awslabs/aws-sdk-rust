@@ -114,7 +114,7 @@ impl ::std::fmt::Display for DurationUnit {
             DurationUnit::Hour => write!(f, "HOUR"),
             DurationUnit::Minute => write!(f, "MINUTE"),
             DurationUnit::Month => write!(f, "MONTH"),
-            DurationUnit::Unknown(value) => write!(f, "{}", value),
+            DurationUnit::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -116,16 +116,14 @@ pub fn de_increase_node_groups_in_global_replication_group(
     let start_el = decoder.start_el();
     if !(start_el.matches("IncreaseNodeGroupsInGlobalReplicationGroupResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected IncreaseNodeGroupsInGlobalReplicationGroupResponse got {:?}",
-            start_el
+            "invalid root, expected IncreaseNodeGroupsInGlobalReplicationGroupResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("IncreaseNodeGroupsInGlobalReplicationGroupResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected IncreaseNodeGroupsInGlobalReplicationGroupResult got {:?}",
-                start_el
+                "invalid result, expected IncreaseNodeGroupsInGlobalReplicationGroupResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

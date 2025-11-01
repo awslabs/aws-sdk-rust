@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ParquetCompression {
             ParquetCompression::Gzip => write!(f, "GZIP"),
             ParquetCompression::Snappy => write!(f, "SNAPPY"),
             ParquetCompression::Uncompressed => write!(f, "UNCOMPRESSED"),
-            ParquetCompression::Unknown(value) => write!(f, "{}", value),
+            ParquetCompression::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

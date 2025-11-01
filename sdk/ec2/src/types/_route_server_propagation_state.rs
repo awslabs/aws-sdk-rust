@@ -108,7 +108,7 @@ impl ::std::fmt::Display for RouteServerPropagationState {
             RouteServerPropagationState::Available => write!(f, "available"),
             RouteServerPropagationState::Deleting => write!(f, "deleting"),
             RouteServerPropagationState::Pending => write!(f, "pending"),
-            RouteServerPropagationState::Unknown(value) => write!(f, "{}", value),
+            RouteServerPropagationState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

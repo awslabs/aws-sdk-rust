@@ -96,7 +96,7 @@ impl ::std::fmt::Display for MetadataGenerationTargetType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             MetadataGenerationTargetType::Asset => write!(f, "ASSET"),
-            MetadataGenerationTargetType::Unknown(value) => write!(f, "{}", value),
+            MetadataGenerationTargetType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

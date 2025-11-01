@@ -114,7 +114,7 @@ impl ::std::fmt::Display for MappingRuleMatchType {
             MappingRuleMatchType::Equals => write!(f, "Equals"),
             MappingRuleMatchType::NotEqual => write!(f, "NotEqual"),
             MappingRuleMatchType::StartsWith => write!(f, "StartsWith"),
-            MappingRuleMatchType::Unknown(value) => write!(f, "{}", value),
+            MappingRuleMatchType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

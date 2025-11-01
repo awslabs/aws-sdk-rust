@@ -120,7 +120,7 @@ impl ::std::fmt::Display for IntegrationType {
             IntegrationType::Http => write!(f, "HTTP"),
             IntegrationType::HttpProxy => write!(f, "HTTP_PROXY"),
             IntegrationType::Mock => write!(f, "MOCK"),
-            IntegrationType::Unknown(value) => write!(f, "{}", value),
+            IntegrationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CollectorStatus {
         match self {
             CollectorStatus::Active => write!(f, "ACTIVE"),
             CollectorStatus::Unregistered => write!(f, "UNREGISTERED"),
-            CollectorStatus::Unknown(value) => write!(f, "{}", value),
+            CollectorStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for SchemaChangeType {
             SchemaChangeType::Add => write!(f, "ADD"),
             SchemaChangeType::Modify => write!(f, "MODIFY"),
             SchemaChangeType::Remove => write!(f, "REMOVE"),
-            SchemaChangeType::Unknown(value) => write!(f, "{}", value),
+            SchemaChangeType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

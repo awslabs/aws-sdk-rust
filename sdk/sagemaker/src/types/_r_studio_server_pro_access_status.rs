@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RStudioServerProAccessStatus {
         match self {
             RStudioServerProAccessStatus::Disabled => write!(f, "DISABLED"),
             RStudioServerProAccessStatus::Enabled => write!(f, "ENABLED"),
-            RStudioServerProAccessStatus::Unknown(value) => write!(f, "{}", value),
+            RStudioServerProAccessStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

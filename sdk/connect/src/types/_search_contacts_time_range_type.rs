@@ -126,7 +126,7 @@ impl ::std::fmt::Display for SearchContactsTimeRangeType {
             SearchContactsTimeRangeType::EnqueueTimestamp => write!(f, "ENQUEUE_TIMESTAMP"),
             SearchContactsTimeRangeType::InitiationTimestamp => write!(f, "INITIATION_TIMESTAMP"),
             SearchContactsTimeRangeType::ScheduledTimestamp => write!(f, "SCHEDULED_TIMESTAMP"),
-            SearchContactsTimeRangeType::Unknown(value) => write!(f, "{}", value),
+            SearchContactsTimeRangeType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

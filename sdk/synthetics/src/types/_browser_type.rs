@@ -102,7 +102,7 @@ impl ::std::fmt::Display for BrowserType {
         match self {
             BrowserType::Chrome => write!(f, "CHROME"),
             BrowserType::Firefox => write!(f, "FIREFOX"),
-            BrowserType::Unknown(value) => write!(f, "{}", value),
+            BrowserType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

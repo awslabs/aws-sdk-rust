@@ -154,7 +154,7 @@ impl ::std::fmt::Display for SourceType {
             SourceType::GitlabSelfManaged => write!(f, "GITLAB_SELF_MANAGED"),
             SourceType::NoSource => write!(f, "NO_SOURCE"),
             SourceType::S3 => write!(f, "S3"),
-            SourceType::Unknown(value) => write!(f, "{}", value),
+            SourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

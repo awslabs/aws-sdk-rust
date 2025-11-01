@@ -120,7 +120,7 @@ impl ::std::fmt::Display for DnsStatus {
             DnsStatus::SuccessfullyUpdated => write!(f, "SUCCESSFULLY_UPDATED"),
             DnsStatus::UpdateRequested => write!(f, "UPDATE_REQUESTED"),
             DnsStatus::Updating => write!(f, "UPDATING"),
-            DnsStatus::Unknown(value) => write!(f, "{}", value),
+            DnsStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

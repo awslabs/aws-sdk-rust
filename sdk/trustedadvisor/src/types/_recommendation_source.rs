@@ -182,7 +182,7 @@ impl ::std::fmt::Display for RecommendationSource {
             RecommendationSource::Stir => write!(f, "stir"),
             RecommendationSource::TaCheck => write!(f, "ta_check"),
             RecommendationSource::WellArchitected => write!(f, "well_architected"),
-            RecommendationSource::Unknown(value) => write!(f, "{}", value),
+            RecommendationSource::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

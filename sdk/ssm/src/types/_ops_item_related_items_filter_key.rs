@@ -108,7 +108,7 @@ impl ::std::fmt::Display for OpsItemRelatedItemsFilterKey {
             OpsItemRelatedItemsFilterKey::AssociationId => write!(f, "AssociationId"),
             OpsItemRelatedItemsFilterKey::ResourceType => write!(f, "ResourceType"),
             OpsItemRelatedItemsFilterKey::ResourceUri => write!(f, "ResourceUri"),
-            OpsItemRelatedItemsFilterKey::Unknown(value) => write!(f, "{}", value),
+            OpsItemRelatedItemsFilterKey::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

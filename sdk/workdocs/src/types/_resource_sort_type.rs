@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ResourceSortType {
         match self {
             ResourceSortType::Date => write!(f, "DATE"),
             ResourceSortType::Name => write!(f, "NAME"),
-            ResourceSortType::Unknown(value) => write!(f, "{}", value),
+            ResourceSortType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

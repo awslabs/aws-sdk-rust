@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AutomatedReasoningPolicyAnnotationStatus {
         match self {
             AutomatedReasoningPolicyAnnotationStatus::Applied => write!(f, "APPLIED"),
             AutomatedReasoningPolicyAnnotationStatus::Failed => write!(f, "FAILED"),
-            AutomatedReasoningPolicyAnnotationStatus::Unknown(value) => write!(f, "{}", value),
+            AutomatedReasoningPolicyAnnotationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -161,7 +161,7 @@ impl ::std::fmt::Display for NetworkInterfaceStatus {
             NetworkInterfaceStatus::DeletionScheduled => write!(f, "DELETION_SCHEDULED"),
             NetworkInterfaceStatus::UpdateFailed => write!(f, "UPDATE_FAILED"),
             NetworkInterfaceStatus::Updating => write!(f, "UPDATING"),
-            NetworkInterfaceStatus::Unknown(value) => write!(f, "{}", value),
+            NetworkInterfaceStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

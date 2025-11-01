@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RotationType {
         match self {
             RotationType::Automatic => write!(f, "AUTOMATIC"),
             RotationType::OnDemand => write!(f, "ON_DEMAND"),
-            RotationType::Unknown(value) => write!(f, "{}", value),
+            RotationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

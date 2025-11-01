@@ -147,7 +147,7 @@ impl ::std::fmt::Display for ByoipCidrState {
             ByoipCidrState::PendingProvision => write!(f, "pending-provision"),
             ByoipCidrState::Provisioned => write!(f, "provisioned"),
             ByoipCidrState::ProvisionedNotPubliclyAdvertisable => write!(f, "provisioned-not-publicly-advertisable"),
-            ByoipCidrState::Unknown(value) => write!(f, "{}", value),
+            ByoipCidrState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

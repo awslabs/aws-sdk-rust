@@ -108,7 +108,7 @@ impl ::std::fmt::Display for InputFormat {
             InputFormat::Csv => write!(f, "CSV"),
             InputFormat::DynamodbJson => write!(f, "DYNAMODB_JSON"),
             InputFormat::Ion => write!(f, "ION"),
-            InputFormat::Unknown(value) => write!(f, "{}", value),
+            InputFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for RevealRequestStatus {
             RevealRequestStatus::Error => write!(f, "ERROR"),
             RevealRequestStatus::Processing => write!(f, "PROCESSING"),
             RevealRequestStatus::Success => write!(f, "SUCCESS"),
-            RevealRequestStatus::Unknown(value) => write!(f, "{}", value),
+            RevealRequestStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

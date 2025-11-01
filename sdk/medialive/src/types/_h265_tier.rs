@@ -102,7 +102,7 @@ impl ::std::fmt::Display for H265Tier {
         match self {
             H265Tier::High => write!(f, "HIGH"),
             H265Tier::Main => write!(f, "MAIN"),
-            H265Tier::Unknown(value) => write!(f, "{}", value),
+            H265Tier::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

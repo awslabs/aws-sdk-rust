@@ -108,7 +108,7 @@ impl ::std::fmt::Display for RegistryAliasStatus {
             RegistryAliasStatus::Active => write!(f, "ACTIVE"),
             RegistryAliasStatus::Pending => write!(f, "PENDING"),
             RegistryAliasStatus::Rejected => write!(f, "REJECTED"),
-            RegistryAliasStatus::Unknown(value) => write!(f, "{}", value),
+            RegistryAliasStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

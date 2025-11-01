@@ -102,7 +102,7 @@ impl ::std::fmt::Display for InputDeviceTransferType {
         match self {
             InputDeviceTransferType::Incoming => write!(f, "INCOMING"),
             InputDeviceTransferType::Outgoing => write!(f, "OUTGOING"),
-            InputDeviceTransferType::Unknown(value) => write!(f, "{}", value),
+            InputDeviceTransferType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

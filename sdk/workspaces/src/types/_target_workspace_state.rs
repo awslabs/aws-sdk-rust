@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TargetWorkspaceState {
         match self {
             TargetWorkspaceState::AdminMaintenance => write!(f, "ADMIN_MAINTENANCE"),
             TargetWorkspaceState::Available => write!(f, "AVAILABLE"),
-            TargetWorkspaceState::Unknown(value) => write!(f, "{}", value),
+            TargetWorkspaceState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

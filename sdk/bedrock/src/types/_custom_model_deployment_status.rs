@@ -108,7 +108,7 @@ impl ::std::fmt::Display for CustomModelDeploymentStatus {
             CustomModelDeploymentStatus::Active => write!(f, "Active"),
             CustomModelDeploymentStatus::Creating => write!(f, "Creating"),
             CustomModelDeploymentStatus::Failed => write!(f, "Failed"),
-            CustomModelDeploymentStatus::Unknown(value) => write!(f, "{}", value),
+            CustomModelDeploymentStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

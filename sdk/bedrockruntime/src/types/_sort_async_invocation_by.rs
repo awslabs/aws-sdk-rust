@@ -96,7 +96,7 @@ impl ::std::fmt::Display for SortAsyncInvocationBy {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             SortAsyncInvocationBy::SubmissionTime => write!(f, "SubmissionTime"),
-            SortAsyncInvocationBy::Unknown(value) => write!(f, "{}", value),
+            SortAsyncInvocationBy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

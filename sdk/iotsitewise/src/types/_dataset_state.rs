@@ -120,7 +120,7 @@ impl ::std::fmt::Display for DatasetState {
             DatasetState::Deleting => write!(f, "DELETING"),
             DatasetState::Failed => write!(f, "FAILED"),
             DatasetState::Updating => write!(f, "UPDATING"),
-            DatasetState::Unknown(value) => write!(f, "{}", value),
+            DatasetState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

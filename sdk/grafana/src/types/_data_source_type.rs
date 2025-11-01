@@ -154,7 +154,7 @@ impl ::std::fmt::Display for DataSourceType {
             DataSourceType::Timestream => write!(f, "TIMESTREAM"),
             DataSourceType::Twinmaker => write!(f, "TWINMAKER"),
             DataSourceType::Xray => write!(f, "XRAY"),
-            DataSourceType::Unknown(value) => write!(f, "{}", value),
+            DataSourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

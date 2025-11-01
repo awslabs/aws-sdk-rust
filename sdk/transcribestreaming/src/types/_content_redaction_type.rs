@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ContentRedactionType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ContentRedactionType::Pii => write!(f, "PII"),
-            ContentRedactionType::Unknown(value) => write!(f, "{}", value),
+            ContentRedactionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

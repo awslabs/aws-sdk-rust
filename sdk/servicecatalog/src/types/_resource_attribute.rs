@@ -126,7 +126,7 @@ impl ::std::fmt::Display for ResourceAttribute {
             ResourceAttribute::Properties => write!(f, "PROPERTIES"),
             ResourceAttribute::Tags => write!(f, "TAGS"),
             ResourceAttribute::Updatepolicy => write!(f, "UPDATEPOLICY"),
-            ResourceAttribute::Unknown(value) => write!(f, "{}", value),
+            ResourceAttribute::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

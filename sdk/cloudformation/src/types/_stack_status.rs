@@ -252,7 +252,7 @@ impl ::std::fmt::Display for StackStatus {
             StackStatus::UpdateRollbackCompleteCleanupInProgress => write!(f, "UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS"),
             StackStatus::UpdateRollbackFailed => write!(f, "UPDATE_ROLLBACK_FAILED"),
             StackStatus::UpdateRollbackInProgress => write!(f, "UPDATE_ROLLBACK_IN_PROGRESS"),
-            StackStatus::Unknown(value) => write!(f, "{}", value),
+            StackStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

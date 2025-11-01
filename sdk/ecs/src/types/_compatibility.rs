@@ -114,7 +114,7 @@ impl ::std::fmt::Display for Compatibility {
             Compatibility::External => write!(f, "EXTERNAL"),
             Compatibility::Fargate => write!(f, "FARGATE"),
             Compatibility::ManagedInstances => write!(f, "MANAGED_INSTANCES"),
-            Compatibility::Unknown(value) => write!(f, "{}", value),
+            Compatibility::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

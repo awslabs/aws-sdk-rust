@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CampaignDeletionPolicy {
         match self {
             CampaignDeletionPolicy::DeleteAll => write!(f, "DELETE_ALL"),
             CampaignDeletionPolicy::RetainAll => write!(f, "RETAIN_ALL"),
-            CampaignDeletionPolicy::Unknown(value) => write!(f, "{}", value),
+            CampaignDeletionPolicy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

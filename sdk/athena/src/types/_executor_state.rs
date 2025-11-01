@@ -126,7 +126,7 @@ impl ::std::fmt::Display for ExecutorState {
             ExecutorState::Registered => write!(f, "REGISTERED"),
             ExecutorState::Terminated => write!(f, "TERMINATED"),
             ExecutorState::Terminating => write!(f, "TERMINATING"),
-            ExecutorState::Unknown(value) => write!(f, "{}", value),
+            ExecutorState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TimeSeriesEntityType {
         match self {
             TimeSeriesEntityType::Asset => write!(f, "ASSET"),
             TimeSeriesEntityType::Listing => write!(f, "LISTING"),
-            TimeSeriesEntityType::Unknown(value) => write!(f, "{}", value),
+            TimeSeriesEntityType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

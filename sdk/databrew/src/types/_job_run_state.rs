@@ -132,7 +132,7 @@ impl ::std::fmt::Display for JobRunState {
             JobRunState::Stopping => write!(f, "STOPPING"),
             JobRunState::Succeeded => write!(f, "SUCCEEDED"),
             JobRunState::Timeout => write!(f, "TIMEOUT"),
-            JobRunState::Unknown(value) => write!(f, "{}", value),
+            JobRunState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for EbsNvmeSupport {
             EbsNvmeSupport::Required => write!(f, "required"),
             EbsNvmeSupport::Supported => write!(f, "supported"),
             EbsNvmeSupport::Unsupported => write!(f, "unsupported"),
-            EbsNvmeSupport::Unknown(value) => write!(f, "{}", value),
+            EbsNvmeSupport::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for QuoteChar {
             QuoteChar::Quillemet => write!(f, "quillemet"),
             QuoteChar::Quote => write!(f, "quote"),
             QuoteChar::SingleQuote => write!(f, "single_quote"),
-            QuoteChar::Unknown(value) => write!(f, "{}", value),
+            QuoteChar::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

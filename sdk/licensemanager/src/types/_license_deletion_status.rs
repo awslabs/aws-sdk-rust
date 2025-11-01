@@ -102,7 +102,7 @@ impl ::std::fmt::Display for LicenseDeletionStatus {
         match self {
             LicenseDeletionStatus::Deleted => write!(f, "DELETED"),
             LicenseDeletionStatus::PendingDelete => write!(f, "PENDING_DELETE"),
-            LicenseDeletionStatus::Unknown(value) => write!(f, "{}", value),
+            LicenseDeletionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

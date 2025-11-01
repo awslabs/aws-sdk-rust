@@ -196,7 +196,7 @@ impl ::std::fmt::Display for AutoMlAlgorithm {
             AutoMlAlgorithm::Prophet => write!(f, "prophet"),
             AutoMlAlgorithm::Randomforest => write!(f, "randomforest"),
             AutoMlAlgorithm::Xgboost => write!(f, "xgboost"),
-            AutoMlAlgorithm::Unknown(value) => write!(f, "{}", value),
+            AutoMlAlgorithm::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

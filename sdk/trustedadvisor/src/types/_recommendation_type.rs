@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RecommendationType {
         match self {
             RecommendationType::Priority => write!(f, "priority"),
             RecommendationType::Standard => write!(f, "standard"),
-            RecommendationType::Unknown(value) => write!(f, "{}", value),
+            RecommendationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

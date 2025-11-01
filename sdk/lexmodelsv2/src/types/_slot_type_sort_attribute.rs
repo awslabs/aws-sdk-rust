@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SlotTypeSortAttribute {
         match self {
             SlotTypeSortAttribute::LastUpdatedDateTime => write!(f, "LastUpdatedDateTime"),
             SlotTypeSortAttribute::SlotTypeName => write!(f, "SlotTypeName"),
-            SlotTypeSortAttribute::Unknown(value) => write!(f, "{}", value),
+            SlotTypeSortAttribute::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for NsdOperationalState {
         match self {
             NsdOperationalState::Disabled => write!(f, "DISABLED"),
             NsdOperationalState::Enabled => write!(f, "ENABLED"),
-            NsdOperationalState::Unknown(value) => write!(f, "{}", value),
+            NsdOperationalState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

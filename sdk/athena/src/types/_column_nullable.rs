@@ -110,7 +110,7 @@ impl ::std::fmt::Display for ColumnNullable {
             ColumnNullable::NotNull => write!(f, "NOT_NULL"),
             ColumnNullable::Nullable => write!(f, "NULLABLE"),
             ColumnNullable::UnknownValue => write!(f, "UNKNOWN"),
-            ColumnNullable::Unknown(value) => write!(f, "{}", value),
+            ColumnNullable::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

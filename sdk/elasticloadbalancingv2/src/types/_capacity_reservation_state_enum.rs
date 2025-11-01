@@ -114,7 +114,7 @@ impl ::std::fmt::Display for CapacityReservationStateEnum {
             CapacityReservationStateEnum::Pending => write!(f, "pending"),
             CapacityReservationStateEnum::Provisioned => write!(f, "provisioned"),
             CapacityReservationStateEnum::Rebalancing => write!(f, "rebalancing"),
-            CapacityReservationStateEnum::Unknown(value) => write!(f, "{}", value),
+            CapacityReservationStateEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

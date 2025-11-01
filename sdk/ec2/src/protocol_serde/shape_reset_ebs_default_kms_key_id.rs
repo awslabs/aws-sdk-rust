@@ -53,8 +53,7 @@ pub fn de_reset_ebs_default_kms_key_id(
     let start_el = decoder.start_el();
     if !(start_el.matches("ResetEbsDefaultKmsKeyIdResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected ResetEbsDefaultKmsKeyIdResponse got {:?}",
-            start_el
+            "invalid root, expected ResetEbsDefaultKmsKeyIdResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

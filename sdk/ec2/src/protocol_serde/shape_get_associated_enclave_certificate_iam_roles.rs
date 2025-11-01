@@ -55,8 +55,7 @@ pub fn de_get_associated_enclave_certificate_iam_roles(
     let start_el = decoder.start_el();
     if !(start_el.matches("GetAssociatedEnclaveCertificateIamRolesResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected GetAssociatedEnclaveCertificateIamRolesResponse got {:?}",
-            start_el
+            "invalid root, expected GetAssociatedEnclaveCertificateIamRolesResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

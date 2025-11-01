@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ImageVersionSortBy {
             ImageVersionSortBy::CreationTime => write!(f, "CREATION_TIME"),
             ImageVersionSortBy::LastModifiedTime => write!(f, "LAST_MODIFIED_TIME"),
             ImageVersionSortBy::Version => write!(f, "VERSION"),
-            ImageVersionSortBy::Unknown(value) => write!(f, "{}", value),
+            ImageVersionSortBy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

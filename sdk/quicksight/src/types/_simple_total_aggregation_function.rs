@@ -126,7 +126,7 @@ impl ::std::fmt::Display for SimpleTotalAggregationFunction {
             SimpleTotalAggregationFunction::Min => write!(f, "MIN"),
             SimpleTotalAggregationFunction::None => write!(f, "NONE"),
             SimpleTotalAggregationFunction::Sum => write!(f, "SUM"),
-            SimpleTotalAggregationFunction::Unknown(value) => write!(f, "{}", value),
+            SimpleTotalAggregationFunction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

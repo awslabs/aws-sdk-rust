@@ -114,7 +114,7 @@ impl ::std::fmt::Display for AuditFindingSeverity {
             AuditFindingSeverity::High => write!(f, "HIGH"),
             AuditFindingSeverity::Low => write!(f, "LOW"),
             AuditFindingSeverity::Medium => write!(f, "MEDIUM"),
-            AuditFindingSeverity::Unknown(value) => write!(f, "{}", value),
+            AuditFindingSeverity::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

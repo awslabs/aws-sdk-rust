@@ -119,7 +119,7 @@ impl ::std::fmt::Display for SimpleCriterionKeyForJob {
             SimpleCriterionKeyForJob::S3BucketEffectivePermission => write!(f, "S3_BUCKET_EFFECTIVE_PERMISSION"),
             SimpleCriterionKeyForJob::S3BucketName => write!(f, "S3_BUCKET_NAME"),
             SimpleCriterionKeyForJob::S3BucketSharedAccess => write!(f, "S3_BUCKET_SHARED_ACCESS"),
-            SimpleCriterionKeyForJob::Unknown(value) => write!(f, "{}", value),
+            SimpleCriterionKeyForJob::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

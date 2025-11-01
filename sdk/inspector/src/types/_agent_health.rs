@@ -110,7 +110,7 @@ impl ::std::fmt::Display for AgentHealth {
             AgentHealth::Healthy => write!(f, "HEALTHY"),
             AgentHealth::Unhealthy => write!(f, "UNHEALTHY"),
             AgentHealth::UnknownValue => write!(f, "UNKNOWN"),
-            AgentHealth::Unknown(value) => write!(f, "{}", value),
+            AgentHealth::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

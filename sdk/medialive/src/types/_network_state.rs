@@ -154,7 +154,7 @@ impl ::std::fmt::Display for NetworkState {
             NetworkState::Idle => write!(f, "IDLE"),
             NetworkState::InUse => write!(f, "IN_USE"),
             NetworkState::Updating => write!(f, "UPDATING"),
-            NetworkState::Unknown(value) => write!(f, "{}", value),
+            NetworkState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

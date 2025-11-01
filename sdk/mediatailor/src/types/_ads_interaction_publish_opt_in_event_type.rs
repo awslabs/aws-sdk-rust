@@ -96,7 +96,7 @@ impl ::std::fmt::Display for AdsInteractionPublishOptInEventType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             AdsInteractionPublishOptInEventType::RawAdsResponse => write!(f, "RAW_ADS_RESPONSE"),
-            AdsInteractionPublishOptInEventType::Unknown(value) => write!(f, "{}", value),
+            AdsInteractionPublishOptInEventType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -122,7 +122,7 @@ impl ::std::fmt::Display for WriteForwardingStatus {
             WriteForwardingStatus::Enabled => write!(f, "enabled"),
             WriteForwardingStatus::Enabling => write!(f, "enabling"),
             WriteForwardingStatus::UnknownValue => write!(f, "unknown"),
-            WriteForwardingStatus::Unknown(value) => write!(f, "{}", value),
+            WriteForwardingStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

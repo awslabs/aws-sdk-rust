@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ResourceGatewayIpAddressType {
             ResourceGatewayIpAddressType::Dualstack => write!(f, "DUALSTACK"),
             ResourceGatewayIpAddressType::Ipv4 => write!(f, "IPV4"),
             ResourceGatewayIpAddressType::Ipv6 => write!(f, "IPV6"),
-            ResourceGatewayIpAddressType::Unknown(value) => write!(f, "{}", value),
+            ResourceGatewayIpAddressType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

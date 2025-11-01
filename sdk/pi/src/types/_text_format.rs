@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TextFormat {
         match self {
             TextFormat::Markdown => write!(f, "MARKDOWN"),
             TextFormat::PlainText => write!(f, "PLAIN_TEXT"),
-            TextFormat::Unknown(value) => write!(f, "{}", value),
+            TextFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

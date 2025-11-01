@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SoftwareSetUpdateMode {
         match self {
             SoftwareSetUpdateMode::UseDesired => write!(f, "USE_DESIRED"),
             SoftwareSetUpdateMode::UseLatest => write!(f, "USE_LATEST"),
-            SoftwareSetUpdateMode::Unknown(value) => write!(f, "{}", value),
+            SoftwareSetUpdateMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

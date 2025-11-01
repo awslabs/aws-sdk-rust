@@ -120,7 +120,7 @@ impl ::std::fmt::Display for ConnectorState {
             ConnectorState::Failed => write!(f, "FAILED"),
             ConnectorState::Running => write!(f, "RUNNING"),
             ConnectorState::Updating => write!(f, "UPDATING"),
-            ConnectorState::Unknown(value) => write!(f, "{}", value),
+            ConnectorState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

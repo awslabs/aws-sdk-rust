@@ -104,7 +104,7 @@ impl ::std::fmt::Display for DashIsoGroupAudioChannelConfigSchemeIdUri {
         match self {
             DashIsoGroupAudioChannelConfigSchemeIdUri::DolbyChannelConfiguration => write!(f, "DOLBY_CHANNEL_CONFIGURATION"),
             DashIsoGroupAudioChannelConfigSchemeIdUri::MpegChannelConfiguration => write!(f, "MPEG_CHANNEL_CONFIGURATION"),
-            DashIsoGroupAudioChannelConfigSchemeIdUri::Unknown(value) => write!(f, "{}", value),
+            DashIsoGroupAudioChannelConfigSchemeIdUri::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

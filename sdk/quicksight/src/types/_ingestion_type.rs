@@ -102,7 +102,7 @@ impl ::std::fmt::Display for IngestionType {
         match self {
             IngestionType::FullRefresh => write!(f, "FULL_REFRESH"),
             IngestionType::IncrementalRefresh => write!(f, "INCREMENTAL_REFRESH"),
-            IngestionType::Unknown(value) => write!(f, "{}", value),
+            IngestionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

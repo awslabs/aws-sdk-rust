@@ -120,7 +120,7 @@ impl ::std::fmt::Display for DashboardStatus {
             DashboardStatus::Deleting => write!(f, "DELETING"),
             DashboardStatus::Updated => write!(f, "UPDATED"),
             DashboardStatus::Updating => write!(f, "UPDATING"),
-            DashboardStatus::Unknown(value) => write!(f, "{}", value),
+            DashboardStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

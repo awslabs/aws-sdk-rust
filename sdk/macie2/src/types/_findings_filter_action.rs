@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FindingsFilterAction {
         match self {
             FindingsFilterAction::Archive => write!(f, "ARCHIVE"),
             FindingsFilterAction::Noop => write!(f, "NOOP"),
-            FindingsFilterAction::Unknown(value) => write!(f, "{}", value),
+            FindingsFilterAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

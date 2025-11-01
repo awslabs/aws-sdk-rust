@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MessageFeedbackStatus {
         match self {
             MessageFeedbackStatus::Failed => write!(f, "FAILED"),
             MessageFeedbackStatus::Received => write!(f, "RECEIVED"),
-            MessageFeedbackStatus::Unknown(value) => write!(f, "{}", value),
+            MessageFeedbackStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

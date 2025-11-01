@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ResourceManagedType {
             ResourceManagedType::ActiveThreatDefense => write!(f, "ACTIVE_THREAT_DEFENSE"),
             ResourceManagedType::AwsManagedDomainLists => write!(f, "AWS_MANAGED_DOMAIN_LISTS"),
             ResourceManagedType::AwsManagedThreatSignatures => write!(f, "AWS_MANAGED_THREAT_SIGNATURES"),
-            ResourceManagedType::Unknown(value) => write!(f, "{}", value),
+            ResourceManagedType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

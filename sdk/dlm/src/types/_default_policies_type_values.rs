@@ -108,7 +108,7 @@ impl ::std::fmt::Display for DefaultPoliciesTypeValues {
             DefaultPoliciesTypeValues::All => write!(f, "ALL"),
             DefaultPoliciesTypeValues::Instance => write!(f, "INSTANCE"),
             DefaultPoliciesTypeValues::Volume => write!(f, "VOLUME"),
-            DefaultPoliciesTypeValues::Unknown(value) => write!(f, "{}", value),
+            DefaultPoliciesTypeValues::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

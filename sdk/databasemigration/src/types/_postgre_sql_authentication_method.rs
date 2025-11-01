@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PostgreSqlAuthenticationMethod {
         match self {
             PostgreSqlAuthenticationMethod::Iam => write!(f, "iam"),
             PostgreSqlAuthenticationMethod::Password => write!(f, "password"),
-            PostgreSqlAuthenticationMethod::Unknown(value) => write!(f, "{}", value),
+            PostgreSqlAuthenticationMethod::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

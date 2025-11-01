@@ -120,7 +120,7 @@ impl ::std::fmt::Display for DialogActionType {
             DialogActionType::Delegate => write!(f, "Delegate"),
             DialogActionType::ElicitIntent => write!(f, "ElicitIntent"),
             DialogActionType::ElicitSlot => write!(f, "ElicitSlot"),
-            DialogActionType::Unknown(value) => write!(f, "{}", value),
+            DialogActionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

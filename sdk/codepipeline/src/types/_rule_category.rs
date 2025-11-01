@@ -96,7 +96,7 @@ impl ::std::fmt::Display for RuleCategory {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             RuleCategory::Rule => write!(f, "Rule"),
-            RuleCategory::Unknown(value) => write!(f, "{}", value),
+            RuleCategory::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

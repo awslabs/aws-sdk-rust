@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DashboardsQaStatus {
         match self {
             DashboardsQaStatus::Disabled => write!(f, "DISABLED"),
             DashboardsQaStatus::Enabled => write!(f, "ENABLED"),
-            DashboardsQaStatus::Unknown(value) => write!(f, "{}", value),
+            DashboardsQaStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

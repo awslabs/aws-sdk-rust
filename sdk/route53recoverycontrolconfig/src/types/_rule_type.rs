@@ -108,7 +108,7 @@ impl ::std::fmt::Display for RuleType {
             RuleType::And => write!(f, "AND"),
             RuleType::Atleast => write!(f, "ATLEAST"),
             RuleType::Or => write!(f, "OR"),
-            RuleType::Unknown(value) => write!(f, "{}", value),
+            RuleType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

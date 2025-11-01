@@ -190,6 +190,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetGlueIdent
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::get_glue_identity_center_configuration::GetGlueIdentityCenterConfigurationInput,
                 output: &mut ::std::string::String,

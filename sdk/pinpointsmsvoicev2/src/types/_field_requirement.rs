@@ -108,7 +108,7 @@ impl ::std::fmt::Display for FieldRequirement {
             FieldRequirement::Conditional => write!(f, "CONDITIONAL"),
             FieldRequirement::Optional => write!(f, "OPTIONAL"),
             FieldRequirement::Required => write!(f, "REQUIRED"),
-            FieldRequirement::Unknown(value) => write!(f, "{}", value),
+            FieldRequirement::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

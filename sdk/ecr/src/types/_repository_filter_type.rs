@@ -96,7 +96,7 @@ impl ::std::fmt::Display for RepositoryFilterType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             RepositoryFilterType::PrefixMatch => write!(f, "PREFIX_MATCH"),
-            RepositoryFilterType::Unknown(value) => write!(f, "{}", value),
+            RepositoryFilterType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

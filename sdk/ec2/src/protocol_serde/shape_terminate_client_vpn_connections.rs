@@ -51,8 +51,7 @@ pub fn de_terminate_client_vpn_connections(
     let start_el = decoder.start_el();
     if !(start_el.matches("TerminateClientVpnConnectionsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected TerminateClientVpnConnectionsResponse got {:?}",
-            start_el
+            "invalid root, expected TerminateClientVpnConnectionsResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for AttributeDataType {
             AttributeDataType::Datetime => write!(f, "DateTime"),
             AttributeDataType::Number => write!(f, "Number"),
             AttributeDataType::String => write!(f, "String"),
-            AttributeDataType::Unknown(value) => write!(f, "{}", value),
+            AttributeDataType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

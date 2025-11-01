@@ -42,8 +42,7 @@ pub fn de_get_console_output(
     let start_el = decoder.start_el();
     if !(start_el.matches("GetConsoleOutputResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected GetConsoleOutputResponse got {:?}",
-            start_el
+            "invalid root, expected GetConsoleOutputResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

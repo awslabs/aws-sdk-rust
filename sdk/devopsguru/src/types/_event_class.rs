@@ -120,7 +120,7 @@ impl ::std::fmt::Display for EventClass {
             EventClass::Infrastructure => write!(f, "INFRASTRUCTURE"),
             EventClass::SchemaChange => write!(f, "SCHEMA_CHANGE"),
             EventClass::SecurityChange => write!(f, "SECURITY_CHANGE"),
-            EventClass::Unknown(value) => write!(f, "{}", value),
+            EventClass::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

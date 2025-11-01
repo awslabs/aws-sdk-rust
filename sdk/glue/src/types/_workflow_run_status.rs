@@ -120,7 +120,7 @@ impl ::std::fmt::Display for WorkflowRunStatus {
             WorkflowRunStatus::Running => write!(f, "RUNNING"),
             WorkflowRunStatus::Stopped => write!(f, "STOPPED"),
             WorkflowRunStatus::Stopping => write!(f, "STOPPING"),
-            WorkflowRunStatus::Unknown(value) => write!(f, "{}", value),
+            WorkflowRunStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ResaleAuthorizationStatusString {
             ResaleAuthorizationStatusString::Active => write!(f, "Active"),
             ResaleAuthorizationStatusString::Draft => write!(f, "Draft"),
             ResaleAuthorizationStatusString::Restricted => write!(f, "Restricted"),
-            ResaleAuthorizationStatusString::Unknown(value) => write!(f, "{}", value),
+            ResaleAuthorizationStatusString::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

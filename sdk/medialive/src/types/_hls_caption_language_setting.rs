@@ -108,7 +108,7 @@ impl ::std::fmt::Display for HlsCaptionLanguageSetting {
             HlsCaptionLanguageSetting::Insert => write!(f, "INSERT"),
             HlsCaptionLanguageSetting::None => write!(f, "NONE"),
             HlsCaptionLanguageSetting::Omit => write!(f, "OMIT"),
-            HlsCaptionLanguageSetting::Unknown(value) => write!(f, "{}", value),
+            HlsCaptionLanguageSetting::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

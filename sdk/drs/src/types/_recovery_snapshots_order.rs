@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RecoverySnapshotsOrder {
         match self {
             RecoverySnapshotsOrder::Asc => write!(f, "ASC"),
             RecoverySnapshotsOrder::Desc => write!(f, "DESC"),
-            RecoverySnapshotsOrder::Unknown(value) => write!(f, "{}", value),
+            RecoverySnapshotsOrder::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

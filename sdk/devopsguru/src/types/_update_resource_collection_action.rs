@@ -102,7 +102,7 @@ impl ::std::fmt::Display for UpdateResourceCollectionAction {
         match self {
             UpdateResourceCollectionAction::Add => write!(f, "ADD"),
             UpdateResourceCollectionAction::Remove => write!(f, "REMOVE"),
-            UpdateResourceCollectionAction::Unknown(value) => write!(f, "{}", value),
+            UpdateResourceCollectionAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

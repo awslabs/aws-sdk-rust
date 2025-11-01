@@ -132,7 +132,7 @@ impl ::std::fmt::Display for PipelineExecutionStatus {
             PipelineExecutionStatus::Stopping => write!(f, "Stopping"),
             PipelineExecutionStatus::Succeeded => write!(f, "Succeeded"),
             PipelineExecutionStatus::Superseded => write!(f, "Superseded"),
-            PipelineExecutionStatus::Unknown(value) => write!(f, "{}", value),
+            PipelineExecutionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

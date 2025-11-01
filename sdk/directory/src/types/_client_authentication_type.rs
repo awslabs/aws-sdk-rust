@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ClientAuthenticationType {
         match self {
             ClientAuthenticationType::SmartCard => write!(f, "SmartCard"),
             ClientAuthenticationType::SmartCardOrPassword => write!(f, "SmartCardOrPassword"),
-            ClientAuthenticationType::Unknown(value) => write!(f, "{}", value),
+            ClientAuthenticationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

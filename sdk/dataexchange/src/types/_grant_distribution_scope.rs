@@ -102,7 +102,7 @@ impl ::std::fmt::Display for GrantDistributionScope {
         match self {
             GrantDistributionScope::AwsOrganization => write!(f, "AWS_ORGANIZATION"),
             GrantDistributionScope::None => write!(f, "NONE"),
-            GrantDistributionScope::Unknown(value) => write!(f, "{}", value),
+            GrantDistributionScope::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

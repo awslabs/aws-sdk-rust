@@ -108,7 +108,7 @@ impl ::std::fmt::Display for PlacementGroupStrategy {
             PlacementGroupStrategy::Cluster => write!(f, "cluster"),
             PlacementGroupStrategy::Partition => write!(f, "partition"),
             PlacementGroupStrategy::Spread => write!(f, "spread"),
-            PlacementGroupStrategy::Unknown(value) => write!(f, "{}", value),
+            PlacementGroupStrategy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

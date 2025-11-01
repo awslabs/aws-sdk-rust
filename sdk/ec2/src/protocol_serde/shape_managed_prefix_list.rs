@@ -139,6 +139,34 @@ pub fn de_managed_prefix_list(
                 builder = builder.set_owner_id(var_10);
             }
             ,
+            s if s.matches("ipamPrefixListResolverTargetId") /* IpamPrefixListResolverTargetId com.amazonaws.ec2#ManagedPrefixList$IpamPrefixListResolverTargetId */ =>  {
+                let var_11 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_ipam_prefix_list_resolver_target_id(var_11);
+            }
+            ,
+            s if s.matches("ipamPrefixListResolverSyncEnabled") /* IpamPrefixListResolverSyncEnabled com.amazonaws.ec2#ManagedPrefixList$IpamPrefixListResolverSyncEnabled */ =>  {
+                let var_12 =
+                    Some(
+                         {
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_ipam_prefix_list_resolver_sync_enabled(var_12);
+            }
+            ,
             _ => {}
         }
     }

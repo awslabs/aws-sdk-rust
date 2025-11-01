@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MajorKeyDerivationMode {
         match self {
             MajorKeyDerivationMode::EmvOptionA => write!(f, "EMV_OPTION_A"),
             MajorKeyDerivationMode::EmvOptionB => write!(f, "EMV_OPTION_B"),
-            MajorKeyDerivationMode::Unknown(value) => write!(f, "{}", value),
+            MajorKeyDerivationMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

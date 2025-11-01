@@ -120,7 +120,7 @@ impl ::std::fmt::Display for EvaluationTaskType {
             EvaluationTaskType::Generation => write!(f, "Generation"),
             EvaluationTaskType::QuestionAndAnswer => write!(f, "QuestionAndAnswer"),
             EvaluationTaskType::Summarization => write!(f, "Summarization"),
-            EvaluationTaskType::Unknown(value) => write!(f, "{}", value),
+            EvaluationTaskType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

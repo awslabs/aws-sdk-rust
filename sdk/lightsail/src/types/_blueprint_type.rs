@@ -102,7 +102,7 @@ impl ::std::fmt::Display for BlueprintType {
         match self {
             BlueprintType::App => write!(f, "app"),
             BlueprintType::Os => write!(f, "os"),
-            BlueprintType::Unknown(value) => write!(f, "{}", value),
+            BlueprintType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

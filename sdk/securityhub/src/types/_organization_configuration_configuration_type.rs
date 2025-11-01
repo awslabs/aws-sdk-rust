@@ -104,7 +104,7 @@ impl ::std::fmt::Display for OrganizationConfigurationConfigurationType {
         match self {
             OrganizationConfigurationConfigurationType::Central => write!(f, "CENTRAL"),
             OrganizationConfigurationConfigurationType::Local => write!(f, "LOCAL"),
-            OrganizationConfigurationConfigurationType::Unknown(value) => write!(f, "{}", value),
+            OrganizationConfigurationConfigurationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

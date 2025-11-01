@@ -96,7 +96,7 @@ impl ::std::fmt::Display for OutboundStrategyType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             OutboundStrategyType::AgentFirst => write!(f, "AGENT_FIRST"),
-            OutboundStrategyType::Unknown(value) => write!(f, "{}", value),
+            OutboundStrategyType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

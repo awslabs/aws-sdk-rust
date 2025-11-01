@@ -102,7 +102,7 @@ impl ::std::fmt::Display for InventoryIncludedObjectVersions {
         match self {
             InventoryIncludedObjectVersions::All => write!(f, "All"),
             InventoryIncludedObjectVersions::Current => write!(f, "Current"),
-            InventoryIncludedObjectVersions::Unknown(value) => write!(f, "{}", value),
+            InventoryIncludedObjectVersions::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

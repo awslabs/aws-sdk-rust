@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ScheduleAt {
             ScheduleAt::Now => write!(f, "NOW"),
             ScheduleAt::OffPeakWindow => write!(f, "OFF_PEAK_WINDOW"),
             ScheduleAt::Timestamp => write!(f, "TIMESTAMP"),
-            ScheduleAt::Unknown(value) => write!(f, "{}", value),
+            ScheduleAt::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

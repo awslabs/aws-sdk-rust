@@ -119,7 +119,7 @@ impl ::std::fmt::Display for ForecastDataType {
             ForecastDataType::LoadForecast => write!(f, "LoadForecast"),
             ForecastDataType::ScheduledActionMaxCapacity => write!(f, "ScheduledActionMaxCapacity"),
             ForecastDataType::ScheduledActionMinCapacity => write!(f, "ScheduledActionMinCapacity"),
-            ForecastDataType::Unknown(value) => write!(f, "{}", value),
+            ForecastDataType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

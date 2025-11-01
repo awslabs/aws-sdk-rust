@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ConfigurationType {
         match self {
             ConfigurationType::Custom => write!(f, "CUSTOM"),
             ConfigurationType::Default => write!(f, "DEFAULT"),
-            ConfigurationType::Unknown(value) => write!(f, "{}", value),
+            ConfigurationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

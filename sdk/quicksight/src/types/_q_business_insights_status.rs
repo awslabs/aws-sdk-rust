@@ -102,7 +102,7 @@ impl ::std::fmt::Display for QBusinessInsightsStatus {
         match self {
             QBusinessInsightsStatus::Disabled => write!(f, "DISABLED"),
             QBusinessInsightsStatus::Enabled => write!(f, "ENABLED"),
-            QBusinessInsightsStatus::Unknown(value) => write!(f, "{}", value),
+            QBusinessInsightsStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

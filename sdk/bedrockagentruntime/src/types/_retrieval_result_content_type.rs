@@ -108,7 +108,7 @@ impl ::std::fmt::Display for RetrievalResultContentType {
             RetrievalResultContentType::Image => write!(f, "IMAGE"),
             RetrievalResultContentType::Row => write!(f, "ROW"),
             RetrievalResultContentType::Text => write!(f, "TEXT"),
-            RetrievalResultContentType::Unknown(value) => write!(f, "{}", value),
+            RetrievalResultContentType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -120,7 +120,7 @@ impl ::std::fmt::Display for ModelVersionStatus {
             ModelVersionStatus::ImportInProgress => write!(f, "IMPORT_IN_PROGRESS"),
             ModelVersionStatus::InProgress => write!(f, "IN_PROGRESS"),
             ModelVersionStatus::Success => write!(f, "SUCCESS"),
-            ModelVersionStatus::Unknown(value) => write!(f, "{}", value),
+            ModelVersionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

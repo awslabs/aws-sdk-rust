@@ -301,7 +301,7 @@ impl ::std::fmt::Display for LandmarkType {
             LandmarkType::RightPupil => write!(f, "rightPupil"),
             LandmarkType::UpperJawlineLeft => write!(f, "upperJawlineLeft"),
             LandmarkType::UpperJawlineRight => write!(f, "upperJawlineRight"),
-            LandmarkType::Unknown(value) => write!(f, "{}", value),
+            LandmarkType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

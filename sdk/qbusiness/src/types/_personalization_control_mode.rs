@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PersonalizationControlMode {
         match self {
             PersonalizationControlMode::Disabled => write!(f, "DISABLED"),
             PersonalizationControlMode::Enabled => write!(f, "ENABLED"),
-            PersonalizationControlMode::Unknown(value) => write!(f, "{}", value),
+            PersonalizationControlMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

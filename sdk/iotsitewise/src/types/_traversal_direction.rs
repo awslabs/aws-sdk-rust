@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TraversalDirection {
         match self {
             TraversalDirection::Child => write!(f, "CHILD"),
             TraversalDirection::Parent => write!(f, "PARENT"),
-            TraversalDirection::Unknown(value) => write!(f, "{}", value),
+            TraversalDirection::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

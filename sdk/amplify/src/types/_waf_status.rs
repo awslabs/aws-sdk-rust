@@ -126,7 +126,7 @@ impl ::std::fmt::Display for WafStatus {
             WafStatus::AssociationSuccess => write!(f, "ASSOCIATION_SUCCESS"),
             WafStatus::Disassociating => write!(f, "DISASSOCIATING"),
             WafStatus::DisassociationFailed => write!(f, "DISASSOCIATION_FAILED"),
-            WafStatus::Unknown(value) => write!(f, "{}", value),
+            WafStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

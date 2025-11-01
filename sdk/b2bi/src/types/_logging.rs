@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Logging {
         match self {
             Logging::Disabled => write!(f, "DISABLED"),
             Logging::Enabled => write!(f, "ENABLED"),
-            Logging::Unknown(value) => write!(f, "{}", value),
+            Logging::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

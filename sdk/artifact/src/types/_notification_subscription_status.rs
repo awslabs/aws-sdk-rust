@@ -102,7 +102,7 @@ impl ::std::fmt::Display for NotificationSubscriptionStatus {
         match self {
             NotificationSubscriptionStatus::NotSubscribed => write!(f, "NOT_SUBSCRIBED"),
             NotificationSubscriptionStatus::Subscribed => write!(f, "SUBSCRIBED"),
-            NotificationSubscriptionStatus::Unknown(value) => write!(f, "{}", value),
+            NotificationSubscriptionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

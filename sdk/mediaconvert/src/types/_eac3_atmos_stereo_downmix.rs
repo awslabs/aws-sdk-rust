@@ -114,7 +114,7 @@ impl ::std::fmt::Display for Eac3AtmosStereoDownmix {
             Eac3AtmosStereoDownmix::NotIndicated => write!(f, "NOT_INDICATED"),
             Eac3AtmosStereoDownmix::Stereo => write!(f, "STEREO"),
             Eac3AtmosStereoDownmix::Surround => write!(f, "SURROUND"),
-            Eac3AtmosStereoDownmix::Unknown(value) => write!(f, "{}", value),
+            Eac3AtmosStereoDownmix::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

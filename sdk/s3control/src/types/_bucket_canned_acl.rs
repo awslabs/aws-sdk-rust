@@ -114,7 +114,7 @@ impl ::std::fmt::Display for BucketCannedAcl {
             BucketCannedAcl::Private => write!(f, "private"),
             BucketCannedAcl::PublicRead => write!(f, "public-read"),
             BucketCannedAcl::PublicReadWrite => write!(f, "public-read-write"),
-            BucketCannedAcl::Unknown(value) => write!(f, "{}", value),
+            BucketCannedAcl::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

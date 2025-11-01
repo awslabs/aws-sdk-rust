@@ -147,7 +147,7 @@ impl ::std::fmt::Display for InboundConnectionStatusCode {
             InboundConnectionStatusCode::Provisioning => write!(f, "PROVISIONING"),
             InboundConnectionStatusCode::Rejected => write!(f, "REJECTED"),
             InboundConnectionStatusCode::Rejecting => write!(f, "REJECTING"),
-            InboundConnectionStatusCode::Unknown(value) => write!(f, "{}", value),
+            InboundConnectionStatusCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

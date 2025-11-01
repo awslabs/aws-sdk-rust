@@ -108,7 +108,7 @@ impl ::std::fmt::Display for SecurityStyle {
             SecurityStyle::Mixed => write!(f, "MIXED"),
             SecurityStyle::Ntfs => write!(f, "NTFS"),
             SecurityStyle::Unix => write!(f, "UNIX"),
-            SecurityStyle::Unknown(value) => write!(f, "{}", value),
+            SecurityStyle::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

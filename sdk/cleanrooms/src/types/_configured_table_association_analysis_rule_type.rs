@@ -110,7 +110,7 @@ impl ::std::fmt::Display for ConfiguredTableAssociationAnalysisRuleType {
             ConfiguredTableAssociationAnalysisRuleType::Aggregation => write!(f, "AGGREGATION"),
             ConfiguredTableAssociationAnalysisRuleType::Custom => write!(f, "CUSTOM"),
             ConfiguredTableAssociationAnalysisRuleType::List => write!(f, "LIST"),
-            ConfiguredTableAssociationAnalysisRuleType::Unknown(value) => write!(f, "{}", value),
+            ConfiguredTableAssociationAnalysisRuleType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

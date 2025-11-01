@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TagSyncTaskStatus {
         match self {
             TagSyncTaskStatus::Active => write!(f, "ACTIVE"),
             TagSyncTaskStatus::Error => write!(f, "ERROR"),
-            TagSyncTaskStatus::Unknown(value) => write!(f, "{}", value),
+            TagSyncTaskStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

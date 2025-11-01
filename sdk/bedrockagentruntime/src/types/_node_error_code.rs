@@ -114,7 +114,7 @@ impl ::std::fmt::Display for NodeErrorCode {
             NodeErrorCode::DependencyFailed => write!(f, "DEPENDENCY_FAILED"),
             NodeErrorCode::InternalServer => write!(f, "INTERNAL_SERVER"),
             NodeErrorCode::Validation => write!(f, "VALIDATION"),
-            NodeErrorCode::Unknown(value) => write!(f, "{}", value),
+            NodeErrorCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

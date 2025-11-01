@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AppConfigType {
         match self {
             AppConfigType::OpensearchDashboardAdminGroups => write!(f, "opensearchDashboards.dashboardAdmin.groups"),
             AppConfigType::OpensearchDashboardAdminUsers => write!(f, "opensearchDashboards.dashboardAdmin.users"),
-            AppConfigType::Unknown(value) => write!(f, "{}", value),
+            AppConfigType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

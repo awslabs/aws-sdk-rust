@@ -110,7 +110,7 @@ impl ::std::fmt::Display for IsDefinedInJob {
             IsDefinedInJob::False => write!(f, "FALSE"),
             IsDefinedInJob::True => write!(f, "TRUE"),
             IsDefinedInJob::UnknownValue => write!(f, "UNKNOWN"),
-            IsDefinedInJob::Unknown(value) => write!(f, "{}", value),
+            IsDefinedInJob::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

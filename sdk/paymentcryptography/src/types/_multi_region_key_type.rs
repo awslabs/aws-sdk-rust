@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MultiRegionKeyType {
         match self {
             MultiRegionKeyType::Primary => write!(f, "PRIMARY"),
             MultiRegionKeyType::Replica => write!(f, "REPLICA"),
-            MultiRegionKeyType::Unknown(value) => write!(f, "{}", value),
+            MultiRegionKeyType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

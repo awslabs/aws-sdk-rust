@@ -222,7 +222,7 @@ pub(crate) mod connect {
                 let tunneled = tunnel
                     .call(dst_clone.clone())
                     .await
-                    .map_err(|e| BoxError::from(format!("CONNECT tunnel failed: {}", e)))?;
+                    .map_err(|e| BoxError::from(format!("CONNECT tunnel failed: {e}")))?;
 
                 // Stage 2: Manual TLS handshake over tunneled stream
                 let host = dst_clone
@@ -234,7 +234,7 @@ pub(crate) mod connect {
                 let tls_stream = tls_connector
                     .connect(host, TokioIo::new(tunneled))
                     .await
-                    .map_err(|e| BoxError::from(format!("s2n-tls handshake failed: {}", e)))?;
+                    .map_err(|e| BoxError::from(format!("s2n-tls handshake failed: {e}")))?;
 
                 Ok(Conn {
                     inner: Box::new(S2nTlsConn {

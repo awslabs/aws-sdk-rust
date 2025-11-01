@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Mpeg2Syntax {
         match self {
             Mpeg2Syntax::Default => write!(f, "DEFAULT"),
             Mpeg2Syntax::D10 => write!(f, "D_10"),
-            Mpeg2Syntax::Unknown(value) => write!(f, "{}", value),
+            Mpeg2Syntax::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ParameterType {
             ParameterType::Continuous => write!(f, "Continuous"),
             ParameterType::FreeText => write!(f, "FreeText"),
             ParameterType::Integer => write!(f, "Integer"),
-            ParameterType::Unknown(value) => write!(f, "{}", value),
+            ParameterType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

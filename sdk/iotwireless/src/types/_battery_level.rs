@@ -108,7 +108,7 @@ impl ::std::fmt::Display for BatteryLevel {
             BatteryLevel::Critical => write!(f, "critical"),
             BatteryLevel::Low => write!(f, "low"),
             BatteryLevel::Normal => write!(f, "normal"),
-            BatteryLevel::Unknown(value) => write!(f, "{}", value),
+            BatteryLevel::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

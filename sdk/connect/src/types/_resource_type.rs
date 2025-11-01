@@ -147,7 +147,7 @@ impl ::std::fmt::Display for ResourceType {
             ResourceType::Participant => write!(f, "PARTICIPANT"),
             ResourceType::PhoneNumber => write!(f, "PHONE_NUMBER"),
             ResourceType::User => write!(f, "USER"),
-            ResourceType::Unknown(value) => write!(f, "{}", value),
+            ResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

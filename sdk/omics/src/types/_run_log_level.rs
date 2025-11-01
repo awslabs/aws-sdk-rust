@@ -114,7 +114,7 @@ impl ::std::fmt::Display for RunLogLevel {
             RunLogLevel::Error => write!(f, "ERROR"),
             RunLogLevel::Fatal => write!(f, "FATAL"),
             RunLogLevel::Off => write!(f, "OFF"),
-            RunLogLevel::Unknown(value) => write!(f, "{}", value),
+            RunLogLevel::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

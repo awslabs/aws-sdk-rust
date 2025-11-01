@@ -102,7 +102,7 @@ impl ::std::fmt::Display for UsernameAttributeType {
         match self {
             UsernameAttributeType::Email => write!(f, "email"),
             UsernameAttributeType::PhoneNumber => write!(f, "phone_number"),
-            UsernameAttributeType::Unknown(value) => write!(f, "{}", value),
+            UsernameAttributeType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

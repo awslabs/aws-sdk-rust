@@ -120,7 +120,7 @@ impl ::std::fmt::Display for EventSource {
             EventSource::EksAudit => write!(f, "EKSAudit"),
             EventSource::Route53Resolver => write!(f, "Route53Resolver"),
             EventSource::VpcFlow => write!(f, "VPCFlow"),
-            EventSource::Unknown(value) => write!(f, "{}", value),
+            EventSource::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

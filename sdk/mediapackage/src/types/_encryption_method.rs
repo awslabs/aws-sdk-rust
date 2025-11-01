@@ -102,7 +102,7 @@ impl ::std::fmt::Display for EncryptionMethod {
         match self {
             EncryptionMethod::Aes128 => write!(f, "AES_128"),
             EncryptionMethod::SampleAes => write!(f, "SAMPLE_AES"),
-            EncryptionMethod::Unknown(value) => write!(f, "{}", value),
+            EncryptionMethod::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

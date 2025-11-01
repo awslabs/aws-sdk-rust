@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TableBucketType {
         match self {
             TableBucketType::Aws => write!(f, "aws"),
             TableBucketType::Customer => write!(f, "customer"),
-            TableBucketType::Unknown(value) => write!(f, "{}", value),
+            TableBucketType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

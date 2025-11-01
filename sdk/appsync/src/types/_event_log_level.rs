@@ -120,7 +120,7 @@ impl ::std::fmt::Display for EventLogLevel {
             EventLogLevel::Error => write!(f, "ERROR"),
             EventLogLevel::Info => write!(f, "INFO"),
             EventLogLevel::None => write!(f, "NONE"),
-            EventLogLevel::Unknown(value) => write!(f, "{}", value),
+            EventLogLevel::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

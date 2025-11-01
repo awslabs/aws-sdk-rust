@@ -114,7 +114,7 @@ impl ::std::fmt::Display for StreamStatus {
             StreamStatus::Creating => write!(f, "CREATING"),
             StreamStatus::Deleting => write!(f, "DELETING"),
             StreamStatus::Updating => write!(f, "UPDATING"),
-            StreamStatus::Unknown(value) => write!(f, "{}", value),
+            StreamStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

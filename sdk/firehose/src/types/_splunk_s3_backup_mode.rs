@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SplunkS3BackupMode {
         match self {
             SplunkS3BackupMode::AllEvents => write!(f, "AllEvents"),
             SplunkS3BackupMode::FailedEventsOnly => write!(f, "FailedEventsOnly"),
-            SplunkS3BackupMode::Unknown(value) => write!(f, "{}", value),
+            SplunkS3BackupMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

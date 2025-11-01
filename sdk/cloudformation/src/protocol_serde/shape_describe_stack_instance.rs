@@ -92,16 +92,14 @@ pub fn de_describe_stack_instance(
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeStackInstanceResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected DescribeStackInstanceResponse got {:?}",
-            start_el
+            "invalid root, expected DescribeStackInstanceResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("DescribeStackInstanceResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected DescribeStackInstanceResult got {:?}",
-                start_el
+                "invalid result, expected DescribeStackInstanceResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

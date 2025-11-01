@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ListDomainsAttributeName {
         match self {
             ListDomainsAttributeName::DomainName => write!(f, "DomainName"),
             ListDomainsAttributeName::Expiry => write!(f, "Expiry"),
-            ListDomainsAttributeName::Unknown(value) => write!(f, "{}", value),
+            ListDomainsAttributeName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

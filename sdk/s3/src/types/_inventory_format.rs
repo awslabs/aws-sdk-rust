@@ -108,7 +108,7 @@ impl ::std::fmt::Display for InventoryFormat {
             InventoryFormat::Csv => write!(f, "CSV"),
             InventoryFormat::Orc => write!(f, "ORC"),
             InventoryFormat::Parquet => write!(f, "Parquet"),
-            InventoryFormat::Unknown(value) => write!(f, "{}", value),
+            InventoryFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -112,7 +112,7 @@ impl ::std::fmt::Display for PreferredChannelPipeline {
             PreferredChannelPipeline::CurrentlyActive => write!(f, "CURRENTLY_ACTIVE"),
             PreferredChannelPipeline::Pipeline0 => write!(f, "PIPELINE_0"),
             PreferredChannelPipeline::Pipeline1 => write!(f, "PIPELINE_1"),
-            PreferredChannelPipeline::Unknown(value) => write!(f, "{}", value),
+            PreferredChannelPipeline::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

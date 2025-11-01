@@ -102,7 +102,7 @@ impl ::std::fmt::Display for InstanceMetadataHttpTokensState {
         match self {
             InstanceMetadataHttpTokensState::Optional => write!(f, "optional"),
             InstanceMetadataHttpTokensState::Required => write!(f, "required"),
-            InstanceMetadataHttpTokensState::Unknown(value) => write!(f, "{}", value),
+            InstanceMetadataHttpTokensState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

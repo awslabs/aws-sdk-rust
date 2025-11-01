@@ -108,7 +108,7 @@ impl ::std::fmt::Display for DeleteAgentErrorCode {
             DeleteAgentErrorCode::AgentInUse => write!(f, "AGENT_IN_USE"),
             DeleteAgentErrorCode::InternalServerError => write!(f, "INTERNAL_SERVER_ERROR"),
             DeleteAgentErrorCode::NotFound => write!(f, "NOT_FOUND"),
-            DeleteAgentErrorCode::Unknown(value) => write!(f, "{}", value),
+            DeleteAgentErrorCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

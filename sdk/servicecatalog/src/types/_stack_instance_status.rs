@@ -108,7 +108,7 @@ impl ::std::fmt::Display for StackInstanceStatus {
             StackInstanceStatus::Current => write!(f, "CURRENT"),
             StackInstanceStatus::Inoperable => write!(f, "INOPERABLE"),
             StackInstanceStatus::Outdated => write!(f, "OUTDATED"),
-            StackInstanceStatus::Unknown(value) => write!(f, "{}", value),
+            StackInstanceStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

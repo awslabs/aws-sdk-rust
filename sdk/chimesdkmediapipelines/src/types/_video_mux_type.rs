@@ -96,7 +96,7 @@ impl ::std::fmt::Display for VideoMuxType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             VideoMuxType::VideoOnly => write!(f, "VideoOnly"),
-            VideoMuxType::Unknown(value) => write!(f, "{}", value),
+            VideoMuxType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

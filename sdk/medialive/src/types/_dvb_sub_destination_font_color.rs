@@ -126,7 +126,7 @@ impl ::std::fmt::Display for DvbSubDestinationFontColor {
             DvbSubDestinationFontColor::Red => write!(f, "RED"),
             DvbSubDestinationFontColor::White => write!(f, "WHITE"),
             DvbSubDestinationFontColor::Yellow => write!(f, "YELLOW"),
-            DvbSubDestinationFontColor::Unknown(value) => write!(f, "{}", value),
+            DvbSubDestinationFontColor::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

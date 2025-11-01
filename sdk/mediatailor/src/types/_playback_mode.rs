@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PlaybackMode {
         match self {
             PlaybackMode::Linear => write!(f, "LINEAR"),
             PlaybackMode::Loop => write!(f, "LOOP"),
-            PlaybackMode::Unknown(value) => write!(f, "{}", value),
+            PlaybackMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

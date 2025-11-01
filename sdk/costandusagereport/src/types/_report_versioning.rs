@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ReportVersioning {
         match self {
             ReportVersioning::CreateNewReport => write!(f, "CREATE_NEW_REPORT"),
             ReportVersioning::OverwriteReport => write!(f, "OVERWRITE_REPORT"),
-            ReportVersioning::Unknown(value) => write!(f, "{}", value),
+            ReportVersioning::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

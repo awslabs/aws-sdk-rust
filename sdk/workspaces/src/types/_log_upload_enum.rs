@@ -102,7 +102,7 @@ impl ::std::fmt::Display for LogUploadEnum {
         match self {
             LogUploadEnum::Disabled => write!(f, "DISABLED"),
             LogUploadEnum::Enabled => write!(f, "ENABLED"),
-            LogUploadEnum::Unknown(value) => write!(f, "{}", value),
+            LogUploadEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

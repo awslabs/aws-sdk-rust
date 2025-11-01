@@ -138,7 +138,7 @@ impl ::std::fmt::Display for ComponentType {
             ComponentType::HanaNode => write!(f, "HANA_NODE"),
             ComponentType::Wd => write!(f, "WD"),
             ComponentType::Webdisp => write!(f, "WEBDISP"),
-            ComponentType::Unknown(value) => write!(f, "{}", value),
+            ComponentType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

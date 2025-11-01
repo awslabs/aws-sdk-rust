@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PackageGroupAssociationType {
         match self {
             PackageGroupAssociationType::Strong => write!(f, "STRONG"),
             PackageGroupAssociationType::Weak => write!(f, "WEAK"),
-            PackageGroupAssociationType::Unknown(value) => write!(f, "{}", value),
+            PackageGroupAssociationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

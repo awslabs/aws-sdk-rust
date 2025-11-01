@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Vc3Telecine {
         match self {
             Vc3Telecine::Hard => write!(f, "HARD"),
             Vc3Telecine::None => write!(f, "NONE"),
-            Vc3Telecine::Unknown(value) => write!(f, "{}", value),
+            Vc3Telecine::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

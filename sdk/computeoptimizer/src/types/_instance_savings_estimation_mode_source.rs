@@ -108,7 +108,7 @@ impl ::std::fmt::Display for InstanceSavingsEstimationModeSource {
             InstanceSavingsEstimationModeSource::CostExplorerRightsizing => write!(f, "CostExplorerRightsizing"),
             InstanceSavingsEstimationModeSource::CostOptimizationHub => write!(f, "CostOptimizationHub"),
             InstanceSavingsEstimationModeSource::PublicPricing => write!(f, "PublicPricing"),
-            InstanceSavingsEstimationModeSource::Unknown(value) => write!(f, "{}", value),
+            InstanceSavingsEstimationModeSource::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

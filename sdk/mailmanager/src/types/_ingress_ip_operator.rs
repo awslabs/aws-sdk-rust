@@ -102,7 +102,7 @@ impl ::std::fmt::Display for IngressIpOperator {
         match self {
             IngressIpOperator::CidrMatches => write!(f, "CIDR_MATCHES"),
             IngressIpOperator::NotCidrMatches => write!(f, "NOT_CIDR_MATCHES"),
-            IngressIpOperator::Unknown(value) => write!(f, "{}", value),
+            IngressIpOperator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TriangulationEventType {
         match self {
             TriangulationEventType::Aws => write!(f, "AWS"),
             TriangulationEventType::Internet => write!(f, "Internet"),
-            TriangulationEventType::Unknown(value) => write!(f, "{}", value),
+            TriangulationEventType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

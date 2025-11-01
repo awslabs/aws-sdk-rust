@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SchemaRegistryEventRecordFormat {
         match self {
             SchemaRegistryEventRecordFormat::Json => write!(f, "JSON"),
             SchemaRegistryEventRecordFormat::Source => write!(f, "SOURCE"),
-            SchemaRegistryEventRecordFormat::Unknown(value) => write!(f, "{}", value),
+            SchemaRegistryEventRecordFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

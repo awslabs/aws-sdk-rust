@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DiskIopsConfigurationMode {
         match self {
             DiskIopsConfigurationMode::Automatic => write!(f, "AUTOMATIC"),
             DiskIopsConfigurationMode::UserProvisioned => write!(f, "USER_PROVISIONED"),
-            DiskIopsConfigurationMode::Unknown(value) => write!(f, "{}", value),
+            DiskIopsConfigurationMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

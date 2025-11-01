@@ -120,7 +120,7 @@ impl ::std::fmt::Display for FlowLogsResourceType {
             FlowLogsResourceType::TransitGateway => write!(f, "TransitGateway"),
             FlowLogsResourceType::TransitGatewayAttachment => write!(f, "TransitGatewayAttachment"),
             FlowLogsResourceType::Vpc => write!(f, "VPC"),
-            FlowLogsResourceType::Unknown(value) => write!(f, "{}", value),
+            FlowLogsResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -154,7 +154,7 @@ impl ::std::fmt::Display for ServiceDeploymentStatus {
             ServiceDeploymentStatus::Stopped => write!(f, "STOPPED"),
             ServiceDeploymentStatus::StopRequested => write!(f, "STOP_REQUESTED"),
             ServiceDeploymentStatus::Successful => write!(f, "SUCCESSFUL"),
-            ServiceDeploymentStatus::Unknown(value) => write!(f, "{}", value),
+            ServiceDeploymentStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

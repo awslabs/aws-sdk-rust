@@ -108,7 +108,7 @@ impl ::std::fmt::Display for IamAuthMode {
             IamAuthMode::Disabled => write!(f, "DISABLED"),
             IamAuthMode::Enabled => write!(f, "ENABLED"),
             IamAuthMode::Required => write!(f, "REQUIRED"),
-            IamAuthMode::Unknown(value) => write!(f, "{}", value),
+            IamAuthMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

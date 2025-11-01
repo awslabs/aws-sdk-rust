@@ -672,7 +672,7 @@ impl ::std::fmt::Display for OperationType {
             OperationType::UpdateLoadBalancerAttribute => write!(f, "UpdateLoadBalancerAttribute"),
             OperationType::UpdateRelationalDatabase => write!(f, "UpdateRelationalDatabase"),
             OperationType::UpdateRelationalDatabaseParameters => write!(f, "UpdateRelationalDatabaseParameters"),
-            OperationType::Unknown(value) => write!(f, "{}", value),
+            OperationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

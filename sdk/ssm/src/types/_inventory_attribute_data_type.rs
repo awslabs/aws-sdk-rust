@@ -102,7 +102,7 @@ impl ::std::fmt::Display for InventoryAttributeDataType {
         match self {
             InventoryAttributeDataType::Number => write!(f, "number"),
             InventoryAttributeDataType::String => write!(f, "string"),
-            InventoryAttributeDataType::Unknown(value) => write!(f, "{}", value),
+            InventoryAttributeDataType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

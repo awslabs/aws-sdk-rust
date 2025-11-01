@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AccountTargeting {
         match self {
             AccountTargeting::MultiAccount => write!(f, "multi-account"),
             AccountTargeting::SingleAccount => write!(f, "single-account"),
-            AccountTargeting::Unknown(value) => write!(f, "{}", value),
+            AccountTargeting::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

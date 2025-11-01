@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ComputationRuleEnum {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ComputationRuleEnum::Consolidated => write!(f, "CONSOLIDATED"),
-            ComputationRuleEnum::Unknown(value) => write!(f, "{}", value),
+            ComputationRuleEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

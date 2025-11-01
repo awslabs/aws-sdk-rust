@@ -102,7 +102,7 @@ impl ::std::fmt::Display for IpProtocol {
         match self {
             IpProtocol::Tcp => write!(f, "TCP"),
             IpProtocol::Udp => write!(f, "UDP"),
-            IpProtocol::Unknown(value) => write!(f, "{}", value),
+            IpProtocol::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

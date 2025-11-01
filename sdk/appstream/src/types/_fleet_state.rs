@@ -114,7 +114,7 @@ impl ::std::fmt::Display for FleetState {
             FleetState::Starting => write!(f, "STARTING"),
             FleetState::Stopped => write!(f, "STOPPED"),
             FleetState::Stopping => write!(f, "STOPPING"),
-            FleetState::Unknown(value) => write!(f, "{}", value),
+            FleetState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

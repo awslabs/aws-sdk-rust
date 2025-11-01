@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AudioStandardGenerativeFieldType {
             AudioStandardGenerativeFieldType::AudioSummary => write!(f, "AUDIO_SUMMARY"),
             AudioStandardGenerativeFieldType::Iab => write!(f, "IAB"),
             AudioStandardGenerativeFieldType::TopicSummary => write!(f, "TOPIC_SUMMARY"),
-            AudioStandardGenerativeFieldType::Unknown(value) => write!(f, "{}", value),
+            AudioStandardGenerativeFieldType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

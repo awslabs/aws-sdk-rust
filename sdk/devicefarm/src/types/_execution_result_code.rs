@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ExecutionResultCode {
         match self {
             ExecutionResultCode::ParsingFailed => write!(f, "PARSING_FAILED"),
             ExecutionResultCode::VpcEndpointSetupFailed => write!(f, "VPC_ENDPOINT_SETUP_FAILED"),
-            ExecutionResultCode::Unknown(value) => write!(f, "{}", value),
+            ExecutionResultCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

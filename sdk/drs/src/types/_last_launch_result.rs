@@ -114,7 +114,7 @@ impl ::std::fmt::Display for LastLaunchResult {
             LastLaunchResult::NotStarted => write!(f, "NOT_STARTED"),
             LastLaunchResult::Pending => write!(f, "PENDING"),
             LastLaunchResult::Succeeded => write!(f, "SUCCEEDED"),
-            LastLaunchResult::Unknown(value) => write!(f, "{}", value),
+            LastLaunchResult::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

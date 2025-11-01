@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ListUpdateMode {
             ListUpdateMode::Append => write!(f, "APPEND"),
             ListUpdateMode::Remove => write!(f, "REMOVE"),
             ListUpdateMode::Replace => write!(f, "REPLACE"),
-            ListUpdateMode::Unknown(value) => write!(f, "{}", value),
+            ListUpdateMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

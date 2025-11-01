@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ServerSideEncryption {
             ServerSideEncryption::AwsFsx => write!(f, "aws:fsx"),
             ServerSideEncryption::AwsKms => write!(f, "aws:kms"),
             ServerSideEncryption::AwsKmsDsse => write!(f, "aws:kms:dsse"),
-            ServerSideEncryption::Unknown(value) => write!(f, "{}", value),
+            ServerSideEncryption::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

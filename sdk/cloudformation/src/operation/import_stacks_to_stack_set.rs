@@ -194,6 +194,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ImportStacks
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::import_stacks_to_stack_set::ImportStacksToStackSetInput,
                 output: &mut ::std::string::String,

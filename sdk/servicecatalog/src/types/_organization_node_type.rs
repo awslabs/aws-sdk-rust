@@ -108,7 +108,7 @@ impl ::std::fmt::Display for OrganizationNodeType {
             OrganizationNodeType::Account => write!(f, "ACCOUNT"),
             OrganizationNodeType::Organization => write!(f, "ORGANIZATION"),
             OrganizationNodeType::OrganizationalUnit => write!(f, "ORGANIZATIONAL_UNIT"),
-            OrganizationNodeType::Unknown(value) => write!(f, "{}", value),
+            OrganizationNodeType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

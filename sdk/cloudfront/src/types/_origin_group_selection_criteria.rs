@@ -102,7 +102,7 @@ impl ::std::fmt::Display for OriginGroupSelectionCriteria {
         match self {
             OriginGroupSelectionCriteria::Default => write!(f, "default"),
             OriginGroupSelectionCriteria::MediaQualityBased => write!(f, "media-quality-based"),
-            OriginGroupSelectionCriteria::Unknown(value) => write!(f, "{}", value),
+            OriginGroupSelectionCriteria::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

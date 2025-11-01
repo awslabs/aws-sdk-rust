@@ -108,7 +108,7 @@ impl ::std::fmt::Display for OAuth2GrantType {
             OAuth2GrantType::AuthorizationCode => write!(f, "AUTHORIZATION_CODE"),
             OAuth2GrantType::ClientCredentials => write!(f, "CLIENT_CREDENTIALS"),
             OAuth2GrantType::JwtBearer => write!(f, "JWT_BEARER"),
-            OAuth2GrantType::Unknown(value) => write!(f, "{}", value),
+            OAuth2GrantType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

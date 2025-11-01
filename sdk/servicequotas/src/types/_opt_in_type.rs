@@ -102,7 +102,7 @@ impl ::std::fmt::Display for OptInType {
         match self {
             OptInType::NotifyAndAdjust => write!(f, "NotifyAndAdjust"),
             OptInType::NotifyOnly => write!(f, "NotifyOnly"),
-            OptInType::Unknown(value) => write!(f, "{}", value),
+            OptInType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

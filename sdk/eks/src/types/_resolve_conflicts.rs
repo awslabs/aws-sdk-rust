@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ResolveConflicts {
             ResolveConflicts::None => write!(f, "NONE"),
             ResolveConflicts::Overwrite => write!(f, "OVERWRITE"),
             ResolveConflicts::Preserve => write!(f, "PRESERVE"),
-            ResolveConflicts::Unknown(value) => write!(f, "{}", value),
+            ResolveConflicts::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

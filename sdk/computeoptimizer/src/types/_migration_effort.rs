@@ -114,7 +114,7 @@ impl ::std::fmt::Display for MigrationEffort {
             MigrationEffort::Low => write!(f, "Low"),
             MigrationEffort::Medium => write!(f, "Medium"),
             MigrationEffort::VeryLow => write!(f, "VeryLow"),
-            MigrationEffort::Unknown(value) => write!(f, "{}", value),
+            MigrationEffort::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

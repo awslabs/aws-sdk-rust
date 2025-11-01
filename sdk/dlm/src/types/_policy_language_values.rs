@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PolicyLanguageValues {
         match self {
             PolicyLanguageValues::Simplified => write!(f, "SIMPLIFIED"),
             PolicyLanguageValues::Standard => write!(f, "STANDARD"),
-            PolicyLanguageValues::Unknown(value) => write!(f, "{}", value),
+            PolicyLanguageValues::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

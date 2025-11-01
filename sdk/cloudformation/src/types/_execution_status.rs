@@ -133,7 +133,7 @@ impl ::std::fmt::Display for ExecutionStatus {
             ExecutionStatus::ExecuteInProgress => write!(f, "EXECUTE_IN_PROGRESS"),
             ExecutionStatus::Obsolete => write!(f, "OBSOLETE"),
             ExecutionStatus::Unavailable => write!(f, "UNAVAILABLE"),
-            ExecutionStatus::Unknown(value) => write!(f, "{}", value),
+            ExecutionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

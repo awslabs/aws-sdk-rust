@@ -102,7 +102,7 @@ impl ::std::fmt::Display for EncryptionStrategy {
         match self {
             EncryptionStrategy::AwsOwned => write!(f, "AWS_OWNED"),
             EncryptionStrategy::CustomerManaged => write!(f, "CUSTOMER_MANAGED"),
-            EncryptionStrategy::Unknown(value) => write!(f, "{}", value),
+            EncryptionStrategy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

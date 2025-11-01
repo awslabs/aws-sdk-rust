@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ConnectPeerState {
             ConnectPeerState::Creating => write!(f, "CREATING"),
             ConnectPeerState::Deleting => write!(f, "DELETING"),
             ConnectPeerState::Failed => write!(f, "FAILED"),
-            ConnectPeerState::Unknown(value) => write!(f, "{}", value),
+            ConnectPeerState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

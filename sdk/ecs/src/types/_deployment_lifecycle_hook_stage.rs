@@ -140,7 +140,7 @@ impl ::std::fmt::Display for DeploymentLifecycleHookStage {
             DeploymentLifecycleHookStage::ProductionTrafficShift => write!(f, "PRODUCTION_TRAFFIC_SHIFT"),
             DeploymentLifecycleHookStage::ReconcileService => write!(f, "RECONCILE_SERVICE"),
             DeploymentLifecycleHookStage::TestTrafficShift => write!(f, "TEST_TRAFFIC_SHIFT"),
-            DeploymentLifecycleHookStage::Unknown(value) => write!(f, "{}", value),
+            DeploymentLifecycleHookStage::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

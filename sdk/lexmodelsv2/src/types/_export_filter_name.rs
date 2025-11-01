@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ExportFilterName {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ExportFilterName::ExportResourceType => write!(f, "ExportResourceType"),
-            ExportFilterName::Unknown(value) => write!(f, "{}", value),
+            ExportFilterName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

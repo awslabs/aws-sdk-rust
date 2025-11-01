@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ShiftType {
         match self {
             ShiftType::Overridden => write!(f, "OVERRIDDEN"),
             ShiftType::Regular => write!(f, "REGULAR"),
-            ShiftType::Unknown(value) => write!(f, "{}", value),
+            ShiftType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

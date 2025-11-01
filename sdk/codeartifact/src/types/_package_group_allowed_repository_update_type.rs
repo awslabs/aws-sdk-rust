@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PackageGroupAllowedRepositoryUpdateType {
         match self {
             PackageGroupAllowedRepositoryUpdateType::Added => write!(f, "ADDED"),
             PackageGroupAllowedRepositoryUpdateType::Removed => write!(f, "REMOVED"),
-            PackageGroupAllowedRepositoryUpdateType::Unknown(value) => write!(f, "{}", value),
+            PackageGroupAllowedRepositoryUpdateType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

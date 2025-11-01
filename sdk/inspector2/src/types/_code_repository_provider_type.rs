@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CodeRepositoryProviderType {
         match self {
             CodeRepositoryProviderType::Github => write!(f, "GITHUB"),
             CodeRepositoryProviderType::GitlabSelfManaged => write!(f, "GITLAB_SELF_MANAGED"),
-            CodeRepositoryProviderType::Unknown(value) => write!(f, "{}", value),
+            CodeRepositoryProviderType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

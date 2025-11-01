@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SharedResourceSortByType {
         match self {
             SharedResourceSortByType::Arn => write!(f, "ARN"),
             SharedResourceSortByType::ModifiedTime => write!(f, "MODIFIED_TIME"),
-            SharedResourceSortByType::Unknown(value) => write!(f, "{}", value),
+            SharedResourceSortByType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

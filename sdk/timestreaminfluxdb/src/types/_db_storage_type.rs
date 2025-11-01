@@ -108,7 +108,7 @@ impl ::std::fmt::Display for DbStorageType {
             DbStorageType::InfluxIoIncludedT1 => write!(f, "InfluxIOIncludedT1"),
             DbStorageType::InfluxIoIncludedT2 => write!(f, "InfluxIOIncludedT2"),
             DbStorageType::InfluxIoIncludedT3 => write!(f, "InfluxIOIncludedT3"),
-            DbStorageType::Unknown(value) => write!(f, "{}", value),
+            DbStorageType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

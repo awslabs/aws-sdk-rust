@@ -108,7 +108,7 @@ impl ::std::fmt::Display for FilterClass {
             FilterClass::ConditionalValueFilter => write!(f, "CONDITIONAL_VALUE_FILTER"),
             FilterClass::EnforcedValueFilter => write!(f, "ENFORCED_VALUE_FILTER"),
             FilterClass::NamedValueFilter => write!(f, "NAMED_VALUE_FILTER"),
-            FilterClass::Unknown(value) => write!(f, "{}", value),
+            FilterClass::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -150,7 +150,7 @@ impl ::std::fmt::Display for DkimStatus {
             DkimStatus::Pending => write!(f, "PENDING"),
             DkimStatus::Success => write!(f, "SUCCESS"),
             DkimStatus::TemporaryFailure => write!(f, "TEMPORARY_FAILURE"),
-            DkimStatus::Unknown(value) => write!(f, "{}", value),
+            DkimStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

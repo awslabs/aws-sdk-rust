@@ -209,16 +209,14 @@ pub fn de_copy_serverless_cache_snapshot(
     let start_el = decoder.start_el();
     if !(start_el.matches("CopyServerlessCacheSnapshotResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected CopyServerlessCacheSnapshotResponse got {:?}",
-            start_el
+            "invalid root, expected CopyServerlessCacheSnapshotResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("CopyServerlessCacheSnapshotResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected CopyServerlessCacheSnapshotResult got {:?}",
-                start_el
+                "invalid result, expected CopyServerlessCacheSnapshotResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

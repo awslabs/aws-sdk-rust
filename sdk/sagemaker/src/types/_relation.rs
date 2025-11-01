@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Relation {
         match self {
             Relation::EqualTo => write!(f, "EqualTo"),
             Relation::GreaterThanOrEqualTo => write!(f, "GreaterThanOrEqualTo"),
-            Relation::Unknown(value) => write!(f, "{}", value),
+            Relation::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

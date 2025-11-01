@@ -119,7 +119,7 @@ impl ::std::fmt::Display for ScheduleLambdaFunctionFailedCause {
             ScheduleLambdaFunctionFailedCause::LambdaFunctionCreationRateExceeded => write!(f, "LAMBDA_FUNCTION_CREATION_RATE_EXCEEDED"),
             ScheduleLambdaFunctionFailedCause::LambdaServiceNotAvailableInRegion => write!(f, "LAMBDA_SERVICE_NOT_AVAILABLE_IN_REGION"),
             ScheduleLambdaFunctionFailedCause::OpenLambdaFunctionsLimitExceeded => write!(f, "OPEN_LAMBDA_FUNCTIONS_LIMIT_EXCEEDED"),
-            ScheduleLambdaFunctionFailedCause::Unknown(value) => write!(f, "{}", value),
+            ScheduleLambdaFunctionFailedCause::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

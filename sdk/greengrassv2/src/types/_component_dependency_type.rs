@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ComponentDependencyType {
         match self {
             ComponentDependencyType::Hard => write!(f, "HARD"),
             ComponentDependencyType::Soft => write!(f, "SOFT"),
-            ComponentDependencyType::Unknown(value) => write!(f, "{}", value),
+            ComponentDependencyType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

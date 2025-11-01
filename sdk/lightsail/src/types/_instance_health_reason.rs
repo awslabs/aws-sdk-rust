@@ -168,7 +168,7 @@ impl ::std::fmt::Display for InstanceHealthReason {
             InstanceHealthReason::LbInitialHealthChecking => write!(f, "Lb.InitialHealthChecking"),
             InstanceHealthReason::LbInternalError => write!(f, "Lb.InternalError"),
             InstanceHealthReason::LbRegistrationInProgress => write!(f, "Lb.RegistrationInProgress"),
-            InstanceHealthReason::Unknown(value) => write!(f, "{}", value),
+            InstanceHealthReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

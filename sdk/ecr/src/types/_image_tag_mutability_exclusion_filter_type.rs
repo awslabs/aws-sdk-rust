@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ImageTagMutabilityExclusionFilterType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ImageTagMutabilityExclusionFilterType::Wildcard => write!(f, "WILDCARD"),
-            ImageTagMutabilityExclusionFilterType::Unknown(value) => write!(f, "{}", value),
+            ImageTagMutabilityExclusionFilterType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

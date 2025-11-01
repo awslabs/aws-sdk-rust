@@ -203,7 +203,7 @@ impl ::std::fmt::Display for ErrorCode {
             ErrorCode::SsmThrottled => write!(f, "SSM_THROTTLED"),
             ErrorCode::SsmUnavailable => write!(f, "SSM_UNAVAILABLE"),
             ErrorCode::SuspendInProgress => write!(f, "SUSPEND_IN_PROGRESS"),
-            ErrorCode::Unknown(value) => write!(f, "{}", value),
+            ErrorCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

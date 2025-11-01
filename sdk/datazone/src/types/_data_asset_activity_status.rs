@@ -147,7 +147,7 @@ impl ::std::fmt::Display for DataAssetActivityStatus {
             DataAssetActivityStatus::SucceededCreated => write!(f, "SUCCEEDED_CREATED"),
             DataAssetActivityStatus::SucceededUpdated => write!(f, "SUCCEEDED_UPDATED"),
             DataAssetActivityStatus::Unchanged => write!(f, "UNCHANGED"),
-            DataAssetActivityStatus::Unknown(value) => write!(f, "{}", value),
+            DataAssetActivityStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

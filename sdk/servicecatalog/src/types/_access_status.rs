@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AccessStatus {
             AccessStatus::Disabled => write!(f, "DISABLED"),
             AccessStatus::Enabled => write!(f, "ENABLED"),
             AccessStatus::UnderChange => write!(f, "UNDER_CHANGE"),
-            AccessStatus::Unknown(value) => write!(f, "{}", value),
+            AccessStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

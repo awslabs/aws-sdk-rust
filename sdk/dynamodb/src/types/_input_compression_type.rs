@@ -108,7 +108,7 @@ impl ::std::fmt::Display for InputCompressionType {
             InputCompressionType::Gzip => write!(f, "GZIP"),
             InputCompressionType::None => write!(f, "NONE"),
             InputCompressionType::Zstd => write!(f, "ZSTD"),
-            InputCompressionType::Unknown(value) => write!(f, "{}", value),
+            InputCompressionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

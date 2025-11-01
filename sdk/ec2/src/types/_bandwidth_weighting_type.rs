@@ -108,7 +108,7 @@ impl ::std::fmt::Display for BandwidthWeightingType {
             BandwidthWeightingType::Default => write!(f, "default"),
             BandwidthWeightingType::Ebs1 => write!(f, "ebs-1"),
             BandwidthWeightingType::Vpc1 => write!(f, "vpc-1"),
-            BandwidthWeightingType::Unknown(value) => write!(f, "{}", value),
+            BandwidthWeightingType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

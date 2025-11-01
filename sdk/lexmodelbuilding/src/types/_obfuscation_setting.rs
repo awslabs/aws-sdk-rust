@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ObfuscationSetting {
         match self {
             ObfuscationSetting::DefaultObfuscation => write!(f, "DEFAULT_OBFUSCATION"),
             ObfuscationSetting::None => write!(f, "NONE"),
-            ObfuscationSetting::Unknown(value) => write!(f, "{}", value),
+            ObfuscationSetting::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

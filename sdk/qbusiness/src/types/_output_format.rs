@@ -102,7 +102,7 @@ impl ::std::fmt::Display for OutputFormat {
         match self {
             OutputFormat::Extracted => write!(f, "EXTRACTED"),
             OutputFormat::Raw => write!(f, "RAW"),
-            OutputFormat::Unknown(value) => write!(f, "{}", value),
+            OutputFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

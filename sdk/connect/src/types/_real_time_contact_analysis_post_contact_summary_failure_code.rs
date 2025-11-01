@@ -128,7 +128,7 @@ impl ::std::fmt::Display for RealTimeContactAnalysisPostContactSummaryFailureCod
             RealTimeContactAnalysisPostContactSummaryFailureCode::InternalError => write!(f, "INTERNAL_ERROR"),
             RealTimeContactAnalysisPostContactSummaryFailureCode::InvalidAnalysisConfiguration => write!(f, "INVALID_ANALYSIS_CONFIGURATION"),
             RealTimeContactAnalysisPostContactSummaryFailureCode::QuotaExceeded => write!(f, "QUOTA_EXCEEDED"),
-            RealTimeContactAnalysisPostContactSummaryFailureCode::Unknown(value) => write!(f, "{}", value),
+            RealTimeContactAnalysisPostContactSummaryFailureCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

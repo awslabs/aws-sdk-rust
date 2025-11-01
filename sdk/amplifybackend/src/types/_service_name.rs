@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ServiceName {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ServiceName::S3 => write!(f, "S3"),
-            ServiceName::Unknown(value) => write!(f, "{}", value),
+            ServiceName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for UnlockState {
             UnlockState::Locked => write!(f, "LOCKED"),
             UnlockState::Unlocked => write!(f, "UNLOCKED"),
             UnlockState::Unlocking => write!(f, "UNLOCKING"),
-            UnlockState::Unknown(value) => write!(f, "{}", value),
+            UnlockState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

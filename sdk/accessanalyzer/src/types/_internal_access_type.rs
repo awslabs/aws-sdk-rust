@@ -102,7 +102,7 @@ impl ::std::fmt::Display for InternalAccessType {
         match self {
             InternalAccessType::IntraAccount => write!(f, "INTRA_ACCOUNT"),
             InternalAccessType::IntraOrg => write!(f, "INTRA_ORG"),
-            InternalAccessType::Unknown(value) => write!(f, "{}", value),
+            InternalAccessType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -96,7 +96,7 @@ impl ::std::fmt::Display for SummaryMetrics {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             SummaryMetrics::SavingsPercentage => write!(f, "SavingsPercentage"),
-            SummaryMetrics::Unknown(value) => write!(f, "{}", value),
+            SummaryMetrics::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

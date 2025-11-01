@@ -96,7 +96,7 @@ impl ::std::fmt::Display for MessageSystemAttributeNameForSends {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             MessageSystemAttributeNameForSends::AwsTraceHeader => write!(f, "AWSTraceHeader"),
-            MessageSystemAttributeNameForSends::Unknown(value) => write!(f, "{}", value),
+            MessageSystemAttributeNameForSends::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

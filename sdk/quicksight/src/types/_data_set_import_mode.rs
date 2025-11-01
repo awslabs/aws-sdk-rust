@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DataSetImportMode {
         match self {
             DataSetImportMode::DirectQuery => write!(f, "DIRECT_QUERY"),
             DataSetImportMode::Spice => write!(f, "SPICE"),
-            DataSetImportMode::Unknown(value) => write!(f, "{}", value),
+            DataSetImportMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

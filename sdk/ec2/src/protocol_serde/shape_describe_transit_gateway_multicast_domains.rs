@@ -55,8 +55,7 @@ pub fn de_describe_transit_gateway_multicast_domains(
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeTransitGatewayMulticastDomainsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected DescribeTransitGatewayMulticastDomainsResponse got {:?}",
-            start_el
+            "invalid root, expected DescribeTransitGatewayMulticastDomainsResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

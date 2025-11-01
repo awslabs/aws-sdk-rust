@@ -114,7 +114,7 @@ impl ::std::fmt::Display for RateBasedStatementAggregateKeyType {
             RateBasedStatementAggregateKeyType::CustomKeys => write!(f, "CUSTOM_KEYS"),
             RateBasedStatementAggregateKeyType::ForwardedIp => write!(f, "FORWARDED_IP"),
             RateBasedStatementAggregateKeyType::Ip => write!(f, "IP"),
-            RateBasedStatementAggregateKeyType::Unknown(value) => write!(f, "{}", value),
+            RateBasedStatementAggregateKeyType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

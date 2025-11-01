@@ -210,7 +210,7 @@ impl ::std::fmt::Display for PartitionInstanceType {
             PartitionInstanceType::SearchPreviousgenerationXlarge => write!(f, "search.previousgeneration.xlarge"),
             PartitionInstanceType::SearchSmall => write!(f, "search.small"),
             PartitionInstanceType::SearchXlarge => write!(f, "search.xlarge"),
-            PartitionInstanceType::Unknown(value) => write!(f, "{}", value),
+            PartitionInstanceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

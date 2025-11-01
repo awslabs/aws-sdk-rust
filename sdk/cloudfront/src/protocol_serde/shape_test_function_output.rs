@@ -17,8 +17,7 @@ pub fn de_test_result(inp: &[u8]) -> std::result::Result<crate::types::TestResul
     let start_el = decoder.start_el();
     if !(start_el.matches("TestResult")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected TestResult got {:?}",
-            start_el
+            "invalid root, expected TestResult got {start_el:?}"
         )));
     }
     crate::protocol_serde::shape_test_result::de_test_result(&mut decoder)

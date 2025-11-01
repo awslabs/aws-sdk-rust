@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ManifestLayout {
             ManifestLayout::Compact => write!(f, "COMPACT"),
             ManifestLayout::DrmTopLevelCompact => write!(f, "DRM_TOP_LEVEL_COMPACT"),
             ManifestLayout::Full => write!(f, "FULL"),
-            ManifestLayout::Unknown(value) => write!(f, "{}", value),
+            ManifestLayout::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

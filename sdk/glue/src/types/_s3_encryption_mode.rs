@@ -108,7 +108,7 @@ impl ::std::fmt::Display for S3EncryptionMode {
             S3EncryptionMode::Disabled => write!(f, "DISABLED"),
             S3EncryptionMode::Ssekms => write!(f, "SSE-KMS"),
             S3EncryptionMode::Sses3 => write!(f, "SSE-S3"),
-            S3EncryptionMode::Unknown(value) => write!(f, "{}", value),
+            S3EncryptionMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

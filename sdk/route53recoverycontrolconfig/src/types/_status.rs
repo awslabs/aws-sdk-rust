@@ -108,7 +108,7 @@ impl ::std::fmt::Display for Status {
             Status::Deployed => write!(f, "DEPLOYED"),
             Status::Pending => write!(f, "PENDING"),
             Status::PendingDeletion => write!(f, "PENDING_DELETION"),
-            Status::Unknown(value) => write!(f, "{}", value),
+            Status::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

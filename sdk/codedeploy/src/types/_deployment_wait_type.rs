@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DeploymentWaitType {
         match self {
             DeploymentWaitType::ReadyWait => write!(f, "READY_WAIT"),
             DeploymentWaitType::TerminationWait => write!(f, "TERMINATION_WAIT"),
-            DeploymentWaitType::Unknown(value) => write!(f, "{}", value),
+            DeploymentWaitType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

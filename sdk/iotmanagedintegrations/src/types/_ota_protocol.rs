@@ -96,7 +96,7 @@ impl ::std::fmt::Display for OtaProtocol {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             OtaProtocol::Http => write!(f, "HTTP"),
-            OtaProtocol::Unknown(value) => write!(f, "{}", value),
+            OtaProtocol::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

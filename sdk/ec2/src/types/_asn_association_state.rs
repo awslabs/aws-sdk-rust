@@ -133,7 +133,7 @@ impl ::std::fmt::Display for AsnAssociationState {
             AsnAssociationState::FailedDisassociation => write!(f, "failed-disassociation"),
             AsnAssociationState::PendingAssociation => write!(f, "pending-association"),
             AsnAssociationState::PendingDisassociation => write!(f, "pending-disassociation"),
-            AsnAssociationState::Unknown(value) => write!(f, "{}", value),
+            AsnAssociationState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

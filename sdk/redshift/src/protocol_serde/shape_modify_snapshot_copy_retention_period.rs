@@ -146,16 +146,14 @@ pub fn de_modify_snapshot_copy_retention_period(
     let start_el = decoder.start_el();
     if !(start_el.matches("ModifySnapshotCopyRetentionPeriodResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected ModifySnapshotCopyRetentionPeriodResponse got {:?}",
-            start_el
+            "invalid root, expected ModifySnapshotCopyRetentionPeriodResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("ModifySnapshotCopyRetentionPeriodResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected ModifySnapshotCopyRetentionPeriodResult got {:?}",
-                start_el
+                "invalid result, expected ModifySnapshotCopyRetentionPeriodResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

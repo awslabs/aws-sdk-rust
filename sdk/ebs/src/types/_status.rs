@@ -108,7 +108,7 @@ impl ::std::fmt::Display for Status {
             Status::Completed => write!(f, "completed"),
             Status::Error => write!(f, "error"),
             Status::Pending => write!(f, "pending"),
-            Status::Unknown(value) => write!(f, "{}", value),
+            Status::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

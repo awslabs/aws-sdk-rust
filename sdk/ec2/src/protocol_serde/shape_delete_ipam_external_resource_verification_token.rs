@@ -54,8 +54,7 @@ pub fn de_delete_ipam_external_resource_verification_token(
     let start_el = decoder.start_el();
     if !(start_el.matches("DeleteIpamExternalResourceVerificationTokenResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected DeleteIpamExternalResourceVerificationTokenResponse got {:?}",
-            start_el
+            "invalid root, expected DeleteIpamExternalResourceVerificationTokenResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

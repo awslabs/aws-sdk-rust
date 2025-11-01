@@ -142,7 +142,7 @@ impl ::std::fmt::Display for UpdateRecommendationLifecycleStageReasonCode {
             UpdateRecommendationLifecycleStageReasonCode::OtherMethodsAvailable => write!(f, "other_methods_available"),
             UpdateRecommendationLifecycleStageReasonCode::TemporaryAccount => write!(f, "temporary_account"),
             UpdateRecommendationLifecycleStageReasonCode::ValidBusinessCase => write!(f, "valid_business_case"),
-            UpdateRecommendationLifecycleStageReasonCode::Unknown(value) => write!(f, "{}", value),
+            UpdateRecommendationLifecycleStageReasonCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

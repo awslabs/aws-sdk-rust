@@ -102,7 +102,7 @@ impl ::std::fmt::Display for IpamScopeType {
         match self {
             IpamScopeType::Private => write!(f, "private"),
             IpamScopeType::Public => write!(f, "public"),
-            IpamScopeType::Unknown(value) => write!(f, "{}", value),
+            IpamScopeType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for MonitorConfigState {
             MonitorConfigState::Error => write!(f, "ERROR"),
             MonitorConfigState::Inactive => write!(f, "INACTIVE"),
             MonitorConfigState::Pending => write!(f, "PENDING"),
-            MonitorConfigState::Unknown(value) => write!(f, "{}", value),
+            MonitorConfigState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

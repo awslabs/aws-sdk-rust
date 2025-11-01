@@ -187,6 +187,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for RejectDomain
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::reject_domain_transfer_from_another_aws_account::RejectDomainTransferFromAnotherAwsAccountInput,
                 output: &mut ::std::string::String,

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for OpenZfsReadCacheSizingMode {
             OpenZfsReadCacheSizingMode::NoCache => write!(f, "NO_CACHE"),
             OpenZfsReadCacheSizingMode::ProportionalToThroughputCapacity => write!(f, "PROPORTIONAL_TO_THROUGHPUT_CAPACITY"),
             OpenZfsReadCacheSizingMode::UserProvisioned => write!(f, "USER_PROVISIONED"),
-            OpenZfsReadCacheSizingMode::Unknown(value) => write!(f, "{}", value),
+            OpenZfsReadCacheSizingMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -189,7 +189,7 @@ impl ::std::fmt::Display for IntegrationType {
             IntegrationType::WisdomAssistant => write!(f, "WISDOM_ASSISTANT"),
             IntegrationType::WisdomKnowledgeBase => write!(f, "WISDOM_KNOWLEDGE_BASE"),
             IntegrationType::WisdomQuickResponses => write!(f, "WISDOM_QUICK_RESPONSES"),
-            IntegrationType::Unknown(value) => write!(f, "{}", value),
+            IntegrationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

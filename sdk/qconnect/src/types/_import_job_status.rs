@@ -133,7 +133,7 @@ impl ::std::fmt::Display for ImportJobStatus {
             ImportJobStatus::DeleteInProgress => write!(f, "DELETE_IN_PROGRESS"),
             ImportJobStatus::Failed => write!(f, "FAILED"),
             ImportJobStatus::StartInProgress => write!(f, "START_IN_PROGRESS"),
-            ImportJobStatus::Unknown(value) => write!(f, "{}", value),
+            ImportJobStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

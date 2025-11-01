@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ResourceLocationValues {
             ResourceLocationValues::Cloud => write!(f, "CLOUD"),
             ResourceLocationValues::LocalZone => write!(f, "LOCAL_ZONE"),
             ResourceLocationValues::Outpost => write!(f, "OUTPOST"),
-            ResourceLocationValues::Unknown(value) => write!(f, "{}", value),
+            ResourceLocationValues::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

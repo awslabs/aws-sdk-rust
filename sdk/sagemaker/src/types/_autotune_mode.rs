@@ -96,7 +96,7 @@ impl ::std::fmt::Display for AutotuneMode {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             AutotuneMode::Enabled => write!(f, "Enabled"),
-            AutotuneMode::Unknown(value) => write!(f, "{}", value),
+            AutotuneMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

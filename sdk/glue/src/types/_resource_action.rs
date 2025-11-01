@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ResourceAction {
         match self {
             ResourceAction::Create => write!(f, "CREATE"),
             ResourceAction::Update => write!(f, "UPDATE"),
-            ResourceAction::Unknown(value) => write!(f, "{}", value),
+            ResourceAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

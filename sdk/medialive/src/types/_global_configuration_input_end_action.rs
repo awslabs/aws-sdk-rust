@@ -102,7 +102,7 @@ impl ::std::fmt::Display for GlobalConfigurationInputEndAction {
         match self {
             GlobalConfigurationInputEndAction::None => write!(f, "NONE"),
             GlobalConfigurationInputEndAction::SwitchAndLoopInputs => write!(f, "SWITCH_AND_LOOP_INPUTS"),
-            GlobalConfigurationInputEndAction::Unknown(value) => write!(f, "{}", value),
+            GlobalConfigurationInputEndAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ProjectSortByType {
             ProjectSortByType::CreatedTime => write!(f, "CREATED_TIME"),
             ProjectSortByType::LastModifiedTime => write!(f, "LAST_MODIFIED_TIME"),
             ProjectSortByType::Name => write!(f, "NAME"),
-            ProjectSortByType::Unknown(value) => write!(f, "{}", value),
+            ProjectSortByType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

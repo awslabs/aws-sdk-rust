@@ -108,7 +108,7 @@ impl ::std::fmt::Display for HubContentSupportStatus {
             HubContentSupportStatus::Deprecated => write!(f, "Deprecated"),
             HubContentSupportStatus::Restricted => write!(f, "Restricted"),
             HubContentSupportStatus::Supported => write!(f, "Supported"),
-            HubContentSupportStatus::Unknown(value) => write!(f, "{}", value),
+            HubContentSupportStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

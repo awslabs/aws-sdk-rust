@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ServiceManagedFleetOperatingSystemFamily {
         match self {
             ServiceManagedFleetOperatingSystemFamily::Linux => write!(f, "LINUX"),
             ServiceManagedFleetOperatingSystemFamily::Windows => write!(f, "WINDOWS"),
-            ServiceManagedFleetOperatingSystemFamily::Unknown(value) => write!(f, "{}", value),
+            ServiceManagedFleetOperatingSystemFamily::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RegionAvailabilityStatus {
         match self {
             RegionAvailabilityStatus::Available => write!(f, "AVAILABLE"),
             RegionAvailabilityStatus::Unavailable => write!(f, "UNAVAILABLE"),
-            RegionAvailabilityStatus::Unknown(value) => write!(f, "{}", value),
+            RegionAvailabilityStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AccessMethodType {
             AccessMethodType::CaRepository => write!(f, "CA_REPOSITORY"),
             AccessMethodType::ResourcePkiManifest => write!(f, "RESOURCE_PKI_MANIFEST"),
             AccessMethodType::ResourcePkiNotify => write!(f, "RESOURCE_PKI_NOTIFY"),
-            AccessMethodType::Unknown(value) => write!(f, "{}", value),
+            AccessMethodType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

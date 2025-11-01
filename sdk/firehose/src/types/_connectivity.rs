@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Connectivity {
         match self {
             Connectivity::Private => write!(f, "PRIVATE"),
             Connectivity::Public => write!(f, "PUBLIC"),
-            Connectivity::Unknown(value) => write!(f, "{}", value),
+            Connectivity::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PendingAction {
         match self {
             PendingAction::Customer => write!(f, "Customer"),
             PendingAction::None => write!(f, "None"),
-            PendingAction::Unknown(value) => write!(f, "{}", value),
+            PendingAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

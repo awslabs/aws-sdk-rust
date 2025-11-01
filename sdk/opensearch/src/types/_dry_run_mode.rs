@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DryRunMode {
         match self {
             DryRunMode::Basic => write!(f, "Basic"),
             DryRunMode::Verbose => write!(f, "Verbose"),
-            DryRunMode::Unknown(value) => write!(f, "{}", value),
+            DryRunMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

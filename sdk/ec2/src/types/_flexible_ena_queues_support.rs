@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FlexibleEnaQueuesSupport {
         match self {
             FlexibleEnaQueuesSupport::Supported => write!(f, "supported"),
             FlexibleEnaQueuesSupport::Unsupported => write!(f, "unsupported"),
-            FlexibleEnaQueuesSupport::Unknown(value) => write!(f, "{}", value),
+            FlexibleEnaQueuesSupport::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

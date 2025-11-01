@@ -108,7 +108,7 @@ impl ::std::fmt::Display for Capability {
             Capability::CapabilityAutoExpand => write!(f, "CAPABILITY_AUTO_EXPAND"),
             Capability::CapabilityIam => write!(f, "CAPABILITY_IAM"),
             Capability::CapabilityNamedIam => write!(f, "CAPABILITY_NAMED_IAM"),
-            Capability::Unknown(value) => write!(f, "{}", value),
+            Capability::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

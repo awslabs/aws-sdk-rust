@@ -126,7 +126,7 @@ impl ::std::fmt::Display for ServiceEnvironmentStatus {
             ServiceEnvironmentStatus::Invalid => write!(f, "INVALID"),
             ServiceEnvironmentStatus::Updating => write!(f, "UPDATING"),
             ServiceEnvironmentStatus::Valid => write!(f, "VALID"),
-            ServiceEnvironmentStatus::Unknown(value) => write!(f, "{}", value),
+            ServiceEnvironmentStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

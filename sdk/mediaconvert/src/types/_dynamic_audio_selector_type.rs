@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DynamicAudioSelectorType {
         match self {
             DynamicAudioSelectorType::AllTracks => write!(f, "ALL_TRACKS"),
             DynamicAudioSelectorType::LanguageCode => write!(f, "LANGUAGE_CODE"),
-            DynamicAudioSelectorType::Unknown(value) => write!(f, "{}", value),
+            DynamicAudioSelectorType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

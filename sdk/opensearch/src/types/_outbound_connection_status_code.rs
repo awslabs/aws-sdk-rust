@@ -161,7 +161,7 @@ impl ::std::fmt::Display for OutboundConnectionStatusCode {
             OutboundConnectionStatusCode::Rejecting => write!(f, "REJECTING"),
             OutboundConnectionStatusCode::Validating => write!(f, "VALIDATING"),
             OutboundConnectionStatusCode::ValidationFailed => write!(f, "VALIDATION_FAILED"),
-            OutboundConnectionStatusCode::Unknown(value) => write!(f, "{}", value),
+            OutboundConnectionStatusCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

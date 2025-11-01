@@ -108,7 +108,7 @@ impl ::std::fmt::Display for StorageMaximumSizeUnit {
             StorageMaximumSizeUnit::Gb => write!(f, "GB"),
             StorageMaximumSizeUnit::Mb => write!(f, "MB"),
             StorageMaximumSizeUnit::Tb => write!(f, "TB"),
-            StorageMaximumSizeUnit::Unknown(value) => write!(f, "{}", value),
+            StorageMaximumSizeUnit::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

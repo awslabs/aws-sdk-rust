@@ -114,7 +114,7 @@ impl ::std::fmt::Display for RevisionLocationType {
             RevisionLocationType::GitHub => write!(f, "GitHub"),
             RevisionLocationType::S3 => write!(f, "S3"),
             RevisionLocationType::String => write!(f, "String"),
-            RevisionLocationType::Unknown(value) => write!(f, "{}", value),
+            RevisionLocationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

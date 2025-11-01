@@ -147,7 +147,7 @@ impl ::std::fmt::Display for AttackPropertyIdentifier {
             AttackPropertyIdentifier::SourceUserAgent => write!(f, "SOURCE_USER_AGENT"),
             AttackPropertyIdentifier::WordpressPingbackReflector => write!(f, "WORDPRESS_PINGBACK_REFLECTOR"),
             AttackPropertyIdentifier::WordpressPingbackSource => write!(f, "WORDPRESS_PINGBACK_SOURCE"),
-            AttackPropertyIdentifier::Unknown(value) => write!(f, "{}", value),
+            AttackPropertyIdentifier::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -120,7 +120,7 @@ impl ::std::fmt::Display for RouteTableAssociationStateCode {
             RouteTableAssociationStateCode::Disassociated => write!(f, "disassociated"),
             RouteTableAssociationStateCode::Disassociating => write!(f, "disassociating"),
             RouteTableAssociationStateCode::Failed => write!(f, "failed"),
-            RouteTableAssociationStateCode::Unknown(value) => write!(f, "{}", value),
+            RouteTableAssociationStateCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

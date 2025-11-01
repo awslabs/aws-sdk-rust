@@ -196,7 +196,7 @@ impl ::std::fmt::Display for PipeState {
             PipeState::UpdateFailed => write!(f, "UPDATE_FAILED"),
             PipeState::UpdateRollbackFailed => write!(f, "UPDATE_ROLLBACK_FAILED"),
             PipeState::Updating => write!(f, "UPDATING"),
-            PipeState::Unknown(value) => write!(f, "{}", value),
+            PipeState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

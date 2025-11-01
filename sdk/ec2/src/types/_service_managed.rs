@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ServiceManaged {
             ServiceManaged::Alb => write!(f, "alb"),
             ServiceManaged::Nlb => write!(f, "nlb"),
             ServiceManaged::Rnat => write!(f, "rnat"),
-            ServiceManaged::Unknown(value) => write!(f, "{}", value),
+            ServiceManaged::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

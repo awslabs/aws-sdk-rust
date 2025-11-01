@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ETagAlgorithmFamily {
             ETagAlgorithmFamily::Md5Up => write!(f, "MD5up"),
             ETagAlgorithmFamily::Sha256Up => write!(f, "SHA256up"),
             ETagAlgorithmFamily::Sha512Up => write!(f, "SHA512up"),
-            ETagAlgorithmFamily::Unknown(value) => write!(f, "{}", value),
+            ETagAlgorithmFamily::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

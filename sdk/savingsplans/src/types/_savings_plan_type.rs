@@ -108,7 +108,7 @@ impl ::std::fmt::Display for SavingsPlanType {
             SavingsPlanType::Compute => write!(f, "Compute"),
             SavingsPlanType::Ec2Instance => write!(f, "EC2Instance"),
             SavingsPlanType::Sagemaker => write!(f, "SageMaker"),
-            SavingsPlanType::Unknown(value) => write!(f, "{}", value),
+            SavingsPlanType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

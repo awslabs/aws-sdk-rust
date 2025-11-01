@@ -120,7 +120,7 @@ impl ::std::fmt::Display for OutputType {
             OutputType::Int16 => write!(f, "INT16"),
             OutputType::Int32 => write!(f, "INT32"),
             OutputType::Uint16 => write!(f, "UINT16"),
-            OutputType::Unknown(value) => write!(f, "{}", value),
+            OutputType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

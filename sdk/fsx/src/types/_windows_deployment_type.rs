@@ -108,7 +108,7 @@ impl ::std::fmt::Display for WindowsDeploymentType {
             WindowsDeploymentType::MultiAz1 => write!(f, "MULTI_AZ_1"),
             WindowsDeploymentType::SingleAz1 => write!(f, "SINGLE_AZ_1"),
             WindowsDeploymentType::SingleAz2 => write!(f, "SINGLE_AZ_2"),
-            WindowsDeploymentType::Unknown(value) => write!(f, "{}", value),
+            WindowsDeploymentType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

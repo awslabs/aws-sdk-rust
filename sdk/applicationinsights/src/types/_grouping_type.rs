@@ -96,7 +96,7 @@ impl ::std::fmt::Display for GroupingType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             GroupingType::AccountBased => write!(f, "ACCOUNT_BASED"),
-            GroupingType::Unknown(value) => write!(f, "{}", value),
+            GroupingType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

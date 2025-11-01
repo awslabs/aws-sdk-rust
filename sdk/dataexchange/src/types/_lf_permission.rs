@@ -102,7 +102,7 @@ impl ::std::fmt::Display for LfPermission {
         match self {
             LfPermission::Describe => write!(f, "DESCRIBE"),
             LfPermission::Select => write!(f, "SELECT"),
-            LfPermission::Unknown(value) => write!(f, "{}", value),
+            LfPermission::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

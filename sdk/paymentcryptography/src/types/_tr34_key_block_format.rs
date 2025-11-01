@@ -96,7 +96,7 @@ impl ::std::fmt::Display for Tr34KeyBlockFormat {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             Tr34KeyBlockFormat::X9Tr342012 => write!(f, "X9_TR34_2012"),
-            Tr34KeyBlockFormat::Unknown(value) => write!(f, "{}", value),
+            Tr34KeyBlockFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

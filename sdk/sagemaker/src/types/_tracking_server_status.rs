@@ -210,7 +210,7 @@ impl ::std::fmt::Display for TrackingServerStatus {
             TrackingServerStatus::UpdateFailed => write!(f, "UpdateFailed"),
             TrackingServerStatus::Updated => write!(f, "Updated"),
             TrackingServerStatus::Updating => write!(f, "Updating"),
-            TrackingServerStatus::Unknown(value) => write!(f, "{}", value),
+            TrackingServerStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

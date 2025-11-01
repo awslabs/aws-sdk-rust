@@ -114,7 +114,7 @@ impl ::std::fmt::Display for StrategyRecommendation {
             StrategyRecommendation::Potential => write!(f, "potential"),
             StrategyRecommendation::Recommended => write!(f, "recommended"),
             StrategyRecommendation::ViableOption => write!(f, "viableOption"),
-            StrategyRecommendation::Unknown(value) => write!(f, "{}", value),
+            StrategyRecommendation::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

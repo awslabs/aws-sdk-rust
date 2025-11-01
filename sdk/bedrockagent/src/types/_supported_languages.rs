@@ -96,7 +96,7 @@ impl ::std::fmt::Display for SupportedLanguages {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             SupportedLanguages::Python3 => write!(f, "Python_3"),
-            SupportedLanguages::Unknown(value) => write!(f, "{}", value),
+            SupportedLanguages::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

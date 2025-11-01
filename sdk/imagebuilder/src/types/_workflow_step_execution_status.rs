@@ -126,7 +126,7 @@ impl ::std::fmt::Display for WorkflowStepExecutionStatus {
             WorkflowStepExecutionStatus::Pending => write!(f, "PENDING"),
             WorkflowStepExecutionStatus::Running => write!(f, "RUNNING"),
             WorkflowStepExecutionStatus::Skipped => write!(f, "SKIPPED"),
-            WorkflowStepExecutionStatus::Unknown(value) => write!(f, "{}", value),
+            WorkflowStepExecutionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -51,8 +51,7 @@ pub fn de_modify_default_credit_specification(
     let start_el = decoder.start_el();
     if !(start_el.matches("ModifyDefaultCreditSpecificationResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected ModifyDefaultCreditSpecificationResponse got {:?}",
-            start_el
+            "invalid root, expected ModifyDefaultCreditSpecificationResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MdnResponse {
         match self {
             MdnResponse::None => write!(f, "NONE"),
             MdnResponse::Sync => write!(f, "SYNC"),
-            MdnResponse::Unknown(value) => write!(f, "{}", value),
+            MdnResponse::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

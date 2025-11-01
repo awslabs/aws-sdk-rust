@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CustomLineItemType {
         match self {
             CustomLineItemType::Credit => write!(f, "CREDIT"),
             CustomLineItemType::Fee => write!(f, "FEE"),
-            CustomLineItemType::Unknown(value) => write!(f, "{}", value),
+            CustomLineItemType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

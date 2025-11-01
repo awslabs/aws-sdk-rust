@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AccountPlanType {
         match self {
             AccountPlanType::Free => write!(f, "FREE"),
             AccountPlanType::Paid => write!(f, "PAID"),
-            AccountPlanType::Unknown(value) => write!(f, "{}", value),
+            AccountPlanType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

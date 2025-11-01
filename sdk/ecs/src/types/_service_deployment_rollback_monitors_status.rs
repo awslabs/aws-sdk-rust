@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ServiceDeploymentRollbackMonitorsStatus {
             ServiceDeploymentRollbackMonitorsStatus::Monitoring => write!(f, "MONITORING"),
             ServiceDeploymentRollbackMonitorsStatus::MonitoringComplete => write!(f, "MONITORING_COMPLETE"),
             ServiceDeploymentRollbackMonitorsStatus::Triggered => write!(f, "TRIGGERED"),
-            ServiceDeploymentRollbackMonitorsStatus::Unknown(value) => write!(f, "{}", value),
+            ServiceDeploymentRollbackMonitorsStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

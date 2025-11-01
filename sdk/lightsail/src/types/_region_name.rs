@@ -203,7 +203,7 @@ impl ::std::fmt::Display for RegionName {
             RegionName::UsEast2 => write!(f, "us-east-2"),
             RegionName::UsWest1 => write!(f, "us-west-1"),
             RegionName::UsWest2 => write!(f, "us-west-2"),
-            RegionName::Unknown(value) => write!(f, "{}", value),
+            RegionName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

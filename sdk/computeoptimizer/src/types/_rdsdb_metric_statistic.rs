@@ -108,7 +108,7 @@ impl ::std::fmt::Display for RdsdbMetricStatistic {
             RdsdbMetricStatistic::Average => write!(f, "Average"),
             RdsdbMetricStatistic::Maximum => write!(f, "Maximum"),
             RdsdbMetricStatistic::Minimum => write!(f, "Minimum"),
-            RdsdbMetricStatistic::Unknown(value) => write!(f, "{}", value),
+            RdsdbMetricStatistic::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -139,7 +139,7 @@ impl ::std::fmt::Display for EventType {
             EventType::Reject => write!(f, "REJECT"),
             EventType::RenderingFailure => write!(f, "RENDERING_FAILURE"),
             EventType::Send => write!(f, "SEND"),
-            EventType::Unknown(value) => write!(f, "{}", value),
+            EventType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

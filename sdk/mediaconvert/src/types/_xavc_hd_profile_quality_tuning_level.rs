@@ -108,7 +108,7 @@ impl ::std::fmt::Display for XavcHdProfileQualityTuningLevel {
             XavcHdProfileQualityTuningLevel::MultiPassHq => write!(f, "MULTI_PASS_HQ"),
             XavcHdProfileQualityTuningLevel::SinglePass => write!(f, "SINGLE_PASS"),
             XavcHdProfileQualityTuningLevel::SinglePassHq => write!(f, "SINGLE_PASS_HQ"),
-            XavcHdProfileQualityTuningLevel::Unknown(value) => write!(f, "{}", value),
+            XavcHdProfileQualityTuningLevel::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

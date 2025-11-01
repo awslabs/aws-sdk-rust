@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RecordingFileFormat {
         match self {
             RecordingFileFormat::Opus => write!(f, "Opus"),
             RecordingFileFormat::Wav => write!(f, "Wav"),
-            RecordingFileFormat::Unknown(value) => write!(f, "{}", value),
+            RecordingFileFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

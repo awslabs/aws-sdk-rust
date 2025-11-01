@@ -102,7 +102,7 @@ impl ::std::fmt::Display for StreamGroupStatusReason {
         match self {
             StreamGroupStatusReason::InternalError => write!(f, "internalError"),
             StreamGroupStatusReason::NoAvailableInstances => write!(f, "noAvailableInstances"),
-            StreamGroupStatusReason::Unknown(value) => write!(f, "{}", value),
+            StreamGroupStatusReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

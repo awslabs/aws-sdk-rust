@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RootAccess {
         match self {
             RootAccess::Disabled => write!(f, "Disabled"),
             RootAccess::Enabled => write!(f, "Enabled"),
-            RootAccess::Unknown(value) => write!(f, "{}", value),
+            RootAccess::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

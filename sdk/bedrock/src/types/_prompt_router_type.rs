@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PromptRouterType {
         match self {
             PromptRouterType::Custom => write!(f, "custom"),
             PromptRouterType::Default => write!(f, "default"),
-            PromptRouterType::Unknown(value) => write!(f, "{}", value),
+            PromptRouterType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

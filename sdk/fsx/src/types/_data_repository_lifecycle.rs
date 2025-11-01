@@ -126,7 +126,7 @@ impl ::std::fmt::Display for DataRepositoryLifecycle {
             DataRepositoryLifecycle::Failed => write!(f, "FAILED"),
             DataRepositoryLifecycle::Misconfigured => write!(f, "MISCONFIGURED"),
             DataRepositoryLifecycle::Updating => write!(f, "UPDATING"),
-            DataRepositoryLifecycle::Unknown(value) => write!(f, "{}", value),
+            DataRepositoryLifecycle::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

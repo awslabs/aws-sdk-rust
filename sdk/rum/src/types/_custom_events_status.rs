@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CustomEventsStatus {
         match self {
             CustomEventsStatus::Disabled => write!(f, "DISABLED"),
             CustomEventsStatus::Enabled => write!(f, "ENABLED"),
-            CustomEventsStatus::Unknown(value) => write!(f, "{}", value),
+            CustomEventsStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

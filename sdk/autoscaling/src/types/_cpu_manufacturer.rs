@@ -114,7 +114,7 @@ impl ::std::fmt::Display for CpuManufacturer {
             CpuManufacturer::Amd => write!(f, "amd"),
             CpuManufacturer::Apple => write!(f, "apple"),
             CpuManufacturer::Intel => write!(f, "intel"),
-            CpuManufacturer::Unknown(value) => write!(f, "{}", value),
+            CpuManufacturer::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

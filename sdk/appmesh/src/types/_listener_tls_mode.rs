@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ListenerTlsMode {
             ListenerTlsMode::Disabled => write!(f, "DISABLED"),
             ListenerTlsMode::Permissive => write!(f, "PERMISSIVE"),
             ListenerTlsMode::Strict => write!(f, "STRICT"),
-            ListenerTlsMode::Unknown(value) => write!(f, "{}", value),
+            ListenerTlsMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

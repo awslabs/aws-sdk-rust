@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ActiveSpeakerPosition {
             ActiveSpeakerPosition::BottomRight => write!(f, "BottomRight"),
             ActiveSpeakerPosition::TopLeft => write!(f, "TopLeft"),
             ActiveSpeakerPosition::TopRight => write!(f, "TopRight"),
-            ActiveSpeakerPosition::Unknown(value) => write!(f, "{}", value),
+            ActiveSpeakerPosition::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

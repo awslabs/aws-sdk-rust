@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DirectInternetAccess {
         match self {
             DirectInternetAccess::Disabled => write!(f, "Disabled"),
             DirectInternetAccess::Enabled => write!(f, "Enabled"),
-            DirectInternetAccess::Unknown(value) => write!(f, "{}", value),
+            DirectInternetAccess::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

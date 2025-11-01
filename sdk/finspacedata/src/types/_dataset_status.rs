@@ -114,7 +114,7 @@ impl ::std::fmt::Display for DatasetStatus {
             DatasetStatus::Pending => write!(f, "PENDING"),
             DatasetStatus::Running => write!(f, "RUNNING"),
             DatasetStatus::Success => write!(f, "SUCCESS"),
-            DatasetStatus::Unknown(value) => write!(f, "{}", value),
+            DatasetStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

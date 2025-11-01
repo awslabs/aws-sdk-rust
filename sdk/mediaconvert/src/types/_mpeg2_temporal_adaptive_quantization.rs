@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Mpeg2TemporalAdaptiveQuantization {
         match self {
             Mpeg2TemporalAdaptiveQuantization::Disabled => write!(f, "DISABLED"),
             Mpeg2TemporalAdaptiveQuantization::Enabled => write!(f, "ENABLED"),
-            Mpeg2TemporalAdaptiveQuantization::Unknown(value) => write!(f, "{}", value),
+            Mpeg2TemporalAdaptiveQuantization::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

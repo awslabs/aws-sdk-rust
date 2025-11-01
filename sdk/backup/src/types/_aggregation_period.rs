@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AggregationPeriod {
             AggregationPeriod::FourteenDays => write!(f, "FOURTEEN_DAYS"),
             AggregationPeriod::OneDay => write!(f, "ONE_DAY"),
             AggregationPeriod::SevenDays => write!(f, "SEVEN_DAYS"),
-            AggregationPeriod::Unknown(value) => write!(f, "{}", value),
+            AggregationPeriod::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

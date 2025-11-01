@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Mp4CslgAtom {
         match self {
             Mp4CslgAtom::Exclude => write!(f, "EXCLUDE"),
             Mp4CslgAtom::Include => write!(f, "INCLUDE"),
-            Mp4CslgAtom::Unknown(value) => write!(f, "{}", value),
+            Mp4CslgAtom::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

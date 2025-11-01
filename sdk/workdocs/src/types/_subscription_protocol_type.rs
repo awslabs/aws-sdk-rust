@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SubscriptionProtocolType {
         match self {
             SubscriptionProtocolType::Https => write!(f, "HTTPS"),
             SubscriptionProtocolType::Sqs => write!(f, "SQS"),
-            SubscriptionProtocolType::Unknown(value) => write!(f, "{}", value),
+            SubscriptionProtocolType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

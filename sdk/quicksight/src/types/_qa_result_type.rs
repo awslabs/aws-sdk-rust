@@ -108,7 +108,7 @@ impl ::std::fmt::Display for QaResultType {
             QaResultType::DashboardVisual => write!(f, "DASHBOARD_VISUAL"),
             QaResultType::GeneratedAnswer => write!(f, "GENERATED_ANSWER"),
             QaResultType::NoAnswer => write!(f, "NO_ANSWER"),
-            QaResultType::Unknown(value) => write!(f, "{}", value),
+            QaResultType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -132,7 +132,7 @@ impl ::std::fmt::Display for DomainStatus {
             DomainStatus::Pending => write!(f, "Pending"),
             DomainStatus::UpdateFailed => write!(f, "Update_Failed"),
             DomainStatus::Updating => write!(f, "Updating"),
-            DomainStatus::Unknown(value) => write!(f, "{}", value),
+            DomainStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

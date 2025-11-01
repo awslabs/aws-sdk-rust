@@ -133,7 +133,7 @@ impl ::std::fmt::Display for AsnState {
             AsnState::PendingDeprovision => write!(f, "pending-deprovision"),
             AsnState::PendingProvision => write!(f, "pending-provision"),
             AsnState::Provisioned => write!(f, "provisioned"),
-            AsnState::Unknown(value) => write!(f, "{}", value),
+            AsnState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

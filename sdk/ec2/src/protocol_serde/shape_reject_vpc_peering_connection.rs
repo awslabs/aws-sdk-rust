@@ -53,8 +53,7 @@ pub fn de_reject_vpc_peering_connection(
     let start_el = decoder.start_el();
     if !(start_el.matches("RejectVpcPeeringConnectionResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected RejectVpcPeeringConnectionResponse got {:?}",
-            start_el
+            "invalid root, expected RejectVpcPeeringConnectionResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

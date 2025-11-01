@@ -108,7 +108,7 @@ impl ::std::fmt::Display for DeploymentMode {
             DeploymentMode::ActiveStandbyMultiAz => write!(f, "ACTIVE_STANDBY_MULTI_AZ"),
             DeploymentMode::ClusterMultiAz => write!(f, "CLUSTER_MULTI_AZ"),
             DeploymentMode::SingleInstance => write!(f, "SINGLE_INSTANCE"),
-            DeploymentMode::Unknown(value) => write!(f, "{}", value),
+            DeploymentMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

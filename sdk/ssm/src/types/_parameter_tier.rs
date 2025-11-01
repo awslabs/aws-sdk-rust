@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ParameterTier {
             ParameterTier::Advanced => write!(f, "Advanced"),
             ParameterTier::IntelligentTiering => write!(f, "Intelligent-Tiering"),
             ParameterTier::Standard => write!(f, "Standard"),
-            ParameterTier::Unknown(value) => write!(f, "{}", value),
+            ParameterTier::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

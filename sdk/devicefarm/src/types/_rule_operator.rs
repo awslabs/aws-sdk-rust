@@ -147,7 +147,7 @@ impl ::std::fmt::Display for RuleOperator {
             RuleOperator::LessThan => write!(f, "LESS_THAN"),
             RuleOperator::LessThanOrEquals => write!(f, "LESS_THAN_OR_EQUALS"),
             RuleOperator::NotIn => write!(f, "NOT_IN"),
-            RuleOperator::Unknown(value) => write!(f, "{}", value),
+            RuleOperator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

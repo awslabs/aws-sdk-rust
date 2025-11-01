@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ContainerGroupDefinitionStatus {
             ContainerGroupDefinitionStatus::Copying => write!(f, "COPYING"),
             ContainerGroupDefinitionStatus::Failed => write!(f, "FAILED"),
             ContainerGroupDefinitionStatus::Ready => write!(f, "READY"),
-            ContainerGroupDefinitionStatus::Unknown(value) => write!(f, "{}", value),
+            ContainerGroupDefinitionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

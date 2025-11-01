@@ -177,6 +177,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for SetLoggingOp
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::set_logging_options::SetLoggingOptionsInput,
                 output: &mut ::std::string::String,

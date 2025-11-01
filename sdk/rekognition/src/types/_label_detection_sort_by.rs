@@ -102,7 +102,7 @@ impl ::std::fmt::Display for LabelDetectionSortBy {
         match self {
             LabelDetectionSortBy::Name => write!(f, "NAME"),
             LabelDetectionSortBy::Timestamp => write!(f, "TIMESTAMP"),
-            LabelDetectionSortBy::Unknown(value) => write!(f, "{}", value),
+            LabelDetectionSortBy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

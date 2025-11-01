@@ -96,7 +96,7 @@ impl ::std::fmt::Display for RelationalDatabaseEngine {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             RelationalDatabaseEngine::Mysql => write!(f, "mysql"),
-            RelationalDatabaseEngine::Unknown(value) => write!(f, "{}", value),
+            RelationalDatabaseEngine::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

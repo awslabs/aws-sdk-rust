@@ -114,7 +114,7 @@ impl ::std::fmt::Display for GeneratedRulesType {
             GeneratedRulesType::Allowlist => write!(f, "ALLOWLIST"),
             GeneratedRulesType::Denylist => write!(f, "DENYLIST"),
             GeneratedRulesType::Rejectlist => write!(f, "REJECTLIST"),
-            GeneratedRulesType::Unknown(value) => write!(f, "{}", value),
+            GeneratedRulesType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

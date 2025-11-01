@@ -102,7 +102,7 @@ impl ::std::fmt::Display for M2tsPreventBufferUnderflow {
         match self {
             M2tsPreventBufferUnderflow::Disabled => write!(f, "DISABLED"),
             M2tsPreventBufferUnderflow::Enabled => write!(f, "ENABLED"),
-            M2tsPreventBufferUnderflow::Unknown(value) => write!(f, "{}", value),
+            M2tsPreventBufferUnderflow::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

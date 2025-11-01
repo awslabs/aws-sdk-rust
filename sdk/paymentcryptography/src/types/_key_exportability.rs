@@ -108,7 +108,7 @@ impl ::std::fmt::Display for KeyExportability {
             KeyExportability::Exportable => write!(f, "EXPORTABLE"),
             KeyExportability::NonExportable => write!(f, "NON_EXPORTABLE"),
             KeyExportability::Sensitive => write!(f, "SENSITIVE"),
-            KeyExportability::Unknown(value) => write!(f, "{}", value),
+            KeyExportability::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

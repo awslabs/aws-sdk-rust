@@ -194,7 +194,7 @@ impl ::std::fmt::Display for RrType {
             RrType::Svcb => write!(f, "SVCB"),
             RrType::Tlsa => write!(f, "TLSA"),
             RrType::Txt => write!(f, "TXT"),
-            RrType::Unknown(value) => write!(f, "{}", value),
+            RrType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

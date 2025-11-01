@@ -126,7 +126,7 @@ impl ::std::fmt::Display for ApplicationLogLevel {
             ApplicationLogLevel::Info => write!(f, "INFO"),
             ApplicationLogLevel::Trace => write!(f, "TRACE"),
             ApplicationLogLevel::Warn => write!(f, "WARN"),
-            ApplicationLogLevel::Unknown(value) => write!(f, "{}", value),
+            ApplicationLogLevel::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

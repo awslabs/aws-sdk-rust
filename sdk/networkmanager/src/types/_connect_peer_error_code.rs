@@ -133,7 +133,7 @@ impl ::std::fmt::Display for ConnectPeerErrorCode {
             ConnectPeerErrorCode::IpOutsideSubnetCidrRange => write!(f, "IP_OUTSIDE_SUBNET_CIDR_RANGE"),
             ConnectPeerErrorCode::NoAssociatedCidrBlock => write!(f, "NO_ASSOCIATED_CIDR_BLOCK"),
             ConnectPeerErrorCode::SubnetNotFound => write!(f, "SUBNET_NOT_FOUND"),
-            ConnectPeerErrorCode::Unknown(value) => write!(f, "{}", value),
+            ConnectPeerErrorCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

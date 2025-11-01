@@ -147,7 +147,7 @@ impl ::std::fmt::Display for AdTriggersElement {
             AdTriggersElement::ProviderOverlayPlacementOpportunity => write!(f, "PROVIDER_OVERLAY_PLACEMENT_OPPORTUNITY"),
             AdTriggersElement::ProviderPlacementOpportunity => write!(f, "PROVIDER_PLACEMENT_OPPORTUNITY"),
             AdTriggersElement::SpliceInsert => write!(f, "SPLICE_INSERT"),
-            AdTriggersElement::Unknown(value) => write!(f, "{}", value),
+            AdTriggersElement::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

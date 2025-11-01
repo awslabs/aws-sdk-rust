@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SoftwareToUpdate {
         match self {
             SoftwareToUpdate::Core => write!(f, "core"),
             SoftwareToUpdate::OtaAgent => write!(f, "ota_agent"),
-            SoftwareToUpdate::Unknown(value) => write!(f, "{}", value),
+            SoftwareToUpdate::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

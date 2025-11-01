@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ClientVpnConnectionStatusCode {
             ClientVpnConnectionStatusCode::FailedToTerminate => write!(f, "failed-to-terminate"),
             ClientVpnConnectionStatusCode::Terminated => write!(f, "terminated"),
             ClientVpnConnectionStatusCode::Terminating => write!(f, "terminating"),
-            ClientVpnConnectionStatusCode::Unknown(value) => write!(f, "{}", value),
+            ClientVpnConnectionStatusCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

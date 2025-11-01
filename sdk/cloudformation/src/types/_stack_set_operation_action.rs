@@ -114,7 +114,7 @@ impl ::std::fmt::Display for StackSetOperationAction {
             StackSetOperationAction::Delete => write!(f, "DELETE"),
             StackSetOperationAction::DetectDrift => write!(f, "DETECT_DRIFT"),
             StackSetOperationAction::Update => write!(f, "UPDATE"),
-            StackSetOperationAction::Unknown(value) => write!(f, "{}", value),
+            StackSetOperationAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

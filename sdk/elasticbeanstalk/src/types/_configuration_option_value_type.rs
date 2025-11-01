@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ConfigurationOptionValueType {
         match self {
             ConfigurationOptionValueType::List => write!(f, "List"),
             ConfigurationOptionValueType::Scalar => write!(f, "Scalar"),
-            ConfigurationOptionValueType::Unknown(value) => write!(f, "{}", value),
+            ConfigurationOptionValueType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

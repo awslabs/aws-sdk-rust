@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ZonalShiftStatus {
             ZonalShiftStatus::Active => write!(f, "ACTIVE"),
             ZonalShiftStatus::Canceled => write!(f, "CANCELED"),
             ZonalShiftStatus::Expired => write!(f, "EXPIRED"),
-            ZonalShiftStatus::Unknown(value) => write!(f, "{}", value),
+            ZonalShiftStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

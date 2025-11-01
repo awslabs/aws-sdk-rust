@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RelevanceType {
         match self {
             RelevanceType::NotRelevant => write!(f, "NOT_RELEVANT"),
             RelevanceType::Relevant => write!(f, "RELEVANT"),
-            RelevanceType::Unknown(value) => write!(f, "{}", value),
+            RelevanceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

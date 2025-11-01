@@ -168,7 +168,7 @@ impl ::std::fmt::Display for ManagedCredentialsStatus {
             ManagedCredentialsStatus::PendingRemovalByOwner => write!(f, "PENDING_REMOVAL_BY_OWNER"),
             ManagedCredentialsStatus::PendingStartRemovalByCollaborator => write!(f, "PENDING_START_REMOVAL_BY_COLLABORATOR"),
             ManagedCredentialsStatus::PendingStartRemovalByOwner => write!(f, "PENDING_START_REMOVAL_BY_OWNER"),
-            ManagedCredentialsStatus::Unknown(value) => write!(f, "{}", value),
+            ManagedCredentialsStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ProresScanTypeConversionMode {
         match self {
             ProresScanTypeConversionMode::Interlaced => write!(f, "INTERLACED"),
             ProresScanTypeConversionMode::InterlacedOptimize => write!(f, "INTERLACED_OPTIMIZE"),
-            ProresScanTypeConversionMode::Unknown(value) => write!(f, "{}", value),
+            ProresScanTypeConversionMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

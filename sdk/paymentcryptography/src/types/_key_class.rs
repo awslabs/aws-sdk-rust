@@ -114,7 +114,7 @@ impl ::std::fmt::Display for KeyClass {
             KeyClass::PrivateKey => write!(f, "PRIVATE_KEY"),
             KeyClass::PublicKey => write!(f, "PUBLIC_KEY"),
             KeyClass::SymmetricKey => write!(f, "SYMMETRIC_KEY"),
-            KeyClass::Unknown(value) => write!(f, "{}", value),
+            KeyClass::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

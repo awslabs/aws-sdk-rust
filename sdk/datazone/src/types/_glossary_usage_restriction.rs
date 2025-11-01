@@ -96,7 +96,7 @@ impl ::std::fmt::Display for GlossaryUsageRestriction {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             GlossaryUsageRestriction::AssetGovernedTerms => write!(f, "ASSET_GOVERNED_TERMS"),
-            GlossaryUsageRestriction::Unknown(value) => write!(f, "{}", value),
+            GlossaryUsageRestriction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

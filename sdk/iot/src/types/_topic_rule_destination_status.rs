@@ -120,7 +120,7 @@ impl ::std::fmt::Display for TopicRuleDestinationStatus {
             TopicRuleDestinationStatus::Enabled => write!(f, "ENABLED"),
             TopicRuleDestinationStatus::Error => write!(f, "ERROR"),
             TopicRuleDestinationStatus::InProgress => write!(f, "IN_PROGRESS"),
-            TopicRuleDestinationStatus::Unknown(value) => write!(f, "{}", value),
+            TopicRuleDestinationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

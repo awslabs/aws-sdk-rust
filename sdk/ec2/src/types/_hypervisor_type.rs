@@ -102,7 +102,7 @@ impl ::std::fmt::Display for HypervisorType {
         match self {
             HypervisorType::Ovm => write!(f, "ovm"),
             HypervisorType::Xen => write!(f, "xen"),
-            HypervisorType::Unknown(value) => write!(f, "{}", value),
+            HypervisorType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

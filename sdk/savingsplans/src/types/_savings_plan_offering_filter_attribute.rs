@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SavingsPlanOfferingFilterAttribute {
         match self {
             SavingsPlanOfferingFilterAttribute::InstanceFamily => write!(f, "instanceFamily"),
             SavingsPlanOfferingFilterAttribute::Region => write!(f, "region"),
-            SavingsPlanOfferingFilterAttribute::Unknown(value) => write!(f, "{}", value),
+            SavingsPlanOfferingFilterAttribute::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

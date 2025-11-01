@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SlotResolutionStrategy {
         match self {
             SlotResolutionStrategy::Default => write!(f, "Default"),
             SlotResolutionStrategy::EnhancedFallback => write!(f, "EnhancedFallback"),
-            SlotResolutionStrategy::Unknown(value) => write!(f, "{}", value),
+            SlotResolutionStrategy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

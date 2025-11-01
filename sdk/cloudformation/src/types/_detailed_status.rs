@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DetailedStatus {
         match self {
             DetailedStatus::ConfigurationComplete => write!(f, "CONFIGURATION_COMPLETE"),
             DetailedStatus::ValidationFailed => write!(f, "VALIDATION_FAILED"),
-            DetailedStatus::Unknown(value) => write!(f, "{}", value),
+            DetailedStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

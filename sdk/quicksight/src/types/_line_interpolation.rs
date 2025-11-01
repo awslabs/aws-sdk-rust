@@ -108,7 +108,7 @@ impl ::std::fmt::Display for LineInterpolation {
             LineInterpolation::Linear => write!(f, "LINEAR"),
             LineInterpolation::Smooth => write!(f, "SMOOTH"),
             LineInterpolation::Stepped => write!(f, "STEPPED"),
-            LineInterpolation::Unknown(value) => write!(f, "{}", value),
+            LineInterpolation::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

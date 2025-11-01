@@ -120,7 +120,7 @@ impl ::std::fmt::Display for ValidityPeriodType {
             ValidityPeriodType::EndDate => write!(f, "END_DATE"),
             ValidityPeriodType::Months => write!(f, "MONTHS"),
             ValidityPeriodType::Years => write!(f, "YEARS"),
-            ValidityPeriodType::Unknown(value) => write!(f, "{}", value),
+            ValidityPeriodType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

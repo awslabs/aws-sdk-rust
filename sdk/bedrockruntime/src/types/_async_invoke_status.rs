@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AsyncInvokeStatus {
             AsyncInvokeStatus::Completed => write!(f, "Completed"),
             AsyncInvokeStatus::Failed => write!(f, "Failed"),
             AsyncInvokeStatus::InProgress => write!(f, "InProgress"),
-            AsyncInvokeStatus::Unknown(value) => write!(f, "{}", value),
+            AsyncInvokeStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

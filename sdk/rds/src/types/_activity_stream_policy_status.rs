@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ActivityStreamPolicyStatus {
             ActivityStreamPolicyStatus::LockingPolicy => write!(f, "locking-policy"),
             ActivityStreamPolicyStatus::Unlocked => write!(f, "unlocked"),
             ActivityStreamPolicyStatus::UnlockingPolicy => write!(f, "unlocking-policy"),
-            ActivityStreamPolicyStatus::Unknown(value) => write!(f, "{}", value),
+            ActivityStreamPolicyStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

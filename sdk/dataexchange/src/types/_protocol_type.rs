@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ProtocolType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ProtocolType::Rest => write!(f, "REST"),
-            ProtocolType::Unknown(value) => write!(f, "{}", value),
+            ProtocolType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

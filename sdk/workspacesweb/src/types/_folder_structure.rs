@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FolderStructure {
         match self {
             FolderStructure::Flat => write!(f, "Flat"),
             FolderStructure::NestedByDate => write!(f, "NestedByDate"),
-            FolderStructure::Unknown(value) => write!(f, "{}", value),
+            FolderStructure::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FleetProxyRuleEffectType {
         match self {
             FleetProxyRuleEffectType::Allow => write!(f, "ALLOW"),
             FleetProxyRuleEffectType::Deny => write!(f, "DENY"),
-            FleetProxyRuleEffectType::Unknown(value) => write!(f, "{}", value),
+            FleetProxyRuleEffectType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

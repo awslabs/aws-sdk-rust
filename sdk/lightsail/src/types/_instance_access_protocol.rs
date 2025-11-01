@@ -102,7 +102,7 @@ impl ::std::fmt::Display for InstanceAccessProtocol {
         match self {
             InstanceAccessProtocol::Rdp => write!(f, "rdp"),
             InstanceAccessProtocol::Ssh => write!(f, "ssh"),
-            InstanceAccessProtocol::Unknown(value) => write!(f, "{}", value),
+            InstanceAccessProtocol::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

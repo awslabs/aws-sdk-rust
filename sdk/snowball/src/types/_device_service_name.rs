@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DeviceServiceName {
         match self {
             DeviceServiceName::NfsOnDeviceService => write!(f, "NFS_ON_DEVICE_SERVICE"),
             DeviceServiceName::S3OnDeviceService => write!(f, "S3_ON_DEVICE_SERVICE"),
-            DeviceServiceName::Unknown(value) => write!(f, "{}", value),
+            DeviceServiceName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

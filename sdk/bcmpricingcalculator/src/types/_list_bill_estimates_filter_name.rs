@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ListBillEstimatesFilterName {
         match self {
             ListBillEstimatesFilterName::Name => write!(f, "NAME"),
             ListBillEstimatesFilterName::Status => write!(f, "STATUS"),
-            ListBillEstimatesFilterName::Unknown(value) => write!(f, "{}", value),
+            ListBillEstimatesFilterName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

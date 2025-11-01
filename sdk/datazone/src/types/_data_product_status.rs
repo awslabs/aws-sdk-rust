@@ -108,7 +108,7 @@ impl ::std::fmt::Display for DataProductStatus {
             DataProductStatus::Created => write!(f, "CREATED"),
             DataProductStatus::CreateFailed => write!(f, "CREATE_FAILED"),
             DataProductStatus::Creating => write!(f, "CREATING"),
-            DataProductStatus::Unknown(value) => write!(f, "{}", value),
+            DataProductStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

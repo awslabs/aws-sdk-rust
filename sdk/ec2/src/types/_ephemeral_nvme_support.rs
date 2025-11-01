@@ -108,7 +108,7 @@ impl ::std::fmt::Display for EphemeralNvmeSupport {
             EphemeralNvmeSupport::Required => write!(f, "required"),
             EphemeralNvmeSupport::Supported => write!(f, "supported"),
             EphemeralNvmeSupport::Unsupported => write!(f, "unsupported"),
-            EphemeralNvmeSupport::Unknown(value) => write!(f, "{}", value),
+            EphemeralNvmeSupport::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

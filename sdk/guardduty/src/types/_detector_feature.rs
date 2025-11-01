@@ -140,7 +140,7 @@ impl ::std::fmt::Display for DetectorFeature {
             DetectorFeature::RdsLoginEvents => write!(f, "RDS_LOGIN_EVENTS"),
             DetectorFeature::RuntimeMonitoring => write!(f, "RUNTIME_MONITORING"),
             DetectorFeature::S3DataEvents => write!(f, "S3_DATA_EVENTS"),
-            DetectorFeature::Unknown(value) => write!(f, "{}", value),
+            DetectorFeature::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

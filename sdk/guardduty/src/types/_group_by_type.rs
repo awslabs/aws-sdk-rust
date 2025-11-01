@@ -120,7 +120,7 @@ impl ::std::fmt::Display for GroupByType {
             GroupByType::FindingType => write!(f, "FINDING_TYPE"),
             GroupByType::Resource => write!(f, "RESOURCE"),
             GroupByType::Severity => write!(f, "SEVERITY"),
-            GroupByType::Unknown(value) => write!(f, "{}", value),
+            GroupByType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

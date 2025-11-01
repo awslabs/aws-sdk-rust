@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AudioLanguageCodeControl {
         match self {
             AudioLanguageCodeControl::FollowInput => write!(f, "FOLLOW_INPUT"),
             AudioLanguageCodeControl::UseConfigured => write!(f, "USE_CONFIGURED"),
-            AudioLanguageCodeControl::Unknown(value) => write!(f, "{}", value),
+            AudioLanguageCodeControl::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

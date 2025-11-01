@@ -210,7 +210,7 @@ impl ::std::fmt::Display for OperatorPropertiesKeys {
             OperatorPropertiesKeys::ValidationAction => write!(f, "VALIDATION_ACTION"),
             OperatorPropertiesKeys::Value => write!(f, "VALUE"),
             OperatorPropertiesKeys::Values => write!(f, "VALUES"),
-            OperatorPropertiesKeys::Unknown(value) => write!(f, "{}", value),
+            OperatorPropertiesKeys::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

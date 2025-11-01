@@ -108,7 +108,7 @@ impl ::std::fmt::Display for DocumentThumbnailType {
             DocumentThumbnailType::Large => write!(f, "LARGE"),
             DocumentThumbnailType::Small => write!(f, "SMALL"),
             DocumentThumbnailType::SmallHq => write!(f, "SMALL_HQ"),
-            DocumentThumbnailType::Unknown(value) => write!(f, "{}", value),
+            DocumentThumbnailType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -22,8 +22,7 @@ pub fn de_cloud_front_origin_access_identity_list(
     let start_el = decoder.start_el();
     if !(start_el.matches("CloudFrontOriginAccessIdentityList")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected CloudFrontOriginAccessIdentityList got {:?}",
-            start_el
+            "invalid root, expected CloudFrontOriginAccessIdentityList got {start_el:?}"
         )));
     }
     crate::protocol_serde::shape_cloud_front_origin_access_identity_list::de_cloud_front_origin_access_identity_list(&mut decoder)

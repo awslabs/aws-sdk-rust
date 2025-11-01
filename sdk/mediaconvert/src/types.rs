@@ -233,6 +233,10 @@ pub use crate::types::_prores_codec_profile::ProresCodecProfile;
 
 pub use crate::types::_prores_chroma_sampling::ProresChromaSampling;
 
+pub use crate::types::_passthrough_settings::PassthroughSettings;
+
+pub use crate::types::_video_selector_mode::VideoSelectorMode;
+
 pub use crate::types::_mpeg2_settings::Mpeg2Settings;
 
 pub use crate::types::_mpeg2_temporal_adaptive_quantization::Mpeg2TemporalAdaptiveQuantization;
@@ -798,6 +802,10 @@ pub use crate::types::_aac_codec_profile::AacCodecProfile;
 pub use crate::types::_aac_audio_description_broadcaster_mix::AacAudioDescriptionBroadcasterMix;
 
 pub use crate::types::_audio_type_control::AudioTypeControl;
+
+pub use crate::types::_audio_pitch_correction_settings::AudioPitchCorrectionSettings;
+
+pub use crate::types::_slow_pal_pitch_correction::SlowPalPitchCorrection;
 
 pub use crate::types::_audio_normalization_settings::AudioNormalizationSettings;
 
@@ -1394,6 +1402,8 @@ mod _audio_normalization_loudness_logging;
 mod _audio_normalization_peak_calculation;
 
 mod _audio_normalization_settings;
+
+mod _audio_pitch_correction_settings;
 
 mod _audio_properties;
 
@@ -2301,6 +2311,8 @@ mod _pad_video;
 
 mod _partner_watermarking;
 
+mod _passthrough_settings;
+
 mod _policy;
 
 mod _preset;
@@ -2394,6 +2406,8 @@ mod _service_override;
 mod _share_status;
 
 mod _simulate_reserved_queue;
+
+mod _slow_pal_pitch_correction;
 
 mod _speke_key_provider;
 
@@ -2512,6 +2526,8 @@ mod _video_preprocessor;
 mod _video_properties;
 
 mod _video_selector;
+
+mod _video_selector_mode;
 
 mod _video_selector_type;
 

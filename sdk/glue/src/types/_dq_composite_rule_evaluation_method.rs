@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DqCompositeRuleEvaluationMethod {
         match self {
             DqCompositeRuleEvaluationMethod::Column => write!(f, "COLUMN"),
             DqCompositeRuleEvaluationMethod::Row => write!(f, "ROW"),
-            DqCompositeRuleEvaluationMethod::Unknown(value) => write!(f, "{}", value),
+            DqCompositeRuleEvaluationMethod::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -226,7 +226,7 @@ impl ::std::fmt::Display for HandlerErrorCode {
             HandlerErrorCode::Throttling => write!(f, "Throttling"),
             HandlerErrorCode::UnknownValue => write!(f, "Unknown"),
             HandlerErrorCode::UnsupportedTarget => write!(f, "UnsupportedTarget"),
-            HandlerErrorCode::Unknown(value) => write!(f, "{}", value),
+            HandlerErrorCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

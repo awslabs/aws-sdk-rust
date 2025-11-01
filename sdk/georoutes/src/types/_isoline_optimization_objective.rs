@@ -108,7 +108,7 @@ impl ::std::fmt::Display for IsolineOptimizationObjective {
             IsolineOptimizationObjective::AccurateCalculation => write!(f, "AccurateCalculation"),
             IsolineOptimizationObjective::BalancedCalculation => write!(f, "BalancedCalculation"),
             IsolineOptimizationObjective::FastCalculation => write!(f, "FastCalculation"),
-            IsolineOptimizationObjective::Unknown(value) => write!(f, "{}", value),
+            IsolineOptimizationObjective::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

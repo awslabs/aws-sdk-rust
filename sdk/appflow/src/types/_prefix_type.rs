@@ -108,7 +108,7 @@ impl ::std::fmt::Display for PrefixType {
             PrefixType::Filename => write!(f, "FILENAME"),
             PrefixType::Path => write!(f, "PATH"),
             PrefixType::PathAndFilename => write!(f, "PATH_AND_FILENAME"),
-            PrefixType::Unknown(value) => write!(f, "{}", value),
+            PrefixType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

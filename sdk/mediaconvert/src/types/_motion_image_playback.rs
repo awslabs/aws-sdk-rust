@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MotionImagePlayback {
         match self {
             MotionImagePlayback::Once => write!(f, "ONCE"),
             MotionImagePlayback::Repeat => write!(f, "REPEAT"),
-            MotionImagePlayback::Unknown(value) => write!(f, "{}", value),
+            MotionImagePlayback::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

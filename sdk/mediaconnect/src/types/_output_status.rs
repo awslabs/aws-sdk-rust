@@ -102,7 +102,7 @@ impl ::std::fmt::Display for OutputStatus {
         match self {
             OutputStatus::Disabled => write!(f, "DISABLED"),
             OutputStatus::Enabled => write!(f, "ENABLED"),
-            OutputStatus::Unknown(value) => write!(f, "{}", value),
+            OutputStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

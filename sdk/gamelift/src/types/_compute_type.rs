@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ComputeType {
         match self {
             ComputeType::Anywhere => write!(f, "ANYWHERE"),
             ComputeType::Ec2 => write!(f, "EC2"),
-            ComputeType::Unknown(value) => write!(f, "{}", value),
+            ComputeType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

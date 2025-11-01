@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ApplicationStatusReason {
         match self {
             ApplicationStatusReason::AccessDenied => write!(f, "accessDenied"),
             ApplicationStatusReason::InternalError => write!(f, "internalError"),
-            ApplicationStatusReason::Unknown(value) => write!(f, "{}", value),
+            ApplicationStatusReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

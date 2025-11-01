@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AccountAttributeName {
         match self {
             AccountAttributeName::AccountTier => write!(f, "ACCOUNT_TIER"),
             AccountAttributeName::DefaultProtectConfigurationId => write!(f, "DEFAULT_PROTECT_CONFIGURATION_ID"),
-            AccountAttributeName::Unknown(value) => write!(f, "{}", value),
+            AccountAttributeName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

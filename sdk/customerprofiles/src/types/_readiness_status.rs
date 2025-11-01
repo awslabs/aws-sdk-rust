@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ReadinessStatus {
             ReadinessStatus::Failed => write!(f, "FAILED"),
             ReadinessStatus::InProgress => write!(f, "IN_PROGRESS"),
             ReadinessStatus::Preparing => write!(f, "PREPARING"),
-            ReadinessStatus::Unknown(value) => write!(f, "{}", value),
+            ReadinessStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

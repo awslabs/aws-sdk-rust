@@ -108,7 +108,7 @@ impl ::std::fmt::Display for MonitorErrorCode {
             MonitorErrorCode::InternalFailure => write!(f, "INTERNAL_FAILURE"),
             MonitorErrorCode::LimitExceeded => write!(f, "LIMIT_EXCEEDED"),
             MonitorErrorCode::ValidationError => write!(f, "VALIDATION_ERROR"),
-            MonitorErrorCode::Unknown(value) => write!(f, "{}", value),
+            MonitorErrorCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

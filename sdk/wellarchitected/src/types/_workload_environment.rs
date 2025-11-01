@@ -102,7 +102,7 @@ impl ::std::fmt::Display for WorkloadEnvironment {
         match self {
             WorkloadEnvironment::Preproduction => write!(f, "PREPRODUCTION"),
             WorkloadEnvironment::Production => write!(f, "PRODUCTION"),
-            WorkloadEnvironment::Unknown(value) => write!(f, "{}", value),
+            WorkloadEnvironment::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

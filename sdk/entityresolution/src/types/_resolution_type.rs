@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ResolutionType {
             ResolutionType::MlMatching => write!(f, "ML_MATCHING"),
             ResolutionType::Provider => write!(f, "PROVIDER"),
             ResolutionType::RuleMatching => write!(f, "RULE_MATCHING"),
-            ResolutionType::Unknown(value) => write!(f, "{}", value),
+            ResolutionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

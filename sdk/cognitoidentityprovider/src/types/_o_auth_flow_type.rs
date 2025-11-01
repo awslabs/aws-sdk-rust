@@ -108,7 +108,7 @@ impl ::std::fmt::Display for OAuthFlowType {
             OAuthFlowType::ClientCredentials => write!(f, "client_credentials"),
             OAuthFlowType::Code => write!(f, "code"),
             OAuthFlowType::Implicit => write!(f, "implicit"),
-            OAuthFlowType::Unknown(value) => write!(f, "{}", value),
+            OAuthFlowType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

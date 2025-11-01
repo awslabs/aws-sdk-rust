@@ -147,7 +147,7 @@ impl ::std::fmt::Display for EarthObservationJobStatus {
             EarthObservationJobStatus::InProgress => write!(f, "IN_PROGRESS"),
             EarthObservationJobStatus::Stopped => write!(f, "STOPPED"),
             EarthObservationJobStatus::Stopping => write!(f, "STOPPING"),
-            EarthObservationJobStatus::Unknown(value) => write!(f, "{}", value),
+            EarthObservationJobStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

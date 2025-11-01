@@ -102,7 +102,7 @@ impl ::std::fmt::Display for InspectionLevel {
         match self {
             InspectionLevel::Common => write!(f, "COMMON"),
             InspectionLevel::Targeted => write!(f, "TARGETED"),
-            InspectionLevel::Unknown(value) => write!(f, "{}", value),
+            InspectionLevel::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

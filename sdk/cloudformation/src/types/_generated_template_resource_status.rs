@@ -114,7 +114,7 @@ impl ::std::fmt::Display for GeneratedTemplateResourceStatus {
             GeneratedTemplateResourceStatus::Failed => write!(f, "FAILED"),
             GeneratedTemplateResourceStatus::InProgress => write!(f, "IN_PROGRESS"),
             GeneratedTemplateResourceStatus::Pending => write!(f, "PENDING"),
-            GeneratedTemplateResourceStatus::Unknown(value) => write!(f, "{}", value),
+            GeneratedTemplateResourceStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CaptionSourceConvertPaintOnToPopOn {
         match self {
             CaptionSourceConvertPaintOnToPopOn::Disabled => write!(f, "DISABLED"),
             CaptionSourceConvertPaintOnToPopOn::Enabled => write!(f, "ENABLED"),
-            CaptionSourceConvertPaintOnToPopOn::Unknown(value) => write!(f, "{}", value),
+            CaptionSourceConvertPaintOnToPopOn::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TrustedAdvisorIntegrationStatus {
         match self {
             TrustedAdvisorIntegrationStatus::Disabled => write!(f, "DISABLED"),
             TrustedAdvisorIntegrationStatus::Enabled => write!(f, "ENABLED"),
-            TrustedAdvisorIntegrationStatus::Unknown(value) => write!(f, "{}", value),
+            TrustedAdvisorIntegrationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

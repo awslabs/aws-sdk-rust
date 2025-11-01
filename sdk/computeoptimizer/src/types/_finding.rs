@@ -114,7 +114,7 @@ impl ::std::fmt::Display for Finding {
             Finding::Optimized => write!(f, "Optimized"),
             Finding::OverProvisioned => write!(f, "Overprovisioned"),
             Finding::UnderProvisioned => write!(f, "Underprovisioned"),
-            Finding::Unknown(value) => write!(f, "{}", value),
+            Finding::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for TimeUnit {
             TimeUnit::Millisecond => write!(f, "MILLISECOND"),
             TimeUnit::Minute => write!(f, "MINUTE"),
             TimeUnit::Second => write!(f, "SECOND"),
-            TimeUnit::Unknown(value) => write!(f, "{}", value),
+            TimeUnit::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

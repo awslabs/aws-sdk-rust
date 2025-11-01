@@ -140,7 +140,7 @@ impl ::std::fmt::Display for EntityRejectionErrorType {
             EntityRejectionErrorType::InvalidTypeValue => write!(f, "InvalidTypeValue"),
             EntityRejectionErrorType::MissingRequiredFields => write!(f, "MissingRequiredFields"),
             EntityRejectionErrorType::UnsupportedLogGroupType => write!(f, "UnsupportedLogGroupType"),
-            EntityRejectionErrorType::Unknown(value) => write!(f, "{}", value),
+            EntityRejectionErrorType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

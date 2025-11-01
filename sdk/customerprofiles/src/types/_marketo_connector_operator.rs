@@ -203,7 +203,7 @@ impl ::std::fmt::Display for MarketoConnectorOperator {
             MarketoConnectorOperator::ValidateNonNull => write!(f, "VALIDATE_NON_NULL"),
             MarketoConnectorOperator::ValidateNonZero => write!(f, "VALIDATE_NON_ZERO"),
             MarketoConnectorOperator::ValidateNumeric => write!(f, "VALIDATE_NUMERIC"),
-            MarketoConnectorOperator::Unknown(value) => write!(f, "{}", value),
+            MarketoConnectorOperator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

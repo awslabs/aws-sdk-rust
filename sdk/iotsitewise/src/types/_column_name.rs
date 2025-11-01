@@ -147,7 +147,7 @@ impl ::std::fmt::Display for ColumnName {
             ColumnName::TimestampNanoOffset => write!(f, "TIMESTAMP_NANO_OFFSET"),
             ColumnName::TimestampSeconds => write!(f, "TIMESTAMP_SECONDS"),
             ColumnName::Value => write!(f, "VALUE"),
-            ColumnName::Unknown(value) => write!(f, "{}", value),
+            ColumnName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

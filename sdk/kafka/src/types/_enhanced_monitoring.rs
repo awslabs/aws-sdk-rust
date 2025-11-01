@@ -114,7 +114,7 @@ impl ::std::fmt::Display for EnhancedMonitoring {
             EnhancedMonitoring::PerBroker => write!(f, "PER_BROKER"),
             EnhancedMonitoring::PerTopicPerBroker => write!(f, "PER_TOPIC_PER_BROKER"),
             EnhancedMonitoring::PerTopicPerPartition => write!(f, "PER_TOPIC_PER_PARTITION"),
-            EnhancedMonitoring::Unknown(value) => write!(f, "{}", value),
+            EnhancedMonitoring::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

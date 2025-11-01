@@ -108,7 +108,7 @@ impl ::std::fmt::Display for PhoneNumberWorkflowStatus {
             PhoneNumberWorkflowStatus::Claimed => write!(f, "CLAIMED"),
             PhoneNumberWorkflowStatus::Failed => write!(f, "FAILED"),
             PhoneNumberWorkflowStatus::InProgress => write!(f, "IN_PROGRESS"),
-            PhoneNumberWorkflowStatus::Unknown(value) => write!(f, "{}", value),
+            PhoneNumberWorkflowStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

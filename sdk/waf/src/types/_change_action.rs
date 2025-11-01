@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ChangeAction {
         match self {
             ChangeAction::Delete => write!(f, "DELETE"),
             ChangeAction::Insert => write!(f, "INSERT"),
-            ChangeAction::Unknown(value) => write!(f, "{}", value),
+            ChangeAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

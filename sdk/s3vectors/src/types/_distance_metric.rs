@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DistanceMetric {
         match self {
             DistanceMetric::Cosine => write!(f, "cosine"),
             DistanceMetric::Euclidean => write!(f, "euclidean"),
-            DistanceMetric::Unknown(value) => write!(f, "{}", value),
+            DistanceMetric::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

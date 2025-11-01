@@ -108,7 +108,7 @@ impl ::std::fmt::Display for CaseAttachmentStatus {
             CaseAttachmentStatus::Failed => write!(f, "Failed"),
             CaseAttachmentStatus::Pending => write!(f, "Pending"),
             CaseAttachmentStatus::Verified => write!(f, "Verified"),
-            CaseAttachmentStatus::Unknown(value) => write!(f, "{}", value),
+            CaseAttachmentStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

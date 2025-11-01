@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SmallMultiplesAxisScale {
         match self {
             SmallMultiplesAxisScale::Independent => write!(f, "INDEPENDENT"),
             SmallMultiplesAxisScale::Shared => write!(f, "SHARED"),
-            SmallMultiplesAxisScale::Unknown(value) => write!(f, "{}", value),
+            SmallMultiplesAxisScale::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

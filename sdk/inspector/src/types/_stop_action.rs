@@ -102,7 +102,7 @@ impl ::std::fmt::Display for StopAction {
         match self {
             StopAction::SkipEvaluation => write!(f, "SKIP_EVALUATION"),
             StopAction::StartEvaluation => write!(f, "START_EVALUATION"),
-            StopAction::Unknown(value) => write!(f, "{}", value),
+            StopAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

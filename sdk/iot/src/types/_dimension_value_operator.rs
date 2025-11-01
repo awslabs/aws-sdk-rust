@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DimensionValueOperator {
         match self {
             DimensionValueOperator::In => write!(f, "IN"),
             DimensionValueOperator::NotIn => write!(f, "NOT_IN"),
-            DimensionValueOperator::Unknown(value) => write!(f, "{}", value),
+            DimensionValueOperator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

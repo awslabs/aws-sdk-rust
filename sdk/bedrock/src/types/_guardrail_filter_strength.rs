@@ -114,7 +114,7 @@ impl ::std::fmt::Display for GuardrailFilterStrength {
             GuardrailFilterStrength::Low => write!(f, "LOW"),
             GuardrailFilterStrength::Medium => write!(f, "MEDIUM"),
             GuardrailFilterStrength::None => write!(f, "NONE"),
-            GuardrailFilterStrength::Unknown(value) => write!(f, "{}", value),
+            GuardrailFilterStrength::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AccessAdvisorUsageGranularityType {
         match self {
             AccessAdvisorUsageGranularityType::ActionLevel => write!(f, "ACTION_LEVEL"),
             AccessAdvisorUsageGranularityType::ServiceLevel => write!(f, "SERVICE_LEVEL"),
-            AccessAdvisorUsageGranularityType::Unknown(value) => write!(f, "{}", value),
+            AccessAdvisorUsageGranularityType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

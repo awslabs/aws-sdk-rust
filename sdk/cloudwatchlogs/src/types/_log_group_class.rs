@@ -108,7 +108,7 @@ impl ::std::fmt::Display for LogGroupClass {
             LogGroupClass::Delivery => write!(f, "DELIVERY"),
             LogGroupClass::InfrequentAccess => write!(f, "INFREQUENT_ACCESS"),
             LogGroupClass::Standard => write!(f, "STANDARD"),
-            LogGroupClass::Unknown(value) => write!(f, "{}", value),
+            LogGroupClass::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

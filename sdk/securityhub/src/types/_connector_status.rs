@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ConnectorStatus {
             ConnectorStatus::FailedToConnect => write!(f, "FAILED_TO_CONNECT"),
             ConnectorStatus::PendingAuthorization => write!(f, "PENDING_AUTHORIZATION"),
             ConnectorStatus::PendingConfiguration => write!(f, "PENDING_CONFIGURATION"),
-            ConnectorStatus::Unknown(value) => write!(f, "{}", value),
+            ConnectorStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

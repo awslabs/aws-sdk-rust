@@ -96,7 +96,7 @@ impl ::std::fmt::Display for EksCapacityMonitoringApproach {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             EksCapacityMonitoringApproach::SampledMaxInLast24Hours => write!(f, "sampledMaxInLast24Hours"),
-            EksCapacityMonitoringApproach::Unknown(value) => write!(f, "{}", value),
+            EksCapacityMonitoringApproach::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

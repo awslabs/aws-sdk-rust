@@ -126,7 +126,7 @@ impl ::std::fmt::Display for DataRepositoryTaskLifecycle {
             DataRepositoryTaskLifecycle::Failed => write!(f, "FAILED"),
             DataRepositoryTaskLifecycle::Pending => write!(f, "PENDING"),
             DataRepositoryTaskLifecycle::Succeeded => write!(f, "SUCCEEDED"),
-            DataRepositoryTaskLifecycle::Unknown(value) => write!(f, "{}", value),
+            DataRepositoryTaskLifecycle::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

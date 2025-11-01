@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DataFormatValue {
         match self {
             DataFormatValue::Csv => write!(f, "csv"),
             DataFormatValue::Parquet => write!(f, "parquet"),
-            DataFormatValue::Unknown(value) => write!(f, "{}", value),
+            DataFormatValue::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

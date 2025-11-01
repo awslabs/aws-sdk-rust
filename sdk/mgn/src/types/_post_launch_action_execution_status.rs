@@ -108,7 +108,7 @@ impl ::std::fmt::Display for PostLaunchActionExecutionStatus {
             PostLaunchActionExecutionStatus::Failed => write!(f, "FAILED"),
             PostLaunchActionExecutionStatus::InProgress => write!(f, "IN_PROGRESS"),
             PostLaunchActionExecutionStatus::Success => write!(f, "SUCCESS"),
-            PostLaunchActionExecutionStatus::Unknown(value) => write!(f, "{}", value),
+            PostLaunchActionExecutionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

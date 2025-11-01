@@ -106,7 +106,7 @@ impl ::std::fmt::Display for RouteLegType {
             RouteLegType::Ferry => write!(f, "Ferry"),
             RouteLegType::Pedestrian => write!(f, "Pedestrian"),
             RouteLegType::Vehicle => write!(f, "Vehicle"),
-            RouteLegType::Unknown(value) => write!(f, "{}", value),
+            RouteLegType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

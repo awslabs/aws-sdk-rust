@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PatchOperationType {
         match self {
             PatchOperationType::Install => write!(f, "Install"),
             PatchOperationType::Scan => write!(f, "Scan"),
-            PatchOperationType::Unknown(value) => write!(f, "{}", value),
+            PatchOperationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

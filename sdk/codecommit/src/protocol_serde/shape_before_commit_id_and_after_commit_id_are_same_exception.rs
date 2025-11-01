@@ -24,8 +24,7 @@ pub(crate) fn de_before_commit_id_and_after_commit_id_are_same_exception_json_er
             },
             other => {
                 return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                    "expected object key or end object, found: {:?}",
-                    other
+                    "expected object key or end object, found: {other:?}"
                 )))
             }
         }

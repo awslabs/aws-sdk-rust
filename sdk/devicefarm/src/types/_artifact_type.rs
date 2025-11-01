@@ -289,7 +289,7 @@ impl ::std::fmt::Display for ArtifactType {
             ArtifactType::VideoLog => write!(f, "VIDEO_LOG"),
             ArtifactType::WebkitLog => write!(f, "WEBKIT_LOG"),
             ArtifactType::XctestLog => write!(f, "XCTEST_LOG"),
-            ArtifactType::Unknown(value) => write!(f, "{}", value),
+            ArtifactType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

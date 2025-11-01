@@ -102,7 +102,7 @@ impl ::std::fmt::Display for LayerFailureCode {
         match self {
             LayerFailureCode::InvalidLayerDigest => write!(f, "InvalidLayerDigest"),
             LayerFailureCode::MissingLayerDigest => write!(f, "MissingLayerDigest"),
-            LayerFailureCode::Unknown(value) => write!(f, "{}", value),
+            LayerFailureCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

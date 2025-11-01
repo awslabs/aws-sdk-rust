@@ -126,7 +126,7 @@ impl ::std::fmt::Display for OpsFilterOperatorType {
             OpsFilterOperatorType::GreaterThan => write!(f, "GreaterThan"),
             OpsFilterOperatorType::LessThan => write!(f, "LessThan"),
             OpsFilterOperatorType::NotEqual => write!(f, "NotEqual"),
-            OpsFilterOperatorType::Unknown(value) => write!(f, "{}", value),
+            OpsFilterOperatorType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

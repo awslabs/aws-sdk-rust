@@ -96,7 +96,7 @@ impl ::std::fmt::Display for OpsItemEventFilterOperator {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             OpsItemEventFilterOperator::Equal => write!(f, "Equal"),
-            OpsItemEventFilterOperator::Unknown(value) => write!(f, "{}", value),
+            OpsItemEventFilterOperator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for PermissionType {
             PermissionType::FullAccess => write!(f, "FULL_ACCESS"),
             PermissionType::SendAs => write!(f, "SEND_AS"),
             PermissionType::SendOnBehalf => write!(f, "SEND_ON_BEHALF"),
-            PermissionType::Unknown(value) => write!(f, "{}", value),
+            PermissionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

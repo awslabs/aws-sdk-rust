@@ -102,7 +102,7 @@ impl ::std::fmt::Display for OrchestrationType {
         match self {
             OrchestrationType::CustomOrchestration => write!(f, "CUSTOM_ORCHESTRATION"),
             OrchestrationType::Default => write!(f, "DEFAULT"),
-            OrchestrationType::Unknown(value) => write!(f, "{}", value),
+            OrchestrationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

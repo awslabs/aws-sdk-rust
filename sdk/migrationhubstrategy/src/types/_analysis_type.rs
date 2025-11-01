@@ -114,7 +114,7 @@ impl ::std::fmt::Display for AnalysisType {
             AnalysisType::DatabaseAnalysis => write!(f, "DATABASE_ANALYSIS"),
             AnalysisType::RuntimeAnalysis => write!(f, "RUNTIME_ANALYSIS"),
             AnalysisType::SourceCodeAnalysis => write!(f, "SOURCE_CODE_ANALYSIS"),
-            AnalysisType::Unknown(value) => write!(f, "{}", value),
+            AnalysisType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

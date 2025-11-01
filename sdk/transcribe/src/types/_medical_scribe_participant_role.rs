@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MedicalScribeParticipantRole {
         match self {
             MedicalScribeParticipantRole::Clinician => write!(f, "CLINICIAN"),
             MedicalScribeParticipantRole::Patient => write!(f, "PATIENT"),
-            MedicalScribeParticipantRole::Unknown(value) => write!(f, "{}", value),
+            MedicalScribeParticipantRole::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for VoiceConnectorIntegrationType {
         match self {
             VoiceConnectorIntegrationType::ConnectAnalyticsConnector => write!(f, "CONNECT_ANALYTICS_CONNECTOR"),
             VoiceConnectorIntegrationType::ConnectCallTransferConnector => write!(f, "CONNECT_CALL_TRANSFER_CONNECTOR"),
-            VoiceConnectorIntegrationType::Unknown(value) => write!(f, "{}", value),
+            VoiceConnectorIntegrationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

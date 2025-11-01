@@ -114,7 +114,7 @@ impl ::std::fmt::Display for SuggestAdditionalFeature {
             SuggestAdditionalFeature::Core => write!(f, "Core"),
             SuggestAdditionalFeature::Phonemes => write!(f, "Phonemes"),
             SuggestAdditionalFeature::TimeZone => write!(f, "TimeZone"),
-            SuggestAdditionalFeature::Unknown(value) => write!(f, "{}", value),
+            SuggestAdditionalFeature::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

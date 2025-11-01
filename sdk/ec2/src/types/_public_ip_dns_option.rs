@@ -108,7 +108,7 @@ impl ::std::fmt::Display for PublicIpDnsOption {
             PublicIpDnsOption::PublicDualStackDnsName => write!(f, "public-dual-stack-dns-name"),
             PublicIpDnsOption::PublicIpv4DnsName => write!(f, "public-ipv4-dns-name"),
             PublicIpDnsOption::PublicIpv6DnsName => write!(f, "public-ipv6-dns-name"),
-            PublicIpDnsOption::Unknown(value) => write!(f, "{}", value),
+            PublicIpDnsOption::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

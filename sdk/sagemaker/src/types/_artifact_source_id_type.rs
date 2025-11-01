@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ArtifactSourceIdType {
             ArtifactSourceIdType::Md5Hash => write!(f, "MD5Hash"),
             ArtifactSourceIdType::S3Etag => write!(f, "S3ETag"),
             ArtifactSourceIdType::S3Version => write!(f, "S3Version"),
-            ArtifactSourceIdType::Unknown(value) => write!(f, "{}", value),
+            ArtifactSourceIdType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

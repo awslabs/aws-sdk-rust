@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ConfirmationState {
         match self {
             ConfirmationState::Confirm => write!(f, "CONFIRM"),
             ConfirmationState::Deny => write!(f, "DENY"),
-            ConfirmationState::Unknown(value) => write!(f, "{}", value),
+            ConfirmationState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

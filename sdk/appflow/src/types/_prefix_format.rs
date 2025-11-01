@@ -120,7 +120,7 @@ impl ::std::fmt::Display for PrefixFormat {
             PrefixFormat::Minute => write!(f, "MINUTE"),
             PrefixFormat::Month => write!(f, "MONTH"),
             PrefixFormat::Year => write!(f, "YEAR"),
-            PrefixFormat::Unknown(value) => write!(f, "{}", value),
+            PrefixFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for IngestionStatus {
             IngestionStatus::IngestionComplete => write!(f, "ingestion-complete"),
             IngestionStatus::IngestionFailed => write!(f, "ingestion-failed"),
             IngestionStatus::InitialIngestionInProgress => write!(f, "initial-ingestion-in-progress"),
-            IngestionStatus::Unknown(value) => write!(f, "{}", value),
+            IngestionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

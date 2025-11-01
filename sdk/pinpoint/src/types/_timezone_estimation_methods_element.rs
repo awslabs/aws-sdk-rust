@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TimezoneEstimationMethodsElement {
         match self {
             TimezoneEstimationMethodsElement::PhoneNumber => write!(f, "PHONE_NUMBER"),
             TimezoneEstimationMethodsElement::PostalCode => write!(f, "POSTAL_CODE"),
-            TimezoneEstimationMethodsElement::Unknown(value) => write!(f, "{}", value),
+            TimezoneEstimationMethodsElement::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

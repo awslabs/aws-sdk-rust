@@ -120,7 +120,7 @@ impl ::std::fmt::Display for ScalingBehavior {
             ScalingBehavior::Fit => write!(f, "FIT"),
             ScalingBehavior::FitNoUpscale => write!(f, "FIT_NO_UPSCALE"),
             ScalingBehavior::StretchToOutput => write!(f, "STRETCH_TO_OUTPUT"),
-            ScalingBehavior::Unknown(value) => write!(f, "{}", value),
+            ScalingBehavior::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

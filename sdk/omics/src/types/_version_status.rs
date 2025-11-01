@@ -120,7 +120,7 @@ impl ::std::fmt::Display for VersionStatus {
             VersionStatus::Deleting => write!(f, "DELETING"),
             VersionStatus::Failed => write!(f, "FAILED"),
             VersionStatus::Updating => write!(f, "UPDATING"),
-            VersionStatus::Unknown(value) => write!(f, "{}", value),
+            VersionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

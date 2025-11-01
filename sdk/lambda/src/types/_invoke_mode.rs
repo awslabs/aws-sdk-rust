@@ -102,7 +102,7 @@ impl ::std::fmt::Display for InvokeMode {
         match self {
             InvokeMode::Buffered => write!(f, "BUFFERED"),
             InvokeMode::ResponseStream => write!(f, "RESPONSE_STREAM"),
-            InvokeMode::Unknown(value) => write!(f, "{}", value),
+            InvokeMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

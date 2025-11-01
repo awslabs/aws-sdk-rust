@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Scope {
         match self {
             Scope::Cloudfront => write!(f, "CLOUDFRONT"),
             Scope::Regional => write!(f, "REGIONAL"),
-            Scope::Unknown(value) => write!(f, "{}", value),
+            Scope::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

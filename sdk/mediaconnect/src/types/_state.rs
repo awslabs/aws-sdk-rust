@@ -102,7 +102,7 @@ impl ::std::fmt::Display for State {
         match self {
             State::Disabled => write!(f, "DISABLED"),
             State::Enabled => write!(f, "ENABLED"),
-            State::Unknown(value) => write!(f, "{}", value),
+            State::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

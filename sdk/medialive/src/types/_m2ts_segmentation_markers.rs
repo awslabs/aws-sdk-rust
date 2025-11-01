@@ -126,7 +126,7 @@ impl ::std::fmt::Display for M2tsSegmentationMarkers {
             M2tsSegmentationMarkers::PsiSegstart => write!(f, "PSI_SEGSTART"),
             M2tsSegmentationMarkers::RaiAdapt => write!(f, "RAI_ADAPT"),
             M2tsSegmentationMarkers::RaiSegstart => write!(f, "RAI_SEGSTART"),
-            M2tsSegmentationMarkers::Unknown(value) => write!(f, "{}", value),
+            M2tsSegmentationMarkers::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

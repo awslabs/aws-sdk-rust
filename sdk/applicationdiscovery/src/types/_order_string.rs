@@ -102,7 +102,7 @@ impl ::std::fmt::Display for OrderString {
         match self {
             OrderString::Asc => write!(f, "ASC"),
             OrderString::Desc => write!(f, "DESC"),
-            OrderString::Unknown(value) => write!(f, "{}", value),
+            OrderString::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

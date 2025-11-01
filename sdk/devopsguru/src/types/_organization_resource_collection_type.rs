@@ -114,7 +114,7 @@ impl ::std::fmt::Display for OrganizationResourceCollectionType {
             OrganizationResourceCollectionType::AwsCloudFormation => write!(f, "AWS_CLOUD_FORMATION"),
             OrganizationResourceCollectionType::AwsService => write!(f, "AWS_SERVICE"),
             OrganizationResourceCollectionType::AwsTags => write!(f, "AWS_TAGS"),
-            OrganizationResourceCollectionType::Unknown(value) => write!(f, "{}", value),
+            OrganizationResourceCollectionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

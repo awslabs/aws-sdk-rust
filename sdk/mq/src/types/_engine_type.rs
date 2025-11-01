@@ -102,7 +102,7 @@ impl ::std::fmt::Display for EngineType {
         match self {
             EngineType::Activemq => write!(f, "ACTIVEMQ"),
             EngineType::Rabbitmq => write!(f, "RABBITMQ"),
-            EngineType::Unknown(value) => write!(f, "{}", value),
+            EngineType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

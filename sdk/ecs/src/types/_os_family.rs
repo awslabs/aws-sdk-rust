@@ -161,7 +161,7 @@ impl ::std::fmt::Display for OsFamily {
             OsFamily::WindowsServer2025Core => write!(f, "WINDOWS_SERVER_2025_CORE"),
             OsFamily::WindowsServer2025Full => write!(f, "WINDOWS_SERVER_2025_FULL"),
             OsFamily::WindowsServer20H2Core => write!(f, "WINDOWS_SERVER_20H2_CORE"),
-            OsFamily::Unknown(value) => write!(f, "{}", value),
+            OsFamily::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

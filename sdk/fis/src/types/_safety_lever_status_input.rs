@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SafetyLeverStatusInput {
         match self {
             SafetyLeverStatusInput::Disengaged => write!(f, "disengaged"),
             SafetyLeverStatusInput::Engaged => write!(f, "engaged"),
-            SafetyLeverStatusInput::Unknown(value) => write!(f, "{}", value),
+            SafetyLeverStatusInput::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

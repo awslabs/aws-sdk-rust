@@ -105,7 +105,7 @@ impl ::std::fmt::Display for MpdTimedMetadataBoxVersion {
         match self {
             MpdTimedMetadataBoxVersion::Version0 => write!(f, "VERSION_0"),
             MpdTimedMetadataBoxVersion::Version1 => write!(f, "VERSION_1"),
-            MpdTimedMetadataBoxVersion::Unknown(value) => write!(f, "{}", value),
+            MpdTimedMetadataBoxVersion::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

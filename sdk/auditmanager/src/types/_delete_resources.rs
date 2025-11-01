@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DeleteResources {
         match self {
             DeleteResources::All => write!(f, "ALL"),
             DeleteResources::Default => write!(f, "DEFAULT"),
-            DeleteResources::Unknown(value) => write!(f, "{}", value),
+            DeleteResources::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

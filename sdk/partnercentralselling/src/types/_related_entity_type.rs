@@ -108,7 +108,7 @@ impl ::std::fmt::Display for RelatedEntityType {
             RelatedEntityType::AwsMarketplaceOffers => write!(f, "AwsMarketplaceOffers"),
             RelatedEntityType::AwsProducts => write!(f, "AwsProducts"),
             RelatedEntityType::Solutions => write!(f, "Solutions"),
-            RelatedEntityType::Unknown(value) => write!(f, "{}", value),
+            RelatedEntityType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

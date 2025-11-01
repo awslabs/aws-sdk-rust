@@ -108,7 +108,7 @@ impl ::std::fmt::Display for BotFilterOperator {
             BotFilterOperator::Contains => write!(f, "CO"),
             BotFilterOperator::Equals => write!(f, "EQ"),
             BotFilterOperator::NotEquals => write!(f, "NE"),
-            BotFilterOperator::Unknown(value) => write!(f, "{}", value),
+            BotFilterOperator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

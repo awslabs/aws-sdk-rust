@@ -120,7 +120,7 @@ impl ::std::fmt::Display for TrainingPlanStatus {
             TrainingPlanStatus::Failed => write!(f, "Failed"),
             TrainingPlanStatus::Pending => write!(f, "Pending"),
             TrainingPlanStatus::Scheduled => write!(f, "Scheduled"),
-            TrainingPlanStatus::Unknown(value) => write!(f, "{}", value),
+            TrainingPlanStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

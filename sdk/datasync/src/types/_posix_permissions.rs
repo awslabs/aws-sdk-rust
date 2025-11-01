@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PosixPermissions {
         match self {
             PosixPermissions::None => write!(f, "NONE"),
             PosixPermissions::Preserve => write!(f, "PRESERVE"),
-            PosixPermissions::Unknown(value) => write!(f, "{}", value),
+            PosixPermissions::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

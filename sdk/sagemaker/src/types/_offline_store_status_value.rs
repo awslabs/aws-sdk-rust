@@ -108,7 +108,7 @@ impl ::std::fmt::Display for OfflineStoreStatusValue {
             OfflineStoreStatusValue::Active => write!(f, "Active"),
             OfflineStoreStatusValue::Blocked => write!(f, "Blocked"),
             OfflineStoreStatusValue::Disabled => write!(f, "Disabled"),
-            OfflineStoreStatusValue::Unknown(value) => write!(f, "{}", value),
+            OfflineStoreStatusValue::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -168,7 +168,7 @@ impl ::std::fmt::Display for ComparisonOperator {
             ComparisonOperator::Lt => write!(f, "LT"),
             ComparisonOperator::Ne => write!(f, "NE"),
             ComparisonOperator::NotContains => write!(f, "NOT_CONTAINS"),
-            ComparisonOperator::Unknown(value) => write!(f, "{}", value),
+            ComparisonOperator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

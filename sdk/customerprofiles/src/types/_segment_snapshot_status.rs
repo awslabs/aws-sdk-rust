@@ -108,7 +108,7 @@ impl ::std::fmt::Display for SegmentSnapshotStatus {
             SegmentSnapshotStatus::Completed => write!(f, "COMPLETED"),
             SegmentSnapshotStatus::Failed => write!(f, "FAILED"),
             SegmentSnapshotStatus::InProgress => write!(f, "IN_PROGRESS"),
-            SegmentSnapshotStatus::Unknown(value) => write!(f, "{}", value),
+            SegmentSnapshotStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

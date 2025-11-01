@@ -102,7 +102,7 @@ impl ::std::fmt::Display for JobType {
         match self {
             JobType::Ota => write!(f, "OTA"),
             JobType::Reboot => write!(f, "REBOOT"),
-            JobType::Unknown(value) => write!(f, "{}", value),
+            JobType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

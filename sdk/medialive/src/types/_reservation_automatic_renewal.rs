@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ReservationAutomaticRenewal {
             ReservationAutomaticRenewal::Disabled => write!(f, "DISABLED"),
             ReservationAutomaticRenewal::Enabled => write!(f, "ENABLED"),
             ReservationAutomaticRenewal::Unavailable => write!(f, "UNAVAILABLE"),
-            ReservationAutomaticRenewal::Unknown(value) => write!(f, "{}", value),
+            ReservationAutomaticRenewal::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

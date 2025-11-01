@@ -161,7 +161,7 @@ impl ::std::fmt::Display for QueryResultType {
             QueryResultType::IntentAnswer => write!(f, "INTENT_ANSWER"),
             QueryResultType::IntentAnswerChunk => write!(f, "INTENT_ANSWER_CHUNK"),
             QueryResultType::KnowledgeContent => write!(f, "KNOWLEDGE_CONTENT"),
-            QueryResultType::Unknown(value) => write!(f, "{}", value),
+            QueryResultType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

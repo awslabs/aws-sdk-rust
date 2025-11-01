@@ -108,7 +108,7 @@ impl ::std::fmt::Display for UsageLimitFeatureType {
             UsageLimitFeatureType::ConcurrencyScaling => write!(f, "concurrency-scaling"),
             UsageLimitFeatureType::CrossRegionDatasharing => write!(f, "cross-region-datasharing"),
             UsageLimitFeatureType::Spectrum => write!(f, "spectrum"),
-            UsageLimitFeatureType::Unknown(value) => write!(f, "{}", value),
+            UsageLimitFeatureType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

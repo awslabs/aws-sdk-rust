@@ -189,7 +189,7 @@ impl ::std::fmt::Display for EventErrorCode {
             EventErrorCode::ResolutionExceeded => write!(f, "RESOLUTION_EXCEEDED"),
             EventErrorCode::ReuseOfStreamKey => write!(f, "REUSE_OF_STREAM_KEY"),
             EventErrorCode::StreamDurationExceeded => write!(f, "STREAM_DURATION_EXCEEDED"),
-            EventErrorCode::Unknown(value) => write!(f, "{}", value),
+            EventErrorCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

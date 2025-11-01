@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ExplainMode {
         match self {
             ExplainMode::Details => write!(f, "DETAILS"),
             ExplainMode::Static => write!(f, "STATIC"),
-            ExplainMode::Unknown(value) => write!(f, "{}", value),
+            ExplainMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -175,7 +175,7 @@ impl ::std::fmt::Display for EnvironmentType {
             EnvironmentType::WindowsEc2 => write!(f, "WINDOWS_EC2"),
             EnvironmentType::WindowsServer2019Container => write!(f, "WINDOWS_SERVER_2019_CONTAINER"),
             EnvironmentType::WindowsServer2022Container => write!(f, "WINDOWS_SERVER_2022_CONTAINER"),
-            EnvironmentType::Unknown(value) => write!(f, "{}", value),
+            EnvironmentType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for UploadStatus {
             UploadStatus::Initialized => write!(f, "INITIALIZED"),
             UploadStatus::Processing => write!(f, "PROCESSING"),
             UploadStatus::Succeeded => write!(f, "SUCCEEDED"),
-            UploadStatus::Unknown(value) => write!(f, "{}", value),
+            UploadStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Application {
         match self {
             Application::MicrosoftOffice2016 => write!(f, "Microsoft_Office_2016"),
             Application::MicrosoftOffice2019 => write!(f, "Microsoft_Office_2019"),
-            Application::Unknown(value) => write!(f, "{}", value),
+            Application::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

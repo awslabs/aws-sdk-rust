@@ -102,7 +102,7 @@ impl ::std::fmt::Display for StatusType {
         match self {
             StatusType::Active => write!(f, "Active"),
             StatusType::Inactive => write!(f, "Inactive"),
-            StatusType::Unknown(value) => write!(f, "{}", value),
+            StatusType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

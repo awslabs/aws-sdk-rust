@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ExpirationState {
         match self {
             ExpirationState::Disabled => write!(f, "DISABLED"),
             ExpirationState::Enabled => write!(f, "ENABLED"),
-            ExpirationState::Unknown(value) => write!(f, "{}", value),
+            ExpirationState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -168,7 +168,7 @@ impl ::std::fmt::Display for SourceType {
             SourceType::DbShardGroup => write!(f, "db-shard-group"),
             SourceType::DbSnapshot => write!(f, "db-snapshot"),
             SourceType::ZeroEtl => write!(f, "zero-etl"),
-            SourceType::Unknown(value) => write!(f, "{}", value),
+            SourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

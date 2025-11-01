@@ -108,7 +108,7 @@ impl ::std::fmt::Display for FilterName {
             FilterName::Feature => write!(f, "FEATURE"),
             FilterName::Severity => write!(f, "SEVERITY"),
             FilterName::Type => write!(f, "TYPE"),
-            FilterName::Unknown(value) => write!(f, "{}", value),
+            FilterName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

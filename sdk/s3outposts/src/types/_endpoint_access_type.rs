@@ -102,7 +102,7 @@ impl ::std::fmt::Display for EndpointAccessType {
         match self {
             EndpointAccessType::CustomerOwnedIp => write!(f, "CustomerOwnedIp"),
             EndpointAccessType::Private => write!(f, "Private"),
-            EndpointAccessType::Unknown(value) => write!(f, "{}", value),
+            EndpointAccessType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TargetLabel {
         match self {
             TargetLabel::Blue => write!(f, "Blue"),
             TargetLabel::Green => write!(f, "Green"),
-            TargetLabel::Unknown(value) => write!(f, "{}", value),
+            TargetLabel::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

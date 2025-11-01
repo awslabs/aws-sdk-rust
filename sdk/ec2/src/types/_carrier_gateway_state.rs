@@ -114,7 +114,7 @@ impl ::std::fmt::Display for CarrierGatewayState {
             CarrierGatewayState::Deleted => write!(f, "deleted"),
             CarrierGatewayState::Deleting => write!(f, "deleting"),
             CarrierGatewayState::Pending => write!(f, "pending"),
-            CarrierGatewayState::Unknown(value) => write!(f, "{}", value),
+            CarrierGatewayState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

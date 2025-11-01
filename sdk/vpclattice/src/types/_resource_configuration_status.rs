@@ -140,7 +140,7 @@ impl ::std::fmt::Display for ResourceConfigurationStatus {
             ResourceConfigurationStatus::DeleteInProgress => write!(f, "DELETE_IN_PROGRESS"),
             ResourceConfigurationStatus::UpdateFailed => write!(f, "UPDATE_FAILED"),
             ResourceConfigurationStatus::UpdateInProgress => write!(f, "UPDATE_IN_PROGRESS"),
-            ResourceConfigurationStatus::Unknown(value) => write!(f, "{}", value),
+            ResourceConfigurationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

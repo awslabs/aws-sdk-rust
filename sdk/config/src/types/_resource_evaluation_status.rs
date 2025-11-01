@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ResourceEvaluationStatus {
             ResourceEvaluationStatus::Failed => write!(f, "FAILED"),
             ResourceEvaluationStatus::InProgress => write!(f, "IN_PROGRESS"),
             ResourceEvaluationStatus::Succeeded => write!(f, "SUCCEEDED"),
-            ResourceEvaluationStatus::Unknown(value) => write!(f, "{}", value),
+            ResourceEvaluationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

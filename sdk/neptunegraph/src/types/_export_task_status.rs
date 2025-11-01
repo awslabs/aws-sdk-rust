@@ -132,7 +132,7 @@ impl ::std::fmt::Display for ExportTaskStatus {
             ExportTaskStatus::Failed => write!(f, "FAILED"),
             ExportTaskStatus::Initializing => write!(f, "INITIALIZING"),
             ExportTaskStatus::Succeeded => write!(f, "SUCCEEDED"),
-            ExportTaskStatus::Unknown(value) => write!(f, "{}", value),
+            ExportTaskStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

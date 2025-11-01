@@ -114,7 +114,7 @@ impl ::std::fmt::Display for RepositoryTriggerEventEnum {
             RepositoryTriggerEventEnum::CreateReference => write!(f, "createReference"),
             RepositoryTriggerEventEnum::DeleteReference => write!(f, "deleteReference"),
             RepositoryTriggerEventEnum::UpdateReference => write!(f, "updateReference"),
-            RepositoryTriggerEventEnum::Unknown(value) => write!(f, "{}", value),
+            RepositoryTriggerEventEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -133,7 +133,7 @@ impl ::std::fmt::Display for PropertyValidationExceptionReason {
             PropertyValidationExceptionReason::RequiredPropertyMissing => write!(f, "REQUIRED_PROPERTY_MISSING"),
             PropertyValidationExceptionReason::ResourceNameAlreadyExists => write!(f, "RESOURCE_NAME_ALREADY_EXISTS"),
             PropertyValidationExceptionReason::UniqueConstraintViolated => write!(f, "UNIQUE_CONSTRAINT_VIOLATED"),
-            PropertyValidationExceptionReason::Unknown(value) => write!(f, "{}", value),
+            PropertyValidationExceptionReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

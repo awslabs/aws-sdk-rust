@@ -126,7 +126,7 @@ impl ::std::fmt::Display for EphemerisInvalidReason {
             EphemerisInvalidReason::TimeRangeInvalid => write!(f, "TIME_RANGE_INVALID"),
             EphemerisInvalidReason::TrajectoryInvalid => write!(f, "TRAJECTORY_INVALID"),
             EphemerisInvalidReason::ValidationError => write!(f, "VALIDATION_ERROR"),
-            EphemerisInvalidReason::Unknown(value) => write!(f, "{}", value),
+            EphemerisInvalidReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

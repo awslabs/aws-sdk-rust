@@ -119,7 +119,7 @@ impl ::std::fmt::Display for EbsMetricName {
             EbsMetricName::VolumeReadOpsPerSecond => write!(f, "VolumeReadOpsPerSecond"),
             EbsMetricName::VolumeWriteBytesPerSecond => write!(f, "VolumeWriteBytesPerSecond"),
             EbsMetricName::VolumeWriteOpsPerSecond => write!(f, "VolumeWriteOpsPerSecond"),
-            EbsMetricName::Unknown(value) => write!(f, "{}", value),
+            EbsMetricName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

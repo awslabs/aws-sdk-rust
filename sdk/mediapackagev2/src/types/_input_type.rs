@@ -102,7 +102,7 @@ impl ::std::fmt::Display for InputType {
         match self {
             InputType::Cmaf => write!(f, "CMAF"),
             InputType::Hls => write!(f, "HLS"),
-            InputType::Unknown(value) => write!(f, "{}", value),
+            InputType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

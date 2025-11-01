@@ -126,7 +126,7 @@ impl ::std::fmt::Display for Role {
             Role::AuthorPro => write!(f, "AUTHOR_PRO"),
             Role::Reader => write!(f, "READER"),
             Role::ReaderPro => write!(f, "READER_PRO"),
-            Role::Unknown(value) => write!(f, "{}", value),
+            Role::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

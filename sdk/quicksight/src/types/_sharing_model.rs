@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SharingModel {
         match self {
             SharingModel::Account => write!(f, "ACCOUNT"),
             SharingModel::Namespace => write!(f, "NAMESPACE"),
-            SharingModel::Unknown(value) => write!(f, "{}", value),
+            SharingModel::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

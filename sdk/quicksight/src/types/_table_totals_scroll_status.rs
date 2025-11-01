@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TableTotalsScrollStatus {
         match self {
             TableTotalsScrollStatus::Pinned => write!(f, "PINNED"),
             TableTotalsScrollStatus::Scrolled => write!(f, "SCROLLED"),
-            TableTotalsScrollStatus::Unknown(value) => write!(f, "{}", value),
+            TableTotalsScrollStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

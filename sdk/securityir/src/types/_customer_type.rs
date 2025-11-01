@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CustomerType {
         match self {
             CustomerType::Organization => write!(f, "Organization"),
             CustomerType::Standalone => write!(f, "Standalone"),
-            CustomerType::Unknown(value) => write!(f, "{}", value),
+            CustomerType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

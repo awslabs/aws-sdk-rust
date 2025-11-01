@@ -114,7 +114,7 @@ impl ::std::fmt::Display for BodyPart {
             BodyPart::Head => write!(f, "HEAD"),
             BodyPart::LeftHand => write!(f, "LEFT_HAND"),
             BodyPart::RightHand => write!(f, "RIGHT_HAND"),
-            BodyPart::Unknown(value) => write!(f, "{}", value),
+            BodyPart::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

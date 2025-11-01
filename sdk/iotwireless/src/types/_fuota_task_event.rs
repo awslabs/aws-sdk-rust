@@ -96,7 +96,7 @@ impl ::std::fmt::Display for FuotaTaskEvent {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             FuotaTaskEvent::Fuota => write!(f, "Fuota"),
-            FuotaTaskEvent::Unknown(value) => write!(f, "{}", value),
+            FuotaTaskEvent::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

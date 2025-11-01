@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ContainerFormat {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ContainerFormat::Ova => write!(f, "ova"),
-            ContainerFormat::Unknown(value) => write!(f, "{}", value),
+            ContainerFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

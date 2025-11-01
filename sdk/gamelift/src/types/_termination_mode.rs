@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TerminationMode {
         match self {
             TerminationMode::ForceTerminate => write!(f, "FORCE_TERMINATE"),
             TerminationMode::TriggerOnProcessTerminate => write!(f, "TRIGGER_ON_PROCESS_TERMINATE"),
-            TerminationMode::Unknown(value) => write!(f, "{}", value),
+            TerminationMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

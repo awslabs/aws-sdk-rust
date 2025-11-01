@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ScalarAttributeType {
             ScalarAttributeType::B => write!(f, "B"),
             ScalarAttributeType::N => write!(f, "N"),
             ScalarAttributeType::S => write!(f, "S"),
-            ScalarAttributeType::Unknown(value) => write!(f, "{}", value),
+            ScalarAttributeType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

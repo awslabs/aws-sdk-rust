@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PositioningConfigStatus {
         match self {
             PositioningConfigStatus::Disabled => write!(f, "Disabled"),
             PositioningConfigStatus::Enabled => write!(f, "Enabled"),
-            PositioningConfigStatus::Unknown(value) => write!(f, "{}", value),
+            PositioningConfigStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -126,7 +126,7 @@ impl ::std::fmt::Display for AssetModelState {
             AssetModelState::Failed => write!(f, "FAILED"),
             AssetModelState::Propagating => write!(f, "PROPAGATING"),
             AssetModelState::Updating => write!(f, "UPDATING"),
-            AssetModelState::Unknown(value) => write!(f, "{}", value),
+            AssetModelState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

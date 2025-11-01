@@ -114,7 +114,7 @@ impl ::std::fmt::Display for RecommendationLifecycleStage {
             RecommendationLifecycleStage::InProgress => write!(f, "in_progress"),
             RecommendationLifecycleStage::PendingResponse => write!(f, "pending_response"),
             RecommendationLifecycleStage::Resolved => write!(f, "resolved"),
-            RecommendationLifecycleStage::Unknown(value) => write!(f, "{}", value),
+            RecommendationLifecycleStage::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -187,6 +187,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for UpdateRoutin
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::update_routing_profile_agent_availability_timer::UpdateRoutingProfileAgentAvailabilityTimerInput,
                 output: &mut ::std::string::String,

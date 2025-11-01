@@ -120,7 +120,7 @@ impl ::std::fmt::Display for AclPermission {
             AclPermission::ReadAcp => write!(f, "READ_ACP"),
             AclPermission::Write => write!(f, "WRITE"),
             AclPermission::WriteAcp => write!(f, "WRITE_ACP"),
-            AclPermission::Unknown(value) => write!(f, "{}", value),
+            AclPermission::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

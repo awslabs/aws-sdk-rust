@@ -51,8 +51,7 @@ pub fn de_delete_subnet_cidr_reservation(
     let start_el = decoder.start_el();
     if !(start_el.matches("DeleteSubnetCidrReservationResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected DeleteSubnetCidrReservationResponse got {:?}",
-            start_el
+            "invalid root, expected DeleteSubnetCidrReservationResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

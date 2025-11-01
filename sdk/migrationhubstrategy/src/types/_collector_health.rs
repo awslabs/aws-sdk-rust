@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CollectorHealth {
         match self {
             CollectorHealth::CollectorHealthy => write!(f, "COLLECTOR_HEALTHY"),
             CollectorHealth::CollectorUnhealthy => write!(f, "COLLECTOR_UNHEALTHY"),
-            CollectorHealth::Unknown(value) => write!(f, "{}", value),
+            CollectorHealth::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

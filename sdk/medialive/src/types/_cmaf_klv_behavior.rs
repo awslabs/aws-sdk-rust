@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CmafKlvBehavior {
         match self {
             CmafKlvBehavior::NoPassthrough => write!(f, "NO_PASSTHROUGH"),
             CmafKlvBehavior::Passthrough => write!(f, "PASSTHROUGH"),
-            CmafKlvBehavior::Unknown(value) => write!(f, "{}", value),
+            CmafKlvBehavior::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -170,7 +170,7 @@ impl ::std::fmt::Display for ContinueAsNewWorkflowExecutionFailedCause {
             ContinueAsNewWorkflowExecutionFailedCause::UnhandledDecision => write!(f, "UNHANDLED_DECISION"),
             ContinueAsNewWorkflowExecutionFailedCause::WorkflowTypeDeprecated => write!(f, "WORKFLOW_TYPE_DEPRECATED"),
             ContinueAsNewWorkflowExecutionFailedCause::WorkflowTypeDoesNotExist => write!(f, "WORKFLOW_TYPE_DOES_NOT_EXIST"),
-            ContinueAsNewWorkflowExecutionFailedCause::Unknown(value) => write!(f, "{}", value),
+            ContinueAsNewWorkflowExecutionFailedCause::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

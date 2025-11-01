@@ -120,7 +120,7 @@ impl ::std::fmt::Display for OperationStatus {
             OperationStatus::NotStarted => write!(f, "NotStarted"),
             OperationStatus::Started => write!(f, "Started"),
             OperationStatus::Succeeded => write!(f, "Succeeded"),
-            OperationStatus::Unknown(value) => write!(f, "{}", value),
+            OperationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

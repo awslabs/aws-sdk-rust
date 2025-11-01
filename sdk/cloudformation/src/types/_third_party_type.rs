@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ThirdPartyType {
             ThirdPartyType::Hook => write!(f, "HOOK"),
             ThirdPartyType::Module => write!(f, "MODULE"),
             ThirdPartyType::Resource => write!(f, "RESOURCE"),
-            ThirdPartyType::Unknown(value) => write!(f, "{}", value),
+            ThirdPartyType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

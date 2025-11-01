@@ -147,7 +147,7 @@ impl ::std::fmt::Display for AgentStatus {
             AgentStatus::Preparing => write!(f, "PREPARING"),
             AgentStatus::Updating => write!(f, "UPDATING"),
             AgentStatus::Versioning => write!(f, "VERSIONING"),
-            AgentStatus::Unknown(value) => write!(f, "{}", value),
+            AgentStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

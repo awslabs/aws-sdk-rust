@@ -102,7 +102,7 @@ impl ::std::fmt::Display for BrokerStorageType {
         match self {
             BrokerStorageType::Ebs => write!(f, "EBS"),
             BrokerStorageType::Efs => write!(f, "EFS"),
-            BrokerStorageType::Unknown(value) => write!(f, "{}", value),
+            BrokerStorageType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

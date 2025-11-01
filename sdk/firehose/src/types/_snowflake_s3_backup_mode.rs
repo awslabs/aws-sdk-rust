@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SnowflakeS3BackupMode {
         match self {
             SnowflakeS3BackupMode::AllData => write!(f, "AllData"),
             SnowflakeS3BackupMode::FailedDataOnly => write!(f, "FailedDataOnly"),
-            SnowflakeS3BackupMode::Unknown(value) => write!(f, "{}", value),
+            SnowflakeS3BackupMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

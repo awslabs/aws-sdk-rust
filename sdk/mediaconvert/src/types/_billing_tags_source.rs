@@ -114,7 +114,7 @@ impl ::std::fmt::Display for BillingTagsSource {
             BillingTagsSource::JobTemplate => write!(f, "JOB_TEMPLATE"),
             BillingTagsSource::Preset => write!(f, "PRESET"),
             BillingTagsSource::Queue => write!(f, "QUEUE"),
-            BillingTagsSource::Unknown(value) => write!(f, "{}", value),
+            BillingTagsSource::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

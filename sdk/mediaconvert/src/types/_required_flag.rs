@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RequiredFlag {
         match self {
             RequiredFlag::Disabled => write!(f, "DISABLED"),
             RequiredFlag::Enabled => write!(f, "ENABLED"),
-            RequiredFlag::Unknown(value) => write!(f, "{}", value),
+            RequiredFlag::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -168,7 +168,7 @@ impl ::std::fmt::Display for DocumentEnrichmentConditionOperator {
             DocumentEnrichmentConditionOperator::NotContains => write!(f, "NOT_CONTAINS"),
             DocumentEnrichmentConditionOperator::NotEquals => write!(f, "NOT_EQUALS"),
             DocumentEnrichmentConditionOperator::NotExists => write!(f, "NOT_EXISTS"),
-            DocumentEnrichmentConditionOperator::Unknown(value) => write!(f, "{}", value),
+            DocumentEnrichmentConditionOperator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

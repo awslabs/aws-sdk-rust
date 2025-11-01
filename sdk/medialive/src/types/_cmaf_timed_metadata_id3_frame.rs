@@ -108,7 +108,7 @@ impl ::std::fmt::Display for CmafTimedMetadataId3Frame {
             CmafTimedMetadataId3Frame::None => write!(f, "NONE"),
             CmafTimedMetadataId3Frame::Priv => write!(f, "PRIV"),
             CmafTimedMetadataId3Frame::Tdrl => write!(f, "TDRL"),
-            CmafTimedMetadataId3Frame::Unknown(value) => write!(f, "{}", value),
+            CmafTimedMetadataId3Frame::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

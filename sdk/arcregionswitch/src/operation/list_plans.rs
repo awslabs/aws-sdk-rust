@@ -178,6 +178,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListPlansReq
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::list_plans::ListPlansInput,
                 output: &mut ::std::string::String,

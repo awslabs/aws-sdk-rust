@@ -102,7 +102,7 @@ impl ::std::fmt::Display for BundleType {
         match self {
             BundleType::Regular => write!(f, "REGULAR"),
             BundleType::Standby => write!(f, "STANDBY"),
-            BundleType::Unknown(value) => write!(f, "{}", value),
+            BundleType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

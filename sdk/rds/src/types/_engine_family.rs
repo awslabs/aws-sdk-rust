@@ -108,7 +108,7 @@ impl ::std::fmt::Display for EngineFamily {
             EngineFamily::Mysql => write!(f, "MYSQL"),
             EngineFamily::Postgresql => write!(f, "POSTGRESQL"),
             EngineFamily::Sqlserver => write!(f, "SQLSERVER"),
-            EngineFamily::Unknown(value) => write!(f, "{}", value),
+            EngineFamily::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

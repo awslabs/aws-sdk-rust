@@ -102,7 +102,7 @@ impl ::std::fmt::Display for IncludeQuickSightQIndex {
         match self {
             IncludeQuickSightQIndex::Exclude => write!(f, "EXCLUDE"),
             IncludeQuickSightQIndex::Include => write!(f, "INCLUDE"),
-            IncludeQuickSightQIndex::Unknown(value) => write!(f, "{}", value),
+            IncludeQuickSightQIndex::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TargetInstanceTypeRightSizingMethod {
         match self {
             TargetInstanceTypeRightSizingMethod::Basic => write!(f, "BASIC"),
             TargetInstanceTypeRightSizingMethod::None => write!(f, "NONE"),
-            TargetInstanceTypeRightSizingMethod::Unknown(value) => write!(f, "{}", value),
+            TargetInstanceTypeRightSizingMethod::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

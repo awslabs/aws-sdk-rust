@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ListInvoiceSummariesResourceType {
         match self {
             ListInvoiceSummariesResourceType::AccountId => write!(f, "ACCOUNT_ID"),
             ListInvoiceSummariesResourceType::InvoiceId => write!(f, "INVOICE_ID"),
-            ListInvoiceSummariesResourceType::Unknown(value) => write!(f, "{}", value),
+            ListInvoiceSummariesResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

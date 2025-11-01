@@ -212,7 +212,7 @@ impl ::std::fmt::Display for ErrorCode {
             ErrorCode::UnknownValue => write!(f, "Unknown"),
             ErrorCode::UnsupportedAddonModification => write!(f, "UnsupportedAddonModification"),
             ErrorCode::VpcIdNotFound => write!(f, "VpcIdNotFound"),
-            ErrorCode::Unknown(value) => write!(f, "{}", value),
+            ErrorCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

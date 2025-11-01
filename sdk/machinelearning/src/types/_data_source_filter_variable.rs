@@ -153,7 +153,7 @@ impl ::std::fmt::Display for DataSourceFilterVariable {
             DataSourceFilterVariable::LastUpdatedAt => write!(f, "LastUpdatedAt"),
             DataSourceFilterVariable::Name => write!(f, "Name"),
             DataSourceFilterVariable::Status => write!(f, "Status"),
-            DataSourceFilterVariable::Unknown(value) => write!(f, "{}", value),
+            DataSourceFilterVariable::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

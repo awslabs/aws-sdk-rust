@@ -108,7 +108,7 @@ impl ::std::fmt::Display for EvidenceFinderBackfillStatus {
             EvidenceFinderBackfillStatus::Completed => write!(f, "COMPLETED"),
             EvidenceFinderBackfillStatus::InProgress => write!(f, "IN_PROGRESS"),
             EvidenceFinderBackfillStatus::NotStarted => write!(f, "NOT_STARTED"),
-            EvidenceFinderBackfillStatus::Unknown(value) => write!(f, "{}", value),
+            EvidenceFinderBackfillStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

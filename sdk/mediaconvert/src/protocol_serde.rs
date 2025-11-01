@@ -251,6 +251,8 @@ pub(crate) mod shape_audio_codec_settings;
 
 pub(crate) mod shape_audio_normalization_settings;
 
+pub(crate) mod shape_audio_pitch_correction_settings;
+
 pub(crate) mod shape_audio_selector;
 
 pub(crate) mod shape_audio_selector_group;
@@ -436,6 +438,8 @@ pub(crate) mod shape_opus_settings;
 pub(crate) mod shape_output_settings;
 
 pub(crate) mod shape_partner_watermarking;
+
+pub(crate) mod shape_passthrough_settings;
 
 pub(crate) mod shape_prores_settings;
 

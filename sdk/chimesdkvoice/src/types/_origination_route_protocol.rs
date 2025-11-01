@@ -102,7 +102,7 @@ impl ::std::fmt::Display for OriginationRouteProtocol {
         match self {
             OriginationRouteProtocol::Tcp => write!(f, "TCP"),
             OriginationRouteProtocol::Udp => write!(f, "UDP"),
-            OriginationRouteProtocol::Unknown(value) => write!(f, "{}", value),
+            OriginationRouteProtocol::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

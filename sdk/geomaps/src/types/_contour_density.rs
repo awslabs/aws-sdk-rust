@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ContourDensity {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ContourDensity::Medium => write!(f, "Medium"),
-            ContourDensity::Unknown(value) => write!(f, "{}", value),
+            ContourDensity::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

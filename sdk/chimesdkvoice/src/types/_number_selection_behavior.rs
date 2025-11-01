@@ -102,7 +102,7 @@ impl ::std::fmt::Display for NumberSelectionBehavior {
         match self {
             NumberSelectionBehavior::AvoidSticky => write!(f, "AvoidSticky"),
             NumberSelectionBehavior::PreferSticky => write!(f, "PreferSticky"),
-            NumberSelectionBehavior::Unknown(value) => write!(f, "{}", value),
+            NumberSelectionBehavior::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

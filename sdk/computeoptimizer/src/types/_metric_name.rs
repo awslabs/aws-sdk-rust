@@ -203,7 +203,7 @@ impl ::std::fmt::Display for MetricName {
             MetricName::NetworkOutBytesPerSecond => write!(f, "NETWORK_OUT_BYTES_PER_SECOND"),
             MetricName::NetworkPacketsInPerSecond => write!(f, "NETWORK_PACKETS_IN_PER_SECOND"),
             MetricName::NetworkPacketsOutPerSecond => write!(f, "NETWORK_PACKETS_OUT_PER_SECOND"),
-            MetricName::Unknown(value) => write!(f, "{}", value),
+            MetricName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

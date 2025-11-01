@@ -102,7 +102,7 @@ impl ::std::fmt::Display for UserGroupResolutionMode {
         match self {
             UserGroupResolutionMode::AwsSso => write!(f, "AWS_SSO"),
             UserGroupResolutionMode::None => write!(f, "NONE"),
-            UserGroupResolutionMode::Unknown(value) => write!(f, "{}", value),
+            UserGroupResolutionMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

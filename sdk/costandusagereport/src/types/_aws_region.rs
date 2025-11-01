@@ -287,7 +287,7 @@ impl ::std::fmt::Display for AwsRegion {
             AwsRegion::Ohio => write!(f, "us-east-2"),
             AwsRegion::NorthernCalifornia => write!(f, "us-west-1"),
             AwsRegion::Oregon => write!(f, "us-west-2"),
-            AwsRegion::Unknown(value) => write!(f, "{}", value),
+            AwsRegion::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

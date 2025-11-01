@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ProjectAutoUpdate {
         match self {
             ProjectAutoUpdate::Disabled => write!(f, "DISABLED"),
             ProjectAutoUpdate::Enabled => write!(f, "ENABLED"),
-            ProjectAutoUpdate::Unknown(value) => write!(f, "{}", value),
+            ProjectAutoUpdate::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

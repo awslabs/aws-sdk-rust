@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Status {
         match self {
             Status::Latest => write!(f, "LATEST"),
             Status::Stale => write!(f, "STALE"),
-            Status::Unknown(value) => write!(f, "{}", value),
+            Status::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

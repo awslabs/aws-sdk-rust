@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AquaStatus {
             AquaStatus::Applying => write!(f, "applying"),
             AquaStatus::Disabled => write!(f, "disabled"),
             AquaStatus::Enabled => write!(f, "enabled"),
-            AquaStatus::Unknown(value) => write!(f, "{}", value),
+            AquaStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

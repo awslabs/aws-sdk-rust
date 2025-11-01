@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AnalysisFormat {
         match self {
             AnalysisFormat::Pyspark10 => write!(f, "PYSPARK_1_0"),
             AnalysisFormat::Sql => write!(f, "SQL"),
-            AnalysisFormat::Unknown(value) => write!(f, "{}", value),
+            AnalysisFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

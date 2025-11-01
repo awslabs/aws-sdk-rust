@@ -120,7 +120,7 @@ impl ::std::fmt::Display for ScalarMeasureValueType {
             ScalarMeasureValueType::Double => write!(f, "DOUBLE"),
             ScalarMeasureValueType::Timestamp => write!(f, "TIMESTAMP"),
             ScalarMeasureValueType::Varchar => write!(f, "VARCHAR"),
-            ScalarMeasureValueType::Unknown(value) => write!(f, "{}", value),
+            ScalarMeasureValueType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

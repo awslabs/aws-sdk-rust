@@ -126,7 +126,7 @@ impl ::std::fmt::Display for State {
             State::StartFailed => write!(f, "START_FAILED"),
             State::Stopping => write!(f, "STOPPING"),
             State::StopFailed => write!(f, "STOP_FAILED"),
-            State::Unknown(value) => write!(f, "{}", value),
+            State::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

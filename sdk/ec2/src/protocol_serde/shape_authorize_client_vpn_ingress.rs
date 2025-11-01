@@ -53,8 +53,7 @@ pub fn de_authorize_client_vpn_ingress(
     let start_el = decoder.start_el();
     if !(start_el.matches("AuthorizeClientVpnIngressResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected AuthorizeClientVpnIngressResponse got {:?}",
-            start_el
+            "invalid root, expected AuthorizeClientVpnIngressResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

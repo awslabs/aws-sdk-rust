@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SearchType {
         match self {
             SearchType::Hybrid => write!(f, "HYBRID"),
             SearchType::Semantic => write!(f, "SEMANTIC"),
-            SearchType::Unknown(value) => write!(f, "{}", value),
+            SearchType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

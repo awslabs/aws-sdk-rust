@@ -168,7 +168,7 @@ impl ::std::fmt::Display for ListUsageFilterName {
             ListUsageFilterName::UsageAccountId => write!(f, "USAGE_ACCOUNT_ID"),
             ListUsageFilterName::UsageGroup => write!(f, "USAGE_GROUP"),
             ListUsageFilterName::UsageType => write!(f, "USAGE_TYPE"),
-            ListUsageFilterName::Unknown(value) => write!(f, "{}", value),
+            ListUsageFilterName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

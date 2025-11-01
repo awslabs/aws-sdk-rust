@@ -133,7 +133,7 @@ impl ::std::fmt::Display for TextTransformation {
             TextTransformation::Lowercase => write!(f, "LOWERCASE"),
             TextTransformation::None => write!(f, "NONE"),
             TextTransformation::UrlDecode => write!(f, "URL_DECODE"),
-            TextTransformation::Unknown(value) => write!(f, "{}", value),
+            TextTransformation::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

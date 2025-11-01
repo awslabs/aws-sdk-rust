@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Protocol {
         match self {
             Protocol::Tcp => write!(f, "tcp"),
             Protocol::Udp => write!(f, "udp"),
-            Protocol::Unknown(value) => write!(f, "{}", value),
+            Protocol::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

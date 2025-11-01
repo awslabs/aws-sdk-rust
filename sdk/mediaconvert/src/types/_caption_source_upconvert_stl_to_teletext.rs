@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CaptionSourceUpconvertStlToTeletext {
         match self {
             CaptionSourceUpconvertStlToTeletext::Disabled => write!(f, "DISABLED"),
             CaptionSourceUpconvertStlToTeletext::Upconvert => write!(f, "UPCONVERT"),
-            CaptionSourceUpconvertStlToTeletext::Unknown(value) => write!(f, "{}", value),
+            CaptionSourceUpconvertStlToTeletext::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for StorageMode {
         match self {
             StorageMode::Local => write!(f, "LOCAL"),
             StorageMode::Tiered => write!(f, "TIERED"),
-            StorageMode::Unknown(value) => write!(f, "{}", value),
+            StorageMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

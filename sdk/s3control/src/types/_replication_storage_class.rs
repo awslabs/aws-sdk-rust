@@ -154,7 +154,7 @@ impl ::std::fmt::Display for ReplicationStorageClass {
             ReplicationStorageClass::ReducedRedundancy => write!(f, "REDUCED_REDUNDANCY"),
             ReplicationStorageClass::Standard => write!(f, "STANDARD"),
             ReplicationStorageClass::StandardIa => write!(f, "STANDARD_IA"),
-            ReplicationStorageClass::Unknown(value) => write!(f, "{}", value),
+            ReplicationStorageClass::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

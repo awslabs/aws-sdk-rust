@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CostCategoryStatus {
         match self {
             CostCategoryStatus::Applied => write!(f, "APPLIED"),
             CostCategoryStatus::Processing => write!(f, "PROCESSING"),
-            CostCategoryStatus::Unknown(value) => write!(f, "{}", value),
+            CostCategoryStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

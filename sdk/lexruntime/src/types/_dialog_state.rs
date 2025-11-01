@@ -133,7 +133,7 @@ impl ::std::fmt::Display for DialogState {
             DialogState::Failed => write!(f, "Failed"),
             DialogState::Fulfilled => write!(f, "Fulfilled"),
             DialogState::ReadyForFulfillment => write!(f, "ReadyForFulfillment"),
-            DialogState::Unknown(value) => write!(f, "{}", value),
+            DialogState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CustomerPolicyStatus {
         match self {
             CustomerPolicyStatus::Active => write!(f, "ACTIVE"),
             CustomerPolicyStatus::OutOfAdminScope => write!(f, "OUT_OF_ADMIN_SCOPE"),
-            CustomerPolicyStatus::Unknown(value) => write!(f, "{}", value),
+            CustomerPolicyStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

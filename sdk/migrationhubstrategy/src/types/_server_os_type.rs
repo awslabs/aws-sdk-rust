@@ -120,7 +120,7 @@ impl ::std::fmt::Display for ServerOsType {
             ServerOsType::Other => write!(f, "Other"),
             ServerOsType::Redhat => write!(f, "Redhat"),
             ServerOsType::WindowsServer => write!(f, "WindowsServer"),
-            ServerOsType::Unknown(value) => write!(f, "{}", value),
+            ServerOsType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

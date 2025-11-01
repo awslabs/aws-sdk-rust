@@ -119,7 +119,7 @@ impl ::std::fmt::Display for ProductionVariantInferenceAmiVersion {
             ProductionVariantInferenceAmiVersion::Al2Gpu21 => write!(f, "al2-ami-sagemaker-inference-gpu-2-1"),
             ProductionVariantInferenceAmiVersion::Al2Gpu31 => write!(f, "al2-ami-sagemaker-inference-gpu-3-1"),
             ProductionVariantInferenceAmiVersion::Al2Neuron2 => write!(f, "al2-ami-sagemaker-inference-neuron-2"),
-            ProductionVariantInferenceAmiVersion::Unknown(value) => write!(f, "{}", value),
+            ProductionVariantInferenceAmiVersion::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

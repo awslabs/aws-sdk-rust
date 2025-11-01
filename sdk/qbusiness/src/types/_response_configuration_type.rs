@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ResponseConfigurationType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ResponseConfigurationType::All => write!(f, "ALL"),
-            ResponseConfigurationType::Unknown(value) => write!(f, "{}", value),
+            ResponseConfigurationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

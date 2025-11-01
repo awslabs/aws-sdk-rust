@@ -123,7 +123,7 @@ impl ::std::fmt::Display for EncryptionType {
             EncryptionType::UnknownValue => write!(f, "UNKNOWN"),
             EncryptionType::AwsKms => write!(f, "aws:kms"),
             EncryptionType::AwsKmsDsse => write!(f, "aws:kms:dsse"),
-            EncryptionType::Unknown(value) => write!(f, "{}", value),
+            EncryptionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

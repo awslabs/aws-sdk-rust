@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ThrottlingExceptionReason {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ThrottlingExceptionReason::KmsThrottlingException => write!(f, "KMS_ThrottlingException"),
-            ThrottlingExceptionReason::Unknown(value) => write!(f, "{}", value),
+            ThrottlingExceptionReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

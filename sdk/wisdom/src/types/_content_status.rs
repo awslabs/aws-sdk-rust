@@ -140,7 +140,7 @@ impl ::std::fmt::Display for ContentStatus {
             ContentStatus::DeleteFailed => write!(f, "DELETE_FAILED"),
             ContentStatus::DeleteInProgress => write!(f, "DELETE_IN_PROGRESS"),
             ContentStatus::UpdateFailed => write!(f, "UPDATE_FAILED"),
-            ContentStatus::Unknown(value) => write!(f, "{}", value),
+            ContentStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

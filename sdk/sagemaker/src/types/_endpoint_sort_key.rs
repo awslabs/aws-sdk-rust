@@ -108,7 +108,7 @@ impl ::std::fmt::Display for EndpointSortKey {
             EndpointSortKey::CreationTime => write!(f, "CreationTime"),
             EndpointSortKey::Name => write!(f, "Name"),
             EndpointSortKey::Status => write!(f, "Status"),
-            EndpointSortKey::Unknown(value) => write!(f, "{}", value),
+            EndpointSortKey::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

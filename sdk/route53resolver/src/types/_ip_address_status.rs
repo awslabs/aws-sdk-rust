@@ -182,7 +182,7 @@ impl ::std::fmt::Display for IpAddressStatus {
             IpAddressStatus::RemapDetaching => write!(f, "REMAP_DETACHING"),
             IpAddressStatus::UpdateFailed => write!(f, "UPDATE_FAILED"),
             IpAddressStatus::Updating => write!(f, "UPDATING"),
-            IpAddressStatus::Unknown(value) => write!(f, "{}", value),
+            IpAddressStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

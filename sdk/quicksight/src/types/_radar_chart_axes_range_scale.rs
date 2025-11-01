@@ -108,7 +108,7 @@ impl ::std::fmt::Display for RadarChartAxesRangeScale {
             RadarChartAxesRangeScale::Auto => write!(f, "AUTO"),
             RadarChartAxesRangeScale::Independent => write!(f, "INDEPENDENT"),
             RadarChartAxesRangeScale::Shared => write!(f, "SHARED"),
-            RadarChartAxesRangeScale::Unknown(value) => write!(f, "{}", value),
+            RadarChartAxesRangeScale::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

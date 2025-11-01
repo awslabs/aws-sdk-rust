@@ -190,6 +190,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for PutConfigure
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::put_configured_audience_model_policy::PutConfiguredAudienceModelPolicyInput,
                 output: &mut ::std::string::String,

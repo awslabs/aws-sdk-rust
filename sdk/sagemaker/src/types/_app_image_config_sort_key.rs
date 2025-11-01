@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AppImageConfigSortKey {
             AppImageConfigSortKey::CreationTime => write!(f, "CreationTime"),
             AppImageConfigSortKey::LastModifiedTime => write!(f, "LastModifiedTime"),
             AppImageConfigSortKey::Name => write!(f, "Name"),
-            AppImageConfigSortKey::Unknown(value) => write!(f, "{}", value),
+            AppImageConfigSortKey::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

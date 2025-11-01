@@ -147,7 +147,7 @@ impl ::std::fmt::Display for PoolFilterName {
             PoolFilterName::Status => write!(f, "status"),
             PoolFilterName::TwoWayChannelArn => write!(f, "two-way-channel-arn"),
             PoolFilterName::TwoWayEnabled => write!(f, "two-way-enabled"),
-            PoolFilterName::Unknown(value) => write!(f, "{}", value),
+            PoolFilterName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

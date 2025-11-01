@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PiiEntitiesDetectionMode {
         match self {
             PiiEntitiesDetectionMode::OnlyOffsets => write!(f, "ONLY_OFFSETS"),
             PiiEntitiesDetectionMode::OnlyRedaction => write!(f, "ONLY_REDACTION"),
-            PiiEntitiesDetectionMode::Unknown(value) => write!(f, "{}", value),
+            PiiEntitiesDetectionMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

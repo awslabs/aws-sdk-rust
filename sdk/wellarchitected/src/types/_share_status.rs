@@ -147,7 +147,7 @@ impl ::std::fmt::Display for ShareStatus {
             ShareStatus::Pending => write!(f, "PENDING"),
             ShareStatus::Rejected => write!(f, "REJECTED"),
             ShareStatus::Revoked => write!(f, "REVOKED"),
-            ShareStatus::Unknown(value) => write!(f, "{}", value),
+            ShareStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

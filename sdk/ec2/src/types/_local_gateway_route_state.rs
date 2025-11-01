@@ -120,7 +120,7 @@ impl ::std::fmt::Display for LocalGatewayRouteState {
             LocalGatewayRouteState::Deleted => write!(f, "deleted"),
             LocalGatewayRouteState::Deleting => write!(f, "deleting"),
             LocalGatewayRouteState::Pending => write!(f, "pending"),
-            LocalGatewayRouteState::Unknown(value) => write!(f, "{}", value),
+            LocalGatewayRouteState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

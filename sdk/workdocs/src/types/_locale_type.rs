@@ -156,7 +156,7 @@ impl ::std::fmt::Display for LocaleType {
             LocaleType::Ru => write!(f, "ru"),
             LocaleType::ZhCn => write!(f, "zh_CN"),
             LocaleType::ZhTw => write!(f, "zh_TW"),
-            LocaleType::Unknown(value) => write!(f, "{}", value),
+            LocaleType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

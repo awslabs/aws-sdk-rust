@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CanaryRunStateReasonCode {
         match self {
             CanaryRunStateReasonCode::CanaryFailure => write!(f, "CANARY_FAILURE"),
             CanaryRunStateReasonCode::ExecutionFailure => write!(f, "EXECUTION_FAILURE"),
-            CanaryRunStateReasonCode::Unknown(value) => write!(f, "{}", value),
+            CanaryRunStateReasonCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Operator {
         match self {
             Operator::Between => write!(f, "BETWEEN"),
             Operator::Equal => write!(f, "EQUAL"),
-            Operator::Unknown(value) => write!(f, "{}", value),
+            Operator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

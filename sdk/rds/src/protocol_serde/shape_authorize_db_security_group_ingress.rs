@@ -139,16 +139,14 @@ pub fn de_authorize_db_security_group_ingress(
     let start_el = decoder.start_el();
     if !(start_el.matches("AuthorizeDBSecurityGroupIngressResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected AuthorizeDBSecurityGroupIngressResponse got {:?}",
-            start_el
+            "invalid root, expected AuthorizeDBSecurityGroupIngressResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("AuthorizeDBSecurityGroupIngressResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected AuthorizeDBSecurityGroupIngressResult got {:?}",
-                start_el
+                "invalid result, expected AuthorizeDBSecurityGroupIngressResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

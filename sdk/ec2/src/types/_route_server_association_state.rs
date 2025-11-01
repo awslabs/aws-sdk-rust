@@ -108,7 +108,7 @@ impl ::std::fmt::Display for RouteServerAssociationState {
             RouteServerAssociationState::Associated => write!(f, "associated"),
             RouteServerAssociationState::Associating => write!(f, "associating"),
             RouteServerAssociationState::Disassociating => write!(f, "disassociating"),
-            RouteServerAssociationState::Unknown(value) => write!(f, "{}", value),
+            RouteServerAssociationState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

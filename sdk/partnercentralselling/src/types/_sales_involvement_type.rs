@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SalesInvolvementType {
         match self {
             SalesInvolvementType::CoSell => write!(f, "Co-Sell"),
             SalesInvolvementType::ForVisibilityOnly => write!(f, "For Visibility Only"),
-            SalesInvolvementType::Unknown(value) => write!(f, "{}", value),
+            SalesInvolvementType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

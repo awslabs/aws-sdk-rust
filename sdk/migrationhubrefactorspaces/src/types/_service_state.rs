@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ServiceState {
             ServiceState::Creating => write!(f, "CREATING"),
             ServiceState::Deleting => write!(f, "DELETING"),
             ServiceState::Failed => write!(f, "FAILED"),
-            ServiceState::Unknown(value) => write!(f, "{}", value),
+            ServiceState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

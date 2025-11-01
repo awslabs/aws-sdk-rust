@@ -154,7 +154,7 @@ impl ::std::fmt::Display for RegistrationStatus {
             RegistrationStatus::RequiresUpdates => write!(f, "REQUIRES_UPDATES"),
             RegistrationStatus::Reviewing => write!(f, "REVIEWING"),
             RegistrationStatus::Submitted => write!(f, "SUBMITTED"),
-            RegistrationStatus::Unknown(value) => write!(f, "{}", value),
+            RegistrationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for CommentStatusType {
             CommentStatusType::Deleted => write!(f, "DELETED"),
             CommentStatusType::Draft => write!(f, "DRAFT"),
             CommentStatusType::Published => write!(f, "PUBLISHED"),
-            CommentStatusType::Unknown(value) => write!(f, "{}", value),
+            CommentStatusType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

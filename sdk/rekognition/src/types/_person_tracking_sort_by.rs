@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PersonTrackingSortBy {
         match self {
             PersonTrackingSortBy::Index => write!(f, "INDEX"),
             PersonTrackingSortBy::Timestamp => write!(f, "TIMESTAMP"),
-            PersonTrackingSortBy::Unknown(value) => write!(f, "{}", value),
+            PersonTrackingSortBy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

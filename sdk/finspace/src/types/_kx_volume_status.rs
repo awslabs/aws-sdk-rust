@@ -154,7 +154,7 @@ impl ::std::fmt::Display for KxVolumeStatus {
             KxVolumeStatus::Updated => write!(f, "UPDATED"),
             KxVolumeStatus::UpdateFailed => write!(f, "UPDATE_FAILED"),
             KxVolumeStatus::Updating => write!(f, "UPDATING"),
-            KxVolumeStatus::Unknown(value) => write!(f, "{}", value),
+            KxVolumeStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

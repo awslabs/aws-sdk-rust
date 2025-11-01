@@ -140,7 +140,7 @@ impl ::std::fmt::Display for ResourceType {
             ResourceType::AwsInternetmonitorMonitor => write!(f, "AWS::InternetMonitor::Monitor"),
             ResourceType::AwsLogsLoggroup => write!(f, "AWS::Logs::LogGroup"),
             ResourceType::AwsXrayTrace => write!(f, "AWS::XRay::Trace"),
-            ResourceType::Unknown(value) => write!(f, "{}", value),
+            ResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

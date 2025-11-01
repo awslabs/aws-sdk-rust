@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SamplingStrategyName {
         match self {
             SamplingStrategyName::FixedRate => write!(f, "FixedRate"),
             SamplingStrategyName::PartialScan => write!(f, "PartialScan"),
-            SamplingStrategyName::Unknown(value) => write!(f, "{}", value),
+            SamplingStrategyName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

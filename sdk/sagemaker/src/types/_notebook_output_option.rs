@@ -102,7 +102,7 @@ impl ::std::fmt::Display for NotebookOutputOption {
         match self {
             NotebookOutputOption::Allowed => write!(f, "Allowed"),
             NotebookOutputOption::Disabled => write!(f, "Disabled"),
-            NotebookOutputOption::Unknown(value) => write!(f, "{}", value),
+            NotebookOutputOption::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

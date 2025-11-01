@@ -119,7 +119,7 @@ impl ::std::fmt::Display for ResourceNotFoundExceptionReason {
             ResourceNotFoundExceptionReason::GrantNotFound => write!(f, "GRANT_NOT_FOUND"),
             ResourceNotFoundExceptionReason::ImageNotFound => write!(f, "IMAGE_NOT_FOUND"),
             ResourceNotFoundExceptionReason::SnapshotNotFound => write!(f, "SNAPSHOT_NOT_FOUND"),
-            ResourceNotFoundExceptionReason::Unknown(value) => write!(f, "{}", value),
+            ResourceNotFoundExceptionReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

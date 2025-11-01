@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Mode {
         match self {
             Mode::Enabled => write!(f, "ENABLED"),
             Mode::LearnOnly => write!(f, "LEARN_ONLY"),
-            Mode::Unknown(value) => write!(f, "{}", value),
+            Mode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

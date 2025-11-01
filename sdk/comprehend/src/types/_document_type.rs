@@ -140,7 +140,7 @@ impl ::std::fmt::Display for DocumentType {
             DocumentType::ScannedPdf => write!(f, "SCANNED_PDF"),
             DocumentType::TextractAnalyzeDocumentJson => write!(f, "TEXTRACT_ANALYZE_DOCUMENT_JSON"),
             DocumentType::TextractDetectDocumentTextJson => write!(f, "TEXTRACT_DETECT_DOCUMENT_TEXT_JSON"),
-            DocumentType::Unknown(value) => write!(f, "{}", value),
+            DocumentType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

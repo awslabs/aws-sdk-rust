@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MpdScte35Esam {
         match self {
             MpdScte35Esam::Insert => write!(f, "INSERT"),
             MpdScte35Esam::None => write!(f, "NONE"),
-            MpdScte35Esam::Unknown(value) => write!(f, "{}", value),
+            MpdScte35Esam::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ProtocolType {
         match self {
             ProtocolType::Http => write!(f, "HTTP"),
             ProtocolType::Websocket => write!(f, "WEBSOCKET"),
-            ProtocolType::Unknown(value) => write!(f, "{}", value),
+            ProtocolType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

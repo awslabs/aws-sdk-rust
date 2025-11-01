@@ -132,7 +132,7 @@ impl ::std::fmt::Display for MaintenanceDay {
             MaintenanceDay::Thursday => write!(f, "Thursday"),
             MaintenanceDay::Tuesday => write!(f, "Tuesday"),
             MaintenanceDay::Wednesday => write!(f, "Wednesday"),
-            MaintenanceDay::Unknown(value) => write!(f, "{}", value),
+            MaintenanceDay::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

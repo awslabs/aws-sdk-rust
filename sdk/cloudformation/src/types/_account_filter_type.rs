@@ -114,7 +114,7 @@ impl ::std::fmt::Display for AccountFilterType {
             AccountFilterType::Intersection => write!(f, "INTERSECTION"),
             AccountFilterType::None => write!(f, "NONE"),
             AccountFilterType::Union => write!(f, "UNION"),
-            AccountFilterType::Unknown(value) => write!(f, "{}", value),
+            AccountFilterType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

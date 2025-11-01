@@ -108,7 +108,7 @@ impl ::std::fmt::Display for MigrationTypeValue {
             MigrationTypeValue::Cdc => write!(f, "cdc"),
             MigrationTypeValue::FullLoad => write!(f, "full-load"),
             MigrationTypeValue::FullLoadAndCdc => write!(f, "full-load-and-cdc"),
-            MigrationTypeValue::Unknown(value) => write!(f, "{}", value),
+            MigrationTypeValue::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

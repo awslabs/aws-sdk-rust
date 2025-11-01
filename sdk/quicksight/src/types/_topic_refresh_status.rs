@@ -120,7 +120,7 @@ impl ::std::fmt::Display for TopicRefreshStatus {
             TopicRefreshStatus::Failed => write!(f, "FAILED"),
             TopicRefreshStatus::Initialized => write!(f, "INITIALIZED"),
             TopicRefreshStatus::Running => write!(f, "RUNNING"),
-            TopicRefreshStatus::Unknown(value) => write!(f, "{}", value),
+            TopicRefreshStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

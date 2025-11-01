@@ -102,7 +102,7 @@ impl ::std::fmt::Display for OrganizationFeatureSet {
         match self {
             OrganizationFeatureSet::All => write!(f, "ALL"),
             OrganizationFeatureSet::ConsolidatedBilling => write!(f, "CONSOLIDATED_BILLING"),
-            OrganizationFeatureSet::Unknown(value) => write!(f, "{}", value),
+            OrganizationFeatureSet::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

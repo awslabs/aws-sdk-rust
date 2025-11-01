@@ -108,7 +108,7 @@ impl ::std::fmt::Display for WaveProgressStatus {
             WaveProgressStatus::Completed => write!(f, "COMPLETED"),
             WaveProgressStatus::InProgress => write!(f, "IN_PROGRESS"),
             WaveProgressStatus::NotStarted => write!(f, "NOT_STARTED"),
-            WaveProgressStatus::Unknown(value) => write!(f, "{}", value),
+            WaveProgressStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

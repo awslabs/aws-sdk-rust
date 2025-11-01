@@ -108,7 +108,7 @@ impl ::std::fmt::Display for CisStringComparison {
             CisStringComparison::Equals => write!(f, "EQUALS"),
             CisStringComparison::NotEquals => write!(f, "NOT_EQUALS"),
             CisStringComparison::Prefix => write!(f, "PREFIX"),
-            CisStringComparison::Unknown(value) => write!(f, "{}", value),
+            CisStringComparison::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

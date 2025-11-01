@@ -163,7 +163,7 @@ impl ::std::fmt::Display for VirtualInterfaceState {
             VirtualInterfaceState::Testing => write!(f, "testing"),
             VirtualInterfaceState::UnknownValue => write!(f, "unknown"),
             VirtualInterfaceState::Verifying => write!(f, "verifying"),
-            VirtualInterfaceState::Unknown(value) => write!(f, "{}", value),
+            VirtualInterfaceState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

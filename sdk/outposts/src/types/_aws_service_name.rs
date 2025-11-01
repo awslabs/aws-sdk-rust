@@ -126,7 +126,7 @@ impl ::std::fmt::Display for AwsServiceName {
             AwsServiceName::Elb => write!(f, "ELB"),
             AwsServiceName::Rds => write!(f, "RDS"),
             AwsServiceName::Route53 => write!(f, "ROUTE53"),
-            AwsServiceName::Unknown(value) => write!(f, "{}", value),
+            AwsServiceName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

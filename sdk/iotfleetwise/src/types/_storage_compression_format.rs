@@ -102,7 +102,7 @@ impl ::std::fmt::Display for StorageCompressionFormat {
         match self {
             StorageCompressionFormat::Gzip => write!(f, "GZIP"),
             StorageCompressionFormat::None => write!(f, "NONE"),
-            StorageCompressionFormat::Unknown(value) => write!(f, "{}", value),
+            StorageCompressionFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -132,7 +132,7 @@ impl ::std::fmt::Display for TaskStatus {
             TaskStatus::Running => write!(f, "RUNNING"),
             TaskStatus::Starting => write!(f, "STARTING"),
             TaskStatus::Stopping => write!(f, "STOPPING"),
-            TaskStatus::Unknown(value) => write!(f, "{}", value),
+            TaskStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

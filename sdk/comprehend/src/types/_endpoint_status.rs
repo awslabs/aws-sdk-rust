@@ -120,7 +120,7 @@ impl ::std::fmt::Display for EndpointStatus {
             EndpointStatus::Failed => write!(f, "FAILED"),
             EndpointStatus::InService => write!(f, "IN_SERVICE"),
             EndpointStatus::Updating => write!(f, "UPDATING"),
-            EndpointStatus::Unknown(value) => write!(f, "{}", value),
+            EndpointStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

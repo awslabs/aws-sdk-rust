@@ -147,7 +147,7 @@ impl ::std::fmt::Display for ConnectionStatus {
             ConnectionStatus::Ready => write!(f, "READY"),
             ConnectionStatus::UpdateFailed => write!(f, "UPDATE_FAILED"),
             ConnectionStatus::Updating => write!(f, "UPDATING"),
-            ConnectionStatus::Unknown(value) => write!(f, "{}", value),
+            ConnectionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -126,7 +126,7 @@ impl ::std::fmt::Display for SavingsPlanRateFilterAttribute {
             SavingsPlanRateFilterAttribute::ProductId => write!(f, "productId"),
             SavingsPlanRateFilterAttribute::Region => write!(f, "region"),
             SavingsPlanRateFilterAttribute::Tenancy => write!(f, "tenancy"),
-            SavingsPlanRateFilterAttribute::Unknown(value) => write!(f, "{}", value),
+            SavingsPlanRateFilterAttribute::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

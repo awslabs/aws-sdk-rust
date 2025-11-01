@@ -114,7 +114,7 @@ impl ::std::fmt::Display for TargetTypeEnum {
             TargetTypeEnum::Instance => write!(f, "instance"),
             TargetTypeEnum::Ip => write!(f, "ip"),
             TargetTypeEnum::Lambda => write!(f, "lambda"),
-            TargetTypeEnum::Unknown(value) => write!(f, "{}", value),
+            TargetTypeEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

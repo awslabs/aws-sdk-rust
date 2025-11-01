@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TriggerMode {
         match self {
             TriggerMode::Always => write!(f, "ALWAYS"),
             TriggerMode::RisingEdge => write!(f, "RISING_EDGE"),
-            TriggerMode::Unknown(value) => write!(f, "{}", value),
+            TriggerMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

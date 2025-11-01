@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DatabaseMode {
         match self {
             DatabaseMode::Babelfish => write!(f, "babelfish"),
             DatabaseMode::Default => write!(f, "default"),
-            DatabaseMode::Unknown(value) => write!(f, "{}", value),
+            DatabaseMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

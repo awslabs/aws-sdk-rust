@@ -108,7 +108,7 @@ impl ::std::fmt::Display for MergeOptionTypeEnum {
             MergeOptionTypeEnum::FastForwardMerge => write!(f, "FAST_FORWARD_MERGE"),
             MergeOptionTypeEnum::SquashMerge => write!(f, "SQUASH_MERGE"),
             MergeOptionTypeEnum::ThreeWayMerge => write!(f, "THREE_WAY_MERGE"),
-            MergeOptionTypeEnum::Unknown(value) => write!(f, "{}", value),
+            MergeOptionTypeEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

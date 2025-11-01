@@ -102,7 +102,7 @@ impl ::std::fmt::Display for LinuxSubscriptionsDiscovery {
         match self {
             LinuxSubscriptionsDiscovery::Disabled => write!(f, "Disabled"),
             LinuxSubscriptionsDiscovery::Enabled => write!(f, "Enabled"),
-            LinuxSubscriptionsDiscovery::Unknown(value) => write!(f, "{}", value),
+            LinuxSubscriptionsDiscovery::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

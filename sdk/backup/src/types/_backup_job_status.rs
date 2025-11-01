@@ -168,7 +168,7 @@ impl ::std::fmt::Display for BackupJobStatus {
             BackupJobStatus::Partial => write!(f, "PARTIAL"),
             BackupJobStatus::Pending => write!(f, "PENDING"),
             BackupJobStatus::Running => write!(f, "RUNNING"),
-            BackupJobStatus::Unknown(value) => write!(f, "{}", value),
+            BackupJobStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

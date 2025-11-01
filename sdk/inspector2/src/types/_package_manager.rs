@@ -217,7 +217,7 @@ impl ::std::fmt::Display for PackageManager {
             PackageManager::Pom => write!(f, "POM"),
             PackageManager::Pythonpkg => write!(f, "PYTHONPKG"),
             PackageManager::Yarn => write!(f, "YARN"),
-            PackageManager::Unknown(value) => write!(f, "{}", value),
+            PackageManager::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

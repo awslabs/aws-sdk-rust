@@ -108,7 +108,7 @@ impl ::std::fmt::Display for SnowflakeDataLoadingOption {
             SnowflakeDataLoadingOption::JsonMapping => write!(f, "JSON_MAPPING"),
             SnowflakeDataLoadingOption::VariantContentAndMetadataMapping => write!(f, "VARIANT_CONTENT_AND_METADATA_MAPPING"),
             SnowflakeDataLoadingOption::VariantContentMapping => write!(f, "VARIANT_CONTENT_MAPPING"),
-            SnowflakeDataLoadingOption::Unknown(value) => write!(f, "{}", value),
+            SnowflakeDataLoadingOption::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

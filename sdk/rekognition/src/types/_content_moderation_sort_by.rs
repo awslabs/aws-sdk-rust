@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ContentModerationSortBy {
         match self {
             ContentModerationSortBy::Name => write!(f, "NAME"),
             ContentModerationSortBy::Timestamp => write!(f, "TIMESTAMP"),
-            ContentModerationSortBy::Unknown(value) => write!(f, "{}", value),
+            ContentModerationSortBy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

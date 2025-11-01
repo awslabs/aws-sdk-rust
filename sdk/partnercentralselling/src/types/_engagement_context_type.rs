@@ -96,7 +96,7 @@ impl ::std::fmt::Display for EngagementContextType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             EngagementContextType::CustomerProject => write!(f, "CustomerProject"),
-            EngagementContextType::Unknown(value) => write!(f, "{}", value),
+            EngagementContextType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

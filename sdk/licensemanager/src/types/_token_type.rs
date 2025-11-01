@@ -96,7 +96,7 @@ impl ::std::fmt::Display for TokenType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             TokenType::RefreshToken => write!(f, "REFRESH_TOKEN"),
-            TokenType::Unknown(value) => write!(f, "{}", value),
+            TokenType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

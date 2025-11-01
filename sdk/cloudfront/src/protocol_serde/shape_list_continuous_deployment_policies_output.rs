@@ -22,8 +22,7 @@ pub fn de_continuous_deployment_policy_list(
     let start_el = decoder.start_el();
     if !(start_el.matches("ContinuousDeploymentPolicyList")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected ContinuousDeploymentPolicyList got {:?}",
-            start_el
+            "invalid root, expected ContinuousDeploymentPolicyList got {start_el:?}"
         )));
     }
     crate::protocol_serde::shape_continuous_deployment_policy_list::de_continuous_deployment_policy_list(&mut decoder)

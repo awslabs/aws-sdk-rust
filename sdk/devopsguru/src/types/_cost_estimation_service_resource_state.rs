@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CostEstimationServiceResourceState {
         match self {
             CostEstimationServiceResourceState::Active => write!(f, "ACTIVE"),
             CostEstimationServiceResourceState::Inactive => write!(f, "INACTIVE"),
-            CostEstimationServiceResourceState::Unknown(value) => write!(f, "{}", value),
+            CostEstimationServiceResourceState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

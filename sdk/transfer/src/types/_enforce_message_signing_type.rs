@@ -102,7 +102,7 @@ impl ::std::fmt::Display for EnforceMessageSigningType {
         match self {
             EnforceMessageSigningType::Disabled => write!(f, "DISABLED"),
             EnforceMessageSigningType::Enabled => write!(f, "ENABLED"),
-            EnforceMessageSigningType::Unknown(value) => write!(f, "{}", value),
+            EnforceMessageSigningType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

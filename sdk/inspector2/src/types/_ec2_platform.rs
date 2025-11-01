@@ -116,7 +116,7 @@ impl ::std::fmt::Display for Ec2Platform {
             Ec2Platform::Macos => write!(f, "MACOS"),
             Ec2Platform::UnknownValue => write!(f, "UNKNOWN"),
             Ec2Platform::Windows => write!(f, "WINDOWS"),
-            Ec2Platform::Unknown(value) => write!(f, "{}", value),
+            Ec2Platform::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

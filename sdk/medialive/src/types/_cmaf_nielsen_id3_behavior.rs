@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CmafNielsenId3Behavior {
         match self {
             CmafNielsenId3Behavior::NoPassthrough => write!(f, "NO_PASSTHROUGH"),
             CmafNielsenId3Behavior::Passthrough => write!(f, "PASSTHROUGH"),
-            CmafNielsenId3Behavior::Unknown(value) => write!(f, "{}", value),
+            CmafNielsenId3Behavior::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

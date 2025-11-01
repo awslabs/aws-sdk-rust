@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ImageSource {
             ImageSource::AwsMarketplace => write!(f, "AWS_MARKETPLACE"),
             ImageSource::Custom => write!(f, "CUSTOM"),
             ImageSource::Imported => write!(f, "IMPORTED"),
-            ImageSource::Unknown(value) => write!(f, "{}", value),
+            ImageSource::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

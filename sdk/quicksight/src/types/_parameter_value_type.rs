@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ParameterValueType {
         match self {
             ParameterValueType::MultiValued => write!(f, "MULTI_VALUED"),
             ParameterValueType::SingleValued => write!(f, "SINGLE_VALUED"),
-            ParameterValueType::Unknown(value) => write!(f, "{}", value),
+            ParameterValueType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

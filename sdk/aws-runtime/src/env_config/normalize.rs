@@ -203,10 +203,7 @@ fn validate_identifier(input: &str) -> Result<&str, ()> {
     input
         .chars()
         .all(|ch| {
-            ch.is_ascii_alphanumeric()
-                || ['_', '-', '/', '.', '%', '@', ':', '+']
-                    .iter()
-                    .any(|c| *c == ch)
+            ch.is_ascii_alphanumeric() || ['_', '-', '/', '.', '%', '@', ':', '+'].contains(&ch)
         })
         .then_some(input)
         .ok_or(())

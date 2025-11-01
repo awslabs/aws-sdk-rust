@@ -102,7 +102,7 @@ impl ::std::fmt::Display for WarmupStatus {
         match self {
             WarmupStatus::Done => write!(f, "DONE"),
             WarmupStatus::InProgress => write!(f, "IN_PROGRESS"),
-            WarmupStatus::Unknown(value) => write!(f, "{}", value),
+            WarmupStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -147,7 +147,7 @@ impl ::std::fmt::Display for SourceAccessType {
             SourceAccessType::VirtualHost => write!(f, "VIRTUAL_HOST"),
             SourceAccessType::VpcSecurityGroup => write!(f, "VPC_SECURITY_GROUP"),
             SourceAccessType::VpcSubnet => write!(f, "VPC_SUBNET"),
-            SourceAccessType::Unknown(value) => write!(f, "{}", value),
+            SourceAccessType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

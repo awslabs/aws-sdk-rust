@@ -108,7 +108,7 @@ impl ::std::fmt::Display for PropertyGroupUpdateType {
             PropertyGroupUpdateType::Create => write!(f, "CREATE"),
             PropertyGroupUpdateType::Delete => write!(f, "DELETE"),
             PropertyGroupUpdateType::Update => write!(f, "UPDATE"),
-            PropertyGroupUpdateType::Unknown(value) => write!(f, "{}", value),
+            PropertyGroupUpdateType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

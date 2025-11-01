@@ -191,6 +191,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListDistribu
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::list_distributions_by_anycast_ip_list_id::ListDistributionsByAnycastIpListIdInput,
                 output: &mut ::std::string::String,

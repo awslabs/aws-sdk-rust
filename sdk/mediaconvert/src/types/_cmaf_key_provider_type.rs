@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CmafKeyProviderType {
         match self {
             CmafKeyProviderType::Speke => write!(f, "SPEKE"),
             CmafKeyProviderType::StaticKey => write!(f, "STATIC_KEY"),
-            CmafKeyProviderType::Unknown(value) => write!(f, "{}", value),
+            CmafKeyProviderType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

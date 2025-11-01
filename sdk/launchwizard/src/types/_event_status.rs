@@ -147,7 +147,7 @@ impl ::std::fmt::Display for EventStatus {
             EventStatus::InProgress => write!(f, "IN_PROGRESS"),
             EventStatus::Pending => write!(f, "PENDING"),
             EventStatus::TimedOut => write!(f, "TIMED_OUT"),
-            EventStatus::Unknown(value) => write!(f, "{}", value),
+            EventStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

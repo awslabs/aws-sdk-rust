@@ -133,7 +133,7 @@ impl ::std::fmt::Display for ListBillEstimateLineItemsFilterName {
             ListBillEstimateLineItemsFilterName::ServiceCode => write!(f, "SERVICE_CODE"),
             ListBillEstimateLineItemsFilterName::UsageAccountId => write!(f, "USAGE_ACCOUNT_ID"),
             ListBillEstimateLineItemsFilterName::UsageType => write!(f, "USAGE_TYPE"),
-            ListBillEstimateLineItemsFilterName::Unknown(value) => write!(f, "{}", value),
+            ListBillEstimateLineItemsFilterName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

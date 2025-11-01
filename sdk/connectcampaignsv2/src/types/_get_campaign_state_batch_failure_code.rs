@@ -102,7 +102,7 @@ impl ::std::fmt::Display for GetCampaignStateBatchFailureCode {
         match self {
             GetCampaignStateBatchFailureCode::ResourceNotFound => write!(f, "ResourceNotFound"),
             GetCampaignStateBatchFailureCode::UnknownError => write!(f, "UnknownError"),
-            GetCampaignStateBatchFailureCode::Unknown(value) => write!(f, "{}", value),
+            GetCampaignStateBatchFailureCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

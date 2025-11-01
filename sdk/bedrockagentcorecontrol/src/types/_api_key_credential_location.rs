@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ApiKeyCredentialLocation {
         match self {
             ApiKeyCredentialLocation::Header => write!(f, "HEADER"),
             ApiKeyCredentialLocation::QueryParameter => write!(f, "QUERY_PARAMETER"),
-            ApiKeyCredentialLocation::Unknown(value) => write!(f, "{}", value),
+            ApiKeyCredentialLocation::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

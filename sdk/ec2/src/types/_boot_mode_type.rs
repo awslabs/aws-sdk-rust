@@ -102,7 +102,7 @@ impl ::std::fmt::Display for BootModeType {
         match self {
             BootModeType::LegacyBios => write!(f, "legacy-bios"),
             BootModeType::Uefi => write!(f, "uefi"),
-            BootModeType::Unknown(value) => write!(f, "{}", value),
+            BootModeType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

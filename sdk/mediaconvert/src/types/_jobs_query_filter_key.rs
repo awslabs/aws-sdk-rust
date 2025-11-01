@@ -140,7 +140,7 @@ impl ::std::fmt::Display for JobsQueryFilterKey {
             JobsQueryFilterKey::Queue => write!(f, "queue"),
             JobsQueryFilterKey::Status => write!(f, "status"),
             JobsQueryFilterKey::VideoCodec => write!(f, "videoCodec"),
-            JobsQueryFilterKey::Unknown(value) => write!(f, "{}", value),
+            JobsQueryFilterKey::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

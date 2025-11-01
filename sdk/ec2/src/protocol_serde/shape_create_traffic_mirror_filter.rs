@@ -53,8 +53,7 @@ pub fn de_create_traffic_mirror_filter(
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateTrafficMirrorFilterResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected CreateTrafficMirrorFilterResponse got {:?}",
-            start_el
+            "invalid root, expected CreateTrafficMirrorFilterResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

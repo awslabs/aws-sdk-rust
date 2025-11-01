@@ -120,7 +120,7 @@ impl ::std::fmt::Display for EcrPullDateRescanDuration {
             EcrPullDateRescanDuration::Days30 => write!(f, "DAYS_30"),
             EcrPullDateRescanDuration::Days60 => write!(f, "DAYS_60"),
             EcrPullDateRescanDuration::Days90 => write!(f, "DAYS_90"),
-            EcrPullDateRescanDuration::Unknown(value) => write!(f, "{}", value),
+            EcrPullDateRescanDuration::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -51,8 +51,7 @@ pub fn de_get_serial_console_access_status(
     let start_el = decoder.start_el();
     if !(start_el.matches("GetSerialConsoleAccessStatusResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected GetSerialConsoleAccessStatusResponse got {:?}",
-            start_el
+            "invalid root, expected GetSerialConsoleAccessStatusResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

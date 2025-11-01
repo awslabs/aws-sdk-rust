@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CustomizationFeature {
         match self {
             CustomizationFeature::ContentModeration => write!(f, "CONTENT_MODERATION"),
             CustomizationFeature::CustomLabels => write!(f, "CUSTOM_LABELS"),
-            CustomizationFeature::Unknown(value) => write!(f, "{}", value),
+            CustomizationFeature::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

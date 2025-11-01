@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ClusterConfigMode {
         match self {
             ClusterConfigMode::Disable => write!(f, "Disable"),
             ClusterConfigMode::Enable => write!(f, "Enable"),
-            ClusterConfigMode::Unknown(value) => write!(f, "{}", value),
+            ClusterConfigMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -147,7 +147,7 @@ impl ::std::fmt::Display for EntityStatus {
             EntityStatus::Failed => write!(f, "FAILED"),
             EntityStatus::Inprogress => write!(f, "INPROGRESS"),
             EntityStatus::Pending => write!(f, "PENDING"),
-            EntityStatus::Unknown(value) => write!(f, "{}", value),
+            EntityStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for MapRunStatus {
             MapRunStatus::Failed => write!(f, "FAILED"),
             MapRunStatus::Running => write!(f, "RUNNING"),
             MapRunStatus::Succeeded => write!(f, "SUCCEEDED"),
-            MapRunStatus::Unknown(value) => write!(f, "{}", value),
+            MapRunStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -187,6 +187,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for NotifyUpdate
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::notify_update_provisioned_product_engine_workflow_result::NotifyUpdateProvisionedProductEngineWorkflowResultInput,
                 output: &mut ::std::string::String,

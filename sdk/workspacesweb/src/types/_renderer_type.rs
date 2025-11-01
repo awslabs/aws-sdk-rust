@@ -96,7 +96,7 @@ impl ::std::fmt::Display for RendererType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             RendererType::Appstream => write!(f, "AppStream"),
-            RendererType::Unknown(value) => write!(f, "{}", value),
+            RendererType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

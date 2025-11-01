@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AttributeMatchingModel {
         match self {
             AttributeMatchingModel::ManyToMany => write!(f, "MANY_TO_MANY"),
             AttributeMatchingModel::OneToOne => write!(f, "ONE_TO_ONE"),
-            AttributeMatchingModel::Unknown(value) => write!(f, "{}", value),
+            AttributeMatchingModel::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

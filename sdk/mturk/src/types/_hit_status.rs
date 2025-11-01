@@ -120,7 +120,7 @@ impl ::std::fmt::Display for HitStatus {
             HitStatus::Reviewable => write!(f, "Reviewable"),
             HitStatus::Reviewing => write!(f, "Reviewing"),
             HitStatus::Unassignable => write!(f, "Unassignable"),
-            HitStatus::Unknown(value) => write!(f, "{}", value),
+            HitStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

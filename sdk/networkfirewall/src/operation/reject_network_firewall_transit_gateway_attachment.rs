@@ -182,6 +182,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for RejectNetwor
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::reject_network_firewall_transit_gateway_attachment::RejectNetworkFirewallTransitGatewayAttachmentInput,
                 output: &mut ::std::string::String,

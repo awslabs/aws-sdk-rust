@@ -102,7 +102,7 @@ impl ::std::fmt::Display for JobAttachmentsFileSystem {
         match self {
             JobAttachmentsFileSystem::Copied => write!(f, "COPIED"),
             JobAttachmentsFileSystem::Virtual => write!(f, "VIRTUAL"),
-            JobAttachmentsFileSystem::Unknown(value) => write!(f, "{}", value),
+            JobAttachmentsFileSystem::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

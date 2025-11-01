@@ -140,7 +140,7 @@ impl ::std::fmt::Display for LicenseStatus {
             LicenseStatus::PendingAvailable => write!(f, "PENDING_AVAILABLE"),
             LicenseStatus::PendingDelete => write!(f, "PENDING_DELETE"),
             LicenseStatus::Suspended => write!(f, "SUSPENDED"),
-            LicenseStatus::Unknown(value) => write!(f, "{}", value),
+            LicenseStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MapFeatureMode {
         match self {
             MapFeatureMode::Disabled => write!(f, "Disabled"),
             MapFeatureMode::Enabled => write!(f, "Enabled"),
-            MapFeatureMode::Unknown(value) => write!(f, "{}", value),
+            MapFeatureMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

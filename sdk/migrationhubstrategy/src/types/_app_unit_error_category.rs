@@ -126,7 +126,7 @@ impl ::std::fmt::Display for AppUnitErrorCategory {
             AppUnitErrorCategory::OtherError => write!(f, "OTHER_ERROR"),
             AppUnitErrorCategory::PermissionError => write!(f, "PERMISSION_ERROR"),
             AppUnitErrorCategory::UnsupportedError => write!(f, "UNSUPPORTED_ERROR"),
-            AppUnitErrorCategory::Unknown(value) => write!(f, "{}", value),
+            AppUnitErrorCategory::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

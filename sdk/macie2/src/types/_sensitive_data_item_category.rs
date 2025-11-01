@@ -114,7 +114,7 @@ impl ::std::fmt::Display for SensitiveDataItemCategory {
             SensitiveDataItemCategory::CustomIdentifier => write!(f, "CUSTOM_IDENTIFIER"),
             SensitiveDataItemCategory::FinancialInformation => write!(f, "FINANCIAL_INFORMATION"),
             SensitiveDataItemCategory::PersonalInformation => write!(f, "PERSONAL_INFORMATION"),
-            SensitiveDataItemCategory::Unknown(value) => write!(f, "{}", value),
+            SensitiveDataItemCategory::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

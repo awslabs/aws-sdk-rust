@@ -154,7 +154,7 @@ impl ::std::fmt::Display for QueueStatus {
             QueueStatus::Suspending => write!(f, "SUSPENDING"),
             QueueStatus::UpdateFailed => write!(f, "UPDATE_FAILED"),
             QueueStatus::Updating => write!(f, "UPDATING"),
-            QueueStatus::Unknown(value) => write!(f, "{}", value),
+            QueueStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

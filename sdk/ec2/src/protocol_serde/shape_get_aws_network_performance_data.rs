@@ -51,8 +51,7 @@ pub fn de_get_aws_network_performance_data(
     let start_el = decoder.start_el();
     if !(start_el.matches("GetAwsNetworkPerformanceDataResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected GetAwsNetworkPerformanceDataResponse got {:?}",
-            start_el
+            "invalid root, expected GetAwsNetworkPerformanceDataResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

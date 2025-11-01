@@ -114,7 +114,7 @@ impl ::std::fmt::Display for LandingZoneOperationType {
             LandingZoneOperationType::Delete => write!(f, "DELETE"),
             LandingZoneOperationType::Reset => write!(f, "RESET"),
             LandingZoneOperationType::Update => write!(f, "UPDATE"),
-            LandingZoneOperationType::Unknown(value) => write!(f, "{}", value),
+            LandingZoneOperationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

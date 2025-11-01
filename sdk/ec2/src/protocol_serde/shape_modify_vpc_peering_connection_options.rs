@@ -51,8 +51,7 @@ pub fn de_modify_vpc_peering_connection_options(
     let start_el = decoder.start_el();
     if !(start_el.matches("ModifyVpcPeeringConnectionOptionsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected ModifyVpcPeeringConnectionOptionsResponse got {:?}",
-            start_el
+            "invalid root, expected ModifyVpcPeeringConnectionOptionsResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

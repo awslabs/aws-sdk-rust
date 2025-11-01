@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ContainerType {
             ContainerType::Cmaf => write!(f, "CMAF"),
             ContainerType::Ism => write!(f, "ISM"),
             ContainerType::Ts => write!(f, "TS"),
-            ContainerType::Unknown(value) => write!(f, "{}", value),
+            ContainerType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

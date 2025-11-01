@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SupportedHardwareType {
         match self {
             SupportedHardwareType::Rack => write!(f, "RACK"),
             SupportedHardwareType::Server => write!(f, "SERVER"),
-            SupportedHardwareType::Unknown(value) => write!(f, "{}", value),
+            SupportedHardwareType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

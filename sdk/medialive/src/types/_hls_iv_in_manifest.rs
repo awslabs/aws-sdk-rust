@@ -102,7 +102,7 @@ impl ::std::fmt::Display for HlsIvInManifest {
         match self {
             HlsIvInManifest::Exclude => write!(f, "EXCLUDE"),
             HlsIvInManifest::Include => write!(f, "INCLUDE"),
-            HlsIvInManifest::Unknown(value) => write!(f, "{}", value),
+            HlsIvInManifest::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

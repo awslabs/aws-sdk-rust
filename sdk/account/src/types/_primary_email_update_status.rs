@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PrimaryEmailUpdateStatus {
         match self {
             PrimaryEmailUpdateStatus::Accepted => write!(f, "ACCEPTED"),
             PrimaryEmailUpdateStatus::Pending => write!(f, "PENDING"),
-            PrimaryEmailUpdateStatus::Unknown(value) => write!(f, "{}", value),
+            PrimaryEmailUpdateStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

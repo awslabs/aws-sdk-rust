@@ -67,8 +67,7 @@ pub fn de_list_geo_locations(
     let start_el = decoder.start_el();
     if !start_el.matches("ListGeoLocationsResponse") {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "encountered invalid XML root: expected ListGeoLocationsResponse but got {:?}. This is likely a bug in the SDK.",
-            start_el
+            "encountered invalid XML root: expected ListGeoLocationsResponse but got {start_el:?}. This is likely a bug in the SDK."
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

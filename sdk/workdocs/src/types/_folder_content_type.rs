@@ -108,7 +108,7 @@ impl ::std::fmt::Display for FolderContentType {
             FolderContentType::All => write!(f, "ALL"),
             FolderContentType::Document => write!(f, "DOCUMENT"),
             FolderContentType::Folder => write!(f, "FOLDER"),
-            FolderContentType::Unknown(value) => write!(f, "{}", value),
+            FolderContentType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

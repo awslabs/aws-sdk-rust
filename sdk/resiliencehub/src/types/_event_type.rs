@@ -102,7 +102,7 @@ impl ::std::fmt::Display for EventType {
         match self {
             EventType::DriftDetected => write!(f, "DriftDetected"),
             EventType::ScheduledAssessmentFailure => write!(f, "ScheduledAssessmentFailure"),
-            EventType::Unknown(value) => write!(f, "{}", value),
+            EventType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

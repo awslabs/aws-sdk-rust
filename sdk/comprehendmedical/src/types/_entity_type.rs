@@ -140,7 +140,7 @@ impl ::std::fmt::Display for EntityType {
             EntityType::ProtectedHealthInformation => write!(f, "PROTECTED_HEALTH_INFORMATION"),
             EntityType::TestTreatmentProcedure => write!(f, "TEST_TREATMENT_PROCEDURE"),
             EntityType::TimeExpression => write!(f, "TIME_EXPRESSION"),
-            EntityType::Unknown(value) => write!(f, "{}", value),
+            EntityType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

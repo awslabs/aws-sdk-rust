@@ -119,7 +119,7 @@ impl ::std::fmt::Display for ErrorCode {
             ErrorCode::DependencyServiceError => write!(f, "DEPENDENCY_SERVICE_ERROR"),
             ErrorCode::DependencyThrottlingError => write!(f, "DEPENDENCY_THROTTLING_ERROR"),
             ErrorCode::ServiceQuotaNotAvailableError => write!(f, "SERVICE_QUOTA_NOT_AVAILABLE_ERROR"),
-            ErrorCode::Unknown(value) => write!(f, "{}", value),
+            ErrorCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

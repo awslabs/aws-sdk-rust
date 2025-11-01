@@ -154,7 +154,7 @@ impl ::std::fmt::Display for AttributeName {
             AttributeName::PertainsToFamily => write!(f, "PERTAINS_TO_FAMILY"),
             AttributeName::Sign => write!(f, "SIGN"),
             AttributeName::Symptom => write!(f, "SYMPTOM"),
-            AttributeName::Unknown(value) => write!(f, "{}", value),
+            AttributeName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

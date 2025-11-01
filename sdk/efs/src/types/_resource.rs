@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Resource {
         match self {
             Resource::FileSystem => write!(f, "FILE_SYSTEM"),
             Resource::MountTarget => write!(f, "MOUNT_TARGET"),
-            Resource::Unknown(value) => write!(f, "{}", value),
+            Resource::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

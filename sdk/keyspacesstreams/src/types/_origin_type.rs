@@ -108,7 +108,7 @@ impl ::std::fmt::Display for OriginType {
             OriginType::Replication => write!(f, "REPLICATION"),
             OriginType::Ttl => write!(f, "TTL"),
             OriginType::User => write!(f, "USER"),
-            OriginType::Unknown(value) => write!(f, "{}", value),
+            OriginType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

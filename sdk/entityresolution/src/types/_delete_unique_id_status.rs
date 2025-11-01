@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DeleteUniqueIdStatus {
         match self {
             DeleteUniqueIdStatus::Accepted => write!(f, "ACCEPTED"),
             DeleteUniqueIdStatus::Completed => write!(f, "COMPLETED"),
-            DeleteUniqueIdStatus::Unknown(value) => write!(f, "{}", value),
+            DeleteUniqueIdStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

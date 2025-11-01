@@ -108,7 +108,7 @@ impl ::std::fmt::Display for TypesSearchScope {
             TypesSearchScope::AssetType => write!(f, "ASSET_TYPE"),
             TypesSearchScope::FormType => write!(f, "FORM_TYPE"),
             TypesSearchScope::LineageNodeType => write!(f, "LINEAGE_NODE_TYPE"),
-            TypesSearchScope::Unknown(value) => write!(f, "{}", value),
+            TypesSearchScope::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

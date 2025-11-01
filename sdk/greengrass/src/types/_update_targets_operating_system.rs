@@ -114,7 +114,7 @@ impl ::std::fmt::Display for UpdateTargetsOperatingSystem {
             UpdateTargetsOperatingSystem::Openwrt => write!(f, "openwrt"),
             UpdateTargetsOperatingSystem::Raspbian => write!(f, "raspbian"),
             UpdateTargetsOperatingSystem::Ubuntu => write!(f, "ubuntu"),
-            UpdateTargetsOperatingSystem::Unknown(value) => write!(f, "{}", value),
+            UpdateTargetsOperatingSystem::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

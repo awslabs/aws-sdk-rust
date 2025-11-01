@@ -114,7 +114,7 @@ impl ::std::fmt::Display for BaseMapStyleType {
             BaseMapStyleType::Imagery => write!(f, "IMAGERY"),
             BaseMapStyleType::LightGray => write!(f, "LIGHT_GRAY"),
             BaseMapStyleType::Street => write!(f, "STREET"),
-            BaseMapStyleType::Unknown(value) => write!(f, "{}", value),
+            BaseMapStyleType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

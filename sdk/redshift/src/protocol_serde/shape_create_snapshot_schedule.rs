@@ -164,16 +164,14 @@ pub fn de_create_snapshot_schedule(
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateSnapshotScheduleResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected CreateSnapshotScheduleResponse got {:?}",
-            start_el
+            "invalid root, expected CreateSnapshotScheduleResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("CreateSnapshotScheduleResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected CreateSnapshotScheduleResult got {:?}",
-                start_el
+                "invalid result, expected CreateSnapshotScheduleResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

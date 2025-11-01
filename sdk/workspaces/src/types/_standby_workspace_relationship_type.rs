@@ -102,7 +102,7 @@ impl ::std::fmt::Display for StandbyWorkspaceRelationshipType {
         match self {
             StandbyWorkspaceRelationshipType::Primary => write!(f, "PRIMARY"),
             StandbyWorkspaceRelationshipType::Standby => write!(f, "STANDBY"),
-            StandbyWorkspaceRelationshipType::Unknown(value) => write!(f, "{}", value),
+            StandbyWorkspaceRelationshipType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

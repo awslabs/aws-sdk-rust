@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FilterBehavior {
         match self {
             FilterBehavior::Drop => write!(f, "DROP"),
             FilterBehavior::Keep => write!(f, "KEEP"),
-            FilterBehavior::Unknown(value) => write!(f, "{}", value),
+            FilterBehavior::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

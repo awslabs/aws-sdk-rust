@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Access {
         match self {
             Access::Disabled => write!(f, "DISABLED"),
             Access::Enabled => write!(f, "ENABLED"),
-            Access::Unknown(value) => write!(f, "{}", value),
+            Access::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

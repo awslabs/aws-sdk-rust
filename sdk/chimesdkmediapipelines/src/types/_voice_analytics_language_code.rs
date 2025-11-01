@@ -96,7 +96,7 @@ impl ::std::fmt::Display for VoiceAnalyticsLanguageCode {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             VoiceAnalyticsLanguageCode::EnUs => write!(f, "en-US"),
-            VoiceAnalyticsLanguageCode::Unknown(value) => write!(f, "{}", value),
+            VoiceAnalyticsLanguageCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

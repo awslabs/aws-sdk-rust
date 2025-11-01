@@ -102,7 +102,7 @@ impl ::std::fmt::Display for OriginRequestPolicyType {
         match self {
             OriginRequestPolicyType::Custom => write!(f, "custom"),
             OriginRequestPolicyType::Managed => write!(f, "managed"),
-            OriginRequestPolicyType::Unknown(value) => write!(f, "{}", value),
+            OriginRequestPolicyType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

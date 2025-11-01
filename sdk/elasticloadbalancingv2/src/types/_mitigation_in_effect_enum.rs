@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MitigationInEffectEnum {
         match self {
             MitigationInEffectEnum::No => write!(f, "no"),
             MitigationInEffectEnum::Yes => write!(f, "yes"),
-            MitigationInEffectEnum::Unknown(value) => write!(f, "{}", value),
+            MitigationInEffectEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

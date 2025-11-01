@@ -51,16 +51,14 @@ pub fn de_describe_default_cluster_parameters(
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeDefaultClusterParametersResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected DescribeDefaultClusterParametersResponse got {:?}",
-            start_el
+            "invalid root, expected DescribeDefaultClusterParametersResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("DescribeDefaultClusterParametersResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected DescribeDefaultClusterParametersResult got {:?}",
-                start_el
+                "invalid result, expected DescribeDefaultClusterParametersResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

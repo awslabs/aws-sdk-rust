@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ControlType {
             ControlType::Core => write!(f, "Core"),
             ControlType::Custom => write!(f, "Custom"),
             ControlType::Standard => write!(f, "Standard"),
-            ControlType::Unknown(value) => write!(f, "{}", value),
+            ControlType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

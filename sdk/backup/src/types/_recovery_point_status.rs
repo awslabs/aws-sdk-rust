@@ -132,7 +132,7 @@ impl ::std::fmt::Display for RecoveryPointStatus {
             RecoveryPointStatus::Expired => write!(f, "EXPIRED"),
             RecoveryPointStatus::Partial => write!(f, "PARTIAL"),
             RecoveryPointStatus::Stopped => write!(f, "STOPPED"),
-            RecoveryPointStatus::Unknown(value) => write!(f, "{}", value),
+            RecoveryPointStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

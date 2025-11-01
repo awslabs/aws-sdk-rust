@@ -114,7 +114,7 @@ impl ::std::fmt::Display for LoadBalancerStateEnum {
             LoadBalancerStateEnum::ActiveImpaired => write!(f, "active_impaired"),
             LoadBalancerStateEnum::Failed => write!(f, "failed"),
             LoadBalancerStateEnum::Provisioning => write!(f, "provisioning"),
-            LoadBalancerStateEnum::Unknown(value) => write!(f, "{}", value),
+            LoadBalancerStateEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

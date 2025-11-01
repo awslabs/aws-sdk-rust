@@ -29,8 +29,7 @@ pub fn de_describe_local_gateway_route_table_virtual_interface_group_association
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsResponse got {:?}",
-            start_el
+            "invalid root, expected DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

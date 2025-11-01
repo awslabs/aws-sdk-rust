@@ -108,7 +108,7 @@ impl ::std::fmt::Display for Granularity {
             Granularity::Daily => write!(f, "DAILY"),
             Granularity::Hourly => write!(f, "HOURLY"),
             Granularity::Monthly => write!(f, "MONTHLY"),
-            Granularity::Unknown(value) => write!(f, "{}", value),
+            Granularity::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

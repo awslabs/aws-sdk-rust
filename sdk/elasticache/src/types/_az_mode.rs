@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AzMode {
         match self {
             AzMode::CrossAz => write!(f, "cross-az"),
             AzMode::SingleAz => write!(f, "single-az"),
-            AzMode::Unknown(value) => write!(f, "{}", value),
+            AzMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

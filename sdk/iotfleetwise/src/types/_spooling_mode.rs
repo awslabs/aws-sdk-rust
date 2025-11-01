@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SpoolingMode {
         match self {
             SpoolingMode::Off => write!(f, "OFF"),
             SpoolingMode::ToDisk => write!(f, "TO_DISK"),
-            SpoolingMode::Unknown(value) => write!(f, "{}", value),
+            SpoolingMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

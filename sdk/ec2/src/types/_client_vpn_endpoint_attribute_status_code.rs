@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ClientVpnEndpointAttributeStatusCode {
         match self {
             ClientVpnEndpointAttributeStatusCode::Applied => write!(f, "applied"),
             ClientVpnEndpointAttributeStatusCode::Applying => write!(f, "applying"),
-            ClientVpnEndpointAttributeStatusCode::Unknown(value) => write!(f, "{}", value),
+            ClientVpnEndpointAttributeStatusCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

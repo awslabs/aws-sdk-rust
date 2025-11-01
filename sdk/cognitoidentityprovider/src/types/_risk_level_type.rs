@@ -108,7 +108,7 @@ impl ::std::fmt::Display for RiskLevelType {
             RiskLevelType::High => write!(f, "High"),
             RiskLevelType::Low => write!(f, "Low"),
             RiskLevelType::Medium => write!(f, "Medium"),
-            RiskLevelType::Unknown(value) => write!(f, "{}", value),
+            RiskLevelType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

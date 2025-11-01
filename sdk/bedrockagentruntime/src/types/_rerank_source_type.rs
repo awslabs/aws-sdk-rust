@@ -96,7 +96,7 @@ impl ::std::fmt::Display for RerankSourceType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             RerankSourceType::Inline => write!(f, "INLINE"),
-            RerankSourceType::Unknown(value) => write!(f, "{}", value),
+            RerankSourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

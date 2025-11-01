@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ParticipantType {
         match self {
             ParticipantType::Receiver => write!(f, "RECEIVER"),
             ParticipantType::Sender => write!(f, "SENDER"),
-            ParticipantType::Unknown(value) => write!(f, "{}", value),
+            ParticipantType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

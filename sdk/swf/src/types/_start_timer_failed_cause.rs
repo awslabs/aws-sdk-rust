@@ -119,7 +119,7 @@ impl ::std::fmt::Display for StartTimerFailedCause {
             StartTimerFailedCause::OperationNotPermitted => write!(f, "OPERATION_NOT_PERMITTED"),
             StartTimerFailedCause::TimerCreationRateExceeded => write!(f, "TIMER_CREATION_RATE_EXCEEDED"),
             StartTimerFailedCause::TimerIdAlreadyInUse => write!(f, "TIMER_ID_ALREADY_IN_USE"),
-            StartTimerFailedCause::Unknown(value) => write!(f, "{}", value),
+            StartTimerFailedCause::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

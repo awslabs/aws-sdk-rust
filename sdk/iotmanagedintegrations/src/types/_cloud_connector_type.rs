@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CloudConnectorType {
         match self {
             CloudConnectorType::Listed => write!(f, "LISTED"),
             CloudConnectorType::Unlisted => write!(f, "UNLISTED"),
-            CloudConnectorType::Unknown(value) => write!(f, "{}", value),
+            CloudConnectorType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for EmailSendingAccountType {
         match self {
             EmailSendingAccountType::CognitoDefault => write!(f, "COGNITO_DEFAULT"),
             EmailSendingAccountType::Developer => write!(f, "DEVELOPER"),
-            EmailSendingAccountType::Unknown(value) => write!(f, "{}", value),
+            EmailSendingAccountType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

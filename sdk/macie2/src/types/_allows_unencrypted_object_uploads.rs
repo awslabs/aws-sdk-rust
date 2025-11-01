@@ -110,7 +110,7 @@ impl ::std::fmt::Display for AllowsUnencryptedObjectUploads {
             AllowsUnencryptedObjectUploads::False => write!(f, "FALSE"),
             AllowsUnencryptedObjectUploads::True => write!(f, "TRUE"),
             AllowsUnencryptedObjectUploads::UnknownValue => write!(f, "UNKNOWN"),
-            AllowsUnencryptedObjectUploads::Unknown(value) => write!(f, "{}", value),
+            AllowsUnencryptedObjectUploads::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

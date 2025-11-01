@@ -102,7 +102,7 @@ impl ::std::fmt::Display for VectorEnrichmentJobExportErrorType {
         match self {
             VectorEnrichmentJobExportErrorType::ClientError => write!(f, "CLIENT_ERROR"),
             VectorEnrichmentJobExportErrorType::ServerError => write!(f, "SERVER_ERROR"),
-            VectorEnrichmentJobExportErrorType::Unknown(value) => write!(f, "{}", value),
+            VectorEnrichmentJobExportErrorType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

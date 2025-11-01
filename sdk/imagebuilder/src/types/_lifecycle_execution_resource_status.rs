@@ -114,7 +114,7 @@ impl ::std::fmt::Display for LifecycleExecutionResourceStatus {
             LifecycleExecutionResourceStatus::InProgress => write!(f, "IN_PROGRESS"),
             LifecycleExecutionResourceStatus::Skipped => write!(f, "SKIPPED"),
             LifecycleExecutionResourceStatus::Success => write!(f, "SUCCESS"),
-            LifecycleExecutionResourceStatus::Unknown(value) => write!(f, "{}", value),
+            LifecycleExecutionResourceStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

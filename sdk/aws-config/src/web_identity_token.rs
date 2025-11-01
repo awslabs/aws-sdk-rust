@@ -130,7 +130,7 @@ impl WebIdentityTokenCredentialsProvider {
         match &self.source {
             Source::Env(env) => {
                 let token_file = env.get(ENV_VAR_TOKEN_FILE).map_err(|_| {
-                    CredentialsError::not_loaded(format!("${} was not set", ENV_VAR_TOKEN_FILE))
+                    CredentialsError::not_loaded(format!("${ENV_VAR_TOKEN_FILE} was not set"))
                 })?;
                 let role_arn = env.get(ENV_VAR_ROLE_ARN).map_err(|_| {
                     CredentialsError::invalid_configuration(

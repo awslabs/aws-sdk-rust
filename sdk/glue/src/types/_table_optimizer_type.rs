@@ -108,7 +108,7 @@ impl ::std::fmt::Display for TableOptimizerType {
             TableOptimizerType::Compaction => write!(f, "compaction"),
             TableOptimizerType::OrphanFileDeletion => write!(f, "orphan_file_deletion"),
             TableOptimizerType::Retention => write!(f, "retention"),
-            TableOptimizerType::Unknown(value) => write!(f, "{}", value),
+            TableOptimizerType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

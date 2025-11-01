@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AnalyticsMetricStatistic {
             AnalyticsMetricStatistic::Avg => write!(f, "Avg"),
             AnalyticsMetricStatistic::Max => write!(f, "Max"),
             AnalyticsMetricStatistic::Sum => write!(f, "Sum"),
-            AnalyticsMetricStatistic::Unknown(value) => write!(f, "{}", value),
+            AnalyticsMetricStatistic::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

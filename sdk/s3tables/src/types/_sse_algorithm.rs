@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SseAlgorithm {
         match self {
             SseAlgorithm::Aes256 => write!(f, "AES256"),
             SseAlgorithm::AwsKms => write!(f, "aws:kms"),
-            SseAlgorithm::Unknown(value) => write!(f, "{}", value),
+            SseAlgorithm::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

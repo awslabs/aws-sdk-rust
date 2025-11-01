@@ -133,7 +133,7 @@ impl ::std::fmt::Display for ModelCardProcessingStatus {
             ModelCardProcessingStatus::DeleteInprogress => write!(f, "DeleteInProgress"),
             ModelCardProcessingStatus::DeletePending => write!(f, "DeletePending"),
             ModelCardProcessingStatus::ExportjobsDeleted => write!(f, "ExportJobsDeleted"),
-            ModelCardProcessingStatus::Unknown(value) => write!(f, "{}", value),
+            ModelCardProcessingStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

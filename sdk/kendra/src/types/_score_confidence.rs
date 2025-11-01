@@ -120,7 +120,7 @@ impl ::std::fmt::Display for ScoreConfidence {
             ScoreConfidence::Medium => write!(f, "MEDIUM"),
             ScoreConfidence::NotAvailable => write!(f, "NOT_AVAILABLE"),
             ScoreConfidence::VeryHigh => write!(f, "VERY_HIGH"),
-            ScoreConfidence::Unknown(value) => write!(f, "{}", value),
+            ScoreConfidence::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -96,7 +96,7 @@ impl ::std::fmt::Display for FormatConfigKey {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             FormatConfigKey::JpegQuality => write!(f, "JPEGQuality"),
-            FormatConfigKey::Unknown(value) => write!(f, "{}", value),
+            FormatConfigKey::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

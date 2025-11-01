@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PreserveDevices {
         match self {
             PreserveDevices::None => write!(f, "NONE"),
             PreserveDevices::Preserve => write!(f, "PRESERVE"),
-            PreserveDevices::Unknown(value) => write!(f, "{}", value),
+            PreserveDevices::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

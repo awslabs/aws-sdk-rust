@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AdditionalOptionKeys {
             AdditionalOptionKeys::CompositeOption => write!(f, "compositeRuleEvaluation.method"),
             AdditionalOptionKeys::ObservationsOption => write!(f, "observations.scope"),
             AdditionalOptionKeys::CacheOption => write!(f, "performanceTuning.caching"),
-            AdditionalOptionKeys::Unknown(value) => write!(f, "{}", value),
+            AdditionalOptionKeys::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

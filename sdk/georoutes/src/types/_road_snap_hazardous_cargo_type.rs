@@ -166,7 +166,7 @@ impl ::std::fmt::Display for RoadSnapHazardousCargoType {
             RoadSnapHazardousCargoType::Poison => write!(f, "Poison"),
             RoadSnapHazardousCargoType::PoisonousInhalation => write!(f, "PoisonousInhalation"),
             RoadSnapHazardousCargoType::Radioactive => write!(f, "Radioactive"),
-            RoadSnapHazardousCargoType::Unknown(value) => write!(f, "{}", value),
+            RoadSnapHazardousCargoType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

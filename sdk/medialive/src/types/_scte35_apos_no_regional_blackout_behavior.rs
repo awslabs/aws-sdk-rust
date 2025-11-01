@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Scte35AposNoRegionalBlackoutBehavior {
         match self {
             Scte35AposNoRegionalBlackoutBehavior::Follow => write!(f, "FOLLOW"),
             Scte35AposNoRegionalBlackoutBehavior::Ignore => write!(f, "IGNORE"),
-            Scte35AposNoRegionalBlackoutBehavior::Unknown(value) => write!(f, "{}", value),
+            Scte35AposNoRegionalBlackoutBehavior::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

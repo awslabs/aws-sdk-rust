@@ -154,7 +154,7 @@ impl ::std::fmt::Display for SchemaExtensionStatus {
             SchemaExtensionStatus::Replicating => write!(f, "Replicating"),
             SchemaExtensionStatus::RollbackInProgress => write!(f, "RollbackInProgress"),
             SchemaExtensionStatus::UpdatingSchema => write!(f, "UpdatingSchema"),
-            SchemaExtensionStatus::Unknown(value) => write!(f, "{}", value),
+            SchemaExtensionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

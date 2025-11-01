@@ -102,7 +102,7 @@ impl ::std::fmt::Display for EkPubKeyType {
         match self {
             EkPubKeyType::EccSecP384 => write!(f, "ecc-sec-p384"),
             EkPubKeyType::Rsa2048 => write!(f, "rsa-2048"),
-            EkPubKeyType::Unknown(value) => write!(f, "{}", value),
+            EkPubKeyType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

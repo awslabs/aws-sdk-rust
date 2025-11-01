@@ -142,8 +142,7 @@ pub(crate) fn de_get_query_status_workload_insights_top_contributors_data(value:
             },
             other => {
                 return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                    "expected object key or end object, found: {:?}",
-                    other
+                    "expected object key or end object, found: {other:?}"
                 )))
             }
         }

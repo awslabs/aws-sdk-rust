@@ -184,7 +184,7 @@ impl ::std::fmt::Display for OperatingSystemName {
             OperatingSystemName::WindowsServer2016 => write!(f, "WINDOWS_SERVER_2016"),
             OperatingSystemName::WindowsServer2019 => write!(f, "WINDOWS_SERVER_2019"),
             OperatingSystemName::WindowsServer2022 => write!(f, "WINDOWS_SERVER_2022"),
-            OperatingSystemName::Unknown(value) => write!(f, "{}", value),
+            OperatingSystemName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

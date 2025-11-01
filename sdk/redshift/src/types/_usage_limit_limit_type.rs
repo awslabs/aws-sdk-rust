@@ -102,7 +102,7 @@ impl ::std::fmt::Display for UsageLimitLimitType {
         match self {
             UsageLimitLimitType::DataScanned => write!(f, "data-scanned"),
             UsageLimitLimitType::Time => write!(f, "time"),
-            UsageLimitLimitType::Unknown(value) => write!(f, "{}", value),
+            UsageLimitLimitType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

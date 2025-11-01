@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ResourceShareInvitationStatus {
             ResourceShareInvitationStatus::Expired => write!(f, "EXPIRED"),
             ResourceShareInvitationStatus::Pending => write!(f, "PENDING"),
             ResourceShareInvitationStatus::Rejected => write!(f, "REJECTED"),
-            ResourceShareInvitationStatus::Unknown(value) => write!(f, "{}", value),
+            ResourceShareInvitationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

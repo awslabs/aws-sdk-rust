@@ -102,7 +102,7 @@ impl ::std::fmt::Display for InstanceBootModeValues {
         match self {
             InstanceBootModeValues::LegacyBios => write!(f, "legacy-bios"),
             InstanceBootModeValues::Uefi => write!(f, "uefi"),
-            InstanceBootModeValues::Unknown(value) => write!(f, "{}", value),
+            InstanceBootModeValues::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

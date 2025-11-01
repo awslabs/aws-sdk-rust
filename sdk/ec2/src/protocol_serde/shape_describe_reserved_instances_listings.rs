@@ -51,8 +51,7 @@ pub fn de_describe_reserved_instances_listings(
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeReservedInstancesListingsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected DescribeReservedInstancesListingsResponse got {:?}",
-            start_el
+            "invalid root, expected DescribeReservedInstancesListingsResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

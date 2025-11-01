@@ -120,7 +120,7 @@ impl ::std::fmt::Display for EmailHeaderType {
             EmailHeaderType::References => write!(f, "REFERENCES"),
             EmailHeaderType::XSesSpamVerdict => write!(f, "X_SES_SPAM_VERDICT"),
             EmailHeaderType::XSesVirusVerdict => write!(f, "X_SES_VIRUS_VERDICT"),
-            EmailHeaderType::Unknown(value) => write!(f, "{}", value),
+            EmailHeaderType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

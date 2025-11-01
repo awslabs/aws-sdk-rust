@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AudioNormalizationAlgorithmControl {
         match self {
             AudioNormalizationAlgorithmControl::CorrectAudio => write!(f, "CORRECT_AUDIO"),
             AudioNormalizationAlgorithmControl::MeasureOnly => write!(f, "MEASURE_ONLY"),
-            AudioNormalizationAlgorithmControl::Unknown(value) => write!(f, "{}", value),
+            AudioNormalizationAlgorithmControl::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

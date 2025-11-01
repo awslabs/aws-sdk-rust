@@ -102,7 +102,7 @@ impl ::std::fmt::Display for H265MvOverPictureBoundaries {
         match self {
             H265MvOverPictureBoundaries::Disabled => write!(f, "DISABLED"),
             H265MvOverPictureBoundaries::Enabled => write!(f, "ENABLED"),
-            H265MvOverPictureBoundaries::Unknown(value) => write!(f, "{}", value),
+            H265MvOverPictureBoundaries::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

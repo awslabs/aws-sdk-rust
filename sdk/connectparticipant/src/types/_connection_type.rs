@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ConnectionType {
             ConnectionType::ConnectionCredentials => write!(f, "CONNECTION_CREDENTIALS"),
             ConnectionType::WebrtcConnection => write!(f, "WEBRTC_CONNECTION"),
             ConnectionType::Websocket => write!(f, "WEBSOCKET"),
-            ConnectionType::Unknown(value) => write!(f, "{}", value),
+            ConnectionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

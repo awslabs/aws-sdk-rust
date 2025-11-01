@@ -108,7 +108,7 @@ impl ::std::fmt::Display for WrapFormat {
             WrapFormat::LineLength => write!(f, "LINE_LENGTH"),
             WrapFormat::OneLine => write!(f, "ONE_LINE"),
             WrapFormat::Segment => write!(f, "SEGMENT"),
-            WrapFormat::Unknown(value) => write!(f, "{}", value),
+            WrapFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

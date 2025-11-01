@@ -114,7 +114,7 @@ impl ::std::fmt::Display for PartnerIntegrationStatus {
             PartnerIntegrationStatus::ConnectionFailure => write!(f, "ConnectionFailure"),
             PartnerIntegrationStatus::Inactive => write!(f, "Inactive"),
             PartnerIntegrationStatus::RuntimeFailure => write!(f, "RuntimeFailure"),
-            PartnerIntegrationStatus::Unknown(value) => write!(f, "{}", value),
+            PartnerIntegrationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

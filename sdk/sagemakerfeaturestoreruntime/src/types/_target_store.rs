@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TargetStore {
         match self {
             TargetStore::OfflineStore => write!(f, "OfflineStore"),
             TargetStore::OnlineStore => write!(f, "OnlineStore"),
-            TargetStore::Unknown(value) => write!(f, "{}", value),
+            TargetStore::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

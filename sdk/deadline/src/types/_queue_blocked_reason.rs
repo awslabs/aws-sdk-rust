@@ -102,7 +102,7 @@ impl ::std::fmt::Display for QueueBlockedReason {
         match self {
             QueueBlockedReason::BudgetThresholdReached => write!(f, "BUDGET_THRESHOLD_REACHED"),
             QueueBlockedReason::NoBudgetConfigured => write!(f, "NO_BUDGET_CONFIGURED"),
-            QueueBlockedReason::Unknown(value) => write!(f, "{}", value),
+            QueueBlockedReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

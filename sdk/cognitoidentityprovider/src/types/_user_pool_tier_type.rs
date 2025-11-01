@@ -108,7 +108,7 @@ impl ::std::fmt::Display for UserPoolTierType {
             UserPoolTierType::Essentials => write!(f, "ESSENTIALS"),
             UserPoolTierType::Lite => write!(f, "LITE"),
             UserPoolTierType::Plus => write!(f, "PLUS"),
-            UserPoolTierType::Unknown(value) => write!(f, "{}", value),
+            UserPoolTierType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -51,8 +51,7 @@ pub fn de_unassign_private_nat_gateway_address(
     let start_el = decoder.start_el();
     if !(start_el.matches("UnassignPrivateNatGatewayAddressResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected UnassignPrivateNatGatewayAddressResponse got {:?}",
-            start_el
+            "invalid root, expected UnassignPrivateNatGatewayAddressResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

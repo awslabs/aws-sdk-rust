@@ -114,7 +114,7 @@ impl ::std::fmt::Display for WorkgroupStatus {
             WorkgroupStatus::Creating => write!(f, "CREATING"),
             WorkgroupStatus::Deleting => write!(f, "DELETING"),
             WorkgroupStatus::Modifying => write!(f, "MODIFYING"),
-            WorkgroupStatus::Unknown(value) => write!(f, "{}", value),
+            WorkgroupStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

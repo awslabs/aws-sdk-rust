@@ -96,7 +96,7 @@ impl ::std::fmt::Display for GeneratedQueryType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             GeneratedQueryType::RedshiftSql => write!(f, "REDSHIFT_SQL"),
-            GeneratedQueryType::Unknown(value) => write!(f, "{}", value),
+            GeneratedQueryType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

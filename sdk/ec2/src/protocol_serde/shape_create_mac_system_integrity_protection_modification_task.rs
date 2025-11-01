@@ -47,8 +47,7 @@ pub fn de_create_mac_system_integrity_protection_modification_task(inp: &[u8], m
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateMacSystemIntegrityProtectionModificationTaskResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected CreateMacSystemIntegrityProtectionModificationTaskResponse got {:?}",
-            start_el
+            "invalid root, expected CreateMacSystemIntegrityProtectionModificationTaskResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

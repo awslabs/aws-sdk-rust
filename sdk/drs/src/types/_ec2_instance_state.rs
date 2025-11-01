@@ -132,7 +132,7 @@ impl ::std::fmt::Display for Ec2InstanceState {
             Ec2InstanceState::Stopped => write!(f, "STOPPED"),
             Ec2InstanceState::Stopping => write!(f, "STOPPING"),
             Ec2InstanceState::Terminated => write!(f, "TERMINATED"),
-            Ec2InstanceState::Unknown(value) => write!(f, "{}", value),
+            Ec2InstanceState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

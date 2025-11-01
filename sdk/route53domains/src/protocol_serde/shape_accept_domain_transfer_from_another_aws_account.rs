@@ -157,8 +157,7 @@ pub(crate) fn de_accept_domain_transfer_from_another_aws_account(
             },
             other => {
                 return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                    "expected object key or end object, found: {:?}",
-                    other
+                    "expected object key or end object, found: {other:?}"
                 )))
             }
         }

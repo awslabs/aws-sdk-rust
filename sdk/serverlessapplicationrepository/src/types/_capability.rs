@@ -119,7 +119,7 @@ impl ::std::fmt::Display for Capability {
             Capability::CapabilityIam => write!(f, "CAPABILITY_IAM"),
             Capability::CapabilityNamedIam => write!(f, "CAPABILITY_NAMED_IAM"),
             Capability::CapabilityResourcePolicy => write!(f, "CAPABILITY_RESOURCE_POLICY"),
-            Capability::Unknown(value) => write!(f, "{}", value),
+            Capability::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

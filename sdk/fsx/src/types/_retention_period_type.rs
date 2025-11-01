@@ -138,7 +138,7 @@ impl ::std::fmt::Display for RetentionPeriodType {
             RetentionPeriodType::Seconds => write!(f, "SECONDS"),
             RetentionPeriodType::Unspecified => write!(f, "UNSPECIFIED"),
             RetentionPeriodType::Years => write!(f, "YEARS"),
-            RetentionPeriodType::Unknown(value) => write!(f, "{}", value),
+            RetentionPeriodType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

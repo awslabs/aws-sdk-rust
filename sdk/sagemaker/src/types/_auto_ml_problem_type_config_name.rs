@@ -126,7 +126,7 @@ impl ::std::fmt::Display for AutoMlProblemTypeConfigName {
             AutoMlProblemTypeConfigName::TextClassification => write!(f, "TextClassification"),
             AutoMlProblemTypeConfigName::TextGeneration => write!(f, "TextGeneration"),
             AutoMlProblemTypeConfigName::TimeseriesForecasting => write!(f, "TimeSeriesForecasting"),
-            AutoMlProblemTypeConfigName::Unknown(value) => write!(f, "{}", value),
+            AutoMlProblemTypeConfigName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

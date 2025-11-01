@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ArtifactNamespace {
         match self {
             ArtifactNamespace::BuildId => write!(f, "BUILD_ID"),
             ArtifactNamespace::None => write!(f, "NONE"),
-            ArtifactNamespace::Unknown(value) => write!(f, "{}", value),
+            ArtifactNamespace::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

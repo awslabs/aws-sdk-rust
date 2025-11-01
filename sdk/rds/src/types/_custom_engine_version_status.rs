@@ -108,7 +108,7 @@ impl ::std::fmt::Display for CustomEngineVersionStatus {
             CustomEngineVersionStatus::Available => write!(f, "available"),
             CustomEngineVersionStatus::Inactive => write!(f, "inactive"),
             CustomEngineVersionStatus::InactiveExceptRestore => write!(f, "inactive-except-restore"),
-            CustomEngineVersionStatus::Unknown(value) => write!(f, "{}", value),
+            CustomEngineVersionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

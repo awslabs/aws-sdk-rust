@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Type {
         match self {
             Type::JsonSchemaDraft4 => write!(f, "JSONSchemaDraft4"),
             Type::OpenApi3 => write!(f, "OpenApi3"),
-            Type::Unknown(value) => write!(f, "{}", value),
+            Type::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

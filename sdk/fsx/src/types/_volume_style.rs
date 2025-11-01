@@ -102,7 +102,7 @@ impl ::std::fmt::Display for VolumeStyle {
         match self {
             VolumeStyle::Flexgroup => write!(f, "FLEXGROUP"),
             VolumeStyle::Flexvol => write!(f, "FLEXVOL"),
-            VolumeStyle::Unknown(value) => write!(f, "{}", value),
+            VolumeStyle::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

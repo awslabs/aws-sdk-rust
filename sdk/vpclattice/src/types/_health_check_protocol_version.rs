@@ -102,7 +102,7 @@ impl ::std::fmt::Display for HealthCheckProtocolVersion {
         match self {
             HealthCheckProtocolVersion::Http1 => write!(f, "HTTP1"),
             HealthCheckProtocolVersion::Http2 => write!(f, "HTTP2"),
-            HealthCheckProtocolVersion::Unknown(value) => write!(f, "{}", value),
+            HealthCheckProtocolVersion::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

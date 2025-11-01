@@ -108,7 +108,7 @@ impl ::std::fmt::Display for DataIntegrationFlowExecutionStatus {
             DataIntegrationFlowExecutionStatus::Failed => write!(f, "FAILED"),
             DataIntegrationFlowExecutionStatus::InProgress => write!(f, "IN_PROGRESS"),
             DataIntegrationFlowExecutionStatus::Succeeded => write!(f, "SUCCEEDED"),
-            DataIntegrationFlowExecutionStatus::Unknown(value) => write!(f, "{}", value),
+            DataIntegrationFlowExecutionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

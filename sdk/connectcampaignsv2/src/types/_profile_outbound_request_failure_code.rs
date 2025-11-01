@@ -120,7 +120,7 @@ impl ::std::fmt::Display for ProfileOutboundRequestFailureCode {
             ProfileOutboundRequestFailureCode::RequestThrottled => write!(f, "RequestThrottled"),
             ProfileOutboundRequestFailureCode::ResourceNotFound => write!(f, "ResourceNotFound"),
             ProfileOutboundRequestFailureCode::UnknownError => write!(f, "UnknownError"),
-            ProfileOutboundRequestFailureCode::Unknown(value) => write!(f, "{}", value),
+            ProfileOutboundRequestFailureCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

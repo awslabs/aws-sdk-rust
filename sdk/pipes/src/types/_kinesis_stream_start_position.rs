@@ -108,7 +108,7 @@ impl ::std::fmt::Display for KinesisStreamStartPosition {
             KinesisStreamStartPosition::AtTimestamp => write!(f, "AT_TIMESTAMP"),
             KinesisStreamStartPosition::Latest => write!(f, "LATEST"),
             KinesisStreamStartPosition::TrimHorizon => write!(f, "TRIM_HORIZON"),
-            KinesisStreamStartPosition::Unknown(value) => write!(f, "{}", value),
+            KinesisStreamStartPosition::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

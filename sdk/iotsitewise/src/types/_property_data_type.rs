@@ -120,7 +120,7 @@ impl ::std::fmt::Display for PropertyDataType {
             PropertyDataType::Integer => write!(f, "INTEGER"),
             PropertyDataType::String => write!(f, "STRING"),
             PropertyDataType::Struct => write!(f, "STRUCT"),
-            PropertyDataType::Unknown(value) => write!(f, "{}", value),
+            PropertyDataType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

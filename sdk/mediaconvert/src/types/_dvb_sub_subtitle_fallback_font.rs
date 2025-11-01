@@ -126,7 +126,7 @@ impl ::std::fmt::Display for DvbSubSubtitleFallbackFont {
             DvbSubSubtitleFallbackFont::MonospacedSerif => write!(f, "MONOSPACED_SERIF"),
             DvbSubSubtitleFallbackFont::ProportionalSansserif => write!(f, "PROPORTIONAL_SANSSERIF"),
             DvbSubSubtitleFallbackFont::ProportionalSerif => write!(f, "PROPORTIONAL_SERIF"),
-            DvbSubSubtitleFallbackFont::Unknown(value) => write!(f, "{}", value),
+            DvbSubSubtitleFallbackFont::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

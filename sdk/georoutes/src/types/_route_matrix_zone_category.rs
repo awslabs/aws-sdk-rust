@@ -106,7 +106,7 @@ impl ::std::fmt::Display for RouteMatrixZoneCategory {
             RouteMatrixZoneCategory::CongestionPricing => write!(f, "CongestionPricing"),
             RouteMatrixZoneCategory::Environmental => write!(f, "Environmental"),
             RouteMatrixZoneCategory::Vignette => write!(f, "Vignette"),
-            RouteMatrixZoneCategory::Unknown(value) => write!(f, "{}", value),
+            RouteMatrixZoneCategory::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

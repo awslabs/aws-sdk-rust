@@ -102,7 +102,7 @@ impl ::std::fmt::Display for StreamingStatus {
         match self {
             StreamingStatus::Disabled => write!(f, "DISABLED"),
             StreamingStatus::Enabled => write!(f, "ENABLED"),
-            StreamingStatus::Unknown(value) => write!(f, "{}", value),
+            StreamingStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

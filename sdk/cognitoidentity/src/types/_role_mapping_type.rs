@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RoleMappingType {
         match self {
             RoleMappingType::Rules => write!(f, "Rules"),
             RoleMappingType::Token => write!(f, "Token"),
-            RoleMappingType::Unknown(value) => write!(f, "{}", value),
+            RoleMappingType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

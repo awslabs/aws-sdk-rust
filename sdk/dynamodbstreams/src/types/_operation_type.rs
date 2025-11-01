@@ -108,7 +108,7 @@ impl ::std::fmt::Display for OperationType {
             OperationType::Insert => write!(f, "INSERT"),
             OperationType::Modify => write!(f, "MODIFY"),
             OperationType::Remove => write!(f, "REMOVE"),
-            OperationType::Unknown(value) => write!(f, "{}", value),
+            OperationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

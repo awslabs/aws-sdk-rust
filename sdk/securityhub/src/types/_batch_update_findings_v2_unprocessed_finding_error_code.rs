@@ -121,7 +121,7 @@ impl ::std::fmt::Display for BatchUpdateFindingsV2UnprocessedFindingErrorCode {
             BatchUpdateFindingsV2UnprocessedFindingErrorCode::InternalServerException => write!(f, "InternalServerException"),
             BatchUpdateFindingsV2UnprocessedFindingErrorCode::ResourceNotFoundException => write!(f, "ResourceNotFoundException"),
             BatchUpdateFindingsV2UnprocessedFindingErrorCode::ValidationException => write!(f, "ValidationException"),
-            BatchUpdateFindingsV2UnprocessedFindingErrorCode::Unknown(value) => write!(f, "{}", value),
+            BatchUpdateFindingsV2UnprocessedFindingErrorCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

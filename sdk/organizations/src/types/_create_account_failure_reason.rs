@@ -198,7 +198,7 @@ impl ::std::fmt::Display for CreateAccountFailureReason {
             CreateAccountFailureReason::UpdateExistingResourcePolicyWithTagsNotSupported => {
                 write!(f, "UPDATE_EXISTING_RESOURCE_POLICY_WITH_TAGS_NOT_SUPPORTED")
             }
-            CreateAccountFailureReason::Unknown(value) => write!(f, "{}", value),
+            CreateAccountFailureReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

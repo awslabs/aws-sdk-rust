@@ -114,7 +114,7 @@ impl ::std::fmt::Display for SessionsStatisticsAggregationStatus {
             SessionsStatisticsAggregationStatus::Failed => write!(f, "FAILED"),
             SessionsStatisticsAggregationStatus::InProgress => write!(f, "IN_PROGRESS"),
             SessionsStatisticsAggregationStatus::Timeout => write!(f, "TIMEOUT"),
-            SessionsStatisticsAggregationStatus::Unknown(value) => write!(f, "{}", value),
+            SessionsStatisticsAggregationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

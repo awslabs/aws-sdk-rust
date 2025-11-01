@@ -108,7 +108,7 @@ impl ::std::fmt::Display for WaveHealthStatus {
             WaveHealthStatus::Error => write!(f, "ERROR"),
             WaveHealthStatus::Healthy => write!(f, "HEALTHY"),
             WaveHealthStatus::Lagging => write!(f, "LAGGING"),
-            WaveHealthStatus::Unknown(value) => write!(f, "{}", value),
+            WaveHealthStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

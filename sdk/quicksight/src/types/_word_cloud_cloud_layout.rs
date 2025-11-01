@@ -102,7 +102,7 @@ impl ::std::fmt::Display for WordCloudCloudLayout {
         match self {
             WordCloudCloudLayout::Fluid => write!(f, "FLUID"),
             WordCloudCloudLayout::Normal => write!(f, "NORMAL"),
-            WordCloudCloudLayout::Unknown(value) => write!(f, "{}", value),
+            WordCloudCloudLayout::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

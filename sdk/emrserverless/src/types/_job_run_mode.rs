@@ -102,7 +102,7 @@ impl ::std::fmt::Display for JobRunMode {
         match self {
             JobRunMode::Batch => write!(f, "BATCH"),
             JobRunMode::Streaming => write!(f, "STREAMING"),
-            JobRunMode::Unknown(value) => write!(f, "{}", value),
+            JobRunMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

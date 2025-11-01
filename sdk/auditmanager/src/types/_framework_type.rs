@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FrameworkType {
         match self {
             FrameworkType::Custom => write!(f, "Custom"),
             FrameworkType::Standard => write!(f, "Standard"),
-            FrameworkType::Unknown(value) => write!(f, "{}", value),
+            FrameworkType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

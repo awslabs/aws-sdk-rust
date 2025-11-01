@@ -126,7 +126,7 @@ impl ::std::fmt::Display for WirelessGatewayTaskStatus {
             WirelessGatewayTaskStatus::InProgress => write!(f, "IN_PROGRESS"),
             WirelessGatewayTaskStatus::Pending => write!(f, "PENDING"),
             WirelessGatewayTaskStatus::SecondRetry => write!(f, "SECOND_RETRY"),
-            WirelessGatewayTaskStatus::Unknown(value) => write!(f, "{}", value),
+            WirelessGatewayTaskStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PeriodAlignment {
         match self {
             PeriodAlignment::EndTime => write!(f, "END_TIME"),
             PeriodAlignment::StartTime => write!(f, "START_TIME"),
-            PeriodAlignment::Unknown(value) => write!(f, "{}", value),
+            PeriodAlignment::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

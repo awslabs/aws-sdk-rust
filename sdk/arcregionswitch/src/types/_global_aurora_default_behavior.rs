@@ -102,7 +102,7 @@ impl ::std::fmt::Display for GlobalAuroraDefaultBehavior {
         match self {
             GlobalAuroraDefaultBehavior::Failover => write!(f, "failover"),
             GlobalAuroraDefaultBehavior::SwitchoverOnly => write!(f, "switchoverOnly"),
-            GlobalAuroraDefaultBehavior::Unknown(value) => write!(f, "{}", value),
+            GlobalAuroraDefaultBehavior::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

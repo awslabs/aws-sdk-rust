@@ -104,7 +104,7 @@ impl ::std::fmt::Display for OrganizationConfigRuleTriggerTypeNoSn {
             OrganizationConfigRuleTriggerTypeNoSn::OversizedConfigurationItemChangeNotifcation => {
                 write!(f, "OversizedConfigurationItemChangeNotification")
             }
-            OrganizationConfigRuleTriggerTypeNoSn::Unknown(value) => write!(f, "{}", value),
+            OrganizationConfigRuleTriggerTypeNoSn::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

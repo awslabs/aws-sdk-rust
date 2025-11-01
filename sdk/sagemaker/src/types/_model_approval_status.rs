@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ModelApprovalStatus {
             ModelApprovalStatus::Approved => write!(f, "Approved"),
             ModelApprovalStatus::PendingManualApproval => write!(f, "PendingManualApproval"),
             ModelApprovalStatus::Rejected => write!(f, "Rejected"),
-            ModelApprovalStatus::Unknown(value) => write!(f, "{}", value),
+            ModelApprovalStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

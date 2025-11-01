@@ -120,7 +120,7 @@ impl ::std::fmt::Display for Event {
             Event::Lost => write!(f, "lost"),
             Event::Nack => write!(f, "nack"),
             Event::Passthrough => write!(f, "passthrough"),
-            Event::Unknown(value) => write!(f, "{}", value),
+            Event::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

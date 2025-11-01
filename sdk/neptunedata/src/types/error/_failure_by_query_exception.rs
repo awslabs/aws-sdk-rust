@@ -46,7 +46,7 @@ impl ::std::fmt::Display for FailureByQueryException {
         ::std::write!(f, "FailureByQueryException")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
             {
-                ::std::write!(f, ": {}", inner_1)?;
+                ::std::write!(f, ": {inner_1}")?;
             }
         }
         Ok(())

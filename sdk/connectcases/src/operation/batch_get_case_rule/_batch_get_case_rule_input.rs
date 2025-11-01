@@ -5,7 +5,7 @@
 pub struct BatchGetCaseRuleInput {
     /// <p>Unique identifier of a Cases domain.</p>
     pub domain_id: ::std::option::Option<::std::string::String>,
-    /// <p>List of case rule identifiers.</p>
+    /// <p>A list of case rule identifiers.</p>
     pub case_rules: ::std::option::Option<::std::vec::Vec<crate::types::CaseRuleIdentifier>>,
 }
 impl BatchGetCaseRuleInput {
@@ -13,7 +13,7 @@ impl BatchGetCaseRuleInput {
     pub fn domain_id(&self) -> ::std::option::Option<&str> {
         self.domain_id.as_deref()
     }
-    /// <p>List of case rule identifiers.</p>
+    /// <p>A list of case rule identifiers.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.case_rules.is_none()`.
     pub fn case_rules(&self) -> &[crate::types::CaseRuleIdentifier] {
@@ -54,19 +54,19 @@ impl BatchGetCaseRuleInputBuilder {
     ///
     /// To override the contents of this collection use [`set_case_rules`](Self::set_case_rules).
     ///
-    /// <p>List of case rule identifiers.</p>
+    /// <p>A list of case rule identifiers.</p>
     pub fn case_rules(mut self, input: crate::types::CaseRuleIdentifier) -> Self {
         let mut v = self.case_rules.unwrap_or_default();
         v.push(input);
         self.case_rules = ::std::option::Option::Some(v);
         self
     }
-    /// <p>List of case rule identifiers.</p>
+    /// <p>A list of case rule identifiers.</p>
     pub fn set_case_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CaseRuleIdentifier>>) -> Self {
         self.case_rules = input;
         self
     }
-    /// <p>List of case rule identifiers.</p>
+    /// <p>A list of case rule identifiers.</p>
     pub fn get_case_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CaseRuleIdentifier>> {
         &self.case_rules
     }

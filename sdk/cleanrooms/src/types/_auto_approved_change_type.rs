@@ -96,7 +96,7 @@ impl ::std::fmt::Display for AutoApprovedChangeType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             AutoApprovedChangeType::AddMember => write!(f, "ADD_MEMBER"),
-            AutoApprovedChangeType::Unknown(value) => write!(f, "{}", value),
+            AutoApprovedChangeType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

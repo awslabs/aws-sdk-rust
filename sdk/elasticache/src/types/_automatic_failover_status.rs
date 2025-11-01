@@ -114,7 +114,7 @@ impl ::std::fmt::Display for AutomaticFailoverStatus {
             AutomaticFailoverStatus::Disabling => write!(f, "disabling"),
             AutomaticFailoverStatus::Enabled => write!(f, "enabled"),
             AutomaticFailoverStatus::Enabling => write!(f, "enabling"),
-            AutomaticFailoverStatus::Unknown(value) => write!(f, "{}", value),
+            AutomaticFailoverStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AutoshiftExecutionStatus {
         match self {
             AutoshiftExecutionStatus::Active => write!(f, "ACTIVE"),
             AutoshiftExecutionStatus::Completed => write!(f, "COMPLETED"),
-            AutoshiftExecutionStatus::Unknown(value) => write!(f, "{}", value),
+            AutoshiftExecutionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

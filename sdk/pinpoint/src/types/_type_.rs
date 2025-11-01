@@ -108,7 +108,7 @@ impl ::std::fmt::Display for Type {
             Type::All => write!(f, "ALL"),
             Type::Any => write!(f, "ANY"),
             Type::None => write!(f, "NONE"),
-            Type::Unknown(value) => write!(f, "{}", value),
+            Type::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

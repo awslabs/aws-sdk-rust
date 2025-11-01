@@ -154,7 +154,7 @@ impl ::std::fmt::Display for DbProxyStatus {
             DbProxyStatus::Reactivating => write!(f, "reactivating"),
             DbProxyStatus::Suspended => write!(f, "suspended"),
             DbProxyStatus::Suspending => write!(f, "suspending"),
-            DbProxyStatus::Unknown(value) => write!(f, "{}", value),
+            DbProxyStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

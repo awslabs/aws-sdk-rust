@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MetricsStatus {
         match self {
             MetricsStatus::PublishFailed => write!(f, "PUBLISH_FAILED"),
             MetricsStatus::PublishSucceeded => write!(f, "PUBLISH_SUCCEEDED"),
-            MetricsStatus::Unknown(value) => write!(f, "{}", value),
+            MetricsStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

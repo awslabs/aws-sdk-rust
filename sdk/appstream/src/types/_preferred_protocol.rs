@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PreferredProtocol {
         match self {
             PreferredProtocol::Tcp => write!(f, "TCP"),
             PreferredProtocol::Udp => write!(f, "UDP"),
-            PreferredProtocol::Unknown(value) => write!(f, "{}", value),
+            PreferredProtocol::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

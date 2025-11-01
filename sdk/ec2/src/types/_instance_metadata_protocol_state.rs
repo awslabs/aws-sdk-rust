@@ -102,7 +102,7 @@ impl ::std::fmt::Display for InstanceMetadataProtocolState {
         match self {
             InstanceMetadataProtocolState::Disabled => write!(f, "disabled"),
             InstanceMetadataProtocolState::Enabled => write!(f, "enabled"),
-            InstanceMetadataProtocolState::Unknown(value) => write!(f, "{}", value),
+            InstanceMetadataProtocolState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

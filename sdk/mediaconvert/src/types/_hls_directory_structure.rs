@@ -102,7 +102,7 @@ impl ::std::fmt::Display for HlsDirectoryStructure {
         match self {
             HlsDirectoryStructure::SingleDirectory => write!(f, "SINGLE_DIRECTORY"),
             HlsDirectoryStructure::SubdirectoryPerStream => write!(f, "SUBDIRECTORY_PER_STREAM"),
-            HlsDirectoryStructure::Unknown(value) => write!(f, "{}", value),
+            HlsDirectoryStructure::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

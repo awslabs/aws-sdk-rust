@@ -126,7 +126,7 @@ impl ::std::fmt::Display for OverallDeploymentStatus {
             OverallDeploymentStatus::InProgress => write!(f, "IN_PROGRESS"),
             OverallDeploymentStatus::PendingDeployment => write!(f, "PENDING_DEPLOYMENT"),
             OverallDeploymentStatus::Successful => write!(f, "SUCCESSFUL"),
-            OverallDeploymentStatus::Unknown(value) => write!(f, "{}", value),
+            OverallDeploymentStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

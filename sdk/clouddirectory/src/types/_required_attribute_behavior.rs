@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RequiredAttributeBehavior {
         match self {
             RequiredAttributeBehavior::NotRequired => write!(f, "NOT_REQUIRED"),
             RequiredAttributeBehavior::RequiredAlways => write!(f, "REQUIRED_ALWAYS"),
-            RequiredAttributeBehavior::Unknown(value) => write!(f, "{}", value),
+            RequiredAttributeBehavior::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for StopServiceDeploymentStopType {
         match self {
             StopServiceDeploymentStopType::Abort => write!(f, "ABORT"),
             StopServiceDeploymentStopType::Rollback => write!(f, "ROLLBACK"),
-            StopServiceDeploymentStopType::Unknown(value) => write!(f, "{}", value),
+            StopServiceDeploymentStopType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

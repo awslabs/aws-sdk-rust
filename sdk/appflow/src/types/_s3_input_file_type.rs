@@ -102,7 +102,7 @@ impl ::std::fmt::Display for S3InputFileType {
         match self {
             S3InputFileType::Csv => write!(f, "CSV"),
             S3InputFileType::Json => write!(f, "JSON"),
-            S3InputFileType::Unknown(value) => write!(f, "{}", value),
+            S3InputFileType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

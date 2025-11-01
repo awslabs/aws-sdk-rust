@@ -114,7 +114,7 @@ impl ::std::fmt::Display for TileAdditionalFeature {
             TileAdditionalFeature::Hillshade => write!(f, "Hillshade"),
             TileAdditionalFeature::Logistics => write!(f, "Logistics"),
             TileAdditionalFeature::Transit => write!(f, "Transit"),
-            TileAdditionalFeature::Unknown(value) => write!(f, "{}", value),
+            TileAdditionalFeature::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

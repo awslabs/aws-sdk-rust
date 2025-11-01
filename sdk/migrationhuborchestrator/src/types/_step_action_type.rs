@@ -102,7 +102,7 @@ impl ::std::fmt::Display for StepActionType {
         match self {
             StepActionType::Automated => write!(f, "AUTOMATED"),
             StepActionType::Manual => write!(f, "MANUAL"),
-            StepActionType::Unknown(value) => write!(f, "{}", value),
+            StepActionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

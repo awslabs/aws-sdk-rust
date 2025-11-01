@@ -114,7 +114,7 @@ impl ::std::fmt::Display for AmiProductVisibilityString {
             AmiProductVisibilityString::Limited => write!(f, "Limited"),
             AmiProductVisibilityString::Public => write!(f, "Public"),
             AmiProductVisibilityString::Restricted => write!(f, "Restricted"),
-            AmiProductVisibilityString::Unknown(value) => write!(f, "{}", value),
+            AmiProductVisibilityString::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

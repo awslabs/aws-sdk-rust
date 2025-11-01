@@ -196,7 +196,7 @@ impl ::std::fmt::Display for NodeFilterKey {
             NodeFilterKey::PlatformVersion => write!(f, "PlatformVersion"),
             NodeFilterKey::Region => write!(f, "Region"),
             NodeFilterKey::ResourceType => write!(f, "ResourceType"),
-            NodeFilterKey::Unknown(value) => write!(f, "{}", value),
+            NodeFilterKey::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

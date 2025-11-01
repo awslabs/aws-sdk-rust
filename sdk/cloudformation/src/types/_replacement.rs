@@ -108,7 +108,7 @@ impl ::std::fmt::Display for Replacement {
             Replacement::Conditional => write!(f, "Conditional"),
             Replacement::False => write!(f, "False"),
             Replacement::True => write!(f, "True"),
-            Replacement::Unknown(value) => write!(f, "{}", value),
+            Replacement::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

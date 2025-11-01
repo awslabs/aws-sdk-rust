@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RefreshFailureAlertStatus {
         match self {
             RefreshFailureAlertStatus::Disabled => write!(f, "DISABLED"),
             RefreshFailureAlertStatus::Enabled => write!(f, "ENABLED"),
-            RefreshFailureAlertStatus::Unknown(value) => write!(f, "{}", value),
+            RefreshFailureAlertStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

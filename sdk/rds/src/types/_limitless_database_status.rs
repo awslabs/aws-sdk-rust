@@ -147,7 +147,7 @@ impl ::std::fmt::Display for LimitlessDatabaseStatus {
             LimitlessDatabaseStatus::Error => write!(f, "error"),
             LimitlessDatabaseStatus::ModifyingMaxCapacity => write!(f, "modifying-max-capacity"),
             LimitlessDatabaseStatus::NotInUse => write!(f, "not-in-use"),
-            LimitlessDatabaseStatus::Unknown(value) => write!(f, "{}", value),
+            LimitlessDatabaseStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

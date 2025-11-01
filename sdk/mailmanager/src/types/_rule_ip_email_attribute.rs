@@ -96,7 +96,7 @@ impl ::std::fmt::Display for RuleIpEmailAttribute {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             RuleIpEmailAttribute::SourceIp => write!(f, "SOURCE_IP"),
-            RuleIpEmailAttribute::Unknown(value) => write!(f, "{}", value),
+            RuleIpEmailAttribute::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

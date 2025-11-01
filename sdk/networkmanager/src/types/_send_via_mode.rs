@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SendViaMode {
         match self {
             SendViaMode::DualHop => write!(f, "dual-hop"),
             SendViaMode::SingleHop => write!(f, "single-hop"),
-            SendViaMode::Unknown(value) => write!(f, "{}", value),
+            SendViaMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

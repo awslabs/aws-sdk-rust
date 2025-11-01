@@ -120,7 +120,7 @@ impl ::std::fmt::Display for VariantStatus {
             VariantStatus::Creating => write!(f, "Creating"),
             VariantStatus::Deleting => write!(f, "Deleting"),
             VariantStatus::Updating => write!(f, "Updating"),
-            VariantStatus::Unknown(value) => write!(f, "{}", value),
+            VariantStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

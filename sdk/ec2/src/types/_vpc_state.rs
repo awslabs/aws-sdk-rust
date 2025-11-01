@@ -102,7 +102,7 @@ impl ::std::fmt::Display for VpcState {
         match self {
             VpcState::Available => write!(f, "available"),
             VpcState::Pending => write!(f, "pending"),
-            VpcState::Unknown(value) => write!(f, "{}", value),
+            VpcState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

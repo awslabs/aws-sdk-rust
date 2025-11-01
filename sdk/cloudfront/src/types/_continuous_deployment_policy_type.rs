@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ContinuousDeploymentPolicyType {
         match self {
             ContinuousDeploymentPolicyType::SingleHeader => write!(f, "SingleHeader"),
             ContinuousDeploymentPolicyType::SingleWeight => write!(f, "SingleWeight"),
-            ContinuousDeploymentPolicyType::Unknown(value) => write!(f, "{}", value),
+            ContinuousDeploymentPolicyType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

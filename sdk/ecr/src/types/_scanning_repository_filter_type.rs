@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ScanningRepositoryFilterType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ScanningRepositoryFilterType::Wildcard => write!(f, "WILDCARD"),
-            ScanningRepositoryFilterType::Unknown(value) => write!(f, "{}", value),
+            ScanningRepositoryFilterType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

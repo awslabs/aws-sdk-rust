@@ -126,7 +126,7 @@ impl ::std::fmt::Display for VolumeState {
             VolumeState::Deleting => write!(f, "deleting"),
             VolumeState::Error => write!(f, "error"),
             VolumeState::InUse => write!(f, "in-use"),
-            VolumeState::Unknown(value) => write!(f, "{}", value),
+            VolumeState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

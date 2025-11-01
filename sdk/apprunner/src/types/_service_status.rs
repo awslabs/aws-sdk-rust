@@ -126,7 +126,7 @@ impl ::std::fmt::Display for ServiceStatus {
             ServiceStatus::OperationInProgress => write!(f, "OPERATION_IN_PROGRESS"),
             ServiceStatus::Paused => write!(f, "PAUSED"),
             ServiceStatus::Running => write!(f, "RUNNING"),
-            ServiceStatus::Unknown(value) => write!(f, "{}", value),
+            ServiceStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

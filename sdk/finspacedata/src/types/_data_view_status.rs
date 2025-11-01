@@ -147,7 +147,7 @@ impl ::std::fmt::Display for DataViewStatus {
             DataViewStatus::Starting => write!(f, "STARTING"),
             DataViewStatus::Success => write!(f, "SUCCESS"),
             DataViewStatus::Timeout => write!(f, "TIMEOUT"),
-            DataViewStatus::Unknown(value) => write!(f, "{}", value),
+            DataViewStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

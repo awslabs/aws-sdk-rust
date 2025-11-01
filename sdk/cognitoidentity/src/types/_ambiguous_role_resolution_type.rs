@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AmbiguousRoleResolutionType {
         match self {
             AmbiguousRoleResolutionType::AuthenticatedRole => write!(f, "AuthenticatedRole"),
             AmbiguousRoleResolutionType::Deny => write!(f, "Deny"),
-            AmbiguousRoleResolutionType::Unknown(value) => write!(f, "{}", value),
+            AmbiguousRoleResolutionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

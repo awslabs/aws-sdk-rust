@@ -104,7 +104,7 @@ impl ::std::fmt::Display for AwsManagedHumanLoopRequestSource {
                 write!(f, "AWS/Rekognition/DetectModerationLabels/Image/V3")
             }
             AwsManagedHumanLoopRequestSource::TextractAnalyzeDocumentFormsV1 => write!(f, "AWS/Textract/AnalyzeDocument/Forms/V1"),
-            AwsManagedHumanLoopRequestSource::Unknown(value) => write!(f, "{}", value),
+            AwsManagedHumanLoopRequestSource::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

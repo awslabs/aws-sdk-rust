@@ -114,7 +114,7 @@ impl ::std::fmt::Display for PaddingType {
             PaddingType::OaepSha256 => write!(f, "OAEP_SHA256"),
             PaddingType::OaepSha512 => write!(f, "OAEP_SHA512"),
             PaddingType::Pkcs1 => write!(f, "PKCS1"),
-            PaddingType::Unknown(value) => write!(f, "{}", value),
+            PaddingType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

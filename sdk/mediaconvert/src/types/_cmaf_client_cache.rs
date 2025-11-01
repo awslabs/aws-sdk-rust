@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CmafClientCache {
         match self {
             CmafClientCache::Disabled => write!(f, "DISABLED"),
             CmafClientCache::Enabled => write!(f, "ENABLED"),
-            CmafClientCache::Unknown(value) => write!(f, "{}", value),
+            CmafClientCache::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

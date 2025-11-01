@@ -108,7 +108,7 @@ impl ::std::fmt::Display for CreateAccountState {
             CreateAccountState::Failed => write!(f, "FAILED"),
             CreateAccountState::InProgress => write!(f, "IN_PROGRESS"),
             CreateAccountState::Succeeded => write!(f, "SUCCEEDED"),
-            CreateAccountState::Unknown(value) => write!(f, "{}", value),
+            CreateAccountState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

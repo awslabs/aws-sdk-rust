@@ -136,7 +136,7 @@ impl EcsCredentialsProvider {
                 Err(CredentialsError::not_loaded("ECS provider not configured"))
             }
             Provider::InvalidConfiguration(err) => {
-                Err(CredentialsError::invalid_configuration(format!("{}", err)))
+                Err(CredentialsError::invalid_configuration(format!("{err}")))
             }
             Provider::Configured(provider) => provider.credentials(auth).await,
         }
@@ -253,13 +253,11 @@ enum EcsConfigurationError {
 impl Display for EcsConfigurationError {
     fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
         match self {
-            EcsConfigurationError::InvalidRelativeUri { err, uri } => write!(
-                f,
-                "invalid relative URI for ECS provider ({}): {}",
-                err, uri
-            ),
+            EcsConfigurationError::InvalidRelativeUri { err, uri } => {
+                write!(f, "invalid relative URI for ECS provider ({err}): {uri}",)
+            }
             EcsConfigurationError::InvalidFullUri { err, uri } => {
-                write!(f, "invalid full URI for ECS provider ({}): {}", err, uri)
+                write!(f, "invalid full URI for ECS provider ({err}): {uri}")
             }
             EcsConfigurationError::NotConfigured => write!(
                 f,
@@ -267,8 +265,7 @@ impl Display for EcsConfigurationError {
             ),
             EcsConfigurationError::InvalidAuthToken { err, value } => write!(
                 f,
-                "`{}` could not be used as a header value for the auth token. {}",
-                value, err
+                "`{value}` could not be used as a header value for the auth token. {err}",
             ),
         }
     }

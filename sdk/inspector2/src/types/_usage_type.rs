@@ -154,7 +154,7 @@ impl ::std::fmt::Display for UsageType {
             UsageType::EcrRescan => write!(f, "ECR_RESCAN"),
             UsageType::LambdaFunctionCodeHours => write!(f, "LAMBDA_FUNCTION_CODE_HOURS"),
             UsageType::LambdaFunctionHours => write!(f, "LAMBDA_FUNCTION_HOURS"),
-            UsageType::Unknown(value) => write!(f, "{}", value),
+            UsageType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

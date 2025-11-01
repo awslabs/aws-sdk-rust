@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ScanStatus {
             ScanStatus::Failed => write!(f, "FAILED"),
             ScanStatus::Running => write!(f, "RUNNING"),
             ScanStatus::Skipped => write!(f, "SKIPPED"),
-            ScanStatus::Unknown(value) => write!(f, "{}", value),
+            ScanStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

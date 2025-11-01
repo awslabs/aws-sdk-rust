@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TransferMode {
         match self {
             TransferMode::All => write!(f, "ALL"),
             TransferMode::Changed => write!(f, "CHANGED"),
-            TransferMode::Unknown(value) => write!(f, "{}", value),
+            TransferMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

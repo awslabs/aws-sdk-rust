@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AsgType {
         match self {
             AsgType::MixedInstanceType => write!(f, "MixedInstanceTypes"),
             AsgType::SingleInstanceType => write!(f, "SingleInstanceType"),
-            AsgType::Unknown(value) => write!(f, "{}", value),
+            AsgType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

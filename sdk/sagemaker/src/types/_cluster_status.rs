@@ -132,7 +132,7 @@ impl ::std::fmt::Display for ClusterStatus {
             ClusterStatus::Rollingback => write!(f, "RollingBack"),
             ClusterStatus::Systemupdating => write!(f, "SystemUpdating"),
             ClusterStatus::Updating => write!(f, "Updating"),
-            ClusterStatus::Unknown(value) => write!(f, "{}", value),
+            ClusterStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

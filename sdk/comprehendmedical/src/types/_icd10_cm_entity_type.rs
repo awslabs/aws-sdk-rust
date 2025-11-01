@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Icd10CmEntityType {
         match self {
             Icd10CmEntityType::DxName => write!(f, "DX_NAME"),
             Icd10CmEntityType::TimeExpression => write!(f, "TIME_EXPRESSION"),
-            Icd10CmEntityType::Unknown(value) => write!(f, "{}", value),
+            Icd10CmEntityType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

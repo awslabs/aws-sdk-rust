@@ -104,7 +104,7 @@ impl ::std::fmt::Display for AwsS3BucketNotificationConfigurationS3KeyFilterRule
         match self {
             AwsS3BucketNotificationConfigurationS3KeyFilterRuleName::Prefix => write!(f, "Prefix"),
             AwsS3BucketNotificationConfigurationS3KeyFilterRuleName::Suffix => write!(f, "Suffix"),
-            AwsS3BucketNotificationConfigurationS3KeyFilterRuleName::Unknown(value) => write!(f, "{}", value),
+            AwsS3BucketNotificationConfigurationS3KeyFilterRuleName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

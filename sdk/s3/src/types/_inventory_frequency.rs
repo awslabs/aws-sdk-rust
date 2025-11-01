@@ -102,7 +102,7 @@ impl ::std::fmt::Display for InventoryFrequency {
         match self {
             InventoryFrequency::Daily => write!(f, "Daily"),
             InventoryFrequency::Weekly => write!(f, "Weekly"),
-            InventoryFrequency::Unknown(value) => write!(f, "{}", value),
+            InventoryFrequency::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

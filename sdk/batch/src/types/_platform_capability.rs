@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PlatformCapability {
         match self {
             PlatformCapability::Ec2 => write!(f, "EC2"),
             PlatformCapability::Fargate => write!(f, "FARGATE"),
-            PlatformCapability::Unknown(value) => write!(f, "{}", value),
+            PlatformCapability::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

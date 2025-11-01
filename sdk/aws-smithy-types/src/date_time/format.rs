@@ -29,7 +29,7 @@ impl fmt::Display for DateTimeParseError {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         use DateTimeParseErrorKind::*;
         match &self.kind {
-            Invalid(msg) => write!(f, "invalid date-time: {}", msg),
+            Invalid(msg) => write!(f, "invalid date-time: {msg}"),
             IntParseError => write!(f, "failed to parse int"),
         }
     }
@@ -60,8 +60,7 @@ impl fmt::Display for DateTimeFormatError {
         match &self.kind {
             DateTimeFormatErrorKind::OutOfRange(msg) => write!(
                 f,
-                "date-time cannot be formatted since it is out of range: {}",
-                msg
+                "date-time cannot be formatted since it is out of range: {msg}"
             ),
         }
     }
@@ -154,8 +153,7 @@ pub(crate) mod http_date {
             DateTimeFormatErrorKind::OutOfRange(
                 format!(
                     "HTTP dates support dates between Mon, 01 Jan 0001 00:00:00 GMT \
-                            and Fri, 31 Dec 9999 23:59:59.999 GMT. {}",
-                    cause
+                            and Fri, 31 Dec 9999 23:59:59.999 GMT. {cause}"
                 )
                 .into(),
             )
@@ -324,7 +322,7 @@ pub(crate) mod http_date {
         let seconds = parse_slice(&s[23..25])?;
         let time = Time::from_hms_nano(hours, minutes, seconds, nanos).map_err(|err| {
             DateTimeParseErrorKind::Invalid(
-                format!("time components are out of range: {}", err).into(),
+                format!("time components are out of range: {err}").into(),
             )
         })?;
 
@@ -356,7 +354,7 @@ pub(crate) mod http_date {
         let day = parse_slice(&s[5..7])?;
         let date = Date::from_calendar_date(year, month, day).map_err(|err| {
             DateTimeParseErrorKind::Invalid(
-                format!("date components are out of range: {}", err).into(),
+                format!("date components are out of range: {err}").into(),
             )
         })?;
         let date_time = PrimitiveDateTime::new(date, time).assume_offset(UtcOffset::UTC);
@@ -414,7 +412,7 @@ pub(crate) mod rfc3339 {
             .into());
         }
         let date_time = OffsetDateTime::parse(s, &Rfc3339).map_err(|err| {
-            DateTimeParseErrorKind::Invalid(format!("invalid RFC-3339 date-time: {}", err).into())
+            DateTimeParseErrorKind::Invalid(format!("invalid RFC-3339 date-time: {err}").into())
         })?;
         Ok(DateTime::from_nanos(date_time.unix_timestamp_nanos())
             .expect("this date format cannot produce out of range date-times"))
@@ -437,8 +435,7 @@ pub(crate) mod rfc3339 {
             DateTimeFormatErrorKind::OutOfRange(
                 format!(
                     "RFC-3339 timestamps support dates between 0001-01-01T00:00:00.000Z \
-                            and 9999-12-31T23:59:59.999Z. {}",
-                    cause
+                            and 9999-12-31T23:59:59.999Z. {cause}"
                 )
                 .into(),
             )
@@ -467,8 +464,7 @@ pub(crate) mod rfc3339 {
         let mut out = String::with_capacity(33);
         write!(
             out,
-            "{:04}-{:02}-{:02}T{:02}:{:02}:{:02}",
-            year, month, day, hour, minute, second
+            "{year:04}-{month:02}-{day:02}T{hour:02}:{minute:02}:{second:02}"
         )
         .unwrap();
         format_subsecond_fraction(&mut out, micros);
@@ -551,7 +547,7 @@ mod tests {
         for test_case in test_cases {
             if let Some(expected) = test_case.smithy_format_value.as_ref() {
                 let actual = format(&test_case.time()).expect("failed to format");
-                assert_eq!(expected, &actual, "Additional context:\n{:#?}", test_case);
+                assert_eq!(expected, &actual, "Additional context:\n{test_case:#?}");
             } else {
                 format(&test_case.time()).expect_err("date should fail to format");
             }
@@ -580,8 +576,7 @@ mod tests {
             assert_eq!(
                 expected,
                 actual.unwrap(),
-                "Additional context:\n{:#?}",
-                test_case
+                "Additional context:\n{test_case:#?}"
             );
         }
     }
@@ -757,7 +752,7 @@ mod tests {
         let parsed = http_date::parse(&formatted);
         let read = http_date::read(&formatted);
         match parsed {
-            Err(failure) => panic!("Date failed to parse {:?}", failure),
+            Err(failure) => panic!("Date failed to parse {failure:?}"),
             Ok(date) => {
                 assert!(read.is_ok());
                 if date.subsecond_nanos != subsecond_nanos {

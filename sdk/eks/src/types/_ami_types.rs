@@ -224,7 +224,7 @@ impl ::std::fmt::Display for AmiTypes {
             AmiTypes::WindowsCore2022X8664 => write!(f, "WINDOWS_CORE_2022_x86_64"),
             AmiTypes::WindowsFull2019X8664 => write!(f, "WINDOWS_FULL_2019_x86_64"),
             AmiTypes::WindowsFull2022X8664 => write!(f, "WINDOWS_FULL_2022_x86_64"),
-            AmiTypes::Unknown(value) => write!(f, "{}", value),
+            AmiTypes::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

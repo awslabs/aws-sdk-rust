@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ListTimeSeriesType {
         match self {
             ListTimeSeriesType::Associated => write!(f, "ASSOCIATED"),
             ListTimeSeriesType::Disassociated => write!(f, "DISASSOCIATED"),
-            ListTimeSeriesType::Unknown(value) => write!(f, "{}", value),
+            ListTimeSeriesType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

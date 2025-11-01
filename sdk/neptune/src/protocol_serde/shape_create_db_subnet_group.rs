@@ -145,16 +145,14 @@ pub fn de_create_db_subnet_group(
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateDBSubnetGroupResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected CreateDBSubnetGroupResponse got {:?}",
-            start_el
+            "invalid root, expected CreateDBSubnetGroupResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("CreateDBSubnetGroupResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected CreateDBSubnetGroupResult got {:?}",
-                start_el
+                "invalid result, expected CreateDBSubnetGroupResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

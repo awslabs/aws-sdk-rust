@@ -96,7 +96,7 @@ impl ::std::fmt::Display for GroupType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             GroupType::Tabular => write!(f, "TABULAR"),
-            GroupType::Unknown(value) => write!(f, "{}", value),
+            GroupType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

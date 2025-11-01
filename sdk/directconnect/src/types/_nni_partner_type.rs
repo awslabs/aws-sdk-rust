@@ -108,7 +108,7 @@ impl ::std::fmt::Display for NniPartnerType {
             NniPartnerType::NonPartner => write!(f, "nonPartner"),
             NniPartnerType::V1 => write!(f, "v1"),
             NniPartnerType::V2 => write!(f, "v2"),
-            NniPartnerType::Unknown(value) => write!(f, "{}", value),
+            NniPartnerType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

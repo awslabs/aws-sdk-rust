@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ModelStatus {
             ModelStatus::Active => write!(f, "Active"),
             ModelStatus::Creating => write!(f, "Creating"),
             ModelStatus::Failed => write!(f, "Failed"),
-            ModelStatus::Unknown(value) => write!(f, "{}", value),
+            ModelStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -107,7 +107,7 @@ pub fn assert_ok(inp: Result<(), ProtocolTestFailure>) {
     match inp {
         Ok(_) => (),
         Err(e) => {
-            eprintln!("{}", e);
+            eprintln!("{e}");
             panic!("Protocol test failed");
         }
     }
@@ -144,9 +144,7 @@ pub fn assert_uris_match(left: impl AsRef<str>, right: impl AsRef<str>) {
     assert_eq!(
         extract_params(left),
         extract_params(right),
-        "Query parameters did not match. left: {}, right: {}",
-        left,
-        right
+        "Query parameters did not match. left: {left}, right: {right}"
     );
     let left: Uri = left.parse().expect("left is not a valid URI");
     let right: Uri = right.parse().expect("left is not a valid URI");
@@ -283,7 +281,7 @@ pub fn forbid_headers(
         if let Some(value) = headers.get_header(key) {
             return Err(ProtocolTestFailure::ForbiddenHeader {
                 forbidden: key.to_string(),
-                found: format!("{}: {}", key, value),
+                found: format!("{key}: {value}"),
             });
         }
     }
@@ -361,7 +359,7 @@ pub fn validate_body<T: AsRef<[u8]> + Debug>(
             if actual_body != expected_body {
                 Err(ProtocolTestFailure::BodyDidNotMatch {
                     comparison: pretty_comparison(expected_body, actual_body),
-                    hint: format!("media type: {}", media_type),
+                    hint: format!("media type: {media_type}"),
                 })
             } else {
                 Ok(())
@@ -493,7 +491,7 @@ fn get_text_key_value(
         ciborium::value::Value::Text(key_str) => Ok((key_str, value)),
         _ => Err(ProtocolTestFailure::InvalidBodyFormat {
             expected: "a text key as map entry".to_string(),
-            found: format!("{:?}", key),
+            found: format!("{key:?}"),
         }),
     }
 }
@@ -510,7 +508,7 @@ fn try_cbor_eq<T: AsRef<[u8]> + Debug>(
     let actual_cbor_value: ciborium::value::Value = ciborium::de::from_reader(actual_body.as_ref())
         .map_err(|e| ProtocolTestFailure::InvalidBodyFormat {
             expected: "cbor".to_owned(),
-            found: format!("{} {:?}", e, actual_body),
+            found: format!("{e} {actual_body:?}"),
         })?;
     let actual_body_base64 = base64_simd::STANDARD.encode_to_string(&actual_body);
 
@@ -536,21 +534,16 @@ fn try_cbor_eq<T: AsRef<[u8]> + Debug>(
             // The last newline is important because the panic message ends with a `.`
             hint: format!(
                 "expected body in diagnostic format:
-{}
+{expected_body_diag}
 actual body in diagnostic format:
-{}
+{actual_body_diag}
 expected body in annotated hex:
-{}
+{expected_body_annotated_hex}
 actual body in annotated hex:
-{}
+{actual_body_annotated_hex}
 actual body in base64 (useful to update the protocol test):
-{}
+{actual_body_base64}
 ",
-                expected_body_diag,
-                actual_body_diag,
-                expected_body_annotated_hex,
-                actual_body_annotated_hex,
-                actual_body_base64,
             ),
         })
     } else {

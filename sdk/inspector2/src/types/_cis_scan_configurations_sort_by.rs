@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CisScanConfigurationsSortBy {
         match self {
             CisScanConfigurationsSortBy::ScanConfigurationArn => write!(f, "SCAN_CONFIGURATION_ARN"),
             CisScanConfigurationsSortBy::ScanName => write!(f, "SCAN_NAME"),
-            CisScanConfigurationsSortBy::Unknown(value) => write!(f, "{}", value),
+            CisScanConfigurationsSortBy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

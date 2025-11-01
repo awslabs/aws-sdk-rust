@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ConnectPeerAssociationState {
             ConnectPeerAssociationState::Deleted => write!(f, "DELETED"),
             ConnectPeerAssociationState::Deleting => write!(f, "DELETING"),
             ConnectPeerAssociationState::Pending => write!(f, "PENDING"),
-            ConnectPeerAssociationState::Unknown(value) => write!(f, "{}", value),
+            ConnectPeerAssociationState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

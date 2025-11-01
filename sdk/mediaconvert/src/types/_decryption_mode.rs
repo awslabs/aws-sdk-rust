@@ -108,7 +108,7 @@ impl ::std::fmt::Display for DecryptionMode {
             DecryptionMode::AesCbc => write!(f, "AES_CBC"),
             DecryptionMode::AesCtr => write!(f, "AES_CTR"),
             DecryptionMode::AesGcm => write!(f, "AES_GCM"),
-            DecryptionMode::Unknown(value) => write!(f, "{}", value),
+            DecryptionMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

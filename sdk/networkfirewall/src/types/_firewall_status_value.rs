@@ -108,7 +108,7 @@ impl ::std::fmt::Display for FirewallStatusValue {
             FirewallStatusValue::Deleting => write!(f, "DELETING"),
             FirewallStatusValue::Provisioning => write!(f, "PROVISIONING"),
             FirewallStatusValue::Ready => write!(f, "READY"),
-            FirewallStatusValue::Unknown(value) => write!(f, "{}", value),
+            FirewallStatusValue::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

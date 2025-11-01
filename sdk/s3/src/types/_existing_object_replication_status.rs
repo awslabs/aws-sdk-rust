@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ExistingObjectReplicationStatus {
         match self {
             ExistingObjectReplicationStatus::Disabled => write!(f, "Disabled"),
             ExistingObjectReplicationStatus::Enabled => write!(f, "Enabled"),
-            ExistingObjectReplicationStatus::Unknown(value) => write!(f, "{}", value),
+            ExistingObjectReplicationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

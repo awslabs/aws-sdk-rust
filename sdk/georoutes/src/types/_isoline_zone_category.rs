@@ -108,7 +108,7 @@ impl ::std::fmt::Display for IsolineZoneCategory {
             IsolineZoneCategory::CongestionPricing => write!(f, "CongestionPricing"),
             IsolineZoneCategory::Environmental => write!(f, "Environmental"),
             IsolineZoneCategory::Vignette => write!(f, "Vignette"),
-            IsolineZoneCategory::Unknown(value) => write!(f, "{}", value),
+            IsolineZoneCategory::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

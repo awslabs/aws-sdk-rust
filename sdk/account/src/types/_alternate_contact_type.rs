@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AlternateContactType {
             AlternateContactType::Billing => write!(f, "BILLING"),
             AlternateContactType::Operations => write!(f, "OPERATIONS"),
             AlternateContactType::Security => write!(f, "SECURITY"),
-            AlternateContactType::Unknown(value) => write!(f, "{}", value),
+            AlternateContactType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

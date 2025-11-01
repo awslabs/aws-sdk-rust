@@ -154,7 +154,7 @@ impl ::std::fmt::Display for TopicIrFilterType {
             TopicIrFilterType::RankLimitFilter => write!(f, "RANK_LIMIT_FILTER"),
             TopicIrFilterType::RelativeDateFilter => write!(f, "RELATIVE_DATE_FILTER"),
             TopicIrFilterType::TopBottomFilter => write!(f, "TOP_BOTTOM_FILTER"),
-            TopicIrFilterType::Unknown(value) => write!(f, "{}", value),
+            TopicIrFilterType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

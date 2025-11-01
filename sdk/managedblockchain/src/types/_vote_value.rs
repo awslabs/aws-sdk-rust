@@ -102,7 +102,7 @@ impl ::std::fmt::Display for VoteValue {
         match self {
             VoteValue::No => write!(f, "NO"),
             VoteValue::Yes => write!(f, "YES"),
-            VoteValue::Unknown(value) => write!(f, "{}", value),
+            VoteValue::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

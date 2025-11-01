@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PullRequestComment {
         match self {
             PullRequestComment::Disabled => write!(f, "DISABLED"),
             PullRequestComment::Enabled => write!(f, "ENABLED"),
-            PullRequestComment::Unknown(value) => write!(f, "{}", value),
+            PullRequestComment::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

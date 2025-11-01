@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Scte35ArchiveAllowedFlag {
         match self {
             Scte35ArchiveAllowedFlag::ArchiveAllowed => write!(f, "ARCHIVE_ALLOWED"),
             Scte35ArchiveAllowedFlag::ArchiveNotAllowed => write!(f, "ARCHIVE_NOT_ALLOWED"),
-            Scte35ArchiveAllowedFlag::Unknown(value) => write!(f, "{}", value),
+            Scte35ArchiveAllowedFlag::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

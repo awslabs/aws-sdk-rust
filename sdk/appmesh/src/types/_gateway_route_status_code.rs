@@ -108,7 +108,7 @@ impl ::std::fmt::Display for GatewayRouteStatusCode {
             GatewayRouteStatusCode::Active => write!(f, "ACTIVE"),
             GatewayRouteStatusCode::Deleted => write!(f, "DELETED"),
             GatewayRouteStatusCode::Inactive => write!(f, "INACTIVE"),
-            GatewayRouteStatusCode::Unknown(value) => write!(f, "{}", value),
+            GatewayRouteStatusCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

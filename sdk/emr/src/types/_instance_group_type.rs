@@ -108,7 +108,7 @@ impl ::std::fmt::Display for InstanceGroupType {
             InstanceGroupType::Core => write!(f, "CORE"),
             InstanceGroupType::Master => write!(f, "MASTER"),
             InstanceGroupType::Task => write!(f, "TASK"),
-            InstanceGroupType::Unknown(value) => write!(f, "{}", value),
+            InstanceGroupType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

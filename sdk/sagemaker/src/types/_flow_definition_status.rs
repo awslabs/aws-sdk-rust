@@ -114,7 +114,7 @@ impl ::std::fmt::Display for FlowDefinitionStatus {
             FlowDefinitionStatus::Deleting => write!(f, "Deleting"),
             FlowDefinitionStatus::Failed => write!(f, "Failed"),
             FlowDefinitionStatus::Initializing => write!(f, "Initializing"),
-            FlowDefinitionStatus::Unknown(value) => write!(f, "{}", value),
+            FlowDefinitionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

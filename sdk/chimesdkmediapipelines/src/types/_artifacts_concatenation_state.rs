@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ArtifactsConcatenationState {
         match self {
             ArtifactsConcatenationState::Disabled => write!(f, "Disabled"),
             ArtifactsConcatenationState::Enabled => write!(f, "Enabled"),
-            ArtifactsConcatenationState::Unknown(value) => write!(f, "{}", value),
+            ArtifactsConcatenationState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

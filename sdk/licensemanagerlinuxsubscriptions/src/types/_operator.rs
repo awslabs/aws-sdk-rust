@@ -108,7 +108,7 @@ impl ::std::fmt::Display for Operator {
             Operator::Contains => write!(f, "Contains"),
             Operator::Equal => write!(f, "Equal"),
             Operator::NotEqual => write!(f, "NotEqual"),
-            Operator::Unknown(value) => write!(f, "{}", value),
+            Operator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DeploymentType {
         match self {
             DeploymentType::BlueGreen => write!(f, "BLUE_GREEN"),
             DeploymentType::InPlace => write!(f, "IN_PLACE"),
-            DeploymentType::Unknown(value) => write!(f, "{}", value),
+            DeploymentType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

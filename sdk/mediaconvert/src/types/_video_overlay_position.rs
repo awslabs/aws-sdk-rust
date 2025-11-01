@@ -6,6 +6,8 @@
 pub struct VideoOverlayPosition {
     /// To scale your video overlay to the same height as the base input video: Leave blank. To scale the height of your video overlay to a different height: Enter an integer representing the Unit type that you choose, either Pixels or Percentage. For example, when you enter 360 and choose Pixels, your video overlay will be rendered with a height of 360. When you enter 50, choose Percentage, and your overlay's source has a height of 1080, your video overlay will be rendered with a height of 540. To scale your overlay to a specific height while automatically maintaining its original aspect ratio, enter a value for Height and leave Width blank.
     pub height: ::std::option::Option<i32>,
+    /// Use Opacity to specify how much of the underlying video shows through the overlay video. 0 is transparent and 100 is fully opaque. Default is 100.
+    pub opacity: ::std::option::Option<i32>,
     /// Specify the Unit type to use when you enter a value for X position, Y position, Width, or Height. You can choose Pixels or Percentage. Leave blank to use the default value, Pixels.
     pub unit: ::std::option::Option<crate::types::VideoOverlayUnit>,
     /// To scale your video overlay to the same width as the base input video: Leave blank. To scale the width of your video overlay to a different width: Enter an integer representing the Unit type that you choose, either Pixels or Percentage. For example, when you enter 640 and choose Pixels, your video overlay will scale to a height of 640 pixels. When you enter 50, choose Percentage, and your overlay's source has a width of 1920, your video overlay will scale to a width of 960. To scale your overlay to a specific width while automatically maintaining its original aspect ratio, enter a value for Width and leave Height blank.
@@ -19,6 +21,10 @@ impl VideoOverlayPosition {
     /// To scale your video overlay to the same height as the base input video: Leave blank. To scale the height of your video overlay to a different height: Enter an integer representing the Unit type that you choose, either Pixels or Percentage. For example, when you enter 360 and choose Pixels, your video overlay will be rendered with a height of 360. When you enter 50, choose Percentage, and your overlay's source has a height of 1080, your video overlay will be rendered with a height of 540. To scale your overlay to a specific height while automatically maintaining its original aspect ratio, enter a value for Height and leave Width blank.
     pub fn height(&self) -> ::std::option::Option<i32> {
         self.height
+    }
+    /// Use Opacity to specify how much of the underlying video shows through the overlay video. 0 is transparent and 100 is fully opaque. Default is 100.
+    pub fn opacity(&self) -> ::std::option::Option<i32> {
+        self.opacity
     }
     /// Specify the Unit type to use when you enter a value for X position, Y position, Width, or Height. You can choose Pixels or Percentage. Leave blank to use the default value, Pixels.
     pub fn unit(&self) -> ::std::option::Option<&crate::types::VideoOverlayUnit> {
@@ -49,6 +55,7 @@ impl VideoOverlayPosition {
 #[non_exhaustive]
 pub struct VideoOverlayPositionBuilder {
     pub(crate) height: ::std::option::Option<i32>,
+    pub(crate) opacity: ::std::option::Option<i32>,
     pub(crate) unit: ::std::option::Option<crate::types::VideoOverlayUnit>,
     pub(crate) width: ::std::option::Option<i32>,
     pub(crate) x_position: ::std::option::Option<i32>,
@@ -68,6 +75,20 @@ impl VideoOverlayPositionBuilder {
     /// To scale your video overlay to the same height as the base input video: Leave blank. To scale the height of your video overlay to a different height: Enter an integer representing the Unit type that you choose, either Pixels or Percentage. For example, when you enter 360 and choose Pixels, your video overlay will be rendered with a height of 360. When you enter 50, choose Percentage, and your overlay's source has a height of 1080, your video overlay will be rendered with a height of 540. To scale your overlay to a specific height while automatically maintaining its original aspect ratio, enter a value for Height and leave Width blank.
     pub fn get_height(&self) -> &::std::option::Option<i32> {
         &self.height
+    }
+    /// Use Opacity to specify how much of the underlying video shows through the overlay video. 0 is transparent and 100 is fully opaque. Default is 100.
+    pub fn opacity(mut self, input: i32) -> Self {
+        self.opacity = ::std::option::Option::Some(input);
+        self
+    }
+    /// Use Opacity to specify how much of the underlying video shows through the overlay video. 0 is transparent and 100 is fully opaque. Default is 100.
+    pub fn set_opacity(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.opacity = input;
+        self
+    }
+    /// Use Opacity to specify how much of the underlying video shows through the overlay video. 0 is transparent and 100 is fully opaque. Default is 100.
+    pub fn get_opacity(&self) -> &::std::option::Option<i32> {
+        &self.opacity
     }
     /// Specify the Unit type to use when you enter a value for X position, Y position, Width, or Height. You can choose Pixels or Percentage. Leave blank to use the default value, Pixels.
     pub fn unit(mut self, input: crate::types::VideoOverlayUnit) -> Self {
@@ -129,6 +150,7 @@ impl VideoOverlayPositionBuilder {
     pub fn build(self) -> crate::types::VideoOverlayPosition {
         crate::types::VideoOverlayPosition {
             height: self.height,
+            opacity: self.opacity,
             unit: self.unit,
             width: self.width,
             x_position: self.x_position,

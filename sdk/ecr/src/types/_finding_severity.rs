@@ -126,7 +126,7 @@ impl ::std::fmt::Display for FindingSeverity {
             FindingSeverity::Low => write!(f, "LOW"),
             FindingSeverity::Medium => write!(f, "MEDIUM"),
             FindingSeverity::Undefined => write!(f, "UNDEFINED"),
-            FindingSeverity::Unknown(value) => write!(f, "{}", value),
+            FindingSeverity::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

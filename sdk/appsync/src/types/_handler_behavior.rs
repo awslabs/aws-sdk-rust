@@ -102,7 +102,7 @@ impl ::std::fmt::Display for HandlerBehavior {
         match self {
             HandlerBehavior::Code => write!(f, "CODE"),
             HandlerBehavior::Direct => write!(f, "DIRECT"),
-            HandlerBehavior::Unknown(value) => write!(f, "{}", value),
+            HandlerBehavior::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for BurninSubtitleTeletextSpacing {
             BurninSubtitleTeletextSpacing::Auto => write!(f, "AUTO"),
             BurninSubtitleTeletextSpacing::FixedGrid => write!(f, "FIXED_GRID"),
             BurninSubtitleTeletextSpacing::Proportional => write!(f, "PROPORTIONAL"),
-            BurninSubtitleTeletextSpacing::Unknown(value) => write!(f, "{}", value),
+            BurninSubtitleTeletextSpacing::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

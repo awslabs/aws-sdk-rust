@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AccountPlanStatus {
             AccountPlanStatus::Active => write!(f, "ACTIVE"),
             AccountPlanStatus::Expired => write!(f, "EXPIRED"),
             AccountPlanStatus::NotStarted => write!(f, "NOT_STARTED"),
-            AccountPlanStatus::Unknown(value) => write!(f, "{}", value),
+            AccountPlanStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -126,7 +126,7 @@ impl ::std::fmt::Display for AssociationStatus {
             AssociationStatus::NotAssociated => write!(f, "NOT_ASSOCIATED"),
             AssociationStatus::PendingAssociation => write!(f, "PENDING_ASSOCIATION"),
             AssociationStatus::PendingDisassociation => write!(f, "PENDING_DISASSOCIATION"),
-            AssociationStatus::Unknown(value) => write!(f, "{}", value),
+            AssociationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

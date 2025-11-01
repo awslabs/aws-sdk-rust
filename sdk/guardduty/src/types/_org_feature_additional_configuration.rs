@@ -108,7 +108,7 @@ impl ::std::fmt::Display for OrgFeatureAdditionalConfiguration {
             OrgFeatureAdditionalConfiguration::Ec2AgentManagement => write!(f, "EC2_AGENT_MANAGEMENT"),
             OrgFeatureAdditionalConfiguration::EcsFargateAgentManagement => write!(f, "ECS_FARGATE_AGENT_MANAGEMENT"),
             OrgFeatureAdditionalConfiguration::EksAddonManagement => write!(f, "EKS_ADDON_MANAGEMENT"),
-            OrgFeatureAdditionalConfiguration::Unknown(value) => write!(f, "{}", value),
+            OrgFeatureAdditionalConfiguration::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

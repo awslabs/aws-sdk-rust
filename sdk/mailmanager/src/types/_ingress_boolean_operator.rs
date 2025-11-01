@@ -102,7 +102,7 @@ impl ::std::fmt::Display for IngressBooleanOperator {
         match self {
             IngressBooleanOperator::IsFalse => write!(f, "IS_FALSE"),
             IngressBooleanOperator::IsTrue => write!(f, "IS_TRUE"),
-            IngressBooleanOperator::Unknown(value) => write!(f, "{}", value),
+            IngressBooleanOperator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

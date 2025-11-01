@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AudioDefaultSelection {
         match self {
             AudioDefaultSelection::Default => write!(f, "DEFAULT"),
             AudioDefaultSelection::NotDefault => write!(f, "NOT_DEFAULT"),
-            AudioDefaultSelection::Unknown(value) => write!(f, "{}", value),
+            AudioDefaultSelection::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

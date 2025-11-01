@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PropagateMiTags {
         match self {
             PropagateMiTags::CapacityProvider => write!(f, "CAPACITY_PROVIDER"),
             PropagateMiTags::None => write!(f, "NONE"),
-            PropagateMiTags::Unknown(value) => write!(f, "{}", value),
+            PropagateMiTags::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

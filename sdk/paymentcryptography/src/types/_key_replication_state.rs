@@ -114,7 +114,7 @@ impl ::std::fmt::Display for KeyReplicationState {
             KeyReplicationState::Failed => write!(f, "FAILED"),
             KeyReplicationState::InProgress => write!(f, "IN_PROGRESS"),
             KeyReplicationState::Synchronized => write!(f, "SYNCHRONIZED"),
-            KeyReplicationState::Unknown(value) => write!(f, "{}", value),
+            KeyReplicationState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

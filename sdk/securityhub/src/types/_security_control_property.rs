@@ -96,7 +96,7 @@ impl ::std::fmt::Display for SecurityControlProperty {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             SecurityControlProperty::Parameters => write!(f, "Parameters"),
-            SecurityControlProperty::Unknown(value) => write!(f, "{}", value),
+            SecurityControlProperty::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

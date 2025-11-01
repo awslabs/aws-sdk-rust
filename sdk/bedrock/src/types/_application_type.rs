@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ApplicationType {
         match self {
             ApplicationType::ModelEvaluation => write!(f, "ModelEvaluation"),
             ApplicationType::RagEvaluation => write!(f, "RagEvaluation"),
-            ApplicationType::Unknown(value) => write!(f, "{}", value),
+            ApplicationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

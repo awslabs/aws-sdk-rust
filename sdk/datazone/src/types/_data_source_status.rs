@@ -147,7 +147,7 @@ impl ::std::fmt::Display for DataSourceStatus {
             DataSourceStatus::Ready => write!(f, "READY"),
             DataSourceStatus::Running => write!(f, "RUNNING"),
             DataSourceStatus::Updating => write!(f, "UPDATING"),
-            DataSourceStatus::Unknown(value) => write!(f, "{}", value),
+            DataSourceStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

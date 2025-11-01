@@ -126,7 +126,7 @@ impl ::std::fmt::Display for AutoPromotionResult {
             AutoPromotionResult::RetrainingCancelled => write!(f, "RETRAINING_CANCELLED"),
             AutoPromotionResult::RetrainingCustomerError => write!(f, "RETRAINING_CUSTOMER_ERROR"),
             AutoPromotionResult::RetrainingInternalError => write!(f, "RETRAINING_INTERNAL_ERROR"),
-            AutoPromotionResult::Unknown(value) => write!(f, "{}", value),
+            AutoPromotionResult::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

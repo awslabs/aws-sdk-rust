@@ -102,7 +102,7 @@ impl ::std::fmt::Display for LowReputationMode {
         match self {
             LowReputationMode::ActiveUnderDdos => write!(f, "ACTIVE_UNDER_DDOS"),
             LowReputationMode::AlwaysOn => write!(f, "ALWAYS_ON"),
-            LowReputationMode::Unknown(value) => write!(f, "{}", value),
+            LowReputationMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

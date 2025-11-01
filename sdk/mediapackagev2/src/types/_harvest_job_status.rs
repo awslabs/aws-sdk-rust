@@ -120,7 +120,7 @@ impl ::std::fmt::Display for HarvestJobStatus {
             HarvestJobStatus::Failed => write!(f, "FAILED"),
             HarvestJobStatus::InProgress => write!(f, "IN_PROGRESS"),
             HarvestJobStatus::Queued => write!(f, "QUEUED"),
-            HarvestJobStatus::Unknown(value) => write!(f, "{}", value),
+            HarvestJobStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

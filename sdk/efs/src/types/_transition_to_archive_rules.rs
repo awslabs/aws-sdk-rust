@@ -154,7 +154,7 @@ impl ::std::fmt::Display for TransitionToArchiveRules {
             TransitionToArchiveRules::After60Days => write!(f, "AFTER_60_DAYS"),
             TransitionToArchiveRules::After7Days => write!(f, "AFTER_7_DAYS"),
             TransitionToArchiveRules::After90Days => write!(f, "AFTER_90_DAYS"),
-            TransitionToArchiveRules::Unknown(value) => write!(f, "{}", value),
+            TransitionToArchiveRules::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

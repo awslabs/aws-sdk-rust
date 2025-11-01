@@ -168,7 +168,7 @@ impl ::std::fmt::Display for SigningAlgorithmSpec {
             SigningAlgorithmSpec::RsassaPssSha384 => write!(f, "RSASSA_PSS_SHA_384"),
             SigningAlgorithmSpec::RsassaPssSha512 => write!(f, "RSASSA_PSS_SHA_512"),
             SigningAlgorithmSpec::Sm2Dsa => write!(f, "SM2DSA"),
-            SigningAlgorithmSpec::Unknown(value) => write!(f, "{}", value),
+            SigningAlgorithmSpec::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

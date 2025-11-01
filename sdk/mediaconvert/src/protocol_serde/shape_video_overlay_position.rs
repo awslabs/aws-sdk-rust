@@ -9,25 +9,31 @@ pub fn ser_video_overlay_position(
             ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_2) = &input.unit {
-        object.key("unit").string(var_2.as_str());
-    }
-    if let Some(var_3) = &input.width {
-        object.key("width").number(
+    if let Some(var_2) = &input.opacity {
+        object.key("opacity").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_3).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if let Some(var_4) = &input.x_position {
-        object.key("xPosition").number(
+    if let Some(var_3) = &input.unit {
+        object.key("unit").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.width {
+        object.key("width").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
-    if let Some(var_5) = &input.y_position {
-        object.key("yPosition").number(
+    if let Some(var_5) = &input.x_position {
+        object.key("xPosition").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_5).into()),
+        );
+    }
+    if let Some(var_6) = &input.y_position {
+        object.key("yPosition").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_6).into()),
         );
     }
     Ok(())
@@ -50,6 +56,13 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "height" => {
                             builder = builder.set_height(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "opacity" => {
+                            builder = builder.set_opacity(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
                                     .transpose()?,
@@ -87,8 +100,7 @@ where
                     },
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                            "expected object key or end object, found: {:?}",
-                            other
+                            "expected object key or end object, found: {other:?}"
                         )))
                     }
                 }

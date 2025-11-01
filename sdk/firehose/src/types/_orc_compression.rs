@@ -108,7 +108,7 @@ impl ::std::fmt::Display for OrcCompression {
             OrcCompression::None => write!(f, "NONE"),
             OrcCompression::Snappy => write!(f, "SNAPPY"),
             OrcCompression::Zlib => write!(f, "ZLIB"),
-            OrcCompression::Unknown(value) => write!(f, "{}", value),
+            OrcCompression::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

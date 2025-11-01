@@ -114,7 +114,7 @@ impl ::std::fmt::Display for MembershipLevel {
             MembershipLevel::Manager => write!(f, "MANAGER"),
             MembershipLevel::Owner => write!(f, "OWNER"),
             MembershipLevel::Viewer => write!(f, "VIEWER"),
-            MembershipLevel::Unknown(value) => write!(f, "{}", value),
+            MembershipLevel::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

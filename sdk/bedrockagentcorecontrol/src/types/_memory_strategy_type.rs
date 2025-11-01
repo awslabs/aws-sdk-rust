@@ -114,7 +114,7 @@ impl ::std::fmt::Display for MemoryStrategyType {
             MemoryStrategyType::Semantic => write!(f, "SEMANTIC"),
             MemoryStrategyType::Summarization => write!(f, "SUMMARIZATION"),
             MemoryStrategyType::UserPreference => write!(f, "USER_PREFERENCE"),
-            MemoryStrategyType::Unknown(value) => write!(f, "{}", value),
+            MemoryStrategyType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -133,7 +133,7 @@ impl ::std::fmt::Display for Type {
             Type::Organization => write!(f, "ORGANIZATION"),
             Type::OrganizationInternalAccess => write!(f, "ORGANIZATION_INTERNAL_ACCESS"),
             Type::OrganizationUnusedAccess => write!(f, "ORGANIZATION_UNUSED_ACCESS"),
-            Type::Unknown(value) => write!(f, "{}", value),
+            Type::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

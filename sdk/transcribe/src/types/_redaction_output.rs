@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RedactionOutput {
         match self {
             RedactionOutput::Redacted => write!(f, "redacted"),
             RedactionOutput::RedactedAndUnredacted => write!(f, "redacted_and_unredacted"),
-            RedactionOutput::Unknown(value) => write!(f, "{}", value),
+            RedactionOutput::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

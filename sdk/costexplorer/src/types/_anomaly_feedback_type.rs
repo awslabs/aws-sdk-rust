@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AnomalyFeedbackType {
             AnomalyFeedbackType::No => write!(f, "NO"),
             AnomalyFeedbackType::PlannedActivity => write!(f, "PLANNED_ACTIVITY"),
             AnomalyFeedbackType::Yes => write!(f, "YES"),
-            AnomalyFeedbackType::Unknown(value) => write!(f, "{}", value),
+            AnomalyFeedbackType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

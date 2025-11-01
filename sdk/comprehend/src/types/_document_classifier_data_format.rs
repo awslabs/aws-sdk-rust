@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DocumentClassifierDataFormat {
         match self {
             DocumentClassifierDataFormat::AugmentedManifest => write!(f, "AUGMENTED_MANIFEST"),
             DocumentClassifierDataFormat::ComprehendCsv => write!(f, "COMPREHEND_CSV"),
-            DocumentClassifierDataFormat::Unknown(value) => write!(f, "{}", value),
+            DocumentClassifierDataFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

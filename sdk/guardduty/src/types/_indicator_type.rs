@@ -203,7 +203,7 @@ impl ::std::fmt::Display for IndicatorType {
             IndicatorType::UnusualApiForAccount => write!(f, "UNUSUAL_API_FOR_ACCOUNT"),
             IndicatorType::UnusualAsnForAccount => write!(f, "UNUSUAL_ASN_FOR_ACCOUNT"),
             IndicatorType::UnusualAsnForUser => write!(f, "UNUSUAL_ASN_FOR_USER"),
-            IndicatorType::Unknown(value) => write!(f, "{}", value),
+            IndicatorType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

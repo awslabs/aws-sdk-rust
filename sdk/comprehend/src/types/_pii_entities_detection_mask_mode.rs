@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PiiEntitiesDetectionMaskMode {
         match self {
             PiiEntitiesDetectionMaskMode::Mask => write!(f, "MASK"),
             PiiEntitiesDetectionMaskMode::ReplaceWithPiiEntityType => write!(f, "REPLACE_WITH_PII_ENTITY_TYPE"),
-            PiiEntitiesDetectionMaskMode::Unknown(value) => write!(f, "{}", value),
+            PiiEntitiesDetectionMaskMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

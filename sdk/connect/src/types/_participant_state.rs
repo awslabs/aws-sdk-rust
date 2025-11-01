@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ParticipantState {
             ParticipantState::Disconnected => write!(f, "DISCONNECTED"),
             ParticipantState::Initial => write!(f, "INITIAL"),
             ParticipantState::Missed => write!(f, "MISSED"),
-            ParticipantState::Unknown(value) => write!(f, "{}", value),
+            ParticipantState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

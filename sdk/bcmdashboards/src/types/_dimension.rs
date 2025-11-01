@@ -273,7 +273,7 @@ impl ::std::fmt::Display for Dimension {
             Dimension::Tenancy => write!(f, "TENANCY"),
             Dimension::UsageType => write!(f, "USAGE_TYPE"),
             Dimension::UsageTypeGroup => write!(f, "USAGE_TYPE_GROUP"),
-            Dimension::Unknown(value) => write!(f, "{}", value),
+            Dimension::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

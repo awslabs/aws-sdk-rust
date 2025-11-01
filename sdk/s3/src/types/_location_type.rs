@@ -102,7 +102,7 @@ impl ::std::fmt::Display for LocationType {
         match self {
             LocationType::AvailabilityZone => write!(f, "AvailabilityZone"),
             LocationType::LocalZone => write!(f, "LocalZone"),
-            LocationType::Unknown(value) => write!(f, "{}", value),
+            LocationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

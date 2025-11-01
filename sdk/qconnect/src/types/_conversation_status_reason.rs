@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ConversationStatusReason {
             ConversationStatusReason::Failed => write!(f, "FAILED"),
             ConversationStatusReason::Rejected => write!(f, "REJECTED"),
             ConversationStatusReason::Success => write!(f, "SUCCESS"),
-            ConversationStatusReason::Unknown(value) => write!(f, "{}", value),
+            ConversationStatusReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

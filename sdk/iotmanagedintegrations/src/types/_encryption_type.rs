@@ -102,7 +102,7 @@ impl ::std::fmt::Display for EncryptionType {
         match self {
             EncryptionType::CustomerKeyEncryption => write!(f, "CUSTOMER_KEY_ENCRYPTION"),
             EncryptionType::ManagedIntegrationsDefaultEncryption => write!(f, "MANAGED_INTEGRATIONS_DEFAULT_ENCRYPTION"),
-            EncryptionType::Unknown(value) => write!(f, "{}", value),
+            EncryptionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

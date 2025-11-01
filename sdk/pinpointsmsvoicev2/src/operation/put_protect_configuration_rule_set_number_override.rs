@@ -193,6 +193,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for PutProtectCo
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::put_protect_configuration_rule_set_number_override::PutProtectConfigurationRuleSetNumberOverrideInput,
                 output: &mut ::std::string::String,

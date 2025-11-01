@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FormTypeStatus {
         match self {
             FormTypeStatus::Disabled => write!(f, "DISABLED"),
             FormTypeStatus::Enabled => write!(f, "ENABLED"),
-            FormTypeStatus::Unknown(value) => write!(f, "{}", value),
+            FormTypeStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ReachabilityStatus {
             ReachabilityStatus::Done => write!(f, "DONE"),
             ReachabilityStatus::Expired => write!(f, "EXPIRED"),
             ReachabilityStatus::Pending => write!(f, "PENDING"),
-            ReachabilityStatus::Unknown(value) => write!(f, "{}", value),
+            ReachabilityStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

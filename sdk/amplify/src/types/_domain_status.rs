@@ -161,7 +161,7 @@ impl ::std::fmt::Display for DomainStatus {
             DomainStatus::PendingVerification => write!(f, "PENDING_VERIFICATION"),
             DomainStatus::RequestingCertificate => write!(f, "REQUESTING_CERTIFICATE"),
             DomainStatus::Updating => write!(f, "UPDATING"),
-            DomainStatus::Unknown(value) => write!(f, "{}", value),
+            DomainStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

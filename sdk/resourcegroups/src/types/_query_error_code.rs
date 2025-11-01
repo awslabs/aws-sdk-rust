@@ -119,7 +119,7 @@ impl ::std::fmt::Display for QueryErrorCode {
             QueryErrorCode::CloudformationStackNotExisting => write!(f, "CLOUDFORMATION_STACK_NOT_EXISTING"),
             QueryErrorCode::CloudformationStackUnassumableRole => write!(f, "CLOUDFORMATION_STACK_UNASSUMABLE_ROLE"),
             QueryErrorCode::ResourceTypeNotSupported => write!(f, "RESOURCE_TYPE_NOT_SUPPORTED"),
-            QueryErrorCode::Unknown(value) => write!(f, "{}", value),
+            QueryErrorCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

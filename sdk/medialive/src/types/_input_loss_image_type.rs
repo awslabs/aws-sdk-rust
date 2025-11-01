@@ -102,7 +102,7 @@ impl ::std::fmt::Display for InputLossImageType {
         match self {
             InputLossImageType::Color => write!(f, "COLOR"),
             InputLossImageType::Slate => write!(f, "SLATE"),
-            InputLossImageType::Unknown(value) => write!(f, "{}", value),
+            InputLossImageType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

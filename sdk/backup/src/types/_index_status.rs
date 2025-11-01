@@ -114,7 +114,7 @@ impl ::std::fmt::Display for IndexStatus {
             IndexStatus::Deleting => write!(f, "DELETING"),
             IndexStatus::Failed => write!(f, "FAILED"),
             IndexStatus::Pending => write!(f, "PENDING"),
-            IndexStatus::Unknown(value) => write!(f, "{}", value),
+            IndexStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

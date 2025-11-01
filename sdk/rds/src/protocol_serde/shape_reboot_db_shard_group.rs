@@ -91,16 +91,14 @@ pub fn de_reboot_db_shard_group(
     let start_el = decoder.start_el();
     if !(start_el.matches("RebootDBShardGroupResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected RebootDBShardGroupResponse got {:?}",
-            start_el
+            "invalid root, expected RebootDBShardGroupResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("RebootDBShardGroupResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected RebootDBShardGroupResult got {:?}",
-                start_el
+                "invalid result, expected RebootDBShardGroupResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

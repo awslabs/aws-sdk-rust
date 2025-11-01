@@ -203,7 +203,7 @@ impl ::std::fmt::Display for FieldDataType {
             FieldDataType::String => write!(f, "STRING"),
             FieldDataType::Struct => write!(f, "STRUCT"),
             FieldDataType::Timestamp => write!(f, "TIMESTAMP"),
-            FieldDataType::Unknown(value) => write!(f, "{}", value),
+            FieldDataType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

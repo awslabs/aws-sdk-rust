@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FleetType {
         match self {
             FleetType::OnDemand => write!(f, "ON_DEMAND"),
             FleetType::Spot => write!(f, "SPOT"),
-            FleetType::Unknown(value) => write!(f, "{}", value),
+            FleetType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

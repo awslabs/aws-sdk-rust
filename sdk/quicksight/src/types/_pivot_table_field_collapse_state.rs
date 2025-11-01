@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PivotTableFieldCollapseState {
         match self {
             PivotTableFieldCollapseState::Collapsed => write!(f, "COLLAPSED"),
             PivotTableFieldCollapseState::Expanded => write!(f, "EXPANDED"),
-            PivotTableFieldCollapseState::Unknown(value) => write!(f, "{}", value),
+            PivotTableFieldCollapseState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

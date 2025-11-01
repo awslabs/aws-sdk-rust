@@ -119,7 +119,7 @@ impl ::std::fmt::Display for ContributionAnalysisSortType {
             ContributionAnalysisSortType::ContributionPercentage => write!(f, "CONTRIBUTION_PERCENTAGE"),
             ContributionAnalysisSortType::DeviationFromExpected => write!(f, "DEVIATION_FROM_EXPECTED"),
             ContributionAnalysisSortType::PercentageDifference => write!(f, "PERCENTAGE_DIFFERENCE"),
-            ContributionAnalysisSortType::Unknown(value) => write!(f, "{}", value),
+            ContributionAnalysisSortType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

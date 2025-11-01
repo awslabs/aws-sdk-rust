@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MinimumHealthyHostsPerZoneType {
         match self {
             MinimumHealthyHostsPerZoneType::FleetPercent => write!(f, "FLEET_PERCENT"),
             MinimumHealthyHostsPerZoneType::HostCount => write!(f, "HOST_COUNT"),
-            MinimumHealthyHostsPerZoneType::Unknown(value) => write!(f, "{}", value),
+            MinimumHealthyHostsPerZoneType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

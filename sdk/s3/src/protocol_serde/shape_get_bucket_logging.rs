@@ -62,8 +62,7 @@ pub fn de_get_bucket_logging(
     let start_el = decoder.start_el();
     if !start_el.matches("BucketLoggingStatus") {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "encountered invalid XML root: expected BucketLoggingStatus but got {:?}. This is likely a bug in the SDK.",
-            start_el
+            "encountered invalid XML root: expected BucketLoggingStatus but got {start_el:?}. This is likely a bug in the SDK."
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

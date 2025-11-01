@@ -102,7 +102,7 @@ impl ::std::fmt::Display for NotificationType {
         match self {
             NotificationType::LensVersionDeprecated => write!(f, "LENS_VERSION_DEPRECATED"),
             NotificationType::LensVersionUpgraded => write!(f, "LENS_VERSION_UPGRADED"),
-            NotificationType::Unknown(value) => write!(f, "{}", value),
+            NotificationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

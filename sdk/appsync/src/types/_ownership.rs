@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Ownership {
         match self {
             Ownership::CurrentAccount => write!(f, "CURRENT_ACCOUNT"),
             Ownership::OtherAccounts => write!(f, "OTHER_ACCOUNTS"),
-            Ownership::Unknown(value) => write!(f, "{}", value),
+            Ownership::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

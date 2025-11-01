@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RequestedPipeState {
         match self {
             RequestedPipeState::Running => write!(f, "RUNNING"),
             RequestedPipeState::Stopped => write!(f, "STOPPED"),
-            RequestedPipeState::Unknown(value) => write!(f, "{}", value),
+            RequestedPipeState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

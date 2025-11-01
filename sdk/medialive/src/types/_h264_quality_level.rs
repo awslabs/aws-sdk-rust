@@ -102,7 +102,7 @@ impl ::std::fmt::Display for H264QualityLevel {
         match self {
             H264QualityLevel::EnhancedQuality => write!(f, "ENHANCED_QUALITY"),
             H264QualityLevel::StandardQuality => write!(f, "STANDARD_QUALITY"),
-            H264QualityLevel::Unknown(value) => write!(f, "{}", value),
+            H264QualityLevel::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

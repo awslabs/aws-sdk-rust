@@ -120,7 +120,7 @@ impl ::std::fmt::Display for OptimizationMetric {
             OptimizationMetric::Mase => write!(f, "MASE"),
             OptimizationMetric::Rmse => write!(f, "RMSE"),
             OptimizationMetric::Wape => write!(f, "WAPE"),
-            OptimizationMetric::Unknown(value) => write!(f, "{}", value),
+            OptimizationMetric::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

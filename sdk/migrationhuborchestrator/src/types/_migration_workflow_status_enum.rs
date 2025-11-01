@@ -189,7 +189,7 @@ impl ::std::fmt::Display for MigrationWorkflowStatusEnum {
             MigrationWorkflowStatusEnum::Starting => write!(f, "STARTING"),
             MigrationWorkflowStatusEnum::UserAttentionRequired => write!(f, "USER_ATTENTION_REQUIRED"),
             MigrationWorkflowStatusEnum::WorkflowFailed => write!(f, "WORKFLOW_FAILED"),
-            MigrationWorkflowStatusEnum::Unknown(value) => write!(f, "{}", value),
+            MigrationWorkflowStatusEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

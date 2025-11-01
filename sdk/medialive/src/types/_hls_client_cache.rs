@@ -102,7 +102,7 @@ impl ::std::fmt::Display for HlsClientCache {
         match self {
             HlsClientCache::Disabled => write!(f, "DISABLED"),
             HlsClientCache::Enabled => write!(f, "ENABLED"),
-            HlsClientCache::Unknown(value) => write!(f, "{}", value),
+            HlsClientCache::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

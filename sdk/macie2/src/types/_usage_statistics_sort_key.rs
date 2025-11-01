@@ -114,7 +114,7 @@ impl ::std::fmt::Display for UsageStatisticsSortKey {
             UsageStatisticsSortKey::FreeTrialStartDate => write!(f, "freeTrialStartDate"),
             UsageStatisticsSortKey::ServiceLimitValue => write!(f, "serviceLimitValue"),
             UsageStatisticsSortKey::Total => write!(f, "total"),
-            UsageStatisticsSortKey::Unknown(value) => write!(f, "{}", value),
+            UsageStatisticsSortKey::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

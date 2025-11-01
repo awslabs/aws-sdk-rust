@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AccessType {
         match self {
             AccessType::Lakeformation => write!(f, "LAKEFORMATION"),
             AccessType::S3 => write!(f, "S3"),
-            AccessType::Unknown(value) => write!(f, "{}", value),
+            AccessType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

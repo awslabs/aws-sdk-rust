@@ -120,7 +120,7 @@ impl ::std::fmt::Display for FolderName {
             FolderName::Inbox => write!(f, "INBOX"),
             FolderName::JunkEmail => write!(f, "JUNK_EMAIL"),
             FolderName::SentItems => write!(f, "SENT_ITEMS"),
-            FolderName::Unknown(value) => write!(f, "{}", value),
+            FolderName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

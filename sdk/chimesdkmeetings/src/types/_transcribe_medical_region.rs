@@ -140,7 +140,7 @@ impl ::std::fmt::Display for TranscribeMedicalRegion {
             TranscribeMedicalRegion::UsEast1 => write!(f, "us-east-1"),
             TranscribeMedicalRegion::UsEast2 => write!(f, "us-east-2"),
             TranscribeMedicalRegion::UsWest2 => write!(f, "us-west-2"),
-            TranscribeMedicalRegion::Unknown(value) => write!(f, "{}", value),
+            TranscribeMedicalRegion::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

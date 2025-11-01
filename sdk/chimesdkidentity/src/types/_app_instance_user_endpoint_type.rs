@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AppInstanceUserEndpointType {
             AppInstanceUserEndpointType::Apns => write!(f, "APNS"),
             AppInstanceUserEndpointType::ApnsSandbox => write!(f, "APNS_SANDBOX"),
             AppInstanceUserEndpointType::Gcm => write!(f, "GCM"),
-            AppInstanceUserEndpointType::Unknown(value) => write!(f, "{}", value),
+            AppInstanceUserEndpointType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

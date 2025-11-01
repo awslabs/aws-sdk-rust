@@ -154,7 +154,7 @@ impl ::std::fmt::Display for RouteMatrixErrorCode {
             RouteMatrixErrorCode::OutOfBoundsDestination => write!(f, "OutOfBoundsDestination"),
             RouteMatrixErrorCode::OutOfBoundsOrigin => write!(f, "OutOfBoundsOrigin"),
             RouteMatrixErrorCode::Violation => write!(f, "Violation"),
-            RouteMatrixErrorCode::Unknown(value) => write!(f, "{}", value),
+            RouteMatrixErrorCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

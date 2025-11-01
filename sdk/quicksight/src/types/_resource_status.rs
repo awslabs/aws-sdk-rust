@@ -140,7 +140,7 @@ impl ::std::fmt::Display for ResourceStatus {
             ResourceStatus::UpdateFailed => write!(f, "UPDATE_FAILED"),
             ResourceStatus::UpdateInProgress => write!(f, "UPDATE_IN_PROGRESS"),
             ResourceStatus::UpdateSuccessful => write!(f, "UPDATE_SUCCESSFUL"),
-            ResourceStatus::Unknown(value) => write!(f, "{}", value),
+            ResourceStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

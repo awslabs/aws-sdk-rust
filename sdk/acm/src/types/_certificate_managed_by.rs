@@ -96,7 +96,7 @@ impl ::std::fmt::Display for CertificateManagedBy {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             CertificateManagedBy::Cloudfront => write!(f, "CLOUDFRONT"),
-            CertificateManagedBy::Unknown(value) => write!(f, "{}", value),
+            CertificateManagedBy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

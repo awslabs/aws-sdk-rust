@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ViolationEventType {
             ViolationEventType::AlarmCleared => write!(f, "alarm-cleared"),
             ViolationEventType::AlarmInvalidated => write!(f, "alarm-invalidated"),
             ViolationEventType::InAlarm => write!(f, "in-alarm"),
-            ViolationEventType::Unknown(value) => write!(f, "{}", value),
+            ViolationEventType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

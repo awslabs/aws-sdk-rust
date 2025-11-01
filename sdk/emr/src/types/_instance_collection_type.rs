@@ -102,7 +102,7 @@ impl ::std::fmt::Display for InstanceCollectionType {
         match self {
             InstanceCollectionType::InstanceFleet => write!(f, "INSTANCE_FLEET"),
             InstanceCollectionType::InstanceGroup => write!(f, "INSTANCE_GROUP"),
-            InstanceCollectionType::Unknown(value) => write!(f, "{}", value),
+            InstanceCollectionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

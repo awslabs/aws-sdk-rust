@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ComputationModelType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ComputationModelType::AnomalyDetection => write!(f, "ANOMALY_DETECTION"),
-            ComputationModelType::Unknown(value) => write!(f, "{}", value),
+            ComputationModelType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

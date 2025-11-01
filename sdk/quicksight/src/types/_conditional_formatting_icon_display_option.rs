@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ConditionalFormattingIconDisplayOption {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ConditionalFormattingIconDisplayOption::IconOnly => write!(f, "ICON_ONLY"),
-            ConditionalFormattingIconDisplayOption::Unknown(value) => write!(f, "{}", value),
+            ConditionalFormattingIconDisplayOption::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

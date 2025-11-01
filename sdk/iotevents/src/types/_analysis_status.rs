@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AnalysisStatus {
             AnalysisStatus::Complete => write!(f, "COMPLETE"),
             AnalysisStatus::Failed => write!(f, "FAILED"),
             AnalysisStatus::Running => write!(f, "RUNNING"),
-            AnalysisStatus::Unknown(value) => write!(f, "{}", value),
+            AnalysisStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

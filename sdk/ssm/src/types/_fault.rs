@@ -110,7 +110,7 @@ impl ::std::fmt::Display for Fault {
             Fault::Client => write!(f, "Client"),
             Fault::Server => write!(f, "Server"),
             Fault::UnknownValue => write!(f, "Unknown"),
-            Fault::Unknown(value) => write!(f, "{}", value),
+            Fault::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

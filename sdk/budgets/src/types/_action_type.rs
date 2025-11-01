@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ActionType {
             ActionType::Iam => write!(f, "APPLY_IAM_POLICY"),
             ActionType::Scp => write!(f, "APPLY_SCP_POLICY"),
             ActionType::Ssm => write!(f, "RUN_SSM_DOCUMENTS"),
-            ActionType::Unknown(value) => write!(f, "{}", value),
+            ActionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

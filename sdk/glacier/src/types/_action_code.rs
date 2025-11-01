@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ActionCode {
             ActionCode::ArchiveRetrieval => write!(f, "ArchiveRetrieval"),
             ActionCode::InventoryRetrieval => write!(f, "InventoryRetrieval"),
             ActionCode::Select => write!(f, "Select"),
-            ActionCode::Unknown(value) => write!(f, "{}", value),
+            ActionCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -96,7 +96,7 @@ impl ::std::fmt::Display for CapabilityType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             CapabilityType::Edi => write!(f, "edi"),
-            CapabilityType::Unknown(value) => write!(f, "{}", value),
+            CapabilityType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

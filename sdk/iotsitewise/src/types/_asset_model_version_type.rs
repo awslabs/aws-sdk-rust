@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AssetModelVersionType {
         match self {
             AssetModelVersionType::Active => write!(f, "ACTIVE"),
             AssetModelVersionType::Latest => write!(f, "LATEST"),
-            AssetModelVersionType::Unknown(value) => write!(f, "{}", value),
+            AssetModelVersionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

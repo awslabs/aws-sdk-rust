@@ -735,7 +735,7 @@ impl ::std::fmt::Display for ConnectionType {
             ConnectionType::Zendesk => write!(f, "ZENDESK"),
             ConnectionType::Zohocrm => write!(f, "ZOHOCRM"),
             ConnectionType::Zoom => write!(f, "ZOOM"),
-            ConnectionType::Unknown(value) => write!(f, "{}", value),
+            ConnectionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

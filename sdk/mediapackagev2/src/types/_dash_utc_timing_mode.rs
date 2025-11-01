@@ -114,7 +114,7 @@ impl ::std::fmt::Display for DashUtcTimingMode {
             DashUtcTimingMode::HttpIso => write!(f, "HTTP_ISO"),
             DashUtcTimingMode::HttpXsdate => write!(f, "HTTP_XSDATE"),
             DashUtcTimingMode::UtcDirect => write!(f, "UTC_DIRECT"),
-            DashUtcTimingMode::Unknown(value) => write!(f, "{}", value),
+            DashUtcTimingMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

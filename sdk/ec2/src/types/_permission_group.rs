@@ -96,7 +96,7 @@ impl ::std::fmt::Display for PermissionGroup {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             PermissionGroup::All => write!(f, "all"),
-            PermissionGroup::Unknown(value) => write!(f, "{}", value),
+            PermissionGroup::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

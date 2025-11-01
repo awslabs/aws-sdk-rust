@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CdcPropagateTags {
         match self {
             CdcPropagateTags::None => write!(f, "NONE"),
             CdcPropagateTags::Table => write!(f, "TABLE"),
-            CdcPropagateTags::Unknown(value) => write!(f, "{}", value),
+            CdcPropagateTags::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

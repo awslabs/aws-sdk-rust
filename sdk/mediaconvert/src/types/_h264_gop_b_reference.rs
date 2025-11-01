@@ -102,7 +102,7 @@ impl ::std::fmt::Display for H264GopBReference {
         match self {
             H264GopBReference::Disabled => write!(f, "DISABLED"),
             H264GopBReference::Enabled => write!(f, "ENABLED"),
-            H264GopBReference::Unknown(value) => write!(f, "{}", value),
+            H264GopBReference::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

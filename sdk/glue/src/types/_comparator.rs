@@ -120,7 +120,7 @@ impl ::std::fmt::Display for Comparator {
             Comparator::GreaterThanEquals => write!(f, "GREATER_THAN_EQUALS"),
             Comparator::LessThan => write!(f, "LESS_THAN"),
             Comparator::LessThanEquals => write!(f, "LESS_THAN_EQUALS"),
-            Comparator::Unknown(value) => write!(f, "{}", value),
+            Comparator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

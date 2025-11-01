@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ApplicationSettingsStatusEnum {
         match self {
             ApplicationSettingsStatusEnum::Disabled => write!(f, "DISABLED"),
             ApplicationSettingsStatusEnum::Enabled => write!(f, "ENABLED"),
-            ApplicationSettingsStatusEnum::Unknown(value) => write!(f, "{}", value),
+            ApplicationSettingsStatusEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

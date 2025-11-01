@@ -120,7 +120,7 @@ impl ::std::fmt::Display for OutputFormat {
             OutputFormat::Plain => write!(f, "plain"),
             OutputFormat::Raw => write!(f, "raw"),
             OutputFormat::W3C => write!(f, "w3c"),
-            OutputFormat::Unknown(value) => write!(f, "{}", value),
+            OutputFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -126,7 +126,7 @@ impl ::std::fmt::Display for SearchQuantumTasksFilterOperator {
             SearchQuantumTasksFilterOperator::Gte => write!(f, "GTE"),
             SearchQuantumTasksFilterOperator::Lt => write!(f, "LT"),
             SearchQuantumTasksFilterOperator::Lte => write!(f, "LTE"),
-            SearchQuantumTasksFilterOperator::Unknown(value) => write!(f, "{}", value),
+            SearchQuantumTasksFilterOperator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -175,7 +175,7 @@ impl ::std::fmt::Display for ConflictExceptionReason {
             ConflictExceptionReason::ZonalAutoshiftActive => write!(f, "ZonalAutoshiftActive"),
             ConflictExceptionReason::ZonalShiftAlreadyExists => write!(f, "ZonalShiftAlreadyExists"),
             ConflictExceptionReason::ZonalShiftStatusNotActive => write!(f, "ZonalShiftStatusNotActive"),
-            ConflictExceptionReason::Unknown(value) => write!(f, "{}", value),
+            ConflictExceptionReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

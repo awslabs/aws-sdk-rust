@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PolicyScope {
         match self {
             PolicyScope::Account => write!(f, "ACCOUNT"),
             PolicyScope::Resource => write!(f, "RESOURCE"),
-            PolicyScope::Unknown(value) => write!(f, "{}", value),
+            PolicyScope::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

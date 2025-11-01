@@ -102,7 +102,7 @@ impl ::std::fmt::Display for JsTarget {
         match self {
             JsTarget::Es2015 => write!(f, "es2015"),
             JsTarget::Es2020 => write!(f, "es2020"),
-            JsTarget::Unknown(value) => write!(f, "{}", value),
+            JsTarget::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

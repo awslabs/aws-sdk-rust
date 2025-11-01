@@ -94,7 +94,7 @@ impl ::std::fmt::Display for RouteFerryBeforeTravelStepType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             RouteFerryBeforeTravelStepType::Board => write!(f, "Board"),
-            RouteFerryBeforeTravelStepType::Unknown(value) => write!(f, "{}", value),
+            RouteFerryBeforeTravelStepType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

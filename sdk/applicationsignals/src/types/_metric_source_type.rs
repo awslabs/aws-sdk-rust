@@ -108,7 +108,7 @@ impl ::std::fmt::Display for MetricSourceType {
             MetricSourceType::CloudwatchMetric => write!(f, "CloudWatchMetric"),
             MetricSourceType::ServiceDependency => write!(f, "ServiceDependency"),
             MetricSourceType::ServiceOperation => write!(f, "ServiceOperation"),
-            MetricSourceType::Unknown(value) => write!(f, "{}", value),
+            MetricSourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

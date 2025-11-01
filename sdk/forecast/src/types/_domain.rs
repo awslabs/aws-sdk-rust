@@ -140,7 +140,7 @@ impl ::std::fmt::Display for Domain {
             Domain::Retail => write!(f, "RETAIL"),
             Domain::WebTraffic => write!(f, "WEB_TRAFFIC"),
             Domain::WorkForce => write!(f, "WORK_FORCE"),
-            Domain::Unknown(value) => write!(f, "{}", value),
+            Domain::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

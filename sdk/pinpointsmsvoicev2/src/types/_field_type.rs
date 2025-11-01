@@ -108,7 +108,7 @@ impl ::std::fmt::Display for FieldType {
             FieldType::Attachment => write!(f, "ATTACHMENT"),
             FieldType::Select => write!(f, "SELECT"),
             FieldType::Text => write!(f, "TEXT"),
-            FieldType::Unknown(value) => write!(f, "{}", value),
+            FieldType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

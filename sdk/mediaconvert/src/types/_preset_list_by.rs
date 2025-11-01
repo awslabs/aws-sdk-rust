@@ -108,7 +108,7 @@ impl ::std::fmt::Display for PresetListBy {
             PresetListBy::CreationDate => write!(f, "CREATION_DATE"),
             PresetListBy::Name => write!(f, "NAME"),
             PresetListBy::System => write!(f, "SYSTEM"),
-            PresetListBy::Unknown(value) => write!(f, "{}", value),
+            PresetListBy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -110,7 +110,7 @@ impl ::std::fmt::Display for PackageVersionOriginType {
             PackageVersionOriginType::External => write!(f, "EXTERNAL"),
             PackageVersionOriginType::Internal => write!(f, "INTERNAL"),
             PackageVersionOriginType::UnknownValue => write!(f, "UNKNOWN"),
-            PackageVersionOriginType::Unknown(value) => write!(f, "{}", value),
+            PackageVersionOriginType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

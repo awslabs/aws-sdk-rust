@@ -132,7 +132,7 @@ impl ::std::fmt::Display for DayOfWeek {
             DayOfWeek::Thursday => write!(f, "THURSDAY"),
             DayOfWeek::Tuesday => write!(f, "TUESDAY"),
             DayOfWeek::Wednesday => write!(f, "WEDNESDAY"),
-            DayOfWeek::Unknown(value) => write!(f, "{}", value),
+            DayOfWeek::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

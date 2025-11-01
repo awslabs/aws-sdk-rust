@@ -102,7 +102,7 @@ impl ::std::fmt::Display for NotificationEvent {
         match self {
             NotificationEvent::CaCertificateExpiry => write!(f, "CA_CERTIFICATE_EXPIRY"),
             NotificationEvent::EndEntityCertificateExpiry => write!(f, "END_ENTITY_CERTIFICATE_EXPIRY"),
-            NotificationEvent::Unknown(value) => write!(f, "{}", value),
+            NotificationEvent::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

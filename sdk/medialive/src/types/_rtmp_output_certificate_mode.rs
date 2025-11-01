@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RtmpOutputCertificateMode {
         match self {
             RtmpOutputCertificateMode::SelfSigned => write!(f, "SELF_SIGNED"),
             RtmpOutputCertificateMode::VerifyAuthenticity => write!(f, "VERIFY_AUTHENTICITY"),
-            RtmpOutputCertificateMode::Unknown(value) => write!(f, "{}", value),
+            RtmpOutputCertificateMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

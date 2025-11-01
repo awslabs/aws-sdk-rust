@@ -120,7 +120,7 @@ impl ::std::fmt::Display for FreeTrialType {
             FreeTrialType::Ecr => write!(f, "ECR"),
             FreeTrialType::Lambda => write!(f, "LAMBDA"),
             FreeTrialType::LambdaCode => write!(f, "LAMBDA_CODE"),
-            FreeTrialType::Unknown(value) => write!(f, "{}", value),
+            FreeTrialType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

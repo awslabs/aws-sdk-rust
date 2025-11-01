@@ -102,7 +102,7 @@ impl ::std::fmt::Display for OnWorkflowFailure {
         match self {
             OnWorkflowFailure::Abort => write!(f, "ABORT"),
             OnWorkflowFailure::Continue => write!(f, "CONTINUE"),
-            OnWorkflowFailure::Unknown(value) => write!(f, "{}", value),
+            OnWorkflowFailure::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

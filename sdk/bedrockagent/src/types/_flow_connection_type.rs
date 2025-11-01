@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FlowConnectionType {
         match self {
             FlowConnectionType::Conditional => write!(f, "Conditional"),
             FlowConnectionType::Data => write!(f, "Data"),
-            FlowConnectionType::Unknown(value) => write!(f, "{}", value),
+            FlowConnectionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

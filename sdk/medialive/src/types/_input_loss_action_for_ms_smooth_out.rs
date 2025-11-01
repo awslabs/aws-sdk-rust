@@ -102,7 +102,7 @@ impl ::std::fmt::Display for InputLossActionForMsSmoothOut {
         match self {
             InputLossActionForMsSmoothOut::EmitOutput => write!(f, "EMIT_OUTPUT"),
             InputLossActionForMsSmoothOut::PauseOutput => write!(f, "PAUSE_OUTPUT"),
-            InputLossActionForMsSmoothOut::Unknown(value) => write!(f, "{}", value),
+            InputLossActionForMsSmoothOut::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

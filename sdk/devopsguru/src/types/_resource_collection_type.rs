@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ResourceCollectionType {
             ResourceCollectionType::AwsCloudFormation => write!(f, "AWS_CLOUD_FORMATION"),
             ResourceCollectionType::AwsService => write!(f, "AWS_SERVICE"),
             ResourceCollectionType::AwsTags => write!(f, "AWS_TAGS"),
-            ResourceCollectionType::Unknown(value) => write!(f, "{}", value),
+            ResourceCollectionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

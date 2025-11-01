@@ -238,7 +238,7 @@ impl ::std::fmt::Display for TextTransformationType {
             TextTransformationType::UrlDecode => write!(f, "URL_DECODE"),
             TextTransformationType::UrlDecodeUni => write!(f, "URL_DECODE_UNI"),
             TextTransformationType::Utf8ToUnicode => write!(f, "UTF8_TO_UNICODE"),
-            TextTransformationType::Unknown(value) => write!(f, "{}", value),
+            TextTransformationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

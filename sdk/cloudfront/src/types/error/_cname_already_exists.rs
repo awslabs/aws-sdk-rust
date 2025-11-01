@@ -19,7 +19,7 @@ impl ::std::fmt::Display for CnameAlreadyExists {
         ::std::write!(f, "CnameAlreadyExists [CNAMEAlreadyExists]")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
             {
-                ::std::write!(f, ": {}", inner_1)?;
+                ::std::write!(f, ": {inner_1}")?;
             }
         }
         Ok(())

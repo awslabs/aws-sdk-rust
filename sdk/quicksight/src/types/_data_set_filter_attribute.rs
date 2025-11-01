@@ -133,7 +133,7 @@ impl ::std::fmt::Display for DataSetFilterAttribute {
             DataSetFilterAttribute::DirectQuicksightViewerOrOwner => write!(f, "DIRECT_QUICKSIGHT_VIEWER_OR_OWNER"),
             DataSetFilterAttribute::QuicksightOwner => write!(f, "QUICKSIGHT_OWNER"),
             DataSetFilterAttribute::QuicksightViewerOrOwner => write!(f, "QUICKSIGHT_VIEWER_OR_OWNER"),
-            DataSetFilterAttribute::Unknown(value) => write!(f, "{}", value),
+            DataSetFilterAttribute::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

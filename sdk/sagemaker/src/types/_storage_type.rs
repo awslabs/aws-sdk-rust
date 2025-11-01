@@ -102,7 +102,7 @@ impl ::std::fmt::Display for StorageType {
         match self {
             StorageType::InMemory => write!(f, "InMemory"),
             StorageType::Standard => write!(f, "Standard"),
-            StorageType::Unknown(value) => write!(f, "{}", value),
+            StorageType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

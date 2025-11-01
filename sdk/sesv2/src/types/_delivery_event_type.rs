@@ -172,7 +172,7 @@ impl ::std::fmt::Display for DeliveryEventType {
             DeliveryEventType::Send => write!(f, "SEND"),
             DeliveryEventType::TransientBounce => write!(f, "TRANSIENT_BOUNCE"),
             DeliveryEventType::UndeterminedBounce => write!(f, "UNDETERMINED_BOUNCE"),
-            DeliveryEventType::Unknown(value) => write!(f, "{}", value),
+            DeliveryEventType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

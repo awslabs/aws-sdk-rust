@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ParticipantTokenCapability {
         match self {
             ParticipantTokenCapability::Publish => write!(f, "PUBLISH"),
             ParticipantTokenCapability::Subscribe => write!(f, "SUBSCRIBE"),
-            ParticipantTokenCapability::Unknown(value) => write!(f, "{}", value),
+            ParticipantTokenCapability::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -96,7 +96,7 @@ impl ::std::fmt::Display for QueryTransformationMode {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             QueryTransformationMode::TextToSql => write!(f, "TEXT_TO_SQL"),
-            QueryTransformationMode::Unknown(value) => write!(f, "{}", value),
+            QueryTransformationMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

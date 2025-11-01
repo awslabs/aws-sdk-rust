@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ControlConditionType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ControlConditionType::Cloudwatch => write!(f, "CLOUDWATCH"),
-            ControlConditionType::Unknown(value) => write!(f, "{}", value),
+            ControlConditionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

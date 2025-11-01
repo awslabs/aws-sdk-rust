@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CmafEncryptionType {
         match self {
             CmafEncryptionType::AesCtr => write!(f, "AES_CTR"),
             CmafEncryptionType::SampleAes => write!(f, "SAMPLE_AES"),
-            CmafEncryptionType::Unknown(value) => write!(f, "{}", value),
+            CmafEncryptionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

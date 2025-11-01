@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AddressType {
         match self {
             AddressType::OperatingAddress => write!(f, "OPERATING_ADDRESS"),
             AddressType::ShippingAddress => write!(f, "SHIPPING_ADDRESS"),
-            AddressType::Unknown(value) => write!(f, "{}", value),
+            AddressType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for CloudWatchEventSource {
             CloudWatchEventSource::Ec2 => write!(f, "EC2"),
             CloudWatchEventSource::Health => write!(f, "HEALTH"),
             CloudWatchEventSource::Rds => write!(f, "RDS"),
-            CloudWatchEventSource::Unknown(value) => write!(f, "{}", value),
+            CloudWatchEventSource::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

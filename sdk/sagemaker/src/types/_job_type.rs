@@ -108,7 +108,7 @@ impl ::std::fmt::Display for JobType {
             JobType::Inference => write!(f, "INFERENCE"),
             JobType::NotebookKernel => write!(f, "NOTEBOOK_KERNEL"),
             JobType::Training => write!(f, "TRAINING"),
-            JobType::Unknown(value) => write!(f, "{}", value),
+            JobType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

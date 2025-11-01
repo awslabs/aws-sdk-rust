@@ -161,7 +161,7 @@ impl ::std::fmt::Display for PhoneNumberFilterName {
             PhoneNumberFilterName::Status => write!(f, "status"),
             PhoneNumberFilterName::TwoWayChannelArn => write!(f, "two-way-channel-arn"),
             PhoneNumberFilterName::TwoWayEnabled => write!(f, "two-way-enabled"),
-            PhoneNumberFilterName::Unknown(value) => write!(f, "{}", value),
+            PhoneNumberFilterName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

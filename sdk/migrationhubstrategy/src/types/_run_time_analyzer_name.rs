@@ -120,7 +120,7 @@ impl ::std::fmt::Display for RunTimeAnalyzerName {
             RunTimeAnalyzerName::EmpPaAnalyzer => write!(f, "EMP_PA_ANALYZER"),
             RunTimeAnalyzerName::RehostAnalyzer => write!(f, "REHOST_ANALYZER"),
             RunTimeAnalyzerName::SctAnalyzer => write!(f, "SCT_ANALYZER"),
-            RunTimeAnalyzerName::Unknown(value) => write!(f, "{}", value),
+            RunTimeAnalyzerName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

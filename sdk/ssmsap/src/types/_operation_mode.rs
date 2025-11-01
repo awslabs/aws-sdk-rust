@@ -120,7 +120,7 @@ impl ::std::fmt::Display for OperationMode {
             OperationMode::LogreplayReadaccess => write!(f, "LOGREPLAY_READACCESS"),
             OperationMode::None => write!(f, "NONE"),
             OperationMode::Primary => write!(f, "PRIMARY"),
-            OperationMode::Unknown(value) => write!(f, "{}", value),
+            OperationMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

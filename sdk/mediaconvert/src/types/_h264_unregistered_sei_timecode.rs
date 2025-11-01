@@ -102,7 +102,7 @@ impl ::std::fmt::Display for H264UnregisteredSeiTimecode {
         match self {
             H264UnregisteredSeiTimecode::Disabled => write!(f, "DISABLED"),
             H264UnregisteredSeiTimecode::Enabled => write!(f, "ENABLED"),
-            H264UnregisteredSeiTimecode::Unknown(value) => write!(f, "{}", value),
+            H264UnregisteredSeiTimecode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

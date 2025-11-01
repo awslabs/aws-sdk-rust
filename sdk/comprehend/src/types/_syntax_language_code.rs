@@ -126,7 +126,7 @@ impl ::std::fmt::Display for SyntaxLanguageCode {
             SyntaxLanguageCode::Fr => write!(f, "fr"),
             SyntaxLanguageCode::It => write!(f, "it"),
             SyntaxLanguageCode::Pt => write!(f, "pt"),
-            SyntaxLanguageCode::Unknown(value) => write!(f, "{}", value),
+            SyntaxLanguageCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

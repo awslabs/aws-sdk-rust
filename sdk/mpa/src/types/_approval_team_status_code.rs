@@ -175,7 +175,7 @@ impl ::std::fmt::Display for ApprovalTeamStatusCode {
             ApprovalTeamStatusCode::UpdatePendingActivation => write!(f, "UPDATE_PENDING_ACTIVATION"),
             ApprovalTeamStatusCode::UpdatePendingApproval => write!(f, "UPDATE_PENDING_APPROVAL"),
             ApprovalTeamStatusCode::Validating => write!(f, "VALIDATING"),
-            ApprovalTeamStatusCode::Unknown(value) => write!(f, "{}", value),
+            ApprovalTeamStatusCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

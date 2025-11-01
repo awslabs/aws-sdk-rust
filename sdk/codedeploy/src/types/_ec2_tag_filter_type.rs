@@ -108,7 +108,7 @@ impl ::std::fmt::Display for Ec2TagFilterType {
             Ec2TagFilterType::KeyAndValue => write!(f, "KEY_AND_VALUE"),
             Ec2TagFilterType::KeyOnly => write!(f, "KEY_ONLY"),
             Ec2TagFilterType::ValueOnly => write!(f, "VALUE_ONLY"),
-            Ec2TagFilterType::Unknown(value) => write!(f, "{}", value),
+            Ec2TagFilterType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

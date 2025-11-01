@@ -49,16 +49,14 @@ pub fn de_create_stack_refactor(
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateStackRefactorResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected CreateStackRefactorResponse got {:?}",
-            start_el
+            "invalid root, expected CreateStackRefactorResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("CreateStackRefactorResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected CreateStackRefactorResult got {:?}",
-                start_el
+                "invalid result, expected CreateStackRefactorResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

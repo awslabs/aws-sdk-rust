@@ -96,7 +96,7 @@ impl ::std::fmt::Display for DashboardType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             DashboardType::Custom => write!(f, "CUSTOM"),
-            DashboardType::Unknown(value) => write!(f, "{}", value),
+            DashboardType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

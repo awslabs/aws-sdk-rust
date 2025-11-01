@@ -181,6 +181,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for SearchProfil
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::search_profiles::SearchProfilesInput,
                 output: &mut ::std::string::String,

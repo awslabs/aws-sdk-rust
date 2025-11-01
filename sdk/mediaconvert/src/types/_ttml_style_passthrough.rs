@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TtmlStylePassthrough {
         match self {
             TtmlStylePassthrough::Disabled => write!(f, "DISABLED"),
             TtmlStylePassthrough::Enabled => write!(f, "ENABLED"),
-            TtmlStylePassthrough::Unknown(value) => write!(f, "{}", value),
+            TtmlStylePassthrough::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

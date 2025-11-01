@@ -114,7 +114,7 @@ impl ::std::fmt::Display for AnalyticsUtteranceMetricName {
             AnalyticsUtteranceMetricName::Detected => write!(f, "Detected"),
             AnalyticsUtteranceMetricName::Missed => write!(f, "Missed"),
             AnalyticsUtteranceMetricName::UtteranceTimestamp => write!(f, "UtteranceTimestamp"),
-            AnalyticsUtteranceMetricName::Unknown(value) => write!(f, "{}", value),
+            AnalyticsUtteranceMetricName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

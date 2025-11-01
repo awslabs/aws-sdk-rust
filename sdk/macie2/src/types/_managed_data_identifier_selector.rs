@@ -120,7 +120,7 @@ impl ::std::fmt::Display for ManagedDataIdentifierSelector {
             ManagedDataIdentifierSelector::Include => write!(f, "INCLUDE"),
             ManagedDataIdentifierSelector::None => write!(f, "NONE"),
             ManagedDataIdentifierSelector::Recommended => write!(f, "RECOMMENDED"),
-            ManagedDataIdentifierSelector::Unknown(value) => write!(f, "{}", value),
+            ManagedDataIdentifierSelector::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

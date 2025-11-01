@@ -102,7 +102,7 @@ impl ::std::fmt::Display for GuardrailConverseImageFormat {
         match self {
             GuardrailConverseImageFormat::Jpeg => write!(f, "jpeg"),
             GuardrailConverseImageFormat::Png => write!(f, "png"),
-            GuardrailConverseImageFormat::Unknown(value) => write!(f, "{}", value),
+            GuardrailConverseImageFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

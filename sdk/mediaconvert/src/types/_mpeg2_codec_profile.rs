@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Mpeg2CodecProfile {
         match self {
             Mpeg2CodecProfile::Main => write!(f, "MAIN"),
             Mpeg2CodecProfile::Profile422 => write!(f, "PROFILE_422"),
-            Mpeg2CodecProfile::Unknown(value) => write!(f, "{}", value),
+            Mpeg2CodecProfile::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

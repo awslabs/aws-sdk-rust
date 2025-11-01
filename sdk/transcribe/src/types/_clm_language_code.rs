@@ -132,7 +132,7 @@ impl ::std::fmt::Display for ClmLanguageCode {
             ClmLanguageCode::EsUs => write!(f, "es-US"),
             ClmLanguageCode::HiIn => write!(f, "hi-IN"),
             ClmLanguageCode::JaJp => write!(f, "ja-JP"),
-            ClmLanguageCode::Unknown(value) => write!(f, "{}", value),
+            ClmLanguageCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

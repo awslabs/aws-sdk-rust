@@ -114,7 +114,7 @@ impl ::std::fmt::Display for License {
             License::Plus => write!(f, "Plus"),
             License::Pro => write!(f, "Pro"),
             License::ProTrial => write!(f, "ProTrial"),
-            License::Unknown(value) => write!(f, "{}", value),
+            License::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

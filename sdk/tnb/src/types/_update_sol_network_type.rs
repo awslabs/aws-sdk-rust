@@ -102,7 +102,7 @@ impl ::std::fmt::Display for UpdateSolNetworkType {
         match self {
             UpdateSolNetworkType::ModifyVnfInformation => write!(f, "MODIFY_VNF_INFORMATION"),
             UpdateSolNetworkType::UpdateNs => write!(f, "UPDATE_NS"),
-            UpdateSolNetworkType::Unknown(value) => write!(f, "{}", value),
+            UpdateSolNetworkType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

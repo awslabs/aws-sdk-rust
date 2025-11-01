@@ -133,7 +133,7 @@ impl ::std::fmt::Display for CertificateStatus {
             CertificateStatus::PendingTransfer => write!(f, "PENDING_TRANSFER"),
             CertificateStatus::RegisterInactive => write!(f, "REGISTER_INACTIVE"),
             CertificateStatus::Revoked => write!(f, "REVOKED"),
-            CertificateStatus::Unknown(value) => write!(f, "{}", value),
+            CertificateStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

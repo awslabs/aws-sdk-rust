@@ -102,7 +102,7 @@ impl ::std::fmt::Display for WaypointOptimizationSequencingObjective {
         match self {
             WaypointOptimizationSequencingObjective::FastestRoute => write!(f, "FastestRoute"),
             WaypointOptimizationSequencingObjective::ShortestRoute => write!(f, "ShortestRoute"),
-            WaypointOptimizationSequencingObjective::Unknown(value) => write!(f, "{}", value),
+            WaypointOptimizationSequencingObjective::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

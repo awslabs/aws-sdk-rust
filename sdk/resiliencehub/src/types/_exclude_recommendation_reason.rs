@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ExcludeRecommendationReason {
             ExcludeRecommendationReason::AlreadyImplemented => write!(f, "AlreadyImplemented"),
             ExcludeRecommendationReason::ComplexityOfImplementation => write!(f, "ComplexityOfImplementation"),
             ExcludeRecommendationReason::NotRelevant => write!(f, "NotRelevant"),
-            ExcludeRecommendationReason::Unknown(value) => write!(f, "{}", value),
+            ExcludeRecommendationReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

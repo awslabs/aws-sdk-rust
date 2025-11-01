@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RightsizingType {
         match self {
             RightsizingType::Modify => write!(f, "MODIFY"),
             RightsizingType::Terminate => write!(f, "TERMINATE"),
-            RightsizingType::Unknown(value) => write!(f, "{}", value),
+            RightsizingType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

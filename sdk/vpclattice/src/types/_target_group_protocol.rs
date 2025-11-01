@@ -108,7 +108,7 @@ impl ::std::fmt::Display for TargetGroupProtocol {
             TargetGroupProtocol::Http => write!(f, "HTTP"),
             TargetGroupProtocol::Https => write!(f, "HTTPS"),
             TargetGroupProtocol::Tcp => write!(f, "TCP"),
-            TargetGroupProtocol::Unknown(value) => write!(f, "{}", value),
+            TargetGroupProtocol::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

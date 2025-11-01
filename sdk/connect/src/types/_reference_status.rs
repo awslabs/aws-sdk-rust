@@ -126,7 +126,7 @@ impl ::std::fmt::Display for ReferenceStatus {
             ReferenceStatus::Failed => write!(f, "FAILED"),
             ReferenceStatus::Processing => write!(f, "PROCESSING"),
             ReferenceStatus::Rejected => write!(f, "REJECTED"),
-            ReferenceStatus::Unknown(value) => write!(f, "{}", value),
+            ReferenceStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -140,7 +140,7 @@ impl ::std::fmt::Display for AnomalyDetectorStatusCode {
             AnomalyDetectorStatusCode::DeletionFailed => write!(f, "DELETION_FAILED"),
             AnomalyDetectorStatusCode::UpdateFailed => write!(f, "UPDATE_FAILED"),
             AnomalyDetectorStatusCode::Updating => write!(f, "UPDATING"),
-            AnomalyDetectorStatusCode::Unknown(value) => write!(f, "{}", value),
+            AnomalyDetectorStatusCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -120,7 +120,7 @@ impl ::std::fmt::Display for Type {
             Type::Integer => write!(f, "integer"),
             Type::Number => write!(f, "number"),
             Type::String => write!(f, "string"),
-            Type::Unknown(value) => write!(f, "{}", value),
+            Type::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

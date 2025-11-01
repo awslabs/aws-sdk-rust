@@ -102,7 +102,7 @@ impl ::std::fmt::Display for LatestAppstreamAgentVersion {
         match self {
             LatestAppstreamAgentVersion::False => write!(f, "FALSE"),
             LatestAppstreamAgentVersion::True => write!(f, "TRUE"),
-            LatestAppstreamAgentVersion::Unknown(value) => write!(f, "{}", value),
+            LatestAppstreamAgentVersion::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

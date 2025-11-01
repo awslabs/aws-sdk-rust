@@ -114,7 +114,7 @@ impl ::std::fmt::Display for GroupingStatus {
             GroupingStatus::InProgress => write!(f, "IN_PROGRESS"),
             GroupingStatus::Skipped => write!(f, "SKIPPED"),
             GroupingStatus::Success => write!(f, "SUCCESS"),
-            GroupingStatus::Unknown(value) => write!(f, "{}", value),
+            GroupingStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

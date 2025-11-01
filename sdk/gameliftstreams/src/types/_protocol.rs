@@ -96,7 +96,7 @@ impl ::std::fmt::Display for Protocol {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             Protocol::Webrtc => write!(f, "WebRTC"),
-            Protocol::Unknown(value) => write!(f, "{}", value),
+            Protocol::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

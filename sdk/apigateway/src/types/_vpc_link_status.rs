@@ -114,7 +114,7 @@ impl ::std::fmt::Display for VpcLinkStatus {
             VpcLinkStatus::Deleting => write!(f, "DELETING"),
             VpcLinkStatus::Failed => write!(f, "FAILED"),
             VpcLinkStatus::Pending => write!(f, "PENDING"),
-            VpcLinkStatus::Unknown(value) => write!(f, "{}", value),
+            VpcLinkStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for H264ScanTypeConversionMode {
         match self {
             H264ScanTypeConversionMode::Interlaced => write!(f, "INTERLACED"),
             H264ScanTypeConversionMode::InterlacedOptimize => write!(f, "INTERLACED_OPTIMIZE"),
-            H264ScanTypeConversionMode::Unknown(value) => write!(f, "{}", value),
+            H264ScanTypeConversionMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ValidationMode {
         match self {
             ValidationMode::Off => write!(f, "OFF"),
             ValidationMode::Strict => write!(f, "STRICT"),
-            ValidationMode::Unknown(value) => write!(f, "{}", value),
+            ValidationMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

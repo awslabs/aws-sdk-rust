@@ -108,7 +108,7 @@ impl ::std::fmt::Display for FailureReason {
             FailureReason::Other => write!(f, "OTHER"),
             FailureReason::RequestTimedOut => write!(f, "REQUEST_TIMED_OUT"),
             FailureReason::UnsupportedAlgorithm => write!(f, "UNSUPPORTED_ALGORITHM"),
-            FailureReason::Unknown(value) => write!(f, "{}", value),
+            FailureReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

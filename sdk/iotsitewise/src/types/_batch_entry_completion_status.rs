@@ -102,7 +102,7 @@ impl ::std::fmt::Display for BatchEntryCompletionStatus {
         match self {
             BatchEntryCompletionStatus::Error => write!(f, "ERROR"),
             BatchEntryCompletionStatus::Success => write!(f, "SUCCESS"),
-            BatchEntryCompletionStatus::Unknown(value) => write!(f, "{}", value),
+            BatchEntryCompletionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

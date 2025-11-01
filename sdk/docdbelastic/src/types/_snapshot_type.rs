@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SnapshotType {
         match self {
             SnapshotType::Automated => write!(f, "AUTOMATED"),
             SnapshotType::Manual => write!(f, "MANUAL"),
-            SnapshotType::Unknown(value) => write!(f, "{}", value),
+            SnapshotType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

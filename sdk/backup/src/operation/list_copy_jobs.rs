@@ -177,6 +177,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListCopyJobs
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::list_copy_jobs::ListCopyJobsInput,
                 output: &mut ::std::string::String,

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for UserProfileStatus {
             UserProfileStatus::Assigned => write!(f, "ASSIGNED"),
             UserProfileStatus::Deactivated => write!(f, "DEACTIVATED"),
             UserProfileStatus::NotAssigned => write!(f, "NOT_ASSIGNED"),
-            UserProfileStatus::Unknown(value) => write!(f, "{}", value),
+            UserProfileStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

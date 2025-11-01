@@ -57,8 +57,7 @@ pub fn de_apply_security_groups_to_client_vpn_target_network(
     let start_el = decoder.start_el();
     if !(start_el.matches("ApplySecurityGroupsToClientVpnTargetNetworkResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected ApplySecurityGroupsToClientVpnTargetNetworkResponse got {:?}",
-            start_el
+            "invalid root, expected ApplySecurityGroupsToClientVpnTargetNetworkResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

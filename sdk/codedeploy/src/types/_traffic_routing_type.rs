@@ -108,7 +108,7 @@ impl ::std::fmt::Display for TrafficRoutingType {
             TrafficRoutingType::AllAtOnce => write!(f, "AllAtOnce"),
             TrafficRoutingType::TimeBasedCanary => write!(f, "TimeBasedCanary"),
             TrafficRoutingType::TimeBasedLinear => write!(f, "TimeBasedLinear"),
-            TrafficRoutingType::Unknown(value) => write!(f, "{}", value),
+            TrafficRoutingType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for GenderType {
         match self {
             GenderType::Female => write!(f, "Female"),
             GenderType::Male => write!(f, "Male"),
-            GenderType::Unknown(value) => write!(f, "{}", value),
+            GenderType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

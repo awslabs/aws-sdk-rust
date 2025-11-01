@@ -126,7 +126,7 @@ impl ::std::fmt::Display for AccessorNetworkType {
             AccessorNetworkType::EthereumMainnetAndGoerli => write!(f, "ETHEREUM_MAINNET_AND_GOERLI"),
             AccessorNetworkType::PolygonMainnet => write!(f, "POLYGON_MAINNET"),
             AccessorNetworkType::PolygonMumbai => write!(f, "POLYGON_MUMBAI"),
-            AccessorNetworkType::Unknown(value) => write!(f, "{}", value),
+            AccessorNetworkType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

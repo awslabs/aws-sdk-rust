@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ValidationExceptionReason {
             ValidationExceptionReason::FieldValidationFailed => write!(f, "FieldValidationFailed"),
             ValidationExceptionReason::Other => write!(f, "Other"),
             ValidationExceptionReason::UnknownOperation => write!(f, "UnknownOperation"),
-            ValidationExceptionReason::Unknown(value) => write!(f, "{}", value),
+            ValidationExceptionReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

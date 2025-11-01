@@ -69,8 +69,7 @@ pub fn de_get_multi_region_access_point_routes(
     let start_el = decoder.start_el();
     if !start_el.matches("GetMultiRegionAccessPointRoutesResult") {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "encountered invalid XML root: expected GetMultiRegionAccessPointRoutesResult but got {:?}. This is likely a bug in the SDK.",
-            start_el
+            "encountered invalid XML root: expected GetMultiRegionAccessPointRoutesResult but got {start_el:?}. This is likely a bug in the SDK."
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

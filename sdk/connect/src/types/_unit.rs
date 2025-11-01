@@ -108,7 +108,7 @@ impl ::std::fmt::Display for Unit {
             Unit::Count => write!(f, "COUNT"),
             Unit::Percent => write!(f, "PERCENT"),
             Unit::Seconds => write!(f, "SECONDS"),
-            Unit::Unknown(value) => write!(f, "{}", value),
+            Unit::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

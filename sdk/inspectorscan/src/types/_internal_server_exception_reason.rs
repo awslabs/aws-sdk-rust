@@ -102,7 +102,7 @@ impl ::std::fmt::Display for InternalServerExceptionReason {
         match self {
             InternalServerExceptionReason::FailedToGenerateSbom => write!(f, "FAILED_TO_GENERATE_SBOM"),
             InternalServerExceptionReason::Other => write!(f, "OTHER"),
-            InternalServerExceptionReason::Unknown(value) => write!(f, "{}", value),
+            InternalServerExceptionReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

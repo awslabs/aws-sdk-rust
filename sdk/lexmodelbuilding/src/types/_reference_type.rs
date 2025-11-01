@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ReferenceType {
             ReferenceType::Botalias => write!(f, "BotAlias"),
             ReferenceType::Botchannel => write!(f, "BotChannel"),
             ReferenceType::Intent => write!(f, "Intent"),
-            ReferenceType::Unknown(value) => write!(f, "{}", value),
+            ReferenceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

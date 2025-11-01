@@ -96,7 +96,7 @@ impl ::std::fmt::Display for RerankQueryContentType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             RerankQueryContentType::Text => write!(f, "TEXT"),
-            RerankQueryContentType::Unknown(value) => write!(f, "{}", value),
+            RerankQueryContentType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

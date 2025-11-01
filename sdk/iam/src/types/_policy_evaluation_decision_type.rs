@@ -108,7 +108,7 @@ impl ::std::fmt::Display for PolicyEvaluationDecisionType {
             PolicyEvaluationDecisionType::Allowed => write!(f, "allowed"),
             PolicyEvaluationDecisionType::ExplicitDeny => write!(f, "explicitDeny"),
             PolicyEvaluationDecisionType::ImplicitDeny => write!(f, "implicitDeny"),
-            PolicyEvaluationDecisionType::Unknown(value) => write!(f, "{}", value),
+            PolicyEvaluationDecisionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

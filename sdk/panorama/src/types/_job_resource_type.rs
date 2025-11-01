@@ -96,7 +96,7 @@ impl ::std::fmt::Display for JobResourceType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             JobResourceType::Package => write!(f, "PACKAGE"),
-            JobResourceType::Unknown(value) => write!(f, "{}", value),
+            JobResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

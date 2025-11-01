@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DefaultAction {
         match self {
             DefaultAction::Allow => write!(f, "ALLOW"),
             DefaultAction::Deny => write!(f, "DENY"),
-            DefaultAction::Unknown(value) => write!(f, "{}", value),
+            DefaultAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

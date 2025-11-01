@@ -102,7 +102,7 @@ impl ::std::fmt::Display for BrowserNetworkMode {
         match self {
             BrowserNetworkMode::Public => write!(f, "PUBLIC"),
             BrowserNetworkMode::Vpc => write!(f, "VPC"),
-            BrowserNetworkMode::Unknown(value) => write!(f, "{}", value),
+            BrowserNetworkMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

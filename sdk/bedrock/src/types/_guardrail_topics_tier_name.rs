@@ -100,7 +100,7 @@ impl ::std::fmt::Display for GuardrailTopicsTierName {
         match self {
             GuardrailTopicsTierName::Classic => write!(f, "CLASSIC"),
             GuardrailTopicsTierName::Standard => write!(f, "STANDARD"),
-            GuardrailTopicsTierName::Unknown(value) => write!(f, "{}", value),
+            GuardrailTopicsTierName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

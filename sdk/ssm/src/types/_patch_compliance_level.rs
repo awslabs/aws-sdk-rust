@@ -126,7 +126,7 @@ impl ::std::fmt::Display for PatchComplianceLevel {
             PatchComplianceLevel::Low => write!(f, "LOW"),
             PatchComplianceLevel::Medium => write!(f, "MEDIUM"),
             PatchComplianceLevel::Unspecified => write!(f, "UNSPECIFIED"),
-            PatchComplianceLevel::Unknown(value) => write!(f, "{}", value),
+            PatchComplianceLevel::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

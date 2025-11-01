@@ -102,7 +102,7 @@ impl ::std::fmt::Display for InternetEventType {
         match self {
             InternetEventType::Availability => write!(f, "AVAILABILITY"),
             InternetEventType::Performance => write!(f, "PERFORMANCE"),
-            InternetEventType::Unknown(value) => write!(f, "{}", value),
+            InternetEventType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

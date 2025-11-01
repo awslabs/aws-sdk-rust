@@ -114,7 +114,7 @@ impl ::std::fmt::Display for TypeStatus {
             TypeStatus::Creating => write!(f, "CREATING"),
             TypeStatus::Deleting => write!(f, "DELETING"),
             TypeStatus::Restoring => write!(f, "RESTORING"),
-            TypeStatus::Unknown(value) => write!(f, "{}", value),
+            TypeStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

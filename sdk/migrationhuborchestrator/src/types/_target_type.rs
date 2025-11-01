@@ -108,7 +108,7 @@ impl ::std::fmt::Display for TargetType {
             TargetType::All => write!(f, "ALL"),
             TargetType::None => write!(f, "NONE"),
             TargetType::Single => write!(f, "SINGLE"),
-            TargetType::Unknown(value) => write!(f, "{}", value),
+            TargetType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for InstanceStatus {
             InstanceStatus::InUse => write!(f, "IN_USE"),
             InstanceStatus::NotAvailable => write!(f, "NOT_AVAILABLE"),
             InstanceStatus::Preparing => write!(f, "PREPARING"),
-            InstanceStatus::Unknown(value) => write!(f, "{}", value),
+            InstanceStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

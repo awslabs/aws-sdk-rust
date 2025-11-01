@@ -96,7 +96,7 @@ impl ::std::fmt::Display for TimeUnit {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             TimeUnit::Hours => write!(f, "HOURS"),
-            TimeUnit::Unknown(value) => write!(f, "{}", value),
+            TimeUnit::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

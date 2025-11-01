@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AlarmState {
             AlarmState::Alarm => write!(f, "ALARM"),
             AlarmState::InsufficientData => write!(f, "INSUFFICIENT_DATA"),
             AlarmState::Ok => write!(f, "OK"),
-            AlarmState::Unknown(value) => write!(f, "{}", value),
+            AlarmState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -96,7 +96,7 @@ impl ::std::fmt::Display for DataZoneEntityType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             DataZoneEntityType::DomainUnit => write!(f, "DOMAIN_UNIT"),
-            DataZoneEntityType::Unknown(value) => write!(f, "{}", value),
+            DataZoneEntityType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

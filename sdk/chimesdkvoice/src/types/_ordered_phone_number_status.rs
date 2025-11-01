@@ -108,7 +108,7 @@ impl ::std::fmt::Display for OrderedPhoneNumberStatus {
             OrderedPhoneNumberStatus::Acquired => write!(f, "Acquired"),
             OrderedPhoneNumberStatus::Failed => write!(f, "Failed"),
             OrderedPhoneNumberStatus::Processing => write!(f, "Processing"),
-            OrderedPhoneNumberStatus::Unknown(value) => write!(f, "{}", value),
+            OrderedPhoneNumberStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

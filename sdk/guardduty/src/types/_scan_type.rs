@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ScanType {
         match self {
             ScanType::GuarddutyInitiated => write!(f, "GUARDDUTY_INITIATED"),
             ScanType::OnDemand => write!(f, "ON_DEMAND"),
-            ScanType::Unknown(value) => write!(f, "{}", value),
+            ScanType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

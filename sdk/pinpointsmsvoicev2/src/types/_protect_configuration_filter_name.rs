@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ProtectConfigurationFilterName {
         match self {
             ProtectConfigurationFilterName::AccountDefault => write!(f, "account-default"),
             ProtectConfigurationFilterName::DeletionProtectionEnabled => write!(f, "deletion-protection-enabled"),
-            ProtectConfigurationFilterName::Unknown(value) => write!(f, "{}", value),
+            ProtectConfigurationFilterName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

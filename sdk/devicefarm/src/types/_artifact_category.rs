@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ArtifactCategory {
             ArtifactCategory::File => write!(f, "FILE"),
             ArtifactCategory::Log => write!(f, "LOG"),
             ArtifactCategory::Screenshot => write!(f, "SCREENSHOT"),
-            ArtifactCategory::Unknown(value) => write!(f, "{}", value),
+            ArtifactCategory::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

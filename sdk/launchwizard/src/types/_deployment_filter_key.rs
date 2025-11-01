@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DeploymentFilterKey {
         match self {
             DeploymentFilterKey::DeploymentStatus => write!(f, "DEPLOYMENT_STATUS"),
             DeploymentFilterKey::WorkloadName => write!(f, "WORKLOAD_NAME"),
-            DeploymentFilterKey::Unknown(value) => write!(f, "{}", value),
+            DeploymentFilterKey::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

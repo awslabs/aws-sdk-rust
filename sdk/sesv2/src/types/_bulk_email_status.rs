@@ -189,7 +189,7 @@ impl ::std::fmt::Display for BulkEmailStatus {
             BulkEmailStatus::Success => write!(f, "SUCCESS"),
             BulkEmailStatus::TemplateNotFound => write!(f, "TEMPLATE_NOT_FOUND"),
             BulkEmailStatus::TransientFailure => write!(f, "TRANSIENT_FAILURE"),
-            BulkEmailStatus::Unknown(value) => write!(f, "{}", value),
+            BulkEmailStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -140,7 +140,7 @@ impl ::std::fmt::Display for DvbDashAccessibility {
             DvbDashAccessibility::Dvbdash5EducationalNotes => write!(f, "DVBDASH_5_EDUCATIONAL_NOTES"),
             DvbDashAccessibility::Dvbdash6MainProgram => write!(f, "DVBDASH_6_MAIN_PROGRAM"),
             DvbDashAccessibility::Dvbdash7CleanFeed => write!(f, "DVBDASH_7_CLEAN_FEED"),
-            DvbDashAccessibility::Unknown(value) => write!(f, "{}", value),
+            DvbDashAccessibility::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -147,7 +147,7 @@ impl ::std::fmt::Display for IpamPoolCidrState {
             IpamPoolCidrState::PendingImport => write!(f, "pending-import"),
             IpamPoolCidrState::PendingProvision => write!(f, "pending-provision"),
             IpamPoolCidrState::Provisioned => write!(f, "provisioned"),
-            IpamPoolCidrState::Unknown(value) => write!(f, "{}", value),
+            IpamPoolCidrState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

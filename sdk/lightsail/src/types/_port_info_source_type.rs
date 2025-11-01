@@ -114,7 +114,7 @@ impl ::std::fmt::Display for PortInfoSourceType {
             PortInfoSourceType::Default => write!(f, "DEFAULT"),
             PortInfoSourceType::Instance => write!(f, "INSTANCE"),
             PortInfoSourceType::None => write!(f, "NONE"),
-            PortInfoSourceType::Unknown(value) => write!(f, "{}", value),
+            PortInfoSourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

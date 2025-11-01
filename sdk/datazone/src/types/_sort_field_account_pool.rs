@@ -96,7 +96,7 @@ impl ::std::fmt::Display for SortFieldAccountPool {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             SortFieldAccountPool::Name => write!(f, "NAME"),
-            SortFieldAccountPool::Unknown(value) => write!(f, "{}", value),
+            SortFieldAccountPool::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

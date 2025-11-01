@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AutomationSubtype {
         match self {
             AutomationSubtype::AccessRequest => write!(f, "AccessRequest"),
             AutomationSubtype::ChangeRequest => write!(f, "ChangeRequest"),
-            AutomationSubtype::Unknown(value) => write!(f, "{}", value),
+            AutomationSubtype::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

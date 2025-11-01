@@ -108,7 +108,7 @@ impl ::std::fmt::Display for Status {
             Status::Active => write!(f, "ACTIVE"),
             Status::Expired => write!(f, "EXPIRED"),
             Status::Preparing => write!(f, "PREPARING"),
-            Status::Unknown(value) => write!(f, "{}", value),
+            Status::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

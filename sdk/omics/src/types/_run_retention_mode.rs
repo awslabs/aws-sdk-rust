@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RunRetentionMode {
         match self {
             RunRetentionMode::Remove => write!(f, "REMOVE"),
             RunRetentionMode::Retain => write!(f, "RETAIN"),
-            RunRetentionMode::Unknown(value) => write!(f, "{}", value),
+            RunRetentionMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

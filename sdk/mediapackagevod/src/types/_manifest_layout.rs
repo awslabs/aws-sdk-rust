@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ManifestLayout {
         match self {
             ManifestLayout::Compact => write!(f, "COMPACT"),
             ManifestLayout::Full => write!(f, "FULL"),
-            ManifestLayout::Unknown(value) => write!(f, "{}", value),
+            ManifestLayout::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for GroupingType {
         match self {
             GroupingType::Group => write!(f, "GROUP"),
             GroupingType::Ungroup => write!(f, "UNGROUP"),
-            GroupingType::Unknown(value) => write!(f, "{}", value),
+            GroupingType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

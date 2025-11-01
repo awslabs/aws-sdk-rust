@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TestGridSessionArtifactCategory {
         match self {
             TestGridSessionArtifactCategory::Log => write!(f, "LOG"),
             TestGridSessionArtifactCategory::Video => write!(f, "VIDEO"),
-            TestGridSessionArtifactCategory::Unknown(value) => write!(f, "{}", value),
+            TestGridSessionArtifactCategory::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

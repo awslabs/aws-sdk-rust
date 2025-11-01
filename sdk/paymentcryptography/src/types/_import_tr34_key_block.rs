@@ -10,9 +10,9 @@ pub struct ImportTr34KeyBlock {
     pub signing_key_certificate: ::std::string::String,
     /// <p>The import token that initiates key import using the asymmetric TR-34 key exchange method into Amazon Web Services Payment Cryptography. It expires after 30 days. You can use the same import token to import multiple keys to the same service account.</p>
     pub import_token: ::std::string::String,
-    /// Key Identifier used for unwrapping the import key
+    /// <p>Key Identifier used for unwrapping the import key</p>
     pub wrapping_key_identifier: ::std::option::Option<::std::string::String>,
-    /// Key Identifier used for unwrapping the import key
+    /// <p>The certificate used to wrap the TR-34 key block.</p>
     pub wrapping_key_certificate: ::std::option::Option<::std::string::String>,
     /// <p>The TR-34 wrapped key block to import.</p>
     pub wrapped_key_block: ::std::string::String,
@@ -37,11 +37,11 @@ impl ImportTr34KeyBlock {
         use std::ops::Deref;
         self.import_token.deref()
     }
-    /// Key Identifier used for unwrapping the import key
+    /// <p>Key Identifier used for unwrapping the import key</p>
     pub fn wrapping_key_identifier(&self) -> ::std::option::Option<&str> {
         self.wrapping_key_identifier.as_deref()
     }
-    /// Key Identifier used for unwrapping the import key
+    /// <p>The certificate used to wrap the TR-34 key block.</p>
     pub fn wrapping_key_certificate(&self) -> ::std::option::Option<&str> {
         self.wrapping_key_certificate.as_deref()
     }
@@ -141,31 +141,31 @@ impl ImportTr34KeyBlockBuilder {
     pub fn get_import_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.import_token
     }
-    /// Key Identifier used for unwrapping the import key
+    /// <p>Key Identifier used for unwrapping the import key</p>
     pub fn wrapping_key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.wrapping_key_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// Key Identifier used for unwrapping the import key
+    /// <p>Key Identifier used for unwrapping the import key</p>
     pub fn set_wrapping_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.wrapping_key_identifier = input;
         self
     }
-    /// Key Identifier used for unwrapping the import key
+    /// <p>Key Identifier used for unwrapping the import key</p>
     pub fn get_wrapping_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.wrapping_key_identifier
     }
-    /// Key Identifier used for unwrapping the import key
+    /// <p>The certificate used to wrap the TR-34 key block.</p>
     pub fn wrapping_key_certificate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.wrapping_key_certificate = ::std::option::Option::Some(input.into());
         self
     }
-    /// Key Identifier used for unwrapping the import key
+    /// <p>The certificate used to wrap the TR-34 key block.</p>
     pub fn set_wrapping_key_certificate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.wrapping_key_certificate = input;
         self
     }
-    /// Key Identifier used for unwrapping the import key
+    /// <p>The certificate used to wrap the TR-34 key block.</p>
     pub fn get_wrapping_key_certificate(&self) -> &::std::option::Option<::std::string::String> {
         &self.wrapping_key_certificate
     }

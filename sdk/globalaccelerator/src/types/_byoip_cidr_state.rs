@@ -168,7 +168,7 @@ impl ::std::fmt::Display for ByoipCidrState {
             ByoipCidrState::PendingProvisioning => write!(f, "PENDING_PROVISIONING"),
             ByoipCidrState::PendingWithdrawing => write!(f, "PENDING_WITHDRAWING"),
             ByoipCidrState::Ready => write!(f, "READY"),
-            ByoipCidrState::Unknown(value) => write!(f, "{}", value),
+            ByoipCidrState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -110,7 +110,7 @@ impl ::std::fmt::Display for NoiseFilterPostTemporalSharpeningStrength {
             NoiseFilterPostTemporalSharpeningStrength::High => write!(f, "HIGH"),
             NoiseFilterPostTemporalSharpeningStrength::Low => write!(f, "LOW"),
             NoiseFilterPostTemporalSharpeningStrength::Medium => write!(f, "MEDIUM"),
-            NoiseFilterPostTemporalSharpeningStrength::Unknown(value) => write!(f, "{}", value),
+            NoiseFilterPostTemporalSharpeningStrength::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

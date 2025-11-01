@@ -108,7 +108,7 @@ impl ::std::fmt::Display for Criticality {
             Criticality::Preferred => write!(f, "PREFERRED"),
             Criticality::Removed => write!(f, "REMOVED"),
             Criticality::Required => write!(f, "REQUIRED"),
-            Criticality::Unknown(value) => write!(f, "{}", value),
+            Criticality::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

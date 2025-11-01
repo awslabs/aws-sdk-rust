@@ -132,7 +132,7 @@ impl ::std::fmt::Display for IntegrationStatus {
             IntegrationStatus::Modifying => write!(f, "MODIFYING"),
             IntegrationStatus::NeedsAttention => write!(f, "NEEDS_ATTENTION"),
             IntegrationStatus::Syncing => write!(f, "SYNCING"),
-            IntegrationStatus::Unknown(value) => write!(f, "{}", value),
+            IntegrationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

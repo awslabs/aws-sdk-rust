@@ -19,7 +19,7 @@ impl ::std::fmt::Display for ChannelMaxLimitExceededException {
         ::std::write!(f, "ChannelMaxLimitExceededException")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
             {
-                ::std::write!(f, ": {}", inner_1)?;
+                ::std::write!(f, ": {inner_1}")?;
             }
         }
         Ok(())

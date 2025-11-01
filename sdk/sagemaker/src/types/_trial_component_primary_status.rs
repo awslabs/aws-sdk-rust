@@ -120,7 +120,7 @@ impl ::std::fmt::Display for TrialComponentPrimaryStatus {
             TrialComponentPrimaryStatus::InProgress => write!(f, "InProgress"),
             TrialComponentPrimaryStatus::Stopped => write!(f, "Stopped"),
             TrialComponentPrimaryStatus::Stopping => write!(f, "Stopping"),
-            TrialComponentPrimaryStatus::Unknown(value) => write!(f, "{}", value),
+            TrialComponentPrimaryStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

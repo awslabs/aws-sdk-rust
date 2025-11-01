@@ -114,7 +114,7 @@ impl ::std::fmt::Display for QueryStateInput {
             QueryStateInput::Cancelling => write!(f, "CANCELLING"),
             QueryStateInput::Running => write!(f, "RUNNING"),
             QueryStateInput::Waiting => write!(f, "WAITING"),
-            QueryStateInput::Unknown(value) => write!(f, "{}", value),
+            QueryStateInput::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for Action {
             Action::DeepLink => write!(f, "DEEP_LINK"),
             Action::OpenApp => write!(f, "OPEN_APP"),
             Action::Url => write!(f, "URL"),
-            Action::Unknown(value) => write!(f, "{}", value),
+            Action::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

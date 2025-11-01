@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TopicUserExperienceVersion {
         match self {
             TopicUserExperienceVersion::Legacy => write!(f, "LEGACY"),
             TopicUserExperienceVersion::NewReaderExperience => write!(f, "NEW_READER_EXPERIENCE"),
-            TopicUserExperienceVersion::Unknown(value) => write!(f, "{}", value),
+            TopicUserExperienceVersion::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

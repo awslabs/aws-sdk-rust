@@ -96,7 +96,7 @@ impl ::std::fmt::Display for SearchContactsTimeRangeConditionType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             SearchContactsTimeRangeConditionType::NotExists => write!(f, "NOT_EXISTS"),
-            SearchContactsTimeRangeConditionType::Unknown(value) => write!(f, "{}", value),
+            SearchContactsTimeRangeConditionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for HlsAudioOnlyHeader {
         match self {
             HlsAudioOnlyHeader::Exclude => write!(f, "EXCLUDE"),
             HlsAudioOnlyHeader::Include => write!(f, "INCLUDE"),
-            HlsAudioOnlyHeader::Unknown(value) => write!(f, "{}", value),
+            HlsAudioOnlyHeader::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ReferenceLineLabelHorizontalPosition {
             ReferenceLineLabelHorizontalPosition::Center => write!(f, "CENTER"),
             ReferenceLineLabelHorizontalPosition::Left => write!(f, "LEFT"),
             ReferenceLineLabelHorizontalPosition::Right => write!(f, "RIGHT"),
-            ReferenceLineLabelHorizontalPosition::Unknown(value) => write!(f, "{}", value),
+            ReferenceLineLabelHorizontalPosition::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MonitorCapability {
         match self {
             MonitorCapability::Barge => write!(f, "BARGE"),
             MonitorCapability::SilentMonitor => write!(f, "SILENT_MONITOR"),
-            MonitorCapability::Unknown(value) => write!(f, "{}", value),
+            MonitorCapability::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

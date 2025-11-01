@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ManagedStatus {
             ManagedStatus::All => write!(f, "All"),
             ManagedStatus::Managed => write!(f, "Managed"),
             ManagedStatus::Unmanaged => write!(f, "Unmanaged"),
-            ManagedStatus::Unknown(value) => write!(f, "{}", value),
+            ManagedStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

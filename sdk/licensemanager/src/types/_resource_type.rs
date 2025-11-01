@@ -120,7 +120,7 @@ impl ::std::fmt::Display for ResourceType {
             ResourceType::Ec2Instance => write!(f, "EC2_INSTANCE"),
             ResourceType::Rds => write!(f, "RDS"),
             ResourceType::SystemsManagerManagedInstance => write!(f, "SYSTEMS_MANAGER_MANAGED_INSTANCE"),
-            ResourceType::Unknown(value) => write!(f, "{}", value),
+            ResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

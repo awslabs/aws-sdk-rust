@@ -102,7 +102,7 @@ impl ::std::fmt::Display for InstanceAction {
         match self {
             InstanceAction::KeepAlive => write!(f, "KEEP_ALIVE"),
             InstanceAction::Terminate => write!(f, "TERMINATE"),
-            InstanceAction::Unknown(value) => write!(f, "{}", value),
+            InstanceAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

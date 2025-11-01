@@ -132,7 +132,7 @@ impl ::std::fmt::Display for EnvironmentStatus {
             EnvironmentStatus::Ready => write!(f, "ready"),
             EnvironmentStatus::Stopped => write!(f, "stopped"),
             EnvironmentStatus::Stopping => write!(f, "stopping"),
-            EnvironmentStatus::Unknown(value) => write!(f, "{}", value),
+            EnvironmentStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

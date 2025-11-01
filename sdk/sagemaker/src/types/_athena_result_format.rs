@@ -120,7 +120,7 @@ impl ::std::fmt::Display for AthenaResultFormat {
             AthenaResultFormat::Orc => write!(f, "ORC"),
             AthenaResultFormat::Parquet => write!(f, "PARQUET"),
             AthenaResultFormat::Textfile => write!(f, "TEXTFILE"),
-            AthenaResultFormat::Unknown(value) => write!(f, "{}", value),
+            AthenaResultFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

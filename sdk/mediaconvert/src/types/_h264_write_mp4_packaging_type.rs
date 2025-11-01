@@ -102,7 +102,7 @@ impl ::std::fmt::Display for H264WriteMp4PackagingType {
         match self {
             H264WriteMp4PackagingType::Avc1 => write!(f, "AVC1"),
             H264WriteMp4PackagingType::Avc3 => write!(f, "AVC3"),
-            H264WriteMp4PackagingType::Unknown(value) => write!(f, "{}", value),
+            H264WriteMp4PackagingType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

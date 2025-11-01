@@ -108,7 +108,7 @@ impl ::std::fmt::Display for FileFormat {
             FileFormat::Json => write!(f, "JSON"),
             FileFormat::NotUsed => write!(f, "NOT_USED"),
             FileFormat::Xml => write!(f, "XML"),
-            FileFormat::Unknown(value) => write!(f, "{}", value),
+            FileFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -96,7 +96,7 @@ impl ::std::fmt::Display for SlaType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             SlaType::CaseField => write!(f, "CaseField"),
-            SlaType::Unknown(value) => write!(f, "{}", value),
+            SlaType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

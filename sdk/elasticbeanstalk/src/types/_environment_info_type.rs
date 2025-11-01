@@ -102,7 +102,7 @@ impl ::std::fmt::Display for EnvironmentInfoType {
         match self {
             EnvironmentInfoType::Bundle => write!(f, "bundle"),
             EnvironmentInfoType::Tail => write!(f, "tail"),
-            EnvironmentInfoType::Unknown(value) => write!(f, "{}", value),
+            EnvironmentInfoType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

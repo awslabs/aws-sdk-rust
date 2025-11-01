@@ -102,7 +102,7 @@ impl ::std::fmt::Display for UpdateStatus {
         match self {
             UpdateStatus::Ready => write!(f, "READY"),
             UpdateStatus::Updating => write!(f, "UPDATING"),
-            UpdateStatus::Unknown(value) => write!(f, "{}", value),
+            UpdateStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DkimSigningKeyLength {
         match self {
             DkimSigningKeyLength::Rsa1024Bit => write!(f, "RSA_1024_BIT"),
             DkimSigningKeyLength::Rsa2048Bit => write!(f, "RSA_2048_BIT"),
-            DkimSigningKeyLength::Unknown(value) => write!(f, "{}", value),
+            DkimSigningKeyLength::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

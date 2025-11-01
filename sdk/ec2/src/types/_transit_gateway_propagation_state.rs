@@ -114,7 +114,7 @@ impl ::std::fmt::Display for TransitGatewayPropagationState {
             TransitGatewayPropagationState::Disabling => write!(f, "disabling"),
             TransitGatewayPropagationState::Enabled => write!(f, "enabled"),
             TransitGatewayPropagationState::Enabling => write!(f, "enabling"),
-            TransitGatewayPropagationState::Unknown(value) => write!(f, "{}", value),
+            TransitGatewayPropagationState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

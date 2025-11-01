@@ -108,7 +108,7 @@ impl ::std::fmt::Display for IssueSubEntity {
             IssueSubEntity::Attachments => write!(f, "ATTACHMENTS"),
             IssueSubEntity::Comments => write!(f, "COMMENTS"),
             IssueSubEntity::Worklogs => write!(f, "WORKLOGS"),
-            IssueSubEntity::Unknown(value) => write!(f, "{}", value),
+            IssueSubEntity::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -126,7 +126,7 @@ impl ::std::fmt::Display for InstanceState {
             InstanceState::Deleted => write!(f, "Deleted"),
             InstanceState::Deleting => write!(f, "Deleting"),
             InstanceState::Initializing => write!(f, "Initializing"),
-            InstanceState::Unknown(value) => write!(f, "{}", value),
+            InstanceState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

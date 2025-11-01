@@ -120,7 +120,7 @@ impl ::std::fmt::Display for OperatorType {
             OperatorType::GreaterThanOrEqual => write!(f, "GE"),
             OperatorType::LessThanOrEqual => write!(f, "LE"),
             OperatorType::ReferenceEqual => write!(f, "REF_EQ"),
-            OperatorType::Unknown(value) => write!(f, "{}", value),
+            OperatorType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for MediaEncoding {
             MediaEncoding::Flac => write!(f, "flac"),
             MediaEncoding::OggOpus => write!(f, "ogg-opus"),
             MediaEncoding::Pcm => write!(f, "pcm"),
-            MediaEncoding::Unknown(value) => write!(f, "{}", value),
+            MediaEncoding::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for PlaylistType {
             PlaylistType::Event => write!(f, "EVENT"),
             PlaylistType::None => write!(f, "NONE"),
             PlaylistType::Vod => write!(f, "VOD"),
-            PlaylistType::Unknown(value) => write!(f, "{}", value),
+            PlaylistType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

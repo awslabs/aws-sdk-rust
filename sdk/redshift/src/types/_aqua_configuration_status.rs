@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AquaConfigurationStatus {
             AquaConfigurationStatus::Auto => write!(f, "auto"),
             AquaConfigurationStatus::Disabled => write!(f, "disabled"),
             AquaConfigurationStatus::Enabled => write!(f, "enabled"),
-            AquaConfigurationStatus::Unknown(value) => write!(f, "{}", value),
+            AquaConfigurationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

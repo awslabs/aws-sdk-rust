@@ -132,7 +132,7 @@ impl ::std::fmt::Display for MediaPipelineStatus {
             MediaPipelineStatus::Paused => write!(f, "Paused"),
             MediaPipelineStatus::Stopped => write!(f, "Stopped"),
             MediaPipelineStatus::Stopping => write!(f, "Stopping"),
-            MediaPipelineStatus::Unknown(value) => write!(f, "{}", value),
+            MediaPipelineStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

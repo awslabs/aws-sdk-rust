@@ -120,7 +120,7 @@ impl ::std::fmt::Display for GroupFilterName {
             GroupFilterName::DisplayName => write!(f, "display-name"),
             GroupFilterName::Owner => write!(f, "owner"),
             GroupFilterName::ResourceType => write!(f, "resource-type"),
-            GroupFilterName::Unknown(value) => write!(f, "{}", value),
+            GroupFilterName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

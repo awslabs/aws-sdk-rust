@@ -114,7 +114,7 @@ impl ::std::fmt::Display for NameServersUpdateStateCode {
             NameServersUpdateStateCode::Pending => write!(f, "PENDING"),
             NameServersUpdateStateCode::Started => write!(f, "STARTED"),
             NameServersUpdateStateCode::Succeeded => write!(f, "SUCCEEDED"),
-            NameServersUpdateStateCode::Unknown(value) => write!(f, "{}", value),
+            NameServersUpdateStateCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

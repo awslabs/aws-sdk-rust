@@ -114,7 +114,7 @@ impl ::std::fmt::Display for HudiTargetCompressionType {
             HudiTargetCompressionType::Lzo => write!(f, "lzo"),
             HudiTargetCompressionType::Snappy => write!(f, "snappy"),
             HudiTargetCompressionType::Uncompressed => write!(f, "uncompressed"),
-            HudiTargetCompressionType::Unknown(value) => write!(f, "{}", value),
+            HudiTargetCompressionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

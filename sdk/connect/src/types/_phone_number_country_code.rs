@@ -1524,7 +1524,7 @@ impl ::std::fmt::Display for PhoneNumberCountryCode {
             PhoneNumberCountryCode::Za => write!(f, "ZA"),
             PhoneNumberCountryCode::Zm => write!(f, "ZM"),
             PhoneNumberCountryCode::Zw => write!(f, "ZW"),
-            PhoneNumberCountryCode::Unknown(value) => write!(f, "{}", value),
+            PhoneNumberCountryCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

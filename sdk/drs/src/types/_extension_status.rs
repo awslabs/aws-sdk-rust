@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ExtensionStatus {
             ExtensionStatus::Extended => write!(f, "EXTENDED"),
             ExtensionStatus::ExtensionError => write!(f, "EXTENSION_ERROR"),
             ExtensionStatus::NotExtended => write!(f, "NOT_EXTENDED"),
-            ExtensionStatus::Unknown(value) => write!(f, "{}", value),
+            ExtensionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

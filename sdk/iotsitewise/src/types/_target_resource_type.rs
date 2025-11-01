@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TargetResourceType {
         match self {
             TargetResourceType::Asset => write!(f, "ASSET"),
             TargetResourceType::ComputationModel => write!(f, "COMPUTATION_MODEL"),
-            TargetResourceType::Unknown(value) => write!(f, "{}", value),
+            TargetResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

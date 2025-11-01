@@ -114,7 +114,7 @@ impl ::std::fmt::Display for SourceRevisionType {
             SourceRevisionType::ImageDigest => write!(f, "IMAGE_DIGEST"),
             SourceRevisionType::S3ObjectKey => write!(f, "S3_OBJECT_KEY"),
             SourceRevisionType::S3ObjectVersionId => write!(f, "S3_OBJECT_VERSION_ID"),
-            SourceRevisionType::Unknown(value) => write!(f, "{}", value),
+            SourceRevisionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

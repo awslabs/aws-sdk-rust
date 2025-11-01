@@ -102,7 +102,7 @@ impl ::std::fmt::Display for HorizontalTilePosition {
         match self {
             HorizontalTilePosition::Bottom => write!(f, "Bottom"),
             HorizontalTilePosition::Top => write!(f, "Top"),
-            HorizontalTilePosition::Unknown(value) => write!(f, "{}", value),
+            HorizontalTilePosition::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

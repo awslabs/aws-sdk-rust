@@ -108,7 +108,7 @@ impl ::std::fmt::Display for GeneratedAnswerStatus {
             GeneratedAnswerStatus::AnswerDowngrade => write!(f, "ANSWER_DOWNGRADE"),
             GeneratedAnswerStatus::AnswerGenerated => write!(f, "ANSWER_GENERATED"),
             GeneratedAnswerStatus::AnswerRetrieved => write!(f, "ANSWER_RETRIEVED"),
-            GeneratedAnswerStatus::Unknown(value) => write!(f, "{}", value),
+            GeneratedAnswerStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

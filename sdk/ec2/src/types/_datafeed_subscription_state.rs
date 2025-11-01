@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DatafeedSubscriptionState {
         match self {
             DatafeedSubscriptionState::Active => write!(f, "Active"),
             DatafeedSubscriptionState::Inactive => write!(f, "Inactive"),
-            DatafeedSubscriptionState::Unknown(value) => write!(f, "{}", value),
+            DatafeedSubscriptionState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

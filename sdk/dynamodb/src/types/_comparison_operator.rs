@@ -182,7 +182,7 @@ impl ::std::fmt::Display for ComparisonOperator {
             ComparisonOperator::NotContains => write!(f, "NOT_CONTAINS"),
             ComparisonOperator::NotNull => write!(f, "NOT_NULL"),
             ComparisonOperator::Null => write!(f, "NULL"),
-            ComparisonOperator::Unknown(value) => write!(f, "{}", value),
+            ComparisonOperator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

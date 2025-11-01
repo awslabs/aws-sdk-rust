@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ScheduleDisabledBy {
         match self {
             ScheduleDisabledBy::Service => write!(f, "SERVICE"),
             ScheduleDisabledBy::User => write!(f, "USER"),
-            ScheduleDisabledBy::Unknown(value) => write!(f, "{}", value),
+            ScheduleDisabledBy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -132,7 +132,7 @@ impl ::std::fmt::Display for TaskType {
             TaskType::Merge => write!(f, "Merge"),
             TaskType::Truncate => write!(f, "Truncate"),
             TaskType::Validate => write!(f, "Validate"),
-            TaskType::Unknown(value) => write!(f, "{}", value),
+            TaskType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

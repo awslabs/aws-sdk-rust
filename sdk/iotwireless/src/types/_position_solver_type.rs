@@ -96,7 +96,7 @@ impl ::std::fmt::Display for PositionSolverType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             PositionSolverType::Gnss => write!(f, "GNSS"),
-            PositionSolverType::Unknown(value) => write!(f, "{}", value),
+            PositionSolverType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

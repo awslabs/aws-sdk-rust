@@ -120,7 +120,7 @@ impl ::std::fmt::Display for SubnetState {
             SubnetState::FailedInsufficientCapacity => write!(f, "failed-insufficient-capacity"),
             SubnetState::Pending => write!(f, "pending"),
             SubnetState::Unavailable => write!(f, "unavailable"),
-            SubnetState::Unknown(value) => write!(f, "{}", value),
+            SubnetState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

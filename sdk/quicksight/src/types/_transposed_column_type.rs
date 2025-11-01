@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TransposedColumnType {
         match self {
             TransposedColumnType::RowHeaderColumn => write!(f, "ROW_HEADER_COLUMN"),
             TransposedColumnType::ValueColumn => write!(f, "VALUE_COLUMN"),
-            TransposedColumnType::Unknown(value) => write!(f, "{}", value),
+            TransposedColumnType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

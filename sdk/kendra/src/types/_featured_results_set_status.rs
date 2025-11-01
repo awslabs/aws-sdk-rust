@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FeaturedResultsSetStatus {
         match self {
             FeaturedResultsSetStatus::Active => write!(f, "ACTIVE"),
             FeaturedResultsSetStatus::Inactive => write!(f, "INACTIVE"),
-            FeaturedResultsSetStatus::Unknown(value) => write!(f, "{}", value),
+            FeaturedResultsSetStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

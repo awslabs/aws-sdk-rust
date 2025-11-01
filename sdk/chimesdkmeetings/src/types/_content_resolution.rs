@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ContentResolution {
             ContentResolution::Fhd => write!(f, "FHD"),
             ContentResolution::None => write!(f, "None"),
             ContentResolution::Uhd => write!(f, "UHD"),
-            ContentResolution::Unknown(value) => write!(f, "{}", value),
+            ContentResolution::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

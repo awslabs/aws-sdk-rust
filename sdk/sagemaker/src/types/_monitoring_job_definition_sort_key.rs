@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MonitoringJobDefinitionSortKey {
         match self {
             MonitoringJobDefinitionSortKey::CreationTime => write!(f, "CreationTime"),
             MonitoringJobDefinitionSortKey::Name => write!(f, "Name"),
-            MonitoringJobDefinitionSortKey::Unknown(value) => write!(f, "{}", value),
+            MonitoringJobDefinitionSortKey::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

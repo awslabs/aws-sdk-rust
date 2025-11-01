@@ -28,7 +28,7 @@ pub struct VideoSelector {
     pub sample_range: ::std::option::Option<crate::types::InputSampleRange>,
     /// Choose the video selector type for your HLS input. Use to specify which video rendition MediaConvert uses from your HLS input. To have MediaConvert automatically use the highest bitrate rendition from your HLS input: Keep the default value, Auto. To manually specify a rendition: Choose Stream. Then enter the unique stream number in the Streams array, starting at 1, corresponding to the stream order in the manifest.
     pub selector_type: ::std::option::Option<crate::types::VideoSelectorType>,
-    /// Specify a stream for MediaConvert to use from your HLS input. Enter an integer corresponding to the stream order in your HLS manifest.
+    /// Specify one or more video streams for MediaConvert to use from your HLS input. Enter an integer corresponding to the stream number, with the first stream in your HLS multivariant playlist starting at 1.For re-encoding workflows, MediaConvert uses the video stream that you select with the highest bitrate as the input.For video passthrough workflows, you specify whether to passthrough a single video stream or multiple video streams under Video selector source in the output video encoding settings.
     pub streams: ::std::option::Option<::std::vec::Vec<i32>>,
 }
 impl VideoSelector {
@@ -80,7 +80,7 @@ impl VideoSelector {
     pub fn selector_type(&self) -> ::std::option::Option<&crate::types::VideoSelectorType> {
         self.selector_type.as_ref()
     }
-    /// Specify a stream for MediaConvert to use from your HLS input. Enter an integer corresponding to the stream order in your HLS manifest.
+    /// Specify one or more video streams for MediaConvert to use from your HLS input. Enter an integer corresponding to the stream number, with the first stream in your HLS multivariant playlist starting at 1.For re-encoding workflows, MediaConvert uses the video stream that you select with the highest bitrate as the input.For video passthrough workflows, you specify whether to passthrough a single video stream or multiple video streams under Video selector source in the output video encoding settings.
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.streams.is_none()`.
     pub fn streams(&self) -> &[i32] {
@@ -285,19 +285,19 @@ impl VideoSelectorBuilder {
     ///
     /// To override the contents of this collection use [`set_streams`](Self::set_streams).
     ///
-    /// Specify a stream for MediaConvert to use from your HLS input. Enter an integer corresponding to the stream order in your HLS manifest.
+    /// Specify one or more video streams for MediaConvert to use from your HLS input. Enter an integer corresponding to the stream number, with the first stream in your HLS multivariant playlist starting at 1.For re-encoding workflows, MediaConvert uses the video stream that you select with the highest bitrate as the input.For video passthrough workflows, you specify whether to passthrough a single video stream or multiple video streams under Video selector source in the output video encoding settings.
     pub fn streams(mut self, input: i32) -> Self {
         let mut v = self.streams.unwrap_or_default();
         v.push(input);
         self.streams = ::std::option::Option::Some(v);
         self
     }
-    /// Specify a stream for MediaConvert to use from your HLS input. Enter an integer corresponding to the stream order in your HLS manifest.
+    /// Specify one or more video streams for MediaConvert to use from your HLS input. Enter an integer corresponding to the stream number, with the first stream in your HLS multivariant playlist starting at 1.For re-encoding workflows, MediaConvert uses the video stream that you select with the highest bitrate as the input.For video passthrough workflows, you specify whether to passthrough a single video stream or multiple video streams under Video selector source in the output video encoding settings.
     pub fn set_streams(mut self, input: ::std::option::Option<::std::vec::Vec<i32>>) -> Self {
         self.streams = input;
         self
     }
-    /// Specify a stream for MediaConvert to use from your HLS input. Enter an integer corresponding to the stream order in your HLS manifest.
+    /// Specify one or more video streams for MediaConvert to use from your HLS input. Enter an integer corresponding to the stream number, with the first stream in your HLS multivariant playlist starting at 1.For re-encoding workflows, MediaConvert uses the video stream that you select with the highest bitrate as the input.For video passthrough workflows, you specify whether to passthrough a single video stream or multiple video streams under Video selector source in the output video encoding settings.
     pub fn get_streams(&self) -> &::std::option::Option<::std::vec::Vec<i32>> {
         &self.streams
     }

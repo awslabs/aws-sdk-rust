@@ -102,7 +102,7 @@ impl ::std::fmt::Display for NodegroupUpdateStrategies {
         match self {
             NodegroupUpdateStrategies::Default => write!(f, "DEFAULT"),
             NodegroupUpdateStrategies::Minimal => write!(f, "MINIMAL"),
-            NodegroupUpdateStrategies::Unknown(value) => write!(f, "{}", value),
+            NodegroupUpdateStrategies::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

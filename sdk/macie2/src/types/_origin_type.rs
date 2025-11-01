@@ -102,7 +102,7 @@ impl ::std::fmt::Display for OriginType {
         match self {
             OriginType::AutomatedSensitiveDataDiscovery => write!(f, "AUTOMATED_SENSITIVE_DATA_DISCOVERY"),
             OriginType::SensitiveDataDiscoveryJob => write!(f, "SENSITIVE_DATA_DISCOVERY_JOB"),
-            OriginType::Unknown(value) => write!(f, "{}", value),
+            OriginType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

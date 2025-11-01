@@ -133,7 +133,7 @@ impl ::std::fmt::Display for UsageStatisticType {
             UsageStatisticType::SumByResource => write!(f, "SUM_BY_RESOURCE"),
             UsageStatisticType::TopAccountsByFeature => write!(f, "TOP_ACCOUNTS_BY_FEATURE"),
             UsageStatisticType::TopResources => write!(f, "TOP_RESOURCES"),
-            UsageStatisticType::Unknown(value) => write!(f, "{}", value),
+            UsageStatisticType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -20,8 +20,7 @@ pub fn de_distribution_list(inp: &[u8]) -> std::result::Result<crate::types::Dis
     let start_el = decoder.start_el();
     if !(start_el.matches("DistributionList")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected DistributionList got {:?}",
-            start_el
+            "invalid root, expected DistributionList got {start_el:?}"
         )));
     }
     crate::protocol_serde::shape_distribution_list::de_distribution_list(&mut decoder)

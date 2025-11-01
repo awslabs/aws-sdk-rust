@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ApplicationAssociatedResourceType {
             ApplicationAssociatedResourceType::Bundle => write!(f, "BUNDLE"),
             ApplicationAssociatedResourceType::Image => write!(f, "IMAGE"),
             ApplicationAssociatedResourceType::Workspace => write!(f, "WORKSPACE"),
-            ApplicationAssociatedResourceType::Unknown(value) => write!(f, "{}", value),
+            ApplicationAssociatedResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

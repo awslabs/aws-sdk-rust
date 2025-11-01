@@ -22,8 +22,7 @@ pub fn de_replication_configuration(
     let start_el = decoder.start_el();
     if !(start_el.matches("ReplicationConfiguration")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected ReplicationConfiguration got {:?}",
-            start_el
+            "invalid root, expected ReplicationConfiguration got {start_el:?}"
         )));
     }
     crate::protocol_serde::shape_replication_configuration::de_replication_configuration(&mut decoder)

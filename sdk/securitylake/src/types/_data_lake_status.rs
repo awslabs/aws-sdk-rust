@@ -114,7 +114,7 @@ impl ::std::fmt::Display for DataLakeStatus {
             DataLakeStatus::Failed => write!(f, "FAILED"),
             DataLakeStatus::Initialized => write!(f, "INITIALIZED"),
             DataLakeStatus::Pending => write!(f, "PENDING"),
-            DataLakeStatus::Unknown(value) => write!(f, "{}", value),
+            DataLakeStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

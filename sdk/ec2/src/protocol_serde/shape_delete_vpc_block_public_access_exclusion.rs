@@ -55,8 +55,7 @@ pub fn de_delete_vpc_block_public_access_exclusion(
     let start_el = decoder.start_el();
     if !(start_el.matches("DeleteVpcBlockPublicAccessExclusionResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected DeleteVpcBlockPublicAccessExclusionResponse got {:?}",
-            start_el
+            "invalid root, expected DeleteVpcBlockPublicAccessExclusionResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

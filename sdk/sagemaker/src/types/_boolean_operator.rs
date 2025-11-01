@@ -102,7 +102,7 @@ impl ::std::fmt::Display for BooleanOperator {
         match self {
             BooleanOperator::And => write!(f, "And"),
             BooleanOperator::Or => write!(f, "Or"),
-            BooleanOperator::Unknown(value) => write!(f, "{}", value),
+            BooleanOperator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

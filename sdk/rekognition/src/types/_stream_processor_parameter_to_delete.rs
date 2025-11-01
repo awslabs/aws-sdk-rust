@@ -102,7 +102,7 @@ impl ::std::fmt::Display for StreamProcessorParameterToDelete {
         match self {
             StreamProcessorParameterToDelete::ConnectedHomeMinConfidence => write!(f, "ConnectedHomeMinConfidence"),
             StreamProcessorParameterToDelete::RegionsOfInterest => write!(f, "RegionsOfInterest"),
-            StreamProcessorParameterToDelete::Unknown(value) => write!(f, "{}", value),
+            StreamProcessorParameterToDelete::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for Ec2MarketType {
             Ec2MarketType::OnDemand => write!(f, "on-demand"),
             Ec2MarketType::Spot => write!(f, "spot"),
             Ec2MarketType::WaitAndSave => write!(f, "wait-and-save"),
-            Ec2MarketType::Unknown(value) => write!(f, "{}", value),
+            Ec2MarketType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

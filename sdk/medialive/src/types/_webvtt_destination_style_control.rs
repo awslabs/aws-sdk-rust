@@ -102,7 +102,7 @@ impl ::std::fmt::Display for WebvttDestinationStyleControl {
         match self {
             WebvttDestinationStyleControl::NoStyleData => write!(f, "NO_STYLE_DATA"),
             WebvttDestinationStyleControl::Passthrough => write!(f, "PASSTHROUGH"),
-            WebvttDestinationStyleControl::Unknown(value) => write!(f, "{}", value),
+            WebvttDestinationStyleControl::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

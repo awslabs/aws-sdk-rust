@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ResourceTypeEnum {
             ResourceTypeEnum::NetworkInterface => write!(f, "network-interface"),
             ResourceTypeEnum::SpotInstancesRequest => write!(f, "spot-instances-request"),
             ResourceTypeEnum::Volume => write!(f, "volume"),
-            ResourceTypeEnum::Unknown(value) => write!(f, "{}", value),
+            ResourceTypeEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

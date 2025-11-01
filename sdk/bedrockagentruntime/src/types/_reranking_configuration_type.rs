@@ -96,7 +96,7 @@ impl ::std::fmt::Display for RerankingConfigurationType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             RerankingConfigurationType::BedrockRerankingModel => write!(f, "BEDROCK_RERANKING_MODEL"),
-            RerankingConfigurationType::Unknown(value) => write!(f, "{}", value),
+            RerankingConfigurationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

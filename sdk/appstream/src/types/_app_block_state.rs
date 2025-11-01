@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AppBlockState {
         match self {
             AppBlockState::Active => write!(f, "ACTIVE"),
             AppBlockState::Inactive => write!(f, "INACTIVE"),
-            AppBlockState::Unknown(value) => write!(f, "{}", value),
+            AppBlockState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for KxNodeStatus {
         match self {
             KxNodeStatus::Provisioning => write!(f, "PROVISIONING"),
             KxNodeStatus::Running => write!(f, "RUNNING"),
-            KxNodeStatus::Unknown(value) => write!(f, "{}", value),
+            KxNodeStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

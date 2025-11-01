@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TrainingJobEarlyStoppingType {
         match self {
             TrainingJobEarlyStoppingType::Auto => write!(f, "Auto"),
             TrainingJobEarlyStoppingType::Off => write!(f, "Off"),
-            TrainingJobEarlyStoppingType::Unknown(value) => write!(f, "{}", value),
+            TrainingJobEarlyStoppingType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

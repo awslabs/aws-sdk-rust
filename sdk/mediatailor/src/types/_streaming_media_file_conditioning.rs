@@ -102,7 +102,7 @@ impl ::std::fmt::Display for StreamingMediaFileConditioning {
         match self {
             StreamingMediaFileConditioning::None => write!(f, "NONE"),
             StreamingMediaFileConditioning::Transcode => write!(f, "TRANSCODE"),
-            StreamingMediaFileConditioning::Unknown(value) => write!(f, "{}", value),
+            StreamingMediaFileConditioning::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

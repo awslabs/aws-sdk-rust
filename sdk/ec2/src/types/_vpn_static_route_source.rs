@@ -96,7 +96,7 @@ impl ::std::fmt::Display for VpnStaticRouteSource {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             VpnStaticRouteSource::Static => write!(f, "Static"),
-            VpnStaticRouteSource::Unknown(value) => write!(f, "{}", value),
+            VpnStaticRouteSource::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

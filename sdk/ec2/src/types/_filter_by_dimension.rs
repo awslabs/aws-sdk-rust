@@ -210,7 +210,7 @@ impl ::std::fmt::Display for FilterByDimension {
             FilterByDimension::ReservationUnusedFinancialOwner => write!(f, "reservation-unused-financial-owner"),
             FilterByDimension::ResourceRegion => write!(f, "resource-region"),
             FilterByDimension::Tenancy => write!(f, "tenancy"),
-            FilterByDimension::Unknown(value) => write!(f, "{}", value),
+            FilterByDimension::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

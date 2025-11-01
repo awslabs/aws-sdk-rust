@@ -147,7 +147,7 @@ impl ::std::fmt::Display for DataKeyPairSpec {
             DataKeyPairSpec::Rsa3072 => write!(f, "RSA_3072"),
             DataKeyPairSpec::Rsa4096 => write!(f, "RSA_4096"),
             DataKeyPairSpec::Sm2 => write!(f, "SM2"),
-            DataKeyPairSpec::Unknown(value) => write!(f, "{}", value),
+            DataKeyPairSpec::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

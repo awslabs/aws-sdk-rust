@@ -187,6 +187,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for UpdateReputa
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::update_reputation_entity_customer_managed_status::UpdateReputationEntityCustomerManagedStatusInput,
                 output: &mut ::std::string::String,

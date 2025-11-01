@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AggregatedUtterancesSortAttribute {
         match self {
             AggregatedUtterancesSortAttribute::HitCount => write!(f, "HitCount"),
             AggregatedUtterancesSortAttribute::MissedCount => write!(f, "MissedCount"),
-            AggregatedUtterancesSortAttribute::Unknown(value) => write!(f, "{}", value),
+            AggregatedUtterancesSortAttribute::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -132,7 +132,7 @@ impl ::std::fmt::Display for HostState {
             HostState::Deleting => write!(f, "DELETING"),
             HostState::UpdateFailed => write!(f, "UPDATE_FAILED"),
             HostState::Updating => write!(f, "UPDATING"),
-            HostState::Unknown(value) => write!(f, "{}", value),
+            HostState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for OnboardingState {
             OnboardingState::Created => write!(f, "CREATED"),
             OnboardingState::Error => write!(f, "ERROR"),
             OnboardingState::Onboarded => write!(f, "ONBOARDED"),
-            OnboardingState::Unknown(value) => write!(f, "{}", value),
+            OnboardingState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

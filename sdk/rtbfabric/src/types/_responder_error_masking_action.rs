@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ResponderErrorMaskingAction {
         match self {
             ResponderErrorMaskingAction::NoBid => write!(f, "NO_BID"),
             ResponderErrorMaskingAction::Passthrough => write!(f, "PASSTHROUGH"),
-            ResponderErrorMaskingAction::Unknown(value) => write!(f, "{}", value),
+            ResponderErrorMaskingAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

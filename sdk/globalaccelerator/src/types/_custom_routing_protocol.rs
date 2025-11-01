@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CustomRoutingProtocol {
         match self {
             CustomRoutingProtocol::Tcp => write!(f, "TCP"),
             CustomRoutingProtocol::Udp => write!(f, "UDP"),
-            CustomRoutingProtocol::Unknown(value) => write!(f, "{}", value),
+            CustomRoutingProtocol::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

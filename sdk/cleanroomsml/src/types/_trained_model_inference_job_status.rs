@@ -147,7 +147,7 @@ impl ::std::fmt::Display for TrainedModelInferenceJobStatus {
             TrainedModelInferenceJobStatus::CreateInProgress => write!(f, "CREATE_IN_PROGRESS"),
             TrainedModelInferenceJobStatus::CreatePending => write!(f, "CREATE_PENDING"),
             TrainedModelInferenceJobStatus::Inactive => write!(f, "INACTIVE"),
-            TrainedModelInferenceJobStatus::Unknown(value) => write!(f, "{}", value),
+            TrainedModelInferenceJobStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

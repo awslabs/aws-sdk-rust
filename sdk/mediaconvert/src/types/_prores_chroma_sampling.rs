@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ProresChromaSampling {
         match self {
             ProresChromaSampling::Preserve444Sampling => write!(f, "PRESERVE_444_SAMPLING"),
             ProresChromaSampling::SubsampleTo422 => write!(f, "SUBSAMPLE_TO_422"),
-            ProresChromaSampling::Unknown(value) => write!(f, "{}", value),
+            ProresChromaSampling::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

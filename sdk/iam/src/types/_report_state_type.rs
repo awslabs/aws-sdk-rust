@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ReportStateType {
             ReportStateType::Complete => write!(f, "COMPLETE"),
             ReportStateType::Inprogress => write!(f, "INPROGRESS"),
             ReportStateType::Started => write!(f, "STARTED"),
-            ReportStateType::Unknown(value) => write!(f, "{}", value),
+            ReportStateType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

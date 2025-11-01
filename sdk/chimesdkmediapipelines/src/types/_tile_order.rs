@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TileOrder {
         match self {
             TileOrder::JoinSequence => write!(f, "JoinSequence"),
             TileOrder::SpeakerSequence => write!(f, "SpeakerSequence"),
-            TileOrder::Unknown(value) => write!(f, "{}", value),
+            TileOrder::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

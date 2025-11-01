@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ConfluenceVersion {
         match self {
             ConfluenceVersion::Cloud => write!(f, "CLOUD"),
             ConfluenceVersion::Server => write!(f, "SERVER"),
-            ConfluenceVersion::Unknown(value) => write!(f, "{}", value),
+            ConfluenceVersion::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -322,7 +322,7 @@ impl ::std::fmt::Display for SupportedS3Region {
             SupportedS3Region::UsEast2 => write!(f, "us-east-2"),
             SupportedS3Region::UsWest1 => write!(f, "us-west-1"),
             SupportedS3Region::UsWest2 => write!(f, "us-west-2"),
-            SupportedS3Region::Unknown(value) => write!(f, "{}", value),
+            SupportedS3Region::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

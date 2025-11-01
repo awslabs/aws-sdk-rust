@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RouteTravelStepType {
         match self {
             RouteTravelStepType::Default => write!(f, "Default"),
             RouteTravelStepType::TurnByTurn => write!(f, "TurnByTurn"),
-            RouteTravelStepType::Unknown(value) => write!(f, "{}", value),
+            RouteTravelStepType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

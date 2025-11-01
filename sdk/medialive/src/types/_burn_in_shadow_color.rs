@@ -108,7 +108,7 @@ impl ::std::fmt::Display for BurnInShadowColor {
             BurnInShadowColor::Black => write!(f, "BLACK"),
             BurnInShadowColor::None => write!(f, "NONE"),
             BurnInShadowColor::White => write!(f, "WHITE"),
-            BurnInShadowColor::Unknown(value) => write!(f, "{}", value),
+            BurnInShadowColor::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

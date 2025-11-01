@@ -96,7 +96,7 @@ impl ::std::fmt::Display for NodeOptionsNodeType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             NodeOptionsNodeType::Coordinator => write!(f, "coordinator"),
-            NodeOptionsNodeType::Unknown(value) => write!(f, "{}", value),
+            NodeOptionsNodeType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

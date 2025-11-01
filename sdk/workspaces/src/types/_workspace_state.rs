@@ -210,7 +210,7 @@ impl ::std::fmt::Display for WorkspaceState {
             WorkspaceState::Terminating => write!(f, "TERMINATING"),
             WorkspaceState::Unhealthy => write!(f, "UNHEALTHY"),
             WorkspaceState::Updating => write!(f, "UPDATING"),
-            WorkspaceState::Unknown(value) => write!(f, "{}", value),
+            WorkspaceState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

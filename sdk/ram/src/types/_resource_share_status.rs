@@ -120,7 +120,7 @@ impl ::std::fmt::Display for ResourceShareStatus {
             ResourceShareStatus::Deleting => write!(f, "DELETING"),
             ResourceShareStatus::Failed => write!(f, "FAILED"),
             ResourceShareStatus::Pending => write!(f, "PENDING"),
-            ResourceShareStatus::Unknown(value) => write!(f, "{}", value),
+            ResourceShareStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

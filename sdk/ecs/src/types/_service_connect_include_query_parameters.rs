@@ -104,7 +104,7 @@ impl ::std::fmt::Display for ServiceConnectIncludeQueryParameters {
         match self {
             ServiceConnectIncludeQueryParameters::Disabled => write!(f, "DISABLED"),
             ServiceConnectIncludeQueryParameters::Enabled => write!(f, "ENABLED"),
-            ServiceConnectIncludeQueryParameters::Unknown(value) => write!(f, "{}", value),
+            ServiceConnectIncludeQueryParameters::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

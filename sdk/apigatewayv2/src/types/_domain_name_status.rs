@@ -114,7 +114,7 @@ impl ::std::fmt::Display for DomainNameStatus {
             DomainNameStatus::PendingCertificateReimport => write!(f, "PENDING_CERTIFICATE_REIMPORT"),
             DomainNameStatus::PendingOwnershipVerification => write!(f, "PENDING_OWNERSHIP_VERIFICATION"),
             DomainNameStatus::Updating => write!(f, "UPDATING"),
-            DomainNameStatus::Unknown(value) => write!(f, "{}", value),
+            DomainNameStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

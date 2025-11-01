@@ -126,7 +126,7 @@ impl ::std::fmt::Display for ErrorCode {
             ErrorCode::InvalidFindingId => write!(f, "INVALID_FINDING_ID"),
             ErrorCode::InvalidScanName => write!(f, "INVALID_SCAN_NAME"),
             ErrorCode::ItemDoesNotExist => write!(f, "ITEM_DOES_NOT_EXIST"),
-            ErrorCode::Unknown(value) => write!(f, "{}", value),
+            ErrorCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

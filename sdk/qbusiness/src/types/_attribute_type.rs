@@ -114,7 +114,7 @@ impl ::std::fmt::Display for AttributeType {
             AttributeType::Number => write!(f, "NUMBER"),
             AttributeType::String => write!(f, "STRING"),
             AttributeType::StringList => write!(f, "STRING_LIST"),
-            AttributeType::Unknown(value) => write!(f, "{}", value),
+            AttributeType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for InstanceLifecycle {
         match self {
             InstanceLifecycle::OnDemand => write!(f, "on-demand"),
             InstanceLifecycle::Spot => write!(f, "spot"),
-            InstanceLifecycle::Unknown(value) => write!(f, "{}", value),
+            InstanceLifecycle::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

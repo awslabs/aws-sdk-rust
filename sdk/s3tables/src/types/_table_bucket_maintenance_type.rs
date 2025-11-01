@@ -96,7 +96,7 @@ impl ::std::fmt::Display for TableBucketMaintenanceType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             TableBucketMaintenanceType::IcebergUnreferencedFileRemoval => write!(f, "icebergUnreferencedFileRemoval"),
-            TableBucketMaintenanceType::Unknown(value) => write!(f, "{}", value),
+            TableBucketMaintenanceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

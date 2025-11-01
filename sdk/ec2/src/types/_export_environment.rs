@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ExportEnvironment {
             ExportEnvironment::Citrix => write!(f, "citrix"),
             ExportEnvironment::Microsoft => write!(f, "microsoft"),
             ExportEnvironment::Vmware => write!(f, "vmware"),
-            ExportEnvironment::Unknown(value) => write!(f, "{}", value),
+            ExportEnvironment::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

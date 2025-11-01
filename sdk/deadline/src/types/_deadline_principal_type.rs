@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DeadlinePrincipalType {
         match self {
             DeadlinePrincipalType::Group => write!(f, "GROUP"),
             DeadlinePrincipalType::User => write!(f, "USER"),
-            DeadlinePrincipalType::Unknown(value) => write!(f, "{}", value),
+            DeadlinePrincipalType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ProvisioningStatus {
         match self {
             ProvisioningStatus::LatestPermissionSetNotProvisioned => write!(f, "LATEST_PERMISSION_SET_NOT_PROVISIONED"),
             ProvisioningStatus::LatestPermissionSetProvisioned => write!(f, "LATEST_PERMISSION_SET_PROVISIONED"),
-            ProvisioningStatus::Unknown(value) => write!(f, "{}", value),
+            ProvisioningStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

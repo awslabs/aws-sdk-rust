@@ -102,7 +102,7 @@ impl ::std::fmt::Display for GetPlaceIntendedUse {
         match self {
             GetPlaceIntendedUse::SingleUse => write!(f, "SingleUse"),
             GetPlaceIntendedUse::Storage => write!(f, "Storage"),
-            GetPlaceIntendedUse::Unknown(value) => write!(f, "{}", value),
+            GetPlaceIntendedUse::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for Edition {
             Edition::Enterprise => write!(f, "ENTERPRISE"),
             Edition::EnterpriseAndQ => write!(f, "ENTERPRISE_AND_Q"),
             Edition::Standard => write!(f, "STANDARD"),
-            Edition::Unknown(value) => write!(f, "{}", value),
+            Edition::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

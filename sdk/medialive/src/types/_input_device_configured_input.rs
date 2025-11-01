@@ -108,7 +108,7 @@ impl ::std::fmt::Display for InputDeviceConfiguredInput {
             InputDeviceConfiguredInput::Auto => write!(f, "AUTO"),
             InputDeviceConfiguredInput::Hdmi => write!(f, "HDMI"),
             InputDeviceConfiguredInput::Sdi => write!(f, "SDI"),
-            InputDeviceConfiguredInput::Unknown(value) => write!(f, "{}", value),
+            InputDeviceConfiguredInput::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

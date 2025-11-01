@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ComputeStatus {
             ComputeStatus::Impaired => write!(f, "IMPAIRED"),
             ComputeStatus::Pending => write!(f, "PENDING"),
             ComputeStatus::Terminating => write!(f, "TERMINATING"),
-            ComputeStatus::Unknown(value) => write!(f, "{}", value),
+            ComputeStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

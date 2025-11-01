@@ -26,7 +26,7 @@ impl ::std::fmt::Display for BadRequestException {
         ::std::write!(f, "BadRequestException")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
             {
-                ::std::write!(f, ": {}", inner_1)?;
+                ::std::write!(f, ": {inner_1}")?;
             }
         }
         Ok(())

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for TopicScheduleType {
             TopicScheduleType::Hourly => write!(f, "HOURLY"),
             TopicScheduleType::Monthly => write!(f, "MONTHLY"),
             TopicScheduleType::Weekly => write!(f, "WEEKLY"),
-            TopicScheduleType::Unknown(value) => write!(f, "{}", value),
+            TopicScheduleType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

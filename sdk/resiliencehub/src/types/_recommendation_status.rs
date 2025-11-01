@@ -114,7 +114,7 @@ impl ::std::fmt::Display for RecommendationStatus {
             RecommendationStatus::Implemented => write!(f, "Implemented"),
             RecommendationStatus::Inactive => write!(f, "Inactive"),
             RecommendationStatus::NotImplemented => write!(f, "NotImplemented"),
-            RecommendationStatus::Unknown(value) => write!(f, "{}", value),
+            RecommendationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

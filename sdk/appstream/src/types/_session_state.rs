@@ -108,7 +108,7 @@ impl ::std::fmt::Display for SessionState {
             SessionState::Active => write!(f, "ACTIVE"),
             SessionState::Expired => write!(f, "EXPIRED"),
             SessionState::Pending => write!(f, "PENDING"),
-            SessionState::Unknown(value) => write!(f, "{}", value),
+            SessionState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

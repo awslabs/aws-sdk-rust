@@ -97,7 +97,7 @@ impl From<ErrorKind> for ProxyError {
 impl fmt::Display for ProxyError {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         match &self.kind {
-            ErrorKind::InvalidUrl(url) => write!(f, "invalid proxy URL: {}", url),
+            ErrorKind::InvalidUrl(url) => write!(f, "invalid proxy URL: {url}"),
         }
     }
 }
@@ -472,7 +472,7 @@ impl ProxyConfig {
             Some("http") | Some("https") => {}
             Some(scheme) => {
                 return Err(
-                    ErrorKind::InvalidUrl(format!("unsupported proxy scheme: {}", scheme)).into(),
+                    ErrorKind::InvalidUrl(format!("unsupported proxy scheme: {scheme}")).into(),
                 );
             }
             None => {

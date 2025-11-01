@@ -133,7 +133,7 @@ impl ::std::fmt::Display for LicenseServerEndpointProvisioningStatus {
             LicenseServerEndpointProvisioningStatus::Provisioned => write!(f, "PROVISIONED"),
             LicenseServerEndpointProvisioningStatus::Provisioning => write!(f, "PROVISIONING"),
             LicenseServerEndpointProvisioningStatus::ProvisioningFailed => write!(f, "PROVISIONING_FAILED"),
-            LicenseServerEndpointProvisioningStatus::Unknown(value) => write!(f, "{}", value),
+            LicenseServerEndpointProvisioningStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

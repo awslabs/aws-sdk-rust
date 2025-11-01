@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RecordingStatus {
         match self {
             RecordingStatus::Available => write!(f, "AVAILABLE"),
             RecordingStatus::Deleted => write!(f, "DELETED"),
-            RecordingStatus::Unknown(value) => write!(f, "{}", value),
+            RecordingStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

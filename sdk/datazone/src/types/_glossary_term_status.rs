@@ -102,7 +102,7 @@ impl ::std::fmt::Display for GlossaryTermStatus {
         match self {
             GlossaryTermStatus::Disabled => write!(f, "DISABLED"),
             GlossaryTermStatus::Enabled => write!(f, "ENABLED"),
-            GlossaryTermStatus::Unknown(value) => write!(f, "{}", value),
+            GlossaryTermStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

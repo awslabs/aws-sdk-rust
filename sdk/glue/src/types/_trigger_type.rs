@@ -114,7 +114,7 @@ impl ::std::fmt::Display for TriggerType {
             TriggerType::Event => write!(f, "EVENT"),
             TriggerType::OnDemand => write!(f, "ON_DEMAND"),
             TriggerType::Scheduled => write!(f, "SCHEDULED"),
-            TriggerType::Unknown(value) => write!(f, "{}", value),
+            TriggerType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

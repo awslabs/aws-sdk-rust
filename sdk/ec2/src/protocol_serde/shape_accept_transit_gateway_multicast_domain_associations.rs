@@ -55,8 +55,7 @@ pub fn de_accept_transit_gateway_multicast_domain_associations(
     let start_el = decoder.start_el();
     if !(start_el.matches("AcceptTransitGatewayMulticastDomainAssociationsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected AcceptTransitGatewayMulticastDomainAssociationsResponse got {:?}",
-            start_el
+            "invalid root, expected AcceptTransitGatewayMulticastDomainAssociationsResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

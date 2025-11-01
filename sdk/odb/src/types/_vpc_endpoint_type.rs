@@ -96,7 +96,7 @@ impl ::std::fmt::Display for VpcEndpointType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             VpcEndpointType::Servicenetwork => write!(f, "SERVICENETWORK"),
-            VpcEndpointType::Unknown(value) => write!(f, "{}", value),
+            VpcEndpointType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

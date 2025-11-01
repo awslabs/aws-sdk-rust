@@ -175,7 +175,7 @@ impl ::std::fmt::Display for AuthorSpecifiedAggregation {
             AuthorSpecifiedAggregation::Sum => write!(f, "SUM"),
             AuthorSpecifiedAggregation::Var => write!(f, "VAR"),
             AuthorSpecifiedAggregation::Varp => write!(f, "VARP"),
-            AuthorSpecifiedAggregation::Unknown(value) => write!(f, "{}", value),
+            AuthorSpecifiedAggregation::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

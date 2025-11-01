@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ExperienceStatus {
             ExperienceStatus::Creating => write!(f, "CREATING"),
             ExperienceStatus::Deleting => write!(f, "DELETING"),
             ExperienceStatus::Failed => write!(f, "FAILED"),
-            ExperienceStatus::Unknown(value) => write!(f, "{}", value),
+            ExperienceStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

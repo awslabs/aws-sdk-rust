@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DevicePlatform {
         match self {
             DevicePlatform::Android => write!(f, "ANDROID"),
             DevicePlatform::Ios => write!(f, "IOS"),
-            DevicePlatform::Unknown(value) => write!(f, "{}", value),
+            DevicePlatform::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for LocationValues {
             LocationValues::Cloud => write!(f, "CLOUD"),
             LocationValues::LocalZone => write!(f, "LOCAL_ZONE"),
             LocationValues::OutpostLocal => write!(f, "OUTPOST_LOCAL"),
-            LocationValues::Unknown(value) => write!(f, "{}", value),
+            LocationValues::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

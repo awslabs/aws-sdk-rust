@@ -149,7 +149,7 @@ impl ::std::fmt::Display for OutboundCrossClusterSearchConnectionStatusCode {
             OutboundCrossClusterSearchConnectionStatusCode::Rejected => write!(f, "REJECTED"),
             OutboundCrossClusterSearchConnectionStatusCode::Validating => write!(f, "VALIDATING"),
             OutboundCrossClusterSearchConnectionStatusCode::ValidationFailed => write!(f, "VALIDATION_FAILED"),
-            OutboundCrossClusterSearchConnectionStatusCode::Unknown(value) => write!(f, "{}", value),
+            OutboundCrossClusterSearchConnectionStatusCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ContainerFleetBillingType {
         match self {
             ContainerFleetBillingType::OnDemand => write!(f, "ON_DEMAND"),
             ContainerFleetBillingType::Spot => write!(f, "SPOT"),
-            ContainerFleetBillingType::Unknown(value) => write!(f, "{}", value),
+            ContainerFleetBillingType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ChangeAction {
             ChangeAction::Add => write!(f, "ADD"),
             ChangeAction::Modify => write!(f, "MODIFY"),
             ChangeAction::Remove => write!(f, "REMOVE"),
-            ChangeAction::Unknown(value) => write!(f, "{}", value),
+            ChangeAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

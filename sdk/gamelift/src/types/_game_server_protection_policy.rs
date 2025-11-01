@@ -102,7 +102,7 @@ impl ::std::fmt::Display for GameServerProtectionPolicy {
         match self {
             GameServerProtectionPolicy::FullProtection => write!(f, "FULL_PROTECTION"),
             GameServerProtectionPolicy::NoProtection => write!(f, "NO_PROTECTION"),
-            GameServerProtectionPolicy::Unknown(value) => write!(f, "{}", value),
+            GameServerProtectionPolicy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

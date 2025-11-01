@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CapabilityDirection {
         match self {
             CapabilityDirection::Inbound => write!(f, "INBOUND"),
             CapabilityDirection::Outbound => write!(f, "OUTBOUND"),
-            CapabilityDirection::Unknown(value) => write!(f, "{}", value),
+            CapabilityDirection::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

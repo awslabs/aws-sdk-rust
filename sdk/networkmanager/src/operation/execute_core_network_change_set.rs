@@ -186,6 +186,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ExecuteCoreN
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::execute_core_network_change_set::ExecuteCoreNetworkChangeSetInput,
                 output: &mut ::std::string::String,

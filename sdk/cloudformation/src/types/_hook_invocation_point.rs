@@ -96,7 +96,7 @@ impl ::std::fmt::Display for HookInvocationPoint {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             HookInvocationPoint::PreProvision => write!(f, "PRE_PROVISION"),
-            HookInvocationPoint::Unknown(value) => write!(f, "{}", value),
+            HookInvocationPoint::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

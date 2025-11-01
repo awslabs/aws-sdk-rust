@@ -96,7 +96,7 @@ impl ::std::fmt::Display for CapabilityState {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             CapabilityState::Deny => write!(f, "DENY"),
-            CapabilityState::Unknown(value) => write!(f, "{}", value),
+            CapabilityState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

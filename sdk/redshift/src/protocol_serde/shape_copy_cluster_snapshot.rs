@@ -160,16 +160,14 @@ pub fn de_copy_cluster_snapshot(
     let start_el = decoder.start_el();
     if !(start_el.matches("CopyClusterSnapshotResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected CopyClusterSnapshotResponse got {:?}",
-            start_el
+            "invalid root, expected CopyClusterSnapshotResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("CopyClusterSnapshotResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected CopyClusterSnapshotResult got {:?}",
-                start_el
+                "invalid result, expected CopyClusterSnapshotResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

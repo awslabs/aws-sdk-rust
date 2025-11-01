@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CrossAccountFilterOption {
         match self {
             CrossAccountFilterOption::CrossAccount => write!(f, "CrossAccount"),
             CrossAccountFilterOption::SameAccount => write!(f, "SameAccount"),
-            CrossAccountFilterOption::Unknown(value) => write!(f, "{}", value),
+            CrossAccountFilterOption::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

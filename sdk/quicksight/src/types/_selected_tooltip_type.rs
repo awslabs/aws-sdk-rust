@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SelectedTooltipType {
         match self {
             SelectedTooltipType::Basic => write!(f, "BASIC"),
             SelectedTooltipType::Detailed => write!(f, "DETAILED"),
-            SelectedTooltipType::Unknown(value) => write!(f, "{}", value),
+            SelectedTooltipType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

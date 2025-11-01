@@ -151,16 +151,14 @@ pub fn de_create_db_cluster_snapshot(
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateDBClusterSnapshotResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected CreateDBClusterSnapshotResponse got {:?}",
-            start_el
+            "invalid root, expected CreateDBClusterSnapshotResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("CreateDBClusterSnapshotResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected CreateDBClusterSnapshotResult got {:?}",
-                start_el
+                "invalid result, expected CreateDBClusterSnapshotResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

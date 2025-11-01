@@ -147,7 +147,7 @@ impl ::std::fmt::Display for Compatibility {
             Compatibility::Full => write!(f, "FULL"),
             Compatibility::FullAll => write!(f, "FULL_ALL"),
             Compatibility::None => write!(f, "NONE"),
-            Compatibility::Unknown(value) => write!(f, "{}", value),
+            Compatibility::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

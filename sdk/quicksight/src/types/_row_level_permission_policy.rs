@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RowLevelPermissionPolicy {
         match self {
             RowLevelPermissionPolicy::DenyAccess => write!(f, "DENY_ACCESS"),
             RowLevelPermissionPolicy::GrantAccess => write!(f, "GRANT_ACCESS"),
-            RowLevelPermissionPolicy::Unknown(value) => write!(f, "{}", value),
+            RowLevelPermissionPolicy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

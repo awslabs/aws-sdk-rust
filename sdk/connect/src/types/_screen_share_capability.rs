@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ScreenShareCapability {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ScreenShareCapability::Send => write!(f, "SEND"),
-            ScreenShareCapability::Unknown(value) => write!(f, "{}", value),
+            ScreenShareCapability::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

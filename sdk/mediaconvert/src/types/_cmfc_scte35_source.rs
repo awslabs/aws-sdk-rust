@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CmfcScte35Source {
         match self {
             CmfcScte35Source::None => write!(f, "NONE"),
             CmfcScte35Source::Passthrough => write!(f, "PASSTHROUGH"),
-            CmfcScte35Source::Unknown(value) => write!(f, "{}", value),
+            CmfcScte35Source::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

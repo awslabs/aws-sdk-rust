@@ -126,7 +126,7 @@ impl ::std::fmt::Display for SignalType {
             SignalType::Revoke => write!(f, "Revoke"),
             SignalType::StartStep => write!(f, "StartStep"),
             SignalType::StopStep => write!(f, "StopStep"),
-            SignalType::Unknown(value) => write!(f, "{}", value),
+            SignalType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -104,7 +104,7 @@ impl ::std::fmt::Display for MacSystemIntegrityProtectionSettingStatus {
         match self {
             MacSystemIntegrityProtectionSettingStatus::Disabled => write!(f, "disabled"),
             MacSystemIntegrityProtectionSettingStatus::Enabled => write!(f, "enabled"),
-            MacSystemIntegrityProtectionSettingStatus::Unknown(value) => write!(f, "{}", value),
+            MacSystemIntegrityProtectionSettingStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ChannelClass {
         match self {
             ChannelClass::SinglePipeline => write!(f, "SINGLE_PIPELINE"),
             ChannelClass::Standard => write!(f, "STANDARD"),
-            ChannelClass::Unknown(value) => write!(f, "{}", value),
+            ChannelClass::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

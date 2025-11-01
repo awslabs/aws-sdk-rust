@@ -189,7 +189,7 @@ impl ::std::fmt::Display for TestType {
             TestType::Instrumentation => write!(f, "INSTRUMENTATION"),
             TestType::Xctest => write!(f, "XCTEST"),
             TestType::XctestUi => write!(f, "XCTEST_UI"),
-            TestType::Unknown(value) => write!(f, "{}", value),
+            TestType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

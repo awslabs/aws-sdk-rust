@@ -108,7 +108,7 @@ impl ::std::fmt::Display for SrtEncryptionType {
             SrtEncryptionType::Aes128 => write!(f, "AES128"),
             SrtEncryptionType::Aes192 => write!(f, "AES192"),
             SrtEncryptionType::Aes256 => write!(f, "AES256"),
-            SrtEncryptionType::Unknown(value) => write!(f, "{}", value),
+            SrtEncryptionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

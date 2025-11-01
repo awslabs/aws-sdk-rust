@@ -106,16 +106,14 @@ pub fn de_list_saml_provider_tags(
     let start_el = decoder.start_el();
     if !(start_el.matches("ListSAMLProviderTagsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected ListSAMLProviderTagsResponse got {:?}",
-            start_el
+            "invalid root, expected ListSAMLProviderTagsResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("ListSAMLProviderTagsResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected ListSAMLProviderTagsResult got {:?}",
-                start_el
+                "invalid result, expected ListSAMLProviderTagsResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

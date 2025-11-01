@@ -53,8 +53,7 @@ pub fn de_search_transit_gateway_multicast_groups(
     let start_el = decoder.start_el();
     if !(start_el.matches("SearchTransitGatewayMulticastGroupsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected SearchTransitGatewayMulticastGroupsResponse got {:?}",
-            start_el
+            "invalid root, expected SearchTransitGatewayMulticastGroupsResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

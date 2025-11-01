@@ -203,7 +203,7 @@ impl ::std::fmt::Display for JobLogEvent {
             JobLogEvent::SnapshotFail => write!(f, "SNAPSHOT_FAIL"),
             JobLogEvent::SnapshotStart => write!(f, "SNAPSHOT_START"),
             JobLogEvent::UsingPreviousSnapshot => write!(f, "USING_PREVIOUS_SNAPSHOT"),
-            JobLogEvent::Unknown(value) => write!(f, "{}", value),
+            JobLogEvent::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

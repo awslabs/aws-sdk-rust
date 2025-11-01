@@ -102,7 +102,7 @@ impl ::std::fmt::Display for InterpretationSource {
         match self {
             InterpretationSource::Bedrock => write!(f, "Bedrock"),
             InterpretationSource::Lex => write!(f, "Lex"),
-            InterpretationSource::Unknown(value) => write!(f, "{}", value),
+            InterpretationSource::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

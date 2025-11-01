@@ -126,7 +126,7 @@ impl ::std::fmt::Display for StreamClass {
             StreamClass::Gen5nHigh => write!(f, "gen5n_high"),
             StreamClass::Gen5nUltra => write!(f, "gen5n_ultra"),
             StreamClass::Gen5nWin2022 => write!(f, "gen5n_win2022"),
-            StreamClass::Unknown(value) => write!(f, "{}", value),
+            StreamClass::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for DataAutomationProjectStageFilter {
             DataAutomationProjectStageFilter::All => write!(f, "ALL"),
             DataAutomationProjectStageFilter::Development => write!(f, "DEVELOPMENT"),
             DataAutomationProjectStageFilter::Live => write!(f, "LIVE"),
-            DataAutomationProjectStageFilter::Unknown(value) => write!(f, "{}", value),
+            DataAutomationProjectStageFilter::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

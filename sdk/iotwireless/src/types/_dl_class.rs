@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DlClass {
         match self {
             DlClass::ClassB => write!(f, "ClassB"),
             DlClass::ClassC => write!(f, "ClassC"),
-            DlClass::Unknown(value) => write!(f, "{}", value),
+            DlClass::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

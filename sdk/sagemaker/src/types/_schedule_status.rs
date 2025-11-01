@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ScheduleStatus {
             ScheduleStatus::Pending => write!(f, "Pending"),
             ScheduleStatus::Scheduled => write!(f, "Scheduled"),
             ScheduleStatus::Stopped => write!(f, "Stopped"),
-            ScheduleStatus::Unknown(value) => write!(f, "{}", value),
+            ScheduleStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

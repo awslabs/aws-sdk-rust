@@ -303,7 +303,7 @@ impl ::std::fmt::Display for FleetErrorCode {
             FleetErrorCode::StsDisabledInRegion => write!(f, "STS_DISABLED_IN_REGION"),
             FleetErrorCode::SubnetHasInsufficientIpAddresses => write!(f, "SUBNET_HAS_INSUFFICIENT_IP_ADDRESSES"),
             FleetErrorCode::SubnetNotFound => write!(f, "SUBNET_NOT_FOUND"),
-            FleetErrorCode::Unknown(value) => write!(f, "{}", value),
+            FleetErrorCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

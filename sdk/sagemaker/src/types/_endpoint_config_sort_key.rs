@@ -102,7 +102,7 @@ impl ::std::fmt::Display for EndpointConfigSortKey {
         match self {
             EndpointConfigSortKey::CreationTime => write!(f, "CreationTime"),
             EndpointConfigSortKey::Name => write!(f, "Name"),
-            EndpointConfigSortKey::Unknown(value) => write!(f, "{}", value),
+            EndpointConfigSortKey::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

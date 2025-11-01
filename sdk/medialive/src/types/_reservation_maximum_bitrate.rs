@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ReservationMaximumBitrate {
             ReservationMaximumBitrate::Max10Mbps => write!(f, "MAX_10_MBPS"),
             ReservationMaximumBitrate::Max20Mbps => write!(f, "MAX_20_MBPS"),
             ReservationMaximumBitrate::Max50Mbps => write!(f, "MAX_50_MBPS"),
-            ReservationMaximumBitrate::Unknown(value) => write!(f, "{}", value),
+            ReservationMaximumBitrate::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

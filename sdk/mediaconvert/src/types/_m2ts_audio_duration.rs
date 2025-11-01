@@ -102,7 +102,7 @@ impl ::std::fmt::Display for M2tsAudioDuration {
         match self {
             M2tsAudioDuration::DefaultCodecDuration => write!(f, "DEFAULT_CODEC_DURATION"),
             M2tsAudioDuration::MatchVideoDuration => write!(f, "MATCH_VIDEO_DURATION"),
-            M2tsAudioDuration::Unknown(value) => write!(f, "{}", value),
+            M2tsAudioDuration::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

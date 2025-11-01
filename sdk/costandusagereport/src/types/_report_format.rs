@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ReportFormat {
         match self {
             ReportFormat::Parquet => write!(f, "Parquet"),
             ReportFormat::Csv => write!(f, "textORcsv"),
-            ReportFormat::Unknown(value) => write!(f, "{}", value),
+            ReportFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

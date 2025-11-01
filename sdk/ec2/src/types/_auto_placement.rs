@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AutoPlacement {
         match self {
             AutoPlacement::Off => write!(f, "off"),
             AutoPlacement::On => write!(f, "on"),
-            AutoPlacement::Unknown(value) => write!(f, "{}", value),
+            AutoPlacement::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

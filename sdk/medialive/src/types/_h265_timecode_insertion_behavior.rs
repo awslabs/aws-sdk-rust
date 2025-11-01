@@ -102,7 +102,7 @@ impl ::std::fmt::Display for H265TimecodeInsertionBehavior {
         match self {
             H265TimecodeInsertionBehavior::Disabled => write!(f, "DISABLED"),
             H265TimecodeInsertionBehavior::PicTimingSei => write!(f, "PIC_TIMING_SEI"),
-            H265TimecodeInsertionBehavior::Unknown(value) => write!(f, "{}", value),
+            H265TimecodeInsertionBehavior::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

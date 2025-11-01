@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ConstantType {
             ConstantType::Collective => write!(f, "COLLECTIVE"),
             ConstantType::Range => write!(f, "RANGE"),
             ConstantType::Singular => write!(f, "SINGULAR"),
-            ConstantType::Unknown(value) => write!(f, "{}", value),
+            ConstantType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

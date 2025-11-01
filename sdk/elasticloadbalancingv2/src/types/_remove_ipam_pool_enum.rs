@@ -96,7 +96,7 @@ impl ::std::fmt::Display for RemoveIpamPoolEnum {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             RemoveIpamPoolEnum::Ipv4 => write!(f, "ipv4"),
-            RemoveIpamPoolEnum::Unknown(value) => write!(f, "{}", value),
+            RemoveIpamPoolEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

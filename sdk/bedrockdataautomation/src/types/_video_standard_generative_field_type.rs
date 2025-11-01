@@ -108,7 +108,7 @@ impl ::std::fmt::Display for VideoStandardGenerativeFieldType {
             VideoStandardGenerativeFieldType::ChapterSummary => write!(f, "CHAPTER_SUMMARY"),
             VideoStandardGenerativeFieldType::Iab => write!(f, "IAB"),
             VideoStandardGenerativeFieldType::VideoSummary => write!(f, "VIDEO_SUMMARY"),
-            VideoStandardGenerativeFieldType::Unknown(value) => write!(f, "{}", value),
+            VideoStandardGenerativeFieldType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AllowFullTableExternalDataAccessEnum {
         match self {
             AllowFullTableExternalDataAccessEnum::False => write!(f, "False"),
             AllowFullTableExternalDataAccessEnum::True => write!(f, "True"),
-            AllowFullTableExternalDataAccessEnum::Unknown(value) => write!(f, "{}", value),
+            AllowFullTableExternalDataAccessEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

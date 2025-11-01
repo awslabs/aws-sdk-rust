@@ -96,7 +96,7 @@ impl ::std::fmt::Display for OnDemandCapacityReservationUsageStrategy {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             OnDemandCapacityReservationUsageStrategy::UseCapacityReservationsFirst => write!(f, "use-capacity-reservations-first"),
-            OnDemandCapacityReservationUsageStrategy::Unknown(value) => write!(f, "{}", value),
+            OnDemandCapacityReservationUsageStrategy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

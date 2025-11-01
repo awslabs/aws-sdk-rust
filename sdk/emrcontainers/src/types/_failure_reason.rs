@@ -114,7 +114,7 @@ impl ::std::fmt::Display for FailureReason {
             FailureReason::InternalError => write!(f, "INTERNAL_ERROR"),
             FailureReason::UserError => write!(f, "USER_ERROR"),
             FailureReason::ValidationError => write!(f, "VALIDATION_ERROR"),
-            FailureReason::Unknown(value) => write!(f, "{}", value),
+            FailureReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

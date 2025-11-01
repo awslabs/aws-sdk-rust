@@ -140,7 +140,7 @@ impl ::std::fmt::Display for TechnicalCueType {
             TechnicalCueType::OpeningCredits => write!(f, "OpeningCredits"),
             TechnicalCueType::Slate => write!(f, "Slate"),
             TechnicalCueType::StudioLogo => write!(f, "StudioLogo"),
-            TechnicalCueType::Unknown(value) => write!(f, "{}", value),
+            TechnicalCueType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

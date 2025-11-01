@@ -102,7 +102,7 @@ impl ::std::fmt::Display for H265Deblocking {
         match self {
             H265Deblocking::Disabled => write!(f, "DISABLED"),
             H265Deblocking::Enabled => write!(f, "ENABLED"),
-            H265Deblocking::Unknown(value) => write!(f, "{}", value),
+            H265Deblocking::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

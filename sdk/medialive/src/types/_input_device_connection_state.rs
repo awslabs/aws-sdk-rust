@@ -102,7 +102,7 @@ impl ::std::fmt::Display for InputDeviceConnectionState {
         match self {
             InputDeviceConnectionState::Connected => write!(f, "CONNECTED"),
             InputDeviceConnectionState::Disconnected => write!(f, "DISCONNECTED"),
-            InputDeviceConnectionState::Unknown(value) => write!(f, "{}", value),
+            InputDeviceConnectionState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DashboardBehavior {
         match self {
             DashboardBehavior::Disabled => write!(f, "DISABLED"),
             DashboardBehavior::Enabled => write!(f, "ENABLED"),
-            DashboardBehavior::Unknown(value) => write!(f, "{}", value),
+            DashboardBehavior::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Dimension {
         match self {
             Dimension::SavingsValue => write!(f, "SavingsValue"),
             Dimension::SavingsValueAfterDiscount => write!(f, "SavingsValueAfterDiscount"),
-            Dimension::Unknown(value) => write!(f, "{}", value),
+            Dimension::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

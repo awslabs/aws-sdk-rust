@@ -114,7 +114,7 @@ impl ::std::fmt::Display for EvidenceFinderEnablementStatus {
             EvidenceFinderEnablementStatus::DisableInProgress => write!(f, "DISABLE_IN_PROGRESS"),
             EvidenceFinderEnablementStatus::Enabled => write!(f, "ENABLED"),
             EvidenceFinderEnablementStatus::EnableInProgress => write!(f, "ENABLE_IN_PROGRESS"),
-            EvidenceFinderEnablementStatus::Unknown(value) => write!(f, "{}", value),
+            EvidenceFinderEnablementStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

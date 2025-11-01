@@ -108,7 +108,7 @@ impl ::std::fmt::Display for CpuManufacturer {
             CpuManufacturer::AmazonWebServices => write!(f, "amazon-web-services"),
             CpuManufacturer::Amd => write!(f, "amd"),
             CpuManufacturer::Intel => write!(f, "intel"),
-            CpuManufacturer::Unknown(value) => write!(f, "{}", value),
+            CpuManufacturer::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

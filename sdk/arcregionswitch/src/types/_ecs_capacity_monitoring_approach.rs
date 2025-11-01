@@ -102,7 +102,7 @@ impl ::std::fmt::Display for EcsCapacityMonitoringApproach {
         match self {
             EcsCapacityMonitoringApproach::ContainerInsightsMaxInLast24Hours => write!(f, "containerInsightsMaxInLast24Hours"),
             EcsCapacityMonitoringApproach::SampledMaxInLast24Hours => write!(f, "sampledMaxInLast24Hours"),
-            EcsCapacityMonitoringApproach::Unknown(value) => write!(f, "{}", value),
+            EcsCapacityMonitoringApproach::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for HlsManifestDurationFormat {
         match self {
             HlsManifestDurationFormat::FloatingPoint => write!(f, "FLOATING_POINT"),
             HlsManifestDurationFormat::Integer => write!(f, "INTEGER"),
-            HlsManifestDurationFormat::Unknown(value) => write!(f, "{}", value),
+            HlsManifestDurationFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

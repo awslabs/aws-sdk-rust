@@ -114,7 +114,7 @@ impl ::std::fmt::Display for IoTJobExecutionFailureType {
             IoTJobExecutionFailureType::Failed => write!(f, "FAILED"),
             IoTJobExecutionFailureType::Rejected => write!(f, "REJECTED"),
             IoTJobExecutionFailureType::TimedOut => write!(f, "TIMED_OUT"),
-            IoTJobExecutionFailureType::Unknown(value) => write!(f, "{}", value),
+            IoTJobExecutionFailureType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

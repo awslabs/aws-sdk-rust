@@ -114,7 +114,7 @@ impl ::std::fmt::Display for VoiceEngine {
             VoiceEngine::LongForm => write!(f, "long-form"),
             VoiceEngine::Neural => write!(f, "neural"),
             VoiceEngine::Standard => write!(f, "standard"),
-            VoiceEngine::Unknown(value) => write!(f, "{}", value),
+            VoiceEngine::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for EndpointSettingTypeValue {
             EndpointSettingTypeValue::Enum => write!(f, "enum"),
             EndpointSettingTypeValue::Integer => write!(f, "integer"),
             EndpointSettingTypeValue::String => write!(f, "string"),
-            EndpointSettingTypeValue::Unknown(value) => write!(f, "{}", value),
+            EndpointSettingTypeValue::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

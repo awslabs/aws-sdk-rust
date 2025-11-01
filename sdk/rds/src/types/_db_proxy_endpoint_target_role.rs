@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DbProxyEndpointTargetRole {
         match self {
             DbProxyEndpointTargetRole::ReadOnly => write!(f, "READ_ONLY"),
             DbProxyEndpointTargetRole::ReadWrite => write!(f, "READ_WRITE"),
-            DbProxyEndpointTargetRole::Unknown(value) => write!(f, "{}", value),
+            DbProxyEndpointTargetRole::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

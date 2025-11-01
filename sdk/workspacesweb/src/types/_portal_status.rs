@@ -108,7 +108,7 @@ impl ::std::fmt::Display for PortalStatus {
             PortalStatus::Active => write!(f, "Active"),
             PortalStatus::Incomplete => write!(f, "Incomplete"),
             PortalStatus::Pending => write!(f, "Pending"),
-            PortalStatus::Unknown(value) => write!(f, "{}", value),
+            PortalStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

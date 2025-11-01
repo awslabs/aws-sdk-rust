@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MessageUsefulness {
         match self {
             MessageUsefulness::NotUseful => write!(f, "NOT_USEFUL"),
             MessageUsefulness::Useful => write!(f, "USEFUL"),
-            MessageUsefulness::Unknown(value) => write!(f, "{}", value),
+            MessageUsefulness::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

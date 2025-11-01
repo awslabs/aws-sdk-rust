@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SortDirectionType {
         match self {
             SortDirectionType::Ascending => write!(f, "ASCENDING"),
             SortDirectionType::Descending => write!(f, "DESCENDING"),
-            SortDirectionType::Unknown(value) => write!(f, "{}", value),
+            SortDirectionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

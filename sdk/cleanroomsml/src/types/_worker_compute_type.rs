@@ -102,7 +102,7 @@ impl ::std::fmt::Display for WorkerComputeType {
         match self {
             WorkerComputeType::Cr1X => write!(f, "CR.1X"),
             WorkerComputeType::Cr4X => write!(f, "CR.4X"),
-            WorkerComputeType::Unknown(value) => write!(f, "{}", value),
+            WorkerComputeType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

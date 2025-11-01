@@ -102,7 +102,7 @@ impl ::std::fmt::Display for InferenceType {
         match self {
             InferenceType::OnDemand => write!(f, "ON_DEMAND"),
             InferenceType::Provisioned => write!(f, "PROVISIONED"),
-            InferenceType::Unknown(value) => write!(f, "{}", value),
+            InferenceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

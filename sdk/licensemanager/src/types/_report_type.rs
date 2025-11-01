@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ReportType {
         match self {
             ReportType::LicenseConfigurationSummaryReport => write!(f, "LicenseConfigurationSummaryReport"),
             ReportType::LicenseConfigurationUsageReport => write!(f, "LicenseConfigurationUsageReport"),
-            ReportType::Unknown(value) => write!(f, "{}", value),
+            ReportType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

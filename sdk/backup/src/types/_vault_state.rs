@@ -108,7 +108,7 @@ impl ::std::fmt::Display for VaultState {
             VaultState::Available => write!(f, "AVAILABLE"),
             VaultState::Creating => write!(f, "CREATING"),
             VaultState::Failed => write!(f, "FAILED"),
-            VaultState::Unknown(value) => write!(f, "{}", value),
+            VaultState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

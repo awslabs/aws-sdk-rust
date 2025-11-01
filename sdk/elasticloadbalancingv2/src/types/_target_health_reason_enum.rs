@@ -175,7 +175,7 @@ impl ::std::fmt::Display for TargetHealthReasonEnum {
             TargetHealthReasonEnum::NotRegistered => write!(f, "Target.NotRegistered"),
             TargetHealthReasonEnum::ResponseCodeMismatch => write!(f, "Target.ResponseCodeMismatch"),
             TargetHealthReasonEnum::Timeout => write!(f, "Target.Timeout"),
-            TargetHealthReasonEnum::Unknown(value) => write!(f, "{}", value),
+            TargetHealthReasonEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -133,7 +133,7 @@ impl ::std::fmt::Display for StartSelectorType {
             StartSelectorType::Now => write!(f, "NOW"),
             StartSelectorType::ProducerTimestamp => write!(f, "PRODUCER_TIMESTAMP"),
             StartSelectorType::ServerTimestamp => write!(f, "SERVER_TIMESTAMP"),
-            StartSelectorType::Unknown(value) => write!(f, "{}", value),
+            StartSelectorType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

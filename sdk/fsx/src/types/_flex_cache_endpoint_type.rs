@@ -108,7 +108,7 @@ impl ::std::fmt::Display for FlexCacheEndpointType {
             FlexCacheEndpointType::Cache => write!(f, "CACHE"),
             FlexCacheEndpointType::None => write!(f, "NONE"),
             FlexCacheEndpointType::Origin => write!(f, "ORIGIN"),
-            FlexCacheEndpointType::Unknown(value) => write!(f, "{}", value),
+            FlexCacheEndpointType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

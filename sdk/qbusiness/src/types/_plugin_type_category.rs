@@ -126,7 +126,7 @@ impl ::std::fmt::Display for PluginTypeCategory {
             PluginTypeCategory::Productivity => write!(f, "Productivity"),
             PluginTypeCategory::ProjectManagement => write!(f, "Project management"),
             PluginTypeCategory::TicketingManagement => write!(f, "Ticketing and incident management"),
-            PluginTypeCategory::Unknown(value) => write!(f, "{}", value),
+            PluginTypeCategory::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

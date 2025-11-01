@@ -120,7 +120,7 @@ impl ::std::fmt::Display for TargetPlatformArch {
             TargetPlatformArch::ArmEabihf => write!(f, "ARM_EABIHF"),
             TargetPlatformArch::X86 => write!(f, "X86"),
             TargetPlatformArch::X8664 => write!(f, "X86_64"),
-            TargetPlatformArch::Unknown(value) => write!(f, "{}", value),
+            TargetPlatformArch::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -140,7 +140,7 @@ impl ::std::fmt::Display for StopReason {
             StopReason::ModelContextWindowExceeded => write!(f, "model_context_window_exceeded"),
             StopReason::StopSequence => write!(f, "stop_sequence"),
             StopReason::ToolUse => write!(f, "tool_use"),
-            StopReason::Unknown(value) => write!(f, "{}", value),
+            StopReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

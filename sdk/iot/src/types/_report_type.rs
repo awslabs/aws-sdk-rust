@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ReportType {
         match self {
             ReportType::Errors => write!(f, "ERRORS"),
             ReportType::Results => write!(f, "RESULTS"),
-            ReportType::Unknown(value) => write!(f, "{}", value),
+            ReportType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

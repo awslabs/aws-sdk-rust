@@ -108,7 +108,7 @@ impl ::std::fmt::Display for SensitivityToAct {
             SensitivityToAct::High => write!(f, "HIGH"),
             SensitivityToAct::Low => write!(f, "LOW"),
             SensitivityToAct::Medium => write!(f, "MEDIUM"),
-            SensitivityToAct::Unknown(value) => write!(f, "{}", value),
+            SensitivityToAct::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

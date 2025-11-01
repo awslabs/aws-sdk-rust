@@ -102,7 +102,7 @@ impl ::std::fmt::Display for GoogleAnalyticsConnectorOperator {
         match self {
             GoogleAnalyticsConnectorOperator::Between => write!(f, "BETWEEN"),
             GoogleAnalyticsConnectorOperator::Projection => write!(f, "PROJECTION"),
-            GoogleAnalyticsConnectorOperator::Unknown(value) => write!(f, "{}", value),
+            GoogleAnalyticsConnectorOperator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

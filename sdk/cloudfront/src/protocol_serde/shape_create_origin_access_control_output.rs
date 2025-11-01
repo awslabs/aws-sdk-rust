@@ -34,8 +34,7 @@ pub fn de_origin_access_control(inp: &[u8]) -> std::result::Result<crate::types:
     let start_el = decoder.start_el();
     if !(start_el.matches("OriginAccessControl")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected OriginAccessControl got {:?}",
-            start_el
+            "invalid root, expected OriginAccessControl got {start_el:?}"
         )));
     }
     crate::protocol_serde::shape_origin_access_control::de_origin_access_control(&mut decoder)

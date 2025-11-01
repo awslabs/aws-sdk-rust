@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DeobfuscationStatus {
         match self {
             DeobfuscationStatus::Disabled => write!(f, "DISABLED"),
             DeobfuscationStatus::Enabled => write!(f, "ENABLED"),
-            DeobfuscationStatus::Unknown(value) => write!(f, "{}", value),
+            DeobfuscationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

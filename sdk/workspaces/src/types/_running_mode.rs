@@ -108,7 +108,7 @@ impl ::std::fmt::Display for RunningMode {
             RunningMode::AlwaysOn => write!(f, "ALWAYS_ON"),
             RunningMode::AutoStop => write!(f, "AUTO_STOP"),
             RunningMode::Manual => write!(f, "MANUAL"),
-            RunningMode::Unknown(value) => write!(f, "{}", value),
+            RunningMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -126,7 +126,7 @@ impl ::std::fmt::Display for IpamResourceType {
             IpamResourceType::PublicIpv4Pool => write!(f, "public-ipv4-pool"),
             IpamResourceType::Subnet => write!(f, "subnet"),
             IpamResourceType::Vpc => write!(f, "vpc"),
-            IpamResourceType::Unknown(value) => write!(f, "{}", value),
+            IpamResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

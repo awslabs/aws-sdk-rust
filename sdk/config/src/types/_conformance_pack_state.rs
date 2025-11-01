@@ -126,7 +126,7 @@ impl ::std::fmt::Display for ConformancePackState {
             ConformancePackState::CreateInProgress => write!(f, "CREATE_IN_PROGRESS"),
             ConformancePackState::DeleteFailed => write!(f, "DELETE_FAILED"),
             ConformancePackState::DeleteInProgress => write!(f, "DELETE_IN_PROGRESS"),
-            ConformancePackState::Unknown(value) => write!(f, "{}", value),
+            ConformancePackState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

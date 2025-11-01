@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ArchiveBooleanOperator {
         match self {
             ArchiveBooleanOperator::IsFalse => write!(f, "IS_FALSE"),
             ArchiveBooleanOperator::IsTrue => write!(f, "IS_TRUE"),
-            ArchiveBooleanOperator::Unknown(value) => write!(f, "{}", value),
+            ArchiveBooleanOperator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

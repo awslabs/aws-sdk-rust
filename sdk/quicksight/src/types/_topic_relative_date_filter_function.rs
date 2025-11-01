@@ -120,7 +120,7 @@ impl ::std::fmt::Display for TopicRelativeDateFilterFunction {
             TopicRelativeDateFilterFunction::Now => write!(f, "NOW"),
             TopicRelativeDateFilterFunction::Previous => write!(f, "PREVIOUS"),
             TopicRelativeDateFilterFunction::This => write!(f, "THIS"),
-            TopicRelativeDateFilterFunction::Unknown(value) => write!(f, "{}", value),
+            TopicRelativeDateFilterFunction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

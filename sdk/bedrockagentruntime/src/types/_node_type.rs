@@ -140,7 +140,7 @@ impl ::std::fmt::Display for NodeType {
             NodeType::LambdaFunctionNode => write!(f, "LambdaFunctionNode"),
             NodeType::LexNode => write!(f, "LexNode"),
             NodeType::PromptNode => write!(f, "PromptNode"),
-            NodeType::Unknown(value) => write!(f, "{}", value),
+            NodeType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

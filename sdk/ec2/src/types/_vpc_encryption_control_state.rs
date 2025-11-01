@@ -154,7 +154,7 @@ impl ::std::fmt::Display for VpcEncryptionControlState {
             VpcEncryptionControlState::EnforceInProgress => write!(f, "enforce-in-progress"),
             VpcEncryptionControlState::MonitorFailed => write!(f, "monitor-failed"),
             VpcEncryptionControlState::MonitorInProgress => write!(f, "monitor-in-progress"),
-            VpcEncryptionControlState::Unknown(value) => write!(f, "{}", value),
+            VpcEncryptionControlState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

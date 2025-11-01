@@ -114,7 +114,7 @@ impl ::std::fmt::Display for Gid {
             Gid::IntValue => write!(f, "INT_VALUE"),
             Gid::Name => write!(f, "NAME"),
             Gid::None => write!(f, "NONE"),
-            Gid::Unknown(value) => write!(f, "{}", value),
+            Gid::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

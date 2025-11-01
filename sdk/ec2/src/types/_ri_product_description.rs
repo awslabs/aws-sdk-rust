@@ -114,7 +114,7 @@ impl ::std::fmt::Display for RiProductDescription {
             RiProductDescription::LinuxUnixAmazonVpc => write!(f, "Linux/UNIX (Amazon VPC)"),
             RiProductDescription::Windows => write!(f, "Windows"),
             RiProductDescription::WindowsAmazonVpc => write!(f, "Windows (Amazon VPC)"),
-            RiProductDescription::Unknown(value) => write!(f, "{}", value),
+            RiProductDescription::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

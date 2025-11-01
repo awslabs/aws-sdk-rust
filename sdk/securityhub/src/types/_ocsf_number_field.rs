@@ -175,7 +175,7 @@ impl ::std::fmt::Display for OcsfNumberField {
             OcsfNumberField::ResourcesImageInUseCount => write!(f, "resources.image.in_use_count"),
             OcsfNumberField::SeverityId => write!(f, "severity_id"),
             OcsfNumberField::StatusId => write!(f, "status_id"),
-            OcsfNumberField::Unknown(value) => write!(f, "{}", value),
+            OcsfNumberField::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

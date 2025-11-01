@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AntipatternReportStatus {
             AntipatternReportStatus::Failed => write!(f, "FAILED"),
             AntipatternReportStatus::InProgress => write!(f, "IN_PROGRESS"),
             AntipatternReportStatus::Success => write!(f, "SUCCESS"),
-            AntipatternReportStatus::Unknown(value) => write!(f, "{}", value),
+            AntipatternReportStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

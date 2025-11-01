@@ -140,7 +140,7 @@ impl ::std::fmt::Display for SigningAlgorithm {
             SigningAlgorithm::Sha512Withecdsa => write!(f, "SHA512WITHECDSA"),
             SigningAlgorithm::Sha512Withrsa => write!(f, "SHA512WITHRSA"),
             SigningAlgorithm::Sm3Withsm2 => write!(f, "SM3WITHSM2"),
-            SigningAlgorithm::Unknown(value) => write!(f, "{}", value),
+            SigningAlgorithm::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

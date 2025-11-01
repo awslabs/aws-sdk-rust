@@ -133,7 +133,7 @@ impl ::std::fmt::Display for ProviderType {
             ProviderType::GithubEnterpriseServer => write!(f, "GitHubEnterpriseServer"),
             ProviderType::Gitlab => write!(f, "GitLab"),
             ProviderType::GitlabSelfManaged => write!(f, "GitLabSelfManaged"),
-            ProviderType::Unknown(value) => write!(f, "{}", value),
+            ProviderType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

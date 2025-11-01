@@ -96,7 +96,7 @@ impl ::std::fmt::Display for QuantumTaskAdditionalAttributeName {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             QuantumTaskAdditionalAttributeName::QueueInfo => write!(f, "QueueInfo"),
-            QuantumTaskAdditionalAttributeName::Unknown(value) => write!(f, "{}", value),
+            QuantumTaskAdditionalAttributeName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

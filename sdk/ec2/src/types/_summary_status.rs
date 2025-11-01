@@ -120,7 +120,7 @@ impl ::std::fmt::Display for SummaryStatus {
             SummaryStatus::InsufficientData => write!(f, "insufficient-data"),
             SummaryStatus::NotApplicable => write!(f, "not-applicable"),
             SummaryStatus::Ok => write!(f, "ok"),
-            SummaryStatus::Unknown(value) => write!(f, "{}", value),
+            SummaryStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

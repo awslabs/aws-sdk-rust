@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ErrorCode {
         match self {
             ErrorCode::InternalFailure => write!(f, "INTERNAL_FAILURE"),
             ErrorCode::ValidationError => write!(f, "VALIDATION_ERROR"),
-            ErrorCode::Unknown(value) => write!(f, "{}", value),
+            ErrorCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

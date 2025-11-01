@@ -108,7 +108,7 @@ impl ::std::fmt::Display for OriginAccessControlSigningBehaviors {
             OriginAccessControlSigningBehaviors::Always => write!(f, "always"),
             OriginAccessControlSigningBehaviors::Never => write!(f, "never"),
             OriginAccessControlSigningBehaviors::NoOverride => write!(f, "no-override"),
-            OriginAccessControlSigningBehaviors::Unknown(value) => write!(f, "{}", value),
+            OriginAccessControlSigningBehaviors::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

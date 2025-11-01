@@ -96,7 +96,7 @@ impl ::std::fmt::Display for AlgorithmNameCloudRemoval {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             AlgorithmNameCloudRemoval::Interpolation => write!(f, "INTERPOLATION"),
-            AlgorithmNameCloudRemoval::Unknown(value) => write!(f, "{}", value),
+            AlgorithmNameCloudRemoval::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CrlType {
         match self {
             CrlType::Complete => write!(f, "COMPLETE"),
             CrlType::Partitioned => write!(f, "PARTITIONED"),
-            CrlType::Unknown(value) => write!(f, "{}", value),
+            CrlType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

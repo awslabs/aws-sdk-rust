@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PathFormat {
         match self {
             PathFormat::Posix => write!(f, "posix"),
             PathFormat::Windows => write!(f, "windows"),
-            PathFormat::Unknown(value) => write!(f, "{}", value),
+            PathFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

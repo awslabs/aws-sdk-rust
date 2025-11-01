@@ -102,7 +102,7 @@ impl ::std::fmt::Display for M3u8DataPtsControl {
         match self {
             M3u8DataPtsControl::AlignToVideo => write!(f, "ALIGN_TO_VIDEO"),
             M3u8DataPtsControl::Auto => write!(f, "AUTO"),
-            M3u8DataPtsControl::Unknown(value) => write!(f, "{}", value),
+            M3u8DataPtsControl::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -128,7 +128,7 @@ impl ::std::fmt::Display for PrivateConnectionProvisioningFailureCause {
             PrivateConnectionProvisioningFailureCause::ConnectorServer => write!(f, "CONNECTOR_SERVER"),
             PrivateConnectionProvisioningFailureCause::InternalServer => write!(f, "INTERNAL_SERVER"),
             PrivateConnectionProvisioningFailureCause::Validation => write!(f, "VALIDATION"),
-            PrivateConnectionProvisioningFailureCause::Unknown(value) => write!(f, "{}", value),
+            PrivateConnectionProvisioningFailureCause::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

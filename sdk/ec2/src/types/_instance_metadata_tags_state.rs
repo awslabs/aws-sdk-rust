@@ -102,7 +102,7 @@ impl ::std::fmt::Display for InstanceMetadataTagsState {
         match self {
             InstanceMetadataTagsState::Disabled => write!(f, "disabled"),
             InstanceMetadataTagsState::Enabled => write!(f, "enabled"),
-            InstanceMetadataTagsState::Unknown(value) => write!(f, "{}", value),
+            InstanceMetadataTagsState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

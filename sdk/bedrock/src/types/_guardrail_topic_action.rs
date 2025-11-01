@@ -100,7 +100,7 @@ impl ::std::fmt::Display for GuardrailTopicAction {
         match self {
             GuardrailTopicAction::Block => write!(f, "BLOCK"),
             GuardrailTopicAction::None => write!(f, "NONE"),
-            GuardrailTopicAction::Unknown(value) => write!(f, "{}", value),
+            GuardrailTopicAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -280,7 +280,7 @@ impl ::std::fmt::Display for ResourceTypeFilter {
             ResourceTypeFilter::SqsQueue => write!(f, "SQS_QUEUE"),
             ResourceTypeFilter::StepFunctionsActivity => write!(f, "STEP_FUNCTIONS_ACTIVITY"),
             ResourceTypeFilter::StepFunctionsStateMachine => write!(f, "STEP_FUNCTIONS_STATE_MACHINE"),
-            ResourceTypeFilter::Unknown(value) => write!(f, "{}", value),
+            ResourceTypeFilter::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

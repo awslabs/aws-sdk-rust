@@ -154,7 +154,7 @@ impl ::std::fmt::Display for Ec2InstanceConnectEndpointState {
             Ec2InstanceConnectEndpointState::UpdateComplete => write!(f, "update-complete"),
             Ec2InstanceConnectEndpointState::UpdateFailed => write!(f, "update-failed"),
             Ec2InstanceConnectEndpointState::UpdateInProgress => write!(f, "update-in-progress"),
-            Ec2InstanceConnectEndpointState::Unknown(value) => write!(f, "{}", value),
+            Ec2InstanceConnectEndpointState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

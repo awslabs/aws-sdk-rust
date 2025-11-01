@@ -140,7 +140,7 @@ impl ::std::fmt::Display for DatasetStatus {
             DatasetStatus::UpdateComplete => write!(f, "UPDATE_COMPLETE"),
             DatasetStatus::UpdateFailed => write!(f, "UPDATE_FAILED"),
             DatasetStatus::UpdateInProgress => write!(f, "UPDATE_IN_PROGRESS"),
-            DatasetStatus::Unknown(value) => write!(f, "{}", value),
+            DatasetStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -51,16 +51,14 @@ pub fn de_get_access_key_last_used(
     let start_el = decoder.start_el();
     if !(start_el.matches("GetAccessKeyLastUsedResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected GetAccessKeyLastUsedResponse got {:?}",
-            start_el
+            "invalid root, expected GetAccessKeyLastUsedResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("GetAccessKeyLastUsedResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected GetAccessKeyLastUsedResult got {:?}",
-                start_el
+                "invalid result, expected GetAccessKeyLastUsedResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

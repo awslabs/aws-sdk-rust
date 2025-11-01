@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ApiCachingBehavior {
             ApiCachingBehavior::FullRequestCaching => write!(f, "FULL_REQUEST_CACHING"),
             ApiCachingBehavior::OperationLevelCaching => write!(f, "OPERATION_LEVEL_CACHING"),
             ApiCachingBehavior::PerResolverCaching => write!(f, "PER_RESOLVER_CACHING"),
-            ApiCachingBehavior::Unknown(value) => write!(f, "{}", value),
+            ApiCachingBehavior::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -77,11 +77,17 @@ pub use crate::types::_case_rule_error::CaseRuleErrorBuilder;
 
 pub use crate::types::_get_case_rule_response::GetCaseRuleResponseBuilder;
 
-pub use crate::types::_required_case_rule::RequiredCaseRuleBuilder;
+pub use crate::types::_hidden_case_rule::HiddenCaseRuleBuilder;
 
 pub use crate::types::_boolean_operands::BooleanOperandsBuilder;
 
 pub use crate::types::_empty_operand_value::EmptyOperandValueBuilder;
+
+pub use crate::types::_field_options_case_rule::FieldOptionsCaseRuleBuilder;
+
+pub use crate::types::_parent_child_field_options_mapping::ParentChildFieldOptionsMappingBuilder;
+
+pub use crate::types::_required_case_rule::RequiredCaseRuleBuilder;
 
 pub use crate::types::_case_rule_identifier::CaseRuleIdentifierBuilder;
 

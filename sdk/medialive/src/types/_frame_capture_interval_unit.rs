@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FrameCaptureIntervalUnit {
         match self {
             FrameCaptureIntervalUnit::Milliseconds => write!(f, "MILLISECONDS"),
             FrameCaptureIntervalUnit::Seconds => write!(f, "SECONDS"),
-            FrameCaptureIntervalUnit::Unknown(value) => write!(f, "{}", value),
+            FrameCaptureIntervalUnit::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

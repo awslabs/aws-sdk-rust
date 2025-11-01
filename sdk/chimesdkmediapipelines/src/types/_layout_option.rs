@@ -96,7 +96,7 @@ impl ::std::fmt::Display for LayoutOption {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             LayoutOption::GridView => write!(f, "GridView"),
-            LayoutOption::Unknown(value) => write!(f, "{}", value),
+            LayoutOption::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

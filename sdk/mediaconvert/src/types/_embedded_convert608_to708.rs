@@ -102,7 +102,7 @@ impl ::std::fmt::Display for EmbeddedConvert608To708 {
         match self {
             EmbeddedConvert608To708::Disabled => write!(f, "DISABLED"),
             EmbeddedConvert608To708::Upconvert => write!(f, "UPCONVERT"),
-            EmbeddedConvert608To708::Unknown(value) => write!(f, "{}", value),
+            EmbeddedConvert608To708::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for H264SpatialAq {
         match self {
             H264SpatialAq::Disabled => write!(f, "DISABLED"),
             H264SpatialAq::Enabled => write!(f, "ENABLED"),
-            H264SpatialAq::Unknown(value) => write!(f, "{}", value),
+            H264SpatialAq::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

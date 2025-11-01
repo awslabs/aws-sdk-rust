@@ -114,7 +114,7 @@ impl ::std::fmt::Display for PortProtocol {
             PortProtocol::Http => write!(f, "http"),
             PortProtocol::Http2 => write!(f, "http2"),
             PortProtocol::Tcp => write!(f, "tcp"),
-            PortProtocol::Unknown(value) => write!(f, "{}", value),
+            PortProtocol::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

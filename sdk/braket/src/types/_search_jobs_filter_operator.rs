@@ -132,7 +132,7 @@ impl ::std::fmt::Display for SearchJobsFilterOperator {
             SearchJobsFilterOperator::Gte => write!(f, "GTE"),
             SearchJobsFilterOperator::Lt => write!(f, "LT"),
             SearchJobsFilterOperator::Lte => write!(f, "LTE"),
-            SearchJobsFilterOperator::Unknown(value) => write!(f, "{}", value),
+            SearchJobsFilterOperator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

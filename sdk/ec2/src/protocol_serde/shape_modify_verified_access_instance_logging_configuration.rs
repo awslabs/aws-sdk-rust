@@ -55,8 +55,7 @@ pub fn de_modify_verified_access_instance_logging_configuration(
     let start_el = decoder.start_el();
     if !(start_el.matches("ModifyVerifiedAccessInstanceLoggingConfigurationResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected ModifyVerifiedAccessInstanceLoggingConfigurationResponse got {:?}",
-            start_el
+            "invalid root, expected ModifyVerifiedAccessInstanceLoggingConfigurationResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

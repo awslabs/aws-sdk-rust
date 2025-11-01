@@ -108,7 +108,7 @@ impl ::std::fmt::Display for TamsGapHandling {
             TamsGapHandling::FillWithBlack => write!(f, "FILL_WITH_BLACK"),
             TamsGapHandling::HoldLastFrame => write!(f, "HOLD_LAST_FRAME"),
             TamsGapHandling::SkipGaps => write!(f, "SKIP_GAPS"),
-            TamsGapHandling::Unknown(value) => write!(f, "{}", value),
+            TamsGapHandling::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -126,7 +126,7 @@ impl ::std::fmt::Display for ScheduleFrequencyType {
             ScheduleFrequencyType::Monthly => write!(f, "MONTHLY"),
             ScheduleFrequencyType::Once => write!(f, "ONCE"),
             ScheduleFrequencyType::Weekly => write!(f, "WEEKLY"),
-            ScheduleFrequencyType::Unknown(value) => write!(f, "{}", value),
+            ScheduleFrequencyType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for BotAliasStatus {
             BotAliasStatus::Creating => write!(f, "Creating"),
             BotAliasStatus::Deleting => write!(f, "Deleting"),
             BotAliasStatus::Failed => write!(f, "Failed"),
-            BotAliasStatus::Unknown(value) => write!(f, "{}", value),
+            BotAliasStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

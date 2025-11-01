@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ControlState {
         match self {
             ControlState::Active => write!(f, "ACTIVE"),
             ControlState::EndOfSupport => write!(f, "END_OF_SUPPORT"),
-            ControlState::Unknown(value) => write!(f, "{}", value),
+            ControlState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

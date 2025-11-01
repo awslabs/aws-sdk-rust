@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DeletableSamlProperty {
         match self {
             DeletableSamlProperty::SamlPropertiesRelayStateParameterName => write!(f, "SAML_PROPERTIES_RELAY_STATE_PARAMETER_NAME"),
             DeletableSamlProperty::SamlPropertiesUserAccessUrl => write!(f, "SAML_PROPERTIES_USER_ACCESS_URL"),
-            DeletableSamlProperty::Unknown(value) => write!(f, "{}", value),
+            DeletableSamlProperty::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

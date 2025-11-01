@@ -187,6 +187,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetECSServic
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::get_ecs_service_recommendation_projected_metrics::GetEcsServiceRecommendationProjectedMetricsInput,
                 output: &mut ::std::string::String,

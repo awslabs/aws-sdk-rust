@@ -108,7 +108,7 @@ impl ::std::fmt::Display for GroupConfigurationStatus {
             GroupConfigurationStatus::UpdateComplete => write!(f, "UPDATE_COMPLETE"),
             GroupConfigurationStatus::UpdateFailed => write!(f, "UPDATE_FAILED"),
             GroupConfigurationStatus::Updating => write!(f, "UPDATING"),
-            GroupConfigurationStatus::Unknown(value) => write!(f, "{}", value),
+            GroupConfigurationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

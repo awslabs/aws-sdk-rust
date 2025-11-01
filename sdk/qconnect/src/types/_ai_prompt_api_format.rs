@@ -119,7 +119,7 @@ impl ::std::fmt::Display for AiPromptApiFormat {
             AiPromptApiFormat::AnthropicClaudeTextCompletions => write!(f, "ANTHROPIC_CLAUDE_TEXT_COMPLETIONS"),
             AiPromptApiFormat::Messages => write!(f, "MESSAGES"),
             AiPromptApiFormat::TextCompletions => write!(f, "TEXT_COMPLETIONS"),
-            AiPromptApiFormat::Unknown(value) => write!(f, "{}", value),
+            AiPromptApiFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

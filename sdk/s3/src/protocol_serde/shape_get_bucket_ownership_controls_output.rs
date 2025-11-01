@@ -20,8 +20,7 @@ pub fn de_ownership_controls(inp: &[u8]) -> std::result::Result<crate::types::Ow
     let start_el = decoder.start_el();
     if !(start_el.matches("OwnershipControls")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected OwnershipControls got {:?}",
-            start_el
+            "invalid root, expected OwnershipControls got {start_el:?}"
         )));
     }
     crate::protocol_serde::shape_ownership_controls::de_ownership_controls(&mut decoder)

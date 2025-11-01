@@ -51,8 +51,7 @@ pub fn de_get_spot_placement_scores(
     let start_el = decoder.start_el();
     if !(start_el.matches("GetSpotPlacementScoresResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected GetSpotPlacementScoresResponse got {:?}",
-            start_el
+            "invalid root, expected GetSpotPlacementScoresResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

@@ -126,7 +126,7 @@ impl ::std::fmt::Display for StackSetOperationStatus {
             StackSetOperationStatus::Stopped => write!(f, "STOPPED"),
             StackSetOperationStatus::Stopping => write!(f, "STOPPING"),
             StackSetOperationStatus::Succeeded => write!(f, "SUCCEEDED"),
-            StackSetOperationStatus::Unknown(value) => write!(f, "{}", value),
+            StackSetOperationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

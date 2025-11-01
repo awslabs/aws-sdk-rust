@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ChannelRole {
         match self {
             ChannelRole::Master => write!(f, "MASTER"),
             ChannelRole::Viewer => write!(f, "VIEWER"),
-            ChannelRole::Unknown(value) => write!(f, "{}", value),
+            ChannelRole::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

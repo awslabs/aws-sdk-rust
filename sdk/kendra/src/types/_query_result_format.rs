@@ -102,7 +102,7 @@ impl ::std::fmt::Display for QueryResultFormat {
         match self {
             QueryResultFormat::Table => write!(f, "TABLE"),
             QueryResultFormat::Text => write!(f, "TEXT"),
-            QueryResultFormat::Unknown(value) => write!(f, "{}", value),
+            QueryResultFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

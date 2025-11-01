@@ -96,7 +96,7 @@ impl ::std::fmt::Display for WarningCode {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             WarningCode::QueryLanguageInvalidSyntax => write!(f, "QUERY_LANGUAGE_INVALID_SYNTAX"),
-            WarningCode::Unknown(value) => write!(f, "{}", value),
+            WarningCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

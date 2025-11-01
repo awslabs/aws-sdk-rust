@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DetailType {
         match self {
             DetailType::Basic => write!(f, "BASIC"),
             DetailType::Full => write!(f, "FULL"),
-            DetailType::Unknown(value) => write!(f, "{}", value),
+            DetailType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

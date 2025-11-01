@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ProtectionGroupAggregation {
             ProtectionGroupAggregation::Max => write!(f, "MAX"),
             ProtectionGroupAggregation::Mean => write!(f, "MEAN"),
             ProtectionGroupAggregation::Sum => write!(f, "SUM"),
-            ProtectionGroupAggregation::Unknown(value) => write!(f, "{}", value),
+            ProtectionGroupAggregation::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

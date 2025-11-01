@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AcceptCodeValidation {
         match self {
             AcceptCodeValidation::Enforce => write!(f, "ENFORCE"),
             AcceptCodeValidation::Ignore => write!(f, "IGNORE"),
-            AcceptCodeValidation::Unknown(value) => write!(f, "{}", value),
+            AcceptCodeValidation::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

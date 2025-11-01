@@ -102,7 +102,7 @@ impl ::std::fmt::Display for IFrameOnlyPlaylistType {
         match self {
             IFrameOnlyPlaylistType::Disabled => write!(f, "DISABLED"),
             IFrameOnlyPlaylistType::Standard => write!(f, "STANDARD"),
-            IFrameOnlyPlaylistType::Unknown(value) => write!(f, "{}", value),
+            IFrameOnlyPlaylistType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

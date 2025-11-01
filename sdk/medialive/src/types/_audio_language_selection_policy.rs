@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AudioLanguageSelectionPolicy {
         match self {
             AudioLanguageSelectionPolicy::Loose => write!(f, "LOOSE"),
             AudioLanguageSelectionPolicy::Strict => write!(f, "STRICT"),
-            AudioLanguageSelectionPolicy::Unknown(value) => write!(f, "{}", value),
+            AudioLanguageSelectionPolicy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

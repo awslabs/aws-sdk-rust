@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CmafIntervalCadence {
         match self {
             CmafIntervalCadence::FollowCustom => write!(f, "FOLLOW_CUSTOM"),
             CmafIntervalCadence::FollowIframe => write!(f, "FOLLOW_IFRAME"),
-            CmafIntervalCadence::Unknown(value) => write!(f, "{}", value),
+            CmafIntervalCadence::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

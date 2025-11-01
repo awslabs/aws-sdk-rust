@@ -147,7 +147,7 @@ impl ::std::fmt::Display for ActiveDirectoryStatus {
             ActiveDirectoryStatus::NetworkError => write!(f, "NETWORK_ERROR"),
             ActiveDirectoryStatus::Timeout => write!(f, "TIMEOUT"),
             ActiveDirectoryStatus::UnknownError => write!(f, "UNKNOWN_ERROR"),
-            ActiveDirectoryStatus::Unknown(value) => write!(f, "{}", value),
+            ActiveDirectoryStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

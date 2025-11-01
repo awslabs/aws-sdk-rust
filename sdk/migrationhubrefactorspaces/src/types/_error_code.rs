@@ -175,7 +175,7 @@ impl ::std::fmt::Display for ErrorCode {
             ErrorCode::ResourceUpdateFailure => write!(f, "RESOURCE_UPDATE_FAILURE"),
             ErrorCode::ServiceEndpointHealthCheckFailure => write!(f, "SERVICE_ENDPOINT_HEALTH_CHECK_FAILURE"),
             ErrorCode::StateTransitionFailure => write!(f, "STATE_TRANSITION_FAILURE"),
-            ErrorCode::Unknown(value) => write!(f, "{}", value),
+            ErrorCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

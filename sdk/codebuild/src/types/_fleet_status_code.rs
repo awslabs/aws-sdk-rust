@@ -147,7 +147,7 @@ impl ::std::fmt::Display for FleetStatusCode {
             FleetStatusCode::Rotating => write!(f, "ROTATING"),
             FleetStatusCode::UpdateRollbackFailed => write!(f, "UPDATE_ROLLBACK_FAILED"),
             FleetStatusCode::Updating => write!(f, "UPDATING"),
-            FleetStatusCode::Unknown(value) => write!(f, "{}", value),
+            FleetStatusCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for OcsfIpField {
         match self {
             OcsfIpField::EvidencesDstEndpointIp => write!(f, "evidences.dst_endpoint.ip"),
             OcsfIpField::EvidencesSrcEndpointIp => write!(f, "evidences.src_endpoint.ip"),
-            OcsfIpField::Unknown(value) => write!(f, "{}", value),
+            OcsfIpField::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

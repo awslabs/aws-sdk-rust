@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DatabaseType {
         match self {
             DatabaseType::System => write!(f, "SYSTEM"),
             DatabaseType::Tenant => write!(f, "TENANT"),
-            DatabaseType::Unknown(value) => write!(f, "{}", value),
+            DatabaseType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

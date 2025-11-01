@@ -114,7 +114,7 @@ impl ::std::fmt::Display for AccountType {
             AccountType::EnterpriseLwa => write!(f, "EnterpriseLWA"),
             AccountType::EnterpriseOidc => write!(f, "EnterpriseOIDC"),
             AccountType::Team => write!(f, "Team"),
-            AccountType::Unknown(value) => write!(f, "{}", value),
+            AccountType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

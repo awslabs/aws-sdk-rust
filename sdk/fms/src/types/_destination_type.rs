@@ -108,7 +108,7 @@ impl ::std::fmt::Display for DestinationType {
             DestinationType::Ipv4 => write!(f, "IPV4"),
             DestinationType::Ipv6 => write!(f, "IPV6"),
             DestinationType::PrefixList => write!(f, "PREFIX_LIST"),
-            DestinationType::Unknown(value) => write!(f, "{}", value),
+            DestinationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

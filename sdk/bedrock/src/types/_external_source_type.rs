@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ExternalSourceType {
         match self {
             ExternalSourceType::ByteContent => write!(f, "BYTE_CONTENT"),
             ExternalSourceType::S3 => write!(f, "S3"),
-            ExternalSourceType::Unknown(value) => write!(f, "{}", value),
+            ExternalSourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

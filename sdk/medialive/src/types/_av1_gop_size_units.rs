@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Av1GopSizeUnits {
         match self {
             Av1GopSizeUnits::Frames => write!(f, "FRAMES"),
             Av1GopSizeUnits::Seconds => write!(f, "SECONDS"),
-            Av1GopSizeUnits::Unknown(value) => write!(f, "{}", value),
+            Av1GopSizeUnits::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

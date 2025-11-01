@@ -120,7 +120,7 @@ impl ::std::fmt::Display for UserSortType {
             UserSortType::StorageUsed => write!(f, "STORAGE_USED"),
             UserSortType::UserName => write!(f, "USER_NAME"),
             UserSortType::UserStatus => write!(f, "USER_STATUS"),
-            UserSortType::Unknown(value) => write!(f, "{}", value),
+            UserSortType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

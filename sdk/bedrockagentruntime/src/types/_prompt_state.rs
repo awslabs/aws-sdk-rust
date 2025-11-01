@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PromptState {
         match self {
             PromptState::Disabled => write!(f, "DISABLED"),
             PromptState::Enabled => write!(f, "ENABLED"),
-            PromptState::Unknown(value) => write!(f, "{}", value),
+            PromptState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

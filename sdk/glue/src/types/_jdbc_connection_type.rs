@@ -120,7 +120,7 @@ impl ::std::fmt::Display for JdbcConnectionType {
             JdbcConnectionType::Postgresql => write!(f, "postgresql"),
             JdbcConnectionType::Redshift => write!(f, "redshift"),
             JdbcConnectionType::Sqlserver => write!(f, "sqlserver"),
-            JdbcConnectionType::Unknown(value) => write!(f, "{}", value),
+            JdbcConnectionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

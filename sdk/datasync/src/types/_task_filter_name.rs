@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TaskFilterName {
         match self {
             TaskFilterName::CreationTime => write!(f, "CreationTime"),
             TaskFilterName::LocationId => write!(f, "LocationId"),
-            TaskFilterName::Unknown(value) => write!(f, "{}", value),
+            TaskFilterName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

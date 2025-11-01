@@ -114,7 +114,7 @@ impl ::std::fmt::Display for TargetGroupType {
             TargetGroupType::Instance => write!(f, "INSTANCE"),
             TargetGroupType::Ip => write!(f, "IP"),
             TargetGroupType::Lambda => write!(f, "LAMBDA"),
-            TargetGroupType::Unknown(value) => write!(f, "{}", value),
+            TargetGroupType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

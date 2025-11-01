@@ -114,7 +114,7 @@ impl ::std::fmt::Display for NetworkMode {
             NetworkMode::Bridge => write!(f, "bridge"),
             NetworkMode::Host => write!(f, "host"),
             NetworkMode::None => write!(f, "none"),
-            NetworkMode::Unknown(value) => write!(f, "{}", value),
+            NetworkMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

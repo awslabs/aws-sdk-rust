@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RedshiftServerlessAuthType {
         match self {
             RedshiftServerlessAuthType::Iam => write!(f, "IAM"),
             RedshiftServerlessAuthType::UsernamePassword => write!(f, "USERNAME_PASSWORD"),
-            RedshiftServerlessAuthType::Unknown(value) => write!(f, "{}", value),
+            RedshiftServerlessAuthType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

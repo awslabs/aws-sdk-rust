@@ -102,7 +102,7 @@ impl ::std::fmt::Display for BedrockTraceStatus {
         match self {
             BedrockTraceStatus::Disabled => write!(f, "DISABLED"),
             BedrockTraceStatus::Enabled => write!(f, "ENABLED"),
-            BedrockTraceStatus::Unknown(value) => write!(f, "{}", value),
+            BedrockTraceStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

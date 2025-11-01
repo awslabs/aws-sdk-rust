@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AuthenticationScheme {
         match self {
             AuthenticationScheme::Akamai => write!(f, "AKAMAI"),
             AuthenticationScheme::Common => write!(f, "COMMON"),
-            AuthenticationScheme::Unknown(value) => write!(f, "{}", value),
+            AuthenticationScheme::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

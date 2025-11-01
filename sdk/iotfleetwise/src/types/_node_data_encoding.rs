@@ -102,7 +102,7 @@ impl ::std::fmt::Display for NodeDataEncoding {
         match self {
             NodeDataEncoding::Binary => write!(f, "BINARY"),
             NodeDataEncoding::Typed => write!(f, "TYPED"),
-            NodeDataEncoding::Unknown(value) => write!(f, "{}", value),
+            NodeDataEncoding::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

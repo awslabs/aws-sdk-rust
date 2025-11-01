@@ -168,7 +168,7 @@ impl ::std::fmt::Display for CompetitorName {
             CompetitorName::OnPrem => write!(f, "On-Prem"),
             CompetitorName::OracleCloud => write!(f, "Oracle Cloud"),
             CompetitorName::OtherCostOptimization => write!(f, "Other- Cost Optimization"),
-            CompetitorName::Unknown(value) => write!(f, "{}", value),
+            CompetitorName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

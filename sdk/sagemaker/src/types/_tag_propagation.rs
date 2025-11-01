@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TagPropagation {
         match self {
             TagPropagation::Disabled => write!(f, "DISABLED"),
             TagPropagation::Enabled => write!(f, "ENABLED"),
-            TagPropagation::Unknown(value) => write!(f, "{}", value),
+            TagPropagation::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

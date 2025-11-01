@@ -133,7 +133,7 @@ impl ::std::fmt::Display for TargetHealthReason {
             TargetHealthReason::PendingProxyCapacity => write!(f, "PENDING_PROXY_CAPACITY"),
             TargetHealthReason::Promoted => write!(f, "PROMOTED"),
             TargetHealthReason::Unreachable => write!(f, "UNREACHABLE"),
-            TargetHealthReason::Unknown(value) => write!(f, "{}", value),
+            TargetHealthReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

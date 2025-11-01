@@ -53,8 +53,7 @@ pub fn de_modify_vpn_tunnel_certificate(
     let start_el = decoder.start_el();
     if !(start_el.matches("ModifyVpnTunnelCertificateResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected ModifyVpnTunnelCertificateResponse got {:?}",
-            start_el
+            "invalid root, expected ModifyVpnTunnelCertificateResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

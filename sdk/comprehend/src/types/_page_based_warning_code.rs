@@ -107,7 +107,7 @@ impl ::std::fmt::Display for PageBasedWarningCode {
                 write!(f, "INFERENCING_NATIVE_DOCUMENT_WITH_PLAINTEXT_TRAINED_MODEL")
             }
             PageBasedWarningCode::InferencingPlaintextWithNativeTrainedModel => write!(f, "INFERENCING_PLAINTEXT_WITH_NATIVE_TRAINED_MODEL"),
-            PageBasedWarningCode::Unknown(value) => write!(f, "{}", value),
+            PageBasedWarningCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

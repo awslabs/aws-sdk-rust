@@ -108,7 +108,7 @@ impl ::std::fmt::Display for TelemetryState {
             TelemetryState::Disabled => write!(f, "Disabled"),
             TelemetryState::Enabled => write!(f, "Enabled"),
             TelemetryState::NotApplicable => write!(f, "NotApplicable"),
-            TelemetryState::Unknown(value) => write!(f, "{}", value),
+            TelemetryState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

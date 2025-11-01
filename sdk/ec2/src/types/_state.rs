@@ -154,7 +154,7 @@ impl ::std::fmt::Display for State {
             State::Pending => write!(f, "Pending"),
             State::PendingAcceptance => write!(f, "PendingAcceptance"),
             State::Rejected => write!(f, "Rejected"),
-            State::Unknown(value) => write!(f, "{}", value),
+            State::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CmfcDescriptiveVideoServiceFlag {
         match self {
             CmfcDescriptiveVideoServiceFlag::DontFlag => write!(f, "DONT_FLAG"),
             CmfcDescriptiveVideoServiceFlag::Flag => write!(f, "FLAG"),
-            CmfcDescriptiveVideoServiceFlag::Unknown(value) => write!(f, "{}", value),
+            CmfcDescriptiveVideoServiceFlag::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

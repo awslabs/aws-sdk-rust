@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ResponseItemType {
             ResponseItemType::Document => write!(f, "DOCUMENT"),
             ResponseItemType::DocumentVersion => write!(f, "DOCUMENT_VERSION"),
             ResponseItemType::Folder => write!(f, "FOLDER"),
-            ResponseItemType::Unknown(value) => write!(f, "{}", value),
+            ResponseItemType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

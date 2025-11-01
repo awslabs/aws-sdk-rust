@@ -154,7 +154,7 @@ impl ::std::fmt::Display for ContentCategoryType {
             ContentCategoryType::SourceCode => write!(f, "SOURCE_CODE"),
             ContentCategoryType::Spreadsheet => write!(f, "SPREADSHEET"),
             ContentCategoryType::Video => write!(f, "VIDEO"),
-            ContentCategoryType::Unknown(value) => write!(f, "{}", value),
+            ContentCategoryType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

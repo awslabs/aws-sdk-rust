@@ -120,7 +120,7 @@ impl ::std::fmt::Display for LensStatus {
             LensStatus::Deprecated => write!(f, "DEPRECATED"),
             LensStatus::NotCurrent => write!(f, "NOT_CURRENT"),
             LensStatus::Unshared => write!(f, "UNSHARED"),
-            LensStatus::Unknown(value) => write!(f, "{}", value),
+            LensStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

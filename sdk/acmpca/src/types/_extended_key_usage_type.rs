@@ -154,7 +154,7 @@ impl ::std::fmt::Display for ExtendedKeyUsageType {
             ExtendedKeyUsageType::ServerAuth => write!(f, "SERVER_AUTH"),
             ExtendedKeyUsageType::SmartCardLogin => write!(f, "SMART_CARD_LOGIN"),
             ExtendedKeyUsageType::TimeStamping => write!(f, "TIME_STAMPING"),
-            ExtendedKeyUsageType::Unknown(value) => write!(f, "{}", value),
+            ExtendedKeyUsageType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

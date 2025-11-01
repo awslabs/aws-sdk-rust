@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FunctionStage {
         match self {
             FunctionStage::Development => write!(f, "DEVELOPMENT"),
             FunctionStage::Live => write!(f, "LIVE"),
-            FunctionStage::Unknown(value) => write!(f, "{}", value),
+            FunctionStage::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

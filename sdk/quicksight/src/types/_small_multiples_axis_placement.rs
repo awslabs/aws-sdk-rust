@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SmallMultiplesAxisPlacement {
         match self {
             SmallMultiplesAxisPlacement::Inside => write!(f, "INSIDE"),
             SmallMultiplesAxisPlacement::Outside => write!(f, "OUTSIDE"),
-            SmallMultiplesAxisPlacement::Unknown(value) => write!(f, "{}", value),
+            SmallMultiplesAxisPlacement::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

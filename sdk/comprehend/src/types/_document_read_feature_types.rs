@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DocumentReadFeatureTypes {
         match self {
             DocumentReadFeatureTypes::Forms => write!(f, "FORMS"),
             DocumentReadFeatureTypes::Tables => write!(f, "TABLES"),
-            DocumentReadFeatureTypes::Unknown(value) => write!(f, "{}", value),
+            DocumentReadFeatureTypes::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

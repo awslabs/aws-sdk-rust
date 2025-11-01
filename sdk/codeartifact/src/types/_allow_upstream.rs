@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AllowUpstream {
         match self {
             AllowUpstream::Allow => write!(f, "ALLOW"),
             AllowUpstream::Block => write!(f, "BLOCK"),
-            AllowUpstream::Unknown(value) => write!(f, "{}", value),
+            AllowUpstream::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

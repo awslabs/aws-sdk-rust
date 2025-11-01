@@ -114,7 +114,7 @@ impl ::std::fmt::Display for PartitionLoadFrequency {
             PartitionLoadFrequency::Monthly => write!(f, "monthly"),
             PartitionLoadFrequency::None => write!(f, "none"),
             PartitionLoadFrequency::Weekly => write!(f, "weekly"),
-            PartitionLoadFrequency::Unknown(value) => write!(f, "{}", value),
+            PartitionLoadFrequency::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

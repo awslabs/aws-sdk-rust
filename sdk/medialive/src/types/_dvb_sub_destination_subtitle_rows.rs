@@ -108,7 +108,7 @@ impl ::std::fmt::Display for DvbSubDestinationSubtitleRows {
             DvbSubDestinationSubtitleRows::Rows16 => write!(f, "ROWS_16"),
             DvbSubDestinationSubtitleRows::Rows20 => write!(f, "ROWS_20"),
             DvbSubDestinationSubtitleRows::Rows24 => write!(f, "ROWS_24"),
-            DvbSubDestinationSubtitleRows::Unknown(value) => write!(f, "{}", value),
+            DvbSubDestinationSubtitleRows::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

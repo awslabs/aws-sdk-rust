@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MergeType {
         match self {
             MergeType::AutoMerge => write!(f, "AUTO_MERGE"),
             MergeType::ManualMerge => write!(f, "MANUAL_MERGE"),
-            MergeType::Unknown(value) => write!(f, "{}", value),
+            MergeType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

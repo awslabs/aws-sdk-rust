@@ -96,7 +96,7 @@ impl ::std::fmt::Display for InstanceHealthCheckType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             InstanceHealthCheckType::ContainerRuntime => write!(f, "CONTAINER_RUNTIME"),
-            InstanceHealthCheckType::Unknown(value) => write!(f, "{}", value),
+            InstanceHealthCheckType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MatchPurpose {
         match self {
             MatchPurpose::IdentifierGeneration => write!(f, "IDENTIFIER_GENERATION"),
             MatchPurpose::Indexing => write!(f, "INDEXING"),
-            MatchPurpose::Unknown(value) => write!(f, "{}", value),
+            MatchPurpose::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

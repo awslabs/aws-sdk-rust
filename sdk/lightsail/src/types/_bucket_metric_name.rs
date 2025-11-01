@@ -102,7 +102,7 @@ impl ::std::fmt::Display for BucketMetricName {
         match self {
             BucketMetricName::BucketSizeBytes => write!(f, "BucketSizeBytes"),
             BucketMetricName::NumberOfObjects => write!(f, "NumberOfObjects"),
-            BucketMetricName::Unknown(value) => write!(f, "{}", value),
+            BucketMetricName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for CandidateSortBy {
             CandidateSortBy::CreationTime => write!(f, "CreationTime"),
             CandidateSortBy::FinalObjectiveMetricValue => write!(f, "FinalObjectiveMetricValue"),
             CandidateSortBy::Status => write!(f, "Status"),
-            CandidateSortBy::Unknown(value) => write!(f, "{}", value),
+            CandidateSortBy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

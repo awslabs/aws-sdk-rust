@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FaceAttributes {
         match self {
             FaceAttributes::All => write!(f, "ALL"),
             FaceAttributes::Default => write!(f, "DEFAULT"),
-            FaceAttributes::Unknown(value) => write!(f, "{}", value),
+            FaceAttributes::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -140,7 +140,7 @@ impl ::std::fmt::Display for Icd10CmTraitName {
             Icd10CmTraitName::PertainsToFamily => write!(f, "PERTAINS_TO_FAMILY"),
             Icd10CmTraitName::Sign => write!(f, "SIGN"),
             Icd10CmTraitName::Symptom => write!(f, "SYMPTOM"),
-            Icd10CmTraitName::Unknown(value) => write!(f, "{}", value),
+            Icd10CmTraitName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

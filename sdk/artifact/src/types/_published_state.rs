@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PublishedState {
         match self {
             PublishedState::Published => write!(f, "PUBLISHED"),
             PublishedState::Unpublished => write!(f, "UNPUBLISHED"),
-            PublishedState::Unknown(value) => write!(f, "{}", value),
+            PublishedState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

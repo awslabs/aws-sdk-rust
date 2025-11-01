@@ -108,7 +108,7 @@ impl ::std::fmt::Display for VideoFillMode {
             VideoFillMode::Contain => write!(f, "CONTAIN"),
             VideoFillMode::Cover => write!(f, "COVER"),
             VideoFillMode::Fill => write!(f, "FILL"),
-            VideoFillMode::Unknown(value) => write!(f, "{}", value),
+            VideoFillMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

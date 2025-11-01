@@ -123,7 +123,7 @@ impl ::std::fmt::Display for AccountContactType {
             AccountContactType::AccountAlternateOperations => write!(f, "ACCOUNT_ALTERNATE_OPERATIONS"),
             AccountContactType::AccountAlternateSecurity => write!(f, "ACCOUNT_ALTERNATE_SECURITY"),
             AccountContactType::AccountPrimary => write!(f, "ACCOUNT_PRIMARY"),
-            AccountContactType::Unknown(value) => write!(f, "{}", value),
+            AccountContactType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

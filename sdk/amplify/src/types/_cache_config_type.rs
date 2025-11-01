@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CacheConfigType {
         match self {
             CacheConfigType::AmplifyManaged => write!(f, "AMPLIFY_MANAGED"),
             CacheConfigType::AmplifyManagedNoCookies => write!(f, "AMPLIFY_MANAGED_NO_COOKIES"),
-            CacheConfigType::Unknown(value) => write!(f, "{}", value),
+            CacheConfigType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

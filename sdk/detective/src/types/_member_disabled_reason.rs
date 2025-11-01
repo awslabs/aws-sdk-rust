@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MemberDisabledReason {
         match self {
             MemberDisabledReason::VolumeTooHigh => write!(f, "VOLUME_TOO_HIGH"),
             MemberDisabledReason::VolumeUnknown => write!(f, "VOLUME_UNKNOWN"),
-            MemberDisabledReason::Unknown(value) => write!(f, "{}", value),
+            MemberDisabledReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

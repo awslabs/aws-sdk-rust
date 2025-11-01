@@ -133,7 +133,7 @@ impl ::std::fmt::Display for OperationType {
             OperationType::RegisterInstance => write!(f, "REGISTER_INSTANCE"),
             OperationType::UpdateNamespace => write!(f, "UPDATE_NAMESPACE"),
             OperationType::UpdateService => write!(f, "UPDATE_SERVICE"),
-            OperationType::Unknown(value) => write!(f, "{}", value),
+            OperationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

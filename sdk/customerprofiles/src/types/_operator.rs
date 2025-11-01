@@ -114,7 +114,7 @@ impl ::std::fmt::Display for Operator {
             Operator::GreaterThan => write!(f, "GREATER_THAN"),
             Operator::LessThan => write!(f, "LESS_THAN"),
             Operator::NotEqualTo => write!(f, "NOT_EQUAL_TO"),
-            Operator::Unknown(value) => write!(f, "{}", value),
+            Operator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

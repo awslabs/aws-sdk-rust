@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AudioExtractionCategoryType {
             AudioExtractionCategoryType::AudioContentModeration => write!(f, "AUDIO_CONTENT_MODERATION"),
             AudioExtractionCategoryType::TopicContentModeration => write!(f, "TOPIC_CONTENT_MODERATION"),
             AudioExtractionCategoryType::Transcript => write!(f, "TRANSCRIPT"),
-            AudioExtractionCategoryType::Unknown(value) => write!(f, "{}", value),
+            AudioExtractionCategoryType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

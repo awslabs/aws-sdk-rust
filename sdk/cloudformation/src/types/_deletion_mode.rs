@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DeletionMode {
         match self {
             DeletionMode::ForceDeleteStack => write!(f, "FORCE_DELETE_STACK"),
             DeletionMode::Standard => write!(f, "STANDARD"),
-            DeletionMode::Unknown(value) => write!(f, "{}", value),
+            DeletionMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

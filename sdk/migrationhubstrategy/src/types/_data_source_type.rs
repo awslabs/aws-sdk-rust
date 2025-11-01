@@ -119,7 +119,7 @@ impl ::std::fmt::Display for DataSourceType {
             DataSourceType::Import => write!(f, "Import"),
             DataSourceType::Mpa => write!(f, "MPA"),
             DataSourceType::MhsrCollector => write!(f, "StrategyRecommendationsApplicationDataCollector"),
-            DataSourceType::Unknown(value) => write!(f, "{}", value),
+            DataSourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Av1FramerateControl {
         match self {
             Av1FramerateControl::InitializeFromSource => write!(f, "INITIALIZE_FROM_SOURCE"),
             Av1FramerateControl::Specified => write!(f, "SPECIFIED"),
-            Av1FramerateControl::Unknown(value) => write!(f, "{}", value),
+            Av1FramerateControl::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

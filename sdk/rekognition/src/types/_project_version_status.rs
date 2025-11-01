@@ -189,7 +189,7 @@ impl ::std::fmt::Display for ProjectVersionStatus {
             ProjectVersionStatus::TrainingCompleted => write!(f, "TRAINING_COMPLETED"),
             ProjectVersionStatus::TrainingFailed => write!(f, "TRAINING_FAILED"),
             ProjectVersionStatus::TrainingInProgress => write!(f, "TRAINING_IN_PROGRESS"),
-            ProjectVersionStatus::Unknown(value) => write!(f, "{}", value),
+            ProjectVersionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

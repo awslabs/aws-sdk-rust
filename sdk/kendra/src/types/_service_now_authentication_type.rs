@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ServiceNowAuthenticationType {
         match self {
             ServiceNowAuthenticationType::HttpBasic => write!(f, "HTTP_BASIC"),
             ServiceNowAuthenticationType::Oauth2 => write!(f, "OAUTH2"),
-            ServiceNowAuthenticationType::Unknown(value) => write!(f, "{}", value),
+            ServiceNowAuthenticationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

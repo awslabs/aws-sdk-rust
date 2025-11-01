@@ -102,7 +102,7 @@ impl ::std::fmt::Display for InsightsMetricDataType {
         match self {
             InsightsMetricDataType::FillWithZeros => write!(f, "FillWithZeros"),
             InsightsMetricDataType::NonZeroData => write!(f, "NonZeroData"),
-            InsightsMetricDataType::Unknown(value) => write!(f, "{}", value),
+            InsightsMetricDataType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for LicenseFinding {
             LicenseFinding::InsufficientMetrics => write!(f, "InsufficientMetrics"),
             LicenseFinding::NotOptimized => write!(f, "NotOptimized"),
             LicenseFinding::Optimized => write!(f, "Optimized"),
-            LicenseFinding::Unknown(value) => write!(f, "{}", value),
+            LicenseFinding::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

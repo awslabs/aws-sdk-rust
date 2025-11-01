@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SavingsEstimationMode {
         match self {
             SavingsEstimationMode::AfterDiscounts => write!(f, "AfterDiscounts"),
             SavingsEstimationMode::BeforeDiscounts => write!(f, "BeforeDiscounts"),
-            SavingsEstimationMode::Unknown(value) => write!(f, "{}", value),
+            SavingsEstimationMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

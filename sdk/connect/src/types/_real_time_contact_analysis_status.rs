@@ -108,7 +108,7 @@ impl ::std::fmt::Display for RealTimeContactAnalysisStatus {
             RealTimeContactAnalysisStatus::Completed => write!(f, "COMPLETED"),
             RealTimeContactAnalysisStatus::Failed => write!(f, "FAILED"),
             RealTimeContactAnalysisStatus::InProgress => write!(f, "IN_PROGRESS"),
-            RealTimeContactAnalysisStatus::Unknown(value) => write!(f, "{}", value),
+            RealTimeContactAnalysisStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

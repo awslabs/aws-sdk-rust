@@ -168,7 +168,7 @@ impl ::std::fmt::Display for EventName {
             EventName::SubscribeError => write!(f, "SUBSCRIBE_ERROR"),
             EventName::SubscribeStarted => write!(f, "SUBSCRIBE_STARTED"),
             EventName::SubscribeStopped => write!(f, "SUBSCRIBE_STOPPED"),
-            EventName::Unknown(value) => write!(f, "{}", value),
+            EventName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

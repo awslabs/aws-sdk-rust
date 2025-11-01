@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ChannelMessagePersistenceType {
         match self {
             ChannelMessagePersistenceType::NonPersistent => write!(f, "NON_PERSISTENT"),
             ChannelMessagePersistenceType::Persistent => write!(f, "PERSISTENT"),
-            ChannelMessagePersistenceType::Unknown(value) => write!(f, "{}", value),
+            ChannelMessagePersistenceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

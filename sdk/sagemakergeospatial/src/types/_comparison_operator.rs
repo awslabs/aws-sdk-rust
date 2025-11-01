@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ComparisonOperator {
             ComparisonOperator::Equals => write!(f, "EQUALS"),
             ComparisonOperator::NotEquals => write!(f, "NOT_EQUALS"),
             ComparisonOperator::StartsWith => write!(f, "STARTS_WITH"),
-            ComparisonOperator::Unknown(value) => write!(f, "{}", value),
+            ComparisonOperator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

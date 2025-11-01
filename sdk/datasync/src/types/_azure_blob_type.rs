@@ -96,7 +96,7 @@ impl ::std::fmt::Display for AzureBlobType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             AzureBlobType::Block => write!(f, "BLOCK"),
-            AzureBlobType::Unknown(value) => write!(f, "{}", value),
+            AzureBlobType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

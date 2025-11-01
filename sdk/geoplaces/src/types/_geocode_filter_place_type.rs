@@ -124,7 +124,7 @@ impl ::std::fmt::Display for GeocodeFilterPlaceType {
             GeocodeFilterPlaceType::PointAddress => write!(f, "PointAddress"),
             GeocodeFilterPlaceType::PostalCode => write!(f, "PostalCode"),
             GeocodeFilterPlaceType::Street => write!(f, "Street"),
-            GeocodeFilterPlaceType::Unknown(value) => write!(f, "{}", value),
+            GeocodeFilterPlaceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

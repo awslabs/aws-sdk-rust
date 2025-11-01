@@ -126,7 +126,7 @@ impl ::std::fmt::Display for ReservedNodeExchangeStatusType {
             ReservedNodeExchangeStatusType::Requested => write!(f, "REQUESTED"),
             ReservedNodeExchangeStatusType::Retrying => write!(f, "RETRYING"),
             ReservedNodeExchangeStatusType::Succeeded => write!(f, "SUCCEEDED"),
-            ReservedNodeExchangeStatusType::Unknown(value) => write!(f, "{}", value),
+            ReservedNodeExchangeStatusType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

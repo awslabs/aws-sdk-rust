@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Action {
         match self {
             Action::Read => write!(f, "read"),
             Action::Write => write!(f, "write"),
-            Action::Unknown(value) => write!(f, "{}", value),
+            Action::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TunnelStatus {
         match self {
             TunnelStatus::Closed => write!(f, "CLOSED"),
             TunnelStatus::Open => write!(f, "OPEN"),
-            TunnelStatus::Unknown(value) => write!(f, "{}", value),
+            TunnelStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

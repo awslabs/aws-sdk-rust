@@ -329,7 +329,7 @@ impl ::std::fmt::Display for ErrorCode {
             ErrorCode::RevisionMissing => write!(f, "REVISION_MISSING"),
             ErrorCode::Throttled => write!(f, "THROTTLED"),
             ErrorCode::Timeout => write!(f, "TIMEOUT"),
-            ErrorCode::Unknown(value) => write!(f, "{}", value),
+            ErrorCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

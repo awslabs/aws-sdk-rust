@@ -140,7 +140,7 @@ impl ::std::fmt::Display for FleetStateCode {
             FleetStateCode::Failed => write!(f, "failed"),
             FleetStateCode::Modifying => write!(f, "modifying"),
             FleetStateCode::Submitted => write!(f, "submitted"),
-            FleetStateCode::Unknown(value) => write!(f, "{}", value),
+            FleetStateCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

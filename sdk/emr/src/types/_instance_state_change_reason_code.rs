@@ -126,7 +126,7 @@ impl ::std::fmt::Display for InstanceStateChangeReasonCode {
             InstanceStateChangeReasonCode::InstanceFailure => write!(f, "INSTANCE_FAILURE"),
             InstanceStateChangeReasonCode::InternalError => write!(f, "INTERNAL_ERROR"),
             InstanceStateChangeReasonCode::ValidationError => write!(f, "VALIDATION_ERROR"),
-            InstanceStateChangeReasonCode::Unknown(value) => write!(f, "{}", value),
+            InstanceStateChangeReasonCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

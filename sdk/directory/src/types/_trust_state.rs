@@ -168,7 +168,7 @@ impl ::std::fmt::Display for TrustState {
             TrustState::Verified => write!(f, "Verified"),
             TrustState::VerifyFailed => write!(f, "VerifyFailed"),
             TrustState::Verifying => write!(f, "Verifying"),
-            TrustState::Unknown(value) => write!(f, "{}", value),
+            TrustState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

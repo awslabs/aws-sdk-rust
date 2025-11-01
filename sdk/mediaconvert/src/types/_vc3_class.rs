@@ -108,7 +108,7 @@ impl ::std::fmt::Display for Vc3Class {
             Vc3Class::Class1458Bit => write!(f, "CLASS_145_8BIT"),
             Vc3Class::Class22010Bit => write!(f, "CLASS_220_10BIT"),
             Vc3Class::Class2208Bit => write!(f, "CLASS_220_8BIT"),
-            Vc3Class::Unknown(value) => write!(f, "{}", value),
+            Vc3Class::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

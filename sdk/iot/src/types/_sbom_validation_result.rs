@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SbomValidationResult {
         match self {
             SbomValidationResult::Failed => write!(f, "FAILED"),
             SbomValidationResult::Succeeded => write!(f, "SUCCEEDED"),
-            SbomValidationResult::Unknown(value) => write!(f, "{}", value),
+            SbomValidationResult::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

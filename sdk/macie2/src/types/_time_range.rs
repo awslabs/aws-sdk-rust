@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TimeRange {
         match self {
             TimeRange::MonthToDate => write!(f, "MONTH_TO_DATE"),
             TimeRange::Past30Days => write!(f, "PAST_30_DAYS"),
-            TimeRange::Unknown(value) => write!(f, "{}", value),
+            TimeRange::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

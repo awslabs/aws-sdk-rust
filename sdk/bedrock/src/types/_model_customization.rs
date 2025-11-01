@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ModelCustomization {
             ModelCustomization::ContinuedPreTraining => write!(f, "CONTINUED_PRE_TRAINING"),
             ModelCustomization::Distillation => write!(f, "DISTILLATION"),
             ModelCustomization::FineTuning => write!(f, "FINE_TUNING"),
-            ModelCustomization::Unknown(value) => write!(f, "{}", value),
+            ModelCustomization::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

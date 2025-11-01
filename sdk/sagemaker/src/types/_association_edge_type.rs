@@ -120,7 +120,7 @@ impl ::std::fmt::Display for AssociationEdgeType {
             AssociationEdgeType::DerivedFrom => write!(f, "DerivedFrom"),
             AssociationEdgeType::Produced => write!(f, "Produced"),
             AssociationEdgeType::SameAs => write!(f, "SameAs"),
-            AssociationEdgeType::Unknown(value) => write!(f, "{}", value),
+            AssociationEdgeType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

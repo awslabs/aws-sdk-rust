@@ -114,7 +114,7 @@ impl ::std::fmt::Display for MonitoringType {
             MonitoringType::ModelBias => write!(f, "ModelBias"),
             MonitoringType::ModelExplainability => write!(f, "ModelExplainability"),
             MonitoringType::ModelQuality => write!(f, "ModelQuality"),
-            MonitoringType::Unknown(value) => write!(f, "{}", value),
+            MonitoringType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

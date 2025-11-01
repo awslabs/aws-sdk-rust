@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ComplianceStatus {
             ComplianceStatus::NotAvailable => write!(f, "NOT_AVAILABLE"),
             ComplianceStatus::Passed => write!(f, "PASSED"),
             ComplianceStatus::Warning => write!(f, "WARNING"),
-            ComplianceStatus::Unknown(value) => write!(f, "{}", value),
+            ComplianceStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

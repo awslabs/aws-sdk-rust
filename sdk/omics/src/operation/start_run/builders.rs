@@ -54,6 +54,7 @@ impl crate::operation::start_run::builders::StartRunInputBuilder {
 /// <p>The <code>retentionMode</code> is set to the <code>RETAIN</code> mode by default, which allows you to manually remove runs after reaching the maximum service retention limit. Under this setting, you cannot create additional runs until you remove the excess runs.</p></li>
 /// </ul>
 /// <p>To learn more about the retention modes, see <a href="https://docs.aws.amazon.com/omics/latest/dev/run-retention.html">Run retention mode</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.</p>
+/// <p>You can use Amazon Q CLI to analyze run logs and make performance optimization recommendations. To get started, see the <a href="https://github.com/awslabs/mcp/tree/main/src/aws-healthomics-mcp-server">Amazon Web Services HealthOmics MCP server</a> on GitHub.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartRunFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -96,7 +96,7 @@ impl ::std::fmt::Display for HlsMediaStoreStorageClass {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             HlsMediaStoreStorageClass::Temporal => write!(f, "TEMPORAL"),
-            HlsMediaStoreStorageClass::Unknown(value) => write!(f, "{}", value),
+            HlsMediaStoreStorageClass::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

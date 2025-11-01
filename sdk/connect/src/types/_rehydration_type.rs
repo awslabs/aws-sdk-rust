@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RehydrationType {
         match self {
             RehydrationType::EntirePastSession => write!(f, "ENTIRE_PAST_SESSION"),
             RehydrationType::FromSegment => write!(f, "FROM_SEGMENT"),
-            RehydrationType::Unknown(value) => write!(f, "{}", value),
+            RehydrationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

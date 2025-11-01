@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ProtectedJobAnalysisType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ProtectedJobAnalysisType::DirectAnalysis => write!(f, "DIRECT_ANALYSIS"),
-            ProtectedJobAnalysisType::Unknown(value) => write!(f, "{}", value),
+            ProtectedJobAnalysisType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

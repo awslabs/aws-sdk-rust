@@ -114,7 +114,7 @@ impl ::std::fmt::Display for RoadSnapTravelMode {
             RoadSnapTravelMode::Pedestrian => write!(f, "Pedestrian"),
             RoadSnapTravelMode::Scooter => write!(f, "Scooter"),
             RoadSnapTravelMode::Truck => write!(f, "Truck"),
-            RoadSnapTravelMode::Unknown(value) => write!(f, "{}", value),
+            RoadSnapTravelMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

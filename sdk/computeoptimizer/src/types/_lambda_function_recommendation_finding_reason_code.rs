@@ -116,7 +116,7 @@ impl ::std::fmt::Display for LambdaFunctionRecommendationFindingReasonCode {
             LambdaFunctionRecommendationFindingReasonCode::InsufficientData => write!(f, "InsufficientData"),
             LambdaFunctionRecommendationFindingReasonCode::MemoryOverProvisioned => write!(f, "MemoryOverprovisioned"),
             LambdaFunctionRecommendationFindingReasonCode::MemoryUnderProvisioned => write!(f, "MemoryUnderprovisioned"),
-            LambdaFunctionRecommendationFindingReasonCode::Unknown(value) => write!(f, "{}", value),
+            LambdaFunctionRecommendationFindingReasonCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

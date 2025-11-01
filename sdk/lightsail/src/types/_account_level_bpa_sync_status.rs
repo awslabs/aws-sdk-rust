@@ -114,7 +114,7 @@ impl ::std::fmt::Display for AccountLevelBpaSyncStatus {
             AccountLevelBpaSyncStatus::Failed => write!(f, "Failed"),
             AccountLevelBpaSyncStatus::InSync => write!(f, "InSync"),
             AccountLevelBpaSyncStatus::NeverSynced => write!(f, "NeverSynced"),
-            AccountLevelBpaSyncStatus::Unknown(value) => write!(f, "{}", value),
+            AccountLevelBpaSyncStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

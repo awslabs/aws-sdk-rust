@@ -114,7 +114,7 @@ impl ::std::fmt::Display for EnvironmentState {
             EnvironmentState::Creating => write!(f, "CREATING"),
             EnvironmentState::Deleting => write!(f, "DELETING"),
             EnvironmentState::Failed => write!(f, "FAILED"),
-            EnvironmentState::Unknown(value) => write!(f, "{}", value),
+            EnvironmentState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

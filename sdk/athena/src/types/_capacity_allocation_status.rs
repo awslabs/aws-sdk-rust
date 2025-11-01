@@ -108,7 +108,7 @@ impl ::std::fmt::Display for CapacityAllocationStatus {
             CapacityAllocationStatus::Failed => write!(f, "FAILED"),
             CapacityAllocationStatus::Pending => write!(f, "PENDING"),
             CapacityAllocationStatus::Succeeded => write!(f, "SUCCEEDED"),
-            CapacityAllocationStatus::Unknown(value) => write!(f, "{}", value),
+            CapacityAllocationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

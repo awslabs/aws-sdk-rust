@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MembershipType {
         match self {
             MembershipType::Igmp => write!(f, "igmp"),
             MembershipType::Static => write!(f, "static"),
-            MembershipType::Unknown(value) => write!(f, "{}", value),
+            MembershipType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

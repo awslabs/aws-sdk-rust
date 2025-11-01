@@ -126,7 +126,7 @@ impl ::std::fmt::Display for EventSeverity {
             EventSeverity::Info => write!(f, "INFO"),
             EventSeverity::Trace => write!(f, "TRACE"),
             EventSeverity::Warn => write!(f, "WARN"),
-            EventSeverity::Unknown(value) => write!(f, "{}", value),
+            EventSeverity::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

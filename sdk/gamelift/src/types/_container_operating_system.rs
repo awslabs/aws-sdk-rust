@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ContainerOperatingSystem {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ContainerOperatingSystem::AmazonLinux2023 => write!(f, "AMAZON_LINUX_2023"),
-            ContainerOperatingSystem::Unknown(value) => write!(f, "{}", value),
+            ContainerOperatingSystem::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

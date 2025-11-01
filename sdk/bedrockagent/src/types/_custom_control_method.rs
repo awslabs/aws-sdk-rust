@@ -96,7 +96,7 @@ impl ::std::fmt::Display for CustomControlMethod {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             CustomControlMethod::ReturnControl => write!(f, "RETURN_CONTROL"),
-            CustomControlMethod::Unknown(value) => write!(f, "{}", value),
+            CustomControlMethod::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

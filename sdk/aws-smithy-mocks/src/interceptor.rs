@@ -125,10 +125,7 @@ impl Intercept for MockResponseInterceptor {
                     // Check if the rule matches
                     if !(rule.matcher)(input) {
                         // Rule doesn't match, this is an error in sequential mode
-                        panic!(
-                            "In order matching was enforced but rule did not match {:?}",
-                            input
-                        );
+                        panic!("In order matching was enforced but rule did not match {input:?}");
                     }
 
                     // Rule matches and is not exhausted, get the response
@@ -171,14 +168,13 @@ impl Intercept for MockResponseInterceptor {
                 // store the response on the interceptor (because going
                 // through interceptor context requires the type to impl Clone)
                 let mut active_resp = self.active_response.lock().unwrap();
-                let _ = std::mem::replace(&mut *active_resp, Some(response));
+                let _ = (*active_resp).replace(response);
             }
             _ => {
                 // No matching rule or no response
                 if self.must_match {
                     panic!(
-                        "must_match was enabled but no rules matched or all rules were exhausted for {:?}",
-                        input
+                        "must_match was enabled but no rules matched or all rules were exhausted for {input:?}"
                     );
                 }
             }
@@ -216,7 +212,7 @@ impl Intercept for MockResponseInterceptor {
                 }
                 _ => {
                     // put it back for modeled output/errors
-                    let _ = std::mem::replace(&mut *state, Some(resp));
+                    let _ = (*state).replace(resp);
                 }
             }
         }
@@ -734,7 +730,7 @@ mod tests {
             let op = operation.clone();
             let handle = task::spawn(async move {
                 let result = op
-                    .invoke(TestInput::new(&format!("bucket-{}", i), "test-key"))
+                    .invoke(TestInput::new(&format!("bucket-{i}"), "test-key"))
                     .await;
                 result.unwrap()
             });
@@ -816,7 +812,7 @@ mod tests {
             let result = operation
                 .invoke(TestInput::new("test-bucket", "test-key"))
                 .await;
-            assert!(result.is_ok(), "Call {} should succeed", i);
+            assert!(result.is_ok(), "Call {i} should succeed");
             assert_eq!(result.unwrap(), TestOutput::new("simple response"));
         }
         assert_eq!(rule.num_calls(), 5);
@@ -878,7 +874,7 @@ mod tests {
             let result = operation
                 .invoke(TestInput::new("test-bucket", "test-key"))
                 .await;
-            assert!(result.is_ok(), "Call {} should succeed", i);
+            assert!(result.is_ok(), "Call {i} should succeed");
             assert_eq!(result.unwrap(), TestOutput::new("repeated response"));
         }
         assert_eq!(rule.num_calls(), 11);

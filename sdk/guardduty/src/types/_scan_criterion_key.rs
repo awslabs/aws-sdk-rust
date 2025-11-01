@@ -97,7 +97,7 @@ impl ::std::fmt::Display for ScanCriterionKey {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ScanCriterionKey::Ec2InstanceTag => write!(f, "EC2_INSTANCE_TAG"),
-            ScanCriterionKey::Unknown(value) => write!(f, "{}", value),
+            ScanCriterionKey::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

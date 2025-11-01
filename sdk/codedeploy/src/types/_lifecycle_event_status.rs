@@ -128,7 +128,7 @@ impl ::std::fmt::Display for LifecycleEventStatus {
             LifecycleEventStatus::Skipped => write!(f, "Skipped"),
             LifecycleEventStatus::Succeeded => write!(f, "Succeeded"),
             LifecycleEventStatus::UnknownValue => write!(f, "Unknown"),
-            LifecycleEventStatus::Unknown(value) => write!(f, "{}", value),
+            LifecycleEventStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

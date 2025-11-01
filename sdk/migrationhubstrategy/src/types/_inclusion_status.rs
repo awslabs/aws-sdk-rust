@@ -102,7 +102,7 @@ impl ::std::fmt::Display for InclusionStatus {
         match self {
             InclusionStatus::ExcludeFromRecommendation => write!(f, "excludeFromAssessment"),
             InclusionStatus::IncludeInRecommendation => write!(f, "includeInAssessment"),
-            InclusionStatus::Unknown(value) => write!(f, "{}", value),
+            InclusionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

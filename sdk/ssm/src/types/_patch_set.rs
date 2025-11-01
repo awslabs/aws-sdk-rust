@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PatchSet {
         match self {
             PatchSet::Application => write!(f, "APPLICATION"),
             PatchSet::Os => write!(f, "OS"),
-            PatchSet::Unknown(value) => write!(f, "{}", value),
+            PatchSet::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -132,7 +132,7 @@ impl ::std::fmt::Display for ParquetCompressionType {
             ParquetCompressionType::None => write!(f, "none"),
             ParquetCompressionType::Snappy => write!(f, "snappy"),
             ParquetCompressionType::Uncompressed => write!(f, "uncompressed"),
-            ParquetCompressionType::Unknown(value) => write!(f, "{}", value),
+            ParquetCompressionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for HttpEndpoint {
         match self {
             HttpEndpoint::Disabled => write!(f, "disabled"),
             HttpEndpoint::Enabled => write!(f, "enabled"),
-            HttpEndpoint::Unknown(value) => write!(f, "{}", value),
+            HttpEndpoint::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

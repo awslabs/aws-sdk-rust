@@ -154,7 +154,7 @@ impl ::std::fmt::Display for DolbyEProgramSelection {
             DolbyEProgramSelection::Program6 => write!(f, "PROGRAM_6"),
             DolbyEProgramSelection::Program7 => write!(f, "PROGRAM_7"),
             DolbyEProgramSelection::Program8 => write!(f, "PROGRAM_8"),
-            DolbyEProgramSelection::Unknown(value) => write!(f, "{}", value),
+            DolbyEProgramSelection::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

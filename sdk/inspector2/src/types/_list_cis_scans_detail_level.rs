@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ListCisScansDetailLevel {
         match self {
             ListCisScansDetailLevel::Member => write!(f, "MEMBER"),
             ListCisScansDetailLevel::Organization => write!(f, "ORGANIZATION"),
-            ListCisScansDetailLevel::Unknown(value) => write!(f, "{}", value),
+            ListCisScansDetailLevel::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

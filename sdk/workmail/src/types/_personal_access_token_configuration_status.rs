@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PersonalAccessTokenConfigurationStatus {
         match self {
             PersonalAccessTokenConfigurationStatus::Active => write!(f, "ACTIVE"),
             PersonalAccessTokenConfigurationStatus::Inactive => write!(f, "INACTIVE"),
-            PersonalAccessTokenConfigurationStatus::Unknown(value) => write!(f, "{}", value),
+            PersonalAccessTokenConfigurationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

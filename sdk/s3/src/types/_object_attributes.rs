@@ -120,7 +120,7 @@ impl ::std::fmt::Display for ObjectAttributes {
             ObjectAttributes::ObjectParts => write!(f, "ObjectParts"),
             ObjectAttributes::ObjectSize => write!(f, "ObjectSize"),
             ObjectAttributes::StorageClass => write!(f, "StorageClass"),
-            ObjectAttributes::Unknown(value) => write!(f, "{}", value),
+            ObjectAttributes::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

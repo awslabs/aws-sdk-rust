@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SearchNearbyIntendedUse {
         match self {
             SearchNearbyIntendedUse::SingleUse => write!(f, "SingleUse"),
             SearchNearbyIntendedUse::Storage => write!(f, "Storage"),
-            SearchNearbyIntendedUse::Unknown(value) => write!(f, "{}", value),
+            SearchNearbyIntendedUse::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

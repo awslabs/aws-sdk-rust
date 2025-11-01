@@ -27,7 +27,7 @@ impl ::std::fmt::Display for EntityNotFoundException {
         ::std::write!(f, "EntityNotFoundException")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
             {
-                ::std::write!(f, ": {}", inner_1)?;
+                ::std::write!(f, ": {inner_1}")?;
             }
         }
         Ok(())

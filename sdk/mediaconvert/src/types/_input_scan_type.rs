@@ -102,7 +102,7 @@ impl ::std::fmt::Display for InputScanType {
         match self {
             InputScanType::Auto => write!(f, "AUTO"),
             InputScanType::Psf => write!(f, "PSF"),
-            InputScanType::Unknown(value) => write!(f, "{}", value),
+            InputScanType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

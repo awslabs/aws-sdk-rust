@@ -196,7 +196,7 @@ impl ::std::fmt::Display for InforNexusConnectorOperator {
             InforNexusConnectorOperator::ValidateNonNull => write!(f, "VALIDATE_NON_NULL"),
             InforNexusConnectorOperator::ValidateNonZero => write!(f, "VALIDATE_NON_ZERO"),
             InforNexusConnectorOperator::ValidateNumeric => write!(f, "VALIDATE_NUMERIC"),
-            InforNexusConnectorOperator::Unknown(value) => write!(f, "{}", value),
+            InforNexusConnectorOperator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

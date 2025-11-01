@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AllowedUserAction {
         match self {
             AllowedUserAction::Call => write!(f, "CALL"),
             AllowedUserAction::Discard => write!(f, "DISCARD"),
-            AllowedUserAction::Unknown(value) => write!(f, "{}", value),
+            AllowedUserAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

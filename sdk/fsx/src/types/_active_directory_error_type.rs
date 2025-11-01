@@ -130,7 +130,7 @@ impl ::std::fmt::Display for ActiveDirectoryErrorType {
             ActiveDirectoryErrorType::InvalidDomainStage => write!(f, "INVALID_DOMAIN_STAGE"),
             ActiveDirectoryErrorType::InvalidNetworkType => write!(f, "INVALID_NETWORK_TYPE"),
             ActiveDirectoryErrorType::WrongVpc => write!(f, "WRONG_VPC"),
-            ActiveDirectoryErrorType::Unknown(value) => write!(f, "{}", value),
+            ActiveDirectoryErrorType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

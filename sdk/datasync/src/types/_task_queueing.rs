@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TaskQueueing {
         match self {
             TaskQueueing::Disabled => write!(f, "DISABLED"),
             TaskQueueing::Enabled => write!(f, "ENABLED"),
-            TaskQueueing::Unknown(value) => write!(f, "{}", value),
+            TaskQueueing::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

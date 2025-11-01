@@ -128,7 +128,7 @@ impl ::std::fmt::Display for AgentStatus {
             AgentStatus::Shutdown => write!(f, "SHUTDOWN"),
             AgentStatus::Unhealthy => write!(f, "UNHEALTHY"),
             AgentStatus::UnknownValue => write!(f, "UNKNOWN"),
-            AgentStatus::Unknown(value) => write!(f, "{}", value),
+            AgentStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

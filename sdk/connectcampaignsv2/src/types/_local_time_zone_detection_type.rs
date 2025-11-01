@@ -102,7 +102,7 @@ impl ::std::fmt::Display for LocalTimeZoneDetectionType {
         match self {
             LocalTimeZoneDetectionType::AreaCode => write!(f, "AREA_CODE"),
             LocalTimeZoneDetectionType::ZipCode => write!(f, "ZIP_CODE"),
-            LocalTimeZoneDetectionType::Unknown(value) => write!(f, "{}", value),
+            LocalTimeZoneDetectionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

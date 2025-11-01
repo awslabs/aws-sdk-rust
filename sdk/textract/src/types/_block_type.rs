@@ -259,7 +259,7 @@ impl ::std::fmt::Display for BlockType {
             BlockType::TableTitle => write!(f, "TABLE_TITLE"),
             BlockType::Title => write!(f, "TITLE"),
             BlockType::Word => write!(f, "WORD"),
-            BlockType::Unknown(value) => write!(f, "{}", value),
+            BlockType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

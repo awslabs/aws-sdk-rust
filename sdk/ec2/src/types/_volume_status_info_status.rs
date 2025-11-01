@@ -114,7 +114,7 @@ impl ::std::fmt::Display for VolumeStatusInfoStatus {
             VolumeStatusInfoStatus::InsufficientData => write!(f, "insufficient-data"),
             VolumeStatusInfoStatus::Ok => write!(f, "ok"),
             VolumeStatusInfoStatus::Warning => write!(f, "warning"),
-            VolumeStatusInfoStatus::Unknown(value) => write!(f, "{}", value),
+            VolumeStatusInfoStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

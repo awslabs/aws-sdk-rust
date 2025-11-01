@@ -147,7 +147,7 @@ impl ::std::fmt::Display for ReferenceType {
             ReferenceType::Number => write!(f, "NUMBER"),
             ReferenceType::String => write!(f, "STRING"),
             ReferenceType::Url => write!(f, "URL"),
-            ReferenceType::Unknown(value) => write!(f, "{}", value),
+            ReferenceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

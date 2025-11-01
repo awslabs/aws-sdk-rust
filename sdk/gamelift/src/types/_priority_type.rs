@@ -114,7 +114,7 @@ impl ::std::fmt::Display for PriorityType {
             PriorityType::Destination => write!(f, "DESTINATION"),
             PriorityType::Latency => write!(f, "LATENCY"),
             PriorityType::Location => write!(f, "LOCATION"),
-            PriorityType::Unknown(value) => write!(f, "{}", value),
+            PriorityType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

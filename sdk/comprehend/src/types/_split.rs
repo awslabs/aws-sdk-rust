@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Split {
         match self {
             Split::Test => write!(f, "TEST"),
             Split::Train => write!(f, "TRAIN"),
-            Split::Unknown(value) => write!(f, "{}", value),
+            Split::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

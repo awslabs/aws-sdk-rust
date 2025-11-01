@@ -114,7 +114,7 @@ impl ::std::fmt::Display for AuthenticationType {
             AuthenticationType::AwsAd => write!(f, "AWS_AD"),
             AuthenticationType::Saml => write!(f, "SAML"),
             AuthenticationType::Userpool => write!(f, "USERPOOL"),
-            AuthenticationType::Unknown(value) => write!(f, "{}", value),
+            AuthenticationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

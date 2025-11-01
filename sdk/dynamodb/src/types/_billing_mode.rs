@@ -102,7 +102,7 @@ impl ::std::fmt::Display for BillingMode {
         match self {
             BillingMode::PayPerRequest => write!(f, "PAY_PER_REQUEST"),
             BillingMode::Provisioned => write!(f, "PROVISIONED"),
-            BillingMode::Unknown(value) => write!(f, "{}", value),
+            BillingMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

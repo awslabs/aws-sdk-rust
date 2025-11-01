@@ -108,7 +108,7 @@ impl ::std::fmt::Display for GroupDefinitionType {
             GroupDefinitionType::CostCategory => write!(f, "COST_CATEGORY"),
             GroupDefinitionType::Dimension => write!(f, "DIMENSION"),
             GroupDefinitionType::Tag => write!(f, "TAG"),
-            GroupDefinitionType::Unknown(value) => write!(f, "{}", value),
+            GroupDefinitionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

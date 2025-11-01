@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AthenaResultCompressionType {
             AthenaResultCompressionType::Gzip => write!(f, "GZIP"),
             AthenaResultCompressionType::Snappy => write!(f, "SNAPPY"),
             AthenaResultCompressionType::Zlib => write!(f, "ZLIB"),
-            AthenaResultCompressionType::Unknown(value) => write!(f, "{}", value),
+            AthenaResultCompressionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

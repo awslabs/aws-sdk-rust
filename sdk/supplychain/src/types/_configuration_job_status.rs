@@ -120,7 +120,7 @@ impl ::std::fmt::Display for ConfigurationJobStatus {
             ConfigurationJobStatus::New => write!(f, "NEW"),
             ConfigurationJobStatus::Queued => write!(f, "QUEUED"),
             ConfigurationJobStatus::Success => write!(f, "SUCCESS"),
-            ConfigurationJobStatus::Unknown(value) => write!(f, "{}", value),
+            ConfigurationJobStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AudioTypeControl {
         match self {
             AudioTypeControl::FollowInput => write!(f, "FOLLOW_INPUT"),
             AudioTypeControl::UseConfigured => write!(f, "USE_CONFIGURED"),
-            AudioTypeControl::Unknown(value) => write!(f, "{}", value),
+            AudioTypeControl::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -100,7 +100,7 @@ impl ::std::fmt::Display for WaypointOptimizationTruckType {
         match self {
             WaypointOptimizationTruckType::StraightTruck => write!(f, "StraightTruck"),
             WaypointOptimizationTruckType::Tractor => write!(f, "Tractor"),
-            WaypointOptimizationTruckType::Unknown(value) => write!(f, "{}", value),
+            WaypointOptimizationTruckType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

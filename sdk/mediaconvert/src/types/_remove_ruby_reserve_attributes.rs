@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RemoveRubyReserveAttributes {
         match self {
             RemoveRubyReserveAttributes::Disabled => write!(f, "DISABLED"),
             RemoveRubyReserveAttributes::Enabled => write!(f, "ENABLED"),
-            RemoveRubyReserveAttributes::Unknown(value) => write!(f, "{}", value),
+            RemoveRubyReserveAttributes::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

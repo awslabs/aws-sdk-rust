@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ResourceType {
         match self {
             ResourceType::EbsSnapshot => write!(f, "EBS_SNAPSHOT"),
             ResourceType::Ec2Image => write!(f, "EC2_IMAGE"),
-            ResourceType::Unknown(value) => write!(f, "{}", value),
+            ResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

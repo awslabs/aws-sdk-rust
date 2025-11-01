@@ -133,7 +133,7 @@ impl ::std::fmt::Display for CertificateState {
             CertificateState::RegisterFailed => write!(f, "RegisterFailed"),
             CertificateState::Registered => write!(f, "Registered"),
             CertificateState::Registering => write!(f, "Registering"),
-            CertificateState::Unknown(value) => write!(f, "{}", value),
+            CertificateState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

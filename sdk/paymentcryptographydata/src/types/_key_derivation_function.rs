@@ -102,7 +102,7 @@ impl ::std::fmt::Display for KeyDerivationFunction {
         match self {
             KeyDerivationFunction::AnsiX963 => write!(f, "ANSI_X963"),
             KeyDerivationFunction::NistSp800 => write!(f, "NIST_SP800"),
-            KeyDerivationFunction::Unknown(value) => write!(f, "{}", value),
+            KeyDerivationFunction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

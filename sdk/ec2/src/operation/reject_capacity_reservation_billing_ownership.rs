@@ -191,6 +191,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for RejectCapaci
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::reject_capacity_reservation_billing_ownership::RejectCapacityReservationBillingOwnershipInput,
                 output: &mut ::std::string::String,

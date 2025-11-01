@@ -94,7 +94,7 @@ impl ::std::fmt::Display for PostalAuthority {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             PostalAuthority::Usps => write!(f, "Usps"),
-            PostalAuthority::Unknown(value) => write!(f, "{}", value),
+            PostalAuthority::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

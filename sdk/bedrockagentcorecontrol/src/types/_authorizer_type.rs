@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AuthorizerType {
         match self {
             AuthorizerType::AwsIam => write!(f, "AWS_IAM"),
             AuthorizerType::CustomJwt => write!(f, "CUSTOM_JWT"),
-            AuthorizerType::Unknown(value) => write!(f, "{}", value),
+            AuthorizerType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

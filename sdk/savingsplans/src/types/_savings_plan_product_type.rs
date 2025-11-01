@@ -114,7 +114,7 @@ impl ::std::fmt::Display for SavingsPlanProductType {
             SavingsPlanProductType::Fargate => write!(f, "Fargate"),
             SavingsPlanProductType::Lambda => write!(f, "Lambda"),
             SavingsPlanProductType::Sagemaker => write!(f, "SageMaker"),
-            SavingsPlanProductType::Unknown(value) => write!(f, "{}", value),
+            SavingsPlanProductType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

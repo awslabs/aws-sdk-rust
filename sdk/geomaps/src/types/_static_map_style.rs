@@ -102,7 +102,7 @@ impl ::std::fmt::Display for StaticMapStyle {
         match self {
             StaticMapStyle::Satellite => write!(f, "Satellite"),
             StaticMapStyle::Standard => write!(f, "Standard"),
-            StaticMapStyle::Unknown(value) => write!(f, "{}", value),
+            StaticMapStyle::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

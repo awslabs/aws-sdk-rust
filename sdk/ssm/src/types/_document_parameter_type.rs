@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DocumentParameterType {
         match self {
             DocumentParameterType::String => write!(f, "String"),
             DocumentParameterType::StringList => write!(f, "StringList"),
-            DocumentParameterType::Unknown(value) => write!(f, "{}", value),
+            DocumentParameterType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

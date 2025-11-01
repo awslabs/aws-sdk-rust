@@ -96,7 +96,7 @@ impl ::std::fmt::Display for FileSystemType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             FileSystemType::Efs => write!(f, "EFS"),
-            FileSystemType::Unknown(value) => write!(f, "{}", value),
+            FileSystemType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RegistrationTypeFilterName {
         match self {
             RegistrationTypeFilterName::SupportedAssociationIsoCountryCode => write!(f, "supported-association-iso-country-code"),
             RegistrationTypeFilterName::SupportedAssociationResourceType => write!(f, "supported-association-resource-type"),
-            RegistrationTypeFilterName::Unknown(value) => write!(f, "{}", value),
+            RegistrationTypeFilterName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

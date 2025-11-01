@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ForwardedIpPosition {
             ForwardedIpPosition::Any => write!(f, "ANY"),
             ForwardedIpPosition::First => write!(f, "FIRST"),
             ForwardedIpPosition::Last => write!(f, "LAST"),
-            ForwardedIpPosition::Unknown(value) => write!(f, "{}", value),
+            ForwardedIpPosition::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

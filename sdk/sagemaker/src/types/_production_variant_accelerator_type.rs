@@ -133,7 +133,7 @@ impl ::std::fmt::Display for ProductionVariantAcceleratorType {
             ProductionVariantAcceleratorType::MlEia2Large => write!(f, "ml.eia2.large"),
             ProductionVariantAcceleratorType::MlEia2Medium => write!(f, "ml.eia2.medium"),
             ProductionVariantAcceleratorType::MlEia2Xlarge => write!(f, "ml.eia2.xlarge"),
-            ProductionVariantAcceleratorType::Unknown(value) => write!(f, "{}", value),
+            ProductionVariantAcceleratorType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

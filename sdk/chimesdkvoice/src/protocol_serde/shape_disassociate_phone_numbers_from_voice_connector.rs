@@ -196,8 +196,7 @@ pub(crate) fn de_disassociate_phone_numbers_from_voice_connector(
             },
             other => {
                 return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                    "expected object key or end object, found: {:?}",
-                    other
+                    "expected object key or end object, found: {other:?}"
                 )))
             }
         }

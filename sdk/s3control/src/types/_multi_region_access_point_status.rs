@@ -133,7 +133,7 @@ impl ::std::fmt::Display for MultiRegionAccessPointStatus {
             MultiRegionAccessPointStatus::PartiallyCreated => write!(f, "PARTIALLY_CREATED"),
             MultiRegionAccessPointStatus::PartiallyDeleted => write!(f, "PARTIALLY_DELETED"),
             MultiRegionAccessPointStatus::Ready => write!(f, "READY"),
-            MultiRegionAccessPointStatus::Unknown(value) => write!(f, "{}", value),
+            MultiRegionAccessPointStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

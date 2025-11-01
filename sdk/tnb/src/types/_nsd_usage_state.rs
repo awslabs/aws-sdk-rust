@@ -102,7 +102,7 @@ impl ::std::fmt::Display for NsdUsageState {
         match self {
             NsdUsageState::InUse => write!(f, "IN_USE"),
             NsdUsageState::NotInUse => write!(f, "NOT_IN_USE"),
-            NsdUsageState::Unknown(value) => write!(f, "{}", value),
+            NsdUsageState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

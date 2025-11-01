@@ -108,7 +108,7 @@ impl ::std::fmt::Display for UpdateQueueFleetAssociationStatus {
             UpdateQueueFleetAssociationStatus::Active => write!(f, "ACTIVE"),
             UpdateQueueFleetAssociationStatus::StopSchedulingAndCancelTasks => write!(f, "STOP_SCHEDULING_AND_CANCEL_TASKS"),
             UpdateQueueFleetAssociationStatus::StopSchedulingAndCompleteTasks => write!(f, "STOP_SCHEDULING_AND_COMPLETE_TASKS"),
-            UpdateQueueFleetAssociationStatus::Unknown(value) => write!(f, "{}", value),
+            UpdateQueueFleetAssociationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

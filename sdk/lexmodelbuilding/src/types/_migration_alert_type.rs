@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MigrationAlertType {
         match self {
             MigrationAlertType::Error => write!(f, "ERROR"),
             MigrationAlertType::Warn => write!(f, "WARN"),
-            MigrationAlertType::Unknown(value) => write!(f, "{}", value),
+            MigrationAlertType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

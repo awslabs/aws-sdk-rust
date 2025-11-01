@@ -154,7 +154,7 @@ impl ::std::fmt::Display for DbNodeResourceStatus {
             DbNodeResourceStatus::Terminated => write!(f, "TERMINATED"),
             DbNodeResourceStatus::Terminating => write!(f, "TERMINATING"),
             DbNodeResourceStatus::Updating => write!(f, "UPDATING"),
-            DbNodeResourceStatus::Unknown(value) => write!(f, "{}", value),
+            DbNodeResourceStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

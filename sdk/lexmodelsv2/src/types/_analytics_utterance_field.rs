@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AnalyticsUtteranceField {
         match self {
             AnalyticsUtteranceField::UtteranceState => write!(f, "UtteranceState"),
             AnalyticsUtteranceField::UtteranceText => write!(f, "UtteranceText"),
-            AnalyticsUtteranceField::Unknown(value) => write!(f, "{}", value),
+            AnalyticsUtteranceField::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

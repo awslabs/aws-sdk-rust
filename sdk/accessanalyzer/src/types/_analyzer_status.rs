@@ -114,7 +114,7 @@ impl ::std::fmt::Display for AnalyzerStatus {
             AnalyzerStatus::Creating => write!(f, "CREATING"),
             AnalyzerStatus::Disabled => write!(f, "DISABLED"),
             AnalyzerStatus::Failed => write!(f, "FAILED"),
-            AnalyzerStatus::Unknown(value) => write!(f, "{}", value),
+            AnalyzerStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

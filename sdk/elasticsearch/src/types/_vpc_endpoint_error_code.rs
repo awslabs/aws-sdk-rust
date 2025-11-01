@@ -107,7 +107,7 @@ impl ::std::fmt::Display for VpcEndpointErrorCode {
         match self {
             VpcEndpointErrorCode::EndpointNotFound => write!(f, "ENDPOINT_NOT_FOUND"),
             VpcEndpointErrorCode::ServerError => write!(f, "SERVER_ERROR"),
-            VpcEndpointErrorCode::Unknown(value) => write!(f, "{}", value),
+            VpcEndpointErrorCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for UncompressedInterlaceMode {
         match self {
             UncompressedInterlaceMode::Interlaced => write!(f, "INTERLACED"),
             UncompressedInterlaceMode::Progressive => write!(f, "PROGRESSIVE"),
-            UncompressedInterlaceMode::Unknown(value) => write!(f, "{}", value),
+            UncompressedInterlaceMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

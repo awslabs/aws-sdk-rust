@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Mp2CodingMode {
         match self {
             Mp2CodingMode::CodingMode10 => write!(f, "CODING_MODE_1_0"),
             Mp2CodingMode::CodingMode20 => write!(f, "CODING_MODE_2_0"),
-            Mp2CodingMode::Unknown(value) => write!(f, "{}", value),
+            Mp2CodingMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

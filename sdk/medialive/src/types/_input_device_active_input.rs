@@ -102,7 +102,7 @@ impl ::std::fmt::Display for InputDeviceActiveInput {
         match self {
             InputDeviceActiveInput::Hdmi => write!(f, "HDMI"),
             InputDeviceActiveInput::Sdi => write!(f, "SDI"),
-            InputDeviceActiveInput::Unknown(value) => write!(f, "{}", value),
+            InputDeviceActiveInput::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

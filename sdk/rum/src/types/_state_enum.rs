@@ -108,7 +108,7 @@ impl ::std::fmt::Display for StateEnum {
             StateEnum::Active => write!(f, "ACTIVE"),
             StateEnum::Created => write!(f, "CREATED"),
             StateEnum::Deleting => write!(f, "DELETING"),
-            StateEnum::Unknown(value) => write!(f, "{}", value),
+            StateEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

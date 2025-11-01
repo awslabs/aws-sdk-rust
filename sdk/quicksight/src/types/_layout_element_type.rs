@@ -120,7 +120,7 @@ impl ::std::fmt::Display for LayoutElementType {
             LayoutElementType::ParameterControl => write!(f, "PARAMETER_CONTROL"),
             LayoutElementType::TextBox => write!(f, "TEXT_BOX"),
             LayoutElementType::Visual => write!(f, "VISUAL"),
-            LayoutElementType::Unknown(value) => write!(f, "{}", value),
+            LayoutElementType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

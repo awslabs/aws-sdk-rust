@@ -120,7 +120,7 @@ impl ::std::fmt::Display for DirectConnectGatewayAssociationState {
             DirectConnectGatewayAssociationState::Disassociated => write!(f, "disassociated"),
             DirectConnectGatewayAssociationState::Disassociating => write!(f, "disassociating"),
             DirectConnectGatewayAssociationState::Updating => write!(f, "updating"),
-            DirectConnectGatewayAssociationState::Unknown(value) => write!(f, "{}", value),
+            DirectConnectGatewayAssociationState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

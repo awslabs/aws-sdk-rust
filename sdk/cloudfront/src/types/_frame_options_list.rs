@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FrameOptionsList {
         match self {
             FrameOptionsList::Deny => write!(f, "DENY"),
             FrameOptionsList::Sameorigin => write!(f, "SAMEORIGIN"),
-            FrameOptionsList::Unknown(value) => write!(f, "{}", value),
+            FrameOptionsList::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

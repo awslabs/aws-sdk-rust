@@ -108,7 +108,7 @@ impl ::std::fmt::Display for LocalStorage {
             LocalStorage::Excluded => write!(f, "excluded"),
             LocalStorage::Included => write!(f, "included"),
             LocalStorage::Required => write!(f, "required"),
-            LocalStorage::Unknown(value) => write!(f, "{}", value),
+            LocalStorage::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

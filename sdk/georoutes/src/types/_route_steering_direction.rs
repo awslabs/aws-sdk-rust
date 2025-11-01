@@ -106,7 +106,7 @@ impl ::std::fmt::Display for RouteSteeringDirection {
             RouteSteeringDirection::Left => write!(f, "Left"),
             RouteSteeringDirection::Right => write!(f, "Right"),
             RouteSteeringDirection::Straight => write!(f, "Straight"),
-            RouteSteeringDirection::Unknown(value) => write!(f, "{}", value),
+            RouteSteeringDirection::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

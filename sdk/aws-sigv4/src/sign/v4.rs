@@ -38,7 +38,7 @@ pub fn generate_signing_key(
     // kService = HMAC(kRegion, Service)
     // kSigning = HMAC(kService, "aws4_request")
 
-    let secret = format!("AWS4{}", secret);
+    let secret = format!("AWS4{secret}");
     let mut mac =
         Hmac::<Sha256>::new_from_slice(secret.as_ref()).expect("HMAC can take key of any size");
     mac.update(format_date(time).as_bytes());

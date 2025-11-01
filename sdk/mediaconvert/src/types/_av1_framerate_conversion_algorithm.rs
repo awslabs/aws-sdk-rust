@@ -114,7 +114,7 @@ impl ::std::fmt::Display for Av1FramerateConversionAlgorithm {
             Av1FramerateConversionAlgorithm::Frameformer => write!(f, "FRAMEFORMER"),
             Av1FramerateConversionAlgorithm::Interpolate => write!(f, "INTERPOLATE"),
             Av1FramerateConversionAlgorithm::MaintainFrameCount => write!(f, "MAINTAIN_FRAME_COUNT"),
-            Av1FramerateConversionAlgorithm::Unknown(value) => write!(f, "{}", value),
+            Av1FramerateConversionAlgorithm::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

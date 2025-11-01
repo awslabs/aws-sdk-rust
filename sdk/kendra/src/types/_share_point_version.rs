@@ -114,7 +114,7 @@ impl ::std::fmt::Display for SharePointVersion {
             SharePointVersion::Sharepoint2016 => write!(f, "SHAREPOINT_2016"),
             SharePointVersion::Sharepoint2019 => write!(f, "SHAREPOINT_2019"),
             SharePointVersion::SharepointOnline => write!(f, "SHAREPOINT_ONLINE"),
-            SharePointVersion::Unknown(value) => write!(f, "{}", value),
+            SharePointVersion::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

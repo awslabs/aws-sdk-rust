@@ -102,7 +102,7 @@ impl ::std::fmt::Display for QualificationTypeStatus {
         match self {
             QualificationTypeStatus::Active => write!(f, "Active"),
             QualificationTypeStatus::Inactive => write!(f, "Inactive"),
-            QualificationTypeStatus::Unknown(value) => write!(f, "{}", value),
+            QualificationTypeStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PredictiveScalingMode {
         match self {
             PredictiveScalingMode::ForecastAndScale => write!(f, "ForecastAndScale"),
             PredictiveScalingMode::ForecastOnly => write!(f, "ForecastOnly"),
-            PredictiveScalingMode::Unknown(value) => write!(f, "{}", value),
+            PredictiveScalingMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for EncryptionType {
         match self {
             EncryptionType::AwsOwnedKmsKey => write!(f, "AWS_OWNED_KMS_KEY"),
             EncryptionType::CustomerKms => write!(f, "CUSTOMER_KMS"),
-            EncryptionType::Unknown(value) => write!(f, "{}", value),
+            EncryptionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

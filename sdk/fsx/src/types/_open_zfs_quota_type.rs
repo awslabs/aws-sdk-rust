@@ -102,7 +102,7 @@ impl ::std::fmt::Display for OpenZfsQuotaType {
         match self {
             OpenZfsQuotaType::Group => write!(f, "GROUP"),
             OpenZfsQuotaType::User => write!(f, "USER"),
-            OpenZfsQuotaType::Unknown(value) => write!(f, "{}", value),
+            OpenZfsQuotaType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

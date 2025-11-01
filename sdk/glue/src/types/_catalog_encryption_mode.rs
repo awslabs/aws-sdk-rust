@@ -108,7 +108,7 @@ impl ::std::fmt::Display for CatalogEncryptionMode {
             CatalogEncryptionMode::Disabled => write!(f, "DISABLED"),
             CatalogEncryptionMode::Ssekms => write!(f, "SSE-KMS"),
             CatalogEncryptionMode::Ssekmswithservicerole => write!(f, "SSE-KMS-WITH-SERVICE-ROLE"),
-            CatalogEncryptionMode::Unknown(value) => write!(f, "{}", value),
+            CatalogEncryptionMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

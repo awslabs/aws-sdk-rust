@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PhoneNumberProductType {
         match self {
             PhoneNumberProductType::SipMediaApplicationDialIn => write!(f, "SipMediaApplicationDialIn"),
             PhoneNumberProductType::VoiceConnector => write!(f, "VoiceConnector"),
-            PhoneNumberProductType::Unknown(value) => write!(f, "{}", value),
+            PhoneNumberProductType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

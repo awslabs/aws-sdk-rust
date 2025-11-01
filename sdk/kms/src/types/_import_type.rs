@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ImportType {
         match self {
             ImportType::ExistingKeyMaterial => write!(f, "EXISTING_KEY_MATERIAL"),
             ImportType::NewKeyMaterial => write!(f, "NEW_KEY_MATERIAL"),
-            ImportType::Unknown(value) => write!(f, "{}", value),
+            ImportType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

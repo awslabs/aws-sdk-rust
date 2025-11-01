@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ChannelMessageStatus {
             ChannelMessageStatus::Failed => write!(f, "FAILED"),
             ChannelMessageStatus::Pending => write!(f, "PENDING"),
             ChannelMessageStatus::Sent => write!(f, "SENT"),
-            ChannelMessageStatus::Unknown(value) => write!(f, "{}", value),
+            ChannelMessageStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

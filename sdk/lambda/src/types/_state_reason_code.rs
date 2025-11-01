@@ -259,7 +259,7 @@ impl ::std::fmt::Display for StateReasonCode {
             StateReasonCode::KmsKeyNotFound => write!(f, "KMSKeyNotFound"),
             StateReasonCode::Restoring => write!(f, "Restoring"),
             StateReasonCode::SubnetOutOfIpAddresses => write!(f, "SubnetOutOfIPAddresses"),
-            StateReasonCode::Unknown(value) => write!(f, "{}", value),
+            StateReasonCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

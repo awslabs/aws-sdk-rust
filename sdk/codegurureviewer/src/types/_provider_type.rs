@@ -120,7 +120,7 @@ impl ::std::fmt::Display for ProviderType {
             ProviderType::GitHub => write!(f, "GitHub"),
             ProviderType::GitHubEnterpriseServer => write!(f, "GitHubEnterpriseServer"),
             ProviderType::S3Bucket => write!(f, "S3Bucket"),
-            ProviderType::Unknown(value) => write!(f, "{}", value),
+            ProviderType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

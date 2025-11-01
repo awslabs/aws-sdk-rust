@@ -120,7 +120,7 @@ impl ::std::fmt::Display for AuthType {
             AuthType::Oauth => write!(f, "OAUTH"),
             AuthType::PersonalAccessToken => write!(f, "PERSONAL_ACCESS_TOKEN"),
             AuthType::SecretsManager => write!(f, "SECRETS_MANAGER"),
-            AuthType::Unknown(value) => write!(f, "{}", value),
+            AuthType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for KeyType {
             KeyType::Speke => write!(f, "speke"),
             KeyType::SrtPassword => write!(f, "srt-password"),
             KeyType::StaticKey => write!(f, "static-key"),
-            KeyType::Unknown(value) => write!(f, "{}", value),
+            KeyType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

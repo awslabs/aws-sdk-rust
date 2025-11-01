@@ -96,7 +96,7 @@ impl ::std::fmt::Display for NetworkFirewallOverrideAction {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             NetworkFirewallOverrideAction::DropToAlert => write!(f, "DROP_TO_ALERT"),
-            NetworkFirewallOverrideAction::Unknown(value) => write!(f, "{}", value),
+            NetworkFirewallOverrideAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

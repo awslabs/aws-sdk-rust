@@ -134,7 +134,7 @@ impl ::std::fmt::Display for LagState {
             LagState::Pending => write!(f, "pending"),
             LagState::Requested => write!(f, "requested"),
             LagState::UnknownValue => write!(f, "unknown"),
-            LagState::Unknown(value) => write!(f, "{}", value),
+            LagState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

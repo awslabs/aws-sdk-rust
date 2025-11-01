@@ -154,7 +154,7 @@ impl ::std::fmt::Display for ConfluenceBlogFieldName {
             ConfluenceBlogFieldName::SpaceName => write!(f, "SPACE_NAME"),
             ConfluenceBlogFieldName::Url => write!(f, "URL"),
             ConfluenceBlogFieldName::Version => write!(f, "VERSION"),
-            ConfluenceBlogFieldName::Unknown(value) => write!(f, "{}", value),
+            ConfluenceBlogFieldName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

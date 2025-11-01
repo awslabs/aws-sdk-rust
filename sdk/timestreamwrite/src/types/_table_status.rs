@@ -108,7 +108,7 @@ impl ::std::fmt::Display for TableStatus {
             TableStatus::Active => write!(f, "ACTIVE"),
             TableStatus::Deleting => write!(f, "DELETING"),
             TableStatus::Restoring => write!(f, "RESTORING"),
-            TableStatus::Unknown(value) => write!(f, "{}", value),
+            TableStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for FontScript {
             FontScript::Automatic => write!(f, "AUTOMATIC"),
             FontScript::Hans => write!(f, "HANS"),
             FontScript::Hant => write!(f, "HANT"),
-            FontScript::Unknown(value) => write!(f, "{}", value),
+            FontScript::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

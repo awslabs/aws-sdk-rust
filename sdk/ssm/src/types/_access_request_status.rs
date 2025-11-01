@@ -120,7 +120,7 @@ impl ::std::fmt::Display for AccessRequestStatus {
             AccessRequestStatus::Pending => write!(f, "Pending"),
             AccessRequestStatus::Rejected => write!(f, "Rejected"),
             AccessRequestStatus::Revoked => write!(f, "Revoked"),
-            AccessRequestStatus::Unknown(value) => write!(f, "{}", value),
+            AccessRequestStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

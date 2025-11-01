@@ -161,16 +161,14 @@ pub fn de_create_open_id_connect_provider(
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateOpenIDConnectProviderResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected CreateOpenIDConnectProviderResponse got {:?}",
-            start_el
+            "invalid root, expected CreateOpenIDConnectProviderResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("CreateOpenIDConnectProviderResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected CreateOpenIDConnectProviderResult got {:?}",
-                start_el
+                "invalid result, expected CreateOpenIDConnectProviderResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

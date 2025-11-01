@@ -108,7 +108,7 @@ impl ::std::fmt::Display for DefaultInstanceMetadataEndpointState {
             DefaultInstanceMetadataEndpointState::Disabled => write!(f, "disabled"),
             DefaultInstanceMetadataEndpointState::Enabled => write!(f, "enabled"),
             DefaultInstanceMetadataEndpointState::NoPreference => write!(f, "no-preference"),
-            DefaultInstanceMetadataEndpointState::Unknown(value) => write!(f, "{}", value),
+            DefaultInstanceMetadataEndpointState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

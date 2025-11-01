@@ -114,7 +114,7 @@ impl ::std::fmt::Display for EphemerisType {
             EphemerisType::Oem => write!(f, "OEM"),
             EphemerisType::ServiceManaged => write!(f, "SERVICE_MANAGED"),
             EphemerisType::Tle => write!(f, "TLE"),
-            EphemerisType::Unknown(value) => write!(f, "{}", value),
+            EphemerisType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

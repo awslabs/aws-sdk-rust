@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TargetSelection {
         match self {
             TargetSelection::Continuous => write!(f, "CONTINUOUS"),
             TargetSelection::Snapshot => write!(f, "SNAPSHOT"),
-            TargetSelection::Unknown(value) => write!(f, "{}", value),
+            TargetSelection::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for FieldType {
             FieldType::Boolean => write!(f, "Boolean"),
             FieldType::Number => write!(f, "Number"),
             FieldType::String => write!(f, "String"),
-            FieldType::Unknown(value) => write!(f, "{}", value),
+            FieldType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ResourcesGroupingRecGenStatusType {
             ResourcesGroupingRecGenStatusType::InProgress => write!(f, "InProgress"),
             ResourcesGroupingRecGenStatusType::Pending => write!(f, "Pending"),
             ResourcesGroupingRecGenStatusType::Success => write!(f, "Success"),
-            ResourcesGroupingRecGenStatusType::Unknown(value) => write!(f, "{}", value),
+            ResourcesGroupingRecGenStatusType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

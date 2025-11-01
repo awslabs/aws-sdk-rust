@@ -102,7 +102,7 @@ impl ::std::fmt::Display for StatusType {
         match self {
             StatusType::Detected => write!(f, "Detected"),
             StatusType::Missed => write!(f, "Missed"),
-            StatusType::Unknown(value) => write!(f, "{}", value),
+            StatusType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

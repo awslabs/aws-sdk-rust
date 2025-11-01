@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DdbExportType {
         match self {
             DdbExportType::Ddb => write!(f, "ddb"),
             DdbExportType::S3 => write!(f, "s3"),
-            DdbExportType::Unknown(value) => write!(f, "{}", value),
+            DdbExportType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

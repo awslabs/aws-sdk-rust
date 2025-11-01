@@ -224,7 +224,7 @@ impl ::std::fmt::Display for SlackConnectorOperator {
             SlackConnectorOperator::ValidateNonNull => write!(f, "VALIDATE_NON_NULL"),
             SlackConnectorOperator::ValidateNonZero => write!(f, "VALIDATE_NON_ZERO"),
             SlackConnectorOperator::ValidateNumeric => write!(f, "VALIDATE_NUMERIC"),
-            SlackConnectorOperator::Unknown(value) => write!(f, "{}", value),
+            SlackConnectorOperator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -217,7 +217,7 @@ impl ::std::fmt::Display for ResourceType {
             ResourceType::RdsReservedInstances => write!(f, "RdsReservedInstances"),
             ResourceType::RedshiftReservedInstances => write!(f, "RedshiftReservedInstances"),
             ResourceType::SageMakerSavingsPlans => write!(f, "SageMakerSavingsPlans"),
-            ResourceType::Unknown(value) => write!(f, "{}", value),
+            ResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

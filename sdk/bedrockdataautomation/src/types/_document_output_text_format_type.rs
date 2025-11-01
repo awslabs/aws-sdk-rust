@@ -114,7 +114,7 @@ impl ::std::fmt::Display for DocumentOutputTextFormatType {
             DocumentOutputTextFormatType::Html => write!(f, "HTML"),
             DocumentOutputTextFormatType::Markdown => write!(f, "MARKDOWN"),
             DocumentOutputTextFormatType::PlainText => write!(f, "PLAIN_TEXT"),
-            DocumentOutputTextFormatType::Unknown(value) => write!(f, "{}", value),
+            DocumentOutputTextFormatType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ShareMethod {
         match self {
             ShareMethod::Handshake => write!(f, "HANDSHAKE"),
             ShareMethod::Organizations => write!(f, "ORGANIZATIONS"),
-            ShareMethod::Unknown(value) => write!(f, "{}", value),
+            ShareMethod::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

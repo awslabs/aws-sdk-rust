@@ -120,7 +120,7 @@ impl ::std::fmt::Display for ValidationExceptionErrorCode {
             ValidationExceptionErrorCode::InvalidToken => write!(f, "InvalidToken"),
             ValidationExceptionErrorCode::MalformedToken => write!(f, "MalformedToken"),
             ValidationExceptionErrorCode::MissingInput => write!(f, "MissingInput"),
-            ValidationExceptionErrorCode::Unknown(value) => write!(f, "{}", value),
+            ValidationExceptionErrorCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

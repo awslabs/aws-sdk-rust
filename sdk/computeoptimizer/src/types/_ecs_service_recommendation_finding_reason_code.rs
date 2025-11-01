@@ -121,7 +121,7 @@ impl ::std::fmt::Display for EcsServiceRecommendationFindingReasonCode {
             EcsServiceRecommendationFindingReasonCode::CpuUnderProvisioned => write!(f, "CPUUnderprovisioned"),
             EcsServiceRecommendationFindingReasonCode::MemoryOverProvisioned => write!(f, "MemoryOverprovisioned"),
             EcsServiceRecommendationFindingReasonCode::MemoryUnderProvisioned => write!(f, "MemoryUnderprovisioned"),
-            EcsServiceRecommendationFindingReasonCode::Unknown(value) => write!(f, "{}", value),
+            EcsServiceRecommendationFindingReasonCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

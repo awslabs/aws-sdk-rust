@@ -147,7 +147,7 @@ impl ::std::fmt::Display for ReceivedStatus {
             ReceivedStatus::PendingWorkflow => write!(f, "PENDING_WORKFLOW"),
             ReceivedStatus::Rejected => write!(f, "REJECTED"),
             ReceivedStatus::WorkflowCompleted => write!(f, "WORKFLOW_COMPLETED"),
-            ReceivedStatus::Unknown(value) => write!(f, "{}", value),
+            ReceivedStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

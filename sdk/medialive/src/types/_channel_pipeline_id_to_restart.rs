@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ChannelPipelineIdToRestart {
         match self {
             ChannelPipelineIdToRestart::Pipeline0 => write!(f, "PIPELINE_0"),
             ChannelPipelineIdToRestart::Pipeline1 => write!(f, "PIPELINE_1"),
-            ChannelPipelineIdToRestart::Unknown(value) => write!(f, "{}", value),
+            ChannelPipelineIdToRestart::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for EventTriggerLogicalOperator {
             EventTriggerLogicalOperator::All => write!(f, "ALL"),
             EventTriggerLogicalOperator::Any => write!(f, "ANY"),
             EventTriggerLogicalOperator::None => write!(f, "NONE"),
-            EventTriggerLogicalOperator::Unknown(value) => write!(f, "{}", value),
+            EventTriggerLogicalOperator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

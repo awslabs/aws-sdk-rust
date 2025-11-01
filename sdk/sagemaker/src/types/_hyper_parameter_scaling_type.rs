@@ -114,7 +114,7 @@ impl ::std::fmt::Display for HyperParameterScalingType {
             HyperParameterScalingType::Linear => write!(f, "Linear"),
             HyperParameterScalingType::Logarithmic => write!(f, "Logarithmic"),
             HyperParameterScalingType::ReverseLogarithmic => write!(f, "ReverseLogarithmic"),
-            HyperParameterScalingType::Unknown(value) => write!(f, "{}", value),
+            HyperParameterScalingType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

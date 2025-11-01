@@ -126,7 +126,7 @@ impl ::std::fmt::Display for Status {
             Status::Enabling => write!(f, "ENABLING"),
             Status::Suspended => write!(f, "SUSPENDED"),
             Status::Suspending => write!(f, "SUSPENDING"),
-            Status::Unknown(value) => write!(f, "{}", value),
+            Status::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

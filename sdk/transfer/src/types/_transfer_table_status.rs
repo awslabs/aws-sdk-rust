@@ -114,7 +114,7 @@ impl ::std::fmt::Display for TransferTableStatus {
             TransferTableStatus::Failed => write!(f, "FAILED"),
             TransferTableStatus::InProgress => write!(f, "IN_PROGRESS"),
             TransferTableStatus::Queued => write!(f, "QUEUED"),
-            TransferTableStatus::Unknown(value) => write!(f, "{}", value),
+            TransferTableStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

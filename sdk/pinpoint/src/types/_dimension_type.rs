@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DimensionType {
         match self {
             DimensionType::Exclusive => write!(f, "EXCLUSIVE"),
             DimensionType::Inclusive => write!(f, "INCLUSIVE"),
-            DimensionType::Unknown(value) => write!(f, "{}", value),
+            DimensionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

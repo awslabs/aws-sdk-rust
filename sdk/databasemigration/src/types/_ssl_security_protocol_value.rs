@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SslSecurityProtocolValue {
         match self {
             SslSecurityProtocolValue::Plaintext => write!(f, "plaintext"),
             SslSecurityProtocolValue::SslEncryption => write!(f, "ssl-encryption"),
-            SslSecurityProtocolValue::Unknown(value) => write!(f, "{}", value),
+            SslSecurityProtocolValue::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

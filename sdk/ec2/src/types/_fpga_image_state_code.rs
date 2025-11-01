@@ -114,7 +114,7 @@ impl ::std::fmt::Display for FpgaImageStateCode {
             FpgaImageStateCode::Failed => write!(f, "failed"),
             FpgaImageStateCode::Pending => write!(f, "pending"),
             FpgaImageStateCode::Unavailable => write!(f, "unavailable"),
-            FpgaImageStateCode::Unknown(value) => write!(f, "{}", value),
+            FpgaImageStateCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

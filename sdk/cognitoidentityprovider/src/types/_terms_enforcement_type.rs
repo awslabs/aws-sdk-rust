@@ -96,7 +96,7 @@ impl ::std::fmt::Display for TermsEnforcementType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             TermsEnforcementType::None => write!(f, "NONE"),
-            TermsEnforcementType::Unknown(value) => write!(f, "{}", value),
+            TermsEnforcementType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

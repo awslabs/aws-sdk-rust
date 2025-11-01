@@ -119,7 +119,7 @@ impl ::std::fmt::Display for JobErrorCode {
             JobErrorCode::ResourceNotFoundError => write!(f, "RESOURCE_NOT_FOUND_ERROR"),
             JobErrorCode::ServiceError => write!(f, "SERVICE_ERROR"),
             JobErrorCode::ServiceQuotaExceededError => write!(f, "SERVICE_QUOTA_EXCEEDED_ERROR"),
-            JobErrorCode::Unknown(value) => write!(f, "{}", value),
+            JobErrorCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

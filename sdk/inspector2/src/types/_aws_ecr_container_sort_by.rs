@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AwsEcrContainerSortBy {
             AwsEcrContainerSortBy::All => write!(f, "ALL"),
             AwsEcrContainerSortBy::Critical => write!(f, "CRITICAL"),
             AwsEcrContainerSortBy::High => write!(f, "HIGH"),
-            AwsEcrContainerSortBy::Unknown(value) => write!(f, "{}", value),
+            AwsEcrContainerSortBy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

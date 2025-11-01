@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ConnectionType {
         match self {
             ConnectionType::Internet => write!(f, "INTERNET"),
             ConnectionType::VpcLink => write!(f, "VPC_LINK"),
-            ConnectionType::Unknown(value) => write!(f, "{}", value),
+            ConnectionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

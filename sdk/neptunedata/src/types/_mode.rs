@@ -108,7 +108,7 @@ impl ::std::fmt::Display for Mode {
             Mode::Auto => write!(f, "AUTO"),
             Mode::New => write!(f, "NEW"),
             Mode::Resume => write!(f, "RESUME"),
-            Mode::Unknown(value) => write!(f, "{}", value),
+            Mode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

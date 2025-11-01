@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ImageBuilderStateChangeReasonCode {
         match self {
             ImageBuilderStateChangeReasonCode::ImageUnavailable => write!(f, "IMAGE_UNAVAILABLE"),
             ImageBuilderStateChangeReasonCode::InternalError => write!(f, "INTERNAL_ERROR"),
-            ImageBuilderStateChangeReasonCode::Unknown(value) => write!(f, "{}", value),
+            ImageBuilderStateChangeReasonCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

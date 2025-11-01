@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SnapshotAttributeName {
         match self {
             SnapshotAttributeName::CreateVolumePermission => write!(f, "createVolumePermission"),
             SnapshotAttributeName::ProductCodes => write!(f, "productCodes"),
-            SnapshotAttributeName::Unknown(value) => write!(f, "{}", value),
+            SnapshotAttributeName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

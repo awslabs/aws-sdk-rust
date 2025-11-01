@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Vc3InterlaceMode {
         match self {
             Vc3InterlaceMode::Interlaced => write!(f, "INTERLACED"),
             Vc3InterlaceMode::Progressive => write!(f, "PROGRESSIVE"),
-            Vc3InterlaceMode::Unknown(value) => write!(f, "{}", value),
+            Vc3InterlaceMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

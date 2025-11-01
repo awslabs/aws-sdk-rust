@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ConfigurationSetAttribute {
             ConfigurationSetAttribute::EventDestinations => write!(f, "eventDestinations"),
             ConfigurationSetAttribute::ReputationOptions => write!(f, "reputationOptions"),
             ConfigurationSetAttribute::TrackingOptions => write!(f, "trackingOptions"),
-            ConfigurationSetAttribute::Unknown(value) => write!(f, "{}", value),
+            ConfigurationSetAttribute::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -120,7 +120,7 @@ impl ::std::fmt::Display for ContactType {
             ContactType::Person => write!(f, "PERSON"),
             ContactType::PublicBody => write!(f, "PUBLIC_BODY"),
             ContactType::Reseller => write!(f, "RESELLER"),
-            ContactType::Unknown(value) => write!(f, "{}", value),
+            ContactType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

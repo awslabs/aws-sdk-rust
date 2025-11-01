@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DashCompactness {
         match self {
             DashCompactness::None => write!(f, "NONE"),
             DashCompactness::Standard => write!(f, "STANDARD"),
-            DashCompactness::Unknown(value) => write!(f, "{}", value),
+            DashCompactness::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

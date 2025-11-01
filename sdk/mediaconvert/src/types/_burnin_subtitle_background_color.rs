@@ -114,7 +114,7 @@ impl ::std::fmt::Display for BurninSubtitleBackgroundColor {
             BurninSubtitleBackgroundColor::Black => write!(f, "BLACK"),
             BurninSubtitleBackgroundColor::None => write!(f, "NONE"),
             BurninSubtitleBackgroundColor::White => write!(f, "WHITE"),
-            BurninSubtitleBackgroundColor::Unknown(value) => write!(f, "{}", value),
+            BurninSubtitleBackgroundColor::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

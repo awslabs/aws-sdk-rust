@@ -126,7 +126,7 @@ impl ::std::fmt::Display for EventCode {
             EventCode::InstanceStop => write!(f, "instance-stop"),
             EventCode::SystemMaintenance => write!(f, "system-maintenance"),
             EventCode::SystemReboot => write!(f, "system-reboot"),
-            EventCode::Unknown(value) => write!(f, "{}", value),
+            EventCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

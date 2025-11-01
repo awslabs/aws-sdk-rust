@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ApplicationMode {
         match self {
             ApplicationMode::Interactive => write!(f, "INTERACTIVE"),
             ApplicationMode::Streaming => write!(f, "STREAMING"),
-            ApplicationMode::Unknown(value) => write!(f, "{}", value),
+            ApplicationMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

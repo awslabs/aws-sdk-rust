@@ -102,7 +102,7 @@ impl ::std::fmt::Display for LicenseModel {
         match self {
             LicenseModel::BringYourOwnLicense => write!(f, "BRING_YOUR_OWN_LICENSE"),
             LicenseModel::LicenseIncluded => write!(f, "LICENSE_INCLUDED"),
-            LicenseModel::Unknown(value) => write!(f, "{}", value),
+            LicenseModel::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

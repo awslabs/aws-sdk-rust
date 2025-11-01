@@ -102,7 +102,7 @@ impl ::std::fmt::Display for HostMaintenance {
         match self {
             HostMaintenance::Off => write!(f, "off"),
             HostMaintenance::On => write!(f, "on"),
-            HostMaintenance::Unknown(value) => write!(f, "{}", value),
+            HostMaintenance::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DedicatedTenancySupportResultEnum {
         match self {
             DedicatedTenancySupportResultEnum::Disabled => write!(f, "DISABLED"),
             DedicatedTenancySupportResultEnum::Enabled => write!(f, "ENABLED"),
-            DedicatedTenancySupportResultEnum::Unknown(value) => write!(f, "{}", value),
+            DedicatedTenancySupportResultEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

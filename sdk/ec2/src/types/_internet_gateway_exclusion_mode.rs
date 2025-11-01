@@ -102,7 +102,7 @@ impl ::std::fmt::Display for InternetGatewayExclusionMode {
         match self {
             InternetGatewayExclusionMode::AllowBidirectional => write!(f, "allow-bidirectional"),
             InternetGatewayExclusionMode::AllowEgress => write!(f, "allow-egress"),
-            InternetGatewayExclusionMode::Unknown(value) => write!(f, "{}", value),
+            InternetGatewayExclusionMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

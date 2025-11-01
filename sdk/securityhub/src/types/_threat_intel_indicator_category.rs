@@ -133,7 +133,7 @@ impl ::std::fmt::Display for ThreatIntelIndicatorCategory {
             ThreatIntelIndicatorCategory::DropSite => write!(f, "DROP_SITE"),
             ThreatIntelIndicatorCategory::ExploitSite => write!(f, "EXPLOIT_SITE"),
             ThreatIntelIndicatorCategory::Keylogger => write!(f, "KEYLOGGER"),
-            ThreatIntelIndicatorCategory::Unknown(value) => write!(f, "{}", value),
+            ThreatIntelIndicatorCategory::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ForwardValues {
             ForwardValues::All => write!(f, "all"),
             ForwardValues::AllowList => write!(f, "allow-list"),
             ForwardValues::None => write!(f, "none"),
-            ForwardValues::Unknown(value) => write!(f, "{}", value),
+            ForwardValues::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

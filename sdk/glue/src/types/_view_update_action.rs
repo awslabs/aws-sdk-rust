@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ViewUpdateAction {
             ViewUpdateAction::AddOrReplace => write!(f, "ADD_OR_REPLACE"),
             ViewUpdateAction::Drop => write!(f, "DROP"),
             ViewUpdateAction::Replace => write!(f, "REPLACE"),
-            ViewUpdateAction::Unknown(value) => write!(f, "{}", value),
+            ViewUpdateAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -105,7 +105,7 @@ impl ::std::fmt::Display for MulticastFrameInfo {
         match self {
             MulticastFrameInfo::Disabled => write!(f, "DISABLED"),
             MulticastFrameInfo::Enabled => write!(f, "ENABLED"),
-            MulticastFrameInfo::Unknown(value) => write!(f, "{}", value),
+            MulticastFrameInfo::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

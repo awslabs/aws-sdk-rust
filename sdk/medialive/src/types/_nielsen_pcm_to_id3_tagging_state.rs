@@ -102,7 +102,7 @@ impl ::std::fmt::Display for NielsenPcmToId3TaggingState {
         match self {
             NielsenPcmToId3TaggingState::Disabled => write!(f, "DISABLED"),
             NielsenPcmToId3TaggingState::Enabled => write!(f, "ENABLED"),
-            NielsenPcmToId3TaggingState::Unknown(value) => write!(f, "{}", value),
+            NielsenPcmToId3TaggingState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

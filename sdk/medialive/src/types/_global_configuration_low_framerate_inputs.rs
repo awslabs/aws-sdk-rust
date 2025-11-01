@@ -102,7 +102,7 @@ impl ::std::fmt::Display for GlobalConfigurationLowFramerateInputs {
         match self {
             GlobalConfigurationLowFramerateInputs::Disabled => write!(f, "DISABLED"),
             GlobalConfigurationLowFramerateInputs::Enabled => write!(f, "ENABLED"),
-            GlobalConfigurationLowFramerateInputs::Unknown(value) => write!(f, "{}", value),
+            GlobalConfigurationLowFramerateInputs::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

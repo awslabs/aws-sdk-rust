@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ScanType {
         match self {
             ScanType::Basic => write!(f, "BASIC"),
             ScanType::Enhanced => write!(f, "ENHANCED"),
-            ScanType::Unknown(value) => write!(f, "{}", value),
+            ScanType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

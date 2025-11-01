@@ -74,16 +74,14 @@ pub fn de_get_context_keys_for_custom_policy(
     let start_el = decoder.start_el();
     if !(start_el.matches("GetContextKeysForCustomPolicyResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected GetContextKeysForCustomPolicyResponse got {:?}",
-            start_el
+            "invalid root, expected GetContextKeysForCustomPolicyResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("GetContextKeysForCustomPolicyResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected GetContextKeysForCustomPolicyResult got {:?}",
-                start_el
+                "invalid result, expected GetContextKeysForCustomPolicyResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

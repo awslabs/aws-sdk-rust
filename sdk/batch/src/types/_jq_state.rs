@@ -102,7 +102,7 @@ impl ::std::fmt::Display for JqState {
         match self {
             JqState::Disabled => write!(f, "DISABLED"),
             JqState::Enabled => write!(f, "ENABLED"),
-            JqState::Unknown(value) => write!(f, "{}", value),
+            JqState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

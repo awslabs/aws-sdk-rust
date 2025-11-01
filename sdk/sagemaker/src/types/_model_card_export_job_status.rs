@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ModelCardExportJobStatus {
             ModelCardExportJobStatus::Completed => write!(f, "Completed"),
             ModelCardExportJobStatus::Failed => write!(f, "Failed"),
             ModelCardExportJobStatus::InProgress => write!(f, "InProgress"),
-            ModelCardExportJobStatus::Unknown(value) => write!(f, "{}", value),
+            ModelCardExportJobStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

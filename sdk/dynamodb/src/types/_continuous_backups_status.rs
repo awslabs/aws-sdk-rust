@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ContinuousBackupsStatus {
         match self {
             ContinuousBackupsStatus::Disabled => write!(f, "DISABLED"),
             ContinuousBackupsStatus::Enabled => write!(f, "ENABLED"),
-            ContinuousBackupsStatus::Unknown(value) => write!(f, "{}", value),
+            ContinuousBackupsStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

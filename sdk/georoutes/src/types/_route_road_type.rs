@@ -106,7 +106,7 @@ impl ::std::fmt::Display for RouteRoadType {
             RouteRoadType::Highway => write!(f, "Highway"),
             RouteRoadType::Rural => write!(f, "Rural"),
             RouteRoadType::Urban => write!(f, "Urban"),
-            RouteRoadType::Unknown(value) => write!(f, "{}", value),
+            RouteRoadType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

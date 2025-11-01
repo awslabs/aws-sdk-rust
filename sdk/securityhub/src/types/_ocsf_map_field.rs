@@ -114,7 +114,7 @@ impl ::std::fmt::Display for OcsfMapField {
             OcsfMapField::DatabucketTags => write!(f, "databucket.tags"),
             OcsfMapField::FindingInfoTags => write!(f, "finding_info.tags"),
             OcsfMapField::ResourcesTags => write!(f, "resources.tags"),
-            OcsfMapField::Unknown(value) => write!(f, "{}", value),
+            OcsfMapField::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for SearchOutputAdditionalAttribute {
             SearchOutputAdditionalAttribute::Forms => write!(f, "FORMS"),
             SearchOutputAdditionalAttribute::TextMatchRationale => write!(f, "TEXT_MATCH_RATIONALE"),
             SearchOutputAdditionalAttribute::TimeSeriesDataPointForms => write!(f, "TIME_SERIES_DATA_POINT_FORMS"),
-            SearchOutputAdditionalAttribute::Unknown(value) => write!(f, "{}", value),
+            SearchOutputAdditionalAttribute::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

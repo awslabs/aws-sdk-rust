@@ -102,7 +102,7 @@ impl ::std::fmt::Display for WarmTierState {
         match self {
             WarmTierState::Disabled => write!(f, "DISABLED"),
             WarmTierState::Enabled => write!(f, "ENABLED"),
-            WarmTierState::Unknown(value) => write!(f, "{}", value),
+            WarmTierState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

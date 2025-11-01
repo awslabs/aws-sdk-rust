@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Mp3RateControlMode {
         match self {
             Mp3RateControlMode::Cbr => write!(f, "CBR"),
             Mp3RateControlMode::Vbr => write!(f, "VBR"),
-            Mp3RateControlMode::Unknown(value) => write!(f, "{}", value),
+            Mp3RateControlMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

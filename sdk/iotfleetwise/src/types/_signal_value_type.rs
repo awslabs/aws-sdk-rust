@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SignalValueType {
         match self {
             SignalValueType::FloatingPoint => write!(f, "FLOATING_POINT"),
             SignalValueType::Integer => write!(f, "INTEGER"),
-            SignalValueType::Unknown(value) => write!(f, "{}", value),
+            SignalValueType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

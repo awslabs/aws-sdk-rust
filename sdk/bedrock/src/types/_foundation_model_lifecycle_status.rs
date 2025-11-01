@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FoundationModelLifecycleStatus {
         match self {
             FoundationModelLifecycleStatus::Active => write!(f, "ACTIVE"),
             FoundationModelLifecycleStatus::Legacy => write!(f, "LEGACY"),
-            FoundationModelLifecycleStatus::Unknown(value) => write!(f, "{}", value),
+            FoundationModelLifecycleStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

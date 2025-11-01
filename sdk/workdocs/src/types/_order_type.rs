@@ -102,7 +102,7 @@ impl ::std::fmt::Display for OrderType {
         match self {
             OrderType::Ascending => write!(f, "ASCENDING"),
             OrderType::Descending => write!(f, "DESCENDING"),
-            OrderType::Unknown(value) => write!(f, "{}", value),
+            OrderType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

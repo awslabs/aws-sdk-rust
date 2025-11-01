@@ -108,7 +108,7 @@ impl ::std::fmt::Display for TooltipTarget {
             TooltipTarget::Bar => write!(f, "BAR"),
             TooltipTarget::Both => write!(f, "BOTH"),
             TooltipTarget::Line => write!(f, "LINE"),
-            TooltipTarget::Unknown(value) => write!(f, "{}", value),
+            TooltipTarget::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

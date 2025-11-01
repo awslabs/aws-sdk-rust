@@ -140,7 +140,7 @@ impl ::std::fmt::Display for PluginBuildStatus {
             PluginBuildStatus::Ready => write!(f, "READY"),
             PluginBuildStatus::UpdateFailed => write!(f, "UPDATE_FAILED"),
             PluginBuildStatus::UpdateInProgress => write!(f, "UPDATE_IN_PROGRESS"),
-            PluginBuildStatus::Unknown(value) => write!(f, "{}", value),
+            PluginBuildStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -104,7 +104,7 @@ impl ::std::fmt::Display for AttachedFileServiceQuotaExceededExceptionReason {
         match self {
             AttachedFileServiceQuotaExceededExceptionReason::TotalFileCountExceeded => write!(f, "TOTAL_FILE_COUNT_EXCEEDED"),
             AttachedFileServiceQuotaExceededExceptionReason::TotalFileSizeExceeded => write!(f, "TOTAL_FILE_SIZE_EXCEEDED"),
-            AttachedFileServiceQuotaExceededExceptionReason::Unknown(value) => write!(f, "{}", value),
+            AttachedFileServiceQuotaExceededExceptionReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

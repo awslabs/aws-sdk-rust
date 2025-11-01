@@ -104,7 +104,7 @@ impl ::std::fmt::Display for AcceptanceType {
         match self {
             AcceptanceType::Explicit => write!(f, "EXPLICIT"),
             AcceptanceType::Passthrough => write!(f, "PASSTHROUGH"),
-            AcceptanceType::Unknown(value) => write!(f, "{}", value),
+            AcceptanceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

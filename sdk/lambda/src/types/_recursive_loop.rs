@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RecursiveLoop {
         match self {
             RecursiveLoop::Allow => write!(f, "Allow"),
             RecursiveLoop::Terminate => write!(f, "Terminate"),
-            RecursiveLoop::Unknown(value) => write!(f, "{}", value),
+            RecursiveLoop::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

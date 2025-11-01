@@ -108,7 +108,7 @@ impl ::std::fmt::Display for RetentionAction {
             RetentionAction::Delete => write!(f, "DELETE"),
             RetentionAction::None => write!(f, "NONE"),
             RetentionAction::PermanentlyDelete => write!(f, "PERMANENTLY_DELETE"),
-            RetentionAction::Unknown(value) => write!(f, "{}", value),
+            RetentionAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

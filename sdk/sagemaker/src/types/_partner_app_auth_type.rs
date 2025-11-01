@@ -96,7 +96,7 @@ impl ::std::fmt::Display for PartnerAppAuthType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             PartnerAppAuthType::Iam => write!(f, "IAM"),
-            PartnerAppAuthType::Unknown(value) => write!(f, "{}", value),
+            PartnerAppAuthType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

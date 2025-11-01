@@ -114,7 +114,7 @@ impl ::std::fmt::Display for OptInType {
             OptInType::Immediate => write!(f, "IMMEDIATE"),
             OptInType::NextMaintenance => write!(f, "NEXT_MAINTENANCE"),
             OptInType::UndoOptIn => write!(f, "UNDO_OPT_IN"),
-            OptInType::Unknown(value) => write!(f, "{}", value),
+            OptInType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

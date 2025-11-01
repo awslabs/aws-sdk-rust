@@ -102,7 +102,7 @@ impl ::std::fmt::Display for OperatingSystemType {
         match self {
             OperatingSystemType::Linux => write!(f, "LINUX"),
             OperatingSystemType::Windows => write!(f, "WINDOWS"),
-            OperatingSystemType::Unknown(value) => write!(f, "{}", value),
+            OperatingSystemType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

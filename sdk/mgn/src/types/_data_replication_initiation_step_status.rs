@@ -120,7 +120,7 @@ impl ::std::fmt::Display for DataReplicationInitiationStepStatus {
             DataReplicationInitiationStepStatus::NotStarted => write!(f, "NOT_STARTED"),
             DataReplicationInitiationStepStatus::Skipped => write!(f, "SKIPPED"),
             DataReplicationInitiationStepStatus::Succeeded => write!(f, "SUCCEEDED"),
-            DataReplicationInitiationStepStatus::Unknown(value) => write!(f, "{}", value),
+            DataReplicationInitiationStepStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

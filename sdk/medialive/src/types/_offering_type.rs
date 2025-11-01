@@ -96,7 +96,7 @@ impl ::std::fmt::Display for OfferingType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             OfferingType::NoUpfront => write!(f, "NO_UPFRONT"),
-            OfferingType::Unknown(value) => write!(f, "{}", value),
+            OfferingType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

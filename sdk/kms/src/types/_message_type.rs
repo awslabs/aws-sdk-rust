@@ -108,7 +108,7 @@ impl ::std::fmt::Display for MessageType {
             MessageType::Digest => write!(f, "DIGEST"),
             MessageType::ExternalMu => write!(f, "EXTERNAL_MU"),
             MessageType::Raw => write!(f, "RAW"),
-            MessageType::Unknown(value) => write!(f, "{}", value),
+            MessageType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

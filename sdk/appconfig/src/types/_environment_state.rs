@@ -120,7 +120,7 @@ impl ::std::fmt::Display for EnvironmentState {
             EnvironmentState::Reverted => write!(f, "REVERTED"),
             EnvironmentState::RolledBack => write!(f, "ROLLED_BACK"),
             EnvironmentState::RollingBack => write!(f, "ROLLING_BACK"),
-            EnvironmentState::Unknown(value) => write!(f, "{}", value),
+            EnvironmentState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PipelineType {
         match self {
             PipelineType::V1 => write!(f, "V1"),
             PipelineType::V2 => write!(f, "V2"),
-            PipelineType::Unknown(value) => write!(f, "{}", value),
+            PipelineType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

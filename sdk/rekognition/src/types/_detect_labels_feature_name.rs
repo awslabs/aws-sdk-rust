@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DetectLabelsFeatureName {
         match self {
             DetectLabelsFeatureName::GeneralLabels => write!(f, "GENERAL_LABELS"),
             DetectLabelsFeatureName::ImageProperties => write!(f, "IMAGE_PROPERTIES"),
-            DetectLabelsFeatureName::Unknown(value) => write!(f, "{}", value),
+            DetectLabelsFeatureName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

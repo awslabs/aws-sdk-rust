@@ -210,7 +210,7 @@ impl ::std::fmt::Display for DeliveryStreamFailureType {
             DeliveryStreamFailureType::UnknownError => write!(f, "UNKNOWN_ERROR"),
             DeliveryStreamFailureType::VpcEndpointServiceNameNotFound => write!(f, "VPC_ENDPOINT_SERVICE_NAME_NOT_FOUND"),
             DeliveryStreamFailureType::VpcInterfaceEndpointServiceAccessDenied => write!(f, "VPC_INTERFACE_ENDPOINT_SERVICE_ACCESS_DENIED"),
-            DeliveryStreamFailureType::Unknown(value) => write!(f, "{}", value),
+            DeliveryStreamFailureType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

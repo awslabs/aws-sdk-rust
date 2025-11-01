@@ -56,8 +56,7 @@ pub fn de_update_capacity_manager_organizations_access(
     let start_el = decoder.start_el();
     if !(start_el.matches("UpdateCapacityManagerOrganizationsAccessResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected UpdateCapacityManagerOrganizationsAccessResponse got {:?}",
-            start_el
+            "invalid root, expected UpdateCapacityManagerOrganizationsAccessResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

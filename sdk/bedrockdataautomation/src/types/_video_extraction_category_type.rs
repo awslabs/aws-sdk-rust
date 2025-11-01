@@ -114,7 +114,7 @@ impl ::std::fmt::Display for VideoExtractionCategoryType {
             VideoExtractionCategoryType::Logos => write!(f, "LOGOS"),
             VideoExtractionCategoryType::TextDetection => write!(f, "TEXT_DETECTION"),
             VideoExtractionCategoryType::Transcript => write!(f, "TRANSCRIPT"),
-            VideoExtractionCategoryType::Unknown(value) => write!(f, "{}", value),
+            VideoExtractionCategoryType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

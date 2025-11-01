@@ -102,7 +102,7 @@ impl ::std::fmt::Display for EbsFinding {
         match self {
             EbsFinding::NotOptimized => write!(f, "NotOptimized"),
             EbsFinding::Optimized => write!(f, "Optimized"),
-            EbsFinding::Unknown(value) => write!(f, "{}", value),
+            EbsFinding::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

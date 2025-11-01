@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PrincipalType {
         match self {
             PrincipalType::AwsAccount => write!(f, "AWS_ACCOUNT"),
             PrincipalType::AwsService => write!(f, "AWS_SERVICE"),
-            PrincipalType::Unknown(value) => write!(f, "{}", value),
+            PrincipalType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

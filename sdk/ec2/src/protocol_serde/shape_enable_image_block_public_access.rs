@@ -51,8 +51,7 @@ pub fn de_enable_image_block_public_access(
     let start_el = decoder.start_el();
     if !(start_el.matches("EnableImageBlockPublicAccessResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected EnableImageBlockPublicAccessResponse got {:?}",
-            start_el
+            "invalid root, expected EnableImageBlockPublicAccessResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

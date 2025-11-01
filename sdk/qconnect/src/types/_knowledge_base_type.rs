@@ -120,7 +120,7 @@ impl ::std::fmt::Display for KnowledgeBaseType {
             KnowledgeBaseType::Managed => write!(f, "MANAGED"),
             KnowledgeBaseType::MessageTemplates => write!(f, "MESSAGE_TEMPLATES"),
             KnowledgeBaseType::QuickResponses => write!(f, "QUICK_RESPONSES"),
-            KnowledgeBaseType::Unknown(value) => write!(f, "{}", value),
+            KnowledgeBaseType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

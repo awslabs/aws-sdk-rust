@@ -96,16 +96,14 @@ pub fn de_delete_custom_db_engine_version(
     let start_el = decoder.start_el();
     if !(start_el.matches("DeleteCustomDBEngineVersionResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected DeleteCustomDBEngineVersionResponse got {:?}",
-            start_el
+            "invalid root, expected DeleteCustomDBEngineVersionResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("DeleteCustomDBEngineVersionResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected DeleteCustomDBEngineVersionResult got {:?}",
-                start_el
+                "invalid result, expected DeleteCustomDBEngineVersionResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

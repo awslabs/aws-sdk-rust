@@ -126,7 +126,7 @@ impl ::std::fmt::Display for SchemaValueType {
             SchemaValueType::Int => write!(f, "INT"),
             SchemaValueType::Long => write!(f, "LONG"),
             SchemaValueType::String => write!(f, "STRING"),
-            SchemaValueType::Unknown(value) => write!(f, "{}", value),
+            SchemaValueType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

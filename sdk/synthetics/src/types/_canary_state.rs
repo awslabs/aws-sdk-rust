@@ -146,7 +146,7 @@ impl ::std::fmt::Display for CanaryState {
             CanaryState::Stopped => write!(f, "STOPPED"),
             CanaryState::Stopping => write!(f, "STOPPING"),
             CanaryState::Updating => write!(f, "UPDATING"),
-            CanaryState::Unknown(value) => write!(f, "{}", value),
+            CanaryState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

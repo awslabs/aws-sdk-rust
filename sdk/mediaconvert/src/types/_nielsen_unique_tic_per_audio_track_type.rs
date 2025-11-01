@@ -102,7 +102,7 @@ impl ::std::fmt::Display for NielsenUniqueTicPerAudioTrackType {
         match self {
             NielsenUniqueTicPerAudioTrackType::ReserveUniqueTicsPerTrack => write!(f, "RESERVE_UNIQUE_TICS_PER_TRACK"),
             NielsenUniqueTicPerAudioTrackType::SameTicsPerTrack => write!(f, "SAME_TICS_PER_TRACK"),
-            NielsenUniqueTicPerAudioTrackType::Unknown(value) => write!(f, "{}", value),
+            NielsenUniqueTicPerAudioTrackType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

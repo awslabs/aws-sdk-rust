@@ -108,7 +108,7 @@ impl ::std::fmt::Display for SchemaStatus {
             SchemaStatus::Available => write!(f, "AVAILABLE"),
             SchemaStatus::Deleting => write!(f, "DELETING"),
             SchemaStatus::Pending => write!(f, "PENDING"),
-            SchemaStatus::Unknown(value) => write!(f, "{}", value),
+            SchemaStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

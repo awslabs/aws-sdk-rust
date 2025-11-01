@@ -132,7 +132,7 @@ impl ::std::fmt::Display for DataSourceSyncJobStatus {
             DataSourceSyncJobStatus::Succeeded => write!(f, "SUCCEEDED"),
             DataSourceSyncJobStatus::Syncing => write!(f, "SYNCING"),
             DataSourceSyncJobStatus::SyncingIndexing => write!(f, "SYNCING_INDEXING"),
-            DataSourceSyncJobStatus::Unknown(value) => write!(f, "{}", value),
+            DataSourceSyncJobStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

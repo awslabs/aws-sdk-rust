@@ -96,7 +96,7 @@ impl ::std::fmt::Display for DeliveryDestinationType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             DeliveryDestinationType::Kinesis => write!(f, "KINESIS"),
-            DeliveryDestinationType::Unknown(value) => write!(f, "{}", value),
+            DeliveryDestinationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

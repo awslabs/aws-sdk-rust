@@ -108,7 +108,7 @@ impl ::std::fmt::Display for TimeUnit {
             TimeUnit::Daily => write!(f, "DAILY"),
             TimeUnit::Hourly => write!(f, "HOURLY"),
             TimeUnit::Monthly => write!(f, "MONTHLY"),
-            TimeUnit::Unknown(value) => write!(f, "{}", value),
+            TimeUnit::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

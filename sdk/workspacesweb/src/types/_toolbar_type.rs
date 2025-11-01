@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ToolbarType {
         match self {
             ToolbarType::Docked => write!(f, "Docked"),
             ToolbarType::Floating => write!(f, "Floating"),
-            ToolbarType::Unknown(value) => write!(f, "{}", value),
+            ToolbarType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

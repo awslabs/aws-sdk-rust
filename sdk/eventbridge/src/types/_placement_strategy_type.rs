@@ -108,7 +108,7 @@ impl ::std::fmt::Display for PlacementStrategyType {
             PlacementStrategyType::Binpack => write!(f, "binpack"),
             PlacementStrategyType::Random => write!(f, "random"),
             PlacementStrategyType::Spread => write!(f, "spread"),
-            PlacementStrategyType::Unknown(value) => write!(f, "{}", value),
+            PlacementStrategyType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

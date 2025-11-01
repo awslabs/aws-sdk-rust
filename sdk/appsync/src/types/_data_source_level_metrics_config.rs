@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DataSourceLevelMetricsConfig {
         match self {
             DataSourceLevelMetricsConfig::Disabled => write!(f, "DISABLED"),
             DataSourceLevelMetricsConfig::Enabled => write!(f, "ENABLED"),
-            DataSourceLevelMetricsConfig::Unknown(value) => write!(f, "{}", value),
+            DataSourceLevelMetricsConfig::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

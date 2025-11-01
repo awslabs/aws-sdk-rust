@@ -126,7 +126,7 @@ impl ::std::fmt::Display for Specialty {
             Specialty::Primarycare => write!(f, "PRIMARYCARE"),
             Specialty::Radiology => write!(f, "RADIOLOGY"),
             Specialty::Urology => write!(f, "UROLOGY"),
-            Specialty::Unknown(value) => write!(f, "{}", value),
+            Specialty::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

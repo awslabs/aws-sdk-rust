@@ -196,7 +196,7 @@ impl ::std::fmt::Display for ValidationExceptionReason {
             ValidationExceptionReason::InvalidVolumeSize => write!(f, "INVALID_VOLUME_SIZE"),
             ValidationExceptionReason::UnrelatedSnapshots => write!(f, "UNRELATED_SNAPSHOTS"),
             ValidationExceptionReason::WriteRequestTimeout => write!(f, "WRITE_REQUEST_TIMEOUT"),
-            ValidationExceptionReason::Unknown(value) => write!(f, "{}", value),
+            ValidationExceptionReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

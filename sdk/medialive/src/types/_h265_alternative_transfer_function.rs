@@ -102,7 +102,7 @@ impl ::std::fmt::Display for H265AlternativeTransferFunction {
         match self {
             H265AlternativeTransferFunction::Insert => write!(f, "INSERT"),
             H265AlternativeTransferFunction::Omit => write!(f, "OMIT"),
-            H265AlternativeTransferFunction::Unknown(value) => write!(f, "{}", value),
+            H265AlternativeTransferFunction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -217,7 +217,7 @@ impl ::std::fmt::Display for CapacityReservationInstancePlatform {
             CapacityReservationInstancePlatform::WindowsWithSqlServerEnterprise => write!(f, "Windows with SQL Server Enterprise"),
             CapacityReservationInstancePlatform::WindowsWithSqlServerStandard => write!(f, "Windows with SQL Server Standard"),
             CapacityReservationInstancePlatform::WindowsWithSqlServerWeb => write!(f, "Windows with SQL Server Web"),
-            CapacityReservationInstancePlatform::Unknown(value) => write!(f, "{}", value),
+            CapacityReservationInstancePlatform::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

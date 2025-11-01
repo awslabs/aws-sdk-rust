@@ -126,7 +126,7 @@ impl ::std::fmt::Display for AwsMemberBusinessTitle {
             AwsMemberBusinessTitle::Pdm => write!(f, "PDM"),
             AwsMemberBusinessTitle::Psm => write!(f, "PSM"),
             AwsMemberBusinessTitle::Wwpspdm => write!(f, "WWPSPDM"),
-            AwsMemberBusinessTitle::Unknown(value) => write!(f, "{}", value),
+            AwsMemberBusinessTitle::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

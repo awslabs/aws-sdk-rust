@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SecurityPolicyResourceType {
         match self {
             SecurityPolicyResourceType::Connector => write!(f, "CONNECTOR"),
             SecurityPolicyResourceType::Server => write!(f, "SERVER"),
-            SecurityPolicyResourceType::Unknown(value) => write!(f, "{}", value),
+            SecurityPolicyResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

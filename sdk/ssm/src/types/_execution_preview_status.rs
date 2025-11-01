@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ExecutionPreviewStatus {
             ExecutionPreviewStatus::InProgress => write!(f, "InProgress"),
             ExecutionPreviewStatus::Pending => write!(f, "Pending"),
             ExecutionPreviewStatus::Success => write!(f, "Success"),
-            ExecutionPreviewStatus::Unknown(value) => write!(f, "{}", value),
+            ExecutionPreviewStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

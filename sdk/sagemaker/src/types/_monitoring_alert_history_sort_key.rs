@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MonitoringAlertHistorySortKey {
         match self {
             MonitoringAlertHistorySortKey::CreationTime => write!(f, "CreationTime"),
             MonitoringAlertHistorySortKey::Status => write!(f, "Status"),
-            MonitoringAlertHistorySortKey::Unknown(value) => write!(f, "{}", value),
+            MonitoringAlertHistorySortKey::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

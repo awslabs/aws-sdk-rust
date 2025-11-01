@@ -108,7 +108,7 @@ impl ::std::fmt::Display for CustomerActionStatus {
             CustomerActionStatus::ActionRecommended => write!(f, "ACTION_RECOMMENDED"),
             CustomerActionStatus::CriticalActionRequired => write!(f, "CRITICAL_ACTION_REQUIRED"),
             CustomerActionStatus::None => write!(f, "NONE"),
-            CustomerActionStatus::Unknown(value) => write!(f, "{}", value),
+            CustomerActionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

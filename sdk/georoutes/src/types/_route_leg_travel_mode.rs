@@ -124,7 +124,7 @@ impl ::std::fmt::Display for RouteLegTravelMode {
             RouteLegTravelMode::Pedestrian => write!(f, "Pedestrian"),
             RouteLegTravelMode::Scooter => write!(f, "Scooter"),
             RouteLegTravelMode::Truck => write!(f, "Truck"),
-            RouteLegTravelMode::Unknown(value) => write!(f, "{}", value),
+            RouteLegTravelMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

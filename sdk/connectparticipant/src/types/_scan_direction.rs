@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ScanDirection {
         match self {
             ScanDirection::Backward => write!(f, "BACKWARD"),
             ScanDirection::Forward => write!(f, "FORWARD"),
-            ScanDirection::Unknown(value) => write!(f, "{}", value),
+            ScanDirection::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

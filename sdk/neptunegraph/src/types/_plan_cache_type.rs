@@ -108,7 +108,7 @@ impl ::std::fmt::Display for PlanCacheType {
             PlanCacheType::Auto => write!(f, "AUTO"),
             PlanCacheType::Disabled => write!(f, "DISABLED"),
             PlanCacheType::Enabled => write!(f, "ENABLED"),
-            PlanCacheType::Unknown(value) => write!(f, "{}", value),
+            PlanCacheType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

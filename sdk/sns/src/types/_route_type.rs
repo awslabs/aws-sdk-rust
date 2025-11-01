@@ -111,7 +111,7 @@ impl ::std::fmt::Display for RouteType {
             RouteType::Premium => write!(f, "Premium"),
             RouteType::Promotional => write!(f, "Promotional"),
             RouteType::Transactional => write!(f, "Transactional"),
-            RouteType::Unknown(value) => write!(f, "{}", value),
+            RouteType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

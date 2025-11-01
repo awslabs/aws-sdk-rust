@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ModelMetadataFilterType {
             ModelMetadataFilterType::Framework => write!(f, "Framework"),
             ModelMetadataFilterType::Frameworkversion => write!(f, "FrameworkVersion"),
             ModelMetadataFilterType::Task => write!(f, "Task"),
-            ModelMetadataFilterType::Unknown(value) => write!(f, "{}", value),
+            ModelMetadataFilterType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

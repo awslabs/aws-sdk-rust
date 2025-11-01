@@ -96,7 +96,7 @@ impl ::std::fmt::Display for UpdateJobLifecycleStatus {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             UpdateJobLifecycleStatus::Archived => write!(f, "ARCHIVED"),
-            UpdateJobLifecycleStatus::Unknown(value) => write!(f, "{}", value),
+            UpdateJobLifecycleStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

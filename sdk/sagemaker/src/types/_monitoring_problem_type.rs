@@ -108,7 +108,7 @@ impl ::std::fmt::Display for MonitoringProblemType {
             MonitoringProblemType::BinaryClassification => write!(f, "BinaryClassification"),
             MonitoringProblemType::MulticlassClassification => write!(f, "MulticlassClassification"),
             MonitoringProblemType::Regression => write!(f, "Regression"),
-            MonitoringProblemType::Unknown(value) => write!(f, "{}", value),
+            MonitoringProblemType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

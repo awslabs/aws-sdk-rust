@@ -28,7 +28,7 @@ impl ::std::fmt::Display for SubnetNotFound {
         ::std::write!(f, "SubnetNotFound")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
             {
-                ::std::write!(f, ": {}", inner_1)?;
+                ::std::write!(f, ": {inner_1}")?;
             }
         }
         Ok(())

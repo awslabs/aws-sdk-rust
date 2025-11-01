@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ApplicationInstanceHealthStatus {
             ApplicationInstanceHealthStatus::Error => write!(f, "ERROR"),
             ApplicationInstanceHealthStatus::NotAvailable => write!(f, "NOT_AVAILABLE"),
             ApplicationInstanceHealthStatus::Running => write!(f, "RUNNING"),
-            ApplicationInstanceHealthStatus::Unknown(value) => write!(f, "{}", value),
+            ApplicationInstanceHealthStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

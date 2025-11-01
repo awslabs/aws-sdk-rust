@@ -28,7 +28,7 @@ impl ::std::fmt::Display for ConfigurationSetSendingPausedException {
         ::std::write!(f, "ConfigurationSetSendingPausedException")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
             {
-                ::std::write!(f, ": {}", inner_1)?;
+                ::std::write!(f, ": {inner_1}")?;
             }
         }
         Ok(())

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for H264TemporalAdaptiveQuantization {
         match self {
             H264TemporalAdaptiveQuantization::Disabled => write!(f, "DISABLED"),
             H264TemporalAdaptiveQuantization::Enabled => write!(f, "ENABLED"),
-            H264TemporalAdaptiveQuantization::Unknown(value) => write!(f, "{}", value),
+            H264TemporalAdaptiveQuantization::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

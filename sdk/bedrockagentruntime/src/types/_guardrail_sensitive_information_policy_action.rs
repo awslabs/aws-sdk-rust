@@ -104,7 +104,7 @@ impl ::std::fmt::Display for GuardrailSensitiveInformationPolicyAction {
         match self {
             GuardrailSensitiveInformationPolicyAction::Anonymized => write!(f, "ANONYMIZED"),
             GuardrailSensitiveInformationPolicyAction::Blocked => write!(f, "BLOCKED"),
-            GuardrailSensitiveInformationPolicyAction::Unknown(value) => write!(f, "{}", value),
+            GuardrailSensitiveInformationPolicyAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

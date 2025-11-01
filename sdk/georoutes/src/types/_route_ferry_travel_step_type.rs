@@ -106,7 +106,7 @@ impl ::std::fmt::Display for RouteFerryTravelStepType {
             RouteFerryTravelStepType::Arrive => write!(f, "Arrive"),
             RouteFerryTravelStepType::Continue => write!(f, "Continue"),
             RouteFerryTravelStepType::Depart => write!(f, "Depart"),
-            RouteFerryTravelStepType::Unknown(value) => write!(f, "{}", value),
+            RouteFerryTravelStepType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

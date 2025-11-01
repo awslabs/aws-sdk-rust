@@ -126,7 +126,7 @@ impl ::std::fmt::Display for InspectorEvent {
             InspectorEvent::AssessmentRunStateChanged => write!(f, "ASSESSMENT_RUN_STATE_CHANGED"),
             InspectorEvent::FindingReported => write!(f, "FINDING_REPORTED"),
             InspectorEvent::Other => write!(f, "OTHER"),
-            InspectorEvent::Unknown(value) => write!(f, "{}", value),
+            InspectorEvent::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

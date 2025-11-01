@@ -75,8 +75,7 @@ pub fn de_copy_part_result(inp: &[u8]) -> std::result::Result<crate::types::Copy
     let start_el = decoder.start_el();
     if !(start_el.matches("CopyPartResult")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected CopyPartResult got {:?}",
-            start_el
+            "invalid root, expected CopyPartResult got {start_el:?}"
         )));
     }
     crate::protocol_serde::shape_copy_part_result::de_copy_part_result(&mut decoder)

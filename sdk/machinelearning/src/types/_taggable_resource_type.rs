@@ -114,7 +114,7 @@ impl ::std::fmt::Display for TaggableResourceType {
             TaggableResourceType::Datasource => write!(f, "DataSource"),
             TaggableResourceType::Evaluation => write!(f, "Evaluation"),
             TaggableResourceType::MlModel => write!(f, "MLModel"),
-            TaggableResourceType::Unknown(value) => write!(f, "{}", value),
+            TaggableResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

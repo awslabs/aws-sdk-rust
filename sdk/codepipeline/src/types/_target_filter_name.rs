@@ -96,7 +96,7 @@ impl ::std::fmt::Display for TargetFilterName {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             TargetFilterName::TargetStatus => write!(f, "TARGET_STATUS"),
-            TargetFilterName::Unknown(value) => write!(f, "{}", value),
+            TargetFilterName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

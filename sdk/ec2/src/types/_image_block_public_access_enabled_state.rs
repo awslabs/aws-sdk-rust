@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ImageBlockPublicAccessEnabledState {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ImageBlockPublicAccessEnabledState::BlockNewSharing => write!(f, "block-new-sharing"),
-            ImageBlockPublicAccessEnabledState::Unknown(value) => write!(f, "{}", value),
+            ImageBlockPublicAccessEnabledState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

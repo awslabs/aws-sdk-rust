@@ -108,7 +108,7 @@ impl ::std::fmt::Display for WarmPoolState {
             WarmPoolState::Hibernated => write!(f, "Hibernated"),
             WarmPoolState::Running => write!(f, "Running"),
             WarmPoolState::Stopped => write!(f, "Stopped"),
-            WarmPoolState::Unknown(value) => write!(f, "{}", value),
+            WarmPoolState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

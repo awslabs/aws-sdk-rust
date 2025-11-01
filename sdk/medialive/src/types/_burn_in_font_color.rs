@@ -126,7 +126,7 @@ impl ::std::fmt::Display for BurnInFontColor {
             BurnInFontColor::Red => write!(f, "RED"),
             BurnInFontColor::White => write!(f, "WHITE"),
             BurnInFontColor::Yellow => write!(f, "YELLOW"),
-            BurnInFontColor::Unknown(value) => write!(f, "{}", value),
+            BurnInFontColor::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

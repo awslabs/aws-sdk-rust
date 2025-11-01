@@ -120,7 +120,7 @@ impl ::std::fmt::Display for ResourceType {
             ResourceType::ResourcePolicy => write!(f, "RESOURCE_POLICY"),
             ResourceType::ResponsePlan => write!(f, "RESPONSE_PLAN"),
             ResourceType::TimelineEvent => write!(f, "TIMELINE_EVENT"),
-            ResourceType::Unknown(value) => write!(f, "{}", value),
+            ResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

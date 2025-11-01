@@ -120,7 +120,7 @@ impl ::std::fmt::Display for ResourceType {
             ResourceType::Package => write!(f, "package"),
             ResourceType::PackageVersion => write!(f, "package-version"),
             ResourceType::Repository => write!(f, "repository"),
-            ResourceType::Unknown(value) => write!(f, "{}", value),
+            ResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

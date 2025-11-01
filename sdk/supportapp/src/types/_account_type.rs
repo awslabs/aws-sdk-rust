@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AccountType {
         match self {
             AccountType::Management => write!(f, "management"),
             AccountType::Member => write!(f, "member"),
-            AccountType::Unknown(value) => write!(f, "{}", value),
+            AccountType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

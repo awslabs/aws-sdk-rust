@@ -102,7 +102,7 @@ impl ::std::fmt::Display for StarburstProductType {
         match self {
             StarburstProductType::Enterprise => write!(f, "ENTERPRISE"),
             StarburstProductType::Galaxy => write!(f, "GALAXY"),
-            StarburstProductType::Unknown(value) => write!(f, "{}", value),
+            StarburstProductType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

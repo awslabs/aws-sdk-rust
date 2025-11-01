@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MatchType {
         match self {
             MatchType::MlBasedMatching => write!(f, "ML_BASED_MATCHING"),
             MatchType::RuleBasedMatching => write!(f, "RULE_BASED_MATCHING"),
-            MatchType::Unknown(value) => write!(f, "{}", value),
+            MatchType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

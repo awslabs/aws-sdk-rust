@@ -120,7 +120,7 @@ impl ::std::fmt::Display for FlowExecutionStatus {
             FlowExecutionStatus::Running => write!(f, "Running"),
             FlowExecutionStatus::Succeeded => write!(f, "Succeeded"),
             FlowExecutionStatus::TimedOut => write!(f, "TimedOut"),
-            FlowExecutionStatus::Unknown(value) => write!(f, "{}", value),
+            FlowExecutionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

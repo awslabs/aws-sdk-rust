@@ -108,7 +108,7 @@ impl ::std::fmt::Display for FeatureType {
             FeatureType::Fractional => write!(f, "Fractional"),
             FeatureType::Integral => write!(f, "Integral"),
             FeatureType::String => write!(f, "String"),
-            FeatureType::Unknown(value) => write!(f, "{}", value),
+            FeatureType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

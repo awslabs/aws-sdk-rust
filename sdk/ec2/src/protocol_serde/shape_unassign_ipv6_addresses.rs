@@ -51,8 +51,7 @@ pub fn de_unassign_ipv6_addresses(
     let start_el = decoder.start_el();
     if !(start_el.matches("UnassignIpv6AddressesResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected UnassignIpv6AddressesResponse got {:?}",
-            start_el
+            "invalid root, expected UnassignIpv6AddressesResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

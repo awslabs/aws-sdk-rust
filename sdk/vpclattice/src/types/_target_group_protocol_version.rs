@@ -108,7 +108,7 @@ impl ::std::fmt::Display for TargetGroupProtocolVersion {
             TargetGroupProtocolVersion::Grpc => write!(f, "GRPC"),
             TargetGroupProtocolVersion::Http1 => write!(f, "HTTP1"),
             TargetGroupProtocolVersion::Http2 => write!(f, "HTTP2"),
-            TargetGroupProtocolVersion::Unknown(value) => write!(f, "{}", value),
+            TargetGroupProtocolVersion::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

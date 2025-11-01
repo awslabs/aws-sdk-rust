@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AutoshiftAppliedStatus {
         match self {
             AutoshiftAppliedStatus::Applied => write!(f, "APPLIED"),
             AutoshiftAppliedStatus::NotApplied => write!(f, "NOT_APPLIED"),
-            AutoshiftAppliedStatus::Unknown(value) => write!(f, "{}", value),
+            AutoshiftAppliedStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

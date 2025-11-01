@@ -108,7 +108,7 @@ impl ::std::fmt::Display for DataQualityRuleResultStatus {
             DataQualityRuleResultStatus::Error => write!(f, "ERROR"),
             DataQualityRuleResultStatus::Fail => write!(f, "FAIL"),
             DataQualityRuleResultStatus::Pass => write!(f, "PASS"),
-            DataQualityRuleResultStatus::Unknown(value) => write!(f, "{}", value),
+            DataQualityRuleResultStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

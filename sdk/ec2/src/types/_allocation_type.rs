@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AllocationType {
         match self {
             AllocationType::Future => write!(f, "future"),
             AllocationType::Used => write!(f, "used"),
-            AllocationType::Unknown(value) => write!(f, "{}", value),
+            AllocationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

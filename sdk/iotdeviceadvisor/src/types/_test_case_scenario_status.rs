@@ -154,7 +154,7 @@ impl ::std::fmt::Display for TestCaseScenarioStatus {
             TestCaseScenarioStatus::Running => write!(f, "RUNNING"),
             TestCaseScenarioStatus::Stopped => write!(f, "STOPPED"),
             TestCaseScenarioStatus::Stopping => write!(f, "STOPPING"),
-            TestCaseScenarioStatus::Unknown(value) => write!(f, "{}", value),
+            TestCaseScenarioStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

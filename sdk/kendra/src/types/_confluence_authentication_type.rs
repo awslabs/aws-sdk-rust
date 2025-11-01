@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ConfluenceAuthenticationType {
         match self {
             ConfluenceAuthenticationType::HttpBasic => write!(f, "HTTP_BASIC"),
             ConfluenceAuthenticationType::Pat => write!(f, "PAT"),
-            ConfluenceAuthenticationType::Unknown(value) => write!(f, "{}", value),
+            ConfluenceAuthenticationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

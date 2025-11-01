@@ -161,7 +161,7 @@ impl ::std::fmt::Display for JobStatus {
             JobStatus::InProgress => write!(f, "IN_PROGRESS"),
             JobStatus::Queued => write!(f, "QUEUED"),
             JobStatus::Submitted => write!(f, "SUBMITTED"),
-            JobStatus::Unknown(value) => write!(f, "{}", value),
+            JobStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

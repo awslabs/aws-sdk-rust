@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ConnectionOAuthHttpMethod {
             ConnectionOAuthHttpMethod::Get => write!(f, "GET"),
             ConnectionOAuthHttpMethod::Post => write!(f, "POST"),
             ConnectionOAuthHttpMethod::Put => write!(f, "PUT"),
-            ConnectionOAuthHttpMethod::Unknown(value) => write!(f, "{}", value),
+            ConnectionOAuthHttpMethod::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for RecordingConfigurationState {
             RecordingConfigurationState::Active => write!(f, "ACTIVE"),
             RecordingConfigurationState::CreateFailed => write!(f, "CREATE_FAILED"),
             RecordingConfigurationState::Creating => write!(f, "CREATING"),
-            RecordingConfigurationState::Unknown(value) => write!(f, "{}", value),
+            RecordingConfigurationState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

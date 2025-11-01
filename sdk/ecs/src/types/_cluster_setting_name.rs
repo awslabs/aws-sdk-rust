@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ClusterSettingName {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ClusterSettingName::ContainerInsights => write!(f, "containerInsights"),
-            ClusterSettingName::Unknown(value) => write!(f, "{}", value),
+            ClusterSettingName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

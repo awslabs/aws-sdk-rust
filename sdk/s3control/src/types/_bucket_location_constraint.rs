@@ -168,7 +168,7 @@ impl ::std::fmt::Display for BucketLocationConstraint {
             BucketLocationConstraint::SaEast1 => write!(f, "sa-east-1"),
             BucketLocationConstraint::UsWest1 => write!(f, "us-west-1"),
             BucketLocationConstraint::UsWest2 => write!(f, "us-west-2"),
-            BucketLocationConstraint::Unknown(value) => write!(f, "{}", value),
+            BucketLocationConstraint::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

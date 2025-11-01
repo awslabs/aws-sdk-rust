@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ReplicationConfigurationDataPlaneRouting {
         match self {
             ReplicationConfigurationDataPlaneRouting::PrivateIp => write!(f, "PRIVATE_IP"),
             ReplicationConfigurationDataPlaneRouting::PublicIp => write!(f, "PUBLIC_IP"),
-            ReplicationConfigurationDataPlaneRouting::Unknown(value) => write!(f, "{}", value),
+            ReplicationConfigurationDataPlaneRouting::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

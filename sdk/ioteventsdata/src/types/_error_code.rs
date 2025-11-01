@@ -126,7 +126,7 @@ impl ::std::fmt::Display for ErrorCode {
             ErrorCode::ResourceNotFoundException => write!(f, "ResourceNotFoundException"),
             ErrorCode::ServiceUnavailableException => write!(f, "ServiceUnavailableException"),
             ErrorCode::ThrottlingException => write!(f, "ThrottlingException"),
-            ErrorCode::Unknown(value) => write!(f, "{}", value),
+            ErrorCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

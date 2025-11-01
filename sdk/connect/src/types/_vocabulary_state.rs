@@ -114,7 +114,7 @@ impl ::std::fmt::Display for VocabularyState {
             VocabularyState::CreationFailed => write!(f, "CREATION_FAILED"),
             VocabularyState::CreationInProgress => write!(f, "CREATION_IN_PROGRESS"),
             VocabularyState::DeleteInProgress => write!(f, "DELETE_IN_PROGRESS"),
-            VocabularyState::Unknown(value) => write!(f, "{}", value),
+            VocabularyState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

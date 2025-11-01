@@ -114,7 +114,7 @@ impl ::std::fmt::Display for VendorGuidance {
             VendorGuidance::NotProvided => write!(f, "NOT_PROVIDED"),
             VendorGuidance::Stable => write!(f, "STABLE"),
             VendorGuidance::ToBeArchived => write!(f, "TO_BE_ARCHIVED"),
-            VendorGuidance::Unknown(value) => write!(f, "{}", value),
+            VendorGuidance::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

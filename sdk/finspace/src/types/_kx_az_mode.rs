@@ -102,7 +102,7 @@ impl ::std::fmt::Display for KxAzMode {
         match self {
             KxAzMode::Multi => write!(f, "MULTI"),
             KxAzMode::Single => write!(f, "SINGLE"),
-            KxAzMode::Unknown(value) => write!(f, "{}", value),
+            KxAzMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

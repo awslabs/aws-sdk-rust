@@ -106,7 +106,7 @@ impl ::std::fmt::Display for ZipClassificationCode {
             ZipClassificationCode::Military => write!(f, "Military"),
             ZipClassificationCode::PostOfficeBoxes => write!(f, "PostOfficeBoxes"),
             ZipClassificationCode::Unique => write!(f, "Unique"),
-            ZipClassificationCode::Unknown(value) => write!(f, "{}", value),
+            ZipClassificationCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

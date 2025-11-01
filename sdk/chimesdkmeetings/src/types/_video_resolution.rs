@@ -108,7 +108,7 @@ impl ::std::fmt::Display for VideoResolution {
             VideoResolution::Fhd => write!(f, "FHD"),
             VideoResolution::Hd => write!(f, "HD"),
             VideoResolution::None => write!(f, "None"),
-            VideoResolution::Unknown(value) => write!(f, "{}", value),
+            VideoResolution::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

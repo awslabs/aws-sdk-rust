@@ -114,7 +114,7 @@ impl ::std::fmt::Display for VirtualClusterState {
             VirtualClusterState::Running => write!(f, "RUNNING"),
             VirtualClusterState::Terminated => write!(f, "TERMINATED"),
             VirtualClusterState::Terminating => write!(f, "TERMINATING"),
-            VirtualClusterState::Unknown(value) => write!(f, "{}", value),
+            VirtualClusterState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

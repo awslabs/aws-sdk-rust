@@ -114,7 +114,7 @@ impl ::std::fmt::Display for BotReplicaStatus {
             BotReplicaStatus::Enabled => write!(f, "Enabled"),
             BotReplicaStatus::Enabling => write!(f, "Enabling"),
             BotReplicaStatus::Failed => write!(f, "Failed"),
-            BotReplicaStatus::Unknown(value) => write!(f, "{}", value),
+            BotReplicaStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

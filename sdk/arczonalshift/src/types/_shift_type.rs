@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ShiftType {
             ShiftType::PracticeRun => write!(f, "PRACTICE_RUN"),
             ShiftType::ZonalAutoshift => write!(f, "ZONAL_AUTOSHIFT"),
             ShiftType::ZonalShift => write!(f, "ZONAL_SHIFT"),
-            ShiftType::Unknown(value) => write!(f, "{}", value),
+            ShiftType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

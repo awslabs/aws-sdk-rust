@@ -133,7 +133,7 @@ impl ::std::fmt::Display for RecommendationPillar {
             RecommendationPillar::Performance => write!(f, "performance"),
             RecommendationPillar::Security => write!(f, "security"),
             RecommendationPillar::ServiceLimits => write!(f, "service_limits"),
-            RecommendationPillar::Unknown(value) => write!(f, "{}", value),
+            RecommendationPillar::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

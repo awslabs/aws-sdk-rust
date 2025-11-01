@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AgentStatusState {
         match self {
             AgentStatusState::Disabled => write!(f, "DISABLED"),
             AgentStatusState::Enabled => write!(f, "ENABLED"),
-            AgentStatusState::Unknown(value) => write!(f, "{}", value),
+            AgentStatusState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

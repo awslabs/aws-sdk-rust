@@ -273,7 +273,7 @@ impl ::std::fmt::Display for AccessCheckResourceType {
             AccessCheckResourceType::SnsTopic => write!(f, "AWS::SNS::Topic"),
             AccessCheckResourceType::SqsQueue => write!(f, "AWS::SQS::Queue"),
             AccessCheckResourceType::SecretsmanagerSecret => write!(f, "AWS::SecretsManager::Secret"),
-            AccessCheckResourceType::Unknown(value) => write!(f, "{}", value),
+            AccessCheckResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

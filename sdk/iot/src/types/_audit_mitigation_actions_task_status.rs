@@ -114,7 +114,7 @@ impl ::std::fmt::Display for AuditMitigationActionsTaskStatus {
             AuditMitigationActionsTaskStatus::Completed => write!(f, "COMPLETED"),
             AuditMitigationActionsTaskStatus::Failed => write!(f, "FAILED"),
             AuditMitigationActionsTaskStatus::InProgress => write!(f, "IN_PROGRESS"),
-            AuditMitigationActionsTaskStatus::Unknown(value) => write!(f, "{}", value),
+            AuditMitigationActionsTaskStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

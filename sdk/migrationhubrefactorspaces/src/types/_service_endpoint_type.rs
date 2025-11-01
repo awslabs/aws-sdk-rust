@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ServiceEndpointType {
         match self {
             ServiceEndpointType::Lambda => write!(f, "LAMBDA"),
             ServiceEndpointType::Url => write!(f, "URL"),
-            ServiceEndpointType::Unknown(value) => write!(f, "{}", value),
+            ServiceEndpointType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

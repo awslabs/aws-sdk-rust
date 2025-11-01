@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ThresholdUnit {
         match self {
             ThresholdUnit::Count => write!(f, "COUNT"),
             ThresholdUnit::Percentage => write!(f, "PERCENTAGE"),
-            ThresholdUnit::Unknown(value) => write!(f, "{}", value),
+            ThresholdUnit::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for OfferType {
         match self {
             OfferType::All => write!(f, "ALL"),
             OfferType::Public => write!(f, "PUBLIC"),
-            OfferType::Unknown(value) => write!(f, "{}", value),
+            OfferType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

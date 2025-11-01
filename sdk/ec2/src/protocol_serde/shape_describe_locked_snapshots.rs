@@ -53,8 +53,7 @@ pub fn de_describe_locked_snapshots(
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeLockedSnapshotsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected DescribeLockedSnapshotsResponse got {:?}",
-            start_el
+            "invalid root, expected DescribeLockedSnapshotsResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

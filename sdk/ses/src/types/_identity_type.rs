@@ -102,7 +102,7 @@ impl ::std::fmt::Display for IdentityType {
         match self {
             IdentityType::Domain => write!(f, "Domain"),
             IdentityType::EmailAddress => write!(f, "EmailAddress"),
-            IdentityType::Unknown(value) => write!(f, "{}", value),
+            IdentityType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

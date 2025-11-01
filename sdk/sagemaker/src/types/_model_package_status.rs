@@ -120,7 +120,7 @@ impl ::std::fmt::Display for ModelPackageStatus {
             ModelPackageStatus::Failed => write!(f, "Failed"),
             ModelPackageStatus::InProgress => write!(f, "InProgress"),
             ModelPackageStatus::Pending => write!(f, "Pending"),
-            ModelPackageStatus::Unknown(value) => write!(f, "{}", value),
+            ModelPackageStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AppVisibility {
         match self {
             AppVisibility::All => write!(f, "ALL"),
             AppVisibility::Associated => write!(f, "ASSOCIATED"),
-            AppVisibility::Unknown(value) => write!(f, "{}", value),
+            AppVisibility::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

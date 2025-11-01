@@ -190,6 +190,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for TerminateIns
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::terminate_instance_in_auto_scaling_group::TerminateInstanceInAutoScalingGroupInput,
                 output: &mut ::std::string::String,

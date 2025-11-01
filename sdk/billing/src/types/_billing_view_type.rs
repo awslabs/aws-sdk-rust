@@ -108,7 +108,7 @@ impl ::std::fmt::Display for BillingViewType {
             BillingViewType::BillingGroup => write!(f, "BILLING_GROUP"),
             BillingViewType::Custom => write!(f, "CUSTOM"),
             BillingViewType::Primary => write!(f, "PRIMARY"),
-            BillingViewType::Unknown(value) => write!(f, "{}", value),
+            BillingViewType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

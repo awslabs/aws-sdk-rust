@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ExportSourceType {
         match self {
             ExportSourceType::Cluster => write!(f, "CLUSTER"),
             ExportSourceType::Snapshot => write!(f, "SNAPSHOT"),
-            ExportSourceType::Unknown(value) => write!(f, "{}", value),
+            ExportSourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

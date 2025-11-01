@@ -3187,7 +3187,7 @@ impl ::std::fmt::Display for ResourceType {
             ResourceType::WorkSpacesConnectionAlias => write!(f, "AWS::WorkSpaces::ConnectionAlias"),
             ResourceType::WorkSpacesWorkspace => write!(f, "AWS::WorkSpaces::Workspace"),
             ResourceType::EncryptionConfig => write!(f, "AWS::XRay::EncryptionConfig"),
-            ResourceType::Unknown(value) => write!(f, "{}", value),
+            ResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

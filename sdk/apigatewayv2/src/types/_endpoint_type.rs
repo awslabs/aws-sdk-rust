@@ -102,7 +102,7 @@ impl ::std::fmt::Display for EndpointType {
         match self {
             EndpointType::Edge => write!(f, "EDGE"),
             EndpointType::Regional => write!(f, "REGIONAL"),
-            EndpointType::Unknown(value) => write!(f, "{}", value),
+            EndpointType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

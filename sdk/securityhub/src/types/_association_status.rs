@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AssociationStatus {
         match self {
             AssociationStatus::Disabled => write!(f, "DISABLED"),
             AssociationStatus::Enabled => write!(f, "ENABLED"),
-            AssociationStatus::Unknown(value) => write!(f, "{}", value),
+            AssociationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

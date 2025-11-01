@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RouteNoticeImpact {
         match self {
             RouteNoticeImpact::High => write!(f, "High"),
             RouteNoticeImpact::Low => write!(f, "Low"),
-            RouteNoticeImpact::Unknown(value) => write!(f, "{}", value),
+            RouteNoticeImpact::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

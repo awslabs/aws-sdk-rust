@@ -126,7 +126,7 @@ impl ::std::fmt::Display for PortalState {
             PortalState::Failed => write!(f, "FAILED"),
             PortalState::Pending => write!(f, "PENDING"),
             PortalState::Updating => write!(f, "UPDATING"),
-            PortalState::Unknown(value) => write!(f, "{}", value),
+            PortalState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

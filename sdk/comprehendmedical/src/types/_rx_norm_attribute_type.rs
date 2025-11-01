@@ -132,7 +132,7 @@ impl ::std::fmt::Display for RxNormAttributeType {
             RxNormAttributeType::Rate => write!(f, "RATE"),
             RxNormAttributeType::RouteOrMode => write!(f, "ROUTE_OR_MODE"),
             RxNormAttributeType::Strength => write!(f, "STRENGTH"),
-            RxNormAttributeType::Unknown(value) => write!(f, "{}", value),
+            RxNormAttributeType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

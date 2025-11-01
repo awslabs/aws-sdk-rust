@@ -108,7 +108,7 @@ impl ::std::fmt::Display for TestRisk {
             TestRisk::High => write!(f, "High"),
             TestRisk::Medium => write!(f, "Medium"),
             TestRisk::Small => write!(f, "Small"),
-            TestRisk::Unknown(value) => write!(f, "{}", value),
+            TestRisk::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

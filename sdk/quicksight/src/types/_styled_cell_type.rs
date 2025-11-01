@@ -108,7 +108,7 @@ impl ::std::fmt::Display for StyledCellType {
             StyledCellType::MetricHeader => write!(f, "METRIC_HEADER"),
             StyledCellType::Total => write!(f, "TOTAL"),
             StyledCellType::Value => write!(f, "VALUE"),
-            StyledCellType::Unknown(value) => write!(f, "{}", value),
+            StyledCellType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

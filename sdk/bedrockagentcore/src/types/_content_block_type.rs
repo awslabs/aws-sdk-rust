@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ContentBlockType {
             ContentBlockType::EmbeddedResource => write!(f, "resource"),
             ContentBlockType::ResourceLink => write!(f, "resource_link"),
             ContentBlockType::Text => write!(f, "text"),
-            ContentBlockType::Unknown(value) => write!(f, "{}", value),
+            ContentBlockType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PackageImportJobType {
         match self {
             PackageImportJobType::MarketplaceNodePackageVersion => write!(f, "MARKETPLACE_NODE_PACKAGE_VERSION"),
             PackageImportJobType::NodePackageVersion => write!(f, "NODE_PACKAGE_VERSION"),
-            PackageImportJobType::Unknown(value) => write!(f, "{}", value),
+            PackageImportJobType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

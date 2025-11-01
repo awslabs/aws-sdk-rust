@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TransformerStatus {
         match self {
             TransformerStatus::Active => write!(f, "active"),
             TransformerStatus::Inactive => write!(f, "inactive"),
-            TransformerStatus::Unknown(value) => write!(f, "{}", value),
+            TransformerStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for BootModeValues {
             BootModeValues::LegacyBios => write!(f, "legacy-bios"),
             BootModeValues::Uefi => write!(f, "uefi"),
             BootModeValues::UefiPreferred => write!(f, "uefi-preferred"),
-            BootModeValues::Unknown(value) => write!(f, "{}", value),
+            BootModeValues::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

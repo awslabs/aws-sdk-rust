@@ -331,7 +331,7 @@ impl ::std::fmt::Display for ExportableEcsServiceField {
             ExportableEcsServiceField::Tags => write!(f, "Tags"),
             ExportableEcsServiceField::UtilizationMetricsCpuMaximum => write!(f, "UtilizationMetricsCpuMaximum"),
             ExportableEcsServiceField::UtilizationMetricsMemoryMaximum => write!(f, "UtilizationMetricsMemoryMaximum"),
-            ExportableEcsServiceField::Unknown(value) => write!(f, "{}", value),
+            ExportableEcsServiceField::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -120,7 +120,7 @@ impl ::std::fmt::Display for FeatureType {
             FeatureType::Queries => write!(f, "QUERIES"),
             FeatureType::Signatures => write!(f, "SIGNATURES"),
             FeatureType::Tables => write!(f, "TABLES"),
-            FeatureType::Unknown(value) => write!(f, "{}", value),
+            FeatureType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

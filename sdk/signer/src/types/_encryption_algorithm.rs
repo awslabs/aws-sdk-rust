@@ -102,7 +102,7 @@ impl ::std::fmt::Display for EncryptionAlgorithm {
         match self {
             EncryptionAlgorithm::Ecdsa => write!(f, "ECDSA"),
             EncryptionAlgorithm::Rsa => write!(f, "RSA"),
-            EncryptionAlgorithm::Unknown(value) => write!(f, "{}", value),
+            EncryptionAlgorithm::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

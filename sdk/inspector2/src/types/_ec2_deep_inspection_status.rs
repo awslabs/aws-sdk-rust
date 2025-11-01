@@ -114,7 +114,7 @@ impl ::std::fmt::Display for Ec2DeepInspectionStatus {
             Ec2DeepInspectionStatus::Deactivated => write!(f, "DEACTIVATED"),
             Ec2DeepInspectionStatus::Failed => write!(f, "FAILED"),
             Ec2DeepInspectionStatus::Pending => write!(f, "PENDING"),
-            Ec2DeepInspectionStatus::Unknown(value) => write!(f, "{}", value),
+            Ec2DeepInspectionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

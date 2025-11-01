@@ -99,16 +99,14 @@ pub fn de_describe_trust_store_revocations(
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeTrustStoreRevocationsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected DescribeTrustStoreRevocationsResponse got {:?}",
-            start_el
+            "invalid root, expected DescribeTrustStoreRevocationsResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("DescribeTrustStoreRevocationsResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected DescribeTrustStoreRevocationsResult got {:?}",
-                start_el
+                "invalid result, expected DescribeTrustStoreRevocationsResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

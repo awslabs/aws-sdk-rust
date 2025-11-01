@@ -161,7 +161,7 @@ impl ::std::fmt::Display for ComparisonOperator {
             ComparisonOperator::NotInCidrSet => write!(f, "not-in-cidr-set"),
             ComparisonOperator::NotInPortSet => write!(f, "not-in-port-set"),
             ComparisonOperator::NotInSet => write!(f, "not-in-set"),
-            ComparisonOperator::Unknown(value) => write!(f, "{}", value),
+            ComparisonOperator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for WirelessGatewayEvent {
         match self {
             WirelessGatewayEvent::CupsRequest => write!(f, "CUPS_Request"),
             WirelessGatewayEvent::Certificate => write!(f, "Certificate"),
-            WirelessGatewayEvent::Unknown(value) => write!(f, "{}", value),
+            WirelessGatewayEvent::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

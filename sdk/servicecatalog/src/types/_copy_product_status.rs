@@ -108,7 +108,7 @@ impl ::std::fmt::Display for CopyProductStatus {
             CopyProductStatus::Failed => write!(f, "FAILED"),
             CopyProductStatus::InProgress => write!(f, "IN_PROGRESS"),
             CopyProductStatus::Succeeded => write!(f, "SUCCEEDED"),
-            CopyProductStatus::Unknown(value) => write!(f, "{}", value),
+            CopyProductStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

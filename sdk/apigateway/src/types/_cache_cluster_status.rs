@@ -126,7 +126,7 @@ impl ::std::fmt::Display for CacheClusterStatus {
             CacheClusterStatus::DeleteInProgress => write!(f, "DELETE_IN_PROGRESS"),
             CacheClusterStatus::FlushInProgress => write!(f, "FLUSH_IN_PROGRESS"),
             CacheClusterStatus::NotAvailable => write!(f, "NOT_AVAILABLE"),
-            CacheClusterStatus::Unknown(value) => write!(f, "{}", value),
+            CacheClusterStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

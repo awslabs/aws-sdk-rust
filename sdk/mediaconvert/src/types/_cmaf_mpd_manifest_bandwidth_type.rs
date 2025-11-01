@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CmafMpdManifestBandwidthType {
         match self {
             CmafMpdManifestBandwidthType::Average => write!(f, "AVERAGE"),
             CmafMpdManifestBandwidthType::Max => write!(f, "MAX"),
-            CmafMpdManifestBandwidthType::Unknown(value) => write!(f, "{}", value),
+            CmafMpdManifestBandwidthType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

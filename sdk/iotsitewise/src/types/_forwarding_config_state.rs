@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ForwardingConfigState {
         match self {
             ForwardingConfigState::Disabled => write!(f, "DISABLED"),
             ForwardingConfigState::Enabled => write!(f, "ENABLED"),
-            ForwardingConfigState::Unknown(value) => write!(f, "{}", value),
+            ForwardingConfigState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

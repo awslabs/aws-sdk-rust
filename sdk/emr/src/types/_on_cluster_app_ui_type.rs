@@ -133,7 +133,7 @@ impl ::std::fmt::Display for OnClusterAppUiType {
             OnClusterAppUiType::SparkHistoryServer => write!(f, "SparkHistoryServer"),
             OnClusterAppUiType::TezUi => write!(f, "TezUI"),
             OnClusterAppUiType::YarnTimelineService => write!(f, "YarnTimelineService"),
-            OnClusterAppUiType::Unknown(value) => write!(f, "{}", value),
+            OnClusterAppUiType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

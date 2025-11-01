@@ -114,7 +114,7 @@ impl ::std::fmt::Display for NoiseLevelType {
             NoiseLevelType::Low => write!(f, "LOW"),
             NoiseLevelType::Medium => write!(f, "MEDIUM"),
             NoiseLevelType::None => write!(f, "NONE"),
-            NoiseLevelType::Unknown(value) => write!(f, "{}", value),
+            NoiseLevelType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

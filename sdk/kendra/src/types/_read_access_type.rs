@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ReadAccessType {
         match self {
             ReadAccessType::Allow => write!(f, "ALLOW"),
             ReadAccessType::Deny => write!(f, "DENY"),
-            ReadAccessType::Unknown(value) => write!(f, "{}", value),
+            ReadAccessType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

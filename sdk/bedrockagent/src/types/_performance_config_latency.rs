@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PerformanceConfigLatency {
         match self {
             PerformanceConfigLatency::Optimized => write!(f, "optimized"),
             PerformanceConfigLatency::Standard => write!(f, "standard"),
-            PerformanceConfigLatency::Unknown(value) => write!(f, "{}", value),
+            PerformanceConfigLatency::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

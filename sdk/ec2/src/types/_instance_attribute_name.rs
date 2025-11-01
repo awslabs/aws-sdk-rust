@@ -203,7 +203,7 @@ impl ::std::fmt::Display for InstanceAttributeName {
             InstanceAttributeName::SourceDestCheck => write!(f, "sourceDestCheck"),
             InstanceAttributeName::SriovNetSupport => write!(f, "sriovNetSupport"),
             InstanceAttributeName::UserData => write!(f, "userData"),
-            InstanceAttributeName::Unknown(value) => write!(f, "{}", value),
+            InstanceAttributeName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

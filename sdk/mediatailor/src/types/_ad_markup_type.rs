@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AdMarkupType {
         match self {
             AdMarkupType::Daterange => write!(f, "DATERANGE"),
             AdMarkupType::Scte35Enhanced => write!(f, "SCTE35_ENHANCED"),
-            AdMarkupType::Unknown(value) => write!(f, "{}", value),
+            AdMarkupType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

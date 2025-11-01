@@ -102,7 +102,7 @@ impl ::std::fmt::Display for BudgetActionType {
         match self {
             BudgetActionType::StopSchedulingAndCancelTasks => write!(f, "STOP_SCHEDULING_AND_CANCEL_TASKS"),
             BudgetActionType::StopSchedulingAndCompleteTasks => write!(f, "STOP_SCHEDULING_AND_COMPLETE_TASKS"),
-            BudgetActionType::Unknown(value) => write!(f, "{}", value),
+            BudgetActionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

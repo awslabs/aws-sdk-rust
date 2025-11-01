@@ -108,7 +108,7 @@ impl ::std::fmt::Display for TrustDirection {
             TrustDirection::OneWayIncoming => write!(f, "One-Way: Incoming"),
             TrustDirection::OneWayOutgoing => write!(f, "One-Way: Outgoing"),
             TrustDirection::TwoWay => write!(f, "Two-Way"),
-            TrustDirection::Unknown(value) => write!(f, "{}", value),
+            TrustDirection::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

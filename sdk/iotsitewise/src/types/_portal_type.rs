@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PortalType {
         match self {
             PortalType::SitewisePortalV1 => write!(f, "SITEWISE_PORTAL_V1"),
             PortalType::SitewisePortalV2 => write!(f, "SITEWISE_PORTAL_V2"),
-            PortalType::Unknown(value) => write!(f, "{}", value),
+            PortalType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

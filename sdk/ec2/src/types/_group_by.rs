@@ -210,7 +210,7 @@ impl ::std::fmt::Display for GroupBy {
             GroupBy::ReservationUnusedFinancialOwner => write!(f, "reservation-unused-financial-owner"),
             GroupBy::ResourceRegion => write!(f, "resource-region"),
             GroupBy::Tenancy => write!(f, "tenancy"),
-            GroupBy::Unknown(value) => write!(f, "{}", value),
+            GroupBy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

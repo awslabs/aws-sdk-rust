@@ -108,7 +108,7 @@ impl ::std::fmt::Display for PrivateConnectionProvisioningStatus {
             PrivateConnectionProvisioningStatus::Created => write!(f, "CREATED"),
             PrivateConnectionProvisioningStatus::Failed => write!(f, "FAILED"),
             PrivateConnectionProvisioningStatus::Pending => write!(f, "PENDING"),
-            PrivateConnectionProvisioningStatus::Unknown(value) => write!(f, "{}", value),
+            PrivateConnectionProvisioningStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

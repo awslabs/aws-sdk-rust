@@ -96,7 +96,7 @@ impl ::std::fmt::Display for EnrichmentStrategyMethod {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             EnrichmentStrategyMethod::ChunkEntityExtraction => write!(f, "CHUNK_ENTITY_EXTRACTION"),
-            EnrichmentStrategyMethod::Unknown(value) => write!(f, "{}", value),
+            EnrichmentStrategyMethod::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CoreDeviceStatus {
         match self {
             CoreDeviceStatus::Healthy => write!(f, "HEALTHY"),
             CoreDeviceStatus::Unhealthy => write!(f, "UNHEALTHY"),
-            CoreDeviceStatus::Unknown(value) => write!(f, "{}", value),
+            CoreDeviceStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

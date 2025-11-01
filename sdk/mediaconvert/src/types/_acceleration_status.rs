@@ -114,7 +114,7 @@ impl ::std::fmt::Display for AccelerationStatus {
             AccelerationStatus::InProgress => write!(f, "IN_PROGRESS"),
             AccelerationStatus::NotAccelerated => write!(f, "NOT_ACCELERATED"),
             AccelerationStatus::NotApplicable => write!(f, "NOT_APPLICABLE"),
-            AccelerationStatus::Unknown(value) => write!(f, "{}", value),
+            AccelerationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

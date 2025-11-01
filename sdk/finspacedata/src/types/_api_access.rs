@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ApiAccess {
         match self {
             ApiAccess::Disabled => write!(f, "DISABLED"),
             ApiAccess::Enabled => write!(f, "ENABLED"),
-            ApiAccess::Unknown(value) => write!(f, "{}", value),
+            ApiAccess::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

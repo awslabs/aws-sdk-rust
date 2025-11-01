@@ -140,7 +140,7 @@ impl ::std::fmt::Display for CustomDomainAssociationStatus {
             CustomDomainAssociationStatus::DeleteFailed => write!(f, "DELETE_FAILED"),
             CustomDomainAssociationStatus::Deleting => write!(f, "DELETING"),
             CustomDomainAssociationStatus::PendingCertificateDnsValidation => write!(f, "PENDING_CERTIFICATE_DNS_VALIDATION"),
-            CustomDomainAssociationStatus::Unknown(value) => write!(f, "{}", value),
+            CustomDomainAssociationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

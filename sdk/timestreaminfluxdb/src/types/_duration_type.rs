@@ -120,7 +120,7 @@ impl ::std::fmt::Display for DurationType {
             DurationType::Milliseconds => write!(f, "milliseconds"),
             DurationType::Minutes => write!(f, "minutes"),
             DurationType::Seconds => write!(f, "seconds"),
-            DurationType::Unknown(value) => write!(f, "{}", value),
+            DurationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

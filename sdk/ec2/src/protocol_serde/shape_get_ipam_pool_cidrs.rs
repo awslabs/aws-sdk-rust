@@ -44,8 +44,7 @@ pub fn de_get_ipam_pool_cidrs(
     let start_el = decoder.start_el();
     if !(start_el.matches("GetIpamPoolCidrsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected GetIpamPoolCidrsResponse got {:?}",
-            start_el
+            "invalid root, expected GetIpamPoolCidrsResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

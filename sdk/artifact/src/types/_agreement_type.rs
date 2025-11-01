@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AgreementType {
             AgreementType::Custom => write!(f, "CUSTOM"),
             AgreementType::Default => write!(f, "DEFAULT"),
             AgreementType::Modified => write!(f, "MODIFIED"),
-            AgreementType::Unknown(value) => write!(f, "{}", value),
+            AgreementType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

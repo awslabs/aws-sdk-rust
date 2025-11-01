@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Xavc4kProfileCodecProfile {
         match self {
             Xavc4kProfileCodecProfile::High => write!(f, "HIGH"),
             Xavc4kProfileCodecProfile::High422 => write!(f, "HIGH_422"),
-            Xavc4kProfileCodecProfile::Unknown(value) => write!(f, "{}", value),
+            Xavc4kProfileCodecProfile::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

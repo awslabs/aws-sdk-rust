@@ -119,7 +119,7 @@ impl ::std::fmt::Display for LicenseFindingReasonCode {
             LicenseFindingReasonCode::CwAppInsightsDisabled => write!(f, "InvalidCloudWatchApplicationInsightsSetup"),
             LicenseFindingReasonCode::LicenseOverProvisioned => write!(f, "LicenseOverprovisioned"),
             LicenseFindingReasonCode::Optimized => write!(f, "Optimized"),
-            LicenseFindingReasonCode::Unknown(value) => write!(f, "{}", value),
+            LicenseFindingReasonCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

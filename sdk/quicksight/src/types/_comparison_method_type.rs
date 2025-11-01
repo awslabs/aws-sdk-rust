@@ -161,7 +161,7 @@ impl ::std::fmt::Display for ComparisonMethodType {
             ComparisonMethodType::PopOvertimeDiff => write!(f, "POP_OVERTIME_DIFF"),
             ComparisonMethodType::PopOvertimeDiffAsPerc => write!(f, "POP_OVERTIME_DIFF_AS_PERC"),
             ComparisonMethodType::RunningSum => write!(f, "RUNNING_SUM"),
-            ComparisonMethodType::Unknown(value) => write!(f, "{}", value),
+            ComparisonMethodType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for S3DataDistribution {
         match self {
             S3DataDistribution::FullyReplicated => write!(f, "FullyReplicated"),
             S3DataDistribution::ShardedByS3Key => write!(f, "ShardedByS3Key"),
-            S3DataDistribution::Unknown(value) => write!(f, "{}", value),
+            S3DataDistribution::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

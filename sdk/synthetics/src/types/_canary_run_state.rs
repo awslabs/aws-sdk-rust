@@ -108,7 +108,7 @@ impl ::std::fmt::Display for CanaryRunState {
             CanaryRunState::Failed => write!(f, "FAILED"),
             CanaryRunState::Passed => write!(f, "PASSED"),
             CanaryRunState::Running => write!(f, "RUNNING"),
-            CanaryRunState::Unknown(value) => write!(f, "{}", value),
+            CanaryRunState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

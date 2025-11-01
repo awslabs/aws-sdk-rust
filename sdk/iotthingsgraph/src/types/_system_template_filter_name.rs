@@ -96,7 +96,7 @@ impl ::std::fmt::Display for SystemTemplateFilterName {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             SystemTemplateFilterName::FlowTemplateId => write!(f, "FLOW_TEMPLATE_ID"),
-            SystemTemplateFilterName::Unknown(value) => write!(f, "{}", value),
+            SystemTemplateFilterName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

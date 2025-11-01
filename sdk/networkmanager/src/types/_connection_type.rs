@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ConnectionType {
         match self {
             ConnectionType::Bgp => write!(f, "BGP"),
             ConnectionType::Ipsec => write!(f, "IPSEC"),
-            ConnectionType::Unknown(value) => write!(f, "{}", value),
+            ConnectionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

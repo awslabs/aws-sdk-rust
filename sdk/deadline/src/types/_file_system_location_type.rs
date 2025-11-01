@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FileSystemLocationType {
         match self {
             FileSystemLocationType::Local => write!(f, "LOCAL"),
             FileSystemLocationType::Shared => write!(f, "SHARED"),
-            FileSystemLocationType::Unknown(value) => write!(f, "{}", value),
+            FileSystemLocationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

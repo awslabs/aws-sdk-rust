@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ProjectSortBy {
         match self {
             ProjectSortBy::CreationTime => write!(f, "CreationTime"),
             ProjectSortBy::Name => write!(f, "Name"),
-            ProjectSortBy::Unknown(value) => write!(f, "{}", value),
+            ProjectSortBy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

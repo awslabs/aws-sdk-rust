@@ -102,7 +102,7 @@ impl ::std::fmt::Display for HttpEndpointEnum {
         match self {
             HttpEndpointEnum::Disabled => write!(f, "disabled"),
             HttpEndpointEnum::Enabled => write!(f, "enabled"),
-            HttpEndpointEnum::Unknown(value) => write!(f, "{}", value),
+            HttpEndpointEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

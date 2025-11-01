@@ -102,7 +102,7 @@ impl ::std::fmt::Display for IndexType {
         match self {
             IndexType::Aggregator => write!(f, "AGGREGATOR"),
             IndexType::Local => write!(f, "LOCAL"),
-            IndexType::Unknown(value) => write!(f, "{}", value),
+            IndexType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

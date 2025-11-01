@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ExportStatus {
             ExportStatus::Failed => write!(f, "FAILED"),
             ExportStatus::InProgress => write!(f, "IN_PROGRESS"),
             ExportStatus::Ready => write!(f, "READY"),
-            ExportStatus::Unknown(value) => write!(f, "{}", value),
+            ExportStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -154,7 +154,7 @@ impl ::std::fmt::Display for ActionType {
             ActionType::Ingested => write!(f, "INGESTED"),
             ActionType::Merged => write!(f, "MERGED"),
             ActionType::Updated => write!(f, "UPDATED"),
-            ActionType::Unknown(value) => write!(f, "{}", value),
+            ActionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

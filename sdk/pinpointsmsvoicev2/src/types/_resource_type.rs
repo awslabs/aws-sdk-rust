@@ -203,7 +203,7 @@ impl ::std::fmt::Display for ResourceType {
             ResourceType::RegistrationAttachment => write!(f, "registration-attachment"),
             ResourceType::SenderId => write!(f, "sender-id"),
             ResourceType::VerifiedDestinationNumber => write!(f, "verified-destination-number"),
-            ResourceType::Unknown(value) => write!(f, "{}", value),
+            ResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

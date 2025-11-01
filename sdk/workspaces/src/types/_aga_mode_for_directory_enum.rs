@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AgaModeForDirectoryEnum {
         match self {
             AgaModeForDirectoryEnum::Disabled => write!(f, "DISABLED"),
             AgaModeForDirectoryEnum::EnabledAuto => write!(f, "ENABLED_AUTO"),
-            AgaModeForDirectoryEnum::Unknown(value) => write!(f, "{}", value),
+            AgaModeForDirectoryEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

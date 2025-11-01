@@ -128,7 +128,7 @@ impl ::std::fmt::Display for SimulationAppStatus {
             SimulationAppStatus::Stopped => write!(f, "STOPPED"),
             SimulationAppStatus::Stopping => write!(f, "STOPPING"),
             SimulationAppStatus::UnknownValue => write!(f, "UNKNOWN"),
-            SimulationAppStatus::Unknown(value) => write!(f, "{}", value),
+            SimulationAppStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

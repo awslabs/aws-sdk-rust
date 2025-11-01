@@ -120,7 +120,7 @@ impl ::std::fmt::Display for DukptDerivationType {
             DukptDerivationType::Aes256 => write!(f, "AES_256"),
             DukptDerivationType::Tdes2Key => write!(f, "TDES_2KEY"),
             DukptDerivationType::Tdes3Key => write!(f, "TDES_3KEY"),
-            DukptDerivationType::Unknown(value) => write!(f, "{}", value),
+            DukptDerivationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

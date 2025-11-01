@@ -126,7 +126,7 @@ impl ::std::fmt::Display for SpotProvisioningAllocationStrategy {
             SpotProvisioningAllocationStrategy::Diversified => write!(f, "diversified"),
             SpotProvisioningAllocationStrategy::LowestPrice => write!(f, "lowest-price"),
             SpotProvisioningAllocationStrategy::PriceCapacityOptimized => write!(f, "price-capacity-optimized"),
-            SpotProvisioningAllocationStrategy::Unknown(value) => write!(f, "{}", value),
+            SpotProvisioningAllocationStrategy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

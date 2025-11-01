@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ValidationExceptionReason {
             ValidationExceptionReason::KmsDisabledException => write!(f, "KMS_DisabledException"),
             ValidationExceptionReason::KmsInvalidKeyUsageException => write!(f, "KMS_InvalidKeyUsageException"),
             ValidationExceptionReason::KmsInvalidStateException => write!(f, "KMS_InvalidStateException"),
-            ValidationExceptionReason::Unknown(value) => write!(f, "{}", value),
+            ValidationExceptionReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

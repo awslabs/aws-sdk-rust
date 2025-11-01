@@ -98,7 +98,7 @@ impl ::std::fmt::Display for AccessDeniedForDependencyExceptionReason {
             AccessDeniedForDependencyExceptionReason::AccessDeniedDuringCreateServiceLinkedRole => {
                 write!(f, "ACCESS_DENIED_DURING_CREATE_SERVICE_LINKED_ROLE")
             }
-            AccessDeniedForDependencyExceptionReason::Unknown(value) => write!(f, "{}", value),
+            AccessDeniedForDependencyExceptionReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

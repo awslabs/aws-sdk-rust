@@ -114,7 +114,7 @@ impl ::std::fmt::Display for UtcTiming {
             UtcTiming::HttpIso => write!(f, "HTTP-ISO"),
             UtcTiming::HttpXsdate => write!(f, "HTTP-XSDATE"),
             UtcTiming::None => write!(f, "NONE"),
-            UtcTiming::Unknown(value) => write!(f, "{}", value),
+            UtcTiming::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

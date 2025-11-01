@@ -108,7 +108,7 @@ impl ::std::fmt::Display for DataSource {
             DataSource::Event => write!(f, "EVENT"),
             DataSource::ExternalModelScore => write!(f, "EXTERNAL_MODEL_SCORE"),
             DataSource::ModelScore => write!(f, "MODEL_SCORE"),
-            DataSource::Unknown(value) => write!(f, "{}", value),
+            DataSource::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

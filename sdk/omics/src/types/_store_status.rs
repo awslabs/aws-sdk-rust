@@ -120,7 +120,7 @@ impl ::std::fmt::Display for StoreStatus {
             StoreStatus::Deleting => write!(f, "DELETING"),
             StoreStatus::Failed => write!(f, "FAILED"),
             StoreStatus::Updating => write!(f, "UPDATING"),
-            StoreStatus::Unknown(value) => write!(f, "{}", value),
+            StoreStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

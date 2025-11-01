@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AvailBlankingState {
         match self {
             AvailBlankingState::Disabled => write!(f, "DISABLED"),
             AvailBlankingState::Enabled => write!(f, "ENABLED"),
-            AvailBlankingState::Unknown(value) => write!(f, "{}", value),
+            AvailBlankingState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

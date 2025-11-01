@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Question {
         match self {
             Question::Answered => write!(f, "ANSWERED"),
             Question::Unanswered => write!(f, "UNANSWERED"),
-            Question::Unknown(value) => write!(f, "{}", value),
+            Question::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for OAuth2CustomPropType {
         match self {
             OAuth2CustomPropType::AuthUrl => write!(f, "AUTH_URL"),
             OAuth2CustomPropType::TokenUrl => write!(f, "TOKEN_URL"),
-            OAuth2CustomPropType::Unknown(value) => write!(f, "{}", value),
+            OAuth2CustomPropType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

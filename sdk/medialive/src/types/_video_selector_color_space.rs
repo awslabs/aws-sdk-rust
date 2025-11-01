@@ -120,7 +120,7 @@ impl ::std::fmt::Display for VideoSelectorColorSpace {
             VideoSelectorColorSpace::Hlg2020 => write!(f, "HLG_2020"),
             VideoSelectorColorSpace::Rec601 => write!(f, "REC_601"),
             VideoSelectorColorSpace::Rec709 => write!(f, "REC_709"),
-            VideoSelectorColorSpace::Unknown(value) => write!(f, "{}", value),
+            VideoSelectorColorSpace::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

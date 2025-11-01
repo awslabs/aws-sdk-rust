@@ -119,7 +119,7 @@ impl ::std::fmt::Display for ConnectorOperationType {
             ConnectorOperationType::RestoreConnector => write!(f, "RESTORE_CONNECTOR"),
             ConnectorOperationType::UpdateConnectorConfiguration => write!(f, "UPDATE_CONNECTOR_CONFIGURATION"),
             ConnectorOperationType::UpdateWorkerSetting => write!(f, "UPDATE_WORKER_SETTING"),
-            ConnectorOperationType::Unknown(value) => write!(f, "{}", value),
+            ConnectorOperationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for StartingPosition {
             StartingPosition::Latest => write!(f, "latest"),
             StartingPosition::Timestamp => write!(f, "timestamp"),
             StartingPosition::TrimHorizon => write!(f, "trim_horizon"),
-            StartingPosition::Unknown(value) => write!(f, "{}", value),
+            StartingPosition::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

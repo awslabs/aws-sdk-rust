@@ -140,7 +140,7 @@ impl ::std::fmt::Display for ImageStatus {
             ImageStatus::Deleting => write!(f, "DELETING"),
             ImageStatus::UpdateFailed => write!(f, "UPDATE_FAILED"),
             ImageStatus::Updating => write!(f, "UPDATING"),
-            ImageStatus::Unknown(value) => write!(f, "{}", value),
+            ImageStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

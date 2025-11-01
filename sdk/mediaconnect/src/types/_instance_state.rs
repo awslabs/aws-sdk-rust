@@ -133,7 +133,7 @@ impl ::std::fmt::Display for InstanceState {
             InstanceState::DeregistrationError => write!(f, "DEREGISTRATION_ERROR"),
             InstanceState::Registering => write!(f, "REGISTERING"),
             InstanceState::RegistrationError => write!(f, "REGISTRATION_ERROR"),
-            InstanceState::Unknown(value) => write!(f, "{}", value),
+            InstanceState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

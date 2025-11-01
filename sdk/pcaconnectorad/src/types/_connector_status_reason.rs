@@ -168,7 +168,7 @@ impl ::std::fmt::Display for ConnectorStatusReason {
             ConnectorStatusReason::VpcAccessDenied => write!(f, "VPC_ACCESS_DENIED"),
             ConnectorStatusReason::VpcEndpointLimitExceeded => write!(f, "VPC_ENDPOINT_LIMIT_EXCEEDED"),
             ConnectorStatusReason::VpcResourceNotFound => write!(f, "VPC_RESOURCE_NOT_FOUND"),
-            ConnectorStatusReason::Unknown(value) => write!(f, "{}", value),
+            ConnectorStatusReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

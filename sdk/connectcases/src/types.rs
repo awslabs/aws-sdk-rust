@@ -115,7 +115,7 @@ pub use crate::types::_get_case_rule_response::GetCaseRuleResponse;
 
 pub use crate::types::_case_rule_details::CaseRuleDetails;
 
-pub use crate::types::_required_case_rule::RequiredCaseRule;
+pub use crate::types::_hidden_case_rule::HiddenCaseRule;
 
 pub use crate::types::_boolean_condition::BooleanCondition;
 
@@ -126,6 +126,12 @@ pub use crate::types::_operand_two::OperandTwo;
 pub use crate::types::_empty_operand_value::EmptyOperandValue;
 
 pub use crate::types::_operand_one::OperandOne;
+
+pub use crate::types::_field_options_case_rule::FieldOptionsCaseRule;
+
+pub use crate::types::_parent_child_field_options_mapping::ParentChildFieldOptionsMapping;
+
+pub use crate::types::_required_case_rule::RequiredCaseRule;
 
 pub use crate::types::_case_rule_identifier::CaseRuleIdentifier;
 
@@ -249,6 +255,8 @@ mod _field_option;
 
 mod _field_option_error;
 
+mod _field_options_case_rule;
+
 mod _field_summary;
 
 mod _field_type;
@@ -265,6 +273,8 @@ mod _get_case_rule_response;
 
 mod _get_field_response;
 
+mod _hidden_case_rule;
+
 mod _layout_configuration;
 
 mod _layout_content;
@@ -278,6 +288,8 @@ mod _operand_one;
 mod _operand_two;
 
 mod _order;
+
+mod _parent_child_field_options_mapping;
 
 mod _related_item_content;
 

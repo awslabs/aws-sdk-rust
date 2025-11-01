@@ -96,7 +96,7 @@ impl ::std::fmt::Display for MediaElementType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             MediaElementType::Image => write!(f, "IMAGE"),
-            MediaElementType::Unknown(value) => write!(f, "{}", value),
+            MediaElementType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -182,7 +182,7 @@ impl ::std::fmt::Display for LocaleCode {
             LocaleCode::TrTr => write!(f, "tr_TR"),
             LocaleCode::ZhCn => write!(f, "zh_CN"),
             LocaleCode::ZhTw => write!(f, "zh_TW"),
-            LocaleCode::Unknown(value) => write!(f, "{}", value),
+            LocaleCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

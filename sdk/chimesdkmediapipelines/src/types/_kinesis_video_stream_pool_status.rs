@@ -120,7 +120,7 @@ impl ::std::fmt::Display for KinesisVideoStreamPoolStatus {
             KinesisVideoStreamPoolStatus::Deleting => write!(f, "DELETING"),
             KinesisVideoStreamPoolStatus::Failed => write!(f, "FAILED"),
             KinesisVideoStreamPoolStatus::Updating => write!(f, "UPDATING"),
-            KinesisVideoStreamPoolStatus::Unknown(value) => write!(f, "{}", value),
+            KinesisVideoStreamPoolStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

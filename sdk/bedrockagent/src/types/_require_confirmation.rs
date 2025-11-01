@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RequireConfirmation {
         match self {
             RequireConfirmation::Disabled => write!(f, "DISABLED"),
             RequireConfirmation::Enabled => write!(f, "ENABLED"),
-            RequireConfirmation::Unknown(value) => write!(f, "{}", value),
+            RequireConfirmation::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

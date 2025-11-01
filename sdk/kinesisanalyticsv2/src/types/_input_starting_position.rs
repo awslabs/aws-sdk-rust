@@ -108,7 +108,7 @@ impl ::std::fmt::Display for InputStartingPosition {
             InputStartingPosition::LastStoppedPoint => write!(f, "LAST_STOPPED_POINT"),
             InputStartingPosition::Now => write!(f, "NOW"),
             InputStartingPosition::TrimHorizon => write!(f, "TRIM_HORIZON"),
-            InputStartingPosition::Unknown(value) => write!(f, "{}", value),
+            InputStartingPosition::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

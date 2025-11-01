@@ -104,7 +104,7 @@ impl ::std::fmt::Display for RestoreTestingRecoveryPointSelectionAlgorithm {
         match self {
             RestoreTestingRecoveryPointSelectionAlgorithm::LatestWithinWindow => write!(f, "LATEST_WITHIN_WINDOW"),
             RestoreTestingRecoveryPointSelectionAlgorithm::RandomWithinWindow => write!(f, "RANDOM_WITHIN_WINDOW"),
-            RestoreTestingRecoveryPointSelectionAlgorithm::Unknown(value) => write!(f, "{}", value),
+            RestoreTestingRecoveryPointSelectionAlgorithm::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

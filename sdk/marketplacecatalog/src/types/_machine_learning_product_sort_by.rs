@@ -114,7 +114,7 @@ impl ::std::fmt::Display for MachineLearningProductSortBy {
             MachineLearningProductSortBy::LastModifiedDate => write!(f, "LastModifiedDate"),
             MachineLearningProductSortBy::ProductTitle => write!(f, "ProductTitle"),
             MachineLearningProductSortBy::Visibility => write!(f, "Visibility"),
-            MachineLearningProductSortBy::Unknown(value) => write!(f, "{}", value),
+            MachineLearningProductSortBy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

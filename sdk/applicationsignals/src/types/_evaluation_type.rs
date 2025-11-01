@@ -102,7 +102,7 @@ impl ::std::fmt::Display for EvaluationType {
         match self {
             EvaluationType::PeriodBased => write!(f, "PeriodBased"),
             EvaluationType::RequestBased => write!(f, "RequestBased"),
-            EvaluationType::Unknown(value) => write!(f, "{}", value),
+            EvaluationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

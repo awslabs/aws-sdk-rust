@@ -120,7 +120,7 @@ impl ::std::fmt::Display for TableRestoreStatusType {
             TableRestoreStatusType::InProgress => write!(f, "IN_PROGRESS"),
             TableRestoreStatusType::Pending => write!(f, "PENDING"),
             TableRestoreStatusType::Succeeded => write!(f, "SUCCEEDED"),
-            TableRestoreStatusType::Unknown(value) => write!(f, "{}", value),
+            TableRestoreStatusType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

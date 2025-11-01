@@ -120,7 +120,7 @@ impl ::std::fmt::Display for InstancePropertyFilterOperator {
             InstancePropertyFilterOperator::GreaterThan => write!(f, "GreaterThan"),
             InstancePropertyFilterOperator::LessThan => write!(f, "LessThan"),
             InstancePropertyFilterOperator::NotEqual => write!(f, "NotEqual"),
-            InstancePropertyFilterOperator::Unknown(value) => write!(f, "{}", value),
+            InstancePropertyFilterOperator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

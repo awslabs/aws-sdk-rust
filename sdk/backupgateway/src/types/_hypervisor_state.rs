@@ -114,7 +114,7 @@ impl ::std::fmt::Display for HypervisorState {
             HypervisorState::Offline => write!(f, "OFFLINE"),
             HypervisorState::Online => write!(f, "ONLINE"),
             HypervisorState::Pending => write!(f, "PENDING"),
-            HypervisorState::Unknown(value) => write!(f, "{}", value),
+            HypervisorState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

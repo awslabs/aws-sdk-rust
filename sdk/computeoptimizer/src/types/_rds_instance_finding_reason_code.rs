@@ -189,7 +189,7 @@ impl ::std::fmt::Display for RdsInstanceFindingReasonCode {
             RdsInstanceFindingReasonCode::NetworkBandwidthUnderProvisioned => write!(f, "NetworkBandwidthUnderprovisioned"),
             RdsInstanceFindingReasonCode::NewEngineVersionAvailable => write!(f, "NewEngineVersionAvailable"),
             RdsInstanceFindingReasonCode::NewGenerationDbInstanceClassAvailable => write!(f, "NewGenerationDBInstanceClassAvailable"),
-            RdsInstanceFindingReasonCode::Unknown(value) => write!(f, "{}", value),
+            RdsInstanceFindingReasonCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for LocalGatewayRouteTableMode {
         match self {
             LocalGatewayRouteTableMode::Coip => write!(f, "coip"),
             LocalGatewayRouteTableMode::DirectVpcRouting => write!(f, "direct-vpc-routing"),
-            LocalGatewayRouteTableMode::Unknown(value) => write!(f, "{}", value),
+            LocalGatewayRouteTableMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

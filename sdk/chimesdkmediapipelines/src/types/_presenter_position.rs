@@ -114,7 +114,7 @@ impl ::std::fmt::Display for PresenterPosition {
             PresenterPosition::BottomRight => write!(f, "BottomRight"),
             PresenterPosition::TopLeft => write!(f, "TopLeft"),
             PresenterPosition::TopRight => write!(f, "TopRight"),
-            PresenterPosition::Unknown(value) => write!(f, "{}", value),
+            PresenterPosition::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

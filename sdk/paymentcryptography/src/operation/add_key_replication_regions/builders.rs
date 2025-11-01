@@ -23,7 +23,7 @@ impl crate::operation::add_key_replication_regions::builders::AddKeyReplicationR
 /// Fluent builder constructing a request to `AddKeyReplicationRegions`.
 ///
 /// <p>Adds replication Amazon Web Services Regions to an existing Amazon Web Services Payment Cryptography key, enabling the key to be used for cryptographic operations in additional Amazon Web Services Regions.</p>
-/// <p>Multi-region keys allow you to use the same key material across multiple Amazon Web Services Regions, providing lower latency for applications distributed across regions. When you add Replication Regions, Amazon Web Services Payment Cryptography securely replicates the key material to the specified Amazon Web Services Regions.</p>
+/// <p><a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-multi-region-replication.html">Multi-Region key replication</a> allow you to use the same key material across multiple Amazon Web Services Regions, providing lower latency for applications distributed across regions. When you add Replication Regions, Amazon Web Services Payment Cryptography securely replicates the key material to the specified Amazon Web Services Regions.</p>
 /// <p>The key must be in an active state to add Replication Regions. You can add multiple regions in a single operation, and the key will be available for use in those regions once replication is complete.</p>
 /// <p><b>Cross-account use:</b> This operation can't be used across different Amazon Web Services accounts.</p>
 /// <p><b>Related operations:</b></p>

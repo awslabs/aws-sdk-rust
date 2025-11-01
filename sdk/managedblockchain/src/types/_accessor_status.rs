@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AccessorStatus {
             AccessorStatus::Available => write!(f, "AVAILABLE"),
             AccessorStatus::Deleted => write!(f, "DELETED"),
             AccessorStatus::PendingDeletion => write!(f, "PENDING_DELETION"),
-            AccessorStatus::Unknown(value) => write!(f, "{}", value),
+            AccessorStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

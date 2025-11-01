@@ -108,7 +108,7 @@ impl ::std::fmt::Display for LoadBalancerTlsCertificateDomainStatus {
             LoadBalancerTlsCertificateDomainStatus::Failed => write!(f, "FAILED"),
             LoadBalancerTlsCertificateDomainStatus::PendingValidation => write!(f, "PENDING_VALIDATION"),
             LoadBalancerTlsCertificateDomainStatus::Success => write!(f, "SUCCESS"),
-            LoadBalancerTlsCertificateDomainStatus::Unknown(value) => write!(f, "{}", value),
+            LoadBalancerTlsCertificateDomainStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for IteratorType {
             IteratorType::AtSequenceNumber => write!(f, "AT_SEQUENCE_NUMBER"),
             IteratorType::Latest => write!(f, "LATEST"),
             IteratorType::TrimHorizon => write!(f, "TRIM_HORIZON"),
-            IteratorType::Unknown(value) => write!(f, "{}", value),
+            IteratorType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

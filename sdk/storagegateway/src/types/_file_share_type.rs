@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FileShareType {
         match self {
             FileShareType::Nfs => write!(f, "NFS"),
             FileShareType::Smb => write!(f, "SMB"),
-            FileShareType::Unknown(value) => write!(f, "{}", value),
+            FileShareType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

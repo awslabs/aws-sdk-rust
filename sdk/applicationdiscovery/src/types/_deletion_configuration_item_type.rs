@@ -96,7 +96,7 @@ impl ::std::fmt::Display for DeletionConfigurationItemType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             DeletionConfigurationItemType::Server => write!(f, "SERVER"),
-            DeletionConfigurationItemType::Unknown(value) => write!(f, "{}", value),
+            DeletionConfigurationItemType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

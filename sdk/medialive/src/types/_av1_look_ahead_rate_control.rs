@@ -108,7 +108,7 @@ impl ::std::fmt::Display for Av1LookAheadRateControl {
             Av1LookAheadRateControl::High => write!(f, "HIGH"),
             Av1LookAheadRateControl::Low => write!(f, "LOW"),
             Av1LookAheadRateControl::Medium => write!(f, "MEDIUM"),
-            Av1LookAheadRateControl::Unknown(value) => write!(f, "{}", value),
+            Av1LookAheadRateControl::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SharingType {
         match self {
             SharingType::Private => write!(f, "Private"),
             SharingType::Shared => write!(f, "Shared"),
-            SharingType::Unknown(value) => write!(f, "{}", value),
+            SharingType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

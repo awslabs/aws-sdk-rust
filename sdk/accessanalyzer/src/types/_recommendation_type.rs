@@ -96,7 +96,7 @@ impl ::std::fmt::Display for RecommendationType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             RecommendationType::UnusedPermissionRecommendation => write!(f, "UnusedPermissionRecommendation"),
-            RecommendationType::Unknown(value) => write!(f, "{}", value),
+            RecommendationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

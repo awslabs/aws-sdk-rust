@@ -114,7 +114,7 @@ impl ::std::fmt::Display for DiscoveryType {
             DiscoveryType::Custom => write!(f, "CUSTOM"),
             DiscoveryType::Zigbee => write!(f, "ZIGBEE"),
             DiscoveryType::Zwave => write!(f, "ZWAVE"),
-            DiscoveryType::Unknown(value) => write!(f, "{}", value),
+            DiscoveryType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ResolutionStrategy {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ResolutionStrategy::Manual => write!(f, "MANUAL"),
-            ResolutionStrategy::Unknown(value) => write!(f, "{}", value),
+            ResolutionStrategy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

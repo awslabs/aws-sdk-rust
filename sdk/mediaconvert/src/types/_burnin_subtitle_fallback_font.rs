@@ -126,7 +126,7 @@ impl ::std::fmt::Display for BurninSubtitleFallbackFont {
             BurninSubtitleFallbackFont::MonospacedSerif => write!(f, "MONOSPACED_SERIF"),
             BurninSubtitleFallbackFont::ProportionalSansserif => write!(f, "PROPORTIONAL_SANSSERIF"),
             BurninSubtitleFallbackFont::ProportionalSerif => write!(f, "PROPORTIONAL_SERIF"),
-            BurninSubtitleFallbackFont::Unknown(value) => write!(f, "{}", value),
+            BurninSubtitleFallbackFont::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AnalysisType {
         match self {
             AnalysisType::CodeQuality => write!(f, "CodeQuality"),
             AnalysisType::Security => write!(f, "Security"),
-            AnalysisType::Unknown(value) => write!(f, "{}", value),
+            AnalysisType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

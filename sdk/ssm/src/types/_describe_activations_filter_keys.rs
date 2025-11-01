@@ -108,7 +108,7 @@ impl ::std::fmt::Display for DescribeActivationsFilterKeys {
             DescribeActivationsFilterKeys::ActivationIds => write!(f, "ActivationIds"),
             DescribeActivationsFilterKeys::DefaultInstanceName => write!(f, "DefaultInstanceName"),
             DescribeActivationsFilterKeys::IamRole => write!(f, "IamRole"),
-            DescribeActivationsFilterKeys::Unknown(value) => write!(f, "{}", value),
+            DescribeActivationsFilterKeys::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for WrappingKeySpec {
             WrappingKeySpec::Rsa3072 => write!(f, "RSA_3072"),
             WrappingKeySpec::Rsa4096 => write!(f, "RSA_4096"),
             WrappingKeySpec::Sm2 => write!(f, "SM2"),
-            WrappingKeySpec::Unknown(value) => write!(f, "{}", value),
+            WrappingKeySpec::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

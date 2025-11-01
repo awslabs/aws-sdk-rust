@@ -120,7 +120,7 @@ impl ::std::fmt::Display for XavcProfile {
             XavcProfile::Xavc4KIntraVbr => write!(f, "XAVC_4K_INTRA_VBR"),
             XavcProfile::XavcHd => write!(f, "XAVC_HD"),
             XavcProfile::XavcHdIntraCbg => write!(f, "XAVC_HD_INTRA_CBG"),
-            XavcProfile::Unknown(value) => write!(f, "{}", value),
+            XavcProfile::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

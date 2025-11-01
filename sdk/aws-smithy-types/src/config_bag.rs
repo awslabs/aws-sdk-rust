@@ -833,7 +833,7 @@ mod test {
         assert!(final_bag.load::<Prop2>().is_some());
         // we unset prop3
         assert!(final_bag.load::<Prop3>().is_none());
-        println!("{:#?}", final_bag);
+        println!("{final_bag:#?}");
     }
 
     #[test]
@@ -916,7 +916,7 @@ mod test {
         let mut expected = vec![];
         let mut bag = ConfigBag::base();
         for layer_idx in 0..100 {
-            let mut layer = Layer::new(format!("{}", layer_idx));
+            let mut layer = Layer::new(format!("{layer_idx}"));
             for item in 0..100 {
                 expected.push(TestItem(layer_idx, item));
                 layer.store_append(TestItem(layer_idx, item));

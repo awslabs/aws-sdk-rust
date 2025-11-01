@@ -102,7 +102,7 @@ impl ::std::fmt::Display for IndexType {
         match self {
             IndexType::Enterprise => write!(f, "ENTERPRISE"),
             IndexType::Starter => write!(f, "STARTER"),
-            IndexType::Unknown(value) => write!(f, "{}", value),
+            IndexType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

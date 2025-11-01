@@ -102,7 +102,7 @@ impl ::std::fmt::Display for VerifiedAccessLogDeliveryStatusCode {
         match self {
             VerifiedAccessLogDeliveryStatusCode::Failed => write!(f, "failed"),
             VerifiedAccessLogDeliveryStatusCode::Success => write!(f, "success"),
-            VerifiedAccessLogDeliveryStatusCode::Unknown(value) => write!(f, "{}", value),
+            VerifiedAccessLogDeliveryStatusCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DatabaseAttributes {
         match self {
             DatabaseAttributes::Name => write!(f, "NAME"),
             DatabaseAttributes::TargetDatabase => write!(f, "TARGET_DATABASE"),
-            DatabaseAttributes::Unknown(value) => write!(f, "{}", value),
+            DatabaseAttributes::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

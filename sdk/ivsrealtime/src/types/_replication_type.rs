@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ReplicationType {
             ReplicationType::None => write!(f, "NONE"),
             ReplicationType::Replica => write!(f, "REPLICA"),
             ReplicationType::Source => write!(f, "SOURCE"),
-            ReplicationType::Unknown(value) => write!(f, "{}", value),
+            ReplicationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

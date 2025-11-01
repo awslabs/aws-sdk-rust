@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ResourceType {
         match self {
             ResourceType::ApiGateway => write!(f, "API_GATEWAY"),
             ResourceType::ApplicationLoadBalancer => write!(f, "APPLICATION_LOAD_BALANCER"),
-            ResourceType::Unknown(value) => write!(f, "{}", value),
+            ResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ResourceTypeValues {
         match self {
             ResourceTypeValues::Instance => write!(f, "INSTANCE"),
             ResourceTypeValues::Volume => write!(f, "VOLUME"),
-            ResourceTypeValues::Unknown(value) => write!(f, "{}", value),
+            ResourceTypeValues::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

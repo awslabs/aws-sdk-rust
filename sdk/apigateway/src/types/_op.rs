@@ -126,7 +126,7 @@ impl ::std::fmt::Display for Op {
             Op::Remove => write!(f, "remove"),
             Op::Replace => write!(f, "replace"),
             Op::Test => write!(f, "test"),
-            Op::Unknown(value) => write!(f, "{}", value),
+            Op::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

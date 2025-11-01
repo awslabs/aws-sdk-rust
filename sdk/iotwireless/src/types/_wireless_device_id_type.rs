@@ -114,7 +114,7 @@ impl ::std::fmt::Display for WirelessDeviceIdType {
             WirelessDeviceIdType::SidewalkManufacturingSn => write!(f, "SidewalkManufacturingSn"),
             WirelessDeviceIdType::ThingName => write!(f, "ThingName"),
             WirelessDeviceIdType::WirelessDeviceId => write!(f, "WirelessDeviceId"),
-            WirelessDeviceIdType::Unknown(value) => write!(f, "{}", value),
+            WirelessDeviceIdType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

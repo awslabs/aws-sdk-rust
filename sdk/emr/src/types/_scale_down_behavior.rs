@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ScaleDownBehavior {
         match self {
             ScaleDownBehavior::TerminateAtInstanceHour => write!(f, "TERMINATE_AT_INSTANCE_HOUR"),
             ScaleDownBehavior::TerminateAtTaskCompletion => write!(f, "TERMINATE_AT_TASK_COMPLETION"),
-            ScaleDownBehavior::Unknown(value) => write!(f, "{}", value),
+            ScaleDownBehavior::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

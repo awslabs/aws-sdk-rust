@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SheetControlDateTimePickerType {
         match self {
             SheetControlDateTimePickerType::DateRange => write!(f, "DATE_RANGE"),
             SheetControlDateTimePickerType::SingleValued => write!(f, "SINGLE_VALUED"),
-            SheetControlDateTimePickerType::Unknown(value) => write!(f, "{}", value),
+            SheetControlDateTimePickerType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -119,7 +119,7 @@ impl ::std::fmt::Display for ValidationExceptionReason {
             ValidationExceptionReason::IamSynchronizationDelay => write!(f, "IAM_SYNCHRONIZATION_DELAY"),
             ValidationExceptionReason::InvalidConfiguration => write!(f, "INVALID_CONFIGURATION"),
             ValidationExceptionReason::InvalidQuery => write!(f, "INVALID_QUERY"),
-            ValidationExceptionReason::Unknown(value) => write!(f, "{}", value),
+            ValidationExceptionReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

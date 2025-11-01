@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SortKey {
         match self {
             SortKey::CreatedAt => write!(f, "CREATED_AT"),
             SortKey::UpdatedAt => write!(f, "UPDATED_AT"),
-            SortKey::Unknown(value) => write!(f, "{}", value),
+            SortKey::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

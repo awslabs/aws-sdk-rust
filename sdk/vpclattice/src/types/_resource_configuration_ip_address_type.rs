@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ResourceConfigurationIpAddressType {
             ResourceConfigurationIpAddressType::Dualstack => write!(f, "DUALSTACK"),
             ResourceConfigurationIpAddressType::Ipv4 => write!(f, "IPV4"),
             ResourceConfigurationIpAddressType::Ipv6 => write!(f, "IPV6"),
-            ResourceConfigurationIpAddressType::Unknown(value) => write!(f, "{}", value),
+            ResourceConfigurationIpAddressType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

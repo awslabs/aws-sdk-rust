@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ResolverEndpointType {
             ResolverEndpointType::Dualstack => write!(f, "DUALSTACK"),
             ResolverEndpointType::Ipv4 => write!(f, "IPV4"),
             ResolverEndpointType::Ipv6 => write!(f, "IPV6"),
-            ResolverEndpointType::Unknown(value) => write!(f, "{}", value),
+            ResolverEndpointType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -147,7 +147,7 @@ impl ::std::fmt::Display for Ac3BitstreamMode {
             Ac3BitstreamMode::MusicAndEffects => write!(f, "MUSIC_AND_EFFECTS"),
             Ac3BitstreamMode::VisuallyImpaired => write!(f, "VISUALLY_IMPAIRED"),
             Ac3BitstreamMode::VoiceOver => write!(f, "VOICE_OVER"),
-            Ac3BitstreamMode::Unknown(value) => write!(f, "{}", value),
+            Ac3BitstreamMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

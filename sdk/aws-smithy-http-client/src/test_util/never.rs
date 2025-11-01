@@ -131,7 +131,7 @@ mod hyper1_support {
         /// Convert this connector into a usable HTTP client for testing
         #[doc(hidden)]
         pub fn into_client(self) -> SharedHttpClient {
-            crate::client::build_with_tcp_conn_fn(None, NeverTcpConnector::new)
+            crate::client::build_with_tcp_conn_fn(None, None, NeverTcpConnector::new)
         }
     }
 }

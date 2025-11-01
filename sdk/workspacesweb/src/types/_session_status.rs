@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SessionStatus {
         match self {
             SessionStatus::Active => write!(f, "Active"),
             SessionStatus::Terminated => write!(f, "Terminated"),
-            SessionStatus::Unknown(value) => write!(f, "{}", value),
+            SessionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

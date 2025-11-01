@@ -102,7 +102,7 @@ impl ::std::fmt::Display for VehicleAssociationBehavior {
         match self {
             VehicleAssociationBehavior::CreateIotThing => write!(f, "CreateIotThing"),
             VehicleAssociationBehavior::ValidateIotThingExists => write!(f, "ValidateIotThingExists"),
-            VehicleAssociationBehavior::Unknown(value) => write!(f, "{}", value),
+            VehicleAssociationBehavior::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

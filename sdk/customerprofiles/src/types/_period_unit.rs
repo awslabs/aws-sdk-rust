@@ -114,7 +114,7 @@ impl ::std::fmt::Display for PeriodUnit {
             PeriodUnit::Hours => write!(f, "HOURS"),
             PeriodUnit::Months => write!(f, "MONTHS"),
             PeriodUnit::Weeks => write!(f, "WEEKS"),
-            PeriodUnit::Unknown(value) => write!(f, "{}", value),
+            PeriodUnit::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

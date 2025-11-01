@@ -102,7 +102,7 @@ impl ::std::fmt::Display for WorkflowType {
         match self {
             WorkflowType::Private => write!(f, "PRIVATE"),
             WorkflowType::Ready2Run => write!(f, "READY2RUN"),
-            WorkflowType::Unknown(value) => write!(f, "{}", value),
+            WorkflowType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

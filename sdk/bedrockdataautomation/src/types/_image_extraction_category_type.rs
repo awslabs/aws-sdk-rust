@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ImageExtractionCategoryType {
             ImageExtractionCategoryType::ContentModeration => write!(f, "CONTENT_MODERATION"),
             ImageExtractionCategoryType::Logos => write!(f, "LOGOS"),
             ImageExtractionCategoryType::TextDetection => write!(f, "TEXT_DETECTION"),
-            ImageExtractionCategoryType::Unknown(value) => write!(f, "{}", value),
+            ImageExtractionCategoryType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

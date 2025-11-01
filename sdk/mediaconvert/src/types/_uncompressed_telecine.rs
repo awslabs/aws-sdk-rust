@@ -102,7 +102,7 @@ impl ::std::fmt::Display for UncompressedTelecine {
         match self {
             UncompressedTelecine::Hard => write!(f, "HARD"),
             UncompressedTelecine::None => write!(f, "NONE"),
-            UncompressedTelecine::Unknown(value) => write!(f, "{}", value),
+            UncompressedTelecine::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

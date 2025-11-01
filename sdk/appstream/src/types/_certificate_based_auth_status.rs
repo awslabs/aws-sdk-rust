@@ -108,7 +108,7 @@ impl ::std::fmt::Display for CertificateBasedAuthStatus {
             CertificateBasedAuthStatus::Disabled => write!(f, "DISABLED"),
             CertificateBasedAuthStatus::Enabled => write!(f, "ENABLED"),
             CertificateBasedAuthStatus::EnabledNoDirectoryLoginFallback => write!(f, "ENABLED_NO_DIRECTORY_LOGIN_FALLBACK"),
-            CertificateBasedAuthStatus::Unknown(value) => write!(f, "{}", value),
+            CertificateBasedAuthStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AcceptRuleBehavior {
         match self {
             AcceptRuleBehavior::All => write!(f, "ALL"),
             AcceptRuleBehavior::None => write!(f, "NONE"),
-            AcceptRuleBehavior::Unknown(value) => write!(f, "{}", value),
+            AcceptRuleBehavior::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

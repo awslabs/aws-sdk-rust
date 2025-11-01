@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ProcessingType {
             ProcessingType::Consistent => write!(f, "CONSISTENT"),
             ProcessingType::Eventual => write!(f, "EVENTUAL"),
             ProcessingType::EventualNoLookup => write!(f, "EVENTUAL_NO_LOOKUP"),
-            ProcessingType::Unknown(value) => write!(f, "{}", value),
+            ProcessingType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

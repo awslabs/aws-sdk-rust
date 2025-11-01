@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ReferenceLineSeriesType {
         match self {
             ReferenceLineSeriesType::Bar => write!(f, "BAR"),
             ReferenceLineSeriesType::Line => write!(f, "LINE"),
-            ReferenceLineSeriesType::Unknown(value) => write!(f, "{}", value),
+            ReferenceLineSeriesType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

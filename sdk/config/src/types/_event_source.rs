@@ -96,7 +96,7 @@ impl ::std::fmt::Display for EventSource {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             EventSource::AwsConfig => write!(f, "aws.config"),
-            EventSource::Unknown(value) => write!(f, "{}", value),
+            EventSource::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

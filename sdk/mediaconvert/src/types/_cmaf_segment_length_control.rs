@@ -108,7 +108,7 @@ impl ::std::fmt::Display for CmafSegmentLengthControl {
             CmafSegmentLengthControl::Exact => write!(f, "EXACT"),
             CmafSegmentLengthControl::GopMultiple => write!(f, "GOP_MULTIPLE"),
             CmafSegmentLengthControl::Match => write!(f, "MATCH"),
-            CmafSegmentLengthControl::Unknown(value) => write!(f, "{}", value),
+            CmafSegmentLengthControl::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

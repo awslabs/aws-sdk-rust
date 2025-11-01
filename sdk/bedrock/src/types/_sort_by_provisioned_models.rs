@@ -96,7 +96,7 @@ impl ::std::fmt::Display for SortByProvisionedModels {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             SortByProvisionedModels::CreationTime => write!(f, "CreationTime"),
-            SortByProvisionedModels::Unknown(value) => write!(f, "{}", value),
+            SortByProvisionedModels::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

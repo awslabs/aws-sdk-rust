@@ -39,7 +39,7 @@ impl<E: Error> fmt::Display for DisplayErrorContext<E> {
 }
 
 fn write_err(f: &mut fmt::Formatter<'_>, err: &dyn Error) -> fmt::Result {
-    write!(f, "{}", err)?;
+    write!(f, "{err}")?;
     if let Some(source) = err.source() {
         write!(f, ": ")?;
         write_err(f, source)?;

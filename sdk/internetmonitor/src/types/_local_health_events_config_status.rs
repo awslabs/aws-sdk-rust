@@ -102,7 +102,7 @@ impl ::std::fmt::Display for LocalHealthEventsConfigStatus {
         match self {
             LocalHealthEventsConfigStatus::Disabled => write!(f, "DISABLED"),
             LocalHealthEventsConfigStatus::Enabled => write!(f, "ENABLED"),
-            LocalHealthEventsConfigStatus::Unknown(value) => write!(f, "{}", value),
+            LocalHealthEventsConfigStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

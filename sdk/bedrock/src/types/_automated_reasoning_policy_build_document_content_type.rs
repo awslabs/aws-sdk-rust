@@ -104,7 +104,7 @@ impl ::std::fmt::Display for AutomatedReasoningPolicyBuildDocumentContentType {
         match self {
             AutomatedReasoningPolicyBuildDocumentContentType::Pdf => write!(f, "pdf"),
             AutomatedReasoningPolicyBuildDocumentContentType::Text => write!(f, "txt"),
-            AutomatedReasoningPolicyBuildDocumentContentType::Unknown(value) => write!(f, "{}", value),
+            AutomatedReasoningPolicyBuildDocumentContentType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

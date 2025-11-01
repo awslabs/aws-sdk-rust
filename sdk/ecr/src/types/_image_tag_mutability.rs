@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ImageTagMutability {
             ImageTagMutability::ImmutableWithExclusion => write!(f, "IMMUTABLE_WITH_EXCLUSION"),
             ImageTagMutability::Mutable => write!(f, "MUTABLE"),
             ImageTagMutability::MutableWithExclusion => write!(f, "MUTABLE_WITH_EXCLUSION"),
-            ImageTagMutability::Unknown(value) => write!(f, "{}", value),
+            ImageTagMutability::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

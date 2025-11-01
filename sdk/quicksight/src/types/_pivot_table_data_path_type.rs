@@ -119,7 +119,7 @@ impl ::std::fmt::Display for PivotTableDataPathType {
             PivotTableDataPathType::EmptyColumnHeader => write!(f, "EMPTY_COLUMN_HEADER"),
             PivotTableDataPathType::HierarchyRowsLayoutColumn => write!(f, "HIERARCHY_ROWS_LAYOUT_COLUMN"),
             PivotTableDataPathType::MultipleRowMetricsColumn => write!(f, "MULTIPLE_ROW_METRICS_COLUMN"),
-            PivotTableDataPathType::Unknown(value) => write!(f, "{}", value),
+            PivotTableDataPathType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

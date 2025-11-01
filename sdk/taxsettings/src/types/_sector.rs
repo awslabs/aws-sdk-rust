@@ -108,7 +108,7 @@ impl ::std::fmt::Display for Sector {
             Sector::Business => write!(f, "Business"),
             Sector::PublicInstitutions => write!(f, "Government"),
             Sector::Individual => write!(f, "Individual"),
-            Sector::Unknown(value) => write!(f, "{}", value),
+            Sector::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

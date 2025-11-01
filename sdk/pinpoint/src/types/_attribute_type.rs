@@ -132,7 +132,7 @@ impl ::std::fmt::Display for AttributeType {
             AttributeType::Exclusive => write!(f, "EXCLUSIVE"),
             AttributeType::Inclusive => write!(f, "INCLUSIVE"),
             AttributeType::On => write!(f, "ON"),
-            AttributeType::Unknown(value) => write!(f, "{}", value),
+            AttributeType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

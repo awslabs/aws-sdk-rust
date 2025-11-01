@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ParameterApplyType {
         match self {
             ParameterApplyType::Dynamic => write!(f, "dynamic"),
             ParameterApplyType::Static => write!(f, "static"),
-            ParameterApplyType::Unknown(value) => write!(f, "{}", value),
+            ParameterApplyType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

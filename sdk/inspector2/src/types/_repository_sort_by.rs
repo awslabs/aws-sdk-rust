@@ -114,7 +114,7 @@ impl ::std::fmt::Display for RepositorySortBy {
             RepositorySortBy::All => write!(f, "ALL"),
             RepositorySortBy::Critical => write!(f, "CRITICAL"),
             RepositorySortBy::High => write!(f, "HIGH"),
-            RepositorySortBy::Unknown(value) => write!(f, "{}", value),
+            RepositorySortBy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

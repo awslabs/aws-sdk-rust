@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ProfilingStatus {
         match self {
             ProfilingStatus::Disabled => write!(f, "Disabled"),
             ProfilingStatus::Enabled => write!(f, "Enabled"),
-            ProfilingStatus::Unknown(value) => write!(f, "{}", value),
+            ProfilingStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

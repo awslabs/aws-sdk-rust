@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SourceSetUpOption {
         match self {
             SourceSetUpOption::ProceduralControlsMapping => write!(f, "Procedural_Controls_Mapping"),
             SourceSetUpOption::SystemControlsMapping => write!(f, "System_Controls_Mapping"),
-            SourceSetUpOption::Unknown(value) => write!(f, "{}", value),
+            SourceSetUpOption::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

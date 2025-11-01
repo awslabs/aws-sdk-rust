@@ -147,7 +147,7 @@ impl ::std::fmt::Display for HandshakeResourceType {
             HandshakeResourceType::Organization => write!(f, "ORGANIZATION"),
             HandshakeResourceType::OrganizationFeatureSet => write!(f, "ORGANIZATION_FEATURE_SET"),
             HandshakeResourceType::ParentHandshake => write!(f, "PARENT_HANDSHAKE"),
-            HandshakeResourceType::Unknown(value) => write!(f, "{}", value),
+            HandshakeResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

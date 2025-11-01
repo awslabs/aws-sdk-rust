@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CustomizableMetricName {
         match self {
             CustomizableMetricName::CpuUtilization => write!(f, "CpuUtilization"),
             CustomizableMetricName::MemoryUtilization => write!(f, "MemoryUtilization"),
-            CustomizableMetricName::Unknown(value) => write!(f, "{}", value),
+            CustomizableMetricName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

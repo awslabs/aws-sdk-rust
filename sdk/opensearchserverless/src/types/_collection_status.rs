@@ -114,7 +114,7 @@ impl ::std::fmt::Display for CollectionStatus {
             CollectionStatus::Creating => write!(f, "CREATING"),
             CollectionStatus::Deleting => write!(f, "DELETING"),
             CollectionStatus::Failed => write!(f, "FAILED"),
-            CollectionStatus::Unknown(value) => write!(f, "{}", value),
+            CollectionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for IngressPointType {
         match self {
             IngressPointType::Auth => write!(f, "AUTH"),
             IngressPointType::Open => write!(f, "OPEN"),
-            IngressPointType::Unknown(value) => write!(f, "{}", value),
+            IngressPointType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

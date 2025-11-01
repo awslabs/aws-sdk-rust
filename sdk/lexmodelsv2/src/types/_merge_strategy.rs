@@ -108,7 +108,7 @@ impl ::std::fmt::Display for MergeStrategy {
             MergeStrategy::Append => write!(f, "Append"),
             MergeStrategy::FailOnConflict => write!(f, "FailOnConflict"),
             MergeStrategy::Overwrite => write!(f, "Overwrite"),
-            MergeStrategy::Unknown(value) => write!(f, "{}", value),
+            MergeStrategy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

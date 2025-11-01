@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ContentDisposition {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ContentDisposition::Attachment => write!(f, "ATTACHMENT"),
-            ContentDisposition::Unknown(value) => write!(f, "{}", value),
+            ContentDisposition::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

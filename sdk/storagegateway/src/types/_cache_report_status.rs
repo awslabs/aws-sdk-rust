@@ -120,7 +120,7 @@ impl ::std::fmt::Display for CacheReportStatus {
             CacheReportStatus::Error => write!(f, "ERROR"),
             CacheReportStatus::Failed => write!(f, "FAILED"),
             CacheReportStatus::InProgress => write!(f, "IN_PROGRESS"),
-            CacheReportStatus::Unknown(value) => write!(f, "{}", value),
+            CacheReportStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

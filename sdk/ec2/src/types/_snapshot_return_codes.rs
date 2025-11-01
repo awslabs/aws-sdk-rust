@@ -120,7 +120,7 @@ impl ::std::fmt::Display for SnapshotReturnCodes {
             SnapshotReturnCodes::ErrorMissingPermissions => write!(f, "missing-permissions"),
             SnapshotReturnCodes::WarnSkipped => write!(f, "skipped"),
             SnapshotReturnCodes::Success => write!(f, "success"),
-            SnapshotReturnCodes::Unknown(value) => write!(f, "{}", value),
+            SnapshotReturnCodes::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

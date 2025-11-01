@@ -122,7 +122,7 @@ impl ::std::fmt::Display for ClockStatus {
             ClockStatus::Stopped => write!(f, "STOPPED"),
             ClockStatus::Stopping => write!(f, "STOPPING"),
             ClockStatus::UnknownValue => write!(f, "UNKNOWN"),
-            ClockStatus::Unknown(value) => write!(f, "{}", value),
+            ClockStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

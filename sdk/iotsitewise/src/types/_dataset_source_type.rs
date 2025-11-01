@@ -96,7 +96,7 @@ impl ::std::fmt::Display for DatasetSourceType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             DatasetSourceType::Kendra => write!(f, "KENDRA"),
-            DatasetSourceType::Unknown(value) => write!(f, "{}", value),
+            DatasetSourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for BotLocaleFilterOperator {
         match self {
             BotLocaleFilterOperator::Contains => write!(f, "CO"),
             BotLocaleFilterOperator::Equals => write!(f, "EQ"),
-            BotLocaleFilterOperator::Unknown(value) => write!(f, "{}", value),
+            BotLocaleFilterOperator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

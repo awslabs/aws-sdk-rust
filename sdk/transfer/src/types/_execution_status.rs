@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ExecutionStatus {
             ExecutionStatus::Exception => write!(f, "EXCEPTION"),
             ExecutionStatus::HandlingException => write!(f, "HANDLING_EXCEPTION"),
             ExecutionStatus::InProgress => write!(f, "IN_PROGRESS"),
-            ExecutionStatus::Unknown(value) => write!(f, "{}", value),
+            ExecutionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

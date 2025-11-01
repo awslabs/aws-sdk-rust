@@ -96,7 +96,7 @@ impl ::std::fmt::Display for HostedZoneType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             HostedZoneType::PrivateHostedZone => write!(f, "PrivateHostedZone"),
-            HostedZoneType::Unknown(value) => write!(f, "{}", value),
+            HostedZoneType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

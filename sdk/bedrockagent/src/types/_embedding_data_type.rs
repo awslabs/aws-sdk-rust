@@ -102,7 +102,7 @@ impl ::std::fmt::Display for EmbeddingDataType {
         match self {
             EmbeddingDataType::Binary => write!(f, "BINARY"),
             EmbeddingDataType::Float32 => write!(f, "FLOAT32"),
-            EmbeddingDataType::Unknown(value) => write!(f, "{}", value),
+            EmbeddingDataType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

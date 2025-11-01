@@ -51,8 +51,7 @@ pub fn de_enable_ebs_encryption_by_default(
     let start_el = decoder.start_el();
     if !(start_el.matches("EnableEbsEncryptionByDefaultResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected EnableEbsEncryptionByDefaultResponse got {:?}",
-            start_el
+            "invalid root, expected EnableEbsEncryptionByDefaultResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

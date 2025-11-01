@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AzureAccessTier {
             AzureAccessTier::Archive => write!(f, "ARCHIVE"),
             AzureAccessTier::Cool => write!(f, "COOL"),
             AzureAccessTier::Hot => write!(f, "HOT"),
-            AzureAccessTier::Unknown(value) => write!(f, "{}", value),
+            AzureAccessTier::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

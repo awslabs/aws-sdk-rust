@@ -108,7 +108,7 @@ impl ::std::fmt::Display for TimeDimension {
             TimeDimension::Days => write!(f, "Days"),
             TimeDimension::Hours => write!(f, "Hours"),
             TimeDimension::Weeks => write!(f, "Weeks"),
-            TimeDimension::Unknown(value) => write!(f, "{}", value),
+            TimeDimension::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

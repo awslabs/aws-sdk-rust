@@ -154,7 +154,7 @@ impl ::std::fmt::Display for DataLakeResourceType {
             DataLakeResourceType::LfTagPolicyDatabase => write!(f, "LF_TAG_POLICY_DATABASE"),
             DataLakeResourceType::LfTagPolicyTable => write!(f, "LF_TAG_POLICY_TABLE"),
             DataLakeResourceType::Table => write!(f, "TABLE"),
-            DataLakeResourceType::Unknown(value) => write!(f, "{}", value),
+            DataLakeResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

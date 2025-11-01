@@ -133,7 +133,7 @@ impl ::std::fmt::Display for ConfigurationSetFilterName {
             ConfigurationSetFilterName::EventDestinationName => write!(f, "event-destination-name"),
             ConfigurationSetFilterName::MatchingEventTypes => write!(f, "matching-event-types"),
             ConfigurationSetFilterName::ProtectConfigurationId => write!(f, "protect-configuration-id"),
-            ConfigurationSetFilterName::Unknown(value) => write!(f, "{}", value),
+            ConfigurationSetFilterName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

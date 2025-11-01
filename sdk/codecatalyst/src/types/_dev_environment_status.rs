@@ -138,7 +138,7 @@ impl ::std::fmt::Display for DevEnvironmentStatus {
             DevEnvironmentStatus::Starting => write!(f, "STARTING"),
             DevEnvironmentStatus::Stopped => write!(f, "STOPPED"),
             DevEnvironmentStatus::Stopping => write!(f, "STOPPING"),
-            DevEnvironmentStatus::Unknown(value) => write!(f, "{}", value),
+            DevEnvironmentStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for NodeConnectionState {
         match self {
             NodeConnectionState::Connected => write!(f, "CONNECTED"),
             NodeConnectionState::Disconnected => write!(f, "DISCONNECTED"),
-            NodeConnectionState::Unknown(value) => write!(f, "{}", value),
+            NodeConnectionState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

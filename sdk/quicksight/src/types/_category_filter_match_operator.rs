@@ -126,7 +126,7 @@ impl ::std::fmt::Display for CategoryFilterMatchOperator {
             CategoryFilterMatchOperator::EndsWith => write!(f, "ENDS_WITH"),
             CategoryFilterMatchOperator::Equals => write!(f, "EQUALS"),
             CategoryFilterMatchOperator::StartsWith => write!(f, "STARTS_WITH"),
-            CategoryFilterMatchOperator::Unknown(value) => write!(f, "{}", value),
+            CategoryFilterMatchOperator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

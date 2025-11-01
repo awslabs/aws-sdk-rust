@@ -154,7 +154,7 @@ impl ::std::fmt::Display for Type {
             Type::ImportAssetsFromS3 => write!(f, "IMPORT_ASSETS_FROM_S3"),
             Type::ImportAssetFromApiGatewayApi => write!(f, "IMPORT_ASSET_FROM_API_GATEWAY_API"),
             Type::ImportAssetFromSignedUrl => write!(f, "IMPORT_ASSET_FROM_SIGNED_URL"),
-            Type::Unknown(value) => write!(f, "{}", value),
+            Type::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

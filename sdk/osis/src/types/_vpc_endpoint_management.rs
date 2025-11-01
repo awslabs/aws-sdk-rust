@@ -102,7 +102,7 @@ impl ::std::fmt::Display for VpcEndpointManagement {
         match self {
             VpcEndpointManagement::Customer => write!(f, "CUSTOMER"),
             VpcEndpointManagement::Service => write!(f, "SERVICE"),
-            VpcEndpointManagement::Unknown(value) => write!(f, "{}", value),
+            VpcEndpointManagement::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for S3ServerSideEncryptionType {
         match self {
             S3ServerSideEncryptionType::ServerSideEncryptionKms => write!(f, "SERVER_SIDE_ENCRYPTION_KMS"),
             S3ServerSideEncryptionType::ServerSideEncryptionS3 => write!(f, "SERVER_SIDE_ENCRYPTION_S3"),
-            S3ServerSideEncryptionType::Unknown(value) => write!(f, "{}", value),
+            S3ServerSideEncryptionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

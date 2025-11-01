@@ -102,7 +102,7 @@ impl ::std::fmt::Display for HyperPodOrchestrator {
         match self {
             HyperPodOrchestrator::Eks => write!(f, "EKS"),
             HyperPodOrchestrator::Slurm => write!(f, "SLURM"),
-            HyperPodOrchestrator::Unknown(value) => write!(f, "{}", value),
+            HyperPodOrchestrator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

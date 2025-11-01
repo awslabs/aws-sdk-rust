@@ -96,7 +96,7 @@ impl ::std::fmt::Display for DashProfile {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             DashProfile::DvbDash => write!(f, "DVB_DASH"),
-            DashProfile::Unknown(value) => write!(f, "{}", value),
+            DashProfile::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

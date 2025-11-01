@@ -133,7 +133,7 @@ impl ::std::fmt::Display for FindingType {
             FindingType::UnusedIamUserAccessKey => write!(f, "UnusedIAMUserAccessKey"),
             FindingType::UnusedIamUserPassword => write!(f, "UnusedIAMUserPassword"),
             FindingType::UnusedPermission => write!(f, "UnusedPermission"),
-            FindingType::Unknown(value) => write!(f, "{}", value),
+            FindingType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

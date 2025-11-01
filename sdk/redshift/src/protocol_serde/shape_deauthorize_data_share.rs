@@ -74,16 +74,14 @@ pub fn de_deauthorize_data_share(
     let start_el = decoder.start_el();
     if !(start_el.matches("DeauthorizeDataShareResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected DeauthorizeDataShareResponse got {:?}",
-            start_el
+            "invalid root, expected DeauthorizeDataShareResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("DeauthorizeDataShareResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected DeauthorizeDataShareResult got {:?}",
-                start_el
+                "invalid result, expected DeauthorizeDataShareResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

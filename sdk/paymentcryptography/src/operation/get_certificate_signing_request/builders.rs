@@ -22,7 +22,7 @@ impl crate::operation::get_certificate_signing_request::builders::GetCertificate
 }
 /// Fluent builder constructing a request to `GetCertificateSigningRequest`.
 ///
-/// Used to retrieve the public key for a keypair.
+/// <p>Creates a certificate signing request (CSR) from a key pair.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetCertificateSigningRequestFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,45 +108,45 @@ impl GetCertificateSigningRequestFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// Asymmetric key used for generating the certificate signing request
+    /// <p>Asymmetric key used for generating the certificate signing request</p>
     pub fn key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.key_identifier(input.into());
         self
     }
-    /// Asymmetric key used for generating the certificate signing request
+    /// <p>Asymmetric key used for generating the certificate signing request</p>
     pub fn set_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_key_identifier(input);
         self
     }
-    /// Asymmetric key used for generating the certificate signing request
+    /// <p>Asymmetric key used for generating the certificate signing request</p>
     pub fn get_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_key_identifier()
     }
-    /// Algorithm used to generate the certificate signing request
+    /// <p>The cryptographic algorithm used to sign your CSR.</p>
     pub fn signing_algorithm(mut self, input: crate::types::SigningAlgorithmType) -> Self {
         self.inner = self.inner.signing_algorithm(input);
         self
     }
-    /// Algorithm used to generate the certificate signing request
+    /// <p>The cryptographic algorithm used to sign your CSR.</p>
     pub fn set_signing_algorithm(mut self, input: ::std::option::Option<crate::types::SigningAlgorithmType>) -> Self {
         self.inner = self.inner.set_signing_algorithm(input);
         self
     }
-    /// Algorithm used to generate the certificate signing request
+    /// <p>The cryptographic algorithm used to sign your CSR.</p>
     pub fn get_signing_algorithm(&self) -> &::std::option::Option<crate::types::SigningAlgorithmType> {
         self.inner.get_signing_algorithm()
     }
-    /// Certificate subject data
+    /// <p>The metadata used to create the CSR.</p>
     pub fn certificate_subject(mut self, input: crate::types::CertificateSubjectType) -> Self {
         self.inner = self.inner.certificate_subject(input);
         self
     }
-    /// Certificate subject data
+    /// <p>The metadata used to create the CSR.</p>
     pub fn set_certificate_subject(mut self, input: ::std::option::Option<crate::types::CertificateSubjectType>) -> Self {
         self.inner = self.inner.set_certificate_subject(input);
         self
     }
-    /// Certificate subject data
+    /// <p>The metadata used to create the CSR.</p>
     pub fn get_certificate_subject(&self) -> &::std::option::Option<crate::types::CertificateSubjectType> {
         self.inner.get_certificate_subject()
     }

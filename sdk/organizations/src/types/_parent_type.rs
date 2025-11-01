@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ParentType {
         match self {
             ParentType::OrganizationalUnit => write!(f, "ORGANIZATIONAL_UNIT"),
             ParentType::Root => write!(f, "ROOT"),
-            ParentType::Unknown(value) => write!(f, "{}", value),
+            ParentType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

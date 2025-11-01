@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ScalingStatusCode {
             ScalingStatusCode::Active => write!(f, "Active"),
             ScalingStatusCode::Inactive => write!(f, "Inactive"),
             ScalingStatusCode::PartiallyActive => write!(f, "PartiallyActive"),
-            ScalingStatusCode::Unknown(value) => write!(f, "{}", value),
+            ScalingStatusCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

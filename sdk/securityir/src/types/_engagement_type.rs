@@ -102,7 +102,7 @@ impl ::std::fmt::Display for EngagementType {
         match self {
             EngagementType::Investigation => write!(f, "Investigation"),
             EngagementType::SecurityIncident => write!(f, "Security Incident"),
-            EngagementType::Unknown(value) => write!(f, "{}", value),
+            EngagementType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

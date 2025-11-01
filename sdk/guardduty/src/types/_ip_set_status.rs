@@ -132,7 +132,7 @@ impl ::std::fmt::Display for IpSetStatus {
             IpSetStatus::DeletePending => write!(f, "DELETE_PENDING"),
             IpSetStatus::Error => write!(f, "ERROR"),
             IpSetStatus::Inactive => write!(f, "INACTIVE"),
-            IpSetStatus::Unknown(value) => write!(f, "{}", value),
+            IpSetStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

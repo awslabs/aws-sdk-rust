@@ -22,8 +22,8 @@ impl crate::operation::disable_default_key_replication_regions::builders::Disabl
 }
 /// Fluent builder constructing a request to `DisableDefaultKeyReplicationRegions`.
 ///
-/// <p>Disables multi-region key replication settings for the specified Amazon Web Services Regions in your account, preventing new keys from being automatically replicated to those regions.</p>
-/// <p>After disabling default replication for specific regions, new keys created in your account will not be automatically replicated to those regions. You can still manually add replication to those regions for individual keys using the AddKeyReplicationRegions operation.</p>
+/// <p>Disables <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-multi-region-replication.html">Multi-Region key replication</a> settings for the specified Amazon Web Services Regions in your Amazon Web Services account, preventing new keys from being automatically replicated to those regions.</p>
+/// <p>After disabling Multi-Region key replication for specific regions, new keys created in your account will not be automatically replicated to those regions. You can still manually add replication to those regions for individual keys using the <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_AddKeyReplicationRegions.html">AddKeyReplicationRegions</a> operation.</p>
 /// <p>This operation does not affect existing keys or their current replication configuration.</p>
 /// <p><b>Cross-account use:</b> This operation can't be used across different Amazon Web Services accounts.</p>
 /// <p><b>Related operations:</b></p>

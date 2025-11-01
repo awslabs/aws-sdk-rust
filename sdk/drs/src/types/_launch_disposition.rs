@@ -102,7 +102,7 @@ impl ::std::fmt::Display for LaunchDisposition {
         match self {
             LaunchDisposition::Started => write!(f, "STARTED"),
             LaunchDisposition::Stopped => write!(f, "STOPPED"),
-            LaunchDisposition::Unknown(value) => write!(f, "{}", value),
+            LaunchDisposition::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

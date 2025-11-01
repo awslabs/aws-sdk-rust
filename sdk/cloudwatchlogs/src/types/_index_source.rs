@@ -102,7 +102,7 @@ impl ::std::fmt::Display for IndexSource {
         match self {
             IndexSource::Account => write!(f, "ACCOUNT"),
             IndexSource::LogGroup => write!(f, "LOG_GROUP"),
-            IndexSource::Unknown(value) => write!(f, "{}", value),
+            IndexSource::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

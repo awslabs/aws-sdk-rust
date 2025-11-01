@@ -114,7 +114,7 @@ impl ::std::fmt::Display for EventTypeCategory {
             EventTypeCategory::Investigation => write!(f, "investigation"),
             EventTypeCategory::Issue => write!(f, "issue"),
             EventTypeCategory::ScheduledChange => write!(f, "scheduledChange"),
-            EventTypeCategory::Unknown(value) => write!(f, "{}", value),
+            EventTypeCategory::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

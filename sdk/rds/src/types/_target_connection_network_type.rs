@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TargetConnectionNetworkType {
         match self {
             TargetConnectionNetworkType::Ipv4 => write!(f, "IPV4"),
             TargetConnectionNetworkType::Ipv6 => write!(f, "IPV6"),
-            TargetConnectionNetworkType::Unknown(value) => write!(f, "{}", value),
+            TargetConnectionNetworkType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

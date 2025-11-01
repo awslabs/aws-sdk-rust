@@ -120,7 +120,7 @@ impl ::std::fmt::Display for DrmSystem {
             DrmSystem::Irdeto => write!(f, "IRDETO"),
             DrmSystem::Playready => write!(f, "PLAYREADY"),
             DrmSystem::Widevine => write!(f, "WIDEVINE"),
-            DrmSystem::Unknown(value) => write!(f, "{}", value),
+            DrmSystem::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

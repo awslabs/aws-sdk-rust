@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DuplicateRegistrationAction {
         match self {
             DuplicateRegistrationAction::RegisterAsNew => write!(f, "REGISTER_AS_NEW"),
             DuplicateRegistrationAction::Skip => write!(f, "SKIP"),
-            DuplicateRegistrationAction::Unknown(value) => write!(f, "{}", value),
+            DuplicateRegistrationAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

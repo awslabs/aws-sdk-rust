@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ConfigStatus {
             ConfigStatus::Active => write!(f, "ACTIVE"),
             ConfigStatus::Creating => write!(f, "CREATING"),
             ConfigStatus::Deleting => write!(f, "DELETING"),
-            ConfigStatus::Unknown(value) => write!(f, "{}", value),
+            ConfigStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

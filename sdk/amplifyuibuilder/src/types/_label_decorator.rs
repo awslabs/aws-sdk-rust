@@ -108,7 +108,7 @@ impl ::std::fmt::Display for LabelDecorator {
             LabelDecorator::None => write!(f, "none"),
             LabelDecorator::Optional => write!(f, "optional"),
             LabelDecorator::Required => write!(f, "required"),
-            LabelDecorator::Unknown(value) => write!(f, "{}", value),
+            LabelDecorator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

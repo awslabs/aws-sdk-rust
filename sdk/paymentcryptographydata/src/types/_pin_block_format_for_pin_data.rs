@@ -114,7 +114,7 @@ impl ::std::fmt::Display for PinBlockFormatForPinData {
             PinBlockFormatForPinData::IsoFormat1 => write!(f, "ISO_FORMAT_1"),
             PinBlockFormatForPinData::IsoFormat3 => write!(f, "ISO_FORMAT_3"),
             PinBlockFormatForPinData::IsoFormat4 => write!(f, "ISO_FORMAT_4"),
-            PinBlockFormatForPinData::Unknown(value) => write!(f, "{}", value),
+            PinBlockFormatForPinData::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

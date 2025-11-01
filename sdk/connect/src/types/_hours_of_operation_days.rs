@@ -132,7 +132,7 @@ impl ::std::fmt::Display for HoursOfOperationDays {
             HoursOfOperationDays::Thursday => write!(f, "THURSDAY"),
             HoursOfOperationDays::Tuesday => write!(f, "TUESDAY"),
             HoursOfOperationDays::Wednesday => write!(f, "WEDNESDAY"),
-            HoursOfOperationDays::Unknown(value) => write!(f, "{}", value),
+            HoursOfOperationDays::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

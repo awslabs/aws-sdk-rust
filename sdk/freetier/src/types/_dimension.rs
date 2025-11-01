@@ -140,7 +140,7 @@ impl ::std::fmt::Display for Dimension {
             Dimension::Service => write!(f, "SERVICE"),
             Dimension::UsagePercentage => write!(f, "USAGE_PERCENTAGE"),
             Dimension::UsageType => write!(f, "USAGE_TYPE"),
-            Dimension::Unknown(value) => write!(f, "{}", value),
+            Dimension::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

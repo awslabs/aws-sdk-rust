@@ -108,7 +108,7 @@ impl ::std::fmt::Display for VaultType {
             VaultType::BackupVault => write!(f, "BACKUP_VAULT"),
             VaultType::LogicallyAirGappedBackupVault => write!(f, "LOGICALLY_AIR_GAPPED_BACKUP_VAULT"),
             VaultType::RestoreAccessBackupVault => write!(f, "RESTORE_ACCESS_BACKUP_VAULT"),
-            VaultType::Unknown(value) => write!(f, "{}", value),
+            VaultType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

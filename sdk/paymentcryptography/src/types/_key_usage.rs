@@ -252,7 +252,7 @@ impl ::std::fmt::Display for KeyUsage {
             KeyUsage::Tr31S0AsymmetricKeyForDigitalSignature => write!(f, "TR31_S0_ASYMMETRIC_KEY_FOR_DIGITAL_SIGNATURE"),
             KeyUsage::Tr31V1Ibm3624PinVerificationKey => write!(f, "TR31_V1_IBM3624_PIN_VERIFICATION_KEY"),
             KeyUsage::Tr31V2VisaPinVerificationKey => write!(f, "TR31_V2_VISA_PIN_VERIFICATION_KEY"),
-            KeyUsage::Unknown(value) => write!(f, "{}", value),
+            KeyUsage::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

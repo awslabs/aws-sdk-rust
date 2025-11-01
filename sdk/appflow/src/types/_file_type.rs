@@ -108,7 +108,7 @@ impl ::std::fmt::Display for FileType {
             FileType::Csv => write!(f, "CSV"),
             FileType::Json => write!(f, "JSON"),
             FileType::Parquet => write!(f, "PARQUET"),
-            FileType::Unknown(value) => write!(f, "{}", value),
+            FileType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

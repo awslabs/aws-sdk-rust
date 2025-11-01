@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Privilege {
         match self {
             Privilege::Default => write!(f, "Default"),
             Privilege::Minimal => write!(f, "Minimal"),
-            Privilege::Unknown(value) => write!(f, "{}", value),
+            Privilege::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

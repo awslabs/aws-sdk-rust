@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ReportExportConfigType {
         match self {
             ReportExportConfigType::NoExport => write!(f, "NO_EXPORT"),
             ReportExportConfigType::S3 => write!(f, "S3"),
-            ReportExportConfigType::Unknown(value) => write!(f, "{}", value),
+            ReportExportConfigType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

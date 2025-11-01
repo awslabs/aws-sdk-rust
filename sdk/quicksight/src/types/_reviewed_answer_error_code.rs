@@ -140,7 +140,7 @@ impl ::std::fmt::Display for ReviewedAnswerErrorCode {
             ReviewedAnswerErrorCode::InvalidDatasetArn => write!(f, "INVALID_DATASET_ARN"),
             ReviewedAnswerErrorCode::MissingAnswer => write!(f, "MISSING_ANSWER"),
             ReviewedAnswerErrorCode::MissingRequiredFields => write!(f, "MISSING_REQUIRED_FIELDS"),
-            ReviewedAnswerErrorCode::Unknown(value) => write!(f, "{}", value),
+            ReviewedAnswerErrorCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

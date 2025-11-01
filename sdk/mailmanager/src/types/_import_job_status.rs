@@ -120,7 +120,7 @@ impl ::std::fmt::Display for ImportJobStatus {
             ImportJobStatus::Failed => write!(f, "FAILED"),
             ImportJobStatus::Processing => write!(f, "PROCESSING"),
             ImportJobStatus::Stopped => write!(f, "STOPPED"),
-            ImportJobStatus::Unknown(value) => write!(f, "{}", value),
+            ImportJobStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

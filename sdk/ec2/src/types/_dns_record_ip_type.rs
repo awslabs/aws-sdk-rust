@@ -114,7 +114,7 @@ impl ::std::fmt::Display for DnsRecordIpType {
             DnsRecordIpType::Ipv4 => write!(f, "ipv4"),
             DnsRecordIpType::Ipv6 => write!(f, "ipv6"),
             DnsRecordIpType::ServiceDefined => write!(f, "service-defined"),
-            DnsRecordIpType::Unknown(value) => write!(f, "{}", value),
+            DnsRecordIpType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

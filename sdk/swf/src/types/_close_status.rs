@@ -126,7 +126,7 @@ impl ::std::fmt::Display for CloseStatus {
             CloseStatus::Failed => write!(f, "FAILED"),
             CloseStatus::Terminated => write!(f, "TERMINATED"),
             CloseStatus::TimedOut => write!(f, "TIMED_OUT"),
-            CloseStatus::Unknown(value) => write!(f, "{}", value),
+            CloseStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SecurityPolicy {
         match self {
             SecurityPolicy::Tls10 => write!(f, "TLS_1_0"),
             SecurityPolicy::Tls12 => write!(f, "TLS_1_2"),
-            SecurityPolicy::Unknown(value) => write!(f, "{}", value),
+            SecurityPolicy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

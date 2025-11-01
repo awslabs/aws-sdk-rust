@@ -102,7 +102,7 @@ impl ::std::fmt::Display for JobReportScope {
         match self {
             JobReportScope::AllTasks => write!(f, "AllTasks"),
             JobReportScope::FailedTasksOnly => write!(f, "FailedTasksOnly"),
-            JobReportScope::Unknown(value) => write!(f, "{}", value),
+            JobReportScope::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

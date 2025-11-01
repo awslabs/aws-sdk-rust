@@ -96,7 +96,7 @@ impl ::std::fmt::Display for BundleAssociatedResourceType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             BundleAssociatedResourceType::Application => write!(f, "APPLICATION"),
-            BundleAssociatedResourceType::Unknown(value) => write!(f, "{}", value),
+            BundleAssociatedResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

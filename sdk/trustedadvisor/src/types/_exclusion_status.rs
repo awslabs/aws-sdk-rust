@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ExclusionStatus {
         match self {
             ExclusionStatus::Excluded => write!(f, "excluded"),
             ExclusionStatus::Included => write!(f, "included"),
-            ExclusionStatus::Unknown(value) => write!(f, "{}", value),
+            ExclusionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

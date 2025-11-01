@@ -154,7 +154,7 @@ impl ::std::fmt::Display for ValidationExceptionErrorCode {
             ValidationExceptionErrorCode::RequiredFieldMissing => write!(f, "REQUIRED_FIELD_MISSING"),
             ValidationExceptionErrorCode::TooManyValues => write!(f, "TOO_MANY_VALUES"),
             ValidationExceptionErrorCode::ValueOutOfRange => write!(f, "VALUE_OUT_OF_RANGE"),
-            ValidationExceptionErrorCode::Unknown(value) => write!(f, "{}", value),
+            ValidationExceptionErrorCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

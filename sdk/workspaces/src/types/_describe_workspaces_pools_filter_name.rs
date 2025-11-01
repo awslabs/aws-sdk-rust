@@ -96,7 +96,7 @@ impl ::std::fmt::Display for DescribeWorkspacesPoolsFilterName {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             DescribeWorkspacesPoolsFilterName::Poolname => write!(f, "PoolName"),
-            DescribeWorkspacesPoolsFilterName::Unknown(value) => write!(f, "{}", value),
+            DescribeWorkspacesPoolsFilterName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

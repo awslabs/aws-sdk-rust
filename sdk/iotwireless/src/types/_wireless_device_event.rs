@@ -120,7 +120,7 @@ impl ::std::fmt::Display for WirelessDeviceEvent {
             WirelessDeviceEvent::Registration => write!(f, "Registration"),
             WirelessDeviceEvent::Rejoin => write!(f, "Rejoin"),
             WirelessDeviceEvent::UplinkData => write!(f, "Uplink_Data"),
-            WirelessDeviceEvent::Unknown(value) => write!(f, "{}", value),
+            WirelessDeviceEvent::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

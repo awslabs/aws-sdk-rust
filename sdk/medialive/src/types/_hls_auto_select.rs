@@ -108,7 +108,7 @@ impl ::std::fmt::Display for HlsAutoSelect {
             HlsAutoSelect::No => write!(f, "NO"),
             HlsAutoSelect::Omit => write!(f, "OMIT"),
             HlsAutoSelect::Yes => write!(f, "YES"),
-            HlsAutoSelect::Unknown(value) => write!(f, "{}", value),
+            HlsAutoSelect::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

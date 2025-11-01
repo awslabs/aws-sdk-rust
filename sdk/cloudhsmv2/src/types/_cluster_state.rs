@@ -168,7 +168,7 @@ impl ::std::fmt::Display for ClusterState {
             ClusterState::RollbackInProgress => write!(f, "ROLLBACK_IN_PROGRESS"),
             ClusterState::Uninitialized => write!(f, "UNINITIALIZED"),
             ClusterState::UpdateInProgress => write!(f, "UPDATE_IN_PROGRESS"),
-            ClusterState::Unknown(value) => write!(f, "{}", value),
+            ClusterState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

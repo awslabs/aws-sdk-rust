@@ -102,7 +102,7 @@ impl ::std::fmt::Display for KeyType {
         match self {
             KeyType::AwsOwnedCmk => write!(f, "AWS_OWNED_CMK"),
             KeyType::CustomerManagedCmk => write!(f, "CUSTOMER_MANAGED_CMK"),
-            KeyType::Unknown(value) => write!(f, "{}", value),
+            KeyType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

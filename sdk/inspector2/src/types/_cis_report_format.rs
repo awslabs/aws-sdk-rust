@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CisReportFormat {
         match self {
             CisReportFormat::Csv => write!(f, "CSV"),
             CisReportFormat::Pdf => write!(f, "PDF"),
-            CisReportFormat::Unknown(value) => write!(f, "{}", value),
+            CisReportFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

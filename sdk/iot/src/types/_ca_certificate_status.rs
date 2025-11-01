@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CaCertificateStatus {
         match self {
             CaCertificateStatus::Active => write!(f, "ACTIVE"),
             CaCertificateStatus::Inactive => write!(f, "INACTIVE"),
-            CaCertificateStatus::Unknown(value) => write!(f, "{}", value),
+            CaCertificateStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

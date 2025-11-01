@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ResourceType {
             ResourceType::Gpu => write!(f, "GPU"),
             ResourceType::Memory => write!(f, "MEMORY"),
             ResourceType::Vcpu => write!(f, "VCPU"),
-            ResourceType::Unknown(value) => write!(f, "{}", value),
+            ResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

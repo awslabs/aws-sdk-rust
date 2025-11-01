@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ElementRequirement {
         match self {
             ElementRequirement::Mandatory => write!(f, "MANDATORY"),
             ElementRequirement::Optional => write!(f, "OPTIONAL"),
-            ElementRequirement::Unknown(value) => write!(f, "{}", value),
+            ElementRequirement::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

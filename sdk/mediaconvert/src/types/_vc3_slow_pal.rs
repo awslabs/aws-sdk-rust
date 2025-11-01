@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Vc3SlowPal {
         match self {
             Vc3SlowPal::Disabled => write!(f, "DISABLED"),
             Vc3SlowPal::Enabled => write!(f, "ENABLED"),
-            Vc3SlowPal::Unknown(value) => write!(f, "{}", value),
+            Vc3SlowPal::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

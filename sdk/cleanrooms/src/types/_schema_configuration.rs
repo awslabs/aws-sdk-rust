@@ -96,7 +96,7 @@ impl ::std::fmt::Display for SchemaConfiguration {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             SchemaConfiguration::DifferentialPrivacy => write!(f, "DIFFERENTIAL_PRIVACY"),
-            SchemaConfiguration::Unknown(value) => write!(f, "{}", value),
+            SchemaConfiguration::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

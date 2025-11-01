@@ -114,7 +114,7 @@ impl ::std::fmt::Display for FindingDetailsErrorCode {
             FindingDetailsErrorCode::FindingDetailsNotFound => write!(f, "FINDING_DETAILS_NOT_FOUND"),
             FindingDetailsErrorCode::InternalError => write!(f, "INTERNAL_ERROR"),
             FindingDetailsErrorCode::InvalidInput => write!(f, "INVALID_INPUT"),
-            FindingDetailsErrorCode::Unknown(value) => write!(f, "{}", value),
+            FindingDetailsErrorCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

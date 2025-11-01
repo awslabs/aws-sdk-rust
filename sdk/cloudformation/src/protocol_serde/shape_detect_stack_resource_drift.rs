@@ -53,16 +53,14 @@ pub fn de_detect_stack_resource_drift(
     let start_el = decoder.start_el();
     if !(start_el.matches("DetectStackResourceDriftResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected DetectStackResourceDriftResponse got {:?}",
-            start_el
+            "invalid root, expected DetectStackResourceDriftResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("DetectStackResourceDriftResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected DetectStackResourceDriftResult got {:?}",
-                start_el
+                "invalid result, expected DetectStackResourceDriftResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

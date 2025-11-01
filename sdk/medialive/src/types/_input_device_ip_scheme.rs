@@ -102,7 +102,7 @@ impl ::std::fmt::Display for InputDeviceIpScheme {
         match self {
             InputDeviceIpScheme::Dhcp => write!(f, "DHCP"),
             InputDeviceIpScheme::Static => write!(f, "STATIC"),
-            InputDeviceIpScheme::Unknown(value) => write!(f, "{}", value),
+            InputDeviceIpScheme::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

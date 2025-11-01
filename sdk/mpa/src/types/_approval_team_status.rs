@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ApprovalTeamStatus {
             ApprovalTeamStatus::Deleting => write!(f, "DELETING"),
             ApprovalTeamStatus::Inactive => write!(f, "INACTIVE"),
             ApprovalTeamStatus::Pending => write!(f, "PENDING"),
-            ApprovalTeamStatus::Unknown(value) => write!(f, "{}", value),
+            ApprovalTeamStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AudioNormalizationPeakCalculation {
         match self {
             AudioNormalizationPeakCalculation::None => write!(f, "NONE"),
             AudioNormalizationPeakCalculation::TruePeak => write!(f, "TRUE_PEAK"),
-            AudioNormalizationPeakCalculation::Unknown(value) => write!(f, "{}", value),
+            AudioNormalizationPeakCalculation::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

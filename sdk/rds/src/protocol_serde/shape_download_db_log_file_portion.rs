@@ -108,16 +108,14 @@ pub fn de_download_db_log_file_portion(
     let start_el = decoder.start_el();
     if !(start_el.matches("DownloadDBLogFilePortionResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected DownloadDBLogFilePortionResponse got {:?}",
-            start_el
+            "invalid root, expected DownloadDBLogFilePortionResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("DownloadDBLogFilePortionResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected DownloadDBLogFilePortionResult got {:?}",
-                start_el
+                "invalid result, expected DownloadDBLogFilePortionResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

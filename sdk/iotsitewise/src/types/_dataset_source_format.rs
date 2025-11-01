@@ -96,7 +96,7 @@ impl ::std::fmt::Display for DatasetSourceFormat {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             DatasetSourceFormat::KnowledgeBase => write!(f, "KNOWLEDGE_BASE"),
-            DatasetSourceFormat::Unknown(value) => write!(f, "{}", value),
+            DatasetSourceFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

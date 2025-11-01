@@ -108,7 +108,7 @@ impl ::std::fmt::Display for LogFilter {
             LogFilter::Error => write!(f, "ERROR"),
             LogFilter::Info => write!(f, "INFO"),
             LogFilter::Warn => write!(f, "WARN"),
-            LogFilter::Unknown(value) => write!(f, "{}", value),
+            LogFilter::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

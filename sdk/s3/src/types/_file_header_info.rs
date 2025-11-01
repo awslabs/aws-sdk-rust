@@ -108,7 +108,7 @@ impl ::std::fmt::Display for FileHeaderInfo {
             FileHeaderInfo::Ignore => write!(f, "IGNORE"),
             FileHeaderInfo::None => write!(f, "NONE"),
             FileHeaderInfo::Use => write!(f, "USE"),
-            FileHeaderInfo::Unknown(value) => write!(f, "{}", value),
+            FileHeaderInfo::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

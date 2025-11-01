@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FilterVisualScope {
         match self {
             FilterVisualScope::AllVisuals => write!(f, "ALL_VISUALS"),
             FilterVisualScope::SelectedVisuals => write!(f, "SELECTED_VISUALS"),
-            FilterVisualScope::Unknown(value) => write!(f, "{}", value),
+            FilterVisualScope::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

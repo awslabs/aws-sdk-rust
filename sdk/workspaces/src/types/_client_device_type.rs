@@ -133,7 +133,7 @@ impl ::std::fmt::Display for ClientDeviceType {
             ClientDeviceType::DeviceTypeOsx => write!(f, "DeviceTypeOsx"),
             ClientDeviceType::DeviceTypeWeb => write!(f, "DeviceTypeWeb"),
             ClientDeviceType::DeviceTypeWindows => write!(f, "DeviceTypeWindows"),
-            ClientDeviceType::Unknown(value) => write!(f, "{}", value),
+            ClientDeviceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for PolicyScopeType {
             PolicyScopeType::Aws => write!(f, "AWS"),
             PolicyScopeType::All => write!(f, "All"),
             PolicyScopeType::Local => write!(f, "Local"),
-            PolicyScopeType::Unknown(value) => write!(f, "{}", value),
+            PolicyScopeType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

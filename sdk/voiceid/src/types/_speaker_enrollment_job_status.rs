@@ -120,7 +120,7 @@ impl ::std::fmt::Display for SpeakerEnrollmentJobStatus {
             SpeakerEnrollmentJobStatus::Failed => write!(f, "FAILED"),
             SpeakerEnrollmentJobStatus::InProgress => write!(f, "IN_PROGRESS"),
             SpeakerEnrollmentJobStatus::Submitted => write!(f, "SUBMITTED"),
-            SpeakerEnrollmentJobStatus::Unknown(value) => write!(f, "{}", value),
+            SpeakerEnrollmentJobStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for StreamViewType {
             StreamViewType::NewAndOldImages => write!(f, "NEW_AND_OLD_IMAGES"),
             StreamViewType::NewImage => write!(f, "NEW_IMAGE"),
             StreamViewType::OldImage => write!(f, "OLD_IMAGE"),
-            StreamViewType::Unknown(value) => write!(f, "{}", value),
+            StreamViewType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

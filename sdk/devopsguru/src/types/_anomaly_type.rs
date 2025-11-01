@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AnomalyType {
         match self {
             AnomalyType::Causal => write!(f, "CAUSAL"),
             AnomalyType::Contextual => write!(f, "CONTEXTUAL"),
-            AnomalyType::Unknown(value) => write!(f, "{}", value),
+            AnomalyType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

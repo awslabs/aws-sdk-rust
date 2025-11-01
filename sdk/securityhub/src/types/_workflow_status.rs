@@ -114,7 +114,7 @@ impl ::std::fmt::Display for WorkflowStatus {
             WorkflowStatus::Notified => write!(f, "NOTIFIED"),
             WorkflowStatus::Resolved => write!(f, "RESOLVED"),
             WorkflowStatus::Suppressed => write!(f, "SUPPRESSED"),
-            WorkflowStatus::Unknown(value) => write!(f, "{}", value),
+            WorkflowStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

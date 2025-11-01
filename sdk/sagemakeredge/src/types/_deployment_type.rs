@@ -96,7 +96,7 @@ impl ::std::fmt::Display for DeploymentType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             DeploymentType::Model => write!(f, "Model"),
-            DeploymentType::Unknown(value) => write!(f, "{}", value),
+            DeploymentType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

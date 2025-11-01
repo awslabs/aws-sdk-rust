@@ -119,7 +119,7 @@ impl ::std::fmt::Display for TargetAdministrativeOverrideReasonEnum {
             TargetAdministrativeOverrideReasonEnum::InternalError => write!(f, "AdministrativeOverride.Unknown"),
             TargetAdministrativeOverrideReasonEnum::ZonalShiftEngaged => write!(f, "AdministrativeOverride.ZonalShiftActive"),
             TargetAdministrativeOverrideReasonEnum::ZonalShiftDelegatedToDns => write!(f, "AdministrativeOverride.ZonalShiftDelegatedToDns"),
-            TargetAdministrativeOverrideReasonEnum::Unknown(value) => write!(f, "{}", value),
+            TargetAdministrativeOverrideReasonEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

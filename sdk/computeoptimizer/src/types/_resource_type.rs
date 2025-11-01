@@ -161,7 +161,7 @@ impl ::std::fmt::Display for ResourceType {
             ResourceType::License => write!(f, "License"),
             ResourceType::NotApplicable => write!(f, "NotApplicable"),
             ResourceType::RdsDbInstance => write!(f, "RdsDBInstance"),
-            ResourceType::Unknown(value) => write!(f, "{}", value),
+            ResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

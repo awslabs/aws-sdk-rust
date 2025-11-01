@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ReplicationTimeStatus {
         match self {
             ReplicationTimeStatus::Disabled => write!(f, "Disabled"),
             ReplicationTimeStatus::Enabled => write!(f, "Enabled"),
-            ReplicationTimeStatus::Unknown(value) => write!(f, "{}", value),
+            ReplicationTimeStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

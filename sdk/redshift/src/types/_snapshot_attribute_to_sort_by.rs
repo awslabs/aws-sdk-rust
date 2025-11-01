@@ -108,7 +108,7 @@ impl ::std::fmt::Display for SnapshotAttributeToSortBy {
             SnapshotAttributeToSortBy::CreateTime => write!(f, "CREATE_TIME"),
             SnapshotAttributeToSortBy::SourceType => write!(f, "SOURCE_TYPE"),
             SnapshotAttributeToSortBy::TotalSize => write!(f, "TOTAL_SIZE"),
-            SnapshotAttributeToSortBy::Unknown(value) => write!(f, "{}", value),
+            SnapshotAttributeToSortBy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

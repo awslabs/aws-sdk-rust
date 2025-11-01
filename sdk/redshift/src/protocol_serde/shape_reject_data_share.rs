@@ -65,16 +65,14 @@ pub fn de_reject_data_share(
     let start_el = decoder.start_el();
     if !(start_el.matches("RejectDataShareResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected RejectDataShareResponse got {:?}",
-            start_el
+            "invalid root, expected RejectDataShareResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("RejectDataShareResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected RejectDataShareResult got {:?}",
-                start_el
+                "invalid result, expected RejectDataShareResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

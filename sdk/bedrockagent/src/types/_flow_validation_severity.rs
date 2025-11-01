@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FlowValidationSeverity {
         match self {
             FlowValidationSeverity::Error => write!(f, "Error"),
             FlowValidationSeverity::Warning => write!(f, "Warning"),
-            FlowValidationSeverity::Unknown(value) => write!(f, "{}", value),
+            FlowValidationSeverity::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

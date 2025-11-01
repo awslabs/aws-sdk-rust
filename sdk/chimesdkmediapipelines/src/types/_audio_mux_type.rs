@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AudioMuxType {
             AudioMuxType::AudioOnly => write!(f, "AudioOnly"),
             AudioMuxType::AudioWithActiveSpeakerVideo => write!(f, "AudioWithActiveSpeakerVideo"),
             AudioMuxType::AudioWithCompositedVideo => write!(f, "AudioWithCompositedVideo"),
-            AudioMuxType::Unknown(value) => write!(f, "{}", value),
+            AudioMuxType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

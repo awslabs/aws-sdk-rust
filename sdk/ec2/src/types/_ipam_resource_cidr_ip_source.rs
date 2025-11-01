@@ -108,7 +108,7 @@ impl ::std::fmt::Display for IpamResourceCidrIpSource {
             IpamResourceCidrIpSource::Amazon => write!(f, "amazon"),
             IpamResourceCidrIpSource::Byoip => write!(f, "byoip"),
             IpamResourceCidrIpSource::None => write!(f, "none"),
-            IpamResourceCidrIpSource::Unknown(value) => write!(f, "{}", value),
+            IpamResourceCidrIpSource::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

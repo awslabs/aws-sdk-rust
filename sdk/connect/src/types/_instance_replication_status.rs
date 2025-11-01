@@ -133,7 +133,7 @@ impl ::std::fmt::Display for InstanceReplicationStatus {
             InstanceReplicationStatus::InstanceReplicationInProgress => write!(f, "INSTANCE_REPLICATION_IN_PROGRESS"),
             InstanceReplicationStatus::InstanceReplicaDeleting => write!(f, "INSTANCE_REPLICA_DELETING"),
             InstanceReplicationStatus::ResourceReplicationNotStarted => write!(f, "RESOURCE_REPLICATION_NOT_STARTED"),
-            InstanceReplicationStatus::Unknown(value) => write!(f, "{}", value),
+            InstanceReplicationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

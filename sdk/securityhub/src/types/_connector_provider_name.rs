@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ConnectorProviderName {
         match self {
             ConnectorProviderName::JiraCloud => write!(f, "JIRA_CLOUD"),
             ConnectorProviderName::Servicenow => write!(f, "SERVICENOW"),
-            ConnectorProviderName::Unknown(value) => write!(f, "{}", value),
+            ConnectorProviderName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

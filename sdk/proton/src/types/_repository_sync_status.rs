@@ -125,7 +125,7 @@ impl ::std::fmt::Display for RepositorySyncStatus {
             RepositorySyncStatus::InProgress => write!(f, "IN_PROGRESS"),
             RepositorySyncStatus::Queued => write!(f, "QUEUED"),
             RepositorySyncStatus::Succeeded => write!(f, "SUCCEEDED"),
-            RepositorySyncStatus::Unknown(value) => write!(f, "{}", value),
+            RepositorySyncStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

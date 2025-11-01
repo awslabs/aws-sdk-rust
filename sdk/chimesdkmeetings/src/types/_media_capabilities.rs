@@ -114,7 +114,7 @@ impl ::std::fmt::Display for MediaCapabilities {
             MediaCapabilities::Receive => write!(f, "Receive"),
             MediaCapabilities::Send => write!(f, "Send"),
             MediaCapabilities::SendReceive => write!(f, "SendReceive"),
-            MediaCapabilities::Unknown(value) => write!(f, "{}", value),
+            MediaCapabilities::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

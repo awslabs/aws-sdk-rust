@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AuthType {
         match self {
             AuthType::Disabled => write!(f, "DISABLED"),
             AuthType::IamIdc => write!(f, "IAM_IDC"),
-            AuthType::Unknown(value) => write!(f, "{}", value),
+            AuthType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

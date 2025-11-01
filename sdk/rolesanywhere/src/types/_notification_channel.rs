@@ -96,7 +96,7 @@ impl ::std::fmt::Display for NotificationChannel {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             NotificationChannel::All => write!(f, "ALL"),
-            NotificationChannel::Unknown(value) => write!(f, "{}", value),
+            NotificationChannel::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

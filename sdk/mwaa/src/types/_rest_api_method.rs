@@ -120,7 +120,7 @@ impl ::std::fmt::Display for RestApiMethod {
             RestApiMethod::Patch => write!(f, "PATCH"),
             RestApiMethod::Post => write!(f, "POST"),
             RestApiMethod::Put => write!(f, "PUT"),
-            RestApiMethod::Unknown(value) => write!(f, "{}", value),
+            RestApiMethod::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

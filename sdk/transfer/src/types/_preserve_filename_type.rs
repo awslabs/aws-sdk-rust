@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PreserveFilenameType {
         match self {
             PreserveFilenameType::Disabled => write!(f, "DISABLED"),
             PreserveFilenameType::Enabled => write!(f, "ENABLED"),
-            PreserveFilenameType::Unknown(value) => write!(f, "{}", value),
+            PreserveFilenameType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

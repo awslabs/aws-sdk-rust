@@ -102,7 +102,7 @@ impl ::std::fmt::Display for HlsMode {
         match self {
             HlsMode::Live => write!(f, "LIVE"),
             HlsMode::Vod => write!(f, "VOD"),
-            HlsMode::Unknown(value) => write!(f, "{}", value),
+            HlsMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

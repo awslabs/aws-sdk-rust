@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TriggerResourceUpdateOn {
         match self {
             TriggerResourceUpdateOn::AnyChange => write!(f, "ANY_CHANGE"),
             TriggerResourceUpdateOn::FileChange => write!(f, "FILE_CHANGE"),
-            TriggerResourceUpdateOn::Unknown(value) => write!(f, "{}", value),
+            TriggerResourceUpdateOn::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

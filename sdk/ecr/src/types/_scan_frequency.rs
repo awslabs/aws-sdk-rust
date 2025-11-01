@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ScanFrequency {
             ScanFrequency::ContinuousScan => write!(f, "CONTINUOUS_SCAN"),
             ScanFrequency::Manual => write!(f, "MANUAL"),
             ScanFrequency::ScanOnPush => write!(f, "SCAN_ON_PUSH"),
-            ScanFrequency::Unknown(value) => write!(f, "{}", value),
+            ScanFrequency::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

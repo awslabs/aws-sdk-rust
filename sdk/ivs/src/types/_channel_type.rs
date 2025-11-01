@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ChannelType {
             ChannelType::AdvancedSdChannelType => write!(f, "ADVANCED_SD"),
             ChannelType::BasicChannelType => write!(f, "BASIC"),
             ChannelType::StandardChannelType => write!(f, "STANDARD"),
-            ChannelType::Unknown(value) => write!(f, "{}", value),
+            ChannelType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

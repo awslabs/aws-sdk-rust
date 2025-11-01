@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ReplicationDirection {
         match self {
             ReplicationDirection::Failback => write!(f, "FAILBACK"),
             ReplicationDirection::Failover => write!(f, "FAILOVER"),
-            ReplicationDirection::Unknown(value) => write!(f, "{}", value),
+            ReplicationDirection::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

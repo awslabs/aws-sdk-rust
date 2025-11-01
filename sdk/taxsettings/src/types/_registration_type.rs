@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RegistrationType {
         match self {
             RegistrationType::IntraEu => write!(f, "Intra-EU"),
             RegistrationType::Local => write!(f, "Local"),
-            RegistrationType::Unknown(value) => write!(f, "{}", value),
+            RegistrationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

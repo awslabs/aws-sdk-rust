@@ -96,7 +96,7 @@ impl ::std::fmt::Display for SceneErrorCode {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             SceneErrorCode::MatterportError => write!(f, "MATTERPORT_ERROR"),
-            SceneErrorCode::Unknown(value) => write!(f, "{}", value),
+            SceneErrorCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

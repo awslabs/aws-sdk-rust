@@ -114,7 +114,7 @@ impl ::std::fmt::Display for AttachmentStatus {
             AttachmentStatus::UploadComplete => write!(f, "UPLOAD_COMPLETE"),
             AttachmentStatus::UploadFailed => write!(f, "UPLOAD_FAILED"),
             AttachmentStatus::UploadInProgress => write!(f, "UPLOAD_IN_PROGRESS"),
-            AttachmentStatus::Unknown(value) => write!(f, "{}", value),
+            AttachmentStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

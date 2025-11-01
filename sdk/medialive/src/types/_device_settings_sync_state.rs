@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DeviceSettingsSyncState {
         match self {
             DeviceSettingsSyncState::Synced => write!(f, "SYNCED"),
             DeviceSettingsSyncState::Syncing => write!(f, "SYNCING"),
-            DeviceSettingsSyncState::Unknown(value) => write!(f, "{}", value),
+            DeviceSettingsSyncState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

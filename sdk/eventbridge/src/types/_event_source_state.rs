@@ -108,7 +108,7 @@ impl ::std::fmt::Display for EventSourceState {
             EventSourceState::Active => write!(f, "ACTIVE"),
             EventSourceState::Deleted => write!(f, "DELETED"),
             EventSourceState::Pending => write!(f, "PENDING"),
-            EventSourceState::Unknown(value) => write!(f, "{}", value),
+            EventSourceState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

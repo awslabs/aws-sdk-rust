@@ -114,7 +114,7 @@ impl ::std::fmt::Display for SseStatus {
             SseStatus::Disabling => write!(f, "DISABLING"),
             SseStatus::Enabled => write!(f, "ENABLED"),
             SseStatus::Enabling => write!(f, "ENABLING"),
-            SseStatus::Unknown(value) => write!(f, "{}", value),
+            SseStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

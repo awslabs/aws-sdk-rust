@@ -175,16 +175,14 @@ pub fn de_create_cache_parameter_group(
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateCacheParameterGroupResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected CreateCacheParameterGroupResponse got {:?}",
-            start_el
+            "invalid root, expected CreateCacheParameterGroupResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("CreateCacheParameterGroupResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected CreateCacheParameterGroupResult got {:?}",
-                start_el
+                "invalid result, expected CreateCacheParameterGroupResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

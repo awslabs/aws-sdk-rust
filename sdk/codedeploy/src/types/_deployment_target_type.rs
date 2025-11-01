@@ -114,7 +114,7 @@ impl ::std::fmt::Display for DeploymentTargetType {
             DeploymentTargetType::EcsTarget => write!(f, "ECSTarget"),
             DeploymentTargetType::InstanceTarget => write!(f, "InstanceTarget"),
             DeploymentTargetType::LambdaTarget => write!(f, "LambdaTarget"),
-            DeploymentTargetType::Unknown(value) => write!(f, "{}", value),
+            DeploymentTargetType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

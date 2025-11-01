@@ -114,7 +114,7 @@ impl ::std::fmt::Display for OrientationCorrection {
             OrientationCorrection::Rotate180 => write!(f, "ROTATE_180"),
             OrientationCorrection::Rotate270 => write!(f, "ROTATE_270"),
             OrientationCorrection::Rotate90 => write!(f, "ROTATE_90"),
-            OrientationCorrection::Unknown(value) => write!(f, "{}", value),
+            OrientationCorrection::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

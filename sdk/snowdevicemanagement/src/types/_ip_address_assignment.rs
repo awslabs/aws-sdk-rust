@@ -102,7 +102,7 @@ impl ::std::fmt::Display for IpAddressAssignment {
         match self {
             IpAddressAssignment::Dhcp => write!(f, "DHCP"),
             IpAddressAssignment::Static => write!(f, "STATIC"),
-            IpAddressAssignment::Unknown(value) => write!(f, "{}", value),
+            IpAddressAssignment::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

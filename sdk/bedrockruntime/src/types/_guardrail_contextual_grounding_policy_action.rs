@@ -102,7 +102,7 @@ impl ::std::fmt::Display for GuardrailContextualGroundingPolicyAction {
         match self {
             GuardrailContextualGroundingPolicyAction::Blocked => write!(f, "BLOCKED"),
             GuardrailContextualGroundingPolicyAction::None => write!(f, "NONE"),
-            GuardrailContextualGroundingPolicyAction::Unknown(value) => write!(f, "{}", value),
+            GuardrailContextualGroundingPolicyAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

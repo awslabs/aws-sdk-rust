@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ComponentUpdateType {
             ComponentUpdateType::Create => write!(f, "CREATE"),
             ComponentUpdateType::Delete => write!(f, "DELETE"),
             ComponentUpdateType::Update => write!(f, "UPDATE"),
-            ComponentUpdateType::Unknown(value) => write!(f, "{}", value),
+            ComponentUpdateType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

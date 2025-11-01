@@ -114,7 +114,7 @@ impl ::std::fmt::Display for EventType {
             EventType::OriginResponse => write!(f, "origin-response"),
             EventType::ViewerRequest => write!(f, "viewer-request"),
             EventType::ViewerResponse => write!(f, "viewer-response"),
-            EventType::Unknown(value) => write!(f, "{}", value),
+            EventType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

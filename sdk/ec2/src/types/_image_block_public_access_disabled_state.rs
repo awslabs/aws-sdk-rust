@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ImageBlockPublicAccessDisabledState {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ImageBlockPublicAccessDisabledState::Unblocked => write!(f, "unblocked"),
-            ImageBlockPublicAccessDisabledState::Unknown(value) => write!(f, "{}", value),
+            ImageBlockPublicAccessDisabledState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

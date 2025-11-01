@@ -121,7 +121,7 @@ impl ::std::fmt::Display for WorkflowState {
             WorkflowState::InProgress => write!(f, "IN_PROGRESS"),
             WorkflowState::New => write!(f, "NEW"),
             WorkflowState::Resolved => write!(f, "RESOLVED"),
-            WorkflowState::Unknown(value) => write!(f, "{}", value),
+            WorkflowState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

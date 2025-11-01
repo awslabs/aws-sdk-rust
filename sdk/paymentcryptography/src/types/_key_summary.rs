@@ -16,8 +16,8 @@ pub struct KeySummary {
     pub exportable: bool,
     /// <p>Specifies whether the key is enabled.</p>
     pub enabled: bool,
-    /// <p>Indicates whether this key is a multi-region key and its role in the multi-region key hierarchy.</p>
-    /// <p>Multi-region keys allow the same key material to be used across multiple Amazon Web Services Regions. This field specifies whether the key is a primary key (which can be replicated to other regions) or a replica key (which is a copy of a primary key in another region).</p>
+    /// <p>Indicates whether this key is a Multi-Region key and its role in the Multi-Region key hierarchy.</p>
+    /// <p>Multi-Region replication keys allow the same key material to be used across multiple Amazon Web Services Regions. This field specifies whether the key is a Primary Region key (PRK) (which can be replicated to other Amazon Web Services Regions) or a Replica Region key (RRK) (which is a copy of a PRK in another Region). For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-multi-region-replication.html">Multi-Region key replication</a>.</p>
     pub multi_region_key_type: ::std::option::Option<crate::types::MultiRegionKeyType>,
     /// <p>An Amazon Web Services Region identifier in the standard format (e.g., <code>us-east-1</code>, <code>eu-west-1</code>).</p>
     /// <p>Used to specify regions for key replication operations. The region must be a valid Amazon Web Services Region where Amazon Web Services Payment Cryptography is available.</p>
@@ -50,8 +50,8 @@ impl KeySummary {
     pub fn enabled(&self) -> bool {
         self.enabled
     }
-    /// <p>Indicates whether this key is a multi-region key and its role in the multi-region key hierarchy.</p>
-    /// <p>Multi-region keys allow the same key material to be used across multiple Amazon Web Services Regions. This field specifies whether the key is a primary key (which can be replicated to other regions) or a replica key (which is a copy of a primary key in another region).</p>
+    /// <p>Indicates whether this key is a Multi-Region key and its role in the Multi-Region key hierarchy.</p>
+    /// <p>Multi-Region replication keys allow the same key material to be used across multiple Amazon Web Services Regions. This field specifies whether the key is a Primary Region key (PRK) (which can be replicated to other Amazon Web Services Regions) or a Replica Region key (RRK) (which is a copy of a PRK in another Region). For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-multi-region-replication.html">Multi-Region key replication</a>.</p>
     pub fn multi_region_key_type(&self) -> ::std::option::Option<&crate::types::MultiRegionKeyType> {
         self.multi_region_key_type.as_ref()
     }
@@ -172,20 +172,20 @@ impl KeySummaryBuilder {
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
         &self.enabled
     }
-    /// <p>Indicates whether this key is a multi-region key and its role in the multi-region key hierarchy.</p>
-    /// <p>Multi-region keys allow the same key material to be used across multiple Amazon Web Services Regions. This field specifies whether the key is a primary key (which can be replicated to other regions) or a replica key (which is a copy of a primary key in another region).</p>
+    /// <p>Indicates whether this key is a Multi-Region key and its role in the Multi-Region key hierarchy.</p>
+    /// <p>Multi-Region replication keys allow the same key material to be used across multiple Amazon Web Services Regions. This field specifies whether the key is a Primary Region key (PRK) (which can be replicated to other Amazon Web Services Regions) or a Replica Region key (RRK) (which is a copy of a PRK in another Region). For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-multi-region-replication.html">Multi-Region key replication</a>.</p>
     pub fn multi_region_key_type(mut self, input: crate::types::MultiRegionKeyType) -> Self {
         self.multi_region_key_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether this key is a multi-region key and its role in the multi-region key hierarchy.</p>
-    /// <p>Multi-region keys allow the same key material to be used across multiple Amazon Web Services Regions. This field specifies whether the key is a primary key (which can be replicated to other regions) or a replica key (which is a copy of a primary key in another region).</p>
+    /// <p>Indicates whether this key is a Multi-Region key and its role in the Multi-Region key hierarchy.</p>
+    /// <p>Multi-Region replication keys allow the same key material to be used across multiple Amazon Web Services Regions. This field specifies whether the key is a Primary Region key (PRK) (which can be replicated to other Amazon Web Services Regions) or a Replica Region key (RRK) (which is a copy of a PRK in another Region). For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-multi-region-replication.html">Multi-Region key replication</a>.</p>
     pub fn set_multi_region_key_type(mut self, input: ::std::option::Option<crate::types::MultiRegionKeyType>) -> Self {
         self.multi_region_key_type = input;
         self
     }
-    /// <p>Indicates whether this key is a multi-region key and its role in the multi-region key hierarchy.</p>
-    /// <p>Multi-region keys allow the same key material to be used across multiple Amazon Web Services Regions. This field specifies whether the key is a primary key (which can be replicated to other regions) or a replica key (which is a copy of a primary key in another region).</p>
+    /// <p>Indicates whether this key is a Multi-Region key and its role in the Multi-Region key hierarchy.</p>
+    /// <p>Multi-Region replication keys allow the same key material to be used across multiple Amazon Web Services Regions. This field specifies whether the key is a Primary Region key (PRK) (which can be replicated to other Amazon Web Services Regions) or a Replica Region key (RRK) (which is a copy of a PRK in another Region). For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-multi-region-replication.html">Multi-Region key replication</a>.</p>
     pub fn get_multi_region_key_type(&self) -> &::std::option::Option<crate::types::MultiRegionKeyType> {
         &self.multi_region_key_type
     }

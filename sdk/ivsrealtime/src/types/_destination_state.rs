@@ -126,7 +126,7 @@ impl ::std::fmt::Display for DestinationState {
             DestinationState::Starting => write!(f, "STARTING"),
             DestinationState::Stopped => write!(f, "STOPPED"),
             DestinationState::Stopping => write!(f, "STOPPING"),
-            DestinationState::Unknown(value) => write!(f, "{}", value),
+            DestinationState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

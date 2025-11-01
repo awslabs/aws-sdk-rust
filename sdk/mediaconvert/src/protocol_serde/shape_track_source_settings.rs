@@ -3,10 +3,16 @@ pub fn ser_track_source_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TrackSourceSettings,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.track_number {
-        object.key("trackNumber").number(
+    if let Some(var_1) = &input.stream_number {
+        object.key("streamNumber").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_1).into()),
+        );
+    }
+    if let Some(var_2) = &input.track_number {
+        object.key("trackNumber").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
     Ok(())
@@ -27,6 +33,13 @@ where
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "streamNumber" => {
+                            builder = builder.set_stream_number(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
                         "trackNumber" => {
                             builder = builder.set_track_number(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
@@ -38,8 +51,7 @@ where
                     },
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                            "expected object key or end object, found: {:?}",
-                            other
+                            "expected object key or end object, found: {other:?}"
                         )))
                     }
                 }

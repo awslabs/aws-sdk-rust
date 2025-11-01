@@ -102,7 +102,7 @@ impl ::std::fmt::Display for EvaluationStatus {
         match self {
             EvaluationStatus::Draft => write!(f, "DRAFT"),
             EvaluationStatus::Submitted => write!(f, "SUBMITTED"),
-            EvaluationStatus::Unknown(value) => write!(f, "{}", value),
+            EvaluationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for WebhookScopeType {
             WebhookScopeType::GithubGlobal => write!(f, "GITHUB_GLOBAL"),
             WebhookScopeType::GithubOrganization => write!(f, "GITHUB_ORGANIZATION"),
             WebhookScopeType::GitlabGroup => write!(f, "GITLAB_GROUP"),
-            WebhookScopeType::Unknown(value) => write!(f, "{}", value),
+            WebhookScopeType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

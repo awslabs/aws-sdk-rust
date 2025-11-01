@@ -102,7 +102,7 @@ impl ::std::fmt::Display for JoinOperator {
         match self {
             JoinOperator::And => write!(f, "AND"),
             JoinOperator::Or => write!(f, "OR"),
-            JoinOperator::Unknown(value) => write!(f, "{}", value),
+            JoinOperator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

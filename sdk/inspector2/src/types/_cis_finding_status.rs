@@ -108,7 +108,7 @@ impl ::std::fmt::Display for CisFindingStatus {
             CisFindingStatus::Failed => write!(f, "FAILED"),
             CisFindingStatus::Passed => write!(f, "PASSED"),
             CisFindingStatus::Skipped => write!(f, "SKIPPED"),
-            CisFindingStatus::Unknown(value) => write!(f, "{}", value),
+            CisFindingStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

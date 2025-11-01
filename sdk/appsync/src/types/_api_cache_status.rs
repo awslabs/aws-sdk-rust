@@ -120,7 +120,7 @@ impl ::std::fmt::Display for ApiCacheStatus {
             ApiCacheStatus::Deleting => write!(f, "DELETING"),
             ApiCacheStatus::Failed => write!(f, "FAILED"),
             ApiCacheStatus::Modifying => write!(f, "MODIFYING"),
-            ApiCacheStatus::Unknown(value) => write!(f, "{}", value),
+            ApiCacheStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

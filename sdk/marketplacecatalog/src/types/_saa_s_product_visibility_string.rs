@@ -114,7 +114,7 @@ impl ::std::fmt::Display for SaaSProductVisibilityString {
             SaaSProductVisibilityString::Limited => write!(f, "Limited"),
             SaaSProductVisibilityString::Public => write!(f, "Public"),
             SaaSProductVisibilityString::Restricted => write!(f, "Restricted"),
-            SaaSProductVisibilityString::Unknown(value) => write!(f, "{}", value),
+            SaaSProductVisibilityString::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

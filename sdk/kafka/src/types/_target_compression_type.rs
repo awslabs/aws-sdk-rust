@@ -120,7 +120,7 @@ impl ::std::fmt::Display for TargetCompressionType {
             TargetCompressionType::None => write!(f, "NONE"),
             TargetCompressionType::Snappy => write!(f, "SNAPPY"),
             TargetCompressionType::Zstd => write!(f, "ZSTD"),
-            TargetCompressionType::Unknown(value) => write!(f, "{}", value),
+            TargetCompressionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

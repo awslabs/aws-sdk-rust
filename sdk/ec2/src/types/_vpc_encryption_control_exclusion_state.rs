@@ -114,7 +114,7 @@ impl ::std::fmt::Display for VpcEncryptionControlExclusionState {
             VpcEncryptionControlExclusionState::Disabling => write!(f, "disabling"),
             VpcEncryptionControlExclusionState::Enabled => write!(f, "enabled"),
             VpcEncryptionControlExclusionState::Enabling => write!(f, "enabling"),
-            VpcEncryptionControlExclusionState::Unknown(value) => write!(f, "{}", value),
+            VpcEncryptionControlExclusionState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

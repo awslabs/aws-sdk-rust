@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Vp9FramerateControl {
         match self {
             Vp9FramerateControl::InitializeFromSource => write!(f, "INITIALIZE_FROM_SOURCE"),
             Vp9FramerateControl::Specified => write!(f, "SPECIFIED"),
-            Vp9FramerateControl::Unknown(value) => write!(f, "{}", value),
+            Vp9FramerateControl::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

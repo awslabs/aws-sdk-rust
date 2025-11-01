@@ -114,7 +114,7 @@ impl ::std::fmt::Display for FeatureGroupSortBy {
             FeatureGroupSortBy::FeatureGroupStatus => write!(f, "FeatureGroupStatus"),
             FeatureGroupSortBy::Name => write!(f, "Name"),
             FeatureGroupSortBy::OfflineStoreStatus => write!(f, "OfflineStoreStatus"),
-            FeatureGroupSortBy::Unknown(value) => write!(f, "{}", value),
+            FeatureGroupSortBy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for EndpointStatusReason {
         match self {
             EndpointStatusReason::InvalidDeviceToken => write!(f, "INVALID_DEVICE_TOKEN"),
             EndpointStatusReason::InvalidPinpointArn => write!(f, "INVALID_PINPOINT_ARN"),
-            EndpointStatusReason::Unknown(value) => write!(f, "{}", value),
+            EndpointStatusReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

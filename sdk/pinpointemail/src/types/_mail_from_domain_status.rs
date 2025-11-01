@@ -136,7 +136,7 @@ impl ::std::fmt::Display for MailFromDomainStatus {
             MailFromDomainStatus::Pending => write!(f, "PENDING"),
             MailFromDomainStatus::Success => write!(f, "SUCCESS"),
             MailFromDomainStatus::TemporaryFailure => write!(f, "TEMPORARY_FAILURE"),
-            MailFromDomainStatus::Unknown(value) => write!(f, "{}", value),
+            MailFromDomainStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

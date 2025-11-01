@@ -108,7 +108,7 @@ impl ::std::fmt::Display for WebCrawlerMode {
             WebCrawlerMode::Everything => write!(f, "EVERYTHING"),
             WebCrawlerMode::HostOnly => write!(f, "HOST_ONLY"),
             WebCrawlerMode::Subdomains => write!(f, "SUBDOMAINS"),
-            WebCrawlerMode::Unknown(value) => write!(f, "{}", value),
+            WebCrawlerMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

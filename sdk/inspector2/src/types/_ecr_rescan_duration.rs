@@ -126,7 +126,7 @@ impl ::std::fmt::Display for EcrRescanDuration {
             EcrRescanDuration::Days60 => write!(f, "DAYS_60"),
             EcrRescanDuration::Days90 => write!(f, "DAYS_90"),
             EcrRescanDuration::Lifetime => write!(f, "LIFETIME"),
-            EcrRescanDuration::Unknown(value) => write!(f, "{}", value),
+            EcrRescanDuration::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

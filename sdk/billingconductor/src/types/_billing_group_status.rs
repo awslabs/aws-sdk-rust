@@ -102,7 +102,7 @@ impl ::std::fmt::Display for BillingGroupStatus {
         match self {
             BillingGroupStatus::Active => write!(f, "ACTIVE"),
             BillingGroupStatus::PrimaryAccountMissing => write!(f, "PRIMARY_ACCOUNT_MISSING"),
-            BillingGroupStatus::Unknown(value) => write!(f, "{}", value),
+            BillingGroupStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

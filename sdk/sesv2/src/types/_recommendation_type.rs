@@ -138,7 +138,7 @@ impl ::std::fmt::Display for RecommendationType {
             RecommendationType::Feedback3P => write!(f, "FEEDBACK_3P"),
             RecommendationType::IpListing => write!(f, "IP_LISTING"),
             RecommendationType::Spf => write!(f, "SPF"),
-            RecommendationType::Unknown(value) => write!(f, "{}", value),
+            RecommendationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -182,7 +182,7 @@ impl ::std::fmt::Display for ContactStatus {
             ContactStatus::Prepass => write!(f, "PREPASS"),
             ContactStatus::Scheduled => write!(f, "SCHEDULED"),
             ContactStatus::Scheduling => write!(f, "SCHEDULING"),
-            ContactStatus::Unknown(value) => write!(f, "{}", value),
+            ContactStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

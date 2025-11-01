@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ContactLanguage {
         match self {
             ContactLanguage::En => write!(f, "EN"),
             ContactLanguage::Ja => write!(f, "JA"),
-            ContactLanguage::Unknown(value) => write!(f, "{}", value),
+            ContactLanguage::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

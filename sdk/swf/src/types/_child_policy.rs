@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ChildPolicy {
             ChildPolicy::Abandon => write!(f, "ABANDON"),
             ChildPolicy::RequestCancel => write!(f, "REQUEST_CANCEL"),
             ChildPolicy::Terminate => write!(f, "TERMINATE"),
-            ChildPolicy::Unknown(value) => write!(f, "{}", value),
+            ChildPolicy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

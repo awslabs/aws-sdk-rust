@@ -108,7 +108,7 @@ impl ::std::fmt::Display for InvalidParameterProblem {
             InvalidParameterProblem::Corrupted => write!(f, "Corrupted"),
             InvalidParameterProblem::Expired => write!(f, "Expired"),
             InvalidParameterProblem::PollIntervalNotSatisfied => write!(f, "PollIntervalNotSatisfied"),
-            InvalidParameterProblem::Unknown(value) => write!(f, "{}", value),
+            InvalidParameterProblem::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

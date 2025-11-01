@@ -120,7 +120,7 @@ impl ::std::fmt::Display for DatastoreStatus {
             DatastoreStatus::Creating => write!(f, "CREATING"),
             DatastoreStatus::Deleted => write!(f, "DELETED"),
             DatastoreStatus::Deleting => write!(f, "DELETING"),
-            DatastoreStatus::Unknown(value) => write!(f, "{}", value),
+            DatastoreStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

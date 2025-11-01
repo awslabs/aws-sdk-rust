@@ -102,7 +102,7 @@ impl ::std::fmt::Display for LambdaFunctionRecommendationFilterName {
         match self {
             LambdaFunctionRecommendationFilterName::Finding => write!(f, "Finding"),
             LambdaFunctionRecommendationFilterName::FindingReasonCode => write!(f, "FindingReasonCode"),
-            LambdaFunctionRecommendationFilterName::Unknown(value) => write!(f, "{}", value),
+            LambdaFunctionRecommendationFilterName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

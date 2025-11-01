@@ -108,7 +108,7 @@ impl ::std::fmt::Display for VendorName {
             VendorName::Github => write!(f, "GitHub"),
             VendorName::Gitlab => write!(f, "GitLab"),
             VendorName::NativeS3 => write!(f, "NativeS3"),
-            VendorName::Unknown(value) => write!(f, "{}", value),
+            VendorName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

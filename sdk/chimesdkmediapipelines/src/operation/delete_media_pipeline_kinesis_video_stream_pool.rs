@@ -187,6 +187,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeleteMediaP
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::delete_media_pipeline_kinesis_video_stream_pool::DeleteMediaPipelineKinesisVideoStreamPoolInput,
                 output: &mut ::std::string::String,

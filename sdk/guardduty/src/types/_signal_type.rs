@@ -140,7 +140,7 @@ impl ::std::fmt::Display for SignalType {
             SignalType::FlowLogs => write!(f, "FLOW_LOGS"),
             SignalType::RuntimeMonitoring => write!(f, "RUNTIME_MONITORING"),
             SignalType::S3DataEvents => write!(f, "S3_DATA_EVENTS"),
-            SignalType::Unknown(value) => write!(f, "{}", value),
+            SignalType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

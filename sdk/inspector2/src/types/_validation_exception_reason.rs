@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ValidationExceptionReason {
             ValidationExceptionReason::CannotParse => write!(f, "CANNOT_PARSE"),
             ValidationExceptionReason::FieldValidationFailed => write!(f, "FIELD_VALIDATION_FAILED"),
             ValidationExceptionReason::Other => write!(f, "OTHER"),
-            ValidationExceptionReason::Unknown(value) => write!(f, "{}", value),
+            ValidationExceptionReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

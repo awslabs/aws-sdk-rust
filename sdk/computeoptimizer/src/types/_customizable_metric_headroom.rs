@@ -114,7 +114,7 @@ impl ::std::fmt::Display for CustomizableMetricHeadroom {
             CustomizableMetricHeadroom::Percent10 => write!(f, "PERCENT_10"),
             CustomizableMetricHeadroom::Percent20 => write!(f, "PERCENT_20"),
             CustomizableMetricHeadroom::Percent30 => write!(f, "PERCENT_30"),
-            CustomizableMetricHeadroom::Unknown(value) => write!(f, "{}", value),
+            CustomizableMetricHeadroom::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for UtteranceContentType {
             UtteranceContentType::ImageResponseCard => write!(f, "ImageResponseCard"),
             UtteranceContentType::PlainText => write!(f, "PlainText"),
             UtteranceContentType::Ssml => write!(f, "SSML"),
-            UtteranceContentType::Unknown(value) => write!(f, "{}", value),
+            UtteranceContentType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ContentModerationAggregateBy {
         match self {
             ContentModerationAggregateBy::Segments => write!(f, "SEGMENTS"),
             ContentModerationAggregateBy::Timestamps => write!(f, "TIMESTAMPS"),
-            ContentModerationAggregateBy::Unknown(value) => write!(f, "{}", value),
+            ContentModerationAggregateBy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

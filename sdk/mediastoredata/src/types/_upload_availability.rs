@@ -102,7 +102,7 @@ impl ::std::fmt::Display for UploadAvailability {
         match self {
             UploadAvailability::Standard => write!(f, "STANDARD"),
             UploadAvailability::Streaming => write!(f, "STREAMING"),
-            UploadAvailability::Unknown(value) => write!(f, "{}", value),
+            UploadAvailability::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

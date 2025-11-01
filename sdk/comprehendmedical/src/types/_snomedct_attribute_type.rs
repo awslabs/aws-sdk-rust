@@ -126,7 +126,7 @@ impl ::std::fmt::Display for SnomedctAttributeType {
             SnomedctAttributeType::SystemOrganSite => write!(f, "SYSTEM_ORGAN_SITE"),
             SnomedctAttributeType::TestUnit => write!(f, "TEST_UNIT"),
             SnomedctAttributeType::TestValue => write!(f, "TEST_VALUE"),
-            SnomedctAttributeType::Unknown(value) => write!(f, "{}", value),
+            SnomedctAttributeType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

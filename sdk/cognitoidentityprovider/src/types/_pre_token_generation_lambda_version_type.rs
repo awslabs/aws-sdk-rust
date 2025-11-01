@@ -108,7 +108,7 @@ impl ::std::fmt::Display for PreTokenGenerationLambdaVersionType {
             PreTokenGenerationLambdaVersionType::V10 => write!(f, "V1_0"),
             PreTokenGenerationLambdaVersionType::V20 => write!(f, "V2_0"),
             PreTokenGenerationLambdaVersionType::V30 => write!(f, "V3_0"),
-            PreTokenGenerationLambdaVersionType::Unknown(value) => write!(f, "{}", value),
+            PreTokenGenerationLambdaVersionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

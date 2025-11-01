@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CheckoutType {
         match self {
             CheckoutType::Perpetual => write!(f, "PERPETUAL"),
             CheckoutType::Provisional => write!(f, "PROVISIONAL"),
-            CheckoutType::Unknown(value) => write!(f, "{}", value),
+            CheckoutType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TransferType {
         match self {
             TransferType::Standard => write!(f, "standard"),
             TransferType::TimeBased => write!(f, "time-based"),
-            TransferType::Unknown(value) => write!(f, "{}", value),
+            TransferType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

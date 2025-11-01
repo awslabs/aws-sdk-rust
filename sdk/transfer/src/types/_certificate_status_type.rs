@@ -108,7 +108,7 @@ impl ::std::fmt::Display for CertificateStatusType {
             CertificateStatusType::Active => write!(f, "ACTIVE"),
             CertificateStatusType::Inactive => write!(f, "INACTIVE"),
             CertificateStatusType::PendingRotation => write!(f, "PENDING_ROTATION"),
-            CertificateStatusType::Unknown(value) => write!(f, "{}", value),
+            CertificateStatusType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

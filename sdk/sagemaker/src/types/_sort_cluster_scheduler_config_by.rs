@@ -108,7 +108,7 @@ impl ::std::fmt::Display for SortClusterSchedulerConfigBy {
             SortClusterSchedulerConfigBy::CreationTime => write!(f, "CreationTime"),
             SortClusterSchedulerConfigBy::Name => write!(f, "Name"),
             SortClusterSchedulerConfigBy::Status => write!(f, "Status"),
-            SortClusterSchedulerConfigBy::Unknown(value) => write!(f, "{}", value),
+            SortClusterSchedulerConfigBy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

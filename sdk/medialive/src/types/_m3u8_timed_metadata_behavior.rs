@@ -102,7 +102,7 @@ impl ::std::fmt::Display for M3u8TimedMetadataBehavior {
         match self {
             M3u8TimedMetadataBehavior::NoPassthrough => write!(f, "NO_PASSTHROUGH"),
             M3u8TimedMetadataBehavior::Passthrough => write!(f, "PASSTHROUGH"),
-            M3u8TimedMetadataBehavior::Unknown(value) => write!(f, "{}", value),
+            M3u8TimedMetadataBehavior::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

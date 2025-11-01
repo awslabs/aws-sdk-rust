@@ -140,7 +140,7 @@ impl ::std::fmt::Display for SnomedctRelationshipType {
             SnomedctRelationshipType::TestUnit => write!(f, "TEST_UNIT"),
             SnomedctRelationshipType::TestUnits => write!(f, "TEST_UNITS"),
             SnomedctRelationshipType::TestValue => write!(f, "TEST_VALUE"),
-            SnomedctRelationshipType::Unknown(value) => write!(f, "{}", value),
+            SnomedctRelationshipType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

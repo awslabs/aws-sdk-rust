@@ -102,7 +102,7 @@ impl ::std::fmt::Display for UpdateNodeStateShape {
         match self {
             UpdateNodeStateShape::Active => write!(f, "ACTIVE"),
             UpdateNodeStateShape::Draining => write!(f, "DRAINING"),
-            UpdateNodeStateShape::Unknown(value) => write!(f, "{}", value),
+            UpdateNodeStateShape::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

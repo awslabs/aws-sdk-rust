@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ResolutionMethod {
             ResolutionMethod::Automatic => write!(f, "AUTOMATIC"),
             ResolutionMethod::Manual => write!(f, "MANUAL"),
             ResolutionMethod::Unresolved => write!(f, "UNRESOLVED"),
-            ResolutionMethod::Unknown(value) => write!(f, "{}", value),
+            ResolutionMethod::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

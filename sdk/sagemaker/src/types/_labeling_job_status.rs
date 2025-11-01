@@ -126,7 +126,7 @@ impl ::std::fmt::Display for LabelingJobStatus {
             LabelingJobStatus::Initializing => write!(f, "Initializing"),
             LabelingJobStatus::Stopped => write!(f, "Stopped"),
             LabelingJobStatus::Stopping => write!(f, "Stopping"),
-            LabelingJobStatus::Unknown(value) => write!(f, "{}", value),
+            LabelingJobStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -96,7 +96,7 @@ impl ::std::fmt::Display for MetadataOperation {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             MetadataOperation::Create => write!(f, "CREATE"),
-            MetadataOperation::Unknown(value) => write!(f, "{}", value),
+            MetadataOperation::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

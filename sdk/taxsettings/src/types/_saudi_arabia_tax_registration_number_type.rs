@@ -108,7 +108,7 @@ impl ::std::fmt::Display for SaudiArabiaTaxRegistrationNumberType {
             SaudiArabiaTaxRegistrationNumberType::CommercialRegistrationNumber => write!(f, "CommercialRegistrationNumber"),
             SaudiArabiaTaxRegistrationNumberType::TaxIdentificationNumber => write!(f, "TaxIdentificationNumber"),
             SaudiArabiaTaxRegistrationNumberType::TaxRegistrationNumber => write!(f, "TaxRegistrationNumber"),
-            SaudiArabiaTaxRegistrationNumberType::Unknown(value) => write!(f, "{}", value),
+            SaudiArabiaTaxRegistrationNumberType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for StopType {
         match self {
             StopType::Cancel => write!(f, "Cancel"),
             StopType::Complete => write!(f, "Complete"),
-            StopType::Unknown(value) => write!(f, "{}", value),
+            StopType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

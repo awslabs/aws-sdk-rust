@@ -147,7 +147,7 @@ impl ::std::fmt::Display for DeploymentCreator {
             DeploymentCreator::AutoscalingTermination => write!(f, "autoscalingTermination"),
             DeploymentCreator::CodeDeployRollback => write!(f, "codeDeployRollback"),
             DeploymentCreator::User => write!(f, "user"),
-            DeploymentCreator::Unknown(value) => write!(f, "{}", value),
+            DeploymentCreator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

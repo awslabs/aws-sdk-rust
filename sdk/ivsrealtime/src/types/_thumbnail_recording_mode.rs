@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ThumbnailRecordingMode {
         match self {
             ThumbnailRecordingMode::Disabled => write!(f, "DISABLED"),
             ThumbnailRecordingMode::Interval => write!(f, "INTERVAL"),
-            ThumbnailRecordingMode::Unknown(value) => write!(f, "{}", value),
+            ThumbnailRecordingMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

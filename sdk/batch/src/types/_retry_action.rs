@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RetryAction {
         match self {
             RetryAction::Exit => write!(f, "EXIT"),
             RetryAction::Retry => write!(f, "RETRY"),
-            RetryAction::Unknown(value) => write!(f, "{}", value),
+            RetryAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

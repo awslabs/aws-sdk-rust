@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ReplicationEndpointTypeValue {
         match self {
             ReplicationEndpointTypeValue::Source => write!(f, "source"),
             ReplicationEndpointTypeValue::Target => write!(f, "target"),
-            ReplicationEndpointTypeValue::Unknown(value) => write!(f, "{}", value),
+            ReplicationEndpointTypeValue::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

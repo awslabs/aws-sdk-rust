@@ -110,7 +110,7 @@ impl ::std::fmt::Display for CsvHeaderOption {
             CsvHeaderOption::Absent => write!(f, "ABSENT"),
             CsvHeaderOption::Present => write!(f, "PRESENT"),
             CsvHeaderOption::UnknownValue => write!(f, "UNKNOWN"),
-            CsvHeaderOption::Unknown(value) => write!(f, "{}", value),
+            CsvHeaderOption::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -96,7 +96,7 @@ impl ::std::fmt::Display for WorkflowExecutionTimeoutType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             WorkflowExecutionTimeoutType::StartToClose => write!(f, "START_TO_CLOSE"),
-            WorkflowExecutionTimeoutType::Unknown(value) => write!(f, "{}", value),
+            WorkflowExecutionTimeoutType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

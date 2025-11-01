@@ -145,7 +145,7 @@ impl ::std::fmt::Display for Statistic {
             Statistic::MaxOccurrence => write!(f, "MAX_OCCURRENCE"),
             Statistic::Minimum => write!(f, "MINIMUM"),
             Statistic::Sum => write!(f, "SUM"),
-            Statistic::Unknown(value) => write!(f, "{}", value),
+            Statistic::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

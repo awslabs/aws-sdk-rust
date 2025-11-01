@@ -108,7 +108,7 @@ impl ::std::fmt::Display for WorkflowRunMode {
             WorkflowRunMode::Parallel => write!(f, "PARALLEL"),
             WorkflowRunMode::Queued => write!(f, "QUEUED"),
             WorkflowRunMode::Superseded => write!(f, "SUPERSEDED"),
-            WorkflowRunMode::Unknown(value) => write!(f, "{}", value),
+            WorkflowRunMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

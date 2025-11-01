@@ -140,7 +140,7 @@ impl ::std::fmt::Display for ComparisonOperator {
             ComparisonOperator::LessThanLowerThreshold => write!(f, "LessThanLowerThreshold"),
             ComparisonOperator::LessThanOrEqualToThreshold => write!(f, "LessThanOrEqualToThreshold"),
             ComparisonOperator::LessThanThreshold => write!(f, "LessThanThreshold"),
-            ComparisonOperator::Unknown(value) => write!(f, "{}", value),
+            ComparisonOperator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AssociationFilterOperatorType {
             AssociationFilterOperatorType::Equal => write!(f, "EQUAL"),
             AssociationFilterOperatorType::GreaterThan => write!(f, "GREATER_THAN"),
             AssociationFilterOperatorType::LessThan => write!(f, "LESS_THAN"),
-            AssociationFilterOperatorType::Unknown(value) => write!(f, "{}", value),
+            AssociationFilterOperatorType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

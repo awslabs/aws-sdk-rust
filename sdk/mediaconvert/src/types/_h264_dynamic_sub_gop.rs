@@ -102,7 +102,7 @@ impl ::std::fmt::Display for H264DynamicSubGop {
         match self {
             H264DynamicSubGop::Adaptive => write!(f, "ADAPTIVE"),
             H264DynamicSubGop::Static => write!(f, "STATIC"),
-            H264DynamicSubGop::Unknown(value) => write!(f, "{}", value),
+            H264DynamicSubGop::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

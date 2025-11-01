@@ -102,7 +102,7 @@ impl ::std::fmt::Display for IsTrackingServerActive {
         match self {
             IsTrackingServerActive::Active => write!(f, "Active"),
             IsTrackingServerActive::Inactive => write!(f, "Inactive"),
-            IsTrackingServerActive::Unknown(value) => write!(f, "{}", value),
+            IsTrackingServerActive::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

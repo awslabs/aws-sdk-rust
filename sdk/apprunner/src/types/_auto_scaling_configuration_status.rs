@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AutoScalingConfigurationStatus {
         match self {
             AutoScalingConfigurationStatus::Active => write!(f, "ACTIVE"),
             AutoScalingConfigurationStatus::Inactive => write!(f, "INACTIVE"),
-            AutoScalingConfigurationStatus::Unknown(value) => write!(f, "{}", value),
+            AutoScalingConfigurationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

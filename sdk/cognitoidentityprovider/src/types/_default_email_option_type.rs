@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DefaultEmailOptionType {
         match self {
             DefaultEmailOptionType::ConfirmWithCode => write!(f, "CONFIRM_WITH_CODE"),
             DefaultEmailOptionType::ConfirmWithLink => write!(f, "CONFIRM_WITH_LINK"),
-            DefaultEmailOptionType::Unknown(value) => write!(f, "{}", value),
+            DefaultEmailOptionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AppAssessmentScheduleType {
         match self {
             AppAssessmentScheduleType::Daily => write!(f, "Daily"),
             AppAssessmentScheduleType::Disabled => write!(f, "Disabled"),
-            AppAssessmentScheduleType::Unknown(value) => write!(f, "{}", value),
+            AppAssessmentScheduleType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

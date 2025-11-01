@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DeploymentComponentUpdatePolicyAction {
         match self {
             DeploymentComponentUpdatePolicyAction::NotifyComponents => write!(f, "NOTIFY_COMPONENTS"),
             DeploymentComponentUpdatePolicyAction::SkipNotifyComponents => write!(f, "SKIP_NOTIFY_COMPONENTS"),
-            DeploymentComponentUpdatePolicyAction::Unknown(value) => write!(f, "{}", value),
+            DeploymentComponentUpdatePolicyAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

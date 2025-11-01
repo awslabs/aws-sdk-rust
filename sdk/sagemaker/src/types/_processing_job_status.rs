@@ -120,7 +120,7 @@ impl ::std::fmt::Display for ProcessingJobStatus {
             ProcessingJobStatus::InProgress => write!(f, "InProgress"),
             ProcessingJobStatus::Stopped => write!(f, "Stopped"),
             ProcessingJobStatus::Stopping => write!(f, "Stopping"),
-            ProcessingJobStatus::Unknown(value) => write!(f, "{}", value),
+            ProcessingJobStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

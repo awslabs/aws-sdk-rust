@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AuthType {
         match self {
             AuthType::ApiKey => write!(f, "apiKey"),
             AuthType::Oauth2 => write!(f, "oauth2"),
-            AuthType::Unknown(value) => write!(f, "{}", value),
+            AuthType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

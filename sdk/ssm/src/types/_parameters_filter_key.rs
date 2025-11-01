@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ParametersFilterKey {
             ParametersFilterKey::KeyId => write!(f, "KeyId"),
             ParametersFilterKey::Name => write!(f, "Name"),
             ParametersFilterKey::Type => write!(f, "Type"),
-            ParametersFilterKey::Unknown(value) => write!(f, "{}", value),
+            ParametersFilterKey::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ArtifactLocationType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ArtifactLocationType::S3 => write!(f, "S3"),
-            ArtifactLocationType::Unknown(value) => write!(f, "{}", value),
+            ArtifactLocationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

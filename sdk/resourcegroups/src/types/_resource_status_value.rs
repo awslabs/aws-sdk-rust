@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ResourceStatusValue {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ResourceStatusValue::Pending => write!(f, "PENDING"),
-            ResourceStatusValue::Unknown(value) => write!(f, "{}", value),
+            ResourceStatusValue::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

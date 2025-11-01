@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AuthorizerStatus {
         match self {
             AuthorizerStatus::Active => write!(f, "ACTIVE"),
             AuthorizerStatus::Inactive => write!(f, "INACTIVE"),
-            AuthorizerStatus::Unknown(value) => write!(f, "{}", value),
+            AuthorizerStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -96,7 +96,7 @@ impl ::std::fmt::Display for Traffic {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             Traffic::All => write!(f, "All"),
-            Traffic::Unknown(value) => write!(f, "{}", value),
+            Traffic::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -120,7 +120,7 @@ impl ::std::fmt::Display for ShardIteratorType {
             ShardIteratorType::AtTimestamp => write!(f, "AT_TIMESTAMP"),
             ShardIteratorType::Latest => write!(f, "LATEST"),
             ShardIteratorType::TrimHorizon => write!(f, "TRIM_HORIZON"),
-            ShardIteratorType::Unknown(value) => write!(f, "{}", value),
+            ShardIteratorType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

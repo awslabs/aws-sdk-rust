@@ -126,7 +126,7 @@ impl ::std::fmt::Display for AuthMaterialType {
             AuthMaterialType::WifiSetupQrBarCode => write!(f, "WIFI_SETUP_QR_BAR_CODE"),
             AuthMaterialType::ZigbeeQrBarCode => write!(f, "ZIGBEE_QR_BAR_CODE"),
             AuthMaterialType::ZwaveQrBarCode => write!(f, "ZWAVE_QR_BAR_CODE"),
-            AuthMaterialType::Unknown(value) => write!(f, "{}", value),
+            AuthMaterialType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

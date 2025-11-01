@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CancelStepsRequestStatus {
         match self {
             CancelStepsRequestStatus::Failed => write!(f, "FAILED"),
             CancelStepsRequestStatus::Submitted => write!(f, "SUBMITTED"),
-            CancelStepsRequestStatus::Unknown(value) => write!(f, "{}", value),
+            CancelStepsRequestStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

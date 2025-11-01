@@ -96,7 +96,7 @@ impl ::std::fmt::Display for BlockerType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             BlockerType::Automated => write!(f, "AUTOMATED"),
-            BlockerType::Unknown(value) => write!(f, "{}", value),
+            BlockerType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

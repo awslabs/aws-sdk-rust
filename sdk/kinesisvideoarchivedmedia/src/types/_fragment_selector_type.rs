@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FragmentSelectorType {
         match self {
             FragmentSelectorType::ProducerTimestamp => write!(f, "PRODUCER_TIMESTAMP"),
             FragmentSelectorType::ServerTimestamp => write!(f, "SERVER_TIMESTAMP"),
-            FragmentSelectorType::Unknown(value) => write!(f, "{}", value),
+            FragmentSelectorType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

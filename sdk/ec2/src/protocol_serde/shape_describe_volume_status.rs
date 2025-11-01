@@ -51,8 +51,7 @@ pub fn de_describe_volume_status(
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeVolumeStatusResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected DescribeVolumeStatusResponse got {:?}",
-            start_el
+            "invalid root, expected DescribeVolumeStatusResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

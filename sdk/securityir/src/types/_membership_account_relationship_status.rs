@@ -108,7 +108,7 @@ impl ::std::fmt::Display for MembershipAccountRelationshipStatus {
             MembershipAccountRelationshipStatus::Associated => write!(f, "Associated"),
             MembershipAccountRelationshipStatus::Disassociated => write!(f, "Disassociated"),
             MembershipAccountRelationshipStatus::Unassociated => write!(f, "Unassociated"),
-            MembershipAccountRelationshipStatus::Unknown(value) => write!(f, "{}", value),
+            MembershipAccountRelationshipStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -168,7 +168,7 @@ impl ::std::fmt::Display for KeyUsageName {
             KeyUsageName::KeyAgreement => write!(f, "KEY_AGREEMENT"),
             KeyUsageName::KeyEncipherment => write!(f, "KEY_ENCIPHERMENT"),
             KeyUsageName::NonRepudation => write!(f, "NON_REPUDIATION"),
-            KeyUsageName::Unknown(value) => write!(f, "{}", value),
+            KeyUsageName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

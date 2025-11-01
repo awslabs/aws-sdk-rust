@@ -132,7 +132,7 @@ impl ::std::fmt::Display for ParamType {
             ParamType::List => write!(f, "list"),
             ParamType::Null => write!(f, "null"),
             ParamType::Str => write!(f, "str"),
-            ParamType::Unknown(value) => write!(f, "{}", value),
+            ParamType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

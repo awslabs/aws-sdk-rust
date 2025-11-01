@@ -108,7 +108,7 @@ impl ::std::fmt::Display for PricingRuleType {
             PricingRuleType::Discount => write!(f, "DISCOUNT"),
             PricingRuleType::Markup => write!(f, "MARKUP"),
             PricingRuleType::Tiering => write!(f, "TIERING"),
-            PricingRuleType::Unknown(value) => write!(f, "{}", value),
+            PricingRuleType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

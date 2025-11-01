@@ -108,7 +108,7 @@ impl ::std::fmt::Display for BaselineOperationStatus {
             BaselineOperationStatus::Failed => write!(f, "FAILED"),
             BaselineOperationStatus::InProgress => write!(f, "IN_PROGRESS"),
             BaselineOperationStatus::Succeeded => write!(f, "SUCCEEDED"),
-            BaselineOperationStatus::Unknown(value) => write!(f, "{}", value),
+            BaselineOperationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

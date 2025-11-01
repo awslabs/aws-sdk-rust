@@ -51,8 +51,7 @@ pub fn de_get_capacity_reservation_usage(
     let start_el = decoder.start_el();
     if !(start_el.matches("GetCapacityReservationUsageResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected GetCapacityReservationUsageResponse got {:?}",
-            start_el
+            "invalid root, expected GetCapacityReservationUsageResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

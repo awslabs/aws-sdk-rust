@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RequestedJobStatus {
         match self {
             RequestedJobStatus::Cancelled => write!(f, "Cancelled"),
             RequestedJobStatus::Ready => write!(f, "Ready"),
-            RequestedJobStatus::Unknown(value) => write!(f, "{}", value),
+            RequestedJobStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

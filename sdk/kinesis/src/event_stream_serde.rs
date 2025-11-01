@@ -22,7 +22,7 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for SubscribeToShardEven
                 "SubscribeToShardEvent" => {
                     let parsed = crate::protocol_serde::shape_subscribe_to_shard_event::de_subscribe_to_shard_event_payload(&message.payload()[..])
                         .map_err(|err| {
-                        ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall SubscribeToShardEvent: {}", err))
+                        ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall SubscribeToShardEvent: {err}"))
                     })?;
                     Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Event(
                         crate::types::SubscribeToShardEventStream::SubscribeToShardEvent(parsed),
@@ -49,7 +49,7 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for SubscribeToShardEven
                             builder,
                         )
                         .map_err(|err| {
-                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall ResourceNotFoundException: {}", err))
+                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall ResourceNotFoundException: {err}"))
                         })?;
                         builder.set_meta(Some(generic));
                         return Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
@@ -63,7 +63,7 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for SubscribeToShardEven
                             builder,
                         )
                         .map_err(|err| {
-                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall ResourceInUseException: {}", err))
+                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall ResourceInUseException: {err}"))
                         })?;
                         builder.set_meta(Some(generic));
                         return Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
@@ -75,10 +75,7 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for SubscribeToShardEven
                         builder =
                             crate::protocol_serde::shape_kms_disabled_exception::de_kms_disabled_exception_json_err(&message.payload()[..], builder)
                                 .map_err(|err| {
-                                    ::aws_smithy_eventstream::error::Error::unmarshalling(format!(
-                                        "failed to unmarshall KMSDisabledException: {}",
-                                        err
-                                    ))
+                                    ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall KMSDisabledException: {err}"))
                                 })?;
                         builder.set_meta(Some(generic));
                         return Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
@@ -92,7 +89,7 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for SubscribeToShardEven
                             builder,
                         )
                         .map_err(|err| {
-                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall KMSInvalidStateException: {}", err))
+                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall KMSInvalidStateException: {err}"))
                         })?;
                         builder.set_meta(Some(generic));
                         return Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
@@ -106,7 +103,7 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for SubscribeToShardEven
                             builder,
                         )
                         .map_err(|err| {
-                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall KMSAccessDeniedException: {}", err))
+                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall KMSAccessDeniedException: {err}"))
                         })?;
                         builder.set_meta(Some(generic));
                         return Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
@@ -120,7 +117,7 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for SubscribeToShardEven
                             builder,
                         )
                         .map_err(|err| {
-                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall KMSNotFoundException: {}", err))
+                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall KMSNotFoundException: {err}"))
                         })?;
                         builder.set_meta(Some(generic));
                         return Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
@@ -131,7 +128,7 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for SubscribeToShardEven
                         let mut builder = crate::types::error::builders::KmsOptInRequiredBuilder::default();
                         builder = crate::protocol_serde::shape_kms_opt_in_required::de_kms_opt_in_required_json_err(&message.payload()[..], builder)
                             .map_err(|err| {
-                                ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall KMSOptInRequired: {}", err))
+                                ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall KMSOptInRequired: {err}"))
                             })?;
                         builder.set_meta(Some(generic));
                         return Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
@@ -145,7 +142,7 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for SubscribeToShardEven
                             builder,
                         )
                         .map_err(|err| {
-                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall KMSThrottlingException: {}", err))
+                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall KMSThrottlingException: {err}"))
                         })?;
                         builder.set_meta(Some(generic));
                         return Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
@@ -159,7 +156,7 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for SubscribeToShardEven
                             builder,
                         )
                         .map_err(|err| {
-                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall InternalFailureException: {}", err))
+                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall InternalFailureException: {err}"))
                         })?;
                         builder.set_meta(Some(generic));
                         return Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
@@ -174,8 +171,7 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for SubscribeToShardEven
             }
             value => {
                 return Err(::aws_smithy_eventstream::error::Error::unmarshalling(format!(
-                    "unrecognized :message-type: {}",
-                    value
+                    "unrecognized :message-type: {value}"
                 )));
             }
         }

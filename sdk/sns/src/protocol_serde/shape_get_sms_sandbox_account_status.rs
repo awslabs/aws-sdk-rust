@@ -104,16 +104,14 @@ pub fn de_get_sms_sandbox_account_status(
     let start_el = decoder.start_el();
     if !(start_el.matches("GetSMSSandboxAccountStatusResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected GetSMSSandboxAccountStatusResponse got {:?}",
-            start_el
+            "invalid root, expected GetSMSSandboxAccountStatusResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("GetSMSSandboxAccountStatusResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected GetSMSSandboxAccountStatusResult got {:?}",
-                start_el
+                "invalid result, expected GetSMSSandboxAccountStatusResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

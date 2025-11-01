@@ -168,7 +168,7 @@ impl ::std::fmt::Display for TrainedModelStatus {
             TrainedModelStatus::DeleteInProgress => write!(f, "DELETE_IN_PROGRESS"),
             TrainedModelStatus::DeletePending => write!(f, "DELETE_PENDING"),
             TrainedModelStatus::Inactive => write!(f, "INACTIVE"),
-            TrainedModelStatus::Unknown(value) => write!(f, "{}", value),
+            TrainedModelStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

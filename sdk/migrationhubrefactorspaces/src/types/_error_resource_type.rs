@@ -224,7 +224,7 @@ impl ::std::fmt::Display for ErrorResourceType {
             ErrorResourceType::Vpc => write!(f, "VPC"),
             ErrorResourceType::VpcEndpointServiceConfiguration => write!(f, "VPC_ENDPOINT_SERVICE_CONFIGURATION"),
             ErrorResourceType::VpcLink => write!(f, "VPC_LINK"),
-            ErrorResourceType::Unknown(value) => write!(f, "{}", value),
+            ErrorResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

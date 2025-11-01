@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PayloadType {
         match self {
             PayloadType::ReturnControl => write!(f, "RETURN_CONTROL"),
             PayloadType::Text => write!(f, "TEXT"),
-            PayloadType::Unknown(value) => write!(f, "{}", value),
+            PayloadType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

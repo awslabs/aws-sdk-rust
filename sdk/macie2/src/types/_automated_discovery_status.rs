@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AutomatedDiscoveryStatus {
         match self {
             AutomatedDiscoveryStatus::Disabled => write!(f, "DISABLED"),
             AutomatedDiscoveryStatus::Enabled => write!(f, "ENABLED"),
-            AutomatedDiscoveryStatus::Unknown(value) => write!(f, "{}", value),
+            AutomatedDiscoveryStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

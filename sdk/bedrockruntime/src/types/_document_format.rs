@@ -144,7 +144,7 @@ impl ::std::fmt::Display for DocumentFormat {
             DocumentFormat::Txt => write!(f, "txt"),
             DocumentFormat::Xls => write!(f, "xls"),
             DocumentFormat::Xlsx => write!(f, "xlsx"),
-            DocumentFormat::Unknown(value) => write!(f, "{}", value),
+            DocumentFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

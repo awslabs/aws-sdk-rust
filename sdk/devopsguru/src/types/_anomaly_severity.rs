@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AnomalySeverity {
             AnomalySeverity::High => write!(f, "HIGH"),
             AnomalySeverity::Low => write!(f, "LOW"),
             AnomalySeverity::Medium => write!(f, "MEDIUM"),
-            AnomalySeverity::Unknown(value) => write!(f, "{}", value),
+            AnomalySeverity::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

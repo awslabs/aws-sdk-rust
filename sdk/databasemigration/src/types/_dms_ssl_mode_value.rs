@@ -114,7 +114,7 @@ impl ::std::fmt::Display for DmsSslModeValue {
             DmsSslModeValue::Require => write!(f, "require"),
             DmsSslModeValue::VerifyCa => write!(f, "verify-ca"),
             DmsSslModeValue::VerifyFull => write!(f, "verify-full"),
-            DmsSslModeValue::Unknown(value) => write!(f, "{}", value),
+            DmsSslModeValue::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

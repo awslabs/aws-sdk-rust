@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SetStatOption {
         match self {
             SetStatOption::Default => write!(f, "DEFAULT"),
             SetStatOption::EnableNoOp => write!(f, "ENABLE_NO_OP"),
-            SetStatOption::Unknown(value) => write!(f, "{}", value),
+            SetStatOption::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -53,8 +53,7 @@ pub fn de_describe_image_usage_reports(
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeImageUsageReportsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected DescribeImageUsageReportsResponse got {:?}",
-            start_el
+            "invalid root, expected DescribeImageUsageReportsResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

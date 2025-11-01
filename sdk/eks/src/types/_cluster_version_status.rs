@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ClusterVersionStatus {
             ClusterVersionStatus::ExtendedSupport => write!(f, "extended-support"),
             ClusterVersionStatus::StandardSupport => write!(f, "standard-support"),
             ClusterVersionStatus::Unsupported => write!(f, "unsupported"),
-            ClusterVersionStatus::Unknown(value) => write!(f, "{}", value),
+            ClusterVersionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

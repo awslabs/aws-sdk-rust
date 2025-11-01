@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CallerRole {
         match self {
             CallerRole::OdcrOwner => write!(f, "odcr-owner"),
             CallerRole::UnusedReservationBillingOwner => write!(f, "unused-reservation-billing-owner"),
-            CallerRole::Unknown(value) => write!(f, "{}", value),
+            CallerRole::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

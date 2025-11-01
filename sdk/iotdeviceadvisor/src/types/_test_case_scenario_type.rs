@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TestCaseScenarioType {
         match self {
             TestCaseScenarioType::Advanced => write!(f, "Advanced"),
             TestCaseScenarioType::Basic => write!(f, "Basic"),
-            TestCaseScenarioType::Unknown(value) => write!(f, "{}", value),
+            TestCaseScenarioType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

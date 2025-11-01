@@ -102,7 +102,7 @@ impl ::std::fmt::Display for EncoderProfile {
         match self {
             EncoderProfile::High => write!(f, "high"),
             EncoderProfile::Main => write!(f, "main"),
-            EncoderProfile::Unknown(value) => write!(f, "{}", value),
+            EncoderProfile::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

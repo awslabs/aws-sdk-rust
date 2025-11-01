@@ -128,7 +128,7 @@ impl ::std::fmt::Display for TransitGatewayRouteTableAnnouncementState {
             TransitGatewayRouteTableAnnouncementState::Failed => write!(f, "failed"),
             TransitGatewayRouteTableAnnouncementState::Failing => write!(f, "failing"),
             TransitGatewayRouteTableAnnouncementState::Pending => write!(f, "pending"),
-            TransitGatewayRouteTableAnnouncementState::Unknown(value) => write!(f, "{}", value),
+            TransitGatewayRouteTableAnnouncementState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

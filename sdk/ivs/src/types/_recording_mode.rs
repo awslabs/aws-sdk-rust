@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RecordingMode {
         match self {
             RecordingMode::Disabled => write!(f, "DISABLED"),
             RecordingMode::Interval => write!(f, "INTERVAL"),
-            RecordingMode::Unknown(value) => write!(f, "{}", value),
+            RecordingMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

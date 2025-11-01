@@ -210,7 +210,7 @@ impl ::std::fmt::Display for TargetedSentimentEntityType {
             TargetedSentimentEntityType::PersonalTitle => write!(f, "PERSONAL_TITLE"),
             TargetedSentimentEntityType::Quantity => write!(f, "QUANTITY"),
             TargetedSentimentEntityType::Software => write!(f, "SOFTWARE"),
-            TargetedSentimentEntityType::Unknown(value) => write!(f, "{}", value),
+            TargetedSentimentEntityType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

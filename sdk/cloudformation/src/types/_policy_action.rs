@@ -133,7 +133,7 @@ impl ::std::fmt::Display for PolicyAction {
             PolicyAction::ReplaceAndSnapshot => write!(f, "ReplaceAndSnapshot"),
             PolicyAction::Retain => write!(f, "Retain"),
             PolicyAction::Snapshot => write!(f, "Snapshot"),
-            PolicyAction::Unknown(value) => write!(f, "{}", value),
+            PolicyAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

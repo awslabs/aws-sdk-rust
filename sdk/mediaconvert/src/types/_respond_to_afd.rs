@@ -108,7 +108,7 @@ impl ::std::fmt::Display for RespondToAfd {
             RespondToAfd::None => write!(f, "NONE"),
             RespondToAfd::Passthrough => write!(f, "PASSTHROUGH"),
             RespondToAfd::Respond => write!(f, "RESPOND"),
-            RespondToAfd::Unknown(value) => write!(f, "{}", value),
+            RespondToAfd::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

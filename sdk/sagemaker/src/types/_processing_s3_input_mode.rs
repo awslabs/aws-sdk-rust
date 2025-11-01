@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ProcessingS3InputMode {
         match self {
             ProcessingS3InputMode::File => write!(f, "File"),
             ProcessingS3InputMode::Pipe => write!(f, "Pipe"),
-            ProcessingS3InputMode::Unknown(value) => write!(f, "{}", value),
+            ProcessingS3InputMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

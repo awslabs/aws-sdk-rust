@@ -21,7 +21,7 @@ impl ::std::fmt::Display for CloudHsmClusterNotRelatedException {
         ::std::write!(f, "CloudHsmClusterNotRelatedException")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
             {
-                ::std::write!(f, ": {}", inner_1)?;
+                ::std::write!(f, ": {inner_1}")?;
             }
         }
         Ok(())

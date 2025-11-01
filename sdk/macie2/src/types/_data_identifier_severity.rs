@@ -108,7 +108,7 @@ impl ::std::fmt::Display for DataIdentifierSeverity {
             DataIdentifierSeverity::High => write!(f, "HIGH"),
             DataIdentifierSeverity::Low => write!(f, "LOW"),
             DataIdentifierSeverity::Medium => write!(f, "MEDIUM"),
-            DataIdentifierSeverity::Unknown(value) => write!(f, "{}", value),
+            DataIdentifierSeverity::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

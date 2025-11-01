@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CapacityReservationType {
         match self {
             CapacityReservationType::Crg => write!(f, "CRG"),
             CapacityReservationType::Odcr => write!(f, "ODCR"),
-            CapacityReservationType::Unknown(value) => write!(f, "{}", value),
+            CapacityReservationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

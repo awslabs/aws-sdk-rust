@@ -108,7 +108,7 @@ impl ::std::fmt::Display for UltraServerHealthStatus {
             UltraServerHealthStatus::Impaired => write!(f, "Impaired"),
             UltraServerHealthStatus::InsufficientData => write!(f, "Insufficient-Data"),
             UltraServerHealthStatus::Ok => write!(f, "OK"),
-            UltraServerHealthStatus::Unknown(value) => write!(f, "{}", value),
+            UltraServerHealthStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

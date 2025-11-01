@@ -102,7 +102,7 @@ impl ::std::fmt::Display for UserContextPolicy {
         match self {
             UserContextPolicy::AttributeFilter => write!(f, "ATTRIBUTE_FILTER"),
             UserContextPolicy::UserToken => write!(f, "USER_TOKEN"),
-            UserContextPolicy::Unknown(value) => write!(f, "{}", value),
+            UserContextPolicy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

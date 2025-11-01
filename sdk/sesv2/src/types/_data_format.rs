@@ -112,7 +112,7 @@ impl ::std::fmt::Display for DataFormat {
         match self {
             DataFormat::Csv => write!(f, "CSV"),
             DataFormat::Json => write!(f, "JSON"),
-            DataFormat::Unknown(value) => write!(f, "{}", value),
+            DataFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

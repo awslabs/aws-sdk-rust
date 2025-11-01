@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TopicFilterOperator {
         match self {
             TopicFilterOperator::StringEquals => write!(f, "StringEquals"),
             TopicFilterOperator::StringLike => write!(f, "StringLike"),
-            TopicFilterOperator::Unknown(value) => write!(f, "{}", value),
+            TopicFilterOperator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

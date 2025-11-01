@@ -108,7 +108,7 @@ impl ::std::fmt::Display for EncodingTypeValue {
             EncodingTypeValue::Plain => write!(f, "plain"),
             EncodingTypeValue::PlainDictionary => write!(f, "plain-dictionary"),
             EncodingTypeValue::RleDictionary => write!(f, "rle-dictionary"),
-            EncodingTypeValue::Unknown(value) => write!(f, "{}", value),
+            EncodingTypeValue::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

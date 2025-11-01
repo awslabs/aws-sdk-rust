@@ -133,7 +133,7 @@ impl ::std::fmt::Display for KnowledgeBaseStatus {
             KnowledgeBaseStatus::Deleted => write!(f, "DELETED"),
             KnowledgeBaseStatus::DeleteFailed => write!(f, "DELETE_FAILED"),
             KnowledgeBaseStatus::DeleteInProgress => write!(f, "DELETE_IN_PROGRESS"),
-            KnowledgeBaseStatus::Unknown(value) => write!(f, "{}", value),
+            KnowledgeBaseStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

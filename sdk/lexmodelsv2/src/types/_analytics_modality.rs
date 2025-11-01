@@ -114,7 +114,7 @@ impl ::std::fmt::Display for AnalyticsModality {
             AnalyticsModality::MultiMode => write!(f, "MultiMode"),
             AnalyticsModality::Speech => write!(f, "Speech"),
             AnalyticsModality::Text => write!(f, "Text"),
-            AnalyticsModality::Unknown(value) => write!(f, "{}", value),
+            AnalyticsModality::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

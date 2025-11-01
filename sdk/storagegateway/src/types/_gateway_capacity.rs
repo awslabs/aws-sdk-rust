@@ -108,7 +108,7 @@ impl ::std::fmt::Display for GatewayCapacity {
             GatewayCapacity::Large => write!(f, "Large"),
             GatewayCapacity::Medium => write!(f, "Medium"),
             GatewayCapacity::Small => write!(f, "Small"),
-            GatewayCapacity::Unknown(value) => write!(f, "{}", value),
+            GatewayCapacity::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

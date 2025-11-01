@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ImageType {
         match self {
             ImageType::Owned => write!(f, "OWNED"),
             ImageType::Shared => write!(f, "SHARED"),
-            ImageType::Unknown(value) => write!(f, "{}", value),
+            ImageType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

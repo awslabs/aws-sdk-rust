@@ -108,7 +108,7 @@ impl ::std::fmt::Display for CsvSerdeOption {
             CsvSerdeOption::LazySimpleSerDe => write!(f, "LazySimpleSerDe"),
             CsvSerdeOption::None => write!(f, "None"),
             CsvSerdeOption::OpenCsvSerDe => write!(f, "OpenCSVSerDe"),
-            CsvSerdeOption::Unknown(value) => write!(f, "{}", value),
+            CsvSerdeOption::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

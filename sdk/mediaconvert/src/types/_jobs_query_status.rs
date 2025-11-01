@@ -114,7 +114,7 @@ impl ::std::fmt::Display for JobsQueryStatus {
             JobsQueryStatus::Error => write!(f, "ERROR"),
             JobsQueryStatus::Progressing => write!(f, "PROGRESSING"),
             JobsQueryStatus::Submitted => write!(f, "SUBMITTED"),
-            JobsQueryStatus::Unknown(value) => write!(f, "{}", value),
+            JobsQueryStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

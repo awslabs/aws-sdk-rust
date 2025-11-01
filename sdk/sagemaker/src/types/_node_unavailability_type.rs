@@ -102,7 +102,7 @@ impl ::std::fmt::Display for NodeUnavailabilityType {
         match self {
             NodeUnavailabilityType::CapacityPercentage => write!(f, "CAPACITY_PERCENTAGE"),
             NodeUnavailabilityType::InstanceCount => write!(f, "INSTANCE_COUNT"),
-            NodeUnavailabilityType::Unknown(value) => write!(f, "{}", value),
+            NodeUnavailabilityType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

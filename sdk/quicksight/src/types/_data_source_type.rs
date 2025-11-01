@@ -350,7 +350,7 @@ impl ::std::fmt::Display for DataSourceType {
             DataSourceType::Trino => write!(f, "TRINO"),
             DataSourceType::Twitter => write!(f, "TWITTER"),
             DataSourceType::WebCrawler => write!(f, "WEB_CRAWLER"),
-            DataSourceType::Unknown(value) => write!(f, "{}", value),
+            DataSourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

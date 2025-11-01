@@ -238,7 +238,7 @@ impl ::std::fmt::Display for VeevaConnectorOperator {
             VeevaConnectorOperator::ValidateNonNull => write!(f, "VALIDATE_NON_NULL"),
             VeevaConnectorOperator::ValidateNonZero => write!(f, "VALIDATE_NON_ZERO"),
             VeevaConnectorOperator::ValidateNumeric => write!(f, "VALIDATE_NUMERIC"),
-            VeevaConnectorOperator::Unknown(value) => write!(f, "{}", value),
+            VeevaConnectorOperator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -120,7 +120,7 @@ impl ::std::fmt::Display for TransitionStorageClass {
             TransitionStorageClass::IntelligentTiering => write!(f, "INTELLIGENT_TIERING"),
             TransitionStorageClass::OnezoneIa => write!(f, "ONEZONE_IA"),
             TransitionStorageClass::StandardIa => write!(f, "STANDARD_IA"),
-            TransitionStorageClass::Unknown(value) => write!(f, "{}", value),
+            TransitionStorageClass::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for CodeRepositorySortBy {
             CodeRepositorySortBy::All => write!(f, "ALL"),
             CodeRepositorySortBy::Critical => write!(f, "CRITICAL"),
             CodeRepositorySortBy::High => write!(f, "HIGH"),
-            CodeRepositorySortBy::Unknown(value) => write!(f, "{}", value),
+            CodeRepositorySortBy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

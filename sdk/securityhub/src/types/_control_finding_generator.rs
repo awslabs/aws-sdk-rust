@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ControlFindingGenerator {
         match self {
             ControlFindingGenerator::SecurityControl => write!(f, "SECURITY_CONTROL"),
             ControlFindingGenerator::StandardControl => write!(f, "STANDARD_CONTROL"),
-            ControlFindingGenerator::Unknown(value) => write!(f, "{}", value),
+            ControlFindingGenerator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

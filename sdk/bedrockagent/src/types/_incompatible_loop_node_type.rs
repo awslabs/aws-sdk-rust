@@ -114,7 +114,7 @@ impl ::std::fmt::Display for IncompatibleLoopNodeType {
             IncompatibleLoopNodeType::Condition => write!(f, "Condition"),
             IncompatibleLoopNodeType::Input => write!(f, "Input"),
             IncompatibleLoopNodeType::Iterator => write!(f, "Iterator"),
-            IncompatibleLoopNodeType::Unknown(value) => write!(f, "{}", value),
+            IncompatibleLoopNodeType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

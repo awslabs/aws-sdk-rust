@@ -114,7 +114,7 @@ impl ::std::fmt::Display for SnapshotLifecycle {
             SnapshotLifecycle::Creating => write!(f, "CREATING"),
             SnapshotLifecycle::Deleting => write!(f, "DELETING"),
             SnapshotLifecycle::Pending => write!(f, "PENDING"),
-            SnapshotLifecycle::Unknown(value) => write!(f, "{}", value),
+            SnapshotLifecycle::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

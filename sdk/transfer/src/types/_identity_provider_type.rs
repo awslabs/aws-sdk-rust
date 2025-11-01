@@ -114,7 +114,7 @@ impl ::std::fmt::Display for IdentityProviderType {
             IdentityProviderType::AwsDirectoryService => write!(f, "AWS_DIRECTORY_SERVICE"),
             IdentityProviderType::AwsLambda => write!(f, "AWS_LAMBDA"),
             IdentityProviderType::ServiceManaged => write!(f, "SERVICE_MANAGED"),
-            IdentityProviderType::Unknown(value) => write!(f, "{}", value),
+            IdentityProviderType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

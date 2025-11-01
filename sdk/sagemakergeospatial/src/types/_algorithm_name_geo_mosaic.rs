@@ -189,7 +189,7 @@ impl ::std::fmt::Display for AlgorithmNameGeoMosaic {
             AlgorithmNameGeoMosaic::Q3 => write!(f, "Q3"),
             AlgorithmNameGeoMosaic::Rms => write!(f, "RMS"),
             AlgorithmNameGeoMosaic::Sum => write!(f, "SUM"),
-            AlgorithmNameGeoMosaic::Unknown(value) => write!(f, "{}", value),
+            AlgorithmNameGeoMosaic::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

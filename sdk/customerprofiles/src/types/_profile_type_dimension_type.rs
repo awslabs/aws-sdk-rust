@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ProfileTypeDimensionType {
         match self {
             ProfileTypeDimensionType::Exclusive => write!(f, "EXCLUSIVE"),
             ProfileTypeDimensionType::Inclusive => write!(f, "INCLUSIVE"),
-            ProfileTypeDimensionType::Unknown(value) => write!(f, "{}", value),
+            ProfileTypeDimensionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

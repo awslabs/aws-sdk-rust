@@ -196,7 +196,7 @@ impl ::std::fmt::Display for ApiCacheType {
             ApiCacheType::T2Medium => write!(f, "T2_MEDIUM"),
             ApiCacheType::T2Small => write!(f, "T2_SMALL"),
             ApiCacheType::Xlarge => write!(f, "XLARGE"),
-            ApiCacheType::Unknown(value) => write!(f, "{}", value),
+            ApiCacheType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

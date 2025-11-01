@@ -74,16 +74,14 @@ pub fn de_reset_service_specific_credential(
     let start_el = decoder.start_el();
     if !(start_el.matches("ResetServiceSpecificCredentialResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected ResetServiceSpecificCredentialResponse got {:?}",
-            start_el
+            "invalid root, expected ResetServiceSpecificCredentialResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("ResetServiceSpecificCredentialResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected ResetServiceSpecificCredentialResult got {:?}",
-                start_el
+                "invalid result, expected ResetServiceSpecificCredentialResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

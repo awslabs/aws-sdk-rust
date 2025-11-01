@@ -24,10 +24,8 @@ pub fn validate_body(
             expected_frames.len(),
             actual_frames.len(),
             "Frame count didn't match.\n\
-        Expected: {:?}\n\
-        Actual:   {:?}",
-            expected_frames,
-            actual_frames
+        Expected: {expected_frames:?}\n\
+        Actual:   {actual_frames:?}",
         );
     }
 

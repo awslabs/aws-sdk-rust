@@ -126,7 +126,7 @@ impl ::std::fmt::Display for ErrorCode {
             ErrorCode::InvalidSavingsPlansToAdd => write!(f, "INVALID_SAVINGS_PLANS_TO_ADD"),
             ErrorCode::InvalidSavingsPlansToExclude => write!(f, "INVALID_SAVINGS_PLANS_TO_EXCLUDE"),
             ErrorCode::NoUsageFound => write!(f, "NO_USAGE_FOUND"),
-            ErrorCode::Unknown(value) => write!(f, "{}", value),
+            ErrorCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

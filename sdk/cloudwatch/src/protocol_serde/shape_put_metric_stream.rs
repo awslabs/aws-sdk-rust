@@ -137,16 +137,14 @@ pub fn de_put_metric_stream(
     let start_el = decoder.start_el();
     if !(start_el.matches("PutMetricStreamResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected PutMetricStreamResponse got {:?}",
-            start_el
+            "invalid root, expected PutMetricStreamResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("PutMetricStreamResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected PutMetricStreamResult got {:?}",
-                start_el
+                "invalid result, expected PutMetricStreamResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

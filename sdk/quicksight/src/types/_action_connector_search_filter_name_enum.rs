@@ -140,7 +140,7 @@ impl ::std::fmt::Display for ActionConnectorSearchFilterNameEnum {
             ActionConnectorSearchFilterNameEnum::DirectQuicksightViewerOrOwner => write!(f, "DIRECT_QUICKSIGHT_VIEWER_OR_OWNER"),
             ActionConnectorSearchFilterNameEnum::QuicksightOwner => write!(f, "QUICKSIGHT_OWNER"),
             ActionConnectorSearchFilterNameEnum::QuicksightViewerOrOwner => write!(f, "QUICKSIGHT_VIEWER_OR_OWNER"),
-            ActionConnectorSearchFilterNameEnum::Unknown(value) => write!(f, "{}", value),
+            ActionConnectorSearchFilterNameEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

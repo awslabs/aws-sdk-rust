@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TraceSegmentDestinationStatus {
         match self {
             TraceSegmentDestinationStatus::Active => write!(f, "ACTIVE"),
             TraceSegmentDestinationStatus::Pending => write!(f, "PENDING"),
-            TraceSegmentDestinationStatus::Unknown(value) => write!(f, "{}", value),
+            TraceSegmentDestinationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

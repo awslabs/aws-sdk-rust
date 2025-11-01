@@ -120,7 +120,7 @@ impl ::std::fmt::Display for MemberType {
             MemberType::Dataset => write!(f, "DATASET"),
             MemberType::Datasource => write!(f, "DATASOURCE"),
             MemberType::Topic => write!(f, "TOPIC"),
-            MemberType::Unknown(value) => write!(f, "{}", value),
+            MemberType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

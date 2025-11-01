@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ComplianceUploadType {
         match self {
             ComplianceUploadType::Complete => write!(f, "COMPLETE"),
             ComplianceUploadType::Partial => write!(f, "PARTIAL"),
-            ComplianceUploadType::Unknown(value) => write!(f, "{}", value),
+            ComplianceUploadType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

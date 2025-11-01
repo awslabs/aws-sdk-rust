@@ -96,7 +96,7 @@ impl ::std::fmt::Display for AnalyticsUtteranceAttributeName {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             AnalyticsUtteranceAttributeName::LastUsedIntent => write!(f, "LastUsedIntent"),
-            AnalyticsUtteranceAttributeName::Unknown(value) => write!(f, "{}", value),
+            AnalyticsUtteranceAttributeName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

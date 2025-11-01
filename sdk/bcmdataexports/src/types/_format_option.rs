@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FormatOption {
         match self {
             FormatOption::Parquet => write!(f, "PARQUET"),
             FormatOption::TextOrCsv => write!(f, "TEXT_OR_CSV"),
-            FormatOption::Unknown(value) => write!(f, "{}", value),
+            FormatOption::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

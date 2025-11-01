@@ -106,7 +106,7 @@ impl ::std::fmt::Display for RouteSpanGateAttribute {
             RouteSpanGateAttribute::Emergency => write!(f, "Emergency"),
             RouteSpanGateAttribute::KeyAccess => write!(f, "KeyAccess"),
             RouteSpanGateAttribute::PermissionRequired => write!(f, "PermissionRequired"),
-            RouteSpanGateAttribute::Unknown(value) => write!(f, "{}", value),
+            RouteSpanGateAttribute::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for OrganizationSharingStatus {
         match self {
             OrganizationSharingStatus::Disabled => write!(f, "DISABLED"),
             OrganizationSharingStatus::Enabled => write!(f, "ENABLED"),
-            OrganizationSharingStatus::Unknown(value) => write!(f, "{}", value),
+            OrganizationSharingStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

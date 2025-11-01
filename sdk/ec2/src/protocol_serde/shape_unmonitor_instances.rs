@@ -48,8 +48,7 @@ pub fn de_unmonitor_instances(
     let start_el = decoder.start_el();
     if !(start_el.matches("UnmonitorInstancesResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected UnmonitorInstancesResponse got {:?}",
-            start_el
+            "invalid root, expected UnmonitorInstancesResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

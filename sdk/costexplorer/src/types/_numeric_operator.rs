@@ -133,7 +133,7 @@ impl ::std::fmt::Display for NumericOperator {
             NumericOperator::GreaterThanOrEqual => write!(f, "GREATER_THAN_OR_EQUAL"),
             NumericOperator::LessThan => write!(f, "LESS_THAN"),
             NumericOperator::LessThanOrEqual => write!(f, "LESS_THAN_OR_EQUAL"),
-            NumericOperator::Unknown(value) => write!(f, "{}", value),
+            NumericOperator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

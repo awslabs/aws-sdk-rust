@@ -120,7 +120,7 @@ impl ::std::fmt::Display for BandwidthReductionFilterStrength {
             BandwidthReductionFilterStrength::Low => write!(f, "LOW"),
             BandwidthReductionFilterStrength::Medium => write!(f, "MEDIUM"),
             BandwidthReductionFilterStrength::Off => write!(f, "OFF"),
-            BandwidthReductionFilterStrength::Unknown(value) => write!(f, "{}", value),
+            BandwidthReductionFilterStrength::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

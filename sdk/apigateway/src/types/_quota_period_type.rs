@@ -108,7 +108,7 @@ impl ::std::fmt::Display for QuotaPeriodType {
             QuotaPeriodType::Day => write!(f, "DAY"),
             QuotaPeriodType::Month => write!(f, "MONTH"),
             QuotaPeriodType::Week => write!(f, "WEEK"),
-            QuotaPeriodType::Unknown(value) => write!(f, "{}", value),
+            QuotaPeriodType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for EnabledBaselineDriftStatus {
         match self {
             EnabledBaselineDriftStatus::Drifted => write!(f, "DRIFTED"),
             EnabledBaselineDriftStatus::InSync => write!(f, "IN_SYNC"),
-            EnabledBaselineDriftStatus::Unknown(value) => write!(f, "{}", value),
+            EnabledBaselineDriftStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

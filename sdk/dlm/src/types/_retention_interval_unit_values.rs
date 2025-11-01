@@ -114,7 +114,7 @@ impl ::std::fmt::Display for RetentionIntervalUnitValues {
             RetentionIntervalUnitValues::Months => write!(f, "MONTHS"),
             RetentionIntervalUnitValues::Weeks => write!(f, "WEEKS"),
             RetentionIntervalUnitValues::Years => write!(f, "YEARS"),
-            RetentionIntervalUnitValues::Unknown(value) => write!(f, "{}", value),
+            RetentionIntervalUnitValues::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

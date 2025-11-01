@@ -114,7 +114,7 @@ impl ::std::fmt::Display for HitReviewStatus {
             HitReviewStatus::NotReviewed => write!(f, "NotReviewed"),
             HitReviewStatus::ReviewedAppropriate => write!(f, "ReviewedAppropriate"),
             HitReviewStatus::ReviewedInappropriate => write!(f, "ReviewedInappropriate"),
-            HitReviewStatus::Unknown(value) => write!(f, "{}", value),
+            HitReviewStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

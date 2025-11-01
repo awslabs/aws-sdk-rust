@@ -108,7 +108,7 @@ impl ::std::fmt::Display for PackageScopeOperationEnum {
             PackageScopeOperationEnum::Add => write!(f, "ADD"),
             PackageScopeOperationEnum::Override => write!(f, "OVERRIDE"),
             PackageScopeOperationEnum::Remove => write!(f, "REMOVE"),
-            PackageScopeOperationEnum::Unknown(value) => write!(f, "{}", value),
+            PackageScopeOperationEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

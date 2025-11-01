@@ -108,7 +108,7 @@ impl ::std::fmt::Display for BatchDeleteClusterNodesErrorCode {
             BatchDeleteClusterNodesErrorCode::InvalidNodeStatus => write!(f, "InvalidNodeStatus"),
             BatchDeleteClusterNodesErrorCode::NodeIdInUse => write!(f, "NodeIdInUse"),
             BatchDeleteClusterNodesErrorCode::NodeIdNotFound => write!(f, "NodeIdNotFound"),
-            BatchDeleteClusterNodesErrorCode::Unknown(value) => write!(f, "{}", value),
+            BatchDeleteClusterNodesErrorCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

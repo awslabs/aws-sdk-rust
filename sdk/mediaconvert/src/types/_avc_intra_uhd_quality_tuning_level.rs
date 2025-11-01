@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AvcIntraUhdQualityTuningLevel {
         match self {
             AvcIntraUhdQualityTuningLevel::MultiPass => write!(f, "MULTI_PASS"),
             AvcIntraUhdQualityTuningLevel::SinglePass => write!(f, "SINGLE_PASS"),
-            AvcIntraUhdQualityTuningLevel::Unknown(value) => write!(f, "{}", value),
+            AvcIntraUhdQualityTuningLevel::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

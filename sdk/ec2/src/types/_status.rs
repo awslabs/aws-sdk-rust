@@ -108,7 +108,7 @@ impl ::std::fmt::Display for Status {
             Status::InClassic => write!(f, "InClassic"),
             Status::InVpc => write!(f, "InVpc"),
             Status::MoveInProgress => write!(f, "MoveInProgress"),
-            Status::Unknown(value) => write!(f, "{}", value),
+            Status::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

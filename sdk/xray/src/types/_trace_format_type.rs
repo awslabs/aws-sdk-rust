@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TraceFormatType {
         match self {
             TraceFormatType::Otel => write!(f, "OTEL"),
             TraceFormatType::Xray => write!(f, "XRAY"),
-            TraceFormatType::Unknown(value) => write!(f, "{}", value),
+            TraceFormatType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

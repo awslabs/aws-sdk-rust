@@ -98,7 +98,7 @@ impl ::std::fmt::Display for AssetBundleExportJobThemePropertyToOverride {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             AssetBundleExportJobThemePropertyToOverride::Name => write!(f, "Name"),
-            AssetBundleExportJobThemePropertyToOverride::Unknown(value) => write!(f, "{}", value),
+            AssetBundleExportJobThemePropertyToOverride::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

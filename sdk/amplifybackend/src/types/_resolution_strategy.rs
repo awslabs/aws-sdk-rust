@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ResolutionStrategy {
             ResolutionStrategy::Lambda => write!(f, "LAMBDA"),
             ResolutionStrategy::None => write!(f, "NONE"),
             ResolutionStrategy::OptimisticConcurrency => write!(f, "OPTIMISTIC_CONCURRENCY"),
-            ResolutionStrategy::Unknown(value) => write!(f, "{}", value),
+            ResolutionStrategy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for FineGrainedAction {
             FineGrainedAction::DescribeDimensionKeys => write!(f, "DescribeDimensionKeys"),
             FineGrainedAction::GetDimensionKeyDetails => write!(f, "GetDimensionKeyDetails"),
             FineGrainedAction::GetResourceMetrics => write!(f, "GetResourceMetrics"),
-            FineGrainedAction::Unknown(value) => write!(f, "{}", value),
+            FineGrainedAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

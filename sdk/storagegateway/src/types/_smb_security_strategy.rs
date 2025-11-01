@@ -119,7 +119,7 @@ impl ::std::fmt::Display for SmbSecurityStrategy {
             SmbSecurityStrategy::MandatoryEncryption => write!(f, "MandatoryEncryption"),
             SmbSecurityStrategy::MandatoryEncryptionNoAes128 => write!(f, "MandatoryEncryptionNoAes128"),
             SmbSecurityStrategy::MandatorySigning => write!(f, "MandatorySigning"),
-            SmbSecurityStrategy::Unknown(value) => write!(f, "{}", value),
+            SmbSecurityStrategy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

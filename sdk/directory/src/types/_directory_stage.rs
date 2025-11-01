@@ -175,7 +175,7 @@ impl ::std::fmt::Display for DirectoryStage {
             DirectoryStage::Restorefailed => write!(f, "RestoreFailed"),
             DirectoryStage::Restoring => write!(f, "Restoring"),
             DirectoryStage::Updating => write!(f, "Updating"),
-            DirectoryStage::Unknown(value) => write!(f, "{}", value),
+            DirectoryStage::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

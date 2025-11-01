@@ -112,7 +112,7 @@ impl ::std::fmt::Display for AsyncOperationName {
             AsyncOperationName::CreateMultiRegionAccessPoint => write!(f, "CreateMultiRegionAccessPoint"),
             AsyncOperationName::DeleteMultiRegionAccessPoint => write!(f, "DeleteMultiRegionAccessPoint"),
             AsyncOperationName::PutMultiRegionAccessPointPolicy => write!(f, "PutMultiRegionAccessPointPolicy"),
-            AsyncOperationName::Unknown(value) => write!(f, "{}", value),
+            AsyncOperationName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

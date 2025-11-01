@@ -126,7 +126,7 @@ impl ::std::fmt::Display for UpdateReason {
             UpdateReason::Overwritten => write!(f, "OVERWRITTEN"),
             UpdateReason::PricingModeUpdate => write!(f, "PRICING_MODE_UPDATE"),
             UpdateReason::PricingTierUpdate => write!(f, "PRICING_TIER_UPDATE"),
-            UpdateReason::Unknown(value) => write!(f, "{}", value),
+            UpdateReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

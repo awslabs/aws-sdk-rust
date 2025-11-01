@@ -182,7 +182,7 @@ impl ::std::fmt::Display for ResaleAuthorizationSortBy {
             ResaleAuthorizationSortBy::ResellerAccountId => write!(f, "ResellerAccountID"),
             ResaleAuthorizationSortBy::ResellerLegalName => write!(f, "ResellerLegalName"),
             ResaleAuthorizationSortBy::Status => write!(f, "Status"),
-            ResaleAuthorizationSortBy::Unknown(value) => write!(f, "{}", value),
+            ResaleAuthorizationSortBy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

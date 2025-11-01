@@ -102,7 +102,7 @@ impl ::std::fmt::Display for StatisticalIssueStatus {
         match self {
             StatisticalIssueStatus::NoIssueDetected => write!(f, "NO_ISSUE_DETECTED"),
             StatisticalIssueStatus::PotentialIssueDetected => write!(f, "POTENTIAL_ISSUE_DETECTED"),
-            StatisticalIssueStatus::Unknown(value) => write!(f, "{}", value),
+            StatisticalIssueStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CapacityReservationDeliveryPreference {
         match self {
             CapacityReservationDeliveryPreference::Fixed => write!(f, "fixed"),
             CapacityReservationDeliveryPreference::Incremental => write!(f, "incremental"),
-            CapacityReservationDeliveryPreference::Unknown(value) => write!(f, "{}", value),
+            CapacityReservationDeliveryPreference::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for LifecyclePolicyDetailActionType {
             LifecyclePolicyDetailActionType::Delete => write!(f, "DELETE"),
             LifecyclePolicyDetailActionType::Deprecate => write!(f, "DEPRECATE"),
             LifecyclePolicyDetailActionType::Disable => write!(f, "DISABLE"),
-            LifecyclePolicyDetailActionType::Unknown(value) => write!(f, "{}", value),
+            LifecyclePolicyDetailActionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

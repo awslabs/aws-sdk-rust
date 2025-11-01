@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AllocationStrategy {
         match self {
             AllocationStrategy::LowestPrice => write!(f, "LowestPrice"),
             AllocationStrategy::Prioritized => write!(f, "Prioritized"),
-            AllocationStrategy::Unknown(value) => write!(f, "{}", value),
+            AllocationStrategy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -133,7 +133,7 @@ impl ::std::fmt::Display for JobEntityErrorCode {
             JobEntityErrorCode::MaxPayloadSizeExceeded => write!(f, "MaxPayloadSizeExceeded"),
             JobEntityErrorCode::ResourceNotFoundException => write!(f, "ResourceNotFoundException"),
             JobEntityErrorCode::ValidationException => write!(f, "ValidationException"),
-            JobEntityErrorCode::Unknown(value) => write!(f, "{}", value),
+            JobEntityErrorCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ComputeObjectChecksumType {
         match self {
             ComputeObjectChecksumType::Composite => write!(f, "COMPOSITE"),
             ComputeObjectChecksumType::FullObject => write!(f, "FULL_OBJECT"),
-            ComputeObjectChecksumType::Unknown(value) => write!(f, "{}", value),
+            ComputeObjectChecksumType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

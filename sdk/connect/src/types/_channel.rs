@@ -114,7 +114,7 @@ impl ::std::fmt::Display for Channel {
             Channel::Email => write!(f, "EMAIL"),
             Channel::Task => write!(f, "TASK"),
             Channel::Voice => write!(f, "VOICE"),
-            Channel::Unknown(value) => write!(f, "{}", value),
+            Channel::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

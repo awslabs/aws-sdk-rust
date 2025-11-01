@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Mpeg2RateControlMode {
         match self {
             Mpeg2RateControlMode::Cbr => write!(f, "CBR"),
             Mpeg2RateControlMode::Vbr => write!(f, "VBR"),
-            Mpeg2RateControlMode::Unknown(value) => write!(f, "{}", value),
+            Mpeg2RateControlMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

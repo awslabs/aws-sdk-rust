@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ResourceWarningStatus {
         match self {
             ResourceWarningStatus::Active => write!(f, "active"),
             ResourceWarningStatus::Resolved => write!(f, "resolved"),
-            ResourceWarningStatus::Unknown(value) => write!(f, "{}", value),
+            ResourceWarningStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

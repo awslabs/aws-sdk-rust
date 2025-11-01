@@ -96,7 +96,7 @@ impl ::std::fmt::Display for GlobalAuroraUngracefulBehavior {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             GlobalAuroraUngracefulBehavior::Failover => write!(f, "failover"),
-            GlobalAuroraUngracefulBehavior::Unknown(value) => write!(f, "{}", value),
+            GlobalAuroraUngracefulBehavior::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

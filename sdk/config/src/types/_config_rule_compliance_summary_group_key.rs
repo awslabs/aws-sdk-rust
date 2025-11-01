@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ConfigRuleComplianceSummaryGroupKey {
         match self {
             ConfigRuleComplianceSummaryGroupKey::AccountId => write!(f, "ACCOUNT_ID"),
             ConfigRuleComplianceSummaryGroupKey::AwsRegion => write!(f, "AWS_REGION"),
-            ConfigRuleComplianceSummaryGroupKey::Unknown(value) => write!(f, "{}", value),
+            ConfigRuleComplianceSummaryGroupKey::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -120,7 +120,7 @@ impl ::std::fmt::Display for ExperimentStatus {
             ExperimentStatus::Created => write!(f, "CREATED"),
             ExperimentStatus::Running => write!(f, "RUNNING"),
             ExperimentStatus::Updating => write!(f, "UPDATING"),
-            ExperimentStatus::Unknown(value) => write!(f, "{}", value),
+            ExperimentStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

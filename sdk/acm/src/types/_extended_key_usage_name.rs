@@ -175,7 +175,7 @@ impl ::std::fmt::Display for ExtendedKeyUsageName {
             ExtendedKeyUsageName::TimeStamping => write!(f, "TIME_STAMPING"),
             ExtendedKeyUsageName::TlsWebClientAuthentication => write!(f, "TLS_WEB_CLIENT_AUTHENTICATION"),
             ExtendedKeyUsageName::TlsWebServerAuthentication => write!(f, "TLS_WEB_SERVER_AUTHENTICATION"),
-            ExtendedKeyUsageName::Unknown(value) => write!(f, "{}", value),
+            ExtendedKeyUsageName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

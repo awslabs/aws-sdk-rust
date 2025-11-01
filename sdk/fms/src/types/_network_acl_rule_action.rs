@@ -102,7 +102,7 @@ impl ::std::fmt::Display for NetworkAclRuleAction {
         match self {
             NetworkAclRuleAction::Allow => write!(f, "allow"),
             NetworkAclRuleAction::Deny => write!(f, "deny"),
-            NetworkAclRuleAction::Unknown(value) => write!(f, "{}", value),
+            NetworkAclRuleAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

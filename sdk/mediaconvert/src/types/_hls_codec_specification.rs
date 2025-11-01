@@ -102,7 +102,7 @@ impl ::std::fmt::Display for HlsCodecSpecification {
         match self {
             HlsCodecSpecification::Rfc4281 => write!(f, "RFC_4281"),
             HlsCodecSpecification::Rfc6381 => write!(f, "RFC_6381"),
-            HlsCodecSpecification::Unknown(value) => write!(f, "{}", value),
+            HlsCodecSpecification::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

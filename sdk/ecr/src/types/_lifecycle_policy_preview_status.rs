@@ -114,7 +114,7 @@ impl ::std::fmt::Display for LifecyclePolicyPreviewStatus {
             LifecyclePolicyPreviewStatus::Expired => write!(f, "EXPIRED"),
             LifecyclePolicyPreviewStatus::Failed => write!(f, "FAILED"),
             LifecyclePolicyPreviewStatus::InProgress => write!(f, "IN_PROGRESS"),
-            LifecyclePolicyPreviewStatus::Unknown(value) => write!(f, "{}", value),
+            LifecyclePolicyPreviewStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

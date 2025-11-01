@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CloudWatchEncryptionMode {
         match self {
             CloudWatchEncryptionMode::Disabled => write!(f, "DISABLED"),
             CloudWatchEncryptionMode::Ssekms => write!(f, "SSE-KMS"),
-            CloudWatchEncryptionMode::Unknown(value) => write!(f, "{}", value),
+            CloudWatchEncryptionMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

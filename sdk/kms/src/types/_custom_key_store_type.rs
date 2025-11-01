@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CustomKeyStoreType {
         match self {
             CustomKeyStoreType::AwsCloudhsm => write!(f, "AWS_CLOUDHSM"),
             CustomKeyStoreType::ExternalKeyStore => write!(f, "EXTERNAL_KEY_STORE"),
-            CustomKeyStoreType::Unknown(value) => write!(f, "{}", value),
+            CustomKeyStoreType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

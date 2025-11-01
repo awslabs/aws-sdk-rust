@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ToolUseType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ToolUseType::ServerToolUse => write!(f, "server_tool_use"),
-            ToolUseType::Unknown(value) => write!(f, "{}", value),
+            ToolUseType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

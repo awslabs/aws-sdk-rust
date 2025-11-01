@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ShareInvitationAction {
         match self {
             ShareInvitationAction::Accept => write!(f, "ACCEPT"),
             ShareInvitationAction::Reject => write!(f, "REJECT"),
-            ShareInvitationAction::Unknown(value) => write!(f, "{}", value),
+            ShareInvitationAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

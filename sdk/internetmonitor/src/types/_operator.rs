@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Operator {
         match self {
             Operator::Equals => write!(f, "EQUALS"),
             Operator::NotEquals => write!(f, "NOT_EQUALS"),
-            Operator::Unknown(value) => write!(f, "{}", value),
+            Operator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

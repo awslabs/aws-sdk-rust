@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AngleUnits {
         match self {
             AngleUnits::DegreeAngle => write!(f, "DEGREE_ANGLE"),
             AngleUnits::Radian => write!(f, "RADIAN"),
-            AngleUnits::Unknown(value) => write!(f, "{}", value),
+            AngleUnits::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

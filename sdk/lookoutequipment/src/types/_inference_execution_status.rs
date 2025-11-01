@@ -108,7 +108,7 @@ impl ::std::fmt::Display for InferenceExecutionStatus {
             InferenceExecutionStatus::Failed => write!(f, "FAILED"),
             InferenceExecutionStatus::InProgress => write!(f, "IN_PROGRESS"),
             InferenceExecutionStatus::Success => write!(f, "SUCCESS"),
-            InferenceExecutionStatus::Unknown(value) => write!(f, "{}", value),
+            InferenceExecutionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

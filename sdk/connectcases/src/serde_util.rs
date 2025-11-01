@@ -627,9 +627,6 @@ pub(crate) fn template_rule_correct_errors(mut builder: crate::types::builders::
     if builder.case_rule_id.is_none() {
         builder.case_rule_id = Some(Default::default())
     }
-    if builder.field_id.is_none() {
-        builder.field_id = Some(Default::default())
-    }
     builder
 }
 
@@ -735,9 +732,30 @@ pub(crate) fn custom_content_correct_errors(
     builder
 }
 
+pub(crate) fn field_options_case_rule_correct_errors(
+    mut builder: crate::types::builders::FieldOptionsCaseRuleBuilder,
+) -> crate::types::builders::FieldOptionsCaseRuleBuilder {
+    if builder.parent_child_field_options_mappings.is_none() {
+        builder.parent_child_field_options_mappings = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn file_content_correct_errors(mut builder: crate::types::builders::FileContentBuilder) -> crate::types::builders::FileContentBuilder {
     if builder.file_arn.is_none() {
         builder.file_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn hidden_case_rule_correct_errors(
+    mut builder: crate::types::builders::HiddenCaseRuleBuilder,
+) -> crate::types::builders::HiddenCaseRuleBuilder {
+    if builder.default_value.is_none() {
+        builder.default_value = Some(Default::default())
+    }
+    if builder.conditions.is_none() {
+        builder.conditions = Some(Default::default())
     }
     builder
 }
@@ -794,6 +812,18 @@ pub(crate) fn sla_configuration_correct_errors(
 pub(crate) fn field_group_correct_errors(mut builder: crate::types::builders::FieldGroupBuilder) -> crate::types::builders::FieldGroupBuilder {
     if builder.fields.is_none() {
         builder.fields = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn parent_child_field_options_mapping_correct_errors(
+    mut builder: crate::types::builders::ParentChildFieldOptionsMappingBuilder,
+) -> crate::types::builders::ParentChildFieldOptionsMappingBuilder {
+    if builder.parent_field_option_value.is_none() {
+        builder.parent_field_option_value = Some(Default::default())
+    }
+    if builder.child_field_option_values.is_none() {
+        builder.child_field_option_values = Some(Default::default())
     }
     builder
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for FormButtonsPosition {
             FormButtonsPosition::Bottom => write!(f, "bottom"),
             FormButtonsPosition::Top => write!(f, "top"),
             FormButtonsPosition::TopAndBottom => write!(f, "top_and_bottom"),
-            FormButtonsPosition::Unknown(value) => write!(f, "{}", value),
+            FormButtonsPosition::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ChatResponseConfigurationStatus {
             ChatResponseConfigurationStatus::Creating => write!(f, "CREATING"),
             ChatResponseConfigurationStatus::Failed => write!(f, "FAILED"),
             ChatResponseConfigurationStatus::Updating => write!(f, "UPDATING"),
-            ChatResponseConfigurationStatus::Unknown(value) => write!(f, "{}", value),
+            ChatResponseConfigurationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

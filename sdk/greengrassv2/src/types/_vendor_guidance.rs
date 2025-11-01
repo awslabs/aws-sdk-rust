@@ -108,7 +108,7 @@ impl ::std::fmt::Display for VendorGuidance {
             VendorGuidance::Active => write!(f, "ACTIVE"),
             VendorGuidance::Deleted => write!(f, "DELETED"),
             VendorGuidance::Discontinued => write!(f, "DISCONTINUED"),
-            VendorGuidance::Unknown(value) => write!(f, "{}", value),
+            VendorGuidance::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

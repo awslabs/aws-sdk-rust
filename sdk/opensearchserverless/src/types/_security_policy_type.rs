@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SecurityPolicyType {
         match self {
             SecurityPolicyType::Encryption => write!(f, "encryption"),
             SecurityPolicyType::Network => write!(f, "network"),
-            SecurityPolicyType::Unknown(value) => write!(f, "{}", value),
+            SecurityPolicyType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

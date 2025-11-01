@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PidMode {
         match self {
             PidMode::Host => write!(f, "host"),
             PidMode::Task => write!(f, "task"),
-            PidMode::Unknown(value) => write!(f, "{}", value),
+            PidMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

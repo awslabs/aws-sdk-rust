@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ActivityStatus {
             ActivityStatus::Fulfilled => write!(f, "fulfilled"),
             ActivityStatus::PendingFulfillment => write!(f, "pending_fulfillment"),
             ActivityStatus::PendingTermination => write!(f, "pending_termination"),
-            ActivityStatus::Unknown(value) => write!(f, "{}", value),
+            ActivityStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

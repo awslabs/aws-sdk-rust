@@ -161,7 +161,7 @@ impl ::std::fmt::Display for TriggerEventType {
             TriggerEventType::InstanceReady => write!(f, "InstanceReady"),
             TriggerEventType::InstanceStart => write!(f, "InstanceStart"),
             TriggerEventType::InstanceSuccess => write!(f, "InstanceSuccess"),
-            TriggerEventType::Unknown(value) => write!(f, "{}", value),
+            TriggerEventType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

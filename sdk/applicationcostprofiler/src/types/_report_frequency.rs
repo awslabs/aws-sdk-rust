@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ReportFrequency {
             ReportFrequency::All => write!(f, "ALL"),
             ReportFrequency::Daily => write!(f, "DAILY"),
             ReportFrequency::Monthly => write!(f, "MONTHLY"),
-            ReportFrequency::Unknown(value) => write!(f, "{}", value),
+            ReportFrequency::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -112,7 +112,7 @@ impl ::std::fmt::Display for StatusReasonCode {
             StatusReasonCode::InternalError => write!(f, "INTERNAL_ERROR"),
             StatusReasonCode::MaximumNumberOfConfigRulesExceeded => write!(f, "MAXIMUM_NUMBER_OF_CONFIG_RULES_EXCEEDED"),
             StatusReasonCode::NoAvailableConfigurationRecorder => write!(f, "NO_AVAILABLE_CONFIGURATION_RECORDER"),
-            StatusReasonCode::Unknown(value) => write!(f, "{}", value),
+            StatusReasonCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for OracleAuthenticationMethod {
         match self {
             OracleAuthenticationMethod::Kerberos => write!(f, "kerberos"),
             OracleAuthenticationMethod::Password => write!(f, "password"),
-            OracleAuthenticationMethod::Unknown(value) => write!(f, "{}", value),
+            OracleAuthenticationMethod::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

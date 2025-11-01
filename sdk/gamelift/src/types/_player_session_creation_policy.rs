@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PlayerSessionCreationPolicy {
         match self {
             PlayerSessionCreationPolicy::AcceptAll => write!(f, "ACCEPT_ALL"),
             PlayerSessionCreationPolicy::DenyAll => write!(f, "DENY_ALL"),
-            PlayerSessionCreationPolicy::Unknown(value) => write!(f, "{}", value),
+            PlayerSessionCreationPolicy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

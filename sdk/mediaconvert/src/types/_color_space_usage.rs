@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ColorSpaceUsage {
         match self {
             ColorSpaceUsage::Fallback => write!(f, "FALLBACK"),
             ColorSpaceUsage::Force => write!(f, "FORCE"),
-            ColorSpaceUsage::Unknown(value) => write!(f, "{}", value),
+            ColorSpaceUsage::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

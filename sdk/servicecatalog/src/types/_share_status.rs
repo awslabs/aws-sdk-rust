@@ -120,7 +120,7 @@ impl ::std::fmt::Display for ShareStatus {
             ShareStatus::Error => write!(f, "ERROR"),
             ShareStatus::InProgress => write!(f, "IN_PROGRESS"),
             ShareStatus::NotStarted => write!(f, "NOT_STARTED"),
-            ShareStatus::Unknown(value) => write!(f, "{}", value),
+            ShareStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -154,7 +154,7 @@ impl ::std::fmt::Display for AttachmentState {
             AttachmentState::PendingTagAcceptance => write!(f, "PENDING_TAG_ACCEPTANCE"),
             AttachmentState::Rejected => write!(f, "REJECTED"),
             AttachmentState::Updating => write!(f, "UPDATING"),
-            AttachmentState::Unknown(value) => write!(f, "{}", value),
+            AttachmentState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

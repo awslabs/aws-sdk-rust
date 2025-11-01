@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ResponderErrorMaskingLoggingType {
             ResponderErrorMaskingLoggingType::Metric => write!(f, "METRIC"),
             ResponderErrorMaskingLoggingType::None => write!(f, "NONE"),
             ResponderErrorMaskingLoggingType::Response => write!(f, "RESPONSE"),
-            ResponderErrorMaskingLoggingType::Unknown(value) => write!(f, "{}", value),
+            ResponderErrorMaskingLoggingType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

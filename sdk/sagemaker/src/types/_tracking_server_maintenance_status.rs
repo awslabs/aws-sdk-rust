@@ -108,7 +108,7 @@ impl ::std::fmt::Display for TrackingServerMaintenanceStatus {
             TrackingServerMaintenanceStatus::MaintenanceComplete => write!(f, "MaintenanceComplete"),
             TrackingServerMaintenanceStatus::MaintenanceFailed => write!(f, "MaintenanceFailed"),
             TrackingServerMaintenanceStatus::MaintenanceInProgress => write!(f, "MaintenanceInProgress"),
-            TrackingServerMaintenanceStatus::Unknown(value) => write!(f, "{}", value),
+            TrackingServerMaintenanceStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

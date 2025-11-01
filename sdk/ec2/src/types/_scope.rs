@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Scope {
         match self {
             Scope::AvailabilityZone => write!(f, "Availability Zone"),
             Scope::Regional => write!(f, "Region"),
-            Scope::Unknown(value) => write!(f, "{}", value),
+            Scope::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

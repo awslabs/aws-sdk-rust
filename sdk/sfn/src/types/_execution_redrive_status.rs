@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ExecutionRedriveStatus {
             ExecutionRedriveStatus::NotRedrivable => write!(f, "NOT_REDRIVABLE"),
             ExecutionRedriveStatus::Redrivable => write!(f, "REDRIVABLE"),
             ExecutionRedriveStatus::RedrivableByMapRun => write!(f, "REDRIVABLE_BY_MAP_RUN"),
-            ExecutionRedriveStatus::Unknown(value) => write!(f, "{}", value),
+            ExecutionRedriveStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

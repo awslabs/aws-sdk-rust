@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ResponseScope {
         match self {
             ResponseScope::EnterpriseContentOnly => write!(f, "ENTERPRISE_CONTENT_ONLY"),
             ResponseScope::ExtendedKnowledgeEnabled => write!(f, "EXTENDED_KNOWLEDGE_ENABLED"),
-            ResponseScope::Unknown(value) => write!(f, "{}", value),
+            ResponseScope::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

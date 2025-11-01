@@ -120,7 +120,7 @@ impl ::std::fmt::Display for FineTuningJobStatus {
             FineTuningJobStatus::InProgress => write!(f, "InProgress"),
             FineTuningJobStatus::Stopped => write!(f, "Stopped"),
             FineTuningJobStatus::Stopping => write!(f, "Stopping"),
-            FineTuningJobStatus::Unknown(value) => write!(f, "{}", value),
+            FineTuningJobStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

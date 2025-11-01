@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ModelQuality {
             ModelQuality::CannotDetermineQuality => write!(f, "CANNOT_DETERMINE_QUALITY"),
             ModelQuality::PoorQualityDetected => write!(f, "POOR_QUALITY_DETECTED"),
             ModelQuality::QualityThresholdMet => write!(f, "QUALITY_THRESHOLD_MET"),
-            ModelQuality::Unknown(value) => write!(f, "{}", value),
+            ModelQuality::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

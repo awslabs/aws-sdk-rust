@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PartitionKeyType {
         match self {
             PartitionKeyType::Dimension => write!(f, "DIMENSION"),
             PartitionKeyType::Measure => write!(f, "MEASURE"),
-            PartitionKeyType::Unknown(value) => write!(f, "{}", value),
+            PartitionKeyType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

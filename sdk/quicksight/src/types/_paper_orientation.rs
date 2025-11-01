@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PaperOrientation {
         match self {
             PaperOrientation::Landscape => write!(f, "LANDSCAPE"),
             PaperOrientation::Portrait => write!(f, "PORTRAIT"),
-            PaperOrientation::Unknown(value) => write!(f, "{}", value),
+            PaperOrientation::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

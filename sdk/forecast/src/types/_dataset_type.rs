@@ -108,7 +108,7 @@ impl ::std::fmt::Display for DatasetType {
             DatasetType::ItemMetadata => write!(f, "ITEM_METADATA"),
             DatasetType::RelatedTimeSeries => write!(f, "RELATED_TIME_SERIES"),
             DatasetType::TargetTimeSeries => write!(f, "TARGET_TIME_SERIES"),
-            DatasetType::Unknown(value) => write!(f, "{}", value),
+            DatasetType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

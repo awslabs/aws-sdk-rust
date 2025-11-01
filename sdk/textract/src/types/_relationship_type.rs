@@ -154,7 +154,7 @@ impl ::std::fmt::Display for RelationshipType {
             RelationshipType::TableTitle => write!(f, "TABLE_TITLE"),
             RelationshipType::Title => write!(f, "TITLE"),
             RelationshipType::Value => write!(f, "VALUE"),
-            RelationshipType::Unknown(value) => write!(f, "{}", value),
+            RelationshipType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

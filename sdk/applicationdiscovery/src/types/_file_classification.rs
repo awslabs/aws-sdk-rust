@@ -114,7 +114,7 @@ impl ::std::fmt::Display for FileClassification {
             FileClassification::ModelizeitExport => write!(f, "MODELIZEIT_EXPORT"),
             FileClassification::RvtoolsExport => write!(f, "RVTOOLS_EXPORT"),
             FileClassification::VmwareNsxExport => write!(f, "VMWARE_NSX_EXPORT"),
-            FileClassification::Unknown(value) => write!(f, "{}", value),
+            FileClassification::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

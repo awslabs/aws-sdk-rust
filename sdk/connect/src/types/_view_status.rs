@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ViewStatus {
         match self {
             ViewStatus::Published => write!(f, "PUBLISHED"),
             ViewStatus::Saved => write!(f, "SAVED"),
-            ViewStatus::Unknown(value) => write!(f, "{}", value),
+            ViewStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

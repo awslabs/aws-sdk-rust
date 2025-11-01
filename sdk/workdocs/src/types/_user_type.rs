@@ -120,7 +120,7 @@ impl ::std::fmt::Display for UserType {
             UserType::Poweruser => write!(f, "POWERUSER"),
             UserType::User => write!(f, "USER"),
             UserType::Workspacesuser => write!(f, "WORKSPACESUSER"),
-            UserType::Unknown(value) => write!(f, "{}", value),
+            UserType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

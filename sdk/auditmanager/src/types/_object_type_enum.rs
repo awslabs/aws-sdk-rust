@@ -120,7 +120,7 @@ impl ::std::fmt::Display for ObjectTypeEnum {
             ObjectTypeEnum::Control => write!(f, "CONTROL"),
             ObjectTypeEnum::ControlSet => write!(f, "CONTROL_SET"),
             ObjectTypeEnum::Delegation => write!(f, "DELEGATION"),
-            ObjectTypeEnum::Unknown(value) => write!(f, "{}", value),
+            ObjectTypeEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

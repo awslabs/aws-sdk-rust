@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ScaleUnit {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ScaleUnit::Percent => write!(f, "PERCENT"),
-            ScaleUnit::Unknown(value) => write!(f, "{}", value),
+            ScaleUnit::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

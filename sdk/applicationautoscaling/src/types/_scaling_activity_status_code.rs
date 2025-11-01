@@ -126,7 +126,7 @@ impl ::std::fmt::Display for ScalingActivityStatusCode {
             ScalingActivityStatusCode::Pending => write!(f, "Pending"),
             ScalingActivityStatusCode::Successful => write!(f, "Successful"),
             ScalingActivityStatusCode::Unfulfilled => write!(f, "Unfulfilled"),
-            ScalingActivityStatusCode::Unknown(value) => write!(f, "{}", value),
+            ScalingActivityStatusCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

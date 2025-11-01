@@ -102,7 +102,7 @@ impl ::std::fmt::Display for LogType {
         match self {
             LogType::Audio => write!(f, "AUDIO"),
             LogType::Text => write!(f, "TEXT"),
-            LogType::Unknown(value) => write!(f, "{}", value),
+            LogType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

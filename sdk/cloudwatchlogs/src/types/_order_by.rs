@@ -102,7 +102,7 @@ impl ::std::fmt::Display for OrderBy {
         match self {
             OrderBy::LastEventTime => write!(f, "LastEventTime"),
             OrderBy::LogStreamName => write!(f, "LogStreamName"),
-            OrderBy::Unknown(value) => write!(f, "{}", value),
+            OrderBy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ChangeStatus {
             ChangeStatus::Failed => write!(f, "FAILED"),
             ChangeStatus::InProgress => write!(f, "IN_PROGRESS"),
             ChangeStatus::NotStarted => write!(f, "NOT_STARTED"),
-            ChangeStatus::Unknown(value) => write!(f, "{}", value),
+            ChangeStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

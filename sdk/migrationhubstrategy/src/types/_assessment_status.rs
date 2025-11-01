@@ -114,7 +114,7 @@ impl ::std::fmt::Display for AssessmentStatus {
             AssessmentStatus::Failed => write!(f, "FAILED"),
             AssessmentStatus::InProgress => write!(f, "IN_PROGRESS"),
             AssessmentStatus::Stopped => write!(f, "STOPPED"),
-            AssessmentStatus::Unknown(value) => write!(f, "{}", value),
+            AssessmentStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

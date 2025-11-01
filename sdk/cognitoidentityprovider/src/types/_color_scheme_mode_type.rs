@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ColorSchemeModeType {
             ColorSchemeModeType::Dark => write!(f, "DARK"),
             ColorSchemeModeType::Dynamic => write!(f, "DYNAMIC"),
             ColorSchemeModeType::Light => write!(f, "LIGHT"),
-            ColorSchemeModeType::Unknown(value) => write!(f, "{}", value),
+            ColorSchemeModeType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

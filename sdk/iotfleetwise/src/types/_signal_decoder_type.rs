@@ -114,7 +114,7 @@ impl ::std::fmt::Display for SignalDecoderType {
             SignalDecoderType::CustomDecodingSignal => write!(f, "CUSTOM_DECODING_SIGNAL"),
             SignalDecoderType::MessageSignal => write!(f, "MESSAGE_SIGNAL"),
             SignalDecoderType::ObdSignal => write!(f, "OBD_SIGNAL"),
-            SignalDecoderType::Unknown(value) => write!(f, "{}", value),
+            SignalDecoderType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TooltipTitleType {
         match self {
             TooltipTitleType::None => write!(f, "NONE"),
             TooltipTitleType::PrimaryValue => write!(f, "PRIMARY_VALUE"),
-            TooltipTitleType::Unknown(value) => write!(f, "{}", value),
+            TooltipTitleType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

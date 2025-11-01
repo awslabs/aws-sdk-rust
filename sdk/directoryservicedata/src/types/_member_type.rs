@@ -108,7 +108,7 @@ impl ::std::fmt::Display for MemberType {
             MemberType::Computer => write!(f, "COMPUTER"),
             MemberType::Group => write!(f, "GROUP"),
             MemberType::User => write!(f, "USER"),
-            MemberType::Unknown(value) => write!(f, "{}", value),
+            MemberType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

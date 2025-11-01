@@ -576,7 +576,7 @@ impl ::std::fmt::Display for OcsfStringField {
             OcsfStringField::VulnerabilitiesCveUid => write!(f, "vulnerabilities.cve.uid"),
             OcsfStringField::VulnerabilitiesFixCoverage => write!(f, "vulnerabilities.fix_coverage"),
             OcsfStringField::VulnerabilitiesRelatedVulnerabilities => write!(f, "vulnerabilities.related_vulnerabilities"),
-            OcsfStringField::Unknown(value) => write!(f, "{}", value),
+            OcsfStringField::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

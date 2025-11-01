@@ -102,7 +102,7 @@ impl ::std::fmt::Display for LifecyclePolicyDetailFilterType {
         match self {
             LifecyclePolicyDetailFilterType::Age => write!(f, "AGE"),
             LifecyclePolicyDetailFilterType::Count => write!(f, "COUNT"),
-            LifecyclePolicyDetailFilterType::Unknown(value) => write!(f, "{}", value),
+            LifecyclePolicyDetailFilterType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -154,7 +154,7 @@ impl ::std::fmt::Display for MetadataField {
             MetadataField::LambdaPreviousExecutionTimeInMilliseconds => write!(f, "LambdaPreviousExecutionTimeInMilliseconds"),
             MetadataField::LambdaRemainingTimeInMilliseconds => write!(f, "LambdaRemainingTimeInMilliseconds"),
             MetadataField::LambdaTimeGapBetweenInvokesInMilliseconds => write!(f, "LambdaTimeGapBetweenInvokesInMilliseconds"),
-            MetadataField::Unknown(value) => write!(f, "{}", value),
+            MetadataField::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

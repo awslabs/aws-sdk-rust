@@ -121,7 +121,7 @@ impl ::std::fmt::Display for LogType {
             LogType::EsApplicationLogs => write!(f, "ES_APPLICATION_LOGS"),
             LogType::IndexSlowLogs => write!(f, "INDEX_SLOW_LOGS"),
             LogType::SearchSlowLogs => write!(f, "SEARCH_SLOW_LOGS"),
-            LogType::Unknown(value) => write!(f, "{}", value),
+            LogType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

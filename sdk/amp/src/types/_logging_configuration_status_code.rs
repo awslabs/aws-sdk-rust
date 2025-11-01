@@ -126,7 +126,7 @@ impl ::std::fmt::Display for LoggingConfigurationStatusCode {
             LoggingConfigurationStatusCode::Deleting => write!(f, "DELETING"),
             LoggingConfigurationStatusCode::UpdateFailed => write!(f, "UPDATE_FAILED"),
             LoggingConfigurationStatusCode::Updating => write!(f, "UPDATING"),
-            LoggingConfigurationStatusCode::Unknown(value) => write!(f, "{}", value),
+            LoggingConfigurationStatusCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

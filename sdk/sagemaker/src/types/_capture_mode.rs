@@ -108,7 +108,7 @@ impl ::std::fmt::Display for CaptureMode {
             CaptureMode::Input => write!(f, "Input"),
             CaptureMode::InputAndOutput => write!(f, "InputAndOutput"),
             CaptureMode::Output => write!(f, "Output"),
-            CaptureMode::Unknown(value) => write!(f, "{}", value),
+            CaptureMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

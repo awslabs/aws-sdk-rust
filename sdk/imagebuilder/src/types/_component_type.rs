@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ComponentType {
         match self {
             ComponentType::Build => write!(f, "BUILD"),
             ComponentType::Test => write!(f, "TEST"),
-            ComponentType::Unknown(value) => write!(f, "{}", value),
+            ComponentType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

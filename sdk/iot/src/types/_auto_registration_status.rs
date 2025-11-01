@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AutoRegistrationStatus {
         match self {
             AutoRegistrationStatus::Disable => write!(f, "DISABLE"),
             AutoRegistrationStatus::Enable => write!(f, "ENABLE"),
-            AutoRegistrationStatus::Unknown(value) => write!(f, "{}", value),
+            AutoRegistrationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

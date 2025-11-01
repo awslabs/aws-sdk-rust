@@ -108,7 +108,7 @@ impl ::std::fmt::Display for LabelRating {
             LabelRating::Anomaly => write!(f, "ANOMALY"),
             LabelRating::Neutral => write!(f, "NEUTRAL"),
             LabelRating::NoAnomaly => write!(f, "NO_ANOMALY"),
-            LabelRating::Unknown(value) => write!(f, "{}", value),
+            LabelRating::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

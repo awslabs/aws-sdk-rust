@@ -176,8 +176,7 @@ pub fn expect_number_or_null(
                 .map_err(|_| {
                     Error::custom(
                         format!(
-                        "only `Infinity`, `-Infinity`, `NaN` can represent a float as a string but found `{}`",
-                        v
+                        "only `Infinity`, `-Infinity`, `NaN` can represent a float as a string but found `{v}`"
                     )).with_offset(offset.0)
                 }),
         },
@@ -405,7 +404,7 @@ pub mod test {
         let err = result.err().expect("expected error");
         let (actual_message, actual_offset) = match &err.kind {
             ErrorKind::Custom { message, .. } => (message.as_ref(), err.offset),
-            _ => panic!("expected ErrorKind::Custom, got {:?}", err),
+            _ => panic!("expected ErrorKind::Custom, got {err:?}"),
         };
         assert_eq!((message, offset), (actual_message, actual_offset));
     }
@@ -567,7 +566,7 @@ pub mod test {
                 // ok
             }
             not_ok => {
-                panic!("expected nan, found: {:?}", not_ok)
+                panic!("expected nan, found: {not_ok:?}")
             }
         }
     }
@@ -702,8 +701,8 @@ pub mod test {
     #[test]
     fn test_document_recursion_limit() {
         let mut value = String::new();
-        value.extend(std::iter::repeat('[').take(300));
-        value.extend(std::iter::repeat(']').take(300));
+        value.extend(std::iter::repeat_n('[', 300));
+        value.extend(std::iter::repeat_n(']', 300));
         expect_err_custom(
             "exceeded max recursion depth while parsing document",
             None,
@@ -711,9 +710,9 @@ pub mod test {
         );
 
         value = String::new();
-        value.extend(std::iter::repeat("{\"t\":").take(300));
+        value.extend(std::iter::repeat_n("{\"t\":", 300));
         value.push('1');
-        value.extend(std::iter::repeat('}').take(300));
+        value.extend(std::iter::repeat_n('}', 300));
         expect_err_custom(
             "exceeded max recursion depth while parsing document",
             None,

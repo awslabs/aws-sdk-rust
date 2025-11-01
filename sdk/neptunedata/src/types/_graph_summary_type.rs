@@ -102,7 +102,7 @@ impl ::std::fmt::Display for GraphSummaryType {
         match self {
             GraphSummaryType::Basic => write!(f, "basic"),
             GraphSummaryType::Detailed => write!(f, "detailed"),
-            GraphSummaryType::Unknown(value) => write!(f, "{}", value),
+            GraphSummaryType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

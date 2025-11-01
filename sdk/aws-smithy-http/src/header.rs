@@ -64,7 +64,7 @@ pub fn many_dates<'a>(
         let mut header = header;
         while !header.is_empty() {
             let (v, next) = DateTime::read(header, format, ',').map_err(|err| {
-                ParseError::new(format!("header could not be parsed as date: {}", err))
+                ParseError::new(format!("header could not be parsed as date: {err}"))
             })?;
             out.push(v);
             header = next;

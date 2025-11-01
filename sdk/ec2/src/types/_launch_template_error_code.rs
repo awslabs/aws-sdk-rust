@@ -133,7 +133,7 @@ impl ::std::fmt::Display for LaunchTemplateErrorCode {
             LaunchTemplateErrorCode::LaunchTemplateNameMalformed => write!(f, "launchTemplateNameMalformed"),
             LaunchTemplateErrorCode::LaunchTemplateVersionDoesNotExist => write!(f, "launchTemplateVersionDoesNotExist"),
             LaunchTemplateErrorCode::UnexpectedError => write!(f, "unexpectedError"),
-            LaunchTemplateErrorCode::Unknown(value) => write!(f, "{}", value),
+            LaunchTemplateErrorCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

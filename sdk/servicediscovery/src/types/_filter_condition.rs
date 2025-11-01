@@ -114,7 +114,7 @@ impl ::std::fmt::Display for FilterCondition {
             FilterCondition::Between => write!(f, "BETWEEN"),
             FilterCondition::Eq => write!(f, "EQ"),
             FilterCondition::In => write!(f, "IN"),
-            FilterCondition::Unknown(value) => write!(f, "{}", value),
+            FilterCondition::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

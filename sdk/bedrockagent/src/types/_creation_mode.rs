@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CreationMode {
         match self {
             CreationMode::Default => write!(f, "DEFAULT"),
             CreationMode::Overridden => write!(f, "OVERRIDDEN"),
-            CreationMode::Unknown(value) => write!(f, "{}", value),
+            CreationMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -96,7 +96,7 @@ impl ::std::fmt::Display for TranscribeContentRedactionType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             TranscribeContentRedactionType::Pii => write!(f, "PII"),
-            TranscribeContentRedactionType::Unknown(value) => write!(f, "{}", value),
+            TranscribeContentRedactionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

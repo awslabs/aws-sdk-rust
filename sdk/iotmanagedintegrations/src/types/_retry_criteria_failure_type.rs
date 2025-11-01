@@ -108,7 +108,7 @@ impl ::std::fmt::Display for RetryCriteriaFailureType {
             RetryCriteriaFailureType::All => write!(f, "ALL"),
             RetryCriteriaFailureType::Failed => write!(f, "FAILED"),
             RetryCriteriaFailureType::TimedOut => write!(f, "TIMED_OUT"),
-            RetryCriteriaFailureType::Unknown(value) => write!(f, "{}", value),
+            RetryCriteriaFailureType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

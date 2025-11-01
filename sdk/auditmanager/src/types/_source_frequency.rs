@@ -108,7 +108,7 @@ impl ::std::fmt::Display for SourceFrequency {
             SourceFrequency::Daily => write!(f, "DAILY"),
             SourceFrequency::Monthly => write!(f, "MONTHLY"),
             SourceFrequency::Weekly => write!(f, "WEEKLY"),
-            SourceFrequency::Unknown(value) => write!(f, "{}", value),
+            SourceFrequency::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

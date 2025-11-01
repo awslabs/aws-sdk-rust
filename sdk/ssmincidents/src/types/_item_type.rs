@@ -154,7 +154,7 @@ impl ::std::fmt::Display for ItemType {
             ItemType::Other => write!(f, "OTHER"),
             ItemType::Parent => write!(f, "PARENT"),
             ItemType::Task => write!(f, "TASK"),
-            ItemType::Unknown(value) => write!(f, "{}", value),
+            ItemType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

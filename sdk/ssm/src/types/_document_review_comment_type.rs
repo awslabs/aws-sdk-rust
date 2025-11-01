@@ -96,7 +96,7 @@ impl ::std::fmt::Display for DocumentReviewCommentType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             DocumentReviewCommentType::Comment => write!(f, "Comment"),
-            DocumentReviewCommentType::Unknown(value) => write!(f, "{}", value),
+            DocumentReviewCommentType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

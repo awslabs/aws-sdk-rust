@@ -114,7 +114,7 @@ impl ::std::fmt::Display for RuleTypeOption {
             RuleTypeOption::Forward => write!(f, "FORWARD"),
             RuleTypeOption::Recursive => write!(f, "RECURSIVE"),
             RuleTypeOption::System => write!(f, "SYSTEM"),
-            RuleTypeOption::Unknown(value) => write!(f, "{}", value),
+            RuleTypeOption::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

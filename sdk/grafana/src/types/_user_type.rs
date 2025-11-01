@@ -102,7 +102,7 @@ impl ::std::fmt::Display for UserType {
         match self {
             UserType::SsoGroup => write!(f, "SSO_GROUP"),
             UserType::SsoUser => write!(f, "SSO_USER"),
-            UserType::Unknown(value) => write!(f, "{}", value),
+            UserType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

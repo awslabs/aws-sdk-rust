@@ -120,7 +120,7 @@ impl ::std::fmt::Display for KmsKeyState {
             KmsKeyState::PendingDeletion => write!(f, "PENDING_DELETION"),
             KmsKeyState::PendingImport => write!(f, "PENDING_IMPORT"),
             KmsKeyState::Unavailable => write!(f, "UNAVAILABLE"),
-            KmsKeyState::Unknown(value) => write!(f, "{}", value),
+            KmsKeyState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

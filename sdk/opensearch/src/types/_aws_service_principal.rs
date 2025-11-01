@@ -96,7 +96,7 @@ impl ::std::fmt::Display for AwsServicePrincipal {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             AwsServicePrincipal::ApplicationOpensearchserviceAmazonawsCom => write!(f, "application.opensearchservice.amazonaws.com"),
-            AwsServicePrincipal::Unknown(value) => write!(f, "{}", value),
+            AwsServicePrincipal::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

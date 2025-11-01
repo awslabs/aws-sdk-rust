@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Logical {
         match self {
             Logical::And => write!(f, "AND"),
             Logical::Any => write!(f, "ANY"),
-            Logical::Unknown(value) => write!(f, "{}", value),
+            Logical::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

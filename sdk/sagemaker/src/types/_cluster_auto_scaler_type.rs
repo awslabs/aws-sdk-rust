@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ClusterAutoScalerType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ClusterAutoScalerType::Karpenter => write!(f, "Karpenter"),
-            ClusterAutoScalerType::Unknown(value) => write!(f, "{}", value),
+            ClusterAutoScalerType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

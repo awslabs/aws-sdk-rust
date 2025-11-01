@@ -108,7 +108,7 @@ impl ::std::fmt::Display for HlsDiscontinuityMode {
             HlsDiscontinuityMode::Always => write!(f, "ALWAYS"),
             HlsDiscontinuityMode::Never => write!(f, "NEVER"),
             HlsDiscontinuityMode::OnDiscontinuity => write!(f, "ON_DISCONTINUITY"),
-            HlsDiscontinuityMode::Unknown(value) => write!(f, "{}", value),
+            HlsDiscontinuityMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

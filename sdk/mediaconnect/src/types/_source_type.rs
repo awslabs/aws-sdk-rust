@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SourceType {
         match self {
             SourceType::Entitled => write!(f, "ENTITLED"),
             SourceType::Owned => write!(f, "OWNED"),
-            SourceType::Unknown(value) => write!(f, "{}", value),
+            SourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

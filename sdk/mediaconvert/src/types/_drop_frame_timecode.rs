@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DropFrameTimecode {
         match self {
             DropFrameTimecode::Disabled => write!(f, "DISABLED"),
             DropFrameTimecode::Enabled => write!(f, "ENABLED"),
-            DropFrameTimecode::Unknown(value) => write!(f, "{}", value),
+            DropFrameTimecode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for KnowledgeBaseType {
             KnowledgeBaseType::Custom => write!(f, "CUSTOM"),
             KnowledgeBaseType::External => write!(f, "EXTERNAL"),
             KnowledgeBaseType::QuickResponses => write!(f, "QUICK_RESPONSES"),
-            KnowledgeBaseType::Unknown(value) => write!(f, "{}", value),
+            KnowledgeBaseType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

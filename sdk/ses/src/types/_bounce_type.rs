@@ -133,7 +133,7 @@ impl ::std::fmt::Display for BounceType {
             BounceType::MessageTooLarge => write!(f, "MessageTooLarge"),
             BounceType::TemporaryFailure => write!(f, "TemporaryFailure"),
             BounceType::Undefined => write!(f, "Undefined"),
-            BounceType::Unknown(value) => write!(f, "{}", value),
+            BounceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

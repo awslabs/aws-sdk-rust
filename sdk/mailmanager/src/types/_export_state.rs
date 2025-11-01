@@ -126,7 +126,7 @@ impl ::std::fmt::Display for ExportState {
             ExportState::Preprocessing => write!(f, "PREPROCESSING"),
             ExportState::Processing => write!(f, "PROCESSING"),
             ExportState::Queued => write!(f, "QUEUED"),
-            ExportState::Unknown(value) => write!(f, "{}", value),
+            ExportState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

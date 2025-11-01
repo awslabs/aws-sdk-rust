@@ -51,8 +51,7 @@ pub fn de_delete_local_gateway_route_table(
     let start_el = decoder.start_el();
     if !(start_el.matches("DeleteLocalGatewayRouteTableResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected DeleteLocalGatewayRouteTableResponse got {:?}",
-            start_el
+            "invalid root, expected DeleteLocalGatewayRouteTableResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

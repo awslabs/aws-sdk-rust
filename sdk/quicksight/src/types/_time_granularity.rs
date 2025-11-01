@@ -144,7 +144,7 @@ impl ::std::fmt::Display for TimeGranularity {
             TimeGranularity::Second => write!(f, "SECOND"),
             TimeGranularity::Week => write!(f, "WEEK"),
             TimeGranularity::Year => write!(f, "YEAR"),
-            TimeGranularity::Unknown(value) => write!(f, "{}", value),
+            TimeGranularity::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

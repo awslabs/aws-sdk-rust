@@ -114,7 +114,7 @@ impl ::std::fmt::Display for CustomMetricType {
             CustomMetricType::Number => write!(f, "number"),
             CustomMetricType::NumberList => write!(f, "number-list"),
             CustomMetricType::StringList => write!(f, "string-list"),
-            CustomMetricType::Unknown(value) => write!(f, "{}", value),
+            CustomMetricType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

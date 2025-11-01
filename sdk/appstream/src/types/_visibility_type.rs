@@ -108,7 +108,7 @@ impl ::std::fmt::Display for VisibilityType {
             VisibilityType::Private => write!(f, "PRIVATE"),
             VisibilityType::Public => write!(f, "PUBLIC"),
             VisibilityType::Shared => write!(f, "SHARED"),
-            VisibilityType::Unknown(value) => write!(f, "{}", value),
+            VisibilityType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

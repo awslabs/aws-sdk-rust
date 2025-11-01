@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TunnelProtocol {
         match self {
             TunnelProtocol::Gre => write!(f, "GRE"),
             TunnelProtocol::NoEncap => write!(f, "NO_ENCAP"),
-            TunnelProtocol::Unknown(value) => write!(f, "{}", value),
+            TunnelProtocol::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

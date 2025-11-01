@@ -17,8 +17,7 @@ pub fn de_policy_status(inp: &[u8]) -> std::result::Result<crate::types::PolicyS
     let start_el = decoder.start_el();
     if !(start_el.matches("PolicyStatus")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected PolicyStatus got {:?}",
-            start_el
+            "invalid root, expected PolicyStatus got {start_el:?}"
         )));
     }
     crate::protocol_serde::shape_policy_status::de_policy_status(&mut decoder)

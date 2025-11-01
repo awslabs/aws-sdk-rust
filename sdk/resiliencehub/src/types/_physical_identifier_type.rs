@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PhysicalIdentifierType {
         match self {
             PhysicalIdentifierType::Arn => write!(f, "Arn"),
             PhysicalIdentifierType::Native => write!(f, "Native"),
-            PhysicalIdentifierType::Unknown(value) => write!(f, "{}", value),
+            PhysicalIdentifierType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

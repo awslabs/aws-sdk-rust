@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Fmp4NielsenId3Behavior {
         match self {
             Fmp4NielsenId3Behavior::NoPassthrough => write!(f, "NO_PASSTHROUGH"),
             Fmp4NielsenId3Behavior::Passthrough => write!(f, "PASSTHROUGH"),
-            Fmp4NielsenId3Behavior::Unknown(value) => write!(f, "{}", value),
+            Fmp4NielsenId3Behavior::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DurationUnit {
         match self {
             DurationUnit::Ms => write!(f, "ms"),
             DurationUnit::S => write!(f, "s"),
-            DurationUnit::Unknown(value) => write!(f, "{}", value),
+            DurationUnit::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -110,7 +110,7 @@ impl ::std::fmt::Display for TargetRole {
             TargetRole::ReadOnly => write!(f, "READ_ONLY"),
             TargetRole::ReadWrite => write!(f, "READ_WRITE"),
             TargetRole::UnknownValue => write!(f, "UNKNOWN"),
-            TargetRole::Unknown(value) => write!(f, "{}", value),
+            TargetRole::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

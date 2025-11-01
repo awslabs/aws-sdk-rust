@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AvcIntraFramerateControl {
         match self {
             AvcIntraFramerateControl::InitializeFromSource => write!(f, "INITIALIZE_FROM_SOURCE"),
             AvcIntraFramerateControl::Specified => write!(f, "SPECIFIED"),
-            AvcIntraFramerateControl::Unknown(value) => write!(f, "{}", value),
+            AvcIntraFramerateControl::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

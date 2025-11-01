@@ -175,7 +175,7 @@ impl ::std::fmt::Display for ContactInitiationMethod {
             ContactInitiationMethod::QueueTransfer => write!(f, "QUEUE_TRANSFER"),
             ContactInitiationMethod::Transfer => write!(f, "TRANSFER"),
             ContactInitiationMethod::WebrtcApi => write!(f, "WEBRTC_API"),
-            ContactInitiationMethod::Unknown(value) => write!(f, "{}", value),
+            ContactInitiationMethod::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

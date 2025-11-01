@@ -108,7 +108,7 @@ impl ::std::fmt::Display for StatusValues {
             StatusValues::Failed => write!(f, "FAILED"),
             StatusValues::InProgress => write!(f, "IN_PROGRESS"),
             StatusValues::Succeeded => write!(f, "SUCCEEDED"),
-            StatusValues::Unknown(value) => write!(f, "{}", value),
+            StatusValues::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

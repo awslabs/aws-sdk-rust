@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ClientAuthenticationStatus {
         match self {
             ClientAuthenticationStatus::Disabled => write!(f, "Disabled"),
             ClientAuthenticationStatus::Enabled => write!(f, "Enabled"),
-            ClientAuthenticationStatus::Unknown(value) => write!(f, "{}", value),
+            ClientAuthenticationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

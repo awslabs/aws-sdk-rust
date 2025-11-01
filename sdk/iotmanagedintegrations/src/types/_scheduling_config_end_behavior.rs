@@ -108,7 +108,7 @@ impl ::std::fmt::Display for SchedulingConfigEndBehavior {
             SchedulingConfigEndBehavior::Cancel => write!(f, "CANCEL"),
             SchedulingConfigEndBehavior::ForceCancel => write!(f, "FORCE_CANCEL"),
             SchedulingConfigEndBehavior::StopRollout => write!(f, "STOP_ROLLOUT"),
-            SchedulingConfigEndBehavior::Unknown(value) => write!(f, "{}", value),
+            SchedulingConfigEndBehavior::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

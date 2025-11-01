@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ViewType {
             ViewType::NewAndOldImages => write!(f, "NEW_AND_OLD_IMAGES"),
             ViewType::NewImage => write!(f, "NEW_IMAGE"),
             ViewType::OldImage => write!(f, "OLD_IMAGE"),
-            ViewType::Unknown(value) => write!(f, "{}", value),
+            ViewType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

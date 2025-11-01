@@ -120,7 +120,7 @@ impl ::std::fmt::Display for SignalExternalWorkflowExecutionFailedCause {
                 write!(f, "SIGNAL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED")
             }
             SignalExternalWorkflowExecutionFailedCause::UnknownExternalWorkflowExecution => write!(f, "UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION"),
-            SignalExternalWorkflowExecutionFailedCause::Unknown(value) => write!(f, "{}", value),
+            SignalExternalWorkflowExecutionFailedCause::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

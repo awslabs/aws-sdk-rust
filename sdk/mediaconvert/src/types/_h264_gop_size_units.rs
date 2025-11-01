@@ -108,7 +108,7 @@ impl ::std::fmt::Display for H264GopSizeUnits {
             H264GopSizeUnits::Auto => write!(f, "AUTO"),
             H264GopSizeUnits::Frames => write!(f, "FRAMES"),
             H264GopSizeUnits::Seconds => write!(f, "SECONDS"),
-            H264GopSizeUnits::Unknown(value) => write!(f, "{}", value),
+            H264GopSizeUnits::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

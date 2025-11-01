@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ResourceType {
             ResourceType::AwsEc2Instance => write!(f, "AWS::EC2::Instance"),
             ResourceType::AwsEc2Vpc => write!(f, "AWS::EC2::VPC"),
             ResourceType::AwsLamdbaFunction => write!(f, "AWS::Lambda::Function"),
-            ResourceType::Unknown(value) => write!(f, "{}", value),
+            ResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

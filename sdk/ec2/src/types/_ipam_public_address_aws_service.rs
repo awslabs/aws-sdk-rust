@@ -154,7 +154,7 @@ impl ::std::fmt::Display for IpamPublicAddressAwsService {
             IpamPublicAddressAwsService::Redshift => write!(f, "redshift"),
             IpamPublicAddressAwsService::Rds => write!(f, "relational-database-service"),
             IpamPublicAddressAwsService::S2SVpn => write!(f, "site-to-site-vpn"),
-            IpamPublicAddressAwsService::Unknown(value) => write!(f, "{}", value),
+            IpamPublicAddressAwsService::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

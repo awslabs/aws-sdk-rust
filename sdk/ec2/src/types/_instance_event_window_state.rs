@@ -114,7 +114,7 @@ impl ::std::fmt::Display for InstanceEventWindowState {
             InstanceEventWindowState::Creating => write!(f, "creating"),
             InstanceEventWindowState::Deleted => write!(f, "deleted"),
             InstanceEventWindowState::Deleting => write!(f, "deleting"),
-            InstanceEventWindowState::Unknown(value) => write!(f, "{}", value),
+            InstanceEventWindowState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

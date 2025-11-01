@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ProtectedJobWorkerComputeType {
         match self {
             ProtectedJobWorkerComputeType::Cr1X => write!(f, "CR.1X"),
             ProtectedJobWorkerComputeType::Cr4X => write!(f, "CR.4X"),
-            ProtectedJobWorkerComputeType::Unknown(value) => write!(f, "{}", value),
+            ProtectedJobWorkerComputeType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

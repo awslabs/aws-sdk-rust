@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MetadataDirective {
         match self {
             MetadataDirective::Copy => write!(f, "COPY"),
             MetadataDirective::Replace => write!(f, "REPLACE"),
-            MetadataDirective::Unknown(value) => write!(f, "{}", value),
+            MetadataDirective::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

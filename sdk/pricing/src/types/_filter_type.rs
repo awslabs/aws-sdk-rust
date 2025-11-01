@@ -120,7 +120,7 @@ impl ::std::fmt::Display for FilterType {
             FilterType::Equals => write!(f, "EQUALS"),
             FilterType::NoneOf => write!(f, "NONE_OF"),
             FilterType::TermMatch => write!(f, "TERM_MATCH"),
-            FilterType::Unknown(value) => write!(f, "{}", value),
+            FilterType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

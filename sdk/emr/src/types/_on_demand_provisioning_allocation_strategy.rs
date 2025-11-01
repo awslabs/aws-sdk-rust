@@ -102,7 +102,7 @@ impl ::std::fmt::Display for OnDemandProvisioningAllocationStrategy {
         match self {
             OnDemandProvisioningAllocationStrategy::LowestPrice => write!(f, "lowest-price"),
             OnDemandProvisioningAllocationStrategy::Prioritized => write!(f, "prioritized"),
-            OnDemandProvisioningAllocationStrategy::Unknown(value) => write!(f, "{}", value),
+            OnDemandProvisioningAllocationStrategy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

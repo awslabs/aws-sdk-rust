@@ -147,7 +147,7 @@ impl ::std::fmt::Display for CannedAccessControlList {
             CannedAccessControlList::Private => write!(f, "private"),
             CannedAccessControlList::PublicRead => write!(f, "public-read"),
             CannedAccessControlList::PublicReadWrite => write!(f, "public-read-write"),
-            CannedAccessControlList::Unknown(value) => write!(f, "{}", value),
+            CannedAccessControlList::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

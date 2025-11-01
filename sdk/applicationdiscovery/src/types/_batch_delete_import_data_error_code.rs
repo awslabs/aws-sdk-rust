@@ -108,7 +108,7 @@ impl ::std::fmt::Display for BatchDeleteImportDataErrorCode {
             BatchDeleteImportDataErrorCode::InternalServerError => write!(f, "INTERNAL_SERVER_ERROR"),
             BatchDeleteImportDataErrorCode::NotFound => write!(f, "NOT_FOUND"),
             BatchDeleteImportDataErrorCode::OverLimit => write!(f, "OVER_LIMIT"),
-            BatchDeleteImportDataErrorCode::Unknown(value) => write!(f, "{}", value),
+            BatchDeleteImportDataErrorCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

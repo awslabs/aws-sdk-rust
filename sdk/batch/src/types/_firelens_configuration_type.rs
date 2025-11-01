@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FirelensConfigurationType {
         match self {
             FirelensConfigurationType::Fluentbit => write!(f, "fluentbit"),
             FirelensConfigurationType::Fluentd => write!(f, "fluentd"),
-            FirelensConfigurationType::Unknown(value) => write!(f, "{}", value),
+            FirelensConfigurationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

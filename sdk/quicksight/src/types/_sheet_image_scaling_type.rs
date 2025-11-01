@@ -114,7 +114,7 @@ impl ::std::fmt::Display for SheetImageScalingType {
             SheetImageScalingType::ScaleToContainer => write!(f, "SCALE_TO_CONTAINER"),
             SheetImageScalingType::ScaleToHeight => write!(f, "SCALE_TO_HEIGHT"),
             SheetImageScalingType::ScaleToWidth => write!(f, "SCALE_TO_WIDTH"),
-            SheetImageScalingType::Unknown(value) => write!(f, "{}", value),
+            SheetImageScalingType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

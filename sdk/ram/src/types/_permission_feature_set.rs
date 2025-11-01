@@ -108,7 +108,7 @@ impl ::std::fmt::Display for PermissionFeatureSet {
             PermissionFeatureSet::CreatedFromPolicy => write!(f, "CREATED_FROM_POLICY"),
             PermissionFeatureSet::PromotingToStandard => write!(f, "PROMOTING_TO_STANDARD"),
             PermissionFeatureSet::Standard => write!(f, "STANDARD"),
-            PermissionFeatureSet::Unknown(value) => write!(f, "{}", value),
+            PermissionFeatureSet::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

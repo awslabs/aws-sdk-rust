@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AuthPolicyState {
         match self {
             AuthPolicyState::Active => write!(f, "Active"),
             AuthPolicyState::Inactive => write!(f, "Inactive"),
-            AuthPolicyState::Unknown(value) => write!(f, "{}", value),
+            AuthPolicyState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

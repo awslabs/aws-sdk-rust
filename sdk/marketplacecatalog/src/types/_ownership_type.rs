@@ -104,7 +104,7 @@ impl ::std::fmt::Display for OwnershipType {
         match self {
             OwnershipType::SelfValue => write!(f, "SELF"),
             OwnershipType::Shared => write!(f, "SHARED"),
-            OwnershipType::Unknown(value) => write!(f, "{}", value),
+            OwnershipType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

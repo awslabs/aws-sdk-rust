@@ -96,7 +96,7 @@ impl ::std::fmt::Display for OriginAccessControlSigningProtocols {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             OriginAccessControlSigningProtocols::Sigv4 => write!(f, "sigv4"),
-            OriginAccessControlSigningProtocols::Unknown(value) => write!(f, "{}", value),
+            OriginAccessControlSigningProtocols::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

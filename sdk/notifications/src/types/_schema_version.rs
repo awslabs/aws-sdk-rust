@@ -96,7 +96,7 @@ impl ::std::fmt::Display for SchemaVersion {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             SchemaVersion::SchemaVersion10 => write!(f, "v1.0"),
-            SchemaVersion::Unknown(value) => write!(f, "{}", value),
+            SchemaVersion::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

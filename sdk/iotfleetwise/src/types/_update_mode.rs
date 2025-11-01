@@ -102,7 +102,7 @@ impl ::std::fmt::Display for UpdateMode {
         match self {
             UpdateMode::Merge => write!(f, "Merge"),
             UpdateMode::Overwrite => write!(f, "Overwrite"),
-            UpdateMode::Unknown(value) => write!(f, "{}", value),
+            UpdateMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

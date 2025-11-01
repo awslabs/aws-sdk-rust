@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AccountGateStatus {
             AccountGateStatus::Failed => write!(f, "FAILED"),
             AccountGateStatus::Skipped => write!(f, "SKIPPED"),
             AccountGateStatus::Succeeded => write!(f, "SUCCEEDED"),
-            AccountGateStatus::Unknown(value) => write!(f, "{}", value),
+            AccountGateStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

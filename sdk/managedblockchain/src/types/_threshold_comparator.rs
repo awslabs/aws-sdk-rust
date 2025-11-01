@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ThresholdComparator {
         match self {
             ThresholdComparator::GreaterThan => write!(f, "GREATER_THAN"),
             ThresholdComparator::GreaterThanOrEqualTo => write!(f, "GREATER_THAN_OR_EQUAL_TO"),
-            ThresholdComparator::Unknown(value) => write!(f, "{}", value),
+            ThresholdComparator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

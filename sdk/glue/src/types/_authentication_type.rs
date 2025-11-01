@@ -114,7 +114,7 @@ impl ::std::fmt::Display for AuthenticationType {
             AuthenticationType::Custom => write!(f, "CUSTOM"),
             AuthenticationType::Iam => write!(f, "IAM"),
             AuthenticationType::Oauth2 => write!(f, "OAUTH2"),
-            AuthenticationType::Unknown(value) => write!(f, "{}", value),
+            AuthenticationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

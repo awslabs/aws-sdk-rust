@@ -120,7 +120,7 @@ impl ::std::fmt::Display for OutputFormat {
             OutputFormat::OggOpus => write!(f, "ogg_opus"),
             OutputFormat::OggVorbis => write!(f, "ogg_vorbis"),
             OutputFormat::Pcm => write!(f, "pcm"),
-            OutputFormat::Unknown(value) => write!(f, "{}", value),
+            OutputFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

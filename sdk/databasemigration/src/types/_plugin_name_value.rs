@@ -108,7 +108,7 @@ impl ::std::fmt::Display for PluginNameValue {
             PluginNameValue::NoPreference => write!(f, "no-preference"),
             PluginNameValue::Pglogical => write!(f, "pglogical"),
             PluginNameValue::TestDecoding => write!(f, "test-decoding"),
-            PluginNameValue::Unknown(value) => write!(f, "{}", value),
+            PluginNameValue::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ExternalMetricsSource {
             ExternalMetricsSource::Dynatrace => write!(f, "Dynatrace"),
             ExternalMetricsSource::Instana => write!(f, "Instana"),
             ExternalMetricsSource::Newrelic => write!(f, "NewRelic"),
-            ExternalMetricsSource::Unknown(value) => write!(f, "{}", value),
+            ExternalMetricsSource::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

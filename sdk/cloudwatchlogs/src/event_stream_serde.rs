@@ -21,7 +21,7 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for GetLogObjectResponse
             "event" => match response_headers.smithy_type.as_str() {
                 "fields" => {
                     let parsed = crate::protocol_serde::shape_fields_data::de_fields_data_payload(&message.payload()[..])
-                        .map_err(|err| ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall Fields: {}", err)))?;
+                        .map_err(|err| ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall Fields: {err}")))?;
                     Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Event(
                         crate::types::GetLogObjectResponseStream::Fields(parsed),
                     ))
@@ -46,7 +46,7 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for GetLogObjectResponse
                         builder,
                     )
                     .map_err(|err| {
-                        ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall InternalStreamingException: {}", err))
+                        ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall InternalStreamingException: {err}"))
                     })?;
                     builder.set_meta(Some(generic));
                     return Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
@@ -59,8 +59,7 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for GetLogObjectResponse
             }
             value => {
                 return Err(::aws_smithy_eventstream::error::Error::unmarshalling(format!(
-                    "unrecognized :message-type: {}",
-                    value
+                    "unrecognized :message-type: {value}"
                 )));
             }
         }
@@ -89,9 +88,7 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for StartLiveTailRespons
             "event" => match response_headers.smithy_type.as_str() {
                 "sessionStart" => {
                     let parsed = crate::protocol_serde::shape_live_tail_session_start::de_live_tail_session_start_payload(&message.payload()[..])
-                        .map_err(|err| {
-                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall SessionStart: {}", err))
-                        })?;
+                        .map_err(|err| ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall SessionStart: {err}")))?;
                     Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Event(
                         crate::types::StartLiveTailResponseStream::SessionStart(parsed),
                     ))
@@ -99,7 +96,7 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for StartLiveTailRespons
                 "sessionUpdate" => {
                     let parsed = crate::protocol_serde::shape_live_tail_session_update::de_live_tail_session_update_payload(&message.payload()[..])
                         .map_err(|err| {
-                        ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall SessionUpdate: {}", err))
+                        ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall SessionUpdate: {err}"))
                     })?;
                     Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Event(
                         crate::types::StartLiveTailResponseStream::SessionUpdate(parsed),
@@ -126,7 +123,7 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for StartLiveTailRespons
                             builder,
                         )
                         .map_err(|err| {
-                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall SessionTimeoutException: {}", err))
+                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall SessionTimeoutException: {err}"))
                         })?;
                         builder.set_meta(Some(generic));
                         return Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
@@ -140,7 +137,7 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for StartLiveTailRespons
                             builder,
                         )
                         .map_err(|err| {
-                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall SessionStreamingException: {}", err))
+                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall SessionStreamingException: {err}"))
                         })?;
                         builder.set_meta(Some(generic));
                         return Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
@@ -155,8 +152,7 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for StartLiveTailRespons
             }
             value => {
                 return Err(::aws_smithy_eventstream::error::Error::unmarshalling(format!(
-                    "unrecognized :message-type: {}",
-                    value
+                    "unrecognized :message-type: {value}"
                 )));
             }
         }

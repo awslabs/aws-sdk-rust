@@ -96,7 +96,7 @@ impl ::std::fmt::Display for QueryLanguage {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             QueryLanguage::OpenCypher => write!(f, "OPEN_CYPHER"),
-            QueryLanguage::Unknown(value) => write!(f, "{}", value),
+            QueryLanguage::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

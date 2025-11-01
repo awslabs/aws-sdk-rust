@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MarketplaceResourceType {
         match self {
             MarketplaceResourceType::ComponentArtifact => write!(f, "COMPONENT_ARTIFACT"),
             MarketplaceResourceType::ComponentData => write!(f, "COMPONENT_DATA"),
-            MarketplaceResourceType::Unknown(value) => write!(f, "{}", value),
+            MarketplaceResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

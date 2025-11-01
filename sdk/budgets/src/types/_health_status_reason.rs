@@ -119,7 +119,7 @@ impl ::std::fmt::Display for HealthStatusReason {
             HealthStatusReason::BillingViewUnhealthy => write!(f, "BILLING_VIEW_UNHEALTHY"),
             HealthStatusReason::FilterInvalid => write!(f, "FILTER_INVALID"),
             HealthStatusReason::MultiYearHistoricalDataDisabled => write!(f, "MULTI_YEAR_HISTORICAL_DATA_DISABLED"),
-            HealthStatusReason::Unknown(value) => write!(f, "{}", value),
+            HealthStatusReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

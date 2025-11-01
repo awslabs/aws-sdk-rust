@@ -108,7 +108,7 @@ impl ::std::fmt::Display for StoreFormat {
             StoreFormat::Gff => write!(f, "GFF"),
             StoreFormat::Tsv => write!(f, "TSV"),
             StoreFormat::Vcf => write!(f, "VCF"),
-            StoreFormat::Unknown(value) => write!(f, "{}", value),
+            StoreFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

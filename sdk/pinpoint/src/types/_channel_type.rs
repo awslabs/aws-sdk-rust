@@ -182,7 +182,7 @@ impl ::std::fmt::Display for ChannelType {
             ChannelType::Push => write!(f, "PUSH"),
             ChannelType::Sms => write!(f, "SMS"),
             ChannelType::Voice => write!(f, "VOICE"),
-            ChannelType::Unknown(value) => write!(f, "{}", value),
+            ChannelType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

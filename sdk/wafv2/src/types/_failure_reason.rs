@@ -114,7 +114,7 @@ impl ::std::fmt::Display for FailureReason {
             FailureReason::TokenExpired => write!(f, "TOKEN_EXPIRED"),
             FailureReason::TokenInvalid => write!(f, "TOKEN_INVALID"),
             FailureReason::TokenMissing => write!(f, "TOKEN_MISSING"),
-            FailureReason::Unknown(value) => write!(f, "{}", value),
+            FailureReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

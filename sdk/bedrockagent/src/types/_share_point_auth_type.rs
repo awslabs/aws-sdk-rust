@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SharePointAuthType {
         match self {
             SharePointAuthType::Oauth2ClientCredentials => write!(f, "OAUTH2_CLIENT_CREDENTIALS"),
             SharePointAuthType::Oauth2SharepointAppOnlyClientCredentials => write!(f, "OAUTH2_SHAREPOINT_APP_ONLY_CLIENT_CREDENTIALS"),
-            SharePointAuthType::Unknown(value) => write!(f, "{}", value),
+            SharePointAuthType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

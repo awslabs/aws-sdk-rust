@@ -108,7 +108,7 @@ impl ::std::fmt::Display for OrganizationStatus {
             OrganizationStatus::Disabled => write!(f, "DISABLED"),
             OrganizationStatus::DisabledPermanently => write!(f, "DISABLED_PERMANENTLY"),
             OrganizationStatus::Enabled => write!(f, "ENABLED"),
-            OrganizationStatus::Unknown(value) => write!(f, "{}", value),
+            OrganizationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

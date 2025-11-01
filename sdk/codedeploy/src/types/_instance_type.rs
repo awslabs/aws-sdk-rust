@@ -102,7 +102,7 @@ impl ::std::fmt::Display for InstanceType {
         match self {
             InstanceType::Blue => write!(f, "Blue"),
             InstanceType::Green => write!(f, "Green"),
-            InstanceType::Unknown(value) => write!(f, "{}", value),
+            InstanceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

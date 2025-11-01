@@ -108,7 +108,7 @@ impl ::std::fmt::Display for InferenceComponentSortKey {
             InferenceComponentSortKey::CreationTime => write!(f, "CreationTime"),
             InferenceComponentSortKey::Name => write!(f, "Name"),
             InferenceComponentSortKey::Status => write!(f, "Status"),
-            InferenceComponentSortKey::Unknown(value) => write!(f, "{}", value),
+            InferenceComponentSortKey::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

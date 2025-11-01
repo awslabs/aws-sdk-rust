@@ -147,7 +147,7 @@ impl ::std::fmt::Display for ScalableDimension {
             ScalableDimension::Ec2SpotFleetRequestTargetCapacity => write!(f, "ec2:spot-fleet-request:TargetCapacity"),
             ScalableDimension::EcsServiceDesiredCount => write!(f, "ecs:service:DesiredCount"),
             ScalableDimension::RdsClusterReadReplicaCount => write!(f, "rds:cluster:ReadReplicaCount"),
-            ScalableDimension::Unknown(value) => write!(f, "{}", value),
+            ScalableDimension::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

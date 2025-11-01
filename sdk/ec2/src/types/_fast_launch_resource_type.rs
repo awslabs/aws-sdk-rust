@@ -96,7 +96,7 @@ impl ::std::fmt::Display for FastLaunchResourceType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             FastLaunchResourceType::Snapshot => write!(f, "snapshot"),
-            FastLaunchResourceType::Unknown(value) => write!(f, "{}", value),
+            FastLaunchResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

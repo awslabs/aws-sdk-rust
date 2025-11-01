@@ -108,7 +108,7 @@ impl ::std::fmt::Display for BandwidthWeightingEnum {
             BandwidthWeightingEnum::Default => write!(f, "default"),
             BandwidthWeightingEnum::Ebs1 => write!(f, "ebs-1"),
             BandwidthWeightingEnum::Vpc1 => write!(f, "vpc-1"),
-            BandwidthWeightingEnum::Unknown(value) => write!(f, "{}", value),
+            BandwidthWeightingEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

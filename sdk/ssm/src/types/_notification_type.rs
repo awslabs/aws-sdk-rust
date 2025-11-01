@@ -102,7 +102,7 @@ impl ::std::fmt::Display for NotificationType {
         match self {
             NotificationType::Command => write!(f, "Command"),
             NotificationType::Invocation => write!(f, "Invocation"),
-            NotificationType::Unknown(value) => write!(f, "{}", value),
+            NotificationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

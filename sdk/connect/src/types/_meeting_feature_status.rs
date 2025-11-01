@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MeetingFeatureStatus {
         match self {
             MeetingFeatureStatus::Available => write!(f, "AVAILABLE"),
             MeetingFeatureStatus::Unavailable => write!(f, "UNAVAILABLE"),
-            MeetingFeatureStatus::Unknown(value) => write!(f, "{}", value),
+            MeetingFeatureStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

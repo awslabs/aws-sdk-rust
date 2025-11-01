@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MpdKlvMetadata {
         match self {
             MpdKlvMetadata::None => write!(f, "NONE"),
             MpdKlvMetadata::Passthrough => write!(f, "PASSTHROUGH"),
-            MpdKlvMetadata::Unknown(value) => write!(f, "{}", value),
+            MpdKlvMetadata::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

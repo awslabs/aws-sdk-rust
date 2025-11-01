@@ -114,7 +114,7 @@ impl ::std::fmt::Display for TrafficMirrorFilterRuleField {
             TrafficMirrorFilterRuleField::DestinationPortRange => write!(f, "destination-port-range"),
             TrafficMirrorFilterRuleField::Protocol => write!(f, "protocol"),
             TrafficMirrorFilterRuleField::SourcePortRange => write!(f, "source-port-range"),
-            TrafficMirrorFilterRuleField::Unknown(value) => write!(f, "{}", value),
+            TrafficMirrorFilterRuleField::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

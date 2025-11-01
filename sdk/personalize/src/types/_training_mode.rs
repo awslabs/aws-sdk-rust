@@ -108,7 +108,7 @@ impl ::std::fmt::Display for TrainingMode {
             TrainingMode::Autotrain => write!(f, "AUTOTRAIN"),
             TrainingMode::Full => write!(f, "FULL"),
             TrainingMode::Update => write!(f, "UPDATE"),
-            TrainingMode::Unknown(value) => write!(f, "{}", value),
+            TrainingMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

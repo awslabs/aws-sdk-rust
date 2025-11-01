@@ -161,7 +161,7 @@ impl ::std::fmt::Display for StreamSessionStatusReason {
             StreamSessionStatusReason::MaxSessionLengthTimeout => write!(f, "maxSessionLengthTimeout"),
             StreamSessionStatusReason::PlacementTimeout => write!(f, "placementTimeout"),
             StreamSessionStatusReason::ReconnectionTimeout => write!(f, "reconnectionTimeout"),
-            StreamSessionStatusReason::Unknown(value) => write!(f, "{}", value),
+            StreamSessionStatusReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

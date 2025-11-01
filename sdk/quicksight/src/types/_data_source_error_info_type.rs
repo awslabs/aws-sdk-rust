@@ -149,7 +149,7 @@ impl ::std::fmt::Display for DataSourceErrorInfoType {
             DataSourceErrorInfoType::Timeout => write!(f, "TIMEOUT"),
             DataSourceErrorInfoType::UnknownValue => write!(f, "UNKNOWN"),
             DataSourceErrorInfoType::UnknownHost => write!(f, "UNKNOWN_HOST"),
-            DataSourceErrorInfoType::Unknown(value) => write!(f, "{}", value),
+            DataSourceErrorInfoType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

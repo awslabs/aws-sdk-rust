@@ -102,7 +102,7 @@ impl ::std::fmt::Display for BrowserExtension {
         match self {
             BrowserExtension::Chrome => write!(f, "CHROME"),
             BrowserExtension::Firefox => write!(f, "FIREFOX"),
-            BrowserExtension::Unknown(value) => write!(f, "{}", value),
+            BrowserExtension::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

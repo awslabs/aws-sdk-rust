@@ -114,7 +114,7 @@ impl ::std::fmt::Display for StreamGroupLocationStatus {
             StreamGroupLocationStatus::Active => write!(f, "ACTIVE"),
             StreamGroupLocationStatus::Error => write!(f, "ERROR"),
             StreamGroupLocationStatus::Removing => write!(f, "REMOVING"),
-            StreamGroupLocationStatus::Unknown(value) => write!(f, "{}", value),
+            StreamGroupLocationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

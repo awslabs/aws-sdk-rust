@@ -102,7 +102,7 @@ impl ::std::fmt::Display for StackRefactorActionEntity {
         match self {
             StackRefactorActionEntity::Resource => write!(f, "RESOURCE"),
             StackRefactorActionEntity::Stack => write!(f, "STACK"),
-            StackRefactorActionEntity::Unknown(value) => write!(f, "{}", value),
+            StackRefactorActionEntity::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

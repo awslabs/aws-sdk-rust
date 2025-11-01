@@ -158,7 +158,7 @@ impl ::std::fmt::Display for FixedAfd {
             FixedAfd::Afd1101 => write!(f, "AFD_1101"),
             FixedAfd::Afd1110 => write!(f, "AFD_1110"),
             FixedAfd::Afd1111 => write!(f, "AFD_1111"),
-            FixedAfd::Unknown(value) => write!(f, "{}", value),
+            FixedAfd::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

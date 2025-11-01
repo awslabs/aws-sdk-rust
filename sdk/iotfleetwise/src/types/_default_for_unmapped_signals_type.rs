@@ -96,7 +96,7 @@ impl ::std::fmt::Display for DefaultForUnmappedSignalsType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             DefaultForUnmappedSignalsType::CustomDecoding => write!(f, "CUSTOM_DECODING"),
-            DefaultForUnmappedSignalsType::Unknown(value) => write!(f, "{}", value),
+            DefaultForUnmappedSignalsType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

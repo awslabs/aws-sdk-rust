@@ -102,7 +102,7 @@ impl ::std::fmt::Display for IntelligentTieringStatus {
         match self {
             IntelligentTieringStatus::Disabled => write!(f, "Disabled"),
             IntelligentTieringStatus::Enabled => write!(f, "Enabled"),
-            IntelligentTieringStatus::Unknown(value) => write!(f, "{}", value),
+            IntelligentTieringStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

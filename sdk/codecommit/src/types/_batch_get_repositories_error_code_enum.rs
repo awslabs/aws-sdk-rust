@@ -133,7 +133,7 @@ impl ::std::fmt::Display for BatchGetRepositoriesErrorCodeEnum {
             BatchGetRepositoriesErrorCodeEnum::EncryptionKeyNotFoundException => write!(f, "EncryptionKeyNotFoundException"),
             BatchGetRepositoriesErrorCodeEnum::EncryptionKeyUnavailableException => write!(f, "EncryptionKeyUnavailableException"),
             BatchGetRepositoriesErrorCodeEnum::RepositoryDoesNotExistException => write!(f, "RepositoryDoesNotExistException"),
-            BatchGetRepositoriesErrorCodeEnum::Unknown(value) => write!(f, "{}", value),
+            BatchGetRepositoriesErrorCodeEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

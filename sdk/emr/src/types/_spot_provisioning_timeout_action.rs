@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SpotProvisioningTimeoutAction {
         match self {
             SpotProvisioningTimeoutAction::SwitchToOnDemand => write!(f, "SWITCH_TO_ON_DEMAND"),
             SpotProvisioningTimeoutAction::TerminateCluster => write!(f, "TERMINATE_CLUSTER"),
-            SpotProvisioningTimeoutAction::Unknown(value) => write!(f, "{}", value),
+            SpotProvisioningTimeoutAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

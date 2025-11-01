@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AutoScalingConfiguration {
         match self {
             AutoScalingConfiguration::TargetTrackingScalingCpu => write!(f, "TargetTrackingScalingCpu"),
             AutoScalingConfiguration::TargetTrackingScalingMemory => write!(f, "TargetTrackingScalingMemory"),
-            AutoScalingConfiguration::Unknown(value) => write!(f, "{}", value),
+            AutoScalingConfiguration::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

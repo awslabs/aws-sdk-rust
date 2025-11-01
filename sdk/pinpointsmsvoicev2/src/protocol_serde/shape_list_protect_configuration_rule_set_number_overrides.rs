@@ -181,8 +181,7 @@ pub(crate) fn de_list_protect_configuration_rule_set_number_overrides(
             },
             other => {
                 return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                    "expected object key or end object, found: {:?}",
-                    other
+                    "expected object key or end object, found: {other:?}"
                 )))
             }
         }

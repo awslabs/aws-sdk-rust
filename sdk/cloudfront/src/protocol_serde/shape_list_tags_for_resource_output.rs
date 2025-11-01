@@ -17,8 +17,7 @@ pub fn de_tags(inp: &[u8]) -> std::result::Result<crate::types::Tags, ::aws_smit
     let start_el = decoder.start_el();
     if !(start_el.matches("Tags")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected Tags got {:?}",
-            start_el
+            "invalid root, expected Tags got {start_el:?}"
         )));
     }
     crate::protocol_serde::shape_tags::de_tags(&mut decoder)

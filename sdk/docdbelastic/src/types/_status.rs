@@ -238,7 +238,7 @@ impl ::std::fmt::Display for Status {
             Status::Stopping => write!(f, "STOPPING"),
             Status::Updating => write!(f, "UPDATING"),
             Status::VpcEndpointLimitExceeded => write!(f, "VPC_ENDPOINT_LIMIT_EXCEEDED"),
-            Status::Unknown(value) => write!(f, "{}", value),
+            Status::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

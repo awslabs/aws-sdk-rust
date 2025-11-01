@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PhoneType {
         match self {
             PhoneType::DeskPhone => write!(f, "DESK_PHONE"),
             PhoneType::SoftPhone => write!(f, "SOFT_PHONE"),
-            PhoneType::Unknown(value) => write!(f, "{}", value),
+            PhoneType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

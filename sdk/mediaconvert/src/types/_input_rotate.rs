@@ -120,7 +120,7 @@ impl ::std::fmt::Display for InputRotate {
             InputRotate::Degrees270 => write!(f, "DEGREES_270"),
             InputRotate::Degrees90 => write!(f, "DEGREES_90"),
             InputRotate::Degree0 => write!(f, "DEGREE_0"),
-            InputRotate::Unknown(value) => write!(f, "{}", value),
+            InputRotate::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

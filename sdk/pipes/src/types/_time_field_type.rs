@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TimeFieldType {
         match self {
             TimeFieldType::Epoch => write!(f, "EPOCH"),
             TimeFieldType::TimestampFormat => write!(f, "TIMESTAMP_FORMAT"),
-            TimeFieldType::Unknown(value) => write!(f, "{}", value),
+            TimeFieldType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

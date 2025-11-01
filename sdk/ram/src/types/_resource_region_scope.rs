@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ResourceRegionScope {
         match self {
             ResourceRegionScope::Global => write!(f, "GLOBAL"),
             ResourceRegionScope::Regional => write!(f, "REGIONAL"),
-            ResourceRegionScope::Unknown(value) => write!(f, "{}", value),
+            ResourceRegionScope::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

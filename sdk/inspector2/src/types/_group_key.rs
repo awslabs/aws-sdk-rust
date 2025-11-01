@@ -126,7 +126,7 @@ impl ::std::fmt::Display for GroupKey {
             GroupKey::ResourceType => write!(f, "RESOURCE_TYPE"),
             GroupKey::ScanStatusCode => write!(f, "SCAN_STATUS_CODE"),
             GroupKey::ScanStatusReason => write!(f, "SCAN_STATUS_REASON"),
-            GroupKey::Unknown(value) => write!(f, "{}", value),
+            GroupKey::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

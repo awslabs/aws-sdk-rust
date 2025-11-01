@@ -96,7 +96,7 @@ impl ::std::fmt::Display for OcsfVersion {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             OcsfVersion::V11 => write!(f, "V1.1"),
-            OcsfVersion::Unknown(value) => write!(f, "{}", value),
+            OcsfVersion::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

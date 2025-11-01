@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CmafVideoCompositionOffsets {
         match self {
             CmafVideoCompositionOffsets::Signed => write!(f, "SIGNED"),
             CmafVideoCompositionOffsets::Unsigned => write!(f, "UNSIGNED"),
-            CmafVideoCompositionOffsets::Unknown(value) => write!(f, "{}", value),
+            CmafVideoCompositionOffsets::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

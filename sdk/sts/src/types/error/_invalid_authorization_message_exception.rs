@@ -19,7 +19,7 @@ impl ::std::fmt::Display for InvalidAuthorizationMessageException {
         ::std::write!(f, "InvalidAuthorizationMessageException")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
             {
-                ::std::write!(f, ": {}", inner_1)?;
+                ::std::write!(f, ": {inner_1}")?;
             }
         }
         Ok(())

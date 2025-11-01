@@ -102,7 +102,7 @@ impl ::std::fmt::Display for LogDestinationType {
         match self {
             LogDestinationType::Cloudwatch => write!(f, "cloudwatch"),
             LogDestinationType::S3 => write!(f, "s3"),
-            LogDestinationType::Unknown(value) => write!(f, "{}", value),
+            LogDestinationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

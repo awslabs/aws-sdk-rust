@@ -114,7 +114,7 @@ impl ::std::fmt::Display for InventorySearchScope {
             InventorySearchScope::DataProduct => write!(f, "DATA_PRODUCT"),
             InventorySearchScope::Glossary => write!(f, "GLOSSARY"),
             InventorySearchScope::GlossaryTerm => write!(f, "GLOSSARY_TERM"),
-            InventorySearchScope::Unknown(value) => write!(f, "{}", value),
+            InventorySearchScope::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

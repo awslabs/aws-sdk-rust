@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PluginState {
         match self {
             PluginState::Disabled => write!(f, "DISABLED"),
             PluginState::Enabled => write!(f, "ENABLED"),
-            PluginState::Unknown(value) => write!(f, "{}", value),
+            PluginState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

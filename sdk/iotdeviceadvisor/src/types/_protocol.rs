@@ -114,7 +114,7 @@ impl ::std::fmt::Display for Protocol {
             Protocol::MqttV311OverWebSocket => write!(f, "MqttV3_1_1_OverWebSocket"),
             Protocol::MqttV5 => write!(f, "MqttV5"),
             Protocol::MqttV5OverWebSocket => write!(f, "MqttV5_OverWebSocket"),
-            Protocol::Unknown(value) => write!(f, "{}", value),
+            Protocol::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

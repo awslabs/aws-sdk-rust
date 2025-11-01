@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ChallengeType {
         match self {
             ChallengeType::FaceMovementAndLightChallenge => write!(f, "FaceMovementAndLightChallenge"),
             ChallengeType::FaceMovementChallenge => write!(f, "FaceMovementChallenge"),
-            ChallengeType::Unknown(value) => write!(f, "{}", value),
+            ChallengeType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for DvbSubtitleBackgroundColor {
             DvbSubtitleBackgroundColor::Black => write!(f, "BLACK"),
             DvbSubtitleBackgroundColor::None => write!(f, "NONE"),
             DvbSubtitleBackgroundColor::White => write!(f, "WHITE"),
-            DvbSubtitleBackgroundColor::Unknown(value) => write!(f, "{}", value),
+            DvbSubtitleBackgroundColor::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

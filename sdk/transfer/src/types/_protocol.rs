@@ -114,7 +114,7 @@ impl ::std::fmt::Display for Protocol {
             Protocol::Ftp => write!(f, "FTP"),
             Protocol::Ftps => write!(f, "FTPS"),
             Protocol::Sftp => write!(f, "SFTP"),
-            Protocol::Unknown(value) => write!(f, "{}", value),
+            Protocol::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

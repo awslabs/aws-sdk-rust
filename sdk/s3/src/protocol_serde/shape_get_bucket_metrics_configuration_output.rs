@@ -20,8 +20,7 @@ pub fn de_metrics_configuration(inp: &[u8]) -> std::result::Result<crate::types:
     let start_el = decoder.start_el();
     if !(start_el.matches("MetricsConfiguration")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected MetricsConfiguration got {:?}",
-            start_el
+            "invalid root, expected MetricsConfiguration got {start_el:?}"
         )));
     }
     crate::protocol_serde::shape_metrics_configuration::de_metrics_configuration(&mut decoder)

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for DescribeWorkspacesPoolsFilterOperator {
             DescribeWorkspacesPoolsFilterOperator::Equals => write!(f, "EQUALS"),
             DescribeWorkspacesPoolsFilterOperator::Notcontains => write!(f, "NOTCONTAINS"),
             DescribeWorkspacesPoolsFilterOperator::Notequals => write!(f, "NOTEQUALS"),
-            DescribeWorkspacesPoolsFilterOperator::Unknown(value) => write!(f, "{}", value),
+            DescribeWorkspacesPoolsFilterOperator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

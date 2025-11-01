@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SnapshotFileSheetSelectionScope {
         match self {
             SnapshotFileSheetSelectionScope::AllVisuals => write!(f, "ALL_VISUALS"),
             SnapshotFileSheetSelectionScope::SelectedVisuals => write!(f, "SELECTED_VISUALS"),
-            SnapshotFileSheetSelectionScope::Unknown(value) => write!(f, "{}", value),
+            SnapshotFileSheetSelectionScope::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

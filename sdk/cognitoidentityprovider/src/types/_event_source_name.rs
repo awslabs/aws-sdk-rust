@@ -102,7 +102,7 @@ impl ::std::fmt::Display for EventSourceName {
         match self {
             EventSourceName::UserAuthEvents => write!(f, "userAuthEvents"),
             EventSourceName::UserNotification => write!(f, "userNotification"),
-            EventSourceName::Unknown(value) => write!(f, "{}", value),
+            EventSourceName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

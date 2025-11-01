@@ -152,8 +152,7 @@ pub(crate) fn de_get_automated_reasoning_policy_build_workflow_result_assets(val
             },
             other => {
                 return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                    "expected object key or end object, found: {:?}",
-                    other
+                    "expected object key or end object, found: {other:?}"
                 )))
             }
         }

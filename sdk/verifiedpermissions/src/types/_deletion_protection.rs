@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DeletionProtection {
         match self {
             DeletionProtection::Disabled => write!(f, "DISABLED"),
             DeletionProtection::Enabled => write!(f, "ENABLED"),
-            DeletionProtection::Unknown(value) => write!(f, "{}", value),
+            DeletionProtection::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

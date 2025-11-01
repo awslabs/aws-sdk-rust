@@ -108,7 +108,7 @@ impl ::std::fmt::Display for InputCodec {
             InputCodec::Avc => write!(f, "AVC"),
             InputCodec::Hevc => write!(f, "HEVC"),
             InputCodec::Mpeg2 => write!(f, "MPEG2"),
-            InputCodec::Unknown(value) => write!(f, "{}", value),
+            InputCodec::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ExecutionMode {
             ExecutionMode::Parallel => write!(f, "PARALLEL"),
             ExecutionMode::Queued => write!(f, "QUEUED"),
             ExecutionMode::Superseded => write!(f, "SUPERSEDED"),
-            ExecutionMode::Unknown(value) => write!(f, "{}", value),
+            ExecutionMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

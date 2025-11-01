@@ -102,7 +102,7 @@ impl ::std::fmt::Display for StackSetStatus {
         match self {
             StackSetStatus::Active => write!(f, "ACTIVE"),
             StackSetStatus::Deleted => write!(f, "DELETED"),
-            StackSetStatus::Unknown(value) => write!(f, "{}", value),
+            StackSetStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for EcrRescanDurationStatus {
             EcrRescanDurationStatus::Failed => write!(f, "FAILED"),
             EcrRescanDurationStatus::Pending => write!(f, "PENDING"),
             EcrRescanDurationStatus::Success => write!(f, "SUCCESS"),
-            EcrRescanDurationStatus::Unknown(value) => write!(f, "{}", value),
+            EcrRescanDurationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ObjectiveStatus {
             ObjectiveStatus::Failed => write!(f, "Failed"),
             ObjectiveStatus::Pending => write!(f, "Pending"),
             ObjectiveStatus::Succeeded => write!(f, "Succeeded"),
-            ObjectiveStatus::Unknown(value) => write!(f, "{}", value),
+            ObjectiveStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

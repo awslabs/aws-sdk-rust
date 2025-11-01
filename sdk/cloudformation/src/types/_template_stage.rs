@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TemplateStage {
         match self {
             TemplateStage::Original => write!(f, "Original"),
             TemplateStage::Processed => write!(f, "Processed"),
-            TemplateStage::Unknown(value) => write!(f, "{}", value),
+            TemplateStage::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

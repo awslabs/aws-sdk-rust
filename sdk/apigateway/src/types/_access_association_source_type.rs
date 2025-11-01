@@ -96,7 +96,7 @@ impl ::std::fmt::Display for AccessAssociationSourceType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             AccessAssociationSourceType::Vpce => write!(f, "VPCE"),
-            AccessAssociationSourceType::Unknown(value) => write!(f, "{}", value),
+            AccessAssociationSourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -350,7 +350,7 @@ impl ::std::fmt::Display for TargetDevice {
             TargetDevice::SitaraAm57X => write!(f, "sitara_am57x"),
             TargetDevice::X86Win32 => write!(f, "x86_win32"),
             TargetDevice::X86Win64 => write!(f, "x86_win64"),
-            TargetDevice::Unknown(value) => write!(f, "{}", value),
+            TargetDevice::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -120,7 +120,7 @@ impl ::std::fmt::Display for OAuthScopesElement {
             OAuthScopesElement::Openid => write!(f, "OPENID"),
             OAuthScopesElement::Phone => write!(f, "PHONE"),
             OAuthScopesElement::Profile => write!(f, "PROFILE"),
-            OAuthScopesElement::Unknown(value) => write!(f, "{}", value),
+            OAuthScopesElement::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -17,8 +17,7 @@ pub fn de_function_summary(inp: &[u8]) -> std::result::Result<crate::types::Func
     let start_el = decoder.start_el();
     if !(start_el.matches("FunctionSummary")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected FunctionSummary got {:?}",
-            start_el
+            "invalid root, expected FunctionSummary got {start_el:?}"
         )));
     }
     crate::protocol_serde::shape_function_summary::de_function_summary(&mut decoder)

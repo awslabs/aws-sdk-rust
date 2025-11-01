@@ -126,7 +126,7 @@ impl ::std::fmt::Display for DataLabelPosition {
             DataLabelPosition::Outside => write!(f, "OUTSIDE"),
             DataLabelPosition::Right => write!(f, "RIGHT"),
             DataLabelPosition::Top => write!(f, "TOP"),
-            DataLabelPosition::Unknown(value) => write!(f, "{}", value),
+            DataLabelPosition::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

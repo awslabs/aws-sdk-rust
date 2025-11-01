@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PreserveDeletedFiles {
         match self {
             PreserveDeletedFiles::Preserve => write!(f, "PRESERVE"),
             PreserveDeletedFiles::Remove => write!(f, "REMOVE"),
-            PreserveDeletedFiles::Unknown(value) => write!(f, "{}", value),
+            PreserveDeletedFiles::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

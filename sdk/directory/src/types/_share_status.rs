@@ -154,7 +154,7 @@ impl ::std::fmt::Display for ShareStatus {
             ShareStatus::ShareFailed => write!(f, "ShareFailed"),
             ShareStatus::Shared => write!(f, "Shared"),
             ShareStatus::Sharing => write!(f, "Sharing"),
-            ShareStatus::Unknown(value) => write!(f, "{}", value),
+            ShareStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

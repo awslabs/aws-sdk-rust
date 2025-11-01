@@ -203,7 +203,7 @@ impl ::std::fmt::Display for DataReplicationErrorString {
             DataReplicationErrorString::SnapshotsFailure => write!(f, "SNAPSHOTS_FAILURE"),
             DataReplicationErrorString::UnstableNetwork => write!(f, "UNSTABLE_NETWORK"),
             DataReplicationErrorString::UnsupportedVmConfiguration => write!(f, "UNSUPPORTED_VM_CONFIGURATION"),
-            DataReplicationErrorString::Unknown(value) => write!(f, "{}", value),
+            DataReplicationErrorString::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

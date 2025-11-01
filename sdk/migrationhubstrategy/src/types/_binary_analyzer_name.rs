@@ -102,7 +102,7 @@ impl ::std::fmt::Display for BinaryAnalyzerName {
         match self {
             BinaryAnalyzerName::BytecodeAnalyzer => write!(f, "BYTECODE_ANALYZER"),
             BinaryAnalyzerName::DllAnalyzer => write!(f, "DLL_ANALYZER"),
-            BinaryAnalyzerName::Unknown(value) => write!(f, "{}", value),
+            BinaryAnalyzerName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

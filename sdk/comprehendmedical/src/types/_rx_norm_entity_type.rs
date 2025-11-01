@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RxNormEntityType {
         match self {
             RxNormEntityType::BrandName => write!(f, "BRAND_NAME"),
             RxNormEntityType::GenericName => write!(f, "GENERIC_NAME"),
-            RxNormEntityType::Unknown(value) => write!(f, "{}", value),
+            RxNormEntityType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

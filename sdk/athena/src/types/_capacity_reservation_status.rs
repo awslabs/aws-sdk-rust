@@ -126,7 +126,7 @@ impl ::std::fmt::Display for CapacityReservationStatus {
             CapacityReservationStatus::Failed => write!(f, "FAILED"),
             CapacityReservationStatus::Pending => write!(f, "PENDING"),
             CapacityReservationStatus::UpdatePending => write!(f, "UPDATE_PENDING"),
-            CapacityReservationStatus::Unknown(value) => write!(f, "{}", value),
+            CapacityReservationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

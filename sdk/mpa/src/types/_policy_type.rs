@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PolicyType {
         match self {
             PolicyType::AwsManaged => write!(f, "AWS_MANAGED"),
             PolicyType::AwsRam => write!(f, "AWS_RAM"),
-            PolicyType::Unknown(value) => write!(f, "{}", value),
+            PolicyType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

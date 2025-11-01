@@ -126,7 +126,7 @@ impl ::std::fmt::Display for StepTargetTaskRunStatus {
             StepTargetTaskRunStatus::Ready => write!(f, "READY"),
             StepTargetTaskRunStatus::Succeeded => write!(f, "SUCCEEDED"),
             StepTargetTaskRunStatus::Suspended => write!(f, "SUSPENDED"),
-            StepTargetTaskRunStatus::Unknown(value) => write!(f, "{}", value),
+            StepTargetTaskRunStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for DataAutomationProjectStatus {
             DataAutomationProjectStatus::Completed => write!(f, "COMPLETED"),
             DataAutomationProjectStatus::Failed => write!(f, "FAILED"),
             DataAutomationProjectStatus::InProgress => write!(f, "IN_PROGRESS"),
-            DataAutomationProjectStatus::Unknown(value) => write!(f, "{}", value),
+            DataAutomationProjectStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

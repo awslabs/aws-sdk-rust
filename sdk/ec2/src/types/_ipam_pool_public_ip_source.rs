@@ -102,7 +102,7 @@ impl ::std::fmt::Display for IpamPoolPublicIpSource {
         match self {
             IpamPoolPublicIpSource::Amazon => write!(f, "amazon"),
             IpamPoolPublicIpSource::Byoip => write!(f, "byoip"),
-            IpamPoolPublicIpSource::Unknown(value) => write!(f, "{}", value),
+            IpamPoolPublicIpSource::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

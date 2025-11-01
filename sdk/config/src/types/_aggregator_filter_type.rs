@@ -96,7 +96,7 @@ impl ::std::fmt::Display for AggregatorFilterType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             AggregatorFilterType::Include => write!(f, "INCLUDE"),
-            AggregatorFilterType::Unknown(value) => write!(f, "{}", value),
+            AggregatorFilterType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

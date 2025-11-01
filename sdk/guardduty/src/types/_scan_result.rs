@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ScanResult {
         match self {
             ScanResult::Clean => write!(f, "CLEAN"),
             ScanResult::Infected => write!(f, "INFECTED"),
-            ScanResult::Unknown(value) => write!(f, "{}", value),
+            ScanResult::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

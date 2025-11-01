@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AutoTuneDesiredState {
         match self {
             AutoTuneDesiredState::Disabled => write!(f, "DISABLED"),
             AutoTuneDesiredState::Enabled => write!(f, "ENABLED"),
-            AutoTuneDesiredState::Unknown(value) => write!(f, "{}", value),
+            AutoTuneDesiredState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

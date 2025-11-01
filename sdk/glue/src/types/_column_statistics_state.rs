@@ -120,7 +120,7 @@ impl ::std::fmt::Display for ColumnStatisticsState {
             ColumnStatisticsState::Starting => write!(f, "STARTING"),
             ColumnStatisticsState::Stopped => write!(f, "STOPPED"),
             ColumnStatisticsState::Succeeded => write!(f, "SUCCEEDED"),
-            ColumnStatisticsState::Unknown(value) => write!(f, "{}", value),
+            ColumnStatisticsState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

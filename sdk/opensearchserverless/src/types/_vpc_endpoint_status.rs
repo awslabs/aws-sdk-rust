@@ -114,7 +114,7 @@ impl ::std::fmt::Display for VpcEndpointStatus {
             VpcEndpointStatus::Deleting => write!(f, "DELETING"),
             VpcEndpointStatus::Failed => write!(f, "FAILED"),
             VpcEndpointStatus::Pending => write!(f, "PENDING"),
-            VpcEndpointStatus::Unknown(value) => write!(f, "{}", value),
+            VpcEndpointStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -147,7 +147,7 @@ impl ::std::fmt::Display for PolicyType {
             PolicyType::SecurityhubPolicy => write!(f, "SECURITYHUB_POLICY"),
             PolicyType::ServiceControlPolicy => write!(f, "SERVICE_CONTROL_POLICY"),
             PolicyType::TagPolicy => write!(f, "TAG_POLICY"),
-            PolicyType::Unknown(value) => write!(f, "{}", value),
+            PolicyType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

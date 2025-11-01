@@ -210,7 +210,7 @@ impl ::std::fmt::Display for FailureReason {
             FailureReason::PcaRequestFailed => write!(f, "PCA_REQUEST_FAILED"),
             FailureReason::PcaResourceNotFound => write!(f, "PCA_RESOURCE_NOT_FOUND"),
             FailureReason::SlrNotFound => write!(f, "SLR_NOT_FOUND"),
-            FailureReason::Unknown(value) => write!(f, "{}", value),
+            FailureReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

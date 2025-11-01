@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ClientVpnEndpointStatusCode {
             ClientVpnEndpointStatusCode::Deleted => write!(f, "deleted"),
             ClientVpnEndpointStatusCode::Deleting => write!(f, "deleting"),
             ClientVpnEndpointStatusCode::PendingAssociate => write!(f, "pending-associate"),
-            ClientVpnEndpointStatusCode::Unknown(value) => write!(f, "{}", value),
+            ClientVpnEndpointStatusCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

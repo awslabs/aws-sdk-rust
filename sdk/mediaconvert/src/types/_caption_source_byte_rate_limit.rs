@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CaptionSourceByteRateLimit {
         match self {
             CaptionSourceByteRateLimit::Disabled => write!(f, "DISABLED"),
             CaptionSourceByteRateLimit::Enabled => write!(f, "ENABLED"),
-            CaptionSourceByteRateLimit::Unknown(value) => write!(f, "{}", value),
+            CaptionSourceByteRateLimit::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

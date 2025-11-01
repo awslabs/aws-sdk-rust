@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PackageVersionAction {
         match self {
             PackageVersionAction::Deprecate => write!(f, "DEPRECATE"),
             PackageVersionAction::Publish => write!(f, "PUBLISH"),
-            PackageVersionAction::Unknown(value) => write!(f, "{}", value),
+            PackageVersionAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

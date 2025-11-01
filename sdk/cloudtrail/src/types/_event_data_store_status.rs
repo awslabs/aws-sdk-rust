@@ -133,7 +133,7 @@ impl ::std::fmt::Display for EventDataStoreStatus {
             EventDataStoreStatus::StartingIngestion => write!(f, "STARTING_INGESTION"),
             EventDataStoreStatus::StoppedIngestion => write!(f, "STOPPED_INGESTION"),
             EventDataStoreStatus::StoppingIngestion => write!(f, "STOPPING_INGESTION"),
-            EventDataStoreStatus::Unknown(value) => write!(f, "{}", value),
+            EventDataStoreStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

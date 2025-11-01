@@ -96,7 +96,7 @@ impl ::std::fmt::Display for KeyAgreementAlgorithmSpec {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             KeyAgreementAlgorithmSpec::Ecdh => write!(f, "ECDH"),
-            KeyAgreementAlgorithmSpec::Unknown(value) => write!(f, "{}", value),
+            KeyAgreementAlgorithmSpec::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SnsActionEncoding {
         match self {
             SnsActionEncoding::Base64 => write!(f, "Base64"),
             SnsActionEncoding::Utf8 => write!(f, "UTF-8"),
-            SnsActionEncoding::Unknown(value) => write!(f, "{}", value),
+            SnsActionEncoding::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -132,7 +132,7 @@ impl ::std::fmt::Display for StatusString {
             StatusString::Picked => write!(f, "PICKED"),
             StatusString::Started => write!(f, "STARTED"),
             StatusString::Submitted => write!(f, "SUBMITTED"),
-            StatusString::Unknown(value) => write!(f, "{}", value),
+            StatusString::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

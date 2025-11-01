@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ProcessingS3DataType {
         match self {
             ProcessingS3DataType::ManifestFile => write!(f, "ManifestFile"),
             ProcessingS3DataType::S3Prefix => write!(f, "S3Prefix"),
-            ProcessingS3DataType::Unknown(value) => write!(f, "{}", value),
+            ProcessingS3DataType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

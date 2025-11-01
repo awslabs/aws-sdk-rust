@@ -171,16 +171,14 @@ pub fn de_revoke_endpoint_access(
     let start_el = decoder.start_el();
     if !(start_el.matches("RevokeEndpointAccessResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected RevokeEndpointAccessResponse got {:?}",
-            start_el
+            "invalid root, expected RevokeEndpointAccessResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("RevokeEndpointAccessResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected RevokeEndpointAccessResult got {:?}",
-                start_el
+                "invalid result, expected RevokeEndpointAccessResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for IndonesiaTaxRegistrationNumberType {
             IndonesiaTaxRegistrationNumberType::Nitku => write!(f, "NITKU"),
             IndonesiaTaxRegistrationNumberType::Npwp => write!(f, "NPWP"),
             IndonesiaTaxRegistrationNumberType::PassportNumber => write!(f, "PassportNumber"),
-            IndonesiaTaxRegistrationNumberType::Unknown(value) => write!(f, "{}", value),
+            IndonesiaTaxRegistrationNumberType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

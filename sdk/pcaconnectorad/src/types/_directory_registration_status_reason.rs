@@ -133,7 +133,7 @@ impl ::std::fmt::Display for DirectoryRegistrationStatusReason {
             DirectoryRegistrationStatusReason::DirectoryResourceNotFound => write!(f, "DIRECTORY_RESOURCE_NOT_FOUND"),
             DirectoryRegistrationStatusReason::DirectoryTypeNotSupported => write!(f, "DIRECTORY_TYPE_NOT_SUPPORTED"),
             DirectoryRegistrationStatusReason::InternalFailure => write!(f, "INTERNAL_FAILURE"),
-            DirectoryRegistrationStatusReason::Unknown(value) => write!(f, "{}", value),
+            DirectoryRegistrationStatusReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

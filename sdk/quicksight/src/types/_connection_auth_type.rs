@@ -133,7 +133,7 @@ impl ::std::fmt::Display for ConnectionAuthType {
             ConnectionAuthType::None => write!(f, "NONE"),
             ConnectionAuthType::Oauth2AuthorizationCode => write!(f, "OAUTH2_AUTHORIZATION_CODE"),
             ConnectionAuthType::Oauth2ClientCredentials => write!(f, "OAUTH2_CLIENT_CREDENTIALS"),
-            ConnectionAuthType::Unknown(value) => write!(f, "{}", value),
+            ConnectionAuthType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

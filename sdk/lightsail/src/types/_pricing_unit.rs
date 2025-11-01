@@ -120,7 +120,7 @@ impl ::std::fmt::Display for PricingUnit {
             PricingUnit::GbMo => write!(f, "GB-Mo"),
             PricingUnit::Hrs => write!(f, "Hrs"),
             PricingUnit::Queries => write!(f, "Queries"),
-            PricingUnit::Unknown(value) => write!(f, "{}", value),
+            PricingUnit::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for JobType {
         match self {
             JobType::OneTime => write!(f, "ONE_TIME"),
             JobType::Scheduled => write!(f, "SCHEDULED"),
-            JobType::Unknown(value) => write!(f, "{}", value),
+            JobType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

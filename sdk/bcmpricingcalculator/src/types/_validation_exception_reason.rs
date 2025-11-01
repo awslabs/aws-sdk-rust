@@ -133,7 +133,7 @@ impl ::std::fmt::Display for ValidationExceptionReason {
             ValidationExceptionReason::InvalidRequestFromMember => write!(f, "invalidRequestFromMember"),
             ValidationExceptionReason::Other => write!(f, "other"),
             ValidationExceptionReason::UnknownOperation => write!(f, "unknownOperation"),
-            ValidationExceptionReason::Unknown(value) => write!(f, "{}", value),
+            ValidationExceptionReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -149,7 +149,7 @@ impl ::std::fmt::Display for LoadBalancerTlsCertificateStatus {
             LoadBalancerTlsCertificateStatus::Revoked => write!(f, "REVOKED"),
             LoadBalancerTlsCertificateStatus::UnknownValue => write!(f, "UNKNOWN"),
             LoadBalancerTlsCertificateStatus::ValidationTimedOut => write!(f, "VALIDATION_TIMED_OUT"),
-            LoadBalancerTlsCertificateStatus::Unknown(value) => write!(f, "{}", value),
+            LoadBalancerTlsCertificateStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for IdentitySourceStatusCode {
             IdentitySourceStatusCode::DeletionFailed => write!(f, "DELETION_FAILED"),
             IdentitySourceStatusCode::IdcInstanceNotFound => write!(f, "IDC_INSTANCE_NOT_FOUND"),
             IdentitySourceStatusCode::IdcInstanceNotValid => write!(f, "IDC_INSTANCE_NOT_VALID"),
-            IdentitySourceStatusCode::Unknown(value) => write!(f, "{}", value),
+            IdentitySourceStatusCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

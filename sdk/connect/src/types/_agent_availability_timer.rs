@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AgentAvailabilityTimer {
         match self {
             AgentAvailabilityTimer::TimeSinceLastActivity => write!(f, "TIME_SINCE_LAST_ACTIVITY"),
             AgentAvailabilityTimer::TimeSinceLastInbound => write!(f, "TIME_SINCE_LAST_INBOUND"),
-            AgentAvailabilityTimer::Unknown(value) => write!(f, "{}", value),
+            AgentAvailabilityTimer::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -140,7 +140,7 @@ impl ::std::fmt::Display for ConfigCapabilityType {
             ConfigCapabilityType::S3Recording => write!(f, "s3-recording"),
             ConfigCapabilityType::Tracking => write!(f, "tracking"),
             ConfigCapabilityType::UplinkEcho => write!(f, "uplink-echo"),
-            ConfigCapabilityType::Unknown(value) => write!(f, "{}", value),
+            ConfigCapabilityType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -120,7 +120,7 @@ impl ::std::fmt::Display for StepParameterType {
             StepParameterType::Int => write!(f, "INT"),
             StepParameterType::Path => write!(f, "PATH"),
             StepParameterType::String => write!(f, "STRING"),
-            StepParameterType::Unknown(value) => write!(f, "{}", value),
+            StepParameterType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

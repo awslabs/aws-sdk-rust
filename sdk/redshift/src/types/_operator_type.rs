@@ -132,7 +132,7 @@ impl ::std::fmt::Display for OperatorType {
             OperatorType::In => write!(f, "in"),
             OperatorType::Le => write!(f, "le"),
             OperatorType::Lt => write!(f, "lt"),
-            OperatorType::Unknown(value) => write!(f, "{}", value),
+            OperatorType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

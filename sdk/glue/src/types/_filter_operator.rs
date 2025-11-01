@@ -126,7 +126,7 @@ impl ::std::fmt::Display for FilterOperator {
             FilterOperator::Le => write!(f, "LE"),
             FilterOperator::Lt => write!(f, "LT"),
             FilterOperator::Ne => write!(f, "NE"),
-            FilterOperator::Unknown(value) => write!(f, "{}", value),
+            FilterOperator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

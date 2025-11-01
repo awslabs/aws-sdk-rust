@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DocumentStatusType {
         match self {
             DocumentStatusType::Active => write!(f, "ACTIVE"),
             DocumentStatusType::Initialized => write!(f, "INITIALIZED"),
-            DocumentStatusType::Unknown(value) => write!(f, "{}", value),
+            DocumentStatusType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

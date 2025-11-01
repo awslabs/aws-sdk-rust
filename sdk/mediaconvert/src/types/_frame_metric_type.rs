@@ -132,7 +132,7 @@ impl ::std::fmt::Display for FrameMetricType {
             FrameMetricType::ShotChange => write!(f, "SHOT_CHANGE"),
             FrameMetricType::Ssim => write!(f, "SSIM"),
             FrameMetricType::Vmaf => write!(f, "VMAF"),
-            FrameMetricType::Unknown(value) => write!(f, "{}", value),
+            FrameMetricType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

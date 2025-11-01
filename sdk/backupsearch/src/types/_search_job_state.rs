@@ -120,7 +120,7 @@ impl ::std::fmt::Display for SearchJobState {
             SearchJobState::Running => write!(f, "RUNNING"),
             SearchJobState::Stopped => write!(f, "STOPPED"),
             SearchJobState::Stopping => write!(f, "STOPPING"),
-            SearchJobState::Unknown(value) => write!(f, "{}", value),
+            SearchJobState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

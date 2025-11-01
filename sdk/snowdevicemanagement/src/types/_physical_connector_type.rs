@@ -120,7 +120,7 @@ impl ::std::fmt::Display for PhysicalConnectorType {
             PhysicalConnectorType::Rj452 => write!(f, "RJ45_2"),
             PhysicalConnectorType::SfpPlus => write!(f, "SFP_PLUS"),
             PhysicalConnectorType::Wifi => write!(f, "WIFI"),
-            PhysicalConnectorType::Unknown(value) => write!(f, "{}", value),
+            PhysicalConnectorType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

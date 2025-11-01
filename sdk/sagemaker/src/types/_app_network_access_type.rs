@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AppNetworkAccessType {
         match self {
             AppNetworkAccessType::PublicInternetOnly => write!(f, "PublicInternetOnly"),
             AppNetworkAccessType::VpcOnly => write!(f, "VpcOnly"),
-            AppNetworkAccessType::Unknown(value) => write!(f, "{}", value),
+            AppNetworkAccessType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

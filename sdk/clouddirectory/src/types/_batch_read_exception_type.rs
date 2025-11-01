@@ -182,7 +182,7 @@ impl ::std::fmt::Display for BatchReadExceptionType {
             BatchReadExceptionType::NotPolicyException => write!(f, "NotPolicyException"),
             BatchReadExceptionType::ResourceNotFoundException => write!(f, "ResourceNotFoundException"),
             BatchReadExceptionType::ValidationException => write!(f, "ValidationException"),
-            BatchReadExceptionType::Unknown(value) => write!(f, "{}", value),
+            BatchReadExceptionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

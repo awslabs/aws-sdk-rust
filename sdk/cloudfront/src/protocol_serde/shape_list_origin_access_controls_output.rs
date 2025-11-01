@@ -22,8 +22,7 @@ pub fn de_origin_access_control_list(
     let start_el = decoder.start_el();
     if !(start_el.matches("OriginAccessControlList")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected OriginAccessControlList got {:?}",
-            start_el
+            "invalid root, expected OriginAccessControlList got {start_el:?}"
         )));
     }
     crate::protocol_serde::shape_origin_access_control_list::de_origin_access_control_list(&mut decoder)

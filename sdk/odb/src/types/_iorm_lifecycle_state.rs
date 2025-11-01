@@ -120,7 +120,7 @@ impl ::std::fmt::Display for IormLifecycleState {
             IormLifecycleState::Enabled => write!(f, "ENABLED"),
             IormLifecycleState::Failed => write!(f, "FAILED"),
             IormLifecycleState::Updating => write!(f, "UPDATING"),
-            IormLifecycleState::Unknown(value) => write!(f, "{}", value),
+            IormLifecycleState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

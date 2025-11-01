@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ComponentFormat {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ComponentFormat::Shell => write!(f, "SHELL"),
-            ComponentFormat::Unknown(value) => write!(f, "{}", value),
+            ComponentFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

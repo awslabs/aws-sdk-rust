@@ -126,7 +126,7 @@ impl ::std::fmt::Display for PostContactSummaryFailureCode {
             PostContactSummaryFailureCode::InternalError => write!(f, "INTERNAL_ERROR"),
             PostContactSummaryFailureCode::InvalidAnalysisConfiguration => write!(f, "INVALID_ANALYSIS_CONFIGURATION"),
             PostContactSummaryFailureCode::QuotaExceeded => write!(f, "QUOTA_EXCEEDED"),
-            PostContactSummaryFailureCode::Unknown(value) => write!(f, "{}", value),
+            PostContactSummaryFailureCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

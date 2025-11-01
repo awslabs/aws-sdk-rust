@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DeviceBrand {
         match self {
             DeviceBrand::AwsPanorama => write!(f, "AWS_PANORAMA"),
             DeviceBrand::Lenovo => write!(f, "LENOVO"),
-            DeviceBrand::Unknown(value) => write!(f, "{}", value),
+            DeviceBrand::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -1596,7 +1596,7 @@ impl ::std::fmt::Display for GeoMatchConstraintValue {
             GeoMatchConstraintValue::Za => write!(f, "ZA"),
             GeoMatchConstraintValue::Zm => write!(f, "ZM"),
             GeoMatchConstraintValue::Zw => write!(f, "ZW"),
-            GeoMatchConstraintValue::Unknown(value) => write!(f, "{}", value),
+            GeoMatchConstraintValue::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

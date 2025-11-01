@@ -102,7 +102,7 @@ impl ::std::fmt::Display for InternetEventStatus {
         match self {
             InternetEventStatus::Active => write!(f, "ACTIVE"),
             InternetEventStatus::Resolved => write!(f, "RESOLVED"),
-            InternetEventStatus::Unknown(value) => write!(f, "{}", value),
+            InternetEventStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

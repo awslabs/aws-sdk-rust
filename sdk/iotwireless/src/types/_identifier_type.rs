@@ -120,7 +120,7 @@ impl ::std::fmt::Display for IdentifierType {
             IdentifierType::PartnerAccountId => write!(f, "PartnerAccountId"),
             IdentifierType::WirelessDeviceId => write!(f, "WirelessDeviceId"),
             IdentifierType::WirelessGatewayId => write!(f, "WirelessGatewayId"),
-            IdentifierType::Unknown(value) => write!(f, "{}", value),
+            IdentifierType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

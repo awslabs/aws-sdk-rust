@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AutoMlSortBy {
             AutoMlSortBy::CreationTime => write!(f, "CreationTime"),
             AutoMlSortBy::Name => write!(f, "Name"),
             AutoMlSortBy::Status => write!(f, "Status"),
-            AutoMlSortBy::Unknown(value) => write!(f, "{}", value),
+            AutoMlSortBy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

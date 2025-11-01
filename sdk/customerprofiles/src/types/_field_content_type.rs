@@ -120,7 +120,7 @@ impl ::std::fmt::Display for FieldContentType {
             FieldContentType::Number => write!(f, "NUMBER"),
             FieldContentType::PhoneNumber => write!(f, "PHONE_NUMBER"),
             FieldContentType::String => write!(f, "STRING"),
-            FieldContentType::Unknown(value) => write!(f, "{}", value),
+            FieldContentType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

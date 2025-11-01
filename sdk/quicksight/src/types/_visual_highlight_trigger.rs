@@ -108,7 +108,7 @@ impl ::std::fmt::Display for VisualHighlightTrigger {
             VisualHighlightTrigger::DataPointClick => write!(f, "DATA_POINT_CLICK"),
             VisualHighlightTrigger::DataPointHover => write!(f, "DATA_POINT_HOVER"),
             VisualHighlightTrigger::None => write!(f, "NONE"),
-            VisualHighlightTrigger::Unknown(value) => write!(f, "{}", value),
+            VisualHighlightTrigger::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

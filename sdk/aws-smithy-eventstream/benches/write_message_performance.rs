@@ -409,23 +409,17 @@ fn verify_implementations_match() {
 
         // Test original implementation
         let mut original_buffer = Vec::new();
-        write_message_to(message, &mut original_buffer).expect(&format!(
-            "Original implementation failed for test case {}",
-            i
-        ));
+        write_message_to(message, &mut original_buffer)
+            .unwrap_or_else(|_| panic!("Original implementation failed for test case {i}"));
 
         // Test all optimized implementations
         let mut optimized_v1_buffer = Vec::new();
-        write_message_to_optimized_v1(message, &mut optimized_v1_buffer).expect(&format!(
-            "Optimized v1 implementation failed for test case {}",
-            i
-        ));
+        write_message_to_optimized_v1(message, &mut optimized_v1_buffer)
+            .unwrap_or_else(|_| panic!("Optimized v1 implementation failed for test case {i}"));
 
         let mut optimized_v2_buffer = Vec::new();
-        write_message_preallocate(message, &mut optimized_v2_buffer).expect(&format!(
-            "Optimized v2 implementation failed for test case {}",
-            i
-        ));
+        write_message_preallocate(message, &mut optimized_v2_buffer)
+            .unwrap_or_else(|_| panic!("Optimized v2 implementation failed for test case {i}"));
 
         // Compare results
         assert_eq!(
@@ -444,25 +438,20 @@ fn verify_implementations_match() {
         let parsed_message = aws_smithy_eventstream::frame::read_message_from(&mut Bytes::from(
             original_buffer.clone(),
         ))
-        .expect(&format!(
-            "Failed to parse original output for test case {}",
-            i
-        ));
+        .unwrap_or_else(|_| panic!("Failed to parse original output for test case {i}"));
 
         // Verify headers match
         assert_eq!(
             message.headers(),
             parsed_message.headers(),
-            "Headers don't match after round-trip for test case {}",
-            i
+            "Headers don't match after round-trip for test case {i}"
         );
 
         // Verify payload matches
         assert_eq!(
             message.payload().as_ref(),
             parsed_message.payload().as_ref(),
-            "Payload doesn't match after round-trip for test case {}",
-            i
+            "Payload doesn't match after round-trip for test case {i}"
         );
 
         println!("✓ Test case {} passed - {} bytes", i, original_buffer.len());

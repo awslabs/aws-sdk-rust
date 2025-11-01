@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DateTimeType {
         match self {
             DateTimeType::Absolute => write!(f, "ABSOLUTE"),
             DateTimeType::Relative => write!(f, "RELATIVE"),
-            DateTimeType::Unknown(value) => write!(f, "{}", value),
+            DateTimeType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

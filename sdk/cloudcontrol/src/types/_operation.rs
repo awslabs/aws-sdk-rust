@@ -108,7 +108,7 @@ impl ::std::fmt::Display for Operation {
             Operation::Create => write!(f, "CREATE"),
             Operation::Delete => write!(f, "DELETE"),
             Operation::Update => write!(f, "UPDATE"),
-            Operation::Unknown(value) => write!(f, "{}", value),
+            Operation::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

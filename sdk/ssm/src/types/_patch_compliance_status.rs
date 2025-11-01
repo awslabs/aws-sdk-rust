@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PatchComplianceStatus {
         match self {
             PatchComplianceStatus::Compliant => write!(f, "COMPLIANT"),
             PatchComplianceStatus::NonCompliant => write!(f, "NON_COMPLIANT"),
-            PatchComplianceStatus::Unknown(value) => write!(f, "{}", value),
+            PatchComplianceStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

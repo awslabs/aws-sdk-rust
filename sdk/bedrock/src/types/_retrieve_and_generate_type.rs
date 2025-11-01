@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RetrieveAndGenerateType {
         match self {
             RetrieveAndGenerateType::ExternalSources => write!(f, "EXTERNAL_SOURCES"),
             RetrieveAndGenerateType::KnowledgeBase => write!(f, "KNOWLEDGE_BASE"),
-            RetrieveAndGenerateType::Unknown(value) => write!(f, "{}", value),
+            RetrieveAndGenerateType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

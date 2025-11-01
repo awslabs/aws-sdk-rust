@@ -114,7 +114,7 @@ impl ::std::fmt::Display for SeverityRating {
             SeverityRating::High => write!(f, "HIGH"),
             SeverityRating::Low => write!(f, "LOW"),
             SeverityRating::Medium => write!(f, "MEDIUM"),
-            SeverityRating::Unknown(value) => write!(f, "{}", value),
+            SeverityRating::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

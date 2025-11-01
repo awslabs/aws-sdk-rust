@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PostalCodeMode {
         match self {
             PostalCodeMode::EnumerateSpannedLocalities => write!(f, "EnumerateSpannedLocalities"),
             PostalCodeMode::MergeAllSpannedLocalities => write!(f, "MergeAllSpannedLocalities"),
-            PostalCodeMode::Unknown(value) => write!(f, "{}", value),
+            PostalCodeMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

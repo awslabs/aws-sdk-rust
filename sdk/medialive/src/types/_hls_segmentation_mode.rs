@@ -102,7 +102,7 @@ impl ::std::fmt::Display for HlsSegmentationMode {
         match self {
             HlsSegmentationMode::UseInputSegmentation => write!(f, "USE_INPUT_SEGMENTATION"),
             HlsSegmentationMode::UseSegmentDuration => write!(f, "USE_SEGMENT_DURATION"),
-            HlsSegmentationMode::Unknown(value) => write!(f, "{}", value),
+            HlsSegmentationMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

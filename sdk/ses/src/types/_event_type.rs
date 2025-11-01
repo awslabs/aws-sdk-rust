@@ -138,7 +138,7 @@ impl ::std::fmt::Display for EventType {
             EventType::Reject => write!(f, "reject"),
             EventType::RenderingFailure => write!(f, "renderingFailure"),
             EventType::Send => write!(f, "send"),
-            EventType::Unknown(value) => write!(f, "{}", value),
+            EventType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

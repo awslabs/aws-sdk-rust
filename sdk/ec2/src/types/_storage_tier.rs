@@ -102,7 +102,7 @@ impl ::std::fmt::Display for StorageTier {
         match self {
             StorageTier::Archive => write!(f, "archive"),
             StorageTier::Standard => write!(f, "standard"),
-            StorageTier::Unknown(value) => write!(f, "{}", value),
+            StorageTier::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

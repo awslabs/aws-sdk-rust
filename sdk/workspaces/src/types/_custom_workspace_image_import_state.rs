@@ -114,7 +114,7 @@ impl ::std::fmt::Display for CustomWorkspaceImageImportState {
             CustomWorkspaceImageImportState::Error => write!(f, "ERROR"),
             CustomWorkspaceImageImportState::InProgress => write!(f, "IN_PROGRESS"),
             CustomWorkspaceImageImportState::Pending => write!(f, "PENDING"),
-            CustomWorkspaceImageImportState::Unknown(value) => write!(f, "{}", value),
+            CustomWorkspaceImageImportState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

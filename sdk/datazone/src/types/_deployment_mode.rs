@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DeploymentMode {
         match self {
             DeploymentMode::OnCreate => write!(f, "ON_CREATE"),
             DeploymentMode::OnDemand => write!(f, "ON_DEMAND"),
-            DeploymentMode::Unknown(value) => write!(f, "{}", value),
+            DeploymentMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

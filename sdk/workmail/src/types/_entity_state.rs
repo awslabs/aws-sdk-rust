@@ -108,7 +108,7 @@ impl ::std::fmt::Display for EntityState {
             EntityState::Deleted => write!(f, "DELETED"),
             EntityState::Disabled => write!(f, "DISABLED"),
             EntityState::Enabled => write!(f, "ENABLED"),
-            EntityState::Unknown(value) => write!(f, "{}", value),
+            EntityState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ExportStatusCode {
         match self {
             ExportStatusCode::Healthy => write!(f, "HEALTHY"),
             ExportStatusCode::Unhealthy => write!(f, "UNHEALTHY"),
-            ExportStatusCode::Unknown(value) => write!(f, "{}", value),
+            ExportStatusCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

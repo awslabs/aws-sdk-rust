@@ -102,7 +102,7 @@ impl ::std::fmt::Display for OpportunityOrigin {
         match self {
             OpportunityOrigin::AwsReferral => write!(f, "AWS Referral"),
             OpportunityOrigin::PartnerReferral => write!(f, "Partner Referral"),
-            OpportunityOrigin::Unknown(value) => write!(f, "{}", value),
+            OpportunityOrigin::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

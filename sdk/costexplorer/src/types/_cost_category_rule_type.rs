@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CostCategoryRuleType {
         match self {
             CostCategoryRuleType::InheritedValue => write!(f, "INHERITED_VALUE"),
             CostCategoryRuleType::Regular => write!(f, "REGULAR"),
-            CostCategoryRuleType::Unknown(value) => write!(f, "{}", value),
+            CostCategoryRuleType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

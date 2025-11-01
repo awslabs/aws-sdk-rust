@@ -96,7 +96,7 @@ impl ::std::fmt::Display for IngestionType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             IngestionType::AuditLog => write!(f, "auditLog"),
-            IngestionType::Unknown(value) => write!(f, "{}", value),
+            IngestionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

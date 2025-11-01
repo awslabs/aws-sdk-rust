@@ -122,7 +122,7 @@ impl ::std::fmt::Display for CapabilitySyncStatus {
             CapabilitySyncStatus::OutOfSync => write!(f, "OUT_OF_SYNC"),
             CapabilitySyncStatus::SyncFailed => write!(f, "SYNC_FAILED"),
             CapabilitySyncStatus::UnknownValue => write!(f, "UNKNOWN"),
-            CapabilitySyncStatus::Unknown(value) => write!(f, "{}", value),
+            CapabilitySyncStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DimensionName {
         match self {
             DimensionName::DeviceId => write!(f, "DeviceId"),
             DimensionName::GatewayId => write!(f, "GatewayId"),
-            DimensionName::Unknown(value) => write!(f, "{}", value),
+            DimensionName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

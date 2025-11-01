@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ImageSetState {
             ImageSetState::Active => write!(f, "ACTIVE"),
             ImageSetState::Deleted => write!(f, "DELETED"),
             ImageSetState::Locked => write!(f, "LOCKED"),
-            ImageSetState::Unknown(value) => write!(f, "{}", value),
+            ImageSetState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

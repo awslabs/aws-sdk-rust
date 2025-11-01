@@ -108,7 +108,7 @@ impl ::std::fmt::Display for RdsInstanceFinding {
             RdsInstanceFinding::Optimized => write!(f, "Optimized"),
             RdsInstanceFinding::OverProvisioned => write!(f, "Overprovisioned"),
             RdsInstanceFinding::UnderProvisioned => write!(f, "Underprovisioned"),
-            RdsInstanceFinding::Unknown(value) => write!(f, "{}", value),
+            RdsInstanceFinding::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

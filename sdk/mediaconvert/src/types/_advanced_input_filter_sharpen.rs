@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AdvancedInputFilterSharpen {
             AdvancedInputFilterSharpen::High => write!(f, "HIGH"),
             AdvancedInputFilterSharpen::Low => write!(f, "LOW"),
             AdvancedInputFilterSharpen::Off => write!(f, "OFF"),
-            AdvancedInputFilterSharpen::Unknown(value) => write!(f, "{}", value),
+            AdvancedInputFilterSharpen::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

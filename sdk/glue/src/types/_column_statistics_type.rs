@@ -132,7 +132,7 @@ impl ::std::fmt::Display for ColumnStatisticsType {
             ColumnStatisticsType::Double => write!(f, "DOUBLE"),
             ColumnStatisticsType::Long => write!(f, "LONG"),
             ColumnStatisticsType::String => write!(f, "STRING"),
-            ColumnStatisticsType::Unknown(value) => write!(f, "{}", value),
+            ColumnStatisticsType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

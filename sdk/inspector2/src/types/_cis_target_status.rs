@@ -108,7 +108,7 @@ impl ::std::fmt::Display for CisTargetStatus {
             CisTargetStatus::Cancelled => write!(f, "CANCELLED"),
             CisTargetStatus::Completed => write!(f, "COMPLETED"),
             CisTargetStatus::TimedOut => write!(f, "TIMED_OUT"),
-            CisTargetStatus::Unknown(value) => write!(f, "{}", value),
+            CisTargetStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for LaunchTemplateAutoRecoveryState {
         match self {
             LaunchTemplateAutoRecoveryState::Default => write!(f, "default"),
             LaunchTemplateAutoRecoveryState::Disabled => write!(f, "disabled"),
-            LaunchTemplateAutoRecoveryState::Unknown(value) => write!(f, "{}", value),
+            LaunchTemplateAutoRecoveryState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

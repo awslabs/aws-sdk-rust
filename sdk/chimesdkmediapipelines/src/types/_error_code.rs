@@ -140,7 +140,7 @@ impl ::std::fmt::Display for ErrorCode {
             ErrorCode::ServiceFailure => write!(f, "ServiceFailure"),
             ErrorCode::ServiceUnavailable => write!(f, "ServiceUnavailable"),
             ErrorCode::Throttling => write!(f, "Throttling"),
-            ErrorCode::Unknown(value) => write!(f, "{}", value),
+            ErrorCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

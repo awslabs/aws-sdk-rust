@@ -138,7 +138,7 @@ impl ::std::fmt::Display for MediaFormat {
             MediaFormat::Ogg => write!(f, "ogg"),
             MediaFormat::Wav => write!(f, "wav"),
             MediaFormat::Webm => write!(f, "webm"),
-            MediaFormat::Unknown(value) => write!(f, "{}", value),
+            MediaFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

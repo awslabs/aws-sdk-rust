@@ -108,7 +108,7 @@ impl ::std::fmt::Display for DeviceStatus {
             DeviceStatus::Offline => write!(f, "OFFLINE"),
             DeviceStatus::Online => write!(f, "ONLINE"),
             DeviceStatus::Retired => write!(f, "RETIRED"),
-            DeviceStatus::Unknown(value) => write!(f, "{}", value),
+            DeviceStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

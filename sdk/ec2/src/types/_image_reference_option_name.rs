@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ImageReferenceOptionName {
         match self {
             ImageReferenceOptionName::StateName => write!(f, "state-name"),
             ImageReferenceOptionName::VersionDepth => write!(f, "version-depth"),
-            ImageReferenceOptionName::Unknown(value) => write!(f, "{}", value),
+            ImageReferenceOptionName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

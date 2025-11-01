@@ -126,7 +126,7 @@ impl ::std::fmt::Display for LimitExceededErrorCode {
             LimitExceededErrorCode::AssessmentTemplateLimitExceeded => write!(f, "ASSESSMENT_TEMPLATE_LIMIT_EXCEEDED"),
             LimitExceededErrorCode::EventSubscriptionLimitExceeded => write!(f, "EVENT_SUBSCRIPTION_LIMIT_EXCEEDED"),
             LimitExceededErrorCode::ResourceGroupLimitExceeded => write!(f, "RESOURCE_GROUP_LIMIT_EXCEEDED"),
-            LimitExceededErrorCode::Unknown(value) => write!(f, "{}", value),
+            LimitExceededErrorCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

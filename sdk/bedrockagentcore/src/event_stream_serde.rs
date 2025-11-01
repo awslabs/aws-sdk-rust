@@ -21,7 +21,7 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for CodeInterpreterStrea
             "event" => match response_headers.smithy_type.as_str() {
                 "result" => {
                     let parsed = crate::protocol_serde::shape_code_interpreter_result::de_code_interpreter_result_payload(&message.payload()[..])
-                        .map_err(|err| ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall Result: {}", err)))?;
+                        .map_err(|err| ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall Result: {err}")))?;
                     Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Event(
                         crate::types::CodeInterpreterStreamOutput::Result(parsed),
                     ))
@@ -47,7 +47,7 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for CodeInterpreterStrea
                             builder,
                         )
                         .map_err(|err| {
-                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall accessDeniedException: {}", err))
+                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall accessDeniedException: {err}"))
                         })?;
                         builder.set_meta(Some(generic));
                         return Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
@@ -58,7 +58,7 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for CodeInterpreterStrea
                         let mut builder = crate::types::error::builders::ConflictExceptionBuilder::default();
                         builder = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(&message.payload()[..], builder)
                             .map_err(|err| {
-                                ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall conflictException: {}", err))
+                                ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall conflictException: {err}"))
                             })?;
                         builder.set_meta(Some(generic));
                         return Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
@@ -72,7 +72,7 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for CodeInterpreterStrea
                             builder,
                         )
                         .map_err(|err| {
-                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall internalServerException: {}", err))
+                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall internalServerException: {err}"))
                         })?;
                         builder.set_meta(Some(generic));
                         return Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
@@ -86,7 +86,7 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for CodeInterpreterStrea
                             builder,
                         )
                         .map_err(|err| {
-                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall resourceNotFoundException: {}", err))
+                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall resourceNotFoundException: {err}"))
                         })?;
                         builder.set_meta(Some(generic));
                         return Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
@@ -101,8 +101,7 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for CodeInterpreterStrea
                         )
                         .map_err(|err| {
                             ::aws_smithy_eventstream::error::Error::unmarshalling(format!(
-                                "failed to unmarshall serviceQuotaExceededException: {}",
-                                err
+                                "failed to unmarshall serviceQuotaExceededException: {err}"
                             ))
                         })?;
                         builder.set_meta(Some(generic));
@@ -115,10 +114,7 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for CodeInterpreterStrea
                         builder =
                             crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(&message.payload()[..], builder)
                                 .map_err(|err| {
-                                    ::aws_smithy_eventstream::error::Error::unmarshalling(format!(
-                                        "failed to unmarshall throttlingException: {}",
-                                        err
-                                    ))
+                                    ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall throttlingException: {err}"))
                                 })?;
                         builder.set_meta(Some(generic));
                         return Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
@@ -130,17 +126,14 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for CodeInterpreterStrea
                         builder =
                             crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(&message.payload()[..], builder)
                                 .map_err(|err| {
-                                    ::aws_smithy_eventstream::error::Error::unmarshalling(format!(
-                                        "failed to unmarshall validationException: {}",
-                                        err
-                                    ))
+                                    ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall validationException: {err}"))
                                 })?;
                         builder.set_meta(Some(generic));
                         return Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
                             crate::types::error::CodeInterpreterStreamOutputError::ValidationException(
                                 crate::serde_util::validation_exception_correct_errors(builder)
                                     .build()
-                                    .map_err(|err| ::aws_smithy_eventstream::error::Error::unmarshalling(format!("{}", err)))?,
+                                    .map_err(|err| ::aws_smithy_eventstream::error::Error::unmarshalling(format!("{err}")))?,
                             ),
                         ));
                     }
@@ -152,8 +145,7 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for CodeInterpreterStrea
             }
             value => {
                 return Err(::aws_smithy_eventstream::error::Error::unmarshalling(format!(
-                    "unrecognized :message-type: {}",
-                    value
+                    "unrecognized :message-type: {value}"
                 )));
             }
         }

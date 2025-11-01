@@ -132,7 +132,7 @@ impl ::std::fmt::Display for ImageState {
             ImageState::Failed => write!(f, "FAILED"),
             ImageState::Importing => write!(f, "IMPORTING"),
             ImageState::Pending => write!(f, "PENDING"),
-            ImageState::Unknown(value) => write!(f, "{}", value),
+            ImageState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

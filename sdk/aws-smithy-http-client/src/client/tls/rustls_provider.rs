@@ -322,7 +322,7 @@ pub(crate) mod connect {
                 let tunneled = tunnel
                     .call(dst_clone.clone())
                     .await
-                    .map_err(|e| BoxError::from(format!("CONNECT tunnel failed: {}", e)))?;
+                    .map_err(|e| BoxError::from(format!("CONNECT tunnel failed: {e}")))?;
 
                 // Stage 2: Manual TLS handshake over tunneled stream
                 let host = dst_clone
@@ -330,7 +330,7 @@ pub(crate) mod connect {
                     .ok_or("missing host in URI for TLS handshake")?;
 
                 let server_name = ServerName::try_from(host.to_owned()).map_err(|e| {
-                    BoxError::from(format!("invalid server name for TLS handshake: {}", e))
+                    BoxError::from(format!("invalid server name for TLS handshake: {e}"))
                 })?;
 
                 let tls_connector = tokio_rustls::TlsConnector::from(tls_config)

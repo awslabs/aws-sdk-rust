@@ -102,7 +102,7 @@ impl ::std::fmt::Display for HlsIncompleteSegmentBehavior {
         match self {
             HlsIncompleteSegmentBehavior::Auto => write!(f, "AUTO"),
             HlsIncompleteSegmentBehavior::Suppress => write!(f, "SUPPRESS"),
-            HlsIncompleteSegmentBehavior::Unknown(value) => write!(f, "{}", value),
+            HlsIncompleteSegmentBehavior::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

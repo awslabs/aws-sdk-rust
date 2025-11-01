@@ -108,7 +108,7 @@ impl ::std::fmt::Display for SampleRangeConversion {
             SampleRangeConversion::LimitedRangeClip => write!(f, "LIMITED_RANGE_CLIP"),
             SampleRangeConversion::LimitedRangeSqueeze => write!(f, "LIMITED_RANGE_SQUEEZE"),
             SampleRangeConversion::None => write!(f, "NONE"),
-            SampleRangeConversion::Unknown(value) => write!(f, "{}", value),
+            SampleRangeConversion::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

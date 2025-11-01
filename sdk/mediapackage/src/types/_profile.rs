@@ -114,7 +114,7 @@ impl ::std::fmt::Display for Profile {
             Profile::Hbbtv15 => write!(f, "HBBTV_1_5"),
             Profile::Hybridcast => write!(f, "HYBRIDCAST"),
             Profile::None => write!(f, "NONE"),
-            Profile::Unknown(value) => write!(f, "{}", value),
+            Profile::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

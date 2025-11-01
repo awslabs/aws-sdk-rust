@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TagOnCreatePolicy {
         match self {
             TagOnCreatePolicy::FromParentResource => write!(f, "FROM_PARENT_RESOURCE"),
             TagOnCreatePolicy::None => write!(f, "NONE"),
-            TagOnCreatePolicy::Unknown(value) => write!(f, "{}", value),
+            TagOnCreatePolicy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

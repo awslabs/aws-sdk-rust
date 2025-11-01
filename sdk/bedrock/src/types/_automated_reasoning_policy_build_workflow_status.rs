@@ -149,7 +149,7 @@ impl ::std::fmt::Display for AutomatedReasoningPolicyBuildWorkflowStatus {
             AutomatedReasoningPolicyBuildWorkflowStatus::Preprocessing => write!(f, "PREPROCESSING"),
             AutomatedReasoningPolicyBuildWorkflowStatus::Scheduled => write!(f, "SCHEDULED"),
             AutomatedReasoningPolicyBuildWorkflowStatus::Testing => write!(f, "TESTING"),
-            AutomatedReasoningPolicyBuildWorkflowStatus::Unknown(value) => write!(f, "{}", value),
+            AutomatedReasoningPolicyBuildWorkflowStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

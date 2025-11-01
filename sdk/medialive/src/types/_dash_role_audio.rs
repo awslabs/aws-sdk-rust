@@ -154,7 +154,7 @@ impl ::std::fmt::Display for DashRoleAudio {
             DashRoleAudio::Karaoke => write!(f, "KARAOKE"),
             DashRoleAudio::Main => write!(f, "MAIN"),
             DashRoleAudio::Supplementary => write!(f, "SUPPLEMENTARY"),
-            DashRoleAudio::Unknown(value) => write!(f, "{}", value),
+            DashRoleAudio::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

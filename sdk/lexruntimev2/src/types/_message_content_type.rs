@@ -114,7 +114,7 @@ impl ::std::fmt::Display for MessageContentType {
             MessageContentType::ImageResponseCard => write!(f, "ImageResponseCard"),
             MessageContentType::PlainText => write!(f, "PlainText"),
             MessageContentType::Ssml => write!(f, "SSML"),
-            MessageContentType::Unknown(value) => write!(f, "{}", value),
+            MessageContentType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MatchOption {
         match self {
             MatchOption::Equals => write!(f, "EQUALS"),
             MatchOption::NotEquals => write!(f, "NOT_EQUALS"),
-            MatchOption::Unknown(value) => write!(f, "{}", value),
+            MatchOption::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

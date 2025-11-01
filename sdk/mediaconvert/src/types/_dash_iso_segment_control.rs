@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DashIsoSegmentControl {
         match self {
             DashIsoSegmentControl::SegmentedFiles => write!(f, "SEGMENTED_FILES"),
             DashIsoSegmentControl::SingleFile => write!(f, "SINGLE_FILE"),
-            DashIsoSegmentControl::Unknown(value) => write!(f, "{}", value),
+            DashIsoSegmentControl::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

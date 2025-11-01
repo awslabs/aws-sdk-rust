@@ -114,7 +114,7 @@ impl ::std::fmt::Display for PricingRuleScope {
             PricingRuleScope::Global => write!(f, "GLOBAL"),
             PricingRuleScope::Service => write!(f, "SERVICE"),
             PricingRuleScope::Sku => write!(f, "SKU"),
-            PricingRuleScope::Unknown(value) => write!(f, "{}", value),
+            PricingRuleScope::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

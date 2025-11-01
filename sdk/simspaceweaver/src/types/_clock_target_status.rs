@@ -110,7 +110,7 @@ impl ::std::fmt::Display for ClockTargetStatus {
             ClockTargetStatus::Started => write!(f, "STARTED"),
             ClockTargetStatus::Stopped => write!(f, "STOPPED"),
             ClockTargetStatus::UnknownValue => write!(f, "UNKNOWN"),
-            ClockTargetStatus::Unknown(value) => write!(f, "{}", value),
+            ClockTargetStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

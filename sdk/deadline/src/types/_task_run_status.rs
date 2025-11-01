@@ -175,7 +175,7 @@ impl ::std::fmt::Display for TaskRunStatus {
             TaskRunStatus::Starting => write!(f, "STARTING"),
             TaskRunStatus::Succeeded => write!(f, "SUCCEEDED"),
             TaskRunStatus::Suspended => write!(f, "SUSPENDED"),
-            TaskRunStatus::Unknown(value) => write!(f, "{}", value),
+            TaskRunStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

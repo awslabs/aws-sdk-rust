@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TableType {
         match self {
             TableType::Aws => write!(f, "aws"),
             TableType::Customer => write!(f, "customer"),
-            TableType::Unknown(value) => write!(f, "{}", value),
+            TableType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

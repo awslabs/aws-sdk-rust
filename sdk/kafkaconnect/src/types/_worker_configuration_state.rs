@@ -102,7 +102,7 @@ impl ::std::fmt::Display for WorkerConfigurationState {
         match self {
             WorkerConfigurationState::Active => write!(f, "ACTIVE"),
             WorkerConfigurationState::Deleting => write!(f, "DELETING"),
-            WorkerConfigurationState::Unknown(value) => write!(f, "{}", value),
+            WorkerConfigurationState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

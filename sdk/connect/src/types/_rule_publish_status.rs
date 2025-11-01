@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RulePublishStatus {
         match self {
             RulePublishStatus::Draft => write!(f, "DRAFT"),
             RulePublishStatus::Published => write!(f, "PUBLISHED"),
-            RulePublishStatus::Unknown(value) => write!(f, "{}", value),
+            RulePublishStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

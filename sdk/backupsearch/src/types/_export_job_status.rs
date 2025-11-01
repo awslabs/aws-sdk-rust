@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ExportJobStatus {
             ExportJobStatus::Completed => write!(f, "COMPLETED"),
             ExportJobStatus::Failed => write!(f, "FAILED"),
             ExportJobStatus::Running => write!(f, "RUNNING"),
-            ExportJobStatus::Unknown(value) => write!(f, "{}", value),
+            ExportJobStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

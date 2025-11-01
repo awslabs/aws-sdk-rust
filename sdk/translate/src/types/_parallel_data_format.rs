@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ParallelDataFormat {
             ParallelDataFormat::Csv => write!(f, "CSV"),
             ParallelDataFormat::Tmx => write!(f, "TMX"),
             ParallelDataFormat::Tsv => write!(f, "TSV"),
-            ParallelDataFormat::Unknown(value) => write!(f, "{}", value),
+            ParallelDataFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ConnectionNotificationType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ConnectionNotificationType::Topic => write!(f, "Topic"),
-            ConnectionNotificationType::Unknown(value) => write!(f, "{}", value),
+            ConnectionNotificationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

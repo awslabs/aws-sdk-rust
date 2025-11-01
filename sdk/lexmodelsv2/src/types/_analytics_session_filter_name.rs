@@ -161,7 +161,7 @@ impl ::std::fmt::Display for AnalyticsSessionFilterName {
             AnalyticsSessionFilterName::Modality => write!(f, "Modality"),
             AnalyticsSessionFilterName::OriginatingRequestId => write!(f, "OriginatingRequestId"),
             AnalyticsSessionFilterName::SessionId => write!(f, "SessionId"),
-            AnalyticsSessionFilterName::Unknown(value) => write!(f, "{}", value),
+            AnalyticsSessionFilterName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

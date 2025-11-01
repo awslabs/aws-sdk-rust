@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ObjectLockLegalHoldStatus {
         match self {
             ObjectLockLegalHoldStatus::Off => write!(f, "OFF"),
             ObjectLockLegalHoldStatus::On => write!(f, "ON"),
-            ObjectLockLegalHoldStatus::Unknown(value) => write!(f, "{}", value),
+            ObjectLockLegalHoldStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

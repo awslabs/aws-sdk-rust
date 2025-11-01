@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ConnectionType {
         match self {
             ConnectionType::Direct => write!(f, "DIRECT"),
             ConnectionType::Indirect => write!(f, "INDIRECT"),
-            ConnectionType::Unknown(value) => write!(f, "{}", value),
+            ConnectionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

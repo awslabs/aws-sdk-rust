@@ -102,7 +102,7 @@ impl ::std::fmt::Display for NotificationState {
         match self {
             NotificationState::Alarm => write!(f, "ALARM"),
             NotificationState::Ok => write!(f, "OK"),
-            NotificationState::Unknown(value) => write!(f, "{}", value),
+            NotificationState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AnalyticsBinByName {
         match self {
             AnalyticsBinByName::ConversationStartTime => write!(f, "ConversationStartTime"),
             AnalyticsBinByName::UtteranceTimestamp => write!(f, "UtteranceTimestamp"),
-            AnalyticsBinByName::Unknown(value) => write!(f, "{}", value),
+            AnalyticsBinByName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

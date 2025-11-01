@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ExternalSource {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ExternalSource::AmazonConnect => write!(f, "AMAZON_CONNECT"),
-            ExternalSource::Unknown(value) => write!(f, "{}", value),
+            ExternalSource::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

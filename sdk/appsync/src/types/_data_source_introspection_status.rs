@@ -108,7 +108,7 @@ impl ::std::fmt::Display for DataSourceIntrospectionStatus {
             DataSourceIntrospectionStatus::Failed => write!(f, "FAILED"),
             DataSourceIntrospectionStatus::Processing => write!(f, "PROCESSING"),
             DataSourceIntrospectionStatus::Success => write!(f, "SUCCESS"),
-            DataSourceIntrospectionStatus::Unknown(value) => write!(f, "{}", value),
+            DataSourceIntrospectionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

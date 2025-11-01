@@ -78,16 +78,14 @@ pub fn de_describe_adjustment_types(
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeAdjustmentTypesResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected DescribeAdjustmentTypesResponse got {:?}",
-            start_el
+            "invalid root, expected DescribeAdjustmentTypesResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("DescribeAdjustmentTypesResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected DescribeAdjustmentTypesResult got {:?}",
-                start_el
+                "invalid result, expected DescribeAdjustmentTypesResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

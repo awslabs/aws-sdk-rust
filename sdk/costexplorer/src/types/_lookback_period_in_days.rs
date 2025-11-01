@@ -108,7 +108,7 @@ impl ::std::fmt::Display for LookbackPeriodInDays {
             LookbackPeriodInDays::SevenDays => write!(f, "SEVEN_DAYS"),
             LookbackPeriodInDays::SixtyDays => write!(f, "SIXTY_DAYS"),
             LookbackPeriodInDays::ThirtyDays => write!(f, "THIRTY_DAYS"),
-            LookbackPeriodInDays::Unknown(value) => write!(f, "{}", value),
+            LookbackPeriodInDays::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

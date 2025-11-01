@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ReplacementStrategy {
         match self {
             ReplacementStrategy::Launch => write!(f, "launch"),
             ReplacementStrategy::LaunchBeforeTerminate => write!(f, "launch-before-terminate"),
-            ReplacementStrategy::Unknown(value) => write!(f, "{}", value),
+            ReplacementStrategy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

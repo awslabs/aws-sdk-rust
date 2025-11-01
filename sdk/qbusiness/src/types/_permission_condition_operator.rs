@@ -96,7 +96,7 @@ impl ::std::fmt::Display for PermissionConditionOperator {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             PermissionConditionOperator::StringEquals => write!(f, "StringEquals"),
-            PermissionConditionOperator::Unknown(value) => write!(f, "{}", value),
+            PermissionConditionOperator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

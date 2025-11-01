@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ChannelPrivacy {
         match self {
             ChannelPrivacy::Private => write!(f, "PRIVATE"),
             ChannelPrivacy::Public => write!(f, "PUBLIC"),
-            ChannelPrivacy::Unknown(value) => write!(f, "{}", value),
+            ChannelPrivacy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

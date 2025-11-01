@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ArchiveStatus {
         match self {
             ArchiveStatus::ArchiveAccess => write!(f, "ARCHIVE_ACCESS"),
             ArchiveStatus::DeepArchiveAccess => write!(f, "DEEP_ARCHIVE_ACCESS"),
-            ArchiveStatus::Unknown(value) => write!(f, "{}", value),
+            ArchiveStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

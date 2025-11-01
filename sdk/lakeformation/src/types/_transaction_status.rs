@@ -114,7 +114,7 @@ impl ::std::fmt::Display for TransactionStatus {
             TransactionStatus::Active => write!(f, "ACTIVE"),
             TransactionStatus::Committed => write!(f, "COMMITTED"),
             TransactionStatus::CommitInProgress => write!(f, "COMMIT_IN_PROGRESS"),
-            TransactionStatus::Unknown(value) => write!(f, "{}", value),
+            TransactionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

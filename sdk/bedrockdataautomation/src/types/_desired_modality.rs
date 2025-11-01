@@ -114,7 +114,7 @@ impl ::std::fmt::Display for DesiredModality {
             DesiredModality::Document => write!(f, "DOCUMENT"),
             DesiredModality::Image => write!(f, "IMAGE"),
             DesiredModality::Video => write!(f, "VIDEO"),
-            DesiredModality::Unknown(value) => write!(f, "{}", value),
+            DesiredModality::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

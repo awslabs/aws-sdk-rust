@@ -102,7 +102,7 @@ impl ::std::fmt::Display for EventNotificationTopicStatus {
         match self {
             EventNotificationTopicStatus::Disabled => write!(f, "Disabled"),
             EventNotificationTopicStatus::Enabled => write!(f, "Enabled"),
-            EventNotificationTopicStatus::Unknown(value) => write!(f, "{}", value),
+            EventNotificationTopicStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

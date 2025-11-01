@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ErrorMessageType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ErrorMessageType::Detailed => write!(f, "DETAILED"),
-            ErrorMessageType::Unknown(value) => write!(f, "{}", value),
+            ErrorMessageType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DashboardUiState {
         match self {
             DashboardUiState::Collapsed => write!(f, "COLLAPSED"),
             DashboardUiState::Expanded => write!(f, "EXPANDED"),
-            DashboardUiState::Unknown(value) => write!(f, "{}", value),
+            DashboardUiState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

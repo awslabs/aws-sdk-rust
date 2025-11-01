@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DeploymentHistoryFilter {
         match self {
             DeploymentHistoryFilter::All => write!(f, "ALL"),
             DeploymentHistoryFilter::LatestOnly => write!(f, "LATEST_ONLY"),
-            DeploymentHistoryFilter::Unknown(value) => write!(f, "{}", value),
+            DeploymentHistoryFilter::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

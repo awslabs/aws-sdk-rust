@@ -120,7 +120,7 @@ impl ::std::fmt::Display for SequenceStoreStatus {
             SequenceStoreStatus::Deleting => write!(f, "DELETING"),
             SequenceStoreStatus::Failed => write!(f, "FAILED"),
             SequenceStoreStatus::Updating => write!(f, "UPDATING"),
-            SequenceStoreStatus::Unknown(value) => write!(f, "{}", value),
+            SequenceStoreStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

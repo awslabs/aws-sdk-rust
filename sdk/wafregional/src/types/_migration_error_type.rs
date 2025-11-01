@@ -140,7 +140,7 @@ impl ::std::fmt::Display for MigrationErrorType {
             MigrationErrorType::S3BucketNotFound => write!(f, "S3_BUCKET_NOT_FOUND"),
             MigrationErrorType::S3BucketNoPermission => write!(f, "S3_BUCKET_NO_PERMISSION"),
             MigrationErrorType::S3InternalError => write!(f, "S3_INTERNAL_ERROR"),
-            MigrationErrorType::Unknown(value) => write!(f, "{}", value),
+            MigrationErrorType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

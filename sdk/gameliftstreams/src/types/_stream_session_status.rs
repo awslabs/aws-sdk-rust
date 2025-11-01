@@ -147,7 +147,7 @@ impl ::std::fmt::Display for StreamSessionStatus {
             StreamSessionStatus::Reconnecting => write!(f, "RECONNECTING"),
             StreamSessionStatus::Terminated => write!(f, "TERMINATED"),
             StreamSessionStatus::Terminating => write!(f, "TERMINATING"),
-            StreamSessionStatus::Unknown(value) => write!(f, "{}", value),
+            StreamSessionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

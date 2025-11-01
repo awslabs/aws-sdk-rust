@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CompressionEnum {
         match self {
             CompressionEnum::Disabled => write!(f, "DISABLED"),
             CompressionEnum::Zlib => write!(f, "ZLIB"),
-            CompressionEnum::Unknown(value) => write!(f, "{}", value),
+            CompressionEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

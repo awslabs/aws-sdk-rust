@@ -38,7 +38,7 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-/// Defines the Algorithm used to generate the certificate signing request
+/// <p>Defines the Algorithm used to generate the certificate signing request</p>
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
@@ -114,7 +114,7 @@ impl ::std::fmt::Display for SigningAlgorithmType {
             SigningAlgorithmType::Sha256 => write!(f, "SHA256"),
             SigningAlgorithmType::Sha384 => write!(f, "SHA384"),
             SigningAlgorithmType::Sha512 => write!(f, "SHA512"),
-            SigningAlgorithmType::Unknown(value) => write!(f, "{}", value),
+            SigningAlgorithmType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

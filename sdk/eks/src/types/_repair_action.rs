@@ -108,7 +108,7 @@ impl ::std::fmt::Display for RepairAction {
             RepairAction::NoAction => write!(f, "NoAction"),
             RepairAction::Reboot => write!(f, "Reboot"),
             RepairAction::Replace => write!(f, "Replace"),
-            RepairAction::Unknown(value) => write!(f, "{}", value),
+            RepairAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

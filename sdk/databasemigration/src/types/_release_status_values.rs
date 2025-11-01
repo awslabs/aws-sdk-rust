@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ReleaseStatusValues {
         match self {
             ReleaseStatusValues::Beta => write!(f, "beta"),
             ReleaseStatusValues::Prod => write!(f, "prod"),
-            ReleaseStatusValues::Unknown(value) => write!(f, "{}", value),
+            ReleaseStatusValues::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

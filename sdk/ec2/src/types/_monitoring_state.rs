@@ -114,7 +114,7 @@ impl ::std::fmt::Display for MonitoringState {
             MonitoringState::Disabling => write!(f, "disabling"),
             MonitoringState::Enabled => write!(f, "enabled"),
             MonitoringState::Pending => write!(f, "pending"),
-            MonitoringState::Unknown(value) => write!(f, "{}", value),
+            MonitoringState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

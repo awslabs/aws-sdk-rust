@@ -120,7 +120,7 @@ impl ::std::fmt::Display for DataSourceRunStatus {
             DataSourceRunStatus::Requested => write!(f, "REQUESTED"),
             DataSourceRunStatus::Running => write!(f, "RUNNING"),
             DataSourceRunStatus::Success => write!(f, "SUCCESS"),
-            DataSourceRunStatus::Unknown(value) => write!(f, "{}", value),
+            DataSourceRunStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

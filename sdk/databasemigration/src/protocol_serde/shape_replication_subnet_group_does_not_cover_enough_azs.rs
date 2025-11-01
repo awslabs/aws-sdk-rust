@@ -24,8 +24,7 @@ pub(crate) fn de_replication_subnet_group_does_not_cover_enough_azs_json_err(
             },
             other => {
                 return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                    "expected object key or end object, found: {:?}",
-                    other
+                    "expected object key or end object, found: {other:?}"
                 )))
             }
         }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DataDistributionType {
         match self {
             DataDistributionType::Fullyreplicated => write!(f, "FullyReplicated"),
             DataDistributionType::Shardedbys3Key => write!(f, "ShardedByS3Key"),
-            DataDistributionType::Unknown(value) => write!(f, "{}", value),
+            DataDistributionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

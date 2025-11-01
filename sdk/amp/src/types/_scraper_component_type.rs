@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ScraperComponentType {
             ScraperComponentType::Collector => write!(f, "COLLECTOR"),
             ScraperComponentType::Exporter => write!(f, "EXPORTER"),
             ScraperComponentType::ServiceDiscovery => write!(f, "SERVICE_DISCOVERY"),
-            ScraperComponentType::Unknown(value) => write!(f, "{}", value),
+            ScraperComponentType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

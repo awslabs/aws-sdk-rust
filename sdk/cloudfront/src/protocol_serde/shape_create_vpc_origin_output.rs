@@ -31,8 +31,7 @@ pub fn de_vpc_origin(inp: &[u8]) -> std::result::Result<crate::types::VpcOrigin,
     let start_el = decoder.start_el();
     if !(start_el.matches("VpcOrigin")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected VpcOrigin got {:?}",
-            start_el
+            "invalid root, expected VpcOrigin got {start_el:?}"
         )));
     }
     crate::protocol_serde::shape_vpc_origin::de_vpc_origin(&mut decoder)

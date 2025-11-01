@@ -114,7 +114,7 @@ impl ::std::fmt::Display for DataSetTaskLifecycle {
             DataSetTaskLifecycle::Creating => write!(f, "Creating"),
             DataSetTaskLifecycle::Failed => write!(f, "Failed"),
             DataSetTaskLifecycle::Running => write!(f, "Running"),
-            DataSetTaskLifecycle::Unknown(value) => write!(f, "{}", value),
+            DataSetTaskLifecycle::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

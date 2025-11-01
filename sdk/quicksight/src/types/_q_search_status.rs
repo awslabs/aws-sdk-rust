@@ -102,7 +102,7 @@ impl ::std::fmt::Display for QSearchStatus {
         match self {
             QSearchStatus::Disabled => write!(f, "DISABLED"),
             QSearchStatus::Enabled => write!(f, "ENABLED"),
-            QSearchStatus::Unknown(value) => write!(f, "{}", value),
+            QSearchStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

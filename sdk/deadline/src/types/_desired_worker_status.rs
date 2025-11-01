@@ -96,7 +96,7 @@ impl ::std::fmt::Display for DesiredWorkerStatus {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             DesiredWorkerStatus::Stopped => write!(f, "STOPPED"),
-            DesiredWorkerStatus::Unknown(value) => write!(f, "{}", value),
+            DesiredWorkerStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

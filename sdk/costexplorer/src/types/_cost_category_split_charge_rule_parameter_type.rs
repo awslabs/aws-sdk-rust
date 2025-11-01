@@ -96,7 +96,7 @@ impl ::std::fmt::Display for CostCategorySplitChargeRuleParameterType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             CostCategorySplitChargeRuleParameterType::AllocationPercentages => write!(f, "ALLOCATION_PERCENTAGES"),
-            CostCategorySplitChargeRuleParameterType::Unknown(value) => write!(f, "{}", value),
+            CostCategorySplitChargeRuleParameterType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

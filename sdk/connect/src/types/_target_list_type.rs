@@ -96,7 +96,7 @@ impl ::std::fmt::Display for TargetListType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             TargetListType::Proficiencies => write!(f, "PROFICIENCIES"),
-            TargetListType::Unknown(value) => write!(f, "{}", value),
+            TargetListType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

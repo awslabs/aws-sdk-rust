@@ -108,7 +108,7 @@ impl ::std::fmt::Display for PersistentAppUiType {
             PersistentAppUiType::Shs => write!(f, "SHS"),
             PersistentAppUiType::Tez => write!(f, "TEZ"),
             PersistentAppUiType::Yts => write!(f, "YTS"),
-            PersistentAppUiType::Unknown(value) => write!(f, "{}", value),
+            PersistentAppUiType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

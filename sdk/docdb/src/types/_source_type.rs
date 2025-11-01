@@ -133,7 +133,7 @@ impl ::std::fmt::Display for SourceType {
             SourceType::DbParameterGroup => write!(f, "db-parameter-group"),
             SourceType::DbSecurityGroup => write!(f, "db-security-group"),
             SourceType::DbSnapshot => write!(f, "db-snapshot"),
-            SourceType::Unknown(value) => write!(f, "{}", value),
+            SourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

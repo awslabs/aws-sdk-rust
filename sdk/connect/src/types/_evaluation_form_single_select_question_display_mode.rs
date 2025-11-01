@@ -104,7 +104,7 @@ impl ::std::fmt::Display for EvaluationFormSingleSelectQuestionDisplayMode {
         match self {
             EvaluationFormSingleSelectQuestionDisplayMode::Dropdown => write!(f, "DROPDOWN"),
             EvaluationFormSingleSelectQuestionDisplayMode::Radio => write!(f, "RADIO"),
-            EvaluationFormSingleSelectQuestionDisplayMode::Unknown(value) => write!(f, "{}", value),
+            EvaluationFormSingleSelectQuestionDisplayMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

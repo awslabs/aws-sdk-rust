@@ -96,7 +96,7 @@ impl ::std::fmt::Display for LambdaFunctionMemoryMetricName {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             LambdaFunctionMemoryMetricName::Duration => write!(f, "Duration"),
-            LambdaFunctionMemoryMetricName::Unknown(value) => write!(f, "{}", value),
+            LambdaFunctionMemoryMetricName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

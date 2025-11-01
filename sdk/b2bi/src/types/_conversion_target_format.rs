@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ConversionTargetFormat {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ConversionTargetFormat::X12 => write!(f, "X12"),
-            ConversionTargetFormat::Unknown(value) => write!(f, "{}", value),
+            ConversionTargetFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

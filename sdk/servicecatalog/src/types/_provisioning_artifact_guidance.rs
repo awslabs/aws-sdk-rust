@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ProvisioningArtifactGuidance {
         match self {
             ProvisioningArtifactGuidance::Default => write!(f, "DEFAULT"),
             ProvisioningArtifactGuidance::Deprecated => write!(f, "DEPRECATED"),
-            ProvisioningArtifactGuidance::Unknown(value) => write!(f, "{}", value),
+            ProvisioningArtifactGuidance::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

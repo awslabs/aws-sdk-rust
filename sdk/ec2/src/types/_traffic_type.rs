@@ -108,7 +108,7 @@ impl ::std::fmt::Display for TrafficType {
             TrafficType::Accept => write!(f, "ACCEPT"),
             TrafficType::All => write!(f, "ALL"),
             TrafficType::Reject => write!(f, "REJECT"),
-            TrafficType::Unknown(value) => write!(f, "{}", value),
+            TrafficType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

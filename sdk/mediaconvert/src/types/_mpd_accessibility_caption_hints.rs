@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MpdAccessibilityCaptionHints {
         match self {
             MpdAccessibilityCaptionHints::Exclude => write!(f, "EXCLUDE"),
             MpdAccessibilityCaptionHints::Include => write!(f, "INCLUDE"),
-            MpdAccessibilityCaptionHints::Unknown(value) => write!(f, "{}", value),
+            MpdAccessibilityCaptionHints::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

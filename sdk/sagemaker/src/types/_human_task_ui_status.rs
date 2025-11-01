@@ -102,7 +102,7 @@ impl ::std::fmt::Display for HumanTaskUiStatus {
         match self {
             HumanTaskUiStatus::Active => write!(f, "Active"),
             HumanTaskUiStatus::Deleting => write!(f, "Deleting"),
-            HumanTaskUiStatus::Unknown(value) => write!(f, "{}", value),
+            HumanTaskUiStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

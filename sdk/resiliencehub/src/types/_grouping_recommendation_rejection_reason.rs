@@ -114,7 +114,7 @@ impl ::std::fmt::Display for GroupingRecommendationRejectionReason {
             GroupingRecommendationRejectionReason::DistinctUserGroupHandling => write!(f, "DistinctUserGroupHandling"),
             GroupingRecommendationRejectionReason::Other => write!(f, "Other"),
             GroupingRecommendationRejectionReason::SeparateDataConcern => write!(f, "SeparateDataConcern"),
-            GroupingRecommendationRejectionReason::Unknown(value) => write!(f, "{}", value),
+            GroupingRecommendationRejectionReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

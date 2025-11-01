@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ContributorInsightsAction {
         match self {
             ContributorInsightsAction::Disable => write!(f, "DISABLE"),
             ContributorInsightsAction::Enable => write!(f, "ENABLE"),
-            ContributorInsightsAction::Unknown(value) => write!(f, "{}", value),
+            ContributorInsightsAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

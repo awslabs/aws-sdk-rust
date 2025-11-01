@@ -114,7 +114,7 @@ impl ::std::fmt::Display for LongConditionOperator {
             LongConditionOperator::GreaterThanEqualTo => write!(f, "GREATER_THAN_EQUAL_TO"),
             LongConditionOperator::LessThanEqualTo => write!(f, "LESS_THAN_EQUAL_TO"),
             LongConditionOperator::NotEqualsTo => write!(f, "NOT_EQUALS_TO"),
-            LongConditionOperator::Unknown(value) => write!(f, "{}", value),
+            LongConditionOperator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for DomainStatus {
             DomainStatus::Active => write!(f, "ACTIVE"),
             DomainStatus::Pending => write!(f, "PENDING"),
             DomainStatus::Suspended => write!(f, "SUSPENDED"),
-            DomainStatus::Unknown(value) => write!(f, "{}", value),
+            DomainStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

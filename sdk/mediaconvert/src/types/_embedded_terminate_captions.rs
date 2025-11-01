@@ -102,7 +102,7 @@ impl ::std::fmt::Display for EmbeddedTerminateCaptions {
         match self {
             EmbeddedTerminateCaptions::Disabled => write!(f, "DISABLED"),
             EmbeddedTerminateCaptions::EndOfInput => write!(f, "END_OF_INPUT"),
-            EmbeddedTerminateCaptions::Unknown(value) => write!(f, "{}", value),
+            EmbeddedTerminateCaptions::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

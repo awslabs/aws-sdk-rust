@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AutoshiftObserverNotificationStatus {
         match self {
             AutoshiftObserverNotificationStatus::Disabled => write!(f, "DISABLED"),
             AutoshiftObserverNotificationStatus::Enabled => write!(f, "ENABLED"),
-            AutoshiftObserverNotificationStatus::Unknown(value) => write!(f, "{}", value),
+            AutoshiftObserverNotificationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

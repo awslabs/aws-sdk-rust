@@ -108,7 +108,7 @@ impl ::std::fmt::Display for RealTimeAlertRuleType {
             RealTimeAlertRuleType::IssueDetection => write!(f, "IssueDetection"),
             RealTimeAlertRuleType::KeywordMatch => write!(f, "KeywordMatch"),
             RealTimeAlertRuleType::Sentiment => write!(f, "Sentiment"),
-            RealTimeAlertRuleType::Unknown(value) => write!(f, "{}", value),
+            RealTimeAlertRuleType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

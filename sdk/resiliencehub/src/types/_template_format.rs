@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TemplateFormat {
         match self {
             TemplateFormat::CfnJson => write!(f, "CfnJson"),
             TemplateFormat::CfnYaml => write!(f, "CfnYaml"),
-            TemplateFormat::Unknown(value) => write!(f, "{}", value),
+            TemplateFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

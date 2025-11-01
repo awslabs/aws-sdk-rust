@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ProjectSortOrder {
         match self {
             ProjectSortOrder::Ascending => write!(f, "Ascending"),
             ProjectSortOrder::Descending => write!(f, "Descending"),
-            ProjectSortOrder::Unknown(value) => write!(f, "{}", value),
+            ProjectSortOrder::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -182,16 +182,14 @@ pub fn de_create_event_subscription(
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateEventSubscriptionResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected CreateEventSubscriptionResponse got {:?}",
-            start_el
+            "invalid root, expected CreateEventSubscriptionResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("CreateEventSubscriptionResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected CreateEventSubscriptionResult got {:?}",
-                start_el
+                "invalid result, expected CreateEventSubscriptionResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

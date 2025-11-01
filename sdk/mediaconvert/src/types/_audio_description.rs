@@ -8,6 +8,8 @@ pub struct AudioDescription {
     pub audio_channel_tagging_settings: ::std::option::Option<crate::types::AudioChannelTaggingSettings>,
     /// Advanced audio normalization settings. Ignore these settings unless you need to comply with a loudness standard.
     pub audio_normalization_settings: ::std::option::Option<crate::types::AudioNormalizationSettings>,
+    /// Settings for audio pitch correction during framerate conversion.
+    pub audio_pitch_correction_settings: ::std::option::Option<crate::types::AudioPitchCorrectionSettings>,
     /// Specifies which audio data to use from each input. In the simplest case, specify an "Audio Selector":#inputs-audio_selector by name based on its order within each input. For example if you specify "Audio Selector 3", then the third audio selector will be used from each input. If an input does not have an "Audio Selector 3", then the audio selector marked as "default" in that input will be used. If there is no audio selector marked as "default", silence will be inserted for the duration of that input. Alternatively, an "Audio Selector Group":#inputs-audio_selector_group name may be specified, with similar default/silence behavior. If no audio_source_name is specified, then "Audio Selector 1" will be chosen automatically.
     pub audio_source_name: ::std::option::Option<::std::string::String>,
     /// Applies only if Follow Input Audio Type is unchecked (false). A number between 0 and 255. The following are defined in ISO-IEC 13818-1: 0 = Undefined, 1 = Clean Effects, 2 = Hearing Impaired, 3 = Visually Impaired Commentary, 4-255 = Reserved.
@@ -35,6 +37,10 @@ impl AudioDescription {
     /// Advanced audio normalization settings. Ignore these settings unless you need to comply with a loudness standard.
     pub fn audio_normalization_settings(&self) -> ::std::option::Option<&crate::types::AudioNormalizationSettings> {
         self.audio_normalization_settings.as_ref()
+    }
+    /// Settings for audio pitch correction during framerate conversion.
+    pub fn audio_pitch_correction_settings(&self) -> ::std::option::Option<&crate::types::AudioPitchCorrectionSettings> {
+        self.audio_pitch_correction_settings.as_ref()
     }
     /// Specifies which audio data to use from each input. In the simplest case, specify an "Audio Selector":#inputs-audio_selector by name based on its order within each input. For example if you specify "Audio Selector 3", then the third audio selector will be used from each input. If an input does not have an "Audio Selector 3", then the audio selector marked as "default" in that input will be used. If there is no audio selector marked as "default", silence will be inserted for the duration of that input. Alternatively, an "Audio Selector Group":#inputs-audio_selector_group name may be specified, with similar default/silence behavior. If no audio_source_name is specified, then "Audio Selector 1" will be chosen automatically.
     pub fn audio_source_name(&self) -> ::std::option::Option<&str> {
@@ -86,6 +92,7 @@ impl AudioDescription {
 pub struct AudioDescriptionBuilder {
     pub(crate) audio_channel_tagging_settings: ::std::option::Option<crate::types::AudioChannelTaggingSettings>,
     pub(crate) audio_normalization_settings: ::std::option::Option<crate::types::AudioNormalizationSettings>,
+    pub(crate) audio_pitch_correction_settings: ::std::option::Option<crate::types::AudioPitchCorrectionSettings>,
     pub(crate) audio_source_name: ::std::option::Option<::std::string::String>,
     pub(crate) audio_type: ::std::option::Option<i32>,
     pub(crate) audio_type_control: ::std::option::Option<crate::types::AudioTypeControl>,
@@ -124,6 +131,20 @@ impl AudioDescriptionBuilder {
     /// Advanced audio normalization settings. Ignore these settings unless you need to comply with a loudness standard.
     pub fn get_audio_normalization_settings(&self) -> &::std::option::Option<crate::types::AudioNormalizationSettings> {
         &self.audio_normalization_settings
+    }
+    /// Settings for audio pitch correction during framerate conversion.
+    pub fn audio_pitch_correction_settings(mut self, input: crate::types::AudioPitchCorrectionSettings) -> Self {
+        self.audio_pitch_correction_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// Settings for audio pitch correction during framerate conversion.
+    pub fn set_audio_pitch_correction_settings(mut self, input: ::std::option::Option<crate::types::AudioPitchCorrectionSettings>) -> Self {
+        self.audio_pitch_correction_settings = input;
+        self
+    }
+    /// Settings for audio pitch correction during framerate conversion.
+    pub fn get_audio_pitch_correction_settings(&self) -> &::std::option::Option<crate::types::AudioPitchCorrectionSettings> {
+        &self.audio_pitch_correction_settings
     }
     /// Specifies which audio data to use from each input. In the simplest case, specify an "Audio Selector":#inputs-audio_selector by name based on its order within each input. For example if you specify "Audio Selector 3", then the third audio selector will be used from each input. If an input does not have an "Audio Selector 3", then the audio selector marked as "default" in that input will be used. If there is no audio selector marked as "default", silence will be inserted for the duration of that input. Alternatively, an "Audio Selector Group":#inputs-audio_selector_group name may be specified, with similar default/silence behavior. If no audio_source_name is specified, then "Audio Selector 1" will be chosen automatically.
     pub fn audio_source_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -256,6 +277,7 @@ impl AudioDescriptionBuilder {
         crate::types::AudioDescription {
             audio_channel_tagging_settings: self.audio_channel_tagging_settings,
             audio_normalization_settings: self.audio_normalization_settings,
+            audio_pitch_correction_settings: self.audio_pitch_correction_settings,
             audio_source_name: self.audio_source_name,
             audio_type: self.audio_type,
             audio_type_control: self.audio_type_control,

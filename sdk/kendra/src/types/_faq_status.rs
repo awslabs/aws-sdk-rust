@@ -120,7 +120,7 @@ impl ::std::fmt::Display for FaqStatus {
             FaqStatus::Deleting => write!(f, "DELETING"),
             FaqStatus::Failed => write!(f, "FAILED"),
             FaqStatus::Updating => write!(f, "UPDATING"),
-            FaqStatus::Unknown(value) => write!(f, "{}", value),
+            FaqStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -119,7 +119,7 @@ impl ::std::fmt::Display for MetricType {
             MetricType::AsgAverageCpuUtilization => write!(f, "ASGAverageCPUUtilization"),
             MetricType::AsgAverageNetworkIn => write!(f, "ASGAverageNetworkIn"),
             MetricType::AsgAverageNetworkOut => write!(f, "ASGAverageNetworkOut"),
-            MetricType::Unknown(value) => write!(f, "{}", value),
+            MetricType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

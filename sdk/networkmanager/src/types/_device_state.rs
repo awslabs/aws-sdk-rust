@@ -114,7 +114,7 @@ impl ::std::fmt::Display for DeviceState {
             DeviceState::Deleting => write!(f, "DELETING"),
             DeviceState::Pending => write!(f, "PENDING"),
             DeviceState::Updating => write!(f, "UPDATING"),
-            DeviceState::Unknown(value) => write!(f, "{}", value),
+            DeviceState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

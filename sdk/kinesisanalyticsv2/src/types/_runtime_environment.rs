@@ -175,7 +175,7 @@ impl ::std::fmt::Display for RuntimeEnvironment {
             RuntimeEnvironment::ZeppelinFlink10 => write!(f, "ZEPPELIN-FLINK-1_0"),
             RuntimeEnvironment::ZeppelinFlink20 => write!(f, "ZEPPELIN-FLINK-2_0"),
             RuntimeEnvironment::ZeppelinFlink30 => write!(f, "ZEPPELIN-FLINK-3_0"),
-            RuntimeEnvironment::Unknown(value) => write!(f, "{}", value),
+            RuntimeEnvironment::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

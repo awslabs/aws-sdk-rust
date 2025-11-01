@@ -154,7 +154,7 @@ impl ::std::fmt::Display for ExceptionResourceType {
             ExceptionResourceType::Namespace => write!(f, "NAMESPACE"),
             ExceptionResourceType::User => write!(f, "USER"),
             ExceptionResourceType::VpcConnection => write!(f, "VPC_CONNECTION"),
-            ExceptionResourceType::Unknown(value) => write!(f, "{}", value),
+            ExceptionResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

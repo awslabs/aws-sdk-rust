@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RequestCancelActivityTaskFailedCause {
         match self {
             RequestCancelActivityTaskFailedCause::ActivityIdUnknown => write!(f, "ACTIVITY_ID_UNKNOWN"),
             RequestCancelActivityTaskFailedCause::OperationNotPermitted => write!(f, "OPERATION_NOT_PERMITTED"),
-            RequestCancelActivityTaskFailedCause::Unknown(value) => write!(f, "{}", value),
+            RequestCancelActivityTaskFailedCause::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

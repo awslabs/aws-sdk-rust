@@ -102,7 +102,7 @@ impl ::std::fmt::Display for EndpointEncryptionMode {
         match self {
             EndpointEncryptionMode::FipsValidated => write!(f, "FIPS_VALIDATED"),
             EndpointEncryptionMode::StandardTls => write!(f, "STANDARD_TLS"),
-            EndpointEncryptionMode::Unknown(value) => write!(f, "{}", value),
+            EndpointEncryptionMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

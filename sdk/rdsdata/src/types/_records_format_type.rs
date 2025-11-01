@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RecordsFormatType {
         match self {
             RecordsFormatType::Json => write!(f, "JSON"),
             RecordsFormatType::None => write!(f, "NONE"),
-            RecordsFormatType::Unknown(value) => write!(f, "{}", value),
+            RecordsFormatType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

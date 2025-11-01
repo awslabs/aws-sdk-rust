@@ -126,7 +126,7 @@ impl ::std::fmt::Display for OptimizationJobStatus {
             OptimizationJobStatus::Starting => write!(f, "STARTING"),
             OptimizationJobStatus::Stopped => write!(f, "STOPPED"),
             OptimizationJobStatus::Stopping => write!(f, "STOPPING"),
-            OptimizationJobStatus::Unknown(value) => write!(f, "{}", value),
+            OptimizationJobStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -96,7 +96,7 @@ impl ::std::fmt::Display for OpenZfsFileSystemUserType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             OpenZfsFileSystemUserType::Posix => write!(f, "POSIX"),
-            OpenZfsFileSystemUserType::Unknown(value) => write!(f, "{}", value),
+            OpenZfsFileSystemUserType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

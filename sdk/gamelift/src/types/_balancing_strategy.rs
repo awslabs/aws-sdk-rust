@@ -108,7 +108,7 @@ impl ::std::fmt::Display for BalancingStrategy {
             BalancingStrategy::OnDemandOnly => write!(f, "ON_DEMAND_ONLY"),
             BalancingStrategy::SpotOnly => write!(f, "SPOT_ONLY"),
             BalancingStrategy::SpotPreferred => write!(f, "SPOT_PREFERRED"),
-            BalancingStrategy::Unknown(value) => write!(f, "{}", value),
+            BalancingStrategy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TimecodeTrack {
         match self {
             TimecodeTrack::Disabled => write!(f, "DISABLED"),
             TimecodeTrack::Enabled => write!(f, "ENABLED"),
-            TimecodeTrack::Unknown(value) => write!(f, "{}", value),
+            TimecodeTrack::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

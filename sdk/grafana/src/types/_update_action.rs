@@ -102,7 +102,7 @@ impl ::std::fmt::Display for UpdateAction {
         match self {
             UpdateAction::Add => write!(f, "ADD"),
             UpdateAction::Revoke => write!(f, "REVOKE"),
-            UpdateAction::Unknown(value) => write!(f, "{}", value),
+            UpdateAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -132,7 +132,7 @@ impl ::std::fmt::Display for StepStatus {
             StepStatus::PendingApproval => write!(f, "pendingApproval"),
             StepStatus::Running => write!(f, "running"),
             StepStatus::Skipped => write!(f, "skipped"),
-            StepStatus::Unknown(value) => write!(f, "{}", value),
+            StepStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

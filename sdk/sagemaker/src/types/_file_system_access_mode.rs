@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FileSystemAccessMode {
         match self {
             FileSystemAccessMode::Ro => write!(f, "ro"),
             FileSystemAccessMode::Rw => write!(f, "rw"),
-            FileSystemAccessMode::Unknown(value) => write!(f, "{}", value),
+            FileSystemAccessMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

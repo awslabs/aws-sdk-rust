@@ -108,7 +108,7 @@ impl ::std::fmt::Display for RevocationCheckAction {
             RevocationCheckAction::Drop => write!(f, "DROP"),
             RevocationCheckAction::Pass => write!(f, "PASS"),
             RevocationCheckAction::Reject => write!(f, "REJECT"),
-            RevocationCheckAction::Unknown(value) => write!(f, "{}", value),
+            RevocationCheckAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

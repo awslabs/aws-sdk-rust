@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PromoteMode {
         match self {
             PromoteMode::Failover => write!(f, "FAILOVER"),
             PromoteMode::Switchover => write!(f, "SWITCHOVER"),
-            PromoteMode::Unknown(value) => write!(f, "{}", value),
+            PromoteMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

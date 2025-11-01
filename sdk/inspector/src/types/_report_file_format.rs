@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ReportFileFormat {
         match self {
             ReportFileFormat::Html => write!(f, "HTML"),
             ReportFileFormat::Pdf => write!(f, "PDF"),
-            ReportFileFormat::Unknown(value) => write!(f, "{}", value),
+            ReportFileFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -375,16 +375,14 @@ pub fn de_restore_db_instance_from_s3(
     let start_el = decoder.start_el();
     if !(start_el.matches("RestoreDBInstanceFromS3Response")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected RestoreDBInstanceFromS3Response got {:?}",
-            start_el
+            "invalid root, expected RestoreDBInstanceFromS3Response got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("RestoreDBInstanceFromS3Result")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected RestoreDBInstanceFromS3Result got {:?}",
-                start_el
+                "invalid result, expected RestoreDBInstanceFromS3Result got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

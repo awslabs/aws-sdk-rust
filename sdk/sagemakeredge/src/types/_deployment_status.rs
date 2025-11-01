@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DeploymentStatus {
         match self {
             DeploymentStatus::Fail => write!(f, "FAIL"),
             DeploymentStatus::Success => write!(f, "SUCCESS"),
-            DeploymentStatus::Unknown(value) => write!(f, "{}", value),
+            DeploymentStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -96,7 +96,7 @@ impl ::std::fmt::Display for EngagementInvitationPayloadType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             EngagementInvitationPayloadType::OpportunityInvitation => write!(f, "OpportunityInvitation"),
-            EngagementInvitationPayloadType::Unknown(value) => write!(f, "{}", value),
+            EngagementInvitationPayloadType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

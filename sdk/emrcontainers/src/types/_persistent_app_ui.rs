@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PersistentAppUi {
         match self {
             PersistentAppUi::Disabled => write!(f, "DISABLED"),
             PersistentAppUi::Enabled => write!(f, "ENABLED"),
-            PersistentAppUi::Unknown(value) => write!(f, "{}", value),
+            PersistentAppUi::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

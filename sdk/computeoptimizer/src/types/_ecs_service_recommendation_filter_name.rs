@@ -102,7 +102,7 @@ impl ::std::fmt::Display for EcsServiceRecommendationFilterName {
         match self {
             EcsServiceRecommendationFilterName::Finding => write!(f, "Finding"),
             EcsServiceRecommendationFilterName::FindingReasonCode => write!(f, "FindingReasonCode"),
-            EcsServiceRecommendationFilterName::Unknown(value) => write!(f, "{}", value),
+            EcsServiceRecommendationFilterName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -118,7 +118,7 @@ impl ::std::fmt::Display for RouteTollPassValidityPeriodType {
             RouteTollPassValidityPeriodType::ExtendedAnnual => write!(f, "ExtendedAnnual"),
             RouteTollPassValidityPeriodType::Minutes => write!(f, "Minutes"),
             RouteTollPassValidityPeriodType::Months => write!(f, "Months"),
-            RouteTollPassValidityPeriodType::Unknown(value) => write!(f, "{}", value),
+            RouteTollPassValidityPeriodType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

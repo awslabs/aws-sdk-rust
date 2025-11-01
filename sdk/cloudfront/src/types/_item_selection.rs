@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ItemSelection {
             ItemSelection::All => write!(f, "all"),
             ItemSelection::None => write!(f, "none"),
             ItemSelection::Whitelist => write!(f, "whitelist"),
-            ItemSelection::Unknown(value) => write!(f, "{}", value),
+            ItemSelection::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

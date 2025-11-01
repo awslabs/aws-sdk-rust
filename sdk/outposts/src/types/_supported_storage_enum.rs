@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SupportedStorageEnum {
         match self {
             SupportedStorageEnum::Ebs => write!(f, "EBS"),
             SupportedStorageEnum::S3 => write!(f, "S3"),
-            SupportedStorageEnum::Unknown(value) => write!(f, "{}", value),
+            SupportedStorageEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ListHookResultsTargetType {
             ListHookResultsTargetType::CloudControl => write!(f, "CLOUD_CONTROL"),
             ListHookResultsTargetType::Resource => write!(f, "RESOURCE"),
             ListHookResultsTargetType::Stack => write!(f, "STACK"),
-            ListHookResultsTargetType::Unknown(value) => write!(f, "{}", value),
+            ListHookResultsTargetType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

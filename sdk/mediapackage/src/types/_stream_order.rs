@@ -108,7 +108,7 @@ impl ::std::fmt::Display for StreamOrder {
             StreamOrder::Original => write!(f, "ORIGINAL"),
             StreamOrder::VideoBitrateAscending => write!(f, "VIDEO_BITRATE_ASCENDING"),
             StreamOrder::VideoBitrateDescending => write!(f, "VIDEO_BITRATE_DESCENDING"),
-            StreamOrder::Unknown(value) => write!(f, "{}", value),
+            StreamOrder::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

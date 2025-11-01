@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DataGrantAcceptanceState {
         match self {
             DataGrantAcceptanceState::Accepted => write!(f, "ACCEPTED"),
             DataGrantAcceptanceState::PendingReceiverAcceptance => write!(f, "PENDING_RECEIVER_ACCEPTANCE"),
-            DataGrantAcceptanceState::Unknown(value) => write!(f, "{}", value),
+            DataGrantAcceptanceState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

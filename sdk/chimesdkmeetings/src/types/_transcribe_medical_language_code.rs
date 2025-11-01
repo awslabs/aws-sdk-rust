@@ -96,7 +96,7 @@ impl ::std::fmt::Display for TranscribeMedicalLanguageCode {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             TranscribeMedicalLanguageCode::EnUs => write!(f, "en-US"),
-            TranscribeMedicalLanguageCode::Unknown(value) => write!(f, "{}", value),
+            TranscribeMedicalLanguageCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

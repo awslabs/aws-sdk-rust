@@ -154,7 +154,7 @@ impl ::std::fmt::Display for AssociationState {
             AssociationState::PendingUninstallDeployment => write!(f, "PENDING_UNINSTALL_DEPLOYMENT"),
             AssociationState::Removed => write!(f, "REMOVED"),
             AssociationState::Uninstalling => write!(f, "UNINSTALLING"),
-            AssociationState::Unknown(value) => write!(f, "{}", value),
+            AssociationState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

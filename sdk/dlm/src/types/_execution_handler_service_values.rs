@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ExecutionHandlerServiceValues {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ExecutionHandlerServiceValues::AwsSystemsManager => write!(f, "AWS_SYSTEMS_MANAGER"),
-            ExecutionHandlerServiceValues::Unknown(value) => write!(f, "{}", value),
+            ExecutionHandlerServiceValues::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

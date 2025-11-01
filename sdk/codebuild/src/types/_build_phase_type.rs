@@ -168,7 +168,7 @@ impl ::std::fmt::Display for BuildPhaseType {
             BuildPhaseType::Queued => write!(f, "QUEUED"),
             BuildPhaseType::Submitted => write!(f, "SUBMITTED"),
             BuildPhaseType::UploadArtifacts => write!(f, "UPLOAD_ARTIFACTS"),
-            BuildPhaseType::Unknown(value) => write!(f, "{}", value),
+            BuildPhaseType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

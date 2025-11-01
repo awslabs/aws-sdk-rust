@@ -138,7 +138,7 @@ impl ::std::fmt::Display for OutputFormat {
             OutputFormat::Parquet => write!(f, "PARQUET"),
             OutputFormat::Tableauhyper => write!(f, "TABLEAUHYPER"),
             OutputFormat::Xml => write!(f, "XML"),
-            OutputFormat::Unknown(value) => write!(f, "{}", value),
+            OutputFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

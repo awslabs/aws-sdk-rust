@@ -120,7 +120,7 @@ impl ::std::fmt::Display for ServiceNamespace {
             ServiceNamespace::Ec2 => write!(f, "ec2"),
             ServiceNamespace::Ecs => write!(f, "ecs"),
             ServiceNamespace::Rds => write!(f, "rds"),
-            ServiceNamespace::Unknown(value) => write!(f, "{}", value),
+            ServiceNamespace::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

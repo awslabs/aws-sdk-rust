@@ -112,7 +112,7 @@ impl ::std::fmt::Display for DeleteQueuedReservedInstancesErrorCode {
             DeleteQueuedReservedInstancesErrorCode::ReservedInstancesIdInvalid => write!(f, "reserved-instances-id-invalid"),
             DeleteQueuedReservedInstancesErrorCode::ReservedInstancesNotInQueuedState => write!(f, "reserved-instances-not-in-queued-state"),
             DeleteQueuedReservedInstancesErrorCode::UnexpectedError => write!(f, "unexpected-error"),
-            DeleteQueuedReservedInstancesErrorCode::Unknown(value) => write!(f, "{}", value),
+            DeleteQueuedReservedInstancesErrorCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

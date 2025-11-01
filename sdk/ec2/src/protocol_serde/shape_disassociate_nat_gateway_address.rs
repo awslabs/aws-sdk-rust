@@ -51,8 +51,7 @@ pub fn de_disassociate_nat_gateway_address(
     let start_el = decoder.start_el();
     if !(start_el.matches("DisassociateNatGatewayAddressResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected DisassociateNatGatewayAddressResponse got {:?}",
-            start_el
+            "invalid root, expected DisassociateNatGatewayAddressResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

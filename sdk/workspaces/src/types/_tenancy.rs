@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Tenancy {
         match self {
             Tenancy::Dedicated => write!(f, "DEDICATED"),
             Tenancy::Shared => write!(f, "SHARED"),
-            Tenancy::Unknown(value) => write!(f, "{}", value),
+            Tenancy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

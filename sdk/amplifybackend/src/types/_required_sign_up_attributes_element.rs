@@ -210,7 +210,7 @@ impl ::std::fmt::Display for RequiredSignUpAttributesElement {
             RequiredSignUpAttributesElement::UpdatedAt => write!(f, "UPDATED_AT"),
             RequiredSignUpAttributesElement::Website => write!(f, "WEBSITE"),
             RequiredSignUpAttributesElement::ZoneInfo => write!(f, "ZONE_INFO"),
-            RequiredSignUpAttributesElement::Unknown(value) => write!(f, "{}", value),
+            RequiredSignUpAttributesElement::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for SoftwareSetUpdateStatus {
             SoftwareSetUpdateStatus::Available => write!(f, "AVAILABLE"),
             SoftwareSetUpdateStatus::InProgress => write!(f, "IN_PROGRESS"),
             SoftwareSetUpdateStatus::UpToDate => write!(f, "UP_TO_DATE"),
-            SoftwareSetUpdateStatus::Unknown(value) => write!(f, "{}", value),
+            SoftwareSetUpdateStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -147,7 +147,7 @@ impl ::std::fmt::Display for CapacityBlockResourceState {
             CapacityBlockResourceState::PaymentPending => write!(f, "payment-pending"),
             CapacityBlockResourceState::Scheduled => write!(f, "scheduled"),
             CapacityBlockResourceState::Unavailable => write!(f, "unavailable"),
-            CapacityBlockResourceState::Unknown(value) => write!(f, "{}", value),
+            CapacityBlockResourceState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

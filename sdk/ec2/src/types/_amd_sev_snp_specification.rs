@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AmdSevSnpSpecification {
         match self {
             AmdSevSnpSpecification::Disabled => write!(f, "disabled"),
             AmdSevSnpSpecification::Enabled => write!(f, "enabled"),
-            AmdSevSnpSpecification::Unknown(value) => write!(f, "{}", value),
+            AmdSevSnpSpecification::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

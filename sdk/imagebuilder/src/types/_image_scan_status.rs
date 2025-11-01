@@ -132,7 +132,7 @@ impl ::std::fmt::Display for ImageScanStatus {
             ImageScanStatus::Pending => write!(f, "PENDING"),
             ImageScanStatus::Scanning => write!(f, "SCANNING"),
             ImageScanStatus::TimedOut => write!(f, "TIMED_OUT"),
-            ImageScanStatus::Unknown(value) => write!(f, "{}", value),
+            ImageScanStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

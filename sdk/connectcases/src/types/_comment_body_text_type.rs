@@ -96,7 +96,7 @@ impl ::std::fmt::Display for CommentBodyTextType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             CommentBodyTextType::Plaintext => write!(f, "Text/Plain"),
-            CommentBodyTextType::Unknown(value) => write!(f, "{}", value),
+            CommentBodyTextType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

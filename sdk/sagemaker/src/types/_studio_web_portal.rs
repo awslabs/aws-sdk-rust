@@ -102,7 +102,7 @@ impl ::std::fmt::Display for StudioWebPortal {
         match self {
             StudioWebPortal::Disabled => write!(f, "DISABLED"),
             StudioWebPortal::Enabled => write!(f, "ENABLED"),
-            StudioWebPortal::Unknown(value) => write!(f, "{}", value),
+            StudioWebPortal::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

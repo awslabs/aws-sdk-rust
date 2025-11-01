@@ -140,7 +140,7 @@ impl ::std::fmt::Display for ServerCriteria {
             ServerCriteria::OsName => write!(f, "OS_NAME"),
             ServerCriteria::ServerId => write!(f, "SERVER_ID"),
             ServerCriteria::Strategy => write!(f, "STRATEGY"),
-            ServerCriteria::Unknown(value) => write!(f, "{}", value),
+            ServerCriteria::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for DirectConnectGatewayAttachmentState {
             DirectConnectGatewayAttachmentState::Attaching => write!(f, "attaching"),
             DirectConnectGatewayAttachmentState::Detached => write!(f, "detached"),
             DirectConnectGatewayAttachmentState::Detaching => write!(f, "detaching"),
-            DirectConnectGatewayAttachmentState::Unknown(value) => write!(f, "{}", value),
+            DirectConnectGatewayAttachmentState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

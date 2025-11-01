@@ -154,7 +154,7 @@ impl ::std::fmt::Display for BotLocaleStatus {
             BotLocaleStatus::NotBuilt => write!(f, "NotBuilt"),
             BotLocaleStatus::Processing => write!(f, "Processing"),
             BotLocaleStatus::ReadyExpressTesting => write!(f, "ReadyExpressTesting"),
-            BotLocaleStatus::Unknown(value) => write!(f, "{}", value),
+            BotLocaleStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

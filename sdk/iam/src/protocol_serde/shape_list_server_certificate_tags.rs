@@ -95,16 +95,14 @@ pub fn de_list_server_certificate_tags(
     let start_el = decoder.start_el();
     if !(start_el.matches("ListServerCertificateTagsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected ListServerCertificateTagsResponse got {:?}",
-            start_el
+            "invalid root, expected ListServerCertificateTagsResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("ListServerCertificateTagsResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected ListServerCertificateTagsResult got {:?}",
-                start_el
+                "invalid result, expected ListServerCertificateTagsResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

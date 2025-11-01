@@ -120,7 +120,7 @@ impl ::std::fmt::Display for AuthenticationType {
             AuthenticationType::AwsIam => write!(f, "AWS_IAM"),
             AuthenticationType::AwsLambda => write!(f, "AWS_LAMBDA"),
             AuthenticationType::OpenidConnect => write!(f, "OPENID_CONNECT"),
-            AuthenticationType::Unknown(value) => write!(f, "{}", value),
+            AuthenticationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

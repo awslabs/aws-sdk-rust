@@ -154,7 +154,7 @@ impl ::std::fmt::Display for Permission {
             Permission::Drop => write!(f, "DROP"),
             Permission::Insert => write!(f, "INSERT"),
             Permission::Select => write!(f, "SELECT"),
-            Permission::Unknown(value) => write!(f, "{}", value),
+            Permission::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

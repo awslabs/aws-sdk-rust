@@ -114,7 +114,7 @@ impl ::std::fmt::Display for AuthenticationMethodOption {
             AuthenticationMethodOption::IamAndQuicksight => write!(f, "IAM_AND_QUICKSIGHT"),
             AuthenticationMethodOption::IamIdentityCenter => write!(f, "IAM_IDENTITY_CENTER"),
             AuthenticationMethodOption::IamOnly => write!(f, "IAM_ONLY"),
-            AuthenticationMethodOption::Unknown(value) => write!(f, "{}", value),
+            AuthenticationMethodOption::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

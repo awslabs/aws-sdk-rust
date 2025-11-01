@@ -108,7 +108,7 @@ impl ::std::fmt::Display for CollectionType {
             CollectionType::List => write!(f, "List"),
             CollectionType::Set => write!(f, "Set"),
             CollectionType::Vector => write!(f, "Vector"),
-            CollectionType::Unknown(value) => write!(f, "{}", value),
+            CollectionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

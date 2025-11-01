@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ObjectType {
             ObjectType::LeafNode => write!(f, "LEAF_NODE"),
             ObjectType::Node => write!(f, "NODE"),
             ObjectType::Policy => write!(f, "POLICY"),
-            ObjectType::Unknown(value) => write!(f, "{}", value),
+            ObjectType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for RecommendationType {
             RecommendationType::All => write!(f, "ALL"),
             RecommendationType::InfraOnly => write!(f, "INFRA_ONLY"),
             RecommendationType::WorkloadOnly => write!(f, "WORKLOAD_ONLY"),
-            RecommendationType::Unknown(value) => write!(f, "{}", value),
+            RecommendationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

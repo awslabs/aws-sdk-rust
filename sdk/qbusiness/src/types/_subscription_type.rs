@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SubscriptionType {
         match self {
             SubscriptionType::QBusiness => write!(f, "Q_BUSINESS"),
             SubscriptionType::QLite => write!(f, "Q_LITE"),
-            SubscriptionType::Unknown(value) => write!(f, "{}", value),
+            SubscriptionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

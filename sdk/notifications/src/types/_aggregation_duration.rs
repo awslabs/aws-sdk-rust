@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AggregationDuration {
             AggregationDuration::Long => write!(f, "LONG"),
             AggregationDuration::None => write!(f, "NONE"),
             AggregationDuration::Short => write!(f, "SHORT"),
-            AggregationDuration::Unknown(value) => write!(f, "{}", value),
+            AggregationDuration::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

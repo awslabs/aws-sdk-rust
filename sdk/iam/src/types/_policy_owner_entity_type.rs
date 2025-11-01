@@ -108,7 +108,7 @@ impl ::std::fmt::Display for PolicyOwnerEntityType {
             PolicyOwnerEntityType::Group => write!(f, "GROUP"),
             PolicyOwnerEntityType::Role => write!(f, "ROLE"),
             PolicyOwnerEntityType::User => write!(f, "USER"),
-            PolicyOwnerEntityType::Unknown(value) => write!(f, "{}", value),
+            PolicyOwnerEntityType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

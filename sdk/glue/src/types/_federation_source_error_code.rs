@@ -161,7 +161,7 @@ impl ::std::fmt::Display for FederationSourceErrorCode {
             FederationSourceErrorCode::OperationTimeoutException => write!(f, "OperationTimeoutException"),
             FederationSourceErrorCode::PartialFailureException => write!(f, "PartialFailureException"),
             FederationSourceErrorCode::ThrottlingException => write!(f, "ThrottlingException"),
-            FederationSourceErrorCode::Unknown(value) => write!(f, "{}", value),
+            FederationSourceErrorCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

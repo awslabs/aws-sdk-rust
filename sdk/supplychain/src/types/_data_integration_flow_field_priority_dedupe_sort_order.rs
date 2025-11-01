@@ -104,7 +104,7 @@ impl ::std::fmt::Display for DataIntegrationFlowFieldPriorityDedupeSortOrder {
         match self {
             DataIntegrationFlowFieldPriorityDedupeSortOrder::Asc => write!(f, "ASC"),
             DataIntegrationFlowFieldPriorityDedupeSortOrder::Desc => write!(f, "DESC"),
-            DataIntegrationFlowFieldPriorityDedupeSortOrder::Unknown(value) => write!(f, "{}", value),
+            DataIntegrationFlowFieldPriorityDedupeSortOrder::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ChatTokenCapability {
             ChatTokenCapability::DeleteMessage => write!(f, "DELETE_MESSAGE"),
             ChatTokenCapability::DisconnectUser => write!(f, "DISCONNECT_USER"),
             ChatTokenCapability::SendMessage => write!(f, "SEND_MESSAGE"),
-            ChatTokenCapability::Unknown(value) => write!(f, "{}", value),
+            ChatTokenCapability::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

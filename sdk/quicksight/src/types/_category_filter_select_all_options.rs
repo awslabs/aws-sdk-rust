@@ -96,7 +96,7 @@ impl ::std::fmt::Display for CategoryFilterSelectAllOptions {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             CategoryFilterSelectAllOptions::FilterAllValues => write!(f, "FILTER_ALL_VALUES"),
-            CategoryFilterSelectAllOptions::Unknown(value) => write!(f, "{}", value),
+            CategoryFilterSelectAllOptions::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ComputeEnvironment {
             ComputeEnvironment::Athena => write!(f, "ATHENA"),
             ComputeEnvironment::Python => write!(f, "PYTHON"),
             ComputeEnvironment::Spark => write!(f, "SPARK"),
-            ComputeEnvironment::Unknown(value) => write!(f, "{}", value),
+            ComputeEnvironment::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

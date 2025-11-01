@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DirectoryListingOptimization {
         match self {
             DirectoryListingOptimization::Disabled => write!(f, "DISABLED"),
             DirectoryListingOptimization::Enabled => write!(f, "ENABLED"),
-            DirectoryListingOptimization::Unknown(value) => write!(f, "{}", value),
+            DirectoryListingOptimization::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AuditResults {
         match self {
             AuditResults::Healthy => write!(f, "HEALTHY"),
             AuditResults::Unhealthy => write!(f, "UNHEALTHY"),
-            AuditResults::Unknown(value) => write!(f, "{}", value),
+            AuditResults::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

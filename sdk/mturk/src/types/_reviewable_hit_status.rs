@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ReviewableHitStatus {
         match self {
             ReviewableHitStatus::Reviewable => write!(f, "Reviewable"),
             ReviewableHitStatus::Reviewing => write!(f, "Reviewing"),
-            ReviewableHitStatus::Unknown(value) => write!(f, "{}", value),
+            ReviewableHitStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

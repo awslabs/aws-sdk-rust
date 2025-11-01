@@ -102,7 +102,7 @@ impl ::std::fmt::Display for VideoOverlayUnit {
         match self {
             VideoOverlayUnit::Percentage => write!(f, "PERCENTAGE"),
             VideoOverlayUnit::Pixels => write!(f, "PIXELS"),
-            VideoOverlayUnit::Unknown(value) => write!(f, "{}", value),
+            VideoOverlayUnit::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for StatefulRuleDirection {
         match self {
             StatefulRuleDirection::Any => write!(f, "ANY"),
             StatefulRuleDirection::Forward => write!(f, "FORWARD"),
-            StatefulRuleDirection::Unknown(value) => write!(f, "{}", value),
+            StatefulRuleDirection::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Index {
         match self {
             Index::Disabled => write!(f, "DISABLED"),
             Index::Enabled => write!(f, "ENABLED"),
-            Index::Unknown(value) => write!(f, "{}", value),
+            Index::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

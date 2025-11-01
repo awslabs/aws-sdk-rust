@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ExcessCapacityTerminationPolicy {
         match self {
             ExcessCapacityTerminationPolicy::Default => write!(f, "default"),
             ExcessCapacityTerminationPolicy::NoTermination => write!(f, "noTermination"),
-            ExcessCapacityTerminationPolicy::Unknown(value) => write!(f, "{}", value),
+            ExcessCapacityTerminationPolicy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

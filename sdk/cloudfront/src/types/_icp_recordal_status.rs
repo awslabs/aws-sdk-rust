@@ -108,7 +108,7 @@ impl ::std::fmt::Display for IcpRecordalStatus {
             IcpRecordalStatus::Approved => write!(f, "APPROVED"),
             IcpRecordalStatus::Pending => write!(f, "PENDING"),
             IcpRecordalStatus::Suspended => write!(f, "SUSPENDED"),
-            IcpRecordalStatus::Unknown(value) => write!(f, "{}", value),
+            IcpRecordalStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

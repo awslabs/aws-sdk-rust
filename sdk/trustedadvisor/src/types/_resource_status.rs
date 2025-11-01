@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ResourceStatus {
             ResourceStatus::Error => write!(f, "error"),
             ResourceStatus::Ok => write!(f, "ok"),
             ResourceStatus::Warning => write!(f, "warning"),
-            ResourceStatus::Unknown(value) => write!(f, "{}", value),
+            ResourceStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

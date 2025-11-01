@@ -133,7 +133,7 @@ impl ::std::fmt::Display for ProresCodecProfile {
             ProresCodecProfile::AppleProres422Proxy => write!(f, "APPLE_PRORES_422_PROXY"),
             ProresCodecProfile::AppleProres4444 => write!(f, "APPLE_PRORES_4444"),
             ProresCodecProfile::AppleProres4444Xq => write!(f, "APPLE_PRORES_4444_XQ"),
-            ProresCodecProfile::Unknown(value) => write!(f, "{}", value),
+            ProresCodecProfile::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

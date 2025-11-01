@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CmfcIFrameOnlyManifest {
         match self {
             CmfcIFrameOnlyManifest::Exclude => write!(f, "EXCLUDE"),
             CmfcIFrameOnlyManifest::Include => write!(f, "INCLUDE"),
-            CmfcIFrameOnlyManifest::Unknown(value) => write!(f, "{}", value),
+            CmfcIFrameOnlyManifest::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

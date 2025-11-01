@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ValidationStrategyMode {
         match self {
             ValidationStrategyMode::Lenient => write!(f, "LENIENT"),
             ValidationStrategyMode::Strict => write!(f, "STRICT"),
-            ValidationStrategyMode::Unknown(value) => write!(f, "{}", value),
+            ValidationStrategyMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

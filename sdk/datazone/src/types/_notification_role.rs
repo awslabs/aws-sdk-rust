@@ -126,7 +126,7 @@ impl ::std::fmt::Display for NotificationRole {
             NotificationRole::ProjectOwner => write!(f, "PROJECT_OWNER"),
             NotificationRole::ProjectSubscriber => write!(f, "PROJECT_SUBSCRIBER"),
             NotificationRole::ProjectViewer => write!(f, "PROJECT_VIEWER"),
-            NotificationRole::Unknown(value) => write!(f, "{}", value),
+            NotificationRole::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

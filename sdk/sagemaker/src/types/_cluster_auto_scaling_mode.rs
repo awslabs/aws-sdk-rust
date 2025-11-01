@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ClusterAutoScalingMode {
         match self {
             ClusterAutoScalingMode::Disable => write!(f, "Disable"),
             ClusterAutoScalingMode::Enable => write!(f, "Enable"),
-            ClusterAutoScalingMode::Unknown(value) => write!(f, "{}", value),
+            ClusterAutoScalingMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

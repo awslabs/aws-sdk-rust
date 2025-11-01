@@ -108,7 +108,7 @@ impl ::std::fmt::Display for DeletionProtectionCheck {
             DeletionProtectionCheck::AccountDefault => write!(f, "ACCOUNT_DEFAULT"),
             DeletionProtectionCheck::Apply => write!(f, "APPLY"),
             DeletionProtectionCheck::Bypass => write!(f, "BYPASS"),
-            DeletionProtectionCheck::Unknown(value) => write!(f, "{}", value),
+            DeletionProtectionCheck::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

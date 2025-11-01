@@ -147,7 +147,7 @@ impl ::std::fmt::Display for PackageStatus {
             PackageStatus::Deleting => write!(f, "DELETING"),
             PackageStatus::Validating => write!(f, "VALIDATING"),
             PackageStatus::ValidationFailed => write!(f, "VALIDATION_FAILED"),
-            PackageStatus::Unknown(value) => write!(f, "{}", value),
+            PackageStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

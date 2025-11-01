@@ -114,7 +114,7 @@ impl ::std::fmt::Display for NodeCategory {
             NodeCategory::MediaSink => write!(f, "MEDIA_SINK"),
             NodeCategory::MediaSource => write!(f, "MEDIA_SOURCE"),
             NodeCategory::MlModel => write!(f, "ML_MODEL"),
-            NodeCategory::Unknown(value) => write!(f, "{}", value),
+            NodeCategory::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

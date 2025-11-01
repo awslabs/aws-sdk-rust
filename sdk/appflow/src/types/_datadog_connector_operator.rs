@@ -196,7 +196,7 @@ impl ::std::fmt::Display for DatadogConnectorOperator {
             DatadogConnectorOperator::ValidateNonNull => write!(f, "VALIDATE_NON_NULL"),
             DatadogConnectorOperator::ValidateNonZero => write!(f, "VALIDATE_NON_ZERO"),
             DatadogConnectorOperator::ValidateNumeric => write!(f, "VALIDATE_NUMERIC"),
-            DatadogConnectorOperator::Unknown(value) => write!(f, "{}", value),
+            DatadogConnectorOperator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

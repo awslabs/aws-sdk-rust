@@ -102,7 +102,7 @@ impl ::std::fmt::Display for IotEndpointType {
         match self {
             IotEndpointType::Fips => write!(f, "fips"),
             IotEndpointType::Standard => write!(f, "standard"),
-            IotEndpointType::Unknown(value) => write!(f, "{}", value),
+            IotEndpointType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

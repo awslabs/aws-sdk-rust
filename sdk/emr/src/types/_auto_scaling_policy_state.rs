@@ -126,7 +126,7 @@ impl ::std::fmt::Display for AutoScalingPolicyState {
             AutoScalingPolicyState::Detaching => write!(f, "DETACHING"),
             AutoScalingPolicyState::Failed => write!(f, "FAILED"),
             AutoScalingPolicyState::Pending => write!(f, "PENDING"),
-            AutoScalingPolicyState::Unknown(value) => write!(f, "{}", value),
+            AutoScalingPolicyState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

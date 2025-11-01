@@ -161,7 +161,7 @@ impl ::std::fmt::Display for TargetType {
             TargetType::TransitGateway => write!(f, "TRANSIT_GATEWAY"),
             TargetType::VpcEndpoint => write!(f, "VPC_ENDPOINT"),
             TargetType::VpcPeeringConnection => write!(f, "VPC_PEERING_CONNECTION"),
-            TargetType::Unknown(value) => write!(f, "{}", value),
+            TargetType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for InputStatus {
             InputStatus::Creating => write!(f, "CREATING"),
             InputStatus::Deleting => write!(f, "DELETING"),
             InputStatus::Updating => write!(f, "UPDATING"),
-            InputStatus::Unknown(value) => write!(f, "{}", value),
+            InputStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ScheduledQueryInsightsMode {
         match self {
             ScheduledQueryInsightsMode::Disabled => write!(f, "DISABLED"),
             ScheduledQueryInsightsMode::EnabledWithRateControl => write!(f, "ENABLED_WITH_RATE_CONTROL"),
-            ScheduledQueryInsightsMode::Unknown(value) => write!(f, "{}", value),
+            ScheduledQueryInsightsMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

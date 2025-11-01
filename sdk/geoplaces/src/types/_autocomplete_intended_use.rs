@@ -96,7 +96,7 @@ impl ::std::fmt::Display for AutocompleteIntendedUse {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             AutocompleteIntendedUse::SingleUse => write!(f, "SingleUse"),
-            AutocompleteIntendedUse::Unknown(value) => write!(f, "{}", value),
+            AutocompleteIntendedUse::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

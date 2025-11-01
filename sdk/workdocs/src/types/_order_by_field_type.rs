@@ -120,7 +120,7 @@ impl ::std::fmt::Display for OrderByFieldType {
             OrderByFieldType::Name => write!(f, "NAME"),
             OrderByFieldType::Relevance => write!(f, "RELEVANCE"),
             OrderByFieldType::Size => write!(f, "SIZE"),
-            OrderByFieldType::Unknown(value) => write!(f, "{}", value),
+            OrderByFieldType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

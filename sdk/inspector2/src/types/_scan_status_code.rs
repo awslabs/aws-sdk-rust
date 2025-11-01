@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ScanStatusCode {
         match self {
             ScanStatusCode::Active => write!(f, "ACTIVE"),
             ScanStatusCode::Inactive => write!(f, "INACTIVE"),
-            ScanStatusCode::Unknown(value) => write!(f, "{}", value),
+            ScanStatusCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

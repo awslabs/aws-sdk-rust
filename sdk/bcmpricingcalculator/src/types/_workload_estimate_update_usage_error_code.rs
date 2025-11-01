@@ -114,7 +114,7 @@ impl ::std::fmt::Display for WorkloadEstimateUpdateUsageErrorCode {
             WorkloadEstimateUpdateUsageErrorCode::Conflict => write!(f, "CONFLICT"),
             WorkloadEstimateUpdateUsageErrorCode::InternalServerError => write!(f, "INTERNAL_SERVER_ERROR"),
             WorkloadEstimateUpdateUsageErrorCode::NotFound => write!(f, "NOT_FOUND"),
-            WorkloadEstimateUpdateUsageErrorCode::Unknown(value) => write!(f, "{}", value),
+            WorkloadEstimateUpdateUsageErrorCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

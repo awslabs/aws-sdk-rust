@@ -126,7 +126,7 @@ impl ::std::fmt::Display for FieldName {
             FieldName::DirectQuicksightViewerOrOwner => write!(f, "DIRECT_QUICKSIGHT_VIEWER_OR_OWNER"),
             FieldName::FlowDescription => write!(f, "assetDescription"),
             FieldName::FlowName => write!(f, "assetName"),
-            FieldName::Unknown(value) => write!(f, "{}", value),
+            FieldName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

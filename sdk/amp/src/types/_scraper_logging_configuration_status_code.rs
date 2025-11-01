@@ -126,7 +126,7 @@ impl ::std::fmt::Display for ScraperLoggingConfigurationStatusCode {
             ScraperLoggingConfigurationStatusCode::Deleting => write!(f, "DELETING"),
             ScraperLoggingConfigurationStatusCode::UpdateFailed => write!(f, "UPDATE_FAILED"),
             ScraperLoggingConfigurationStatusCode::Updating => write!(f, "UPDATING"),
-            ScraperLoggingConfigurationStatusCode::Unknown(value) => write!(f, "{}", value),
+            ScraperLoggingConfigurationStatusCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

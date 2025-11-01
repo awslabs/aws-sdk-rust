@@ -147,7 +147,7 @@ impl ::std::fmt::Display for MediaPipelineElementStatus {
             MediaPipelineElementStatus::Paused => write!(f, "Paused"),
             MediaPipelineElementStatus::Stopped => write!(f, "Stopped"),
             MediaPipelineElementStatus::Stopping => write!(f, "Stopping"),
-            MediaPipelineElementStatus::Unknown(value) => write!(f, "{}", value),
+            MediaPipelineElementStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

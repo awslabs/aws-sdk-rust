@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ServerSideEncryptionUpdateStatus {
             ServerSideEncryptionUpdateStatus::Completed => write!(f, "COMPLETED"),
             ServerSideEncryptionUpdateStatus::Failed => write!(f, "FAILED"),
             ServerSideEncryptionUpdateStatus::InProgress => write!(f, "IN_PROGRESS"),
-            ServerSideEncryptionUpdateStatus::Unknown(value) => write!(f, "{}", value),
+            ServerSideEncryptionUpdateStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ListWorkloadEstimatesFilterName {
         match self {
             ListWorkloadEstimatesFilterName::Name => write!(f, "NAME"),
             ListWorkloadEstimatesFilterName::Status => write!(f, "STATUS"),
-            ListWorkloadEstimatesFilterName::Unknown(value) => write!(f, "{}", value),
+            ListWorkloadEstimatesFilterName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for SplitType {
             SplitType::None => write!(f, "None"),
             SplitType::Recordio => write!(f, "RecordIO"),
             SplitType::Tfrecord => write!(f, "TFRecord"),
-            SplitType::Unknown(value) => write!(f, "{}", value),
+            SplitType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

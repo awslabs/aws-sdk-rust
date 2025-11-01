@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ImscStylePassthrough {
         match self {
             ImscStylePassthrough::Disabled => write!(f, "DISABLED"),
             ImscStylePassthrough::Enabled => write!(f, "ENABLED"),
-            ImscStylePassthrough::Unknown(value) => write!(f, "{}", value),
+            ImscStylePassthrough::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

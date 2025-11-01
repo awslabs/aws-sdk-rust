@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DistributionResourceType {
         match self {
             DistributionResourceType::Distribution => write!(f, "distribution"),
             DistributionResourceType::DistributionTenant => write!(f, "distribution-tenant"),
-            DistributionResourceType::Unknown(value) => write!(f, "{}", value),
+            DistributionResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

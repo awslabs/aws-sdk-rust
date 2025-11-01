@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AccountJiraIssueManagementStatus {
         match self {
             AccountJiraIssueManagementStatus::Disabled => write!(f, "DISABLED"),
             AccountJiraIssueManagementStatus::Enabled => write!(f, "ENABLED"),
-            AccountJiraIssueManagementStatus::Unknown(value) => write!(f, "{}", value),
+            AccountJiraIssueManagementStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for NullFilterOption {
             NullFilterOption::AllValues => write!(f, "ALL_VALUES"),
             NullFilterOption::NonNullsOnly => write!(f, "NON_NULLS_ONLY"),
             NullFilterOption::NullsOnly => write!(f, "NULLS_ONLY"),
-            NullFilterOption::Unknown(value) => write!(f, "{}", value),
+            NullFilterOption::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

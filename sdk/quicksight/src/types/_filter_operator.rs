@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FilterOperator {
         match self {
             FilterOperator::StringEquals => write!(f, "StringEquals"),
             FilterOperator::StringLike => write!(f, "StringLike"),
-            FilterOperator::Unknown(value) => write!(f, "{}", value),
+            FilterOperator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

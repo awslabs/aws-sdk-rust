@@ -96,7 +96,7 @@ impl ::std::fmt::Display for PolicyQualifierId {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             PolicyQualifierId::Cps => write!(f, "CPS"),
-            PolicyQualifierId::Unknown(value) => write!(f, "{}", value),
+            PolicyQualifierId::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

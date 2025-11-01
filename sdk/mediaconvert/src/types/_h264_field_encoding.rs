@@ -108,7 +108,7 @@ impl ::std::fmt::Display for H264FieldEncoding {
             H264FieldEncoding::ForceField => write!(f, "FORCE_FIELD"),
             H264FieldEncoding::Mbaff => write!(f, "MBAFF"),
             H264FieldEncoding::Paff => write!(f, "PAFF"),
-            H264FieldEncoding::Unknown(value) => write!(f, "{}", value),
+            H264FieldEncoding::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

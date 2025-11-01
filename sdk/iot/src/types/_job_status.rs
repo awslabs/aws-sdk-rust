@@ -120,7 +120,7 @@ impl ::std::fmt::Display for JobStatus {
             JobStatus::DeletionInProgress => write!(f, "DELETION_IN_PROGRESS"),
             JobStatus::InProgress => write!(f, "IN_PROGRESS"),
             JobStatus::Scheduled => write!(f, "SCHEDULED"),
-            JobStatus::Unknown(value) => write!(f, "{}", value),
+            JobStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

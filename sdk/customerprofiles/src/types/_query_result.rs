@@ -102,7 +102,7 @@ impl ::std::fmt::Display for QueryResult {
         match self {
             QueryResult::Absent => write!(f, "ABSENT"),
             QueryResult::Present => write!(f, "PRESENT"),
-            QueryResult::Unknown(value) => write!(f, "{}", value),
+            QueryResult::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

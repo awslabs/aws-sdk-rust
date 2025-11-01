@@ -96,7 +96,7 @@ impl ::std::fmt::Display for CopyTagsFromSource {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             CopyTagsFromSource::Volume => write!(f, "volume"),
-            CopyTagsFromSource::Unknown(value) => write!(f, "{}", value),
+            CopyTagsFromSource::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

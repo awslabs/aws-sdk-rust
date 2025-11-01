@@ -114,7 +114,7 @@ impl ::std::fmt::Display for StudioLifecycleConfigAppType {
             StudioLifecycleConfigAppType::JupyterLab => write!(f, "JupyterLab"),
             StudioLifecycleConfigAppType::JupyterServer => write!(f, "JupyterServer"),
             StudioLifecycleConfigAppType::KernelGateway => write!(f, "KernelGateway"),
-            StudioLifecycleConfigAppType::Unknown(value) => write!(f, "{}", value),
+            StudioLifecycleConfigAppType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

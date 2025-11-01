@@ -75,16 +75,14 @@ pub fn de_describe_db_cluster_automated_backups(
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeDBClusterAutomatedBackupsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected DescribeDBClusterAutomatedBackupsResponse got {:?}",
-            start_el
+            "invalid root, expected DescribeDBClusterAutomatedBackupsResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("DescribeDBClusterAutomatedBackupsResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected DescribeDBClusterAutomatedBackupsResult got {:?}",
-                start_el
+                "invalid result, expected DescribeDBClusterAutomatedBackupsResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for WorkspaceImageRequiredTenancy {
         match self {
             WorkspaceImageRequiredTenancy::Dedicated => write!(f, "DEDICATED"),
             WorkspaceImageRequiredTenancy::Default => write!(f, "DEFAULT"),
-            WorkspaceImageRequiredTenancy::Unknown(value) => write!(f, "{}", value),
+            WorkspaceImageRequiredTenancy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

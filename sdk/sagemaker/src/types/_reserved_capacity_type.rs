@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ReservedCapacityType {
         match self {
             ReservedCapacityType::Instance => write!(f, "Instance"),
             ReservedCapacityType::Ultraserver => write!(f, "UltraServer"),
-            ReservedCapacityType::Unknown(value) => write!(f, "{}", value),
+            ReservedCapacityType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

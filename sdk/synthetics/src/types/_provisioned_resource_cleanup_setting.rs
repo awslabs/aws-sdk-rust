@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ProvisionedResourceCleanupSetting {
         match self {
             ProvisionedResourceCleanupSetting::Automatic => write!(f, "AUTOMATIC"),
             ProvisionedResourceCleanupSetting::Off => write!(f, "OFF"),
-            ProvisionedResourceCleanupSetting::Unknown(value) => write!(f, "{}", value),
+            ProvisionedResourceCleanupSetting::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

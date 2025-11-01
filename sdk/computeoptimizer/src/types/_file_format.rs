@@ -96,7 +96,7 @@ impl ::std::fmt::Display for FileFormat {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             FileFormat::Csv => write!(f, "Csv"),
-            FileFormat::Unknown(value) => write!(f, "{}", value),
+            FileFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for GuardrailAction {
         match self {
             GuardrailAction::GuardrailIntervened => write!(f, "GUARDRAIL_INTERVENED"),
             GuardrailAction::None => write!(f, "NONE"),
-            GuardrailAction::Unknown(value) => write!(f, "{}", value),
+            GuardrailAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for IncludeFillerNalUnits {
             IncludeFillerNalUnits::Auto => write!(f, "AUTO"),
             IncludeFillerNalUnits::Drop => write!(f, "DROP"),
             IncludeFillerNalUnits::Include => write!(f, "INCLUDE"),
-            IncludeFillerNalUnits::Unknown(value) => write!(f, "{}", value),
+            IncludeFillerNalUnits::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

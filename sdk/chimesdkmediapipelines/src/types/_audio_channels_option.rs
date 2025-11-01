@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AudioChannelsOption {
         match self {
             AudioChannelsOption::Mono => write!(f, "Mono"),
             AudioChannelsOption::Stereo => write!(f, "Stereo"),
-            AudioChannelsOption::Unknown(value) => write!(f, "{}", value),
+            AudioChannelsOption::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

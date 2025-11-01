@@ -114,7 +114,7 @@ impl ::std::fmt::Display for DetailedAlgorithmStatus {
             DetailedAlgorithmStatus::Failed => write!(f, "Failed"),
             DetailedAlgorithmStatus::InProgress => write!(f, "InProgress"),
             DetailedAlgorithmStatus::NotStarted => write!(f, "NotStarted"),
-            DetailedAlgorithmStatus::Unknown(value) => write!(f, "{}", value),
+            DetailedAlgorithmStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

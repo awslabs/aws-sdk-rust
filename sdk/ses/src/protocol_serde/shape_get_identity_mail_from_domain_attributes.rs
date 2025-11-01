@@ -57,16 +57,14 @@ pub fn de_get_identity_mail_from_domain_attributes(
     let start_el = decoder.start_el();
     if !(start_el.matches("GetIdentityMailFromDomainAttributesResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected GetIdentityMailFromDomainAttributesResponse got {:?}",
-            start_el
+            "invalid root, expected GetIdentityMailFromDomainAttributesResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("GetIdentityMailFromDomainAttributesResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected GetIdentityMailFromDomainAttributesResult got {:?}",
-                start_el
+                "invalid result, expected GetIdentityMailFromDomainAttributesResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

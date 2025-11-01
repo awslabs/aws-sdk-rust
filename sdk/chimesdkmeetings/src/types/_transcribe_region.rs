@@ -182,7 +182,7 @@ impl ::std::fmt::Display for TranscribeRegion {
             TranscribeRegion::UsEast2 => write!(f, "us-east-2"),
             TranscribeRegion::UsGovWest1 => write!(f, "us-gov-west-1"),
             TranscribeRegion::UsWest2 => write!(f, "us-west-2"),
-            TranscribeRegion::Unknown(value) => write!(f, "{}", value),
+            TranscribeRegion::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

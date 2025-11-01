@@ -96,7 +96,7 @@ impl ::std::fmt::Display for VideoCapability {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             VideoCapability::Send => write!(f, "SEND"),
-            VideoCapability::Unknown(value) => write!(f, "{}", value),
+            VideoCapability::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

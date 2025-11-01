@@ -106,7 +106,7 @@ impl ::std::fmt::Display for RouteSpanScooterAccessAttribute {
             RouteSpanScooterAccessAttribute::Allowed => write!(f, "Allowed"),
             RouteSpanScooterAccessAttribute::NoThroughTraffic => write!(f, "NoThroughTraffic"),
             RouteSpanScooterAccessAttribute::TollRoad => write!(f, "TollRoad"),
-            RouteSpanScooterAccessAttribute::Unknown(value) => write!(f, "{}", value),
+            RouteSpanScooterAccessAttribute::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

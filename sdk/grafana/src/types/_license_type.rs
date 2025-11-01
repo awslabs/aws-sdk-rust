@@ -102,7 +102,7 @@ impl ::std::fmt::Display for LicenseType {
         match self {
             LicenseType::Enterprise => write!(f, "ENTERPRISE"),
             LicenseType::EnterpriseFreeTrial => write!(f, "ENTERPRISE_FREE_TRIAL"),
-            LicenseType::Unknown(value) => write!(f, "{}", value),
+            LicenseType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

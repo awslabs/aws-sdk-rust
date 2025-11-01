@@ -114,7 +114,7 @@ impl ::std::fmt::Display for DvbSdtOutputSdt {
             DvbSdtOutputSdt::SdtFollowIfPresent => write!(f, "SDT_FOLLOW_IF_PRESENT"),
             DvbSdtOutputSdt::SdtManual => write!(f, "SDT_MANUAL"),
             DvbSdtOutputSdt::SdtNone => write!(f, "SDT_NONE"),
-            DvbSdtOutputSdt::Unknown(value) => write!(f, "{}", value),
+            DvbSdtOutputSdt::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

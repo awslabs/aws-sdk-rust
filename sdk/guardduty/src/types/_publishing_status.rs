@@ -119,7 +119,7 @@ impl ::std::fmt::Display for PublishingStatus {
             PublishingStatus::Publishing => write!(f, "PUBLISHING"),
             PublishingStatus::Stopped => write!(f, "STOPPED"),
             PublishingStatus::UnableToPublishFixDestinationProperty => write!(f, "UNABLE_TO_PUBLISH_FIX_DESTINATION_PROPERTY"),
-            PublishingStatus::Unknown(value) => write!(f, "{}", value),
+            PublishingStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -138,7 +138,7 @@ impl ::std::fmt::Display for EncryptionMode {
             EncryptionMode::Cfb8 => write!(f, "CFB8"),
             EncryptionMode::Ecb => write!(f, "ECB"),
             EncryptionMode::Ofb => write!(f, "OFB"),
-            EncryptionMode::Unknown(value) => write!(f, "{}", value),
+            EncryptionMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

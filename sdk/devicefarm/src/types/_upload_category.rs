@@ -102,7 +102,7 @@ impl ::std::fmt::Display for UploadCategory {
         match self {
             UploadCategory::Curated => write!(f, "CURATED"),
             UploadCategory::Private => write!(f, "PRIVATE"),
-            UploadCategory::Unknown(value) => write!(f, "{}", value),
+            UploadCategory::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

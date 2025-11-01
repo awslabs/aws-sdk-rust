@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ManagedScalingStatus {
         match self {
             ManagedScalingStatus::Disabled => write!(f, "DISABLED"),
             ManagedScalingStatus::Enabled => write!(f, "ENABLED"),
-            ManagedScalingStatus::Unknown(value) => write!(f, "{}", value),
+            ManagedScalingStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

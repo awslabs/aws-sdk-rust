@@ -108,7 +108,7 @@ impl ::std::fmt::Display for DomainStatus {
             DomainStatus::Failed => write!(f, "FAILED"),
             DomainStatus::PendingValidation => write!(f, "PENDING_VALIDATION"),
             DomainStatus::Success => write!(f, "SUCCESS"),
-            DomainStatus::Unknown(value) => write!(f, "{}", value),
+            DomainStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

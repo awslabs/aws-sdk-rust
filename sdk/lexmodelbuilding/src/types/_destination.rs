@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Destination {
         match self {
             Destination::CloudwatchLogs => write!(f, "CLOUDWATCH_LOGS"),
             Destination::S3 => write!(f, "S3"),
-            Destination::Unknown(value) => write!(f, "{}", value),
+            Destination::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

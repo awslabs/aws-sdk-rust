@@ -108,7 +108,7 @@ impl ::std::fmt::Display for PermissionTypeFilter {
             PermissionTypeFilter::All => write!(f, "ALL"),
             PermissionTypeFilter::AwsManaged => write!(f, "AWS_MANAGED"),
             PermissionTypeFilter::CustomerManaged => write!(f, "CUSTOMER_MANAGED"),
-            PermissionTypeFilter::Unknown(value) => write!(f, "{}", value),
+            PermissionTypeFilter::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

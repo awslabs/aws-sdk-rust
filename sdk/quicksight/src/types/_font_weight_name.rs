@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FontWeightName {
         match self {
             FontWeightName::Bold => write!(f, "BOLD"),
             FontWeightName::Normal => write!(f, "NORMAL"),
-            FontWeightName::Unknown(value) => write!(f, "{}", value),
+            FontWeightName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

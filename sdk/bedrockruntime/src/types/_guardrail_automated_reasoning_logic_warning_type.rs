@@ -104,7 +104,7 @@ impl ::std::fmt::Display for GuardrailAutomatedReasoningLogicWarningType {
         match self {
             GuardrailAutomatedReasoningLogicWarningType::AlwaysFalse => write!(f, "ALWAYS_FALSE"),
             GuardrailAutomatedReasoningLogicWarningType::AlwaysTrue => write!(f, "ALWAYS_TRUE"),
-            GuardrailAutomatedReasoningLogicWarningType::Unknown(value) => write!(f, "{}", value),
+            GuardrailAutomatedReasoningLogicWarningType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

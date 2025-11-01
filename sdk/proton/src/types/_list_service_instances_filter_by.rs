@@ -161,7 +161,7 @@ impl ::std::fmt::Display for ListServiceInstancesFilterBy {
             ListServiceInstancesFilterBy::Name => write!(f, "name"),
             ListServiceInstancesFilterBy::ServiceName => write!(f, "serviceName"),
             ListServiceInstancesFilterBy::TemplateName => write!(f, "templateName"),
-            ListServiceInstancesFilterBy::Unknown(value) => write!(f, "{}", value),
+            ListServiceInstancesFilterBy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

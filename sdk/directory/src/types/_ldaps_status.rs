@@ -114,7 +114,7 @@ impl ::std::fmt::Display for LdapsStatus {
             LdapsStatus::EnableFailed => write!(f, "EnableFailed"),
             LdapsStatus::Enabled => write!(f, "Enabled"),
             LdapsStatus::Enabling => write!(f, "Enabling"),
-            LdapsStatus::Unknown(value) => write!(f, "{}", value),
+            LdapsStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

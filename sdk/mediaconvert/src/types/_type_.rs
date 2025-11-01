@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Type {
         match self {
             Type::Custom => write!(f, "CUSTOM"),
             Type::System => write!(f, "SYSTEM"),
-            Type::Unknown(value) => write!(f, "{}", value),
+            Type::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

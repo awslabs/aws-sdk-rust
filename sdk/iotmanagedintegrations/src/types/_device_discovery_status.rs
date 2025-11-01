@@ -114,7 +114,7 @@ impl ::std::fmt::Display for DeviceDiscoveryStatus {
             DeviceDiscoveryStatus::Running => write!(f, "RUNNING"),
             DeviceDiscoveryStatus::Succeeded => write!(f, "SUCCEEDED"),
             DeviceDiscoveryStatus::TimedOut => write!(f, "TIMED_OUT"),
-            DeviceDiscoveryStatus::Unknown(value) => write!(f, "{}", value),
+            DeviceDiscoveryStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

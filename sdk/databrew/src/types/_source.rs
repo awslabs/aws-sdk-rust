@@ -108,7 +108,7 @@ impl ::std::fmt::Display for Source {
             Source::Datacatalog => write!(f, "DATA-CATALOG"),
             Source::Database => write!(f, "DATABASE"),
             Source::S3 => write!(f, "S3"),
-            Source::Unknown(value) => write!(f, "{}", value),
+            Source::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

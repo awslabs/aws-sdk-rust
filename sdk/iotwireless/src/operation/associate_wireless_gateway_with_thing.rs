@@ -190,6 +190,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for AssociateWir
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::associate_wireless_gateway_with_thing::AssociateWirelessGatewayWithThingInput,
                 output: &mut ::std::string::String,

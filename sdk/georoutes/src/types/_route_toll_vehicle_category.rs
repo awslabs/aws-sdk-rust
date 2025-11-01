@@ -94,7 +94,7 @@ impl ::std::fmt::Display for RouteTollVehicleCategory {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             RouteTollVehicleCategory::Minibus => write!(f, "Minibus"),
-            RouteTollVehicleCategory::Unknown(value) => write!(f, "{}", value),
+            RouteTollVehicleCategory::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for BillEstimateStatus {
             BillEstimateStatus::Complete => write!(f, "COMPLETE"),
             BillEstimateStatus::Failed => write!(f, "FAILED"),
             BillEstimateStatus::InProgress => write!(f, "IN_PROGRESS"),
-            BillEstimateStatus::Unknown(value) => write!(f, "{}", value),
+            BillEstimateStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

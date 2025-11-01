@@ -120,7 +120,7 @@ impl ::std::fmt::Display for ResourceShareAssociationStatus {
             ResourceShareAssociationStatus::Disassociated => write!(f, "DISASSOCIATED"),
             ResourceShareAssociationStatus::Disassociating => write!(f, "DISASSOCIATING"),
             ResourceShareAssociationStatus::Failed => write!(f, "FAILED"),
-            ResourceShareAssociationStatus::Unknown(value) => write!(f, "{}", value),
+            ResourceShareAssociationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

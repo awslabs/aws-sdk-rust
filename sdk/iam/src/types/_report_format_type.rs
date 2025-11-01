@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ReportFormatType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ReportFormatType::TextCsv => write!(f, "text/csv"),
-            ReportFormatType::Unknown(value) => write!(f, "{}", value),
+            ReportFormatType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

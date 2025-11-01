@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TableAttributes {
         match self {
             TableAttributes::Name => write!(f, "NAME"),
             TableAttributes::TableType => write!(f, "TABLE_TYPE"),
-            TableAttributes::Unknown(value) => write!(f, "{}", value),
+            TableAttributes::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

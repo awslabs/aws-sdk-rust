@@ -126,7 +126,7 @@ impl ::std::fmt::Display for UnprocessableExceptionReason {
             UnprocessableExceptionReason::PartitionFull => write!(f, "PARTITION_FULL"),
             UnprocessableExceptionReason::QueryTimeout => write!(f, "QUERY_TIMEOUT"),
             UnprocessableExceptionReason::StorageLimitExceeded => write!(f, "STORAGE_LIMIT_EXCEEDED"),
-            UnprocessableExceptionReason::Unknown(value) => write!(f, "{}", value),
+            UnprocessableExceptionReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DynamicAppProvidersEnabled {
         match self {
             DynamicAppProvidersEnabled::Disabled => write!(f, "DISABLED"),
             DynamicAppProvidersEnabled::Enabled => write!(f, "ENABLED"),
-            DynamicAppProvidersEnabled::Unknown(value) => write!(f, "{}", value),
+            DynamicAppProvidersEnabled::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

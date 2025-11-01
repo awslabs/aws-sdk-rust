@@ -108,7 +108,7 @@ impl ::std::fmt::Display for FindingStatus {
             FindingStatus::Active => write!(f, "ACTIVE"),
             FindingStatus::Closed => write!(f, "CLOSED"),
             FindingStatus::Suppressed => write!(f, "SUPPRESSED"),
-            FindingStatus::Unknown(value) => write!(f, "{}", value),
+            FindingStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

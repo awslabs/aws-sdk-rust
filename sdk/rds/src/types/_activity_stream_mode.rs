@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ActivityStreamMode {
         match self {
             ActivityStreamMode::Async => write!(f, "async"),
             ActivityStreamMode::Sync => write!(f, "sync"),
-            ActivityStreamMode::Unknown(value) => write!(f, "{}", value),
+            ActivityStreamMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

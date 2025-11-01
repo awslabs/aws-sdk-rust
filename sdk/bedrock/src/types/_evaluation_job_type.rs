@@ -102,7 +102,7 @@ impl ::std::fmt::Display for EvaluationJobType {
         match self {
             EvaluationJobType::Automated => write!(f, "Automated"),
             EvaluationJobType::Human => write!(f, "Human"),
-            EvaluationJobType::Unknown(value) => write!(f, "{}", value),
+            EvaluationJobType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

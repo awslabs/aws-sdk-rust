@@ -132,7 +132,7 @@ impl ::std::fmt::Display for WorkspacesPoolState {
             WorkspacesPoolState::Stopped => write!(f, "STOPPED"),
             WorkspacesPoolState::Stopping => write!(f, "STOPPING"),
             WorkspacesPoolState::Updating => write!(f, "UPDATING"),
-            WorkspacesPoolState::Unknown(value) => write!(f, "{}", value),
+            WorkspacesPoolState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

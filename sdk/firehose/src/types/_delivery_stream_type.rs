@@ -114,7 +114,7 @@ impl ::std::fmt::Display for DeliveryStreamType {
             DeliveryStreamType::DirectPut => write!(f, "DirectPut"),
             DeliveryStreamType::KinesisStreamAsSource => write!(f, "KinesisStreamAsSource"),
             DeliveryStreamType::MskAsSource => write!(f, "MSKAsSource"),
-            DeliveryStreamType::Unknown(value) => write!(f, "{}", value),
+            DeliveryStreamType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

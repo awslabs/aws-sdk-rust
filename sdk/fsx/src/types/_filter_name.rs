@@ -140,7 +140,7 @@ impl ::std::fmt::Display for FilterName {
             FilterName::FileSystemId => write!(f, "file-system-id"),
             FilterName::FileSystemType => write!(f, "file-system-type"),
             FilterName::VolumeId => write!(f, "volume-id"),
-            FilterName::Unknown(value) => write!(f, "{}", value),
+            FilterName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

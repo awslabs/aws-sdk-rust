@@ -114,7 +114,7 @@ impl ::std::fmt::Display for DeploymentTargetResourceType {
             DeploymentTargetResourceType::Environment => write!(f, "ENVIRONMENT"),
             DeploymentTargetResourceType::ServiceInstance => write!(f, "SERVICE_INSTANCE"),
             DeploymentTargetResourceType::ServicePipeline => write!(f, "SERVICE_PIPELINE"),
-            DeploymentTargetResourceType::Unknown(value) => write!(f, "{}", value),
+            DeploymentTargetResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MessageFormatValue {
         match self {
             MessageFormatValue::Json => write!(f, "json"),
             MessageFormatValue::JsonUnformatted => write!(f, "json-unformatted"),
-            MessageFormatValue::Unknown(value) => write!(f, "{}", value),
+            MessageFormatValue::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

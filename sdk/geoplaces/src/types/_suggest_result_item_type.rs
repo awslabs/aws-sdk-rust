@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SuggestResultItemType {
         match self {
             SuggestResultItemType::Place => write!(f, "Place"),
             SuggestResultItemType::Query => write!(f, "Query"),
-            SuggestResultItemType::Unknown(value) => write!(f, "{}", value),
+            SuggestResultItemType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

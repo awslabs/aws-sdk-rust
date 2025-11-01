@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ConfigRuleState {
             ConfigRuleState::Deleting => write!(f, "DELETING"),
             ConfigRuleState::DeletingResults => write!(f, "DELETING_RESULTS"),
             ConfigRuleState::Evaluating => write!(f, "EVALUATING"),
-            ConfigRuleState::Unknown(value) => write!(f, "{}", value),
+            ConfigRuleState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

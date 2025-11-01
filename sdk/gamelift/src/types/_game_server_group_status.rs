@@ -132,7 +132,7 @@ impl ::std::fmt::Display for GameServerGroupStatus {
             GameServerGroupStatus::Deleting => write!(f, "DELETING"),
             GameServerGroupStatus::Error => write!(f, "ERROR"),
             GameServerGroupStatus::New => write!(f, "NEW"),
-            GameServerGroupStatus::Unknown(value) => write!(f, "{}", value),
+            GameServerGroupStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

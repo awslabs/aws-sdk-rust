@@ -96,7 +96,7 @@ impl ::std::fmt::Display for KeyEncryptionMechanism {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             KeyEncryptionMechanism::RsaesOaepSha256 => write!(f, "RSAES_OAEP_SHA_256"),
-            KeyEncryptionMechanism::Unknown(value) => write!(f, "{}", value),
+            KeyEncryptionMechanism::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

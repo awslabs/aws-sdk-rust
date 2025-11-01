@@ -102,7 +102,7 @@ impl ::std::fmt::Display for InstanceStorageEncryptionSupport {
         match self {
             InstanceStorageEncryptionSupport::Required => write!(f, "required"),
             InstanceStorageEncryptionSupport::Unsupported => write!(f, "unsupported"),
-            InstanceStorageEncryptionSupport::Unknown(value) => write!(f, "{}", value),
+            InstanceStorageEncryptionSupport::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

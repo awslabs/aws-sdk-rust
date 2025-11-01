@@ -114,7 +114,7 @@ impl ::std::fmt::Display for HyperParameterTuningJobStrategyType {
             HyperParameterTuningJobStrategyType::Grid => write!(f, "Grid"),
             HyperParameterTuningJobStrategyType::Hyperband => write!(f, "Hyperband"),
             HyperParameterTuningJobStrategyType::Random => write!(f, "Random"),
-            HyperParameterTuningJobStrategyType::Unknown(value) => write!(f, "{}", value),
+            HyperParameterTuningJobStrategyType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

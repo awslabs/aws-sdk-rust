@@ -108,7 +108,7 @@ impl ::std::fmt::Display for CodeRepositorySortBy {
             CodeRepositorySortBy::CreationTime => write!(f, "CreationTime"),
             CodeRepositorySortBy::LastModifiedTime => write!(f, "LastModifiedTime"),
             CodeRepositorySortBy::Name => write!(f, "Name"),
-            CodeRepositorySortBy::Unknown(value) => write!(f, "{}", value),
+            CodeRepositorySortBy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

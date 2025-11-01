@@ -116,7 +116,7 @@ impl ::std::fmt::Display for AllocationType {
             AllocationType::Overlay => write!(f, "OVERLAY"),
             AllocationType::UnknownValue => write!(f, "UNKNOWN"),
             AllocationType::VpcSubnet => write!(f, "VPC_SUBNET"),
-            AllocationType::Unknown(value) => write!(f, "{}", value),
+            AllocationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

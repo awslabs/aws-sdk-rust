@@ -108,7 +108,7 @@ impl ::std::fmt::Display for FindingPublishingFrequency {
             FindingPublishingFrequency::FifteenMinutes => write!(f, "FIFTEEN_MINUTES"),
             FindingPublishingFrequency::OneHour => write!(f, "ONE_HOUR"),
             FindingPublishingFrequency::SixHours => write!(f, "SIX_HOURS"),
-            FindingPublishingFrequency::Unknown(value) => write!(f, "{}", value),
+            FindingPublishingFrequency::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

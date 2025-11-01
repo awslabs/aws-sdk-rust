@@ -116,7 +116,7 @@ impl ::std::fmt::Display for RdsEstimatedMonthlyVolumeIoPsCostVariation {
             RdsEstimatedMonthlyVolumeIoPsCostVariation::Low => write!(f, "Low"),
             RdsEstimatedMonthlyVolumeIoPsCostVariation::Medium => write!(f, "Medium"),
             RdsEstimatedMonthlyVolumeIoPsCostVariation::None => write!(f, "None"),
-            RdsEstimatedMonthlyVolumeIoPsCostVariation::Unknown(value) => write!(f, "{}", value),
+            RdsEstimatedMonthlyVolumeIoPsCostVariation::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

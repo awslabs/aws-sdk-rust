@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ParticipantState {
         match self {
             ParticipantState::Connected => write!(f, "CONNECTED"),
             ParticipantState::Disconnected => write!(f, "DISCONNECTED"),
-            ParticipantState::Unknown(value) => write!(f, "{}", value),
+            ParticipantState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

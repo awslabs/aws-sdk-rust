@@ -102,7 +102,7 @@ impl ::std::fmt::Display for IngestionRequestSource {
         match self {
             IngestionRequestSource::Manual => write!(f, "MANUAL"),
             IngestionRequestSource::Scheduled => write!(f, "SCHEDULED"),
-            IngestionRequestSource::Unknown(value) => write!(f, "{}", value),
+            IngestionRequestSource::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

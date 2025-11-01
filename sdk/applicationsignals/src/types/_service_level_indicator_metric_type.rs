@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ServiceLevelIndicatorMetricType {
         match self {
             ServiceLevelIndicatorMetricType::Availability => write!(f, "AVAILABILITY"),
             ServiceLevelIndicatorMetricType::Latency => write!(f, "LATENCY"),
-            ServiceLevelIndicatorMetricType::Unknown(value) => write!(f, "{}", value),
+            ServiceLevelIndicatorMetricType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

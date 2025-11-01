@@ -132,7 +132,7 @@ impl ::std::fmt::Display for CampaignStatus {
             CampaignStatus::Paused => write!(f, "PAUSED"),
             CampaignStatus::PendingNextRun => write!(f, "PENDING_NEXT_RUN"),
             CampaignStatus::Scheduled => write!(f, "SCHEDULED"),
-            CampaignStatus::Unknown(value) => write!(f, "{}", value),
+            CampaignStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

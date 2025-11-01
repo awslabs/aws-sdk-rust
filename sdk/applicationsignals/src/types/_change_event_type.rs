@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ChangeEventType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ChangeEventType::Deployment => write!(f, "DEPLOYMENT"),
-            ChangeEventType::Unknown(value) => write!(f, "{}", value),
+            ChangeEventType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

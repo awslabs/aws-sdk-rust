@@ -53,8 +53,7 @@ pub fn de_export_transit_gateway_routes(
     let start_el = decoder.start_el();
     if !(start_el.matches("ExportTransitGatewayRoutesResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected ExportTransitGatewayRoutesResponse got {:?}",
-            start_el
+            "invalid root, expected ExportTransitGatewayRoutesResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

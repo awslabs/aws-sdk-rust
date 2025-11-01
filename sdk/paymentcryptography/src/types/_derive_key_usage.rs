@@ -224,7 +224,7 @@ impl ::std::fmt::Display for DeriveKeyUsage {
             DeriveKeyUsage::Tr31P1PinGenerationKey => write!(f, "TR31_P1_PIN_GENERATION_KEY"),
             DeriveKeyUsage::Tr31V1Ibm3624PinVerificationKey => write!(f, "TR31_V1_IBM3624_PIN_VERIFICATION_KEY"),
             DeriveKeyUsage::Tr31V2VisaPinVerificationKey => write!(f, "TR31_V2_VISA_PIN_VERIFICATION_KEY"),
-            DeriveKeyUsage::Unknown(value) => write!(f, "{}", value),
+            DeriveKeyUsage::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

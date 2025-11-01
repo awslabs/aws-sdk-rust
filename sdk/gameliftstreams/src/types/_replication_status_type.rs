@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ReplicationStatusType {
         match self {
             ReplicationStatusType::Completed => write!(f, "COMPLETED"),
             ReplicationStatusType::Replicating => write!(f, "REPLICATING"),
-            ReplicationStatusType::Unknown(value) => write!(f, "{}", value),
+            ReplicationStatusType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

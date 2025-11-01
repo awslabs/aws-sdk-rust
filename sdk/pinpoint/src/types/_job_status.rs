@@ -154,7 +154,7 @@ impl ::std::fmt::Display for JobStatus {
             JobStatus::PendingJob => write!(f, "PENDING_JOB"),
             JobStatus::PreparingForInitialization => write!(f, "PREPARING_FOR_INITIALIZATION"),
             JobStatus::Processing => write!(f, "PROCESSING"),
-            JobStatus::Unknown(value) => write!(f, "{}", value),
+            JobStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

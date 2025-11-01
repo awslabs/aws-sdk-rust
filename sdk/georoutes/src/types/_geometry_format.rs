@@ -102,7 +102,7 @@ impl ::std::fmt::Display for GeometryFormat {
         match self {
             GeometryFormat::FlexiblePolyline => write!(f, "FlexiblePolyline"),
             GeometryFormat::Simple => write!(f, "Simple"),
-            GeometryFormat::Unknown(value) => write!(f, "{}", value),
+            GeometryFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

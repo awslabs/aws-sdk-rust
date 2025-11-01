@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CommandNamespace {
         match self {
             CommandNamespace::AwsIoT => write!(f, "AWS-IoT"),
             CommandNamespace::AwsIoTFleetWise => write!(f, "AWS-IoT-FleetWise"),
-            CommandNamespace::Unknown(value) => write!(f, "{}", value),
+            CommandNamespace::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

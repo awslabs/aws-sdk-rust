@@ -108,7 +108,7 @@ impl ::std::fmt::Display for EstimateStatus {
             EstimateStatus::Failed => write!(f, "FAILED"),
             EstimateStatus::Running => write!(f, "RUNNING"),
             EstimateStatus::Succeeded => write!(f, "SUCCEEDED"),
-            EstimateStatus::Unknown(value) => write!(f, "{}", value),
+            EstimateStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

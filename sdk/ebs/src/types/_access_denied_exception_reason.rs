@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AccessDeniedExceptionReason {
         match self {
             AccessDeniedExceptionReason::DependencyAccessDenied => write!(f, "DEPENDENCY_ACCESS_DENIED"),
             AccessDeniedExceptionReason::UnauthorizedAccount => write!(f, "UNAUTHORIZED_ACCOUNT"),
-            AccessDeniedExceptionReason::Unknown(value) => write!(f, "{}", value),
+            AccessDeniedExceptionReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

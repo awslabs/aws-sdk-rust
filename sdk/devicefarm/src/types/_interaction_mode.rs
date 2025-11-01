@@ -108,7 +108,7 @@ impl ::std::fmt::Display for InteractionMode {
             InteractionMode::Interactive => write!(f, "INTERACTIVE"),
             InteractionMode::NoVideo => write!(f, "NO_VIDEO"),
             InteractionMode::VideoOnly => write!(f, "VIDEO_ONLY"),
-            InteractionMode::Unknown(value) => write!(f, "{}", value),
+            InteractionMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

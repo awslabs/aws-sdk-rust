@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SubscriberType {
         match self {
             SubscriberType::Email => write!(f, "EMAIL"),
             SubscriberType::Sns => write!(f, "SNS"),
-            SubscriberType::Unknown(value) => write!(f, "{}", value),
+            SubscriberType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

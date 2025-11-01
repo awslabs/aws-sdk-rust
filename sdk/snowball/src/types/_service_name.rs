@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ServiceName {
         match self {
             ServiceName::EksAnywhere => write!(f, "EKS_ANYWHERE"),
             ServiceName::Kubernetes => write!(f, "KUBERNETES"),
-            ServiceName::Unknown(value) => write!(f, "{}", value),
+            ServiceName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

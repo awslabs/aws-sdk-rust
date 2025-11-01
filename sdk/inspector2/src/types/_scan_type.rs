@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ScanType {
             ScanType::Code => write!(f, "CODE"),
             ScanType::Network => write!(f, "NETWORK"),
             ScanType::Package => write!(f, "PACKAGE"),
-            ScanType::Unknown(value) => write!(f, "{}", value),
+            ScanType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

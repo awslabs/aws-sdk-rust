@@ -108,7 +108,7 @@ impl ::std::fmt::Display for DnsNameState {
             DnsNameState::Failed => write!(f, "failed"),
             DnsNameState::PendingVerification => write!(f, "pendingVerification"),
             DnsNameState::Verified => write!(f, "verified"),
-            DnsNameState::Unknown(value) => write!(f, "{}", value),
+            DnsNameState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for IamIdentityCenterGroupAttribute {
         match self {
             IamIdentityCenterGroupAttribute::GroupId => write!(f, "GroupId"),
             IamIdentityCenterGroupAttribute::GroupName => write!(f, "GroupName"),
-            IamIdentityCenterGroupAttribute::Unknown(value) => write!(f, "{}", value),
+            IamIdentityCenterGroupAttribute::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

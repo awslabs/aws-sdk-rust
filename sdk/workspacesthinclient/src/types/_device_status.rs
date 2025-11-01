@@ -114,7 +114,7 @@ impl ::std::fmt::Display for DeviceStatus {
             DeviceStatus::Deregistered => write!(f, "DEREGISTERED"),
             DeviceStatus::Deregistering => write!(f, "DEREGISTERING"),
             DeviceStatus::Registered => write!(f, "REGISTERED"),
-            DeviceStatus::Unknown(value) => write!(f, "{}", value),
+            DeviceStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

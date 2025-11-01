@@ -108,7 +108,7 @@ impl ::std::fmt::Display for CertificateSource {
             CertificateSource::Acm => write!(f, "acm"),
             CertificateSource::Cloudfront => write!(f, "cloudfront"),
             CertificateSource::Iam => write!(f, "iam"),
-            CertificateSource::Unknown(value) => write!(f, "{}", value),
+            CertificateSource::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

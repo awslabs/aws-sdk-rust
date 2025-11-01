@@ -120,7 +120,7 @@ impl ::std::fmt::Display for ApplicationVersionStatus {
             ApplicationVersionStatus::Processed => write!(f, "Processed"),
             ApplicationVersionStatus::Processing => write!(f, "Processing"),
             ApplicationVersionStatus::Unprocessed => write!(f, "Unprocessed"),
-            ApplicationVersionStatus::Unknown(value) => write!(f, "{}", value),
+            ApplicationVersionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

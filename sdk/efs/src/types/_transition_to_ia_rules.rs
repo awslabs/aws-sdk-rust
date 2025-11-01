@@ -154,7 +154,7 @@ impl ::std::fmt::Display for TransitionToIaRules {
             TransitionToIaRules::After60Days => write!(f, "AFTER_60_DAYS"),
             TransitionToIaRules::After7Days => write!(f, "AFTER_7_DAYS"),
             TransitionToIaRules::After90Days => write!(f, "AFTER_90_DAYS"),
-            TransitionToIaRules::Unknown(value) => write!(f, "{}", value),
+            TransitionToIaRules::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

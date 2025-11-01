@@ -162,7 +162,7 @@ impl ::std::fmt::Display for EventType {
             EventType::DeviceLifeCycle => write!(f, "DEVICE_LIFE_CYCLE"),
             EventType::DeviceOta => write!(f, "DEVICE_OTA"),
             EventType::DeviceState => write!(f, "DEVICE_STATE"),
-            EventType::Unknown(value) => write!(f, "{}", value),
+            EventType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -74,13 +74,11 @@ fn expect_header_str_value<'a>(
     match header {
         Some(header) => Ok(header.value().as_string().map_err(|value| {
             Error::from(ErrorKind::Unmarshalling(format!(
-                "expected response {} header to be string, received {:?}",
-                name, value
+                "expected response {name} header to be string, received {value:?}"
             )))
         })?),
         None => Err(ErrorKind::Unmarshalling(format!(
-            "expected response to include {} header, but it was missing",
-            name
+            "expected response to include {name} header, but it was missing"
         ))
         .into()),
     }

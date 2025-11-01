@@ -120,7 +120,7 @@ impl ::std::fmt::Display for CloudWatchAlarmTemplateStatistic {
             CloudWatchAlarmTemplateStatistic::Minimum => write!(f, "Minimum"),
             CloudWatchAlarmTemplateStatistic::SampleCount => write!(f, "SampleCount"),
             CloudWatchAlarmTemplateStatistic::Sum => write!(f, "Sum"),
-            CloudWatchAlarmTemplateStatistic::Unknown(value) => write!(f, "{}", value),
+            CloudWatchAlarmTemplateStatistic::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

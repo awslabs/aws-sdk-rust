@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ApplicationStatus {
         match self {
             ApplicationStatus::Disabled => write!(f, "DISABLED"),
             ApplicationStatus::Enabled => write!(f, "ENABLED"),
-            ApplicationStatus::Unknown(value) => write!(f, "{}", value),
+            ApplicationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

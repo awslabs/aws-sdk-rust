@@ -114,7 +114,7 @@ impl ::std::fmt::Display for IngestionRequestType {
             IngestionRequestType::FullRefresh => write!(f, "FULL_REFRESH"),
             IngestionRequestType::IncrementalRefresh => write!(f, "INCREMENTAL_REFRESH"),
             IngestionRequestType::InitialIngestion => write!(f, "INITIAL_INGESTION"),
-            IngestionRequestType::Unknown(value) => write!(f, "{}", value),
+            IngestionRequestType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

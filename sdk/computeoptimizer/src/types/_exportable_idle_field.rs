@@ -231,7 +231,7 @@ impl ::std::fmt::Display for ExportableIdleField {
             ExportableIdleField::UtilizationMetricsNetworkOutBytesPerSecondMaximum => write!(f, "UtilizationMetricsNetworkOutBytesPerSecondMaximum"),
             ExportableIdleField::UtilizationMetricsVolumeReadOpsPerSecondMaximum => write!(f, "UtilizationMetricsVolumeReadOpsPerSecondMaximum"),
             ExportableIdleField::UtilizationMetricsVolumeWriteOpsPerSecondMaximum => write!(f, "UtilizationMetricsVolumeWriteOpsPerSecondMaximum"),
-            ExportableIdleField::Unknown(value) => write!(f, "{}", value),
+            ExportableIdleField::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

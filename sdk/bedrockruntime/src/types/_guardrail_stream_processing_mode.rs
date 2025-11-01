@@ -102,7 +102,7 @@ impl ::std::fmt::Display for GuardrailStreamProcessingMode {
         match self {
             GuardrailStreamProcessingMode::Async => write!(f, "async"),
             GuardrailStreamProcessingMode::Sync => write!(f, "sync"),
-            GuardrailStreamProcessingMode::Unknown(value) => write!(f, "{}", value),
+            GuardrailStreamProcessingMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

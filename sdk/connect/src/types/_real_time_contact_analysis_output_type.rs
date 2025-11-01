@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RealTimeContactAnalysisOutputType {
         match self {
             RealTimeContactAnalysisOutputType::Raw => write!(f, "Raw"),
             RealTimeContactAnalysisOutputType::Redacted => write!(f, "Redacted"),
-            RealTimeContactAnalysisOutputType::Unknown(value) => write!(f, "{}", value),
+            RealTimeContactAnalysisOutputType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

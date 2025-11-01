@@ -120,7 +120,7 @@ impl ::std::fmt::Display for H265InterlaceMode {
             H265InterlaceMode::FollowTopField => write!(f, "FOLLOW_TOP_FIELD"),
             H265InterlaceMode::Progressive => write!(f, "PROGRESSIVE"),
             H265InterlaceMode::TopField => write!(f, "TOP_FIELD"),
-            H265InterlaceMode::Unknown(value) => write!(f, "{}", value),
+            H265InterlaceMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

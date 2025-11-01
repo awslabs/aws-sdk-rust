@@ -106,7 +106,7 @@ impl ::std::fmt::Display for Pronouns {
             Pronouns::HeHim => write!(f, "HE_HIM"),
             Pronouns::SheHer => write!(f, "SHE_HER"),
             Pronouns::TheyThem => write!(f, "THEY_THEM"),
-            Pronouns::Unknown(value) => write!(f, "{}", value),
+            Pronouns::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

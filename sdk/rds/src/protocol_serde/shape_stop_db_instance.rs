@@ -130,16 +130,14 @@ pub fn de_stop_db_instance(
     let start_el = decoder.start_el();
     if !(start_el.matches("StopDBInstanceResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected StopDBInstanceResponse got {:?}",
-            start_el
+            "invalid root, expected StopDBInstanceResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("StopDBInstanceResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected StopDBInstanceResult got {:?}",
-                start_el
+                "invalid result, expected StopDBInstanceResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

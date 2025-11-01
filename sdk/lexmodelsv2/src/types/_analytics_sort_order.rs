@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AnalyticsSortOrder {
         match self {
             AnalyticsSortOrder::Ascending => write!(f, "Ascending"),
             AnalyticsSortOrder::Descending => write!(f, "Descending"),
-            AnalyticsSortOrder::Unknown(value) => write!(f, "{}", value),
+            AnalyticsSortOrder::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

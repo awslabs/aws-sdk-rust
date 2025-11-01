@@ -120,7 +120,7 @@ impl ::std::fmt::Display for RecordStatus {
             RecordStatus::InProgress => write!(f, "IN_PROGRESS"),
             RecordStatus::InProgressInError => write!(f, "IN_PROGRESS_IN_ERROR"),
             RecordStatus::Succeeded => write!(f, "SUCCEEDED"),
-            RecordStatus::Unknown(value) => write!(f, "{}", value),
+            RecordStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

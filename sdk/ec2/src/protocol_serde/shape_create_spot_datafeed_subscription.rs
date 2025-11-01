@@ -51,8 +51,7 @@ pub fn de_create_spot_datafeed_subscription(
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateSpotDatafeedSubscriptionResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected CreateSpotDatafeedSubscriptionResponse got {:?}",
-            start_el
+            "invalid root, expected CreateSpotDatafeedSubscriptionResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

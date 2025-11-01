@@ -102,7 +102,7 @@ impl ::std::fmt::Display for X12SplitBy {
         match self {
             X12SplitBy::None => write!(f, "NONE"),
             X12SplitBy::Transaction => write!(f, "TRANSACTION"),
-            X12SplitBy::Unknown(value) => write!(f, "{}", value),
+            X12SplitBy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

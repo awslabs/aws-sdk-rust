@@ -203,7 +203,7 @@ impl ::std::fmt::Display for DataIntegrationEventType {
             DataIntegrationEventType::ShipmentStop => write!(f, "scn.data.shipmentstop"),
             DataIntegrationEventType::ShipmentStopOrder => write!(f, "scn.data.shipmentstoporder"),
             DataIntegrationEventType::SupplyPlan => write!(f, "scn.data.supplyplan"),
-            DataIntegrationEventType::Unknown(value) => write!(f, "{}", value),
+            DataIntegrationEventType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

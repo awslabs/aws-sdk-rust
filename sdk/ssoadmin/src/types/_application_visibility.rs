@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ApplicationVisibility {
         match self {
             ApplicationVisibility::Disabled => write!(f, "DISABLED"),
             ApplicationVisibility::Enabled => write!(f, "ENABLED"),
-            ApplicationVisibility::Unknown(value) => write!(f, "{}", value),
+            ApplicationVisibility::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

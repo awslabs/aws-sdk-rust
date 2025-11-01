@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ResourceBucketAccess {
         match self {
             ResourceBucketAccess::Allow => write!(f, "allow"),
             ResourceBucketAccess::Deny => write!(f, "deny"),
-            ResourceBucketAccess::Unknown(value) => write!(f, "{}", value),
+            ResourceBucketAccess::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

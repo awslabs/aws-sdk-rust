@@ -114,7 +114,7 @@ impl ::std::fmt::Display for EntityExemptionAccountStatus {
             EntityExemptionAccountStatus::None => write!(f, "None"),
             EntityExemptionAccountStatus::Pending => write!(f, "Pending"),
             EntityExemptionAccountStatus::Valid => write!(f, "Valid"),
-            EntityExemptionAccountStatus::Unknown(value) => write!(f, "{}", value),
+            EntityExemptionAccountStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

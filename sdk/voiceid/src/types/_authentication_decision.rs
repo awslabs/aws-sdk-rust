@@ -140,7 +140,7 @@ impl ::std::fmt::Display for AuthenticationDecision {
             AuthenticationDecision::SpeakerIdNotProvided => write!(f, "SPEAKER_ID_NOT_PROVIDED"),
             AuthenticationDecision::SpeakerNotEnrolled => write!(f, "SPEAKER_NOT_ENROLLED"),
             AuthenticationDecision::SpeakerOptedOut => write!(f, "SPEAKER_OPTED_OUT"),
-            AuthenticationDecision::Unknown(value) => write!(f, "{}", value),
+            AuthenticationDecision::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

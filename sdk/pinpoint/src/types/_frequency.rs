@@ -132,7 +132,7 @@ impl ::std::fmt::Display for Frequency {
             Frequency::Monthly => write!(f, "MONTHLY"),
             Frequency::Once => write!(f, "ONCE"),
             Frequency::Weekly => write!(f, "WEEKLY"),
-            Frequency::Unknown(value) => write!(f, "{}", value),
+            Frequency::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

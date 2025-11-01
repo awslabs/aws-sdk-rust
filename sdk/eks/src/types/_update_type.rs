@@ -196,7 +196,7 @@ impl ::std::fmt::Display for UpdateType {
             UpdateType::VersionUpdate => write!(f, "VersionUpdate"),
             UpdateType::VpcConfigUpdate => write!(f, "VpcConfigUpdate"),
             UpdateType::ZonalShiftConfigUpdate => write!(f, "ZonalShiftConfigUpdate"),
-            UpdateType::Unknown(value) => write!(f, "{}", value),
+            UpdateType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

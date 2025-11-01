@@ -120,7 +120,7 @@ impl ::std::fmt::Display for ProvisionedProductStatus {
             ProvisionedProductStatus::PlanInProgress => write!(f, "PLAN_IN_PROGRESS"),
             ProvisionedProductStatus::Tainted => write!(f, "TAINTED"),
             ProvisionedProductStatus::UnderChange => write!(f, "UNDER_CHANGE"),
-            ProvisionedProductStatus::Unknown(value) => write!(f, "{}", value),
+            ProvisionedProductStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

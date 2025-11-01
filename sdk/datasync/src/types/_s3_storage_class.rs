@@ -147,7 +147,7 @@ impl ::std::fmt::Display for S3StorageClass {
             S3StorageClass::Outposts => write!(f, "OUTPOSTS"),
             S3StorageClass::Standard => write!(f, "STANDARD"),
             S3StorageClass::StandardIa => write!(f, "STANDARD_IA"),
-            S3StorageClass::Unknown(value) => write!(f, "{}", value),
+            S3StorageClass::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

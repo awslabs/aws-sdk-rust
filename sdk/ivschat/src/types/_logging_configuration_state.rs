@@ -140,7 +140,7 @@ impl ::std::fmt::Display for LoggingConfigurationState {
             LoggingConfigurationState::Deleting => write!(f, "DELETING"),
             LoggingConfigurationState::UpdateFailed => write!(f, "UPDATE_FAILED"),
             LoggingConfigurationState::Updating => write!(f, "UPDATING"),
-            LoggingConfigurationState::Unknown(value) => write!(f, "{}", value),
+            LoggingConfigurationState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -104,7 +104,7 @@ impl ::std::fmt::Display for NaturalLanguageQueryGenerationDesiredState {
         match self {
             NaturalLanguageQueryGenerationDesiredState::Disabled => write!(f, "DISABLED"),
             NaturalLanguageQueryGenerationDesiredState::Enabled => write!(f, "ENABLED"),
-            NaturalLanguageQueryGenerationDesiredState::Unknown(value) => write!(f, "{}", value),
+            NaturalLanguageQueryGenerationDesiredState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

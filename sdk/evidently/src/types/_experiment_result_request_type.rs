@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ExperimentResultRequestType {
             ExperimentResultRequestType::ConfidenceInterval => write!(f, "ConfidenceInterval"),
             ExperimentResultRequestType::PValue => write!(f, "PValue"),
             ExperimentResultRequestType::TreatmentEffect => write!(f, "TreatmentEffect"),
-            ExperimentResultRequestType::Unknown(value) => write!(f, "{}", value),
+            ExperimentResultRequestType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

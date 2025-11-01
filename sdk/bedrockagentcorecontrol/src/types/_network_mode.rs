@@ -102,7 +102,7 @@ impl ::std::fmt::Display for NetworkMode {
         match self {
             NetworkMode::Public => write!(f, "PUBLIC"),
             NetworkMode::Vpc => write!(f, "VPC"),
-            NetworkMode::Unknown(value) => write!(f, "{}", value),
+            NetworkMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

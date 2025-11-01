@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ReplicationTopicNameConfigurationType {
         match self {
             ReplicationTopicNameConfigurationType::Identical => write!(f, "IDENTICAL"),
             ReplicationTopicNameConfigurationType::PrefixedWithSourceClusterAlias => write!(f, "PREFIXED_WITH_SOURCE_CLUSTER_ALIAS"),
-            ReplicationTopicNameConfigurationType::Unknown(value) => write!(f, "{}", value),
+            ReplicationTopicNameConfigurationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

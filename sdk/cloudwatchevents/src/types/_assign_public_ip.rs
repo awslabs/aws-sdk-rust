@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AssignPublicIp {
         match self {
             AssignPublicIp::Disabled => write!(f, "DISABLED"),
             AssignPublicIp::Enabled => write!(f, "ENABLED"),
-            AssignPublicIp::Unknown(value) => write!(f, "{}", value),
+            AssignPublicIp::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -176,7 +176,7 @@ impl ::std::fmt::Display for ContainerType {
             ContainerType::Raw => write!(f, "RAW"),
             ContainerType::Webm => write!(f, "WEBM"),
             ContainerType::Y4M => write!(f, "Y4M"),
-            ContainerType::Unknown(value) => write!(f, "{}", value),
+            ContainerType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

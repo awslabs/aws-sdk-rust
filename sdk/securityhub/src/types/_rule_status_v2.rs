@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RuleStatusV2 {
         match self {
             RuleStatusV2::Disabled => write!(f, "DISABLED"),
             RuleStatusV2::Enabled => write!(f, "ENABLED"),
-            RuleStatusV2::Unknown(value) => write!(f, "{}", value),
+            RuleStatusV2::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

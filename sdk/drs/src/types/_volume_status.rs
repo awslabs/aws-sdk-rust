@@ -126,7 +126,7 @@ impl ::std::fmt::Display for VolumeStatus {
             VolumeStatus::MissingVolumeAttributesAndPrecheckUnavailable => write!(f, "MISSING_VOLUME_ATTRIBUTES_AND_PRECHECK_UNAVAILABLE"),
             VolumeStatus::Pending => write!(f, "PENDING"),
             VolumeStatus::Regular => write!(f, "REGULAR"),
-            VolumeStatus::Unknown(value) => write!(f, "{}", value),
+            VolumeStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

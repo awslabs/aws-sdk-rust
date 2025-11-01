@@ -74,16 +74,14 @@ pub fn de_batch_delete_scheduled_action(
     let start_el = decoder.start_el();
     if !(start_el.matches("BatchDeleteScheduledActionResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected BatchDeleteScheduledActionResponse got {:?}",
-            start_el
+            "invalid root, expected BatchDeleteScheduledActionResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("BatchDeleteScheduledActionResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected BatchDeleteScheduledActionResult got {:?}",
-                start_el
+                "invalid result, expected BatchDeleteScheduledActionResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

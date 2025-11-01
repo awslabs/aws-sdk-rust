@@ -120,7 +120,7 @@ impl ::std::fmt::Display for AssetExtensionType {
             AssetExtensionType::Png => write!(f, "PNG"),
             AssetExtensionType::Svg => write!(f, "SVG"),
             AssetExtensionType::Webp => write!(f, "WEBP"),
-            AssetExtensionType::Unknown(value) => write!(f, "{}", value),
+            AssetExtensionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

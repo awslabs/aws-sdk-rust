@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SpotInstanceTypeEnum {
         match self {
             SpotInstanceTypeEnum::OneTime => write!(f, "one-time"),
             SpotInstanceTypeEnum::Persistent => write!(f, "persistent"),
-            SpotInstanceTypeEnum::Unknown(value) => write!(f, "{}", value),
+            SpotInstanceTypeEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

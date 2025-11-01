@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SortLineageGroupsBy {
         match self {
             SortLineageGroupsBy::CreationTime => write!(f, "CreationTime"),
             SortLineageGroupsBy::Name => write!(f, "Name"),
-            SortLineageGroupsBy::Unknown(value) => write!(f, "{}", value),
+            SortLineageGroupsBy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

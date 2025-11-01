@@ -102,7 +102,7 @@ impl ::std::fmt::Display for IdNamespaceType {
         match self {
             IdNamespaceType::Source => write!(f, "SOURCE"),
             IdNamespaceType::Target => write!(f, "TARGET"),
-            IdNamespaceType::Unknown(value) => write!(f, "{}", value),
+            IdNamespaceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

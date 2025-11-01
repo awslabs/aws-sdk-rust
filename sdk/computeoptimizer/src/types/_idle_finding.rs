@@ -102,7 +102,7 @@ impl ::std::fmt::Display for IdleFinding {
         match self {
             IdleFinding::Idle => write!(f, "Idle"),
             IdleFinding::Unattached => write!(f, "Unattached"),
-            IdleFinding::Unknown(value) => write!(f, "{}", value),
+            IdleFinding::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

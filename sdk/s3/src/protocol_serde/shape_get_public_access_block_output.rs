@@ -22,8 +22,7 @@ pub fn de_public_access_block_configuration(
     let start_el = decoder.start_el();
     if !(start_el.matches("PublicAccessBlockConfiguration")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected PublicAccessBlockConfiguration got {:?}",
-            start_el
+            "invalid root, expected PublicAccessBlockConfiguration got {start_el:?}"
         )));
     }
     crate::protocol_serde::shape_public_access_block_configuration::de_public_access_block_configuration(&mut decoder)

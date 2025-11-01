@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RedshiftResultFormat {
         match self {
             RedshiftResultFormat::Csv => write!(f, "CSV"),
             RedshiftResultFormat::Parquet => write!(f, "PARQUET"),
-            RedshiftResultFormat::Unknown(value) => write!(f, "{}", value),
+            RedshiftResultFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

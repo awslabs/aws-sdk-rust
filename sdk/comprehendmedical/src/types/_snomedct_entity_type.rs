@@ -114,7 +114,7 @@ impl ::std::fmt::Display for SnomedctEntityType {
             SnomedctEntityType::ProcedureName => write!(f, "PROCEDURE_NAME"),
             SnomedctEntityType::TestName => write!(f, "TEST_NAME"),
             SnomedctEntityType::TreatmentName => write!(f, "TREATMENT_NAME"),
-            SnomedctEntityType::Unknown(value) => write!(f, "{}", value),
+            SnomedctEntityType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

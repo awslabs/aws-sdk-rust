@@ -108,7 +108,7 @@ impl ::std::fmt::Display for PortfolioShareType {
             PortfolioShareType::AwsOrganizations => write!(f, "AWS_ORGANIZATIONS"),
             PortfolioShareType::AwsServicecatalog => write!(f, "AWS_SERVICECATALOG"),
             PortfolioShareType::Imported => write!(f, "IMPORTED"),
-            PortfolioShareType::Unknown(value) => write!(f, "{}", value),
+            PortfolioShareType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

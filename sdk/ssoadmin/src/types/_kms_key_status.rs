@@ -108,7 +108,7 @@ impl ::std::fmt::Display for KmsKeyStatus {
             KmsKeyStatus::Enabled => write!(f, "ENABLED"),
             KmsKeyStatus::UpdateFailed => write!(f, "UPDATE_FAILED"),
             KmsKeyStatus::Updating => write!(f, "UPDATING"),
-            KmsKeyStatus::Unknown(value) => write!(f, "{}", value),
+            KmsKeyStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

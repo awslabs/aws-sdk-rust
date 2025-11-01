@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MembershipAccountRelationshipType {
         match self {
             MembershipAccountRelationshipType::Organization => write!(f, "Organization"),
             MembershipAccountRelationshipType::Unrelated => write!(f, "Unrelated"),
-            MembershipAccountRelationshipType::Unknown(value) => write!(f, "{}", value),
+            MembershipAccountRelationshipType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

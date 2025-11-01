@@ -133,7 +133,7 @@ impl ::std::fmt::Display for FleetStatus {
             FleetStatus::Suspended => write!(f, "SUSPENDED"),
             FleetStatus::UpdateFailed => write!(f, "UPDATE_FAILED"),
             FleetStatus::UpdateInProgress => write!(f, "UPDATE_IN_PROGRESS"),
-            FleetStatus::Unknown(value) => write!(f, "{}", value),
+            FleetStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

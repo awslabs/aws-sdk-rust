@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SmoothGroupCertificateMode {
         match self {
             SmoothGroupCertificateMode::SelfSigned => write!(f, "SELF_SIGNED"),
             SmoothGroupCertificateMode::VerifyAuthenticity => write!(f, "VERIFY_AUTHENTICITY"),
-            SmoothGroupCertificateMode::Unknown(value) => write!(f, "{}", value),
+            SmoothGroupCertificateMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

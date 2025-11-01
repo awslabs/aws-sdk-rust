@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FeatureGroupSortOrder {
         match self {
             FeatureGroupSortOrder::Ascending => write!(f, "Ascending"),
             FeatureGroupSortOrder::Descending => write!(f, "Descending"),
-            FeatureGroupSortOrder::Unknown(value) => write!(f, "{}", value),
+            FeatureGroupSortOrder::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

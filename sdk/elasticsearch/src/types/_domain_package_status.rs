@@ -120,7 +120,7 @@ impl ::std::fmt::Display for DomainPackageStatus {
             DomainPackageStatus::AssociationFailed => write!(f, "ASSOCIATION_FAILED"),
             DomainPackageStatus::Dissociating => write!(f, "DISSOCIATING"),
             DomainPackageStatus::DissociationFailed => write!(f, "DISSOCIATION_FAILED"),
-            DomainPackageStatus::Unknown(value) => write!(f, "{}", value),
+            DomainPackageStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -182,7 +182,7 @@ impl ::std::fmt::Display for WorkspaceStatus {
             WorkspaceStatus::Upgrading => write!(f, "UPGRADING"),
             WorkspaceStatus::VersionUpdateFailed => write!(f, "VERSION_UPDATE_FAILED"),
             WorkspaceStatus::VersionUpdating => write!(f, "VERSION_UPDATING"),
-            WorkspaceStatus::Unknown(value) => write!(f, "{}", value),
+            WorkspaceStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

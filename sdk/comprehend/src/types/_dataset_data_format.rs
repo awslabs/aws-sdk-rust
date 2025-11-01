@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DatasetDataFormat {
         match self {
             DatasetDataFormat::AugmentedManifest => write!(f, "AUGMENTED_MANIFEST"),
             DatasetDataFormat::ComprehendCsv => write!(f, "COMPREHEND_CSV"),
-            DatasetDataFormat::Unknown(value) => write!(f, "{}", value),
+            DatasetDataFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

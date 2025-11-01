@@ -210,7 +210,7 @@ impl ::std::fmt::Display for ResourceType {
             ResourceType::AwsSnsTopic => write!(f, "AWS::SNS::Topic"),
             ResourceType::AwsSqsQueue => write!(f, "AWS::SQS::Queue"),
             ResourceType::AwsSecretsmanagerSecret => write!(f, "AWS::SecretsManager::Secret"),
-            ResourceType::Unknown(value) => write!(f, "{}", value),
+            ResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

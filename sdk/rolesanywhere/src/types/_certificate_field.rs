@@ -108,7 +108,7 @@ impl ::std::fmt::Display for CertificateField {
             CertificateField::X509Issuer => write!(f, "x509Issuer"),
             CertificateField::X509San => write!(f, "x509SAN"),
             CertificateField::X509Subject => write!(f, "x509Subject"),
-            CertificateField::Unknown(value) => write!(f, "{}", value),
+            CertificateField::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

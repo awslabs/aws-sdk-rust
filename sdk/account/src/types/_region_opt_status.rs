@@ -120,7 +120,7 @@ impl ::std::fmt::Display for RegionOptStatus {
             RegionOptStatus::Enabled => write!(f, "ENABLED"),
             RegionOptStatus::EnabledByDefault => write!(f, "ENABLED_BY_DEFAULT"),
             RegionOptStatus::Enabling => write!(f, "ENABLING"),
-            RegionOptStatus::Unknown(value) => write!(f, "{}", value),
+            RegionOptStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

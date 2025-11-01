@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SearchQueryScopeType {
         match self {
             SearchQueryScopeType::Content => write!(f, "CONTENT"),
             SearchQueryScopeType::Name => write!(f, "NAME"),
-            SearchQueryScopeType::Unknown(value) => write!(f, "{}", value),
+            SearchQueryScopeType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

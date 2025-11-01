@@ -108,7 +108,7 @@ impl ::std::fmt::Display for SessionStatusCode {
             SessionStatusCode::ConfigurationChanged => write!(f, "CONFIGURATION_CHANGED"),
             SessionStatusCode::Expired => write!(f, "EXPIRED"),
             SessionStatusCode::Rejected => write!(f, "REJECTED"),
-            SessionStatusCode::Unknown(value) => write!(f, "{}", value),
+            SessionStatusCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

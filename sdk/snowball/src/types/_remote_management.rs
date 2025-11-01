@@ -108,7 +108,7 @@ impl ::std::fmt::Display for RemoteManagement {
             RemoteManagement::InstalledAutostart => write!(f, "INSTALLED_AUTOSTART"),
             RemoteManagement::InstalledOnly => write!(f, "INSTALLED_ONLY"),
             RemoteManagement::NotInstalled => write!(f, "NOT_INSTALLED"),
-            RemoteManagement::Unknown(value) => write!(f, "{}", value),
+            RemoteManagement::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

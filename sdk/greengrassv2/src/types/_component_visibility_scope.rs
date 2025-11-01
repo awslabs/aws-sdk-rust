@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ComponentVisibilityScope {
         match self {
             ComponentVisibilityScope::Private => write!(f, "PRIVATE"),
             ComponentVisibilityScope::Public => write!(f, "PUBLIC"),
-            ComponentVisibilityScope::Unknown(value) => write!(f, "{}", value),
+            ComponentVisibilityScope::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

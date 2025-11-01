@@ -102,7 +102,7 @@ impl ::std::fmt::Display for OutboundMessageSourceType {
         match self {
             OutboundMessageSourceType::Raw => write!(f, "RAW"),
             OutboundMessageSourceType::Template => write!(f, "TEMPLATE"),
-            OutboundMessageSourceType::Unknown(value) => write!(f, "{}", value),
+            OutboundMessageSourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

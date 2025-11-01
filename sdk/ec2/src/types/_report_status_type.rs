@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ReportStatusType {
         match self {
             ReportStatusType::Impaired => write!(f, "impaired"),
             ReportStatusType::Ok => write!(f, "ok"),
-            ReportStatusType::Unknown(value) => write!(f, "{}", value),
+            ReportStatusType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

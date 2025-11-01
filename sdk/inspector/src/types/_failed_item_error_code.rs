@@ -133,7 +133,7 @@ impl ::std::fmt::Display for FailedItemErrorCode {
             FailedItemErrorCode::InvalidArn => write!(f, "INVALID_ARN"),
             FailedItemErrorCode::ItemDoesNotExist => write!(f, "ITEM_DOES_NOT_EXIST"),
             FailedItemErrorCode::LimitExceeded => write!(f, "LIMIT_EXCEEDED"),
-            FailedItemErrorCode::Unknown(value) => write!(f, "{}", value),
+            FailedItemErrorCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

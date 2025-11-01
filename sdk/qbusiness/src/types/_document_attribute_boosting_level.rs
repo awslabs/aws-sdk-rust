@@ -132,7 +132,7 @@ impl ::std::fmt::Display for DocumentAttributeBoostingLevel {
             DocumentAttributeBoostingLevel::One => write!(f, "ONE"),
             DocumentAttributeBoostingLevel::Two => write!(f, "TWO"),
             DocumentAttributeBoostingLevel::VeryHigh => write!(f, "VERY_HIGH"),
-            DocumentAttributeBoostingLevel::Unknown(value) => write!(f, "{}", value),
+            DocumentAttributeBoostingLevel::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

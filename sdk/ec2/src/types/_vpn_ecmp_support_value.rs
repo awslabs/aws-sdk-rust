@@ -102,7 +102,7 @@ impl ::std::fmt::Display for VpnEcmpSupportValue {
         match self {
             VpnEcmpSupportValue::Disable => write!(f, "disable"),
             VpnEcmpSupportValue::Enable => write!(f, "enable"),
-            VpnEcmpSupportValue::Unknown(value) => write!(f, "{}", value),
+            VpnEcmpSupportValue::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

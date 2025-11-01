@@ -126,7 +126,7 @@ impl ::std::fmt::Display for AccountLimitType {
             AccountLimitType::MaxReusableDelegationSetsByOwner => write!(f, "MAX_REUSABLE_DELEGATION_SETS_BY_OWNER"),
             AccountLimitType::MaxTrafficPoliciesByOwner => write!(f, "MAX_TRAFFIC_POLICIES_BY_OWNER"),
             AccountLimitType::MaxTrafficPolicyInstancesByOwner => write!(f, "MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER"),
-            AccountLimitType::Unknown(value) => write!(f, "{}", value),
+            AccountLimitType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

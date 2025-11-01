@@ -154,7 +154,7 @@ impl ::std::fmt::Display for DeploymentStatus {
             DeploymentStatus::Failed => write!(f, "FAILED"),
             DeploymentStatus::InProgress => write!(f, "IN_PROGRESS"),
             DeploymentStatus::Validating => write!(f, "VALIDATING"),
-            DeploymentStatus::Unknown(value) => write!(f, "{}", value),
+            DeploymentStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

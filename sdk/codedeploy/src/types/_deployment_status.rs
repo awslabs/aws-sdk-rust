@@ -138,7 +138,7 @@ impl ::std::fmt::Display for DeploymentStatus {
             DeploymentStatus::Ready => write!(f, "Ready"),
             DeploymentStatus::Stopped => write!(f, "Stopped"),
             DeploymentStatus::Succeeded => write!(f, "Succeeded"),
-            DeploymentStatus::Unknown(value) => write!(f, "{}", value),
+            DeploymentStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

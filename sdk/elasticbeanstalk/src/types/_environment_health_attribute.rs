@@ -147,7 +147,7 @@ impl ::std::fmt::Display for EnvironmentHealthAttribute {
             EnvironmentHealthAttribute::InstancesHealth => write!(f, "InstancesHealth"),
             EnvironmentHealthAttribute::RefreshedAt => write!(f, "RefreshedAt"),
             EnvironmentHealthAttribute::Status => write!(f, "Status"),
-            EnvironmentHealthAttribute::Unknown(value) => write!(f, "{}", value),
+            EnvironmentHealthAttribute::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

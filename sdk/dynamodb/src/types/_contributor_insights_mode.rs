@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ContributorInsightsMode {
         match self {
             ContributorInsightsMode::AccessedAndThrottledKeys => write!(f, "ACCESSED_AND_THROTTLED_KEYS"),
             ContributorInsightsMode::ThrottledKeys => write!(f, "THROTTLED_KEYS"),
-            ContributorInsightsMode::Unknown(value) => write!(f, "{}", value),
+            ContributorInsightsMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

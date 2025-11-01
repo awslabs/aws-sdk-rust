@@ -102,7 +102,7 @@ impl ::std::fmt::Display for InventoryConfigurationState {
         match self {
             InventoryConfigurationState::Disabled => write!(f, "DISABLED"),
             InventoryConfigurationState::Enabled => write!(f, "ENABLED"),
-            InventoryConfigurationState::Unknown(value) => write!(f, "{}", value),
+            InventoryConfigurationState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

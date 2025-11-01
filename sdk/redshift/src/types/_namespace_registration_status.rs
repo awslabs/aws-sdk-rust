@@ -102,7 +102,7 @@ impl ::std::fmt::Display for NamespaceRegistrationStatus {
         match self {
             NamespaceRegistrationStatus::Deregistering => write!(f, "Deregistering"),
             NamespaceRegistrationStatus::Registering => write!(f, "Registering"),
-            NamespaceRegistrationStatus::Unknown(value) => write!(f, "{}", value),
+            NamespaceRegistrationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

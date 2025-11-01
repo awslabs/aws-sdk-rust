@@ -175,7 +175,7 @@ impl ::std::fmt::Display for AudioCodec {
             AudioCodec::Passthrough => write!(f, "PASSTHROUGH"),
             AudioCodec::Vorbis => write!(f, "VORBIS"),
             AudioCodec::Wav => write!(f, "WAV"),
-            AudioCodec::Unknown(value) => write!(f, "{}", value),
+            AudioCodec::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

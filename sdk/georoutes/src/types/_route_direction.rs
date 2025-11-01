@@ -112,7 +112,7 @@ impl ::std::fmt::Display for RouteDirection {
             RouteDirection::North => write!(f, "North"),
             RouteDirection::South => write!(f, "South"),
             RouteDirection::West => write!(f, "West"),
-            RouteDirection::Unknown(value) => write!(f, "{}", value),
+            RouteDirection::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

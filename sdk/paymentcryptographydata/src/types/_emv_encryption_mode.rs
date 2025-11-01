@@ -102,7 +102,7 @@ impl ::std::fmt::Display for EmvEncryptionMode {
         match self {
             EmvEncryptionMode::Cbc => write!(f, "CBC"),
             EmvEncryptionMode::Ecb => write!(f, "ECB"),
-            EmvEncryptionMode::Unknown(value) => write!(f, "{}", value),
+            EmvEncryptionMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

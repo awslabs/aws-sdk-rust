@@ -147,7 +147,7 @@ impl ::std::fmt::Display for ExecutionErrorType {
             ExecutionErrorType::PermissionDenied => write!(f, "PERMISSION_DENIED"),
             ExecutionErrorType::Throttled => write!(f, "THROTTLED"),
             ExecutionErrorType::Timeout => write!(f, "TIMEOUT"),
-            ExecutionErrorType::Unknown(value) => write!(f, "{}", value),
+            ExecutionErrorType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

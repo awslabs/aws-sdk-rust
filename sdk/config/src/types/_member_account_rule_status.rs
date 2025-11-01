@@ -154,7 +154,7 @@ impl ::std::fmt::Display for MemberAccountRuleStatus {
             MemberAccountRuleStatus::UpdateFailed => write!(f, "UPDATE_FAILED"),
             MemberAccountRuleStatus::UpdateInProgress => write!(f, "UPDATE_IN_PROGRESS"),
             MemberAccountRuleStatus::UpdateSuccessful => write!(f, "UPDATE_SUCCESSFUL"),
-            MemberAccountRuleStatus::Unknown(value) => write!(f, "{}", value),
+            MemberAccountRuleStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

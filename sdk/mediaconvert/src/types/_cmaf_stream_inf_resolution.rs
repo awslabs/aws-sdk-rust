@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CmafStreamInfResolution {
         match self {
             CmafStreamInfResolution::Exclude => write!(f, "EXCLUDE"),
             CmafStreamInfResolution::Include => write!(f, "INCLUDE"),
-            CmafStreamInfResolution::Unknown(value) => write!(f, "{}", value),
+            CmafStreamInfResolution::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for Icd10CmRelationshipType {
             Icd10CmRelationshipType::Overlap => write!(f, "OVERLAP"),
             Icd10CmRelationshipType::Quality => write!(f, "QUALITY"),
             Icd10CmRelationshipType::SystemOrganSite => write!(f, "SYSTEM_ORGAN_SITE"),
-            Icd10CmRelationshipType::Unknown(value) => write!(f, "{}", value),
+            Icd10CmRelationshipType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for PassthroughBehavior {
             PassthroughBehavior::Never => write!(f, "NEVER"),
             PassthroughBehavior::WhenNoMatch => write!(f, "WHEN_NO_MATCH"),
             PassthroughBehavior::WhenNoTemplates => write!(f, "WHEN_NO_TEMPLATES"),
-            PassthroughBehavior::Unknown(value) => write!(f, "{}", value),
+            PassthroughBehavior::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

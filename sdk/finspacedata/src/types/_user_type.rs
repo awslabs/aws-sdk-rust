@@ -102,7 +102,7 @@ impl ::std::fmt::Display for UserType {
         match self {
             UserType::AppUser => write!(f, "APP_USER"),
             UserType::SuperUser => write!(f, "SUPER_USER"),
-            UserType::Unknown(value) => write!(f, "{}", value),
+            UserType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

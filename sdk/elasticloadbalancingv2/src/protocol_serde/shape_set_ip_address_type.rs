@@ -103,16 +103,14 @@ pub fn de_set_ip_address_type(
     let start_el = decoder.start_el();
     if !(start_el.matches("SetIpAddressTypeResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected SetIpAddressTypeResponse got {:?}",
-            start_el
+            "invalid root, expected SetIpAddressTypeResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("SetIpAddressTypeResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected SetIpAddressTypeResult got {:?}",
-                start_el
+                "invalid result, expected SetIpAddressTypeResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

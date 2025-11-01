@@ -120,7 +120,7 @@ impl ::std::fmt::Display for ParallelDataStatus {
             ParallelDataStatus::Deleting => write!(f, "DELETING"),
             ParallelDataStatus::Failed => write!(f, "FAILED"),
             ParallelDataStatus::Updating => write!(f, "UPDATING"),
-            ParallelDataStatus::Unknown(value) => write!(f, "{}", value),
+            ParallelDataStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

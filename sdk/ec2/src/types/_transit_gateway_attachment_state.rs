@@ -182,7 +182,7 @@ impl ::std::fmt::Display for TransitGatewayAttachmentState {
             TransitGatewayAttachmentState::Rejected => write!(f, "rejected"),
             TransitGatewayAttachmentState::Rejecting => write!(f, "rejecting"),
             TransitGatewayAttachmentState::RollingBack => write!(f, "rollingBack"),
-            TransitGatewayAttachmentState::Unknown(value) => write!(f, "{}", value),
+            TransitGatewayAttachmentState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

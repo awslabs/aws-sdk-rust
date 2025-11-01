@@ -147,7 +147,7 @@ impl ::std::fmt::Display for AccessDeniedErrorCode {
             AccessDeniedErrorCode::AccessDeniedToResourceGroup => write!(f, "ACCESS_DENIED_TO_RESOURCE_GROUP"),
             AccessDeniedErrorCode::AccessDeniedToRulesPackage => write!(f, "ACCESS_DENIED_TO_RULES_PACKAGE"),
             AccessDeniedErrorCode::AccessDeniedToSnsTopic => write!(f, "ACCESS_DENIED_TO_SNS_TOPIC"),
-            AccessDeniedErrorCode::Unknown(value) => write!(f, "{}", value),
+            AccessDeniedErrorCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

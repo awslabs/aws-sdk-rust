@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ContentEncoding {
         match self {
             ContentEncoding::Gzip => write!(f, "GZIP"),
             ContentEncoding::None => write!(f, "NONE"),
-            ContentEncoding::Unknown(value) => write!(f, "{}", value),
+            ContentEncoding::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

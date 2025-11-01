@@ -102,7 +102,7 @@ impl ::std::fmt::Display for UncompressedScanTypeConversionMode {
         match self {
             UncompressedScanTypeConversionMode::Interlaced => write!(f, "INTERLACED"),
             UncompressedScanTypeConversionMode::InterlacedOptimize => write!(f, "INTERLACED_OPTIMIZE"),
-            UncompressedScanTypeConversionMode::Unknown(value) => write!(f, "{}", value),
+            UncompressedScanTypeConversionMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

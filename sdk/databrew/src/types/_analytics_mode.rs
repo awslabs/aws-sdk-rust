@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AnalyticsMode {
         match self {
             AnalyticsMode::Disable => write!(f, "DISABLE"),
             AnalyticsMode::Enable => write!(f, "ENABLE"),
-            AnalyticsMode::Unknown(value) => write!(f, "{}", value),
+            AnalyticsMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ChannelAlertState {
         match self {
             ChannelAlertState::Cleared => write!(f, "CLEARED"),
             ChannelAlertState::Set => write!(f, "SET"),
-            ChannelAlertState::Unknown(value) => write!(f, "{}", value),
+            ChannelAlertState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

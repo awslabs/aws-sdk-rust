@@ -108,7 +108,7 @@ impl ::std::fmt::Display for EncryptionType {
             EncryptionType::Aes256 => write!(f, "AES256"),
             EncryptionType::Kms => write!(f, "KMS"),
             EncryptionType::KmsDsse => write!(f, "KMS_DSSE"),
-            EncryptionType::Unknown(value) => write!(f, "{}", value),
+            EncryptionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

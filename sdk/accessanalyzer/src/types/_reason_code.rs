@@ -119,7 +119,7 @@ impl ::std::fmt::Display for ReasonCode {
             ReasonCode::DelegatedAdministratorDeregistered => write!(f, "DELEGATED_ADMINISTRATOR_DEREGISTERED"),
             ReasonCode::OrganizationDeleted => write!(f, "ORGANIZATION_DELETED"),
             ReasonCode::ServiceLinkedRoleCreationFailed => write!(f, "SERVICE_LINKED_ROLE_CREATION_FAILED"),
-            ReasonCode::Unknown(value) => write!(f, "{}", value),
+            ReasonCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

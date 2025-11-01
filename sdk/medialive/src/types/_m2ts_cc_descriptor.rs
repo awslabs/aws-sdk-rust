@@ -102,7 +102,7 @@ impl ::std::fmt::Display for M2tsCcDescriptor {
         match self {
             M2tsCcDescriptor::Disabled => write!(f, "DISABLED"),
             M2tsCcDescriptor::Enabled => write!(f, "ENABLED"),
-            M2tsCcDescriptor::Unknown(value) => write!(f, "{}", value),
+            M2tsCcDescriptor::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

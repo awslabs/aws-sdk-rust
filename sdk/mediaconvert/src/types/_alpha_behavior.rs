@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AlphaBehavior {
         match self {
             AlphaBehavior::Discard => write!(f, "DISCARD"),
             AlphaBehavior::RemapToLuma => write!(f, "REMAP_TO_LUMA"),
-            AlphaBehavior::Unknown(value) => write!(f, "{}", value),
+            AlphaBehavior::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

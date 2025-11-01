@@ -112,7 +112,7 @@ impl ::std::fmt::Display for OcsfBooleanField {
             OcsfBooleanField::ComplianceAssessmentsMeetsCriteria => write!(f, "compliance.assessments.meets_criteria"),
             OcsfBooleanField::VulnerabilitiesIsExploitAvailable => write!(f, "vulnerabilities.is_exploit_available"),
             OcsfBooleanField::VulnerabilitiesIsFixAvailable => write!(f, "vulnerabilities.is_fix_available"),
-            OcsfBooleanField::Unknown(value) => write!(f, "{}", value),
+            OcsfBooleanField::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

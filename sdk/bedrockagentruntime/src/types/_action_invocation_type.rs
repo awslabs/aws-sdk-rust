@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ActionInvocationType {
             ActionInvocationType::Result => write!(f, "RESULT"),
             ActionInvocationType::UserConfirmation => write!(f, "USER_CONFIRMATION"),
             ActionInvocationType::UserConfirmationAndResult => write!(f, "USER_CONFIRMATION_AND_RESULT"),
-            ActionInvocationType::Unknown(value) => write!(f, "{}", value),
+            ActionInvocationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

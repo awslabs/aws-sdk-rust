@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MaintenanceStatus {
         match self {
             MaintenanceStatus::Disabled => write!(f, "disabled"),
             MaintenanceStatus::Enabled => write!(f, "enabled"),
-            MaintenanceStatus::Unknown(value) => write!(f, "{}", value),
+            MaintenanceStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

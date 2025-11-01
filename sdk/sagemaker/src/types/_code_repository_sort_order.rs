@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CodeRepositorySortOrder {
         match self {
             CodeRepositorySortOrder::Ascending => write!(f, "Ascending"),
             CodeRepositorySortOrder::Descending => write!(f, "Descending"),
-            CodeRepositorySortOrder::Unknown(value) => write!(f, "{}", value),
+            CodeRepositorySortOrder::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

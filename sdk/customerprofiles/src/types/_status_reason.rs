@@ -102,7 +102,7 @@ impl ::std::fmt::Display for StatusReason {
         match self {
             StatusReason::InternalFailure => write!(f, "INTERNAL_FAILURE"),
             StatusReason::ValidationFailure => write!(f, "VALIDATION_FAILURE"),
-            StatusReason::Unknown(value) => write!(f, "{}", value),
+            StatusReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

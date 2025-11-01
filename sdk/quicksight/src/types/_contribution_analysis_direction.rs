@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ContributionAnalysisDirection {
             ContributionAnalysisDirection::Decrease => write!(f, "DECREASE"),
             ContributionAnalysisDirection::Increase => write!(f, "INCREASE"),
             ContributionAnalysisDirection::Neutral => write!(f, "NEUTRAL"),
-            ContributionAnalysisDirection::Unknown(value) => write!(f, "{}", value),
+            ContributionAnalysisDirection::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

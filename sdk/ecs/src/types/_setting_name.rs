@@ -161,7 +161,7 @@ impl ::std::fmt::Display for SettingName {
             SettingName::ServiceLongArnFormat => write!(f, "serviceLongArnFormat"),
             SettingName::TagResourceAuthorization => write!(f, "tagResourceAuthorization"),
             SettingName::TaskLongArnFormat => write!(f, "taskLongArnFormat"),
-            SettingName::Unknown(value) => write!(f, "{}", value),
+            SettingName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

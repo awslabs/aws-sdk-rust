@@ -191,7 +191,7 @@ impl ::std::fmt::Display for DisconnectReasonValue {
             DisconnectReasonValue::Throttled => write!(f, "THROTTLED"),
             DisconnectReasonValue::UnknownValue => write!(f, "UNKNOWN"),
             DisconnectReasonValue::WebsocketTtlExpiration => write!(f, "WEBSOCKET_TTL_EXPIRATION"),
-            DisconnectReasonValue::Unknown(value) => write!(f, "{}", value),
+            DisconnectReasonValue::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

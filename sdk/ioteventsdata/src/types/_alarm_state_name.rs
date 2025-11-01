@@ -126,7 +126,7 @@ impl ::std::fmt::Display for AlarmStateName {
             AlarmStateName::Latched => write!(f, "LATCHED"),
             AlarmStateName::Normal => write!(f, "NORMAL"),
             AlarmStateName::SnoozeDisabled => write!(f, "SNOOZE_DISABLED"),
-            AlarmStateName::Unknown(value) => write!(f, "{}", value),
+            AlarmStateName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

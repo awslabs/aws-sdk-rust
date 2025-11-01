@@ -108,7 +108,7 @@ impl ::std::fmt::Display for MembershipStatus {
             MembershipStatus::Active => write!(f, "ACTIVE"),
             MembershipStatus::CollaborationDeleted => write!(f, "COLLABORATION_DELETED"),
             MembershipStatus::Removed => write!(f, "REMOVED"),
-            MembershipStatus::Unknown(value) => write!(f, "{}", value),
+            MembershipStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

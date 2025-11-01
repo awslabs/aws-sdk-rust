@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DomainVersion {
         match self {
             DomainVersion::V1 => write!(f, "V1"),
             DomainVersion::V2 => write!(f, "V2"),
-            DomainVersion::Unknown(value) => write!(f, "{}", value),
+            DomainVersion::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

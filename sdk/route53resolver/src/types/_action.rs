@@ -108,7 +108,7 @@ impl ::std::fmt::Display for Action {
             Action::Alert => write!(f, "ALERT"),
             Action::Allow => write!(f, "ALLOW"),
             Action::Block => write!(f, "BLOCK"),
-            Action::Unknown(value) => write!(f, "{}", value),
+            Action::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

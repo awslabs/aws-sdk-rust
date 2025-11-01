@@ -102,7 +102,7 @@ impl ::std::fmt::Display for InitiateAs {
         match self {
             InitiateAs::Completed => write!(f, "COMPLETED"),
             InitiateAs::ConnectedToUser => write!(f, "CONNECTED_TO_USER"),
-            InitiateAs::Unknown(value) => write!(f, "{}", value),
+            InitiateAs::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

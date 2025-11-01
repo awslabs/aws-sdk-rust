@@ -108,7 +108,7 @@ impl ::std::fmt::Display for SampleType {
             SampleType::FirstN => write!(f, "FIRST_N"),
             SampleType::LastN => write!(f, "LAST_N"),
             SampleType::Random => write!(f, "RANDOM"),
-            SampleType::Unknown(value) => write!(f, "{}", value),
+            SampleType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

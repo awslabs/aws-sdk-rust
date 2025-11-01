@@ -114,7 +114,7 @@ impl ::std::fmt::Display for Parallelism {
             Parallelism::Low => write!(f, "LOW"),
             Parallelism::Medium => write!(f, "MEDIUM"),
             Parallelism::Oversubscribe => write!(f, "OVERSUBSCRIBE"),
-            Parallelism::Unknown(value) => write!(f, "{}", value),
+            Parallelism::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

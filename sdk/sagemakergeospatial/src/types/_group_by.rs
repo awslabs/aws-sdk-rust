@@ -102,7 +102,7 @@ impl ::std::fmt::Display for GroupBy {
         match self {
             GroupBy::All => write!(f, "ALL"),
             GroupBy::Yearly => write!(f, "YEARLY"),
-            GroupBy::Unknown(value) => write!(f, "{}", value),
+            GroupBy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

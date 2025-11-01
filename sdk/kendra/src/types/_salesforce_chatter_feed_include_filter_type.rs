@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SalesforceChatterFeedIncludeFilterType {
         match self {
             SalesforceChatterFeedIncludeFilterType::ActiveUser => write!(f, "ACTIVE_USER"),
             SalesforceChatterFeedIncludeFilterType::StandardUser => write!(f, "STANDARD_USER"),
-            SalesforceChatterFeedIncludeFilterType::Unknown(value) => write!(f, "{}", value),
+            SalesforceChatterFeedIncludeFilterType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

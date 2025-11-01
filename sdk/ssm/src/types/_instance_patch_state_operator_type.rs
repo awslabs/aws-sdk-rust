@@ -114,7 +114,7 @@ impl ::std::fmt::Display for InstancePatchStateOperatorType {
             InstancePatchStateOperatorType::GreaterThan => write!(f, "GreaterThan"),
             InstancePatchStateOperatorType::LessThan => write!(f, "LessThan"),
             InstancePatchStateOperatorType::NotEqual => write!(f, "NotEqual"),
-            InstancePatchStateOperatorType::Unknown(value) => write!(f, "{}", value),
+            InstancePatchStateOperatorType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

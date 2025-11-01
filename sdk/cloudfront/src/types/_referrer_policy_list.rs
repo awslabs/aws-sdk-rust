@@ -147,7 +147,7 @@ impl ::std::fmt::Display for ReferrerPolicyList {
             ReferrerPolicyList::StrictOrigin => write!(f, "strict-origin"),
             ReferrerPolicyList::StrictOriginWhenCrossOrigin => write!(f, "strict-origin-when-cross-origin"),
             ReferrerPolicyList::UnsafeUrl => write!(f, "unsafe-url"),
-            ReferrerPolicyList::Unknown(value) => write!(f, "{}", value),
+            ReferrerPolicyList::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

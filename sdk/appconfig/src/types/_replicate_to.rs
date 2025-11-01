@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ReplicateTo {
         match self {
             ReplicateTo::None => write!(f, "NONE"),
             ReplicateTo::SsmDocument => write!(f, "SSM_DOCUMENT"),
-            ReplicateTo::Unknown(value) => write!(f, "{}", value),
+            ReplicateTo::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

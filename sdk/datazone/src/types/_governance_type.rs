@@ -102,7 +102,7 @@ impl ::std::fmt::Display for GovernanceType {
         match self {
             GovernanceType::AwsManaged => write!(f, "AWS_MANAGED"),
             GovernanceType::UserManaged => write!(f, "USER_MANAGED"),
-            GovernanceType::Unknown(value) => write!(f, "{}", value),
+            GovernanceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

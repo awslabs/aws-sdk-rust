@@ -126,7 +126,7 @@ impl ::std::fmt::Display for AssetType {
             AssetType::RedshiftDataShare => write!(f, "REDSHIFT_DATA_SHARE"),
             AssetType::S3DataAccess => write!(f, "S3_DATA_ACCESS"),
             AssetType::S3Snapshot => write!(f, "S3_SNAPSHOT"),
-            AssetType::Unknown(value) => write!(f, "{}", value),
+            AssetType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ControlScope {
         match self {
             ControlScope::Global => write!(f, "GLOBAL"),
             ControlScope::Regional => write!(f, "REGIONAL"),
-            ControlScope::Unknown(value) => write!(f, "{}", value),
+            ControlScope::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

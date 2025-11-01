@@ -102,7 +102,7 @@ impl ::std::fmt::Display for HlsScte35SourceType {
         match self {
             HlsScte35SourceType::Manifest => write!(f, "MANIFEST"),
             HlsScte35SourceType::Segments => write!(f, "SEGMENTS"),
-            HlsScte35SourceType::Unknown(value) => write!(f, "{}", value),
+            HlsScte35SourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

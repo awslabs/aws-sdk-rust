@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RecencyType {
         match self {
             RecencyType::Active => write!(f, "ACTIVE"),
             RecencyType::Inactive => write!(f, "INACTIVE"),
-            RecencyType::Unknown(value) => write!(f, "{}", value),
+            RecencyType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

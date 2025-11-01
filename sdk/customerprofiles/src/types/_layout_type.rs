@@ -96,7 +96,7 @@ impl ::std::fmt::Display for LayoutType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             LayoutType::ProfileExplorer => write!(f, "PROFILE_EXPLORER"),
-            LayoutType::Unknown(value) => write!(f, "{}", value),
+            LayoutType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -147,7 +147,7 @@ impl ::std::fmt::Display for ConfigChangeStatus {
             ConfigChangeStatus::PendingUserInput => write!(f, "PendingUserInput"),
             ConfigChangeStatus::Validating => write!(f, "Validating"),
             ConfigChangeStatus::ValidationFailed => write!(f, "ValidationFailed"),
-            ConfigChangeStatus::Unknown(value) => write!(f, "{}", value),
+            ConfigChangeStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

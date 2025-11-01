@@ -140,7 +140,7 @@ impl ::std::fmt::Display for HubStatus {
             HubStatus::InService => write!(f, "InService"),
             HubStatus::UpdateFailed => write!(f, "UpdateFailed"),
             HubStatus::Updating => write!(f, "Updating"),
-            HubStatus::Unknown(value) => write!(f, "{}", value),
+            HubStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

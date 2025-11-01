@@ -114,7 +114,7 @@ impl ::std::fmt::Display for WorkflowStepExecutionRollbackStatus {
             WorkflowStepExecutionRollbackStatus::Failed => write!(f, "FAILED"),
             WorkflowStepExecutionRollbackStatus::Running => write!(f, "RUNNING"),
             WorkflowStepExecutionRollbackStatus::Skipped => write!(f, "SKIPPED"),
-            WorkflowStepExecutionRollbackStatus::Unknown(value) => write!(f, "{}", value),
+            WorkflowStepExecutionRollbackStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

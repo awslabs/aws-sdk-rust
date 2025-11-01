@@ -140,7 +140,7 @@ impl ::std::fmt::Display for ContinuousExportStatus {
             ContinuousExportStatus::StartInProgress => write!(f, "START_IN_PROGRESS"),
             ContinuousExportStatus::StopFailed => write!(f, "STOP_FAILED"),
             ContinuousExportStatus::StopInProgress => write!(f, "STOP_IN_PROGRESS"),
-            ContinuousExportStatus::Unknown(value) => write!(f, "{}", value),
+            ContinuousExportStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

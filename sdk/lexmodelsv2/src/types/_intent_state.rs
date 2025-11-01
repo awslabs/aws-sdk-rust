@@ -133,7 +133,7 @@ impl ::std::fmt::Display for IntentState {
             IntentState::InProgress => write!(f, "InProgress"),
             IntentState::ReadyForFulfillment => write!(f, "ReadyForFulfillment"),
             IntentState::Waiting => write!(f, "Waiting"),
-            IntentState::Unknown(value) => write!(f, "{}", value),
+            IntentState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

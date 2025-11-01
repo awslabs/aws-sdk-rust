@@ -102,7 +102,7 @@ impl ::std::fmt::Display for QueryIdentifiersEnclosingOption {
         match self {
             QueryIdentifiersEnclosingOption::DoubleQuotes => write!(f, "DOUBLE_QUOTES"),
             QueryIdentifiersEnclosingOption::None => write!(f, "NONE"),
-            QueryIdentifiersEnclosingOption::Unknown(value) => write!(f, "{}", value),
+            QueryIdentifiersEnclosingOption::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

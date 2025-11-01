@@ -112,7 +112,7 @@ impl ::std::fmt::Display for DimensionValueSource {
             DimensionValueSource::EmailHeader => write!(f, "EMAIL_HEADER"),
             DimensionValueSource::LinkTag => write!(f, "LINK_TAG"),
             DimensionValueSource::MessageTag => write!(f, "MESSAGE_TAG"),
-            DimensionValueSource::Unknown(value) => write!(f, "{}", value),
+            DimensionValueSource::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

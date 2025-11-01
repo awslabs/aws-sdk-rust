@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ResizeOption {
         match self {
             ResizeOption::Fixed => write!(f, "FIXED"),
             ResizeOption::Responsive => write!(f, "RESPONSIVE"),
-            ResizeOption::Unknown(value) => write!(f, "{}", value),
+            ResizeOption::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

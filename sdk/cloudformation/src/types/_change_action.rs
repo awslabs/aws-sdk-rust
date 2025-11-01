@@ -120,7 +120,7 @@ impl ::std::fmt::Display for ChangeAction {
             ChangeAction::Import => write!(f, "Import"),
             ChangeAction::Modify => write!(f, "Modify"),
             ChangeAction::Remove => write!(f, "Remove"),
-            ChangeAction::Unknown(value) => write!(f, "{}", value),
+            ChangeAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for HlsWebdavHttpTransferMode {
         match self {
             HlsWebdavHttpTransferMode::Chunked => write!(f, "CHUNKED"),
             HlsWebdavHttpTransferMode::NonChunked => write!(f, "NON_CHUNKED"),
-            HlsWebdavHttpTransferMode::Unknown(value) => write!(f, "{}", value),
+            HlsWebdavHttpTransferMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

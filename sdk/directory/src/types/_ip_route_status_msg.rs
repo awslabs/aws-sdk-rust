@@ -126,7 +126,7 @@ impl ::std::fmt::Display for IpRouteStatusMsg {
             IpRouteStatusMsg::RemoveFailed => write!(f, "RemoveFailed"),
             IpRouteStatusMsg::Removed => write!(f, "Removed"),
             IpRouteStatusMsg::Removing => write!(f, "Removing"),
-            IpRouteStatusMsg::Unknown(value) => write!(f, "{}", value),
+            IpRouteStatusMsg::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

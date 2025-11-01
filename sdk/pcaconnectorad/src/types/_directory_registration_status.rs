@@ -114,7 +114,7 @@ impl ::std::fmt::Display for DirectoryRegistrationStatus {
             DirectoryRegistrationStatus::Creating => write!(f, "CREATING"),
             DirectoryRegistrationStatus::Deleting => write!(f, "DELETING"),
             DirectoryRegistrationStatus::Failed => write!(f, "FAILED"),
-            DirectoryRegistrationStatus::Unknown(value) => write!(f, "{}", value),
+            DirectoryRegistrationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

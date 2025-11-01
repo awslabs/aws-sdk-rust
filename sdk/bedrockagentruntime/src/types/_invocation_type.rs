@@ -126,7 +126,7 @@ impl ::std::fmt::Display for InvocationType {
             InvocationType::AgentCollaborator => write!(f, "AGENT_COLLABORATOR"),
             InvocationType::Finish => write!(f, "FINISH"),
             InvocationType::KnowledgeBase => write!(f, "KNOWLEDGE_BASE"),
-            InvocationType::Unknown(value) => write!(f, "{}", value),
+            InvocationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

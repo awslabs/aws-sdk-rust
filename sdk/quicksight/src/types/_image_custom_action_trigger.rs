@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ImageCustomActionTrigger {
         match self {
             ImageCustomActionTrigger::Click => write!(f, "CLICK"),
             ImageCustomActionTrigger::Menu => write!(f, "MENU"),
-            ImageCustomActionTrigger::Unknown(value) => write!(f, "{}", value),
+            ImageCustomActionTrigger::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

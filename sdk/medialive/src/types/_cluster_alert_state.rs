@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ClusterAlertState {
         match self {
             ClusterAlertState::Cleared => write!(f, "CLEARED"),
             ClusterAlertState::Set => write!(f, "SET"),
-            ClusterAlertState::Unknown(value) => write!(f, "{}", value),
+            ClusterAlertState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

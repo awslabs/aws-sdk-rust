@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FilterInstanceStatus {
         match self {
             FilterInstanceStatus::Active => write!(f, "ACTIVE"),
             FilterInstanceStatus::Draining => write!(f, "DRAINING"),
-            FilterInstanceStatus::Unknown(value) => write!(f, "{}", value),
+            FilterInstanceStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

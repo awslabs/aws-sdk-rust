@@ -114,7 +114,7 @@ impl ::std::fmt::Display for SavingsPlansDataType {
             SavingsPlansDataType::Attributes => write!(f, "ATTRIBUTES"),
             SavingsPlansDataType::Savings => write!(f, "SAVINGS"),
             SavingsPlansDataType::Utilization => write!(f, "UTILIZATION"),
-            SavingsPlansDataType::Unknown(value) => write!(f, "{}", value),
+            SavingsPlansDataType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -156,7 +156,7 @@ impl ::std::fmt::Display for DeliveryStatus {
             DeliveryStatus::ResourceNotFound => write!(f, "RESOURCE_NOT_FOUND"),
             DeliveryStatus::Success => write!(f, "SUCCESS"),
             DeliveryStatus::UnknownValue => write!(f, "UNKNOWN"),
-            DeliveryStatus::Unknown(value) => write!(f, "{}", value),
+            DeliveryStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

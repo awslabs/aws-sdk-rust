@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ComputeLimitsUnitType {
             ComputeLimitsUnitType::InstanceFleetUnits => write!(f, "InstanceFleetUnits"),
             ComputeLimitsUnitType::Instances => write!(f, "Instances"),
             ComputeLimitsUnitType::Vcpu => write!(f, "VCPU"),
-            ComputeLimitsUnitType::Unknown(value) => write!(f, "{}", value),
+            ComputeLimitsUnitType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

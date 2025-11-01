@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FilterKey {
         match self {
             FilterKey::HasAccessTo => write!(f, "hasAccessTo"),
             FilterKey::Name => write!(f, "name"),
-            FilterKey::Unknown(value) => write!(f, "{}", value),
+            FilterKey::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

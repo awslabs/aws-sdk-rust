@@ -108,7 +108,7 @@ impl ::std::fmt::Display for VirtualNodeStatusCode {
             VirtualNodeStatusCode::Active => write!(f, "ACTIVE"),
             VirtualNodeStatusCode::Deleted => write!(f, "DELETED"),
             VirtualNodeStatusCode::Inactive => write!(f, "INACTIVE"),
-            VirtualNodeStatusCode::Unknown(value) => write!(f, "{}", value),
+            VirtualNodeStatusCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

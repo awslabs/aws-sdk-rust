@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ManagedCredentialsAction {
         match self {
             ManagedCredentialsAction::Disable => write!(f, "DISABLE"),
             ManagedCredentialsAction::Enable => write!(f, "ENABLE"),
-            ManagedCredentialsAction::Unknown(value) => write!(f, "{}", value),
+            ManagedCredentialsAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

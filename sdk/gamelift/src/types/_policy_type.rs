@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PolicyType {
         match self {
             PolicyType::RuleBased => write!(f, "RuleBased"),
             PolicyType::TargetBased => write!(f, "TargetBased"),
-            PolicyType::Unknown(value) => write!(f, "{}", value),
+            PolicyType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

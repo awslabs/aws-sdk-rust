@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SyncResourceType {
         match self {
             SyncResourceType::ComponentType => write!(f, "COMPONENT_TYPE"),
             SyncResourceType::Entity => write!(f, "ENTITY"),
-            SyncResourceType::Unknown(value) => write!(f, "{}", value),
+            SyncResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

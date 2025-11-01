@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TestExecutionApiMode {
         match self {
             TestExecutionApiMode::NonStreaming => write!(f, "NonStreaming"),
             TestExecutionApiMode::Streaming => write!(f, "Streaming"),
-            TestExecutionApiMode::Unknown(value) => write!(f, "{}", value),
+            TestExecutionApiMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

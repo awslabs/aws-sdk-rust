@@ -25,8 +25,7 @@ pub fn de_cache_policy_config(inp: &[u8]) -> std::result::Result<crate::types::C
     let start_el = decoder.start_el();
     if !(start_el.matches("CachePolicyConfig")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected CachePolicyConfig got {:?}",
-            start_el
+            "invalid root, expected CachePolicyConfig got {start_el:?}"
         )));
     }
     crate::protocol_serde::shape_cache_policy_config::de_cache_policy_config(&mut decoder)

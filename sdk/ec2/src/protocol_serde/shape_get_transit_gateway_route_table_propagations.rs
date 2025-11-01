@@ -55,8 +55,7 @@ pub fn de_get_transit_gateway_route_table_propagations(
     let start_el = decoder.start_el();
     if !(start_el.matches("GetTransitGatewayRouteTablePropagationsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected GetTransitGatewayRouteTablePropagationsResponse got {:?}",
-            start_el
+            "invalid root, expected GetTransitGatewayRouteTablePropagationsResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

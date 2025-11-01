@@ -34,8 +34,7 @@ pub fn de_origin_request_policy(inp: &[u8]) -> std::result::Result<crate::types:
     let start_el = decoder.start_el();
     if !(start_el.matches("OriginRequestPolicy")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected OriginRequestPolicy got {:?}",
-            start_el
+            "invalid root, expected OriginRequestPolicy got {start_el:?}"
         )));
     }
     crate::protocol_serde::shape_origin_request_policy::de_origin_request_policy(&mut decoder)

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for JobType {
         match self {
             JobType::Profile => write!(f, "PROFILE"),
             JobType::Recipe => write!(f, "RECIPE"),
-            JobType::Unknown(value) => write!(f, "{}", value),
+            JobType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

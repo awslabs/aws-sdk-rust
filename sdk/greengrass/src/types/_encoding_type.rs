@@ -102,7 +102,7 @@ impl ::std::fmt::Display for EncodingType {
         match self {
             EncodingType::Binary => write!(f, "binary"),
             EncodingType::Json => write!(f, "json"),
-            EncodingType::Unknown(value) => write!(f, "{}", value),
+            EncodingType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

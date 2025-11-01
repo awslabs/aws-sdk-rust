@@ -114,7 +114,7 @@ impl ::std::fmt::Display for MessageFormatType {
             MessageFormatType::CustomPayload => write!(f, "CustomPayload"),
             MessageFormatType::PlainText => write!(f, "PlainText"),
             MessageFormatType::Ssml => write!(f, "SSML"),
-            MessageFormatType::Unknown(value) => write!(f, "{}", value),
+            MessageFormatType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

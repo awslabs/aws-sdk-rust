@@ -183,7 +183,7 @@ impl ::std::fmt::Display for CustomerMasterKeySpec {
             CustomerMasterKeySpec::Rsa4096 => write!(f, "RSA_4096"),
             CustomerMasterKeySpec::Sm2 => write!(f, "SM2"),
             CustomerMasterKeySpec::SymmetricDefault => write!(f, "SYMMETRIC_DEFAULT"),
-            CustomerMasterKeySpec::Unknown(value) => write!(f, "{}", value),
+            CustomerMasterKeySpec::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

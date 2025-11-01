@@ -96,7 +96,7 @@ impl ::std::fmt::Display for Reason {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             Reason::AwsThreatIntelligence => write!(f, "AWS_THREAT_INTELLIGENCE"),
-            Reason::Unknown(value) => write!(f, "{}", value),
+            Reason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

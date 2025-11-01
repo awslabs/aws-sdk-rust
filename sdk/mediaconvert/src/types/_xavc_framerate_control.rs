@@ -102,7 +102,7 @@ impl ::std::fmt::Display for XavcFramerateControl {
         match self {
             XavcFramerateControl::InitializeFromSource => write!(f, "INITIALIZE_FROM_SOURCE"),
             XavcFramerateControl::Specified => write!(f, "SPECIFIED"),
-            XavcFramerateControl::Unknown(value) => write!(f, "{}", value),
+            XavcFramerateControl::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

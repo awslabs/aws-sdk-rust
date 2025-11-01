@@ -224,7 +224,7 @@ impl ::std::fmt::Display for TransferCharacteristics {
             TransferCharacteristics::Smpte240M => write!(f, "SMPTE_240M"),
             TransferCharacteristics::Smpte4281 => write!(f, "SMPTE_428_1"),
             TransferCharacteristics::Unspecified => write!(f, "UNSPECIFIED"),
-            TransferCharacteristics::Unknown(value) => write!(f, "{}", value),
+            TransferCharacteristics::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

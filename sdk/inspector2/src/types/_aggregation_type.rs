@@ -175,7 +175,7 @@ impl ::std::fmt::Display for AggregationType {
             AggregationType::Package => write!(f, "PACKAGE"),
             AggregationType::Repository => write!(f, "REPOSITORY"),
             AggregationType::Title => write!(f, "TITLE"),
-            AggregationType::Unknown(value) => write!(f, "{}", value),
+            AggregationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

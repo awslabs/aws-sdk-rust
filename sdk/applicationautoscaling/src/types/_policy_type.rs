@@ -108,7 +108,7 @@ impl ::std::fmt::Display for PolicyType {
             PolicyType::PredictiveScaling => write!(f, "PredictiveScaling"),
             PolicyType::StepScaling => write!(f, "StepScaling"),
             PolicyType::TargetTrackingScaling => write!(f, "TargetTrackingScaling"),
-            PolicyType::Unknown(value) => write!(f, "{}", value),
+            PolicyType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

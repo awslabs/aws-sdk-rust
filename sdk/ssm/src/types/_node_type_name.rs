@@ -96,7 +96,7 @@ impl ::std::fmt::Display for NodeTypeName {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             NodeTypeName::Instance => write!(f, "Instance"),
-            NodeTypeName::Unknown(value) => write!(f, "{}", value),
+            NodeTypeName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

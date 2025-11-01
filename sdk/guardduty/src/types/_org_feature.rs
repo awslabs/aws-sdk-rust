@@ -140,7 +140,7 @@ impl ::std::fmt::Display for OrgFeature {
             OrgFeature::RdsLoginEvents => write!(f, "RDS_LOGIN_EVENTS"),
             OrgFeature::RuntimeMonitoring => write!(f, "RUNTIME_MONITORING"),
             OrgFeature::S3DataEvents => write!(f, "S3_DATA_EVENTS"),
-            OrgFeature::Unknown(value) => write!(f, "{}", value),
+            OrgFeature::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

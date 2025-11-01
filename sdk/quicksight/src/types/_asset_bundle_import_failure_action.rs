@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AssetBundleImportFailureAction {
         match self {
             AssetBundleImportFailureAction::DoNothing => write!(f, "DO_NOTHING"),
             AssetBundleImportFailureAction::Rollback => write!(f, "ROLLBACK"),
-            AssetBundleImportFailureAction::Unknown(value) => write!(f, "{}", value),
+            AssetBundleImportFailureAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

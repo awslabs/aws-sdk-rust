@@ -102,7 +102,7 @@ impl ::std::fmt::Display for EntitlementStatus {
         match self {
             EntitlementStatus::Disabled => write!(f, "DISABLED"),
             EntitlementStatus::Enabled => write!(f, "ENABLED"),
-            EntitlementStatus::Unknown(value) => write!(f, "{}", value),
+            EntitlementStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

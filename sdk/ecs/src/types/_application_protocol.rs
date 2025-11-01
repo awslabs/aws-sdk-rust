@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ApplicationProtocol {
             ApplicationProtocol::Grpc => write!(f, "grpc"),
             ApplicationProtocol::Http => write!(f, "http"),
             ApplicationProtocol::Http2 => write!(f, "http2"),
-            ApplicationProtocol::Unknown(value) => write!(f, "{}", value),
+            ApplicationProtocol::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

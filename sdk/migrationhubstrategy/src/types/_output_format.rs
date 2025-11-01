@@ -102,7 +102,7 @@ impl ::std::fmt::Display for OutputFormat {
         match self {
             OutputFormat::Excel => write!(f, "Excel"),
             OutputFormat::Json => write!(f, "Json"),
-            OutputFormat::Unknown(value) => write!(f, "{}", value),
+            OutputFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

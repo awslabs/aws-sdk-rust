@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MemoryRecordStatus {
         match self {
             MemoryRecordStatus::Failed => write!(f, "FAILED"),
             MemoryRecordStatus::Succeeded => write!(f, "SUCCEEDED"),
-            MemoryRecordStatus::Unknown(value) => write!(f, "{}", value),
+            MemoryRecordStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

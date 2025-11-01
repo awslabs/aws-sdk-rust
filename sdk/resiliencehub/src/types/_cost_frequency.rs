@@ -114,7 +114,7 @@ impl ::std::fmt::Display for CostFrequency {
             CostFrequency::Hourly => write!(f, "Hourly"),
             CostFrequency::Monthly => write!(f, "Monthly"),
             CostFrequency::Yearly => write!(f, "Yearly"),
-            CostFrequency::Unknown(value) => write!(f, "{}", value),
+            CostFrequency::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

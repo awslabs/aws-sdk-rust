@@ -140,7 +140,7 @@ impl ::std::fmt::Display for ClusterState {
             ClusterState::TerminatedWithErrors => write!(f, "TERMINATED_WITH_ERRORS"),
             ClusterState::Terminating => write!(f, "TERMINATING"),
             ClusterState::Waiting => write!(f, "WAITING"),
-            ClusterState::Unknown(value) => write!(f, "{}", value),
+            ClusterState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

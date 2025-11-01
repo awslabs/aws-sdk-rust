@@ -126,7 +126,7 @@ impl ::std::fmt::Display for RefreshInterval {
             RefreshInterval::Minute30 => write!(f, "MINUTE30"),
             RefreshInterval::Monthly => write!(f, "MONTHLY"),
             RefreshInterval::Weekly => write!(f, "WEEKLY"),
-            RefreshInterval::Unknown(value) => write!(f, "{}", value),
+            RefreshInterval::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

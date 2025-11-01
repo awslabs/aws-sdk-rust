@@ -120,7 +120,7 @@ impl ::std::fmt::Display for FastSnapshotRestoreStateCode {
             FastSnapshotRestoreStateCode::Enabled => write!(f, "enabled"),
             FastSnapshotRestoreStateCode::Enabling => write!(f, "enabling"),
             FastSnapshotRestoreStateCode::Optimizing => write!(f, "optimizing"),
-            FastSnapshotRestoreStateCode::Unknown(value) => write!(f, "{}", value),
+            FastSnapshotRestoreStateCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

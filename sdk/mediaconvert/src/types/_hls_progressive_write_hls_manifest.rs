@@ -102,7 +102,7 @@ impl ::std::fmt::Display for HlsProgressiveWriteHlsManifest {
         match self {
             HlsProgressiveWriteHlsManifest::Disabled => write!(f, "DISABLED"),
             HlsProgressiveWriteHlsManifest::Enabled => write!(f, "ENABLED"),
-            HlsProgressiveWriteHlsManifest::Unknown(value) => write!(f, "{}", value),
+            HlsProgressiveWriteHlsManifest::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

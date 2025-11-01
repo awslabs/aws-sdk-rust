@@ -140,7 +140,7 @@ impl ::std::fmt::Display for CapacityTaskStatus {
             CapacityTaskStatus::InProgress => write!(f, "IN_PROGRESS"),
             CapacityTaskStatus::Requested => write!(f, "REQUESTED"),
             CapacityTaskStatus::WaitingForEvacuation => write!(f, "WAITING_FOR_EVACUATION"),
-            CapacityTaskStatus::Unknown(value) => write!(f, "{}", value),
+            CapacityTaskStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

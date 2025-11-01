@@ -147,7 +147,7 @@ impl ::std::fmt::Display for AccountLimitName {
             AccountLimitName::RegistrationAttachments => write!(f, "REGISTRATION_ATTACHMENTS"),
             AccountLimitName::SenderIds => write!(f, "SENDER_IDS"),
             AccountLimitName::VerifiedDestinationNumbers => write!(f, "VERIFIED_DESTINATION_NUMBERS"),
-            AccountLimitName::Unknown(value) => write!(f, "{}", value),
+            AccountLimitName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CmfcAudioDuration {
         match self {
             CmfcAudioDuration::DefaultCodecDuration => write!(f, "DEFAULT_CODEC_DURATION"),
             CmfcAudioDuration::MatchVideoDuration => write!(f, "MATCH_VIDEO_DURATION"),
-            CmfcAudioDuration::Unknown(value) => write!(f, "{}", value),
+            CmfcAudioDuration::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

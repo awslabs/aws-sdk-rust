@@ -102,7 +102,7 @@ impl ::std::fmt::Display for OrderType {
         match self {
             OrderType::Outpost => write!(f, "OUTPOST"),
             OrderType::Replacement => write!(f, "REPLACEMENT"),
-            OrderType::Unknown(value) => write!(f, "{}", value),
+            OrderType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

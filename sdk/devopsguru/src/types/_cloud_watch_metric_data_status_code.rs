@@ -108,7 +108,7 @@ impl ::std::fmt::Display for CloudWatchMetricDataStatusCode {
             CloudWatchMetricDataStatusCode::Complete => write!(f, "Complete"),
             CloudWatchMetricDataStatusCode::InternalError => write!(f, "InternalError"),
             CloudWatchMetricDataStatusCode::PartialData => write!(f, "PartialData"),
-            CloudWatchMetricDataStatusCode::Unknown(value) => write!(f, "{}", value),
+            CloudWatchMetricDataStatusCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

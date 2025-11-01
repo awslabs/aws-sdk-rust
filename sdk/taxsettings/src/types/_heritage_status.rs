@@ -102,7 +102,7 @@ impl ::std::fmt::Display for HeritageStatus {
         match self {
             HeritageStatus::OptIn => write!(f, "OptIn"),
             HeritageStatus::OptOut => write!(f, "OptOut"),
-            HeritageStatus::Unknown(value) => write!(f, "{}", value),
+            HeritageStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

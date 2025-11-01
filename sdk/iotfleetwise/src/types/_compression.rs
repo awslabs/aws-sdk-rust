@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Compression {
         match self {
             Compression::Off => write!(f, "OFF"),
             Compression::Snappy => write!(f, "SNAPPY"),
-            Compression::Unknown(value) => write!(f, "{}", value),
+            Compression::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

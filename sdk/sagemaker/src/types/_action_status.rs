@@ -128,7 +128,7 @@ impl ::std::fmt::Display for ActionStatus {
             ActionStatus::Stopped => write!(f, "Stopped"),
             ActionStatus::Stopping => write!(f, "Stopping"),
             ActionStatus::UnknownValue => write!(f, "Unknown"),
-            ActionStatus::Unknown(value) => write!(f, "{}", value),
+            ActionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

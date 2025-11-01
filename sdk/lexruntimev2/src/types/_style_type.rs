@@ -108,7 +108,7 @@ impl ::std::fmt::Display for StyleType {
             StyleType::Default => write!(f, "Default"),
             StyleType::SpellByLetter => write!(f, "SpellByLetter"),
             StyleType::SpellByWord => write!(f, "SpellByWord"),
-            StyleType::Unknown(value) => write!(f, "{}", value),
+            StyleType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

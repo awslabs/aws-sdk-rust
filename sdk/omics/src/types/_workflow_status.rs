@@ -126,7 +126,7 @@ impl ::std::fmt::Display for WorkflowStatus {
             WorkflowStatus::Failed => write!(f, "FAILED"),
             WorkflowStatus::Inactive => write!(f, "INACTIVE"),
             WorkflowStatus::Updating => write!(f, "UPDATING"),
-            WorkflowStatus::Unknown(value) => write!(f, "{}", value),
+            WorkflowStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

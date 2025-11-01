@@ -122,7 +122,7 @@ impl ::std::fmt::Display for RuleResultStatus {
             RuleResultStatus::Passed => write!(f, "PASSED"),
             RuleResultStatus::UnknownValue => write!(f, "UNKNOWN"),
             RuleResultStatus::Warning => write!(f, "WARNING"),
-            RuleResultStatus::Unknown(value) => write!(f, "{}", value),
+            RuleResultStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

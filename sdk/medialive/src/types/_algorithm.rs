@@ -108,7 +108,7 @@ impl ::std::fmt::Display for Algorithm {
             Algorithm::Aes128 => write!(f, "AES128"),
             Algorithm::Aes192 => write!(f, "AES192"),
             Algorithm::Aes256 => write!(f, "AES256"),
-            Algorithm::Unknown(value) => write!(f, "{}", value),
+            Algorithm::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

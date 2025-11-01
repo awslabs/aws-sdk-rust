@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ArcThicknessOptions {
             ArcThicknessOptions::Large => write!(f, "LARGE"),
             ArcThicknessOptions::Medium => write!(f, "MEDIUM"),
             ArcThicknessOptions::Small => write!(f, "SMALL"),
-            ArcThicknessOptions::Unknown(value) => write!(f, "{}", value),
+            ArcThicknessOptions::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

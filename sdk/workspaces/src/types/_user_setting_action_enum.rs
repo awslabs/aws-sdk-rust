@@ -119,7 +119,7 @@ impl ::std::fmt::Display for UserSettingActionEnum {
             UserSettingActionEnum::ClipboardCopyToLocalDevice => write!(f, "CLIPBOARD_COPY_TO_LOCAL_DEVICE"),
             UserSettingActionEnum::PrintingToLocalDevice => write!(f, "PRINTING_TO_LOCAL_DEVICE"),
             UserSettingActionEnum::SmartCard => write!(f, "SMART_CARD"),
-            UserSettingActionEnum::Unknown(value) => write!(f, "{}", value),
+            UserSettingActionEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

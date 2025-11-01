@@ -102,7 +102,7 @@ impl ::std::fmt::Display for BehaviorType {
         match self {
             BehaviorType::RouteAnyChannel => write!(f, "ROUTE_ANY_CHANNEL"),
             BehaviorType::RouteCurrentChannelOnly => write!(f, "ROUTE_CURRENT_CHANNEL_ONLY"),
-            BehaviorType::Unknown(value) => write!(f, "{}", value),
+            BehaviorType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

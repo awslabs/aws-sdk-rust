@@ -102,7 +102,7 @@ impl ::std::fmt::Display for BudgetStatus {
         match self {
             BudgetStatus::Active => write!(f, "ACTIVE"),
             BudgetStatus::Inactive => write!(f, "INACTIVE"),
-            BudgetStatus::Unknown(value) => write!(f, "{}", value),
+            BudgetStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

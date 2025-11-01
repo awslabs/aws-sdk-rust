@@ -120,7 +120,7 @@ impl ::std::fmt::Display for BatchDeleteConfigurationTaskStatus {
             BatchDeleteConfigurationTaskStatus::Failed => write!(f, "FAILED"),
             BatchDeleteConfigurationTaskStatus::Initializing => write!(f, "INITIALIZING"),
             BatchDeleteConfigurationTaskStatus::Validating => write!(f, "VALIDATING"),
-            BatchDeleteConfigurationTaskStatus::Unknown(value) => write!(f, "{}", value),
+            BatchDeleteConfigurationTaskStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

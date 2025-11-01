@@ -140,7 +140,7 @@ impl ::std::fmt::Display for RouteFerryNoticeCode {
             RouteFerryNoticeCode::SeasonalClosure => write!(f, "SeasonalClosure"),
             RouteFerryNoticeCode::ViolatedAvoidFerry => write!(f, "ViolatedAvoidFerry"),
             RouteFerryNoticeCode::ViolatedAvoidRailFerry => write!(f, "ViolatedAvoidRailFerry"),
-            RouteFerryNoticeCode::Unknown(value) => write!(f, "{}", value),
+            RouteFerryNoticeCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

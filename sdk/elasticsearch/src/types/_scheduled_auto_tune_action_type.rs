@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ScheduledAutoTuneActionType {
         match self {
             ScheduledAutoTuneActionType::JvmHeapSizeTuning => write!(f, "JVM_HEAP_SIZE_TUNING"),
             ScheduledAutoTuneActionType::JvmYoungGenTuning => write!(f, "JVM_YOUNG_GEN_TUNING"),
-            ScheduledAutoTuneActionType::Unknown(value) => write!(f, "{}", value),
+            ScheduledAutoTuneActionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

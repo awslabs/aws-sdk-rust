@@ -114,7 +114,7 @@ impl ::std::fmt::Display for AppRequiredCapability {
             AppRequiredCapability::FileUpload => write!(f, "FileUpload"),
             AppRequiredCapability::PluginMode => write!(f, "PluginMode"),
             AppRequiredCapability::RetrievalMode => write!(f, "RetrievalMode"),
-            AppRequiredCapability::Unknown(value) => write!(f, "{}", value),
+            AppRequiredCapability::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

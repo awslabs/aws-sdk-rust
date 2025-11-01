@@ -175,7 +175,7 @@ impl ::std::fmt::Display for MetricName {
             MetricName::PercentIdleInstances => write!(f, "PercentIdleInstances"),
             MetricName::QueueDepth => write!(f, "QueueDepth"),
             MetricName::WaitTime => write!(f, "WaitTime"),
-            MetricName::Unknown(value) => write!(f, "{}", value),
+            MetricName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

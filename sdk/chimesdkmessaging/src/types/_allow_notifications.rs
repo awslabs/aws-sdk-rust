@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AllowNotifications {
             AllowNotifications::All => write!(f, "ALL"),
             AllowNotifications::Filtered => write!(f, "FILTERED"),
             AllowNotifications::None => write!(f, "NONE"),
-            AllowNotifications::Unknown(value) => write!(f, "{}", value),
+            AllowNotifications::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TrafficType {
         match self {
             TrafficType::Campaign => write!(f, "CAMPAIGN"),
             TrafficType::General => write!(f, "GENERAL"),
-            TrafficType::Unknown(value) => write!(f, "{}", value),
+            TrafficType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RebootMigrationSupport {
         match self {
             RebootMigrationSupport::Supported => write!(f, "supported"),
             RebootMigrationSupport::Unsupported => write!(f, "unsupported"),
-            RebootMigrationSupport::Unknown(value) => write!(f, "{}", value),
+            RebootMigrationSupport::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

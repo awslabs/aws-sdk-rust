@@ -108,7 +108,7 @@ impl ::std::fmt::Display for SupportedSavingsPlansType {
             SupportedSavingsPlansType::ComputeSp => write!(f, "COMPUTE_SP"),
             SupportedSavingsPlansType::Ec2InstanceSp => write!(f, "EC2_INSTANCE_SP"),
             SupportedSavingsPlansType::SagemakerSp => write!(f, "SAGEMAKER_SP"),
-            SupportedSavingsPlansType::Unknown(value) => write!(f, "{}", value),
+            SupportedSavingsPlansType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

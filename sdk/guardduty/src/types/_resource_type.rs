@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ResourceType {
             ResourceType::Ec2 => write!(f, "EC2"),
             ResourceType::Ecs => write!(f, "ECS"),
             ResourceType::Eks => write!(f, "EKS"),
-            ResourceType::Unknown(value) => write!(f, "{}", value),
+            ResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ListNotificationRulesFilterName {
             ListNotificationRulesFilterName::EventTypeId => write!(f, "EVENT_TYPE_ID"),
             ListNotificationRulesFilterName::Resource => write!(f, "RESOURCE"),
             ListNotificationRulesFilterName::TargetAddress => write!(f, "TARGET_ADDRESS"),
-            ListNotificationRulesFilterName::Unknown(value) => write!(f, "{}", value),
+            ListNotificationRulesFilterName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -17,8 +17,7 @@ pub fn de_cache_policy_list(inp: &[u8]) -> std::result::Result<crate::types::Cac
     let start_el = decoder.start_el();
     if !(start_el.matches("CachePolicyList")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected CachePolicyList got {:?}",
-            start_el
+            "invalid root, expected CachePolicyList got {start_el:?}"
         )));
     }
     crate::protocol_serde::shape_cache_policy_list::de_cache_policy_list(&mut decoder)

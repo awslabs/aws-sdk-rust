@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AutoScalingMode {
         match self {
             AutoScalingMode::EventBasedAutoScaling => write!(f, "EVENT_BASED_AUTO_SCALING"),
             AutoScalingMode::NoScaling => write!(f, "NO_SCALING"),
-            AutoScalingMode::Unknown(value) => write!(f, "{}", value),
+            AutoScalingMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

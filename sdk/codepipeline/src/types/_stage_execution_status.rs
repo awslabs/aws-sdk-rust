@@ -132,7 +132,7 @@ impl ::std::fmt::Display for StageExecutionStatus {
             StageExecutionStatus::Stopped => write!(f, "Stopped"),
             StageExecutionStatus::Stopping => write!(f, "Stopping"),
             StageExecutionStatus::Succeeded => write!(f, "Succeeded"),
-            StageExecutionStatus::Unknown(value) => write!(f, "{}", value),
+            StageExecutionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

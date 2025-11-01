@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ContinuousIntegrationScanEvent {
         match self {
             ContinuousIntegrationScanEvent::PullRequest => write!(f, "PULL_REQUEST"),
             ContinuousIntegrationScanEvent::Push => write!(f, "PUSH"),
-            ContinuousIntegrationScanEvent::Unknown(value) => write!(f, "{}", value),
+            ContinuousIntegrationScanEvent::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -161,7 +161,7 @@ impl ::std::fmt::Display for ModelInvocationJobStatus {
             ModelInvocationJobStatus::Stopping => write!(f, "Stopping"),
             ModelInvocationJobStatus::Submitted => write!(f, "Submitted"),
             ModelInvocationJobStatus::Validating => write!(f, "Validating"),
-            ModelInvocationJobStatus::Unknown(value) => write!(f, "{}", value),
+            ModelInvocationJobStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -210,7 +210,7 @@ impl ::std::fmt::Display for SampleType {
             SampleType::Threads => write!(f, "THREADS"),
             SampleType::Tx => write!(f, "TX"),
             SampleType::TxRate => write!(f, "TX_RATE"),
-            SampleType::Unknown(value) => write!(f, "{}", value),
+            SampleType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

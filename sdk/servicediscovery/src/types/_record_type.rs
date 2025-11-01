@@ -114,7 +114,7 @@ impl ::std::fmt::Display for RecordType {
             RecordType::Aaaa => write!(f, "AAAA"),
             RecordType::Cname => write!(f, "CNAME"),
             RecordType::Srv => write!(f, "SRV"),
-            RecordType::Unknown(value) => write!(f, "{}", value),
+            RecordType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

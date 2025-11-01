@@ -108,7 +108,7 @@ impl ::std::fmt::Display for PolicyTypeStatus {
             PolicyTypeStatus::Enabled => write!(f, "ENABLED"),
             PolicyTypeStatus::PendingDisable => write!(f, "PENDING_DISABLE"),
             PolicyTypeStatus::PendingEnable => write!(f, "PENDING_ENABLE"),
-            PolicyTypeStatus::Unknown(value) => write!(f, "{}", value),
+            PolicyTypeStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for Platform {
             Platform::Apns => write!(f, "APNS"),
             Platform::ApnsSandbox => write!(f, "APNS_SANDBOX"),
             Platform::Gcm => write!(f, "GCM"),
-            Platform::Unknown(value) => write!(f, "{}", value),
+            Platform::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

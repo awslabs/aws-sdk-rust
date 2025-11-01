@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TestExecutionModality {
         match self {
             TestExecutionModality::Audio => write!(f, "Audio"),
             TestExecutionModality::Text => write!(f, "Text"),
-            TestExecutionModality::Unknown(value) => write!(f, "{}", value),
+            TestExecutionModality::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

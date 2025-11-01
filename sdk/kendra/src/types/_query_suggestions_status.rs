@@ -102,7 +102,7 @@ impl ::std::fmt::Display for QuerySuggestionsStatus {
         match self {
             QuerySuggestionsStatus::Active => write!(f, "ACTIVE"),
             QuerySuggestionsStatus::Updating => write!(f, "UPDATING"),
-            QuerySuggestionsStatus::Unknown(value) => write!(f, "{}", value),
+            QuerySuggestionsStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -120,7 +120,7 @@ impl ::std::fmt::Display for ImplementationEffort {
             ImplementationEffort::Medium => write!(f, "Medium"),
             ImplementationEffort::VeryHigh => write!(f, "VeryHigh"),
             ImplementationEffort::VeryLow => write!(f, "VeryLow"),
-            ImplementationEffort::Unknown(value) => write!(f, "{}", value),
+            ImplementationEffort::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

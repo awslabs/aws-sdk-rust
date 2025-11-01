@@ -108,7 +108,7 @@ impl ::std::fmt::Display for TaskDefinitionStatus {
             TaskDefinitionStatus::Active => write!(f, "ACTIVE"),
             TaskDefinitionStatus::DeleteInProgress => write!(f, "DELETE_IN_PROGRESS"),
             TaskDefinitionStatus::Inactive => write!(f, "INACTIVE"),
-            TaskDefinitionStatus::Unknown(value) => write!(f, "{}", value),
+            TaskDefinitionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

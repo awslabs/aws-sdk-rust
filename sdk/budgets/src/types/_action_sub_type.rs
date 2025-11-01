@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ActionSubType {
         match self {
             ActionSubType::StopEc2 => write!(f, "STOP_EC2_INSTANCES"),
             ActionSubType::StopRds => write!(f, "STOP_RDS_INSTANCES"),
-            ActionSubType::Unknown(value) => write!(f, "{}", value),
+            ActionSubType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

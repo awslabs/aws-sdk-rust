@@ -96,7 +96,7 @@ impl ::std::fmt::Display for BotVersionReplicaSortAttribute {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             BotVersionReplicaSortAttribute::BotVersion => write!(f, "BotVersion"),
-            BotVersionReplicaSortAttribute::Unknown(value) => write!(f, "{}", value),
+            BotVersionReplicaSortAttribute::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

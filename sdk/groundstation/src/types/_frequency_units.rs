@@ -108,7 +108,7 @@ impl ::std::fmt::Display for FrequencyUnits {
             FrequencyUnits::Ghz => write!(f, "GHz"),
             FrequencyUnits::Mhz => write!(f, "MHz"),
             FrequencyUnits::Khz => write!(f, "kHz"),
-            FrequencyUnits::Unknown(value) => write!(f, "{}", value),
+            FrequencyUnits::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

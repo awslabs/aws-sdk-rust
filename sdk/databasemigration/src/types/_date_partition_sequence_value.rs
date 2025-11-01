@@ -120,7 +120,7 @@ impl ::std::fmt::Display for DatePartitionSequenceValue {
             DatePartitionSequenceValue::Yyyymm => write!(f, "YYYYMM"),
             DatePartitionSequenceValue::Yyyymmdd => write!(f, "YYYYMMDD"),
             DatePartitionSequenceValue::Yyyymmddhh => write!(f, "YYYYMMDDHH"),
-            DatePartitionSequenceValue::Unknown(value) => write!(f, "{}", value),
+            DatePartitionSequenceValue::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

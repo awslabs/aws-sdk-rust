@@ -102,7 +102,7 @@ impl ::std::fmt::Display for HyperParameterTuningJobWarmStartType {
         match self {
             HyperParameterTuningJobWarmStartType::IdenticalDataAndAlgorithm => write!(f, "IdenticalDataAndAlgorithm"),
             HyperParameterTuningJobWarmStartType::TransferLearning => write!(f, "TransferLearning"),
-            HyperParameterTuningJobWarmStartType::Unknown(value) => write!(f, "{}", value),
+            HyperParameterTuningJobWarmStartType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

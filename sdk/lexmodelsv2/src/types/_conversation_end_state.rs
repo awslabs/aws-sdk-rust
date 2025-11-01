@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ConversationEndState {
             ConversationEndState::Dropped => write!(f, "Dropped"),
             ConversationEndState::Failure => write!(f, "Failure"),
             ConversationEndState::Success => write!(f, "Success"),
-            ConversationEndState::Unknown(value) => write!(f, "{}", value),
+            ConversationEndState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

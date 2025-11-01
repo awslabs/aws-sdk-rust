@@ -132,7 +132,7 @@ impl ::std::fmt::Display for MatchFieldType {
             MatchFieldType::QueryString => write!(f, "QUERY_STRING"),
             MatchFieldType::SingleQueryArg => write!(f, "SINGLE_QUERY_ARG"),
             MatchFieldType::Uri => write!(f, "URI"),
-            MatchFieldType::Unknown(value) => write!(f, "{}", value),
+            MatchFieldType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

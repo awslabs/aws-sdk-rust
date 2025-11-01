@@ -102,7 +102,7 @@ impl ::std::fmt::Display for QueryExecutionMode {
         match self {
             QueryExecutionMode::Auto => write!(f, "AUTO"),
             QueryExecutionMode::Manual => write!(f, "MANUAL"),
-            QueryExecutionMode::Unknown(value) => write!(f, "{}", value),
+            QueryExecutionMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

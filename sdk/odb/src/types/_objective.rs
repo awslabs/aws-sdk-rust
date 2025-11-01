@@ -120,7 +120,7 @@ impl ::std::fmt::Display for Objective {
             Objective::Basic => write!(f, "BASIC"),
             Objective::HighThroughput => write!(f, "HIGH_THROUGHPUT"),
             Objective::LowLatency => write!(f, "LOW_LATENCY"),
-            Objective::Unknown(value) => write!(f, "{}", value),
+            Objective::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

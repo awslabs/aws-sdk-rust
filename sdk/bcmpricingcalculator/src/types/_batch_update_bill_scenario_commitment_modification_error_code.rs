@@ -116,7 +116,7 @@ impl ::std::fmt::Display for BatchUpdateBillScenarioCommitmentModificationErrorC
             BatchUpdateBillScenarioCommitmentModificationErrorCode::Conflict => write!(f, "CONFLICT"),
             BatchUpdateBillScenarioCommitmentModificationErrorCode::InternalServerError => write!(f, "INTERNAL_SERVER_ERROR"),
             BatchUpdateBillScenarioCommitmentModificationErrorCode::NotFound => write!(f, "NOT_FOUND"),
-            BatchUpdateBillScenarioCommitmentModificationErrorCode::Unknown(value) => write!(f, "{}", value),
+            BatchUpdateBillScenarioCommitmentModificationErrorCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

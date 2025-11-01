@@ -266,7 +266,7 @@ impl ::std::fmt::Display for CredentialProviderVendorType {
             CredentialProviderVendorType::XOauth2 => write!(f, "XOauth2"),
             CredentialProviderVendorType::YandexOauth2 => write!(f, "YandexOauth2"),
             CredentialProviderVendorType::ZoomOauth2 => write!(f, "ZoomOauth2"),
-            CredentialProviderVendorType::Unknown(value) => write!(f, "{}", value),
+            CredentialProviderVendorType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

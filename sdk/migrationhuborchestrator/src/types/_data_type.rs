@@ -114,7 +114,7 @@ impl ::std::fmt::Display for DataType {
             DataType::String => write!(f, "STRING"),
             DataType::Stringlist => write!(f, "STRINGLIST"),
             DataType::Stringmap => write!(f, "STRINGMAP"),
-            DataType::Unknown(value) => write!(f, "{}", value),
+            DataType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

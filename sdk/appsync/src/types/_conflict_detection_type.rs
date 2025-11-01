@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ConflictDetectionType {
         match self {
             ConflictDetectionType::None => write!(f, "NONE"),
             ConflictDetectionType::Version => write!(f, "VERSION"),
-            ConflictDetectionType::Unknown(value) => write!(f, "{}", value),
+            ConflictDetectionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

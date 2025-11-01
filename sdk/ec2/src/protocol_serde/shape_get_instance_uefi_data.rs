@@ -49,8 +49,7 @@ pub fn de_get_instance_uefi_data(
     let start_el = decoder.start_el();
     if !(start_el.matches("GetInstanceUefiDataResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected GetInstanceUefiDataResponse got {:?}",
-            start_el
+            "invalid root, expected GetInstanceUefiDataResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

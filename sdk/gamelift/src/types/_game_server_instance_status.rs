@@ -108,7 +108,7 @@ impl ::std::fmt::Display for GameServerInstanceStatus {
             GameServerInstanceStatus::Active => write!(f, "ACTIVE"),
             GameServerInstanceStatus::Draining => write!(f, "DRAINING"),
             GameServerInstanceStatus::SpotTerminating => write!(f, "SPOT_TERMINATING"),
-            GameServerInstanceStatus::Unknown(value) => write!(f, "{}", value),
+            GameServerInstanceStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

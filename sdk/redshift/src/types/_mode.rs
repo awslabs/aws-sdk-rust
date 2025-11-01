@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Mode {
         match self {
             Mode::HighPerformance => write!(f, "high-performance"),
             Mode::Standard => write!(f, "standard"),
-            Mode::Unknown(value) => write!(f, "{}", value),
+            Mode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

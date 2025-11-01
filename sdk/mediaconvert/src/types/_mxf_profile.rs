@@ -120,7 +120,7 @@ impl ::std::fmt::Display for MxfProfile {
             MxfProfile::Xavc => write!(f, "XAVC"),
             MxfProfile::Xdcam => write!(f, "XDCAM"),
             MxfProfile::XdcamRdd9 => write!(f, "XDCAM_RDD9"),
-            MxfProfile::Unknown(value) => write!(f, "{}", value),
+            MxfProfile::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

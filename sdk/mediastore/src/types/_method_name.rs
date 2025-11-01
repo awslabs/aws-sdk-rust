@@ -114,7 +114,7 @@ impl ::std::fmt::Display for MethodName {
             MethodName::Get => write!(f, "GET"),
             MethodName::Head => write!(f, "HEAD"),
             MethodName::Put => write!(f, "PUT"),
-            MethodName::Unknown(value) => write!(f, "{}", value),
+            MethodName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

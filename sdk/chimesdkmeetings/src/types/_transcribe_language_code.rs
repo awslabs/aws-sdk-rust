@@ -176,7 +176,7 @@ impl ::std::fmt::Display for TranscribeLanguageCode {
             TranscribeLanguageCode::PtBr => write!(f, "pt-BR"),
             TranscribeLanguageCode::ThTh => write!(f, "th-TH"),
             TranscribeLanguageCode::ZhCn => write!(f, "zh-CN"),
-            TranscribeLanguageCode::Unknown(value) => write!(f, "{}", value),
+            TranscribeLanguageCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

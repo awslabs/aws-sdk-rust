@@ -108,7 +108,7 @@ impl ::std::fmt::Display for PullRequestBuildCommentApproval {
             PullRequestBuildCommentApproval::AllPullRequests => write!(f, "ALL_PULL_REQUESTS"),
             PullRequestBuildCommentApproval::Disabled => write!(f, "DISABLED"),
             PullRequestBuildCommentApproval::ForkPullRequests => write!(f, "FORK_PULL_REQUESTS"),
-            PullRequestBuildCommentApproval::Unknown(value) => write!(f, "{}", value),
+            PullRequestBuildCommentApproval::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

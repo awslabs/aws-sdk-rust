@@ -13,6 +13,12 @@ pub struct VpcEncryptionControlExclusions {
     pub virtual_private_gateway: ::std::option::Option<crate::types::VpcEncryptionControlExclusion>,
     #[allow(missing_docs)] // documentation missing in model
     pub vpc_peering: ::std::option::Option<crate::types::VpcEncryptionControlExclusion>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub lambda: ::std::option::Option<crate::types::VpcEncryptionControlExclusion>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub vpc_lattice: ::std::option::Option<crate::types::VpcEncryptionControlExclusion>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub elastic_file_system: ::std::option::Option<crate::types::VpcEncryptionControlExclusion>,
 }
 impl VpcEncryptionControlExclusions {
     #[allow(missing_docs)] // documentation missing in model
@@ -35,6 +41,18 @@ impl VpcEncryptionControlExclusions {
     pub fn vpc_peering(&self) -> ::std::option::Option<&crate::types::VpcEncryptionControlExclusion> {
         self.vpc_peering.as_ref()
     }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn lambda(&self) -> ::std::option::Option<&crate::types::VpcEncryptionControlExclusion> {
+        self.lambda.as_ref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn vpc_lattice(&self) -> ::std::option::Option<&crate::types::VpcEncryptionControlExclusion> {
+        self.vpc_lattice.as_ref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn elastic_file_system(&self) -> ::std::option::Option<&crate::types::VpcEncryptionControlExclusion> {
+        self.elastic_file_system.as_ref()
+    }
 }
 impl VpcEncryptionControlExclusions {
     /// Creates a new builder-style object to manufacture [`VpcEncryptionControlExclusions`](crate::types::VpcEncryptionControlExclusions).
@@ -52,6 +70,9 @@ pub struct VpcEncryptionControlExclusionsBuilder {
     pub(crate) nat_gateway: ::std::option::Option<crate::types::VpcEncryptionControlExclusion>,
     pub(crate) virtual_private_gateway: ::std::option::Option<crate::types::VpcEncryptionControlExclusion>,
     pub(crate) vpc_peering: ::std::option::Option<crate::types::VpcEncryptionControlExclusion>,
+    pub(crate) lambda: ::std::option::Option<crate::types::VpcEncryptionControlExclusion>,
+    pub(crate) vpc_lattice: ::std::option::Option<crate::types::VpcEncryptionControlExclusion>,
+    pub(crate) elastic_file_system: ::std::option::Option<crate::types::VpcEncryptionControlExclusion>,
 }
 impl VpcEncryptionControlExclusionsBuilder {
     #[allow(missing_docs)] // documentation missing in model
@@ -124,6 +145,48 @@ impl VpcEncryptionControlExclusionsBuilder {
     pub fn get_vpc_peering(&self) -> &::std::option::Option<crate::types::VpcEncryptionControlExclusion> {
         &self.vpc_peering
     }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn lambda(mut self, input: crate::types::VpcEncryptionControlExclusion) -> Self {
+        self.lambda = ::std::option::Option::Some(input);
+        self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn set_lambda(mut self, input: ::std::option::Option<crate::types::VpcEncryptionControlExclusion>) -> Self {
+        self.lambda = input;
+        self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_lambda(&self) -> &::std::option::Option<crate::types::VpcEncryptionControlExclusion> {
+        &self.lambda
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn vpc_lattice(mut self, input: crate::types::VpcEncryptionControlExclusion) -> Self {
+        self.vpc_lattice = ::std::option::Option::Some(input);
+        self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn set_vpc_lattice(mut self, input: ::std::option::Option<crate::types::VpcEncryptionControlExclusion>) -> Self {
+        self.vpc_lattice = input;
+        self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_vpc_lattice(&self) -> &::std::option::Option<crate::types::VpcEncryptionControlExclusion> {
+        &self.vpc_lattice
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn elastic_file_system(mut self, input: crate::types::VpcEncryptionControlExclusion) -> Self {
+        self.elastic_file_system = ::std::option::Option::Some(input);
+        self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn set_elastic_file_system(mut self, input: ::std::option::Option<crate::types::VpcEncryptionControlExclusion>) -> Self {
+        self.elastic_file_system = input;
+        self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_elastic_file_system(&self) -> &::std::option::Option<crate::types::VpcEncryptionControlExclusion> {
+        &self.elastic_file_system
+    }
     /// Consumes the builder and constructs a [`VpcEncryptionControlExclusions`](crate::types::VpcEncryptionControlExclusions).
     pub fn build(self) -> crate::types::VpcEncryptionControlExclusions {
         crate::types::VpcEncryptionControlExclusions {
@@ -132,6 +195,9 @@ impl VpcEncryptionControlExclusionsBuilder {
             nat_gateway: self.nat_gateway,
             virtual_private_gateway: self.virtual_private_gateway,
             vpc_peering: self.vpc_peering,
+            lambda: self.lambda,
+            vpc_lattice: self.vpc_lattice,
+            elastic_file_system: self.elastic_file_system,
         }
     }
 }

@@ -120,7 +120,7 @@ impl ::std::fmt::Display for MessageType {
             MessageType::CustomCommandIdNotify => write!(f, "CUSTOM_COMMAND_ID_NOTIFY"),
             MessageType::CustomCommandIdResp => write!(f, "CUSTOM_COMMAND_ID_RESP"),
             MessageType::CustomCommandIdSet => write!(f, "CUSTOM_COMMAND_ID_SET"),
-            MessageType::Unknown(value) => write!(f, "{}", value),
+            MessageType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

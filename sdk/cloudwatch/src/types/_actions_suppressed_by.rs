@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ActionsSuppressedBy {
             ActionsSuppressedBy::Alarm => write!(f, "Alarm"),
             ActionsSuppressedBy::ExtensionPeriod => write!(f, "ExtensionPeriod"),
             ActionsSuppressedBy::WaitPeriod => write!(f, "WaitPeriod"),
-            ActionsSuppressedBy::Unknown(value) => write!(f, "{}", value),
+            ActionsSuppressedBy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for VideoColorRange {
         match self {
             VideoColorRange::Full => write!(f, "FULL"),
             VideoColorRange::Limited => write!(f, "LIMITED"),
-            VideoColorRange::Unknown(value) => write!(f, "{}", value),
+            VideoColorRange::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

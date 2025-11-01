@@ -58,8 +58,7 @@ pub fn de_disable_aws_network_performance_metric_subscription(
     let start_el = decoder.start_el();
     if !(start_el.matches("DisableAwsNetworkPerformanceMetricSubscriptionResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected DisableAwsNetworkPerformanceMetricSubscriptionResponse got {:?}",
-            start_el
+            "invalid root, expected DisableAwsNetworkPerformanceMetricSubscriptionResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

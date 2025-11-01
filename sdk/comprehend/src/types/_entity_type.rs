@@ -154,7 +154,7 @@ impl ::std::fmt::Display for EntityType {
             EntityType::Person => write!(f, "PERSON"),
             EntityType::Quantity => write!(f, "QUANTITY"),
             EntityType::Title => write!(f, "TITLE"),
-            EntityType::Unknown(value) => write!(f, "{}", value),
+            EntityType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

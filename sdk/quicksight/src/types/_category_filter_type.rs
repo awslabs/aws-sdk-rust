@@ -108,7 +108,7 @@ impl ::std::fmt::Display for CategoryFilterType {
             CategoryFilterType::CustomFilter => write!(f, "CUSTOM_FILTER"),
             CategoryFilterType::CustomFilterList => write!(f, "CUSTOM_FILTER_LIST"),
             CategoryFilterType::FilterList => write!(f, "FILTER_LIST"),
-            CategoryFilterType::Unknown(value) => write!(f, "{}", value),
+            CategoryFilterType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -120,7 +120,7 @@ impl ::std::fmt::Display for EventType {
             EventType::ResendCode => write!(f, "ResendCode"),
             EventType::SignIn => write!(f, "SignIn"),
             EventType::SignUp => write!(f, "SignUp"),
-            EventType::Unknown(value) => write!(f, "{}", value),
+            EventType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

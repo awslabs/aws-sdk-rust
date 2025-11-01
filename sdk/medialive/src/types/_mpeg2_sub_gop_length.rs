@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Mpeg2SubGopLength {
         match self {
             Mpeg2SubGopLength::Dynamic => write!(f, "DYNAMIC"),
             Mpeg2SubGopLength::Fixed => write!(f, "FIXED"),
-            Mpeg2SubGopLength::Unknown(value) => write!(f, "{}", value),
+            Mpeg2SubGopLength::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

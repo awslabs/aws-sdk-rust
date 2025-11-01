@@ -133,7 +133,7 @@ impl ::std::fmt::Display for FailureType {
             FailureType::RevisionOutOfSync => write!(f, "RevisionOutOfSync"),
             FailureType::RevisionUnavailable => write!(f, "RevisionUnavailable"),
             FailureType::SystemUnavailable => write!(f, "SystemUnavailable"),
-            FailureType::Unknown(value) => write!(f, "{}", value),
+            FailureType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

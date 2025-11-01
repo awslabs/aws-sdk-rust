@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SortByEnum {
         match self {
             SortByEnum::ModifiedDate => write!(f, "lastModifiedDate"),
             SortByEnum::RepositoryName => write!(f, "repositoryName"),
-            SortByEnum::Unknown(value) => write!(f, "{}", value),
+            SortByEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

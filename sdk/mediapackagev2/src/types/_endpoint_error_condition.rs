@@ -114,7 +114,7 @@ impl ::std::fmt::Display for EndpointErrorCondition {
             EndpointErrorCondition::MissingDrmKey => write!(f, "MISSING_DRM_KEY"),
             EndpointErrorCondition::SlateInput => write!(f, "SLATE_INPUT"),
             EndpointErrorCondition::StaleManifest => write!(f, "STALE_MANIFEST"),
-            EndpointErrorCondition::Unknown(value) => write!(f, "{}", value),
+            EndpointErrorCondition::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for RuntimeEnvironmentType {
             RuntimeEnvironmentType::Proton => write!(f, "PROTON"),
             RuntimeEnvironmentType::Ubuntu => write!(f, "UBUNTU"),
             RuntimeEnvironmentType::Windows => write!(f, "WINDOWS"),
-            RuntimeEnvironmentType::Unknown(value) => write!(f, "{}", value),
+            RuntimeEnvironmentType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

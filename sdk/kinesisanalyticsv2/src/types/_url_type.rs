@@ -102,7 +102,7 @@ impl ::std::fmt::Display for UrlType {
         match self {
             UrlType::FlinkDashboardUrl => write!(f, "FLINK_DASHBOARD_URL"),
             UrlType::ZeppelinUiUrl => write!(f, "ZEPPELIN_UI_URL"),
-            UrlType::Unknown(value) => write!(f, "{}", value),
+            UrlType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

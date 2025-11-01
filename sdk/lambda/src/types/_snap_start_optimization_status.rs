@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SnapStartOptimizationStatus {
         match self {
             SnapStartOptimizationStatus::Off => write!(f, "Off"),
             SnapStartOptimizationStatus::On => write!(f, "On"),
-            SnapStartOptimizationStatus::Unknown(value) => write!(f, "{}", value),
+            SnapStartOptimizationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for IamIdentityCenterUserAttribute {
             IamIdentityCenterUserAttribute::Email => write!(f, "Email"),
             IamIdentityCenterUserAttribute::UserId => write!(f, "UserId"),
             IamIdentityCenterUserAttribute::UserName => write!(f, "UserName"),
-            IamIdentityCenterUserAttribute::Unknown(value) => write!(f, "{}", value),
+            IamIdentityCenterUserAttribute::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

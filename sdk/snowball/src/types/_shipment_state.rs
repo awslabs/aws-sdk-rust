@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ShipmentState {
         match self {
             ShipmentState::Received => write!(f, "RECEIVED"),
             ShipmentState::Returned => write!(f, "RETURNED"),
-            ShipmentState::Unknown(value) => write!(f, "{}", value),
+            ShipmentState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

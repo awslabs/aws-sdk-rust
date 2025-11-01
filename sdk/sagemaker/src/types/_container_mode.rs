@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ContainerMode {
         match self {
             ContainerMode::MultiModel => write!(f, "MultiModel"),
             ContainerMode::SingleModel => write!(f, "SingleModel"),
-            ContainerMode::Unknown(value) => write!(f, "{}", value),
+            ContainerMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

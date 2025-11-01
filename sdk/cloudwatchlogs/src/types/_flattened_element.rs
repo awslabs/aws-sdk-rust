@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FlattenedElement {
         match self {
             FlattenedElement::First => write!(f, "first"),
             FlattenedElement::Last => write!(f, "last"),
-            FlattenedElement::Unknown(value) => write!(f, "{}", value),
+            FlattenedElement::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

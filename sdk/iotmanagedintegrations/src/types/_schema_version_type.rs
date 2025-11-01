@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SchemaVersionType {
         match self {
             SchemaVersionType::Capability => write!(f, "capability"),
             SchemaVersionType::Definition => write!(f, "definition"),
-            SchemaVersionType::Unknown(value) => write!(f, "{}", value),
+            SchemaVersionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

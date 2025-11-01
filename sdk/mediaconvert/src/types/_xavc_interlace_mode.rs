@@ -120,7 +120,7 @@ impl ::std::fmt::Display for XavcInterlaceMode {
             XavcInterlaceMode::FollowTopField => write!(f, "FOLLOW_TOP_FIELD"),
             XavcInterlaceMode::Progressive => write!(f, "PROGRESSIVE"),
             XavcInterlaceMode::TopField => write!(f, "TOP_FIELD"),
-            XavcInterlaceMode::Unknown(value) => write!(f, "{}", value),
+            XavcInterlaceMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

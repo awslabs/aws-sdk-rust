@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MovCslgAtom {
         match self {
             MovCslgAtom::Exclude => write!(f, "EXCLUDE"),
             MovCslgAtom::Include => write!(f, "INCLUDE"),
-            MovCslgAtom::Unknown(value) => write!(f, "{}", value),
+            MovCslgAtom::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

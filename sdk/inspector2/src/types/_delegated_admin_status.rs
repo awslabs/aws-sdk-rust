@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DelegatedAdminStatus {
         match self {
             DelegatedAdminStatus::DisableInProgress => write!(f, "DISABLE_IN_PROGRESS"),
             DelegatedAdminStatus::Enabled => write!(f, "ENABLED"),
-            DelegatedAdminStatus::Unknown(value) => write!(f, "{}", value),
+            DelegatedAdminStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

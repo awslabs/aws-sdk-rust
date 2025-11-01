@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ContainerCondition {
             ContainerCondition::Healthy => write!(f, "HEALTHY"),
             ContainerCondition::Start => write!(f, "START"),
             ContainerCondition::Success => write!(f, "SUCCESS"),
-            ContainerCondition::Unknown(value) => write!(f, "{}", value),
+            ContainerCondition::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

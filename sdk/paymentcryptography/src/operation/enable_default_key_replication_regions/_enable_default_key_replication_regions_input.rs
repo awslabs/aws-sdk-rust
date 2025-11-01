@@ -4,12 +4,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EnableDefaultKeyReplicationRegionsInput {
-    /// <p>The list of Amazon Web Services Regions to enable as default replication regions for the account.</p>
+    /// <p>The list of Amazon Web Services Regions to enable as default replication regions for the Amazon Web Services account for <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-multi-region-replication.html">Multi-Region key replication</a>.</p>
     /// <p>New keys created in this account will automatically be replicated to these regions unless explicitly overridden during key creation.</p>
     pub replication_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl EnableDefaultKeyReplicationRegionsInput {
-    /// <p>The list of Amazon Web Services Regions to enable as default replication regions for the account.</p>
+    /// <p>The list of Amazon Web Services Regions to enable as default replication regions for the Amazon Web Services account for <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-multi-region-replication.html">Multi-Region key replication</a>.</p>
     /// <p>New keys created in this account will automatically be replicated to these regions unless explicitly overridden during key creation.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replication_regions.is_none()`.
@@ -35,7 +35,7 @@ impl EnableDefaultKeyReplicationRegionsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_replication_regions`](Self::set_replication_regions).
     ///
-    /// <p>The list of Amazon Web Services Regions to enable as default replication regions for the account.</p>
+    /// <p>The list of Amazon Web Services Regions to enable as default replication regions for the Amazon Web Services account for <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-multi-region-replication.html">Multi-Region key replication</a>.</p>
     /// <p>New keys created in this account will automatically be replicated to these regions unless explicitly overridden during key creation.</p>
     pub fn replication_regions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.replication_regions.unwrap_or_default();
@@ -43,13 +43,13 @@ impl EnableDefaultKeyReplicationRegionsInputBuilder {
         self.replication_regions = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The list of Amazon Web Services Regions to enable as default replication regions for the account.</p>
+    /// <p>The list of Amazon Web Services Regions to enable as default replication regions for the Amazon Web Services account for <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-multi-region-replication.html">Multi-Region key replication</a>.</p>
     /// <p>New keys created in this account will automatically be replicated to these regions unless explicitly overridden during key creation.</p>
     pub fn set_replication_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.replication_regions = input;
         self
     }
-    /// <p>The list of Amazon Web Services Regions to enable as default replication regions for the account.</p>
+    /// <p>The list of Amazon Web Services Regions to enable as default replication regions for the Amazon Web Services account for <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-multi-region-replication.html">Multi-Region key replication</a>.</p>
     /// <p>New keys created in this account will automatically be replicated to these regions unless explicitly overridden during key creation.</p>
     pub fn get_replication_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.replication_regions

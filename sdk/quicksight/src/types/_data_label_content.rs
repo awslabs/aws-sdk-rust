@@ -108,7 +108,7 @@ impl ::std::fmt::Display for DataLabelContent {
             DataLabelContent::Percent => write!(f, "PERCENT"),
             DataLabelContent::Value => write!(f, "VALUE"),
             DataLabelContent::ValueAndPercent => write!(f, "VALUE_AND_PERCENT"),
-            DataLabelContent::Unknown(value) => write!(f, "{}", value),
+            DataLabelContent::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

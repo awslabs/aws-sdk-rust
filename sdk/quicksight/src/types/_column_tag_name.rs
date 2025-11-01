@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ColumnTagName {
         match self {
             ColumnTagName::ColumnDescription => write!(f, "COLUMN_DESCRIPTION"),
             ColumnTagName::ColumnGeographicRole => write!(f, "COLUMN_GEOGRAPHIC_ROLE"),
-            ColumnTagName::Unknown(value) => write!(f, "{}", value),
+            ColumnTagName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

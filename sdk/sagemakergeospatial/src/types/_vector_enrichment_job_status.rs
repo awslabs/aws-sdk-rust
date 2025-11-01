@@ -147,7 +147,7 @@ impl ::std::fmt::Display for VectorEnrichmentJobStatus {
             VectorEnrichmentJobStatus::InProgress => write!(f, "IN_PROGRESS"),
             VectorEnrichmentJobStatus::Stopped => write!(f, "STOPPED"),
             VectorEnrichmentJobStatus::Stopping => write!(f, "STOPPING"),
-            VectorEnrichmentJobStatus::Unknown(value) => write!(f, "{}", value),
+            VectorEnrichmentJobStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

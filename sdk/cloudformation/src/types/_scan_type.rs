@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ScanType {
         match self {
             ScanType::Full => write!(f, "FULL"),
             ScanType::Partial => write!(f, "PARTIAL"),
-            ScanType::Unknown(value) => write!(f, "{}", value),
+            ScanType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

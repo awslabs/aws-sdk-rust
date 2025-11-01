@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AvailabilityZoneOptInStatus {
             AvailabilityZoneOptInStatus::NotOptedIn => write!(f, "not-opted-in"),
             AvailabilityZoneOptInStatus::OptInNotRequired => write!(f, "opt-in-not-required"),
             AvailabilityZoneOptInStatus::OptedIn => write!(f, "opted-in"),
-            AvailabilityZoneOptInStatus::Unknown(value) => write!(f, "{}", value),
+            AvailabilityZoneOptInStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

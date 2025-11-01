@@ -114,7 +114,7 @@ impl ::std::fmt::Display for CustomerGatewayAssociationState {
             CustomerGatewayAssociationState::Deleted => write!(f, "DELETED"),
             CustomerGatewayAssociationState::Deleting => write!(f, "DELETING"),
             CustomerGatewayAssociationState::Pending => write!(f, "PENDING"),
-            CustomerGatewayAssociationState::Unknown(value) => write!(f, "{}", value),
+            CustomerGatewayAssociationState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

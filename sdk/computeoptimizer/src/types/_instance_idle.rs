@@ -102,7 +102,7 @@ impl ::std::fmt::Display for InstanceIdle {
         match self {
             InstanceIdle::False => write!(f, "False"),
             InstanceIdle::True => write!(f, "True"),
-            InstanceIdle::Unknown(value) => write!(f, "{}", value),
+            InstanceIdle::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

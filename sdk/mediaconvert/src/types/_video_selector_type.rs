@@ -102,7 +102,7 @@ impl ::std::fmt::Display for VideoSelectorType {
         match self {
             VideoSelectorType::Auto => write!(f, "AUTO"),
             VideoSelectorType::Stream => write!(f, "STREAM"),
-            VideoSelectorType::Unknown(value) => write!(f, "{}", value),
+            VideoSelectorType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

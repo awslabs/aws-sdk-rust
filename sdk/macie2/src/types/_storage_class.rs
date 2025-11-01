@@ -154,7 +154,7 @@ impl ::std::fmt::Display for StorageClass {
             StorageClass::ReducedRedundancy => write!(f, "REDUCED_REDUNDANCY"),
             StorageClass::Standard => write!(f, "STANDARD"),
             StorageClass::StandardIa => write!(f, "STANDARD_IA"),
-            StorageClass::Unknown(value) => write!(f, "{}", value),
+            StorageClass::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

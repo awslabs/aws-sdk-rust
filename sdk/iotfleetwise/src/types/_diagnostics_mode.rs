@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DiagnosticsMode {
         match self {
             DiagnosticsMode::Off => write!(f, "OFF"),
             DiagnosticsMode::SendActiveDtcs => write!(f, "SEND_ACTIVE_DTCS"),
-            DiagnosticsMode::Unknown(value) => write!(f, "{}", value),
+            DiagnosticsMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

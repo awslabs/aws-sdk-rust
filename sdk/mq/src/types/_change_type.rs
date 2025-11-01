@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ChangeType {
             ChangeType::Create => write!(f, "CREATE"),
             ChangeType::Delete => write!(f, "DELETE"),
             ChangeType::Update => write!(f, "UPDATE"),
-            ChangeType::Unknown(value) => write!(f, "{}", value),
+            ChangeType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

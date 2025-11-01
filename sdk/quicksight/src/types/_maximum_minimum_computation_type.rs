@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MaximumMinimumComputationType {
         match self {
             MaximumMinimumComputationType::Maximum => write!(f, "MAXIMUM"),
             MaximumMinimumComputationType::Minimum => write!(f, "MINIMUM"),
-            MaximumMinimumComputationType::Unknown(value) => write!(f, "{}", value),
+            MaximumMinimumComputationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

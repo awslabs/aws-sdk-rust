@@ -114,7 +114,7 @@ impl ::std::fmt::Display for HdfsRpcProtection {
             HdfsRpcProtection::Disabled => write!(f, "DISABLED"),
             HdfsRpcProtection::Integrity => write!(f, "INTEGRITY"),
             HdfsRpcProtection::Privacy => write!(f, "PRIVACY"),
-            HdfsRpcProtection::Unknown(value) => write!(f, "{}", value),
+            HdfsRpcProtection::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

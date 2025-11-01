@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Fmp4TimedMetadataBehavior {
         match self {
             Fmp4TimedMetadataBehavior::NoPassthrough => write!(f, "NO_PASSTHROUGH"),
             Fmp4TimedMetadataBehavior::Passthrough => write!(f, "PASSTHROUGH"),
-            Fmp4TimedMetadataBehavior::Unknown(value) => write!(f, "{}", value),
+            Fmp4TimedMetadataBehavior::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

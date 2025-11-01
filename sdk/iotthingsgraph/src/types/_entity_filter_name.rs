@@ -114,7 +114,7 @@ impl ::std::fmt::Display for EntityFilterName {
             EntityFilterName::Namespace => write!(f, "NAMESPACE"),
             EntityFilterName::ReferencedEntityId => write!(f, "REFERENCED_ENTITY_ID"),
             EntityFilterName::SemanticTypePath => write!(f, "SEMANTIC_TYPE_PATH"),
-            EntityFilterName::Unknown(value) => write!(f, "{}", value),
+            EntityFilterName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

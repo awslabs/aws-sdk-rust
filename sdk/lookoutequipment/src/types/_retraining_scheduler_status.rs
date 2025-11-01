@@ -114,7 +114,7 @@ impl ::std::fmt::Display for RetrainingSchedulerStatus {
             RetrainingSchedulerStatus::Running => write!(f, "RUNNING"),
             RetrainingSchedulerStatus::Stopped => write!(f, "STOPPED"),
             RetrainingSchedulerStatus::Stopping => write!(f, "STOPPING"),
-            RetrainingSchedulerStatus::Unknown(value) => write!(f, "{}", value),
+            RetrainingSchedulerStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

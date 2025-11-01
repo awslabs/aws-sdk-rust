@@ -132,7 +132,7 @@ impl ::std::fmt::Display for SessionFilterKey {
             SessionFilterKey::SessionId => write!(f, "SessionId"),
             SessionFilterKey::Status => write!(f, "Status"),
             SessionFilterKey::TargetId => write!(f, "Target"),
-            SessionFilterKey::Unknown(value) => write!(f, "{}", value),
+            SessionFilterKey::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

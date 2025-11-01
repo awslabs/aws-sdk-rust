@@ -112,11 +112,9 @@ impl CompressionOptions {
 
     fn validate_level(level: u32) -> Result<(), BoxError> {
         if level > 9 {
-            return Err(format!(
-                "compression level `{}` is invalid, valid values are 0..=9",
-                level
-            )
-            .into());
+            return Err(
+                format!("compression level `{level}` is invalid, valid values are 0..=9").into(),
+            );
         };
         Ok(())
     }
@@ -126,8 +124,7 @@ impl CompressionOptions {
     ) -> Result<(), BoxError> {
         if min_compression_size_bytes > MAX_MIN_COMPRESSION_SIZE_BYTES {
             return Err(format!(
-                "min compression size `{}` is invalid, valid values are 0..=10_485_760",
-                min_compression_size_bytes
+                "min compression size `{min_compression_size_bytes}` is invalid, valid values are 0..=10_485_760"
             )
             .into());
         };

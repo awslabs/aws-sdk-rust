@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AuthMechanismValue {
             AuthMechanismValue::Default => write!(f, "default"),
             AuthMechanismValue::MongodbCr => write!(f, "mongodb_cr"),
             AuthMechanismValue::ScramSha1 => write!(f, "scram_sha_1"),
-            AuthMechanismValue::Unknown(value) => write!(f, "{}", value),
+            AuthMechanismValue::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

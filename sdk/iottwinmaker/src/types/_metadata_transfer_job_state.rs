@@ -132,7 +132,7 @@ impl ::std::fmt::Display for MetadataTransferJobState {
             MetadataTransferJobState::Pending => write!(f, "PENDING"),
             MetadataTransferJobState::Running => write!(f, "RUNNING"),
             MetadataTransferJobState::Validating => write!(f, "VALIDATING"),
-            MetadataTransferJobState::Unknown(value) => write!(f, "{}", value),
+            MetadataTransferJobState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

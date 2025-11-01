@@ -96,7 +96,7 @@ impl ::std::fmt::Display for IntegratingService {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             IntegratingService::Jira => write!(f, "JIRA"),
-            IntegratingService::Unknown(value) => write!(f, "{}", value),
+            IntegratingService::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

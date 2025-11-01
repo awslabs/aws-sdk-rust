@@ -883,6 +883,28 @@ pub use crate::types::_ipam_resource_tag::IpamResourceTag;
 
 pub use crate::types::_ipam_resource_type::IpamResourceType;
 
+pub use crate::types::_ipam_prefix_list_resolver_target::IpamPrefixListResolverTarget;
+
+pub use crate::types::_ipam_prefix_list_resolver_target_state::IpamPrefixListResolverTargetState;
+
+pub use crate::types::_ipam_prefix_list_resolver::IpamPrefixListResolver;
+
+pub use crate::types::_ipam_prefix_list_resolver_version_creation_status::IpamPrefixListResolverVersionCreationStatus;
+
+pub use crate::types::_ipam_prefix_list_resolver_state::IpamPrefixListResolverState;
+
+pub use crate::types::_address_family::AddressFamily;
+
+pub use crate::types::_ipam_prefix_list_resolver_rule_request::IpamPrefixListResolverRuleRequest;
+
+pub use crate::types::_ipam_prefix_list_resolver_rule_condition_request::IpamPrefixListResolverRuleConditionRequest;
+
+pub use crate::types::_request_ipam_resource_tag::RequestIpamResourceTag;
+
+pub use crate::types::_ipam_prefix_list_resolver_rule_condition_operation::IpamPrefixListResolverRuleConditionOperation;
+
+pub use crate::types::_ipam_prefix_list_resolver_rule_type::IpamPrefixListResolverRuleType;
+
 pub use crate::types::_ipam_pool::IpamPool;
 
 pub use crate::types::_ipam_pool_source_resource::IpamPoolSourceResource;
@@ -893,11 +915,7 @@ pub use crate::types::_ipam_pool_public_ip_source::IpamPoolPublicIpSource;
 
 pub use crate::types::_ipam_pool_aws_service::IpamPoolAwsService;
 
-pub use crate::types::_address_family::AddressFamily;
-
 pub use crate::types::_ipam_pool_state::IpamPoolState;
-
-pub use crate::types::_request_ipam_resource_tag::RequestIpamResourceTag;
 
 pub use crate::types::_ipam::Ipam;
 
@@ -1232,6 +1250,14 @@ pub use crate::types::_launch_template_block_device_mapping::LaunchTemplateBlock
 pub use crate::types::_launch_template_ebs_block_device::LaunchTemplateEbsBlockDevice;
 
 pub use crate::types::_launch_template_iam_instance_profile_specification::LaunchTemplateIamInstanceProfileSpecification;
+
+pub use crate::types::_ipam_prefix_list_resolver_version::IpamPrefixListResolverVersion;
+
+pub use crate::types::_ipam_prefix_list_resolver_version_entry::IpamPrefixListResolverVersionEntry;
+
+pub use crate::types::_ipam_prefix_list_resolver_rule::IpamPrefixListResolverRule;
+
+pub use crate::types::_ipam_prefix_list_resolver_rule_condition::IpamPrefixListResolverRuleCondition;
 
 pub use crate::types::_ipam_pool_allocation::IpamPoolAllocation;
 
@@ -3654,6 +3680,32 @@ mod _ipam_pool_source_resource_request;
 mod _ipam_pool_source_resource_type;
 
 mod _ipam_pool_state;
+
+mod _ipam_prefix_list_resolver;
+
+mod _ipam_prefix_list_resolver_rule;
+
+mod _ipam_prefix_list_resolver_rule_condition;
+
+mod _ipam_prefix_list_resolver_rule_condition_operation;
+
+mod _ipam_prefix_list_resolver_rule_condition_request;
+
+mod _ipam_prefix_list_resolver_rule_request;
+
+mod _ipam_prefix_list_resolver_rule_type;
+
+mod _ipam_prefix_list_resolver_state;
+
+mod _ipam_prefix_list_resolver_target;
+
+mod _ipam_prefix_list_resolver_target_state;
+
+mod _ipam_prefix_list_resolver_version;
+
+mod _ipam_prefix_list_resolver_version_creation_status;
+
+mod _ipam_prefix_list_resolver_version_entry;
 
 mod _ipam_public_address_association_status;
 

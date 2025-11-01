@@ -245,7 +245,7 @@ impl ::std::fmt::Display for QueueAttributeName {
             QueueAttributeName::RedrivePolicy => write!(f, "RedrivePolicy"),
             QueueAttributeName::SqsManagedSseEnabled => write!(f, "SqsManagedSseEnabled"),
             QueueAttributeName::VisibilityTimeout => write!(f, "VisibilityTimeout"),
-            QueueAttributeName::Unknown(value) => write!(f, "{}", value),
+            QueueAttributeName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

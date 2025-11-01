@@ -114,7 +114,7 @@ impl ::std::fmt::Display for NotificationType {
             NotificationType::DataUpdate => write!(f, "DATA_UPDATE"),
             NotificationType::Deprecation => write!(f, "DEPRECATION"),
             NotificationType::SchemaChange => write!(f, "SCHEMA_CHANGE"),
-            NotificationType::Unknown(value) => write!(f, "{}", value),
+            NotificationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

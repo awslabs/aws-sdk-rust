@@ -191,6 +191,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for UpdateReplic
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::update_replication_configuration_template::UpdateReplicationConfigurationTemplateInput,
                 output: &mut ::std::string::String,

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PluginHealth {
         match self {
             PluginHealth::PluginHealthy => write!(f, "HEALTHY"),
             PluginHealth::PluginUnhealthy => write!(f, "UNHEALTHY"),
-            PluginHealth::Unknown(value) => write!(f, "{}", value),
+            PluginHealth::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

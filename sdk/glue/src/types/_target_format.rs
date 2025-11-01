@@ -150,7 +150,7 @@ impl ::std::fmt::Display for TargetFormat {
             TargetFormat::Orc => write!(f, "orc"),
             TargetFormat::Parquet => write!(f, "parquet"),
             TargetFormat::Xml => write!(f, "xml"),
-            TargetFormat::Unknown(value) => write!(f, "{}", value),
+            TargetFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

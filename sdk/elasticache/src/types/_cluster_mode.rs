@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ClusterMode {
             ClusterMode::Compatible => write!(f, "compatible"),
             ClusterMode::Disabled => write!(f, "disabled"),
             ClusterMode::Enabled => write!(f, "enabled"),
-            ClusterMode::Unknown(value) => write!(f, "{}", value),
+            ClusterMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

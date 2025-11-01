@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ConditionType {
         match self {
             ConditionType::BeforeEntry => write!(f, "BEFORE_ENTRY"),
             ConditionType::OnSuccess => write!(f, "ON_SUCCESS"),
-            ConditionType::Unknown(value) => write!(f, "{}", value),
+            ConditionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

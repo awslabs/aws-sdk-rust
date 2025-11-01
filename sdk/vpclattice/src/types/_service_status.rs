@@ -120,7 +120,7 @@ impl ::std::fmt::Display for ServiceStatus {
             ServiceStatus::CreateInProgress => write!(f, "CREATE_IN_PROGRESS"),
             ServiceStatus::DeleteFailed => write!(f, "DELETE_FAILED"),
             ServiceStatus::DeleteInProgress => write!(f, "DELETE_IN_PROGRESS"),
-            ServiceStatus::Unknown(value) => write!(f, "{}", value),
+            ServiceStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

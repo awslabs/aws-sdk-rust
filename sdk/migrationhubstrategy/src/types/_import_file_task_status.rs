@@ -147,7 +147,7 @@ impl ::std::fmt::Display for ImportFileTaskStatus {
             ImportFileTaskStatus::ImportInProgress => write!(f, "ImportInProgress"),
             ImportFileTaskStatus::ImportPartialSuccess => write!(f, "ImportPartialSuccess"),
             ImportFileTaskStatus::ImportSuccess => write!(f, "ImportSuccess"),
-            ImportFileTaskStatus::Unknown(value) => write!(f, "{}", value),
+            ImportFileTaskStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

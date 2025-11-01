@@ -53,8 +53,7 @@ pub fn de_describe_scheduled_instances(
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeScheduledInstancesResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected DescribeScheduledInstancesResponse got {:?}",
-            start_el
+            "invalid root, expected DescribeScheduledInstancesResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

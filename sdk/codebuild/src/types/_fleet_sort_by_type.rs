@@ -108,7 +108,7 @@ impl ::std::fmt::Display for FleetSortByType {
             FleetSortByType::CreatedTime => write!(f, "CREATED_TIME"),
             FleetSortByType::LastModifiedTime => write!(f, "LAST_MODIFIED_TIME"),
             FleetSortByType::Name => write!(f, "NAME"),
-            FleetSortByType::Unknown(value) => write!(f, "{}", value),
+            FleetSortByType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

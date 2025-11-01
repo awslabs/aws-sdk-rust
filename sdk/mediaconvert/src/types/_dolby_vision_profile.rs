@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DolbyVisionProfile {
         match self {
             DolbyVisionProfile::Profile5 => write!(f, "PROFILE_5"),
             DolbyVisionProfile::Profile81 => write!(f, "PROFILE_8_1"),
-            DolbyVisionProfile::Unknown(value) => write!(f, "{}", value),
+            DolbyVisionProfile::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

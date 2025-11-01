@@ -102,7 +102,7 @@ impl ::std::fmt::Display for HlsStreamInfResolution {
         match self {
             HlsStreamInfResolution::Exclude => write!(f, "EXCLUDE"),
             HlsStreamInfResolution::Include => write!(f, "INCLUDE"),
-            HlsStreamInfResolution::Unknown(value) => write!(f, "{}", value),
+            HlsStreamInfResolution::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

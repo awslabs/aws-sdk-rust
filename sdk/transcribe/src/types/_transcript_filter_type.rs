@@ -96,7 +96,7 @@ impl ::std::fmt::Display for TranscriptFilterType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             TranscriptFilterType::Exact => write!(f, "EXACT"),
-            TranscriptFilterType::Unknown(value) => write!(f, "{}", value),
+            TranscriptFilterType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

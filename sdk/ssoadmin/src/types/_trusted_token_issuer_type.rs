@@ -96,7 +96,7 @@ impl ::std::fmt::Display for TrustedTokenIssuerType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             TrustedTokenIssuerType::OidcJwt => write!(f, "OIDC_JWT"),
-            TrustedTokenIssuerType::Unknown(value) => write!(f, "{}", value),
+            TrustedTokenIssuerType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

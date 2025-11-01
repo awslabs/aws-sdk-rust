@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PurchaseAgreementType {
         match self {
             PurchaseAgreementType::ReservedInstance => write!(f, "RESERVED_INSTANCE"),
             PurchaseAgreementType::SavingsPlans => write!(f, "SAVINGS_PLANS"),
-            PurchaseAgreementType::Unknown(value) => write!(f, "{}", value),
+            PurchaseAgreementType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

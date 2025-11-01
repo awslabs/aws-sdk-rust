@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FlexibleTimeWindowMode {
         match self {
             FlexibleTimeWindowMode::Flexible => write!(f, "FLEXIBLE"),
             FlexibleTimeWindowMode::Off => write!(f, "OFF"),
-            FlexibleTimeWindowMode::Unknown(value) => write!(f, "{}", value),
+            FlexibleTimeWindowMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for JobMode {
             JobMode::Notebook => write!(f, "NOTEBOOK"),
             JobMode::Script => write!(f, "SCRIPT"),
             JobMode::Visual => write!(f, "VISUAL"),
-            JobMode::Unknown(value) => write!(f, "{}", value),
+            JobMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

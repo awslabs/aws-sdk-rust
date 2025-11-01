@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ConversationMode {
         match self {
             ConversationMode::Audio => write!(f, "AUDIO"),
             ConversationMode::Text => write!(f, "TEXT"),
-            ConversationMode::Unknown(value) => write!(f, "{}", value),
+            ConversationMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -175,7 +175,7 @@ impl ::std::fmt::Display for CaptionDestinationType {
             CaptionDestinationType::Teletext => write!(f, "TELETEXT"),
             CaptionDestinationType::Ttml => write!(f, "TTML"),
             CaptionDestinationType::Webvtt => write!(f, "WEBVTT"),
-            CaptionDestinationType::Unknown(value) => write!(f, "{}", value),
+            CaptionDestinationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

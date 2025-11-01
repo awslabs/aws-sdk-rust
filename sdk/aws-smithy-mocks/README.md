@@ -14,6 +14,31 @@ without mocking the entire client or using traits.
 - **Response Sequencing**: Define sequences of responses for testing retry behavior
 - **Rule Modes**: Control how rules are matched and applied
 
+## Prerequisites
+
+<div class="warning">
+You must enable the `test-util` feature of the service client crate in order to use the `mock_client` macro. This should
+usually only be enabled as part of your `dev-dependencies` (see the example `Cargo.toml` below).
+</div>
+
+If the feature is not enabled a compilation error similar to the following will occur:
+
+```txt
+no method named with_test_defaults found for struct <service-client-crate>::config::Builder in the current scope
+method not found in Builder
+```
+
+Example `Cargo.toml` using the `aws-sdk-s3` crate as the service client crate under test:
+
+```toml
+[dependencies]
+aws-sdk-s3 = "1"
+
+[dev-dependencies]
+aws-smithy-mocks = "0.2"
+aws-sdk-s3 = { version = "1", features = ["test-util"] }
+```
+
 ## Basic Usage
 
 ```rust,ignore

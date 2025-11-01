@@ -114,7 +114,7 @@ impl ::std::fmt::Display for PutMetricsErrorCode {
             PutMetricsErrorCode::InternalError => write!(f, "INTERNAL_ERROR"),
             PutMetricsErrorCode::MetricLimitExceeded => write!(f, "METRIC_LIMIT_EXCEEDED"),
             PutMetricsErrorCode::ValidationError => write!(f, "VALIDATION_ERROR"),
-            PutMetricsErrorCode::Unknown(value) => write!(f, "{}", value),
+            PutMetricsErrorCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

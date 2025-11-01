@@ -102,7 +102,7 @@ impl ::std::fmt::Display for BurninSubtitleApplyFontColor {
         match self {
             BurninSubtitleApplyFontColor::AllText => write!(f, "ALL_TEXT"),
             BurninSubtitleApplyFontColor::WhiteTextOnly => write!(f, "WHITE_TEXT_ONLY"),
-            BurninSubtitleApplyFontColor::Unknown(value) => write!(f, "{}", value),
+            BurninSubtitleApplyFontColor::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for InterfaceProtocolType {
         match self {
             InterfaceProtocolType::Gre => write!(f, "GRE"),
             InterfaceProtocolType::Vlan => write!(f, "VLAN"),
-            InterfaceProtocolType::Unknown(value) => write!(f, "{}", value),
+            InterfaceProtocolType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

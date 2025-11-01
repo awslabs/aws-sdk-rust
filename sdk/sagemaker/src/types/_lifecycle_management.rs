@@ -102,7 +102,7 @@ impl ::std::fmt::Display for LifecycleManagement {
         match self {
             LifecycleManagement::Disabled => write!(f, "DISABLED"),
             LifecycleManagement::Enabled => write!(f, "ENABLED"),
-            LifecycleManagement::Unknown(value) => write!(f, "{}", value),
+            LifecycleManagement::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

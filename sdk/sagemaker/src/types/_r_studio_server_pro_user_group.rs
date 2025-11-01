@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RStudioServerProUserGroup {
         match self {
             RStudioServerProUserGroup::Admin => write!(f, "R_STUDIO_ADMIN"),
             RStudioServerProUserGroup::User => write!(f, "R_STUDIO_USER"),
-            RStudioServerProUserGroup::Unknown(value) => write!(f, "{}", value),
+            RStudioServerProUserGroup::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

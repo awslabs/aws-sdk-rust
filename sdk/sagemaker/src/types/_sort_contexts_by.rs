@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SortContextsBy {
         match self {
             SortContextsBy::CreationTime => write!(f, "CreationTime"),
             SortContextsBy::Name => write!(f, "Name"),
-            SortContextsBy::Unknown(value) => write!(f, "{}", value),
+            SortContextsBy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

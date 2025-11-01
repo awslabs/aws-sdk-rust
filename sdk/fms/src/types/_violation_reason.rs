@@ -301,7 +301,7 @@ impl ::std::fmt::Display for ViolationReason {
             ViolationReason::UnexpectedTargetGatewayRoutes => write!(f, "UNEXPECTED_TARGET_GATEWAY_ROUTES"),
             ViolationReason::WebAclConfigurationOrScopeOfUse => write!(f, "WEB_ACL_CONFIGURATION_OR_SCOPE_OF_USE"),
             ViolationReason::WebAclMissingRuleGroup => write!(f, "WEB_ACL_MISSING_RULE_GROUP"),
-            ViolationReason::Unknown(value) => write!(f, "{}", value),
+            ViolationReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

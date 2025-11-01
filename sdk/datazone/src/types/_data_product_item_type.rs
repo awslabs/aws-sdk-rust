@@ -96,7 +96,7 @@ impl ::std::fmt::Display for DataProductItemType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             DataProductItemType::Asset => write!(f, "ASSET"),
-            DataProductItemType::Unknown(value) => write!(f, "{}", value),
+            DataProductItemType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

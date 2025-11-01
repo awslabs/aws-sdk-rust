@@ -108,7 +108,7 @@ impl ::std::fmt::Display for MetricStreamOutputFormat {
             MetricStreamOutputFormat::Json => write!(f, "json"),
             MetricStreamOutputFormat::OpenTelemetry07 => write!(f, "opentelemetry0.7"),
             MetricStreamOutputFormat::OpenTelemetry10 => write!(f, "opentelemetry1.0"),
-            MetricStreamOutputFormat::Unknown(value) => write!(f, "{}", value),
+            MetricStreamOutputFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -133,7 +133,7 @@ impl ::std::fmt::Display for ValidationExceptionReason {
             ValidationExceptionReason::Other => write!(f, "OTHER"),
             ValidationExceptionReason::UnknownOperation => write!(f, "UNKNOWN_OPERATION"),
             ValidationExceptionReason::UnsupportedOperation => write!(f, "UNSUPPORTED_OPERATION"),
-            ValidationExceptionReason::Unknown(value) => write!(f, "{}", value),
+            ValidationExceptionReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

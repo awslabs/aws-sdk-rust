@@ -120,7 +120,7 @@ impl ::std::fmt::Display for Eac3AtmosMeteringMode {
             Eac3AtmosMeteringMode::ItuBs17703 => write!(f, "ITU_BS_1770_3"),
             Eac3AtmosMeteringMode::ItuBs17704 => write!(f, "ITU_BS_1770_4"),
             Eac3AtmosMeteringMode::LeqA => write!(f, "LEQ_A"),
-            Eac3AtmosMeteringMode::Unknown(value) => write!(f, "{}", value),
+            Eac3AtmosMeteringMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RouteServerPeerLivenessMode {
         match self {
             RouteServerPeerLivenessMode::Bfd => write!(f, "bfd"),
             RouteServerPeerLivenessMode::BgpKeepalive => write!(f, "bgp-keepalive"),
-            RouteServerPeerLivenessMode::Unknown(value) => write!(f, "{}", value),
+            RouteServerPeerLivenessMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

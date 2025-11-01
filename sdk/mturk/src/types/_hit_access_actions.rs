@@ -108,7 +108,7 @@ impl ::std::fmt::Display for HitAccessActions {
             HitAccessActions::Accept => write!(f, "Accept"),
             HitAccessActions::DiscoverPreviewAndAccept => write!(f, "DiscoverPreviewAndAccept"),
             HitAccessActions::PreviewAndAccept => write!(f, "PreviewAndAccept"),
-            HitAccessActions::Unknown(value) => write!(f, "{}", value),
+            HitAccessActions::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for AutoSnapshotStatus {
             AutoSnapshotStatus::InProgress => write!(f, "InProgress"),
             AutoSnapshotStatus::NotFound => write!(f, "NotFound"),
             AutoSnapshotStatus::Success => write!(f, "Success"),
-            AutoSnapshotStatus::Unknown(value) => write!(f, "{}", value),
+            AutoSnapshotStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

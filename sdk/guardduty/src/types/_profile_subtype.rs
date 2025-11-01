@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ProfileSubtype {
             ProfileSubtype::Infrequent => write!(f, "INFREQUENT"),
             ProfileSubtype::Rare => write!(f, "RARE"),
             ProfileSubtype::Unseen => write!(f, "UNSEEN"),
-            ProfileSubtype::Unknown(value) => write!(f, "{}", value),
+            ProfileSubtype::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for JobType {
             JobType::Export => write!(f, "EXPORT"),
             JobType::Import => write!(f, "IMPORT"),
             JobType::LocalUse => write!(f, "LOCAL_USE"),
-            JobType::Unknown(value) => write!(f, "{}", value),
+            JobType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for InstanceTypeHypervisor {
         match self {
             InstanceTypeHypervisor::Nitro => write!(f, "nitro"),
             InstanceTypeHypervisor::Xen => write!(f, "xen"),
-            InstanceTypeHypervisor::Unknown(value) => write!(f, "{}", value),
+            InstanceTypeHypervisor::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

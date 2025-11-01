@@ -33,7 +33,7 @@ impl ::std::fmt::Display for ResourceExistsException {
         ::std::write!(f, "ResourceExistsException")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
             {
-                ::std::write!(f, ": {}", inner_1)?;
+                ::std::write!(f, ": {inner_1}")?;
             }
         }
         Ok(())

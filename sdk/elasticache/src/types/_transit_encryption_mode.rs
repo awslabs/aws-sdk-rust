@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TransitEncryptionMode {
         match self {
             TransitEncryptionMode::Preferred => write!(f, "preferred"),
             TransitEncryptionMode::Required => write!(f, "required"),
-            TransitEncryptionMode::Unknown(value) => write!(f, "{}", value),
+            TransitEncryptionMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for BlackoutSlateNetworkEndBlackout {
         match self {
             BlackoutSlateNetworkEndBlackout::Disabled => write!(f, "DISABLED"),
             BlackoutSlateNetworkEndBlackout::Enabled => write!(f, "ENABLED"),
-            BlackoutSlateNetworkEndBlackout::Unknown(value) => write!(f, "{}", value),
+            BlackoutSlateNetworkEndBlackout::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

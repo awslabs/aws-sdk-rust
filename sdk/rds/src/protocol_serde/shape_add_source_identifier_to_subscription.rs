@@ -92,16 +92,14 @@ pub fn de_add_source_identifier_to_subscription(
     let start_el = decoder.start_el();
     if !(start_el.matches("AddSourceIdentifierToSubscriptionResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected AddSourceIdentifierToSubscriptionResponse got {:?}",
-            start_el
+            "invalid root, expected AddSourceIdentifierToSubscriptionResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("AddSourceIdentifierToSubscriptionResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected AddSourceIdentifierToSubscriptionResult got {:?}",
-                start_el
+                "invalid result, expected AddSourceIdentifierToSubscriptionResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

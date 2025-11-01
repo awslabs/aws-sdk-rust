@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AllowMessages {
         match self {
             AllowMessages::All => write!(f, "ALL"),
             AllowMessages::None => write!(f, "NONE"),
-            AllowMessages::Unknown(value) => write!(f, "{}", value),
+            AllowMessages::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

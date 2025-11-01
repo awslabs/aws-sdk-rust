@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TtmlDestinationStyleControl {
         match self {
             TtmlDestinationStyleControl::Passthrough => write!(f, "PASSTHROUGH"),
             TtmlDestinationStyleControl::UseConfigured => write!(f, "USE_CONFIGURED"),
-            TtmlDestinationStyleControl::Unknown(value) => write!(f, "{}", value),
+            TtmlDestinationStyleControl::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

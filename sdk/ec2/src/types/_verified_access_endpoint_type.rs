@@ -114,7 +114,7 @@ impl ::std::fmt::Display for VerifiedAccessEndpointType {
             VerifiedAccessEndpointType::LoadBalancer => write!(f, "load-balancer"),
             VerifiedAccessEndpointType::NetworkInterface => write!(f, "network-interface"),
             VerifiedAccessEndpointType::Rds => write!(f, "rds"),
-            VerifiedAccessEndpointType::Unknown(value) => write!(f, "{}", value),
+            VerifiedAccessEndpointType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

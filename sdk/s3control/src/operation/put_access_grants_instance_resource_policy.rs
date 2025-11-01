@@ -190,6 +190,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for PutAccessGra
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::put_access_grants_instance_resource_policy::PutAccessGrantsInstanceResourcePolicyInput,
                 output: &mut ::std::string::String,

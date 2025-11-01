@@ -154,7 +154,7 @@ impl ::std::fmt::Display for UpdateActionStatus {
             UpdateActionStatus::Stopped => write!(f, "stopped"),
             UpdateActionStatus::Stopping => write!(f, "stopping"),
             UpdateActionStatus::WaitingToStart => write!(f, "waiting-to-start"),
-            UpdateActionStatus::Unknown(value) => write!(f, "{}", value),
+            UpdateActionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

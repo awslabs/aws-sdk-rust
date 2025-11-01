@@ -120,7 +120,7 @@ impl ::std::fmt::Display for QualityFilter {
             QualityFilter::Low => write!(f, "LOW"),
             QualityFilter::Medium => write!(f, "MEDIUM"),
             QualityFilter::None => write!(f, "NONE"),
-            QualityFilter::Unknown(value) => write!(f, "{}", value),
+            QualityFilter::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

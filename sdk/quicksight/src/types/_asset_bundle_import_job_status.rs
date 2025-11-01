@@ -140,7 +140,7 @@ impl ::std::fmt::Display for AssetBundleImportJobStatus {
             AssetBundleImportJobStatus::InProgress => write!(f, "IN_PROGRESS"),
             AssetBundleImportJobStatus::QueuedForImmediateExecution => write!(f, "QUEUED_FOR_IMMEDIATE_EXECUTION"),
             AssetBundleImportJobStatus::Successful => write!(f, "SUCCESSFUL"),
-            AssetBundleImportJobStatus::Unknown(value) => write!(f, "{}", value),
+            AssetBundleImportJobStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

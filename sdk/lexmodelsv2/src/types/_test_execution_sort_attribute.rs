@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TestExecutionSortAttribute {
         match self {
             TestExecutionSortAttribute::CreationDateTime => write!(f, "CreationDateTime"),
             TestExecutionSortAttribute::TestSetName => write!(f, "TestSetName"),
-            TestExecutionSortAttribute::Unknown(value) => write!(f, "{}", value),
+            TestExecutionSortAttribute::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

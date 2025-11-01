@@ -108,7 +108,7 @@ impl ::std::fmt::Display for IpamOverlapStatus {
             IpamOverlapStatus::Ignored => write!(f, "ignored"),
             IpamOverlapStatus::Nonoverlapping => write!(f, "nonoverlapping"),
             IpamOverlapStatus::Overlapping => write!(f, "overlapping"),
-            IpamOverlapStatus::Unknown(value) => write!(f, "{}", value),
+            IpamOverlapStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

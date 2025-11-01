@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ShareResourceType {
             ShareResourceType::AnnotationStore => write!(f, "ANNOTATION_STORE"),
             ShareResourceType::VariantStore => write!(f, "VARIANT_STORE"),
             ShareResourceType::Workflow => write!(f, "WORKFLOW"),
-            ShareResourceType::Unknown(value) => write!(f, "{}", value),
+            ShareResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

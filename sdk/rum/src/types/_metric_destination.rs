@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MetricDestination {
         match self {
             MetricDestination::CloudWatch => write!(f, "CloudWatch"),
             MetricDestination::Evidently => write!(f, "Evidently"),
-            MetricDestination::Unknown(value) => write!(f, "{}", value),
+            MetricDestination::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

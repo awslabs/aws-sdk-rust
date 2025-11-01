@@ -108,7 +108,7 @@ impl ::std::fmt::Display for DifferenceType {
             DifferenceType::Add => write!(f, "ADD"),
             DifferenceType::NotEqual => write!(f, "NOT_EQUAL"),
             DifferenceType::Remove => write!(f, "REMOVE"),
-            DifferenceType::Unknown(value) => write!(f, "{}", value),
+            DifferenceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RunType {
         match self {
             RunType::CanaryRun => write!(f, "CANARY_RUN"),
             RunType::DryRun => write!(f, "DRY_RUN"),
-            RunType::Unknown(value) => write!(f, "{}", value),
+            RunType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

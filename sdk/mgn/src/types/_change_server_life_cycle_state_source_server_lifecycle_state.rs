@@ -110,7 +110,7 @@ impl ::std::fmt::Display for ChangeServerLifeCycleStateSourceServerLifecycleStat
             ChangeServerLifeCycleStateSourceServerLifecycleState::Cutover => write!(f, "CUTOVER"),
             ChangeServerLifeCycleStateSourceServerLifecycleState::ReadyForCutover => write!(f, "READY_FOR_CUTOVER"),
             ChangeServerLifeCycleStateSourceServerLifecycleState::ReadyForTest => write!(f, "READY_FOR_TEST"),
-            ChangeServerLifeCycleStateSourceServerLifecycleState::Unknown(value) => write!(f, "{}", value),
+            ChangeServerLifeCycleStateSourceServerLifecycleState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

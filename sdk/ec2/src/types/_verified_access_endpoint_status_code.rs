@@ -120,7 +120,7 @@ impl ::std::fmt::Display for VerifiedAccessEndpointStatusCode {
             VerifiedAccessEndpointStatusCode::Deleting => write!(f, "deleting"),
             VerifiedAccessEndpointStatusCode::Pending => write!(f, "pending"),
             VerifiedAccessEndpointStatusCode::Updating => write!(f, "updating"),
-            VerifiedAccessEndpointStatusCode::Unknown(value) => write!(f, "{}", value),
+            VerifiedAccessEndpointStatusCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

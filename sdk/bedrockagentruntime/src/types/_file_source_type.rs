@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FileSourceType {
         match self {
             FileSourceType::ByteContent => write!(f, "BYTE_CONTENT"),
             FileSourceType::S3 => write!(f, "S3"),
-            FileSourceType::Unknown(value) => write!(f, "{}", value),
+            FileSourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

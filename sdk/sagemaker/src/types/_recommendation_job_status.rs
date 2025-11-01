@@ -147,7 +147,7 @@ impl ::std::fmt::Display for RecommendationJobStatus {
             RecommendationJobStatus::Pending => write!(f, "PENDING"),
             RecommendationJobStatus::Stopped => write!(f, "STOPPED"),
             RecommendationJobStatus::Stopping => write!(f, "STOPPING"),
-            RecommendationJobStatus::Unknown(value) => write!(f, "{}", value),
+            RecommendationJobStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

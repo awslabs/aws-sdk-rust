@@ -108,7 +108,7 @@ impl ::std::fmt::Display for CustomizableMetricThreshold {
             CustomizableMetricThreshold::P90 => write!(f, "P90"),
             CustomizableMetricThreshold::P95 => write!(f, "P95"),
             CustomizableMetricThreshold::P995 => write!(f, "P99_5"),
-            CustomizableMetricThreshold::Unknown(value) => write!(f, "{}", value),
+            CustomizableMetricThreshold::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

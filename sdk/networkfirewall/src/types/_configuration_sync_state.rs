@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ConfigurationSyncState {
             ConfigurationSyncState::CapacityConstrained => write!(f, "CAPACITY_CONSTRAINED"),
             ConfigurationSyncState::InSync => write!(f, "IN_SYNC"),
             ConfigurationSyncState::Pending => write!(f, "PENDING"),
-            ConfigurationSyncState::Unknown(value) => write!(f, "{}", value),
+            ConfigurationSyncState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

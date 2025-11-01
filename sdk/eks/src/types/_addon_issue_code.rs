@@ -161,7 +161,7 @@ impl ::std::fmt::Display for AddonIssueCode {
             AddonIssueCode::InternalFailure => write!(f, "InternalFailure"),
             AddonIssueCode::K8SResourceNotFound => write!(f, "K8sResourceNotFound"),
             AddonIssueCode::UnsupportedAddonModification => write!(f, "UnsupportedAddonModification"),
-            AddonIssueCode::Unknown(value) => write!(f, "{}", value),
+            AddonIssueCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

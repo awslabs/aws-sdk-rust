@@ -102,7 +102,7 @@ impl ::std::fmt::Display for OutpostMode {
         match self {
             OutpostMode::CrossOutpost => write!(f, "cross-outpost"),
             OutpostMode::SingleOutpost => write!(f, "single-outpost"),
-            OutpostMode::Unknown(value) => write!(f, "{}", value),
+            OutpostMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

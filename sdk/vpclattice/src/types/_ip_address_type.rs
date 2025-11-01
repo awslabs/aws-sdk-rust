@@ -102,7 +102,7 @@ impl ::std::fmt::Display for IpAddressType {
         match self {
             IpAddressType::Ipv4 => write!(f, "IPV4"),
             IpAddressType::Ipv6 => write!(f, "IPV6"),
-            IpAddressType::Unknown(value) => write!(f, "{}", value),
+            IpAddressType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

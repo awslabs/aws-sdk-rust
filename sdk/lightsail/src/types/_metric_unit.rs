@@ -280,7 +280,7 @@ impl ::std::fmt::Display for MetricUnit {
             MetricUnit::TerabitsSecond => write!(f, "Terabits/Second"),
             MetricUnit::Terabytes => write!(f, "Terabytes"),
             MetricUnit::TerabytesSecond => write!(f, "Terabytes/Second"),
-            MetricUnit::Unknown(value) => write!(f, "{}", value),
+            MetricUnit::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

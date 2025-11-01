@@ -114,7 +114,7 @@ impl ::std::fmt::Display for RestoreValidationStatus {
             RestoreValidationStatus::Successful => write!(f, "SUCCESSFUL"),
             RestoreValidationStatus::TimedOut => write!(f, "TIMED_OUT"),
             RestoreValidationStatus::Validating => write!(f, "VALIDATING"),
-            RestoreValidationStatus::Unknown(value) => write!(f, "{}", value),
+            RestoreValidationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

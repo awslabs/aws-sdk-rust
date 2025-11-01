@@ -114,7 +114,7 @@ impl ::std::fmt::Display for WorkSpaceApplicationState {
             WorkSpaceApplicationState::Error => write!(f, "ERROR"),
             WorkSpaceApplicationState::Pending => write!(f, "PENDING"),
             WorkSpaceApplicationState::UninstallOnly => write!(f, "UNINSTALL_ONLY"),
-            WorkSpaceApplicationState::Unknown(value) => write!(f, "{}", value),
+            WorkSpaceApplicationState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

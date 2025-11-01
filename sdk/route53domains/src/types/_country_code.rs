@@ -1606,7 +1606,7 @@ impl ::std::fmt::Display for CountryCode {
             CountryCode::Za => write!(f, "ZA"),
             CountryCode::Zm => write!(f, "ZM"),
             CountryCode::Zw => write!(f, "ZW"),
-            CountryCode::Unknown(value) => write!(f, "{}", value),
+            CountryCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

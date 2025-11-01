@@ -427,7 +427,7 @@ impl ::std::fmt::Display for WorkspaceImageErrorDetailCode {
             WorkspaceImageErrorDetailCode::WorkspacesByolAccountDisabled => write!(f, "WorkspacesBYOLAccountDisabled"),
             WorkspaceImageErrorDetailCode::WorkspacesByolAccountNotFound => write!(f, "WorkspacesBYOLAccountNotFound"),
             WorkspaceImageErrorDetailCode::ZeroRearmCount => write!(f, "ZeroRearmCount"),
-            WorkspaceImageErrorDetailCode::Unknown(value) => write!(f, "{}", value),
+            WorkspaceImageErrorDetailCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

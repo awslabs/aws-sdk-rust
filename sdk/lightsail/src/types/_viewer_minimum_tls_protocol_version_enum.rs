@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ViewerMinimumTlsProtocolVersionEnum {
             ViewerMinimumTlsProtocolVersionEnum::TlSv122018 => write!(f, "TLSv1.2_2018"),
             ViewerMinimumTlsProtocolVersionEnum::TlSv122019 => write!(f, "TLSv1.2_2019"),
             ViewerMinimumTlsProtocolVersionEnum::TlSv122021 => write!(f, "TLSv1.2_2021"),
-            ViewerMinimumTlsProtocolVersionEnum::Unknown(value) => write!(f, "{}", value),
+            ViewerMinimumTlsProtocolVersionEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

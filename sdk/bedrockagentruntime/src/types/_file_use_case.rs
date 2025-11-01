@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FileUseCase {
         match self {
             FileUseCase::Chat => write!(f, "CHAT"),
             FileUseCase::CodeInterpreter => write!(f, "CODE_INTERPRETER"),
-            FileUseCase::Unknown(value) => write!(f, "{}", value),
+            FileUseCase::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

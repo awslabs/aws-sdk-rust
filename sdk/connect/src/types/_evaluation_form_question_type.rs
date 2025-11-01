@@ -108,7 +108,7 @@ impl ::std::fmt::Display for EvaluationFormQuestionType {
             EvaluationFormQuestionType::Numeric => write!(f, "NUMERIC"),
             EvaluationFormQuestionType::Singleselect => write!(f, "SINGLESELECT"),
             EvaluationFormQuestionType::Text => write!(f, "TEXT"),
-            EvaluationFormQuestionType::Unknown(value) => write!(f, "{}", value),
+            EvaluationFormQuestionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

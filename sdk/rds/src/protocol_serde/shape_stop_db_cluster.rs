@@ -115,16 +115,14 @@ pub fn de_stop_db_cluster(
     let start_el = decoder.start_el();
     if !(start_el.matches("StopDBClusterResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected StopDBClusterResponse got {:?}",
-            start_el
+            "invalid root, expected StopDBClusterResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("StopDBClusterResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected StopDBClusterResult got {:?}",
-                start_el
+                "invalid result, expected StopDBClusterResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

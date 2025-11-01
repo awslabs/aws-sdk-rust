@@ -120,7 +120,7 @@ impl ::std::fmt::Display for ScopeStatus {
             ScopeStatus::Failed => write!(f, "FAILED"),
             ScopeStatus::InProgress => write!(f, "IN_PROGRESS"),
             ScopeStatus::Succeeded => write!(f, "SUCCEEDED"),
-            ScopeStatus::Unknown(value) => write!(f, "{}", value),
+            ScopeStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

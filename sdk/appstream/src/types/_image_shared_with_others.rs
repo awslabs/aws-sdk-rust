@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ImageSharedWithOthers {
         match self {
             ImageSharedWithOthers::False => write!(f, "FALSE"),
             ImageSharedWithOthers::True => write!(f, "TRUE"),
-            ImageSharedWithOthers::Unknown(value) => write!(f, "{}", value),
+            ImageSharedWithOthers::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -147,7 +147,7 @@ impl ::std::fmt::Display for SalesActivity {
             SalesActivity::InEvaluationPlanningStage => write!(f, "In evaluation / planning stage"),
             SalesActivity::InitializedDiscussionsWithCustomer => write!(f, "Initialized discussions with customer"),
             SalesActivity::SowSigned => write!(f, "SOW Signed"),
-            SalesActivity::Unknown(value) => write!(f, "{}", value),
+            SalesActivity::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -273,7 +273,7 @@ impl ::std::fmt::Display for AutoMlMetricExtendedEnum {
             AutoMlMetricExtendedEnum::TrainingLoss => write!(f, "TrainingLoss"),
             AutoMlMetricExtendedEnum::ValidationLoss => write!(f, "ValidationLoss"),
             AutoMlMetricExtendedEnum::Wape => write!(f, "WAPE"),
-            AutoMlMetricExtendedEnum::Unknown(value) => write!(f, "{}", value),
+            AutoMlMetricExtendedEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

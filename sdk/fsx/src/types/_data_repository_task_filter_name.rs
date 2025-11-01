@@ -114,7 +114,7 @@ impl ::std::fmt::Display for DataRepositoryTaskFilterName {
             DataRepositoryTaskFilterName::FileCacheId => write!(f, "file-cache-id"),
             DataRepositoryTaskFilterName::FileSystemId => write!(f, "file-system-id"),
             DataRepositoryTaskFilterName::TaskLifecycle => write!(f, "task-lifecycle"),
-            DataRepositoryTaskFilterName::Unknown(value) => write!(f, "{}", value),
+            DataRepositoryTaskFilterName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

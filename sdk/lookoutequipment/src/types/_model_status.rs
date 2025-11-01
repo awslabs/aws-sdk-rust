@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ModelStatus {
             ModelStatus::ImportInProgress => write!(f, "IMPORT_IN_PROGRESS"),
             ModelStatus::InProgress => write!(f, "IN_PROGRESS"),
             ModelStatus::Success => write!(f, "SUCCESS"),
-            ModelStatus::Unknown(value) => write!(f, "{}", value),
+            ModelStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

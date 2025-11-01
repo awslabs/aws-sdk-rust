@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ReviewTemplateUpdateStatus {
         match self {
             ReviewTemplateUpdateStatus::Current => write!(f, "CURRENT"),
             ReviewTemplateUpdateStatus::LensNotCurrent => write!(f, "LENS_NOT_CURRENT"),
-            ReviewTemplateUpdateStatus::Unknown(value) => write!(f, "{}", value),
+            ReviewTemplateUpdateStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

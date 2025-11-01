@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TierLevel {
         match self {
             TierLevel::Basic => write!(f, "BASIC"),
             TierLevel::Standard => write!(f, "STANDARD"),
-            TierLevel::Unknown(value) => write!(f, "{}", value),
+            TierLevel::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for RouteMatrixTravelMode {
             RouteMatrixTravelMode::Pedestrian => write!(f, "Pedestrian"),
             RouteMatrixTravelMode::Scooter => write!(f, "Scooter"),
             RouteMatrixTravelMode::Truck => write!(f, "Truck"),
-            RouteMatrixTravelMode::Unknown(value) => write!(f, "{}", value),
+            RouteMatrixTravelMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

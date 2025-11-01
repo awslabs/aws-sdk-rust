@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ContactMethodStatus {
             ContactMethodStatus::Invalid => write!(f, "Invalid"),
             ContactMethodStatus::PendingVerification => write!(f, "PendingVerification"),
             ContactMethodStatus::Valid => write!(f, "Valid"),
-            ContactMethodStatus::Unknown(value) => write!(f, "{}", value),
+            ContactMethodStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

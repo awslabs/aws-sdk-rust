@@ -154,7 +154,7 @@ impl ::std::fmt::Display for InstancePropertyFilterKey {
             InstancePropertyFilterKey::PingStatus => write!(f, "PingStatus"),
             InstancePropertyFilterKey::PlatformTypes => write!(f, "PlatformTypes"),
             InstancePropertyFilterKey::ResourceType => write!(f, "ResourceType"),
-            InstancePropertyFilterKey::Unknown(value) => write!(f, "{}", value),
+            InstancePropertyFilterKey::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

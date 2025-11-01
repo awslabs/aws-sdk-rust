@@ -132,7 +132,7 @@ impl ::std::fmt::Display for InstanceMode {
             InstanceMode::Query => write!(f, "QUERY"),
             InstanceMode::Replica => write!(f, "REPLICA"),
             InstanceMode::Standby => write!(f, "STANDBY"),
-            InstanceMode::Unknown(value) => write!(f, "{}", value),
+            InstanceMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

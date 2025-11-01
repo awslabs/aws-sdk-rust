@@ -114,7 +114,7 @@ impl ::std::fmt::Display for PatchDeploymentStatus {
             PatchDeploymentStatus::ExplicitApproved => write!(f, "EXPLICIT_APPROVED"),
             PatchDeploymentStatus::ExplicitRejected => write!(f, "EXPLICIT_REJECTED"),
             PatchDeploymentStatus::PendingApproval => write!(f, "PENDING_APPROVAL"),
-            PatchDeploymentStatus::Unknown(value) => write!(f, "{}", value),
+            PatchDeploymentStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

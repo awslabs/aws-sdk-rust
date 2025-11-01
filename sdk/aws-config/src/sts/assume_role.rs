@@ -11,7 +11,7 @@ use aws_credential_types::provider::{
 };
 use aws_sdk_sts::operation::assume_role::builders::AssumeRoleFluentBuilder;
 use aws_sdk_sts::operation::assume_role::AssumeRoleError;
-use aws_sdk_sts::types::PolicyDescriptorType;
+use aws_sdk_sts::types::{PolicyDescriptorType, Tag};
 use aws_sdk_sts::Client as StsClient;
 use aws_smithy_runtime::client::identity::IdentityCache;
 use aws_smithy_runtime_api::client::result::SdkError;
@@ -103,6 +103,7 @@ pub struct AssumeRoleProviderBuilder {
     policy_arns: Option<Vec<PolicyDescriptorType>>,
     region_override: Option<Region>,
     sdk_config: Option<SdkConfig>,
+    tags: Option<Vec<Tag>>,
 }
 
 impl AssumeRoleProviderBuilder {
@@ -123,6 +124,7 @@ impl AssumeRoleProviderBuilder {
             policy_arns: None,
             sdk_config: None,
             region_override: None,
+            tags: None,
         }
     }
 
@@ -198,6 +200,31 @@ impl AssumeRoleProviderBuilder {
         self
     }
 
+    /// Set the session tags
+    ///
+    /// A list of session tags that you want to pass. Each session tag consists of a key name and an associated value.
+    /// For more information, see `[Tag]`.
+    pub fn tags<K, V>(mut self, tags: impl IntoIterator<Item = (K, V)>) -> Self
+    where
+        K: Into<String>,
+        V: Into<String>,
+    {
+        self.tags = Some(
+            tags.into_iter()
+                // Unwrap won't fail as both key and value are specified.
+                // Currently Tag does not have an infallible build method.
+                .map(|(k, v)| {
+                    Tag::builder()
+                        .key(k)
+                        .value(v)
+                        .build()
+                        .expect("this is unreachable: both k and v are set")
+                })
+                .collect::<Vec<_>>(),
+        );
+        self
+    }
+
     /// Sets the configuration used for this provider
     ///
     /// This enables overriding the connection used to communicate with STS in addition to other internal
@@ -256,7 +283,8 @@ impl AssumeRoleProviderBuilder {
             .set_role_session_name(Some(session_name))
             .set_policy(self.policy)
             .set_policy_arns(self.policy_arns)
-            .set_duration_seconds(self.session_length.map(|dur| dur.as_secs() as i32));
+            .set_duration_seconds(self.session_length.map(|dur| dur.as_secs() as i32))
+            .set_tags(self.tags);
 
         AssumeRoleProvider {
             inner: Inner { fluent_builder },

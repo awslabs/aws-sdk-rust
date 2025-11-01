@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AntiAlias {
         match self {
             AntiAlias::Disabled => write!(f, "DISABLED"),
             AntiAlias::Enabled => write!(f, "ENABLED"),
-            AntiAlias::Unknown(value) => write!(f, "{}", value),
+            AntiAlias::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

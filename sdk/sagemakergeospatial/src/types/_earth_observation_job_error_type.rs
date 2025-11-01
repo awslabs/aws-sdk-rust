@@ -102,7 +102,7 @@ impl ::std::fmt::Display for EarthObservationJobErrorType {
         match self {
             EarthObservationJobErrorType::ClientError => write!(f, "CLIENT_ERROR"),
             EarthObservationJobErrorType::ServerError => write!(f, "SERVER_ERROR"),
-            EarthObservationJobErrorType::Unknown(value) => write!(f, "{}", value),
+            EarthObservationJobErrorType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

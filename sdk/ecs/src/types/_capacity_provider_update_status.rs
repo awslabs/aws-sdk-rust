@@ -154,7 +154,7 @@ impl ::std::fmt::Display for CapacityProviderUpdateStatus {
             CapacityProviderUpdateStatus::UpdateComplete => write!(f, "UPDATE_COMPLETE"),
             CapacityProviderUpdateStatus::UpdateFailed => write!(f, "UPDATE_FAILED"),
             CapacityProviderUpdateStatus::UpdateInProgress => write!(f, "UPDATE_IN_PROGRESS"),
-            CapacityProviderUpdateStatus::Unknown(value) => write!(f, "{}", value),
+            CapacityProviderUpdateStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

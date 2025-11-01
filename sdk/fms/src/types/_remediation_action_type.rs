@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RemediationActionType {
         match self {
             RemediationActionType::Modify => write!(f, "MODIFY"),
             RemediationActionType::Remove => write!(f, "REMOVE"),
-            RemediationActionType::Unknown(value) => write!(f, "{}", value),
+            RemediationActionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

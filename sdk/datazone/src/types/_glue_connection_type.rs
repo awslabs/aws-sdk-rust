@@ -182,7 +182,7 @@ impl ::std::fmt::Display for GlueConnectionType {
             GlueConnectionType::Sqlserver => write!(f, "SQLSERVER"),
             GlueConnectionType::Teradata => write!(f, "TERADATA"),
             GlueConnectionType::Vertica => write!(f, "VERTICA"),
-            GlueConnectionType::Unknown(value) => write!(f, "{}", value),
+            GlueConnectionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

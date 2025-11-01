@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ReservationState {
             ReservationState::Canceled => write!(f, "CANCELED"),
             ReservationState::Expired => write!(f, "EXPIRED"),
             ReservationState::Processing => write!(f, "PROCESSING"),
-            ReservationState::Unknown(value) => write!(f, "{}", value),
+            ReservationState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

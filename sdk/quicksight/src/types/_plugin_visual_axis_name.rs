@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PluginVisualAxisName {
         match self {
             PluginVisualAxisName::GroupBy => write!(f, "GROUP_BY"),
             PluginVisualAxisName::Value => write!(f, "VALUE"),
-            PluginVisualAxisName::Unknown(value) => write!(f, "{}", value),
+            PluginVisualAxisName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

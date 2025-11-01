@@ -108,7 +108,7 @@ impl ::std::fmt::Display for TracingType {
             TracingType::Disabled => write!(f, "disabled"),
             TracingType::Jaeger => write!(f, "jaeger"),
             TracingType::Log => write!(f, "log"),
-            TracingType::Unknown(value) => write!(f, "{}", value),
+            TracingType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

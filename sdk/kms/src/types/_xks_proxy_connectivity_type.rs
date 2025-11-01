@@ -102,7 +102,7 @@ impl ::std::fmt::Display for XksProxyConnectivityType {
         match self {
             XksProxyConnectivityType::PublicEndpoint => write!(f, "PUBLIC_ENDPOINT"),
             XksProxyConnectivityType::VpcEndpointService => write!(f, "VPC_ENDPOINT_SERVICE"),
-            XksProxyConnectivityType::Unknown(value) => write!(f, "{}", value),
+            XksProxyConnectivityType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

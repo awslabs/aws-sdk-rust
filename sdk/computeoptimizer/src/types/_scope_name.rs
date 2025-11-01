@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ScopeName {
             ScopeName::AccountId => write!(f, "AccountId"),
             ScopeName::Organization => write!(f, "Organization"),
             ScopeName::ResourceArn => write!(f, "ResourceArn"),
-            ScopeName::Unknown(value) => write!(f, "{}", value),
+            ScopeName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

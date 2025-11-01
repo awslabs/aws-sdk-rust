@@ -96,7 +96,7 @@ impl ::std::fmt::Display for AssessmentReportDestinationType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             AssessmentReportDestinationType::S3 => write!(f, "S3"),
-            AssessmentReportDestinationType::Unknown(value) => write!(f, "{}", value),
+            AssessmentReportDestinationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

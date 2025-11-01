@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AgaModeForWorkSpaceEnum {
             AgaModeForWorkSpaceEnum::Disabled => write!(f, "DISABLED"),
             AgaModeForWorkSpaceEnum::EnabledAuto => write!(f, "ENABLED_AUTO"),
             AgaModeForWorkSpaceEnum::Inherited => write!(f, "INHERITED"),
-            AgaModeForWorkSpaceEnum::Unknown(value) => write!(f, "{}", value),
+            AgaModeForWorkSpaceEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

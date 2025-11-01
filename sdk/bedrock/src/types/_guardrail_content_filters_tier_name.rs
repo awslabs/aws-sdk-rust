@@ -100,7 +100,7 @@ impl ::std::fmt::Display for GuardrailContentFiltersTierName {
         match self {
             GuardrailContentFiltersTierName::Classic => write!(f, "CLASSIC"),
             GuardrailContentFiltersTierName::Standard => write!(f, "STANDARD"),
-            GuardrailContentFiltersTierName::Unknown(value) => write!(f, "{}", value),
+            GuardrailContentFiltersTierName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

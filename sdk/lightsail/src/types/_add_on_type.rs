@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AddOnType {
         match self {
             AddOnType::AutoSnapshot => write!(f, "AutoSnapshot"),
             AddOnType::StopInstanceOnIdle => write!(f, "StopInstanceOnIdle"),
-            AddOnType::Unknown(value) => write!(f, "{}", value),
+            AddOnType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

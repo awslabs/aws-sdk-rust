@@ -120,7 +120,7 @@ impl ::std::fmt::Display for RescoreExecutionPlanStatus {
             RescoreExecutionPlanStatus::Deleting => write!(f, "DELETING"),
             RescoreExecutionPlanStatus::Failed => write!(f, "FAILED"),
             RescoreExecutionPlanStatus::Updating => write!(f, "UPDATING"),
-            RescoreExecutionPlanStatus::Unknown(value) => write!(f, "{}", value),
+            RescoreExecutionPlanStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

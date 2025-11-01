@@ -162,7 +162,7 @@ impl ::std::fmt::Display for EventType {
             EventType::RenderingFailure => write!(f, "RENDERING_FAILURE"),
             EventType::Send => write!(f, "SEND"),
             EventType::Subscription => write!(f, "SUBSCRIPTION"),
-            EventType::Unknown(value) => write!(f, "{}", value),
+            EventType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

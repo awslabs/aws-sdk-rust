@@ -102,7 +102,7 @@ impl ::std::fmt::Display for EventSourceOptInStatus {
         match self {
             EventSourceOptInStatus::Disabled => write!(f, "DISABLED"),
             EventSourceOptInStatus::Enabled => write!(f, "ENABLED"),
-            EventSourceOptInStatus::Unknown(value) => write!(f, "{}", value),
+            EventSourceOptInStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

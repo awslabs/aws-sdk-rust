@@ -140,7 +140,7 @@ impl ::std::fmt::Display for CriterionKey {
             CriterionKey::ScanStartTime => write!(f, "SCAN_START_TIME"),
             CriterionKey::ScanStatus => write!(f, "SCAN_STATUS"),
             CriterionKey::ScanType => write!(f, "SCAN_TYPE"),
-            CriterionKey::Unknown(value) => write!(f, "{}", value),
+            CriterionKey::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

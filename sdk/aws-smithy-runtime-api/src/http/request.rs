@@ -147,7 +147,7 @@ fn merge_paths(
         let uri_path_no_slash = uri_path_and_query
             .strip_prefix('/')
             .unwrap_or(uri_path_and_query);
-        Cow::Owned(format!("{}/{}", ep_no_slash, uri_path_no_slash))
+        Cow::Owned(format!("{ep_no_slash}/{uri_path_no_slash}"))
     }
 }
 

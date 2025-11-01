@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Framework {
         match self {
             Framework::Ethereum => write!(f, "ETHEREUM"),
             Framework::HyperledgerFabric => write!(f, "HYPERLEDGER_FABRIC"),
-            Framework::Unknown(value) => write!(f, "{}", value),
+            Framework::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

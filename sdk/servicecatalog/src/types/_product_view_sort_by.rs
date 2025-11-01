@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ProductViewSortBy {
             ProductViewSortBy::CreationDate => write!(f, "CreationDate"),
             ProductViewSortBy::Title => write!(f, "Title"),
             ProductViewSortBy::VersionCount => write!(f, "VersionCount"),
-            ProductViewSortBy::Unknown(value) => write!(f, "{}", value),
+            ProductViewSortBy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

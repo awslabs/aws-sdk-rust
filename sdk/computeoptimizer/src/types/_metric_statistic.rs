@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MetricStatistic {
         match self {
             MetricStatistic::Average => write!(f, "Average"),
             MetricStatistic::Maximum => write!(f, "Maximum"),
-            MetricStatistic::Unknown(value) => write!(f, "{}", value),
+            MetricStatistic::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

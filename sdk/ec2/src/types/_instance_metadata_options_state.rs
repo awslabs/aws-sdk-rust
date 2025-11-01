@@ -102,7 +102,7 @@ impl ::std::fmt::Display for InstanceMetadataOptionsState {
         match self {
             InstanceMetadataOptionsState::Applied => write!(f, "applied"),
             InstanceMetadataOptionsState::Pending => write!(f, "pending"),
-            InstanceMetadataOptionsState::Unknown(value) => write!(f, "{}", value),
+            InstanceMetadataOptionsState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DashIsoVideoCompositionOffsets {
         match self {
             DashIsoVideoCompositionOffsets::Signed => write!(f, "SIGNED"),
             DashIsoVideoCompositionOffsets::Unsigned => write!(f, "UNSIGNED"),
-            DashIsoVideoCompositionOffsets::Unknown(value) => write!(f, "{}", value),
+            DashIsoVideoCompositionOffsets::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

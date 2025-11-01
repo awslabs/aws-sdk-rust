@@ -108,7 +108,7 @@ impl ::std::fmt::Display for LambdaFunctionRecommendationFinding {
             LambdaFunctionRecommendationFinding::NotOptimized => write!(f, "NotOptimized"),
             LambdaFunctionRecommendationFinding::Optimized => write!(f, "Optimized"),
             LambdaFunctionRecommendationFinding::Unavailable => write!(f, "Unavailable"),
-            LambdaFunctionRecommendationFinding::Unknown(value) => write!(f, "{}", value),
+            LambdaFunctionRecommendationFinding::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

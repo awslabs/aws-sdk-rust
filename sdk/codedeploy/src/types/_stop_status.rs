@@ -102,7 +102,7 @@ impl ::std::fmt::Display for StopStatus {
         match self {
             StopStatus::Pending => write!(f, "Pending"),
             StopStatus::Succeeded => write!(f, "Succeeded"),
-            StopStatus::Unknown(value) => write!(f, "{}", value),
+            StopStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

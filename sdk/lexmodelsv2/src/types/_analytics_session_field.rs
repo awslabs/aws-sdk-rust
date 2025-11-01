@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AnalyticsSessionField {
         match self {
             AnalyticsSessionField::ConversationEndState => write!(f, "ConversationEndState"),
             AnalyticsSessionField::LocaleId => write!(f, "LocaleId"),
-            AnalyticsSessionField::Unknown(value) => write!(f, "{}", value),
+            AnalyticsSessionField::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

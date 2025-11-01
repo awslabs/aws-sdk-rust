@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RecommendedRemediationAction {
         match self {
             RecommendedRemediationAction::CreatePolicy => write!(f, "CREATE_POLICY"),
             RecommendedRemediationAction::DetachPolicy => write!(f, "DETACH_POLICY"),
-            RecommendedRemediationAction::Unknown(value) => write!(f, "{}", value),
+            RecommendedRemediationAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

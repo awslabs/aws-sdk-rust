@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MotionImageInsertionMode {
         match self {
             MotionImageInsertionMode::Mov => write!(f, "MOV"),
             MotionImageInsertionMode::Png => write!(f, "PNG"),
-            MotionImageInsertionMode::Unknown(value) => write!(f, "{}", value),
+            MotionImageInsertionMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

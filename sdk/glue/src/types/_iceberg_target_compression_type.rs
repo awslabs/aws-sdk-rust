@@ -114,7 +114,7 @@ impl ::std::fmt::Display for IcebergTargetCompressionType {
             IcebergTargetCompressionType::Lzo => write!(f, "lzo"),
             IcebergTargetCompressionType::Snappy => write!(f, "snappy"),
             IcebergTargetCompressionType::Uncompressed => write!(f, "uncompressed"),
-            IcebergTargetCompressionType::Unknown(value) => write!(f, "{}", value),
+            IcebergTargetCompressionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

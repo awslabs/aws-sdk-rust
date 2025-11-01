@@ -147,7 +147,7 @@ impl ::std::fmt::Display for SourceApiAssociationStatus {
             SourceApiAssociationStatus::MergeInProgress => write!(f, "MERGE_IN_PROGRESS"),
             SourceApiAssociationStatus::MergeScheduled => write!(f, "MERGE_SCHEDULED"),
             SourceApiAssociationStatus::MergeSuccess => write!(f, "MERGE_SUCCESS"),
-            SourceApiAssociationStatus::Unknown(value) => write!(f, "{}", value),
+            SourceApiAssociationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

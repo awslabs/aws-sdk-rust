@@ -102,7 +102,7 @@ impl ::std::fmt::Display for LoggerType {
         match self {
             LoggerType::AwsCloudWatch => write!(f, "AWSCloudWatch"),
             LoggerType::FileSystem => write!(f, "FileSystem"),
-            LoggerType::Unknown(value) => write!(f, "{}", value),
+            LoggerType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

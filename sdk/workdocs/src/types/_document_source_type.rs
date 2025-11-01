@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DocumentSourceType {
         match self {
             DocumentSourceType::Original => write!(f, "ORIGINAL"),
             DocumentSourceType::WithComments => write!(f, "WITH_COMMENTS"),
-            DocumentSourceType::Unknown(value) => write!(f, "{}", value),
+            DocumentSourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

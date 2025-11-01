@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RecordingScope {
         match self {
             RecordingScope::Internal => write!(f, "INTERNAL"),
             RecordingScope::Paid => write!(f, "PAID"),
-            RecordingScope::Unknown(value) => write!(f, "{}", value),
+            RecordingScope::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

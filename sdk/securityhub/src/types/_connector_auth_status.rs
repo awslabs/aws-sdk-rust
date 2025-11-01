@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ConnectorAuthStatus {
         match self {
             ConnectorAuthStatus::Active => write!(f, "ACTIVE"),
             ConnectorAuthStatus::Failed => write!(f, "FAILED"),
-            ConnectorAuthStatus::Unknown(value) => write!(f, "{}", value),
+            ConnectorAuthStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

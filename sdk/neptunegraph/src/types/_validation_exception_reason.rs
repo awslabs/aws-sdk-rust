@@ -140,7 +140,7 @@ impl ::std::fmt::Display for ValidationExceptionReason {
             ValidationExceptionReason::QueryCancelled => write!(f, "QUERY_CANCELLED"),
             ValidationExceptionReason::QueryTooLarge => write!(f, "QUERY_TOO_LARGE"),
             ValidationExceptionReason::UnsupportedOperation => write!(f, "UNSUPPORTED_OPERATION"),
-            ValidationExceptionReason::Unknown(value) => write!(f, "{}", value),
+            ValidationExceptionReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

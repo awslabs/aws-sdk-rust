@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MfaDelete {
         match self {
             MfaDelete::Disabled => write!(f, "Disabled"),
             MfaDelete::Enabled => write!(f, "Enabled"),
-            MfaDelete::Unknown(value) => write!(f, "{}", value),
+            MfaDelete::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

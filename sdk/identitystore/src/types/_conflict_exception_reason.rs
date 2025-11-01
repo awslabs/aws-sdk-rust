@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ConflictExceptionReason {
         match self {
             ConflictExceptionReason::ConcurrentModification => write!(f, "CONCURRENT_MODIFICATION"),
             ConflictExceptionReason::UniquenessConstraintViolation => write!(f, "UNIQUENESS_CONSTRAINT_VIOLATION"),
-            ConflictExceptionReason::Unknown(value) => write!(f, "{}", value),
+            ConflictExceptionReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

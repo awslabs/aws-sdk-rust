@@ -108,7 +108,7 @@ impl ::std::fmt::Display for RefreshSchemasStatusTypeValue {
             RefreshSchemasStatusTypeValue::Failed => write!(f, "failed"),
             RefreshSchemasStatusTypeValue::Refreshing => write!(f, "refreshing"),
             RefreshSchemasStatusTypeValue::Successful => write!(f, "successful"),
-            RefreshSchemasStatusTypeValue::Unknown(value) => write!(f, "{}", value),
+            RefreshSchemasStatusTypeValue::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

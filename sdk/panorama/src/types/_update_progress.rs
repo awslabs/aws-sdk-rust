@@ -132,7 +132,7 @@ impl ::std::fmt::Display for UpdateProgress {
             UpdateProgress::Pending => write!(f, "PENDING"),
             UpdateProgress::Rebooting => write!(f, "REBOOTING"),
             UpdateProgress::Verifying => write!(f, "VERIFYING"),
-            UpdateProgress::Unknown(value) => write!(f, "{}", value),
+            UpdateProgress::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

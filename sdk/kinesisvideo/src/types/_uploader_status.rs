@@ -108,7 +108,7 @@ impl ::std::fmt::Display for UploaderStatus {
             UploaderStatus::Success => write!(f, "SUCCESS"),
             UploaderStatus::SystemError => write!(f, "SYSTEM_ERROR"),
             UploaderStatus::UserError => write!(f, "USER_ERROR"),
-            UploaderStatus::Unknown(value) => write!(f, "{}", value),
+            UploaderStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

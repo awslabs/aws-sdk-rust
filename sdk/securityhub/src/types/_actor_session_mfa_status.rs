@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ActorSessionMfaStatus {
         match self {
             ActorSessionMfaStatus::Disabled => write!(f, "DISABLED"),
             ActorSessionMfaStatus::Enabled => write!(f, "ENABLED"),
-            ActorSessionMfaStatus::Unknown(value) => write!(f, "{}", value),
+            ActorSessionMfaStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for KnowledgeBaseSearchType {
         match self {
             KnowledgeBaseSearchType::Hybrid => write!(f, "HYBRID"),
             KnowledgeBaseSearchType::Semantic => write!(f, "SEMANTIC"),
-            KnowledgeBaseSearchType::Unknown(value) => write!(f, "{}", value),
+            KnowledgeBaseSearchType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

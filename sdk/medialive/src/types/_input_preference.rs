@@ -104,7 +104,7 @@ impl ::std::fmt::Display for InputPreference {
         match self {
             InputPreference::EqualInputPreference => write!(f, "EQUAL_INPUT_PREFERENCE"),
             InputPreference::PrimaryInputPreferred => write!(f, "PRIMARY_INPUT_PREFERRED"),
-            InputPreference::Unknown(value) => write!(f, "{}", value),
+            InputPreference::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

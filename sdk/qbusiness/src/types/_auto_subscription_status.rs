@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AutoSubscriptionStatus {
         match self {
             AutoSubscriptionStatus::Disabled => write!(f, "DISABLED"),
             AutoSubscriptionStatus::Enabled => write!(f, "ENABLED"),
-            AutoSubscriptionStatus::Unknown(value) => write!(f, "{}", value),
+            AutoSubscriptionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

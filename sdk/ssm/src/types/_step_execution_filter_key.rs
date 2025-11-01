@@ -154,7 +154,7 @@ impl ::std::fmt::Display for StepExecutionFilterKey {
             StepExecutionFilterKey::StepExecutionId => write!(f, "StepExecutionId"),
             StepExecutionFilterKey::StepExecutionStatus => write!(f, "StepExecutionStatus"),
             StepExecutionFilterKey::StepName => write!(f, "StepName"),
-            StepExecutionFilterKey::Unknown(value) => write!(f, "{}", value),
+            StepExecutionFilterKey::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

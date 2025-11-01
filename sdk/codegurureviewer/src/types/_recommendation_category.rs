@@ -168,7 +168,7 @@ impl ::std::fmt::Display for RecommendationCategory {
             RecommendationCategory::PythonBestPractices => write!(f, "PythonBestPractices"),
             RecommendationCategory::ResourceLeaks => write!(f, "ResourceLeaks"),
             RecommendationCategory::SecurityIssues => write!(f, "SecurityIssues"),
-            RecommendationCategory::Unknown(value) => write!(f, "{}", value),
+            RecommendationCategory::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

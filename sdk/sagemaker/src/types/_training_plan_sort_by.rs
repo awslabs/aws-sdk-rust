@@ -108,7 +108,7 @@ impl ::std::fmt::Display for TrainingPlanSortBy {
             TrainingPlanSortBy::StartTime => write!(f, "StartTime"),
             TrainingPlanSortBy::Status => write!(f, "Status"),
             TrainingPlanSortBy::Name => write!(f, "TrainingPlanName"),
-            TrainingPlanSortBy::Unknown(value) => write!(f, "{}", value),
+            TrainingPlanSortBy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

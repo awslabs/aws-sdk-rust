@@ -152,7 +152,7 @@ impl ::std::fmt::Display for ColorSpaceConversion {
             ColorSpaceConversion::ForceP3D65Sdr => write!(f, "FORCE_P3D65_SDR"),
             ColorSpaceConversion::ForceP3Dci => write!(f, "FORCE_P3DCI"),
             ColorSpaceConversion::None => write!(f, "NONE"),
-            ColorSpaceConversion::Unknown(value) => write!(f, "{}", value),
+            ColorSpaceConversion::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

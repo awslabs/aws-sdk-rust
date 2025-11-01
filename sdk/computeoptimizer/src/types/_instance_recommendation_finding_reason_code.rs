@@ -231,7 +231,7 @@ impl ::std::fmt::Display for InstanceRecommendationFindingReasonCode {
             InstanceRecommendationFindingReasonCode::NetworkBandwidthUnderProvisioned => write!(f, "NetworkBandwidthUnderprovisioned"),
             InstanceRecommendationFindingReasonCode::NetworkPpsOverProvisioned => write!(f, "NetworkPPSOverprovisioned"),
             InstanceRecommendationFindingReasonCode::NetworkPpsUnderProvisioned => write!(f, "NetworkPPSUnderprovisioned"),
-            InstanceRecommendationFindingReasonCode::Unknown(value) => write!(f, "{}", value),
+            InstanceRecommendationFindingReasonCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

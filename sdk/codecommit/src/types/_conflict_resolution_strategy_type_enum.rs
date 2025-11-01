@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ConflictResolutionStrategyTypeEnum {
             ConflictResolutionStrategyTypeEnum::AcceptSource => write!(f, "ACCEPT_SOURCE"),
             ConflictResolutionStrategyTypeEnum::Automerge => write!(f, "AUTOMERGE"),
             ConflictResolutionStrategyTypeEnum::None => write!(f, "NONE"),
-            ConflictResolutionStrategyTypeEnum::Unknown(value) => write!(f, "{}", value),
+            ConflictResolutionStrategyTypeEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

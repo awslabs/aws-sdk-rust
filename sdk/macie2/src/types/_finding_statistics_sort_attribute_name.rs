@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FindingStatisticsSortAttributeName {
         match self {
             FindingStatisticsSortAttributeName::Count => write!(f, "count"),
             FindingStatisticsSortAttributeName::GroupKey => write!(f, "groupKey"),
-            FindingStatisticsSortAttributeName::Unknown(value) => write!(f, "{}", value),
+            FindingStatisticsSortAttributeName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

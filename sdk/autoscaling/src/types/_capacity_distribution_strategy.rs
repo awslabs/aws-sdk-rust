@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CapacityDistributionStrategy {
         match self {
             CapacityDistributionStrategy::BalancedBestEffort => write!(f, "balanced-best-effort"),
             CapacityDistributionStrategy::BalancedOnly => write!(f, "balanced-only"),
-            CapacityDistributionStrategy::Unknown(value) => write!(f, "{}", value),
+            CapacityDistributionStrategy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

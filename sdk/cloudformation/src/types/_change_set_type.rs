@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ChangeSetType {
             ChangeSetType::Create => write!(f, "CREATE"),
             ChangeSetType::Import => write!(f, "IMPORT"),
             ChangeSetType::Update => write!(f, "UPDATE"),
-            ChangeSetType::Unknown(value) => write!(f, "{}", value),
+            ChangeSetType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

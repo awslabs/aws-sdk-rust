@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RootDeviceType {
         match self {
             RootDeviceType::Ebs => write!(f, "ebs"),
             RootDeviceType::InstanceStore => write!(f, "instance-store"),
-            RootDeviceType::Unknown(value) => write!(f, "{}", value),
+            RootDeviceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TargetFieldOrder {
         match self {
             TargetFieldOrder::LatLon => write!(f, "LatLon"),
             TargetFieldOrder::LonLat => write!(f, "LonLat"),
-            TargetFieldOrder::Unknown(value) => write!(f, "{}", value),
+            TargetFieldOrder::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

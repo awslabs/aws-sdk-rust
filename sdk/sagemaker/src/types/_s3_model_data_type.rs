@@ -102,7 +102,7 @@ impl ::std::fmt::Display for S3ModelDataType {
         match self {
             S3ModelDataType::S3Object => write!(f, "S3Object"),
             S3ModelDataType::S3Prefix => write!(f, "S3Prefix"),
-            S3ModelDataType::Unknown(value) => write!(f, "{}", value),
+            S3ModelDataType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

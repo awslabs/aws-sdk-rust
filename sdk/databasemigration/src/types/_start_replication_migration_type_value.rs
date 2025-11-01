@@ -108,7 +108,7 @@ impl ::std::fmt::Display for StartReplicationMigrationTypeValue {
             StartReplicationMigrationTypeValue::ReloadTarget => write!(f, "reload-target"),
             StartReplicationMigrationTypeValue::ResumeProcessing => write!(f, "resume-processing"),
             StartReplicationMigrationTypeValue::StartReplication => write!(f, "start-replication"),
-            StartReplicationMigrationTypeValue::Unknown(value) => write!(f, "{}", value),
+            StartReplicationMigrationTypeValue::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

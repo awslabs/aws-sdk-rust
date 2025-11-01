@@ -102,7 +102,7 @@ impl ::std::fmt::Display for IpAddressFamily {
         match self {
             IpAddressFamily::IPv4 => write!(f, "IPv4"),
             IpAddressFamily::IPv6 => write!(f, "IPv6"),
-            IpAddressFamily::Unknown(value) => write!(f, "{}", value),
+            IpAddressFamily::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

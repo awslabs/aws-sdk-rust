@@ -108,7 +108,7 @@ impl ::std::fmt::Display for PlaybackInterruptionReason {
             PlaybackInterruptionReason::DtmfStartDetected => write!(f, "DTMF_START_DETECTED"),
             PlaybackInterruptionReason::TextDetected => write!(f, "TEXT_DETECTED"),
             PlaybackInterruptionReason::VoiceStartDetected => write!(f, "VOICE_START_DETECTED"),
-            PlaybackInterruptionReason::Unknown(value) => write!(f, "{}", value),
+            PlaybackInterruptionReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

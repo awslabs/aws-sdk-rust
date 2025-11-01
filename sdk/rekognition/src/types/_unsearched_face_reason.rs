@@ -147,7 +147,7 @@ impl ::std::fmt::Display for UnsearchedFaceReason {
             UnsearchedFaceReason::LowFaceQuality => write!(f, "LOW_FACE_QUALITY"),
             UnsearchedFaceReason::LowSharpness => write!(f, "LOW_SHARPNESS"),
             UnsearchedFaceReason::SmallBoundingBox => write!(f, "SMALL_BOUNDING_BOX"),
-            UnsearchedFaceReason::Unknown(value) => write!(f, "{}", value),
+            UnsearchedFaceReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

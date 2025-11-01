@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AutomationStreamStatus {
         match self {
             AutomationStreamStatus::Disabled => write!(f, "DISABLED"),
             AutomationStreamStatus::Enabled => write!(f, "ENABLED"),
-            AutomationStreamStatus::Unknown(value) => write!(f, "{}", value),
+            AutomationStreamStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

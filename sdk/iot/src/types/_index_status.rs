@@ -108,7 +108,7 @@ impl ::std::fmt::Display for IndexStatus {
             IndexStatus::Active => write!(f, "ACTIVE"),
             IndexStatus::Building => write!(f, "BUILDING"),
             IndexStatus::Rebuilding => write!(f, "REBUILDING"),
-            IndexStatus::Unknown(value) => write!(f, "{}", value),
+            IndexStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

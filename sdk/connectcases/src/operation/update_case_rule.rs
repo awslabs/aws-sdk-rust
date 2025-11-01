@@ -180,6 +180,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for UpdateCaseRu
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::update_case_rule::UpdateCaseRuleInput,
                 output: &mut ::std::string::String,
@@ -290,6 +291,8 @@ pub enum UpdateCaseRuleError {
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>We couldn't find the requested resource. Check that your resources exists and were created in the same Amazon Web Services Region as your request, and try your request again.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
+    /// <p>The service quota has been exceeded. For a list of service quotas, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// <p>The rate has been exceeded for this API. Please try again after a few minutes.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>The request isn't valid. Check the syntax and try again.</p>
@@ -331,6 +334,7 @@ impl UpdateCaseRuleError {
             Self::ConflictException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InternalServerException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ServiceQuotaExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ThrottlingException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ValidationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
@@ -352,6 +356,10 @@ impl UpdateCaseRuleError {
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(self, Self::ResourceNotFoundException(_))
     }
+    /// Returns `true` if the error kind is `UpdateCaseRuleError::ServiceQuotaExceededException`.
+    pub fn is_service_quota_exceeded_exception(&self) -> bool {
+        matches!(self, Self::ServiceQuotaExceededException(_))
+    }
     /// Returns `true` if the error kind is `UpdateCaseRuleError::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(self, Self::ThrottlingException(_))
@@ -368,6 +376,7 @@ impl ::std::error::Error for UpdateCaseRuleError {
             Self::ConflictException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalServerException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ServiceQuotaExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::ThrottlingException(_inner) => ::std::option::Option::Some(_inner),
             Self::ValidationException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
@@ -381,6 +390,7 @@ impl ::std::fmt::Display for UpdateCaseRuleError {
             Self::ConflictException(_inner) => _inner.fmt(f),
             Self::InternalServerException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            Self::ServiceQuotaExceededException(_inner) => _inner.fmt(f),
             Self::ThrottlingException(_inner) => _inner.fmt(f),
             Self::ValidationException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
@@ -412,6 +422,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for UpdateCaseRul
             Self::ConflictException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalServerException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ServiceQuotaExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ThrottlingException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ValidationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,

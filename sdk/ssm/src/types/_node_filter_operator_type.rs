@@ -108,7 +108,7 @@ impl ::std::fmt::Display for NodeFilterOperatorType {
             NodeFilterOperatorType::BeginWith => write!(f, "BeginWith"),
             NodeFilterOperatorType::Equal => write!(f, "Equal"),
             NodeFilterOperatorType::NotEqual => write!(f, "NotEqual"),
-            NodeFilterOperatorType::Unknown(value) => write!(f, "{}", value),
+            NodeFilterOperatorType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

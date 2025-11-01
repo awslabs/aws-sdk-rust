@@ -108,7 +108,7 @@ impl ::std::fmt::Display for HashAlgorithm {
             HashAlgorithm::Sha256 => write!(f, "SHA256"),
             HashAlgorithm::Sha384 => write!(f, "SHA384"),
             HashAlgorithm::Sha512 => write!(f, "SHA512"),
-            HashAlgorithm::Unknown(value) => write!(f, "{}", value),
+            HashAlgorithm::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

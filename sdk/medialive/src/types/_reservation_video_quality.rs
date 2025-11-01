@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ReservationVideoQuality {
             ReservationVideoQuality::Enhanced => write!(f, "ENHANCED"),
             ReservationVideoQuality::Premium => write!(f, "PREMIUM"),
             ReservationVideoQuality::Standard => write!(f, "STANDARD"),
-            ReservationVideoQuality::Unknown(value) => write!(f, "{}", value),
+            ReservationVideoQuality::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

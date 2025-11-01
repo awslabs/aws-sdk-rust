@@ -114,7 +114,7 @@ impl ::std::fmt::Display for RadiusAuthenticationProtocol {
             RadiusAuthenticationProtocol::Mschapv1 => write!(f, "MS-CHAPv1"),
             RadiusAuthenticationProtocol::Mschapv2 => write!(f, "MS-CHAPv2"),
             RadiusAuthenticationProtocol::Pap => write!(f, "PAP"),
-            RadiusAuthenticationProtocol::Unknown(value) => write!(f, "{}", value),
+            RadiusAuthenticationProtocol::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

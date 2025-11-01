@@ -196,7 +196,7 @@ impl ::std::fmt::Display for FilterDimensionType {
             FilterDimensionType::LessThanOrEqual => write!(f, "LESS_THAN_OR_EQUAL"),
             FilterDimensionType::NotBetween => write!(f, "NOT_BETWEEN"),
             FilterDimensionType::On => write!(f, "ON"),
-            FilterDimensionType::Unknown(value) => write!(f, "{}", value),
+            FilterDimensionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

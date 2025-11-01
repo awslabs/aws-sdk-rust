@@ -120,7 +120,7 @@ impl ::std::fmt::Display for InstanceState {
             InstanceState::Provisioning => write!(f, "PROVISIONING"),
             InstanceState::Running => write!(f, "RUNNING"),
             InstanceState::Terminated => write!(f, "TERMINATED"),
-            InstanceState::Unknown(value) => write!(f, "{}", value),
+            InstanceState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

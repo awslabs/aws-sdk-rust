@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ShardFilterType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ShardFilterType::ChildShards => write!(f, "CHILD_SHARDS"),
-            ShardFilterType::Unknown(value) => write!(f, "{}", value),
+            ShardFilterType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

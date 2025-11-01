@@ -120,7 +120,7 @@ impl ::std::fmt::Display for ParameterType {
             ParameterType::Integer => write!(f, "integer"),
             ParameterType::Number => write!(f, "number"),
             ParameterType::String => write!(f, "string"),
-            ParameterType::Unknown(value) => write!(f, "{}", value),
+            ParameterType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

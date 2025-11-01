@@ -102,7 +102,7 @@ impl ::std::fmt::Display for M2tsForceTsVideoEbpOrder {
         match self {
             M2tsForceTsVideoEbpOrder::Default => write!(f, "DEFAULT"),
             M2tsForceTsVideoEbpOrder::Force => write!(f, "FORCE"),
-            M2tsForceTsVideoEbpOrder::Unknown(value) => write!(f, "{}", value),
+            M2tsForceTsVideoEbpOrder::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -96,7 +96,7 @@ impl ::std::fmt::Display for RuleNumberEmailAttribute {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             RuleNumberEmailAttribute::MessageSize => write!(f, "MESSAGE_SIZE"),
-            RuleNumberEmailAttribute::Unknown(value) => write!(f, "{}", value),
+            RuleNumberEmailAttribute::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

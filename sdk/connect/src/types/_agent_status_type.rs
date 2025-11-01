@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AgentStatusType {
             AgentStatusType::Custom => write!(f, "CUSTOM"),
             AgentStatusType::Offline => write!(f, "OFFLINE"),
             AgentStatusType::Routable => write!(f, "ROUTABLE"),
-            AgentStatusType::Unknown(value) => write!(f, "{}", value),
+            AgentStatusType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

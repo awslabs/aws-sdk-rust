@@ -161,7 +161,7 @@ impl ::std::fmt::Display for TransformationToolName {
             TransformationToolName::Sct => write!(f, "Schema Conversion Tool"),
             TransformationToolName::StrategyRecommendationSupport => write!(f, "Strategy Recommendation Support"),
             TransformationToolName::Wwama => write!(f, "Windows Web Application Migration Assistant"),
-            TransformationToolName::Unknown(value) => write!(f, "{}", value),
+            TransformationToolName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

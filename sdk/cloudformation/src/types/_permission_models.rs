@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PermissionModels {
         match self {
             PermissionModels::SelfManaged => write!(f, "SELF_MANAGED"),
             PermissionModels::ServiceManaged => write!(f, "SERVICE_MANAGED"),
-            PermissionModels::Unknown(value) => write!(f, "{}", value),
+            PermissionModels::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

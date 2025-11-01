@@ -138,7 +138,7 @@ impl ::std::fmt::Display for RuleStringEmailAttribute {
             RuleStringEmailAttribute::Sender => write!(f, "SENDER"),
             RuleStringEmailAttribute::Subject => write!(f, "SUBJECT"),
             RuleStringEmailAttribute::To => write!(f, "TO"),
-            RuleStringEmailAttribute::Unknown(value) => write!(f, "{}", value),
+            RuleStringEmailAttribute::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

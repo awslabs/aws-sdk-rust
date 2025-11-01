@@ -126,7 +126,7 @@ impl ::std::fmt::Display for AgentAliasStatus {
             AgentAliasStatus::Failed => write!(f, "FAILED"),
             AgentAliasStatus::Prepared => write!(f, "PREPARED"),
             AgentAliasStatus::Updating => write!(f, "UPDATING"),
-            AgentAliasStatus::Unknown(value) => write!(f, "{}", value),
+            AgentAliasStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

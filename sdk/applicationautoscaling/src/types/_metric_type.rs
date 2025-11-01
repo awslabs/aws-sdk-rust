@@ -306,7 +306,7 @@ impl ::std::fmt::Display for MetricType {
             MetricType::SageMakerVariantInvocationsPerInstance => write!(f, "SageMakerVariantInvocationsPerInstance"),
             MetricType::SageMakerVariantProvisionedConcurrencyUtilization => write!(f, "SageMakerVariantProvisionedConcurrencyUtilization"),
             MetricType::WorkSpacesAverageUserSessionsCapacityUtilization => write!(f, "WorkSpacesAverageUserSessionsCapacityUtilization"),
-            MetricType::Unknown(value) => write!(f, "{}", value),
+            MetricType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for AacCodecProfile {
             AacCodecProfile::Hev2 => write!(f, "HEV2"),
             AacCodecProfile::Lc => write!(f, "LC"),
             AacCodecProfile::Xhe => write!(f, "XHE"),
-            AacCodecProfile::Unknown(value) => write!(f, "{}", value),
+            AacCodecProfile::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

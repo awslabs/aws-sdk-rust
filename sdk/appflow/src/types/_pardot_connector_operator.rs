@@ -189,7 +189,7 @@ impl ::std::fmt::Display for PardotConnectorOperator {
             PardotConnectorOperator::ValidateNonNull => write!(f, "VALIDATE_NON_NULL"),
             PardotConnectorOperator::ValidateNonZero => write!(f, "VALIDATE_NON_ZERO"),
             PardotConnectorOperator::ValidateNumeric => write!(f, "VALIDATE_NUMERIC"),
-            PardotConnectorOperator::Unknown(value) => write!(f, "{}", value),
+            PardotConnectorOperator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for DeviceTrustProviderType {
             DeviceTrustProviderType::Crowdstrike => write!(f, "crowdstrike"),
             DeviceTrustProviderType::Jamf => write!(f, "jamf"),
             DeviceTrustProviderType::Jumpcloud => write!(f, "jumpcloud"),
-            DeviceTrustProviderType::Unknown(value) => write!(f, "{}", value),
+            DeviceTrustProviderType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

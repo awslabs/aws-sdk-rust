@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ClinicalNoteGenerationStatus {
             ClinicalNoteGenerationStatus::Completed => write!(f, "COMPLETED"),
             ClinicalNoteGenerationStatus::Failed => write!(f, "FAILED"),
             ClinicalNoteGenerationStatus::InProgress => write!(f, "IN_PROGRESS"),
-            ClinicalNoteGenerationStatus::Unknown(value) => write!(f, "{}", value),
+            ClinicalNoteGenerationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

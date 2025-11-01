@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ConfigurationSource {
         match self {
             ConfigurationSource::Api => write!(f, "API"),
             ConfigurationSource::Repository => write!(f, "REPOSITORY"),
-            ConfigurationSource::Unknown(value) => write!(f, "{}", value),
+            ConfigurationSource::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

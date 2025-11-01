@@ -132,7 +132,7 @@ impl ::std::fmt::Display for ProtocolEnum {
             ProtocolEnum::TcpUdp => write!(f, "TCP_UDP"),
             ProtocolEnum::Tls => write!(f, "TLS"),
             ProtocolEnum::Udp => write!(f, "UDP"),
-            ProtocolEnum::Unknown(value) => write!(f, "{}", value),
+            ProtocolEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

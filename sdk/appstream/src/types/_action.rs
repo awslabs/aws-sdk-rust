@@ -147,7 +147,7 @@ impl ::std::fmt::Display for Action {
             Action::FileDownload => write!(f, "FILE_DOWNLOAD"),
             Action::FileUpload => write!(f, "FILE_UPLOAD"),
             Action::PrintingToLocalDevice => write!(f, "PRINTING_TO_LOCAL_DEVICE"),
-            Action::Unknown(value) => write!(f, "{}", value),
+            Action::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

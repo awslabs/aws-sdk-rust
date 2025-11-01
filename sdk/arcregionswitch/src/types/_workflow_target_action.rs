@@ -102,7 +102,7 @@ impl ::std::fmt::Display for WorkflowTargetAction {
         match self {
             WorkflowTargetAction::Activate => write!(f, "activate"),
             WorkflowTargetAction::Deactivate => write!(f, "deactivate"),
-            WorkflowTargetAction::Unknown(value) => write!(f, "{}", value),
+            WorkflowTargetAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

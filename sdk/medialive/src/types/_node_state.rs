@@ -175,7 +175,7 @@ impl ::std::fmt::Display for NodeState {
             NodeState::ReadyToActivate => write!(f, "READY_TO_ACTIVATE"),
             NodeState::Registering => write!(f, "REGISTERING"),
             NodeState::RegistrationFailed => write!(f, "REGISTRATION_FAILED"),
-            NodeState::Unknown(value) => write!(f, "{}", value),
+            NodeState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ForecastComputationSeasonality {
         match self {
             ForecastComputationSeasonality::Automatic => write!(f, "AUTOMATIC"),
             ForecastComputationSeasonality::Custom => write!(f, "CUSTOM"),
-            ForecastComputationSeasonality::Unknown(value) => write!(f, "{}", value),
+            ForecastComputationSeasonality::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

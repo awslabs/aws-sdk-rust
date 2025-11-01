@@ -49,8 +49,7 @@ pub fn de_restore_snapshot_tier(
     let start_el = decoder.start_el();
     if !(start_el.matches("RestoreSnapshotTierResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected RestoreSnapshotTierResponse got {:?}",
-            start_el
+            "invalid root, expected RestoreSnapshotTierResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

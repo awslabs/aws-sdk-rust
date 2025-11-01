@@ -102,7 +102,7 @@ impl ::std::fmt::Display for NetworkProtocol {
         match self {
             NetworkProtocol::Tcp => write!(f, "TCP"),
             NetworkProtocol::Udp => write!(f, "UDP"),
-            NetworkProtocol::Unknown(value) => write!(f, "{}", value),
+            NetworkProtocol::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

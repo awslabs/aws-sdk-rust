@@ -140,7 +140,7 @@ impl ::std::fmt::Display for BlockingResourceType {
             BlockingResourceType::OutpostOrderCancellable => write!(f, "OUTPOST_ORDER_CANCELLABLE"),
             BlockingResourceType::OutpostOrderInterventionRequired => write!(f, "OUTPOST_ORDER_INTERVENTION_REQUIRED"),
             BlockingResourceType::OutpostRamShare => write!(f, "OUTPOST_RAM_SHARE"),
-            BlockingResourceType::Unknown(value) => write!(f, "{}", value),
+            BlockingResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

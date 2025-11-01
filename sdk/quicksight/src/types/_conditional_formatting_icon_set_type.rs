@@ -168,7 +168,7 @@ impl ::std::fmt::Display for ConditionalFormattingIconSetType {
             ConditionalFormattingIconSetType::ThreeColorArrow => write!(f, "THREE_COLOR_ARROW"),
             ConditionalFormattingIconSetType::ThreeGrayArrow => write!(f, "THREE_GRAY_ARROW"),
             ConditionalFormattingIconSetType::ThreeShape => write!(f, "THREE_SHAPE"),
-            ConditionalFormattingIconSetType::Unknown(value) => write!(f, "{}", value),
+            ConditionalFormattingIconSetType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

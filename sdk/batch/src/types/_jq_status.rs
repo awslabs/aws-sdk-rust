@@ -126,7 +126,7 @@ impl ::std::fmt::Display for JqStatus {
             JqStatus::Invalid => write!(f, "INVALID"),
             JqStatus::Updating => write!(f, "UPDATING"),
             JqStatus::Valid => write!(f, "VALID"),
-            JqStatus::Unknown(value) => write!(f, "{}", value),
+            JqStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

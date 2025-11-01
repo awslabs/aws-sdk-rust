@@ -96,7 +96,7 @@ impl ::std::fmt::Display for DataSetUseAs {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             DataSetUseAs::RlsRules => write!(f, "RLS_RULES"),
-            DataSetUseAs::Unknown(value) => write!(f, "{}", value),
+            DataSetUseAs::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

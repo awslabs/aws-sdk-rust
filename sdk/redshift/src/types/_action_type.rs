@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ActionType {
             ActionType::RecommendNodeConfig => write!(f, "recommend-node-config"),
             ActionType::ResizeCluster => write!(f, "resize-cluster"),
             ActionType::RestoreCluster => write!(f, "restore-cluster"),
-            ActionType::Unknown(value) => write!(f, "{}", value),
+            ActionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

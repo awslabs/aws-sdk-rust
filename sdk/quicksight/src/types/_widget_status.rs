@@ -102,7 +102,7 @@ impl ::std::fmt::Display for WidgetStatus {
         match self {
             WidgetStatus::Disabled => write!(f, "DISABLED"),
             WidgetStatus::Enabled => write!(f, "ENABLED"),
-            WidgetStatus::Unknown(value) => write!(f, "{}", value),
+            WidgetStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

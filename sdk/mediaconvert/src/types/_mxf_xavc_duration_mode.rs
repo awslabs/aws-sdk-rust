@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MxfXavcDurationMode {
         match self {
             MxfXavcDurationMode::AllowAnyDuration => write!(f, "ALLOW_ANY_DURATION"),
             MxfXavcDurationMode::DropFramesForCompliance => write!(f, "DROP_FRAMES_FOR_COMPLIANCE"),
-            MxfXavcDurationMode::Unknown(value) => write!(f, "{}", value),
+            MxfXavcDurationMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

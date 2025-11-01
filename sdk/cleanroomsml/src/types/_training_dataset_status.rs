@@ -96,7 +96,7 @@ impl ::std::fmt::Display for TrainingDatasetStatus {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             TrainingDatasetStatus::Active => write!(f, "ACTIVE"),
-            TrainingDatasetStatus::Unknown(value) => write!(f, "{}", value),
+            TrainingDatasetStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

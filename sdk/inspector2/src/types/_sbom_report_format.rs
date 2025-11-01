@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SbomReportFormat {
         match self {
             SbomReportFormat::Cyclonedx14 => write!(f, "CYCLONEDX_1_4"),
             SbomReportFormat::Spdx23 => write!(f, "SPDX_2_3"),
-            SbomReportFormat::Unknown(value) => write!(f, "{}", value),
+            SbomReportFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

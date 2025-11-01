@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AudioNormalizationAlgorithm {
         match self {
             AudioNormalizationAlgorithm::Itu17701 => write!(f, "ITU_1770_1"),
             AudioNormalizationAlgorithm::Itu17702 => write!(f, "ITU_1770_2"),
-            AudioNormalizationAlgorithm::Unknown(value) => write!(f, "{}", value),
+            AudioNormalizationAlgorithm::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for HierarchyGroupMatchType {
         match self {
             HierarchyGroupMatchType::Exact => write!(f, "EXACT"),
             HierarchyGroupMatchType::WithChildGroups => write!(f, "WITH_CHILD_GROUPS"),
-            HierarchyGroupMatchType::Unknown(value) => write!(f, "{}", value),
+            HierarchyGroupMatchType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

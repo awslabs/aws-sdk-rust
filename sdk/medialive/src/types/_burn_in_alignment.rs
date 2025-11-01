@@ -108,7 +108,7 @@ impl ::std::fmt::Display for BurnInAlignment {
             BurnInAlignment::Centered => write!(f, "CENTERED"),
             BurnInAlignment::Left => write!(f, "LEFT"),
             BurnInAlignment::Smart => write!(f, "SMART"),
-            BurnInAlignment::Unknown(value) => write!(f, "{}", value),
+            BurnInAlignment::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

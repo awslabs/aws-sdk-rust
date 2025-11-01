@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RoutingControlStateChange {
         match self {
             RoutingControlStateChange::Off => write!(f, "Off"),
             RoutingControlStateChange::On => write!(f, "On"),
-            RoutingControlStateChange::Unknown(value) => write!(f, "{}", value),
+            RoutingControlStateChange::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -119,7 +119,7 @@ impl ::std::fmt::Display for PredefinedScalingMetricType {
             PredefinedScalingMetricType::AsgAverageCpuUtilization => write!(f, "ASGAverageCPUUtilization"),
             PredefinedScalingMetricType::AsgAverageNetworkIn => write!(f, "ASGAverageNetworkIn"),
             PredefinedScalingMetricType::AsgAverageNetworkOut => write!(f, "ASGAverageNetworkOut"),
-            PredefinedScalingMetricType::Unknown(value) => write!(f, "{}", value),
+            PredefinedScalingMetricType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

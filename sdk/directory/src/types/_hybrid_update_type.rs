@@ -102,7 +102,7 @@ impl ::std::fmt::Display for HybridUpdateType {
         match self {
             HybridUpdateType::HybridAdministratorAccount => write!(f, "HybridAdministratorAccount"),
             HybridUpdateType::SelfManagedInstances => write!(f, "SelfManagedInstances"),
-            HybridUpdateType::Unknown(value) => write!(f, "{}", value),
+            HybridUpdateType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

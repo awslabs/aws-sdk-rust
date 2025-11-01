@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DevicePoolType {
         match self {
             DevicePoolType::Curated => write!(f, "CURATED"),
             DevicePoolType::Private => write!(f, "PRIVATE"),
-            DevicePoolType::Unknown(value) => write!(f, "{}", value),
+            DevicePoolType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

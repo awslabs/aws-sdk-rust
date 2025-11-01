@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ActionPayloadFieldType {
             ActionPayloadFieldType::Boolean => write!(f, "BOOLEAN"),
             ActionPayloadFieldType::Number => write!(f, "NUMBER"),
             ActionPayloadFieldType::String => write!(f, "STRING"),
-            ActionPayloadFieldType::Unknown(value) => write!(f, "{}", value),
+            ActionPayloadFieldType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

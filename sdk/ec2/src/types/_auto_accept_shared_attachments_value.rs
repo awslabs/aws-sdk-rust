@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AutoAcceptSharedAttachmentsValue {
         match self {
             AutoAcceptSharedAttachmentsValue::Disable => write!(f, "disable"),
             AutoAcceptSharedAttachmentsValue::Enable => write!(f, "enable"),
-            AutoAcceptSharedAttachmentsValue::Unknown(value) => write!(f, "{}", value),
+            AutoAcceptSharedAttachmentsValue::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

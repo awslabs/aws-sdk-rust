@@ -189,7 +189,7 @@ impl ::std::fmt::Display for ValidationExceptionReason {
             ValidationExceptionReason::Other => write!(f, "other"),
             ValidationExceptionReason::TaxSettingsError => write!(f, "taxSettingsError"),
             ValidationExceptionReason::UnknownOperation => write!(f, "unknownOperation"),
-            ValidationExceptionReason::Unknown(value) => write!(f, "{}", value),
+            ValidationExceptionReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

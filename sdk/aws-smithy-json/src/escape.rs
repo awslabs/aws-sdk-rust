@@ -31,15 +31,14 @@ impl fmt::Display for EscapeError {
             ExpectedSurrogatePair(low) => {
                 write!(
                     f,
-                    "expected a UTF-16 surrogate pair, but got {} as the low word",
-                    low
+                    "expected a UTF-16 surrogate pair, but got {low} as the low word"
                 )
             }
-            InvalidEscapeCharacter(chr) => write!(f, "invalid JSON escape: \\{}", chr),
+            InvalidEscapeCharacter(chr) => write!(f, "invalid JSON escape: \\{chr}"),
             InvalidSurrogatePair(high, low) => {
-                write!(f, "invalid surrogate pair: \\u{:04X}\\u{:04X}", high, low)
+                write!(f, "invalid surrogate pair: \\u{high:04X}\\u{low:04X}")
             }
-            InvalidUnicodeEscape(escape) => write!(f, "invalid JSON Unicode escape: \\u{}", escape),
+            InvalidUnicodeEscape(escape) => write!(f, "invalid JSON Unicode escape: \\u{escape}"),
             InvalidUtf8 => write!(f, "invalid UTF-8 codepoint in JSON string"),
             UnexpectedEndOfString => write!(f, "unexpected end of string"),
         }
@@ -79,7 +78,7 @@ fn escape_string_inner(start: &[u8], rest: &[u8]) -> String {
             b'\n' => escaped.extend(b"\\n"),
             b'\r' => escaped.extend(b"\\r"),
             b'\t' => escaped.extend(b"\\t"),
-            0..=0x1F => escaped.extend(format!("\\u{:04x}", byte).bytes()),
+            0..=0x1F => escaped.extend(format!("\\u{byte:04x}").bytes()),
             _ => escaped.push(*byte),
         }
     }
@@ -320,7 +319,7 @@ mod test {
             let escaped = format!("\\u{:04X}\\u{:04X}", codepoints[0], codepoints[1]);
             let unescaped = unescape_string(&escaped).unwrap();
 
-            let expected = format!("{}", chr);
+            let expected = format!("{chr}");
             assert_eq!(expected, unescaped);
         }
     }

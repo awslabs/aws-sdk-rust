@@ -100,7 +100,7 @@ impl ::std::fmt::Display for GuardrailContentFilterAction {
         match self {
             GuardrailContentFilterAction::Block => write!(f, "BLOCK"),
             GuardrailContentFilterAction::None => write!(f, "NONE"),
-            GuardrailContentFilterAction::Unknown(value) => write!(f, "{}", value),
+            GuardrailContentFilterAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

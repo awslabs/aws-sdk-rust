@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Scte35Type {
         match self {
             Scte35Type::None => write!(f, "NONE"),
             Scte35Type::Scte35WithoutSegmentation => write!(f, "SCTE_35_WITHOUT_SEGMENTATION"),
-            Scte35Type::Unknown(value) => write!(f, "{}", value),
+            Scte35Type::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

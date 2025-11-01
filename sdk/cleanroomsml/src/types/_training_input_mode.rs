@@ -108,7 +108,7 @@ impl ::std::fmt::Display for TrainingInputMode {
             TrainingInputMode::FastFile => write!(f, "FastFile"),
             TrainingInputMode::File => write!(f, "File"),
             TrainingInputMode::Pipe => write!(f, "Pipe"),
-            TrainingInputMode::Unknown(value) => write!(f, "{}", value),
+            TrainingInputMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for DashIsoSegmentLengthControl {
             DashIsoSegmentLengthControl::Exact => write!(f, "EXACT"),
             DashIsoSegmentLengthControl::GopMultiple => write!(f, "GOP_MULTIPLE"),
             DashIsoSegmentLengthControl::Match => write!(f, "MATCH"),
-            DashIsoSegmentLengthControl::Unknown(value) => write!(f, "{}", value),
+            DashIsoSegmentLengthControl::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

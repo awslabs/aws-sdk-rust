@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ClosureCode {
             ClosureCode::FalsePositive => write!(f, "False Positive"),
             ClosureCode::InvestigationCompleted => write!(f, "Investigation Completed"),
             ClosureCode::NotResolved => write!(f, "Not Resolved"),
-            ClosureCode::Unknown(value) => write!(f, "{}", value),
+            ClosureCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

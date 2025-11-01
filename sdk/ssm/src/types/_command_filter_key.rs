@@ -120,7 +120,7 @@ impl ::std::fmt::Display for CommandFilterKey {
             CommandFilterKey::InvokedAfter => write!(f, "InvokedAfter"),
             CommandFilterKey::InvokedBefore => write!(f, "InvokedBefore"),
             CommandFilterKey::Status => write!(f, "Status"),
-            CommandFilterKey::Unknown(value) => write!(f, "{}", value),
+            CommandFilterKey::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

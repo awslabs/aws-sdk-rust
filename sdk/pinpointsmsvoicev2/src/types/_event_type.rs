@@ -392,7 +392,7 @@ impl ::std::fmt::Display for EventType {
             EventType::VoiceNoAnswer => write!(f, "VOICE_NO_ANSWER"),
             EventType::VoiceRinging => write!(f, "VOICE_RINGING"),
             EventType::VoiceTtlExpired => write!(f, "VOICE_TTL_EXPIRED"),
-            EventType::Unknown(value) => write!(f, "{}", value),
+            EventType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

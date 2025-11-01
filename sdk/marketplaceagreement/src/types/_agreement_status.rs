@@ -154,7 +154,7 @@ impl ::std::fmt::Display for AgreementStatus {
             AgreementStatus::RolledBack => write!(f, "ROLLED_BACK"),
             AgreementStatus::Superseded => write!(f, "SUPERSEDED"),
             AgreementStatus::Terminated => write!(f, "TERMINATED"),
-            AgreementStatus::Unknown(value) => write!(f, "{}", value),
+            AgreementStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -189,7 +189,7 @@ impl ::std::fmt::Display for ManagedPolicyType {
             ManagedPolicyType::OverrideDomainUnitOwners => write!(f, "OVERRIDE_DOMAIN_UNIT_OWNERS"),
             ManagedPolicyType::OverrideProjectOwners => write!(f, "OVERRIDE_PROJECT_OWNERS"),
             ManagedPolicyType::UseAssetType => write!(f, "USE_ASSET_TYPE"),
-            ManagedPolicyType::Unknown(value) => write!(f, "{}", value),
+            ManagedPolicyType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

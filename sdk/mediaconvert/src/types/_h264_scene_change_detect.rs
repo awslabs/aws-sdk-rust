@@ -108,7 +108,7 @@ impl ::std::fmt::Display for H264SceneChangeDetect {
             H264SceneChangeDetect::Disabled => write!(f, "DISABLED"),
             H264SceneChangeDetect::Enabled => write!(f, "ENABLED"),
             H264SceneChangeDetect::TransitionDetection => write!(f, "TRANSITION_DETECTION"),
-            H264SceneChangeDetect::Unknown(value) => write!(f, "{}", value),
+            H264SceneChangeDetect::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

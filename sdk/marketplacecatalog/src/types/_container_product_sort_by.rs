@@ -120,7 +120,7 @@ impl ::std::fmt::Display for ContainerProductSortBy {
             ContainerProductSortBy::LastModifiedDate => write!(f, "LastModifiedDate"),
             ContainerProductSortBy::ProductTitle => write!(f, "ProductTitle"),
             ContainerProductSortBy::Visibility => write!(f, "Visibility"),
-            ContainerProductSortBy::Unknown(value) => write!(f, "{}", value),
+            ContainerProductSortBy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -147,7 +147,7 @@ impl ::std::fmt::Display for SettingAttribute {
             SettingAttribute::EvidenceFinderEnablement => write!(f, "EVIDENCE_FINDER_ENABLEMENT"),
             SettingAttribute::IsAwsOrgEnabled => write!(f, "IS_AWS_ORG_ENABLED"),
             SettingAttribute::SnsTopic => write!(f, "SNS_TOPIC"),
-            SettingAttribute::Unknown(value) => write!(f, "{}", value),
+            SettingAttribute::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

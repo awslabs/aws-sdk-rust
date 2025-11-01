@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ServiceJobType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ServiceJobType::SagemakerTraining => write!(f, "SAGEMAKER_TRAINING"),
-            ServiceJobType::Unknown(value) => write!(f, "{}", value),
+            ServiceJobType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

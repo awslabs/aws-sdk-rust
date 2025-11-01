@@ -112,7 +112,7 @@ impl ::std::fmt::Display for ClientVpnAuthenticationType {
             ClientVpnAuthenticationType::CertificateAuthentication => write!(f, "certificate-authentication"),
             ClientVpnAuthenticationType::DirectoryServiceAuthentication => write!(f, "directory-service-authentication"),
             ClientVpnAuthenticationType::FederatedAuthentication => write!(f, "federated-authentication"),
-            ClientVpnAuthenticationType::Unknown(value) => write!(f, "{}", value),
+            ClientVpnAuthenticationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

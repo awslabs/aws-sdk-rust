@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Mtime {
         match self {
             Mtime::None => write!(f, "NONE"),
             Mtime::Preserve => write!(f, "PRESERVE"),
-            Mtime::Unknown(value) => write!(f, "{}", value),
+            Mtime::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

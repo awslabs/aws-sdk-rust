@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ToolResultStatus {
         match self {
             ToolResultStatus::Error => write!(f, "error"),
             ToolResultStatus::Success => write!(f, "success"),
-            ToolResultStatus::Unknown(value) => write!(f, "{}", value),
+            ToolResultStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

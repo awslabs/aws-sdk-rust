@@ -121,7 +121,7 @@ impl ::std::fmt::Display for AdsOnDeliveryRestrictions {
             AdsOnDeliveryRestrictions::None => write!(f, "NONE"),
             AdsOnDeliveryRestrictions::Restricted => write!(f, "RESTRICTED"),
             AdsOnDeliveryRestrictions::Unrestricted => write!(f, "UNRESTRICTED"),
-            AdsOnDeliveryRestrictions::Unknown(value) => write!(f, "{}", value),
+            AdsOnDeliveryRestrictions::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

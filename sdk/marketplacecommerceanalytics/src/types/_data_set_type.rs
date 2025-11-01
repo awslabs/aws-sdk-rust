@@ -266,7 +266,7 @@ impl ::std::fmt::Display for DataSetType {
             DataSetType::MonthlyRevenueFlexiblePaymentSchedule => write!(f, "monthly_revenue_flexible_payment_schedule"),
             DataSetType::SalesCompensationBilledRevenue => write!(f, "sales_compensation_billed_revenue"),
             DataSetType::UsSalesAndUseTaxRecords => write!(f, "us_sales_and_use_tax_records"),
-            DataSetType::Unknown(value) => write!(f, "{}", value),
+            DataSetType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

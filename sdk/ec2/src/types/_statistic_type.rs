@@ -96,7 +96,7 @@ impl ::std::fmt::Display for StatisticType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             StatisticType::P50 => write!(f, "p50"),
-            StatisticType::Unknown(value) => write!(f, "{}", value),
+            StatisticType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -147,7 +147,7 @@ impl ::std::fmt::Display for ErrorCode {
             ErrorCode::SyncInitializingError => write!(f, "SYNC_INITIALIZING_ERROR"),
             ErrorCode::SyncProcessingError => write!(f, "SYNC_PROCESSING_ERROR"),
             ErrorCode::ValidationError => write!(f, "VALIDATION_ERROR"),
-            ErrorCode::Unknown(value) => write!(f, "{}", value),
+            ErrorCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

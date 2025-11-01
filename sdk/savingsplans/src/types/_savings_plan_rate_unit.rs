@@ -108,7 +108,7 @@ impl ::std::fmt::Display for SavingsPlanRateUnit {
             SavingsPlanRateUnit::Hours => write!(f, "Hrs"),
             SavingsPlanRateUnit::LambdaGbSecond => write!(f, "Lambda-GB-Second"),
             SavingsPlanRateUnit::Request => write!(f, "Request"),
-            SavingsPlanRateUnit::Unknown(value) => write!(f, "{}", value),
+            SavingsPlanRateUnit::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

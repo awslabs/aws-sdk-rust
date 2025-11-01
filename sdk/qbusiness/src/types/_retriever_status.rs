@@ -108,7 +108,7 @@ impl ::std::fmt::Display for RetrieverStatus {
             RetrieverStatus::Active => write!(f, "ACTIVE"),
             RetrieverStatus::Creating => write!(f, "CREATING"),
             RetrieverStatus::Failed => write!(f, "FAILED"),
-            RetrieverStatus::Unknown(value) => write!(f, "{}", value),
+            RetrieverStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

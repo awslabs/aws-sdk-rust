@@ -147,7 +147,7 @@ impl ::std::fmt::Display for KnowledgeBaseStorageType {
             KnowledgeBaseStorageType::Rds => write!(f, "RDS"),
             KnowledgeBaseStorageType::RedisEnterpriseCloud => write!(f, "REDIS_ENTERPRISE_CLOUD"),
             KnowledgeBaseStorageType::S3Vectors => write!(f, "S3_VECTORS"),
-            KnowledgeBaseStorageType::Unknown(value) => write!(f, "{}", value),
+            KnowledgeBaseStorageType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

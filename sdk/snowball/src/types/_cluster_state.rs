@@ -120,7 +120,7 @@ impl ::std::fmt::Display for ClusterState {
             ClusterState::Complete => write!(f, "Complete"),
             ClusterState::InUse => write!(f, "InUse"),
             ClusterState::Pending => write!(f, "Pending"),
-            ClusterState::Unknown(value) => write!(f, "{}", value),
+            ClusterState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

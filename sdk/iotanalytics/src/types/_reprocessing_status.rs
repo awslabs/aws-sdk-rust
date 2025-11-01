@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ReprocessingStatus {
             ReprocessingStatus::Failed => write!(f, "FAILED"),
             ReprocessingStatus::Running => write!(f, "RUNNING"),
             ReprocessingStatus::Succeeded => write!(f, "SUCCEEDED"),
-            ReprocessingStatus::Unknown(value) => write!(f, "{}", value),
+            ReprocessingStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

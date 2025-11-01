@@ -108,7 +108,7 @@ impl ::std::fmt::Display for WorkflowType {
             WorkflowType::Build => write!(f, "BUILD"),
             WorkflowType::Distribution => write!(f, "DISTRIBUTION"),
             WorkflowType::Test => write!(f, "TEST"),
-            WorkflowType::Unknown(value) => write!(f, "{}", value),
+            WorkflowType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

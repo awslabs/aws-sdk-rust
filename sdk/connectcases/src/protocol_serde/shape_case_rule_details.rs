@@ -10,6 +10,18 @@ pub fn ser_case_rule_details(
             crate::protocol_serde::shape_required_case_rule::ser_required_case_rule(&mut object_1, inner)?;
             object_1.finish();
         }
+        crate::types::CaseRuleDetails::FieldOptions(inner) => {
+            #[allow(unused_mut)]
+            let mut object_2 = object_4.key("fieldOptions").start_object();
+            crate::protocol_serde::shape_field_options_case_rule::ser_field_options_case_rule(&mut object_2, inner)?;
+            object_2.finish();
+        }
+        crate::types::CaseRuleDetails::Hidden(inner) => {
+            #[allow(unused_mut)]
+            let mut object_3 = object_4.key("hidden").start_object();
+            crate::protocol_serde::shape_hidden_case_rule::ser_hidden_case_rule(&mut object_3, inner)?;
+            object_3.finish();
+        }
         crate::types::CaseRuleDetails::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "CaseRuleDetails",
@@ -54,6 +66,16 @@ where
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'required' cannot be null")
                             })?,
                         )),
+                        "fieldOptions" => Some(crate::types::CaseRuleDetails::FieldOptions(
+                            crate::protocol_serde::shape_field_options_case_rule::de_field_options_case_rule(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'fieldOptions' cannot be null")
+                            })?,
+                        )),
+                        "hidden" => Some(crate::types::CaseRuleDetails::Hidden(
+                            crate::protocol_serde::shape_hidden_case_rule::de_hidden_case_rule(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'hidden' cannot be null")
+                            })?,
+                        )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
                             Some(crate::types::CaseRuleDetails::Unknown)
@@ -62,8 +84,7 @@ where
                 }
                 other => {
                     return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                        "expected object key or end object, found: {:?}",
-                        other
+                        "expected object key or end object, found: {other:?}"
                     )))
                 }
             }

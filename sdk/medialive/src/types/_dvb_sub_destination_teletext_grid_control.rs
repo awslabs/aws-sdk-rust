@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DvbSubDestinationTeletextGridControl {
         match self {
             DvbSubDestinationTeletextGridControl::Fixed => write!(f, "FIXED"),
             DvbSubDestinationTeletextGridControl::Scaled => write!(f, "SCALED"),
-            DvbSubDestinationTeletextGridControl::Unknown(value) => write!(f, "{}", value),
+            DvbSubDestinationTeletextGridControl::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

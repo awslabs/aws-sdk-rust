@@ -161,7 +161,7 @@ impl ::std::fmt::Display for OfferSortBy {
             OfferSortBy::ResaleAuthorizationId => write!(f, "ResaleAuthorizationId"),
             OfferSortBy::State => write!(f, "State"),
             OfferSortBy::Targeting => write!(f, "Targeting"),
-            OfferSortBy::Unknown(value) => write!(f, "{}", value),
+            OfferSortBy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

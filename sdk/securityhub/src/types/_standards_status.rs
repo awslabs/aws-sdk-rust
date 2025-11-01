@@ -120,7 +120,7 @@ impl ::std::fmt::Display for StandardsStatus {
             StandardsStatus::Incomplete => write!(f, "INCOMPLETE"),
             StandardsStatus::Pending => write!(f, "PENDING"),
             StandardsStatus::Ready => write!(f, "READY"),
-            StandardsStatus::Unknown(value) => write!(f, "{}", value),
+            StandardsStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

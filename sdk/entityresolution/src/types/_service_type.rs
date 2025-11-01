@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ServiceType {
         match self {
             ServiceType::Assignment => write!(f, "ASSIGNMENT"),
             ServiceType::IdMapping => write!(f, "ID_MAPPING"),
-            ServiceType::Unknown(value) => write!(f, "{}", value),
+            ServiceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for BatchJobDependencyType {
         match self {
             BatchJobDependencyType::NToN => write!(f, "N_TO_N"),
             BatchJobDependencyType::Sequential => write!(f, "SEQUENTIAL"),
-            BatchJobDependencyType::Unknown(value) => write!(f, "{}", value),
+            BatchJobDependencyType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

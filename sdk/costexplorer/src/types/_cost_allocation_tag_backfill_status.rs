@@ -108,7 +108,7 @@ impl ::std::fmt::Display for CostAllocationTagBackfillStatus {
             CostAllocationTagBackfillStatus::Failed => write!(f, "FAILED"),
             CostAllocationTagBackfillStatus::Processing => write!(f, "PROCESSING"),
             CostAllocationTagBackfillStatus::Succeeded => write!(f, "SUCCEEDED"),
-            CostAllocationTagBackfillStatus::Unknown(value) => write!(f, "{}", value),
+            CostAllocationTagBackfillStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

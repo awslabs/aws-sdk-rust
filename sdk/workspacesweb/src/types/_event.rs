@@ -203,7 +203,7 @@ impl ::std::fmt::Display for Event {
             Event::TabOpen => write!(f, "TabOpen"),
             Event::UrlLoad => write!(f, "UrlLoad"),
             Event::WebsiteInteract => write!(f, "WebsiteInteract"),
-            Event::Unknown(value) => write!(f, "{}", value),
+            Event::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

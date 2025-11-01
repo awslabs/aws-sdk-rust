@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ThumbnailStorageType {
         match self {
             ThumbnailStorageType::Latest => write!(f, "LATEST"),
             ThumbnailStorageType::Sequential => write!(f, "SEQUENTIAL"),
-            ThumbnailStorageType::Unknown(value) => write!(f, "{}", value),
+            ThumbnailStorageType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

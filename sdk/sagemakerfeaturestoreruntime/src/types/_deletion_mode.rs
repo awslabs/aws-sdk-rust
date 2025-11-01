@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DeletionMode {
         match self {
             DeletionMode::HardDelete => write!(f, "HardDelete"),
             DeletionMode::SoftDelete => write!(f, "SoftDelete"),
-            DeletionMode::Unknown(value) => write!(f, "{}", value),
+            DeletionMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

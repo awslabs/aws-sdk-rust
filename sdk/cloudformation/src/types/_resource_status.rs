@@ -287,7 +287,7 @@ impl ::std::fmt::Display for ResourceStatus {
             ResourceStatus::UpdateRollbackComplete => write!(f, "UPDATE_ROLLBACK_COMPLETE"),
             ResourceStatus::UpdateRollbackFailed => write!(f, "UPDATE_ROLLBACK_FAILED"),
             ResourceStatus::UpdateRollbackInProgress => write!(f, "UPDATE_ROLLBACK_IN_PROGRESS"),
-            ResourceStatus::Unknown(value) => write!(f, "{}", value),
+            ResourceStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

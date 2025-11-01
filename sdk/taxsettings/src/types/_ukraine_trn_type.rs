@@ -102,7 +102,7 @@ impl ::std::fmt::Display for UkraineTrnType {
         match self {
             UkraineTrnType::Business => write!(f, "Business"),
             UkraineTrnType::Individual => write!(f, "Individual"),
-            UkraineTrnType::Unknown(value) => write!(f, "{}", value),
+            UkraineTrnType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -161,7 +161,7 @@ impl ::std::fmt::Display for Status {
             Status::Stopping => write!(f, "STOPPING"),
             Status::StopFailed => write!(f, "STOP_FAILED"),
             Status::Succeeded => write!(f, "SUCCEEDED"),
-            Status::Unknown(value) => write!(f, "{}", value),
+            Status::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

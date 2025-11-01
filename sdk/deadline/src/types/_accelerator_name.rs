@@ -114,7 +114,7 @@ impl ::std::fmt::Display for AcceleratorName {
             AcceleratorName::L4 => write!(f, "l4"),
             AcceleratorName::L40S => write!(f, "l40s"),
             AcceleratorName::T4 => write!(f, "t4"),
-            AcceleratorName::Unknown(value) => write!(f, "{}", value),
+            AcceleratorName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

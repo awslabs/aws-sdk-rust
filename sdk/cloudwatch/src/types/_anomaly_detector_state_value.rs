@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AnomalyDetectorStateValue {
             AnomalyDetectorStateValue::PendingTraining => write!(f, "PENDING_TRAINING"),
             AnomalyDetectorStateValue::Trained => write!(f, "TRAINED"),
             AnomalyDetectorStateValue::TrainedInsufficientData => write!(f, "TRAINED_INSUFFICIENT_DATA"),
-            AnomalyDetectorStateValue::Unknown(value) => write!(f, "{}", value),
+            AnomalyDetectorStateValue::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

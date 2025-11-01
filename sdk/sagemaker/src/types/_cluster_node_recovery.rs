@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ClusterNodeRecovery {
         match self {
             ClusterNodeRecovery::Automatic => write!(f, "Automatic"),
             ClusterNodeRecovery::None => write!(f, "None"),
-            ClusterNodeRecovery::Unknown(value) => write!(f, "{}", value),
+            ClusterNodeRecovery::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

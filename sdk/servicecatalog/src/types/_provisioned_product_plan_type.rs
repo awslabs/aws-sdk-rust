@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ProvisionedProductPlanType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ProvisionedProductPlanType::Cloudformation => write!(f, "CLOUDFORMATION"),
-            ProvisionedProductPlanType::Unknown(value) => write!(f, "{}", value),
+            ProvisionedProductPlanType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

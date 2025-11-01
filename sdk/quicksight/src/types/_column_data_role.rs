@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ColumnDataRole {
         match self {
             ColumnDataRole::Dimension => write!(f, "DIMENSION"),
             ColumnDataRole::Measure => write!(f, "MEASURE"),
-            ColumnDataRole::Unknown(value) => write!(f, "{}", value),
+            ColumnDataRole::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

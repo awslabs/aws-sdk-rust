@@ -120,7 +120,7 @@ impl ::std::fmt::Display for AutomatedReasoningPolicyTestRunStatus {
             AutomatedReasoningPolicyTestRunStatus::InProgress => write!(f, "IN_PROGRESS"),
             AutomatedReasoningPolicyTestRunStatus::NotStarted => write!(f, "NOT_STARTED"),
             AutomatedReasoningPolicyTestRunStatus::Scheduled => write!(f, "SCHEDULED"),
-            AutomatedReasoningPolicyTestRunStatus::Unknown(value) => write!(f, "{}", value),
+            AutomatedReasoningPolicyTestRunStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

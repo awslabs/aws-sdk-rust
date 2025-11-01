@@ -132,7 +132,7 @@ impl ::std::fmt::Display for MedicalScribeNoteTemplate {
             MedicalScribeNoteTemplate::HistoryAndPhysical => write!(f, "HISTORY_AND_PHYSICAL"),
             MedicalScribeNoteTemplate::PhysicalSoap => write!(f, "PHYSICAL_SOAP"),
             MedicalScribeNoteTemplate::Sirp => write!(f, "SIRP"),
-            MedicalScribeNoteTemplate::Unknown(value) => write!(f, "{}", value),
+            MedicalScribeNoteTemplate::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

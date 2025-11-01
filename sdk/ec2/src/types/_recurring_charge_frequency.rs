@@ -96,7 +96,7 @@ impl ::std::fmt::Display for RecurringChargeFrequency {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             RecurringChargeFrequency::Hourly => write!(f, "Hourly"),
-            RecurringChargeFrequency::Unknown(value) => write!(f, "{}", value),
+            RecurringChargeFrequency::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

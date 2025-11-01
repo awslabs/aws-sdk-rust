@@ -102,7 +102,7 @@ impl ::std::fmt::Display for LfResourceType {
         match self {
             LfResourceType::Database => write!(f, "DATABASE"),
             LfResourceType::Table => write!(f, "TABLE"),
-            LfResourceType::Unknown(value) => write!(f, "{}", value),
+            LfResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

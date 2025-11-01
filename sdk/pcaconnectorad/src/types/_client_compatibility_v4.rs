@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ClientCompatibilityV4 {
             ClientCompatibilityV4::WindowsServer2012 => write!(f, "WINDOWS_SERVER_2012"),
             ClientCompatibilityV4::WindowsServer2012R2 => write!(f, "WINDOWS_SERVER_2012_R2"),
             ClientCompatibilityV4::WindowsServer2016 => write!(f, "WINDOWS_SERVER_2016"),
-            ClientCompatibilityV4::Unknown(value) => write!(f, "{}", value),
+            ClientCompatibilityV4::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -120,7 +120,7 @@ impl ::std::fmt::Display for ArchitectureValues {
             ArchitectureValues::I386 => write!(f, "i386"),
             ArchitectureValues::X8664 => write!(f, "x86_64"),
             ArchitectureValues::X8664Mac => write!(f, "x86_64_mac"),
-            ArchitectureValues::Unknown(value) => write!(f, "{}", value),
+            ArchitectureValues::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

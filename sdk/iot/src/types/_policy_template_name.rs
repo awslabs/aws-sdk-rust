@@ -96,7 +96,7 @@ impl ::std::fmt::Display for PolicyTemplateName {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             PolicyTemplateName::BlankPolicy => write!(f, "BLANK_POLICY"),
-            PolicyTemplateName::Unknown(value) => write!(f, "{}", value),
+            PolicyTemplateName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

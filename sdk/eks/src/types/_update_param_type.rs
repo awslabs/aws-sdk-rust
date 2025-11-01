@@ -357,7 +357,7 @@ impl ::std::fmt::Display for UpdateParamType {
             UpdateParamType::UpgradePolicy => write!(f, "UpgradePolicy"),
             UpdateParamType::Version => write!(f, "Version"),
             UpdateParamType::ZonalShiftConfig => write!(f, "ZonalShiftConfig"),
-            UpdateParamType::Unknown(value) => write!(f, "{}", value),
+            UpdateParamType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

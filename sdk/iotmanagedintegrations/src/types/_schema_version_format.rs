@@ -108,7 +108,7 @@ impl ::std::fmt::Display for SchemaVersionFormat {
             SchemaVersionFormat::Aws => write!(f, "AWS"),
             SchemaVersionFormat::Connector => write!(f, "CONNECTOR"),
             SchemaVersionFormat::Zcl => write!(f, "ZCL"),
-            SchemaVersionFormat::Unknown(value) => write!(f, "{}", value),
+            SchemaVersionFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

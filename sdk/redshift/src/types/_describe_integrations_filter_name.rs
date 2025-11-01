@@ -114,7 +114,7 @@ impl ::std::fmt::Display for DescribeIntegrationsFilterName {
             DescribeIntegrationsFilterName::SourceArn => write!(f, "source-arn"),
             DescribeIntegrationsFilterName::SourceTypes => write!(f, "source-types"),
             DescribeIntegrationsFilterName::Status => write!(f, "status"),
-            DescribeIntegrationsFilterName::Unknown(value) => write!(f, "{}", value),
+            DescribeIntegrationsFilterName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

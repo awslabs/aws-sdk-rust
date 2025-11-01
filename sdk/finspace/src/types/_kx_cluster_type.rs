@@ -120,7 +120,7 @@ impl ::std::fmt::Display for KxClusterType {
             KxClusterType::Hdb => write!(f, "HDB"),
             KxClusterType::Rdb => write!(f, "RDB"),
             KxClusterType::Tickerplant => write!(f, "TICKERPLANT"),
-            KxClusterType::Unknown(value) => write!(f, "{}", value),
+            KxClusterType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

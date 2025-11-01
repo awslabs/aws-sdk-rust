@@ -114,7 +114,7 @@ impl ::std::fmt::Display for QueryNetwork {
             QueryNetwork::BitcoinTestnet => write!(f, "BITCOIN_TESTNET"),
             QueryNetwork::EthereumMainnet => write!(f, "ETHEREUM_MAINNET"),
             QueryNetwork::EthereumSepoliaTestnet => write!(f, "ETHEREUM_SEPOLIA_TESTNET"),
-            QueryNetwork::Unknown(value) => write!(f, "{}", value),
+            QueryNetwork::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -126,7 +126,7 @@ impl ::std::fmt::Display for ModelPackageGroupStatus {
             ModelPackageGroupStatus::Failed => write!(f, "Failed"),
             ModelPackageGroupStatus::InProgress => write!(f, "InProgress"),
             ModelPackageGroupStatus::Pending => write!(f, "Pending"),
-            ModelPackageGroupStatus::Unknown(value) => write!(f, "{}", value),
+            ModelPackageGroupStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

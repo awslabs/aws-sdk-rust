@@ -102,7 +102,7 @@ impl ::std::fmt::Display for InputDeviceType {
         match self {
             InputDeviceType::Hd => write!(f, "HD"),
             InputDeviceType::Uhd => write!(f, "UHD"),
-            InputDeviceType::Unknown(value) => write!(f, "{}", value),
+            InputDeviceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

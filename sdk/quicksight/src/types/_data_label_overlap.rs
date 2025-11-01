@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DataLabelOverlap {
         match self {
             DataLabelOverlap::DisableOverlap => write!(f, "DISABLE_OVERLAP"),
             DataLabelOverlap::EnableOverlap => write!(f, "ENABLE_OVERLAP"),
-            DataLabelOverlap::Unknown(value) => write!(f, "{}", value),
+            DataLabelOverlap::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

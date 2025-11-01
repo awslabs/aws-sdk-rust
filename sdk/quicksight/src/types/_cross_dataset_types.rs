@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CrossDatasetTypes {
         match self {
             CrossDatasetTypes::AllDatasets => write!(f, "ALL_DATASETS"),
             CrossDatasetTypes::SingleDataset => write!(f, "SINGLE_DATASET"),
-            CrossDatasetTypes::Unknown(value) => write!(f, "{}", value),
+            CrossDatasetTypes::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

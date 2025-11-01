@@ -102,7 +102,7 @@ impl ::std::fmt::Display for HttpProtocolIpv6 {
         match self {
             HttpProtocolIpv6::Disabled => write!(f, "disabled"),
             HttpProtocolIpv6::Enabled => write!(f, "enabled"),
-            HttpProtocolIpv6::Unknown(value) => write!(f, "{}", value),
+            HttpProtocolIpv6::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TopBottomComputationType {
         match self {
             TopBottomComputationType::Bottom => write!(f, "BOTTOM"),
             TopBottomComputationType::Top => write!(f, "TOP"),
-            TopBottomComputationType::Unknown(value) => write!(f, "{}", value),
+            TopBottomComputationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

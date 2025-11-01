@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ResourceType {
             ResourceType::Bot => write!(f, "BOT"),
             ResourceType::Intent => write!(f, "INTENT"),
             ResourceType::SlotType => write!(f, "SLOT_TYPE"),
-            ResourceType::Unknown(value) => write!(f, "{}", value),
+            ResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -154,7 +154,7 @@ impl ::std::fmt::Display for ReceiverResponsibility {
             ReceiverResponsibility::ServicesPartner => write!(f, "Services Partner"),
             ReceiverResponsibility::SoftwarePartner => write!(f, "Software Partner"),
             ReceiverResponsibility::TrainingPartner => write!(f, "Training Partner"),
-            ReceiverResponsibility::Unknown(value) => write!(f, "{}", value),
+            ReceiverResponsibility::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

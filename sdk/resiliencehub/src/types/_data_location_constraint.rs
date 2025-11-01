@@ -108,7 +108,7 @@ impl ::std::fmt::Display for DataLocationConstraint {
             DataLocationConstraint::AnyLocation => write!(f, "AnyLocation"),
             DataLocationConstraint::SameContinent => write!(f, "SameContinent"),
             DataLocationConstraint::SameCountry => write!(f, "SameCountry"),
-            DataLocationConstraint::Unknown(value) => write!(f, "{}", value),
+            DataLocationConstraint::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for AppBlockBuilderState {
             AppBlockBuilderState::Starting => write!(f, "STARTING"),
             AppBlockBuilderState::Stopped => write!(f, "STOPPED"),
             AppBlockBuilderState::Stopping => write!(f, "STOPPING"),
-            AppBlockBuilderState::Unknown(value) => write!(f, "{}", value),
+            AppBlockBuilderState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

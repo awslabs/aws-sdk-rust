@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AvailabilityMonitorTestStatus {
             AvailabilityMonitorTestStatus::Complete => write!(f, "COMPLETE"),
             AvailabilityMonitorTestStatus::Failed => write!(f, "FAILED"),
             AvailabilityMonitorTestStatus::Pending => write!(f, "PENDING"),
-            AvailabilityMonitorTestStatus::Unknown(value) => write!(f, "{}", value),
+            AvailabilityMonitorTestStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -196,7 +196,7 @@ impl ::std::fmt::Display for UlimitName {
             UlimitName::Rttime => write!(f, "rttime"),
             UlimitName::Sigpending => write!(f, "sigpending"),
             UlimitName::Stack => write!(f, "stack"),
-            UlimitName::Unknown(value) => write!(f, "{}", value),
+            UlimitName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

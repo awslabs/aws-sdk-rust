@@ -938,7 +938,7 @@ impl ::std::fmt::Display for ProcessingInstanceType {
             ProcessingInstanceType::MlT3Large => write!(f, "ml.t3.large"),
             ProcessingInstanceType::MlT3Medium => write!(f, "ml.t3.medium"),
             ProcessingInstanceType::MlT3Xlarge => write!(f, "ml.t3.xlarge"),
-            ProcessingInstanceType::Unknown(value) => write!(f, "{}", value),
+            ProcessingInstanceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

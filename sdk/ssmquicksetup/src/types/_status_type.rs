@@ -102,7 +102,7 @@ impl ::std::fmt::Display for StatusType {
         match self {
             StatusType::AsyncExecutions => write!(f, "AsyncExecutions"),
             StatusType::Deployment => write!(f, "Deployment"),
-            StatusType::Unknown(value) => write!(f, "{}", value),
+            StatusType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

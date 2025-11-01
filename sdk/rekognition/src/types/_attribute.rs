@@ -189,7 +189,7 @@ impl ::std::fmt::Display for Attribute {
             Attribute::Mustache => write!(f, "MUSTACHE"),
             Attribute::Smile => write!(f, "SMILE"),
             Attribute::Sunglasses => write!(f, "SUNGLASSES"),
-            Attribute::Unknown(value) => write!(f, "{}", value),
+            Attribute::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -182,7 +182,7 @@ impl ::std::fmt::Display for ScalingActivityStatusCode {
             ScalingActivityStatusCode::WaitingForInstanceWarmup => write!(f, "WaitingForInstanceWarmup"),
             ScalingActivityStatusCode::WaitingForSpotInstanceId => write!(f, "WaitingForSpotInstanceId"),
             ScalingActivityStatusCode::WaitingForSpotInstanceRequestId => write!(f, "WaitingForSpotInstanceRequestId"),
-            ScalingActivityStatusCode::Unknown(value) => write!(f, "{}", value),
+            ScalingActivityStatusCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

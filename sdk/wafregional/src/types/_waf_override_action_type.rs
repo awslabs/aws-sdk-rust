@@ -102,7 +102,7 @@ impl ::std::fmt::Display for WafOverrideActionType {
         match self {
             WafOverrideActionType::Count => write!(f, "COUNT"),
             WafOverrideActionType::None => write!(f, "NONE"),
-            WafOverrideActionType::Unknown(value) => write!(f, "{}", value),
+            WafOverrideActionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -2485,7 +2485,7 @@ impl ::std::fmt::Display for X12TransactionSet {
             X12TransactionSet::X12998 => write!(f, "X12_998"),
             X12TransactionSet::X12999 => write!(f, "X12_999"),
             X12TransactionSet::X12999X231 => write!(f, "X12_999_X231"),
-            X12TransactionSet::Unknown(value) => write!(f, "{}", value),
+            X12TransactionSet::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

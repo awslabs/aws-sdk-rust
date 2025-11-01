@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Capability {
         match self {
             Capability::Sms => write!(f, "SMS"),
             Capability::Voice => write!(f, "Voice"),
-            Capability::Unknown(value) => write!(f, "{}", value),
+            Capability::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -96,7 +96,7 @@ impl ::std::fmt::Display for PackageType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             PackageType::TxtDictionary => write!(f, "TXT-DICTIONARY"),
-            PackageType::Unknown(value) => write!(f, "{}", value),
+            PackageType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

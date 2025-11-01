@@ -102,7 +102,7 @@ impl ::std::fmt::Display for StorageType {
         match self {
             StorageType::Dynamic => write!(f, "DYNAMIC"),
             StorageType::Static => write!(f, "STATIC"),
-            StorageType::Unknown(value) => write!(f, "{}", value),
+            StorageType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

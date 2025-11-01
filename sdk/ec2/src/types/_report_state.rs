@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ReportState {
             ReportState::Complete => write!(f, "complete"),
             ReportState::Error => write!(f, "error"),
             ReportState::Running => write!(f, "running"),
-            ReportState::Unknown(value) => write!(f, "{}", value),
+            ReportState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

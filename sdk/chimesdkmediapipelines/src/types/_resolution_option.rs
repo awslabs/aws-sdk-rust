@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ResolutionOption {
         match self {
             ResolutionOption::Fhd => write!(f, "FHD"),
             ResolutionOption::Hd => write!(f, "HD"),
-            ResolutionOption::Unknown(value) => write!(f, "{}", value),
+            ResolutionOption::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

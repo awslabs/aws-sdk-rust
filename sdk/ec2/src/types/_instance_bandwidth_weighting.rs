@@ -108,7 +108,7 @@ impl ::std::fmt::Display for InstanceBandwidthWeighting {
             InstanceBandwidthWeighting::Default => write!(f, "default"),
             InstanceBandwidthWeighting::Ebs1 => write!(f, "ebs-1"),
             InstanceBandwidthWeighting::Vpc1 => write!(f, "vpc-1"),
-            InstanceBandwidthWeighting::Unknown(value) => write!(f, "{}", value),
+            InstanceBandwidthWeighting::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

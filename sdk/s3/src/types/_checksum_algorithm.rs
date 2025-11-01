@@ -120,7 +120,7 @@ impl ::std::fmt::Display for ChecksumAlgorithm {
             ChecksumAlgorithm::Crc64Nvme => write!(f, "CRC64NVME"),
             ChecksumAlgorithm::Sha1 => write!(f, "SHA1"),
             ChecksumAlgorithm::Sha256 => write!(f, "SHA256"),
-            ChecksumAlgorithm::Unknown(value) => write!(f, "{}", value),
+            ChecksumAlgorithm::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

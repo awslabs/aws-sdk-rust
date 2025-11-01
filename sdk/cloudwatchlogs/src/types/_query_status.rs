@@ -134,7 +134,7 @@ impl ::std::fmt::Display for QueryStatus {
             QueryStatus::Scheduled => write!(f, "Scheduled"),
             QueryStatus::Timeout => write!(f, "Timeout"),
             QueryStatus::UnknownValue => write!(f, "Unknown"),
-            QueryStatus::Unknown(value) => write!(f, "{}", value),
+            QueryStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

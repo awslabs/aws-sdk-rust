@@ -175,7 +175,7 @@ impl ::std::fmt::Display for AutomationExecutionFilterKey {
             AutomationExecutionFilterKey::StartTimeBefore => write!(f, "StartTimeBefore"),
             AutomationExecutionFilterKey::TagKey => write!(f, "TagKey"),
             AutomationExecutionFilterKey::TargetResourceGroup => write!(f, "TargetResourceGroup"),
-            AutomationExecutionFilterKey::Unknown(value) => write!(f, "{}", value),
+            AutomationExecutionFilterKey::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

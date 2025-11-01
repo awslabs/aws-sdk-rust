@@ -96,7 +96,7 @@ impl ::std::fmt::Display for Provisioning {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             Provisioning::CustomerManaged => write!(f, "CUSTOMER_MANAGED"),
-            Provisioning::Unknown(value) => write!(f, "{}", value),
+            Provisioning::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

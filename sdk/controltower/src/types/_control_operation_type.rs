@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ControlOperationType {
             ControlOperationType::EnableControl => write!(f, "ENABLE_CONTROL"),
             ControlOperationType::ResetEnabledControl => write!(f, "RESET_ENABLED_CONTROL"),
             ControlOperationType::UpdateEnabledControl => write!(f, "UPDATE_ENABLED_CONTROL"),
-            ControlOperationType::Unknown(value) => write!(f, "{}", value),
+            ControlOperationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

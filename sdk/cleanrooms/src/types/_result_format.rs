@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ResultFormat {
         match self {
             ResultFormat::Csv => write!(f, "CSV"),
             ResultFormat::Parquet => write!(f, "PARQUET"),
-            ResultFormat::Unknown(value) => write!(f, "{}", value),
+            ResultFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

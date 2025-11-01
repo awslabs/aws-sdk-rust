@@ -108,7 +108,7 @@ impl ::std::fmt::Display for MonitoringExecutionSortKey {
             MonitoringExecutionSortKey::CreationTime => write!(f, "CreationTime"),
             MonitoringExecutionSortKey::ScheduledTime => write!(f, "ScheduledTime"),
             MonitoringExecutionSortKey::Status => write!(f, "Status"),
-            MonitoringExecutionSortKey::Unknown(value) => write!(f, "{}", value),
+            MonitoringExecutionSortKey::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

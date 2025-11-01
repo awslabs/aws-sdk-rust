@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FlexMatchMode {
         match self {
             FlexMatchMode::Standalone => write!(f, "STANDALONE"),
             FlexMatchMode::WithQueue => write!(f, "WITH_QUEUE"),
-            FlexMatchMode::Unknown(value) => write!(f, "{}", value),
+            FlexMatchMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

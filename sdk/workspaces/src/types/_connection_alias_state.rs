@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ConnectionAliasState {
             ConnectionAliasState::Created => write!(f, "CREATED"),
             ConnectionAliasState::Creating => write!(f, "CREATING"),
             ConnectionAliasState::Deleting => write!(f, "DELETING"),
-            ConnectionAliasState::Unknown(value) => write!(f, "{}", value),
+            ConnectionAliasState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

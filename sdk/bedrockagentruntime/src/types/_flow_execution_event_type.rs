@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FlowExecutionEventType {
         match self {
             FlowExecutionEventType::Flow => write!(f, "Flow"),
             FlowExecutionEventType::Node => write!(f, "Node"),
-            FlowExecutionEventType::Unknown(value) => write!(f, "{}", value),
+            FlowExecutionEventType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

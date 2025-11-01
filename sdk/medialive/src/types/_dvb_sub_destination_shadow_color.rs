@@ -108,7 +108,7 @@ impl ::std::fmt::Display for DvbSubDestinationShadowColor {
             DvbSubDestinationShadowColor::Black => write!(f, "BLACK"),
             DvbSubDestinationShadowColor::None => write!(f, "NONE"),
             DvbSubDestinationShadowColor::White => write!(f, "WHITE"),
-            DvbSubDestinationShadowColor::Unknown(value) => write!(f, "{}", value),
+            DvbSubDestinationShadowColor::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

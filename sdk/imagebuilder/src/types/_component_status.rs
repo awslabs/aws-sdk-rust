@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ComponentStatus {
             ComponentStatus::Active => write!(f, "ACTIVE"),
             ComponentStatus::Deprecated => write!(f, "DEPRECATED"),
             ComponentStatus::Disabled => write!(f, "DISABLED"),
-            ComponentStatus::Unknown(value) => write!(f, "{}", value),
+            ComponentStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

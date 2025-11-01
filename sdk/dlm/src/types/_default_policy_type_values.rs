@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DefaultPolicyTypeValues {
         match self {
             DefaultPolicyTypeValues::Instance => write!(f, "INSTANCE"),
             DefaultPolicyTypeValues::Volume => write!(f, "VOLUME"),
-            DefaultPolicyTypeValues::Unknown(value) => write!(f, "{}", value),
+            DefaultPolicyTypeValues::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

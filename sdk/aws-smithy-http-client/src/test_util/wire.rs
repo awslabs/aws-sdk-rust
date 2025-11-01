@@ -81,19 +81,16 @@ pub fn check_matches(events: &[RecordedEvent], matchers: &[Matcher]) {
     loop {
         idx += 1;
         let bail = |err: Box<dyn Error>| {
-            panic!(
-                "failed on event {}:\n  {}\n  actual recorded events: {:?}",
-                idx, err, events
-            )
+            panic!("failed on event {idx}:\n  {err}\n  actual recorded events: {events:?}")
         };
         match (events_iter.next(), matcher_iter.next()) {
             (Some(event), Some((matcher, _msg))) => matcher(event).unwrap_or_else(bail),
             (None, None) => return,
             (Some(event), None) => {
-                bail(format!("got {:?} but no more events were expected", event).into())
+                bail(format!("got {event:?} but no more events were expected").into())
             }
             (None, Some((_expect, msg))) => {
-                bail(format!("expected {:?} but no more events were expected", msg).into())
+                bail(format!("expected {msg:?} but no more events were expected").into())
             }
         }
     }
@@ -270,7 +267,7 @@ impl WireMockServer {
                             let next_event = events.clone().lock().unwrap().pop();
                             async move {
                                 let next_event = next_event
-                                    .unwrap_or_else(|| panic!("no more events! Log: {:?}", wire_log));
+                                    .unwrap_or_else(|| panic!("no more events! Log: {wire_log:?}"));
 
                                 wire_log
                                     .lock()
@@ -293,7 +290,7 @@ impl WireMockServer {
                             let conn = conn_builder.serve_connection(io, svc);
                             let fut = graceful.watch(conn);
                             if let Err(e) = fut.await {
-                                panic!("Error serving connection: {:?}", e);
+                                panic!("Error serving connection: {e:?}");
                             }
                         });
                     },
@@ -338,7 +335,7 @@ impl WireMockServer {
     /// **Note**: This must be used in tandem with [`Self::dns_resolver`]
     pub fn http_client(&self) -> SharedHttpClient {
         let resolver = self.dns_resolver();
-        crate::client::build_with_tcp_conn_fn(None, move || {
+        crate::client::build_with_tcp_conn_fn(None, None, move || {
             hyper_util::client::legacy::connect::HttpConnector::new_with_resolver(
                 resolver.clone().0,
             )
@@ -403,7 +400,7 @@ impl tower::Service<Name> for InnerDnsResolver {
         let socket_addr = self.socket_addr;
         let log = self.log.clone();
         Box::pin(async move {
-            println!("looking up {:?}, replying with {:?}", req, socket_addr);
+            println!("looking up {req:?}, replying with {socket_addr:?}");
             log.lock()
                 .unwrap()
                 .push(RecordedEvent::DnsLookup(req.to_string()));

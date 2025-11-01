@@ -108,7 +108,7 @@ impl ::std::fmt::Display for UserIdentityType {
             UserIdentityType::AwsDirectoryService => write!(f, "AWS_DIRECTORY_SERVICE"),
             UserIdentityType::AwsIamIdentityCenter => write!(f, "AWS_IAM_IDENTITY_CENTER"),
             UserIdentityType::CustomerManaged => write!(f, "CUSTOMER_MANAGED"),
-            UserIdentityType::Unknown(value) => write!(f, "{}", value),
+            UserIdentityType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

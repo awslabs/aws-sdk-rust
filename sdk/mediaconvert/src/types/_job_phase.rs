@@ -108,7 +108,7 @@ impl ::std::fmt::Display for JobPhase {
             JobPhase::Probing => write!(f, "PROBING"),
             JobPhase::Transcoding => write!(f, "TRANSCODING"),
             JobPhase::Uploading => write!(f, "UPLOADING"),
-            JobPhase::Unknown(value) => write!(f, "{}", value),
+            JobPhase::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

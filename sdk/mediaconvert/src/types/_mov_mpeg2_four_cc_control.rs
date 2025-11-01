@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MovMpeg2FourCcControl {
         match self {
             MovMpeg2FourCcControl::Mpeg => write!(f, "MPEG"),
             MovMpeg2FourCcControl::Xdcam => write!(f, "XDCAM"),
-            MovMpeg2FourCcControl::Unknown(value) => write!(f, "{}", value),
+            MovMpeg2FourCcControl::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

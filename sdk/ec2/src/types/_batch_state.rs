@@ -140,7 +140,7 @@ impl ::std::fmt::Display for BatchState {
             BatchState::Failed => write!(f, "failed"),
             BatchState::Modifying => write!(f, "modifying"),
             BatchState::Submitted => write!(f, "submitted"),
-            BatchState::Unknown(value) => write!(f, "{}", value),
+            BatchState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

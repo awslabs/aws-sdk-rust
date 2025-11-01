@@ -7,7 +7,7 @@
 
 use std::error::Error as StdError;
 use std::fmt;
-use std::io::{Error as IoError, ErrorKind as IoErrorKind};
+use std::io::Error as IoError;
 
 #[derive(Debug)]
 pub(super) enum ErrorKind {
@@ -76,6 +76,6 @@ impl StdError for Error {
 
 impl From<Error> for IoError {
     fn from(err: Error) -> Self {
-        IoError::new(IoErrorKind::Other, err)
+        IoError::other(err)
     }
 }

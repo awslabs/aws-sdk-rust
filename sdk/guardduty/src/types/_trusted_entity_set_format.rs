@@ -126,7 +126,7 @@ impl ::std::fmt::Display for TrustedEntitySetFormat {
             TrustedEntitySetFormat::ProofPoint => write!(f, "PROOF_POINT"),
             TrustedEntitySetFormat::Stix => write!(f, "STIX"),
             TrustedEntitySetFormat::Txt => write!(f, "TXT"),
-            TrustedEntitySetFormat::Unknown(value) => write!(f, "{}", value),
+            TrustedEntitySetFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

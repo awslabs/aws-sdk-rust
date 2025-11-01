@@ -108,7 +108,7 @@ impl ::std::fmt::Display for RequiresRecreation {
             RequiresRecreation::Always => write!(f, "Always"),
             RequiresRecreation::Conditionally => write!(f, "Conditionally"),
             RequiresRecreation::Never => write!(f, "Never"),
-            RequiresRecreation::Unknown(value) => write!(f, "{}", value),
+            RequiresRecreation::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

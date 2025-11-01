@@ -108,7 +108,7 @@ impl ::std::fmt::Display for KafkaSchemaRegistryAuthType {
             KafkaSchemaRegistryAuthType::BasicAuth => write!(f, "BASIC_AUTH"),
             KafkaSchemaRegistryAuthType::ClientCertificateTlsAuth => write!(f, "CLIENT_CERTIFICATE_TLS_AUTH"),
             KafkaSchemaRegistryAuthType::ServerRootCaCertificate => write!(f, "SERVER_ROOT_CA_CERTIFICATE"),
-            KafkaSchemaRegistryAuthType::Unknown(value) => write!(f, "{}", value),
+            KafkaSchemaRegistryAuthType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

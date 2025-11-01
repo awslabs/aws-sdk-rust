@@ -108,7 +108,7 @@ impl ::std::fmt::Display for CodegenJobStatus {
             CodegenJobStatus::Failed => write!(f, "failed"),
             CodegenJobStatus::InProgress => write!(f, "in_progress"),
             CodegenJobStatus::Succeeded => write!(f, "succeeded"),
-            CodegenJobStatus::Unknown(value) => write!(f, "{}", value),
+            CodegenJobStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

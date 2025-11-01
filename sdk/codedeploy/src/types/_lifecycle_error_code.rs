@@ -133,7 +133,7 @@ impl ::std::fmt::Display for LifecycleErrorCode {
             LifecycleErrorCode::ScriptTimedOut => write!(f, "ScriptTimedOut"),
             LifecycleErrorCode::Success => write!(f, "Success"),
             LifecycleErrorCode::UnknownError => write!(f, "UnknownError"),
-            LifecycleErrorCode::Unknown(value) => write!(f, "{}", value),
+            LifecycleErrorCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

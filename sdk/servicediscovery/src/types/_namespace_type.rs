@@ -108,7 +108,7 @@ impl ::std::fmt::Display for NamespaceType {
             NamespaceType::DnsPrivate => write!(f, "DNS_PRIVATE"),
             NamespaceType::DnsPublic => write!(f, "DNS_PUBLIC"),
             NamespaceType::Http => write!(f, "HTTP"),
-            NamespaceType::Unknown(value) => write!(f, "{}", value),
+            NamespaceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

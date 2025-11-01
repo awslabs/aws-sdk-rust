@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CeState {
         match self {
             CeState::Disabled => write!(f, "DISABLED"),
             CeState::Enabled => write!(f, "ENABLED"),
-            CeState::Unknown(value) => write!(f, "{}", value),
+            CeState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

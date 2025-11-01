@@ -89,16 +89,14 @@ pub fn de_get_cluster_credentials_with_iam(
     let start_el = decoder.start_el();
     if !(start_el.matches("GetClusterCredentialsWithIAMResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected GetClusterCredentialsWithIAMResponse got {:?}",
-            start_el
+            "invalid root, expected GetClusterCredentialsWithIAMResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("GetClusterCredentialsWithIAMResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected GetClusterCredentialsWithIAMResult got {:?}",
-                start_el
+                "invalid result, expected GetClusterCredentialsWithIAMResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

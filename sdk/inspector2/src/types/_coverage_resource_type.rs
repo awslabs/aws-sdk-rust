@@ -126,7 +126,7 @@ impl ::std::fmt::Display for CoverageResourceType {
             CoverageResourceType::AwsEcrRepository => write!(f, "AWS_ECR_REPOSITORY"),
             CoverageResourceType::AwsLambdaFunction => write!(f, "AWS_LAMBDA_FUNCTION"),
             CoverageResourceType::CodeRepository => write!(f, "CODE_REPOSITORY"),
-            CoverageResourceType::Unknown(value) => write!(f, "{}", value),
+            CoverageResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

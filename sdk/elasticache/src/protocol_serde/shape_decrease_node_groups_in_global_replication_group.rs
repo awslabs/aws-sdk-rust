@@ -132,16 +132,14 @@ pub fn de_decrease_node_groups_in_global_replication_group(
     let start_el = decoder.start_el();
     if !(start_el.matches("DecreaseNodeGroupsInGlobalReplicationGroupResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected DecreaseNodeGroupsInGlobalReplicationGroupResponse got {:?}",
-            start_el
+            "invalid root, expected DecreaseNodeGroupsInGlobalReplicationGroupResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("DecreaseNodeGroupsInGlobalReplicationGroupResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected DecreaseNodeGroupsInGlobalReplicationGroupResult got {:?}",
-                start_el
+                "invalid result, expected DecreaseNodeGroupsInGlobalReplicationGroupResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

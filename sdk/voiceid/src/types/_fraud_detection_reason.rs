@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FraudDetectionReason {
         match self {
             FraudDetectionReason::KnownFraudster => write!(f, "KNOWN_FRAUDSTER"),
             FraudDetectionReason::VoiceSpoofing => write!(f, "VOICE_SPOOFING"),
-            FraudDetectionReason::Unknown(value) => write!(f, "{}", value),
+            FraudDetectionReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

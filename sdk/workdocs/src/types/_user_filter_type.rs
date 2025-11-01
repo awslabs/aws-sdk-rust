@@ -102,7 +102,7 @@ impl ::std::fmt::Display for UserFilterType {
         match self {
             UserFilterType::ActivePending => write!(f, "ACTIVE_PENDING"),
             UserFilterType::All => write!(f, "ALL"),
-            UserFilterType::Unknown(value) => write!(f, "{}", value),
+            UserFilterType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

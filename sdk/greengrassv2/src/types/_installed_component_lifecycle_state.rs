@@ -138,7 +138,7 @@ impl ::std::fmt::Display for InstalledComponentLifecycleState {
             InstalledComponentLifecycleState::Running => write!(f, "RUNNING"),
             InstalledComponentLifecycleState::Starting => write!(f, "STARTING"),
             InstalledComponentLifecycleState::Stopping => write!(f, "STOPPING"),
-            InstalledComponentLifecycleState::Unknown(value) => write!(f, "{}", value),
+            InstalledComponentLifecycleState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

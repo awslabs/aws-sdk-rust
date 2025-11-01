@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CmfcKlvMetadata {
         match self {
             CmfcKlvMetadata::None => write!(f, "NONE"),
             CmfcKlvMetadata::Passthrough => write!(f, "PASSTHROUGH"),
-            CmfcKlvMetadata::Unknown(value) => write!(f, "{}", value),
+            CmfcKlvMetadata::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

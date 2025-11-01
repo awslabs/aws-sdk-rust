@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ValidationMethod {
             ValidationMethod::Dns => write!(f, "DNS"),
             ValidationMethod::Email => write!(f, "EMAIL"),
             ValidationMethod::Http => write!(f, "HTTP"),
-            ValidationMethod::Unknown(value) => write!(f, "{}", value),
+            ValidationMethod::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

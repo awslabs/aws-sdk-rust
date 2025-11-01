@@ -147,7 +147,7 @@ impl ::std::fmt::Display for PrimaryNeedFromAws {
             PrimaryNeedFromAws::CoSellSupportForPublicTenderRfx => write!(f, "Co-Sell - Support for Public Tender / RFx"),
             PrimaryNeedFromAws::CoSellTechnicalConsultation => write!(f, "Co-Sell - Technical Consultation"),
             PrimaryNeedFromAws::CoSellTotalCostOfOwnershipEvaluation => write!(f, "Co-Sell - Total Cost of Ownership Evaluation"),
-            PrimaryNeedFromAws::Unknown(value) => write!(f, "{}", value),
+            PrimaryNeedFromAws::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

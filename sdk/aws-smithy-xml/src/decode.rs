@@ -31,8 +31,8 @@ impl Display for XmlDecodeError {
     fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             XmlDecodeErrorKind::InvalidXml(_) => write!(f, "XML parse error"),
-            XmlDecodeErrorKind::InvalidEscape { esc } => write!(f, "invalid XML escape: {}", esc),
-            XmlDecodeErrorKind::Custom(msg) => write!(f, "error parsing XML: {}", msg),
+            XmlDecodeErrorKind::InvalidEscape { esc } => write!(f, "invalid XML escape: {esc}"),
+            XmlDecodeErrorKind::Custom(msg) => write!(f, "error parsing XML: {msg}"),
             XmlDecodeErrorKind::Unhandled(_) => write!(f, "error parsing XML"),
         }
     }
@@ -441,8 +441,7 @@ pub fn try_data<'a, 'inp>(
             Some(Ok(XmlToken(Token::Text { text }))) => return unescape(text.as_str()),
             Some(Ok(e @ XmlToken(Token::ElementStart { .. }))) => {
                 return Err(XmlDecodeError::custom(format!(
-                    "looking for a data element, found: {:?}",
-                    e
+                    "looking for a data element, found: {e:?}"
                 )))
             }
             Some(Err(e)) => return Err(e),

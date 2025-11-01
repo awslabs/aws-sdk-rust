@@ -114,7 +114,7 @@ impl ::std::fmt::Display for OriginAccessControlOriginTypes {
             OriginAccessControlOriginTypes::Mediapackagev2 => write!(f, "mediapackagev2"),
             OriginAccessControlOriginTypes::Mediastore => write!(f, "mediastore"),
             OriginAccessControlOriginTypes::S3 => write!(f, "s3"),
-            OriginAccessControlOriginTypes::Unknown(value) => write!(f, "{}", value),
+            OriginAccessControlOriginTypes::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

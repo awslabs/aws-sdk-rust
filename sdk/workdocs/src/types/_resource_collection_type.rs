@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ResourceCollectionType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ResourceCollectionType::SharedWithMe => write!(f, "SHARED_WITH_ME"),
-            ResourceCollectionType::Unknown(value) => write!(f, "{}", value),
+            ResourceCollectionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

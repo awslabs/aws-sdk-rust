@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ImportDataType {
         match self {
             ImportDataType::Csv => write!(f, "CSV"),
             ImportDataType::Json => write!(f, "JSON"),
-            ImportDataType::Unknown(value) => write!(f, "{}", value),
+            ImportDataType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

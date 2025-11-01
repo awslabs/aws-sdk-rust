@@ -114,7 +114,7 @@ impl ::std::fmt::Display for KeyState {
             KeyState::CreateInProgress => write!(f, "CREATE_IN_PROGRESS"),
             KeyState::DeleteComplete => write!(f, "DELETE_COMPLETE"),
             KeyState::DeletePending => write!(f, "DELETE_PENDING"),
-            KeyState::Unknown(value) => write!(f, "{}", value),
+            KeyState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

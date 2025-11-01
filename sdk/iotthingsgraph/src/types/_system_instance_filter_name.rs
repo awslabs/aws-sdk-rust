@@ -108,7 +108,7 @@ impl ::std::fmt::Display for SystemInstanceFilterName {
             SystemInstanceFilterName::GreengrassGroupName => write!(f, "GREENGRASS_GROUP_NAME"),
             SystemInstanceFilterName::Status => write!(f, "STATUS"),
             SystemInstanceFilterName::SystemTemplateId => write!(f, "SYSTEM_TEMPLATE_ID"),
-            SystemInstanceFilterName::Unknown(value) => write!(f, "{}", value),
+            SystemInstanceFilterName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

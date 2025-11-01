@@ -108,7 +108,7 @@ impl ::std::fmt::Display for LustreReadCacheSizingMode {
             LustreReadCacheSizingMode::NoCache => write!(f, "NO_CACHE"),
             LustreReadCacheSizingMode::ProportionalToThroughputCapacity => write!(f, "PROPORTIONAL_TO_THROUGHPUT_CAPACITY"),
             LustreReadCacheSizingMode::UserProvisioned => write!(f, "USER_PROVISIONED"),
-            LustreReadCacheSizingMode::Unknown(value) => write!(f, "{}", value),
+            LustreReadCacheSizingMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

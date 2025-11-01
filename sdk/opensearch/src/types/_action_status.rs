@@ -126,7 +126,7 @@ impl ::std::fmt::Display for ActionStatus {
             ActionStatus::InProgress => write!(f, "IN_PROGRESS"),
             ActionStatus::NotEligible => write!(f, "NOT_ELIGIBLE"),
             ActionStatus::PendingUpdate => write!(f, "PENDING_UPDATE"),
-            ActionStatus::Unknown(value) => write!(f, "{}", value),
+            ActionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -132,7 +132,7 @@ impl ::std::fmt::Display for Strategy {
             Strategy::Repurchase => write!(f, "Repurchase"),
             Strategy::Retain => write!(f, "Retain"),
             Strategy::Retirement => write!(f, "Retirement"),
-            Strategy::Unknown(value) => write!(f, "{}", value),
+            Strategy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

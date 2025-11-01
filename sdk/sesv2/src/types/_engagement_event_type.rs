@@ -114,7 +114,7 @@ impl ::std::fmt::Display for EngagementEventType {
         match self {
             EngagementEventType::Click => write!(f, "CLICK"),
             EngagementEventType::Open => write!(f, "OPEN"),
-            EngagementEventType::Unknown(value) => write!(f, "{}", value),
+            EngagementEventType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

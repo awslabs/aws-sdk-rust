@@ -126,7 +126,7 @@ impl ::std::fmt::Display for HostEnvironment {
             HostEnvironment::Other => write!(f, "OTHER"),
             HostEnvironment::Snowball => write!(f, "SNOWBALL"),
             HostEnvironment::Vmware => write!(f, "VMWARE"),
-            HostEnvironment::Unknown(value) => write!(f, "{}", value),
+            HostEnvironment::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

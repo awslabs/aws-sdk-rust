@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ContainerMountPointAccessLevel {
         match self {
             ContainerMountPointAccessLevel::ReadAndWrite => write!(f, "READ_AND_WRITE"),
             ContainerMountPointAccessLevel::ReadOnly => write!(f, "READ_ONLY"),
-            ContainerMountPointAccessLevel::Unknown(value) => write!(f, "{}", value),
+            ContainerMountPointAccessLevel::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

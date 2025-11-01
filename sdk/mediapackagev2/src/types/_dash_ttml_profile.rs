@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DashTtmlProfile {
         match self {
             DashTtmlProfile::EbuTtD101 => write!(f, "EBU_TT_D_101"),
             DashTtmlProfile::Imsc1 => write!(f, "IMSC_1"),
-            DashTtmlProfile::Unknown(value) => write!(f, "{}", value),
+            DashTtmlProfile::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

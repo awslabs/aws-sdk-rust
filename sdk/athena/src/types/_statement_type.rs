@@ -108,7 +108,7 @@ impl ::std::fmt::Display for StatementType {
             StatementType::Ddl => write!(f, "DDL"),
             StatementType::Dml => write!(f, "DML"),
             StatementType::Utility => write!(f, "UTILITY"),
-            StatementType::Unknown(value) => write!(f, "{}", value),
+            StatementType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

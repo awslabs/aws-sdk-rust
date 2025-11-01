@@ -59,7 +59,7 @@ mod tests {
         let mut file = NamedTempFile::new()?;
 
         for i in 0..10000 {
-            writeln!(file, "Brian was here. Briefly. {}", i)?;
+            writeln!(file, "Brian was here. Briefly. {i}")?;
         }
         let body = ByteStream::from_path(&file).await?.into_inner();
         // assert that a valid size hint is immediately ready

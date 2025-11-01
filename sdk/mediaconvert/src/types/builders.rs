@@ -73,6 +73,8 @@ pub use crate::types::_uncompressed_settings::UncompressedSettingsBuilder;
 
 pub use crate::types::_prores_settings::ProresSettingsBuilder;
 
+pub use crate::types::_passthrough_settings::PassthroughSettingsBuilder;
+
 pub use crate::types::_mpeg2_settings::Mpeg2SettingsBuilder;
 
 pub use crate::types::_h265_settings::H265SettingsBuilder;
@@ -178,6 +180,8 @@ pub use crate::types::_aiff_settings::AiffSettingsBuilder;
 pub use crate::types::_ac3_settings::Ac3SettingsBuilder;
 
 pub use crate::types::_aac_settings::AacSettingsBuilder;
+
+pub use crate::types::_audio_pitch_correction_settings::AudioPitchCorrectionSettingsBuilder;
 
 pub use crate::types::_audio_normalization_settings::AudioNormalizationSettingsBuilder;
 

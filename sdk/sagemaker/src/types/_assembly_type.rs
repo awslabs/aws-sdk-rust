@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AssemblyType {
         match self {
             AssemblyType::Line => write!(f, "Line"),
             AssemblyType::None => write!(f, "None"),
-            AssemblyType::Unknown(value) => write!(f, "{}", value),
+            AssemblyType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

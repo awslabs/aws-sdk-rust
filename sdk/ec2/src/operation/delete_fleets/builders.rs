@@ -25,7 +25,11 @@ impl crate::operation::delete_fleets::builders::DeleteFleetsInputBuilder {
 /// <p>Deletes the specified EC2 Fleet request.</p>
 /// <p>After you delete an EC2 Fleet request, it launches no new instances.</p>
 /// <p>You must also specify whether a deleted EC2 Fleet request should terminate its instances. If you choose to terminate the instances, the EC2 Fleet request enters the <code>deleted_terminating</code> state. Otherwise, it enters the <code>deleted_running</code> state, and the instances continue to run until they are interrupted or you terminate them manually.</p>
-/// <p>A deleted <code>instant</code> fleet with running instances is not supported. When you delete an <code>instant</code> fleet, Amazon EC2 automatically terminates all its instances. For fleets with more than 1000 instances, the deletion request might fail. If your fleet has more than 1000 instances, first terminate most of the instances manually, leaving 1000 or fewer. Then delete the fleet, and the remaining instances will be terminated automatically.</p>
+/// <p>A deleted <code>instant</code> fleet with running instances is not supported. When you delete an <code>instant</code> fleet, Amazon EC2 automatically terminates all its instances. For fleets with more than 1000 instances, the deletion request might fail. If your fleet has more than 1000 instances, first terminate most of the instances manually, leaving 1000 or fewer. Then delete the fleet, and the remaining instances will be terminated automatically.</p><important>
+/// <p><b>Terminating an instance is permanent and irreversible.</b></p>
+/// <p>After you terminate an instance, you can no longer connect to it, and it can't be recovered. All attached Amazon EBS volumes that are configured to be deleted on termination are also permanently deleted and can't be recovered. All data stored on instance store volumes is permanently lost. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-ec2-instance-termination-works.html"> How instance termination works</a>.</p>
+/// <p>Before you terminate an instance, ensure that you have backed up all data that you need to retain after the termination to persistent storage.</p>
+/// </important>
 /// <p class="title"><b>Restrictions</b></p>
 /// <ul>
 /// <li>

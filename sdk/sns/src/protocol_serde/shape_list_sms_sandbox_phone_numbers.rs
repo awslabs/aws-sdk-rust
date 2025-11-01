@@ -136,16 +136,14 @@ pub fn de_list_sms_sandbox_phone_numbers(
     let start_el = decoder.start_el();
     if !(start_el.matches("ListSMSSandboxPhoneNumbersResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected ListSMSSandboxPhoneNumbersResponse got {:?}",
-            start_el
+            "invalid root, expected ListSMSSandboxPhoneNumbersResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("ListSMSSandboxPhoneNumbersResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected ListSMSSandboxPhoneNumbersResult got {:?}",
-                start_el
+                "invalid result, expected ListSMSSandboxPhoneNumbersResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

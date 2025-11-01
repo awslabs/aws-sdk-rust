@@ -386,7 +386,7 @@ impl ::std::fmt::Display for ExportableVolumeField {
             }
             ExportableVolumeField::UtilizationMetricsVolumeWriteOpsPerSecondMaximum => write!(f, "UtilizationMetricsVolumeWriteOpsPerSecondMaximum"),
             ExportableVolumeField::VolumeArn => write!(f, "VolumeArn"),
-            ExportableVolumeField::Unknown(value) => write!(f, "{}", value),
+            ExportableVolumeField::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

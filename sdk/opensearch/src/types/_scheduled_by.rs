@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ScheduledBy {
         match self {
             ScheduledBy::Customer => write!(f, "CUSTOMER"),
             ScheduledBy::System => write!(f, "SYSTEM"),
-            ScheduledBy::Unknown(value) => write!(f, "{}", value),
+            ScheduledBy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -327,7 +327,7 @@ impl ::std::fmt::Display for AdministrativeActionType {
             AdministrativeActionType::VolumeRestore => write!(f, "VOLUME_RESTORE"),
             AdministrativeActionType::VolumeUpdate => write!(f, "VOLUME_UPDATE"),
             AdministrativeActionType::VolumeUpdateWithSnapshot => write!(f, "VOLUME_UPDATE_WITH_SNAPSHOT"),
-            AdministrativeActionType::Unknown(value) => write!(f, "{}", value),
+            AdministrativeActionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AccountingMode {
         match self {
             AccountingMode::None => write!(f, "NONE"),
             AccountingMode::Standard => write!(f, "STANDARD"),
-            AccountingMode::Unknown(value) => write!(f, "{}", value),
+            AccountingMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -100,7 +100,7 @@ impl ::std::fmt::Display for RouteSpanRailwayCrossingAttribute {
         match self {
             RouteSpanRailwayCrossingAttribute::Protected => write!(f, "Protected"),
             RouteSpanRailwayCrossingAttribute::Unprotected => write!(f, "Unprotected"),
-            RouteSpanRailwayCrossingAttribute::Unknown(value) => write!(f, "{}", value),
+            RouteSpanRailwayCrossingAttribute::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

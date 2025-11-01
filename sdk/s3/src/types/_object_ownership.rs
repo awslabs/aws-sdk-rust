@@ -128,7 +128,7 @@ impl ::std::fmt::Display for ObjectOwnership {
             ObjectOwnership::BucketOwnerEnforced => write!(f, "BucketOwnerEnforced"),
             ObjectOwnership::BucketOwnerPreferred => write!(f, "BucketOwnerPreferred"),
             ObjectOwnership::ObjectWriter => write!(f, "ObjectWriter"),
-            ObjectOwnership::Unknown(value) => write!(f, "{}", value),
+            ObjectOwnership::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

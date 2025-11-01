@@ -147,7 +147,7 @@ impl ::std::fmt::Display for MetricsName {
             MetricsName::OutgoingRecords => write!(f, "OutgoingRecords"),
             MetricsName::ReadProvisionedThroughputExceeded => write!(f, "ReadProvisionedThroughputExceeded"),
             MetricsName::WriteProvisionedThroughputExceeded => write!(f, "WriteProvisionedThroughputExceeded"),
-            MetricsName::Unknown(value) => write!(f, "{}", value),
+            MetricsName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

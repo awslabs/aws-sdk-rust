@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ReservationEndDateType {
         match self {
             ReservationEndDateType::Limited => write!(f, "limited"),
             ReservationEndDateType::Unlimited => write!(f, "unlimited"),
-            ReservationEndDateType::Unknown(value) => write!(f, "{}", value),
+            ReservationEndDateType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

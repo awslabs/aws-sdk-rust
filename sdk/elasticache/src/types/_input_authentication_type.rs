@@ -108,7 +108,7 @@ impl ::std::fmt::Display for InputAuthenticationType {
             InputAuthenticationType::Iam => write!(f, "iam"),
             InputAuthenticationType::NoPassword => write!(f, "no-password-required"),
             InputAuthenticationType::Password => write!(f, "password"),
-            InputAuthenticationType::Unknown(value) => write!(f, "{}", value),
+            InputAuthenticationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

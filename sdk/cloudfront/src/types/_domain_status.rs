@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DomainStatus {
         match self {
             DomainStatus::Active => write!(f, "active"),
             DomainStatus::Inactive => write!(f, "inactive"),
-            DomainStatus::Unknown(value) => write!(f, "{}", value),
+            DomainStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

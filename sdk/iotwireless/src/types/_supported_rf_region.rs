@@ -170,7 +170,7 @@ impl ::std::fmt::Display for SupportedRfRegion {
             SupportedRfRegion::Kr920 => write!(f, "KR920"),
             SupportedRfRegion::Ru864 => write!(f, "RU864"),
             SupportedRfRegion::Us915 => write!(f, "US915"),
-            SupportedRfRegion::Unknown(value) => write!(f, "{}", value),
+            SupportedRfRegion::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

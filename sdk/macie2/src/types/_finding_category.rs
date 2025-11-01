@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FindingCategory {
         match self {
             FindingCategory::Classification => write!(f, "CLASSIFICATION"),
             FindingCategory::Policy => write!(f, "POLICY"),
-            FindingCategory::Unknown(value) => write!(f, "{}", value),
+            FindingCategory::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

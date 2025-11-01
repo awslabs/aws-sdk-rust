@@ -147,7 +147,7 @@ impl ::std::fmt::Display for AuthFlowType {
             AuthFlowType::UserAuth => write!(f, "USER_AUTH"),
             AuthFlowType::UserPasswordAuth => write!(f, "USER_PASSWORD_AUTH"),
             AuthFlowType::UserSrpAuth => write!(f, "USER_SRP_AUTH"),
-            AuthFlowType::Unknown(value) => write!(f, "{}", value),
+            AuthFlowType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

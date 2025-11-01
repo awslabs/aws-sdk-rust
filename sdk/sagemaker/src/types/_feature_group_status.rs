@@ -120,7 +120,7 @@ impl ::std::fmt::Display for FeatureGroupStatus {
             FeatureGroupStatus::Creating => write!(f, "Creating"),
             FeatureGroupStatus::DeleteFailed => write!(f, "DeleteFailed"),
             FeatureGroupStatus::Deleting => write!(f, "Deleting"),
-            FeatureGroupStatus::Unknown(value) => write!(f, "{}", value),
+            FeatureGroupStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

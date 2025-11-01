@@ -120,7 +120,7 @@ impl ::std::fmt::Display for ListEdgePackagingJobsSortBy {
             ListEdgePackagingJobsSortBy::ModelName => write!(f, "MODEL_NAME"),
             ListEdgePackagingJobsSortBy::Name => write!(f, "NAME"),
             ListEdgePackagingJobsSortBy::EdgePackagingJobStatus => write!(f, "STATUS"),
-            ListEdgePackagingJobsSortBy::Unknown(value) => write!(f, "{}", value),
+            ListEdgePackagingJobsSortBy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

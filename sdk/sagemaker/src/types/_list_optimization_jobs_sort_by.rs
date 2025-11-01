@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ListOptimizationJobsSortBy {
             ListOptimizationJobsSortBy::CreationTime => write!(f, "CreationTime"),
             ListOptimizationJobsSortBy::Name => write!(f, "Name"),
             ListOptimizationJobsSortBy::Status => write!(f, "Status"),
-            ListOptimizationJobsSortBy::Unknown(value) => write!(f, "{}", value),
+            ListOptimizationJobsSortBy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

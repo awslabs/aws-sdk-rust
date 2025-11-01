@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TaskActionOnBlockingInstances {
         match self {
             TaskActionOnBlockingInstances::FailTask => write!(f, "FAIL_TASK"),
             TaskActionOnBlockingInstances::WaitForEvacuation => write!(f, "WAIT_FOR_EVACUATION"),
-            TaskActionOnBlockingInstances::Unknown(value) => write!(f, "{}", value),
+            TaskActionOnBlockingInstances::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

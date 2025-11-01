@@ -96,7 +96,7 @@ impl ::std::fmt::Display for LocationUpdateStatus {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             LocationUpdateStatus::PendingUpdate => write!(f, "PENDING_UPDATE"),
-            LocationUpdateStatus::Unknown(value) => write!(f, "{}", value),
+            LocationUpdateStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

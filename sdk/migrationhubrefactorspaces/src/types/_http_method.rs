@@ -132,7 +132,7 @@ impl ::std::fmt::Display for HttpMethod {
             HttpMethod::Patch => write!(f, "PATCH"),
             HttpMethod::Post => write!(f, "POST"),
             HttpMethod::Put => write!(f, "PUT"),
-            HttpMethod::Unknown(value) => write!(f, "{}", value),
+            HttpMethod::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

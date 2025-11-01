@@ -102,7 +102,7 @@ impl ::std::fmt::Display for OriginTypeValue {
         match self {
             OriginTypeValue::Source => write!(f, "SOURCE"),
             OriginTypeValue::Target => write!(f, "TARGET"),
-            OriginTypeValue::Unknown(value) => write!(f, "{}", value),
+            OriginTypeValue::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

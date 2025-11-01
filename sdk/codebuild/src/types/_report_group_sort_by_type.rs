@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ReportGroupSortByType {
             ReportGroupSortByType::CreatedTime => write!(f, "CREATED_TIME"),
             ReportGroupSortByType::LastModifiedTime => write!(f, "LAST_MODIFIED_TIME"),
             ReportGroupSortByType::Name => write!(f, "NAME"),
-            ReportGroupSortByType::Unknown(value) => write!(f, "{}", value),
+            ReportGroupSortByType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

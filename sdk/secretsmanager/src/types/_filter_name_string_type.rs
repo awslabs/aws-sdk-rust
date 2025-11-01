@@ -132,7 +132,7 @@ impl ::std::fmt::Display for FilterNameStringType {
             FilterNameStringType::PrimaryRegion => write!(f, "primary-region"),
             FilterNameStringType::TagKey => write!(f, "tag-key"),
             FilterNameStringType::TagValue => write!(f, "tag-value"),
-            FilterNameStringType::Unknown(value) => write!(f, "{}", value),
+            FilterNameStringType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

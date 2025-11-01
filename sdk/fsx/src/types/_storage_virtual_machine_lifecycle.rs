@@ -126,7 +126,7 @@ impl ::std::fmt::Display for StorageVirtualMachineLifecycle {
             StorageVirtualMachineLifecycle::Failed => write!(f, "FAILED"),
             StorageVirtualMachineLifecycle::Misconfigured => write!(f, "MISCONFIGURED"),
             StorageVirtualMachineLifecycle::Pending => write!(f, "PENDING"),
-            StorageVirtualMachineLifecycle::Unknown(value) => write!(f, "{}", value),
+            StorageVirtualMachineLifecycle::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

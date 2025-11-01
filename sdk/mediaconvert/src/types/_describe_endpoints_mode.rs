@@ -105,7 +105,7 @@ impl ::std::fmt::Display for DescribeEndpointsMode {
         match self {
             DescribeEndpointsMode::Default => write!(f, "DEFAULT"),
             DescribeEndpointsMode::GetOnly => write!(f, "GET_ONLY"),
-            DescribeEndpointsMode::Unknown(value) => write!(f, "{}", value),
+            DescribeEndpointsMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

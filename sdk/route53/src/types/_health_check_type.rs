@@ -147,7 +147,7 @@ impl ::std::fmt::Display for HealthCheckType {
             HealthCheckType::HttpStrMatch => write!(f, "HTTP_STR_MATCH"),
             HealthCheckType::RecoveryControl => write!(f, "RECOVERY_CONTROL"),
             HealthCheckType::Tcp => write!(f, "TCP"),
-            HealthCheckType::Unknown(value) => write!(f, "{}", value),
+            HealthCheckType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

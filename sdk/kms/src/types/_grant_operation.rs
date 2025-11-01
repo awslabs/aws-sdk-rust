@@ -210,7 +210,7 @@ impl ::std::fmt::Display for GrantOperation {
             GrantOperation::Sign => write!(f, "Sign"),
             GrantOperation::Verify => write!(f, "Verify"),
             GrantOperation::VerifyMac => write!(f, "VerifyMac"),
-            GrantOperation::Unknown(value) => write!(f, "{}", value),
+            GrantOperation::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

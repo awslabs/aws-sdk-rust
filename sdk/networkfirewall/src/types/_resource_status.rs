@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ResourceStatus {
             ResourceStatus::Active => write!(f, "ACTIVE"),
             ResourceStatus::Deleting => write!(f, "DELETING"),
             ResourceStatus::Error => write!(f, "ERROR"),
-            ResourceStatus::Unknown(value) => write!(f, "{}", value),
+            ResourceStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -120,7 +120,7 @@ impl ::std::fmt::Display for WebExperienceStatus {
             WebExperienceStatus::Deleting => write!(f, "DELETING"),
             WebExperienceStatus::Failed => write!(f, "FAILED"),
             WebExperienceStatus::PendingAuthConfig => write!(f, "PENDING_AUTH_CONFIG"),
-            WebExperienceStatus::Unknown(value) => write!(f, "{}", value),
+            WebExperienceStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

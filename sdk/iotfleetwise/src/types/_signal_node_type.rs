@@ -126,7 +126,7 @@ impl ::std::fmt::Display for SignalNodeType {
             SignalNodeType::CustomProperty => write!(f, "CUSTOM_PROPERTY"),
             SignalNodeType::CustomStruct => write!(f, "CUSTOM_STRUCT"),
             SignalNodeType::Sensor => write!(f, "SENSOR"),
-            SignalNodeType::Unknown(value) => write!(f, "{}", value),
+            SignalNodeType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

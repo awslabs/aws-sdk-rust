@@ -114,7 +114,7 @@ impl ::std::fmt::Display for AudioType {
             AudioType::HearingImpaired => write!(f, "HEARING_IMPAIRED"),
             AudioType::Undefined => write!(f, "UNDEFINED"),
             AudioType::VisualImpairedCommentary => write!(f, "VISUAL_IMPAIRED_COMMENTARY"),
-            AudioType::Unknown(value) => write!(f, "{}", value),
+            AudioType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

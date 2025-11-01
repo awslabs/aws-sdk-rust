@@ -132,7 +132,7 @@ impl ::std::fmt::Display for H265AdaptiveQuantization {
             H265AdaptiveQuantization::Max => write!(f, "MAX"),
             H265AdaptiveQuantization::Medium => write!(f, "MEDIUM"),
             H265AdaptiveQuantization::Off => write!(f, "OFF"),
-            H265AdaptiveQuantization::Unknown(value) => write!(f, "{}", value),
+            H265AdaptiveQuantization::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

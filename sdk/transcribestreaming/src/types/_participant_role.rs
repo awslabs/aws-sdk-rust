@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ParticipantRole {
         match self {
             ParticipantRole::Agent => write!(f, "AGENT"),
             ParticipantRole::Customer => write!(f, "CUSTOMER"),
-            ParticipantRole::Unknown(value) => write!(f, "{}", value),
+            ParticipantRole::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

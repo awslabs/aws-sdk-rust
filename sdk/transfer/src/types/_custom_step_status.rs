@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CustomStepStatus {
         match self {
             CustomStepStatus::Failure => write!(f, "FAILURE"),
             CustomStepStatus::Success => write!(f, "SUCCESS"),
-            CustomStepStatus::Unknown(value) => write!(f, "{}", value),
+            CustomStepStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

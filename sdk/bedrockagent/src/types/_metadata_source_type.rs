@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MetadataSourceType {
         match self {
             MetadataSourceType::InLineAttribute => write!(f, "IN_LINE_ATTRIBUTE"),
             MetadataSourceType::S3Location => write!(f, "S3_LOCATION"),
-            MetadataSourceType::Unknown(value) => write!(f, "{}", value),
+            MetadataSourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

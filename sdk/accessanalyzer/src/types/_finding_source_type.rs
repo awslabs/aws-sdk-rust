@@ -114,7 +114,7 @@ impl ::std::fmt::Display for FindingSourceType {
             FindingSourceType::Policy => write!(f, "POLICY"),
             FindingSourceType::S3AccessPoint => write!(f, "S3_ACCESS_POINT"),
             FindingSourceType::S3AccessPointAccount => write!(f, "S3_ACCESS_POINT_ACCOUNT"),
-            FindingSourceType::Unknown(value) => write!(f, "{}", value),
+            FindingSourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

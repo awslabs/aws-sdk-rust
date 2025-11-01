@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ResourceSnapshotJobStatus {
         match self {
             ResourceSnapshotJobStatus::Running => write!(f, "Running"),
             ResourceSnapshotJobStatus::Stopped => write!(f, "Stopped"),
-            ResourceSnapshotJobStatus::Unknown(value) => write!(f, "{}", value),
+            ResourceSnapshotJobStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

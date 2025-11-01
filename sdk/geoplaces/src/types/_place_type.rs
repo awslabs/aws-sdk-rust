@@ -194,7 +194,7 @@ impl ::std::fmt::Display for PlaceType {
             PlaceType::SubBlock => write!(f, "SubBlock"),
             PlaceType::SubDistrict => write!(f, "SubDistrict"),
             PlaceType::SubRegion => write!(f, "SubRegion"),
-            PlaceType::Unknown(value) => write!(f, "{}", value),
+            PlaceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

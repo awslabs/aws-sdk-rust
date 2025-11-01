@@ -104,7 +104,7 @@ impl ::std::fmt::Display for SingleSelectQuestionRuleCategoryAutomationCondition
         match self {
             SingleSelectQuestionRuleCategoryAutomationCondition::NotPresent => write!(f, "NOT_PRESENT"),
             SingleSelectQuestionRuleCategoryAutomationCondition::Present => write!(f, "PRESENT"),
-            SingleSelectQuestionRuleCategoryAutomationCondition::Unknown(value) => write!(f, "{}", value),
+            SingleSelectQuestionRuleCategoryAutomationCondition::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

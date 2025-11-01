@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SelectedAnalysisMethod {
         match self {
             SelectedAnalysisMethod::DirectJob => write!(f, "DIRECT_JOB"),
             SelectedAnalysisMethod::DirectQuery => write!(f, "DIRECT_QUERY"),
-            SelectedAnalysisMethod::Unknown(value) => write!(f, "{}", value),
+            SelectedAnalysisMethod::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

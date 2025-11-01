@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SnsNotificationPayloadType {
         match self {
             SnsNotificationPayloadType::Content => write!(f, "CONTENT"),
             SnsNotificationPayloadType::Headers => write!(f, "HEADERS"),
-            SnsNotificationPayloadType::Unknown(value) => write!(f, "{}", value),
+            SnsNotificationPayloadType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

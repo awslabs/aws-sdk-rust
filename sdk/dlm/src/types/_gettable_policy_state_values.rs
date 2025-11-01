@@ -108,7 +108,7 @@ impl ::std::fmt::Display for GettablePolicyStateValues {
             GettablePolicyStateValues::Disabled => write!(f, "DISABLED"),
             GettablePolicyStateValues::Enabled => write!(f, "ENABLED"),
             GettablePolicyStateValues::Error => write!(f, "ERROR"),
-            GettablePolicyStateValues::Unknown(value) => write!(f, "{}", value),
+            GettablePolicyStateValues::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

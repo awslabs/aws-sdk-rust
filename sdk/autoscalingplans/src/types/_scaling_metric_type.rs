@@ -182,7 +182,7 @@ impl ::std::fmt::Display for ScalingMetricType {
             ScalingMetricType::EcsServiceAverageMemoryUtilization => write!(f, "ECSServiceAverageMemoryUtilization"),
             ScalingMetricType::RdsReaderAverageCpuUtilization => write!(f, "RDSReaderAverageCPUUtilization"),
             ScalingMetricType::RdsReaderAverageDatabaseConnections => write!(f, "RDSReaderAverageDatabaseConnections"),
-            ScalingMetricType::Unknown(value) => write!(f, "{}", value),
+            ScalingMetricType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for GuardrailContentFilterConfidence {
             GuardrailContentFilterConfidence::Low => write!(f, "LOW"),
             GuardrailContentFilterConfidence::Medium => write!(f, "MEDIUM"),
             GuardrailContentFilterConfidence::None => write!(f, "NONE"),
-            GuardrailContentFilterConfidence::Unknown(value) => write!(f, "{}", value),
+            GuardrailContentFilterConfidence::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

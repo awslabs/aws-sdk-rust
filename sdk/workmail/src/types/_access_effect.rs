@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AccessEffect {
         match self {
             AccessEffect::Allow => write!(f, "ALLOW"),
             AccessEffect::Deny => write!(f, "DENY"),
-            AccessEffect::Unknown(value) => write!(f, "{}", value),
+            AccessEffect::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

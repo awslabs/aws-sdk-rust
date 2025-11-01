@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ConnectorEventOperation {
             ConnectorEventOperation::DeviceCommandResponse => write!(f, "DEVICE_COMMAND_RESPONSE"),
             ConnectorEventOperation::DeviceDiscovery => write!(f, "DEVICE_DISCOVERY"),
             ConnectorEventOperation::DeviceEvent => write!(f, "DEVICE_EVENT"),
-            ConnectorEventOperation::Unknown(value) => write!(f, "{}", value),
+            ConnectorEventOperation::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

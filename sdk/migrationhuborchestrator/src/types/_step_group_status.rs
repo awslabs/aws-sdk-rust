@@ -147,7 +147,7 @@ impl ::std::fmt::Display for StepGroupStatus {
             StepGroupStatus::Pausing => write!(f, "PAUSING"),
             StepGroupStatus::Ready => write!(f, "READY"),
             StepGroupStatus::UserAttentionRequired => write!(f, "USER_ATTENTION_REQUIRED"),
-            StepGroupStatus::Unknown(value) => write!(f, "{}", value),
+            StepGroupStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

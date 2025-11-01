@@ -104,7 +104,7 @@ impl ::std::fmt::Display for FeatureActivationsOutputStaticImageOverlayScheduleA
         match self {
             FeatureActivationsOutputStaticImageOverlayScheduleActions::Disabled => write!(f, "DISABLED"),
             FeatureActivationsOutputStaticImageOverlayScheduleActions::Enabled => write!(f, "ENABLED"),
-            FeatureActivationsOutputStaticImageOverlayScheduleActions::Unknown(value) => write!(f, "{}", value),
+            FeatureActivationsOutputStaticImageOverlayScheduleActions::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

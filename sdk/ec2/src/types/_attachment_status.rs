@@ -114,7 +114,7 @@ impl ::std::fmt::Display for AttachmentStatus {
             AttachmentStatus::Attaching => write!(f, "attaching"),
             AttachmentStatus::Detached => write!(f, "detached"),
             AttachmentStatus::Detaching => write!(f, "detaching"),
-            AttachmentStatus::Unknown(value) => write!(f, "{}", value),
+            AttachmentStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for IntelligentTieringAccessTier {
         match self {
             IntelligentTieringAccessTier::ArchiveAccess => write!(f, "ARCHIVE_ACCESS"),
             IntelligentTieringAccessTier::DeepArchiveAccess => write!(f, "DEEP_ARCHIVE_ACCESS"),
-            IntelligentTieringAccessTier::Unknown(value) => write!(f, "{}", value),
+            IntelligentTieringAccessTier::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

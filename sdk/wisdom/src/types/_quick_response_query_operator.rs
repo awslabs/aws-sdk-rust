@@ -102,7 +102,7 @@ impl ::std::fmt::Display for QuickResponseQueryOperator {
         match self {
             QuickResponseQueryOperator::Contains => write!(f, "CONTAINS"),
             QuickResponseQueryOperator::ContainsAndPrefix => write!(f, "CONTAINS_AND_PREFIX"),
-            QuickResponseQueryOperator::Unknown(value) => write!(f, "{}", value),
+            QuickResponseQueryOperator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

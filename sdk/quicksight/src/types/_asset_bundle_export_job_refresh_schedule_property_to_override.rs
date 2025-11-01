@@ -98,7 +98,7 @@ impl ::std::fmt::Display for AssetBundleExportJobRefreshSchedulePropertyToOverri
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             AssetBundleExportJobRefreshSchedulePropertyToOverride::StartAfterDateTime => write!(f, "StartAfterDateTime"),
-            AssetBundleExportJobRefreshSchedulePropertyToOverride::Unknown(value) => write!(f, "{}", value),
+            AssetBundleExportJobRefreshSchedulePropertyToOverride::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

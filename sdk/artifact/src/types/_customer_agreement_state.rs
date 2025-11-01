@@ -108,7 +108,7 @@ impl ::std::fmt::Display for CustomerAgreementState {
             CustomerAgreementState::Active => write!(f, "ACTIVE"),
             CustomerAgreementState::AwsTerminated => write!(f, "AWS_TERMINATED"),
             CustomerAgreementState::CustomerTerminated => write!(f, "CUSTOMER_TERMINATED"),
-            CustomerAgreementState::Unknown(value) => write!(f, "{}", value),
+            CustomerAgreementState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

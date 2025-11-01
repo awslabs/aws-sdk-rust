@@ -102,7 +102,7 @@ impl ::std::fmt::Display for S3TablesBucketType {
         match self {
             S3TablesBucketType::Aws => write!(f, "aws"),
             S3TablesBucketType::Customer => write!(f, "customer"),
-            S3TablesBucketType::Unknown(value) => write!(f, "{}", value),
+            S3TablesBucketType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

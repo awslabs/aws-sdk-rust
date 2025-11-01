@@ -114,7 +114,7 @@ impl ::std::fmt::Display for UncompressedFramerateConversionAlgorithm {
             UncompressedFramerateConversionAlgorithm::Frameformer => write!(f, "FRAMEFORMER"),
             UncompressedFramerateConversionAlgorithm::Interpolate => write!(f, "INTERPOLATE"),
             UncompressedFramerateConversionAlgorithm::MaintainFrameCount => write!(f, "MAINTAIN_FRAME_COUNT"),
-            UncompressedFramerateConversionAlgorithm::Unknown(value) => write!(f, "{}", value),
+            UncompressedFramerateConversionAlgorithm::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

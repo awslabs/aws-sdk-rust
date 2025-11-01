@@ -102,7 +102,7 @@ impl ::std::fmt::Display for JobBookmarksEncryptionMode {
         match self {
             JobBookmarksEncryptionMode::Csekms => write!(f, "CSE-KMS"),
             JobBookmarksEncryptionMode::Disabled => write!(f, "DISABLED"),
-            JobBookmarksEncryptionMode::Unknown(value) => write!(f, "{}", value),
+            JobBookmarksEncryptionMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for WafActionType {
             WafActionType::Allow => write!(f, "ALLOW"),
             WafActionType::Block => write!(f, "BLOCK"),
             WafActionType::Count => write!(f, "COUNT"),
-            WafActionType::Unknown(value) => write!(f, "{}", value),
+            WafActionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

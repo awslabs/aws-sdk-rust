@@ -102,7 +102,7 @@ impl ::std::fmt::Display for EfsAuthorizationConfigIam {
         match self {
             EfsAuthorizationConfigIam::Disabled => write!(f, "DISABLED"),
             EfsAuthorizationConfigIam::Enabled => write!(f, "ENABLED"),
-            EfsAuthorizationConfigIam::Unknown(value) => write!(f, "{}", value),
+            EfsAuthorizationConfigIam::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -119,7 +119,7 @@ impl ::std::fmt::Display for CancelBatchErrorCode {
             CancelBatchErrorCode::FleetRequestIdMalformed => write!(f, "fleetRequestIdMalformed"),
             CancelBatchErrorCode::FleetRequestNotInCancellableState => write!(f, "fleetRequestNotInCancellableState"),
             CancelBatchErrorCode::UnexpectedError => write!(f, "unexpectedError"),
-            CancelBatchErrorCode::Unknown(value) => write!(f, "{}", value),
+            CancelBatchErrorCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

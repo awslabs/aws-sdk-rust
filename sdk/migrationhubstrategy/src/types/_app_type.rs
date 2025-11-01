@@ -247,7 +247,7 @@ impl ::std::fmt::Display for AppType {
             AppType::Tomcat => write!(f, "Tomcat"),
             AppType::UnknownValue => write!(f, "Unknown"),
             AppType::Visualbasic => write!(f, "Visual Basic"),
-            AppType::Unknown(value) => write!(f, "{}", value),
+            AppType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

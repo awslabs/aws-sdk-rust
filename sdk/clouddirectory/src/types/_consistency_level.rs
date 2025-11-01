@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ConsistencyLevel {
         match self {
             ConsistencyLevel::Eventual => write!(f, "EVENTUAL"),
             ConsistencyLevel::Serializable => write!(f, "SERIALIZABLE"),
-            ConsistencyLevel::Unknown(value) => write!(f, "{}", value),
+            ConsistencyLevel::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

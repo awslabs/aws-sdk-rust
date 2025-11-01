@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MlUserDataEncryptionModeString {
         match self {
             MlUserDataEncryptionModeString::Disabled => write!(f, "DISABLED"),
             MlUserDataEncryptionModeString::Ssekms => write!(f, "SSE-KMS"),
-            MlUserDataEncryptionModeString::Unknown(value) => write!(f, "{}", value),
+            MlUserDataEncryptionModeString::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

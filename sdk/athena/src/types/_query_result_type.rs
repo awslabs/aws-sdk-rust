@@ -102,7 +102,7 @@ impl ::std::fmt::Display for QueryResultType {
         match self {
             QueryResultType::DataManifest => write!(f, "DATA_MANIFEST"),
             QueryResultType::DataRows => write!(f, "DATA_ROWS"),
-            QueryResultType::Unknown(value) => write!(f, "{}", value),
+            QueryResultType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

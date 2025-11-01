@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AllowPublish {
         match self {
             AllowPublish::Allow => write!(f, "ALLOW"),
             AllowPublish::Block => write!(f, "BLOCK"),
-            AllowPublish::Unknown(value) => write!(f, "{}", value),
+            AllowPublish::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

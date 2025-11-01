@@ -144,7 +144,7 @@ impl ::std::fmt::Display for CallAnalyticsLanguageCode {
             CallAnalyticsLanguageCode::FrFr => write!(f, "fr-FR"),
             CallAnalyticsLanguageCode::ItIt => write!(f, "it-IT"),
             CallAnalyticsLanguageCode::PtBr => write!(f, "pt-BR"),
-            CallAnalyticsLanguageCode::Unknown(value) => write!(f, "{}", value),
+            CallAnalyticsLanguageCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

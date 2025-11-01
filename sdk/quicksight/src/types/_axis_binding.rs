@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AxisBinding {
         match self {
             AxisBinding::PrimaryYaxis => write!(f, "PRIMARY_YAXIS"),
             AxisBinding::SecondaryYaxis => write!(f, "SECONDARY_YAXIS"),
-            AxisBinding::Unknown(value) => write!(f, "{}", value),
+            AxisBinding::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

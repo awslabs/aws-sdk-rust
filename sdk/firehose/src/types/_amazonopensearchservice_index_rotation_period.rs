@@ -122,7 +122,7 @@ impl ::std::fmt::Display for AmazonopensearchserviceIndexRotationPeriod {
             AmazonopensearchserviceIndexRotationPeriod::OneHour => write!(f, "OneHour"),
             AmazonopensearchserviceIndexRotationPeriod::OneMonth => write!(f, "OneMonth"),
             AmazonopensearchserviceIndexRotationPeriod::OneWeek => write!(f, "OneWeek"),
-            AmazonopensearchserviceIndexRotationPeriod::Unknown(value) => write!(f, "{}", value),
+            AmazonopensearchserviceIndexRotationPeriod::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ValidationExceptionReason {
         match self {
             ValidationExceptionReason::FieldValidationFailed => write!(f, "FieldValidationFailed"),
             ValidationExceptionReason::Other => write!(f, "Other"),
-            ValidationExceptionReason::Unknown(value) => write!(f, "{}", value),
+            ValidationExceptionReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

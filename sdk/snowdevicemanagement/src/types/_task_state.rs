@@ -108,7 +108,7 @@ impl ::std::fmt::Display for TaskState {
             TaskState::Canceled => write!(f, "CANCELED"),
             TaskState::Completed => write!(f, "COMPLETED"),
             TaskState::InProgress => write!(f, "IN_PROGRESS"),
-            TaskState::Unknown(value) => write!(f, "{}", value),
+            TaskState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

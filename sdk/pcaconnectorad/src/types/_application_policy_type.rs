@@ -560,7 +560,7 @@ impl ::std::fmt::Display for ApplicationPolicyType {
             ApplicationPolicyType::WindowsTcbComponent => write!(f, "WINDOWS_TCB_COMPONENT"),
             ApplicationPolicyType::WindowsThirdPartyApplicationComponent => write!(f, "WINDOWS_THIRD_PARTY_APPLICATION_COMPONENT"),
             ApplicationPolicyType::WindowsUpdate => write!(f, "WINDOWS_UPDATE"),
-            ApplicationPolicyType::Unknown(value) => write!(f, "{}", value),
+            ApplicationPolicyType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

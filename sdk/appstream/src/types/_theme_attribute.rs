@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ThemeAttribute {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ThemeAttribute::FooterLinks => write!(f, "FOOTER_LINKS"),
-            ThemeAttribute::Unknown(value) => write!(f, "{}", value),
+            ThemeAttribute::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

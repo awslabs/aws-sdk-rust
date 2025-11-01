@@ -96,7 +96,7 @@ impl ::std::fmt::Display for PromptRouterStatus {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             PromptRouterStatus::Available => write!(f, "AVAILABLE"),
-            PromptRouterStatus::Unknown(value) => write!(f, "{}", value),
+            PromptRouterStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

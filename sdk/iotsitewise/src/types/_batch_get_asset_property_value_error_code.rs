@@ -108,7 +108,7 @@ impl ::std::fmt::Display for BatchGetAssetPropertyValueErrorCode {
             BatchGetAssetPropertyValueErrorCode::AccessDeniedException => write!(f, "AccessDeniedException"),
             BatchGetAssetPropertyValueErrorCode::InvalidRequestException => write!(f, "InvalidRequestException"),
             BatchGetAssetPropertyValueErrorCode::ResourceNotFoundException => write!(f, "ResourceNotFoundException"),
-            BatchGetAssetPropertyValueErrorCode::Unknown(value) => write!(f, "{}", value),
+            BatchGetAssetPropertyValueErrorCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

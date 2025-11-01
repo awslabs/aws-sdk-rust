@@ -108,7 +108,7 @@ impl ::std::fmt::Display for LicenseServerHealthStatus {
             LicenseServerHealthStatus::Healthy => write!(f, "HEALTHY"),
             LicenseServerHealthStatus::NotApplicable => write!(f, "NOT_APPLICABLE"),
             LicenseServerHealthStatus::Unhealthy => write!(f, "UNHEALTHY"),
-            LicenseServerHealthStatus::Unknown(value) => write!(f, "{}", value),
+            LicenseServerHealthStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -119,7 +119,7 @@ impl ::std::fmt::Display for ComparisonOperatorType {
             ComparisonOperatorType::GreaterThanThreshold => write!(f, "GreaterThanThreshold"),
             ComparisonOperatorType::LessThanOrEqualToThreshold => write!(f, "LessThanOrEqualToThreshold"),
             ComparisonOperatorType::LessThanThreshold => write!(f, "LessThanThreshold"),
-            ComparisonOperatorType::Unknown(value) => write!(f, "{}", value),
+            ComparisonOperatorType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

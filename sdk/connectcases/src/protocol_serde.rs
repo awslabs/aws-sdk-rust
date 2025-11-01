@@ -181,6 +181,8 @@ pub(crate) mod shape_batch_get_case_rule_error_list;
 
 pub(crate) mod shape_batch_get_case_rule_list;
 
+pub(crate) mod shape_batch_get_case_rule_unprocessed_list;
+
 pub(crate) mod shape_batch_get_field_error_list;
 
 pub(crate) mod shape_batch_get_field_list;
@@ -283,6 +285,8 @@ pub(crate) mod shape_field_filter;
 
 pub(crate) mod shape_field_option_error;
 
+pub(crate) mod shape_field_options_case_rule;
+
 pub(crate) mod shape_field_summary;
 
 pub(crate) mod shape_field_value_union;
@@ -294,6 +298,8 @@ pub(crate) mod shape_file_filter;
 pub(crate) mod shape_get_case_rule_response;
 
 pub(crate) mod shape_get_field_response;
+
+pub(crate) mod shape_hidden_case_rule;
 
 pub(crate) mod shape_layout_summary;
 
@@ -324,6 +330,8 @@ pub(crate) mod shape_custom_fields_filter;
 pub(crate) mod shape_empty_field_value;
 
 pub(crate) mod shape_layout_sections;
+
+pub(crate) mod shape_parent_child_field_options_mapping;
 
 pub(crate) mod shape_related_item_content;
 
@@ -359,6 +367,8 @@ pub(crate) mod shape_operand_one;
 
 pub(crate) mod shape_operand_two;
 
+pub(crate) mod shape_parent_child_field_options_mapping_list;
+
 pub(crate) mod shape_sla_configuration;
 
 pub(crate) mod shape_empty_operand_value;
@@ -368,3 +378,5 @@ pub(crate) mod shape_field_item;
 pub(crate) mod shape_sla_field_value_union_list;
 
 pub(crate) mod shape_field_list;
+
+pub(crate) mod shape_parent_child_field_option_value_list;

@@ -182,7 +182,7 @@ impl ::std::fmt::Display for NamedEntityAggType {
             NamedEntityAggType::Sum => write!(f, "SUM"),
             NamedEntityAggType::Var => write!(f, "VAR"),
             NamedEntityAggType::Varp => write!(f, "VARP"),
-            NamedEntityAggType::Unknown(value) => write!(f, "{}", value),
+            NamedEntityAggType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

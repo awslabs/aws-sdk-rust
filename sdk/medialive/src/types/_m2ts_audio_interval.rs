@@ -102,7 +102,7 @@ impl ::std::fmt::Display for M2tsAudioInterval {
         match self {
             M2tsAudioInterval::VideoAndFixedIntervals => write!(f, "VIDEO_AND_FIXED_INTERVALS"),
             M2tsAudioInterval::VideoInterval => write!(f, "VIDEO_INTERVAL"),
-            M2tsAudioInterval::Unknown(value) => write!(f, "{}", value),
+            M2tsAudioInterval::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

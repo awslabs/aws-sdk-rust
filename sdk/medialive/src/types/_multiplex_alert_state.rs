@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MultiplexAlertState {
         match self {
             MultiplexAlertState::Cleared => write!(f, "CLEARED"),
             MultiplexAlertState::Set => write!(f, "SET"),
-            MultiplexAlertState::Unknown(value) => write!(f, "{}", value),
+            MultiplexAlertState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

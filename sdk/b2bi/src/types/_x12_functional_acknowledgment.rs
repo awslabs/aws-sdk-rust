@@ -112,7 +112,7 @@ impl ::std::fmt::Display for X12FunctionalAcknowledgment {
             X12FunctionalAcknowledgment::DoNotGenerate => write!(f, "DO_NOT_GENERATE"),
             X12FunctionalAcknowledgment::GenerateAllSegments => write!(f, "GENERATE_ALL_SEGMENTS"),
             X12FunctionalAcknowledgment::GenerateWithoutTransactionSetResponseLoop => write!(f, "GENERATE_WITHOUT_TRANSACTION_SET_RESPONSE_LOOP"),
-            X12FunctionalAcknowledgment::Unknown(value) => write!(f, "{}", value),
+            X12FunctionalAcknowledgment::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -154,7 +154,7 @@ impl ::std::fmt::Display for RecommendationSourceType {
             RecommendationSourceType::License => write!(f, "License"),
             RecommendationSourceType::RdsDbInstance => write!(f, "RdsDBInstance"),
             RecommendationSourceType::RdsDbInstanceStorage => write!(f, "RdsDBInstanceStorage"),
-            RecommendationSourceType::Unknown(value) => write!(f, "{}", value),
+            RecommendationSourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

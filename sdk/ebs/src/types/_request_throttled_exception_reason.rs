@@ -108,7 +108,7 @@ impl ::std::fmt::Display for RequestThrottledExceptionReason {
             RequestThrottledExceptionReason::AccountThrottled => write!(f, "ACCOUNT_THROTTLED"),
             RequestThrottledExceptionReason::DependencyRequestThrottled => write!(f, "DEPENDENCY_REQUEST_THROTTLED"),
             RequestThrottledExceptionReason::ResourceLevelThrottle => write!(f, "RESOURCE_LEVEL_THROTTLE"),
-            RequestThrottledExceptionReason::Unknown(value) => write!(f, "{}", value),
+            RequestThrottledExceptionReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for WorkloadIssueManagementStatus {
             WorkloadIssueManagementStatus::Disabled => write!(f, "DISABLED"),
             WorkloadIssueManagementStatus::Enabled => write!(f, "ENABLED"),
             WorkloadIssueManagementStatus::Inherit => write!(f, "INHERIT"),
-            WorkloadIssueManagementStatus::Unknown(value) => write!(f, "{}", value),
+            WorkloadIssueManagementStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

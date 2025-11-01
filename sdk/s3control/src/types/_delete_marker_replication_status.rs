@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DeleteMarkerReplicationStatus {
         match self {
             DeleteMarkerReplicationStatus::Disabled => write!(f, "Disabled"),
             DeleteMarkerReplicationStatus::Enabled => write!(f, "Enabled"),
-            DeleteMarkerReplicationStatus::Unknown(value) => write!(f, "{}", value),
+            DeleteMarkerReplicationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

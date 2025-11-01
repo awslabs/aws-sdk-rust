@@ -154,7 +154,7 @@ impl ::std::fmt::Display for PullRequestEventType {
             PullRequestEventType::PullRequestMergeStateChanged => write!(f, "PULL_REQUEST_MERGE_STATE_CHANGED"),
             PullRequestEventType::PullRequestSourceReferenceUpdated => write!(f, "PULL_REQUEST_SOURCE_REFERENCE_UPDATED"),
             PullRequestEventType::PullRequestStatusChanged => write!(f, "PULL_REQUEST_STATUS_CHANGED"),
-            PullRequestEventType::Unknown(value) => write!(f, "{}", value),
+            PullRequestEventType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

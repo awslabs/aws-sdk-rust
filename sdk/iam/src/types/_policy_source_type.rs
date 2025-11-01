@@ -132,7 +132,7 @@ impl ::std::fmt::Display for PolicySourceType {
             PolicySourceType::Role => write!(f, "role"),
             PolicySourceType::User => write!(f, "user"),
             PolicySourceType::UserManaged => write!(f, "user-managed"),
-            PolicySourceType::Unknown(value) => write!(f, "{}", value),
+            PolicySourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

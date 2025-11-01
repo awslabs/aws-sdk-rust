@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ModelCardStatus {
             ModelCardStatus::Archived => write!(f, "Archived"),
             ModelCardStatus::Draft => write!(f, "Draft"),
             ModelCardStatus::Pendingreview => write!(f, "PendingReview"),
-            ModelCardStatus::Unknown(value) => write!(f, "{}", value),
+            ModelCardStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

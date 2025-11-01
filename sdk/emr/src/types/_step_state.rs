@@ -132,7 +132,7 @@ impl ::std::fmt::Display for StepState {
             StepState::Interrupted => write!(f, "INTERRUPTED"),
             StepState::Pending => write!(f, "PENDING"),
             StepState::Running => write!(f, "RUNNING"),
-            StepState::Unknown(value) => write!(f, "{}", value),
+            StepState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

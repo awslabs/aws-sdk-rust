@@ -140,7 +140,7 @@ impl ::std::fmt::Display for ReadSetStatus {
             ReadSetStatus::Deleting => write!(f, "DELETING"),
             ReadSetStatus::ProcessingUpload => write!(f, "PROCESSING_UPLOAD"),
             ReadSetStatus::UploadFailed => write!(f, "UPLOAD_FAILED"),
-            ReadSetStatus::Unknown(value) => write!(f, "{}", value),
+            ReadSetStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

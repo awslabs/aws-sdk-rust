@@ -406,7 +406,7 @@ impl ::std::fmt::Display for IngestionErrorType {
             IngestionErrorType::SslCertificateValidationFailure => write!(f, "SSL_CERTIFICATE_VALIDATION_FAILURE"),
             IngestionErrorType::UnresolvableHost => write!(f, "UNRESOLVABLE_HOST"),
             IngestionErrorType::UnroutableHost => write!(f, "UNROUTABLE_HOST"),
-            IngestionErrorType::Unknown(value) => write!(f, "{}", value),
+            IngestionErrorType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

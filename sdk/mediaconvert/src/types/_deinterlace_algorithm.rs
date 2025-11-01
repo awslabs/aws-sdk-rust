@@ -120,7 +120,7 @@ impl ::std::fmt::Display for DeinterlaceAlgorithm {
             DeinterlaceAlgorithm::Interpolate => write!(f, "INTERPOLATE"),
             DeinterlaceAlgorithm::InterpolateTicker => write!(f, "INTERPOLATE_TICKER"),
             DeinterlaceAlgorithm::LinearInterpolation => write!(f, "LINEAR_INTERPOLATION"),
-            DeinterlaceAlgorithm::Unknown(value) => write!(f, "{}", value),
+            DeinterlaceAlgorithm::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ServerSideEncryptionType {
         match self {
             ServerSideEncryptionType::AwsOwnedKmsKey => write!(f, "AWS_OWNED_KMS_KEY"),
             ServerSideEncryptionType::CustomerManagedKey => write!(f, "CUSTOMER_MANAGED_KEY"),
-            ServerSideEncryptionType::Unknown(value) => write!(f, "{}", value),
+            ServerSideEncryptionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

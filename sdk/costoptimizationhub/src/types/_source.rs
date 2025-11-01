@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Source {
         match self {
             Source::ComputeOptimizer => write!(f, "ComputeOptimizer"),
             Source::CostExplorer => write!(f, "CostExplorer"),
-            Source::Unknown(value) => write!(f, "{}", value),
+            Source::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ReservationPlanStatus {
         match self {
             ReservationPlanStatus::Active => write!(f, "ACTIVE"),
             ReservationPlanStatus::Expired => write!(f, "EXPIRED"),
-            ReservationPlanStatus::Unknown(value) => write!(f, "{}", value),
+            ReservationPlanStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -132,7 +132,7 @@ impl ::std::fmt::Display for DataSourceType {
             DataSourceType::Salesforce => write!(f, "SALESFORCE"),
             DataSourceType::Sharepoint => write!(f, "SHAREPOINT"),
             DataSourceType::Web => write!(f, "WEB"),
-            DataSourceType::Unknown(value) => write!(f, "{}", value),
+            DataSourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

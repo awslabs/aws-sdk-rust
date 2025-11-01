@@ -469,7 +469,7 @@ impl ::std::fmt::Display for EventType {
             EventType::WorkflowExecutionStarted => write!(f, "WorkflowExecutionStarted"),
             EventType::WorkflowExecutionTerminated => write!(f, "WorkflowExecutionTerminated"),
             EventType::WorkflowExecutionTimedOut => write!(f, "WorkflowExecutionTimedOut"),
-            EventType::Unknown(value) => write!(f, "{}", value),
+            EventType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

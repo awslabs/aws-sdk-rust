@@ -154,7 +154,7 @@ impl ::std::fmt::Display for InitiatedBy {
             InitiatedBy::TargetAccount => write!(f, "TARGET_ACCOUNT"),
             InitiatedBy::TerminateRecoveryInstances => write!(f, "TERMINATE_RECOVERY_INSTANCES"),
             InitiatedBy::UpdateNetworkRecovery => write!(f, "UPDATE_NETWORK_RECOVERY"),
-            InitiatedBy::Unknown(value) => write!(f, "{}", value),
+            InitiatedBy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

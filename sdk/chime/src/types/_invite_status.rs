@@ -108,7 +108,7 @@ impl ::std::fmt::Display for InviteStatus {
             InviteStatus::Accepted => write!(f, "Accepted"),
             InviteStatus::Failed => write!(f, "Failed"),
             InviteStatus::Pending => write!(f, "Pending"),
-            InviteStatus::Unknown(value) => write!(f, "{}", value),
+            InviteStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

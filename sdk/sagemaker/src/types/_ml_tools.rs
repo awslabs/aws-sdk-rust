@@ -231,7 +231,7 @@ impl ::std::fmt::Display for MlTools {
             MlTools::Pipelines => write!(f, "Pipelines"),
             MlTools::Projects => write!(f, "Projects"),
             MlTools::Training => write!(f, "Training"),
-            MlTools::Unknown(value) => write!(f, "{}", value),
+            MlTools::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for HlsDefault {
             HlsDefault::No => write!(f, "NO"),
             HlsDefault::Omit => write!(f, "OMIT"),
             HlsDefault::Yes => write!(f, "YES"),
-            HlsDefault::Unknown(value) => write!(f, "{}", value),
+            HlsDefault::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

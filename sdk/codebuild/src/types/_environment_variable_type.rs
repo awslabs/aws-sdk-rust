@@ -108,7 +108,7 @@ impl ::std::fmt::Display for EnvironmentVariableType {
             EnvironmentVariableType::ParameterStore => write!(f, "PARAMETER_STORE"),
             EnvironmentVariableType::Plaintext => write!(f, "PLAINTEXT"),
             EnvironmentVariableType::SecretsManager => write!(f, "SECRETS_MANAGER"),
-            EnvironmentVariableType::Unknown(value) => write!(f, "{}", value),
+            EnvironmentVariableType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

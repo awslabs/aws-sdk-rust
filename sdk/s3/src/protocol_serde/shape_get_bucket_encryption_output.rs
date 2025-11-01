@@ -22,8 +22,7 @@ pub fn de_server_side_encryption_configuration(
     let start_el = decoder.start_el();
     if !(start_el.matches("ServerSideEncryptionConfiguration")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected ServerSideEncryptionConfiguration got {:?}",
-            start_el
+            "invalid root, expected ServerSideEncryptionConfiguration got {start_el:?}"
         )));
     }
     crate::protocol_serde::shape_server_side_encryption_configuration::de_server_side_encryption_configuration(&mut decoder)

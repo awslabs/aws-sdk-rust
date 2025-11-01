@@ -120,7 +120,7 @@ impl ::std::fmt::Display for AppStatus {
             AppStatus::Failed => write!(f, "Failed"),
             AppStatus::InService => write!(f, "InService"),
             AppStatus::Pending => write!(f, "Pending"),
-            AppStatus::Unknown(value) => write!(f, "{}", value),
+            AppStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

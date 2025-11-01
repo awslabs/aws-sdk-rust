@@ -108,7 +108,7 @@ impl ::std::fmt::Display for SourceType {
             SourceType::Iotsitewise => write!(f, "iotsitewise"),
             SourceType::Iottwinmaker => write!(f, "iottwinmaker"),
             SourceType::S3 => write!(f, "s3"),
-            SourceType::Unknown(value) => write!(f, "{}", value),
+            SourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

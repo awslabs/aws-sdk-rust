@@ -112,7 +112,7 @@ impl ::std::fmt::Display for PredictiveScalingMaxCapacityBehavior {
             PredictiveScalingMaxCapacityBehavior::SetForecastCapacityToMaxCapacity => write!(f, "SetForecastCapacityToMaxCapacity"),
             PredictiveScalingMaxCapacityBehavior::SetMaxCapacityAboveForecastCapacity => write!(f, "SetMaxCapacityAboveForecastCapacity"),
             PredictiveScalingMaxCapacityBehavior::SetMaxCapacityToForecastCapacity => write!(f, "SetMaxCapacityToForecastCapacity"),
-            PredictiveScalingMaxCapacityBehavior::Unknown(value) => write!(f, "{}", value),
+            PredictiveScalingMaxCapacityBehavior::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

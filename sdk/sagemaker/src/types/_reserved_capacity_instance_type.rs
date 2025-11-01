@@ -161,7 +161,7 @@ impl ::std::fmt::Display for ReservedCapacityInstanceType {
             ReservedCapacityInstanceType::MlP6EGb20036Xlarge => write!(f, "ml.p6e-gb200.36xlarge"),
             ReservedCapacityInstanceType::MlTrn132Xlarge => write!(f, "ml.trn1.32xlarge"),
             ReservedCapacityInstanceType::MlTrn248Xlarge => write!(f, "ml.trn2.48xlarge"),
-            ReservedCapacityInstanceType::Unknown(value) => write!(f, "{}", value),
+            ReservedCapacityInstanceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

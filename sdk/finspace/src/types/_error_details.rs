@@ -147,7 +147,7 @@ impl ::std::fmt::Display for ErrorDetails {
             ErrorDetails::ServiceQuotaExceeded => write!(f, "Service limits have been exceeded."),
             ErrorDetails::Validation => write!(f, "The inputs to this request are invalid."),
             ErrorDetails::Throttling => write!(f, "The system temporarily lacks sufficient resources to process the request."),
-            ErrorDetails::Unknown(value) => write!(f, "{}", value),
+            ErrorDetails::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

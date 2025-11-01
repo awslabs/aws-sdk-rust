@@ -108,7 +108,7 @@ impl ::std::fmt::Display for Eac3AtmosSurroundExMode {
             Eac3AtmosSurroundExMode::Disabled => write!(f, "DISABLED"),
             Eac3AtmosSurroundExMode::Enabled => write!(f, "ENABLED"),
             Eac3AtmosSurroundExMode::NotIndicated => write!(f, "NOT_INDICATED"),
-            Eac3AtmosSurroundExMode::Unknown(value) => write!(f, "{}", value),
+            Eac3AtmosSurroundExMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ConflictResolvingModel {
         match self {
             ConflictResolvingModel::Recency => write!(f, "RECENCY"),
             ConflictResolvingModel::Source => write!(f, "SOURCE"),
-            ConflictResolvingModel::Unknown(value) => write!(f, "{}", value),
+            ConflictResolvingModel::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

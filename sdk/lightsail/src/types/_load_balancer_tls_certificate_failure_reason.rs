@@ -126,7 +126,7 @@ impl ::std::fmt::Display for LoadBalancerTlsCertificateFailureReason {
             LoadBalancerTlsCertificateFailureReason::InvalidPublicDomain => write!(f, "INVALID_PUBLIC_DOMAIN"),
             LoadBalancerTlsCertificateFailureReason::NoAvailableContacts => write!(f, "NO_AVAILABLE_CONTACTS"),
             LoadBalancerTlsCertificateFailureReason::Other => write!(f, "OTHER"),
-            LoadBalancerTlsCertificateFailureReason::Unknown(value) => write!(f, "{}", value),
+            LoadBalancerTlsCertificateFailureReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

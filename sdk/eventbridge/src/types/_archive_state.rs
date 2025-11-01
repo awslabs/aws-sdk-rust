@@ -126,7 +126,7 @@ impl ::std::fmt::Display for ArchiveState {
             ArchiveState::Enabled => write!(f, "ENABLED"),
             ArchiveState::UpdateFailed => write!(f, "UPDATE_FAILED"),
             ArchiveState::Updating => write!(f, "UPDATING"),
-            ArchiveState::Unknown(value) => write!(f, "{}", value),
+            ArchiveState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

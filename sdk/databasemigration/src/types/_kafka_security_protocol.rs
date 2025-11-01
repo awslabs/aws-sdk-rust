@@ -114,7 +114,7 @@ impl ::std::fmt::Display for KafkaSecurityProtocol {
             KafkaSecurityProtocol::SaslSsl => write!(f, "sasl-ssl"),
             KafkaSecurityProtocol::SslAuthentication => write!(f, "ssl-authentication"),
             KafkaSecurityProtocol::SslEncryption => write!(f, "ssl-encryption"),
-            KafkaSecurityProtocol::Unknown(value) => write!(f, "{}", value),
+            KafkaSecurityProtocol::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

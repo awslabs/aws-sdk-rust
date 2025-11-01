@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CmafPtsOffsetHandlingForBFrames {
         match self {
             CmafPtsOffsetHandlingForBFrames::MatchInitialPts => write!(f, "MATCH_INITIAL_PTS"),
             CmafPtsOffsetHandlingForBFrames::ZeroBased => write!(f, "ZERO_BASED"),
-            CmafPtsOffsetHandlingForBFrames::Unknown(value) => write!(f, "{}", value),
+            CmafPtsOffsetHandlingForBFrames::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

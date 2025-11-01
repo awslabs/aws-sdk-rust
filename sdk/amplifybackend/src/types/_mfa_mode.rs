@@ -108,7 +108,7 @@ impl ::std::fmt::Display for MfaMode {
             MfaMode::Off => write!(f, "OFF"),
             MfaMode::On => write!(f, "ON"),
             MfaMode::Optional => write!(f, "OPTIONAL"),
-            MfaMode::Unknown(value) => write!(f, "{}", value),
+            MfaMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

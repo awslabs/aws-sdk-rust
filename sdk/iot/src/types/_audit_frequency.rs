@@ -114,7 +114,7 @@ impl ::std::fmt::Display for AuditFrequency {
             AuditFrequency::Daily => write!(f, "DAILY"),
             AuditFrequency::Monthly => write!(f, "MONTHLY"),
             AuditFrequency::Weekly => write!(f, "WEEKLY"),
-            AuditFrequency::Unknown(value) => write!(f, "{}", value),
+            AuditFrequency::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

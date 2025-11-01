@@ -114,7 +114,7 @@ impl ::std::fmt::Display for CustomContentImageScalingConfiguration {
             CustomContentImageScalingConfiguration::FitToHeight => write!(f, "FIT_TO_HEIGHT"),
             CustomContentImageScalingConfiguration::FitToWidth => write!(f, "FIT_TO_WIDTH"),
             CustomContentImageScalingConfiguration::ScaleToVisual => write!(f, "SCALE_TO_VISUAL"),
-            CustomContentImageScalingConfiguration::Unknown(value) => write!(f, "{}", value),
+            CustomContentImageScalingConfiguration::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

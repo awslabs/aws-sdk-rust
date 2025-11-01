@@ -114,7 +114,7 @@ impl ::std::fmt::Display for DirectConnectGatewayState {
             DirectConnectGatewayState::Deleted => write!(f, "deleted"),
             DirectConnectGatewayState::Deleting => write!(f, "deleting"),
             DirectConnectGatewayState::Pending => write!(f, "pending"),
-            DirectConnectGatewayState::Unknown(value) => write!(f, "{}", value),
+            DirectConnectGatewayState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ContainerFleetRemoveAttribute {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ContainerFleetRemoveAttribute::PerInstanceContainerGroupDefinition => write!(f, "PER_INSTANCE_CONTAINER_GROUP_DEFINITION"),
-            ContainerFleetRemoveAttribute::Unknown(value) => write!(f, "{}", value),
+            ContainerFleetRemoveAttribute::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

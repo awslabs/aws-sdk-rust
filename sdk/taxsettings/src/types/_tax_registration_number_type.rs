@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TaxRegistrationNumberType {
         match self {
             TaxRegistrationNumberType::LocalRegistrationNumber => write!(f, "LocalRegistrationNumber"),
             TaxRegistrationNumberType::TaxRegistrationNumber => write!(f, "TaxRegistrationNumber"),
-            TaxRegistrationNumberType::Unknown(value) => write!(f, "{}", value),
+            TaxRegistrationNumberType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

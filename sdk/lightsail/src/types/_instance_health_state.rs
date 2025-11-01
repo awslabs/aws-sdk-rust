@@ -126,7 +126,7 @@ impl ::std::fmt::Display for InstanceHealthState {
             InstanceHealthState::Unavailable => write!(f, "unavailable"),
             InstanceHealthState::Unhealthy => write!(f, "unhealthy"),
             InstanceHealthState::Unused => write!(f, "unused"),
-            InstanceHealthState::Unknown(value) => write!(f, "{}", value),
+            InstanceHealthState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

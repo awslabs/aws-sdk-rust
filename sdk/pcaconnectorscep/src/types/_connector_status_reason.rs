@@ -119,7 +119,7 @@ impl ::std::fmt::Display for ConnectorStatusReason {
             ConnectorStatusReason::PrivatecaAccessDenied => write!(f, "PRIVATECA_ACCESS_DENIED"),
             ConnectorStatusReason::PrivatecaInvalidState => write!(f, "PRIVATECA_INVALID_STATE"),
             ConnectorStatusReason::PrivatecaResourceNotFound => write!(f, "PRIVATECA_RESOURCE_NOT_FOUND"),
-            ConnectorStatusReason::Unknown(value) => write!(f, "{}", value),
+            ConnectorStatusReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

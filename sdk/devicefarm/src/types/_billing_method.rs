@@ -102,7 +102,7 @@ impl ::std::fmt::Display for BillingMethod {
         match self {
             BillingMethod::Metered => write!(f, "METERED"),
             BillingMethod::Unmetered => write!(f, "UNMETERED"),
-            BillingMethod::Unknown(value) => write!(f, "{}", value),
+            BillingMethod::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FormDataSourceType {
         match self {
             FormDataSourceType::Custom => write!(f, "Custom"),
             FormDataSourceType::Datastore => write!(f, "DataStore"),
-            FormDataSourceType::Unknown(value) => write!(f, "{}", value),
+            FormDataSourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

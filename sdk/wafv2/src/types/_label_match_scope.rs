@@ -102,7 +102,7 @@ impl ::std::fmt::Display for LabelMatchScope {
         match self {
             LabelMatchScope::Label => write!(f, "LABEL"),
             LabelMatchScope::Namespace => write!(f, "NAMESPACE"),
-            LabelMatchScope::Unknown(value) => write!(f, "{}", value),
+            LabelMatchScope::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

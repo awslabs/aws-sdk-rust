@@ -142,7 +142,7 @@ impl ::std::fmt::Display for ObjectAcl {
             ObjectAcl::Private => write!(f, "private"),
             ObjectAcl::PublicRead => write!(f, "public-read"),
             ObjectAcl::PublicReadWrite => write!(f, "public-read-write"),
-            ObjectAcl::Unknown(value) => write!(f, "{}", value),
+            ObjectAcl::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CalendarState {
         match self {
             CalendarState::Closed => write!(f, "CLOSED"),
             CalendarState::Open => write!(f, "OPEN"),
-            CalendarState::Unknown(value) => write!(f, "{}", value),
+            CalendarState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

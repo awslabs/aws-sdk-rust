@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AdvancedSecurityModeType {
             AdvancedSecurityModeType::Audit => write!(f, "AUDIT"),
             AdvancedSecurityModeType::Enforced => write!(f, "ENFORCED"),
             AdvancedSecurityModeType::Off => write!(f, "OFF"),
-            AdvancedSecurityModeType::Unknown(value) => write!(f, "{}", value),
+            AdvancedSecurityModeType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

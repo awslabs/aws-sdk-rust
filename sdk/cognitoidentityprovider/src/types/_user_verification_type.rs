@@ -102,7 +102,7 @@ impl ::std::fmt::Display for UserVerificationType {
         match self {
             UserVerificationType::Preferred => write!(f, "preferred"),
             UserVerificationType::Required => write!(f, "required"),
-            UserVerificationType::Unknown(value) => write!(f, "{}", value),
+            UserVerificationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

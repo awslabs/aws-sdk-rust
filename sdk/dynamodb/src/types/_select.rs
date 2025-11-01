@@ -114,7 +114,7 @@ impl ::std::fmt::Display for Select {
             Select::AllProjectedAttributes => write!(f, "ALL_PROJECTED_ATTRIBUTES"),
             Select::Count => write!(f, "COUNT"),
             Select::SpecificAttributes => write!(f, "SPECIFIC_ATTRIBUTES"),
-            Select::Unknown(value) => write!(f, "{}", value),
+            Select::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for VpnState {
             VpnState::Deleted => write!(f, "deleted"),
             VpnState::Deleting => write!(f, "deleting"),
             VpnState::Pending => write!(f, "pending"),
-            VpnState::Unknown(value) => write!(f, "{}", value),
+            VpnState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

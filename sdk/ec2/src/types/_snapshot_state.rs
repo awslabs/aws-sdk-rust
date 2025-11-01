@@ -120,7 +120,7 @@ impl ::std::fmt::Display for SnapshotState {
             SnapshotState::Pending => write!(f, "pending"),
             SnapshotState::Recoverable => write!(f, "recoverable"),
             SnapshotState::Recovering => write!(f, "recovering"),
-            SnapshotState::Unknown(value) => write!(f, "{}", value),
+            SnapshotState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

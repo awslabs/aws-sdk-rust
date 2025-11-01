@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DashDrmSignaling {
         match self {
             DashDrmSignaling::Individual => write!(f, "INDIVIDUAL"),
             DashDrmSignaling::Referenced => write!(f, "REFERENCED"),
-            DashDrmSignaling::Unknown(value) => write!(f, "{}", value),
+            DashDrmSignaling::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

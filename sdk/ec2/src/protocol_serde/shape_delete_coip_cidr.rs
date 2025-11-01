@@ -42,8 +42,7 @@ pub fn de_delete_coip_cidr(
     let start_el = decoder.start_el();
     if !(start_el.matches("DeleteCoipCidrResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected DeleteCoipCidrResponse got {:?}",
-            start_el
+            "invalid root, expected DeleteCoipCidrResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

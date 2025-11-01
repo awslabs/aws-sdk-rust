@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RetrievalMode {
         match self {
             RetrievalMode::AssumeRole => write!(f, "ASSUME_ROLE"),
             RetrievalMode::CallerCredentials => write!(f, "CALLER_CREDENTIALS"),
-            RetrievalMode::Unknown(value) => write!(f, "{}", value),
+            RetrievalMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for HashAlgorithm {
         match self {
             HashAlgorithm::Sha1 => write!(f, "SHA1"),
             HashAlgorithm::Sha256 => write!(f, "SHA256"),
-            HashAlgorithm::Unknown(value) => write!(f, "{}", value),
+            HashAlgorithm::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

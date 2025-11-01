@@ -147,7 +147,7 @@ impl ::std::fmt::Display for ActionType {
             ActionType::ScaleIn => write!(f, "ScaleIn"),
             ActionType::Stop => write!(f, "Stop"),
             ActionType::Upgrade => write!(f, "Upgrade"),
-            ActionType::Unknown(value) => write!(f, "{}", value),
+            ActionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AuthenticationType {
         match self {
             AuthenticationType::IamIdentityCenter => write!(f, "IAM_Identity_Center"),
             AuthenticationType::Standard => write!(f, "Standard"),
-            AuthenticationType::Unknown(value) => write!(f, "{}", value),
+            AuthenticationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

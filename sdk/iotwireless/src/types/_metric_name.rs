@@ -315,7 +315,7 @@ impl ::std::fmt::Display for MetricName {
             MetricName::GatewaySnr => write!(f, "GatewaySNR"),
             MetricName::GatewayUpTime => write!(f, "GatewayUpTime"),
             MetricName::GatewayUplinkCount => write!(f, "GatewayUplinkCount"),
-            MetricName::Unknown(value) => write!(f, "{}", value),
+            MetricName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

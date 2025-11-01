@@ -126,7 +126,7 @@ impl ::std::fmt::Display for SccDestinationFramerate {
             SccDestinationFramerate::Framerate25 => write!(f, "FRAMERATE_25"),
             SccDestinationFramerate::Framerate2997Dropframe => write!(f, "FRAMERATE_29_97_DROPFRAME"),
             SccDestinationFramerate::Framerate2997NonDropframe => write!(f, "FRAMERATE_29_97_NON_DROPFRAME"),
-            SccDestinationFramerate::Unknown(value) => write!(f, "{}", value),
+            SccDestinationFramerate::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

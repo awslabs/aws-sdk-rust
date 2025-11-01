@@ -102,7 +102,7 @@ impl ::std::fmt::Display for EcsServiceLaunchType {
         match self {
             EcsServiceLaunchType::Ec2 => write!(f, "EC2"),
             EcsServiceLaunchType::Fargate => write!(f, "Fargate"),
-            EcsServiceLaunchType::Unknown(value) => write!(f, "{}", value),
+            EcsServiceLaunchType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

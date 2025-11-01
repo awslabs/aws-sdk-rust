@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ServiceResourceIdName {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ServiceResourceIdName::SagemakerTrainingJobArn => write!(f, "TrainingJobArn"),
-            ServiceResourceIdName::Unknown(value) => write!(f, "{}", value),
+            ServiceResourceIdName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

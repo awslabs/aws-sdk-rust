@@ -96,7 +96,7 @@ impl ::std::fmt::Display for SearchableQueueType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             SearchableQueueType::Standard => write!(f, "STANDARD"),
-            SearchableQueueType::Unknown(value) => write!(f, "{}", value),
+            SearchableQueueType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

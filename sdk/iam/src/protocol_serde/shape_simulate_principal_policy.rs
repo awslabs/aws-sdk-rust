@@ -108,16 +108,14 @@ pub fn de_simulate_principal_policy(
     let start_el = decoder.start_el();
     if !(start_el.matches("SimulatePrincipalPolicyResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected SimulatePrincipalPolicyResponse got {:?}",
-            start_el
+            "invalid root, expected SimulatePrincipalPolicyResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("SimulatePrincipalPolicyResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected SimulatePrincipalPolicyResult got {:?}",
-                start_el
+                "invalid result, expected SimulatePrincipalPolicyResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RetentionType {
         match self {
             RetentionType::Delete => write!(f, "Delete"),
             RetentionType::Retain => write!(f, "Retain"),
-            RetentionType::Unknown(value) => write!(f, "{}", value),
+            RetentionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

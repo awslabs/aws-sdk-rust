@@ -108,7 +108,7 @@ impl ::std::fmt::Display for RecommendationSourceType {
             RecommendationSourceType::IssueDetection => write!(f, "ISSUE_DETECTION"),
             RecommendationSourceType::Other => write!(f, "OTHER"),
             RecommendationSourceType::RuleEvaluation => write!(f, "RULE_EVALUATION"),
-            RecommendationSourceType::Unknown(value) => write!(f, "{}", value),
+            RecommendationSourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

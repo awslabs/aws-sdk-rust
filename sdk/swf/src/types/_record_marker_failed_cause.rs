@@ -96,7 +96,7 @@ impl ::std::fmt::Display for RecordMarkerFailedCause {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             RecordMarkerFailedCause::OperationNotPermitted => write!(f, "OPERATION_NOT_PERMITTED"),
-            RecordMarkerFailedCause::Unknown(value) => write!(f, "{}", value),
+            RecordMarkerFailedCause::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

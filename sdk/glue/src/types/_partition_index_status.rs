@@ -114,7 +114,7 @@ impl ::std::fmt::Display for PartitionIndexStatus {
             PartitionIndexStatus::Creating => write!(f, "CREATING"),
             PartitionIndexStatus::Deleting => write!(f, "DELETING"),
             PartitionIndexStatus::Failed => write!(f, "FAILED"),
-            PartitionIndexStatus::Unknown(value) => write!(f, "{}", value),
+            PartitionIndexStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

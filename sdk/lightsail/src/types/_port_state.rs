@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PortState {
         match self {
             PortState::Closed => write!(f, "closed"),
             PortState::Open => write!(f, "open"),
-            PortState::Unknown(value) => write!(f, "{}", value),
+            PortState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

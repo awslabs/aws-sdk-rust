@@ -108,7 +108,7 @@ impl ::std::fmt::Display for GetEntitlementFilterName {
             GetEntitlementFilterName::CustomerAwsAccountId => write!(f, "CUSTOMER_AWS_ACCOUNT_ID"),
             GetEntitlementFilterName::CustomerIdentifier => write!(f, "CUSTOMER_IDENTIFIER"),
             GetEntitlementFilterName::Dimension => write!(f, "DIMENSION"),
-            GetEntitlementFilterName::Unknown(value) => write!(f, "{}", value),
+            GetEntitlementFilterName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

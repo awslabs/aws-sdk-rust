@@ -96,7 +96,7 @@ impl ::std::fmt::Display for MedicalScribeLanguageCode {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             MedicalScribeLanguageCode::EnUs => write!(f, "en-US"),
-            MedicalScribeLanguageCode::Unknown(value) => write!(f, "{}", value),
+            MedicalScribeLanguageCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

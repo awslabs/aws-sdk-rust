@@ -126,7 +126,7 @@ impl ::std::fmt::Display for ChannelStatus {
             ChannelStatus::Deleted => write!(f, "DELETED"),
             ChannelStatus::DeleteFailed => write!(f, "DELETE_FAILED"),
             ChannelStatus::Deleting => write!(f, "DELETING"),
-            ChannelStatus::Unknown(value) => write!(f, "{}", value),
+            ChannelStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

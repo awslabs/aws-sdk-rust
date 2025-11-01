@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AssignmentStatus {
             AssignmentStatus::Disabled => write!(f, "DISABLED"),
             AssignmentStatus::Draft => write!(f, "DRAFT"),
             AssignmentStatus::Enabled => write!(f, "ENABLED"),
-            AssignmentStatus::Unknown(value) => write!(f, "{}", value),
+            AssignmentStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

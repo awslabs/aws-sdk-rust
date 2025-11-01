@@ -151,12 +151,16 @@ pub(crate) fn de_batch_get_case_rule(
                     builder =
                         builder.set_errors(crate::protocol_serde::shape_batch_get_case_rule_error_list::de_batch_get_case_rule_error_list(tokens)?);
                 }
+                "unprocessedCaseRules" => {
+                    builder = builder.set_unprocessed_case_rules(
+                        crate::protocol_serde::shape_batch_get_case_rule_unprocessed_list::de_batch_get_case_rule_unprocessed_list(tokens)?,
+                    );
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {
                 return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                    "expected object key or end object, found: {:?}",
-                    other
+                    "expected object key or end object, found: {other:?}"
                 )))
             }
         }

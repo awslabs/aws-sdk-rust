@@ -96,7 +96,7 @@ impl ::std::fmt::Display for KeywordFilterName {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             KeywordFilterName::KeywordAction => write!(f, "keyword-action"),
-            KeywordFilterName::Unknown(value) => write!(f, "{}", value),
+            KeywordFilterName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

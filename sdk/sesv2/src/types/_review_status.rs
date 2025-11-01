@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ReviewStatus {
             ReviewStatus::Failed => write!(f, "FAILED"),
             ReviewStatus::Granted => write!(f, "GRANTED"),
             ReviewStatus::Pending => write!(f, "PENDING"),
-            ReviewStatus::Unknown(value) => write!(f, "{}", value),
+            ReviewStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

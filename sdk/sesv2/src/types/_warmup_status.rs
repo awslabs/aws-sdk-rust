@@ -108,7 +108,7 @@ impl ::std::fmt::Display for WarmupStatus {
             WarmupStatus::Done => write!(f, "DONE"),
             WarmupStatus::InProgress => write!(f, "IN_PROGRESS"),
             WarmupStatus::NotApplicable => write!(f, "NOT_APPLICABLE"),
-            WarmupStatus::Unknown(value) => write!(f, "{}", value),
+            WarmupStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

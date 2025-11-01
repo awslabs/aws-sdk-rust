@@ -111,7 +111,7 @@ impl ::std::fmt::Display for DeinterlacerMode {
             DeinterlacerMode::Adaptive => write!(f, "ADAPTIVE"),
             DeinterlacerMode::Deinterlace => write!(f, "DEINTERLACE"),
             DeinterlacerMode::InverseTelecine => write!(f, "INVERSE_TELECINE"),
-            DeinterlacerMode::Unknown(value) => write!(f, "{}", value),
+            DeinterlacerMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

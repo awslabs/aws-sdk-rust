@@ -126,7 +126,7 @@ impl ::std::fmt::Display for PeriodType {
             PeriodType::OneHour => write!(f, "one-hour"),
             PeriodType::OneWeek => write!(f, "one-week"),
             PeriodType::ThreeHours => write!(f, "three-hours"),
-            PeriodType::Unknown(value) => write!(f, "{}", value),
+            PeriodType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

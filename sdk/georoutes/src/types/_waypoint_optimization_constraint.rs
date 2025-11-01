@@ -124,7 +124,7 @@ impl ::std::fmt::Display for WaypointOptimizationConstraint {
             WaypointOptimizationConstraint::Heading => write!(f, "Heading"),
             WaypointOptimizationConstraint::ServiceDuration => write!(f, "ServiceDuration"),
             WaypointOptimizationConstraint::SideOfStreet => write!(f, "SideOfStreet"),
-            WaypointOptimizationConstraint::Unknown(value) => write!(f, "{}", value),
+            WaypointOptimizationConstraint::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

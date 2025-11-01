@@ -108,7 +108,7 @@ impl ::std::fmt::Display for XavcHdProfileBitrateClass {
             XavcHdProfileBitrateClass::BitrateClass25 => write!(f, "BITRATE_CLASS_25"),
             XavcHdProfileBitrateClass::BitrateClass35 => write!(f, "BITRATE_CLASS_35"),
             XavcHdProfileBitrateClass::BitrateClass50 => write!(f, "BITRATE_CLASS_50"),
-            XavcHdProfileBitrateClass::Unknown(value) => write!(f, "{}", value),
+            XavcHdProfileBitrateClass::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -138,7 +138,7 @@ impl ::std::fmt::Display for CalculationExecutionState {
             CalculationExecutionState::Failed => write!(f, "FAILED"),
             CalculationExecutionState::Queued => write!(f, "QUEUED"),
             CalculationExecutionState::Running => write!(f, "RUNNING"),
-            CalculationExecutionState::Unknown(value) => write!(f, "{}", value),
+            CalculationExecutionState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

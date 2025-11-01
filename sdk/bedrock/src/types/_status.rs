@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Status {
         match self {
             Status::IncompatibleEndpoint => write!(f, "INCOMPATIBLE_ENDPOINT"),
             Status::Registered => write!(f, "REGISTERED"),
-            Status::Unknown(value) => write!(f, "{}", value),
+            Status::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

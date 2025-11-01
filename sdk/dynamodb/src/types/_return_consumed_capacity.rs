@@ -132,7 +132,7 @@ impl ::std::fmt::Display for ReturnConsumedCapacity {
             ReturnConsumedCapacity::Indexes => write!(f, "INDEXES"),
             ReturnConsumedCapacity::None => write!(f, "NONE"),
             ReturnConsumedCapacity::Total => write!(f, "TOTAL"),
-            ReturnConsumedCapacity::Unknown(value) => write!(f, "{}", value),
+            ReturnConsumedCapacity::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

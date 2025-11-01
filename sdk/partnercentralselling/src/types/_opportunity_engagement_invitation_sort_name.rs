@@ -96,7 +96,7 @@ impl ::std::fmt::Display for OpportunityEngagementInvitationSortName {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             OpportunityEngagementInvitationSortName::InvitationDate => write!(f, "InvitationDate"),
-            OpportunityEngagementInvitationSortName::Unknown(value) => write!(f, "{}", value),
+            OpportunityEngagementInvitationSortName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -241,7 +241,7 @@ mod deser {
                     }
                     _ => skip_value(tokens)?,
                 },
-                other => return Err(DeserializeError::custom(format!("expected object key or end object, found: {:?}", other))),
+                other => return Err(DeserializeError::custom(format!("expected object key or end object, found: {other:?}",))),
             }
         }
         if tokens.next().is_some() {
@@ -302,7 +302,7 @@ mod deser {
                             }
                             _ => skip_value(tokens)?,
                         },
-                        other => return Err(DeserializeError::custom(format!("expected object key or end object, found: {:?}", other))),
+                        other => return Err(DeserializeError::custom(format!("expected object key or end object, found: {other:?}"))),
                     }
                 }
                 Ok(builder.build())
@@ -331,7 +331,7 @@ mod deser {
                                 map.insert(key.into(), value);
                             }
                         }
-                        other => return Err(DeserializeError::custom(format!("expected object key or end object, found: {:?}", other))),
+                        other => return Err(DeserializeError::custom(format!("expected object key or end object, found: {other:?}"))),
                     }
                 }
                 Ok(map)
@@ -380,7 +380,7 @@ mod deser {
                             }
                             _ => skip_value(tokens)?,
                         },
-                        other => return Err(DeserializeError::custom(format!("expected object key or end object, found: {:?}", other))),
+                        other => return Err(DeserializeError::custom(format!("expected object key or end object, found: {other:?}",))),
                     }
                 }
                 Ok(Some(builder))

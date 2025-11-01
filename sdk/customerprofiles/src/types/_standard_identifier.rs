@@ -217,7 +217,7 @@ impl ::std::fmt::Display for StandardIdentifier {
             StandardIdentifier::Profile => write!(f, "PROFILE"),
             StandardIdentifier::Secondary => write!(f, "SECONDARY"),
             StandardIdentifier::Unique => write!(f, "UNIQUE"),
-            StandardIdentifier::Unknown(value) => write!(f, "{}", value),
+            StandardIdentifier::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

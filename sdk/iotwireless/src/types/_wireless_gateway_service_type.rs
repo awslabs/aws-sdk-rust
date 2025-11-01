@@ -102,7 +102,7 @@ impl ::std::fmt::Display for WirelessGatewayServiceType {
         match self {
             WirelessGatewayServiceType::Cups => write!(f, "CUPS"),
             WirelessGatewayServiceType::Lns => write!(f, "LNS"),
-            WirelessGatewayServiceType::Unknown(value) => write!(f, "{}", value),
+            WirelessGatewayServiceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

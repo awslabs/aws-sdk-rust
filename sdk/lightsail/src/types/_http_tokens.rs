@@ -102,7 +102,7 @@ impl ::std::fmt::Display for HttpTokens {
         match self {
             HttpTokens::Optional => write!(f, "optional"),
             HttpTokens::Required => write!(f, "required"),
-            HttpTokens::Unknown(value) => write!(f, "{}", value),
+            HttpTokens::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

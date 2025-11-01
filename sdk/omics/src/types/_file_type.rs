@@ -114,7 +114,7 @@ impl ::std::fmt::Display for FileType {
             FileType::Cram => write!(f, "CRAM"),
             FileType::Fastq => write!(f, "FASTQ"),
             FileType::Ubam => write!(f, "UBAM"),
-            FileType::Unknown(value) => write!(f, "{}", value),
+            FileType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

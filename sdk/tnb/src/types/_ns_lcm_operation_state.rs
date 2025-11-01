@@ -120,7 +120,7 @@ impl ::std::fmt::Display for NsLcmOperationState {
             NsLcmOperationState::Completed => write!(f, "COMPLETED"),
             NsLcmOperationState::Failed => write!(f, "FAILED"),
             NsLcmOperationState::Processing => write!(f, "PROCESSING"),
-            NsLcmOperationState::Unknown(value) => write!(f, "{}", value),
+            NsLcmOperationState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

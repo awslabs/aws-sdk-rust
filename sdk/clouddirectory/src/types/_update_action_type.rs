@@ -102,7 +102,7 @@ impl ::std::fmt::Display for UpdateActionType {
         match self {
             UpdateActionType::CreateOrUpdate => write!(f, "CREATE_OR_UPDATE"),
             UpdateActionType::Delete => write!(f, "DELETE"),
-            UpdateActionType::Unknown(value) => write!(f, "{}", value),
+            UpdateActionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

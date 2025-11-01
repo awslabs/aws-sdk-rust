@@ -147,7 +147,7 @@ impl ::std::fmt::Display for VpcIngressConnectionStatus {
             VpcIngressConnectionStatus::PendingCreation => write!(f, "PENDING_CREATION"),
             VpcIngressConnectionStatus::PendingDeletion => write!(f, "PENDING_DELETION"),
             VpcIngressConnectionStatus::PendingUpdate => write!(f, "PENDING_UPDATE"),
-            VpcIngressConnectionStatus::Unknown(value) => write!(f, "{}", value),
+            VpcIngressConnectionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AggregatedUtterancesFilterOperator {
         match self {
             AggregatedUtterancesFilterOperator::Contains => write!(f, "CO"),
             AggregatedUtterancesFilterOperator::Equals => write!(f, "EQ"),
-            AggregatedUtterancesFilterOperator::Unknown(value) => write!(f, "{}", value),
+            AggregatedUtterancesFilterOperator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

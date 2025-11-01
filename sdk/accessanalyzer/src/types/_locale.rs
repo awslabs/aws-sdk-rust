@@ -150,7 +150,7 @@ impl ::std::fmt::Display for Locale {
             Locale::PtBr => write!(f, "PT_BR"),
             Locale::ZhCn => write!(f, "ZH_CN"),
             Locale::ZhTw => write!(f, "ZH_TW"),
-            Locale::Unknown(value) => write!(f, "{}", value),
+            Locale::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

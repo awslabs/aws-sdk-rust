@@ -126,7 +126,7 @@ impl ::std::fmt::Display for DirectoryUnavailableReason {
             DirectoryUnavailableReason::InvalidDirectoryState => write!(f, "INVALID_DIRECTORY_STATE"),
             DirectoryUnavailableReason::NoDiskSpace => write!(f, "NO_DISK_SPACE"),
             DirectoryUnavailableReason::TrustAuthFailure => write!(f, "TRUST_AUTH_FAILURE"),
-            DirectoryUnavailableReason::Unknown(value) => write!(f, "{}", value),
+            DirectoryUnavailableReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

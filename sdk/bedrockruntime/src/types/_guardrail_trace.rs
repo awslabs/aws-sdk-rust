@@ -108,7 +108,7 @@ impl ::std::fmt::Display for GuardrailTrace {
             GuardrailTrace::Disabled => write!(f, "disabled"),
             GuardrailTrace::Enabled => write!(f, "enabled"),
             GuardrailTrace::EnabledFull => write!(f, "enabled_full"),
-            GuardrailTrace::Unknown(value) => write!(f, "{}", value),
+            GuardrailTrace::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

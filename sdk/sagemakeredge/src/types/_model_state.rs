@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ModelState {
         match self {
             ModelState::Deploy => write!(f, "DEPLOY"),
             ModelState::Undeploy => write!(f, "UNDEPLOY"),
-            ModelState::Unknown(value) => write!(f, "{}", value),
+            ModelState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

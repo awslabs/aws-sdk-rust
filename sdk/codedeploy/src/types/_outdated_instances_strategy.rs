@@ -102,7 +102,7 @@ impl ::std::fmt::Display for OutdatedInstancesStrategy {
         match self {
             OutdatedInstancesStrategy::Ignore => write!(f, "IGNORE"),
             OutdatedInstancesStrategy::Update => write!(f, "UPDATE"),
-            OutdatedInstancesStrategy::Unknown(value) => write!(f, "{}", value),
+            OutdatedInstancesStrategy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

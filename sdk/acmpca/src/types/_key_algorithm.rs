@@ -132,7 +132,7 @@ impl ::std::fmt::Display for KeyAlgorithm {
             KeyAlgorithm::Rsa3072 => write!(f, "RSA_3072"),
             KeyAlgorithm::Rsa4096 => write!(f, "RSA_4096"),
             KeyAlgorithm::Sm2 => write!(f, "SM2"),
-            KeyAlgorithm::Unknown(value) => write!(f, "{}", value),
+            KeyAlgorithm::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

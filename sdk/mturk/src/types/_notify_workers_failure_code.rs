@@ -102,7 +102,7 @@ impl ::std::fmt::Display for NotifyWorkersFailureCode {
         match self {
             NotifyWorkersFailureCode::HardFailure => write!(f, "HardFailure"),
             NotifyWorkersFailureCode::SoftFailure => write!(f, "SoftFailure"),
-            NotifyWorkersFailureCode::Unknown(value) => write!(f, "{}", value),
+            NotifyWorkersFailureCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

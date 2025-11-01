@@ -114,7 +114,7 @@ impl ::std::fmt::Display for MacModificationTaskState {
             MacModificationTaskState::Inprogress => write!(f, "in-progress"),
             MacModificationTaskState::Pending => write!(f, "pending"),
             MacModificationTaskState::Successful => write!(f, "successful"),
-            MacModificationTaskState::Unknown(value) => write!(f, "{}", value),
+            MacModificationTaskState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

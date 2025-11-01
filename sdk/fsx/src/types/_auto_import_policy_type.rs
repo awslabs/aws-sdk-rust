@@ -114,7 +114,7 @@ impl ::std::fmt::Display for AutoImportPolicyType {
             AutoImportPolicyType::NewChanged => write!(f, "NEW_CHANGED"),
             AutoImportPolicyType::NewChangedDeleted => write!(f, "NEW_CHANGED_DELETED"),
             AutoImportPolicyType::None => write!(f, "NONE"),
-            AutoImportPolicyType::Unknown(value) => write!(f, "{}", value),
+            AutoImportPolicyType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

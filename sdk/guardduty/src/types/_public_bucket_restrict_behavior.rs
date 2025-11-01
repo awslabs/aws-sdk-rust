@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PublicBucketRestrictBehavior {
         match self {
             PublicBucketRestrictBehavior::NotRestricted => write!(f, "NOT_RESTRICTED"),
             PublicBucketRestrictBehavior::Restricted => write!(f, "RESTRICTED"),
-            PublicBucketRestrictBehavior::Unknown(value) => write!(f, "{}", value),
+            PublicBucketRestrictBehavior::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

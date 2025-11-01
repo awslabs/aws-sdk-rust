@@ -133,7 +133,7 @@ impl ::std::fmt::Display for X12Version {
             X12Version::Version4060 => write!(f, "VERSION_4060"),
             X12Version::Version5010 => write!(f, "VERSION_5010"),
             X12Version::Version5010Hipaa => write!(f, "VERSION_5010_HIPAA"),
-            X12Version::Unknown(value) => write!(f, "{}", value),
+            X12Version::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

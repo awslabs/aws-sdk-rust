@@ -108,7 +108,7 @@ impl ::std::fmt::Display for PrincipalType {
             PrincipalType::Group => write!(f, "GROUP"),
             PrincipalType::Role => write!(f, "ROLE"),
             PrincipalType::User => write!(f, "USER"),
-            PrincipalType::Unknown(value) => write!(f, "{}", value),
+            PrincipalType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

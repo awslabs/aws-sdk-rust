@@ -126,7 +126,7 @@ impl ::std::fmt::Display for AacCodingMode {
             AacCodingMode::CodingMode11 => write!(f, "CODING_MODE_1_1"),
             AacCodingMode::CodingMode20 => write!(f, "CODING_MODE_2_0"),
             AacCodingMode::CodingMode51 => write!(f, "CODING_MODE_5_1"),
-            AacCodingMode::Unknown(value) => write!(f, "{}", value),
+            AacCodingMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -161,7 +161,7 @@ impl ::std::fmt::Display for ProjectStatus {
             ProjectStatus::UpdateCompleted => write!(f, "UpdateCompleted"),
             ProjectStatus::UpdateFailed => write!(f, "UpdateFailed"),
             ProjectStatus::UpdateInProgress => write!(f, "UpdateInProgress"),
-            ProjectStatus::Unknown(value) => write!(f, "{}", value),
+            ProjectStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

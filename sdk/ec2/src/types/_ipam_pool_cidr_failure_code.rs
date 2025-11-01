@@ -102,7 +102,7 @@ impl ::std::fmt::Display for IpamPoolCidrFailureCode {
         match self {
             IpamPoolCidrFailureCode::CidrNotAvailable => write!(f, "cidr-not-available"),
             IpamPoolCidrFailureCode::LimitExceeded => write!(f, "limit-exceeded"),
-            IpamPoolCidrFailureCode::Unknown(value) => write!(f, "{}", value),
+            IpamPoolCidrFailureCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

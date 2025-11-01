@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CustomLineItemRelationship {
         match self {
             CustomLineItemRelationship::Child => write!(f, "CHILD"),
             CustomLineItemRelationship::Parent => write!(f, "PARENT"),
-            CustomLineItemRelationship::Unknown(value) => write!(f, "{}", value),
+            CustomLineItemRelationship::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

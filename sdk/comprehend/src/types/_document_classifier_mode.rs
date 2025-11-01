@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DocumentClassifierMode {
         match self {
             DocumentClassifierMode::MultiClass => write!(f, "MULTI_CLASS"),
             DocumentClassifierMode::MultiLabel => write!(f, "MULTI_LABEL"),
-            DocumentClassifierMode::Unknown(value) => write!(f, "{}", value),
+            DocumentClassifierMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

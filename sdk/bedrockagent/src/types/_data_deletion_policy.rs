@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DataDeletionPolicy {
         match self {
             DataDeletionPolicy::Delete => write!(f, "DELETE"),
             DataDeletionPolicy::Retain => write!(f, "RETAIN"),
-            DataDeletionPolicy::Unknown(value) => write!(f, "{}", value),
+            DataDeletionPolicy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

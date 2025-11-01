@@ -543,6 +543,10 @@ mod create_ipam_external_resource_verification_token;
 
 mod create_ipam_pool;
 
+mod create_ipam_prefix_list_resolver;
+
+mod create_ipam_prefix_list_resolver_target;
+
 mod create_ipam_resource_discovery;
 
 mod create_ipam_scope;
@@ -741,6 +745,10 @@ mod delete_ipam;
 mod delete_ipam_external_resource_verification_token;
 
 mod delete_ipam_pool;
+
+mod delete_ipam_prefix_list_resolver;
+
+mod delete_ipam_prefix_list_resolver_target;
 
 mod delete_ipam_resource_discovery;
 
@@ -1027,6 +1035,10 @@ mod describe_ipam_byoasn;
 mod describe_ipam_external_resource_verification_tokens;
 
 mod describe_ipam_pools;
+
+mod describe_ipam_prefix_list_resolver_targets;
+
+mod describe_ipam_prefix_list_resolvers;
 
 mod describe_ipam_resource_discoveries;
 
@@ -1432,6 +1444,12 @@ mod get_ipam_pool_allocations;
 
 mod get_ipam_pool_cidrs;
 
+mod get_ipam_prefix_list_resolver_rules;
+
+mod get_ipam_prefix_list_resolver_version_entries;
+
+mod get_ipam_prefix_list_resolver_versions;
+
 mod get_ipam_resource_cidrs;
 
 mod get_launch_template_data;
@@ -1561,6 +1579,10 @@ mod modify_instance_placement;
 mod modify_ipam;
 
 mod modify_ipam_pool;
+
+mod modify_ipam_prefix_list_resolver;
+
+mod modify_ipam_prefix_list_resolver_target;
 
 mod modify_ipam_resource_cidr;
 

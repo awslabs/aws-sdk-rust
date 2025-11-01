@@ -190,6 +190,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetInstanceT
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::get_instance_types_from_instance_requirements::GetInstanceTypesFromInstanceRequirementsInput,
                 output: &mut ::std::string::String,

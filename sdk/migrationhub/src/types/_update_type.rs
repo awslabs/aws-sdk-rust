@@ -96,7 +96,7 @@ impl ::std::fmt::Display for UpdateType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             UpdateType::MigrationTaskStateUpdated => write!(f, "MIGRATION_TASK_STATE_UPDATED"),
-            UpdateType::Unknown(value) => write!(f, "{}", value),
+            UpdateType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

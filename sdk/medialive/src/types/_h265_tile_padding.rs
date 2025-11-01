@@ -102,7 +102,7 @@ impl ::std::fmt::Display for H265TilePadding {
         match self {
             H265TilePadding::None => write!(f, "NONE"),
             H265TilePadding::Padded => write!(f, "PADDED"),
-            H265TilePadding::Unknown(value) => write!(f, "{}", value),
+            H265TilePadding::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

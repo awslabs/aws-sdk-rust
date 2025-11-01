@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CertificateType {
         match self {
             CertificateType::Certificate => write!(f, "CERTIFICATE"),
             CertificateType::CertificateWithPrivateKey => write!(f, "CERTIFICATE_WITH_PRIVATE_KEY"),
-            CertificateType::Unknown(value) => write!(f, "{}", value),
+            CertificateType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DeletableCertificateBasedAuthProperty {
             DeletableCertificateBasedAuthProperty::CertificateBasedAuthPropertiesCertificateAuthorityArn => {
                 write!(f, "CERTIFICATE_BASED_AUTH_PROPERTIES_CERTIFICATE_AUTHORITY_ARN")
             }
-            DeletableCertificateBasedAuthProperty::Unknown(value) => write!(f, "{}", value),
+            DeletableCertificateBasedAuthProperty::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

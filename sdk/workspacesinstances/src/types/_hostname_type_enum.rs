@@ -102,7 +102,7 @@ impl ::std::fmt::Display for HostnameTypeEnum {
         match self {
             HostnameTypeEnum::IpName => write!(f, "ip-name"),
             HostnameTypeEnum::ResourceName => write!(f, "resource-name"),
-            HostnameTypeEnum::Unknown(value) => write!(f, "{}", value),
+            HostnameTypeEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AccessDeniedReason {
             AccessDeniedReason::DataDisabled => write!(f, "DATA_DISABLED"),
             AccessDeniedReason::DirectoryAuth => write!(f, "DIRECTORY_AUTH"),
             AccessDeniedReason::IamAuth => write!(f, "IAM_AUTH"),
-            AccessDeniedReason::Unknown(value) => write!(f, "{}", value),
+            AccessDeniedReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

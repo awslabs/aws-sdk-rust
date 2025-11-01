@@ -77,16 +77,14 @@ pub fn de_describe_stack_refactor(
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeStackRefactorResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected DescribeStackRefactorResponse got {:?}",
-            start_el
+            "invalid root, expected DescribeStackRefactorResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("DescribeStackRefactorResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected DescribeStackRefactorResult got {:?}",
-                start_el
+                "invalid result, expected DescribeStackRefactorResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

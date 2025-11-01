@@ -114,7 +114,7 @@ impl ::std::fmt::Display for Operation {
             Operation::DisableScanning => write!(f, "DISABLE_SCANNING"),
             Operation::EnableRepository => write!(f, "ENABLE_REPOSITORY"),
             Operation::EnableScanning => write!(f, "ENABLE_SCANNING"),
-            Operation::Unknown(value) => write!(f, "{}", value),
+            Operation::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

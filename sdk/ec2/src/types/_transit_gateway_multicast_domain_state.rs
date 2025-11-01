@@ -114,7 +114,7 @@ impl ::std::fmt::Display for TransitGatewayMulticastDomainState {
             TransitGatewayMulticastDomainState::Deleted => write!(f, "deleted"),
             TransitGatewayMulticastDomainState::Deleting => write!(f, "deleting"),
             TransitGatewayMulticastDomainState::Pending => write!(f, "pending"),
-            TransitGatewayMulticastDomainState::Unknown(value) => write!(f, "{}", value),
+            TransitGatewayMulticastDomainState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

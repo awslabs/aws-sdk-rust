@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SettingType {
         match self {
             SettingType::AwsManaged => write!(f, "aws_managed"),
             SettingType::User => write!(f, "user"),
-            SettingType::Unknown(value) => write!(f, "{}", value),
+            SettingType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

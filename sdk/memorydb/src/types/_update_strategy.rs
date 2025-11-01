@@ -102,7 +102,7 @@ impl ::std::fmt::Display for UpdateStrategy {
         match self {
             UpdateStrategy::Coordinated => write!(f, "coordinated"),
             UpdateStrategy::Uncoordinated => write!(f, "uncoordinated"),
-            UpdateStrategy::Unknown(value) => write!(f, "{}", value),
+            UpdateStrategy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

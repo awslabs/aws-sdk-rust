@@ -108,7 +108,7 @@ impl ::std::fmt::Display for CredentialProviderType {
             CredentialProviderType::ApiKey => write!(f, "API_KEY"),
             CredentialProviderType::GatewayIamRole => write!(f, "GATEWAY_IAM_ROLE"),
             CredentialProviderType::Oauth => write!(f, "OAUTH"),
-            CredentialProviderType::Unknown(value) => write!(f, "{}", value),
+            CredentialProviderType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

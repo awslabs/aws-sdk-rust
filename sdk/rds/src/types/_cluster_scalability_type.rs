@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ClusterScalabilityType {
             ClusterScalabilityType::Limitless => write!(f, "limitless"),
             ClusterScalabilityType::Scaleout => write!(f, "scaleout"),
             ClusterScalabilityType::Standard => write!(f, "standard"),
-            ClusterScalabilityType::Unknown(value) => write!(f, "{}", value),
+            ClusterScalabilityType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

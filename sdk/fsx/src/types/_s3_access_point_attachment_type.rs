@@ -96,7 +96,7 @@ impl ::std::fmt::Display for S3AccessPointAttachmentType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             S3AccessPointAttachmentType::Openzfs => write!(f, "OPENZFS"),
-            S3AccessPointAttachmentType::Unknown(value) => write!(f, "{}", value),
+            S3AccessPointAttachmentType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

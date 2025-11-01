@@ -102,7 +102,7 @@ impl ::std::fmt::Display for EdgePresetDeploymentStatus {
         match self {
             EdgePresetDeploymentStatus::Completed => write!(f, "COMPLETED"),
             EdgePresetDeploymentStatus::Failed => write!(f, "FAILED"),
-            EdgePresetDeploymentStatus::Unknown(value) => write!(f, "{}", value),
+            EdgePresetDeploymentStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for EventStreamDestinationStatus {
         match self {
             EventStreamDestinationStatus::Healthy => write!(f, "HEALTHY"),
             EventStreamDestinationStatus::Unhealthy => write!(f, "UNHEALTHY"),
-            EventStreamDestinationStatus::Unknown(value) => write!(f, "{}", value),
+            EventStreamDestinationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

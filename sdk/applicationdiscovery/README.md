@@ -35,7 +35,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-aws-sdk-applicationdiscovery = "1.89.0"
+aws-sdk-applicationdiscovery = "1.90.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

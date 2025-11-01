@@ -116,7 +116,7 @@ impl ::std::fmt::Display for ActionStatus {
             ActionStatus::Running => write!(f, "Running"),
             ActionStatus::Scheduled => write!(f, "Scheduled"),
             ActionStatus::UnknownValue => write!(f, "Unknown"),
-            ActionStatus::Unknown(value) => write!(f, "{}", value),
+            ActionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

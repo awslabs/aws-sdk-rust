@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RegistryStatus {
         match self {
             RegistryStatus::Available => write!(f, "AVAILABLE"),
             RegistryStatus::Deleting => write!(f, "DELETING"),
-            RegistryStatus::Unknown(value) => write!(f, "{}", value),
+            RegistryStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

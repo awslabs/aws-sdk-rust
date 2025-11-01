@@ -108,7 +108,7 @@ impl ::std::fmt::Display for FirewallRuleGroupAssociationStatus {
             FirewallRuleGroupAssociationStatus::Complete => write!(f, "COMPLETE"),
             FirewallRuleGroupAssociationStatus::Deleting => write!(f, "DELETING"),
             FirewallRuleGroupAssociationStatus::Updating => write!(f, "UPDATING"),
-            FirewallRuleGroupAssociationStatus::Unknown(value) => write!(f, "{}", value),
+            FirewallRuleGroupAssociationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

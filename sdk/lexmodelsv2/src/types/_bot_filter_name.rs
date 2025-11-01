@@ -102,7 +102,7 @@ impl ::std::fmt::Display for BotFilterName {
         match self {
             BotFilterName::BotName => write!(f, "BotName"),
             BotFilterName::BotType => write!(f, "BotType"),
-            BotFilterName::Unknown(value) => write!(f, "{}", value),
+            BotFilterName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

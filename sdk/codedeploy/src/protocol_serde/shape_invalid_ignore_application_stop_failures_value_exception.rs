@@ -24,8 +24,7 @@ pub(crate) fn de_invalid_ignore_application_stop_failures_value_exception_json_e
             },
             other => {
                 return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                    "expected object key or end object, found: {:?}",
-                    other
+                    "expected object key or end object, found: {other:?}"
                 )))
             }
         }

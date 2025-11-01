@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RelativePosition {
         match self {
             RelativePosition::AfterProgram => write!(f, "AFTER_PROGRAM"),
             RelativePosition::BeforeProgram => write!(f, "BEFORE_PROGRAM"),
-            RelativePosition::Unknown(value) => write!(f, "{}", value),
+            RelativePosition::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

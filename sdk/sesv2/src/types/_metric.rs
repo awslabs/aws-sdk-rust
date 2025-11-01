@@ -225,7 +225,7 @@ impl ::std::fmt::Display for Metric {
             Metric::PermanentBounce => write!(f, "PERMANENT_BOUNCE"),
             Metric::Send => write!(f, "SEND"),
             Metric::TransientBounce => write!(f, "TRANSIENT_BOUNCE"),
-            Metric::Unknown(value) => write!(f, "{}", value),
+            Metric::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

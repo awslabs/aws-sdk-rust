@@ -108,7 +108,7 @@ impl ::std::fmt::Display for RetryableFailureType {
             RetryableFailureType::All => write!(f, "ALL"),
             RetryableFailureType::Failed => write!(f, "FAILED"),
             RetryableFailureType::TimedOut => write!(f, "TIMED_OUT"),
-            RetryableFailureType::Unknown(value) => write!(f, "{}", value),
+            RetryableFailureType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

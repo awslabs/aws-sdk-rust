@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ServiceUpdateStatus {
             ServiceUpdateStatus::Available => write!(f, "available"),
             ServiceUpdateStatus::Cancelled => write!(f, "cancelled"),
             ServiceUpdateStatus::Expired => write!(f, "expired"),
-            ServiceUpdateStatus::Unknown(value) => write!(f, "{}", value),
+            ServiceUpdateStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

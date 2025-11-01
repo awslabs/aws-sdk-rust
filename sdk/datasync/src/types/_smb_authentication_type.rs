@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SmbAuthenticationType {
         match self {
             SmbAuthenticationType::Kerberos => write!(f, "KERBEROS"),
             SmbAuthenticationType::Ntlm => write!(f, "NTLM"),
-            SmbAuthenticationType::Unknown(value) => write!(f, "{}", value),
+            SmbAuthenticationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PipelineStatus {
         match self {
             PipelineStatus::Disabled => write!(f, "DISABLED"),
             PipelineStatus::Enabled => write!(f, "ENABLED"),
-            PipelineStatus::Unknown(value) => write!(f, "{}", value),
+            PipelineStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

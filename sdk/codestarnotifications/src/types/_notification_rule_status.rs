@@ -102,7 +102,7 @@ impl ::std::fmt::Display for NotificationRuleStatus {
         match self {
             NotificationRuleStatus::Disabled => write!(f, "DISABLED"),
             NotificationRuleStatus::Enabled => write!(f, "ENABLED"),
-            NotificationRuleStatus::Unknown(value) => write!(f, "{}", value),
+            NotificationRuleStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

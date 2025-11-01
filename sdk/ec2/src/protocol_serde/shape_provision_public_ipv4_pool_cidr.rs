@@ -51,8 +51,7 @@ pub fn de_provision_public_ipv4_pool_cidr(
     let start_el = decoder.start_el();
     if !(start_el.matches("ProvisionPublicIpv4PoolCidrResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected ProvisionPublicIpv4PoolCidrResponse got {:?}",
-            start_el
+            "invalid root, expected ProvisionPublicIpv4PoolCidrResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

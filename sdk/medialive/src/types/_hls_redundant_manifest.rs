@@ -102,7 +102,7 @@ impl ::std::fmt::Display for HlsRedundantManifest {
         match self {
             HlsRedundantManifest::Disabled => write!(f, "DISABLED"),
             HlsRedundantManifest::Enabled => write!(f, "ENABLED"),
-            HlsRedundantManifest::Unknown(value) => write!(f, "{}", value),
+            HlsRedundantManifest::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

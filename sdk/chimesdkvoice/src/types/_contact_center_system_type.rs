@@ -119,7 +119,7 @@ impl ::std::fmt::Display for ContactCenterSystemType {
             ContactCenterSystemType::AvayaAuraContactCenter => write!(f, "AVAYA_AURA_CONTACT_CENTER"),
             ContactCenterSystemType::CiscoUnifiedContactCenterEnterprise => write!(f, "CISCO_UNIFIED_CONTACT_CENTER_ENTERPRISE"),
             ContactCenterSystemType::GenesysEngageOnPremises => write!(f, "GENESYS_ENGAGE_ON_PREMISES"),
-            ContactCenterSystemType::Unknown(value) => write!(f, "{}", value),
+            ContactCenterSystemType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

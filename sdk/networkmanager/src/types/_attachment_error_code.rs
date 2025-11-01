@@ -168,7 +168,7 @@ impl ::std::fmt::Display for AttachmentErrorCode {
             AttachmentErrorCode::SubnetUnsupportedAvailabilityZone => write!(f, "SUBNET_UNSUPPORTED_AVAILABILITY_ZONE"),
             AttachmentErrorCode::VpcNotFound => write!(f, "VPC_NOT_FOUND"),
             AttachmentErrorCode::VpnConnectionNotFound => write!(f, "VPN_CONNECTION_NOT_FOUND"),
-            AttachmentErrorCode::Unknown(value) => write!(f, "{}", value),
+            AttachmentErrorCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

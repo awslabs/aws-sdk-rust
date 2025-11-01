@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ApiDestinationState {
         match self {
             ApiDestinationState::Active => write!(f, "ACTIVE"),
             ApiDestinationState::Inactive => write!(f, "INACTIVE"),
-            ApiDestinationState::Unknown(value) => write!(f, "{}", value),
+            ApiDestinationState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

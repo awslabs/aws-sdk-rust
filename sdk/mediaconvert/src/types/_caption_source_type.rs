@@ -189,7 +189,7 @@ impl ::std::fmt::Display for CaptionSourceType {
             CaptionSourceType::Teletext => write!(f, "TELETEXT"),
             CaptionSourceType::Ttml => write!(f, "TTML"),
             CaptionSourceType::Webvtt => write!(f, "WEBVTT"),
-            CaptionSourceType::Unknown(value) => write!(f, "{}", value),
+            CaptionSourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

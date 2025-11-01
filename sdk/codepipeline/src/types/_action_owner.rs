@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ActionOwner {
             ActionOwner::Aws => write!(f, "AWS"),
             ActionOwner::Custom => write!(f, "Custom"),
             ActionOwner::ThirdParty => write!(f, "ThirdParty"),
-            ActionOwner::Unknown(value) => write!(f, "{}", value),
+            ActionOwner::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

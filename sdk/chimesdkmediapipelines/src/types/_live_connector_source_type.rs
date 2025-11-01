@@ -96,7 +96,7 @@ impl ::std::fmt::Display for LiveConnectorSourceType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             LiveConnectorSourceType::ChimeSdkMeeting => write!(f, "ChimeSdkMeeting"),
-            LiveConnectorSourceType::Unknown(value) => write!(f, "{}", value),
+            LiveConnectorSourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

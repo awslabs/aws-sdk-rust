@@ -108,7 +108,7 @@ impl ::std::fmt::Display for DefaultTargetCapacityType {
             DefaultTargetCapacityType::CapacityBlock => write!(f, "capacity-block"),
             DefaultTargetCapacityType::OnDemand => write!(f, "on-demand"),
             DefaultTargetCapacityType::Spot => write!(f, "spot"),
-            DefaultTargetCapacityType::Unknown(value) => write!(f, "{}", value),
+            DefaultTargetCapacityType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

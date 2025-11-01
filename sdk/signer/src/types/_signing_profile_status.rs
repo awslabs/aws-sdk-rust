@@ -108,7 +108,7 @@ impl ::std::fmt::Display for SigningProfileStatus {
             SigningProfileStatus::Active => write!(f, "Active"),
             SigningProfileStatus::Canceled => write!(f, "Canceled"),
             SigningProfileStatus::Revoked => write!(f, "Revoked"),
-            SigningProfileStatus::Unknown(value) => write!(f, "{}", value),
+            SigningProfileStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

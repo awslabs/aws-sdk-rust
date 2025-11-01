@@ -102,7 +102,7 @@ impl ::std::fmt::Display for InsertionMode {
         match self {
             InsertionMode::PlayerSelect => write!(f, "PLAYER_SELECT"),
             InsertionMode::StitchedOnly => write!(f, "STITCHED_ONLY"),
-            InsertionMode::Unknown(value) => write!(f, "{}", value),
+            InsertionMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

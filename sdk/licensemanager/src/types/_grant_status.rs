@@ -154,7 +154,7 @@ impl ::std::fmt::Display for GrantStatus {
             GrantStatus::PendingWorkflow => write!(f, "PENDING_WORKFLOW"),
             GrantStatus::Rejected => write!(f, "REJECTED"),
             GrantStatus::WorkflowCompleted => write!(f, "WORKFLOW_COMPLETED"),
-            GrantStatus::Unknown(value) => write!(f, "{}", value),
+            GrantStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

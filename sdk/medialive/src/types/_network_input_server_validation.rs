@@ -102,7 +102,7 @@ impl ::std::fmt::Display for NetworkInputServerValidation {
         match self {
             NetworkInputServerValidation::CheckCryptographyAndValidateName => write!(f, "CHECK_CRYPTOGRAPHY_AND_VALIDATE_NAME"),
             NetworkInputServerValidation::CheckCryptographyOnly => write!(f, "CHECK_CRYPTOGRAPHY_ONLY"),
-            NetworkInputServerValidation::Unknown(value) => write!(f, "{}", value),
+            NetworkInputServerValidation::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -126,7 +126,7 @@ impl ::std::fmt::Display for ComplianceSeverity {
             ComplianceSeverity::Low => write!(f, "LOW"),
             ComplianceSeverity::Medium => write!(f, "MEDIUM"),
             ComplianceSeverity::Unspecified => write!(f, "UNSPECIFIED"),
-            ComplianceSeverity::Unknown(value) => write!(f, "{}", value),
+            ComplianceSeverity::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

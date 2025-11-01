@@ -154,7 +154,7 @@ impl ::std::fmt::Display for EndpointStatus {
             EndpointStatus::SystemUpdating => write!(f, "SystemUpdating"),
             EndpointStatus::UpdateRollbackFailed => write!(f, "UpdateRollbackFailed"),
             EndpointStatus::Updating => write!(f, "Updating"),
-            EndpointStatus::Unknown(value) => write!(f, "{}", value),
+            EndpointStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

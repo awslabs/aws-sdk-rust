@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ExportErrorType {
         match self {
             ExportErrorType::ClientError => write!(f, "CLIENT_ERROR"),
             ExportErrorType::ServerError => write!(f, "SERVER_ERROR"),
-            ExportErrorType::Unknown(value) => write!(f, "{}", value),
+            ExportErrorType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

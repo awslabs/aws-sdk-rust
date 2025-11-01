@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ChangeTypeEnum {
             ChangeTypeEnum::Added => write!(f, "A"),
             ChangeTypeEnum::Deleted => write!(f, "D"),
             ChangeTypeEnum::Modified => write!(f, "M"),
-            ChangeTypeEnum::Unknown(value) => write!(f, "{}", value),
+            ChangeTypeEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

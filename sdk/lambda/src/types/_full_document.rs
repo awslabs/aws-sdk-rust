@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FullDocument {
         match self {
             FullDocument::Default => write!(f, "Default"),
             FullDocument::UpdateLookup => write!(f, "UpdateLookup"),
-            FullDocument::Unknown(value) => write!(f, "{}", value),
+            FullDocument::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

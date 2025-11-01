@@ -154,7 +154,7 @@ impl ::std::fmt::Display for ValidationExceptionReason {
             ValidationExceptionReason::NoClientToken => write!(f, "NO_CLIENT_TOKEN"),
             ValidationExceptionReason::Other => write!(f, "OTHER"),
             ValidationExceptionReason::UnknownOperation => write!(f, "UNKNOWN_OPERATION"),
-            ValidationExceptionReason::Unknown(value) => write!(f, "{}", value),
+            ValidationExceptionReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

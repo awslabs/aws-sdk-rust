@@ -108,7 +108,7 @@ impl ::std::fmt::Display for DatasourcePackageIngestState {
             DatasourcePackageIngestState::Disabled => write!(f, "DISABLED"),
             DatasourcePackageIngestState::Started => write!(f, "STARTED"),
             DatasourcePackageIngestState::Stopped => write!(f, "STOPPED"),
-            DatasourcePackageIngestState::Unknown(value) => write!(f, "{}", value),
+            DatasourcePackageIngestState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

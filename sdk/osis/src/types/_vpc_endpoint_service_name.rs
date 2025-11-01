@@ -96,7 +96,7 @@ impl ::std::fmt::Display for VpcEndpointServiceName {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             VpcEndpointServiceName::OpensearchServerless => write!(f, "OPENSEARCH_SERVERLESS"),
-            VpcEndpointServiceName::Unknown(value) => write!(f, "{}", value),
+            VpcEndpointServiceName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

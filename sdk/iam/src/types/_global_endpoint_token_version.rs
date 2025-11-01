@@ -102,7 +102,7 @@ impl ::std::fmt::Display for GlobalEndpointTokenVersion {
         match self {
             GlobalEndpointTokenVersion::V1Token => write!(f, "v1Token"),
             GlobalEndpointTokenVersion::V2Token => write!(f, "v2Token"),
-            GlobalEndpointTokenVersion::Unknown(value) => write!(f, "{}", value),
+            GlobalEndpointTokenVersion::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for NodeFromTemplateJobStatus {
             NodeFromTemplateJobStatus::Failed => write!(f, "FAILED"),
             NodeFromTemplateJobStatus::Pending => write!(f, "PENDING"),
             NodeFromTemplateJobStatus::Succeeded => write!(f, "SUCCEEDED"),
-            NodeFromTemplateJobStatus::Unknown(value) => write!(f, "{}", value),
+            NodeFromTemplateJobStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

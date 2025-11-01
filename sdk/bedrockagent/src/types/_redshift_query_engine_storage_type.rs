@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RedshiftQueryEngineStorageType {
         match self {
             RedshiftQueryEngineStorageType::AwsDataCatalog => write!(f, "AWS_DATA_CATALOG"),
             RedshiftQueryEngineStorageType::Redshift => write!(f, "REDSHIFT"),
-            RedshiftQueryEngineStorageType::Unknown(value) => write!(f, "{}", value),
+            RedshiftQueryEngineStorageType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

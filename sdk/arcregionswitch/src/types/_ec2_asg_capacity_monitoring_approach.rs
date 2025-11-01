@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Ec2AsgCapacityMonitoringApproach {
         match self {
             Ec2AsgCapacityMonitoringApproach::AutoscalingMaxInLast24Hours => write!(f, "autoscalingMaxInLast24Hours"),
             Ec2AsgCapacityMonitoringApproach::SampledMaxInLast24Hours => write!(f, "sampledMaxInLast24Hours"),
-            Ec2AsgCapacityMonitoringApproach::Unknown(value) => write!(f, "{}", value),
+            Ec2AsgCapacityMonitoringApproach::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

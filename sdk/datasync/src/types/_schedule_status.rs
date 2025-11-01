@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ScheduleStatus {
         match self {
             ScheduleStatus::Disabled => write!(f, "DISABLED"),
             ScheduleStatus::Enabled => write!(f, "ENABLED"),
-            ScheduleStatus::Unknown(value) => write!(f, "{}", value),
+            ScheduleStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

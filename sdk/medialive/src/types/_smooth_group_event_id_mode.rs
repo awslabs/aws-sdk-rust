@@ -108,7 +108,7 @@ impl ::std::fmt::Display for SmoothGroupEventIdMode {
             SmoothGroupEventIdMode::NoEventId => write!(f, "NO_EVENT_ID"),
             SmoothGroupEventIdMode::UseConfigured => write!(f, "USE_CONFIGURED"),
             SmoothGroupEventIdMode::UseTimestamp => write!(f, "USE_TIMESTAMP"),
-            SmoothGroupEventIdMode::Unknown(value) => write!(f, "{}", value),
+            SmoothGroupEventIdMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

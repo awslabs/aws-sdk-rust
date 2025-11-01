@@ -406,7 +406,7 @@ impl ::std::fmt::Display for CloudWatchRegion {
             CloudWatchRegion::UsIsofSouth1 => write!(f, "us-isof-south-1"),
             CloudWatchRegion::UsWest1 => write!(f, "us-west-1"),
             CloudWatchRegion::UsWest2 => write!(f, "us-west-2"),
-            CloudWatchRegion::Unknown(value) => write!(f, "{}", value),
+            CloudWatchRegion::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DashIsoPlaybackDeviceCompatibility {
         match self {
             DashIsoPlaybackDeviceCompatibility::CencV1 => write!(f, "CENC_V1"),
             DashIsoPlaybackDeviceCompatibility::UnencryptedSei => write!(f, "UNENCRYPTED_SEI"),
-            DashIsoPlaybackDeviceCompatibility::Unknown(value) => write!(f, "{}", value),
+            DashIsoPlaybackDeviceCompatibility::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

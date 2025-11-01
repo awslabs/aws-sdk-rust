@@ -98,7 +98,7 @@ impl ::std::fmt::Display for TrainedModelInferenceMaxOutputSizeUnitType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             TrainedModelInferenceMaxOutputSizeUnitType::Gb => write!(f, "GB"),
-            TrainedModelInferenceMaxOutputSizeUnitType::Unknown(value) => write!(f, "{}", value),
+            TrainedModelInferenceMaxOutputSizeUnitType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

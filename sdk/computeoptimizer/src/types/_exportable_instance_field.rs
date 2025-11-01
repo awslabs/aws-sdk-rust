@@ -698,7 +698,7 @@ impl ::std::fmt::Display for ExportableInstanceField {
             ExportableInstanceField::UtilizationMetricsNetworkPacketsOutPerSecondMaximum => {
                 write!(f, "UtilizationMetricsNetworkPacketsOutPerSecondMaximum")
             }
-            ExportableInstanceField::Unknown(value) => write!(f, "{}", value),
+            ExportableInstanceField::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

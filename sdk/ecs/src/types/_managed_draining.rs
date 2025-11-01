@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ManagedDraining {
         match self {
             ManagedDraining::Disabled => write!(f, "DISABLED"),
             ManagedDraining::Enabled => write!(f, "ENABLED"),
-            ManagedDraining::Unknown(value) => write!(f, "{}", value),
+            ManagedDraining::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

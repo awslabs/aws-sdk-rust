@@ -108,7 +108,7 @@ impl ::std::fmt::Display for EventStatusCode {
             EventStatusCode::Closed => write!(f, "closed"),
             EventStatusCode::Open => write!(f, "open"),
             EventStatusCode::Upcoming => write!(f, "upcoming"),
-            EventStatusCode::Unknown(value) => write!(f, "{}", value),
+            EventStatusCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

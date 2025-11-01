@@ -120,7 +120,7 @@ impl ::std::fmt::Display for Severity {
             Severity::Low => write!(f, "Low"),
             Severity::Medium => write!(f, "Medium"),
             Severity::Undefined => write!(f, "Undefined"),
-            Severity::Unknown(value) => write!(f, "{}", value),
+            Severity::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for DataCatalogType {
             DataCatalogType::Glue => write!(f, "GLUE"),
             DataCatalogType::Hive => write!(f, "HIVE"),
             DataCatalogType::Lambda => write!(f, "LAMBDA"),
-            DataCatalogType::Unknown(value) => write!(f, "{}", value),
+            DataCatalogType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

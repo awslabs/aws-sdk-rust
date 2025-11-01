@@ -46,37 +46,37 @@ impl ::aws_smithy_eventstream::frame::MarshallMessage for StartConversationReque
                 headers.push(::aws_smithy_types::event_stream::Header::new(":event-type", ::aws_smithy_types::event_stream::HeaderValue::String("ConfigurationEvent".into())));
                 headers.push(::aws_smithy_types::event_stream::Header::new(":content-type", ::aws_smithy_types::event_stream::HeaderValue::String("application/json".into())));
                 crate::protocol_serde::shape_start_conversation_request_event_stream::ser_configuration_event_payload(&inner)
-                                            .map_err(|err| ::aws_smithy_eventstream::error::Error::marshalling(format!("{}", err)))?
+                                            .map_err(|err| ::aws_smithy_eventstream::error::Error::marshalling(format!("{err}")))?
             }
             Self::Input::AudioInputEvent(inner) =>  {
                 headers.push(::aws_smithy_types::event_stream::Header::new(":event-type", ::aws_smithy_types::event_stream::HeaderValue::String("AudioInputEvent".into())));
                 headers.push(::aws_smithy_types::event_stream::Header::new(":content-type", ::aws_smithy_types::event_stream::HeaderValue::String("application/json".into())));
                 crate::protocol_serde::shape_start_conversation_request_event_stream::ser_audio_input_event_payload(&inner)
-                                            .map_err(|err| ::aws_smithy_eventstream::error::Error::marshalling(format!("{}", err)))?
+                                            .map_err(|err| ::aws_smithy_eventstream::error::Error::marshalling(format!("{err}")))?
             }
             Self::Input::DtmfInputEvent(inner) =>  {
                 headers.push(::aws_smithy_types::event_stream::Header::new(":event-type", ::aws_smithy_types::event_stream::HeaderValue::String("DTMFInputEvent".into())));
                 headers.push(::aws_smithy_types::event_stream::Header::new(":content-type", ::aws_smithy_types::event_stream::HeaderValue::String("application/json".into())));
                 crate::protocol_serde::shape_start_conversation_request_event_stream::ser_dtmf_input_event_payload(&inner)
-                                            .map_err(|err| ::aws_smithy_eventstream::error::Error::marshalling(format!("{}", err)))?
+                                            .map_err(|err| ::aws_smithy_eventstream::error::Error::marshalling(format!("{err}")))?
             }
             Self::Input::TextInputEvent(inner) =>  {
                 headers.push(::aws_smithy_types::event_stream::Header::new(":event-type", ::aws_smithy_types::event_stream::HeaderValue::String("TextInputEvent".into())));
                 headers.push(::aws_smithy_types::event_stream::Header::new(":content-type", ::aws_smithy_types::event_stream::HeaderValue::String("application/json".into())));
                 crate::protocol_serde::shape_start_conversation_request_event_stream::ser_text_input_event_payload(&inner)
-                                            .map_err(|err| ::aws_smithy_eventstream::error::Error::marshalling(format!("{}", err)))?
+                                            .map_err(|err| ::aws_smithy_eventstream::error::Error::marshalling(format!("{err}")))?
             }
             Self::Input::PlaybackCompletionEvent(inner) =>  {
                 headers.push(::aws_smithy_types::event_stream::Header::new(":event-type", ::aws_smithy_types::event_stream::HeaderValue::String("PlaybackCompletionEvent".into())));
                 headers.push(::aws_smithy_types::event_stream::Header::new(":content-type", ::aws_smithy_types::event_stream::HeaderValue::String("application/json".into())));
                 crate::protocol_serde::shape_start_conversation_request_event_stream::ser_playback_completion_event_payload(&inner)
-                                            .map_err(|err| ::aws_smithy_eventstream::error::Error::marshalling(format!("{}", err)))?
+                                            .map_err(|err| ::aws_smithy_eventstream::error::Error::marshalling(format!("{err}")))?
             }
             Self::Input::DisconnectionEvent(inner) =>  {
                 headers.push(::aws_smithy_types::event_stream::Header::new(":event-type", ::aws_smithy_types::event_stream::HeaderValue::String("DisconnectionEvent".into())));
                 headers.push(::aws_smithy_types::event_stream::Header::new(":content-type", ::aws_smithy_types::event_stream::HeaderValue::String("application/json".into())));
                 crate::protocol_serde::shape_start_conversation_request_event_stream::ser_disconnection_event_payload(&inner)
-                                            .map_err(|err| ::aws_smithy_eventstream::error::Error::marshalling(format!("{}", err)))?
+                                            .map_err(|err| ::aws_smithy_eventstream::error::Error::marshalling(format!("{err}")))?
             }
             Self::Input::Unknown => return Err(
                                             ::aws_smithy_eventstream::error::Error::marshalling("Cannot serialize `StartConversationRequestEventStream::Unknown` for the request. The `Unknown` variant is intended for responses only. It occurs when an outdated client is used after a new enum variant was added on the server side.".to_owned())
@@ -112,8 +112,7 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for StartConversationRes
                         crate::protocol_serde::shape_playback_interruption_event::de_playback_interruption_event_payload(&message.payload()[..])
                             .map_err(|err| {
                                 ::aws_smithy_eventstream::error::Error::unmarshalling(format!(
-                                    "failed to unmarshall PlaybackInterruptionEvent: {}",
-                                    err
+                                    "failed to unmarshall PlaybackInterruptionEvent: {err}"
                                 ))
                             })?;
                     Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Event(
@@ -123,7 +122,7 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for StartConversationRes
                 "TranscriptEvent" => {
                     let parsed =
                         crate::protocol_serde::shape_transcript_event::de_transcript_event_payload(&message.payload()[..]).map_err(|err| {
-                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall TranscriptEvent: {}", err))
+                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall TranscriptEvent: {err}"))
                         })?;
                     Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Event(
                         crate::types::StartConversationResponseEventStream::TranscriptEvent(parsed),
@@ -132,7 +131,7 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for StartConversationRes
                 "IntentResultEvent" => {
                     let parsed =
                         crate::protocol_serde::shape_intent_result_event::de_intent_result_event_payload(&message.payload()[..]).map_err(|err| {
-                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall IntentResultEvent: {}", err))
+                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall IntentResultEvent: {err}"))
                         })?;
                     Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Event(
                         crate::types::StartConversationResponseEventStream::IntentResultEvent(parsed),
@@ -141,7 +140,7 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for StartConversationRes
                 "TextResponseEvent" => {
                     let parsed =
                         crate::protocol_serde::shape_text_response_event::de_text_response_event_payload(&message.payload()[..]).map_err(|err| {
-                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall TextResponseEvent: {}", err))
+                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall TextResponseEvent: {err}"))
                         })?;
                     Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Event(
                         crate::types::StartConversationResponseEventStream::TextResponseEvent(parsed),
@@ -149,7 +148,7 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for StartConversationRes
                 }
                 "AudioResponseEvent" => {
                     let parsed = crate::protocol_serde::shape_audio_response_event::de_audio_response_event_payload(&message.payload()[..]).map_err(
-                        |err| ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall AudioResponseEvent: {}", err)),
+                        |err| ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall AudioResponseEvent: {err}")),
                     )?;
                     Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Event(
                         crate::types::StartConversationResponseEventStream::AudioResponseEvent(parsed),
@@ -157,7 +156,7 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for StartConversationRes
                 }
                 "HeartbeatEvent" => {
                     let parsed = crate::protocol_serde::shape_heartbeat_event::de_heartbeat_event_payload(&message.payload()[..]).map_err(|err| {
-                        ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall HeartbeatEvent: {}", err))
+                        ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall HeartbeatEvent: {err}"))
                     })?;
                     Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Event(
                         crate::types::StartConversationResponseEventStream::HeartbeatEvent(parsed),
@@ -184,14 +183,14 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for StartConversationRes
                             builder,
                         )
                         .map_err(|err| {
-                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall AccessDeniedException: {}", err))
+                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall AccessDeniedException: {err}"))
                         })?;
                         builder.set_meta(Some(generic));
                         return Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
                             crate::types::error::StartConversationResponseEventStreamError::AccessDeniedException(
                                 crate::serde_util::access_denied_exception_correct_errors(builder)
                                     .build()
-                                    .map_err(|err| ::aws_smithy_eventstream::error::Error::unmarshalling(format!("{}", err)))?,
+                                    .map_err(|err| ::aws_smithy_eventstream::error::Error::unmarshalling(format!("{err}")))?,
                             ),
                         ));
                     }
@@ -202,14 +201,14 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for StartConversationRes
                             builder,
                         )
                         .map_err(|err| {
-                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall ResourceNotFoundException: {}", err))
+                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall ResourceNotFoundException: {err}"))
                         })?;
                         builder.set_meta(Some(generic));
                         return Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
                             crate::types::error::StartConversationResponseEventStreamError::ResourceNotFoundException(
                                 crate::serde_util::resource_not_found_exception_correct_errors(builder)
                                     .build()
-                                    .map_err(|err| ::aws_smithy_eventstream::error::Error::unmarshalling(format!("{}", err)))?,
+                                    .map_err(|err| ::aws_smithy_eventstream::error::Error::unmarshalling(format!("{err}")))?,
                             ),
                         ));
                     }
@@ -218,17 +217,14 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for StartConversationRes
                         builder =
                             crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(&message.payload()[..], builder)
                                 .map_err(|err| {
-                                    ::aws_smithy_eventstream::error::Error::unmarshalling(format!(
-                                        "failed to unmarshall ValidationException: {}",
-                                        err
-                                    ))
+                                    ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall ValidationException: {err}"))
                                 })?;
                         builder.set_meta(Some(generic));
                         return Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
                             crate::types::error::StartConversationResponseEventStreamError::ValidationException(
                                 crate::serde_util::validation_exception_correct_errors(builder)
                                     .build()
-                                    .map_err(|err| ::aws_smithy_eventstream::error::Error::unmarshalling(format!("{}", err)))?,
+                                    .map_err(|err| ::aws_smithy_eventstream::error::Error::unmarshalling(format!("{err}")))?,
                             ),
                         ));
                     }
@@ -237,17 +233,14 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for StartConversationRes
                         builder =
                             crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(&message.payload()[..], builder)
                                 .map_err(|err| {
-                                    ::aws_smithy_eventstream::error::Error::unmarshalling(format!(
-                                        "failed to unmarshall ThrottlingException: {}",
-                                        err
-                                    ))
+                                    ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall ThrottlingException: {err}"))
                                 })?;
                         builder.set_meta(Some(generic));
                         return Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
                             crate::types::error::StartConversationResponseEventStreamError::ThrottlingException(
                                 crate::serde_util::throttling_exception_correct_errors(builder)
                                     .build()
-                                    .map_err(|err| ::aws_smithy_eventstream::error::Error::unmarshalling(format!("{}", err)))?,
+                                    .map_err(|err| ::aws_smithy_eventstream::error::Error::unmarshalling(format!("{err}")))?,
                             ),
                         ));
                     }
@@ -258,14 +251,14 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for StartConversationRes
                             builder,
                         )
                         .map_err(|err| {
-                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall InternalServerException: {}", err))
+                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall InternalServerException: {err}"))
                         })?;
                         builder.set_meta(Some(generic));
                         return Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
                             crate::types::error::StartConversationResponseEventStreamError::InternalServerException(
                                 crate::serde_util::internal_server_exception_correct_errors(builder)
                                     .build()
-                                    .map_err(|err| ::aws_smithy_eventstream::error::Error::unmarshalling(format!("{}", err)))?,
+                                    .map_err(|err| ::aws_smithy_eventstream::error::Error::unmarshalling(format!("{err}")))?,
                             ),
                         ));
                     }
@@ -273,14 +266,14 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for StartConversationRes
                         let mut builder = crate::types::error::builders::ConflictExceptionBuilder::default();
                         builder = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(&message.payload()[..], builder)
                             .map_err(|err| {
-                                ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall ConflictException: {}", err))
+                                ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall ConflictException: {err}"))
                             })?;
                         builder.set_meta(Some(generic));
                         return Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
                             crate::types::error::StartConversationResponseEventStreamError::ConflictException(
                                 crate::serde_util::conflict_exception_correct_errors(builder)
                                     .build()
-                                    .map_err(|err| ::aws_smithy_eventstream::error::Error::unmarshalling(format!("{}", err)))?,
+                                    .map_err(|err| ::aws_smithy_eventstream::error::Error::unmarshalling(format!("{err}")))?,
                             ),
                         ));
                     }
@@ -291,14 +284,14 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for StartConversationRes
                             builder,
                         )
                         .map_err(|err| {
-                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall DependencyFailedException: {}", err))
+                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall DependencyFailedException: {err}"))
                         })?;
                         builder.set_meta(Some(generic));
                         return Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
                             crate::types::error::StartConversationResponseEventStreamError::DependencyFailedException(
                                 crate::serde_util::dependency_failed_exception_correct_errors(builder)
                                     .build()
-                                    .map_err(|err| ::aws_smithy_eventstream::error::Error::unmarshalling(format!("{}", err)))?,
+                                    .map_err(|err| ::aws_smithy_eventstream::error::Error::unmarshalling(format!("{err}")))?,
                             ),
                         ));
                     }
@@ -307,17 +300,14 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for StartConversationRes
                         builder =
                             crate::protocol_serde::shape_bad_gateway_exception::de_bad_gateway_exception_json_err(&message.payload()[..], builder)
                                 .map_err(|err| {
-                                    ::aws_smithy_eventstream::error::Error::unmarshalling(format!(
-                                        "failed to unmarshall BadGatewayException: {}",
-                                        err
-                                    ))
+                                    ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall BadGatewayException: {err}"))
                                 })?;
                         builder.set_meta(Some(generic));
                         return Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
                             crate::types::error::StartConversationResponseEventStreamError::BadGatewayException(
                                 crate::serde_util::bad_gateway_exception_correct_errors(builder)
                                     .build()
-                                    .map_err(|err| ::aws_smithy_eventstream::error::Error::unmarshalling(format!("{}", err)))?,
+                                    .map_err(|err| ::aws_smithy_eventstream::error::Error::unmarshalling(format!("{err}")))?,
                             ),
                         ));
                     }
@@ -329,8 +319,7 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for StartConversationRes
             }
             value => {
                 return Err(::aws_smithy_eventstream::error::Error::unmarshalling(format!(
-                    "unrecognized :message-type: {}",
-                    value
+                    "unrecognized :message-type: {value}"
                 )));
             }
         }

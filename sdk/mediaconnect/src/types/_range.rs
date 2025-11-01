@@ -108,7 +108,7 @@ impl ::std::fmt::Display for Range {
             Range::Full => write!(f, "FULL"),
             Range::Fullprotect => write!(f, "FULLPROTECT"),
             Range::Narrow => write!(f, "NARROW"),
-            Range::Unknown(value) => write!(f, "{}", value),
+            Range::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

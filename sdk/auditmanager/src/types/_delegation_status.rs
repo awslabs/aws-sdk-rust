@@ -108,7 +108,7 @@ impl ::std::fmt::Display for DelegationStatus {
             DelegationStatus::Complete => write!(f, "COMPLETE"),
             DelegationStatus::InProgress => write!(f, "IN_PROGRESS"),
             DelegationStatus::UnderReview => write!(f, "UNDER_REVIEW"),
-            DelegationStatus::Unknown(value) => write!(f, "{}", value),
+            DelegationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

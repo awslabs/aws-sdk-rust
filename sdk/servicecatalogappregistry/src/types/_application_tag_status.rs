@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ApplicationTagStatus {
             ApplicationTagStatus::Failure => write!(f, "FAILURE"),
             ApplicationTagStatus::InProgress => write!(f, "IN_PROGRESS"),
             ApplicationTagStatus::Success => write!(f, "SUCCESS"),
-            ApplicationTagStatus::Unknown(value) => write!(f, "{}", value),
+            ApplicationTagStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

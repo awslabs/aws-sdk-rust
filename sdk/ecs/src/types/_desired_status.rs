@@ -108,7 +108,7 @@ impl ::std::fmt::Display for DesiredStatus {
             DesiredStatus::Pending => write!(f, "PENDING"),
             DesiredStatus::Running => write!(f, "RUNNING"),
             DesiredStatus::Stopped => write!(f, "STOPPED"),
-            DesiredStatus::Unknown(value) => write!(f, "{}", value),
+            DesiredStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

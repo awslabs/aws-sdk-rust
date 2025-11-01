@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ModelCardSortBy {
         match self {
             ModelCardSortBy::CreationTime => write!(f, "CreationTime"),
             ModelCardSortBy::Name => write!(f, "Name"),
-            ModelCardSortBy::Unknown(value) => write!(f, "{}", value),
+            ModelCardSortBy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

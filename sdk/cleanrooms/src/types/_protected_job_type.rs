@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ProtectedJobType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ProtectedJobType::Pyspark => write!(f, "PYSPARK"),
-            ProtectedJobType::Unknown(value) => write!(f, "{}", value),
+            ProtectedJobType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for IdentityType {
             IdentityType::Iam => write!(f, "IAM"),
             IdentityType::IamIdentityCenter => write!(f, "IAM_IDENTITY_CENTER"),
             IdentityType::Quicksight => write!(f, "QUICKSIGHT"),
-            IdentityType::Unknown(value) => write!(f, "{}", value),
+            IdentityType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Persona {
         match self {
             Persona::Owner => write!(f, "OWNER"),
             Persona::Viewer => write!(f, "VIEWER"),
-            Persona::Unknown(value) => write!(f, "{}", value),
+            Persona::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AddressRoleType {
             AddressRoleType::BillingAddress => write!(f, "BillingAddress"),
             AddressRoleType::ContactAddress => write!(f, "ContactAddress"),
             AddressRoleType::TaxAddress => write!(f, "TaxAddress"),
-            AddressRoleType::Unknown(value) => write!(f, "{}", value),
+            AddressRoleType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -469,7 +469,7 @@ impl ::std::fmt::Display for InvalidInputErrorCode {
             InvalidInputErrorCode::InvalidUserAttribute => write!(f, "INVALID_USER_ATTRIBUTE"),
             InvalidInputErrorCode::InvalidUserAttributeKey => write!(f, "INVALID_USER_ATTRIBUTE_KEY"),
             InvalidInputErrorCode::InvalidUserAttributeValue => write!(f, "INVALID_USER_ATTRIBUTE_VALUE"),
-            InvalidInputErrorCode::Unknown(value) => write!(f, "{}", value),
+            InvalidInputErrorCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

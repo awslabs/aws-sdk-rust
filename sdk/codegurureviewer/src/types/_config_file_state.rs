@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ConfigFileState {
             ConfigFileState::Absent => write!(f, "Absent"),
             ConfigFileState::Present => write!(f, "Present"),
             ConfigFileState::PresentWithErrors => write!(f, "PresentWithErrors"),
-            ConfigFileState::Unknown(value) => write!(f, "{}", value),
+            ConfigFileState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

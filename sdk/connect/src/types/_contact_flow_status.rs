@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ContactFlowStatus {
         match self {
             ContactFlowStatus::Published => write!(f, "PUBLISHED"),
             ContactFlowStatus::Saved => write!(f, "SAVED"),
-            ContactFlowStatus::Unknown(value) => write!(f, "{}", value),
+            ContactFlowStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

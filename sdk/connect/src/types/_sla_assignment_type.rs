@@ -96,7 +96,7 @@ impl ::std::fmt::Display for SlaAssignmentType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             SlaAssignmentType::Cases => write!(f, "CASES"),
-            SlaAssignmentType::Unknown(value) => write!(f, "{}", value),
+            SlaAssignmentType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

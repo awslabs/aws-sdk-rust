@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FairShare {
         match self {
             FairShare::Disabled => write!(f, "Disabled"),
             FairShare::Enabled => write!(f, "Enabled"),
-            FairShare::Unknown(value) => write!(f, "{}", value),
+            FairShare::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

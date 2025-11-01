@@ -114,7 +114,7 @@ impl ::std::fmt::Display for PredefinedMetricPairType {
             PredefinedMetricPairType::AsgcpuUtilization => write!(f, "ASGCPUUtilization"),
             PredefinedMetricPairType::AsgNetworkIn => write!(f, "ASGNetworkIn"),
             PredefinedMetricPairType::AsgNetworkOut => write!(f, "ASGNetworkOut"),
-            PredefinedMetricPairType::Unknown(value) => write!(f, "{}", value),
+            PredefinedMetricPairType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

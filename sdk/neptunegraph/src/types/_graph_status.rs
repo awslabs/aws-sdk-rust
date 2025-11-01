@@ -168,7 +168,7 @@ impl ::std::fmt::Display for GraphStatus {
             GraphStatus::Stopped => write!(f, "STOPPED"),
             GraphStatus::Stopping => write!(f, "STOPPING"),
             GraphStatus::Updating => write!(f, "UPDATING"),
-            GraphStatus::Unknown(value) => write!(f, "{}", value),
+            GraphStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

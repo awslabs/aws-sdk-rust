@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DocumentHashType {
         match self {
             DocumentHashType::Sha1 => write!(f, "Sha1"),
             DocumentHashType::Sha256 => write!(f, "Sha256"),
-            DocumentHashType::Unknown(value) => write!(f, "{}", value),
+            DocumentHashType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

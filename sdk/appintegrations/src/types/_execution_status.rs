@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ExecutionStatus {
             ExecutionStatus::Completed => write!(f, "COMPLETED"),
             ExecutionStatus::Failed => write!(f, "FAILED"),
             ExecutionStatus::InProgress => write!(f, "IN_PROGRESS"),
-            ExecutionStatus::Unknown(value) => write!(f, "{}", value),
+            ExecutionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

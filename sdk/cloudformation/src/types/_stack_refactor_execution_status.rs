@@ -154,7 +154,7 @@ impl ::std::fmt::Display for StackRefactorExecutionStatus {
             StackRefactorExecutionStatus::RollbackFailed => write!(f, "ROLLBACK_FAILED"),
             StackRefactorExecutionStatus::RollbackInProgress => write!(f, "ROLLBACK_IN_PROGRESS"),
             StackRefactorExecutionStatus::Unavailable => write!(f, "UNAVAILABLE"),
-            StackRefactorExecutionStatus::Unknown(value) => write!(f, "{}", value),
+            StackRefactorExecutionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

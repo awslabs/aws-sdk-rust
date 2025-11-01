@@ -108,7 +108,7 @@ impl ::std::fmt::Display for DescribePackagesFilterName {
             DescribePackagesFilterName::PackageId => write!(f, "PackageID"),
             DescribePackagesFilterName::PackageName => write!(f, "PackageName"),
             DescribePackagesFilterName::PackageStatus => write!(f, "PackageStatus"),
-            DescribePackagesFilterName::Unknown(value) => write!(f, "{}", value),
+            DescribePackagesFilterName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

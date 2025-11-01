@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ScheduledActionFilterName {
         match self {
             ScheduledActionFilterName::ClusterIdentifier => write!(f, "cluster-identifier"),
             ScheduledActionFilterName::IamRole => write!(f, "iam-role"),
-            ScheduledActionFilterName::Unknown(value) => write!(f, "{}", value),
+            ScheduledActionFilterName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

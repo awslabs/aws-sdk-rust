@@ -132,7 +132,7 @@ impl ::std::fmt::Display for SpaceStatus {
             SpaceStatus::Pending => write!(f, "Pending"),
             SpaceStatus::UpdateFailed => write!(f, "Update_Failed"),
             SpaceStatus::Updating => write!(f, "Updating"),
-            SpaceStatus::Unknown(value) => write!(f, "{}", value),
+            SpaceStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CheckAccessNotGrantedResult {
         match self {
             CheckAccessNotGrantedResult::Fail => write!(f, "FAIL"),
             CheckAccessNotGrantedResult::Pass => write!(f, "PASS"),
-            CheckAccessNotGrantedResult::Unknown(value) => write!(f, "{}", value),
+            CheckAccessNotGrantedResult::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -122,7 +122,7 @@ impl ::std::fmt::Display for DiskState {
             DiskState::InUse => write!(f, "in-use"),
             DiskState::Pending => write!(f, "pending"),
             DiskState::UnknownValue => write!(f, "unknown"),
-            DiskState::Unknown(value) => write!(f, "{}", value),
+            DiskState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RouteType {
         match self {
             RouteType::Propagated => write!(f, "PROPAGATED"),
             RouteType::Static => write!(f, "STATIC"),
-            RouteType::Unknown(value) => write!(f, "{}", value),
+            RouteType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

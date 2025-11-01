@@ -36,7 +36,7 @@ impl crate::operation::search_all_related_items::builders::SearchAllRelatedItems
 /// <p><b>Important things to know</b></p>
 /// <ul>
 /// <li>
-/// <p>This API returns case IDs, not complete case objects. To retrieve full case details, you must make additional calls to the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_GetCase.html">GetCase</a> API for each returned case ID.</p></li>
+/// <p>This API returns case identifiers, not complete case objects. To retrieve full case details, you must make additional calls to the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_GetCase.html">GetCase</a> API for each returned case ID.</p></li>
 /// <li>
 /// <p>This API searches across related items content, not case fields. Use the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_SearchCases.html">SearchCases</a> API to search within case field values.</p></li>
 /// </ul>

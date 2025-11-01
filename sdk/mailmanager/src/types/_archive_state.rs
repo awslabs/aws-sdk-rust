@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ArchiveState {
         match self {
             ArchiveState::Active => write!(f, "ACTIVE"),
             ArchiveState::PendingDeletion => write!(f, "PENDING_DELETION"),
-            ArchiveState::Unknown(value) => write!(f, "{}", value),
+            ArchiveState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

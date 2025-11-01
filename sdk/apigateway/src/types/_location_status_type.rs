@@ -102,7 +102,7 @@ impl ::std::fmt::Display for LocationStatusType {
         match self {
             LocationStatusType::Documented => write!(f, "DOCUMENTED"),
             LocationStatusType::Undocumented => write!(f, "UNDOCUMENTED"),
-            LocationStatusType::Unknown(value) => write!(f, "{}", value),
+            LocationStatusType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -120,7 +120,7 @@ impl ::std::fmt::Display for TaskStatus {
             TaskStatus::Queued => write!(f, "QUEUED"),
             TaskStatus::Running => write!(f, "RUNNING"),
             TaskStatus::Unavailable => write!(f, "UNAVAILABLE"),
-            TaskStatus::Unknown(value) => write!(f, "{}", value),
+            TaskStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

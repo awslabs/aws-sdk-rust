@@ -114,7 +114,7 @@ impl ::std::fmt::Display for TreatMissingData {
             TreatMissingData::Ignore => write!(f, "ignore"),
             TreatMissingData::Missing => write!(f, "missing"),
             TreatMissingData::NotBreaching => write!(f, "notBreaching"),
-            TreatMissingData::Unknown(value) => write!(f, "{}", value),
+            TreatMissingData::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

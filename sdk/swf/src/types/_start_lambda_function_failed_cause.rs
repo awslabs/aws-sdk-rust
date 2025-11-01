@@ -96,7 +96,7 @@ impl ::std::fmt::Display for StartLambdaFunctionFailedCause {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             StartLambdaFunctionFailedCause::AssumeRoleFailed => write!(f, "ASSUME_ROLE_FAILED"),
-            StartLambdaFunctionFailedCause::Unknown(value) => write!(f, "{}", value),
+            StartLambdaFunctionFailedCause::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for RegistrationAssociationBehavior {
             RegistrationAssociationBehavior::AssociateAfterComplete => write!(f, "ASSOCIATE_AFTER_COMPLETE"),
             RegistrationAssociationBehavior::AssociateBeforeSubmit => write!(f, "ASSOCIATE_BEFORE_SUBMIT"),
             RegistrationAssociationBehavior::AssociateOnApproval => write!(f, "ASSOCIATE_ON_APPROVAL"),
-            RegistrationAssociationBehavior::Unknown(value) => write!(f, "{}", value),
+            RegistrationAssociationBehavior::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

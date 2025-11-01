@@ -126,7 +126,7 @@ impl ::std::fmt::Display for IdentityProviderTypeType {
             IdentityProviderTypeType::Oidc => write!(f, "OIDC"),
             IdentityProviderTypeType::Saml => write!(f, "SAML"),
             IdentityProviderTypeType::SignInWithApple => write!(f, "SignInWithApple"),
-            IdentityProviderTypeType::Unknown(value) => write!(f, "{}", value),
+            IdentityProviderTypeType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

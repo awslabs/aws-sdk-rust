@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ObjectLambdaAllowedFeature {
             ObjectLambdaAllowedFeature::GetObjectRange => write!(f, "GetObject-Range"),
             ObjectLambdaAllowedFeature::HeadObjectPartNumber => write!(f, "HeadObject-PartNumber"),
             ObjectLambdaAllowedFeature::HeadObjectRange => write!(f, "HeadObject-Range"),
-            ObjectLambdaAllowedFeature::Unknown(value) => write!(f, "{}", value),
+            ObjectLambdaAllowedFeature::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

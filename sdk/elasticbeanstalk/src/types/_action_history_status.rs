@@ -110,7 +110,7 @@ impl ::std::fmt::Display for ActionHistoryStatus {
             ActionHistoryStatus::Completed => write!(f, "Completed"),
             ActionHistoryStatus::Failed => write!(f, "Failed"),
             ActionHistoryStatus::UnknownValue => write!(f, "Unknown"),
-            ActionHistoryStatus::Unknown(value) => write!(f, "{}", value),
+            ActionHistoryStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

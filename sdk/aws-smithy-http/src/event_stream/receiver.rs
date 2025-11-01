@@ -456,7 +456,7 @@ mod tests {
                 midpoint + b2 % midpoint,
                 combined.len()
             );
-            println!("[{}, {}], [{}, {}], [{}, {}]", start, boundary1, boundary1, boundary2, boundary2, end);
+            println!("[{start}, {boundary1}], [{boundary1}, {boundary2}], [{boundary2}, {end}]");
 
             let rt = tokio::runtime::Runtime::new().unwrap();
             rt.block_on(async move {

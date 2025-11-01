@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DeploymentReadyAction {
         match self {
             DeploymentReadyAction::ContinueDeployment => write!(f, "CONTINUE_DEPLOYMENT"),
             DeploymentReadyAction::StopDeployment => write!(f, "STOP_DEPLOYMENT"),
-            DeploymentReadyAction::Unknown(value) => write!(f, "{}", value),
+            DeploymentReadyAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

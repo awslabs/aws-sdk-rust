@@ -168,7 +168,7 @@ impl ::std::fmt::Display for SessionActionStatus {
             SessionActionStatus::Running => write!(f, "RUNNING"),
             SessionActionStatus::Scheduled => write!(f, "SCHEDULED"),
             SessionActionStatus::Succeeded => write!(f, "SUCCEEDED"),
-            SessionActionStatus::Unknown(value) => write!(f, "{}", value),
+            SessionActionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

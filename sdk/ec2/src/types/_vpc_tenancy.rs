@@ -96,7 +96,7 @@ impl ::std::fmt::Display for VpcTenancy {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             VpcTenancy::Default => write!(f, "default"),
-            VpcTenancy::Unknown(value) => write!(f, "{}", value),
+            VpcTenancy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

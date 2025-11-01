@@ -191,6 +191,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for BatchImportE
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::batch_import_evidence_to_assessment_control::BatchImportEvidenceToAssessmentControlInput,
                 output: &mut ::std::string::String,

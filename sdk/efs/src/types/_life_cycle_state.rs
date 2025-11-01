@@ -126,7 +126,7 @@ impl ::std::fmt::Display for LifeCycleState {
             LifeCycleState::Deleting => write!(f, "deleting"),
             LifeCycleState::Error => write!(f, "error"),
             LifeCycleState::Updating => write!(f, "updating"),
-            LifeCycleState::Unknown(value) => write!(f, "{}", value),
+            LifeCycleState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -104,7 +104,7 @@ impl ::std::fmt::Display for FeatureActivationsInputPrepareScheduleActions {
         match self {
             FeatureActivationsInputPrepareScheduleActions::Disabled => write!(f, "DISABLED"),
             FeatureActivationsInputPrepareScheduleActions::Enabled => write!(f, "ENABLED"),
-            FeatureActivationsInputPrepareScheduleActions::Unknown(value) => write!(f, "{}", value),
+            FeatureActivationsInputPrepareScheduleActions::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

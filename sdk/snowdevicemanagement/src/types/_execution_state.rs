@@ -132,7 +132,7 @@ impl ::std::fmt::Display for ExecutionState {
             ExecutionState::Rejected => write!(f, "REJECTED"),
             ExecutionState::Succeeded => write!(f, "SUCCEEDED"),
             ExecutionState::TimedOut => write!(f, "TIMED_OUT"),
-            ExecutionState::Unknown(value) => write!(f, "{}", value),
+            ExecutionState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

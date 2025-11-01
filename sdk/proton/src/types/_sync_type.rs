@@ -104,7 +104,7 @@ impl ::std::fmt::Display for SyncType {
         match self {
             SyncType::ServiceSync => write!(f, "SERVICE_SYNC"),
             SyncType::TemplateSync => write!(f, "TEMPLATE_SYNC"),
-            SyncType::Unknown(value) => write!(f, "{}", value),
+            SyncType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

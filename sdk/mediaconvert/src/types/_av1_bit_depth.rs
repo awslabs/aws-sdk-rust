@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Av1BitDepth {
         match self {
             Av1BitDepth::Bit10 => write!(f, "BIT_10"),
             Av1BitDepth::Bit8 => write!(f, "BIT_8"),
-            Av1BitDepth::Unknown(value) => write!(f, "{}", value),
+            Av1BitDepth::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

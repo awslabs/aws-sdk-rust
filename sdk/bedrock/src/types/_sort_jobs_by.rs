@@ -96,7 +96,7 @@ impl ::std::fmt::Display for SortJobsBy {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             SortJobsBy::CreationTime => write!(f, "CreationTime"),
-            SortJobsBy::Unknown(value) => write!(f, "{}", value),
+            SortJobsBy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

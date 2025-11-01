@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ParsingStrategy {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ParsingStrategy::BedrockFoundationModel => write!(f, "BEDROCK_FOUNDATION_MODEL"),
-            ParsingStrategy::Unknown(value) => write!(f, "{}", value),
+            ParsingStrategy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

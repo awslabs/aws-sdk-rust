@@ -99,8 +99,7 @@ impl CredentialProcessProvider {
             .await
             .map_err(|e| {
                 CredentialsError::provider_error(format!(
-                    "Error retrieving credentials from external process: {}",
-                    e
+                    "Error retrieving credentials from external process: {e}",
                 ))
             })?;
 
@@ -118,8 +117,7 @@ impl CredentialProcessProvider {
 
         let output = std::str::from_utf8(&output.stdout).map_err(|e| {
             CredentialsError::provider_error(format!(
-                "Error retrieving credentials from external process: could not decode output as UTF-8: {}",
-                e
+                "Error retrieving credentials from external process: could not decode output as UTF-8: {e}",
             ))
         })?;
 
@@ -132,8 +130,7 @@ impl CredentialProcessProvider {
             })
             .map_err(|invalid| {
                 CredentialsError::provider_error(format!(
-                "Error retrieving credentials from external process, could not parse response: {}",
-                invalid
+                "Error retrieving credentials from external process, could not parse response: {invalid}",
             ))
             })
     }
@@ -235,7 +232,7 @@ pub(crate) fn parse_credential_process_json_credentials(
         Some(version) => {
             return Err(InvalidJsonCredentials::InvalidField {
                 field: "version",
-                err: format!("unknown version number: {}", version).into(),
+                err: format!("unknown version number: {version}").into(),
             })
         }
     }

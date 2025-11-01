@@ -114,7 +114,7 @@ impl ::std::fmt::Display for FileStatusType {
             FileStatusType::Failed => write!(f, "FAILED"),
             FileStatusType::Processing => write!(f, "PROCESSING"),
             FileStatusType::Rejected => write!(f, "REJECTED"),
-            FileStatusType::Unknown(value) => write!(f, "{}", value),
+            FileStatusType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

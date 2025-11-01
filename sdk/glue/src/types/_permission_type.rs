@@ -119,7 +119,7 @@ impl ::std::fmt::Display for PermissionType {
             PermissionType::ColumnPermission => write!(f, "COLUMN_PERMISSION"),
             PermissionType::NestedCellPermission => write!(f, "NESTED_CELL_PERMISSION"),
             PermissionType::NestedPermission => write!(f, "NESTED_PERMISSION"),
-            PermissionType::Unknown(value) => write!(f, "{}", value),
+            PermissionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

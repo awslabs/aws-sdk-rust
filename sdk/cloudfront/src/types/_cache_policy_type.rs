@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CachePolicyType {
         match self {
             CachePolicyType::Custom => write!(f, "custom"),
             CachePolicyType::Managed => write!(f, "managed"),
-            CachePolicyType::Unknown(value) => write!(f, "{}", value),
+            CachePolicyType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

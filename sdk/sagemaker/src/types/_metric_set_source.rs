@@ -108,7 +108,7 @@ impl ::std::fmt::Display for MetricSetSource {
             MetricSetSource::Test => write!(f, "Test"),
             MetricSetSource::Train => write!(f, "Train"),
             MetricSetSource::Validation => write!(f, "Validation"),
-            MetricSetSource::Unknown(value) => write!(f, "{}", value),
+            MetricSetSource::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

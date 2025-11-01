@@ -3,22 +3,30 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetCaseRuleOutput {
-    /// <p>List of detailed case rule information.</p>
+    /// <p>A list of detailed case rule information.</p>
     pub case_rules: ::std::vec::Vec<crate::types::GetCaseRuleResponse>,
-    /// <p>List of case rule errors.</p>
+    /// <p>A list of case rule errors.</p>
     pub errors: ::std::vec::Vec<crate::types::CaseRuleError>,
+    /// <p>A list of unprocessed case rule identifiers.</p>
+    pub unprocessed_case_rules: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl BatchGetCaseRuleOutput {
-    /// <p>List of detailed case rule information.</p>
+    /// <p>A list of detailed case rule information.</p>
     pub fn case_rules(&self) -> &[crate::types::GetCaseRuleResponse] {
         use std::ops::Deref;
         self.case_rules.deref()
     }
-    /// <p>List of case rule errors.</p>
+    /// <p>A list of case rule errors.</p>
     pub fn errors(&self) -> &[crate::types::CaseRuleError] {
         use std::ops::Deref;
         self.errors.deref()
+    }
+    /// <p>A list of unprocessed case rule identifiers.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.unprocessed_case_rules.is_none()`.
+    pub fn unprocessed_case_rules(&self) -> &[::std::string::String] {
+        self.unprocessed_case_rules.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for BatchGetCaseRuleOutput {
@@ -39,6 +47,7 @@ impl BatchGetCaseRuleOutput {
 pub struct BatchGetCaseRuleOutputBuilder {
     pub(crate) case_rules: ::std::option::Option<::std::vec::Vec<crate::types::GetCaseRuleResponse>>,
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::CaseRuleError>>,
+    pub(crate) unprocessed_case_rules: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl BatchGetCaseRuleOutputBuilder {
@@ -46,19 +55,19 @@ impl BatchGetCaseRuleOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_case_rules`](Self::set_case_rules).
     ///
-    /// <p>List of detailed case rule information.</p>
+    /// <p>A list of detailed case rule information.</p>
     pub fn case_rules(mut self, input: crate::types::GetCaseRuleResponse) -> Self {
         let mut v = self.case_rules.unwrap_or_default();
         v.push(input);
         self.case_rules = ::std::option::Option::Some(v);
         self
     }
-    /// <p>List of detailed case rule information.</p>
+    /// <p>A list of detailed case rule information.</p>
     pub fn set_case_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GetCaseRuleResponse>>) -> Self {
         self.case_rules = input;
         self
     }
-    /// <p>List of detailed case rule information.</p>
+    /// <p>A list of detailed case rule information.</p>
     pub fn get_case_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GetCaseRuleResponse>> {
         &self.case_rules
     }
@@ -66,21 +75,41 @@ impl BatchGetCaseRuleOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_errors`](Self::set_errors).
     ///
-    /// <p>List of case rule errors.</p>
+    /// <p>A list of case rule errors.</p>
     pub fn errors(mut self, input: crate::types::CaseRuleError) -> Self {
         let mut v = self.errors.unwrap_or_default();
         v.push(input);
         self.errors = ::std::option::Option::Some(v);
         self
     }
-    /// <p>List of case rule errors.</p>
+    /// <p>A list of case rule errors.</p>
     pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CaseRuleError>>) -> Self {
         self.errors = input;
         self
     }
-    /// <p>List of case rule errors.</p>
+    /// <p>A list of case rule errors.</p>
     pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CaseRuleError>> {
         &self.errors
+    }
+    /// Appends an item to `unprocessed_case_rules`.
+    ///
+    /// To override the contents of this collection use [`set_unprocessed_case_rules`](Self::set_unprocessed_case_rules).
+    ///
+    /// <p>A list of unprocessed case rule identifiers.</p>
+    pub fn unprocessed_case_rules(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.unprocessed_case_rules.unwrap_or_default();
+        v.push(input.into());
+        self.unprocessed_case_rules = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of unprocessed case rule identifiers.</p>
+    pub fn set_unprocessed_case_rules(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.unprocessed_case_rules = input;
+        self
+    }
+    /// <p>A list of unprocessed case rule identifiers.</p>
+    pub fn get_unprocessed_case_rules(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.unprocessed_case_rules
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
@@ -111,6 +140,7 @@ impl BatchGetCaseRuleOutputBuilder {
                     "errors was not specified but it is required when building BatchGetCaseRuleOutput",
                 )
             })?,
+            unprocessed_case_rules: self.unprocessed_case_rules,
             _request_id: self._request_id,
         })
     }

@@ -140,7 +140,7 @@ impl ::std::fmt::Display for TopicFilterAttribute {
             TopicFilterAttribute::QuicksightUser => write!(f, "QUICKSIGHT_USER"),
             TopicFilterAttribute::QuicksightViewerOrOwner => write!(f, "QUICKSIGHT_VIEWER_OR_OWNER"),
             TopicFilterAttribute::TopicName => write!(f, "TOPIC_NAME"),
-            TopicFilterAttribute::Unknown(value) => write!(f, "{}", value),
+            TopicFilterAttribute::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

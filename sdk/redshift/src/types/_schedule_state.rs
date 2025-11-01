@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ScheduleState {
             ScheduleState::Active => write!(f, "ACTIVE"),
             ScheduleState::Failed => write!(f, "FAILED"),
             ScheduleState::Modifying => write!(f, "MODIFYING"),
-            ScheduleState::Unknown(value) => write!(f, "{}", value),
+            ScheduleState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

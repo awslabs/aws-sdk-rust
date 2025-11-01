@@ -114,7 +114,7 @@ impl ::std::fmt::Display for DatasetStatus {
             DatasetStatus::Created => write!(f, "CREATED"),
             DatasetStatus::ImportInProgress => write!(f, "IMPORT_IN_PROGRESS"),
             DatasetStatus::IngestionInProgress => write!(f, "INGESTION_IN_PROGRESS"),
-            DatasetStatus::Unknown(value) => write!(f, "{}", value),
+            DatasetStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -96,7 +96,7 @@ impl ::std::fmt::Display for IdentityStore {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             IdentityStore::Quicksight => write!(f, "QUICKSIGHT"),
-            IdentityStore::Unknown(value) => write!(f, "{}", value),
+            IdentityStore::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

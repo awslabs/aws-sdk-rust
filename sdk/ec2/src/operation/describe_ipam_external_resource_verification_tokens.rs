@@ -182,6 +182,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DescribeIpam
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::describe_ipam_external_resource_verification_tokens::DescribeIpamExternalResourceVerificationTokensInput,
                 output: &mut ::std::string::String,

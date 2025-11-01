@@ -102,7 +102,7 @@ impl ::std::fmt::Display for XavcFlickerAdaptiveQuantization {
         match self {
             XavcFlickerAdaptiveQuantization::Disabled => write!(f, "DISABLED"),
             XavcFlickerAdaptiveQuantization::Enabled => write!(f, "ENABLED"),
-            XavcFlickerAdaptiveQuantization::Unknown(value) => write!(f, "{}", value),
+            XavcFlickerAdaptiveQuantization::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

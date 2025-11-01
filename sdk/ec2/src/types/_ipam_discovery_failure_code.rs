@@ -108,7 +108,7 @@ impl ::std::fmt::Display for IpamDiscoveryFailureCode {
             IpamDiscoveryFailureCode::AssumeRoleFailure => write!(f, "assume-role-failure"),
             IpamDiscoveryFailureCode::ThrottlingFailure => write!(f, "throttling-failure"),
             IpamDiscoveryFailureCode::UnauthorizedFailure => write!(f, "unauthorized-failure"),
-            IpamDiscoveryFailureCode::Unknown(value) => write!(f, "{}", value),
+            IpamDiscoveryFailureCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ThemeState {
         match self {
             ThemeState::Disabled => write!(f, "DISABLED"),
             ThemeState::Enabled => write!(f, "ENABLED"),
-            ThemeState::Unknown(value) => write!(f, "{}", value),
+            ThemeState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

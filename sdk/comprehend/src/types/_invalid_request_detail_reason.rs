@@ -119,7 +119,7 @@ impl ::std::fmt::Display for InvalidRequestDetailReason {
             InvalidRequestDetailReason::PageLimitExceeded => write!(f, "PAGE_LIMIT_EXCEEDED"),
             InvalidRequestDetailReason::TextractAccessDenied => write!(f, "TEXTRACT_ACCESS_DENIED"),
             InvalidRequestDetailReason::UnsupportedDocType => write!(f, "UNSUPPORTED_DOC_TYPE"),
-            InvalidRequestDetailReason::Unknown(value) => write!(f, "{}", value),
+            InvalidRequestDetailReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

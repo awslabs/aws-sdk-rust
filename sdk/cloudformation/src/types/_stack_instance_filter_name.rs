@@ -108,7 +108,7 @@ impl ::std::fmt::Display for StackInstanceFilterName {
             StackInstanceFilterName::DetailedStatus => write!(f, "DETAILED_STATUS"),
             StackInstanceFilterName::DriftStatus => write!(f, "DRIFT_STATUS"),
             StackInstanceFilterName::LastOperationId => write!(f, "LAST_OPERATION_ID"),
-            StackInstanceFilterName::Unknown(value) => write!(f, "{}", value),
+            StackInstanceFilterName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

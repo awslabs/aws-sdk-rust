@@ -104,7 +104,7 @@ impl ::std::fmt::Display for AssetBundleExportJobFolderPropertyToOverride {
         match self {
             AssetBundleExportJobFolderPropertyToOverride::Name => write!(f, "Name"),
             AssetBundleExportJobFolderPropertyToOverride::ParentFolderArn => write!(f, "ParentFolderArn"),
-            AssetBundleExportJobFolderPropertyToOverride::Unknown(value) => write!(f, "{}", value),
+            AssetBundleExportJobFolderPropertyToOverride::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ResourceShareFeatureSet {
             ResourceShareFeatureSet::CreatedFromPolicy => write!(f, "CREATED_FROM_POLICY"),
             ResourceShareFeatureSet::PromotingToStandard => write!(f, "PROMOTING_TO_STANDARD"),
             ResourceShareFeatureSet::Standard => write!(f, "STANDARD"),
-            ResourceShareFeatureSet::Unknown(value) => write!(f, "{}", value),
+            ResourceShareFeatureSet::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

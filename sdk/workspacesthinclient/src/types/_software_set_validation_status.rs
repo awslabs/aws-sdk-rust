@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SoftwareSetValidationStatus {
         match self {
             SoftwareSetValidationStatus::NotValidated => write!(f, "NOT_VALIDATED"),
             SoftwareSetValidationStatus::Validated => write!(f, "VALIDATED"),
-            SoftwareSetValidationStatus::Unknown(value) => write!(f, "{}", value),
+            SoftwareSetValidationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

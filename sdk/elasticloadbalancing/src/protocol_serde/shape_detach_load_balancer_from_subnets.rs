@@ -100,16 +100,14 @@ pub fn de_detach_load_balancer_from_subnets(
     let start_el = decoder.start_el();
     if !(start_el.matches("DetachLoadBalancerFromSubnetsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected DetachLoadBalancerFromSubnetsResponse got {:?}",
-            start_el
+            "invalid root, expected DetachLoadBalancerFromSubnetsResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("DetachLoadBalancerFromSubnetsResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected DetachLoadBalancerFromSubnetsResult got {:?}",
-                start_el
+                "invalid result, expected DetachLoadBalancerFromSubnetsResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

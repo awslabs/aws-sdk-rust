@@ -182,7 +182,7 @@ impl ::std::fmt::Display for EndpointTypesElement {
             EndpointTypesElement::Push => write!(f, "PUSH"),
             EndpointTypesElement::Sms => write!(f, "SMS"),
             EndpointTypesElement::Voice => write!(f, "VOICE"),
-            EndpointTypesElement::Unknown(value) => write!(f, "{}", value),
+            EndpointTypesElement::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

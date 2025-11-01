@@ -114,7 +114,7 @@ impl ::std::fmt::Display for IcebergCompactionStrategy {
             IcebergCompactionStrategy::Binpack => write!(f, "binpack"),
             IcebergCompactionStrategy::Sort => write!(f, "sort"),
             IcebergCompactionStrategy::Zorder => write!(f, "z-order"),
-            IcebergCompactionStrategy::Unknown(value) => write!(f, "{}", value),
+            IcebergCompactionStrategy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

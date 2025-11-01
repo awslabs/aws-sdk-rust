@@ -20,6 +20,8 @@ pub struct VideoCodecSettings {
     pub h265_settings: ::std::option::Option<crate::types::H265Settings>,
     /// Required when you set Codec to the value MPEG2.
     pub mpeg2_settings: ::std::option::Option<crate::types::Mpeg2Settings>,
+    /// Optional settings when you set Codec to the value Passthrough.
+    pub passthrough_settings: ::std::option::Option<crate::types::PassthroughSettings>,
     /// Required when you set Codec to the value PRORES.
     pub prores_settings: ::std::option::Option<crate::types::ProresSettings>,
     /// Required when you set Codec, under VideoDescription&gt;CodecSettings to the value UNCOMPRESSED.
@@ -66,6 +68,10 @@ impl VideoCodecSettings {
     pub fn mpeg2_settings(&self) -> ::std::option::Option<&crate::types::Mpeg2Settings> {
         self.mpeg2_settings.as_ref()
     }
+    /// Optional settings when you set Codec to the value Passthrough.
+    pub fn passthrough_settings(&self) -> ::std::option::Option<&crate::types::PassthroughSettings> {
+        self.passthrough_settings.as_ref()
+    }
     /// Required when you set Codec to the value PRORES.
     pub fn prores_settings(&self) -> ::std::option::Option<&crate::types::ProresSettings> {
         self.prores_settings.as_ref()
@@ -110,6 +116,7 @@ pub struct VideoCodecSettingsBuilder {
     pub(crate) h264_settings: ::std::option::Option<crate::types::H264Settings>,
     pub(crate) h265_settings: ::std::option::Option<crate::types::H265Settings>,
     pub(crate) mpeg2_settings: ::std::option::Option<crate::types::Mpeg2Settings>,
+    pub(crate) passthrough_settings: ::std::option::Option<crate::types::PassthroughSettings>,
     pub(crate) prores_settings: ::std::option::Option<crate::types::ProresSettings>,
     pub(crate) uncompressed_settings: ::std::option::Option<crate::types::UncompressedSettings>,
     pub(crate) vc3_settings: ::std::option::Option<crate::types::Vc3Settings>,
@@ -230,6 +237,20 @@ impl VideoCodecSettingsBuilder {
     pub fn get_mpeg2_settings(&self) -> &::std::option::Option<crate::types::Mpeg2Settings> {
         &self.mpeg2_settings
     }
+    /// Optional settings when you set Codec to the value Passthrough.
+    pub fn passthrough_settings(mut self, input: crate::types::PassthroughSettings) -> Self {
+        self.passthrough_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// Optional settings when you set Codec to the value Passthrough.
+    pub fn set_passthrough_settings(mut self, input: ::std::option::Option<crate::types::PassthroughSettings>) -> Self {
+        self.passthrough_settings = input;
+        self
+    }
+    /// Optional settings when you set Codec to the value Passthrough.
+    pub fn get_passthrough_settings(&self) -> &::std::option::Option<crate::types::PassthroughSettings> {
+        &self.passthrough_settings
+    }
     /// Required when you set Codec to the value PRORES.
     pub fn prores_settings(mut self, input: crate::types::ProresSettings) -> Self {
         self.prores_settings = ::std::option::Option::Some(input);
@@ -325,6 +346,7 @@ impl VideoCodecSettingsBuilder {
             h264_settings: self.h264_settings,
             h265_settings: self.h265_settings,
             mpeg2_settings: self.mpeg2_settings,
+            passthrough_settings: self.passthrough_settings,
             prores_settings: self.prores_settings,
             uncompressed_settings: self.uncompressed_settings,
             vc3_settings: self.vc3_settings,

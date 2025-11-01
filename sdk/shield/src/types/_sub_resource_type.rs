@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SubResourceType {
         match self {
             SubResourceType::Ip => write!(f, "IP"),
             SubResourceType::Url => write!(f, "URL"),
-            SubResourceType::Unknown(value) => write!(f, "{}", value),
+            SubResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

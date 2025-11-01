@@ -102,7 +102,7 @@ impl ::std::fmt::Display for LinkDirection {
         match self {
             LinkDirection::Request => write!(f, "REQUEST"),
             LinkDirection::Response => write!(f, "RESPONSE"),
-            LinkDirection::Unknown(value) => write!(f, "{}", value),
+            LinkDirection::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

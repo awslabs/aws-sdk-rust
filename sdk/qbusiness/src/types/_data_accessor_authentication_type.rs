@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DataAccessorAuthenticationType {
         match self {
             DataAccessorAuthenticationType::AwsIamIdcAuthCode => write!(f, "AWS_IAM_IDC_AUTH_CODE"),
             DataAccessorAuthenticationType::AwsIamIdcTti => write!(f, "AWS_IAM_IDC_TTI"),
-            DataAccessorAuthenticationType::Unknown(value) => write!(f, "{}", value),
+            DataAccessorAuthenticationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

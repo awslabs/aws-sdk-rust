@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SlotConstraint {
         match self {
             SlotConstraint::Optional => write!(f, "Optional"),
             SlotConstraint::Required => write!(f, "Required"),
-            SlotConstraint::Unknown(value) => write!(f, "{}", value),
+            SlotConstraint::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for LogLevel {
         match self {
             LogLevel::Error => write!(f, "ERROR"),
             LogLevel::Info => write!(f, "INFO"),
-            LogLevel::Unknown(value) => write!(f, "{}", value),
+            LogLevel::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

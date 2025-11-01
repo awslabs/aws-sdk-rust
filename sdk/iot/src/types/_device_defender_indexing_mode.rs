@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DeviceDefenderIndexingMode {
         match self {
             DeviceDefenderIndexingMode::Off => write!(f, "OFF"),
             DeviceDefenderIndexingMode::Violations => write!(f, "VIOLATIONS"),
-            DeviceDefenderIndexingMode::Unknown(value) => write!(f, "{}", value),
+            DeviceDefenderIndexingMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FeatureStatus {
         match self {
             FeatureStatus::Available => write!(f, "AVAILABLE"),
             FeatureStatus::Updating => write!(f, "UPDATING"),
-            FeatureStatus::Unknown(value) => write!(f, "{}", value),
+            FeatureStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

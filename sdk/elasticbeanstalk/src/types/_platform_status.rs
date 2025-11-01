@@ -120,7 +120,7 @@ impl ::std::fmt::Display for PlatformStatus {
             PlatformStatus::Deleting => write!(f, "Deleting"),
             PlatformStatus::Failed => write!(f, "Failed"),
             PlatformStatus::Ready => write!(f, "Ready"),
-            PlatformStatus::Unknown(value) => write!(f, "{}", value),
+            PlatformStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

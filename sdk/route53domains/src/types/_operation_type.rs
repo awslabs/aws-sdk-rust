@@ -238,7 +238,7 @@ impl ::std::fmt::Display for OperationType {
             OperationType::TransferOutDomain => write!(f, "TRANSFER_OUT_DOMAIN"),
             OperationType::UpdateDomainContact => write!(f, "UPDATE_DOMAIN_CONTACT"),
             OperationType::UpdateNameserver => write!(f, "UPDATE_NAMESERVER"),
-            OperationType::Unknown(value) => write!(f, "{}", value),
+            OperationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AutomationType {
         match self {
             AutomationType::CrossAccount => write!(f, "CrossAccount"),
             AutomationType::Local => write!(f, "Local"),
-            AutomationType::Unknown(value) => write!(f, "{}", value),
+            AutomationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

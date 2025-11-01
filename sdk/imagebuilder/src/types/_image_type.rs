@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ImageType {
         match self {
             ImageType::Ami => write!(f, "AMI"),
             ImageType::Docker => write!(f, "DOCKER"),
-            ImageType::Unknown(value) => write!(f, "{}", value),
+            ImageType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

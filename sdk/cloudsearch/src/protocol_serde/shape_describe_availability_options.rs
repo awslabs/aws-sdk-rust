@@ -149,16 +149,14 @@ pub fn de_describe_availability_options(
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeAvailabilityOptionsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected DescribeAvailabilityOptionsResponse got {:?}",
-            start_el
+            "invalid root, expected DescribeAvailabilityOptionsResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("DescribeAvailabilityOptionsResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected DescribeAvailabilityOptionsResult got {:?}",
-                start_el
+                "invalid result, expected DescribeAvailabilityOptionsResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

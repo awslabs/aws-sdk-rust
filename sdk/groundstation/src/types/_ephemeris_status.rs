@@ -126,7 +126,7 @@ impl ::std::fmt::Display for EphemerisStatus {
             EphemerisStatus::Expired => write!(f, "EXPIRED"),
             EphemerisStatus::Invalid => write!(f, "INVALID"),
             EphemerisStatus::Validating => write!(f, "VALIDATING"),
-            EphemerisStatus::Unknown(value) => write!(f, "{}", value),
+            EphemerisStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

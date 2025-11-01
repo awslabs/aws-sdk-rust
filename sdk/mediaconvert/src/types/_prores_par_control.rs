@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ProresParControl {
         match self {
             ProresParControl::InitializeFromSource => write!(f, "INITIALIZE_FROM_SOURCE"),
             ProresParControl::Specified => write!(f, "SPECIFIED"),
-            ProresParControl::Unknown(value) => write!(f, "{}", value),
+            ProresParControl::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

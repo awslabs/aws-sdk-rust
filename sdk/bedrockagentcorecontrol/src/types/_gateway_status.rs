@@ -126,7 +126,7 @@ impl ::std::fmt::Display for GatewayStatus {
             GatewayStatus::Ready => write!(f, "READY"),
             GatewayStatus::UpdateUnsuccessful => write!(f, "UPDATE_UNSUCCESSFUL"),
             GatewayStatus::Updating => write!(f, "UPDATING"),
-            GatewayStatus::Unknown(value) => write!(f, "{}", value),
+            GatewayStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

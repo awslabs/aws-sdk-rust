@@ -108,7 +108,7 @@ impl ::std::fmt::Display for FlowErrorCode {
             FlowErrorCode::InternalServer => write!(f, "INTERNAL_SERVER"),
             FlowErrorCode::NodeExecutionFailed => write!(f, "NODE_EXECUTION_FAILED"),
             FlowErrorCode::Validation => write!(f, "VALIDATION"),
-            FlowErrorCode::Unknown(value) => write!(f, "{}", value),
+            FlowErrorCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

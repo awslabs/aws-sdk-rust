@@ -53,8 +53,7 @@ pub fn de_modify_capacity_reservation(
     let start_el = decoder.start_el();
     if !(start_el.matches("ModifyCapacityReservationResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected ModifyCapacityReservationResponse got {:?}",
-            start_el
+            "invalid root, expected ModifyCapacityReservationResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

@@ -96,7 +96,7 @@ impl ::std::fmt::Display for LdapsType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             LdapsType::Client => write!(f, "Client"),
-            LdapsType::Unknown(value) => write!(f, "{}", value),
+            LdapsType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

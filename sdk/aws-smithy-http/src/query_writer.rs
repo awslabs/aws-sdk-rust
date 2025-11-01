@@ -162,7 +162,7 @@ mod test {
         }
 
         if !problematic_chars.is_empty() {
-            panic!("we got some bad bytes here: {:#?}", problematic_chars)
+            panic!("we got some bad bytes here: {problematic_chars:#?}")
         }
     }
 

@@ -203,7 +203,7 @@ impl ::std::fmt::Display for HandlerErrorCode {
             HandlerErrorCode::ServiceTimeout => write!(f, "ServiceTimeout"),
             HandlerErrorCode::Throttling => write!(f, "Throttling"),
             HandlerErrorCode::UnauthorizedTaggingOperation => write!(f, "UnauthorizedTaggingOperation"),
-            HandlerErrorCode::Unknown(value) => write!(f, "{}", value),
+            HandlerErrorCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

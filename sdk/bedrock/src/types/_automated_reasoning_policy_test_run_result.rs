@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AutomatedReasoningPolicyTestRunResult {
         match self {
             AutomatedReasoningPolicyTestRunResult::Failed => write!(f, "FAILED"),
             AutomatedReasoningPolicyTestRunResult::Passed => write!(f, "PASSED"),
-            AutomatedReasoningPolicyTestRunResult::Unknown(value) => write!(f, "{}", value),
+            AutomatedReasoningPolicyTestRunResult::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

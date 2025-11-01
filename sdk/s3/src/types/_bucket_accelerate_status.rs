@@ -102,7 +102,7 @@ impl ::std::fmt::Display for BucketAccelerateStatus {
         match self {
             BucketAccelerateStatus::Enabled => write!(f, "Enabled"),
             BucketAccelerateStatus::Suspended => write!(f, "Suspended"),
-            BucketAccelerateStatus::Unknown(value) => write!(f, "{}", value),
+            BucketAccelerateStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

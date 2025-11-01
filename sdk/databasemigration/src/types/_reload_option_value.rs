@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ReloadOptionValue {
         match self {
             ReloadOptionValue::DataReload => write!(f, "data-reload"),
             ReloadOptionValue::ValidateOnly => write!(f, "validate-only"),
-            ReloadOptionValue::Unknown(value) => write!(f, "{}", value),
+            ReloadOptionValue::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

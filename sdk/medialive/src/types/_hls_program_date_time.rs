@@ -102,7 +102,7 @@ impl ::std::fmt::Display for HlsProgramDateTime {
         match self {
             HlsProgramDateTime::Exclude => write!(f, "EXCLUDE"),
             HlsProgramDateTime::Include => write!(f, "INCLUDE"),
-            HlsProgramDateTime::Unknown(value) => write!(f, "{}", value),
+            HlsProgramDateTime::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

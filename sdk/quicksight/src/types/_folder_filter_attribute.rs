@@ -140,7 +140,7 @@ impl ::std::fmt::Display for FolderFilterAttribute {
             FolderFilterAttribute::ParentFolderArn => write!(f, "PARENT_FOLDER_ARN"),
             FolderFilterAttribute::QuicksightOwner => write!(f, "QUICKSIGHT_OWNER"),
             FolderFilterAttribute::QuicksightViewerOrOwner => write!(f, "QUICKSIGHT_VIEWER_OR_OWNER"),
-            FolderFilterAttribute::Unknown(value) => write!(f, "{}", value),
+            FolderFilterAttribute::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

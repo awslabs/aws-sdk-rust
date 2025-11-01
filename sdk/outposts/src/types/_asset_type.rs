@@ -96,7 +96,7 @@ impl ::std::fmt::Display for AssetType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             AssetType::Compute => write!(f, "COMPUTE"),
-            AssetType::Unknown(value) => write!(f, "{}", value),
+            AssetType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for InclusionAnnotationValue {
         match self {
             InclusionAnnotationValue::Exclude => write!(f, "EXCLUDE"),
             InclusionAnnotationValue::Include => write!(f, "INCLUDE"),
-            InclusionAnnotationValue::Unknown(value) => write!(f, "{}", value),
+            InclusionAnnotationValue::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

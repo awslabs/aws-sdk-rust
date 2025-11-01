@@ -102,7 +102,7 @@ impl ::std::fmt::Display for VoiceAnalyticsConfigurationStatus {
         match self {
             VoiceAnalyticsConfigurationStatus::Disabled => write!(f, "Disabled"),
             VoiceAnalyticsConfigurationStatus::Enabled => write!(f, "Enabled"),
-            VoiceAnalyticsConfigurationStatus::Unknown(value) => write!(f, "{}", value),
+            VoiceAnalyticsConfigurationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -265,6 +265,12 @@ pub mod create_ipam_external_resource_verification_token;
 /// Types for the `CreateIpamPool` operation.
 pub mod create_ipam_pool;
 
+/// Types for the `CreateIpamPrefixListResolver` operation.
+pub mod create_ipam_prefix_list_resolver;
+
+/// Types for the `CreateIpamPrefixListResolverTarget` operation.
+pub mod create_ipam_prefix_list_resolver_target;
+
 /// Types for the `CreateIpamResourceDiscovery` operation.
 pub mod create_ipam_resource_discovery;
 
@@ -522,6 +528,12 @@ pub mod delete_ipam_external_resource_verification_token;
 
 /// Types for the `DeleteIpamPool` operation.
 pub mod delete_ipam_pool;
+
+/// Types for the `DeleteIpamPrefixListResolver` operation.
+pub mod delete_ipam_prefix_list_resolver;
+
+/// Types for the `DeleteIpamPrefixListResolverTarget` operation.
+pub mod delete_ipam_prefix_list_resolver_target;
 
 /// Types for the `DeleteIpamResourceDiscovery` operation.
 pub mod delete_ipam_resource_discovery;
@@ -951,6 +963,12 @@ pub mod describe_ipam_external_resource_verification_tokens;
 
 /// Types for the `DescribeIpamPools` operation.
 pub mod describe_ipam_pools;
+
+/// Types for the `DescribeIpamPrefixListResolverTargets` operation.
+pub mod describe_ipam_prefix_list_resolver_targets;
+
+/// Types for the `DescribeIpamPrefixListResolvers` operation.
+pub mod describe_ipam_prefix_list_resolvers;
 
 /// Types for the `DescribeIpamResourceDiscoveries` operation.
 pub mod describe_ipam_resource_discoveries;
@@ -1558,6 +1576,15 @@ pub mod get_ipam_pool_allocations;
 /// Types for the `GetIpamPoolCidrs` operation.
 pub mod get_ipam_pool_cidrs;
 
+/// Types for the `GetIpamPrefixListResolverRules` operation.
+pub mod get_ipam_prefix_list_resolver_rules;
+
+/// Types for the `GetIpamPrefixListResolverVersionEntries` operation.
+pub mod get_ipam_prefix_list_resolver_version_entries;
+
+/// Types for the `GetIpamPrefixListResolverVersions` operation.
+pub mod get_ipam_prefix_list_resolver_versions;
+
 /// Types for the `GetIpamResourceCidrs` operation.
 pub mod get_ipam_resource_cidrs;
 
@@ -1752,6 +1779,12 @@ pub mod modify_ipam;
 
 /// Types for the `ModifyIpamPool` operation.
 pub mod modify_ipam_pool;
+
+/// Types for the `ModifyIpamPrefixListResolver` operation.
+pub mod modify_ipam_prefix_list_resolver;
+
+/// Types for the `ModifyIpamPrefixListResolverTarget` operation.
+pub mod modify_ipam_prefix_list_resolver_target;
 
 /// Types for the `ModifyIpamResourceCidr` operation.
 pub mod modify_ipam_resource_cidr;

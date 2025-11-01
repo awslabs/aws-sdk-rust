@@ -102,7 +102,7 @@ impl ::std::fmt::Display for NotificationType {
         match self {
             NotificationType::Actual => write!(f, "ACTUAL"),
             NotificationType::Forecasted => write!(f, "FORECASTED"),
-            NotificationType::Unknown(value) => write!(f, "{}", value),
+            NotificationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

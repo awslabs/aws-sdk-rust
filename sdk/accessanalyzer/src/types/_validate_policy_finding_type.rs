@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ValidatePolicyFindingType {
             ValidatePolicyFindingType::SecurityWarning => write!(f, "SECURITY_WARNING"),
             ValidatePolicyFindingType::Suggestion => write!(f, "SUGGESTION"),
             ValidatePolicyFindingType::Warning => write!(f, "WARNING"),
-            ValidatePolicyFindingType::Unknown(value) => write!(f, "{}", value),
+            ValidatePolicyFindingType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

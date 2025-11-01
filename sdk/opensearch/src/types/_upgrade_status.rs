@@ -114,7 +114,7 @@ impl ::std::fmt::Display for UpgradeStatus {
             UpgradeStatus::InProgress => write!(f, "IN_PROGRESS"),
             UpgradeStatus::Succeeded => write!(f, "SUCCEEDED"),
             UpgradeStatus::SucceededWithIssues => write!(f, "SUCCEEDED_WITH_ISSUES"),
-            UpgradeStatus::Unknown(value) => write!(f, "{}", value),
+            UpgradeStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

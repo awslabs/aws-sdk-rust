@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ContentType {
         match self {
             ContentType::ApplicationJson => write!(f, "application/json"),
             ContentType::ApplicationXml => write!(f, "application/xml"),
-            ContentType::Unknown(value) => write!(f, "{}", value),
+            ContentType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

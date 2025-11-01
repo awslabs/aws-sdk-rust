@@ -182,6 +182,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DescribeLoca
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::describe_local_gateway_route_table_vpc_associations::DescribeLocalGatewayRouteTableVpcAssociationsInput,
                 output: &mut ::std::string::String,

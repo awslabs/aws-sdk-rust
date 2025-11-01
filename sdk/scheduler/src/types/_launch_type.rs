@@ -108,7 +108,7 @@ impl ::std::fmt::Display for LaunchType {
             LaunchType::Ec2 => write!(f, "EC2"),
             LaunchType::External => write!(f, "EXTERNAL"),
             LaunchType::Fargate => write!(f, "FARGATE"),
-            LaunchType::Unknown(value) => write!(f, "{}", value),
+            LaunchType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

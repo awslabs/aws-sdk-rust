@@ -102,7 +102,7 @@ impl ::std::fmt::Display for LastFrameClippingBehavior {
         match self {
             LastFrameClippingBehavior::ExcludeLastFrame => write!(f, "EXCLUDE_LAST_FRAME"),
             LastFrameClippingBehavior::IncludeLastFrame => write!(f, "INCLUDE_LAST_FRAME"),
-            LastFrameClippingBehavior::Unknown(value) => write!(f, "{}", value),
+            LastFrameClippingBehavior::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

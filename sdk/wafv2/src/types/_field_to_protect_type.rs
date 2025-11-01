@@ -120,7 +120,7 @@ impl ::std::fmt::Display for FieldToProtectType {
             FieldToProtectType::SingleCookie => write!(f, "SINGLE_COOKIE"),
             FieldToProtectType::SingleHeader => write!(f, "SINGLE_HEADER"),
             FieldToProtectType::SingleQueryArgument => write!(f, "SINGLE_QUERY_ARGUMENT"),
-            FieldToProtectType::Unknown(value) => write!(f, "{}", value),
+            FieldToProtectType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

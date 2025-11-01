@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CustomActionAttachmentCriteriaOperator {
         match self {
             CustomActionAttachmentCriteriaOperator::Equals => write!(f, "EQUALS"),
             CustomActionAttachmentCriteriaOperator::HasValue => write!(f, "HAS_VALUE"),
-            CustomActionAttachmentCriteriaOperator::Unknown(value) => write!(f, "{}", value),
+            CustomActionAttachmentCriteriaOperator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

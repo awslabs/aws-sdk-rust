@@ -126,7 +126,7 @@ impl ::std::fmt::Display for State {
             State::Completed => write!(f, "COMPLETED"),
             State::Draft => write!(f, "DRAFT"),
             State::Paused => write!(f, "PAUSED"),
-            State::Unknown(value) => write!(f, "{}", value),
+            State::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

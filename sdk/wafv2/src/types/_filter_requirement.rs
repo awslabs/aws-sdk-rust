@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FilterRequirement {
         match self {
             FilterRequirement::MeetsAll => write!(f, "MEETS_ALL"),
             FilterRequirement::MeetsAny => write!(f, "MEETS_ANY"),
-            FilterRequirement::Unknown(value) => write!(f, "{}", value),
+            FilterRequirement::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for HubSortBy {
             HubSortBy::CreationTime => write!(f, "CreationTime"),
             HubSortBy::HubName => write!(f, "HubName"),
             HubSortBy::HubStatus => write!(f, "HubStatus"),
-            HubSortBy::Unknown(value) => write!(f, "{}", value),
+            HubSortBy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

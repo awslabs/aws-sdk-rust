@@ -112,7 +112,7 @@ impl ::std::fmt::Display for RecordingStrategyType {
             RecordingStrategyType::AllSupportedResourceTypes => write!(f, "ALL_SUPPORTED_RESOURCE_TYPES"),
             RecordingStrategyType::ExclusionByResourceTypes => write!(f, "EXCLUSION_BY_RESOURCE_TYPES"),
             RecordingStrategyType::InclusionByResourceTypes => write!(f, "INCLUSION_BY_RESOURCE_TYPES"),
-            RecordingStrategyType::Unknown(value) => write!(f, "{}", value),
+            RecordingStrategyType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

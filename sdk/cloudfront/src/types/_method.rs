@@ -132,7 +132,7 @@ impl ::std::fmt::Display for Method {
             Method::Patch => write!(f, "PATCH"),
             Method::Post => write!(f, "POST"),
             Method::Put => write!(f, "PUT"),
-            Method::Unknown(value) => write!(f, "{}", value),
+            Method::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

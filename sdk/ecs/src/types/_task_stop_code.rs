@@ -133,7 +133,7 @@ impl ::std::fmt::Display for TaskStopCode {
             TaskStopCode::TaskFailedToStart => write!(f, "TaskFailedToStart"),
             TaskStopCode::TerminationNotice => write!(f, "TerminationNotice"),
             TaskStopCode::UserInitiated => write!(f, "UserInitiated"),
-            TaskStopCode::Unknown(value) => write!(f, "{}", value),
+            TaskStopCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

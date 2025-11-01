@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ContainerDependencyCondition {
             ContainerDependencyCondition::Healthy => write!(f, "HEALTHY"),
             ContainerDependencyCondition::Start => write!(f, "START"),
             ContainerDependencyCondition::Success => write!(f, "SUCCESS"),
-            ContainerDependencyCondition::Unknown(value) => write!(f, "{}", value),
+            ContainerDependencyCondition::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

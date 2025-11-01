@@ -114,7 +114,7 @@ impl ::std::fmt::Display for Vp9FramerateConversionAlgorithm {
             Vp9FramerateConversionAlgorithm::Frameformer => write!(f, "FRAMEFORMER"),
             Vp9FramerateConversionAlgorithm::Interpolate => write!(f, "INTERPOLATE"),
             Vp9FramerateConversionAlgorithm::MaintainFrameCount => write!(f, "MAINTAIN_FRAME_COUNT"),
-            Vp9FramerateConversionAlgorithm::Unknown(value) => write!(f, "{}", value),
+            Vp9FramerateConversionAlgorithm::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

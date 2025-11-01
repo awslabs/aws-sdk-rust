@@ -140,7 +140,7 @@ impl ::std::fmt::Display for FileSystemLifecycle {
             FileSystemLifecycle::Misconfigured => write!(f, "MISCONFIGURED"),
             FileSystemLifecycle::MisconfiguredUnavailable => write!(f, "MISCONFIGURED_UNAVAILABLE"),
             FileSystemLifecycle::Updating => write!(f, "UPDATING"),
-            FileSystemLifecycle::Unknown(value) => write!(f, "{}", value),
+            FileSystemLifecycle::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for Mpeg2Telecine {
             Mpeg2Telecine::Hard => write!(f, "HARD"),
             Mpeg2Telecine::None => write!(f, "NONE"),
             Mpeg2Telecine::Soft => write!(f, "SOFT"),
-            Mpeg2Telecine::Unknown(value) => write!(f, "{}", value),
+            Mpeg2Telecine::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

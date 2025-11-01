@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DomainType {
         match self {
             DomainType::Standard => write!(f, "standard"),
             DomainType::Vpc => write!(f, "vpc"),
-            DomainType::Unknown(value) => write!(f, "{}", value),
+            DomainType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

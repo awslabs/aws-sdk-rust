@@ -114,7 +114,7 @@ impl ::std::fmt::Display for XavcFramerateConversionAlgorithm {
             XavcFramerateConversionAlgorithm::Frameformer => write!(f, "FRAMEFORMER"),
             XavcFramerateConversionAlgorithm::Interpolate => write!(f, "INTERPOLATE"),
             XavcFramerateConversionAlgorithm::MaintainFrameCount => write!(f, "MAINTAIN_FRAME_COUNT"),
-            XavcFramerateConversionAlgorithm::Unknown(value) => write!(f, "{}", value),
+            XavcFramerateConversionAlgorithm::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -120,7 +120,7 @@ impl ::std::fmt::Display for PrincipalMappingStatus {
             PrincipalMappingStatus::Failed => write!(f, "FAILED"),
             PrincipalMappingStatus::Processing => write!(f, "PROCESSING"),
             PrincipalMappingStatus::Succeeded => write!(f, "SUCCEEDED"),
-            PrincipalMappingStatus::Unknown(value) => write!(f, "{}", value),
+            PrincipalMappingStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

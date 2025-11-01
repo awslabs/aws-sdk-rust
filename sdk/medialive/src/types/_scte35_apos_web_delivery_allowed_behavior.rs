@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Scte35AposWebDeliveryAllowedBehavior {
         match self {
             Scte35AposWebDeliveryAllowedBehavior::Follow => write!(f, "FOLLOW"),
             Scte35AposWebDeliveryAllowedBehavior::Ignore => write!(f, "IGNORE"),
-            Scte35AposWebDeliveryAllowedBehavior::Unknown(value) => write!(f, "{}", value),
+            Scte35AposWebDeliveryAllowedBehavior::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

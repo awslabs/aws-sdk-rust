@@ -108,7 +108,7 @@ impl ::std::fmt::Display for DvbSubtitleTeletextSpacing {
             DvbSubtitleTeletextSpacing::Auto => write!(f, "AUTO"),
             DvbSubtitleTeletextSpacing::FixedGrid => write!(f, "FIXED_GRID"),
             DvbSubtitleTeletextSpacing::Proportional => write!(f, "PROPORTIONAL"),
-            DvbSubtitleTeletextSpacing::Unknown(value) => write!(f, "{}", value),
+            DvbSubtitleTeletextSpacing::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MovReference {
         match self {
             MovReference::External => write!(f, "EXTERNAL"),
             MovReference::SelfContained => write!(f, "SELF_CONTAINED"),
-            MovReference::Unknown(value) => write!(f, "{}", value),
+            MovReference::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

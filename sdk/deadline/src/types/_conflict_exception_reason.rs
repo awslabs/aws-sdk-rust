@@ -126,7 +126,7 @@ impl ::std::fmt::Display for ConflictExceptionReason {
             ConflictExceptionReason::ResourceAlreadyExists => write!(f, "RESOURCE_ALREADY_EXISTS"),
             ConflictExceptionReason::ResourceInUse => write!(f, "RESOURCE_IN_USE"),
             ConflictExceptionReason::StatusConflict => write!(f, "STATUS_CONFLICT"),
-            ConflictExceptionReason::Unknown(value) => write!(f, "{}", value),
+            ConflictExceptionReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

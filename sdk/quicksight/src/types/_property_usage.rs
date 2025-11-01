@@ -108,7 +108,7 @@ impl ::std::fmt::Display for PropertyUsage {
             PropertyUsage::Dimension => write!(f, "DIMENSION"),
             PropertyUsage::Inherit => write!(f, "INHERIT"),
             PropertyUsage::Measure => write!(f, "MEASURE"),
-            PropertyUsage::Unknown(value) => write!(f, "{}", value),
+            PropertyUsage::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

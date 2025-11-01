@@ -120,7 +120,7 @@ impl ::std::fmt::Display for PortType {
             PortType::Int32 => write!(f, "INT32"),
             PortType::Media => write!(f, "MEDIA"),
             PortType::String => write!(f, "STRING"),
-            PortType::Unknown(value) => write!(f, "{}", value),
+            PortType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

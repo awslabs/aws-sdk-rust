@@ -108,7 +108,7 @@ impl ::std::fmt::Display for PricingMode {
             PricingMode::Basic => write!(f, "BASIC"),
             PricingMode::Standard => write!(f, "STANDARD"),
             PricingMode::TieredBundle => write!(f, "TIERED_BUNDLE"),
-            PricingMode::Unknown(value) => write!(f, "{}", value),
+            PricingMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

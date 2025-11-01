@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ReportLevel {
         match self {
             ReportLevel::ErrorsOnly => write!(f, "ERRORS_ONLY"),
             ReportLevel::SuccessesAndErrors => write!(f, "SUCCESSES_AND_ERRORS"),
-            ReportLevel::Unknown(value) => write!(f, "{}", value),
+            ReportLevel::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

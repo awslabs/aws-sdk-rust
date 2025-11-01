@@ -108,7 +108,7 @@ impl ::std::fmt::Display for LongTermPricingType {
             LongTermPricingType::OneMonth => write!(f, "OneMonth"),
             LongTermPricingType::OneYear => write!(f, "OneYear"),
             LongTermPricingType::ThreeYear => write!(f, "ThreeYear"),
-            LongTermPricingType::Unknown(value) => write!(f, "{}", value),
+            LongTermPricingType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

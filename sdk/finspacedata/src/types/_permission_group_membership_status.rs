@@ -108,7 +108,7 @@ impl ::std::fmt::Display for PermissionGroupMembershipStatus {
             PermissionGroupMembershipStatus::AdditionInProgress => write!(f, "ADDITION_IN_PROGRESS"),
             PermissionGroupMembershipStatus::AdditionSuccess => write!(f, "ADDITION_SUCCESS"),
             PermissionGroupMembershipStatus::RemovalInProgress => write!(f, "REMOVAL_IN_PROGRESS"),
-            PermissionGroupMembershipStatus::Unknown(value) => write!(f, "{}", value),
+            PermissionGroupMembershipStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

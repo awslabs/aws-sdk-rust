@@ -108,7 +108,7 @@ impl ::std::fmt::Display for HlsIFrameOnlyManifest {
             HlsIFrameOnlyManifest::Exclude => write!(f, "EXCLUDE"),
             HlsIFrameOnlyManifest::Include => write!(f, "INCLUDE"),
             HlsIFrameOnlyManifest::IncludeAsTs => write!(f, "INCLUDE_AS_TS"),
-            HlsIFrameOnlyManifest::Unknown(value) => write!(f, "{}", value),
+            HlsIFrameOnlyManifest::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

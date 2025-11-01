@@ -175,7 +175,7 @@ impl ::std::fmt::Display for PiiEntityType {
             PiiEntityType::Phone => write!(f, "PHONE"),
             PiiEntityType::Pin => write!(f, "PIN"),
             PiiEntityType::Ssn => write!(f, "SSN"),
-            PiiEntityType::Unknown(value) => write!(f, "{}", value),
+            PiiEntityType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

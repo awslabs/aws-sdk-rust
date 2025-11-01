@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ContactMetricName {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ContactMetricName::PositionInQueue => write!(f, "POSITION_IN_QUEUE"),
-            ContactMetricName::Unknown(value) => write!(f, "{}", value),
+            ContactMetricName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

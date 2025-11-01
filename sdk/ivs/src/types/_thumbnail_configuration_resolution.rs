@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ThumbnailConfigurationResolution {
             ThumbnailConfigurationResolution::Hd => write!(f, "HD"),
             ThumbnailConfigurationResolution::LowestResolution => write!(f, "LOWEST_RESOLUTION"),
             ThumbnailConfigurationResolution::Sd => write!(f, "SD"),
-            ThumbnailConfigurationResolution::Unknown(value) => write!(f, "{}", value),
+            ThumbnailConfigurationResolution::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TimePointGranularity {
         match self {
             TimePointGranularity::All => write!(f, "ALL"),
             TimePointGranularity::Specific => write!(f, "SPECIFIC"),
-            TimePointGranularity::Unknown(value) => write!(f, "{}", value),
+            TimePointGranularity::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for MemberAbility {
             MemberAbility::CanQuery => write!(f, "CAN_QUERY"),
             MemberAbility::CanReceiveResults => write!(f, "CAN_RECEIVE_RESULTS"),
             MemberAbility::CanRunJob => write!(f, "CAN_RUN_JOB"),
-            MemberAbility::Unknown(value) => write!(f, "{}", value),
+            MemberAbility::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

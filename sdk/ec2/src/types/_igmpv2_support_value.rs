@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Igmpv2SupportValue {
         match self {
             Igmpv2SupportValue::Disable => write!(f, "disable"),
             Igmpv2SupportValue::Enable => write!(f, "enable"),
-            Igmpv2SupportValue::Unknown(value) => write!(f, "{}", value),
+            Igmpv2SupportValue::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

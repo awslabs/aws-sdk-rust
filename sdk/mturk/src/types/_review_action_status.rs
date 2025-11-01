@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ReviewActionStatus {
             ReviewActionStatus::Failed => write!(f, "Failed"),
             ReviewActionStatus::Intended => write!(f, "Intended"),
             ReviewActionStatus::Succeeded => write!(f, "Succeeded"),
-            ReviewActionStatus::Unknown(value) => write!(f, "{}", value),
+            ReviewActionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

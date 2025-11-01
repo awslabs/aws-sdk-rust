@@ -102,7 +102,7 @@ impl ::std::fmt::Display for IncludeDetail {
         match self {
             IncludeDetail::Full => write!(f, "FULL"),
             IncludeDetail::None => write!(f, "NONE"),
-            IncludeDetail::Unknown(value) => write!(f, "{}", value),
+            IncludeDetail::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

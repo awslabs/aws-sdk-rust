@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ExperimentStopDesiredState {
         match self {
             ExperimentStopDesiredState::Cancelled => write!(f, "CANCELLED"),
             ExperimentStopDesiredState::Completed => write!(f, "COMPLETED"),
-            ExperimentStopDesiredState::Unknown(value) => write!(f, "{}", value),
+            ExperimentStopDesiredState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

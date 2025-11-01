@@ -168,7 +168,7 @@ impl ::std::fmt::Display for JobEventType {
             JobEventType::StartingInstance => write!(f, "STARTING_INSTANCE"),
             JobEventType::UploadingResults => write!(f, "UPLOADING_RESULTS"),
             JobEventType::WaitingForPriority => write!(f, "WAITING_FOR_PRIORITY"),
-            JobEventType::Unknown(value) => write!(f, "{}", value),
+            JobEventType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

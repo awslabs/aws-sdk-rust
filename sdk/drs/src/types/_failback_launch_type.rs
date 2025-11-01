@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FailbackLaunchType {
         match self {
             FailbackLaunchType::Drill => write!(f, "DRILL"),
             FailbackLaunchType::Recovery => write!(f, "RECOVERY"),
-            FailbackLaunchType::Unknown(value) => write!(f, "{}", value),
+            FailbackLaunchType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

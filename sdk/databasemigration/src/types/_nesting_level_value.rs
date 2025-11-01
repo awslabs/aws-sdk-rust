@@ -102,7 +102,7 @@ impl ::std::fmt::Display for NestingLevelValue {
         match self {
             NestingLevelValue::None => write!(f, "none"),
             NestingLevelValue::One => write!(f, "one"),
-            NestingLevelValue::Unknown(value) => write!(f, "{}", value),
+            NestingLevelValue::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

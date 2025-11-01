@@ -108,7 +108,7 @@ impl ::std::fmt::Display for StudioLifecycleConfigSortKey {
             StudioLifecycleConfigSortKey::CreationTime => write!(f, "CreationTime"),
             StudioLifecycleConfigSortKey::LastModifiedTime => write!(f, "LastModifiedTime"),
             StudioLifecycleConfigSortKey::Name => write!(f, "Name"),
-            StudioLifecycleConfigSortKey::Unknown(value) => write!(f, "{}", value),
+            StudioLifecycleConfigSortKey::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

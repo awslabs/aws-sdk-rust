@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ModelSortKey {
         match self {
             ModelSortKey::CreationTime => write!(f, "CreationTime"),
             ModelSortKey::Name => write!(f, "Name"),
-            ModelSortKey::Unknown(value) => write!(f, "{}", value),
+            ModelSortKey::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

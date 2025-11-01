@@ -182,7 +182,7 @@ impl ::std::fmt::Display for LinkStatus {
             LinkStatus::PendingUpdate => write!(f, "PENDING_UPDATE"),
             LinkStatus::Rejected => write!(f, "REJECTED"),
             LinkStatus::Requested => write!(f, "REQUESTED"),
-            LinkStatus::Unknown(value) => write!(f, "{}", value),
+            LinkStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

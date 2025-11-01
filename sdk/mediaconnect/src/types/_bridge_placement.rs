@@ -102,7 +102,7 @@ impl ::std::fmt::Display for BridgePlacement {
         match self {
             BridgePlacement::Available => write!(f, "AVAILABLE"),
             BridgePlacement::Locked => write!(f, "LOCKED"),
-            BridgePlacement::Unknown(value) => write!(f, "{}", value),
+            BridgePlacement::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

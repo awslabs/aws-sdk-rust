@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FeedbackType {
         match self {
             FeedbackType::Negative => write!(f, "Negative"),
             FeedbackType::Positive => write!(f, "Positive"),
-            FeedbackType::Unknown(value) => write!(f, "{}", value),
+            FeedbackType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

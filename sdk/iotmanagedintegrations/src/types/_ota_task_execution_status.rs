@@ -147,7 +147,7 @@ impl ::std::fmt::Display for OtaTaskExecutionStatus {
             OtaTaskExecutionStatus::Removed => write!(f, "REMOVED"),
             OtaTaskExecutionStatus::Succeeded => write!(f, "SUCCEEDED"),
             OtaTaskExecutionStatus::TimedOut => write!(f, "TIMED_OUT"),
-            OtaTaskExecutionStatus::Unknown(value) => write!(f, "{}", value),
+            OtaTaskExecutionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

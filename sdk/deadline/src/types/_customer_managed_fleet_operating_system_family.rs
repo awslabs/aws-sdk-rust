@@ -110,7 +110,7 @@ impl ::std::fmt::Display for CustomerManagedFleetOperatingSystemFamily {
             CustomerManagedFleetOperatingSystemFamily::Linux => write!(f, "LINUX"),
             CustomerManagedFleetOperatingSystemFamily::Macos => write!(f, "MACOS"),
             CustomerManagedFleetOperatingSystemFamily::Windows => write!(f, "WINDOWS"),
-            CustomerManagedFleetOperatingSystemFamily::Unknown(value) => write!(f, "{}", value),
+            CustomerManagedFleetOperatingSystemFamily::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

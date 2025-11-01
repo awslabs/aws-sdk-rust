@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ResourceTagLogicalOperator {
         match self {
             ResourceTagLogicalOperator::And => write!(f, "AND"),
             ResourceTagLogicalOperator::Or => write!(f, "OR"),
-            ResourceTagLogicalOperator::Unknown(value) => write!(f, "{}", value),
+            ResourceTagLogicalOperator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for MissingDataTreatmentOption {
             MissingDataTreatmentOption::Interpolate => write!(f, "INTERPOLATE"),
             MissingDataTreatmentOption::ShowAsBlank => write!(f, "SHOW_AS_BLANK"),
             MissingDataTreatmentOption::ShowAsZero => write!(f, "SHOW_AS_ZERO"),
-            MissingDataTreatmentOption::Unknown(value) => write!(f, "{}", value),
+            MissingDataTreatmentOption::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

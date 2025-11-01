@@ -120,7 +120,7 @@ impl ::std::fmt::Display for TargetGroupStatus {
             TargetGroupStatus::CreateInProgress => write!(f, "CREATE_IN_PROGRESS"),
             TargetGroupStatus::DeleteFailed => write!(f, "DELETE_FAILED"),
             TargetGroupStatus::DeleteInProgress => write!(f, "DELETE_IN_PROGRESS"),
-            TargetGroupStatus::Unknown(value) => write!(f, "{}", value),
+            TargetGroupStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for AccountTakeoverEventActionType {
             AccountTakeoverEventActionType::MfaIfConfigured => write!(f, "MFA_IF_CONFIGURED"),
             AccountTakeoverEventActionType::MfaRequired => write!(f, "MFA_REQUIRED"),
             AccountTakeoverEventActionType::NoAction => write!(f, "NO_ACTION"),
-            AccountTakeoverEventActionType::Unknown(value) => write!(f, "{}", value),
+            AccountTakeoverEventActionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

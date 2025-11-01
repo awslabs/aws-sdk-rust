@@ -114,7 +114,7 @@ impl ::std::fmt::Display for AdMarkers {
             AdMarkers::None => write!(f, "NONE"),
             AdMarkers::Passthrough => write!(f, "PASSTHROUGH"),
             AdMarkers::Scte35Enhanced => write!(f, "SCTE35_ENHANCED"),
-            AdMarkers::Unknown(value) => write!(f, "{}", value),
+            AdMarkers::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

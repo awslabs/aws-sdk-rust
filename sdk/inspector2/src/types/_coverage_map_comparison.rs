@@ -96,7 +96,7 @@ impl ::std::fmt::Display for CoverageMapComparison {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             CoverageMapComparison::Equals => write!(f, "EQUALS"),
-            CoverageMapComparison::Unknown(value) => write!(f, "{}", value),
+            CoverageMapComparison::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

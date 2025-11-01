@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FailureCode {
         match self {
             FailureCode::ClientError => write!(f, "CLIENT_ERROR"),
             FailureCode::ServerFault => write!(f, "SERVER_FAULT"),
-            FailureCode::Unknown(value) => write!(f, "{}", value),
+            FailureCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

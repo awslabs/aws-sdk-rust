@@ -126,7 +126,7 @@ impl ::std::fmt::Display for StatusType {
             StatusType::Stopped => write!(f, "STOPPED"),
             StatusType::Succeeded => write!(f, "SUCCEEDED"),
             StatusType::TimedOut => write!(f, "TIMED_OUT"),
-            StatusType::Unknown(value) => write!(f, "{}", value),
+            StatusType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

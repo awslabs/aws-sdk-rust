@@ -108,7 +108,7 @@ impl ::std::fmt::Display for DetailStatus {
             DetailStatus::Available => write!(f, "AVAILABLE"),
             DetailStatus::Processing => write!(f, "PROCESSING"),
             DetailStatus::Unavailable => write!(f, "UNAVAILABLE"),
-            DetailStatus::Unknown(value) => write!(f, "{}", value),
+            DetailStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

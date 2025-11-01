@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PhoneNumberType {
         match self {
             PhoneNumberType::Local => write!(f, "Local"),
             PhoneNumberType::TollFree => write!(f, "TollFree"),
-            PhoneNumberType::Unknown(value) => write!(f, "{}", value),
+            PhoneNumberType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

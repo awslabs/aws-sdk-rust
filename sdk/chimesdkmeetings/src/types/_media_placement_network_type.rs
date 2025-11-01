@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MediaPlacementNetworkType {
         match self {
             MediaPlacementNetworkType::DualStack => write!(f, "DualStack"),
             MediaPlacementNetworkType::Ipv4Only => write!(f, "Ipv4Only"),
-            MediaPlacementNetworkType::Unknown(value) => write!(f, "{}", value),
+            MediaPlacementNetworkType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

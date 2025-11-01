@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MetricsStatus {
         match self {
             MetricsStatus::Disabled => write!(f, "Disabled"),
             MetricsStatus::Enabled => write!(f, "Enabled"),
-            MetricsStatus::Unknown(value) => write!(f, "{}", value),
+            MetricsStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

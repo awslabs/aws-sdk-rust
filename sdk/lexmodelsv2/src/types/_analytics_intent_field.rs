@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AnalyticsIntentField {
             AnalyticsIntentField::IntentEndState => write!(f, "IntentEndState"),
             AnalyticsIntentField::IntentLevel => write!(f, "IntentLevel"),
             AnalyticsIntentField::IntentName => write!(f, "IntentName"),
-            AnalyticsIntentField::Unknown(value) => write!(f, "{}", value),
+            AnalyticsIntentField::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

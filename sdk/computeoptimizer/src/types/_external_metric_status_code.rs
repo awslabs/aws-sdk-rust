@@ -161,7 +161,7 @@ impl ::std::fmt::Display for ExternalMetricStatusCode {
             ExternalMetricStatusCode::IntegrationSuccess => write!(f, "INTEGRATION_SUCCESS"),
             ExternalMetricStatusCode::NewrelicIntegrationError => write!(f, "NEWRELIC_INTEGRATION_ERROR"),
             ExternalMetricStatusCode::NoExternalMetricSet => write!(f, "NO_EXTERNAL_METRIC_SET"),
-            ExternalMetricStatusCode::Unknown(value) => write!(f, "{}", value),
+            ExternalMetricStatusCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

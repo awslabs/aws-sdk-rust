@@ -114,7 +114,7 @@ impl ::std::fmt::Display for DetectMitigationActionsTaskStatus {
             DetectMitigationActionsTaskStatus::Failed => write!(f, "FAILED"),
             DetectMitigationActionsTaskStatus::InProgress => write!(f, "IN_PROGRESS"),
             DetectMitigationActionsTaskStatus::Successful => write!(f, "SUCCESSFUL"),
-            DetectMitigationActionsTaskStatus::Unknown(value) => write!(f, "{}", value),
+            DetectMitigationActionsTaskStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

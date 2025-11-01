@@ -132,7 +132,7 @@ impl ::std::fmt::Display for FilterOperation {
             FilterOperation::Lt => write!(f, "LT"),
             FilterOperation::Lte => write!(f, "LTE"),
             FilterOperation::Regex => write!(f, "REGEX"),
-            FilterOperation::Unknown(value) => write!(f, "{}", value),
+            FilterOperation::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

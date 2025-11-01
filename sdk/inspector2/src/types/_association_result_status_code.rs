@@ -133,7 +133,7 @@ impl ::std::fmt::Display for AssociationResultStatusCode {
             AssociationResultStatusCode::QuotaExceeded => write!(f, "QUOTA_EXCEEDED"),
             AssociationResultStatusCode::ResourceNotFound => write!(f, "RESOURCE_NOT_FOUND"),
             AssociationResultStatusCode::ScanConfigurationNotFound => write!(f, "SCAN_CONFIGURATION_NOT_FOUND"),
-            AssociationResultStatusCode::Unknown(value) => write!(f, "{}", value),
+            AssociationResultStatusCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

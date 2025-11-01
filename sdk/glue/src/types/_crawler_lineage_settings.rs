@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CrawlerLineageSettings {
         match self {
             CrawlerLineageSettings::Disable => write!(f, "DISABLE"),
             CrawlerLineageSettings::Enable => write!(f, "ENABLE"),
-            CrawlerLineageSettings::Unknown(value) => write!(f, "{}", value),
+            CrawlerLineageSettings::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

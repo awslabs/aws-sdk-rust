@@ -154,7 +154,7 @@ impl ::std::fmt::Display for TimecodeBurninPosition {
             TimecodeBurninPosition::TopCenter => write!(f, "TOP_CENTER"),
             TimecodeBurninPosition::TopLeft => write!(f, "TOP_LEFT"),
             TimecodeBurninPosition::TopRight => write!(f, "TOP_RIGHT"),
-            TimecodeBurninPosition::Unknown(value) => write!(f, "{}", value),
+            TimecodeBurninPosition::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

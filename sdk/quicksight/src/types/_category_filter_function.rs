@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CategoryFilterFunction {
         match self {
             CategoryFilterFunction::Contains => write!(f, "CONTAINS"),
             CategoryFilterFunction::Exact => write!(f, "EXACT"),
-            CategoryFilterFunction::Unknown(value) => write!(f, "{}", value),
+            CategoryFilterFunction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

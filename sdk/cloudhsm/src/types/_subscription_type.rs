@@ -108,7 +108,7 @@ impl ::std::fmt::Display for SubscriptionType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             SubscriptionType::Production => write!(f, "PRODUCTION"),
-            SubscriptionType::Unknown(value) => write!(f, "{}", value),
+            SubscriptionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DvbSubtitleStylePassthrough {
         match self {
             DvbSubtitleStylePassthrough::Disabled => write!(f, "DISABLED"),
             DvbSubtitleStylePassthrough::Enabled => write!(f, "ENABLED"),
-            DvbSubtitleStylePassthrough::Unknown(value) => write!(f, "{}", value),
+            DvbSubtitleStylePassthrough::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

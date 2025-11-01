@@ -132,7 +132,7 @@ impl ::std::fmt::Display for RouteServerEndpointState {
             RouteServerEndpointState::Failed => write!(f, "failed"),
             RouteServerEndpointState::Failing => write!(f, "failing"),
             RouteServerEndpointState::Pending => write!(f, "pending"),
-            RouteServerEndpointState::Unknown(value) => write!(f, "{}", value),
+            RouteServerEndpointState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

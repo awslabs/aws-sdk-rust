@@ -120,7 +120,7 @@ impl ::std::fmt::Display for WorkspaceDirectoryState {
             WorkspaceDirectoryState::Error => write!(f, "ERROR"),
             WorkspaceDirectoryState::Registered => write!(f, "REGISTERED"),
             WorkspaceDirectoryState::Registering => write!(f, "REGISTERING"),
-            WorkspaceDirectoryState::Unknown(value) => write!(f, "{}", value),
+            WorkspaceDirectoryState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

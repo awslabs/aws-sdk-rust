@@ -103,7 +103,7 @@ impl ::std::fmt::Display for ServiceConnectAccessLoggingFormat {
         match self {
             ServiceConnectAccessLoggingFormat::Json => write!(f, "JSON"),
             ServiceConnectAccessLoggingFormat::Text => write!(f, "TEXT"),
-            ServiceConnectAccessLoggingFormat::Unknown(value) => write!(f, "{}", value),
+            ServiceConnectAccessLoggingFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

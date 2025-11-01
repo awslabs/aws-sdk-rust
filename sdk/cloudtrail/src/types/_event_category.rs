@@ -96,7 +96,7 @@ impl ::std::fmt::Display for EventCategory {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             EventCategory::Insight => write!(f, "insight"),
-            EventCategory::Unknown(value) => write!(f, "{}", value),
+            EventCategory::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

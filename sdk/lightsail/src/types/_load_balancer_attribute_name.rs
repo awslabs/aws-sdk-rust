@@ -126,7 +126,7 @@ impl ::std::fmt::Display for LoadBalancerAttributeName {
             LoadBalancerAttributeName::SessionStickinessEnabled => write!(f, "SessionStickinessEnabled"),
             LoadBalancerAttributeName::SessionStickinessLbCookieDurationSeconds => write!(f, "SessionStickiness_LB_CookieDurationSeconds"),
             LoadBalancerAttributeName::TlsPolicyName => write!(f, "TlsPolicyName"),
-            LoadBalancerAttributeName::Unknown(value) => write!(f, "{}", value),
+            LoadBalancerAttributeName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

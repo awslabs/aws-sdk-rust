@@ -96,7 +96,7 @@ impl ::std::fmt::Display for RuleTargetType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             RuleTargetType::DomainUnit => write!(f, "DOMAIN_UNIT"),
-            RuleTargetType::Unknown(value) => write!(f, "{}", value),
+            RuleTargetType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

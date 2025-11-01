@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ListStateFilterAction {
             ListStateFilterAction::Exclude => write!(f, "exclude"),
             ListStateFilterAction::Ignore => write!(f, "ignore"),
             ListStateFilterAction::Include => write!(f, "include"),
-            ListStateFilterAction::Unknown(value) => write!(f, "{}", value),
+            ListStateFilterAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

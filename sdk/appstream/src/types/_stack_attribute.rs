@@ -175,7 +175,7 @@ impl ::std::fmt::Display for StackAttribute {
             StackAttribute::StreamingExperienceSettings => write!(f, "STREAMING_EXPERIENCE_SETTINGS"),
             StackAttribute::ThemeName => write!(f, "THEME_NAME"),
             StackAttribute::UserSettings => write!(f, "USER_SETTINGS"),
-            StackAttribute::Unknown(value) => write!(f, "{}", value),
+            StackAttribute::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

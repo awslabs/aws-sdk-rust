@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ComputePlatform {
         match self {
             ComputePlatform::Awslambda => write!(f, "AWSLambda"),
             ComputePlatform::Default => write!(f, "Default"),
-            ComputePlatform::Unknown(value) => write!(f, "{}", value),
+            ComputePlatform::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

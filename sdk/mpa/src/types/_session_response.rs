@@ -108,7 +108,7 @@ impl ::std::fmt::Display for SessionResponse {
             SessionResponse::Approved => write!(f, "APPROVED"),
             SessionResponse::NoResponse => write!(f, "NO_RESPONSE"),
             SessionResponse::Rejected => write!(f, "REJECTED"),
-            SessionResponse::Unknown(value) => write!(f, "{}", value),
+            SessionResponse::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

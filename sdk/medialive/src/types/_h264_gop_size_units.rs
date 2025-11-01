@@ -102,7 +102,7 @@ impl ::std::fmt::Display for H264GopSizeUnits {
         match self {
             H264GopSizeUnits::Frames => write!(f, "FRAMES"),
             H264GopSizeUnits::Seconds => write!(f, "SECONDS"),
-            H264GopSizeUnits::Unknown(value) => write!(f, "{}", value),
+            H264GopSizeUnits::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

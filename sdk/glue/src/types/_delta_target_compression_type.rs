@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DeltaTargetCompressionType {
         match self {
             DeltaTargetCompressionType::Snappy => write!(f, "snappy"),
             DeltaTargetCompressionType::Uncompressed => write!(f, "uncompressed"),
-            DeltaTargetCompressionType::Unknown(value) => write!(f, "{}", value),
+            DeltaTargetCompressionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

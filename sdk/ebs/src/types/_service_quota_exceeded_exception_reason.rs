@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ServiceQuotaExceededExceptionReason {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ServiceQuotaExceededExceptionReason::DependencyServiceQuotaExceeded => write!(f, "DEPENDENCY_SERVICE_QUOTA_EXCEEDED"),
-            ServiceQuotaExceededExceptionReason::Unknown(value) => write!(f, "{}", value),
+            ServiceQuotaExceededExceptionReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AutoMls3DataType {
             AutoMls3DataType::AugmentedManifestFile => write!(f, "AugmentedManifestFile"),
             AutoMls3DataType::ManifestFile => write!(f, "ManifestFile"),
             AutoMls3DataType::S3Prefix => write!(f, "S3Prefix"),
-            AutoMls3DataType::Unknown(value) => write!(f, "{}", value),
+            AutoMls3DataType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

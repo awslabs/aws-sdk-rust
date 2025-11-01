@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CatalogItemStatus {
         match self {
             CatalogItemStatus::Available => write!(f, "AVAILABLE"),
             CatalogItemStatus::Discontinued => write!(f, "DISCONTINUED"),
-            CatalogItemStatus::Unknown(value) => write!(f, "{}", value),
+            CatalogItemStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

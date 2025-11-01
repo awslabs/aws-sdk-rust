@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ApplicationProtocol {
             ApplicationProtocol::Https => write!(f, "HTTPS"),
             ApplicationProtocol::MqttWss => write!(f, "MQTT_WSS"),
             ApplicationProtocol::SecureMqtt => write!(f, "SECURE_MQTT"),
-            ApplicationProtocol::Unknown(value) => write!(f, "{}", value),
+            ApplicationProtocol::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

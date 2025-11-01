@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ReviewPolicyLevel {
         match self {
             ReviewPolicyLevel::Assignment => write!(f, "Assignment"),
             ReviewPolicyLevel::Hit => write!(f, "HIT"),
-            ReviewPolicyLevel::Unknown(value) => write!(f, "{}", value),
+            ReviewPolicyLevel::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

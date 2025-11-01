@@ -114,7 +114,7 @@ impl ::std::fmt::Display for CapacityManagerDataExportStatus {
             CapacityManagerDataExportStatus::Failed => write!(f, "failed"),
             CapacityManagerDataExportStatus::InProgress => write!(f, "in-progress"),
             CapacityManagerDataExportStatus::Pending => write!(f, "pending"),
-            CapacityManagerDataExportStatus::Unknown(value) => write!(f, "{}", value),
+            CapacityManagerDataExportStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

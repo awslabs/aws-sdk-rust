@@ -147,7 +147,7 @@ impl ::std::fmt::Display for WorkspaceImageIngestionProcess {
             WorkspaceImageIngestionProcess::ByolRegular => write!(f, "BYOL_REGULAR"),
             WorkspaceImageIngestionProcess::ByolRegularByop => write!(f, "BYOL_REGULAR_BYOP"),
             WorkspaceImageIngestionProcess::ByolRegularWsp => write!(f, "BYOL_REGULAR_WSP"),
-            WorkspaceImageIngestionProcess::Unknown(value) => write!(f, "{}", value),
+            WorkspaceImageIngestionProcess::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

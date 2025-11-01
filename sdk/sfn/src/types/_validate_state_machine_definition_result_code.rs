@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ValidateStateMachineDefinitionResultCode {
         match self {
             ValidateStateMachineDefinitionResultCode::Fail => write!(f, "FAIL"),
             ValidateStateMachineDefinitionResultCode::Ok => write!(f, "OK"),
-            ValidateStateMachineDefinitionResultCode::Unknown(value) => write!(f, "{}", value),
+            ValidateStateMachineDefinitionResultCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

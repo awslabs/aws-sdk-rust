@@ -120,7 +120,7 @@ impl ::std::fmt::Display for ReverseGeocodeFilterPlaceType {
             ReverseGeocodeFilterPlaceType::Locality => write!(f, "Locality"),
             ReverseGeocodeFilterPlaceType::PointAddress => write!(f, "PointAddress"),
             ReverseGeocodeFilterPlaceType::Street => write!(f, "Street"),
-            ReverseGeocodeFilterPlaceType::Unknown(value) => write!(f, "{}", value),
+            ReverseGeocodeFilterPlaceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

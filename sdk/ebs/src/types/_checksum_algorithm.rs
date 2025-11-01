@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ChecksumAlgorithm {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ChecksumAlgorithm::ChecksumAlgorithmSha256 => write!(f, "SHA256"),
-            ChecksumAlgorithm::Unknown(value) => write!(f, "{}", value),
+            ChecksumAlgorithm::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

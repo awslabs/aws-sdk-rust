@@ -108,7 +108,7 @@ impl ::std::fmt::Display for BucketLogsPermission {
             BucketLogsPermission::FullControl => write!(f, "FULL_CONTROL"),
             BucketLogsPermission::Read => write!(f, "READ"),
             BucketLogsPermission::Write => write!(f, "WRITE"),
-            BucketLogsPermission::Unknown(value) => write!(f, "{}", value),
+            BucketLogsPermission::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

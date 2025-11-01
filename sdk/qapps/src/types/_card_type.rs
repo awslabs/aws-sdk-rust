@@ -120,7 +120,7 @@ impl ::std::fmt::Display for CardType {
             CardType::QPlugin => write!(f, "q-plugin"),
             CardType::QQuery => write!(f, "q-query"),
             CardType::TextInput => write!(f, "text-input"),
-            CardType::Unknown(value) => write!(f, "{}", value),
+            CardType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DeleteUniqueIdErrorType {
         match self {
             DeleteUniqueIdErrorType::ServiceError => write!(f, "SERVICE_ERROR"),
             DeleteUniqueIdErrorType::ValidationError => write!(f, "VALIDATION_ERROR"),
-            DeleteUniqueIdErrorType::Unknown(value) => write!(f, "{}", value),
+            DeleteUniqueIdErrorType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for InventoryDeletionStatus {
         match self {
             InventoryDeletionStatus::Complete => write!(f, "Complete"),
             InventoryDeletionStatus::InProgress => write!(f, "InProgress"),
-            InventoryDeletionStatus::Unknown(value) => write!(f, "{}", value),
+            InventoryDeletionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

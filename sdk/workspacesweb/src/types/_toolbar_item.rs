@@ -120,7 +120,7 @@ impl ::std::fmt::Display for ToolbarItem {
             ToolbarItem::Microphone => write!(f, "Microphone"),
             ToolbarItem::Webcam => write!(f, "Webcam"),
             ToolbarItem::Windows => write!(f, "Windows"),
-            ToolbarItem::Unknown(value) => write!(f, "{}", value),
+            ToolbarItem::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

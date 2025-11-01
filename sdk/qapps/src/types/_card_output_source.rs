@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CardOutputSource {
         match self {
             CardOutputSource::ApprovedSources => write!(f, "approved-sources"),
             CardOutputSource::Llm => write!(f, "llm"),
-            CardOutputSource::Unknown(value) => write!(f, "{}", value),
+            CardOutputSource::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

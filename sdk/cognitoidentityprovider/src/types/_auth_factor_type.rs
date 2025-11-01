@@ -114,7 +114,7 @@ impl ::std::fmt::Display for AuthFactorType {
             AuthFactorType::Password => write!(f, "PASSWORD"),
             AuthFactorType::SmsOtp => write!(f, "SMS_OTP"),
             AuthFactorType::WebAuthn => write!(f, "WEB_AUTHN"),
-            AuthFactorType::Unknown(value) => write!(f, "{}", value),
+            AuthFactorType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

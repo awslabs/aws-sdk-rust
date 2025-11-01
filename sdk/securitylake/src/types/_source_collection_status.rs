@@ -108,7 +108,7 @@ impl ::std::fmt::Display for SourceCollectionStatus {
             SourceCollectionStatus::Collecting => write!(f, "COLLECTING"),
             SourceCollectionStatus::Misconfigured => write!(f, "MISCONFIGURED"),
             SourceCollectionStatus::NotCollecting => write!(f, "NOT_COLLECTING"),
-            SourceCollectionStatus::Unknown(value) => write!(f, "{}", value),
+            SourceCollectionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

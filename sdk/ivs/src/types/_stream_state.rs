@@ -102,7 +102,7 @@ impl ::std::fmt::Display for StreamState {
         match self {
             StreamState::StreamLive => write!(f, "LIVE"),
             StreamState::StreamOffline => write!(f, "OFFLINE"),
-            StreamState::Unknown(value) => write!(f, "{}", value),
+            StreamState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

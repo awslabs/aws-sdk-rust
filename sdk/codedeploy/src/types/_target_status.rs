@@ -134,7 +134,7 @@ impl ::std::fmt::Display for TargetStatus {
             TargetStatus::Skipped => write!(f, "Skipped"),
             TargetStatus::Succeeded => write!(f, "Succeeded"),
             TargetStatus::UnknownValue => write!(f, "Unknown"),
-            TargetStatus::Unknown(value) => write!(f, "{}", value),
+            TargetStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Mpeg2SpatialAdaptiveQuantization {
         match self {
             Mpeg2SpatialAdaptiveQuantization::Disabled => write!(f, "DISABLED"),
             Mpeg2SpatialAdaptiveQuantization::Enabled => write!(f, "ENABLED"),
-            Mpeg2SpatialAdaptiveQuantization::Unknown(value) => write!(f, "{}", value),
+            Mpeg2SpatialAdaptiveQuantization::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

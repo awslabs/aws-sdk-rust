@@ -108,7 +108,7 @@ impl ::std::fmt::Display for LensStatusType {
             LensStatusType::All => write!(f, "ALL"),
             LensStatusType::Draft => write!(f, "DRAFT"),
             LensStatusType::Published => write!(f, "PUBLISHED"),
-            LensStatusType::Unknown(value) => write!(f, "{}", value),
+            LensStatusType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

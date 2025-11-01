@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AccountAttributeName {
         match self {
             AccountAttributeName::DefaultVpc => write!(f, "default-vpc"),
             AccountAttributeName::SupportedPlatforms => write!(f, "supported-platforms"),
-            AccountAttributeName::Unknown(value) => write!(f, "{}", value),
+            AccountAttributeName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ExportFormat {
         match self {
             ExportFormat::DynamodbJson => write!(f, "DYNAMODB_JSON"),
             ExportFormat::Ion => write!(f, "ION"),
-            ExportFormat::Unknown(value) => write!(f, "{}", value),
+            ExportFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

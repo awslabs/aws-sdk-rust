@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FlowCompletionReason {
         match self {
             FlowCompletionReason::InputRequired => write!(f, "INPUT_REQUIRED"),
             FlowCompletionReason::Success => write!(f, "SUCCESS"),
-            FlowCompletionReason::Unknown(value) => write!(f, "{}", value),
+            FlowCompletionReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

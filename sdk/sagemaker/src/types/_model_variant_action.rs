@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ModelVariantAction {
             ModelVariantAction::Promote => write!(f, "Promote"),
             ModelVariantAction::Remove => write!(f, "Remove"),
             ModelVariantAction::Retain => write!(f, "Retain"),
-            ModelVariantAction::Unknown(value) => write!(f, "{}", value),
+            ModelVariantAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

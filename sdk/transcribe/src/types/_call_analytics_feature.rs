@@ -96,7 +96,7 @@ impl ::std::fmt::Display for CallAnalyticsFeature {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             CallAnalyticsFeature::GenerativeSummarization => write!(f, "GENERATIVE_SUMMARIZATION"),
-            CallAnalyticsFeature::Unknown(value) => write!(f, "{}", value),
+            CallAnalyticsFeature::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

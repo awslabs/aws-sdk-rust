@@ -96,7 +96,7 @@ impl ::std::fmt::Display for SchedulerType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             SchedulerType::Slurm => write!(f, "SLURM"),
-            SchedulerType::Unknown(value) => write!(f, "{}", value),
+            SchedulerType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ProresFramerateConversionAlgorithm {
             ProresFramerateConversionAlgorithm::Frameformer => write!(f, "FRAMEFORMER"),
             ProresFramerateConversionAlgorithm::Interpolate => write!(f, "INTERPOLATE"),
             ProresFramerateConversionAlgorithm::MaintainFrameCount => write!(f, "MAINTAIN_FRAME_COUNT"),
-            ProresFramerateConversionAlgorithm::Unknown(value) => write!(f, "{}", value),
+            ProresFramerateConversionAlgorithm::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

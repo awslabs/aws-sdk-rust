@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AppliedStatus {
         match self {
             AppliedStatus::Applied => write!(f, "APPLIED"),
             AppliedStatus::NotApplied => write!(f, "NOT_APPLIED"),
-            AppliedStatus::Unknown(value) => write!(f, "{}", value),
+            AppliedStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

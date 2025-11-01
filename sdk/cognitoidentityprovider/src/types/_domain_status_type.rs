@@ -120,7 +120,7 @@ impl ::std::fmt::Display for DomainStatusType {
             DomainStatusType::Deleting => write!(f, "DELETING"),
             DomainStatusType::Failed => write!(f, "FAILED"),
             DomainStatusType::Updating => write!(f, "UPDATING"),
-            DomainStatusType::Unknown(value) => write!(f, "{}", value),
+            DomainStatusType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

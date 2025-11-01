@@ -116,7 +116,7 @@ impl ::std::fmt::Display for SharedAccess {
             SharedAccess::Internal => write!(f, "INTERNAL"),
             SharedAccess::NotShared => write!(f, "NOT_SHARED"),
             SharedAccess::UnknownValue => write!(f, "UNKNOWN"),
-            SharedAccess::Unknown(value) => write!(f, "{}", value),
+            SharedAccess::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

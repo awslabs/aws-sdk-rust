@@ -102,7 +102,7 @@ impl ::std::fmt::Display for WorkerReplacementStrategy {
         match self {
             WorkerReplacementStrategy::Forced => write!(f, "FORCED"),
             WorkerReplacementStrategy::Graceful => write!(f, "GRACEFUL"),
-            WorkerReplacementStrategy::Unknown(value) => write!(f, "{}", value),
+            WorkerReplacementStrategy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

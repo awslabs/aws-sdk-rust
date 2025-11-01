@@ -154,7 +154,7 @@ impl ::std::fmt::Display for DataCatalogStatus {
             DataCatalogStatus::DeleteComplete => write!(f, "DELETE_COMPLETE"),
             DataCatalogStatus::DeleteFailed => write!(f, "DELETE_FAILED"),
             DataCatalogStatus::DeleteInProgress => write!(f, "DELETE_IN_PROGRESS"),
-            DataCatalogStatus::Unknown(value) => write!(f, "{}", value),
+            DataCatalogStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for EncryptedLogGroupStrategy {
         match self {
             EncryptedLogGroupStrategy::Allow => write!(f, "ALLOW"),
             EncryptedLogGroupStrategy::Skip => write!(f, "SKIP"),
-            EncryptedLogGroupStrategy::Unknown(value) => write!(f, "{}", value),
+            EncryptedLogGroupStrategy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

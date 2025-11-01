@@ -147,7 +147,7 @@ impl ::std::fmt::Display for InstanceFleetState {
             InstanceFleetState::Suspended => write!(f, "SUSPENDED"),
             InstanceFleetState::Terminated => write!(f, "TERMINATED"),
             InstanceFleetState::Terminating => write!(f, "TERMINATING"),
-            InstanceFleetState::Unknown(value) => write!(f, "{}", value),
+            InstanceFleetState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

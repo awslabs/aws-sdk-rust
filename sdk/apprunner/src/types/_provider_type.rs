@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ProviderType {
         match self {
             ProviderType::Bitbucket => write!(f, "BITBUCKET"),
             ProviderType::Github => write!(f, "GITHUB"),
-            ProviderType::Unknown(value) => write!(f, "{}", value),
+            ProviderType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

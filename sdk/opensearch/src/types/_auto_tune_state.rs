@@ -155,7 +155,7 @@ impl ::std::fmt::Display for AutoTuneState {
             AutoTuneState::Enabled => write!(f, "ENABLED"),
             AutoTuneState::EnableInProgress => write!(f, "ENABLE_IN_PROGRESS"),
             AutoTuneState::Error => write!(f, "ERROR"),
-            AutoTuneState::Unknown(value) => write!(f, "{}", value),
+            AutoTuneState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

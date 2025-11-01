@@ -140,7 +140,7 @@ impl ::std::fmt::Display for MemberStatus {
             MemberStatus::Deleting => write!(f, "DELETING"),
             MemberStatus::InaccessibleEncryptionKey => write!(f, "INACCESSIBLE_ENCRYPTION_KEY"),
             MemberStatus::Updating => write!(f, "UPDATING"),
-            MemberStatus::Unknown(value) => write!(f, "{}", value),
+            MemberStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

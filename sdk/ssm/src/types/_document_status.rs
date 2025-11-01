@@ -120,7 +120,7 @@ impl ::std::fmt::Display for DocumentStatus {
             DocumentStatus::Deleting => write!(f, "Deleting"),
             DocumentStatus::Failed => write!(f, "Failed"),
             DocumentStatus::Updating => write!(f, "Updating"),
-            DocumentStatus::Unknown(value) => write!(f, "{}", value),
+            DocumentStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

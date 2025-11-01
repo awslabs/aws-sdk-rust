@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AssociationType {
         match self {
             AssociationType::Applied => write!(f, "APPLIED"),
             AssociationType::Inherited => write!(f, "INHERITED"),
-            AssociationType::Unknown(value) => write!(f, "{}", value),
+            AssociationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

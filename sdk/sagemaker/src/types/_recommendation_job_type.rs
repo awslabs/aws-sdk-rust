@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RecommendationJobType {
         match self {
             RecommendationJobType::Advanced => write!(f, "Advanced"),
             RecommendationJobType::Default => write!(f, "Default"),
-            RecommendationJobType::Unknown(value) => write!(f, "{}", value),
+            RecommendationJobType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ActionAfterCompletion {
         match self {
             ActionAfterCompletion::Delete => write!(f, "DELETE"),
             ActionAfterCompletion::None => write!(f, "NONE"),
-            ActionAfterCompletion::Unknown(value) => write!(f, "{}", value),
+            ActionAfterCompletion::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

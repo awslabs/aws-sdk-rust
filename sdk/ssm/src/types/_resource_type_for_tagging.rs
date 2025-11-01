@@ -154,7 +154,7 @@ impl ::std::fmt::Display for ResourceTypeForTagging {
             ResourceTypeForTagging::Opsmetadata => write!(f, "OpsMetadata"),
             ResourceTypeForTagging::Parameter => write!(f, "Parameter"),
             ResourceTypeForTagging::PatchBaseline => write!(f, "PatchBaseline"),
-            ResourceTypeForTagging::Unknown(value) => write!(f, "{}", value),
+            ResourceTypeForTagging::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

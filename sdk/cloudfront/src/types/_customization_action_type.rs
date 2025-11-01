@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CustomizationActionType {
         match self {
             CustomizationActionType::Disable => write!(f, "disable"),
             CustomizationActionType::Override => write!(f, "override"),
-            CustomizationActionType::Unknown(value) => write!(f, "{}", value),
+            CustomizationActionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TrustStoreAssociationStatusEnum {
         match self {
             TrustStoreAssociationStatusEnum::Active => write!(f, "active"),
             TrustStoreAssociationStatusEnum::Removed => write!(f, "removed"),
-            TrustStoreAssociationStatusEnum::Unknown(value) => write!(f, "{}", value),
+            TrustStoreAssociationStatusEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

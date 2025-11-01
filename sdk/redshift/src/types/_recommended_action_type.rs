@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RecommendedActionType {
         match self {
             RecommendedActionType::Cli => write!(f, "CLI"),
             RecommendedActionType::Sql => write!(f, "SQL"),
-            RecommendedActionType::Unknown(value) => write!(f, "{}", value),
+            RecommendedActionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

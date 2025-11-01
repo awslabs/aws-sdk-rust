@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ScheduledQueryState {
         match self {
             ScheduledQueryState::Disabled => write!(f, "DISABLED"),
             ScheduledQueryState::Enabled => write!(f, "ENABLED"),
-            ScheduledQueryState::Unknown(value) => write!(f, "{}", value),
+            ScheduledQueryState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ProblemType {
             ProblemType::BinaryClassification => write!(f, "BinaryClassification"),
             ProblemType::MulticlassClassification => write!(f, "MulticlassClassification"),
             ProblemType::Regression => write!(f, "Regression"),
-            ProblemType::Unknown(value) => write!(f, "{}", value),
+            ProblemType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

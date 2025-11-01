@@ -102,7 +102,7 @@ impl ::std::fmt::Display for IssueManagementType {
         match self {
             IssueManagementType::Auto => write!(f, "AUTO"),
             IssueManagementType::Manual => write!(f, "MANUAL"),
-            IssueManagementType::Unknown(value) => write!(f, "{}", value),
+            IssueManagementType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

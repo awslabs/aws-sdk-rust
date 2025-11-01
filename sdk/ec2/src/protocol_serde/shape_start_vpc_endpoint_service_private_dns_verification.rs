@@ -58,8 +58,7 @@ pub fn de_start_vpc_endpoint_service_private_dns_verification(
     let start_el = decoder.start_el();
     if !(start_el.matches("StartVpcEndpointServicePrivateDnsVerificationResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected StartVpcEndpointServicePrivateDnsVerificationResponse got {:?}",
-            start_el
+            "invalid root, expected StartVpcEndpointServicePrivateDnsVerificationResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

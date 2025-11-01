@@ -102,7 +102,7 @@ impl ::std::fmt::Display for LambdaFunctionMetricStatistic {
         match self {
             LambdaFunctionMetricStatistic::Average => write!(f, "Average"),
             LambdaFunctionMetricStatistic::Maximum => write!(f, "Maximum"),
-            LambdaFunctionMetricStatistic::Unknown(value) => write!(f, "{}", value),
+            LambdaFunctionMetricStatistic::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

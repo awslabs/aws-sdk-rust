@@ -541,7 +541,7 @@ impl ::std::fmt::Display for ValidationExceptionReason {
             ValidationExceptionReason::TooManyAutoAssociateBillingGroups => write!(f, "TOO_MANY_AUTO_ASSOCIATE_BILLING_GROUPS"),
             ValidationExceptionReason::TooManyCustomlineitemsInRequest => write!(f, "TOO_MANY_CUSTOMLINEITEMS_IN_REQUEST"),
             ValidationExceptionReason::UnknownOperation => write!(f, "UNKNOWN_OPERATION"),
-            ValidationExceptionReason::Unknown(value) => write!(f, "{}", value),
+            ValidationExceptionReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

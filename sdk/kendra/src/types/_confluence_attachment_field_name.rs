@@ -168,7 +168,7 @@ impl ::std::fmt::Display for ConfluenceAttachmentFieldName {
             ConfluenceAttachmentFieldName::SpaceName => write!(f, "SPACE_NAME"),
             ConfluenceAttachmentFieldName::Url => write!(f, "URL"),
             ConfluenceAttachmentFieldName::Version => write!(f, "VERSION"),
-            ConfluenceAttachmentFieldName::Unknown(value) => write!(f, "{}", value),
+            ConfluenceAttachmentFieldName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

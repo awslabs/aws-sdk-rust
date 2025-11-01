@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AvcIntraScanTypeConversionMode {
         match self {
             AvcIntraScanTypeConversionMode::Interlaced => write!(f, "INTERLACED"),
             AvcIntraScanTypeConversionMode::InterlacedOptimize => write!(f, "INTERLACED_OPTIMIZE"),
-            AvcIntraScanTypeConversionMode::Unknown(value) => write!(f, "{}", value),
+            AvcIntraScanTypeConversionMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

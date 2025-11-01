@@ -108,7 +108,7 @@ impl ::std::fmt::Display for Eac3AtmosCodingMode {
             Eac3AtmosCodingMode::CodingMode514 => write!(f, "CODING_MODE_5_1_4"),
             Eac3AtmosCodingMode::CodingMode714 => write!(f, "CODING_MODE_7_1_4"),
             Eac3AtmosCodingMode::CodingMode916 => write!(f, "CODING_MODE_9_1_6"),
-            Eac3AtmosCodingMode::Unknown(value) => write!(f, "{}", value),
+            Eac3AtmosCodingMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

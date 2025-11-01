@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DevEnvironmentSessionType {
         match self {
             DevEnvironmentSessionType::Ssh => write!(f, "SSH"),
             DevEnvironmentSessionType::Ssm => write!(f, "SSM"),
-            DevEnvironmentSessionType::Unknown(value) => write!(f, "{}", value),
+            DevEnvironmentSessionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

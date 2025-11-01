@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RouteServerBgpState {
         match self {
             RouteServerBgpState::Down => write!(f, "down"),
             RouteServerBgpState::Up => write!(f, "up"),
-            RouteServerBgpState::Unknown(value) => write!(f, "{}", value),
+            RouteServerBgpState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

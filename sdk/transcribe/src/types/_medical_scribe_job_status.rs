@@ -114,7 +114,7 @@ impl ::std::fmt::Display for MedicalScribeJobStatus {
             MedicalScribeJobStatus::Failed => write!(f, "FAILED"),
             MedicalScribeJobStatus::InProgress => write!(f, "IN_PROGRESS"),
             MedicalScribeJobStatus::Queued => write!(f, "QUEUED"),
-            MedicalScribeJobStatus::Unknown(value) => write!(f, "{}", value),
+            MedicalScribeJobStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -126,7 +126,7 @@ impl ::std::fmt::Display for IngestionStatus {
             IngestionStatus::Initialized => write!(f, "INITIALIZED"),
             IngestionStatus::Queued => write!(f, "QUEUED"),
             IngestionStatus::Running => write!(f, "RUNNING"),
-            IngestionStatus::Unknown(value) => write!(f, "{}", value),
+            IngestionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

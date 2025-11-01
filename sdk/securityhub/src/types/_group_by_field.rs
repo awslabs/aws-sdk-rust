@@ -238,7 +238,7 @@ impl ::std::fmt::Display for GroupByField {
             GroupByField::Status => write!(f, "status"),
             GroupByField::VulnerabilitiesAffectedPackagesName => write!(f, "vulnerabilities.affected_packages.name"),
             GroupByField::VulnerabilitiesFixCoverage => write!(f, "vulnerabilities.fix_coverage"),
-            GroupByField::Unknown(value) => write!(f, "{}", value),
+            GroupByField::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for TestGridSessionStatus {
             TestGridSessionStatus::Active => write!(f, "ACTIVE"),
             TestGridSessionStatus::Closed => write!(f, "CLOSED"),
             TestGridSessionStatus::Errored => write!(f, "ERRORED"),
-            TestGridSessionStatus::Unknown(value) => write!(f, "{}", value),
+            TestGridSessionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

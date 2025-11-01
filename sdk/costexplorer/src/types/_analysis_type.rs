@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AnalysisType {
         match self {
             AnalysisType::CustomCommitment => write!(f, "CUSTOM_COMMITMENT"),
             AnalysisType::MaxSavings => write!(f, "MAX_SAVINGS"),
-            AnalysisType::Unknown(value) => write!(f, "{}", value),
+            AnalysisType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

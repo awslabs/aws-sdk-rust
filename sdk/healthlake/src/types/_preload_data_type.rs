@@ -96,7 +96,7 @@ impl ::std::fmt::Display for PreloadDataType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             PreloadDataType::Synthea => write!(f, "SYNTHEA"),
-            PreloadDataType::Unknown(value) => write!(f, "{}", value),
+            PreloadDataType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

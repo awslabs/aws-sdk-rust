@@ -96,7 +96,7 @@ impl ::std::fmt::Display for InboundMessageSourceType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             InboundMessageSourceType::Raw => write!(f, "RAW"),
-            InboundMessageSourceType::Unknown(value) => write!(f, "{}", value),
+            InboundMessageSourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Operation {
         match self {
             Operation::Remove => write!(f, "remove"),
             Operation::Replace => write!(f, "replace"),
-            Operation::Unknown(value) => write!(f, "{}", value),
+            Operation::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -791,7 +791,7 @@ impl ::std::fmt::Display for TransformInstanceType {
             TransformInstanceType::MlR7IXlarge => write!(f, "ml.r7i.xlarge"),
             TransformInstanceType::MlTrn12Xlarge => write!(f, "ml.trn1.2xlarge"),
             TransformInstanceType::MlTrn132Xlarge => write!(f, "ml.trn1.32xlarge"),
-            TransformInstanceType::Unknown(value) => write!(f, "{}", value),
+            TransformInstanceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

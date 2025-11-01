@@ -133,7 +133,7 @@ impl ::std::fmt::Display for ChangeSetState {
             ChangeSetState::OutOfDate => write!(f, "OUT_OF_DATE"),
             ChangeSetState::PendingGeneration => write!(f, "PENDING_GENERATION"),
             ChangeSetState::ReadyToExecute => write!(f, "READY_TO_EXECUTE"),
-            ChangeSetState::Unknown(value) => write!(f, "{}", value),
+            ChangeSetState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

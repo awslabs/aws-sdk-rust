@@ -96,7 +96,7 @@ impl ::std::fmt::Display for AddressAttributeName {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             AddressAttributeName::DomainName => write!(f, "domain-name"),
-            AddressAttributeName::Unknown(value) => write!(f, "{}", value),
+            AddressAttributeName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

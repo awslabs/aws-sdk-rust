@@ -210,7 +210,7 @@ impl ::std::fmt::Display for SecondaryStatus {
             SecondaryStatus::Training => write!(f, "Training"),
             SecondaryStatus::Updating => write!(f, "Updating"),
             SecondaryStatus::Uploading => write!(f, "Uploading"),
-            SecondaryStatus::Unknown(value) => write!(f, "{}", value),
+            SecondaryStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

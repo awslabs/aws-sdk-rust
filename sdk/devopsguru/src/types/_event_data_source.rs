@@ -102,7 +102,7 @@ impl ::std::fmt::Display for EventDataSource {
         match self {
             EventDataSource::AwsCloudTrail => write!(f, "AWS_CLOUD_TRAIL"),
             EventDataSource::AwsCodeDeploy => write!(f, "AWS_CODE_DEPLOY"),
-            EventDataSource::Unknown(value) => write!(f, "{}", value),
+            EventDataSource::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

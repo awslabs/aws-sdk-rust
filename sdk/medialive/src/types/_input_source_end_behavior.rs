@@ -102,7 +102,7 @@ impl ::std::fmt::Display for InputSourceEndBehavior {
         match self {
             InputSourceEndBehavior::Continue => write!(f, "CONTINUE"),
             InputSourceEndBehavior::Loop => write!(f, "LOOP"),
-            InputSourceEndBehavior::Unknown(value) => write!(f, "{}", value),
+            InputSourceEndBehavior::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

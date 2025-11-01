@@ -108,7 +108,7 @@ impl ::std::fmt::Display for CacheMode {
             CacheMode::LocalCustomCache => write!(f, "LOCAL_CUSTOM_CACHE"),
             CacheMode::LocalDockerLayerCache => write!(f, "LOCAL_DOCKER_LAYER_CACHE"),
             CacheMode::LocalSourceCache => write!(f, "LOCAL_SOURCE_CACHE"),
-            CacheMode::Unknown(value) => write!(f, "{}", value),
+            CacheMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

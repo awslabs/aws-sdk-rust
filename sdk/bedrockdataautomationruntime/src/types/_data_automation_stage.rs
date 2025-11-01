@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DataAutomationStage {
         match self {
             DataAutomationStage::Development => write!(f, "DEVELOPMENT"),
             DataAutomationStage::Live => write!(f, "LIVE"),
-            DataAutomationStage::Unknown(value) => write!(f, "{}", value),
+            DataAutomationStage::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

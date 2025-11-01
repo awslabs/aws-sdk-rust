@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RegistrationStatus {
         match self {
             RegistrationStatus::Complete => write!(f, "COMPLETE"),
             RegistrationStatus::Incomplete => write!(f, "INCOMPLETE"),
-            RegistrationStatus::Unknown(value) => write!(f, "{}", value),
+            RegistrationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -140,7 +140,7 @@ impl ::std::fmt::Display for ImageFailureCode {
             ImageFailureCode::InvalidImageTag => write!(f, "InvalidImageTag"),
             ImageFailureCode::KmsError => write!(f, "KmsError"),
             ImageFailureCode::MissingDigestAndTag => write!(f, "MissingDigestAndTag"),
-            ImageFailureCode::Unknown(value) => write!(f, "{}", value),
+            ImageFailureCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

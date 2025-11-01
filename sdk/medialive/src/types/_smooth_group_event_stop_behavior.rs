@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SmoothGroupEventStopBehavior {
         match self {
             SmoothGroupEventStopBehavior::None => write!(f, "NONE"),
             SmoothGroupEventStopBehavior::SendEos => write!(f, "SEND_EOS"),
-            SmoothGroupEventStopBehavior::Unknown(value) => write!(f, "{}", value),
+            SmoothGroupEventStopBehavior::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AttributeAction {
             AttributeAction::Add => write!(f, "ADD"),
             AttributeAction::Delete => write!(f, "DELETE"),
             AttributeAction::Put => write!(f, "PUT"),
-            AttributeAction::Unknown(value) => write!(f, "{}", value),
+            AttributeAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

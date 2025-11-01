@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TypeDefinitionFormat {
         match self {
             TypeDefinitionFormat::Json => write!(f, "JSON"),
             TypeDefinitionFormat::Sdl => write!(f, "SDL"),
-            TypeDefinitionFormat::Unknown(value) => write!(f, "{}", value),
+            TypeDefinitionFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

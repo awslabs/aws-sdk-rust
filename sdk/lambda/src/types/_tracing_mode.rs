@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TracingMode {
         match self {
             TracingMode::Active => write!(f, "Active"),
             TracingMode::PassThrough => write!(f, "PassThrough"),
-            TracingMode::Unknown(value) => write!(f, "{}", value),
+            TracingMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -96,7 +96,7 @@ impl ::std::fmt::Display for RuleOwner {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             RuleOwner::Aws => write!(f, "AWS"),
-            RuleOwner::Unknown(value) => write!(f, "{}", value),
+            RuleOwner::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

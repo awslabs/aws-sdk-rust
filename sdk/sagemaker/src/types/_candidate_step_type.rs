@@ -112,7 +112,7 @@ impl ::std::fmt::Display for CandidateStepType {
             CandidateStepType::Processing => write!(f, "AWS::SageMaker::ProcessingJob"),
             CandidateStepType::Training => write!(f, "AWS::SageMaker::TrainingJob"),
             CandidateStepType::Transform => write!(f, "AWS::SageMaker::TransformJob"),
-            CandidateStepType::Unknown(value) => write!(f, "{}", value),
+            CandidateStepType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

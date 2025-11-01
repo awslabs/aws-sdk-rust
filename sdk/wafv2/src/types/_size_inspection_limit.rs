@@ -114,7 +114,7 @@ impl ::std::fmt::Display for SizeInspectionLimit {
             SizeInspectionLimit::Kb32 => write!(f, "KB_32"),
             SizeInspectionLimit::Kb48 => write!(f, "KB_48"),
             SizeInspectionLimit::Kb64 => write!(f, "KB_64"),
-            SizeInspectionLimit::Unknown(value) => write!(f, "{}", value),
+            SizeInspectionLimit::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

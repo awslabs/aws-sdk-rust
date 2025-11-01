@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SessionMode {
         match self {
             SessionMode::ReadOnly => write!(f, "ReadOnly"),
             SessionMode::ReadWrite => write!(f, "ReadWrite"),
-            SessionMode::Unknown(value) => write!(f, "{}", value),
+            SessionMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

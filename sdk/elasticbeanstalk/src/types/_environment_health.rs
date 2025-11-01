@@ -114,7 +114,7 @@ impl ::std::fmt::Display for EnvironmentHealth {
             EnvironmentHealth::Grey => write!(f, "Grey"),
             EnvironmentHealth::Red => write!(f, "Red"),
             EnvironmentHealth::Yellow => write!(f, "Yellow"),
-            EnvironmentHealth::Unknown(value) => write!(f, "{}", value),
+            EnvironmentHealth::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

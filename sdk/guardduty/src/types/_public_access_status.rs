@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PublicAccessStatus {
         match self {
             PublicAccessStatus::Allowed => write!(f, "ALLOWED"),
             PublicAccessStatus::Blocked => write!(f, "BLOCKED"),
-            PublicAccessStatus::Unknown(value) => write!(f, "{}", value),
+            PublicAccessStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for InitiatedBy {
         match self {
             InitiatedBy::Customer => write!(f, "CUSTOMER"),
             InitiatedBy::Service => write!(f, "SERVICE"),
-            InitiatedBy::Unknown(value) => write!(f, "{}", value),
+            InitiatedBy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for KafkaClusterClientAuthenticationType {
         match self {
             KafkaClusterClientAuthenticationType::Iam => write!(f, "IAM"),
             KafkaClusterClientAuthenticationType::None => write!(f, "NONE"),
-            KafkaClusterClientAuthenticationType::Unknown(value) => write!(f, "{}", value),
+            KafkaClusterClientAuthenticationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

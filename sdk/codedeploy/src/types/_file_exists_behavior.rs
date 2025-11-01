@@ -108,7 +108,7 @@ impl ::std::fmt::Display for FileExistsBehavior {
             FileExistsBehavior::Disallow => write!(f, "DISALLOW"),
             FileExistsBehavior::Overwrite => write!(f, "OVERWRITE"),
             FileExistsBehavior::Retain => write!(f, "RETAIN"),
-            FileExistsBehavior::Unknown(value) => write!(f, "{}", value),
+            FileExistsBehavior::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

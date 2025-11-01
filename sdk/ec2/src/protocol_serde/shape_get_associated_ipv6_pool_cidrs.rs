@@ -51,8 +51,7 @@ pub fn de_get_associated_ipv6_pool_cidrs(
     let start_el = decoder.start_el();
     if !(start_el.matches("GetAssociatedIpv6PoolCidrsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected GetAssociatedIpv6PoolCidrsResponse got {:?}",
-            start_el
+            "invalid root, expected GetAssociatedIpv6PoolCidrsResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

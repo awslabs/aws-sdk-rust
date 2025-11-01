@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ApplicationRevisionSortBy {
             ApplicationRevisionSortBy::FirstUsedTime => write!(f, "firstUsedTime"),
             ApplicationRevisionSortBy::LastUsedTime => write!(f, "lastUsedTime"),
             ApplicationRevisionSortBy::RegisterTime => write!(f, "registerTime"),
-            ApplicationRevisionSortBy::Unknown(value) => write!(f, "{}", value),
+            ApplicationRevisionSortBy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

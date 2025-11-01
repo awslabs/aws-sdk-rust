@@ -154,7 +154,7 @@ impl ::std::fmt::Display for TransitGatewayAttachmentStatus {
             TransitGatewayAttachmentStatus::Ready => write!(f, "READY"),
             TransitGatewayAttachmentStatus::Rejected => write!(f, "REJECTED"),
             TransitGatewayAttachmentStatus::Rejecting => write!(f, "REJECTING"),
-            TransitGatewayAttachmentStatus::Unknown(value) => write!(f, "{}", value),
+            TransitGatewayAttachmentStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

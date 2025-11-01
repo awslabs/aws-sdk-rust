@@ -102,7 +102,7 @@ impl ::std::fmt::Display for HttpTokensEnum {
         match self {
             HttpTokensEnum::Optional => write!(f, "optional"),
             HttpTokensEnum::Required => write!(f, "required"),
-            HttpTokensEnum::Unknown(value) => write!(f, "{}", value),
+            HttpTokensEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

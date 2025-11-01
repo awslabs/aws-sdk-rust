@@ -102,7 +102,7 @@ impl ::std::fmt::Display for JobTemplateType {
         match self {
             JobTemplateType::Json => write!(f, "JSON"),
             JobTemplateType::Yaml => write!(f, "YAML"),
-            JobTemplateType::Unknown(value) => write!(f, "{}", value),
+            JobTemplateType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

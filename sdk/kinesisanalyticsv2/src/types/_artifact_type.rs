@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ArtifactType {
         match self {
             ArtifactType::DependencyJar => write!(f, "DEPENDENCY_JAR"),
             ArtifactType::Udf => write!(f, "UDF"),
-            ArtifactType::Unknown(value) => write!(f, "{}", value),
+            ArtifactType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

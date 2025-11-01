@@ -108,7 +108,7 @@ impl ::std::fmt::Display for FindingChangeType {
             FindingChangeType::Changed => write!(f, "CHANGED"),
             FindingChangeType::New => write!(f, "NEW"),
             FindingChangeType::Unchanged => write!(f, "UNCHANGED"),
-            FindingChangeType::Unknown(value) => write!(f, "{}", value),
+            FindingChangeType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

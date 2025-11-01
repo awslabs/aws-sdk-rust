@@ -120,7 +120,7 @@ impl ::std::fmt::Display for ActionTypeEnum {
             ActionTypeEnum::FixedResponse => write!(f, "fixed-response"),
             ActionTypeEnum::Forward => write!(f, "forward"),
             ActionTypeEnum::Redirect => write!(f, "redirect"),
-            ActionTypeEnum::Unknown(value) => write!(f, "{}", value),
+            ActionTypeEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PolicyComplianceStatusType {
         match self {
             PolicyComplianceStatusType::Compliant => write!(f, "COMPLIANT"),
             PolicyComplianceStatusType::NonCompliant => write!(f, "NON_COMPLIANT"),
-            PolicyComplianceStatusType::Unknown(value) => write!(f, "{}", value),
+            PolicyComplianceStatusType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

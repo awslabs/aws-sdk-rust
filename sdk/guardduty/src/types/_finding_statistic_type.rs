@@ -96,7 +96,7 @@ impl ::std::fmt::Display for FindingStatisticType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             FindingStatisticType::CountBySeverity => write!(f, "COUNT_BY_SEVERITY"),
-            FindingStatisticType::Unknown(value) => write!(f, "{}", value),
+            FindingStatisticType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

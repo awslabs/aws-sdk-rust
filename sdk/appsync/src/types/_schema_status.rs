@@ -126,7 +126,7 @@ impl ::std::fmt::Display for SchemaStatus {
             SchemaStatus::NotApplicable => write!(f, "NOT_APPLICABLE"),
             SchemaStatus::Processing => write!(f, "PROCESSING"),
             SchemaStatus::Success => write!(f, "SUCCESS"),
-            SchemaStatus::Unknown(value) => write!(f, "{}", value),
+            SchemaStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

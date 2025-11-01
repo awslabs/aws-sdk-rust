@@ -203,7 +203,7 @@ impl ::std::fmt::Display for FlowNodeType {
             FlowNodeType::Prompt => write!(f, "Prompt"),
             FlowNodeType::Retrieval => write!(f, "Retrieval"),
             FlowNodeType::Storage => write!(f, "Storage"),
-            FlowNodeType::Unknown(value) => write!(f, "{}", value),
+            FlowNodeType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

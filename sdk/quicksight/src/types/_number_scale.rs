@@ -138,7 +138,7 @@ impl ::std::fmt::Display for NumberScale {
             NumberScale::None => write!(f, "NONE"),
             NumberScale::Thousands => write!(f, "THOUSANDS"),
             NumberScale::Trillions => write!(f, "TRILLIONS"),
-            NumberScale::Unknown(value) => write!(f, "{}", value),
+            NumberScale::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

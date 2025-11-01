@@ -175,7 +175,7 @@ impl ::std::fmt::Display for DocumentationPartType {
             DocumentationPartType::Response => write!(f, "RESPONSE"),
             DocumentationPartType::ResponseBody => write!(f, "RESPONSE_BODY"),
             DocumentationPartType::ResponseHeader => write!(f, "RESPONSE_HEADER"),
-            DocumentationPartType::Unknown(value) => write!(f, "{}", value),
+            DocumentationPartType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

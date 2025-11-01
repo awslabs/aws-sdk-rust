@@ -114,7 +114,7 @@ impl ::std::fmt::Display for LineageEventProcessingStatus {
             LineageEventProcessingStatus::Processing => write!(f, "PROCESSING"),
             LineageEventProcessingStatus::Requested => write!(f, "REQUESTED"),
             LineageEventProcessingStatus::Success => write!(f, "SUCCESS"),
-            LineageEventProcessingStatus::Unknown(value) => write!(f, "{}", value),
+            LineageEventProcessingStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

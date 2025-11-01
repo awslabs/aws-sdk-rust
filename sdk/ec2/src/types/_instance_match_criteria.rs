@@ -102,7 +102,7 @@ impl ::std::fmt::Display for InstanceMatchCriteria {
         match self {
             InstanceMatchCriteria::Open => write!(f, "open"),
             InstanceMatchCriteria::Targeted => write!(f, "targeted"),
-            InstanceMatchCriteria::Unknown(value) => write!(f, "{}", value),
+            InstanceMatchCriteria::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

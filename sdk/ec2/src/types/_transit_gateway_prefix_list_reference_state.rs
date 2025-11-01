@@ -114,7 +114,7 @@ impl ::std::fmt::Display for TransitGatewayPrefixListReferenceState {
             TransitGatewayPrefixListReferenceState::Deleting => write!(f, "deleting"),
             TransitGatewayPrefixListReferenceState::Modifying => write!(f, "modifying"),
             TransitGatewayPrefixListReferenceState::Pending => write!(f, "pending"),
-            TransitGatewayPrefixListReferenceState::Unknown(value) => write!(f, "{}", value),
+            TransitGatewayPrefixListReferenceState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

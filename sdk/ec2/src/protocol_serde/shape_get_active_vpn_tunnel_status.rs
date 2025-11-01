@@ -53,8 +53,7 @@ pub fn de_get_active_vpn_tunnel_status(
     let start_el = decoder.start_el();
     if !(start_el.matches("GetActiveVpnTunnelStatusResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected GetActiveVpnTunnelStatusResponse got {:?}",
-            start_el
+            "invalid root, expected GetActiveVpnTunnelStatusResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

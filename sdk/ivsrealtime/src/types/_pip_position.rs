@@ -114,7 +114,7 @@ impl ::std::fmt::Display for PipPosition {
             PipPosition::BottomRight => write!(f, "BOTTOM_RIGHT"),
             PipPosition::TopLeft => write!(f, "TOP_LEFT"),
             PipPosition::TopRight => write!(f, "TOP_RIGHT"),
-            PipPosition::Unknown(value) => write!(f, "{}", value),
+            PipPosition::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

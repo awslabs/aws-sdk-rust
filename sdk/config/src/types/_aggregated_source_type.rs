@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AggregatedSourceType {
         match self {
             AggregatedSourceType::Account => write!(f, "ACCOUNT"),
             AggregatedSourceType::Organization => write!(f, "ORGANIZATION"),
-            AggregatedSourceType::Unknown(value) => write!(f, "{}", value),
+            AggregatedSourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

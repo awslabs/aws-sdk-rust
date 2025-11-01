@@ -102,7 +102,7 @@ impl ::std::fmt::Display for StateDbType {
         match self {
             StateDbType::CouchDb => write!(f, "CouchDB"),
             StateDbType::LevelDb => write!(f, "LevelDB"),
-            StateDbType::Unknown(value) => write!(f, "{}", value),
+            StateDbType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -161,7 +161,7 @@ impl ::std::fmt::Display for GlueRecordType {
             GlueRecordType::Short => write!(f, "SHORT"),
             GlueRecordType::String => write!(f, "STRING"),
             GlueRecordType::Timestamp => write!(f, "TIMESTAMP"),
-            GlueRecordType::Unknown(value) => write!(f, "{}", value),
+            GlueRecordType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

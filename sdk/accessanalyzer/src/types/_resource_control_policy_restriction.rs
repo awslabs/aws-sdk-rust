@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ResourceControlPolicyRestriction {
             ResourceControlPolicyRestriction::Applied => write!(f, "APPLIED"),
             ResourceControlPolicyRestriction::FailedToEvaluateRcp => write!(f, "FAILED_TO_EVALUATE_RCP"),
             ResourceControlPolicyRestriction::NotApplicable => write!(f, "NOT_APPLICABLE"),
-            ResourceControlPolicyRestriction::Unknown(value) => write!(f, "{}", value),
+            ResourceControlPolicyRestriction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

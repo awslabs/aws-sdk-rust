@@ -132,7 +132,7 @@ impl ::std::fmt::Display for OverrideDays {
             OverrideDays::Thursday => write!(f, "THURSDAY"),
             OverrideDays::Tuesday => write!(f, "TUESDAY"),
             OverrideDays::Wednesday => write!(f, "WEDNESDAY"),
-            OverrideDays::Unknown(value) => write!(f, "{}", value),
+            OverrideDays::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

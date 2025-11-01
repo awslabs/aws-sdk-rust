@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ConfigurationPolicyAssociationStatus {
             ConfigurationPolicyAssociationStatus::Failed => write!(f, "FAILED"),
             ConfigurationPolicyAssociationStatus::Pending => write!(f, "PENDING"),
             ConfigurationPolicyAssociationStatus::Success => write!(f, "SUCCESS"),
-            ConfigurationPolicyAssociationStatus::Unknown(value) => write!(f, "{}", value),
+            ConfigurationPolicyAssociationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

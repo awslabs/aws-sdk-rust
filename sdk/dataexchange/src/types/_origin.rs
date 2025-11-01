@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Origin {
         match self {
             Origin::Entitled => write!(f, "ENTITLED"),
             Origin::Owned => write!(f, "OWNED"),
-            Origin::Unknown(value) => write!(f, "{}", value),
+            Origin::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

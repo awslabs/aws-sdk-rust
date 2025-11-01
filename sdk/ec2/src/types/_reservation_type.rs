@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ReservationType {
         match self {
             ReservationType::CapacityBlock => write!(f, "capacity-block"),
             ReservationType::Odcr => write!(f, "odcr"),
-            ReservationType::Unknown(value) => write!(f, "{}", value),
+            ReservationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TrustStoreStatus {
         match self {
             TrustStoreStatus::Active => write!(f, "ACTIVE"),
             TrustStoreStatus::Creating => write!(f, "CREATING"),
-            TrustStoreStatus::Unknown(value) => write!(f, "{}", value),
+            TrustStoreStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

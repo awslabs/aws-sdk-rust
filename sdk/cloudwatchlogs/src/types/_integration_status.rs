@@ -108,7 +108,7 @@ impl ::std::fmt::Display for IntegrationStatus {
             IntegrationStatus::Active => write!(f, "ACTIVE"),
             IntegrationStatus::Failed => write!(f, "FAILED"),
             IntegrationStatus::Provisioning => write!(f, "PROVISIONING"),
-            IntegrationStatus::Unknown(value) => write!(f, "{}", value),
+            IntegrationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

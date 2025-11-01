@@ -161,7 +161,7 @@ impl ::std::fmt::Display for ClusterStatus {
             ClusterStatus::PendingDelete => write!(f, "PENDING_DELETE"),
             ClusterStatus::PendingSetup => write!(f, "PENDING_SETUP"),
             ClusterStatus::Updating => write!(f, "UPDATING"),
-            ClusterStatus::Unknown(value) => write!(f, "{}", value),
+            ClusterStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

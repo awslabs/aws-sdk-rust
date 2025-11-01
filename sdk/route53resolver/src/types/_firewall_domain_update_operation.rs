@@ -108,7 +108,7 @@ impl ::std::fmt::Display for FirewallDomainUpdateOperation {
             FirewallDomainUpdateOperation::Add => write!(f, "ADD"),
             FirewallDomainUpdateOperation::Remove => write!(f, "REMOVE"),
             FirewallDomainUpdateOperation::Replace => write!(f, "REPLACE"),
-            FirewallDomainUpdateOperation::Unknown(value) => write!(f, "{}", value),
+            FirewallDomainUpdateOperation::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

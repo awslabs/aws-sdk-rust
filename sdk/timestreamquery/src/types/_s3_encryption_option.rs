@@ -102,7 +102,7 @@ impl ::std::fmt::Display for S3EncryptionOption {
         match self {
             S3EncryptionOption::SseKms => write!(f, "SSE_KMS"),
             S3EncryptionOption::SseS3 => write!(f, "SSE_S3"),
-            S3EncryptionOption::Unknown(value) => write!(f, "{}", value),
+            S3EncryptionOption::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

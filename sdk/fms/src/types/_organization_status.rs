@@ -114,7 +114,7 @@ impl ::std::fmt::Display for OrganizationStatus {
             OrganizationStatus::OffboardingComplete => write!(f, "OFFBOARDING_COMPLETE"),
             OrganizationStatus::Onboarding => write!(f, "ONBOARDING"),
             OrganizationStatus::OnboardingComplete => write!(f, "ONBOARDING_COMPLETE"),
-            OrganizationStatus::Unknown(value) => write!(f, "{}", value),
+            OrganizationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

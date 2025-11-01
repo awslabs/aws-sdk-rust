@@ -69,8 +69,7 @@ pub fn de_get_multi_region_access_point_policy(
     let start_el = decoder.start_el();
     if !start_el.matches("GetMultiRegionAccessPointPolicyResult") {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "encountered invalid XML root: expected GetMultiRegionAccessPointPolicyResult but got {:?}. This is likely a bug in the SDK.",
-            start_el
+            "encountered invalid XML root: expected GetMultiRegionAccessPointPolicyResult but got {start_el:?}. This is likely a bug in the SDK."
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

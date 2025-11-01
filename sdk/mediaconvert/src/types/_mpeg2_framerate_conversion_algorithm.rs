@@ -114,7 +114,7 @@ impl ::std::fmt::Display for Mpeg2FramerateConversionAlgorithm {
             Mpeg2FramerateConversionAlgorithm::Frameformer => write!(f, "FRAMEFORMER"),
             Mpeg2FramerateConversionAlgorithm::Interpolate => write!(f, "INTERPOLATE"),
             Mpeg2FramerateConversionAlgorithm::MaintainFrameCount => write!(f, "MAINTAIN_FRAME_COUNT"),
-            Mpeg2FramerateConversionAlgorithm::Unknown(value) => write!(f, "{}", value),
+            Mpeg2FramerateConversionAlgorithm::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

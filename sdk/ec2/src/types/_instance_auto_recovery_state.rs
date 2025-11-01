@@ -102,7 +102,7 @@ impl ::std::fmt::Display for InstanceAutoRecoveryState {
         match self {
             InstanceAutoRecoveryState::Default => write!(f, "default"),
             InstanceAutoRecoveryState::Disabled => write!(f, "disabled"),
-            InstanceAutoRecoveryState::Unknown(value) => write!(f, "{}", value),
+            InstanceAutoRecoveryState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

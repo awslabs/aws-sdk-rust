@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AccessPropertyValue {
         match self {
             AccessPropertyValue::Allow => write!(f, "ALLOW"),
             AccessPropertyValue::Deny => write!(f, "DENY"),
-            AccessPropertyValue::Unknown(value) => write!(f, "{}", value),
+            AccessPropertyValue::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -104,7 +104,7 @@ impl ::std::fmt::Display for Scte35SpliceInsertNoRegionalBlackoutBehavior {
         match self {
             Scte35SpliceInsertNoRegionalBlackoutBehavior::Follow => write!(f, "FOLLOW"),
             Scte35SpliceInsertNoRegionalBlackoutBehavior::Ignore => write!(f, "IGNORE"),
-            Scte35SpliceInsertNoRegionalBlackoutBehavior::Unknown(value) => write!(f, "{}", value),
+            Scte35SpliceInsertNoRegionalBlackoutBehavior::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

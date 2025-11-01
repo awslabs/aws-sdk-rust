@@ -343,7 +343,7 @@ impl ::std::fmt::Display for S3BucketRegion {
             S3BucketRegion::UsGovWest1 => write!(f, "us-gov-west-1"),
             S3BucketRegion::UsWest1 => write!(f, "us-west-1"),
             S3BucketRegion::UsWest2 => write!(f, "us-west-2"),
-            S3BucketRegion::Unknown(value) => write!(f, "{}", value),
+            S3BucketRegion::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for AacVbrQuality {
             AacVbrQuality::Low => write!(f, "LOW"),
             AacVbrQuality::MediumHigh => write!(f, "MEDIUM_HIGH"),
             AacVbrQuality::MediumLow => write!(f, "MEDIUM_LOW"),
-            AacVbrQuality::Unknown(value) => write!(f, "{}", value),
+            AacVbrQuality::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

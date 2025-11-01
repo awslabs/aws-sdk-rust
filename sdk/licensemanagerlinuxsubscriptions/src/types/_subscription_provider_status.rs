@@ -108,7 +108,7 @@ impl ::std::fmt::Display for SubscriptionProviderStatus {
             SubscriptionProviderStatus::Active => write!(f, "ACTIVE"),
             SubscriptionProviderStatus::Invalid => write!(f, "INVALID"),
             SubscriptionProviderStatus::Pending => write!(f, "PENDING"),
-            SubscriptionProviderStatus::Unknown(value) => write!(f, "{}", value),
+            SubscriptionProviderStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

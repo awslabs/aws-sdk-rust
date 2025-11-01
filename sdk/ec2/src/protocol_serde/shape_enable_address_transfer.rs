@@ -51,8 +51,7 @@ pub fn de_enable_address_transfer(
     let start_el = decoder.start_el();
     if !(start_el.matches("EnableAddressTransferResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected EnableAddressTransferResponse got {:?}",
-            start_el
+            "invalid root, expected EnableAddressTransferResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

@@ -251,7 +251,7 @@ impl ::std::fmt::Display for Codec {
             Codec::Vp8 => write!(f, "VP8"),
             Codec::Vp9 => write!(f, "VP9"),
             Codec::Webvtt => write!(f, "WEBVTT"),
-            Codec::Unknown(value) => write!(f, "{}", value),
+            Codec::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

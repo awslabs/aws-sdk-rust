@@ -224,7 +224,7 @@ impl ::std::fmt::Display for ClosedLostReason {
             ClosedLostReason::Producttechnology => write!(f, "Product/Technology"),
             ClosedLostReason::SecurityCompliance => write!(f, "Security / Compliance"),
             ClosedLostReason::TechnicalLimitations => write!(f, "Technical Limitations"),
-            ClosedLostReason::Unknown(value) => write!(f, "{}", value),
+            ClosedLostReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

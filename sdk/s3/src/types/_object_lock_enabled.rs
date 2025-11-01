@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ObjectLockEnabled {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ObjectLockEnabled::Enabled => write!(f, "Enabled"),
-            ObjectLockEnabled::Unknown(value) => write!(f, "{}", value),
+            ObjectLockEnabled::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AccessCheckPolicyType {
         match self {
             AccessCheckPolicyType::IdentityPolicy => write!(f, "IDENTITY_POLICY"),
             AccessCheckPolicyType::ResourcePolicy => write!(f, "RESOURCE_POLICY"),
-            AccessCheckPolicyType::Unknown(value) => write!(f, "{}", value),
+            AccessCheckPolicyType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

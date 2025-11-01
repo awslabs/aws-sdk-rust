@@ -102,7 +102,7 @@ impl ::std::fmt::Display for LambdaFilesystemPermission {
         match self {
             LambdaFilesystemPermission::Ro => write!(f, "ro"),
             LambdaFilesystemPermission::Rw => write!(f, "rw"),
-            LambdaFilesystemPermission::Unknown(value) => write!(f, "{}", value),
+            LambdaFilesystemPermission::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

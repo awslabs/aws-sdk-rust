@@ -102,7 +102,7 @@ impl ::std::fmt::Display for StartTimeRange {
         match self {
             StartTimeRange::All => write!(f, "All"),
             StartTimeRange::Latest => write!(f, "Latest"),
-            StartTimeRange::Unknown(value) => write!(f, "{}", value),
+            StartTimeRange::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

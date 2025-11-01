@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PinBlockLengthPosition {
         match self {
             PinBlockLengthPosition::FrontOfPinBlock => write!(f, "FRONT_OF_PIN_BLOCK"),
             PinBlockLengthPosition::None => write!(f, "NONE"),
-            PinBlockLengthPosition::Unknown(value) => write!(f, "{}", value),
+            PinBlockLengthPosition::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for UsageRecordResultStatus {
             UsageRecordResultStatus::CustomerNotSubscribed => write!(f, "CustomerNotSubscribed"),
             UsageRecordResultStatus::DuplicateRecord => write!(f, "DuplicateRecord"),
             UsageRecordResultStatus::Success => write!(f, "Success"),
-            UsageRecordResultStatus::Unknown(value) => write!(f, "{}", value),
+            UsageRecordResultStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

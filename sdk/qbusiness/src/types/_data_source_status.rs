@@ -126,7 +126,7 @@ impl ::std::fmt::Display for DataSourceStatus {
             DataSourceStatus::Failed => write!(f, "FAILED"),
             DataSourceStatus::PendingCreation => write!(f, "PENDING_CREATION"),
             DataSourceStatus::Updating => write!(f, "UPDATING"),
-            DataSourceStatus::Unknown(value) => write!(f, "{}", value),
+            DataSourceStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

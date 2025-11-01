@@ -166,7 +166,7 @@ impl ::std::fmt::Display for RouteMatrixHazardousCargoType {
             RouteMatrixHazardousCargoType::Poison => write!(f, "Poison"),
             RouteMatrixHazardousCargoType::PoisonousInhalation => write!(f, "PoisonousInhalation"),
             RouteMatrixHazardousCargoType::Radioactive => write!(f, "Radioactive"),
-            RouteMatrixHazardousCargoType::Unknown(value) => write!(f, "{}", value),
+            RouteMatrixHazardousCargoType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

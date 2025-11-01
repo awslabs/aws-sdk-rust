@@ -138,7 +138,7 @@ impl ::std::fmt::Display for LogDriver {
             LogDriver::JsonFile => write!(f, "json-file"),
             LogDriver::Splunk => write!(f, "splunk"),
             LogDriver::Syslog => write!(f, "syslog"),
-            LogDriver::Unknown(value) => write!(f, "{}", value),
+            LogDriver::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

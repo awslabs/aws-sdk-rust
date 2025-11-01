@@ -182,7 +182,7 @@ impl ::std::fmt::Display for Runtime {
             Runtime::Python3 => write!(f, "PYTHON_3"),
             Runtime::Python311 => write!(f, "PYTHON_311"),
             Runtime::Ruby31 => write!(f, "RUBY_31"),
-            Runtime::Unknown(value) => write!(f, "{}", value),
+            Runtime::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -135,8 +135,7 @@ fn apply_endpoint_to_request(
         .set_endpoint(&endpoint_url)
         .map_err(|err| {
             ResolveEndpointError::message(format!(
-                "failed to apply endpoint `{}` to request `{:?}`",
-                endpoint_url, request,
+                "failed to apply endpoint `{endpoint_url}` to request `{request:?}`",
             ))
             .with_source(Some(err.into()))
         })?;

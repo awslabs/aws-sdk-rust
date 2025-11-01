@@ -114,7 +114,7 @@ impl ::std::fmt::Display for RuleType {
             RuleType::NumberComparison => write!(f, "NUMBER_COMPARISON"),
             RuleType::StringFromSet => write!(f, "STRING_FROM_SET"),
             RuleType::StringLength => write!(f, "STRING_LENGTH"),
-            RuleType::Unknown(value) => write!(f, "{}", value),
+            RuleType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

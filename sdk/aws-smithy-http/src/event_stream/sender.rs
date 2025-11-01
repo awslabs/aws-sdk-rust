@@ -30,6 +30,13 @@ impl<T, E> Debug for EventStreamSender<T, E> {
     }
 }
 
+impl<T: Send + Sync + 'static, E: StdError + Send + Sync + 'static> EventStreamSender<T, E> {
+    /// Creates an `EventStreamSender` from a single item.
+    pub fn once(item: Result<T, E>) -> Self {
+        Self::from(futures_util::stream::once(async move { item }))
+    }
+}
+
 impl<T, E: StdError + Send + Sync + 'static> EventStreamSender<T, E> {
     #[doc(hidden)]
     pub fn into_body_stream(
@@ -326,6 +333,32 @@ mod tests {
             result.err().unwrap(),
             SdkError::ConstructionFailure(_)
         ));
+    }
+
+    #[tokio::test]
+    async fn event_stream_sender_once() {
+        let sender = EventStreamSender::once(Ok(TestMessage("test".into())));
+        let mut adapter = MessageStreamAdapter::<TestMessage, TestServiceError>::new(
+            Marshaller,
+            ErrorMarshaller,
+            TestSigner,
+            sender.input_stream,
+        );
+
+        let mut sent_bytes = adapter.next().await.unwrap().unwrap();
+        let sent = read_message_from(&mut sent_bytes).unwrap();
+        assert_eq!("signed", sent.headers()[0].name().as_str());
+        let inner = read_message_from(&mut (&sent.payload()[..])).unwrap();
+        assert_eq!(&b"test"[..], &inner.payload()[..]);
+
+        // Should get end signal next
+        let mut end_signal_bytes = adapter.next().await.unwrap().unwrap();
+        let end_signal = read_message_from(&mut end_signal_bytes).unwrap();
+        assert_eq!("signed", end_signal.headers()[0].name().as_str());
+        assert_eq!(0, end_signal.payload().len());
+
+        // Stream should be exhausted
+        assert!(adapter.next().await.is_none());
     }
 
     // Verify the developer experience for this compiles

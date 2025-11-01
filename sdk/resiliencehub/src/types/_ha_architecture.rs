@@ -120,7 +120,7 @@ impl ::std::fmt::Display for HaArchitecture {
             HaArchitecture::NoRecoveryPlan => write!(f, "NoRecoveryPlan"),
             HaArchitecture::PilotLight => write!(f, "PilotLight"),
             HaArchitecture::WarmStandby => write!(f, "WarmStandby"),
-            HaArchitecture::Unknown(value) => write!(f, "{}", value),
+            HaArchitecture::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

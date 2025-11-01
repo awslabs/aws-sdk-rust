@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ReplicationState {
         match self {
             ReplicationState::Disabled => write!(f, "DISABLED"),
             ReplicationState::Enabled => write!(f, "ENABLED"),
-            ReplicationState::Unknown(value) => write!(f, "{}", value),
+            ReplicationState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

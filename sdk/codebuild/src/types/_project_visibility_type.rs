@@ -112,7 +112,7 @@ impl ::std::fmt::Display for ProjectVisibilityType {
         match self {
             ProjectVisibilityType::Private => write!(f, "PRIVATE"),
             ProjectVisibilityType::PublicRead => write!(f, "PUBLIC_READ"),
-            ProjectVisibilityType::Unknown(value) => write!(f, "{}", value),
+            ProjectVisibilityType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

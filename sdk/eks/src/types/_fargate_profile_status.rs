@@ -120,7 +120,7 @@ impl ::std::fmt::Display for FargateProfileStatus {
             FargateProfileStatus::Creating => write!(f, "CREATING"),
             FargateProfileStatus::DeleteFailed => write!(f, "DELETE_FAILED"),
             FargateProfileStatus::Deleting => write!(f, "DELETING"),
-            FargateProfileStatus::Unknown(value) => write!(f, "{}", value),
+            FargateProfileStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

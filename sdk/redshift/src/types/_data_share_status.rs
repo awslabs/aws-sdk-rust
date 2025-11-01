@@ -126,7 +126,7 @@ impl ::std::fmt::Display for DataShareStatus {
             DataShareStatus::Deauthorized => write!(f, "DEAUTHORIZED"),
             DataShareStatus::PendingAuthorization => write!(f, "PENDING_AUTHORIZATION"),
             DataShareStatus::Rejected => write!(f, "REJECTED"),
-            DataShareStatus::Unknown(value) => write!(f, "{}", value),
+            DataShareStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

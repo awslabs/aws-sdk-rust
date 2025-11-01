@@ -182,7 +182,7 @@ impl ::std::fmt::Display for JobState {
             JobState::WithAws => write!(f, "WithAWS"),
             JobState::WithAwsSortingFacility => write!(f, "WithAWSSortingFacility"),
             JobState::WithCustomer => write!(f, "WithCustomer"),
-            JobState::Unknown(value) => write!(f, "{}", value),
+            JobState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

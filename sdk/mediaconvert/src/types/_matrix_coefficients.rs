@@ -217,7 +217,7 @@ impl ::std::fmt::Display for MatrixCoefficients {
             MatrixCoefficients::Smpte240M => write!(f, "SMPTE_240M"),
             MatrixCoefficients::Unspecified => write!(f, "UNSPECIFIED"),
             MatrixCoefficients::YCgCo => write!(f, "YCgCo"),
-            MatrixCoefficients::Unknown(value) => write!(f, "{}", value),
+            MatrixCoefficients::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

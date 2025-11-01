@@ -108,7 +108,7 @@ impl ::std::fmt::Display for LcmOperationType {
             LcmOperationType::Instantiate => write!(f, "INSTANTIATE"),
             LcmOperationType::Terminate => write!(f, "TERMINATE"),
             LcmOperationType::Update => write!(f, "UPDATE"),
-            LcmOperationType::Unknown(value) => write!(f, "{}", value),
+            LcmOperationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

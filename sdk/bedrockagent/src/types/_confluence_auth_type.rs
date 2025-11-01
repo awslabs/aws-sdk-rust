@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ConfluenceAuthType {
         match self {
             ConfluenceAuthType::Basic => write!(f, "BASIC"),
             ConfluenceAuthType::Oauth2ClientCredentials => write!(f, "OAUTH2_CLIENT_CREDENTIALS"),
-            ConfluenceAuthType::Unknown(value) => write!(f, "{}", value),
+            ConfluenceAuthType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

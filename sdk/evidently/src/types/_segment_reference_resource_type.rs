@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SegmentReferenceResourceType {
         match self {
             SegmentReferenceResourceType::Experiment => write!(f, "EXPERIMENT"),
             SegmentReferenceResourceType::Launch => write!(f, "LAUNCH"),
-            SegmentReferenceResourceType::Unknown(value) => write!(f, "{}", value),
+            SegmentReferenceResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

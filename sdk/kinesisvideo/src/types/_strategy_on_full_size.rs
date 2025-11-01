@@ -102,7 +102,7 @@ impl ::std::fmt::Display for StrategyOnFullSize {
         match self {
             StrategyOnFullSize::DeleteOldestMedia => write!(f, "DELETE_OLDEST_MEDIA"),
             StrategyOnFullSize::DenyNewMedia => write!(f, "DENY_NEW_MEDIA"),
-            StrategyOnFullSize::Unknown(value) => write!(f, "{}", value),
+            StrategyOnFullSize::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

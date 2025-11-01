@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DiscoveryIntegrationStatus {
         match self {
             DiscoveryIntegrationStatus::Disabled => write!(f, "DISABLED"),
             DiscoveryIntegrationStatus::Enabled => write!(f, "ENABLED"),
-            DiscoveryIntegrationStatus::Unknown(value) => write!(f, "{}", value),
+            DiscoveryIntegrationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

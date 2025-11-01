@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ContextType {
         match self {
             ContextType::Causal => write!(f, "CAUSAL"),
             ContextType::Contextual => write!(f, "CONTEXTUAL"),
-            ContextType::Unknown(value) => write!(f, "{}", value),
+            ContextType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -96,7 +96,7 @@ impl ::std::fmt::Display for AbortCriteriaAction {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             AbortCriteriaAction::Cancel => write!(f, "CANCEL"),
-            AbortCriteriaAction::Unknown(value) => write!(f, "{}", value),
+            AbortCriteriaAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

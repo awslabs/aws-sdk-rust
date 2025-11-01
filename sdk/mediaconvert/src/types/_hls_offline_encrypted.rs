@@ -102,7 +102,7 @@ impl ::std::fmt::Display for HlsOfflineEncrypted {
         match self {
             HlsOfflineEncrypted::Disabled => write!(f, "DISABLED"),
             HlsOfflineEncrypted::Enabled => write!(f, "ENABLED"),
-            HlsOfflineEncrypted::Unknown(value) => write!(f, "{}", value),
+            HlsOfflineEncrypted::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

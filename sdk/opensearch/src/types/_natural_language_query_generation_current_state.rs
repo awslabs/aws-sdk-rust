@@ -142,7 +142,7 @@ impl ::std::fmt::Display for NaturalLanguageQueryGenerationCurrentState {
             NaturalLanguageQueryGenerationCurrentState::EnableFailed => write!(f, "ENABLE_FAILED"),
             NaturalLanguageQueryGenerationCurrentState::EnableInProgress => write!(f, "ENABLE_IN_PROGRESS"),
             NaturalLanguageQueryGenerationCurrentState::NotEnabled => write!(f, "NOT_ENABLED"),
-            NaturalLanguageQueryGenerationCurrentState::Unknown(value) => write!(f, "{}", value),
+            NaturalLanguageQueryGenerationCurrentState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

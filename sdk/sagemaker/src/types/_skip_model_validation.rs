@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SkipModelValidation {
         match self {
             SkipModelValidation::All => write!(f, "All"),
             SkipModelValidation::None => write!(f, "None"),
-            SkipModelValidation::Unknown(value) => write!(f, "{}", value),
+            SkipModelValidation::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

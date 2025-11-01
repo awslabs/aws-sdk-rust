@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DeploymentTarget {
         match self {
             DeploymentTarget::Cloud => write!(f, "CLOUD"),
             DeploymentTarget::Greengrass => write!(f, "GREENGRASS"),
-            DeploymentTarget::Unknown(value) => write!(f, "{}", value),
+            DeploymentTarget::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

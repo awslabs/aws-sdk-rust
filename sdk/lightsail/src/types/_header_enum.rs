@@ -196,7 +196,7 @@ impl ::std::fmt::Display for HeaderEnum {
             HeaderEnum::Host => write!(f, "Host"),
             HeaderEnum::Origin => write!(f, "Origin"),
             HeaderEnum::Referer => write!(f, "Referer"),
-            HeaderEnum::Unknown(value) => write!(f, "{}", value),
+            HeaderEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

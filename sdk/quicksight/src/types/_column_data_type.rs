@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ColumnDataType {
             ColumnDataType::Decimal => write!(f, "DECIMAL"),
             ColumnDataType::Integer => write!(f, "INTEGER"),
             ColumnDataType::String => write!(f, "STRING"),
-            ColumnDataType::Unknown(value) => write!(f, "{}", value),
+            ColumnDataType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

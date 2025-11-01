@@ -102,7 +102,7 @@ impl ::std::fmt::Display for WebExperienceSamplePromptsControlMode {
         match self {
             WebExperienceSamplePromptsControlMode::Disabled => write!(f, "DISABLED"),
             WebExperienceSamplePromptsControlMode::Enabled => write!(f, "ENABLED"),
-            WebExperienceSamplePromptsControlMode::Unknown(value) => write!(f, "{}", value),
+            WebExperienceSamplePromptsControlMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

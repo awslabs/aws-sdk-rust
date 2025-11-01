@@ -133,7 +133,7 @@ impl ::std::fmt::Display for NodeAttributeName {
             NodeAttributeName::PlatformVersion => write!(f, "PlatformVersion"),
             NodeAttributeName::Region => write!(f, "Region"),
             NodeAttributeName::ResourceType => write!(f, "ResourceType"),
-            NodeAttributeName::Unknown(value) => write!(f, "{}", value),
+            NodeAttributeName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

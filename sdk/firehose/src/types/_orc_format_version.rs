@@ -102,7 +102,7 @@ impl ::std::fmt::Display for OrcFormatVersion {
         match self {
             OrcFormatVersion::V011 => write!(f, "V0_11"),
             OrcFormatVersion::V012 => write!(f, "V0_12"),
-            OrcFormatVersion::Unknown(value) => write!(f, "{}", value),
+            OrcFormatVersion::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

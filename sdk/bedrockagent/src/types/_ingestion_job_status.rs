@@ -126,7 +126,7 @@ impl ::std::fmt::Display for IngestionJobStatus {
             IngestionJobStatus::Starting => write!(f, "STARTING"),
             IngestionJobStatus::Stopped => write!(f, "STOPPED"),
             IngestionJobStatus::Stopping => write!(f, "STOPPING"),
-            IngestionJobStatus::Unknown(value) => write!(f, "{}", value),
+            IngestionJobStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

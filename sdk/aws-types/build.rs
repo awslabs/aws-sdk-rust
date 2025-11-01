@@ -13,7 +13,7 @@ fn generate_build_vars(output_path: &Path) {
     let rust_version = rustc_version::version().expect("Could not retrieve rustc version");
     let mut f =
         File::create(output_path.join("build_env.rs")).expect("Could not create build environment");
-    f.write_all(format!("const RUST_VERSION: &str = \"{}\";", rust_version).as_bytes())
+    f.write_all(format!("const RUST_VERSION: &str = \"{rust_version}\";").as_bytes())
         .expect("Unable to write rust version");
     f.flush().expect("failed to flush");
 }

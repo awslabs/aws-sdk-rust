@@ -140,7 +140,7 @@ impl ::std::fmt::Display for ApplicationPermission {
             ApplicationPermission::ManageClusters => write!(f, "ManageClusters"),
             ApplicationPermission::ManageUsersAndGroups => write!(f, "ManageUsersAndGroups"),
             ApplicationPermission::ViewAuditData => write!(f, "ViewAuditData"),
-            ApplicationPermission::Unknown(value) => write!(f, "{}", value),
+            ApplicationPermission::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

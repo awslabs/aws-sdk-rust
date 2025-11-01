@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ResourceTypeNotFound {
             ResourceTypeNotFound::ChannelGroup => write!(f, "CHANNEL_GROUP"),
             ResourceTypeNotFound::HarvestJob => write!(f, "HARVEST_JOB"),
             ResourceTypeNotFound::OriginEndpoint => write!(f, "ORIGIN_ENDPOINT"),
-            ResourceTypeNotFound::Unknown(value) => write!(f, "{}", value),
+            ResourceTypeNotFound::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

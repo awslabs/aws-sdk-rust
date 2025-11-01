@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AccessibilityType {
         match self {
             AccessibilityType::DoesNotImplementAccessibilityFeatures => write!(f, "DOES_NOT_IMPLEMENT_ACCESSIBILITY_FEATURES"),
             AccessibilityType::ImplementsAccessibilityFeatures => write!(f, "IMPLEMENTS_ACCESSIBILITY_FEATURES"),
-            AccessibilityType::Unknown(value) => write!(f, "{}", value),
+            AccessibilityType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

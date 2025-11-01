@@ -114,7 +114,7 @@ impl ::std::fmt::Display for AccessBudgetType {
             AccessBudgetType::CalendarMonth => write!(f, "CALENDAR_MONTH"),
             AccessBudgetType::CalendarWeek => write!(f, "CALENDAR_WEEK"),
             AccessBudgetType::Lifetime => write!(f, "LIFETIME"),
-            AccessBudgetType::Unknown(value) => write!(f, "{}", value),
+            AccessBudgetType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

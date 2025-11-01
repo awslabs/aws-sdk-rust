@@ -126,7 +126,7 @@ impl ::std::fmt::Display for StatementState {
             StatementState::Error => write!(f, "ERROR"),
             StatementState::Running => write!(f, "RUNNING"),
             StatementState::Waiting => write!(f, "WAITING"),
-            StatementState::Unknown(value) => write!(f, "{}", value),
+            StatementState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

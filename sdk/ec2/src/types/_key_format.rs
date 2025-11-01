@@ -102,7 +102,7 @@ impl ::std::fmt::Display for KeyFormat {
         match self {
             KeyFormat::Pem => write!(f, "pem"),
             KeyFormat::Ppk => write!(f, "ppk"),
-            KeyFormat::Unknown(value) => write!(f, "{}", value),
+            KeyFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for GlobalNetworkState {
             GlobalNetworkState::Deleting => write!(f, "DELETING"),
             GlobalNetworkState::Pending => write!(f, "PENDING"),
             GlobalNetworkState::Updating => write!(f, "UPDATING"),
-            GlobalNetworkState::Unknown(value) => write!(f, "{}", value),
+            GlobalNetworkState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

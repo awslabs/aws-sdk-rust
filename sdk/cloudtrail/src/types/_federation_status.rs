@@ -114,7 +114,7 @@ impl ::std::fmt::Display for FederationStatus {
             FederationStatus::Disabling => write!(f, "DISABLING"),
             FederationStatus::Enabled => write!(f, "ENABLED"),
             FederationStatus::Enabling => write!(f, "ENABLING"),
-            FederationStatus::Unknown(value) => write!(f, "{}", value),
+            FederationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

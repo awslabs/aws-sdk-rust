@@ -102,7 +102,7 @@ impl ::std::fmt::Display for BurnInSubtitleStylePassthrough {
         match self {
             BurnInSubtitleStylePassthrough::Disabled => write!(f, "DISABLED"),
             BurnInSubtitleStylePassthrough::Enabled => write!(f, "ENABLED"),
-            BurnInSubtitleStylePassthrough::Unknown(value) => write!(f, "{}", value),
+            BurnInSubtitleStylePassthrough::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

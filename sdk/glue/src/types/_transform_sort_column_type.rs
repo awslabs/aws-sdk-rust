@@ -120,7 +120,7 @@ impl ::std::fmt::Display for TransformSortColumnType {
             TransformSortColumnType::Name => write!(f, "NAME"),
             TransformSortColumnType::Status => write!(f, "STATUS"),
             TransformSortColumnType::TransformType => write!(f, "TRANSFORM_TYPE"),
-            TransformSortColumnType::Unknown(value) => write!(f, "{}", value),
+            TransformSortColumnType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for XavcGopBReference {
         match self {
             XavcGopBReference::Disabled => write!(f, "DISABLED"),
             XavcGopBReference::Enabled => write!(f, "ENABLED"),
-            XavcGopBReference::Unknown(value) => write!(f, "{}", value),
+            XavcGopBReference::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

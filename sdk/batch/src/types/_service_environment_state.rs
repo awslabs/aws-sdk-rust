@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ServiceEnvironmentState {
         match self {
             ServiceEnvironmentState::Disabled => write!(f, "DISABLED"),
             ServiceEnvironmentState::Enabled => write!(f, "ENABLED"),
-            ServiceEnvironmentState::Unknown(value) => write!(f, "{}", value),
+            ServiceEnvironmentState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

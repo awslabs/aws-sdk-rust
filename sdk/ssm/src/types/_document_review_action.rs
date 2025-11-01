@@ -114,7 +114,7 @@ impl ::std::fmt::Display for DocumentReviewAction {
             DocumentReviewAction::Reject => write!(f, "Reject"),
             DocumentReviewAction::SendForReview => write!(f, "SendForReview"),
             DocumentReviewAction::UpdateReview => write!(f, "UpdateReview"),
-            DocumentReviewAction::Unknown(value) => write!(f, "{}", value),
+            DocumentReviewAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -427,7 +427,7 @@ impl ::std::fmt::Display for AwsClosedLostReason {
             AwsClosedLostReason::SelfService => write!(f, "Self-Service"),
             AwsClosedLostReason::TechnicalLimitations => write!(f, "Technical Limitations"),
             AwsClosedLostReason::TermSheetImpasse => write!(f, "Term Sheet Impasse"),
-            AwsClosedLostReason::Unknown(value) => write!(f, "{}", value),
+            AwsClosedLostReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

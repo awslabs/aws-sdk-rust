@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SearchTextIntendedUse {
         match self {
             SearchTextIntendedUse::SingleUse => write!(f, "SingleUse"),
             SearchTextIntendedUse::Storage => write!(f, "Storage"),
-            SearchTextIntendedUse::Unknown(value) => write!(f, "{}", value),
+            SearchTextIntendedUse::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

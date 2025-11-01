@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ResourceImportStrategyType {
         match self {
             ResourceImportStrategyType::AddOnly => write!(f, "AddOnly"),
             ResourceImportStrategyType::ReplaceAll => write!(f, "ReplaceAll"),
-            ResourceImportStrategyType::Unknown(value) => write!(f, "{}", value),
+            ResourceImportStrategyType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

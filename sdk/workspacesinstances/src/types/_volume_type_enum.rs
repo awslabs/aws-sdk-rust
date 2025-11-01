@@ -132,7 +132,7 @@ impl ::std::fmt::Display for VolumeTypeEnum {
             VolumeTypeEnum::Sc1 => write!(f, "sc1"),
             VolumeTypeEnum::St1 => write!(f, "st1"),
             VolumeTypeEnum::Standard => write!(f, "standard"),
-            VolumeTypeEnum::Unknown(value) => write!(f, "{}", value),
+            VolumeTypeEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

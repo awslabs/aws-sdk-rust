@@ -108,7 +108,7 @@ impl ::std::fmt::Display for TaskRunSortColumnType {
             TaskRunSortColumnType::Started => write!(f, "STARTED"),
             TaskRunSortColumnType::Status => write!(f, "STATUS"),
             TaskRunSortColumnType::TaskRunType => write!(f, "TASK_RUN_TYPE"),
-            TaskRunSortColumnType::Unknown(value) => write!(f, "{}", value),
+            TaskRunSortColumnType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

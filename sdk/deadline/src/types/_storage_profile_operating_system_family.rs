@@ -108,7 +108,7 @@ impl ::std::fmt::Display for StorageProfileOperatingSystemFamily {
             StorageProfileOperatingSystemFamily::Linux => write!(f, "LINUX"),
             StorageProfileOperatingSystemFamily::Macos => write!(f, "MACOS"),
             StorageProfileOperatingSystemFamily::Windows => write!(f, "WINDOWS"),
-            StorageProfileOperatingSystemFamily::Unknown(value) => write!(f, "{}", value),
+            StorageProfileOperatingSystemFamily::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

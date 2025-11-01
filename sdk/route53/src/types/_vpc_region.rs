@@ -406,7 +406,7 @@ impl ::std::fmt::Display for VpcRegion {
             VpcRegion::UsIsofSouth1 => write!(f, "us-isof-south-1"),
             VpcRegion::UsWest1 => write!(f, "us-west-1"),
             VpcRegion::UsWest2 => write!(f, "us-west-2"),
-            VpcRegion::Unknown(value) => write!(f, "{}", value),
+            VpcRegion::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

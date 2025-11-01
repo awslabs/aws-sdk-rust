@@ -189,7 +189,7 @@ impl ::std::fmt::Display for AlgorithmNameResampling {
             AlgorithmNameResampling::Q3 => write!(f, "Q3"),
             AlgorithmNameResampling::Rms => write!(f, "RMS"),
             AlgorithmNameResampling::Sum => write!(f, "SUM"),
-            AlgorithmNameResampling::Unknown(value) => write!(f, "{}", value),
+            AlgorithmNameResampling::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

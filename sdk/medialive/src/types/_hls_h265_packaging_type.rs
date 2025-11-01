@@ -102,7 +102,7 @@ impl ::std::fmt::Display for HlsH265PackagingType {
         match self {
             HlsH265PackagingType::Hev1 => write!(f, "HEV1"),
             HlsH265PackagingType::Hvc1 => write!(f, "HVC1"),
-            HlsH265PackagingType::Unknown(value) => write!(f, "{}", value),
+            HlsH265PackagingType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

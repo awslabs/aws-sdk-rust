@@ -51,16 +51,14 @@ pub fn de_check_dns_availability(
     let start_el = decoder.start_el();
     if !(start_el.matches("CheckDNSAvailabilityResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected CheckDNSAvailabilityResponse got {:?}",
-            start_el
+            "invalid root, expected CheckDNSAvailabilityResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("CheckDNSAvailabilityResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected CheckDNSAvailabilityResult got {:?}",
-                start_el
+                "invalid result, expected CheckDNSAvailabilityResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

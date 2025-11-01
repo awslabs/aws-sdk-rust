@@ -108,7 +108,7 @@ impl ::std::fmt::Display for RdsSavingsEstimationModeSource {
             RdsSavingsEstimationModeSource::CostExplorerRightsizing => write!(f, "CostExplorerRightsizing"),
             RdsSavingsEstimationModeSource::CostOptimizationHub => write!(f, "CostOptimizationHub"),
             RdsSavingsEstimationModeSource::PublicPricing => write!(f, "PublicPricing"),
-            RdsSavingsEstimationModeSource::Unknown(value) => write!(f, "{}", value),
+            RdsSavingsEstimationModeSource::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

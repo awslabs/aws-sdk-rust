@@ -108,7 +108,7 @@ impl ::std::fmt::Display for IpSource {
             IpSource::Amazon => write!(f, "amazon"),
             IpSource::Byoip => write!(f, "byoip"),
             IpSource::None => write!(f, "none"),
-            IpSource::Unknown(value) => write!(f, "{}", value),
+            IpSource::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

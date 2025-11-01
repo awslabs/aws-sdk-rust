@@ -119,7 +119,7 @@ impl ::std::fmt::Display for PredefinedLoadMetricType {
             PredefinedLoadMetricType::AsgTotalCpuUtilization => write!(f, "ASGTotalCPUUtilization"),
             PredefinedLoadMetricType::AsgTotalNetworkIn => write!(f, "ASGTotalNetworkIn"),
             PredefinedLoadMetricType::AsgTotalNetworkOut => write!(f, "ASGTotalNetworkOut"),
-            PredefinedLoadMetricType::Unknown(value) => write!(f, "{}", value),
+            PredefinedLoadMetricType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

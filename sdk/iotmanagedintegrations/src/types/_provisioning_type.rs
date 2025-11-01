@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ProvisioningType {
         match self {
             ProvisioningType::FleetProvisioning => write!(f, "FLEET_PROVISIONING"),
             ProvisioningType::Jitr => write!(f, "JITR"),
-            ProvisioningType::Unknown(value) => write!(f, "{}", value),
+            ProvisioningType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

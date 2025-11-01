@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ProfileNotificationType {
         match self {
             ProfileNotificationType::ProfileAnswersUpdated => write!(f, "PROFILE_ANSWERS_UPDATED"),
             ProfileNotificationType::ProfileDeleted => write!(f, "PROFILE_DELETED"),
-            ProfileNotificationType::Unknown(value) => write!(f, "{}", value),
+            ProfileNotificationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

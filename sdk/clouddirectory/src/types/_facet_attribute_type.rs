@@ -126,7 +126,7 @@ impl ::std::fmt::Display for FacetAttributeType {
             FacetAttributeType::Number => write!(f, "NUMBER"),
             FacetAttributeType::String => write!(f, "STRING"),
             FacetAttributeType::Variant => write!(f, "VARIANT"),
-            FacetAttributeType::Unknown(value) => write!(f, "{}", value),
+            FacetAttributeType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

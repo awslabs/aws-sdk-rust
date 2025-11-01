@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PromptTemplateType {
         match self {
             PromptTemplateType::Chat => write!(f, "CHAT"),
             PromptTemplateType::Text => write!(f, "TEXT"),
-            PromptTemplateType::Unknown(value) => write!(f, "{}", value),
+            PromptTemplateType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

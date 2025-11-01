@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ResourceNotFoundExceptionReason {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ResourceNotFoundExceptionReason::KmsNotFoundException => write!(f, "KMS_NotFoundException"),
-            ResourceNotFoundExceptionReason::Unknown(value) => write!(f, "{}", value),
+            ResourceNotFoundExceptionReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ResourceToTag {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ResourceToTag::LambdaFunction => write!(f, "lambda-function"),
-            ResourceToTag::Unknown(value) => write!(f, "{}", value),
+            ResourceToTag::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for OrderKey {
         match self {
             OrderKey::Ascending => write!(f, "Ascending"),
             OrderKey::Descending => write!(f, "Descending"),
-            OrderKey::Unknown(value) => write!(f, "{}", value),
+            OrderKey::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

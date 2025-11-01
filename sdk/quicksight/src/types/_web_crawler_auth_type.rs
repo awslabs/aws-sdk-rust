@@ -114,7 +114,7 @@ impl ::std::fmt::Display for WebCrawlerAuthType {
             WebCrawlerAuthType::Form => write!(f, "FORM"),
             WebCrawlerAuthType::NoAuth => write!(f, "NO_AUTH"),
             WebCrawlerAuthType::Saml => write!(f, "SAML"),
-            WebCrawlerAuthType::Unknown(value) => write!(f, "{}", value),
+            WebCrawlerAuthType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

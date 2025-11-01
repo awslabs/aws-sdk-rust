@@ -108,7 +108,7 @@ impl ::std::fmt::Display for BlockPublicAccessMode {
             BlockPublicAccessMode::BlockBidirectional => write!(f, "block-bidirectional"),
             BlockPublicAccessMode::BlockIngress => write!(f, "block-ingress"),
             BlockPublicAccessMode::Off => write!(f, "off"),
-            BlockPublicAccessMode::Unknown(value) => write!(f, "{}", value),
+            BlockPublicAccessMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

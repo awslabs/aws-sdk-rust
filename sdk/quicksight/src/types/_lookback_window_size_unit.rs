@@ -108,7 +108,7 @@ impl ::std::fmt::Display for LookbackWindowSizeUnit {
             LookbackWindowSizeUnit::Day => write!(f, "DAY"),
             LookbackWindowSizeUnit::Hour => write!(f, "HOUR"),
             LookbackWindowSizeUnit::Week => write!(f, "WEEK"),
-            LookbackWindowSizeUnit::Unknown(value) => write!(f, "{}", value),
+            LookbackWindowSizeUnit::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

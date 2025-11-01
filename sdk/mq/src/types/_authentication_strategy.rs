@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AuthenticationStrategy {
             AuthenticationStrategy::ConfigManaged => write!(f, "CONFIG_MANAGED"),
             AuthenticationStrategy::Ldap => write!(f, "LDAP"),
             AuthenticationStrategy::Simple => write!(f, "SIMPLE"),
-            AuthenticationStrategy::Unknown(value) => write!(f, "{}", value),
+            AuthenticationStrategy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

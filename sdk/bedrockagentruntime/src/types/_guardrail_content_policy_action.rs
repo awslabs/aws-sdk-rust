@@ -96,7 +96,7 @@ impl ::std::fmt::Display for GuardrailContentPolicyAction {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             GuardrailContentPolicyAction::Blocked => write!(f, "BLOCKED"),
-            GuardrailContentPolicyAction::Unknown(value) => write!(f, "{}", value),
+            GuardrailContentPolicyAction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

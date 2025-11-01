@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Schema {
         match self {
             Schema::Ocsf => write!(f, "ocsf"),
             Schema::Raw => write!(f, "raw"),
-            Schema::Unknown(value) => write!(f, "{}", value),
+            Schema::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

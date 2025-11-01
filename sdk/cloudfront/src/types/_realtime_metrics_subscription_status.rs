@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RealtimeMetricsSubscriptionStatus {
         match self {
             RealtimeMetricsSubscriptionStatus::Disabled => write!(f, "Disabled"),
             RealtimeMetricsSubscriptionStatus::Enabled => write!(f, "Enabled"),
-            RealtimeMetricsSubscriptionStatus::Unknown(value) => write!(f, "{}", value),
+            RealtimeMetricsSubscriptionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

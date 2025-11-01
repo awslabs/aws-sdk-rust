@@ -114,7 +114,7 @@ impl ::std::fmt::Display for DbServerPatchingStatus {
             DbServerPatchingStatus::Failed => write!(f, "FAILED"),
             DbServerPatchingStatus::MaintenanceInProgress => write!(f, "MAINTENANCE_IN_PROGRESS"),
             DbServerPatchingStatus::Scheduled => write!(f, "SCHEDULED"),
-            DbServerPatchingStatus::Unknown(value) => write!(f, "{}", value),
+            DbServerPatchingStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

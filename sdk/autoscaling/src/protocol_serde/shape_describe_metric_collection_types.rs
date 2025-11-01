@@ -74,16 +74,14 @@ pub fn de_describe_metric_collection_types(
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeMetricCollectionTypesResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected DescribeMetricCollectionTypesResponse got {:?}",
-            start_el
+            "invalid root, expected DescribeMetricCollectionTypesResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("DescribeMetricCollectionTypesResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected DescribeMetricCollectionTypesResult got {:?}",
-                start_el
+                "invalid result, expected DescribeMetricCollectionTypesResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

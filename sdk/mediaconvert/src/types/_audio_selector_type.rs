@@ -16,6 +16,7 @@
 ///     AudioSelectorType::HlsRenditionGroup => { /* ... */ },
 ///     AudioSelectorType::LanguageCode => { /* ... */ },
 ///     AudioSelectorType::Pid => { /* ... */ },
+///     AudioSelectorType::Stream => { /* ... */ },
 ///     AudioSelectorType::Track => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -39,7 +40,7 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-/// Specify how MediaConvert selects audio content within your input. The default is Track. PID: Select audio by specifying the Packet Identifier (PID) values for MPEG Transport Stream inputs. Use this when you know the exact PID values of your audio streams. Track: Default. Select audio by track number. This is the most common option and works with most input container formats. Language code: Select audio by language using an ISO 639-2 or ISO 639-3 three-letter code in all capital letters. Use this when your source has embedded language metadata and you want to select tracks based on their language. HLS rendition group: Select audio from an HLS rendition group. Use this when your input is an HLS package with multiple audio renditions and you want to select specific rendition groups. All PCM: Select all uncompressed PCM audio tracks from your input automatically. This is useful when you want to include all PCM audio tracks without specifying individual track numbers.
+/// Specify how MediaConvert selects audio content within your input. The default is Track. PID: Select audio by specifying the Packet Identifier (PID) values for MPEG Transport Stream inputs. Use this when you know the exact PID values of your audio streams. Track: Default. Select audio by track number. This is the most common option and works with most input container formats. If more types of audio data get recognized in the future, these numberings may shift, but the numberings used for Stream mode will not. Language code: Select audio by language using an ISO 639-2 or ISO 639-3 three-letter       code in all capital letters. Use this when your source has embedded language metadata and you want to select tracks based on their language. HLS rendition group: Select audio from an HLS rendition group. Use this when your input is an HLS package with multiple audio renditions and you want to select specific rendition groups. All PCM: Select all uncompressed PCM audio tracks from your input automatically. This is useful when you want to include all PCM audio tracks without specifying individual track numbers. Stream: Select audio by stream number. Stream numbers include all tracks in the source file, regardless of type, and correspond to either the order of tracks in the file, or if applicable, the stream number metadata of the track. Although all tracks count toward these stream numbers, in this audio selector context, only the stream number of a track containing audio data may be used. If your source file contains a track which is not recognized by the service, then the corresponding stream number will still be reserved for future use. If more types of audio data get recognized in the future, these numberings will not shift.
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
@@ -54,6 +55,8 @@ pub enum AudioSelectorType {
     #[allow(missing_docs)] // documentation missing in model
     Pid,
     #[allow(missing_docs)] // documentation missing in model
+    Stream,
+    #[allow(missing_docs)] // documentation missing in model
     Track,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -66,6 +69,7 @@ impl ::std::convert::From<&str> for AudioSelectorType {
             "HLS_RENDITION_GROUP" => AudioSelectorType::HlsRenditionGroup,
             "LANGUAGE_CODE" => AudioSelectorType::LanguageCode,
             "PID" => AudioSelectorType::Pid,
+            "STREAM" => AudioSelectorType::Stream,
             "TRACK" => AudioSelectorType::Track,
             other => AudioSelectorType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -86,13 +90,14 @@ impl AudioSelectorType {
             AudioSelectorType::HlsRenditionGroup => "HLS_RENDITION_GROUP",
             AudioSelectorType::LanguageCode => "LANGUAGE_CODE",
             AudioSelectorType::Pid => "PID",
+            AudioSelectorType::Stream => "STREAM",
             AudioSelectorType::Track => "TRACK",
             AudioSelectorType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ALL_PCM", "HLS_RENDITION_GROUP", "LANGUAGE_CODE", "PID", "TRACK"]
+        &["ALL_PCM", "HLS_RENDITION_GROUP", "LANGUAGE_CODE", "PID", "STREAM", "TRACK"]
     }
 }
 impl ::std::convert::AsRef<str> for AudioSelectorType {
@@ -119,8 +124,9 @@ impl ::std::fmt::Display for AudioSelectorType {
             AudioSelectorType::HlsRenditionGroup => write!(f, "HLS_RENDITION_GROUP"),
             AudioSelectorType::LanguageCode => write!(f, "LANGUAGE_CODE"),
             AudioSelectorType::Pid => write!(f, "PID"),
+            AudioSelectorType::Stream => write!(f, "STREAM"),
             AudioSelectorType::Track => write!(f, "TRACK"),
-            AudioSelectorType::Unknown(value) => write!(f, "{}", value),
+            AudioSelectorType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

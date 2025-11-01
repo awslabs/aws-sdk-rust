@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ChangeStatus {
         match self {
             ChangeStatus::Insync => write!(f, "INSYNC"),
             ChangeStatus::Pending => write!(f, "PENDING"),
-            ChangeStatus::Unknown(value) => write!(f, "{}", value),
+            ChangeStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

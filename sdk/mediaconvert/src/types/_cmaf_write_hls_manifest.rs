@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CmafWriteHlsManifest {
         match self {
             CmafWriteHlsManifest::Disabled => write!(f, "DISABLED"),
             CmafWriteHlsManifest::Enabled => write!(f, "ENABLED"),
-            CmafWriteHlsManifest::Unknown(value) => write!(f, "{}", value),
+            CmafWriteHlsManifest::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

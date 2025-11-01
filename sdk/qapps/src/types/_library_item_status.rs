@@ -102,7 +102,7 @@ impl ::std::fmt::Display for LibraryItemStatus {
         match self {
             LibraryItemStatus::Disabled => write!(f, "DISABLED"),
             LibraryItemStatus::Published => write!(f, "PUBLISHED"),
-            LibraryItemStatus::Unknown(value) => write!(f, "{}", value),
+            LibraryItemStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

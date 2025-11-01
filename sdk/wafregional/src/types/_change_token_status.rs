@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ChangeTokenStatus {
             ChangeTokenStatus::Insync => write!(f, "INSYNC"),
             ChangeTokenStatus::Pending => write!(f, "PENDING"),
             ChangeTokenStatus::Provisioned => write!(f, "PROVISIONED"),
-            ChangeTokenStatus::Unknown(value) => write!(f, "{}", value),
+            ChangeTokenStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

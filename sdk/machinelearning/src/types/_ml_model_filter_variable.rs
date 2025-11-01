@@ -161,7 +161,7 @@ impl ::std::fmt::Display for MlModelFilterVariable {
             MlModelFilterVariable::Status => write!(f, "Status"),
             MlModelFilterVariable::TrainingDatasourceId => write!(f, "TrainingDataSourceId"),
             MlModelFilterVariable::TrainingDataUri => write!(f, "TrainingDataURI"),
-            MlModelFilterVariable::Unknown(value) => write!(f, "{}", value),
+            MlModelFilterVariable::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

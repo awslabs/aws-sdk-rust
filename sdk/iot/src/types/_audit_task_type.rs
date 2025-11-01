@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AuditTaskType {
         match self {
             AuditTaskType::OnDemandAuditTask => write!(f, "ON_DEMAND_AUDIT_TASK"),
             AuditTaskType::ScheduledAuditTask => write!(f, "SCHEDULED_AUDIT_TASK"),
-            AuditTaskType::Unknown(value) => write!(f, "{}", value),
+            AuditTaskType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

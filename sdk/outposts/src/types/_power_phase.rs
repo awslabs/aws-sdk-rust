@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PowerPhase {
         match self {
             PowerPhase::SinglePhase => write!(f, "SINGLE_PHASE"),
             PowerPhase::ThreePhase => write!(f, "THREE_PHASE"),
-            PowerPhase::Unknown(value) => write!(f, "{}", value),
+            PowerPhase::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

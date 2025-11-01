@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DatabaseInsightsMode {
         match self {
             DatabaseInsightsMode::Advanced => write!(f, "advanced"),
             DatabaseInsightsMode::Standard => write!(f, "standard"),
-            DatabaseInsightsMode::Unknown(value) => write!(f, "{}", value),
+            DatabaseInsightsMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

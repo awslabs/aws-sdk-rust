@@ -120,7 +120,7 @@ impl ::std::fmt::Display for AnalyticsCommonFilterName {
             AnalyticsCommonFilterName::Channel => write!(f, "Channel"),
             AnalyticsCommonFilterName::LocaleId => write!(f, "LocaleId"),
             AnalyticsCommonFilterName::Modality => write!(f, "Modality"),
-            AnalyticsCommonFilterName::Unknown(value) => write!(f, "{}", value),
+            AnalyticsCommonFilterName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

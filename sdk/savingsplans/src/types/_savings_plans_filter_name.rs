@@ -154,7 +154,7 @@ impl ::std::fmt::Display for SavingsPlansFilterName {
             SavingsPlansFilterName::Start => write!(f, "start"),
             SavingsPlansFilterName::Term => write!(f, "term"),
             SavingsPlansFilterName::Upfront => write!(f, "upfront"),
-            SavingsPlansFilterName::Unknown(value) => write!(f, "{}", value),
+            SavingsPlansFilterName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

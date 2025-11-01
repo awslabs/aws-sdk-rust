@@ -132,7 +132,7 @@ impl ::std::fmt::Display for DetectorModelVersionStatus {
             DetectorModelVersionStatus::Failed => write!(f, "FAILED"),
             DetectorModelVersionStatus::Inactive => write!(f, "INACTIVE"),
             DetectorModelVersionStatus::Paused => write!(f, "PAUSED"),
-            DetectorModelVersionStatus::Unknown(value) => write!(f, "{}", value),
+            DetectorModelVersionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

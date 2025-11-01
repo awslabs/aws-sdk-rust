@@ -108,7 +108,7 @@ impl ::std::fmt::Display for HyperParameterTuningJobSortByOptions {
             HyperParameterTuningJobSortByOptions::CreationTime => write!(f, "CreationTime"),
             HyperParameterTuningJobSortByOptions::Name => write!(f, "Name"),
             HyperParameterTuningJobSortByOptions::Status => write!(f, "Status"),
-            HyperParameterTuningJobSortByOptions::Unknown(value) => write!(f, "{}", value),
+            HyperParameterTuningJobSortByOptions::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

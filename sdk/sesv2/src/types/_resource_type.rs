@@ -122,7 +122,7 @@ impl ::std::fmt::Display for ResourceType {
             ResourceType::ConfigurationSet => write!(f, "CONFIGURATION_SET"),
             ResourceType::EmailIdentity => write!(f, "EMAIL_IDENTITY"),
             ResourceType::EmailTemplate => write!(f, "EMAIL_TEMPLATE"),
-            ResourceType::Unknown(value) => write!(f, "{}", value),
+            ResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

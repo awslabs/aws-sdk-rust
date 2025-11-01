@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CompleteOnConvergence {
         match self {
             CompleteOnConvergence::Disabled => write!(f, "Disabled"),
             CompleteOnConvergence::Enabled => write!(f, "Enabled"),
-            CompleteOnConvergence::Unknown(value) => write!(f, "{}", value),
+            CompleteOnConvergence::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

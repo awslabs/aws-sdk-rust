@@ -96,7 +96,7 @@ impl ::std::fmt::Display for SageMakerImageName {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             SageMakerImageName::SagemakerDistribution => write!(f, "sagemaker_distribution"),
-            SageMakerImageName::Unknown(value) => write!(f, "{}", value),
+            SageMakerImageName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

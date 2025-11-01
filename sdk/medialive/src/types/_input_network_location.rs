@@ -103,7 +103,7 @@ impl ::std::fmt::Display for InputNetworkLocation {
         match self {
             InputNetworkLocation::Aws => write!(f, "AWS"),
             InputNetworkLocation::OnPremises => write!(f, "ON_PREMISES"),
-            InputNetworkLocation::Unknown(value) => write!(f, "{}", value),
+            InputNetworkLocation::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

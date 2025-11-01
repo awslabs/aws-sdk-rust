@@ -108,7 +108,7 @@ impl ::std::fmt::Display for SetupStatus {
             SetupStatus::Failed => write!(f, "failed"),
             SetupStatus::InProgress => write!(f, "inProgress"),
             SetupStatus::Succeeded => write!(f, "succeeded"),
-            SetupStatus::Unknown(value) => write!(f, "{}", value),
+            SetupStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

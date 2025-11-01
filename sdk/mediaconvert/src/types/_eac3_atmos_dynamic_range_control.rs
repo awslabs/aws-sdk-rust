@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Eac3AtmosDynamicRangeControl {
         match self {
             Eac3AtmosDynamicRangeControl::InitializeFromSource => write!(f, "INITIALIZE_FROM_SOURCE"),
             Eac3AtmosDynamicRangeControl::Specified => write!(f, "SPECIFIED"),
-            Eac3AtmosDynamicRangeControl::Unknown(value) => write!(f, "{}", value),
+            Eac3AtmosDynamicRangeControl::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

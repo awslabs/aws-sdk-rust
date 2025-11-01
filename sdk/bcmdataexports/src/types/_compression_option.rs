@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CompressionOption {
         match self {
             CompressionOption::Gzip => write!(f, "GZIP"),
             CompressionOption::Parquet => write!(f, "PARQUET"),
-            CompressionOption::Unknown(value) => write!(f, "{}", value),
+            CompressionOption::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -120,7 +120,7 @@ impl ::std::fmt::Display for ReservedCapacityStatus {
             ReservedCapacityStatus::Failed => write!(f, "Failed"),
             ReservedCapacityStatus::Pending => write!(f, "Pending"),
             ReservedCapacityStatus::Scheduled => write!(f, "Scheduled"),
-            ReservedCapacityStatus::Unknown(value) => write!(f, "{}", value),
+            ReservedCapacityStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

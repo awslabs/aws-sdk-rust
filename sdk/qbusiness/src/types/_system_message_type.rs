@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SystemMessageType {
         match self {
             SystemMessageType::GroundedResponse => write!(f, "GROUNDED_RESPONSE"),
             SystemMessageType::Response => write!(f, "RESPONSE"),
-            SystemMessageType::Unknown(value) => write!(f, "{}", value),
+            SystemMessageType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for OperationStatus {
             OperationStatus::Pending => write!(f, "PENDING"),
             OperationStatus::Submitted => write!(f, "SUBMITTED"),
             OperationStatus::Success => write!(f, "SUCCESS"),
-            OperationStatus::Unknown(value) => write!(f, "{}", value),
+            OperationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

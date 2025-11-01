@@ -102,7 +102,7 @@ impl ::std::fmt::Display for IpamAssociatedResourceDiscoveryStatus {
         match self {
             IpamAssociatedResourceDiscoveryStatus::Active => write!(f, "active"),
             IpamAssociatedResourceDiscoveryStatus::NotFound => write!(f, "not-found"),
-            IpamAssociatedResourceDiscoveryStatus::Unknown(value) => write!(f, "{}", value),
+            IpamAssociatedResourceDiscoveryStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

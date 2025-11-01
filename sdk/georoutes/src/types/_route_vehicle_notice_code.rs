@@ -280,7 +280,7 @@ impl ::std::fmt::Display for RouteVehicleNoticeCode {
             RouteVehicleNoticeCode::ViolatedTurnRestriction => write!(f, "ViolatedTurnRestriction"),
             RouteVehicleNoticeCode::ViolatedVehicleRestriction => write!(f, "ViolatedVehicleRestriction"),
             RouteVehicleNoticeCode::ViolatedZoneRestriction => write!(f, "ViolatedZoneRestriction"),
-            RouteVehicleNoticeCode::Unknown(value) => write!(f, "{}", value),
+            RouteVehicleNoticeCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

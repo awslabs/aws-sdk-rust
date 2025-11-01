@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ThemeStyling {
             ThemeStyling::LightBlue => write!(f, "LIGHT_BLUE"),
             ThemeStyling::Pink => write!(f, "PINK"),
             ThemeStyling::Red => write!(f, "RED"),
-            ThemeStyling::Unknown(value) => write!(f, "{}", value),
+            ThemeStyling::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

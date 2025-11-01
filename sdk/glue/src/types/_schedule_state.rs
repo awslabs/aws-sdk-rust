@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ScheduleState {
             ScheduleState::NotScheduled => write!(f, "NOT_SCHEDULED"),
             ScheduleState::Scheduled => write!(f, "SCHEDULED"),
             ScheduleState::Transitioning => write!(f, "TRANSITIONING"),
-            ScheduleState::Unknown(value) => write!(f, "{}", value),
+            ScheduleState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

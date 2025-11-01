@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ImportSortAttribute {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ImportSortAttribute::LastUpdatedDateTime => write!(f, "LastUpdatedDateTime"),
-            ImportSortAttribute::Unknown(value) => write!(f, "{}", value),
+            ImportSortAttribute::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -174,8 +174,7 @@ pub(crate) fn de_batch_get_member_ec2_deep_inspection_status(
             },
             other => {
                 return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                    "expected object key or end object, found: {:?}",
-                    other
+                    "expected object key or end object, found: {other:?}"
                 )))
             }
         }

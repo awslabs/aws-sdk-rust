@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ContainerLevelMetrics {
         match self {
             ContainerLevelMetrics::Disabled => write!(f, "DISABLED"),
             ContainerLevelMetrics::Enabled => write!(f, "ENABLED"),
-            ContainerLevelMetrics::Unknown(value) => write!(f, "{}", value),
+            ContainerLevelMetrics::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

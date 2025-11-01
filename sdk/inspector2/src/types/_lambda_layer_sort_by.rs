@@ -108,7 +108,7 @@ impl ::std::fmt::Display for LambdaLayerSortBy {
             LambdaLayerSortBy::All => write!(f, "ALL"),
             LambdaLayerSortBy::Critical => write!(f, "CRITICAL"),
             LambdaLayerSortBy::High => write!(f, "HIGH"),
-            LambdaLayerSortBy::Unknown(value) => write!(f, "{}", value),
+            LambdaLayerSortBy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

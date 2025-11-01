@@ -102,7 +102,7 @@ impl ::std::fmt::Display for GeospatialColorState {
         match self {
             GeospatialColorState::Disabled => write!(f, "DISABLED"),
             GeospatialColorState::Enabled => write!(f, "ENABLED"),
-            GeospatialColorState::Unknown(value) => write!(f, "{}", value),
+            GeospatialColorState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

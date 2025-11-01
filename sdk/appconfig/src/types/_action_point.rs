@@ -147,7 +147,7 @@ impl ::std::fmt::Display for ActionPoint {
             ActionPoint::OnDeploymentStep => write!(f, "ON_DEPLOYMENT_STEP"),
             ActionPoint::PreCreateHostedConfigurationVersion => write!(f, "PRE_CREATE_HOSTED_CONFIGURATION_VERSION"),
             ActionPoint::PreStartDeployment => write!(f, "PRE_START_DEPLOYMENT"),
-            ActionPoint::Unknown(value) => write!(f, "{}", value),
+            ActionPoint::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

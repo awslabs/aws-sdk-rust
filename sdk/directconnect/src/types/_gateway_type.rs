@@ -102,7 +102,7 @@ impl ::std::fmt::Display for GatewayType {
         match self {
             GatewayType::TransitGateway => write!(f, "transitGateway"),
             GatewayType::VirtualPrivateGateway => write!(f, "virtualPrivateGateway"),
-            GatewayType::Unknown(value) => write!(f, "{}", value),
+            GatewayType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for DeliveryStatus {
             DeliveryStatus::Failure => write!(f, "Failure"),
             DeliveryStatus::NotApplicable => write!(f, "Not_Applicable"),
             DeliveryStatus::Success => write!(f, "Success"),
-            DeliveryStatus::Unknown(value) => write!(f, "{}", value),
+            DeliveryStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

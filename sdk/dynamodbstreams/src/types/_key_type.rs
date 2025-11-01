@@ -102,7 +102,7 @@ impl ::std::fmt::Display for KeyType {
         match self {
             KeyType::Hash => write!(f, "HASH"),
             KeyType::Range => write!(f, "RANGE"),
-            KeyType::Unknown(value) => write!(f, "{}", value),
+            KeyType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

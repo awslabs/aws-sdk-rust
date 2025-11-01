@@ -96,7 +96,7 @@ impl ::std::fmt::Display for CertificateProviderType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             CertificateProviderType::Pem => write!(f, "PEM"),
-            CertificateProviderType::Unknown(value) => write!(f, "{}", value),
+            CertificateProviderType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -188,6 +188,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for AssignPrivat
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::assign_private_nat_gateway_address::AssignPrivateNatGatewayAddressInput,
                 output: &mut ::std::string::String,

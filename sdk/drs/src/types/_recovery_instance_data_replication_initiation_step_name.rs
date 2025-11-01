@@ -239,7 +239,7 @@ impl ::std::fmt::Display for RecoveryInstanceDataReplicationInitiationStepName {
             RecoveryInstanceDataReplicationInitiationStepName::PairReplicationServerWithAgent => write!(f, "PAIR_REPLICATION_SERVER_WITH_AGENT"),
             RecoveryInstanceDataReplicationInitiationStepName::StartDataTransfer => write!(f, "START_DATA_TRANSFER"),
             RecoveryInstanceDataReplicationInitiationStepName::Wait => write!(f, "WAIT"),
-            RecoveryInstanceDataReplicationInitiationStepName::Unknown(value) => write!(f, "{}", value),
+            RecoveryInstanceDataReplicationInitiationStepName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

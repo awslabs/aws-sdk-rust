@@ -147,7 +147,7 @@ impl ::std::fmt::Display for FillingType {
             FillingType::FuturefillValue => write!(f, "futurefill_value"),
             FillingType::Middlefill => write!(f, "middlefill"),
             FillingType::MiddlefillValue => write!(f, "middlefill_value"),
-            FillingType::Unknown(value) => write!(f, "{}", value),
+            FillingType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

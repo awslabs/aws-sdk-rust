@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Ac3MetadataControl {
         match self {
             Ac3MetadataControl::FollowInput => write!(f, "FOLLOW_INPUT"),
             Ac3MetadataControl::UseConfigured => write!(f, "USE_CONFIGURED"),
-            Ac3MetadataControl::Unknown(value) => write!(f, "{}", value),
+            Ac3MetadataControl::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PadVideo {
         match self {
             PadVideo::Black => write!(f, "BLACK"),
             PadVideo::Disabled => write!(f, "DISABLED"),
-            PadVideo::Unknown(value) => write!(f, "{}", value),
+            PadVideo::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

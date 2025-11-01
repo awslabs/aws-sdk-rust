@@ -22,8 +22,7 @@ pub fn de_streaming_distribution_list(
     let start_el = decoder.start_el();
     if !(start_el.matches("StreamingDistributionList")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected StreamingDistributionList got {:?}",
-            start_el
+            "invalid root, expected StreamingDistributionList got {start_el:?}"
         )));
     }
     crate::protocol_serde::shape_streaming_distribution_list::de_streaming_distribution_list(&mut decoder)

@@ -53,8 +53,7 @@ pub fn de_modify_instance_cpu_options(
     let start_el = decoder.start_el();
     if !(start_el.matches("ModifyInstanceCpuOptionsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected ModifyInstanceCpuOptionsResponse got {:?}",
-            start_el
+            "invalid root, expected ModifyInstanceCpuOptionsResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

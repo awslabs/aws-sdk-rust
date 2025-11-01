@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ExpirationTimeResponse {
         match self {
             ExpirationTimeResponse::Disabled => write!(f, "Disabled"),
             ExpirationTimeResponse::Enabled => write!(f, "Enabled"),
-            ExpirationTimeResponse::Unknown(value) => write!(f, "{}", value),
+            ExpirationTimeResponse::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for FlowStatus {
             FlowStatus::NotPrepared => write!(f, "NotPrepared"),
             FlowStatus::Prepared => write!(f, "Prepared"),
             FlowStatus::Preparing => write!(f, "Preparing"),
-            FlowStatus::Unknown(value) => write!(f, "{}", value),
+            FlowStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

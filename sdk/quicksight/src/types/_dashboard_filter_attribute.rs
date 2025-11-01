@@ -140,7 +140,7 @@ impl ::std::fmt::Display for DashboardFilterAttribute {
             DashboardFilterAttribute::QuicksightOwner => write!(f, "QUICKSIGHT_OWNER"),
             DashboardFilterAttribute::QuicksightUser => write!(f, "QUICKSIGHT_USER"),
             DashboardFilterAttribute::QuicksightViewerOrOwner => write!(f, "QUICKSIGHT_VIEWER_OR_OWNER"),
-            DashboardFilterAttribute::Unknown(value) => write!(f, "{}", value),
+            DashboardFilterAttribute::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

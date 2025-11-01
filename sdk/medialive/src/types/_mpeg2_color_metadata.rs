@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Mpeg2ColorMetadata {
         match self {
             Mpeg2ColorMetadata::Ignore => write!(f, "IGNORE"),
             Mpeg2ColorMetadata::Insert => write!(f, "INSERT"),
-            Mpeg2ColorMetadata::Unknown(value) => write!(f, "{}", value),
+            Mpeg2ColorMetadata::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

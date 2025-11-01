@@ -175,7 +175,7 @@ impl ::std::fmt::Display for NamedFilterAggType {
             NamedFilterAggType::Sum => write!(f, "SUM"),
             NamedFilterAggType::Var => write!(f, "VAR"),
             NamedFilterAggType::Varp => write!(f, "VARP"),
-            NamedFilterAggType::Unknown(value) => write!(f, "{}", value),
+            NamedFilterAggType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

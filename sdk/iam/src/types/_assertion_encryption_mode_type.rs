@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AssertionEncryptionModeType {
         match self {
             AssertionEncryptionModeType::Allowed => write!(f, "Allowed"),
             AssertionEncryptionModeType::Required => write!(f, "Required"),
-            AssertionEncryptionModeType::Unknown(value) => write!(f, "{}", value),
+            AssertionEncryptionModeType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

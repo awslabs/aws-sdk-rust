@@ -120,7 +120,7 @@ impl ::std::fmt::Display for SessionKeyDerivationMode {
             SessionKeyDerivationMode::EmvCommonSessionKey => write!(f, "EMV_COMMON_SESSION_KEY"),
             SessionKeyDerivationMode::MastercardSessionKey => write!(f, "MASTERCARD_SESSION_KEY"),
             SessionKeyDerivationMode::Visa => write!(f, "VISA"),
-            SessionKeyDerivationMode::Unknown(value) => write!(f, "{}", value),
+            SessionKeyDerivationMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

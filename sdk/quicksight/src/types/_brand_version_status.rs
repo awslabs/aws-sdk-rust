@@ -108,7 +108,7 @@ impl ::std::fmt::Display for BrandVersionStatus {
             BrandVersionStatus::CreateFailed => write!(f, "CREATE_FAILED"),
             BrandVersionStatus::CreateInProgress => write!(f, "CREATE_IN_PROGRESS"),
             BrandVersionStatus::CreateSucceeded => write!(f, "CREATE_SUCCEEDED"),
-            BrandVersionStatus::Unknown(value) => write!(f, "{}", value),
+            BrandVersionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

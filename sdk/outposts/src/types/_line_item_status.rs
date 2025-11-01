@@ -154,7 +154,7 @@ impl ::std::fmt::Display for LineItemStatus {
             LineItemStatus::Preparing => write!(f, "PREPARING"),
             LineItemStatus::Replaced => write!(f, "REPLACED"),
             LineItemStatus::Shipped => write!(f, "SHIPPED"),
-            LineItemStatus::Unknown(value) => write!(f, "{}", value),
+            LineItemStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

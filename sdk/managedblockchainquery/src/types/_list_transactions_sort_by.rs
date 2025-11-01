@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ListTransactionsSortBy {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ListTransactionsSortBy::TransactionTimestamp => write!(f, "TRANSACTION_TIMESTAMP"),
-            ListTransactionsSortBy::Unknown(value) => write!(f, "{}", value),
+            ListTransactionsSortBy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

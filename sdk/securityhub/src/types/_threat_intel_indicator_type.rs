@@ -168,7 +168,7 @@ impl ::std::fmt::Display for ThreatIntelIndicatorType {
             ThreatIntelIndicatorType::Mutex => write!(f, "MUTEX"),
             ThreatIntelIndicatorType::Process => write!(f, "PROCESS"),
             ThreatIntelIndicatorType::Url => write!(f, "URL"),
-            ThreatIntelIndicatorType::Unknown(value) => write!(f, "{}", value),
+            ThreatIntelIndicatorType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

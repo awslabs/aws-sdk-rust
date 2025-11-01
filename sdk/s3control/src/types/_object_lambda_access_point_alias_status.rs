@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ObjectLambdaAccessPointAliasStatus {
         match self {
             ObjectLambdaAccessPointAliasStatus::Provisioning => write!(f, "PROVISIONING"),
             ObjectLambdaAccessPointAliasStatus::Ready => write!(f, "READY"),
-            ObjectLambdaAccessPointAliasStatus::Unknown(value) => write!(f, "{}", value),
+            ObjectLambdaAccessPointAliasStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

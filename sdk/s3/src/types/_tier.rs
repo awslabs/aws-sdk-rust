@@ -108,7 +108,7 @@ impl ::std::fmt::Display for Tier {
             Tier::Bulk => write!(f, "Bulk"),
             Tier::Expedited => write!(f, "Expedited"),
             Tier::Standard => write!(f, "Standard"),
-            Tier::Unknown(value) => write!(f, "{}", value),
+            Tier::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

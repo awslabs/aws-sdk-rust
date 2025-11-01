@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PolicyType {
         match self {
             PolicyType::Inline => write!(f, "INLINE"),
             PolicyType::Managed => write!(f, "MANAGED"),
-            PolicyType::Unknown(value) => write!(f, "{}", value),
+            PolicyType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

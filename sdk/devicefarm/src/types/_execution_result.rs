@@ -132,7 +132,7 @@ impl ::std::fmt::Display for ExecutionResult {
             ExecutionResult::Skipped => write!(f, "SKIPPED"),
             ExecutionResult::Stopped => write!(f, "STOPPED"),
             ExecutionResult::Warned => write!(f, "WARNED"),
-            ExecutionResult::Unknown(value) => write!(f, "{}", value),
+            ExecutionResult::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -120,7 +120,7 @@ impl ::std::fmt::Display for CompositionState {
             CompositionState::Starting => write!(f, "STARTING"),
             CompositionState::Stopped => write!(f, "STOPPED"),
             CompositionState::Stopping => write!(f, "STOPPING"),
-            CompositionState::Unknown(value) => write!(f, "{}", value),
+            CompositionState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

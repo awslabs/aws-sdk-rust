@@ -108,7 +108,7 @@ impl ::std::fmt::Display for DatasetStatusMessageCode {
             DatasetStatusMessageCode::ClientError => write!(f, "CLIENT_ERROR"),
             DatasetStatusMessageCode::ServiceError => write!(f, "SERVICE_ERROR"),
             DatasetStatusMessageCode::Success => write!(f, "SUCCESS"),
-            DatasetStatusMessageCode::Unknown(value) => write!(f, "{}", value),
+            DatasetStatusMessageCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

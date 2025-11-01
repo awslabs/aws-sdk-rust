@@ -752,7 +752,7 @@ impl ::std::fmt::Display for InferenceInstanceType {
             InferenceInstanceType::MlR7I8Xlarge => write!(f, "ml.r7i.8xlarge"),
             InferenceInstanceType::MlR7ILarge => write!(f, "ml.r7i.large"),
             InferenceInstanceType::MlR7IXlarge => write!(f, "ml.r7i.xlarge"),
-            InferenceInstanceType::Unknown(value) => write!(f, "{}", value),
+            InferenceInstanceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

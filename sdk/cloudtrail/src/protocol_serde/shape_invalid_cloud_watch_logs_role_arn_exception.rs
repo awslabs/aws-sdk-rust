@@ -24,8 +24,7 @@ pub(crate) fn de_invalid_cloud_watch_logs_role_arn_exception_json_err(
             },
             other => {
                 return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                    "expected object key or end object, found: {:?}",
-                    other
+                    "expected object key or end object, found: {other:?}"
                 )))
             }
         }

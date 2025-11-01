@@ -96,7 +96,7 @@ impl ::std::fmt::Display for EventTypeValues {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             EventTypeValues::ShareSnapshot => write!(f, "shareSnapshot"),
-            EventTypeValues::Unknown(value) => write!(f, "{}", value),
+            EventTypeValues::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

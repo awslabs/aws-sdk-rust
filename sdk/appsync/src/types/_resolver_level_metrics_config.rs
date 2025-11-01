@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ResolverLevelMetricsConfig {
         match self {
             ResolverLevelMetricsConfig::Disabled => write!(f, "DISABLED"),
             ResolverLevelMetricsConfig::Enabled => write!(f, "ENABLED"),
-            ResolverLevelMetricsConfig::Unknown(value) => write!(f, "{}", value),
+            ResolverLevelMetricsConfig::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -43,9 +43,9 @@ pub struct IpamResourceDiscoveryAssociation {
     /// <li>
     /// <p><code>disassociate-failed </code> - Resource discovery disassociation has failed.</p></li>
     /// <li>
-    /// <p><code>isolate-in-progress</code> - Amazon Web Services account that created the resource discovery association has been removed and the resource discovery associatation is being isolated.</p></li>
+    /// <p><code>isolate-in-progress</code> - Amazon Web Services account that created the resource discovery association has been removed and the resource discovery association is being isolated.</p></li>
     /// <li>
-    /// <p><code>isolate-complete</code> - Resource discovery isolation is complete..</p></li>
+    /// <p><code>isolate-complete</code> - Resource discovery isolation is complete.</p></li>
     /// <li>
     /// <p><code>restore-in-progress</code> - Resource discovery is being restored.</p></li>
     /// </ul>
@@ -111,9 +111,9 @@ impl IpamResourceDiscoveryAssociation {
     /// <li>
     /// <p><code>disassociate-failed </code> - Resource discovery disassociation has failed.</p></li>
     /// <li>
-    /// <p><code>isolate-in-progress</code> - Amazon Web Services account that created the resource discovery association has been removed and the resource discovery associatation is being isolated.</p></li>
+    /// <p><code>isolate-in-progress</code> - Amazon Web Services account that created the resource discovery association has been removed and the resource discovery association is being isolated.</p></li>
     /// <li>
-    /// <p><code>isolate-complete</code> - Resource discovery isolation is complete..</p></li>
+    /// <p><code>isolate-complete</code> - Resource discovery isolation is complete.</p></li>
     /// <li>
     /// <p><code>restore-in-progress</code> - Resource discovery is being restored.</p></li>
     /// </ul>
@@ -310,9 +310,9 @@ impl IpamResourceDiscoveryAssociationBuilder {
     /// <li>
     /// <p><code>disassociate-failed </code> - Resource discovery disassociation has failed.</p></li>
     /// <li>
-    /// <p><code>isolate-in-progress</code> - Amazon Web Services account that created the resource discovery association has been removed and the resource discovery associatation is being isolated.</p></li>
+    /// <p><code>isolate-in-progress</code> - Amazon Web Services account that created the resource discovery association has been removed and the resource discovery association is being isolated.</p></li>
     /// <li>
-    /// <p><code>isolate-complete</code> - Resource discovery isolation is complete..</p></li>
+    /// <p><code>isolate-complete</code> - Resource discovery isolation is complete.</p></li>
     /// <li>
     /// <p><code>restore-in-progress</code> - Resource discovery is being restored.</p></li>
     /// </ul>
@@ -335,9 +335,9 @@ impl IpamResourceDiscoveryAssociationBuilder {
     /// <li>
     /// <p><code>disassociate-failed </code> - Resource discovery disassociation has failed.</p></li>
     /// <li>
-    /// <p><code>isolate-in-progress</code> - Amazon Web Services account that created the resource discovery association has been removed and the resource discovery associatation is being isolated.</p></li>
+    /// <p><code>isolate-in-progress</code> - Amazon Web Services account that created the resource discovery association has been removed and the resource discovery association is being isolated.</p></li>
     /// <li>
-    /// <p><code>isolate-complete</code> - Resource discovery isolation is complete..</p></li>
+    /// <p><code>isolate-complete</code> - Resource discovery isolation is complete.</p></li>
     /// <li>
     /// <p><code>restore-in-progress</code> - Resource discovery is being restored.</p></li>
     /// </ul>
@@ -360,9 +360,9 @@ impl IpamResourceDiscoveryAssociationBuilder {
     /// <li>
     /// <p><code>disassociate-failed </code> - Resource discovery disassociation has failed.</p></li>
     /// <li>
-    /// <p><code>isolate-in-progress</code> - Amazon Web Services account that created the resource discovery association has been removed and the resource discovery associatation is being isolated.</p></li>
+    /// <p><code>isolate-in-progress</code> - Amazon Web Services account that created the resource discovery association has been removed and the resource discovery association is being isolated.</p></li>
     /// <li>
-    /// <p><code>isolate-complete</code> - Resource discovery isolation is complete..</p></li>
+    /// <p><code>isolate-complete</code> - Resource discovery isolation is complete.</p></li>
     /// <li>
     /// <p><code>restore-in-progress</code> - Resource discovery is being restored.</p></li>
     /// </ul>

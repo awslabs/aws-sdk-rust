@@ -136,7 +136,7 @@ impl ::std::fmt::Display for ListRecommendationsFilterKey {
             ListRecommendationsFilterKey::ResourceArn => write!(f, "RESOURCE_ARN"),
             ListRecommendationsFilterKey::Status => write!(f, "STATUS"),
             ListRecommendationsFilterKey::Type => write!(f, "TYPE"),
-            ListRecommendationsFilterKey::Unknown(value) => write!(f, "{}", value),
+            ListRecommendationsFilterKey::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

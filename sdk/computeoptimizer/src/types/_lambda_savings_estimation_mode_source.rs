@@ -108,7 +108,7 @@ impl ::std::fmt::Display for LambdaSavingsEstimationModeSource {
             LambdaSavingsEstimationModeSource::CostExplorerRightsizing => write!(f, "CostExplorerRightsizing"),
             LambdaSavingsEstimationModeSource::CostOptimizationHub => write!(f, "CostOptimizationHub"),
             LambdaSavingsEstimationModeSource::PublicPricing => write!(f, "PublicPricing"),
-            LambdaSavingsEstimationModeSource::Unknown(value) => write!(f, "{}", value),
+            LambdaSavingsEstimationModeSource::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

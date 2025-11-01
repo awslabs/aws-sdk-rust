@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ContainerServiceMetricName {
         match self {
             ContainerServiceMetricName::CpuUtilization => write!(f, "CPUUtilization"),
             ContainerServiceMetricName::MemoryUtilization => write!(f, "MemoryUtilization"),
-            ContainerServiceMetricName::Unknown(value) => write!(f, "{}", value),
+            ContainerServiceMetricName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

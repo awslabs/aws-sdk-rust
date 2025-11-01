@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ParameterType {
             ParameterType::Datetime => write!(f, "Datetime"),
             ParameterType::Number => write!(f, "Number"),
             ParameterType::String => write!(f, "String"),
-            ParameterType::Unknown(value) => write!(f, "{}", value),
+            ParameterType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

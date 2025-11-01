@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ShareStatus {
             ShareStatus::NotShared => write!(f, "NOT_SHARED"),
             ShareStatus::SharedByMe => write!(f, "SHARED_BY_ME"),
             ShareStatus::SharedWithMe => write!(f, "SHARED_WITH_ME"),
-            ShareStatus::Unknown(value) => write!(f, "{}", value),
+            ShareStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

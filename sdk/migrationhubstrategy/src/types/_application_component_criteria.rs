@@ -147,7 +147,7 @@ impl ::std::fmt::Display for ApplicationComponentCriteria {
             ApplicationComponentCriteria::NotDefined => write!(f, "NOT_DEFINED"),
             ApplicationComponentCriteria::ServerId => write!(f, "SERVER_ID"),
             ApplicationComponentCriteria::Strategy => write!(f, "STRATEGY"),
-            ApplicationComponentCriteria::Unknown(value) => write!(f, "{}", value),
+            ApplicationComponentCriteria::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

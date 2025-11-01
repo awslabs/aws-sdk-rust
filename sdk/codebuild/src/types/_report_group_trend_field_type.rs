@@ -154,7 +154,7 @@ impl ::std::fmt::Display for ReportGroupTrendFieldType {
             ReportGroupTrendFieldType::LineCoverage => write!(f, "LINE_COVERAGE"),
             ReportGroupTrendFieldType::PassRate => write!(f, "PASS_RATE"),
             ReportGroupTrendFieldType::Total => write!(f, "TOTAL"),
-            ReportGroupTrendFieldType::Unknown(value) => write!(f, "{}", value),
+            ReportGroupTrendFieldType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

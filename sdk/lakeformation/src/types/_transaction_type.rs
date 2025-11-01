@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TransactionType {
         match self {
             TransactionType::ReadAndWrite => write!(f, "READ_AND_WRITE"),
             TransactionType::ReadOnly => write!(f, "READ_ONLY"),
-            TransactionType::Unknown(value) => write!(f, "{}", value),
+            TransactionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

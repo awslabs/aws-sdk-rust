@@ -102,7 +102,7 @@ impl ::std::fmt::Display for H265Profile {
         match self {
             H265Profile::Main => write!(f, "MAIN"),
             H265Profile::Main10Bit => write!(f, "MAIN_10BIT"),
-            H265Profile::Unknown(value) => write!(f, "{}", value),
+            H265Profile::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

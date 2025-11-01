@@ -96,7 +96,7 @@ impl ::std::fmt::Display for OptInLevel {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             OptInLevel::Account => write!(f, "ACCOUNT"),
-            OptInLevel::Unknown(value) => write!(f, "{}", value),
+            OptInLevel::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

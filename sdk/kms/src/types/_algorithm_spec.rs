@@ -133,7 +133,7 @@ impl ::std::fmt::Display for AlgorithmSpec {
             AlgorithmSpec::RsaAesKeyWrapSha1 => write!(f, "RSA_AES_KEY_WRAP_SHA_1"),
             AlgorithmSpec::RsaAesKeyWrapSha256 => write!(f, "RSA_AES_KEY_WRAP_SHA_256"),
             AlgorithmSpec::Sm2Pke => write!(f, "SM2PKE"),
-            AlgorithmSpec::Unknown(value) => write!(f, "{}", value),
+            AlgorithmSpec::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

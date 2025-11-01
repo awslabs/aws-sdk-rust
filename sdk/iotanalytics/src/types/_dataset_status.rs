@@ -108,7 +108,7 @@ impl ::std::fmt::Display for DatasetStatus {
             DatasetStatus::Active => write!(f, "ACTIVE"),
             DatasetStatus::Creating => write!(f, "CREATING"),
             DatasetStatus::Deleting => write!(f, "DELETING"),
-            DatasetStatus::Unknown(value) => write!(f, "{}", value),
+            DatasetStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CustomHealthStatus {
         match self {
             CustomHealthStatus::Healthy => write!(f, "HEALTHY"),
             CustomHealthStatus::Unhealthy => write!(f, "UNHEALTHY"),
-            CustomHealthStatus::Unknown(value) => write!(f, "{}", value),
+            CustomHealthStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

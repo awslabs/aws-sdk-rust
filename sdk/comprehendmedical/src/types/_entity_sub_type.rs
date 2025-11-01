@@ -406,7 +406,7 @@ impl ::std::fmt::Display for EntitySubType {
             EntitySubType::TobaccoUse => write!(f, "TOBACCO_USE"),
             EntitySubType::TreatmentName => write!(f, "TREATMENT_NAME"),
             EntitySubType::Url => write!(f, "URL"),
-            EntitySubType::Unknown(value) => write!(f, "{}", value),
+            EntitySubType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

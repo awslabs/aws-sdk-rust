@@ -53,8 +53,7 @@ pub fn de_create_traffic_mirror_session(
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateTrafficMirrorSessionResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected CreateTrafficMirrorSessionResponse got {:?}",
-            start_el
+            "invalid root, expected CreateTrafficMirrorSessionResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

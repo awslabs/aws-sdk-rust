@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ConversationLogsInputModeFilter {
         match self {
             ConversationLogsInputModeFilter::Speech => write!(f, "Speech"),
             ConversationLogsInputModeFilter::Text => write!(f, "Text"),
-            ConversationLogsInputModeFilter::Unknown(value) => write!(f, "{}", value),
+            ConversationLogsInputModeFilter::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

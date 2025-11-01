@@ -133,7 +133,7 @@ impl ::std::fmt::Display for RecommendationPreferenceName {
             RecommendationPreferenceName::LookbackPeriodPreference => write!(f, "LookBackPeriodPreference"),
             RecommendationPreferenceName::PreferredResources => write!(f, "PreferredResources"),
             RecommendationPreferenceName::UtilizationPreferences => write!(f, "UtilizationPreferences"),
-            RecommendationPreferenceName::Unknown(value) => write!(f, "{}", value),
+            RecommendationPreferenceName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

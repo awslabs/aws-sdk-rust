@@ -96,7 +96,7 @@ impl ::std::fmt::Display for FleetScalingType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             FleetScalingType::TargetTrackingScaling => write!(f, "TARGET_TRACKING_SCALING"),
-            FleetScalingType::Unknown(value) => write!(f, "{}", value),
+            FleetScalingType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

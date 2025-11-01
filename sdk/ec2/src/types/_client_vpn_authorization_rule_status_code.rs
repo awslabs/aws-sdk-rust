@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ClientVpnAuthorizationRuleStatusCode {
             ClientVpnAuthorizationRuleStatusCode::Authorizing => write!(f, "authorizing"),
             ClientVpnAuthorizationRuleStatusCode::Failed => write!(f, "failed"),
             ClientVpnAuthorizationRuleStatusCode::Revoking => write!(f, "revoking"),
-            ClientVpnAuthorizationRuleStatusCode::Unknown(value) => write!(f, "{}", value),
+            ClientVpnAuthorizationRuleStatusCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

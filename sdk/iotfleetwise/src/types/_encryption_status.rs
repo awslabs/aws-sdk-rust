@@ -108,7 +108,7 @@ impl ::std::fmt::Display for EncryptionStatus {
             EncryptionStatus::Failure => write!(f, "FAILURE"),
             EncryptionStatus::Pending => write!(f, "PENDING"),
             EncryptionStatus::Success => write!(f, "SUCCESS"),
-            EncryptionStatus::Unknown(value) => write!(f, "{}", value),
+            EncryptionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

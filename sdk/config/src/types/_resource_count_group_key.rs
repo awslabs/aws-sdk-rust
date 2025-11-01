@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ResourceCountGroupKey {
             ResourceCountGroupKey::AccountId => write!(f, "ACCOUNT_ID"),
             ResourceCountGroupKey::AwsRegion => write!(f, "AWS_REGION"),
             ResourceCountGroupKey::ResourceType => write!(f, "RESOURCE_TYPE"),
-            ResourceCountGroupKey::Unknown(value) => write!(f, "{}", value),
+            ResourceCountGroupKey::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

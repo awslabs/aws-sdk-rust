@@ -108,7 +108,7 @@ impl ::std::fmt::Display for CertificateUsageType {
             CertificateUsageType::Encryption => write!(f, "ENCRYPTION"),
             CertificateUsageType::Signing => write!(f, "SIGNING"),
             CertificateUsageType::Tls => write!(f, "TLS"),
-            CertificateUsageType::Unknown(value) => write!(f, "{}", value),
+            CertificateUsageType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

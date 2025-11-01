@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DecisionTaskTimeoutType {
         match self {
             DecisionTaskTimeoutType::ScheduleToStart => write!(f, "SCHEDULE_TO_START"),
             DecisionTaskTimeoutType::StartToClose => write!(f, "START_TO_CLOSE"),
-            DecisionTaskTimeoutType::Unknown(value) => write!(f, "{}", value),
+            DecisionTaskTimeoutType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

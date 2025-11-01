@@ -102,7 +102,7 @@ impl ::std::fmt::Display for IsraelDealerType {
         match self {
             IsraelDealerType::Authorized => write!(f, "Authorized"),
             IsraelDealerType::NonAuthorized => write!(f, "Non-authorized"),
-            IsraelDealerType::Unknown(value) => write!(f, "{}", value),
+            IsraelDealerType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

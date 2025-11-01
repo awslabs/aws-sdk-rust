@@ -108,7 +108,7 @@ impl ::std::fmt::Display for PurchaseOption {
             PurchaseOption::CapacityBlock => write!(f, "CAPACITY_BLOCK"),
             PurchaseOption::Ondemand => write!(f, "ONDEMAND"),
             PurchaseOption::Spot => write!(f, "SPOT"),
-            PurchaseOption::Unknown(value) => write!(f, "{}", value),
+            PurchaseOption::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

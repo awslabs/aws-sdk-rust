@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ScanningConfigurationFailureCode {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ScanningConfigurationFailureCode::RepositoryNotFound => write!(f, "REPOSITORY_NOT_FOUND"),
-            ScanningConfigurationFailureCode::Unknown(value) => write!(f, "{}", value),
+            ScanningConfigurationFailureCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

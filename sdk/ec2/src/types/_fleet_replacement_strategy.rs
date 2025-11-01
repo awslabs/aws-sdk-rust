@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FleetReplacementStrategy {
         match self {
             FleetReplacementStrategy::Launch => write!(f, "launch"),
             FleetReplacementStrategy::LaunchBeforeTerminate => write!(f, "launch-before-terminate"),
-            FleetReplacementStrategy::Unknown(value) => write!(f, "{}", value),
+            FleetReplacementStrategy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

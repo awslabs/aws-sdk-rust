@@ -120,7 +120,7 @@ impl ::std::fmt::Display for DataSourceStatus {
             DataSourceStatus::Deleting => write!(f, "DELETING"),
             DataSourceStatus::Failed => write!(f, "FAILED"),
             DataSourceStatus::Updating => write!(f, "UPDATING"),
-            DataSourceStatus::Unknown(value) => write!(f, "{}", value),
+            DataSourceStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

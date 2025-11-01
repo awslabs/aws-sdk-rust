@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DqTransformOutput {
         match self {
             DqTransformOutput::EvaluationResults => write!(f, "EvaluationResults"),
             DqTransformOutput::PrimaryInput => write!(f, "PrimaryInput"),
-            DqTransformOutput::Unknown(value) => write!(f, "{}", value),
+            DqTransformOutput::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

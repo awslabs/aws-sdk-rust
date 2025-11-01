@@ -120,7 +120,7 @@ impl ::std::fmt::Display for AliasLifecycle {
             AliasLifecycle::Creating => write!(f, "CREATING"),
             AliasLifecycle::DeleteFailed => write!(f, "DELETE_FAILED"),
             AliasLifecycle::Deleting => write!(f, "DELETING"),
-            AliasLifecycle::Unknown(value) => write!(f, "{}", value),
+            AliasLifecycle::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

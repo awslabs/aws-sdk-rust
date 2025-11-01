@@ -117,7 +117,7 @@ impl ::std::fmt::Display for SuppressionListReason {
         match self {
             SuppressionListReason::Bounce => write!(f, "BOUNCE"),
             SuppressionListReason::Complaint => write!(f, "COMPLAINT"),
-            SuppressionListReason::Unknown(value) => write!(f, "{}", value),
+            SuppressionListReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -138,7 +138,7 @@ impl ::std::fmt::Display for DomainControllerStatus {
             DomainControllerStatus::Impaired => write!(f, "Impaired"),
             DomainControllerStatus::Restoring => write!(f, "Restoring"),
             DomainControllerStatus::Updating => write!(f, "Updating"),
-            DomainControllerStatus::Unknown(value) => write!(f, "{}", value),
+            DomainControllerStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

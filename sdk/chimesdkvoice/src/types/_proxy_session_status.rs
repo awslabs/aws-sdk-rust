@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ProxySessionStatus {
             ProxySessionStatus::Closed => write!(f, "Closed"),
             ProxySessionStatus::InProgress => write!(f, "InProgress"),
             ProxySessionStatus::Open => write!(f, "Open"),
-            ProxySessionStatus::Unknown(value) => write!(f, "{}", value),
+            ProxySessionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

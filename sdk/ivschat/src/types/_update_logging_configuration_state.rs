@@ -96,7 +96,7 @@ impl ::std::fmt::Display for UpdateLoggingConfigurationState {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             UpdateLoggingConfigurationState::Active => write!(f, "ACTIVE"),
-            UpdateLoggingConfigurationState::Unknown(value) => write!(f, "{}", value),
+            UpdateLoggingConfigurationState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

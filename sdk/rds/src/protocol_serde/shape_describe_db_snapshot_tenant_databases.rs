@@ -76,16 +76,14 @@ pub fn de_describe_db_snapshot_tenant_databases(
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeDBSnapshotTenantDatabasesResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected DescribeDBSnapshotTenantDatabasesResponse got {:?}",
-            start_el
+            "invalid root, expected DescribeDBSnapshotTenantDatabasesResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("DescribeDBSnapshotTenantDatabasesResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected DescribeDBSnapshotTenantDatabasesResult got {:?}",
-                start_el
+                "invalid result, expected DescribeDBSnapshotTenantDatabasesResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

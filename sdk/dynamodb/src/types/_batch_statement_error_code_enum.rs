@@ -168,7 +168,7 @@ impl ::std::fmt::Display for BatchStatementErrorCodeEnum {
             BatchStatementErrorCodeEnum::ThrottlingError => write!(f, "ThrottlingError"),
             BatchStatementErrorCodeEnum::TransactionConflict => write!(f, "TransactionConflict"),
             BatchStatementErrorCodeEnum::ValidationError => write!(f, "ValidationError"),
-            BatchStatementErrorCodeEnum::Unknown(value) => write!(f, "{}", value),
+            BatchStatementErrorCodeEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

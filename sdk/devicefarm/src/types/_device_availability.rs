@@ -114,7 +114,7 @@ impl ::std::fmt::Display for DeviceAvailability {
             DeviceAvailability::Busy => write!(f, "BUSY"),
             DeviceAvailability::HighlyAvailable => write!(f, "HIGHLY_AVAILABLE"),
             DeviceAvailability::TemporaryNotAvailable => write!(f, "TEMPORARY_NOT_AVAILABLE"),
-            DeviceAvailability::Unknown(value) => write!(f, "{}", value),
+            DeviceAvailability::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

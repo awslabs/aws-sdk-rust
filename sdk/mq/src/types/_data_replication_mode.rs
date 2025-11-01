@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DataReplicationMode {
         match self {
             DataReplicationMode::Crdr => write!(f, "CRDR"),
             DataReplicationMode::None => write!(f, "NONE"),
-            DataReplicationMode::Unknown(value) => write!(f, "{}", value),
+            DataReplicationMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

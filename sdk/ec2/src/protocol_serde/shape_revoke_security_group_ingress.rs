@@ -53,8 +53,7 @@ pub fn de_revoke_security_group_ingress(
     let start_el = decoder.start_el();
     if !(start_el.matches("RevokeSecurityGroupIngressResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected RevokeSecurityGroupIngressResponse got {:?}",
-            start_el
+            "invalid root, expected RevokeSecurityGroupIngressResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

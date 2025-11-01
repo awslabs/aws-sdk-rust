@@ -114,7 +114,7 @@ impl ::std::fmt::Display for EncodingName {
             EncodingName::Pcm => write!(f, "pcm"),
             EncodingName::Raw => write!(f, "raw"),
             EncodingName::Smpte291 => write!(f, "smpte291"),
-            EncodingName::Unknown(value) => write!(f, "{}", value),
+            EncodingName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for H264EntropyEncoding {
         match self {
             H264EntropyEncoding::Cabac => write!(f, "CABAC"),
             H264EntropyEncoding::Cavlc => write!(f, "CAVLC"),
-            H264EntropyEncoding::Unknown(value) => write!(f, "{}", value),
+            H264EntropyEncoding::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

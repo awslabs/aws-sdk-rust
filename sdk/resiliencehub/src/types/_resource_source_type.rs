@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ResourceSourceType {
         match self {
             ResourceSourceType::AppTemplate => write!(f, "AppTemplate"),
             ResourceSourceType::Discovered => write!(f, "Discovered"),
-            ResourceSourceType::Unknown(value) => write!(f, "{}", value),
+            ResourceSourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -96,7 +96,7 @@ impl ::std::fmt::Display for AggregatedUtterancesFilterName {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             AggregatedUtterancesFilterName::Utterance => write!(f, "Utterance"),
-            AggregatedUtterancesFilterName::Unknown(value) => write!(f, "{}", value),
+            AggregatedUtterancesFilterName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

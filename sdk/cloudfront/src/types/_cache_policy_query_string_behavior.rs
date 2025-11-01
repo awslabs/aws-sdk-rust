@@ -114,7 +114,7 @@ impl ::std::fmt::Display for CachePolicyQueryStringBehavior {
             CachePolicyQueryStringBehavior::AllExcept => write!(f, "allExcept"),
             CachePolicyQueryStringBehavior::None => write!(f, "none"),
             CachePolicyQueryStringBehavior::Whitelist => write!(f, "whitelist"),
-            CachePolicyQueryStringBehavior::Unknown(value) => write!(f, "{}", value),
+            CachePolicyQueryStringBehavior::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

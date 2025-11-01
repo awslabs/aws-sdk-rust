@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ActionsMode {
         match self {
             ActionsMode::RunAll => write!(f, "run-all"),
             ActionsMode::SkipAll => write!(f, "skip-all"),
-            ActionsMode::Unknown(value) => write!(f, "{}", value),
+            ActionsMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

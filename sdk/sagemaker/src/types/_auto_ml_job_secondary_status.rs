@@ -224,7 +224,7 @@ impl ::std::fmt::Display for AutoMlJobSecondaryStatus {
             AutoMlJobSecondaryStatus::Stopped => write!(f, "Stopped"),
             AutoMlJobSecondaryStatus::Stopping => write!(f, "Stopping"),
             AutoMlJobSecondaryStatus::TrainingModels => write!(f, "TrainingModels"),
-            AutoMlJobSecondaryStatus::Unknown(value) => write!(f, "{}", value),
+            AutoMlJobSecondaryStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

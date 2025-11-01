@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FlatInvocations {
         match self {
             FlatInvocations::Continue => write!(f, "Continue"),
             FlatInvocations::Stop => write!(f, "Stop"),
-            FlatInvocations::Unknown(value) => write!(f, "{}", value),
+            FlatInvocations::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for UserPoolMfaType {
             UserPoolMfaType::Off => write!(f, "OFF"),
             UserPoolMfaType::On => write!(f, "ON"),
             UserPoolMfaType::Optional => write!(f, "OPTIONAL"),
-            UserPoolMfaType::Unknown(value) => write!(f, "{}", value),
+            UserPoolMfaType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

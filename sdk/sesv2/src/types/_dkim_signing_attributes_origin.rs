@@ -280,7 +280,7 @@ impl ::std::fmt::Display for DkimSigningAttributesOrigin {
             DkimSigningAttributesOrigin::AwsSesUsWest1 => write!(f, "AWS_SES_US_WEST_1"),
             DkimSigningAttributesOrigin::AwsSesUsWest2 => write!(f, "AWS_SES_US_WEST_2"),
             DkimSigningAttributesOrigin::External => write!(f, "EXTERNAL"),
-            DkimSigningAttributesOrigin::Unknown(value) => write!(f, "{}", value),
+            DkimSigningAttributesOrigin::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

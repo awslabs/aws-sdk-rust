@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ManagedResourceStatus {
             ManagedResourceStatus::Disabling => write!(f, "DISABLING"),
             ManagedResourceStatus::Enabled => write!(f, "ENABLED"),
             ManagedResourceStatus::Enabling => write!(f, "ENABLING"),
-            ManagedResourceStatus::Unknown(value) => write!(f, "{}", value),
+            ManagedResourceStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

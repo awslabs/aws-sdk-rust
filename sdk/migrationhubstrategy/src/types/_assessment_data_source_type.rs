@@ -112,7 +112,7 @@ impl ::std::fmt::Display for AssessmentDataSourceType {
             AssessmentDataSourceType::Ads => write!(f, "ApplicationDiscoveryService"),
             AssessmentDataSourceType::ManualImport => write!(f, "ManualImport"),
             AssessmentDataSourceType::SrCollector => write!(f, "StrategyRecommendationsApplicationDataCollector"),
-            AssessmentDataSourceType::Unknown(value) => write!(f, "{}", value),
+            AssessmentDataSourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

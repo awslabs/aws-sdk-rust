@@ -119,7 +119,7 @@ impl ::std::fmt::Display for MessageType {
             MessageType::ConfigurationSnapshotDeliveryCompleted => write!(f, "ConfigurationSnapshotDeliveryCompleted"),
             MessageType::OversizedConfigurationItemChangeNotification => write!(f, "OversizedConfigurationItemChangeNotification"),
             MessageType::ScheduledNotification => write!(f, "ScheduledNotification"),
-            MessageType::Unknown(value) => write!(f, "{}", value),
+            MessageType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for DocumentFormat {
             DocumentFormat::Json => write!(f, "JSON"),
             DocumentFormat::Text => write!(f, "TEXT"),
             DocumentFormat::Yaml => write!(f, "YAML"),
-            DocumentFormat::Unknown(value) => write!(f, "{}", value),
+            DocumentFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

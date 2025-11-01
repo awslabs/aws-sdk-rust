@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DocumentReadMode {
         match self {
             DocumentReadMode::ForceDocumentReadAction => write!(f, "FORCE_DOCUMENT_READ_ACTION"),
             DocumentReadMode::ServiceDefault => write!(f, "SERVICE_DEFAULT"),
-            DocumentReadMode::Unknown(value) => write!(f, "{}", value),
+            DocumentReadMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

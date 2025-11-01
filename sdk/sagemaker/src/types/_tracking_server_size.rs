@@ -108,7 +108,7 @@ impl ::std::fmt::Display for TrackingServerSize {
             TrackingServerSize::L => write!(f, "Large"),
             TrackingServerSize::M => write!(f, "Medium"),
             TrackingServerSize::S => write!(f, "Small"),
-            TrackingServerSize::Unknown(value) => write!(f, "{}", value),
+            TrackingServerSize::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

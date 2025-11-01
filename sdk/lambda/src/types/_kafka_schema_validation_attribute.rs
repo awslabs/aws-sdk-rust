@@ -102,7 +102,7 @@ impl ::std::fmt::Display for KafkaSchemaValidationAttribute {
         match self {
             KafkaSchemaValidationAttribute::Key => write!(f, "KEY"),
             KafkaSchemaValidationAttribute::Value => write!(f, "VALUE"),
-            KafkaSchemaValidationAttribute::Unknown(value) => write!(f, "{}", value),
+            KafkaSchemaValidationAttribute::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

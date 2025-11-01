@@ -102,7 +102,7 @@ impl ::std::fmt::Display for WorkflowStatus {
         match self {
             WorkflowStatus::Active => write!(f, "ACTIVE"),
             WorkflowStatus::Invalid => write!(f, "INVALID"),
-            WorkflowStatus::Unknown(value) => write!(f, "{}", value),
+            WorkflowStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

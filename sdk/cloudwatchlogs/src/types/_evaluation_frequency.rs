@@ -126,7 +126,7 @@ impl ::std::fmt::Display for EvaluationFrequency {
             EvaluationFrequency::OneMin => write!(f, "ONE_MIN"),
             EvaluationFrequency::TenMin => write!(f, "TEN_MIN"),
             EvaluationFrequency::ThirtyMin => write!(f, "THIRTY_MIN"),
-            EvaluationFrequency::Unknown(value) => write!(f, "{}", value),
+            EvaluationFrequency::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

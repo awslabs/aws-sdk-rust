@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Vp8FramerateControl {
         match self {
             Vp8FramerateControl::InitializeFromSource => write!(f, "INITIALIZE_FROM_SOURCE"),
             Vp8FramerateControl::Specified => write!(f, "SPECIFIED"),
-            Vp8FramerateControl::Unknown(value) => write!(f, "{}", value),
+            Vp8FramerateControl::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

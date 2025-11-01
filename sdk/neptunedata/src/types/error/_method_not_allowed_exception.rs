@@ -42,7 +42,7 @@ impl ::std::fmt::Display for MethodNotAllowedException {
         ::std::write!(f, "MethodNotAllowedException")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
             {
-                ::std::write!(f, ": {}", inner_1)?;
+                ::std::write!(f, ": {inner_1}")?;
             }
         }
         Ok(())

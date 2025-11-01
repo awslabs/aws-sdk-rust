@@ -114,7 +114,7 @@ impl ::std::fmt::Display for UpdateStatus {
             UpdateStatus::Failed => write!(f, "Failed"),
             UpdateStatus::InProgress => write!(f, "InProgress"),
             UpdateStatus::Successful => write!(f, "Successful"),
-            UpdateStatus::Unknown(value) => write!(f, "{}", value),
+            UpdateStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for EpochTimeUnit {
             EpochTimeUnit::Milliseconds => write!(f, "MILLISECONDS"),
             EpochTimeUnit::Nanoseconds => write!(f, "NANOSECONDS"),
             EpochTimeUnit::Seconds => write!(f, "SECONDS"),
-            EpochTimeUnit::Unknown(value) => write!(f, "{}", value),
+            EpochTimeUnit::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

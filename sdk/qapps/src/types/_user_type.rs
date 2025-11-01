@@ -102,7 +102,7 @@ impl ::std::fmt::Display for UserType {
         match self {
             UserType::Owner => write!(f, "owner"),
             UserType::User => write!(f, "user"),
-            UserType::Unknown(value) => write!(f, "{}", value),
+            UserType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for RecordState {
             RecordState::Failed => write!(f, "Failed"),
             RecordState::Started => write!(f, "Started"),
             RecordState::Succeeded => write!(f, "Succeeded"),
-            RecordState::Unknown(value) => write!(f, "{}", value),
+            RecordState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

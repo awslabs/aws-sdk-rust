@@ -102,7 +102,7 @@ impl ::std::fmt::Display for HlsIntervalCadence {
         match self {
             HlsIntervalCadence::FollowCustom => write!(f, "FOLLOW_CUSTOM"),
             HlsIntervalCadence::FollowIframe => write!(f, "FOLLOW_IFRAME"),
-            HlsIntervalCadence::Unknown(value) => write!(f, "{}", value),
+            HlsIntervalCadence::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

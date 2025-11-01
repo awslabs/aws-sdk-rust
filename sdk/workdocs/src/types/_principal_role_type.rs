@@ -114,7 +114,7 @@ impl ::std::fmt::Display for PrincipalRoleType {
             PrincipalRoleType::Coowner => write!(f, "COOWNER"),
             PrincipalRoleType::Owner => write!(f, "OWNER"),
             PrincipalRoleType::Viewer => write!(f, "VIEWER"),
-            PrincipalRoleType::Unknown(value) => write!(f, "{}", value),
+            PrincipalRoleType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

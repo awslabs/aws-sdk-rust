@@ -108,7 +108,7 @@ impl ::std::fmt::Display for EventSourcePosition {
             EventSourcePosition::AtTimestamp => write!(f, "AT_TIMESTAMP"),
             EventSourcePosition::Latest => write!(f, "LATEST"),
             EventSourcePosition::TrimHorizon => write!(f, "TRIM_HORIZON"),
-            EventSourcePosition::Unknown(value) => write!(f, "{}", value),
+            EventSourcePosition::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AssistantCapabilityType {
         match self {
             AssistantCapabilityType::V1 => write!(f, "V1"),
             AssistantCapabilityType::V2 => write!(f, "V2"),
-            AssistantCapabilityType::Unknown(value) => write!(f, "{}", value),
+            AssistantCapabilityType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

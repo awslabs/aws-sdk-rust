@@ -132,7 +132,7 @@ impl ::std::fmt::Display for PartnerAppStatus {
             PartnerAppStatus::Failed => write!(f, "Failed"),
             PartnerAppStatus::UpdateFailed => write!(f, "UpdateFailed"),
             PartnerAppStatus::Updating => write!(f, "Updating"),
-            PartnerAppStatus::Unknown(value) => write!(f, "{}", value),
+            PartnerAppStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

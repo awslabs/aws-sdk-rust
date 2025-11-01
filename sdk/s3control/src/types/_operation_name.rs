@@ -161,7 +161,7 @@ impl ::std::fmt::Display for OperationName {
             OperationName::S3PutObjectRetention => write!(f, "S3PutObjectRetention"),
             OperationName::S3PutObjectTagging => write!(f, "S3PutObjectTagging"),
             OperationName::S3ReplicateObject => write!(f, "S3ReplicateObject"),
-            OperationName::Unknown(value) => write!(f, "{}", value),
+            OperationName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

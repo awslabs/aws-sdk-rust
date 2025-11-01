@@ -120,7 +120,7 @@ impl ::std::fmt::Display for OpenZfsDeploymentType {
             OpenZfsDeploymentType::SingleAz2 => write!(f, "SINGLE_AZ_2"),
             OpenZfsDeploymentType::SingleAzHa1 => write!(f, "SINGLE_AZ_HA_1"),
             OpenZfsDeploymentType::SingleAzHa2 => write!(f, "SINGLE_AZ_HA_2"),
-            OpenZfsDeploymentType::Unknown(value) => write!(f, "{}", value),
+            OpenZfsDeploymentType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -126,7 +126,7 @@ impl ::std::fmt::Display for RuleGroupsNamespaceStatusCode {
             RuleGroupsNamespaceStatusCode::Deleting => write!(f, "DELETING"),
             RuleGroupsNamespaceStatusCode::UpdateFailed => write!(f, "UPDATE_FAILED"),
             RuleGroupsNamespaceStatusCode::Updating => write!(f, "UPDATING"),
-            RuleGroupsNamespaceStatusCode::Unknown(value) => write!(f, "{}", value),
+            RuleGroupsNamespaceStatusCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

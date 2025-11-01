@@ -140,7 +140,7 @@ impl ::std::fmt::Display for AudienceModelStatus {
             AudienceModelStatus::DeleteFailed => write!(f, "DELETE_FAILED"),
             AudienceModelStatus::DeleteInProgress => write!(f, "DELETE_IN_PROGRESS"),
             AudienceModelStatus::DeletePending => write!(f, "DELETE_PENDING"),
-            AudienceModelStatus::Unknown(value) => write!(f, "{}", value),
+            AudienceModelStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

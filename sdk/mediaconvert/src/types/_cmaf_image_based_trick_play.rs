@@ -114,7 +114,7 @@ impl ::std::fmt::Display for CmafImageBasedTrickPlay {
             CmafImageBasedTrickPlay::None => write!(f, "NONE"),
             CmafImageBasedTrickPlay::Thumbnail => write!(f, "THUMBNAIL"),
             CmafImageBasedTrickPlay::ThumbnailAndFullframe => write!(f, "THUMBNAIL_AND_FULLFRAME"),
-            CmafImageBasedTrickPlay::Unknown(value) => write!(f, "{}", value),
+            CmafImageBasedTrickPlay::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

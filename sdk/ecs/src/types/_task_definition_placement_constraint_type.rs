@@ -96,7 +96,7 @@ impl ::std::fmt::Display for TaskDefinitionPlacementConstraintType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             TaskDefinitionPlacementConstraintType::MemberOf => write!(f, "memberOf"),
-            TaskDefinitionPlacementConstraintType::Unknown(value) => write!(f, "{}", value),
+            TaskDefinitionPlacementConstraintType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

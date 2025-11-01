@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ThumbnailType {
         match self {
             ThumbnailType::CurrentActive => write!(f, "CURRENT_ACTIVE"),
             ThumbnailType::Unspecified => write!(f, "UNSPECIFIED"),
-            ThumbnailType::Unknown(value) => write!(f, "{}", value),
+            ThumbnailType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

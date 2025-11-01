@@ -96,7 +96,7 @@ impl ::std::fmt::Display for BlankNodeHandling {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             BlankNodeHandling::ConvertToIri => write!(f, "convertToIri"),
-            BlankNodeHandling::Unknown(value) => write!(f, "{}", value),
+            BlankNodeHandling::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

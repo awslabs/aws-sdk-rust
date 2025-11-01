@@ -120,7 +120,7 @@ impl ::std::fmt::Display for FuotaTaskStatus {
             FuotaTaskStatus::FuotaSessionWaiting => write!(f, "FuotaSession_Waiting"),
             FuotaTaskStatus::InFuotaSession => write!(f, "In_FuotaSession"),
             FuotaTaskStatus::Pending => write!(f, "Pending"),
-            FuotaTaskStatus::Unknown(value) => write!(f, "{}", value),
+            FuotaTaskStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

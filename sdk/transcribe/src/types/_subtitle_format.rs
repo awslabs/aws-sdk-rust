@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SubtitleFormat {
         match self {
             SubtitleFormat::Srt => write!(f, "srt"),
             SubtitleFormat::Vtt => write!(f, "vtt"),
-            SubtitleFormat::Unknown(value) => write!(f, "{}", value),
+            SubtitleFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

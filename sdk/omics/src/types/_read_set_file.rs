@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ReadSetFile {
             ReadSetFile::Index => write!(f, "INDEX"),
             ReadSetFile::Source1 => write!(f, "SOURCE1"),
             ReadSetFile::Source2 => write!(f, "SOURCE2"),
-            ReadSetFile::Unknown(value) => write!(f, "{}", value),
+            ReadSetFile::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

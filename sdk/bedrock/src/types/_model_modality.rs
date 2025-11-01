@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ModelModality {
             ModelModality::Embedding => write!(f, "EMBEDDING"),
             ModelModality::Image => write!(f, "IMAGE"),
             ModelModality::Text => write!(f, "TEXT"),
-            ModelModality::Unknown(value) => write!(f, "{}", value),
+            ModelModality::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

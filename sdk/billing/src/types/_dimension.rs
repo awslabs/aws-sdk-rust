@@ -96,7 +96,7 @@ impl ::std::fmt::Display for Dimension {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             Dimension::LinkedAccount => write!(f, "LINKED_ACCOUNT"),
-            Dimension::Unknown(value) => write!(f, "{}", value),
+            Dimension::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

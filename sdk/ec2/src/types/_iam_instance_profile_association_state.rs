@@ -114,7 +114,7 @@ impl ::std::fmt::Display for IamInstanceProfileAssociationState {
             IamInstanceProfileAssociationState::Associating => write!(f, "associating"),
             IamInstanceProfileAssociationState::Disassociated => write!(f, "disassociated"),
             IamInstanceProfileAssociationState::Disassociating => write!(f, "disassociating"),
-            IamInstanceProfileAssociationState::Unknown(value) => write!(f, "{}", value),
+            IamInstanceProfileAssociationState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

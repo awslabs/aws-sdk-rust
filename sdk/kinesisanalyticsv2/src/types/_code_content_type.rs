@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CodeContentType {
         match self {
             CodeContentType::Plaintext => write!(f, "PLAINTEXT"),
             CodeContentType::Zipfile => write!(f, "ZIPFILE"),
-            CodeContentType::Unknown(value) => write!(f, "{}", value),
+            CodeContentType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

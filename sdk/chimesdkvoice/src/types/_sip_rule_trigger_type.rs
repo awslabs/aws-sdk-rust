@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SipRuleTriggerType {
         match self {
             SipRuleTriggerType::RequestUriHostname => write!(f, "RequestUriHostname"),
             SipRuleTriggerType::ToPhoneNumber => write!(f, "ToPhoneNumber"),
-            SipRuleTriggerType::Unknown(value) => write!(f, "{}", value),
+            SipRuleTriggerType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

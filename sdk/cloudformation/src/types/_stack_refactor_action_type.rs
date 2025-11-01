@@ -102,7 +102,7 @@ impl ::std::fmt::Display for StackRefactorActionType {
         match self {
             StackRefactorActionType::Create => write!(f, "CREATE"),
             StackRefactorActionType::Move => write!(f, "MOVE"),
-            StackRefactorActionType::Unknown(value) => write!(f, "{}", value),
+            StackRefactorActionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -132,7 +132,7 @@ impl ::std::fmt::Display for GeoSpatialDataRole {
             GeoSpatialDataRole::Longitude => write!(f, "LONGITUDE"),
             GeoSpatialDataRole::Postcode => write!(f, "POSTCODE"),
             GeoSpatialDataRole::State => write!(f, "STATE"),
-            GeoSpatialDataRole::Unknown(value) => write!(f, "{}", value),
+            GeoSpatialDataRole::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

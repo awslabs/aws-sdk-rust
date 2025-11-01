@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Format {
         match self {
             Format::Jpeg => write!(f, "JPEG"),
             Format::Png => write!(f, "PNG"),
-            Format::Unknown(value) => write!(f, "{}", value),
+            Format::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

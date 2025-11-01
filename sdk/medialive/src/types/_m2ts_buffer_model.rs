@@ -102,7 +102,7 @@ impl ::std::fmt::Display for M2tsBufferModel {
         match self {
             M2tsBufferModel::Multiplex => write!(f, "MULTIPLEX"),
             M2tsBufferModel::None => write!(f, "NONE"),
-            M2tsBufferModel::Unknown(value) => write!(f, "{}", value),
+            M2tsBufferModel::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

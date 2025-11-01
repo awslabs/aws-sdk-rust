@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ImageFormat {
             ImageFormat::Json => write!(f, "JSON"),
             ImageFormat::JsonDetached => write!(f, "JSONDetached"),
             ImageFormat::JsonEmbedded => write!(f, "JSONEmbedded"),
-            ImageFormat::Unknown(value) => write!(f, "{}", value),
+            ImageFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

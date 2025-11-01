@@ -119,7 +119,7 @@ impl ::std::fmt::Display for DataRepositoryTaskType {
             DataRepositoryTaskType::Export => write!(f, "EXPORT_TO_REPOSITORY"),
             DataRepositoryTaskType::Import => write!(f, "IMPORT_METADATA_FROM_REPOSITORY"),
             DataRepositoryTaskType::Eviction => write!(f, "RELEASE_DATA_FROM_FILESYSTEM"),
-            DataRepositoryTaskType::Unknown(value) => write!(f, "{}", value),
+            DataRepositoryTaskType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

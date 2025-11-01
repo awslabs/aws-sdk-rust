@@ -190,6 +190,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetAssociate
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::get_associated_enclave_certificate_iam_roles::GetAssociatedEnclaveCertificateIamRolesInput,
                 output: &mut ::std::string::String,

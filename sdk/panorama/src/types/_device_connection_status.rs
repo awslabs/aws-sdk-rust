@@ -120,7 +120,7 @@ impl ::std::fmt::Display for DeviceConnectionStatus {
             DeviceConnectionStatus::NotAvailable => write!(f, "NOT_AVAILABLE"),
             DeviceConnectionStatus::Offline => write!(f, "OFFLINE"),
             DeviceConnectionStatus::Online => write!(f, "ONLINE"),
-            DeviceConnectionStatus::Unknown(value) => write!(f, "{}", value),
+            DeviceConnectionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

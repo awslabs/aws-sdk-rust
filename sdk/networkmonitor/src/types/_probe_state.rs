@@ -126,7 +126,7 @@ impl ::std::fmt::Display for ProbeState {
             ProbeState::Error => write!(f, "ERROR"),
             ProbeState::Inactive => write!(f, "INACTIVE"),
             ProbeState::Pending => write!(f, "PENDING"),
-            ProbeState::Unknown(value) => write!(f, "{}", value),
+            ProbeState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

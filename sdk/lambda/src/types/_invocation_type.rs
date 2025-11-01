@@ -108,7 +108,7 @@ impl ::std::fmt::Display for InvocationType {
             InvocationType::DryRun => write!(f, "DryRun"),
             InvocationType::Event => write!(f, "Event"),
             InvocationType::RequestResponse => write!(f, "RequestResponse"),
-            InvocationType::Unknown(value) => write!(f, "{}", value),
+            InvocationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

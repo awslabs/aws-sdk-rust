@@ -114,7 +114,7 @@ impl ::std::fmt::Display for NetworkInterfacePermissionStateCode {
             NetworkInterfacePermissionStateCode::Pending => write!(f, "pending"),
             NetworkInterfacePermissionStateCode::Revoked => write!(f, "revoked"),
             NetworkInterfacePermissionStateCode::Revoking => write!(f, "revoking"),
-            NetworkInterfacePermissionStateCode::Unknown(value) => write!(f, "{}", value),
+            NetworkInterfacePermissionStateCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

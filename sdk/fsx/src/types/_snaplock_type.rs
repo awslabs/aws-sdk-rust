@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SnaplockType {
         match self {
             SnaplockType::Compliance => write!(f, "COMPLIANCE"),
             SnaplockType::Enterprise => write!(f, "ENTERPRISE"),
-            SnaplockType::Unknown(value) => write!(f, "{}", value),
+            SnaplockType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

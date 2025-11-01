@@ -102,7 +102,7 @@ impl ::std::fmt::Display for GraphQlApiVisibility {
         match self {
             GraphQlApiVisibility::Global => write!(f, "GLOBAL"),
             GraphQlApiVisibility::Private => write!(f, "PRIVATE"),
-            GraphQlApiVisibility::Unknown(value) => write!(f, "{}", value),
+            GraphQlApiVisibility::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

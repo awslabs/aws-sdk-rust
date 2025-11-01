@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MasterUserAuthenticationType {
         match self {
             MasterUserAuthenticationType::IamDbAuth => write!(f, "iam-db-auth"),
             MasterUserAuthenticationType::Password => write!(f, "password"),
-            MasterUserAuthenticationType::Unknown(value) => write!(f, "{}", value),
+            MasterUserAuthenticationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

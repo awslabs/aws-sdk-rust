@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ConflictExceptionReason {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ConflictExceptionReason::ConcurrentModification => write!(f, "CONCURRENT_MODIFICATION"),
-            ConflictExceptionReason::Unknown(value) => write!(f, "{}", value),
+            ConflictExceptionReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

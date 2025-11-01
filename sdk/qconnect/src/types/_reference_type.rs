@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ReferenceType {
         match self {
             ReferenceType::KnowledgeBase => write!(f, "KNOWLEDGE_BASE"),
             ReferenceType::WebCrawler => write!(f, "WEB_CRAWLER"),
-            ReferenceType::Unknown(value) => write!(f, "{}", value),
+            ReferenceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

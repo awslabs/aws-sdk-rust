@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AutocompleteFilterPlaceType {
         match self {
             AutocompleteFilterPlaceType::Locality => write!(f, "Locality"),
             AutocompleteFilterPlaceType::PostalCode => write!(f, "PostalCode"),
-            AutocompleteFilterPlaceType::Unknown(value) => write!(f, "{}", value),
+            AutocompleteFilterPlaceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for CapacityProviderStatus {
             CapacityProviderStatus::Deprovisioning => write!(f, "DEPROVISIONING"),
             CapacityProviderStatus::Inactive => write!(f, "INACTIVE"),
             CapacityProviderStatus::Provisioning => write!(f, "PROVISIONING"),
-            CapacityProviderStatus::Unknown(value) => write!(f, "{}", value),
+            CapacityProviderStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

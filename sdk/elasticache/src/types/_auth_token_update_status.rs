@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AuthTokenUpdateStatus {
         match self {
             AuthTokenUpdateStatus::Rotating => write!(f, "ROTATING"),
             AuthTokenUpdateStatus::Setting => write!(f, "SETTING"),
-            AuthTokenUpdateStatus::Unknown(value) => write!(f, "{}", value),
+            AuthTokenUpdateStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

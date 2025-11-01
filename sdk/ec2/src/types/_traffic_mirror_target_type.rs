@@ -108,7 +108,7 @@ impl ::std::fmt::Display for TrafficMirrorTargetType {
             TrafficMirrorTargetType::GatewayLoadBalancerEndpoint => write!(f, "gateway-load-balancer-endpoint"),
             TrafficMirrorTargetType::NetworkInterface => write!(f, "network-interface"),
             TrafficMirrorTargetType::NetworkLoadBalancer => write!(f, "network-load-balancer"),
-            TrafficMirrorTargetType::Unknown(value) => write!(f, "{}", value),
+            TrafficMirrorTargetType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

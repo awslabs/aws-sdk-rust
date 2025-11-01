@@ -96,7 +96,7 @@ impl ::std::fmt::Display for RelationalDatabaseSourceType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             RelationalDatabaseSourceType::RdsHttpEndpoint => write!(f, "RDS_HTTP_ENDPOINT"),
-            RelationalDatabaseSourceType::Unknown(value) => write!(f, "{}", value),
+            RelationalDatabaseSourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for FileSystemType {
             FileSystemType::Ontap => write!(f, "ONTAP"),
             FileSystemType::Openzfs => write!(f, "OPENZFS"),
             FileSystemType::Windows => write!(f, "WINDOWS"),
-            FileSystemType::Unknown(value) => write!(f, "{}", value),
+            FileSystemType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -182,6 +182,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetNetworkIn
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::get_network_insights_access_scope_analysis_findings::GetNetworkInsightsAccessScopeAnalysisFindingsInput,
                 output: &mut ::std::string::String,

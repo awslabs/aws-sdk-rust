@@ -114,7 +114,7 @@ impl ::std::fmt::Display for StorageType {
             StorageType::KinesisStream => write!(f, "KINESIS_STREAM"),
             StorageType::KinesisVideoStream => write!(f, "KINESIS_VIDEO_STREAM"),
             StorageType::S3 => write!(f, "S3"),
-            StorageType::Unknown(value) => write!(f, "{}", value),
+            StorageType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

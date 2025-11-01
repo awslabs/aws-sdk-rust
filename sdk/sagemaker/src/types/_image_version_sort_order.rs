@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ImageVersionSortOrder {
         match self {
             ImageVersionSortOrder::Ascending => write!(f, "ASCENDING"),
             ImageVersionSortOrder::Descending => write!(f, "DESCENDING"),
-            ImageVersionSortOrder::Unknown(value) => write!(f, "{}", value),
+            ImageVersionSortOrder::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

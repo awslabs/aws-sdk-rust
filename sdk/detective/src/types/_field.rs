@@ -108,7 +108,7 @@ impl ::std::fmt::Display for Field {
             Field::CreatedTime => write!(f, "CREATED_TIME"),
             Field::Severity => write!(f, "SEVERITY"),
             Field::Status => write!(f, "STATUS"),
-            Field::Unknown(value) => write!(f, "{}", value),
+            Field::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

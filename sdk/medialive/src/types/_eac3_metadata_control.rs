@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Eac3MetadataControl {
         match self {
             Eac3MetadataControl::FollowInput => write!(f, "FOLLOW_INPUT"),
             Eac3MetadataControl::UseConfigured => write!(f, "USE_CONFIGURED"),
-            Eac3MetadataControl::Unknown(value) => write!(f, "{}", value),
+            Eac3MetadataControl::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -126,7 +126,7 @@ impl ::std::fmt::Display for AssociatedResourceType {
             AssociatedResourceType::Cloudfront => write!(f, "CLOUDFRONT"),
             AssociatedResourceType::CognitoUserPool => write!(f, "COGNITO_USER_POOL"),
             AssociatedResourceType::VerifiedAccessInstance => write!(f, "VERIFIED_ACCESS_INSTANCE"),
-            AssociatedResourceType::Unknown(value) => write!(f, "{}", value),
+            AssociatedResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

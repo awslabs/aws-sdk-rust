@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PublishDeploymentStatus {
         match self {
             PublishDeploymentStatus::Disabled => write!(f, "DISABLED"),
             PublishDeploymentStatus::Enabled => write!(f, "ENABLED"),
-            PublishDeploymentStatus::Unknown(value) => write!(f, "{}", value),
+            PublishDeploymentStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

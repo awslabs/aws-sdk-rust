@@ -108,7 +108,7 @@ impl ::std::fmt::Display for Participant {
             Participant::Agent => write!(f, "AGENT"),
             Participant::Bot => write!(f, "BOT"),
             Participant::Customer => write!(f, "CUSTOMER"),
-            Participant::Unknown(value) => write!(f, "{}", value),
+            Participant::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

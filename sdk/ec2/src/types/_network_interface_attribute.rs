@@ -120,7 +120,7 @@ impl ::std::fmt::Display for NetworkInterfaceAttribute {
             NetworkInterfaceAttribute::Description => write!(f, "description"),
             NetworkInterfaceAttribute::GroupSet => write!(f, "groupSet"),
             NetworkInterfaceAttribute::SourceDestCheck => write!(f, "sourceDestCheck"),
-            NetworkInterfaceAttribute::Unknown(value) => write!(f, "{}", value),
+            NetworkInterfaceAttribute::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

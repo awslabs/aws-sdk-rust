@@ -108,7 +108,7 @@ impl ::std::fmt::Display for LastResourceDataSyncStatus {
             LastResourceDataSyncStatus::Failed => write!(f, "Failed"),
             LastResourceDataSyncStatus::Inprogress => write!(f, "InProgress"),
             LastResourceDataSyncStatus::Successful => write!(f, "Successful"),
-            LastResourceDataSyncStatus::Unknown(value) => write!(f, "{}", value),
+            LastResourceDataSyncStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

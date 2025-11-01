@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DeliveryMethod {
         match self {
             DeliveryMethod::Email => write!(f, "EMAIL"),
             DeliveryMethod::Sms => write!(f, "SMS"),
-            DeliveryMethod::Unknown(value) => write!(f, "{}", value),
+            DeliveryMethod::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

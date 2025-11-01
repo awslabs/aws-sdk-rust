@@ -102,7 +102,7 @@ impl ::std::fmt::Display for OriginManifestType {
         match self {
             OriginManifestType::MultiPeriod => write!(f, "MULTI_PERIOD"),
             OriginManifestType::SinglePeriod => write!(f, "SINGLE_PERIOD"),
-            OriginManifestType::Unknown(value) => write!(f, "{}", value),
+            OriginManifestType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

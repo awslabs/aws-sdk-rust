@@ -102,7 +102,7 @@ impl ::std::fmt::Display for IsraelCustomerType {
         match self {
             IsraelCustomerType::Business => write!(f, "Business"),
             IsraelCustomerType::Individual => write!(f, "Individual"),
-            IsraelCustomerType::Unknown(value) => write!(f, "{}", value),
+            IsraelCustomerType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for PlayerSessionStatus {
             PlayerSessionStatus::Completed => write!(f, "COMPLETED"),
             PlayerSessionStatus::Reserved => write!(f, "RESERVED"),
             PlayerSessionStatus::Timedout => write!(f, "TIMEDOUT"),
-            PlayerSessionStatus::Unknown(value) => write!(f, "{}", value),
+            PlayerSessionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

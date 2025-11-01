@@ -154,7 +154,7 @@ impl ::std::fmt::Display for FieldFilterOperator {
             FieldFilterOperator::LessThanOrEqualTo => write!(f, "LESS_THAN_OR_EQUAL_TO"),
             FieldFilterOperator::NotEqualTo => write!(f, "NOT_EQUAL_TO"),
             FieldFilterOperator::OrderBy => write!(f, "ORDER_BY"),
-            FieldFilterOperator::Unknown(value) => write!(f, "{}", value),
+            FieldFilterOperator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

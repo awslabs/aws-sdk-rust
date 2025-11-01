@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DataPullMode {
         match self {
             DataPullMode::Complete => write!(f, "Complete"),
             DataPullMode::Incremental => write!(f, "Incremental"),
-            DataPullMode::Unknown(value) => write!(f, "{}", value),
+            DataPullMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

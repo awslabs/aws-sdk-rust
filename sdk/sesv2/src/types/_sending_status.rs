@@ -122,7 +122,7 @@ impl ::std::fmt::Display for SendingStatus {
             SendingStatus::Disabled => write!(f, "DISABLED"),
             SendingStatus::Enabled => write!(f, "ENABLED"),
             SendingStatus::Reinstated => write!(f, "REINSTATED"),
-            SendingStatus::Unknown(value) => write!(f, "{}", value),
+            SendingStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

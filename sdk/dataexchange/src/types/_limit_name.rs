@@ -333,7 +333,7 @@ impl ::std::fmt::Display for LimitName {
             LimitName::RevisionsPerAmazonRedshiftDatashareDataSet => write!(f, "Revisions per Amazon Redshift datashare data set"),
             LimitName::RevisionsPerAmazonS3DataAccessDataSet => write!(f, "Revisions per Amazon S3 data access data set"),
             LimitName::RevisionsPerDataSet => write!(f, "Revisions per data set"),
-            LimitName::Unknown(value) => write!(f, "{}", value),
+            LimitName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

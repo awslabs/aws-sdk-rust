@@ -182,7 +182,7 @@ impl ::std::fmt::Display for DeviceAttribute {
             DeviceAttribute::Platform => write!(f, "PLATFORM"),
             DeviceAttribute::RemoteAccessEnabled => write!(f, "REMOTE_ACCESS_ENABLED"),
             DeviceAttribute::RemoteDebugEnabled => write!(f, "REMOTE_DEBUG_ENABLED"),
-            DeviceAttribute::Unknown(value) => write!(f, "{}", value),
+            DeviceAttribute::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

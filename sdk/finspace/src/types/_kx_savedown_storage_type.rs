@@ -96,7 +96,7 @@ impl ::std::fmt::Display for KxSavedownStorageType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             KxSavedownStorageType::Sds01 => write!(f, "SDS01"),
-            KxSavedownStorageType::Unknown(value) => write!(f, "{}", value),
+            KxSavedownStorageType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ObjectiveSensitivity {
             ObjectiveSensitivity::Low => write!(f, "LOW"),
             ObjectiveSensitivity::Medium => write!(f, "MEDIUM"),
             ObjectiveSensitivity::Off => write!(f, "OFF"),
-            ObjectiveSensitivity::Unknown(value) => write!(f, "{}", value),
+            ObjectiveSensitivity::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

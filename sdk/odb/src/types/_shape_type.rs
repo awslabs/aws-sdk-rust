@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ShapeType {
             ShapeType::AmpereFlexA1 => write!(f, "AMPERE_FLEX_A1"),
             ShapeType::Intel => write!(f, "INTEL"),
             ShapeType::IntelFlexX9 => write!(f, "INTEL_FLEX_X9"),
-            ShapeType::Unknown(value) => write!(f, "{}", value),
+            ShapeType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

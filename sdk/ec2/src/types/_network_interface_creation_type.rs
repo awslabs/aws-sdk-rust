@@ -114,7 +114,7 @@ impl ::std::fmt::Display for NetworkInterfaceCreationType {
             NetworkInterfaceCreationType::Efa => write!(f, "efa"),
             NetworkInterfaceCreationType::EfaOnly => write!(f, "efa-only"),
             NetworkInterfaceCreationType::Trunk => write!(f, "trunk"),
-            NetworkInterfaceCreationType::Unknown(value) => write!(f, "{}", value),
+            NetworkInterfaceCreationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

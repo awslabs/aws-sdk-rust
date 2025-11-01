@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ExportSnapshotRecordSourceType {
         match self {
             ExportSnapshotRecordSourceType::DiskSnapshot => write!(f, "DiskSnapshot"),
             ExportSnapshotRecordSourceType::InstanceSnapshot => write!(f, "InstanceSnapshot"),
-            ExportSnapshotRecordSourceType::Unknown(value) => write!(f, "{}", value),
+            ExportSnapshotRecordSourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

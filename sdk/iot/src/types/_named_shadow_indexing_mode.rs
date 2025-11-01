@@ -102,7 +102,7 @@ impl ::std::fmt::Display for NamedShadowIndexingMode {
         match self {
             NamedShadowIndexingMode::Off => write!(f, "OFF"),
             NamedShadowIndexingMode::On => write!(f, "ON"),
-            NamedShadowIndexingMode::Unknown(value) => write!(f, "{}", value),
+            NamedShadowIndexingMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

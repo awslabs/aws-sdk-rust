@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ClientCredentialsSource {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ClientCredentialsSource::PlainCredentials => write!(f, "PLAIN_CREDENTIALS"),
-            ClientCredentialsSource::Unknown(value) => write!(f, "{}", value),
+            ClientCredentialsSource::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

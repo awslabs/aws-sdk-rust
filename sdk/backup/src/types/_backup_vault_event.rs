@@ -238,7 +238,7 @@ impl ::std::fmt::Display for BackupVaultEvent {
             BackupVaultEvent::RestoreJobSuccessful => write!(f, "RESTORE_JOB_SUCCESSFUL"),
             BackupVaultEvent::S3BackupObjectFailed => write!(f, "S3_BACKUP_OBJECT_FAILED"),
             BackupVaultEvent::S3RestoreObjectFailed => write!(f, "S3_RESTORE_OBJECT_FAILED"),
-            BackupVaultEvent::Unknown(value) => write!(f, "{}", value),
+            BackupVaultEvent::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

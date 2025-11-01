@@ -108,7 +108,7 @@ impl ::std::fmt::Display for PackageImportJobStatus {
             PackageImportJobStatus::Failed => write!(f, "FAILED"),
             PackageImportJobStatus::Pending => write!(f, "PENDING"),
             PackageImportJobStatus::Succeeded => write!(f, "SUCCEEDED"),
-            PackageImportJobStatus::Unknown(value) => write!(f, "{}", value),
+            PackageImportJobStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

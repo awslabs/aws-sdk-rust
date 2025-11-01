@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SideOfStreetMatchingStrategy {
         match self {
             SideOfStreetMatchingStrategy::AnyStreet => write!(f, "AnyStreet"),
             SideOfStreetMatchingStrategy::DividedStreetOnly => write!(f, "DividedStreetOnly"),
-            SideOfStreetMatchingStrategy::Unknown(value) => write!(f, "{}", value),
+            SideOfStreetMatchingStrategy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

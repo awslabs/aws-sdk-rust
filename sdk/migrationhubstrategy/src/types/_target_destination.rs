@@ -189,7 +189,7 @@ impl ::std::fmt::Display for TargetDestination {
             TargetDestination::AuroraPostgresql => write!(f, "Aurora PostgreSQL"),
             TargetDestination::BabelfishAuroraPostgresql => write!(f, "Babelfish for Aurora PostgreSQL"),
             TargetDestination::NoneSpecified => write!(f, "None specified"),
-            TargetDestination::Unknown(value) => write!(f, "{}", value),
+            TargetDestination::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

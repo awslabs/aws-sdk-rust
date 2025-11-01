@@ -110,16 +110,14 @@ pub fn de_build_suggesters(
     let start_el = decoder.start_el();
     if !(start_el.matches("BuildSuggestersResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected BuildSuggestersResponse got {:?}",
-            start_el
+            "invalid root, expected BuildSuggestersResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("BuildSuggestersResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected BuildSuggestersResult got {:?}",
-                start_el
+                "invalid result, expected BuildSuggestersResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

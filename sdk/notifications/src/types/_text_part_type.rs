@@ -108,7 +108,7 @@ impl ::std::fmt::Display for TextPartType {
             TextPartType::LocalizedText => write!(f, "LOCALIZED_TEXT"),
             TextPartType::PlainText => write!(f, "PLAIN_TEXT"),
             TextPartType::Url => write!(f, "URL"),
-            TextPartType::Unknown(value) => write!(f, "{}", value),
+            TextPartType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

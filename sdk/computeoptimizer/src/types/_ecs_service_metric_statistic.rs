@@ -102,7 +102,7 @@ impl ::std::fmt::Display for EcsServiceMetricStatistic {
         match self {
             EcsServiceMetricStatistic::Average => write!(f, "Average"),
             EcsServiceMetricStatistic::Maximum => write!(f, "Maximum"),
-            EcsServiceMetricStatistic::Unknown(value) => write!(f, "{}", value),
+            EcsServiceMetricStatistic::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

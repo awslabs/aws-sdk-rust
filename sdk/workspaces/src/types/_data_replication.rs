@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DataReplication {
         match self {
             DataReplication::NoReplication => write!(f, "NO_REPLICATION"),
             DataReplication::PrimaryAsSource => write!(f, "PRIMARY_AS_SOURCE"),
-            DataReplication::Unknown(value) => write!(f, "{}", value),
+            DataReplication::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

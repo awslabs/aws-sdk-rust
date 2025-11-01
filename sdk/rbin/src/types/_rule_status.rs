@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RuleStatus {
         match self {
             RuleStatus::Available => write!(f, "available"),
             RuleStatus::Pending => write!(f, "pending"),
-            RuleStatus::Unknown(value) => write!(f, "{}", value),
+            RuleStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

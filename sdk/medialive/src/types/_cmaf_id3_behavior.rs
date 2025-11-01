@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CmafId3Behavior {
         match self {
             CmafId3Behavior::Disabled => write!(f, "DISABLED"),
             CmafId3Behavior::Enabled => write!(f, "ENABLED"),
-            CmafId3Behavior::Unknown(value) => write!(f, "{}", value),
+            CmafId3Behavior::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

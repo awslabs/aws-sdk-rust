@@ -108,7 +108,7 @@ impl ::std::fmt::Display for DirectoryType {
             DirectoryType::ConnectManaged => write!(f, "CONNECT_MANAGED"),
             DirectoryType::ExistingDirectory => write!(f, "EXISTING_DIRECTORY"),
             DirectoryType::Saml => write!(f, "SAML"),
-            DirectoryType::Unknown(value) => write!(f, "{}", value),
+            DirectoryType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

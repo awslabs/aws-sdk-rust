@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ModelCardExportJobSortBy {
             ModelCardExportJobSortBy::CreationTime => write!(f, "CreationTime"),
             ModelCardExportJobSortBy::Name => write!(f, "Name"),
             ModelCardExportJobSortBy::Status => write!(f, "Status"),
-            ModelCardExportJobSortBy::Unknown(value) => write!(f, "{}", value),
+            ModelCardExportJobSortBy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

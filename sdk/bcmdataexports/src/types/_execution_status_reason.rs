@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ExecutionStatusReason {
             ExecutionStatusReason::BillOwnerChanged => write!(f, "BILL_OWNER_CHANGED"),
             ExecutionStatusReason::InsufficientPermission => write!(f, "INSUFFICIENT_PERMISSION"),
             ExecutionStatusReason::InternalFailure => write!(f, "INTERNAL_FAILURE"),
-            ExecutionStatusReason::Unknown(value) => write!(f, "{}", value),
+            ExecutionStatusReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

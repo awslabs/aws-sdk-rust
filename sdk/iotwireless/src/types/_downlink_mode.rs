@@ -108,7 +108,7 @@ impl ::std::fmt::Display for DownlinkMode {
             DownlinkMode::Concurrent => write!(f, "CONCURRENT"),
             DownlinkMode::Sequential => write!(f, "SEQUENTIAL"),
             DownlinkMode::UsingUplinkGateway => write!(f, "USING_UPLINK_GATEWAY"),
-            DownlinkMode::Unknown(value) => write!(f, "{}", value),
+            DownlinkMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

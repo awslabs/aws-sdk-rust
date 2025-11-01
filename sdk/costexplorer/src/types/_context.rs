@@ -108,7 +108,7 @@ impl ::std::fmt::Display for Context {
             Context::CostAndUsage => write!(f, "COST_AND_USAGE"),
             Context::Reservations => write!(f, "RESERVATIONS"),
             Context::SavingsPlans => write!(f, "SAVINGS_PLANS"),
-            Context::Unknown(value) => write!(f, "{}", value),
+            Context::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

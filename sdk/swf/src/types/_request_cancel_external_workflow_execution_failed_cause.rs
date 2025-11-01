@@ -120,7 +120,7 @@ impl ::std::fmt::Display for RequestCancelExternalWorkflowExecutionFailedCause {
                 write!(f, "REQUEST_CANCEL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED")
             }
             RequestCancelExternalWorkflowExecutionFailedCause::UnknownExternalWorkflowExecution => write!(f, "UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION"),
-            RequestCancelExternalWorkflowExecutionFailedCause::Unknown(value) => write!(f, "{}", value),
+            RequestCancelExternalWorkflowExecutionFailedCause::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

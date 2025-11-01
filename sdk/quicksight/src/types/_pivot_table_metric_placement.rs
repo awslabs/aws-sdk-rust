@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PivotTableMetricPlacement {
         match self {
             PivotTableMetricPlacement::Column => write!(f, "COLUMN"),
             PivotTableMetricPlacement::Row => write!(f, "ROW"),
-            PivotTableMetricPlacement::Unknown(value) => write!(f, "{}", value),
+            PivotTableMetricPlacement::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

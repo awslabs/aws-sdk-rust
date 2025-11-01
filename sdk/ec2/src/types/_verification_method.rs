@@ -102,7 +102,7 @@ impl ::std::fmt::Display for VerificationMethod {
         match self {
             VerificationMethod::DnsToken => write!(f, "dns-token"),
             VerificationMethod::RemarksX509 => write!(f, "remarks-x509"),
-            VerificationMethod::Unknown(value) => write!(f, "{}", value),
+            VerificationMethod::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

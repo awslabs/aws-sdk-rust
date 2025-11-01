@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ExecutionMode {
         match self {
             ExecutionMode::Graceful => write!(f, "graceful"),
             ExecutionMode::Ungraceful => write!(f, "ungraceful"),
-            ExecutionMode::Unknown(value) => write!(f, "{}", value),
+            ExecutionMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

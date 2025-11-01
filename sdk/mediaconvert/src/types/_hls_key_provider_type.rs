@@ -102,7 +102,7 @@ impl ::std::fmt::Display for HlsKeyProviderType {
         match self {
             HlsKeyProviderType::Speke => write!(f, "SPEKE"),
             HlsKeyProviderType::StaticKey => write!(f, "STATIC_KEY"),
-            HlsKeyProviderType::Unknown(value) => write!(f, "{}", value),
+            HlsKeyProviderType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

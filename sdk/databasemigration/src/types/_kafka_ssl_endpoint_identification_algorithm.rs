@@ -102,7 +102,7 @@ impl ::std::fmt::Display for KafkaSslEndpointIdentificationAlgorithm {
         match self {
             KafkaSslEndpointIdentificationAlgorithm::Https => write!(f, "https"),
             KafkaSslEndpointIdentificationAlgorithm::None => write!(f, "none"),
-            KafkaSslEndpointIdentificationAlgorithm::Unknown(value) => write!(f, "{}", value),
+            KafkaSslEndpointIdentificationAlgorithm::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

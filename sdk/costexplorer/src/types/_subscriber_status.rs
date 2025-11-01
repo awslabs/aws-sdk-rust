@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SubscriberStatus {
         match self {
             SubscriberStatus::Confirmed => write!(f, "CONFIRMED"),
             SubscriberStatus::Declined => write!(f, "DECLINED"),
-            SubscriberStatus::Unknown(value) => write!(f, "{}", value),
+            SubscriberStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

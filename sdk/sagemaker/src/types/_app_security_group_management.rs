@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AppSecurityGroupManagement {
         match self {
             AppSecurityGroupManagement::Customer => write!(f, "Customer"),
             AppSecurityGroupManagement::Service => write!(f, "Service"),
-            AppSecurityGroupManagement::Unknown(value) => write!(f, "{}", value),
+            AppSecurityGroupManagement::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

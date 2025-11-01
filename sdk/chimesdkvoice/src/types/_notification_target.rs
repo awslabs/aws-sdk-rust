@@ -108,7 +108,7 @@ impl ::std::fmt::Display for NotificationTarget {
             NotificationTarget::EventBridge => write!(f, "EventBridge"),
             NotificationTarget::Sns => write!(f, "SNS"),
             NotificationTarget::Sqs => write!(f, "SQS"),
-            NotificationTarget::Unknown(value) => write!(f, "{}", value),
+            NotificationTarget::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

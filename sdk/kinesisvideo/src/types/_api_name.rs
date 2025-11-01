@@ -147,7 +147,7 @@ impl ::std::fmt::Display for ApiName {
             ApiName::GetMediaForFragmentList => write!(f, "GET_MEDIA_FOR_FRAGMENT_LIST"),
             ApiName::ListFragments => write!(f, "LIST_FRAGMENTS"),
             ApiName::PutMedia => write!(f, "PUT_MEDIA"),
-            ApiName::Unknown(value) => write!(f, "{}", value),
+            ApiName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

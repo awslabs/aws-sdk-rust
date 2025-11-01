@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AutoMlOverrideStrategy {
         match self {
             AutoMlOverrideStrategy::AccuracyOptimized => write!(f, "AccuracyOptimized"),
             AutoMlOverrideStrategy::LatencyOptimized => write!(f, "LatencyOptimized"),
-            AutoMlOverrideStrategy::Unknown(value) => write!(f, "{}", value),
+            AutoMlOverrideStrategy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

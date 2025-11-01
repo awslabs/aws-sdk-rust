@@ -55,8 +55,7 @@ pub fn de_replace_iam_instance_profile_association(
     let start_el = decoder.start_el();
     if !(start_el.matches("ReplaceIamInstanceProfileAssociationResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected ReplaceIamInstanceProfileAssociationResponse got {:?}",
-            start_el
+            "invalid root, expected ReplaceIamInstanceProfileAssociationResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

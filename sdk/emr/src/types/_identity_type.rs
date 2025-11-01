@@ -102,7 +102,7 @@ impl ::std::fmt::Display for IdentityType {
         match self {
             IdentityType::Group => write!(f, "GROUP"),
             IdentityType::User => write!(f, "USER"),
-            IdentityType::Unknown(value) => write!(f, "{}", value),
+            IdentityType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

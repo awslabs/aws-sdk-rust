@@ -133,7 +133,7 @@ impl ::std::fmt::Display for ResolverAutodefinedReverseStatus {
             ResolverAutodefinedReverseStatus::Enabling => write!(f, "ENABLING"),
             ResolverAutodefinedReverseStatus::UpdatingToUseLocalResourceSetting => write!(f, "UPDATING_TO_USE_LOCAL_RESOURCE_SETTING"),
             ResolverAutodefinedReverseStatus::UseLocalResourceSetting => write!(f, "USE_LOCAL_RESOURCE_SETTING"),
-            ResolverAutodefinedReverseStatus::Unknown(value) => write!(f, "{}", value),
+            ResolverAutodefinedReverseStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

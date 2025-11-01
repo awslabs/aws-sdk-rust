@@ -114,7 +114,7 @@ impl ::std::fmt::Display for PhoneNumberOrderStatus {
             PhoneNumberOrderStatus::Partial => write!(f, "Partial"),
             PhoneNumberOrderStatus::Processing => write!(f, "Processing"),
             PhoneNumberOrderStatus::Successful => write!(f, "Successful"),
-            PhoneNumberOrderStatus::Unknown(value) => write!(f, "{}", value),
+            PhoneNumberOrderStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for DataQualityModelStatus {
             DataQualityModelStatus::Failed => write!(f, "FAILED"),
             DataQualityModelStatus::Running => write!(f, "RUNNING"),
             DataQualityModelStatus::Succeeded => write!(f, "SUCCEEDED"),
-            DataQualityModelStatus::Unknown(value) => write!(f, "{}", value),
+            DataQualityModelStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

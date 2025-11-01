@@ -102,7 +102,7 @@ impl ::std::fmt::Display for IpamPublicAddressAssociationStatus {
         match self {
             IpamPublicAddressAssociationStatus::Associated => write!(f, "associated"),
             IpamPublicAddressAssociationStatus::Disassociated => write!(f, "disassociated"),
-            IpamPublicAddressAssociationStatus::Unknown(value) => write!(f, "{}", value),
+            IpamPublicAddressAssociationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

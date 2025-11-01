@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ArchiveStringOperator {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ArchiveStringOperator::Contains => write!(f, "CONTAINS"),
-            ArchiveStringOperator::Unknown(value) => write!(f, "{}", value),
+            ArchiveStringOperator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

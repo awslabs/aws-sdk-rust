@@ -96,7 +96,7 @@ impl ::std::fmt::Display for EngagementSortName {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             EngagementSortName::CreatedDate => write!(f, "CreatedDate"),
-            EngagementSortName::Unknown(value) => write!(f, "{}", value),
+            EngagementSortName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

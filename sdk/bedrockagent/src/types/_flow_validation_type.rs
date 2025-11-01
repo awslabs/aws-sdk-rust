@@ -322,7 +322,7 @@ impl ::std::fmt::Display for FlowValidationType {
             FlowValidationType::UnreachableNode => write!(f, "UnreachableNode"),
             FlowValidationType::UnsatisfiedConnectionConditions => write!(f, "UnsatisfiedConnectionConditions"),
             FlowValidationType::Unspecified => write!(f, "Unspecified"),
-            FlowValidationType::Unknown(value) => write!(f, "{}", value),
+            FlowValidationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

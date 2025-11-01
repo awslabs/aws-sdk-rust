@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DefaultDocumentIdFormat {
         match self {
             DefaultDocumentIdFormat::FirehoseDefault => write!(f, "FIREHOSE_DEFAULT"),
             DefaultDocumentIdFormat::NoDocumentId => write!(f, "NO_DOCUMENT_ID"),
-            DefaultDocumentIdFormat::Unknown(value) => write!(f, "{}", value),
+            DefaultDocumentIdFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

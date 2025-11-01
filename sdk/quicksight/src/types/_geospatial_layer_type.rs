@@ -108,7 +108,7 @@ impl ::std::fmt::Display for GeospatialLayerType {
             GeospatialLayerType::Line => write!(f, "LINE"),
             GeospatialLayerType::Point => write!(f, "POINT"),
             GeospatialLayerType::Polygon => write!(f, "POLYGON"),
-            GeospatialLayerType::Unknown(value) => write!(f, "{}", value),
+            GeospatialLayerType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

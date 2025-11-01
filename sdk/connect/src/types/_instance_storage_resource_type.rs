@@ -182,7 +182,7 @@ impl ::std::fmt::Display for InstanceStorageResourceType {
             InstanceStorageResourceType::RealTimeContactAnalysisVoiceSegments => write!(f, "REAL_TIME_CONTACT_ANALYSIS_VOICE_SEGMENTS"),
             InstanceStorageResourceType::ScheduledReports => write!(f, "SCHEDULED_REPORTS"),
             InstanceStorageResourceType::ScreenRecordings => write!(f, "SCREEN_RECORDINGS"),
-            InstanceStorageResourceType::Unknown(value) => write!(f, "{}", value),
+            InstanceStorageResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

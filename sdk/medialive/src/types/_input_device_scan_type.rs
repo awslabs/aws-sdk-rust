@@ -102,7 +102,7 @@ impl ::std::fmt::Display for InputDeviceScanType {
         match self {
             InputDeviceScanType::Interlaced => write!(f, "INTERLACED"),
             InputDeviceScanType::Progressive => write!(f, "PROGRESSIVE"),
-            InputDeviceScanType::Unknown(value) => write!(f, "{}", value),
+            InputDeviceScanType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

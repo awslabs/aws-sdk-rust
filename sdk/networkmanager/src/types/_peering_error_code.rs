@@ -133,7 +133,7 @@ impl ::std::fmt::Display for PeeringErrorCode {
             PeeringErrorCode::MissingRequiredPermissions => write!(f, "MISSING_PERMISSIONS"),
             PeeringErrorCode::TransitGatewayNotFound => write!(f, "TRANSIT_GATEWAY_NOT_FOUND"),
             PeeringErrorCode::TransitGatewayPeersLimitExceeded => write!(f, "TRANSIT_GATEWAY_PEERS_LIMIT_EXCEEDED"),
-            PeeringErrorCode::Unknown(value) => write!(f, "{}", value),
+            PeeringErrorCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

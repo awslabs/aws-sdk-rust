@@ -102,7 +102,7 @@ impl ::std::fmt::Display for WorkGroupState {
         match self {
             WorkGroupState::Disabled => write!(f, "DISABLED"),
             WorkGroupState::Enabled => write!(f, "ENABLED"),
-            WorkGroupState::Unknown(value) => write!(f, "{}", value),
+            WorkGroupState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

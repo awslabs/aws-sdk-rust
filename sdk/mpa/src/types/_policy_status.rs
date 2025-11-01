@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PolicyStatus {
         match self {
             PolicyStatus::Attachable => write!(f, "ATTACHABLE"),
             PolicyStatus::Deprecated => write!(f, "DEPRECATED"),
-            PolicyStatus::Unknown(value) => write!(f, "{}", value),
+            PolicyStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

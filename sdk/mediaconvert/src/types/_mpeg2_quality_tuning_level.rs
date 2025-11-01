@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Mpeg2QualityTuningLevel {
         match self {
             Mpeg2QualityTuningLevel::MultiPass => write!(f, "MULTI_PASS"),
             Mpeg2QualityTuningLevel::SinglePass => write!(f, "SINGLE_PASS"),
-            Mpeg2QualityTuningLevel::Unknown(value) => write!(f, "{}", value),
+            Mpeg2QualityTuningLevel::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

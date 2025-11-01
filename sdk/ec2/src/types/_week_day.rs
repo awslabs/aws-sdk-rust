@@ -132,7 +132,7 @@ impl ::std::fmt::Display for WeekDay {
             WeekDay::Thursday => write!(f, "thursday"),
             WeekDay::Tuesday => write!(f, "tuesday"),
             WeekDay::Wednesday => write!(f, "wednesday"),
-            WeekDay::Unknown(value) => write!(f, "{}", value),
+            WeekDay::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

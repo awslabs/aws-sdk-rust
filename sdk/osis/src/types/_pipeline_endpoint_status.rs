@@ -126,7 +126,7 @@ impl ::std::fmt::Display for PipelineEndpointStatus {
             PipelineEndpointStatus::Deleting => write!(f, "DELETING"),
             PipelineEndpointStatus::Revoked => write!(f, "REVOKED"),
             PipelineEndpointStatus::Revoking => write!(f, "REVOKING"),
-            PipelineEndpointStatus::Unknown(value) => write!(f, "{}", value),
+            PipelineEndpointStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MySqlAuthenticationMethod {
         match self {
             MySqlAuthenticationMethod::Iam => write!(f, "iam"),
             MySqlAuthenticationMethod::Password => write!(f, "password"),
-            MySqlAuthenticationMethod::Unknown(value) => write!(f, "{}", value),
+            MySqlAuthenticationMethod::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ResourcesMapField {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ResourcesMapField::Tag => write!(f, "ResourceTags"),
-            ResourcesMapField::Unknown(value) => write!(f, "{}", value),
+            ResourcesMapField::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

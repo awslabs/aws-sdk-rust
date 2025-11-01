@@ -133,7 +133,7 @@ impl ::std::fmt::Display for DbProxyEndpointStatus {
             DbProxyEndpointStatus::IncompatibleNetwork => write!(f, "incompatible-network"),
             DbProxyEndpointStatus::InsufficientResourceLimits => write!(f, "insufficient-resource-limits"),
             DbProxyEndpointStatus::Modifying => write!(f, "modifying"),
-            DbProxyEndpointStatus::Unknown(value) => write!(f, "{}", value),
+            DbProxyEndpointStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

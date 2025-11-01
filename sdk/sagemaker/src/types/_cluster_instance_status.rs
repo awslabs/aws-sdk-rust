@@ -140,7 +140,7 @@ impl ::std::fmt::Display for ClusterInstanceStatus {
             ClusterInstanceStatus::Running => write!(f, "Running"),
             ClusterInstanceStatus::ShuttingDown => write!(f, "ShuttingDown"),
             ClusterInstanceStatus::SystemUpdating => write!(f, "SystemUpdating"),
-            ClusterInstanceStatus::Unknown(value) => write!(f, "{}", value),
+            ClusterInstanceStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -96,7 +96,7 @@ impl ::std::fmt::Display for MediaStreamPipelineSinkType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             MediaStreamPipelineSinkType::KinesisVideoStreamPool => write!(f, "KinesisVideoStreamPool"),
-            MediaStreamPipelineSinkType::Unknown(value) => write!(f, "{}", value),
+            MediaStreamPipelineSinkType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

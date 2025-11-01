@@ -154,7 +154,7 @@ impl ::std::fmt::Display for InferredWorkloadType {
             InferredWorkloadType::PostgreSql => write!(f, "PostgreSql"),
             InferredWorkloadType::Redis => write!(f, "Redis"),
             InferredWorkloadType::Sqlserver => write!(f, "SQLServer"),
-            InferredWorkloadType::Unknown(value) => write!(f, "{}", value),
+            InferredWorkloadType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

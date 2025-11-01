@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MsSmoothAudioDeduplication {
         match self {
             MsSmoothAudioDeduplication::CombineDuplicateStreams => write!(f, "COMBINE_DUPLICATE_STREAMS"),
             MsSmoothAudioDeduplication::None => write!(f, "NONE"),
-            MsSmoothAudioDeduplication::Unknown(value) => write!(f, "{}", value),
+            MsSmoothAudioDeduplication::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

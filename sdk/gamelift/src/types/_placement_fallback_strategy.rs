@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PlacementFallbackStrategy {
         match self {
             PlacementFallbackStrategy::DefaultAfterSinglePass => write!(f, "DEFAULT_AFTER_SINGLE_PASS"),
             PlacementFallbackStrategy::None => write!(f, "NONE"),
-            PlacementFallbackStrategy::Unknown(value) => write!(f, "{}", value),
+            PlacementFallbackStrategy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

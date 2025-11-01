@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ListAssetModelPropertiesFilter {
         match self {
             ListAssetModelPropertiesFilter::All => write!(f, "ALL"),
             ListAssetModelPropertiesFilter::Base => write!(f, "BASE"),
-            ListAssetModelPropertiesFilter::Unknown(value) => write!(f, "{}", value),
+            ListAssetModelPropertiesFilter::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

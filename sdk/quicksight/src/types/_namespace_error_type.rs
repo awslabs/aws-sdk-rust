@@ -102,7 +102,7 @@ impl ::std::fmt::Display for NamespaceErrorType {
         match self {
             NamespaceErrorType::InternalServiceError => write!(f, "INTERNAL_SERVICE_ERROR"),
             NamespaceErrorType::PermissionDenied => write!(f, "PERMISSION_DENIED"),
-            NamespaceErrorType::Unknown(value) => write!(f, "{}", value),
+            NamespaceErrorType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

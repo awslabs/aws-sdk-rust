@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ServiceControlPolicyRestriction {
             ServiceControlPolicyRestriction::Applied => write!(f, "APPLIED"),
             ServiceControlPolicyRestriction::FailedToEvaluateScp => write!(f, "FAILED_TO_EVALUATE_SCP"),
             ServiceControlPolicyRestriction::NotApplicable => write!(f, "NOT_APPLICABLE"),
-            ServiceControlPolicyRestriction::Unknown(value) => write!(f, "{}", value),
+            ServiceControlPolicyRestriction::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

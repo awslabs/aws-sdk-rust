@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Mpeg2TimecodeInsertionBehavior {
         match self {
             Mpeg2TimecodeInsertionBehavior::Disabled => write!(f, "DISABLED"),
             Mpeg2TimecodeInsertionBehavior::GopTimecode => write!(f, "GOP_TIMECODE"),
-            Mpeg2TimecodeInsertionBehavior::Unknown(value) => write!(f, "{}", value),
+            Mpeg2TimecodeInsertionBehavior::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

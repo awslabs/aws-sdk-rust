@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PrivacyBudgetTemplateAutoRefresh {
         match self {
             PrivacyBudgetTemplateAutoRefresh::CalendarMonth => write!(f, "CALENDAR_MONTH"),
             PrivacyBudgetTemplateAutoRefresh::None => write!(f, "NONE"),
-            PrivacyBudgetTemplateAutoRefresh::Unknown(value) => write!(f, "{}", value),
+            PrivacyBudgetTemplateAutoRefresh::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

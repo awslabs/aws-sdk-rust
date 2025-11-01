@@ -280,7 +280,7 @@ impl ::std::fmt::Display for EntitlementDataUnit {
             EntitlementDataUnit::TerabitsPerSecond => write!(f, "Terabits/Second"),
             EntitlementDataUnit::Terabytes => write!(f, "Terabytes"),
             EntitlementDataUnit::TerabytesPerSecond => write!(f, "Terabytes/Second"),
-            EntitlementDataUnit::Unknown(value) => write!(f, "{}", value),
+            EntitlementDataUnit::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

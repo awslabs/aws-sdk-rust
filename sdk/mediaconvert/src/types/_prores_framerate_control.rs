@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ProresFramerateControl {
         match self {
             ProresFramerateControl::InitializeFromSource => write!(f, "INITIALIZE_FROM_SOURCE"),
             ProresFramerateControl::Specified => write!(f, "SPECIFIED"),
-            ProresFramerateControl::Unknown(value) => write!(f, "{}", value),
+            ProresFramerateControl::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -55,11 +55,8 @@ impl DeserializeError {
     /// Unknown union variant was detected. Servers reject unknown union varaints.
     pub fn unknown_union_variant(variant_name: &str, at: usize) -> Self {
         Self {
-            _inner: Error::message(format!(
-                "encountered unknown union variant {}",
-                variant_name
-            ))
-            .at(at),
+            _inner: Error::message(format!("encountered unknown union variant {variant_name}"))
+                .at(at),
         }
     }
 

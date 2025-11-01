@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DataIntegrationFlowTargetType {
         match self {
             DataIntegrationFlowTargetType::Dataset => write!(f, "DATASET"),
             DataIntegrationFlowTargetType::S3 => write!(f, "S3"),
-            DataIntegrationFlowTargetType::Unknown(value) => write!(f, "{}", value),
+            DataIntegrationFlowTargetType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -161,7 +161,7 @@ impl ::std::fmt::Display for ConflictType {
             ConflictType::FraudsterMustBelongToAtLeastOneWatchlist => write!(f, "FRAUDSTER_MUST_BELONG_TO_AT_LEAST_ONE_WATCHLIST"),
             ConflictType::SpeakerNotSet => write!(f, "SPEAKER_NOT_SET"),
             ConflictType::SpeakerOptedOut => write!(f, "SPEAKER_OPTED_OUT"),
-            ConflictType::Unknown(value) => write!(f, "{}", value),
+            ConflictType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

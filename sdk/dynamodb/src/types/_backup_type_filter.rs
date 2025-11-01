@@ -114,7 +114,7 @@ impl ::std::fmt::Display for BackupTypeFilter {
             BackupTypeFilter::AwsBackup => write!(f, "AWS_BACKUP"),
             BackupTypeFilter::System => write!(f, "SYSTEM"),
             BackupTypeFilter::User => write!(f, "USER"),
-            BackupTypeFilter::Unknown(value) => write!(f, "{}", value),
+            BackupTypeFilter::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

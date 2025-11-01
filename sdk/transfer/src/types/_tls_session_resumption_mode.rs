@@ -108,7 +108,7 @@ impl ::std::fmt::Display for TlsSessionResumptionMode {
             TlsSessionResumptionMode::Disabled => write!(f, "DISABLED"),
             TlsSessionResumptionMode::Enabled => write!(f, "ENABLED"),
             TlsSessionResumptionMode::Enforced => write!(f, "ENFORCED"),
-            TlsSessionResumptionMode::Unknown(value) => write!(f, "{}", value),
+            TlsSessionResumptionMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -120,7 +120,7 @@ impl ::std::fmt::Display for S3ChecksumAlgorithm {
             S3ChecksumAlgorithm::Crc64Nvme => write!(f, "CRC64NVME"),
             S3ChecksumAlgorithm::Sha1 => write!(f, "SHA1"),
             S3ChecksumAlgorithm::Sha256 => write!(f, "SHA256"),
-            S3ChecksumAlgorithm::Unknown(value) => write!(f, "{}", value),
+            S3ChecksumAlgorithm::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

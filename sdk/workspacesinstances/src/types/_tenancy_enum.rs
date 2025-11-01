@@ -108,7 +108,7 @@ impl ::std::fmt::Display for TenancyEnum {
             TenancyEnum::Dedicated => write!(f, "dedicated"),
             TenancyEnum::Default => write!(f, "default"),
             TenancyEnum::Host => write!(f, "host"),
-            TenancyEnum::Unknown(value) => write!(f, "{}", value),
+            TenancyEnum::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

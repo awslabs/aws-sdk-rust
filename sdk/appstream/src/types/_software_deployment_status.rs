@@ -140,7 +140,7 @@ impl ::std::fmt::Display for SoftwareDeploymentStatus {
             SoftwareDeploymentStatus::PendingUninstallation => write!(f, "PENDING_UNINSTALLATION"),
             SoftwareDeploymentStatus::StagedForInstallation => write!(f, "STAGED_FOR_INSTALLATION"),
             SoftwareDeploymentStatus::StagedForUninstallation => write!(f, "STAGED_FOR_UNINSTALLATION"),
-            SoftwareDeploymentStatus::Unknown(value) => write!(f, "{}", value),
+            SoftwareDeploymentStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

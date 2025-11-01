@@ -114,7 +114,7 @@ impl ::std::fmt::Display for DataProtectionStatus {
             DataProtectionStatus::Archived => write!(f, "ARCHIVED"),
             DataProtectionStatus::Deleted => write!(f, "DELETED"),
             DataProtectionStatus::Disabled => write!(f, "DISABLED"),
-            DataProtectionStatus::Unknown(value) => write!(f, "{}", value),
+            DataProtectionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

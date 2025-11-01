@@ -123,7 +123,7 @@ impl ::std::fmt::Display for UnsuccessfulInstanceCreditSpecificationErrorCode {
             }
             UnsuccessfulInstanceCreditSpecificationErrorCode::InvalidInstanceId => write!(f, "InvalidInstanceID.Malformed"),
             UnsuccessfulInstanceCreditSpecificationErrorCode::InstanceNotFound => write!(f, "InvalidInstanceID.NotFound"),
-            UnsuccessfulInstanceCreditSpecificationErrorCode::Unknown(value) => write!(f, "{}", value),
+            UnsuccessfulInstanceCreditSpecificationErrorCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

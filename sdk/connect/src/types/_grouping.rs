@@ -120,7 +120,7 @@ impl ::std::fmt::Display for Grouping {
             Grouping::Queue => write!(f, "QUEUE"),
             Grouping::RoutingProfile => write!(f, "ROUTING_PROFILE"),
             Grouping::RoutingStepExpression => write!(f, "ROUTING_STEP_EXPRESSION"),
-            Grouping::Unknown(value) => write!(f, "{}", value),
+            Grouping::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

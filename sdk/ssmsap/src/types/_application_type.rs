@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ApplicationType {
         match self {
             ApplicationType::Hana => write!(f, "HANA"),
             ApplicationType::SapAbap => write!(f, "SAP_ABAP"),
-            ApplicationType::Unknown(value) => write!(f, "{}", value),
+            ApplicationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

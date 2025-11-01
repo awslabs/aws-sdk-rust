@@ -161,7 +161,7 @@ impl ::std::fmt::Display for Feature {
             Feature::Reservations => write!(f, "RESERVATIONS"),
             Feature::SavingsPlans => write!(f, "SAVINGS_PLANS"),
             Feature::TaxSettings => write!(f, "TAX_SETTINGS"),
-            Feature::Unknown(value) => write!(f, "{}", value),
+            Feature::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

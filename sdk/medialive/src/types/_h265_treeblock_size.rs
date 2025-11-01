@@ -102,7 +102,7 @@ impl ::std::fmt::Display for H265TreeblockSize {
         match self {
             H265TreeblockSize::Auto => write!(f, "AUTO"),
             H265TreeblockSize::TreeSize32X32 => write!(f, "TREE_SIZE_32X32"),
-            H265TreeblockSize::Unknown(value) => write!(f, "{}", value),
+            H265TreeblockSize::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

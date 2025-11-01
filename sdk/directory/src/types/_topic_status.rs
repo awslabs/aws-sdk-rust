@@ -114,7 +114,7 @@ impl ::std::fmt::Display for TopicStatus {
             TopicStatus::Failed => write!(f, "Failed"),
             TopicStatus::Registered => write!(f, "Registered"),
             TopicStatus::TopicNotFound => write!(f, "Topic not found"),
-            TopicStatus::Unknown(value) => write!(f, "{}", value),
+            TopicStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -154,7 +154,7 @@ impl ::std::fmt::Display for MediaAnalysisJobFailureCode {
             MediaAnalysisJobFailureCode::ResourceNotFound => write!(f, "RESOURCE_NOT_FOUND"),
             MediaAnalysisJobFailureCode::ResourceNotReady => write!(f, "RESOURCE_NOT_READY"),
             MediaAnalysisJobFailureCode::Throttled => write!(f, "THROTTLED"),
-            MediaAnalysisJobFailureCode::Unknown(value) => write!(f, "{}", value),
+            MediaAnalysisJobFailureCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

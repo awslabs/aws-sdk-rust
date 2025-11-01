@@ -96,7 +96,7 @@ impl ::std::fmt::Display for GatewayType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             GatewayType::Ipsec1 => write!(f, "ipsec.1"),
-            GatewayType::Unknown(value) => write!(f, "{}", value),
+            GatewayType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for AmiProductSortBy {
             AmiProductSortBy::LastModifiedDate => write!(f, "LastModifiedDate"),
             AmiProductSortBy::ProductTitle => write!(f, "ProductTitle"),
             AmiProductSortBy::Visibility => write!(f, "Visibility"),
-            AmiProductSortBy::Unknown(value) => write!(f, "{}", value),
+            AmiProductSortBy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

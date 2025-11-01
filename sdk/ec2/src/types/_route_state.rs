@@ -108,7 +108,7 @@ impl ::std::fmt::Display for RouteState {
             RouteState::Active => write!(f, "active"),
             RouteState::Blackhole => write!(f, "blackhole"),
             RouteState::Filtered => write!(f, "filtered"),
-            RouteState::Unknown(value) => write!(f, "{}", value),
+            RouteState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

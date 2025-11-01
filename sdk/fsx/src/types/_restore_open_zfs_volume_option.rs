@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RestoreOpenZfsVolumeOption {
         match self {
             RestoreOpenZfsVolumeOption::DeleteClonedVolumes => write!(f, "DELETE_CLONED_VOLUMES"),
             RestoreOpenZfsVolumeOption::DeleteIntermediateSnapshots => write!(f, "DELETE_INTERMEDIATE_SNAPSHOTS"),
-            RestoreOpenZfsVolumeOption::Unknown(value) => write!(f, "{}", value),
+            RestoreOpenZfsVolumeOption::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

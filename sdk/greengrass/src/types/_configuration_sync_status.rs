@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ConfigurationSyncStatus {
         match self {
             ConfigurationSyncStatus::InSync => write!(f, "InSync"),
             ConfigurationSyncStatus::OutOfSync => write!(f, "OutOfSync"),
-            ConfigurationSyncStatus::Unknown(value) => write!(f, "{}", value),
+            ConfigurationSyncStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

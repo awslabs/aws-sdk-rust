@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TaggingDirective {
         match self {
             TaggingDirective::Copy => write!(f, "COPY"),
             TaggingDirective::Replace => write!(f, "REPLACE"),
-            TaggingDirective::Unknown(value) => write!(f, "{}", value),
+            TaggingDirective::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

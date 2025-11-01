@@ -132,7 +132,7 @@ impl ::std::fmt::Display for ReputationEntityFilterKey {
             ReputationEntityFilterKey::EntityType => write!(f, "ENTITY_TYPE"),
             ReputationEntityFilterKey::ReputationImpact => write!(f, "REPUTATION_IMPACT"),
             ReputationEntityFilterKey::Status => write!(f, "SENDING_STATUS"),
-            ReputationEntityFilterKey::Unknown(value) => write!(f, "{}", value),
+            ReputationEntityFilterKey::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

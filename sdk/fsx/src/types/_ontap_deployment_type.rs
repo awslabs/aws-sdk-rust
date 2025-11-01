@@ -114,7 +114,7 @@ impl ::std::fmt::Display for OntapDeploymentType {
             OntapDeploymentType::MultiAz2 => write!(f, "MULTI_AZ_2"),
             OntapDeploymentType::SingleAz1 => write!(f, "SINGLE_AZ_1"),
             OntapDeploymentType::SingleAz2 => write!(f, "SINGLE_AZ_2"),
-            OntapDeploymentType::Unknown(value) => write!(f, "{}", value),
+            OntapDeploymentType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

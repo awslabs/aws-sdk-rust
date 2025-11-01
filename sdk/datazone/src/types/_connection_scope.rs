@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ConnectionScope {
         match self {
             ConnectionScope::Domain => write!(f, "DOMAIN"),
             ConnectionScope::Project => write!(f, "PROJECT"),
-            ConnectionScope::Unknown(value) => write!(f, "{}", value),
+            ConnectionScope::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

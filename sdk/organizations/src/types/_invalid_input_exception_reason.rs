@@ -301,7 +301,7 @@ impl ::std::fmt::Display for InvalidInputExceptionReason {
             InvalidInputExceptionReason::UnsupportedActionInResourcePolicy => write!(f, "UNSUPPORTED_ACTION_IN_RESOURCE_POLICY"),
             InvalidInputExceptionReason::UnsupportedPolicyTypeInResourcePolicy => write!(f, "UNSUPPORTED_POLICY_TYPE_IN_RESOURCE_POLICY"),
             InvalidInputExceptionReason::UnsupportedResourceInResourcePolicy => write!(f, "UNSUPPORTED_RESOURCE_IN_RESOURCE_POLICY"),
-            InvalidInputExceptionReason::Unknown(value) => write!(f, "{}", value),
+            InvalidInputExceptionReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

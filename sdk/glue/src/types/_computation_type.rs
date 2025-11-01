@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ComputationType {
         match self {
             ComputationType::Full => write!(f, "FULL"),
             ComputationType::Incremental => write!(f, "INCREMENTAL"),
-            ComputationType::Unknown(value) => write!(f, "{}", value),
+            ComputationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CmafCodecSpecification {
         match self {
             CmafCodecSpecification::Rfc4281 => write!(f, "RFC_4281"),
             CmafCodecSpecification::Rfc6381 => write!(f, "RFC_6381"),
-            CmafCodecSpecification::Unknown(value) => write!(f, "{}", value),
+            CmafCodecSpecification::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

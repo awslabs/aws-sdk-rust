@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Vc3ScanTypeConversionMode {
         match self {
             Vc3ScanTypeConversionMode::Interlaced => write!(f, "INTERLACED"),
             Vc3ScanTypeConversionMode::InterlacedOptimize => write!(f, "INTERLACED_OPTIMIZE"),
-            Vc3ScanTypeConversionMode::Unknown(value) => write!(f, "{}", value),
+            Vc3ScanTypeConversionMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

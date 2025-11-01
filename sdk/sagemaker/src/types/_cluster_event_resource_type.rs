@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ClusterEventResourceType {
             ClusterEventResourceType::Cluster => write!(f, "Cluster"),
             ClusterEventResourceType::Instance => write!(f, "Instance"),
             ClusterEventResourceType::InstanceGroup => write!(f, "InstanceGroup"),
-            ClusterEventResourceType::Unknown(value) => write!(f, "{}", value),
+            ClusterEventResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

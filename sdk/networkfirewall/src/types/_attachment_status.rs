@@ -126,7 +126,7 @@ impl ::std::fmt::Display for AttachmentStatus {
             AttachmentStatus::Failed => write!(f, "FAILED"),
             AttachmentStatus::Ready => write!(f, "READY"),
             AttachmentStatus::Scaling => write!(f, "SCALING"),
-            AttachmentStatus::Unknown(value) => write!(f, "{}", value),
+            AttachmentStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

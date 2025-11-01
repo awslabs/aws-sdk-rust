@@ -120,7 +120,7 @@ impl ::std::fmt::Display for AlarmType {
             AlarmType::Event => write!(f, "Event"),
             AlarmType::Logs => write!(f, "Logs"),
             AlarmType::Metric => write!(f, "Metric"),
-            AlarmType::Unknown(value) => write!(f, "{}", value),
+            AlarmType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

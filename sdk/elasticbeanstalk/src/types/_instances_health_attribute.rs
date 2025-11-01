@@ -168,7 +168,7 @@ impl ::std::fmt::Display for InstancesHealthAttribute {
             InstancesHealthAttribute::LaunchedAt => write!(f, "LaunchedAt"),
             InstancesHealthAttribute::RefreshedAt => write!(f, "RefreshedAt"),
             InstancesHealthAttribute::System => write!(f, "System"),
-            InstancesHealthAttribute::Unknown(value) => write!(f, "{}", value),
+            InstancesHealthAttribute::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

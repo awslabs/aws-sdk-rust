@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ReplicationScope {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ReplicationScope::Domain => write!(f, "Domain"),
-            ReplicationScope::Unknown(value) => write!(f, "{}", value),
+            ReplicationScope::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

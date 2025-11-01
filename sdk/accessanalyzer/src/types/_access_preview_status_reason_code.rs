@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AccessPreviewStatusReasonCode {
         match self {
             AccessPreviewStatusReasonCode::InternalError => write!(f, "INTERNAL_ERROR"),
             AccessPreviewStatusReasonCode::InvalidConfiguration => write!(f, "INVALID_CONFIGURATION"),
-            AccessPreviewStatusReasonCode::Unknown(value) => write!(f, "{}", value),
+            AccessPreviewStatusReasonCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

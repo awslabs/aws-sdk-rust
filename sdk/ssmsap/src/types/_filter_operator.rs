@@ -108,7 +108,7 @@ impl ::std::fmt::Display for FilterOperator {
             FilterOperator::Equals => write!(f, "Equals"),
             FilterOperator::GreaterThanOrEquals => write!(f, "GreaterThanOrEquals"),
             FilterOperator::LessThanOrEquals => write!(f, "LessThanOrEquals"),
-            FilterOperator::Unknown(value) => write!(f, "{}", value),
+            FilterOperator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

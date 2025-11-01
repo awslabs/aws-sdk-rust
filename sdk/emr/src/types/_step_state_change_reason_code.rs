@@ -96,7 +96,7 @@ impl ::std::fmt::Display for StepStateChangeReasonCode {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             StepStateChangeReasonCode::None => write!(f, "NONE"),
-            StepStateChangeReasonCode::Unknown(value) => write!(f, "{}", value),
+            StepStateChangeReasonCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

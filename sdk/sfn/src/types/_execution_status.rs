@@ -126,7 +126,7 @@ impl ::std::fmt::Display for ExecutionStatus {
             ExecutionStatus::Running => write!(f, "RUNNING"),
             ExecutionStatus::Succeeded => write!(f, "SUCCEEDED"),
             ExecutionStatus::TimedOut => write!(f, "TIMED_OUT"),
-            ExecutionStatus::Unknown(value) => write!(f, "{}", value),
+            ExecutionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -116,7 +116,7 @@ impl ::std::fmt::Display for HostRole {
             HostRole::Standby => write!(f, "STANDBY"),
             HostRole::UnknownValue => write!(f, "UNKNOWN"),
             HostRole::Worker => write!(f, "WORKER"),
-            HostRole::Unknown(value) => write!(f, "{}", value),
+            HostRole::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

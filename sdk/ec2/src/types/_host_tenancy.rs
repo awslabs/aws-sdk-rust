@@ -108,7 +108,7 @@ impl ::std::fmt::Display for HostTenancy {
             HostTenancy::Dedicated => write!(f, "dedicated"),
             HostTenancy::Default => write!(f, "default"),
             HostTenancy::Host => write!(f, "host"),
-            HostTenancy::Unknown(value) => write!(f, "{}", value),
+            HostTenancy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for NodeConfigurationOptionsFilterName {
             NodeConfigurationOptionsFilterName::Mode => write!(f, "Mode"),
             NodeConfigurationOptionsFilterName::NodeType => write!(f, "NodeType"),
             NodeConfigurationOptionsFilterName::NumNodes => write!(f, "NumberOfNodes"),
-            NodeConfigurationOptionsFilterName::Unknown(value) => write!(f, "{}", value),
+            NodeConfigurationOptionsFilterName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

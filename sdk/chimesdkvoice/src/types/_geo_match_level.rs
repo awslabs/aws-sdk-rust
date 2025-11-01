@@ -102,7 +102,7 @@ impl ::std::fmt::Display for GeoMatchLevel {
         match self {
             GeoMatchLevel::AreaCode => write!(f, "AreaCode"),
             GeoMatchLevel::Country => write!(f, "Country"),
-            GeoMatchLevel::Unknown(value) => write!(f, "{}", value),
+            GeoMatchLevel::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for NetworkInterfaceType {
         match self {
             NetworkInterfaceType::Efa => write!(f, "efa"),
             NetworkInterfaceType::Ena => write!(f, "ena"),
-            NetworkInterfaceType::Unknown(value) => write!(f, "{}", value),
+            NetworkInterfaceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -147,7 +147,7 @@ impl ::std::fmt::Display for JobFlowExecutionState {
             JobFlowExecutionState::Starting => write!(f, "STARTING"),
             JobFlowExecutionState::Terminated => write!(f, "TERMINATED"),
             JobFlowExecutionState::Waiting => write!(f, "WAITING"),
-            JobFlowExecutionState::Unknown(value) => write!(f, "{}", value),
+            JobFlowExecutionState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

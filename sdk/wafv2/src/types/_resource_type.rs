@@ -140,7 +140,7 @@ impl ::std::fmt::Display for ResourceType {
             ResourceType::AppRunnerService => write!(f, "APP_RUNNER_SERVICE"),
             ResourceType::CognitioUserPool => write!(f, "COGNITO_USER_POOL"),
             ResourceType::VerifiedAccessInstance => write!(f, "VERIFIED_ACCESS_INSTANCE"),
-            ResourceType::Unknown(value) => write!(f, "{}", value),
+            ResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -120,7 +120,7 @@ impl ::std::fmt::Display for ReplicationSetStatus {
             ReplicationSetStatus::Deleting => write!(f, "DELETING"),
             ReplicationSetStatus::Failed => write!(f, "FAILED"),
             ReplicationSetStatus::Updating => write!(f, "UPDATING"),
-            ReplicationSetStatus::Unknown(value) => write!(f, "{}", value),
+            ReplicationSetStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

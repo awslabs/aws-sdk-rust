@@ -120,7 +120,7 @@ impl ::std::fmt::Display for SavingsPlanRateServiceCode {
             SavingsPlanRateServiceCode::Fargate => write!(f, "AmazonECS"),
             SavingsPlanRateServiceCode::FargateEks => write!(f, "AmazonEKS"),
             SavingsPlanRateServiceCode::Sagemaker => write!(f, "AmazonSageMaker"),
-            SavingsPlanRateServiceCode::Unknown(value) => write!(f, "{}", value),
+            SavingsPlanRateServiceCode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

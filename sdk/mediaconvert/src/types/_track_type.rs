@@ -108,7 +108,7 @@ impl ::std::fmt::Display for TrackType {
             TrackType::Audio => write!(f, "audio"),
             TrackType::Data => write!(f, "data"),
             TrackType::Video => write!(f, "video"),
-            TrackType::Unknown(value) => write!(f, "{}", value),
+            TrackType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

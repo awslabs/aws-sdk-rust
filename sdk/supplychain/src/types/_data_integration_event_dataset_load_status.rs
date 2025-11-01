@@ -108,7 +108,7 @@ impl ::std::fmt::Display for DataIntegrationEventDatasetLoadStatus {
             DataIntegrationEventDatasetLoadStatus::Failed => write!(f, "FAILED"),
             DataIntegrationEventDatasetLoadStatus::InProgress => write!(f, "IN_PROGRESS"),
             DataIntegrationEventDatasetLoadStatus::Succeeded => write!(f, "SUCCEEDED"),
-            DataIntegrationEventDatasetLoadStatus::Unknown(value) => write!(f, "{}", value),
+            DataIntegrationEventDatasetLoadStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

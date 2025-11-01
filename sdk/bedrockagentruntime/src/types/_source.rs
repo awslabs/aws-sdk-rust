@@ -106,7 +106,7 @@ impl ::std::fmt::Display for Source {
             Source::ActionGroup => write!(f, "ACTION_GROUP"),
             Source::KnowledgeBase => write!(f, "KNOWLEDGE_BASE"),
             Source::Parser => write!(f, "PARSER"),
-            Source::Unknown(value) => write!(f, "{}", value),
+            Source::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

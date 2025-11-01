@@ -19,7 +19,7 @@ impl ::std::fmt::Display for DbShardGroupNotFoundFault {
         ::std::write!(f, "DbShardGroupNotFoundFault [DBShardGroupNotFoundFault]")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
             {
-                ::std::write!(f, ": {}", inner_1)?;
+                ::std::write!(f, ": {inner_1}")?;
             }
         }
         Ok(())

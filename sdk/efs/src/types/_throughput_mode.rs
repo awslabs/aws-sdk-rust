@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ThroughputMode {
             ThroughputMode::Bursting => write!(f, "bursting"),
             ThroughputMode::Elastic => write!(f, "elastic"),
             ThroughputMode::Provisioned => write!(f, "provisioned"),
-            ThroughputMode::Unknown(value) => write!(f, "{}", value),
+            ThroughputMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

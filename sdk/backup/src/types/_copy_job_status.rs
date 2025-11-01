@@ -168,7 +168,7 @@ impl ::std::fmt::Display for CopyJobStatus {
             CopyJobStatus::Failing => write!(f, "FAILING"),
             CopyJobStatus::Partial => write!(f, "PARTIAL"),
             CopyJobStatus::Running => write!(f, "RUNNING"),
-            CopyJobStatus::Unknown(value) => write!(f, "{}", value),
+            CopyJobStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

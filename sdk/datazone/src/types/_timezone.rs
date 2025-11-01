@@ -539,7 +539,7 @@ impl ::std::fmt::Display for Timezone {
             Timezone::UsMountain => write!(f, "US_MOUNTAIN"),
             Timezone::UsPacific => write!(f, "US_PACIFIC"),
             Timezone::Utc => write!(f, "UTC"),
-            Timezone::Unknown(value) => write!(f, "{}", value),
+            Timezone::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for SubscriberStatus {
             SubscriberStatus::Deactivated => write!(f, "DEACTIVATED"),
             SubscriberStatus::Pending => write!(f, "PENDING"),
             SubscriberStatus::Ready => write!(f, "READY"),
-            SubscriberStatus::Unknown(value) => write!(f, "{}", value),
+            SubscriberStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

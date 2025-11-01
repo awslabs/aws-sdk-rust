@@ -96,7 +96,7 @@ impl ::std::fmt::Display for EncryptionKeyType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             EncryptionKeyType::Kms => write!(f, "KMS"),
-            EncryptionKeyType::Unknown(value) => write!(f, "{}", value),
+            EncryptionKeyType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

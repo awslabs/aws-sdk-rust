@@ -91,16 +91,14 @@ pub fn de_get_service_last_accessed_details(
     let start_el = decoder.start_el();
     if !(start_el.matches("GetServiceLastAccessedDetailsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected GetServiceLastAccessedDetailsResponse got {:?}",
-            start_el
+            "invalid root, expected GetServiceLastAccessedDetailsResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("GetServiceLastAccessedDetailsResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected GetServiceLastAccessedDetailsResult got {:?}",
-                start_el
+                "invalid result, expected GetServiceLastAccessedDetailsResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

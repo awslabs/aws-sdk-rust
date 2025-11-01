@@ -189,7 +189,7 @@ impl ::std::fmt::Display for SingularConnectorOperator {
             SingularConnectorOperator::ValidateNonNull => write!(f, "VALIDATE_NON_NULL"),
             SingularConnectorOperator::ValidateNonZero => write!(f, "VALIDATE_NON_ZERO"),
             SingularConnectorOperator::ValidateNumeric => write!(f, "VALIDATE_NUMERIC"),
-            SingularConnectorOperator::Unknown(value) => write!(f, "{}", value),
+            SingularConnectorOperator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

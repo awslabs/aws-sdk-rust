@@ -126,7 +126,7 @@ impl ::std::fmt::Display for BatchLoadStatus {
             BatchLoadStatus::PendingResume => write!(f, "PENDING_RESUME"),
             BatchLoadStatus::ProgressStopped => write!(f, "PROGRESS_STOPPED"),
             BatchLoadStatus::Succeeded => write!(f, "SUCCEEDED"),
-            BatchLoadStatus::Unknown(value) => write!(f, "{}", value),
+            BatchLoadStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

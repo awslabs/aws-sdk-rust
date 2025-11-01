@@ -104,16 +104,14 @@ pub fn de_get_service_last_accessed_details_with_entities(
     let start_el = decoder.start_el();
     if !(start_el.matches("GetServiceLastAccessedDetailsWithEntitiesResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected GetServiceLastAccessedDetailsWithEntitiesResponse got {:?}",
-            start_el
+            "invalid root, expected GetServiceLastAccessedDetailsWithEntitiesResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("GetServiceLastAccessedDetailsWithEntitiesResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected GetServiceLastAccessedDetailsWithEntitiesResult got {:?}",
-                start_el
+                "invalid result, expected GetServiceLastAccessedDetailsWithEntitiesResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

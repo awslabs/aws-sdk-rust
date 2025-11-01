@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AvcIntraTelecine {
         match self {
             AvcIntraTelecine::Hard => write!(f, "HARD"),
             AvcIntraTelecine::None => write!(f, "NONE"),
-            AvcIntraTelecine::Unknown(value) => write!(f, "{}", value),
+            AvcIntraTelecine::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

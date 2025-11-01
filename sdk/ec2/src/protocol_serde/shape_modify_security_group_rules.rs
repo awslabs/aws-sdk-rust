@@ -53,8 +53,7 @@ pub fn de_modify_security_group_rules(
     let start_el = decoder.start_el();
     if !(start_el.matches("ModifySecurityGroupRulesResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected ModifySecurityGroupRulesResponse got {:?}",
-            start_el
+            "invalid root, expected ModifySecurityGroupRulesResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ExecutionStatus {
         match self {
             ExecutionStatus::Failed => write!(f, "FAILED"),
             ExecutionStatus::Succeeded => write!(f, "SUCCEEDED"),
-            ExecutionStatus::Unknown(value) => write!(f, "{}", value),
+            ExecutionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

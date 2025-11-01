@@ -108,7 +108,7 @@ impl ::std::fmt::Display for InstanceRoleType {
             InstanceRoleType::Core => write!(f, "CORE"),
             InstanceRoleType::Master => write!(f, "MASTER"),
             InstanceRoleType::Task => write!(f, "TASK"),
-            InstanceRoleType::Unknown(value) => write!(f, "{}", value),
+            InstanceRoleType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

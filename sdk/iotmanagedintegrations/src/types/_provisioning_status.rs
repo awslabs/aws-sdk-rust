@@ -147,7 +147,7 @@ impl ::std::fmt::Display for ProvisioningStatus {
             ProvisioningStatus::Isolated => write!(f, "ISOLATED"),
             ProvisioningStatus::PreAssociated => write!(f, "PRE_ASSOCIATED"),
             ProvisioningStatus::Unassociated => write!(f, "UNASSOCIATED"),
-            ProvisioningStatus::Unknown(value) => write!(f, "{}", value),
+            ProvisioningStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

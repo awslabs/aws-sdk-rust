@@ -102,7 +102,7 @@ impl ::std::fmt::Display for InputDeviceState {
         match self {
             InputDeviceState::Idle => write!(f, "IDLE"),
             InputDeviceState::Streaming => write!(f, "STREAMING"),
-            InputDeviceState::Unknown(value) => write!(f, "{}", value),
+            InputDeviceState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

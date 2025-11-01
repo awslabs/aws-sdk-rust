@@ -176,7 +176,7 @@ impl ::std::fmt::Display for StartChildWorkflowExecutionFailedCause {
             StartChildWorkflowExecutionFailedCause::WorkflowAlreadyRunning => write!(f, "WORKFLOW_ALREADY_RUNNING"),
             StartChildWorkflowExecutionFailedCause::WorkflowTypeDeprecated => write!(f, "WORKFLOW_TYPE_DEPRECATED"),
             StartChildWorkflowExecutionFailedCause::WorkflowTypeDoesNotExist => write!(f, "WORKFLOW_TYPE_DOES_NOT_EXIST"),
-            StartChildWorkflowExecutionFailedCause::Unknown(value) => write!(f, "{}", value),
+            StartChildWorkflowExecutionFailedCause::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

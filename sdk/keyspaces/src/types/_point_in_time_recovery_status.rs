@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PointInTimeRecoveryStatus {
         match self {
             PointInTimeRecoveryStatus::Disabled => write!(f, "DISABLED"),
             PointInTimeRecoveryStatus::Enabled => write!(f, "ENABLED"),
-            PointInTimeRecoveryStatus::Unknown(value) => write!(f, "{}", value),
+            PointInTimeRecoveryStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -133,7 +133,7 @@ impl ::std::fmt::Display for TrafficDistributionGroupStatus {
             TrafficDistributionGroupStatus::DeletionFailed => write!(f, "DELETION_FAILED"),
             TrafficDistributionGroupStatus::PendingDeletion => write!(f, "PENDING_DELETION"),
             TrafficDistributionGroupStatus::UpdateInProgress => write!(f, "UPDATE_IN_PROGRESS"),
-            TrafficDistributionGroupStatus::Unknown(value) => write!(f, "{}", value),
+            TrafficDistributionGroupStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

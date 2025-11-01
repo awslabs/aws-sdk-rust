@@ -109,16 +109,14 @@ pub fn de_describe_reserved_cache_nodes_offerings(
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeReservedCacheNodesOfferingsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected DescribeReservedCacheNodesOfferingsResponse got {:?}",
-            start_el
+            "invalid root, expected DescribeReservedCacheNodesOfferingsResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("DescribeReservedCacheNodesOfferingsResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected DescribeReservedCacheNodesOfferingsResult got {:?}",
-                start_el
+                "invalid result, expected DescribeReservedCacheNodesOfferingsResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

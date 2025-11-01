@@ -154,7 +154,7 @@ impl ::std::fmt::Display for SourceType {
             SourceType::ServerlessCacheSnapshot => write!(f, "serverless-cache-snapshot"),
             SourceType::User => write!(f, "user"),
             SourceType::UserGroup => write!(f, "user-group"),
-            SourceType::Unknown(value) => write!(f, "{}", value),
+            SourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

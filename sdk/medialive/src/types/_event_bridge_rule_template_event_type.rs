@@ -182,7 +182,7 @@ impl ::std::fmt::Display for EventBridgeRuleTemplateEventType {
             EventBridgeRuleTemplateEventType::MediapackageInputNotification => write!(f, "MEDIAPACKAGE_INPUT_NOTIFICATION"),
             EventBridgeRuleTemplateEventType::MediapackageKeyProviderNotification => write!(f, "MEDIAPACKAGE_KEY_PROVIDER_NOTIFICATION"),
             EventBridgeRuleTemplateEventType::SignalMapActiveAlarm => write!(f, "SIGNAL_MAP_ACTIVE_ALARM"),
-            EventBridgeRuleTemplateEventType::Unknown(value) => write!(f, "{}", value),
+            EventBridgeRuleTemplateEventType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

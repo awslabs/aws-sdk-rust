@@ -133,7 +133,7 @@ impl ::std::fmt::Display for AuditCheckRunStatus {
             AuditCheckRunStatus::Failed => write!(f, "FAILED"),
             AuditCheckRunStatus::InProgress => write!(f, "IN_PROGRESS"),
             AuditCheckRunStatus::WaitingForDataCollection => write!(f, "WAITING_FOR_DATA_COLLECTION"),
-            AuditCheckRunStatus::Unknown(value) => write!(f, "{}", value),
+            AuditCheckRunStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

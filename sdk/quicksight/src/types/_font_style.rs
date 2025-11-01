@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FontStyle {
         match self {
             FontStyle::Italic => write!(f, "ITALIC"),
             FontStyle::Normal => write!(f, "NORMAL"),
-            FontStyle::Unknown(value) => write!(f, "{}", value),
+            FontStyle::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

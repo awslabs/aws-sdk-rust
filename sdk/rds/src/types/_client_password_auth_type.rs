@@ -126,7 +126,7 @@ impl ::std::fmt::Display for ClientPasswordAuthType {
             ClientPasswordAuthType::PostgresMd5 => write!(f, "POSTGRES_MD5"),
             ClientPasswordAuthType::PostgresScramSha256 => write!(f, "POSTGRES_SCRAM_SHA_256"),
             ClientPasswordAuthType::SqlServerAuthentication => write!(f, "SQL_SERVER_AUTHENTICATION"),
-            ClientPasswordAuthType::Unknown(value) => write!(f, "{}", value),
+            ClientPasswordAuthType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

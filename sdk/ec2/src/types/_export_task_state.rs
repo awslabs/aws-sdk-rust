@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ExportTaskState {
             ExportTaskState::Cancelled => write!(f, "cancelled"),
             ExportTaskState::Cancelling => write!(f, "cancelling"),
             ExportTaskState::Completed => write!(f, "completed"),
-            ExportTaskState::Unknown(value) => write!(f, "{}", value),
+            ExportTaskState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -126,7 +126,7 @@ impl ::std::fmt::Display for SourceType {
             SourceType::ParameterGroup => write!(f, "parameter-group"),
             SourceType::SubnetGroup => write!(f, "subnet-group"),
             SourceType::User => write!(f, "user"),
-            SourceType::Unknown(value) => write!(f, "{}", value),
+            SourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

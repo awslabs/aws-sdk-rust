@@ -266,7 +266,7 @@ impl ::std::fmt::Display for HistoricalMetricName {
             HistoricalMetricName::QueuedTime => write!(f, "QUEUED_TIME"),
             HistoricalMetricName::QueueAnswerTime => write!(f, "QUEUE_ANSWER_TIME"),
             HistoricalMetricName::ServiceLevel => write!(f, "SERVICE_LEVEL"),
-            HistoricalMetricName::Unknown(value) => write!(f, "{}", value),
+            HistoricalMetricName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

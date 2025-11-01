@@ -108,7 +108,7 @@ impl ::std::fmt::Display for RevenueModel {
             RevenueModel::Contract => write!(f, "Contract"),
             RevenueModel::PayAsYouGo => write!(f, "Pay-as-you-go"),
             RevenueModel::Subscription => write!(f, "Subscription"),
-            RevenueModel::Unknown(value) => write!(f, "{}", value),
+            RevenueModel::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

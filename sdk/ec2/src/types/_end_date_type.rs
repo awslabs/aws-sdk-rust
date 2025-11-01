@@ -102,7 +102,7 @@ impl ::std::fmt::Display for EndDateType {
         match self {
             EndDateType::Limited => write!(f, "limited"),
             EndDateType::Unlimited => write!(f, "unlimited"),
-            EndDateType::Unknown(value) => write!(f, "{}", value),
+            EndDateType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ResponseState {
         match self {
             ResponseState::Failure => write!(f, "FAILURE"),
             ResponseState::Reprompt => write!(f, "REPROMPT"),
-            ResponseState::Unknown(value) => write!(f, "{}", value),
+            ResponseState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

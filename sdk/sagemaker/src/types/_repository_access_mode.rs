@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RepositoryAccessMode {
         match self {
             RepositoryAccessMode::Platform => write!(f, "Platform"),
             RepositoryAccessMode::Vpc => write!(f, "Vpc"),
-            RepositoryAccessMode::Unknown(value) => write!(f, "{}", value),
+            RepositoryAccessMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

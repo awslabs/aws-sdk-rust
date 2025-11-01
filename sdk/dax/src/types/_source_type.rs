@@ -108,7 +108,7 @@ impl ::std::fmt::Display for SourceType {
             SourceType::Cluster => write!(f, "CLUSTER"),
             SourceType::ParameterGroup => write!(f, "PARAMETER_GROUP"),
             SourceType::SubnetGroup => write!(f, "SUBNET_GROUP"),
-            SourceType::Unknown(value) => write!(f, "{}", value),
+            SourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

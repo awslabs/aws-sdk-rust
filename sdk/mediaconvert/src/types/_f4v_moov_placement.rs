@@ -102,7 +102,7 @@ impl ::std::fmt::Display for F4vMoovPlacement {
         match self {
             F4vMoovPlacement::Normal => write!(f, "NORMAL"),
             F4vMoovPlacement::ProgressiveDownload => write!(f, "PROGRESSIVE_DOWNLOAD"),
-            F4vMoovPlacement::Unknown(value) => write!(f, "{}", value),
+            F4vMoovPlacement::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

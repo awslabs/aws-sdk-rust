@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DatasetKind {
         match self {
             DatasetKind::NonTabular => write!(f, "NON_TABULAR"),
             DatasetKind::Tabular => write!(f, "TABULAR"),
-            DatasetKind::Unknown(value) => write!(f, "{}", value),
+            DatasetKind::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

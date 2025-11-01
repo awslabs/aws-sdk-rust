@@ -126,7 +126,7 @@ impl ::std::fmt::Display for ChangeSource {
             ChangeSource::ParameterReference => write!(f, "ParameterReference"),
             ChangeSource::ResourceAttribute => write!(f, "ResourceAttribute"),
             ChangeSource::ResourceReference => write!(f, "ResourceReference"),
-            ChangeSource::Unknown(value) => write!(f, "{}", value),
+            ChangeSource::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

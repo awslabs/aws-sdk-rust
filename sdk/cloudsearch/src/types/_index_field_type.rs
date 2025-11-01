@@ -168,7 +168,7 @@ impl ::std::fmt::Display for IndexFieldType {
             IndexFieldType::LiteralArray => write!(f, "literal-array"),
             IndexFieldType::Text => write!(f, "text"),
             IndexFieldType::TextArray => write!(f, "text-array"),
-            IndexFieldType::Unknown(value) => write!(f, "{}", value),
+            IndexFieldType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for TelemetryType {
             TelemetryType::Logs => write!(f, "Logs"),
             TelemetryType::Metrics => write!(f, "Metrics"),
             TelemetryType::Traces => write!(f, "Traces"),
-            TelemetryType::Unknown(value) => write!(f, "{}", value),
+            TelemetryType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

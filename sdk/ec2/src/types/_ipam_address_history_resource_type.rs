@@ -120,7 +120,7 @@ impl ::std::fmt::Display for IpamAddressHistoryResourceType {
             IpamAddressHistoryResourceType::NetworkInterface => write!(f, "network-interface"),
             IpamAddressHistoryResourceType::Subnet => write!(f, "subnet"),
             IpamAddressHistoryResourceType::Vpc => write!(f, "vpc"),
-            IpamAddressHistoryResourceType::Unknown(value) => write!(f, "{}", value),
+            IpamAddressHistoryResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

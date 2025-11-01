@@ -189,6 +189,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetChannelMe
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::get_channel_membership_preferences::GetChannelMembershipPreferencesInput,
                 output: &mut ::std::string::String,

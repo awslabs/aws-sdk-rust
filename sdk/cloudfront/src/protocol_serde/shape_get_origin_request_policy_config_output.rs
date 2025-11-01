@@ -29,8 +29,7 @@ pub fn de_origin_request_policy_config(
     let start_el = decoder.start_el();
     if !(start_el.matches("OriginRequestPolicyConfig")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected OriginRequestPolicyConfig got {:?}",
-            start_el
+            "invalid root, expected OriginRequestPolicyConfig got {start_el:?}"
         )));
     }
     crate::protocol_serde::shape_origin_request_policy_config::de_origin_request_policy_config(&mut decoder)

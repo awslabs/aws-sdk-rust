@@ -102,7 +102,7 @@ impl ::std::fmt::Display for IncludeExclude {
         match self {
             IncludeExclude::Exclude => write!(f, "EXCLUDE"),
             IncludeExclude::Include => write!(f, "INCLUDE"),
-            IncludeExclude::Unknown(value) => write!(f, "{}", value),
+            IncludeExclude::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

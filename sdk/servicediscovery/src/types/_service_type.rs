@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ServiceType {
             ServiceType::Dns => write!(f, "DNS"),
             ServiceType::DnsHttp => write!(f, "DNS_HTTP"),
             ServiceType::Http => write!(f, "HTTP"),
-            ServiceType::Unknown(value) => write!(f, "{}", value),
+            ServiceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

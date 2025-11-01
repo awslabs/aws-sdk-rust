@@ -120,7 +120,7 @@ impl ::std::fmt::Display for PipelineExecutionStatus {
             PipelineExecutionStatus::Stopped => write!(f, "Stopped"),
             PipelineExecutionStatus::Stopping => write!(f, "Stopping"),
             PipelineExecutionStatus::Succeeded => write!(f, "Succeeded"),
-            PipelineExecutionStatus::Unknown(value) => write!(f, "{}", value),
+            PipelineExecutionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -126,7 +126,7 @@ impl ::std::fmt::Display for InvolvementTypeChangeReason {
             InvolvementTypeChangeReason::ExpansionOpportunity => write!(f, "Expansion Opportunity"),
             InvolvementTypeChangeReason::RiskMitigation => write!(f, "Risk Mitigation"),
             InvolvementTypeChangeReason::TechnicalComplexity => write!(f, "Technical Complexity"),
-            InvolvementTypeChangeReason::Unknown(value) => write!(f, "{}", value),
+            InvolvementTypeChangeReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

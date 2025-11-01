@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ScheduledAutoTuneSeverityType {
             ScheduledAutoTuneSeverityType::High => write!(f, "HIGH"),
             ScheduledAutoTuneSeverityType::Low => write!(f, "LOW"),
             ScheduledAutoTuneSeverityType::Medium => write!(f, "MEDIUM"),
-            ScheduledAutoTuneSeverityType::Unknown(value) => write!(f, "{}", value),
+            ScheduledAutoTuneSeverityType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -210,7 +210,7 @@ impl ::std::fmt::Display for DocumentType {
             DocumentType::ProblemAnalysisTemplate => write!(f, "ProblemAnalysisTemplate"),
             DocumentType::QuickSetup => write!(f, "QuickSetup"),
             DocumentType::Session => write!(f, "Session"),
-            DocumentType::Unknown(value) => write!(f, "{}", value),
+            DocumentType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

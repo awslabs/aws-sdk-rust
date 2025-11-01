@@ -110,7 +110,7 @@ impl ::std::fmt::Display for EffectivePermission {
             EffectivePermission::NotPublic => write!(f, "NOT_PUBLIC"),
             EffectivePermission::Public => write!(f, "PUBLIC"),
             EffectivePermission::UnknownValue => write!(f, "UNKNOWN"),
-            EffectivePermission::Unknown(value) => write!(f, "{}", value),
+            EffectivePermission::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

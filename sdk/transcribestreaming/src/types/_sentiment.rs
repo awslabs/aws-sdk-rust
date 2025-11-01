@@ -114,7 +114,7 @@ impl ::std::fmt::Display for Sentiment {
             Sentiment::Negative => write!(f, "NEGATIVE"),
             Sentiment::Neutral => write!(f, "NEUTRAL"),
             Sentiment::Positive => write!(f, "POSITIVE"),
-            Sentiment::Unknown(value) => write!(f, "{}", value),
+            Sentiment::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

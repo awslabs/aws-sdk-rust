@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AlarmCondition {
         match self {
             AlarmCondition::Green => write!(f, "green"),
             AlarmCondition::Red => write!(f, "red"),
-            AlarmCondition::Unknown(value) => write!(f, "{}", value),
+            AlarmCondition::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

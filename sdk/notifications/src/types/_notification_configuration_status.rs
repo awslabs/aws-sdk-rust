@@ -114,7 +114,7 @@ impl ::std::fmt::Display for NotificationConfigurationStatus {
             NotificationConfigurationStatus::Deleting => write!(f, "DELETING"),
             NotificationConfigurationStatus::Inactive => write!(f, "INACTIVE"),
             NotificationConfigurationStatus::PartiallyActive => write!(f, "PARTIALLY_ACTIVE"),
-            NotificationConfigurationStatus::Unknown(value) => write!(f, "{}", value),
+            NotificationConfigurationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

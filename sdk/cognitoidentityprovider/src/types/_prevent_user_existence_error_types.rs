@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PreventUserExistenceErrorTypes {
         match self {
             PreventUserExistenceErrorTypes::Enabled => write!(f, "ENABLED"),
             PreventUserExistenceErrorTypes::Legacy => write!(f, "LEGACY"),
-            PreventUserExistenceErrorTypes::Unknown(value) => write!(f, "{}", value),
+            PreventUserExistenceErrorTypes::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

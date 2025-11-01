@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RoutingStrategy {
         match self {
             RoutingStrategy::LeastOutstandingRequests => write!(f, "LEAST_OUTSTANDING_REQUESTS"),
             RoutingStrategy::Random => write!(f, "RANDOM"),
-            RoutingStrategy::Unknown(value) => write!(f, "{}", value),
+            RoutingStrategy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

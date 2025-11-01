@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MpdManifestMetadataSignaling {
         match self {
             MpdManifestMetadataSignaling::Disabled => write!(f, "DISABLED"),
             MpdManifestMetadataSignaling::Enabled => write!(f, "ENABLED"),
-            MpdManifestMetadataSignaling::Unknown(value) => write!(f, "{}", value),
+            MpdManifestMetadataSignaling::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

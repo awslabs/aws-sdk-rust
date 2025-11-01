@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ColumnOrderingType {
             ColumnOrderingType::GreaterIsBetter => write!(f, "GREATER_IS_BETTER"),
             ColumnOrderingType::LesserIsBetter => write!(f, "LESSER_IS_BETTER"),
             ColumnOrderingType::Specified => write!(f, "SPECIFIED"),
-            ColumnOrderingType::Unknown(value) => write!(f, "{}", value),
+            ColumnOrderingType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

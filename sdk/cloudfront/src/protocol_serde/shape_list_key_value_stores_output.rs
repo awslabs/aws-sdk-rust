@@ -17,8 +17,7 @@ pub fn de_key_value_store_list(inp: &[u8]) -> std::result::Result<crate::types::
     let start_el = decoder.start_el();
     if !(start_el.matches("KeyValueStoreList")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected KeyValueStoreList got {:?}",
-            start_el
+            "invalid root, expected KeyValueStoreList got {start_el:?}"
         )));
     }
     crate::protocol_serde::shape_key_value_store_list::de_key_value_store_list(&mut decoder)

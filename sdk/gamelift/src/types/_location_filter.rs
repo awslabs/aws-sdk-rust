@@ -102,7 +102,7 @@ impl ::std::fmt::Display for LocationFilter {
         match self {
             LocationFilter::Aws => write!(f, "AWS"),
             LocationFilter::Custom => write!(f, "CUSTOM"),
-            LocationFilter::Unknown(value) => write!(f, "{}", value),
+            LocationFilter::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

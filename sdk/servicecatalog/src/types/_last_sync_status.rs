@@ -102,7 +102,7 @@ impl ::std::fmt::Display for LastSyncStatus {
         match self {
             LastSyncStatus::Failed => write!(f, "FAILED"),
             LastSyncStatus::Succeeded => write!(f, "SUCCEEDED"),
-            LastSyncStatus::Unknown(value) => write!(f, "{}", value),
+            LastSyncStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

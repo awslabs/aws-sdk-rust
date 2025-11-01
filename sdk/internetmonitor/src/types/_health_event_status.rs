@@ -102,7 +102,7 @@ impl ::std::fmt::Display for HealthEventStatus {
         match self {
             HealthEventStatus::Active => write!(f, "ACTIVE"),
             HealthEventStatus::Resolved => write!(f, "RESOLVED"),
-            HealthEventStatus::Unknown(value) => write!(f, "{}", value),
+            HealthEventStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for Unit {
             Unit::Bytes => write!(f, "BYTES"),
             Unit::Packets => write!(f, "PACKETS"),
             Unit::Requests => write!(f, "REQUESTS"),
-            Unit::Unknown(value) => write!(f, "{}", value),
+            Unit::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

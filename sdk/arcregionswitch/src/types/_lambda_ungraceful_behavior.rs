@@ -96,7 +96,7 @@ impl ::std::fmt::Display for LambdaUngracefulBehavior {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             LambdaUngracefulBehavior::Skip => write!(f, "skip"),
-            LambdaUngracefulBehavior::Unknown(value) => write!(f, "{}", value),
+            LambdaUngracefulBehavior::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

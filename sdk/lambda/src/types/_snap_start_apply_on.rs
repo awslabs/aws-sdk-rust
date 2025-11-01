@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SnapStartApplyOn {
         match self {
             SnapStartApplyOn::None => write!(f, "None"),
             SnapStartApplyOn::PublishedVersions => write!(f, "PublishedVersions"),
-            SnapStartApplyOn::Unknown(value) => write!(f, "{}", value),
+            SnapStartApplyOn::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

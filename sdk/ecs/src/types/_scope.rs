@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Scope {
         match self {
             Scope::Shared => write!(f, "shared"),
             Scope::Task => write!(f, "task"),
-            Scope::Unknown(value) => write!(f, "{}", value),
+            Scope::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

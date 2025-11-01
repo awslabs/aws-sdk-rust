@@ -114,7 +114,7 @@ impl ::std::fmt::Display for DeliveryDestinationType {
             DeliveryDestinationType::Fh => write!(f, "FH"),
             DeliveryDestinationType::S3 => write!(f, "S3"),
             DeliveryDestinationType::Xray => write!(f, "XRAY"),
-            DeliveryDestinationType::Unknown(value) => write!(f, "{}", value),
+            DeliveryDestinationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

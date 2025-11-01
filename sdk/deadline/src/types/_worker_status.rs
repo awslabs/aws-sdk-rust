@@ -147,7 +147,7 @@ impl ::std::fmt::Display for WorkerStatus {
             WorkerStatus::Started => write!(f, "STARTED"),
             WorkerStatus::Stopped => write!(f, "STOPPED"),
             WorkerStatus::Stopping => write!(f, "STOPPING"),
-            WorkerStatus::Unknown(value) => write!(f, "{}", value),
+            WorkerStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

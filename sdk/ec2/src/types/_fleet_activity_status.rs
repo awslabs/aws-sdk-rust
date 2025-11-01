@@ -114,7 +114,7 @@ impl ::std::fmt::Display for FleetActivityStatus {
             FleetActivityStatus::Fulfilled => write!(f, "fulfilled"),
             FleetActivityStatus::PendingFulfillment => write!(f, "pending_fulfillment"),
             FleetActivityStatus::PendingTermination => write!(f, "pending_termination"),
-            FleetActivityStatus::Unknown(value) => write!(f, "{}", value),
+            FleetActivityStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

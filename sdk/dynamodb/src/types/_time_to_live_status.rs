@@ -114,7 +114,7 @@ impl ::std::fmt::Display for TimeToLiveStatus {
             TimeToLiveStatus::Disabling => write!(f, "DISABLING"),
             TimeToLiveStatus::Enabled => write!(f, "ENABLED"),
             TimeToLiveStatus::Enabling => write!(f, "ENABLING"),
-            TimeToLiveStatus::Unknown(value) => write!(f, "{}", value),
+            TimeToLiveStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

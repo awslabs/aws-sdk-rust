@@ -108,7 +108,7 @@ impl ::std::fmt::Display for PackageGroupOriginRestrictionType {
             PackageGroupOriginRestrictionType::ExternalUpstream => write!(f, "EXTERNAL_UPSTREAM"),
             PackageGroupOriginRestrictionType::InternalUpstream => write!(f, "INTERNAL_UPSTREAM"),
             PackageGroupOriginRestrictionType::Publish => write!(f, "PUBLISH"),
-            PackageGroupOriginRestrictionType::Unknown(value) => write!(f, "{}", value),
+            PackageGroupOriginRestrictionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

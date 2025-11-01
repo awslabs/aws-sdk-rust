@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ContainerServiceDeploymentState {
             ContainerServiceDeploymentState::Active => write!(f, "ACTIVE"),
             ContainerServiceDeploymentState::Failed => write!(f, "FAILED"),
             ContainerServiceDeploymentState::Inactive => write!(f, "INACTIVE"),
-            ContainerServiceDeploymentState::Unknown(value) => write!(f, "{}", value),
+            ContainerServiceDeploymentState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

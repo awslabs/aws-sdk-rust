@@ -10,9 +10,9 @@ pub struct ExportTr34KeyBlock {
     pub wrapping_key_certificate: ::std::string::String,
     /// <p>The export token to initiate key export from Amazon Web Services Payment Cryptography. It also contains the signing key certificate that will sign the wrapped key during TR-34 key block generation. Call <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetParametersForExport.html">GetParametersForExport</a> to receive an export token. It expires after 30 days. You can use the same export token to export multiple keys from the same service account.</p>
     pub export_token: ::std::string::String,
-    /// Key Identifier used for signing the export key
+    /// <p>Key Identifier used for signing the export key</p>
     pub signing_key_identifier: ::std::option::Option<::std::string::String>,
-    /// Certificate used for signing the export key
+    /// <p>The certificate used to sign the TR-34 key block.</p>
     pub signing_key_certificate: ::std::option::Option<::std::string::String>,
     /// <p>The format of key block that Amazon Web Services Payment Cryptography will use during key export.</p>
     pub key_block_format: crate::types::Tr34KeyBlockFormat,
@@ -37,11 +37,11 @@ impl ExportTr34KeyBlock {
         use std::ops::Deref;
         self.export_token.deref()
     }
-    /// Key Identifier used for signing the export key
+    /// <p>Key Identifier used for signing the export key</p>
     pub fn signing_key_identifier(&self) -> ::std::option::Option<&str> {
         self.signing_key_identifier.as_deref()
     }
-    /// Certificate used for signing the export key
+    /// <p>The certificate used to sign the TR-34 key block.</p>
     pub fn signing_key_certificate(&self) -> ::std::option::Option<&str> {
         self.signing_key_certificate.as_deref()
     }
@@ -123,31 +123,31 @@ impl ExportTr34KeyBlockBuilder {
     pub fn get_export_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.export_token
     }
-    /// Key Identifier used for signing the export key
+    /// <p>Key Identifier used for signing the export key</p>
     pub fn signing_key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.signing_key_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// Key Identifier used for signing the export key
+    /// <p>Key Identifier used for signing the export key</p>
     pub fn set_signing_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.signing_key_identifier = input;
         self
     }
-    /// Key Identifier used for signing the export key
+    /// <p>Key Identifier used for signing the export key</p>
     pub fn get_signing_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.signing_key_identifier
     }
-    /// Certificate used for signing the export key
+    /// <p>The certificate used to sign the TR-34 key block.</p>
     pub fn signing_key_certificate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.signing_key_certificate = ::std::option::Option::Some(input.into());
         self
     }
-    /// Certificate used for signing the export key
+    /// <p>The certificate used to sign the TR-34 key block.</p>
     pub fn set_signing_key_certificate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.signing_key_certificate = input;
         self
     }
-    /// Certificate used for signing the export key
+    /// <p>The certificate used to sign the TR-34 key block.</p>
     pub fn get_signing_key_certificate(&self) -> &::std::option::Option<::std::string::String> {
         &self.signing_key_certificate
     }

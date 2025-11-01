@@ -108,7 +108,7 @@ impl ::std::fmt::Display for Partition {
             Partition::Aws => write!(f, "aws"),
             Partition::AwsCn => write!(f, "aws-cn"),
             Partition::AwsUsGov => write!(f, "aws-us-gov"),
-            Partition::Unknown(value) => write!(f, "{}", value),
+            Partition::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

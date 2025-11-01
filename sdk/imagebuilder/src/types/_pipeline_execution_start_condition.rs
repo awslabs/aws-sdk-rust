@@ -104,7 +104,7 @@ impl ::std::fmt::Display for PipelineExecutionStartCondition {
                 write!(f, "EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE")
             }
             PipelineExecutionStartCondition::ExpressionMatchOnly => write!(f, "EXPRESSION_MATCH_ONLY"),
-            PipelineExecutionStartCondition::Unknown(value) => write!(f, "{}", value),
+            PipelineExecutionStartCondition::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

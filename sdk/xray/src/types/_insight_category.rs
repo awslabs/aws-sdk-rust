@@ -96,7 +96,7 @@ impl ::std::fmt::Display for InsightCategory {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             InsightCategory::Fault => write!(f, "FAULT"),
-            InsightCategory::Unknown(value) => write!(f, "{}", value),
+            InsightCategory::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

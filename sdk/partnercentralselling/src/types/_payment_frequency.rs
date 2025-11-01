@@ -96,7 +96,7 @@ impl ::std::fmt::Display for PaymentFrequency {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             PaymentFrequency::Monthly => write!(f, "Monthly"),
-            PaymentFrequency::Unknown(value) => write!(f, "{}", value),
+            PaymentFrequency::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

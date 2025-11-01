@@ -120,7 +120,7 @@ impl ::std::fmt::Display for BgpPeerState {
             BgpPeerState::Deleting => write!(f, "deleting"),
             BgpPeerState::Pending => write!(f, "pending"),
             BgpPeerState::Verifying => write!(f, "verifying"),
-            BgpPeerState::Unknown(value) => write!(f, "{}", value),
+            BgpPeerState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

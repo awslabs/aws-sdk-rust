@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PushNotificationType {
         match self {
             PushNotificationType::Default => write!(f, "DEFAULT"),
             PushNotificationType::Voip => write!(f, "VOIP"),
-            PushNotificationType::Unknown(value) => write!(f, "{}", value),
+            PushNotificationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

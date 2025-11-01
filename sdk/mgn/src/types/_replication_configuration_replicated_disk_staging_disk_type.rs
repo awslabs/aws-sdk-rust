@@ -140,7 +140,7 @@ impl ::std::fmt::Display for ReplicationConfigurationReplicatedDiskStagingDiskTy
             ReplicationConfigurationReplicatedDiskStagingDiskType::Sc1 => write!(f, "SC1"),
             ReplicationConfigurationReplicatedDiskStagingDiskType::St1 => write!(f, "ST1"),
             ReplicationConfigurationReplicatedDiskStagingDiskType::Standard => write!(f, "STANDARD"),
-            ReplicationConfigurationReplicatedDiskStagingDiskType::Unknown(value) => write!(f, "{}", value),
+            ReplicationConfigurationReplicatedDiskStagingDiskType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

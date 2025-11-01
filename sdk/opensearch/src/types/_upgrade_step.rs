@@ -108,7 +108,7 @@ impl ::std::fmt::Display for UpgradeStep {
             UpgradeStep::PreUpgradeCheck => write!(f, "PRE_UPGRADE_CHECK"),
             UpgradeStep::Snapshot => write!(f, "SNAPSHOT"),
             UpgradeStep::Upgrade => write!(f, "UPGRADE"),
-            UpgradeStep::Unknown(value) => write!(f, "{}", value),
+            UpgradeStep::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

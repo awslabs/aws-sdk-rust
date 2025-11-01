@@ -102,7 +102,7 @@ impl ::std::fmt::Display for GraphQlApiType {
         match self {
             GraphQlApiType::Graphql => write!(f, "GRAPHQL"),
             GraphQlApiType::Merged => write!(f, "MERGED"),
-            GraphQlApiType::Unknown(value) => write!(f, "{}", value),
+            GraphQlApiType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

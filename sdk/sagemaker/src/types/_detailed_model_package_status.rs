@@ -114,7 +114,7 @@ impl ::std::fmt::Display for DetailedModelPackageStatus {
             DetailedModelPackageStatus::Failed => write!(f, "Failed"),
             DetailedModelPackageStatus::InProgress => write!(f, "InProgress"),
             DetailedModelPackageStatus::NotStarted => write!(f, "NotStarted"),
-            DetailedModelPackageStatus::Unknown(value) => write!(f, "{}", value),
+            DetailedModelPackageStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

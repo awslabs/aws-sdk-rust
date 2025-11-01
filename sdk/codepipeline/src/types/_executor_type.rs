@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ExecutorType {
         match self {
             ExecutorType::JobWorker => write!(f, "JobWorker"),
             ExecutorType::Lambda => write!(f, "Lambda"),
-            ExecutorType::Unknown(value) => write!(f, "{}", value),
+            ExecutorType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -114,7 +114,7 @@ impl ::std::fmt::Display for PartnerAppType {
             PartnerAppType::DeepchecksLlmEvaluation => write!(f, "deepchecks-llm-evaluation"),
             PartnerAppType::Fiddler => write!(f, "fiddler"),
             PartnerAppType::LakeraGuard => write!(f, "lakera-guard"),
-            PartnerAppType::Unknown(value) => write!(f, "{}", value),
+            PartnerAppType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

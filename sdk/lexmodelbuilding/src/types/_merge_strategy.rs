@@ -102,7 +102,7 @@ impl ::std::fmt::Display for MergeStrategy {
         match self {
             MergeStrategy::FailOnConflict => write!(f, "FAIL_ON_CONFLICT"),
             MergeStrategy::OverwriteLatest => write!(f, "OVERWRITE_LATEST"),
-            MergeStrategy::Unknown(value) => write!(f, "{}", value),
+            MergeStrategy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

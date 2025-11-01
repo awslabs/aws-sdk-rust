@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ProjectStatus {
             ProjectStatus::Created => write!(f, "CREATED"),
             ProjectStatus::Creating => write!(f, "CREATING"),
             ProjectStatus::Deleting => write!(f, "DELETING"),
-            ProjectStatus::Unknown(value) => write!(f, "{}", value),
+            ProjectStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

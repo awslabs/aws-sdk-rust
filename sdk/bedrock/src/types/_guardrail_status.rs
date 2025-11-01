@@ -126,7 +126,7 @@ impl ::std::fmt::Display for GuardrailStatus {
             GuardrailStatus::Ready => write!(f, "READY"),
             GuardrailStatus::Updating => write!(f, "UPDATING"),
             GuardrailStatus::Versioning => write!(f, "VERSIONING"),
-            GuardrailStatus::Unknown(value) => write!(f, "{}", value),
+            GuardrailStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ServerProtocol {
             ServerProtocol::A2A => write!(f, "A2A"),
             ServerProtocol::Http => write!(f, "HTTP"),
             ServerProtocol::Mcp => write!(f, "MCP"),
-            ServerProtocol::Unknown(value) => write!(f, "{}", value),
+            ServerProtocol::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

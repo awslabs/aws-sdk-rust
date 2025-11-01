@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AcceptType {
         match self {
             AcceptType::Delivered => write!(f, "DELIVERED"),
             AcceptType::Read => write!(f, "READ"),
-            AcceptType::Unknown(value) => write!(f, "{}", value),
+            AcceptType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

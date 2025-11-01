@@ -112,7 +112,7 @@ impl ::std::fmt::Display for SafeguardPolicy {
             SafeguardPolicy::ExclusiveAutomaticTruncation => write!(f, "exclusive-automatic-truncation"),
             SafeguardPolicy::RelyOnSqlServerReplicationAgent => write!(f, "rely-on-sql-server-replication-agent"),
             SafeguardPolicy::SharedAutomaticTruncation => write!(f, "shared-automatic-truncation"),
-            SafeguardPolicy::Unknown(value) => write!(f, "{}", value),
+            SafeguardPolicy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

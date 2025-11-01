@@ -102,7 +102,7 @@ impl ::std::fmt::Display for InputTimecodeSource {
         match self {
             InputTimecodeSource::Embedded => write!(f, "EMBEDDED"),
             InputTimecodeSource::Zerobased => write!(f, "ZEROBASED"),
-            InputTimecodeSource::Unknown(value) => write!(f, "{}", value),
+            InputTimecodeSource::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for GenerationStatus {
             GenerationStatus::Failed => write!(f, "FAILED"),
             GenerationStatus::Processing => write!(f, "PROCESSING"),
             GenerationStatus::Succeeded => write!(f, "SUCCEEDED"),
-            GenerationStatus::Unknown(value) => write!(f, "{}", value),
+            GenerationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

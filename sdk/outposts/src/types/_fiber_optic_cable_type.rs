@@ -102,7 +102,7 @@ impl ::std::fmt::Display for FiberOpticCableType {
         match self {
             FiberOpticCableType::MultiMode => write!(f, "MULTI_MODE"),
             FiberOpticCableType::SingleMode => write!(f, "SINGLE_MODE"),
-            FiberOpticCableType::Unknown(value) => write!(f, "{}", value),
+            FiberOpticCableType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

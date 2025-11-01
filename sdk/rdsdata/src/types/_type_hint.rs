@@ -126,7 +126,7 @@ impl ::std::fmt::Display for TypeHint {
             TypeHint::Time => write!(f, "TIME"),
             TypeHint::Timestamp => write!(f, "TIMESTAMP"),
             TypeHint::Uuid => write!(f, "UUID"),
-            TypeHint::Unknown(value) => write!(f, "{}", value),
+            TypeHint::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

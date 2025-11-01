@@ -116,7 +116,7 @@ impl ::std::fmt::Display for ServiceLinkVirtualInterfaceConfigurationState {
             ServiceLinkVirtualInterfaceConfigurationState::Deleted => write!(f, "deleted"),
             ServiceLinkVirtualInterfaceConfigurationState::Deleting => write!(f, "deleting"),
             ServiceLinkVirtualInterfaceConfigurationState::Pending => write!(f, "pending"),
-            ServiceLinkVirtualInterfaceConfigurationState::Unknown(value) => write!(f, "{}", value),
+            ServiceLinkVirtualInterfaceConfigurationState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

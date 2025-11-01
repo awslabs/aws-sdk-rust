@@ -120,7 +120,7 @@ impl ::std::fmt::Display for VolumeAttachmentState {
             VolumeAttachmentState::Busy => write!(f, "busy"),
             VolumeAttachmentState::Detached => write!(f, "detached"),
             VolumeAttachmentState::Detaching => write!(f, "detaching"),
-            VolumeAttachmentState::Unknown(value) => write!(f, "{}", value),
+            VolumeAttachmentState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

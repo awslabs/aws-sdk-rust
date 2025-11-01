@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TokenEndpointAuthenticationScheme {
         match self {
             TokenEndpointAuthenticationScheme::HttpBasic => write!(f, "HTTP_BASIC"),
             TokenEndpointAuthenticationScheme::RequestBodyCredentials => write!(f, "REQUEST_BODY_CREDENTIALS"),
-            TokenEndpointAuthenticationScheme::Unknown(value) => write!(f, "{}", value),
+            TokenEndpointAuthenticationScheme::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

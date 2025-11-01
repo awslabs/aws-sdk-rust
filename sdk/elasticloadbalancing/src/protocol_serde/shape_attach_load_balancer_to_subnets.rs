@@ -130,16 +130,14 @@ pub fn de_attach_load_balancer_to_subnets(
     let start_el = decoder.start_el();
     if !(start_el.matches("AttachLoadBalancerToSubnetsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected AttachLoadBalancerToSubnetsResponse got {:?}",
-            start_el
+            "invalid root, expected AttachLoadBalancerToSubnetsResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("AttachLoadBalancerToSubnetsResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected AttachLoadBalancerToSubnetsResult got {:?}",
-                start_el
+                "invalid result, expected AttachLoadBalancerToSubnetsResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

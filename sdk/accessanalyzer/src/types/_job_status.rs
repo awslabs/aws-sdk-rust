@@ -114,7 +114,7 @@ impl ::std::fmt::Display for JobStatus {
             JobStatus::Failed => write!(f, "FAILED"),
             JobStatus::InProgress => write!(f, "IN_PROGRESS"),
             JobStatus::Succeeded => write!(f, "SUCCEEDED"),
-            JobStatus::Unknown(value) => write!(f, "{}", value),
+            JobStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for UnionType {
         match self {
             UnionType::All => write!(f, "ALL"),
             UnionType::Distinct => write!(f, "DISTINCT"),
-            UnionType::Unknown(value) => write!(f, "{}", value),
+            UnionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

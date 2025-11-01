@@ -55,8 +55,7 @@ pub fn de_describe_vpc_block_public_access_options(
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeVpcBlockPublicAccessOptionsResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected DescribeVpcBlockPublicAccessOptionsResponse got {:?}",
-            start_el
+            "invalid root, expected DescribeVpcBlockPublicAccessOptionsResponse got {start_el:?}"
         )));
     }
     while let Some(mut tag) = decoder.next_tag() {

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CaseSensitivity {
         match self {
             CaseSensitivity::CaseSensitive => write!(f, "CaseSensitive"),
             CaseSensitivity::ClientSpecified => write!(f, "ClientSpecified"),
-            CaseSensitivity::Unknown(value) => write!(f, "{}", value),
+            CaseSensitivity::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for VectorEnrichmentJobType {
         match self {
             VectorEnrichmentJobType::MapMatching => write!(f, "MAP_MATCHING"),
             VectorEnrichmentJobType::ReverseGeocoding => write!(f, "REVERSE_GEOCODING"),
-            VectorEnrichmentJobType::Unknown(value) => write!(f, "{}", value),
+            VectorEnrichmentJobType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

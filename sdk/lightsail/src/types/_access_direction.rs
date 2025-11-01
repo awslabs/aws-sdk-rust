@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AccessDirection {
         match self {
             AccessDirection::Inbound => write!(f, "inbound"),
             AccessDirection::Outbound => write!(f, "outbound"),
-            AccessDirection::Unknown(value) => write!(f, "{}", value),
+            AccessDirection::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

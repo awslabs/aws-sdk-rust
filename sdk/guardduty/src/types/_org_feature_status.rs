@@ -108,7 +108,7 @@ impl ::std::fmt::Display for OrgFeatureStatus {
             OrgFeatureStatus::All => write!(f, "ALL"),
             OrgFeatureStatus::New => write!(f, "NEW"),
             OrgFeatureStatus::None => write!(f, "NONE"),
-            OrgFeatureStatus::Unknown(value) => write!(f, "{}", value),
+            OrgFeatureStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

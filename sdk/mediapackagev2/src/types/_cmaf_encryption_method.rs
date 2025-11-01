@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CmafEncryptionMethod {
         match self {
             CmafEncryptionMethod::Cbcs => write!(f, "CBCS"),
             CmafEncryptionMethod::Cenc => write!(f, "CENC"),
-            CmafEncryptionMethod::Unknown(value) => write!(f, "{}", value),
+            CmafEncryptionMethod::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

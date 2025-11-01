@@ -96,7 +96,7 @@ impl ::std::fmt::Display for ConditionType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ConditionType::Stringequals => write!(f, "STRINGEQUALS"),
-            ConditionType::Unknown(value) => write!(f, "{}", value),
+            ConditionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -315,7 +315,7 @@ impl ::std::fmt::Display for UploadType {
             UploadType::XctestTestPackage => write!(f, "XCTEST_TEST_PACKAGE"),
             UploadType::XctestUiTestPackage => write!(f, "XCTEST_UI_TEST_PACKAGE"),
             UploadType::XctestUiTestSpec => write!(f, "XCTEST_UI_TEST_SPEC"),
-            UploadType::Unknown(value) => write!(f, "{}", value),
+            UploadType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

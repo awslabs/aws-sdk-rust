@@ -102,7 +102,7 @@ impl ::std::fmt::Display for RegistrationStatus {
         match self {
             RegistrationStatus::Deprecated => write!(f, "DEPRECATED"),
             RegistrationStatus::Registered => write!(f, "REGISTERED"),
-            RegistrationStatus::Unknown(value) => write!(f, "{}", value),
+            RegistrationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

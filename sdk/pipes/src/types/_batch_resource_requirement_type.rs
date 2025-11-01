@@ -108,7 +108,7 @@ impl ::std::fmt::Display for BatchResourceRequirementType {
             BatchResourceRequirementType::Gpu => write!(f, "GPU"),
             BatchResourceRequirementType::Memory => write!(f, "MEMORY"),
             BatchResourceRequirementType::Vcpu => write!(f, "VCPU"),
-            BatchResourceRequirementType::Unknown(value) => write!(f, "{}", value),
+            BatchResourceRequirementType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

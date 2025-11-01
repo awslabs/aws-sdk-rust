@@ -102,7 +102,7 @@ impl ::std::fmt::Display for IdleRecommendationFilterName {
         match self {
             IdleRecommendationFilterName::Finding => write!(f, "Finding"),
             IdleRecommendationFilterName::ResourceType => write!(f, "ResourceType"),
-            IdleRecommendationFilterName::Unknown(value) => write!(f, "{}", value),
+            IdleRecommendationFilterName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

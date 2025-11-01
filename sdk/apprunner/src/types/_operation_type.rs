@@ -133,7 +133,7 @@ impl ::std::fmt::Display for OperationType {
             OperationType::ResumeService => write!(f, "RESUME_SERVICE"),
             OperationType::StartDeployment => write!(f, "START_DEPLOYMENT"),
             OperationType::UpdateService => write!(f, "UPDATE_SERVICE"),
-            OperationType::Unknown(value) => write!(f, "{}", value),
+            OperationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

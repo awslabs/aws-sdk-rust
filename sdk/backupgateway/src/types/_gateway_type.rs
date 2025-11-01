@@ -96,7 +96,7 @@ impl ::std::fmt::Display for GatewayType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             GatewayType::BackupVm => write!(f, "BACKUP_VM"),
-            GatewayType::Unknown(value) => write!(f, "{}", value),
+            GatewayType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

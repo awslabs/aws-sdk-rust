@@ -96,7 +96,7 @@ impl ::std::fmt::Display for CachePointType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             CachePointType::Default => write!(f, "default"),
-            CachePointType::Unknown(value) => write!(f, "{}", value),
+            CachePointType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

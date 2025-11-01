@@ -102,7 +102,7 @@ impl ::std::fmt::Display for VnfInstantiationState {
         match self {
             VnfInstantiationState::Instantiated => write!(f, "INSTANTIATED"),
             VnfInstantiationState::NotInstantiated => write!(f, "NOT_INSTANTIATED"),
-            VnfInstantiationState::Unknown(value) => write!(f, "{}", value),
+            VnfInstantiationState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

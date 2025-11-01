@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SegmentType {
         match self {
             SegmentType::Shot => write!(f, "SHOT"),
             SegmentType::TechnicalCue => write!(f, "TECHNICAL_CUE"),
-            SegmentType::Unknown(value) => write!(f, "{}", value),
+            SegmentType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

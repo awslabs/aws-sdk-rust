@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ConformancePackComplianceType {
             ConformancePackComplianceType::Compliant => write!(f, "COMPLIANT"),
             ConformancePackComplianceType::InsufficientData => write!(f, "INSUFFICIENT_DATA"),
             ConformancePackComplianceType::NonCompliant => write!(f, "NON_COMPLIANT"),
-            ConformancePackComplianceType::Unknown(value) => write!(f, "{}", value),
+            ConformancePackComplianceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

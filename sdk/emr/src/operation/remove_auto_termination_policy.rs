@@ -180,6 +180,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for RemoveAutoTe
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::remove_auto_termination_policy::RemoveAutoTerminationPolicyInput,
                 output: &mut ::std::string::String,

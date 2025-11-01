@@ -882,7 +882,7 @@ impl ::std::fmt::Display for ClusterInstanceType {
             ClusterInstanceType::MlTrn132Xlarge => write!(f, "ml.trn1.32xlarge"),
             ClusterInstanceType::MlTrn1N32Xlarge => write!(f, "ml.trn1n.32xlarge"),
             ClusterInstanceType::MlTrn248Xlarge => write!(f, "ml.trn2.48xlarge"),
-            ClusterInstanceType::Unknown(value) => write!(f, "{}", value),
+            ClusterInstanceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

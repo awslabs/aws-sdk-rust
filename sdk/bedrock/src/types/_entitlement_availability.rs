@@ -102,7 +102,7 @@ impl ::std::fmt::Display for EntitlementAvailability {
         match self {
             EntitlementAvailability::Available => write!(f, "AVAILABLE"),
             EntitlementAvailability::NotAvailable => write!(f, "NOT_AVAILABLE"),
-            EntitlementAvailability::Unknown(value) => write!(f, "{}", value),
+            EntitlementAvailability::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

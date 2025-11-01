@@ -7595,7 +7595,7 @@ impl ::std::fmt::Display for InstanceType {
             InstanceType::Z1dLarge => write!(f, "z1d.large"),
             InstanceType::Z1dMetal => write!(f, "z1d.metal"),
             InstanceType::Z1dXlarge => write!(f, "z1d.xlarge"),
-            InstanceType::Unknown(value) => write!(f, "{}", value),
+            InstanceType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DatabaseConnectionMethod {
         match self {
             DatabaseConnectionMethod::Direct => write!(f, "DIRECT"),
             DatabaseConnectionMethod::Overlay => write!(f, "OVERLAY"),
-            DatabaseConnectionMethod::Unknown(value) => write!(f, "{}", value),
+            DatabaseConnectionMethod::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

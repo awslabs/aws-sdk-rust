@@ -114,7 +114,7 @@ impl ::std::fmt::Display for PackageGroupOriginRestrictionMode {
             PackageGroupOriginRestrictionMode::AllowSpecificRepositories => write!(f, "ALLOW_SPECIFIC_REPOSITORIES"),
             PackageGroupOriginRestrictionMode::Block => write!(f, "BLOCK"),
             PackageGroupOriginRestrictionMode::Inherit => write!(f, "INHERIT"),
-            PackageGroupOriginRestrictionMode::Unknown(value) => write!(f, "{}", value),
+            PackageGroupOriginRestrictionMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

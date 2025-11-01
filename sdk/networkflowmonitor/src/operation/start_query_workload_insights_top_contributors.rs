@@ -189,6 +189,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for StartQueryWo
             .cloned()
             .unwrap_or_default();
         let mut request_builder = {
+            #[allow(clippy::uninlined_format_args)]
             fn uri_base(
                 _input: &crate::operation::start_query_workload_insights_top_contributors::StartQueryWorkloadInsightsTopContributorsInput,
                 output: &mut ::std::string::String,

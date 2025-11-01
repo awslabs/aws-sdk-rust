@@ -108,7 +108,7 @@ impl ::std::fmt::Display for VisualType {
             VisualType::Bar => write!(f, "BAR"),
             VisualType::Line => write!(f, "LINE"),
             VisualType::Stack => write!(f, "STACK"),
-            VisualType::Unknown(value) => write!(f, "{}", value),
+            VisualType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

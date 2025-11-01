@@ -114,7 +114,7 @@ impl ::std::fmt::Display for CustomizationType {
             CustomizationType::Distillation => write!(f, "DISTILLATION"),
             CustomizationType::FineTuning => write!(f, "FINE_TUNING"),
             CustomizationType::Imported => write!(f, "IMPORTED"),
-            CustomizationType::Unknown(value) => write!(f, "{}", value),
+            CustomizationType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

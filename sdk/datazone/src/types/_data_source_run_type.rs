@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DataSourceRunType {
         match self {
             DataSourceRunType::Prioritized => write!(f, "PRIORITIZED"),
             DataSourceRunType::Scheduled => write!(f, "SCHEDULED"),
-            DataSourceRunType::Unknown(value) => write!(f, "{}", value),
+            DataSourceRunType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

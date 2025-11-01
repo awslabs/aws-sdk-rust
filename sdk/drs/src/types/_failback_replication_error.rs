@@ -252,7 +252,7 @@ impl ::std::fmt::Display for FailbackReplicationError {
             FailbackReplicationError::NotConverging => write!(f, "NOT_CONVERGING"),
             FailbackReplicationError::SnapshotsFailure => write!(f, "SNAPSHOTS_FAILURE"),
             FailbackReplicationError::UnstableNetwork => write!(f, "UNSTABLE_NETWORK"),
-            FailbackReplicationError::Unknown(value) => write!(f, "{}", value),
+            FailbackReplicationError::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

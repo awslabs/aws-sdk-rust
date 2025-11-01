@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DeletionMode {
         match self {
             DeletionMode::AllConfigurations => write!(f, "ALL_CONFIGURATIONS"),
             DeletionMode::LocalConfigurationOnly => write!(f, "LOCAL_CONFIGURATION_ONLY"),
-            DeletionMode::Unknown(value) => write!(f, "{}", value),
+            DeletionMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

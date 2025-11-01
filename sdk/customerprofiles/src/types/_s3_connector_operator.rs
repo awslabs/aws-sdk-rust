@@ -231,7 +231,7 @@ impl ::std::fmt::Display for S3ConnectorOperator {
             S3ConnectorOperator::ValidateNonNull => write!(f, "VALIDATE_NON_NULL"),
             S3ConnectorOperator::ValidateNonZero => write!(f, "VALIDATE_NON_ZERO"),
             S3ConnectorOperator::ValidateNumeric => write!(f, "VALIDATE_NUMERIC"),
-            S3ConnectorOperator::Unknown(value) => write!(f, "{}", value),
+            S3ConnectorOperator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

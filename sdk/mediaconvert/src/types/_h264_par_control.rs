@@ -102,7 +102,7 @@ impl ::std::fmt::Display for H264ParControl {
         match self {
             H264ParControl::InitializeFromSource => write!(f, "INITIALIZE_FROM_SOURCE"),
             H264ParControl::Specified => write!(f, "SPECIFIED"),
-            H264ParControl::Unknown(value) => write!(f, "{}", value),
+            H264ParControl::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

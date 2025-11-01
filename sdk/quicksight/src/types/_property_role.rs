@@ -102,7 +102,7 @@ impl ::std::fmt::Display for PropertyRole {
         match self {
             PropertyRole::Id => write!(f, "ID"),
             PropertyRole::Primary => write!(f, "PRIMARY"),
-            PropertyRole::Unknown(value) => write!(f, "{}", value),
+            PropertyRole::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

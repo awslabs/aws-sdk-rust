@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ApproximateCreationDateTimePrecision {
         match self {
             ApproximateCreationDateTimePrecision::Microsecond => write!(f, "MICROSECOND"),
             ApproximateCreationDateTimePrecision::Millisecond => write!(f, "MILLISECOND"),
-            ApproximateCreationDateTimePrecision::Unknown(value) => write!(f, "{}", value),
+            ApproximateCreationDateTimePrecision::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

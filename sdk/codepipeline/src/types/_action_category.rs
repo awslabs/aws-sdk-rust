@@ -132,7 +132,7 @@ impl ::std::fmt::Display for ActionCategory {
             ActionCategory::Invoke => write!(f, "Invoke"),
             ActionCategory::Source => write!(f, "Source"),
             ActionCategory::Test => write!(f, "Test"),
-            ActionCategory::Unknown(value) => write!(f, "{}", value),
+            ActionCategory::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

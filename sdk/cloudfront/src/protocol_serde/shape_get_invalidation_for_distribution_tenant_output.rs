@@ -20,8 +20,7 @@ pub fn de_invalidation(inp: &[u8]) -> std::result::Result<crate::types::Invalida
     let start_el = decoder.start_el();
     if !(start_el.matches("Invalidation")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected Invalidation got {:?}",
-            start_el
+            "invalid root, expected Invalidation got {start_el:?}"
         )));
     }
     crate::protocol_serde::shape_invalidation::de_invalidation(&mut decoder)

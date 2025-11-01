@@ -322,7 +322,7 @@ impl ::std::fmt::Display for ActivityType {
             ActivityType::FolderShared => write!(f, "FOLDER_SHARED"),
             ActivityType::FolderSharePermissionChanged => write!(f, "FOLDER_SHARE_PERMISSION_CHANGED"),
             ActivityType::FolderUnshared => write!(f, "FOLDER_UNSHARED"),
-            ActivityType::Unknown(value) => write!(f, "{}", value),
+            ActivityType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

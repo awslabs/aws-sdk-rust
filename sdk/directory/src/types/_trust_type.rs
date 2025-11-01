@@ -102,7 +102,7 @@ impl ::std::fmt::Display for TrustType {
         match self {
             TrustType::External => write!(f, "External"),
             TrustType::Forest => write!(f, "Forest"),
-            TrustType::Unknown(value) => write!(f, "{}", value),
+            TrustType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

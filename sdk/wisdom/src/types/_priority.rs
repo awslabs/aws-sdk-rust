@@ -108,7 +108,7 @@ impl ::std::fmt::Display for Priority {
             Priority::High => write!(f, "HIGH"),
             Priority::Low => write!(f, "LOW"),
             Priority::Medium => write!(f, "MEDIUM"),
-            Priority::Unknown(value) => write!(f, "{}", value),
+            Priority::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -108,7 +108,7 @@ impl ::std::fmt::Display for AccessPreviewStatus {
             AccessPreviewStatus::Completed => write!(f, "COMPLETED"),
             AccessPreviewStatus::Creating => write!(f, "CREATING"),
             AccessPreviewStatus::Failed => write!(f, "FAILED"),
-            AccessPreviewStatus::Unknown(value) => write!(f, "{}", value),
+            AccessPreviewStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

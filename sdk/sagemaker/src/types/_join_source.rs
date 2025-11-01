@@ -102,7 +102,7 @@ impl ::std::fmt::Display for JoinSource {
         match self {
             JoinSource::Input => write!(f, "Input"),
             JoinSource::None => write!(f, "None"),
-            JoinSource::Unknown(value) => write!(f, "{}", value),
+            JoinSource::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

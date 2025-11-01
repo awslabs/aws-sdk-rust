@@ -102,7 +102,7 @@ impl ::std::fmt::Display for BlueprintStage {
         match self {
             BlueprintStage::Development => write!(f, "DEVELOPMENT"),
             BlueprintStage::Live => write!(f, "LIVE"),
-            BlueprintStage::Unknown(value) => write!(f, "{}", value),
+            BlueprintStage::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

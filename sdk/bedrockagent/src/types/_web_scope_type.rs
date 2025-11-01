@@ -102,7 +102,7 @@ impl ::std::fmt::Display for WebScopeType {
         match self {
             WebScopeType::HostOnly => write!(f, "HOST_ONLY"),
             WebScopeType::Subdomains => write!(f, "SUBDOMAINS"),
-            WebScopeType::Unknown(value) => write!(f, "{}", value),
+            WebScopeType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

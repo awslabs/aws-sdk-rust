@@ -108,7 +108,7 @@ impl ::std::fmt::Display for ControlOperationStatus {
             ControlOperationStatus::Failed => write!(f, "FAILED"),
             ControlOperationStatus::InProgress => write!(f, "IN_PROGRESS"),
             ControlOperationStatus::Succeeded => write!(f, "SUCCEEDED"),
-            ControlOperationStatus::Unknown(value) => write!(f, "{}", value),
+            ControlOperationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

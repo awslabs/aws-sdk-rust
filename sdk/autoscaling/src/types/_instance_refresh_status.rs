@@ -161,7 +161,7 @@ impl ::std::fmt::Display for InstanceRefreshStatus {
             InstanceRefreshStatus::RollbackInProgress => write!(f, "RollbackInProgress"),
             InstanceRefreshStatus::RollbackSuccessful => write!(f, "RollbackSuccessful"),
             InstanceRefreshStatus::Successful => write!(f, "Successful"),
-            InstanceRefreshStatus::Unknown(value) => write!(f, "{}", value),
+            InstanceRefreshStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

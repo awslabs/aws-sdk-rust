@@ -128,7 +128,7 @@ impl ::std::fmt::Display for DatabaseStatus {
             DatabaseStatus::Stopped => write!(f, "STOPPED"),
             DatabaseStatus::UnknownValue => write!(f, "UNKNOWN"),
             DatabaseStatus::Warning => write!(f, "WARNING"),
-            DatabaseStatus::Unknown(value) => write!(f, "{}", value),
+            DatabaseStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

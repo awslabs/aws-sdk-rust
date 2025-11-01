@@ -114,7 +114,7 @@ impl ::std::fmt::Display for RuntimeAnalysisStatus {
             RuntimeAnalysisStatus::AnalysisStarted => write!(f, "ANALYSIS_STARTED"),
             RuntimeAnalysisStatus::AnalysisSuccess => write!(f, "ANALYSIS_SUCCESS"),
             RuntimeAnalysisStatus::AnalysisToBeScheduled => write!(f, "ANALYSIS_TO_BE_SCHEDULED"),
-            RuntimeAnalysisStatus::Unknown(value) => write!(f, "{}", value),
+            RuntimeAnalysisStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

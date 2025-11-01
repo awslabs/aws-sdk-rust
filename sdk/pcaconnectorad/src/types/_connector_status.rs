@@ -114,7 +114,7 @@ impl ::std::fmt::Display for ConnectorStatus {
             ConnectorStatus::Creating => write!(f, "CREATING"),
             ConnectorStatus::Deleting => write!(f, "DELETING"),
             ConnectorStatus::Failed => write!(f, "FAILED"),
-            ConnectorStatus::Unknown(value) => write!(f, "{}", value),
+            ConnectorStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -22,8 +22,7 @@ pub fn de_field_level_encryption_profile_list(
     let start_el = decoder.start_el();
     if !(start_el.matches("FieldLevelEncryptionProfileList")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected FieldLevelEncryptionProfileList got {:?}",
-            start_el
+            "invalid root, expected FieldLevelEncryptionProfileList got {start_el:?}"
         )));
     }
     crate::protocol_serde::shape_field_level_encryption_profile_list::de_field_level_encryption_profile_list(&mut decoder)

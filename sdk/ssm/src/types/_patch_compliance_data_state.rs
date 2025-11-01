@@ -147,7 +147,7 @@ impl ::std::fmt::Display for PatchComplianceDataState {
             PatchComplianceDataState::InstalledRejected => write!(f, "INSTALLED_REJECTED"),
             PatchComplianceDataState::Missing => write!(f, "MISSING"),
             PatchComplianceDataState::NotApplicable => write!(f, "NOT_APPLICABLE"),
-            PatchComplianceDataState::Unknown(value) => write!(f, "{}", value),
+            PatchComplianceDataState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

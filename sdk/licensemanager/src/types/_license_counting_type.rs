@@ -114,7 +114,7 @@ impl ::std::fmt::Display for LicenseCountingType {
             LicenseCountingType::Instance => write!(f, "Instance"),
             LicenseCountingType::Socket => write!(f, "Socket"),
             LicenseCountingType::Vcpu => write!(f, "vCPU"),
-            LicenseCountingType::Unknown(value) => write!(f, "{}", value),
+            LicenseCountingType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

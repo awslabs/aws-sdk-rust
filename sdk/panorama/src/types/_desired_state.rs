@@ -108,7 +108,7 @@ impl ::std::fmt::Display for DesiredState {
             DesiredState::Removed => write!(f, "REMOVED"),
             DesiredState::Running => write!(f, "RUNNING"),
             DesiredState::Stopped => write!(f, "STOPPED"),
-            DesiredState::Unknown(value) => write!(f, "{}", value),
+            DesiredState::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

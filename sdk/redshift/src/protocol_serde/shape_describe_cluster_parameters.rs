@@ -84,16 +84,14 @@ pub fn de_describe_cluster_parameters(
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeClusterParametersResponse")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected DescribeClusterParametersResponse got {:?}",
-            start_el
+            "invalid root, expected DescribeClusterParametersResponse got {start_el:?}"
         )));
     }
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("DescribeClusterParametersResult")) {
             return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected DescribeClusterParametersResult got {:?}",
-                start_el
+                "invalid result, expected DescribeClusterParametersResult got {start_el:?}"
             )));
         }
         while let Some(mut tag) = result_tag.next_tag() {

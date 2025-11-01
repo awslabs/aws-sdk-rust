@@ -154,7 +154,7 @@ impl ::std::fmt::Display for RegistrationVersionStatus {
             RegistrationVersionStatus::Reviewing => write!(f, "REVIEWING"),
             RegistrationVersionStatus::Revoked => write!(f, "REVOKED"),
             RegistrationVersionStatus::Submitted => write!(f, "SUBMITTED"),
-            RegistrationVersionStatus::Unknown(value) => write!(f, "{}", value),
+            RegistrationVersionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

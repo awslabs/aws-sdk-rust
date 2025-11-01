@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Mpeg2ParControl {
         match self {
             Mpeg2ParControl::InitializeFromSource => write!(f, "INITIALIZE_FROM_SOURCE"),
             Mpeg2ParControl::Specified => write!(f, "SPECIFIED"),
-            Mpeg2ParControl::Unknown(value) => write!(f, "{}", value),
+            Mpeg2ParControl::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

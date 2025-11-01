@@ -102,7 +102,7 @@ impl ::std::fmt::Display for VisibilityStatus {
         match self {
             VisibilityStatus::Published => write!(f, "PUBLISHED"),
             VisibilityStatus::Saved => write!(f, "SAVED"),
-            VisibilityStatus::Unknown(value) => write!(f, "{}", value),
+            VisibilityStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

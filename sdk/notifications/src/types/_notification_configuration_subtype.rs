@@ -102,7 +102,7 @@ impl ::std::fmt::Display for NotificationConfigurationSubtype {
         match self {
             NotificationConfigurationSubtype::Account => write!(f, "ACCOUNT"),
             NotificationConfigurationSubtype::AdminManaged => write!(f, "ADMIN_MANAGED"),
-            NotificationConfigurationSubtype::Unknown(value) => write!(f, "{}", value),
+            NotificationConfigurationSubtype::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

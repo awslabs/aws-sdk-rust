@@ -102,7 +102,7 @@ impl ::std::fmt::Display for IdMappingType {
         match self {
             IdMappingType::Provider => write!(f, "PROVIDER"),
             IdMappingType::RuleBased => write!(f, "RULE_BASED"),
-            IdMappingType::Unknown(value) => write!(f, "{}", value),
+            IdMappingType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

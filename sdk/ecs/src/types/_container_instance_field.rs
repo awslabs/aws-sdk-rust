@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ContainerInstanceField {
         match self {
             ContainerInstanceField::ContainerInstanceHealth => write!(f, "CONTAINER_INSTANCE_HEALTH"),
             ContainerInstanceField::Tags => write!(f, "TAGS"),
-            ContainerInstanceField::Unknown(value) => write!(f, "{}", value),
+            ContainerInstanceField::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

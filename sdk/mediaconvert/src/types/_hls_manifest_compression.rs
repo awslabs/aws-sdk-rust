@@ -102,7 +102,7 @@ impl ::std::fmt::Display for HlsManifestCompression {
         match self {
             HlsManifestCompression::Gzip => write!(f, "GZIP"),
             HlsManifestCompression::None => write!(f, "NONE"),
-            HlsManifestCompression::Unknown(value) => write!(f, "{}", value),
+            HlsManifestCompression::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

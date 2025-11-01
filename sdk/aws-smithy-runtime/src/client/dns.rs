@@ -8,7 +8,7 @@
 #[cfg(all(feature = "rt-tokio", not(target_family = "wasm")))]
 mod tokio {
     use aws_smithy_runtime_api::client::dns::{DnsFuture, ResolveDns, ResolveDnsError};
-    use std::io::{Error as IoError, ErrorKind as IoErrorKind};
+    use std::io::Error as IoError;
     use std::net::ToSocketAddrs;
 
     /// DNS resolver that uses `tokio::spawn_blocking` to resolve DNS using the standard library.
@@ -31,10 +31,7 @@ mod tokio {
             DnsFuture::new(async move {
                 let result = tokio::task::spawn_blocking(move || (name, 0).to_socket_addrs()).await;
                 match result {
-                    Err(join_failure) => Err(ResolveDnsError::new(IoError::new(
-                        IoErrorKind::Other,
-                        join_failure,
-                    ))),
+                    Err(join_failure) => Err(ResolveDnsError::new(IoError::other(join_failure))),
                     Ok(Ok(dns_result)) => {
                         Ok(dns_result.into_iter().map(|addr| addr.ip()).collect())
                     }

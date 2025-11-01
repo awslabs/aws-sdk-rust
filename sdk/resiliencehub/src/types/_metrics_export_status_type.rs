@@ -114,7 +114,7 @@ impl ::std::fmt::Display for MetricsExportStatusType {
             MetricsExportStatusType::InProgress => write!(f, "InProgress"),
             MetricsExportStatusType::Pending => write!(f, "Pending"),
             MetricsExportStatusType::Success => write!(f, "Success"),
-            MetricsExportStatusType::Unknown(value) => write!(f, "{}", value),
+            MetricsExportStatusType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

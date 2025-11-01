@@ -108,7 +108,7 @@ impl ::std::fmt::Display for UdpTimedMetadataId3Frame {
             UdpTimedMetadataId3Frame::None => write!(f, "NONE"),
             UdpTimedMetadataId3Frame::Priv => write!(f, "PRIV"),
             UdpTimedMetadataId3Frame::Tdrl => write!(f, "TDRL"),
-            UdpTimedMetadataId3Frame::Unknown(value) => write!(f, "{}", value),
+            UdpTimedMetadataId3Frame::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

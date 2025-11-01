@@ -120,7 +120,7 @@ impl ::std::fmt::Display for SeverityLabel {
             SeverityLabel::Informational => write!(f, "INFORMATIONAL"),
             SeverityLabel::Low => write!(f, "LOW"),
             SeverityLabel::Medium => write!(f, "MEDIUM"),
-            SeverityLabel::Unknown(value) => write!(f, "{}", value),
+            SeverityLabel::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

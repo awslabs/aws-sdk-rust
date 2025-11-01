@@ -102,7 +102,7 @@ impl ::std::fmt::Display for EdgeDirection {
         match self {
             EdgeDirection::Downstream => write!(f, "DOWNSTREAM"),
             EdgeDirection::Upstream => write!(f, "UPSTREAM"),
-            EdgeDirection::Unknown(value) => write!(f, "{}", value),
+            EdgeDirection::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -133,7 +133,7 @@ impl ::std::fmt::Display for ValidationExceptionReason {
             ValidationExceptionReason::Other => write!(f, "OTHER"),
             ValidationExceptionReason::ParameterInconsistentWithServiceState => write!(f, "PARAMETER_INCONSISTENT_WITH_SERVICE_STATE"),
             ValidationExceptionReason::UnknownOperation => write!(f, "UNKNOWN_OPERATION"),
-            ValidationExceptionReason::Unknown(value) => write!(f, "{}", value),
+            ValidationExceptionReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

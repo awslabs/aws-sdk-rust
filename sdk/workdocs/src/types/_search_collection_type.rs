@@ -102,7 +102,7 @@ impl ::std::fmt::Display for SearchCollectionType {
         match self {
             SearchCollectionType::Owned => write!(f, "OWNED"),
             SearchCollectionType::SharedWithMe => write!(f, "SHARED_WITH_ME"),
-            SearchCollectionType::Unknown(value) => write!(f, "{}", value),
+            SearchCollectionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

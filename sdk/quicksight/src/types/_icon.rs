@@ -273,7 +273,7 @@ impl ::std::fmt::Display for Icon {
             Icon::Triangle => write!(f, "TRIANGLE"),
             Icon::TwoBar => write!(f, "TWO_BAR"),
             Icon::X => write!(f, "X"),
-            Icon::Unknown(value) => write!(f, "{}", value),
+            Icon::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

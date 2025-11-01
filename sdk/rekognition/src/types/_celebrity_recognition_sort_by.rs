@@ -102,7 +102,7 @@ impl ::std::fmt::Display for CelebrityRecognitionSortBy {
         match self {
             CelebrityRecognitionSortBy::Id => write!(f, "ID"),
             CelebrityRecognitionSortBy::Timestamp => write!(f, "TIMESTAMP"),
-            CelebrityRecognitionSortBy::Unknown(value) => write!(f, "{}", value),
+            CelebrityRecognitionSortBy::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

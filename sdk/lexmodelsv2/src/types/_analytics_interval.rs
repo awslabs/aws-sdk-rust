@@ -102,7 +102,7 @@ impl ::std::fmt::Display for AnalyticsInterval {
         match self {
             AnalyticsInterval::OneDay => write!(f, "OneDay"),
             AnalyticsInterval::OneHour => write!(f, "OneHour"),
-            AnalyticsInterval::Unknown(value) => write!(f, "{}", value),
+            AnalyticsInterval::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

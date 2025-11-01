@@ -96,7 +96,7 @@ impl ::std::fmt::Display for FromFormat {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             FromFormat::X12 => write!(f, "X12"),
-            FromFormat::Unknown(value) => write!(f, "{}", value),
+            FromFormat::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

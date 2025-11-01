@@ -119,7 +119,7 @@ impl ::std::fmt::Display for ExecutionType {
             ExecutionType::ResetBudgetAction => write!(f, "RESET_BUDGET_ACTION"),
             ExecutionType::RetryBudgetAction => write!(f, "RETRY_BUDGET_ACTION"),
             ExecutionType::ReverseBudgetAction => write!(f, "REVERSE_BUDGET_ACTION"),
-            ExecutionType::Unknown(value) => write!(f, "{}", value),
+            ExecutionType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

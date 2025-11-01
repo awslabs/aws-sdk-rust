@@ -48,41 +48,47 @@ pub fn ser_video_codec_settings(
         crate::protocol_serde::shape_mpeg2_settings::ser_mpeg2_settings(&mut object_15, var_14)?;
         object_15.finish();
     }
-    if let Some(var_16) = &input.prores_settings {
+    if let Some(var_16) = &input.passthrough_settings {
         #[allow(unused_mut)]
-        let mut object_17 = object.key("proresSettings").start_object();
-        crate::protocol_serde::shape_prores_settings::ser_prores_settings(&mut object_17, var_16)?;
+        let mut object_17 = object.key("passthroughSettings").start_object();
+        crate::protocol_serde::shape_passthrough_settings::ser_passthrough_settings(&mut object_17, var_16)?;
         object_17.finish();
     }
-    if let Some(var_18) = &input.uncompressed_settings {
+    if let Some(var_18) = &input.prores_settings {
         #[allow(unused_mut)]
-        let mut object_19 = object.key("uncompressedSettings").start_object();
-        crate::protocol_serde::shape_uncompressed_settings::ser_uncompressed_settings(&mut object_19, var_18)?;
+        let mut object_19 = object.key("proresSettings").start_object();
+        crate::protocol_serde::shape_prores_settings::ser_prores_settings(&mut object_19, var_18)?;
         object_19.finish();
     }
-    if let Some(var_20) = &input.vc3_settings {
+    if let Some(var_20) = &input.uncompressed_settings {
         #[allow(unused_mut)]
-        let mut object_21 = object.key("vc3Settings").start_object();
-        crate::protocol_serde::shape_vc3_settings::ser_vc3_settings(&mut object_21, var_20)?;
+        let mut object_21 = object.key("uncompressedSettings").start_object();
+        crate::protocol_serde::shape_uncompressed_settings::ser_uncompressed_settings(&mut object_21, var_20)?;
         object_21.finish();
     }
-    if let Some(var_22) = &input.vp8_settings {
+    if let Some(var_22) = &input.vc3_settings {
         #[allow(unused_mut)]
-        let mut object_23 = object.key("vp8Settings").start_object();
-        crate::protocol_serde::shape_vp8_settings::ser_vp8_settings(&mut object_23, var_22)?;
+        let mut object_23 = object.key("vc3Settings").start_object();
+        crate::protocol_serde::shape_vc3_settings::ser_vc3_settings(&mut object_23, var_22)?;
         object_23.finish();
     }
-    if let Some(var_24) = &input.vp9_settings {
+    if let Some(var_24) = &input.vp8_settings {
         #[allow(unused_mut)]
-        let mut object_25 = object.key("vp9Settings").start_object();
-        crate::protocol_serde::shape_vp9_settings::ser_vp9_settings(&mut object_25, var_24)?;
+        let mut object_25 = object.key("vp8Settings").start_object();
+        crate::protocol_serde::shape_vp8_settings::ser_vp8_settings(&mut object_25, var_24)?;
         object_25.finish();
     }
-    if let Some(var_26) = &input.xavc_settings {
+    if let Some(var_26) = &input.vp9_settings {
         #[allow(unused_mut)]
-        let mut object_27 = object.key("xavcSettings").start_object();
-        crate::protocol_serde::shape_xavc_settings::ser_xavc_settings(&mut object_27, var_26)?;
+        let mut object_27 = object.key("vp9Settings").start_object();
+        crate::protocol_serde::shape_vp9_settings::ser_vp9_settings(&mut object_27, var_26)?;
         object_27.finish();
+    }
+    if let Some(var_28) = &input.xavc_settings {
+        #[allow(unused_mut)]
+        let mut object_29 = object.key("xavcSettings").start_object();
+        crate::protocol_serde::shape_xavc_settings::ser_xavc_settings(&mut object_29, var_28)?;
+        object_29.finish();
     }
     Ok(())
 }
@@ -131,6 +137,10 @@ where
                         "mpeg2Settings" => {
                             builder = builder.set_mpeg2_settings(crate::protocol_serde::shape_mpeg2_settings::de_mpeg2_settings(tokens)?);
                         }
+                        "passthroughSettings" => {
+                            builder =
+                                builder.set_passthrough_settings(crate::protocol_serde::shape_passthrough_settings::de_passthrough_settings(tokens)?);
+                        }
                         "proresSettings" => {
                             builder = builder.set_prores_settings(crate::protocol_serde::shape_prores_settings::de_prores_settings(tokens)?);
                         }
@@ -154,8 +164,7 @@ where
                     },
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                            "expected object key or end object, found: {:?}",
-                            other
+                            "expected object key or end object, found: {other:?}"
                         )))
                     }
                 }

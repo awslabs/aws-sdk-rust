@@ -102,7 +102,7 @@ impl ::std::fmt::Display for ContactProtocol {
         match self {
             ContactProtocol::Email => write!(f, "Email"),
             ContactProtocol::Sms => write!(f, "SMS"),
-            ContactProtocol::Unknown(value) => write!(f, "{}", value),
+            ContactProtocol::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

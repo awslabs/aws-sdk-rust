@@ -102,7 +102,7 @@ impl ::std::fmt::Display for LockMode {
         match self {
             LockMode::Compliance => write!(f, "compliance"),
             LockMode::Governance => write!(f, "governance"),
-            LockMode::Unknown(value) => write!(f, "{}", value),
+            LockMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

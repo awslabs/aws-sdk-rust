@@ -161,7 +161,7 @@ impl ::std::fmt::Display for SignalMapMonitorDeploymentStatus {
             SignalMapMonitorDeploymentStatus::DryRunDeploymentFailed => write!(f, "DRY_RUN_DEPLOYMENT_FAILED"),
             SignalMapMonitorDeploymentStatus::DryRunDeploymentInProgress => write!(f, "DRY_RUN_DEPLOYMENT_IN_PROGRESS"),
             SignalMapMonitorDeploymentStatus::NotDeployed => write!(f, "NOT_DEPLOYED"),
-            SignalMapMonitorDeploymentStatus::Unknown(value) => write!(f, "{}", value),
+            SignalMapMonitorDeploymentStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

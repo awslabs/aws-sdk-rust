@@ -108,7 +108,7 @@ impl ::std::fmt::Display for LogExport {
             LogExport::ConnectionLog => write!(f, "connectionlog"),
             LogExport::UserActivityLog => write!(f, "useractivitylog"),
             LogExport::UserLog => write!(f, "userlog"),
-            LogExport::Unknown(value) => write!(f, "{}", value),
+            LogExport::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

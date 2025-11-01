@@ -114,7 +114,7 @@ impl ::std::fmt::Display for EndpointType {
             EndpointType::FipsPrivateLink => write!(f, "FIPS_PRIVATE_LINK"),
             EndpointType::PrivateLink => write!(f, "PRIVATE_LINK"),
             EndpointType::Public => write!(f, "PUBLIC"),
-            EndpointType::Unknown(value) => write!(f, "{}", value),
+            EndpointType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

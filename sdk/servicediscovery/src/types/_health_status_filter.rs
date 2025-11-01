@@ -114,7 +114,7 @@ impl ::std::fmt::Display for HealthStatusFilter {
             HealthStatusFilter::Healthy => write!(f, "HEALTHY"),
             HealthStatusFilter::HealthyOrElseAll => write!(f, "HEALTHY_OR_ELSE_ALL"),
             HealthStatusFilter::Unhealthy => write!(f, "UNHEALTHY"),
-            HealthStatusFilter::Unknown(value) => write!(f, "{}", value),
+            HealthStatusFilter::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

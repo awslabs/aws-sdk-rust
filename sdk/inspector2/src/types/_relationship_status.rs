@@ -175,7 +175,7 @@ impl ::std::fmt::Display for RelationshipStatus {
             RelationshipStatus::RegionDisabled => write!(f, "REGION_DISABLED"),
             RelationshipStatus::Removed => write!(f, "REMOVED"),
             RelationshipStatus::Resigned => write!(f, "RESIGNED"),
-            RelationshipStatus::Unknown(value) => write!(f, "{}", value),
+            RelationshipStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

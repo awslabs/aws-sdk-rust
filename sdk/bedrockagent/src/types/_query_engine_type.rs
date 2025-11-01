@@ -96,7 +96,7 @@ impl ::std::fmt::Display for QueryEngineType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             QueryEngineType::Redshift => write!(f, "REDSHIFT"),
-            QueryEngineType::Unknown(value) => write!(f, "{}", value),
+            QueryEngineType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

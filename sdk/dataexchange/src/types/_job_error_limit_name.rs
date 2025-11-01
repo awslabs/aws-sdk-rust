@@ -126,7 +126,7 @@ impl ::std::fmt::Display for JobErrorLimitName {
             JobErrorLimitName::AmazonS3DataAccessAssetsPerRevision => write!(f, "Amazon S3 data access assets per revision"),
             JobErrorLimitName::AssetSizeInGb => write!(f, "Asset size in GB"),
             JobErrorLimitName::AssetsPerRevision => write!(f, "Assets per revision"),
-            JobErrorLimitName::Unknown(value) => write!(f, "{}", value),
+            JobErrorLimitName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

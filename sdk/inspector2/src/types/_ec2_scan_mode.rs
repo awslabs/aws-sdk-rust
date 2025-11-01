@@ -102,7 +102,7 @@ impl ::std::fmt::Display for Ec2ScanMode {
         match self {
             Ec2ScanMode::Ec2Hybrid => write!(f, "EC2_HYBRID"),
             Ec2ScanMode::Ec2SsmAgentBased => write!(f, "EC2_SSM_AGENT_BASED"),
-            Ec2ScanMode::Unknown(value) => write!(f, "{}", value),
+            Ec2ScanMode::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

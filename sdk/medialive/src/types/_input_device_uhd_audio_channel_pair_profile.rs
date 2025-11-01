@@ -147,7 +147,7 @@ impl ::std::fmt::Display for InputDeviceUhdAudioChannelPairProfile {
             InputDeviceUhdAudioChannelPairProfile::VbrAacHe64000 => write!(f, "VBR-AAC_HE-64000"),
             InputDeviceUhdAudioChannelPairProfile::VbrAacHhe16000 => write!(f, "VBR-AAC_HHE-16000"),
             InputDeviceUhdAudioChannelPairProfile::VbrAacLc128000 => write!(f, "VBR-AAC_LC-128000"),
-            InputDeviceUhdAudioChannelPairProfile::Unknown(value) => write!(f, "{}", value),
+            InputDeviceUhdAudioChannelPairProfile::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -102,7 +102,7 @@ impl ::std::fmt::Display for DataFusionRuntimeType {
         match self {
             DataFusionRuntimeType::MultiThread => write!(f, "multi-thread"),
             DataFusionRuntimeType::MultiThreadAlt => write!(f, "multi-thread-alt"),
-            DataFusionRuntimeType::Unknown(value) => write!(f, "{}", value),
+            DataFusionRuntimeType::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

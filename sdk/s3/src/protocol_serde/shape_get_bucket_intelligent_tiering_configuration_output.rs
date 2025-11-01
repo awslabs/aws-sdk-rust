@@ -22,8 +22,7 @@ pub fn de_intelligent_tiering_configuration(
     let start_el = decoder.start_el();
     if !(start_el.matches("IntelligentTieringConfiguration")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected IntelligentTieringConfiguration got {:?}",
-            start_el
+            "invalid root, expected IntelligentTieringConfiguration got {start_el:?}"
         )));
     }
     crate::protocol_serde::shape_intelligent_tiering_configuration::de_intelligent_tiering_configuration(&mut decoder)

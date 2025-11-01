@@ -114,7 +114,7 @@ impl ::std::fmt::Display for CheckFailureReason {
             CheckFailureReason::AssumeRoleError => write!(f, "ASSUME_ROLE_ERROR"),
             CheckFailureReason::PremiumSupportRequired => write!(f, "PREMIUM_SUPPORT_REQUIRED"),
             CheckFailureReason::UnknownError => write!(f, "UNKNOWN_ERROR"),
-            CheckFailureReason::Unknown(value) => write!(f, "{}", value),
+            CheckFailureReason::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

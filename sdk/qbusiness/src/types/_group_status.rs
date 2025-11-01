@@ -120,7 +120,7 @@ impl ::std::fmt::Display for GroupStatus {
             GroupStatus::Failed => write!(f, "FAILED"),
             GroupStatus::Processing => write!(f, "PROCESSING"),
             GroupStatus::Succeeded => write!(f, "SUCCEEDED"),
-            GroupStatus::Unknown(value) => write!(f, "{}", value),
+            GroupStatus::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

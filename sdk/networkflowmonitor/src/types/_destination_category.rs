@@ -140,7 +140,7 @@ impl ::std::fmt::Display for DestinationCategory {
             DestinationCategory::InterVpc => write!(f, "INTER_VPC"),
             DestinationCategory::IntraAz => write!(f, "INTRA_AZ"),
             DestinationCategory::Unclassified => write!(f, "UNCLASSIFIED"),
-            DestinationCategory::Unknown(value) => write!(f, "{}", value),
+            DestinationCategory::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

@@ -96,7 +96,7 @@ impl ::std::fmt::Display for OptedOutFilterName {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             OptedOutFilterName::EndUserOptedOut => write!(f, "end-user-opted-out"),
-            OptedOutFilterName::Unknown(value) => write!(f, "{}", value),
+            OptedOutFilterName::Unknown(value) => write!(f, "{value}"),
         }
     }
 }

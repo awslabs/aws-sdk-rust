@@ -147,7 +147,7 @@ impl ::std::fmt::Display for StringConditionOperator {
             StringConditionOperator::EndsWith => write!(f, "ENDS_WITH"),
             StringConditionOperator::EqualsTo => write!(f, "EQUALS_TO"),
             StringConditionOperator::NotEqualsTo => write!(f, "NOT_EQUALS_TO"),
-            StringConditionOperator::Unknown(value) => write!(f, "{}", value),
+            StringConditionOperator::Unknown(value) => write!(f, "{value}"),
         }
     }
 }
