@@ -222,6 +222,17 @@ pub(crate) fn consumer_correct_errors(mut builder: crate::types::builders::Consu
     builder
 }
 
+pub(crate) fn minimum_throughput_billing_commitment_output_correct_errors(
+    mut builder: crate::types::builders::MinimumThroughputBillingCommitmentOutputBuilder,
+) -> crate::types::builders::MinimumThroughputBillingCommitmentOutputBuilder {
+    if builder.status.is_none() {
+        builder.status = "no value was set"
+            .parse::<crate::types::MinimumThroughputBillingCommitmentOutputStatus>()
+            .ok()
+    }
+    builder
+}
+
 pub(crate) fn child_shard_correct_errors(mut builder: crate::types::builders::ChildShardBuilder) -> crate::types::builders::ChildShardBuilder {
     if builder.shard_id.is_none() {
         builder.shard_id = Some(Default::default())

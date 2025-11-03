@@ -7,6 +7,8 @@ pub struct UpdateStreamModeInput {
     pub stream_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the capacity mode to which you want to set your data stream. Currently, in Kinesis Data Streams, you can choose between an <b>on-demand</b> capacity mode and a <b>provisioned</b> capacity mode for your data streams.</p>
     pub stream_mode_details: ::std::option::Option<crate::types::StreamModeDetails>,
+    /// <p>The target warm throughput in MB/s that the stream should be scaled to handle. This represents the throughput capacity that will be immediately available for write operations. This field is only valid when the stream mode is being updated to on-demand.</p>
+    pub warm_throughput_mibps: ::std::option::Option<i32>,
 }
 impl UpdateStreamModeInput {
     /// <p>Specifies the ARN of the data stream whose capacity mode you want to update.</p>
@@ -16,6 +18,10 @@ impl UpdateStreamModeInput {
     /// <p>Specifies the capacity mode to which you want to set your data stream. Currently, in Kinesis Data Streams, you can choose between an <b>on-demand</b> capacity mode and a <b>provisioned</b> capacity mode for your data streams.</p>
     pub fn stream_mode_details(&self) -> ::std::option::Option<&crate::types::StreamModeDetails> {
         self.stream_mode_details.as_ref()
+    }
+    /// <p>The target warm throughput in MB/s that the stream should be scaled to handle. This represents the throughput capacity that will be immediately available for write operations. This field is only valid when the stream mode is being updated to on-demand.</p>
+    pub fn warm_throughput_mibps(&self) -> ::std::option::Option<i32> {
+        self.warm_throughput_mibps
     }
 }
 impl UpdateStreamModeInput {
@@ -31,6 +37,7 @@ impl UpdateStreamModeInput {
 pub struct UpdateStreamModeInputBuilder {
     pub(crate) stream_arn: ::std::option::Option<::std::string::String>,
     pub(crate) stream_mode_details: ::std::option::Option<crate::types::StreamModeDetails>,
+    pub(crate) warm_throughput_mibps: ::std::option::Option<i32>,
 }
 impl UpdateStreamModeInputBuilder {
     /// <p>Specifies the ARN of the data stream whose capacity mode you want to update.</p>
@@ -63,6 +70,20 @@ impl UpdateStreamModeInputBuilder {
     pub fn get_stream_mode_details(&self) -> &::std::option::Option<crate::types::StreamModeDetails> {
         &self.stream_mode_details
     }
+    /// <p>The target warm throughput in MB/s that the stream should be scaled to handle. This represents the throughput capacity that will be immediately available for write operations. This field is only valid when the stream mode is being updated to on-demand.</p>
+    pub fn warm_throughput_mibps(mut self, input: i32) -> Self {
+        self.warm_throughput_mibps = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The target warm throughput in MB/s that the stream should be scaled to handle. This represents the throughput capacity that will be immediately available for write operations. This field is only valid when the stream mode is being updated to on-demand.</p>
+    pub fn set_warm_throughput_mibps(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.warm_throughput_mibps = input;
+        self
+    }
+    /// <p>The target warm throughput in MB/s that the stream should be scaled to handle. This represents the throughput capacity that will be immediately available for write operations. This field is only valid when the stream mode is being updated to on-demand.</p>
+    pub fn get_warm_throughput_mibps(&self) -> &::std::option::Option<i32> {
+        &self.warm_throughput_mibps
+    }
     /// Consumes the builder and constructs a [`UpdateStreamModeInput`](crate::operation::update_stream_mode::UpdateStreamModeInput).
     pub fn build(
         self,
@@ -70,6 +91,7 @@ impl UpdateStreamModeInputBuilder {
         ::std::result::Result::Ok(crate::operation::update_stream_mode::UpdateStreamModeInput {
             stream_arn: self.stream_arn,
             stream_mode_details: self.stream_mode_details,
+            warm_throughput_mibps: self.warm_throughput_mibps,
         })
     }
 }

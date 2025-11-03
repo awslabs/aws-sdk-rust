@@ -85,6 +85,10 @@ where
                                     .transpose()?,
                             );
                         }
+                        "WarmThroughput" => {
+                            builder =
+                                builder.set_warm_throughput(crate::protocol_serde::shape_warm_throughput_object::de_warm_throughput_object(tokens)?);
+                        }
                         "MaxRecordSizeInKiB" => {
                             builder = builder.set_max_record_size_in_kib(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?

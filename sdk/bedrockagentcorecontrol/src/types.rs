@@ -269,6 +269,12 @@ pub use crate::types::_network_mode::NetworkMode;
 
 pub use crate::types::_agent_runtime_artifact::AgentRuntimeArtifact;
 
+pub use crate::types::_code_configuration::CodeConfiguration;
+
+pub use crate::types::_agent_managed_runtime_type::AgentManagedRuntimeType;
+
+pub use crate::types::_code::Code;
+
 pub use crate::types::_container_configuration::ContainerConfiguration;
 
 pub use crate::types::_agent_runtime_endpoint_status::AgentRuntimeEndpointStatus;
@@ -278,6 +284,8 @@ pub use crate::types::_agent_runtime_endpoint::AgentRuntimeEndpoint;
 pub use crate::types::_kms_configuration::KmsConfiguration;
 
 pub use crate::types::_key_type::KeyType;
+
+mod _agent_managed_runtime_type;
 
 mod _agent_runtime;
 
@@ -314,6 +322,10 @@ mod _browser_signing_config_output;
 mod _browser_status;
 
 mod _browser_summary;
+
+mod _code;
+
+mod _code_configuration;
 
 mod _code_interpreter_network_configuration;
 

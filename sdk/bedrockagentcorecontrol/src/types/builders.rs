@@ -175,6 +175,8 @@ pub use crate::types::_protocol_configuration::ProtocolConfigurationBuilder;
 
 pub use crate::types::_network_configuration::NetworkConfigurationBuilder;
 
+pub use crate::types::_code_configuration::CodeConfigurationBuilder;
+
 pub use crate::types::_container_configuration::ContainerConfigurationBuilder;
 
 pub use crate::types::_agent_runtime_endpoint::AgentRuntimeEndpointBuilder;

@@ -9,6 +9,9 @@ pub fn ser_s3_location(
     {
         object.key("prefix").string(input.prefix.as_str());
     }
+    if let Some(var_1) = &input.version_id {
+        object.key("versionId").string(var_1.as_str());
+    }
     Ok(())
 }
 
@@ -36,6 +39,13 @@ where
                         }
                         "prefix" => {
                             builder = builder.set_prefix(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "versionId" => {
+                            builder = builder.set_version_id(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,

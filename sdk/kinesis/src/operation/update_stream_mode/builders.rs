@@ -23,6 +23,7 @@ impl crate::operation::update_stream_mode::builders::UpdateStreamModeInputBuilde
 /// Fluent builder constructing a request to `UpdateStreamMode`.
 ///
 /// <p>Updates the capacity mode of the data stream. Currently, in Kinesis Data Streams, you can choose between an <b>on-demand</b> capacity mode and a <b>provisioned</b> capacity mode for your data stream.</p>
+/// <p>If you'd still like to proactively scale your on-demand data stream’s capacity, you can unlock the warm throughput feature for on-demand data streams by enabling <code>MinimumThroughputBillingCommitment</code> for your account. Once your account has <code>MinimumThroughputBillingCommitment</code> enabled, you can specify the warm throughput in MiB per second that your stream can support in writes.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateStreamModeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -135,5 +136,19 @@ impl UpdateStreamModeFluentBuilder {
     /// <p>Specifies the capacity mode to which you want to set your data stream. Currently, in Kinesis Data Streams, you can choose between an <b>on-demand</b> capacity mode and a <b>provisioned</b> capacity mode for your data streams.</p>
     pub fn get_stream_mode_details(&self) -> &::std::option::Option<crate::types::StreamModeDetails> {
         self.inner.get_stream_mode_details()
+    }
+    /// <p>The target warm throughput in MB/s that the stream should be scaled to handle. This represents the throughput capacity that will be immediately available for write operations. This field is only valid when the stream mode is being updated to on-demand.</p>
+    pub fn warm_throughput_mibps(mut self, input: i32) -> Self {
+        self.inner = self.inner.warm_throughput_mibps(input);
+        self
+    }
+    /// <p>The target warm throughput in MB/s that the stream should be scaled to handle. This represents the throughput capacity that will be immediately available for write operations. This field is only valid when the stream mode is being updated to on-demand.</p>
+    pub fn set_warm_throughput_mibps(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.inner = self.inner.set_warm_throughput_mibps(input);
+        self
+    }
+    /// <p>The target warm throughput in MB/s that the stream should be scaled to handle. This represents the throughput capacity that will be immediately available for write operations. This field is only valid when the stream mode is being updated to on-demand.</p>
+    pub fn get_warm_throughput_mibps(&self) -> &::std::option::Option<i32> {
+        self.inner.get_warm_throughput_mibps()
     }
 }

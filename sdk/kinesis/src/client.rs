@@ -209,6 +209,8 @@ mod delete_stream;
 
 mod deregister_stream_consumer;
 
+mod describe_account_settings;
+
 mod describe_limits;
 
 mod describe_stream;
@@ -263,8 +265,12 @@ mod tag_resource;
 
 mod untag_resource;
 
+mod update_account_settings;
+
 mod update_max_record_size;
 
 mod update_shard_count;
 
 mod update_stream_mode;
+
+mod update_stream_warm_throughput;

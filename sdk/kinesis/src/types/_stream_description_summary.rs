@@ -54,6 +54,8 @@ pub struct StreamDescriptionSummary {
     pub open_shard_count: i32,
     /// <p>The number of enhanced fan-out consumers registered with the stream.</p>
     pub consumer_count: ::std::option::Option<i32>,
+    /// <p>The warm throughput in MB/s for the stream. This represents the throughput capacity that will be immediately available for write operations.</p>
+    pub warm_throughput: ::std::option::Option<crate::types::WarmThroughputObject>,
     /// <p>The maximum record size of a single record in kibibyte (KiB) that you can write to, and read from a stream.</p>
     pub max_record_size_in_kib: ::std::option::Option<i32>,
 }
@@ -133,6 +135,10 @@ impl StreamDescriptionSummary {
     pub fn consumer_count(&self) -> ::std::option::Option<i32> {
         self.consumer_count
     }
+    /// <p>The warm throughput in MB/s for the stream. This represents the throughput capacity that will be immediately available for write operations.</p>
+    pub fn warm_throughput(&self) -> ::std::option::Option<&crate::types::WarmThroughputObject> {
+        self.warm_throughput.as_ref()
+    }
     /// <p>The maximum record size of a single record in kibibyte (KiB) that you can write to, and read from a stream.</p>
     pub fn max_record_size_in_kib(&self) -> ::std::option::Option<i32> {
         self.max_record_size_in_kib
@@ -160,6 +166,7 @@ pub struct StreamDescriptionSummaryBuilder {
     pub(crate) key_id: ::std::option::Option<::std::string::String>,
     pub(crate) open_shard_count: ::std::option::Option<i32>,
     pub(crate) consumer_count: ::std::option::Option<i32>,
+    pub(crate) warm_throughput: ::std::option::Option<crate::types::WarmThroughputObject>,
     pub(crate) max_record_size_in_kib: ::std::option::Option<i32>,
 }
 impl StreamDescriptionSummaryBuilder {
@@ -413,6 +420,20 @@ impl StreamDescriptionSummaryBuilder {
     pub fn get_consumer_count(&self) -> &::std::option::Option<i32> {
         &self.consumer_count
     }
+    /// <p>The warm throughput in MB/s for the stream. This represents the throughput capacity that will be immediately available for write operations.</p>
+    pub fn warm_throughput(mut self, input: crate::types::WarmThroughputObject) -> Self {
+        self.warm_throughput = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The warm throughput in MB/s for the stream. This represents the throughput capacity that will be immediately available for write operations.</p>
+    pub fn set_warm_throughput(mut self, input: ::std::option::Option<crate::types::WarmThroughputObject>) -> Self {
+        self.warm_throughput = input;
+        self
+    }
+    /// <p>The warm throughput in MB/s for the stream. This represents the throughput capacity that will be immediately available for write operations.</p>
+    pub fn get_warm_throughput(&self) -> &::std::option::Option<crate::types::WarmThroughputObject> {
+        &self.warm_throughput
+    }
     /// <p>The maximum record size of a single record in kibibyte (KiB) that you can write to, and read from a stream.</p>
     pub fn max_record_size_in_kib(mut self, input: i32) -> Self {
         self.max_record_size_in_kib = ::std::option::Option::Some(input);
@@ -484,6 +505,7 @@ impl StreamDescriptionSummaryBuilder {
                 )
             })?,
             consumer_count: self.consumer_count,
+            warm_throughput: self.warm_throughput,
             max_record_size_in_kib: self.max_record_size_in_kib,
         })
     }

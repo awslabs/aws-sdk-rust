@@ -35,6 +35,8 @@ pub(crate) mod shape_delete_stream;
 
 pub(crate) mod shape_deregister_stream_consumer;
 
+pub(crate) mod shape_describe_account_settings;
+
 pub(crate) mod shape_describe_limits;
 
 pub(crate) mod shape_describe_stream;
@@ -89,11 +91,15 @@ pub(crate) mod shape_tag_resource;
 
 pub(crate) mod shape_untag_resource;
 
+pub(crate) mod shape_update_account_settings;
+
 pub(crate) mod shape_update_max_record_size;
 
 pub(crate) mod shape_update_shard_count;
 
 pub(crate) mod shape_update_stream_mode;
+
+pub(crate) mod shape_update_stream_warm_throughput;
 
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
@@ -199,11 +205,15 @@ pub(crate) mod shape_tag_resource_input;
 
 pub(crate) mod shape_untag_resource_input;
 
+pub(crate) mod shape_update_account_settings_input;
+
 pub(crate) mod shape_update_max_record_size_input;
 
 pub(crate) mod shape_update_shard_count_input;
 
 pub(crate) mod shape_update_stream_mode_input;
+
+pub(crate) mod shape_update_stream_warm_throughput_input;
 
 pub(crate) mod shape_validation_exception;
 
@@ -222,6 +232,10 @@ pub(crate) mod shape_consumer_description;
 pub(crate) mod shape_consumer_list;
 
 pub(crate) mod shape_metrics_name_list;
+
+pub(crate) mod shape_minimum_throughput_billing_commitment_input;
+
+pub(crate) mod shape_minimum_throughput_billing_commitment_output;
 
 pub(crate) mod shape_put_records_request_entry;
 
@@ -246,6 +260,8 @@ pub(crate) mod shape_stream_name_list;
 pub(crate) mod shape_stream_summary_list;
 
 pub(crate) mod shape_tag_list;
+
+pub(crate) mod shape_warm_throughput_object;
 
 pub(crate) mod shape_child_shard;
 

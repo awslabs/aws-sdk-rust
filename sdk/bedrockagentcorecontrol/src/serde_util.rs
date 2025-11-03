@@ -1085,6 +1085,21 @@ pub(crate) fn browser_summary_correct_errors(
     builder
 }
 
+pub(crate) fn code_configuration_correct_errors(
+    mut builder: crate::types::builders::CodeConfigurationBuilder,
+) -> crate::types::builders::CodeConfigurationBuilder {
+    if builder.code.is_none() {
+        builder.code = Some(crate::types::Code::Unknown)
+    }
+    if builder.runtime.is_none() {
+        builder.runtime = "no value was set".parse::<crate::types::AgentManagedRuntimeType>().ok()
+    }
+    if builder.entry_point.is_none() {
+        builder.entry_point = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn code_interpreter_summary_correct_errors(
     mut builder: crate::types::builders::CodeInterpreterSummaryBuilder,
 ) -> crate::types::builders::CodeInterpreterSummaryBuilder {

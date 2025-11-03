@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum AgentRuntimeArtifact {
+    /// <p>The code configuration for the agent runtime artifact, including the source code location and execution settings.</p>
+    CodeConfiguration(crate::types::CodeConfiguration),
     /// <p>The container configuration for the agent artifact.</p>
     ContainerConfiguration(crate::types::ContainerConfiguration),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
@@ -17,7 +19,19 @@ pub enum AgentRuntimeArtifact {
     Unknown,
 }
 impl AgentRuntimeArtifact {
-    #[allow(irrefutable_let_patterns)]
+    /// Tries to convert the enum instance into [`CodeConfiguration`](crate::types::AgentRuntimeArtifact::CodeConfiguration), extracting the inner [`CodeConfiguration`](crate::types::CodeConfiguration).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_code_configuration(&self) -> ::std::result::Result<&crate::types::CodeConfiguration, &Self> {
+        if let AgentRuntimeArtifact::CodeConfiguration(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`CodeConfiguration`](crate::types::AgentRuntimeArtifact::CodeConfiguration).
+    pub fn is_code_configuration(&self) -> bool {
+        self.as_code_configuration().is_ok()
+    }
     /// Tries to convert the enum instance into [`ContainerConfiguration`](crate::types::AgentRuntimeArtifact::ContainerConfiguration), extracting the inner [`ContainerConfiguration`](crate::types::ContainerConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_container_configuration(&self) -> ::std::result::Result<&crate::types::ContainerConfiguration, &Self> {

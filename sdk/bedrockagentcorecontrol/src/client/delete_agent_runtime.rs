@@ -4,6 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`agent_runtime_id(impl Into<String>)`](crate::operation::delete_agent_runtime::builders::DeleteAgentRuntimeFluentBuilder::agent_runtime_id) / [`set_agent_runtime_id(Option<String>)`](crate::operation::delete_agent_runtime::builders::DeleteAgentRuntimeFluentBuilder::set_agent_runtime_id):<br>required: **true**<br><p>The unique identifier of the AgentCore Runtime to delete.</p><br>
+    ///   - [`client_token(impl Into<String>)`](crate::operation::delete_agent_runtime::builders::DeleteAgentRuntimeFluentBuilder::client_token) / [`set_client_token(Option<String>)`](crate::operation::delete_agent_runtime::builders::DeleteAgentRuntimeFluentBuilder::set_client_token):<br>required: **false**<br><p>A unique, case-sensitive identifier to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request but does not return an error.</p><br>
     /// - On success, responds with [`DeleteAgentRuntimeOutput`](crate::operation::delete_agent_runtime::DeleteAgentRuntimeOutput) with field(s):
     ///   - [`status(AgentRuntimeStatus)`](crate::operation::delete_agent_runtime::DeleteAgentRuntimeOutput::status): <p>The current status of the AgentCore Runtime deletion.</p>
     ///   - [`agent_runtime_id(Option<String>)`](crate::operation::delete_agent_runtime::DeleteAgentRuntimeOutput::agent_runtime_id): <p>The unique identifier of the AgentCore Runtime.</p>

@@ -49,6 +49,10 @@ pub struct DeploymentConfiguration {
     /// <p><code>ROLLING</code> - When you create a service which uses the rolling update (<code>ROLLING</code>) deployment strategy, the Amazon ECS service scheduler replaces the currently running tasks with new tasks. The number of tasks that Amazon ECS adds or removes from the service during a rolling update is controlled by the service deployment configuration.</p></li>
     /// <li>
     /// <p><code>BLUE_GREEN</code> - A blue/green deployment strategy (<code>BLUE_GREEN</code>) is a release methodology that reduces downtime and risk by running two identical production environments called blue and green. With Amazon ECS blue/green deployments, you can validate new service revisions before directing production traffic to them. This approach provides a safer way to deploy changes with the ability to quickly roll back if needed.</p></li>
+    /// <li>
+    /// <p><code>LINEAR</code> - A <i>linear</i> deployment strategy (<code>LINEAR</code>) gradually shifts traffic from the current production environment to a new environment in equal percentages over time. With Amazon ECS linear deployments, you can control the pace of traffic shifting and validate new service revisions with increasing amounts of production traffic.</p></li>
+    /// <li>
+    /// <p><code>CANARY</code> - A <i>canary</i> deployment strategy (<code>CANARY</code>) shifts a small percentage of traffic to the new service revision first, then shifts the remaining traffic all at once after a specified time period. This allows you to test the new version with a subset of users before full deployment.</p></li>
     /// </ul>
     pub strategy: ::std::option::Option<crate::types::DeploymentStrategy>,
     /// <p>The time period when both blue and green service revisions are running simultaneously after the production traffic has shifted.</p>
@@ -115,6 +119,10 @@ impl DeploymentConfiguration {
     /// <p><code>ROLLING</code> - When you create a service which uses the rolling update (<code>ROLLING</code>) deployment strategy, the Amazon ECS service scheduler replaces the currently running tasks with new tasks. The number of tasks that Amazon ECS adds or removes from the service during a rolling update is controlled by the service deployment configuration.</p></li>
     /// <li>
     /// <p><code>BLUE_GREEN</code> - A blue/green deployment strategy (<code>BLUE_GREEN</code>) is a release methodology that reduces downtime and risk by running two identical production environments called blue and green. With Amazon ECS blue/green deployments, you can validate new service revisions before directing production traffic to them. This approach provides a safer way to deploy changes with the ability to quickly roll back if needed.</p></li>
+    /// <li>
+    /// <p><code>LINEAR</code> - A <i>linear</i> deployment strategy (<code>LINEAR</code>) gradually shifts traffic from the current production environment to a new environment in equal percentages over time. With Amazon ECS linear deployments, you can control the pace of traffic shifting and validate new service revisions with increasing amounts of production traffic.</p></li>
+    /// <li>
+    /// <p><code>CANARY</code> - A <i>canary</i> deployment strategy (<code>CANARY</code>) shifts a small percentage of traffic to the new service revision first, then shifts the remaining traffic all at once after a specified time period. This allows you to test the new version with a subset of users before full deployment.</p></li>
     /// </ul>
     pub fn strategy(&self) -> ::std::option::Option<&crate::types::DeploymentStrategy> {
         self.strategy.as_ref()
@@ -316,6 +324,10 @@ impl DeploymentConfigurationBuilder {
     /// <p><code>ROLLING</code> - When you create a service which uses the rolling update (<code>ROLLING</code>) deployment strategy, the Amazon ECS service scheduler replaces the currently running tasks with new tasks. The number of tasks that Amazon ECS adds or removes from the service during a rolling update is controlled by the service deployment configuration.</p></li>
     /// <li>
     /// <p><code>BLUE_GREEN</code> - A blue/green deployment strategy (<code>BLUE_GREEN</code>) is a release methodology that reduces downtime and risk by running two identical production environments called blue and green. With Amazon ECS blue/green deployments, you can validate new service revisions before directing production traffic to them. This approach provides a safer way to deploy changes with the ability to quickly roll back if needed.</p></li>
+    /// <li>
+    /// <p><code>LINEAR</code> - A <i>linear</i> deployment strategy (<code>LINEAR</code>) gradually shifts traffic from the current production environment to a new environment in equal percentages over time. With Amazon ECS linear deployments, you can control the pace of traffic shifting and validate new service revisions with increasing amounts of production traffic.</p></li>
+    /// <li>
+    /// <p><code>CANARY</code> - A <i>canary</i> deployment strategy (<code>CANARY</code>) shifts a small percentage of traffic to the new service revision first, then shifts the remaining traffic all at once after a specified time period. This allows you to test the new version with a subset of users before full deployment.</p></li>
     /// </ul>
     pub fn strategy(mut self, input: crate::types::DeploymentStrategy) -> Self {
         self.strategy = ::std::option::Option::Some(input);
@@ -327,6 +339,10 @@ impl DeploymentConfigurationBuilder {
     /// <p><code>ROLLING</code> - When you create a service which uses the rolling update (<code>ROLLING</code>) deployment strategy, the Amazon ECS service scheduler replaces the currently running tasks with new tasks. The number of tasks that Amazon ECS adds or removes from the service during a rolling update is controlled by the service deployment configuration.</p></li>
     /// <li>
     /// <p><code>BLUE_GREEN</code> - A blue/green deployment strategy (<code>BLUE_GREEN</code>) is a release methodology that reduces downtime and risk by running two identical production environments called blue and green. With Amazon ECS blue/green deployments, you can validate new service revisions before directing production traffic to them. This approach provides a safer way to deploy changes with the ability to quickly roll back if needed.</p></li>
+    /// <li>
+    /// <p><code>LINEAR</code> - A <i>linear</i> deployment strategy (<code>LINEAR</code>) gradually shifts traffic from the current production environment to a new environment in equal percentages over time. With Amazon ECS linear deployments, you can control the pace of traffic shifting and validate new service revisions with increasing amounts of production traffic.</p></li>
+    /// <li>
+    /// <p><code>CANARY</code> - A <i>canary</i> deployment strategy (<code>CANARY</code>) shifts a small percentage of traffic to the new service revision first, then shifts the remaining traffic all at once after a specified time period. This allows you to test the new version with a subset of users before full deployment.</p></li>
     /// </ul>
     pub fn set_strategy(mut self, input: ::std::option::Option<crate::types::DeploymentStrategy>) -> Self {
         self.strategy = input;
@@ -338,6 +354,10 @@ impl DeploymentConfigurationBuilder {
     /// <p><code>ROLLING</code> - When you create a service which uses the rolling update (<code>ROLLING</code>) deployment strategy, the Amazon ECS service scheduler replaces the currently running tasks with new tasks. The number of tasks that Amazon ECS adds or removes from the service during a rolling update is controlled by the service deployment configuration.</p></li>
     /// <li>
     /// <p><code>BLUE_GREEN</code> - A blue/green deployment strategy (<code>BLUE_GREEN</code>) is a release methodology that reduces downtime and risk by running two identical production environments called blue and green. With Amazon ECS blue/green deployments, you can validate new service revisions before directing production traffic to them. This approach provides a safer way to deploy changes with the ability to quickly roll back if needed.</p></li>
+    /// <li>
+    /// <p><code>LINEAR</code> - A <i>linear</i> deployment strategy (<code>LINEAR</code>) gradually shifts traffic from the current production environment to a new environment in equal percentages over time. With Amazon ECS linear deployments, you can control the pace of traffic shifting and validate new service revisions with increasing amounts of production traffic.</p></li>
+    /// <li>
+    /// <p><code>CANARY</code> - A <i>canary</i> deployment strategy (<code>CANARY</code>) shifts a small percentage of traffic to the new service revision first, then shifts the remaining traffic all at once after a specified time period. This allows you to test the new version with a subset of users before full deployment.</p></li>
     /// </ul>
     pub fn get_strategy(&self) -> &::std::option::Option<crate::types::DeploymentStrategy> {
         &self.strategy

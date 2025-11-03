@@ -150,6 +150,7 @@ impl From<crate::operation::create_stream::CreateStreamError> for Error {
             crate::operation::create_stream::CreateStreamError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
             crate::operation::create_stream::CreateStreamError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::create_stream::CreateStreamError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::operation::create_stream::CreateStreamError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::create_stream::CreateStreamError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -288,6 +289,33 @@ impl From<crate::operation::deregister_stream_consumer::DeregisterStreamConsumer
                 Error::ResourceNotFoundException(inner)
             }
             crate::operation::deregister_stream_consumer::DeregisterStreamConsumerError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_account_settings::DescribeAccountSettingsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_account_settings::DescribeAccountSettingsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_account_settings::DescribeAccountSettingsError> for Error {
+    fn from(err: crate::operation::describe_account_settings::DescribeAccountSettingsError) -> Self {
+        match err {
+            crate::operation::describe_account_settings::DescribeAccountSettingsError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::describe_account_settings::DescribeAccountSettingsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1148,6 +1176,36 @@ impl From<crate::operation::untag_resource::UntagResourceError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_account_settings::UpdateAccountSettingsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_account_settings::UpdateAccountSettingsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_account_settings::UpdateAccountSettingsError> for Error {
+    fn from(err: crate::operation::update_account_settings::UpdateAccountSettingsError) -> Self {
+        match err {
+            crate::operation::update_account_settings::UpdateAccountSettingsError::InvalidArgumentException(inner) => {
+                Error::InvalidArgumentException(inner)
+            }
+            crate::operation::update_account_settings::UpdateAccountSettingsError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::update_account_settings::UpdateAccountSettingsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_account_settings::UpdateAccountSettingsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_max_record_size::UpdateMaxRecordSizeError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1227,7 +1285,50 @@ impl From<crate::operation::update_stream_mode::UpdateStreamModeError> for Error
             crate::operation::update_stream_mode::UpdateStreamModeError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::update_stream_mode::UpdateStreamModeError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
             crate::operation::update_stream_mode::UpdateStreamModeError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_stream_mode::UpdateStreamModeError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_stream_mode::UpdateStreamModeError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_stream_warm_throughput::UpdateStreamWarmThroughputError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_stream_warm_throughput::UpdateStreamWarmThroughputError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_stream_warm_throughput::UpdateStreamWarmThroughputError> for Error {
+    fn from(err: crate::operation::update_stream_warm_throughput::UpdateStreamWarmThroughputError) -> Self {
+        match err {
+            crate::operation::update_stream_warm_throughput::UpdateStreamWarmThroughputError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_stream_warm_throughput::UpdateStreamWarmThroughputError::InvalidArgumentException(inner) => {
+                Error::InvalidArgumentException(inner)
+            }
+            crate::operation::update_stream_warm_throughput::UpdateStreamWarmThroughputError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::update_stream_warm_throughput::UpdateStreamWarmThroughputError::ResourceInUseException(inner) => {
+                Error::ResourceInUseException(inner)
+            }
+            crate::operation::update_stream_warm_throughput::UpdateStreamWarmThroughputError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_stream_warm_throughput::UpdateStreamWarmThroughputError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::update_stream_warm_throughput::UpdateStreamWarmThroughputError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

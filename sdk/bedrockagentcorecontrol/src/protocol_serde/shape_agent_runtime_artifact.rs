@@ -10,6 +10,12 @@ pub fn ser_agent_runtime_artifact(
             crate::protocol_serde::shape_container_configuration::ser_container_configuration(&mut object_1, inner)?;
             object_1.finish();
         }
+        crate::types::AgentRuntimeArtifact::CodeConfiguration(inner) => {
+            #[allow(unused_mut)]
+            let mut object_2 = object_2.key("codeConfiguration").start_object();
+            crate::protocol_serde::shape_code_configuration::ser_code_configuration(&mut object_2, inner)?;
+            object_2.finish();
+        }
         crate::types::AgentRuntimeArtifact::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "AgentRuntimeArtifact",
@@ -52,6 +58,11 @@ where
                         "containerConfiguration" => Some(crate::types::AgentRuntimeArtifact::ContainerConfiguration(
                             crate::protocol_serde::shape_container_configuration::de_container_configuration(tokens)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'containerConfiguration' cannot be null")
+                            })?,
+                        )),
+                        "codeConfiguration" => Some(crate::types::AgentRuntimeArtifact::CodeConfiguration(
+                            crate::protocol_serde::shape_code_configuration::de_code_configuration(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'codeConfiguration' cannot be null")
                             })?,
                         )),
                         _ => {

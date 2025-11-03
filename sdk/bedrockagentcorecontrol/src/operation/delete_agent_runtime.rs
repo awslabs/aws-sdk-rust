@@ -76,7 +76,14 @@ impl DeleteAgentRuntime {
         config_override: ::std::option::Option<crate::config::Builder>,
     ) -> ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugins {
         let mut runtime_plugins = client_runtime_plugins.with_operation_plugin(Self::new());
-
+        runtime_plugins = runtime_plugins.with_operation_plugin(crate::client_idempotency_token::IdempotencyTokenRuntimePlugin::new(
+            |token_provider, input| {
+                let input: &mut crate::operation::delete_agent_runtime::DeleteAgentRuntimeInput = input.downcast_mut().expect("correct type");
+                if input.client_token.is_none() {
+                    input.client_token = ::std::option::Option::Some(token_provider.make_idempotency_token());
+                }
+            },
+        ));
         if let ::std::option::Option::Some(config_override) = config_override {
             for plugin in config_override.runtime_plugins.iter().cloned() {
                 runtime_plugins = runtime_plugins.with_operation_plugin(plugin);
@@ -206,6 +213,18 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeleteAgentR
                 ::std::write!(output, "/runtimes/{agentRuntimeId}", agentRuntimeId = agent_runtime_id).expect("formatting should succeed");
                 ::std::result::Result::Ok(())
             }
+            fn uri_query(
+                _input: &crate::operation::delete_agent_runtime::DeleteAgentRuntimeInput,
+                mut output: &mut ::std::string::String,
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
+                let mut query = ::aws_smithy_http::query::Writer::new(output);
+                if let ::std::option::Option::Some(inner_2) = &_input.client_token {
+                    {
+                        query.push_kv("clientToken", &::aws_smithy_http::query::fmt_string(inner_2));
+                    }
+                }
+                ::std::result::Result::Ok(())
+            }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::operation::delete_agent_runtime::DeleteAgentRuntimeInput,
@@ -213,6 +232,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeleteAgentR
             ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
+                uri_query(input, &mut uri)?;
                 ::std::result::Result::Ok(builder.method("DELETE").uri(uri))
             }
             let mut builder = update_http_builder(&input, ::http::request::Builder::new())?;

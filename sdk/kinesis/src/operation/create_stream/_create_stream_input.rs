@@ -12,6 +12,8 @@ pub struct CreateStreamInput {
     pub stream_mode_details: ::std::option::Option<crate::types::StreamModeDetails>,
     /// <p>A set of up to 50 key-value pairs to use to create the tags. A tag consists of a required key and an optional value.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The target warm throughput in MB/s that the stream should be scaled to handle. This represents the throughput capacity that will be immediately available for write operations.</p>
+    pub warm_throughput_mibps: ::std::option::Option<i32>,
     /// <p>The maximum record size of a single record in kibibyte (KiB) that you can write to, and read from a stream.</p>
     pub max_record_size_in_kib: ::std::option::Option<i32>,
 }
@@ -31,6 +33,10 @@ impl CreateStreamInput {
     /// <p>A set of up to 50 key-value pairs to use to create the tags. A tag consists of a required key and an optional value.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
+    }
+    /// <p>The target warm throughput in MB/s that the stream should be scaled to handle. This represents the throughput capacity that will be immediately available for write operations.</p>
+    pub fn warm_throughput_mibps(&self) -> ::std::option::Option<i32> {
+        self.warm_throughput_mibps
     }
     /// <p>The maximum record size of a single record in kibibyte (KiB) that you can write to, and read from a stream.</p>
     pub fn max_record_size_in_kib(&self) -> ::std::option::Option<i32> {
@@ -52,6 +58,7 @@ pub struct CreateStreamInputBuilder {
     pub(crate) shard_count: ::std::option::Option<i32>,
     pub(crate) stream_mode_details: ::std::option::Option<crate::types::StreamModeDetails>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) warm_throughput_mibps: ::std::option::Option<i32>,
     pub(crate) max_record_size_in_kib: ::std::option::Option<i32>,
 }
 impl CreateStreamInputBuilder {
@@ -118,6 +125,20 @@ impl CreateStreamInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// <p>The target warm throughput in MB/s that the stream should be scaled to handle. This represents the throughput capacity that will be immediately available for write operations.</p>
+    pub fn warm_throughput_mibps(mut self, input: i32) -> Self {
+        self.warm_throughput_mibps = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The target warm throughput in MB/s that the stream should be scaled to handle. This represents the throughput capacity that will be immediately available for write operations.</p>
+    pub fn set_warm_throughput_mibps(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.warm_throughput_mibps = input;
+        self
+    }
+    /// <p>The target warm throughput in MB/s that the stream should be scaled to handle. This represents the throughput capacity that will be immediately available for write operations.</p>
+    pub fn get_warm_throughput_mibps(&self) -> &::std::option::Option<i32> {
+        &self.warm_throughput_mibps
+    }
     /// <p>The maximum record size of a single record in kibibyte (KiB) that you can write to, and read from a stream.</p>
     pub fn max_record_size_in_kib(mut self, input: i32) -> Self {
         self.max_record_size_in_kib = ::std::option::Option::Some(input);
@@ -141,6 +162,7 @@ impl CreateStreamInputBuilder {
             shard_count: self.shard_count,
             stream_mode_details: self.stream_mode_details,
             tags: self.tags,
+            warm_throughput_mibps: self.warm_throughput_mibps,
             max_record_size_in_kib: self.max_record_size_in_kib,
         })
     }

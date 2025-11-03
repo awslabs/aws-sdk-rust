@@ -28,10 +28,16 @@ pub fn ser_create_stream_input_input(
         }
         object_6.finish();
     }
-    if let Some(var_9) = &input.max_record_size_in_kib {
-        object.key("MaxRecordSizeInKiB").number(
+    if let Some(var_9) = &input.warm_throughput_mibps {
+        object.key("WarmThroughputMiBps").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_9).into()),
+        );
+    }
+    if let Some(var_10) = &input.max_record_size_in_kib {
+        object.key("MaxRecordSizeInKiB").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_10).into()),
         );
     }
     Ok(())

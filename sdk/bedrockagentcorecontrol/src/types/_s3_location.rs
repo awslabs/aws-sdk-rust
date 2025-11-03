@@ -8,6 +8,8 @@ pub struct S3Location {
     pub bucket: ::std::string::String,
     /// <p>The prefix for objects in the Amazon S3 bucket. This prefix is added to the object keys to organize the data.</p>
     pub prefix: ::std::string::String,
+    /// <p>The version ID of the Amazon Amazon S3 object. If not specified, the latest version of the object is used.</p>
+    pub version_id: ::std::option::Option<::std::string::String>,
 }
 impl S3Location {
     /// <p>The name of the Amazon S3 bucket. This bucket contains the stored data.</p>
@@ -19,6 +21,10 @@ impl S3Location {
     pub fn prefix(&self) -> &str {
         use std::ops::Deref;
         self.prefix.deref()
+    }
+    /// <p>The version ID of the Amazon Amazon S3 object. If not specified, the latest version of the object is used.</p>
+    pub fn version_id(&self) -> ::std::option::Option<&str> {
+        self.version_id.as_deref()
     }
 }
 impl S3Location {
@@ -34,6 +40,7 @@ impl S3Location {
 pub struct S3LocationBuilder {
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
     pub(crate) prefix: ::std::option::Option<::std::string::String>,
+    pub(crate) version_id: ::std::option::Option<::std::string::String>,
 }
 impl S3LocationBuilder {
     /// <p>The name of the Amazon S3 bucket. This bucket contains the stored data.</p>
@@ -66,6 +73,20 @@ impl S3LocationBuilder {
     pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
         &self.prefix
     }
+    /// <p>The version ID of the Amazon Amazon S3 object. If not specified, the latest version of the object is used.</p>
+    pub fn version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.version_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The version ID of the Amazon Amazon S3 object. If not specified, the latest version of the object is used.</p>
+    pub fn set_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.version_id = input;
+        self
+    }
+    /// <p>The version ID of the Amazon Amazon S3 object. If not specified, the latest version of the object is used.</p>
+    pub fn get_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_id
+    }
     /// Consumes the builder and constructs a [`S3Location`](crate::types::S3Location).
     /// This method will fail if any of the following fields are not set:
     /// - [`bucket`](crate::types::builders::S3LocationBuilder::bucket)
@@ -84,6 +105,7 @@ impl S3LocationBuilder {
                     "prefix was not specified but it is required when building S3Location",
                 )
             })?,
+            version_id: self.version_id,
         })
     }
 }

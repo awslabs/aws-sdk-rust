@@ -337,11 +337,11 @@ mod test {
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://budgets.amazonaws.eu");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://budgets.eusc-de-east-1.api.amazonwebservices.eu");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://budgets.amazonaws.eu")
+                .url("https://budgets.eusc-de-east-1.api.amazonwebservices.eu")
                 .property(
                     "authSchemes",
                     vec![{

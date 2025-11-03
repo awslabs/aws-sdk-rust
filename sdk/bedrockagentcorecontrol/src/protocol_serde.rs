@@ -323,6 +323,8 @@ pub(crate) mod shape_atlassian_oauth2_provider_config_output;
 
 pub(crate) mod shape_browser_summary;
 
+pub(crate) mod shape_code_configuration;
+
 pub(crate) mod shape_code_interpreter_summary;
 
 pub(crate) mod shape_container_configuration;
@@ -407,7 +409,11 @@ pub(crate) mod shape_allowed_clients_list;
 
 pub(crate) mod shape_api_schema_configuration;
 
+pub(crate) mod shape_code;
+
 pub(crate) mod shape_custom_configuration_input;
+
+pub(crate) mod shape_entry_points;
 
 pub(crate) mod shape_gateway_api_key_credential_provider;
 

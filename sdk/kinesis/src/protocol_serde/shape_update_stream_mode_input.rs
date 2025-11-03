@@ -12,5 +12,11 @@ pub fn ser_update_stream_mode_input_input(
         crate::protocol_serde::shape_stream_mode_details::ser_stream_mode_details(&mut object_3, var_2)?;
         object_3.finish();
     }
+    if let Some(var_4) = &input.warm_throughput_mibps {
+        object.key("WarmThroughputMiBps").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_4).into()),
+        );
+    }
     Ok(())
 }

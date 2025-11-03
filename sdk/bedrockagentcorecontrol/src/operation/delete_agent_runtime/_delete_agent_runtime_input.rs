@@ -5,11 +5,17 @@
 pub struct DeleteAgentRuntimeInput {
     /// <p>The unique identifier of the AgentCore Runtime to delete.</p>
     pub agent_runtime_id: ::std::option::Option<::std::string::String>,
+    /// <p>A unique, case-sensitive identifier to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request but does not return an error.</p>
+    pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl DeleteAgentRuntimeInput {
     /// <p>The unique identifier of the AgentCore Runtime to delete.</p>
     pub fn agent_runtime_id(&self) -> ::std::option::Option<&str> {
         self.agent_runtime_id.as_deref()
+    }
+    /// <p>A unique, case-sensitive identifier to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request but does not return an error.</p>
+    pub fn client_token(&self) -> ::std::option::Option<&str> {
+        self.client_token.as_deref()
     }
 }
 impl DeleteAgentRuntimeInput {
@@ -24,6 +30,7 @@ impl DeleteAgentRuntimeInput {
 #[non_exhaustive]
 pub struct DeleteAgentRuntimeInputBuilder {
     pub(crate) agent_runtime_id: ::std::option::Option<::std::string::String>,
+    pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl DeleteAgentRuntimeInputBuilder {
     /// <p>The unique identifier of the AgentCore Runtime to delete.</p>
@@ -41,6 +48,20 @@ impl DeleteAgentRuntimeInputBuilder {
     pub fn get_agent_runtime_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.agent_runtime_id
     }
+    /// <p>A unique, case-sensitive identifier to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request but does not return an error.</p>
+    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.client_token = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A unique, case-sensitive identifier to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request but does not return an error.</p>
+    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.client_token = input;
+        self
+    }
+    /// <p>A unique, case-sensitive identifier to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request but does not return an error.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// Consumes the builder and constructs a [`DeleteAgentRuntimeInput`](crate::operation::delete_agent_runtime::DeleteAgentRuntimeInput).
     pub fn build(
         self,
@@ -48,6 +69,7 @@ impl DeleteAgentRuntimeInputBuilder {
     {
         ::std::result::Result::Ok(crate::operation::delete_agent_runtime::DeleteAgentRuntimeInput {
             agent_runtime_id: self.agent_runtime_id,
+            client_token: self.client_token,
         })
     }
 }

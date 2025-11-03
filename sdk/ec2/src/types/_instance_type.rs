@@ -1006,6 +1006,7 @@
 ///     InstanceType::Trn12xlarge => { /* ... */ },
 ///     InstanceType::Trn132xlarge => { /* ... */ },
 ///     InstanceType::Trn1n32xlarge => { /* ... */ },
+///     InstanceType::Trn23xlarge => { /* ... */ },
 ///     InstanceType::Trn248xlarge => { /* ... */ },
 ///     InstanceType::U12tb1112xlarge => { /* ... */ },
 ///     InstanceType::U12tb1Metal => { /* ... */ },
@@ -3101,6 +3102,8 @@ pub enum InstanceType {
     #[allow(missing_docs)] // documentation missing in model
     Trn1n32xlarge,
     #[allow(missing_docs)] // documentation missing in model
+    Trn23xlarge,
+    #[allow(missing_docs)] // documentation missing in model
     Trn248xlarge,
     #[allow(missing_docs)] // documentation missing in model
     U12tb1112xlarge,
@@ -4257,6 +4260,7 @@ impl ::std::convert::From<&str> for InstanceType {
             "trn1.2xlarge" => InstanceType::Trn12xlarge,
             "trn1.32xlarge" => InstanceType::Trn132xlarge,
             "trn1n.32xlarge" => InstanceType::Trn1n32xlarge,
+            "trn2.3xlarge" => InstanceType::Trn23xlarge,
             "trn2.48xlarge" => InstanceType::Trn248xlarge,
             "u-12tb1.112xlarge" => InstanceType::U12tb1112xlarge,
             "u-12tb1.metal" => InstanceType::U12tb1Metal,
@@ -5344,6 +5348,7 @@ impl InstanceType {
             InstanceType::Trn12xlarge => "trn1.2xlarge",
             InstanceType::Trn132xlarge => "trn1.32xlarge",
             InstanceType::Trn1n32xlarge => "trn1n.32xlarge",
+            InstanceType::Trn23xlarge => "trn2.3xlarge",
             InstanceType::Trn248xlarge => "trn2.48xlarge",
             InstanceType::U12tb1112xlarge => "u-12tb1.112xlarge",
             InstanceType::U12tb1Metal => "u-12tb1.metal",
@@ -6422,6 +6427,7 @@ impl InstanceType {
             "trn1.2xlarge",
             "trn1.32xlarge",
             "trn1n.32xlarge",
+            "trn2.3xlarge",
             "trn2.48xlarge",
             "u-12tb1.112xlarge",
             "u-12tb1.metal",
@@ -7517,6 +7523,7 @@ impl ::std::fmt::Display for InstanceType {
             InstanceType::Trn12xlarge => write!(f, "trn1.2xlarge"),
             InstanceType::Trn132xlarge => write!(f, "trn1.32xlarge"),
             InstanceType::Trn1n32xlarge => write!(f, "trn1n.32xlarge"),
+            InstanceType::Trn23xlarge => write!(f, "trn2.3xlarge"),
             InstanceType::Trn248xlarge => write!(f, "trn2.48xlarge"),
             InstanceType::U12tb1112xlarge => write!(f, "u-12tb1.112xlarge"),
             InstanceType::U12tb1Metal => write!(f, "u-12tb1.metal"),

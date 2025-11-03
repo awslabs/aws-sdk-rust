@@ -4,17 +4,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LinearConfiguration {
-    /// <p>The percentage of production traffic to shift in each step during a linear deployment. Valid values are 3.0 to 100.0. The default value is 10.0.</p>
+    /// <p>The percentage of production traffic to shift in each step during a linear deployment. Valid values are multiples of 0.1 from 3.0 to 100.0. The default value is 10.0.</p>
     pub step_percent: ::std::option::Option<f64>,
-    /// <p>The amount of time in minutes to wait between each traffic shifting step during a linear deployment. Valid values are 0 to 1440 minutes (24 hours). The default value is 6. This bake time is not applied after reaching 100% traffic.</p>
+    /// <p>The amount of time in minutes to wait between each traffic shifting step during a linear deployment. Valid values are 0 to 1440 minutes (24 hours). The default value is 6. This bake time is not applied after reaching 100 percent traffic.</p>
     pub step_bake_time_in_minutes: ::std::option::Option<i32>,
 }
 impl LinearConfiguration {
-    /// <p>The percentage of production traffic to shift in each step during a linear deployment. Valid values are 3.0 to 100.0. The default value is 10.0.</p>
+    /// <p>The percentage of production traffic to shift in each step during a linear deployment. Valid values are multiples of 0.1 from 3.0 to 100.0. The default value is 10.0.</p>
     pub fn step_percent(&self) -> ::std::option::Option<f64> {
         self.step_percent
     }
-    /// <p>The amount of time in minutes to wait between each traffic shifting step during a linear deployment. Valid values are 0 to 1440 minutes (24 hours). The default value is 6. This bake time is not applied after reaching 100% traffic.</p>
+    /// <p>The amount of time in minutes to wait between each traffic shifting step during a linear deployment. Valid values are 0 to 1440 minutes (24 hours). The default value is 6. This bake time is not applied after reaching 100 percent traffic.</p>
     pub fn step_bake_time_in_minutes(&self) -> ::std::option::Option<i32> {
         self.step_bake_time_in_minutes
     }
@@ -34,31 +34,31 @@ pub struct LinearConfigurationBuilder {
     pub(crate) step_bake_time_in_minutes: ::std::option::Option<i32>,
 }
 impl LinearConfigurationBuilder {
-    /// <p>The percentage of production traffic to shift in each step during a linear deployment. Valid values are 3.0 to 100.0. The default value is 10.0.</p>
+    /// <p>The percentage of production traffic to shift in each step during a linear deployment. Valid values are multiples of 0.1 from 3.0 to 100.0. The default value is 10.0.</p>
     pub fn step_percent(mut self, input: f64) -> Self {
         self.step_percent = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The percentage of production traffic to shift in each step during a linear deployment. Valid values are 3.0 to 100.0. The default value is 10.0.</p>
+    /// <p>The percentage of production traffic to shift in each step during a linear deployment. Valid values are multiples of 0.1 from 3.0 to 100.0. The default value is 10.0.</p>
     pub fn set_step_percent(mut self, input: ::std::option::Option<f64>) -> Self {
         self.step_percent = input;
         self
     }
-    /// <p>The percentage of production traffic to shift in each step during a linear deployment. Valid values are 3.0 to 100.0. The default value is 10.0.</p>
+    /// <p>The percentage of production traffic to shift in each step during a linear deployment. Valid values are multiples of 0.1 from 3.0 to 100.0. The default value is 10.0.</p>
     pub fn get_step_percent(&self) -> &::std::option::Option<f64> {
         &self.step_percent
     }
-    /// <p>The amount of time in minutes to wait between each traffic shifting step during a linear deployment. Valid values are 0 to 1440 minutes (24 hours). The default value is 6. This bake time is not applied after reaching 100% traffic.</p>
+    /// <p>The amount of time in minutes to wait between each traffic shifting step during a linear deployment. Valid values are 0 to 1440 minutes (24 hours). The default value is 6. This bake time is not applied after reaching 100 percent traffic.</p>
     pub fn step_bake_time_in_minutes(mut self, input: i32) -> Self {
         self.step_bake_time_in_minutes = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The amount of time in minutes to wait between each traffic shifting step during a linear deployment. Valid values are 0 to 1440 minutes (24 hours). The default value is 6. This bake time is not applied after reaching 100% traffic.</p>
+    /// <p>The amount of time in minutes to wait between each traffic shifting step during a linear deployment. Valid values are 0 to 1440 minutes (24 hours). The default value is 6. This bake time is not applied after reaching 100 percent traffic.</p>
     pub fn set_step_bake_time_in_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.step_bake_time_in_minutes = input;
         self
     }
-    /// <p>The amount of time in minutes to wait between each traffic shifting step during a linear deployment. Valid values are 0 to 1440 minutes (24 hours). The default value is 6. This bake time is not applied after reaching 100% traffic.</p>
+    /// <p>The amount of time in minutes to wait between each traffic shifting step during a linear deployment. Valid values are 0 to 1440 minutes (24 hours). The default value is 6. This bake time is not applied after reaching 100 percent traffic.</p>
     pub fn get_step_bake_time_in_minutes(&self) -> &::std::option::Option<i32> {
         &self.step_bake_time_in_minutes
     }
