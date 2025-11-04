@@ -2597,5 +2597,9 @@ source_hash = '4597b407d0339a001668032ff0321577e9a58c9a4568b53034c16cd50b552e75'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '2f03d9858a328c7dc5aff24d62ac1e98c08a64dfd637a09e6cc98d93d8c84769'
+
+[release]
+tag = 'release-2025-11-04'
+
 [release.crates]
 aws-sdk-pinpointsmsvoicev2 = '1.96.0'
