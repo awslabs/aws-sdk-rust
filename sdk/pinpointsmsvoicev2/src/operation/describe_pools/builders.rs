@@ -123,21 +123,21 @@ impl DescribePoolsFluentBuilder {
     /// To override the contents of this collection use [`set_pool_ids`](Self::set_pool_ids).
     ///
     /// <p>The unique identifier of pools to find. This is an array of strings that can be either the PoolId or PoolArn.</p><important>
-    /// <p>If you are using a shared AWS End User Messaging SMS and Voice resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// <p>If you are using a shared End User MessagingSMS resource then you must use the full Amazon Resource Name(ARN).</p>
     /// </important>
     pub fn pool_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pool_ids(input.into());
         self
     }
     /// <p>The unique identifier of pools to find. This is an array of strings that can be either the PoolId or PoolArn.</p><important>
-    /// <p>If you are using a shared AWS End User Messaging SMS and Voice resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// <p>If you are using a shared End User MessagingSMS resource then you must use the full Amazon Resource Name(ARN).</p>
     /// </important>
     pub fn set_pool_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_pool_ids(input);
         self
     }
     /// <p>The unique identifier of pools to find. This is an array of strings that can be either the PoolId or PoolArn.</p><important>
-    /// <p>If you are using a shared AWS End User Messaging SMS and Voice resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// <p>If you are using a shared End User MessagingSMS resource then you must use the full Amazon Resource Name(ARN).</p>
     /// </important>
     pub fn get_pool_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_pool_ids()

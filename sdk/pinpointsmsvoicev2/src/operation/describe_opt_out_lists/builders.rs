@@ -122,21 +122,21 @@ impl DescribeOptOutListsFluentBuilder {
     /// To override the contents of this collection use [`set_opt_out_list_names`](Self::set_opt_out_list_names).
     ///
     /// <p>The OptOutLists to show the details of. This is an array of strings that can be either the OptOutListName or OptOutListArn.</p><important>
-    /// <p>If you are using a shared AWS End User Messaging SMS and Voice resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// <p>If you are using a shared End User MessagingSMS resource then you must use the full Amazon Resource Name(ARN).</p>
     /// </important>
     pub fn opt_out_list_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.opt_out_list_names(input.into());
         self
     }
     /// <p>The OptOutLists to show the details of. This is an array of strings that can be either the OptOutListName or OptOutListArn.</p><important>
-    /// <p>If you are using a shared AWS End User Messaging SMS and Voice resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// <p>If you are using a shared End User MessagingSMS resource then you must use the full Amazon Resource Name(ARN).</p>
     /// </important>
     pub fn set_opt_out_list_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_opt_out_list_names(input);
         self
     }
     /// <p>The OptOutLists to show the details of. This is an array of strings that can be either the OptOutListName or OptOutListArn.</p><important>
-    /// <p>If you are using a shared AWS End User Messaging SMS and Voice resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// <p>If you are using a shared End User MessagingSMS resource then you must use the full Amazon Resource Name(ARN).</p>
     /// </important>
     pub fn get_opt_out_list_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_opt_out_list_names()

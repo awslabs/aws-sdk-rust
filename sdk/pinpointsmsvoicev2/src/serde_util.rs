@@ -17,6 +17,18 @@ pub(crate) fn associate_protect_configuration_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn carrier_lookup_output_output_correct_errors(
+    mut builder: crate::operation::carrier_lookup::builders::CarrierLookupOutputBuilder,
+) -> crate::operation::carrier_lookup::builders::CarrierLookupOutputBuilder {
+    if builder.e164_phone_number.is_none() {
+        builder.e164_phone_number = Some(Default::default())
+    }
+    if builder.phone_number_type.is_none() {
+        builder.phone_number_type = "no value was set".parse::<crate::types::PhoneNumberType>().ok()
+    }
+    builder
+}
+
 pub(crate) fn create_protect_configuration_output_output_correct_errors(
     mut builder: crate::operation::create_protect_configuration::builders::CreateProtectConfigurationOutputBuilder,
 ) -> crate::operation::create_protect_configuration::builders::CreateProtectConfigurationOutputBuilder {

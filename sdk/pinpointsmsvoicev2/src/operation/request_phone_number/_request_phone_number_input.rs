@@ -13,11 +13,11 @@ pub struct RequestPhoneNumberInput {
     /// <p>When you request a <code>SIMULATOR</code> phone number, you must set <b>MessageType</b> as <code>TRANSACTIONAL</code>.</p>
     pub number_type: ::std::option::Option<crate::types::RequestableNumberType>,
     /// <p>The name of the OptOutList to associate with the phone number. You can use the OptOutListName or OptOutListArn.</p><important>
-    /// <p>If you are using a shared AWS End User Messaging SMS and Voice resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// <p>If you are using a shared End User MessagingSMS resource then you must use the full Amazon Resource Name(ARN).</p>
     /// </important>
     pub opt_out_list_name: ::std::option::Option<::std::string::String>,
     /// <p>The pool to associated with the phone number. You can use the PoolId or PoolArn.</p><important>
-    /// <p>If you are using a shared AWS End User Messaging SMS and Voice resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// <p>If you are using a shared End User MessagingSMS resource then you must use the full Amazon Resource Name(ARN).</p>
     /// </important>
     pub pool_id: ::std::option::Option<::std::string::String>,
     /// <p>Use this field to attach your phone number for an external registration process.</p>
@@ -26,7 +26,7 @@ pub struct RequestPhoneNumberInput {
     pub international_sending_enabled: ::std::option::Option<bool>,
     /// <p>By default this is set to false. When set to true the phone number can't be deleted.</p>
     pub deletion_protection_enabled: ::std::option::Option<bool>,
-    /// <p>An array of tags (key and value pairs) associate with the requested phone number.</p>
+    /// <p>An array of tags (key and value pairs) to associate with the requested phone number.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
@@ -52,13 +52,13 @@ impl RequestPhoneNumberInput {
         self.number_type.as_ref()
     }
     /// <p>The name of the OptOutList to associate with the phone number. You can use the OptOutListName or OptOutListArn.</p><important>
-    /// <p>If you are using a shared AWS End User Messaging SMS and Voice resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// <p>If you are using a shared End User MessagingSMS resource then you must use the full Amazon Resource Name(ARN).</p>
     /// </important>
     pub fn opt_out_list_name(&self) -> ::std::option::Option<&str> {
         self.opt_out_list_name.as_deref()
     }
     /// <p>The pool to associated with the phone number. You can use the PoolId or PoolArn.</p><important>
-    /// <p>If you are using a shared AWS End User Messaging SMS and Voice resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// <p>If you are using a shared End User MessagingSMS resource then you must use the full Amazon Resource Name(ARN).</p>
     /// </important>
     pub fn pool_id(&self) -> ::std::option::Option<&str> {
         self.pool_id.as_deref()
@@ -75,7 +75,7 @@ impl RequestPhoneNumberInput {
     pub fn deletion_protection_enabled(&self) -> ::std::option::Option<bool> {
         self.deletion_protection_enabled
     }
-    /// <p>An array of tags (key and value pairs) associate with the requested phone number.</p>
+    /// <p>An array of tags (key and value pairs) to associate with the requested phone number.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
     pub fn tags(&self) -> &[crate::types::Tag] {
@@ -179,41 +179,41 @@ impl RequestPhoneNumberInputBuilder {
         &self.number_type
     }
     /// <p>The name of the OptOutList to associate with the phone number. You can use the OptOutListName or OptOutListArn.</p><important>
-    /// <p>If you are using a shared AWS End User Messaging SMS and Voice resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// <p>If you are using a shared End User MessagingSMS resource then you must use the full Amazon Resource Name(ARN).</p>
     /// </important>
     pub fn opt_out_list_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.opt_out_list_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the OptOutList to associate with the phone number. You can use the OptOutListName or OptOutListArn.</p><important>
-    /// <p>If you are using a shared AWS End User Messaging SMS and Voice resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// <p>If you are using a shared End User MessagingSMS resource then you must use the full Amazon Resource Name(ARN).</p>
     /// </important>
     pub fn set_opt_out_list_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.opt_out_list_name = input;
         self
     }
     /// <p>The name of the OptOutList to associate with the phone number. You can use the OptOutListName or OptOutListArn.</p><important>
-    /// <p>If you are using a shared AWS End User Messaging SMS and Voice resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// <p>If you are using a shared End User MessagingSMS resource then you must use the full Amazon Resource Name(ARN).</p>
     /// </important>
     pub fn get_opt_out_list_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.opt_out_list_name
     }
     /// <p>The pool to associated with the phone number. You can use the PoolId or PoolArn.</p><important>
-    /// <p>If you are using a shared AWS End User Messaging SMS and Voice resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// <p>If you are using a shared End User MessagingSMS resource then you must use the full Amazon Resource Name(ARN).</p>
     /// </important>
     pub fn pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pool_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The pool to associated with the phone number. You can use the PoolId or PoolArn.</p><important>
-    /// <p>If you are using a shared AWS End User Messaging SMS and Voice resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// <p>If you are using a shared End User MessagingSMS resource then you must use the full Amazon Resource Name(ARN).</p>
     /// </important>
     pub fn set_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pool_id = input;
         self
     }
     /// <p>The pool to associated with the phone number. You can use the PoolId or PoolArn.</p><important>
-    /// <p>If you are using a shared AWS End User Messaging SMS and Voice resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// <p>If you are using a shared End User MessagingSMS resource then you must use the full Amazon Resource Name(ARN).</p>
     /// </important>
     pub fn get_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.pool_id
@@ -264,19 +264,19 @@ impl RequestPhoneNumberInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>An array of tags (key and value pairs) associate with the requested phone number.</p>
+    /// <p>An array of tags (key and value pairs) to associate with the requested phone number.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
         self.tags = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of tags (key and value pairs) associate with the requested phone number.</p>
+    /// <p>An array of tags (key and value pairs) to associate with the requested phone number.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>An array of tags (key and value pairs) associate with the requested phone number.</p>
+    /// <p>An array of tags (key and value pairs) to associate with the requested phone number.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }

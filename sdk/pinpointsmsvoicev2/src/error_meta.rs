@@ -163,6 +163,32 @@ impl From<crate::operation::associate_protect_configuration::AssociateProtectCon
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::carrier_lookup::CarrierLookupError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::carrier_lookup::CarrierLookupError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::carrier_lookup::CarrierLookupError> for Error {
+    fn from(err: crate::operation::carrier_lookup::CarrierLookupError) -> Self {
+        match err {
+            crate::operation::carrier_lookup::CarrierLookupError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::carrier_lookup::CarrierLookupError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::carrier_lookup::CarrierLookupError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::carrier_lookup::CarrierLookupError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::carrier_lookup::CarrierLookupError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::carrier_lookup::CarrierLookupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_configuration_set::CreateConfigurationSetError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

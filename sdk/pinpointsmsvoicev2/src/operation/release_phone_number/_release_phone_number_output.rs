@@ -27,7 +27,7 @@ pub struct ReleasePhoneNumberOutput {
     pub two_way_channel_arn: ::std::option::Option<::std::string::String>,
     /// <p>An optional IAM Role Arn for a service to assume, to be able to post inbound SMS messages.</p>
     pub two_way_channel_role: ::std::option::Option<::std::string::String>,
-    /// <p>By default this is set to false. When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, AWS End User Messaging SMS and Voice automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
+    /// <p>By default this is set to false. When set to false and an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, End User MessagingSMS automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
     pub self_managed_opt_outs_enabled: bool,
     /// <p>The name of the OptOutList that was associated with the phone number.</p>
     pub opt_out_list_name: ::std::option::Option<::std::string::String>,
@@ -88,7 +88,7 @@ impl ReleasePhoneNumberOutput {
     pub fn two_way_channel_role(&self) -> ::std::option::Option<&str> {
         self.two_way_channel_role.as_deref()
     }
-    /// <p>By default this is set to false. When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, AWS End User Messaging SMS and Voice automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
+    /// <p>By default this is set to false. When set to false and an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, End User MessagingSMS automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
     pub fn self_managed_opt_outs_enabled(&self) -> bool {
         self.self_managed_opt_outs_enabled
     }
@@ -314,17 +314,17 @@ impl ReleasePhoneNumberOutputBuilder {
     pub fn get_two_way_channel_role(&self) -> &::std::option::Option<::std::string::String> {
         &self.two_way_channel_role
     }
-    /// <p>By default this is set to false. When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, AWS End User Messaging SMS and Voice automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
+    /// <p>By default this is set to false. When set to false and an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, End User MessagingSMS automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
     pub fn self_managed_opt_outs_enabled(mut self, input: bool) -> Self {
         self.self_managed_opt_outs_enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p>By default this is set to false. When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, AWS End User Messaging SMS and Voice automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
+    /// <p>By default this is set to false. When set to false and an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, End User MessagingSMS automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
     pub fn set_self_managed_opt_outs_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.self_managed_opt_outs_enabled = input;
         self
     }
-    /// <p>By default this is set to false. When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, AWS End User Messaging SMS and Voice automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
+    /// <p>By default this is set to false. When set to false and an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, End User MessagingSMS automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
     pub fn get_self_managed_opt_outs_enabled(&self) -> &::std::option::Option<bool> {
         &self.self_managed_opt_outs_enabled
     }

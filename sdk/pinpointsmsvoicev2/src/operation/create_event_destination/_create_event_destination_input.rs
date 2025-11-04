@@ -7,7 +7,7 @@ pub struct CreateEventDestinationInput {
     pub configuration_set_name: ::std::option::Option<::std::string::String>,
     /// <p>The name that identifies the event destination.</p>
     pub event_destination_name: ::std::option::Option<::std::string::String>,
-    /// <p>An array of event types that determine which events to log. If "ALL" is used, then AWS End User Messaging SMS and Voice logs every event type.</p><note>
+    /// <p>An array of event types that determine which events to log. If "ALL" is used, then End User MessagingSMS logs every event type.</p><note>
     /// <p>The <code>TEXT_SENT</code> event type is not supported.</p>
     /// </note>
     pub matching_event_types: ::std::option::Option<::std::vec::Vec<crate::types::EventType>>,
@@ -29,7 +29,7 @@ impl CreateEventDestinationInput {
     pub fn event_destination_name(&self) -> ::std::option::Option<&str> {
         self.event_destination_name.as_deref()
     }
-    /// <p>An array of event types that determine which events to log. If "ALL" is used, then AWS End User Messaging SMS and Voice logs every event type.</p><note>
+    /// <p>An array of event types that determine which events to log. If "ALL" is used, then End User MessagingSMS logs every event type.</p><note>
     /// <p>The <code>TEXT_SENT</code> event type is not supported.</p>
     /// </note>
     ///
@@ -108,7 +108,7 @@ impl CreateEventDestinationInputBuilder {
     ///
     /// To override the contents of this collection use [`set_matching_event_types`](Self::set_matching_event_types).
     ///
-    /// <p>An array of event types that determine which events to log. If "ALL" is used, then AWS End User Messaging SMS and Voice logs every event type.</p><note>
+    /// <p>An array of event types that determine which events to log. If "ALL" is used, then End User MessagingSMS logs every event type.</p><note>
     /// <p>The <code>TEXT_SENT</code> event type is not supported.</p>
     /// </note>
     pub fn matching_event_types(mut self, input: crate::types::EventType) -> Self {
@@ -117,14 +117,14 @@ impl CreateEventDestinationInputBuilder {
         self.matching_event_types = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of event types that determine which events to log. If "ALL" is used, then AWS End User Messaging SMS and Voice logs every event type.</p><note>
+    /// <p>An array of event types that determine which events to log. If "ALL" is used, then End User MessagingSMS logs every event type.</p><note>
     /// <p>The <code>TEXT_SENT</code> event type is not supported.</p>
     /// </note>
     pub fn set_matching_event_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EventType>>) -> Self {
         self.matching_event_types = input;
         self
     }
-    /// <p>An array of event types that determine which events to log. If "ALL" is used, then AWS End User Messaging SMS and Voice logs every event type.</p><note>
+    /// <p>An array of event types that determine which events to log. If "ALL" is used, then End User MessagingSMS logs every event type.</p><note>
     /// <p>The <code>TEXT_SENT</code> event type is not supported.</p>
     /// </note>
     pub fn get_matching_event_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EventType>> {

@@ -110,25 +110,25 @@ impl CreatePoolFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The origination identity to use such as a PhoneNumberId, PhoneNumberArn, SenderId or SenderIdArn. You can use <code>DescribePhoneNumbers</code> to find the values for PhoneNumberId and PhoneNumberArn while <code>DescribeSenderIds</code> can be used to get the values for SenderId and SenderIdArn.</p>
+    /// <p>The origination identity to use such as a PhoneNumberId, PhoneNumberArn, SenderId or SenderIdArn. You can use <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DescribePhoneNumbers.html">DescribePhoneNumbers</a> to find the values for PhoneNumberId and PhoneNumberArn, and use <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DescribeSenderIds.html">DescribeSenderIds</a> can be used to get the values for SenderId and SenderIdArn.</p>
     /// <p>After the pool is created you can add more origination identities to the pool by using <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_AssociateOriginationIdentity.html">AssociateOriginationIdentity</a>.</p><important>
-    /// <p>If you are using a shared AWS End User Messaging SMS and Voice resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// <p>If you are using a shared End User MessagingSMS resource then you must use the full Amazon Resource Name(ARN).</p>
     /// </important>
     pub fn origination_identity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.origination_identity(input.into());
         self
     }
-    /// <p>The origination identity to use such as a PhoneNumberId, PhoneNumberArn, SenderId or SenderIdArn. You can use <code>DescribePhoneNumbers</code> to find the values for PhoneNumberId and PhoneNumberArn while <code>DescribeSenderIds</code> can be used to get the values for SenderId and SenderIdArn.</p>
+    /// <p>The origination identity to use such as a PhoneNumberId, PhoneNumberArn, SenderId or SenderIdArn. You can use <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DescribePhoneNumbers.html">DescribePhoneNumbers</a> to find the values for PhoneNumberId and PhoneNumberArn, and use <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DescribeSenderIds.html">DescribeSenderIds</a> can be used to get the values for SenderId and SenderIdArn.</p>
     /// <p>After the pool is created you can add more origination identities to the pool by using <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_AssociateOriginationIdentity.html">AssociateOriginationIdentity</a>.</p><important>
-    /// <p>If you are using a shared AWS End User Messaging SMS and Voice resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// <p>If you are using a shared End User MessagingSMS resource then you must use the full Amazon Resource Name(ARN).</p>
     /// </important>
     pub fn set_origination_identity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_origination_identity(input);
         self
     }
-    /// <p>The origination identity to use such as a PhoneNumberId, PhoneNumberArn, SenderId or SenderIdArn. You can use <code>DescribePhoneNumbers</code> to find the values for PhoneNumberId and PhoneNumberArn while <code>DescribeSenderIds</code> can be used to get the values for SenderId and SenderIdArn.</p>
+    /// <p>The origination identity to use such as a PhoneNumberId, PhoneNumberArn, SenderId or SenderIdArn. You can use <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DescribePhoneNumbers.html">DescribePhoneNumbers</a> to find the values for PhoneNumberId and PhoneNumberArn, and use <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_DescribeSenderIds.html">DescribeSenderIds</a> can be used to get the values for SenderId and SenderIdArn.</p>
     /// <p>After the pool is created you can add more origination identities to the pool by using <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_AssociateOriginationIdentity.html">AssociateOriginationIdentity</a>.</p><important>
-    /// <p>If you are using a shared AWS End User Messaging SMS and Voice resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// <p>If you are using a shared End User MessagingSMS resource then you must use the full Amazon Resource Name(ARN).</p>
     /// </important>
     pub fn get_origination_identity(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_origination_identity()
@@ -161,17 +161,17 @@ impl CreatePoolFluentBuilder {
     pub fn get_message_type(&self) -> &::std::option::Option<crate::types::MessageType> {
         self.inner.get_message_type()
     }
-    /// <p>By default this is set to false. When set to true the pool can't be deleted. You can change this value using the <code>UpdatePool</code> action.</p>
+    /// <p>By default this is set to false. When set to true the pool can't be deleted. You can change this value using the <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_UpdatePool.html">UpdatePool</a> action.</p>
     pub fn deletion_protection_enabled(mut self, input: bool) -> Self {
         self.inner = self.inner.deletion_protection_enabled(input);
         self
     }
-    /// <p>By default this is set to false. When set to true the pool can't be deleted. You can change this value using the <code>UpdatePool</code> action.</p>
+    /// <p>By default this is set to false. When set to true the pool can't be deleted. You can change this value using the <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_UpdatePool.html">UpdatePool</a> action.</p>
     pub fn set_deletion_protection_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_deletion_protection_enabled(input);
         self
     }
-    /// <p>By default this is set to false. When set to true the pool can't be deleted. You can change this value using the <code>UpdatePool</code> action.</p>
+    /// <p>By default this is set to false. When set to true the pool can't be deleted. You can change this value using the <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_UpdatePool.html">UpdatePool</a> action.</p>
     pub fn get_deletion_protection_enabled(&self) -> &::std::option::Option<bool> {
         self.inner.get_deletion_protection_enabled()
     }

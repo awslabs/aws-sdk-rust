@@ -22,7 +22,7 @@ impl crate::operation::delete_resource_policy::builders::DeleteResourcePolicyInp
 }
 /// Fluent builder constructing a request to `DeleteResourcePolicy`.
 ///
-/// <p>Deletes the resource-based policy document attached to the AWS End User Messaging SMS and Voice resource. A shared resource can be a Pool, Opt-out list, Sender Id, or Phone number.</p>
+/// <p>Deletes the resource-based policy document attached to the End User MessagingSMS resource. A shared resource can be a Pool, Opt-out list, Sender Id, or Phone number.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteResourcePolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl DeleteResourcePolicyFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the AWS End User Messaging SMS and Voice resource you're deleting the resource-based policy from.</p>
+    /// <p>The Amazon Resource Name (ARN) of the End User MessagingSMS resource you're deleting the resource-based policy from.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the AWS End User Messaging SMS and Voice resource you're deleting the resource-based policy from.</p>
+    /// <p>The Amazon Resource Name (ARN) of the End User MessagingSMS resource you're deleting the resource-based policy from.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the AWS End User Messaging SMS and Voice resource you're deleting the resource-based policy from.</p>
+    /// <p>The Amazon Resource Name (ARN) of the End User MessagingSMS resource you're deleting the resource-based policy from.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_arn()
     }

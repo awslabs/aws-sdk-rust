@@ -110,21 +110,21 @@ impl UpdatePhoneNumberFluentBuilder {
         self
     }
     /// <p>The unique identifier of the phone number. Valid values for this field can be either the PhoneNumberId or PhoneNumberArn.</p><important>
-    /// <p>If you are using a shared AWS End User Messaging SMS and Voice resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// <p>If you are using a shared End User MessagingSMS resource then you must use the full Amazon Resource Name(ARN).</p>
     /// </important>
     pub fn phone_number_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.phone_number_id(input.into());
         self
     }
     /// <p>The unique identifier of the phone number. Valid values for this field can be either the PhoneNumberId or PhoneNumberArn.</p><important>
-    /// <p>If you are using a shared AWS End User Messaging SMS and Voice resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// <p>If you are using a shared End User MessagingSMS resource then you must use the full Amazon Resource Name(ARN).</p>
     /// </important>
     pub fn set_phone_number_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_phone_number_id(input);
         self
     }
     /// <p>The unique identifier of the phone number. Valid values for this field can be either the PhoneNumberId or PhoneNumberArn.</p><important>
-    /// <p>If you are using a shared AWS End User Messaging SMS and Voice resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// <p>If you are using a shared End User MessagingSMS resource then you must use the full Amazon Resource Name(ARN).</p>
     /// </important>
     pub fn get_phone_number_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_phone_number_id()
@@ -171,31 +171,31 @@ impl UpdatePhoneNumberFluentBuilder {
     pub fn get_two_way_channel_role(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_two_way_channel_role()
     }
-    /// <p>By default this is set to false. When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, AWS End User Messaging SMS and Voice automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
+    /// <p>By default this is set to false. When set to false and an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, End User MessagingSMS automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
     pub fn self_managed_opt_outs_enabled(mut self, input: bool) -> Self {
         self.inner = self.inner.self_managed_opt_outs_enabled(input);
         self
     }
-    /// <p>By default this is set to false. When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, AWS End User Messaging SMS and Voice automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
+    /// <p>By default this is set to false. When set to false and an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, End User MessagingSMS automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
     pub fn set_self_managed_opt_outs_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_self_managed_opt_outs_enabled(input);
         self
     }
-    /// <p>By default this is set to false. When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, AWS End User Messaging SMS and Voice automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
+    /// <p>By default this is set to false. When set to false and an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, End User MessagingSMS automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
     pub fn get_self_managed_opt_outs_enabled(&self) -> &::std::option::Option<bool> {
         self.inner.get_self_managed_opt_outs_enabled()
     }
-    /// <p>The OptOutList to add the phone number to. Valid values for this field can be either the OutOutListName or OutOutListArn.</p>
+    /// <p>The OptOutList to add the phone number to. You can use either the opt out list name or the opt out list ARN.</p>
     pub fn opt_out_list_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.opt_out_list_name(input.into());
         self
     }
-    /// <p>The OptOutList to add the phone number to. Valid values for this field can be either the OutOutListName or OutOutListArn.</p>
+    /// <p>The OptOutList to add the phone number to. You can use either the opt out list name or the opt out list ARN.</p>
     pub fn set_opt_out_list_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_opt_out_list_name(input);
         self
     }
-    /// <p>The OptOutList to add the phone number to. Valid values for this field can be either the OutOutListName or OutOutListArn.</p>
+    /// <p>The OptOutList to add the phone number to. You can use either the opt out list name or the opt out list ARN.</p>
     pub fn get_opt_out_list_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_opt_out_list_name()
     }

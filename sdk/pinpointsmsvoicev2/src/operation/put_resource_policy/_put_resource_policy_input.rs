@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutResourcePolicyInput {
-    /// <p>The Amazon Resource Name (ARN) of the AWS End User Messaging SMS and Voice resource to attach the resource-based policy to.</p>
+    /// <p>The Amazon Resource Name (ARN) of the End User MessagingSMS resource to attach the resource-based policy to.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The JSON formatted resource-based policy to attach.</p>
     pub policy: ::std::option::Option<::std::string::String>,
 }
 impl PutResourcePolicyInput {
-    /// <p>The Amazon Resource Name (ARN) of the AWS End User Messaging SMS and Voice resource to attach the resource-based policy to.</p>
+    /// <p>The Amazon Resource Name (ARN) of the End User MessagingSMS resource to attach the resource-based policy to.</p>
     pub fn resource_arn(&self) -> ::std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -33,18 +33,18 @@ pub struct PutResourcePolicyInputBuilder {
     pub(crate) policy: ::std::option::Option<::std::string::String>,
 }
 impl PutResourcePolicyInputBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the AWS End User Messaging SMS and Voice resource to attach the resource-based policy to.</p>
+    /// <p>The Amazon Resource Name (ARN) of the End User MessagingSMS resource to attach the resource-based policy to.</p>
     /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the AWS End User Messaging SMS and Voice resource to attach the resource-based policy to.</p>
+    /// <p>The Amazon Resource Name (ARN) of the End User MessagingSMS resource to attach the resource-based policy to.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the AWS End User Messaging SMS and Voice resource to attach the resource-based policy to.</p>
+    /// <p>The Amazon Resource Name (ARN) of the End User MessagingSMS resource to attach the resource-based policy to.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_arn
     }

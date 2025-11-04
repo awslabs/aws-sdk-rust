@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteResourcePolicyOutput {
-    /// <p>The Amazon Resource Name (ARN) of the AWS End User Messaging SMS and Voice resource that the resource-based policy was deleted from.</p>
+    /// <p>The Amazon Resource Name (ARN) of the End User MessagingSMS resource that the resource-based policy was deleted from.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The JSON formatted resource-based policy that was deleted.</p>
     pub policy: ::std::option::Option<::std::string::String>,
@@ -12,7 +12,7 @@ pub struct DeleteResourcePolicyOutput {
     _request_id: Option<String>,
 }
 impl DeleteResourcePolicyOutput {
-    /// <p>The Amazon Resource Name (ARN) of the AWS End User Messaging SMS and Voice resource that the resource-based policy was deleted from.</p>
+    /// <p>The Amazon Resource Name (ARN) of the End User MessagingSMS resource that the resource-based policy was deleted from.</p>
     pub fn resource_arn(&self) -> ::std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -47,17 +47,17 @@ pub struct DeleteResourcePolicyOutputBuilder {
     _request_id: Option<String>,
 }
 impl DeleteResourcePolicyOutputBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the AWS End User Messaging SMS and Voice resource that the resource-based policy was deleted from.</p>
+    /// <p>The Amazon Resource Name (ARN) of the End User MessagingSMS resource that the resource-based policy was deleted from.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the AWS End User Messaging SMS and Voice resource that the resource-based policy was deleted from.</p>
+    /// <p>The Amazon Resource Name (ARN) of the End User MessagingSMS resource that the resource-based policy was deleted from.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the AWS End User Messaging SMS and Voice resource that the resource-based policy was deleted from.</p>
+    /// <p>The Amazon Resource Name (ARN) of the End User MessagingSMS resource that the resource-based policy was deleted from.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_arn
     }

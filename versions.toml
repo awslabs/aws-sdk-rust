@@ -1800,9 +1800,9 @@ model_hash = '11459708a529f7111973b30fd670f4e5a955e4e926e017842c4bcefdc357927e'
 
 [crates.aws-sdk-pinpointsmsvoicev2]
 category = 'AwsSdk'
-version = '1.95.0'
-source_hash = '70edf834dcf051e617fe3f32ba64d17b1b2055ab4e6e91e5c55bd326a85307cd'
-model_hash = 'b014893024c7858a8db6cc634a00c841dfb021922e8139c35141595c1cccc809'
+version = '1.96.0'
+source_hash = '35f69338d9e47990210bb49b7568ca88964e34091bf2762d1c8c31eb91d555f9'
+model_hash = '0b694ad3968f2f51574911b4dcd19e8db7eaee565c8fbdfc2daeb73eb2d2f39e'
 
 [crates.aws-sdk-pipes]
 category = 'AwsSdk'
@@ -2597,13 +2597,5 @@ source_hash = '4597b407d0339a001668032ff0321577e9a58c9a4568b53034c16cd50b552e75'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '2f03d9858a328c7dc5aff24d62ac1e98c08a64dfd637a09e6cc98d93d8c84769'
-
-[release]
-tag = 'release-2025-11-03'
-
 [release.crates]
-aws-sdk-bedrockagentcorecontrol = '1.20.0'
-aws-sdk-budgets = '1.95.0'
-aws-sdk-ec2 = '1.179.0'
-aws-sdk-ecs = '1.103.1'
-aws-sdk-kinesis = '1.94.0'
+aws-sdk-pinpointsmsvoicev2 = '1.96.0'

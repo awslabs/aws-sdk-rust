@@ -140,6 +140,8 @@ mod associate_origination_identity;
 
 mod associate_protect_configuration;
 
+mod carrier_lookup;
+
 mod create_configuration_set;
 
 mod create_event_destination;

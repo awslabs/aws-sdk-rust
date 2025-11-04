@@ -22,7 +22,7 @@ impl crate::operation::delete_voice_message_spend_limit_override::builders::Dele
 }
 /// Fluent builder constructing a request to `DeleteVoiceMessageSpendLimitOverride`.
 ///
-/// <p>Deletes an account level monthly spend limit override for sending voice messages. Deleting a spend limit override sets the <code>EnforcedLimit</code> equal to the <code>MaxLimit</code>, which is controlled by Amazon Web Services. For more information on spending limits (quotas) see <a href="https://docs.aws.amazon.com/sms-voice/latest/userguide/quotas.html">Quotas </a> in the <i>AWS End User Messaging SMS User Guide</i>.</p>
+/// <p>Deletes an account level monthly spend limit override for sending voice messages. Deleting a spend limit override sets the <code>EnforcedLimit</code> equal to the <code>MaxLimit</code>, which is controlled by Amazon Web Services. For more information on spending limits (quotas) see <a href="https://docs.aws.amazon.com/sms-voice/latest/userguide/quotas.html">Quotas </a> in the <i>End User MessagingSMS User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteVoiceMessageSpendLimitOverrideFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

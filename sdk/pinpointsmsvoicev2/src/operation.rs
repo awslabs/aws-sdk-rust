@@ -7,6 +7,9 @@ pub mod associate_origination_identity;
 /// Types for the `AssociateProtectConfiguration` operation.
 pub mod associate_protect_configuration;
 
+/// Types for the `CarrierLookup` operation.
+pub mod carrier_lookup;
+
 /// Types for the `CreateConfigurationSet` operation.
 pub mod create_configuration_set;
 

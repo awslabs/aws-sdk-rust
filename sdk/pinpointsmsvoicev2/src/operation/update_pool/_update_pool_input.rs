@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdatePoolInput {
     /// <p>The unique identifier of the pool to update. Valid values are either the PoolId or PoolArn.</p><important>
-    /// <p>If you are using a shared AWS End User Messaging SMS and Voice resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// <p>If you are using a shared End User MessagingSMS resource then you must use the full Amazon Resource Name(ARN).</p>
     /// </important>
     pub pool_id: ::std::option::Option<::std::string::String>,
     /// <p>By default this is set to false. When set to true you can receive incoming text messages from your end recipients.</p>
@@ -13,10 +13,10 @@ pub struct UpdatePoolInput {
     pub two_way_channel_arn: ::std::option::Option<::std::string::String>,
     /// <p>An optional IAM Role Arn for a service to assume, to be able to post inbound SMS messages.</p>
     pub two_way_channel_role: ::std::option::Option<::std::string::String>,
-    /// <p>By default this is set to false. When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, AWS End User Messaging SMS and Voice automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
+    /// <p>By default this is set to false. When set to false and an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, End User MessagingSMS automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
     pub self_managed_opt_outs_enabled: ::std::option::Option<bool>,
     /// <p>The OptOutList to associate with the pool. Valid values are either OptOutListName or OptOutListArn.</p><important>
-    /// <p>If you are using a shared AWS End User Messaging SMS and Voice resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// <p>If you are using a shared End User MessagingSMS resource then you must use the full Amazon Resource Name(ARN).</p>
     /// </important>
     pub opt_out_list_name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether shared routes are enabled for the pool.</p>
@@ -26,7 +26,7 @@ pub struct UpdatePoolInput {
 }
 impl UpdatePoolInput {
     /// <p>The unique identifier of the pool to update. Valid values are either the PoolId or PoolArn.</p><important>
-    /// <p>If you are using a shared AWS End User Messaging SMS and Voice resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// <p>If you are using a shared End User MessagingSMS resource then you must use the full Amazon Resource Name(ARN).</p>
     /// </important>
     pub fn pool_id(&self) -> ::std::option::Option<&str> {
         self.pool_id.as_deref()
@@ -43,12 +43,12 @@ impl UpdatePoolInput {
     pub fn two_way_channel_role(&self) -> ::std::option::Option<&str> {
         self.two_way_channel_role.as_deref()
     }
-    /// <p>By default this is set to false. When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, AWS End User Messaging SMS and Voice automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
+    /// <p>By default this is set to false. When set to false and an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, End User MessagingSMS automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
     pub fn self_managed_opt_outs_enabled(&self) -> ::std::option::Option<bool> {
         self.self_managed_opt_outs_enabled
     }
     /// <p>The OptOutList to associate with the pool. Valid values are either OptOutListName or OptOutListArn.</p><important>
-    /// <p>If you are using a shared AWS End User Messaging SMS and Voice resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// <p>If you are using a shared End User MessagingSMS resource then you must use the full Amazon Resource Name(ARN).</p>
     /// </important>
     pub fn opt_out_list_name(&self) -> ::std::option::Option<&str> {
         self.opt_out_list_name.as_deref()
@@ -84,7 +84,7 @@ pub struct UpdatePoolInputBuilder {
 }
 impl UpdatePoolInputBuilder {
     /// <p>The unique identifier of the pool to update. Valid values are either the PoolId or PoolArn.</p><important>
-    /// <p>If you are using a shared AWS End User Messaging SMS and Voice resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// <p>If you are using a shared End User MessagingSMS resource then you must use the full Amazon Resource Name(ARN).</p>
     /// </important>
     /// This field is required.
     pub fn pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -92,14 +92,14 @@ impl UpdatePoolInputBuilder {
         self
     }
     /// <p>The unique identifier of the pool to update. Valid values are either the PoolId or PoolArn.</p><important>
-    /// <p>If you are using a shared AWS End User Messaging SMS and Voice resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// <p>If you are using a shared End User MessagingSMS resource then you must use the full Amazon Resource Name(ARN).</p>
     /// </important>
     pub fn set_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pool_id = input;
         self
     }
     /// <p>The unique identifier of the pool to update. Valid values are either the PoolId or PoolArn.</p><important>
-    /// <p>If you are using a shared AWS End User Messaging SMS and Voice resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// <p>If you are using a shared End User MessagingSMS resource then you must use the full Amazon Resource Name(ARN).</p>
     /// </important>
     pub fn get_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.pool_id
@@ -146,36 +146,36 @@ impl UpdatePoolInputBuilder {
     pub fn get_two_way_channel_role(&self) -> &::std::option::Option<::std::string::String> {
         &self.two_way_channel_role
     }
-    /// <p>By default this is set to false. When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, AWS End User Messaging SMS and Voice automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
+    /// <p>By default this is set to false. When set to false and an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, End User MessagingSMS automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
     pub fn self_managed_opt_outs_enabled(mut self, input: bool) -> Self {
         self.self_managed_opt_outs_enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p>By default this is set to false. When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, AWS End User Messaging SMS and Voice automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
+    /// <p>By default this is set to false. When set to false and an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, End User MessagingSMS automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
     pub fn set_self_managed_opt_outs_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.self_managed_opt_outs_enabled = input;
         self
     }
-    /// <p>By default this is set to false. When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, AWS End User Messaging SMS and Voice automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
+    /// <p>By default this is set to false. When set to false and an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, End User MessagingSMS automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
     pub fn get_self_managed_opt_outs_enabled(&self) -> &::std::option::Option<bool> {
         &self.self_managed_opt_outs_enabled
     }
     /// <p>The OptOutList to associate with the pool. Valid values are either OptOutListName or OptOutListArn.</p><important>
-    /// <p>If you are using a shared AWS End User Messaging SMS and Voice resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// <p>If you are using a shared End User MessagingSMS resource then you must use the full Amazon Resource Name(ARN).</p>
     /// </important>
     pub fn opt_out_list_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.opt_out_list_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The OptOutList to associate with the pool. Valid values are either OptOutListName or OptOutListArn.</p><important>
-    /// <p>If you are using a shared AWS End User Messaging SMS and Voice resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// <p>If you are using a shared End User MessagingSMS resource then you must use the full Amazon Resource Name(ARN).</p>
     /// </important>
     pub fn set_opt_out_list_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.opt_out_list_name = input;
         self
     }
     /// <p>The OptOutList to associate with the pool. Valid values are either OptOutListName or OptOutListArn.</p><important>
-    /// <p>If you are using a shared AWS End User Messaging SMS and Voice resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// <p>If you are using a shared End User MessagingSMS resource then you must use the full Amazon Resource Name(ARN).</p>
     /// </important>
     pub fn get_opt_out_list_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.opt_out_list_name

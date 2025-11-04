@@ -205,6 +205,8 @@ pub use crate::types::_account_attribute::AccountAttribute;
 
 pub use crate::types::_account_attribute_name::AccountAttributeName;
 
+pub use crate::types::_phone_number_type::PhoneNumberType;
+
 mod _access_denied_exception_reason;
 
 mod _account_attribute;
@@ -278,6 +280,8 @@ mod _phone_number_filter;
 mod _phone_number_filter_name;
 
 mod _phone_number_information;
+
+mod _phone_number_type;
 
 mod _pool_filter;
 

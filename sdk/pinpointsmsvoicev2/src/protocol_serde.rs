@@ -27,6 +27,8 @@ pub(crate) mod shape_associate_origination_identity;
 
 pub(crate) mod shape_associate_protect_configuration;
 
+pub(crate) mod shape_carrier_lookup;
+
 pub(crate) mod shape_create_configuration_set;
 
 pub(crate) mod shape_create_event_destination;
@@ -216,6 +218,8 @@ pub(crate) mod shape_access_denied_exception;
 pub(crate) mod shape_associate_origination_identity_input;
 
 pub(crate) mod shape_associate_protect_configuration_input;
+
+pub(crate) mod shape_carrier_lookup_input;
 
 pub(crate) mod shape_conflict_exception;
 
