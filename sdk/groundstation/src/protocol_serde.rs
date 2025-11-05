@@ -29,6 +29,8 @@ pub(crate) mod shape_create_config;
 
 pub(crate) mod shape_create_dataflow_endpoint_group;
 
+pub(crate) mod shape_create_dataflow_endpoint_group_v2;
+
 pub(crate) mod shape_create_ephemeris;
 
 pub(crate) mod shape_create_mission_profile;
@@ -46,6 +48,8 @@ pub(crate) mod shape_describe_contact;
 pub(crate) mod shape_describe_ephemeris;
 
 pub(crate) mod shape_get_agent_configuration;
+
+pub(crate) mod shape_get_agent_task_response_url;
 
 pub(crate) mod shape_get_config;
 
@@ -101,6 +105,8 @@ pub(crate) mod shape_create_config_input;
 
 pub(crate) mod shape_create_dataflow_endpoint_group_input;
 
+pub(crate) mod shape_create_dataflow_endpoint_group_v2_input;
+
 pub(crate) mod shape_create_ephemeris_input;
 
 pub(crate) mod shape_create_mission_profile_input;
@@ -125,6 +131,8 @@ pub(crate) mod shape_resource_limit_exceeded_exception;
 
 pub(crate) mod shape_resource_not_found_exception;
 
+pub(crate) mod shape_service_quota_exceeded_exception;
+
 pub(crate) mod shape_tag_resource_input;
 
 pub(crate) mod shape_update_agent_status_input;
@@ -146,6 +154,8 @@ pub(crate) mod shape_config_list;
 pub(crate) mod shape_config_type_data;
 
 pub(crate) mod shape_contact_list;
+
+pub(crate) mod shape_create_endpoint_details;
 
 pub(crate) mod shape_dataflow_edge_list;
 
@@ -217,6 +227,10 @@ pub(crate) mod shape_dataflow_endpoint_config;
 
 pub(crate) mod shape_dataflow_endpoint_list_item;
 
+pub(crate) mod shape_downlink_aws_ground_station_agent_endpoint;
+
+pub(crate) mod shape_downlink_aws_ground_station_agent_endpoint_details;
+
 pub(crate) mod shape_ephemeris_description;
 
 pub(crate) mod shape_ephemeris_error_reason;
@@ -241,6 +255,10 @@ pub(crate) mod shape_tle_ephemeris;
 
 pub(crate) mod shape_tracking_config;
 
+pub(crate) mod shape_uplink_aws_ground_station_agent_endpoint;
+
+pub(crate) mod shape_uplink_aws_ground_station_agent_endpoint_details;
+
 pub(crate) mod shape_uplink_echo_config;
 
 pub(crate) mod shape_az_el_program_track_settings;
@@ -257,6 +275,8 @@ pub(crate) mod shape_demodulation_config;
 
 pub(crate) mod shape_destination;
 
+pub(crate) mod shape_downlink_dataflow_details;
+
 pub(crate) mod shape_eirp;
 
 pub(crate) mod shape_ranged_connection_details;
@@ -271,11 +291,15 @@ pub(crate) mod shape_spectrum_config;
 
 pub(crate) mod shape_tle_data;
 
+pub(crate) mod shape_uplink_dataflow_details;
+
 pub(crate) mod shape_uplink_spectrum_config;
 
 pub(crate) mod shape_az_el_segments;
 
 pub(crate) mod shape_config_details;
+
+pub(crate) mod shape_downlink_connection_details;
 
 pub(crate) mod shape_frequency;
 
@@ -288,6 +312,8 @@ pub(crate) mod shape_security_group_id_list;
 pub(crate) mod shape_subnet_list;
 
 pub(crate) mod shape_time_range;
+
+pub(crate) mod shape_uplink_connection_details;
 
 pub(crate) mod shape_antenna_demod_decode_details;
 

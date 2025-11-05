@@ -6,6 +6,8 @@
 pub struct VpcOriginConfig {
     /// <p>The VPC origin ID.</p>
     pub vpc_origin_id: ::std::string::String,
+    /// <p>The account ID of the Amazon Web Services account that owns the VPC origin.</p>
+    pub owner_account_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies how long, in seconds, CloudFront waits for a response from the origin. This is also known as the <i>origin response timeout</i>. The minimum timeout is 1 second, the maximum is 120 seconds, and the default (if you don't specify otherwise) is 30 seconds.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DownloadDistValuesOrigin.html#DownloadDistValuesOriginResponseTimeout">Response timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     pub origin_read_timeout: ::std::option::Option<i32>,
@@ -18,6 +20,10 @@ impl VpcOriginConfig {
     pub fn vpc_origin_id(&self) -> &str {
         use std::ops::Deref;
         self.vpc_origin_id.deref()
+    }
+    /// <p>The account ID of the Amazon Web Services account that owns the VPC origin.</p>
+    pub fn owner_account_id(&self) -> ::std::option::Option<&str> {
+        self.owner_account_id.as_deref()
     }
     /// <p>Specifies how long, in seconds, CloudFront waits for a response from the origin. This is also known as the <i>origin response timeout</i>. The minimum timeout is 1 second, the maximum is 120 seconds, and the default (if you don't specify otherwise) is 30 seconds.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DownloadDistValuesOrigin.html#DownloadDistValuesOriginResponseTimeout">Response timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
@@ -42,6 +48,7 @@ impl VpcOriginConfig {
 #[non_exhaustive]
 pub struct VpcOriginConfigBuilder {
     pub(crate) vpc_origin_id: ::std::option::Option<::std::string::String>,
+    pub(crate) owner_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) origin_read_timeout: ::std::option::Option<i32>,
     pub(crate) origin_keepalive_timeout: ::std::option::Option<i32>,
 }
@@ -60,6 +67,20 @@ impl VpcOriginConfigBuilder {
     /// <p>The VPC origin ID.</p>
     pub fn get_vpc_origin_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.vpc_origin_id
+    }
+    /// <p>The account ID of the Amazon Web Services account that owns the VPC origin.</p>
+    pub fn owner_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.owner_account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The account ID of the Amazon Web Services account that owns the VPC origin.</p>
+    pub fn set_owner_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.owner_account_id = input;
+        self
+    }
+    /// <p>The account ID of the Amazon Web Services account that owns the VPC origin.</p>
+    pub fn get_owner_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_account_id
     }
     /// <p>Specifies how long, in seconds, CloudFront waits for a response from the origin. This is also known as the <i>origin response timeout</i>. The minimum timeout is 1 second, the maximum is 120 seconds, and the default (if you don't specify otherwise) is 30 seconds.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DownloadDistValuesOrigin.html#DownloadDistValuesOriginResponseTimeout">Response timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
@@ -106,6 +127,7 @@ impl VpcOriginConfigBuilder {
                     "vpc_origin_id was not specified but it is required when building VpcOriginConfig",
                 )
             })?,
+            owner_account_id: self.owner_account_id,
             origin_read_timeout: self.origin_read_timeout,
             origin_keepalive_timeout: self.origin_keepalive_timeout,
         })

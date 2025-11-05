@@ -277,6 +277,8 @@ pub use crate::types::_cache_policy_cookies_config::CachePolicyCookiesConfigBuil
 
 pub use crate::types::_cache_policy_headers_config::CachePolicyHeadersConfigBuilder;
 
+pub use crate::types::_anycast_ip_list::AnycastIpListBuilder;
+
 pub use crate::types::_tag_keys::TagKeysBuilder;
 
 pub use crate::types::_test_result::TestResultBuilder;
@@ -339,6 +341,10 @@ pub use crate::types::_distribution_summary::DistributionSummaryBuilder;
 
 pub use crate::types::_distribution_id_list::DistributionIdListBuilder;
 
+pub use crate::types::_distribution_id_owner_list::DistributionIdOwnerListBuilder;
+
+pub use crate::types::_distribution_id_owner::DistributionIdOwnerBuilder;
+
 pub use crate::types::_continuous_deployment_policy_list::ContinuousDeploymentPolicyListBuilder;
 
 pub use crate::types::_continuous_deployment_policy_summary::ContinuousDeploymentPolicySummaryBuilder;
@@ -376,8 +382,6 @@ pub use crate::types::_invalidation::InvalidationBuilder;
 pub use crate::types::_invalidation_batch::InvalidationBatchBuilder;
 
 pub use crate::types::_paths::PathsBuilder;
-
-pub use crate::types::_anycast_ip_list::AnycastIpListBuilder;
 
 pub use crate::types::_streaming_distribution_config_with_tags::StreamingDistributionConfigWithTagsBuilder;
 

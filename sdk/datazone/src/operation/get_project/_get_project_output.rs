@@ -21,6 +21,8 @@ pub struct GetProjectOutput {
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp of when the project was last updated.</p>
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The resource tags of the project.</p>
+    pub resource_tags: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>>,
     /// <p>The business glossary terms that can be used in the project.</p>
     pub glossary_terms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ID of the domain unit.</p>
@@ -76,6 +78,12 @@ impl GetProjectOutput {
     pub fn last_updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
+    /// <p>The resource tags of the project.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_tags.is_none()`.
+    pub fn resource_tags(&self) -> &[crate::types::ResourceTag] {
+        self.resource_tags.as_deref().unwrap_or_default()
+    }
     /// <p>The business glossary terms that can be used in the project.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.glossary_terms.is_none()`.
@@ -113,6 +121,7 @@ impl ::std::fmt::Debug for GetProjectOutput {
         formatter.field("created_by", &self.created_by);
         formatter.field("created_at", &self.created_at);
         formatter.field("last_updated_at", &self.last_updated_at);
+        formatter.field("resource_tags", &self.resource_tags);
         formatter.field("glossary_terms", &self.glossary_terms);
         formatter.field("domain_unit_id", &self.domain_unit_id);
         formatter.field("project_profile_id", &self.project_profile_id);
@@ -147,6 +156,7 @@ pub struct GetProjectOutputBuilder {
     pub(crate) created_by: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) resource_tags: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>>,
     pub(crate) glossary_terms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) domain_unit_id: ::std::option::Option<::std::string::String>,
     pub(crate) project_profile_id: ::std::option::Option<::std::string::String>,
@@ -291,6 +301,26 @@ impl GetProjectOutputBuilder {
     pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_at
     }
+    /// Appends an item to `resource_tags`.
+    ///
+    /// To override the contents of this collection use [`set_resource_tags`](Self::set_resource_tags).
+    ///
+    /// <p>The resource tags of the project.</p>
+    pub fn resource_tags(mut self, input: crate::types::ResourceTag) -> Self {
+        let mut v = self.resource_tags.unwrap_or_default();
+        v.push(input);
+        self.resource_tags = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The resource tags of the project.</p>
+    pub fn set_resource_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>>) -> Self {
+        self.resource_tags = input;
+        self
+    }
+    /// <p>The resource tags of the project.</p>
+    pub fn get_resource_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>> {
+        &self.resource_tags
+    }
     /// Appends an item to `glossary_terms`.
     ///
     /// To override the contents of this collection use [`set_glossary_terms`](Self::set_glossary_terms).
@@ -419,6 +449,7 @@ impl GetProjectOutputBuilder {
             })?,
             created_at: self.created_at,
             last_updated_at: self.last_updated_at,
+            resource_tags: self.resource_tags,
             glossary_terms: self.glossary_terms,
             domain_unit_id: self.domain_unit_id,
             project_profile_id: self.project_profile_id,
@@ -440,6 +471,7 @@ impl ::std::fmt::Debug for GetProjectOutputBuilder {
         formatter.field("created_by", &self.created_by);
         formatter.field("created_at", &self.created_at);
         formatter.field("last_updated_at", &self.last_updated_at);
+        formatter.field("resource_tags", &self.resource_tags);
         formatter.field("glossary_terms", &self.glossary_terms);
         formatter.field("domain_unit_id", &self.domain_unit_id);
         formatter.field("project_profile_id", &self.project_profile_id);

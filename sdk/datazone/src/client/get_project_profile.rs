@@ -11,6 +11,9 @@ impl super::Client {
     ///   - [`name(String)`](crate::operation::get_project_profile::GetProjectProfileOutput::name): <p>The name of the project profile.</p>
     ///   - [`description(Option<String>)`](crate::operation::get_project_profile::GetProjectProfileOutput::description): <p>The description of the project profile.</p>
     ///   - [`status(Option<Status>)`](crate::operation::get_project_profile::GetProjectProfileOutput::status): <p>The status of the project profile.</p>
+    ///   - [`project_resource_tags(Option<Vec::<ResourceTagParameter>>)`](crate::operation::get_project_profile::GetProjectProfileOutput::project_resource_tags): <p>The resource tags of the project profile.</p>
+    ///   - [`allow_custom_project_resource_tags(Option<bool>)`](crate::operation::get_project_profile::GetProjectProfileOutput::allow_custom_project_resource_tags): <p>Specifies whether custom project resource tags are supported.</p>
+    ///   - [`project_resource_tags_description(Option<String>)`](crate::operation::get_project_profile::GetProjectProfileOutput::project_resource_tags_description): <p>Field viewable through the UI that provides a project user with the allowed resource tag specifications.</p>
     ///   - [`environment_configurations(Option<Vec::<EnvironmentConfiguration>>)`](crate::operation::get_project_profile::GetProjectProfileOutput::environment_configurations): <p>The environment configurations of the project profile.</p>
     ///   - [`created_by(String)`](crate::operation::get_project_profile::GetProjectProfileOutput::created_by): <p>The user who created the project profile.</p>
     ///   - [`created_at(Option<DateTime>)`](crate::operation::get_project_profile::GetProjectProfileOutput::created_at): <p>The timestamp of when the project profile was created.</p>

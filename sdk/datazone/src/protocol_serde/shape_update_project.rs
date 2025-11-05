@@ -257,6 +257,9 @@ pub(crate) fn de_update_project(
                             .transpose()?,
                     );
                 }
+                "resourceTags" => {
+                    builder = builder.set_resource_tags(crate::protocol_serde::shape_resource_tags::de_resource_tags(tokens)?);
+                }
                 "userParameters" => {
                     builder = builder.set_user_parameters(
                             crate::protocol_serde::shape_environment_configuration_user_parameters_list::de_environment_configuration_user_parameters_list(tokens)?

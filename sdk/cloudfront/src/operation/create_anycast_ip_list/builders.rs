@@ -150,4 +150,42 @@ impl CreateAnycastIpListFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<crate::types::Tags> {
         self.inner.get_tags()
     }
+    /// <p>The IP address type for the Anycast static IP list. You can specify one of the following options:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ipv4</code> - Allocate a list of only IPv4 addresses</p></li>
+    /// <li>
+    /// <p><code>ipv6</code> - Allocate a list of only IPv4 addresses</p></li>
+    /// <li>
+    /// <p><code>dualstack</code> - Allocate a list of both IPv4 and IPv6 addresses</p></li>
+    /// </ul>
+    pub fn ip_address_type(mut self, input: crate::types::IpAddressType) -> Self {
+        self.inner = self.inner.ip_address_type(input);
+        self
+    }
+    /// <p>The IP address type for the Anycast static IP list. You can specify one of the following options:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ipv4</code> - Allocate a list of only IPv4 addresses</p></li>
+    /// <li>
+    /// <p><code>ipv6</code> - Allocate a list of only IPv4 addresses</p></li>
+    /// <li>
+    /// <p><code>dualstack</code> - Allocate a list of both IPv4 and IPv6 addresses</p></li>
+    /// </ul>
+    pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::IpAddressType>) -> Self {
+        self.inner = self.inner.set_ip_address_type(input);
+        self
+    }
+    /// <p>The IP address type for the Anycast static IP list. You can specify one of the following options:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ipv4</code> - Allocate a list of only IPv4 addresses</p></li>
+    /// <li>
+    /// <p><code>ipv6</code> - Allocate a list of only IPv4 addresses</p></li>
+    /// <li>
+    /// <p><code>dualstack</code> - Allocate a list of both IPv4 and IPv6 addresses</p></li>
+    /// </ul>
+    pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::IpAddressType> {
+        self.inner.get_ip_address_type()
+    }
 }

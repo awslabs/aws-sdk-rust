@@ -20,14 +20,27 @@ pub fn de_disable_fast_snapshot_restore_state_error_item(
                 builder = builder.set_availability_zone(var_1);
             }
             ,
-            s if s.matches("error") /* Error com.amazonaws.ec2#DisableFastSnapshotRestoreStateErrorItem$Error */ =>  {
+            s if s.matches("availabilityZoneId") /* AvailabilityZoneId com.amazonaws.ec2#DisableFastSnapshotRestoreStateErrorItem$AvailabilityZoneId */ =>  {
                 let var_2 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_availability_zone_id(var_2);
+            }
+            ,
+            s if s.matches("error") /* Error com.amazonaws.ec2#DisableFastSnapshotRestoreStateErrorItem$Error */ =>  {
+                let var_3 =
                     Some(
                         crate::protocol_serde::shape_disable_fast_snapshot_restore_state_error::de_disable_fast_snapshot_restore_state_error(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_error(var_2);
+                builder = builder.set_error(var_3);
             }
             ,
             _ => {}

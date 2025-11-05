@@ -10,6 +10,9 @@ pub mod create_config;
 /// Types for the `CreateDataflowEndpointGroup` operation.
 pub mod create_dataflow_endpoint_group;
 
+/// Types for the `CreateDataflowEndpointGroupV2` operation.
+pub mod create_dataflow_endpoint_group_v2;
+
 /// Types for the `CreateEphemeris` operation.
 pub mod create_ephemeris;
 
@@ -36,6 +39,9 @@ pub mod describe_ephemeris;
 
 /// Types for the `GetAgentConfiguration` operation.
 pub mod get_agent_configuration;
+
+/// Types for the `GetAgentTaskResponseUrl` operation.
+pub mod get_agent_task_response_url;
 
 /// Types for the `GetConfig` operation.
 pub mod get_config;

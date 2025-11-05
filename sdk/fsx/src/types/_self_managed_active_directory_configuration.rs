@@ -18,6 +18,16 @@ pub struct SelfManagedActiveDirectoryConfiguration {
     pub password: ::std::option::Option<::std::string::String>,
     /// <p>A list of up to three IP addresses of DNS servers or domain controllers in the self-managed AD directory.</p>
     pub dns_ips: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret containing the self-managed Active Directory domain join service account credentials. When provided, Amazon FSx uses the credentials stored in this secret to join the file system to your self-managed Active Directory domain.</p>
+    /// <p>The secret must contain two key-value pairs:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CUSTOMER_MANAGED_ACTIVE_DIRECTORY_USERNAME</code> - The username for the service account</p></li>
+    /// <li>
+    /// <p><code>CUSTOMER_MANAGED_ACTIVE_DIRECTORY_PASSWORD</code> - The password for the service account</p></li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/self-manage-prereqs.html"> Using Amazon FSx for Windows with your self-managed Microsoft Active Directory</a> or <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/self-manage-prereqs.html"> Using Amazon FSx for ONTAP with your self-managed Microsoft Active Directory</a>.</p>
+    pub domain_join_service_account_secret: ::std::option::Option<::std::string::String>,
 }
 impl SelfManagedActiveDirectoryConfiguration {
     /// <p>The fully qualified domain name of the self-managed AD directory, such as <code>corp.example.com</code>.</p>
@@ -48,6 +58,18 @@ impl SelfManagedActiveDirectoryConfiguration {
     pub fn dns_ips(&self) -> &[::std::string::String] {
         self.dns_ips.as_deref().unwrap_or_default()
     }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret containing the self-managed Active Directory domain join service account credentials. When provided, Amazon FSx uses the credentials stored in this secret to join the file system to your self-managed Active Directory domain.</p>
+    /// <p>The secret must contain two key-value pairs:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CUSTOMER_MANAGED_ACTIVE_DIRECTORY_USERNAME</code> - The username for the service account</p></li>
+    /// <li>
+    /// <p><code>CUSTOMER_MANAGED_ACTIVE_DIRECTORY_PASSWORD</code> - The password for the service account</p></li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/self-manage-prereqs.html"> Using Amazon FSx for Windows with your self-managed Microsoft Active Directory</a> or <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/self-manage-prereqs.html"> Using Amazon FSx for ONTAP with your self-managed Microsoft Active Directory</a>.</p>
+    pub fn domain_join_service_account_secret(&self) -> ::std::option::Option<&str> {
+        self.domain_join_service_account_secret.as_deref()
+    }
 }
 impl ::std::fmt::Debug for SelfManagedActiveDirectoryConfiguration {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -58,6 +80,7 @@ impl ::std::fmt::Debug for SelfManagedActiveDirectoryConfiguration {
         formatter.field("user_name", &self.user_name);
         formatter.field("password", &"*** Sensitive Data Redacted ***");
         formatter.field("dns_ips", &self.dns_ips);
+        formatter.field("domain_join_service_account_secret", &self.domain_join_service_account_secret);
         formatter.finish()
     }
 }
@@ -78,6 +101,7 @@ pub struct SelfManagedActiveDirectoryConfigurationBuilder {
     pub(crate) user_name: ::std::option::Option<::std::string::String>,
     pub(crate) password: ::std::option::Option<::std::string::String>,
     pub(crate) dns_ips: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) domain_join_service_account_secret: ::std::option::Option<::std::string::String>,
 }
 impl SelfManagedActiveDirectoryConfigurationBuilder {
     /// <p>The fully qualified domain name of the self-managed AD directory, such as <code>corp.example.com</code>.</p>
@@ -130,7 +154,6 @@ impl SelfManagedActiveDirectoryConfigurationBuilder {
         &self.file_system_administrators_group
     }
     /// <p>The user name for the service account on your self-managed AD domain that Amazon FSx will use to join to your AD domain. This account must have the permission to join computers to the domain in the organizational unit provided in <code>OrganizationalUnitDistinguishedName</code>, or in the default location of your AD domain.</p>
-    /// This field is required.
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_name = ::std::option::Option::Some(input.into());
         self
@@ -145,7 +168,6 @@ impl SelfManagedActiveDirectoryConfigurationBuilder {
         &self.user_name
     }
     /// <p>The password for the service account on your self-managed AD domain that Amazon FSx will use to join to your AD domain.</p>
-    /// This field is required.
     pub fn password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.password = ::std::option::Option::Some(input.into());
         self
@@ -179,6 +201,44 @@ impl SelfManagedActiveDirectoryConfigurationBuilder {
     pub fn get_dns_ips(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.dns_ips
     }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret containing the self-managed Active Directory domain join service account credentials. When provided, Amazon FSx uses the credentials stored in this secret to join the file system to your self-managed Active Directory domain.</p>
+    /// <p>The secret must contain two key-value pairs:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CUSTOMER_MANAGED_ACTIVE_DIRECTORY_USERNAME</code> - The username for the service account</p></li>
+    /// <li>
+    /// <p><code>CUSTOMER_MANAGED_ACTIVE_DIRECTORY_PASSWORD</code> - The password for the service account</p></li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/self-manage-prereqs.html"> Using Amazon FSx for Windows with your self-managed Microsoft Active Directory</a> or <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/self-manage-prereqs.html"> Using Amazon FSx for ONTAP with your self-managed Microsoft Active Directory</a>.</p>
+    pub fn domain_join_service_account_secret(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.domain_join_service_account_secret = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret containing the self-managed Active Directory domain join service account credentials. When provided, Amazon FSx uses the credentials stored in this secret to join the file system to your self-managed Active Directory domain.</p>
+    /// <p>The secret must contain two key-value pairs:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CUSTOMER_MANAGED_ACTIVE_DIRECTORY_USERNAME</code> - The username for the service account</p></li>
+    /// <li>
+    /// <p><code>CUSTOMER_MANAGED_ACTIVE_DIRECTORY_PASSWORD</code> - The password for the service account</p></li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/self-manage-prereqs.html"> Using Amazon FSx for Windows with your self-managed Microsoft Active Directory</a> or <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/self-manage-prereqs.html"> Using Amazon FSx for ONTAP with your self-managed Microsoft Active Directory</a>.</p>
+    pub fn set_domain_join_service_account_secret(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.domain_join_service_account_secret = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret containing the self-managed Active Directory domain join service account credentials. When provided, Amazon FSx uses the credentials stored in this secret to join the file system to your self-managed Active Directory domain.</p>
+    /// <p>The secret must contain two key-value pairs:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CUSTOMER_MANAGED_ACTIVE_DIRECTORY_USERNAME</code> - The username for the service account</p></li>
+    /// <li>
+    /// <p><code>CUSTOMER_MANAGED_ACTIVE_DIRECTORY_PASSWORD</code> - The password for the service account</p></li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/self-manage-prereqs.html"> Using Amazon FSx for Windows with your self-managed Microsoft Active Directory</a> or <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/self-manage-prereqs.html"> Using Amazon FSx for ONTAP with your self-managed Microsoft Active Directory</a>.</p>
+    pub fn get_domain_join_service_account_secret(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_join_service_account_secret
+    }
     /// Consumes the builder and constructs a [`SelfManagedActiveDirectoryConfiguration`](crate::types::SelfManagedActiveDirectoryConfiguration).
     pub fn build(self) -> crate::types::SelfManagedActiveDirectoryConfiguration {
         crate::types::SelfManagedActiveDirectoryConfiguration {
@@ -188,6 +248,7 @@ impl SelfManagedActiveDirectoryConfigurationBuilder {
             user_name: self.user_name,
             password: self.password,
             dns_ips: self.dns_ips,
+            domain_join_service_account_secret: self.domain_join_service_account_secret,
         }
     }
 }
@@ -200,6 +261,7 @@ impl ::std::fmt::Debug for SelfManagedActiveDirectoryConfigurationBuilder {
         formatter.field("user_name", &self.user_name);
         formatter.field("password", &"*** Sensitive Data Redacted ***");
         formatter.field("dns_ips", &self.dns_ips);
+        formatter.field("domain_join_service_account_secret", &self.domain_join_service_account_secret);
         formatter.finish()
     }
 }

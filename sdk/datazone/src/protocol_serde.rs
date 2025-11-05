@@ -709,6 +709,8 @@ pub(crate) mod shape_project_members;
 
 pub(crate) mod shape_project_profile_summaries;
 
+pub(crate) mod shape_project_resource_tag_parameters;
+
 pub(crate) mod shape_project_summaries;
 
 pub(crate) mod shape_provisioning_configuration;
@@ -726,6 +728,10 @@ pub(crate) mod shape_reject_choice;
 pub(crate) mod shape_reject_rule;
 
 pub(crate) mod shape_resource_list;
+
+pub(crate) mod shape_resource_tag_parameter;
+
+pub(crate) mod shape_resource_tags;
 
 pub(crate) mod shape_rule_detail;
 
@@ -1000,6 +1006,8 @@ pub(crate) mod shape_region;
 pub(crate) mod shape_regional_parameter;
 
 pub(crate) mod shape_resource;
+
+pub(crate) mod shape_resource_tag;
 
 pub(crate) mod shape_row_filter_configuration;
 

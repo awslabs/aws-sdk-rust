@@ -3,29 +3,47 @@ pub fn ser_update_project_profile_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_project_profile::UpdateProjectProfileInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.description {
-        object.key("description").string(var_1.as_str());
+    if let Some(var_1) = &input.allow_custom_project_resource_tags {
+        object.key("allowCustomProjectResourceTags").boolean(*var_1);
     }
-    if let Some(var_2) = &input.domain_unit_identifier {
-        object.key("domainUnitIdentifier").string(var_2.as_str());
+    if let Some(var_2) = &input.description {
+        object.key("description").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.environment_configurations {
-        let mut array_4 = object.key("environmentConfigurations").start_array();
-        for item_5 in var_3 {
+    if let Some(var_3) = &input.domain_unit_identifier {
+        object.key("domainUnitIdentifier").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.environment_configurations {
+        let mut array_5 = object.key("environmentConfigurations").start_array();
+        for item_6 in var_4 {
             {
                 #[allow(unused_mut)]
-                let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_environment_configuration::ser_environment_configuration(&mut object_6, item_5)?;
-                object_6.finish();
+                let mut object_7 = array_5.value().start_object();
+                crate::protocol_serde::shape_environment_configuration::ser_environment_configuration(&mut object_7, item_6)?;
+                object_7.finish();
             }
         }
-        array_4.finish();
+        array_5.finish();
     }
-    if let Some(var_7) = &input.name {
-        object.key("name").string(var_7.as_str());
+    if let Some(var_8) = &input.name {
+        object.key("name").string(var_8.as_str());
     }
-    if let Some(var_8) = &input.status {
-        object.key("status").string(var_8.as_str());
+    if let Some(var_9) = &input.project_resource_tags {
+        let mut array_10 = object.key("projectResourceTags").start_array();
+        for item_11 in var_9 {
+            {
+                #[allow(unused_mut)]
+                let mut object_12 = array_10.value().start_object();
+                crate::protocol_serde::shape_resource_tag_parameter::ser_resource_tag_parameter(&mut object_12, item_11)?;
+                object_12.finish();
+            }
+        }
+        array_10.finish();
+    }
+    if let Some(var_13) = &input.project_resource_tags_description {
+        object.key("projectResourceTagsDescription").string(var_13.as_str());
+    }
+    if let Some(var_14) = &input.status {
+        object.key("status").string(var_14.as_str());
     }
     Ok(())
 }

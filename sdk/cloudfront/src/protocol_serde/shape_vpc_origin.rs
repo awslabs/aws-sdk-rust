@@ -33,7 +33,7 @@ pub fn de_vpc_origin(
                 builder = builder.set_arn(var_2);
             }
             ,
-            s if s.matches("Status") /* Status com.amazonaws.cloudfront#VpcOrigin$Status */ =>  {
+            s if s.matches("AccountId") /* AccountId com.amazonaws.cloudfront#VpcOrigin$AccountId */ =>  {
                 let var_3 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -43,24 +43,23 @@ pub fn de_vpc_origin(
                         ?
                     )
                 ;
-                builder = builder.set_status(var_3);
+                builder = builder.set_account_id(var_3);
             }
             ,
-            s if s.matches("CreatedTime") /* CreatedTime com.amazonaws.cloudfront#VpcOrigin$CreatedTime */ =>  {
+            s if s.matches("Status") /* Status com.amazonaws.cloudfront#VpcOrigin$Status */ =>  {
                 let var_4 =
                     Some(
-                        ::aws_smithy_types::DateTime::from_str(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , ::aws_smithy_types::date_time::Format::DateTimeWithOffset
+                            .into()
                         )
-                        .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (timestamp: `com.amazonaws.cloudfront#timestamp`)"))
                         ?
                     )
                 ;
-                builder = builder.set_created_time(var_4);
+                builder = builder.set_status(var_4);
             }
             ,
-            s if s.matches("LastModifiedTime") /* LastModifiedTime com.amazonaws.cloudfront#VpcOrigin$LastModifiedTime */ =>  {
+            s if s.matches("CreatedTime") /* CreatedTime com.amazonaws.cloudfront#VpcOrigin$CreatedTime */ =>  {
                 let var_5 =
                     Some(
                         ::aws_smithy_types::DateTime::from_str(
@@ -71,17 +70,31 @@ pub fn de_vpc_origin(
                         ?
                     )
                 ;
-                builder = builder.set_last_modified_time(var_5);
+                builder = builder.set_created_time(var_5);
+            }
+            ,
+            s if s.matches("LastModifiedTime") /* LastModifiedTime com.amazonaws.cloudfront#VpcOrigin$LastModifiedTime */ =>  {
+                let var_6 =
+                    Some(
+                        ::aws_smithy_types::DateTime::from_str(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            , ::aws_smithy_types::date_time::Format::DateTimeWithOffset
+                        )
+                        .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (timestamp: `com.amazonaws.cloudfront#timestamp`)"))
+                        ?
+                    )
+                ;
+                builder = builder.set_last_modified_time(var_6);
             }
             ,
             s if s.matches("VpcOriginEndpointConfig") /* VpcOriginEndpointConfig com.amazonaws.cloudfront#VpcOrigin$VpcOriginEndpointConfig */ =>  {
-                let var_6 =
+                let var_7 =
                     Some(
                         crate::protocol_serde::shape_vpc_origin_endpoint_config::de_vpc_origin_endpoint_config(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_vpc_origin_endpoint_config(var_6);
+                builder = builder.set_vpc_origin_endpoint_config(var_7);
             }
             ,
             _ => {}

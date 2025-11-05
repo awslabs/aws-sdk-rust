@@ -30,20 +30,30 @@ pub fn ser_update_project_input_input(
     if let Some(var_9) = &input.project_profile_version {
         object.key("projectProfileVersion").string(var_9.as_str());
     }
-    if let Some(var_10) = &input.user_parameters {
-        let mut array_11 = object.key("userParameters").start_array();
-        for item_12 in var_10 {
+    if let Some(var_10) = &input.resource_tags {
+        #[allow(unused_mut)]
+        let mut object_11 = object.key("resourceTags").start_object();
+        for (key_12, value_13) in var_10 {
             {
-                #[allow(unused_mut)]
-                let mut object_13 = array_11.value().start_object();
-                crate::protocol_serde::shape_environment_configuration_user_parameter::ser_environment_configuration_user_parameter(
-                    &mut object_13,
-                    item_12,
-                )?;
-                object_13.finish();
+                object_11.key(key_12.as_str()).string(value_13.as_str());
             }
         }
-        array_11.finish();
+        object_11.finish();
+    }
+    if let Some(var_14) = &input.user_parameters {
+        let mut array_15 = object.key("userParameters").start_array();
+        for item_16 in var_14 {
+            {
+                #[allow(unused_mut)]
+                let mut object_17 = array_15.value().start_object();
+                crate::protocol_serde::shape_environment_configuration_user_parameter::ser_environment_configuration_user_parameter(
+                    &mut object_17,
+                    item_16,
+                )?;
+                object_17.finish();
+            }
+        }
+        array_15.finish();
     }
     Ok(())
 }

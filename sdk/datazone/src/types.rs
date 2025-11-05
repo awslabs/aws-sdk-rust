@@ -231,6 +231,8 @@ pub use crate::types::_environment_configuration_parameter::EnvironmentConfigura
 
 pub use crate::types::_deployment_mode::DeploymentMode;
 
+pub use crate::types::_resource_tag_parameter::ResourceTagParameter;
+
 pub use crate::types::_status::Status;
 
 pub use crate::types::_environment_deployment_details::EnvironmentDeploymentDetails;
@@ -244,6 +246,10 @@ pub use crate::types::_environment_configuration_user_parameter::EnvironmentConf
 pub use crate::types::_environment_parameter::EnvironmentParameter;
 
 pub use crate::types::_environment_resolved_account::EnvironmentResolvedAccount;
+
+pub use crate::types::_resource_tag::ResourceTag;
+
+pub use crate::types::_resource_tag_source::ResourceTagSource;
 
 pub use crate::types::_project_deletion_error::ProjectDeletionError;
 
@@ -1318,6 +1324,12 @@ mod _relational_filter_configuration;
 mod _resolution_strategy;
 
 mod _resource;
+
+mod _resource_tag;
+
+mod _resource_tag_parameter;
+
+mod _resource_tag_source;
 
 mod _row_filter;
 

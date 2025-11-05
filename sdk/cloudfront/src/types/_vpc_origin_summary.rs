@@ -16,6 +16,8 @@ pub struct VpcOriginSummary {
     pub last_modified_time: ::aws_smithy_types::DateTime,
     /// <p>The VPC origin summary ARN.</p>
     pub arn: ::std::string::String,
+    /// <p>The account ID of the Amazon Web Services account that owns the VPC origin.</p>
+    pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The VPC origin summary origin endpoint ARN.</p>
     pub origin_endpoint_arn: ::std::string::String,
 }
@@ -48,6 +50,10 @@ impl VpcOriginSummary {
         use std::ops::Deref;
         self.arn.deref()
     }
+    /// <p>The account ID of the Amazon Web Services account that owns the VPC origin.</p>
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
     /// <p>The VPC origin summary origin endpoint ARN.</p>
     pub fn origin_endpoint_arn(&self) -> &str {
         use std::ops::Deref;
@@ -71,6 +77,7 @@ pub struct VpcOriginSummaryBuilder {
     pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) origin_endpoint_arn: ::std::option::Option<::std::string::String>,
 }
 impl VpcOriginSummaryBuilder {
@@ -164,6 +171,20 @@ impl VpcOriginSummaryBuilder {
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
+    /// <p>The account ID of the Amazon Web Services account that owns the VPC origin.</p>
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The account ID of the Amazon Web Services account that owns the VPC origin.</p>
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.account_id = input;
+        self
+    }
+    /// <p>The account ID of the Amazon Web Services account that owns the VPC origin.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>The VPC origin summary origin endpoint ARN.</p>
     /// This field is required.
     pub fn origin_endpoint_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -226,6 +247,7 @@ impl VpcOriginSummaryBuilder {
                     "arn was not specified but it is required when building VpcOriginSummary",
                 )
             })?,
+            account_id: self.account_id,
             origin_endpoint_arn: self.origin_endpoint_arn.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "origin_endpoint_arn",

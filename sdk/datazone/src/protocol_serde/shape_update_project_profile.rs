@@ -184,6 +184,10 @@ pub(crate) fn de_update_project_profile(
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "allowCustomProjectResourceTags" => {
+                    builder =
+                        builder.set_allow_custom_project_resource_tags(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                }
                 "createdAt" => {
                     builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                         tokens.next(),
@@ -238,6 +242,18 @@ pub(crate) fn de_update_project_profile(
                 }
                 "name" => {
                     builder = builder.set_name(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "projectResourceTags" => {
+                    builder = builder.set_project_resource_tags(
+                        crate::protocol_serde::shape_project_resource_tag_parameters::de_project_resource_tag_parameters(tokens)?,
+                    );
+                }
+                "projectResourceTagsDescription" => {
+                    builder = builder.set_project_resource_tags_description(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,

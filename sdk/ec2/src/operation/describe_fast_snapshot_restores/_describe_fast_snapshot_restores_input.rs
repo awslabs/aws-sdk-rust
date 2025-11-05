@@ -6,7 +6,9 @@ pub struct DescribeFastSnapshotRestoresInput {
     /// <p>The filters. The possible values are:</p>
     /// <ul>
     /// <li>
-    /// <p><code>availability-zone</code>: The Availability Zone of the snapshot.</p></li>
+    /// <p><code>availability-zone</code>: The Availability Zone of the snapshot. For example, <code>us-east-2a</code>.</p></li>
+    /// <li>
+    /// <p><code>availability-zone-id</code>: The ID of the Availability Zone of the snapshot. For example, <code>use2-az1</code>.</p></li>
     /// <li>
     /// <p><code>owner-id</code>: The ID of the Amazon Web Services account that enabled fast snapshot restore on the snapshot.</p></li>
     /// <li>
@@ -26,7 +28,9 @@ impl DescribeFastSnapshotRestoresInput {
     /// <p>The filters. The possible values are:</p>
     /// <ul>
     /// <li>
-    /// <p><code>availability-zone</code>: The Availability Zone of the snapshot.</p></li>
+    /// <p><code>availability-zone</code>: The Availability Zone of the snapshot. For example, <code>us-east-2a</code>.</p></li>
+    /// <li>
+    /// <p><code>availability-zone-id</code>: The ID of the Availability Zone of the snapshot. For example, <code>use2-az1</code>.</p></li>
     /// <li>
     /// <p><code>owner-id</code>: The ID of the Amazon Web Services account that enabled fast snapshot restore on the snapshot.</p></li>
     /// <li>
@@ -76,7 +80,9 @@ impl DescribeFastSnapshotRestoresInputBuilder {
     /// <p>The filters. The possible values are:</p>
     /// <ul>
     /// <li>
-    /// <p><code>availability-zone</code>: The Availability Zone of the snapshot.</p></li>
+    /// <p><code>availability-zone</code>: The Availability Zone of the snapshot. For example, <code>us-east-2a</code>.</p></li>
+    /// <li>
+    /// <p><code>availability-zone-id</code>: The ID of the Availability Zone of the snapshot. For example, <code>use2-az1</code>.</p></li>
     /// <li>
     /// <p><code>owner-id</code>: The ID of the Amazon Web Services account that enabled fast snapshot restore on the snapshot.</p></li>
     /// <li>
@@ -93,7 +99,9 @@ impl DescribeFastSnapshotRestoresInputBuilder {
     /// <p>The filters. The possible values are:</p>
     /// <ul>
     /// <li>
-    /// <p><code>availability-zone</code>: The Availability Zone of the snapshot.</p></li>
+    /// <p><code>availability-zone</code>: The Availability Zone of the snapshot. For example, <code>us-east-2a</code>.</p></li>
+    /// <li>
+    /// <p><code>availability-zone-id</code>: The ID of the Availability Zone of the snapshot. For example, <code>use2-az1</code>.</p></li>
     /// <li>
     /// <p><code>owner-id</code>: The ID of the Amazon Web Services account that enabled fast snapshot restore on the snapshot.</p></li>
     /// <li>
@@ -108,7 +116,9 @@ impl DescribeFastSnapshotRestoresInputBuilder {
     /// <p>The filters. The possible values are:</p>
     /// <ul>
     /// <li>
-    /// <p><code>availability-zone</code>: The Availability Zone of the snapshot.</p></li>
+    /// <p><code>availability-zone</code>: The Availability Zone of the snapshot. For example, <code>us-east-2a</code>.</p></li>
+    /// <li>
+    /// <p><code>availability-zone-id</code>: The ID of the Availability Zone of the snapshot. For example, <code>use2-az1</code>.</p></li>
     /// <li>
     /// <p><code>owner-id</code>: The ID of the Amazon Web Services account that enabled fast snapshot restore on the snapshot.</p></li>
     /// <li>

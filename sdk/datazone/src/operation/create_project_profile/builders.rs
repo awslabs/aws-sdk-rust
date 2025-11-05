@@ -165,6 +165,53 @@ impl CreateProjectProfileFluentBuilder {
         self.inner.get_status()
     }
     ///
+    /// Appends an item to `projectResourceTags`.
+    ///
+    /// To override the contents of this collection use [`set_project_resource_tags`](Self::set_project_resource_tags).
+    ///
+    /// <p>The resource tags of the project profile.</p>
+    pub fn project_resource_tags(mut self, input: crate::types::ResourceTagParameter) -> Self {
+        self.inner = self.inner.project_resource_tags(input);
+        self
+    }
+    /// <p>The resource tags of the project profile.</p>
+    pub fn set_project_resource_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTagParameter>>) -> Self {
+        self.inner = self.inner.set_project_resource_tags(input);
+        self
+    }
+    /// <p>The resource tags of the project profile.</p>
+    pub fn get_project_resource_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceTagParameter>> {
+        self.inner.get_project_resource_tags()
+    }
+    /// <p>Specifies whether custom project resource tags are supported.</p>
+    pub fn allow_custom_project_resource_tags(mut self, input: bool) -> Self {
+        self.inner = self.inner.allow_custom_project_resource_tags(input);
+        self
+    }
+    /// <p>Specifies whether custom project resource tags are supported.</p>
+    pub fn set_allow_custom_project_resource_tags(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_allow_custom_project_resource_tags(input);
+        self
+    }
+    /// <p>Specifies whether custom project resource tags are supported.</p>
+    pub fn get_allow_custom_project_resource_tags(&self) -> &::std::option::Option<bool> {
+        self.inner.get_allow_custom_project_resource_tags()
+    }
+    /// <p>Field viewable through the UI that provides a project user with the allowed resource tag specifications.</p>
+    pub fn project_resource_tags_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.project_resource_tags_description(input.into());
+        self
+    }
+    /// <p>Field viewable through the UI that provides a project user with the allowed resource tag specifications.</p>
+    pub fn set_project_resource_tags_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_project_resource_tags_description(input);
+        self
+    }
+    /// <p>Field viewable through the UI that provides a project user with the allowed resource tag specifications.</p>
+    pub fn get_project_resource_tags_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_project_resource_tags_description()
+    }
+    ///
     /// Appends an item to `environmentConfigurations`.
     ///
     /// To override the contents of this collection use [`set_environment_configurations`](Self::set_environment_configurations).

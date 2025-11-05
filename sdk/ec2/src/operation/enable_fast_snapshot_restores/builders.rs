@@ -116,18 +116,43 @@ impl EnableFastSnapshotRestoresFluentBuilder {
     /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
     ///
     /// <p>One or more Availability Zones. For example, <code>us-east-2a</code>.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> must be specified in the request, but not both.</p>
     pub fn availability_zones(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.availability_zones(input.into());
         self
     }
     /// <p>One or more Availability Zones. For example, <code>us-east-2a</code>.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> must be specified in the request, but not both.</p>
     pub fn set_availability_zones(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_availability_zones(input);
         self
     }
     /// <p>One or more Availability Zones. For example, <code>us-east-2a</code>.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> must be specified in the request, but not both.</p>
     pub fn get_availability_zones(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_availability_zones()
+    }
+    ///
+    /// Appends an item to `AvailabilityZoneIds`.
+    ///
+    /// To override the contents of this collection use [`set_availability_zone_ids`](Self::set_availability_zone_ids).
+    ///
+    /// <p>One or more Availability Zone IDs. For example, <code>use2-az1</code>.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> must be specified in the request, but not both.</p>
+    pub fn availability_zone_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.availability_zone_ids(input.into());
+        self
+    }
+    /// <p>One or more Availability Zone IDs. For example, <code>use2-az1</code>.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> must be specified in the request, but not both.</p>
+    pub fn set_availability_zone_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_availability_zone_ids(input);
+        self
+    }
+    /// <p>One or more Availability Zone IDs. For example, <code>use2-az1</code>.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> must be specified in the request, but not both.</p>
+    pub fn get_availability_zone_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_availability_zone_ids()
     }
     ///
     /// Appends an item to `SourceSnapshotIds`.

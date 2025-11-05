@@ -88,6 +88,33 @@ pub fn de_anycast_ip_list_summary(
                 builder = builder.set_last_modified_time(var_6);
             }
             ,
+            s if s.matches("IpAddressType") /* IpAddressType com.amazonaws.cloudfront#AnycastIpListSummary$IpAddressType */ =>  {
+                let var_7 =
+                    Some(
+                        Result::<crate::types::IpAddressType, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::IpAddressType::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_ip_address_type(var_7);
+            }
+            ,
+            s if s.matches("ETag") /* ETag com.amazonaws.cloudfront#AnycastIpListSummary$ETag */ =>  {
+                let var_8 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_e_tag(var_8);
+            }
+            ,
             _ => {}
         }
     }

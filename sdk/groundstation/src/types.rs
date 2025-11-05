@@ -53,17 +53,17 @@ pub use crate::types::_ephemeris_item::EphemerisItem;
 
 pub use crate::types::_ephemeris_type::EphemerisType;
 
-pub use crate::types::_endpoint_details::EndpointDetails;
+pub use crate::types::_create_endpoint_details::CreateEndpointDetails;
 
-pub use crate::types::_capability_health_reason::CapabilityHealthReason;
+pub use crate::types::_downlink_aws_ground_station_agent_endpoint::DownlinkAwsGroundStationAgentEndpoint;
 
-pub use crate::types::_capability_health::CapabilityHealth;
+pub use crate::types::_downlink_dataflow_details::DownlinkDataflowDetails;
 
-pub use crate::types::_aws_ground_station_agent_endpoint::AwsGroundStationAgentEndpoint;
+pub use crate::types::_downlink_connection_details::DownlinkConnectionDetails;
 
-pub use crate::types::_audit_results::AuditResults;
+pub use crate::types::_connection_details::ConnectionDetails;
 
-pub use crate::types::_agent_status::AgentStatus;
+pub use crate::types::_socket_address::SocketAddress;
 
 pub use crate::types::_ranged_connection_details::RangedConnectionDetails;
 
@@ -71,9 +71,27 @@ pub use crate::types::_ranged_socket_address::RangedSocketAddress;
 
 pub use crate::types::_integer_range::IntegerRange;
 
-pub use crate::types::_connection_details::ConnectionDetails;
+pub use crate::types::_uplink_aws_ground_station_agent_endpoint::UplinkAwsGroundStationAgentEndpoint;
 
-pub use crate::types::_socket_address::SocketAddress;
+pub use crate::types::_uplink_dataflow_details::UplinkDataflowDetails;
+
+pub use crate::types::_uplink_connection_details::UplinkConnectionDetails;
+
+pub use crate::types::_endpoint_details::EndpointDetails;
+
+pub use crate::types::_capability_health_reason::CapabilityHealthReason;
+
+pub use crate::types::_capability_health::CapabilityHealth;
+
+pub use crate::types::_downlink_aws_ground_station_agent_endpoint_details::DownlinkAwsGroundStationAgentEndpointDetails;
+
+pub use crate::types::_audit_results::AuditResults;
+
+pub use crate::types::_agent_status::AgentStatus;
+
+pub use crate::types::_uplink_aws_ground_station_agent_endpoint_details::UplinkAwsGroundStationAgentEndpointDetails;
+
+pub use crate::types::_aws_ground_station_agent_endpoint::AwsGroundStationAgentEndpoint;
 
 pub use crate::types::_dataflow_endpoint::DataflowEndpoint;
 
@@ -223,6 +241,8 @@ mod _contact_data;
 
 mod _contact_status;
 
+mod _create_endpoint_details;
+
 mod _criticality;
 
 mod _dataflow_detail;
@@ -240,6 +260,14 @@ mod _demodulation_config;
 mod _destination;
 
 mod _discovery_data;
+
+mod _downlink_aws_ground_station_agent_endpoint;
+
+mod _downlink_aws_ground_station_agent_endpoint_details;
+
+mod _downlink_connection_details;
+
+mod _downlink_dataflow_details;
 
 mod _eirp;
 
@@ -330,6 +358,14 @@ mod _tle_ephemeris;
 mod _tracking_config;
 
 mod _tracking_overrides;
+
+mod _uplink_aws_ground_station_agent_endpoint;
+
+mod _uplink_aws_ground_station_agent_endpoint_details;
+
+mod _uplink_connection_details;
+
+mod _uplink_dataflow_details;
 
 mod _uplink_echo_config;
 

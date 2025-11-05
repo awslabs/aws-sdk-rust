@@ -171,6 +171,8 @@ mod create_config;
 
 mod create_dataflow_endpoint_group;
 
+mod create_dataflow_endpoint_group_v2;
+
 mod create_ephemeris;
 
 mod create_mission_profile;
@@ -215,6 +217,8 @@ mod describe_contact;
 mod describe_ephemeris;
 
 mod get_agent_configuration;
+
+mod get_agent_task_response_url;
 
 mod get_config;
 

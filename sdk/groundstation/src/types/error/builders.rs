@@ -7,4 +7,6 @@ pub use crate::types::error::_dependency_exception::DependencyExceptionBuilder;
 
 pub use crate::types::error::_resource_in_use_exception::ResourceInUseExceptionBuilder;
 
+pub use crate::types::error::_service_quota_exceeded_exception::ServiceQuotaExceededExceptionBuilder;
+
 pub use crate::types::error::_resource_limit_exceeded_exception::ResourceLimitExceededExceptionBuilder;

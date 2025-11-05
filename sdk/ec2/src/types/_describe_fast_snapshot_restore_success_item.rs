@@ -8,6 +8,8 @@ pub struct DescribeFastSnapshotRestoreSuccessItem {
     pub snapshot_id: ::std::option::Option<::std::string::String>,
     /// <p>The Availability Zone.</p>
     pub availability_zone: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the Availability Zone.</p>
+    pub availability_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>The state of fast snapshot restores.</p>
     pub state: ::std::option::Option<crate::types::FastSnapshotRestoreStateCode>,
     /// <p>The reason for the state transition. The possible values are as follows:</p>
@@ -41,6 +43,10 @@ impl DescribeFastSnapshotRestoreSuccessItem {
     /// <p>The Availability Zone.</p>
     pub fn availability_zone(&self) -> ::std::option::Option<&str> {
         self.availability_zone.as_deref()
+    }
+    /// <p>The ID of the Availability Zone.</p>
+    pub fn availability_zone_id(&self) -> ::std::option::Option<&str> {
+        self.availability_zone_id.as_deref()
     }
     /// <p>The state of fast snapshot restores.</p>
     pub fn state(&self) -> ::std::option::Option<&crate::types::FastSnapshotRestoreStateCode> {
@@ -98,6 +104,7 @@ impl DescribeFastSnapshotRestoreSuccessItem {
 pub struct DescribeFastSnapshotRestoreSuccessItemBuilder {
     pub(crate) snapshot_id: ::std::option::Option<::std::string::String>,
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
+    pub(crate) availability_zone_id: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::FastSnapshotRestoreStateCode>,
     pub(crate) state_transition_reason: ::std::option::Option<::std::string::String>,
     pub(crate) owner_id: ::std::option::Option<::std::string::String>,
@@ -136,6 +143,20 @@ impl DescribeFastSnapshotRestoreSuccessItemBuilder {
     /// <p>The Availability Zone.</p>
     pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
         &self.availability_zone
+    }
+    /// <p>The ID of the Availability Zone.</p>
+    pub fn availability_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.availability_zone_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the Availability Zone.</p>
+    pub fn set_availability_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.availability_zone_id = input;
+        self
+    }
+    /// <p>The ID of the Availability Zone.</p>
+    pub fn get_availability_zone_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone_id
     }
     /// <p>The state of fast snapshot restores.</p>
     pub fn state(mut self, input: crate::types::FastSnapshotRestoreStateCode) -> Self {
@@ -286,6 +307,7 @@ impl DescribeFastSnapshotRestoreSuccessItemBuilder {
         crate::types::DescribeFastSnapshotRestoreSuccessItem {
             snapshot_id: self.snapshot_id,
             availability_zone: self.availability_zone,
+            availability_zone_id: self.availability_zone_id,
             state: self.state,
             state_transition_reason: self.state_transition_reason,
             owner_id: self.owner_id,

@@ -6035,74 +6035,6 @@ async fn operation_input_test_get_object_177() {
 
 #[::tokio::test]
 async fn operation_input_test_get_object_178() {
-    /* documentation: dual-stack error */
-    /* builtIns: {
-        "AWS::Region": "us-east-1",
-        "AWS::UseDualStack": true
-    } */
-    /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
-    let conf = {
-        #[allow(unused_mut)]
-        let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
-        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
-        let builder = builder.use_dual_stack(true);
-        builder.build()
-    };
-    let client = aws_sdk_s3::Client::from_conf(conf);
-    let _result = dbg!(
-        client
-            .get_object()
-            .set_bucket(::std::option::Option::Some("mybucket--test-ab1--x-s3".to_owned()))
-            .set_key(::std::option::Option::Some("key".to_owned()))
-            .send()
-            .await
-    );
-    rcvr.expect_no_request();
-    let error = _result.expect_err("expected error: S3Express does not support Dual-stack. [dual-stack error]");
-    assert!(
-        format!("{:?}", error).contains("S3Express does not support Dual-stack."),
-        "expected error to contain `S3Express does not support Dual-stack.` but it was {:?}",
-        error
-    );
-}
-
-#[::tokio::test]
-async fn operation_input_test_get_object_179() {
-    /* documentation: dual-stack error with AP */
-    /* builtIns: {
-        "AWS::Region": "us-east-1",
-        "AWS::UseDualStack": true
-    } */
-    /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
-    let conf = {
-        #[allow(unused_mut)]
-        let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
-        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
-        let builder = builder.use_dual_stack(true);
-        builder.build()
-    };
-    let client = aws_sdk_s3::Client::from_conf(conf);
-    let _result = dbg!(
-        client
-            .get_object()
-            .set_bucket(::std::option::Option::Some("myaccesspoint--test-ab1--xa-s3".to_owned()))
-            .set_key(::std::option::Option::Some("key".to_owned()))
-            .send()
-            .await
-    );
-    rcvr.expect_no_request();
-    let error = _result.expect_err("expected error: S3Express does not support Dual-stack. [dual-stack error with AP]");
-    assert!(
-        format!("{:?}", error).contains("S3Express does not support Dual-stack."),
-        "expected error to contain `S3Express does not support Dual-stack.` but it was {:?}",
-        error
-    );
-}
-
-#[::tokio::test]
-async fn operation_input_test_get_object_180() {
     /* documentation: accelerate error */
     /* builtIns: {
         "AWS::Region": "us-east-1",
@@ -6136,7 +6068,7 @@ async fn operation_input_test_get_object_180() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_181() {
+async fn operation_input_test_get_object_179() {
     /* documentation: accelerate error with AP */
     /* builtIns: {
         "AWS::Region": "us-east-1",
@@ -6170,7 +6102,7 @@ async fn operation_input_test_get_object_181() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_182() {
+async fn operation_input_test_get_object_180() {
     /* documentation: Data plane bucket format error */
     /* builtIns: {
         "AWS::Region": "us-east-1"
@@ -6202,7 +6134,7 @@ async fn operation_input_test_get_object_182() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_183() {
+async fn operation_input_test_get_object_181() {
     /* documentation: Data plane AP format error */
     /* builtIns: {
         "AWS::Region": "us-east-1"
@@ -6234,7 +6166,7 @@ async fn operation_input_test_get_object_183() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_184() {
+async fn operation_input_test_get_object_182() {
     /* documentation: host override data plane bucket error session auth */
     /* builtIns: {
         "AWS::Region": "us-west-2",
@@ -6270,7 +6202,7 @@ async fn operation_input_test_get_object_184() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_185() {
+async fn operation_input_test_get_object_183() {
     /* documentation: host override data plane AP error session auth */
     /* builtIns: {
         "AWS::Region": "us-west-2",
@@ -6301,5 +6233,199 @@ async fn operation_input_test_get_object_185() {
         format!("{:?}", error).contains("S3Express bucket name is not a valid virtual hostable name."),
         "expected error to contain `S3Express bucket name is not a valid virtual hostable name.` but it was {:?}",
         error
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_list_directory_buckets_184() {
+    /* documentation: Control plane without bucket and dualstack */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "AWS::UseDualStack": true
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_dual_stack(true);
+        builder.build()
+    };
+    let client = aws_sdk_s3::Client::from_conf(conf);
+    let _result = dbg!(client.list_directory_buckets().send().await);
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://s3express-control.dualstack.us-east-1.amazonaws.com"),
+        "expected URI to start with `https://s3express-control.dualstack.us-east-1.amazonaws.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_list_directory_buckets_185() {
+    /* documentation: Control plane without bucket, fips and dualstack */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": true,
+        "AWS::UseDualStack": true
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(true);
+        let builder = builder.use_dual_stack(true);
+        builder.build()
+    };
+    let client = aws_sdk_s3::Client::from_conf(conf);
+    let _result = dbg!(client.list_directory_buckets().send().await);
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://s3express-control-fips.dualstack.us-east-1.amazonaws.com"),
+        "expected URI to start with `https://s3express-control-fips.dualstack.us-east-1.amazonaws.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_get_object_186() {
+    /* documentation: Data Plane with short AZ and dualstack */
+    /* builtIns: {
+        "AWS::Region": "us-west-2",
+        "AWS::UseDualStack": true
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-west-2"));
+        let builder = builder.use_dual_stack(true);
+        builder.build()
+    };
+    let client = aws_sdk_s3::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .get_object()
+            .set_bucket(::std::option::Option::Some("mybucket--usw2-az1--x-s3".to_owned()))
+            .set_key(::std::option::Option::Some("key".to_owned()))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://mybucket--usw2-az1--x-s3.s3express-usw2-az1.dualstack.us-west-2.amazonaws.com"),
+        "expected URI to start with `https://mybucket--usw2-az1--x-s3.s3express-usw2-az1.dualstack.us-west-2.amazonaws.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_get_object_187() {
+    /* documentation: Data Plane with short AZ and FIPS with dualstack */
+    /* builtIns: {
+        "AWS::Region": "us-west-2",
+        "AWS::UseFIPS": true,
+        "AWS::UseDualStack": true
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-west-2"));
+        let builder = builder.use_fips(true);
+        let builder = builder.use_dual_stack(true);
+        builder.build()
+    };
+    let client = aws_sdk_s3::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .get_object()
+            .set_bucket(::std::option::Option::Some("mybucket--usw2-az1--x-s3".to_owned()))
+            .set_key(::std::option::Option::Some("key".to_owned()))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://mybucket--usw2-az1--x-s3.s3express-fips-usw2-az1.dualstack.us-west-2.amazonaws.com"),
+        "expected URI to start with `https://mybucket--usw2-az1--x-s3.s3express-fips-usw2-az1.dualstack.us-west-2.amazonaws.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_create_bucket_188() {
+    /* documentation: Control plane and FIPS with dualstack */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": true,
+        "AWS::UseDualStack": true
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(true);
+        let builder = builder.use_dual_stack(true);
+        builder.build()
+    };
+    let client = aws_sdk_s3::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .create_bucket()
+            .set_bucket(::std::option::Option::Some("mybucket--test-ab1--x-s3".to_owned()))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://s3express-control-fips.dualstack.us-east-1.amazonaws.com/mybucket--test-ab1--x-s3"),
+        "expected URI to start with `https://s3express-control-fips.dualstack.us-east-1.amazonaws.com/mybucket--test-ab1--x-s3` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_create_bucket_189() {
+    /* documentation: Control plane with dualstack and bucket */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "AWS::UseDualStack": true
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_dual_stack(true);
+        builder.build()
+    };
+    let client = aws_sdk_s3::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .create_bucket()
+            .set_bucket(::std::option::Option::Some("mybucket--test-ab1--x-s3".to_owned()))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://s3express-control.dualstack.us-east-1.amazonaws.com/mybucket--test-ab1--x-s3"),
+        "expected URI to start with `https://s3express-control.dualstack.us-east-1.amazonaws.com/mybucket--test-ab1--x-s3` but it was `{}`",
+        uri
     );
 }

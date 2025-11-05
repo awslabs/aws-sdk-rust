@@ -21,17 +21,35 @@ pub fn ser_endpoint_details(
         crate::protocol_serde::shape_aws_ground_station_agent_endpoint::ser_aws_ground_station_agent_endpoint(&mut object_6, var_5)?;
         object_6.finish();
     }
-    if let Some(var_7) = &input.health_status {
-        object.key("healthStatus").string(var_7.as_str());
+    if let Some(var_7) = &input.uplink_aws_ground_station_agent_endpoint {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("uplinkAwsGroundStationAgentEndpoint").start_object();
+        crate::protocol_serde::shape_uplink_aws_ground_station_agent_endpoint_details::ser_uplink_aws_ground_station_agent_endpoint_details(
+            &mut object_8,
+            var_7,
+        )?;
+        object_8.finish();
     }
-    if let Some(var_8) = &input.health_reasons {
-        let mut array_9 = object.key("healthReasons").start_array();
-        for item_10 in var_8 {
+    if let Some(var_9) = &input.downlink_aws_ground_station_agent_endpoint {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("downlinkAwsGroundStationAgentEndpoint").start_object();
+        crate::protocol_serde::shape_downlink_aws_ground_station_agent_endpoint_details::ser_downlink_aws_ground_station_agent_endpoint_details(
+            &mut object_10,
+            var_9,
+        )?;
+        object_10.finish();
+    }
+    if let Some(var_11) = &input.health_status {
+        object.key("healthStatus").string(var_11.as_str());
+    }
+    if let Some(var_12) = &input.health_reasons {
+        let mut array_13 = object.key("healthReasons").start_array();
+        for item_14 in var_12 {
             {
-                array_9.value().string(item_10.as_str());
+                array_13.value().string(item_14.as_str());
             }
         }
-        array_9.finish();
+        array_13.finish();
     }
     Ok(())
 }
@@ -61,6 +79,16 @@ where
                             builder = builder.set_aws_ground_station_agent_endpoint(
                                 crate::protocol_serde::shape_aws_ground_station_agent_endpoint::de_aws_ground_station_agent_endpoint(tokens)?,
                             );
+                        }
+                        "uplinkAwsGroundStationAgentEndpoint" => {
+                            builder = builder.set_uplink_aws_ground_station_agent_endpoint(
+                                    crate::protocol_serde::shape_uplink_aws_ground_station_agent_endpoint_details::de_uplink_aws_ground_station_agent_endpoint_details(tokens)?
+                                );
+                        }
+                        "downlinkAwsGroundStationAgentEndpoint" => {
+                            builder = builder.set_downlink_aws_ground_station_agent_endpoint(
+                                    crate::protocol_serde::shape_downlink_aws_ground_station_agent_endpoint_details::de_downlink_aws_ground_station_agent_endpoint_details(tokens)?
+                                );
                         }
                         "healthStatus" => {
                             builder = builder.set_health_status(

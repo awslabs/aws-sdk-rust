@@ -3297,6 +3297,8 @@ pub(crate) mod shape_async_notification_topic_type_list;
 
 pub(crate) mod shape_auto_ml_job_step_metadata;
 
+pub(crate) mod shape_auto_rollback_alarms;
+
 pub(crate) mod shape_callback_step_metadata;
 
 pub(crate) mod shape_categorical_parameter;
@@ -3426,8 +3428,6 @@ pub(crate) mod shape_additional_enis;
 pub(crate) mod shape_attribute_names;
 
 pub(crate) mod shape_auto_ml_algorithms;
-
-pub(crate) mod shape_auto_rollback_alarms;
 
 pub(crate) mod shape_capacity_reservation;
 

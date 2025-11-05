@@ -151,6 +151,28 @@ impl CreateProjectFluentBuilder {
         self.inner.get_description()
     }
     ///
+    /// Adds a key-value pair to `resourceTags`.
+    ///
+    /// To override the contents of this collection use [`set_resource_tags`](Self::set_resource_tags).
+    ///
+    /// <p>The resource tags of the project.</p>
+    pub fn resource_tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.resource_tags(k.into(), v.into());
+        self
+    }
+    /// <p>The resource tags of the project.</p>
+    pub fn set_resource_tags(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    ) -> Self {
+        self.inner = self.inner.set_resource_tags(input);
+        self
+    }
+    /// <p>The resource tags of the project.</p>
+    pub fn get_resource_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.inner.get_resource_tags()
+    }
+    ///
     /// Appends an item to `glossaryTerms`.
     ///
     /// To override the contents of this collection use [`set_glossary_terms`](Self::set_glossary_terms).

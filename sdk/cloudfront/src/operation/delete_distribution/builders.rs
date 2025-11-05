@@ -22,7 +22,9 @@ impl crate::operation::delete_distribution::builders::DeleteDistributionInputBui
 }
 /// Fluent builder constructing a request to `DeleteDistribution`.
 ///
-/// <p>Delete a distribution.</p>
+/// <p>Delete a distribution.</p><important>
+/// <p>Before you can delete a distribution, you must disable it, which requires permission to update the distribution. Once deleted, a distribution cannot be recovered.</p>
+/// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteDistributionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

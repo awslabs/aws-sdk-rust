@@ -33,9 +33,13 @@ pub use crate::types::_time_range::TimeRangeBuilder;
 
 pub use crate::types::_ephemeris_item::EphemerisItemBuilder;
 
-pub use crate::types::_endpoint_details::EndpointDetailsBuilder;
+pub use crate::types::_downlink_aws_ground_station_agent_endpoint::DownlinkAwsGroundStationAgentEndpointBuilder;
 
-pub use crate::types::_aws_ground_station_agent_endpoint::AwsGroundStationAgentEndpointBuilder;
+pub use crate::types::_downlink_connection_details::DownlinkConnectionDetailsBuilder;
+
+pub use crate::types::_connection_details::ConnectionDetailsBuilder;
+
+pub use crate::types::_socket_address::SocketAddressBuilder;
 
 pub use crate::types::_ranged_connection_details::RangedConnectionDetailsBuilder;
 
@@ -43,9 +47,17 @@ pub use crate::types::_ranged_socket_address::RangedSocketAddressBuilder;
 
 pub use crate::types::_integer_range::IntegerRangeBuilder;
 
-pub use crate::types::_connection_details::ConnectionDetailsBuilder;
+pub use crate::types::_uplink_aws_ground_station_agent_endpoint::UplinkAwsGroundStationAgentEndpointBuilder;
 
-pub use crate::types::_socket_address::SocketAddressBuilder;
+pub use crate::types::_uplink_connection_details::UplinkConnectionDetailsBuilder;
+
+pub use crate::types::_endpoint_details::EndpointDetailsBuilder;
+
+pub use crate::types::_downlink_aws_ground_station_agent_endpoint_details::DownlinkAwsGroundStationAgentEndpointDetailsBuilder;
+
+pub use crate::types::_uplink_aws_ground_station_agent_endpoint_details::UplinkAwsGroundStationAgentEndpointDetailsBuilder;
+
+pub use crate::types::_aws_ground_station_agent_endpoint::AwsGroundStationAgentEndpointBuilder;
 
 pub use crate::types::_dataflow_endpoint::DataflowEndpointBuilder;
 

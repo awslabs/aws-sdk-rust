@@ -13,6 +13,8 @@ pub enum Error {
     ResourceLimitExceededException(crate::types::error::ResourceLimitExceededException),
     /// <p>Resource was not found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
+    /// <p>Request would cause a service quota to be exceeded.</p>
+    ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
@@ -30,6 +32,7 @@ impl ::std::fmt::Display for Error {
             Error::ResourceInUseException(inner) => inner.fmt(f),
             Error::ResourceLimitExceededException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
+            Error::ServiceQuotaExceededException(inner) => inner.fmt(f),
             Error::Unhandled(_) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
                     write!(f, "unhandled error ({code})")
@@ -56,6 +59,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::ResourceInUseException(inner) => inner.meta(),
             Self::ResourceLimitExceededException(inner) => inner.meta(),
             Self::ResourceNotFoundException(inner) => inner.meta(),
+            Self::ServiceQuotaExceededException(inner) => inner.meta(),
             Self::Unhandled(inner) => &inner.meta,
         }
     }
@@ -143,6 +147,50 @@ impl From<crate::operation::create_dataflow_endpoint_group::CreateDataflowEndpoi
                 Error::ResourceNotFoundException(inner)
             }
             crate::operation::create_dataflow_endpoint_group::CreateDataflowEndpointGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_dataflow_endpoint_group_v2::CreateDataflowEndpointGroupV2Error,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_dataflow_endpoint_group_v2::CreateDataflowEndpointGroupV2Error,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_dataflow_endpoint_group_v2::CreateDataflowEndpointGroupV2Error> for Error {
+    fn from(err: crate::operation::create_dataflow_endpoint_group_v2::CreateDataflowEndpointGroupV2Error) -> Self {
+        match err {
+            crate::operation::create_dataflow_endpoint_group_v2::CreateDataflowEndpointGroupV2Error::DependencyException(inner) => {
+                Error::DependencyException(inner)
+            }
+            crate::operation::create_dataflow_endpoint_group_v2::CreateDataflowEndpointGroupV2Error::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::create_dataflow_endpoint_group_v2::CreateDataflowEndpointGroupV2Error::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_dataflow_endpoint_group_v2::CreateDataflowEndpointGroupV2Error::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_dataflow_endpoint_group_v2::CreateDataflowEndpointGroupV2Error::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -387,6 +435,39 @@ impl From<crate::operation::get_agent_configuration::GetAgentConfigurationError>
                 Error::ResourceNotFoundException(inner)
             }
             crate::operation::get_agent_configuration::GetAgentConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_agent_task_response_url::GetAgentTaskResponseUrlError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_agent_task_response_url::GetAgentTaskResponseUrlError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_agent_task_response_url::GetAgentTaskResponseUrlError> for Error {
+    fn from(err: crate::operation::get_agent_task_response_url::GetAgentTaskResponseUrlError) -> Self {
+        match err {
+            crate::operation::get_agent_task_response_url::GetAgentTaskResponseUrlError::DependencyException(inner) => {
+                Error::DependencyException(inner)
+            }
+            crate::operation::get_agent_task_response_url::GetAgentTaskResponseUrlError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::get_agent_task_response_url::GetAgentTaskResponseUrlError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_agent_task_response_url::GetAgentTaskResponseUrlError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -959,6 +1040,7 @@ impl ::std::error::Error for Error {
             Error::ResourceInUseException(inner) => inner.source(),
             Error::ResourceLimitExceededException(inner) => inner.source(),
             Error::ResourceNotFoundException(inner) => inner.source(),
+            Error::ServiceQuotaExceededException(inner) => inner.source(),
             Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source),
         }
     }
@@ -971,6 +1053,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::ResourceInUseException(e) => e.request_id(),
             Self::ResourceLimitExceededException(e) => e.request_id(),
             Self::ResourceNotFoundException(e) => e.request_id(),
+            Self::ServiceQuotaExceededException(e) => e.request_id(),
             Self::Unhandled(e) => e.meta.request_id(),
         }
     }

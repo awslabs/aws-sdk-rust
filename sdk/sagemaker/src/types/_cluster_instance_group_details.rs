@@ -51,6 +51,12 @@ pub struct ClusterInstanceGroupDetails {
     pub current_image_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Machine Image (AMI) desired for the instance group.</p>
     pub desired_image_id: ::std::option::Option<::std::string::String>,
+    /// <p>The number of nodes running a specific image ID since the last software update request.</p>
+    pub target_state_count: ::std::option::Option<i32>,
+    /// <p>Status of the last software udpate request.</p>
+    pub software_update_status: ::std::option::Option<crate::types::SoftwareUpdateStatus>,
+    /// <p>The configuration to use when updating the AMI versions.</p>
+    pub active_software_update_config: ::std::option::Option<crate::types::DeploymentConfiguration>,
 }
 impl ClusterInstanceGroupDetails {
     /// <p>The number of instances that are currently in the instance group of a SageMaker HyperPod cluster.</p>
@@ -136,6 +142,18 @@ impl ClusterInstanceGroupDetails {
     pub fn desired_image_id(&self) -> ::std::option::Option<&str> {
         self.desired_image_id.as_deref()
     }
+    /// <p>The number of nodes running a specific image ID since the last software update request.</p>
+    pub fn target_state_count(&self) -> ::std::option::Option<i32> {
+        self.target_state_count
+    }
+    /// <p>Status of the last software udpate request.</p>
+    pub fn software_update_status(&self) -> ::std::option::Option<&crate::types::SoftwareUpdateStatus> {
+        self.software_update_status.as_ref()
+    }
+    /// <p>The configuration to use when updating the AMI versions.</p>
+    pub fn active_software_update_config(&self) -> ::std::option::Option<&crate::types::DeploymentConfiguration> {
+        self.active_software_update_config.as_ref()
+    }
 }
 impl ClusterInstanceGroupDetails {
     /// Creates a new builder-style object to manufacture [`ClusterInstanceGroupDetails`](crate::types::ClusterInstanceGroupDetails).
@@ -164,6 +182,9 @@ pub struct ClusterInstanceGroupDetailsBuilder {
     pub(crate) scheduled_update_config: ::std::option::Option<crate::types::ScheduledUpdateConfig>,
     pub(crate) current_image_id: ::std::option::Option<::std::string::String>,
     pub(crate) desired_image_id: ::std::option::Option<::std::string::String>,
+    pub(crate) target_state_count: ::std::option::Option<i32>,
+    pub(crate) software_update_status: ::std::option::Option<crate::types::SoftwareUpdateStatus>,
+    pub(crate) active_software_update_config: ::std::option::Option<crate::types::DeploymentConfiguration>,
 }
 impl ClusterInstanceGroupDetailsBuilder {
     /// <p>The number of instances that are currently in the instance group of a SageMaker HyperPod cluster.</p>
@@ -447,6 +468,48 @@ impl ClusterInstanceGroupDetailsBuilder {
     pub fn get_desired_image_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.desired_image_id
     }
+    /// <p>The number of nodes running a specific image ID since the last software update request.</p>
+    pub fn target_state_count(mut self, input: i32) -> Self {
+        self.target_state_count = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of nodes running a specific image ID since the last software update request.</p>
+    pub fn set_target_state_count(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.target_state_count = input;
+        self
+    }
+    /// <p>The number of nodes running a specific image ID since the last software update request.</p>
+    pub fn get_target_state_count(&self) -> &::std::option::Option<i32> {
+        &self.target_state_count
+    }
+    /// <p>Status of the last software udpate request.</p>
+    pub fn software_update_status(mut self, input: crate::types::SoftwareUpdateStatus) -> Self {
+        self.software_update_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Status of the last software udpate request.</p>
+    pub fn set_software_update_status(mut self, input: ::std::option::Option<crate::types::SoftwareUpdateStatus>) -> Self {
+        self.software_update_status = input;
+        self
+    }
+    /// <p>Status of the last software udpate request.</p>
+    pub fn get_software_update_status(&self) -> &::std::option::Option<crate::types::SoftwareUpdateStatus> {
+        &self.software_update_status
+    }
+    /// <p>The configuration to use when updating the AMI versions.</p>
+    pub fn active_software_update_config(mut self, input: crate::types::DeploymentConfiguration) -> Self {
+        self.active_software_update_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration to use when updating the AMI versions.</p>
+    pub fn set_active_software_update_config(mut self, input: ::std::option::Option<crate::types::DeploymentConfiguration>) -> Self {
+        self.active_software_update_config = input;
+        self
+    }
+    /// <p>The configuration to use when updating the AMI versions.</p>
+    pub fn get_active_software_update_config(&self) -> &::std::option::Option<crate::types::DeploymentConfiguration> {
+        &self.active_software_update_config
+    }
     /// Consumes the builder and constructs a [`ClusterInstanceGroupDetails`](crate::types::ClusterInstanceGroupDetails).
     pub fn build(self) -> crate::types::ClusterInstanceGroupDetails {
         crate::types::ClusterInstanceGroupDetails {
@@ -466,6 +529,9 @@ impl ClusterInstanceGroupDetailsBuilder {
             scheduled_update_config: self.scheduled_update_config,
             current_image_id: self.current_image_id,
             desired_image_id: self.desired_image_id,
+            target_state_count: self.target_state_count,
+            software_update_status: self.software_update_status,
+            active_software_update_config: self.active_software_update_config,
         }
     }
 }

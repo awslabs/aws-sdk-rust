@@ -16,6 +16,10 @@ pub struct AnycastIpListSummary {
     pub ip_count: i32,
     /// <p>The last time the Anycast static IP list was modified.</p>
     pub last_modified_time: ::aws_smithy_types::DateTime,
+    /// <p>The IP address type for the Anycast static IP list.</p>
+    pub ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
+    /// <p>The current version (ETag value) of the Anycast static IP list.</p>
+    pub e_tag: ::std::option::Option<::std::string::String>,
 }
 impl AnycastIpListSummary {
     /// <p>The ID of the Anycast static IP list.</p>
@@ -46,6 +50,14 @@ impl AnycastIpListSummary {
     pub fn last_modified_time(&self) -> &::aws_smithy_types::DateTime {
         &self.last_modified_time
     }
+    /// <p>The IP address type for the Anycast static IP list.</p>
+    pub fn ip_address_type(&self) -> ::std::option::Option<&crate::types::IpAddressType> {
+        self.ip_address_type.as_ref()
+    }
+    /// <p>The current version (ETag value) of the Anycast static IP list.</p>
+    pub fn e_tag(&self) -> ::std::option::Option<&str> {
+        self.e_tag.as_deref()
+    }
 }
 impl AnycastIpListSummary {
     /// Creates a new builder-style object to manufacture [`AnycastIpListSummary`](crate::types::AnycastIpListSummary).
@@ -64,6 +76,8 @@ pub struct AnycastIpListSummaryBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) ip_count: ::std::option::Option<i32>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
+    pub(crate) e_tag: ::std::option::Option<::std::string::String>,
 }
 impl AnycastIpListSummaryBuilder {
     /// <p>The ID of the Anycast static IP list.</p>
@@ -156,6 +170,34 @@ impl AnycastIpListSummaryBuilder {
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_time
     }
+    /// <p>The IP address type for the Anycast static IP list.</p>
+    pub fn ip_address_type(mut self, input: crate::types::IpAddressType) -> Self {
+        self.ip_address_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The IP address type for the Anycast static IP list.</p>
+    pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::IpAddressType>) -> Self {
+        self.ip_address_type = input;
+        self
+    }
+    /// <p>The IP address type for the Anycast static IP list.</p>
+    pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::IpAddressType> {
+        &self.ip_address_type
+    }
+    /// <p>The current version (ETag value) of the Anycast static IP list.</p>
+    pub fn e_tag(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.e_tag = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The current version (ETag value) of the Anycast static IP list.</p>
+    pub fn set_e_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.e_tag = input;
+        self
+    }
+    /// <p>The current version (ETag value) of the Anycast static IP list.</p>
+    pub fn get_e_tag(&self) -> &::std::option::Option<::std::string::String> {
+        &self.e_tag
+    }
     /// Consumes the builder and constructs a [`AnycastIpListSummary`](crate::types::AnycastIpListSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::AnycastIpListSummaryBuilder::id)
@@ -202,6 +244,8 @@ impl AnycastIpListSummaryBuilder {
                     "last_modified_time was not specified but it is required when building AnycastIpListSummary",
                 )
             })?,
+            ip_address_type: self.ip_address_type,
+            e_tag: self.e_tag,
         })
     }
 }

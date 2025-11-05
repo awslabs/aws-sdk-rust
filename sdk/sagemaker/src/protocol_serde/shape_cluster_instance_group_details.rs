@@ -114,6 +114,25 @@ where
                                     .transpose()?,
                             );
                         }
+                        "TargetStateCount" => {
+                            builder = builder.set_target_state_count(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "SoftwareUpdateStatus" => {
+                            builder = builder.set_software_update_status(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::SoftwareUpdateStatus::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ActiveSoftwareUpdateConfig" => {
+                            builder = builder.set_active_software_update_config(
+                                crate::protocol_serde::shape_deployment_configuration::de_deployment_configuration(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

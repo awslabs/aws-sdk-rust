@@ -27,5 +27,8 @@ pub fn ser_self_managed_active_directory_configuration_updates(
     if let Some(var_8) = &input.file_system_administrators_group {
         object.key("FileSystemAdministratorsGroup").string(var_8.as_str());
     }
+    if let Some(var_9) = &input.domain_join_service_account_secret {
+        object.key("DomainJoinServiceAccountSecret").string(var_9.as_str());
+    }
     Ok(())
 }

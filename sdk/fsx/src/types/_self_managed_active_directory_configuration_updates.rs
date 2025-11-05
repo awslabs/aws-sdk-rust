@@ -17,6 +17,8 @@ pub struct SelfManagedActiveDirectoryConfigurationUpdates {
     pub organizational_unit_distinguished_name: ::std::option::Option<::std::string::String>,
     /// <p>For FSx for ONTAP file systems only - Specifies the updated name of the self-managed Active Directory domain group whose members are granted administrative privileges for the Amazon FSx resource.</p>
     pub file_system_administrators_group: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies the updated Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret containing the self-managed Active Directory domain join service account credentials. Amazon FSx uses this account to join to your self-managed Active Directory domain.</p>
+    pub domain_join_service_account_secret: ::std::option::Option<::std::string::String>,
 }
 impl SelfManagedActiveDirectoryConfigurationUpdates {
     /// <p>Specifies the updated user name for the service account on your self-managed Active Directory domain. Amazon FSx uses this account to join to your self-managed Active Directory domain.</p>
@@ -46,6 +48,10 @@ impl SelfManagedActiveDirectoryConfigurationUpdates {
     pub fn file_system_administrators_group(&self) -> ::std::option::Option<&str> {
         self.file_system_administrators_group.as_deref()
     }
+    /// <p>Specifies the updated Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret containing the self-managed Active Directory domain join service account credentials. Amazon FSx uses this account to join to your self-managed Active Directory domain.</p>
+    pub fn domain_join_service_account_secret(&self) -> ::std::option::Option<&str> {
+        self.domain_join_service_account_secret.as_deref()
+    }
 }
 impl ::std::fmt::Debug for SelfManagedActiveDirectoryConfigurationUpdates {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -56,6 +62,7 @@ impl ::std::fmt::Debug for SelfManagedActiveDirectoryConfigurationUpdates {
         formatter.field("domain_name", &self.domain_name);
         formatter.field("organizational_unit_distinguished_name", &self.organizational_unit_distinguished_name);
         formatter.field("file_system_administrators_group", &self.file_system_administrators_group);
+        formatter.field("domain_join_service_account_secret", &self.domain_join_service_account_secret);
         formatter.finish()
     }
 }
@@ -76,6 +83,7 @@ pub struct SelfManagedActiveDirectoryConfigurationUpdatesBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) organizational_unit_distinguished_name: ::std::option::Option<::std::string::String>,
     pub(crate) file_system_administrators_group: ::std::option::Option<::std::string::String>,
+    pub(crate) domain_join_service_account_secret: ::std::option::Option<::std::string::String>,
 }
 impl SelfManagedActiveDirectoryConfigurationUpdatesBuilder {
     /// <p>Specifies the updated user name for the service account on your self-managed Active Directory domain. Amazon FSx uses this account to join to your self-managed Active Directory domain.</p>
@@ -171,6 +179,20 @@ impl SelfManagedActiveDirectoryConfigurationUpdatesBuilder {
     pub fn get_file_system_administrators_group(&self) -> &::std::option::Option<::std::string::String> {
         &self.file_system_administrators_group
     }
+    /// <p>Specifies the updated Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret containing the self-managed Active Directory domain join service account credentials. Amazon FSx uses this account to join to your self-managed Active Directory domain.</p>
+    pub fn domain_join_service_account_secret(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.domain_join_service_account_secret = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Specifies the updated Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret containing the self-managed Active Directory domain join service account credentials. Amazon FSx uses this account to join to your self-managed Active Directory domain.</p>
+    pub fn set_domain_join_service_account_secret(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.domain_join_service_account_secret = input;
+        self
+    }
+    /// <p>Specifies the updated Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret containing the self-managed Active Directory domain join service account credentials. Amazon FSx uses this account to join to your self-managed Active Directory domain.</p>
+    pub fn get_domain_join_service_account_secret(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_join_service_account_secret
+    }
     /// Consumes the builder and constructs a [`SelfManagedActiveDirectoryConfigurationUpdates`](crate::types::SelfManagedActiveDirectoryConfigurationUpdates).
     pub fn build(self) -> crate::types::SelfManagedActiveDirectoryConfigurationUpdates {
         crate::types::SelfManagedActiveDirectoryConfigurationUpdates {
@@ -180,6 +202,7 @@ impl SelfManagedActiveDirectoryConfigurationUpdatesBuilder {
             domain_name: self.domain_name,
             organizational_unit_distinguished_name: self.organizational_unit_distinguished_name,
             file_system_administrators_group: self.file_system_administrators_group,
+            domain_join_service_account_secret: self.domain_join_service_account_secret,
         }
     }
 }
@@ -192,6 +215,7 @@ impl ::std::fmt::Debug for SelfManagedActiveDirectoryConfigurationUpdatesBuilder
         formatter.field("domain_name", &self.domain_name);
         formatter.field("organizational_unit_distinguished_name", &self.organizational_unit_distinguished_name);
         formatter.field("file_system_administrators_group", &self.file_system_administrators_group);
+        formatter.field("domain_join_service_account_secret", &self.domain_join_service_account_secret);
         formatter.finish()
     }
 }

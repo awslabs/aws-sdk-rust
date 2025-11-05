@@ -14,6 +14,8 @@ pub struct SelfManagedActiveDirectoryAttributes {
     pub user_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of up to three IP addresses of DNS servers or domain controllers in the self-managed AD directory.</p>
     pub dns_ips: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret containing the service account credentials used to join the file system to your self-managed Active Directory domain.</p>
+    pub domain_join_service_account_secret: ::std::option::Option<::std::string::String>,
 }
 impl SelfManagedActiveDirectoryAttributes {
     /// <p>The fully qualified domain name of the self-managed AD directory.</p>
@@ -38,6 +40,10 @@ impl SelfManagedActiveDirectoryAttributes {
     pub fn dns_ips(&self) -> &[::std::string::String] {
         self.dns_ips.as_deref().unwrap_or_default()
     }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret containing the service account credentials used to join the file system to your self-managed Active Directory domain.</p>
+    pub fn domain_join_service_account_secret(&self) -> ::std::option::Option<&str> {
+        self.domain_join_service_account_secret.as_deref()
+    }
 }
 impl SelfManagedActiveDirectoryAttributes {
     /// Creates a new builder-style object to manufacture [`SelfManagedActiveDirectoryAttributes`](crate::types::SelfManagedActiveDirectoryAttributes).
@@ -55,6 +61,7 @@ pub struct SelfManagedActiveDirectoryAttributesBuilder {
     pub(crate) file_system_administrators_group: ::std::option::Option<::std::string::String>,
     pub(crate) user_name: ::std::option::Option<::std::string::String>,
     pub(crate) dns_ips: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) domain_join_service_account_secret: ::std::option::Option<::std::string::String>,
 }
 impl SelfManagedActiveDirectoryAttributesBuilder {
     /// <p>The fully qualified domain name of the self-managed AD directory.</p>
@@ -133,6 +140,20 @@ impl SelfManagedActiveDirectoryAttributesBuilder {
     pub fn get_dns_ips(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.dns_ips
     }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret containing the service account credentials used to join the file system to your self-managed Active Directory domain.</p>
+    pub fn domain_join_service_account_secret(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.domain_join_service_account_secret = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret containing the service account credentials used to join the file system to your self-managed Active Directory domain.</p>
+    pub fn set_domain_join_service_account_secret(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.domain_join_service_account_secret = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret containing the service account credentials used to join the file system to your self-managed Active Directory domain.</p>
+    pub fn get_domain_join_service_account_secret(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_join_service_account_secret
+    }
     /// Consumes the builder and constructs a [`SelfManagedActiveDirectoryAttributes`](crate::types::SelfManagedActiveDirectoryAttributes).
     pub fn build(self) -> crate::types::SelfManagedActiveDirectoryAttributes {
         crate::types::SelfManagedActiveDirectoryAttributes {
@@ -141,6 +162,7 @@ impl SelfManagedActiveDirectoryAttributesBuilder {
             file_system_administrators_group: self.file_system_administrators_group,
             user_name: self.user_name,
             dns_ips: self.dns_ips,
+            domain_join_service_account_secret: self.domain_join_service_account_secret,
         }
     }
 }

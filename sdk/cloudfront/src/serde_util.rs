@@ -306,6 +306,24 @@ pub(crate) fn distribution_id_list_correct_errors(
     builder
 }
 
+pub(crate) fn distribution_id_owner_list_correct_errors(
+    mut builder: crate::types::builders::DistributionIdOwnerListBuilder,
+) -> crate::types::builders::DistributionIdOwnerListBuilder {
+    if builder.marker.is_none() {
+        builder.marker = Some(Default::default())
+    }
+    if builder.max_items.is_none() {
+        builder.max_items = Some(Default::default())
+    }
+    if builder.is_truncated.is_none() {
+        builder.is_truncated = Some(Default::default())
+    }
+    if builder.quantity.is_none() {
+        builder.quantity = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn distribution_list_correct_errors(
     mut builder: crate::types::builders::DistributionListBuilder,
 ) -> crate::types::builders::DistributionListBuilder {
@@ -1443,6 +1461,18 @@ pub(crate) fn continuous_deployment_single_weight_config_correct_errors(
 pub(crate) fn cookie_names_correct_errors(mut builder: crate::types::builders::CookieNamesBuilder) -> crate::types::builders::CookieNamesBuilder {
     if builder.quantity.is_none() {
         builder.quantity = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn distribution_id_owner_correct_errors(
+    mut builder: crate::types::builders::DistributionIdOwnerBuilder,
+) -> crate::types::builders::DistributionIdOwnerBuilder {
+    if builder.distribution_id.is_none() {
+        builder.distribution_id = Some(Default::default())
+    }
+    if builder.owner_account_id.is_none() {
+        builder.owner_account_id = Some(Default::default())
     }
     builder
 }

@@ -2551,6 +2551,33 @@ impl From<crate::operation::delete_realtime_log_config::DeleteRealtimeLogConfigE
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_resource_policy::DeleteResourcePolicyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_resource_policy::DeleteResourcePolicyError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_resource_policy::DeleteResourcePolicyError> for Error {
+    fn from(err: crate::operation::delete_resource_policy::DeleteResourcePolicyError) -> Self {
+        match err {
+            crate::operation::delete_resource_policy::DeleteResourcePolicyError::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::operation::delete_resource_policy::DeleteResourcePolicyError::EntityNotFound(inner) => Error::EntityNotFound(inner),
+            crate::operation::delete_resource_policy::DeleteResourcePolicyError::IllegalDelete(inner) => Error::IllegalDelete(inner),
+            crate::operation::delete_resource_policy::DeleteResourcePolicyError::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::operation::delete_resource_policy::DeleteResourcePolicyError::PreconditionFailed(inner) => Error::PreconditionFailed(inner),
+            crate::operation::delete_resource_policy::DeleteResourcePolicyError::UnsupportedOperation(inner) => Error::UnsupportedOperation(inner),
+            crate::operation::delete_resource_policy::DeleteResourcePolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_response_headers_policy::DeleteResponseHeadersPolicyError, R>>
     for Error
@@ -3727,6 +3754,31 @@ impl From<crate::operation::get_realtime_log_config::GetRealtimeLogConfigError> 
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_resource_policy::GetResourcePolicyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_resource_policy::GetResourcePolicyError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_resource_policy::GetResourcePolicyError> for Error {
+    fn from(err: crate::operation::get_resource_policy::GetResourcePolicyError) -> Self {
+        match err {
+            crate::operation::get_resource_policy::GetResourcePolicyError::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::operation::get_resource_policy::GetResourcePolicyError::EntityNotFound(inner) => Error::EntityNotFound(inner),
+            crate::operation::get_resource_policy::GetResourcePolicyError::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::operation::get_resource_policy::GetResourcePolicyError::UnsupportedOperation(inner) => Error::UnsupportedOperation(inner),
+            crate::operation::get_resource_policy::GetResourcePolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_response_headers_policy::GetResponseHeadersPolicyError, R>>
     for Error
 where
@@ -4277,6 +4329,52 @@ impl From<crate::operation::list_distributions_by_origin_request_policy_id::List
             crate::operation::list_distributions_by_origin_request_policy_id::ListDistributionsByOriginRequestPolicyIdError::InvalidArgument(inner) => Error::InvalidArgument(inner),
             crate::operation::list_distributions_by_origin_request_policy_id::ListDistributionsByOriginRequestPolicyIdError::NoSuchOriginRequestPolicy(inner) => Error::NoSuchOriginRequestPolicy(inner),
             crate::operation::list_distributions_by_origin_request_policy_id::ListDistributionsByOriginRequestPolicyIdError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_distributions_by_owned_resource::ListDistributionsByOwnedResourceError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_distributions_by_owned_resource::ListDistributionsByOwnedResourceError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_distributions_by_owned_resource::ListDistributionsByOwnedResourceError> for Error {
+    fn from(err: crate::operation::list_distributions_by_owned_resource::ListDistributionsByOwnedResourceError) -> Self {
+        match err {
+            crate::operation::list_distributions_by_owned_resource::ListDistributionsByOwnedResourceError::AccessDenied(inner) => {
+                Error::AccessDenied(inner)
+            }
+            crate::operation::list_distributions_by_owned_resource::ListDistributionsByOwnedResourceError::EntityNotFound(inner) => {
+                Error::EntityNotFound(inner)
+            }
+            crate::operation::list_distributions_by_owned_resource::ListDistributionsByOwnedResourceError::InvalidArgument(inner) => {
+                Error::InvalidArgument(inner)
+            }
+            crate::operation::list_distributions_by_owned_resource::ListDistributionsByOwnedResourceError::UnsupportedOperation(inner) => {
+                Error::UnsupportedOperation(inner)
+            }
+            crate::operation::list_distributions_by_owned_resource::ListDistributionsByOwnedResourceError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -4973,6 +5071,33 @@ impl From<crate::operation::publish_function::PublishFunctionError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_resource_policy::PutResourcePolicyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_resource_policy::PutResourcePolicyError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::put_resource_policy::PutResourcePolicyError> for Error {
+    fn from(err: crate::operation::put_resource_policy::PutResourcePolicyError) -> Self {
+        match err {
+            crate::operation::put_resource_policy::PutResourcePolicyError::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::operation::put_resource_policy::PutResourcePolicyError::EntityNotFound(inner) => Error::EntityNotFound(inner),
+            crate::operation::put_resource_policy::PutResourcePolicyError::IllegalUpdate(inner) => Error::IllegalUpdate(inner),
+            crate::operation::put_resource_policy::PutResourcePolicyError::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::operation::put_resource_policy::PutResourcePolicyError::PreconditionFailed(inner) => Error::PreconditionFailed(inner),
+            crate::operation::put_resource_policy::PutResourcePolicyError::UnsupportedOperation(inner) => Error::UnsupportedOperation(inner),
+            crate::operation::put_resource_policy::PutResourcePolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::tag_resource::TagResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -5046,6 +5171,33 @@ impl From<crate::operation::untag_resource::UntagResourceError> for Error {
             crate::operation::untag_resource::UntagResourceError::InvalidTagging(inner) => Error::InvalidTagging(inner),
             crate::operation::untag_resource::UntagResourceError::NoSuchResource(inner) => Error::NoSuchResource(inner),
             crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_anycast_ip_list::UpdateAnycastIpListError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_anycast_ip_list::UpdateAnycastIpListError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_anycast_ip_list::UpdateAnycastIpListError> for Error {
+    fn from(err: crate::operation::update_anycast_ip_list::UpdateAnycastIpListError) -> Self {
+        match err {
+            crate::operation::update_anycast_ip_list::UpdateAnycastIpListError::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::operation::update_anycast_ip_list::UpdateAnycastIpListError::EntityNotFound(inner) => Error::EntityNotFound(inner),
+            crate::operation::update_anycast_ip_list::UpdateAnycastIpListError::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::operation::update_anycast_ip_list::UpdateAnycastIpListError::InvalidIfMatchVersion(inner) => Error::InvalidIfMatchVersion(inner),
+            crate::operation::update_anycast_ip_list::UpdateAnycastIpListError::PreconditionFailed(inner) => Error::PreconditionFailed(inner),
+            crate::operation::update_anycast_ip_list::UpdateAnycastIpListError::UnsupportedOperation(inner) => Error::UnsupportedOperation(inner),
+            crate::operation::update_anycast_ip_list::UpdateAnycastIpListError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

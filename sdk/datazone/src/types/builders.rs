@@ -133,6 +133,8 @@ pub use crate::types::_environment_configuration_parameters_details::Environment
 
 pub use crate::types::_environment_configuration_parameter::EnvironmentConfigurationParameterBuilder;
 
+pub use crate::types::_resource_tag_parameter::ResourceTagParameterBuilder;
+
 pub use crate::types::_environment_deployment_details::EnvironmentDeploymentDetailsBuilder;
 
 pub use crate::types::_environment_error::EnvironmentErrorBuilder;
@@ -142,6 +144,8 @@ pub use crate::types::_environment_configuration_user_parameter::EnvironmentConf
 pub use crate::types::_environment_parameter::EnvironmentParameterBuilder;
 
 pub use crate::types::_environment_resolved_account::EnvironmentResolvedAccountBuilder;
+
+pub use crate::types::_resource_tag::ResourceTagBuilder;
 
 pub use crate::types::_project_deletion_error::ProjectDeletionErrorBuilder;
 

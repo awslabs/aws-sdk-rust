@@ -19,10 +19,10 @@ pub fn ser_disable_fast_snapshot_restores_input_input_input(
         }
     }
     #[allow(unused_mut)]
-    let mut scope_6 = writer.prefix("SourceSnapshotId");
-    if let Some(var_7) = &input.source_snapshot_ids {
+    let mut scope_6 = writer.prefix("AvailabilityZoneId");
+    if let Some(var_7) = &input.availability_zone_ids {
         if !var_7.is_empty() {
-            let mut list_9 = scope_6.start_list(true, Some("SnapshotId"));
+            let mut list_9 = scope_6.start_list(true, Some("AvailabilityZoneId"));
             for item_8 in var_7 {
                 #[allow(unused_mut)]
                 let mut entry_10 = list_9.entry();
@@ -32,9 +32,22 @@ pub fn ser_disable_fast_snapshot_restores_input_input_input(
         }
     }
     #[allow(unused_mut)]
-    let mut scope_11 = writer.prefix("DryRun");
-    if let Some(var_12) = &input.dry_run {
-        scope_11.boolean(*var_12);
+    let mut scope_11 = writer.prefix("SourceSnapshotId");
+    if let Some(var_12) = &input.source_snapshot_ids {
+        if !var_12.is_empty() {
+            let mut list_14 = scope_11.start_list(true, Some("SnapshotId"));
+            for item_13 in var_12 {
+                #[allow(unused_mut)]
+                let mut entry_15 = list_14.entry();
+                entry_15.string(item_13);
+            }
+            list_14.finish();
+        }
+    }
+    #[allow(unused_mut)]
+    let mut scope_16 = writer.prefix("DryRun");
+    if let Some(var_17) = &input.dry_run {
+        scope_16.boolean(*var_17);
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

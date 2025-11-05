@@ -1865,6 +1865,8 @@ pub use crate::types::_instance_group_status::InstanceGroupStatus;
 
 pub use crate::types::_cluster_instance_group_details::ClusterInstanceGroupDetails;
 
+pub use crate::types::_software_update_status::SoftwareUpdateStatus;
+
 pub use crate::types::_auto_ml_compute_config::AutoMlComputeConfig;
 
 pub use crate::types::_emr_serverless_compute_config::EmrServerlessComputeConfig;
@@ -3702,6 +3704,8 @@ mod _sharing_type;
 mod _shuffle_config;
 
 mod _skip_model_validation;
+
+mod _software_update_status;
 
 mod _sort_actions_by;
 

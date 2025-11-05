@@ -307,6 +307,8 @@ mod delete_public_key;
 
 mod delete_realtime_log_config;
 
+mod delete_resource_policy;
+
 mod delete_response_headers_policy;
 
 mod delete_streaming_distribution;
@@ -383,6 +385,8 @@ mod get_public_key_config;
 
 mod get_realtime_log_config;
 
+mod get_resource_policy;
+
 mod get_response_headers_policy;
 
 mod get_response_headers_policy_config;
@@ -420,6 +424,8 @@ mod list_distributions_by_connection_mode;
 mod list_distributions_by_key_group;
 
 mod list_distributions_by_origin_request_policy_id;
+
+mod list_distributions_by_owned_resource;
 
 mod list_distributions_by_realtime_log_config;
 
@@ -463,11 +469,15 @@ mod list_vpc_origins;
 
 mod publish_function;
 
+mod put_resource_policy;
+
 mod tag_resource;
 
 mod test_function;
 
 mod untag_resource;
+
+mod update_anycast_ip_list;
 
 mod update_cache_policy;
 

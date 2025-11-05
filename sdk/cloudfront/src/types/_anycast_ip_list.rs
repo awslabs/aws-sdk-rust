@@ -12,6 +12,8 @@ pub struct AnycastIpList {
     pub status: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the Anycast static IP list.</p>
     pub arn: ::std::string::String,
+    /// <p>The IP address type for the Anycast static IP list.</p>
+    pub ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
     /// <p>The static IP addresses that are allocated to the Anycast static IP list.</p>
     pub anycast_ips: ::std::vec::Vec<::std::string::String>,
     /// <p>The number of IP addresses in the Anycast static IP list.</p>
@@ -39,6 +41,10 @@ impl AnycastIpList {
     pub fn arn(&self) -> &str {
         use std::ops::Deref;
         self.arn.deref()
+    }
+    /// <p>The IP address type for the Anycast static IP list.</p>
+    pub fn ip_address_type(&self) -> ::std::option::Option<&crate::types::IpAddressType> {
+        self.ip_address_type.as_ref()
     }
     /// <p>The static IP addresses that are allocated to the Anycast static IP list.</p>
     pub fn anycast_ips(&self) -> &[::std::string::String] {
@@ -69,6 +75,7 @@ pub struct AnycastIpListBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
     pub(crate) anycast_ips: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) ip_count: ::std::option::Option<i32>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -133,6 +140,20 @@ impl AnycastIpListBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Anycast static IP list.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
+    }
+    /// <p>The IP address type for the Anycast static IP list.</p>
+    pub fn ip_address_type(mut self, input: crate::types::IpAddressType) -> Self {
+        self.ip_address_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The IP address type for the Anycast static IP list.</p>
+    pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::IpAddressType>) -> Self {
+        self.ip_address_type = input;
+        self
+    }
+    /// <p>The IP address type for the Anycast static IP list.</p>
+    pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::IpAddressType> {
+        &self.ip_address_type
     }
     /// Appends an item to `anycast_ips`.
     ///
@@ -219,6 +240,7 @@ impl AnycastIpListBuilder {
                     "arn was not specified but it is required when building AnycastIpList",
                 )
             })?,
+            ip_address_type: self.ip_address_type,
             anycast_ips: self.anycast_ips.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "anycast_ips",

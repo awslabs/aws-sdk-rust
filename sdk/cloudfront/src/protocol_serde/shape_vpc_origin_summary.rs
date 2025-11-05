@@ -87,7 +87,7 @@ pub fn de_vpc_origin_summary(
                 builder = builder.set_arn(var_6);
             }
             ,
-            s if s.matches("OriginEndpointArn") /* OriginEndpointArn com.amazonaws.cloudfront#VpcOriginSummary$OriginEndpointArn */ =>  {
+            s if s.matches("AccountId") /* AccountId com.amazonaws.cloudfront#VpcOriginSummary$AccountId */ =>  {
                 let var_7 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -97,7 +97,20 @@ pub fn de_vpc_origin_summary(
                         ?
                     )
                 ;
-                builder = builder.set_origin_endpoint_arn(var_7);
+                builder = builder.set_account_id(var_7);
+            }
+            ,
+            s if s.matches("OriginEndpointArn") /* OriginEndpointArn com.amazonaws.cloudfront#VpcOriginSummary$OriginEndpointArn */ =>  {
+                let var_8 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_origin_endpoint_arn(var_8);
             }
             ,
             _ => {}

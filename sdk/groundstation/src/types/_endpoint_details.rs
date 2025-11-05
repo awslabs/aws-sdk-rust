@@ -10,6 +10,10 @@ pub struct EndpointDetails {
     pub endpoint: ::std::option::Option<crate::types::DataflowEndpoint>,
     /// <p>An agent endpoint.</p>
     pub aws_ground_station_agent_endpoint: ::std::option::Option<crate::types::AwsGroundStationAgentEndpoint>,
+    /// <p>Definition for an uplink agent endpoint</p>
+    pub uplink_aws_ground_station_agent_endpoint: ::std::option::Option<crate::types::UplinkAwsGroundStationAgentEndpointDetails>,
+    /// <p>Definition for a downlink agent endpoint</p>
+    pub downlink_aws_ground_station_agent_endpoint: ::std::option::Option<crate::types::DownlinkAwsGroundStationAgentEndpointDetails>,
     /// <p>A dataflow endpoint health status. This field is ignored when calling <code>CreateDataflowEndpointGroup</code>.</p>
     pub health_status: ::std::option::Option<crate::types::CapabilityHealth>,
     /// <p>Health reasons for a dataflow endpoint. This field is ignored when calling <code>CreateDataflowEndpointGroup</code>.</p>
@@ -27,6 +31,14 @@ impl EndpointDetails {
     /// <p>An agent endpoint.</p>
     pub fn aws_ground_station_agent_endpoint(&self) -> ::std::option::Option<&crate::types::AwsGroundStationAgentEndpoint> {
         self.aws_ground_station_agent_endpoint.as_ref()
+    }
+    /// <p>Definition for an uplink agent endpoint</p>
+    pub fn uplink_aws_ground_station_agent_endpoint(&self) -> ::std::option::Option<&crate::types::UplinkAwsGroundStationAgentEndpointDetails> {
+        self.uplink_aws_ground_station_agent_endpoint.as_ref()
+    }
+    /// <p>Definition for a downlink agent endpoint</p>
+    pub fn downlink_aws_ground_station_agent_endpoint(&self) -> ::std::option::Option<&crate::types::DownlinkAwsGroundStationAgentEndpointDetails> {
+        self.downlink_aws_ground_station_agent_endpoint.as_ref()
     }
     /// <p>A dataflow endpoint health status. This field is ignored when calling <code>CreateDataflowEndpointGroup</code>.</p>
     pub fn health_status(&self) -> ::std::option::Option<&crate::types::CapabilityHealth> {
@@ -53,6 +65,8 @@ pub struct EndpointDetailsBuilder {
     pub(crate) security_details: ::std::option::Option<crate::types::SecurityDetails>,
     pub(crate) endpoint: ::std::option::Option<crate::types::DataflowEndpoint>,
     pub(crate) aws_ground_station_agent_endpoint: ::std::option::Option<crate::types::AwsGroundStationAgentEndpoint>,
+    pub(crate) uplink_aws_ground_station_agent_endpoint: ::std::option::Option<crate::types::UplinkAwsGroundStationAgentEndpointDetails>,
+    pub(crate) downlink_aws_ground_station_agent_endpoint: ::std::option::Option<crate::types::DownlinkAwsGroundStationAgentEndpointDetails>,
     pub(crate) health_status: ::std::option::Option<crate::types::CapabilityHealth>,
     pub(crate) health_reasons: ::std::option::Option<::std::vec::Vec<crate::types::CapabilityHealthReason>>,
 }
@@ -99,6 +113,42 @@ impl EndpointDetailsBuilder {
     pub fn get_aws_ground_station_agent_endpoint(&self) -> &::std::option::Option<crate::types::AwsGroundStationAgentEndpoint> {
         &self.aws_ground_station_agent_endpoint
     }
+    /// <p>Definition for an uplink agent endpoint</p>
+    pub fn uplink_aws_ground_station_agent_endpoint(mut self, input: crate::types::UplinkAwsGroundStationAgentEndpointDetails) -> Self {
+        self.uplink_aws_ground_station_agent_endpoint = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Definition for an uplink agent endpoint</p>
+    pub fn set_uplink_aws_ground_station_agent_endpoint(
+        mut self,
+        input: ::std::option::Option<crate::types::UplinkAwsGroundStationAgentEndpointDetails>,
+    ) -> Self {
+        self.uplink_aws_ground_station_agent_endpoint = input;
+        self
+    }
+    /// <p>Definition for an uplink agent endpoint</p>
+    pub fn get_uplink_aws_ground_station_agent_endpoint(&self) -> &::std::option::Option<crate::types::UplinkAwsGroundStationAgentEndpointDetails> {
+        &self.uplink_aws_ground_station_agent_endpoint
+    }
+    /// <p>Definition for a downlink agent endpoint</p>
+    pub fn downlink_aws_ground_station_agent_endpoint(mut self, input: crate::types::DownlinkAwsGroundStationAgentEndpointDetails) -> Self {
+        self.downlink_aws_ground_station_agent_endpoint = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Definition for a downlink agent endpoint</p>
+    pub fn set_downlink_aws_ground_station_agent_endpoint(
+        mut self,
+        input: ::std::option::Option<crate::types::DownlinkAwsGroundStationAgentEndpointDetails>,
+    ) -> Self {
+        self.downlink_aws_ground_station_agent_endpoint = input;
+        self
+    }
+    /// <p>Definition for a downlink agent endpoint</p>
+    pub fn get_downlink_aws_ground_station_agent_endpoint(
+        &self,
+    ) -> &::std::option::Option<crate::types::DownlinkAwsGroundStationAgentEndpointDetails> {
+        &self.downlink_aws_ground_station_agent_endpoint
+    }
     /// <p>A dataflow endpoint health status. This field is ignored when calling <code>CreateDataflowEndpointGroup</code>.</p>
     pub fn health_status(mut self, input: crate::types::CapabilityHealth) -> Self {
         self.health_status = ::std::option::Option::Some(input);
@@ -139,6 +189,8 @@ impl EndpointDetailsBuilder {
             security_details: self.security_details,
             endpoint: self.endpoint,
             aws_ground_station_agent_endpoint: self.aws_ground_station_agent_endpoint,
+            uplink_aws_ground_station_agent_endpoint: self.uplink_aws_ground_station_agent_endpoint,
+            downlink_aws_ground_station_agent_endpoint: self.downlink_aws_ground_station_agent_endpoint,
             health_status: self.health_status,
             health_reasons: self.health_reasons,
         }

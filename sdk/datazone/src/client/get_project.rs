@@ -15,6 +15,7 @@ impl super::Client {
     ///   - [`created_by(String)`](crate::operation::get_project::GetProjectOutput::created_by): <p>The Amazon DataZone user who created the project.</p>
     ///   - [`created_at(Option<DateTime>)`](crate::operation::get_project::GetProjectOutput::created_at): <p>The timestamp of when the project was created.</p>
     ///   - [`last_updated_at(Option<DateTime>)`](crate::operation::get_project::GetProjectOutput::last_updated_at): <p>The timestamp of when the project was last updated.</p>
+    ///   - [`resource_tags(Option<Vec::<ResourceTag>>)`](crate::operation::get_project::GetProjectOutput::resource_tags): <p>The resource tags of the project.</p>
     ///   - [`glossary_terms(Option<Vec::<String>>)`](crate::operation::get_project::GetProjectOutput::glossary_terms): <p>The business glossary terms that can be used in the project.</p>
     ///   - [`domain_unit_id(Option<String>)`](crate::operation::get_project::GetProjectOutput::domain_unit_id): <p>The ID of the domain unit.</p>
     ///   - [`project_profile_id(Option<String>)`](crate::operation::get_project::GetProjectOutput::project_profile_id): <p>The ID of the project profile of a project.</p>

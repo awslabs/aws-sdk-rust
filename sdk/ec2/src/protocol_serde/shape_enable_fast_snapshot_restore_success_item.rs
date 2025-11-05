@@ -33,8 +33,21 @@ pub fn de_enable_fast_snapshot_restore_success_item(
                 builder = builder.set_availability_zone(var_2);
             }
             ,
-            s if s.matches("state") /* State com.amazonaws.ec2#EnableFastSnapshotRestoreSuccessItem$State */ =>  {
+            s if s.matches("availabilityZoneId") /* AvailabilityZoneId com.amazonaws.ec2#EnableFastSnapshotRestoreSuccessItem$AvailabilityZoneId */ =>  {
                 let var_3 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_availability_zone_id(var_3);
+            }
+            ,
+            s if s.matches("state") /* State com.amazonaws.ec2#EnableFastSnapshotRestoreSuccessItem$State */ =>  {
+                let var_4 =
                     Some(
                         Result::<crate::types::FastSnapshotRestoreStateCode, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::FastSnapshotRestoreStateCode::from(
@@ -44,23 +57,10 @@ pub fn de_enable_fast_snapshot_restore_success_item(
                         ?
                     )
                 ;
-                builder = builder.set_state(var_3);
+                builder = builder.set_state(var_4);
             }
             ,
             s if s.matches("stateTransitionReason") /* StateTransitionReason com.amazonaws.ec2#EnableFastSnapshotRestoreSuccessItem$StateTransitionReason */ =>  {
-                let var_4 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_state_transition_reason(var_4);
-            }
-            ,
-            s if s.matches("ownerId") /* OwnerId com.amazonaws.ec2#EnableFastSnapshotRestoreSuccessItem$OwnerId */ =>  {
                 let var_5 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -70,10 +70,10 @@ pub fn de_enable_fast_snapshot_restore_success_item(
                         ?
                     )
                 ;
-                builder = builder.set_owner_id(var_5);
+                builder = builder.set_state_transition_reason(var_5);
             }
             ,
-            s if s.matches("ownerAlias") /* OwnerAlias com.amazonaws.ec2#EnableFastSnapshotRestoreSuccessItem$OwnerAlias */ =>  {
+            s if s.matches("ownerId") /* OwnerId com.amazonaws.ec2#EnableFastSnapshotRestoreSuccessItem$OwnerId */ =>  {
                 let var_6 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -83,24 +83,23 @@ pub fn de_enable_fast_snapshot_restore_success_item(
                         ?
                     )
                 ;
-                builder = builder.set_owner_alias(var_6);
+                builder = builder.set_owner_id(var_6);
             }
             ,
-            s if s.matches("enablingTime") /* EnablingTime com.amazonaws.ec2#EnableFastSnapshotRestoreSuccessItem$EnablingTime */ =>  {
+            s if s.matches("ownerAlias") /* OwnerAlias com.amazonaws.ec2#EnableFastSnapshotRestoreSuccessItem$OwnerAlias */ =>  {
                 let var_7 =
                     Some(
-                        ::aws_smithy_types::DateTime::from_str(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , ::aws_smithy_types::date_time::Format::DateTimeWithOffset
+                            .into()
                         )
-                        .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (timestamp: `com.amazonaws.ec2#MillisecondDateTime`)"))
                         ?
                     )
                 ;
-                builder = builder.set_enabling_time(var_7);
+                builder = builder.set_owner_alias(var_7);
             }
             ,
-            s if s.matches("optimizingTime") /* OptimizingTime com.amazonaws.ec2#EnableFastSnapshotRestoreSuccessItem$OptimizingTime */ =>  {
+            s if s.matches("enablingTime") /* EnablingTime com.amazonaws.ec2#EnableFastSnapshotRestoreSuccessItem$EnablingTime */ =>  {
                 let var_8 =
                     Some(
                         ::aws_smithy_types::DateTime::from_str(
@@ -111,10 +110,10 @@ pub fn de_enable_fast_snapshot_restore_success_item(
                         ?
                     )
                 ;
-                builder = builder.set_optimizing_time(var_8);
+                builder = builder.set_enabling_time(var_8);
             }
             ,
-            s if s.matches("enabledTime") /* EnabledTime com.amazonaws.ec2#EnableFastSnapshotRestoreSuccessItem$EnabledTime */ =>  {
+            s if s.matches("optimizingTime") /* OptimizingTime com.amazonaws.ec2#EnableFastSnapshotRestoreSuccessItem$OptimizingTime */ =>  {
                 let var_9 =
                     Some(
                         ::aws_smithy_types::DateTime::from_str(
@@ -125,10 +124,10 @@ pub fn de_enable_fast_snapshot_restore_success_item(
                         ?
                     )
                 ;
-                builder = builder.set_enabled_time(var_9);
+                builder = builder.set_optimizing_time(var_9);
             }
             ,
-            s if s.matches("disablingTime") /* DisablingTime com.amazonaws.ec2#EnableFastSnapshotRestoreSuccessItem$DisablingTime */ =>  {
+            s if s.matches("enabledTime") /* EnabledTime com.amazonaws.ec2#EnableFastSnapshotRestoreSuccessItem$EnabledTime */ =>  {
                 let var_10 =
                     Some(
                         ::aws_smithy_types::DateTime::from_str(
@@ -139,10 +138,10 @@ pub fn de_enable_fast_snapshot_restore_success_item(
                         ?
                     )
                 ;
-                builder = builder.set_disabling_time(var_10);
+                builder = builder.set_enabled_time(var_10);
             }
             ,
-            s if s.matches("disabledTime") /* DisabledTime com.amazonaws.ec2#EnableFastSnapshotRestoreSuccessItem$DisabledTime */ =>  {
+            s if s.matches("disablingTime") /* DisablingTime com.amazonaws.ec2#EnableFastSnapshotRestoreSuccessItem$DisablingTime */ =>  {
                 let var_11 =
                     Some(
                         ::aws_smithy_types::DateTime::from_str(
@@ -153,7 +152,21 @@ pub fn de_enable_fast_snapshot_restore_success_item(
                         ?
                     )
                 ;
-                builder = builder.set_disabled_time(var_11);
+                builder = builder.set_disabling_time(var_11);
+            }
+            ,
+            s if s.matches("disabledTime") /* DisabledTime com.amazonaws.ec2#EnableFastSnapshotRestoreSuccessItem$DisabledTime */ =>  {
+                let var_12 =
+                    Some(
+                        ::aws_smithy_types::DateTime::from_str(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            , ::aws_smithy_types::date_time::Format::DateTimeWithOffset
+                        )
+                        .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (timestamp: `com.amazonaws.ec2#MillisecondDateTime`)"))
+                        ?
+                    )
+                ;
+                builder = builder.set_disabled_time(var_12);
             }
             ,
             _ => {}

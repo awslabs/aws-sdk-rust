@@ -2776,6 +2776,34 @@ pub(crate) fn resource_correct_errors(mut builder: crate::types::builders::Resou
     builder
 }
 
+pub(crate) fn resource_tag_correct_errors(mut builder: crate::types::builders::ResourceTagBuilder) -> crate::types::builders::ResourceTagBuilder {
+    if builder.key.is_none() {
+        builder.key = Some(Default::default())
+    }
+    if builder.value.is_none() {
+        builder.value = Some(Default::default())
+    }
+    if builder.source.is_none() {
+        builder.source = "no value was set".parse::<crate::types::ResourceTagSource>().ok()
+    }
+    builder
+}
+
+pub(crate) fn resource_tag_parameter_correct_errors(
+    mut builder: crate::types::builders::ResourceTagParameterBuilder,
+) -> crate::types::builders::ResourceTagParameterBuilder {
+    if builder.key.is_none() {
+        builder.key = Some(Default::default())
+    }
+    if builder.value.is_none() {
+        builder.value = Some(Default::default())
+    }
+    if builder.is_value_editable.is_none() {
+        builder.is_value_editable = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn row_filter_configuration_correct_errors(
     mut builder: crate::types::builders::RowFilterConfigurationBuilder,
 ) -> crate::types::builders::RowFilterConfigurationBuilder {

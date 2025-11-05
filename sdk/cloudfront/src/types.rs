@@ -351,6 +351,8 @@ pub use crate::types::_cache_policy_headers_config::CachePolicyHeadersConfig;
 
 pub use crate::types::_cache_policy_header_behavior::CachePolicyHeaderBehavior;
 
+pub use crate::types::_anycast_ip_list::AnycastIpList;
+
 pub use crate::types::_tag_keys::TagKeys;
 
 pub use crate::types::_test_result::TestResult;
@@ -419,6 +421,10 @@ pub use crate::types::_distribution_summary::DistributionSummary;
 
 pub use crate::types::_distribution_id_list::DistributionIdList;
 
+pub use crate::types::_distribution_id_owner_list::DistributionIdOwnerList;
+
+pub use crate::types::_distribution_id_owner::DistributionIdOwner;
+
 pub use crate::types::_continuous_deployment_policy_list::ContinuousDeploymentPolicyList;
 
 pub use crate::types::_continuous_deployment_policy_summary::ContinuousDeploymentPolicySummary;
@@ -462,8 +468,6 @@ pub use crate::types::_invalidation::Invalidation;
 pub use crate::types::_invalidation_batch::InvalidationBatch;
 
 pub use crate::types::_paths::Paths;
-
-pub use crate::types::_anycast_ip_list::AnycastIpList;
 
 pub use crate::types::_streaming_distribution_config_with_tags::StreamingDistributionConfigWithTags;
 
@@ -588,6 +592,10 @@ mod _distribution_config;
 mod _distribution_config_with_tags;
 
 mod _distribution_id_list;
+
+mod _distribution_id_owner;
+
+mod _distribution_id_owner_list;
 
 mod _distribution_list;
 

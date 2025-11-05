@@ -151,6 +151,8 @@ pub(crate) mod shape_delete_public_key;
 
 pub(crate) mod shape_delete_realtime_log_config;
 
+pub(crate) mod shape_delete_resource_policy;
+
 pub(crate) mod shape_delete_response_headers_policy;
 
 pub(crate) mod shape_delete_streaming_distribution;
@@ -227,6 +229,8 @@ pub(crate) mod shape_get_public_key_config;
 
 pub(crate) mod shape_get_realtime_log_config;
 
+pub(crate) mod shape_get_resource_policy;
+
 pub(crate) mod shape_get_response_headers_policy;
 
 pub(crate) mod shape_get_response_headers_policy_config;
@@ -264,6 +268,8 @@ pub(crate) mod shape_list_distributions_by_connection_mode;
 pub(crate) mod shape_list_distributions_by_key_group;
 
 pub(crate) mod shape_list_distributions_by_origin_request_policy_id;
+
+pub(crate) mod shape_list_distributions_by_owned_resource;
 
 pub(crate) mod shape_list_distributions_by_realtime_log_config;
 
@@ -307,6 +313,8 @@ pub(crate) mod shape_list_vpc_origins;
 
 pub(crate) mod shape_publish_function;
 
+pub(crate) mod shape_put_resource_policy;
+
 pub(crate) mod shape_tag_resource;
 
 pub(crate) mod shape_tag_resource_input;
@@ -316,6 +324,8 @@ pub(crate) mod shape_test_function;
 pub(crate) mod shape_untag_resource;
 
 pub(crate) mod shape_untag_resource_input;
+
+pub(crate) mod shape_update_anycast_ip_list;
 
 pub(crate) mod shape_update_cache_policy;
 
@@ -483,6 +493,8 @@ pub(crate) mod shape_create_vpc_origin_output;
 
 pub(crate) mod shape_delete_realtime_log_config_input;
 
+pub(crate) mod shape_delete_resource_policy_input;
+
 pub(crate) mod shape_delete_vpc_origin_output;
 
 pub(crate) mod shape_describe_function_output;
@@ -582,6 +594,8 @@ pub(crate) mod shape_get_public_key_config_output;
 pub(crate) mod shape_get_public_key_output;
 
 pub(crate) mod shape_get_realtime_log_config_input;
+
+pub(crate) mod shape_get_resource_policy_input;
 
 pub(crate) mod shape_get_response_headers_policy_config_output;
 
@@ -685,6 +699,8 @@ pub(crate) mod shape_list_distributions_by_key_group_output;
 
 pub(crate) mod shape_list_distributions_by_origin_request_policy_id_output;
 
+pub(crate) mod shape_list_distributions_by_owned_resource_output;
+
 pub(crate) mod shape_list_distributions_by_realtime_log_config_input;
 
 pub(crate) mod shape_list_distributions_by_realtime_log_config_output;
@@ -782,6 +798,8 @@ pub(crate) mod shape_public_key_already_exists;
 pub(crate) mod shape_public_key_in_use;
 
 pub(crate) mod shape_publish_function_output;
+
+pub(crate) mod shape_put_resource_policy_input;
 
 pub(crate) mod shape_query_arg_profile_empty;
 
@@ -920,6 +938,10 @@ pub(crate) mod shape_trusted_key_group_does_not_exist;
 pub(crate) mod shape_trusted_signer_does_not_exist;
 
 pub(crate) mod shape_unsupported_operation;
+
+pub(crate) mod shape_update_anycast_ip_list_input;
+
+pub(crate) mod shape_update_anycast_ip_list_output;
 
 pub(crate) mod shape_update_cache_policy_output;
 
@@ -1078,6 +1100,8 @@ pub(crate) mod shape_default_cache_behavior;
 pub(crate) mod shape_distribution;
 
 pub(crate) mod shape_distribution_id_list;
+
+pub(crate) mod shape_distribution_id_owner_list;
 
 pub(crate) mod shape_distribution_list;
 
@@ -1247,6 +1271,8 @@ pub(crate) mod shape_custom_error_response;
 
 pub(crate) mod shape_distribution_id_list_summary;
 
+pub(crate) mod shape_distribution_id_owner_item_list;
+
 pub(crate) mod shape_distribution_summary_list;
 
 pub(crate) mod shape_domain_result_list;
@@ -1370,6 +1396,8 @@ pub(crate) mod shape_custom_error_response_list;
 pub(crate) mod shape_custom_headers;
 
 pub(crate) mod shape_custom_origin_config;
+
+pub(crate) mod shape_distribution_id_owner;
 
 pub(crate) mod shape_distribution_summary;
 

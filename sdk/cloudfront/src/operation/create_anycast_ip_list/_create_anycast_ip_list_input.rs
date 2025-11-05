@@ -9,6 +9,16 @@ pub struct CreateAnycastIpListInput {
     pub ip_count: ::std::option::Option<i32>,
     /// <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
     pub tags: ::std::option::Option<crate::types::Tags>,
+    /// <p>The IP address type for the Anycast static IP list. You can specify one of the following options:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ipv4</code> - Allocate a list of only IPv4 addresses</p></li>
+    /// <li>
+    /// <p><code>ipv6</code> - Allocate a list of only IPv4 addresses</p></li>
+    /// <li>
+    /// <p><code>dualstack</code> - Allocate a list of both IPv4 and IPv6 addresses</p></li>
+    /// </ul>
+    pub ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
 }
 impl CreateAnycastIpListInput {
     /// <p>Name of the Anycast static IP list.</p>
@@ -22,6 +32,18 @@ impl CreateAnycastIpListInput {
     /// <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
     pub fn tags(&self) -> ::std::option::Option<&crate::types::Tags> {
         self.tags.as_ref()
+    }
+    /// <p>The IP address type for the Anycast static IP list. You can specify one of the following options:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ipv4</code> - Allocate a list of only IPv4 addresses</p></li>
+    /// <li>
+    /// <p><code>ipv6</code> - Allocate a list of only IPv4 addresses</p></li>
+    /// <li>
+    /// <p><code>dualstack</code> - Allocate a list of both IPv4 and IPv6 addresses</p></li>
+    /// </ul>
+    pub fn ip_address_type(&self) -> ::std::option::Option<&crate::types::IpAddressType> {
+        self.ip_address_type.as_ref()
     }
 }
 impl CreateAnycastIpListInput {
@@ -38,6 +60,7 @@ pub struct CreateAnycastIpListInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) ip_count: ::std::option::Option<i32>,
     pub(crate) tags: ::std::option::Option<crate::types::Tags>,
+    pub(crate) ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
 }
 impl CreateAnycastIpListInputBuilder {
     /// <p>Name of the Anycast static IP list.</p>
@@ -84,6 +107,44 @@ impl CreateAnycastIpListInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<crate::types::Tags> {
         &self.tags
     }
+    /// <p>The IP address type for the Anycast static IP list. You can specify one of the following options:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ipv4</code> - Allocate a list of only IPv4 addresses</p></li>
+    /// <li>
+    /// <p><code>ipv6</code> - Allocate a list of only IPv4 addresses</p></li>
+    /// <li>
+    /// <p><code>dualstack</code> - Allocate a list of both IPv4 and IPv6 addresses</p></li>
+    /// </ul>
+    pub fn ip_address_type(mut self, input: crate::types::IpAddressType) -> Self {
+        self.ip_address_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The IP address type for the Anycast static IP list. You can specify one of the following options:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ipv4</code> - Allocate a list of only IPv4 addresses</p></li>
+    /// <li>
+    /// <p><code>ipv6</code> - Allocate a list of only IPv4 addresses</p></li>
+    /// <li>
+    /// <p><code>dualstack</code> - Allocate a list of both IPv4 and IPv6 addresses</p></li>
+    /// </ul>
+    pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::IpAddressType>) -> Self {
+        self.ip_address_type = input;
+        self
+    }
+    /// <p>The IP address type for the Anycast static IP list. You can specify one of the following options:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ipv4</code> - Allocate a list of only IPv4 addresses</p></li>
+    /// <li>
+    /// <p><code>ipv6</code> - Allocate a list of only IPv4 addresses</p></li>
+    /// <li>
+    /// <p><code>dualstack</code> - Allocate a list of both IPv4 and IPv6 addresses</p></li>
+    /// </ul>
+    pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::IpAddressType> {
+        &self.ip_address_type
+    }
     /// Consumes the builder and constructs a [`CreateAnycastIpListInput`](crate::operation::create_anycast_ip_list::CreateAnycastIpListInput).
     pub fn build(
         self,
@@ -93,6 +154,7 @@ impl CreateAnycastIpListInputBuilder {
             name: self.name,
             ip_count: self.ip_count,
             tags: self.tags,
+            ip_address_type: self.ip_address_type,
         })
     }
 }

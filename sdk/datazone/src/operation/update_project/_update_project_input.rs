@@ -11,6 +11,8 @@ pub struct UpdateProjectInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description to be updated as part of the <code>UpdateProject</code> action.</p>
     pub description: ::std::option::Option<::std::string::String>,
+    /// <p>The resource tags of the project.</p>
+    pub resource_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The glossary terms to be updated as part of the <code>UpdateProject</code> action.</p>
     pub glossary_terms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ID of the domain unit.</p>
@@ -38,6 +40,10 @@ impl UpdateProjectInput {
     /// <p>The description to be updated as part of the <code>UpdateProject</code> action.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
+    }
+    /// <p>The resource tags of the project.</p>
+    pub fn resource_tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.resource_tags.as_ref()
     }
     /// <p>The glossary terms to be updated as part of the <code>UpdateProject</code> action.</p>
     ///
@@ -71,6 +77,7 @@ impl ::std::fmt::Debug for UpdateProjectInput {
         formatter.field("identifier", &self.identifier);
         formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field("resource_tags", &self.resource_tags);
         formatter.field("glossary_terms", &self.glossary_terms);
         formatter.field("domain_unit_id", &self.domain_unit_id);
         formatter.field("environment_deployment_details", &self.environment_deployment_details);
@@ -94,6 +101,7 @@ pub struct UpdateProjectInputBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) resource_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) glossary_terms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) domain_unit_id: ::std::option::Option<::std::string::String>,
     pub(crate) environment_deployment_details: ::std::option::Option<crate::types::EnvironmentDeploymentDetails>,
@@ -158,6 +166,29 @@ impl UpdateProjectInputBuilder {
     /// <p>The description to be updated as part of the <code>UpdateProject</code> action.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
+    }
+    /// Adds a key-value pair to `resource_tags`.
+    ///
+    /// To override the contents of this collection use [`set_resource_tags`](Self::set_resource_tags).
+    ///
+    /// <p>The resource tags of the project.</p>
+    pub fn resource_tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut hash_map = self.resource_tags.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.resource_tags = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>The resource tags of the project.</p>
+    pub fn set_resource_tags(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    ) -> Self {
+        self.resource_tags = input;
+        self
+    }
+    /// <p>The resource tags of the project.</p>
+    pub fn get_resource_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.resource_tags
     }
     /// Appends an item to `glossary_terms`.
     ///
@@ -250,6 +281,7 @@ impl UpdateProjectInputBuilder {
             identifier: self.identifier,
             name: self.name,
             description: self.description,
+            resource_tags: self.resource_tags,
             glossary_terms: self.glossary_terms,
             domain_unit_id: self.domain_unit_id,
             environment_deployment_details: self.environment_deployment_details,
@@ -265,6 +297,7 @@ impl ::std::fmt::Debug for UpdateProjectInputBuilder {
         formatter.field("identifier", &self.identifier);
         formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field("resource_tags", &self.resource_tags);
         formatter.field("glossary_terms", &self.glossary_terms);
         formatter.field("domain_unit_id", &self.domain_unit_id);
         formatter.field("environment_deployment_details", &self.environment_deployment_details);

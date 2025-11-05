@@ -7,6 +7,8 @@ pub use crate::types::error::_dependency_exception::DependencyException;
 
 pub use crate::types::error::_resource_in_use_exception::ResourceInUseException;
 
+pub use crate::types::error::_service_quota_exceeded_exception::ServiceQuotaExceededException;
+
 pub use crate::types::error::_resource_limit_exceeded_exception::ResourceLimitExceededException;
 
 mod _dependency_exception;
@@ -18,6 +20,8 @@ mod _resource_in_use_exception;
 mod _resource_limit_exceeded_exception;
 
 mod _resource_not_found_exception;
+
+mod _service_quota_exceeded_exception;
 
 /// Builders
 pub mod builders;

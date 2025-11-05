@@ -136,6 +136,9 @@ pub mod delete_public_key;
 /// Types for the `DeleteRealtimeLogConfig` operation.
 pub mod delete_realtime_log_config;
 
+/// Types for the `DeleteResourcePolicy` operation.
+pub mod delete_resource_policy;
+
 /// Types for the `DeleteResponseHeadersPolicy` operation.
 pub mod delete_response_headers_policy;
 
@@ -250,6 +253,9 @@ pub mod get_public_key_config;
 /// Types for the `GetRealtimeLogConfig` operation.
 pub mod get_realtime_log_config;
 
+/// Types for the `GetResourcePolicy` operation.
+pub mod get_resource_policy;
+
 /// Types for the `GetResponseHeadersPolicy` operation.
 pub mod get_response_headers_policy;
 
@@ -306,6 +312,9 @@ pub mod list_distributions_by_key_group;
 
 /// Types for the `ListDistributionsByOriginRequestPolicyId` operation.
 pub mod list_distributions_by_origin_request_policy_id;
+
+/// Types for the `ListDistributionsByOwnedResource` operation.
+pub mod list_distributions_by_owned_resource;
 
 /// Types for the `ListDistributionsByRealtimeLogConfig` operation.
 pub mod list_distributions_by_realtime_log_config;
@@ -370,6 +379,9 @@ pub mod list_vpc_origins;
 /// Types for the `PublishFunction` operation.
 pub mod publish_function;
 
+/// Types for the `PutResourcePolicy` operation.
+pub mod put_resource_policy;
+
 /// Types for the `TagResource` operation.
 pub mod tag_resource;
 
@@ -378,6 +390,9 @@ pub mod test_function;
 
 /// Types for the `UntagResource` operation.
 pub mod untag_resource;
+
+/// Types for the `UpdateAnycastIpList` operation.
+pub mod update_anycast_ip_list;
 
 /// Types for the `UpdateCachePolicy` operation.
 pub mod update_cache_policy;

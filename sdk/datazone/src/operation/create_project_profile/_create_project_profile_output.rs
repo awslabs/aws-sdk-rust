@@ -13,6 +13,12 @@ pub struct CreateProjectProfileOutput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Project profile status.</p>
     pub status: ::std::option::Option<crate::types::Status>,
+    /// <p>The resource tags of the project profile.</p>
+    pub project_resource_tags: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTagParameter>>,
+    /// <p>Specifies whether custom project resource tags are supported.</p>
+    pub allow_custom_project_resource_tags: ::std::option::Option<bool>,
+    /// <p>Field viewable through the UI that provides a project user with the allowed resource tag specifications.</p>
+    pub project_resource_tags_description: ::std::option::Option<::std::string::String>,
     /// <p>Environment configurations of a project profile.</p>
     pub environment_configurations: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentConfiguration>>,
     /// <p>A user who created a project profile.</p>
@@ -49,6 +55,20 @@ impl CreateProjectProfileOutput {
     pub fn status(&self) -> ::std::option::Option<&crate::types::Status> {
         self.status.as_ref()
     }
+    /// <p>The resource tags of the project profile.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.project_resource_tags.is_none()`.
+    pub fn project_resource_tags(&self) -> &[crate::types::ResourceTagParameter] {
+        self.project_resource_tags.as_deref().unwrap_or_default()
+    }
+    /// <p>Specifies whether custom project resource tags are supported.</p>
+    pub fn allow_custom_project_resource_tags(&self) -> ::std::option::Option<bool> {
+        self.allow_custom_project_resource_tags
+    }
+    /// <p>Field viewable through the UI that provides a project user with the allowed resource tag specifications.</p>
+    pub fn project_resource_tags_description(&self) -> ::std::option::Option<&str> {
+        self.project_resource_tags_description.as_deref()
+    }
     /// <p>Environment configurations of a project profile.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.environment_configurations.is_none()`.
@@ -81,6 +101,9 @@ impl ::std::fmt::Debug for CreateProjectProfileOutput {
         formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("status", &self.status);
+        formatter.field("project_resource_tags", &self.project_resource_tags);
+        formatter.field("allow_custom_project_resource_tags", &self.allow_custom_project_resource_tags);
+        formatter.field("project_resource_tags_description", &"*** Sensitive Data Redacted ***");
         formatter.field("environment_configurations", &self.environment_configurations);
         formatter.field("created_by", &self.created_by);
         formatter.field("created_at", &self.created_at);
@@ -111,6 +134,9 @@ pub struct CreateProjectProfileOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::Status>,
+    pub(crate) project_resource_tags: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTagParameter>>,
+    pub(crate) allow_custom_project_resource_tags: ::std::option::Option<bool>,
+    pub(crate) project_resource_tags_description: ::std::option::Option<::std::string::String>,
     pub(crate) environment_configurations: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentConfiguration>>,
     pub(crate) created_by: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -191,6 +217,54 @@ impl CreateProjectProfileOutputBuilder {
     /// <p>Project profile status.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::Status> {
         &self.status
+    }
+    /// Appends an item to `project_resource_tags`.
+    ///
+    /// To override the contents of this collection use [`set_project_resource_tags`](Self::set_project_resource_tags).
+    ///
+    /// <p>The resource tags of the project profile.</p>
+    pub fn project_resource_tags(mut self, input: crate::types::ResourceTagParameter) -> Self {
+        let mut v = self.project_resource_tags.unwrap_or_default();
+        v.push(input);
+        self.project_resource_tags = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The resource tags of the project profile.</p>
+    pub fn set_project_resource_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTagParameter>>) -> Self {
+        self.project_resource_tags = input;
+        self
+    }
+    /// <p>The resource tags of the project profile.</p>
+    pub fn get_project_resource_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceTagParameter>> {
+        &self.project_resource_tags
+    }
+    /// <p>Specifies whether custom project resource tags are supported.</p>
+    pub fn allow_custom_project_resource_tags(mut self, input: bool) -> Self {
+        self.allow_custom_project_resource_tags = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether custom project resource tags are supported.</p>
+    pub fn set_allow_custom_project_resource_tags(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.allow_custom_project_resource_tags = input;
+        self
+    }
+    /// <p>Specifies whether custom project resource tags are supported.</p>
+    pub fn get_allow_custom_project_resource_tags(&self) -> &::std::option::Option<bool> {
+        &self.allow_custom_project_resource_tags
+    }
+    /// <p>Field viewable through the UI that provides a project user with the allowed resource tag specifications.</p>
+    pub fn project_resource_tags_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.project_resource_tags_description = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Field viewable through the UI that provides a project user with the allowed resource tag specifications.</p>
+    pub fn set_project_resource_tags_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.project_resource_tags_description = input;
+        self
+    }
+    /// <p>Field viewable through the UI that provides a project user with the allowed resource tag specifications.</p>
+    pub fn get_project_resource_tags_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_resource_tags_description
     }
     /// Appends an item to `environment_configurations`.
     ///
@@ -309,6 +383,9 @@ impl CreateProjectProfileOutputBuilder {
             })?,
             description: self.description,
             status: self.status,
+            project_resource_tags: self.project_resource_tags,
+            allow_custom_project_resource_tags: self.allow_custom_project_resource_tags,
+            project_resource_tags_description: self.project_resource_tags_description,
             environment_configurations: self.environment_configurations,
             created_by: self.created_by.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
@@ -331,6 +408,9 @@ impl ::std::fmt::Debug for CreateProjectProfileOutputBuilder {
         formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("status", &self.status);
+        formatter.field("project_resource_tags", &self.project_resource_tags);
+        formatter.field("allow_custom_project_resource_tags", &self.allow_custom_project_resource_tags);
+        formatter.field("project_resource_tags_description", &"*** Sensitive Data Redacted ***");
         formatter.field("environment_configurations", &self.environment_configurations);
         formatter.field("created_by", &self.created_by);
         formatter.field("created_at", &self.created_at);
