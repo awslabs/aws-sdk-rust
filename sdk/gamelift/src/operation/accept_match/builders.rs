@@ -22,6 +22,7 @@ impl crate::operation::accept_match::builders::AcceptMatchInputBuilder {
 }
 /// Fluent builder constructing a request to `AcceptMatch`.
 ///
+/// <p><b>This API works with the following fleet types:</b> EC2, Anywhere, Container</p>
 /// <p>Registers a player's acceptance or rejection of a proposed FlexMatch match. A matchmaking configuration may require player acceptance; if so, then matches built with that configuration cannot be completed unless all players accept the proposed match within a specified time limit.</p>
 /// <p>When FlexMatch builds a match, all the matchmaking tickets involved in the proposed match are placed into status <code>REQUIRES_ACCEPTANCE</code>. This is a trigger for your game to get acceptance from all players in each ticket. Calls to this action are only valid for tickets that are in this status; calls for tickets not in this status result in an error.</p>
 /// <p>To register acceptance, specify the ticket ID, one or more players, and an acceptance response. When all players have accepted, Amazon GameLift Servers advances the matchmaking tickets to status <code>PLACING</code>, and attempts to create a new game session for the match.</p>

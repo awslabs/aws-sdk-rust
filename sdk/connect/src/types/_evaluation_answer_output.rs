@@ -8,6 +8,8 @@ pub struct EvaluationAnswerOutput {
     pub value: ::std::option::Option<crate::types::EvaluationAnswerData>,
     /// <p>The system suggested value for an answer in a contact evaluation.</p>
     pub system_suggested_value: ::std::option::Option<crate::types::EvaluationAnswerData>,
+    /// <p>Automation suggested answers for the questions.</p>
+    pub suggested_answers: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationSuggestedAnswer>>,
 }
 impl EvaluationAnswerOutput {
     /// <p>The value for an answer in a contact evaluation.</p>
@@ -17,6 +19,12 @@ impl EvaluationAnswerOutput {
     /// <p>The system suggested value for an answer in a contact evaluation.</p>
     pub fn system_suggested_value(&self) -> ::std::option::Option<&crate::types::EvaluationAnswerData> {
         self.system_suggested_value.as_ref()
+    }
+    /// <p>Automation suggested answers for the questions.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.suggested_answers.is_none()`.
+    pub fn suggested_answers(&self) -> &[crate::types::EvaluationSuggestedAnswer] {
+        self.suggested_answers.as_deref().unwrap_or_default()
     }
 }
 impl EvaluationAnswerOutput {
@@ -32,6 +40,7 @@ impl EvaluationAnswerOutput {
 pub struct EvaluationAnswerOutputBuilder {
     pub(crate) value: ::std::option::Option<crate::types::EvaluationAnswerData>,
     pub(crate) system_suggested_value: ::std::option::Option<crate::types::EvaluationAnswerData>,
+    pub(crate) suggested_answers: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationSuggestedAnswer>>,
 }
 impl EvaluationAnswerOutputBuilder {
     /// <p>The value for an answer in a contact evaluation.</p>
@@ -62,11 +71,32 @@ impl EvaluationAnswerOutputBuilder {
     pub fn get_system_suggested_value(&self) -> &::std::option::Option<crate::types::EvaluationAnswerData> {
         &self.system_suggested_value
     }
+    /// Appends an item to `suggested_answers`.
+    ///
+    /// To override the contents of this collection use [`set_suggested_answers`](Self::set_suggested_answers).
+    ///
+    /// <p>Automation suggested answers for the questions.</p>
+    pub fn suggested_answers(mut self, input: crate::types::EvaluationSuggestedAnswer) -> Self {
+        let mut v = self.suggested_answers.unwrap_or_default();
+        v.push(input);
+        self.suggested_answers = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Automation suggested answers for the questions.</p>
+    pub fn set_suggested_answers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationSuggestedAnswer>>) -> Self {
+        self.suggested_answers = input;
+        self
+    }
+    /// <p>Automation suggested answers for the questions.</p>
+    pub fn get_suggested_answers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EvaluationSuggestedAnswer>> {
+        &self.suggested_answers
+    }
     /// Consumes the builder and constructs a [`EvaluationAnswerOutput`](crate::types::EvaluationAnswerOutput).
     pub fn build(self) -> crate::types::EvaluationAnswerOutput {
         crate::types::EvaluationAnswerOutput {
             value: self.value,
             system_suggested_value: self.system_suggested_value,
+            suggested_answers: self.suggested_answers,
         }
     }
 }

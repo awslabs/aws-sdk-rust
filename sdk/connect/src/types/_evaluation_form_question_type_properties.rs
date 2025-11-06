@@ -8,6 +8,8 @@ pub enum EvaluationFormQuestionTypeProperties {
     Numeric(crate::types::EvaluationFormNumericQuestionProperties),
     /// <p>The properties of the numeric question.</p>
     SingleSelect(crate::types::EvaluationFormSingleSelectQuestionProperties),
+    /// <p>The properties of the text question.</p>
+    Text(crate::types::EvaluationFormTextQuestionProperties),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -44,6 +46,19 @@ impl EvaluationFormQuestionTypeProperties {
     /// Returns true if this is a [`SingleSelect`](crate::types::EvaluationFormQuestionTypeProperties::SingleSelect).
     pub fn is_single_select(&self) -> bool {
         self.as_single_select().is_ok()
+    }
+    /// Tries to convert the enum instance into [`Text`](crate::types::EvaluationFormQuestionTypeProperties::Text), extracting the inner [`EvaluationFormTextQuestionProperties`](crate::types::EvaluationFormTextQuestionProperties).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_text(&self) -> ::std::result::Result<&crate::types::EvaluationFormTextQuestionProperties, &Self> {
+        if let EvaluationFormQuestionTypeProperties::Text(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`Text`](crate::types::EvaluationFormQuestionTypeProperties::Text).
+    pub fn is_text(&self) -> bool {
+        self.as_text().is_ok()
     }
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {

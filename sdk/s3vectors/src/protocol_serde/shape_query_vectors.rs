@@ -131,18 +131,15 @@ pub fn de_query_vectors_http_error(
             };
             tmp
         }),
-        "ServiceQuotaExceededException" => crate::operation::query_vectors::QueryVectorsError::ServiceQuotaExceededException({
+        "RequestTimeoutException" => crate::operation::query_vectors::QueryVectorsError::RequestTimeoutException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ServiceQuotaExceededExceptionBuilder::default();
-                output = crate::protocol_serde::shape_service_quota_exceeded_exception::de_service_quota_exceeded_exception_json_err(
-                    _response_body,
-                    output,
-                )
-                .map_err(crate::operation::query_vectors::QueryVectorsError::unhandled)?;
+                let mut output = crate::types::error::builders::RequestTimeoutExceptionBuilder::default();
+                output = crate::protocol_serde::shape_request_timeout_exception::de_request_timeout_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::query_vectors::QueryVectorsError::unhandled)?;
                 let output = output.meta(generic);
-                crate::serde_util::service_quota_exceeded_exception_correct_errors(output)
+                crate::serde_util::request_timeout_exception_correct_errors(output)
                     .build()
                     .map_err(crate::operation::query_vectors::QueryVectorsError::unhandled)?
             };
@@ -222,6 +219,13 @@ pub(crate) fn de_query_vectors(
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "distanceMetric" => {
+                    builder = builder.set_distance_metric(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::DistanceMetric::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
                 "vectors" => {
                     builder = builder.set_vectors(crate::protocol_serde::shape_query_vectors_output_list::de_query_vectors_output_list(
                         tokens,

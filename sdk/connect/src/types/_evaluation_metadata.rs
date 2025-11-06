@@ -10,8 +10,14 @@ pub struct EvaluationMetadata {
     pub evaluator_arn: ::std::string::String,
     /// <p>The identifier of the agent who performed the contact.</p>
     pub contact_agent_id: ::std::option::Option<::std::string::String>,
+    /// <p>The calibration session ID that this evaluation belongs to.</p>
+    pub calibration_session_id: ::std::option::Option<::std::string::String>,
     /// <p>The overall score of the contact evaluation.</p>
     pub score: ::std::option::Option<crate::types::EvaluationScore>,
+    /// <p>Information related to automated evaluation.</p>
+    pub auto_evaluation: ::std::option::Option<crate::types::AutoEvaluationDetails>,
+    /// <p>Information related to evaluation acknowledgement.</p>
+    pub acknowledgement: ::std::option::Option<crate::types::EvaluationAcknowledgement>,
 }
 impl EvaluationMetadata {
     /// <p>The identifier of the contact in this instance of Amazon Connect.</p>
@@ -28,9 +34,21 @@ impl EvaluationMetadata {
     pub fn contact_agent_id(&self) -> ::std::option::Option<&str> {
         self.contact_agent_id.as_deref()
     }
+    /// <p>The calibration session ID that this evaluation belongs to.</p>
+    pub fn calibration_session_id(&self) -> ::std::option::Option<&str> {
+        self.calibration_session_id.as_deref()
+    }
     /// <p>The overall score of the contact evaluation.</p>
     pub fn score(&self) -> ::std::option::Option<&crate::types::EvaluationScore> {
         self.score.as_ref()
+    }
+    /// <p>Information related to automated evaluation.</p>
+    pub fn auto_evaluation(&self) -> ::std::option::Option<&crate::types::AutoEvaluationDetails> {
+        self.auto_evaluation.as_ref()
+    }
+    /// <p>Information related to evaluation acknowledgement.</p>
+    pub fn acknowledgement(&self) -> ::std::option::Option<&crate::types::EvaluationAcknowledgement> {
+        self.acknowledgement.as_ref()
     }
 }
 impl EvaluationMetadata {
@@ -47,7 +65,10 @@ pub struct EvaluationMetadataBuilder {
     pub(crate) contact_id: ::std::option::Option<::std::string::String>,
     pub(crate) evaluator_arn: ::std::option::Option<::std::string::String>,
     pub(crate) contact_agent_id: ::std::option::Option<::std::string::String>,
+    pub(crate) calibration_session_id: ::std::option::Option<::std::string::String>,
     pub(crate) score: ::std::option::Option<crate::types::EvaluationScore>,
+    pub(crate) auto_evaluation: ::std::option::Option<crate::types::AutoEvaluationDetails>,
+    pub(crate) acknowledgement: ::std::option::Option<crate::types::EvaluationAcknowledgement>,
 }
 impl EvaluationMetadataBuilder {
     /// <p>The identifier of the contact in this instance of Amazon Connect.</p>
@@ -94,6 +115,20 @@ impl EvaluationMetadataBuilder {
     pub fn get_contact_agent_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.contact_agent_id
     }
+    /// <p>The calibration session ID that this evaluation belongs to.</p>
+    pub fn calibration_session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.calibration_session_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The calibration session ID that this evaluation belongs to.</p>
+    pub fn set_calibration_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.calibration_session_id = input;
+        self
+    }
+    /// <p>The calibration session ID that this evaluation belongs to.</p>
+    pub fn get_calibration_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.calibration_session_id
+    }
     /// <p>The overall score of the contact evaluation.</p>
     pub fn score(mut self, input: crate::types::EvaluationScore) -> Self {
         self.score = ::std::option::Option::Some(input);
@@ -107,6 +142,34 @@ impl EvaluationMetadataBuilder {
     /// <p>The overall score of the contact evaluation.</p>
     pub fn get_score(&self) -> &::std::option::Option<crate::types::EvaluationScore> {
         &self.score
+    }
+    /// <p>Information related to automated evaluation.</p>
+    pub fn auto_evaluation(mut self, input: crate::types::AutoEvaluationDetails) -> Self {
+        self.auto_evaluation = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Information related to automated evaluation.</p>
+    pub fn set_auto_evaluation(mut self, input: ::std::option::Option<crate::types::AutoEvaluationDetails>) -> Self {
+        self.auto_evaluation = input;
+        self
+    }
+    /// <p>Information related to automated evaluation.</p>
+    pub fn get_auto_evaluation(&self) -> &::std::option::Option<crate::types::AutoEvaluationDetails> {
+        &self.auto_evaluation
+    }
+    /// <p>Information related to evaluation acknowledgement.</p>
+    pub fn acknowledgement(mut self, input: crate::types::EvaluationAcknowledgement) -> Self {
+        self.acknowledgement = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Information related to evaluation acknowledgement.</p>
+    pub fn set_acknowledgement(mut self, input: ::std::option::Option<crate::types::EvaluationAcknowledgement>) -> Self {
+        self.acknowledgement = input;
+        self
+    }
+    /// <p>Information related to evaluation acknowledgement.</p>
+    pub fn get_acknowledgement(&self) -> &::std::option::Option<crate::types::EvaluationAcknowledgement> {
+        &self.acknowledgement
     }
     /// Consumes the builder and constructs a [`EvaluationMetadata`](crate::types::EvaluationMetadata).
     /// This method will fail if any of the following fields are not set:
@@ -127,7 +190,10 @@ impl EvaluationMetadataBuilder {
                 )
             })?,
             contact_agent_id: self.contact_agent_id,
+            calibration_session_id: self.calibration_session_id,
             score: self.score,
+            auto_evaluation: self.auto_evaluation,
+            acknowledgement: self.acknowledgement,
         })
     }
 }

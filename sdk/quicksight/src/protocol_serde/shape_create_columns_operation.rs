@@ -3,17 +3,26 @@ pub fn ser_create_columns_operation(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CreateColumnsOperation,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    if let Some(var_1) = &input.alias {
+        object.key("Alias").string(var_1.as_str());
+    }
+    if let Some(var_2) = &input.source {
+        #[allow(unused_mut)]
+        let mut object_3 = object.key("Source").start_object();
+        crate::protocol_serde::shape_transform_operation_source::ser_transform_operation_source(&mut object_3, var_2)?;
+        object_3.finish();
+    }
     {
-        let mut array_1 = object.key("Columns").start_array();
-        for item_2 in &input.columns {
+        let mut array_4 = object.key("Columns").start_array();
+        for item_5 in &input.columns {
             {
                 #[allow(unused_mut)]
-                let mut object_3 = array_1.value().start_object();
-                crate::protocol_serde::shape_calculated_column::ser_calculated_column(&mut object_3, item_2)?;
-                object_3.finish();
+                let mut object_6 = array_4.value().start_object();
+                crate::protocol_serde::shape_calculated_column::ser_calculated_column(&mut object_6, item_5)?;
+                object_6.finish();
             }
         }
-        array_1.finish();
+        array_4.finish();
     }
     Ok(())
 }
@@ -33,6 +42,18 @@ where
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "Alias" => {
+                            builder = builder.set_alias(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "Source" => {
+                            builder = builder.set_source(crate::protocol_serde::shape_transform_operation_source::de_transform_operation_source(
+                                tokens,
+                            )?);
+                        }
                         "Columns" => {
                             builder = builder.set_columns(crate::protocol_serde::shape_calculated_column_list::de_calculated_column_list(tokens)?);
                         }

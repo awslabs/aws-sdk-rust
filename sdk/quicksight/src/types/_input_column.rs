@@ -6,6 +6,8 @@
 pub struct InputColumn {
     /// <p>The name of this column in the underlying data source.</p>
     pub name: ::std::string::String,
+    /// <p>A unique identifier for the input column.</p>
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>The data type of the column.</p>
     pub r#type: crate::types::InputColumnDataType,
     /// <p>The sub data type of the column. Sub types are only available for decimal columns that are part of a SPICE dataset.</p>
@@ -16,6 +18,10 @@ impl InputColumn {
     pub fn name(&self) -> &str {
         use std::ops::Deref;
         self.name.deref()
+    }
+    /// <p>A unique identifier for the input column.</p>
+    pub fn id(&self) -> ::std::option::Option<&str> {
+        self.id.as_deref()
     }
     /// <p>The data type of the column.</p>
     pub fn r#type(&self) -> &crate::types::InputColumnDataType {
@@ -38,6 +44,7 @@ impl InputColumn {
 #[non_exhaustive]
 pub struct InputColumnBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::InputColumnDataType>,
     pub(crate) sub_type: ::std::option::Option<crate::types::ColumnDataSubType>,
 }
@@ -56,6 +63,20 @@ impl InputColumnBuilder {
     /// <p>The name of this column in the underlying data source.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
+    }
+    /// <p>A unique identifier for the input column.</p>
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A unique identifier for the input column.</p>
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.id = input;
+        self
+    }
+    /// <p>A unique identifier for the input column.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The data type of the column.</p>
     /// This field is required.
@@ -98,6 +119,7 @@ impl InputColumnBuilder {
                     "name was not specified but it is required when building InputColumn",
                 )
             })?,
+            id: self.id,
             r#type: self.r#type.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "r#type",

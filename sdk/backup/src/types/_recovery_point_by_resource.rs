@@ -32,6 +32,8 @@ pub struct RecoveryPointByResource {
     pub index_status: ::std::option::Option<crate::types::IndexStatus>,
     /// <p>A string in the form of a detailed message explaining the status of a backup index associated with the recovery point.</p>
     pub index_status_message: ::std::option::Option<::std::string::String>,
+    /// <p>The type of encryption key used for the recovery point. Valid values are CUSTOMER_MANAGED_KMS_KEY for customer-managed keys or Amazon Web Services_OWNED_KMS_KEY for Amazon Web Services-owned keys.</p>
+    pub encryption_key_type: ::std::option::Option<crate::types::EncryptionKeyType>,
 }
 impl RecoveryPointByResource {
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
@@ -88,6 +90,10 @@ impl RecoveryPointByResource {
     pub fn index_status_message(&self) -> ::std::option::Option<&str> {
         self.index_status_message.as_deref()
     }
+    /// <p>The type of encryption key used for the recovery point. Valid values are CUSTOMER_MANAGED_KMS_KEY for customer-managed keys or Amazon Web Services_OWNED_KMS_KEY for Amazon Web Services-owned keys.</p>
+    pub fn encryption_key_type(&self) -> ::std::option::Option<&crate::types::EncryptionKeyType> {
+        self.encryption_key_type.as_ref()
+    }
 }
 impl RecoveryPointByResource {
     /// Creates a new builder-style object to manufacture [`RecoveryPointByResource`](crate::types::RecoveryPointByResource).
@@ -113,6 +119,7 @@ pub struct RecoveryPointByResourceBuilder {
     pub(crate) vault_type: ::std::option::Option<crate::types::VaultType>,
     pub(crate) index_status: ::std::option::Option<crate::types::IndexStatus>,
     pub(crate) index_status_message: ::std::option::Option<::std::string::String>,
+    pub(crate) encryption_key_type: ::std::option::Option<crate::types::EncryptionKeyType>,
 }
 impl RecoveryPointByResourceBuilder {
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
@@ -303,6 +310,20 @@ impl RecoveryPointByResourceBuilder {
     pub fn get_index_status_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.index_status_message
     }
+    /// <p>The type of encryption key used for the recovery point. Valid values are CUSTOMER_MANAGED_KMS_KEY for customer-managed keys or Amazon Web Services_OWNED_KMS_KEY for Amazon Web Services-owned keys.</p>
+    pub fn encryption_key_type(mut self, input: crate::types::EncryptionKeyType) -> Self {
+        self.encryption_key_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of encryption key used for the recovery point. Valid values are CUSTOMER_MANAGED_KMS_KEY for customer-managed keys or Amazon Web Services_OWNED_KMS_KEY for Amazon Web Services-owned keys.</p>
+    pub fn set_encryption_key_type(mut self, input: ::std::option::Option<crate::types::EncryptionKeyType>) -> Self {
+        self.encryption_key_type = input;
+        self
+    }
+    /// <p>The type of encryption key used for the recovery point. Valid values are CUSTOMER_MANAGED_KMS_KEY for customer-managed keys or Amazon Web Services_OWNED_KMS_KEY for Amazon Web Services-owned keys.</p>
+    pub fn get_encryption_key_type(&self) -> &::std::option::Option<crate::types::EncryptionKeyType> {
+        &self.encryption_key_type
+    }
     /// Consumes the builder and constructs a [`RecoveryPointByResource`](crate::types::RecoveryPointByResource).
     pub fn build(self) -> crate::types::RecoveryPointByResource {
         crate::types::RecoveryPointByResource {
@@ -319,6 +340,7 @@ impl RecoveryPointByResourceBuilder {
             vault_type: self.vault_type,
             index_status: self.index_status,
             index_status_message: self.index_status_message,
+            encryption_key_type: self.encryption_key_type,
         }
     }
 }

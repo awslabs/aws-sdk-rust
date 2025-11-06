@@ -22,8 +22,9 @@ impl crate::operation::delete_container_group_definition::builders::DeleteContai
 }
 /// Fluent builder constructing a request to `DeleteContainerGroupDefinition`.
 ///
-/// <p>Deletes a container group definition.</p>
+/// <p><b>This API works with the following fleet types:</b> Container</p>
 /// <p><b>Request options:</b></p>
+/// <p>Deletes a container group definition.</p>
 /// <ul>
 /// <li>
 /// <p>Delete an entire container group definition, including all versions. Specify the container group definition name, or use an ARN value without the version number.</p></li>

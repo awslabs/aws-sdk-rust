@@ -14,6 +14,7 @@ pub struct RestoreTestingSelectionForList {
     /// <p>The name cannot be changed after creation. The name must consist of only alphanumeric characters and underscores. Maximum length is 50.</p>
     pub restore_testing_plan_name: ::std::string::String,
     /// <p>Unique name of a restore testing selection.</p>
+    /// <p>The name consists of only alphanumeric characters and underscores. Maximum length is 50.</p>
     pub restore_testing_selection_name: ::std::string::String,
     /// <p>This value represents the time, in hours, data is retained after a restore test so that optional validation can be completed.</p>
     /// <p>Accepted value is an integer between 0 and 168 (the hourly equivalent of seven days).</p>
@@ -41,6 +42,7 @@ impl RestoreTestingSelectionForList {
         self.restore_testing_plan_name.deref()
     }
     /// <p>Unique name of a restore testing selection.</p>
+    /// <p>The name consists of only alphanumeric characters and underscores. Maximum length is 50.</p>
     pub fn restore_testing_selection_name(&self) -> &str {
         use std::ops::Deref;
         self.restore_testing_selection_name.deref()
@@ -134,17 +136,20 @@ impl RestoreTestingSelectionForListBuilder {
         &self.restore_testing_plan_name
     }
     /// <p>Unique name of a restore testing selection.</p>
+    /// <p>The name consists of only alphanumeric characters and underscores. Maximum length is 50.</p>
     /// This field is required.
     pub fn restore_testing_selection_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.restore_testing_selection_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Unique name of a restore testing selection.</p>
+    /// <p>The name consists of only alphanumeric characters and underscores. Maximum length is 50.</p>
     pub fn set_restore_testing_selection_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.restore_testing_selection_name = input;
         self
     }
     /// <p>Unique name of a restore testing selection.</p>
+    /// <p>The name consists of only alphanumeric characters and underscores. Maximum length is 50.</p>
     pub fn get_restore_testing_selection_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.restore_testing_selection_name
     }

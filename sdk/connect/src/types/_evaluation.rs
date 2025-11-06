@@ -22,6 +22,8 @@ pub struct Evaluation {
     pub created_time: ::aws_smithy_types::DateTime,
     /// <p>The timestamp for when the evaluation was last updated.</p>
     pub last_modified_time: ::aws_smithy_types::DateTime,
+    /// <p>Type of the evaluation.</p>
+    pub evaluation_type: ::std::option::Option<crate::types::EvaluationType>,
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -64,6 +66,10 @@ impl Evaluation {
     pub fn last_modified_time(&self) -> &::aws_smithy_types::DateTime {
         &self.last_modified_time
     }
+    /// <p>Type of the evaluation.</p>
+    pub fn evaluation_type(&self) -> ::std::option::Option<&crate::types::EvaluationType> {
+        self.evaluation_type.as_ref()
+    }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
@@ -89,6 +95,7 @@ pub struct EvaluationBuilder {
     pub(crate) scores: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::EvaluationScore>>,
     pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) evaluation_type: ::std::option::Option<crate::types::EvaluationType>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl EvaluationBuilder {
@@ -251,6 +258,20 @@ impl EvaluationBuilder {
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_time
     }
+    /// <p>Type of the evaluation.</p>
+    pub fn evaluation_type(mut self, input: crate::types::EvaluationType) -> Self {
+        self.evaluation_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Type of the evaluation.</p>
+    pub fn set_evaluation_type(mut self, input: ::std::option::Option<crate::types::EvaluationType>) -> Self {
+        self.evaluation_type = input;
+        self
+    }
+    /// <p>Type of the evaluation.</p>
+    pub fn get_evaluation_type(&self) -> &::std::option::Option<crate::types::EvaluationType> {
+        &self.evaluation_type
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -326,6 +347,7 @@ impl EvaluationBuilder {
                     "last_modified_time was not specified but it is required when building Evaluation",
                 )
             })?,
+            evaluation_type: self.evaluation_type,
             tags: self.tags,
         })
     }

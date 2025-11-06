@@ -8,7 +8,7 @@ pub struct AnalyzerSummary {
     pub arn: ::std::string::String,
     /// <p>The name of the analyzer.</p>
     pub name: ::std::string::String,
-    /// <p>The type of analyzer, which corresponds to the zone of trust chosen for the analyzer.</p>
+    /// <p>The type represents the zone of trust or scope for the analyzer.</p>
     pub r#type: crate::types::Type,
     /// <p>A timestamp for the time at which the analyzer was created.</p>
     pub created_at: ::aws_smithy_types::DateTime,
@@ -16,13 +16,15 @@ pub struct AnalyzerSummary {
     pub last_resource_analyzed: ::std::option::Option<::std::string::String>,
     /// <p>The time at which the most recently analyzed resource was analyzed.</p>
     pub last_resource_analyzed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The tags added to the analyzer.</p>
+    /// <p>An array of key-value pairs applied to the analyzer. The key-value pairs consist of the set of Unicode letters, digits, whitespace, <code>_</code>, <code>.</code>, <code>/</code>, <code>=</code>, <code>+</code>, and <code>-</code>.</p>
+    /// <p>The tag key is a value that is 1 to 128 characters in length and cannot be prefixed with <code>aws:</code>.</p>
+    /// <p>The tag value is a value that is 0 to 256 characters in length.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The status of the analyzer. An <code>Active</code> analyzer successfully monitors supported resources and generates new findings. The analyzer is <code>Disabled</code> when a user action, such as removing trusted access for Identity and Access Management Access Analyzer from Organizations, causes the analyzer to stop generating new findings. The status is <code>Creating</code> when the analyzer creation is in progress and <code>Failed</code> when the analyzer creation has failed.</p>
     pub status: crate::types::AnalyzerStatus,
     /// <p>The <code>statusReason</code> provides more details about the current status of the analyzer. For example, if the creation for the analyzer fails, a <code>Failed</code> status is returned. For an analyzer with organization as the type, this failure can be due to an issue with creating the service-linked roles required in the member accounts of the Amazon Web Services organization.</p>
     pub status_reason: ::std::option::Option<crate::types::StatusReason>,
-    /// <p>Specifies if the analyzer is an external access, unused access, or internal access analyzer.</p>
+    /// <p>Specifies if the analyzer is an external access, unused access, or internal access analyzer. The <a href="https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_GetAnalyzer.html">GetAnalyzer</a> action includes this property in its response if a configuration is specified, while the <a href="https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_ListAnalyzers.html">ListAnalyzers</a> action omits it.</p>
     pub configuration: ::std::option::Option<crate::types::AnalyzerConfiguration>,
 }
 impl AnalyzerSummary {
@@ -36,7 +38,7 @@ impl AnalyzerSummary {
         use std::ops::Deref;
         self.name.deref()
     }
-    /// <p>The type of analyzer, which corresponds to the zone of trust chosen for the analyzer.</p>
+    /// <p>The type represents the zone of trust or scope for the analyzer.</p>
     pub fn r#type(&self) -> &crate::types::Type {
         &self.r#type
     }
@@ -52,7 +54,9 @@ impl AnalyzerSummary {
     pub fn last_resource_analyzed_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_resource_analyzed_at.as_ref()
     }
-    /// <p>The tags added to the analyzer.</p>
+    /// <p>An array of key-value pairs applied to the analyzer. The key-value pairs consist of the set of Unicode letters, digits, whitespace, <code>_</code>, <code>.</code>, <code>/</code>, <code>=</code>, <code>+</code>, and <code>-</code>.</p>
+    /// <p>The tag key is a value that is 1 to 128 characters in length and cannot be prefixed with <code>aws:</code>.</p>
+    /// <p>The tag value is a value that is 0 to 256 characters in length.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
@@ -64,7 +68,7 @@ impl AnalyzerSummary {
     pub fn status_reason(&self) -> ::std::option::Option<&crate::types::StatusReason> {
         self.status_reason.as_ref()
     }
-    /// <p>Specifies if the analyzer is an external access, unused access, or internal access analyzer.</p>
+    /// <p>Specifies if the analyzer is an external access, unused access, or internal access analyzer. The <a href="https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_GetAnalyzer.html">GetAnalyzer</a> action includes this property in its response if a configuration is specified, while the <a href="https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_ListAnalyzers.html">ListAnalyzers</a> action omits it.</p>
     pub fn configuration(&self) -> ::std::option::Option<&crate::types::AnalyzerConfiguration> {
         self.configuration.as_ref()
     }
@@ -122,18 +126,18 @@ impl AnalyzerSummaryBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The type of analyzer, which corresponds to the zone of trust chosen for the analyzer.</p>
+    /// <p>The type represents the zone of trust or scope for the analyzer.</p>
     /// This field is required.
     pub fn r#type(mut self, input: crate::types::Type) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of analyzer, which corresponds to the zone of trust chosen for the analyzer.</p>
+    /// <p>The type represents the zone of trust or scope for the analyzer.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::Type>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>The type of analyzer, which corresponds to the zone of trust chosen for the analyzer.</p>
+    /// <p>The type represents the zone of trust or scope for the analyzer.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::Type> {
         &self.r#type
     }
@@ -184,19 +188,25 @@ impl AnalyzerSummaryBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>The tags added to the analyzer.</p>
+    /// <p>An array of key-value pairs applied to the analyzer. The key-value pairs consist of the set of Unicode letters, digits, whitespace, <code>_</code>, <code>.</code>, <code>/</code>, <code>=</code>, <code>+</code>, and <code>-</code>.</p>
+    /// <p>The tag key is a value that is 1 to 128 characters in length and cannot be prefixed with <code>aws:</code>.</p>
+    /// <p>The tag value is a value that is 0 to 256 characters in length.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>The tags added to the analyzer.</p>
+    /// <p>An array of key-value pairs applied to the analyzer. The key-value pairs consist of the set of Unicode letters, digits, whitespace, <code>_</code>, <code>.</code>, <code>/</code>, <code>=</code>, <code>+</code>, and <code>-</code>.</p>
+    /// <p>The tag key is a value that is 1 to 128 characters in length and cannot be prefixed with <code>aws:</code>.</p>
+    /// <p>The tag value is a value that is 0 to 256 characters in length.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>The tags added to the analyzer.</p>
+    /// <p>An array of key-value pairs applied to the analyzer. The key-value pairs consist of the set of Unicode letters, digits, whitespace, <code>_</code>, <code>.</code>, <code>/</code>, <code>=</code>, <code>+</code>, and <code>-</code>.</p>
+    /// <p>The tag key is a value that is 1 to 128 characters in length and cannot be prefixed with <code>aws:</code>.</p>
+    /// <p>The tag value is a value that is 0 to 256 characters in length.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
@@ -229,17 +239,17 @@ impl AnalyzerSummaryBuilder {
     pub fn get_status_reason(&self) -> &::std::option::Option<crate::types::StatusReason> {
         &self.status_reason
     }
-    /// <p>Specifies if the analyzer is an external access, unused access, or internal access analyzer.</p>
+    /// <p>Specifies if the analyzer is an external access, unused access, or internal access analyzer. The <a href="https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_GetAnalyzer.html">GetAnalyzer</a> action includes this property in its response if a configuration is specified, while the <a href="https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_ListAnalyzers.html">ListAnalyzers</a> action omits it.</p>
     pub fn configuration(mut self, input: crate::types::AnalyzerConfiguration) -> Self {
         self.configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies if the analyzer is an external access, unused access, or internal access analyzer.</p>
+    /// <p>Specifies if the analyzer is an external access, unused access, or internal access analyzer. The <a href="https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_GetAnalyzer.html">GetAnalyzer</a> action includes this property in its response if a configuration is specified, while the <a href="https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_ListAnalyzers.html">ListAnalyzers</a> action omits it.</p>
     pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::AnalyzerConfiguration>) -> Self {
         self.configuration = input;
         self
     }
-    /// <p>Specifies if the analyzer is an external access, unused access, or internal access analyzer.</p>
+    /// <p>Specifies if the analyzer is an external access, unused access, or internal access analyzer. The <a href="https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_GetAnalyzer.html">GetAnalyzer</a> action includes this property in its response if a configuration is specified, while the <a href="https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_ListAnalyzers.html">ListAnalyzers</a> action omits it.</p>
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::AnalyzerConfiguration> {
         &self.configuration
     }

@@ -13,8 +13,12 @@ pub struct CreateEvaluationFormInput {
     pub items: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationFormItem>>,
     /// <p>A scoring strategy of the evaluation form.</p>
     pub scoring_strategy: ::std::option::Option<crate::types::EvaluationFormScoringStrategy>,
+    /// <p>Configuration information about automated evaluations.</p>
+    pub auto_evaluation_configuration: ::std::option::Option<crate::types::EvaluationFormAutoEvaluationConfiguration>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateEvaluationFormInput {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -39,9 +43,17 @@ impl CreateEvaluationFormInput {
     pub fn scoring_strategy(&self) -> ::std::option::Option<&crate::types::EvaluationFormScoringStrategy> {
         self.scoring_strategy.as_ref()
     }
+    /// <p>Configuration information about automated evaluations.</p>
+    pub fn auto_evaluation_configuration(&self) -> ::std::option::Option<&crate::types::EvaluationFormAutoEvaluationConfiguration> {
+        self.auto_evaluation_configuration.as_ref()
+    }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
+    }
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.tags.as_ref()
     }
 }
 impl CreateEvaluationFormInput {
@@ -60,7 +72,9 @@ pub struct CreateEvaluationFormInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationFormItem>>,
     pub(crate) scoring_strategy: ::std::option::Option<crate::types::EvaluationFormScoringStrategy>,
+    pub(crate) auto_evaluation_configuration: ::std::option::Option<crate::types::EvaluationFormAutoEvaluationConfiguration>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateEvaluationFormInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -141,6 +155,23 @@ impl CreateEvaluationFormInputBuilder {
     pub fn get_scoring_strategy(&self) -> &::std::option::Option<crate::types::EvaluationFormScoringStrategy> {
         &self.scoring_strategy
     }
+    /// <p>Configuration information about automated evaluations.</p>
+    pub fn auto_evaluation_configuration(mut self, input: crate::types::EvaluationFormAutoEvaluationConfiguration) -> Self {
+        self.auto_evaluation_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration information about automated evaluations.</p>
+    pub fn set_auto_evaluation_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::EvaluationFormAutoEvaluationConfiguration>,
+    ) -> Self {
+        self.auto_evaluation_configuration = input;
+        self
+    }
+    /// <p>Configuration information about automated evaluations.</p>
+    pub fn get_auto_evaluation_configuration(&self) -> &::std::option::Option<crate::types::EvaluationFormAutoEvaluationConfiguration> {
+        &self.auto_evaluation_configuration
+    }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -155,6 +186,26 @@ impl CreateEvaluationFormInputBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
+    /// Adds a key-value pair to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut hash_map = self.tags.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.tags = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.tags
+    }
     /// Consumes the builder and constructs a [`CreateEvaluationFormInput`](crate::operation::create_evaluation_form::CreateEvaluationFormInput).
     pub fn build(
         self,
@@ -166,7 +217,9 @@ impl CreateEvaluationFormInputBuilder {
             description: self.description,
             items: self.items,
             scoring_strategy: self.scoring_strategy,
+            auto_evaluation_configuration: self.auto_evaluation_configuration,
             client_token: self.client_token,
+            tags: self.tags,
         })
     }
 }

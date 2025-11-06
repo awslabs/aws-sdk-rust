@@ -4,15 +4,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct User {
-    /// <p>A unique string used to identify the user. The length limit is 128 characters. This value can consist of letters, accented characters, symbols, numbers, and punctuation. This value is specified at the time the user is created and stored as an attribute of the user object in the identity store.</p>
-    pub user_name: ::std::option::Option<::std::string::String>,
+    /// <p>The globally unique identifier for the identity store.</p>
+    pub identity_store_id: ::std::string::String,
     /// <p>The identifier for a user in the identity store.</p>
     pub user_id: ::std::string::String,
+    /// <p>A unique string used to identify the user. The length limit is 128 characters. This value can consist of letters, accented characters, symbols, numbers, and punctuation. This value is specified at the time the user is created and stored as an attribute of the user object in the identity store.</p>
+    pub user_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>ExternalId</code> objects that contains the identifiers issued to this resource by an external identity provider.</p>
     pub external_ids: ::std::option::Option<::std::vec::Vec<crate::types::ExternalId>>,
     /// <p>An object containing the name of the user.</p>
     pub name: ::std::option::Option<crate::types::Name>,
     /// <p>A string containing the name of the user that is formatted for display when the user is referenced. For example, "John Doe."</p>
+    /// <p>Prefix search supports a maximum of 1,000 characters for the string.</p>
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>A string containing an alternate name for the user.</p>
     pub nick_name: ::std::option::Option<::std::string::String>,
@@ -34,18 +37,37 @@ pub struct User {
     pub locale: ::std::option::Option<::std::string::String>,
     /// <p>A string containing the time zone of the user.</p>
     pub timezone: ::std::option::Option<::std::string::String>,
-    /// <p>The globally unique identifier for the identity store.</p>
-    pub identity_store_id: ::std::string::String,
+    /// <p>The current status of the user account.</p>
+    pub user_status: ::std::option::Option<crate::types::UserStatus>,
+    /// <p>A list of photos associated with the user. Users can have up to 3 photos with metadata including type, display name, and primary designation.</p>
+    pub photos: ::std::option::Option<::std::vec::Vec<crate::types::Photo>>,
+    /// <p>The user's personal website or blog URL. This field stores website information for personal or professional use.</p>
+    pub website: ::std::option::Option<::std::string::String>,
+    /// <p>The user's birthdate in YYYY-MM-DD format. This field stores personal birthdate information for the user.</p>
+    pub birthdate: ::std::option::Option<::std::string::String>,
+    /// <p>The date and time the user was created.</p>
+    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The identifier of the user or system that created the user.</p>
+    pub created_by: ::std::option::Option<::std::string::String>,
+    /// <p>The date and time the user was last updated.</p>
+    pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The identifier of the user or system that last updated the user.</p>
+    pub updated_by: ::std::option::Option<::std::string::String>,
 }
 impl User {
-    /// <p>A unique string used to identify the user. The length limit is 128 characters. This value can consist of letters, accented characters, symbols, numbers, and punctuation. This value is specified at the time the user is created and stored as an attribute of the user object in the identity store.</p>
-    pub fn user_name(&self) -> ::std::option::Option<&str> {
-        self.user_name.as_deref()
+    /// <p>The globally unique identifier for the identity store.</p>
+    pub fn identity_store_id(&self) -> &str {
+        use std::ops::Deref;
+        self.identity_store_id.deref()
     }
     /// <p>The identifier for a user in the identity store.</p>
     pub fn user_id(&self) -> &str {
         use std::ops::Deref;
         self.user_id.deref()
+    }
+    /// <p>A unique string used to identify the user. The length limit is 128 characters. This value can consist of letters, accented characters, symbols, numbers, and punctuation. This value is specified at the time the user is created and stored as an attribute of the user object in the identity store.</p>
+    pub fn user_name(&self) -> ::std::option::Option<&str> {
+        self.user_name.as_deref()
     }
     /// <p>A list of <code>ExternalId</code> objects that contains the identifiers issued to this resource by an external identity provider.</p>
     ///
@@ -58,6 +80,7 @@ impl User {
         self.name.as_ref()
     }
     /// <p>A string containing the name of the user that is formatted for display when the user is referenced. For example, "John Doe."</p>
+    /// <p>Prefix search supports a maximum of 1,000 characters for the string.</p>
     pub fn display_name(&self) -> ::std::option::Option<&str> {
         self.display_name.as_deref()
     }
@@ -107,17 +130,47 @@ impl User {
     pub fn timezone(&self) -> ::std::option::Option<&str> {
         self.timezone.as_deref()
     }
-    /// <p>The globally unique identifier for the identity store.</p>
-    pub fn identity_store_id(&self) -> &str {
-        use std::ops::Deref;
-        self.identity_store_id.deref()
+    /// <p>The current status of the user account.</p>
+    pub fn user_status(&self) -> ::std::option::Option<&crate::types::UserStatus> {
+        self.user_status.as_ref()
+    }
+    /// <p>A list of photos associated with the user. Users can have up to 3 photos with metadata including type, display name, and primary designation.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.photos.is_none()`.
+    pub fn photos(&self) -> &[crate::types::Photo] {
+        self.photos.as_deref().unwrap_or_default()
+    }
+    /// <p>The user's personal website or blog URL. This field stores website information for personal or professional use.</p>
+    pub fn website(&self) -> ::std::option::Option<&str> {
+        self.website.as_deref()
+    }
+    /// <p>The user's birthdate in YYYY-MM-DD format. This field stores personal birthdate information for the user.</p>
+    pub fn birthdate(&self) -> ::std::option::Option<&str> {
+        self.birthdate.as_deref()
+    }
+    /// <p>The date and time the user was created.</p>
+    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.created_at.as_ref()
+    }
+    /// <p>The identifier of the user or system that created the user.</p>
+    pub fn created_by(&self) -> ::std::option::Option<&str> {
+        self.created_by.as_deref()
+    }
+    /// <p>The date and time the user was last updated.</p>
+    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.updated_at.as_ref()
+    }
+    /// <p>The identifier of the user or system that last updated the user.</p>
+    pub fn updated_by(&self) -> ::std::option::Option<&str> {
+        self.updated_by.as_deref()
     }
 }
 impl ::std::fmt::Debug for User {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("User");
-        formatter.field("user_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("identity_store_id", &self.identity_store_id);
         formatter.field("user_id", &self.user_id);
+        formatter.field("user_name", &"*** Sensitive Data Redacted ***");
         formatter.field("external_ids", &self.external_ids);
         formatter.field("name", &self.name);
         formatter.field("display_name", &"*** Sensitive Data Redacted ***");
@@ -131,7 +184,14 @@ impl ::std::fmt::Debug for User {
         formatter.field("preferred_language", &"*** Sensitive Data Redacted ***");
         formatter.field("locale", &"*** Sensitive Data Redacted ***");
         formatter.field("timezone", &"*** Sensitive Data Redacted ***");
-        formatter.field("identity_store_id", &self.identity_store_id);
+        formatter.field("user_status", &self.user_status);
+        formatter.field("photos", &self.photos);
+        formatter.field("website", &"*** Sensitive Data Redacted ***");
+        formatter.field("birthdate", &"*** Sensitive Data Redacted ***");
+        formatter.field("created_at", &self.created_at);
+        formatter.field("created_by", &self.created_by);
+        formatter.field("updated_at", &self.updated_at);
+        formatter.field("updated_by", &self.updated_by);
         formatter.finish()
     }
 }
@@ -146,8 +206,9 @@ impl User {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct UserBuilder {
-    pub(crate) user_name: ::std::option::Option<::std::string::String>,
+    pub(crate) identity_store_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_id: ::std::option::Option<::std::string::String>,
+    pub(crate) user_name: ::std::option::Option<::std::string::String>,
     pub(crate) external_ids: ::std::option::Option<::std::vec::Vec<crate::types::ExternalId>>,
     pub(crate) name: ::std::option::Option<crate::types::Name>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
@@ -161,22 +222,30 @@ pub struct UserBuilder {
     pub(crate) preferred_language: ::std::option::Option<::std::string::String>,
     pub(crate) locale: ::std::option::Option<::std::string::String>,
     pub(crate) timezone: ::std::option::Option<::std::string::String>,
-    pub(crate) identity_store_id: ::std::option::Option<::std::string::String>,
+    pub(crate) user_status: ::std::option::Option<crate::types::UserStatus>,
+    pub(crate) photos: ::std::option::Option<::std::vec::Vec<crate::types::Photo>>,
+    pub(crate) website: ::std::option::Option<::std::string::String>,
+    pub(crate) birthdate: ::std::option::Option<::std::string::String>,
+    pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) created_by: ::std::option::Option<::std::string::String>,
+    pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) updated_by: ::std::option::Option<::std::string::String>,
 }
 impl UserBuilder {
-    /// <p>A unique string used to identify the user. The length limit is 128 characters. This value can consist of letters, accented characters, symbols, numbers, and punctuation. This value is specified at the time the user is created and stored as an attribute of the user object in the identity store.</p>
-    pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.user_name = ::std::option::Option::Some(input.into());
+    /// <p>The globally unique identifier for the identity store.</p>
+    /// This field is required.
+    pub fn identity_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.identity_store_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique string used to identify the user. The length limit is 128 characters. This value can consist of letters, accented characters, symbols, numbers, and punctuation. This value is specified at the time the user is created and stored as an attribute of the user object in the identity store.</p>
-    pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_name = input;
+    /// <p>The globally unique identifier for the identity store.</p>
+    pub fn set_identity_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.identity_store_id = input;
         self
     }
-    /// <p>A unique string used to identify the user. The length limit is 128 characters. This value can consist of letters, accented characters, symbols, numbers, and punctuation. This value is specified at the time the user is created and stored as an attribute of the user object in the identity store.</p>
-    pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
-        &self.user_name
+    /// <p>The globally unique identifier for the identity store.</p>
+    pub fn get_identity_store_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_store_id
     }
     /// <p>The identifier for a user in the identity store.</p>
     /// This field is required.
@@ -192,6 +261,20 @@ impl UserBuilder {
     /// <p>The identifier for a user in the identity store.</p>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_id
+    }
+    /// <p>A unique string used to identify the user. The length limit is 128 characters. This value can consist of letters, accented characters, symbols, numbers, and punctuation. This value is specified at the time the user is created and stored as an attribute of the user object in the identity store.</p>
+    pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.user_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A unique string used to identify the user. The length limit is 128 characters. This value can consist of letters, accented characters, symbols, numbers, and punctuation. This value is specified at the time the user is created and stored as an attribute of the user object in the identity store.</p>
+    pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.user_name = input;
+        self
+    }
+    /// <p>A unique string used to identify the user. The length limit is 128 characters. This value can consist of letters, accented characters, symbols, numbers, and punctuation. This value is specified at the time the user is created and stored as an attribute of the user object in the identity store.</p>
+    pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_name
     }
     /// Appends an item to `external_ids`.
     ///
@@ -228,16 +311,19 @@ impl UserBuilder {
         &self.name
     }
     /// <p>A string containing the name of the user that is formatted for display when the user is referenced. For example, "John Doe."</p>
+    /// <p>Prefix search supports a maximum of 1,000 characters for the string.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A string containing the name of the user that is formatted for display when the user is referenced. For example, "John Doe."</p>
+    /// <p>Prefix search supports a maximum of 1,000 characters for the string.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.display_name = input;
         self
     }
     /// <p>A string containing the name of the user that is formatted for display when the user is referenced. For example, "John Doe."</p>
+    /// <p>Prefix search supports a maximum of 1,000 characters for the string.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.display_name
     }
@@ -399,34 +485,143 @@ impl UserBuilder {
     pub fn get_timezone(&self) -> &::std::option::Option<::std::string::String> {
         &self.timezone
     }
-    /// <p>The globally unique identifier for the identity store.</p>
-    /// This field is required.
-    pub fn identity_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.identity_store_id = ::std::option::Option::Some(input.into());
+    /// <p>The current status of the user account.</p>
+    pub fn user_status(mut self, input: crate::types::UserStatus) -> Self {
+        self.user_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The globally unique identifier for the identity store.</p>
-    pub fn set_identity_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identity_store_id = input;
+    /// <p>The current status of the user account.</p>
+    pub fn set_user_status(mut self, input: ::std::option::Option<crate::types::UserStatus>) -> Self {
+        self.user_status = input;
         self
     }
-    /// <p>The globally unique identifier for the identity store.</p>
-    pub fn get_identity_store_id(&self) -> &::std::option::Option<::std::string::String> {
-        &self.identity_store_id
+    /// <p>The current status of the user account.</p>
+    pub fn get_user_status(&self) -> &::std::option::Option<crate::types::UserStatus> {
+        &self.user_status
+    }
+    /// Appends an item to `photos`.
+    ///
+    /// To override the contents of this collection use [`set_photos`](Self::set_photos).
+    ///
+    /// <p>A list of photos associated with the user. Users can have up to 3 photos with metadata including type, display name, and primary designation.</p>
+    pub fn photos(mut self, input: crate::types::Photo) -> Self {
+        let mut v = self.photos.unwrap_or_default();
+        v.push(input);
+        self.photos = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of photos associated with the user. Users can have up to 3 photos with metadata including type, display name, and primary designation.</p>
+    pub fn set_photos(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Photo>>) -> Self {
+        self.photos = input;
+        self
+    }
+    /// <p>A list of photos associated with the user. Users can have up to 3 photos with metadata including type, display name, and primary designation.</p>
+    pub fn get_photos(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Photo>> {
+        &self.photos
+    }
+    /// <p>The user's personal website or blog URL. This field stores website information for personal or professional use.</p>
+    pub fn website(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.website = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The user's personal website or blog URL. This field stores website information for personal or professional use.</p>
+    pub fn set_website(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.website = input;
+        self
+    }
+    /// <p>The user's personal website or blog URL. This field stores website information for personal or professional use.</p>
+    pub fn get_website(&self) -> &::std::option::Option<::std::string::String> {
+        &self.website
+    }
+    /// <p>The user's birthdate in YYYY-MM-DD format. This field stores personal birthdate information for the user.</p>
+    pub fn birthdate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.birthdate = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The user's birthdate in YYYY-MM-DD format. This field stores personal birthdate information for the user.</p>
+    pub fn set_birthdate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.birthdate = input;
+        self
+    }
+    /// <p>The user's birthdate in YYYY-MM-DD format. This field stores personal birthdate information for the user.</p>
+    pub fn get_birthdate(&self) -> &::std::option::Option<::std::string::String> {
+        &self.birthdate
+    }
+    /// <p>The date and time the user was created.</p>
+    pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_at = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The date and time the user was created.</p>
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.created_at = input;
+        self
+    }
+    /// <p>The date and time the user was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
+    /// <p>The identifier of the user or system that created the user.</p>
+    pub fn created_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.created_by = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier of the user or system that created the user.</p>
+    pub fn set_created_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.created_by = input;
+        self
+    }
+    /// <p>The identifier of the user or system that created the user.</p>
+    pub fn get_created_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.created_by
+    }
+    /// <p>The date and time the user was last updated.</p>
+    pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.updated_at = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The date and time the user was last updated.</p>
+    pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.updated_at = input;
+        self
+    }
+    /// <p>The date and time the user was last updated.</p>
+    pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_at
+    }
+    /// <p>The identifier of the user or system that last updated the user.</p>
+    pub fn updated_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.updated_by = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier of the user or system that last updated the user.</p>
+    pub fn set_updated_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.updated_by = input;
+        self
+    }
+    /// <p>The identifier of the user or system that last updated the user.</p>
+    pub fn get_updated_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.updated_by
     }
     /// Consumes the builder and constructs a [`User`](crate::types::User).
     /// This method will fail if any of the following fields are not set:
-    /// - [`user_id`](crate::types::builders::UserBuilder::user_id)
     /// - [`identity_store_id`](crate::types::builders::UserBuilder::identity_store_id)
+    /// - [`user_id`](crate::types::builders::UserBuilder::user_id)
     pub fn build(self) -> ::std::result::Result<crate::types::User, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::User {
-            user_name: self.user_name,
+            identity_store_id: self.identity_store_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "identity_store_id",
+                    "identity_store_id was not specified but it is required when building User",
+                )
+            })?,
             user_id: self.user_id.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "user_id",
                     "user_id was not specified but it is required when building User",
                 )
             })?,
+            user_name: self.user_name,
             external_ids: self.external_ids,
             name: self.name,
             display_name: self.display_name,
@@ -440,20 +635,23 @@ impl UserBuilder {
             preferred_language: self.preferred_language,
             locale: self.locale,
             timezone: self.timezone,
-            identity_store_id: self.identity_store_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "identity_store_id",
-                    "identity_store_id was not specified but it is required when building User",
-                )
-            })?,
+            user_status: self.user_status,
+            photos: self.photos,
+            website: self.website,
+            birthdate: self.birthdate,
+            created_at: self.created_at,
+            created_by: self.created_by,
+            updated_at: self.updated_at,
+            updated_by: self.updated_by,
         })
     }
 }
 impl ::std::fmt::Debug for UserBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UserBuilder");
-        formatter.field("user_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("identity_store_id", &self.identity_store_id);
         formatter.field("user_id", &self.user_id);
+        formatter.field("user_name", &"*** Sensitive Data Redacted ***");
         formatter.field("external_ids", &self.external_ids);
         formatter.field("name", &self.name);
         formatter.field("display_name", &"*** Sensitive Data Redacted ***");
@@ -467,7 +665,14 @@ impl ::std::fmt::Debug for UserBuilder {
         formatter.field("preferred_language", &"*** Sensitive Data Redacted ***");
         formatter.field("locale", &"*** Sensitive Data Redacted ***");
         formatter.field("timezone", &"*** Sensitive Data Redacted ***");
-        formatter.field("identity_store_id", &self.identity_store_id);
+        formatter.field("user_status", &self.user_status);
+        formatter.field("photos", &self.photos);
+        formatter.field("website", &"*** Sensitive Data Redacted ***");
+        formatter.field("birthdate", &"*** Sensitive Data Redacted ***");
+        formatter.field("created_at", &self.created_at);
+        formatter.field("created_by", &self.created_by);
+        formatter.field("updated_at", &self.updated_at);
+        formatter.field("updated_by", &self.updated_by);
         formatter.finish()
     }
 }

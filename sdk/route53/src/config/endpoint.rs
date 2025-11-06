@@ -878,6 +878,18 @@ pub struct ParamsBuilder {
 impl ParamsBuilder {
     /// Consume this builder, creating [`Params`].
     pub fn build(self) -> ::std::result::Result<crate::config::endpoint::Params, crate::config::endpoint::InvalidParams> {
+        if let Some(region) = &self.region {
+            if !crate::endpoint_lib::host::is_valid_host_label(
+                region.as_ref() as &str,
+                true,
+                &mut crate::endpoint_lib::diagnostic::DiagnosticCollector::new(),
+            ) {
+                return Err(crate::config::endpoint::InvalidParams::invalid_value(
+                    "region",
+                    "must be a valid host label",
+                ));
+            }
+        };
         Ok(
             #[allow(clippy::unnecessary_lazy_evaluations)]
             crate::config::endpoint::Params {
@@ -964,18 +976,40 @@ impl ParamsBuilder {
 #[derive(Debug)]
 pub struct InvalidParams {
     field: std::borrow::Cow<'static, str>,
+    kind: InvalidParamsErrorKind,
+}
+
+/// The kind of invalid parameter error
+#[derive(Debug)]
+enum InvalidParamsErrorKind {
+    MissingField,
+    InvalidValue { message: &'static str },
 }
 
 impl InvalidParams {
     #[allow(dead_code)]
     fn missing(field: &'static str) -> Self {
-        Self { field: field.into() }
+        Self {
+            field: field.into(),
+            kind: InvalidParamsErrorKind::MissingField,
+        }
+    }
+
+    #[allow(dead_code)]
+    fn invalid_value(field: &'static str, message: &'static str) -> Self {
+        Self {
+            field: field.into(),
+            kind: InvalidParamsErrorKind::InvalidValue { message },
+        }
     }
 }
 
 impl std::fmt::Display for InvalidParams {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "a required field was missing: `{}`", self.field)
+        match self.kind {
+            InvalidParamsErrorKind::MissingField => write!(f, "a required field was missing: `{}`", self.field),
+            InvalidParamsErrorKind::InvalidValue { message } => write!(f, "invalid value for field: `{}` - {}", self.field, message),
+        }
     }
 }
 

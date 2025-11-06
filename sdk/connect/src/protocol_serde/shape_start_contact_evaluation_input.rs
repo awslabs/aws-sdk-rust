@@ -3,14 +3,30 @@ pub fn ser_start_contact_evaluation_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::start_contact_evaluation::StartContactEvaluationInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.client_token {
-        object.key("ClientToken").string(var_1.as_str());
+    if let Some(var_1) = &input.auto_evaluation_configuration {
+        #[allow(unused_mut)]
+        let mut object_2 = object.key("AutoEvaluationConfiguration").start_object();
+        crate::protocol_serde::shape_auto_evaluation_configuration::ser_auto_evaluation_configuration(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_2) = &input.contact_id {
-        object.key("ContactId").string(var_2.as_str());
+    if let Some(var_3) = &input.client_token {
+        object.key("ClientToken").string(var_3.as_str());
     }
-    if let Some(var_3) = &input.evaluation_form_id {
-        object.key("EvaluationFormId").string(var_3.as_str());
+    if let Some(var_4) = &input.contact_id {
+        object.key("ContactId").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.evaluation_form_id {
+        object.key("EvaluationFormId").string(var_5.as_str());
+    }
+    if let Some(var_6) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("Tags").start_object();
+        for (key_8, value_9) in var_6 {
+            {
+                object_7.key(key_8.as_str()).string(value_9.as_str());
+            }
+        }
+        object_7.finish();
     }
     Ok(())
 }

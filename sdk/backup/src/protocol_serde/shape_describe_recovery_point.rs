@@ -177,6 +177,13 @@ pub(crate) fn de_describe_recovery_point(
                             .transpose()?,
                     );
                 }
+                "EncryptionKeyType" => {
+                    builder = builder.set_encryption_key_type(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::EncryptionKeyType::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
                 "IamRoleArn" => {
                     builder = builder.set_iam_role_arn(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

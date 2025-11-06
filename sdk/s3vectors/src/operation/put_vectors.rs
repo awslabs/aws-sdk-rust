@@ -269,12 +269,14 @@ pub enum PutVectorsError {
     KmsNotFoundException(crate::types::error::KmsNotFoundException),
     /// <p>The request was rejected because the specified resource can't be found.</p>
     NotFoundException(crate::types::error::NotFoundException),
+    /// <p>Your request exceeds a service quota.</p>
+    ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// <p>The service is unavailable. Wait briefly and retry your request. If it continues to fail, increase your waiting time between retries.</p>
     ServiceUnavailableException(crate::types::error::ServiceUnavailableException),
     /// <p>The request failed due to an internal server error.</p>
     InternalServerException(crate::types::error::InternalServerException),
-    /// <p>Your request exceeds a service quota.</p>
-    ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
+    /// <p>The request timed out. Retry your request.</p>
+    RequestTimeoutException(crate::types::error::RequestTimeoutException),
     /// <p>The request was denied due to request throttling.</p>
     TooManyRequestsException(crate::types::error::TooManyRequestsException),
     /// <p>The requested action isn't valid.</p>
@@ -318,9 +320,10 @@ impl PutVectorsError {
             Self::KmsInvalidStateException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::KmsNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::NotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ServiceQuotaExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ServiceUnavailableException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InternalServerException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
-            Self::ServiceQuotaExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::RequestTimeoutException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::TooManyRequestsException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ValidationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
@@ -350,6 +353,10 @@ impl PutVectorsError {
     pub fn is_not_found_exception(&self) -> bool {
         matches!(self, Self::NotFoundException(_))
     }
+    /// Returns `true` if the error kind is `PutVectorsError::ServiceQuotaExceededException`.
+    pub fn is_service_quota_exceeded_exception(&self) -> bool {
+        matches!(self, Self::ServiceQuotaExceededException(_))
+    }
     /// Returns `true` if the error kind is `PutVectorsError::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(self, Self::ServiceUnavailableException(_))
@@ -358,9 +365,9 @@ impl PutVectorsError {
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(self, Self::InternalServerException(_))
     }
-    /// Returns `true` if the error kind is `PutVectorsError::ServiceQuotaExceededException`.
-    pub fn is_service_quota_exceeded_exception(&self) -> bool {
-        matches!(self, Self::ServiceQuotaExceededException(_))
+    /// Returns `true` if the error kind is `PutVectorsError::RequestTimeoutException`.
+    pub fn is_request_timeout_exception(&self) -> bool {
+        matches!(self, Self::RequestTimeoutException(_))
     }
     /// Returns `true` if the error kind is `PutVectorsError::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
@@ -380,9 +387,10 @@ impl ::std::error::Error for PutVectorsError {
             Self::KmsInvalidStateException(_inner) => ::std::option::Option::Some(_inner),
             Self::KmsNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::NotFoundException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ServiceQuotaExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::ServiceUnavailableException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalServerException(_inner) => ::std::option::Option::Some(_inner),
-            Self::ServiceQuotaExceededException(_inner) => ::std::option::Option::Some(_inner),
+            Self::RequestTimeoutException(_inner) => ::std::option::Option::Some(_inner),
             Self::TooManyRequestsException(_inner) => ::std::option::Option::Some(_inner),
             Self::ValidationException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
@@ -398,9 +406,10 @@ impl ::std::fmt::Display for PutVectorsError {
             Self::KmsInvalidStateException(_inner) => _inner.fmt(f),
             Self::KmsNotFoundException(_inner) => _inner.fmt(f),
             Self::NotFoundException(_inner) => _inner.fmt(f),
+            Self::ServiceQuotaExceededException(_inner) => _inner.fmt(f),
             Self::ServiceUnavailableException(_inner) => _inner.fmt(f),
             Self::InternalServerException(_inner) => _inner.fmt(f),
-            Self::ServiceQuotaExceededException(_inner) => _inner.fmt(f),
+            Self::RequestTimeoutException(_inner) => _inner.fmt(f),
             Self::TooManyRequestsException(_inner) => _inner.fmt(f),
             Self::ValidationException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
@@ -421,6 +430,7 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for PutVectorsError {
         match self {
             Self::ServiceUnavailableException(inner) => ::std::option::Option::Some(inner.retryable_error_kind()),
             Self::InternalServerException(inner) => ::std::option::Option::Some(inner.retryable_error_kind()),
+            Self::RequestTimeoutException(inner) => ::std::option::Option::Some(inner.retryable_error_kind()),
             Self::TooManyRequestsException(inner) => ::std::option::Option::Some(inner.retryable_error_kind()),
             _ => ::std::option::Option::None,
         }
@@ -435,9 +445,10 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for PutVectorsErr
             Self::KmsInvalidStateException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::KmsNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::NotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ServiceQuotaExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ServiceUnavailableException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalServerException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::ServiceQuotaExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::RequestTimeoutException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::TooManyRequestsException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ValidationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,

@@ -12,7 +12,7 @@ pub struct AccountSettings {
     pub default_namespace: ::std::option::Option<::std::string::String>,
     /// <p>The main notification email for your Quick Sight subscription.</p>
     pub notification_email: ::std::option::Option<::std::string::String>,
-    /// <p>A Boolean value that indicates whether public sharing is turned on for an QuickSight account. For more information about turning on public sharing, see <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdatePublicSharingSettings.html">UpdatePublicSharingSettings</a>.</p>
+    /// <p>A Boolean value that indicates whether public sharing is turned on for an Quick Suite account. For more information about turning on public sharing, see <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdatePublicSharingSettings.html">UpdatePublicSharingSettings</a>.</p>
     pub public_sharing_enabled: bool,
     /// <p>A boolean value that determines whether or not an Quick Sight account can be deleted. A <code>True</code> value doesn't allow the account to be deleted and results in an error message if a user tries to make a <code>DeleteAccountSubsctiption</code> request. A <code>False</code> value will allow the ccount to be deleted.</p>
     pub termination_protection_enabled: bool,
@@ -34,7 +34,7 @@ impl AccountSettings {
     pub fn notification_email(&self) -> ::std::option::Option<&str> {
         self.notification_email.as_deref()
     }
-    /// <p>A Boolean value that indicates whether public sharing is turned on for an QuickSight account. For more information about turning on public sharing, see <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdatePublicSharingSettings.html">UpdatePublicSharingSettings</a>.</p>
+    /// <p>A Boolean value that indicates whether public sharing is turned on for an Quick Suite account. For more information about turning on public sharing, see <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdatePublicSharingSettings.html">UpdatePublicSharingSettings</a>.</p>
     pub fn public_sharing_enabled(&self) -> bool {
         self.public_sharing_enabled
     }
@@ -118,17 +118,17 @@ impl AccountSettingsBuilder {
     pub fn get_notification_email(&self) -> &::std::option::Option<::std::string::String> {
         &self.notification_email
     }
-    /// <p>A Boolean value that indicates whether public sharing is turned on for an QuickSight account. For more information about turning on public sharing, see <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdatePublicSharingSettings.html">UpdatePublicSharingSettings</a>.</p>
+    /// <p>A Boolean value that indicates whether public sharing is turned on for an Quick Suite account. For more information about turning on public sharing, see <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdatePublicSharingSettings.html">UpdatePublicSharingSettings</a>.</p>
     pub fn public_sharing_enabled(mut self, input: bool) -> Self {
         self.public_sharing_enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A Boolean value that indicates whether public sharing is turned on for an QuickSight account. For more information about turning on public sharing, see <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdatePublicSharingSettings.html">UpdatePublicSharingSettings</a>.</p>
+    /// <p>A Boolean value that indicates whether public sharing is turned on for an Quick Suite account. For more information about turning on public sharing, see <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdatePublicSharingSettings.html">UpdatePublicSharingSettings</a>.</p>
     pub fn set_public_sharing_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.public_sharing_enabled = input;
         self
     }
-    /// <p>A Boolean value that indicates whether public sharing is turned on for an QuickSight account. For more information about turning on public sharing, see <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdatePublicSharingSettings.html">UpdatePublicSharingSettings</a>.</p>
+    /// <p>A Boolean value that indicates whether public sharing is turned on for an Quick Suite account. For more information about turning on public sharing, see <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdatePublicSharingSettings.html">UpdatePublicSharingSettings</a>.</p>
     pub fn get_public_sharing_enabled(&self) -> &::std::option::Option<bool> {
         &self.public_sharing_enabled
     }

@@ -22,7 +22,7 @@ impl crate::operation::update_group::builders::UpdateGroupInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateGroup`.
 ///
-/// <p>For the specified group in the specified identity store, updates the group metadata and attributes.</p>
+/// <p>Updates the specified group metadata and attributes in the specified identity store.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -141,17 +141,17 @@ impl UpdateGroupFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_operations`](Self::set_operations).
     ///
-    /// <p>A list of <code>AttributeOperation</code> objects to apply to the requested group. These operations might add, replace, or remove an attribute.</p>
+    /// <p>A list of <code>AttributeOperation</code> objects to apply to the requested group. These operations might add, replace, or remove an attribute. For more information on the attributes that can be added, replaced, or removed, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html">Group</a>.</p>
     pub fn operations(mut self, input: crate::types::AttributeOperation) -> Self {
         self.inner = self.inner.operations(input);
         self
     }
-    /// <p>A list of <code>AttributeOperation</code> objects to apply to the requested group. These operations might add, replace, or remove an attribute.</p>
+    /// <p>A list of <code>AttributeOperation</code> objects to apply to the requested group. These operations might add, replace, or remove an attribute. For more information on the attributes that can be added, replaced, or removed, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html">Group</a>.</p>
     pub fn set_operations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeOperation>>) -> Self {
         self.inner = self.inner.set_operations(input);
         self
     }
-    /// <p>A list of <code>AttributeOperation</code> objects to apply to the requested group. These operations might add, replace, or remove an attribute.</p>
+    /// <p>A list of <code>AttributeOperation</code> objects to apply to the requested group. These operations might add, replace, or remove an attribute. For more information on the attributes that can be added, replaced, or removed, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html">Group</a>.</p>
     pub fn get_operations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeOperation>> {
         self.inner.get_operations()
     }

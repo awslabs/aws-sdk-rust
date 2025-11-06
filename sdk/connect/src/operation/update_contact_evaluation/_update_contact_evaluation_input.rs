@@ -11,6 +11,8 @@ pub struct UpdateContactEvaluationInput {
     pub answers: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::EvaluationAnswerInput>>,
     /// <p>A map of question identifiers to note value.</p>
     pub notes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::EvaluationNote>>,
+    /// <p>The ID of the user who updated the contact evaluation.</p>
+    pub updated_by: ::std::option::Option<crate::types::EvaluatorUserUnion>,
 }
 impl UpdateContactEvaluationInput {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -29,6 +31,10 @@ impl UpdateContactEvaluationInput {
     pub fn notes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::EvaluationNote>> {
         self.notes.as_ref()
     }
+    /// <p>The ID of the user who updated the contact evaluation.</p>
+    pub fn updated_by(&self) -> ::std::option::Option<&crate::types::EvaluatorUserUnion> {
+        self.updated_by.as_ref()
+    }
 }
 impl UpdateContactEvaluationInput {
     /// Creates a new builder-style object to manufacture [`UpdateContactEvaluationInput`](crate::operation::update_contact_evaluation::UpdateContactEvaluationInput).
@@ -45,6 +51,7 @@ pub struct UpdateContactEvaluationInputBuilder {
     pub(crate) evaluation_id: ::std::option::Option<::std::string::String>,
     pub(crate) answers: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::EvaluationAnswerInput>>,
     pub(crate) notes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::EvaluationNote>>,
+    pub(crate) updated_by: ::std::option::Option<crate::types::EvaluatorUserUnion>,
 }
 impl UpdateContactEvaluationInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -123,6 +130,20 @@ impl UpdateContactEvaluationInputBuilder {
     pub fn get_notes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::EvaluationNote>> {
         &self.notes
     }
+    /// <p>The ID of the user who updated the contact evaluation.</p>
+    pub fn updated_by(mut self, input: crate::types::EvaluatorUserUnion) -> Self {
+        self.updated_by = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ID of the user who updated the contact evaluation.</p>
+    pub fn set_updated_by(mut self, input: ::std::option::Option<crate::types::EvaluatorUserUnion>) -> Self {
+        self.updated_by = input;
+        self
+    }
+    /// <p>The ID of the user who updated the contact evaluation.</p>
+    pub fn get_updated_by(&self) -> &::std::option::Option<crate::types::EvaluatorUserUnion> {
+        &self.updated_by
+    }
     /// Consumes the builder and constructs a [`UpdateContactEvaluationInput`](crate::operation::update_contact_evaluation::UpdateContactEvaluationInput).
     pub fn build(
         self,
@@ -135,6 +156,7 @@ impl UpdateContactEvaluationInputBuilder {
             evaluation_id: self.evaluation_id,
             answers: self.answers,
             notes: self.notes,
+            updated_by: self.updated_by,
         })
     }
 }

@@ -22,6 +22,7 @@ impl crate::operation::delete_game_session_queue::builders::DeleteGameSessionQue
 }
 /// Fluent builder constructing a request to `DeleteGameSessionQueue`.
 ///
+/// <p><b>This API works with the following fleet types:</b> EC2, Anywhere, Container</p>
 /// <p>Deletes a game session queue. Once a queue is successfully deleted, unfulfilled <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartGameSessionPlacement.html">StartGameSessionPlacement</a> requests that reference the queue will fail. To delete a queue, specify the queue name.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteGameSessionQueueFluentBuilder {

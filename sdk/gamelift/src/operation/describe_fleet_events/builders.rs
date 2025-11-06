@@ -22,6 +22,7 @@ impl crate::operation::describe_fleet_events::builders::DescribeFleetEventsInput
 }
 /// Fluent builder constructing a request to `DescribeFleetEvents`.
 ///
+/// <p><b>This API works with the following fleet types:</b> EC2, Anywhere, Container</p>
 /// <p>Retrieves entries from a fleet's event log. Fleet events are initiated by changes in status, such as during fleet creation and termination, changes in capacity, etc. If a fleet has multiple locations, events are also initiated by changes to status and capacity in remote locations.</p>
 /// <p>You can specify a time range to limit the result set. Use the pagination parameters to retrieve results as a set of sequential pages.</p>
 /// <p>If successful, a collection of event log entries matching the request are returned.</p>

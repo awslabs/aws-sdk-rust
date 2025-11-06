@@ -22,12 +22,12 @@ impl crate::operation::get_session_embed_url::builders::GetSessionEmbedUrlInputB
 }
 /// Fluent builder constructing a request to `GetSessionEmbedUrl`.
 ///
-/// <p>Generates a session URL and authorization code that you can use to embed the Amazon Amazon Quick Sight console in your web server code. Use <code>GetSessionEmbedUrl</code> where you want to provide an authoring portal that allows users to create data sources, datasets, analyses, and dashboards. The users who access an embedded Amazon Quick Sight console need belong to the author or admin security cohort. If you want to restrict permissions to some of these features, add a custom permissions profile to the user with the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html">UpdateUser</a> </code> API operation. Use <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_RegisterUser.html">RegisterUser</a> </code> API operation to add a new user with a custom permission profile attached. For more information, see the following sections in the <i>Amazon QuickSight User Guide</i>:</p>
+/// <p>Generates a session URL and authorization code that you can use to embed the Amazon Amazon Quick Sight console in your web server code. Use <code>GetSessionEmbedUrl</code> where you want to provide an authoring portal that allows users to create data sources, datasets, analyses, and dashboards. The users who access an embedded Amazon Quick Sight console need belong to the author or admin security cohort. If you want to restrict permissions to some of these features, add a custom permissions profile to the user with the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html">UpdateUser</a> </code> API operation. Use <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_RegisterUser.html">RegisterUser</a> </code> API operation to add a new user with a custom permission profile attached. For more information, see the following sections in the <i>Amazon Quick Suite User Guide</i>:</p>
 /// <ul>
 /// <li>
 /// <p><a href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics.html">Embedding Analytics</a></p></li>
 /// <li>
-/// <p><a href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-permissions-to-the-quicksight-console.html">Customizing Access to the Amazon QuickSight Console</a></p></li>
+/// <p><a href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-permissions-to-the-quicksight-console.html">Customizing Access to the Amazon Quick Suite Console</a></p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetSessionEmbedUrlFluentBuilder {
@@ -198,7 +198,7 @@ impl GetSessionEmbedUrlFluentBuilder {
     pub fn get_session_lifetime_in_minutes(&self) -> &::std::option::Option<i64> {
         self.inner.get_session_lifetime_in_minutes()
     }
-    /// <p>The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type. You can use this for any type of Amazon QuickSight users in your account (readers, authors, or admins). They need to be authenticated as one of the following:</p>
+    /// <p>The Amazon Quick Suite user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type. You can use this for any type of Amazon Quick Suite users in your account (readers, authors, or admins). They need to be authenticated as one of the following:</p>
     /// <ol>
     /// <li>
     /// <p>Active Directory (AD) users or group members</p></li>
@@ -212,7 +212,7 @@ impl GetSessionEmbedUrlFluentBuilder {
         self.inner = self.inner.user_arn(input.into());
         self
     }
-    /// <p>The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type. You can use this for any type of Amazon QuickSight users in your account (readers, authors, or admins). They need to be authenticated as one of the following:</p>
+    /// <p>The Amazon Quick Suite user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type. You can use this for any type of Amazon Quick Suite users in your account (readers, authors, or admins). They need to be authenticated as one of the following:</p>
     /// <ol>
     /// <li>
     /// <p>Active Directory (AD) users or group members</p></li>
@@ -226,7 +226,7 @@ impl GetSessionEmbedUrlFluentBuilder {
         self.inner = self.inner.set_user_arn(input);
         self
     }
-    /// <p>The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type. You can use this for any type of Amazon QuickSight users in your account (readers, authors, or admins). They need to be authenticated as one of the following:</p>
+    /// <p>The Amazon Quick Suite user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type. You can use this for any type of Amazon Quick Suite users in your account (readers, authors, or admins). They need to be authenticated as one of the following:</p>
     /// <ol>
     /// <li>
     /// <p>Active Directory (AD) users or group members</p></li>

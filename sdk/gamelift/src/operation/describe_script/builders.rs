@@ -22,6 +22,7 @@ impl crate::operation::describe_script::builders::DescribeScriptInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeScript`.
 ///
+/// <p><b>This API works with the following fleet types:</b> EC2</p>
 /// <p>Retrieves properties for a Realtime script.</p>
 /// <p>To request a script record, specify the script ID. If successful, an object containing the script properties is returned.</p>
 /// <p><b>Learn more</b></p>

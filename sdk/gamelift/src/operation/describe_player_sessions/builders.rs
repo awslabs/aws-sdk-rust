@@ -22,6 +22,7 @@ impl crate::operation::describe_player_sessions::builders::DescribePlayerSession
 }
 /// Fluent builder constructing a request to `DescribePlayerSessions`.
 ///
+/// <p><b>This API works with the following fleet types:</b> EC2, Anywhere, Container</p>
 /// <p>Retrieves properties for one or more player sessions.</p>
 /// <p>This action can be used in the following ways:</p>
 /// <ul>

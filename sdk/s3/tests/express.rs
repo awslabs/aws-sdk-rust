@@ -7,6 +7,9 @@ use std::time::{Duration, SystemTime};
 
 use aws_config::timeout::TimeoutConfig;
 use aws_config::Region;
+use aws_runtime::user_agent::test_util::{
+    assert_ua_contains_metric_values, assert_ua_does_not_contain_metric_values,
+};
 use aws_sdk_s3::config::endpoint::{EndpointFuture, Params, ResolveEndpoint};
 use aws_sdk_s3::config::{Builder, Credentials};
 use aws_sdk_s3::presigning::PresigningConfig;
@@ -54,6 +57,11 @@ async fn create_session_request_should_not_include_x_amz_s3session_token() {
     );
     assert!(req.headers().get("x-amz-security-token").is_some());
     assert!(req.headers().get("x-amz-s3session-token").is_none());
+
+    // The first request uses regular SigV4 credentials (for CreateSession), not S3 Express credentials,
+    // so metric "J" should NOT be present yet. It will appear on subsequent requests that use S3 Express credentials.
+    let user_agent = req.headers().get("x-amz-user-agent").unwrap();
+    assert_ua_does_not_contain_metric_values(user_agent, &["J"]);
 }
 
 #[tokio::test]
@@ -273,9 +281,9 @@ async fn default_checksum_should_be_crc32_for_operation_requiring_checksum() {
         .iter()
         .filter(|(key, _)| key.starts_with("x-amz-checksum"))
         .collect();
-
     assert_eq!(1, checksum_headers.len());
     assert_eq!("x-amz-checksum-crc32", checksum_headers[0].0);
+
     http_client.assert_requests_match(&[""]);
 }
 
@@ -304,7 +312,6 @@ async fn default_checksum_should_be_none() {
         .iter()
         .map(|checksum| format!("amz-checksum-{}", checksum.to_lowercase()))
         .chain(std::iter::once("content-md5".to_string()));
-
     assert!(!all_checksums.any(|checksum| http_client
         .actual_requests()
         .any(|req| req.headers().iter().any(|(key, _)| key == checksum))));
@@ -332,6 +339,10 @@ async fn disable_s3_express_session_auth_at_service_client_level() {
         req.headers().get("x-amz-create-session-mode").is_none(),
         "x-amz-create-session-mode should not appear in headers when S3 Express session auth is disabled"
     );
+
+    // Verify that the User-Agent does NOT contain the S3ExpressBucket metric "J" when session auth is disabled
+    let user_agent = req.headers().get("x-amz-user-agent").unwrap();
+    assert_ua_does_not_contain_metric_values(user_agent, &["J"]);
 }
 
 #[tokio::test]
@@ -418,6 +429,10 @@ async fn support_customer_overriding_express_credentials_provider() {
         .expect("x-amz-security-token should be present");
     assert_eq!(expected_session_token, actual_session_token);
     assert!(req.headers().get("x-amz-s3session-token").is_none());
+
+    // Verify that the User-Agent does NOT contain the S3ExpressBucket metric "J" for regular buckets
+    let user_agent = req.headers().get("x-amz-user-agent").unwrap();
+    assert_ua_does_not_contain_metric_values(user_agent, &["J"]);
 }
 
 #[tokio::test]
@@ -452,4 +467,35 @@ async fn s3_express_auth_flow_should_not_be_reached_with_no_auth_schemes() {
     let _ = client.list_objects_v2().bucket("test-bucket").send().await;
     // If s3 Express auth flow were exercised, no request would be received, most likely due to `TimeoutError`.
     let _ = request.expect_request();
+}
+
+#[tokio::test]
+async fn s3_express_request_contains_metric_j() {
+    let _logs = capture_test_logs();
+
+    let http_client = ReplayingClient::from_file("tests/data/express/mixed-auths.json").unwrap();
+    let client = test_client(|b| b.http_client(http_client.clone())).await;
+
+    let _result = client
+        .list_objects_v2()
+        .bucket("s3express-test-bucket--usw2-az1--x-s3")
+        .send()
+        .await
+        .expect("Request should succeed");
+
+    let requests = http_client.take_requests().await;
+
+    let s3_express_request = requests
+        .iter()
+        .find(|req| req.headers().get("x-amz-s3session-token").is_some())
+        .expect("Should have at least one S3 Express request with session token");
+
+    let user_agent = s3_express_request
+        .headers()
+        .get("x-amz-user-agent")
+        .expect("User-Agent header should be present")
+        .to_str()
+        .expect("User-Agent should be valid UTF-8");
+
+    assert_ua_contains_metric_values(user_agent, &["J"]);
 }

@@ -22,7 +22,9 @@ impl crate::operation::get_analyzed_resource::builders::GetAnalyzedResourceInput
 }
 /// Fluent builder constructing a request to `GetAnalyzedResource`.
 ///
-/// <p>Retrieves information about a resource that was analyzed.</p>
+/// <p>Retrieves information about a resource that was analyzed.</p><note>
+/// <p>This action is supported only for external access analyzers.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetAnalyzedResourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

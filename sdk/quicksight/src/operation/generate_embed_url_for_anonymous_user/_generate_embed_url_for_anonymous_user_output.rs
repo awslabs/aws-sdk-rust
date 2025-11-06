@@ -9,7 +9,7 @@ pub struct GenerateEmbedUrlForAnonymousUserOutput {
     pub status: i32,
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: ::std::string::String,
-    /// <p>The Amazon Resource Name (ARN) to use for the anonymous Amazon QuickSight user.</p>
+    /// <p>The Amazon Resource Name (ARN) to use for the anonymous Amazon Quick Suite user.</p>
     pub anonymous_user_arn: ::std::string::String,
     _request_id: Option<String>,
 }
@@ -28,7 +28,7 @@ impl GenerateEmbedUrlForAnonymousUserOutput {
         use std::ops::Deref;
         self.request_id.deref()
     }
-    /// <p>The Amazon Resource Name (ARN) to use for the anonymous Amazon QuickSight user.</p>
+    /// <p>The Amazon Resource Name (ARN) to use for the anonymous Amazon Quick Suite user.</p>
     pub fn anonymous_user_arn(&self) -> &str {
         use std::ops::Deref;
         self.anonymous_user_arn.deref()
@@ -113,18 +113,18 @@ impl GenerateEmbedUrlForAnonymousUserOutputBuilder {
     pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.request_id
     }
-    /// <p>The Amazon Resource Name (ARN) to use for the anonymous Amazon QuickSight user.</p>
+    /// <p>The Amazon Resource Name (ARN) to use for the anonymous Amazon Quick Suite user.</p>
     /// This field is required.
     pub fn anonymous_user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.anonymous_user_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) to use for the anonymous Amazon QuickSight user.</p>
+    /// <p>The Amazon Resource Name (ARN) to use for the anonymous Amazon Quick Suite user.</p>
     pub fn set_anonymous_user_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.anonymous_user_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) to use for the anonymous Amazon QuickSight user.</p>
+    /// <p>The Amazon Resource Name (ARN) to use for the anonymous Amazon Quick Suite user.</p>
     pub fn get_anonymous_user_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.anonymous_user_arn
     }

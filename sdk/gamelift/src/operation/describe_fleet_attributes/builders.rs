@@ -22,6 +22,7 @@ impl crate::operation::describe_fleet_attributes::builders::DescribeFleetAttribu
 }
 /// Fluent builder constructing a request to `DescribeFleetAttributes`.
 ///
+/// <p><b>This API works with the following fleet types:</b> EC2, Anywhere, Container</p>
 /// <p>Retrieves core fleet-wide properties for fleets in an Amazon Web Services Region. Properties include the computing hardware and deployment configuration for instances in the fleet.</p>
 /// <p>You can use this operation in the following ways:</p>
 /// <ul>

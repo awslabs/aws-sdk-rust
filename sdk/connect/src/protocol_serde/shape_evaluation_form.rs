@@ -95,6 +95,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "AutoEvaluationConfiguration" => {
+                            builder = builder.set_auto_evaluation_configuration(
+                                    crate::protocol_serde::shape_evaluation_form_auto_evaluation_configuration::de_evaluation_form_auto_evaluation_configuration(tokens)?
+                                );
+                        }
                         "Tags" => {
                             builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens)?);
                         }

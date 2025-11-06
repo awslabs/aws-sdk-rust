@@ -1301,6 +1301,116 @@ pub use crate::types::_athena_parameters::AthenaParametersBuilder;
 
 pub use crate::types::_amazon_elasticsearch_parameters::AmazonElasticsearchParametersBuilder;
 
+pub use crate::types::_semantic_model_configuration::SemanticModelConfigurationBuilder;
+
+pub use crate::types::_semantic_table::SemanticTableBuilder;
+
+pub use crate::types::_row_level_permission_configuration::RowLevelPermissionConfigurationBuilder;
+
+pub use crate::types::_row_level_permission_data_set::RowLevelPermissionDataSetBuilder;
+
+pub use crate::types::_row_level_permission_tag_configuration::RowLevelPermissionTagConfigurationBuilder;
+
+pub use crate::types::_row_level_permission_tag_rule::RowLevelPermissionTagRuleBuilder;
+
+pub use crate::types::_data_prep_configuration::DataPrepConfigurationBuilder;
+
+pub use crate::types::_destination_table::DestinationTableBuilder;
+
+pub use crate::types::_destination_table_source::DestinationTableSourceBuilder;
+
+pub use crate::types::_transform_step::TransformStepBuilder;
+
+pub use crate::types::_append_operation::AppendOperationBuilder;
+
+pub use crate::types::_appended_column::AppendedColumnBuilder;
+
+pub use crate::types::_transform_operation_source::TransformOperationSourceBuilder;
+
+pub use crate::types::_data_set_column_id_mapping::DataSetColumnIdMappingBuilder;
+
+pub use crate::types::_unpivot_operation::UnpivotOperationBuilder;
+
+pub use crate::types::_column_to_unpivot::ColumnToUnpivotBuilder;
+
+pub use crate::types::_pivot_operation::PivotOperationBuilder;
+
+pub use crate::types::_pivot_configuration::PivotConfigurationBuilder;
+
+pub use crate::types::_pivoted_label::PivotedLabelBuilder;
+
+pub use crate::types::_value_column_configuration::ValueColumnConfigurationBuilder;
+
+pub use crate::types::_data_prep_aggregation_function::DataPrepAggregationFunctionBuilder;
+
+pub use crate::types::_data_prep_list_aggregation_function::DataPrepListAggregationFunctionBuilder;
+
+pub use crate::types::_data_prep_simple_aggregation_function::DataPrepSimpleAggregationFunctionBuilder;
+
+pub use crate::types::_aggregate_operation::AggregateOperationBuilder;
+
+pub use crate::types::_aggregation::AggregationBuilder;
+
+pub use crate::types::_join_operation::JoinOperationBuilder;
+
+pub use crate::types::_join_operand_properties::JoinOperandPropertiesBuilder;
+
+pub use crate::types::_output_column_name_override::OutputColumnNameOverrideBuilder;
+
+pub use crate::types::_cast_column_types_operation::CastColumnTypesOperationBuilder;
+
+pub use crate::types::_cast_column_type_operation::CastColumnTypeOperationBuilder;
+
+pub use crate::types::_rename_columns_operation::RenameColumnsOperationBuilder;
+
+pub use crate::types::_rename_column_operation::RenameColumnOperationBuilder;
+
+pub use crate::types::_create_columns_operation::CreateColumnsOperationBuilder;
+
+pub use crate::types::_calculated_column::CalculatedColumnBuilder;
+
+pub use crate::types::_filters_operation::FiltersOperationBuilder;
+
+pub use crate::types::_filter_operation::FilterOperationBuilder;
+
+pub use crate::types::_data_set_date_filter_condition::DataSetDateFilterConditionBuilder;
+
+pub use crate::types::_data_set_date_range_filter_condition::DataSetDateRangeFilterConditionBuilder;
+
+pub use crate::types::_data_set_date_filter_value::DataSetDateFilterValueBuilder;
+
+pub use crate::types::_data_set_date_comparison_filter_condition::DataSetDateComparisonFilterConditionBuilder;
+
+pub use crate::types::_data_set_numeric_filter_condition::DataSetNumericFilterConditionBuilder;
+
+pub use crate::types::_data_set_numeric_range_filter_condition::DataSetNumericRangeFilterConditionBuilder;
+
+pub use crate::types::_data_set_numeric_filter_value::DataSetNumericFilterValueBuilder;
+
+pub use crate::types::_data_set_numeric_comparison_filter_condition::DataSetNumericComparisonFilterConditionBuilder;
+
+pub use crate::types::_data_set_string_filter_condition::DataSetStringFilterConditionBuilder;
+
+pub use crate::types::_data_set_string_list_filter_condition::DataSetStringListFilterConditionBuilder;
+
+pub use crate::types::_data_set_string_list_filter_value::DataSetStringListFilterValueBuilder;
+
+pub use crate::types::_data_set_string_comparison_filter_condition::DataSetStringComparisonFilterConditionBuilder;
+
+pub use crate::types::_data_set_string_filter_value::DataSetStringFilterValueBuilder;
+
+pub use crate::types::_project_operation::ProjectOperationBuilder;
+
+pub use crate::types::_import_table_operation::ImportTableOperationBuilder;
+
+pub use crate::types::_import_table_operation_source::ImportTableOperationSourceBuilder;
+
+pub use crate::types::_source_table::SourceTableBuilder;
+
+pub use crate::types::_parent_data_set::ParentDataSetBuilder;
+
+pub use crate::types::_input_column::InputColumnBuilder;
+
 pub use crate::types::_performance_configuration::PerformanceConfigurationBuilder;
 
 pub use crate::types::_unique_key::UniqueKeyBuilder;
@@ -1326,12 +1436,6 @@ pub use crate::types::_string_dataset_parameter_default_values::StringDatasetPar
 pub use crate::types::_data_set_usage_configuration::DataSetUsageConfigurationBuilder;
 
 pub use crate::types::_column_level_permission_rule::ColumnLevelPermissionRuleBuilder;
-
-pub use crate::types::_row_level_permission_tag_configuration::RowLevelPermissionTagConfigurationBuilder;
-
-pub use crate::types::_row_level_permission_tag_rule::RowLevelPermissionTagRuleBuilder;
-
-pub use crate::types::_row_level_permission_data_set::RowLevelPermissionDataSetBuilder;
 
 pub use crate::types::_field_folder::FieldFolderBuilder;
 
@@ -1359,21 +1463,11 @@ pub use crate::types::_column_tag::ColumnTagBuilder;
 
 pub use crate::types::_column_description::ColumnDescriptionBuilder;
 
-pub use crate::types::_cast_column_type_operation::CastColumnTypeOperationBuilder;
+pub use crate::types::_saa_s_table::SaaSTableBuilder;
 
-pub use crate::types::_rename_column_operation::RenameColumnOperationBuilder;
-
-pub use crate::types::_create_columns_operation::CreateColumnsOperationBuilder;
-
-pub use crate::types::_calculated_column::CalculatedColumnBuilder;
-
-pub use crate::types::_filter_operation::FilterOperationBuilder;
-
-pub use crate::types::_project_operation::ProjectOperationBuilder;
+pub use crate::types::_table_path_element::TablePathElementBuilder;
 
 pub use crate::types::_s3_source::S3SourceBuilder;
-
-pub use crate::types::_input_column::InputColumnBuilder;
 
 pub use crate::types::_upload_settings::UploadSettingsBuilder;
 

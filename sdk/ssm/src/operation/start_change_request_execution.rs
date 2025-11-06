@@ -276,6 +276,8 @@ pub enum StartChangeRequestExecutionError {
     InternalServerError(crate::types::error::InternalServerError),
     /// <p>The supplied parameters for invoking the specified Automation runbook are incorrect. For example, they may not match the set of parameters permitted for the specified Automation document.</p>
     InvalidAutomationExecutionParametersException(crate::types::error::InvalidAutomationExecutionParametersException),
+    /// <p>The requested operation is no longer supported by Systems Manager.</p>
+    NoLongerSupportedException(crate::types::error::NoLongerSupportedException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
@@ -316,6 +318,7 @@ impl StartChangeRequestExecutionError {
             Self::IdempotentParameterMismatch(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InternalServerError(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidAutomationExecutionParametersException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::NoLongerSupportedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
     }
@@ -347,6 +350,10 @@ impl StartChangeRequestExecutionError {
     pub fn is_invalid_automation_execution_parameters_exception(&self) -> bool {
         matches!(self, Self::InvalidAutomationExecutionParametersException(_))
     }
+    /// Returns `true` if the error kind is `StartChangeRequestExecutionError::NoLongerSupportedException`.
+    pub fn is_no_longer_supported_exception(&self) -> bool {
+        matches!(self, Self::NoLongerSupportedException(_))
+    }
 }
 impl ::std::error::Error for StartChangeRequestExecutionError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
@@ -358,6 +365,7 @@ impl ::std::error::Error for StartChangeRequestExecutionError {
             Self::IdempotentParameterMismatch(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalServerError(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidAutomationExecutionParametersException(_inner) => ::std::option::Option::Some(_inner),
+            Self::NoLongerSupportedException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
     }
@@ -372,6 +380,7 @@ impl ::std::fmt::Display for StartChangeRequestExecutionError {
             Self::IdempotentParameterMismatch(_inner) => _inner.fmt(f),
             Self::InternalServerError(_inner) => _inner.fmt(f),
             Self::InvalidAutomationExecutionParametersException(_inner) => _inner.fmt(f),
+            Self::NoLongerSupportedException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
                     write!(f, "unhandled error ({code})")
@@ -400,6 +409,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for StartChangeRe
             Self::IdempotentParameterMismatch(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalServerError(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidAutomationExecutionParametersException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::NoLongerSupportedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }
     }

@@ -49,6 +49,8 @@ pub enum AwsCredentialFeature {
     CredentialsImds,
     /// An operation called using a Bearer token resolved from service-specific environment variables
     BearerServiceEnvVars,
+    /// An operation called using S3 Express bucket credentials
+    S3ExpressBucket,
 }
 
 impl Storable for AwsCredentialFeature {

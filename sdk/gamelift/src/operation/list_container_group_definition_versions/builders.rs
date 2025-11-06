@@ -22,6 +22,7 @@ impl crate::operation::list_container_group_definition_versions::builders::ListC
 }
 /// Fluent builder constructing a request to `ListContainerGroupDefinitionVersions`.
 ///
+/// <p><b>This API works with the following fleet types:</b> Container</p>
 /// <p>Retrieves all versions of a container group definition. Use the pagination parameters to retrieve results in a set of sequential pages.</p>
 /// <p><b>Request options:</b></p>
 /// <ul>

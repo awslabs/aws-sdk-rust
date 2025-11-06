@@ -27,6 +27,8 @@ pub use crate::types::error::_concurrent_updating_exception::ConcurrentUpdatingE
 
 pub use crate::types::error::_customer_managed_key_unavailable_exception::CustomerManagedKeyUnavailableException;
 
+pub use crate::types::error::_invalid_data_set_parameter_value_exception::InvalidDataSetParameterValueException;
+
 pub use crate::types::error::_invalid_request_exception::InvalidRequestException;
 
 pub use crate::types::error::_internal_server_exception::InternalServerException;
@@ -56,6 +58,8 @@ mod _identity_type_not_supported_exception;
 mod _internal_failure_exception;
 
 mod _internal_server_exception;
+
+mod _invalid_data_set_parameter_value_exception;
 
 mod _invalid_next_token_exception;
 

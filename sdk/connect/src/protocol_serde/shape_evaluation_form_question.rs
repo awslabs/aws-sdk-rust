@@ -24,6 +24,15 @@ pub fn ser_evaluation_form_question(
         crate::protocol_serde::shape_evaluation_form_question_type_properties::ser_evaluation_form_question_type_properties(&mut object_3, var_2)?;
         object_3.finish();
     }
+    if let Some(var_4) = &input.enablement {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("Enablement").start_object();
+        crate::protocol_serde::shape_evaluation_form_item_enablement_configuration::ser_evaluation_form_item_enablement_configuration(
+            &mut object_5,
+            var_4,
+        )?;
+        object_5.finish();
+    }
     if input.weight != 0.0 {
         object.key("Weight").number(
             #[allow(clippy::useless_conversion)]
@@ -85,6 +94,11 @@ where
                                     tokens,
                                 )?,
                             );
+                        }
+                        "Enablement" => {
+                            builder = builder.set_enablement(
+                                    crate::protocol_serde::shape_evaluation_form_item_enablement_configuration::de_evaluation_form_item_enablement_configuration(tokens)?
+                                );
                         }
                         "Weight" => {
                             builder = builder

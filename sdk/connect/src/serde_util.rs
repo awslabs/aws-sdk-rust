@@ -584,6 +584,15 @@ pub(crate) fn default_vocabulary_correct_errors(
     builder
 }
 
+pub(crate) fn evaluation_form_auto_evaluation_configuration_correct_errors(
+    mut builder: crate::types::builders::EvaluationFormAutoEvaluationConfigurationBuilder,
+) -> crate::types::builders::EvaluationFormAutoEvaluationConfigurationBuilder {
+    if builder.enabled.is_none() {
+        builder.enabled = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn evaluation_form_scoring_strategy_correct_errors(
     mut builder: crate::types::builders::EvaluationFormScoringStrategyBuilder,
 ) -> crate::types::builders::EvaluationFormScoringStrategyBuilder {
@@ -592,6 +601,39 @@ pub(crate) fn evaluation_form_scoring_strategy_correct_errors(
     }
     if builder.status.is_none() {
         builder.status = "no value was set".parse::<crate::types::EvaluationFormScoringStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn evaluation_form_search_summary_correct_errors(
+    mut builder: crate::types::builders::EvaluationFormSearchSummaryBuilder,
+) -> crate::types::builders::EvaluationFormSearchSummaryBuilder {
+    if builder.evaluation_form_id.is_none() {
+        builder.evaluation_form_id = Some(Default::default())
+    }
+    if builder.evaluation_form_arn.is_none() {
+        builder.evaluation_form_arn = Some(Default::default())
+    }
+    if builder.title.is_none() {
+        builder.title = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::EvaluationFormVersionStatus>().ok()
+    }
+    if builder.created_time.is_none() {
+        builder.created_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.created_by.is_none() {
+        builder.created_by = Some(Default::default())
+    }
+    if builder.last_modified_time.is_none() {
+        builder.last_modified_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.last_modified_by.is_none() {
+        builder.last_modified_by = Some(Default::default())
+    }
+    if builder.latest_version.is_none() {
+        builder.latest_version = Some(Default::default())
     }
     builder
 }
@@ -655,6 +697,36 @@ pub(crate) fn evaluation_form_version_summary_correct_errors(
     }
     if builder.last_modified_by.is_none() {
         builder.last_modified_by = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn evaluation_search_summary_correct_errors(
+    mut builder: crate::types::builders::EvaluationSearchSummaryBuilder,
+) -> crate::types::builders::EvaluationSearchSummaryBuilder {
+    if builder.evaluation_id.is_none() {
+        builder.evaluation_id = Some(Default::default())
+    }
+    if builder.evaluation_arn.is_none() {
+        builder.evaluation_arn = Some(Default::default())
+    }
+    if builder.evaluation_form_version.is_none() {
+        builder.evaluation_form_version = Some(Default::default())
+    }
+    if builder.metadata.is_none() {
+        builder.metadata = {
+            let builder = crate::types::builders::EvaluationSearchMetadataBuilder::default();
+            crate::serde_util::evaluation_search_metadata_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::EvaluationStatus>().ok()
+    }
+    if builder.created_time.is_none() {
+        builder.created_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.last_modified_time.is_none() {
+        builder.last_modified_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }
@@ -908,6 +980,15 @@ pub(crate) fn vocabulary_summary_correct_errors(
     builder
 }
 
+pub(crate) fn auto_evaluation_details_correct_errors(
+    mut builder: crate::types::builders::AutoEvaluationDetailsBuilder,
+) -> crate::types::builders::AutoEvaluationDetailsBuilder {
+    if builder.auto_evaluation_enabled.is_none() {
+        builder.auto_evaluation_enabled = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn distribution_correct_errors(mut builder: crate::types::builders::DistributionBuilder) -> crate::types::builders::DistributionBuilder {
     if builder.region.is_none() {
         builder.region = Some(Default::default())
@@ -926,6 +1007,30 @@ pub(crate) fn encryption_config_correct_errors(
     }
     if builder.key_id.is_none() {
         builder.key_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn evaluation_acknowledgement_correct_errors(
+    mut builder: crate::types::builders::EvaluationAcknowledgementBuilder,
+) -> crate::types::builders::EvaluationAcknowledgementBuilder {
+    if builder.acknowledged_time.is_none() {
+        builder.acknowledged_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.acknowledged_by.is_none() {
+        builder.acknowledged_by = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn evaluation_search_metadata_correct_errors(
+    mut builder: crate::types::builders::EvaluationSearchMetadataBuilder,
+) -> crate::types::builders::EvaluationSearchMetadataBuilder {
+    if builder.contact_id.is_none() {
+        builder.contact_id = Some(Default::default())
+    }
+    if builder.evaluator_arn.is_none() {
+        builder.evaluator_arn = Some(Default::default())
     }
     builder
 }
@@ -1269,6 +1374,35 @@ pub(crate) fn case_sla_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn evaluation_form_item_enablement_configuration_correct_errors(
+    mut builder: crate::types::builders::EvaluationFormItemEnablementConfigurationBuilder,
+) -> crate::types::builders::EvaluationFormItemEnablementConfigurationBuilder {
+    if builder.condition.is_none() {
+        builder.condition = {
+            let builder = crate::types::builders::EvaluationFormItemEnablementConditionBuilder::default();
+            crate::serde_util::evaluation_form_item_enablement_condition_correct_errors(builder)
+                .build()
+                .ok()
+        }
+    }
+    if builder.action.is_none() {
+        builder.action = "no value was set".parse::<crate::types::EvaluationFormItemEnablementAction>().ok()
+    }
+    builder
+}
+
+pub(crate) fn evaluation_suggested_answer_correct_errors(
+    mut builder: crate::types::builders::EvaluationSuggestedAnswerBuilder,
+) -> crate::types::builders::EvaluationSuggestedAnswerBuilder {
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::EvaluationSuggestedAnswerStatus>().ok()
+    }
+    if builder.analysis_type.is_none() {
+        builder.analysis_type = "no value was set".parse::<crate::types::EvaluationQuestionAnswerAnalysisType>().ok()
+    }
+    builder
+}
+
 pub(crate) fn preview_correct_errors(mut builder: crate::types::builders::PreviewBuilder) -> crate::types::builders::PreviewBuilder {
     if builder.post_accept_timeout_config.is_none() {
         builder.post_accept_timeout_config = {
@@ -1308,6 +1442,15 @@ pub(crate) fn real_time_contact_analysis_issue_detected_correct_errors(
 ) -> crate::types::builders::RealTimeContactAnalysisIssueDetectedBuilder {
     if builder.transcript_items.is_none() {
         builder.transcript_items = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn evaluation_form_item_enablement_condition_correct_errors(
+    mut builder: crate::types::builders::EvaluationFormItemEnablementConditionBuilder,
+) -> crate::types::builders::EvaluationFormItemEnablementConditionBuilder {
+    if builder.operands.is_none() {
+        builder.operands = Some(Default::default())
     }
     builder
 }
@@ -1374,15 +1517,6 @@ pub(crate) fn reference_correct_errors(mut builder: crate::types::builders::Refe
     builder
 }
 
-pub(crate) fn evaluation_form_single_select_question_automation_correct_errors(
-    mut builder: crate::types::builders::EvaluationFormSingleSelectQuestionAutomationBuilder,
-) -> crate::types::builders::EvaluationFormSingleSelectQuestionAutomationBuilder {
-    if builder.options.is_none() {
-        builder.options = Some(Default::default())
-    }
-    builder
-}
-
 pub(crate) fn real_time_contact_analysis_transcript_item_with_content_correct_errors(
     mut builder: crate::types::builders::RealTimeContactAnalysisTranscriptItemWithContentBuilder,
 ) -> crate::types::builders::RealTimeContactAnalysisTranscriptItemWithContentBuilder {
@@ -1400,6 +1534,17 @@ pub(crate) fn evaluation_form_numeric_question_option_correct_errors(
     }
     if builder.max_value.is_none() {
         builder.max_value = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn evaluation_form_question_automation_answer_source_correct_errors(
+    mut builder: crate::types::builders::EvaluationFormQuestionAutomationAnswerSourceBuilder,
+) -> crate::types::builders::EvaluationFormQuestionAutomationAnswerSourceBuilder {
+    if builder.source_type.is_none() {
+        builder.source_type = "no value was set"
+            .parse::<crate::types::EvaluationFormQuestionAutomationAnswerSourceType>()
+            .ok()
     }
     builder
 }
@@ -1425,11 +1570,61 @@ pub(crate) fn numeric_question_property_value_automation_correct_errors(
     builder
 }
 
+pub(crate) fn evaluation_automation_rule_category_correct_errors(
+    mut builder: crate::types::builders::EvaluationAutomationRuleCategoryBuilder,
+) -> crate::types::builders::EvaluationAutomationRuleCategoryBuilder {
+    if builder.category.is_none() {
+        builder.category = Some(Default::default())
+    }
+    if builder.condition.is_none() {
+        builder.condition = "no value was set".parse::<crate::types::QuestionRuleCategoryAutomationCondition>().ok()
+    }
+    builder
+}
+
+pub(crate) fn evaluation_form_item_enablement_expression_correct_errors(
+    mut builder: crate::types::builders::EvaluationFormItemEnablementExpressionBuilder,
+) -> crate::types::builders::EvaluationFormItemEnablementExpressionBuilder {
+    if builder.source.is_none() {
+        builder.source = {
+            let builder = crate::types::builders::EvaluationFormItemEnablementSourceBuilder::default();
+            crate::serde_util::evaluation_form_item_enablement_source_correct_errors(builder)
+                .build()
+                .ok()
+        }
+    }
+    if builder.values.is_none() {
+        builder.values = Some(Default::default())
+    }
+    if builder.comparator.is_none() {
+        builder.comparator = "no value was set".parse::<crate::types::EvaluationFormItemSourceValuesComparator>().ok()
+    }
+    builder
+}
+
 pub(crate) fn real_time_contact_analysis_transcript_item_with_character_offsets_correct_errors(
     mut builder: crate::types::builders::RealTimeContactAnalysisTranscriptItemWithCharacterOffsetsBuilder,
 ) -> crate::types::builders::RealTimeContactAnalysisTranscriptItemWithCharacterOffsetsBuilder {
     if builder.id.is_none() {
         builder.id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn evaluation_form_item_enablement_source_correct_errors(
+    mut builder: crate::types::builders::EvaluationFormItemEnablementSourceBuilder,
+) -> crate::types::builders::EvaluationFormItemEnablementSourceBuilder {
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::EvaluationFormItemEnablementSourceType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn evaluation_suggested_answer_transcript_millisecond_offsets_correct_errors(
+    mut builder: crate::types::builders::EvaluationSuggestedAnswerTranscriptMillisecondOffsetsBuilder,
+) -> crate::types::builders::EvaluationSuggestedAnswerTranscriptMillisecondOffsetsBuilder {
+    if builder.begin_offset_millis.is_none() {
+        builder.begin_offset_millis = Some(Default::default())
     }
     builder
 }
@@ -1447,6 +1642,17 @@ pub(crate) fn single_select_question_rule_category_automation_correct_errors(
     }
     if builder.option_ref_id.is_none() {
         builder.option_ref_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn evaluation_form_item_enablement_source_value_correct_errors(
+    mut builder: crate::types::builders::EvaluationFormItemEnablementSourceValueBuilder,
+) -> crate::types::builders::EvaluationFormItemEnablementSourceValueBuilder {
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set"
+            .parse::<crate::types::EvaluationFormItemEnablementSourceValueType>()
+            .ok()
     }
     builder
 }

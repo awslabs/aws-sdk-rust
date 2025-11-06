@@ -22,7 +22,9 @@ pub struct Compute {
     pub ip_address: ::std::option::Option<::std::string::String>,
     /// <p>The DNS name of a compute resource. Amazon GameLift Servers requires a DNS name or IP address for a compute.</p>
     pub dns_name: ::std::option::Option<::std::string::String>,
-    /// <p>Current status of the compute. A compute must have an <code>ACTIVE</code> status to host game sessions.</p>
+    /// <p>Current status of the compute. A compute must have an <code>ACTIVE</code> status to host game sessions. Valid values include <code>PENDING</code>, <code>ACTIVE</code>, <code>TERMINATING</code>, and <code>IMPAIRED</code>.</p><note>
+    /// <p>While the ComputeStatus enum type is valid for Container based servers, the result may also include other non-enumerated string values such as "Active" for fleets which are not Container-based.</p>
+    /// </note>
     pub compute_status: ::std::option::Option<crate::types::ComputeStatus>,
     /// <p>The name of the custom location you added to the fleet that this compute resource resides in.</p>
     pub location: ::std::option::Option<::std::string::String>,
@@ -70,7 +72,9 @@ impl Compute {
     pub fn dns_name(&self) -> ::std::option::Option<&str> {
         self.dns_name.as_deref()
     }
-    /// <p>Current status of the compute. A compute must have an <code>ACTIVE</code> status to host game sessions.</p>
+    /// <p>Current status of the compute. A compute must have an <code>ACTIVE</code> status to host game sessions. Valid values include <code>PENDING</code>, <code>ACTIVE</code>, <code>TERMINATING</code>, and <code>IMPAIRED</code>.</p><note>
+    /// <p>While the ComputeStatus enum type is valid for Container based servers, the result may also include other non-enumerated string values such as "Active" for fleets which are not Container-based.</p>
+    /// </note>
     pub fn compute_status(&self) -> ::std::option::Option<&crate::types::ComputeStatus> {
         self.compute_status.as_ref()
     }
@@ -253,17 +257,23 @@ impl ComputeBuilder {
     pub fn get_dns_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.dns_name
     }
-    /// <p>Current status of the compute. A compute must have an <code>ACTIVE</code> status to host game sessions.</p>
+    /// <p>Current status of the compute. A compute must have an <code>ACTIVE</code> status to host game sessions. Valid values include <code>PENDING</code>, <code>ACTIVE</code>, <code>TERMINATING</code>, and <code>IMPAIRED</code>.</p><note>
+    /// <p>While the ComputeStatus enum type is valid for Container based servers, the result may also include other non-enumerated string values such as "Active" for fleets which are not Container-based.</p>
+    /// </note>
     pub fn compute_status(mut self, input: crate::types::ComputeStatus) -> Self {
         self.compute_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Current status of the compute. A compute must have an <code>ACTIVE</code> status to host game sessions.</p>
+    /// <p>Current status of the compute. A compute must have an <code>ACTIVE</code> status to host game sessions. Valid values include <code>PENDING</code>, <code>ACTIVE</code>, <code>TERMINATING</code>, and <code>IMPAIRED</code>.</p><note>
+    /// <p>While the ComputeStatus enum type is valid for Container based servers, the result may also include other non-enumerated string values such as "Active" for fleets which are not Container-based.</p>
+    /// </note>
     pub fn set_compute_status(mut self, input: ::std::option::Option<crate::types::ComputeStatus>) -> Self {
         self.compute_status = input;
         self
     }
-    /// <p>Current status of the compute. A compute must have an <code>ACTIVE</code> status to host game sessions.</p>
+    /// <p>Current status of the compute. A compute must have an <code>ACTIVE</code> status to host game sessions. Valid values include <code>PENDING</code>, <code>ACTIVE</code>, <code>TERMINATING</code>, and <code>IMPAIRED</code>.</p><note>
+    /// <p>While the ComputeStatus enum type is valid for Container based servers, the result may also include other non-enumerated string values such as "Active" for fleets which are not Container-based.</p>
+    /// </note>
     pub fn get_compute_status(&self) -> &::std::option::Option<crate::types::ComputeStatus> {
         &self.compute_status
     }

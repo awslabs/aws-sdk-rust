@@ -12,11 +12,14 @@
 /// ```text
 /// # let numericquestionpropertyautomationlabel = unimplemented!();
 /// match numericquestionpropertyautomationlabel {
+///     NumericQuestionPropertyAutomationLabel::AgentInteractionAndHoldDuration => { /* ... */ },
 ///     NumericQuestionPropertyAutomationLabel::AgentInteractionDuration => { /* ... */ },
 ///     NumericQuestionPropertyAutomationLabel::ContactDuration => { /* ... */ },
 ///     NumericQuestionPropertyAutomationLabel::CustomerHoldTime => { /* ... */ },
+///     NumericQuestionPropertyAutomationLabel::LongestHoldDuration => { /* ... */ },
 ///     NumericQuestionPropertyAutomationLabel::NonTalkTime => { /* ... */ },
 ///     NumericQuestionPropertyAutomationLabel::NonTalkTimePercentage => { /* ... */ },
+///     NumericQuestionPropertyAutomationLabel::NumberOfHolds => { /* ... */ },
 ///     NumericQuestionPropertyAutomationLabel::NumberOfInterruptions => { /* ... */ },
 ///     NumericQuestionPropertyAutomationLabel::OverallAgentSentimentScore => { /* ... */ },
 ///     NumericQuestionPropertyAutomationLabel::OverallCustomerSentimentScore => { /* ... */ },
@@ -49,15 +52,21 @@
 )]
 pub enum NumericQuestionPropertyAutomationLabel {
     #[allow(missing_docs)] // documentation missing in model
+    AgentInteractionAndHoldDuration,
+    #[allow(missing_docs)] // documentation missing in model
     AgentInteractionDuration,
     #[allow(missing_docs)] // documentation missing in model
     ContactDuration,
     #[allow(missing_docs)] // documentation missing in model
     CustomerHoldTime,
     #[allow(missing_docs)] // documentation missing in model
+    LongestHoldDuration,
+    #[allow(missing_docs)] // documentation missing in model
     NonTalkTime,
     #[allow(missing_docs)] // documentation missing in model
     NonTalkTimePercentage,
+    #[allow(missing_docs)] // documentation missing in model
+    NumberOfHolds,
     #[allow(missing_docs)] // documentation missing in model
     NumberOfInterruptions,
     #[allow(missing_docs)] // documentation missing in model
@@ -71,11 +80,14 @@ pub enum NumericQuestionPropertyAutomationLabel {
 impl ::std::convert::From<&str> for NumericQuestionPropertyAutomationLabel {
     fn from(s: &str) -> Self {
         match s {
+            "AGENT_INTERACTION_AND_HOLD_DURATION" => NumericQuestionPropertyAutomationLabel::AgentInteractionAndHoldDuration,
             "AGENT_INTERACTION_DURATION" => NumericQuestionPropertyAutomationLabel::AgentInteractionDuration,
             "CONTACT_DURATION" => NumericQuestionPropertyAutomationLabel::ContactDuration,
             "CUSTOMER_HOLD_TIME" => NumericQuestionPropertyAutomationLabel::CustomerHoldTime,
+            "LONGEST_HOLD_DURATION" => NumericQuestionPropertyAutomationLabel::LongestHoldDuration,
             "NON_TALK_TIME" => NumericQuestionPropertyAutomationLabel::NonTalkTime,
             "NON_TALK_TIME_PERCENTAGE" => NumericQuestionPropertyAutomationLabel::NonTalkTimePercentage,
+            "NUMBER_OF_HOLDS" => NumericQuestionPropertyAutomationLabel::NumberOfHolds,
             "NUMBER_OF_INTERRUPTIONS" => NumericQuestionPropertyAutomationLabel::NumberOfInterruptions,
             "OVERALL_AGENT_SENTIMENT_SCORE" => NumericQuestionPropertyAutomationLabel::OverallAgentSentimentScore,
             "OVERALL_CUSTOMER_SENTIMENT_SCORE" => NumericQuestionPropertyAutomationLabel::OverallCustomerSentimentScore,
@@ -94,11 +106,14 @@ impl NumericQuestionPropertyAutomationLabel {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            NumericQuestionPropertyAutomationLabel::AgentInteractionAndHoldDuration => "AGENT_INTERACTION_AND_HOLD_DURATION",
             NumericQuestionPropertyAutomationLabel::AgentInteractionDuration => "AGENT_INTERACTION_DURATION",
             NumericQuestionPropertyAutomationLabel::ContactDuration => "CONTACT_DURATION",
             NumericQuestionPropertyAutomationLabel::CustomerHoldTime => "CUSTOMER_HOLD_TIME",
+            NumericQuestionPropertyAutomationLabel::LongestHoldDuration => "LONGEST_HOLD_DURATION",
             NumericQuestionPropertyAutomationLabel::NonTalkTime => "NON_TALK_TIME",
             NumericQuestionPropertyAutomationLabel::NonTalkTimePercentage => "NON_TALK_TIME_PERCENTAGE",
+            NumericQuestionPropertyAutomationLabel::NumberOfHolds => "NUMBER_OF_HOLDS",
             NumericQuestionPropertyAutomationLabel::NumberOfInterruptions => "NUMBER_OF_INTERRUPTIONS",
             NumericQuestionPropertyAutomationLabel::OverallAgentSentimentScore => "OVERALL_AGENT_SENTIMENT_SCORE",
             NumericQuestionPropertyAutomationLabel::OverallCustomerSentimentScore => "OVERALL_CUSTOMER_SENTIMENT_SCORE",
@@ -108,11 +123,14 @@ impl NumericQuestionPropertyAutomationLabel {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "AGENT_INTERACTION_AND_HOLD_DURATION",
             "AGENT_INTERACTION_DURATION",
             "CONTACT_DURATION",
             "CUSTOMER_HOLD_TIME",
+            "LONGEST_HOLD_DURATION",
             "NON_TALK_TIME",
             "NON_TALK_TIME_PERCENTAGE",
+            "NUMBER_OF_HOLDS",
             "NUMBER_OF_INTERRUPTIONS",
             "OVERALL_AGENT_SENTIMENT_SCORE",
             "OVERALL_CUSTOMER_SENTIMENT_SCORE",
@@ -139,11 +157,14 @@ impl NumericQuestionPropertyAutomationLabel {
 impl ::std::fmt::Display for NumericQuestionPropertyAutomationLabel {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            NumericQuestionPropertyAutomationLabel::AgentInteractionAndHoldDuration => write!(f, "AGENT_INTERACTION_AND_HOLD_DURATION"),
             NumericQuestionPropertyAutomationLabel::AgentInteractionDuration => write!(f, "AGENT_INTERACTION_DURATION"),
             NumericQuestionPropertyAutomationLabel::ContactDuration => write!(f, "CONTACT_DURATION"),
             NumericQuestionPropertyAutomationLabel::CustomerHoldTime => write!(f, "CUSTOMER_HOLD_TIME"),
+            NumericQuestionPropertyAutomationLabel::LongestHoldDuration => write!(f, "LONGEST_HOLD_DURATION"),
             NumericQuestionPropertyAutomationLabel::NonTalkTime => write!(f, "NON_TALK_TIME"),
             NumericQuestionPropertyAutomationLabel::NonTalkTimePercentage => write!(f, "NON_TALK_TIME_PERCENTAGE"),
+            NumericQuestionPropertyAutomationLabel::NumberOfHolds => write!(f, "NUMBER_OF_HOLDS"),
             NumericQuestionPropertyAutomationLabel::NumberOfInterruptions => write!(f, "NUMBER_OF_INTERRUPTIONS"),
             NumericQuestionPropertyAutomationLabel::OverallAgentSentimentScore => write!(f, "OVERALL_AGENT_SENTIMENT_SCORE"),
             NumericQuestionPropertyAutomationLabel::OverallCustomerSentimentScore => write!(f, "OVERALL_CUSTOMER_SENTIMENT_SCORE"),

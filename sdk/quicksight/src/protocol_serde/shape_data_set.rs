@@ -114,6 +114,16 @@ where
                                     .transpose()?,
                             );
                         }
+                        "DataPrepConfiguration" => {
+                            builder = builder.set_data_prep_configuration(
+                                crate::protocol_serde::shape_data_prep_configuration::de_data_prep_configuration(tokens)?,
+                            );
+                        }
+                        "SemanticModelConfiguration" => {
+                            builder = builder.set_semantic_model_configuration(
+                                crate::protocol_serde::shape_semantic_model_configuration::de_semantic_model_configuration(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

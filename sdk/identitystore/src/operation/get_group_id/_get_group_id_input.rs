@@ -5,7 +5,7 @@
 pub struct GetGroupIdInput {
     /// <p>The globally unique identifier for the identity store.</p>
     pub identity_store_id: ::std::option::Option<::std::string::String>,
-    /// <p>A unique identifier for a user or group that is not the primary identifier. This value can be an identifier from an external identity provider (IdP) that is associated with the user, the group, or a unique attribute. For the unique attribute, the only valid path is <code>displayName</code>.</p>
+    /// <p>A unique identifier for a user or group that is not the primary identifier. This value can be an identifier from an external identity provider (IdP) that is associated with the user, the group, or a unique attribute. For the unique attribute, the only valid path is <code> displayName</code>.</p>
     pub alternate_identifier: ::std::option::Option<crate::types::AlternateIdentifier>,
 }
 impl GetGroupIdInput {
@@ -13,7 +13,7 @@ impl GetGroupIdInput {
     pub fn identity_store_id(&self) -> ::std::option::Option<&str> {
         self.identity_store_id.as_deref()
     }
-    /// <p>A unique identifier for a user or group that is not the primary identifier. This value can be an identifier from an external identity provider (IdP) that is associated with the user, the group, or a unique attribute. For the unique attribute, the only valid path is <code>displayName</code>.</p>
+    /// <p>A unique identifier for a user or group that is not the primary identifier. This value can be an identifier from an external identity provider (IdP) that is associated with the user, the group, or a unique attribute. For the unique attribute, the only valid path is <code> displayName</code>.</p>
     pub fn alternate_identifier(&self) -> ::std::option::Option<&crate::types::AlternateIdentifier> {
         self.alternate_identifier.as_ref()
     }
@@ -48,18 +48,18 @@ impl GetGroupIdInputBuilder {
     pub fn get_identity_store_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.identity_store_id
     }
-    /// <p>A unique identifier for a user or group that is not the primary identifier. This value can be an identifier from an external identity provider (IdP) that is associated with the user, the group, or a unique attribute. For the unique attribute, the only valid path is <code>displayName</code>.</p>
+    /// <p>A unique identifier for a user or group that is not the primary identifier. This value can be an identifier from an external identity provider (IdP) that is associated with the user, the group, or a unique attribute. For the unique attribute, the only valid path is <code> displayName</code>.</p>
     /// This field is required.
     pub fn alternate_identifier(mut self, input: crate::types::AlternateIdentifier) -> Self {
         self.alternate_identifier = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A unique identifier for a user or group that is not the primary identifier. This value can be an identifier from an external identity provider (IdP) that is associated with the user, the group, or a unique attribute. For the unique attribute, the only valid path is <code>displayName</code>.</p>
+    /// <p>A unique identifier for a user or group that is not the primary identifier. This value can be an identifier from an external identity provider (IdP) that is associated with the user, the group, or a unique attribute. For the unique attribute, the only valid path is <code> displayName</code>.</p>
     pub fn set_alternate_identifier(mut self, input: ::std::option::Option<crate::types::AlternateIdentifier>) -> Self {
         self.alternate_identifier = input;
         self
     }
-    /// <p>A unique identifier for a user or group that is not the primary identifier. This value can be an identifier from an external identity provider (IdP) that is associated with the user, the group, or a unique attribute. For the unique attribute, the only valid path is <code>displayName</code>.</p>
+    /// <p>A unique identifier for a user or group that is not the primary identifier. This value can be an identifier from an external identity provider (IdP) that is associated with the user, the group, or a unique attribute. For the unique attribute, the only valid path is <code> displayName</code>.</p>
     pub fn get_alternate_identifier(&self) -> &::std::option::Option<crate::types::AlternateIdentifier> {
         &self.alternate_identifier
     }

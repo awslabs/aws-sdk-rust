@@ -22,6 +22,7 @@ impl crate::operation::create_build::builders::CreateBuildInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateBuild`.
 ///
+/// <p><b>This API works with the following fleet types:</b> EC2, Anywhere</p>
 /// <p>Creates a new Amazon GameLift Servers build resource for your game server binary files. Combine game server binaries into a zip file for use with Amazon GameLift Servers.</p><important>
 /// <p>When setting up a new game build for Amazon GameLift Servers, we recommend using the CLI command <b> <a href="https://docs.aws.amazon.com/cli/latest/reference/gamelift/upload-build.html">upload-build</a> </b>. This helper command combines two tasks: (1) it uploads your build files from a file directory to an Amazon GameLift Servers Amazon S3 location, and (2) it creates a new build resource.</p>
 /// </important>

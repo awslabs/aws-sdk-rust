@@ -22,6 +22,7 @@ impl crate::operation::describe_container_group_definition::builders::DescribeCo
 }
 /// Fluent builder constructing a request to `DescribeContainerGroupDefinition`.
 ///
+/// <p><b>This API works with the following fleet types:</b> Container</p>
 /// <p>Retrieves the properties of a container group definition, including all container definitions in the group.</p>
 /// <p><b>Request options:</b></p>
 /// <ul>

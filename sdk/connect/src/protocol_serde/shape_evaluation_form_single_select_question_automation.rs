@@ -18,6 +18,15 @@ pub fn ser_evaluation_form_single_select_question_automation(
     if let Some(var_4) = &input.default_option_ref_id {
         object.key("DefaultOptionRefId").string(var_4.as_str());
     }
+    if let Some(var_5) = &input.answer_source {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("AnswerSource").start_object();
+        crate::protocol_serde::shape_evaluation_form_question_automation_answer_source::ser_evaluation_form_question_automation_answer_source(
+            &mut object_6,
+            var_5,
+        )?;
+        object_6.finish();
+    }
     Ok(())
 }
 
@@ -48,6 +57,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "AnswerSource" => {
+                            builder = builder.set_answer_source(
+                                    crate::protocol_serde::shape_evaluation_form_question_automation_answer_source::de_evaluation_form_question_automation_answer_source(tokens)?
+                                );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -57,11 +71,7 @@ where
                     }
                 }
             }
-            Ok(Some(
-                crate::serde_util::evaluation_form_single_select_question_automation_correct_errors(builder)
-                    .build()
-                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
-            ))
+            Ok(Some(builder.build()))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

@@ -22,7 +22,8 @@ impl crate::operation::describe_runtime_configuration::builders::DescribeRuntime
 }
 /// Fluent builder constructing a request to `DescribeRuntimeConfiguration`.
 ///
-/// <p>Retrieves a fleet's runtime configuration settings. The runtime configuration determines which server processes run, and how, on computes in the fleet. For managed EC2 fleets, the runtime configuration describes server processes that run on each fleet instance. can update a fleet's runtime configuration at any time using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateRuntimeConfiguration.html">UpdateRuntimeConfiguration</a>.</p>
+/// <p><b>This API works with the following fleet types:</b> EC2</p>
+/// <p>Retrieves a fleet's runtime configuration settings. The runtime configuration determines which server processes run, and how, on computes in the fleet. For managed EC2 fleets, the runtime configuration describes server processes that run on each fleet instance. You can update a fleet's runtime configuration at any time using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateRuntimeConfiguration.html">UpdateRuntimeConfiguration</a>.</p>
 /// <p>To get the current runtime configuration for a fleet, provide the fleet ID.</p>
 /// <p>If successful, a <code>RuntimeConfiguration</code> object is returned for the requested fleet. If the requested fleet has been deleted, the result set is empty.</p>
 /// <p><b>Learn more</b></p>

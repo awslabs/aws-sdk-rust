@@ -18,6 +18,8 @@ pub struct EvaluationFormContent {
     pub items: ::std::vec::Vec<crate::types::EvaluationFormItem>,
     /// <p>A scoring strategy of the evaluation form.</p>
     pub scoring_strategy: ::std::option::Option<crate::types::EvaluationFormScoringStrategy>,
+    /// <p>The configuration of the automated evaluation.</p>
+    pub auto_evaluation_configuration: ::std::option::Option<crate::types::EvaluationFormAutoEvaluationConfiguration>,
 }
 impl EvaluationFormContent {
     /// <p>A version of the evaluation form.</p>
@@ -52,6 +54,10 @@ impl EvaluationFormContent {
     pub fn scoring_strategy(&self) -> ::std::option::Option<&crate::types::EvaluationFormScoringStrategy> {
         self.scoring_strategy.as_ref()
     }
+    /// <p>The configuration of the automated evaluation.</p>
+    pub fn auto_evaluation_configuration(&self) -> ::std::option::Option<&crate::types::EvaluationFormAutoEvaluationConfiguration> {
+        self.auto_evaluation_configuration.as_ref()
+    }
 }
 impl EvaluationFormContent {
     /// Creates a new builder-style object to manufacture [`EvaluationFormContent`](crate::types::EvaluationFormContent).
@@ -71,6 +77,7 @@ pub struct EvaluationFormContentBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationFormItem>>,
     pub(crate) scoring_strategy: ::std::option::Option<crate::types::EvaluationFormScoringStrategy>,
+    pub(crate) auto_evaluation_configuration: ::std::option::Option<crate::types::EvaluationFormAutoEvaluationConfiguration>,
 }
 impl EvaluationFormContentBuilder {
     /// <p>A version of the evaluation form.</p>
@@ -181,6 +188,23 @@ impl EvaluationFormContentBuilder {
     pub fn get_scoring_strategy(&self) -> &::std::option::Option<crate::types::EvaluationFormScoringStrategy> {
         &self.scoring_strategy
     }
+    /// <p>The configuration of the automated evaluation.</p>
+    pub fn auto_evaluation_configuration(mut self, input: crate::types::EvaluationFormAutoEvaluationConfiguration) -> Self {
+        self.auto_evaluation_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration of the automated evaluation.</p>
+    pub fn set_auto_evaluation_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::EvaluationFormAutoEvaluationConfiguration>,
+    ) -> Self {
+        self.auto_evaluation_configuration = input;
+        self
+    }
+    /// <p>The configuration of the automated evaluation.</p>
+    pub fn get_auto_evaluation_configuration(&self) -> &::std::option::Option<crate::types::EvaluationFormAutoEvaluationConfiguration> {
+        &self.auto_evaluation_configuration
+    }
     /// Consumes the builder and constructs a [`EvaluationFormContent`](crate::types::EvaluationFormContent).
     /// This method will fail if any of the following fields are not set:
     /// - [`evaluation_form_id`](crate::types::builders::EvaluationFormContentBuilder::evaluation_form_id)
@@ -216,6 +240,7 @@ impl EvaluationFormContentBuilder {
                 )
             })?,
             scoring_strategy: self.scoring_strategy,
+            auto_evaluation_configuration: self.auto_evaluation_configuration,
         })
     }
 }

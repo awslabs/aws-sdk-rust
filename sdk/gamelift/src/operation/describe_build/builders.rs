@@ -22,6 +22,7 @@ impl crate::operation::describe_build::builders::DescribeBuildInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeBuild`.
 ///
+/// <p><b>This API works with the following fleet types:</b> EC2</p>
 /// <p>Retrieves properties for a custom game build. To request a build resource, specify a build ID. If successful, an object containing the build properties is returned.</p>
 /// <p><b>Learn more</b></p>
 /// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html"> Upload a Custom Server Build</a></p>

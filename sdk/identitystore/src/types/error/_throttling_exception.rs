@@ -10,6 +10,8 @@ pub struct ThrottlingException {
     pub request_id: ::std::option::Option<::std::string::String>,
     /// <p>The number of seconds to wait before retrying the next request.</p>
     pub retry_after_seconds: i32,
+    /// <p>Indicates the reason for the throttling error when the service is unable to access a Customer Managed KMS key. For non-KMS permission errors, this field is not included.</p>
+    pub reason: ::std::option::Option<crate::types::ThrottlingExceptionReason>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl ThrottlingException {
@@ -20,6 +22,10 @@ impl ThrottlingException {
     /// <p>The number of seconds to wait before retrying the next request.</p>
     pub fn retry_after_seconds(&self) -> i32 {
         self.retry_after_seconds
+    }
+    /// <p>Indicates the reason for the throttling error when the service is unable to access a Customer Managed KMS key. For non-KMS permission errors, this field is not included.</p>
+    pub fn reason(&self) -> ::std::option::Option<&crate::types::ThrottlingExceptionReason> {
+        self.reason.as_ref()
     }
 }
 impl ThrottlingException {
@@ -69,6 +75,7 @@ pub struct ThrottlingExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) retry_after_seconds: ::std::option::Option<i32>,
+    pub(crate) reason: ::std::option::Option<crate::types::ThrottlingExceptionReason>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl ThrottlingExceptionBuilder {
@@ -114,6 +121,20 @@ impl ThrottlingExceptionBuilder {
     pub fn get_retry_after_seconds(&self) -> &::std::option::Option<i32> {
         &self.retry_after_seconds
     }
+    /// <p>Indicates the reason for the throttling error when the service is unable to access a Customer Managed KMS key. For non-KMS permission errors, this field is not included.</p>
+    pub fn reason(mut self, input: crate::types::ThrottlingExceptionReason) -> Self {
+        self.reason = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates the reason for the throttling error when the service is unable to access a Customer Managed KMS key. For non-KMS permission errors, this field is not included.</p>
+    pub fn set_reason(mut self, input: ::std::option::Option<crate::types::ThrottlingExceptionReason>) -> Self {
+        self.reason = input;
+        self
+    }
+    /// <p>Indicates the reason for the throttling error when the service is unable to access a Customer Managed KMS key. For non-KMS permission errors, this field is not included.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<crate::types::ThrottlingExceptionReason> {
+        &self.reason
+    }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
         self.meta = Some(meta);
@@ -131,6 +152,7 @@ impl ThrottlingExceptionBuilder {
             message: self.message,
             request_id: self.request_id,
             retry_after_seconds: self.retry_after_seconds.unwrap_or_default(),
+            reason: self.reason,
             meta: self.meta.unwrap_or_default(),
         }
     }

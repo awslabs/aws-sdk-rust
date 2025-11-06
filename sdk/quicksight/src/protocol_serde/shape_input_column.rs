@@ -6,11 +6,14 @@ pub fn ser_input_column(
     {
         object.key("Name").string(input.name.as_str());
     }
+    if let Some(var_1) = &input.id {
+        object.key("Id").string(var_1.as_str());
+    }
     {
         object.key("Type").string(input.r#type.as_str());
     }
-    if let Some(var_1) = &input.sub_type {
-        object.key("SubType").string(var_1.as_str());
+    if let Some(var_2) = &input.sub_type {
+        object.key("SubType").string(var_2.as_str());
     }
     Ok(())
 }
@@ -32,6 +35,13 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Name" => {
                             builder = builder.set_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "Id" => {
+                            builder = builder.set_id(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,

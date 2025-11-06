@@ -1639,6 +1639,140 @@ pub use crate::types::_athena_parameters::AthenaParameters;
 
 pub use crate::types::_amazon_elasticsearch_parameters::AmazonElasticsearchParameters;
 
+pub use crate::types::_semantic_model_configuration::SemanticModelConfiguration;
+
+pub use crate::types::_semantic_table::SemanticTable;
+
+pub use crate::types::_row_level_permission_configuration::RowLevelPermissionConfiguration;
+
+pub use crate::types::_row_level_permission_data_set::RowLevelPermissionDataSet;
+
+pub use crate::types::_status::Status;
+
+pub use crate::types::_row_level_permission_format_version::RowLevelPermissionFormatVersion;
+
+pub use crate::types::_row_level_permission_policy::RowLevelPermissionPolicy;
+
+pub use crate::types::_row_level_permission_tag_configuration::RowLevelPermissionTagConfiguration;
+
+pub use crate::types::_row_level_permission_tag_rule::RowLevelPermissionTagRule;
+
+pub use crate::types::_data_prep_configuration::DataPrepConfiguration;
+
+pub use crate::types::_destination_table::DestinationTable;
+
+pub use crate::types::_destination_table_source::DestinationTableSource;
+
+pub use crate::types::_transform_step::TransformStep;
+
+pub use crate::types::_append_operation::AppendOperation;
+
+pub use crate::types::_appended_column::AppendedColumn;
+
+pub use crate::types::_transform_operation_source::TransformOperationSource;
+
+pub use crate::types::_data_set_column_id_mapping::DataSetColumnIdMapping;
+
+pub use crate::types::_unpivot_operation::UnpivotOperation;
+
+pub use crate::types::_column_to_unpivot::ColumnToUnpivot;
+
+pub use crate::types::_pivot_operation::PivotOperation;
+
+pub use crate::types::_pivot_configuration::PivotConfiguration;
+
+pub use crate::types::_pivoted_label::PivotedLabel;
+
+pub use crate::types::_value_column_configuration::ValueColumnConfiguration;
+
+pub use crate::types::_data_prep_aggregation_function::DataPrepAggregationFunction;
+
+pub use crate::types::_data_prep_list_aggregation_function::DataPrepListAggregationFunction;
+
+pub use crate::types::_data_prep_simple_aggregation_function::DataPrepSimpleAggregationFunction;
+
+pub use crate::types::_data_prep_simple_aggregation_function_type::DataPrepSimpleAggregationFunctionType;
+
+pub use crate::types::_aggregate_operation::AggregateOperation;
+
+pub use crate::types::_aggregation::Aggregation;
+
+pub use crate::types::_join_operation::JoinOperation;
+
+pub use crate::types::_join_operand_properties::JoinOperandProperties;
+
+pub use crate::types::_output_column_name_override::OutputColumnNameOverride;
+
+pub use crate::types::_join_operation_type::JoinOperationType;
+
+pub use crate::types::_cast_column_types_operation::CastColumnTypesOperation;
+
+pub use crate::types::_cast_column_type_operation::CastColumnTypeOperation;
+
+pub use crate::types::_column_data_sub_type::ColumnDataSubType;
+
+pub use crate::types::_column_data_type::ColumnDataType;
+
+pub use crate::types::_rename_columns_operation::RenameColumnsOperation;
+
+pub use crate::types::_rename_column_operation::RenameColumnOperation;
+
+pub use crate::types::_create_columns_operation::CreateColumnsOperation;
+
+pub use crate::types::_calculated_column::CalculatedColumn;
+
+pub use crate::types::_filters_operation::FiltersOperation;
+
+pub use crate::types::_filter_operation::FilterOperation;
+
+pub use crate::types::_data_set_date_filter_condition::DataSetDateFilterCondition;
+
+pub use crate::types::_data_set_date_range_filter_condition::DataSetDateRangeFilterCondition;
+
+pub use crate::types::_data_set_date_filter_value::DataSetDateFilterValue;
+
+pub use crate::types::_data_set_date_comparison_filter_condition::DataSetDateComparisonFilterCondition;
+
+pub use crate::types::_data_set_date_comparison_filter_operator::DataSetDateComparisonFilterOperator;
+
+pub use crate::types::_data_set_numeric_filter_condition::DataSetNumericFilterCondition;
+
+pub use crate::types::_data_set_numeric_range_filter_condition::DataSetNumericRangeFilterCondition;
+
+pub use crate::types::_data_set_numeric_filter_value::DataSetNumericFilterValue;
+
+pub use crate::types::_data_set_numeric_comparison_filter_condition::DataSetNumericComparisonFilterCondition;
+
+pub use crate::types::_data_set_numeric_comparison_filter_operator::DataSetNumericComparisonFilterOperator;
+
+pub use crate::types::_data_set_string_filter_condition::DataSetStringFilterCondition;
+
+pub use crate::types::_data_set_string_list_filter_condition::DataSetStringListFilterCondition;
+
+pub use crate::types::_data_set_string_list_filter_value::DataSetStringListFilterValue;
+
+pub use crate::types::_data_set_string_list_filter_operator::DataSetStringListFilterOperator;
+
+pub use crate::types::_data_set_string_comparison_filter_condition::DataSetStringComparisonFilterCondition;
+
+pub use crate::types::_data_set_string_filter_value::DataSetStringFilterValue;
+
+pub use crate::types::_data_set_string_comparison_filter_operator::DataSetStringComparisonFilterOperator;
+
+pub use crate::types::_project_operation::ProjectOperation;
+
+pub use crate::types::_import_table_operation::ImportTableOperation;
+
+pub use crate::types::_import_table_operation_source::ImportTableOperationSource;
+
+pub use crate::types::_source_table::SourceTable;
+
+pub use crate::types::_parent_data_set::ParentDataSet;
+
+pub use crate::types::_input_column::InputColumn;
+
+pub use crate::types::_input_column_data_type::InputColumnDataType;
+
 pub use crate::types::_performance_configuration::PerformanceConfiguration;
 
 pub use crate::types::_unique_key::UniqueKey;
@@ -1666,18 +1800,6 @@ pub use crate::types::_string_dataset_parameter_default_values::StringDatasetPar
 pub use crate::types::_data_set_usage_configuration::DataSetUsageConfiguration;
 
 pub use crate::types::_column_level_permission_rule::ColumnLevelPermissionRule;
-
-pub use crate::types::_row_level_permission_tag_configuration::RowLevelPermissionTagConfiguration;
-
-pub use crate::types::_row_level_permission_tag_rule::RowLevelPermissionTagRule;
-
-pub use crate::types::_status::Status;
-
-pub use crate::types::_row_level_permission_data_set::RowLevelPermissionDataSet;
-
-pub use crate::types::_row_level_permission_format_version::RowLevelPermissionFormatVersion;
-
-pub use crate::types::_row_level_permission_policy::RowLevelPermissionPolicy;
 
 pub use crate::types::_field_folder::FieldFolder;
 
@@ -1717,29 +1839,13 @@ pub use crate::types::_column_description::ColumnDescription;
 
 pub use crate::types::_geo_spatial_data_role::GeoSpatialDataRole;
 
-pub use crate::types::_cast_column_type_operation::CastColumnTypeOperation;
-
-pub use crate::types::_column_data_sub_type::ColumnDataSubType;
-
-pub use crate::types::_column_data_type::ColumnDataType;
-
-pub use crate::types::_rename_column_operation::RenameColumnOperation;
-
-pub use crate::types::_create_columns_operation::CreateColumnsOperation;
-
-pub use crate::types::_calculated_column::CalculatedColumn;
-
-pub use crate::types::_filter_operation::FilterOperation;
-
-pub use crate::types::_project_operation::ProjectOperation;
-
 pub use crate::types::_physical_table::PhysicalTable;
 
+pub use crate::types::_saa_s_table::SaaSTable;
+
+pub use crate::types::_table_path_element::TablePathElement;
+
 pub use crate::types::_s3_source::S3Source;
-
-pub use crate::types::_input_column::InputColumn;
-
-pub use crate::types::_input_column_data_type::InputColumnDataType;
 
 pub use crate::types::_upload_settings::UploadSettings;
 
@@ -2479,6 +2585,10 @@ mod _agg_function;
 
 mod _agg_type;
 
+mod _aggregate_operation;
+
+mod _aggregation;
+
 mod _aggregation_function;
 
 mod _aggregation_partition_by;
@@ -2542,6 +2652,10 @@ mod _anonymous_user_q_search_bar_embedding_configuration;
 mod _anonymous_user_snapshot_job_result;
 
 mod _api_key_connection_metadata;
+
+mod _append_operation;
+
+mod _appended_column;
 
 mod _application_theme;
 
@@ -2825,6 +2939,8 @@ mod _cascading_control_source;
 
 mod _cast_column_type_operation;
 
+mod _cast_column_types_operation;
+
 mod _categorical_aggregation_function;
 
 mod _categorical_dimension_field;
@@ -2906,6 +3022,8 @@ mod _column_sort;
 mod _column_tag;
 
 mod _column_tag_name;
+
+mod _column_to_unpivot;
 
 mod _column_tooltip_item;
 
@@ -3091,19 +3209,51 @@ mod _data_point_menu_label_option;
 
 mod _data_point_tooltip_option;
 
+mod _data_prep_aggregation_function;
+
+mod _data_prep_configuration;
+
+mod _data_prep_list_aggregation_function;
+
+mod _data_prep_simple_aggregation_function;
+
+mod _data_prep_simple_aggregation_function_type;
+
 mod _data_qa_enabled_option;
 
 mod _data_qn_a_configurations;
 
 mod _data_set;
 
+mod _data_set_column_id_mapping;
+
 mod _data_set_configuration;
+
+mod _data_set_date_comparison_filter_condition;
+
+mod _data_set_date_comparison_filter_operator;
+
+mod _data_set_date_filter_condition;
+
+mod _data_set_date_filter_value;
+
+mod _data_set_date_range_filter_condition;
 
 mod _data_set_filter_attribute;
 
 mod _data_set_identifier_declaration;
 
 mod _data_set_import_mode;
+
+mod _data_set_numeric_comparison_filter_condition;
+
+mod _data_set_numeric_comparison_filter_operator;
+
+mod _data_set_numeric_filter_condition;
+
+mod _data_set_numeric_filter_value;
+
+mod _data_set_numeric_range_filter_condition;
 
 mod _data_set_reference;
 
@@ -3112,6 +3262,20 @@ mod _data_set_refresh_properties;
 mod _data_set_schema;
 
 mod _data_set_search_filter;
+
+mod _data_set_string_comparison_filter_condition;
+
+mod _data_set_string_comparison_filter_operator;
+
+mod _data_set_string_filter_condition;
+
+mod _data_set_string_filter_value;
+
+mod _data_set_string_list_filter_condition;
+
+mod _data_set_string_list_filter_operator;
+
+mod _data_set_string_list_filter_value;
 
 mod _data_set_summary;
 
@@ -3228,6 +3392,10 @@ mod _default_text_area_control_options;
 mod _default_text_field_control_options;
 
 mod _destination_parameter_value_configuration;
+
+mod _destination_table;
+
+mod _destination_table_source;
 
 mod _digit_grouping_style;
 
@@ -3354,6 +3522,8 @@ mod _filter_text_area_control;
 mod _filter_text_field_control;
 
 mod _filter_visual_scope;
+
+mod _filters_operation;
 
 mod _flow_publish_state;
 
@@ -3633,6 +3803,10 @@ mod _image_static_file;
 
 mod _impala_parameters;
 
+mod _import_table_operation;
+
+mod _import_table_operation_source;
+
 mod _include_folder_members;
 
 mod _include_generated_answer;
@@ -3684,6 +3858,12 @@ mod _jira_parameters;
 mod _join_instruction;
 
 mod _join_key_properties;
+
+mod _join_operand_properties;
+
+mod _join_operation;
+
+mod _join_operation_type;
 
 mod _join_type;
 
@@ -3913,6 +4093,8 @@ mod _other_categories;
 
 mod _output_column;
 
+mod _output_column_name_override;
+
 mod _override_dataset_parameter_operation;
 
 mod _pagination_configuration;
@@ -3951,6 +4133,8 @@ mod _parameter_value_type;
 
 mod _parameters;
 
+mod _parent_data_set;
+
 mod _percent_visible_range;
 
 mod _percentage_display_format_configuration;
@@ -3979,7 +4163,11 @@ mod _pie_chart_sort_configuration;
 
 mod _pie_chart_visual;
 
+mod _pivot_configuration;
+
 mod _pivot_field_sort_options;
+
+mod _pivot_operation;
 
 mod _pivot_table_aggregated_field_wells;
 
@@ -4034,6 +4222,8 @@ mod _pivot_table_total_options;
 mod _pivot_table_visual;
 
 mod _pivot_total_options;
+
+mod _pivoted_label;
 
 mod _plugin_visual;
 
@@ -4217,6 +4407,8 @@ mod _relative_font_size;
 
 mod _rename_column_operation;
 
+mod _rename_columns_operation;
+
 mod _resize_option;
 
 mod _resource_permission;
@@ -4232,6 +4424,8 @@ mod _rolling_date_configuration;
 mod _row_alternate_color_options;
 
 mod _row_info;
+
+mod _row_level_permission_configuration;
 
 mod _row_level_permission_data_set;
 
@@ -4250,6 +4444,8 @@ mod _s3_knowledge_base_parameters;
 mod _s3_parameters;
 
 mod _s3_source;
+
+mod _saa_s_table;
 
 mod _same_sheet_target_visual_configuration;
 
@@ -4312,6 +4508,10 @@ mod _selected_sheets_filter_scope_configuration;
 mod _selected_tooltip_type;
 
 mod _semantic_entity_type;
+
+mod _semantic_model_configuration;
+
+mod _semantic_table;
 
 mod _semantic_type;
 
@@ -4445,6 +4645,8 @@ mod _snowflake_parameters;
 
 mod _sort_direction;
 
+mod _source_table;
+
 mod _spacing;
 
 mod _spark_parameters;
@@ -4542,6 +4744,8 @@ mod _table_options;
 mod _table_orientation;
 
 mod _table_paginated_report_options;
+
+mod _table_path_element;
 
 mod _table_pinned_field_options;
 
@@ -4757,6 +4961,10 @@ mod _total_options;
 
 mod _transform_operation;
 
+mod _transform_operation_source;
+
+mod _transform_step;
+
 mod _transposed_column_type;
 
 mod _transposed_table_option;
@@ -4789,6 +4997,8 @@ mod _unique_key;
 
 mod _unique_values_computation;
 
+mod _unpivot_operation;
+
 mod _untag_column_operation;
 
 mod _upload_settings;
@@ -4802,6 +5012,8 @@ mod _user_role;
 mod _validation_strategy;
 
 mod _validation_strategy_mode;
+
+mod _value_column_configuration;
 
 mod _value_when_unset_option;
 

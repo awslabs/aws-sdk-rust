@@ -22,7 +22,7 @@ impl crate::operation::describe_game_server_group::builders::DescribeGameServerG
 }
 /// Fluent builder constructing a request to `DescribeGameServerGroup`.
 ///
-/// <p><b>This operation is used with the Amazon GameLift Servers FleetIQ solution and game server groups.</b></p>
+/// <p><b>This API works with the following fleet types:</b> EC2 (FleetIQ)</p>
 /// <p>Retrieves information on a game server group. This operation returns only properties related to Amazon GameLift Servers FleetIQ. To view or update properties for the corresponding Auto Scaling group, such as launch template, auto scaling policies, and maximum/minimum group size, access the Auto Scaling group directly.</p>
 /// <p>To get attributes for a game server group, provide a group name or ARN value. If successful, a <code>GameServerGroup</code> object is returned.</p>
 /// <p><b>Learn more</b></p>

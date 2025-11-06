@@ -30,6 +30,8 @@ pub struct EvaluationForm {
     pub last_modified_time: ::aws_smithy_types::DateTime,
     /// <p>The Amazon Resource Name (ARN) of the user who last updated the evaluation form.</p>
     pub last_modified_by: ::std::string::String,
+    /// <p>The automatic evaluation configuration of an evaluation form.</p>
+    pub auto_evaluation_configuration: ::std::option::Option<crate::types::EvaluationFormAutoEvaluationConfiguration>,
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -92,6 +94,10 @@ impl EvaluationForm {
         use std::ops::Deref;
         self.last_modified_by.deref()
     }
+    /// <p>The automatic evaluation configuration of an evaluation form.</p>
+    pub fn auto_evaluation_configuration(&self) -> ::std::option::Option<&crate::types::EvaluationFormAutoEvaluationConfiguration> {
+        self.auto_evaluation_configuration.as_ref()
+    }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
@@ -121,6 +127,7 @@ pub struct EvaluationFormBuilder {
     pub(crate) created_by: ::std::option::Option<::std::string::String>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_by: ::std::option::Option<::std::string::String>,
+    pub(crate) auto_evaluation_configuration: ::std::option::Option<crate::types::EvaluationFormAutoEvaluationConfiguration>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl EvaluationFormBuilder {
@@ -322,6 +329,23 @@ impl EvaluationFormBuilder {
     pub fn get_last_modified_by(&self) -> &::std::option::Option<::std::string::String> {
         &self.last_modified_by
     }
+    /// <p>The automatic evaluation configuration of an evaluation form.</p>
+    pub fn auto_evaluation_configuration(mut self, input: crate::types::EvaluationFormAutoEvaluationConfiguration) -> Self {
+        self.auto_evaluation_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The automatic evaluation configuration of an evaluation form.</p>
+    pub fn set_auto_evaluation_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::EvaluationFormAutoEvaluationConfiguration>,
+    ) -> Self {
+        self.auto_evaluation_configuration = input;
+        self
+    }
+    /// <p>The automatic evaluation configuration of an evaluation form.</p>
+    pub fn get_auto_evaluation_configuration(&self) -> &::std::option::Option<crate::types::EvaluationFormAutoEvaluationConfiguration> {
+        &self.auto_evaluation_configuration
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -413,6 +437,7 @@ impl EvaluationFormBuilder {
                     "last_modified_by was not specified but it is required when building EvaluationForm",
                 )
             })?,
+            auto_evaluation_configuration: self.auto_evaluation_configuration,
             tags: self.tags,
         })
     }

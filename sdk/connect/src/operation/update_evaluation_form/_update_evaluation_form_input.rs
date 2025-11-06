@@ -19,6 +19,8 @@ pub struct UpdateEvaluationFormInput {
     pub items: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationFormItem>>,
     /// <p>A scoring strategy of the evaluation form.</p>
     pub scoring_strategy: ::std::option::Option<crate::types::EvaluationFormScoringStrategy>,
+    /// <p>Whether automated evaluations are enabled.</p>
+    pub auto_evaluation_configuration: ::std::option::Option<crate::types::EvaluationFormAutoEvaluationConfiguration>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
@@ -57,6 +59,10 @@ impl UpdateEvaluationFormInput {
     pub fn scoring_strategy(&self) -> ::std::option::Option<&crate::types::EvaluationFormScoringStrategy> {
         self.scoring_strategy.as_ref()
     }
+    /// <p>Whether automated evaluations are enabled.</p>
+    pub fn auto_evaluation_configuration(&self) -> ::std::option::Option<&crate::types::EvaluationFormAutoEvaluationConfiguration> {
+        self.auto_evaluation_configuration.as_ref()
+    }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
@@ -81,6 +87,7 @@ pub struct UpdateEvaluationFormInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationFormItem>>,
     pub(crate) scoring_strategy: ::std::option::Option<crate::types::EvaluationFormScoringStrategy>,
+    pub(crate) auto_evaluation_configuration: ::std::option::Option<crate::types::EvaluationFormAutoEvaluationConfiguration>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdateEvaluationFormInputBuilder {
@@ -206,6 +213,23 @@ impl UpdateEvaluationFormInputBuilder {
     pub fn get_scoring_strategy(&self) -> &::std::option::Option<crate::types::EvaluationFormScoringStrategy> {
         &self.scoring_strategy
     }
+    /// <p>Whether automated evaluations are enabled.</p>
+    pub fn auto_evaluation_configuration(mut self, input: crate::types::EvaluationFormAutoEvaluationConfiguration) -> Self {
+        self.auto_evaluation_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Whether automated evaluations are enabled.</p>
+    pub fn set_auto_evaluation_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::EvaluationFormAutoEvaluationConfiguration>,
+    ) -> Self {
+        self.auto_evaluation_configuration = input;
+        self
+    }
+    /// <p>Whether automated evaluations are enabled.</p>
+    pub fn get_auto_evaluation_configuration(&self) -> &::std::option::Option<crate::types::EvaluationFormAutoEvaluationConfiguration> {
+        &self.auto_evaluation_configuration
+    }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -234,6 +258,7 @@ impl UpdateEvaluationFormInputBuilder {
             description: self.description,
             items: self.items,
             scoring_strategy: self.scoring_strategy,
+            auto_evaluation_configuration: self.auto_evaluation_configuration,
             client_token: self.client_token,
         })
     }

@@ -22,7 +22,7 @@ impl crate::operation::put_table_policy::builders::PutTablePolicyInputBuilder {
 }
 /// Fluent builder constructing a request to `PutTablePolicy`.
 ///
-/// <p>Creates a new maintenance configuration or replaces an existing table policy for a table. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-table-policy.html#table-policy-add">Adding a table policy</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
+/// <p>Creates a new table policy or replaces an existing table policy for a table. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-table-policy.html#table-policy-add">Adding a table policy</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
 /// <dl>
 /// <dt>
 /// Permissions

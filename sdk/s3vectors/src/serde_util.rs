@@ -17,6 +17,15 @@ pub(crate) fn not_found_exception_correct_errors(
     builder
 }
 
+pub(crate) fn service_quota_exceeded_exception_correct_errors(
+    mut builder: crate::types::error::builders::ServiceQuotaExceededExceptionBuilder,
+) -> crate::types::error::builders::ServiceQuotaExceededExceptionBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn service_unavailable_exception_correct_errors(
     mut builder: crate::types::error::builders::ServiceUnavailableExceptionBuilder,
 ) -> crate::types::error::builders::ServiceUnavailableExceptionBuilder {
@@ -44,9 +53,9 @@ pub(crate) fn internal_server_exception_correct_errors(
     builder
 }
 
-pub(crate) fn service_quota_exceeded_exception_correct_errors(
-    mut builder: crate::types::error::builders::ServiceQuotaExceededExceptionBuilder,
-) -> crate::types::error::builders::ServiceQuotaExceededExceptionBuilder {
+pub(crate) fn request_timeout_exception_correct_errors(
+    mut builder: crate::types::error::builders::RequestTimeoutExceptionBuilder,
+) -> crate::types::error::builders::RequestTimeoutExceptionBuilder {
     if builder.message.is_none() {
         builder.message = Some(Default::default())
     }
@@ -67,6 +76,24 @@ pub(crate) fn validation_exception_correct_errors(
 ) -> crate::types::error::builders::ValidationExceptionBuilder {
     if builder.message.is_none() {
         builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn create_index_output_output_correct_errors(
+    mut builder: crate::operation::create_index::builders::CreateIndexOutputBuilder,
+) -> crate::operation::create_index::builders::CreateIndexOutputBuilder {
+    if builder.index_arn.is_none() {
+        builder.index_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn create_vector_bucket_output_output_correct_errors(
+    mut builder: crate::operation::create_vector_bucket::builders::CreateVectorBucketOutputBuilder,
+) -> crate::operation::create_vector_bucket::builders::CreateVectorBucketOutputBuilder {
+    if builder.vector_bucket_arn.is_none() {
+        builder.vector_bucket_arn = Some(Default::default())
     }
     builder
 }
@@ -172,6 +199,9 @@ pub(crate) fn query_vectors_output_output_correct_errors(
 ) -> crate::operation::query_vectors::builders::QueryVectorsOutputBuilder {
     if builder.vectors.is_none() {
         builder.vectors = Some(Default::default())
+    }
+    if builder.distance_metric.is_none() {
+        builder.distance_metric = "no value was set".parse::<crate::types::DistanceMetric>().ok()
     }
     builder
 }

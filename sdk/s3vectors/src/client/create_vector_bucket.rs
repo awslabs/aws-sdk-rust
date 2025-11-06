@@ -5,7 +5,8 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`vector_bucket_name(impl Into<String>)`](crate::operation::create_vector_bucket::builders::CreateVectorBucketFluentBuilder::vector_bucket_name) / [`set_vector_bucket_name(Option<String>)`](crate::operation::create_vector_bucket::builders::CreateVectorBucketFluentBuilder::set_vector_bucket_name):<br>required: **true**<br><p>The name of the vector bucket to create.</p><br>
     ///   - [`encryption_configuration(EncryptionConfiguration)`](crate::operation::create_vector_bucket::builders::CreateVectorBucketFluentBuilder::encryption_configuration) / [`set_encryption_configuration(Option<EncryptionConfiguration>)`](crate::operation::create_vector_bucket::builders::CreateVectorBucketFluentBuilder::set_encryption_configuration):<br>required: **false**<br><p>The encryption configuration for the vector bucket. By default, if you don't specify, all new vectors in Amazon S3 vector buckets use server-side encryption with Amazon S3 managed keys (SSE-S3), specifically <code>AES256</code>.</p><br>
-    /// - On success, responds with [`CreateVectorBucketOutput`](crate::operation::create_vector_bucket::CreateVectorBucketOutput)
+    /// - On success, responds with [`CreateVectorBucketOutput`](crate::operation::create_vector_bucket::CreateVectorBucketOutput) with field(s):
+    ///   - [`vector_bucket_arn(Option<String>)`](crate::operation::create_vector_bucket::CreateVectorBucketOutput::vector_bucket_arn): <p>The Amazon Resource Name (ARN) of the newly created vector bucket.</p>
     /// - On failure, responds with [`SdkError<CreateVectorBucketError>`](crate::operation::create_vector_bucket::CreateVectorBucketError)
     pub fn create_vector_bucket(&self) -> crate::operation::create_vector_bucket::builders::CreateVectorBucketFluentBuilder {
         crate::operation::create_vector_bucket::builders::CreateVectorBucketFluentBuilder::new(self.handle.clone())

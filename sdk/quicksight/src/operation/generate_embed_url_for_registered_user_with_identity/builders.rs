@@ -145,14 +145,14 @@ impl GenerateEmbedUrlForRegisteredUserWithIdentityFluentBuilder {
     pub fn get_session_lifetime_in_minutes(&self) -> &::std::option::Option<i64> {
         self.inner.get_session_lifetime_in_minutes()
     }
-    /// <p>The type of experience you want to embed. For registered users, you can embed QuickSight dashboards or the Amazon Quick Sight console.</p><note>
+    /// <p>The type of experience you want to embed. For registered users, you can embed Quick Suite dashboards or the Amazon Quick Sight console.</p><note>
     /// <p>Exactly one of the experience configurations is required. You can choose <code>Dashboard</code> or <code>QuickSightConsole</code>. You cannot choose more than one experience configuration.</p>
     /// </note>
     pub fn experience_configuration(mut self, input: crate::types::RegisteredUserEmbeddingExperienceConfiguration) -> Self {
         self.inner = self.inner.experience_configuration(input);
         self
     }
-    /// <p>The type of experience you want to embed. For registered users, you can embed QuickSight dashboards or the Amazon Quick Sight console.</p><note>
+    /// <p>The type of experience you want to embed. For registered users, you can embed Quick Suite dashboards or the Amazon Quick Sight console.</p><note>
     /// <p>Exactly one of the experience configurations is required. You can choose <code>Dashboard</code> or <code>QuickSightConsole</code>. You cannot choose more than one experience configuration.</p>
     /// </note>
     pub fn set_experience_configuration(
@@ -162,7 +162,7 @@ impl GenerateEmbedUrlForRegisteredUserWithIdentityFluentBuilder {
         self.inner = self.inner.set_experience_configuration(input);
         self
     }
-    /// <p>The type of experience you want to embed. For registered users, you can embed QuickSight dashboards or the Amazon Quick Sight console.</p><note>
+    /// <p>The type of experience you want to embed. For registered users, you can embed Quick Suite dashboards or the Amazon Quick Sight console.</p><note>
     /// <p>Exactly one of the experience configurations is required. You can choose <code>Dashboard</code> or <code>QuickSightConsole</code>. You cannot choose more than one experience configuration.</p>
     /// </note>
     pub fn get_experience_configuration(&self) -> &::std::option::Option<crate::types::RegisteredUserEmbeddingExperienceConfiguration> {

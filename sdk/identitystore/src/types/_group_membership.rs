@@ -12,6 +12,14 @@ pub struct GroupMembership {
     pub group_id: ::std::option::Option<::std::string::String>,
     /// <p>An object that contains the identifier of a group member. Setting the <code>UserID</code> field to the specific identifier for a user indicates that the user is a member of the group.</p>
     pub member_id: ::std::option::Option<crate::types::MemberId>,
+    /// <p>The date and time the group membership was created.</p>
+    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The date and time the group membership was last updated.</p>
+    pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The identifier of the user or system that created the group membership.</p>
+    pub created_by: ::std::option::Option<::std::string::String>,
+    /// <p>The identifier of the user or system that last updated the group membership.</p>
+    pub updated_by: ::std::option::Option<::std::string::String>,
 }
 impl GroupMembership {
     /// <p>The globally unique identifier for the identity store.</p>
@@ -31,6 +39,22 @@ impl GroupMembership {
     pub fn member_id(&self) -> ::std::option::Option<&crate::types::MemberId> {
         self.member_id.as_ref()
     }
+    /// <p>The date and time the group membership was created.</p>
+    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.created_at.as_ref()
+    }
+    /// <p>The date and time the group membership was last updated.</p>
+    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.updated_at.as_ref()
+    }
+    /// <p>The identifier of the user or system that created the group membership.</p>
+    pub fn created_by(&self) -> ::std::option::Option<&str> {
+        self.created_by.as_deref()
+    }
+    /// <p>The identifier of the user or system that last updated the group membership.</p>
+    pub fn updated_by(&self) -> ::std::option::Option<&str> {
+        self.updated_by.as_deref()
+    }
 }
 impl GroupMembership {
     /// Creates a new builder-style object to manufacture [`GroupMembership`](crate::types::GroupMembership).
@@ -47,6 +71,10 @@ pub struct GroupMembershipBuilder {
     pub(crate) membership_id: ::std::option::Option<::std::string::String>,
     pub(crate) group_id: ::std::option::Option<::std::string::String>,
     pub(crate) member_id: ::std::option::Option<crate::types::MemberId>,
+    pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) created_by: ::std::option::Option<::std::string::String>,
+    pub(crate) updated_by: ::std::option::Option<::std::string::String>,
 }
 impl GroupMembershipBuilder {
     /// <p>The globally unique identifier for the identity store.</p>
@@ -106,6 +134,62 @@ impl GroupMembershipBuilder {
     pub fn get_member_id(&self) -> &::std::option::Option<crate::types::MemberId> {
         &self.member_id
     }
+    /// <p>The date and time the group membership was created.</p>
+    pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_at = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The date and time the group membership was created.</p>
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.created_at = input;
+        self
+    }
+    /// <p>The date and time the group membership was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
+    /// <p>The date and time the group membership was last updated.</p>
+    pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.updated_at = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The date and time the group membership was last updated.</p>
+    pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.updated_at = input;
+        self
+    }
+    /// <p>The date and time the group membership was last updated.</p>
+    pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_at
+    }
+    /// <p>The identifier of the user or system that created the group membership.</p>
+    pub fn created_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.created_by = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier of the user or system that created the group membership.</p>
+    pub fn set_created_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.created_by = input;
+        self
+    }
+    /// <p>The identifier of the user or system that created the group membership.</p>
+    pub fn get_created_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.created_by
+    }
+    /// <p>The identifier of the user or system that last updated the group membership.</p>
+    pub fn updated_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.updated_by = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier of the user or system that last updated the group membership.</p>
+    pub fn set_updated_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.updated_by = input;
+        self
+    }
+    /// <p>The identifier of the user or system that last updated the group membership.</p>
+    pub fn get_updated_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.updated_by
+    }
     /// Consumes the builder and constructs a [`GroupMembership`](crate::types::GroupMembership).
     /// This method will fail if any of the following fields are not set:
     /// - [`identity_store_id`](crate::types::builders::GroupMembershipBuilder::identity_store_id)
@@ -120,6 +204,10 @@ impl GroupMembershipBuilder {
             membership_id: self.membership_id,
             group_id: self.group_id,
             member_id: self.member_id,
+            created_at: self.created_at,
+            updated_at: self.updated_at,
+            created_by: self.created_by,
+            updated_by: self.updated_by,
         })
     }
 }

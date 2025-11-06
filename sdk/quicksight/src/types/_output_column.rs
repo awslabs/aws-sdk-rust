@@ -6,6 +6,8 @@
 pub struct OutputColumn {
     /// <p>The display name of the column..</p>
     pub name: ::std::option::Option<::std::string::String>,
+    /// <p>A unique identifier for the output column.</p>
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>A description for a column.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The data type of the column.</p>
@@ -17,6 +19,10 @@ impl OutputColumn {
     /// <p>The display name of the column..</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
+    }
+    /// <p>A unique identifier for the output column.</p>
+    pub fn id(&self) -> ::std::option::Option<&str> {
+        self.id.as_deref()
     }
     /// <p>A description for a column.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -35,6 +41,7 @@ impl ::std::fmt::Debug for OutputColumn {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("OutputColumn");
         formatter.field("name", &self.name);
+        formatter.field("id", &self.id);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("r#type", &self.r#type);
         formatter.field("sub_type", &self.sub_type);
@@ -53,6 +60,7 @@ impl OutputColumn {
 #[non_exhaustive]
 pub struct OutputColumnBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::ColumnDataType>,
     pub(crate) sub_type: ::std::option::Option<crate::types::ColumnDataSubType>,
@@ -71,6 +79,20 @@ impl OutputColumnBuilder {
     /// <p>The display name of the column..</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
+    }
+    /// <p>A unique identifier for the output column.</p>
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A unique identifier for the output column.</p>
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.id = input;
+        self
+    }
+    /// <p>A unique identifier for the output column.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>A description for a column.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -118,6 +140,7 @@ impl OutputColumnBuilder {
     pub fn build(self) -> crate::types::OutputColumn {
         crate::types::OutputColumn {
             name: self.name,
+            id: self.id,
             description: self.description,
             r#type: self.r#type,
             sub_type: self.sub_type,
@@ -128,6 +151,7 @@ impl ::std::fmt::Debug for OutputColumnBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("OutputColumnBuilder");
         formatter.field("name", &self.name);
+        formatter.field("id", &self.id);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("r#type", &self.r#type);
         formatter.field("sub_type", &self.sub_type);

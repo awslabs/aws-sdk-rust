@@ -195,6 +195,8 @@ pub use crate::types::_hours_of_operation_time_slice::HoursOfOperationTimeSlice;
 
 pub use crate::types::_hours_of_operation_days::HoursOfOperationDays;
 
+pub use crate::types::_evaluation_form_auto_evaluation_configuration::EvaluationFormAutoEvaluationConfiguration;
+
 pub use crate::types::_evaluation_form_scoring_strategy::EvaluationFormScoringStrategy;
 
 pub use crate::types::_evaluation_form_scoring_status::EvaluationFormScoringStatus;
@@ -205,7 +207,37 @@ pub use crate::types::_evaluation_form_item::EvaluationFormItem;
 
 pub use crate::types::_evaluation_form_question::EvaluationFormQuestion;
 
+pub use crate::types::_evaluation_form_item_enablement_configuration::EvaluationFormItemEnablementConfiguration;
+
+pub use crate::types::_evaluation_form_item_enablement_action::EvaluationFormItemEnablementAction;
+
+pub use crate::types::_evaluation_form_item_enablement_condition::EvaluationFormItemEnablementCondition;
+
+pub use crate::types::_evaluation_form_item_enablement_operator::EvaluationFormItemEnablementOperator;
+
+pub use crate::types::_evaluation_form_item_enablement_condition_operand::EvaluationFormItemEnablementConditionOperand;
+
+pub use crate::types::_evaluation_form_item_enablement_expression::EvaluationFormItemEnablementExpression;
+
+pub use crate::types::_evaluation_form_item_source_values_comparator::EvaluationFormItemSourceValuesComparator;
+
+pub use crate::types::_evaluation_form_item_enablement_source_value::EvaluationFormItemEnablementSourceValue;
+
+pub use crate::types::_evaluation_form_item_enablement_source_value_type::EvaluationFormItemEnablementSourceValueType;
+
+pub use crate::types::_evaluation_form_item_enablement_source::EvaluationFormItemEnablementSource;
+
+pub use crate::types::_evaluation_form_item_enablement_source_type::EvaluationFormItemEnablementSourceType;
+
 pub use crate::types::_evaluation_form_question_type_properties::EvaluationFormQuestionTypeProperties;
+
+pub use crate::types::_evaluation_form_text_question_properties::EvaluationFormTextQuestionProperties;
+
+pub use crate::types::_evaluation_form_text_question_automation::EvaluationFormTextQuestionAutomation;
+
+pub use crate::types::_evaluation_form_question_automation_answer_source::EvaluationFormQuestionAutomationAnswerSource;
+
+pub use crate::types::_evaluation_form_question_automation_answer_source_type::EvaluationFormQuestionAutomationAnswerSourceType;
 
 pub use crate::types::_evaluation_form_single_select_question_properties::EvaluationFormSingleSelectQuestionProperties;
 
@@ -220,6 +252,8 @@ pub use crate::types::_single_select_question_rule_category_automation_condition
 pub use crate::types::_evaluation_form_single_select_question_display_mode::EvaluationFormSingleSelectQuestionDisplayMode;
 
 pub use crate::types::_evaluation_form_single_select_question_option::EvaluationFormSingleSelectQuestionOption;
+
+pub use crate::types::_automatic_fail_configuration::AutomaticFailConfiguration;
 
 pub use crate::types::_evaluation_form_numeric_question_properties::EvaluationFormNumericQuestionProperties;
 
@@ -256,6 +290,8 @@ pub use crate::types::_contact_flow_module_state::ContactFlowModuleState;
 pub use crate::types::_problem_detail::ProblemDetail;
 
 pub use crate::types::_contact_flow_state::ContactFlowState;
+
+pub use crate::types::_evaluator_user_union::EvaluatorUserUnion;
 
 pub use crate::types::_evaluation_note::EvaluationNote;
 
@@ -356,6 +392,8 @@ pub use crate::types::_voice_recording_configuration::VoiceRecordingConfiguratio
 pub use crate::types::_ivr_recording_track::IvrRecordingTrack;
 
 pub use crate::types::_voice_recording_track::VoiceRecordingTrack;
+
+pub use crate::types::_auto_evaluation_configuration::AutoEvaluationConfiguration;
 
 pub use crate::types::_persistent_chat::PersistentChat;
 
@@ -489,6 +527,22 @@ pub use crate::types::_date_condition::DateCondition;
 
 pub use crate::types::_date_comparison_type::DateComparisonType;
 
+pub use crate::types::_evaluation_form_search_summary::EvaluationFormSearchSummary;
+
+pub use crate::types::_evaluation_form_version_status::EvaluationFormVersionStatus;
+
+pub use crate::types::_evaluation_form_search_filter::EvaluationFormSearchFilter;
+
+pub use crate::types::_evaluation_form_search_criteria::EvaluationFormSearchCriteria;
+
+pub use crate::types::_date_time_condition::DateTimeCondition;
+
+pub use crate::types::_date_time_comparison_type::DateTimeComparisonType;
+
+pub use crate::types::_boolean_condition::BooleanCondition;
+
+pub use crate::types::_boolean_comparison_type::BooleanComparisonType;
+
 pub use crate::types::_email_address_metadata::EmailAddressMetadata;
 
 pub use crate::types::_alias_configuration::AliasConfiguration;
@@ -580,6 +634,24 @@ pub use crate::types::_contact_flow_module_status::ContactFlowModuleStatus;
 pub use crate::types::_contact_flow_module_search_criteria::ContactFlowModuleSearchCriteria;
 
 pub use crate::types::_contact_flow_module_search_filter::ContactFlowModuleSearchFilter;
+
+pub use crate::types::_evaluation_search_summary::EvaluationSearchSummary;
+
+pub use crate::types::_evaluation_type::EvaluationType;
+
+pub use crate::types::_evaluation_status::EvaluationStatus;
+
+pub use crate::types::_evaluation_search_metadata::EvaluationSearchMetadata;
+
+pub use crate::types::_auto_evaluation_status::AutoEvaluationStatus;
+
+pub use crate::types::_evaluation_search_filter::EvaluationSearchFilter;
+
+pub use crate::types::_evaluation_search_criteria::EvaluationSearchCriteria;
+
+pub use crate::types::_decimal_condition::DecimalCondition;
+
+pub use crate::types::_decimal_comparison_type::DecimalComparisonType;
 
 pub use crate::types::_available_number_summary::AvailableNumberSummary;
 
@@ -717,8 +789,6 @@ pub use crate::types::_list_flow_association_resource_type::ListFlowAssociationR
 
 pub use crate::types::_evaluation_form_version_summary::EvaluationFormVersionSummary;
 
-pub use crate::types::_evaluation_form_version_status::EvaluationFormVersionStatus;
-
 pub use crate::types::_evaluation_form_summary::EvaluationFormSummary;
 
 pub use crate::types::_default_vocabulary::DefaultVocabulary;
@@ -747,9 +817,9 @@ pub use crate::types::_contact_flow_module_summary::ContactFlowModuleSummary;
 
 pub use crate::types::_evaluation_summary::EvaluationSummary;
 
-pub use crate::types::_evaluation_score::EvaluationScore;
+pub use crate::types::_evaluation_acknowledgement_summary::EvaluationAcknowledgementSummary;
 
-pub use crate::types::_evaluation_status::EvaluationStatus;
+pub use crate::types::_evaluation_score::EvaluationScore;
 
 pub use crate::types::_lex_bot_config::LexBotConfig;
 
@@ -901,7 +971,35 @@ pub use crate::types::_evaluation::Evaluation;
 
 pub use crate::types::_evaluation_answer_output::EvaluationAnswerOutput;
 
+pub use crate::types::_evaluation_suggested_answer::EvaluationSuggestedAnswer;
+
+pub use crate::types::_evaluation_question_answer_analysis_details::EvaluationQuestionAnswerAnalysisDetails;
+
+pub use crate::types::_evaluation_contact_lens_answer_analysis_details::EvaluationContactLensAnswerAnalysisDetails;
+
+pub use crate::types::_evaluation_automation_rule_category::EvaluationAutomationRuleCategory;
+
+pub use crate::types::_evaluation_transcript_point_of_interest::EvaluationTranscriptPointOfInterest;
+
+pub use crate::types::_evaluation_suggested_answer_transcript_millisecond_offsets::EvaluationSuggestedAnswerTranscriptMillisecondOffsets;
+
+pub use crate::types::_question_rule_category_automation_condition::QuestionRuleCategoryAutomationCondition;
+
+pub use crate::types::_evaluation_gen_ai_answer_analysis_details::EvaluationGenAiAnswerAnalysisDetails;
+
+pub use crate::types::_evaluation_question_answer_analysis_type::EvaluationQuestionAnswerAnalysisType;
+
+pub use crate::types::_evaluation_question_input_details::EvaluationQuestionInputDetails;
+
+pub use crate::types::_evaluation_transcript_type::EvaluationTranscriptType;
+
+pub use crate::types::_evaluation_suggested_answer_status::EvaluationSuggestedAnswerStatus;
+
 pub use crate::types::_evaluation_metadata::EvaluationMetadata;
+
+pub use crate::types::_evaluation_acknowledgement::EvaluationAcknowledgement;
+
+pub use crate::types::_auto_evaluation_details::AutoEvaluationDetails;
 
 pub use crate::types::_contact::Contact;
 
@@ -1085,9 +1183,21 @@ mod _authentication_profile;
 
 mod _authentication_profile_summary;
 
+mod _auto_evaluation_configuration;
+
+mod _auto_evaluation_details;
+
+mod _auto_evaluation_status;
+
+mod _automatic_fail_configuration;
+
 mod _available_number_summary;
 
 mod _behavior_type;
+
+mod _boolean_comparison_type;
+
+mod _boolean_condition;
 
 mod _campaign;
 
@@ -1219,6 +1329,14 @@ mod _date_condition;
 
 mod _date_reference;
 
+mod _date_time_comparison_type;
+
+mod _date_time_condition;
+
+mod _decimal_comparison_type;
+
+mod _decimal_condition;
+
 mod _default_vocabulary;
 
 mod _device_info;
@@ -1275,17 +1393,49 @@ mod _error_result;
 
 mod _evaluation;
 
+mod _evaluation_acknowledgement;
+
+mod _evaluation_acknowledgement_summary;
+
 mod _evaluation_answer_data;
 
 mod _evaluation_answer_input;
 
 mod _evaluation_answer_output;
 
+mod _evaluation_automation_rule_category;
+
+mod _evaluation_contact_lens_answer_analysis_details;
+
 mod _evaluation_form;
+
+mod _evaluation_form_auto_evaluation_configuration;
 
 mod _evaluation_form_content;
 
 mod _evaluation_form_item;
+
+mod _evaluation_form_item_enablement_action;
+
+mod _evaluation_form_item_enablement_condition;
+
+mod _evaluation_form_item_enablement_condition_operand;
+
+mod _evaluation_form_item_enablement_configuration;
+
+mod _evaluation_form_item_enablement_expression;
+
+mod _evaluation_form_item_enablement_operator;
+
+mod _evaluation_form_item_enablement_source;
+
+mod _evaluation_form_item_enablement_source_type;
+
+mod _evaluation_form_item_enablement_source_value;
+
+mod _evaluation_form_item_enablement_source_value_type;
+
+mod _evaluation_form_item_source_values_comparator;
 
 mod _evaluation_form_numeric_question_automation;
 
@@ -1294,6 +1444,10 @@ mod _evaluation_form_numeric_question_option;
 mod _evaluation_form_numeric_question_properties;
 
 mod _evaluation_form_question;
+
+mod _evaluation_form_question_automation_answer_source;
+
+mod _evaluation_form_question_automation_answer_source_type;
 
 mod _evaluation_form_question_type;
 
@@ -1304,6 +1458,12 @@ mod _evaluation_form_scoring_mode;
 mod _evaluation_form_scoring_status;
 
 mod _evaluation_form_scoring_strategy;
+
+mod _evaluation_form_search_criteria;
+
+mod _evaluation_form_search_filter;
+
+mod _evaluation_form_search_summary;
 
 mod _evaluation_form_section;
 
@@ -1319,19 +1479,53 @@ mod _evaluation_form_single_select_question_properties;
 
 mod _evaluation_form_summary;
 
+mod _evaluation_form_text_question_automation;
+
+mod _evaluation_form_text_question_properties;
+
 mod _evaluation_form_version_status;
 
 mod _evaluation_form_version_summary;
+
+mod _evaluation_gen_ai_answer_analysis_details;
 
 mod _evaluation_metadata;
 
 mod _evaluation_note;
 
+mod _evaluation_question_answer_analysis_details;
+
+mod _evaluation_question_answer_analysis_type;
+
+mod _evaluation_question_input_details;
+
 mod _evaluation_score;
+
+mod _evaluation_search_criteria;
+
+mod _evaluation_search_filter;
+
+mod _evaluation_search_metadata;
+
+mod _evaluation_search_summary;
 
 mod _evaluation_status;
 
+mod _evaluation_suggested_answer;
+
+mod _evaluation_suggested_answer_status;
+
+mod _evaluation_suggested_answer_transcript_millisecond_offsets;
+
 mod _evaluation_summary;
+
+mod _evaluation_transcript_point_of_interest;
+
+mod _evaluation_transcript_type;
+
+mod _evaluation_type;
+
+mod _evaluator_user_union;
 
 mod _event_bridge_action_definition;
 
@@ -1616,6 +1810,8 @@ mod _property_validation_exception_property;
 mod _property_validation_exception_reason;
 
 mod _quality_metrics;
+
+mod _question_rule_category_automation_condition;
 
 mod _queue;
 

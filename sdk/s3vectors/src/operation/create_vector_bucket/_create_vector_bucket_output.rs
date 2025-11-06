@@ -3,7 +3,15 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateVectorBucketOutput {
+    /// <p>The Amazon Resource Name (ARN) of the newly created vector bucket.</p>
+    pub vector_bucket_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
+}
+impl CreateVectorBucketOutput {
+    /// <p>The Amazon Resource Name (ARN) of the newly created vector bucket.</p>
+    pub fn vector_bucket_arn(&self) -> ::std::option::Option<&str> {
+        self.vector_bucket_arn.as_deref()
+    }
 }
 impl ::aws_types::request_id::RequestId for CreateVectorBucketOutput {
     fn request_id(&self) -> Option<&str> {
@@ -21,9 +29,25 @@ impl CreateVectorBucketOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct CreateVectorBucketOutputBuilder {
+    pub(crate) vector_bucket_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateVectorBucketOutputBuilder {
+    /// <p>The Amazon Resource Name (ARN) of the newly created vector bucket.</p>
+    /// This field is required.
+    pub fn vector_bucket_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.vector_bucket_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the newly created vector bucket.</p>
+    pub fn set_vector_bucket_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.vector_bucket_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the newly created vector bucket.</p>
+    pub fn get_vector_bucket_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vector_bucket_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -36,6 +60,7 @@ impl CreateVectorBucketOutputBuilder {
     /// Consumes the builder and constructs a [`CreateVectorBucketOutput`](crate::operation::create_vector_bucket::CreateVectorBucketOutput).
     pub fn build(self) -> crate::operation::create_vector_bucket::CreateVectorBucketOutput {
         crate::operation::create_vector_bucket::CreateVectorBucketOutput {
+            vector_bucket_arn: self.vector_bucket_arn,
             _request_id: self._request_id,
         }
     }

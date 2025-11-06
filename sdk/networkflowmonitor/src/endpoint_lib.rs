@@ -18,3 +18,5 @@ pub(crate) static DEFAULT_PARTITION_RESOLVER: std::sync::LazyLock<crate::endpoin
 pub(crate) mod diagnostic;
 
 pub(crate) mod partition;
+
+pub(crate) mod host;

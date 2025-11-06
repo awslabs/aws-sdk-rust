@@ -27,6 +27,8 @@ pub struct UpdateDomainInput {
     pub app_network_access_type: ::std::option::Option<crate::types::AppNetworkAccessType>,
     /// <p>Indicates whether custom tag propagation is supported for the domain. Defaults to <code>DISABLED</code>.</p>
     pub tag_propagation: ::std::option::Option<crate::types::TagPropagation>,
+    /// <p>The identifier for the VPC used by the domain for network communication. Use this field only when adding VPC configuration to a SageMaker AI domain used in Amazon SageMaker Unified Studio that was created without VPC settings. SageMaker AI doesn't automatically apply VPC updates to existing applications. Stop and restart your applications to apply the changes.</p>
+    pub vpc_id: ::std::option::Option<::std::string::String>,
 }
 impl UpdateDomainInput {
     /// <p>The ID of the domain to be updated.</p>
@@ -71,6 +73,10 @@ impl UpdateDomainInput {
     pub fn tag_propagation(&self) -> ::std::option::Option<&crate::types::TagPropagation> {
         self.tag_propagation.as_ref()
     }
+    /// <p>The identifier for the VPC used by the domain for network communication. Use this field only when adding VPC configuration to a SageMaker AI domain used in Amazon SageMaker Unified Studio that was created without VPC settings. SageMaker AI doesn't automatically apply VPC updates to existing applications. Stop and restart your applications to apply the changes.</p>
+    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
+        self.vpc_id.as_deref()
+    }
 }
 impl UpdateDomainInput {
     /// Creates a new builder-style object to manufacture [`UpdateDomainInput`](crate::operation::update_domain::UpdateDomainInput).
@@ -91,6 +97,7 @@ pub struct UpdateDomainInputBuilder {
     pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) app_network_access_type: ::std::option::Option<crate::types::AppNetworkAccessType>,
     pub(crate) tag_propagation: ::std::option::Option<crate::types::TagPropagation>,
+    pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
 }
 impl UpdateDomainInputBuilder {
     /// <p>The ID of the domain to be updated.</p>
@@ -236,6 +243,20 @@ impl UpdateDomainInputBuilder {
     pub fn get_tag_propagation(&self) -> &::std::option::Option<crate::types::TagPropagation> {
         &self.tag_propagation
     }
+    /// <p>The identifier for the VPC used by the domain for network communication. Use this field only when adding VPC configuration to a SageMaker AI domain used in Amazon SageMaker Unified Studio that was created without VPC settings. SageMaker AI doesn't automatically apply VPC updates to existing applications. Stop and restart your applications to apply the changes.</p>
+    pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.vpc_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier for the VPC used by the domain for network communication. Use this field only when adding VPC configuration to a SageMaker AI domain used in Amazon SageMaker Unified Studio that was created without VPC settings. SageMaker AI doesn't automatically apply VPC updates to existing applications. Stop and restart your applications to apply the changes.</p>
+    pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.vpc_id = input;
+        self
+    }
+    /// <p>The identifier for the VPC used by the domain for network communication. Use this field only when adding VPC configuration to a SageMaker AI domain used in Amazon SageMaker Unified Studio that was created without VPC settings. SageMaker AI doesn't automatically apply VPC updates to existing applications. Stop and restart your applications to apply the changes.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
+    }
     /// Consumes the builder and constructs a [`UpdateDomainInput`](crate::operation::update_domain::UpdateDomainInput).
     pub fn build(
         self,
@@ -249,6 +270,7 @@ impl UpdateDomainInputBuilder {
             subnet_ids: self.subnet_ids,
             app_network_access_type: self.app_network_access_type,
             tag_propagation: self.tag_propagation,
+            vpc_id: self.vpc_id,
         })
     }
 }

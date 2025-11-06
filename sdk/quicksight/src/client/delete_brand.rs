@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`aws_account_id(impl Into<String>)`](crate::operation::delete_brand::builders::DeleteBrandFluentBuilder::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::operation::delete_brand::builders::DeleteBrandFluentBuilder::set_aws_account_id):<br>required: **true**<br><p>The ID of the Amazon Web Services account that owns the brand.</p><br>
-    ///   - [`brand_id(impl Into<String>)`](crate::operation::delete_brand::builders::DeleteBrandFluentBuilder::brand_id) / [`set_brand_id(Option<String>)`](crate::operation::delete_brand::builders::DeleteBrandFluentBuilder::set_brand_id):<br>required: **true**<br><p>The ID of the QuickSight brand.</p><br>
+    ///   - [`brand_id(impl Into<String>)`](crate::operation::delete_brand::builders::DeleteBrandFluentBuilder::brand_id) / [`set_brand_id(Option<String>)`](crate::operation::delete_brand::builders::DeleteBrandFluentBuilder::set_brand_id):<br>required: **true**<br><p>The ID of the Quick Suite brand.</p><br>
     /// - On success, responds with [`DeleteBrandOutput`](crate::operation::delete_brand::DeleteBrandOutput) with field(s):
     ///   - [`request_id(Option<String>)`](crate::operation::delete_brand::DeleteBrandOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     /// - On failure, responds with [`SdkError<DeleteBrandError>`](crate::operation::delete_brand::DeleteBrandError)

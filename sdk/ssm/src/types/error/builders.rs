@@ -85,6 +85,8 @@ pub use crate::types::error::_target_not_connected::TargetNotConnectedBuilder;
 
 pub use crate::types::error::_validation_exception::ValidationExceptionBuilder;
 
+pub use crate::types::error::_no_longer_supported_exception::NoLongerSupportedExceptionBuilder;
+
 pub use crate::types::error::_invalid_automation_execution_parameters_exception::InvalidAutomationExecutionParametersExceptionBuilder;
 
 pub use crate::types::error::_idempotent_parameter_mismatch::IdempotentParameterMismatchBuilder;

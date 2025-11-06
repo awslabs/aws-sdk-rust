@@ -138,8 +138,8 @@ pub(crate) fn de_describe_user(
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                "UserName" => {
-                    builder = builder.set_user_name(
+                "IdentityStoreId" => {
+                    builder = builder.set_identity_store_id(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
@@ -147,6 +147,13 @@ pub(crate) fn de_describe_user(
                 }
                 "UserId" => {
                     builder = builder.set_user_id(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "UserName" => {
+                    builder = builder.set_user_name(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
@@ -223,8 +230,51 @@ pub(crate) fn de_describe_user(
                             .transpose()?,
                     );
                 }
-                "IdentityStoreId" => {
-                    builder = builder.set_identity_store_id(
+                "UserStatus" => {
+                    builder = builder.set_user_status(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::UserStatus::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
+                "Photos" => {
+                    builder = builder.set_photos(crate::protocol_serde::shape_photos::de_photos(tokens)?);
+                }
+                "Website" => {
+                    builder = builder.set_website(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "Birthdate" => {
+                    builder = builder.set_birthdate(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "CreatedAt" => {
+                    builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                        tokens.next(),
+                        ::aws_smithy_types::date_time::Format::EpochSeconds,
+                    )?);
+                }
+                "CreatedBy" => {
+                    builder = builder.set_created_by(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "UpdatedAt" => {
+                    builder = builder.set_updated_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                        tokens.next(),
+                        ::aws_smithy_types::date_time::Format::EpochSeconds,
+                    )?);
+                }
+                "UpdatedBy" => {
+                    builder = builder.set_updated_by(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,

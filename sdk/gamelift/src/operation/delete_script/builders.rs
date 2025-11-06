@@ -22,6 +22,7 @@ impl crate::operation::delete_script::builders::DeleteScriptInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteScript`.
 ///
+/// <p><b>This API works with the following fleet types:</b> EC2</p>
 /// <p>Deletes a Realtime script. This operation permanently deletes the script record. If script files were uploaded, they are also deleted (files stored in an S3 bucket are not deleted).</p>
 /// <p>To delete a script, specify the script ID. Before deleting a script, be sure to terminate all fleets that are deployed with the script being deleted. Fleet instances periodically check for script updates, and if the script record no longer exists, the instance will go into an error state and be unable to host game sessions.</p>
 /// <p><b>Learn more</b></p>

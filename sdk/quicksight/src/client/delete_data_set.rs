@@ -4,10 +4,10 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`aws_account_id(impl Into<String>)`](crate::operation::delete_data_set::builders::DeleteDataSetFluentBuilder::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::operation::delete_data_set::builders::DeleteDataSetFluentBuilder::set_aws_account_id):<br>required: **true**<br><p>The Amazon Web Services account ID.</p><br>
-    ///   - [`data_set_id(impl Into<String>)`](crate::operation::delete_data_set::builders::DeleteDataSetFluentBuilder::data_set_id) / [`set_data_set_id(Option<String>)`](crate::operation::delete_data_set::builders::DeleteDataSetFluentBuilder::set_data_set_id):<br>required: **true**<br><p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p><br>
+    ///   - [`data_set_id(impl Into<String>)`](crate::operation::delete_data_set::builders::DeleteDataSetFluentBuilder::data_set_id) / [`set_data_set_id(Option<String>)`](crate::operation::delete_data_set::builders::DeleteDataSetFluentBuilder::set_data_set_id):<br>required: **true**<br><p>The ID for the dataset that you want to delete. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p><br>
     /// - On success, responds with [`DeleteDataSetOutput`](crate::operation::delete_data_set::DeleteDataSetOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::delete_data_set::DeleteDataSetOutput::arn): <p>The Amazon Resource Name (ARN) of the dataset.</p>
-    ///   - [`data_set_id(Option<String>)`](crate::operation::delete_data_set::DeleteDataSetOutput::data_set_id): <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
+    ///   - [`data_set_id(Option<String>)`](crate::operation::delete_data_set::DeleteDataSetOutput::data_set_id): <p>The ID for the dataset that you want to delete. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
     ///   - [`request_id(Option<String>)`](crate::operation::delete_data_set::DeleteDataSetOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`status(i32)`](crate::operation::delete_data_set::DeleteDataSetOutput::status): <p>The HTTP status of the request.</p>
     /// - On failure, responds with [`SdkError<DeleteDataSetError>`](crate::operation::delete_data_set::DeleteDataSetError)

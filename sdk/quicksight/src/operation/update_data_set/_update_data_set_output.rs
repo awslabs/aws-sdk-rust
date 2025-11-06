@@ -5,7 +5,7 @@
 pub struct UpdateDataSetOutput {
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
     pub arn: ::std::option::Option<::std::string::String>,
-    /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
+    /// <p>The ID for the dataset that you want to update. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
     pub data_set_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN for the ingestion, which is triggered as a result of dataset creation if the import mode is SPICE.</p>
     pub ingestion_arn: ::std::option::Option<::std::string::String>,
@@ -22,7 +22,7 @@ impl UpdateDataSetOutput {
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
+    /// <p>The ID for the dataset that you want to update. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
     pub fn data_set_id(&self) -> ::std::option::Option<&str> {
         self.data_set_id.as_deref()
     }
@@ -82,17 +82,17 @@ impl UpdateDataSetOutputBuilder {
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
-    /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
+    /// <p>The ID for the dataset that you want to update. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
     pub fn data_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_set_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
+    /// <p>The ID for the dataset that you want to update. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
     pub fn set_data_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_set_id = input;
         self
     }
-    /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
+    /// <p>The ID for the dataset that you want to update. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
     pub fn get_data_set_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.data_set_id
     }

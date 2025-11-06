@@ -3880,6 +3880,7 @@ impl From<crate::operation::update_game_session::UpdateGameSessionError> for Err
             }
             crate::operation::update_game_session::UpdateGameSessionError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
             crate::operation::update_game_session::UpdateGameSessionError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::update_game_session::UpdateGameSessionError::NotReadyException(inner) => Error::NotReadyException(inner),
             crate::operation::update_game_session::UpdateGameSessionError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::update_game_session::UpdateGameSessionError::Unhandled(inner) => Error::Unhandled(inner),
         }

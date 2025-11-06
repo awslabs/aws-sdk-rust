@@ -22,7 +22,9 @@ impl crate::operation::get_finding::builders::GetFindingInputBuilder {
 }
 /// Fluent builder constructing a request to `GetFinding`.
 ///
-/// <p>Retrieves information about the specified finding. GetFinding and GetFindingV2 both use <code>access-analyzer:GetFinding</code> in the <code>Action</code> element of an IAM policy statement. You must have permission to perform the <code>access-analyzer:GetFinding</code> action.</p>
+/// <p>Retrieves information about the specified finding. GetFinding and GetFindingV2 both use <code>access-analyzer:GetFinding</code> in the <code>Action</code> element of an IAM policy statement. You must have permission to perform the <code>access-analyzer:GetFinding</code> action.</p><note>
+/// <p>GetFinding is supported only for external access analyzers. You must use GetFindingV2 for internal and unused access analyzers.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetFindingFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

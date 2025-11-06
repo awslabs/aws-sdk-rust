@@ -181,4 +181,18 @@ impl SubmitContactEvaluationFluentBuilder {
     pub fn get_notes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::EvaluationNote>> {
         self.inner.get_notes()
     }
+    /// <p>The ID of the user who submitted the contact evaluation.</p>
+    pub fn submitted_by(mut self, input: crate::types::EvaluatorUserUnion) -> Self {
+        self.inner = self.inner.submitted_by(input);
+        self
+    }
+    /// <p>The ID of the user who submitted the contact evaluation.</p>
+    pub fn set_submitted_by(mut self, input: ::std::option::Option<crate::types::EvaluatorUserUnion>) -> Self {
+        self.inner = self.inner.set_submitted_by(input);
+        self
+    }
+    /// <p>The ID of the user who submitted the contact evaluation.</p>
+    pub fn get_submitted_by(&self) -> &::std::option::Option<crate::types::EvaluatorUserUnion> {
+        self.inner.get_submitted_by()
+    }
 }

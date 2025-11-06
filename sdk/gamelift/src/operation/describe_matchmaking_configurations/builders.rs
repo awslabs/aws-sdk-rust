@@ -22,6 +22,7 @@ impl crate::operation::describe_matchmaking_configurations::builders::DescribeMa
 }
 /// Fluent builder constructing a request to `DescribeMatchmakingConfigurations`.
 ///
+/// <p><b>This API works with the following fleet types:</b> EC2, Anywhere, Container</p>
 /// <p>Retrieves the details of FlexMatch matchmaking configurations.</p>
 /// <p>This operation offers the following options: (1) retrieve all matchmaking configurations, (2) retrieve configurations for a specified list, or (3) retrieve all configurations that use a specified rule set name. When requesting multiple items, use the pagination parameters to retrieve results as a set of sequential pages.</p>
 /// <p>If successful, a configuration is returned for each requested name. When specifying a list of names, only configurations that currently exist are returned.</p>

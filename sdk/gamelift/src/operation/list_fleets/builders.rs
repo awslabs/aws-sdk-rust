@@ -22,6 +22,7 @@ impl crate::operation::list_fleets::builders::ListFleetsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListFleets`.
 ///
+/// <p><b>This API works with the following fleet types:</b> EC2, Anywhere, Container</p>
 /// <p>Retrieves a collection of fleet resources in an Amazon Web Services Region. You can filter the result set to find only those fleets that are deployed with a specific build or script. For fleets that have multiple locations, this operation retrieves fleets based on their home Region only.</p>
 /// <p>You can use operation in the following ways:</p>
 /// <ul>

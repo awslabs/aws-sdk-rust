@@ -43,7 +43,9 @@ where
                             builder = builder.set_principals(crate::protocol_serde::shape_principal_list::de_principal_list(tokens)?);
                         }
                         "ColumnNames" => {
-                            builder = builder.set_column_names(crate::protocol_serde::shape_column_name_list::de_column_name_list(tokens)?);
+                            builder = builder.set_column_names(
+                                    crate::protocol_serde::shape_column_level_permission_rule_column_name_list::de_column_level_permission_rule_column_name_list(tokens)?
+                                );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

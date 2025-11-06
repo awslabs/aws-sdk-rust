@@ -22,7 +22,9 @@ impl crate::operation::update_analyzer::builders::UpdateAnalyzerInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateAnalyzer`.
 ///
-/// <p>Modifies the configuration of an existing analyzer.</p>
+/// <p>Modifies the configuration of an existing analyzer.</p><note>
+/// <p>This action is not supported for external access analyzers.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateAnalyzerFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

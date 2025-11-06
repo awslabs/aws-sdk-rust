@@ -22,7 +22,7 @@ impl crate::operation::generate_embed_url_for_registered_user::builders::Generat
 }
 /// Fluent builder constructing a request to `GenerateEmbedUrlForRegisteredUser`.
 ///
-/// <p>Generates an embed URL that you can use to embed an Amazon QuickSight experience in your website. This action can be used for any type of user registered in an Amazon QuickSight account. Before you use this action, make sure that you have configured the relevant Amazon QuickSight resource and permissions.</p>
+/// <p>Generates an embed URL that you can use to embed an Amazon Quick Suite experience in your website. This action can be used for any type of user registered in an Amazon Quick Suite account. Before you use this action, make sure that you have configured the relevant Amazon Quick Suite resource and permissions.</p>
 /// <p>The following rules apply to the generated URL:</p>
 /// <ul>
 /// <li>
@@ -31,10 +31,10 @@ impl crate::operation::generate_embed_url_for_registered_user::builders::Generat
 /// <p>The URL validity period should not be confused with the actual session lifetime that can be customized using the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GenerateEmbedUrlForRegisteredUser.html#QS-GenerateEmbedUrlForRegisteredUser-request-SessionLifetimeInMinutes">SessionLifetimeInMinutes</a> </code> parameter.</p>
 /// <p>The resulting user session is valid for 15 minutes (minimum) to 10 hours (maximum). The default session duration is 10 hours.</p></li>
 /// <li>
-/// <p>You are charged only when the URL is used or there is interaction with Amazon QuickSight.</p></li>
+/// <p>You are charged only when the URL is used or there is interaction with Amazon Quick Suite.</p></li>
 /// </ul>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics.html">Embedded Analytics</a> in the <i>Amazon QuickSight User Guide</i>.</p>
-/// <p>For more information about the high-level steps for embedding and for an interactive demo of the ways you can customize embedding, visit the <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-portal.html">Amazon QuickSight Developer Portal</a>.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics.html">Embedded Analytics</a> in the <i>Amazon Quick Suite User Guide</i>.</p>
+/// <p>For more information about the high-level steps for embedding and for an interactive demo of the ways you can customize embedding, visit the <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-portal.html">Amazon Quick Suite Developer Portal</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GenerateEmbedUrlForRegisteredUserFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -162,12 +162,12 @@ impl GenerateEmbedUrlForRegisteredUserFluentBuilder {
     pub fn get_user_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_user_arn()
     }
-    /// <p>The experience that you want to embed. For registered users, you can embed QuickSight dashboards, Amazon Quick Sight visuals, the Amazon Quick Sight Q search bar, the Amazon Quick Sight Generative Q&amp;A experience, or the entire Amazon Quick Sight console.</p>
+    /// <p>The experience that you want to embed. For registered users, you can embed Quick Suite dashboards, Amazon Quick Sight visuals, the Amazon Quick Sight Q search bar, the Amazon Quick Sight Generative Q&amp;A experience, or the entire Amazon Quick Sight console.</p>
     pub fn experience_configuration(mut self, input: crate::types::RegisteredUserEmbeddingExperienceConfiguration) -> Self {
         self.inner = self.inner.experience_configuration(input);
         self
     }
-    /// <p>The experience that you want to embed. For registered users, you can embed QuickSight dashboards, Amazon Quick Sight visuals, the Amazon Quick Sight Q search bar, the Amazon Quick Sight Generative Q&amp;A experience, or the entire Amazon Quick Sight console.</p>
+    /// <p>The experience that you want to embed. For registered users, you can embed Quick Suite dashboards, Amazon Quick Sight visuals, the Amazon Quick Sight Q search bar, the Amazon Quick Sight Generative Q&amp;A experience, or the entire Amazon Quick Sight console.</p>
     pub fn set_experience_configuration(
         mut self,
         input: ::std::option::Option<crate::types::RegisteredUserEmbeddingExperienceConfiguration>,
@@ -175,7 +175,7 @@ impl GenerateEmbedUrlForRegisteredUserFluentBuilder {
         self.inner = self.inner.set_experience_configuration(input);
         self
     }
-    /// <p>The experience that you want to embed. For registered users, you can embed QuickSight dashboards, Amazon Quick Sight visuals, the Amazon Quick Sight Q search bar, the Amazon Quick Sight Generative Q&amp;A experience, or the entire Amazon Quick Sight console.</p>
+    /// <p>The experience that you want to embed. For registered users, you can embed Quick Suite dashboards, Amazon Quick Sight visuals, the Amazon Quick Sight Q search bar, the Amazon Quick Sight Generative Q&amp;A experience, or the entire Amazon Quick Sight console.</p>
     pub fn get_experience_configuration(&self) -> &::std::option::Option<crate::types::RegisteredUserEmbeddingExperienceConfiguration> {
         self.inner.get_experience_configuration()
     }

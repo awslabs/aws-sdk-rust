@@ -15,6 +15,8 @@ pub struct CreateLogicallyAirGappedBackupVaultInput {
     pub min_retention_days: ::std::option::Option<i64>,
     /// <p>The maximum retention period that the vault retains its recovery points.</p>
     pub max_retention_days: ::std::option::Option<i64>,
+    /// <p>The ARN of the customer-managed KMS key to use for encrypting the logically air-gapped backup vault. If not specified, the vault will be encrypted with an Amazon Web Services-owned key managed by Amazon Web Services Backup.</p>
+    pub encryption_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl CreateLogicallyAirGappedBackupVaultInput {
     /// <p>The name of a logical container where backups are stored. Logically air-gapped backup vaults are identified by names that are unique to the account used to create them and the Region where they are created.</p>
@@ -39,6 +41,10 @@ impl CreateLogicallyAirGappedBackupVaultInput {
     pub fn max_retention_days(&self) -> ::std::option::Option<i64> {
         self.max_retention_days
     }
+    /// <p>The ARN of the customer-managed KMS key to use for encrypting the logically air-gapped backup vault. If not specified, the vault will be encrypted with an Amazon Web Services-owned key managed by Amazon Web Services Backup.</p>
+    pub fn encryption_key_arn(&self) -> ::std::option::Option<&str> {
+        self.encryption_key_arn.as_deref()
+    }
 }
 impl ::std::fmt::Debug for CreateLogicallyAirGappedBackupVaultInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -48,6 +54,7 @@ impl ::std::fmt::Debug for CreateLogicallyAirGappedBackupVaultInput {
         formatter.field("creator_request_id", &self.creator_request_id);
         formatter.field("min_retention_days", &self.min_retention_days);
         formatter.field("max_retention_days", &self.max_retention_days);
+        formatter.field("encryption_key_arn", &self.encryption_key_arn);
         formatter.finish()
     }
 }
@@ -67,6 +74,7 @@ pub struct CreateLogicallyAirGappedBackupVaultInputBuilder {
     pub(crate) creator_request_id: ::std::option::Option<::std::string::String>,
     pub(crate) min_retention_days: ::std::option::Option<i64>,
     pub(crate) max_retention_days: ::std::option::Option<i64>,
+    pub(crate) encryption_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl CreateLogicallyAirGappedBackupVaultInputBuilder {
     /// <p>The name of a logical container where backups are stored. Logically air-gapped backup vaults are identified by names that are unique to the account used to create them and the Region where they are created.</p>
@@ -161,6 +169,20 @@ impl CreateLogicallyAirGappedBackupVaultInputBuilder {
     pub fn get_max_retention_days(&self) -> &::std::option::Option<i64> {
         &self.max_retention_days
     }
+    /// <p>The ARN of the customer-managed KMS key to use for encrypting the logically air-gapped backup vault. If not specified, the vault will be encrypted with an Amazon Web Services-owned key managed by Amazon Web Services Backup.</p>
+    pub fn encryption_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.encryption_key_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN of the customer-managed KMS key to use for encrypting the logically air-gapped backup vault. If not specified, the vault will be encrypted with an Amazon Web Services-owned key managed by Amazon Web Services Backup.</p>
+    pub fn set_encryption_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.encryption_key_arn = input;
+        self
+    }
+    /// <p>The ARN of the customer-managed KMS key to use for encrypting the logically air-gapped backup vault. If not specified, the vault will be encrypted with an Amazon Web Services-owned key managed by Amazon Web Services Backup.</p>
+    pub fn get_encryption_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.encryption_key_arn
+    }
     /// Consumes the builder and constructs a [`CreateLogicallyAirGappedBackupVaultInput`](crate::operation::create_logically_air_gapped_backup_vault::CreateLogicallyAirGappedBackupVaultInput).
     pub fn build(
         self,
@@ -175,6 +197,7 @@ impl CreateLogicallyAirGappedBackupVaultInputBuilder {
                 creator_request_id: self.creator_request_id,
                 min_retention_days: self.min_retention_days,
                 max_retention_days: self.max_retention_days,
+                encryption_key_arn: self.encryption_key_arn,
             },
         )
     }
@@ -187,6 +210,7 @@ impl ::std::fmt::Debug for CreateLogicallyAirGappedBackupVaultInputBuilder {
         formatter.field("creator_request_id", &self.creator_request_id);
         formatter.field("min_retention_days", &self.min_retention_days);
         formatter.field("max_retention_days", &self.max_retention_days);
+        formatter.field("encryption_key_arn", &self.encryption_key_arn);
         formatter.finish()
     }
 }

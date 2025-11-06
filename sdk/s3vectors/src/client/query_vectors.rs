@@ -13,6 +13,7 @@ impl super::Client {
     ///   - [`return_distance(bool)`](crate::operation::query_vectors::builders::QueryVectorsFluentBuilder::return_distance) / [`set_return_distance(Option<bool>)`](crate::operation::query_vectors::builders::QueryVectorsFluentBuilder::set_return_distance):<br>required: **false**<br><p>Indicates whether to include the computed distance in the response. The default value is <code>false</code>.</p><br>
     /// - On success, responds with [`QueryVectorsOutput`](crate::operation::query_vectors::QueryVectorsOutput) with field(s):
     ///   - [`vectors(Vec::<QueryOutputVector>)`](crate::operation::query_vectors::QueryVectorsOutput::vectors): <p>The vectors in the approximate nearest neighbor search.</p>
+    ///   - [`distance_metric(Option<DistanceMetric>)`](crate::operation::query_vectors::QueryVectorsOutput::distance_metric): <p>The distance metric that was used for the similarity search calculation. This is the same distance metric that was configured for the vector index when it was created.</p>
     /// - On failure, responds with [`SdkError<QueryVectorsError>`](crate::operation::query_vectors::QueryVectorsError)
     pub fn query_vectors(&self) -> crate::operation::query_vectors::builders::QueryVectorsFluentBuilder {
         crate::operation::query_vectors::builders::QueryVectorsFluentBuilder::new(self.handle.clone())

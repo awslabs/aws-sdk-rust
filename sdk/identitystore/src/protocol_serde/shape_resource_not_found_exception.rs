@@ -24,6 +24,13 @@ pub(crate) fn de_resource_not_found_exception_json_err(
                             .transpose()?,
                     );
                 }
+                "Reason" => {
+                    builder = builder.set_reason(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::ResourceNotFoundExceptionReason::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
                 "Message" => {
                     builder = builder.set_message(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

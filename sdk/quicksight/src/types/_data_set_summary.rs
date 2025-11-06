@@ -16,8 +16,11 @@ pub struct DataSetSummary {
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A value that indicates whether you want to import the data into SPICE.</p>
     pub import_mode: ::std::option::Option<crate::types::DataSetImportMode>,
-    /// <p>The row-level security configuration for the dataset.</p>
+    /// <p>The row-level security configuration for the dataset in the legacy data preparation experience.</p>
     pub row_level_permission_data_set: ::std::option::Option<crate::types::RowLevelPermissionDataSet>,
+    /// <p>The row-level security configuration for the dataset in the new data preparation experience.</p>
+    pub row_level_permission_data_set_map:
+        ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::RowLevelPermissionDataSet>>,
     /// <p>Whether or not the row level permission tags are applied.</p>
     pub row_level_permission_tag_configuration_applied: bool,
     /// <p>A value that indicates if the dataset has column level permission configured.</p>
@@ -50,9 +53,15 @@ impl DataSetSummary {
     pub fn import_mode(&self) -> ::std::option::Option<&crate::types::DataSetImportMode> {
         self.import_mode.as_ref()
     }
-    /// <p>The row-level security configuration for the dataset.</p>
+    /// <p>The row-level security configuration for the dataset in the legacy data preparation experience.</p>
     pub fn row_level_permission_data_set(&self) -> ::std::option::Option<&crate::types::RowLevelPermissionDataSet> {
         self.row_level_permission_data_set.as_ref()
+    }
+    /// <p>The row-level security configuration for the dataset in the new data preparation experience.</p>
+    pub fn row_level_permission_data_set_map(
+        &self,
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::RowLevelPermissionDataSet>> {
+        self.row_level_permission_data_set_map.as_ref()
     }
     /// <p>Whether or not the row level permission tags are applied.</p>
     pub fn row_level_permission_tag_configuration_applied(&self) -> bool {
@@ -85,6 +94,8 @@ pub struct DataSetSummaryBuilder {
     pub(crate) last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) import_mode: ::std::option::Option<crate::types::DataSetImportMode>,
     pub(crate) row_level_permission_data_set: ::std::option::Option<crate::types::RowLevelPermissionDataSet>,
+    pub(crate) row_level_permission_data_set_map:
+        ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::RowLevelPermissionDataSet>>,
     pub(crate) row_level_permission_tag_configuration_applied: ::std::option::Option<bool>,
     pub(crate) column_level_permission_rules_applied: ::std::option::Option<bool>,
     pub(crate) use_as: ::std::option::Option<crate::types::DataSetUseAs>,
@@ -174,19 +185,48 @@ impl DataSetSummaryBuilder {
     pub fn get_import_mode(&self) -> &::std::option::Option<crate::types::DataSetImportMode> {
         &self.import_mode
     }
-    /// <p>The row-level security configuration for the dataset.</p>
+    /// <p>The row-level security configuration for the dataset in the legacy data preparation experience.</p>
     pub fn row_level_permission_data_set(mut self, input: crate::types::RowLevelPermissionDataSet) -> Self {
         self.row_level_permission_data_set = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The row-level security configuration for the dataset.</p>
+    /// <p>The row-level security configuration for the dataset in the legacy data preparation experience.</p>
     pub fn set_row_level_permission_data_set(mut self, input: ::std::option::Option<crate::types::RowLevelPermissionDataSet>) -> Self {
         self.row_level_permission_data_set = input;
         self
     }
-    /// <p>The row-level security configuration for the dataset.</p>
+    /// <p>The row-level security configuration for the dataset in the legacy data preparation experience.</p>
     pub fn get_row_level_permission_data_set(&self) -> &::std::option::Option<crate::types::RowLevelPermissionDataSet> {
         &self.row_level_permission_data_set
+    }
+    /// Adds a key-value pair to `row_level_permission_data_set_map`.
+    ///
+    /// To override the contents of this collection use [`set_row_level_permission_data_set_map`](Self::set_row_level_permission_data_set_map).
+    ///
+    /// <p>The row-level security configuration for the dataset in the new data preparation experience.</p>
+    pub fn row_level_permission_data_set_map(
+        mut self,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: crate::types::RowLevelPermissionDataSet,
+    ) -> Self {
+        let mut hash_map = self.row_level_permission_data_set_map.unwrap_or_default();
+        hash_map.insert(k.into(), v);
+        self.row_level_permission_data_set_map = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>The row-level security configuration for the dataset in the new data preparation experience.</p>
+    pub fn set_row_level_permission_data_set_map(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::RowLevelPermissionDataSet>>,
+    ) -> Self {
+        self.row_level_permission_data_set_map = input;
+        self
+    }
+    /// <p>The row-level security configuration for the dataset in the new data preparation experience.</p>
+    pub fn get_row_level_permission_data_set_map(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::RowLevelPermissionDataSet>> {
+        &self.row_level_permission_data_set_map
     }
     /// <p>Whether or not the row level permission tags are applied.</p>
     pub fn row_level_permission_tag_configuration_applied(mut self, input: bool) -> Self {
@@ -240,6 +280,7 @@ impl DataSetSummaryBuilder {
             last_updated_time: self.last_updated_time,
             import_mode: self.import_mode,
             row_level_permission_data_set: self.row_level_permission_data_set,
+            row_level_permission_data_set_map: self.row_level_permission_data_set_map,
             row_level_permission_tag_configuration_applied: self.row_level_permission_tag_configuration_applied.unwrap_or_default(),
             column_level_permission_rules_applied: self.column_level_permission_rules_applied.unwrap_or_default(),
             use_as: self.use_as,

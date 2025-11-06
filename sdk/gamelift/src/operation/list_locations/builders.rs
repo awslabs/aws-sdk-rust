@@ -22,6 +22,7 @@ impl crate::operation::list_locations::builders::ListLocationsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListLocations`.
 ///
+/// <p><b>This API works with the following fleet types:</b> Anywhere</p>
 /// <p>Lists all custom and Amazon Web Services locations where Amazon GameLift Servers can host game servers.</p>
 /// <p>Note that if you call this API using a location that doesn't have a service endpoint, such as one that can only be a remote location in a multi-location fleet, the API returns an error.</p>
 /// <p>Consult the table of supported locations in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-regions.html">Amazon GameLift Servers service locations</a> to identify home Regions that support single and multi-location fleets.</p>

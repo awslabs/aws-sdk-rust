@@ -455,6 +455,8 @@ pub use crate::types::_cluster_auto_scaler_type::ClusterAutoScalerType;
 
 pub use crate::types::_cluster_auto_scaling_mode::ClusterAutoScalingMode;
 
+pub use crate::types::_cluster_node_provisioning_mode::ClusterNodeProvisioningMode;
+
 pub use crate::types::_cluster_node_recovery::ClusterNodeRecovery;
 
 pub use crate::types::_cluster_tiered_storage_config::ClusterTieredStorageConfig;
@@ -1850,8 +1852,6 @@ pub use crate::types::_cluster_metadata::ClusterMetadata;
 pub use crate::types::_cluster_auto_scaling_config_output::ClusterAutoScalingConfigOutput;
 
 pub use crate::types::_cluster_auto_scaling_status::ClusterAutoScalingStatus;
-
-pub use crate::types::_cluster_node_provisioning_mode::ClusterNodeProvisioningMode;
 
 pub use crate::types::_cluster_orchestrator::ClusterOrchestrator;
 

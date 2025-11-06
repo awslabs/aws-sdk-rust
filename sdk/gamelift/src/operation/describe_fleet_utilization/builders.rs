@@ -22,6 +22,7 @@ impl crate::operation::describe_fleet_utilization::builders::DescribeFleetUtiliz
 }
 /// Fluent builder constructing a request to `DescribeFleetUtilization`.
 ///
+/// <p><b>This API works with the following fleet types:</b> EC2, Container</p>
 /// <p>Retrieves utilization statistics for one or more fleets. Utilization data provides a snapshot of how the fleet's hosting resources are currently being used. For fleets with remote locations, this operation retrieves data for the fleet's home Region only. See <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetLocationUtilization.html">DescribeFleetLocationUtilization</a> to get utilization statistics for a fleet's remote locations.</p>
 /// <p>This operation can be used in the following ways:</p>
 /// <ul>

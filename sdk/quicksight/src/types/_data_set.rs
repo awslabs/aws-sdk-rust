@@ -42,6 +42,10 @@ pub struct DataSet {
     pub performance_configuration: ::std::option::Option<crate::types::PerformanceConfiguration>,
     /// <p>The usage of the dataset.</p>
     pub use_as: ::std::option::Option<crate::types::DataSetUseAs>,
+    /// <p>The data preparation configuration associated with this dataset.</p>
+    pub data_prep_configuration: ::std::option::Option<crate::types::DataPrepConfiguration>,
+    /// <p>The semantic model configuration associated with this dataset.</p>
+    pub semantic_model_configuration: ::std::option::Option<crate::types::SemanticModelConfiguration>,
 }
 impl DataSet {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -128,6 +132,14 @@ impl DataSet {
     pub fn use_as(&self) -> ::std::option::Option<&crate::types::DataSetUseAs> {
         self.use_as.as_ref()
     }
+    /// <p>The data preparation configuration associated with this dataset.</p>
+    pub fn data_prep_configuration(&self) -> ::std::option::Option<&crate::types::DataPrepConfiguration> {
+        self.data_prep_configuration.as_ref()
+    }
+    /// <p>The semantic model configuration associated with this dataset.</p>
+    pub fn semantic_model_configuration(&self) -> ::std::option::Option<&crate::types::SemanticModelConfiguration> {
+        self.semantic_model_configuration.as_ref()
+    }
 }
 impl DataSet {
     /// Creates a new builder-style object to manufacture [`DataSet`](crate::types::DataSet).
@@ -159,6 +171,8 @@ pub struct DataSetBuilder {
     pub(crate) dataset_parameters: ::std::option::Option<::std::vec::Vec<crate::types::DatasetParameter>>,
     pub(crate) performance_configuration: ::std::option::Option<crate::types::PerformanceConfiguration>,
     pub(crate) use_as: ::std::option::Option<crate::types::DataSetUseAs>,
+    pub(crate) data_prep_configuration: ::std::option::Option<crate::types::DataPrepConfiguration>,
+    pub(crate) semantic_model_configuration: ::std::option::Option<crate::types::SemanticModelConfiguration>,
 }
 impl DataSetBuilder {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -484,6 +498,34 @@ impl DataSetBuilder {
     pub fn get_use_as(&self) -> &::std::option::Option<crate::types::DataSetUseAs> {
         &self.use_as
     }
+    /// <p>The data preparation configuration associated with this dataset.</p>
+    pub fn data_prep_configuration(mut self, input: crate::types::DataPrepConfiguration) -> Self {
+        self.data_prep_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The data preparation configuration associated with this dataset.</p>
+    pub fn set_data_prep_configuration(mut self, input: ::std::option::Option<crate::types::DataPrepConfiguration>) -> Self {
+        self.data_prep_configuration = input;
+        self
+    }
+    /// <p>The data preparation configuration associated with this dataset.</p>
+    pub fn get_data_prep_configuration(&self) -> &::std::option::Option<crate::types::DataPrepConfiguration> {
+        &self.data_prep_configuration
+    }
+    /// <p>The semantic model configuration associated with this dataset.</p>
+    pub fn semantic_model_configuration(mut self, input: crate::types::SemanticModelConfiguration) -> Self {
+        self.semantic_model_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The semantic model configuration associated with this dataset.</p>
+    pub fn set_semantic_model_configuration(mut self, input: ::std::option::Option<crate::types::SemanticModelConfiguration>) -> Self {
+        self.semantic_model_configuration = input;
+        self
+    }
+    /// <p>The semantic model configuration associated with this dataset.</p>
+    pub fn get_semantic_model_configuration(&self) -> &::std::option::Option<crate::types::SemanticModelConfiguration> {
+        &self.semantic_model_configuration
+    }
     /// Consumes the builder and constructs a [`DataSet`](crate::types::DataSet).
     pub fn build(self) -> crate::types::DataSet {
         crate::types::DataSet {
@@ -506,6 +548,8 @@ impl DataSetBuilder {
             dataset_parameters: self.dataset_parameters,
             performance_configuration: self.performance_configuration,
             use_as: self.use_as,
+            data_prep_configuration: self.data_prep_configuration,
+            semantic_model_configuration: self.semantic_model_configuration,
         }
     }
 }

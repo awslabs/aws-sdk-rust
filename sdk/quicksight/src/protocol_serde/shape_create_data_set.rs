@@ -62,6 +62,22 @@ pub fn de_create_data_set_http_error(
             }
             tmp
         }),
+        "InvalidDataSetParameterValueException" => {
+            crate::operation::create_data_set::CreateDataSetError::InvalidDataSetParameterValueException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidDataSetParameterValueExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_invalid_data_set_parameter_value_exception::de_invalid_data_set_parameter_value_exception_json_err(_response_body, output).map_err(crate::operation::create_data_set::CreateDataSetError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "InvalidParameterValueException" => crate::operation::create_data_set::CreateDataSetError::InvalidParameterValueException({
             #[allow(unused_mut)]
             let mut tmp = {

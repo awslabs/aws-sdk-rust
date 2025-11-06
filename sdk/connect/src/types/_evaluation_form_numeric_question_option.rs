@@ -12,6 +12,8 @@ pub struct EvaluationFormNumericQuestionOption {
     pub score: i32,
     /// <p>The flag to mark the option as automatic fail. If an automatic fail answer is provided, the overall evaluation gets a score of 0.</p>
     pub automatic_fail: bool,
+    /// <p>A configuration for automatic fail.</p>
+    pub automatic_fail_configuration: ::std::option::Option<crate::types::AutomaticFailConfiguration>,
 }
 impl EvaluationFormNumericQuestionOption {
     /// <p>The minimum answer value of the range option.</p>
@@ -30,6 +32,10 @@ impl EvaluationFormNumericQuestionOption {
     pub fn automatic_fail(&self) -> bool {
         self.automatic_fail
     }
+    /// <p>A configuration for automatic fail.</p>
+    pub fn automatic_fail_configuration(&self) -> ::std::option::Option<&crate::types::AutomaticFailConfiguration> {
+        self.automatic_fail_configuration.as_ref()
+    }
 }
 impl EvaluationFormNumericQuestionOption {
     /// Creates a new builder-style object to manufacture [`EvaluationFormNumericQuestionOption`](crate::types::EvaluationFormNumericQuestionOption).
@@ -46,6 +52,7 @@ pub struct EvaluationFormNumericQuestionOptionBuilder {
     pub(crate) max_value: ::std::option::Option<i32>,
     pub(crate) score: ::std::option::Option<i32>,
     pub(crate) automatic_fail: ::std::option::Option<bool>,
+    pub(crate) automatic_fail_configuration: ::std::option::Option<crate::types::AutomaticFailConfiguration>,
 }
 impl EvaluationFormNumericQuestionOptionBuilder {
     /// <p>The minimum answer value of the range option.</p>
@@ -106,6 +113,20 @@ impl EvaluationFormNumericQuestionOptionBuilder {
     pub fn get_automatic_fail(&self) -> &::std::option::Option<bool> {
         &self.automatic_fail
     }
+    /// <p>A configuration for automatic fail.</p>
+    pub fn automatic_fail_configuration(mut self, input: crate::types::AutomaticFailConfiguration) -> Self {
+        self.automatic_fail_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A configuration for automatic fail.</p>
+    pub fn set_automatic_fail_configuration(mut self, input: ::std::option::Option<crate::types::AutomaticFailConfiguration>) -> Self {
+        self.automatic_fail_configuration = input;
+        self
+    }
+    /// <p>A configuration for automatic fail.</p>
+    pub fn get_automatic_fail_configuration(&self) -> &::std::option::Option<crate::types::AutomaticFailConfiguration> {
+        &self.automatic_fail_configuration
+    }
     /// Consumes the builder and constructs a [`EvaluationFormNumericQuestionOption`](crate::types::EvaluationFormNumericQuestionOption).
     pub fn build(self) -> crate::types::EvaluationFormNumericQuestionOption {
         crate::types::EvaluationFormNumericQuestionOption {
@@ -113,6 +134,7 @@ impl EvaluationFormNumericQuestionOptionBuilder {
             max_value: self.max_value.unwrap_or_default(),
             score: self.score.unwrap_or_default(),
             automatic_fail: self.automatic_fail.unwrap_or_default(),
+            automatic_fail_configuration: self.automatic_fail_configuration,
         }
     }
 }

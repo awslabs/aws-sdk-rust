@@ -69,6 +69,8 @@ pub(crate) mod shape_list_table_buckets;
 
 pub(crate) mod shape_list_tables;
 
+pub(crate) mod shape_list_tags_for_resource;
+
 pub(crate) mod shape_put_table_bucket_encryption;
 
 pub(crate) mod shape_put_table_bucket_maintenance_configuration;
@@ -80,6 +82,10 @@ pub(crate) mod shape_put_table_maintenance_configuration;
 pub(crate) mod shape_put_table_policy;
 
 pub(crate) mod shape_rename_table;
+
+pub(crate) mod shape_tag_resource;
+
+pub(crate) mod shape_untag_resource;
 
 pub(crate) mod shape_update_table_metadata_location;
 
@@ -121,6 +127,8 @@ pub(crate) mod shape_put_table_policy_input;
 
 pub(crate) mod shape_rename_table_input;
 
+pub(crate) mod shape_tag_resource_input;
+
 pub(crate) mod shape_too_many_requests_exception;
 
 pub(crate) mod shape_update_table_metadata_location_input;
@@ -146,6 +154,8 @@ pub(crate) mod shape_table_maintenance_job_status;
 pub(crate) mod shape_table_metadata;
 
 pub(crate) mod shape_table_summary_list;
+
+pub(crate) mod shape_tags;
 
 pub(crate) mod shape_iceberg_metadata;
 

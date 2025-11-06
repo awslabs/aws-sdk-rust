@@ -22,6 +22,7 @@ impl crate::operation::describe_instances::builders::DescribeInstancesInputBuild
 }
 /// Fluent builder constructing a request to `DescribeInstances`.
 ///
+/// <p><b>This API works with the following fleet types:</b> EC2</p>
 /// <p>Retrieves information about the EC2 instances in an Amazon GameLift Servers managed fleet, including instance ID, connection data, and status. You can use this operation with a multi-location fleet to get location-specific instance information. As an alternative, use the operations <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListCompute">https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListCompute</a> and <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeCompute">https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeCompute</a> to retrieve information for compute resources, including EC2 and Anywhere fleets.</p>
 /// <p>You can call this operation in the following ways:</p>
 /// <ul>

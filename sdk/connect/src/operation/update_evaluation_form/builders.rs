@@ -226,6 +226,23 @@ impl UpdateEvaluationFormFluentBuilder {
     pub fn get_scoring_strategy(&self) -> &::std::option::Option<crate::types::EvaluationFormScoringStrategy> {
         self.inner.get_scoring_strategy()
     }
+    /// <p>Whether automated evaluations are enabled.</p>
+    pub fn auto_evaluation_configuration(mut self, input: crate::types::EvaluationFormAutoEvaluationConfiguration) -> Self {
+        self.inner = self.inner.auto_evaluation_configuration(input);
+        self
+    }
+    /// <p>Whether automated evaluations are enabled.</p>
+    pub fn set_auto_evaluation_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::EvaluationFormAutoEvaluationConfiguration>,
+    ) -> Self {
+        self.inner = self.inner.set_auto_evaluation_configuration(input);
+        self
+    }
+    /// <p>Whether automated evaluations are enabled.</p>
+    pub fn get_auto_evaluation_configuration(&self) -> &::std::option::Option<crate::types::EvaluationFormAutoEvaluationConfiguration> {
+        self.inner.get_auto_evaluation_configuration()
+    }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());

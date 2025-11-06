@@ -85,6 +85,8 @@ pub use crate::types::error::_target_not_connected::TargetNotConnected;
 
 pub use crate::types::error::_validation_exception::ValidationException;
 
+pub use crate::types::error::_no_longer_supported_exception::NoLongerSupportedException;
+
 pub use crate::types::error::_invalid_automation_execution_parameters_exception::InvalidAutomationExecutionParametersException;
 
 pub use crate::types::error::_idempotent_parameter_mismatch::IdempotentParameterMismatch;
@@ -444,6 +446,8 @@ mod _item_size_limit_exceeded_exception;
 mod _malformed_resource_policy_document_exception;
 
 mod _max_document_size_exceeded;
+
+mod _no_longer_supported_exception;
 
 mod _ops_item_access_denied_exception;
 

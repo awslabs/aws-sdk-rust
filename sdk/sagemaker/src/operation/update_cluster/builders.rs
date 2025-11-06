@@ -212,6 +212,20 @@ impl UpdateClusterFluentBuilder {
     pub fn get_instance_groups_to_delete(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_instance_groups_to_delete()
     }
+    /// <p>Determines how instance provisioning is handled during cluster operations. In <code>Continuous</code> mode, the cluster provisions available instances incrementally and retries until the target count is reached. The cluster becomes operational once cluster-level resources are ready. Use <code>CurrentCount</code> and <code>TargetCount</code> in <code>DescribeCluster</code> to track provisioning progress.</p>
+    pub fn node_provisioning_mode(mut self, input: crate::types::ClusterNodeProvisioningMode) -> Self {
+        self.inner = self.inner.node_provisioning_mode(input);
+        self
+    }
+    /// <p>Determines how instance provisioning is handled during cluster operations. In <code>Continuous</code> mode, the cluster provisions available instances incrementally and retries until the target count is reached. The cluster becomes operational once cluster-level resources are ready. Use <code>CurrentCount</code> and <code>TargetCount</code> in <code>DescribeCluster</code> to track provisioning progress.</p>
+    pub fn set_node_provisioning_mode(mut self, input: ::std::option::Option<crate::types::ClusterNodeProvisioningMode>) -> Self {
+        self.inner = self.inner.set_node_provisioning_mode(input);
+        self
+    }
+    /// <p>Determines how instance provisioning is handled during cluster operations. In <code>Continuous</code> mode, the cluster provisions available instances incrementally and retries until the target count is reached. The cluster becomes operational once cluster-level resources are ready. Use <code>CurrentCount</code> and <code>TargetCount</code> in <code>DescribeCluster</code> to track provisioning progress.</p>
+    pub fn get_node_provisioning_mode(&self) -> &::std::option::Option<crate::types::ClusterNodeProvisioningMode> {
+        self.inner.get_node_provisioning_mode()
+    }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that HyperPod assumes for cluster autoscaling operations. Cannot be updated while autoscaling is enabled.</p>
     pub fn cluster_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_role(input.into());

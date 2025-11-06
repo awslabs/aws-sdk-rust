@@ -22,7 +22,7 @@ impl crate::operation::update_game_server_group::builders::UpdateGameServerGroup
 }
 /// Fluent builder constructing a request to `UpdateGameServerGroup`.
 ///
-/// <p><b>This operation is used with the Amazon GameLift Servers FleetIQ solution and game server groups.</b></p>
+/// <p><b>This API works with the following fleet types:</b> EC2 (FleetIQ)</p>
 /// <p>Updates Amazon GameLift Servers FleetIQ-specific properties for a game server group. Many Auto Scaling group properties are updated on the Auto Scaling group directly, including the launch template, Auto Scaling policies, and maximum/minimum/desired instance counts.</p>
 /// <p>To update the game server group, specify the game server group ID and provide the updated values. Before applying the updates, the new values are validated to ensure that Amazon GameLift Servers FleetIQ can continue to perform instance balancing activity. If successful, a <code>GameServerGroup</code> object is returned.</p>
 /// <p><b>Learn more</b></p>

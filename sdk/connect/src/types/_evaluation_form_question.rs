@@ -16,6 +16,8 @@ pub struct EvaluationFormQuestion {
     pub question_type: crate::types::EvaluationFormQuestionType,
     /// <p>The properties of the type of question. Text questions do not have to define question type properties.</p>
     pub question_type_properties: ::std::option::Option<crate::types::EvaluationFormQuestionTypeProperties>,
+    /// <p>A question conditional enablement.</p>
+    pub enablement: ::std::option::Option<crate::types::EvaluationFormItemEnablementConfiguration>,
     /// <p>The scoring weight of the section.</p>
     pub weight: f64,
 }
@@ -46,6 +48,10 @@ impl EvaluationFormQuestion {
     pub fn question_type_properties(&self) -> ::std::option::Option<&crate::types::EvaluationFormQuestionTypeProperties> {
         self.question_type_properties.as_ref()
     }
+    /// <p>A question conditional enablement.</p>
+    pub fn enablement(&self) -> ::std::option::Option<&crate::types::EvaluationFormItemEnablementConfiguration> {
+        self.enablement.as_ref()
+    }
     /// <p>The scoring weight of the section.</p>
     pub fn weight(&self) -> f64 {
         self.weight
@@ -68,6 +74,7 @@ pub struct EvaluationFormQuestionBuilder {
     pub(crate) not_applicable_enabled: ::std::option::Option<bool>,
     pub(crate) question_type: ::std::option::Option<crate::types::EvaluationFormQuestionType>,
     pub(crate) question_type_properties: ::std::option::Option<crate::types::EvaluationFormQuestionTypeProperties>,
+    pub(crate) enablement: ::std::option::Option<crate::types::EvaluationFormItemEnablementConfiguration>,
     pub(crate) weight: ::std::option::Option<f64>,
 }
 impl EvaluationFormQuestionBuilder {
@@ -158,6 +165,20 @@ impl EvaluationFormQuestionBuilder {
     pub fn get_question_type_properties(&self) -> &::std::option::Option<crate::types::EvaluationFormQuestionTypeProperties> {
         &self.question_type_properties
     }
+    /// <p>A question conditional enablement.</p>
+    pub fn enablement(mut self, input: crate::types::EvaluationFormItemEnablementConfiguration) -> Self {
+        self.enablement = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A question conditional enablement.</p>
+    pub fn set_enablement(mut self, input: ::std::option::Option<crate::types::EvaluationFormItemEnablementConfiguration>) -> Self {
+        self.enablement = input;
+        self
+    }
+    /// <p>A question conditional enablement.</p>
+    pub fn get_enablement(&self) -> &::std::option::Option<crate::types::EvaluationFormItemEnablementConfiguration> {
+        &self.enablement
+    }
     /// <p>The scoring weight of the section.</p>
     pub fn weight(mut self, input: f64) -> Self {
         self.weight = ::std::option::Option::Some(input);
@@ -200,6 +221,7 @@ impl EvaluationFormQuestionBuilder {
                 )
             })?,
             question_type_properties: self.question_type_properties,
+            enablement: self.enablement,
             weight: self.weight.unwrap_or_default(),
         })
     }

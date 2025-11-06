@@ -172,6 +172,32 @@ pub(crate) fn de_describe_group_membership(
                 "MemberId" => {
                     builder = builder.set_member_id(crate::protocol_serde::shape_member_id::de_member_id(tokens)?);
                 }
+                "CreatedAt" => {
+                    builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                        tokens.next(),
+                        ::aws_smithy_types::date_time::Format::EpochSeconds,
+                    )?);
+                }
+                "UpdatedAt" => {
+                    builder = builder.set_updated_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                        tokens.next(),
+                        ::aws_smithy_types::date_time::Format::EpochSeconds,
+                    )?);
+                }
+                "CreatedBy" => {
+                    builder = builder.set_created_by(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "UpdatedBy" => {
+                    builder = builder.set_updated_by(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

@@ -415,6 +415,8 @@ pub(crate) mod shape_search_agent_statuses;
 
 pub(crate) mod shape_search_available_phone_numbers;
 
+pub(crate) mod shape_search_contact_evaluations;
+
 pub(crate) mod shape_search_contact_flow_modules;
 
 pub(crate) mod shape_search_contact_flows;
@@ -422,6 +424,8 @@ pub(crate) mod shape_search_contact_flows;
 pub(crate) mod shape_search_contacts;
 
 pub(crate) mod shape_search_email_addresses;
+
+pub(crate) mod shape_search_evaluation_forms;
 
 pub(crate) mod shape_search_hours_of_operation_overrides;
 
@@ -803,6 +807,8 @@ pub(crate) mod shape_search_agent_statuses_input;
 
 pub(crate) mod shape_search_available_phone_numbers_input;
 
+pub(crate) mod shape_search_contact_evaluations_input;
+
 pub(crate) mod shape_search_contact_flow_modules_input;
 
 pub(crate) mod shape_search_contact_flows_input;
@@ -810,6 +816,8 @@ pub(crate) mod shape_search_contact_flows_input;
 pub(crate) mod shape_search_contacts_input;
 
 pub(crate) mod shape_search_email_addresses_input;
+
+pub(crate) mod shape_search_evaluation_forms_input;
 
 pub(crate) mod shape_search_hours_of_operation_overrides_input;
 
@@ -1033,6 +1041,8 @@ pub(crate) mod shape_authentication_profile;
 
 pub(crate) mod shape_authentication_profile_summary_list;
 
+pub(crate) mod shape_auto_evaluation_configuration;
+
 pub(crate) mod shape_available_numbers_list;
 
 pub(crate) mod shape_chat_event;
@@ -1119,11 +1129,19 @@ pub(crate) mod shape_evaluation_answer_input;
 
 pub(crate) mod shape_evaluation_form;
 
+pub(crate) mod shape_evaluation_form_auto_evaluation_configuration;
+
 pub(crate) mod shape_evaluation_form_content;
 
 pub(crate) mod shape_evaluation_form_item;
 
 pub(crate) mod shape_evaluation_form_scoring_strategy;
+
+pub(crate) mod shape_evaluation_form_search_criteria;
+
+pub(crate) mod shape_evaluation_form_search_filter;
+
+pub(crate) mod shape_evaluation_form_search_summary_list;
 
 pub(crate) mod shape_evaluation_form_summary_list;
 
@@ -1131,7 +1149,15 @@ pub(crate) mod shape_evaluation_form_version_summary_list;
 
 pub(crate) mod shape_evaluation_note;
 
+pub(crate) mod shape_evaluation_search_criteria;
+
+pub(crate) mod shape_evaluation_search_filter;
+
+pub(crate) mod shape_evaluation_search_summary_list;
+
 pub(crate) mod shape_evaluation_summary_list;
+
+pub(crate) mod shape_evaluator_user_union;
 
 pub(crate) mod shape_failed_request_list;
 
@@ -1459,6 +1485,8 @@ pub(crate) mod shape_authentication_profile_summary;
 
 pub(crate) mod shape_available_number_summary;
 
+pub(crate) mod shape_boolean_condition;
+
 pub(crate) mod shape_campaign;
 
 pub(crate) mod shape_chat_metrics;
@@ -1503,6 +1531,10 @@ pub(crate) mod shape_customer_voice_activity;
 
 pub(crate) mod shape_date_condition;
 
+pub(crate) mod shape_date_time_condition;
+
+pub(crate) mod shape_decimal_condition;
+
 pub(crate) mod shape_default_vocabulary;
 
 pub(crate) mod shape_disconnect_details;
@@ -1529,6 +1561,8 @@ pub(crate) mod shape_evaluation_form_items_list;
 
 pub(crate) mod shape_evaluation_form_question;
 
+pub(crate) mod shape_evaluation_form_search_summary;
+
 pub(crate) mod shape_evaluation_form_section;
 
 pub(crate) mod shape_evaluation_form_summary;
@@ -1540,6 +1574,8 @@ pub(crate) mod shape_evaluation_metadata;
 pub(crate) mod shape_evaluation_notes_map;
 
 pub(crate) mod shape_evaluation_scores_map;
+
+pub(crate) mod shape_evaluation_search_summary;
 
 pub(crate) mod shape_evaluation_summary;
 
@@ -1606,6 +1642,8 @@ pub(crate) mod shape_metric_filter_v2;
 pub(crate) mod shape_metric_result_v2;
 
 pub(crate) mod shape_name_criteria;
+
+pub(crate) mod shape_number_condition;
 
 pub(crate) mod shape_outbound_raw_message;
 
@@ -1773,6 +1811,8 @@ pub(crate) mod shape_attachment_reference;
 
 pub(crate) mod shape_attribute_and_condition;
 
+pub(crate) mod shape_auto_evaluation_details;
+
 pub(crate) mod shape_case_sla_configuration;
 
 pub(crate) mod shape_channel_to_count_map;
@@ -1813,11 +1853,19 @@ pub(crate) mod shape_email_reference;
 
 pub(crate) mod shape_encryption_config;
 
+pub(crate) mod shape_evaluation_acknowledgement;
+
+pub(crate) mod shape_evaluation_acknowledgement_summary;
+
 pub(crate) mod shape_evaluation_answer_output;
+
+pub(crate) mod shape_evaluation_form_item_enablement_configuration;
 
 pub(crate) mod shape_evaluation_form_question_type_properties;
 
 pub(crate) mod shape_evaluation_score;
+
+pub(crate) mod shape_evaluation_search_metadata;
 
 pub(crate) mod shape_expression;
 
@@ -1919,9 +1967,15 @@ pub(crate) mod shape_current_metric_data;
 
 pub(crate) mod shape_email_recipient;
 
+pub(crate) mod shape_evaluation_form_item_enablement_condition;
+
 pub(crate) mod shape_evaluation_form_numeric_question_properties;
 
 pub(crate) mod shape_evaluation_form_single_select_question_properties;
+
+pub(crate) mod shape_evaluation_form_text_question_properties;
+
+pub(crate) mod shape_evaluation_suggested_answers_list;
 
 pub(crate) mod shape_field_value_union;
 
@@ -1930,8 +1984,6 @@ pub(crate) mod shape_hierarchy_group_summary_reference;
 pub(crate) mod shape_historical_metric_data;
 
 pub(crate) mod shape_metric_data_v2;
-
-pub(crate) mod shape_number_condition;
 
 pub(crate) mod shape_operational_hour;
 
@@ -1969,6 +2021,8 @@ pub(crate) mod shape_contact_references;
 
 pub(crate) mod shape_empty_field_value;
 
+pub(crate) mod shape_evaluation_form_item_enablement_condition_operand;
+
 pub(crate) mod shape_evaluation_form_numeric_question_automation;
 
 pub(crate) mod shape_evaluation_form_numeric_question_option;
@@ -1976,6 +2030,10 @@ pub(crate) mod shape_evaluation_form_numeric_question_option;
 pub(crate) mod shape_evaluation_form_single_select_question_automation;
 
 pub(crate) mod shape_evaluation_form_single_select_question_option;
+
+pub(crate) mod shape_evaluation_form_text_question_automation;
+
+pub(crate) mod shape_evaluation_suggested_answer;
 
 pub(crate) mod shape_expiry;
 
@@ -2001,7 +2059,17 @@ pub(crate) mod shape_agents_criteria;
 
 pub(crate) mod shape_allowed_user_actions;
 
+pub(crate) mod shape_automatic_fail_configuration;
+
+pub(crate) mod shape_evaluation_form_item_enablement_expression;
+
+pub(crate) mod shape_evaluation_form_question_automation_answer_source;
+
 pub(crate) mod shape_evaluation_form_single_select_question_automation_option;
+
+pub(crate) mod shape_evaluation_question_answer_analysis_details;
+
+pub(crate) mod shape_evaluation_question_input_details;
 
 pub(crate) mod shape_expressions;
 
@@ -2023,9 +2091,19 @@ pub(crate) mod shape_user_id_list;
 
 pub(crate) mod shape_user_tag_map;
 
+pub(crate) mod shape_evaluation_contact_lens_answer_analysis_details;
+
+pub(crate) mod shape_evaluation_form_item_enablement_condition_operand_list;
+
+pub(crate) mod shape_evaluation_form_item_enablement_source;
+
+pub(crate) mod shape_evaluation_form_item_enablement_source_value;
+
 pub(crate) mod shape_evaluation_form_numeric_question_option_list;
 
 pub(crate) mod shape_evaluation_form_single_select_question_option_list;
+
+pub(crate) mod shape_evaluation_gen_ai_answer_analysis_details;
 
 pub(crate) mod shape_real_time_contact_analysis_point_of_interest;
 
@@ -2033,7 +2111,11 @@ pub(crate) mod shape_real_time_contact_analysis_transcript_item_with_content;
 
 pub(crate) mod shape_single_select_question_rule_category_automation;
 
+pub(crate) mod shape_evaluation_automation_rule_category_list;
+
 pub(crate) mod shape_evaluation_form_single_select_question_automation_option_list;
+
+pub(crate) mod shape_evaluation_transcript_points_of_interest;
 
 pub(crate) mod shape_metric_filter_value_list;
 
@@ -2041,4 +2123,12 @@ pub(crate) mod shape_real_time_contact_analysis_transcript_items_with_character_
 
 pub(crate) mod shape_agent_ids;
 
+pub(crate) mod shape_evaluation_automation_rule_category;
+
+pub(crate) mod shape_evaluation_transcript_point_of_interest;
+
 pub(crate) mod shape_real_time_contact_analysis_transcript_item_with_character_offsets;
+
+pub(crate) mod shape_evaluation_form_item_enablement_source_value_list;
+
+pub(crate) mod shape_evaluation_suggested_answer_transcript_millisecond_offsets;

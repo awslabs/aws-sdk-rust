@@ -22,6 +22,7 @@ impl crate::operation::list_game_server_groups::builders::ListGameServerGroupsIn
 }
 /// Fluent builder constructing a request to `ListGameServerGroups`.
 ///
+/// <p><b>This API works with the following fleet types:</b> EC2 (FleetIQ)</p>
 /// <p>Lists a game server groups.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListGameServerGroupsFluentBuilder {

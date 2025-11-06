@@ -102,6 +102,23 @@ pub fn de_put_vectors_http_error(
             };
             tmp
         }),
+        "ServiceQuotaExceededException" => crate::operation::put_vectors::PutVectorsError::ServiceQuotaExceededException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ServiceQuotaExceededExceptionBuilder::default();
+                output = crate::protocol_serde::shape_service_quota_exceeded_exception::de_service_quota_exceeded_exception_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::put_vectors::PutVectorsError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::service_quota_exceeded_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::put_vectors::PutVectorsError::unhandled)?
+            };
+            tmp
+        }),
         "ServiceUnavailableException" => crate::operation::put_vectors::PutVectorsError::ServiceUnavailableException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -131,18 +148,15 @@ pub fn de_put_vectors_http_error(
             };
             tmp
         }),
-        "ServiceQuotaExceededException" => crate::operation::put_vectors::PutVectorsError::ServiceQuotaExceededException({
+        "RequestTimeoutException" => crate::operation::put_vectors::PutVectorsError::RequestTimeoutException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ServiceQuotaExceededExceptionBuilder::default();
-                output = crate::protocol_serde::shape_service_quota_exceeded_exception::de_service_quota_exceeded_exception_json_err(
-                    _response_body,
-                    output,
-                )
-                .map_err(crate::operation::put_vectors::PutVectorsError::unhandled)?;
+                let mut output = crate::types::error::builders::RequestTimeoutExceptionBuilder::default();
+                output = crate::protocol_serde::shape_request_timeout_exception::de_request_timeout_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::put_vectors::PutVectorsError::unhandled)?;
                 let output = output.meta(generic);
-                crate::serde_util::service_quota_exceeded_exception_correct_errors(output)
+                crate::serde_util::request_timeout_exception_correct_errors(output)
                     .build()
                     .map_err(crate::operation::put_vectors::PutVectorsError::unhandled)?
             };

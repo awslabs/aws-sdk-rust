@@ -555,6 +555,8 @@ mod search_agent_statuses;
 
 mod search_available_phone_numbers;
 
+mod search_contact_evaluations;
+
 mod search_contact_flow_modules;
 
 mod search_contact_flows;
@@ -562,6 +564,8 @@ mod search_contact_flows;
 mod search_contacts;
 
 mod search_email_addresses;
+
+mod search_evaluation_forms;
 
 mod search_hours_of_operation_overrides;
 

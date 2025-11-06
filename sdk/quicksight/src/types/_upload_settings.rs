@@ -14,6 +14,8 @@ pub struct UploadSettings {
     pub text_qualifier: ::std::option::Option<crate::types::TextQualifier>,
     /// <p>The delimiter between values in the file.</p>
     pub delimiter: ::std::option::Option<::std::string::String>,
+    /// <p>A custom cell address range for Excel files, specifying which cells to import from the spreadsheet.</p>
+    pub custom_cell_address_range: ::std::option::Option<::std::string::String>,
 }
 impl UploadSettings {
     /// <p>File format.</p>
@@ -36,6 +38,10 @@ impl UploadSettings {
     pub fn delimiter(&self) -> ::std::option::Option<&str> {
         self.delimiter.as_deref()
     }
+    /// <p>A custom cell address range for Excel files, specifying which cells to import from the spreadsheet.</p>
+    pub fn custom_cell_address_range(&self) -> ::std::option::Option<&str> {
+        self.custom_cell_address_range.as_deref()
+    }
 }
 impl UploadSettings {
     /// Creates a new builder-style object to manufacture [`UploadSettings`](crate::types::UploadSettings).
@@ -53,6 +59,7 @@ pub struct UploadSettingsBuilder {
     pub(crate) contains_header: ::std::option::Option<bool>,
     pub(crate) text_qualifier: ::std::option::Option<crate::types::TextQualifier>,
     pub(crate) delimiter: ::std::option::Option<::std::string::String>,
+    pub(crate) custom_cell_address_range: ::std::option::Option<::std::string::String>,
 }
 impl UploadSettingsBuilder {
     /// <p>File format.</p>
@@ -125,6 +132,20 @@ impl UploadSettingsBuilder {
     pub fn get_delimiter(&self) -> &::std::option::Option<::std::string::String> {
         &self.delimiter
     }
+    /// <p>A custom cell address range for Excel files, specifying which cells to import from the spreadsheet.</p>
+    pub fn custom_cell_address_range(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.custom_cell_address_range = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A custom cell address range for Excel files, specifying which cells to import from the spreadsheet.</p>
+    pub fn set_custom_cell_address_range(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.custom_cell_address_range = input;
+        self
+    }
+    /// <p>A custom cell address range for Excel files, specifying which cells to import from the spreadsheet.</p>
+    pub fn get_custom_cell_address_range(&self) -> &::std::option::Option<::std::string::String> {
+        &self.custom_cell_address_range
+    }
     /// Consumes the builder and constructs a [`UploadSettings`](crate::types::UploadSettings).
     pub fn build(self) -> crate::types::UploadSettings {
         crate::types::UploadSettings {
@@ -133,6 +154,7 @@ impl UploadSettingsBuilder {
             contains_header: self.contains_header,
             text_qualifier: self.text_qualifier,
             delimiter: self.delimiter,
+            custom_cell_address_range: self.custom_cell_address_range,
         }
     }
 }

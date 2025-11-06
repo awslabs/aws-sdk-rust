@@ -22,6 +22,7 @@ impl crate::operation::list_compute::builders::ListComputeInputBuilder {
 }
 /// Fluent builder constructing a request to `ListCompute`.
 ///
+/// <p><b>This API works with the following fleet types:</b> EC2, Anywhere, Container</p>
 /// <p>Retrieves information on the compute resources in an Amazon GameLift Servers fleet. Use the pagination parameters to retrieve results in a set of sequential pages.</p>
 /// <p><b>Request options</b></p>
 /// <ul>

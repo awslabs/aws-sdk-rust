@@ -13,6 +13,15 @@ pub fn ser_evaluation_form_numeric_question_automation(
             )?;
             object_1.finish();
         }
+        crate::types::EvaluationFormNumericQuestionAutomation::AnswerSource(inner) => {
+            #[allow(unused_mut)]
+            let mut object_2 = object_6.key("AnswerSource").start_object();
+            crate::protocol_serde::shape_evaluation_form_question_automation_answer_source::ser_evaluation_form_question_automation_answer_source(
+                &mut object_2,
+                inner,
+            )?;
+            object_2.finish();
+        }
         crate::types::EvaluationFormNumericQuestionAutomation::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "EvaluationFormNumericQuestionAutomation",
@@ -31,32 +40,37 @@ where
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
-        Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            loop {
-                match tokens.next().transpose()? {
-                    Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        if let ::std::option::Option::Some(::std::result::Result::Ok(::aws_smithy_json::deserialize::Token::ValueNull { .. })) =
-                            tokens.peek()
-                        {
-                            let _ = tokens.next().expect("peek returned a token")?;
-                            continue;
-                        }
-                        let key = key.to_unescaped()?;
-                        if key == "__type" {
-                            ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
-                            continue;
-                        }
-                        if variant.is_some() {
-                            return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                "encountered mixed variants in union",
-                            ));
-                        }
-                        variant = match key.as_ref() {
+        Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => loop {
+            match tokens.next().transpose()? {
+                Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+                Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                    if let ::std::option::Option::Some(::std::result::Result::Ok(::aws_smithy_json::deserialize::Token::ValueNull { .. })) =
+                        tokens.peek()
+                    {
+                        let _ = tokens.next().expect("peek returned a token")?;
+                        continue;
+                    }
+                    let key = key.to_unescaped()?;
+                    if key == "__type" {
+                        ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
+                        continue;
+                    }
+                    if variant.is_some() {
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                            "encountered mixed variants in union",
+                        ));
+                    }
+                    variant = match key.as_ref() {
                             "PropertyValue" => {
                                 Some(crate::types::EvaluationFormNumericQuestionAutomation::PropertyValue(
                                     crate::protocol_serde::shape_numeric_question_property_value_automation::de_numeric_question_property_value_automation(tokens)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'PropertyValue' cannot be null"))?
+                                ))
+                            }
+                            "AnswerSource" => {
+                                Some(crate::types::EvaluationFormNumericQuestionAutomation::AnswerSource(
+                                    crate::protocol_serde::shape_evaluation_form_question_automation_answer_source::de_evaluation_form_question_automation_answer_source(tokens)?
+                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'AnswerSource' cannot be null"))?
                                 ))
                             }
                             _ => {
@@ -64,15 +78,14 @@ where
                                                                               Some(crate::types::EvaluationFormNumericQuestionAutomation::Unknown)
                                                                             }
                         };
-                    }
-                    other => {
-                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                            "expected object key or end object, found: {other:?}"
-                        )))
-                    }
+                }
+                other => {
+                    return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                        "expected object key or end object, found: {other:?}"
+                    )))
                 }
             }
-        }
+        },
         _ => {
             return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
                 "expected start object or null",

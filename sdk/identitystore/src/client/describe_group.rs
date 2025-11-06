@@ -10,6 +10,10 @@ impl super::Client {
     ///   - [`display_name(Option<String>)`](crate::operation::describe_group::DescribeGroupOutput::display_name): <p>The group’s display name value. The length limit is 1,024 characters. This value can consist of letters, accented characters, symbols, numbers, punctuation, tab, new line, carriage return, space, and nonbreaking space in this attribute. This value is specified at the time that the group is created and stored as an attribute of the group object in the identity store.</p>
     ///   - [`external_ids(Option<Vec::<ExternalId>>)`](crate::operation::describe_group::DescribeGroupOutput::external_ids): <p>A list of <code>ExternalId</code> objects that contains the identifiers issued to this resource by an external identity provider.</p>
     ///   - [`description(Option<String>)`](crate::operation::describe_group::DescribeGroupOutput::description): <p>A string containing a description of the group.</p>
+    ///   - [`created_at(Option<DateTime>)`](crate::operation::describe_group::DescribeGroupOutput::created_at): <p>The date and time the group was created.</p>
+    ///   - [`updated_at(Option<DateTime>)`](crate::operation::describe_group::DescribeGroupOutput::updated_at): <p>The date and time the group was last updated.</p>
+    ///   - [`created_by(Option<String>)`](crate::operation::describe_group::DescribeGroupOutput::created_by): <p>The identifier of the user or system that created the group.</p>
+    ///   - [`updated_by(Option<String>)`](crate::operation::describe_group::DescribeGroupOutput::updated_by): <p>The identifier of the user or system that last updated the group.</p>
     ///   - [`identity_store_id(String)`](crate::operation::describe_group::DescribeGroupOutput::identity_store_id): <p>The globally unique identifier for the identity store.</p>
     /// - On failure, responds with [`SdkError<DescribeGroupError>`](crate::operation::describe_group::DescribeGroupError)
     pub fn describe_group(&self) -> crate::operation::describe_group::builders::DescribeGroupFluentBuilder {

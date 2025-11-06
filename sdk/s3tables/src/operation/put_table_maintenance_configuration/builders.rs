@@ -144,17 +144,17 @@ impl PutTableMaintenanceConfigurationFluentBuilder {
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_namespace()
     }
-    /// <p>The name of the maintenance configuration.</p>
+    /// <p>The name of the table.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p>The name of the maintenance configuration.</p>
+    /// <p>The name of the table.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>The name of the maintenance configuration.</p>
+    /// <p>The name of the table.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }

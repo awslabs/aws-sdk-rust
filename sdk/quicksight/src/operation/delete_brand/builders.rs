@@ -134,17 +134,17 @@ impl DeleteBrandFluentBuilder {
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_aws_account_id()
     }
-    /// <p>The ID of the QuickSight brand.</p>
+    /// <p>The ID of the Quick Suite brand.</p>
     pub fn brand_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.brand_id(input.into());
         self
     }
-    /// <p>The ID of the QuickSight brand.</p>
+    /// <p>The ID of the Quick Suite brand.</p>
     pub fn set_brand_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_brand_id(input);
         self
     }
-    /// <p>The ID of the QuickSight brand.</p>
+    /// <p>The ID of the Quick Suite brand.</p>
     pub fn get_brand_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_brand_id()
     }

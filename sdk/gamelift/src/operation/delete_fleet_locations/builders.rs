@@ -22,6 +22,7 @@ impl crate::operation::delete_fleet_locations::builders::DeleteFleetLocationsInp
 }
 /// Fluent builder constructing a request to `DeleteFleetLocations`.
 ///
+/// <p><b>This API works with the following fleet types:</b> EC2, Container</p>
 /// <p>Removes locations from a multi-location fleet. When deleting a location, all game server process and all instances that are still active in the location are shut down.</p>
 /// <p>To delete fleet locations, identify the fleet ID and provide a list of the locations to be deleted.</p>
 /// <p>If successful, GameLift sets the location status to <code>DELETING</code>, and begins to shut down existing server processes and terminate instances in each location being deleted. When completed, the location status changes to <code>TERMINATED</code>.</p>

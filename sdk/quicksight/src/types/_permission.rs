@@ -52,7 +52,7 @@ pub struct Permission {
     /// <p>quicksight:GetFlowStages</p></li>
     /// </ul>
     pub actions: ::std::vec::Vec<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the principal. This can be an Amazon QuickSight user, group or namespace associated with the flow. Namespace principal can only be set as a viewer and will grant everyone in the same namespace viewer permissions.</p>
+    /// <p>The Amazon Resource Name (ARN) of the principal. This can be an Amazon Quick Suite user, group or namespace associated with the flow. Namespace principal can only be set as a viewer and will grant everyone in the same namespace viewer permissions.</p>
     pub principal: ::std::string::String,
 }
 impl Permission {
@@ -107,7 +107,7 @@ impl Permission {
         use std::ops::Deref;
         self.actions.deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the principal. This can be an Amazon QuickSight user, group or namespace associated with the flow. Namespace principal can only be set as a viewer and will grant everyone in the same namespace viewer permissions.</p>
+    /// <p>The Amazon Resource Name (ARN) of the principal. This can be an Amazon Quick Suite user, group or namespace associated with the flow. Namespace principal can only be set as a viewer and will grant everyone in the same namespace viewer permissions.</p>
     pub fn principal(&self) -> &str {
         use std::ops::Deref;
         self.principal.deref()
@@ -286,18 +286,18 @@ impl PermissionBuilder {
     pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.actions
     }
-    /// <p>The Amazon Resource Name (ARN) of the principal. This can be an Amazon QuickSight user, group or namespace associated with the flow. Namespace principal can only be set as a viewer and will grant everyone in the same namespace viewer permissions.</p>
+    /// <p>The Amazon Resource Name (ARN) of the principal. This can be an Amazon Quick Suite user, group or namespace associated with the flow. Namespace principal can only be set as a viewer and will grant everyone in the same namespace viewer permissions.</p>
     /// This field is required.
     pub fn principal(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.principal = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the principal. This can be an Amazon QuickSight user, group or namespace associated with the flow. Namespace principal can only be set as a viewer and will grant everyone in the same namespace viewer permissions.</p>
+    /// <p>The Amazon Resource Name (ARN) of the principal. This can be an Amazon Quick Suite user, group or namespace associated with the flow. Namespace principal can only be set as a viewer and will grant everyone in the same namespace viewer permissions.</p>
     pub fn set_principal(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.principal = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the principal. This can be an Amazon QuickSight user, group or namespace associated with the flow. Namespace principal can only be set as a viewer and will grant everyone in the same namespace viewer permissions.</p>
+    /// <p>The Amazon Resource Name (ARN) of the principal. This can be an Amazon Quick Suite user, group or namespace associated with the flow. Namespace principal can only be set as a viewer and will grant everyone in the same namespace viewer permissions.</p>
     pub fn get_principal(&self) -> &::std::option::Option<::std::string::String> {
         &self.principal
     }

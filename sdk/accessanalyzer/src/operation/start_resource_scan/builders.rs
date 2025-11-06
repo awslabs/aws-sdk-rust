@@ -22,7 +22,9 @@ impl crate::operation::start_resource_scan::builders::StartResourceScanInputBuil
 }
 /// Fluent builder constructing a request to `StartResourceScan`.
 ///
-/// <p>Immediately starts a scan of the policies applied to the specified resource.</p>
+/// <p>Immediately starts a scan of the policies applied to the specified resource.</p><note>
+/// <p>This action is supported only for external access analyzers.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartResourceScanFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

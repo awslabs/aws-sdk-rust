@@ -22,6 +22,7 @@ impl crate::operation::describe_fleet_location_utilization::builders::DescribeFl
 }
 /// Fluent builder constructing a request to `DescribeFleetLocationUtilization`.
 ///
+/// <p><b>This API works with the following fleet types:</b> EC2, Anywhere, Container</p>
 /// <p>Retrieves current usage data for a fleet location. Utilization data provides a snapshot of current game hosting activity at the requested location. Use this operation to retrieve utilization information for a fleet's remote location or home Region (you can also retrieve home Region utilization by calling <code>DescribeFleetUtilization</code>).</p>
 /// <p>To retrieve utilization data, identify a fleet and location.</p>
 /// <p>If successful, a <code>FleetUtilization</code> object is returned for the requested fleet location.</p>

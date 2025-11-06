@@ -12,6 +12,8 @@ pub struct EvaluationFormSingleSelectQuestionOption {
     pub score: i32,
     /// <p>The flag to mark the option as automatic fail. If an automatic fail answer is provided, the overall evaluation gets a score of 0.</p>
     pub automatic_fail: bool,
+    /// <p>Whether automatic fail is configured on a single select question.</p>
+    pub automatic_fail_configuration: ::std::option::Option<crate::types::AutomaticFailConfiguration>,
 }
 impl EvaluationFormSingleSelectQuestionOption {
     /// <p>The identifier of the answer option. An identifier must be unique within the question.</p>
@@ -32,6 +34,10 @@ impl EvaluationFormSingleSelectQuestionOption {
     pub fn automatic_fail(&self) -> bool {
         self.automatic_fail
     }
+    /// <p>Whether automatic fail is configured on a single select question.</p>
+    pub fn automatic_fail_configuration(&self) -> ::std::option::Option<&crate::types::AutomaticFailConfiguration> {
+        self.automatic_fail_configuration.as_ref()
+    }
 }
 impl EvaluationFormSingleSelectQuestionOption {
     /// Creates a new builder-style object to manufacture [`EvaluationFormSingleSelectQuestionOption`](crate::types::EvaluationFormSingleSelectQuestionOption).
@@ -48,6 +54,7 @@ pub struct EvaluationFormSingleSelectQuestionOptionBuilder {
     pub(crate) text: ::std::option::Option<::std::string::String>,
     pub(crate) score: ::std::option::Option<i32>,
     pub(crate) automatic_fail: ::std::option::Option<bool>,
+    pub(crate) automatic_fail_configuration: ::std::option::Option<crate::types::AutomaticFailConfiguration>,
 }
 impl EvaluationFormSingleSelectQuestionOptionBuilder {
     /// <p>The identifier of the answer option. An identifier must be unique within the question.</p>
@@ -108,6 +115,20 @@ impl EvaluationFormSingleSelectQuestionOptionBuilder {
     pub fn get_automatic_fail(&self) -> &::std::option::Option<bool> {
         &self.automatic_fail
     }
+    /// <p>Whether automatic fail is configured on a single select question.</p>
+    pub fn automatic_fail_configuration(mut self, input: crate::types::AutomaticFailConfiguration) -> Self {
+        self.automatic_fail_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Whether automatic fail is configured on a single select question.</p>
+    pub fn set_automatic_fail_configuration(mut self, input: ::std::option::Option<crate::types::AutomaticFailConfiguration>) -> Self {
+        self.automatic_fail_configuration = input;
+        self
+    }
+    /// <p>Whether automatic fail is configured on a single select question.</p>
+    pub fn get_automatic_fail_configuration(&self) -> &::std::option::Option<crate::types::AutomaticFailConfiguration> {
+        &self.automatic_fail_configuration
+    }
     /// Consumes the builder and constructs a [`EvaluationFormSingleSelectQuestionOption`](crate::types::EvaluationFormSingleSelectQuestionOption).
     /// This method will fail if any of the following fields are not set:
     /// - [`ref_id`](crate::types::builders::EvaluationFormSingleSelectQuestionOptionBuilder::ref_id)
@@ -130,6 +151,7 @@ impl EvaluationFormSingleSelectQuestionOptionBuilder {
             })?,
             score: self.score.unwrap_or_default(),
             automatic_fail: self.automatic_fail.unwrap_or_default(),
+            automatic_fail_configuration: self.automatic_fail_configuration,
         })
     }
 }

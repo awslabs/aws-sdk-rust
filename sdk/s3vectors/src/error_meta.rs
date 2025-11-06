@@ -27,6 +27,8 @@ pub enum Error {
     KmsNotFoundException(crate::types::error::KmsNotFoundException),
     /// <p>The request was rejected because the specified resource can't be found.</p>
     NotFoundException(crate::types::error::NotFoundException),
+    /// <p>The request timed out. Retry your request.</p>
+    RequestTimeoutException(crate::types::error::RequestTimeoutException),
     /// <p>Your request exceeds a service quota.</p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// <p>The service is unavailable. Wait briefly and retry your request. If it continues to fail, increase your waiting time between retries.</p>
@@ -55,6 +57,7 @@ impl ::std::fmt::Display for Error {
             Error::KmsInvalidStateException(inner) => inner.fmt(f),
             Error::KmsNotFoundException(inner) => inner.fmt(f),
             Error::NotFoundException(inner) => inner.fmt(f),
+            Error::RequestTimeoutException(inner) => inner.fmt(f),
             Error::ServiceQuotaExceededException(inner) => inner.fmt(f),
             Error::ServiceUnavailableException(inner) => inner.fmt(f),
             Error::TooManyRequestsException(inner) => inner.fmt(f),
@@ -88,6 +91,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::KmsInvalidStateException(inner) => inner.meta(),
             Self::KmsNotFoundException(inner) => inner.meta(),
             Self::NotFoundException(inner) => inner.meta(),
+            Self::RequestTimeoutException(inner) => inner.meta(),
             Self::ServiceQuotaExceededException(inner) => inner.meta(),
             Self::ServiceUnavailableException(inner) => inner.meta(),
             Self::TooManyRequestsException(inner) => inner.meta(),
@@ -115,10 +119,11 @@ impl From<crate::operation::create_index::CreateIndexError> for Error {
         match err {
             crate::operation::create_index::CreateIndexError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::create_index::CreateIndexError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::create_index::CreateIndexError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
             crate::operation::create_index::CreateIndexError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::operation::create_index::CreateIndexError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::create_index::CreateIndexError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::create_index::CreateIndexError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::create_index::CreateIndexError::RequestTimeoutException(inner) => Error::RequestTimeoutException(inner),
             crate::operation::create_index::CreateIndexError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::create_index::CreateIndexError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::create_index::CreateIndexError::Unhandled(inner) => Error::Unhandled(inner),
@@ -143,14 +148,15 @@ impl From<crate::operation::create_vector_bucket::CreateVectorBucketError> for E
     fn from(err: crate::operation::create_vector_bucket::CreateVectorBucketError) -> Self {
         match err {
             crate::operation::create_vector_bucket::CreateVectorBucketError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_vector_bucket::CreateVectorBucketError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
             crate::operation::create_vector_bucket::CreateVectorBucketError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
             }
             crate::operation::create_vector_bucket::CreateVectorBucketError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::create_vector_bucket::CreateVectorBucketError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::create_vector_bucket::CreateVectorBucketError::ServiceQuotaExceededException(inner) => {
-                Error::ServiceQuotaExceededException(inner)
-            }
+            crate::operation::create_vector_bucket::CreateVectorBucketError::RequestTimeoutException(inner) => Error::RequestTimeoutException(inner),
             crate::operation::create_vector_bucket::CreateVectorBucketError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
@@ -179,7 +185,7 @@ impl From<crate::operation::delete_index::DeleteIndexError> for Error {
             crate::operation::delete_index::DeleteIndexError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::operation::delete_index::DeleteIndexError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::delete_index::DeleteIndexError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::delete_index::DeleteIndexError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::delete_index::DeleteIndexError::RequestTimeoutException(inner) => Error::RequestTimeoutException(inner),
             crate::operation::delete_index::DeleteIndexError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::delete_index::DeleteIndexError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_index::DeleteIndexError::Unhandled(inner) => Error::Unhandled(inner),
@@ -209,9 +215,7 @@ impl From<crate::operation::delete_vector_bucket::DeleteVectorBucketError> for E
             }
             crate::operation::delete_vector_bucket::DeleteVectorBucketError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::delete_vector_bucket::DeleteVectorBucketError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::delete_vector_bucket::DeleteVectorBucketError::ServiceQuotaExceededException(inner) => {
-                Error::ServiceQuotaExceededException(inner)
-            }
+            crate::operation::delete_vector_bucket::DeleteVectorBucketError::RequestTimeoutException(inner) => Error::RequestTimeoutException(inner),
             crate::operation::delete_vector_bucket::DeleteVectorBucketError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
@@ -250,8 +254,8 @@ impl From<crate::operation::delete_vector_bucket_policy::DeleteVectorBucketPolic
             crate::operation::delete_vector_bucket_policy::DeleteVectorBucketPolicyError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
-            crate::operation::delete_vector_bucket_policy::DeleteVectorBucketPolicyError::ServiceQuotaExceededException(inner) => {
-                Error::ServiceQuotaExceededException(inner)
+            crate::operation::delete_vector_bucket_policy::DeleteVectorBucketPolicyError::RequestTimeoutException(inner) => {
+                Error::RequestTimeoutException(inner)
             }
             crate::operation::delete_vector_bucket_policy::DeleteVectorBucketPolicyError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
@@ -288,7 +292,7 @@ impl From<crate::operation::delete_vectors::DeleteVectorsError> for Error {
             crate::operation::delete_vectors::DeleteVectorsError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::delete_vectors::DeleteVectorsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::operation::delete_vectors::DeleteVectorsError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::delete_vectors::DeleteVectorsError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::delete_vectors::DeleteVectorsError::RequestTimeoutException(inner) => Error::RequestTimeoutException(inner),
             crate::operation::delete_vectors::DeleteVectorsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::delete_vectors::DeleteVectorsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_vectors::DeleteVectorsError::Unhandled(inner) => Error::Unhandled(inner),
@@ -316,7 +320,7 @@ impl From<crate::operation::get_index::GetIndexError> for Error {
             crate::operation::get_index::GetIndexError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::operation::get_index::GetIndexError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::get_index::GetIndexError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::get_index::GetIndexError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::get_index::GetIndexError::RequestTimeoutException(inner) => Error::RequestTimeoutException(inner),
             crate::operation::get_index::GetIndexError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::get_index::GetIndexError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_index::GetIndexError::Unhandled(inner) => Error::Unhandled(inner),
@@ -346,9 +350,7 @@ impl From<crate::operation::get_vector_bucket::GetVectorBucketError> for Error {
             }
             crate::operation::get_vector_bucket::GetVectorBucketError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::get_vector_bucket::GetVectorBucketError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::get_vector_bucket::GetVectorBucketError::ServiceQuotaExceededException(inner) => {
-                Error::ServiceQuotaExceededException(inner)
-            }
+            crate::operation::get_vector_bucket::GetVectorBucketError::RequestTimeoutException(inner) => Error::RequestTimeoutException(inner),
             crate::operation::get_vector_bucket::GetVectorBucketError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::get_vector_bucket::GetVectorBucketError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_vector_bucket::GetVectorBucketError::Unhandled(inner) => Error::Unhandled(inner),
@@ -384,8 +386,8 @@ impl From<crate::operation::get_vector_bucket_policy::GetVectorBucketPolicyError
             crate::operation::get_vector_bucket_policy::GetVectorBucketPolicyError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
-            crate::operation::get_vector_bucket_policy::GetVectorBucketPolicyError::ServiceQuotaExceededException(inner) => {
-                Error::ServiceQuotaExceededException(inner)
+            crate::operation::get_vector_bucket_policy::GetVectorBucketPolicyError::RequestTimeoutException(inner) => {
+                Error::RequestTimeoutException(inner)
             }
             crate::operation::get_vector_bucket_policy::GetVectorBucketPolicyError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
@@ -420,7 +422,7 @@ impl From<crate::operation::get_vectors::GetVectorsError> for Error {
             crate::operation::get_vectors::GetVectorsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::operation::get_vectors::GetVectorsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::get_vectors::GetVectorsError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::get_vectors::GetVectorsError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::get_vectors::GetVectorsError::RequestTimeoutException(inner) => Error::RequestTimeoutException(inner),
             crate::operation::get_vectors::GetVectorsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::get_vectors::GetVectorsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_vectors::GetVectorsError::Unhandled(inner) => Error::Unhandled(inner),
@@ -448,7 +450,7 @@ impl From<crate::operation::list_indexes::ListIndexesError> for Error {
             crate::operation::list_indexes::ListIndexesError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::operation::list_indexes::ListIndexesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::list_indexes::ListIndexesError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::list_indexes::ListIndexesError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::list_indexes::ListIndexesError::RequestTimeoutException(inner) => Error::RequestTimeoutException(inner),
             crate::operation::list_indexes::ListIndexesError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::list_indexes::ListIndexesError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_indexes::ListIndexesError::Unhandled(inner) => Error::Unhandled(inner),
@@ -477,9 +479,7 @@ impl From<crate::operation::list_vector_buckets::ListVectorBucketsError> for Err
             }
             crate::operation::list_vector_buckets::ListVectorBucketsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::list_vector_buckets::ListVectorBucketsError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::list_vector_buckets::ListVectorBucketsError::ServiceQuotaExceededException(inner) => {
-                Error::ServiceQuotaExceededException(inner)
-            }
+            crate::operation::list_vector_buckets::ListVectorBucketsError::RequestTimeoutException(inner) => Error::RequestTimeoutException(inner),
             crate::operation::list_vector_buckets::ListVectorBucketsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::list_vector_buckets::ListVectorBucketsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_vector_buckets::ListVectorBucketsError::Unhandled(inner) => Error::Unhandled(inner),
@@ -507,7 +507,7 @@ impl From<crate::operation::list_vectors::ListVectorsError> for Error {
             crate::operation::list_vectors::ListVectorsError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::list_vectors::ListVectorsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::operation::list_vectors::ListVectorsError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::list_vectors::ListVectorsError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::list_vectors::ListVectorsError::RequestTimeoutException(inner) => Error::RequestTimeoutException(inner),
             crate::operation::list_vectors::ListVectorsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::list_vectors::ListVectorsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_vectors::ListVectorsError::Unhandled(inner) => Error::Unhandled(inner),
@@ -543,8 +543,8 @@ impl From<crate::operation::put_vector_bucket_policy::PutVectorBucketPolicyError
             crate::operation::put_vector_bucket_policy::PutVectorBucketPolicyError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
-            crate::operation::put_vector_bucket_policy::PutVectorBucketPolicyError::ServiceQuotaExceededException(inner) => {
-                Error::ServiceQuotaExceededException(inner)
+            crate::operation::put_vector_bucket_policy::PutVectorBucketPolicyError::RequestTimeoutException(inner) => {
+                Error::RequestTimeoutException(inner)
             }
             crate::operation::put_vector_bucket_policy::PutVectorBucketPolicyError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
@@ -577,9 +577,10 @@ impl From<crate::operation::put_vectors::PutVectorsError> for Error {
             crate::operation::put_vectors::PutVectorsError::KmsInvalidStateException(inner) => Error::KmsInvalidStateException(inner),
             crate::operation::put_vectors::PutVectorsError::KmsNotFoundException(inner) => Error::KmsNotFoundException(inner),
             crate::operation::put_vectors::PutVectorsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::put_vectors::PutVectorsError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
             crate::operation::put_vectors::PutVectorsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::operation::put_vectors::PutVectorsError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::put_vectors::PutVectorsError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::put_vectors::PutVectorsError::RequestTimeoutException(inner) => Error::RequestTimeoutException(inner),
             crate::operation::put_vectors::PutVectorsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::put_vectors::PutVectorsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::put_vectors::PutVectorsError::Unhandled(inner) => Error::Unhandled(inner),
@@ -611,7 +612,7 @@ impl From<crate::operation::query_vectors::QueryVectorsError> for Error {
             crate::operation::query_vectors::QueryVectorsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::operation::query_vectors::QueryVectorsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::query_vectors::QueryVectorsError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::query_vectors::QueryVectorsError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::query_vectors::QueryVectorsError::RequestTimeoutException(inner) => Error::RequestTimeoutException(inner),
             crate::operation::query_vectors::QueryVectorsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::query_vectors::QueryVectorsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::query_vectors::QueryVectorsError::Unhandled(inner) => Error::Unhandled(inner),
@@ -629,6 +630,7 @@ impl ::std::error::Error for Error {
             Error::KmsInvalidStateException(inner) => inner.source(),
             Error::KmsNotFoundException(inner) => inner.source(),
             Error::NotFoundException(inner) => inner.source(),
+            Error::RequestTimeoutException(inner) => inner.source(),
             Error::ServiceQuotaExceededException(inner) => inner.source(),
             Error::ServiceUnavailableException(inner) => inner.source(),
             Error::TooManyRequestsException(inner) => inner.source(),
@@ -648,6 +650,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::KmsInvalidStateException(e) => e.request_id(),
             Self::KmsNotFoundException(e) => e.request_id(),
             Self::NotFoundException(e) => e.request_id(),
+            Self::RequestTimeoutException(e) => e.request_id(),
             Self::ServiceQuotaExceededException(e) => e.request_id(),
             Self::ServiceUnavailableException(e) => e.request_id(),
             Self::TooManyRequestsException(e) => e.request_id(),

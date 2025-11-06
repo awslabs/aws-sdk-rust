@@ -22,7 +22,7 @@ impl crate::operation::suspend_game_server_group::builders::SuspendGameServerGro
 }
 /// Fluent builder constructing a request to `SuspendGameServerGroup`.
 ///
-/// <p><b>This operation is used with the Amazon GameLift Servers FleetIQ solution and game server groups.</b></p>
+/// <p><b>This API works with the following fleet types:</b> EC2 (FleetIQ)</p>
 /// <p>Temporarily stops activity on a game server group without terminating instances or the game server group. You can restart activity by calling <a href="gamelift/latest/apireference/API_ResumeGameServerGroup.html">ResumeGameServerGroup</a>. You can suspend the following activity:</p>
 /// <ul>
 /// <li>

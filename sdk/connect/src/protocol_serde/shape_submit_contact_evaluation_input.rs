@@ -29,5 +29,11 @@ pub fn ser_submit_contact_evaluation_input_input(
         }
         object_7.finish();
     }
+    if let Some(var_11) = &input.submitted_by {
+        #[allow(unused_mut)]
+        let mut object_12 = object.key("SubmittedBy").start_object();
+        crate::protocol_serde::shape_evaluator_user_union::ser_evaluator_user_union(&mut object_12, var_11)?;
+        object_12.finish();
+    }
     Ok(())
 }

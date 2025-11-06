@@ -5,19 +5,39 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct FilterOperation {
     /// <p>An expression that must evaluate to a Boolean value. Rows for which the expression evaluates to true are kept in the dataset.</p>
-    pub condition_expression: ::std::string::String,
+    pub condition_expression: ::std::option::Option<::std::string::String>,
+    /// <p>A string-based filter condition within a filter operation.</p>
+    pub string_filter_condition: ::std::option::Option<crate::types::DataSetStringFilterCondition>,
+    /// <p>A numeric-based filter condition within a filter operation.</p>
+    pub numeric_filter_condition: ::std::option::Option<crate::types::DataSetNumericFilterCondition>,
+    /// <p>A date-based filter condition within a filter operation.</p>
+    pub date_filter_condition: ::std::option::Option<crate::types::DataSetDateFilterCondition>,
 }
 impl FilterOperation {
     /// <p>An expression that must evaluate to a Boolean value. Rows for which the expression evaluates to true are kept in the dataset.</p>
-    pub fn condition_expression(&self) -> &str {
-        use std::ops::Deref;
-        self.condition_expression.deref()
+    pub fn condition_expression(&self) -> ::std::option::Option<&str> {
+        self.condition_expression.as_deref()
+    }
+    /// <p>A string-based filter condition within a filter operation.</p>
+    pub fn string_filter_condition(&self) -> ::std::option::Option<&crate::types::DataSetStringFilterCondition> {
+        self.string_filter_condition.as_ref()
+    }
+    /// <p>A numeric-based filter condition within a filter operation.</p>
+    pub fn numeric_filter_condition(&self) -> ::std::option::Option<&crate::types::DataSetNumericFilterCondition> {
+        self.numeric_filter_condition.as_ref()
+    }
+    /// <p>A date-based filter condition within a filter operation.</p>
+    pub fn date_filter_condition(&self) -> ::std::option::Option<&crate::types::DataSetDateFilterCondition> {
+        self.date_filter_condition.as_ref()
     }
 }
 impl ::std::fmt::Debug for FilterOperation {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("FilterOperation");
         formatter.field("condition_expression", &"*** Sensitive Data Redacted ***");
+        formatter.field("string_filter_condition", &self.string_filter_condition);
+        formatter.field("numeric_filter_condition", &self.numeric_filter_condition);
+        formatter.field("date_filter_condition", &self.date_filter_condition);
         formatter.finish()
     }
 }
@@ -33,10 +53,12 @@ impl FilterOperation {
 #[non_exhaustive]
 pub struct FilterOperationBuilder {
     pub(crate) condition_expression: ::std::option::Option<::std::string::String>,
+    pub(crate) string_filter_condition: ::std::option::Option<crate::types::DataSetStringFilterCondition>,
+    pub(crate) numeric_filter_condition: ::std::option::Option<crate::types::DataSetNumericFilterCondition>,
+    pub(crate) date_filter_condition: ::std::option::Option<crate::types::DataSetDateFilterCondition>,
 }
 impl FilterOperationBuilder {
     /// <p>An expression that must evaluate to a Boolean value. Rows for which the expression evaluates to true are kept in the dataset.</p>
-    /// This field is required.
     pub fn condition_expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.condition_expression = ::std::option::Option::Some(input.into());
         self
@@ -50,24 +72,65 @@ impl FilterOperationBuilder {
     pub fn get_condition_expression(&self) -> &::std::option::Option<::std::string::String> {
         &self.condition_expression
     }
+    /// <p>A string-based filter condition within a filter operation.</p>
+    pub fn string_filter_condition(mut self, input: crate::types::DataSetStringFilterCondition) -> Self {
+        self.string_filter_condition = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A string-based filter condition within a filter operation.</p>
+    pub fn set_string_filter_condition(mut self, input: ::std::option::Option<crate::types::DataSetStringFilterCondition>) -> Self {
+        self.string_filter_condition = input;
+        self
+    }
+    /// <p>A string-based filter condition within a filter operation.</p>
+    pub fn get_string_filter_condition(&self) -> &::std::option::Option<crate::types::DataSetStringFilterCondition> {
+        &self.string_filter_condition
+    }
+    /// <p>A numeric-based filter condition within a filter operation.</p>
+    pub fn numeric_filter_condition(mut self, input: crate::types::DataSetNumericFilterCondition) -> Self {
+        self.numeric_filter_condition = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A numeric-based filter condition within a filter operation.</p>
+    pub fn set_numeric_filter_condition(mut self, input: ::std::option::Option<crate::types::DataSetNumericFilterCondition>) -> Self {
+        self.numeric_filter_condition = input;
+        self
+    }
+    /// <p>A numeric-based filter condition within a filter operation.</p>
+    pub fn get_numeric_filter_condition(&self) -> &::std::option::Option<crate::types::DataSetNumericFilterCondition> {
+        &self.numeric_filter_condition
+    }
+    /// <p>A date-based filter condition within a filter operation.</p>
+    pub fn date_filter_condition(mut self, input: crate::types::DataSetDateFilterCondition) -> Self {
+        self.date_filter_condition = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A date-based filter condition within a filter operation.</p>
+    pub fn set_date_filter_condition(mut self, input: ::std::option::Option<crate::types::DataSetDateFilterCondition>) -> Self {
+        self.date_filter_condition = input;
+        self
+    }
+    /// <p>A date-based filter condition within a filter operation.</p>
+    pub fn get_date_filter_condition(&self) -> &::std::option::Option<crate::types::DataSetDateFilterCondition> {
+        &self.date_filter_condition
+    }
     /// Consumes the builder and constructs a [`FilterOperation`](crate::types::FilterOperation).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`condition_expression`](crate::types::builders::FilterOperationBuilder::condition_expression)
-    pub fn build(self) -> ::std::result::Result<crate::types::FilterOperation, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::FilterOperation {
-            condition_expression: self.condition_expression.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "condition_expression",
-                    "condition_expression was not specified but it is required when building FilterOperation",
-                )
-            })?,
-        })
+    pub fn build(self) -> crate::types::FilterOperation {
+        crate::types::FilterOperation {
+            condition_expression: self.condition_expression,
+            string_filter_condition: self.string_filter_condition,
+            numeric_filter_condition: self.numeric_filter_condition,
+            date_filter_condition: self.date_filter_condition,
+        }
     }
 }
 impl ::std::fmt::Debug for FilterOperationBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("FilterOperationBuilder");
         formatter.field("condition_expression", &"*** Sensitive Data Redacted ***");
+        formatter.field("string_filter_condition", &self.string_filter_condition);
+        formatter.field("numeric_filter_condition", &self.numeric_filter_condition);
+        formatter.field("date_filter_condition", &self.date_filter_condition);
         formatter.finish()
     }
 }

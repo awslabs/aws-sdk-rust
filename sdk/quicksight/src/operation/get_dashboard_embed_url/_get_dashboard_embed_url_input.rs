@@ -17,7 +17,7 @@ pub struct GetDashboardEmbedUrlInput {
     pub reset_disabled: ::std::option::Option<bool>,
     /// <p>Adds persistence of state for the user session in an embedded dashboard. Persistence applies to the sheet and the parameter settings. These are control settings that the dashboard subscriber (Amazon Quick Sight reader) chooses while viewing the dashboard. If this is set to <code>TRUE</code>, the settings are the same when the subscriber reopens the same dashboard URL. The state is stored in Amazon Quick Sight, not in a browser cookie. If this is set to FALSE, the state of the user session is not persisted. The default is <code>FALSE</code>.</p>
     pub state_persistence_enabled: ::std::option::Option<bool>,
-    /// <p>The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type. You can use this for any Amazon QuickSight users in your account (readers, authors, or admins) authenticated as one of the following:</p>
+    /// <p>The Amazon Quick Suite user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type. You can use this for any Amazon Quick Suite users in your account (readers, authors, or admins) authenticated as one of the following:</p>
     /// <ul>
     /// <li>
     /// <p>Active Directory (AD) users or group members</p></li>
@@ -30,7 +30,7 @@ pub struct GetDashboardEmbedUrlInput {
     pub user_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Quick Sight namespace that contains the dashboard IDs in this request. If you're not using a custom namespace, set <code>Namespace = default</code>.</p>
     pub namespace: ::std::option::Option<::std::string::String>,
-    /// <p>A list of one or more dashboard IDs that you want anonymous users to have tempporary access to. Currently, the <code>IdentityType</code> parameter must be set to <code>ANONYMOUS</code> because other identity types authenticate as QuickSight or IAM users. For example, if you set "<code>--dashboard-id dash_id1 --dashboard-id dash_id2 dash_id3 identity-type ANONYMOUS</code>", the session can access all three dashboards.</p>
+    /// <p>A list of one or more dashboard IDs that you want anonymous users to have tempporary access to. Currently, the <code>IdentityType</code> parameter must be set to <code>ANONYMOUS</code> because other identity types authenticate as Quick Suite or IAM users. For example, if you set "<code>--dashboard-id dash_id1 --dashboard-id dash_id2 dash_id3 identity-type ANONYMOUS</code>", the session can access all three dashboards.</p>
     pub additional_dashboard_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl GetDashboardEmbedUrlInput {
@@ -62,7 +62,7 @@ impl GetDashboardEmbedUrlInput {
     pub fn state_persistence_enabled(&self) -> ::std::option::Option<bool> {
         self.state_persistence_enabled
     }
-    /// <p>The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type. You can use this for any Amazon QuickSight users in your account (readers, authors, or admins) authenticated as one of the following:</p>
+    /// <p>The Amazon Quick Suite user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type. You can use this for any Amazon Quick Suite users in your account (readers, authors, or admins) authenticated as one of the following:</p>
     /// <ul>
     /// <li>
     /// <p>Active Directory (AD) users or group members</p></li>
@@ -79,7 +79,7 @@ impl GetDashboardEmbedUrlInput {
     pub fn namespace(&self) -> ::std::option::Option<&str> {
         self.namespace.as_deref()
     }
-    /// <p>A list of one or more dashboard IDs that you want anonymous users to have tempporary access to. Currently, the <code>IdentityType</code> parameter must be set to <code>ANONYMOUS</code> because other identity types authenticate as QuickSight or IAM users. For example, if you set "<code>--dashboard-id dash_id1 --dashboard-id dash_id2 dash_id3 identity-type ANONYMOUS</code>", the session can access all three dashboards.</p>
+    /// <p>A list of one or more dashboard IDs that you want anonymous users to have tempporary access to. Currently, the <code>IdentityType</code> parameter must be set to <code>ANONYMOUS</code> because other identity types authenticate as Quick Suite or IAM users. For example, if you set "<code>--dashboard-id dash_id1 --dashboard-id dash_id2 dash_id3 identity-type ANONYMOUS</code>", the session can access all three dashboards.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.additional_dashboard_ids.is_none()`.
     pub fn additional_dashboard_ids(&self) -> &[::std::string::String] {
@@ -210,7 +210,7 @@ impl GetDashboardEmbedUrlInputBuilder {
     pub fn get_state_persistence_enabled(&self) -> &::std::option::Option<bool> {
         &self.state_persistence_enabled
     }
-    /// <p>The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type. You can use this for any Amazon QuickSight users in your account (readers, authors, or admins) authenticated as one of the following:</p>
+    /// <p>The Amazon Quick Suite user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type. You can use this for any Amazon Quick Suite users in your account (readers, authors, or admins) authenticated as one of the following:</p>
     /// <ul>
     /// <li>
     /// <p>Active Directory (AD) users or group members</p></li>
@@ -224,7 +224,7 @@ impl GetDashboardEmbedUrlInputBuilder {
         self.user_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type. You can use this for any Amazon QuickSight users in your account (readers, authors, or admins) authenticated as one of the following:</p>
+    /// <p>The Amazon Quick Suite user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type. You can use this for any Amazon Quick Suite users in your account (readers, authors, or admins) authenticated as one of the following:</p>
     /// <ul>
     /// <li>
     /// <p>Active Directory (AD) users or group members</p></li>
@@ -238,7 +238,7 @@ impl GetDashboardEmbedUrlInputBuilder {
         self.user_arn = input;
         self
     }
-    /// <p>The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type. You can use this for any Amazon QuickSight users in your account (readers, authors, or admins) authenticated as one of the following:</p>
+    /// <p>The Amazon Quick Suite user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type. You can use this for any Amazon Quick Suite users in your account (readers, authors, or admins) authenticated as one of the following:</p>
     /// <ul>
     /// <li>
     /// <p>Active Directory (AD) users or group members</p></li>
@@ -269,19 +269,19 @@ impl GetDashboardEmbedUrlInputBuilder {
     ///
     /// To override the contents of this collection use [`set_additional_dashboard_ids`](Self::set_additional_dashboard_ids).
     ///
-    /// <p>A list of one or more dashboard IDs that you want anonymous users to have tempporary access to. Currently, the <code>IdentityType</code> parameter must be set to <code>ANONYMOUS</code> because other identity types authenticate as QuickSight or IAM users. For example, if you set "<code>--dashboard-id dash_id1 --dashboard-id dash_id2 dash_id3 identity-type ANONYMOUS</code>", the session can access all three dashboards.</p>
+    /// <p>A list of one or more dashboard IDs that you want anonymous users to have tempporary access to. Currently, the <code>IdentityType</code> parameter must be set to <code>ANONYMOUS</code> because other identity types authenticate as Quick Suite or IAM users. For example, if you set "<code>--dashboard-id dash_id1 --dashboard-id dash_id2 dash_id3 identity-type ANONYMOUS</code>", the session can access all three dashboards.</p>
     pub fn additional_dashboard_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.additional_dashboard_ids.unwrap_or_default();
         v.push(input.into());
         self.additional_dashboard_ids = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of one or more dashboard IDs that you want anonymous users to have tempporary access to. Currently, the <code>IdentityType</code> parameter must be set to <code>ANONYMOUS</code> because other identity types authenticate as QuickSight or IAM users. For example, if you set "<code>--dashboard-id dash_id1 --dashboard-id dash_id2 dash_id3 identity-type ANONYMOUS</code>", the session can access all three dashboards.</p>
+    /// <p>A list of one or more dashboard IDs that you want anonymous users to have tempporary access to. Currently, the <code>IdentityType</code> parameter must be set to <code>ANONYMOUS</code> because other identity types authenticate as Quick Suite or IAM users. For example, if you set "<code>--dashboard-id dash_id1 --dashboard-id dash_id2 dash_id3 identity-type ANONYMOUS</code>", the session can access all three dashboards.</p>
     pub fn set_additional_dashboard_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.additional_dashboard_ids = input;
         self
     }
-    /// <p>A list of one or more dashboard IDs that you want anonymous users to have tempporary access to. Currently, the <code>IdentityType</code> parameter must be set to <code>ANONYMOUS</code> because other identity types authenticate as QuickSight or IAM users. For example, if you set "<code>--dashboard-id dash_id1 --dashboard-id dash_id2 dash_id3 identity-type ANONYMOUS</code>", the session can access all three dashboards.</p>
+    /// <p>A list of one or more dashboard IDs that you want anonymous users to have tempporary access to. Currently, the <code>IdentityType</code> parameter must be set to <code>ANONYMOUS</code> because other identity types authenticate as Quick Suite or IAM users. For example, if you set "<code>--dashboard-id dash_id1 --dashboard-id dash_id2 dash_id3 identity-type ANONYMOUS</code>", the session can access all three dashboards.</p>
     pub fn get_additional_dashboard_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.additional_dashboard_ids
     }

@@ -3,7 +3,7 @@ pub use crate::types::error::_validation_exception::ValidationExceptionBuilder;
 
 pub use crate::types::error::_too_many_requests_exception::TooManyRequestsExceptionBuilder;
 
-pub use crate::types::error::_service_quota_exceeded_exception::ServiceQuotaExceededExceptionBuilder;
+pub use crate::types::error::_request_timeout_exception::RequestTimeoutExceptionBuilder;
 
 pub use crate::types::error::_internal_server_exception::InternalServerExceptionBuilder;
 
@@ -14,6 +14,8 @@ pub use crate::types::error::_service_unavailable_exception::ServiceUnavailableE
 pub use crate::types::error::_not_found_exception::NotFoundExceptionBuilder;
 
 pub use crate::types::error::_conflict_exception::ConflictExceptionBuilder;
+
+pub use crate::types::error::_service_quota_exceeded_exception::ServiceQuotaExceededExceptionBuilder;
 
 pub use crate::types::error::_kms_not_found_exception::KmsNotFoundExceptionBuilder;
 

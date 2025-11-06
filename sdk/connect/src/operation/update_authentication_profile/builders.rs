@@ -22,7 +22,7 @@ impl crate::operation::update_authentication_profile::builders::UpdateAuthentica
 }
 /// Fluent builder constructing a request to `UpdateAuthenticationProfile`.
 ///
-/// <p>This API is in preview release for Amazon Connect and is subject to change. To request access to this API, contact Amazon Web ServicesSupport.</p>
+/// <p>This API is in preview release for Amazon Connect and is subject to change. To request access to this API, contact Amazon Web Services Support.</p>
 /// <p>Updates the selected authentication profile.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateAuthenticationProfileFluentBuilder {

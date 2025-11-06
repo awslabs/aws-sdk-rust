@@ -21,4 +21,6 @@ pub(crate) mod partition;
 
 pub(crate) mod arn;
 
+pub(crate) mod host;
+
 pub(crate) mod parse_url;

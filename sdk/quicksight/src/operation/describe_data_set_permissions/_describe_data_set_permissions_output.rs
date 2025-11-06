@@ -5,7 +5,7 @@
 pub struct DescribeDataSetPermissionsOutput {
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
     pub data_set_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
+    /// <p>The ID for the dataset that you want to describe. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
     pub data_set_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of resource permissions on the dataset.</p>
     pub permissions: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
@@ -20,7 +20,7 @@ impl DescribeDataSetPermissionsOutput {
     pub fn data_set_arn(&self) -> ::std::option::Option<&str> {
         self.data_set_arn.as_deref()
     }
-    /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
+    /// <p>The ID for the dataset that you want to describe. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
     pub fn data_set_id(&self) -> ::std::option::Option<&str> {
         self.data_set_id.as_deref()
     }
@@ -77,17 +77,17 @@ impl DescribeDataSetPermissionsOutputBuilder {
     pub fn get_data_set_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.data_set_arn
     }
-    /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
+    /// <p>The ID for the dataset that you want to describe. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
     pub fn data_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_set_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
+    /// <p>The ID for the dataset that you want to describe. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
     pub fn set_data_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_set_id = input;
         self
     }
-    /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
+    /// <p>The ID for the dataset that you want to describe. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
     pub fn get_data_set_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.data_set_id
     }

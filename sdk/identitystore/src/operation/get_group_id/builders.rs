@@ -23,7 +23,7 @@ impl crate::operation::get_group_id::builders::GetGroupIdInputBuilder {
 /// Fluent builder constructing a request to `GetGroupId`.
 ///
 /// <p>Retrieves <code>GroupId</code> in an identity store.</p><note>
-/// <p>If you have administrator access to a member account, you can use this API from the member account. Read about <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member accounts</a> in the <i>Organizations User Guide</i>.</p>
+/// <p>If you have access to a member account, you can use this API operation from the member account. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-your-accounts.html#limiting-access-from-member-accounts">Limiting access to the identity store from member accounts</a> in the <i> IAM Identity Center User Guide</i>.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetGroupIdFluentBuilder {
@@ -124,17 +124,17 @@ impl GetGroupIdFluentBuilder {
     pub fn get_identity_store_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_identity_store_id()
     }
-    /// <p>A unique identifier for a user or group that is not the primary identifier. This value can be an identifier from an external identity provider (IdP) that is associated with the user, the group, or a unique attribute. For the unique attribute, the only valid path is <code>displayName</code>.</p>
+    /// <p>A unique identifier for a user or group that is not the primary identifier. This value can be an identifier from an external identity provider (IdP) that is associated with the user, the group, or a unique attribute. For the unique attribute, the only valid path is <code> displayName</code>.</p>
     pub fn alternate_identifier(mut self, input: crate::types::AlternateIdentifier) -> Self {
         self.inner = self.inner.alternate_identifier(input);
         self
     }
-    /// <p>A unique identifier for a user or group that is not the primary identifier. This value can be an identifier from an external identity provider (IdP) that is associated with the user, the group, or a unique attribute. For the unique attribute, the only valid path is <code>displayName</code>.</p>
+    /// <p>A unique identifier for a user or group that is not the primary identifier. This value can be an identifier from an external identity provider (IdP) that is associated with the user, the group, or a unique attribute. For the unique attribute, the only valid path is <code> displayName</code>.</p>
     pub fn set_alternate_identifier(mut self, input: ::std::option::Option<crate::types::AlternateIdentifier>) -> Self {
         self.inner = self.inner.set_alternate_identifier(input);
         self
     }
-    /// <p>A unique identifier for a user or group that is not the primary identifier. This value can be an identifier from an external identity provider (IdP) that is associated with the user, the group, or a unique attribute. For the unique attribute, the only valid path is <code>displayName</code>.</p>
+    /// <p>A unique identifier for a user or group that is not the primary identifier. This value can be an identifier from an external identity provider (IdP) that is associated with the user, the group, or a unique attribute. For the unique attribute, the only valid path is <code> displayName</code>.</p>
     pub fn get_alternate_identifier(&self) -> &::std::option::Option<crate::types::AlternateIdentifier> {
         self.inner.get_alternate_identifier()
     }

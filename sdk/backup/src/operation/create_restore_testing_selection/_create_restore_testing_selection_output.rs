@@ -11,6 +11,7 @@ pub struct CreateRestoreTestingSelectionOutput {
     /// <p>The name cannot be changed after creation. The name consists of only alphanumeric characters and underscores. Maximum length is 50.</p>
     pub restore_testing_plan_name: ::std::string::String,
     /// <p>The name of the restore testing selection for the related restore testing plan.</p>
+    /// <p>The name cannot be changed after creation. The name consists of only alphanumeric characters and underscores. Maximum length is 50.</p>
     pub restore_testing_selection_name: ::std::string::String,
     _request_id: Option<String>,
 }
@@ -31,6 +32,7 @@ impl CreateRestoreTestingSelectionOutput {
         self.restore_testing_plan_name.deref()
     }
     /// <p>The name of the restore testing selection for the related restore testing plan.</p>
+    /// <p>The name cannot be changed after creation. The name consists of only alphanumeric characters and underscores. Maximum length is 50.</p>
     pub fn restore_testing_selection_name(&self) -> &str {
         use std::ops::Deref;
         self.restore_testing_selection_name.deref()
@@ -108,17 +110,20 @@ impl CreateRestoreTestingSelectionOutputBuilder {
         &self.restore_testing_plan_name
     }
     /// <p>The name of the restore testing selection for the related restore testing plan.</p>
+    /// <p>The name cannot be changed after creation. The name consists of only alphanumeric characters and underscores. Maximum length is 50.</p>
     /// This field is required.
     pub fn restore_testing_selection_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.restore_testing_selection_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the restore testing selection for the related restore testing plan.</p>
+    /// <p>The name cannot be changed after creation. The name consists of only alphanumeric characters and underscores. Maximum length is 50.</p>
     pub fn set_restore_testing_selection_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.restore_testing_selection_name = input;
         self
     }
     /// <p>The name of the restore testing selection for the related restore testing plan.</p>
+    /// <p>The name cannot be changed after creation. The name consists of only alphanumeric characters and underscores. Maximum length is 50.</p>
     pub fn get_restore_testing_selection_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.restore_testing_selection_name
     }

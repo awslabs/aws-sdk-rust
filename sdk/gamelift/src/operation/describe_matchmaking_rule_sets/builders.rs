@@ -22,6 +22,7 @@ impl crate::operation::describe_matchmaking_rule_sets::builders::DescribeMatchma
 }
 /// Fluent builder constructing a request to `DescribeMatchmakingRuleSets`.
 ///
+/// <p><b>This API works with the following fleet types:</b> EC2, Anywhere, Container</p>
 /// <p>Retrieves the details for FlexMatch matchmaking rule sets. You can request all existing rule sets for the Region, or provide a list of one or more rule set names. When requesting multiple items, use the pagination parameters to retrieve results as a set of sequential pages. If successful, a rule set is returned for each requested name.</p>
 /// <p><b>Learn more</b></p>
 /// <ul>

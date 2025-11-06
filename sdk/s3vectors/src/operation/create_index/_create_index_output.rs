@@ -3,7 +3,15 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateIndexOutput {
+    /// <p>The Amazon Resource Name (ARN) of the newly created vector index.</p>
+    pub index_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
+}
+impl CreateIndexOutput {
+    /// <p>The Amazon Resource Name (ARN) of the newly created vector index.</p>
+    pub fn index_arn(&self) -> ::std::option::Option<&str> {
+        self.index_arn.as_deref()
+    }
 }
 impl ::aws_types::request_id::RequestId for CreateIndexOutput {
     fn request_id(&self) -> Option<&str> {
@@ -21,9 +29,25 @@ impl CreateIndexOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct CreateIndexOutputBuilder {
+    pub(crate) index_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateIndexOutputBuilder {
+    /// <p>The Amazon Resource Name (ARN) of the newly created vector index.</p>
+    /// This field is required.
+    pub fn index_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.index_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the newly created vector index.</p>
+    pub fn set_index_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.index_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the newly created vector index.</p>
+    pub fn get_index_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.index_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -36,6 +60,7 @@ impl CreateIndexOutputBuilder {
     /// Consumes the builder and constructs a [`CreateIndexOutput`](crate::operation::create_index::CreateIndexOutput).
     pub fn build(self) -> crate::operation::create_index::CreateIndexOutput {
         crate::operation::create_index::CreateIndexOutput {
+            index_arn: self.index_arn,
             _request_id: self._request_id,
         }
     }

@@ -22,6 +22,7 @@ impl crate::operation::update_matchmaking_configuration::builders::UpdateMatchma
 }
 /// Fluent builder constructing a request to `UpdateMatchmakingConfiguration`.
 ///
+/// <p><b>This API works with the following fleet types:</b> EC2, Anywhere, Container</p>
 /// <p>Updates settings for a FlexMatch matchmaking configuration. These changes affect all matches and game sessions that are created after the update. To update settings, specify the configuration name to be updated and provide the new settings.</p>
 /// <p><b>Learn more</b></p>
 /// <p><a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-configuration.html"> Design a FlexMatch matchmaker</a></p>

@@ -40,6 +40,8 @@ pub struct DescribeBackupVaultOutput {
     pub mpa_session_arn: ::std::option::Option<::std::string::String>,
     /// <p>Information about the latest update to the MPA approval team association for this backup vault.</p>
     pub latest_mpa_approval_team_update: ::std::option::Option<crate::types::LatestMpaApprovalTeamUpdate>,
+    /// <p>The type of encryption key used for the backup vault. Valid values are CUSTOMER_MANAGED_KMS_KEY for customer-managed keys or Amazon Web Services_OWNED_KMS_KEY for Amazon Web Services-owned keys.</p>
+    pub encryption_key_type: ::std::option::Option<crate::types::EncryptionKeyType>,
     _request_id: Option<String>,
 }
 impl DescribeBackupVaultOutput {
@@ -112,6 +114,10 @@ impl DescribeBackupVaultOutput {
     pub fn latest_mpa_approval_team_update(&self) -> ::std::option::Option<&crate::types::LatestMpaApprovalTeamUpdate> {
         self.latest_mpa_approval_team_update.as_ref()
     }
+    /// <p>The type of encryption key used for the backup vault. Valid values are CUSTOMER_MANAGED_KMS_KEY for customer-managed keys or Amazon Web Services_OWNED_KMS_KEY for Amazon Web Services-owned keys.</p>
+    pub fn encryption_key_type(&self) -> ::std::option::Option<&crate::types::EncryptionKeyType> {
+        self.encryption_key_type.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for DescribeBackupVaultOutput {
     fn request_id(&self) -> Option<&str> {
@@ -145,6 +151,7 @@ pub struct DescribeBackupVaultOutputBuilder {
     pub(crate) mpa_approval_team_arn: ::std::option::Option<::std::string::String>,
     pub(crate) mpa_session_arn: ::std::option::Option<::std::string::String>,
     pub(crate) latest_mpa_approval_team_update: ::std::option::Option<crate::types::LatestMpaApprovalTeamUpdate>,
+    pub(crate) encryption_key_type: ::std::option::Option<crate::types::EncryptionKeyType>,
     _request_id: Option<String>,
 }
 impl DescribeBackupVaultOutputBuilder {
@@ -387,6 +394,20 @@ impl DescribeBackupVaultOutputBuilder {
     pub fn get_latest_mpa_approval_team_update(&self) -> &::std::option::Option<crate::types::LatestMpaApprovalTeamUpdate> {
         &self.latest_mpa_approval_team_update
     }
+    /// <p>The type of encryption key used for the backup vault. Valid values are CUSTOMER_MANAGED_KMS_KEY for customer-managed keys or Amazon Web Services_OWNED_KMS_KEY for Amazon Web Services-owned keys.</p>
+    pub fn encryption_key_type(mut self, input: crate::types::EncryptionKeyType) -> Self {
+        self.encryption_key_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of encryption key used for the backup vault. Valid values are CUSTOMER_MANAGED_KMS_KEY for customer-managed keys or Amazon Web Services_OWNED_KMS_KEY for Amazon Web Services-owned keys.</p>
+    pub fn set_encryption_key_type(mut self, input: ::std::option::Option<crate::types::EncryptionKeyType>) -> Self {
+        self.encryption_key_type = input;
+        self
+    }
+    /// <p>The type of encryption key used for the backup vault. Valid values are CUSTOMER_MANAGED_KMS_KEY for customer-managed keys or Amazon Web Services_OWNED_KMS_KEY for Amazon Web Services-owned keys.</p>
+    pub fn get_encryption_key_type(&self) -> &::std::option::Option<crate::types::EncryptionKeyType> {
+        &self.encryption_key_type
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -415,6 +436,7 @@ impl DescribeBackupVaultOutputBuilder {
             mpa_approval_team_arn: self.mpa_approval_team_arn,
             mpa_session_arn: self.mpa_session_arn,
             latest_mpa_approval_team_update: self.latest_mpa_approval_team_update,
+            encryption_key_type: self.encryption_key_type,
             _request_id: self._request_id,
         }
     }

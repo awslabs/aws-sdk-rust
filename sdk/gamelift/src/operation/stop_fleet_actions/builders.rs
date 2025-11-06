@@ -22,6 +22,7 @@ impl crate::operation::stop_fleet_actions::builders::StopFleetActionsInputBuilde
 }
 /// Fluent builder constructing a request to `StopFleetActions`.
 ///
+/// <p><b>This API works with the following fleet types:</b> EC2, Container</p>
 /// <p>Suspends certain types of activity in a fleet location. Currently, this operation is used to stop auto-scaling activity. For multi-location fleets, fleet actions are managed separately for each location.</p>
 /// <p>Stopping fleet actions has several potential purposes. It allows you to temporarily stop auto-scaling activity but retain your scaling policies for use in the future. For multi-location fleets, you can set up fleet-wide auto-scaling, and then opt out of it for certain locations.</p>
 /// <p>This operation can be used in the following ways:</p>

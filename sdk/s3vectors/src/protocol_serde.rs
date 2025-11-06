@@ -111,6 +111,8 @@ pub(crate) mod shape_put_vectors_input;
 
 pub(crate) mod shape_query_vectors_input;
 
+pub(crate) mod shape_request_timeout_exception;
+
 pub(crate) mod shape_service_quota_exceeded_exception;
 
 pub(crate) mod shape_service_unavailable_exception;

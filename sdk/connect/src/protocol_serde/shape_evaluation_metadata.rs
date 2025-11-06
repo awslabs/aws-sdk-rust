@@ -35,8 +35,24 @@ where
                                     .transpose()?,
                             );
                         }
+                        "CalibrationSessionId" => {
+                            builder = builder.set_calibration_session_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "Score" => {
                             builder = builder.set_score(crate::protocol_serde::shape_evaluation_score::de_evaluation_score(tokens)?);
+                        }
+                        "AutoEvaluation" => {
+                            builder = builder
+                                .set_auto_evaluation(crate::protocol_serde::shape_auto_evaluation_details::de_auto_evaluation_details(tokens)?);
+                        }
+                        "Acknowledgement" => {
+                            builder = builder.set_acknowledgement(
+                                crate::protocol_serde::shape_evaluation_acknowledgement::de_evaluation_acknowledgement(tokens)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

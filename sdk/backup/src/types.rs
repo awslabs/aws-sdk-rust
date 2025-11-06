@@ -79,6 +79,8 @@ pub use crate::types::_report_destination::ReportDestination;
 
 pub use crate::types::_recovery_point_by_resource::RecoveryPointByResource;
 
+pub use crate::types::_encryption_key_type::EncryptionKeyType;
+
 pub use crate::types::_vault_type::VaultType;
 
 pub use crate::types::_recovery_point_status::RecoveryPointStatus;
@@ -216,6 +218,8 @@ mod _copy_job_status;
 mod _copy_job_summary;
 
 mod _date_range;
+
+mod _encryption_key_type;
 
 mod _framework;
 

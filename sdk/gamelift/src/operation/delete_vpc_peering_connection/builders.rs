@@ -22,6 +22,7 @@ impl crate::operation::delete_vpc_peering_connection::builders::DeleteVpcPeering
 }
 /// Fluent builder constructing a request to `DeleteVpcPeeringConnection`.
 ///
+/// <p><b>This API works with the following fleet types:</b> EC2</p>
 /// <p>Removes a VPC peering connection. To delete the connection, you must have a valid authorization for the VPC peering connection that you want to delete..</p>
 /// <p>Once a valid authorization exists, call this operation from the Amazon Web Services account that is used to manage the Amazon GameLift Servers fleets. Identify the connection to delete by the connection ID and fleet ID. If successful, the connection is removed.</p>
 /// <p><b>Related actions</b></p>

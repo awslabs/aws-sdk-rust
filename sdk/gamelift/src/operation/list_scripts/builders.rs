@@ -22,6 +22,7 @@ impl crate::operation::list_scripts::builders::ListScriptsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListScripts`.
 ///
+/// <p><b>This API works with the following fleet types:</b> EC2</p>
 /// <p>Retrieves script records for all Realtime scripts that are associated with the Amazon Web Services account in use.</p>
 /// <p><b>Learn more</b></p>
 /// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/realtime-intro.html">Amazon GameLift Servers Amazon GameLift Servers Realtime</a></p>

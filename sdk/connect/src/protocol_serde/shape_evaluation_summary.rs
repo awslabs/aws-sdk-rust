@@ -42,10 +42,27 @@ where
                                     .transpose()?,
                             );
                         }
+                        "CalibrationSessionId" => {
+                            builder = builder.set_calibration_session_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "Status" => {
                             builder = builder.set_status(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::EvaluationStatus::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "AutoEvaluationEnabled" => {
+                            builder = builder.set_auto_evaluation_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "AutoEvaluationStatus" => {
+                            builder = builder.set_auto_evaluation_status(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::AutoEvaluationStatus::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }
@@ -58,6 +75,18 @@ where
                         }
                         "Score" => {
                             builder = builder.set_score(crate::protocol_serde::shape_evaluation_score::de_evaluation_score(tokens)?);
+                        }
+                        "Acknowledgement" => {
+                            builder = builder.set_acknowledgement(
+                                crate::protocol_serde::shape_evaluation_acknowledgement_summary::de_evaluation_acknowledgement_summary(tokens)?,
+                            );
+                        }
+                        "EvaluationType" => {
+                            builder = builder.set_evaluation_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::EvaluationType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
                         }
                         "CreatedTime" => {
                             builder = builder.set_created_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

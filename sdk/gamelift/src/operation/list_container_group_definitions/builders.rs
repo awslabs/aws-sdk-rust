@@ -22,6 +22,7 @@ impl crate::operation::list_container_group_definitions::builders::ListContainer
 }
 /// Fluent builder constructing a request to `ListContainerGroupDefinitions`.
 ///
+/// <p><b>This API works with the following fleet types:</b> Container</p>
 /// <p>Retrieves container group definitions for the Amazon Web Services account and Amazon Web Services Region. Use the pagination parameters to retrieve results in a set of sequential pages.</p>
 /// <p>This operation returns only the latest version of each definition. To retrieve all versions of a container group definition, use <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListContainerGroupDefinitionVersions.html">ListContainerGroupDefinitionVersions</a>.</p>
 /// <p><b>Request options:</b></p>

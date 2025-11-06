@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Filter {
-    /// <p>The attribute path that is used to specify which attribute name to search. Length limit is 255 characters. For example, <code>UserName</code> is a valid attribute path for the <code>ListUsers</code> API, and <code>DisplayName</code> is a valid attribute path for the <code>ListGroups</code> API.</p>
+    /// <p>The attribute path that is used to specify which attribute name to search. Length limit is 255 characters. For example, <code>UserName</code> is a valid attribute path for the <code> ListUsers</code> API, and <code>DisplayName</code> is a valid attribute path for the <code> ListGroups</code> API.</p>
     pub attribute_path: ::std::string::String,
     /// <p>Represents the data for an attribute. Each attribute value is described as a name-value pair.</p>
     pub attribute_value: ::std::string::String,
 }
 impl Filter {
-    /// <p>The attribute path that is used to specify which attribute name to search. Length limit is 255 characters. For example, <code>UserName</code> is a valid attribute path for the <code>ListUsers</code> API, and <code>DisplayName</code> is a valid attribute path for the <code>ListGroups</code> API.</p>
+    /// <p>The attribute path that is used to specify which attribute name to search. Length limit is 255 characters. For example, <code>UserName</code> is a valid attribute path for the <code> ListUsers</code> API, and <code>DisplayName</code> is a valid attribute path for the <code> ListGroups</code> API.</p>
     pub fn attribute_path(&self) -> &str {
         use std::ops::Deref;
         self.attribute_path.deref()
@@ -44,18 +44,18 @@ pub struct FilterBuilder {
     pub(crate) attribute_value: ::std::option::Option<::std::string::String>,
 }
 impl FilterBuilder {
-    /// <p>The attribute path that is used to specify which attribute name to search. Length limit is 255 characters. For example, <code>UserName</code> is a valid attribute path for the <code>ListUsers</code> API, and <code>DisplayName</code> is a valid attribute path for the <code>ListGroups</code> API.</p>
+    /// <p>The attribute path that is used to specify which attribute name to search. Length limit is 255 characters. For example, <code>UserName</code> is a valid attribute path for the <code> ListUsers</code> API, and <code>DisplayName</code> is a valid attribute path for the <code> ListGroups</code> API.</p>
     /// This field is required.
     pub fn attribute_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attribute_path = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The attribute path that is used to specify which attribute name to search. Length limit is 255 characters. For example, <code>UserName</code> is a valid attribute path for the <code>ListUsers</code> API, and <code>DisplayName</code> is a valid attribute path for the <code>ListGroups</code> API.</p>
+    /// <p>The attribute path that is used to specify which attribute name to search. Length limit is 255 characters. For example, <code>UserName</code> is a valid attribute path for the <code> ListUsers</code> API, and <code>DisplayName</code> is a valid attribute path for the <code> ListGroups</code> API.</p>
     pub fn set_attribute_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.attribute_path = input;
         self
     }
-    /// <p>The attribute path that is used to specify which attribute name to search. Length limit is 255 characters. For example, <code>UserName</code> is a valid attribute path for the <code>ListUsers</code> API, and <code>DisplayName</code> is a valid attribute path for the <code>ListGroups</code> API.</p>
+    /// <p>The attribute path that is used to specify which attribute name to search. Length limit is 255 characters. For example, <code>UserName</code> is a valid attribute path for the <code> ListUsers</code> API, and <code>DisplayName</code> is a valid attribute path for the <code> ListGroups</code> API.</p>
     pub fn get_attribute_path(&self) -> &::std::option::Option<::std::string::String> {
         &self.attribute_path
     }

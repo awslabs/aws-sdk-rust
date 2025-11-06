@@ -4,10 +4,22 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateColumnsOperation {
+    /// <p>Alias for this operation.</p>
+    pub alias: ::std::option::Option<::std::string::String>,
+    /// <p>The source transform operation that provides input data for creating new calculated columns.</p>
+    pub source: ::std::option::Option<crate::types::TransformOperationSource>,
     /// <p>Calculated columns to create.</p>
     pub columns: ::std::vec::Vec<crate::types::CalculatedColumn>,
 }
 impl CreateColumnsOperation {
+    /// <p>Alias for this operation.</p>
+    pub fn alias(&self) -> ::std::option::Option<&str> {
+        self.alias.as_deref()
+    }
+    /// <p>The source transform operation that provides input data for creating new calculated columns.</p>
+    pub fn source(&self) -> ::std::option::Option<&crate::types::TransformOperationSource> {
+        self.source.as_ref()
+    }
     /// <p>Calculated columns to create.</p>
     pub fn columns(&self) -> &[crate::types::CalculatedColumn] {
         use std::ops::Deref;
@@ -25,9 +37,39 @@ impl CreateColumnsOperation {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct CreateColumnsOperationBuilder {
+    pub(crate) alias: ::std::option::Option<::std::string::String>,
+    pub(crate) source: ::std::option::Option<crate::types::TransformOperationSource>,
     pub(crate) columns: ::std::option::Option<::std::vec::Vec<crate::types::CalculatedColumn>>,
 }
 impl CreateColumnsOperationBuilder {
+    /// <p>Alias for this operation.</p>
+    pub fn alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.alias = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Alias for this operation.</p>
+    pub fn set_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.alias = input;
+        self
+    }
+    /// <p>Alias for this operation.</p>
+    pub fn get_alias(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alias
+    }
+    /// <p>The source transform operation that provides input data for creating new calculated columns.</p>
+    pub fn source(mut self, input: crate::types::TransformOperationSource) -> Self {
+        self.source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The source transform operation that provides input data for creating new calculated columns.</p>
+    pub fn set_source(mut self, input: ::std::option::Option<crate::types::TransformOperationSource>) -> Self {
+        self.source = input;
+        self
+    }
+    /// <p>The source transform operation that provides input data for creating new calculated columns.</p>
+    pub fn get_source(&self) -> &::std::option::Option<crate::types::TransformOperationSource> {
+        &self.source
+    }
     /// Appends an item to `columns`.
     ///
     /// To override the contents of this collection use [`set_columns`](Self::set_columns).
@@ -53,6 +95,8 @@ impl CreateColumnsOperationBuilder {
     /// - [`columns`](crate::types::builders::CreateColumnsOperationBuilder::columns)
     pub fn build(self) -> ::std::result::Result<crate::types::CreateColumnsOperation, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CreateColumnsOperation {
+            alias: self.alias,
+            source: self.source,
             columns: self.columns.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "columns",

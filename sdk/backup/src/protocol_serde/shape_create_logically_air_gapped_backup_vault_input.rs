@@ -16,16 +16,19 @@ pub fn ser_create_logically_air_gapped_backup_vault_input_input(
     if let Some(var_5) = &input.creator_request_id {
         object.key("CreatorRequestId").string(var_5.as_str());
     }
-    if let Some(var_6) = &input.max_retention_days {
+    if let Some(var_6) = &input.encryption_key_arn {
+        object.key("EncryptionKeyArn").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.max_retention_days {
         object.key("MaxRetentionDays").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_6).into()),
+            ::aws_smithy_types::Number::NegInt((*var_7).into()),
         );
     }
-    if let Some(var_7) = &input.min_retention_days {
+    if let Some(var_8) = &input.min_retention_days {
         object.key("MinRetentionDays").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_7).into()),
+            ::aws_smithy_types::Number::NegInt((*var_8).into()),
         );
     }
     Ok(())

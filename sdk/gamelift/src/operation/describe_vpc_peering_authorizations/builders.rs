@@ -22,6 +22,7 @@ impl crate::operation::describe_vpc_peering_authorizations::builders::DescribeVp
 }
 /// Fluent builder constructing a request to `DescribeVpcPeeringAuthorizations`.
 ///
+/// <p><b>This API works with the following fleet types:</b> EC2</p>
 /// <p>Retrieves valid VPC peering authorizations that are pending for the Amazon Web Services account. This operation returns all VPC peering authorizations and requests for peering. This includes those initiated and received by this account.</p>
 /// <p><b>Related actions</b></p>
 /// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a></p>

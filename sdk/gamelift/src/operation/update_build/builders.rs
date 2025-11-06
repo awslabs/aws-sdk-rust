@@ -22,6 +22,7 @@ impl crate::operation::update_build::builders::UpdateBuildInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateBuild`.
 ///
+/// <p><b>This API works with the following fleet types:</b> EC2</p>
 /// <p>Updates metadata in a build resource, including the build name and version. To update the metadata, specify the build ID to update and provide the new values. If successful, a build object containing the updated metadata is returned.</p>
 /// <p><b>Learn more</b></p>
 /// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html"> Upload a Custom Server Build</a></p>

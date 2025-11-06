@@ -70,6 +70,9 @@ pub mod list_table_buckets;
 /// Types for the `ListTables` operation.
 pub mod list_tables;
 
+/// Types for the `ListTagsForResource` operation.
+pub mod list_tags_for_resource;
+
 /// Types for the `PutTableBucketEncryption` operation.
 pub mod put_table_bucket_encryption;
 
@@ -87,6 +90,12 @@ pub mod put_table_policy;
 
 /// Types for the `RenameTable` operation.
 pub mod rename_table;
+
+/// Types for the `TagResource` operation.
+pub mod tag_resource;
+
+/// Types for the `UntagResource` operation.
+pub mod untag_resource;
 
 /// Types for the `UpdateTableMetadataLocation` operation.
 pub mod update_table_metadata_location;

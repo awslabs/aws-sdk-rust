@@ -22,7 +22,7 @@ impl crate::operation::describe_game_server::builders::DescribeGameServerInputBu
 }
 /// Fluent builder constructing a request to `DescribeGameServer`.
 ///
-/// <p><b>This operation is used with the Amazon GameLift Servers FleetIQ solution and game server groups.</b></p>
+/// <p><b>This API works with the following fleet types:</b> EC2 (FleetIQ)</p>
 /// <p>Retrieves information for a registered game server. Information includes game server status, health check info, and the instance that the game server is running on.</p>
 /// <p>To retrieve game server information, specify the game server ID. If successful, the requested game server object is returned.</p>
 /// <p><b>Learn more</b></p>

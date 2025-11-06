@@ -289,6 +289,8 @@ pub enum UpdateDataSetError {
     ConflictException(crate::types::error::ConflictException),
     /// <p>An internal failure occurred.</p>
     InternalFailureException(crate::types::error::InternalFailureException),
+    /// <p>An exception thrown when an invalid parameter value is provided for dataset operations.</p>
+    InvalidDataSetParameterValueException(crate::types::error::InvalidDataSetParameterValueException),
     /// <p>One or more parameters has a value that isn't valid.</p>
     InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
     /// <p>A limit is exceeded.</p>
@@ -335,6 +337,7 @@ impl UpdateDataSetError {
             Self::AccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ConflictException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InternalFailureException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidDataSetParameterValueException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidParameterValueException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::LimitExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -354,6 +357,10 @@ impl UpdateDataSetError {
     /// Returns `true` if the error kind is `UpdateDataSetError::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(self, Self::InternalFailureException(_))
+    }
+    /// Returns `true` if the error kind is `UpdateDataSetError::InvalidDataSetParameterValueException`.
+    pub fn is_invalid_data_set_parameter_value_exception(&self) -> bool {
+        matches!(self, Self::InvalidDataSetParameterValueException(_))
     }
     /// Returns `true` if the error kind is `UpdateDataSetError::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
@@ -382,6 +389,7 @@ impl ::std::error::Error for UpdateDataSetError {
             Self::AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
             Self::ConflictException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalFailureException(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidDataSetParameterValueException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidParameterValueException(_inner) => ::std::option::Option::Some(_inner),
             Self::LimitExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
@@ -397,6 +405,7 @@ impl ::std::fmt::Display for UpdateDataSetError {
             Self::AccessDeniedException(_inner) => _inner.fmt(f),
             Self::ConflictException(_inner) => _inner.fmt(f),
             Self::InternalFailureException(_inner) => _inner.fmt(f),
+            Self::InvalidDataSetParameterValueException(_inner) => _inner.fmt(f),
             Self::InvalidParameterValueException(_inner) => _inner.fmt(f),
             Self::LimitExceededException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
@@ -426,6 +435,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for UpdateDataSet
             Self::AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ConflictException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalFailureException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidDataSetParameterValueException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidParameterValueException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::LimitExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

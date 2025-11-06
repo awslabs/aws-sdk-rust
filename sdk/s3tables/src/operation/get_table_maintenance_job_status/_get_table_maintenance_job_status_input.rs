@@ -7,7 +7,7 @@ pub struct GetTableMaintenanceJobStatusInput {
     pub table_bucket_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the namespace the table is associated with.</p>
     pub namespace: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the maintenance job.</p>
+    /// <p>The name of the table containing the maintenance job status you want to check.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl GetTableMaintenanceJobStatusInput {
@@ -19,7 +19,7 @@ impl GetTableMaintenanceJobStatusInput {
     pub fn namespace(&self) -> ::std::option::Option<&str> {
         self.namespace.as_deref()
     }
-    /// <p>The name of the maintenance job.</p>
+    /// <p>The name of the table containing the maintenance job status you want to check.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -70,18 +70,18 @@ impl GetTableMaintenanceJobStatusInputBuilder {
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
         &self.namespace
     }
-    /// <p>The name of the maintenance job.</p>
+    /// <p>The name of the table containing the maintenance job status you want to check.</p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the maintenance job.</p>
+    /// <p>The name of the table containing the maintenance job status you want to check.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of the maintenance job.</p>
+    /// <p>The name of the table containing the maintenance job status you want to check.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }

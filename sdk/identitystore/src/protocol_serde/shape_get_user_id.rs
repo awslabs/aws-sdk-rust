@@ -135,15 +135,15 @@ pub(crate) fn de_get_user_id(
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                "UserId" => {
-                    builder = builder.set_user_id(
+                "IdentityStoreId" => {
+                    builder = builder.set_identity_store_id(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
                     );
                 }
-                "IdentityStoreId" => {
-                    builder = builder.set_identity_store_id(
+                "UserId" => {
+                    builder = builder.set_user_id(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,

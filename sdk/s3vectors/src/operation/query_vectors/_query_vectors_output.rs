@@ -5,6 +5,8 @@
 pub struct QueryVectorsOutput {
     /// <p>The vectors in the approximate nearest neighbor search.</p>
     pub vectors: ::std::vec::Vec<crate::types::QueryOutputVector>,
+    /// <p>The distance metric that was used for the similarity search calculation. This is the same distance metric that was configured for the vector index when it was created.</p>
+    pub distance_metric: ::std::option::Option<crate::types::DistanceMetric>,
     _request_id: Option<String>,
 }
 impl QueryVectorsOutput {
@@ -12,6 +14,10 @@ impl QueryVectorsOutput {
     pub fn vectors(&self) -> &[crate::types::QueryOutputVector] {
         use std::ops::Deref;
         self.vectors.deref()
+    }
+    /// <p>The distance metric that was used for the similarity search calculation. This is the same distance metric that was configured for the vector index when it was created.</p>
+    pub fn distance_metric(&self) -> ::std::option::Option<&crate::types::DistanceMetric> {
+        self.distance_metric.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for QueryVectorsOutput {
@@ -31,6 +37,7 @@ impl QueryVectorsOutput {
 #[non_exhaustive]
 pub struct QueryVectorsOutputBuilder {
     pub(crate) vectors: ::std::option::Option<::std::vec::Vec<crate::types::QueryOutputVector>>,
+    pub(crate) distance_metric: ::std::option::Option<crate::types::DistanceMetric>,
     _request_id: Option<String>,
 }
 impl QueryVectorsOutputBuilder {
@@ -54,6 +61,21 @@ impl QueryVectorsOutputBuilder {
     pub fn get_vectors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::QueryOutputVector>> {
         &self.vectors
     }
+    /// <p>The distance metric that was used for the similarity search calculation. This is the same distance metric that was configured for the vector index when it was created.</p>
+    /// This field is required.
+    pub fn distance_metric(mut self, input: crate::types::DistanceMetric) -> Self {
+        self.distance_metric = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The distance metric that was used for the similarity search calculation. This is the same distance metric that was configured for the vector index when it was created.</p>
+    pub fn set_distance_metric(mut self, input: ::std::option::Option<crate::types::DistanceMetric>) -> Self {
+        self.distance_metric = input;
+        self
+    }
+    /// <p>The distance metric that was used for the similarity search calculation. This is the same distance metric that was configured for the vector index when it was created.</p>
+    pub fn get_distance_metric(&self) -> &::std::option::Option<crate::types::DistanceMetric> {
+        &self.distance_metric
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -76,6 +98,7 @@ impl QueryVectorsOutputBuilder {
                     "vectors was not specified but it is required when building QueryVectorsOutput",
                 )
             })?,
+            distance_metric: self.distance_metric,
             _request_id: self._request_id,
         })
     }

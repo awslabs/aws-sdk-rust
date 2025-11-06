@@ -11,6 +11,8 @@ pub struct SubmitContactEvaluationInput {
     pub answers: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::EvaluationAnswerInput>>,
     /// <p>A map of question identifiers to note value.</p>
     pub notes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::EvaluationNote>>,
+    /// <p>The ID of the user who submitted the contact evaluation.</p>
+    pub submitted_by: ::std::option::Option<crate::types::EvaluatorUserUnion>,
 }
 impl SubmitContactEvaluationInput {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -29,6 +31,10 @@ impl SubmitContactEvaluationInput {
     pub fn notes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::EvaluationNote>> {
         self.notes.as_ref()
     }
+    /// <p>The ID of the user who submitted the contact evaluation.</p>
+    pub fn submitted_by(&self) -> ::std::option::Option<&crate::types::EvaluatorUserUnion> {
+        self.submitted_by.as_ref()
+    }
 }
 impl SubmitContactEvaluationInput {
     /// Creates a new builder-style object to manufacture [`SubmitContactEvaluationInput`](crate::operation::submit_contact_evaluation::SubmitContactEvaluationInput).
@@ -45,6 +51,7 @@ pub struct SubmitContactEvaluationInputBuilder {
     pub(crate) evaluation_id: ::std::option::Option<::std::string::String>,
     pub(crate) answers: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::EvaluationAnswerInput>>,
     pub(crate) notes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::EvaluationNote>>,
+    pub(crate) submitted_by: ::std::option::Option<crate::types::EvaluatorUserUnion>,
 }
 impl SubmitContactEvaluationInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -123,6 +130,20 @@ impl SubmitContactEvaluationInputBuilder {
     pub fn get_notes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::EvaluationNote>> {
         &self.notes
     }
+    /// <p>The ID of the user who submitted the contact evaluation.</p>
+    pub fn submitted_by(mut self, input: crate::types::EvaluatorUserUnion) -> Self {
+        self.submitted_by = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ID of the user who submitted the contact evaluation.</p>
+    pub fn set_submitted_by(mut self, input: ::std::option::Option<crate::types::EvaluatorUserUnion>) -> Self {
+        self.submitted_by = input;
+        self
+    }
+    /// <p>The ID of the user who submitted the contact evaluation.</p>
+    pub fn get_submitted_by(&self) -> &::std::option::Option<crate::types::EvaluatorUserUnion> {
+        &self.submitted_by
+    }
     /// Consumes the builder and constructs a [`SubmitContactEvaluationInput`](crate::operation::submit_contact_evaluation::SubmitContactEvaluationInput).
     pub fn build(
         self,
@@ -135,6 +156,7 @@ impl SubmitContactEvaluationInputBuilder {
             evaluation_id: self.evaluation_id,
             answers: self.answers,
             notes: self.notes,
+            submitted_by: self.submitted_by,
         })
     }
 }

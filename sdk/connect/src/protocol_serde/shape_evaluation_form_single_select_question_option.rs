@@ -18,6 +18,12 @@ pub fn ser_evaluation_form_single_select_question_option(
     if input.automatic_fail {
         object.key("AutomaticFail").boolean(input.automatic_fail);
     }
+    if let Some(var_1) = &input.automatic_fail_configuration {
+        #[allow(unused_mut)]
+        let mut object_2 = object.key("AutomaticFailConfiguration").start_object();
+        crate::protocol_serde::shape_automatic_fail_configuration::ser_automatic_fail_configuration(&mut object_2, var_1)?;
+        object_2.finish();
+    }
     Ok(())
 }
 
@@ -59,6 +65,11 @@ where
                         }
                         "AutomaticFail" => {
                             builder = builder.set_automatic_fail(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "AutomaticFailConfiguration" => {
+                            builder = builder.set_automatic_fail_configuration(
+                                crate::protocol_serde::shape_automatic_fail_configuration::de_automatic_fail_configuration(tokens)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

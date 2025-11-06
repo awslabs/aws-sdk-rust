@@ -258,6 +258,7 @@ impl ProvideBusinessMetric for AwsCredentialFeature {
             CredentialsHttp => Some(BusinessMetric::CredentialsHttp),
             CredentialsImds => Some(BusinessMetric::CredentialsImds),
             BearerServiceEnvVars => Some(BusinessMetric::BearerServiceEnvVars),
+            S3ExpressBucket => Some(BusinessMetric::S3ExpressBucket),
             otherwise => {
                 // This may occur if a customer upgrades only the `aws-smithy-runtime-api` crate
                 // while continuing to use an outdated version of an SDK crate or the `aws-credential-types`

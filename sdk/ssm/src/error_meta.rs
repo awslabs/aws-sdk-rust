@@ -186,6 +186,8 @@ pub enum Error {
     MalformedResourcePolicyDocumentException(crate::types::error::MalformedResourcePolicyDocumentException),
     /// <p>The size limit of a document is 64 KB.</p>
     MaxDocumentSizeExceeded(crate::types::error::MaxDocumentSizeExceeded),
+    /// <p>The requested operation is no longer supported by Systems Manager.</p>
+    NoLongerSupportedException(crate::types::error::NoLongerSupportedException),
     /// <p>You don't have permission to view OpsItems in the specified account. Verify that your account is configured either as a Systems Manager delegated administrator or that you are logged into the Organizations management account.</p>
     OpsItemAccessDeniedException(crate::types::error::OpsItemAccessDeniedException),
     /// <p>The OpsItem already exists.</p>
@@ -394,6 +396,7 @@ impl ::std::fmt::Display for Error {
             Error::ItemSizeLimitExceededException(inner) => inner.fmt(f),
             Error::MalformedResourcePolicyDocumentException(inner) => inner.fmt(f),
             Error::MaxDocumentSizeExceeded(inner) => inner.fmt(f),
+            Error::NoLongerSupportedException(inner) => inner.fmt(f),
             Error::OpsItemAccessDeniedException(inner) => inner.fmt(f),
             Error::OpsItemAlreadyExistsException(inner) => inner.fmt(f),
             Error::OpsItemConflictException(inner) => inner.fmt(f),
@@ -553,6 +556,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::ItemSizeLimitExceededException(inner) => inner.meta(),
             Self::MalformedResourcePolicyDocumentException(inner) => inner.meta(),
             Self::MaxDocumentSizeExceeded(inner) => inner.meta(),
+            Self::NoLongerSupportedException(inner) => inner.meta(),
             Self::OpsItemAccessDeniedException(inner) => inner.meta(),
             Self::OpsItemAlreadyExistsException(inner) => inner.meta(),
             Self::OpsItemConflictException(inner) => inner.meta(),
@@ -868,6 +872,7 @@ impl From<crate::operation::create_document::CreateDocumentError> for Error {
             crate::operation::create_document::CreateDocumentError::InvalidDocumentContent(inner) => Error::InvalidDocumentContent(inner),
             crate::operation::create_document::CreateDocumentError::InvalidDocumentSchemaVersion(inner) => Error::InvalidDocumentSchemaVersion(inner),
             crate::operation::create_document::CreateDocumentError::MaxDocumentSizeExceeded(inner) => Error::MaxDocumentSizeExceeded(inner),
+            crate::operation::create_document::CreateDocumentError::NoLongerSupportedException(inner) => Error::NoLongerSupportedException(inner),
             crate::operation::create_document::CreateDocumentError::TooManyUpdates(inner) => Error::TooManyUpdates(inner),
             crate::operation::create_document::CreateDocumentError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -4633,6 +4638,9 @@ impl From<crate::operation::start_change_request_execution::StartChangeRequestEx
             crate::operation::start_change_request_execution::StartChangeRequestExecutionError::InvalidAutomationExecutionParametersException(
                 inner,
             ) => Error::InvalidAutomationExecutionParametersException(inner),
+            crate::operation::start_change_request_execution::StartChangeRequestExecutionError::NoLongerSupportedException(inner) => {
+                Error::NoLongerSupportedException(inner)
+            }
             crate::operation::start_change_request_execution::StartChangeRequestExecutionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -5326,6 +5334,7 @@ impl ::std::error::Error for Error {
             Error::ItemSizeLimitExceededException(inner) => inner.source(),
             Error::MalformedResourcePolicyDocumentException(inner) => inner.source(),
             Error::MaxDocumentSizeExceeded(inner) => inner.source(),
+            Error::NoLongerSupportedException(inner) => inner.source(),
             Error::OpsItemAccessDeniedException(inner) => inner.source(),
             Error::OpsItemAlreadyExistsException(inner) => inner.source(),
             Error::OpsItemConflictException(inner) => inner.source(),
@@ -5471,6 +5480,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::ItemSizeLimitExceededException(e) => e.request_id(),
             Self::MalformedResourcePolicyDocumentException(e) => e.request_id(),
             Self::MaxDocumentSizeExceeded(e) => e.request_id(),
+            Self::NoLongerSupportedException(e) => e.request_id(),
             Self::OpsItemAccessDeniedException(e) => e.request_id(),
             Self::OpsItemAlreadyExistsException(e) => e.request_id(),
             Self::OpsItemConflictException(e) => e.request_id(),

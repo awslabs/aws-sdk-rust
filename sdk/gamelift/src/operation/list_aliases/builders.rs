@@ -22,6 +22,7 @@ impl crate::operation::list_aliases::builders::ListAliasesInputBuilder {
 }
 /// Fluent builder constructing a request to `ListAliases`.
 ///
+/// <p><b>This API works with the following fleet types:</b> EC2, Anywhere, Container</p>
 /// <p>Retrieves all aliases for this Amazon Web Services account. You can filter the result set by alias name and/or routing strategy type. Use the pagination parameters to retrieve results in sequential pages.</p><note>
 /// <p>Returned aliases are not listed in any particular order.</p>
 /// </note>

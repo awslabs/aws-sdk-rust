@@ -22,6 +22,7 @@ impl crate::operation::create_location::builders::CreateLocationInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateLocation`.
 ///
+/// <p><b>This API works with the following fleet types:</b> Anywhere</p>
 /// <p>Creates a custom location for use in an Anywhere fleet.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateLocationFluentBuilder {

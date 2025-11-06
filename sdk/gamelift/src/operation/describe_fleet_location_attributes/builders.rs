@@ -22,6 +22,7 @@ impl crate::operation::describe_fleet_location_attributes::builders::DescribeFle
 }
 /// Fluent builder constructing a request to `DescribeFleetLocationAttributes`.
 ///
+/// <p><b>This API works with the following fleet types:</b> EC2, Container</p>
 /// <p>Retrieves information on a fleet's remote locations, including life-cycle status and any suspended fleet activity.</p>
 /// <p>This operation can be used in the following ways:</p>
 /// <ul>

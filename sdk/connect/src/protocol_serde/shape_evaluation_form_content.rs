@@ -59,6 +59,11 @@ where
                                 crate::protocol_serde::shape_evaluation_form_scoring_strategy::de_evaluation_form_scoring_strategy(tokens)?,
                             );
                         }
+                        "AutoEvaluationConfiguration" => {
+                            builder = builder.set_auto_evaluation_configuration(
+                                    crate::protocol_serde::shape_evaluation_form_auto_evaluation_configuration::de_evaluation_form_auto_evaluation_configuration(tokens)?
+                                );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

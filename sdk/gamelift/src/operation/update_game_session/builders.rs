@@ -22,6 +22,7 @@ impl crate::operation::update_game_session::builders::UpdateGameSessionInputBuil
 }
 /// Fluent builder constructing a request to `UpdateGameSession`.
 ///
+/// <p><b>This API works with the following fleet types:</b> EC2, Anywhere, Container</p>
 /// <p>Updates the mutable properties of a game session.</p>
 /// <p>To update a game session, specify the game session ID and the values you want to change.</p>
 /// <p>If successful, the updated <code>GameSession</code> object is returned.</p>

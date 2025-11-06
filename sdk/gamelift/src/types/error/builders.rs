@@ -13,11 +13,11 @@ pub use crate::types::error::_limit_exceeded_exception::LimitExceededExceptionBu
 
 pub use crate::types::error::_invalid_fleet_status_exception::InvalidFleetStatusExceptionBuilder;
 
+pub use crate::types::error::_not_ready_exception::NotReadyExceptionBuilder;
+
 pub use crate::types::error::_invalid_game_session_status_exception::InvalidGameSessionStatusExceptionBuilder;
 
 pub use crate::types::error::_conflict_exception::ConflictExceptionBuilder;
-
-pub use crate::types::error::_not_ready_exception::NotReadyExceptionBuilder;
 
 pub use crate::types::error::_tagging_failed_exception::TaggingFailedExceptionBuilder;
 

@@ -589,6 +589,9 @@ pub mod search_agent_statuses;
 /// Types for the `SearchAvailablePhoneNumbers` operation.
 pub mod search_available_phone_numbers;
 
+/// Types for the `SearchContactEvaluations` operation.
+pub mod search_contact_evaluations;
+
 /// Types for the `SearchContactFlowModules` operation.
 pub mod search_contact_flow_modules;
 
@@ -600,6 +603,9 @@ pub mod search_contacts;
 
 /// Types for the `SearchEmailAddresses` operation.
 pub mod search_email_addresses;
+
+/// Types for the `SearchEvaluationForms` operation.
+pub mod search_evaluation_forms;
 
 /// Types for the `SearchHoursOfOperationOverrides` operation.
 pub mod search_hours_of_operation_overrides;

@@ -59,6 +59,11 @@ where
                                 crate::protocol_serde::shape_row_level_permission_data_set::de_row_level_permission_data_set(tokens)?,
                             );
                         }
+                        "RowLevelPermissionDataSetMap" => {
+                            builder = builder.set_row_level_permission_data_set_map(
+                                crate::protocol_serde::shape_row_level_permission_data_set_map::de_row_level_permission_data_set_map(tokens)?,
+                            );
+                        }
                         "RowLevelPermissionTagConfigurationApplied" => {
                             builder = builder.set_row_level_permission_tag_configuration_applied(
                                 ::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?,

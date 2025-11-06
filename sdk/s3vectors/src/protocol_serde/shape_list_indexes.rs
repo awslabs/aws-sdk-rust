@@ -74,18 +74,15 @@ pub fn de_list_indexes_http_error(
             };
             tmp
         }),
-        "ServiceQuotaExceededException" => crate::operation::list_indexes::ListIndexesError::ServiceQuotaExceededException({
+        "RequestTimeoutException" => crate::operation::list_indexes::ListIndexesError::RequestTimeoutException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ServiceQuotaExceededExceptionBuilder::default();
-                output = crate::protocol_serde::shape_service_quota_exceeded_exception::de_service_quota_exceeded_exception_json_err(
-                    _response_body,
-                    output,
-                )
-                .map_err(crate::operation::list_indexes::ListIndexesError::unhandled)?;
+                let mut output = crate::types::error::builders::RequestTimeoutExceptionBuilder::default();
+                output = crate::protocol_serde::shape_request_timeout_exception::de_request_timeout_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::list_indexes::ListIndexesError::unhandled)?;
                 let output = output.meta(generic);
-                crate::serde_util::service_quota_exceeded_exception_correct_errors(output)
+                crate::serde_util::request_timeout_exception_correct_errors(output)
                     .build()
                     .map_err(crate::operation::list_indexes::ListIndexesError::unhandled)?
             };

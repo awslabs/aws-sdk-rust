@@ -2,7 +2,7 @@
 
 /// <p>A physical table type built from the results of the custom SQL query.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CustomSql {
     /// <p>The Amazon Resource Name (ARN) of the data source.</p>
     pub data_source_arn: ::std::string::String,
@@ -36,6 +36,16 @@ impl CustomSql {
         self.columns.as_deref().unwrap_or_default()
     }
 }
+impl ::std::fmt::Debug for CustomSql {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("CustomSql");
+        formatter.field("data_source_arn", &self.data_source_arn);
+        formatter.field("name", &self.name);
+        formatter.field("sql_query", &"*** Sensitive Data Redacted ***");
+        formatter.field("columns", &self.columns);
+        formatter.finish()
+    }
+}
 impl CustomSql {
     /// Creates a new builder-style object to manufacture [`CustomSql`](crate::types::CustomSql).
     pub fn builder() -> crate::types::builders::CustomSqlBuilder {
@@ -44,7 +54,7 @@ impl CustomSql {
 }
 
 /// A builder for [`CustomSql`](crate::types::CustomSql).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct CustomSqlBuilder {
     pub(crate) data_source_arn: ::std::option::Option<::std::string::String>,
@@ -145,5 +155,15 @@ impl CustomSqlBuilder {
             })?,
             columns: self.columns,
         })
+    }
+}
+impl ::std::fmt::Debug for CustomSqlBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("CustomSqlBuilder");
+        formatter.field("data_source_arn", &self.data_source_arn);
+        formatter.field("name", &self.name);
+        formatter.field("sql_query", &"*** Sensitive Data Redacted ***");
+        formatter.field("columns", &self.columns);
+        formatter.finish()
     }
 }

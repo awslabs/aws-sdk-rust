@@ -158,6 +158,13 @@ pub(crate) fn de_describe_backup_vault(
                             .transpose()?,
                     );
                 }
+                "EncryptionKeyType" => {
+                    builder = builder.set_encryption_key_type(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::EncryptionKeyType::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
                 "LatestMpaApprovalTeamUpdate" => {
                     builder = builder.set_latest_mpa_approval_team_update(
                         crate::protocol_serde::shape_latest_mpa_approval_team_update::de_latest_mpa_approval_team_update(tokens)?,

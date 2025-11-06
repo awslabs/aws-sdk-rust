@@ -21,6 +21,11 @@ where
                             builder = builder
                                 .set_system_suggested_value(crate::protocol_serde::shape_evaluation_answer_data::de_evaluation_answer_data(tokens)?);
                         }
+                        "SuggestedAnswers" => {
+                            builder = builder.set_suggested_answers(
+                                crate::protocol_serde::shape_evaluation_suggested_answers_list::de_evaluation_suggested_answers_list(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

@@ -11,7 +11,8 @@ pub struct CreateDataSetInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Declares the physical tables that are available in the underlying data sources.</p>
     pub physical_table_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PhysicalTable>>,
-    /// <p>Configures the combination and transformation of the data from the physical tables.</p>
+    /// <p>Configures the combination and transformation of the data from the physical tables. This parameter is used with the legacy data preparation experience.</p>
+    #[deprecated(note = "Only used in the legacy data preparation experience.", since = "2025-10-23")]
     pub logical_table_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::LogicalTable>>,
     /// <p>Indicates whether you want to import the data into SPICE.</p>
     pub import_mode: ::std::option::Option<crate::types::DataSetImportMode>,
@@ -21,9 +22,11 @@ pub struct CreateDataSetInput {
     pub field_folders: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FieldFolder>>,
     /// <p>A list of resource permissions on the dataset.</p>
     pub permissions: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
-    /// <p>The row-level security configuration for the data that you want to create.</p>
+    /// <p>The row-level security configuration for the data that you want to create. This parameter is used with the legacy data preparation experience.</p>
+    #[deprecated(note = "Only used in the legacy data preparation experience.", since = "2025-10-23")]
     pub row_level_permission_data_set: ::std::option::Option<crate::types::RowLevelPermissionDataSet>,
-    /// <p>The configuration of tags on a dataset to set row-level security. Row-level security tags are currently supported for anonymous embedding only.</p>
+    /// <p>The configuration of tags on a dataset to set row-level security. Row-level security tags are currently supported for anonymous embedding only. This parameter is used with the legacy data preparation experience.</p>
+    #[deprecated(note = "Only used in the legacy data preparation experience.", since = "2025-10-23")]
     pub row_level_permission_tag_configuration: ::std::option::Option<crate::types::RowLevelPermissionTagConfiguration>,
     /// <p>A set of one or more definitions of a <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ColumnLevelPermissionRule.html">ColumnLevelPermissionRule</a> </code>.</p>
     pub column_level_permission_rules: ::std::option::Option<::std::vec::Vec<crate::types::ColumnLevelPermissionRule>>,
@@ -39,6 +42,10 @@ pub struct CreateDataSetInput {
     pub performance_configuration: ::std::option::Option<crate::types::PerformanceConfiguration>,
     /// <p>The usage of the dataset. <code>RLS_RULES</code> must be specified for RLS permission datasets.</p>
     pub use_as: ::std::option::Option<crate::types::DataSetUseAs>,
+    /// <p>The data preparation configuration for the dataset. This configuration defines the source tables, transformation steps, and destination tables used to prepare the data. Required when using the new data preparation experience.</p>
+    pub data_prep_configuration: ::std::option::Option<crate::types::DataPrepConfiguration>,
+    /// <p>The semantic model configuration for the dataset. This configuration defines how the prepared data is structured for an analysis, including table mappings and row-level security configurations. Required when using the new data preparation experience.</p>
+    pub semantic_model_configuration: ::std::option::Option<crate::types::SemanticModelConfiguration>,
 }
 impl CreateDataSetInput {
     /// <p>The Amazon Web Services account ID.</p>
@@ -57,7 +64,8 @@ impl CreateDataSetInput {
     pub fn physical_table_map(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::PhysicalTable>> {
         self.physical_table_map.as_ref()
     }
-    /// <p>Configures the combination and transformation of the data from the physical tables.</p>
+    /// <p>Configures the combination and transformation of the data from the physical tables. This parameter is used with the legacy data preparation experience.</p>
+    #[deprecated(note = "Only used in the legacy data preparation experience.", since = "2025-10-23")]
     pub fn logical_table_map(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::LogicalTable>> {
         self.logical_table_map.as_ref()
     }
@@ -81,11 +89,13 @@ impl CreateDataSetInput {
     pub fn permissions(&self) -> &[crate::types::ResourcePermission] {
         self.permissions.as_deref().unwrap_or_default()
     }
-    /// <p>The row-level security configuration for the data that you want to create.</p>
+    /// <p>The row-level security configuration for the data that you want to create. This parameter is used with the legacy data preparation experience.</p>
+    #[deprecated(note = "Only used in the legacy data preparation experience.", since = "2025-10-23")]
     pub fn row_level_permission_data_set(&self) -> ::std::option::Option<&crate::types::RowLevelPermissionDataSet> {
         self.row_level_permission_data_set.as_ref()
     }
-    /// <p>The configuration of tags on a dataset to set row-level security. Row-level security tags are currently supported for anonymous embedding only.</p>
+    /// <p>The configuration of tags on a dataset to set row-level security. Row-level security tags are currently supported for anonymous embedding only. This parameter is used with the legacy data preparation experience.</p>
+    #[deprecated(note = "Only used in the legacy data preparation experience.", since = "2025-10-23")]
     pub fn row_level_permission_tag_configuration(&self) -> ::std::option::Option<&crate::types::RowLevelPermissionTagConfiguration> {
         self.row_level_permission_tag_configuration.as_ref()
     }
@@ -125,6 +135,14 @@ impl CreateDataSetInput {
     pub fn use_as(&self) -> ::std::option::Option<&crate::types::DataSetUseAs> {
         self.use_as.as_ref()
     }
+    /// <p>The data preparation configuration for the dataset. This configuration defines the source tables, transformation steps, and destination tables used to prepare the data. Required when using the new data preparation experience.</p>
+    pub fn data_prep_configuration(&self) -> ::std::option::Option<&crate::types::DataPrepConfiguration> {
+        self.data_prep_configuration.as_ref()
+    }
+    /// <p>The semantic model configuration for the dataset. This configuration defines how the prepared data is structured for an analysis, including table mappings and row-level security configurations. Required when using the new data preparation experience.</p>
+    pub fn semantic_model_configuration(&self) -> ::std::option::Option<&crate::types::SemanticModelConfiguration> {
+        self.semantic_model_configuration.as_ref()
+    }
 }
 impl CreateDataSetInput {
     /// Creates a new builder-style object to manufacture [`CreateDataSetInput`](crate::operation::create_data_set::CreateDataSetInput).
@@ -155,6 +173,8 @@ pub struct CreateDataSetInputBuilder {
     pub(crate) folder_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) performance_configuration: ::std::option::Option<crate::types::PerformanceConfiguration>,
     pub(crate) use_as: ::std::option::Option<crate::types::DataSetUseAs>,
+    pub(crate) data_prep_configuration: ::std::option::Option<crate::types::DataPrepConfiguration>,
+    pub(crate) semantic_model_configuration: ::std::option::Option<crate::types::SemanticModelConfiguration>,
 }
 impl CreateDataSetInputBuilder {
     /// <p>The Amazon Web Services account ID.</p>
@@ -229,14 +249,16 @@ impl CreateDataSetInputBuilder {
     ///
     /// To override the contents of this collection use [`set_logical_table_map`](Self::set_logical_table_map).
     ///
-    /// <p>Configures the combination and transformation of the data from the physical tables.</p>
+    /// <p>Configures the combination and transformation of the data from the physical tables. This parameter is used with the legacy data preparation experience.</p>
+    #[deprecated(note = "Only used in the legacy data preparation experience.", since = "2025-10-23")]
     pub fn logical_table_map(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::LogicalTable) -> Self {
         let mut hash_map = self.logical_table_map.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.logical_table_map = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>Configures the combination and transformation of the data from the physical tables.</p>
+    /// <p>Configures the combination and transformation of the data from the physical tables. This parameter is used with the legacy data preparation experience.</p>
+    #[deprecated(note = "Only used in the legacy data preparation experience.", since = "2025-10-23")]
     pub fn set_logical_table_map(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::LogicalTable>>,
@@ -244,7 +266,8 @@ impl CreateDataSetInputBuilder {
         self.logical_table_map = input;
         self
     }
-    /// <p>Configures the combination and transformation of the data from the physical tables.</p>
+    /// <p>Configures the combination and transformation of the data from the physical tables. This parameter is used with the legacy data preparation experience.</p>
+    #[deprecated(note = "Only used in the legacy data preparation experience.", since = "2025-10-23")]
     pub fn get_logical_table_map(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::LogicalTable>> {
         &self.logical_table_map
     }
@@ -326,26 +349,31 @@ impl CreateDataSetInputBuilder {
     pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
         &self.permissions
     }
-    /// <p>The row-level security configuration for the data that you want to create.</p>
+    /// <p>The row-level security configuration for the data that you want to create. This parameter is used with the legacy data preparation experience.</p>
+    #[deprecated(note = "Only used in the legacy data preparation experience.", since = "2025-10-23")]
     pub fn row_level_permission_data_set(mut self, input: crate::types::RowLevelPermissionDataSet) -> Self {
         self.row_level_permission_data_set = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The row-level security configuration for the data that you want to create.</p>
+    /// <p>The row-level security configuration for the data that you want to create. This parameter is used with the legacy data preparation experience.</p>
+    #[deprecated(note = "Only used in the legacy data preparation experience.", since = "2025-10-23")]
     pub fn set_row_level_permission_data_set(mut self, input: ::std::option::Option<crate::types::RowLevelPermissionDataSet>) -> Self {
         self.row_level_permission_data_set = input;
         self
     }
-    /// <p>The row-level security configuration for the data that you want to create.</p>
+    /// <p>The row-level security configuration for the data that you want to create. This parameter is used with the legacy data preparation experience.</p>
+    #[deprecated(note = "Only used in the legacy data preparation experience.", since = "2025-10-23")]
     pub fn get_row_level_permission_data_set(&self) -> &::std::option::Option<crate::types::RowLevelPermissionDataSet> {
         &self.row_level_permission_data_set
     }
-    /// <p>The configuration of tags on a dataset to set row-level security. Row-level security tags are currently supported for anonymous embedding only.</p>
+    /// <p>The configuration of tags on a dataset to set row-level security. Row-level security tags are currently supported for anonymous embedding only. This parameter is used with the legacy data preparation experience.</p>
+    #[deprecated(note = "Only used in the legacy data preparation experience.", since = "2025-10-23")]
     pub fn row_level_permission_tag_configuration(mut self, input: crate::types::RowLevelPermissionTagConfiguration) -> Self {
         self.row_level_permission_tag_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The configuration of tags on a dataset to set row-level security. Row-level security tags are currently supported for anonymous embedding only.</p>
+    /// <p>The configuration of tags on a dataset to set row-level security. Row-level security tags are currently supported for anonymous embedding only. This parameter is used with the legacy data preparation experience.</p>
+    #[deprecated(note = "Only used in the legacy data preparation experience.", since = "2025-10-23")]
     pub fn set_row_level_permission_tag_configuration(
         mut self,
         input: ::std::option::Option<crate::types::RowLevelPermissionTagConfiguration>,
@@ -353,7 +381,8 @@ impl CreateDataSetInputBuilder {
         self.row_level_permission_tag_configuration = input;
         self
     }
-    /// <p>The configuration of tags on a dataset to set row-level security. Row-level security tags are currently supported for anonymous embedding only.</p>
+    /// <p>The configuration of tags on a dataset to set row-level security. Row-level security tags are currently supported for anonymous embedding only. This parameter is used with the legacy data preparation experience.</p>
+    #[deprecated(note = "Only used in the legacy data preparation experience.", since = "2025-10-23")]
     pub fn get_row_level_permission_tag_configuration(&self) -> &::std::option::Option<crate::types::RowLevelPermissionTagConfiguration> {
         &self.row_level_permission_tag_configuration
     }
@@ -482,6 +511,34 @@ impl CreateDataSetInputBuilder {
     pub fn get_use_as(&self) -> &::std::option::Option<crate::types::DataSetUseAs> {
         &self.use_as
     }
+    /// <p>The data preparation configuration for the dataset. This configuration defines the source tables, transformation steps, and destination tables used to prepare the data. Required when using the new data preparation experience.</p>
+    pub fn data_prep_configuration(mut self, input: crate::types::DataPrepConfiguration) -> Self {
+        self.data_prep_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The data preparation configuration for the dataset. This configuration defines the source tables, transformation steps, and destination tables used to prepare the data. Required when using the new data preparation experience.</p>
+    pub fn set_data_prep_configuration(mut self, input: ::std::option::Option<crate::types::DataPrepConfiguration>) -> Self {
+        self.data_prep_configuration = input;
+        self
+    }
+    /// <p>The data preparation configuration for the dataset. This configuration defines the source tables, transformation steps, and destination tables used to prepare the data. Required when using the new data preparation experience.</p>
+    pub fn get_data_prep_configuration(&self) -> &::std::option::Option<crate::types::DataPrepConfiguration> {
+        &self.data_prep_configuration
+    }
+    /// <p>The semantic model configuration for the dataset. This configuration defines how the prepared data is structured for an analysis, including table mappings and row-level security configurations. Required when using the new data preparation experience.</p>
+    pub fn semantic_model_configuration(mut self, input: crate::types::SemanticModelConfiguration) -> Self {
+        self.semantic_model_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The semantic model configuration for the dataset. This configuration defines how the prepared data is structured for an analysis, including table mappings and row-level security configurations. Required when using the new data preparation experience.</p>
+    pub fn set_semantic_model_configuration(mut self, input: ::std::option::Option<crate::types::SemanticModelConfiguration>) -> Self {
+        self.semantic_model_configuration = input;
+        self
+    }
+    /// <p>The semantic model configuration for the dataset. This configuration defines how the prepared data is structured for an analysis, including table mappings and row-level security configurations. Required when using the new data preparation experience.</p>
+    pub fn get_semantic_model_configuration(&self) -> &::std::option::Option<crate::types::SemanticModelConfiguration> {
+        &self.semantic_model_configuration
+    }
     /// Consumes the builder and constructs a [`CreateDataSetInput`](crate::operation::create_data_set::CreateDataSetInput).
     pub fn build(
         self,
@@ -505,6 +562,8 @@ impl CreateDataSetInputBuilder {
             folder_arns: self.folder_arns,
             performance_configuration: self.performance_configuration,
             use_as: self.use_as,
+            data_prep_configuration: self.data_prep_configuration,
+            semantic_model_configuration: self.semantic_model_configuration,
         })
     }
 }

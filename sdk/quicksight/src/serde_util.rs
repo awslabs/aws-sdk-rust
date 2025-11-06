@@ -283,6 +283,21 @@ pub(crate) fn analysis_defaults_correct_errors(
     builder
 }
 
+pub(crate) fn data_prep_configuration_correct_errors(
+    mut builder: crate::types::builders::DataPrepConfigurationBuilder,
+) -> crate::types::builders::DataPrepConfigurationBuilder {
+    if builder.source_table_map.is_none() {
+        builder.source_table_map = Some(Default::default())
+    }
+    if builder.transform_step_map.is_none() {
+        builder.transform_step_map = Some(Default::default())
+    }
+    if builder.destination_table_map.is_none() {
+        builder.destination_table_map = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn failed_key_registration_entry_correct_errors(
     mut builder: crate::types::builders::FailedKeyRegistrationEntryBuilder,
 ) -> crate::types::builders::FailedKeyRegistrationEntryBuilder {
@@ -1409,6 +1424,21 @@ pub(crate) fn decimal_parameter_declaration_correct_errors(
     builder
 }
 
+pub(crate) fn destination_table_correct_errors(
+    mut builder: crate::types::builders::DestinationTableBuilder,
+) -> crate::types::builders::DestinationTableBuilder {
+    if builder.alias.is_none() {
+        builder.alias = Some(Default::default())
+    }
+    if builder.source.is_none() {
+        builder.source = {
+            let builder = crate::types::builders::DestinationTableSourceBuilder::default();
+            crate::serde_util::destination_table_source_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn geo_spatial_column_group_correct_errors(
     mut builder: crate::types::builders::GeoSpatialColumnGroupBuilder,
 ) -> crate::types::builders::GeoSpatialColumnGroupBuilder {
@@ -1636,6 +1666,31 @@ pub(crate) fn s3_source_correct_errors(mut builder: crate::types::builders::S3So
     builder
 }
 
+pub(crate) fn saa_s_table_correct_errors(mut builder: crate::types::builders::SaaSTableBuilder) -> crate::types::builders::SaaSTableBuilder {
+    if builder.data_source_arn.is_none() {
+        builder.data_source_arn = Some(Default::default())
+    }
+    if builder.table_path.is_none() {
+        builder.table_path = Some(Default::default())
+    }
+    if builder.input_columns.is_none() {
+        builder.input_columns = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn semantic_table_correct_errors(
+    mut builder: crate::types::builders::SemanticTableBuilder,
+) -> crate::types::builders::SemanticTableBuilder {
+    if builder.alias.is_none() {
+        builder.alias = Some(Default::default())
+    }
+    if builder.destination_table_id.is_none() {
+        builder.destination_table_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn snapshot_s3_destination_configuration_correct_errors(
     mut builder: crate::types::builders::SnapshotS3DestinationConfigurationBuilder,
 ) -> crate::types::builders::SnapshotS3DestinationConfigurationBuilder {
@@ -1712,6 +1767,36 @@ pub(crate) fn visual_highlight_operation_correct_errors(
     builder
 }
 
+pub(crate) fn aggregate_operation_correct_errors(
+    mut builder: crate::types::builders::AggregateOperationBuilder,
+) -> crate::types::builders::AggregateOperationBuilder {
+    if builder.alias.is_none() {
+        builder.alias = Some(Default::default())
+    }
+    if builder.source.is_none() {
+        builder.source = {
+            let builder = crate::types::builders::TransformOperationSourceBuilder::default();
+            crate::serde_util::transform_operation_source_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.aggregations.is_none() {
+        builder.aggregations = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn append_operation_correct_errors(
+    mut builder: crate::types::builders::AppendOperationBuilder,
+) -> crate::types::builders::AppendOperationBuilder {
+    if builder.alias.is_none() {
+        builder.alias = Some(Default::default())
+    }
+    if builder.appended_columns.is_none() {
+        builder.appended_columns = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn asset_bundle_import_job_data_source_credential_pair_correct_errors(
     mut builder: crate::types::builders::AssetBundleImportJobDataSourceCredentialPairBuilder,
 ) -> crate::types::builders::AssetBundleImportJobDataSourceCredentialPairBuilder {
@@ -1720,6 +1805,33 @@ pub(crate) fn asset_bundle_import_job_data_source_credential_pair_correct_errors
     }
     if builder.password.is_none() {
         builder.password = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn cast_column_types_operation_correct_errors(
+    mut builder: crate::types::builders::CastColumnTypesOperationBuilder,
+) -> crate::types::builders::CastColumnTypesOperationBuilder {
+    if builder.alias.is_none() {
+        builder.alias = Some(Default::default())
+    }
+    if builder.source.is_none() {
+        builder.source = {
+            let builder = crate::types::builders::TransformOperationSourceBuilder::default();
+            crate::serde_util::transform_operation_source_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.cast_column_type_operations.is_none() {
+        builder.cast_column_type_operations = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn create_columns_operation_correct_errors(
+    mut builder: crate::types::builders::CreateColumnsOperationBuilder,
+) -> crate::types::builders::CreateColumnsOperationBuilder {
+    if builder.columns.is_none() {
+        builder.columns = Some(Default::default())
     }
     builder
 }
@@ -1760,9 +1872,51 @@ pub(crate) fn default_section_based_layout_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn destination_table_source_correct_errors(
+    mut builder: crate::types::builders::DestinationTableSourceBuilder,
+) -> crate::types::builders::DestinationTableSourceBuilder {
+    if builder.transform_operation_id.is_none() {
+        builder.transform_operation_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn filters_operation_correct_errors(
+    mut builder: crate::types::builders::FiltersOperationBuilder,
+) -> crate::types::builders::FiltersOperationBuilder {
+    if builder.alias.is_none() {
+        builder.alias = Some(Default::default())
+    }
+    if builder.source.is_none() {
+        builder.source = {
+            let builder = crate::types::builders::TransformOperationSourceBuilder::default();
+            crate::serde_util::transform_operation_source_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.filter_operations.is_none() {
+        builder.filter_operations = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn identifier_correct_errors(mut builder: crate::types::builders::IdentifierBuilder) -> crate::types::builders::IdentifierBuilder {
     if builder.identity.is_none() {
         builder.identity = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn import_table_operation_correct_errors(
+    mut builder: crate::types::builders::ImportTableOperationBuilder,
+) -> crate::types::builders::ImportTableOperationBuilder {
+    if builder.alias.is_none() {
+        builder.alias = Some(Default::default())
+    }
+    if builder.source.is_none() {
+        builder.source = {
+            let builder = crate::types::builders::ImportTableOperationSourceBuilder::default();
+            crate::serde_util::import_table_operation_source_correct_errors(builder).build().ok()
+        }
     }
     builder
 }
@@ -1785,12 +1939,105 @@ pub(crate) fn join_instruction_correct_errors(
     builder
 }
 
+pub(crate) fn join_operation_correct_errors(
+    mut builder: crate::types::builders::JoinOperationBuilder,
+) -> crate::types::builders::JoinOperationBuilder {
+    if builder.alias.is_none() {
+        builder.alias = Some(Default::default())
+    }
+    if builder.left_operand.is_none() {
+        builder.left_operand = {
+            let builder = crate::types::builders::TransformOperationSourceBuilder::default();
+            crate::serde_util::transform_operation_source_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.right_operand.is_none() {
+        builder.right_operand = {
+            let builder = crate::types::builders::TransformOperationSourceBuilder::default();
+            crate::serde_util::transform_operation_source_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::JoinOperationType>().ok()
+    }
+    if builder.on_clause.is_none() {
+        builder.on_clause = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn layout_correct_errors(mut builder: crate::types::builders::LayoutBuilder) -> crate::types::builders::LayoutBuilder {
     if builder.configuration.is_none() {
         builder.configuration = {
             let builder = crate::types::builders::LayoutConfigurationBuilder::default();
             Some(builder.build())
         }
+    }
+    builder
+}
+
+pub(crate) fn parent_data_set_correct_errors(
+    mut builder: crate::types::builders::ParentDataSetBuilder,
+) -> crate::types::builders::ParentDataSetBuilder {
+    if builder.data_set_arn.is_none() {
+        builder.data_set_arn = Some(Default::default())
+    }
+    if builder.input_columns.is_none() {
+        builder.input_columns = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn pivot_operation_correct_errors(
+    mut builder: crate::types::builders::PivotOperationBuilder,
+) -> crate::types::builders::PivotOperationBuilder {
+    if builder.alias.is_none() {
+        builder.alias = Some(Default::default())
+    }
+    if builder.source.is_none() {
+        builder.source = {
+            let builder = crate::types::builders::TransformOperationSourceBuilder::default();
+            crate::serde_util::transform_operation_source_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.value_column_configuration.is_none() {
+        builder.value_column_configuration = {
+            let builder = crate::types::builders::ValueColumnConfigurationBuilder::default();
+            Some(builder.build())
+        }
+    }
+    if builder.pivot_configuration.is_none() {
+        builder.pivot_configuration = {
+            let builder = crate::types::builders::PivotConfigurationBuilder::default();
+            crate::serde_util::pivot_configuration_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn project_operation_correct_errors(
+    mut builder: crate::types::builders::ProjectOperationBuilder,
+) -> crate::types::builders::ProjectOperationBuilder {
+    if builder.projected_columns.is_none() {
+        builder.projected_columns = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn rename_columns_operation_correct_errors(
+    mut builder: crate::types::builders::RenameColumnsOperationBuilder,
+) -> crate::types::builders::RenameColumnsOperationBuilder {
+    if builder.alias.is_none() {
+        builder.alias = Some(Default::default())
+    }
+    if builder.source.is_none() {
+        builder.source = {
+            let builder = crate::types::builders::TransformOperationSourceBuilder::default();
+            crate::serde_util::transform_operation_source_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.rename_column_operations.is_none() {
+        builder.rename_column_operations = Some(Default::default())
     }
     builder
 }
@@ -1890,6 +2137,36 @@ pub(crate) fn topic_named_entity_correct_errors(
     builder
 }
 
+pub(crate) fn unpivot_operation_correct_errors(
+    mut builder: crate::types::builders::UnpivotOperationBuilder,
+) -> crate::types::builders::UnpivotOperationBuilder {
+    if builder.alias.is_none() {
+        builder.alias = Some(Default::default())
+    }
+    if builder.source.is_none() {
+        builder.source = {
+            let builder = crate::types::builders::TransformOperationSourceBuilder::default();
+            crate::serde_util::transform_operation_source_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.columns_to_unpivot.is_none() {
+        builder.columns_to_unpivot = Some(Default::default())
+    }
+    if builder.unpivoted_label_column_name.is_none() {
+        builder.unpivoted_label_column_name = Some(Default::default())
+    }
+    if builder.unpivoted_label_column_id.is_none() {
+        builder.unpivoted_label_column_id = Some(Default::default())
+    }
+    if builder.unpivoted_value_column_name.is_none() {
+        builder.unpivoted_value_column_name = Some(Default::default())
+    }
+    if builder.unpivoted_value_column_id.is_none() {
+        builder.unpivoted_value_column_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn bar_chart_visual_correct_errors(
     mut builder: crate::types::builders::BarChartVisualBuilder,
 ) -> crate::types::builders::BarChartVisualBuilder {
@@ -1946,15 +2223,6 @@ pub(crate) fn combo_chart_visual_correct_errors(
 ) -> crate::types::builders::ComboChartVisualBuilder {
     if builder.visual_id.is_none() {
         builder.visual_id = Some(Default::default())
-    }
-    builder
-}
-
-pub(crate) fn create_columns_operation_correct_errors(
-    mut builder: crate::types::builders::CreateColumnsOperationBuilder,
-) -> crate::types::builders::CreateColumnsOperationBuilder {
-    if builder.columns.is_none() {
-        builder.columns = Some(Default::default())
     }
     builder
 }
@@ -2062,15 +2330,6 @@ pub(crate) fn filter_list_control_correct_errors(
     }
     if builder.source_filter_id.is_none() {
         builder.source_filter_id = Some(Default::default())
-    }
-    builder
-}
-
-pub(crate) fn filter_operation_correct_errors(
-    mut builder: crate::types::builders::FilterOperationBuilder,
-) -> crate::types::builders::FilterOperationBuilder {
-    if builder.condition_expression.is_none() {
-        builder.condition_expression = Some(Default::default())
     }
     builder
 }
@@ -2189,6 +2448,15 @@ pub(crate) fn histogram_visual_correct_errors(
     builder
 }
 
+pub(crate) fn import_table_operation_source_correct_errors(
+    mut builder: crate::types::builders::ImportTableOperationSourceBuilder,
+) -> crate::types::builders::ImportTableOperationSourceBuilder {
+    if builder.source_table_id.is_none() {
+        builder.source_table_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn input_column_correct_errors(mut builder: crate::types::builders::InputColumnBuilder) -> crate::types::builders::InputColumnBuilder {
     if builder.name.is_none() {
         builder.name = Some(Default::default())
@@ -2207,6 +2475,15 @@ pub(crate) fn insight_visual_correct_errors(
     }
     if builder.data_set_identifier.is_none() {
         builder.data_set_identifier = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn join_operand_properties_correct_errors(
+    mut builder: crate::types::builders::JoinOperandPropertiesBuilder,
+) -> crate::types::builders::JoinOperandPropertiesBuilder {
+    if builder.output_column_name_overrides.is_none() {
+        builder.output_column_name_overrides = Some(Default::default())
     }
     builder
 }
@@ -2438,6 +2715,15 @@ pub(crate) fn pie_chart_visual_correct_errors(
     builder
 }
 
+pub(crate) fn pivot_configuration_correct_errors(
+    mut builder: crate::types::builders::PivotConfigurationBuilder,
+) -> crate::types::builders::PivotConfigurationBuilder {
+    if builder.pivoted_labels.is_none() {
+        builder.pivoted_labels = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn pivot_table_visual_correct_errors(
     mut builder: crate::types::builders::PivotTableVisualBuilder,
 ) -> crate::types::builders::PivotTableVisualBuilder {
@@ -2453,15 +2739,6 @@ pub(crate) fn plugin_visual_correct_errors(mut builder: crate::types::builders::
     }
     if builder.plugin_arn.is_none() {
         builder.plugin_arn = Some(Default::default())
-    }
-    builder
-}
-
-pub(crate) fn project_operation_correct_errors(
-    mut builder: crate::types::builders::ProjectOperationBuilder,
-) -> crate::types::builders::ProjectOperationBuilder {
-    if builder.projected_columns.is_none() {
-        builder.projected_columns = Some(Default::default())
     }
     builder
 }
@@ -2665,6 +2942,15 @@ pub(crate) fn top_bottom_filter_correct_errors(
     builder
 }
 
+pub(crate) fn transform_operation_source_correct_errors(
+    mut builder: crate::types::builders::TransformOperationSourceBuilder,
+) -> crate::types::builders::TransformOperationSourceBuilder {
+    if builder.transform_operation_id.is_none() {
+        builder.transform_operation_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn tree_map_visual_correct_errors(
     mut builder: crate::types::builders::TreeMapVisualBuilder,
 ) -> crate::types::builders::TreeMapVisualBuilder {
@@ -2700,6 +2986,49 @@ pub(crate) fn word_cloud_visual_correct_errors(
 ) -> crate::types::builders::WordCloudVisualBuilder {
     if builder.visual_id.is_none() {
         builder.visual_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn aggregation_correct_errors(mut builder: crate::types::builders::AggregationBuilder) -> crate::types::builders::AggregationBuilder {
+    if builder.aggregation_function.is_none() {
+        builder.aggregation_function = {
+            let builder = crate::types::builders::DataPrepAggregationFunctionBuilder::default();
+            Some(builder.build())
+        }
+    }
+    if builder.new_column_name.is_none() {
+        builder.new_column_name = Some(Default::default())
+    }
+    if builder.new_column_id.is_none() {
+        builder.new_column_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn appended_column_correct_errors(
+    mut builder: crate::types::builders::AppendedColumnBuilder,
+) -> crate::types::builders::AppendedColumnBuilder {
+    if builder.column_name.is_none() {
+        builder.column_name = Some(Default::default())
+    }
+    if builder.new_column_id.is_none() {
+        builder.new_column_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn calculated_column_correct_errors(
+    mut builder: crate::types::builders::CalculatedColumnBuilder,
+) -> crate::types::builders::CalculatedColumnBuilder {
+    if builder.column_name.is_none() {
+        builder.column_name = Some(Default::default())
+    }
+    if builder.column_id.is_none() {
+        builder.column_id = Some(Default::default())
+    }
+    if builder.expression.is_none() {
+        builder.expression = Some(Default::default())
     }
     builder
 }
@@ -2863,21 +3192,6 @@ pub(crate) fn aggregation_sort_configuration_correct_errors(
     builder
 }
 
-pub(crate) fn calculated_column_correct_errors(
-    mut builder: crate::types::builders::CalculatedColumnBuilder,
-) -> crate::types::builders::CalculatedColumnBuilder {
-    if builder.column_name.is_none() {
-        builder.column_name = Some(Default::default())
-    }
-    if builder.column_id.is_none() {
-        builder.column_id = Some(Default::default())
-    }
-    if builder.expression.is_none() {
-        builder.expression = Some(Default::default())
-    }
-    builder
-}
-
 pub(crate) fn category_inner_filter_correct_errors(
     mut builder: crate::types::builders::CategoryInnerFilterBuilder,
 ) -> crate::types::builders::CategoryInnerFilterBuilder {
@@ -2939,6 +3253,75 @@ pub(crate) fn custom_narrative_options_correct_errors(
     builder
 }
 
+pub(crate) fn data_prep_list_aggregation_function_correct_errors(
+    mut builder: crate::types::builders::DataPrepListAggregationFunctionBuilder,
+) -> crate::types::builders::DataPrepListAggregationFunctionBuilder {
+    if builder.separator.is_none() {
+        builder.separator = Some(Default::default())
+    }
+    if builder.distinct.is_none() {
+        builder.distinct = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn data_prep_simple_aggregation_function_correct_errors(
+    mut builder: crate::types::builders::DataPrepSimpleAggregationFunctionBuilder,
+) -> crate::types::builders::DataPrepSimpleAggregationFunctionBuilder {
+    if builder.function_type.is_none() {
+        builder.function_type = "no value was set".parse::<crate::types::DataPrepSimpleAggregationFunctionType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn data_set_column_id_mapping_correct_errors(
+    mut builder: crate::types::builders::DataSetColumnIdMappingBuilder,
+) -> crate::types::builders::DataSetColumnIdMappingBuilder {
+    if builder.source_column_id.is_none() {
+        builder.source_column_id = Some(Default::default())
+    }
+    if builder.target_column_id.is_none() {
+        builder.target_column_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn data_set_date_comparison_filter_condition_correct_errors(
+    mut builder: crate::types::builders::DataSetDateComparisonFilterConditionBuilder,
+) -> crate::types::builders::DataSetDateComparisonFilterConditionBuilder {
+    if builder.operator.is_none() {
+        builder.operator = "no value was set".parse::<crate::types::DataSetDateComparisonFilterOperator>().ok()
+    }
+    builder
+}
+
+pub(crate) fn data_set_numeric_comparison_filter_condition_correct_errors(
+    mut builder: crate::types::builders::DataSetNumericComparisonFilterConditionBuilder,
+) -> crate::types::builders::DataSetNumericComparisonFilterConditionBuilder {
+    if builder.operator.is_none() {
+        builder.operator = "no value was set".parse::<crate::types::DataSetNumericComparisonFilterOperator>().ok()
+    }
+    builder
+}
+
+pub(crate) fn data_set_string_comparison_filter_condition_correct_errors(
+    mut builder: crate::types::builders::DataSetStringComparisonFilterConditionBuilder,
+) -> crate::types::builders::DataSetStringComparisonFilterConditionBuilder {
+    if builder.operator.is_none() {
+        builder.operator = "no value was set".parse::<crate::types::DataSetStringComparisonFilterOperator>().ok()
+    }
+    builder
+}
+
+pub(crate) fn data_set_string_list_filter_condition_correct_errors(
+    mut builder: crate::types::builders::DataSetStringListFilterConditionBuilder,
+) -> crate::types::builders::DataSetStringListFilterConditionBuilder {
+    if builder.operator.is_none() {
+        builder.operator = "no value was set".parse::<crate::types::DataSetStringListFilterOperator>().ok()
+    }
+    builder
+}
+
 pub(crate) fn decimal_places_configuration_correct_errors(
     mut builder: crate::types::builders::DecimalPlacesConfigurationBuilder,
 ) -> crate::types::builders::DecimalPlacesConfigurationBuilder {
@@ -2962,6 +3345,28 @@ pub(crate) fn negative_value_configuration_correct_errors(
 ) -> crate::types::builders::NegativeValueConfigurationBuilder {
     if builder.display_mode.is_none() {
         builder.display_mode = "no value was set".parse::<crate::types::NegativeValueDisplayMode>().ok()
+    }
+    builder
+}
+
+pub(crate) fn output_column_name_override_correct_errors(
+    mut builder: crate::types::builders::OutputColumnNameOverrideBuilder,
+) -> crate::types::builders::OutputColumnNameOverrideBuilder {
+    if builder.output_column_name.is_none() {
+        builder.output_column_name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn pivoted_label_correct_errors(mut builder: crate::types::builders::PivotedLabelBuilder) -> crate::types::builders::PivotedLabelBuilder {
+    if builder.label_name.is_none() {
+        builder.label_name = Some(Default::default())
+    }
+    if builder.new_column_name.is_none() {
+        builder.new_column_name = Some(Default::default())
+    }
+    if builder.new_column_id.is_none() {
+        builder.new_column_id = Some(Default::default())
     }
     builder
 }

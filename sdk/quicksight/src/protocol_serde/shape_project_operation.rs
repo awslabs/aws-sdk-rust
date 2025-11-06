@@ -3,14 +3,23 @@ pub fn ser_project_operation(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ProjectOperation,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    if let Some(var_1) = &input.alias {
+        object.key("Alias").string(var_1.as_str());
+    }
+    if let Some(var_2) = &input.source {
+        #[allow(unused_mut)]
+        let mut object_3 = object.key("Source").start_object();
+        crate::protocol_serde::shape_transform_operation_source::ser_transform_operation_source(&mut object_3, var_2)?;
+        object_3.finish();
+    }
     {
-        let mut array_1 = object.key("ProjectedColumns").start_array();
-        for item_2 in &input.projected_columns {
+        let mut array_4 = object.key("ProjectedColumns").start_array();
+        for item_5 in &input.projected_columns {
             {
-                array_1.value().string(item_2.as_str());
+                array_4.value().string(item_5.as_str());
             }
         }
-        array_1.finish();
+        array_4.finish();
     }
     Ok(())
 }
@@ -30,9 +39,22 @@ where
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "Alias" => {
+                            builder = builder.set_alias(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "Source" => {
+                            builder = builder.set_source(crate::protocol_serde::shape_transform_operation_source::de_transform_operation_source(
+                                tokens,
+                            )?);
+                        }
                         "ProjectedColumns" => {
-                            builder =
-                                builder.set_projected_columns(crate::protocol_serde::shape_projected_column_list::de_projected_column_list(tokens)?);
+                            builder = builder.set_projected_columns(
+                                crate::protocol_serde::shape_projected_column_name_list::de_projected_column_name_list(tokens)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

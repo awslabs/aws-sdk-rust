@@ -22,6 +22,7 @@ impl crate::operation::describe_game_session_placement::builders::DescribeGameSe
 }
 /// Fluent builder constructing a request to `DescribeGameSessionPlacement`.
 ///
+/// <p><b>This API works with the following fleet types:</b> EC2, Anywhere, Container</p>
 /// <p>Retrieves information, including current status, about a game session placement request.</p>
 /// <p>To get game session placement details, specify the placement ID.</p>
 /// <p>This operation is not designed to be continually called to track game session status. This practice can cause you to exceed your API limit, which results in errors. Instead, you must configure an Amazon Simple Notification Service (SNS) topic to receive notifications from FlexMatch or queues. Continuously polling with <code>DescribeGameSessionPlacement</code> should only be used for games in development with low game session usage.</p>

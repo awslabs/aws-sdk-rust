@@ -713,6 +713,8 @@ pub(crate) mod shape_max_document_size_exceeded;
 
 pub(crate) mod shape_modify_document_permission_input;
 
+pub(crate) mod shape_no_longer_supported_exception;
+
 pub(crate) mod shape_ops_item_access_denied_exception;
 
 pub(crate) mod shape_ops_item_already_exists_exception;

@@ -22,7 +22,8 @@ impl crate::operation::create_fleet::builders::CreateFleetInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateFleet`.
 ///
-/// <p>Creates a fleet of compute resources to host your game servers. Use this operation to set up the following types of fleets based on compute type:</p>
+/// <p><b>This API works with the following fleet types:</b> EC2, Anywhere, Container</p>
+/// <p>Creates a fleet of compute resources to host your game servers. Use this operation to set up a fleet for the following compute types:</p>
 /// <p><b>Managed EC2 fleet</b></p>
 /// <p>An EC2 fleet is a set of Amazon Elastic Compute Cloud (Amazon EC2) instances. Your game server build is deployed to each fleet instance. Amazon GameLift Servers manages the fleet's instances and controls the lifecycle of game server processes, which host game sessions for players. EC2 fleets can have instances in multiple locations. Each instance in the fleet is designated a <code>Compute</code>.</p>
 /// <p>To create an EC2 fleet, provide these required parameters:</p>
@@ -43,7 +44,9 @@ impl crate::operation::create_fleet::builders::CreateFleetInputBuilder {
 /// <p><code>RuntimeConfiguration</code> with at least one <code>ServerProcesses</code> configuration</p></li>
 /// </ul>
 /// <p>If successful, this operation creates a new fleet resource and places it in <code>NEW</code> status while Amazon GameLift Servers initiates the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-creating-all.html#fleets-creation-workflow">fleet creation workflow</a>. To debug your fleet, fetch logs, view performance metrics or other actions on the fleet, create a development fleet with port 22/3389 open. As a best practice, we recommend opening ports for remote access only when you need them and closing them when you're finished.</p>
-/// <p>When the fleet status is ACTIVE, you can adjust capacity settings and turn autoscaling on/off for each location.</p>
+/// <p>When the fleet status is ACTIVE, you can adjust capacity settings and turn autoscaling on/off for each location.</p><note>
+/// <p>A managed fleet's runtime environment depends on the Amazon Machine Image (AMI) version it uses. When a new fleet is created, Amazon GameLift Servers assigns the latest available AMI version to the fleet, and all compute instances in that fleet are deployed with that version. To update the AMI version, you must create a new fleet. As a best practice, we recommend replacing your managed fleets every 30 days to maintain a secure and up-to-date runtime environment for your hosted game servers. For guidance, see <a href="https://docs.aws.amazon.com/gameliftservers/latest/developerguide/security-best-practices.html"> Security best practices for Amazon GameLift Servers</a>.</p>
+/// </note>
 /// <p><b>Anywhere fleet</b></p>
 /// <p>An Anywhere fleet represents compute resources that are not owned or managed by Amazon GameLift Servers. You might create an Anywhere fleet with your local machine for testing, or use one to host game servers with on-premises hardware or other game hosting solutions.</p>
 /// <p>To create an Anywhere fleet, provide these required parameters:</p>

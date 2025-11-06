@@ -22,6 +22,7 @@ impl crate::operation::create_container_group_definition::builders::CreateContai
 }
 /// Fluent builder constructing a request to `CreateContainerGroupDefinition`.
 ///
+/// <p><b>This API works with the following fleet types:</b> Container</p>
 /// <p>Creates a <code>ContainerGroupDefinition</code> that describes a set of containers for hosting your game server with Amazon GameLift Servers managed containers hosting. An Amazon GameLift Servers container group is similar to a container task or pod. Use container group definitions when you create a container fleet with <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateContainerFleet.html">CreateContainerFleet</a>.</p>
 /// <p>A container group definition determines how Amazon GameLift Servers deploys your containers to each instance in a container fleet. You can maintain multiple versions of a container group definition.</p>
 /// <p>There are two types of container groups:</p>

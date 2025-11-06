@@ -19,6 +19,8 @@ pub enum Error {
     InternalFailureException(crate::types::error::InternalFailureException),
     /// <p>An internal service exception.</p>
     InternalServerException(crate::types::error::InternalServerException),
+    /// <p>An exception thrown when an invalid parameter value is provided for dataset operations.</p>
+    InvalidDataSetParameterValueException(crate::types::error::InvalidDataSetParameterValueException),
     /// <p>The <code>NextToken</code> value isn't valid.</p>
     InvalidNextTokenException(crate::types::error::InvalidNextTokenException),
     /// <p>One or more parameters has a value that isn't valid.</p>
@@ -66,6 +68,7 @@ impl ::std::fmt::Display for Error {
             Error::IdentityTypeNotSupportedException(inner) => inner.fmt(f),
             Error::InternalFailureException(inner) => inner.fmt(f),
             Error::InternalServerException(inner) => inner.fmt(f),
+            Error::InvalidDataSetParameterValueException(inner) => inner.fmt(f),
             Error::InvalidNextTokenException(inner) => inner.fmt(f),
             Error::InvalidParameterValueException(inner) => inner.fmt(f),
             Error::InvalidRequestException(inner) => inner.fmt(f),
@@ -108,6 +111,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::IdentityTypeNotSupportedException(inner) => inner.meta(),
             Self::InternalFailureException(inner) => inner.meta(),
             Self::InternalServerException(inner) => inner.meta(),
+            Self::InvalidDataSetParameterValueException(inner) => inner.meta(),
             Self::InvalidNextTokenException(inner) => inner.meta(),
             Self::InvalidParameterValueException(inner) => inner.meta(),
             Self::InvalidRequestException(inner) => inner.meta(),
@@ -552,6 +556,9 @@ impl From<crate::operation::create_data_set::CreateDataSetError> for Error {
             crate::operation::create_data_set::CreateDataSetError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::create_data_set::CreateDataSetError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::create_data_set::CreateDataSetError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::create_data_set::CreateDataSetError::InvalidDataSetParameterValueException(inner) => {
+                Error::InvalidDataSetParameterValueException(inner)
+            }
             crate::operation::create_data_set::CreateDataSetError::InvalidParameterValueException(inner) => {
                 Error::InvalidParameterValueException(inner)
             }
@@ -7521,6 +7528,9 @@ impl From<crate::operation::update_data_set::UpdateDataSetError> for Error {
             crate::operation::update_data_set::UpdateDataSetError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::update_data_set::UpdateDataSetError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::update_data_set::UpdateDataSetError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::update_data_set::UpdateDataSetError::InvalidDataSetParameterValueException(inner) => {
+                Error::InvalidDataSetParameterValueException(inner)
+            }
             crate::operation::update_data_set::UpdateDataSetError::InvalidParameterValueException(inner) => {
                 Error::InvalidParameterValueException(inner)
             }
@@ -8729,6 +8739,7 @@ impl ::std::error::Error for Error {
             Error::IdentityTypeNotSupportedException(inner) => inner.source(),
             Error::InternalFailureException(inner) => inner.source(),
             Error::InternalServerException(inner) => inner.source(),
+            Error::InvalidDataSetParameterValueException(inner) => inner.source(),
             Error::InvalidNextTokenException(inner) => inner.source(),
             Error::InvalidParameterValueException(inner) => inner.source(),
             Error::InvalidRequestException(inner) => inner.source(),
@@ -8757,6 +8768,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::IdentityTypeNotSupportedException(e) => e.request_id(),
             Self::InternalFailureException(e) => e.request_id(),
             Self::InternalServerException(e) => e.request_id(),
+            Self::InvalidDataSetParameterValueException(e) => e.request_id(),
             Self::InvalidNextTokenException(e) => e.request_id(),
             Self::InvalidParameterValueException(e) => e.request_id(),
             Self::InvalidRequestException(e) => e.request_id(),

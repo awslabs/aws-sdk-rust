@@ -22,6 +22,7 @@ impl super::Client {
     ///   - [`mpa_approval_team_arn(Option<String>)`](crate::operation::describe_backup_vault::DescribeBackupVaultOutput::mpa_approval_team_arn): <p>The ARN of the MPA approval team associated with this backup vault.</p>
     ///   - [`mpa_session_arn(Option<String>)`](crate::operation::describe_backup_vault::DescribeBackupVaultOutput::mpa_session_arn): <p>The ARN of the MPA session associated with this backup vault.</p>
     ///   - [`latest_mpa_approval_team_update(Option<LatestMpaApprovalTeamUpdate>)`](crate::operation::describe_backup_vault::DescribeBackupVaultOutput::latest_mpa_approval_team_update): <p>Information about the latest update to the MPA approval team association for this backup vault.</p>
+    ///   - [`encryption_key_type(Option<EncryptionKeyType>)`](crate::operation::describe_backup_vault::DescribeBackupVaultOutput::encryption_key_type): <p>The type of encryption key used for the backup vault. Valid values are CUSTOMER_MANAGED_KMS_KEY for customer-managed keys or Amazon Web Services_OWNED_KMS_KEY for Amazon Web Services-owned keys.</p>
     /// - On failure, responds with [`SdkError<DescribeBackupVaultError>`](crate::operation::describe_backup_vault::DescribeBackupVaultError)
     pub fn describe_backup_vault(&self) -> crate::operation::describe_backup_vault::builders::DescribeBackupVaultFluentBuilder {
         crate::operation::describe_backup_vault::builders::DescribeBackupVaultFluentBuilder::new(self.handle.clone())

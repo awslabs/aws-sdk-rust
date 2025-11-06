@@ -6,8 +6,9 @@ impl super::Client {
     ///   - [`identity_store_id(impl Into<String>)`](crate::operation::describe_user::builders::DescribeUserFluentBuilder::identity_store_id) / [`set_identity_store_id(Option<String>)`](crate::operation::describe_user::builders::DescribeUserFluentBuilder::set_identity_store_id):<br>required: **true**<br><p>The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains numbers and lower case letters. This value is generated at the time that a new identity store is created.</p><br>
     ///   - [`user_id(impl Into<String>)`](crate::operation::describe_user::builders::DescribeUserFluentBuilder::user_id) / [`set_user_id(Option<String>)`](crate::operation::describe_user::builders::DescribeUserFluentBuilder::set_user_id):<br>required: **true**<br><p>The identifier for a user in the identity store.</p><br>
     /// - On success, responds with [`DescribeUserOutput`](crate::operation::describe_user::DescribeUserOutput) with field(s):
-    ///   - [`user_name(Option<String>)`](crate::operation::describe_user::DescribeUserOutput::user_name): <p>A unique string used to identify the user. The length limit is 128 characters. This value can consist of letters, accented characters, symbols, numbers, and punctuation. This value is specified at the time the user is created and stored as an attribute of the user object in the identity store.</p>
+    ///   - [`identity_store_id(String)`](crate::operation::describe_user::DescribeUserOutput::identity_store_id): <p>The globally unique identifier for the identity store.</p>
     ///   - [`user_id(String)`](crate::operation::describe_user::DescribeUserOutput::user_id): <p>The identifier for a user in the identity store.</p>
+    ///   - [`user_name(Option<String>)`](crate::operation::describe_user::DescribeUserOutput::user_name): <p>A unique string used to identify the user. The length limit is 128 characters. This value can consist of letters, accented characters, symbols, numbers, and punctuation. This value is specified at the time the user is created and stored as an attribute of the user object in the identity store.</p>
     ///   - [`external_ids(Option<Vec::<ExternalId>>)`](crate::operation::describe_user::DescribeUserOutput::external_ids): <p>A list of <code>ExternalId</code> objects that contains the identifiers issued to this resource by an external identity provider.</p>
     ///   - [`name(Option<Name>)`](crate::operation::describe_user::DescribeUserOutput::name): <p>The name of the user.</p>
     ///   - [`display_name(Option<String>)`](crate::operation::describe_user::DescribeUserOutput::display_name): <p>The display name of the user.</p>
@@ -21,7 +22,14 @@ impl super::Client {
     ///   - [`preferred_language(Option<String>)`](crate::operation::describe_user::DescribeUserOutput::preferred_language): <p>The preferred language of the user.</p>
     ///   - [`locale(Option<String>)`](crate::operation::describe_user::DescribeUserOutput::locale): <p>A string containing the geographical region or location of the user.</p>
     ///   - [`timezone(Option<String>)`](crate::operation::describe_user::DescribeUserOutput::timezone): <p>The time zone for a user.</p>
-    ///   - [`identity_store_id(String)`](crate::operation::describe_user::DescribeUserOutput::identity_store_id): <p>The globally unique identifier for the identity store.</p>
+    ///   - [`user_status(Option<UserStatus>)`](crate::operation::describe_user::DescribeUserOutput::user_status): <p>The current status of the user account.</p>
+    ///   - [`photos(Option<Vec::<Photo>>)`](crate::operation::describe_user::DescribeUserOutput::photos): <p>A list of photos associated with the user. Returns up to 3 photos with their associated metadata including type, display name, and primary designation.</p>
+    ///   - [`website(Option<String>)`](crate::operation::describe_user::DescribeUserOutput::website): <p>The user's personal website or blog URL. Returns the stored website information for the user.</p>
+    ///   - [`birthdate(Option<String>)`](crate::operation::describe_user::DescribeUserOutput::birthdate): <p>The user's birthdate in YYYY-MM-DD format. This field returns the stored birthdate information for the user.</p>
+    ///   - [`created_at(Option<DateTime>)`](crate::operation::describe_user::DescribeUserOutput::created_at): <p>The date and time the user was created.</p>
+    ///   - [`created_by(Option<String>)`](crate::operation::describe_user::DescribeUserOutput::created_by): <p>The identifier of the user or system that created the user.</p>
+    ///   - [`updated_at(Option<DateTime>)`](crate::operation::describe_user::DescribeUserOutput::updated_at): <p>The date and time the user was last updated.</p>
+    ///   - [`updated_by(Option<String>)`](crate::operation::describe_user::DescribeUserOutput::updated_by): <p>The identifier of the user or system that last updated the user.</p>
     /// - On failure, responds with [`SdkError<DescribeUserError>`](crate::operation::describe_user::DescribeUserError)
     pub fn describe_user(&self) -> crate::operation::describe_user::builders::DescribeUserFluentBuilder {
         crate::operation::describe_user::builders::DescribeUserFluentBuilder::new(self.handle.clone())

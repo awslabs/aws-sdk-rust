@@ -22,6 +22,15 @@ pub fn ser_evaluation_form_question_type_properties(
             )?;
             object_2.finish();
         }
+        crate::types::EvaluationFormQuestionTypeProperties::Text(inner) => {
+            #[allow(unused_mut)]
+            let mut object_3 = object_3.key("Text").start_object();
+            crate::protocol_serde::shape_evaluation_form_text_question_properties::ser_evaluation_form_text_question_properties(
+                &mut object_3,
+                inner,
+            )?;
+            object_3.finish();
+        }
         crate::types::EvaluationFormQuestionTypeProperties::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "EvaluationFormQuestionTypeProperties",
@@ -71,6 +80,12 @@ where
                                 Some(crate::types::EvaluationFormQuestionTypeProperties::SingleSelect(
                                     crate::protocol_serde::shape_evaluation_form_single_select_question_properties::de_evaluation_form_single_select_question_properties(tokens)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'SingleSelect' cannot be null"))?
+                                ))
+                            }
+                            "Text" => {
+                                Some(crate::types::EvaluationFormQuestionTypeProperties::Text(
+                                    crate::protocol_serde::shape_evaluation_form_text_question_properties::de_evaluation_form_text_question_properties(tokens)?
+                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'Text' cannot be null"))?
                                 ))
                             }
                             _ => {

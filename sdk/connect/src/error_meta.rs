@@ -7227,6 +7227,45 @@ impl From<crate::operation::search_available_phone_numbers::SearchAvailablePhone
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::search_contact_evaluations::SearchContactEvaluationsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::search_contact_evaluations::SearchContactEvaluationsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::search_contact_evaluations::SearchContactEvaluationsError> for Error {
+    fn from(err: crate::operation::search_contact_evaluations::SearchContactEvaluationsError) -> Self {
+        match err {
+            crate::operation::search_contact_evaluations::SearchContactEvaluationsError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::search_contact_evaluations::SearchContactEvaluationsError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::search_contact_evaluations::SearchContactEvaluationsError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::search_contact_evaluations::SearchContactEvaluationsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::search_contact_evaluations::SearchContactEvaluationsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::search_contact_evaluations::SearchContactEvaluationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::search_contact_flow_modules::SearchContactFlowModulesError, R>>
     for Error
 where
@@ -7356,6 +7395,42 @@ impl From<crate::operation::search_email_addresses::SearchEmailAddressesError> f
             }
             crate::operation::search_email_addresses::SearchEmailAddressesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::search_email_addresses::SearchEmailAddressesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::search_evaluation_forms::SearchEvaluationFormsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::search_evaluation_forms::SearchEvaluationFormsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::search_evaluation_forms::SearchEvaluationFormsError> for Error {
+    fn from(err: crate::operation::search_evaluation_forms::SearchEvaluationFormsError) -> Self {
+        match err {
+            crate::operation::search_evaluation_forms::SearchEvaluationFormsError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::search_evaluation_forms::SearchEvaluationFormsError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::search_evaluation_forms::SearchEvaluationFormsError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::search_evaluation_forms::SearchEvaluationFormsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::search_evaluation_forms::SearchEvaluationFormsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::search_evaluation_forms::SearchEvaluationFormsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

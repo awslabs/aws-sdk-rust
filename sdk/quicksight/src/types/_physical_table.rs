@@ -10,6 +10,8 @@ pub enum PhysicalTable {
     RelationalTable(crate::types::RelationalTable),
     /// <p>A physical table type for as S3 data source.</p>
     S3Source(crate::types::S3Source),
+    /// <p>A physical table type for Software-as-a-Service (SaaS) sources.</p>
+    SaaSTable(crate::types::SaaSTable),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -59,6 +61,19 @@ impl PhysicalTable {
     /// Returns true if this is a [`S3Source`](crate::types::PhysicalTable::S3Source).
     pub fn is_s3_source(&self) -> bool {
         self.as_s3_source().is_ok()
+    }
+    /// Tries to convert the enum instance into [`SaaSTable`](crate::types::PhysicalTable::SaaSTable), extracting the inner [`SaaSTable`](crate::types::SaaSTable).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_saa_s_table(&self) -> ::std::result::Result<&crate::types::SaaSTable, &Self> {
+        if let PhysicalTable::SaaSTable(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`SaaSTable`](crate::types::PhysicalTable::SaaSTable).
+    pub fn is_saa_s_table(&self) -> bool {
+        self.as_saa_s_table().is_ok()
     }
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {

@@ -27,125 +27,137 @@ pub fn ser_create_data_set_input_input(
         }
         array_6.finish();
     }
-    if let Some(var_9) = &input.data_set_id {
-        object.key("DataSetId").string(var_9.as_str());
-    }
-    if let Some(var_10) = &input.data_set_usage_configuration {
+    if let Some(var_9) = &input.data_prep_configuration {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("DataSetUsageConfiguration").start_object();
-        crate::protocol_serde::shape_data_set_usage_configuration::ser_data_set_usage_configuration(&mut object_11, var_10)?;
-        object_11.finish();
+        let mut object_10 = object.key("DataPrepConfiguration").start_object();
+        crate::protocol_serde::shape_data_prep_configuration::ser_data_prep_configuration(&mut object_10, var_9)?;
+        object_10.finish();
     }
-    if let Some(var_12) = &input.dataset_parameters {
-        let mut array_13 = object.key("DatasetParameters").start_array();
-        for item_14 in var_12 {
+    if let Some(var_11) = &input.data_set_id {
+        object.key("DataSetId").string(var_11.as_str());
+    }
+    if let Some(var_12) = &input.data_set_usage_configuration {
+        #[allow(unused_mut)]
+        let mut object_13 = object.key("DataSetUsageConfiguration").start_object();
+        crate::protocol_serde::shape_data_set_usage_configuration::ser_data_set_usage_configuration(&mut object_13, var_12)?;
+        object_13.finish();
+    }
+    if let Some(var_14) = &input.dataset_parameters {
+        let mut array_15 = object.key("DatasetParameters").start_array();
+        for item_16 in var_14 {
             {
                 #[allow(unused_mut)]
-                let mut object_15 = array_13.value().start_object();
-                crate::protocol_serde::shape_dataset_parameter::ser_dataset_parameter(&mut object_15, item_14)?;
-                object_15.finish();
+                let mut object_17 = array_15.value().start_object();
+                crate::protocol_serde::shape_dataset_parameter::ser_dataset_parameter(&mut object_17, item_16)?;
+                object_17.finish();
             }
         }
-        array_13.finish();
+        array_15.finish();
     }
-    if let Some(var_16) = &input.field_folders {
+    if let Some(var_18) = &input.field_folders {
         #[allow(unused_mut)]
-        let mut object_17 = object.key("FieldFolders").start_object();
-        for (key_18, value_19) in var_16 {
+        let mut object_19 = object.key("FieldFolders").start_object();
+        for (key_20, value_21) in var_18 {
             {
                 #[allow(unused_mut)]
-                let mut object_20 = object_17.key(key_18.as_str()).start_object();
-                crate::protocol_serde::shape_field_folder::ser_field_folder(&mut object_20, value_19)?;
-                object_20.finish();
+                let mut object_22 = object_19.key(key_20.as_str()).start_object();
+                crate::protocol_serde::shape_field_folder::ser_field_folder(&mut object_22, value_21)?;
+                object_22.finish();
             }
         }
-        object_17.finish();
+        object_19.finish();
     }
-    if let Some(var_21) = &input.folder_arns {
-        let mut array_22 = object.key("FolderArns").start_array();
-        for item_23 in var_21 {
+    if let Some(var_23) = &input.folder_arns {
+        let mut array_24 = object.key("FolderArns").start_array();
+        for item_25 in var_23 {
             {
-                array_22.value().string(item_23.as_str());
+                array_24.value().string(item_25.as_str());
             }
         }
-        array_22.finish();
+        array_24.finish();
     }
-    if let Some(var_24) = &input.import_mode {
-        object.key("ImportMode").string(var_24.as_str());
+    if let Some(var_26) = &input.import_mode {
+        object.key("ImportMode").string(var_26.as_str());
     }
-    if let Some(var_25) = &input.logical_table_map {
+    if let Some(var_27) = &input.logical_table_map {
         #[allow(unused_mut)]
-        let mut object_26 = object.key("LogicalTableMap").start_object();
-        for (key_27, value_28) in var_25 {
-            {
-                #[allow(unused_mut)]
-                let mut object_29 = object_26.key(key_27.as_str()).start_object();
-                crate::protocol_serde::shape_logical_table::ser_logical_table(&mut object_29, value_28)?;
-                object_29.finish();
-            }
-        }
-        object_26.finish();
-    }
-    if let Some(var_30) = &input.name {
-        object.key("Name").string(var_30.as_str());
-    }
-    if let Some(var_31) = &input.performance_configuration {
-        #[allow(unused_mut)]
-        let mut object_32 = object.key("PerformanceConfiguration").start_object();
-        crate::protocol_serde::shape_performance_configuration::ser_performance_configuration(&mut object_32, var_31)?;
-        object_32.finish();
-    }
-    if let Some(var_33) = &input.permissions {
-        let mut array_34 = object.key("Permissions").start_array();
-        for item_35 in var_33 {
+        let mut object_28 = object.key("LogicalTableMap").start_object();
+        for (key_29, value_30) in var_27 {
             {
                 #[allow(unused_mut)]
-                let mut object_36 = array_34.value().start_object();
-                crate::protocol_serde::shape_resource_permission::ser_resource_permission(&mut object_36, item_35)?;
-                object_36.finish();
+                let mut object_31 = object_28.key(key_29.as_str()).start_object();
+                crate::protocol_serde::shape_logical_table::ser_logical_table(&mut object_31, value_30)?;
+                object_31.finish();
             }
         }
-        array_34.finish();
+        object_28.finish();
     }
-    if let Some(var_37) = &input.physical_table_map {
+    if let Some(var_32) = &input.name {
+        object.key("Name").string(var_32.as_str());
+    }
+    if let Some(var_33) = &input.performance_configuration {
         #[allow(unused_mut)]
-        let mut object_38 = object.key("PhysicalTableMap").start_object();
-        for (key_39, value_40) in var_37 {
+        let mut object_34 = object.key("PerformanceConfiguration").start_object();
+        crate::protocol_serde::shape_performance_configuration::ser_performance_configuration(&mut object_34, var_33)?;
+        object_34.finish();
+    }
+    if let Some(var_35) = &input.permissions {
+        let mut array_36 = object.key("Permissions").start_array();
+        for item_37 in var_35 {
             {
                 #[allow(unused_mut)]
-                let mut object_41 = object_38.key(key_39.as_str()).start_object();
-                crate::protocol_serde::shape_physical_table::ser_physical_table(&mut object_41, value_40)?;
-                object_41.finish();
+                let mut object_38 = array_36.value().start_object();
+                crate::protocol_serde::shape_resource_permission::ser_resource_permission(&mut object_38, item_37)?;
+                object_38.finish();
             }
         }
-        object_38.finish();
+        array_36.finish();
     }
-    if let Some(var_42) = &input.row_level_permission_data_set {
+    if let Some(var_39) = &input.physical_table_map {
         #[allow(unused_mut)]
-        let mut object_43 = object.key("RowLevelPermissionDataSet").start_object();
-        crate::protocol_serde::shape_row_level_permission_data_set::ser_row_level_permission_data_set(&mut object_43, var_42)?;
-        object_43.finish();
+        let mut object_40 = object.key("PhysicalTableMap").start_object();
+        for (key_41, value_42) in var_39 {
+            {
+                #[allow(unused_mut)]
+                let mut object_43 = object_40.key(key_41.as_str()).start_object();
+                crate::protocol_serde::shape_physical_table::ser_physical_table(&mut object_43, value_42)?;
+                object_43.finish();
+            }
+        }
+        object_40.finish();
     }
-    if let Some(var_44) = &input.row_level_permission_tag_configuration {
+    if let Some(var_44) = &input.row_level_permission_data_set {
         #[allow(unused_mut)]
-        let mut object_45 = object.key("RowLevelPermissionTagConfiguration").start_object();
-        crate::protocol_serde::shape_row_level_permission_tag_configuration::ser_row_level_permission_tag_configuration(&mut object_45, var_44)?;
+        let mut object_45 = object.key("RowLevelPermissionDataSet").start_object();
+        crate::protocol_serde::shape_row_level_permission_data_set::ser_row_level_permission_data_set(&mut object_45, var_44)?;
         object_45.finish();
     }
-    if let Some(var_46) = &input.tags {
-        let mut array_47 = object.key("Tags").start_array();
-        for item_48 in var_46 {
+    if let Some(var_46) = &input.row_level_permission_tag_configuration {
+        #[allow(unused_mut)]
+        let mut object_47 = object.key("RowLevelPermissionTagConfiguration").start_object();
+        crate::protocol_serde::shape_row_level_permission_tag_configuration::ser_row_level_permission_tag_configuration(&mut object_47, var_46)?;
+        object_47.finish();
+    }
+    if let Some(var_48) = &input.semantic_model_configuration {
+        #[allow(unused_mut)]
+        let mut object_49 = object.key("SemanticModelConfiguration").start_object();
+        crate::protocol_serde::shape_semantic_model_configuration::ser_semantic_model_configuration(&mut object_49, var_48)?;
+        object_49.finish();
+    }
+    if let Some(var_50) = &input.tags {
+        let mut array_51 = object.key("Tags").start_array();
+        for item_52 in var_50 {
             {
                 #[allow(unused_mut)]
-                let mut object_49 = array_47.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_49, item_48)?;
-                object_49.finish();
+                let mut object_53 = array_51.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_53, item_52)?;
+                object_53.finish();
             }
         }
-        array_47.finish();
+        array_51.finish();
     }
-    if let Some(var_50) = &input.use_as {
-        object.key("UseAs").string(var_50.as_str());
+    if let Some(var_54) = &input.use_as {
+        object.key("UseAs").string(var_54.as_str());
     }
     Ok(())
 }

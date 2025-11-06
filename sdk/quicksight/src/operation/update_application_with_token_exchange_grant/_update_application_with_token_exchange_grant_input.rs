@@ -5,7 +5,7 @@
 pub struct UpdateApplicationWithTokenExchangeGrantInput {
     /// <p>The ID of the Amazon Web Services account to be updated with a token exchange grant.</p>
     pub aws_account_id: ::std::option::Option<::std::string::String>,
-    /// <p>The namespace of the QuickSight application.</p>
+    /// <p>The namespace of the Quick Suite application.</p>
     pub namespace: ::std::option::Option<::std::string::String>,
 }
 impl UpdateApplicationWithTokenExchangeGrantInput {
@@ -13,7 +13,7 @@ impl UpdateApplicationWithTokenExchangeGrantInput {
     pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
-    /// <p>The namespace of the QuickSight application.</p>
+    /// <p>The namespace of the Quick Suite application.</p>
     pub fn namespace(&self) -> ::std::option::Option<&str> {
         self.namespace.as_deref()
     }
@@ -49,18 +49,18 @@ impl UpdateApplicationWithTokenExchangeGrantInputBuilder {
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.aws_account_id
     }
-    /// <p>The namespace of the QuickSight application.</p>
+    /// <p>The namespace of the Quick Suite application.</p>
     /// This field is required.
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The namespace of the QuickSight application.</p>
+    /// <p>The namespace of the Quick Suite application.</p>
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.namespace = input;
         self
     }
-    /// <p>The namespace of the QuickSight application.</p>
+    /// <p>The namespace of the Quick Suite application.</p>
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
         &self.namespace
     }

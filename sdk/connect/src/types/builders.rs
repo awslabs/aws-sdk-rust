@@ -123,9 +123,27 @@ pub use crate::types::_hours_of_operation_config::HoursOfOperationConfigBuilder;
 
 pub use crate::types::_hours_of_operation_time_slice::HoursOfOperationTimeSliceBuilder;
 
+pub use crate::types::_evaluation_form_auto_evaluation_configuration::EvaluationFormAutoEvaluationConfigurationBuilder;
+
 pub use crate::types::_evaluation_form_scoring_strategy::EvaluationFormScoringStrategyBuilder;
 
 pub use crate::types::_evaluation_form_question::EvaluationFormQuestionBuilder;
+
+pub use crate::types::_evaluation_form_item_enablement_configuration::EvaluationFormItemEnablementConfigurationBuilder;
+
+pub use crate::types::_evaluation_form_item_enablement_condition::EvaluationFormItemEnablementConditionBuilder;
+
+pub use crate::types::_evaluation_form_item_enablement_expression::EvaluationFormItemEnablementExpressionBuilder;
+
+pub use crate::types::_evaluation_form_item_enablement_source_value::EvaluationFormItemEnablementSourceValueBuilder;
+
+pub use crate::types::_evaluation_form_item_enablement_source::EvaluationFormItemEnablementSourceBuilder;
+
+pub use crate::types::_evaluation_form_text_question_properties::EvaluationFormTextQuestionPropertiesBuilder;
+
+pub use crate::types::_evaluation_form_text_question_automation::EvaluationFormTextQuestionAutomationBuilder;
+
+pub use crate::types::_evaluation_form_question_automation_answer_source::EvaluationFormQuestionAutomationAnswerSourceBuilder;
 
 pub use crate::types::_evaluation_form_single_select_question_properties::EvaluationFormSingleSelectQuestionPropertiesBuilder;
 
@@ -134,6 +152,8 @@ pub use crate::types::_evaluation_form_single_select_question_automation::Evalua
 pub use crate::types::_single_select_question_rule_category_automation::SingleSelectQuestionRuleCategoryAutomationBuilder;
 
 pub use crate::types::_evaluation_form_single_select_question_option::EvaluationFormSingleSelectQuestionOptionBuilder;
+
+pub use crate::types::_automatic_fail_configuration::AutomaticFailConfigurationBuilder;
 
 pub use crate::types::_evaluation_form_numeric_question_properties::EvaluationFormNumericQuestionPropertiesBuilder;
 
@@ -230,6 +250,8 @@ pub use crate::types::_inbound_raw_message::InboundRawMessageBuilder;
 pub use crate::types::_chat_streaming_configuration::ChatStreamingConfigurationBuilder;
 
 pub use crate::types::_voice_recording_configuration::VoiceRecordingConfigurationBuilder;
+
+pub use crate::types::_auto_evaluation_configuration::AutoEvaluationConfigurationBuilder;
 
 pub use crate::types::_persistent_chat::PersistentChatBuilder;
 
@@ -337,6 +359,16 @@ pub use crate::types::_hours_of_operation_override_search_criteria::HoursOfOpera
 
 pub use crate::types::_date_condition::DateConditionBuilder;
 
+pub use crate::types::_evaluation_form_search_summary::EvaluationFormSearchSummaryBuilder;
+
+pub use crate::types::_evaluation_form_search_filter::EvaluationFormSearchFilterBuilder;
+
+pub use crate::types::_evaluation_form_search_criteria::EvaluationFormSearchCriteriaBuilder;
+
+pub use crate::types::_date_time_condition::DateTimeConditionBuilder;
+
+pub use crate::types::_boolean_condition::BooleanConditionBuilder;
+
 pub use crate::types::_email_address_metadata::EmailAddressMetadataBuilder;
 
 pub use crate::types::_alias_configuration::AliasConfigurationBuilder;
@@ -406,6 +438,16 @@ pub use crate::types::_contact_flow_module::ContactFlowModuleBuilder;
 pub use crate::types::_contact_flow_module_search_criteria::ContactFlowModuleSearchCriteriaBuilder;
 
 pub use crate::types::_contact_flow_module_search_filter::ContactFlowModuleSearchFilterBuilder;
+
+pub use crate::types::_evaluation_search_summary::EvaluationSearchSummaryBuilder;
+
+pub use crate::types::_evaluation_search_metadata::EvaluationSearchMetadataBuilder;
+
+pub use crate::types::_evaluation_search_filter::EvaluationSearchFilterBuilder;
+
+pub use crate::types::_evaluation_search_criteria::EvaluationSearchCriteriaBuilder;
+
+pub use crate::types::_decimal_condition::DecimalConditionBuilder;
 
 pub use crate::types::_available_number_summary::AvailableNumberSummaryBuilder;
 
@@ -522,6 +564,8 @@ pub use crate::types::_contact_flow_summary::ContactFlowSummaryBuilder;
 pub use crate::types::_contact_flow_module_summary::ContactFlowModuleSummaryBuilder;
 
 pub use crate::types::_evaluation_summary::EvaluationSummaryBuilder;
+
+pub use crate::types::_evaluation_acknowledgement_summary::EvaluationAcknowledgementSummaryBuilder;
 
 pub use crate::types::_evaluation_score::EvaluationScoreBuilder;
 
@@ -647,7 +691,25 @@ pub use crate::types::_evaluation::EvaluationBuilder;
 
 pub use crate::types::_evaluation_answer_output::EvaluationAnswerOutputBuilder;
 
+pub use crate::types::_evaluation_suggested_answer::EvaluationSuggestedAnswerBuilder;
+
+pub use crate::types::_evaluation_contact_lens_answer_analysis_details::EvaluationContactLensAnswerAnalysisDetailsBuilder;
+
+pub use crate::types::_evaluation_automation_rule_category::EvaluationAutomationRuleCategoryBuilder;
+
+pub use crate::types::_evaluation_transcript_point_of_interest::EvaluationTranscriptPointOfInterestBuilder;
+
+pub use crate::types::_evaluation_suggested_answer_transcript_millisecond_offsets::EvaluationSuggestedAnswerTranscriptMillisecondOffsetsBuilder;
+
+pub use crate::types::_evaluation_gen_ai_answer_analysis_details::EvaluationGenAiAnswerAnalysisDetailsBuilder;
+
+pub use crate::types::_evaluation_question_input_details::EvaluationQuestionInputDetailsBuilder;
+
 pub use crate::types::_evaluation_metadata::EvaluationMetadataBuilder;
+
+pub use crate::types::_evaluation_acknowledgement::EvaluationAcknowledgementBuilder;
+
+pub use crate::types::_auto_evaluation_details::AutoEvaluationDetailsBuilder;
 
 pub use crate::types::_contact::ContactBuilder;
 

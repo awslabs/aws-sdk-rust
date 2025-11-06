@@ -75,5 +75,23 @@ pub fn ser_create_user_input_input(
     if let Some(var_24) = &input.timezone {
         object.key("Timezone").string(var_24.as_str());
     }
+    if let Some(var_25) = &input.photos {
+        let mut array_26 = object.key("Photos").start_array();
+        for item_27 in var_25 {
+            {
+                #[allow(unused_mut)]
+                let mut object_28 = array_26.value().start_object();
+                crate::protocol_serde::shape_photo::ser_photo(&mut object_28, item_27)?;
+                object_28.finish();
+            }
+        }
+        array_26.finish();
+    }
+    if let Some(var_29) = &input.website {
+        object.key("Website").string(var_29.as_str());
+    }
+    if let Some(var_30) = &input.birthdate {
+        object.key("Birthdate").string(var_30.as_str());
+    }
     Ok(())
 }

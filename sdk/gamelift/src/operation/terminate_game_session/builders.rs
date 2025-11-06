@@ -22,6 +22,7 @@ impl crate::operation::terminate_game_session::builders::TerminateGameSessionInp
 }
 /// Fluent builder constructing a request to `TerminateGameSession`.
 ///
+/// <p><b>This API works with the following fleet types:</b> EC2, Anywhere, Container</p>
 /// <p>Ends a game session that's currently in progress. Use this action to terminate any game session that isn't in <code>ERROR</code> status. Terminating a game session is the most efficient way to free up a server process when it's hosting a game session that's in a bad state or not ending properly. You can use this action to terminate a game session that's being hosted on any type of Amazon GameLift Servers fleet compute, including computes for managed EC2, managed container, and Anywhere fleets. The game server must be integrated with Amazon GameLift Servers server SDK 5.x or greater.</p>
 /// <p><b>Request options</b></p>
 /// <p>Request termination for a single game session. Provide the game session ID and the termination mode. There are two potential methods for terminating a game session:</p>

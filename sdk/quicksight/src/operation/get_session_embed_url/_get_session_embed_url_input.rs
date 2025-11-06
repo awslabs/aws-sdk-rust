@@ -23,7 +23,7 @@ pub struct GetSessionEmbedUrlInput {
     pub entry_point: ::std::option::Option<::std::string::String>,
     /// <p>How many minutes the session is valid. The session lifetime must be 15-600 minutes.</p>
     pub session_lifetime_in_minutes: ::std::option::Option<i64>,
-    /// <p>The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type. You can use this for any type of Amazon QuickSight users in your account (readers, authors, or admins). They need to be authenticated as one of the following:</p>
+    /// <p>The Amazon Quick Suite user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type. You can use this for any type of Amazon Quick Suite users in your account (readers, authors, or admins). They need to be authenticated as one of the following:</p>
     /// <ol>
     /// <li>
     /// <p>Active Directory (AD) users or group members</p></li>
@@ -62,7 +62,7 @@ impl GetSessionEmbedUrlInput {
     pub fn session_lifetime_in_minutes(&self) -> ::std::option::Option<i64> {
         self.session_lifetime_in_minutes
     }
-    /// <p>The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type. You can use this for any type of Amazon QuickSight users in your account (readers, authors, or admins). They need to be authenticated as one of the following:</p>
+    /// <p>The Amazon Quick Suite user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type. You can use this for any type of Amazon Quick Suite users in your account (readers, authors, or admins). They need to be authenticated as one of the following:</p>
     /// <ol>
     /// <li>
     /// <p>Active Directory (AD) users or group members</p></li>
@@ -178,7 +178,7 @@ impl GetSessionEmbedUrlInputBuilder {
     pub fn get_session_lifetime_in_minutes(&self) -> &::std::option::Option<i64> {
         &self.session_lifetime_in_minutes
     }
-    /// <p>The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type. You can use this for any type of Amazon QuickSight users in your account (readers, authors, or admins). They need to be authenticated as one of the following:</p>
+    /// <p>The Amazon Quick Suite user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type. You can use this for any type of Amazon Quick Suite users in your account (readers, authors, or admins). They need to be authenticated as one of the following:</p>
     /// <ol>
     /// <li>
     /// <p>Active Directory (AD) users or group members</p></li>
@@ -192,7 +192,7 @@ impl GetSessionEmbedUrlInputBuilder {
         self.user_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type. You can use this for any type of Amazon QuickSight users in your account (readers, authors, or admins). They need to be authenticated as one of the following:</p>
+    /// <p>The Amazon Quick Suite user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type. You can use this for any type of Amazon Quick Suite users in your account (readers, authors, or admins). They need to be authenticated as one of the following:</p>
     /// <ol>
     /// <li>
     /// <p>Active Directory (AD) users or group members</p></li>
@@ -206,7 +206,7 @@ impl GetSessionEmbedUrlInputBuilder {
         self.user_arn = input;
         self
     }
-    /// <p>The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type. You can use this for any type of Amazon QuickSight users in your account (readers, authors, or admins). They need to be authenticated as one of the following:</p>
+    /// <p>The Amazon Quick Suite user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type. You can use this for any type of Amazon Quick Suite users in your account (readers, authors, or admins). They need to be authenticated as one of the following:</p>
     /// <ol>
     /// <li>
     /// <p>Active Directory (AD) users or group members</p></li>

@@ -22,6 +22,7 @@ impl crate::operation::describe_fleet_deployment::builders::DescribeFleetDeploym
 }
 /// Fluent builder constructing a request to `DescribeFleetDeployment`.
 ///
+/// <p><b>This API works with the following fleet types:</b> Container</p>
 /// <p>Retrieves information about a managed container fleet deployment.</p>
 /// <p><b>Request options</b></p>
 /// <ul>

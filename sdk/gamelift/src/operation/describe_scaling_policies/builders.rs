@@ -22,6 +22,7 @@ impl crate::operation::describe_scaling_policies::builders::DescribeScalingPolic
 }
 /// Fluent builder constructing a request to `DescribeScalingPolicies`.
 ///
+/// <p><b>This API works with the following fleet types:</b> EC2</p>
 /// <p>Retrieves all scaling policies applied to a fleet.</p>
 /// <p>To get a fleet's scaling policies, specify the fleet ID. You can filter this request by policy status, such as to retrieve only active scaling policies. Use the pagination parameters to retrieve results as a set of sequential pages. If successful, set of <code>ScalingPolicy</code> objects is returned for the fleet.</p>
 /// <p>A fleet may have all of its scaling policies suspended. This operation does not affect the status of the scaling policies, which remains ACTIVE.</p>

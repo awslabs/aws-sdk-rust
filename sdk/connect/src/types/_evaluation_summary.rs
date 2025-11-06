@@ -12,12 +12,22 @@ pub struct EvaluationSummary {
     pub evaluation_form_title: ::std::string::String,
     /// <p>The unique identifier for the evaluation form.</p>
     pub evaluation_form_id: ::std::string::String,
+    /// <p>The calibration session ID that this evaluation belongs to.</p>
+    pub calibration_session_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the contact evaluation.</p>
     pub status: crate::types::EvaluationStatus,
+    /// <p>Whether automated evaluation is enabled.</p>
+    pub auto_evaluation_enabled: bool,
+    /// <p>The status of the contact auto evaluation.</p>
+    pub auto_evaluation_status: ::std::option::Option<crate::types::AutoEvaluationStatus>,
     /// <p>The Amazon Resource Name (ARN) of the user who last updated the evaluation.</p>
     pub evaluator_arn: ::std::string::String,
     /// <p>The overall score of the contact evaluation.</p>
     pub score: ::std::option::Option<crate::types::EvaluationScore>,
+    /// <p>Information related to evaluation acknowledgement.</p>
+    pub acknowledgement: ::std::option::Option<crate::types::EvaluationAcknowledgementSummary>,
+    /// <p>Type of the evaluation.</p>
+    pub evaluation_type: ::std::option::Option<crate::types::EvaluationType>,
     /// <p>The timestamp for when the evaluation was created.</p>
     pub created_time: ::aws_smithy_types::DateTime,
     /// <p>The timestamp for when the evaluation was last updated.</p>
@@ -44,9 +54,21 @@ impl EvaluationSummary {
         use std::ops::Deref;
         self.evaluation_form_id.deref()
     }
+    /// <p>The calibration session ID that this evaluation belongs to.</p>
+    pub fn calibration_session_id(&self) -> ::std::option::Option<&str> {
+        self.calibration_session_id.as_deref()
+    }
     /// <p>The status of the contact evaluation.</p>
     pub fn status(&self) -> &crate::types::EvaluationStatus {
         &self.status
+    }
+    /// <p>Whether automated evaluation is enabled.</p>
+    pub fn auto_evaluation_enabled(&self) -> bool {
+        self.auto_evaluation_enabled
+    }
+    /// <p>The status of the contact auto evaluation.</p>
+    pub fn auto_evaluation_status(&self) -> ::std::option::Option<&crate::types::AutoEvaluationStatus> {
+        self.auto_evaluation_status.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the user who last updated the evaluation.</p>
     pub fn evaluator_arn(&self) -> &str {
@@ -56,6 +78,14 @@ impl EvaluationSummary {
     /// <p>The overall score of the contact evaluation.</p>
     pub fn score(&self) -> ::std::option::Option<&crate::types::EvaluationScore> {
         self.score.as_ref()
+    }
+    /// <p>Information related to evaluation acknowledgement.</p>
+    pub fn acknowledgement(&self) -> ::std::option::Option<&crate::types::EvaluationAcknowledgementSummary> {
+        self.acknowledgement.as_ref()
+    }
+    /// <p>Type of the evaluation.</p>
+    pub fn evaluation_type(&self) -> ::std::option::Option<&crate::types::EvaluationType> {
+        self.evaluation_type.as_ref()
     }
     /// <p>The timestamp for when the evaluation was created.</p>
     pub fn created_time(&self) -> &::aws_smithy_types::DateTime {
@@ -81,9 +111,14 @@ pub struct EvaluationSummaryBuilder {
     pub(crate) evaluation_arn: ::std::option::Option<::std::string::String>,
     pub(crate) evaluation_form_title: ::std::option::Option<::std::string::String>,
     pub(crate) evaluation_form_id: ::std::option::Option<::std::string::String>,
+    pub(crate) calibration_session_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::EvaluationStatus>,
+    pub(crate) auto_evaluation_enabled: ::std::option::Option<bool>,
+    pub(crate) auto_evaluation_status: ::std::option::Option<crate::types::AutoEvaluationStatus>,
     pub(crate) evaluator_arn: ::std::option::Option<::std::string::String>,
     pub(crate) score: ::std::option::Option<crate::types::EvaluationScore>,
+    pub(crate) acknowledgement: ::std::option::Option<crate::types::EvaluationAcknowledgementSummary>,
+    pub(crate) evaluation_type: ::std::option::Option<crate::types::EvaluationType>,
     pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -148,6 +183,20 @@ impl EvaluationSummaryBuilder {
     pub fn get_evaluation_form_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.evaluation_form_id
     }
+    /// <p>The calibration session ID that this evaluation belongs to.</p>
+    pub fn calibration_session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.calibration_session_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The calibration session ID that this evaluation belongs to.</p>
+    pub fn set_calibration_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.calibration_session_id = input;
+        self
+    }
+    /// <p>The calibration session ID that this evaluation belongs to.</p>
+    pub fn get_calibration_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.calibration_session_id
+    }
     /// <p>The status of the contact evaluation.</p>
     /// This field is required.
     pub fn status(mut self, input: crate::types::EvaluationStatus) -> Self {
@@ -162,6 +211,34 @@ impl EvaluationSummaryBuilder {
     /// <p>The status of the contact evaluation.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::EvaluationStatus> {
         &self.status
+    }
+    /// <p>Whether automated evaluation is enabled.</p>
+    pub fn auto_evaluation_enabled(mut self, input: bool) -> Self {
+        self.auto_evaluation_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Whether automated evaluation is enabled.</p>
+    pub fn set_auto_evaluation_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.auto_evaluation_enabled = input;
+        self
+    }
+    /// <p>Whether automated evaluation is enabled.</p>
+    pub fn get_auto_evaluation_enabled(&self) -> &::std::option::Option<bool> {
+        &self.auto_evaluation_enabled
+    }
+    /// <p>The status of the contact auto evaluation.</p>
+    pub fn auto_evaluation_status(mut self, input: crate::types::AutoEvaluationStatus) -> Self {
+        self.auto_evaluation_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The status of the contact auto evaluation.</p>
+    pub fn set_auto_evaluation_status(mut self, input: ::std::option::Option<crate::types::AutoEvaluationStatus>) -> Self {
+        self.auto_evaluation_status = input;
+        self
+    }
+    /// <p>The status of the contact auto evaluation.</p>
+    pub fn get_auto_evaluation_status(&self) -> &::std::option::Option<crate::types::AutoEvaluationStatus> {
+        &self.auto_evaluation_status
     }
     /// <p>The Amazon Resource Name (ARN) of the user who last updated the evaluation.</p>
     /// This field is required.
@@ -191,6 +268,34 @@ impl EvaluationSummaryBuilder {
     /// <p>The overall score of the contact evaluation.</p>
     pub fn get_score(&self) -> &::std::option::Option<crate::types::EvaluationScore> {
         &self.score
+    }
+    /// <p>Information related to evaluation acknowledgement.</p>
+    pub fn acknowledgement(mut self, input: crate::types::EvaluationAcknowledgementSummary) -> Self {
+        self.acknowledgement = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Information related to evaluation acknowledgement.</p>
+    pub fn set_acknowledgement(mut self, input: ::std::option::Option<crate::types::EvaluationAcknowledgementSummary>) -> Self {
+        self.acknowledgement = input;
+        self
+    }
+    /// <p>Information related to evaluation acknowledgement.</p>
+    pub fn get_acknowledgement(&self) -> &::std::option::Option<crate::types::EvaluationAcknowledgementSummary> {
+        &self.acknowledgement
+    }
+    /// <p>Type of the evaluation.</p>
+    pub fn evaluation_type(mut self, input: crate::types::EvaluationType) -> Self {
+        self.evaluation_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Type of the evaluation.</p>
+    pub fn set_evaluation_type(mut self, input: ::std::option::Option<crate::types::EvaluationType>) -> Self {
+        self.evaluation_type = input;
+        self
+    }
+    /// <p>Type of the evaluation.</p>
+    pub fn get_evaluation_type(&self) -> &::std::option::Option<crate::types::EvaluationType> {
+        &self.evaluation_type
     }
     /// <p>The timestamp for when the evaluation was created.</p>
     /// This field is required.
@@ -258,12 +363,15 @@ impl EvaluationSummaryBuilder {
                     "evaluation_form_id was not specified but it is required when building EvaluationSummary",
                 )
             })?,
+            calibration_session_id: self.calibration_session_id,
             status: self.status.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building EvaluationSummary",
                 )
             })?,
+            auto_evaluation_enabled: self.auto_evaluation_enabled.unwrap_or_default(),
+            auto_evaluation_status: self.auto_evaluation_status,
             evaluator_arn: self.evaluator_arn.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "evaluator_arn",
@@ -271,6 +379,8 @@ impl EvaluationSummaryBuilder {
                 )
             })?,
             score: self.score,
+            acknowledgement: self.acknowledgement,
+            evaluation_type: self.evaluation_type,
             created_time: self.created_time.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_time",

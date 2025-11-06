@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`creation_time(DateTime)`](crate::operation::create_restore_testing_selection::CreateRestoreTestingSelectionOutput::creation_time): <p>The time that the resource testing selection was created.</p>
     ///   - [`restore_testing_plan_arn(String)`](crate::operation::create_restore_testing_selection::CreateRestoreTestingSelectionOutput::restore_testing_plan_arn): <p>The ARN of the restore testing plan with which the restore testing selection is associated.</p>
     ///   - [`restore_testing_plan_name(String)`](crate::operation::create_restore_testing_selection::CreateRestoreTestingSelectionOutput::restore_testing_plan_name): <p>The name of the restore testing plan.</p> <p>The name cannot be changed after creation. The name consists of only alphanumeric characters and underscores. Maximum length is 50.</p>
-    ///   - [`restore_testing_selection_name(String)`](crate::operation::create_restore_testing_selection::CreateRestoreTestingSelectionOutput::restore_testing_selection_name): <p>The name of the restore testing selection for the related restore testing plan.</p>
+    ///   - [`restore_testing_selection_name(String)`](crate::operation::create_restore_testing_selection::CreateRestoreTestingSelectionOutput::restore_testing_selection_name): <p>The name of the restore testing selection for the related restore testing plan.</p> <p>The name cannot be changed after creation. The name consists of only alphanumeric characters and underscores. Maximum length is 50.</p>
     /// - On failure, responds with [`SdkError<CreateRestoreTestingSelectionError>`](crate::operation::create_restore_testing_selection::CreateRestoreTestingSelectionError)
     pub fn create_restore_testing_selection(
         &self,

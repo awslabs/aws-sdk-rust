@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum EvaluationFormNumericQuestionAutomation {
+    /// <p>A source of automation answer for numeric question.</p>
+    AnswerSource(crate::types::EvaluationFormQuestionAutomationAnswerSource),
     /// <p>The property value of the automation.</p>
     PropertyValue(crate::types::NumericQuestionPropertyValueAutomation),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
@@ -17,7 +19,19 @@ pub enum EvaluationFormNumericQuestionAutomation {
     Unknown,
 }
 impl EvaluationFormNumericQuestionAutomation {
-    #[allow(irrefutable_let_patterns)]
+    /// Tries to convert the enum instance into [`AnswerSource`](crate::types::EvaluationFormNumericQuestionAutomation::AnswerSource), extracting the inner [`EvaluationFormQuestionAutomationAnswerSource`](crate::types::EvaluationFormQuestionAutomationAnswerSource).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_answer_source(&self) -> ::std::result::Result<&crate::types::EvaluationFormQuestionAutomationAnswerSource, &Self> {
+        if let EvaluationFormNumericQuestionAutomation::AnswerSource(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`AnswerSource`](crate::types::EvaluationFormNumericQuestionAutomation::AnswerSource).
+    pub fn is_answer_source(&self) -> bool {
+        self.as_answer_source().is_ok()
+    }
     /// Tries to convert the enum instance into [`PropertyValue`](crate::types::EvaluationFormNumericQuestionAutomation::PropertyValue), extracting the inner [`NumericQuestionPropertyValueAutomation`](crate::types::NumericQuestionPropertyValueAutomation).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_property_value(&self) -> ::std::result::Result<&crate::types::NumericQuestionPropertyValueAutomation, &Self> {

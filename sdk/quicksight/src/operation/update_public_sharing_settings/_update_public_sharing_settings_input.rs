@@ -5,7 +5,7 @@
 pub struct UpdatePublicSharingSettingsInput {
     /// <p>The Amazon Web Services account ID associated with your Amazon Quick Sight subscription.</p>
     pub aws_account_id: ::std::option::Option<::std::string::String>,
-    /// <p>A Boolean value that indicates whether public sharing is turned on for an QuickSight account.</p>
+    /// <p>A Boolean value that indicates whether public sharing is turned on for an Quick Suite account.</p>
     pub public_sharing_enabled: ::std::option::Option<bool>,
 }
 impl UpdatePublicSharingSettingsInput {
@@ -13,7 +13,7 @@ impl UpdatePublicSharingSettingsInput {
     pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
-    /// <p>A Boolean value that indicates whether public sharing is turned on for an QuickSight account.</p>
+    /// <p>A Boolean value that indicates whether public sharing is turned on for an Quick Suite account.</p>
     pub fn public_sharing_enabled(&self) -> ::std::option::Option<bool> {
         self.public_sharing_enabled
     }
@@ -48,17 +48,17 @@ impl UpdatePublicSharingSettingsInputBuilder {
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.aws_account_id
     }
-    /// <p>A Boolean value that indicates whether public sharing is turned on for an QuickSight account.</p>
+    /// <p>A Boolean value that indicates whether public sharing is turned on for an Quick Suite account.</p>
     pub fn public_sharing_enabled(mut self, input: bool) -> Self {
         self.public_sharing_enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A Boolean value that indicates whether public sharing is turned on for an QuickSight account.</p>
+    /// <p>A Boolean value that indicates whether public sharing is turned on for an Quick Suite account.</p>
     pub fn set_public_sharing_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.public_sharing_enabled = input;
         self
     }
-    /// <p>A Boolean value that indicates whether public sharing is turned on for an QuickSight account.</p>
+    /// <p>A Boolean value that indicates whether public sharing is turned on for an Quick Suite account.</p>
     pub fn get_public_sharing_enabled(&self) -> &::std::option::Option<bool> {
         &self.public_sharing_enabled
     }

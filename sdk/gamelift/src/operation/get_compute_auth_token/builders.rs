@@ -22,6 +22,7 @@ impl crate::operation::get_compute_auth_token::builders::GetComputeAuthTokenInpu
 }
 /// Fluent builder constructing a request to `GetComputeAuthToken`.
 ///
+/// <p><b>This API works with the following fleet types:</b> EC2, Anywhere, Container</p>
 /// <p>Requests an authentication token from Amazon GameLift Servers for a compute resource in an Amazon GameLift Servers fleet. Game servers that are running on the compute use this token to communicate with the Amazon GameLift Servers service, such as when calling the Amazon GameLift Servers server SDK action <code>InitSDK()</code>. Authentication tokens are valid for a limited time span, so you need to request a fresh token before the current token expires.</p>
 /// <p><b>Request options</b></p>
 /// <ul>

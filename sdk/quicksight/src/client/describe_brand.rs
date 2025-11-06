@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`aws_account_id(impl Into<String>)`](crate::operation::describe_brand::builders::DescribeBrandFluentBuilder::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::operation::describe_brand::builders::DescribeBrandFluentBuilder::set_aws_account_id):<br>required: **true**<br><p>The ID of the Amazon Web Services account that owns the brand.</p><br>
-    ///   - [`brand_id(impl Into<String>)`](crate::operation::describe_brand::builders::DescribeBrandFluentBuilder::brand_id) / [`set_brand_id(Option<String>)`](crate::operation::describe_brand::builders::DescribeBrandFluentBuilder::set_brand_id):<br>required: **true**<br><p>The ID of the QuickSight brand.</p><br>
+    ///   - [`brand_id(impl Into<String>)`](crate::operation::describe_brand::builders::DescribeBrandFluentBuilder::brand_id) / [`set_brand_id(Option<String>)`](crate::operation::describe_brand::builders::DescribeBrandFluentBuilder::set_brand_id):<br>required: **true**<br><p>The ID of the Quick Suite brand.</p><br>
     ///   - [`version_id(impl Into<String>)`](crate::operation::describe_brand::builders::DescribeBrandFluentBuilder::version_id) / [`set_version_id(Option<String>)`](crate::operation::describe_brand::builders::DescribeBrandFluentBuilder::set_version_id):<br>required: **false**<br><p>The ID of the specific version. The default value is the latest version.</p><br>
     /// - On success, responds with [`DescribeBrandOutput`](crate::operation::describe_brand::DescribeBrandOutput) with field(s):
     ///   - [`request_id(Option<String>)`](crate::operation::describe_brand::DescribeBrandOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>

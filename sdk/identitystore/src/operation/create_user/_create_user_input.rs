@@ -7,9 +7,9 @@ pub struct CreateUserInput {
     pub identity_store_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique string used to identify the user. The length limit is 128 characters. This value can consist of letters, accented characters, symbols, numbers, and punctuation. This value is specified at the time the user is created and stored as an attribute of the user object in the identity store. <code>Administrator</code> and <code>AWSAdministrators</code> are reserved names and can't be used for users or groups.</p>
     pub user_name: ::std::option::Option<::std::string::String>,
-    /// <p>An object containing the name of the user.</p>
+    /// <p>An object containing the name of the user. When used in IAM Identity Center, this parameter is required.</p>
     pub name: ::std::option::Option<crate::types::Name>,
-    /// <p>A string containing the name of the user. This value is typically formatted for display when the user is referenced. For example, "John Doe."</p>
+    /// <p>A string containing the name of the user. This value is typically formatted for display when the user is referenced. For example, "John Doe." When used in IAM Identity Center, this parameter is required.</p>
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>A string containing an alternate name for the user.</p>
     pub nick_name: ::std::option::Option<::std::string::String>,
@@ -31,6 +31,12 @@ pub struct CreateUserInput {
     pub locale: ::std::option::Option<::std::string::String>,
     /// <p>A string containing the time zone of the user.</p>
     pub timezone: ::std::option::Option<::std::string::String>,
+    /// <p>A list of photos associated with the user. You can add up to 3 photos per user. Each photo can include a value, type, display name, and primary designation.</p>
+    pub photos: ::std::option::Option<::std::vec::Vec<crate::types::Photo>>,
+    /// <p>The user's personal website or blog URL. This field allows users to provide a link to their personal or professional website.</p>
+    pub website: ::std::option::Option<::std::string::String>,
+    /// <p>The user's birthdate in YYYY-MM-DD format. This field supports standard date format for storing personal information.</p>
+    pub birthdate: ::std::option::Option<::std::string::String>,
 }
 impl CreateUserInput {
     /// <p>The globally unique identifier for the identity store.</p>
@@ -41,11 +47,11 @@ impl CreateUserInput {
     pub fn user_name(&self) -> ::std::option::Option<&str> {
         self.user_name.as_deref()
     }
-    /// <p>An object containing the name of the user.</p>
+    /// <p>An object containing the name of the user. When used in IAM Identity Center, this parameter is required.</p>
     pub fn name(&self) -> ::std::option::Option<&crate::types::Name> {
         self.name.as_ref()
     }
-    /// <p>A string containing the name of the user. This value is typically formatted for display when the user is referenced. For example, "John Doe."</p>
+    /// <p>A string containing the name of the user. This value is typically formatted for display when the user is referenced. For example, "John Doe." When used in IAM Identity Center, this parameter is required.</p>
     pub fn display_name(&self) -> ::std::option::Option<&str> {
         self.display_name.as_deref()
     }
@@ -95,6 +101,20 @@ impl CreateUserInput {
     pub fn timezone(&self) -> ::std::option::Option<&str> {
         self.timezone.as_deref()
     }
+    /// <p>A list of photos associated with the user. You can add up to 3 photos per user. Each photo can include a value, type, display name, and primary designation.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.photos.is_none()`.
+    pub fn photos(&self) -> &[crate::types::Photo] {
+        self.photos.as_deref().unwrap_or_default()
+    }
+    /// <p>The user's personal website or blog URL. This field allows users to provide a link to their personal or professional website.</p>
+    pub fn website(&self) -> ::std::option::Option<&str> {
+        self.website.as_deref()
+    }
+    /// <p>The user's birthdate in YYYY-MM-DD format. This field supports standard date format for storing personal information.</p>
+    pub fn birthdate(&self) -> ::std::option::Option<&str> {
+        self.birthdate.as_deref()
+    }
 }
 impl ::std::fmt::Debug for CreateUserInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -113,6 +133,9 @@ impl ::std::fmt::Debug for CreateUserInput {
         formatter.field("preferred_language", &"*** Sensitive Data Redacted ***");
         formatter.field("locale", &"*** Sensitive Data Redacted ***");
         formatter.field("timezone", &"*** Sensitive Data Redacted ***");
+        formatter.field("photos", &self.photos);
+        formatter.field("website", &"*** Sensitive Data Redacted ***");
+        formatter.field("birthdate", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -141,6 +164,9 @@ pub struct CreateUserInputBuilder {
     pub(crate) preferred_language: ::std::option::Option<::std::string::String>,
     pub(crate) locale: ::std::option::Option<::std::string::String>,
     pub(crate) timezone: ::std::option::Option<::std::string::String>,
+    pub(crate) photos: ::std::option::Option<::std::vec::Vec<crate::types::Photo>>,
+    pub(crate) website: ::std::option::Option<::std::string::String>,
+    pub(crate) birthdate: ::std::option::Option<::std::string::String>,
 }
 impl CreateUserInputBuilder {
     /// <p>The globally unique identifier for the identity store.</p>
@@ -172,31 +198,31 @@ impl CreateUserInputBuilder {
     pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_name
     }
-    /// <p>An object containing the name of the user.</p>
+    /// <p>An object containing the name of the user. When used in IAM Identity Center, this parameter is required.</p>
     pub fn name(mut self, input: crate::types::Name) -> Self {
         self.name = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An object containing the name of the user.</p>
+    /// <p>An object containing the name of the user. When used in IAM Identity Center, this parameter is required.</p>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::Name>) -> Self {
         self.name = input;
         self
     }
-    /// <p>An object containing the name of the user.</p>
+    /// <p>An object containing the name of the user. When used in IAM Identity Center, this parameter is required.</p>
     pub fn get_name(&self) -> &::std::option::Option<crate::types::Name> {
         &self.name
     }
-    /// <p>A string containing the name of the user. This value is typically formatted for display when the user is referenced. For example, "John Doe."</p>
+    /// <p>A string containing the name of the user. This value is typically formatted for display when the user is referenced. For example, "John Doe." When used in IAM Identity Center, this parameter is required.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A string containing the name of the user. This value is typically formatted for display when the user is referenced. For example, "John Doe."</p>
+    /// <p>A string containing the name of the user. This value is typically formatted for display when the user is referenced. For example, "John Doe." When used in IAM Identity Center, this parameter is required.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.display_name = input;
         self
     }
-    /// <p>A string containing the name of the user. This value is typically formatted for display when the user is referenced. For example, "John Doe."</p>
+    /// <p>A string containing the name of the user. This value is typically formatted for display when the user is referenced. For example, "John Doe." When used in IAM Identity Center, this parameter is required.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.display_name
     }
@@ -358,6 +384,54 @@ impl CreateUserInputBuilder {
     pub fn get_timezone(&self) -> &::std::option::Option<::std::string::String> {
         &self.timezone
     }
+    /// Appends an item to `photos`.
+    ///
+    /// To override the contents of this collection use [`set_photos`](Self::set_photos).
+    ///
+    /// <p>A list of photos associated with the user. You can add up to 3 photos per user. Each photo can include a value, type, display name, and primary designation.</p>
+    pub fn photos(mut self, input: crate::types::Photo) -> Self {
+        let mut v = self.photos.unwrap_or_default();
+        v.push(input);
+        self.photos = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of photos associated with the user. You can add up to 3 photos per user. Each photo can include a value, type, display name, and primary designation.</p>
+    pub fn set_photos(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Photo>>) -> Self {
+        self.photos = input;
+        self
+    }
+    /// <p>A list of photos associated with the user. You can add up to 3 photos per user. Each photo can include a value, type, display name, and primary designation.</p>
+    pub fn get_photos(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Photo>> {
+        &self.photos
+    }
+    /// <p>The user's personal website or blog URL. This field allows users to provide a link to their personal or professional website.</p>
+    pub fn website(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.website = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The user's personal website or blog URL. This field allows users to provide a link to their personal or professional website.</p>
+    pub fn set_website(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.website = input;
+        self
+    }
+    /// <p>The user's personal website or blog URL. This field allows users to provide a link to their personal or professional website.</p>
+    pub fn get_website(&self) -> &::std::option::Option<::std::string::String> {
+        &self.website
+    }
+    /// <p>The user's birthdate in YYYY-MM-DD format. This field supports standard date format for storing personal information.</p>
+    pub fn birthdate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.birthdate = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The user's birthdate in YYYY-MM-DD format. This field supports standard date format for storing personal information.</p>
+    pub fn set_birthdate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.birthdate = input;
+        self
+    }
+    /// <p>The user's birthdate in YYYY-MM-DD format. This field supports standard date format for storing personal information.</p>
+    pub fn get_birthdate(&self) -> &::std::option::Option<::std::string::String> {
+        &self.birthdate
+    }
     /// Consumes the builder and constructs a [`CreateUserInput`](crate::operation::create_user::CreateUserInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_user::CreateUserInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_user::CreateUserInput {
@@ -375,6 +449,9 @@ impl CreateUserInputBuilder {
             preferred_language: self.preferred_language,
             locale: self.locale,
             timezone: self.timezone,
+            photos: self.photos,
+            website: self.website,
+            birthdate: self.birthdate,
         })
     }
 }
@@ -395,6 +472,9 @@ impl ::std::fmt::Debug for CreateUserInputBuilder {
         formatter.field("preferred_language", &"*** Sensitive Data Redacted ***");
         formatter.field("locale", &"*** Sensitive Data Redacted ***");
         formatter.field("timezone", &"*** Sensitive Data Redacted ***");
+        formatter.field("photos", &self.photos);
+        formatter.field("website", &"*** Sensitive Data Redacted ***");
+        formatter.field("birthdate", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

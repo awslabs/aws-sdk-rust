@@ -22,6 +22,7 @@ impl crate::operation::update_script::builders::UpdateScriptInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateScript`.
 ///
+/// <p><b>This API works with the following fleet types:</b> EC2</p>
 /// <p>Updates Realtime script metadata and content.</p>
 /// <p>To update script metadata, specify the script ID and provide updated name and/or version values.</p>
 /// <p>To update script content, provide an updated zip file by pointing to either a local file or an Amazon S3 bucket location. You can use either method regardless of how the original script was uploaded. Use the <i>Version</i> parameter to track updates to the script.</p>

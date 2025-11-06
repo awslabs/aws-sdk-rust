@@ -34,6 +34,8 @@ pub struct BackupVaultListMember {
     /// <p>If you applied Vault Lock to your vault without specifying a lock date, you can change your Vault Lock settings, or delete Vault Lock from the vault entirely, at any time.</p>
     /// <p>This value is in Unix format, Coordinated Universal Time (UTC), and accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub lock_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The type of encryption key used for the backup vault. Valid values are CUSTOMER_MANAGED_KMS_KEY for customer-managed keys or Amazon Web Services_OWNED_KMS_KEY for Amazon Web Services-owned keys.</p>
+    pub encryption_key_type: ::std::option::Option<crate::types::EncryptionKeyType>,
 }
 impl BackupVaultListMember {
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created.</p>
@@ -90,6 +92,10 @@ impl BackupVaultListMember {
     pub fn lock_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.lock_date.as_ref()
     }
+    /// <p>The type of encryption key used for the backup vault. Valid values are CUSTOMER_MANAGED_KMS_KEY for customer-managed keys or Amazon Web Services_OWNED_KMS_KEY for Amazon Web Services-owned keys.</p>
+    pub fn encryption_key_type(&self) -> ::std::option::Option<&crate::types::EncryptionKeyType> {
+        self.encryption_key_type.as_ref()
+    }
 }
 impl BackupVaultListMember {
     /// Creates a new builder-style object to manufacture [`BackupVaultListMember`](crate::types::BackupVaultListMember).
@@ -114,6 +120,7 @@ pub struct BackupVaultListMemberBuilder {
     pub(crate) min_retention_days: ::std::option::Option<i64>,
     pub(crate) max_retention_days: ::std::option::Option<i64>,
     pub(crate) lock_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) encryption_key_type: ::std::option::Option<crate::types::EncryptionKeyType>,
 }
 impl BackupVaultListMemberBuilder {
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created.</p>
@@ -302,6 +309,20 @@ impl BackupVaultListMemberBuilder {
     pub fn get_lock_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.lock_date
     }
+    /// <p>The type of encryption key used for the backup vault. Valid values are CUSTOMER_MANAGED_KMS_KEY for customer-managed keys or Amazon Web Services_OWNED_KMS_KEY for Amazon Web Services-owned keys.</p>
+    pub fn encryption_key_type(mut self, input: crate::types::EncryptionKeyType) -> Self {
+        self.encryption_key_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of encryption key used for the backup vault. Valid values are CUSTOMER_MANAGED_KMS_KEY for customer-managed keys or Amazon Web Services_OWNED_KMS_KEY for Amazon Web Services-owned keys.</p>
+    pub fn set_encryption_key_type(mut self, input: ::std::option::Option<crate::types::EncryptionKeyType>) -> Self {
+        self.encryption_key_type = input;
+        self
+    }
+    /// <p>The type of encryption key used for the backup vault. Valid values are CUSTOMER_MANAGED_KMS_KEY for customer-managed keys or Amazon Web Services_OWNED_KMS_KEY for Amazon Web Services-owned keys.</p>
+    pub fn get_encryption_key_type(&self) -> &::std::option::Option<crate::types::EncryptionKeyType> {
+        &self.encryption_key_type
+    }
     /// Consumes the builder and constructs a [`BackupVaultListMember`](crate::types::BackupVaultListMember).
     pub fn build(self) -> crate::types::BackupVaultListMember {
         crate::types::BackupVaultListMember {
@@ -317,6 +338,7 @@ impl BackupVaultListMemberBuilder {
             min_retention_days: self.min_retention_days,
             max_retention_days: self.max_retention_days,
             lock_date: self.lock_date,
+            encryption_key_type: self.encryption_key_type,
         }
     }
 }

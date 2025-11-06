@@ -12,5 +12,15 @@ pub fn ser_create_table_bucket_input_input(
     if let Some(var_3) = &input.name {
         object.key("name").string(var_3.as_str());
     }
+    if let Some(var_4) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("tags").start_object();
+        for (key_6, value_7) in var_4 {
+            {
+                object_5.key(key_6.as_str()).string(value_7.as_str());
+            }
+        }
+        object_5.finish();
+    }
     Ok(())
 }

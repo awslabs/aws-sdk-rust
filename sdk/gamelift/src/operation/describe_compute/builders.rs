@@ -22,6 +22,7 @@ impl crate::operation::describe_compute::builders::DescribeComputeInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeCompute`.
 ///
+/// <p><b>This API works with the following fleet types:</b> EC2, Anywhere, Container</p>
 /// <p>Retrieves properties for a specific compute resource in an Amazon GameLift Servers fleet. You can list all computes in a fleet by calling <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListCompute.html">ListCompute</a>.</p>
 /// <p><b>Request options</b></p>
 /// <p>Provide the fleet ID and compute name. The compute name varies depending on the type of fleet.</p>

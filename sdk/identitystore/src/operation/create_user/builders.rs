@@ -136,31 +136,31 @@ impl CreateUserFluentBuilder {
     pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_user_name()
     }
-    /// <p>An object containing the name of the user.</p>
+    /// <p>An object containing the name of the user. When used in IAM Identity Center, this parameter is required.</p>
     pub fn name(mut self, input: crate::types::Name) -> Self {
         self.inner = self.inner.name(input);
         self
     }
-    /// <p>An object containing the name of the user.</p>
+    /// <p>An object containing the name of the user. When used in IAM Identity Center, this parameter is required.</p>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::Name>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>An object containing the name of the user.</p>
+    /// <p>An object containing the name of the user. When used in IAM Identity Center, this parameter is required.</p>
     pub fn get_name(&self) -> &::std::option::Option<crate::types::Name> {
         self.inner.get_name()
     }
-    /// <p>A string containing the name of the user. This value is typically formatted for display when the user is referenced. For example, "John Doe."</p>
+    /// <p>A string containing the name of the user. This value is typically formatted for display when the user is referenced. For example, "John Doe." When used in IAM Identity Center, this parameter is required.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.display_name(input.into());
         self
     }
-    /// <p>A string containing the name of the user. This value is typically formatted for display when the user is referenced. For example, "John Doe."</p>
+    /// <p>A string containing the name of the user. This value is typically formatted for display when the user is referenced. For example, "John Doe." When used in IAM Identity Center, this parameter is required.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_display_name(input);
         self
     }
-    /// <p>A string containing the name of the user. This value is typically formatted for display when the user is referenced. For example, "John Doe."</p>
+    /// <p>A string containing the name of the user. This value is typically formatted for display when the user is referenced. For example, "John Doe." When used in IAM Identity Center, this parameter is required.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_display_name()
     }
@@ -318,5 +318,52 @@ impl CreateUserFluentBuilder {
     /// <p>A string containing the time zone of the user.</p>
     pub fn get_timezone(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_timezone()
+    }
+    ///
+    /// Appends an item to `Photos`.
+    ///
+    /// To override the contents of this collection use [`set_photos`](Self::set_photos).
+    ///
+    /// <p>A list of photos associated with the user. You can add up to 3 photos per user. Each photo can include a value, type, display name, and primary designation.</p>
+    pub fn photos(mut self, input: crate::types::Photo) -> Self {
+        self.inner = self.inner.photos(input);
+        self
+    }
+    /// <p>A list of photos associated with the user. You can add up to 3 photos per user. Each photo can include a value, type, display name, and primary designation.</p>
+    pub fn set_photos(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Photo>>) -> Self {
+        self.inner = self.inner.set_photos(input);
+        self
+    }
+    /// <p>A list of photos associated with the user. You can add up to 3 photos per user. Each photo can include a value, type, display name, and primary designation.</p>
+    pub fn get_photos(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Photo>> {
+        self.inner.get_photos()
+    }
+    /// <p>The user's personal website or blog URL. This field allows users to provide a link to their personal or professional website.</p>
+    pub fn website(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.website(input.into());
+        self
+    }
+    /// <p>The user's personal website or blog URL. This field allows users to provide a link to their personal or professional website.</p>
+    pub fn set_website(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_website(input);
+        self
+    }
+    /// <p>The user's personal website or blog URL. This field allows users to provide a link to their personal or professional website.</p>
+    pub fn get_website(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_website()
+    }
+    /// <p>The user's birthdate in YYYY-MM-DD format. This field supports standard date format for storing personal information.</p>
+    pub fn birthdate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.birthdate(input.into());
+        self
+    }
+    /// <p>The user's birthdate in YYYY-MM-DD format. This field supports standard date format for storing personal information.</p>
+    pub fn set_birthdate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_birthdate(input);
+        self
+    }
+    /// <p>The user's birthdate in YYYY-MM-DD format. This field supports standard date format for storing personal information.</p>
+    pub fn get_birthdate(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_birthdate()
     }
 }

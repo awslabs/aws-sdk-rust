@@ -10,6 +10,10 @@ impl super::Client {
     ///   - [`membership_id(String)`](crate::operation::describe_group_membership::DescribeGroupMembershipOutput::membership_id): <p>The identifier for a <code>GroupMembership</code> in an identity store.</p>
     ///   - [`group_id(String)`](crate::operation::describe_group_membership::DescribeGroupMembershipOutput::group_id): <p>The identifier for a group in the identity store.</p>
     ///   - [`member_id(Option<MemberId>)`](crate::operation::describe_group_membership::DescribeGroupMembershipOutput::member_id): <p>An object containing the identifier of a group member.</p>
+    ///   - [`created_at(Option<DateTime>)`](crate::operation::describe_group_membership::DescribeGroupMembershipOutput::created_at): <p>The date and time the group membership was created.</p>
+    ///   - [`updated_at(Option<DateTime>)`](crate::operation::describe_group_membership::DescribeGroupMembershipOutput::updated_at): <p>The date and time the group membership was last updated.</p>
+    ///   - [`created_by(Option<String>)`](crate::operation::describe_group_membership::DescribeGroupMembershipOutput::created_by): <p>The identifier of the user or system that created the group membership.</p>
+    ///   - [`updated_by(Option<String>)`](crate::operation::describe_group_membership::DescribeGroupMembershipOutput::updated_by): <p>The identifier of the user or system that last updated the group membership.</p>
     /// - On failure, responds with [`SdkError<DescribeGroupMembershipError>`](crate::operation::describe_group_membership::DescribeGroupMembershipError)
     pub fn describe_group_membership(&self) -> crate::operation::describe_group_membership::builders::DescribeGroupMembershipFluentBuilder {
         crate::operation::describe_group_membership::builders::DescribeGroupMembershipFluentBuilder::new(self.handle.clone())

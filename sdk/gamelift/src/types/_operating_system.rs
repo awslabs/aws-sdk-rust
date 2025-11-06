@@ -17,6 +17,7 @@
 ///     OperatingSystem::AmazonLinux2023 => { /* ... */ },
 ///     OperatingSystem::Windows2012 => { /* ... */ },
 ///     OperatingSystem::Windows2016 => { /* ... */ },
+///     OperatingSystem::Windows2022 => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -55,6 +56,8 @@ pub enum OperatingSystem {
     Windows2012,
     #[allow(missing_docs)] // documentation missing in model
     Windows2016,
+    #[allow(missing_docs)] // documentation missing in model
+    Windows2022,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -67,6 +70,7 @@ impl ::std::convert::From<&str> for OperatingSystem {
             "AMAZON_LINUX_2023" => OperatingSystem::AmazonLinux2023,
             "WINDOWS_2012" => OperatingSystem::Windows2012,
             "WINDOWS_2016" => OperatingSystem::Windows2016,
+            "WINDOWS_2022" => OperatingSystem::Windows2022,
             other => OperatingSystem::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -87,12 +91,20 @@ impl OperatingSystem {
             OperatingSystem::AmazonLinux2023 => "AMAZON_LINUX_2023",
             OperatingSystem::Windows2012 => "WINDOWS_2012",
             OperatingSystem::Windows2016 => "WINDOWS_2016",
+            OperatingSystem::Windows2022 => "WINDOWS_2022",
             OperatingSystem::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AMAZON_LINUX", "AMAZON_LINUX_2", "AMAZON_LINUX_2023", "WINDOWS_2012", "WINDOWS_2016"]
+        &[
+            "AMAZON_LINUX",
+            "AMAZON_LINUX_2",
+            "AMAZON_LINUX_2023",
+            "WINDOWS_2012",
+            "WINDOWS_2016",
+            "WINDOWS_2022",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for OperatingSystem {
@@ -120,6 +132,7 @@ impl ::std::fmt::Display for OperatingSystem {
             OperatingSystem::AmazonLinux2023 => write!(f, "AMAZON_LINUX_2023"),
             OperatingSystem::Windows2012 => write!(f, "WINDOWS_2012"),
             OperatingSystem::Windows2016 => write!(f, "WINDOWS_2016"),
+            OperatingSystem::Windows2022 => write!(f, "WINDOWS_2022"),
             OperatingSystem::Unknown(value) => write!(f, "{value}"),
         }
     }

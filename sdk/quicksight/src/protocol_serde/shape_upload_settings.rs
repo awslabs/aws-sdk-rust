@@ -21,6 +21,9 @@ pub fn ser_upload_settings(
     if let Some(var_5) = &input.delimiter {
         object.key("Delimiter").string(var_5.as_str());
     }
+    if let Some(var_6) = &input.custom_cell_address_range {
+        object.key("CustomCellAddressRange").string(var_6.as_str());
+    }
     Ok(())
 }
 
@@ -65,6 +68,13 @@ where
                         }
                         "Delimiter" => {
                             builder = builder.set_delimiter(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "CustomCellAddressRange" => {
+                            builder = builder.set_custom_cell_address_range(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,

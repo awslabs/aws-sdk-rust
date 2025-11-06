@@ -15,6 +15,8 @@ pub struct UpdateClusterInput {
     pub node_recovery: ::std::option::Option<crate::types::ClusterNodeRecovery>,
     /// <p>Specify the names of the instance groups to delete. Use a single <code>,</code> as the separator between multiple names.</p>
     pub instance_groups_to_delete: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Determines how instance provisioning is handled during cluster operations. In <code>Continuous</code> mode, the cluster provisions available instances incrementally and retries until the target count is reached. The cluster becomes operational once cluster-level resources are ready. Use <code>CurrentCount</code> and <code>TargetCount</code> in <code>DescribeCluster</code> to track provisioning progress.</p>
+    pub node_provisioning_mode: ::std::option::Option<crate::types::ClusterNodeProvisioningMode>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role that HyperPod assumes for cluster autoscaling operations. Cannot be updated while autoscaling is enabled.</p>
     pub cluster_role: ::std::option::Option<::std::string::String>,
     /// <p>Updates the autoscaling configuration for the cluster. Use to enable or disable automatic node scaling.</p>
@@ -51,6 +53,10 @@ impl UpdateClusterInput {
     pub fn instance_groups_to_delete(&self) -> &[::std::string::String] {
         self.instance_groups_to_delete.as_deref().unwrap_or_default()
     }
+    /// <p>Determines how instance provisioning is handled during cluster operations. In <code>Continuous</code> mode, the cluster provisions available instances incrementally and retries until the target count is reached. The cluster becomes operational once cluster-level resources are ready. Use <code>CurrentCount</code> and <code>TargetCount</code> in <code>DescribeCluster</code> to track provisioning progress.</p>
+    pub fn node_provisioning_mode(&self) -> ::std::option::Option<&crate::types::ClusterNodeProvisioningMode> {
+        self.node_provisioning_mode.as_ref()
+    }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that HyperPod assumes for cluster autoscaling operations. Cannot be updated while autoscaling is enabled.</p>
     pub fn cluster_role(&self) -> ::std::option::Option<&str> {
         self.cluster_role.as_deref()
@@ -77,6 +83,7 @@ pub struct UpdateClusterInputBuilder {
     pub(crate) tiered_storage_config: ::std::option::Option<crate::types::ClusterTieredStorageConfig>,
     pub(crate) node_recovery: ::std::option::Option<crate::types::ClusterNodeRecovery>,
     pub(crate) instance_groups_to_delete: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) node_provisioning_mode: ::std::option::Option<crate::types::ClusterNodeProvisioningMode>,
     pub(crate) cluster_role: ::std::option::Option<::std::string::String>,
     pub(crate) auto_scaling: ::std::option::Option<crate::types::ClusterAutoScalingConfig>,
 }
@@ -189,6 +196,20 @@ impl UpdateClusterInputBuilder {
     pub fn get_instance_groups_to_delete(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.instance_groups_to_delete
     }
+    /// <p>Determines how instance provisioning is handled during cluster operations. In <code>Continuous</code> mode, the cluster provisions available instances incrementally and retries until the target count is reached. The cluster becomes operational once cluster-level resources are ready. Use <code>CurrentCount</code> and <code>TargetCount</code> in <code>DescribeCluster</code> to track provisioning progress.</p>
+    pub fn node_provisioning_mode(mut self, input: crate::types::ClusterNodeProvisioningMode) -> Self {
+        self.node_provisioning_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Determines how instance provisioning is handled during cluster operations. In <code>Continuous</code> mode, the cluster provisions available instances incrementally and retries until the target count is reached. The cluster becomes operational once cluster-level resources are ready. Use <code>CurrentCount</code> and <code>TargetCount</code> in <code>DescribeCluster</code> to track provisioning progress.</p>
+    pub fn set_node_provisioning_mode(mut self, input: ::std::option::Option<crate::types::ClusterNodeProvisioningMode>) -> Self {
+        self.node_provisioning_mode = input;
+        self
+    }
+    /// <p>Determines how instance provisioning is handled during cluster operations. In <code>Continuous</code> mode, the cluster provisions available instances incrementally and retries until the target count is reached. The cluster becomes operational once cluster-level resources are ready. Use <code>CurrentCount</code> and <code>TargetCount</code> in <code>DescribeCluster</code> to track provisioning progress.</p>
+    pub fn get_node_provisioning_mode(&self) -> &::std::option::Option<crate::types::ClusterNodeProvisioningMode> {
+        &self.node_provisioning_mode
+    }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that HyperPod assumes for cluster autoscaling operations. Cannot be updated while autoscaling is enabled.</p>
     pub fn cluster_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_role = ::std::option::Option::Some(input.into());
@@ -228,6 +249,7 @@ impl UpdateClusterInputBuilder {
             tiered_storage_config: self.tiered_storage_config,
             node_recovery: self.node_recovery,
             instance_groups_to_delete: self.instance_groups_to_delete,
+            node_provisioning_mode: self.node_provisioning_mode,
             cluster_role: self.cluster_role,
             auto_scaling: self.auto_scaling,
         })

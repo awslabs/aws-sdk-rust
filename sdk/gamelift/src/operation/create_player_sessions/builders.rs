@@ -22,6 +22,7 @@ impl crate::operation::create_player_sessions::builders::CreatePlayerSessionsInp
 }
 /// Fluent builder constructing a request to `CreatePlayerSessions`.
 ///
+/// <p><b>This API works with the following fleet types:</b> EC2, Anywhere, Container</p>
 /// <p>Reserves open slots in a game session for a group of players. New player sessions can be created in any game session with an open slot that is in <code>ACTIVE</code> status and has a player creation policy of <code>ACCEPT_ALL</code>. To add a single player to a game session, use <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreatePlayerSession.html">CreatePlayerSession</a></p>
 /// <p>To create player sessions, specify a game session ID and a list of player IDs. Optionally, provide a set of player data for each player ID.</p>
 /// <p>If successful, a slot is reserved in the game session for each player, and new <code>PlayerSession</code> objects are returned with player session IDs. Each player references their player session ID when sending a connection request to the game session, and the game server can use it to validate the player reservation with the Amazon GameLift Servers service. Player sessions cannot be updated.</p>

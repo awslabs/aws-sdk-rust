@@ -16,7 +16,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccountInfo {
-    /// <p>The account name that you provided for the Amazon Quick Sight subscription in your Amazon Web Services account. You create this name when you sign up for QuickSight. It's unique over all of Amazon Web Services, and it appears only when users sign in.</p>
+    /// <p>The account name that you provided for the Amazon Quick Sight subscription in your Amazon Web Services account. You create this name when you sign up for Quick Suite. It's unique over all of Amazon Web Services, and it appears only when users sign in.</p>
     pub account_name: ::std::option::Option<::std::string::String>,
     /// <p>The edition of your Quick Sight account.</p>
     pub edition: ::std::option::Option<crate::types::Edition>,
@@ -30,7 +30,7 @@ pub struct AccountInfo {
     pub iam_identity_center_instance_arn: ::std::option::Option<::std::string::String>,
 }
 impl AccountInfo {
-    /// <p>The account name that you provided for the Amazon Quick Sight subscription in your Amazon Web Services account. You create this name when you sign up for QuickSight. It's unique over all of Amazon Web Services, and it appears only when users sign in.</p>
+    /// <p>The account name that you provided for the Amazon Quick Sight subscription in your Amazon Web Services account. You create this name when you sign up for Quick Suite. It's unique over all of Amazon Web Services, and it appears only when users sign in.</p>
     pub fn account_name(&self) -> ::std::option::Option<&str> {
         self.account_name.as_deref()
     }
@@ -74,17 +74,17 @@ pub struct AccountInfoBuilder {
     pub(crate) iam_identity_center_instance_arn: ::std::option::Option<::std::string::String>,
 }
 impl AccountInfoBuilder {
-    /// <p>The account name that you provided for the Amazon Quick Sight subscription in your Amazon Web Services account. You create this name when you sign up for QuickSight. It's unique over all of Amazon Web Services, and it appears only when users sign in.</p>
+    /// <p>The account name that you provided for the Amazon Quick Sight subscription in your Amazon Web Services account. You create this name when you sign up for Quick Suite. It's unique over all of Amazon Web Services, and it appears only when users sign in.</p>
     pub fn account_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The account name that you provided for the Amazon Quick Sight subscription in your Amazon Web Services account. You create this name when you sign up for QuickSight. It's unique over all of Amazon Web Services, and it appears only when users sign in.</p>
+    /// <p>The account name that you provided for the Amazon Quick Sight subscription in your Amazon Web Services account. You create this name when you sign up for Quick Suite. It's unique over all of Amazon Web Services, and it appears only when users sign in.</p>
     pub fn set_account_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_name = input;
         self
     }
-    /// <p>The account name that you provided for the Amazon Quick Sight subscription in your Amazon Web Services account. You create this name when you sign up for QuickSight. It's unique over all of Amazon Web Services, and it appears only when users sign in.</p>
+    /// <p>The account name that you provided for the Amazon Quick Sight subscription in your Amazon Web Services account. You create this name when you sign up for Quick Suite. It's unique over all of Amazon Web Services, and it appears only when users sign in.</p>
     pub fn get_account_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_name
     }

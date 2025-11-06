@@ -45,6 +45,23 @@ pub fn de_create_index_http_error(
             };
             tmp
         }),
+        "ServiceQuotaExceededException" => crate::operation::create_index::CreateIndexError::ServiceQuotaExceededException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ServiceQuotaExceededExceptionBuilder::default();
+                output = crate::protocol_serde::shape_service_quota_exceeded_exception::de_service_quota_exceeded_exception_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::create_index::CreateIndexError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::service_quota_exceeded_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_index::CreateIndexError::unhandled)?
+            };
+            tmp
+        }),
         "ServiceUnavailableException" => crate::operation::create_index::CreateIndexError::ServiceUnavailableException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -88,18 +105,15 @@ pub fn de_create_index_http_error(
             };
             tmp
         }),
-        "ServiceQuotaExceededException" => crate::operation::create_index::CreateIndexError::ServiceQuotaExceededException({
+        "RequestTimeoutException" => crate::operation::create_index::CreateIndexError::RequestTimeoutException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ServiceQuotaExceededExceptionBuilder::default();
-                output = crate::protocol_serde::shape_service_quota_exceeded_exception::de_service_quota_exceeded_exception_json_err(
-                    _response_body,
-                    output,
-                )
-                .map_err(crate::operation::create_index::CreateIndexError::unhandled)?;
+                let mut output = crate::types::error::builders::RequestTimeoutExceptionBuilder::default();
+                output = crate::protocol_serde::shape_request_timeout_exception::de_request_timeout_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::create_index::CreateIndexError::unhandled)?;
                 let output = output.meta(generic);
-                crate::serde_util::service_quota_exceeded_exception_correct_errors(output)
+                crate::serde_util::request_timeout_exception_correct_errors(output)
                     .build()
                     .map_err(crate::operation::create_index::CreateIndexError::unhandled)?
             };
@@ -146,8 +160,10 @@ pub fn de_create_index_http_response(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::create_index::builders::CreateIndexOutputBuilder::default();
+        output = crate::protocol_serde::shape_create_index::de_create_index(_response_body, output)
+            .map_err(crate::operation::create_index::CreateIndexError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::create_index_output_output_correct_errors(output).build()
     })
 }
 
@@ -159,4 +175,40 @@ pub fn ser_create_index_input(
     crate::protocol_serde::shape_create_index_input::ser_create_index_input_input(&mut object, input)?;
     object.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
+}
+
+pub(crate) fn de_create_index(
+    value: &[u8],
+    mut builder: crate::operation::create_index::builders::CreateIndexOutputBuilder,
+) -> ::std::result::Result<crate::operation::create_index::builders::CreateIndexOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>
+{
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let tokens = &mut tokens_owned;
+    ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    loop {
+        match tokens.next().transpose()? {
+            Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "indexArn" => {
+                    builder = builder.set_index_arn(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+            },
+            other => {
+                return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                    "expected object key or end object, found: {other:?}"
+                )))
+            }
+        }
+    }
+    if tokens.next().is_some() {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "found more JSON tokens after completing parsing",
+        ));
+    }
+    Ok(builder)
 }

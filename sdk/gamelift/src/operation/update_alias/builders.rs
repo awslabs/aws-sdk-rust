@@ -22,7 +22,9 @@ impl crate::operation::update_alias::builders::UpdateAliasInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateAlias`.
 ///
-/// <p>Updates properties for an alias. Specify the unique identifier of the alias to be updated and the new property values. When reassigning an alias to a new fleet, provide an updated routing strategy. If successful, the updated alias record is returned.</p>
+/// <p><b>This API works with the following fleet types:</b> EC2, Anywhere, Container</p>
+/// <p>Updates properties for an alias. Specify the unique identifier of the alias to be updated and the new property values.</p>
+/// <p>When reassigning an alias to a new fleet, provide an updated routing strategy. If successful, the updated alias record is returned.</p>
 /// <p><b>Related actions</b></p>
 /// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a></p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

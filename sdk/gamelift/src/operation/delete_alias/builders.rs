@@ -22,6 +22,7 @@ impl crate::operation::delete_alias::builders::DeleteAliasInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteAlias`.
 ///
+/// <p><b>This API works with the following fleet types:</b> EC2, Anywhere, Container</p>
 /// <p>Deletes an alias. This operation removes all record of the alias. Game clients attempting to access a server process using the deleted alias receive an error. To delete an alias, specify the alias ID to be deleted.</p>
 /// <p><b>Related actions</b></p>
 /// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a></p>

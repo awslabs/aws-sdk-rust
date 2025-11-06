@@ -51,14 +51,17 @@ pub fn ser_update_cluster_input_input(
         }
         array_14.finish();
     }
-    if let Some(var_16) = &input.cluster_role {
-        object.key("ClusterRole").string(var_16.as_str());
+    if let Some(var_16) = &input.node_provisioning_mode {
+        object.key("NodeProvisioningMode").string(var_16.as_str());
     }
-    if let Some(var_17) = &input.auto_scaling {
+    if let Some(var_17) = &input.cluster_role {
+        object.key("ClusterRole").string(var_17.as_str());
+    }
+    if let Some(var_18) = &input.auto_scaling {
         #[allow(unused_mut)]
-        let mut object_18 = object.key("AutoScaling").start_object();
-        crate::protocol_serde::shape_cluster_auto_scaling_config::ser_cluster_auto_scaling_config(&mut object_18, var_17)?;
-        object_18.finish();
+        let mut object_19 = object.key("AutoScaling").start_object();
+        crate::protocol_serde::shape_cluster_auto_scaling_config::ser_cluster_auto_scaling_config(&mut object_19, var_18)?;
+        object_19.finish();
     }
     Ok(())
 }

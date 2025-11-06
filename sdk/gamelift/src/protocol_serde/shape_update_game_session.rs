@@ -96,6 +96,21 @@ pub fn de_update_game_session_http_error(
             }
             tmp
         }),
+        "NotReadyException" => crate::operation::update_game_session::UpdateGameSessionError::NotReadyException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::NotReadyExceptionBuilder::default();
+                output = crate::protocol_serde::shape_not_ready_exception::de_not_ready_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::update_game_session::UpdateGameSessionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "UnauthorizedException" => crate::operation::update_game_session::UpdateGameSessionError::UnauthorizedException({
             #[allow(unused_mut)]
             let mut tmp = {

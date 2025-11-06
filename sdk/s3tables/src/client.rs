@@ -209,6 +209,8 @@ mod list_table_buckets;
 
 mod list_tables;
 
+mod list_tags_for_resource;
+
 mod put_table_bucket_encryption;
 
 mod put_table_bucket_maintenance_configuration;
@@ -220,5 +222,9 @@ mod put_table_maintenance_configuration;
 mod put_table_policy;
 
 mod rename_table;
+
+mod tag_resource;
+
+mod untag_resource;
 
 mod update_table_metadata_location;

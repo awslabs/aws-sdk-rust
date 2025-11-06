@@ -8,6 +8,8 @@ pub struct ResourceTypeDetails {
     pub total_active_public: ::std::option::Option<i32>,
     /// <p>The total number of active cross-account findings for the resource type.</p>
     pub total_active_cross_account: ::std::option::Option<i32>,
+    /// <p>The total number of active errors for the resource type.</p>
+    pub total_active_errors: ::std::option::Option<i32>,
 }
 impl ResourceTypeDetails {
     /// <p>The total number of active public findings for the resource type.</p>
@@ -17,6 +19,10 @@ impl ResourceTypeDetails {
     /// <p>The total number of active cross-account findings for the resource type.</p>
     pub fn total_active_cross_account(&self) -> ::std::option::Option<i32> {
         self.total_active_cross_account
+    }
+    /// <p>The total number of active errors for the resource type.</p>
+    pub fn total_active_errors(&self) -> ::std::option::Option<i32> {
+        self.total_active_errors
     }
 }
 impl ResourceTypeDetails {
@@ -32,6 +38,7 @@ impl ResourceTypeDetails {
 pub struct ResourceTypeDetailsBuilder {
     pub(crate) total_active_public: ::std::option::Option<i32>,
     pub(crate) total_active_cross_account: ::std::option::Option<i32>,
+    pub(crate) total_active_errors: ::std::option::Option<i32>,
 }
 impl ResourceTypeDetailsBuilder {
     /// <p>The total number of active public findings for the resource type.</p>
@@ -62,11 +69,26 @@ impl ResourceTypeDetailsBuilder {
     pub fn get_total_active_cross_account(&self) -> &::std::option::Option<i32> {
         &self.total_active_cross_account
     }
+    /// <p>The total number of active errors for the resource type.</p>
+    pub fn total_active_errors(mut self, input: i32) -> Self {
+        self.total_active_errors = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The total number of active errors for the resource type.</p>
+    pub fn set_total_active_errors(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.total_active_errors = input;
+        self
+    }
+    /// <p>The total number of active errors for the resource type.</p>
+    pub fn get_total_active_errors(&self) -> &::std::option::Option<i32> {
+        &self.total_active_errors
+    }
     /// Consumes the builder and constructs a [`ResourceTypeDetails`](crate::types::ResourceTypeDetails).
     pub fn build(self) -> crate::types::ResourceTypeDetails {
         crate::types::ResourceTypeDetails {
             total_active_public: self.total_active_public,
             total_active_cross_account: self.total_active_cross_account,
+            total_active_errors: self.total_active_errors,
         }
     }
 }

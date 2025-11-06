@@ -3,8 +3,26 @@ pub fn ser_filter_operation(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FilterOperation,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    {
-        object.key("ConditionExpression").string(input.condition_expression.as_str());
+    if let Some(var_1) = &input.condition_expression {
+        object.key("ConditionExpression").string(var_1.as_str());
+    }
+    if let Some(var_2) = &input.string_filter_condition {
+        #[allow(unused_mut)]
+        let mut object_3 = object.key("StringFilterCondition").start_object();
+        crate::protocol_serde::shape_data_set_string_filter_condition::ser_data_set_string_filter_condition(&mut object_3, var_2)?;
+        object_3.finish();
+    }
+    if let Some(var_4) = &input.numeric_filter_condition {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("NumericFilterCondition").start_object();
+        crate::protocol_serde::shape_data_set_numeric_filter_condition::ser_data_set_numeric_filter_condition(&mut object_5, var_4)?;
+        object_5.finish();
+    }
+    if let Some(var_6) = &input.date_filter_condition {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("DateFilterCondition").start_object();
+        crate::protocol_serde::shape_data_set_date_filter_condition::ser_data_set_date_filter_condition(&mut object_7, var_6)?;
+        object_7.finish();
     }
     Ok(())
 }
@@ -31,6 +49,21 @@ where
                                     .transpose()?,
                             );
                         }
+                        "StringFilterCondition" => {
+                            builder = builder.set_string_filter_condition(
+                                crate::protocol_serde::shape_data_set_string_filter_condition::de_data_set_string_filter_condition(tokens)?,
+                            );
+                        }
+                        "NumericFilterCondition" => {
+                            builder = builder.set_numeric_filter_condition(
+                                crate::protocol_serde::shape_data_set_numeric_filter_condition::de_data_set_numeric_filter_condition(tokens)?,
+                            );
+                        }
+                        "DateFilterCondition" => {
+                            builder = builder.set_date_filter_condition(
+                                crate::protocol_serde::shape_data_set_date_filter_condition::de_data_set_date_filter_condition(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -40,9 +73,7 @@ where
                     }
                 }
             }
-            Ok(Some(crate::serde_util::filter_operation_correct_errors(builder).build().map_err(
-                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
-            )?))
+            Ok(Some(builder.build()))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

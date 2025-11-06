@@ -11,6 +11,14 @@ pub struct DescribeGroupOutput {
     pub external_ids: ::std::option::Option<::std::vec::Vec<crate::types::ExternalId>>,
     /// <p>A string containing a description of the group.</p>
     pub description: ::std::option::Option<::std::string::String>,
+    /// <p>The date and time the group was created.</p>
+    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The date and time the group was last updated.</p>
+    pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The identifier of the user or system that created the group.</p>
+    pub created_by: ::std::option::Option<::std::string::String>,
+    /// <p>The identifier of the user or system that last updated the group.</p>
+    pub updated_by: ::std::option::Option<::std::string::String>,
     /// <p>The globally unique identifier for the identity store.</p>
     pub identity_store_id: ::std::string::String,
     _request_id: Option<String>,
@@ -35,6 +43,22 @@ impl DescribeGroupOutput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
+    /// <p>The date and time the group was created.</p>
+    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.created_at.as_ref()
+    }
+    /// <p>The date and time the group was last updated.</p>
+    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.updated_at.as_ref()
+    }
+    /// <p>The identifier of the user or system that created the group.</p>
+    pub fn created_by(&self) -> ::std::option::Option<&str> {
+        self.created_by.as_deref()
+    }
+    /// <p>The identifier of the user or system that last updated the group.</p>
+    pub fn updated_by(&self) -> ::std::option::Option<&str> {
+        self.updated_by.as_deref()
+    }
     /// <p>The globally unique identifier for the identity store.</p>
     pub fn identity_store_id(&self) -> &str {
         use std::ops::Deref;
@@ -48,6 +72,10 @@ impl ::std::fmt::Debug for DescribeGroupOutput {
         formatter.field("display_name", &"*** Sensitive Data Redacted ***");
         formatter.field("external_ids", &self.external_ids);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field("created_at", &self.created_at);
+        formatter.field("updated_at", &self.updated_at);
+        formatter.field("created_by", &self.created_by);
+        formatter.field("updated_by", &self.updated_by);
         formatter.field("identity_store_id", &self.identity_store_id);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
@@ -73,6 +101,10 @@ pub struct DescribeGroupOutputBuilder {
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
     pub(crate) external_ids: ::std::option::Option<::std::vec::Vec<crate::types::ExternalId>>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) created_by: ::std::option::Option<::std::string::String>,
+    pub(crate) updated_by: ::std::option::Option<::std::string::String>,
     pub(crate) identity_store_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -140,6 +172,62 @@ impl DescribeGroupOutputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
+    /// <p>The date and time the group was created.</p>
+    pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_at = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The date and time the group was created.</p>
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.created_at = input;
+        self
+    }
+    /// <p>The date and time the group was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
+    /// <p>The date and time the group was last updated.</p>
+    pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.updated_at = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The date and time the group was last updated.</p>
+    pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.updated_at = input;
+        self
+    }
+    /// <p>The date and time the group was last updated.</p>
+    pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_at
+    }
+    /// <p>The identifier of the user or system that created the group.</p>
+    pub fn created_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.created_by = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier of the user or system that created the group.</p>
+    pub fn set_created_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.created_by = input;
+        self
+    }
+    /// <p>The identifier of the user or system that created the group.</p>
+    pub fn get_created_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.created_by
+    }
+    /// <p>The identifier of the user or system that last updated the group.</p>
+    pub fn updated_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.updated_by = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier of the user or system that last updated the group.</p>
+    pub fn set_updated_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.updated_by = input;
+        self
+    }
+    /// <p>The identifier of the user or system that last updated the group.</p>
+    pub fn get_updated_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.updated_by
+    }
     /// <p>The globally unique identifier for the identity store.</p>
     /// This field is required.
     pub fn identity_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -181,6 +269,10 @@ impl DescribeGroupOutputBuilder {
             display_name: self.display_name,
             external_ids: self.external_ids,
             description: self.description,
+            created_at: self.created_at,
+            updated_at: self.updated_at,
+            created_by: self.created_by,
+            updated_by: self.updated_by,
             identity_store_id: self.identity_store_id.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "identity_store_id",
@@ -198,6 +290,10 @@ impl ::std::fmt::Debug for DescribeGroupOutputBuilder {
         formatter.field("display_name", &"*** Sensitive Data Redacted ***");
         formatter.field("external_ids", &self.external_ids);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field("created_at", &self.created_at);
+        formatter.field("updated_at", &self.updated_at);
+        formatter.field("created_by", &self.created_by);
+        formatter.field("updated_by", &self.updated_by);
         formatter.field("identity_store_id", &self.identity_store_id);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()

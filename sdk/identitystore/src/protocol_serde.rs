@@ -151,6 +151,10 @@ pub(crate) mod shape_phone_number;
 
 pub(crate) mod shape_phone_numbers;
 
+pub(crate) mod shape_photo;
+
+pub(crate) mod shape_photos;
+
 pub(crate) mod shape_users;
 
 pub(crate) mod shape_external_id;

@@ -10,7 +10,8 @@ impl super::Client {
     ///   - [`dimension(i32)`](crate::operation::create_index::builders::CreateIndexFluentBuilder::dimension) / [`set_dimension(Option<i32>)`](crate::operation::create_index::builders::CreateIndexFluentBuilder::set_dimension):<br>required: **true**<br><p>The dimensions of the vectors to be inserted into the vector index.</p><br>
     ///   - [`distance_metric(DistanceMetric)`](crate::operation::create_index::builders::CreateIndexFluentBuilder::distance_metric) / [`set_distance_metric(Option<DistanceMetric>)`](crate::operation::create_index::builders::CreateIndexFluentBuilder::set_distance_metric):<br>required: **true**<br><p>The distance metric to be used for similarity search.</p><br>
     ///   - [`metadata_configuration(MetadataConfiguration)`](crate::operation::create_index::builders::CreateIndexFluentBuilder::metadata_configuration) / [`set_metadata_configuration(Option<MetadataConfiguration>)`](crate::operation::create_index::builders::CreateIndexFluentBuilder::set_metadata_configuration):<br>required: **false**<br><p>The metadata configuration for the vector index.</p><br>
-    /// - On success, responds with [`CreateIndexOutput`](crate::operation::create_index::CreateIndexOutput)
+    /// - On success, responds with [`CreateIndexOutput`](crate::operation::create_index::CreateIndexOutput) with field(s):
+    ///   - [`index_arn(Option<String>)`](crate::operation::create_index::CreateIndexOutput::index_arn): <p>The Amazon Resource Name (ARN) of the newly created vector index.</p>
     /// - On failure, responds with [`SdkError<CreateIndexError>`](crate::operation::create_index::CreateIndexError)
     pub fn create_index(&self) -> crate::operation::create_index::builders::CreateIndexFluentBuilder {
         crate::operation::create_index::builders::CreateIndexFluentBuilder::new(self.handle.clone())

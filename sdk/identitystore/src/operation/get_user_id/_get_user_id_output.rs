@@ -3,22 +3,22 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetUserIdOutput {
-    /// <p>The identifier for a user in the identity store.</p>
-    pub user_id: ::std::string::String,
     /// <p>The globally unique identifier for the identity store.</p>
     pub identity_store_id: ::std::string::String,
+    /// <p>The identifier for a user in the identity store.</p>
+    pub user_id: ::std::string::String,
     _request_id: Option<String>,
 }
 impl GetUserIdOutput {
-    /// <p>The identifier for a user in the identity store.</p>
-    pub fn user_id(&self) -> &str {
-        use std::ops::Deref;
-        self.user_id.deref()
-    }
     /// <p>The globally unique identifier for the identity store.</p>
     pub fn identity_store_id(&self) -> &str {
         use std::ops::Deref;
         self.identity_store_id.deref()
+    }
+    /// <p>The identifier for a user in the identity store.</p>
+    pub fn user_id(&self) -> &str {
+        use std::ops::Deref;
+        self.user_id.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetUserIdOutput {
@@ -37,26 +37,11 @@ impl GetUserIdOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct GetUserIdOutputBuilder {
-    pub(crate) user_id: ::std::option::Option<::std::string::String>,
     pub(crate) identity_store_id: ::std::option::Option<::std::string::String>,
+    pub(crate) user_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetUserIdOutputBuilder {
-    /// <p>The identifier for a user in the identity store.</p>
-    /// This field is required.
-    pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.user_id = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The identifier for a user in the identity store.</p>
-    pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_id = input;
-        self
-    }
-    /// <p>The identifier for a user in the identity store.</p>
-    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
-        &self.user_id
-    }
     /// <p>The globally unique identifier for the identity store.</p>
     /// This field is required.
     pub fn identity_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -72,6 +57,21 @@ impl GetUserIdOutputBuilder {
     pub fn get_identity_store_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.identity_store_id
     }
+    /// <p>The identifier for a user in the identity store.</p>
+    /// This field is required.
+    pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.user_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier for a user in the identity store.</p>
+    pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.user_id = input;
+        self
+    }
+    /// <p>The identifier for a user in the identity store.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -83,20 +83,20 @@ impl GetUserIdOutputBuilder {
     }
     /// Consumes the builder and constructs a [`GetUserIdOutput`](crate::operation::get_user_id::GetUserIdOutput).
     /// This method will fail if any of the following fields are not set:
-    /// - [`user_id`](crate::operation::get_user_id::builders::GetUserIdOutputBuilder::user_id)
     /// - [`identity_store_id`](crate::operation::get_user_id::builders::GetUserIdOutputBuilder::identity_store_id)
+    /// - [`user_id`](crate::operation::get_user_id::builders::GetUserIdOutputBuilder::user_id)
     pub fn build(self) -> ::std::result::Result<crate::operation::get_user_id::GetUserIdOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_user_id::GetUserIdOutput {
-            user_id: self.user_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "user_id",
-                    "user_id was not specified but it is required when building GetUserIdOutput",
-                )
-            })?,
             identity_store_id: self.identity_store_id.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "identity_store_id",
                     "identity_store_id was not specified but it is required when building GetUserIdOutput",
+                )
+            })?,
+            user_id: self.user_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "user_id",
+                    "user_id was not specified but it is required when building GetUserIdOutput",
                 )
             })?,
             _request_id: self._request_id,

@@ -22,6 +22,7 @@ impl crate::operation::describe_ec2_instance_limits::builders::DescribeEc2Instan
 }
 /// Fluent builder constructing a request to `DescribeEC2InstanceLimits`.
 ///
+/// <p><b>This API works with the following fleet types:</b> EC2</p>
 /// <p>Retrieves the instance limits and current utilization for an Amazon Web Services Region or location. Instance limits control the number of instances, per instance type, per location, that your Amazon Web Services account can use. Learn more at <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>. The information returned includes the maximum number of instances allowed and your account's current usage across all fleets. This information can affect your ability to scale your Amazon GameLift Servers fleets. You can request a limit increase for your account by using the <b>Service limits</b> page in the Amazon GameLift Servers console.</p>
 /// <p>Instance limits differ based on whether the instances are deployed in a fleet's home Region or in a remote location. For remote locations, limits also differ based on the combination of home Region and remote location. All requests must specify an Amazon Web Services Region (either explicitly or as your default settings). To get the limit for a remote location, you must also specify the location. For example, the following requests all return different results:</p>
 /// <ul>

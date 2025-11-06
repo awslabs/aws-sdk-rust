@@ -22,7 +22,8 @@ impl crate::operation::list_builds::builders::ListBuildsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListBuilds`.
 ///
-/// <p>Retrieves build resources for all builds associated with the Amazon Web Services account in use. You can limit results to builds that are in a specific status by using the <code>Status</code> parameter. Use the pagination parameters to retrieve results in a set of sequential pages.</p><note>
+/// <p><b>This API works with the following fleet types:</b> EC2</p>
+/// <p>Retrieves build resources for all builds associated with the Amazon Web Services account in use. You can limit results to builds that are in a specific status by using the <code>Status</code> parameter. Use the pagination parameters to retrieve results in</p><note>
 /// <p>Build resources are not listed in any particular order.</p>
 /// </note>
 /// <p><b>Learn more</b></p>

@@ -10,7 +10,7 @@ pub struct SheetDefinition {
     pub title: ::std::option::Option<::std::string::String>,
     /// <p>A description of the sheet.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the sheet. This name is displayed on the sheet's tab in the QuickSight console.</p>
+    /// <p>The name of the sheet. This name is displayed on the sheet's tab in the Quick Suite console.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The list of parameter controls that are on a sheet.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/parameters-controls.html">Using a Control with a Parameter in Amazon Quick Sight</a> in the <i>Amazon Quick Suite User Guide</i>.</p>
@@ -54,7 +54,7 @@ impl SheetDefinition {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The name of the sheet. This name is displayed on the sheet's tab in the QuickSight console.</p>
+    /// <p>The name of the sheet. This name is displayed on the sheet's tab in the Quick Suite console.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -187,17 +187,17 @@ impl SheetDefinitionBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>The name of the sheet. This name is displayed on the sheet's tab in the QuickSight console.</p>
+    /// <p>The name of the sheet. This name is displayed on the sheet's tab in the Quick Suite console.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the sheet. This name is displayed on the sheet's tab in the QuickSight console.</p>
+    /// <p>The name of the sheet. This name is displayed on the sheet's tab in the Quick Suite console.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of the sheet. This name is displayed on the sheet's tab in the QuickSight console.</p>
+    /// <p>The name of the sheet. This name is displayed on the sheet's tab in the Quick Suite console.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }

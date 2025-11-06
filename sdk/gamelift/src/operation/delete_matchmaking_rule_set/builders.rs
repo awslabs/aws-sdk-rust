@@ -22,6 +22,7 @@ impl crate::operation::delete_matchmaking_rule_set::builders::DeleteMatchmakingR
 }
 /// Fluent builder constructing a request to `DeleteMatchmakingRuleSet`.
 ///
+/// <p><b>This API works with the following fleet types:</b> EC2, Anywhere, Container</p>
 /// <p>Deletes an existing matchmaking rule set. To delete the rule set, provide the rule set name. Rule sets cannot be deleted if they are currently being used by a matchmaking configuration.</p>
 /// <p><b>Learn more</b></p>
 /// <ul>
