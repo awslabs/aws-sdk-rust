@@ -15,6 +15,8 @@
 ///     SigningAlgorithmSpec::EcdsaSha256 => { /* ... */ },
 ///     SigningAlgorithmSpec::EcdsaSha384 => { /* ... */ },
 ///     SigningAlgorithmSpec::EcdsaSha512 => { /* ... */ },
+///     SigningAlgorithmSpec::Ed25519PhSha512 => { /* ... */ },
+///     SigningAlgorithmSpec::Ed25519Sha512 => { /* ... */ },
 ///     SigningAlgorithmSpec::MlDsaShake256 => { /* ... */ },
 ///     SigningAlgorithmSpec::RsassaPkcs1V15Sha256 => { /* ... */ },
 ///     SigningAlgorithmSpec::RsassaPkcs1V15Sha384 => { /* ... */ },
@@ -58,6 +60,10 @@ pub enum SigningAlgorithmSpec {
     #[allow(missing_docs)] // documentation missing in model
     EcdsaSha512,
     #[allow(missing_docs)] // documentation missing in model
+    Ed25519PhSha512,
+    #[allow(missing_docs)] // documentation missing in model
+    Ed25519Sha512,
+    #[allow(missing_docs)] // documentation missing in model
     MlDsaShake256,
     #[allow(missing_docs)] // documentation missing in model
     RsassaPkcs1V15Sha256,
@@ -83,6 +89,8 @@ impl ::std::convert::From<&str> for SigningAlgorithmSpec {
             "ECDSA_SHA_256" => SigningAlgorithmSpec::EcdsaSha256,
             "ECDSA_SHA_384" => SigningAlgorithmSpec::EcdsaSha384,
             "ECDSA_SHA_512" => SigningAlgorithmSpec::EcdsaSha512,
+            "ED25519_PH_SHA_512" => SigningAlgorithmSpec::Ed25519PhSha512,
+            "ED25519_SHA_512" => SigningAlgorithmSpec::Ed25519Sha512,
             "ML_DSA_SHAKE_256" => SigningAlgorithmSpec::MlDsaShake256,
             "RSASSA_PKCS1_V1_5_SHA_256" => SigningAlgorithmSpec::RsassaPkcs1V15Sha256,
             "RSASSA_PKCS1_V1_5_SHA_384" => SigningAlgorithmSpec::RsassaPkcs1V15Sha384,
@@ -109,6 +117,8 @@ impl SigningAlgorithmSpec {
             SigningAlgorithmSpec::EcdsaSha256 => "ECDSA_SHA_256",
             SigningAlgorithmSpec::EcdsaSha384 => "ECDSA_SHA_384",
             SigningAlgorithmSpec::EcdsaSha512 => "ECDSA_SHA_512",
+            SigningAlgorithmSpec::Ed25519PhSha512 => "ED25519_PH_SHA_512",
+            SigningAlgorithmSpec::Ed25519Sha512 => "ED25519_SHA_512",
             SigningAlgorithmSpec::MlDsaShake256 => "ML_DSA_SHAKE_256",
             SigningAlgorithmSpec::RsassaPkcs1V15Sha256 => "RSASSA_PKCS1_V1_5_SHA_256",
             SigningAlgorithmSpec::RsassaPkcs1V15Sha384 => "RSASSA_PKCS1_V1_5_SHA_384",
@@ -126,6 +136,8 @@ impl SigningAlgorithmSpec {
             "ECDSA_SHA_256",
             "ECDSA_SHA_384",
             "ECDSA_SHA_512",
+            "ED25519_PH_SHA_512",
+            "ED25519_SHA_512",
             "ML_DSA_SHAKE_256",
             "RSASSA_PKCS1_V1_5_SHA_256",
             "RSASSA_PKCS1_V1_5_SHA_384",
@@ -160,6 +172,8 @@ impl ::std::fmt::Display for SigningAlgorithmSpec {
             SigningAlgorithmSpec::EcdsaSha256 => write!(f, "ECDSA_SHA_256"),
             SigningAlgorithmSpec::EcdsaSha384 => write!(f, "ECDSA_SHA_384"),
             SigningAlgorithmSpec::EcdsaSha512 => write!(f, "ECDSA_SHA_512"),
+            SigningAlgorithmSpec::Ed25519PhSha512 => write!(f, "ED25519_PH_SHA_512"),
+            SigningAlgorithmSpec::Ed25519Sha512 => write!(f, "ED25519_SHA_512"),
             SigningAlgorithmSpec::MlDsaShake256 => write!(f, "ML_DSA_SHAKE_256"),
             SigningAlgorithmSpec::RsassaPkcs1V15Sha256 => write!(f, "RSASSA_PKCS1_V1_5_SHA_256"),
             SigningAlgorithmSpec::RsassaPkcs1V15Sha384 => write!(f, "RSASSA_PKCS1_V1_5_SHA_384"),

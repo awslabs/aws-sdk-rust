@@ -34,6 +34,12 @@ pub struct ResourceConfigurationSummary {
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The most recent date and time that the resource configuration was updated, in ISO-8601 format.</p>
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The custom domain name.</p>
+    pub custom_domain_name: ::std::option::Option<::std::string::String>,
+    /// <p>The domain verification ID.</p>
+    pub domain_verification_id: ::std::option::Option<::std::string::String>,
+    /// <p>(GROUP) The group domain for a group resource configuration. Any domains that you create for the child resource are subdomains of the group domain. Child resources inherit the verification status of the domain.</p>
+    pub group_domain: ::std::option::Option<::std::string::String>,
 }
 impl ResourceConfigurationSummary {
     /// <p>The ID of the resource configuration.</p>
@@ -86,6 +92,18 @@ impl ResourceConfigurationSummary {
     pub fn last_updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
+    /// <p>The custom domain name.</p>
+    pub fn custom_domain_name(&self) -> ::std::option::Option<&str> {
+        self.custom_domain_name.as_deref()
+    }
+    /// <p>The domain verification ID.</p>
+    pub fn domain_verification_id(&self) -> ::std::option::Option<&str> {
+        self.domain_verification_id.as_deref()
+    }
+    /// <p>(GROUP) The group domain for a group resource configuration. Any domains that you create for the child resource are subdomains of the group domain. Child resources inherit the verification status of the domain.</p>
+    pub fn group_domain(&self) -> ::std::option::Option<&str> {
+        self.group_domain.as_deref()
+    }
 }
 impl ResourceConfigurationSummary {
     /// Creates a new builder-style object to manufacture [`ResourceConfigurationSummary`](crate::types::ResourceConfigurationSummary).
@@ -108,6 +126,9 @@ pub struct ResourceConfigurationSummaryBuilder {
     pub(crate) amazon_managed: ::std::option::Option<bool>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) custom_domain_name: ::std::option::Option<::std::string::String>,
+    pub(crate) domain_verification_id: ::std::option::Option<::std::string::String>,
+    pub(crate) group_domain: ::std::option::Option<::std::string::String>,
 }
 impl ResourceConfigurationSummaryBuilder {
     /// <p>The ID of the resource configuration.</p>
@@ -280,6 +301,48 @@ impl ResourceConfigurationSummaryBuilder {
     pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_at
     }
+    /// <p>The custom domain name.</p>
+    pub fn custom_domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.custom_domain_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The custom domain name.</p>
+    pub fn set_custom_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.custom_domain_name = input;
+        self
+    }
+    /// <p>The custom domain name.</p>
+    pub fn get_custom_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.custom_domain_name
+    }
+    /// <p>The domain verification ID.</p>
+    pub fn domain_verification_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.domain_verification_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The domain verification ID.</p>
+    pub fn set_domain_verification_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.domain_verification_id = input;
+        self
+    }
+    /// <p>The domain verification ID.</p>
+    pub fn get_domain_verification_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_verification_id
+    }
+    /// <p>(GROUP) The group domain for a group resource configuration. Any domains that you create for the child resource are subdomains of the group domain. Child resources inherit the verification status of the domain.</p>
+    pub fn group_domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.group_domain = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>(GROUP) The group domain for a group resource configuration. Any domains that you create for the child resource are subdomains of the group domain. Child resources inherit the verification status of the domain.</p>
+    pub fn set_group_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.group_domain = input;
+        self
+    }
+    /// <p>(GROUP) The group domain for a group resource configuration. Any domains that you create for the child resource are subdomains of the group domain. Child resources inherit the verification status of the domain.</p>
+    pub fn get_group_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_domain
+    }
     /// Consumes the builder and constructs a [`ResourceConfigurationSummary`](crate::types::ResourceConfigurationSummary).
     pub fn build(self) -> crate::types::ResourceConfigurationSummary {
         crate::types::ResourceConfigurationSummary {
@@ -293,6 +356,9 @@ impl ResourceConfigurationSummaryBuilder {
             amazon_managed: self.amazon_managed,
             created_at: self.created_at,
             last_updated_at: self.last_updated_at,
+            custom_domain_name: self.custom_domain_name,
+            domain_verification_id: self.domain_verification_id,
+            group_domain: self.group_domain,
         }
     }
 }

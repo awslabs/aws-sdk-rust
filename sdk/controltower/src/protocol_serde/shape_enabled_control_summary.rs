@@ -14,15 +14,15 @@ where
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "controlIdentifier" => {
-                            builder = builder.set_control_identifier(
+                        "arn" => {
+                            builder = builder.set_arn(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
                         }
-                        "arn" => {
-                            builder = builder.set_arn(
+                        "controlIdentifier" => {
+                            builder = builder.set_control_identifier(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
@@ -43,6 +43,13 @@ where
                         "driftStatusSummary" => {
                             builder =
                                 builder.set_drift_status_summary(crate::protocol_serde::shape_drift_status_summary::de_drift_status_summary(tokens)?);
+                        }
+                        "parentIdentifier" => {
+                            builder = builder.set_parent_identifier(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -12,6 +12,7 @@
 /// ```text
 /// # let keyspec = unimplemented!();
 /// match keyspec {
+///     KeySpec::EccNistEdwards25519 => { /* ... */ },
 ///     KeySpec::EccNistP256 => { /* ... */ },
 ///     KeySpec::EccNistP384 => { /* ... */ },
 ///     KeySpec::EccNistP521 => { /* ... */ },
@@ -57,6 +58,8 @@
 )]
 pub enum KeySpec {
     #[allow(missing_docs)] // documentation missing in model
+    EccNistEdwards25519,
+    #[allow(missing_docs)] // documentation missing in model
     EccNistP256,
     #[allow(missing_docs)] // documentation missing in model
     EccNistP384,
@@ -95,6 +98,7 @@ pub enum KeySpec {
 impl ::std::convert::From<&str> for KeySpec {
     fn from(s: &str) -> Self {
         match s {
+            "ECC_NIST_EDWARDS25519" => KeySpec::EccNistEdwards25519,
             "ECC_NIST_P256" => KeySpec::EccNistP256,
             "ECC_NIST_P384" => KeySpec::EccNistP384,
             "ECC_NIST_P521" => KeySpec::EccNistP521,
@@ -126,6 +130,7 @@ impl KeySpec {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            KeySpec::EccNistEdwards25519 => "ECC_NIST_EDWARDS25519",
             KeySpec::EccNistP256 => "ECC_NIST_P256",
             KeySpec::EccNistP384 => "ECC_NIST_P384",
             KeySpec::EccNistP521 => "ECC_NIST_P521",
@@ -148,6 +153,7 @@ impl KeySpec {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "ECC_NIST_EDWARDS25519",
             "ECC_NIST_P256",
             "ECC_NIST_P384",
             "ECC_NIST_P521",
@@ -187,6 +193,7 @@ impl KeySpec {
 impl ::std::fmt::Display for KeySpec {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            KeySpec::EccNistEdwards25519 => write!(f, "ECC_NIST_EDWARDS25519"),
             KeySpec::EccNistP256 => write!(f, "ECC_NIST_P256"),
             KeySpec::EccNistP384 => write!(f, "ECC_NIST_P384"),
             KeySpec::EccNistP521 => write!(f, "ECC_NIST_P521"),

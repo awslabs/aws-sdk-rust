@@ -12,6 +12,7 @@
 /// ```text
 /// # let datakeypairspec = unimplemented!();
 /// match datakeypairspec {
+///     DataKeyPairSpec::EccNistEdwards25519 => { /* ... */ },
 ///     DataKeyPairSpec::EccNistP256 => { /* ... */ },
 ///     DataKeyPairSpec::EccNistP384 => { /* ... */ },
 ///     DataKeyPairSpec::EccNistP521 => { /* ... */ },
@@ -49,6 +50,8 @@
 )]
 pub enum DataKeyPairSpec {
     #[allow(missing_docs)] // documentation missing in model
+    EccNistEdwards25519,
+    #[allow(missing_docs)] // documentation missing in model
     EccNistP256,
     #[allow(missing_docs)] // documentation missing in model
     EccNistP384,
@@ -71,6 +74,7 @@ pub enum DataKeyPairSpec {
 impl ::std::convert::From<&str> for DataKeyPairSpec {
     fn from(s: &str) -> Self {
         match s {
+            "ECC_NIST_EDWARDS25519" => DataKeyPairSpec::EccNistEdwards25519,
             "ECC_NIST_P256" => DataKeyPairSpec::EccNistP256,
             "ECC_NIST_P384" => DataKeyPairSpec::EccNistP384,
             "ECC_NIST_P521" => DataKeyPairSpec::EccNistP521,
@@ -94,6 +98,7 @@ impl DataKeyPairSpec {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            DataKeyPairSpec::EccNistEdwards25519 => "ECC_NIST_EDWARDS25519",
             DataKeyPairSpec::EccNistP256 => "ECC_NIST_P256",
             DataKeyPairSpec::EccNistP384 => "ECC_NIST_P384",
             DataKeyPairSpec::EccNistP521 => "ECC_NIST_P521",
@@ -108,6 +113,7 @@ impl DataKeyPairSpec {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "ECC_NIST_EDWARDS25519",
             "ECC_NIST_P256",
             "ECC_NIST_P384",
             "ECC_NIST_P521",
@@ -139,6 +145,7 @@ impl DataKeyPairSpec {
 impl ::std::fmt::Display for DataKeyPairSpec {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            DataKeyPairSpec::EccNistEdwards25519 => write!(f, "ECC_NIST_EDWARDS25519"),
             DataKeyPairSpec::EccNistP256 => write!(f, "ECC_NIST_P256"),
             DataKeyPairSpec::EccNistP384 => write!(f, "ECC_NIST_P384"),
             DataKeyPairSpec::EccNistP521 => write!(f, "ECC_NIST_P521"),

@@ -9,6 +9,8 @@ pub struct CreateServiceNetworkResourceAssociationInput {
     pub resource_configuration_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the service network to associate with the resource configuration.</p>
     pub service_network_identifier: ::std::option::Option<::std::string::String>,
+    /// <p>Indicates if private DNS is enabled for the service network resource association.</p>
+    pub private_dns_enabled: ::std::option::Option<bool>,
     /// <p>A key-value pair to associate with a resource.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -24,6 +26,10 @@ impl CreateServiceNetworkResourceAssociationInput {
     /// <p>The ID of the service network to associate with the resource configuration.</p>
     pub fn service_network_identifier(&self) -> ::std::option::Option<&str> {
         self.service_network_identifier.as_deref()
+    }
+    /// <p>Indicates if private DNS is enabled for the service network resource association.</p>
+    pub fn private_dns_enabled(&self) -> ::std::option::Option<bool> {
+        self.private_dns_enabled
     }
     /// <p>A key-value pair to associate with a resource.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -44,6 +50,7 @@ pub struct CreateServiceNetworkResourceAssociationInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) resource_configuration_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) service_network_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) private_dns_enabled: ::std::option::Option<bool>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateServiceNetworkResourceAssociationInputBuilder {
@@ -91,6 +98,20 @@ impl CreateServiceNetworkResourceAssociationInputBuilder {
     pub fn get_service_network_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.service_network_identifier
     }
+    /// <p>Indicates if private DNS is enabled for the service network resource association.</p>
+    pub fn private_dns_enabled(mut self, input: bool) -> Self {
+        self.private_dns_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates if private DNS is enabled for the service network resource association.</p>
+    pub fn set_private_dns_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.private_dns_enabled = input;
+        self
+    }
+    /// <p>Indicates if private DNS is enabled for the service network resource association.</p>
+    pub fn get_private_dns_enabled(&self) -> &::std::option::Option<bool> {
+        &self.private_dns_enabled
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -123,6 +144,7 @@ impl CreateServiceNetworkResourceAssociationInputBuilder {
                 client_token: self.client_token,
                 resource_configuration_identifier: self.resource_configuration_identifier,
                 service_network_identifier: self.service_network_identifier,
+                private_dns_enabled: self.private_dns_enabled,
                 tags: self.tags,
             },
         )

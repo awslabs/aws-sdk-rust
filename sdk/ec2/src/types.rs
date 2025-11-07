@@ -851,9 +851,15 @@ pub use crate::types::_launch_template::LaunchTemplate;
 
 pub use crate::types::_ipam_scope::IpamScope;
 
+pub use crate::types::_ipam_scope_external_authority_configuration::IpamScopeExternalAuthorityConfiguration;
+
+pub use crate::types::_ipam_scope_external_authority_type::IpamScopeExternalAuthorityType;
+
 pub use crate::types::_ipam_scope_state::IpamScopeState;
 
 pub use crate::types::_ipam_scope_type::IpamScopeType;
+
+pub use crate::types::_external_authority_configuration::ExternalAuthorityConfiguration;
 
 pub use crate::types::_ipam_resource_discovery::IpamResourceDiscovery;
 
@@ -3207,6 +3213,8 @@ mod _export_to_s3_task;
 
 mod _export_to_s3_task_specification;
 
+mod _external_authority_configuration;
+
 mod _failed_capacity_reservation_fleet_cancellation_result;
 
 mod _failed_queued_purchase_deletion;
@@ -3736,6 +3744,10 @@ mod _ipam_resource_tag;
 mod _ipam_resource_type;
 
 mod _ipam_scope;
+
+mod _ipam_scope_external_authority_configuration;
+
+mod _ipam_scope_external_authority_type;
 
 mod _ipam_scope_state;
 

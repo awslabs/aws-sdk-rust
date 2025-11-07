@@ -170,4 +170,18 @@ impl ListEnabledControlsFluentBuilder {
     pub fn get_filter(&self) -> &::std::option::Option<crate::types::EnabledControlFilter> {
         self.inner.get_filter()
     }
+    /// <p>A boolean value that determines whether to include enabled controls from child organizational units in the response.</p>
+    pub fn include_children(mut self, input: bool) -> Self {
+        self.inner = self.inner.include_children(input);
+        self
+    }
+    /// <p>A boolean value that determines whether to include enabled controls from child organizational units in the response.</p>
+    pub fn set_include_children(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_include_children(input);
+        self
+    }
+    /// <p>A boolean value that determines whether to include enabled controls from child organizational units in the response.</p>
+    pub fn get_include_children(&self) -> &::std::option::Option<bool> {
+        self.inner.get_include_children()
+    }
 }

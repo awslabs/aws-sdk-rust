@@ -36,6 +36,29 @@ pub fn de_dns_options(
                 builder = builder.set_private_dns_only_for_inbound_resolver_endpoint(var_2);
             }
             ,
+            s if s.matches("privateDnsPreference") /* PrivateDnsPreference com.amazonaws.ec2#DnsOptions$PrivateDnsPreference */ =>  {
+                let var_3 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_private_dns_preference(var_3);
+            }
+            ,
+            s if s.matches("privateDnsSpecifiedDomainSet") /* PrivateDnsSpecifiedDomains com.amazonaws.ec2#DnsOptions$PrivateDnsSpecifiedDomains */ =>  {
+                let var_4 =
+                    Some(
+                        crate::protocol_serde::shape_private_dns_specified_domain_set::de_private_dns_specified_domain_set(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_private_dns_specified_domains(var_4);
+            }
+            ,
             _ => {}
         }
     }

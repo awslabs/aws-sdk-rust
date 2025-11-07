@@ -109,6 +109,9 @@ where
                                     .transpose()?,
                             );
                         }
+                        "privateDnsEnabled" => {
+                            builder = builder.set_private_dns_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

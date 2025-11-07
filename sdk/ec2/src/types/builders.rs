@@ -555,6 +555,10 @@ pub use crate::types::_launch_template::LaunchTemplateBuilder;
 
 pub use crate::types::_ipam_scope::IpamScopeBuilder;
 
+pub use crate::types::_ipam_scope_external_authority_configuration::IpamScopeExternalAuthorityConfigurationBuilder;
+
+pub use crate::types::_external_authority_configuration::ExternalAuthorityConfigurationBuilder;
+
 pub use crate::types::_ipam_resource_discovery::IpamResourceDiscoveryBuilder;
 
 pub use crate::types::_ipam_organizational_unit_exclusion::IpamOrganizationalUnitExclusionBuilder;

@@ -271,7 +271,7 @@ pub enum UpdateEnabledBaselineError {
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>The request references a resource that does not exist.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// <p>The request would cause a service quota to be exceeded. The limit is 100 concurrent operations.</p>
+    /// <p>The request would cause a service quota to be exceeded. See <a href="https://docs.aws.amazon.com/controltower/latest/userguide/request-an-increase.html">Service quotas</a>.</p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::types::error::ThrottlingException),

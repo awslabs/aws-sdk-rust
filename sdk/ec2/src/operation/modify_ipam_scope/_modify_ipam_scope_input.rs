@@ -9,6 +9,11 @@ pub struct ModifyIpamScopeInput {
     pub ipam_scope_id: ::std::option::Option<::std::string::String>,
     /// <p>The description of the scope you want to modify.</p>
     pub description: ::std::option::Option<::std::string::String>,
+    /// <p>The configuration that links an Amazon VPC IPAM scope to an external authority system. It specifies the type of external system and the external resource identifier that identifies your account or instance in that system.</p>
+    /// <p>In IPAM, an external authority is a third-party IP address management system that provides CIDR blocks when you provision address space for top-level IPAM pools. This allows you to use your existing IP management system to control which address ranges are allocated to Amazon Web Services while using Amazon VPC IPAM to manage subnets within those ranges.</p>
+    pub external_authority_configuration: ::std::option::Option<crate::types::ExternalAuthorityConfiguration>,
+    /// <p>Remove the external authority configuration. <code>true</code> to remove.</p>
+    pub remove_external_authority_configuration: ::std::option::Option<bool>,
 }
 impl ModifyIpamScopeInput {
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -22,6 +27,15 @@ impl ModifyIpamScopeInput {
     /// <p>The description of the scope you want to modify.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
+    }
+    /// <p>The configuration that links an Amazon VPC IPAM scope to an external authority system. It specifies the type of external system and the external resource identifier that identifies your account or instance in that system.</p>
+    /// <p>In IPAM, an external authority is a third-party IP address management system that provides CIDR blocks when you provision address space for top-level IPAM pools. This allows you to use your existing IP management system to control which address ranges are allocated to Amazon Web Services while using Amazon VPC IPAM to manage subnets within those ranges.</p>
+    pub fn external_authority_configuration(&self) -> ::std::option::Option<&crate::types::ExternalAuthorityConfiguration> {
+        self.external_authority_configuration.as_ref()
+    }
+    /// <p>Remove the external authority configuration. <code>true</code> to remove.</p>
+    pub fn remove_external_authority_configuration(&self) -> ::std::option::Option<bool> {
+        self.remove_external_authority_configuration
     }
 }
 impl ModifyIpamScopeInput {
@@ -38,6 +52,8 @@ pub struct ModifyIpamScopeInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) ipam_scope_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) external_authority_configuration: ::std::option::Option<crate::types::ExternalAuthorityConfiguration>,
+    pub(crate) remove_external_authority_configuration: ::std::option::Option<bool>,
 }
 impl ModifyIpamScopeInputBuilder {
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -83,6 +99,37 @@ impl ModifyIpamScopeInputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
+    /// <p>The configuration that links an Amazon VPC IPAM scope to an external authority system. It specifies the type of external system and the external resource identifier that identifies your account or instance in that system.</p>
+    /// <p>In IPAM, an external authority is a third-party IP address management system that provides CIDR blocks when you provision address space for top-level IPAM pools. This allows you to use your existing IP management system to control which address ranges are allocated to Amazon Web Services while using Amazon VPC IPAM to manage subnets within those ranges.</p>
+    pub fn external_authority_configuration(mut self, input: crate::types::ExternalAuthorityConfiguration) -> Self {
+        self.external_authority_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration that links an Amazon VPC IPAM scope to an external authority system. It specifies the type of external system and the external resource identifier that identifies your account or instance in that system.</p>
+    /// <p>In IPAM, an external authority is a third-party IP address management system that provides CIDR blocks when you provision address space for top-level IPAM pools. This allows you to use your existing IP management system to control which address ranges are allocated to Amazon Web Services while using Amazon VPC IPAM to manage subnets within those ranges.</p>
+    pub fn set_external_authority_configuration(mut self, input: ::std::option::Option<crate::types::ExternalAuthorityConfiguration>) -> Self {
+        self.external_authority_configuration = input;
+        self
+    }
+    /// <p>The configuration that links an Amazon VPC IPAM scope to an external authority system. It specifies the type of external system and the external resource identifier that identifies your account or instance in that system.</p>
+    /// <p>In IPAM, an external authority is a third-party IP address management system that provides CIDR blocks when you provision address space for top-level IPAM pools. This allows you to use your existing IP management system to control which address ranges are allocated to Amazon Web Services while using Amazon VPC IPAM to manage subnets within those ranges.</p>
+    pub fn get_external_authority_configuration(&self) -> &::std::option::Option<crate::types::ExternalAuthorityConfiguration> {
+        &self.external_authority_configuration
+    }
+    /// <p>Remove the external authority configuration. <code>true</code> to remove.</p>
+    pub fn remove_external_authority_configuration(mut self, input: bool) -> Self {
+        self.remove_external_authority_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Remove the external authority configuration. <code>true</code> to remove.</p>
+    pub fn set_remove_external_authority_configuration(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.remove_external_authority_configuration = input;
+        self
+    }
+    /// <p>Remove the external authority configuration. <code>true</code> to remove.</p>
+    pub fn get_remove_external_authority_configuration(&self) -> &::std::option::Option<bool> {
+        &self.remove_external_authority_configuration
+    }
     /// Consumes the builder and constructs a [`ModifyIpamScopeInput`](crate::operation::modify_ipam_scope::ModifyIpamScopeInput).
     pub fn build(
         self,
@@ -91,6 +138,8 @@ impl ModifyIpamScopeInputBuilder {
             dry_run: self.dry_run,
             ipam_scope_id: self.ipam_scope_id,
             description: self.description,
+            external_authority_configuration: self.external_authority_configuration,
+            remove_external_authority_configuration: self.remove_external_authority_configuration,
         })
     }
 }

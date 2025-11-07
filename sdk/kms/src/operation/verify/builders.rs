@@ -180,6 +180,13 @@ impl VerifyFluentBuilder {
     /// <p>When the value of <code>MessageType</code> is <code>RAW</code>, KMS uses the standard signing algorithm, which begins with a hash function. When the value is <code>DIGEST</code>, KMS skips the hashing step in the signing algorithm. When the value is <code>EXTERNAL_MU</code> KMS skips the concatenated hashing of the public key hash and the message done in the ML-DSA signing algorithm.</p><important>
     /// <p>Use the <code>DIGEST</code> or <code>EXTERNAL_MU</code> value only when the value of the <code>Message</code> parameter is a message digest. If you use the <code>DIGEST</code> value with an unhashed message, the security of the signing operation can be compromised.</p>
     /// </important>
+    /// <p>When using ECC_NIST_EDWARDS25519 KMS keys:</p>
+    /// <ul>
+    /// <li>
+    /// <p>ED25519_SHA_512 signing algorithm requires KMS <code>MessageType:RAW</code></p></li>
+    /// <li>
+    /// <p>ED25519_PH_SHA_512 signing algorithm requires KMS <code>MessageType:DIGEST</code></p></li>
+    /// </ul>
     /// <p>When the value of <code>MessageType</code> is <code>DIGEST</code>, the length of the <code>Message</code> value must match the length of hashed messages for the specified signing algorithm.</p>
     /// <p>When the value of <code>MessageType</code> is <code>EXTERNAL_MU</code> the length of the <code>Message</code> value must be 64 bytes.</p>
     /// <p>You can submit a message digest and omit the <code>MessageType</code> or specify <code>RAW</code> so the digest is hashed again while signing. However, if the signed message is hashed once while signing, but twice while verifying, verification fails, even when the message hasn't changed.</p>
@@ -204,6 +211,13 @@ impl VerifyFluentBuilder {
     /// <p>When the value of <code>MessageType</code> is <code>RAW</code>, KMS uses the standard signing algorithm, which begins with a hash function. When the value is <code>DIGEST</code>, KMS skips the hashing step in the signing algorithm. When the value is <code>EXTERNAL_MU</code> KMS skips the concatenated hashing of the public key hash and the message done in the ML-DSA signing algorithm.</p><important>
     /// <p>Use the <code>DIGEST</code> or <code>EXTERNAL_MU</code> value only when the value of the <code>Message</code> parameter is a message digest. If you use the <code>DIGEST</code> value with an unhashed message, the security of the signing operation can be compromised.</p>
     /// </important>
+    /// <p>When using ECC_NIST_EDWARDS25519 KMS keys:</p>
+    /// <ul>
+    /// <li>
+    /// <p>ED25519_SHA_512 signing algorithm requires KMS <code>MessageType:RAW</code></p></li>
+    /// <li>
+    /// <p>ED25519_PH_SHA_512 signing algorithm requires KMS <code>MessageType:DIGEST</code></p></li>
+    /// </ul>
     /// <p>When the value of <code>MessageType</code> is <code>DIGEST</code>, the length of the <code>Message</code> value must match the length of hashed messages for the specified signing algorithm.</p>
     /// <p>When the value of <code>MessageType</code> is <code>EXTERNAL_MU</code> the length of the <code>Message</code> value must be 64 bytes.</p>
     /// <p>You can submit a message digest and omit the <code>MessageType</code> or specify <code>RAW</code> so the digest is hashed again while signing. However, if the signed message is hashed once while signing, but twice while verifying, verification fails, even when the message hasn't changed.</p>
@@ -228,6 +242,13 @@ impl VerifyFluentBuilder {
     /// <p>When the value of <code>MessageType</code> is <code>RAW</code>, KMS uses the standard signing algorithm, which begins with a hash function. When the value is <code>DIGEST</code>, KMS skips the hashing step in the signing algorithm. When the value is <code>EXTERNAL_MU</code> KMS skips the concatenated hashing of the public key hash and the message done in the ML-DSA signing algorithm.</p><important>
     /// <p>Use the <code>DIGEST</code> or <code>EXTERNAL_MU</code> value only when the value of the <code>Message</code> parameter is a message digest. If you use the <code>DIGEST</code> value with an unhashed message, the security of the signing operation can be compromised.</p>
     /// </important>
+    /// <p>When using ECC_NIST_EDWARDS25519 KMS keys:</p>
+    /// <ul>
+    /// <li>
+    /// <p>ED25519_SHA_512 signing algorithm requires KMS <code>MessageType:RAW</code></p></li>
+    /// <li>
+    /// <p>ED25519_PH_SHA_512 signing algorithm requires KMS <code>MessageType:DIGEST</code></p></li>
+    /// </ul>
     /// <p>When the value of <code>MessageType</code> is <code>DIGEST</code>, the length of the <code>Message</code> value must match the length of hashed messages for the specified signing algorithm.</p>
     /// <p>When the value of <code>MessageType</code> is <code>EXTERNAL_MU</code> the length of the <code>Message</code> value must be 64 bytes.</p>
     /// <p>You can submit a message digest and omit the <code>MessageType</code> or specify <code>RAW</code> so the digest is hashed again while signing. However, if the signed message is hashed once while signing, but twice while verifying, verification fails, even when the message hasn't changed.</p>

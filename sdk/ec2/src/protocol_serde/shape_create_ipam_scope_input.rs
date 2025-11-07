@@ -38,6 +38,11 @@ pub fn ser_create_ipam_scope_input_input_input(
     if let Some(var_13) = &input.client_token {
         scope_12.string(var_13);
     }
+    #[allow(unused_mut)]
+    let mut scope_14 = writer.prefix("ExternalAuthorityConfiguration");
+    if let Some(var_15) = &input.external_authority_configuration {
+        crate::protocol_serde::shape_external_authority_configuration::ser_external_authority_configuration(scope_14, var_15)?;
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

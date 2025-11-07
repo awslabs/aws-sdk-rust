@@ -23,12 +23,16 @@ pub struct GetServiceNetworkVpcAssociationOutput {
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The IDs of the security groups.</p>
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Indicates if private DNS is enabled in the VPC association.</p>
+    pub private_dns_enabled: ::std::option::Option<bool>,
     /// <p>The failure message.</p>
     pub failure_message: ::std::option::Option<::std::string::String>,
     /// <p>The failure code.</p>
     pub failure_code: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the association was last updated, in ISO-8601 format.</p>
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>DNS options for the service network VPC association.</p>
+    pub dns_options: ::std::option::Option<crate::types::DnsOptions>,
     _request_id: Option<String>,
 }
 impl GetServiceNetworkVpcAssociationOutput {
@@ -74,6 +78,10 @@ impl GetServiceNetworkVpcAssociationOutput {
     pub fn security_group_ids(&self) -> &[::std::string::String] {
         self.security_group_ids.as_deref().unwrap_or_default()
     }
+    /// <p>Indicates if private DNS is enabled in the VPC association.</p>
+    pub fn private_dns_enabled(&self) -> ::std::option::Option<bool> {
+        self.private_dns_enabled
+    }
     /// <p>The failure message.</p>
     pub fn failure_message(&self) -> ::std::option::Option<&str> {
         self.failure_message.as_deref()
@@ -85,6 +93,10 @@ impl GetServiceNetworkVpcAssociationOutput {
     /// <p>The date and time that the association was last updated, in ISO-8601 format.</p>
     pub fn last_updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
+    }
+    /// <p>DNS options for the service network VPC association.</p>
+    pub fn dns_options(&self) -> ::std::option::Option<&crate::types::DnsOptions> {
+        self.dns_options.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetServiceNetworkVpcAssociationOutput {
@@ -113,9 +125,11 @@ pub struct GetServiceNetworkVpcAssociationOutputBuilder {
     pub(crate) service_network_arn: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
     pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) private_dns_enabled: ::std::option::Option<bool>,
     pub(crate) failure_message: ::std::option::Option<::std::string::String>,
     pub(crate) failure_code: ::std::option::Option<::std::string::String>,
     pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) dns_options: ::std::option::Option<crate::types::DnsOptions>,
     _request_id: Option<String>,
 }
 impl GetServiceNetworkVpcAssociationOutputBuilder {
@@ -265,6 +279,20 @@ impl GetServiceNetworkVpcAssociationOutputBuilder {
     pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_group_ids
     }
+    /// <p>Indicates if private DNS is enabled in the VPC association.</p>
+    pub fn private_dns_enabled(mut self, input: bool) -> Self {
+        self.private_dns_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates if private DNS is enabled in the VPC association.</p>
+    pub fn set_private_dns_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.private_dns_enabled = input;
+        self
+    }
+    /// <p>Indicates if private DNS is enabled in the VPC association.</p>
+    pub fn get_private_dns_enabled(&self) -> &::std::option::Option<bool> {
+        &self.private_dns_enabled
+    }
     /// <p>The failure message.</p>
     pub fn failure_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_message = ::std::option::Option::Some(input.into());
@@ -307,6 +335,20 @@ impl GetServiceNetworkVpcAssociationOutputBuilder {
     pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_at
     }
+    /// <p>DNS options for the service network VPC association.</p>
+    pub fn dns_options(mut self, input: crate::types::DnsOptions) -> Self {
+        self.dns_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>DNS options for the service network VPC association.</p>
+    pub fn set_dns_options(mut self, input: ::std::option::Option<crate::types::DnsOptions>) -> Self {
+        self.dns_options = input;
+        self
+    }
+    /// <p>DNS options for the service network VPC association.</p>
+    pub fn get_dns_options(&self) -> &::std::option::Option<crate::types::DnsOptions> {
+        &self.dns_options
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -329,9 +371,11 @@ impl GetServiceNetworkVpcAssociationOutputBuilder {
             service_network_arn: self.service_network_arn,
             vpc_id: self.vpc_id,
             security_group_ids: self.security_group_ids,
+            private_dns_enabled: self.private_dns_enabled,
             failure_message: self.failure_message,
             failure_code: self.failure_code,
             last_updated_at: self.last_updated_at,
+            dns_options: self.dns_options,
             _request_id: self._request_id,
         }
     }

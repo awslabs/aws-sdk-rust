@@ -15,9 +15,11 @@ impl super::Client {
     ///   - [`service_network_arn(Option<String>)`](crate::operation::get_service_network_vpc_association::GetServiceNetworkVpcAssociationOutput::service_network_arn): <p>The Amazon Resource Name (ARN) of the service network.</p>
     ///   - [`vpc_id(Option<String>)`](crate::operation::get_service_network_vpc_association::GetServiceNetworkVpcAssociationOutput::vpc_id): <p>The ID of the VPC.</p>
     ///   - [`security_group_ids(Option<Vec::<String>>)`](crate::operation::get_service_network_vpc_association::GetServiceNetworkVpcAssociationOutput::security_group_ids): <p>The IDs of the security groups.</p>
+    ///   - [`private_dns_enabled(Option<bool>)`](crate::operation::get_service_network_vpc_association::GetServiceNetworkVpcAssociationOutput::private_dns_enabled): <p>Indicates if private DNS is enabled in the VPC association.</p>
     ///   - [`failure_message(Option<String>)`](crate::operation::get_service_network_vpc_association::GetServiceNetworkVpcAssociationOutput::failure_message): <p>The failure message.</p>
     ///   - [`failure_code(Option<String>)`](crate::operation::get_service_network_vpc_association::GetServiceNetworkVpcAssociationOutput::failure_code): <p>The failure code.</p>
     ///   - [`last_updated_at(Option<DateTime>)`](crate::operation::get_service_network_vpc_association::GetServiceNetworkVpcAssociationOutput::last_updated_at): <p>The date and time that the association was last updated, in ISO-8601 format.</p>
+    ///   - [`dns_options(Option<DnsOptions>)`](crate::operation::get_service_network_vpc_association::GetServiceNetworkVpcAssociationOutput::dns_options): <p>DNS options for the service network VPC association.</p>
     /// - On failure, responds with [`SdkError<GetServiceNetworkVpcAssociationError>`](crate::operation::get_service_network_vpc_association::GetServiceNetworkVpcAssociationError)
     pub fn get_service_network_vpc_association(
         &self,

@@ -72,6 +72,12 @@ where
                                     .transpose()?,
                             );
                         }
+                        "privateDnsEnabled" => {
+                            builder = builder.set_private_dns_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "dnsOptions" => {
+                            builder = builder.set_dns_options(crate::protocol_serde::shape_dns_options::de_dns_options(tokens)?);
+                        }
                         "vpcId" => {
                             builder = builder.set_vpc_id(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

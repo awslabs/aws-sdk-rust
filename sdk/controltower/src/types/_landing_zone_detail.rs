@@ -8,6 +8,8 @@ pub struct LandingZoneDetail {
     pub version: ::std::string::String,
     /// <p>The landing zone manifest JSON text file that specifies the landing zone configurations.</p>
     pub manifest: ::aws_smithy_types::Document,
+    /// <p>The types of remediation actions configured for the landing zone, such as automatic drift correction or compliance enforcement.</p>
+    pub remediation_types: ::std::option::Option<::std::vec::Vec<crate::types::RemediationType>>,
     /// <p>The ARN of the landing zone.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The landing zone deployment status. One of <code>ACTIVE</code>, <code>PROCESSING</code>, <code>FAILED</code>.</p>
@@ -26,6 +28,12 @@ impl LandingZoneDetail {
     /// <p>The landing zone manifest JSON text file that specifies the landing zone configurations.</p>
     pub fn manifest(&self) -> &::aws_smithy_types::Document {
         &self.manifest
+    }
+    /// <p>The types of remediation actions configured for the landing zone, such as automatic drift correction or compliance enforcement.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.remediation_types.is_none()`.
+    pub fn remediation_types(&self) -> &[crate::types::RemediationType] {
+        self.remediation_types.as_deref().unwrap_or_default()
     }
     /// <p>The ARN of the landing zone.</p>
     pub fn arn(&self) -> ::std::option::Option<&str> {
@@ -57,6 +65,7 @@ impl LandingZoneDetail {
 pub struct LandingZoneDetailBuilder {
     pub(crate) version: ::std::option::Option<::std::string::String>,
     pub(crate) manifest: ::std::option::Option<::aws_smithy_types::Document>,
+    pub(crate) remediation_types: ::std::option::Option<::std::vec::Vec<crate::types::RemediationType>>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::LandingZoneStatus>,
     pub(crate) latest_available_version: ::std::option::Option<::std::string::String>,
@@ -92,6 +101,26 @@ impl LandingZoneDetailBuilder {
     /// <p>The landing zone manifest JSON text file that specifies the landing zone configurations.</p>
     pub fn get_manifest(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
         &self.manifest
+    }
+    /// Appends an item to `remediation_types`.
+    ///
+    /// To override the contents of this collection use [`set_remediation_types`](Self::set_remediation_types).
+    ///
+    /// <p>The types of remediation actions configured for the landing zone, such as automatic drift correction or compliance enforcement.</p>
+    pub fn remediation_types(mut self, input: crate::types::RemediationType) -> Self {
+        let mut v = self.remediation_types.unwrap_or_default();
+        v.push(input);
+        self.remediation_types = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The types of remediation actions configured for the landing zone, such as automatic drift correction or compliance enforcement.</p>
+    pub fn set_remediation_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RemediationType>>) -> Self {
+        self.remediation_types = input;
+        self
+    }
+    /// <p>The types of remediation actions configured for the landing zone, such as automatic drift correction or compliance enforcement.</p>
+    pub fn get_remediation_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RemediationType>> {
+        &self.remediation_types
     }
     /// <p>The ARN of the landing zone.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -167,6 +196,7 @@ impl LandingZoneDetailBuilder {
                     "manifest was not specified but it is required when building LandingZoneDetail",
                 )
             })?,
+            remediation_types: self.remediation_types,
             arn: self.arn,
             status: self.status,
             latest_available_version: self.latest_available_version,

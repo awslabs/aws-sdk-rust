@@ -37,6 +37,12 @@ pub struct CreateResourceConfigurationInput {
     pub resource_configuration_definition: ::std::option::Option<crate::types::ResourceConfigurationDefinition>,
     /// <p>(SINGLE, GROUP, ARN) Specifies whether the resource configuration can be associated with a sharable service network. The default is false.</p>
     pub allow_association_to_shareable_service_network: ::std::option::Option<bool>,
+    /// <p>A custom domain name for your resource configuration. Additionally, provide a DomainVerificationID to prove your ownership of a domain.</p>
+    pub custom_domain_name: ::std::option::Option<::std::string::String>,
+    /// <p>(GROUP) The group domain for a group resource configuration. Any domains that you create for the child resource are subdomains of the group domain. Child resources inherit the verification status of the domain.</p>
+    pub group_domain: ::std::option::Option<::std::string::String>,
+    /// <p>The domain verification ID of your verified custom domain name. If you don't provide an ID, you must configure the DNS settings yourself.</p>
+    pub domain_verification_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The tags for the resource configuration.</p>
@@ -95,6 +101,18 @@ impl CreateResourceConfigurationInput {
     pub fn allow_association_to_shareable_service_network(&self) -> ::std::option::Option<bool> {
         self.allow_association_to_shareable_service_network
     }
+    /// <p>A custom domain name for your resource configuration. Additionally, provide a DomainVerificationID to prove your ownership of a domain.</p>
+    pub fn custom_domain_name(&self) -> ::std::option::Option<&str> {
+        self.custom_domain_name.as_deref()
+    }
+    /// <p>(GROUP) The group domain for a group resource configuration. Any domains that you create for the child resource are subdomains of the group domain. Child resources inherit the verification status of the domain.</p>
+    pub fn group_domain(&self) -> ::std::option::Option<&str> {
+        self.group_domain.as_deref()
+    }
+    /// <p>The domain verification ID of your verified custom domain name. If you don't provide an ID, you must configure the DNS settings yourself.</p>
+    pub fn domain_verification_identifier(&self) -> ::std::option::Option<&str> {
+        self.domain_verification_identifier.as_deref()
+    }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
@@ -123,6 +141,9 @@ pub struct CreateResourceConfigurationInputBuilder {
     pub(crate) resource_configuration_group_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) resource_configuration_definition: ::std::option::Option<crate::types::ResourceConfigurationDefinition>,
     pub(crate) allow_association_to_shareable_service_network: ::std::option::Option<bool>,
+    pub(crate) custom_domain_name: ::std::option::Option<::std::string::String>,
+    pub(crate) group_domain: ::std::option::Option<::std::string::String>,
+    pub(crate) domain_verification_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -301,6 +322,48 @@ impl CreateResourceConfigurationInputBuilder {
     pub fn get_allow_association_to_shareable_service_network(&self) -> &::std::option::Option<bool> {
         &self.allow_association_to_shareable_service_network
     }
+    /// <p>A custom domain name for your resource configuration. Additionally, provide a DomainVerificationID to prove your ownership of a domain.</p>
+    pub fn custom_domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.custom_domain_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A custom domain name for your resource configuration. Additionally, provide a DomainVerificationID to prove your ownership of a domain.</p>
+    pub fn set_custom_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.custom_domain_name = input;
+        self
+    }
+    /// <p>A custom domain name for your resource configuration. Additionally, provide a DomainVerificationID to prove your ownership of a domain.</p>
+    pub fn get_custom_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.custom_domain_name
+    }
+    /// <p>(GROUP) The group domain for a group resource configuration. Any domains that you create for the child resource are subdomains of the group domain. Child resources inherit the verification status of the domain.</p>
+    pub fn group_domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.group_domain = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>(GROUP) The group domain for a group resource configuration. Any domains that you create for the child resource are subdomains of the group domain. Child resources inherit the verification status of the domain.</p>
+    pub fn set_group_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.group_domain = input;
+        self
+    }
+    /// <p>(GROUP) The group domain for a group resource configuration. Any domains that you create for the child resource are subdomains of the group domain. Child resources inherit the verification status of the domain.</p>
+    pub fn get_group_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_domain
+    }
+    /// <p>The domain verification ID of your verified custom domain name. If you don't provide an ID, you must configure the DNS settings yourself.</p>
+    pub fn domain_verification_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.domain_verification_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The domain verification ID of your verified custom domain name. If you don't provide an ID, you must configure the DNS settings yourself.</p>
+    pub fn set_domain_verification_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.domain_verification_identifier = input;
+        self
+    }
+    /// <p>The domain verification ID of your verified custom domain name. If you don't provide an ID, you must configure the DNS settings yourself.</p>
+    pub fn get_domain_verification_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_verification_identifier
+    }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -351,6 +414,9 @@ impl CreateResourceConfigurationInputBuilder {
             resource_configuration_group_identifier: self.resource_configuration_group_identifier,
             resource_configuration_definition: self.resource_configuration_definition,
             allow_association_to_shareable_service_network: self.allow_association_to_shareable_service_network,
+            custom_domain_name: self.custom_domain_name,
+            group_domain: self.group_domain,
+            domain_verification_identifier: self.domain_verification_identifier,
             client_token: self.client_token,
             tags: self.tags,
         })

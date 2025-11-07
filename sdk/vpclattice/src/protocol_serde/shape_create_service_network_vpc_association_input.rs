@@ -6,30 +6,39 @@ pub fn ser_create_service_network_vpc_association_input_input(
     if let Some(var_1) = &input.client_token {
         object.key("clientToken").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.security_group_ids {
-        let mut array_3 = object.key("securityGroupIds").start_array();
-        for item_4 in var_2 {
-            {
-                array_3.value().string(item_4.as_str());
-            }
-        }
-        array_3.finish();
-    }
-    if let Some(var_5) = &input.service_network_identifier {
-        object.key("serviceNetworkIdentifier").string(var_5.as_str());
-    }
-    if let Some(var_6) = &input.tags {
+    if let Some(var_2) = &input.dns_options {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("tags").start_object();
-        for (key_8, value_9) in var_6 {
+        let mut object_3 = object.key("dnsOptions").start_object();
+        crate::protocol_serde::shape_dns_options::ser_dns_options(&mut object_3, var_2)?;
+        object_3.finish();
+    }
+    if let Some(var_4) = &input.private_dns_enabled {
+        object.key("privateDnsEnabled").boolean(*var_4);
+    }
+    if let Some(var_5) = &input.security_group_ids {
+        let mut array_6 = object.key("securityGroupIds").start_array();
+        for item_7 in var_5 {
             {
-                object_7.key(key_8.as_str()).string(value_9.as_str());
+                array_6.value().string(item_7.as_str());
             }
         }
-        object_7.finish();
+        array_6.finish();
     }
-    if let Some(var_10) = &input.vpc_identifier {
-        object.key("vpcIdentifier").string(var_10.as_str());
+    if let Some(var_8) = &input.service_network_identifier {
+        object.key("serviceNetworkIdentifier").string(var_8.as_str());
+    }
+    if let Some(var_9) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("tags").start_object();
+        for (key_11, value_12) in var_9 {
+            {
+                object_10.key(key_11.as_str()).string(value_12.as_str());
+            }
+        }
+        object_10.finish();
+    }
+    if let Some(var_13) = &input.vpc_identifier {
+        object.key("vpcIdentifier").string(var_13.as_str());
     }
     Ok(())
 }

@@ -43,6 +43,9 @@ pub mod delete_access_log_subscription;
 /// Types for the `DeleteAuthPolicy` operation.
 pub mod delete_auth_policy;
 
+/// Types for the `DeleteDomainVerification` operation.
+pub mod delete_domain_verification;
+
 /// Types for the `DeleteListener` operation.
 pub mod delete_listener;
 
@@ -88,6 +91,9 @@ pub mod get_access_log_subscription;
 /// Types for the `GetAuthPolicy` operation.
 pub mod get_auth_policy;
 
+/// Types for the `GetDomainVerification` operation.
+pub mod get_domain_verification;
+
 /// Types for the `GetListener` operation.
 pub mod get_listener;
 
@@ -123,6 +129,9 @@ pub mod get_target_group;
 
 /// Types for the `ListAccessLogSubscriptions` operation.
 pub mod list_access_log_subscriptions;
+
+/// Types for the `ListDomainVerifications` operation.
+pub mod list_domain_verifications;
 
 /// Types for the `ListListeners` operation.
 pub mod list_listeners;
@@ -174,6 +183,9 @@ pub mod put_resource_policy;
 
 /// Types for the `RegisterTargets` operation.
 pub mod register_targets;
+
+/// Types for the `StartDomainVerification` operation.
+pub mod start_domain_verification;
 
 /// Types for the `TagResource` operation.
 pub mod tag_resource;

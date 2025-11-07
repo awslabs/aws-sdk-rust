@@ -33,10 +33,14 @@ pub struct GetServiceNetworkResourceAssociationOutput {
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The private DNS entry for the service.</p>
     pub private_dns_entry: ::std::option::Option<crate::types::DnsEntry>,
+    /// <p>Indicates if private DNS is enabled in the service network resource association.</p>
+    pub private_dns_enabled: ::std::option::Option<bool>,
     /// <p>The DNS entry for the service.</p>
     pub dns_entry: ::std::option::Option<crate::types::DnsEntry>,
     /// <p>Indicates whether the association is managed by Amazon.</p>
     pub is_managed_association: ::std::option::Option<bool>,
+    /// <p>The domain verification status in the service network resource association.</p>
+    pub domain_verification_status: ::std::option::Option<crate::types::VerificationStatus>,
     _request_id: Option<String>,
 }
 impl GetServiceNetworkResourceAssociationOutput {
@@ -100,6 +104,10 @@ impl GetServiceNetworkResourceAssociationOutput {
     pub fn private_dns_entry(&self) -> ::std::option::Option<&crate::types::DnsEntry> {
         self.private_dns_entry.as_ref()
     }
+    /// <p>Indicates if private DNS is enabled in the service network resource association.</p>
+    pub fn private_dns_enabled(&self) -> ::std::option::Option<bool> {
+        self.private_dns_enabled
+    }
     /// <p>The DNS entry for the service.</p>
     pub fn dns_entry(&self) -> ::std::option::Option<&crate::types::DnsEntry> {
         self.dns_entry.as_ref()
@@ -107,6 +115,10 @@ impl GetServiceNetworkResourceAssociationOutput {
     /// <p>Indicates whether the association is managed by Amazon.</p>
     pub fn is_managed_association(&self) -> ::std::option::Option<bool> {
         self.is_managed_association
+    }
+    /// <p>The domain verification status in the service network resource association.</p>
+    pub fn domain_verification_status(&self) -> ::std::option::Option<&crate::types::VerificationStatus> {
+        self.domain_verification_status.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetServiceNetworkResourceAssociationOutput {
@@ -140,8 +152,10 @@ pub struct GetServiceNetworkResourceAssociationOutputBuilder {
     pub(crate) failure_code: ::std::option::Option<::std::string::String>,
     pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) private_dns_entry: ::std::option::Option<crate::types::DnsEntry>,
+    pub(crate) private_dns_enabled: ::std::option::Option<bool>,
     pub(crate) dns_entry: ::std::option::Option<crate::types::DnsEntry>,
     pub(crate) is_managed_association: ::std::option::Option<bool>,
+    pub(crate) domain_verification_status: ::std::option::Option<crate::types::VerificationStatus>,
     _request_id: Option<String>,
 }
 impl GetServiceNetworkResourceAssociationOutputBuilder {
@@ -355,6 +369,20 @@ impl GetServiceNetworkResourceAssociationOutputBuilder {
     pub fn get_private_dns_entry(&self) -> &::std::option::Option<crate::types::DnsEntry> {
         &self.private_dns_entry
     }
+    /// <p>Indicates if private DNS is enabled in the service network resource association.</p>
+    pub fn private_dns_enabled(mut self, input: bool) -> Self {
+        self.private_dns_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates if private DNS is enabled in the service network resource association.</p>
+    pub fn set_private_dns_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.private_dns_enabled = input;
+        self
+    }
+    /// <p>Indicates if private DNS is enabled in the service network resource association.</p>
+    pub fn get_private_dns_enabled(&self) -> &::std::option::Option<bool> {
+        &self.private_dns_enabled
+    }
     /// <p>The DNS entry for the service.</p>
     pub fn dns_entry(mut self, input: crate::types::DnsEntry) -> Self {
         self.dns_entry = ::std::option::Option::Some(input);
@@ -383,6 +411,20 @@ impl GetServiceNetworkResourceAssociationOutputBuilder {
     pub fn get_is_managed_association(&self) -> &::std::option::Option<bool> {
         &self.is_managed_association
     }
+    /// <p>The domain verification status in the service network resource association.</p>
+    pub fn domain_verification_status(mut self, input: crate::types::VerificationStatus) -> Self {
+        self.domain_verification_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The domain verification status in the service network resource association.</p>
+    pub fn set_domain_verification_status(mut self, input: ::std::option::Option<crate::types::VerificationStatus>) -> Self {
+        self.domain_verification_status = input;
+        self
+    }
+    /// <p>The domain verification status in the service network resource association.</p>
+    pub fn get_domain_verification_status(&self) -> &::std::option::Option<crate::types::VerificationStatus> {
+        &self.domain_verification_status
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -410,8 +452,10 @@ impl GetServiceNetworkResourceAssociationOutputBuilder {
             failure_code: self.failure_code,
             last_updated_at: self.last_updated_at,
             private_dns_entry: self.private_dns_entry,
+            private_dns_enabled: self.private_dns_enabled,
             dns_entry: self.dns_entry,
             is_managed_association: self.is_managed_association,
+            domain_verification_status: self.domain_verification_status,
             _request_id: self._request_id,
         }
     }

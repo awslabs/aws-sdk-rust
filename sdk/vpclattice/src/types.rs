@@ -35,6 +35,10 @@ pub use crate::types::_target_group_summary::TargetGroupSummary;
 
 pub use crate::types::_service_network_vpc_association_status::ServiceNetworkVpcAssociationStatus;
 
+pub use crate::types::_dns_options::DnsOptions;
+
+pub use crate::types::_private_dns_preference::PrivateDnsPreference;
+
 pub use crate::types::_service_network_vpc_association_summary::ServiceNetworkVpcAssociationSummary;
 
 pub use crate::types::_service_network_service_association_status::ServiceNetworkServiceAssociationStatus;
@@ -44,6 +48,8 @@ pub use crate::types::_dns_entry::DnsEntry;
 pub use crate::types::_service_network_service_association_summary::ServiceNetworkServiceAssociationSummary;
 
 pub use crate::types::_service_network_resource_association_status::ServiceNetworkResourceAssociationStatus;
+
+pub use crate::types::_verification_status::VerificationStatus;
 
 pub use crate::types::_service_network_resource_association_summary::ServiceNetworkResourceAssociationSummary;
 
@@ -109,6 +115,10 @@ pub use crate::types::_listener_protocol::ListenerProtocol;
 
 pub use crate::types::_listener_summary::ListenerSummary;
 
+pub use crate::types::_txt_method_config::TxtMethodConfig;
+
+pub use crate::types::_domain_verification_summary::DomainVerificationSummary;
+
 pub use crate::types::_service_network_log_type::ServiceNetworkLogType;
 
 pub use crate::types::_access_log_subscription_summary::AccessLogSubscriptionSummary;
@@ -133,7 +143,11 @@ mod _auth_type;
 
 mod _dns_entry;
 
+mod _dns_options;
+
 mod _dns_resource;
+
+mod _domain_verification_summary;
 
 mod _fixed_response_action;
 
@@ -164,6 +178,8 @@ mod _matcher;
 mod _path_match;
 
 mod _path_match_type;
+
+mod _private_dns_preference;
 
 mod _protocol_type;
 
@@ -241,9 +257,13 @@ mod _target_status;
 
 mod _target_summary;
 
+mod _txt_method_config;
+
 mod _validation_exception_field;
 
 mod _validation_exception_reason;
+
+mod _verification_status;
 
 mod _weighted_target_group;
 

@@ -21,6 +21,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "types" => {
+                            builder = builder.set_types(crate::protocol_serde::shape_enabled_control_drift_types::de_enabled_control_drift_types(
+                                tokens,
+                            )?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

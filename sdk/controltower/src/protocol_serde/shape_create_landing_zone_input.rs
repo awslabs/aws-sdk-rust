@@ -6,18 +6,27 @@ pub fn ser_create_landing_zone_input_input(
     if let Some(var_1) = &input.manifest {
         object.key("manifest").document(var_1);
     }
-    if let Some(var_2) = &input.tags {
-        #[allow(unused_mut)]
-        let mut object_3 = object.key("tags").start_object();
-        for (key_4, value_5) in var_2 {
+    if let Some(var_2) = &input.remediation_types {
+        let mut array_3 = object.key("remediationTypes").start_array();
+        for item_4 in var_2 {
             {
-                object_3.key(key_4.as_str()).string(value_5.as_str());
+                array_3.value().string(item_4.as_str());
             }
         }
-        object_3.finish();
+        array_3.finish();
     }
-    if let Some(var_6) = &input.version {
-        object.key("version").string(var_6.as_str());
+    if let Some(var_5) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("tags").start_object();
+        for (key_7, value_8) in var_5 {
+            {
+                object_6.key(key_7.as_str()).string(value_8.as_str());
+            }
+        }
+        object_6.finish();
+    }
+    if let Some(var_9) = &input.version {
+        object.key("version").string(var_9.as_str());
     }
     Ok(())
 }

@@ -247,6 +247,8 @@ mod get_compatible_versions;
 
 mod get_data_source;
 
+mod get_default_application_setting;
+
 mod get_direct_query_data_source;
 
 mod get_domain_maintenance_status;
@@ -286,6 +288,8 @@ mod list_vpc_endpoints;
 mod list_vpc_endpoints_for_domain;
 
 mod purchase_reserved_instance_offering;
+
+mod put_default_application_setting;
 
 mod reject_inbound_connection;
 

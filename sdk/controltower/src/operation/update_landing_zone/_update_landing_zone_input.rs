@@ -7,6 +7,8 @@ pub struct UpdateLandingZoneInput {
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>The manifest file (JSON) is a text file that describes your Amazon Web Services resources. For an example, review <a href="https://docs.aws.amazon.com/controltower/latest/userguide/lz-api-launch">Launch your landing zone</a>. The example manifest file contains each of the available parameters. The schema for the landing zone's JSON manifest file is not published, by design.</p>
     pub manifest: ::std::option::Option<::aws_smithy_types::Document>,
+    /// <p>Specifies the types of remediation actions to apply when updating the landing zone configuration.</p>
+    pub remediation_types: ::std::option::Option<::std::vec::Vec<crate::types::RemediationType>>,
     /// <p>The unique identifier of the landing zone.</p>
     pub landing_zone_identifier: ::std::option::Option<::std::string::String>,
 }
@@ -18,6 +20,12 @@ impl UpdateLandingZoneInput {
     /// <p>The manifest file (JSON) is a text file that describes your Amazon Web Services resources. For an example, review <a href="https://docs.aws.amazon.com/controltower/latest/userguide/lz-api-launch">Launch your landing zone</a>. The example manifest file contains each of the available parameters. The schema for the landing zone's JSON manifest file is not published, by design.</p>
     pub fn manifest(&self) -> ::std::option::Option<&::aws_smithy_types::Document> {
         self.manifest.as_ref()
+    }
+    /// <p>Specifies the types of remediation actions to apply when updating the landing zone configuration.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.remediation_types.is_none()`.
+    pub fn remediation_types(&self) -> &[crate::types::RemediationType] {
+        self.remediation_types.as_deref().unwrap_or_default()
     }
     /// <p>The unique identifier of the landing zone.</p>
     pub fn landing_zone_identifier(&self) -> ::std::option::Option<&str> {
@@ -37,6 +45,7 @@ impl UpdateLandingZoneInput {
 pub struct UpdateLandingZoneInputBuilder {
     pub(crate) version: ::std::option::Option<::std::string::String>,
     pub(crate) manifest: ::std::option::Option<::aws_smithy_types::Document>,
+    pub(crate) remediation_types: ::std::option::Option<::std::vec::Vec<crate::types::RemediationType>>,
     pub(crate) landing_zone_identifier: ::std::option::Option<::std::string::String>,
 }
 impl UpdateLandingZoneInputBuilder {
@@ -70,6 +79,26 @@ impl UpdateLandingZoneInputBuilder {
     pub fn get_manifest(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
         &self.manifest
     }
+    /// Appends an item to `remediation_types`.
+    ///
+    /// To override the contents of this collection use [`set_remediation_types`](Self::set_remediation_types).
+    ///
+    /// <p>Specifies the types of remediation actions to apply when updating the landing zone configuration.</p>
+    pub fn remediation_types(mut self, input: crate::types::RemediationType) -> Self {
+        let mut v = self.remediation_types.unwrap_or_default();
+        v.push(input);
+        self.remediation_types = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Specifies the types of remediation actions to apply when updating the landing zone configuration.</p>
+    pub fn set_remediation_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RemediationType>>) -> Self {
+        self.remediation_types = input;
+        self
+    }
+    /// <p>Specifies the types of remediation actions to apply when updating the landing zone configuration.</p>
+    pub fn get_remediation_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RemediationType>> {
+        &self.remediation_types
+    }
     /// <p>The unique identifier of the landing zone.</p>
     /// This field is required.
     pub fn landing_zone_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -92,6 +121,7 @@ impl UpdateLandingZoneInputBuilder {
         ::std::result::Result::Ok(crate::operation::update_landing_zone::UpdateLandingZoneInput {
             version: self.version,
             manifest: self.manifest,
+            remediation_types: self.remediation_types,
             landing_zone_identifier: self.landing_zone_identifier,
         })
     }

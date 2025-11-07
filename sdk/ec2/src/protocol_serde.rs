@@ -2979,6 +2979,8 @@ pub(crate) mod shape_export_task_s3_location_request;
 
 pub(crate) mod shape_export_to_s3_task_specification;
 
+pub(crate) mod shape_external_authority_configuration;
+
 pub(crate) mod shape_fast_launch_launch_template_specification_request;
 
 pub(crate) mod shape_fast_launch_snapshot_configuration_request;
@@ -4405,6 +4407,8 @@ pub(crate) mod shape_ipam_prefix_list_resolver_version_entry;
 
 pub(crate) mod shape_ipam_resource_tag_list;
 
+pub(crate) mod shape_ipam_scope_external_authority_configuration;
+
 pub(crate) mod shape_ipv4_prefix_specification;
 
 pub(crate) mod shape_ipv6_cidr_association;
@@ -5032,6 +5036,8 @@ pub(crate) mod shape_pricing_details_list;
 pub(crate) mod shape_private_dns_details_set;
 
 pub(crate) mod shape_private_dns_name_options_response;
+
+pub(crate) mod shape_private_dns_specified_domain_set;
 
 pub(crate) mod shape_processor_info;
 

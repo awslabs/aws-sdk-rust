@@ -9,8 +9,17 @@ pub fn ser_update_landing_zone_input_input(
     if let Some(var_2) = &input.manifest {
         object.key("manifest").document(var_2);
     }
-    if let Some(var_3) = &input.version {
-        object.key("version").string(var_3.as_str());
+    if let Some(var_3) = &input.remediation_types {
+        let mut array_4 = object.key("remediationTypes").start_array();
+        for item_5 in var_3 {
+            {
+                array_4.value().string(item_5.as_str());
+            }
+        }
+        array_4.finish();
+    }
+    if let Some(var_6) = &input.version {
+        object.key("version").string(var_6.as_str());
     }
     Ok(())
 }

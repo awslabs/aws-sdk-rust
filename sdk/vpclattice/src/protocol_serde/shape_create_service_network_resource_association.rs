@@ -244,6 +244,9 @@ pub(crate) fn de_create_service_network_resource_association(
                             .transpose()?,
                     );
                 }
+                "privateDnsEnabled" => {
+                    builder = builder.set_private_dns_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                }
                 "status" => {
                     builder = builder.set_status(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

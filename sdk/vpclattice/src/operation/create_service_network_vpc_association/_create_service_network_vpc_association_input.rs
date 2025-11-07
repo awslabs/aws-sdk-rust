@@ -9,10 +9,14 @@ pub struct CreateServiceNetworkVpcAssociationInput {
     pub service_network_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the VPC.</p>
     pub vpc_identifier: ::std::option::Option<::std::string::String>,
+    /// <p>Indicates if private DNS is enabled for the VPC association.</p>
+    pub private_dns_enabled: ::std::option::Option<bool>,
     /// <p>The IDs of the security groups. Security groups aren't added by default. You can add a security group to apply network level controls to control which resources in a VPC are allowed to access the service network and its services. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html">Control traffic to resources using security groups</a> in the <i>Amazon VPC User Guide</i>.</p>
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The tags for the association.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>DNS options for the service network VPC association.</p>
+    pub dns_options: ::std::option::Option<crate::types::DnsOptions>,
 }
 impl CreateServiceNetworkVpcAssociationInput {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.</p>
@@ -27,6 +31,10 @@ impl CreateServiceNetworkVpcAssociationInput {
     pub fn vpc_identifier(&self) -> ::std::option::Option<&str> {
         self.vpc_identifier.as_deref()
     }
+    /// <p>Indicates if private DNS is enabled for the VPC association.</p>
+    pub fn private_dns_enabled(&self) -> ::std::option::Option<bool> {
+        self.private_dns_enabled
+    }
     /// <p>The IDs of the security groups. Security groups aren't added by default. You can add a security group to apply network level controls to control which resources in a VPC are allowed to access the service network and its services. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html">Control traffic to resources using security groups</a> in the <i>Amazon VPC User Guide</i>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
@@ -36,6 +44,10 @@ impl CreateServiceNetworkVpcAssociationInput {
     /// <p>The tags for the association.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
+    }
+    /// <p>DNS options for the service network VPC association.</p>
+    pub fn dns_options(&self) -> ::std::option::Option<&crate::types::DnsOptions> {
+        self.dns_options.as_ref()
     }
 }
 impl CreateServiceNetworkVpcAssociationInput {
@@ -52,8 +64,10 @@ pub struct CreateServiceNetworkVpcAssociationInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) service_network_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) private_dns_enabled: ::std::option::Option<bool>,
     pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) dns_options: ::std::option::Option<crate::types::DnsOptions>,
 }
 impl CreateServiceNetworkVpcAssociationInputBuilder {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.</p>
@@ -100,6 +114,20 @@ impl CreateServiceNetworkVpcAssociationInputBuilder {
     pub fn get_vpc_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.vpc_identifier
     }
+    /// <p>Indicates if private DNS is enabled for the VPC association.</p>
+    pub fn private_dns_enabled(mut self, input: bool) -> Self {
+        self.private_dns_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates if private DNS is enabled for the VPC association.</p>
+    pub fn set_private_dns_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.private_dns_enabled = input;
+        self
+    }
+    /// <p>Indicates if private DNS is enabled for the VPC association.</p>
+    pub fn get_private_dns_enabled(&self) -> &::std::option::Option<bool> {
+        &self.private_dns_enabled
+    }
     /// Appends an item to `security_group_ids`.
     ///
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
@@ -140,6 +168,20 @@ impl CreateServiceNetworkVpcAssociationInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// <p>DNS options for the service network VPC association.</p>
+    pub fn dns_options(mut self, input: crate::types::DnsOptions) -> Self {
+        self.dns_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>DNS options for the service network VPC association.</p>
+    pub fn set_dns_options(mut self, input: ::std::option::Option<crate::types::DnsOptions>) -> Self {
+        self.dns_options = input;
+        self
+    }
+    /// <p>DNS options for the service network VPC association.</p>
+    pub fn get_dns_options(&self) -> &::std::option::Option<crate::types::DnsOptions> {
+        &self.dns_options
+    }
     /// Consumes the builder and constructs a [`CreateServiceNetworkVpcAssociationInput`](crate::operation::create_service_network_vpc_association::CreateServiceNetworkVpcAssociationInput).
     pub fn build(
         self,
@@ -152,8 +194,10 @@ impl CreateServiceNetworkVpcAssociationInputBuilder {
                 client_token: self.client_token,
                 service_network_identifier: self.service_network_identifier,
                 vpc_identifier: self.vpc_identifier,
+                private_dns_enabled: self.private_dns_enabled,
                 security_group_ids: self.security_group_ids,
                 tags: self.tags,
+                dns_options: self.dns_options,
             },
         )
     }

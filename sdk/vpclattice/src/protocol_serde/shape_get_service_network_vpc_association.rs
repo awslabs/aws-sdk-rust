@@ -168,6 +168,9 @@ pub(crate) fn de_get_service_network_vpc_association(
                             .transpose()?,
                     );
                 }
+                "dnsOptions" => {
+                    builder = builder.set_dns_options(crate::protocol_serde::shape_dns_options::de_dns_options(tokens)?);
+                }
                 "failureCode" => {
                     builder = builder.set_failure_code(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -194,6 +197,9 @@ pub(crate) fn de_get_service_network_vpc_association(
                         tokens.next(),
                         ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
                     )?);
+                }
+                "privateDnsEnabled" => {
+                    builder = builder.set_private_dns_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
                 "securityGroupIds" => {
                     builder = builder.set_security_group_ids(crate::protocol_serde::shape_security_group_list::de_security_group_list(tokens)?);

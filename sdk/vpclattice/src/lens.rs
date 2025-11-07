@@ -9,6 +9,16 @@ pub(crate) fn reflens_list_access_log_subscriptions_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_domain_verifications_output_output_next_token(
+    input: &crate::operation::list_domain_verifications::ListDomainVerificationsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_listeners_output_output_next_token(
     input: &crate::operation::list_listeners::ListListenersOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -142,6 +152,13 @@ pub(crate) fn reflens_list_targets_output_output_next_token(
 pub(crate) fn lens_list_access_log_subscriptions_output_output_items(
     input: crate::operation::list_access_log_subscriptions::ListAccessLogSubscriptionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AccessLogSubscriptionSummary>> {
+    let input = input.items;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_domain_verifications_output_output_items(
+    input: crate::operation::list_domain_verifications::ListDomainVerificationsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::DomainVerificationSummary>> {
     let input = input.items;
     ::std::option::Option::Some(input)
 }

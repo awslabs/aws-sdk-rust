@@ -21,6 +21,10 @@ impl super::Client {
     ///   - [`amazon_managed(Option<bool>)`](crate::operation::get_resource_configuration::GetResourceConfigurationOutput::amazon_managed): <p>Indicates whether the resource configuration was created and is managed by Amazon.</p>
     ///   - [`failure_reason(Option<String>)`](crate::operation::get_resource_configuration::GetResourceConfigurationOutput::failure_reason): <p>The reason the create-resource-configuration request failed.</p>
     ///   - [`last_updated_at(Option<DateTime>)`](crate::operation::get_resource_configuration::GetResourceConfigurationOutput::last_updated_at): <p>The most recent date and time that the resource configuration was updated, in ISO-8601 format.</p>
+    ///   - [`domain_verification_id(Option<String>)`](crate::operation::get_resource_configuration::GetResourceConfigurationOutput::domain_verification_id): <p>The domain verification ID.</p>
+    ///   - [`domain_verification_arn(Option<String>)`](crate::operation::get_resource_configuration::GetResourceConfigurationOutput::domain_verification_arn): <p>The ARN of the domain verification.</p>
+    ///   - [`domain_verification_status(Option<VerificationStatus>)`](crate::operation::get_resource_configuration::GetResourceConfigurationOutput::domain_verification_status): <p>The domain verification status.</p>
+    ///   - [`group_domain(Option<String>)`](crate::operation::get_resource_configuration::GetResourceConfigurationOutput::group_domain): <p>(GROUP) The group domain for a group resource configuration. Any domains that you create for the child resource are subdomains of the group domain. Child resources inherit the verification status of the domain.</p>
     /// - On failure, responds with [`SdkError<GetResourceConfigurationError>`](crate::operation::get_resource_configuration::GetResourceConfigurationError)
     pub fn get_resource_configuration(&self) -> crate::operation::get_resource_configuration::builders::GetResourceConfigurationFluentBuilder {
         crate::operation::get_resource_configuration::builders::GetResourceConfigurationFluentBuilder::new(self.handle.clone())

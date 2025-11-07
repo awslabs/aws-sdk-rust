@@ -7,6 +7,8 @@ pub struct ListResourceConfigurationsInput {
     pub resource_gateway_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the resource configuration of type <code>Group</code>.</p>
     pub resource_configuration_group_identifier: ::std::option::Option<::std::string::String>,
+    /// <p>The domain verification ID.</p>
+    pub domain_verification_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The maximum page size.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>A pagination token for the next page of results.</p>
@@ -20,6 +22,10 @@ impl ListResourceConfigurationsInput {
     /// <p>The ID of the resource configuration of type <code>Group</code>.</p>
     pub fn resource_configuration_group_identifier(&self) -> ::std::option::Option<&str> {
         self.resource_configuration_group_identifier.as_deref()
+    }
+    /// <p>The domain verification ID.</p>
+    pub fn domain_verification_identifier(&self) -> ::std::option::Option<&str> {
+        self.domain_verification_identifier.as_deref()
     }
     /// <p>The maximum page size.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -43,6 +49,7 @@ impl ListResourceConfigurationsInput {
 pub struct ListResourceConfigurationsInputBuilder {
     pub(crate) resource_gateway_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) resource_configuration_group_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) domain_verification_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -74,6 +81,20 @@ impl ListResourceConfigurationsInputBuilder {
     /// <p>The ID of the resource configuration of type <code>Group</code>.</p>
     pub fn get_resource_configuration_group_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_configuration_group_identifier
+    }
+    /// <p>The domain verification ID.</p>
+    pub fn domain_verification_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.domain_verification_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The domain verification ID.</p>
+    pub fn set_domain_verification_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.domain_verification_identifier = input;
+        self
+    }
+    /// <p>The domain verification ID.</p>
+    pub fn get_domain_verification_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_verification_identifier
     }
     /// <p>The maximum page size.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -113,6 +134,7 @@ impl ListResourceConfigurationsInputBuilder {
         ::std::result::Result::Ok(crate::operation::list_resource_configurations::ListResourceConfigurationsInput {
             resource_gateway_identifier: self.resource_gateway_identifier,
             resource_configuration_group_identifier: self.resource_configuration_group_identifier,
+            domain_verification_identifier: self.domain_verification_identifier,
             max_results: self.max_results,
             next_token: self.next_token,
         })

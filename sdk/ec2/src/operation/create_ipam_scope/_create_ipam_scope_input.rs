@@ -13,6 +13,9 @@ pub struct CreateIpamScopeInput {
     pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html">Ensuring idempotency</a>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
+    /// <p>The configuration that links an Amazon VPC IPAM scope to an external authority system. It specifies the type of external system and the external resource identifier that identifies your account or instance in that system.</p>
+    /// <p>In IPAM, an external authority is a third-party IP address management system that provides CIDR blocks when you provision address space for top-level IPAM pools. This allows you to use your existing IP management system to control which address ranges are allocated to Amazon Web Services while using Amazon VPC IPAM to manage subnets within those ranges.</p>
+    pub external_authority_configuration: ::std::option::Option<crate::types::ExternalAuthorityConfiguration>,
 }
 impl CreateIpamScopeInput {
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -37,6 +40,11 @@ impl CreateIpamScopeInput {
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
+    /// <p>The configuration that links an Amazon VPC IPAM scope to an external authority system. It specifies the type of external system and the external resource identifier that identifies your account or instance in that system.</p>
+    /// <p>In IPAM, an external authority is a third-party IP address management system that provides CIDR blocks when you provision address space for top-level IPAM pools. This allows you to use your existing IP management system to control which address ranges are allocated to Amazon Web Services while using Amazon VPC IPAM to manage subnets within those ranges.</p>
+    pub fn external_authority_configuration(&self) -> ::std::option::Option<&crate::types::ExternalAuthorityConfiguration> {
+        self.external_authority_configuration.as_ref()
+    }
 }
 impl CreateIpamScopeInput {
     /// Creates a new builder-style object to manufacture [`CreateIpamScopeInput`](crate::operation::create_ipam_scope::CreateIpamScopeInput).
@@ -54,6 +62,7 @@ pub struct CreateIpamScopeInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
+    pub(crate) external_authority_configuration: ::std::option::Option<crate::types::ExternalAuthorityConfiguration>,
 }
 impl CreateIpamScopeInputBuilder {
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -133,6 +142,23 @@ impl CreateIpamScopeInputBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
+    /// <p>The configuration that links an Amazon VPC IPAM scope to an external authority system. It specifies the type of external system and the external resource identifier that identifies your account or instance in that system.</p>
+    /// <p>In IPAM, an external authority is a third-party IP address management system that provides CIDR blocks when you provision address space for top-level IPAM pools. This allows you to use your existing IP management system to control which address ranges are allocated to Amazon Web Services while using Amazon VPC IPAM to manage subnets within those ranges.</p>
+    pub fn external_authority_configuration(mut self, input: crate::types::ExternalAuthorityConfiguration) -> Self {
+        self.external_authority_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration that links an Amazon VPC IPAM scope to an external authority system. It specifies the type of external system and the external resource identifier that identifies your account or instance in that system.</p>
+    /// <p>In IPAM, an external authority is a third-party IP address management system that provides CIDR blocks when you provision address space for top-level IPAM pools. This allows you to use your existing IP management system to control which address ranges are allocated to Amazon Web Services while using Amazon VPC IPAM to manage subnets within those ranges.</p>
+    pub fn set_external_authority_configuration(mut self, input: ::std::option::Option<crate::types::ExternalAuthorityConfiguration>) -> Self {
+        self.external_authority_configuration = input;
+        self
+    }
+    /// <p>The configuration that links an Amazon VPC IPAM scope to an external authority system. It specifies the type of external system and the external resource identifier that identifies your account or instance in that system.</p>
+    /// <p>In IPAM, an external authority is a third-party IP address management system that provides CIDR blocks when you provision address space for top-level IPAM pools. This allows you to use your existing IP management system to control which address ranges are allocated to Amazon Web Services while using Amazon VPC IPAM to manage subnets within those ranges.</p>
+    pub fn get_external_authority_configuration(&self) -> &::std::option::Option<crate::types::ExternalAuthorityConfiguration> {
+        &self.external_authority_configuration
+    }
     /// Consumes the builder and constructs a [`CreateIpamScopeInput`](crate::operation::create_ipam_scope::CreateIpamScopeInput).
     pub fn build(
         self,
@@ -143,6 +169,7 @@ impl CreateIpamScopeInputBuilder {
             description: self.description,
             tag_specifications: self.tag_specifications,
             client_token: self.client_token,
+            external_authority_configuration: self.external_authority_configuration,
         })
     }
 }

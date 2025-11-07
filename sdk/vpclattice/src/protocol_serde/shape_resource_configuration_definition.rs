@@ -72,25 +72,25 @@ where
 }
 
 pub fn ser_resource_configuration_definition(
-    object_9: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
+    object_12: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ResourceConfigurationDefinition,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::ResourceConfigurationDefinition::DnsResource(inner) => {
             #[allow(unused_mut)]
-            let mut object_1 = object_9.key("dnsResource").start_object();
+            let mut object_1 = object_12.key("dnsResource").start_object();
             crate::protocol_serde::shape_dns_resource::ser_dns_resource(&mut object_1, inner)?;
             object_1.finish();
         }
         crate::types::ResourceConfigurationDefinition::IpResource(inner) => {
             #[allow(unused_mut)]
-            let mut object_2 = object_9.key("ipResource").start_object();
+            let mut object_2 = object_12.key("ipResource").start_object();
             crate::protocol_serde::shape_ip_resource::ser_ip_resource(&mut object_2, inner)?;
             object_2.finish();
         }
         crate::types::ResourceConfigurationDefinition::ArnResource(inner) => {
             #[allow(unused_mut)]
-            let mut object_3 = object_9.key("arnResource").start_object();
+            let mut object_3 = object_12.key("arnResource").start_object();
             crate::protocol_serde::shape_arn_resource::ser_arn_resource(&mut object_3, inner)?;
             object_3.finish();
         }

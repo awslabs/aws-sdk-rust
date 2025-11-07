@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PrivateDnsNameConfiguration {
     /// <p>The verification state of the VPC endpoint service.</p>
-    /// <p>&gt;Consumers of the endpoint service can use the private name only when the state is <code>verified</code>.</p>
+    /// <p>Consumers of the endpoint service can use the private name only when the state is <code>verified</code>.</p>
     pub state: ::std::option::Option<crate::types::DnsNameState>,
     /// <p>The endpoint service verification type, for example TXT.</p>
     pub r#type: ::std::option::Option<::std::string::String>,
@@ -16,7 +16,7 @@ pub struct PrivateDnsNameConfiguration {
 }
 impl PrivateDnsNameConfiguration {
     /// <p>The verification state of the VPC endpoint service.</p>
-    /// <p>&gt;Consumers of the endpoint service can use the private name only when the state is <code>verified</code>.</p>
+    /// <p>Consumers of the endpoint service can use the private name only when the state is <code>verified</code>.</p>
     pub fn state(&self) -> ::std::option::Option<&crate::types::DnsNameState> {
         self.state.as_ref()
     }
@@ -51,19 +51,19 @@ pub struct PrivateDnsNameConfigurationBuilder {
 }
 impl PrivateDnsNameConfigurationBuilder {
     /// <p>The verification state of the VPC endpoint service.</p>
-    /// <p>&gt;Consumers of the endpoint service can use the private name only when the state is <code>verified</code>.</p>
+    /// <p>Consumers of the endpoint service can use the private name only when the state is <code>verified</code>.</p>
     pub fn state(mut self, input: crate::types::DnsNameState) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The verification state of the VPC endpoint service.</p>
-    /// <p>&gt;Consumers of the endpoint service can use the private name only when the state is <code>verified</code>.</p>
+    /// <p>Consumers of the endpoint service can use the private name only when the state is <code>verified</code>.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::DnsNameState>) -> Self {
         self.state = input;
         self
     }
     /// <p>The verification state of the VPC endpoint service.</p>
-    /// <p>&gt;Consumers of the endpoint service can use the private name only when the state is <code>verified</code>.</p>
+    /// <p>Consumers of the endpoint service can use the private name only when the state is <code>verified</code>.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::DnsNameState> {
         &self.state
     }

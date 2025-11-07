@@ -11,6 +11,8 @@ pub struct ListEnabledControlsInput {
     pub max_results: ::std::option::Option<i32>,
     /// <p>An input filter for the <code>ListEnabledControls</code> API that lets you select the types of control operations to view.</p>
     pub filter: ::std::option::Option<crate::types::EnabledControlFilter>,
+    /// <p>A boolean value that determines whether to include enabled controls from child organizational units in the response.</p>
+    pub include_children: ::std::option::Option<bool>,
 }
 impl ListEnabledControlsInput {
     /// <p>The ARN of the organizational unit. For information on how to find the <code>targetIdentifier</code>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.</p>
@@ -29,6 +31,10 @@ impl ListEnabledControlsInput {
     pub fn filter(&self) -> ::std::option::Option<&crate::types::EnabledControlFilter> {
         self.filter.as_ref()
     }
+    /// <p>A boolean value that determines whether to include enabled controls from child organizational units in the response.</p>
+    pub fn include_children(&self) -> ::std::option::Option<bool> {
+        self.include_children
+    }
 }
 impl ListEnabledControlsInput {
     /// Creates a new builder-style object to manufacture [`ListEnabledControlsInput`](crate::operation::list_enabled_controls::ListEnabledControlsInput).
@@ -45,6 +51,7 @@ pub struct ListEnabledControlsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) filter: ::std::option::Option<crate::types::EnabledControlFilter>,
+    pub(crate) include_children: ::std::option::Option<bool>,
 }
 impl ListEnabledControlsInputBuilder {
     /// <p>The ARN of the organizational unit. For information on how to find the <code>targetIdentifier</code>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.</p>
@@ -103,6 +110,20 @@ impl ListEnabledControlsInputBuilder {
     pub fn get_filter(&self) -> &::std::option::Option<crate::types::EnabledControlFilter> {
         &self.filter
     }
+    /// <p>A boolean value that determines whether to include enabled controls from child organizational units in the response.</p>
+    pub fn include_children(mut self, input: bool) -> Self {
+        self.include_children = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A boolean value that determines whether to include enabled controls from child organizational units in the response.</p>
+    pub fn set_include_children(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.include_children = input;
+        self
+    }
+    /// <p>A boolean value that determines whether to include enabled controls from child organizational units in the response.</p>
+    pub fn get_include_children(&self) -> &::std::option::Option<bool> {
+        &self.include_children
+    }
     /// Consumes the builder and constructs a [`ListEnabledControlsInput`](crate::operation::list_enabled_controls::ListEnabledControlsInput).
     pub fn build(
         self,
@@ -113,6 +134,7 @@ impl ListEnabledControlsInputBuilder {
             next_token: self.next_token,
             max_results: self.max_results,
             filter: self.filter,
+            include_children: self.include_children,
         })
     }
 }

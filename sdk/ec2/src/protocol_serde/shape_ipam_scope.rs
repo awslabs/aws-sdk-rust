@@ -153,6 +153,16 @@ pub fn de_ipam_scope(
                 builder = builder.set_tags(var_11);
             }
             ,
+            s if s.matches("externalAuthorityConfiguration") /* ExternalAuthorityConfiguration com.amazonaws.ec2#IpamScope$ExternalAuthorityConfiguration */ =>  {
+                let var_12 =
+                    Some(
+                        crate::protocol_serde::shape_ipam_scope_external_authority_configuration::de_ipam_scope_external_authority_configuration(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_external_authority_configuration(var_12);
+            }
+            ,
             _ => {}
         }
     }

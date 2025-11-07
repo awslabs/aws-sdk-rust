@@ -47,6 +47,14 @@ pub struct CreateResourceConfigurationOutput {
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The reason that the request failed.</p>
     pub failure_reason: ::std::option::Option<::std::string::String>,
+    /// <p>The custom domain name for your resource configuration.</p>
+    pub custom_domain_name: ::std::option::Option<::std::string::String>,
+    /// <p>The domain name verification ID.</p>
+    pub domain_verification_id: ::std::option::Option<::std::string::String>,
+    /// <p>(GROUP) The group domain for a group resource configuration. Any domains that you create for the child resource are subdomains of the group domain. Child resources inherit the verification status of the domain.</p>
+    pub group_domain: ::std::option::Option<::std::string::String>,
+    /// <p>The verification ID ARN</p>
+    pub domain_verification_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateResourceConfigurationOutput {
@@ -122,6 +130,22 @@ impl CreateResourceConfigurationOutput {
     pub fn failure_reason(&self) -> ::std::option::Option<&str> {
         self.failure_reason.as_deref()
     }
+    /// <p>The custom domain name for your resource configuration.</p>
+    pub fn custom_domain_name(&self) -> ::std::option::Option<&str> {
+        self.custom_domain_name.as_deref()
+    }
+    /// <p>The domain name verification ID.</p>
+    pub fn domain_verification_id(&self) -> ::std::option::Option<&str> {
+        self.domain_verification_id.as_deref()
+    }
+    /// <p>(GROUP) The group domain for a group resource configuration. Any domains that you create for the child resource are subdomains of the group domain. Child resources inherit the verification status of the domain.</p>
+    pub fn group_domain(&self) -> ::std::option::Option<&str> {
+        self.group_domain.as_deref()
+    }
+    /// <p>The verification ID ARN</p>
+    pub fn domain_verification_arn(&self) -> ::std::option::Option<&str> {
+        self.domain_verification_arn.as_deref()
+    }
 }
 impl ::aws_types::request_id::RequestId for CreateResourceConfigurationOutput {
     fn request_id(&self) -> Option<&str> {
@@ -152,6 +176,10 @@ pub struct CreateResourceConfigurationOutputBuilder {
     pub(crate) allow_association_to_shareable_service_network: ::std::option::Option<bool>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
+    pub(crate) custom_domain_name: ::std::option::Option<::std::string::String>,
+    pub(crate) domain_verification_id: ::std::option::Option<::std::string::String>,
+    pub(crate) group_domain: ::std::option::Option<::std::string::String>,
+    pub(crate) domain_verification_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateResourceConfigurationOutputBuilder {
@@ -397,6 +425,62 @@ impl CreateResourceConfigurationOutputBuilder {
     pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.failure_reason
     }
+    /// <p>The custom domain name for your resource configuration.</p>
+    pub fn custom_domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.custom_domain_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The custom domain name for your resource configuration.</p>
+    pub fn set_custom_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.custom_domain_name = input;
+        self
+    }
+    /// <p>The custom domain name for your resource configuration.</p>
+    pub fn get_custom_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.custom_domain_name
+    }
+    /// <p>The domain name verification ID.</p>
+    pub fn domain_verification_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.domain_verification_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The domain name verification ID.</p>
+    pub fn set_domain_verification_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.domain_verification_id = input;
+        self
+    }
+    /// <p>The domain name verification ID.</p>
+    pub fn get_domain_verification_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_verification_id
+    }
+    /// <p>(GROUP) The group domain for a group resource configuration. Any domains that you create for the child resource are subdomains of the group domain. Child resources inherit the verification status of the domain.</p>
+    pub fn group_domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.group_domain = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>(GROUP) The group domain for a group resource configuration. Any domains that you create for the child resource are subdomains of the group domain. Child resources inherit the verification status of the domain.</p>
+    pub fn set_group_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.group_domain = input;
+        self
+    }
+    /// <p>(GROUP) The group domain for a group resource configuration. Any domains that you create for the child resource are subdomains of the group domain. Child resources inherit the verification status of the domain.</p>
+    pub fn get_group_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_domain
+    }
+    /// <p>The verification ID ARN</p>
+    pub fn domain_verification_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.domain_verification_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The verification ID ARN</p>
+    pub fn set_domain_verification_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.domain_verification_arn = input;
+        self
+    }
+    /// <p>The verification ID ARN</p>
+    pub fn get_domain_verification_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_verification_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -422,6 +506,10 @@ impl CreateResourceConfigurationOutputBuilder {
             allow_association_to_shareable_service_network: self.allow_association_to_shareable_service_network,
             created_at: self.created_at,
             failure_reason: self.failure_reason,
+            custom_domain_name: self.custom_domain_name,
+            domain_verification_id: self.domain_verification_id,
+            group_domain: self.group_domain,
+            domain_verification_arn: self.domain_verification_arn,
             _request_id: self._request_id,
         }
     }

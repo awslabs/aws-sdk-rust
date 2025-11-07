@@ -184,4 +184,21 @@ impl CreateIpamScopeFluentBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
+    /// <p>The configuration that links an Amazon VPC IPAM scope to an external authority system. It specifies the type of external system and the external resource identifier that identifies your account or instance in that system.</p>
+    /// <p>In IPAM, an external authority is a third-party IP address management system that provides CIDR blocks when you provision address space for top-level IPAM pools. This allows you to use your existing IP management system to control which address ranges are allocated to Amazon Web Services while using Amazon VPC IPAM to manage subnets within those ranges.</p>
+    pub fn external_authority_configuration(mut self, input: crate::types::ExternalAuthorityConfiguration) -> Self {
+        self.inner = self.inner.external_authority_configuration(input);
+        self
+    }
+    /// <p>The configuration that links an Amazon VPC IPAM scope to an external authority system. It specifies the type of external system and the external resource identifier that identifies your account or instance in that system.</p>
+    /// <p>In IPAM, an external authority is a third-party IP address management system that provides CIDR blocks when you provision address space for top-level IPAM pools. This allows you to use your existing IP management system to control which address ranges are allocated to Amazon Web Services while using Amazon VPC IPAM to manage subnets within those ranges.</p>
+    pub fn set_external_authority_configuration(mut self, input: ::std::option::Option<crate::types::ExternalAuthorityConfiguration>) -> Self {
+        self.inner = self.inner.set_external_authority_configuration(input);
+        self
+    }
+    /// <p>The configuration that links an Amazon VPC IPAM scope to an external authority system. It specifies the type of external system and the external resource identifier that identifies your account or instance in that system.</p>
+    /// <p>In IPAM, an external authority is a third-party IP address management system that provides CIDR blocks when you provision address space for top-level IPAM pools. This allows you to use your existing IP management system to control which address ranges are allocated to Amazon Web Services while using Amazon VPC IPAM to manage subnets within those ranges.</p>
+    pub fn get_external_authority_configuration(&self) -> &::std::option::Option<crate::types::ExternalAuthorityConfiguration> {
+        self.inner.get_external_authority_configuration()
+    }
 }

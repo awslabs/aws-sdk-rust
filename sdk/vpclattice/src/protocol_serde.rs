@@ -51,6 +51,8 @@ pub(crate) mod shape_delete_access_log_subscription;
 
 pub(crate) mod shape_delete_auth_policy;
 
+pub(crate) mod shape_delete_domain_verification;
+
 pub(crate) mod shape_delete_listener;
 
 pub(crate) mod shape_delete_resource_configuration;
@@ -81,6 +83,8 @@ pub(crate) mod shape_get_access_log_subscription;
 
 pub(crate) mod shape_get_auth_policy;
 
+pub(crate) mod shape_get_domain_verification;
+
 pub(crate) mod shape_get_listener;
 
 pub(crate) mod shape_get_resource_configuration;
@@ -104,6 +108,8 @@ pub(crate) mod shape_get_service_network_vpc_association;
 pub(crate) mod shape_get_target_group;
 
 pub(crate) mod shape_list_access_log_subscriptions;
+
+pub(crate) mod shape_list_domain_verifications;
 
 pub(crate) mod shape_list_listeners;
 
@@ -138,6 +144,8 @@ pub(crate) mod shape_put_auth_policy;
 pub(crate) mod shape_put_resource_policy;
 
 pub(crate) mod shape_register_targets;
+
+pub(crate) mod shape_start_domain_verification;
 
 pub(crate) mod shape_tag_resource;
 
@@ -213,6 +221,8 @@ pub(crate) mod shape_resource_not_found_exception;
 
 pub(crate) mod shape_service_quota_exceeded_exception;
 
+pub(crate) mod shape_start_domain_verification_input;
+
 pub(crate) mod shape_tag_resource_input;
 
 pub(crate) mod shape_throttling_exception;
@@ -240,6 +250,10 @@ pub(crate) mod shape_validation_exception;
 pub(crate) mod shape_access_log_subscription_list;
 
 pub(crate) mod shape_dns_entry;
+
+pub(crate) mod shape_dns_options;
+
+pub(crate) mod shape_domain_verification_list;
 
 pub(crate) mod shape_health_check_config;
 
@@ -301,6 +315,8 @@ pub(crate) mod shape_target_list;
 
 pub(crate) mod shape_target_summary_list;
 
+pub(crate) mod shape_txt_method_config;
+
 pub(crate) mod shape_validation_exception_field_list;
 
 pub(crate) mod shape_access_log_subscription_summary;
@@ -308,6 +324,8 @@ pub(crate) mod shape_access_log_subscription_summary;
 pub(crate) mod shape_arn_resource;
 
 pub(crate) mod shape_dns_resource;
+
+pub(crate) mod shape_domain_verification_summary;
 
 pub(crate) mod shape_fixed_response_action;
 
@@ -320,6 +338,8 @@ pub(crate) mod shape_ip_resource;
 pub(crate) mod shape_listener_summary;
 
 pub(crate) mod shape_matcher;
+
+pub(crate) mod shape_private_dns_specified_domains_list;
 
 pub(crate) mod shape_resource_configuration_summary;
 

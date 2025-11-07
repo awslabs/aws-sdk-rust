@@ -20,6 +20,10 @@ pub struct ServiceNetworkVpcAssociationSummary {
     pub service_network_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the service network.</p>
     pub service_network_arn: ::std::option::Option<::std::string::String>,
+    /// <p>Indicates if private DNS is enabled for the service network VPC association.</p>
+    pub private_dns_enabled: ::std::option::Option<bool>,
+    /// <p>The DNS options for the service network VPC association.</p>
+    pub dns_options: ::std::option::Option<crate::types::DnsOptions>,
     /// <p>The ID of the VPC.</p>
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the association was last updated, in ISO-8601 format.</p>
@@ -58,6 +62,14 @@ impl ServiceNetworkVpcAssociationSummary {
     pub fn service_network_arn(&self) -> ::std::option::Option<&str> {
         self.service_network_arn.as_deref()
     }
+    /// <p>Indicates if private DNS is enabled for the service network VPC association.</p>
+    pub fn private_dns_enabled(&self) -> ::std::option::Option<bool> {
+        self.private_dns_enabled
+    }
+    /// <p>The DNS options for the service network VPC association.</p>
+    pub fn dns_options(&self) -> ::std::option::Option<&crate::types::DnsOptions> {
+        self.dns_options.as_ref()
+    }
     /// <p>The ID of the VPC.</p>
     pub fn vpc_id(&self) -> ::std::option::Option<&str> {
         self.vpc_id.as_deref()
@@ -86,6 +98,8 @@ pub struct ServiceNetworkVpcAssociationSummaryBuilder {
     pub(crate) service_network_id: ::std::option::Option<::std::string::String>,
     pub(crate) service_network_name: ::std::option::Option<::std::string::String>,
     pub(crate) service_network_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) private_dns_enabled: ::std::option::Option<bool>,
+    pub(crate) dns_options: ::std::option::Option<crate::types::DnsOptions>,
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
     pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -202,6 +216,34 @@ impl ServiceNetworkVpcAssociationSummaryBuilder {
     pub fn get_service_network_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.service_network_arn
     }
+    /// <p>Indicates if private DNS is enabled for the service network VPC association.</p>
+    pub fn private_dns_enabled(mut self, input: bool) -> Self {
+        self.private_dns_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates if private DNS is enabled for the service network VPC association.</p>
+    pub fn set_private_dns_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.private_dns_enabled = input;
+        self
+    }
+    /// <p>Indicates if private DNS is enabled for the service network VPC association.</p>
+    pub fn get_private_dns_enabled(&self) -> &::std::option::Option<bool> {
+        &self.private_dns_enabled
+    }
+    /// <p>The DNS options for the service network VPC association.</p>
+    pub fn dns_options(mut self, input: crate::types::DnsOptions) -> Self {
+        self.dns_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The DNS options for the service network VPC association.</p>
+    pub fn set_dns_options(mut self, input: ::std::option::Option<crate::types::DnsOptions>) -> Self {
+        self.dns_options = input;
+        self
+    }
+    /// <p>The DNS options for the service network VPC association.</p>
+    pub fn get_dns_options(&self) -> &::std::option::Option<crate::types::DnsOptions> {
+        &self.dns_options
+    }
     /// <p>The ID of the VPC.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
@@ -241,6 +283,8 @@ impl ServiceNetworkVpcAssociationSummaryBuilder {
             service_network_id: self.service_network_id,
             service_network_name: self.service_network_name,
             service_network_arn: self.service_network_arn,
+            private_dns_enabled: self.private_dns_enabled,
+            dns_options: self.dns_options,
             vpc_id: self.vpc_id,
             last_updated_at: self.last_updated_at,
         }

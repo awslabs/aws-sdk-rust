@@ -18,6 +18,8 @@ pub struct DriftStatusSummary {
     /// <p><code>UNKNOWN</code>: Amazon Web Services Control Tower is not able to check the drift status for the enabled control.</p></li>
     /// </ul>
     pub drift_status: ::std::option::Option<crate::types::DriftStatus>,
+    /// <p>An object that categorizes the different types of drift detected for the enabled control.</p>
+    pub types: ::std::option::Option<crate::types::EnabledControlDriftTypes>,
 }
 impl DriftStatusSummary {
     /// <p>The drift status of the enabled control.</p>
@@ -35,6 +37,10 @@ impl DriftStatusSummary {
     pub fn drift_status(&self) -> ::std::option::Option<&crate::types::DriftStatus> {
         self.drift_status.as_ref()
     }
+    /// <p>An object that categorizes the different types of drift detected for the enabled control.</p>
+    pub fn types(&self) -> ::std::option::Option<&crate::types::EnabledControlDriftTypes> {
+        self.types.as_ref()
+    }
 }
 impl DriftStatusSummary {
     /// Creates a new builder-style object to manufacture [`DriftStatusSummary`](crate::types::DriftStatusSummary).
@@ -48,6 +54,7 @@ impl DriftStatusSummary {
 #[non_exhaustive]
 pub struct DriftStatusSummaryBuilder {
     pub(crate) drift_status: ::std::option::Option<crate::types::DriftStatus>,
+    pub(crate) types: ::std::option::Option<crate::types::EnabledControlDriftTypes>,
 }
 impl DriftStatusSummaryBuilder {
     /// <p>The drift status of the enabled control.</p>
@@ -97,10 +104,25 @@ impl DriftStatusSummaryBuilder {
     pub fn get_drift_status(&self) -> &::std::option::Option<crate::types::DriftStatus> {
         &self.drift_status
     }
+    /// <p>An object that categorizes the different types of drift detected for the enabled control.</p>
+    pub fn types(mut self, input: crate::types::EnabledControlDriftTypes) -> Self {
+        self.types = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An object that categorizes the different types of drift detected for the enabled control.</p>
+    pub fn set_types(mut self, input: ::std::option::Option<crate::types::EnabledControlDriftTypes>) -> Self {
+        self.types = input;
+        self
+    }
+    /// <p>An object that categorizes the different types of drift detected for the enabled control.</p>
+    pub fn get_types(&self) -> &::std::option::Option<crate::types::EnabledControlDriftTypes> {
+        &self.types
+    }
     /// Consumes the builder and constructs a [`DriftStatusSummary`](crate::types::DriftStatusSummary).
     pub fn build(self) -> crate::types::DriftStatusSummary {
         crate::types::DriftStatusSummary {
             drift_status: self.drift_status,
+            types: self.types,
         }
     }
 }

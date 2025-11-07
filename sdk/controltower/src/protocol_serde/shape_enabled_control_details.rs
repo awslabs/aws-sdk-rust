@@ -35,9 +35,6 @@ where
                                     .transpose()?,
                             );
                         }
-                        "targetRegions" => {
-                            builder = builder.set_target_regions(crate::protocol_serde::shape_target_regions::de_target_regions(tokens)?);
-                        }
                         "statusSummary" => {
                             builder = builder.set_status_summary(
                                 crate::protocol_serde::shape_enablement_status_summary::de_enablement_status_summary(tokens)?,
@@ -46,6 +43,16 @@ where
                         "driftStatusSummary" => {
                             builder =
                                 builder.set_drift_status_summary(crate::protocol_serde::shape_drift_status_summary::de_drift_status_summary(tokens)?);
+                        }
+                        "parentIdentifier" => {
+                            builder = builder.set_parent_identifier(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "targetRegions" => {
+                            builder = builder.set_target_regions(crate::protocol_serde::shape_target_regions::de_target_regions(tokens)?);
                         }
                         "parameters" => {
                             builder = builder.set_parameters(

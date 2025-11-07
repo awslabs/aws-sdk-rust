@@ -20,8 +20,10 @@ impl super::Client {
     ///   - [`failure_code(Option<String>)`](crate::operation::get_service_network_resource_association::GetServiceNetworkResourceAssociationOutput::failure_code): <p>The failure code.</p>
     ///   - [`last_updated_at(Option<DateTime>)`](crate::operation::get_service_network_resource_association::GetServiceNetworkResourceAssociationOutput::last_updated_at): <p>The most recent date and time that the association was updated, in ISO-8601 format.</p>
     ///   - [`private_dns_entry(Option<DnsEntry>)`](crate::operation::get_service_network_resource_association::GetServiceNetworkResourceAssociationOutput::private_dns_entry): <p>The private DNS entry for the service.</p>
+    ///   - [`private_dns_enabled(Option<bool>)`](crate::operation::get_service_network_resource_association::GetServiceNetworkResourceAssociationOutput::private_dns_enabled): <p>Indicates if private DNS is enabled in the service network resource association.</p>
     ///   - [`dns_entry(Option<DnsEntry>)`](crate::operation::get_service_network_resource_association::GetServiceNetworkResourceAssociationOutput::dns_entry): <p>The DNS entry for the service.</p>
     ///   - [`is_managed_association(Option<bool>)`](crate::operation::get_service_network_resource_association::GetServiceNetworkResourceAssociationOutput::is_managed_association): <p>Indicates whether the association is managed by Amazon.</p>
+    ///   - [`domain_verification_status(Option<VerificationStatus>)`](crate::operation::get_service_network_resource_association::GetServiceNetworkResourceAssociationOutput::domain_verification_status): <p>The domain verification status in the service network resource association.</p>
     /// - On failure, responds with [`SdkError<GetServiceNetworkResourceAssociationError>`](crate::operation::get_service_network_resource_association::GetServiceNetworkResourceAssociationError)
     pub fn get_service_network_resource_association(
         &self,

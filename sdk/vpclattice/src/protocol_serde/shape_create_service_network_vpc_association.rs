@@ -216,12 +216,18 @@ pub(crate) fn de_create_service_network_vpc_association(
                             .transpose()?,
                     );
                 }
+                "dnsOptions" => {
+                    builder = builder.set_dns_options(crate::protocol_serde::shape_dns_options::de_dns_options(tokens)?);
+                }
                 "id" => {
                     builder = builder.set_id(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
                     );
+                }
+                "privateDnsEnabled" => {
+                    builder = builder.set_private_dns_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
                 "securityGroupIds" => {
                     builder = builder.set_security_group_ids(crate::protocol_serde::shape_security_group_list::de_security_group_list(tokens)?);

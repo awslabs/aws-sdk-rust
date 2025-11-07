@@ -7,6 +7,8 @@ pub struct CreateLandingZoneInput {
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>The manifest JSON file is a text file that describes your Amazon Web Services resources. For examples, review <a href="https://docs.aws.amazon.com/controltower/latest/userguide/lz-api-launch">Launch your landing zone</a>.</p>
     pub manifest: ::std::option::Option<::aws_smithy_types::Document>,
+    /// <p>Specifies the types of remediation actions to apply when creating the landing zone, such as automatic drift correction or compliance enforcement.</p>
+    pub remediation_types: ::std::option::Option<::std::vec::Vec<crate::types::RemediationType>>,
     /// <p>Tags to be applied to the landing zone.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -18,6 +20,12 @@ impl CreateLandingZoneInput {
     /// <p>The manifest JSON file is a text file that describes your Amazon Web Services resources. For examples, review <a href="https://docs.aws.amazon.com/controltower/latest/userguide/lz-api-launch">Launch your landing zone</a>.</p>
     pub fn manifest(&self) -> ::std::option::Option<&::aws_smithy_types::Document> {
         self.manifest.as_ref()
+    }
+    /// <p>Specifies the types of remediation actions to apply when creating the landing zone, such as automatic drift correction or compliance enforcement.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.remediation_types.is_none()`.
+    pub fn remediation_types(&self) -> &[crate::types::RemediationType] {
+        self.remediation_types.as_deref().unwrap_or_default()
     }
     /// <p>Tags to be applied to the landing zone.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -37,6 +45,7 @@ impl CreateLandingZoneInput {
 pub struct CreateLandingZoneInputBuilder {
     pub(crate) version: ::std::option::Option<::std::string::String>,
     pub(crate) manifest: ::std::option::Option<::aws_smithy_types::Document>,
+    pub(crate) remediation_types: ::std::option::Option<::std::vec::Vec<crate::types::RemediationType>>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateLandingZoneInputBuilder {
@@ -70,6 +79,26 @@ impl CreateLandingZoneInputBuilder {
     pub fn get_manifest(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
         &self.manifest
     }
+    /// Appends an item to `remediation_types`.
+    ///
+    /// To override the contents of this collection use [`set_remediation_types`](Self::set_remediation_types).
+    ///
+    /// <p>Specifies the types of remediation actions to apply when creating the landing zone, such as automatic drift correction or compliance enforcement.</p>
+    pub fn remediation_types(mut self, input: crate::types::RemediationType) -> Self {
+        let mut v = self.remediation_types.unwrap_or_default();
+        v.push(input);
+        self.remediation_types = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Specifies the types of remediation actions to apply when creating the landing zone, such as automatic drift correction or compliance enforcement.</p>
+    pub fn set_remediation_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RemediationType>>) -> Self {
+        self.remediation_types = input;
+        self
+    }
+    /// <p>Specifies the types of remediation actions to apply when creating the landing zone, such as automatic drift correction or compliance enforcement.</p>
+    pub fn get_remediation_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RemediationType>> {
+        &self.remediation_types
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -97,6 +126,7 @@ impl CreateLandingZoneInputBuilder {
         ::std::result::Result::Ok(crate::operation::create_landing_zone::CreateLandingZoneInput {
             version: self.version,
             manifest: self.manifest,
+            remediation_types: self.remediation_types,
             tags: self.tags,
         })
     }

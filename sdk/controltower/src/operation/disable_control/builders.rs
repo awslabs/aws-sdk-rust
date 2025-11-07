@@ -136,4 +136,18 @@ impl DisableControlFluentBuilder {
     pub fn get_target_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_target_identifier()
     }
+    /// <p>The ARN of the enabled control to be disabled, which uniquely identifies the control instance on the target organizational unit.</p>
+    pub fn enabled_control_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.enabled_control_identifier(input.into());
+        self
+    }
+    /// <p>The ARN of the enabled control to be disabled, which uniquely identifies the control instance on the target organizational unit.</p>
+    pub fn set_enabled_control_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_enabled_control_identifier(input);
+        self
+    }
+    /// <p>The ARN of the enabled control to be disabled, which uniquely identifies the control instance on the target organizational unit.</p>
+    pub fn get_enabled_control_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_enabled_control_identifier()
+    }
 }

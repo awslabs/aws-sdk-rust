@@ -14,5 +14,23 @@ pub fn ser_dns_options_specification(
     if let Some(var_4) = &input.private_dns_only_for_inbound_resolver_endpoint {
         scope_3.boolean(*var_4);
     }
+    #[allow(unused_mut)]
+    let mut scope_5 = writer.prefix("PrivateDnsPreference");
+    if let Some(var_6) = &input.private_dns_preference {
+        scope_5.string(var_6);
+    }
+    #[allow(unused_mut)]
+    let mut scope_7 = writer.prefix("PrivateDnsSpecifiedDomain");
+    if let Some(var_8) = &input.private_dns_specified_domains {
+        if !var_8.is_empty() {
+            let mut list_10 = scope_7.start_list(true, Some("item"));
+            for item_9 in var_8 {
+                #[allow(unused_mut)]
+                let mut entry_11 = list_10.entry();
+                entry_11.string(item_9);
+            }
+            list_10.finish();
+        }
+    }
     Ok(())
 }

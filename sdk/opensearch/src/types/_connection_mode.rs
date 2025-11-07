@@ -40,7 +40,8 @@
 /// <ul>
 /// <li>
 /// <p>
-/// <b>DIRECT</b> - Used for cross-cluster search or cross-cluster replication.</p>
+/// <b>DIRECT</b> - Used for cross-cluster search or
+/// cross-cluster replication.</p>
 /// </li>
 /// <li>
 /// <p>

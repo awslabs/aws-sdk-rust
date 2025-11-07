@@ -4,25 +4,27 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EnabledControlSummary {
-    /// <p>The <code>controlIdentifier</code> of the enabled control.</p>
-    pub control_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the enabled control.</p>
     pub arn: ::std::option::Option<::std::string::String>,
+    /// <p>The <code>controlIdentifier</code> of the enabled control.</p>
+    pub control_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the organizational unit.</p>
     pub target_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A short description of the status of the enabled control.</p>
     pub status_summary: ::std::option::Option<crate::types::EnablementStatusSummary>,
     /// <p>The drift status of the enabled control.</p>
     pub drift_status_summary: ::std::option::Option<crate::types::DriftStatusSummary>,
+    /// <p>The ARN of the parent enabled control from which this control inherits its configuration, if applicable.</p>
+    pub parent_identifier: ::std::option::Option<::std::string::String>,
 }
 impl EnabledControlSummary {
-    /// <p>The <code>controlIdentifier</code> of the enabled control.</p>
-    pub fn control_identifier(&self) -> ::std::option::Option<&str> {
-        self.control_identifier.as_deref()
-    }
     /// <p>The ARN of the enabled control.</p>
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
+    }
+    /// <p>The <code>controlIdentifier</code> of the enabled control.</p>
+    pub fn control_identifier(&self) -> ::std::option::Option<&str> {
+        self.control_identifier.as_deref()
     }
     /// <p>The ARN of the organizational unit.</p>
     pub fn target_identifier(&self) -> ::std::option::Option<&str> {
@@ -36,6 +38,10 @@ impl EnabledControlSummary {
     pub fn drift_status_summary(&self) -> ::std::option::Option<&crate::types::DriftStatusSummary> {
         self.drift_status_summary.as_ref()
     }
+    /// <p>The ARN of the parent enabled control from which this control inherits its configuration, if applicable.</p>
+    pub fn parent_identifier(&self) -> ::std::option::Option<&str> {
+        self.parent_identifier.as_deref()
+    }
 }
 impl EnabledControlSummary {
     /// Creates a new builder-style object to manufacture [`EnabledControlSummary`](crate::types::EnabledControlSummary).
@@ -48,27 +54,14 @@ impl EnabledControlSummary {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct EnabledControlSummaryBuilder {
-    pub(crate) control_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) control_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) target_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) status_summary: ::std::option::Option<crate::types::EnablementStatusSummary>,
     pub(crate) drift_status_summary: ::std::option::Option<crate::types::DriftStatusSummary>,
+    pub(crate) parent_identifier: ::std::option::Option<::std::string::String>,
 }
 impl EnabledControlSummaryBuilder {
-    /// <p>The <code>controlIdentifier</code> of the enabled control.</p>
-    pub fn control_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.control_identifier = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The <code>controlIdentifier</code> of the enabled control.</p>
-    pub fn set_control_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.control_identifier = input;
-        self
-    }
-    /// <p>The <code>controlIdentifier</code> of the enabled control.</p>
-    pub fn get_control_identifier(&self) -> &::std::option::Option<::std::string::String> {
-        &self.control_identifier
-    }
     /// <p>The ARN of the enabled control.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -82,6 +75,20 @@ impl EnabledControlSummaryBuilder {
     /// <p>The ARN of the enabled control.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
+    }
+    /// <p>The <code>controlIdentifier</code> of the enabled control.</p>
+    pub fn control_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.control_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The <code>controlIdentifier</code> of the enabled control.</p>
+    pub fn set_control_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.control_identifier = input;
+        self
+    }
+    /// <p>The <code>controlIdentifier</code> of the enabled control.</p>
+    pub fn get_control_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.control_identifier
     }
     /// <p>The ARN of the organizational unit.</p>
     pub fn target_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -125,14 +132,29 @@ impl EnabledControlSummaryBuilder {
     pub fn get_drift_status_summary(&self) -> &::std::option::Option<crate::types::DriftStatusSummary> {
         &self.drift_status_summary
     }
+    /// <p>The ARN of the parent enabled control from which this control inherits its configuration, if applicable.</p>
+    pub fn parent_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.parent_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN of the parent enabled control from which this control inherits its configuration, if applicable.</p>
+    pub fn set_parent_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.parent_identifier = input;
+        self
+    }
+    /// <p>The ARN of the parent enabled control from which this control inherits its configuration, if applicable.</p>
+    pub fn get_parent_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parent_identifier
+    }
     /// Consumes the builder and constructs a [`EnabledControlSummary`](crate::types::EnabledControlSummary).
     pub fn build(self) -> crate::types::EnabledControlSummary {
         crate::types::EnabledControlSummary {
-            control_identifier: self.control_identifier,
             arn: self.arn,
+            control_identifier: self.control_identifier,
             target_identifier: self.target_identifier,
             status_summary: self.status_summary,
             drift_status_summary: self.drift_status_summary,
+            parent_identifier: self.parent_identifier,
         }
     }
 }

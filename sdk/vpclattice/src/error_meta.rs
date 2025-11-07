@@ -578,6 +578,45 @@ impl From<crate::operation::delete_auth_policy::DeleteAuthPolicyError> for Error
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_domain_verification::DeleteDomainVerificationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_domain_verification::DeleteDomainVerificationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_domain_verification::DeleteDomainVerificationError> for Error {
+    fn from(err: crate::operation::delete_domain_verification::DeleteDomainVerificationError) -> Self {
+        match err {
+            crate::operation::delete_domain_verification::DeleteDomainVerificationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_domain_verification::DeleteDomainVerificationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_domain_verification::DeleteDomainVerificationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_domain_verification::DeleteDomainVerificationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::delete_domain_verification::DeleteDomainVerificationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::delete_domain_verification::DeleteDomainVerificationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_listener::DeleteListenerError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1108,6 +1147,40 @@ impl From<crate::operation::get_auth_policy::GetAuthPolicyError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_domain_verification::GetDomainVerificationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_domain_verification::GetDomainVerificationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_domain_verification::GetDomainVerificationError> for Error {
+    fn from(err: crate::operation::get_domain_verification::GetDomainVerificationError) -> Self {
+        match err {
+            crate::operation::get_domain_verification::GetDomainVerificationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_domain_verification::GetDomainVerificationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_domain_verification::GetDomainVerificationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_domain_verification::GetDomainVerificationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_domain_verification::GetDomainVerificationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_domain_verification::GetDomainVerificationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_listener::GetListenerError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1513,6 +1586,45 @@ impl From<crate::operation::list_access_log_subscriptions::ListAccessLogSubscrip
                 Error::ValidationException(inner)
             }
             crate::operation::list_access_log_subscriptions::ListAccessLogSubscriptionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_domain_verifications::ListDomainVerificationsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_domain_verifications::ListDomainVerificationsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_domain_verifications::ListDomainVerificationsError> for Error {
+    fn from(err: crate::operation::list_domain_verifications::ListDomainVerificationsError) -> Self {
+        match err {
+            crate::operation::list_domain_verifications::ListDomainVerificationsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_domain_verifications::ListDomainVerificationsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_domain_verifications::ListDomainVerificationsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_domain_verifications::ListDomainVerificationsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_domain_verifications::ListDomainVerificationsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_domain_verifications::ListDomainVerificationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2062,6 +2174,46 @@ impl From<crate::operation::register_targets::RegisterTargetsError> for Error {
             crate::operation::register_targets::RegisterTargetsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::register_targets::RegisterTargetsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::register_targets::RegisterTargetsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_domain_verification::StartDomainVerificationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_domain_verification::StartDomainVerificationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_domain_verification::StartDomainVerificationError> for Error {
+    fn from(err: crate::operation::start_domain_verification::StartDomainVerificationError) -> Self {
+        match err {
+            crate::operation::start_domain_verification::StartDomainVerificationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::start_domain_verification::StartDomainVerificationError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::start_domain_verification::StartDomainVerificationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::start_domain_verification::StartDomainVerificationError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::start_domain_verification::StartDomainVerificationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::start_domain_verification::StartDomainVerificationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::start_domain_verification::StartDomainVerificationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

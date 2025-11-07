@@ -17,11 +17,17 @@ pub use crate::types::_enabled_control_details::EnabledControlDetailsBuilder;
 
 pub use crate::types::_enabled_control_parameter_summary::EnabledControlParameterSummaryBuilder;
 
+pub use crate::types::_region::RegionBuilder;
+
 pub use crate::types::_drift_status_summary::DriftStatusSummaryBuilder;
 
-pub use crate::types::_enablement_status_summary::EnablementStatusSummaryBuilder;
+pub use crate::types::_enabled_control_drift_types::EnabledControlDriftTypesBuilder;
 
-pub use crate::types::_region::RegionBuilder;
+pub use crate::types::_enabled_control_resource_drift::EnabledControlResourceDriftBuilder;
+
+pub use crate::types::_enabled_control_inheritance_drift::EnabledControlInheritanceDriftBuilder;
+
+pub use crate::types::_enablement_status_summary::EnablementStatusSummaryBuilder;
 
 pub use crate::types::_enabled_control_summary::EnabledControlSummaryBuilder;
 

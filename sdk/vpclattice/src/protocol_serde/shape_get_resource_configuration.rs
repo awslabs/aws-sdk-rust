@@ -173,8 +173,36 @@ pub(crate) fn de_get_resource_configuration(
                             .transpose()?,
                     );
                 }
+                "domainVerificationArn" => {
+                    builder = builder.set_domain_verification_arn(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "domainVerificationId" => {
+                    builder = builder.set_domain_verification_id(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "domainVerificationStatus" => {
+                    builder = builder.set_domain_verification_status(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::VerificationStatus::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
                 "failureReason" => {
                     builder = builder.set_failure_reason(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "groupDomain" => {
+                    builder = builder.set_group_domain(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,

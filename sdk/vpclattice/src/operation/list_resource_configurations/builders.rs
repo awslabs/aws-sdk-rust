@@ -142,6 +142,20 @@ impl ListResourceConfigurationsFluentBuilder {
     pub fn get_resource_configuration_group_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_configuration_group_identifier()
     }
+    /// <p>The domain verification ID.</p>
+    pub fn domain_verification_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.domain_verification_identifier(input.into());
+        self
+    }
+    /// <p>The domain verification ID.</p>
+    pub fn set_domain_verification_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_domain_verification_identifier(input);
+        self
+    }
+    /// <p>The domain verification ID.</p>
+    pub fn get_domain_verification_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_verification_identifier()
+    }
     /// <p>The maximum page size.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);

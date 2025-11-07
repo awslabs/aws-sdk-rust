@@ -13,6 +13,8 @@ pub use crate::types::_health_check_config::HealthCheckConfigBuilder;
 
 pub use crate::types::_target_group_summary::TargetGroupSummaryBuilder;
 
+pub use crate::types::_dns_options::DnsOptionsBuilder;
+
 pub use crate::types::_service_network_vpc_association_summary::ServiceNetworkVpcAssociationSummaryBuilder;
 
 pub use crate::types::_dns_entry::DnsEntryBuilder;
@@ -54,6 +56,10 @@ pub use crate::types::_dns_resource::DnsResourceBuilder;
 pub use crate::types::_resource_configuration_summary::ResourceConfigurationSummaryBuilder;
 
 pub use crate::types::_listener_summary::ListenerSummaryBuilder;
+
+pub use crate::types::_txt_method_config::TxtMethodConfigBuilder;
+
+pub use crate::types::_domain_verification_summary::DomainVerificationSummaryBuilder;
 
 pub use crate::types::_access_log_subscription_summary::AccessLogSubscriptionSummaryBuilder;
 

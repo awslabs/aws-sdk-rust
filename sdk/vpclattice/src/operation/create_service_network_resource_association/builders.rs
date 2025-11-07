@@ -154,6 +154,20 @@ impl CreateServiceNetworkResourceAssociationFluentBuilder {
     pub fn get_service_network_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_service_network_identifier()
     }
+    /// <p>Indicates if private DNS is enabled for the service network resource association.</p>
+    pub fn private_dns_enabled(mut self, input: bool) -> Self {
+        self.inner = self.inner.private_dns_enabled(input);
+        self
+    }
+    /// <p>Indicates if private DNS is enabled for the service network resource association.</p>
+    pub fn set_private_dns_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_private_dns_enabled(input);
+        self
+    }
+    /// <p>Indicates if private DNS is enabled for the service network resource association.</p>
+    pub fn get_private_dns_enabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_private_dns_enabled()
+    }
     ///
     /// Adds a key-value pair to `tags`.
     ///

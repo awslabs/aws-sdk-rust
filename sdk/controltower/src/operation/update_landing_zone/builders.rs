@@ -136,6 +136,25 @@ impl UpdateLandingZoneFluentBuilder {
     pub fn get_manifest(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
         self.inner.get_manifest()
     }
+    ///
+    /// Appends an item to `remediationTypes`.
+    ///
+    /// To override the contents of this collection use [`set_remediation_types`](Self::set_remediation_types).
+    ///
+    /// <p>Specifies the types of remediation actions to apply when updating the landing zone configuration.</p>
+    pub fn remediation_types(mut self, input: crate::types::RemediationType) -> Self {
+        self.inner = self.inner.remediation_types(input);
+        self
+    }
+    /// <p>Specifies the types of remediation actions to apply when updating the landing zone configuration.</p>
+    pub fn set_remediation_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RemediationType>>) -> Self {
+        self.inner = self.inner.set_remediation_types(input);
+        self
+    }
+    /// <p>Specifies the types of remediation actions to apply when updating the landing zone configuration.</p>
+    pub fn get_remediation_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RemediationType>> {
+        self.inner.get_remediation_types()
+    }
     /// <p>The unique identifier of the landing zone.</p>
     pub fn landing_zone_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.landing_zone_identifier(input.into());

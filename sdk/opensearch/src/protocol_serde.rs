@@ -107,6 +107,8 @@ pub(crate) mod shape_get_compatible_versions;
 
 pub(crate) mod shape_get_data_source;
 
+pub(crate) mod shape_get_default_application_setting;
+
 pub(crate) mod shape_get_direct_query_data_source;
 
 pub(crate) mod shape_get_domain_maintenance_status;
@@ -146,6 +148,8 @@ pub(crate) mod shape_list_vpc_endpoints;
 pub(crate) mod shape_list_vpc_endpoints_for_domain;
 
 pub(crate) mod shape_purchase_reserved_instance_offering;
+
+pub(crate) mod shape_put_default_application_setting;
 
 pub(crate) mod shape_reject_inbound_connection;
 
@@ -242,6 +246,8 @@ pub(crate) mod shape_invalid_type_exception;
 pub(crate) mod shape_limit_exceeded_exception;
 
 pub(crate) mod shape_purchase_reserved_instance_offering_input;
+
+pub(crate) mod shape_put_default_application_setting_input;
 
 pub(crate) mod shape_remove_tags_input;
 

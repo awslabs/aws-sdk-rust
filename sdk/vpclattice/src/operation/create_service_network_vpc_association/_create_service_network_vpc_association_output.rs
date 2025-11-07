@@ -13,6 +13,10 @@ pub struct CreateServiceNetworkVpcAssociationOutput {
     pub created_by: ::std::option::Option<::std::string::String>,
     /// <p>The IDs of the security groups.</p>
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Indicates if private DNS is enabled for the VPC association.</p>
+    pub private_dns_enabled: ::std::option::Option<bool>,
+    /// <p>The DNS configuration options.</p>
+    pub dns_options: ::std::option::Option<crate::types::DnsOptions>,
     _request_id: Option<String>,
 }
 impl CreateServiceNetworkVpcAssociationOutput {
@@ -38,6 +42,14 @@ impl CreateServiceNetworkVpcAssociationOutput {
     pub fn security_group_ids(&self) -> &[::std::string::String] {
         self.security_group_ids.as_deref().unwrap_or_default()
     }
+    /// <p>Indicates if private DNS is enabled for the VPC association.</p>
+    pub fn private_dns_enabled(&self) -> ::std::option::Option<bool> {
+        self.private_dns_enabled
+    }
+    /// <p>The DNS configuration options.</p>
+    pub fn dns_options(&self) -> ::std::option::Option<&crate::types::DnsOptions> {
+        self.dns_options.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for CreateServiceNetworkVpcAssociationOutput {
     fn request_id(&self) -> Option<&str> {
@@ -60,6 +72,8 @@ pub struct CreateServiceNetworkVpcAssociationOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) created_by: ::std::option::Option<::std::string::String>,
     pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) private_dns_enabled: ::std::option::Option<bool>,
+    pub(crate) dns_options: ::std::option::Option<crate::types::DnsOptions>,
     _request_id: Option<String>,
 }
 impl CreateServiceNetworkVpcAssociationOutputBuilder {
@@ -139,6 +153,34 @@ impl CreateServiceNetworkVpcAssociationOutputBuilder {
     pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_group_ids
     }
+    /// <p>Indicates if private DNS is enabled for the VPC association.</p>
+    pub fn private_dns_enabled(mut self, input: bool) -> Self {
+        self.private_dns_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates if private DNS is enabled for the VPC association.</p>
+    pub fn set_private_dns_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.private_dns_enabled = input;
+        self
+    }
+    /// <p>Indicates if private DNS is enabled for the VPC association.</p>
+    pub fn get_private_dns_enabled(&self) -> &::std::option::Option<bool> {
+        &self.private_dns_enabled
+    }
+    /// <p>The DNS configuration options.</p>
+    pub fn dns_options(mut self, input: crate::types::DnsOptions) -> Self {
+        self.dns_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The DNS configuration options.</p>
+    pub fn set_dns_options(mut self, input: ::std::option::Option<crate::types::DnsOptions>) -> Self {
+        self.dns_options = input;
+        self
+    }
+    /// <p>The DNS configuration options.</p>
+    pub fn get_dns_options(&self) -> &::std::option::Option<crate::types::DnsOptions> {
+        &self.dns_options
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -156,6 +198,8 @@ impl CreateServiceNetworkVpcAssociationOutputBuilder {
             arn: self.arn,
             created_by: self.created_by,
             security_group_ids: self.security_group_ids,
+            private_dns_enabled: self.private_dns_enabled,
+            dns_options: self.dns_options,
             _request_id: self._request_id,
         }
     }

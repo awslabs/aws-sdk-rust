@@ -22,7 +22,7 @@ impl crate::operation::reset_enabled_control::builders::ResetEnabledControlInput
 }
 /// Fluent builder constructing a request to `ResetEnabledControl`.
 ///
-/// <p>Resets an enabled control.</p>
+/// <p>Resets an enabled control. Does not work for controls implemented with SCPs.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ResetEnabledControlFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

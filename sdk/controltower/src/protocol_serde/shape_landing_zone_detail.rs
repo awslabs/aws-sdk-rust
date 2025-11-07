@@ -24,6 +24,9 @@ where
                         "manifest" => {
                             builder = builder.set_manifest(Some(::aws_smithy_json::deserialize::token::expect_document(tokens)?));
                         }
+                        "remediationTypes" => {
+                            builder = builder.set_remediation_types(crate::protocol_serde::shape_remediation_types::de_remediation_types(tokens)?);
+                        }
                         "arn" => {
                             builder = builder.set_arn(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

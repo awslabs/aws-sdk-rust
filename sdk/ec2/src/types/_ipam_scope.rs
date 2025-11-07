@@ -27,6 +27,10 @@ pub struct IpamScope {
     pub state: ::std::option::Option<crate::types::IpamScopeState>,
     /// <p>The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>The external authority configuration for this IPAM scope, if configured.</p>
+    /// <p>The configuration that links an Amazon VPC IPAM scope to an external authority system. It specifies the type of external system and the external resource identifier that identifies your account or instance in that system.</p>
+    /// <p>In IPAM, an external authority is a third-party IP address management system that provides CIDR blocks when you provision address space for top-level IPAM pools. This allows you to use your existing IP management system to control which address ranges are allocated to Amazon Web Services while using Amazon VPC IPAM to manage subnets within those ranges.</p>
+    pub external_authority_configuration: ::std::option::Option<crate::types::IpamScopeExternalAuthorityConfiguration>,
 }
 impl IpamScope {
     /// <p>The Amazon Web Services account ID of the owner of the scope.</p>
@@ -75,6 +79,12 @@ impl IpamScope {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
+    /// <p>The external authority configuration for this IPAM scope, if configured.</p>
+    /// <p>The configuration that links an Amazon VPC IPAM scope to an external authority system. It specifies the type of external system and the external resource identifier that identifies your account or instance in that system.</p>
+    /// <p>In IPAM, an external authority is a third-party IP address management system that provides CIDR blocks when you provision address space for top-level IPAM pools. This allows you to use your existing IP management system to control which address ranges are allocated to Amazon Web Services while using Amazon VPC IPAM to manage subnets within those ranges.</p>
+    pub fn external_authority_configuration(&self) -> ::std::option::Option<&crate::types::IpamScopeExternalAuthorityConfiguration> {
+        self.external_authority_configuration.as_ref()
+    }
 }
 impl IpamScope {
     /// Creates a new builder-style object to manufacture [`IpamScope`](crate::types::IpamScope).
@@ -98,6 +108,7 @@ pub struct IpamScopeBuilder {
     pub(crate) pool_count: ::std::option::Option<i32>,
     pub(crate) state: ::std::option::Option<crate::types::IpamScopeState>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) external_authority_configuration: ::std::option::Option<crate::types::IpamScopeExternalAuthorityConfiguration>,
 }
 impl IpamScopeBuilder {
     /// <p>The Amazon Web Services account ID of the owner of the scope.</p>
@@ -260,6 +271,29 @@ impl IpamScopeBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
+    /// <p>The external authority configuration for this IPAM scope, if configured.</p>
+    /// <p>The configuration that links an Amazon VPC IPAM scope to an external authority system. It specifies the type of external system and the external resource identifier that identifies your account or instance in that system.</p>
+    /// <p>In IPAM, an external authority is a third-party IP address management system that provides CIDR blocks when you provision address space for top-level IPAM pools. This allows you to use your existing IP management system to control which address ranges are allocated to Amazon Web Services while using Amazon VPC IPAM to manage subnets within those ranges.</p>
+    pub fn external_authority_configuration(mut self, input: crate::types::IpamScopeExternalAuthorityConfiguration) -> Self {
+        self.external_authority_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The external authority configuration for this IPAM scope, if configured.</p>
+    /// <p>The configuration that links an Amazon VPC IPAM scope to an external authority system. It specifies the type of external system and the external resource identifier that identifies your account or instance in that system.</p>
+    /// <p>In IPAM, an external authority is a third-party IP address management system that provides CIDR blocks when you provision address space for top-level IPAM pools. This allows you to use your existing IP management system to control which address ranges are allocated to Amazon Web Services while using Amazon VPC IPAM to manage subnets within those ranges.</p>
+    pub fn set_external_authority_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::IpamScopeExternalAuthorityConfiguration>,
+    ) -> Self {
+        self.external_authority_configuration = input;
+        self
+    }
+    /// <p>The external authority configuration for this IPAM scope, if configured.</p>
+    /// <p>The configuration that links an Amazon VPC IPAM scope to an external authority system. It specifies the type of external system and the external resource identifier that identifies your account or instance in that system.</p>
+    /// <p>In IPAM, an external authority is a third-party IP address management system that provides CIDR blocks when you provision address space for top-level IPAM pools. This allows you to use your existing IP management system to control which address ranges are allocated to Amazon Web Services while using Amazon VPC IPAM to manage subnets within those ranges.</p>
+    pub fn get_external_authority_configuration(&self) -> &::std::option::Option<crate::types::IpamScopeExternalAuthorityConfiguration> {
+        &self.external_authority_configuration
+    }
     /// Consumes the builder and constructs a [`IpamScope`](crate::types::IpamScope).
     pub fn build(self) -> crate::types::IpamScope {
         crate::types::IpamScope {
@@ -274,6 +308,7 @@ impl IpamScopeBuilder {
             pool_count: self.pool_count,
             state: self.state,
             tags: self.tags,
+            external_authority_configuration: self.external_authority_configuration,
         }
     }
 }

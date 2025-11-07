@@ -20,6 +20,16 @@ pub fn ser_modify_ipam_scope_input_input_input(
     if let Some(var_6) = &input.description {
         scope_5.string(var_6);
     }
+    #[allow(unused_mut)]
+    let mut scope_7 = writer.prefix("ExternalAuthorityConfiguration");
+    if let Some(var_8) = &input.external_authority_configuration {
+        crate::protocol_serde::shape_external_authority_configuration::ser_external_authority_configuration(scope_7, var_8)?;
+    }
+    #[allow(unused_mut)]
+    let mut scope_9 = writer.prefix("RemoveExternalAuthorityConfiguration");
+    if let Some(var_10) = &input.remove_external_authority_configuration {
+        scope_9.boolean(*var_10);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

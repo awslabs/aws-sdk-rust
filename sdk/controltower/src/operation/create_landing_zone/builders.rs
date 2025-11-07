@@ -137,6 +137,25 @@ impl CreateLandingZoneFluentBuilder {
         self.inner.get_manifest()
     }
     ///
+    /// Appends an item to `remediationTypes`.
+    ///
+    /// To override the contents of this collection use [`set_remediation_types`](Self::set_remediation_types).
+    ///
+    /// <p>Specifies the types of remediation actions to apply when creating the landing zone, such as automatic drift correction or compliance enforcement.</p>
+    pub fn remediation_types(mut self, input: crate::types::RemediationType) -> Self {
+        self.inner = self.inner.remediation_types(input);
+        self
+    }
+    /// <p>Specifies the types of remediation actions to apply when creating the landing zone, such as automatic drift correction or compliance enforcement.</p>
+    pub fn set_remediation_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RemediationType>>) -> Self {
+        self.inner = self.inner.set_remediation_types(input);
+        self
+    }
+    /// <p>Specifies the types of remediation actions to apply when creating the landing zone, such as automatic drift correction or compliance enforcement.</p>
+    pub fn get_remediation_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RemediationType>> {
+        self.inner.get_remediation_types()
+    }
+    ///
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

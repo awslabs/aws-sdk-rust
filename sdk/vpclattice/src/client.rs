@@ -191,6 +191,8 @@ mod delete_access_log_subscription;
 
 mod delete_auth_policy;
 
+mod delete_domain_verification;
+
 mod delete_listener;
 
 mod delete_resource_configuration;
@@ -221,6 +223,8 @@ mod get_access_log_subscription;
 
 mod get_auth_policy;
 
+mod get_domain_verification;
+
 mod get_listener;
 
 mod get_resource_configuration;
@@ -244,6 +248,8 @@ mod get_service_network_vpc_association;
 mod get_target_group;
 
 mod list_access_log_subscriptions;
+
+mod list_domain_verifications;
 
 mod list_listeners;
 
@@ -278,6 +284,8 @@ mod put_auth_policy;
 mod put_resource_policy;
 
 mod register_targets;
+
+mod start_domain_verification;
 
 mod tag_resource;
 

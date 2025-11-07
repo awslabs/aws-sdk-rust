@@ -45,6 +45,14 @@ pub struct GetResourceConfigurationOutput {
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>The most recent date and time that the resource configuration was updated, in ISO-8601 format.</p>
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The domain verification ID.</p>
+    pub domain_verification_id: ::std::option::Option<::std::string::String>,
+    /// <p>The ARN of the domain verification.</p>
+    pub domain_verification_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The domain verification status.</p>
+    pub domain_verification_status: ::std::option::Option<crate::types::VerificationStatus>,
+    /// <p>(GROUP) The group domain for a group resource configuration. Any domains that you create for the child resource are subdomains of the group domain. Child resources inherit the verification status of the domain.</p>
+    pub group_domain: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetResourceConfigurationOutput {
@@ -124,6 +132,22 @@ impl GetResourceConfigurationOutput {
     pub fn last_updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
+    /// <p>The domain verification ID.</p>
+    pub fn domain_verification_id(&self) -> ::std::option::Option<&str> {
+        self.domain_verification_id.as_deref()
+    }
+    /// <p>The ARN of the domain verification.</p>
+    pub fn domain_verification_arn(&self) -> ::std::option::Option<&str> {
+        self.domain_verification_arn.as_deref()
+    }
+    /// <p>The domain verification status.</p>
+    pub fn domain_verification_status(&self) -> ::std::option::Option<&crate::types::VerificationStatus> {
+        self.domain_verification_status.as_ref()
+    }
+    /// <p>(GROUP) The group domain for a group resource configuration. Any domains that you create for the child resource are subdomains of the group domain. Child resources inherit the verification status of the domain.</p>
+    pub fn group_domain(&self) -> ::std::option::Option<&str> {
+        self.group_domain.as_deref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetResourceConfigurationOutput {
     fn request_id(&self) -> Option<&str> {
@@ -157,6 +181,10 @@ pub struct GetResourceConfigurationOutputBuilder {
     pub(crate) amazon_managed: ::std::option::Option<bool>,
     pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
     pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) domain_verification_id: ::std::option::Option<::std::string::String>,
+    pub(crate) domain_verification_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) domain_verification_status: ::std::option::Option<crate::types::VerificationStatus>,
+    pub(crate) group_domain: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetResourceConfigurationOutputBuilder {
@@ -420,6 +448,62 @@ impl GetResourceConfigurationOutputBuilder {
     pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_at
     }
+    /// <p>The domain verification ID.</p>
+    pub fn domain_verification_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.domain_verification_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The domain verification ID.</p>
+    pub fn set_domain_verification_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.domain_verification_id = input;
+        self
+    }
+    /// <p>The domain verification ID.</p>
+    pub fn get_domain_verification_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_verification_id
+    }
+    /// <p>The ARN of the domain verification.</p>
+    pub fn domain_verification_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.domain_verification_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN of the domain verification.</p>
+    pub fn set_domain_verification_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.domain_verification_arn = input;
+        self
+    }
+    /// <p>The ARN of the domain verification.</p>
+    pub fn get_domain_verification_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_verification_arn
+    }
+    /// <p>The domain verification status.</p>
+    pub fn domain_verification_status(mut self, input: crate::types::VerificationStatus) -> Self {
+        self.domain_verification_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The domain verification status.</p>
+    pub fn set_domain_verification_status(mut self, input: ::std::option::Option<crate::types::VerificationStatus>) -> Self {
+        self.domain_verification_status = input;
+        self
+    }
+    /// <p>The domain verification status.</p>
+    pub fn get_domain_verification_status(&self) -> &::std::option::Option<crate::types::VerificationStatus> {
+        &self.domain_verification_status
+    }
+    /// <p>(GROUP) The group domain for a group resource configuration. Any domains that you create for the child resource are subdomains of the group domain. Child resources inherit the verification status of the domain.</p>
+    pub fn group_domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.group_domain = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>(GROUP) The group domain for a group resource configuration. Any domains that you create for the child resource are subdomains of the group domain. Child resources inherit the verification status of the domain.</p>
+    pub fn set_group_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.group_domain = input;
+        self
+    }
+    /// <p>(GROUP) The group domain for a group resource configuration. Any domains that you create for the child resource are subdomains of the group domain. Child resources inherit the verification status of the domain.</p>
+    pub fn get_group_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_domain
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -448,6 +532,10 @@ impl GetResourceConfigurationOutputBuilder {
             amazon_managed: self.amazon_managed,
             failure_reason: self.failure_reason,
             last_updated_at: self.last_updated_at,
+            domain_verification_id: self.domain_verification_id,
+            domain_verification_arn: self.domain_verification_arn,
+            domain_verification_status: self.domain_verification_status,
+            group_domain: self.group_domain,
             _request_id: self._request_id,
         }
     }

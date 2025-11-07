@@ -279,6 +279,48 @@ impl CreateResourceConfigurationFluentBuilder {
     pub fn get_allow_association_to_shareable_service_network(&self) -> &::std::option::Option<bool> {
         self.inner.get_allow_association_to_shareable_service_network()
     }
+    /// <p>A custom domain name for your resource configuration. Additionally, provide a DomainVerificationID to prove your ownership of a domain.</p>
+    pub fn custom_domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.custom_domain_name(input.into());
+        self
+    }
+    /// <p>A custom domain name for your resource configuration. Additionally, provide a DomainVerificationID to prove your ownership of a domain.</p>
+    pub fn set_custom_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_custom_domain_name(input);
+        self
+    }
+    /// <p>A custom domain name for your resource configuration. Additionally, provide a DomainVerificationID to prove your ownership of a domain.</p>
+    pub fn get_custom_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_custom_domain_name()
+    }
+    /// <p>(GROUP) The group domain for a group resource configuration. Any domains that you create for the child resource are subdomains of the group domain. Child resources inherit the verification status of the domain.</p>
+    pub fn group_domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.group_domain(input.into());
+        self
+    }
+    /// <p>(GROUP) The group domain for a group resource configuration. Any domains that you create for the child resource are subdomains of the group domain. Child resources inherit the verification status of the domain.</p>
+    pub fn set_group_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_group_domain(input);
+        self
+    }
+    /// <p>(GROUP) The group domain for a group resource configuration. Any domains that you create for the child resource are subdomains of the group domain. Child resources inherit the verification status of the domain.</p>
+    pub fn get_group_domain(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_group_domain()
+    }
+    /// <p>The domain verification ID of your verified custom domain name. If you don't provide an ID, you must configure the DNS settings yourself.</p>
+    pub fn domain_verification_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.domain_verification_identifier(input.into());
+        self
+    }
+    /// <p>The domain verification ID of your verified custom domain name. If you don't provide an ID, you must configure the DNS settings yourself.</p>
+    pub fn set_domain_verification_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_domain_verification_identifier(input);
+        self
+    }
+    /// <p>The domain verification ID of your verified custom domain name. If you don't provide an ID, you must configure the DNS settings yourself.</p>
+    pub fn get_domain_verification_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_verification_identifier()
+    }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());

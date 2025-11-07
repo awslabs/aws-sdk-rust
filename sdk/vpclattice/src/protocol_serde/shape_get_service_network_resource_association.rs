@@ -183,6 +183,13 @@ pub(crate) fn de_get_service_network_resource_association(
                 "dnsEntry" => {
                     builder = builder.set_dns_entry(crate::protocol_serde::shape_dns_entry::de_dns_entry(tokens)?);
                 }
+                "domainVerificationStatus" => {
+                    builder = builder.set_domain_verification_status(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::VerificationStatus::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
                 "failureCode" => {
                     builder = builder.set_failure_code(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -212,6 +219,9 @@ pub(crate) fn de_get_service_network_resource_association(
                         tokens.next(),
                         ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
                     )?);
+                }
+                "privateDnsEnabled" => {
+                    builder = builder.set_private_dns_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
                 "privateDnsEntry" => {
                     builder = builder.set_private_dns_entry(crate::protocol_serde::shape_dns_entry::de_dns_entry(tokens)?);

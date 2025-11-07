@@ -37,7 +37,8 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-/// <p>The state of a requested domain configuration change. Can be one of the following:</p>
+/// <p>The state of a requested domain configuration change. Can be one of the
+/// following:</p>
 /// <ul>
 /// <li>
 /// <p>
@@ -46,8 +47,8 @@
 /// </li>
 /// <li>
 /// <p>
-/// <b>Active</b> - The requested change is processed and deployed
-/// to the domain.</p>
+/// <b>Active</b> - The requested change is processed
+/// and deployed to the domain.</p>
 /// </li>
 /// </ul>
 #[non_exhaustive]

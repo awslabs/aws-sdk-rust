@@ -10,12 +10,14 @@ pub struct EnabledControlDetails {
     pub control_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the organizational unit. For information on how to find the <code>targetIdentifier</code>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.</p>
     pub target_identifier: ::std::option::Option<::std::string::String>,
-    /// <p>Target Amazon Web Services Regions for the enabled control.</p>
-    pub target_regions: ::std::option::Option<::std::vec::Vec<crate::types::Region>>,
     /// <p>The deployment summary of the enabled control.</p>
     pub status_summary: ::std::option::Option<crate::types::EnablementStatusSummary>,
     /// <p>The drift status of the enabled control.</p>
     pub drift_status_summary: ::std::option::Option<crate::types::DriftStatusSummary>,
+    /// <p>The ARN of the parent enabled control from which this control inherits its configuration, if applicable.</p>
+    pub parent_identifier: ::std::option::Option<::std::string::String>,
+    /// <p>Target Amazon Web Services Regions for the enabled control.</p>
+    pub target_regions: ::std::option::Option<::std::vec::Vec<crate::types::Region>>,
     /// <p>Array of <code>EnabledControlParameter</code> objects.</p>
     pub parameters: ::std::option::Option<::std::vec::Vec<crate::types::EnabledControlParameterSummary>>,
 }
@@ -32,12 +34,6 @@ impl EnabledControlDetails {
     pub fn target_identifier(&self) -> ::std::option::Option<&str> {
         self.target_identifier.as_deref()
     }
-    /// <p>Target Amazon Web Services Regions for the enabled control.</p>
-    ///
-    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_regions.is_none()`.
-    pub fn target_regions(&self) -> &[crate::types::Region] {
-        self.target_regions.as_deref().unwrap_or_default()
-    }
     /// <p>The deployment summary of the enabled control.</p>
     pub fn status_summary(&self) -> ::std::option::Option<&crate::types::EnablementStatusSummary> {
         self.status_summary.as_ref()
@@ -45,6 +41,16 @@ impl EnabledControlDetails {
     /// <p>The drift status of the enabled control.</p>
     pub fn drift_status_summary(&self) -> ::std::option::Option<&crate::types::DriftStatusSummary> {
         self.drift_status_summary.as_ref()
+    }
+    /// <p>The ARN of the parent enabled control from which this control inherits its configuration, if applicable.</p>
+    pub fn parent_identifier(&self) -> ::std::option::Option<&str> {
+        self.parent_identifier.as_deref()
+    }
+    /// <p>Target Amazon Web Services Regions for the enabled control.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_regions.is_none()`.
+    pub fn target_regions(&self) -> &[crate::types::Region] {
+        self.target_regions.as_deref().unwrap_or_default()
     }
     /// <p>Array of <code>EnabledControlParameter</code> objects.</p>
     ///
@@ -67,9 +73,10 @@ pub struct EnabledControlDetailsBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) control_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) target_identifier: ::std::option::Option<::std::string::String>,
-    pub(crate) target_regions: ::std::option::Option<::std::vec::Vec<crate::types::Region>>,
     pub(crate) status_summary: ::std::option::Option<crate::types::EnablementStatusSummary>,
     pub(crate) drift_status_summary: ::std::option::Option<crate::types::DriftStatusSummary>,
+    pub(crate) parent_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) target_regions: ::std::option::Option<::std::vec::Vec<crate::types::Region>>,
     pub(crate) parameters: ::std::option::Option<::std::vec::Vec<crate::types::EnabledControlParameterSummary>>,
 }
 impl EnabledControlDetailsBuilder {
@@ -115,26 +122,6 @@ impl EnabledControlDetailsBuilder {
     pub fn get_target_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_identifier
     }
-    /// Appends an item to `target_regions`.
-    ///
-    /// To override the contents of this collection use [`set_target_regions`](Self::set_target_regions).
-    ///
-    /// <p>Target Amazon Web Services Regions for the enabled control.</p>
-    pub fn target_regions(mut self, input: crate::types::Region) -> Self {
-        let mut v = self.target_regions.unwrap_or_default();
-        v.push(input);
-        self.target_regions = ::std::option::Option::Some(v);
-        self
-    }
-    /// <p>Target Amazon Web Services Regions for the enabled control.</p>
-    pub fn set_target_regions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Region>>) -> Self {
-        self.target_regions = input;
-        self
-    }
-    /// <p>Target Amazon Web Services Regions for the enabled control.</p>
-    pub fn get_target_regions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Region>> {
-        &self.target_regions
-    }
     /// <p>The deployment summary of the enabled control.</p>
     pub fn status_summary(mut self, input: crate::types::EnablementStatusSummary) -> Self {
         self.status_summary = ::std::option::Option::Some(input);
@@ -163,6 +150,40 @@ impl EnabledControlDetailsBuilder {
     pub fn get_drift_status_summary(&self) -> &::std::option::Option<crate::types::DriftStatusSummary> {
         &self.drift_status_summary
     }
+    /// <p>The ARN of the parent enabled control from which this control inherits its configuration, if applicable.</p>
+    pub fn parent_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.parent_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN of the parent enabled control from which this control inherits its configuration, if applicable.</p>
+    pub fn set_parent_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.parent_identifier = input;
+        self
+    }
+    /// <p>The ARN of the parent enabled control from which this control inherits its configuration, if applicable.</p>
+    pub fn get_parent_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parent_identifier
+    }
+    /// Appends an item to `target_regions`.
+    ///
+    /// To override the contents of this collection use [`set_target_regions`](Self::set_target_regions).
+    ///
+    /// <p>Target Amazon Web Services Regions for the enabled control.</p>
+    pub fn target_regions(mut self, input: crate::types::Region) -> Self {
+        let mut v = self.target_regions.unwrap_or_default();
+        v.push(input);
+        self.target_regions = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Target Amazon Web Services Regions for the enabled control.</p>
+    pub fn set_target_regions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Region>>) -> Self {
+        self.target_regions = input;
+        self
+    }
+    /// <p>Target Amazon Web Services Regions for the enabled control.</p>
+    pub fn get_target_regions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Region>> {
+        &self.target_regions
+    }
     /// Appends an item to `parameters`.
     ///
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
@@ -189,9 +210,10 @@ impl EnabledControlDetailsBuilder {
             arn: self.arn,
             control_identifier: self.control_identifier,
             target_identifier: self.target_identifier,
-            target_regions: self.target_regions,
             status_summary: self.status_summary,
             drift_status_summary: self.drift_status_summary,
+            parent_identifier: self.parent_identifier,
+            target_regions: self.target_regions,
             parameters: self.parameters,
         }
     }

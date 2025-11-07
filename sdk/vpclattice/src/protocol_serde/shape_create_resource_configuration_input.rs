@@ -9,45 +9,54 @@ pub fn ser_create_resource_configuration_input_input(
     if let Some(var_2) = &input.client_token {
         object.key("clientToken").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.name {
-        object.key("name").string(var_3.as_str());
+    if let Some(var_3) = &input.custom_domain_name {
+        object.key("customDomainName").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.port_ranges {
-        let mut array_5 = object.key("portRanges").start_array();
-        for item_6 in var_4 {
+    if let Some(var_4) = &input.domain_verification_identifier {
+        object.key("domainVerificationIdentifier").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.group_domain {
+        object.key("groupDomain").string(var_5.as_str());
+    }
+    if let Some(var_6) = &input.name {
+        object.key("name").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.port_ranges {
+        let mut array_8 = object.key("portRanges").start_array();
+        for item_9 in var_7 {
             {
-                array_5.value().string(item_6.as_str());
+                array_8.value().string(item_9.as_str());
             }
         }
-        array_5.finish();
+        array_8.finish();
     }
-    if let Some(var_7) = &input.protocol {
-        object.key("protocol").string(var_7.as_str());
+    if let Some(var_10) = &input.protocol {
+        object.key("protocol").string(var_10.as_str());
     }
-    if let Some(var_8) = &input.resource_configuration_definition {
+    if let Some(var_11) = &input.resource_configuration_definition {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("resourceConfigurationDefinition").start_object();
-        crate::protocol_serde::shape_resource_configuration_definition::ser_resource_configuration_definition(&mut object_9, var_8)?;
-        object_9.finish();
+        let mut object_12 = object.key("resourceConfigurationDefinition").start_object();
+        crate::protocol_serde::shape_resource_configuration_definition::ser_resource_configuration_definition(&mut object_12, var_11)?;
+        object_12.finish();
     }
-    if let Some(var_10) = &input.resource_configuration_group_identifier {
-        object.key("resourceConfigurationGroupIdentifier").string(var_10.as_str());
+    if let Some(var_13) = &input.resource_configuration_group_identifier {
+        object.key("resourceConfigurationGroupIdentifier").string(var_13.as_str());
     }
-    if let Some(var_11) = &input.resource_gateway_identifier {
-        object.key("resourceGatewayIdentifier").string(var_11.as_str());
+    if let Some(var_14) = &input.resource_gateway_identifier {
+        object.key("resourceGatewayIdentifier").string(var_14.as_str());
     }
-    if let Some(var_12) = &input.tags {
+    if let Some(var_15) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_13 = object.key("tags").start_object();
-        for (key_14, value_15) in var_12 {
+        let mut object_16 = object.key("tags").start_object();
+        for (key_17, value_18) in var_15 {
             {
-                object_13.key(key_14.as_str()).string(value_15.as_str());
+                object_16.key(key_17.as_str()).string(value_18.as_str());
             }
         }
-        object_13.finish();
+        object_16.finish();
     }
-    if let Some(var_16) = &input.r#type {
-        object.key("type").string(var_16.as_str());
+    if let Some(var_19) = &input.r#type {
+        object.key("type").string(var_19.as_str());
     }
     Ok(())
 }

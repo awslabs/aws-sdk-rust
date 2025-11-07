@@ -34,6 +34,8 @@ pub struct ServiceNetworkResourceAssociationSummary {
     pub is_managed_association: ::std::option::Option<bool>,
     /// <p>The failure code.</p>
     pub failure_code: ::std::option::Option<::std::string::String>,
+    /// <p>Indicates if private DNS is enabled for the service network resource association.</p>
+    pub private_dns_enabled: ::std::option::Option<bool>,
 }
 impl ServiceNetworkResourceAssociationSummary {
     /// <p>The ID of the association between the service network and resource configuration.</p>
@@ -96,6 +98,10 @@ impl ServiceNetworkResourceAssociationSummary {
     pub fn failure_code(&self) -> ::std::option::Option<&str> {
         self.failure_code.as_deref()
     }
+    /// <p>Indicates if private DNS is enabled for the service network resource association.</p>
+    pub fn private_dns_enabled(&self) -> ::std::option::Option<bool> {
+        self.private_dns_enabled
+    }
 }
 impl ServiceNetworkResourceAssociationSummary {
     /// Creates a new builder-style object to manufacture [`ServiceNetworkResourceAssociationSummary`](crate::types::ServiceNetworkResourceAssociationSummary).
@@ -123,6 +129,7 @@ pub struct ServiceNetworkResourceAssociationSummaryBuilder {
     pub(crate) private_dns_entry: ::std::option::Option<crate::types::DnsEntry>,
     pub(crate) is_managed_association: ::std::option::Option<bool>,
     pub(crate) failure_code: ::std::option::Option<::std::string::String>,
+    pub(crate) private_dns_enabled: ::std::option::Option<bool>,
 }
 impl ServiceNetworkResourceAssociationSummaryBuilder {
     /// <p>The ID of the association between the service network and resource configuration.</p>
@@ -335,6 +342,20 @@ impl ServiceNetworkResourceAssociationSummaryBuilder {
     pub fn get_failure_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.failure_code
     }
+    /// <p>Indicates if private DNS is enabled for the service network resource association.</p>
+    pub fn private_dns_enabled(mut self, input: bool) -> Self {
+        self.private_dns_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates if private DNS is enabled for the service network resource association.</p>
+    pub fn set_private_dns_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.private_dns_enabled = input;
+        self
+    }
+    /// <p>Indicates if private DNS is enabled for the service network resource association.</p>
+    pub fn get_private_dns_enabled(&self) -> &::std::option::Option<bool> {
+        &self.private_dns_enabled
+    }
     /// Consumes the builder and constructs a [`ServiceNetworkResourceAssociationSummary`](crate::types::ServiceNetworkResourceAssociationSummary).
     pub fn build(self) -> crate::types::ServiceNetworkResourceAssociationSummary {
         crate::types::ServiceNetworkResourceAssociationSummary {
@@ -353,6 +374,7 @@ impl ServiceNetworkResourceAssociationSummaryBuilder {
             private_dns_entry: self.private_dns_entry,
             is_managed_association: self.is_managed_association,
             failure_code: self.failure_code,
+            private_dns_enabled: self.private_dns_enabled,
         }
     }
 }

@@ -8,6 +8,20 @@ pub struct DnsOptionsSpecification {
     pub dns_record_ip_type: ::std::option::Option<crate::types::DnsRecordIpType>,
     /// <p>Indicates whether to enable private DNS only for inbound endpoints. This option is available only for services that support both gateway and interface endpoints. It routes traffic that originates from the VPC to the gateway endpoint and traffic that originates from on-premises to the interface endpoint.</p>
     pub private_dns_only_for_inbound_resolver_endpoint: ::std::option::Option<bool>,
+    /// <p>The preference for which private domains have a private hosted zone created for and associated with the specified VPC. Only supported when private DNS is enabled and when the VPC endpoint type is ServiceNetwork or Resource.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ALL_DOMAINS</code> - VPC Lattice provisions private hosted zones for all custom domain names.</p></li>
+    /// <li>
+    /// <p><code>VERIFIED_DOMAINS_ONLY</code> - VPC Lattice provisions a private hosted zone only if custom domain name has been verified by the provider.</p></li>
+    /// <li>
+    /// <p><code>VERIFIED_DOMAINS_AND_SPECIFIED_DOMAINS</code> - VPC Lattice provisions private hosted zones for all verified custom domain names and other domain names that the resource consumer specifies. The resource consumer specifies the domain names in the PrivateDnsSpecifiedDomains parameter.</p></li>
+    /// <li>
+    /// <p><code>SPECIFIED_DOMAINS_ONLY</code> - VPC Lattice provisions a private hosted zone for domain names specified by the resource consumer. The resource consumer specifies the domain names in the PrivateDnsSpecifiedDomains parameter.</p></li>
+    /// </ul>
+    pub private_dns_preference: ::std::option::Option<::std::string::String>,
+    /// <p>Indicates which of the private domains to create private hosted zones for and associate with the specified VPC. Only supported when private DNS is enabled and the private DNS preference is verified-domains-and-specified-domains or specified-domains-only.</p>
+    pub private_dns_specified_domains: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DnsOptionsSpecification {
     /// <p>The DNS records created for the endpoint.</p>
@@ -17,6 +31,26 @@ impl DnsOptionsSpecification {
     /// <p>Indicates whether to enable private DNS only for inbound endpoints. This option is available only for services that support both gateway and interface endpoints. It routes traffic that originates from the VPC to the gateway endpoint and traffic that originates from on-premises to the interface endpoint.</p>
     pub fn private_dns_only_for_inbound_resolver_endpoint(&self) -> ::std::option::Option<bool> {
         self.private_dns_only_for_inbound_resolver_endpoint
+    }
+    /// <p>The preference for which private domains have a private hosted zone created for and associated with the specified VPC. Only supported when private DNS is enabled and when the VPC endpoint type is ServiceNetwork or Resource.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ALL_DOMAINS</code> - VPC Lattice provisions private hosted zones for all custom domain names.</p></li>
+    /// <li>
+    /// <p><code>VERIFIED_DOMAINS_ONLY</code> - VPC Lattice provisions a private hosted zone only if custom domain name has been verified by the provider.</p></li>
+    /// <li>
+    /// <p><code>VERIFIED_DOMAINS_AND_SPECIFIED_DOMAINS</code> - VPC Lattice provisions private hosted zones for all verified custom domain names and other domain names that the resource consumer specifies. The resource consumer specifies the domain names in the PrivateDnsSpecifiedDomains parameter.</p></li>
+    /// <li>
+    /// <p><code>SPECIFIED_DOMAINS_ONLY</code> - VPC Lattice provisions a private hosted zone for domain names specified by the resource consumer. The resource consumer specifies the domain names in the PrivateDnsSpecifiedDomains parameter.</p></li>
+    /// </ul>
+    pub fn private_dns_preference(&self) -> ::std::option::Option<&str> {
+        self.private_dns_preference.as_deref()
+    }
+    /// <p>Indicates which of the private domains to create private hosted zones for and associate with the specified VPC. Only supported when private DNS is enabled and the private DNS preference is verified-domains-and-specified-domains or specified-domains-only.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.private_dns_specified_domains.is_none()`.
+    pub fn private_dns_specified_domains(&self) -> &[::std::string::String] {
+        self.private_dns_specified_domains.as_deref().unwrap_or_default()
     }
 }
 impl DnsOptionsSpecification {
@@ -32,6 +66,8 @@ impl DnsOptionsSpecification {
 pub struct DnsOptionsSpecificationBuilder {
     pub(crate) dns_record_ip_type: ::std::option::Option<crate::types::DnsRecordIpType>,
     pub(crate) private_dns_only_for_inbound_resolver_endpoint: ::std::option::Option<bool>,
+    pub(crate) private_dns_preference: ::std::option::Option<::std::string::String>,
+    pub(crate) private_dns_specified_domains: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DnsOptionsSpecificationBuilder {
     /// <p>The DNS records created for the endpoint.</p>
@@ -62,11 +98,77 @@ impl DnsOptionsSpecificationBuilder {
     pub fn get_private_dns_only_for_inbound_resolver_endpoint(&self) -> &::std::option::Option<bool> {
         &self.private_dns_only_for_inbound_resolver_endpoint
     }
+    /// <p>The preference for which private domains have a private hosted zone created for and associated with the specified VPC. Only supported when private DNS is enabled and when the VPC endpoint type is ServiceNetwork or Resource.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ALL_DOMAINS</code> - VPC Lattice provisions private hosted zones for all custom domain names.</p></li>
+    /// <li>
+    /// <p><code>VERIFIED_DOMAINS_ONLY</code> - VPC Lattice provisions a private hosted zone only if custom domain name has been verified by the provider.</p></li>
+    /// <li>
+    /// <p><code>VERIFIED_DOMAINS_AND_SPECIFIED_DOMAINS</code> - VPC Lattice provisions private hosted zones for all verified custom domain names and other domain names that the resource consumer specifies. The resource consumer specifies the domain names in the PrivateDnsSpecifiedDomains parameter.</p></li>
+    /// <li>
+    /// <p><code>SPECIFIED_DOMAINS_ONLY</code> - VPC Lattice provisions a private hosted zone for domain names specified by the resource consumer. The resource consumer specifies the domain names in the PrivateDnsSpecifiedDomains parameter.</p></li>
+    /// </ul>
+    pub fn private_dns_preference(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.private_dns_preference = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The preference for which private domains have a private hosted zone created for and associated with the specified VPC. Only supported when private DNS is enabled and when the VPC endpoint type is ServiceNetwork or Resource.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ALL_DOMAINS</code> - VPC Lattice provisions private hosted zones for all custom domain names.</p></li>
+    /// <li>
+    /// <p><code>VERIFIED_DOMAINS_ONLY</code> - VPC Lattice provisions a private hosted zone only if custom domain name has been verified by the provider.</p></li>
+    /// <li>
+    /// <p><code>VERIFIED_DOMAINS_AND_SPECIFIED_DOMAINS</code> - VPC Lattice provisions private hosted zones for all verified custom domain names and other domain names that the resource consumer specifies. The resource consumer specifies the domain names in the PrivateDnsSpecifiedDomains parameter.</p></li>
+    /// <li>
+    /// <p><code>SPECIFIED_DOMAINS_ONLY</code> - VPC Lattice provisions a private hosted zone for domain names specified by the resource consumer. The resource consumer specifies the domain names in the PrivateDnsSpecifiedDomains parameter.</p></li>
+    /// </ul>
+    pub fn set_private_dns_preference(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.private_dns_preference = input;
+        self
+    }
+    /// <p>The preference for which private domains have a private hosted zone created for and associated with the specified VPC. Only supported when private DNS is enabled and when the VPC endpoint type is ServiceNetwork or Resource.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ALL_DOMAINS</code> - VPC Lattice provisions private hosted zones for all custom domain names.</p></li>
+    /// <li>
+    /// <p><code>VERIFIED_DOMAINS_ONLY</code> - VPC Lattice provisions a private hosted zone only if custom domain name has been verified by the provider.</p></li>
+    /// <li>
+    /// <p><code>VERIFIED_DOMAINS_AND_SPECIFIED_DOMAINS</code> - VPC Lattice provisions private hosted zones for all verified custom domain names and other domain names that the resource consumer specifies. The resource consumer specifies the domain names in the PrivateDnsSpecifiedDomains parameter.</p></li>
+    /// <li>
+    /// <p><code>SPECIFIED_DOMAINS_ONLY</code> - VPC Lattice provisions a private hosted zone for domain names specified by the resource consumer. The resource consumer specifies the domain names in the PrivateDnsSpecifiedDomains parameter.</p></li>
+    /// </ul>
+    pub fn get_private_dns_preference(&self) -> &::std::option::Option<::std::string::String> {
+        &self.private_dns_preference
+    }
+    /// Appends an item to `private_dns_specified_domains`.
+    ///
+    /// To override the contents of this collection use [`set_private_dns_specified_domains`](Self::set_private_dns_specified_domains).
+    ///
+    /// <p>Indicates which of the private domains to create private hosted zones for and associate with the specified VPC. Only supported when private DNS is enabled and the private DNS preference is verified-domains-and-specified-domains or specified-domains-only.</p>
+    pub fn private_dns_specified_domains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.private_dns_specified_domains.unwrap_or_default();
+        v.push(input.into());
+        self.private_dns_specified_domains = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Indicates which of the private domains to create private hosted zones for and associate with the specified VPC. Only supported when private DNS is enabled and the private DNS preference is verified-domains-and-specified-domains or specified-domains-only.</p>
+    pub fn set_private_dns_specified_domains(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.private_dns_specified_domains = input;
+        self
+    }
+    /// <p>Indicates which of the private domains to create private hosted zones for and associate with the specified VPC. Only supported when private DNS is enabled and the private DNS preference is verified-domains-and-specified-domains or specified-domains-only.</p>
+    pub fn get_private_dns_specified_domains(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.private_dns_specified_domains
+    }
     /// Consumes the builder and constructs a [`DnsOptionsSpecification`](crate::types::DnsOptionsSpecification).
     pub fn build(self) -> crate::types::DnsOptionsSpecification {
         crate::types::DnsOptionsSpecification {
             dns_record_ip_type: self.dns_record_ip_type,
             private_dns_only_for_inbound_resolver_endpoint: self.private_dns_only_for_inbound_resolver_endpoint,
+            private_dns_preference: self.private_dns_preference,
+            private_dns_specified_domains: self.private_dns_specified_domains,
         }
     }
 }

@@ -11,6 +11,8 @@ pub struct CreateServiceNetworkResourceAssociationOutput {
     pub status: ::std::option::Option<crate::types::ServiceNetworkResourceAssociationStatus>,
     /// <p>The ID of the account that created the association.</p>
     pub created_by: ::std::option::Option<::std::string::String>,
+    /// <p>Indicates if private DNS is is enabled for the service network resource association.</p>
+    pub private_dns_enabled: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl CreateServiceNetworkResourceAssociationOutput {
@@ -29,6 +31,10 @@ impl CreateServiceNetworkResourceAssociationOutput {
     /// <p>The ID of the account that created the association.</p>
     pub fn created_by(&self) -> ::std::option::Option<&str> {
         self.created_by.as_deref()
+    }
+    /// <p>Indicates if private DNS is is enabled for the service network resource association.</p>
+    pub fn private_dns_enabled(&self) -> ::std::option::Option<bool> {
+        self.private_dns_enabled
     }
 }
 impl ::aws_types::request_id::RequestId for CreateServiceNetworkResourceAssociationOutput {
@@ -52,6 +58,7 @@ pub struct CreateServiceNetworkResourceAssociationOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ServiceNetworkResourceAssociationStatus>,
     pub(crate) created_by: ::std::option::Option<::std::string::String>,
+    pub(crate) private_dns_enabled: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl CreateServiceNetworkResourceAssociationOutputBuilder {
@@ -111,6 +118,20 @@ impl CreateServiceNetworkResourceAssociationOutputBuilder {
     pub fn get_created_by(&self) -> &::std::option::Option<::std::string::String> {
         &self.created_by
     }
+    /// <p>Indicates if private DNS is is enabled for the service network resource association.</p>
+    pub fn private_dns_enabled(mut self, input: bool) -> Self {
+        self.private_dns_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates if private DNS is is enabled for the service network resource association.</p>
+    pub fn set_private_dns_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.private_dns_enabled = input;
+        self
+    }
+    /// <p>Indicates if private DNS is is enabled for the service network resource association.</p>
+    pub fn get_private_dns_enabled(&self) -> &::std::option::Option<bool> {
+        &self.private_dns_enabled
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -127,6 +148,7 @@ impl CreateServiceNetworkResourceAssociationOutputBuilder {
             arn: self.arn,
             status: self.status,
             created_by: self.created_by,
+            private_dns_enabled: self.private_dns_enabled,
             _request_id: self._request_id,
         }
     }

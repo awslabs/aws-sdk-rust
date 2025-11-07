@@ -10,6 +10,12 @@ pub struct EnabledControlFilter {
     pub statuses: ::std::option::Option<::std::vec::Vec<crate::types::EnablementStatus>>,
     /// <p>A list of <code>DriftStatus</code> items.</p>
     pub drift_statuses: ::std::option::Option<::std::vec::Vec<crate::types::DriftStatus>>,
+    /// <p>Filters enabled controls by their parent control identifiers, allowing you to find child controls of specific parent controls.</p>
+    pub parent_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Filters enabled controls by their inheritance drift status, allowing you to find controls with specific inheritance-related drift conditions.</p>
+    pub inheritance_drift_statuses: ::std::option::Option<::std::vec::Vec<crate::types::DriftStatus>>,
+    /// <p>Filters enabled controls by their resource drift status, allowing you to find controls with specific resource-related drift conditions.</p>
+    pub resource_drift_statuses: ::std::option::Option<::std::vec::Vec<crate::types::DriftStatus>>,
 }
 impl EnabledControlFilter {
     /// <p>The set of <code>controlIdentifier</code> returned by the filter.</p>
@@ -30,6 +36,24 @@ impl EnabledControlFilter {
     pub fn drift_statuses(&self) -> &[crate::types::DriftStatus] {
         self.drift_statuses.as_deref().unwrap_or_default()
     }
+    /// <p>Filters enabled controls by their parent control identifiers, allowing you to find child controls of specific parent controls.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parent_identifiers.is_none()`.
+    pub fn parent_identifiers(&self) -> &[::std::string::String] {
+        self.parent_identifiers.as_deref().unwrap_or_default()
+    }
+    /// <p>Filters enabled controls by their inheritance drift status, allowing you to find controls with specific inheritance-related drift conditions.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.inheritance_drift_statuses.is_none()`.
+    pub fn inheritance_drift_statuses(&self) -> &[crate::types::DriftStatus] {
+        self.inheritance_drift_statuses.as_deref().unwrap_or_default()
+    }
+    /// <p>Filters enabled controls by their resource drift status, allowing you to find controls with specific resource-related drift conditions.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_drift_statuses.is_none()`.
+    pub fn resource_drift_statuses(&self) -> &[crate::types::DriftStatus] {
+        self.resource_drift_statuses.as_deref().unwrap_or_default()
+    }
 }
 impl EnabledControlFilter {
     /// Creates a new builder-style object to manufacture [`EnabledControlFilter`](crate::types::EnabledControlFilter).
@@ -45,6 +69,9 @@ pub struct EnabledControlFilterBuilder {
     pub(crate) control_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) statuses: ::std::option::Option<::std::vec::Vec<crate::types::EnablementStatus>>,
     pub(crate) drift_statuses: ::std::option::Option<::std::vec::Vec<crate::types::DriftStatus>>,
+    pub(crate) parent_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) inheritance_drift_statuses: ::std::option::Option<::std::vec::Vec<crate::types::DriftStatus>>,
+    pub(crate) resource_drift_statuses: ::std::option::Option<::std::vec::Vec<crate::types::DriftStatus>>,
 }
 impl EnabledControlFilterBuilder {
     /// Appends an item to `control_identifiers`.
@@ -107,12 +134,75 @@ impl EnabledControlFilterBuilder {
     pub fn get_drift_statuses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DriftStatus>> {
         &self.drift_statuses
     }
+    /// Appends an item to `parent_identifiers`.
+    ///
+    /// To override the contents of this collection use [`set_parent_identifiers`](Self::set_parent_identifiers).
+    ///
+    /// <p>Filters enabled controls by their parent control identifiers, allowing you to find child controls of specific parent controls.</p>
+    pub fn parent_identifiers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.parent_identifiers.unwrap_or_default();
+        v.push(input.into());
+        self.parent_identifiers = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Filters enabled controls by their parent control identifiers, allowing you to find child controls of specific parent controls.</p>
+    pub fn set_parent_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.parent_identifiers = input;
+        self
+    }
+    /// <p>Filters enabled controls by their parent control identifiers, allowing you to find child controls of specific parent controls.</p>
+    pub fn get_parent_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.parent_identifiers
+    }
+    /// Appends an item to `inheritance_drift_statuses`.
+    ///
+    /// To override the contents of this collection use [`set_inheritance_drift_statuses`](Self::set_inheritance_drift_statuses).
+    ///
+    /// <p>Filters enabled controls by their inheritance drift status, allowing you to find controls with specific inheritance-related drift conditions.</p>
+    pub fn inheritance_drift_statuses(mut self, input: crate::types::DriftStatus) -> Self {
+        let mut v = self.inheritance_drift_statuses.unwrap_or_default();
+        v.push(input);
+        self.inheritance_drift_statuses = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Filters enabled controls by their inheritance drift status, allowing you to find controls with specific inheritance-related drift conditions.</p>
+    pub fn set_inheritance_drift_statuses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DriftStatus>>) -> Self {
+        self.inheritance_drift_statuses = input;
+        self
+    }
+    /// <p>Filters enabled controls by their inheritance drift status, allowing you to find controls with specific inheritance-related drift conditions.</p>
+    pub fn get_inheritance_drift_statuses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DriftStatus>> {
+        &self.inheritance_drift_statuses
+    }
+    /// Appends an item to `resource_drift_statuses`.
+    ///
+    /// To override the contents of this collection use [`set_resource_drift_statuses`](Self::set_resource_drift_statuses).
+    ///
+    /// <p>Filters enabled controls by their resource drift status, allowing you to find controls with specific resource-related drift conditions.</p>
+    pub fn resource_drift_statuses(mut self, input: crate::types::DriftStatus) -> Self {
+        let mut v = self.resource_drift_statuses.unwrap_or_default();
+        v.push(input);
+        self.resource_drift_statuses = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Filters enabled controls by their resource drift status, allowing you to find controls with specific resource-related drift conditions.</p>
+    pub fn set_resource_drift_statuses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DriftStatus>>) -> Self {
+        self.resource_drift_statuses = input;
+        self
+    }
+    /// <p>Filters enabled controls by their resource drift status, allowing you to find controls with specific resource-related drift conditions.</p>
+    pub fn get_resource_drift_statuses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DriftStatus>> {
+        &self.resource_drift_statuses
+    }
     /// Consumes the builder and constructs a [`EnabledControlFilter`](crate::types::EnabledControlFilter).
     pub fn build(self) -> crate::types::EnabledControlFilter {
         crate::types::EnabledControlFilter {
             control_identifiers: self.control_identifiers,
             statuses: self.statuses,
             drift_statuses: self.drift_statuses,
+            parent_identifiers: self.parent_identifiers,
+            inheritance_drift_statuses: self.inheritance_drift_statuses,
+            resource_drift_statuses: self.resource_drift_statuses,
         }
     }
 }

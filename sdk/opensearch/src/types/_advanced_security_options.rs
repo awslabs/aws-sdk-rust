@@ -12,7 +12,7 @@ pub struct AdvancedSecurityOptions {
     pub saml_options: ::std::option::Option<crate::types::SamlOptionsOutput>,
     /// <p>Container for information about the JWT configuration of the Amazon OpenSearch Service.</p>
     pub jwt_options: ::std::option::Option<crate::types::JwtOptionsOutput>,
-    /// <p>Container for information about the IAM federation configuration for an OpenSearch UI application.</p>
+    /// <p>Configuration options for IAM identity federation in advanced security settings.</p>
     pub iam_federation_options: ::std::option::Option<crate::types::IamFederationOptionsOutput>,
     /// <p>Date and time when the migration period will be disabled. Only necessary when <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/fgac.html#fgac-enabling-existing">enabling fine-grained access control on an existing domain</a>.</p>
     pub anonymous_auth_disable_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -36,7 +36,7 @@ impl AdvancedSecurityOptions {
     pub fn jwt_options(&self) -> ::std::option::Option<&crate::types::JwtOptionsOutput> {
         self.jwt_options.as_ref()
     }
-    /// <p>Container for information about the IAM federation configuration for an OpenSearch UI application.</p>
+    /// <p>Configuration options for IAM identity federation in advanced security settings.</p>
     pub fn iam_federation_options(&self) -> ::std::option::Option<&crate::types::IamFederationOptionsOutput> {
         self.iam_federation_options.as_ref()
     }
@@ -125,17 +125,17 @@ impl AdvancedSecurityOptionsBuilder {
     pub fn get_jwt_options(&self) -> &::std::option::Option<crate::types::JwtOptionsOutput> {
         &self.jwt_options
     }
-    /// <p>Container for information about the IAM federation configuration for an OpenSearch UI application.</p>
+    /// <p>Configuration options for IAM identity federation in advanced security settings.</p>
     pub fn iam_federation_options(mut self, input: crate::types::IamFederationOptionsOutput) -> Self {
         self.iam_federation_options = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Container for information about the IAM federation configuration for an OpenSearch UI application.</p>
+    /// <p>Configuration options for IAM identity federation in advanced security settings.</p>
     pub fn set_iam_federation_options(mut self, input: ::std::option::Option<crate::types::IamFederationOptionsOutput>) -> Self {
         self.iam_federation_options = input;
         self
     }
-    /// <p>Container for information about the IAM federation configuration for an OpenSearch UI application.</p>
+    /// <p>Configuration options for IAM identity federation in advanced security settings.</p>
     pub fn get_iam_federation_options(&self) -> &::std::option::Option<crate::types::IamFederationOptionsOutput> {
         &self.iam_federation_options
     }

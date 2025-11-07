@@ -127,6 +127,9 @@ pub mod get_compatible_versions;
 /// Types for the `GetDataSource` operation.
 pub mod get_data_source;
 
+/// Types for the `GetDefaultApplicationSetting` operation.
+pub mod get_default_application_setting;
+
 /// Types for the `GetDirectQueryDataSource` operation.
 pub mod get_direct_query_data_source;
 
@@ -186,6 +189,9 @@ pub mod list_vpc_endpoints_for_domain;
 
 /// Types for the `PurchaseReservedInstanceOffering` operation.
 pub mod purchase_reserved_instance_offering;
+
+/// Types for the `PutDefaultApplicationSetting` operation.
+pub mod put_default_application_setting;
 
 /// Types for the `RejectInboundConnection` operation.
 pub mod reject_inbound_connection;

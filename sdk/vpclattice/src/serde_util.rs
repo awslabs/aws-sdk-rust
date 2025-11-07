@@ -134,9 +134,39 @@ pub(crate) fn get_access_log_subscription_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_domain_verification_output_output_correct_errors(
+    mut builder: crate::operation::get_domain_verification::builders::GetDomainVerificationOutputBuilder,
+) -> crate::operation::get_domain_verification::builders::GetDomainVerificationOutputBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.domain_name.is_none() {
+        builder.domain_name = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::VerificationStatus>().ok()
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn list_access_log_subscriptions_output_output_correct_errors(
     mut builder: crate::operation::list_access_log_subscriptions::builders::ListAccessLogSubscriptionsOutputBuilder,
 ) -> crate::operation::list_access_log_subscriptions::builders::ListAccessLogSubscriptionsOutputBuilder {
+    if builder.items.is_none() {
+        builder.items = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_domain_verifications_output_output_correct_errors(
+    mut builder: crate::operation::list_domain_verifications::builders::ListDomainVerificationsOutputBuilder,
+) -> crate::operation::list_domain_verifications::builders::ListDomainVerificationsOutputBuilder {
     if builder.items.is_none() {
         builder.items = Some(Default::default())
     }
@@ -224,6 +254,24 @@ pub(crate) fn list_targets_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn start_domain_verification_output_output_correct_errors(
+    mut builder: crate::operation::start_domain_verification::builders::StartDomainVerificationOutputBuilder,
+) -> crate::operation::start_domain_verification::builders::StartDomainVerificationOutputBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.domain_name.is_none() {
+        builder.domain_name = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::VerificationStatus>().ok()
+    }
+    builder
+}
+
 pub(crate) fn update_access_log_subscription_output_output_correct_errors(
     mut builder: crate::operation::update_access_log_subscription::builders::UpdateAccessLogSubscriptionOutputBuilder,
 ) -> crate::operation::update_access_log_subscription::builders::UpdateAccessLogSubscriptionOutputBuilder {
@@ -241,6 +289,18 @@ pub(crate) fn update_access_log_subscription_output_output_correct_errors(
     }
     if builder.destination_arn.is_none() {
         builder.destination_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn txt_method_config_correct_errors(
+    mut builder: crate::types::builders::TxtMethodConfigBuilder,
+) -> crate::types::builders::TxtMethodConfigBuilder {
+    if builder.value.is_none() {
+        builder.value = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
     }
     builder
 }
@@ -268,6 +328,27 @@ pub(crate) fn access_log_subscription_summary_correct_errors(
     }
     if builder.last_updated_at.is_none() {
         builder.last_updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn domain_verification_summary_correct_errors(
+    mut builder: crate::types::builders::DomainVerificationSummaryBuilder,
+) -> crate::types::builders::DomainVerificationSummaryBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.domain_name.is_none() {
+        builder.domain_name = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::VerificationStatus>().ok()
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }
