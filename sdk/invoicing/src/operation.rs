@@ -10,6 +10,9 @@ pub mod create_invoice_unit;
 /// Types for the `DeleteInvoiceUnit` operation.
 pub mod delete_invoice_unit;
 
+/// Types for the `GetInvoicePDF` operation.
+pub mod get_invoice_pdf;
+
 /// Types for the `GetInvoiceUnit` operation.
 pub mod get_invoice_unit;
 

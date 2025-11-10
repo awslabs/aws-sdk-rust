@@ -36,6 +36,10 @@ pub struct RestoreJobsListMember {
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>The date on which a recovery point was created.</p>
     pub recovery_point_creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>This is a boolean value indicating whether the restore job is a parent (composite) restore job.</p>
+    pub is_parent: bool,
+    /// <p>This is the unique identifier of the parent restore job for the selected restore job.</p>
+    pub parent_job_id: ::std::option::Option<::std::string::String>,
     /// <p>Contains identifying information about the creation of a restore job.</p>
     pub created_by: ::std::option::Option<crate::types::RestoreJobCreator>,
     /// <p>The status of validation run on the indicated restore job.</p>
@@ -112,6 +116,14 @@ impl RestoreJobsListMember {
     pub fn recovery_point_creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.recovery_point_creation_date.as_ref()
     }
+    /// <p>This is a boolean value indicating whether the restore job is a parent (composite) restore job.</p>
+    pub fn is_parent(&self) -> bool {
+        self.is_parent
+    }
+    /// <p>This is the unique identifier of the parent restore job for the selected restore job.</p>
+    pub fn parent_job_id(&self) -> ::std::option::Option<&str> {
+        self.parent_job_id.as_deref()
+    }
     /// <p>Contains identifying information about the creation of a restore job.</p>
     pub fn created_by(&self) -> ::std::option::Option<&crate::types::RestoreJobCreator> {
         self.created_by.as_ref()
@@ -160,6 +172,8 @@ pub struct RestoreJobsListMemberBuilder {
     pub(crate) created_resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type: ::std::option::Option<::std::string::String>,
     pub(crate) recovery_point_creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) is_parent: ::std::option::Option<bool>,
+    pub(crate) parent_job_id: ::std::option::Option<::std::string::String>,
     pub(crate) created_by: ::std::option::Option<crate::types::RestoreJobCreator>,
     pub(crate) validation_status: ::std::option::Option<crate::types::RestoreValidationStatus>,
     pub(crate) validation_status_message: ::std::option::Option<::std::string::String>,
@@ -391,6 +405,34 @@ impl RestoreJobsListMemberBuilder {
     pub fn get_recovery_point_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.recovery_point_creation_date
     }
+    /// <p>This is a boolean value indicating whether the restore job is a parent (composite) restore job.</p>
+    pub fn is_parent(mut self, input: bool) -> Self {
+        self.is_parent = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>This is a boolean value indicating whether the restore job is a parent (composite) restore job.</p>
+    pub fn set_is_parent(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.is_parent = input;
+        self
+    }
+    /// <p>This is a boolean value indicating whether the restore job is a parent (composite) restore job.</p>
+    pub fn get_is_parent(&self) -> &::std::option::Option<bool> {
+        &self.is_parent
+    }
+    /// <p>This is the unique identifier of the parent restore job for the selected restore job.</p>
+    pub fn parent_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.parent_job_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>This is the unique identifier of the parent restore job for the selected restore job.</p>
+    pub fn set_parent_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.parent_job_id = input;
+        self
+    }
+    /// <p>This is the unique identifier of the parent restore job for the selected restore job.</p>
+    pub fn get_parent_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parent_job_id
+    }
     /// <p>Contains identifying information about the creation of a restore job.</p>
     pub fn created_by(mut self, input: crate::types::RestoreJobCreator) -> Self {
         self.created_by = ::std::option::Option::Some(input);
@@ -480,6 +522,8 @@ impl RestoreJobsListMemberBuilder {
             created_resource_arn: self.created_resource_arn,
             resource_type: self.resource_type,
             recovery_point_creation_date: self.recovery_point_creation_date,
+            is_parent: self.is_parent.unwrap_or_default(),
+            parent_job_id: self.parent_job_id,
             created_by: self.created_by,
             validation_status: self.validation_status,
             validation_status_message: self.validation_status_message,

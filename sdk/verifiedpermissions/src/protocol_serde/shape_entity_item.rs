@@ -34,5 +34,18 @@ pub fn ser_entity_item(
         }
         array_9.finish();
     }
+    if let Some(var_12) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_13 = object.key("tags").start_object();
+        for (key_14, value_15) in var_12 {
+            {
+                #[allow(unused_mut)]
+                let mut object_16 = object_13.key(key_14.as_str()).start_object();
+                crate::protocol_serde::shape_cedar_tag_value::ser_cedar_tag_value(&mut object_16, value_15)?;
+                object_16.finish();
+            }
+        }
+        object_13.finish();
+    }
     Ok(())
 }

@@ -253,6 +253,11 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListRestoreJ
                         query.push_kv("restoreTestingPlanArn", &::aws_smithy_http::query::fmt_string(inner_10));
                     }
                 }
+                if let ::std::option::Option::Some(inner_11) = &_input.by_parent_job_id {
+                    {
+                        query.push_kv("parentJobId", &::aws_smithy_http::query::fmt_string(inner_11));
+                    }
+                }
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

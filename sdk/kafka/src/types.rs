@@ -29,6 +29,10 @@ pub use crate::types::_topic_replication_update::TopicReplicationUpdate;
 
 pub use crate::types::_consumer_group_replication_update::ConsumerGroupReplicationUpdate;
 
+pub use crate::types::_rebalancing::Rebalancing;
+
+pub use crate::types::_rebalancing_status::RebalancingStatus;
+
 pub use crate::types::_logging_info::LoggingInfo;
 
 pub use crate::types::_broker_logs::BrokerLogs;
@@ -330,6 +334,10 @@ mod _provisioned_request;
 mod _provisioned_throughput;
 
 mod _public_access;
+
+mod _rebalancing;
+
+mod _rebalancing_status;
 
 mod _replication_info;
 

@@ -5,6 +5,8 @@ pub use crate::types::error::_packed_policy_too_large_exception::PackedPolicyToo
 
 pub use crate::types::error::_malformed_policy_document_exception::MalformedPolicyDocumentExceptionBuilder;
 
+pub use crate::types::error::_expired_trade_in_token_exception::ExpiredTradeInTokenExceptionBuilder;
+
 pub use crate::types::error::_invalid_authorization_message_exception::InvalidAuthorizationMessageExceptionBuilder;
 
 pub use crate::types::error::_expired_token_exception::ExpiredTokenExceptionBuilder;

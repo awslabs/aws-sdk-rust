@@ -18,6 +18,7 @@ impl super::Client {
     ///   - [`multi_region_properties(Option<MultiRegionProperties>)`](crate::operation::create_cluster::CreateClusterOutput::multi_region_properties): <p>The multi-Region cluster configuration details that were set during cluster creation</p>
     ///   - [`encryption_details(Option<EncryptionDetails>)`](crate::operation::create_cluster::CreateClusterOutput::encryption_details): <p>The encryption configuration for the cluster that was specified during the creation process, including the KMS key identifier and encryption state.</p>
     ///   - [`deletion_protection_enabled(bool)`](crate::operation::create_cluster::CreateClusterOutput::deletion_protection_enabled): <p>Whether deletion protection is enabled on this cluster.</p>
+    ///   - [`endpoint(Option<String>)`](crate::operation::create_cluster::CreateClusterOutput::endpoint): <p>The connection endpoint for the created cluster.</p>
     /// - On failure, responds with [`SdkError<CreateClusterError>`](crate::operation::create_cluster::CreateClusterError)
     pub fn create_cluster(&self) -> crate::operation::create_cluster::builders::CreateClusterFluentBuilder {
         crate::operation::create_cluster::builders::CreateClusterFluentBuilder::new(self.handle.clone())

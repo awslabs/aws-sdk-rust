@@ -145,6 +145,12 @@ pub use crate::types::_access_key_last_used::AccessKeyLastUsed;
 
 pub use crate::types::_report_state_type::ReportStateType;
 
+pub use crate::types::_delegation_permission::DelegationPermission;
+
+pub use crate::types::_policy_parameter::PolicyParameter;
+
+pub use crate::types::_policy_parameter_type_enum::PolicyParameterTypeEnum;
+
 pub use crate::types::_access_key::AccessKey;
 
 mod _access_advisor_usage_granularity_type;
@@ -168,6 +174,8 @@ mod _attached_policy;
 mod _context_entry;
 
 mod _context_key_type_enum;
+
+mod _delegation_permission;
 
 mod _deletion_task_failure_reason_type;
 
@@ -226,6 +234,10 @@ mod _policy_granting_service_access;
 mod _policy_group;
 
 mod _policy_owner_entity_type;
+
+mod _policy_parameter;
+
+mod _policy_parameter_type_enum;
 
 mod _policy_role;
 

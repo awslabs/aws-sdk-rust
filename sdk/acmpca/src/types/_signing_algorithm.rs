@@ -12,6 +12,9 @@
 /// ```text
 /// # let signingalgorithm = unimplemented!();
 /// match signingalgorithm {
+///     SigningAlgorithm::MlDsa44 => { /* ... */ },
+///     SigningAlgorithm::MlDsa65 => { /* ... */ },
+///     SigningAlgorithm::MlDsa87 => { /* ... */ },
 ///     SigningAlgorithm::Sha256Withecdsa => { /* ... */ },
 ///     SigningAlgorithm::Sha256Withrsa => { /* ... */ },
 ///     SigningAlgorithm::Sha384Withecdsa => { /* ... */ },
@@ -48,6 +51,12 @@
 )]
 pub enum SigningAlgorithm {
     #[allow(missing_docs)] // documentation missing in model
+    MlDsa44,
+    #[allow(missing_docs)] // documentation missing in model
+    MlDsa65,
+    #[allow(missing_docs)] // documentation missing in model
+    MlDsa87,
+    #[allow(missing_docs)] // documentation missing in model
     Sha256Withecdsa,
     #[allow(missing_docs)] // documentation missing in model
     Sha256Withrsa,
@@ -68,6 +77,9 @@ pub enum SigningAlgorithm {
 impl ::std::convert::From<&str> for SigningAlgorithm {
     fn from(s: &str) -> Self {
         match s {
+            "ML_DSA_44" => SigningAlgorithm::MlDsa44,
+            "ML_DSA_65" => SigningAlgorithm::MlDsa65,
+            "ML_DSA_87" => SigningAlgorithm::MlDsa87,
             "SHA256WITHECDSA" => SigningAlgorithm::Sha256Withecdsa,
             "SHA256WITHRSA" => SigningAlgorithm::Sha256Withrsa,
             "SHA384WITHECDSA" => SigningAlgorithm::Sha384Withecdsa,
@@ -90,6 +102,9 @@ impl SigningAlgorithm {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            SigningAlgorithm::MlDsa44 => "ML_DSA_44",
+            SigningAlgorithm::MlDsa65 => "ML_DSA_65",
+            SigningAlgorithm::MlDsa87 => "ML_DSA_87",
             SigningAlgorithm::Sha256Withecdsa => "SHA256WITHECDSA",
             SigningAlgorithm::Sha256Withrsa => "SHA256WITHRSA",
             SigningAlgorithm::Sha384Withecdsa => "SHA384WITHECDSA",
@@ -103,6 +118,9 @@ impl SigningAlgorithm {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "ML_DSA_44",
+            "ML_DSA_65",
+            "ML_DSA_87",
             "SHA256WITHECDSA",
             "SHA256WITHRSA",
             "SHA384WITHECDSA",
@@ -133,6 +151,9 @@ impl SigningAlgorithm {
 impl ::std::fmt::Display for SigningAlgorithm {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            SigningAlgorithm::MlDsa44 => write!(f, "ML_DSA_44"),
+            SigningAlgorithm::MlDsa65 => write!(f, "ML_DSA_65"),
+            SigningAlgorithm::MlDsa87 => write!(f, "ML_DSA_87"),
             SigningAlgorithm::Sha256Withecdsa => write!(f, "SHA256WITHECDSA"),
             SigningAlgorithm::Sha256Withrsa => write!(f, "SHA256WITHRSA"),
             SigningAlgorithm::Sha384Withecdsa => write!(f, "SHA384WITHECDSA"),

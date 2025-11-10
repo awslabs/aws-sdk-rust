@@ -35,6 +35,8 @@ pub struct GetQuantumTaskOutput {
     pub num_successful_shots: ::std::option::Option<i64>,
     /// <p>Metadata about the action performed by the quantum task, including information about the type of action and program counts.</p>
     pub action_metadata: ::std::option::Option<crate::types::ActionMetadata>,
+    /// <p>Enabled experimental capabilities for the quantum task, if any.</p>
+    pub experimental_capabilities: ::std::option::Option<crate::types::ExperimentalCapabilities>,
     _request_id: Option<String>,
 }
 impl GetQuantumTaskOutput {
@@ -109,6 +111,10 @@ impl GetQuantumTaskOutput {
     pub fn action_metadata(&self) -> ::std::option::Option<&crate::types::ActionMetadata> {
         self.action_metadata.as_ref()
     }
+    /// <p>Enabled experimental capabilities for the quantum task, if any.</p>
+    pub fn experimental_capabilities(&self) -> ::std::option::Option<&crate::types::ExperimentalCapabilities> {
+        self.experimental_capabilities.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetQuantumTaskOutput {
     fn request_id(&self) -> Option<&str> {
@@ -142,6 +148,7 @@ pub struct GetQuantumTaskOutputBuilder {
     pub(crate) associations: ::std::option::Option<::std::vec::Vec<crate::types::Association>>,
     pub(crate) num_successful_shots: ::std::option::Option<i64>,
     pub(crate) action_metadata: ::std::option::Option<crate::types::ActionMetadata>,
+    pub(crate) experimental_capabilities: ::std::option::Option<crate::types::ExperimentalCapabilities>,
     _request_id: Option<String>,
 }
 impl GetQuantumTaskOutputBuilder {
@@ -389,6 +396,20 @@ impl GetQuantumTaskOutputBuilder {
     pub fn get_action_metadata(&self) -> &::std::option::Option<crate::types::ActionMetadata> {
         &self.action_metadata
     }
+    /// <p>Enabled experimental capabilities for the quantum task, if any.</p>
+    pub fn experimental_capabilities(mut self, input: crate::types::ExperimentalCapabilities) -> Self {
+        self.experimental_capabilities = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Enabled experimental capabilities for the quantum task, if any.</p>
+    pub fn set_experimental_capabilities(mut self, input: ::std::option::Option<crate::types::ExperimentalCapabilities>) -> Self {
+        self.experimental_capabilities = input;
+        self
+    }
+    /// <p>Enabled experimental capabilities for the quantum task, if any.</p>
+    pub fn get_experimental_capabilities(&self) -> &::std::option::Option<crate::types::ExperimentalCapabilities> {
+        &self.experimental_capabilities
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -468,6 +489,7 @@ impl GetQuantumTaskOutputBuilder {
             associations: self.associations,
             num_successful_shots: self.num_successful_shots,
             action_metadata: self.action_metadata,
+            experimental_capabilities: self.experimental_capabilities,
             _request_id: self._request_id,
         })
     }

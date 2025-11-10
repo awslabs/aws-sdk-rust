@@ -23,6 +23,8 @@ pub struct CreateQuantumTaskInput {
     pub job_token: ::std::option::Option<::std::string::String>,
     /// <p>The list of Amazon Braket resources associated with the quantum task.</p>
     pub associations: ::std::option::Option<::std::vec::Vec<crate::types::Association>>,
+    /// <p>Enable experimental capabilities for the quantum task.</p>
+    pub experimental_capabilities: ::std::option::Option<crate::types::ExperimentalCapabilities>,
 }
 impl CreateQuantumTaskInput {
     /// <p>The client token associated with the request.</p>
@@ -67,6 +69,10 @@ impl CreateQuantumTaskInput {
     pub fn associations(&self) -> &[crate::types::Association] {
         self.associations.as_deref().unwrap_or_default()
     }
+    /// <p>Enable experimental capabilities for the quantum task.</p>
+    pub fn experimental_capabilities(&self) -> ::std::option::Option<&crate::types::ExperimentalCapabilities> {
+        self.experimental_capabilities.as_ref()
+    }
 }
 impl CreateQuantumTaskInput {
     /// Creates a new builder-style object to manufacture [`CreateQuantumTaskInput`](crate::operation::create_quantum_task::CreateQuantumTaskInput).
@@ -89,6 +95,7 @@ pub struct CreateQuantumTaskInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) job_token: ::std::option::Option<::std::string::String>,
     pub(crate) associations: ::std::option::Option<::std::vec::Vec<crate::types::Association>>,
+    pub(crate) experimental_capabilities: ::std::option::Option<crate::types::ExperimentalCapabilities>,
 }
 impl CreateQuantumTaskInputBuilder {
     /// <p>The client token associated with the request.</p>
@@ -249,6 +256,20 @@ impl CreateQuantumTaskInputBuilder {
     pub fn get_associations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Association>> {
         &self.associations
     }
+    /// <p>Enable experimental capabilities for the quantum task.</p>
+    pub fn experimental_capabilities(mut self, input: crate::types::ExperimentalCapabilities) -> Self {
+        self.experimental_capabilities = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Enable experimental capabilities for the quantum task.</p>
+    pub fn set_experimental_capabilities(mut self, input: ::std::option::Option<crate::types::ExperimentalCapabilities>) -> Self {
+        self.experimental_capabilities = input;
+        self
+    }
+    /// <p>Enable experimental capabilities for the quantum task.</p>
+    pub fn get_experimental_capabilities(&self) -> &::std::option::Option<crate::types::ExperimentalCapabilities> {
+        &self.experimental_capabilities
+    }
     /// Consumes the builder and constructs a [`CreateQuantumTaskInput`](crate::operation::create_quantum_task::CreateQuantumTaskInput).
     pub fn build(
         self,
@@ -264,6 +285,7 @@ impl CreateQuantumTaskInputBuilder {
             tags: self.tags,
             job_token: self.job_token,
             associations: self.associations,
+            experimental_capabilities: self.experimental_capabilities,
         })
     }
 }

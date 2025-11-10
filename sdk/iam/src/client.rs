@@ -198,6 +198,8 @@ mod create_access_key;
 
 mod create_account_alias;
 
+mod create_delegation_request;
+
 mod create_group;
 
 mod create_instance_profile;

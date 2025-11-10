@@ -25,6 +25,9 @@ where
                             builder = builder
                                 .set_broker_node_group_info(crate::protocol_serde::shape_broker_node_group_info::de_broker_node_group_info(tokens)?);
                         }
+                        "rebalancing" => {
+                            builder = builder.set_rebalancing(crate::protocol_serde::shape_rebalancing::de_rebalancing(tokens)?);
+                        }
                         "clientAuthentication" => {
                             builder = builder
                                 .set_client_authentication(crate::protocol_serde::shape_client_authentication::de_client_authentication(tokens)?);

@@ -59,6 +59,10 @@ pub(crate) mod shape_create_account_alias;
 
 pub(crate) mod shape_create_account_alias_input;
 
+pub(crate) mod shape_create_delegation_request;
+
+pub(crate) mod shape_create_delegation_request_input;
+
 pub(crate) mod shape_create_group;
 
 pub(crate) mod shape_create_group_input;
@@ -693,6 +697,8 @@ pub(crate) mod shape_credential_report_not_present_exception;
 
 pub(crate) mod shape_credential_report_not_ready_exception;
 
+pub(crate) mod shape_delegation_permission;
+
 pub(crate) mod shape_delete_conflict_exception;
 
 pub(crate) mod shape_duplicate_certificate_exception;
@@ -810,6 +816,8 @@ pub(crate) mod shape_policy_group_list_type;
 pub(crate) mod shape_policy_list_type;
 
 pub(crate) mod shape_policy_name_list_type;
+
+pub(crate) mod shape_policy_parameter;
 
 pub(crate) mod shape_policy_role_list_type;
 

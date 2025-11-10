@@ -12,6 +12,7 @@
 /// ```text
 /// # let logscope = unimplemented!();
 /// match logscope {
+///     LogScope::CloudwatchTelemetryRuleManaged => { /* ... */ },
 ///     LogScope::Customer => { /* ... */ },
 ///     LogScope::SecurityLake => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -43,6 +44,8 @@
 )]
 pub enum LogScope {
     #[allow(missing_docs)] // documentation missing in model
+    CloudwatchTelemetryRuleManaged,
+    #[allow(missing_docs)] // documentation missing in model
     Customer,
     #[allow(missing_docs)] // documentation missing in model
     SecurityLake,
@@ -53,6 +56,7 @@ pub enum LogScope {
 impl ::std::convert::From<&str> for LogScope {
     fn from(s: &str) -> Self {
         match s {
+            "CLOUDWATCH_TELEMETRY_RULE_MANAGED" => LogScope::CloudwatchTelemetryRuleManaged,
             "CUSTOMER" => LogScope::Customer,
             "SECURITY_LAKE" => LogScope::SecurityLake,
             other => LogScope::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -70,6 +74,7 @@ impl LogScope {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            LogScope::CloudwatchTelemetryRuleManaged => "CLOUDWATCH_TELEMETRY_RULE_MANAGED",
             LogScope::Customer => "CUSTOMER",
             LogScope::SecurityLake => "SECURITY_LAKE",
             LogScope::Unknown(value) => value.as_str(),
@@ -77,7 +82,7 @@ impl LogScope {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CUSTOMER", "SECURITY_LAKE"]
+        &["CLOUDWATCH_TELEMETRY_RULE_MANAGED", "CUSTOMER", "SECURITY_LAKE"]
     }
 }
 impl ::std::convert::AsRef<str> for LogScope {
@@ -100,6 +105,7 @@ impl LogScope {
 impl ::std::fmt::Display for LogScope {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            LogScope::CloudwatchTelemetryRuleManaged => write!(f, "CLOUDWATCH_TELEMETRY_RULE_MANAGED"),
             LogScope::Customer => write!(f, "CUSTOMER"),
             LogScope::SecurityLake => write!(f, "SECURITY_LAKE"),
             LogScope::Unknown(value) => write!(f, "{value}"),

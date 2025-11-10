@@ -54,18 +54,24 @@ pub fn ser_create_cluster_input_input(
         crate::protocol_serde::shape_open_monitoring_info::ser_open_monitoring_info(&mut object_16, var_15)?;
         object_16.finish();
     }
-    if let Some(var_17) = &input.storage_mode {
-        object.key("storageMode").string(var_17.as_str());
-    }
-    if let Some(var_18) = &input.tags {
+    if let Some(var_17) = &input.rebalancing {
         #[allow(unused_mut)]
-        let mut object_19 = object.key("tags").start_object();
-        for (key_20, value_21) in var_18 {
+        let mut object_18 = object.key("rebalancing").start_object();
+        crate::protocol_serde::shape_rebalancing::ser_rebalancing(&mut object_18, var_17)?;
+        object_18.finish();
+    }
+    if let Some(var_19) = &input.storage_mode {
+        object.key("storageMode").string(var_19.as_str());
+    }
+    if let Some(var_20) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_21 = object.key("tags").start_object();
+        for (key_22, value_23) in var_20 {
             {
-                object_19.key(key_20.as_str()).string(value_21.as_str());
+                object_21.key(key_22.as_str()).string(value_23.as_str());
             }
         }
-        object_19.finish();
+        object_21.finish();
     }
     Ok(())
 }

@@ -78,6 +78,9 @@ where
                                 crate::protocol_serde::shape_broker_count_update_info::de_broker_count_update_info(tokens)?,
                             );
                         }
+                        "rebalancing" => {
+                            builder = builder.set_rebalancing(crate::protocol_serde::shape_rebalancing::de_rebalancing(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

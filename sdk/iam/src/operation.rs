@@ -28,6 +28,9 @@ pub mod create_access_key;
 /// Types for the `CreateAccountAlias` operation.
 pub mod create_account_alias;
 
+/// Types for the `CreateDelegationRequest` operation.
+pub mod create_delegation_request;
+
 /// Types for the `CreateGroup` operation.
 pub mod create_group;
 

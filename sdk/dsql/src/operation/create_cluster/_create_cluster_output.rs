@@ -18,6 +18,8 @@ pub struct CreateClusterOutput {
     pub encryption_details: ::std::option::Option<crate::types::EncryptionDetails>,
     /// <p>Whether deletion protection is enabled on this cluster.</p>
     pub deletion_protection_enabled: bool,
+    /// <p>The connection endpoint for the created cluster.</p>
+    pub endpoint: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateClusterOutput {
@@ -51,6 +53,10 @@ impl CreateClusterOutput {
     pub fn deletion_protection_enabled(&self) -> bool {
         self.deletion_protection_enabled
     }
+    /// <p>The connection endpoint for the created cluster.</p>
+    pub fn endpoint(&self) -> ::std::option::Option<&str> {
+        self.endpoint.as_deref()
+    }
 }
 impl ::aws_types::request_id::RequestId for CreateClusterOutput {
     fn request_id(&self) -> Option<&str> {
@@ -75,6 +81,7 @@ pub struct CreateClusterOutputBuilder {
     pub(crate) multi_region_properties: ::std::option::Option<crate::types::MultiRegionProperties>,
     pub(crate) encryption_details: ::std::option::Option<crate::types::EncryptionDetails>,
     pub(crate) deletion_protection_enabled: ::std::option::Option<bool>,
+    pub(crate) endpoint: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateClusterOutputBuilder {
@@ -181,6 +188,20 @@ impl CreateClusterOutputBuilder {
     pub fn get_deletion_protection_enabled(&self) -> &::std::option::Option<bool> {
         &self.deletion_protection_enabled
     }
+    /// <p>The connection endpoint for the created cluster.</p>
+    pub fn endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.endpoint = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The connection endpoint for the created cluster.</p>
+    pub fn set_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.endpoint = input;
+        self
+    }
+    /// <p>The connection endpoint for the created cluster.</p>
+    pub fn get_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -233,6 +254,7 @@ impl CreateClusterOutputBuilder {
                     "deletion_protection_enabled was not specified but it is required when building CreateClusterOutput",
                 )
             })?,
+            endpoint: self.endpoint,
             _request_id: self._request_id,
         })
     }

@@ -45,6 +45,10 @@ pub use crate::types::_invoice_summaries_selector::InvoiceSummariesSelector;
 
 pub use crate::types::_list_invoice_summaries_resource_type::ListInvoiceSummariesResourceType;
 
+pub use crate::types::_invoice_pdf::InvoicePdf;
+
+pub use crate::types::_supplemental_document::SupplementalDocument;
+
 pub use crate::types::_invoice_profile::InvoiceProfile;
 
 pub use crate::types::_receiver_address::ReceiverAddress;
@@ -71,6 +75,8 @@ mod _filters;
 
 mod _invoice_currency_amount;
 
+mod _invoice_pdf;
+
 mod _invoice_profile;
 
 mod _invoice_summaries_filter;
@@ -90,6 +96,8 @@ mod _list_invoice_summaries_resource_type;
 mod _receiver_address;
 
 mod _resource_tag;
+
+mod _supplemental_document;
 
 mod _taxes_breakdown;
 

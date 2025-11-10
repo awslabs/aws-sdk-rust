@@ -258,4 +258,18 @@ impl CreateQuantumTaskFluentBuilder {
     pub fn get_associations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Association>> {
         self.inner.get_associations()
     }
+    /// <p>Enable experimental capabilities for the quantum task.</p>
+    pub fn experimental_capabilities(mut self, input: crate::types::ExperimentalCapabilities) -> Self {
+        self.inner = self.inner.experimental_capabilities(input);
+        self
+    }
+    /// <p>Enable experimental capabilities for the quantum task.</p>
+    pub fn set_experimental_capabilities(mut self, input: ::std::option::Option<crate::types::ExperimentalCapabilities>) -> Self {
+        self.inner = self.inner.set_experimental_capabilities(input);
+        self
+    }
+    /// <p>Enable experimental capabilities for the quantum task.</p>
+    pub fn get_experimental_capabilities(&self) -> &::std::option::Option<crate::types::ExperimentalCapabilities> {
+        self.inner.get_experimental_capabilities()
+    }
 }

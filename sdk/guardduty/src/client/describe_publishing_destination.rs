@@ -11,6 +11,7 @@ impl super::Client {
     ///   - [`status(Option<PublishingStatus>)`](crate::operation::describe_publishing_destination::DescribePublishingDestinationOutput::status): <p>The status of the publishing destination.</p>
     ///   - [`publishing_failure_start_timestamp(Option<i64>)`](crate::operation::describe_publishing_destination::DescribePublishingDestinationOutput::publishing_failure_start_timestamp): <p>The time, in epoch millisecond format, at which GuardDuty was first unable to publish findings to the destination.</p>
     ///   - [`destination_properties(Option<DestinationProperties>)`](crate::operation::describe_publishing_destination::DescribePublishingDestinationOutput::destination_properties): <p>A <code>DestinationProperties</code> object that includes the <code>DestinationArn</code> and <code>KmsKeyArn</code> of the publishing destination.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::describe_publishing_destination::DescribePublishingDestinationOutput::tags): <p>The tags of the publishing destination resource.</p>
     /// - On failure, responds with [`SdkError<DescribePublishingDestinationError>`](crate::operation::describe_publishing_destination::DescribePublishingDestinationError)
     pub fn describe_publishing_destination(
         &self,

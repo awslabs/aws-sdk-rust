@@ -5,7 +5,7 @@
 pub struct AssumeRootInput {
     /// <p>The member account principal ARN or account ID.</p>
     pub target_principal: ::std::option::Option<::std::string::String>,
-    /// <p>The identity based policy that scopes the session to the privileged tasks that can be performed. You can use one of following Amazon Web Services managed policies to scope root session actions.</p>
+    /// <p>The identity based policy that scopes the session to the privileged tasks that can be performed. You must use one of following Amazon Web Services managed policies to scope root session actions:</p>
     /// <ul>
     /// <li>
     /// <p><a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/security-iam-awsmanpol.html#security-iam-awsmanpol-IAMAuditRootUserCredentials">IAMAuditRootUserCredentials</a></p></li>
@@ -28,7 +28,7 @@ impl AssumeRootInput {
     pub fn target_principal(&self) -> ::std::option::Option<&str> {
         self.target_principal.as_deref()
     }
-    /// <p>The identity based policy that scopes the session to the privileged tasks that can be performed. You can use one of following Amazon Web Services managed policies to scope root session actions.</p>
+    /// <p>The identity based policy that scopes the session to the privileged tasks that can be performed. You must use one of following Amazon Web Services managed policies to scope root session actions:</p>
     /// <ul>
     /// <li>
     /// <p><a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/security-iam-awsmanpol.html#security-iam-awsmanpol-IAMAuditRootUserCredentials">IAMAuditRootUserCredentials</a></p></li>
@@ -81,7 +81,7 @@ impl AssumeRootInputBuilder {
     pub fn get_target_principal(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_principal
     }
-    /// <p>The identity based policy that scopes the session to the privileged tasks that can be performed. You can use one of following Amazon Web Services managed policies to scope root session actions.</p>
+    /// <p>The identity based policy that scopes the session to the privileged tasks that can be performed. You must use one of following Amazon Web Services managed policies to scope root session actions:</p>
     /// <ul>
     /// <li>
     /// <p><a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/security-iam-awsmanpol.html#security-iam-awsmanpol-IAMAuditRootUserCredentials">IAMAuditRootUserCredentials</a></p></li>
@@ -99,7 +99,7 @@ impl AssumeRootInputBuilder {
         self.task_policy_arn = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The identity based policy that scopes the session to the privileged tasks that can be performed. You can use one of following Amazon Web Services managed policies to scope root session actions.</p>
+    /// <p>The identity based policy that scopes the session to the privileged tasks that can be performed. You must use one of following Amazon Web Services managed policies to scope root session actions:</p>
     /// <ul>
     /// <li>
     /// <p><a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/security-iam-awsmanpol.html#security-iam-awsmanpol-IAMAuditRootUserCredentials">IAMAuditRootUserCredentials</a></p></li>
@@ -116,7 +116,7 @@ impl AssumeRootInputBuilder {
         self.task_policy_arn = input;
         self
     }
-    /// <p>The identity based policy that scopes the session to the privileged tasks that can be performed. You can use one of following Amazon Web Services managed policies to scope root session actions.</p>
+    /// <p>The identity based policy that scopes the session to the privileged tasks that can be performed. You must use one of following Amazon Web Services managed policies to scope root session actions:</p>
     /// <ul>
     /// <li>
     /// <p><a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/security-iam-awsmanpol.html#security-iam-awsmanpol-IAMAuditRootUserCredentials">IAMAuditRootUserCredentials</a></p></li>

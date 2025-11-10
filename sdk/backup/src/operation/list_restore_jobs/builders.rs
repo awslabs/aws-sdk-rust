@@ -356,4 +356,18 @@ impl ListRestoreJobsFluentBuilder {
     pub fn get_by_restore_testing_plan_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_by_restore_testing_plan_arn()
     }
+    /// <p>This is a filter to list child (nested) restore jobs based on parent restore job ID.</p>
+    pub fn by_parent_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.by_parent_job_id(input.into());
+        self
+    }
+    /// <p>This is a filter to list child (nested) restore jobs based on parent restore job ID.</p>
+    pub fn set_by_parent_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_by_parent_job_id(input);
+        self
+    }
+    /// <p>This is a filter to list child (nested) restore jobs based on parent restore job ID.</p>
+    pub fn get_by_parent_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_by_parent_job_id()
+    }
 }

@@ -202,5 +202,10 @@ pub fn ser_instance_requirements_request(
     if let Some(var_74) = &input.baseline_performance_factors {
         crate::protocol_serde::shape_baseline_performance_factors_request::ser_baseline_performance_factors_request(scope_73, var_74)?;
     }
+    #[allow(unused_mut)]
+    let mut scope_75 = writer.prefix("RequireEncryptionInTransit");
+    if let Some(var_76) = &input.require_encryption_in_transit {
+        scope_75.boolean(*var_76);
+    }
     Ok(())
 }

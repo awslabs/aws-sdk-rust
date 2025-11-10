@@ -124,6 +124,9 @@ pub(crate) fn de_describe_publishing_destination(
                             .transpose()?,
                     );
                 }
+                "tags" => {
+                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens)?);
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

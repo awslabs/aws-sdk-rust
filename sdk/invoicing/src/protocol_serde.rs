@@ -29,6 +29,8 @@ pub(crate) mod shape_create_invoice_unit;
 
 pub(crate) mod shape_delete_invoice_unit;
 
+pub(crate) mod shape_get_invoice_pdf;
+
 pub(crate) mod shape_get_invoice_unit;
 
 pub(crate) mod shape_list_invoice_summaries;
@@ -59,6 +61,8 @@ pub(crate) mod shape_create_invoice_unit_input;
 
 pub(crate) mod shape_delete_invoice_unit_input;
 
+pub(crate) mod shape_get_invoice_pdf_input;
+
 pub(crate) mod shape_get_invoice_unit_input;
 
 pub(crate) mod shape_internal_server_exception;
@@ -84,6 +88,8 @@ pub(crate) mod shape_update_invoice_unit_input;
 pub(crate) mod shape_validation_exception;
 
 pub(crate) mod shape_filters;
+
+pub(crate) mod shape_invoice_pdf;
 
 pub(crate) mod shape_invoice_summaries;
 
@@ -115,6 +121,8 @@ pub(crate) mod shape_invoice_summary;
 
 pub(crate) mod shape_invoice_unit;
 
+pub(crate) mod shape_supplemental_documents;
+
 pub(crate) mod shape_validation_exception_field;
 
 pub(crate) mod shape_entity;
@@ -122,6 +130,8 @@ pub(crate) mod shape_entity;
 pub(crate) mod shape_invoice_currency_amount;
 
 pub(crate) mod shape_receiver_address;
+
+pub(crate) mod shape_supplemental_document;
 
 pub(crate) mod shape_amount_breakdown;
 

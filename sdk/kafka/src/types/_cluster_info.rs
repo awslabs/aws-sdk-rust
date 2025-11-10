@@ -8,6 +8,8 @@ pub struct ClusterInfo {
     pub active_operation_arn: ::std::option::Option<::std::string::String>,
     /// <p>Information about the broker nodes.</p>
     pub broker_node_group_info: ::std::option::Option<crate::types::BrokerNodeGroupInfo>,
+    /// <p>Contains information about intelligent rebalancing for new MSK Provisioned clusters with Express brokers. By default, intelligent rebalancing status is ACTIVE.</p>
+    pub rebalancing: ::std::option::Option<crate::types::Rebalancing>,
     /// <p>Includes all client authentication information.</p>
     pub client_authentication: ::std::option::Option<crate::types::ClientAuthentication>,
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
@@ -53,6 +55,10 @@ impl ClusterInfo {
     /// <p>Information about the broker nodes.</p>
     pub fn broker_node_group_info(&self) -> ::std::option::Option<&crate::types::BrokerNodeGroupInfo> {
         self.broker_node_group_info.as_ref()
+    }
+    /// <p>Contains information about intelligent rebalancing for new MSK Provisioned clusters with Express brokers. By default, intelligent rebalancing status is ACTIVE.</p>
+    pub fn rebalancing(&self) -> ::std::option::Option<&crate::types::Rebalancing> {
+        self.rebalancing.as_ref()
     }
     /// <p>Includes all client authentication information.</p>
     pub fn client_authentication(&self) -> ::std::option::Option<&crate::types::ClientAuthentication> {
@@ -140,6 +146,7 @@ impl ClusterInfo {
 pub struct ClusterInfoBuilder {
     pub(crate) active_operation_arn: ::std::option::Option<::std::string::String>,
     pub(crate) broker_node_group_info: ::std::option::Option<crate::types::BrokerNodeGroupInfo>,
+    pub(crate) rebalancing: ::std::option::Option<crate::types::Rebalancing>,
     pub(crate) client_authentication: ::std::option::Option<crate::types::ClientAuthentication>,
     pub(crate) cluster_arn: ::std::option::Option<::std::string::String>,
     pub(crate) cluster_name: ::std::option::Option<::std::string::String>,
@@ -187,6 +194,20 @@ impl ClusterInfoBuilder {
     /// <p>Information about the broker nodes.</p>
     pub fn get_broker_node_group_info(&self) -> &::std::option::Option<crate::types::BrokerNodeGroupInfo> {
         &self.broker_node_group_info
+    }
+    /// <p>Contains information about intelligent rebalancing for new MSK Provisioned clusters with Express brokers. By default, intelligent rebalancing status is ACTIVE.</p>
+    pub fn rebalancing(mut self, input: crate::types::Rebalancing) -> Self {
+        self.rebalancing = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains information about intelligent rebalancing for new MSK Provisioned clusters with Express brokers. By default, intelligent rebalancing status is ACTIVE.</p>
+    pub fn set_rebalancing(mut self, input: ::std::option::Option<crate::types::Rebalancing>) -> Self {
+        self.rebalancing = input;
+        self
+    }
+    /// <p>Contains information about intelligent rebalancing for new MSK Provisioned clusters with Express brokers. By default, intelligent rebalancing status is ACTIVE.</p>
+    pub fn get_rebalancing(&self) -> &::std::option::Option<crate::types::Rebalancing> {
+        &self.rebalancing
     }
     /// <p>Includes all client authentication information.</p>
     pub fn client_authentication(mut self, input: crate::types::ClientAuthentication) -> Self {
@@ -451,6 +472,7 @@ impl ClusterInfoBuilder {
         crate::types::ClusterInfo {
             active_operation_arn: self.active_operation_arn,
             broker_node_group_info: self.broker_node_group_info,
+            rebalancing: self.rebalancing,
             client_authentication: self.client_authentication,
             cluster_arn: self.cluster_arn,
             cluster_name: self.cluster_name,

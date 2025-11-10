@@ -5,6 +5,10 @@ pub use crate::types::_validation_exception_reason::ValidationExceptionReason;
 
 pub use crate::types::_cancellation_status::CancellationStatus;
 
+pub use crate::types::_experimental_capabilities::ExperimentalCapabilities;
+
+pub use crate::types::_experimental_capabilities_enablement_type::ExperimentalCapabilitiesEnablementType;
+
 pub use crate::types::_action_metadata::ActionMetadata;
 
 pub use crate::types::_association::Association;
@@ -104,6 +108,10 @@ mod _device_status;
 mod _device_summary;
 
 mod _device_type;
+
+mod _experimental_capabilities;
+
+mod _experimental_capabilities_enablement_type;
 
 mod _hybrid_job_additional_attribute_name;
 

@@ -121,6 +121,8 @@ pub(crate) mod shape_update_connectivity;
 
 pub(crate) mod shape_update_monitoring;
 
+pub(crate) mod shape_update_rebalancing;
+
 pub(crate) mod shape_update_replication_info;
 
 pub(crate) mod shape_update_security;
@@ -188,6 +190,8 @@ pub(crate) mod shape_update_configuration_input;
 pub(crate) mod shape_update_connectivity_input;
 
 pub(crate) mod shape_update_monitoring_input;
+
+pub(crate) mod shape_update_rebalancing_input;
 
 pub(crate) mod shape_update_replication_info_input;
 
@@ -262,6 +266,8 @@ pub(crate) mod shape_open_monitoring_info;
 pub(crate) mod shape_provisioned_request;
 
 pub(crate) mod shape_provisioned_throughput;
+
+pub(crate) mod shape_rebalancing;
 
 pub(crate) mod shape_replication_info;
 

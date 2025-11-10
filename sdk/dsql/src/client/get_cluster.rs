@@ -13,6 +13,7 @@ impl super::Client {
     ///   - [`multi_region_properties(Option<MultiRegionProperties>)`](crate::operation::get_cluster::GetClusterOutput::multi_region_properties): <p>Returns the current multi-Region cluster configuration, including witness region and linked cluster information.</p>
     ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_cluster::GetClusterOutput::tags): <p>Map of tags.</p>
     ///   - [`encryption_details(Option<EncryptionDetails>)`](crate::operation::get_cluster::GetClusterOutput::encryption_details): <p>The current encryption configuration details for the cluster.</p>
+    ///   - [`endpoint(Option<String>)`](crate::operation::get_cluster::GetClusterOutput::endpoint): <p>The connection endpoint for the cluster.</p>
     /// - On failure, responds with [`SdkError<GetClusterError>`](crate::operation::get_cluster::GetClusterError)
     pub fn get_cluster(&self) -> crate::operation::get_cluster::builders::GetClusterFluentBuilder {
         crate::operation::get_cluster::builders::GetClusterFluentBuilder::new(self.handle.clone())

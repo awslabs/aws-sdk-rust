@@ -15,6 +15,9 @@
 ///     KeyAlgorithm::EcPrime256v1 => { /* ... */ },
 ///     KeyAlgorithm::EcSecp384r1 => { /* ... */ },
 ///     KeyAlgorithm::EcSecp521r1 => { /* ... */ },
+///     KeyAlgorithm::MlDsa44 => { /* ... */ },
+///     KeyAlgorithm::MlDsa65 => { /* ... */ },
+///     KeyAlgorithm::MlDsa87 => { /* ... */ },
 ///     KeyAlgorithm::Rsa2048 => { /* ... */ },
 ///     KeyAlgorithm::Rsa3072 => { /* ... */ },
 ///     KeyAlgorithm::Rsa4096 => { /* ... */ },
@@ -54,6 +57,12 @@ pub enum KeyAlgorithm {
     #[allow(missing_docs)] // documentation missing in model
     EcSecp521r1,
     #[allow(missing_docs)] // documentation missing in model
+    MlDsa44,
+    #[allow(missing_docs)] // documentation missing in model
+    MlDsa65,
+    #[allow(missing_docs)] // documentation missing in model
+    MlDsa87,
+    #[allow(missing_docs)] // documentation missing in model
     Rsa2048,
     #[allow(missing_docs)] // documentation missing in model
     Rsa3072,
@@ -71,6 +80,9 @@ impl ::std::convert::From<&str> for KeyAlgorithm {
             "EC_prime256v1" => KeyAlgorithm::EcPrime256v1,
             "EC_secp384r1" => KeyAlgorithm::EcSecp384r1,
             "EC_secp521r1" => KeyAlgorithm::EcSecp521r1,
+            "ML_DSA_44" => KeyAlgorithm::MlDsa44,
+            "ML_DSA_65" => KeyAlgorithm::MlDsa65,
+            "ML_DSA_87" => KeyAlgorithm::MlDsa87,
             "RSA_2048" => KeyAlgorithm::Rsa2048,
             "RSA_3072" => KeyAlgorithm::Rsa3072,
             "RSA_4096" => KeyAlgorithm::Rsa4096,
@@ -93,6 +105,9 @@ impl KeyAlgorithm {
             KeyAlgorithm::EcPrime256v1 => "EC_prime256v1",
             KeyAlgorithm::EcSecp384r1 => "EC_secp384r1",
             KeyAlgorithm::EcSecp521r1 => "EC_secp521r1",
+            KeyAlgorithm::MlDsa44 => "ML_DSA_44",
+            KeyAlgorithm::MlDsa65 => "ML_DSA_65",
+            KeyAlgorithm::MlDsa87 => "ML_DSA_87",
             KeyAlgorithm::Rsa2048 => "RSA_2048",
             KeyAlgorithm::Rsa3072 => "RSA_3072",
             KeyAlgorithm::Rsa4096 => "RSA_4096",
@@ -102,7 +117,18 @@ impl KeyAlgorithm {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["EC_prime256v1", "EC_secp384r1", "EC_secp521r1", "RSA_2048", "RSA_3072", "RSA_4096", "SM2"]
+        &[
+            "EC_prime256v1",
+            "EC_secp384r1",
+            "EC_secp521r1",
+            "ML_DSA_44",
+            "ML_DSA_65",
+            "ML_DSA_87",
+            "RSA_2048",
+            "RSA_3072",
+            "RSA_4096",
+            "SM2",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for KeyAlgorithm {
@@ -128,6 +154,9 @@ impl ::std::fmt::Display for KeyAlgorithm {
             KeyAlgorithm::EcPrime256v1 => write!(f, "EC_prime256v1"),
             KeyAlgorithm::EcSecp384r1 => write!(f, "EC_secp384r1"),
             KeyAlgorithm::EcSecp521r1 => write!(f, "EC_secp521r1"),
+            KeyAlgorithm::MlDsa44 => write!(f, "ML_DSA_44"),
+            KeyAlgorithm::MlDsa65 => write!(f, "ML_DSA_65"),
+            KeyAlgorithm::MlDsa87 => write!(f, "ML_DSA_87"),
             KeyAlgorithm::Rsa2048 => write!(f, "RSA_2048"),
             KeyAlgorithm::Rsa3072 => write!(f, "RSA_3072"),
             KeyAlgorithm::Rsa4096 => write!(f, "RSA_4096"),

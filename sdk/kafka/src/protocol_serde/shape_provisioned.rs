@@ -18,6 +18,9 @@ where
                             builder = builder
                                 .set_broker_node_group_info(crate::protocol_serde::shape_broker_node_group_info::de_broker_node_group_info(tokens)?);
                         }
+                        "rebalancing" => {
+                            builder = builder.set_rebalancing(crate::protocol_serde::shape_rebalancing::de_rebalancing(tokens)?);
+                        }
                         "currentBrokerSoftwareInfo" => {
                             builder = builder.set_current_broker_software_info(
                                 crate::protocol_serde::shape_broker_software_info::de_broker_software_info(tokens)?,

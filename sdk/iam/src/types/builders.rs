@@ -101,4 +101,8 @@ pub use crate::types::_user_detail::UserDetailBuilder;
 
 pub use crate::types::_access_key_last_used::AccessKeyLastUsedBuilder;
 
+pub use crate::types::_delegation_permission::DelegationPermissionBuilder;
+
+pub use crate::types::_policy_parameter::PolicyParameterBuilder;
+
 pub use crate::types::_access_key::AccessKeyBuilder;

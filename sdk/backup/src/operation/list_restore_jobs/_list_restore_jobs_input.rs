@@ -57,6 +57,8 @@ pub struct ListRestoreJobsInput {
     pub by_complete_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>This returns only restore testing jobs that match the specified resource Amazon Resource Name (ARN).</p>
     pub by_restore_testing_plan_arn: ::std::option::Option<::std::string::String>,
+    /// <p>This is a filter to list child (nested) restore jobs based on parent restore job ID.</p>
+    pub by_parent_job_id: ::std::option::Option<::std::string::String>,
 }
 impl ListRestoreJobsInput {
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>MaxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
@@ -133,6 +135,10 @@ impl ListRestoreJobsInput {
     pub fn by_restore_testing_plan_arn(&self) -> ::std::option::Option<&str> {
         self.by_restore_testing_plan_arn.as_deref()
     }
+    /// <p>This is a filter to list child (nested) restore jobs based on parent restore job ID.</p>
+    pub fn by_parent_job_id(&self) -> ::std::option::Option<&str> {
+        self.by_parent_job_id.as_deref()
+    }
 }
 impl ListRestoreJobsInput {
     /// Creates a new builder-style object to manufacture [`ListRestoreJobsInput`](crate::operation::list_restore_jobs::ListRestoreJobsInput).
@@ -155,6 +161,7 @@ pub struct ListRestoreJobsInputBuilder {
     pub(crate) by_complete_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) by_complete_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) by_restore_testing_plan_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) by_parent_job_id: ::std::option::Option<::std::string::String>,
 }
 impl ListRestoreJobsInputBuilder {
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>MaxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
@@ -399,6 +406,20 @@ impl ListRestoreJobsInputBuilder {
     pub fn get_by_restore_testing_plan_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.by_restore_testing_plan_arn
     }
+    /// <p>This is a filter to list child (nested) restore jobs based on parent restore job ID.</p>
+    pub fn by_parent_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.by_parent_job_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>This is a filter to list child (nested) restore jobs based on parent restore job ID.</p>
+    pub fn set_by_parent_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.by_parent_job_id = input;
+        self
+    }
+    /// <p>This is a filter to list child (nested) restore jobs based on parent restore job ID.</p>
+    pub fn get_by_parent_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.by_parent_job_id
+    }
     /// Consumes the builder and constructs a [`ListRestoreJobsInput`](crate::operation::list_restore_jobs::ListRestoreJobsInput).
     pub fn build(
         self,
@@ -414,6 +435,7 @@ impl ListRestoreJobsInputBuilder {
             by_complete_before: self.by_complete_before,
             by_complete_after: self.by_complete_after,
             by_restore_testing_plan_arn: self.by_restore_testing_plan_arn,
+            by_parent_job_id: self.by_parent_job_id,
         })
     }
 }

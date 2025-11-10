@@ -6,6 +6,8 @@
 pub struct ProvisionedRequest {
     /// <p>Information about the brokers.</p>
     pub broker_node_group_info: ::std::option::Option<crate::types::BrokerNodeGroupInfo>,
+    /// <p>Specifies if intelligent rebalancing is turned on for your MSK Provisioned cluster with Express brokers. For all new Express-based clusters that you create, intelligent rebalancing is turned on by default.</p>
+    pub rebalancing: ::std::option::Option<crate::types::Rebalancing>,
     /// <p>Includes all client authentication information.</p>
     pub client_authentication: ::std::option::Option<crate::types::ClientAuthentication>,
     /// <p>Represents the configuration that you want Amazon MSK to use for the brokers in a cluster.</p>
@@ -29,6 +31,10 @@ impl ProvisionedRequest {
     /// <p>Information about the brokers.</p>
     pub fn broker_node_group_info(&self) -> ::std::option::Option<&crate::types::BrokerNodeGroupInfo> {
         self.broker_node_group_info.as_ref()
+    }
+    /// <p>Specifies if intelligent rebalancing is turned on for your MSK Provisioned cluster with Express brokers. For all new Express-based clusters that you create, intelligent rebalancing is turned on by default.</p>
+    pub fn rebalancing(&self) -> ::std::option::Option<&crate::types::Rebalancing> {
+        self.rebalancing.as_ref()
     }
     /// <p>Includes all client authentication information.</p>
     pub fn client_authentication(&self) -> ::std::option::Option<&crate::types::ClientAuthentication> {
@@ -79,6 +85,7 @@ impl ProvisionedRequest {
 #[non_exhaustive]
 pub struct ProvisionedRequestBuilder {
     pub(crate) broker_node_group_info: ::std::option::Option<crate::types::BrokerNodeGroupInfo>,
+    pub(crate) rebalancing: ::std::option::Option<crate::types::Rebalancing>,
     pub(crate) client_authentication: ::std::option::Option<crate::types::ClientAuthentication>,
     pub(crate) configuration_info: ::std::option::Option<crate::types::ConfigurationInfo>,
     pub(crate) encryption_info: ::std::option::Option<crate::types::EncryptionInfo>,
@@ -104,6 +111,20 @@ impl ProvisionedRequestBuilder {
     /// <p>Information about the brokers.</p>
     pub fn get_broker_node_group_info(&self) -> &::std::option::Option<crate::types::BrokerNodeGroupInfo> {
         &self.broker_node_group_info
+    }
+    /// <p>Specifies if intelligent rebalancing is turned on for your MSK Provisioned cluster with Express brokers. For all new Express-based clusters that you create, intelligent rebalancing is turned on by default.</p>
+    pub fn rebalancing(mut self, input: crate::types::Rebalancing) -> Self {
+        self.rebalancing = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies if intelligent rebalancing is turned on for your MSK Provisioned cluster with Express brokers. For all new Express-based clusters that you create, intelligent rebalancing is turned on by default.</p>
+    pub fn set_rebalancing(mut self, input: ::std::option::Option<crate::types::Rebalancing>) -> Self {
+        self.rebalancing = input;
+        self
+    }
+    /// <p>Specifies if intelligent rebalancing is turned on for your MSK Provisioned cluster with Express brokers. For all new Express-based clusters that you create, intelligent rebalancing is turned on by default.</p>
+    pub fn get_rebalancing(&self) -> &::std::option::Option<crate::types::Rebalancing> {
+        &self.rebalancing
     }
     /// <p>Includes all client authentication information.</p>
     pub fn client_authentication(mut self, input: crate::types::ClientAuthentication) -> Self {
@@ -237,6 +258,7 @@ impl ProvisionedRequestBuilder {
     pub fn build(self) -> crate::types::ProvisionedRequest {
         crate::types::ProvisionedRequest {
             broker_node_group_info: self.broker_node_group_info,
+            rebalancing: self.rebalancing,
             client_authentication: self.client_authentication,
             configuration_info: self.configuration_info,
             encryption_info: self.encryption_info,

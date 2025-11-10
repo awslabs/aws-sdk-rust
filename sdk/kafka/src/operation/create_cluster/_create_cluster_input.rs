@@ -5,6 +5,8 @@
 pub struct CreateClusterInput {
     /// <p>Information about the broker nodes in the cluster.</p>
     pub broker_node_group_info: ::std::option::Option<crate::types::BrokerNodeGroupInfo>,
+    /// <p>Specifies if intelligent rebalancing should be turned on for the new MSK Provisioned cluster with Express brokers. By default, intelligent rebalancing status is ACTIVE for all new clusters.</p>
+    pub rebalancing: ::std::option::Option<crate::types::Rebalancing>,
     /// <p>Includes all client authentication related information.</p>
     pub client_authentication: ::std::option::Option<crate::types::ClientAuthentication>,
     /// <p>The name of the cluster.</p>
@@ -32,6 +34,10 @@ impl CreateClusterInput {
     /// <p>Information about the broker nodes in the cluster.</p>
     pub fn broker_node_group_info(&self) -> ::std::option::Option<&crate::types::BrokerNodeGroupInfo> {
         self.broker_node_group_info.as_ref()
+    }
+    /// <p>Specifies if intelligent rebalancing should be turned on for the new MSK Provisioned cluster with Express brokers. By default, intelligent rebalancing status is ACTIVE for all new clusters.</p>
+    pub fn rebalancing(&self) -> ::std::option::Option<&crate::types::Rebalancing> {
+        self.rebalancing.as_ref()
     }
     /// <p>Includes all client authentication related information.</p>
     pub fn client_authentication(&self) -> ::std::option::Option<&crate::types::ClientAuthentication> {
@@ -90,6 +96,7 @@ impl CreateClusterInput {
 #[non_exhaustive]
 pub struct CreateClusterInputBuilder {
     pub(crate) broker_node_group_info: ::std::option::Option<crate::types::BrokerNodeGroupInfo>,
+    pub(crate) rebalancing: ::std::option::Option<crate::types::Rebalancing>,
     pub(crate) client_authentication: ::std::option::Option<crate::types::ClientAuthentication>,
     pub(crate) cluster_name: ::std::option::Option<::std::string::String>,
     pub(crate) configuration_info: ::std::option::Option<crate::types::ConfigurationInfo>,
@@ -117,6 +124,20 @@ impl CreateClusterInputBuilder {
     /// <p>Information about the broker nodes in the cluster.</p>
     pub fn get_broker_node_group_info(&self) -> &::std::option::Option<crate::types::BrokerNodeGroupInfo> {
         &self.broker_node_group_info
+    }
+    /// <p>Specifies if intelligent rebalancing should be turned on for the new MSK Provisioned cluster with Express brokers. By default, intelligent rebalancing status is ACTIVE for all new clusters.</p>
+    pub fn rebalancing(mut self, input: crate::types::Rebalancing) -> Self {
+        self.rebalancing = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies if intelligent rebalancing should be turned on for the new MSK Provisioned cluster with Express brokers. By default, intelligent rebalancing status is ACTIVE for all new clusters.</p>
+    pub fn set_rebalancing(mut self, input: ::std::option::Option<crate::types::Rebalancing>) -> Self {
+        self.rebalancing = input;
+        self
+    }
+    /// <p>Specifies if intelligent rebalancing should be turned on for the new MSK Provisioned cluster with Express brokers. By default, intelligent rebalancing status is ACTIVE for all new clusters.</p>
+    pub fn get_rebalancing(&self) -> &::std::option::Option<crate::types::Rebalancing> {
+        &self.rebalancing
     }
     /// <p>Includes all client authentication related information.</p>
     pub fn client_authentication(mut self, input: crate::types::ClientAuthentication) -> Self {
@@ -287,6 +308,7 @@ impl CreateClusterInputBuilder {
     ) -> ::std::result::Result<crate::operation::create_cluster::CreateClusterInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_cluster::CreateClusterInput {
             broker_node_group_info: self.broker_node_group_info,
+            rebalancing: self.rebalancing,
             client_authentication: self.client_authentication,
             cluster_name: self.cluster_name,
             configuration_info: self.configuration_info,

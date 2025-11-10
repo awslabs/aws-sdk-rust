@@ -289,6 +289,8 @@ pub(crate) mod shape_update_static_policy_definition;
 
 pub(crate) mod shape_validation_exception_field;
 
+pub(crate) mod shape_cedar_tag_value;
+
 pub(crate) mod shape_cognito_group_configuration;
 
 pub(crate) mod shape_cognito_group_configuration_detail;

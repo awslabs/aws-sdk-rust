@@ -5,6 +5,8 @@
 pub enum Error {
     /// <p>The web identity token that was passed is expired or is not valid. Get a new identity token from the identity provider and then retry the request.</p>
     ExpiredTokenException(crate::types::error::ExpiredTokenException),
+    /// <p></p>
+    ExpiredTradeInTokenException(crate::types::error::ExpiredTradeInTokenException),
     /// <p>The request could not be fulfilled because the identity provider (IDP) that was asked to verify the incoming identity token could not be reached. This is often a transient error caused by network conditions. Retry the request a limited number of times so that you don't exceed the request rate. If the error persists, the identity provider might be down or not responding.</p>
     IdpCommunicationErrorException(crate::types::error::IdpCommunicationErrorException),
     /// <p>The identity provider (IdP) reported that authentication failed. This might be because the claim is invalid.</p>
@@ -19,7 +21,7 @@ pub enum Error {
     /// <p>The request was rejected because the total packed size of the session policies and session tags combined was too large. An Amazon Web Services conversion compresses the session policy document, session policy ARNs, and session tags into a packed binary format that has a separate limit. The error message indicates by percentage how close the policies and tags are to the upper size limit. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Passing Session Tags in STS</a> in the <i>IAM User Guide</i>.</p>
     /// <p>You could receive this error even though you meet other defined session policy and session tag limits. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-limits-entity-length">IAM and STS Entity Character Limits</a> in the <i>IAM User Guide</i>.</p>
     PackedPolicyTooLargeException(crate::types::error::PackedPolicyTooLargeException),
-    /// <p>STS is not activated in the requested region for the account that is being asked to generate credentials. The account administrator must use the IAM console to activate STS in that region. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and Deactivating STS in an Amazon Web Services Region</a> in the <i>IAM User Guide</i>.</p>
+    /// <p>STS is not activated in the requested region for the account that is being asked to generate credentials. The account administrator must use the IAM console to activate STS in that region. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html#sts-regions-activate-deactivate">Activating and Deactivating STS in an Amazon Web Services Region</a> in the <i>IAM User Guide</i>.</p>
     RegionDisabledException(crate::types::error::RegionDisabledException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
@@ -34,6 +36,7 @@ impl ::std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
             Error::ExpiredTokenException(inner) => inner.fmt(f),
+            Error::ExpiredTradeInTokenException(inner) => inner.fmt(f),
             Error::IdpCommunicationErrorException(inner) => inner.fmt(f),
             Error::IdpRejectedClaimException(inner) => inner.fmt(f),
             Error::InvalidAuthorizationMessageException(inner) => inner.fmt(f),
@@ -63,6 +66,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
     fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
         match self {
             Self::ExpiredTokenException(inner) => inner.meta(),
+            Self::ExpiredTradeInTokenException(inner) => inner.meta(),
             Self::IdpCommunicationErrorException(inner) => inner.meta(),
             Self::IdpRejectedClaimException(inner) => inner.meta(),
             Self::InvalidAuthorizationMessageException(inner) => inner.meta(),
@@ -271,6 +275,36 @@ impl From<crate::operation::get_caller_identity::GetCallerIdentityError> for Err
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_delegated_access_token::GetDelegatedAccessTokenError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_delegated_access_token::GetDelegatedAccessTokenError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_delegated_access_token::GetDelegatedAccessTokenError> for Error {
+    fn from(err: crate::operation::get_delegated_access_token::GetDelegatedAccessTokenError) -> Self {
+        match err {
+            crate::operation::get_delegated_access_token::GetDelegatedAccessTokenError::ExpiredTradeInTokenException(inner) => {
+                Error::ExpiredTradeInTokenException(inner)
+            }
+            crate::operation::get_delegated_access_token::GetDelegatedAccessTokenError::RegionDisabledException(inner) => {
+                Error::RegionDisabledException(inner)
+            }
+            crate::operation::get_delegated_access_token::GetDelegatedAccessTokenError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_federation_token::GetFederationTokenError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -325,6 +359,7 @@ impl ::std::error::Error for Error {
     fn source(&self) -> std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Error::ExpiredTokenException(inner) => inner.source(),
+            Error::ExpiredTradeInTokenException(inner) => inner.source(),
             Error::IdpCommunicationErrorException(inner) => inner.source(),
             Error::IdpRejectedClaimException(inner) => inner.source(),
             Error::InvalidAuthorizationMessageException(inner) => inner.source(),
@@ -340,6 +375,7 @@ impl ::aws_types::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {
             Self::ExpiredTokenException(e) => e.request_id(),
+            Self::ExpiredTradeInTokenException(e) => e.request_id(),
             Self::IdpCommunicationErrorException(e) => e.request_id(),
             Self::IdpRejectedClaimException(e) => e.request_id(),
             Self::InvalidAuthorizationMessageException(e) => e.request_id(),

@@ -103,6 +103,8 @@ pub(crate) mod shape_device_queue_info_list;
 
 pub(crate) mod shape_device_summary_list;
 
+pub(crate) mod shape_experimental_capabilities;
+
 pub(crate) mod shape_hybrid_job_queue_info;
 
 pub(crate) mod shape_hyper_parameters;

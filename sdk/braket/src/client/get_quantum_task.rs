@@ -22,6 +22,7 @@ impl super::Client {
     ///   - [`associations(Option<Vec::<Association>>)`](crate::operation::get_quantum_task::GetQuantumTaskOutput::associations): <p>The list of Amazon Braket resources associated with the quantum task.</p>
     ///   - [`num_successful_shots(Option<i64>)`](crate::operation::get_quantum_task::GetQuantumTaskOutput::num_successful_shots): <p>The number of successful shots for the quantum task. This is available after a successfully completed quantum task.</p>
     ///   - [`action_metadata(Option<ActionMetadata>)`](crate::operation::get_quantum_task::GetQuantumTaskOutput::action_metadata): <p>Metadata about the action performed by the quantum task, including information about the type of action and program counts.</p>
+    ///   - [`experimental_capabilities(Option<ExperimentalCapabilities>)`](crate::operation::get_quantum_task::GetQuantumTaskOutput::experimental_capabilities): <p>Enabled experimental capabilities for the quantum task, if any.</p>
     /// - On failure, responds with [`SdkError<GetQuantumTaskError>`](crate::operation::get_quantum_task::GetQuantumTaskError)
     pub fn get_quantum_task(&self) -> crate::operation::get_quantum_task::builders::GetQuantumTaskFluentBuilder {
         crate::operation::get_quantum_task::builders::GetQuantumTaskFluentBuilder::new(self.handle.clone())

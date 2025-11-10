@@ -13,6 +13,8 @@ pub struct DescribePublishingDestinationOutput {
     pub publishing_failure_start_timestamp: ::std::option::Option<i64>,
     /// <p>A <code>DestinationProperties</code> object that includes the <code>DestinationArn</code> and <code>KmsKeyArn</code> of the publishing destination.</p>
     pub destination_properties: ::std::option::Option<crate::types::DestinationProperties>,
+    /// <p>The tags of the publishing destination resource.</p>
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl DescribePublishingDestinationOutput {
@@ -36,6 +38,10 @@ impl DescribePublishingDestinationOutput {
     pub fn destination_properties(&self) -> ::std::option::Option<&crate::types::DestinationProperties> {
         self.destination_properties.as_ref()
     }
+    /// <p>The tags of the publishing destination resource.</p>
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.tags.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for DescribePublishingDestinationOutput {
     fn request_id(&self) -> Option<&str> {
@@ -58,6 +64,7 @@ pub struct DescribePublishingDestinationOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::PublishingStatus>,
     pub(crate) publishing_failure_start_timestamp: ::std::option::Option<i64>,
     pub(crate) destination_properties: ::std::option::Option<crate::types::DestinationProperties>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl DescribePublishingDestinationOutputBuilder {
@@ -136,6 +143,26 @@ impl DescribePublishingDestinationOutputBuilder {
     pub fn get_destination_properties(&self) -> &::std::option::Option<crate::types::DestinationProperties> {
         &self.destination_properties
     }
+    /// Adds a key-value pair to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>The tags of the publishing destination resource.</p>
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut hash_map = self.tags.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.tags = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>The tags of the publishing destination resource.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// <p>The tags of the publishing destination resource.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.tags
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -153,6 +180,7 @@ impl DescribePublishingDestinationOutputBuilder {
             status: self.status,
             publishing_failure_start_timestamp: self.publishing_failure_start_timestamp,
             destination_properties: self.destination_properties,
+            tags: self.tags,
             _request_id: self._request_id,
         }
     }

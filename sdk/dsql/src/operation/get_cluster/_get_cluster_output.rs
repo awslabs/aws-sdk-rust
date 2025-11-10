@@ -20,6 +20,8 @@ pub struct GetClusterOutput {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The current encryption configuration details for the cluster.</p>
     pub encryption_details: ::std::option::Option<crate::types::EncryptionDetails>,
+    /// <p>The connection endpoint for the cluster.</p>
+    pub endpoint: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetClusterOutput {
@@ -57,6 +59,10 @@ impl GetClusterOutput {
     pub fn encryption_details(&self) -> ::std::option::Option<&crate::types::EncryptionDetails> {
         self.encryption_details.as_ref()
     }
+    /// <p>The connection endpoint for the cluster.</p>
+    pub fn endpoint(&self) -> ::std::option::Option<&str> {
+        self.endpoint.as_deref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetClusterOutput {
     fn request_id(&self) -> Option<&str> {
@@ -82,6 +88,7 @@ pub struct GetClusterOutputBuilder {
     pub(crate) multi_region_properties: ::std::option::Option<crate::types::MultiRegionProperties>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) encryption_details: ::std::option::Option<crate::types::EncryptionDetails>,
+    pub(crate) endpoint: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetClusterOutputBuilder {
@@ -208,6 +215,20 @@ impl GetClusterOutputBuilder {
     pub fn get_encryption_details(&self) -> &::std::option::Option<crate::types::EncryptionDetails> {
         &self.encryption_details
     }
+    /// <p>The connection endpoint for the cluster.</p>
+    pub fn endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.endpoint = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The connection endpoint for the cluster.</p>
+    pub fn set_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.endpoint = input;
+        self
+    }
+    /// <p>The connection endpoint for the cluster.</p>
+    pub fn get_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -259,6 +280,7 @@ impl GetClusterOutputBuilder {
             multi_region_properties: self.multi_region_properties,
             tags: self.tags,
             encryption_details: self.encryption_details,
+            endpoint: self.endpoint,
             _request_id: self._request_id,
         })
     }

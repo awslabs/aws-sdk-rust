@@ -23,6 +23,8 @@ pub use crate::types::_topic_replication_update::TopicReplicationUpdateBuilder;
 
 pub use crate::types::_consumer_group_replication_update::ConsumerGroupReplicationUpdateBuilder;
 
+pub use crate::types::_rebalancing::RebalancingBuilder;
+
 pub use crate::types::_logging_info::LoggingInfoBuilder;
 
 pub use crate::types::_broker_logs::BrokerLogsBuilder;

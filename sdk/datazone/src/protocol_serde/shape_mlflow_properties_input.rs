@@ -3,11 +3,8 @@ pub fn ser_mlflow_properties_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MlflowPropertiesInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.tracking_server_name {
-        object.key("trackingServerName").string(var_1.as_str());
-    }
-    if let Some(var_2) = &input.tracking_server_arn {
-        object.key("trackingServerArn").string(var_2.as_str());
+    if let Some(var_1) = &input.tracking_server_arn {
+        object.key("trackingServerArn").string(var_1.as_str());
     }
     Ok(())
 }

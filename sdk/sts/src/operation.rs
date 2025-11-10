@@ -22,6 +22,9 @@ pub mod get_access_key_info;
 /// Types for the `GetCallerIdentity` operation.
 pub mod get_caller_identity;
 
+/// Types for the `GetDelegatedAccessToken` operation.
+pub mod get_delegated_access_token;
+
 /// Types for the `GetFederationToken` operation.
 pub mod get_federation_token;
 

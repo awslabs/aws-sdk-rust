@@ -455,6 +455,45 @@ impl From<crate::operation::create_account_alias::CreateAccountAliasError> for E
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_delegation_request::CreateDelegationRequestError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_delegation_request::CreateDelegationRequestError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_delegation_request::CreateDelegationRequestError> for Error {
+    fn from(err: crate::operation::create_delegation_request::CreateDelegationRequestError) -> Self {
+        match err {
+            crate::operation::create_delegation_request::CreateDelegationRequestError::ConcurrentModificationException(inner) => {
+                Error::ConcurrentModificationException(inner)
+            }
+            crate::operation::create_delegation_request::CreateDelegationRequestError::EntityAlreadyExistsException(inner) => {
+                Error::EntityAlreadyExistsException(inner)
+            }
+            crate::operation::create_delegation_request::CreateDelegationRequestError::InvalidInputException(inner) => {
+                Error::InvalidInputException(inner)
+            }
+            crate::operation::create_delegation_request::CreateDelegationRequestError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::create_delegation_request::CreateDelegationRequestError::ServiceFailureException(inner) => {
+                Error::ServiceFailureException(inner)
+            }
+            crate::operation::create_delegation_request::CreateDelegationRequestError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_group::CreateGroupError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

@@ -27,30 +27,36 @@ pub fn ser_create_quantum_task_input_input(
     if let Some(var_8) = &input.device_parameters {
         object.key("deviceParameters").string(var_8.as_str());
     }
-    if let Some(var_9) = &input.job_token {
-        object.key("jobToken").string(var_9.as_str());
+    if let Some(var_9) = &input.experimental_capabilities {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("experimentalCapabilities").start_object();
+        crate::protocol_serde::shape_experimental_capabilities::ser_experimental_capabilities(&mut object_10, var_9)?;
+        object_10.finish();
     }
-    if let Some(var_10) = &input.output_s3_bucket {
-        object.key("outputS3Bucket").string(var_10.as_str());
+    if let Some(var_11) = &input.job_token {
+        object.key("jobToken").string(var_11.as_str());
     }
-    if let Some(var_11) = &input.output_s3_key_prefix {
-        object.key("outputS3KeyPrefix").string(var_11.as_str());
+    if let Some(var_12) = &input.output_s3_bucket {
+        object.key("outputS3Bucket").string(var_12.as_str());
     }
-    if let Some(var_12) = &input.shots {
+    if let Some(var_13) = &input.output_s3_key_prefix {
+        object.key("outputS3KeyPrefix").string(var_13.as_str());
+    }
+    if let Some(var_14) = &input.shots {
         object.key("shots").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_12).into()),
+            ::aws_smithy_types::Number::NegInt((*var_14).into()),
         );
     }
-    if let Some(var_13) = &input.tags {
+    if let Some(var_15) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_14 = object.key("tags").start_object();
-        for (key_15, value_16) in var_13 {
+        let mut object_16 = object.key("tags").start_object();
+        for (key_17, value_18) in var_15 {
             {
-                object_14.key(key_15.as_str()).string(value_16.as_str());
+                object_16.key(key_17.as_str()).string(value_18.as_str());
             }
         }
-        object_14.finish();
+        object_16.finish();
     }
     Ok(())
 }

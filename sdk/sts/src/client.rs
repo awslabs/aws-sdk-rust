@@ -131,6 +131,8 @@ mod get_access_key_info;
 
 mod get_caller_identity;
 
+mod get_delegated_access_token;
+
 mod get_federation_token;
 
 mod get_session_token;

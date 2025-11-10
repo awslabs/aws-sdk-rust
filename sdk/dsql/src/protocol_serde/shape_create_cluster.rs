@@ -179,6 +179,13 @@ pub(crate) fn de_create_cluster(
                 "encryptionDetails" => {
                     builder = builder.set_encryption_details(crate::protocol_serde::shape_encryption_details::de_encryption_details(tokens)?);
                 }
+                "endpoint" => {
+                    builder = builder.set_endpoint(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "identifier" => {
                     builder = builder.set_identifier(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

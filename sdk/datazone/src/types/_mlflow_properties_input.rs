@@ -4,16 +4,10 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MlflowPropertiesInput {
-    /// <p>The name of the tracking server as part of the MLflow properties of a connection.</p>
-    pub tracking_server_name: ::std::option::Option<::std::string::String>,
     /// <p>The tracking server ARN as part of the MLflow properties of a connection.</p>
     pub tracking_server_arn: ::std::option::Option<::std::string::String>,
 }
 impl MlflowPropertiesInput {
-    /// <p>The name of the tracking server as part of the MLflow properties of a connection.</p>
-    pub fn tracking_server_name(&self) -> ::std::option::Option<&str> {
-        self.tracking_server_name.as_deref()
-    }
     /// <p>The tracking server ARN as part of the MLflow properties of a connection.</p>
     pub fn tracking_server_arn(&self) -> ::std::option::Option<&str> {
         self.tracking_server_arn.as_deref()
@@ -30,24 +24,9 @@ impl MlflowPropertiesInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct MlflowPropertiesInputBuilder {
-    pub(crate) tracking_server_name: ::std::option::Option<::std::string::String>,
     pub(crate) tracking_server_arn: ::std::option::Option<::std::string::String>,
 }
 impl MlflowPropertiesInputBuilder {
-    /// <p>The name of the tracking server as part of the MLflow properties of a connection.</p>
-    pub fn tracking_server_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.tracking_server_name = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The name of the tracking server as part of the MLflow properties of a connection.</p>
-    pub fn set_tracking_server_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.tracking_server_name = input;
-        self
-    }
-    /// <p>The name of the tracking server as part of the MLflow properties of a connection.</p>
-    pub fn get_tracking_server_name(&self) -> &::std::option::Option<::std::string::String> {
-        &self.tracking_server_name
-    }
     /// <p>The tracking server ARN as part of the MLflow properties of a connection.</p>
     pub fn tracking_server_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tracking_server_arn = ::std::option::Option::Some(input.into());
@@ -65,7 +44,6 @@ impl MlflowPropertiesInputBuilder {
     /// Consumes the builder and constructs a [`MlflowPropertiesInput`](crate::types::MlflowPropertiesInput).
     pub fn build(self) -> crate::types::MlflowPropertiesInput {
         crate::types::MlflowPropertiesInput {
-            tracking_server_name: self.tracking_server_name,
             tracking_server_arn: self.tracking_server_arn,
         }
     }

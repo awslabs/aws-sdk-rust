@@ -9,50 +9,56 @@ pub fn ser_provisioned_request(
         crate::protocol_serde::shape_broker_node_group_info::ser_broker_node_group_info(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.client_authentication {
+    if let Some(var_3) = &input.rebalancing {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("clientAuthentication").start_object();
-        crate::protocol_serde::shape_client_authentication::ser_client_authentication(&mut object_4, var_3)?;
+        let mut object_4 = object.key("rebalancing").start_object();
+        crate::protocol_serde::shape_rebalancing::ser_rebalancing(&mut object_4, var_3)?;
         object_4.finish();
     }
-    if let Some(var_5) = &input.configuration_info {
+    if let Some(var_5) = &input.client_authentication {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("configurationInfo").start_object();
-        crate::protocol_serde::shape_configuration_info::ser_configuration_info(&mut object_6, var_5)?;
+        let mut object_6 = object.key("clientAuthentication").start_object();
+        crate::protocol_serde::shape_client_authentication::ser_client_authentication(&mut object_6, var_5)?;
         object_6.finish();
     }
-    if let Some(var_7) = &input.encryption_info {
+    if let Some(var_7) = &input.configuration_info {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("encryptionInfo").start_object();
-        crate::protocol_serde::shape_encryption_info::ser_encryption_info(&mut object_8, var_7)?;
+        let mut object_8 = object.key("configurationInfo").start_object();
+        crate::protocol_serde::shape_configuration_info::ser_configuration_info(&mut object_8, var_7)?;
         object_8.finish();
     }
-    if let Some(var_9) = &input.enhanced_monitoring {
-        object.key("enhancedMonitoring").string(var_9.as_str());
-    }
-    if let Some(var_10) = &input.open_monitoring {
+    if let Some(var_9) = &input.encryption_info {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("openMonitoring").start_object();
-        crate::protocol_serde::shape_open_monitoring_info::ser_open_monitoring_info(&mut object_11, var_10)?;
-        object_11.finish();
+        let mut object_10 = object.key("encryptionInfo").start_object();
+        crate::protocol_serde::shape_encryption_info::ser_encryption_info(&mut object_10, var_9)?;
+        object_10.finish();
     }
-    if let Some(var_12) = &input.kafka_version {
-        object.key("kafkaVersion").string(var_12.as_str());
+    if let Some(var_11) = &input.enhanced_monitoring {
+        object.key("enhancedMonitoring").string(var_11.as_str());
     }
-    if let Some(var_13) = &input.logging_info {
+    if let Some(var_12) = &input.open_monitoring {
         #[allow(unused_mut)]
-        let mut object_14 = object.key("loggingInfo").start_object();
-        crate::protocol_serde::shape_logging_info::ser_logging_info(&mut object_14, var_13)?;
-        object_14.finish();
+        let mut object_13 = object.key("openMonitoring").start_object();
+        crate::protocol_serde::shape_open_monitoring_info::ser_open_monitoring_info(&mut object_13, var_12)?;
+        object_13.finish();
     }
-    if let Some(var_15) = &input.number_of_broker_nodes {
+    if let Some(var_14) = &input.kafka_version {
+        object.key("kafkaVersion").string(var_14.as_str());
+    }
+    if let Some(var_15) = &input.logging_info {
+        #[allow(unused_mut)]
+        let mut object_16 = object.key("loggingInfo").start_object();
+        crate::protocol_serde::shape_logging_info::ser_logging_info(&mut object_16, var_15)?;
+        object_16.finish();
+    }
+    if let Some(var_17) = &input.number_of_broker_nodes {
         object.key("numberOfBrokerNodes").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_15).into()),
+            ::aws_smithy_types::Number::NegInt((*var_17).into()),
         );
     }
-    if let Some(var_16) = &input.storage_mode {
-        object.key("storageMode").string(var_16.as_str());
+    if let Some(var_18) = &input.storage_mode {
+        object.key("storageMode").string(var_18.as_str());
     }
     Ok(())
 }

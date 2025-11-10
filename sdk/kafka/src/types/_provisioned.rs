@@ -6,6 +6,8 @@
 pub struct Provisioned {
     /// <p>Information about the brokers.</p>
     pub broker_node_group_info: ::std::option::Option<crate::types::BrokerNodeGroupInfo>,
+    /// <p>Specifies whether or not intelligent rebalancing is turned on for a newly created MSK Provisioned cluster with Express brokers. Intelligent rebalancing performs automatic partition balancing operations when you scale your clusters up or down. By default, intelligent rebalancing is ACTIVE for all new Express-based clusters.</p>
+    pub rebalancing: ::std::option::Option<crate::types::Rebalancing>,
     /// <p>Information about the Apache Kafka version deployed on the brokers.</p>
     pub current_broker_software_info: ::std::option::Option<crate::types::BrokerSoftwareInfo>,
     /// <p>Includes all client authentication information.</p>
@@ -33,6 +35,10 @@ impl Provisioned {
     /// <p>Information about the brokers.</p>
     pub fn broker_node_group_info(&self) -> ::std::option::Option<&crate::types::BrokerNodeGroupInfo> {
         self.broker_node_group_info.as_ref()
+    }
+    /// <p>Specifies whether or not intelligent rebalancing is turned on for a newly created MSK Provisioned cluster with Express brokers. Intelligent rebalancing performs automatic partition balancing operations when you scale your clusters up or down. By default, intelligent rebalancing is ACTIVE for all new Express-based clusters.</p>
+    pub fn rebalancing(&self) -> ::std::option::Option<&crate::types::Rebalancing> {
+        self.rebalancing.as_ref()
     }
     /// <p>Information about the Apache Kafka version deployed on the brokers.</p>
     pub fn current_broker_software_info(&self) -> ::std::option::Option<&crate::types::BrokerSoftwareInfo> {
@@ -91,6 +97,7 @@ impl Provisioned {
 #[non_exhaustive]
 pub struct ProvisionedBuilder {
     pub(crate) broker_node_group_info: ::std::option::Option<crate::types::BrokerNodeGroupInfo>,
+    pub(crate) rebalancing: ::std::option::Option<crate::types::Rebalancing>,
     pub(crate) current_broker_software_info: ::std::option::Option<crate::types::BrokerSoftwareInfo>,
     pub(crate) client_authentication: ::std::option::Option<crate::types::ClientAuthentication>,
     pub(crate) encryption_info: ::std::option::Option<crate::types::EncryptionInfo>,
@@ -118,6 +125,20 @@ impl ProvisionedBuilder {
     /// <p>Information about the brokers.</p>
     pub fn get_broker_node_group_info(&self) -> &::std::option::Option<crate::types::BrokerNodeGroupInfo> {
         &self.broker_node_group_info
+    }
+    /// <p>Specifies whether or not intelligent rebalancing is turned on for a newly created MSK Provisioned cluster with Express brokers. Intelligent rebalancing performs automatic partition balancing operations when you scale your clusters up or down. By default, intelligent rebalancing is ACTIVE for all new Express-based clusters.</p>
+    pub fn rebalancing(mut self, input: crate::types::Rebalancing) -> Self {
+        self.rebalancing = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether or not intelligent rebalancing is turned on for a newly created MSK Provisioned cluster with Express brokers. Intelligent rebalancing performs automatic partition balancing operations when you scale your clusters up or down. By default, intelligent rebalancing is ACTIVE for all new Express-based clusters.</p>
+    pub fn set_rebalancing(mut self, input: ::std::option::Option<crate::types::Rebalancing>) -> Self {
+        self.rebalancing = input;
+        self
+    }
+    /// <p>Specifies whether or not intelligent rebalancing is turned on for a newly created MSK Provisioned cluster with Express brokers. Intelligent rebalancing performs automatic partition balancing operations when you scale your clusters up or down. By default, intelligent rebalancing is ACTIVE for all new Express-based clusters.</p>
+    pub fn get_rebalancing(&self) -> &::std::option::Option<crate::types::Rebalancing> {
+        &self.rebalancing
     }
     /// <p>Information about the Apache Kafka version deployed on the brokers.</p>
     pub fn current_broker_software_info(mut self, input: crate::types::BrokerSoftwareInfo) -> Self {
@@ -278,6 +299,7 @@ impl ProvisionedBuilder {
     pub fn build(self) -> crate::types::Provisioned {
         crate::types::Provisioned {
             broker_node_group_info: self.broker_node_group_info,
+            rebalancing: self.rebalancing,
             current_broker_software_info: self.current_broker_software_info,
             client_authentication: self.client_authentication,
             encryption_info: self.encryption_info,

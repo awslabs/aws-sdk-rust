@@ -39,6 +39,10 @@ pub use crate::types::_date_interval::DateIntervalBuilder;
 
 pub use crate::types::_invoice_summaries_selector::InvoiceSummariesSelectorBuilder;
 
+pub use crate::types::_invoice_pdf::InvoicePdfBuilder;
+
+pub use crate::types::_supplemental_document::SupplementalDocumentBuilder;
+
 pub use crate::types::_invoice_profile::InvoiceProfileBuilder;
 
 pub use crate::types::_receiver_address::ReceiverAddressBuilder;

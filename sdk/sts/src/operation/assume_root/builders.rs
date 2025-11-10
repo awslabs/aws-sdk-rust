@@ -22,11 +22,12 @@ impl crate::operation::assume_root::builders::AssumeRootInputBuilder {
 }
 /// Fluent builder constructing a request to `AssumeRoot`.
 ///
-/// <p>Returns a set of short term credentials you can use to perform privileged tasks on a member account in your organization.</p>
+/// <p>Returns a set of short term credentials you can use to perform privileged tasks on a member account in your organization. You must use credentials from an Organizations management account or a delegated administrator account for IAM to call <code>AssumeRoot</code>. You cannot use root user credentials to make this call.</p>
 /// <p>Before you can launch a privileged session, you must have centralized root access in your organization. For steps to enable this feature, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-enable-root-access.html">Centralize root access for member accounts</a> in the <i>IAM User Guide</i>.</p><note>
 /// <p>The STS global endpoint is not supported for AssumeRoot. You must send this request to a Regional STS endpoint. For more information, see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/welcome.html#sts-endpoints">Endpoints</a>.</p>
 /// </note>
 /// <p>You can track AssumeRoot in CloudTrail logs to determine what actions were performed in a session. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-track-privileged-tasks.html">Track privileged tasks in CloudTrail</a> in the <i>IAM User Guide</i>.</p>
+/// <p>When granting access to privileged tasks you should only grant the necessary permissions required to perform that task. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html">Security best practices in IAM</a>. In addition, you can use <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps.html">service control policies</a> (SCPs) to manage and limit permissions in your organization. See <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps_examples_general.html">General examples</a> in the <i>Organizations User Guide</i> for more information on SCPs.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssumeRootFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -126,7 +127,7 @@ impl AssumeRootFluentBuilder {
     pub fn get_target_principal(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_target_principal()
     }
-    /// <p>The identity based policy that scopes the session to the privileged tasks that can be performed. You can use one of following Amazon Web Services managed policies to scope root session actions.</p>
+    /// <p>The identity based policy that scopes the session to the privileged tasks that can be performed. You must use one of following Amazon Web Services managed policies to scope root session actions:</p>
     /// <ul>
     /// <li>
     /// <p><a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/security-iam-awsmanpol.html#security-iam-awsmanpol-IAMAuditRootUserCredentials">IAMAuditRootUserCredentials</a></p></li>
@@ -143,7 +144,7 @@ impl AssumeRootFluentBuilder {
         self.inner = self.inner.task_policy_arn(input);
         self
     }
-    /// <p>The identity based policy that scopes the session to the privileged tasks that can be performed. You can use one of following Amazon Web Services managed policies to scope root session actions.</p>
+    /// <p>The identity based policy that scopes the session to the privileged tasks that can be performed. You must use one of following Amazon Web Services managed policies to scope root session actions:</p>
     /// <ul>
     /// <li>
     /// <p><a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/security-iam-awsmanpol.html#security-iam-awsmanpol-IAMAuditRootUserCredentials">IAMAuditRootUserCredentials</a></p></li>
@@ -160,7 +161,7 @@ impl AssumeRootFluentBuilder {
         self.inner = self.inner.set_task_policy_arn(input);
         self
     }
-    /// <p>The identity based policy that scopes the session to the privileged tasks that can be performed. You can use one of following Amazon Web Services managed policies to scope root session actions.</p>
+    /// <p>The identity based policy that scopes the session to the privileged tasks that can be performed. You must use one of following Amazon Web Services managed policies to scope root session actions:</p>
     /// <ul>
     /// <li>
     /// <p><a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/security-iam-awsmanpol.html#security-iam-awsmanpol-IAMAuditRootUserCredentials">IAMAuditRootUserCredentials</a></p></li>

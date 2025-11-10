@@ -202,6 +202,9 @@ pub struct InstanceRequirements {
     pub max_spot_price_as_percentage_of_optimal_on_demand_price: ::std::option::Option<i32>,
     /// <p>The baseline performance to consider, using an instance family as a baseline reference. The instance family establishes the lowest acceptable level of performance. Amazon EC2 uses this baseline to guide instance type selection, but there is no guarantee that the selected instance types will always exceed the baseline for every application. Currently, this parameter only supports CPU performance as a baseline performance factor. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-attribute-based-instance-type-selection.html#ec2fleet-abis-performance-protection">Performance protection</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub baseline_performance_factors: ::std::option::Option<crate::types::BaselinePerformanceFactors>,
+    /// <p>Specifies whether instance types must support encrypting in-transit traffic between instances. For more information, including the supported instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/data-protection.html#encryption-transit">Encryption in transit</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>Default: <code>false</code></p>
+    pub require_encryption_in_transit: ::std::option::Option<bool>,
 }
 impl InstanceRequirements {
     /// <p>The minimum and maximum number of vCPUs.</p>
@@ -455,6 +458,11 @@ impl InstanceRequirements {
     pub fn baseline_performance_factors(&self) -> ::std::option::Option<&crate::types::BaselinePerformanceFactors> {
         self.baseline_performance_factors.as_ref()
     }
+    /// <p>Specifies whether instance types must support encrypting in-transit traffic between instances. For more information, including the supported instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/data-protection.html#encryption-transit">Encryption in transit</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>Default: <code>false</code></p>
+    pub fn require_encryption_in_transit(&self) -> ::std::option::Option<bool> {
+        self.require_encryption_in_transit
+    }
 }
 impl InstanceRequirements {
     /// Creates a new builder-style object to manufacture [`InstanceRequirements`](crate::types::InstanceRequirements).
@@ -492,6 +500,7 @@ pub struct InstanceRequirementsBuilder {
     pub(crate) allowed_instance_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) max_spot_price_as_percentage_of_optimal_on_demand_price: ::std::option::Option<i32>,
     pub(crate) baseline_performance_factors: ::std::option::Option<crate::types::BaselinePerformanceFactors>,
+    pub(crate) require_encryption_in_transit: ::std::option::Option<bool>,
 }
 impl InstanceRequirementsBuilder {
     /// <p>The minimum and maximum number of vCPUs.</p>
@@ -1297,6 +1306,23 @@ impl InstanceRequirementsBuilder {
     pub fn get_baseline_performance_factors(&self) -> &::std::option::Option<crate::types::BaselinePerformanceFactors> {
         &self.baseline_performance_factors
     }
+    /// <p>Specifies whether instance types must support encrypting in-transit traffic between instances. For more information, including the supported instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/data-protection.html#encryption-transit">Encryption in transit</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>Default: <code>false</code></p>
+    pub fn require_encryption_in_transit(mut self, input: bool) -> Self {
+        self.require_encryption_in_transit = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether instance types must support encrypting in-transit traffic between instances. For more information, including the supported instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/data-protection.html#encryption-transit">Encryption in transit</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>Default: <code>false</code></p>
+    pub fn set_require_encryption_in_transit(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.require_encryption_in_transit = input;
+        self
+    }
+    /// <p>Specifies whether instance types must support encrypting in-transit traffic between instances. For more information, including the supported instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/data-protection.html#encryption-transit">Encryption in transit</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>Default: <code>false</code></p>
+    pub fn get_require_encryption_in_transit(&self) -> &::std::option::Option<bool> {
+        &self.require_encryption_in_transit
+    }
     /// Consumes the builder and constructs a [`InstanceRequirements`](crate::types::InstanceRequirements).
     pub fn build(self) -> crate::types::InstanceRequirements {
         crate::types::InstanceRequirements {
@@ -1325,6 +1351,7 @@ impl InstanceRequirementsBuilder {
             allowed_instance_types: self.allowed_instance_types,
             max_spot_price_as_percentage_of_optimal_on_demand_price: self.max_spot_price_as_percentage_of_optimal_on_demand_price,
             baseline_performance_factors: self.baseline_performance_factors,
+            require_encryption_in_transit: self.require_encryption_in_transit,
         }
     }
 }

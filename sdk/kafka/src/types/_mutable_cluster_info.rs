@@ -30,6 +30,8 @@ pub struct MutableClusterInfo {
     pub storage_mode: ::std::option::Option<crate::types::StorageMode>,
     /// <p>Describes brokers being changed during a broker count update.</p>
     pub broker_count_update_info: ::std::option::Option<crate::types::BrokerCountUpdateInfo>,
+    /// <p>Describes the intelligent rebalancing configuration of an MSK Provisioned cluster with Express brokers.</p>
+    pub rebalancing: ::std::option::Option<crate::types::Rebalancing>,
 }
 impl MutableClusterInfo {
     /// <p>Specifies the size of the EBS volume and the ID of the associated broker.</p>
@@ -86,6 +88,10 @@ impl MutableClusterInfo {
     pub fn broker_count_update_info(&self) -> ::std::option::Option<&crate::types::BrokerCountUpdateInfo> {
         self.broker_count_update_info.as_ref()
     }
+    /// <p>Describes the intelligent rebalancing configuration of an MSK Provisioned cluster with Express brokers.</p>
+    pub fn rebalancing(&self) -> ::std::option::Option<&crate::types::Rebalancing> {
+        self.rebalancing.as_ref()
+    }
 }
 impl MutableClusterInfo {
     /// Creates a new builder-style object to manufacture [`MutableClusterInfo`](crate::types::MutableClusterInfo).
@@ -111,6 +117,7 @@ pub struct MutableClusterInfoBuilder {
     pub(crate) connectivity_info: ::std::option::Option<crate::types::ConnectivityInfo>,
     pub(crate) storage_mode: ::std::option::Option<crate::types::StorageMode>,
     pub(crate) broker_count_update_info: ::std::option::Option<crate::types::BrokerCountUpdateInfo>,
+    pub(crate) rebalancing: ::std::option::Option<crate::types::Rebalancing>,
 }
 impl MutableClusterInfoBuilder {
     /// Appends an item to `broker_ebs_volume_info`.
@@ -301,6 +308,20 @@ impl MutableClusterInfoBuilder {
     pub fn get_broker_count_update_info(&self) -> &::std::option::Option<crate::types::BrokerCountUpdateInfo> {
         &self.broker_count_update_info
     }
+    /// <p>Describes the intelligent rebalancing configuration of an MSK Provisioned cluster with Express brokers.</p>
+    pub fn rebalancing(mut self, input: crate::types::Rebalancing) -> Self {
+        self.rebalancing = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Describes the intelligent rebalancing configuration of an MSK Provisioned cluster with Express brokers.</p>
+    pub fn set_rebalancing(mut self, input: ::std::option::Option<crate::types::Rebalancing>) -> Self {
+        self.rebalancing = input;
+        self
+    }
+    /// <p>Describes the intelligent rebalancing configuration of an MSK Provisioned cluster with Express brokers.</p>
+    pub fn get_rebalancing(&self) -> &::std::option::Option<crate::types::Rebalancing> {
+        &self.rebalancing
+    }
     /// Consumes the builder and constructs a [`MutableClusterInfo`](crate::types::MutableClusterInfo).
     pub fn build(self) -> crate::types::MutableClusterInfo {
         crate::types::MutableClusterInfo {
@@ -317,6 +338,7 @@ impl MutableClusterInfoBuilder {
             connectivity_info: self.connectivity_info,
             storage_mode: self.storage_mode,
             broker_count_update_info: self.broker_count_update_info,
+            rebalancing: self.rebalancing,
         }
     }
 }

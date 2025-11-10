@@ -1665,6 +1665,38 @@ impl From<crate::operation::update_monitoring::UpdateMonitoringError> for Error 
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_rebalancing::UpdateRebalancingError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_rebalancing::UpdateRebalancingError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_rebalancing::UpdateRebalancingError> for Error {
+    fn from(err: crate::operation::update_rebalancing::UpdateRebalancingError) -> Self {
+        match err {
+            crate::operation::update_rebalancing::UpdateRebalancingError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::update_rebalancing::UpdateRebalancingError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::update_rebalancing::UpdateRebalancingError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::update_rebalancing::UpdateRebalancingError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::update_rebalancing::UpdateRebalancingError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::update_rebalancing::UpdateRebalancingError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::update_rebalancing::UpdateRebalancingError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::update_rebalancing::UpdateRebalancingError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_replication_info::UpdateReplicationInfoError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

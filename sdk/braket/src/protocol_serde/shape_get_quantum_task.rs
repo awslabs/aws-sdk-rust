@@ -160,6 +160,11 @@ pub(crate) fn de_get_quantum_task(
                         ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
                     )?);
                 }
+                "experimentalCapabilities" => {
+                    builder = builder.set_experimental_capabilities(
+                        crate::protocol_serde::shape_experimental_capabilities::de_experimental_capabilities(tokens)?,
+                    );
+                }
                 "failureReason" => {
                     builder = builder.set_failure_reason(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

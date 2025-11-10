@@ -5,6 +5,8 @@ pub use crate::types::error::_packed_policy_too_large_exception::PackedPolicyToo
 
 pub use crate::types::error::_malformed_policy_document_exception::MalformedPolicyDocumentException;
 
+pub use crate::types::error::_expired_trade_in_token_exception::ExpiredTradeInTokenException;
+
 pub use crate::types::error::_invalid_authorization_message_exception::InvalidAuthorizationMessageException;
 
 pub use crate::types::error::_expired_token_exception::ExpiredTokenException;
@@ -16,6 +18,8 @@ pub use crate::types::error::_idp_rejected_claim_exception::IdpRejectedClaimExce
 pub use crate::types::error::_idp_communication_error_exception::IdpCommunicationErrorException;
 
 mod _expired_token_exception;
+
+mod _expired_trade_in_token_exception;
 
 mod _idp_communication_error_exception;
 

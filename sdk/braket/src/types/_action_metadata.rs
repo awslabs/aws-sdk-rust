@@ -6,9 +6,9 @@
 pub struct ActionMetadata {
     /// <p>The type of action associated with the quantum task.</p>
     pub action_type: ::std::string::String,
-    /// <p>The number of programs in a program set. This is only available for a Program Set.</p>
+    /// <p>The number of programs in a program set. This is only available for a program set.</p>
     pub program_count: ::std::option::Option<i64>,
-    /// <p>The number of executables in a program set. This is only available for a Program Set.</p>
+    /// <p>The number of executables in a program set. This is only available for a program set.</p>
     pub executable_count: ::std::option::Option<i64>,
 }
 impl ActionMetadata {
@@ -17,11 +17,11 @@ impl ActionMetadata {
         use std::ops::Deref;
         self.action_type.deref()
     }
-    /// <p>The number of programs in a program set. This is only available for a Program Set.</p>
+    /// <p>The number of programs in a program set. This is only available for a program set.</p>
     pub fn program_count(&self) -> ::std::option::Option<i64> {
         self.program_count
     }
-    /// <p>The number of executables in a program set. This is only available for a Program Set.</p>
+    /// <p>The number of executables in a program set. This is only available for a program set.</p>
     pub fn executable_count(&self) -> ::std::option::Option<i64> {
         self.executable_count
     }
@@ -57,31 +57,31 @@ impl ActionMetadataBuilder {
     pub fn get_action_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.action_type
     }
-    /// <p>The number of programs in a program set. This is only available for a Program Set.</p>
+    /// <p>The number of programs in a program set. This is only available for a program set.</p>
     pub fn program_count(mut self, input: i64) -> Self {
         self.program_count = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of programs in a program set. This is only available for a Program Set.</p>
+    /// <p>The number of programs in a program set. This is only available for a program set.</p>
     pub fn set_program_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.program_count = input;
         self
     }
-    /// <p>The number of programs in a program set. This is only available for a Program Set.</p>
+    /// <p>The number of programs in a program set. This is only available for a program set.</p>
     pub fn get_program_count(&self) -> &::std::option::Option<i64> {
         &self.program_count
     }
-    /// <p>The number of executables in a program set. This is only available for a Program Set.</p>
+    /// <p>The number of executables in a program set. This is only available for a program set.</p>
     pub fn executable_count(mut self, input: i64) -> Self {
         self.executable_count = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of executables in a program set. This is only available for a Program Set.</p>
+    /// <p>The number of executables in a program set. This is only available for a program set.</p>
     pub fn set_executable_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.executable_count = input;
         self
     }
-    /// <p>The number of executables in a program set. This is only available for a Program Set.</p>
+    /// <p>The number of executables in a program set. This is only available for a program set.</p>
     pub fn get_executable_count(&self) -> &::std::option::Option<i64> {
         &self.executable_count
     }

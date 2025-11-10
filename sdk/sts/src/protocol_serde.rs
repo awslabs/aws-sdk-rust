@@ -51,6 +51,10 @@ pub(crate) mod shape_get_caller_identity;
 
 pub(crate) mod shape_get_caller_identity_input;
 
+pub(crate) mod shape_get_delegated_access_token;
+
+pub(crate) mod shape_get_delegated_access_token_input;
+
 pub(crate) mod shape_get_federation_token;
 
 pub(crate) mod shape_get_federation_token_input;
@@ -60,6 +64,8 @@ pub(crate) mod shape_get_session_token;
 pub(crate) mod shape_get_session_token_input;
 
 pub(crate) mod shape_expired_token_exception;
+
+pub(crate) mod shape_expired_trade_in_token_exception;
 
 pub(crate) mod shape_idp_communication_error_exception;
 

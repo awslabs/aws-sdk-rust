@@ -46,6 +46,10 @@ pub struct DescribeRestoreJobOutput {
     pub deletion_status: ::std::option::Option<crate::types::RestoreDeletionStatus>,
     /// <p>This describes the restore job deletion status.</p>
     pub deletion_status_message: ::std::option::Option<::std::string::String>,
+    /// <p>This is a boolean value indicating whether the restore job is a parent (composite) restore job.</p>
+    pub is_parent: bool,
+    /// <p>This is the unique identifier of the parent restore job for the selected restore job.</p>
+    pub parent_job_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeRestoreJobOutput {
@@ -134,6 +138,14 @@ impl DescribeRestoreJobOutput {
     pub fn deletion_status_message(&self) -> ::std::option::Option<&str> {
         self.deletion_status_message.as_deref()
     }
+    /// <p>This is a boolean value indicating whether the restore job is a parent (composite) restore job.</p>
+    pub fn is_parent(&self) -> bool {
+        self.is_parent
+    }
+    /// <p>This is the unique identifier of the parent restore job for the selected restore job.</p>
+    pub fn parent_job_id(&self) -> ::std::option::Option<&str> {
+        self.parent_job_id.as_deref()
+    }
 }
 impl ::aws_types::request_id::RequestId for DescribeRestoreJobOutput {
     fn request_id(&self) -> Option<&str> {
@@ -172,6 +184,8 @@ pub struct DescribeRestoreJobOutputBuilder {
     pub(crate) validation_status_message: ::std::option::Option<::std::string::String>,
     pub(crate) deletion_status: ::std::option::Option<crate::types::RestoreDeletionStatus>,
     pub(crate) deletion_status_message: ::std::option::Option<::std::string::String>,
+    pub(crate) is_parent: ::std::option::Option<bool>,
+    pub(crate) parent_job_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeRestoreJobOutputBuilder {
@@ -472,6 +486,34 @@ impl DescribeRestoreJobOutputBuilder {
     pub fn get_deletion_status_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.deletion_status_message
     }
+    /// <p>This is a boolean value indicating whether the restore job is a parent (composite) restore job.</p>
+    pub fn is_parent(mut self, input: bool) -> Self {
+        self.is_parent = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>This is a boolean value indicating whether the restore job is a parent (composite) restore job.</p>
+    pub fn set_is_parent(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.is_parent = input;
+        self
+    }
+    /// <p>This is a boolean value indicating whether the restore job is a parent (composite) restore job.</p>
+    pub fn get_is_parent(&self) -> &::std::option::Option<bool> {
+        &self.is_parent
+    }
+    /// <p>This is the unique identifier of the parent restore job for the selected restore job.</p>
+    pub fn parent_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.parent_job_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>This is the unique identifier of the parent restore job for the selected restore job.</p>
+    pub fn set_parent_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.parent_job_id = input;
+        self
+    }
+    /// <p>This is the unique identifier of the parent restore job for the selected restore job.</p>
+    pub fn get_parent_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parent_job_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -505,6 +547,8 @@ impl DescribeRestoreJobOutputBuilder {
             validation_status_message: self.validation_status_message,
             deletion_status: self.deletion_status,
             deletion_status_message: self.deletion_status_message,
+            is_parent: self.is_parent.unwrap_or_default(),
+            parent_job_id: self.parent_job_id,
             _request_id: self._request_id,
         }
     }

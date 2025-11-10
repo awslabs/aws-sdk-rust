@@ -261,6 +261,8 @@ mod update_connectivity;
 
 mod update_monitoring;
 
+mod update_rebalancing;
+
 mod update_replication_info;
 
 mod update_security;

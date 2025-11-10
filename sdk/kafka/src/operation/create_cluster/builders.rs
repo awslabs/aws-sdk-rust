@@ -122,6 +122,20 @@ impl CreateClusterFluentBuilder {
     pub fn get_broker_node_group_info(&self) -> &::std::option::Option<crate::types::BrokerNodeGroupInfo> {
         self.inner.get_broker_node_group_info()
     }
+    /// <p>Specifies if intelligent rebalancing should be turned on for the new MSK Provisioned cluster with Express brokers. By default, intelligent rebalancing status is ACTIVE for all new clusters.</p>
+    pub fn rebalancing(mut self, input: crate::types::Rebalancing) -> Self {
+        self.inner = self.inner.rebalancing(input);
+        self
+    }
+    /// <p>Specifies if intelligent rebalancing should be turned on for the new MSK Provisioned cluster with Express brokers. By default, intelligent rebalancing status is ACTIVE for all new clusters.</p>
+    pub fn set_rebalancing(mut self, input: ::std::option::Option<crate::types::Rebalancing>) -> Self {
+        self.inner = self.inner.set_rebalancing(input);
+        self
+    }
+    /// <p>Specifies if intelligent rebalancing should be turned on for the new MSK Provisioned cluster with Express brokers. By default, intelligent rebalancing status is ACTIVE for all new clusters.</p>
+    pub fn get_rebalancing(&self) -> &::std::option::Option<crate::types::Rebalancing> {
+        self.inner.get_rebalancing()
+    }
     /// <p>Includes all client authentication related information.</p>
     pub fn client_authentication(mut self, input: crate::types::ClientAuthentication) -> Self {
         self.inner = self.inner.client_authentication(input);

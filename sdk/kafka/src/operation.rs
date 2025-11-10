@@ -148,6 +148,9 @@ pub mod update_connectivity;
 /// Types for the `UpdateMonitoring` operation.
 pub mod update_monitoring;
 
+/// Types for the `UpdateRebalancing` operation.
+pub mod update_rebalancing;
+
 /// Types for the `UpdateReplicationInfo` operation.
 pub mod update_replication_info;
 

@@ -35,6 +35,8 @@ pub use crate::types::_entities_definition::EntitiesDefinition;
 
 pub use crate::types::_entity_item::EntityItem;
 
+pub use crate::types::_cedar_tag_value::CedarTagValue;
+
 pub use crate::types::_attribute_value::AttributeValue;
 
 pub use crate::types::_context_definition::ContextDefinition;
@@ -178,6 +180,8 @@ mod _batch_is_authorized_output_item;
 mod _batch_is_authorized_with_token_input_item;
 
 mod _batch_is_authorized_with_token_output_item;
+
+mod _cedar_tag_value;
 
 mod _cedar_version;
 

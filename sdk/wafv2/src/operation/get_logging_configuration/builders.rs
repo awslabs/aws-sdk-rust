@@ -141,6 +141,7 @@ impl GetLoggingConfigurationFluentBuilder {
     }
     /// <p>The owner of the logging configuration, which must be set to <code>CUSTOMER</code> for the configurations that you manage.</p>
     /// <p>The log scope <code>SECURITY_LAKE</code> indicates a configuration that is managed through Amazon Security Lake. You can use Security Lake to collect log and event data from various sources for normalization, analysis, and management. For information, see <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Collecting data from Amazon Web Services services</a> in the <i>Amazon Security Lake user guide</i>.</p>
+    /// <p>The log scope <code>CLOUDWATCH_TELEMETRY_RULE_MANAGED</code> indicates a configuration that is managed through Amazon CloudWatch Logs for telemetry data collection and analysis. For information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/WhatIsCloudWatchLogs.html">What is Amazon CloudWatch Logs ?</a> in the <i>Amazon CloudWatch Logs user guide</i>.</p>
     /// <p>Default: <code>CUSTOMER</code></p>
     pub fn log_scope(mut self, input: crate::types::LogScope) -> Self {
         self.inner = self.inner.log_scope(input);
@@ -148,6 +149,7 @@ impl GetLoggingConfigurationFluentBuilder {
     }
     /// <p>The owner of the logging configuration, which must be set to <code>CUSTOMER</code> for the configurations that you manage.</p>
     /// <p>The log scope <code>SECURITY_LAKE</code> indicates a configuration that is managed through Amazon Security Lake. You can use Security Lake to collect log and event data from various sources for normalization, analysis, and management. For information, see <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Collecting data from Amazon Web Services services</a> in the <i>Amazon Security Lake user guide</i>.</p>
+    /// <p>The log scope <code>CLOUDWATCH_TELEMETRY_RULE_MANAGED</code> indicates a configuration that is managed through Amazon CloudWatch Logs for telemetry data collection and analysis. For information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/WhatIsCloudWatchLogs.html">What is Amazon CloudWatch Logs ?</a> in the <i>Amazon CloudWatch Logs user guide</i>.</p>
     /// <p>Default: <code>CUSTOMER</code></p>
     pub fn set_log_scope(mut self, input: ::std::option::Option<crate::types::LogScope>) -> Self {
         self.inner = self.inner.set_log_scope(input);
@@ -155,6 +157,7 @@ impl GetLoggingConfigurationFluentBuilder {
     }
     /// <p>The owner of the logging configuration, which must be set to <code>CUSTOMER</code> for the configurations that you manage.</p>
     /// <p>The log scope <code>SECURITY_LAKE</code> indicates a configuration that is managed through Amazon Security Lake. You can use Security Lake to collect log and event data from various sources for normalization, analysis, and management. For information, see <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Collecting data from Amazon Web Services services</a> in the <i>Amazon Security Lake user guide</i>.</p>
+    /// <p>The log scope <code>CLOUDWATCH_TELEMETRY_RULE_MANAGED</code> indicates a configuration that is managed through Amazon CloudWatch Logs for telemetry data collection and analysis. For information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/WhatIsCloudWatchLogs.html">What is Amazon CloudWatch Logs ?</a> in the <i>Amazon CloudWatch Logs user guide</i>.</p>
     /// <p>Default: <code>CUSTOMER</code></p>
     pub fn get_log_scope(&self) -> &::std::option::Option<crate::types::LogScope> {
         self.inner.get_log_scope()

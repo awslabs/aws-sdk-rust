@@ -21,6 +21,9 @@ where
                                     .transpose()?,
                             );
                         }
+                        "EniIpv6Addresses" => {
+                            builder = builder.set_eni_ipv6_addresses(crate::protocol_serde::shape_string_list::de_string_list(tokens)?);
+                        }
                         "EniId" => {
                             builder = builder.set_eni_id(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

@@ -13,6 +13,8 @@ pub struct EntityItem {
     /// <p>The parent entities in the hierarchy that contains the entity. A principal or resource entity can be defined with at most 99 <i>transitive parents</i> per authorization request.</p>
     /// <p>A transitive parent is an entity in the hierarchy of entities including all direct parents, and parents of parents. For example, a user can be a member of 91 groups if one of those groups is a member of eight groups, for a total of 100: one entity, 91 entity parents, and eight parents of parents.</p>
     pub parents: ::std::option::Option<::std::vec::Vec<crate::types::EntityIdentifier>>,
+    /// <p>A list of cedar tags for the entity.</p>
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CedarTagValue>>,
 }
 impl EntityItem {
     /// <p>The identifier of the entity.</p>
@@ -30,6 +32,10 @@ impl EntityItem {
     pub fn parents(&self) -> &[crate::types::EntityIdentifier] {
         self.parents.as_deref().unwrap_or_default()
     }
+    /// <p>A list of cedar tags for the entity.</p>
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::CedarTagValue>> {
+        self.tags.as_ref()
+    }
 }
 impl EntityItem {
     /// Creates a new builder-style object to manufacture [`EntityItem`](crate::types::EntityItem).
@@ -45,6 +51,7 @@ pub struct EntityItemBuilder {
     pub(crate) identifier: ::std::option::Option<crate::types::EntityIdentifier>,
     pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>>,
     pub(crate) parents: ::std::option::Option<::std::vec::Vec<crate::types::EntityIdentifier>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CedarTagValue>>,
 }
 impl EntityItemBuilder {
     /// <p>The identifier of the entity.</p>
@@ -108,12 +115,33 @@ impl EntityItemBuilder {
     pub fn get_parents(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EntityIdentifier>> {
         &self.parents
     }
+    /// Adds a key-value pair to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>A list of cedar tags for the entity.</p>
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::CedarTagValue) -> Self {
+        let mut hash_map = self.tags.unwrap_or_default();
+        hash_map.insert(k.into(), v);
+        self.tags = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>A list of cedar tags for the entity.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CedarTagValue>>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// <p>A list of cedar tags for the entity.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CedarTagValue>> {
+        &self.tags
+    }
     /// Consumes the builder and constructs a [`EntityItem`](crate::types::EntityItem).
     pub fn build(self) -> crate::types::EntityItem {
         crate::types::EntityItem {
             identifier: self.identifier,
             attributes: self.attributes,
             parents: self.parents,
+            tags: self.tags,
         }
     }
 }
