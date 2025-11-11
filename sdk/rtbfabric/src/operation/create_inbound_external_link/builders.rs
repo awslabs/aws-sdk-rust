@@ -150,6 +150,20 @@ impl CreateInboundExternalLinkFluentBuilder {
     pub fn get_attributes(&self) -> &::std::option::Option<crate::types::LinkAttributes> {
         self.inner.get_attributes()
     }
+    /// <p>Describes the settings for a link log.</p>
+    pub fn log_settings(mut self, input: crate::types::LinkLogSettings) -> Self {
+        self.inner = self.inner.log_settings(input);
+        self
+    }
+    /// <p>Describes the settings for a link log.</p>
+    pub fn set_log_settings(mut self, input: ::std::option::Option<crate::types::LinkLogSettings>) -> Self {
+        self.inner = self.inner.set_log_settings(input);
+        self
+    }
+    /// <p>Describes the settings for a link log.</p>
+    pub fn get_log_settings(&self) -> &::std::option::Option<crate::types::LinkLogSettings> {
+        self.inner.get_log_settings()
+    }
     ///
     /// Adds a key-value pair to `tags`.
     ///

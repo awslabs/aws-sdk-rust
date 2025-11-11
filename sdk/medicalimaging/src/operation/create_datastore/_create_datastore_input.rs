@@ -13,6 +13,8 @@ pub struct CreateDatastoreInput {
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the authorizer's Lambda function.</p>
     pub lambda_authorizer_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The lossless storage format for the datastore.</p>
+    pub lossless_storage_format: ::std::option::Option<crate::types::LosslessStorageFormat>,
 }
 impl CreateDatastoreInput {
     /// <p>The data store name.</p>
@@ -35,6 +37,10 @@ impl CreateDatastoreInput {
     pub fn lambda_authorizer_arn(&self) -> ::std::option::Option<&str> {
         self.lambda_authorizer_arn.as_deref()
     }
+    /// <p>The lossless storage format for the datastore.</p>
+    pub fn lossless_storage_format(&self) -> ::std::option::Option<&crate::types::LosslessStorageFormat> {
+        self.lossless_storage_format.as_ref()
+    }
 }
 impl CreateDatastoreInput {
     /// Creates a new builder-style object to manufacture [`CreateDatastoreInput`](crate::operation::create_datastore::CreateDatastoreInput).
@@ -52,6 +58,7 @@ pub struct CreateDatastoreInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
     pub(crate) lambda_authorizer_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) lossless_storage_format: ::std::option::Option<crate::types::LosslessStorageFormat>,
 }
 impl CreateDatastoreInputBuilder {
     /// <p>The data store name.</p>
@@ -131,6 +138,20 @@ impl CreateDatastoreInputBuilder {
     pub fn get_lambda_authorizer_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.lambda_authorizer_arn
     }
+    /// <p>The lossless storage format for the datastore.</p>
+    pub fn lossless_storage_format(mut self, input: crate::types::LosslessStorageFormat) -> Self {
+        self.lossless_storage_format = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The lossless storage format for the datastore.</p>
+    pub fn set_lossless_storage_format(mut self, input: ::std::option::Option<crate::types::LosslessStorageFormat>) -> Self {
+        self.lossless_storage_format = input;
+        self
+    }
+    /// <p>The lossless storage format for the datastore.</p>
+    pub fn get_lossless_storage_format(&self) -> &::std::option::Option<crate::types::LosslessStorageFormat> {
+        &self.lossless_storage_format
+    }
     /// Consumes the builder and constructs a [`CreateDatastoreInput`](crate::operation::create_datastore::CreateDatastoreInput).
     pub fn build(
         self,
@@ -141,6 +162,7 @@ impl CreateDatastoreInputBuilder {
             tags: self.tags,
             kms_key_arn: self.kms_key_arn,
             lambda_authorizer_arn: self.lambda_authorizer_arn,
+            lossless_storage_format: self.lossless_storage_format,
         })
     }
 }

@@ -216,249 +216,9 @@ mod test {
         );
     }
 
-    /// For region us-gov-west-1 with FIPS enabled and DualStack enabled
-    #[test]
-    fn test_12() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("us-gov-west-1".to_string())
-            .use_fips(true)
-            .use_dual_stack(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://rtbfabric-fips.us-gov-west-1.api.aws");
-        assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://rtbfabric-fips.us-gov-west-1.api.aws")
-                .build()
-        );
-    }
-
-    /// For region us-gov-west-1 with FIPS enabled and DualStack disabled
-    #[test]
-    fn test_13() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("us-gov-west-1".to_string())
-            .use_fips(true)
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://rtbfabric-fips.us-gov-west-1.amazonaws.com");
-        assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://rtbfabric-fips.us-gov-west-1.amazonaws.com")
-                .build()
-        );
-    }
-
-    /// For region us-gov-west-1 with FIPS disabled and DualStack enabled
-    #[test]
-    fn test_14() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("us-gov-west-1".to_string())
-            .use_fips(false)
-            .use_dual_stack(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://rtbfabric.us-gov-west-1.api.aws");
-        assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://rtbfabric.us-gov-west-1.api.aws")
-                .build()
-        );
-    }
-
-    /// For region us-gov-west-1 with FIPS disabled and DualStack disabled
-    #[test]
-    fn test_15() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("us-gov-west-1".to_string())
-            .use_fips(false)
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://rtbfabric.us-gov-west-1.amazonaws.com");
-        assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://rtbfabric.us-gov-west-1.amazonaws.com")
-                .build()
-        );
-    }
-
-    /// For region us-iso-east-1 with FIPS enabled and DualStack disabled
-    #[test]
-    fn test_16() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("us-iso-east-1".to_string())
-            .use_fips(true)
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://rtbfabric-fips.us-iso-east-1.c2s.ic.gov");
-        assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://rtbfabric-fips.us-iso-east-1.c2s.ic.gov")
-                .build()
-        );
-    }
-
-    /// For region us-iso-east-1 with FIPS disabled and DualStack disabled
-    #[test]
-    fn test_17() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("us-iso-east-1".to_string())
-            .use_fips(false)
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://rtbfabric.us-iso-east-1.c2s.ic.gov");
-        assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://rtbfabric.us-iso-east-1.c2s.ic.gov")
-                .build()
-        );
-    }
-
-    /// For region us-isob-east-1 with FIPS enabled and DualStack disabled
-    #[test]
-    fn test_18() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("us-isob-east-1".to_string())
-            .use_fips(true)
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://rtbfabric-fips.us-isob-east-1.sc2s.sgov.gov");
-        assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://rtbfabric-fips.us-isob-east-1.sc2s.sgov.gov")
-                .build()
-        );
-    }
-
-    /// For region us-isob-east-1 with FIPS disabled and DualStack disabled
-    #[test]
-    fn test_19() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("us-isob-east-1".to_string())
-            .use_fips(false)
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://rtbfabric.us-isob-east-1.sc2s.sgov.gov");
-        assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://rtbfabric.us-isob-east-1.sc2s.sgov.gov")
-                .build()
-        );
-    }
-
-    /// For region eu-isoe-west-1 with FIPS enabled and DualStack disabled
-    #[test]
-    fn test_20() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("eu-isoe-west-1".to_string())
-            .use_fips(true)
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://rtbfabric-fips.eu-isoe-west-1.cloud.adc-e.uk");
-        assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://rtbfabric-fips.eu-isoe-west-1.cloud.adc-e.uk")
-                .build()
-        );
-    }
-
-    /// For region eu-isoe-west-1 with FIPS disabled and DualStack disabled
-    #[test]
-    fn test_21() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("eu-isoe-west-1".to_string())
-            .use_fips(false)
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://rtbfabric.eu-isoe-west-1.cloud.adc-e.uk");
-        assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://rtbfabric.eu-isoe-west-1.cloud.adc-e.uk")
-                .build()
-        );
-    }
-
-    /// For region us-isof-south-1 with FIPS enabled and DualStack disabled
-    #[test]
-    fn test_22() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("us-isof-south-1".to_string())
-            .use_fips(true)
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://rtbfabric-fips.us-isof-south-1.csp.hci.ic.gov");
-        assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://rtbfabric-fips.us-isof-south-1.csp.hci.ic.gov")
-                .build()
-        );
-    }
-
-    /// For region us-isof-south-1 with FIPS disabled and DualStack disabled
-    #[test]
-    fn test_23() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("us-isof-south-1".to_string())
-            .use_fips(false)
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://rtbfabric.us-isof-south-1.csp.hci.ic.gov");
-        assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://rtbfabric.us-isof-south-1.csp.hci.ic.gov")
-                .build()
-        );
-    }
-
     /// For region eusc-de-east-1 with FIPS enabled and DualStack disabled
     #[test]
-    fn test_24() {
+    fn test_12() {
         let params = crate::config::endpoint::Params::builder()
             .region("eusc-de-east-1".to_string())
             .use_fips(true)
@@ -478,7 +238,7 @@ mod test {
 
     /// For region eusc-de-east-1 with FIPS disabled and DualStack disabled
     #[test]
-    fn test_25() {
+    fn test_13() {
         let params = crate::config::endpoint::Params::builder()
             .region("eusc-de-east-1".to_string())
             .use_fips(false)
@@ -492,6 +252,246 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://rtbfabric.eusc-de-east-1.amazonaws.eu")
+                .build()
+        );
+    }
+
+    /// For region us-iso-east-1 with FIPS enabled and DualStack disabled
+    #[test]
+    fn test_14() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-iso-east-1".to_string())
+            .use_fips(true)
+            .use_dual_stack(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://rtbfabric-fips.us-iso-east-1.c2s.ic.gov");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://rtbfabric-fips.us-iso-east-1.c2s.ic.gov")
+                .build()
+        );
+    }
+
+    /// For region us-iso-east-1 with FIPS disabled and DualStack disabled
+    #[test]
+    fn test_15() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-iso-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://rtbfabric.us-iso-east-1.c2s.ic.gov");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://rtbfabric.us-iso-east-1.c2s.ic.gov")
+                .build()
+        );
+    }
+
+    /// For region us-isob-east-1 with FIPS enabled and DualStack disabled
+    #[test]
+    fn test_16() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-isob-east-1".to_string())
+            .use_fips(true)
+            .use_dual_stack(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://rtbfabric-fips.us-isob-east-1.sc2s.sgov.gov");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://rtbfabric-fips.us-isob-east-1.sc2s.sgov.gov")
+                .build()
+        );
+    }
+
+    /// For region us-isob-east-1 with FIPS disabled and DualStack disabled
+    #[test]
+    fn test_17() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-isob-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://rtbfabric.us-isob-east-1.sc2s.sgov.gov");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://rtbfabric.us-isob-east-1.sc2s.sgov.gov")
+                .build()
+        );
+    }
+
+    /// For region eu-isoe-west-1 with FIPS enabled and DualStack disabled
+    #[test]
+    fn test_18() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("eu-isoe-west-1".to_string())
+            .use_fips(true)
+            .use_dual_stack(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://rtbfabric-fips.eu-isoe-west-1.cloud.adc-e.uk");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://rtbfabric-fips.eu-isoe-west-1.cloud.adc-e.uk")
+                .build()
+        );
+    }
+
+    /// For region eu-isoe-west-1 with FIPS disabled and DualStack disabled
+    #[test]
+    fn test_19() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("eu-isoe-west-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://rtbfabric.eu-isoe-west-1.cloud.adc-e.uk");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://rtbfabric.eu-isoe-west-1.cloud.adc-e.uk")
+                .build()
+        );
+    }
+
+    /// For region us-isof-south-1 with FIPS enabled and DualStack disabled
+    #[test]
+    fn test_20() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-isof-south-1".to_string())
+            .use_fips(true)
+            .use_dual_stack(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://rtbfabric-fips.us-isof-south-1.csp.hci.ic.gov");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://rtbfabric-fips.us-isof-south-1.csp.hci.ic.gov")
+                .build()
+        );
+    }
+
+    /// For region us-isof-south-1 with FIPS disabled and DualStack disabled
+    #[test]
+    fn test_21() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-isof-south-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://rtbfabric.us-isof-south-1.csp.hci.ic.gov");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://rtbfabric.us-isof-south-1.csp.hci.ic.gov")
+                .build()
+        );
+    }
+
+    /// For region us-gov-west-1 with FIPS enabled and DualStack enabled
+    #[test]
+    fn test_22() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-gov-west-1".to_string())
+            .use_fips(true)
+            .use_dual_stack(true)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://rtbfabric-fips.us-gov-west-1.api.aws");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://rtbfabric-fips.us-gov-west-1.api.aws")
+                .build()
+        );
+    }
+
+    /// For region us-gov-west-1 with FIPS enabled and DualStack disabled
+    #[test]
+    fn test_23() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-gov-west-1".to_string())
+            .use_fips(true)
+            .use_dual_stack(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://rtbfabric-fips.us-gov-west-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://rtbfabric-fips.us-gov-west-1.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// For region us-gov-west-1 with FIPS disabled and DualStack enabled
+    #[test]
+    fn test_24() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-gov-west-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(true)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://rtbfabric.us-gov-west-1.api.aws");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://rtbfabric.us-gov-west-1.api.aws")
+                .build()
+        );
+    }
+
+    /// For region us-gov-west-1 with FIPS disabled and DualStack disabled
+    #[test]
+    fn test_25() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-gov-west-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://rtbfabric.us-gov-west-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://rtbfabric.us-gov-west-1.amazonaws.com")
                 .build()
         );
     }

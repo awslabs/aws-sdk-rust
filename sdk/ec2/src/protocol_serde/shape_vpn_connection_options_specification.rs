@@ -58,9 +58,14 @@ pub fn ser_vpn_connection_options_specification(
         scope_20.string(var_21);
     }
     #[allow(unused_mut)]
-    let mut scope_22 = writer.prefix("StaticRoutesOnly");
-    if let Some(var_23) = &input.static_routes_only {
-        scope_22.boolean(*var_23);
+    let mut scope_22 = writer.prefix("TunnelBandwidth");
+    if let Some(var_23) = &input.tunnel_bandwidth {
+        scope_22.string(var_23.as_str());
+    }
+    #[allow(unused_mut)]
+    let mut scope_24 = writer.prefix("StaticRoutesOnly");
+    if let Some(var_25) = &input.static_routes_only {
+        scope_24.boolean(*var_25);
     }
     Ok(())
 }

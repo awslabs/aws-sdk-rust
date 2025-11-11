@@ -6,11 +6,17 @@
 pub struct AudioOverrideConfiguration {
     /// Configuration to enable/disable processing of modality
     pub modality_processing: ::std::option::Option<crate::types::ModalityProcessingConfiguration>,
+    /// Optional configuration for audio language settings
+    pub language_configuration: ::std::option::Option<crate::types::AudioLanguageConfiguration>,
 }
 impl AudioOverrideConfiguration {
     /// Configuration to enable/disable processing of modality
     pub fn modality_processing(&self) -> ::std::option::Option<&crate::types::ModalityProcessingConfiguration> {
         self.modality_processing.as_ref()
+    }
+    /// Optional configuration for audio language settings
+    pub fn language_configuration(&self) -> ::std::option::Option<&crate::types::AudioLanguageConfiguration> {
+        self.language_configuration.as_ref()
     }
 }
 impl AudioOverrideConfiguration {
@@ -25,6 +31,7 @@ impl AudioOverrideConfiguration {
 #[non_exhaustive]
 pub struct AudioOverrideConfigurationBuilder {
     pub(crate) modality_processing: ::std::option::Option<crate::types::ModalityProcessingConfiguration>,
+    pub(crate) language_configuration: ::std::option::Option<crate::types::AudioLanguageConfiguration>,
 }
 impl AudioOverrideConfigurationBuilder {
     /// Configuration to enable/disable processing of modality
@@ -41,10 +48,25 @@ impl AudioOverrideConfigurationBuilder {
     pub fn get_modality_processing(&self) -> &::std::option::Option<crate::types::ModalityProcessingConfiguration> {
         &self.modality_processing
     }
+    /// Optional configuration for audio language settings
+    pub fn language_configuration(mut self, input: crate::types::AudioLanguageConfiguration) -> Self {
+        self.language_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// Optional configuration for audio language settings
+    pub fn set_language_configuration(mut self, input: ::std::option::Option<crate::types::AudioLanguageConfiguration>) -> Self {
+        self.language_configuration = input;
+        self
+    }
+    /// Optional configuration for audio language settings
+    pub fn get_language_configuration(&self) -> &::std::option::Option<crate::types::AudioLanguageConfiguration> {
+        &self.language_configuration
+    }
     /// Consumes the builder and constructs a [`AudioOverrideConfiguration`](crate::types::AudioOverrideConfiguration).
     pub fn build(self) -> crate::types::AudioOverrideConfiguration {
         crate::types::AudioOverrideConfiguration {
             modality_processing: self.modality_processing,
+            language_configuration: self.language_configuration,
         }
     }
 }

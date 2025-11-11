@@ -10,6 +10,8 @@ pub struct IncidentResponder {
     pub job_title: ::std::string::String,
     /// <p></p>
     pub email: ::std::string::String,
+    /// <p></p>
+    pub communication_preferences: ::std::option::Option<::std::vec::Vec<crate::types::CommunicationType>>,
 }
 impl IncidentResponder {
     /// <p></p>
@@ -27,6 +29,12 @@ impl IncidentResponder {
         use std::ops::Deref;
         self.email.deref()
     }
+    /// <p></p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.communication_preferences.is_none()`.
+    pub fn communication_preferences(&self) -> &[crate::types::CommunicationType] {
+        self.communication_preferences.as_deref().unwrap_or_default()
+    }
 }
 impl ::std::fmt::Debug for IncidentResponder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -34,6 +42,7 @@ impl ::std::fmt::Debug for IncidentResponder {
         formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.field("job_title", &"*** Sensitive Data Redacted ***");
         formatter.field("email", &"*** Sensitive Data Redacted ***");
+        formatter.field("communication_preferences", &self.communication_preferences);
         formatter.finish()
     }
 }
@@ -51,6 +60,7 @@ pub struct IncidentResponderBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) job_title: ::std::option::Option<::std::string::String>,
     pub(crate) email: ::std::option::Option<::std::string::String>,
+    pub(crate) communication_preferences: ::std::option::Option<::std::vec::Vec<crate::types::CommunicationType>>,
 }
 impl IncidentResponderBuilder {
     /// <p></p>
@@ -98,6 +108,26 @@ impl IncidentResponderBuilder {
     pub fn get_email(&self) -> &::std::option::Option<::std::string::String> {
         &self.email
     }
+    /// Appends an item to `communication_preferences`.
+    ///
+    /// To override the contents of this collection use [`set_communication_preferences`](Self::set_communication_preferences).
+    ///
+    /// <p></p>
+    pub fn communication_preferences(mut self, input: crate::types::CommunicationType) -> Self {
+        let mut v = self.communication_preferences.unwrap_or_default();
+        v.push(input);
+        self.communication_preferences = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p></p>
+    pub fn set_communication_preferences(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CommunicationType>>) -> Self {
+        self.communication_preferences = input;
+        self
+    }
+    /// <p></p>
+    pub fn get_communication_preferences(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CommunicationType>> {
+        &self.communication_preferences
+    }
     /// Consumes the builder and constructs a [`IncidentResponder`](crate::types::IncidentResponder).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::IncidentResponderBuilder::name)
@@ -123,6 +153,7 @@ impl IncidentResponderBuilder {
                     "email was not specified but it is required when building IncidentResponder",
                 )
             })?,
+            communication_preferences: self.communication_preferences,
         })
     }
 }
@@ -132,6 +163,7 @@ impl ::std::fmt::Debug for IncidentResponderBuilder {
         formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.field("job_title", &"*** Sensitive Data Redacted ***");
         formatter.field("email", &"*** Sensitive Data Redacted ***");
+        formatter.field("communication_preferences", &self.communication_preferences);
         formatter.finish()
     }
 }

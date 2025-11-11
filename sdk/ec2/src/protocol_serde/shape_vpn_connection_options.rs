@@ -139,6 +139,20 @@ pub fn de_vpn_connection_options(
                 builder = builder.set_tunnel_options(var_10);
             }
             ,
+            s if s.matches("tunnelBandwidth") /* TunnelBandwidth com.amazonaws.ec2#VpnConnectionOptions$TunnelBandwidth */ =>  {
+                let var_11 =
+                    Some(
+                        Result::<crate::types::VpnTunnelBandwidth, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::VpnTunnelBandwidth::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_tunnel_bandwidth(var_11);
+            }
+            ,
             _ => {}
         }
     }

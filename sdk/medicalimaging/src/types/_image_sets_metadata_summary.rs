@@ -12,6 +12,10 @@ pub struct ImageSetsMetadataSummary {
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time an image set was last updated.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>When the image set was last accessed.</p>
+    pub last_accessed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The image set's storage tier.</p>
+    pub storage_tier: ::std::option::Option<crate::types::StorageTier>,
     /// <p>The DICOM tags associated with the image set.</p>
     pub dicom_tags: ::std::option::Option<crate::types::DicomTags>,
     /// <p>The flag to determine whether the image set is primary or not.</p>
@@ -34,6 +38,14 @@ impl ImageSetsMetadataSummary {
     /// <p>The time an image set was last updated.</p>
     pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
+    }
+    /// <p>When the image set was last accessed.</p>
+    pub fn last_accessed_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.last_accessed_at.as_ref()
+    }
+    /// <p>The image set's storage tier.</p>
+    pub fn storage_tier(&self) -> ::std::option::Option<&crate::types::StorageTier> {
+        self.storage_tier.as_ref()
     }
     /// <p>The DICOM tags associated with the image set.</p>
     pub fn dicom_tags(&self) -> ::std::option::Option<&crate::types::DicomTags> {
@@ -59,6 +71,8 @@ pub struct ImageSetsMetadataSummaryBuilder {
     pub(crate) version: ::std::option::Option<i32>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_accessed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) storage_tier: ::std::option::Option<crate::types::StorageTier>,
     pub(crate) dicom_tags: ::std::option::Option<crate::types::DicomTags>,
     pub(crate) is_primary: ::std::option::Option<bool>,
 }
@@ -120,6 +134,34 @@ impl ImageSetsMetadataSummaryBuilder {
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.updated_at
     }
+    /// <p>When the image set was last accessed.</p>
+    pub fn last_accessed_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_accessed_at = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>When the image set was last accessed.</p>
+    pub fn set_last_accessed_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_accessed_at = input;
+        self
+    }
+    /// <p>When the image set was last accessed.</p>
+    pub fn get_last_accessed_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_accessed_at
+    }
+    /// <p>The image set's storage tier.</p>
+    pub fn storage_tier(mut self, input: crate::types::StorageTier) -> Self {
+        self.storage_tier = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The image set's storage tier.</p>
+    pub fn set_storage_tier(mut self, input: ::std::option::Option<crate::types::StorageTier>) -> Self {
+        self.storage_tier = input;
+        self
+    }
+    /// <p>The image set's storage tier.</p>
+    pub fn get_storage_tier(&self) -> &::std::option::Option<crate::types::StorageTier> {
+        &self.storage_tier
+    }
     /// <p>The DICOM tags associated with the image set.</p>
     pub fn dicom_tags(mut self, input: crate::types::DicomTags) -> Self {
         self.dicom_tags = ::std::option::Option::Some(input);
@@ -162,6 +204,8 @@ impl ImageSetsMetadataSummaryBuilder {
             version: self.version,
             created_at: self.created_at,
             updated_at: self.updated_at,
+            last_accessed_at: self.last_accessed_at,
+            storage_tier: self.storage_tier,
             dicom_tags: self.dicom_tags,
             is_primary: self.is_primary,
         })

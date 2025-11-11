@@ -153,6 +153,9 @@ pub(crate) fn de_get_outbound_external_link(
                             .transpose()?,
                     );
                 }
+                "logSettings" => {
+                    builder = builder.set_log_settings(crate::protocol_serde::shape_link_log_settings::de_link_log_settings(tokens)?);
+                }
                 "publicEndpoint" => {
                     builder = builder.set_public_endpoint(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

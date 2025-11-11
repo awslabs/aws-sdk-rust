@@ -11,6 +11,12 @@ pub use crate::types::_trust_store_configuration::TrustStoreConfiguration;
 
 pub use crate::types::_protocol::Protocol;
 
+pub use crate::types::_link_log_settings::LinkLogSettings;
+
+pub use crate::types::_link_application_log_configuration::LinkApplicationLogConfiguration;
+
+pub use crate::types::_link_application_log_sampling::LinkApplicationLogSampling;
+
 pub use crate::types::_link_attributes::LinkAttributes;
 
 pub use crate::types::_responder_error_masking_for_http_code::ResponderErrorMaskingForHttpCode;
@@ -44,12 +50,6 @@ pub use crate::types::_no_bid_module_parameters::NoBidModuleParameters;
 pub use crate::types::_link_status::LinkStatus;
 
 pub use crate::types::_requester_gateway_status::RequesterGatewayStatus;
-
-pub use crate::types::_link_log_settings::LinkLogSettings;
-
-pub use crate::types::_link_application_log_configuration::LinkApplicationLogConfiguration;
-
-pub use crate::types::_link_application_log_sampling::LinkApplicationLogSampling;
 
 pub use crate::types::_link_direction::LinkDirection;
 

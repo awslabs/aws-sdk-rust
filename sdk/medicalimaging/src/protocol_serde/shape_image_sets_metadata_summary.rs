@@ -40,6 +40,19 @@ where
                                 ::aws_smithy_types::date_time::Format::EpochSeconds,
                             )?);
                         }
+                        "lastAccessedAt" => {
+                            builder = builder.set_last_accessed_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                tokens.next(),
+                                ::aws_smithy_types::date_time::Format::EpochSeconds,
+                            )?);
+                        }
+                        "storageTier" => {
+                            builder = builder.set_storage_tier(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::StorageTier::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         "DICOMTags" => {
                             builder = builder.set_dicom_tags(crate::protocol_serde::shape_dicom_tags::de_dicom_tags(tokens)?);
                         }

@@ -49,6 +49,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "losslessStorageFormat" => {
+                            builder = builder.set_lossless_storage_format(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::LosslessStorageFormat::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         "datastoreArn" => {
                             builder = builder.set_datastore_arn(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

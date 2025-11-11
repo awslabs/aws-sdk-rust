@@ -136,6 +136,20 @@ impl CreateOutboundExternalLinkFluentBuilder {
     pub fn get_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_gateway_id()
     }
+    /// <p>Describes the attributes of a link.</p>
+    pub fn attributes(mut self, input: crate::types::LinkAttributes) -> Self {
+        self.inner = self.inner.attributes(input);
+        self
+    }
+    /// <p>Describes the attributes of a link.</p>
+    pub fn set_attributes(mut self, input: ::std::option::Option<crate::types::LinkAttributes>) -> Self {
+        self.inner = self.inner.set_attributes(input);
+        self
+    }
+    /// <p>Describes the attributes of a link.</p>
+    pub fn get_attributes(&self) -> &::std::option::Option<crate::types::LinkAttributes> {
+        self.inner.get_attributes()
+    }
     /// <p>The public endpoint of the link.</p>
     pub fn public_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.public_endpoint(input.into());
@@ -149,6 +163,20 @@ impl CreateOutboundExternalLinkFluentBuilder {
     /// <p>The public endpoint of the link.</p>
     pub fn get_public_endpoint(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_public_endpoint()
+    }
+    /// <p>Describes the settings for a link log.</p>
+    pub fn log_settings(mut self, input: crate::types::LinkLogSettings) -> Self {
+        self.inner = self.inner.log_settings(input);
+        self
+    }
+    /// <p>Describes the settings for a link log.</p>
+    pub fn set_log_settings(mut self, input: ::std::option::Option<crate::types::LinkLogSettings>) -> Self {
+        self.inner = self.inner.set_log_settings(input);
+        self
+    }
+    /// <p>Describes the settings for a link log.</p>
+    pub fn get_log_settings(&self) -> &::std::option::Option<crate::types::LinkLogSettings> {
+        self.inner.get_log_settings()
     }
     ///
     /// Adds a key-value pair to `tags`.

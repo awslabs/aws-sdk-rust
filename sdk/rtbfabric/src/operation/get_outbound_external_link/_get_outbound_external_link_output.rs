@@ -17,6 +17,8 @@ pub struct GetOutboundExternalLinkOutput {
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A map of the key-value pairs for the tag or tags assigned to the specified resource.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>Describes the settings for a link log.</p>
+    pub log_settings: ::std::option::Option<crate::types::LinkLogSettings>,
     _request_id: Option<String>,
 }
 impl GetOutboundExternalLinkOutput {
@@ -51,6 +53,10 @@ impl GetOutboundExternalLinkOutput {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
+    /// <p>Describes the settings for a link log.</p>
+    pub fn log_settings(&self) -> ::std::option::Option<&crate::types::LinkLogSettings> {
+        self.log_settings.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetOutboundExternalLinkOutput {
     fn request_id(&self) -> Option<&str> {
@@ -75,6 +81,7 @@ pub struct GetOutboundExternalLinkOutputBuilder {
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) log_settings: ::std::option::Option<crate::types::LinkLogSettings>,
     _request_id: Option<String>,
 }
 impl GetOutboundExternalLinkOutputBuilder {
@@ -186,6 +193,20 @@ impl GetOutboundExternalLinkOutputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// <p>Describes the settings for a link log.</p>
+    pub fn log_settings(mut self, input: crate::types::LinkLogSettings) -> Self {
+        self.log_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Describes the settings for a link log.</p>
+    pub fn set_log_settings(mut self, input: ::std::option::Option<crate::types::LinkLogSettings>) -> Self {
+        self.log_settings = input;
+        self
+    }
+    /// <p>Describes the settings for a link log.</p>
+    pub fn get_log_settings(&self) -> &::std::option::Option<crate::types::LinkLogSettings> {
+        &self.log_settings
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -235,6 +256,7 @@ impl GetOutboundExternalLinkOutputBuilder {
             created_at: self.created_at,
             updated_at: self.updated_at,
             tags: self.tags,
+            log_settings: self.log_settings,
             _request_id: self._request_id,
         })
     }

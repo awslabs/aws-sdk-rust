@@ -19,6 +19,8 @@ pub use crate::types::_opt_in_feature_name::OptInFeatureName;
 
 pub use crate::types::_incident_responder::IncidentResponder;
 
+pub use crate::types::_communication_type::CommunicationType;
+
 pub use crate::types::_membership_accounts_configurations::MembershipAccountsConfigurations;
 
 pub use crate::types::_customer_type::CustomerType;
@@ -68,6 +70,8 @@ mod _case_edit_item;
 mod _case_status;
 
 mod _closure_code;
+
+mod _communication_type;
 
 mod _customer_type;
 

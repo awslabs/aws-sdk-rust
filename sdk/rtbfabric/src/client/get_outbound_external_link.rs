@@ -13,6 +13,7 @@ impl super::Client {
     ///   - [`created_at(Option<DateTime>)`](crate::operation::get_outbound_external_link::GetOutboundExternalLinkOutput::created_at): <p>The timestamp of when the outbound external link was created.</p>
     ///   - [`updated_at(Option<DateTime>)`](crate::operation::get_outbound_external_link::GetOutboundExternalLinkOutput::updated_at): <p>The timestamp of when the outbound external link was updated.</p>
     ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_outbound_external_link::GetOutboundExternalLinkOutput::tags): <p>A map of the key-value pairs for the tag or tags assigned to the specified resource.</p>
+    ///   - [`log_settings(Option<LinkLogSettings>)`](crate::operation::get_outbound_external_link::GetOutboundExternalLinkOutput::log_settings): <p>Describes the settings for a link log.</p>
     /// - On failure, responds with [`SdkError<GetOutboundExternalLinkError>`](crate::operation::get_outbound_external_link::GetOutboundExternalLinkError)
     pub fn get_outbound_external_link(&self) -> crate::operation::get_outbound_external_link::builders::GetOutboundExternalLinkFluentBuilder {
         crate::operation::get_outbound_external_link::builders::GetOutboundExternalLinkFluentBuilder::new(self.handle.clone())

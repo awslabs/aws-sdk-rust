@@ -246,9 +246,9 @@ model_hash = '8944175f08e8a5bdf56a131a8406c95c765f8f08a22af0d9a92dc001f0a81efb'
 
 [crates.aws-sdk-batch]
 category = 'AwsSdk'
-version = '1.100.0'
-source_hash = '8a91079a6a0e0e745bda4995459ebbcd025aaa435b19a1ec10575fc710961b46'
-model_hash = '9a513a7c89fbdcf849ea5189194582cd9685f990deccc1985a6f454afb70cb5c'
+version = '1.100.1'
+source_hash = '00a01da7b634054ede31aa10a46392e6c8c9518c466af7796df80b705421eb3c'
+model_hash = 'e37f5032330960d101c89abf1661dc5811502f1a0eb66c73857cfecd87c1a16e'
 
 [crates.aws-sdk-bcmdashboards]
 category = 'AwsSdk'
@@ -306,9 +306,9 @@ model_hash = 'f79a46e784a0f2b6bcc9e519fb2fba18376c201612837ac0e08c6b6c28359591'
 
 [crates.aws-sdk-bedrockdataautomation]
 category = 'AwsSdk'
-version = '1.42.0'
-source_hash = 'b21a2974b764fece5b46dea35e6009924106d01bdf4afd55f535093e6a78b12a'
-model_hash = '6d50147f961d548860de97b3d2b4e72dcacbc34088d56ed4df68a9a32ee18906'
+version = '1.43.0'
+source_hash = '8f637aed7153de351c36c60411e6930a10e04b4dd6849b5ec129b4fed4135fc5'
+model_hash = 'b86686c66d2367bb9aeb9f6f9a5566e4c4350f3f0fb821d9f60bad92764ebd0f'
 
 [crates.aws-sdk-bedrockdataautomationruntime]
 category = 'AwsSdk'
@@ -810,9 +810,9 @@ model_hash = 'e25803f5b4643f6fd4e7d3c94daa4a33f84e1232e819f0722b14f94f6c4762e2'
 
 [crates.aws-sdk-ec2]
 category = 'AwsSdk'
-version = '1.183.0'
-source_hash = 'ba4ca7b375e55588f8438083916ae599037db01111bfb00244e2e1caeb9ab1d6'
-model_hash = 'db7c825e99cfa70260dd8f00f84690991cd9e7cb7bbeb32a1025c3ba7c302a67'
+version = '1.184.0'
+source_hash = 'e3318c6fce3d167e8d46b8482baee51e56249faec580ab90a3ba3da9d089795d'
+model_hash = '202c31fd74f6b924a284e9cd2f68e1247c0ea48fa2a50b14981544d7f16b9cf9'
 
 [crates.aws-sdk-ec2instanceconnect]
 category = 'AwsSdk'
@@ -1536,9 +1536,9 @@ model_hash = '9cf22dda0e5d67e400f1f2a72879e90cd24200c824e2ffb851159f7366186a97'
 
 [crates.aws-sdk-medicalimaging]
 category = 'AwsSdk'
-version = '1.94.0'
-source_hash = '2921b3a641df520d690bf54f61cdf970bbc8f043a6b8d8d662ab12b603351c5c'
-model_hash = 'ef5c058f276869eab9670218c6df6917ef6977200d40b5e96189abe58bda7e82'
+version = '1.95.0'
+source_hash = '7e1b8ec8ce40268ed43b2ec307aa9f6ddd6b1ce56a65a8a46d43c6f4028a3458'
+model_hash = '7c4157346bd4582e66ab4e8e6479bb40308c88fa9242318c986c83e474bd6629'
 
 [crates.aws-sdk-memorydb]
 category = 'AwsSdk'
@@ -1980,9 +1980,9 @@ model_hash = 'b8a71cb95722114e09b3843fd119c079077ad9e6a046b2615ede9b1220cf66b4'
 
 [crates.aws-sdk-rtbfabric]
 category = 'AwsSdk'
-version = '1.3.0'
-source_hash = '80a3057ab12a9f4c811da1e406e48a2e38870d654f7d3ef56e3ce32e45edf248'
-model_hash = '200b24f4dfab7c0d1d1985fb5665fcf1e19cde256d012633e44976ac9b824489'
+version = '1.4.0'
+source_hash = 'eb969fa0f16370c558b023c6a9ef6b3ec293c1404a8bce67ee31fccdd8f27cfb'
+model_hash = 'bc1fa64c67953a4a038b42c0a6084c65832e5e87542c4fbf4f3d5766aca2eccf'
 
 [crates.aws-sdk-rum]
 category = 'AwsSdk'
@@ -2094,9 +2094,9 @@ model_hash = '7a887f6ad48be46ef9c0370292c28ce94a08250df1c4049f631f61642a188512'
 
 [crates.aws-sdk-securityir]
 category = 'AwsSdk'
-version = '1.42.0'
-source_hash = '2b8083a6be45be30f9a07c2e5125c37455da3ef62a409ecc8707ad1048456471'
-model_hash = '8e5c0abd22454d3b1020f7dc193f9d461e45a10d8a12fadaabaccd2c8fae5e2c'
+version = '1.43.0'
+source_hash = 'fffbf1e96889cc0f40c3cafccf4dff987238887acc3d6558a3a1b2a95ca85cb2'
+model_hash = 'bdc26b0c19b86597f55abd98b860356db47a024692fcd31814672b1b52b70a84'
 
 [crates.aws-sdk-securitylake]
 category = 'AwsSdk'
@@ -2597,22 +2597,10 @@ source_hash = '79c54aa1c4ff4d7ac22b115b0414cdfbf8995738d94447b4d11f575b26c2ed98'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '2f03d9858a328c7dc5aff24d62ac1e98c08a64dfd637a09e6cc98d93d8c84769'
-
-[release]
-tag = 'release-2025-11-10'
-
 [release.crates]
-aws-sdk-acmpca = '1.95.0'
-aws-sdk-appstream = '1.96.0'
-aws-sdk-backup = '1.97.0'
-aws-sdk-braket = '1.93.0'
-aws-sdk-datazone = '1.113.0'
-aws-sdk-dsql = '1.45.0'
-aws-sdk-ec2 = '1.183.0'
-aws-sdk-guardduty = '1.104.0'
-aws-sdk-iam = '1.96.0'
-aws-sdk-invoicing = '1.41.0'
-aws-sdk-kafka = '1.94.0'
-aws-sdk-sts = '1.92.0'
-aws-sdk-verifiedpermissions = '1.100.0'
-aws-sdk-wafv2 = '1.102.0'
+aws-sdk-batch = '1.100.1'
+aws-sdk-bedrockdataautomation = '1.43.0'
+aws-sdk-ec2 = '1.184.0'
+aws-sdk-medicalimaging = '1.95.0'
+aws-sdk-rtbfabric = '1.4.0'
+aws-sdk-securityir = '1.43.0'

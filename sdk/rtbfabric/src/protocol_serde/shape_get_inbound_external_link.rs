@@ -168,6 +168,9 @@ pub(crate) fn de_get_inbound_external_link(
                             .transpose()?,
                     );
                 }
+                "logSettings" => {
+                    builder = builder.set_log_settings(crate::protocol_serde::shape_link_log_settings::de_link_log_settings(tokens)?);
+                }
                 "pendingFlowModules" => {
                     builder = builder.set_pending_flow_modules(crate::protocol_serde::shape_module_configuration_list::de_module_configuration_list(
                         tokens,

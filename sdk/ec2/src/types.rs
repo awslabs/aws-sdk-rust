@@ -589,6 +589,8 @@ pub use crate::types::_vpn_static_route_source::VpnStaticRouteSource;
 
 pub use crate::types::_vpn_connection_options::VpnConnectionOptions;
 
+pub use crate::types::_vpn_tunnel_bandwidth::VpnTunnelBandwidth;
+
 pub use crate::types::_tunnel_option::TunnelOption;
 
 pub use crate::types::_vpn_tunnel_log_options::VpnTunnelLogOptions;
@@ -5080,6 +5082,8 @@ mod _vpn_state;
 mod _vpn_static_route;
 
 mod _vpn_static_route_source;
+
+mod _vpn_tunnel_bandwidth;
 
 mod _vpn_tunnel_log_options;
 

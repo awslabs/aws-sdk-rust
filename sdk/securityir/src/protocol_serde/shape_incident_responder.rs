@@ -12,6 +12,15 @@ pub fn ser_incident_responder(
     {
         object.key("email").string(input.email.as_str());
     }
+    if let Some(var_1) = &input.communication_preferences {
+        let mut array_2 = object.key("communicationPreferences").start_array();
+        for item_3 in var_1 {
+            {
+                array_2.value().string(item_3.as_str());
+            }
+        }
+        array_2.finish();
+    }
     Ok(())
 }
 
@@ -49,6 +58,11 @@ where
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
+                            );
+                        }
+                        "communicationPreferences" => {
+                            builder = builder.set_communication_preferences(
+                                crate::protocol_serde::shape_communication_preferences::de_communication_preferences(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

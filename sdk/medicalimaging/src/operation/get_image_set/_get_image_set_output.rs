@@ -27,6 +27,10 @@ pub struct GetImageSetOutput {
     pub overrides: ::std::option::Option<crate::types::Overrides>,
     /// <p>The flag to determine whether the image set is primary or not.</p>
     pub is_primary: ::std::option::Option<bool>,
+    /// <p>When the image set was last accessed.</p>
+    pub last_accessed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The storage tier of the image set.</p>
+    pub storage_tier: ::std::option::Option<crate::types::StorageTier>,
     _request_id: Option<String>,
 }
 impl GetImageSetOutput {
@@ -81,6 +85,14 @@ impl GetImageSetOutput {
     pub fn is_primary(&self) -> ::std::option::Option<bool> {
         self.is_primary
     }
+    /// <p>When the image set was last accessed.</p>
+    pub fn last_accessed_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.last_accessed_at.as_ref()
+    }
+    /// <p>The storage tier of the image set.</p>
+    pub fn storage_tier(&self) -> ::std::option::Option<&crate::types::StorageTier> {
+        self.storage_tier.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetImageSetOutput {
     fn request_id(&self) -> Option<&str> {
@@ -110,6 +122,8 @@ pub struct GetImageSetOutputBuilder {
     pub(crate) image_set_arn: ::std::option::Option<::std::string::String>,
     pub(crate) overrides: ::std::option::Option<crate::types::Overrides>,
     pub(crate) is_primary: ::std::option::Option<bool>,
+    pub(crate) last_accessed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) storage_tier: ::std::option::Option<crate::types::StorageTier>,
     _request_id: Option<String>,
 }
 impl GetImageSetOutputBuilder {
@@ -285,6 +299,34 @@ impl GetImageSetOutputBuilder {
     pub fn get_is_primary(&self) -> &::std::option::Option<bool> {
         &self.is_primary
     }
+    /// <p>When the image set was last accessed.</p>
+    pub fn last_accessed_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_accessed_at = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>When the image set was last accessed.</p>
+    pub fn set_last_accessed_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_accessed_at = input;
+        self
+    }
+    /// <p>When the image set was last accessed.</p>
+    pub fn get_last_accessed_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_accessed_at
+    }
+    /// <p>The storage tier of the image set.</p>
+    pub fn storage_tier(mut self, input: crate::types::StorageTier) -> Self {
+        self.storage_tier = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The storage tier of the image set.</p>
+    pub fn set_storage_tier(mut self, input: ::std::option::Option<crate::types::StorageTier>) -> Self {
+        self.storage_tier = input;
+        self
+    }
+    /// <p>The storage tier of the image set.</p>
+    pub fn get_storage_tier(&self) -> &::std::option::Option<crate::types::StorageTier> {
+        &self.storage_tier
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -336,6 +378,8 @@ impl GetImageSetOutputBuilder {
             image_set_arn: self.image_set_arn,
             overrides: self.overrides,
             is_primary: self.is_primary,
+            last_accessed_at: self.last_accessed_at,
+            storage_tier: self.storage_tier,
             _request_id: self._request_id,
         })
     }

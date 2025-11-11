@@ -60,7 +60,7 @@ pub struct ComputeResource {
     /// <li>
     /// <p><code>default_x86_64</code> to choose x86 based instance types (from the <code>m6i</code>, <code>c6i</code>, <code>r6i</code>, and <code>c7i</code> instance families) that matches the resource demands of the job queue.</p></li>
     /// <li>
-    /// <p><code>default_arm64</code> to choose x86 based instance types (from the <code>m6g</code>, <code>c6g</code>, <code>r6g</code>, and <code>c7g</code> instance families) that matches the resource demands of the job queue.</p></li>
+    /// <p><code>default_arm64</code> to choose ARM based instance types (from the <code>m6g</code>, <code>c6g</code>, <code>r6g</code>, and <code>c7g</code> instance families) that matches the resource demands of the job queue.</p></li>
     /// </ul><note>
     /// <p>Starting on 11/01/2025 the behavior of <code>optimal</code> is going to be changed to match <code>default_x86_64</code>. During the change your instance families could be updated to a newer generation. You do not need to perform any actions for the upgrade to happen. For more information about change, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/optimal-default-instance-troubleshooting.html">Optimal instance type configuration to receive automatic instance family updates</a>.</p>
     /// </note> <note>
@@ -190,7 +190,7 @@ impl ComputeResource {
     /// <li>
     /// <p><code>default_x86_64</code> to choose x86 based instance types (from the <code>m6i</code>, <code>c6i</code>, <code>r6i</code>, and <code>c7i</code> instance families) that matches the resource demands of the job queue.</p></li>
     /// <li>
-    /// <p><code>default_arm64</code> to choose x86 based instance types (from the <code>m6g</code>, <code>c6g</code>, <code>r6g</code>, and <code>c7g</code> instance families) that matches the resource demands of the job queue.</p></li>
+    /// <p><code>default_arm64</code> to choose ARM based instance types (from the <code>m6g</code>, <code>c6g</code>, <code>r6g</code>, and <code>c7g</code> instance families) that matches the resource demands of the job queue.</p></li>
     /// </ul><note>
     /// <p>Starting on 11/01/2025 the behavior of <code>optimal</code> is going to be changed to match <code>default_x86_64</code>. During the change your instance families could be updated to a newer generation. You do not need to perform any actions for the upgrade to happen. For more information about change, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/optimal-default-instance-troubleshooting.html">Optimal instance type configuration to receive automatic instance family updates</a>.</p>
     /// </note> <note>
@@ -513,7 +513,7 @@ impl ComputeResourceBuilder {
     /// <li>
     /// <p><code>default_x86_64</code> to choose x86 based instance types (from the <code>m6i</code>, <code>c6i</code>, <code>r6i</code>, and <code>c7i</code> instance families) that matches the resource demands of the job queue.</p></li>
     /// <li>
-    /// <p><code>default_arm64</code> to choose x86 based instance types (from the <code>m6g</code>, <code>c6g</code>, <code>r6g</code>, and <code>c7g</code> instance families) that matches the resource demands of the job queue.</p></li>
+    /// <p><code>default_arm64</code> to choose ARM based instance types (from the <code>m6g</code>, <code>c6g</code>, <code>r6g</code>, and <code>c7g</code> instance families) that matches the resource demands of the job queue.</p></li>
     /// </ul><note>
     /// <p>Starting on 11/01/2025 the behavior of <code>optimal</code> is going to be changed to match <code>default_x86_64</code>. During the change your instance families could be updated to a newer generation. You do not need to perform any actions for the upgrade to happen. For more information about change, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/optimal-default-instance-troubleshooting.html">Optimal instance type configuration to receive automatic instance family updates</a>.</p>
     /// </note> <note>
@@ -539,7 +539,7 @@ impl ComputeResourceBuilder {
     /// <li>
     /// <p><code>default_x86_64</code> to choose x86 based instance types (from the <code>m6i</code>, <code>c6i</code>, <code>r6i</code>, and <code>c7i</code> instance families) that matches the resource demands of the job queue.</p></li>
     /// <li>
-    /// <p><code>default_arm64</code> to choose x86 based instance types (from the <code>m6g</code>, <code>c6g</code>, <code>r6g</code>, and <code>c7g</code> instance families) that matches the resource demands of the job queue.</p></li>
+    /// <p><code>default_arm64</code> to choose ARM based instance types (from the <code>m6g</code>, <code>c6g</code>, <code>r6g</code>, and <code>c7g</code> instance families) that matches the resource demands of the job queue.</p></li>
     /// </ul><note>
     /// <p>Starting on 11/01/2025 the behavior of <code>optimal</code> is going to be changed to match <code>default_x86_64</code>. During the change your instance families could be updated to a newer generation. You do not need to perform any actions for the upgrade to happen. For more information about change, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/optimal-default-instance-troubleshooting.html">Optimal instance type configuration to receive automatic instance family updates</a>.</p>
     /// </note> <note>
@@ -563,7 +563,7 @@ impl ComputeResourceBuilder {
     /// <li>
     /// <p><code>default_x86_64</code> to choose x86 based instance types (from the <code>m6i</code>, <code>c6i</code>, <code>r6i</code>, and <code>c7i</code> instance families) that matches the resource demands of the job queue.</p></li>
     /// <li>
-    /// <p><code>default_arm64</code> to choose x86 based instance types (from the <code>m6g</code>, <code>c6g</code>, <code>r6g</code>, and <code>c7g</code> instance families) that matches the resource demands of the job queue.</p></li>
+    /// <p><code>default_arm64</code> to choose ARM based instance types (from the <code>m6g</code>, <code>c6g</code>, <code>r6g</code>, and <code>c7g</code> instance families) that matches the resource demands of the job queue.</p></li>
     /// </ul><note>
     /// <p>Starting on 11/01/2025 the behavior of <code>optimal</code> is going to be changed to match <code>default_x86_64</code>. During the change your instance families could be updated to a newer generation. You do not need to perform any actions for the upgrade to happen. For more information about change, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/optimal-default-instance-troubleshooting.html">Optimal instance type configuration to receive automatic instance family updates</a>.</p>
     /// </note> <note>

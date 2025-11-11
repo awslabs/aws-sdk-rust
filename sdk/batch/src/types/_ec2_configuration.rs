@@ -50,8 +50,8 @@ pub struct Ec2Configuration {
     /// EKS
     /// </dt>
     /// <dd>
-    /// <p>If the <code>imageIdOverride</code> parameter isn't specified, then a recent <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon EKS-optimized Amazon Linux AMI</a> (<code>EKS_AL2</code>) is used. If a new image type is specified in an update, but neither an <code>imageId</code> nor a <code>imageIdOverride</code> parameter is specified, then the latest Amazon EKS optimized AMI for that image type that Batch supports is used.</p><important>
-    /// <p>Starting end of October 2025 Amazon EKS optimized Amazon Linux 2023 AMIs will be the default on Batch for EKS versions prior to 1.33. Starting from Kubernetes version 1.33, EKS optimized Amazon Linux 2023 AMIs will be the default when it becomes supported on Batch.</p>
+    /// <p>If the <code>imageIdOverride</code> parameter isn't specified, then a recent <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon EKS-optimized Amazon Linux 2023 AMI</a> (<code>EKS_AL2023</code>) is used. If a new image type is specified in an update, but neither an <code>imageId</code> nor a <code>imageIdOverride</code> parameter is specified, then the latest Amazon EKS optimized AMI for that image type that Batch supports is used.</p><important>
+    /// <p>Amazon Linux 2023 AMIs are the default on Batch for Amazon EKS.</p>
     /// <p>Amazon Web Services will end support for Amazon EKS AL2-optimized and AL2-accelerated AMIs, starting 11/26/25. You can continue using Batch-provided Amazon EKS optimized Amazon Linux 2 AMIs on your Amazon EKS compute environments beyond the 11/26/25 end-of-support date, these compute environments will no longer receive any new software updates, security patches, or bug fixes from Amazon Web Services. For more information on upgrading from AL2 to AL2023, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/eks-migration-2023.html">How to upgrade from EKS AL2 to EKS AL2023</a> in the <i>Batch User Guide</i>.</p>
     /// </important>
     /// <dl>
@@ -59,19 +59,19 @@ pub struct Ec2Configuration {
     /// EKS_AL2
     /// </dt>
     /// <dd>
-    /// <p><a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2</a>: Default for all non-GPU instance families.</p>
+    /// <p><a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2</a>: Used for non-GPU instance families.</p>
     /// </dd>
     /// <dt>
     /// EKS_AL2_NVIDIA
     /// </dt>
     /// <dd>
-    /// <p><a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2 (accelerated)</a>: Default for all GPU instance families (for example, <code>P4</code> and <code>G4</code>) and can be used for all non Amazon Web Services Graviton-based instance types.</p>
+    /// <p><a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2 (accelerated)</a>: Used for GPU instance families (for example, <code>P4</code> and <code>G4</code>) and can be used for all non Amazon Web Services Graviton-based instance types.</p>
     /// </dd>
     /// <dt>
     /// EKS_AL2023
     /// </dt>
     /// <dd>
-    /// <p><a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2023</a>: Batch supports Amazon Linux 2023.</p><note>
+    /// <p><a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2023</a>: Default for non-GPU instance families.</p><note>
     /// <p>Amazon Linux 2023 does not support <code>A1</code> instances.</p>
     /// </note>
     /// </dd>
@@ -79,7 +79,7 @@ pub struct Ec2Configuration {
     /// EKS_AL2023_NVIDIA
     /// </dt>
     /// <dd>
-    /// <p><a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2023 (accelerated)</a>: GPU instance families and can be used for all non Amazon Web Services Graviton-based instance types.</p>
+    /// <p><a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2023 (accelerated)</a>: Default for GPU instance families and can be used for all non Amazon Web Services Graviton-based instance types.</p>
     /// </dd>
     /// </dl>
     /// </dd>
@@ -137,8 +137,8 @@ impl Ec2Configuration {
     /// EKS
     /// </dt>
     /// <dd>
-    /// <p>If the <code>imageIdOverride</code> parameter isn't specified, then a recent <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon EKS-optimized Amazon Linux AMI</a> (<code>EKS_AL2</code>) is used. If a new image type is specified in an update, but neither an <code>imageId</code> nor a <code>imageIdOverride</code> parameter is specified, then the latest Amazon EKS optimized AMI for that image type that Batch supports is used.</p><important>
-    /// <p>Starting end of October 2025 Amazon EKS optimized Amazon Linux 2023 AMIs will be the default on Batch for EKS versions prior to 1.33. Starting from Kubernetes version 1.33, EKS optimized Amazon Linux 2023 AMIs will be the default when it becomes supported on Batch.</p>
+    /// <p>If the <code>imageIdOverride</code> parameter isn't specified, then a recent <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon EKS-optimized Amazon Linux 2023 AMI</a> (<code>EKS_AL2023</code>) is used. If a new image type is specified in an update, but neither an <code>imageId</code> nor a <code>imageIdOverride</code> parameter is specified, then the latest Amazon EKS optimized AMI for that image type that Batch supports is used.</p><important>
+    /// <p>Amazon Linux 2023 AMIs are the default on Batch for Amazon EKS.</p>
     /// <p>Amazon Web Services will end support for Amazon EKS AL2-optimized and AL2-accelerated AMIs, starting 11/26/25. You can continue using Batch-provided Amazon EKS optimized Amazon Linux 2 AMIs on your Amazon EKS compute environments beyond the 11/26/25 end-of-support date, these compute environments will no longer receive any new software updates, security patches, or bug fixes from Amazon Web Services. For more information on upgrading from AL2 to AL2023, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/eks-migration-2023.html">How to upgrade from EKS AL2 to EKS AL2023</a> in the <i>Batch User Guide</i>.</p>
     /// </important>
     /// <dl>
@@ -146,19 +146,19 @@ impl Ec2Configuration {
     /// EKS_AL2
     /// </dt>
     /// <dd>
-    /// <p><a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2</a>: Default for all non-GPU instance families.</p>
+    /// <p><a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2</a>: Used for non-GPU instance families.</p>
     /// </dd>
     /// <dt>
     /// EKS_AL2_NVIDIA
     /// </dt>
     /// <dd>
-    /// <p><a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2 (accelerated)</a>: Default for all GPU instance families (for example, <code>P4</code> and <code>G4</code>) and can be used for all non Amazon Web Services Graviton-based instance types.</p>
+    /// <p><a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2 (accelerated)</a>: Used for GPU instance families (for example, <code>P4</code> and <code>G4</code>) and can be used for all non Amazon Web Services Graviton-based instance types.</p>
     /// </dd>
     /// <dt>
     /// EKS_AL2023
     /// </dt>
     /// <dd>
-    /// <p><a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2023</a>: Batch supports Amazon Linux 2023.</p><note>
+    /// <p><a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2023</a>: Default for non-GPU instance families.</p><note>
     /// <p>Amazon Linux 2023 does not support <code>A1</code> instances.</p>
     /// </note>
     /// </dd>
@@ -166,7 +166,7 @@ impl Ec2Configuration {
     /// EKS_AL2023_NVIDIA
     /// </dt>
     /// <dd>
-    /// <p><a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2023 (accelerated)</a>: GPU instance families and can be used for all non Amazon Web Services Graviton-based instance types.</p>
+    /// <p><a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2023 (accelerated)</a>: Default for GPU instance families and can be used for all non Amazon Web Services Graviton-based instance types.</p>
     /// </dd>
     /// </dl>
     /// </dd>
@@ -245,8 +245,8 @@ impl Ec2ConfigurationBuilder {
     /// EKS
     /// </dt>
     /// <dd>
-    /// <p>If the <code>imageIdOverride</code> parameter isn't specified, then a recent <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon EKS-optimized Amazon Linux AMI</a> (<code>EKS_AL2</code>) is used. If a new image type is specified in an update, but neither an <code>imageId</code> nor a <code>imageIdOverride</code> parameter is specified, then the latest Amazon EKS optimized AMI for that image type that Batch supports is used.</p><important>
-    /// <p>Starting end of October 2025 Amazon EKS optimized Amazon Linux 2023 AMIs will be the default on Batch for EKS versions prior to 1.33. Starting from Kubernetes version 1.33, EKS optimized Amazon Linux 2023 AMIs will be the default when it becomes supported on Batch.</p>
+    /// <p>If the <code>imageIdOverride</code> parameter isn't specified, then a recent <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon EKS-optimized Amazon Linux 2023 AMI</a> (<code>EKS_AL2023</code>) is used. If a new image type is specified in an update, but neither an <code>imageId</code> nor a <code>imageIdOverride</code> parameter is specified, then the latest Amazon EKS optimized AMI for that image type that Batch supports is used.</p><important>
+    /// <p>Amazon Linux 2023 AMIs are the default on Batch for Amazon EKS.</p>
     /// <p>Amazon Web Services will end support for Amazon EKS AL2-optimized and AL2-accelerated AMIs, starting 11/26/25. You can continue using Batch-provided Amazon EKS optimized Amazon Linux 2 AMIs on your Amazon EKS compute environments beyond the 11/26/25 end-of-support date, these compute environments will no longer receive any new software updates, security patches, or bug fixes from Amazon Web Services. For more information on upgrading from AL2 to AL2023, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/eks-migration-2023.html">How to upgrade from EKS AL2 to EKS AL2023</a> in the <i>Batch User Guide</i>.</p>
     /// </important>
     /// <dl>
@@ -254,19 +254,19 @@ impl Ec2ConfigurationBuilder {
     /// EKS_AL2
     /// </dt>
     /// <dd>
-    /// <p><a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2</a>: Default for all non-GPU instance families.</p>
+    /// <p><a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2</a>: Used for non-GPU instance families.</p>
     /// </dd>
     /// <dt>
     /// EKS_AL2_NVIDIA
     /// </dt>
     /// <dd>
-    /// <p><a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2 (accelerated)</a>: Default for all GPU instance families (for example, <code>P4</code> and <code>G4</code>) and can be used for all non Amazon Web Services Graviton-based instance types.</p>
+    /// <p><a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2 (accelerated)</a>: Used for GPU instance families (for example, <code>P4</code> and <code>G4</code>) and can be used for all non Amazon Web Services Graviton-based instance types.</p>
     /// </dd>
     /// <dt>
     /// EKS_AL2023
     /// </dt>
     /// <dd>
-    /// <p><a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2023</a>: Batch supports Amazon Linux 2023.</p><note>
+    /// <p><a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2023</a>: Default for non-GPU instance families.</p><note>
     /// <p>Amazon Linux 2023 does not support <code>A1</code> instances.</p>
     /// </note>
     /// </dd>
@@ -274,7 +274,7 @@ impl Ec2ConfigurationBuilder {
     /// EKS_AL2023_NVIDIA
     /// </dt>
     /// <dd>
-    /// <p><a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2023 (accelerated)</a>: GPU instance families and can be used for all non Amazon Web Services Graviton-based instance types.</p>
+    /// <p><a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2023 (accelerated)</a>: Default for GPU instance families and can be used for all non Amazon Web Services Graviton-based instance types.</p>
     /// </dd>
     /// </dl>
     /// </dd>
@@ -328,8 +328,8 @@ impl Ec2ConfigurationBuilder {
     /// EKS
     /// </dt>
     /// <dd>
-    /// <p>If the <code>imageIdOverride</code> parameter isn't specified, then a recent <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon EKS-optimized Amazon Linux AMI</a> (<code>EKS_AL2</code>) is used. If a new image type is specified in an update, but neither an <code>imageId</code> nor a <code>imageIdOverride</code> parameter is specified, then the latest Amazon EKS optimized AMI for that image type that Batch supports is used.</p><important>
-    /// <p>Starting end of October 2025 Amazon EKS optimized Amazon Linux 2023 AMIs will be the default on Batch for EKS versions prior to 1.33. Starting from Kubernetes version 1.33, EKS optimized Amazon Linux 2023 AMIs will be the default when it becomes supported on Batch.</p>
+    /// <p>If the <code>imageIdOverride</code> parameter isn't specified, then a recent <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon EKS-optimized Amazon Linux 2023 AMI</a> (<code>EKS_AL2023</code>) is used. If a new image type is specified in an update, but neither an <code>imageId</code> nor a <code>imageIdOverride</code> parameter is specified, then the latest Amazon EKS optimized AMI for that image type that Batch supports is used.</p><important>
+    /// <p>Amazon Linux 2023 AMIs are the default on Batch for Amazon EKS.</p>
     /// <p>Amazon Web Services will end support for Amazon EKS AL2-optimized and AL2-accelerated AMIs, starting 11/26/25. You can continue using Batch-provided Amazon EKS optimized Amazon Linux 2 AMIs on your Amazon EKS compute environments beyond the 11/26/25 end-of-support date, these compute environments will no longer receive any new software updates, security patches, or bug fixes from Amazon Web Services. For more information on upgrading from AL2 to AL2023, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/eks-migration-2023.html">How to upgrade from EKS AL2 to EKS AL2023</a> in the <i>Batch User Guide</i>.</p>
     /// </important>
     /// <dl>
@@ -337,19 +337,19 @@ impl Ec2ConfigurationBuilder {
     /// EKS_AL2
     /// </dt>
     /// <dd>
-    /// <p><a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2</a>: Default for all non-GPU instance families.</p>
+    /// <p><a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2</a>: Used for non-GPU instance families.</p>
     /// </dd>
     /// <dt>
     /// EKS_AL2_NVIDIA
     /// </dt>
     /// <dd>
-    /// <p><a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2 (accelerated)</a>: Default for all GPU instance families (for example, <code>P4</code> and <code>G4</code>) and can be used for all non Amazon Web Services Graviton-based instance types.</p>
+    /// <p><a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2 (accelerated)</a>: Used for GPU instance families (for example, <code>P4</code> and <code>G4</code>) and can be used for all non Amazon Web Services Graviton-based instance types.</p>
     /// </dd>
     /// <dt>
     /// EKS_AL2023
     /// </dt>
     /// <dd>
-    /// <p><a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2023</a>: Batch supports Amazon Linux 2023.</p><note>
+    /// <p><a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2023</a>: Default for non-GPU instance families.</p><note>
     /// <p>Amazon Linux 2023 does not support <code>A1</code> instances.</p>
     /// </note>
     /// </dd>
@@ -357,7 +357,7 @@ impl Ec2ConfigurationBuilder {
     /// EKS_AL2023_NVIDIA
     /// </dt>
     /// <dd>
-    /// <p><a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2023 (accelerated)</a>: GPU instance families and can be used for all non Amazon Web Services Graviton-based instance types.</p>
+    /// <p><a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2023 (accelerated)</a>: Default for GPU instance families and can be used for all non Amazon Web Services Graviton-based instance types.</p>
     /// </dd>
     /// </dl>
     /// </dd>
@@ -410,8 +410,8 @@ impl Ec2ConfigurationBuilder {
     /// EKS
     /// </dt>
     /// <dd>
-    /// <p>If the <code>imageIdOverride</code> parameter isn't specified, then a recent <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon EKS-optimized Amazon Linux AMI</a> (<code>EKS_AL2</code>) is used. If a new image type is specified in an update, but neither an <code>imageId</code> nor a <code>imageIdOverride</code> parameter is specified, then the latest Amazon EKS optimized AMI for that image type that Batch supports is used.</p><important>
-    /// <p>Starting end of October 2025 Amazon EKS optimized Amazon Linux 2023 AMIs will be the default on Batch for EKS versions prior to 1.33. Starting from Kubernetes version 1.33, EKS optimized Amazon Linux 2023 AMIs will be the default when it becomes supported on Batch.</p>
+    /// <p>If the <code>imageIdOverride</code> parameter isn't specified, then a recent <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon EKS-optimized Amazon Linux 2023 AMI</a> (<code>EKS_AL2023</code>) is used. If a new image type is specified in an update, but neither an <code>imageId</code> nor a <code>imageIdOverride</code> parameter is specified, then the latest Amazon EKS optimized AMI for that image type that Batch supports is used.</p><important>
+    /// <p>Amazon Linux 2023 AMIs are the default on Batch for Amazon EKS.</p>
     /// <p>Amazon Web Services will end support for Amazon EKS AL2-optimized and AL2-accelerated AMIs, starting 11/26/25. You can continue using Batch-provided Amazon EKS optimized Amazon Linux 2 AMIs on your Amazon EKS compute environments beyond the 11/26/25 end-of-support date, these compute environments will no longer receive any new software updates, security patches, or bug fixes from Amazon Web Services. For more information on upgrading from AL2 to AL2023, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/eks-migration-2023.html">How to upgrade from EKS AL2 to EKS AL2023</a> in the <i>Batch User Guide</i>.</p>
     /// </important>
     /// <dl>
@@ -419,19 +419,19 @@ impl Ec2ConfigurationBuilder {
     /// EKS_AL2
     /// </dt>
     /// <dd>
-    /// <p><a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2</a>: Default for all non-GPU instance families.</p>
+    /// <p><a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2</a>: Used for non-GPU instance families.</p>
     /// </dd>
     /// <dt>
     /// EKS_AL2_NVIDIA
     /// </dt>
     /// <dd>
-    /// <p><a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2 (accelerated)</a>: Default for all GPU instance families (for example, <code>P4</code> and <code>G4</code>) and can be used for all non Amazon Web Services Graviton-based instance types.</p>
+    /// <p><a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2 (accelerated)</a>: Used for GPU instance families (for example, <code>P4</code> and <code>G4</code>) and can be used for all non Amazon Web Services Graviton-based instance types.</p>
     /// </dd>
     /// <dt>
     /// EKS_AL2023
     /// </dt>
     /// <dd>
-    /// <p><a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2023</a>: Batch supports Amazon Linux 2023.</p><note>
+    /// <p><a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2023</a>: Default for non-GPU instance families.</p><note>
     /// <p>Amazon Linux 2023 does not support <code>A1</code> instances.</p>
     /// </note>
     /// </dd>
@@ -439,7 +439,7 @@ impl Ec2ConfigurationBuilder {
     /// EKS_AL2023_NVIDIA
     /// </dt>
     /// <dd>
-    /// <p><a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2023 (accelerated)</a>: GPU instance families and can be used for all non Amazon Web Services Graviton-based instance types.</p>
+    /// <p><a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2023 (accelerated)</a>: Default for GPU instance families and can be used for all non Amazon Web Services Graviton-based instance types.</p>
     /// </dd>
     /// </dl>
     /// </dd>

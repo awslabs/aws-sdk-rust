@@ -3,6 +3,8 @@ pub use crate::types::_datastore_status::DatastoreStatus;
 
 pub use crate::types::_datastore_properties::DatastoreProperties;
 
+pub use crate::types::_lossless_storage_format::LosslessStorageFormat;
+
 pub use crate::types::_datastore_summary::DatastoreSummary;
 
 pub use crate::types::_image_set_workflow_status::ImageSetWorkflowStatus;
@@ -24,6 +26,8 @@ pub use crate::types::_sort_order::SortOrder;
 pub use crate::types::_image_sets_metadata_summary::ImageSetsMetadataSummary;
 
 pub use crate::types::_dicom_tags::DicomTags;
+
+pub use crate::types::_storage_tier::StorageTier;
 
 pub use crate::types::_search_criteria::SearchCriteria;
 
@@ -95,6 +99,8 @@ mod _image_sets_metadata_summary;
 
 mod _job_status;
 
+mod _lossless_storage_format;
+
 mod _metadata_copies;
 
 mod _metadata_updates;
@@ -114,6 +120,8 @@ mod _sort;
 mod _sort_field;
 
 mod _sort_order;
+
+mod _storage_tier;
 
 /// Builders
 pub mod builders;

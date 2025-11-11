@@ -26,6 +26,8 @@ pub struct VpnConnectionOptions {
     pub tunnel_inside_ip_version: ::std::option::Option<crate::types::TunnelInsideIpVersion>,
     /// <p>Indicates the VPN tunnel options.</p>
     pub tunnel_options: ::std::option::Option<::std::vec::Vec<crate::types::TunnelOption>>,
+    /// <p>The configured bandwidth for the VPN tunnel. Represents the current throughput capacity setting for the tunnel connection. <code>standard</code> tunnel bandwidth supports up to 1.25 Gbps per tunnel while <code>large</code> supports up to 5 Gbps per tunnel. If no tunnel bandwidth was specified for the connection, <code>standard</code> is used as the default value.</p>
+    pub tunnel_bandwidth: ::std::option::Option<crate::types::VpnTunnelBandwidth>,
 }
 impl VpnConnectionOptions {
     /// <p>Indicates whether acceleration is enabled for the VPN connection.</p>
@@ -72,6 +74,10 @@ impl VpnConnectionOptions {
     pub fn tunnel_options(&self) -> &[crate::types::TunnelOption] {
         self.tunnel_options.as_deref().unwrap_or_default()
     }
+    /// <p>The configured bandwidth for the VPN tunnel. Represents the current throughput capacity setting for the tunnel connection. <code>standard</code> tunnel bandwidth supports up to 1.25 Gbps per tunnel while <code>large</code> supports up to 5 Gbps per tunnel. If no tunnel bandwidth was specified for the connection, <code>standard</code> is used as the default value.</p>
+    pub fn tunnel_bandwidth(&self) -> ::std::option::Option<&crate::types::VpnTunnelBandwidth> {
+        self.tunnel_bandwidth.as_ref()
+    }
 }
 impl VpnConnectionOptions {
     /// Creates a new builder-style object to manufacture [`VpnConnectionOptions`](crate::types::VpnConnectionOptions).
@@ -94,6 +100,7 @@ pub struct VpnConnectionOptionsBuilder {
     pub(crate) transport_transit_gateway_attachment_id: ::std::option::Option<::std::string::String>,
     pub(crate) tunnel_inside_ip_version: ::std::option::Option<crate::types::TunnelInsideIpVersion>,
     pub(crate) tunnel_options: ::std::option::Option<::std::vec::Vec<crate::types::TunnelOption>>,
+    pub(crate) tunnel_bandwidth: ::std::option::Option<crate::types::VpnTunnelBandwidth>,
 }
 impl VpnConnectionOptionsBuilder {
     /// <p>Indicates whether acceleration is enabled for the VPN connection.</p>
@@ -248,6 +255,20 @@ impl VpnConnectionOptionsBuilder {
     pub fn get_tunnel_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TunnelOption>> {
         &self.tunnel_options
     }
+    /// <p>The configured bandwidth for the VPN tunnel. Represents the current throughput capacity setting for the tunnel connection. <code>standard</code> tunnel bandwidth supports up to 1.25 Gbps per tunnel while <code>large</code> supports up to 5 Gbps per tunnel. If no tunnel bandwidth was specified for the connection, <code>standard</code> is used as the default value.</p>
+    pub fn tunnel_bandwidth(mut self, input: crate::types::VpnTunnelBandwidth) -> Self {
+        self.tunnel_bandwidth = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configured bandwidth for the VPN tunnel. Represents the current throughput capacity setting for the tunnel connection. <code>standard</code> tunnel bandwidth supports up to 1.25 Gbps per tunnel while <code>large</code> supports up to 5 Gbps per tunnel. If no tunnel bandwidth was specified for the connection, <code>standard</code> is used as the default value.</p>
+    pub fn set_tunnel_bandwidth(mut self, input: ::std::option::Option<crate::types::VpnTunnelBandwidth>) -> Self {
+        self.tunnel_bandwidth = input;
+        self
+    }
+    /// <p>The configured bandwidth for the VPN tunnel. Represents the current throughput capacity setting for the tunnel connection. <code>standard</code> tunnel bandwidth supports up to 1.25 Gbps per tunnel while <code>large</code> supports up to 5 Gbps per tunnel. If no tunnel bandwidth was specified for the connection, <code>standard</code> is used as the default value.</p>
+    pub fn get_tunnel_bandwidth(&self) -> &::std::option::Option<crate::types::VpnTunnelBandwidth> {
+        &self.tunnel_bandwidth
+    }
     /// Consumes the builder and constructs a [`VpnConnectionOptions`](crate::types::VpnConnectionOptions).
     pub fn build(self) -> crate::types::VpnConnectionOptions {
         crate::types::VpnConnectionOptions {
@@ -261,6 +282,7 @@ impl VpnConnectionOptionsBuilder {
             transport_transit_gateway_attachment_id: self.transport_transit_gateway_attachment_id,
             tunnel_inside_ip_version: self.tunnel_inside_ip_version,
             tunnel_options: self.tunnel_options,
+            tunnel_bandwidth: self.tunnel_bandwidth,
         }
     }
 }

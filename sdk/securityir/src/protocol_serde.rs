@@ -186,3 +186,5 @@ pub(crate) mod shape_list_membership_item;
 pub(crate) mod shape_organizational_units;
 
 pub(crate) mod shape_validation_exception_field;
+
+pub(crate) mod shape_communication_preferences;

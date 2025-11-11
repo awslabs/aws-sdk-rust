@@ -14,6 +14,8 @@ pub struct DatastoreProperties {
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the authorizer's Lambda function.</p>
     pub lambda_authorizer_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The datastore's lossless storage format.</p>
+    pub lossless_storage_format: ::std::option::Option<crate::types::LosslessStorageFormat>,
     /// <p>The Amazon Resource Name (ARN) for the data store.</p>
     pub datastore_arn: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when the data store was created.</p>
@@ -44,6 +46,10 @@ impl DatastoreProperties {
     pub fn lambda_authorizer_arn(&self) -> ::std::option::Option<&str> {
         self.lambda_authorizer_arn.as_deref()
     }
+    /// <p>The datastore's lossless storage format.</p>
+    pub fn lossless_storage_format(&self) -> ::std::option::Option<&crate::types::LosslessStorageFormat> {
+        self.lossless_storage_format.as_ref()
+    }
     /// <p>The Amazon Resource Name (ARN) for the data store.</p>
     pub fn datastore_arn(&self) -> ::std::option::Option<&str> {
         self.datastore_arn.as_deref()
@@ -73,6 +79,7 @@ pub struct DatastorePropertiesBuilder {
     pub(crate) datastore_status: ::std::option::Option<crate::types::DatastoreStatus>,
     pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
     pub(crate) lambda_authorizer_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) lossless_storage_format: ::std::option::Option<crate::types::LosslessStorageFormat>,
     pub(crate) datastore_arn: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -151,6 +158,20 @@ impl DatastorePropertiesBuilder {
     pub fn get_lambda_authorizer_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.lambda_authorizer_arn
     }
+    /// <p>The datastore's lossless storage format.</p>
+    pub fn lossless_storage_format(mut self, input: crate::types::LosslessStorageFormat) -> Self {
+        self.lossless_storage_format = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The datastore's lossless storage format.</p>
+    pub fn set_lossless_storage_format(mut self, input: ::std::option::Option<crate::types::LosslessStorageFormat>) -> Self {
+        self.lossless_storage_format = input;
+        self
+    }
+    /// <p>The datastore's lossless storage format.</p>
+    pub fn get_lossless_storage_format(&self) -> &::std::option::Option<crate::types::LosslessStorageFormat> {
+        &self.lossless_storage_format
+    }
     /// <p>The Amazon Resource Name (ARN) for the data store.</p>
     pub fn datastore_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.datastore_arn = ::std::option::Option::Some(input.into());
@@ -220,6 +241,7 @@ impl DatastorePropertiesBuilder {
             })?,
             kms_key_arn: self.kms_key_arn,
             lambda_authorizer_arn: self.lambda_authorizer_arn,
+            lossless_storage_format: self.lossless_storage_format,
             datastore_arn: self.datastore_arn,
             created_at: self.created_at,
             updated_at: self.updated_at,

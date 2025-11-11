@@ -3,21 +3,33 @@ pub fn ser_create_outbound_external_link_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_outbound_external_link::CreateOutboundExternalLinkInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.client_token {
-        object.key("clientToken").string(var_1.as_str());
-    }
-    if let Some(var_2) = &input.public_endpoint {
-        object.key("publicEndpoint").string(var_2.as_str());
-    }
-    if let Some(var_3) = &input.tags {
+    if let Some(var_1) = &input.attributes {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("tags").start_object();
-        for (key_5, value_6) in var_3 {
+        let mut object_2 = object.key("attributes").start_object();
+        crate::protocol_serde::shape_link_attributes::ser_link_attributes(&mut object_2, var_1)?;
+        object_2.finish();
+    }
+    if let Some(var_3) = &input.client_token {
+        object.key("clientToken").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.log_settings {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("logSettings").start_object();
+        crate::protocol_serde::shape_link_log_settings::ser_link_log_settings(&mut object_5, var_4)?;
+        object_5.finish();
+    }
+    if let Some(var_6) = &input.public_endpoint {
+        object.key("publicEndpoint").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("tags").start_object();
+        for (key_9, value_10) in var_7 {
             {
-                object_4.key(key_5.as_str()).string(value_6.as_str());
+                object_8.key(key_9.as_str()).string(value_10.as_str());
             }
         }
-        object_4.finish();
+        object_8.finish();
     }
     Ok(())
 }

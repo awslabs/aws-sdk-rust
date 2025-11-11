@@ -151,6 +151,8 @@ pub(crate) mod shape_video_override_configuration;
 
 pub(crate) mod shape_video_standard_output_configuration;
 
+pub(crate) mod shape_audio_language_configuration;
+
 pub(crate) mod shape_audio_standard_extraction;
 
 pub(crate) mod shape_audio_standard_generative_field;
@@ -194,6 +196,8 @@ pub(crate) mod shape_video_bounding_box;
 pub(crate) mod shape_video_extraction_category;
 
 pub(crate) mod shape_audio_extraction_category_type_configuration;
+
+pub(crate) mod shape_audio_input_languages;
 
 pub(crate) mod shape_audio_standard_generative_field_types;
 

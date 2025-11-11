@@ -5,6 +5,12 @@ pub use crate::types::_auto_scaling_groups_configuration::AutoScalingGroupsConfi
 
 pub use crate::types::_trust_store_configuration::TrustStoreConfigurationBuilder;
 
+pub use crate::types::_link_log_settings::LinkLogSettingsBuilder;
+
+pub use crate::types::_link_application_log_configuration::LinkApplicationLogConfigurationBuilder;
+
+pub use crate::types::_link_application_log_sampling::LinkApplicationLogSamplingBuilder;
+
 pub use crate::types::_link_attributes::LinkAttributesBuilder;
 
 pub use crate::types::_responder_error_masking_for_http_code::ResponderErrorMaskingForHttpCodeBuilder;
@@ -24,11 +30,5 @@ pub use crate::types::_filter::FilterBuilder;
 pub use crate::types::_filter_criterion::FilterCriterionBuilder;
 
 pub use crate::types::_no_bid_module_parameters::NoBidModuleParametersBuilder;
-
-pub use crate::types::_link_log_settings::LinkLogSettingsBuilder;
-
-pub use crate::types::_link_application_log_configuration::LinkApplicationLogConfigurationBuilder;
-
-pub use crate::types::_link_application_log_sampling::LinkApplicationLogSamplingBuilder;
 
 pub use crate::types::_list_links_response_structure::ListLinksResponseStructureBuilder;

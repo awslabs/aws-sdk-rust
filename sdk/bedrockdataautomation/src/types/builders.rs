@@ -9,6 +9,8 @@ pub use crate::types::_modality_routing_configuration::ModalityRoutingConfigurat
 
 pub use crate::types::_audio_override_configuration::AudioOverrideConfigurationBuilder;
 
+pub use crate::types::_audio_language_configuration::AudioLanguageConfigurationBuilder;
+
 pub use crate::types::_modality_processing_configuration::ModalityProcessingConfigurationBuilder;
 
 pub use crate::types::_video_override_configuration::VideoOverrideConfigurationBuilder;

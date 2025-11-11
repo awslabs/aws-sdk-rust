@@ -9,6 +9,12 @@ pub fn ser_audio_override_configuration(
         crate::protocol_serde::shape_modality_processing_configuration::ser_modality_processing_configuration(&mut object_2, var_1)?;
         object_2.finish();
     }
+    if let Some(var_3) = &input.language_configuration {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("languageConfiguration").start_object();
+        crate::protocol_serde::shape_audio_language_configuration::ser_audio_language_configuration(&mut object_4, var_3)?;
+        object_4.finish();
+    }
     Ok(())
 }
 
@@ -30,6 +36,11 @@ where
                         "modalityProcessing" => {
                             builder = builder.set_modality_processing(
                                 crate::protocol_serde::shape_modality_processing_configuration::de_modality_processing_configuration(tokens)?,
+                            );
+                        }
+                        "languageConfiguration" => {
+                            builder = builder.set_language_configuration(
+                                crate::protocol_serde::shape_audio_language_configuration::de_audio_language_configuration(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

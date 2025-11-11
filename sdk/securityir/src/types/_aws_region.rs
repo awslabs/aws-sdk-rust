@@ -25,6 +25,7 @@
 ///     AwsRegion::ApSoutheast3 => { /* ... */ },
 ///     AwsRegion::ApSoutheast4 => { /* ... */ },
 ///     AwsRegion::ApSoutheast5 => { /* ... */ },
+///     AwsRegion::ApSoutheast6 => { /* ... */ },
 ///     AwsRegion::ApSoutheast7 => { /* ... */ },
 ///     AwsRegion::CaCentral1 => { /* ... */ },
 ///     AwsRegion::CaWest1 => { /* ... */ },
@@ -102,6 +103,8 @@ pub enum AwsRegion {
     #[allow(missing_docs)] // documentation missing in model
     ApSoutheast5,
     #[allow(missing_docs)] // documentation missing in model
+    ApSoutheast6,
+    #[allow(missing_docs)] // documentation missing in model
     ApSoutheast7,
     #[allow(missing_docs)] // documentation missing in model
     CaCentral1,
@@ -165,6 +168,7 @@ impl ::std::convert::From<&str> for AwsRegion {
             "ap-southeast-3" => AwsRegion::ApSoutheast3,
             "ap-southeast-4" => AwsRegion::ApSoutheast4,
             "ap-southeast-5" => AwsRegion::ApSoutheast5,
+            "ap-southeast-6" => AwsRegion::ApSoutheast6,
             "ap-southeast-7" => AwsRegion::ApSoutheast7,
             "ca-central-1" => AwsRegion::CaCentral1,
             "ca-west-1" => AwsRegion::CaWest1,
@@ -215,6 +219,7 @@ impl AwsRegion {
             AwsRegion::ApSoutheast3 => "ap-southeast-3",
             AwsRegion::ApSoutheast4 => "ap-southeast-4",
             AwsRegion::ApSoutheast5 => "ap-southeast-5",
+            AwsRegion::ApSoutheast6 => "ap-southeast-6",
             AwsRegion::ApSoutheast7 => "ap-southeast-7",
             AwsRegion::CaCentral1 => "ca-central-1",
             AwsRegion::CaWest1 => "ca-west-1",
@@ -256,6 +261,7 @@ impl AwsRegion {
             "ap-southeast-3",
             "ap-southeast-4",
             "ap-southeast-5",
+            "ap-southeast-6",
             "ap-southeast-7",
             "ca-central-1",
             "ca-west-1",
@@ -314,6 +320,7 @@ impl ::std::fmt::Display for AwsRegion {
             AwsRegion::ApSoutheast3 => write!(f, "ap-southeast-3"),
             AwsRegion::ApSoutheast4 => write!(f, "ap-southeast-4"),
             AwsRegion::ApSoutheast5 => write!(f, "ap-southeast-5"),
+            AwsRegion::ApSoutheast6 => write!(f, "ap-southeast-6"),
             AwsRegion::ApSoutheast7 => write!(f, "ap-southeast-7"),
             AwsRegion::CaCentral1 => write!(f, "ca-central-1"),
             AwsRegion::CaWest1 => write!(f, "ca-west-1"),

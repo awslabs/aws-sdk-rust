@@ -31,6 +31,8 @@ pub struct VpnConnectionOptionsSpecification {
     /// <p>The transit gateway attachment ID to use for the VPN tunnel.</p>
     /// <p>Required if <code>OutsideIpAddressType</code> is set to <code>PrivateIpv4</code>.</p>
     pub transport_transit_gateway_attachment_id: ::std::option::Option<::std::string::String>,
+    /// <p>The desired bandwidth specification for the VPN tunnel, used when creating or modifying VPN connection options to set the tunnel's throughput capacity. <code>standard</code> supports up to 1.25 Gbps per tunnel, while <code>large</code> supports up to 5 Gbps per tunnel. The default value is <code>standard</code>. Existing VPN connections without a bandwidth setting will automatically default to <code>standard</code>.</p>
+    pub tunnel_bandwidth: ::std::option::Option<crate::types::VpnTunnelBandwidth>,
     /// <p>Indicate whether the VPN connection uses static routes only. If you are creating a VPN connection for a device that does not support BGP, you must specify <code>true</code>. Use <code>CreateVpnConnectionRoute</code> to create a static route.</p>
     /// <p>Default: <code>false</code></p>
     pub static_routes_only: ::std::option::Option<bool>,
@@ -83,6 +85,10 @@ impl VpnConnectionOptionsSpecification {
     pub fn transport_transit_gateway_attachment_id(&self) -> ::std::option::Option<&str> {
         self.transport_transit_gateway_attachment_id.as_deref()
     }
+    /// <p>The desired bandwidth specification for the VPN tunnel, used when creating or modifying VPN connection options to set the tunnel's throughput capacity. <code>standard</code> supports up to 1.25 Gbps per tunnel, while <code>large</code> supports up to 5 Gbps per tunnel. The default value is <code>standard</code>. Existing VPN connections without a bandwidth setting will automatically default to <code>standard</code>.</p>
+    pub fn tunnel_bandwidth(&self) -> ::std::option::Option<&crate::types::VpnTunnelBandwidth> {
+        self.tunnel_bandwidth.as_ref()
+    }
     /// <p>Indicate whether the VPN connection uses static routes only. If you are creating a VPN connection for a device that does not support BGP, you must specify <code>true</code>. Use <code>CreateVpnConnectionRoute</code> to create a static route.</p>
     /// <p>Default: <code>false</code></p>
     pub fn static_routes_only(&self) -> ::std::option::Option<bool> {
@@ -109,6 +115,7 @@ pub struct VpnConnectionOptionsSpecificationBuilder {
     pub(crate) remote_ipv6_network_cidr: ::std::option::Option<::std::string::String>,
     pub(crate) outside_ip_address_type: ::std::option::Option<::std::string::String>,
     pub(crate) transport_transit_gateway_attachment_id: ::std::option::Option<::std::string::String>,
+    pub(crate) tunnel_bandwidth: ::std::option::Option<crate::types::VpnTunnelBandwidth>,
     pub(crate) static_routes_only: ::std::option::Option<bool>,
 }
 impl VpnConnectionOptionsSpecificationBuilder {
@@ -271,6 +278,20 @@ impl VpnConnectionOptionsSpecificationBuilder {
     pub fn get_transport_transit_gateway_attachment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.transport_transit_gateway_attachment_id
     }
+    /// <p>The desired bandwidth specification for the VPN tunnel, used when creating or modifying VPN connection options to set the tunnel's throughput capacity. <code>standard</code> supports up to 1.25 Gbps per tunnel, while <code>large</code> supports up to 5 Gbps per tunnel. The default value is <code>standard</code>. Existing VPN connections without a bandwidth setting will automatically default to <code>standard</code>.</p>
+    pub fn tunnel_bandwidth(mut self, input: crate::types::VpnTunnelBandwidth) -> Self {
+        self.tunnel_bandwidth = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The desired bandwidth specification for the VPN tunnel, used when creating or modifying VPN connection options to set the tunnel's throughput capacity. <code>standard</code> supports up to 1.25 Gbps per tunnel, while <code>large</code> supports up to 5 Gbps per tunnel. The default value is <code>standard</code>. Existing VPN connections without a bandwidth setting will automatically default to <code>standard</code>.</p>
+    pub fn set_tunnel_bandwidth(mut self, input: ::std::option::Option<crate::types::VpnTunnelBandwidth>) -> Self {
+        self.tunnel_bandwidth = input;
+        self
+    }
+    /// <p>The desired bandwidth specification for the VPN tunnel, used when creating or modifying VPN connection options to set the tunnel's throughput capacity. <code>standard</code> supports up to 1.25 Gbps per tunnel, while <code>large</code> supports up to 5 Gbps per tunnel. The default value is <code>standard</code>. Existing VPN connections without a bandwidth setting will automatically default to <code>standard</code>.</p>
+    pub fn get_tunnel_bandwidth(&self) -> &::std::option::Option<crate::types::VpnTunnelBandwidth> {
+        &self.tunnel_bandwidth
+    }
     /// <p>Indicate whether the VPN connection uses static routes only. If you are creating a VPN connection for a device that does not support BGP, you must specify <code>true</code>. Use <code>CreateVpnConnectionRoute</code> to create a static route.</p>
     /// <p>Default: <code>false</code></p>
     pub fn static_routes_only(mut self, input: bool) -> Self {
@@ -300,6 +321,7 @@ impl VpnConnectionOptionsSpecificationBuilder {
             remote_ipv6_network_cidr: self.remote_ipv6_network_cidr,
             outside_ip_address_type: self.outside_ip_address_type,
             transport_transit_gateway_attachment_id: self.transport_transit_gateway_attachment_id,
+            tunnel_bandwidth: self.tunnel_bandwidth,
             static_routes_only: self.static_routes_only,
         }
     }

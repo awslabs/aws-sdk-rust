@@ -7,8 +7,12 @@ pub struct CreateOutboundExternalLinkInput {
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the gateway.</p>
     pub gateway_id: ::std::option::Option<::std::string::String>,
+    /// <p>Describes the attributes of a link.</p>
+    pub attributes: ::std::option::Option<crate::types::LinkAttributes>,
     /// <p>The public endpoint of the link.</p>
     pub public_endpoint: ::std::option::Option<::std::string::String>,
+    /// <p>Describes the settings for a link log.</p>
+    pub log_settings: ::std::option::Option<crate::types::LinkLogSettings>,
     /// <p>A map of the key-value pairs of the tag or tags to assign to the resource.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -21,9 +25,17 @@ impl CreateOutboundExternalLinkInput {
     pub fn gateway_id(&self) -> ::std::option::Option<&str> {
         self.gateway_id.as_deref()
     }
+    /// <p>Describes the attributes of a link.</p>
+    pub fn attributes(&self) -> ::std::option::Option<&crate::types::LinkAttributes> {
+        self.attributes.as_ref()
+    }
     /// <p>The public endpoint of the link.</p>
     pub fn public_endpoint(&self) -> ::std::option::Option<&str> {
         self.public_endpoint.as_deref()
+    }
+    /// <p>Describes the settings for a link log.</p>
+    pub fn log_settings(&self) -> ::std::option::Option<&crate::types::LinkLogSettings> {
+        self.log_settings.as_ref()
     }
     /// <p>A map of the key-value pairs of the tag or tags to assign to the resource.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -43,7 +55,9 @@ impl CreateOutboundExternalLinkInput {
 pub struct CreateOutboundExternalLinkInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) gateway_id: ::std::option::Option<::std::string::String>,
+    pub(crate) attributes: ::std::option::Option<crate::types::LinkAttributes>,
     pub(crate) public_endpoint: ::std::option::Option<::std::string::String>,
+    pub(crate) log_settings: ::std::option::Option<crate::types::LinkLogSettings>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateOutboundExternalLinkInputBuilder {
@@ -77,6 +91,20 @@ impl CreateOutboundExternalLinkInputBuilder {
     pub fn get_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.gateway_id
     }
+    /// <p>Describes the attributes of a link.</p>
+    pub fn attributes(mut self, input: crate::types::LinkAttributes) -> Self {
+        self.attributes = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Describes the attributes of a link.</p>
+    pub fn set_attributes(mut self, input: ::std::option::Option<crate::types::LinkAttributes>) -> Self {
+        self.attributes = input;
+        self
+    }
+    /// <p>Describes the attributes of a link.</p>
+    pub fn get_attributes(&self) -> &::std::option::Option<crate::types::LinkAttributes> {
+        &self.attributes
+    }
     /// <p>The public endpoint of the link.</p>
     /// This field is required.
     pub fn public_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -91,6 +119,21 @@ impl CreateOutboundExternalLinkInputBuilder {
     /// <p>The public endpoint of the link.</p>
     pub fn get_public_endpoint(&self) -> &::std::option::Option<::std::string::String> {
         &self.public_endpoint
+    }
+    /// <p>Describes the settings for a link log.</p>
+    /// This field is required.
+    pub fn log_settings(mut self, input: crate::types::LinkLogSettings) -> Self {
+        self.log_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Describes the settings for a link log.</p>
+    pub fn set_log_settings(mut self, input: ::std::option::Option<crate::types::LinkLogSettings>) -> Self {
+        self.log_settings = input;
+        self
+    }
+    /// <p>Describes the settings for a link log.</p>
+    pub fn get_log_settings(&self) -> &::std::option::Option<crate::types::LinkLogSettings> {
+        &self.log_settings
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -122,7 +165,9 @@ impl CreateOutboundExternalLinkInputBuilder {
         ::std::result::Result::Ok(crate::operation::create_outbound_external_link::CreateOutboundExternalLinkInput {
             client_token: self.client_token,
             gateway_id: self.gateway_id,
+            attributes: self.attributes,
             public_endpoint: self.public_endpoint,
+            log_settings: self.log_settings,
             tags: self.tags,
         })
     }

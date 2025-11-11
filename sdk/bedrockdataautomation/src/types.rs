@@ -15,6 +15,12 @@ pub use crate::types::_desired_modality::DesiredModality;
 
 pub use crate::types::_audio_override_configuration::AudioOverrideConfiguration;
 
+pub use crate::types::_audio_language_configuration::AudioLanguageConfiguration;
+
+pub use crate::types::_audio_generative_output_language::AudioGenerativeOutputLanguage;
+
+pub use crate::types::_language::Language;
+
 pub use crate::types::_modality_processing_configuration::ModalityProcessingConfiguration;
 
 pub use crate::types::_state::State;
@@ -131,6 +137,10 @@ mod _audio_extraction_category_type;
 
 mod _audio_extraction_category_type_configuration;
 
+mod _audio_generative_output_language;
+
+mod _audio_language_configuration;
+
 mod _audio_override_configuration;
 
 mod _audio_standard_extraction;
@@ -210,6 +220,8 @@ mod _image_standard_generative_field;
 mod _image_standard_generative_field_type;
 
 mod _image_standard_output_configuration;
+
+mod _language;
 
 mod _modality_processing_configuration;
 

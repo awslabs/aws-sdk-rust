@@ -183,4 +183,18 @@ impl CreateDatastoreFluentBuilder {
     pub fn get_lambda_authorizer_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_lambda_authorizer_arn()
     }
+    /// <p>The lossless storage format for the datastore.</p>
+    pub fn lossless_storage_format(mut self, input: crate::types::LosslessStorageFormat) -> Self {
+        self.inner = self.inner.lossless_storage_format(input);
+        self
+    }
+    /// <p>The lossless storage format for the datastore.</p>
+    pub fn set_lossless_storage_format(mut self, input: ::std::option::Option<crate::types::LosslessStorageFormat>) -> Self {
+        self.inner = self.inner.set_lossless_storage_format(input);
+        self
+    }
+    /// <p>The lossless storage format for the datastore.</p>
+    pub fn get_lossless_storage_format(&self) -> &::std::option::Option<crate::types::LosslessStorageFormat> {
+        self.inner.get_lossless_storage_format()
+    }
 }
