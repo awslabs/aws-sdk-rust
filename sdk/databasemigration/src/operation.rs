@@ -10,6 +10,12 @@ pub mod apply_pending_maintenance_action;
 /// Types for the `BatchStartRecommendations` operation.
 pub mod batch_start_recommendations;
 
+/// Types for the `CancelMetadataModelConversion` operation.
+pub mod cancel_metadata_model_conversion;
+
+/// Types for the `CancelMetadataModelCreation` operation.
+pub mod cancel_metadata_model_creation;
+
 /// Types for the `CancelReplicationTaskAssessmentRun` operation.
 pub mod cancel_replication_task_assessment_run;
 
@@ -154,11 +160,20 @@ pub mod describe_fleet_advisor_schemas;
 /// Types for the `DescribeInstanceProfiles` operation.
 pub mod describe_instance_profiles;
 
+/// Types for the `DescribeMetadataModel` operation.
+pub mod describe_metadata_model;
+
 /// Types for the `DescribeMetadataModelAssessments` operation.
 pub mod describe_metadata_model_assessments;
 
+/// Types for the `DescribeMetadataModelChildren` operation.
+pub mod describe_metadata_model_children;
+
 /// Types for the `DescribeMetadataModelConversions` operation.
 pub mod describe_metadata_model_conversions;
+
+/// Types for the `DescribeMetadataModelCreations` operation.
+pub mod describe_metadata_model_creations;
 
 /// Types for the `DescribeMetadataModelExportsAsScript` operation.
 pub mod describe_metadata_model_exports_as_script;
@@ -225,6 +240,9 @@ pub mod describe_table_statistics;
 
 /// Types for the `ExportMetadataModelAssessment` operation.
 pub mod export_metadata_model_assessment;
+
+/// Types for the `GetTargetSelectionRules` operation.
+pub mod get_target_selection_rules;
 
 /// Types for the `ImportCertificate` operation.
 pub mod import_certificate;
@@ -297,6 +315,9 @@ pub mod start_metadata_model_assessment;
 
 /// Types for the `StartMetadataModelConversion` operation.
 pub mod start_metadata_model_conversion;
+
+/// Types for the `StartMetadataModelCreation` operation.
+pub mod start_metadata_model_creation;
 
 /// Types for the `StartMetadataModelExportAsScript` operation.
 pub mod start_metadata_model_export_as_script;

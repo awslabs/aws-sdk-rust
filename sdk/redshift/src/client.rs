@@ -407,6 +407,8 @@ mod get_cluster_credentials;
 
 mod get_cluster_credentials_with_iam;
 
+mod get_identity_center_auth_token;
+
 mod get_reserved_node_exchange_configuration_options;
 
 mod get_reserved_node_exchange_offerings;

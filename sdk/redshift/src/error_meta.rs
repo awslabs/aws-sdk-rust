@@ -202,6 +202,8 @@ pub enum Error {
     RedshiftIdcApplicationNotExistsFault(crate::types::error::RedshiftIdcApplicationNotExistsFault),
     /// <p>The maximum number of Redshift IAM Identity Center applications was exceeded.</p>
     RedshiftIdcApplicationQuotaExceededFault(crate::types::error::RedshiftIdcApplicationQuotaExceededFault),
+    /// <p>The request contains one or more invalid parameters. This error occurs when required parameters are missing, parameter values are outside acceptable ranges, or parameter formats are incorrect.</p>
+    RedshiftInvalidParameterFault(crate::types::error::RedshiftInvalidParameterFault),
     /// <p>User already has a reservation with the given identifier.</p>
     ReservedNodeAlreadyExistsFault(crate::types::error::ReservedNodeAlreadyExistsFault),
     /// <p>Indicates that the reserved node has already been exchanged.</p>
@@ -399,6 +401,7 @@ impl ::std::fmt::Display for Error {
             Error::RedshiftIdcApplicationAlreadyExistsFault(inner) => inner.fmt(f),
             Error::RedshiftIdcApplicationNotExistsFault(inner) => inner.fmt(f),
             Error::RedshiftIdcApplicationQuotaExceededFault(inner) => inner.fmt(f),
+            Error::RedshiftInvalidParameterFault(inner) => inner.fmt(f),
             Error::ReservedNodeAlreadyExistsFault(inner) => inner.fmt(f),
             Error::ReservedNodeAlreadyMigratedFault(inner) => inner.fmt(f),
             Error::ReservedNodeExchangeNotFoundFault(inner) => inner.fmt(f),
@@ -562,6 +565,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::RedshiftIdcApplicationAlreadyExistsFault(inner) => inner.meta(),
             Self::RedshiftIdcApplicationNotExistsFault(inner) => inner.meta(),
             Self::RedshiftIdcApplicationQuotaExceededFault(inner) => inner.meta(),
+            Self::RedshiftInvalidParameterFault(inner) => inner.meta(),
             Self::ReservedNodeAlreadyExistsFault(inner) => inner.meta(),
             Self::ReservedNodeAlreadyMigratedFault(inner) => inner.meta(),
             Self::ReservedNodeExchangeNotFoundFault(inner) => inner.meta(),
@@ -3876,6 +3880,42 @@ impl From<crate::operation::get_cluster_credentials_with_iam::GetClusterCredenti
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_identity_center_auth_token::GetIdentityCenterAuthTokenError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_identity_center_auth_token::GetIdentityCenterAuthTokenError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_identity_center_auth_token::GetIdentityCenterAuthTokenError> for Error {
+    fn from(err: crate::operation::get_identity_center_auth_token::GetIdentityCenterAuthTokenError) -> Self {
+        match err {
+            crate::operation::get_identity_center_auth_token::GetIdentityCenterAuthTokenError::ClusterNotFoundFault(inner) => {
+                Error::ClusterNotFoundFault(inner)
+            }
+            crate::operation::get_identity_center_auth_token::GetIdentityCenterAuthTokenError::InvalidClusterStateFault(inner) => {
+                Error::InvalidClusterStateFault(inner)
+            }
+            crate::operation::get_identity_center_auth_token::GetIdentityCenterAuthTokenError::RedshiftInvalidParameterFault(inner) => {
+                Error::RedshiftInvalidParameterFault(inner)
+            }
+            crate::operation::get_identity_center_auth_token::GetIdentityCenterAuthTokenError::UnsupportedOperationFault(inner) => {
+                Error::UnsupportedOperationFault(inner)
+            }
+            crate::operation::get_identity_center_auth_token::GetIdentityCenterAuthTokenError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
@@ -5444,6 +5484,7 @@ impl ::std::error::Error for Error {
             Error::RedshiftIdcApplicationAlreadyExistsFault(inner) => inner.source(),
             Error::RedshiftIdcApplicationNotExistsFault(inner) => inner.source(),
             Error::RedshiftIdcApplicationQuotaExceededFault(inner) => inner.source(),
+            Error::RedshiftInvalidParameterFault(inner) => inner.source(),
             Error::ReservedNodeAlreadyExistsFault(inner) => inner.source(),
             Error::ReservedNodeAlreadyMigratedFault(inner) => inner.source(),
             Error::ReservedNodeExchangeNotFoundFault(inner) => inner.source(),
@@ -5593,6 +5634,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::RedshiftIdcApplicationAlreadyExistsFault(e) => e.request_id(),
             Self::RedshiftIdcApplicationNotExistsFault(e) => e.request_id(),
             Self::RedshiftIdcApplicationQuotaExceededFault(e) => e.request_id(),
+            Self::RedshiftInvalidParameterFault(e) => e.request_id(),
             Self::ReservedNodeAlreadyExistsFault(e) => e.request_id(),
             Self::ReservedNodeAlreadyMigratedFault(e) => e.request_id(),
             Self::ReservedNodeExchangeNotFoundFault(e) => e.request_id(),

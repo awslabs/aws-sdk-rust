@@ -1309,6 +1309,8 @@ pub use crate::types::_ek_pub_key_type::EkPubKeyType;
 
 pub use crate::types::_instance_metadata_defaults_response::InstanceMetadataDefaultsResponse;
 
+pub use crate::types::_image_ancestry_entry::ImageAncestryEntry;
+
 pub use crate::types::_capacity_reservation_group::CapacityReservationGroup;
 
 pub use crate::types::_integrate_services::IntegrateServices;
@@ -3384,6 +3386,8 @@ mod _ike_versions_list_value;
 mod _ike_versions_request_list_value;
 
 mod _image;
+
+mod _image_ancestry_entry;
 
 mod _image_attribute_name;
 

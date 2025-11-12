@@ -393,6 +393,8 @@ pub(crate) mod shape_http_header_condition_config;
 
 pub(crate) mod shape_http_request_method_condition_config;
 
+pub(crate) mod shape_jwt_validation_action_config;
+
 pub(crate) mod shape_limits;
 
 pub(crate) mod shape_listener_attributes;
@@ -438,6 +440,8 @@ pub(crate) mod shape_zonal_capacity_reservation_states;
 pub(crate) mod shape_availability_zone;
 
 pub(crate) mod shape_describe_trust_store_revocation;
+
+pub(crate) mod shape_jwt_validation_action_additional_claim;
 
 pub(crate) mod shape_limit;
 
@@ -511,8 +515,12 @@ pub(crate) mod shape_authenticate_cognito_action_authentication_request_extra_pa
 
 pub(crate) mod shape_authenticate_oidc_action_authentication_request_extra_params;
 
+pub(crate) mod shape_jwt_validation_action_additional_claims;
+
 pub(crate) mod shape_query_string_key_value_pair_list;
 
 pub(crate) mod shape_rewrite_config_list;
 
 pub(crate) mod shape_target_group_list;
+
+pub(crate) mod shape_jwt_validation_action_additional_claim_values;

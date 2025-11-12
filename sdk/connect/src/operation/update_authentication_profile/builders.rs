@@ -204,17 +204,57 @@ impl UpdateAuthenticationProfileFluentBuilder {
         self.inner.get_blocked_ips()
     }
     /// <p>The short lived session duration configuration for users logged in to Amazon Connect, in minutes. This value determines the maximum possible time before an agent is authenticated. For more information, For more information on how to configure IP addresses, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/authentication-profiles.html#configure-session-timeouts">Configure session timeouts</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    #[deprecated(
+        note = "PeriodicSessionDuration is deprecated. Use SessionInactivityDuration instead.",
+        since = "10/31/2025"
+    )]
     pub fn periodic_session_duration(mut self, input: i32) -> Self {
         self.inner = self.inner.periodic_session_duration(input);
         self
     }
     /// <p>The short lived session duration configuration for users logged in to Amazon Connect, in minutes. This value determines the maximum possible time before an agent is authenticated. For more information, For more information on how to configure IP addresses, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/authentication-profiles.html#configure-session-timeouts">Configure session timeouts</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    #[deprecated(
+        note = "PeriodicSessionDuration is deprecated. Use SessionInactivityDuration instead.",
+        since = "10/31/2025"
+    )]
     pub fn set_periodic_session_duration(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_periodic_session_duration(input);
         self
     }
     /// <p>The short lived session duration configuration for users logged in to Amazon Connect, in minutes. This value determines the maximum possible time before an agent is authenticated. For more information, For more information on how to configure IP addresses, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/authentication-profiles.html#configure-session-timeouts">Configure session timeouts</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    #[deprecated(
+        note = "PeriodicSessionDuration is deprecated. Use SessionInactivityDuration instead.",
+        since = "10/31/2025"
+    )]
     pub fn get_periodic_session_duration(&self) -> &::std::option::Option<i32> {
         self.inner.get_periodic_session_duration()
+    }
+    /// <p>The period, in minutes, before an agent is automatically signed out of the contact center when they go inactive.</p>
+    pub fn session_inactivity_duration(mut self, input: i32) -> Self {
+        self.inner = self.inner.session_inactivity_duration(input);
+        self
+    }
+    /// <p>The period, in minutes, before an agent is automatically signed out of the contact center when they go inactive.</p>
+    pub fn set_session_inactivity_duration(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.inner = self.inner.set_session_inactivity_duration(input);
+        self
+    }
+    /// <p>The period, in minutes, before an agent is automatically signed out of the contact center when they go inactive.</p>
+    pub fn get_session_inactivity_duration(&self) -> &::std::option::Option<i32> {
+        self.inner.get_session_inactivity_duration()
+    }
+    /// <p>Determines if automatic logout on user inactivity is enabled.</p>
+    pub fn session_inactivity_handling_enabled(mut self, input: bool) -> Self {
+        self.inner = self.inner.session_inactivity_handling_enabled(input);
+        self
+    }
+    /// <p>Determines if automatic logout on user inactivity is enabled.</p>
+    pub fn set_session_inactivity_handling_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_session_inactivity_handling_enabled(input);
+        self
+    }
+    /// <p>Determines if automatic logout on user inactivity is enabled.</p>
+    pub fn get_session_inactivity_handling_enabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_session_inactivity_handling_enabled()
     }
 }

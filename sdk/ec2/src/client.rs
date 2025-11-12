@@ -1422,6 +1422,8 @@ mod get_groups_for_capacity_reservation;
 
 mod get_host_reservation_purchase_preview;
 
+mod get_image_ancestry;
+
 mod get_image_block_public_access_state;
 
 mod get_instance_metadata_defaults;

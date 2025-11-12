@@ -7,7 +7,7 @@ pub struct SetSecurityGroupsInput {
     pub load_balancer_arn: ::std::option::Option<::std::string::String>,
     /// <p>The IDs of the security groups.</p>
     pub security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>Indicates whether to evaluate inbound security group rules for traffic sent to a Network Load Balancer through Amazon Web Services PrivateLink. The default is <code>on</code>.</p>
+    /// <p>Indicates whether to evaluate inbound security group rules for traffic sent to a Network Load Balancer through Amazon Web Services PrivateLink. Applies only if the load balancer has an associated security group. The default is <code>on</code>.</p>
     pub enforce_security_group_inbound_rules_on_private_link_traffic:
         ::std::option::Option<crate::types::EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnum>,
 }
@@ -22,7 +22,7 @@ impl SetSecurityGroupsInput {
     pub fn security_groups(&self) -> &[::std::string::String] {
         self.security_groups.as_deref().unwrap_or_default()
     }
-    /// <p>Indicates whether to evaluate inbound security group rules for traffic sent to a Network Load Balancer through Amazon Web Services PrivateLink. The default is <code>on</code>.</p>
+    /// <p>Indicates whether to evaluate inbound security group rules for traffic sent to a Network Load Balancer through Amazon Web Services PrivateLink. Applies only if the load balancer has an associated security group. The default is <code>on</code>.</p>
     pub fn enforce_security_group_inbound_rules_on_private_link_traffic(
         &self,
     ) -> ::std::option::Option<&crate::types::EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnum> {
@@ -81,7 +81,7 @@ impl SetSecurityGroupsInputBuilder {
     pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_groups
     }
-    /// <p>Indicates whether to evaluate inbound security group rules for traffic sent to a Network Load Balancer through Amazon Web Services PrivateLink. The default is <code>on</code>.</p>
+    /// <p>Indicates whether to evaluate inbound security group rules for traffic sent to a Network Load Balancer through Amazon Web Services PrivateLink. Applies only if the load balancer has an associated security group. The default is <code>on</code>.</p>
     pub fn enforce_security_group_inbound_rules_on_private_link_traffic(
         mut self,
         input: crate::types::EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnum,
@@ -89,7 +89,7 @@ impl SetSecurityGroupsInputBuilder {
         self.enforce_security_group_inbound_rules_on_private_link_traffic = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether to evaluate inbound security group rules for traffic sent to a Network Load Balancer through Amazon Web Services PrivateLink. The default is <code>on</code>.</p>
+    /// <p>Indicates whether to evaluate inbound security group rules for traffic sent to a Network Load Balancer through Amazon Web Services PrivateLink. Applies only if the load balancer has an associated security group. The default is <code>on</code>.</p>
     pub fn set_enforce_security_group_inbound_rules_on_private_link_traffic(
         mut self,
         input: ::std::option::Option<crate::types::EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnum>,
@@ -97,7 +97,7 @@ impl SetSecurityGroupsInputBuilder {
         self.enforce_security_group_inbound_rules_on_private_link_traffic = input;
         self
     }
-    /// <p>Indicates whether to evaluate inbound security group rules for traffic sent to a Network Load Balancer through Amazon Web Services PrivateLink. The default is <code>on</code>.</p>
+    /// <p>Indicates whether to evaluate inbound security group rules for traffic sent to a Network Load Balancer through Amazon Web Services PrivateLink. Applies only if the load balancer has an associated security group. The default is <code>on</code>.</p>
     pub fn get_enforce_security_group_inbound_rules_on_private_link_traffic(
         &self,
     ) -> &::std::option::Option<crate::types::EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnum> {

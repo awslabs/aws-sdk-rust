@@ -189,8 +189,28 @@ pub(crate) fn reflens_describe_metadata_model_assessments_output_output_marker(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_describe_metadata_model_children_output_output_marker(
+    input: &crate::operation::describe_metadata_model_children::DescribeMetadataModelChildrenOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.marker {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_describe_metadata_model_conversions_output_output_marker(
     input: &crate::operation::describe_metadata_model_conversions::DescribeMetadataModelConversionsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.marker {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_describe_metadata_model_creations_output_output_marker(
+    input: &crate::operation::describe_metadata_model_creations::DescribeMetadataModelCreationsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.marker {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -403,5 +423,19 @@ pub(crate) fn lens_describe_data_migrations_output_output_data_migrations(
     input: crate::operation::describe_data_migrations::DescribeDataMigrationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DataMigration>> {
     let input = input.data_migrations?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_describe_metadata_model_children_output_output_metadata_model_children(
+    input: crate::operation::describe_metadata_model_children::DescribeMetadataModelChildrenOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::MetadataModelReference>> {
+    let input = input.metadata_model_children?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_describe_metadata_model_creations_output_output_requests(
+    input: crate::operation::describe_metadata_model_creations::DescribeMetadataModelCreationsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::SchemaConversionRequest>> {
+    let input = input.requests?;
     ::std::option::Option::Some(input)
 }

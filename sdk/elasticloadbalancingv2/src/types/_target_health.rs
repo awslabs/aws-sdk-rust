@@ -18,13 +18,13 @@ pub struct TargetHealth {
     /// <p>If the target state is <code>unhealthy</code>, the reason code can be one of the following values:</p>
     /// <ul>
     /// <li>
-    /// <p><code>Target.ResponseCodeMismatch</code> - The health checks did not return an expected HTTP code. Applies only to Application Load Balancers and Gateway Load Balancers.</p></li>
+    /// <p><code>Target.ResponseCodeMismatch</code> - The health checks did not return an expected HTTP code.</p></li>
     /// <li>
-    /// <p><code>Target.Timeout</code> - The health check requests timed out. Applies only to Application Load Balancers and Gateway Load Balancers.</p></li>
+    /// <p><code>Target.Timeout</code> - The health check requests timed out.</p></li>
     /// <li>
     /// <p><code>Target.FailedHealthChecks</code> - The load balancer received an error while establishing a connection to the target or the target response was malformed.</p></li>
     /// <li>
-    /// <p><code>Elb.InternalError</code> - The health checks failed due to an internal error. Applies only to Application Load Balancers.</p></li>
+    /// <p><code>Elb.InternalError</code> - The health checks failed due to an internal error.</p></li>
     /// </ul>
     /// <p>If the target state is <code>unused</code>, the reason code can be one of the following values:</p>
     /// <ul>
@@ -45,9 +45,9 @@ pub struct TargetHealth {
     /// <p>If the target state is <code>unavailable</code>, the reason code can be the following value:</p>
     /// <ul>
     /// <li>
-    /// <p><code>Target.HealthCheckDisabled</code> - Health checks are disabled for the target group. Applies only to Application Load Balancers.</p></li>
+    /// <p><code>Target.HealthCheckDisabled</code> - Health checks are disabled for the target group.</p></li>
     /// <li>
-    /// <p><code>Elb.InternalError</code> - Target health is unavailable due to an internal error. Applies only to Network Load Balancers.</p></li>
+    /// <p><code>Elb.InternalError</code> - Target health is unavailable due to an internal error.</p></li>
     /// </ul>
     pub reason: ::std::option::Option<crate::types::TargetHealthReasonEnum>,
     /// <p>A description of the target health that provides additional details. If the state is <code>healthy</code>, a description is not provided.</p>
@@ -70,13 +70,13 @@ impl TargetHealth {
     /// <p>If the target state is <code>unhealthy</code>, the reason code can be one of the following values:</p>
     /// <ul>
     /// <li>
-    /// <p><code>Target.ResponseCodeMismatch</code> - The health checks did not return an expected HTTP code. Applies only to Application Load Balancers and Gateway Load Balancers.</p></li>
+    /// <p><code>Target.ResponseCodeMismatch</code> - The health checks did not return an expected HTTP code.</p></li>
     /// <li>
-    /// <p><code>Target.Timeout</code> - The health check requests timed out. Applies only to Application Load Balancers and Gateway Load Balancers.</p></li>
+    /// <p><code>Target.Timeout</code> - The health check requests timed out.</p></li>
     /// <li>
     /// <p><code>Target.FailedHealthChecks</code> - The load balancer received an error while establishing a connection to the target or the target response was malformed.</p></li>
     /// <li>
-    /// <p><code>Elb.InternalError</code> - The health checks failed due to an internal error. Applies only to Application Load Balancers.</p></li>
+    /// <p><code>Elb.InternalError</code> - The health checks failed due to an internal error.</p></li>
     /// </ul>
     /// <p>If the target state is <code>unused</code>, the reason code can be one of the following values:</p>
     /// <ul>
@@ -97,9 +97,9 @@ impl TargetHealth {
     /// <p>If the target state is <code>unavailable</code>, the reason code can be the following value:</p>
     /// <ul>
     /// <li>
-    /// <p><code>Target.HealthCheckDisabled</code> - Health checks are disabled for the target group. Applies only to Application Load Balancers.</p></li>
+    /// <p><code>Target.HealthCheckDisabled</code> - Health checks are disabled for the target group.</p></li>
     /// <li>
-    /// <p><code>Elb.InternalError</code> - Target health is unavailable due to an internal error. Applies only to Network Load Balancers.</p></li>
+    /// <p><code>Elb.InternalError</code> - Target health is unavailable due to an internal error.</p></li>
     /// </ul>
     pub fn reason(&self) -> ::std::option::Option<&crate::types::TargetHealthReasonEnum> {
         self.reason.as_ref()
@@ -151,13 +151,13 @@ impl TargetHealthBuilder {
     /// <p>If the target state is <code>unhealthy</code>, the reason code can be one of the following values:</p>
     /// <ul>
     /// <li>
-    /// <p><code>Target.ResponseCodeMismatch</code> - The health checks did not return an expected HTTP code. Applies only to Application Load Balancers and Gateway Load Balancers.</p></li>
+    /// <p><code>Target.ResponseCodeMismatch</code> - The health checks did not return an expected HTTP code.</p></li>
     /// <li>
-    /// <p><code>Target.Timeout</code> - The health check requests timed out. Applies only to Application Load Balancers and Gateway Load Balancers.</p></li>
+    /// <p><code>Target.Timeout</code> - The health check requests timed out.</p></li>
     /// <li>
     /// <p><code>Target.FailedHealthChecks</code> - The load balancer received an error while establishing a connection to the target or the target response was malformed.</p></li>
     /// <li>
-    /// <p><code>Elb.InternalError</code> - The health checks failed due to an internal error. Applies only to Application Load Balancers.</p></li>
+    /// <p><code>Elb.InternalError</code> - The health checks failed due to an internal error.</p></li>
     /// </ul>
     /// <p>If the target state is <code>unused</code>, the reason code can be one of the following values:</p>
     /// <ul>
@@ -178,9 +178,9 @@ impl TargetHealthBuilder {
     /// <p>If the target state is <code>unavailable</code>, the reason code can be the following value:</p>
     /// <ul>
     /// <li>
-    /// <p><code>Target.HealthCheckDisabled</code> - Health checks are disabled for the target group. Applies only to Application Load Balancers.</p></li>
+    /// <p><code>Target.HealthCheckDisabled</code> - Health checks are disabled for the target group.</p></li>
     /// <li>
-    /// <p><code>Elb.InternalError</code> - Target health is unavailable due to an internal error. Applies only to Network Load Balancers.</p></li>
+    /// <p><code>Elb.InternalError</code> - Target health is unavailable due to an internal error.</p></li>
     /// </ul>
     pub fn reason(mut self, input: crate::types::TargetHealthReasonEnum) -> Self {
         self.reason = ::std::option::Option::Some(input);
@@ -198,13 +198,13 @@ impl TargetHealthBuilder {
     /// <p>If the target state is <code>unhealthy</code>, the reason code can be one of the following values:</p>
     /// <ul>
     /// <li>
-    /// <p><code>Target.ResponseCodeMismatch</code> - The health checks did not return an expected HTTP code. Applies only to Application Load Balancers and Gateway Load Balancers.</p></li>
+    /// <p><code>Target.ResponseCodeMismatch</code> - The health checks did not return an expected HTTP code.</p></li>
     /// <li>
-    /// <p><code>Target.Timeout</code> - The health check requests timed out. Applies only to Application Load Balancers and Gateway Load Balancers.</p></li>
+    /// <p><code>Target.Timeout</code> - The health check requests timed out.</p></li>
     /// <li>
     /// <p><code>Target.FailedHealthChecks</code> - The load balancer received an error while establishing a connection to the target or the target response was malformed.</p></li>
     /// <li>
-    /// <p><code>Elb.InternalError</code> - The health checks failed due to an internal error. Applies only to Application Load Balancers.</p></li>
+    /// <p><code>Elb.InternalError</code> - The health checks failed due to an internal error.</p></li>
     /// </ul>
     /// <p>If the target state is <code>unused</code>, the reason code can be one of the following values:</p>
     /// <ul>
@@ -225,9 +225,9 @@ impl TargetHealthBuilder {
     /// <p>If the target state is <code>unavailable</code>, the reason code can be the following value:</p>
     /// <ul>
     /// <li>
-    /// <p><code>Target.HealthCheckDisabled</code> - Health checks are disabled for the target group. Applies only to Application Load Balancers.</p></li>
+    /// <p><code>Target.HealthCheckDisabled</code> - Health checks are disabled for the target group.</p></li>
     /// <li>
-    /// <p><code>Elb.InternalError</code> - Target health is unavailable due to an internal error. Applies only to Network Load Balancers.</p></li>
+    /// <p><code>Elb.InternalError</code> - Target health is unavailable due to an internal error.</p></li>
     /// </ul>
     pub fn set_reason(mut self, input: ::std::option::Option<crate::types::TargetHealthReasonEnum>) -> Self {
         self.reason = input;
@@ -245,13 +245,13 @@ impl TargetHealthBuilder {
     /// <p>If the target state is <code>unhealthy</code>, the reason code can be one of the following values:</p>
     /// <ul>
     /// <li>
-    /// <p><code>Target.ResponseCodeMismatch</code> - The health checks did not return an expected HTTP code. Applies only to Application Load Balancers and Gateway Load Balancers.</p></li>
+    /// <p><code>Target.ResponseCodeMismatch</code> - The health checks did not return an expected HTTP code.</p></li>
     /// <li>
-    /// <p><code>Target.Timeout</code> - The health check requests timed out. Applies only to Application Load Balancers and Gateway Load Balancers.</p></li>
+    /// <p><code>Target.Timeout</code> - The health check requests timed out.</p></li>
     /// <li>
     /// <p><code>Target.FailedHealthChecks</code> - The load balancer received an error while establishing a connection to the target or the target response was malformed.</p></li>
     /// <li>
-    /// <p><code>Elb.InternalError</code> - The health checks failed due to an internal error. Applies only to Application Load Balancers.</p></li>
+    /// <p><code>Elb.InternalError</code> - The health checks failed due to an internal error.</p></li>
     /// </ul>
     /// <p>If the target state is <code>unused</code>, the reason code can be one of the following values:</p>
     /// <ul>
@@ -272,9 +272,9 @@ impl TargetHealthBuilder {
     /// <p>If the target state is <code>unavailable</code>, the reason code can be the following value:</p>
     /// <ul>
     /// <li>
-    /// <p><code>Target.HealthCheckDisabled</code> - Health checks are disabled for the target group. Applies only to Application Load Balancers.</p></li>
+    /// <p><code>Target.HealthCheckDisabled</code> - Health checks are disabled for the target group.</p></li>
     /// <li>
-    /// <p><code>Elb.InternalError</code> - Target health is unavailable due to an internal error. Applies only to Network Load Balancers.</p></li>
+    /// <p><code>Elb.InternalError</code> - Target health is unavailable due to an internal error.</p></li>
     /// </ul>
     pub fn get_reason(&self) -> &::std::option::Option<crate::types::TargetHealthReasonEnum> {
         &self.reason

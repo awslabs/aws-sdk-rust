@@ -22,6 +22,9 @@ pub mod delete_table_bucket;
 /// Types for the `DeleteTableBucketEncryption` operation.
 pub mod delete_table_bucket_encryption;
 
+/// Types for the `DeleteTableBucketMetricsConfiguration` operation.
+pub mod delete_table_bucket_metrics_configuration;
+
 /// Types for the `DeleteTableBucketPolicy` operation.
 pub mod delete_table_bucket_policy;
 
@@ -42,6 +45,9 @@ pub mod get_table_bucket_encryption;
 
 /// Types for the `GetTableBucketMaintenanceConfiguration` operation.
 pub mod get_table_bucket_maintenance_configuration;
+
+/// Types for the `GetTableBucketMetricsConfiguration` operation.
+pub mod get_table_bucket_metrics_configuration;
 
 /// Types for the `GetTableBucketPolicy` operation.
 pub mod get_table_bucket_policy;
@@ -78,6 +84,9 @@ pub mod put_table_bucket_encryption;
 
 /// Types for the `PutTableBucketMaintenanceConfiguration` operation.
 pub mod put_table_bucket_maintenance_configuration;
+
+/// Types for the `PutTableBucketMetricsConfiguration` operation.
+pub mod put_table_bucket_metrics_configuration;
 
 /// Types for the `PutTableBucketPolicy` operation.
 pub mod put_table_bucket_policy;

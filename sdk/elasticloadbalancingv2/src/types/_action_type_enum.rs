@@ -16,6 +16,7 @@
 ///     ActionTypeEnum::AuthenticateOidc => { /* ... */ },
 ///     ActionTypeEnum::FixedResponse => { /* ... */ },
 ///     ActionTypeEnum::Forward => { /* ... */ },
+///     ActionTypeEnum::JwtValidation => { /* ... */ },
 ///     ActionTypeEnum::Redirect => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -54,6 +55,8 @@ pub enum ActionTypeEnum {
     #[allow(missing_docs)] // documentation missing in model
     Forward,
     #[allow(missing_docs)] // documentation missing in model
+    JwtValidation,
+    #[allow(missing_docs)] // documentation missing in model
     Redirect,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -66,6 +69,7 @@ impl ::std::convert::From<&str> for ActionTypeEnum {
             "authenticate-oidc" => ActionTypeEnum::AuthenticateOidc,
             "fixed-response" => ActionTypeEnum::FixedResponse,
             "forward" => ActionTypeEnum::Forward,
+            "jwt-validation" => ActionTypeEnum::JwtValidation,
             "redirect" => ActionTypeEnum::Redirect,
             other => ActionTypeEnum::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -86,13 +90,21 @@ impl ActionTypeEnum {
             ActionTypeEnum::AuthenticateOidc => "authenticate-oidc",
             ActionTypeEnum::FixedResponse => "fixed-response",
             ActionTypeEnum::Forward => "forward",
+            ActionTypeEnum::JwtValidation => "jwt-validation",
             ActionTypeEnum::Redirect => "redirect",
             ActionTypeEnum::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["authenticate-cognito", "authenticate-oidc", "fixed-response", "forward", "redirect"]
+        &[
+            "authenticate-cognito",
+            "authenticate-oidc",
+            "fixed-response",
+            "forward",
+            "jwt-validation",
+            "redirect",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for ActionTypeEnum {
@@ -119,6 +131,7 @@ impl ::std::fmt::Display for ActionTypeEnum {
             ActionTypeEnum::AuthenticateOidc => write!(f, "authenticate-oidc"),
             ActionTypeEnum::FixedResponse => write!(f, "fixed-response"),
             ActionTypeEnum::Forward => write!(f, "forward"),
+            ActionTypeEnum::JwtValidation => write!(f, "jwt-validation"),
             ActionTypeEnum::Redirect => write!(f, "redirect"),
             ActionTypeEnum::Unknown(value) => write!(f, "{value}"),
         }

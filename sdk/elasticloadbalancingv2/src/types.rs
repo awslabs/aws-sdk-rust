@@ -25,6 +25,12 @@ pub use crate::types::_transform_type_enum::TransformTypeEnum;
 
 pub use crate::types::_action::Action;
 
+pub use crate::types::_jwt_validation_action_config::JwtValidationActionConfig;
+
+pub use crate::types::_jwt_validation_action_additional_claim::JwtValidationActionAdditionalClaim;
+
+pub use crate::types::_jwt_validation_action_additional_claim_format_enum::JwtValidationActionAdditionalClaimFormatEnum;
+
 pub use crate::types::_forward_action_config::ForwardActionConfig;
 
 pub use crate::types::_target_group_stickiness_config::TargetGroupStickinessConfig;
@@ -214,6 +220,12 @@ mod _http_request_method_condition_config;
 mod _ip_address_type;
 
 mod _ipam_pools;
+
+mod _jwt_validation_action_additional_claim;
+
+mod _jwt_validation_action_additional_claim_format_enum;
+
+mod _jwt_validation_action_config;
 
 mod _limit;
 

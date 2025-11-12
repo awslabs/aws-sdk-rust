@@ -22,7 +22,9 @@ impl crate::operation::create_rule_groups_namespace::builders::CreateRuleGroupsN
 }
 /// Fluent builder constructing a request to `CreateRuleGroupsNamespace`.
 ///
-/// <p>The <code>CreateRuleGroupsNamespace</code> operation creates a rule groups namespace within a workspace. A rule groups namespace is associated with exactly one rules file. A workspace can have multiple rule groups namespaces.</p>
+/// <p>The <code>CreateRuleGroupsNamespace</code> operation creates a rule groups namespace within a workspace. A rule groups namespace is associated with exactly one rules file. A workspace can have multiple rule groups namespaces.</p><important>
+/// <p>The combined length of a rule group namespace and a rule group name cannot exceed 721 UTF-8 bytes.</p>
+/// </important>
 /// <p>Use this operation only to create new rule groups namespaces. To update an existing rule groups namespace, use <code>PutRuleGroupsNamespace</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateRuleGroupsNamespaceFluentBuilder {

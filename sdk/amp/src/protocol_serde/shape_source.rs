@@ -10,6 +10,12 @@ pub fn ser_source(
             crate::protocol_serde::shape_eks_configuration::ser_eks_configuration(&mut object_1, inner)?;
             object_1.finish();
         }
+        crate::types::Source::VpcConfiguration(inner) => {
+            #[allow(unused_mut)]
+            let mut object_2 = object_10.key("vpcConfiguration").start_object();
+            crate::protocol_serde::shape_vpc_configuration::ser_vpc_configuration(&mut object_2, inner)?;
+            object_2.finish();
+        }
         crate::types::Source::Unknown => return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant("Source")),
     }
     Ok(())
@@ -48,6 +54,11 @@ where
                         "eksConfiguration" => Some(crate::types::Source::EksConfiguration(
                             crate::protocol_serde::shape_eks_configuration::de_eks_configuration(tokens)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'eksConfiguration' cannot be null")
+                            })?,
+                        )),
+                        "vpcConfiguration" => Some(crate::types::Source::VpcConfiguration(
+                            crate::protocol_serde::shape_vpc_configuration::de_vpc_configuration(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'vpcConfiguration' cannot be null")
                             })?,
                         )),
                         _ => {

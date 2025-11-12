@@ -284,6 +284,58 @@ impl From<crate::operation::delete_table_bucket_encryption::DeleteTableBucketEnc
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_table_bucket_metrics_configuration::DeleteTableBucketMetricsConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_table_bucket_metrics_configuration::DeleteTableBucketMetricsConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_table_bucket_metrics_configuration::DeleteTableBucketMetricsConfigurationError> for Error {
+    fn from(err: crate::operation::delete_table_bucket_metrics_configuration::DeleteTableBucketMetricsConfigurationError) -> Self {
+        match err {
+            crate::operation::delete_table_bucket_metrics_configuration::DeleteTableBucketMetricsConfigurationError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::delete_table_bucket_metrics_configuration::DeleteTableBucketMetricsConfigurationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::delete_table_bucket_metrics_configuration::DeleteTableBucketMetricsConfigurationError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::delete_table_bucket_metrics_configuration::DeleteTableBucketMetricsConfigurationError::InternalServerErrorException(
+                inner,
+            ) => Error::InternalServerErrorException(inner),
+            crate::operation::delete_table_bucket_metrics_configuration::DeleteTableBucketMetricsConfigurationError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::delete_table_bucket_metrics_configuration::DeleteTableBucketMetricsConfigurationError::TooManyRequestsException(
+                inner,
+            ) => Error::TooManyRequestsException(inner),
+            crate::operation::delete_table_bucket_metrics_configuration::DeleteTableBucketMetricsConfigurationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_table_bucket_policy::DeleteTableBucketPolicyError, R>>
     for Error
 where
@@ -510,6 +562,58 @@ impl From<crate::operation::get_table_bucket_maintenance_configuration::GetTable
             crate::operation::get_table_bucket_maintenance_configuration::GetTableBucketMaintenanceConfigurationError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::get_table_bucket_maintenance_configuration::GetTableBucketMaintenanceConfigurationError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::get_table_bucket_maintenance_configuration::GetTableBucketMaintenanceConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_table_bucket_metrics_configuration::GetTableBucketMetricsConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_table_bucket_metrics_configuration::GetTableBucketMetricsConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_table_bucket_metrics_configuration::GetTableBucketMetricsConfigurationError> for Error {
+    fn from(err: crate::operation::get_table_bucket_metrics_configuration::GetTableBucketMetricsConfigurationError) -> Self {
+        match err {
+            crate::operation::get_table_bucket_metrics_configuration::GetTableBucketMetricsConfigurationError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::get_table_bucket_metrics_configuration::GetTableBucketMetricsConfigurationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::get_table_bucket_metrics_configuration::GetTableBucketMetricsConfigurationError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::get_table_bucket_metrics_configuration::GetTableBucketMetricsConfigurationError::InternalServerErrorException(
+                inner,
+            ) => Error::InternalServerErrorException(inner),
+            crate::operation::get_table_bucket_metrics_configuration::GetTableBucketMetricsConfigurationError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::get_table_bucket_metrics_configuration::GetTableBucketMetricsConfigurationError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::get_table_bucket_metrics_configuration::GetTableBucketMetricsConfigurationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -929,6 +1033,58 @@ impl From<crate::operation::put_table_bucket_maintenance_configuration::PutTable
             crate::operation::put_table_bucket_maintenance_configuration::PutTableBucketMaintenanceConfigurationError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::put_table_bucket_maintenance_configuration::PutTableBucketMaintenanceConfigurationError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::put_table_bucket_maintenance_configuration::PutTableBucketMaintenanceConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::put_table_bucket_metrics_configuration::PutTableBucketMetricsConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::put_table_bucket_metrics_configuration::PutTableBucketMetricsConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::put_table_bucket_metrics_configuration::PutTableBucketMetricsConfigurationError> for Error {
+    fn from(err: crate::operation::put_table_bucket_metrics_configuration::PutTableBucketMetricsConfigurationError) -> Self {
+        match err {
+            crate::operation::put_table_bucket_metrics_configuration::PutTableBucketMetricsConfigurationError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::put_table_bucket_metrics_configuration::PutTableBucketMetricsConfigurationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::put_table_bucket_metrics_configuration::PutTableBucketMetricsConfigurationError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::put_table_bucket_metrics_configuration::PutTableBucketMetricsConfigurationError::InternalServerErrorException(
+                inner,
+            ) => Error::InternalServerErrorException(inner),
+            crate::operation::put_table_bucket_metrics_configuration::PutTableBucketMetricsConfigurationError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::put_table_bucket_metrics_configuration::PutTableBucketMetricsConfigurationError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::put_table_bucket_metrics_configuration::PutTableBucketMetricsConfigurationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }

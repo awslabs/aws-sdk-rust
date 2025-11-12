@@ -87,6 +87,8 @@ pub use crate::types::_scraper_description::ScraperDescription;
 
 pub use crate::types::_source::Source;
 
+pub use crate::types::_vpc_configuration::VpcConfiguration;
+
 pub use crate::types::_eks_configuration::EksConfiguration;
 
 pub use crate::types::_scraper_summary::ScraperSummary;
@@ -190,6 +192,8 @@ mod _source;
 mod _validation_exception_field;
 
 mod _validation_exception_reason;
+
+mod _vpc_configuration;
 
 mod _workspace_configuration_description;
 

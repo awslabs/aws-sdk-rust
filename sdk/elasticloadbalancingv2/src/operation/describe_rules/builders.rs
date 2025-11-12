@@ -22,7 +22,7 @@ impl crate::operation::describe_rules::builders::DescribeRulesInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeRules`.
 ///
-/// <p>Describes the specified rules or the rules for the specified listener. You must specify either a listener or one or more rules.</p>
+/// <p>Describes the specified rules or the rules for the specified listener. You must specify either a listener or rules.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeRulesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

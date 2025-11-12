@@ -55,6 +55,8 @@ pub use crate::types::_amp_configuration::AmpConfigurationBuilder;
 
 pub use crate::types::_scraper_description::ScraperDescriptionBuilder;
 
+pub use crate::types::_vpc_configuration::VpcConfigurationBuilder;
+
 pub use crate::types::_eks_configuration::EksConfigurationBuilder;
 
 pub use crate::types::_scraper_summary::ScraperSummaryBuilder;

@@ -301,6 +301,9 @@ pub mod get_cluster_credentials;
 /// Types for the `GetClusterCredentialsWithIAM` operation.
 pub mod get_cluster_credentials_with_iam;
 
+/// Types for the `GetIdentityCenterAuthToken` operation.
+pub mod get_identity_center_auth_token;
+
 /// Types for the `GetReservedNodeExchangeConfigurationOptions` operation.
 pub mod get_reserved_node_exchange_configuration_options;
 

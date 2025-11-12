@@ -173,6 +173,8 @@ pub use crate::types::error::_authentication_profile_quota_exceeded_fault::Authe
 
 pub use crate::types::error::_authentication_profile_not_found_fault::AuthenticationProfileNotFoundFault;
 
+pub use crate::types::error::_redshift_invalid_parameter_fault::RedshiftInvalidParameterFault;
+
 pub use crate::types::error::_unknown_snapshot_copy_region_fault::UnknownSnapshotCopyRegionFault;
 
 pub use crate::types::error::_snapshot_copy_grant_not_found_fault::SnapshotCopyGrantNotFoundFault;
@@ -480,6 +482,8 @@ mod _redshift_idc_application_already_exists_fault;
 mod _redshift_idc_application_not_exists_fault;
 
 mod _redshift_idc_application_quota_exceeded_fault;
+
+mod _redshift_invalid_parameter_fault;
 
 mod _reserved_node_already_exists_fault;
 

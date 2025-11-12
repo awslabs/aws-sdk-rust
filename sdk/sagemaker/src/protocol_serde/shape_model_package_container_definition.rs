@@ -162,9 +162,7 @@ where
                     }
                 }
             }
-            Ok(Some(
-                crate::serde_util::model_package_container_definition_correct_errors(builder).build(),
-            ))
+            Ok(Some(builder.build()))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

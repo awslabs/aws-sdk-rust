@@ -76,11 +76,40 @@ pub(crate) fn fixed_response_action_config_correct_errors(
     builder
 }
 
+pub(crate) fn jwt_validation_action_config_correct_errors(
+    mut builder: crate::types::builders::JwtValidationActionConfigBuilder,
+) -> crate::types::builders::JwtValidationActionConfigBuilder {
+    if builder.jwks_endpoint.is_none() {
+        builder.jwks_endpoint = Some(Default::default())
+    }
+    if builder.issuer.is_none() {
+        builder.issuer = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn redirect_action_config_correct_errors(
     mut builder: crate::types::builders::RedirectActionConfigBuilder,
 ) -> crate::types::builders::RedirectActionConfigBuilder {
     if builder.status_code.is_none() {
         builder.status_code = "no value was set".parse::<crate::types::RedirectActionStatusCodeEnum>().ok()
+    }
+    builder
+}
+
+pub(crate) fn jwt_validation_action_additional_claim_correct_errors(
+    mut builder: crate::types::builders::JwtValidationActionAdditionalClaimBuilder,
+) -> crate::types::builders::JwtValidationActionAdditionalClaimBuilder {
+    if builder.format.is_none() {
+        builder.format = "no value was set"
+            .parse::<crate::types::JwtValidationActionAdditionalClaimFormatEnum>()
+            .ok()
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.values.is_none() {
+        builder.values = Some(Default::default())
     }
     builder
 }

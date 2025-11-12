@@ -8,7 +8,7 @@ pub struct CreateScraperInput {
     pub alias: ::std::option::Option<::std::string::String>,
     /// <p>The configuration file to use in the new scraper. For more information, see <a href="https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-collector-how-to.html#AMP-collector-configuration">Scraper configuration</a> in the <i>Amazon Managed Service for Prometheus User Guide</i>.</p>
     pub scrape_configuration: ::std::option::Option<crate::types::ScrapeConfiguration>,
-    /// <p>The Amazon EKS cluster from which the scraper will collect metrics.</p>
+    /// <p>The Amazon EKS or Amazon Web Services cluster from which the scraper will collect metrics.</p>
     pub source: ::std::option::Option<crate::types::Source>,
     /// <p>The Amazon Managed Service for Prometheus workspace to send metrics to.</p>
     pub destination: ::std::option::Option<crate::types::Destination>,
@@ -28,7 +28,7 @@ impl CreateScraperInput {
     pub fn scrape_configuration(&self) -> ::std::option::Option<&crate::types::ScrapeConfiguration> {
         self.scrape_configuration.as_ref()
     }
-    /// <p>The Amazon EKS cluster from which the scraper will collect metrics.</p>
+    /// <p>The Amazon EKS or Amazon Web Services cluster from which the scraper will collect metrics.</p>
     pub fn source(&self) -> ::std::option::Option<&crate::types::Source> {
         self.source.as_ref()
     }
@@ -98,18 +98,18 @@ impl CreateScraperInputBuilder {
     pub fn get_scrape_configuration(&self) -> &::std::option::Option<crate::types::ScrapeConfiguration> {
         &self.scrape_configuration
     }
-    /// <p>The Amazon EKS cluster from which the scraper will collect metrics.</p>
+    /// <p>The Amazon EKS or Amazon Web Services cluster from which the scraper will collect metrics.</p>
     /// This field is required.
     pub fn source(mut self, input: crate::types::Source) -> Self {
         self.source = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Amazon EKS cluster from which the scraper will collect metrics.</p>
+    /// <p>The Amazon EKS or Amazon Web Services cluster from which the scraper will collect metrics.</p>
     pub fn set_source(mut self, input: ::std::option::Option<crate::types::Source>) -> Self {
         self.source = input;
         self
     }
-    /// <p>The Amazon EKS cluster from which the scraper will collect metrics.</p>
+    /// <p>The Amazon EKS or Amazon Web Services cluster from which the scraper will collect metrics.</p>
     pub fn get_source(&self) -> &::std::option::Option<crate::types::Source> {
         &self.source
     }

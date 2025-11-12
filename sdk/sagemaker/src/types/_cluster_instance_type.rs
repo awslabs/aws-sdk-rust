@@ -124,6 +124,7 @@
 ///     ClusterInstanceType::MlT3Xlarge => { /* ... */ },
 ///     ClusterInstanceType::MlTrn132Xlarge => { /* ... */ },
 ///     ClusterInstanceType::MlTrn1N32Xlarge => { /* ... */ },
+///     ClusterInstanceType::MlTrn23Xlarge => { /* ... */ },
 ///     ClusterInstanceType::MlTrn248Xlarge => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -378,6 +379,8 @@ pub enum ClusterInstanceType {
     #[allow(missing_docs)] // documentation missing in model
     MlTrn1N32Xlarge,
     #[allow(missing_docs)] // documentation missing in model
+    MlTrn23Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
     MlTrn248Xlarge,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -498,6 +501,7 @@ impl ::std::convert::From<&str> for ClusterInstanceType {
             "ml.t3.xlarge" => ClusterInstanceType::MlT3Xlarge,
             "ml.trn1.32xlarge" => ClusterInstanceType::MlTrn132Xlarge,
             "ml.trn1n.32xlarge" => ClusterInstanceType::MlTrn1N32Xlarge,
+            "ml.trn2.3xlarge" => ClusterInstanceType::MlTrn23Xlarge,
             "ml.trn2.48xlarge" => ClusterInstanceType::MlTrn248Xlarge,
             other => ClusterInstanceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -626,6 +630,7 @@ impl ClusterInstanceType {
             ClusterInstanceType::MlT3Xlarge => "ml.t3.xlarge",
             ClusterInstanceType::MlTrn132Xlarge => "ml.trn1.32xlarge",
             ClusterInstanceType::MlTrn1N32Xlarge => "ml.trn1n.32xlarge",
+            ClusterInstanceType::MlTrn23Xlarge => "ml.trn2.3xlarge",
             ClusterInstanceType::MlTrn248Xlarge => "ml.trn2.48xlarge",
             ClusterInstanceType::Unknown(value) => value.as_str(),
         }
@@ -745,6 +750,7 @@ impl ClusterInstanceType {
             "ml.t3.xlarge",
             "ml.trn1.32xlarge",
             "ml.trn1n.32xlarge",
+            "ml.trn2.3xlarge",
             "ml.trn2.48xlarge",
         ]
     }
@@ -881,6 +887,7 @@ impl ::std::fmt::Display for ClusterInstanceType {
             ClusterInstanceType::MlT3Xlarge => write!(f, "ml.t3.xlarge"),
             ClusterInstanceType::MlTrn132Xlarge => write!(f, "ml.trn1.32xlarge"),
             ClusterInstanceType::MlTrn1N32Xlarge => write!(f, "ml.trn1n.32xlarge"),
+            ClusterInstanceType::MlTrn23Xlarge => write!(f, "ml.trn2.3xlarge"),
             ClusterInstanceType::MlTrn248Xlarge => write!(f, "ml.trn2.48xlarge"),
             ClusterInstanceType::Unknown(value) => write!(f, "{value}"),
         }

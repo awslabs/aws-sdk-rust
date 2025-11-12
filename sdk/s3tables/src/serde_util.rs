@@ -134,6 +134,15 @@ pub(crate) fn get_table_bucket_maintenance_configuration_output_output_correct_e
     builder
 }
 
+pub(crate) fn get_table_bucket_metrics_configuration_output_output_correct_errors(
+    mut builder: crate::operation::get_table_bucket_metrics_configuration::builders::GetTableBucketMetricsConfigurationOutputBuilder,
+) -> crate::operation::get_table_bucket_metrics_configuration::builders::GetTableBucketMetricsConfigurationOutputBuilder {
+    if builder.table_bucket_arn.is_none() {
+        builder.table_bucket_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn get_table_bucket_policy_output_output_correct_errors(
     mut builder: crate::operation::get_table_bucket_policy::builders::GetTableBucketPolicyOutputBuilder,
 ) -> crate::operation::get_table_bucket_policy::builders::GetTableBucketPolicyOutputBuilder {

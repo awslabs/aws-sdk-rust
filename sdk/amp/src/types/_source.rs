@@ -6,6 +6,8 @@
 pub enum Source {
     /// <p>The Amazon EKS cluster from which a scraper collects metrics.</p>
     EksConfiguration(crate::types::EksConfiguration),
+    /// <p>The Amazon VPC configuration for the Prometheus collector when connecting to Amazon MSK clusters. This configuration enables secure, private network connectivity between the collector and your Amazon MSK cluster within your Amazon VPC.</p>
+    VpcConfiguration(crate::types::VpcConfiguration),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -17,7 +19,6 @@ pub enum Source {
     Unknown,
 }
 impl Source {
-    #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`EksConfiguration`](crate::types::Source::EksConfiguration), extracting the inner [`EksConfiguration`](crate::types::EksConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_eks_configuration(&self) -> ::std::result::Result<&crate::types::EksConfiguration, &Self> {
@@ -30,6 +31,19 @@ impl Source {
     /// Returns true if this is a [`EksConfiguration`](crate::types::Source::EksConfiguration).
     pub fn is_eks_configuration(&self) -> bool {
         self.as_eks_configuration().is_ok()
+    }
+    /// Tries to convert the enum instance into [`VpcConfiguration`](crate::types::Source::VpcConfiguration), extracting the inner [`VpcConfiguration`](crate::types::VpcConfiguration).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_vpc_configuration(&self) -> ::std::result::Result<&crate::types::VpcConfiguration, &Self> {
+        if let Source::VpcConfiguration(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`VpcConfiguration`](crate::types::Source::VpcConfiguration).
+    pub fn is_vpc_configuration(&self) -> bool {
+        self.as_vpc_configuration().is_ok()
     }
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {

@@ -33,5 +33,14 @@ pub fn ser_update_authentication_profile_input_input(
             ::aws_smithy_types::Number::NegInt((*var_9).into()),
         );
     }
+    if let Some(var_10) = &input.session_inactivity_duration {
+        object.key("SessionInactivityDuration").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_10).into()),
+        );
+    }
+    if let Some(var_11) = &input.session_inactivity_handling_enabled {
+        object.key("SessionInactivityHandlingEnabled").boolean(*var_11);
+    }
     Ok(())
 }

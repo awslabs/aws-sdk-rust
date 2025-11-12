@@ -265,6 +265,8 @@ pub(crate) mod shape_scraper_summary;
 
 pub(crate) mod shape_validation_exception_field;
 
+pub(crate) mod shape_vpc_configuration;
+
 pub(crate) mod shape_workspace_summary;
 
 pub(crate) mod shape_ignore_near_expected;

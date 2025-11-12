@@ -1543,6 +1543,9 @@ pub mod get_groups_for_capacity_reservation;
 /// Types for the `GetHostReservationPurchasePreview` operation.
 pub mod get_host_reservation_purchase_preview;
 
+/// Types for the `GetImageAncestry` operation.
+pub mod get_image_ancestry;
+
 /// Types for the `GetImageBlockPublicAccessState` operation.
 pub mod get_image_block_public_access_state;
 

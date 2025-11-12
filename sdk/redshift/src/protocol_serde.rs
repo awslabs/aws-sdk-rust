@@ -423,6 +423,10 @@ pub(crate) mod shape_get_cluster_credentials_with_iam;
 
 pub(crate) mod shape_get_cluster_credentials_with_iam_input;
 
+pub(crate) mod shape_get_identity_center_auth_token;
+
+pub(crate) mod shape_get_identity_center_auth_token_input;
+
 pub(crate) mod shape_get_reserved_node_exchange_configuration_options;
 
 pub(crate) mod shape_get_reserved_node_exchange_configuration_options_input;
@@ -788,6 +792,8 @@ pub(crate) mod shape_redshift_idc_application_already_exists_fault;
 pub(crate) mod shape_redshift_idc_application_not_exists_fault;
 
 pub(crate) mod shape_redshift_idc_application_quota_exceeded_fault;
+
+pub(crate) mod shape_redshift_invalid_parameter_fault;
 
 pub(crate) mod shape_reserved_node_already_exists_fault;
 

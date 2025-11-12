@@ -41,6 +41,10 @@ pub use crate::types::_recommendation_settings::RecommendationSettings;
 
 pub use crate::types::_origin_type_value::OriginTypeValue;
 
+pub use crate::types::_metadata_model_properties::MetadataModelProperties;
+
+pub use crate::types::_statement_properties::StatementProperties;
+
 pub use crate::types::_start_replication_migration_type_value::StartReplicationMigrationTypeValue;
 
 pub use crate::types::_reload_option_value::ReloadOptionValue;
@@ -249,6 +253,8 @@ pub use crate::types::_error_details::ErrorDetails;
 
 pub use crate::types::_default_error_details::DefaultErrorDetails;
 
+pub use crate::types::_metadata_model_reference::MetadataModelReference;
+
 pub use crate::types::_schema_response::SchemaResponse;
 
 pub use crate::types::_schema_short_info_response::SchemaShortInfoResponse;
@@ -433,6 +439,10 @@ mod _maria_db_data_provider_settings;
 
 mod _message_format_value;
 
+mod _metadata_model_properties;
+
+mod _metadata_model_reference;
+
 mod _microsoft_sql_server_data_provider_settings;
 
 mod _microsoft_sql_server_settings;
@@ -568,6 +578,8 @@ mod _start_recommendations_request_entry;
 mod _start_replication_migration_type_value;
 
 mod _start_replication_task_type_value;
+
+mod _statement_properties;
 
 mod _subnet;
 

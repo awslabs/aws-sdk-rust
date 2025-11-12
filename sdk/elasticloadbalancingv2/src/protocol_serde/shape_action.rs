@@ -47,6 +47,11 @@ pub fn ser_action(
     if let Some(var_16) = &input.forward_config {
         crate::protocol_serde::shape_forward_action_config::ser_forward_action_config(scope_15, var_16)?;
     }
+    #[allow(unused_mut)]
+    let mut scope_17 = writer.prefix("JwtValidationConfig");
+    if let Some(var_18) = &input.jwt_validation_config {
+        crate::protocol_serde::shape_jwt_validation_action_config::ser_jwt_validation_action_config(scope_17, var_18)?;
+    }
     Ok(())
 }
 
@@ -59,7 +64,7 @@ pub fn de_action(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Type") /* Type com.amazonaws.elasticloadbalancingv2#Action$Type */ =>  {
-                let var_17 =
+                let var_19 =
                     Some(
                         Result::<crate::types::ActionTypeEnum, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::ActionTypeEnum::from(
@@ -69,11 +74,11 @@ pub fn de_action(
                         ?
                     )
                 ;
-                builder = builder.set_type(var_17);
+                builder = builder.set_type(var_19);
             }
             ,
             s if s.matches("TargetGroupArn") /* TargetGroupArn com.amazonaws.elasticloadbalancingv2#Action$TargetGroupArn */ =>  {
-                let var_18 =
+                let var_20 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -82,31 +87,31 @@ pub fn de_action(
                         ?
                     )
                 ;
-                builder = builder.set_target_group_arn(var_18);
+                builder = builder.set_target_group_arn(var_20);
             }
             ,
             s if s.matches("AuthenticateOidcConfig") /* AuthenticateOidcConfig com.amazonaws.elasticloadbalancingv2#Action$AuthenticateOidcConfig */ =>  {
-                let var_19 =
+                let var_21 =
                     Some(
                         crate::protocol_serde::shape_authenticate_oidc_action_config::de_authenticate_oidc_action_config(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_authenticate_oidc_config(var_19);
+                builder = builder.set_authenticate_oidc_config(var_21);
             }
             ,
             s if s.matches("AuthenticateCognitoConfig") /* AuthenticateCognitoConfig com.amazonaws.elasticloadbalancingv2#Action$AuthenticateCognitoConfig */ =>  {
-                let var_20 =
+                let var_22 =
                     Some(
                         crate::protocol_serde::shape_authenticate_cognito_action_config::de_authenticate_cognito_action_config(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_authenticate_cognito_config(var_20);
+                builder = builder.set_authenticate_cognito_config(var_22);
             }
             ,
             s if s.matches("Order") /* Order com.amazonaws.elasticloadbalancingv2#Action$Order */ =>  {
-                let var_21 =
+                let var_23 =
                     Some(
                          {
                             <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -117,37 +122,47 @@ pub fn de_action(
                         ?
                     )
                 ;
-                builder = builder.set_order(var_21);
+                builder = builder.set_order(var_23);
             }
             ,
             s if s.matches("RedirectConfig") /* RedirectConfig com.amazonaws.elasticloadbalancingv2#Action$RedirectConfig */ =>  {
-                let var_22 =
+                let var_24 =
                     Some(
                         crate::protocol_serde::shape_redirect_action_config::de_redirect_action_config(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_redirect_config(var_22);
+                builder = builder.set_redirect_config(var_24);
             }
             ,
             s if s.matches("FixedResponseConfig") /* FixedResponseConfig com.amazonaws.elasticloadbalancingv2#Action$FixedResponseConfig */ =>  {
-                let var_23 =
+                let var_25 =
                     Some(
                         crate::protocol_serde::shape_fixed_response_action_config::de_fixed_response_action_config(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_fixed_response_config(var_23);
+                builder = builder.set_fixed_response_config(var_25);
             }
             ,
             s if s.matches("ForwardConfig") /* ForwardConfig com.amazonaws.elasticloadbalancingv2#Action$ForwardConfig */ =>  {
-                let var_24 =
+                let var_26 =
                     Some(
                         crate::protocol_serde::shape_forward_action_config::de_forward_action_config(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_forward_config(var_24);
+                builder = builder.set_forward_config(var_26);
+            }
+            ,
+            s if s.matches("JwtValidationConfig") /* JwtValidationConfig com.amazonaws.elasticloadbalancingv2#Action$JwtValidationConfig */ =>  {
+                let var_27 =
+                    Some(
+                        crate::protocol_serde::shape_jwt_validation_action_config::de_jwt_validation_action_config(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_jwt_validation_config(var_27);
             }
             ,
             _ => {}

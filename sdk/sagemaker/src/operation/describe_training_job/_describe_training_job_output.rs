@@ -951,7 +951,6 @@ impl DescribeTrainingJobOutputBuilder {
         &self.hyper_parameters
     }
     /// <p>Information about the algorithm used for training, and algorithm metadata.</p>
-    /// This field is required.
     pub fn algorithm_specification(mut self, input: crate::types::AlgorithmSpecification) -> Self {
         self.algorithm_specification = ::std::option::Option::Some(input);
         self
@@ -1014,7 +1013,6 @@ impl DescribeTrainingJobOutputBuilder {
         &self.output_data_config
     }
     /// <p>Resources, including ML compute instances and ML storage volumes, that are configured for model training.</p>
-    /// This field is required.
     pub fn resource_config(mut self, input: crate::types::ResourceConfig) -> Self {
         self.resource_config = ::std::option::Option::Some(input);
         self

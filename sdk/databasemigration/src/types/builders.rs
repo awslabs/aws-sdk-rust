@@ -33,6 +33,8 @@ pub use crate::types::_tag::TagBuilder;
 
 pub use crate::types::_recommendation_settings::RecommendationSettingsBuilder;
 
+pub use crate::types::_statement_properties::StatementPropertiesBuilder;
+
 pub use crate::types::_table_to_reload::TableToReloadBuilder;
 
 pub use crate::types::_refresh_schemas_status::RefreshSchemasStatusBuilder;
@@ -166,6 +168,8 @@ pub use crate::types::_schema_conversion_request::SchemaConversionRequestBuilder
 pub use crate::types::_export_sql_details::ExportSqlDetailsBuilder;
 
 pub use crate::types::_default_error_details::DefaultErrorDetailsBuilder;
+
+pub use crate::types::_metadata_model_reference::MetadataModelReferenceBuilder;
 
 pub use crate::types::_schema_response::SchemaResponseBuilder;
 

@@ -236,6 +236,81 @@ impl From<crate::operation::batch_start_recommendations::BatchStartRecommendatio
 }
 impl<R>
     From<
+        ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_metadata_model_conversion::CancelMetadataModelConversionError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::cancel_metadata_model_conversion::CancelMetadataModelConversionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::cancel_metadata_model_conversion::CancelMetadataModelConversionError> for Error {
+    fn from(err: crate::operation::cancel_metadata_model_conversion::CancelMetadataModelConversionError) -> Self {
+        match err {
+            crate::operation::cancel_metadata_model_conversion::CancelMetadataModelConversionError::AccessDeniedFault(inner) => {
+                Error::AccessDeniedFault(inner)
+            }
+            crate::operation::cancel_metadata_model_conversion::CancelMetadataModelConversionError::InvalidResourceStateFault(inner) => {
+                Error::InvalidResourceStateFault(inner)
+            }
+            crate::operation::cancel_metadata_model_conversion::CancelMetadataModelConversionError::ResourceNotFoundFault(inner) => {
+                Error::ResourceNotFoundFault(inner)
+            }
+            crate::operation::cancel_metadata_model_conversion::CancelMetadataModelConversionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_metadata_model_creation::CancelMetadataModelCreationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::cancel_metadata_model_creation::CancelMetadataModelCreationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::cancel_metadata_model_creation::CancelMetadataModelCreationError> for Error {
+    fn from(err: crate::operation::cancel_metadata_model_creation::CancelMetadataModelCreationError) -> Self {
+        match err {
+            crate::operation::cancel_metadata_model_creation::CancelMetadataModelCreationError::AccessDeniedFault(inner) => {
+                Error::AccessDeniedFault(inner)
+            }
+            crate::operation::cancel_metadata_model_creation::CancelMetadataModelCreationError::InvalidResourceStateFault(inner) => {
+                Error::InvalidResourceStateFault(inner)
+            }
+            crate::operation::cancel_metadata_model_creation::CancelMetadataModelCreationError::ResourceNotFoundFault(inner) => {
+                Error::ResourceNotFoundFault(inner)
+            }
+            crate::operation::cancel_metadata_model_creation::CancelMetadataModelCreationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
         ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::cancel_replication_task_assessment_run::CancelReplicationTaskAssessmentRunError,
             R,
@@ -1787,6 +1862,33 @@ impl From<crate::operation::describe_instance_profiles::DescribeInstanceProfiles
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_metadata_model::DescribeMetadataModelError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_metadata_model::DescribeMetadataModelError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_metadata_model::DescribeMetadataModelError> for Error {
+    fn from(err: crate::operation::describe_metadata_model::DescribeMetadataModelError) -> Self {
+        match err {
+            crate::operation::describe_metadata_model::DescribeMetadataModelError::AccessDeniedFault(inner) => Error::AccessDeniedFault(inner),
+            crate::operation::describe_metadata_model::DescribeMetadataModelError::ResourceNotFoundFault(inner) => {
+                Error::ResourceNotFoundFault(inner)
+            }
+            crate::operation::describe_metadata_model::DescribeMetadataModelError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
@@ -1824,6 +1926,41 @@ impl From<crate::operation::describe_metadata_model_assessments::DescribeMetadat
 }
 impl<R>
     From<
+        ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_metadata_model_children::DescribeMetadataModelChildrenError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_metadata_model_children::DescribeMetadataModelChildrenError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_metadata_model_children::DescribeMetadataModelChildrenError> for Error {
+    fn from(err: crate::operation::describe_metadata_model_children::DescribeMetadataModelChildrenError) -> Self {
+        match err {
+            crate::operation::describe_metadata_model_children::DescribeMetadataModelChildrenError::AccessDeniedFault(inner) => {
+                Error::AccessDeniedFault(inner)
+            }
+            crate::operation::describe_metadata_model_children::DescribeMetadataModelChildrenError::ResourceNotFoundFault(inner) => {
+                Error::ResourceNotFoundFault(inner)
+            }
+            crate::operation::describe_metadata_model_children::DescribeMetadataModelChildrenError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
         ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::describe_metadata_model_conversions::DescribeMetadataModelConversionsError,
             R,
@@ -1854,6 +1991,44 @@ impl From<crate::operation::describe_metadata_model_conversions::DescribeMetadat
                 Error::ResourceNotFoundFault(inner)
             }
             crate::operation::describe_metadata_model_conversions::DescribeMetadataModelConversionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_metadata_model_creations::DescribeMetadataModelCreationsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_metadata_model_creations::DescribeMetadataModelCreationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_metadata_model_creations::DescribeMetadataModelCreationsError> for Error {
+    fn from(err: crate::operation::describe_metadata_model_creations::DescribeMetadataModelCreationsError) -> Self {
+        match err {
+            crate::operation::describe_metadata_model_creations::DescribeMetadataModelCreationsError::AccessDeniedFault(inner) => {
+                Error::AccessDeniedFault(inner)
+            }
+            crate::operation::describe_metadata_model_creations::DescribeMetadataModelCreationsError::ResourceNotFoundFault(inner) => {
+                Error::ResourceNotFoundFault(inner)
+            }
+            crate::operation::describe_metadata_model_creations::DescribeMetadataModelCreationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2580,6 +2755,37 @@ impl From<crate::operation::export_metadata_model_assessment::ExportMetadataMode
                 Error::ResourceNotFoundFault(inner)
             }
             crate::operation::export_metadata_model_assessment::ExportMetadataModelAssessmentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_target_selection_rules::GetTargetSelectionRulesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_target_selection_rules::GetTargetSelectionRulesError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_target_selection_rules::GetTargetSelectionRulesError> for Error {
+    fn from(err: crate::operation::get_target_selection_rules::GetTargetSelectionRulesError) -> Self {
+        match err {
+            crate::operation::get_target_selection_rules::GetTargetSelectionRulesError::AccessDeniedFault(inner) => Error::AccessDeniedFault(inner),
+            crate::operation::get_target_selection_rules::GetTargetSelectionRulesError::InvalidResourceStateFault(inner) => {
+                Error::InvalidResourceStateFault(inner)
+            }
+            crate::operation::get_target_selection_rules::GetTargetSelectionRulesError::ResourceNotFoundFault(inner) => {
+                Error::ResourceNotFoundFault(inner)
+            }
+            crate::operation::get_target_selection_rules::GetTargetSelectionRulesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -3418,6 +3624,42 @@ impl From<crate::operation::start_metadata_model_conversion::StartMetadataModelC
                 Error::S3ResourceNotFoundFault(inner)
             }
             crate::operation::start_metadata_model_conversion::StartMetadataModelConversionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_metadata_model_creation::StartMetadataModelCreationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_metadata_model_creation::StartMetadataModelCreationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_metadata_model_creation::StartMetadataModelCreationError> for Error {
+    fn from(err: crate::operation::start_metadata_model_creation::StartMetadataModelCreationError) -> Self {
+        match err {
+            crate::operation::start_metadata_model_creation::StartMetadataModelCreationError::AccessDeniedFault(inner) => {
+                Error::AccessDeniedFault(inner)
+            }
+            crate::operation::start_metadata_model_creation::StartMetadataModelCreationError::ResourceAlreadyExistsFault(inner) => {
+                Error::ResourceAlreadyExistsFault(inner)
+            }
+            crate::operation::start_metadata_model_creation::StartMetadataModelCreationError::ResourceNotFoundFault(inner) => {
+                Error::ResourceNotFoundFault(inner)
+            }
+            crate::operation::start_metadata_model_creation::StartMetadataModelCreationError::ResourceQuotaExceededFault(inner) => {
+                Error::ResourceQuotaExceededFault(inner)
+            }
+            crate::operation::start_metadata_model_creation::StartMetadataModelCreationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

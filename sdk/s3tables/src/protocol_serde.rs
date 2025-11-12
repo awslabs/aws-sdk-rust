@@ -37,6 +37,8 @@ pub(crate) mod shape_delete_table_bucket;
 
 pub(crate) mod shape_delete_table_bucket_encryption;
 
+pub(crate) mod shape_delete_table_bucket_metrics_configuration;
+
 pub(crate) mod shape_delete_table_bucket_policy;
 
 pub(crate) mod shape_delete_table_policy;
@@ -50,6 +52,8 @@ pub(crate) mod shape_get_table_bucket;
 pub(crate) mod shape_get_table_bucket_encryption;
 
 pub(crate) mod shape_get_table_bucket_maintenance_configuration;
+
+pub(crate) mod shape_get_table_bucket_metrics_configuration;
 
 pub(crate) mod shape_get_table_bucket_policy;
 
@@ -74,6 +78,8 @@ pub(crate) mod shape_list_tags_for_resource;
 pub(crate) mod shape_put_table_bucket_encryption;
 
 pub(crate) mod shape_put_table_bucket_maintenance_configuration;
+
+pub(crate) mod shape_put_table_bucket_metrics_configuration;
 
 pub(crate) mod shape_put_table_bucket_policy;
 

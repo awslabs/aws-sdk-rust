@@ -22,7 +22,9 @@ impl crate::operation::put_rule_groups_namespace::builders::PutRuleGroupsNamespa
 }
 /// Fluent builder constructing a request to `PutRuleGroupsNamespace`.
 ///
-/// <p>Updates an existing rule groups namespace within a workspace. A rule groups namespace is associated with exactly one rules file. A workspace can have multiple rule groups namespaces.</p>
+/// <p>Updates an existing rule groups namespace within a workspace. A rule groups namespace is associated with exactly one rules file. A workspace can have multiple rule groups namespaces.</p><important>
+/// <p>The combined length of a rule group namespace and a rule group name cannot exceed 721 UTF-8 bytes.</p>
+/// </important>
 /// <p>Use this operation only to update existing rule groups namespaces. To create a new rule groups namespace, use <code>CreateRuleGroupsNamespace</code>.</p>
 /// <p>You can't use this operation to add tags to an existing rule groups namespace. Instead, use <code>TagResource</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

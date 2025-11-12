@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ForwardActionConfig {
-    /// <p>The target groups. For Network Load Balancers, you can specify a single target group.</p>
+    /// <p>The target groups.</p>
     pub target_groups: ::std::option::Option<::std::vec::Vec<crate::types::TargetGroupTuple>>,
     /// <p>The target group stickiness for the rule.</p>
     pub target_group_stickiness_config: ::std::option::Option<crate::types::TargetGroupStickinessConfig>,
 }
 impl ForwardActionConfig {
-    /// <p>The target groups. For Network Load Balancers, you can specify a single target group.</p>
+    /// <p>The target groups.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_groups.is_none()`.
     pub fn target_groups(&self) -> &[crate::types::TargetGroupTuple] {
@@ -40,19 +40,19 @@ impl ForwardActionConfigBuilder {
     ///
     /// To override the contents of this collection use [`set_target_groups`](Self::set_target_groups).
     ///
-    /// <p>The target groups. For Network Load Balancers, you can specify a single target group.</p>
+    /// <p>The target groups.</p>
     pub fn target_groups(mut self, input: crate::types::TargetGroupTuple) -> Self {
         let mut v = self.target_groups.unwrap_or_default();
         v.push(input);
         self.target_groups = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The target groups. For Network Load Balancers, you can specify a single target group.</p>
+    /// <p>The target groups.</p>
     pub fn set_target_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TargetGroupTuple>>) -> Self {
         self.target_groups = input;
         self
     }
-    /// <p>The target groups. For Network Load Balancers, you can specify a single target group.</p>
+    /// <p>The target groups.</p>
     pub fn get_target_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetGroupTuple>> {
         &self.target_groups
     }

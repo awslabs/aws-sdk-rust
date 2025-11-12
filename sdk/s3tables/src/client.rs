@@ -177,6 +177,8 @@ mod delete_table_bucket;
 
 mod delete_table_bucket_encryption;
 
+mod delete_table_bucket_metrics_configuration;
+
 mod delete_table_bucket_policy;
 
 mod delete_table_policy;
@@ -190,6 +192,8 @@ mod get_table_bucket;
 mod get_table_bucket_encryption;
 
 mod get_table_bucket_maintenance_configuration;
+
+mod get_table_bucket_metrics_configuration;
 
 mod get_table_bucket_policy;
 
@@ -214,6 +218,8 @@ mod list_tags_for_resource;
 mod put_table_bucket_encryption;
 
 mod put_table_bucket_maintenance_configuration;
+
+mod put_table_bucket_metrics_configuration;
 
 mod put_table_bucket_policy;
 

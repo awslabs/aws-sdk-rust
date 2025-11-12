@@ -17,6 +17,10 @@ pub use crate::types::_host_header_rewrite_config::HostHeaderRewriteConfigBuilde
 
 pub use crate::types::_action::ActionBuilder;
 
+pub use crate::types::_jwt_validation_action_config::JwtValidationActionConfigBuilder;
+
+pub use crate::types::_jwt_validation_action_additional_claim::JwtValidationActionAdditionalClaimBuilder;
+
 pub use crate::types::_forward_action_config::ForwardActionConfigBuilder;
 
 pub use crate::types::_target_group_stickiness_config::TargetGroupStickinessConfigBuilder;

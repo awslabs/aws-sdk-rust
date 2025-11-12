@@ -1586,18 +1586,6 @@ pub(crate) fn describe_training_job_output_output_correct_errors(
     if builder.secondary_status.is_none() {
         builder.secondary_status = "no value was set".parse::<crate::types::SecondaryStatus>().ok()
     }
-    if builder.algorithm_specification.is_none() {
-        builder.algorithm_specification = {
-            let builder = crate::types::builders::AlgorithmSpecificationBuilder::default();
-            Some(crate::serde_util::algorithm_specification_correct_errors(builder).build())
-        }
-    }
-    if builder.resource_config.is_none() {
-        builder.resource_config = {
-            let builder = crate::types::builders::ResourceConfigBuilder::default();
-            Some(crate::serde_util::resource_config_correct_errors(builder).build())
-        }
-    }
     if builder.stopping_condition.is_none() {
         builder.stopping_condition = {
             let builder = crate::types::builders::StoppingConditionBuilder::default();
@@ -2728,24 +2716,6 @@ pub(crate) fn subscribed_workteam_correct_errors(
     builder
 }
 
-pub(crate) fn algorithm_specification_correct_errors(
-    mut builder: crate::types::builders::AlgorithmSpecificationBuilder,
-) -> crate::types::builders::AlgorithmSpecificationBuilder {
-    if builder.training_input_mode.is_none() {
-        builder.training_input_mode = "no value was set".parse::<crate::types::TrainingInputMode>().ok()
-    }
-    builder
-}
-
-pub(crate) fn resource_config_correct_errors(
-    mut builder: crate::types::builders::ResourceConfigBuilder,
-) -> crate::types::builders::ResourceConfigBuilder {
-    if builder.volume_size_in_gb.is_none() {
-        builder.volume_size_in_gb = Some(Default::default())
-    }
-    builder
-}
-
 pub(crate) fn transform_input_correct_errors(
     mut builder: crate::types::builders::TransformInputBuilder,
 ) -> crate::types::builders::TransformInputBuilder {
@@ -2799,6 +2769,15 @@ pub(crate) fn workteam_correct_errors(mut builder: crate::types::builders::Workt
 pub(crate) fn action_source_correct_errors(mut builder: crate::types::builders::ActionSourceBuilder) -> crate::types::builders::ActionSourceBuilder {
     if builder.source_uri.is_none() {
         builder.source_uri = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn algorithm_specification_correct_errors(
+    mut builder: crate::types::builders::AlgorithmSpecificationBuilder,
+) -> crate::types::builders::AlgorithmSpecificationBuilder {
+    if builder.training_input_mode.is_none() {
+        builder.training_input_mode = "no value was set".parse::<crate::types::TrainingInputMode>().ok()
     }
     builder
 }
@@ -3397,6 +3376,15 @@ pub(crate) fn processing_stopping_condition_correct_errors(
 ) -> crate::types::builders::ProcessingStoppingConditionBuilder {
     if builder.max_runtime_in_seconds.is_none() {
         builder.max_runtime_in_seconds = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn resource_config_correct_errors(
+    mut builder: crate::types::builders::ResourceConfigBuilder,
+) -> crate::types::builders::ResourceConfigBuilder {
+    if builder.volume_size_in_gb.is_none() {
+        builder.volume_size_in_gb = Some(Default::default())
     }
     builder
 }
@@ -5841,15 +5829,6 @@ pub(crate) fn model_infrastructure_config_correct_errors(
             let builder = crate::types::builders::RealTimeInferenceConfigBuilder::default();
             Some(crate::serde_util::real_time_inference_config_correct_errors(builder).build())
         }
-    }
-    builder
-}
-
-pub(crate) fn model_package_container_definition_correct_errors(
-    mut builder: crate::types::builders::ModelPackageContainerDefinitionBuilder,
-) -> crate::types::builders::ModelPackageContainerDefinitionBuilder {
-    if builder.image.is_none() {
-        builder.image = Some(Default::default())
     }
     builder
 }

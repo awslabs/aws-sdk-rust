@@ -206,6 +206,10 @@ mod apply_pending_maintenance_action;
 
 mod batch_start_recommendations;
 
+mod cancel_metadata_model_conversion;
+
+mod cancel_metadata_model_creation;
+
 mod cancel_replication_task_assessment_run;
 
 mod create_data_migration;
@@ -329,9 +333,15 @@ mod describe_fleet_advisor_schemas;
 
 mod describe_instance_profiles;
 
+mod describe_metadata_model;
+
 mod describe_metadata_model_assessments;
 
+mod describe_metadata_model_children;
+
 mod describe_metadata_model_conversions;
+
+mod describe_metadata_model_creations;
 
 mod describe_metadata_model_exports_as_script;
 
@@ -376,6 +386,8 @@ mod describe_schemas;
 mod describe_table_statistics;
 
 mod export_metadata_model_assessment;
+
+mod get_target_selection_rules;
 
 mod import_certificate;
 
@@ -424,6 +436,8 @@ mod start_extension_pack_association;
 mod start_metadata_model_assessment;
 
 mod start_metadata_model_conversion;
+
+mod start_metadata_model_creation;
 
 mod start_metadata_model_export_as_script;
 

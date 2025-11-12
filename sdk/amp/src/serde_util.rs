@@ -997,6 +997,18 @@ pub(crate) fn random_cut_forest_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn vpc_configuration_correct_errors(
+    mut builder: crate::types::builders::VpcConfigurationBuilder,
+) -> crate::types::builders::VpcConfigurationBuilder {
+    if builder.security_group_ids.is_none() {
+        builder.security_group_ids = Some(Default::default())
+    }
+    if builder.subnet_ids.is_none() {
+        builder.subnet_ids = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn logging_filter_correct_errors(
     mut builder: crate::types::builders::LoggingFilterBuilder,
 ) -> crate::types::builders::LoggingFilterBuilder {

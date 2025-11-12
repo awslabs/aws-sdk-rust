@@ -16,7 +16,15 @@ pub struct UpdateAuthenticationProfileInput {
     /// <p>A list of IP address range strings that are blocked from accessing the instance. For more information on how to configure IP addresses, For more information on how to configure IP addresses, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/authentication-profiles.html#configure-ip-based-ac">Configure IP-based access control</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
     pub blocked_ips: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The short lived session duration configuration for users logged in to Amazon Connect, in minutes. This value determines the maximum possible time before an agent is authenticated. For more information, For more information on how to configure IP addresses, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/authentication-profiles.html#configure-session-timeouts">Configure session timeouts</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    #[deprecated(
+        note = "PeriodicSessionDuration is deprecated. Use SessionInactivityDuration instead.",
+        since = "10/31/2025"
+    )]
     pub periodic_session_duration: ::std::option::Option<i32>,
+    /// <p>The period, in minutes, before an agent is automatically signed out of the contact center when they go inactive.</p>
+    pub session_inactivity_duration: ::std::option::Option<i32>,
+    /// <p>Determines if automatic logout on user inactivity is enabled.</p>
+    pub session_inactivity_handling_enabled: ::std::option::Option<bool>,
 }
 impl UpdateAuthenticationProfileInput {
     /// <p>A unique identifier for the authentication profile.</p>
@@ -48,8 +56,20 @@ impl UpdateAuthenticationProfileInput {
         self.blocked_ips.as_deref().unwrap_or_default()
     }
     /// <p>The short lived session duration configuration for users logged in to Amazon Connect, in minutes. This value determines the maximum possible time before an agent is authenticated. For more information, For more information on how to configure IP addresses, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/authentication-profiles.html#configure-session-timeouts">Configure session timeouts</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    #[deprecated(
+        note = "PeriodicSessionDuration is deprecated. Use SessionInactivityDuration instead.",
+        since = "10/31/2025"
+    )]
     pub fn periodic_session_duration(&self) -> ::std::option::Option<i32> {
         self.periodic_session_duration
+    }
+    /// <p>The period, in minutes, before an agent is automatically signed out of the contact center when they go inactive.</p>
+    pub fn session_inactivity_duration(&self) -> ::std::option::Option<i32> {
+        self.session_inactivity_duration
+    }
+    /// <p>Determines if automatic logout on user inactivity is enabled.</p>
+    pub fn session_inactivity_handling_enabled(&self) -> ::std::option::Option<bool> {
+        self.session_inactivity_handling_enabled
     }
 }
 impl UpdateAuthenticationProfileInput {
@@ -70,6 +90,8 @@ pub struct UpdateAuthenticationProfileInputBuilder {
     pub(crate) allowed_ips: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) blocked_ips: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) periodic_session_duration: ::std::option::Option<i32>,
+    pub(crate) session_inactivity_duration: ::std::option::Option<i32>,
+    pub(crate) session_inactivity_handling_enabled: ::std::option::Option<bool>,
 }
 impl UpdateAuthenticationProfileInputBuilder {
     /// <p>A unique identifier for the authentication profile.</p>
@@ -171,18 +193,58 @@ impl UpdateAuthenticationProfileInputBuilder {
         &self.blocked_ips
     }
     /// <p>The short lived session duration configuration for users logged in to Amazon Connect, in minutes. This value determines the maximum possible time before an agent is authenticated. For more information, For more information on how to configure IP addresses, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/authentication-profiles.html#configure-session-timeouts">Configure session timeouts</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    #[deprecated(
+        note = "PeriodicSessionDuration is deprecated. Use SessionInactivityDuration instead.",
+        since = "10/31/2025"
+    )]
     pub fn periodic_session_duration(mut self, input: i32) -> Self {
         self.periodic_session_duration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The short lived session duration configuration for users logged in to Amazon Connect, in minutes. This value determines the maximum possible time before an agent is authenticated. For more information, For more information on how to configure IP addresses, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/authentication-profiles.html#configure-session-timeouts">Configure session timeouts</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    #[deprecated(
+        note = "PeriodicSessionDuration is deprecated. Use SessionInactivityDuration instead.",
+        since = "10/31/2025"
+    )]
     pub fn set_periodic_session_duration(mut self, input: ::std::option::Option<i32>) -> Self {
         self.periodic_session_duration = input;
         self
     }
     /// <p>The short lived session duration configuration for users logged in to Amazon Connect, in minutes. This value determines the maximum possible time before an agent is authenticated. For more information, For more information on how to configure IP addresses, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/authentication-profiles.html#configure-session-timeouts">Configure session timeouts</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    #[deprecated(
+        note = "PeriodicSessionDuration is deprecated. Use SessionInactivityDuration instead.",
+        since = "10/31/2025"
+    )]
     pub fn get_periodic_session_duration(&self) -> &::std::option::Option<i32> {
         &self.periodic_session_duration
+    }
+    /// <p>The period, in minutes, before an agent is automatically signed out of the contact center when they go inactive.</p>
+    pub fn session_inactivity_duration(mut self, input: i32) -> Self {
+        self.session_inactivity_duration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The period, in minutes, before an agent is automatically signed out of the contact center when they go inactive.</p>
+    pub fn set_session_inactivity_duration(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.session_inactivity_duration = input;
+        self
+    }
+    /// <p>The period, in minutes, before an agent is automatically signed out of the contact center when they go inactive.</p>
+    pub fn get_session_inactivity_duration(&self) -> &::std::option::Option<i32> {
+        &self.session_inactivity_duration
+    }
+    /// <p>Determines if automatic logout on user inactivity is enabled.</p>
+    pub fn session_inactivity_handling_enabled(mut self, input: bool) -> Self {
+        self.session_inactivity_handling_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Determines if automatic logout on user inactivity is enabled.</p>
+    pub fn set_session_inactivity_handling_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.session_inactivity_handling_enabled = input;
+        self
+    }
+    /// <p>Determines if automatic logout on user inactivity is enabled.</p>
+    pub fn get_session_inactivity_handling_enabled(&self) -> &::std::option::Option<bool> {
+        &self.session_inactivity_handling_enabled
     }
     /// Consumes the builder and constructs a [`UpdateAuthenticationProfileInput`](crate::operation::update_authentication_profile::UpdateAuthenticationProfileInput).
     pub fn build(
@@ -199,6 +261,8 @@ impl UpdateAuthenticationProfileInputBuilder {
             allowed_ips: self.allowed_ips,
             blocked_ips: self.blocked_ips,
             periodic_session_duration: self.periodic_session_duration,
+            session_inactivity_duration: self.session_inactivity_duration,
+            session_inactivity_handling_enabled: self.session_inactivity_handling_enabled,
         })
     }
 }

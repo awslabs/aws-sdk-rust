@@ -2079,6 +2079,10 @@ pub(crate) mod shape_get_host_reservation_purchase_preview;
 
 pub(crate) mod shape_get_host_reservation_purchase_preview_input;
 
+pub(crate) mod shape_get_image_ancestry;
+
+pub(crate) mod shape_get_image_ancestry_input;
+
 pub(crate) mod shape_get_image_block_public_access_state;
 
 pub(crate) mod shape_get_image_block_public_access_state_input;
@@ -3445,6 +3449,8 @@ pub(crate) mod shape_id_format_list;
 
 pub(crate) mod shape_ike_versions_request_list_value;
 
+pub(crate) mod shape_image_ancestry_entry_list;
+
 pub(crate) mod shape_image_criterion_list;
 
 pub(crate) mod shape_image_list;
@@ -4322,6 +4328,8 @@ pub(crate) mod shape_iam_instance_profile;
 pub(crate) mod shape_id_format;
 
 pub(crate) mod shape_image;
+
+pub(crate) mod shape_image_ancestry_entry;
 
 pub(crate) mod shape_image_criterion;
 
